@@ -1,0 +1,213 @@
+# Overview
+
+The device management library defines the data structures that are used in Cumulocity for device management activities such as software management and configuration management.
+
+The data structures are expressed as fragments that can be used inside managed objects, operations and other resources. More information on the fragment concept can be found in the Section "[Modelling and managing M2M assets](index.php?option=com_k2&view=item&id=809)". The same section also contains information on the process of running operations on devices and updating the inventory according to the result of the operation. For the usage of fragments in client libraries, see the developer's guides for the respective client library.
+
+# Metadata
+
+### c8y\_IsDevice
+
+A device marked in the inventory with a *c8y\_IsDevice* fragment supports device management. Only devices with this fragment appear in the device management user interface.
+
+    "c8y_IsDevice": {}
+
+![Device in Device Management](images/c8yimages/devicemgmt/devicemanagement.png)
+
+### c8y\_SupportedOperations
+
+*c8y\_SupportedOperations* lists the operations that are available for a particular device, so that applications can trigger the operations. For example, if the supported operations list contains "c8y\_Restart" (see below), a restart button will be available in the device management user interface.
+
+    "c8y_SupportedOperations": [ "c8y_Restart", "c8y_Configuration" ]
+
+![Device supports restart](images/c8yimages/devicemgmt/restartsupported.png)
+
+### c8y\_SupportedMeasurements
+
+*c8y\_SupportedMeasurements* lists the measurements that are produced by the device. These measurements will be shown as graph in the user interface. For example, if the supported measurements list contains "c8y\_SignalStrength" (see below), a signal strength graph of the modem will be shown.
+
+    "c8y_SupportedMeasurements": [ "c8y_SignalStrength", "c8y_Battery" ]
+
+![Device supports signal strength measurement](images/c8yimages/devicemgmt/supportedmeasurements.png)
+
+# Device information
+
+### c8y\_Hardware
+
+*c8y\_Hardware* contains basic hardware information for a device, such as make and serial number. Often, the hardware serial number is printed on the board of the device or on an asset tag on the device to uniquely identify the device within all devices of the same make.
+
+||
+|Name|Type|Description|
+|model|String|A text identifier of the device's hardware model.|
+|revision|String|A text identifier of the hardware revision.|
+|serialNumber|String|The hardware serial number of the device.|
+
+    "c8y_Hardware": {
+      "model": "BCM2708",
+      "revision": "000e",
+      "serialNumber": "0000000017b769d5"
+    }
+
+![Hardware information](images/c8yimages/devicemgmt/hardware.png)
+
+### c8y\_Firmware
+
+*c8y\_Firmware* contains information on a device's firmware. In the inventory, "c8y\_Firmware" represents the currently installed firmware on the device. As part of an operation, "c8y\_Firmware" requests the device to install the indicated firmware. To enable firmware installation through the user interface, add "c8y\_Firmware" to the list of supported operations as described above.
+
+||
+|Name|Type|Description|
+|name|String|Name of the firmware.|
+|version|String|A version identifier of the hardware.|
+|url|URI|A location to download the firmware from.|
+
+    "c8y_Firmware": {
+      "name": "raspberrypi-bootloader",
+      "version": "1.20130207-1",
+      "url": "31aab9856861b1a587e2094690c2f6e272712cb1"
+    }
+
+![Firmware information](images/c8yimages/devicemgmt/firmware.png)
+
+In the example above, the device is requested to install firmware version "1.20130207-1". The device has a pre-configured software repository location, hence it only needs the relative URL "31aab9856861b1a587e2094690c2f6e272712cb1" to download the requested firmware image.
+
+### c8y\_Software
+
+*c8y\_Software* contains a map of software components to their corresponding versions. In the inventory, "c8y\_Software" represents the currently installed software components on the device.
+
+As part of an operation, "c8y\_Software" requests the device to ensure that the indicated software components and versions are installed. This means that software not contained in "c8y\_Software" should be removed, software not installed on the device should be installed and software installed in a different version on the device should be upgraded respectively downgraded. Depending on the installation mechanisms of the device, a version may actually be a URL or URI pointing to a particular download location.
+
+To enable software installation through the user interface, add "c8y\_Software" to the list of supported operations as described above.
+
+    "c8y_Software": {
+     "pi-driver": "pi-driver-3.4.5.jar",
+     "pi4j-gpio-extension": "pi4j-gpio-extension-0.0.5.jar",
+     ?
+    }
+
+![Software information](images/c8yimages/devicemgmt/software.png)
+
+### c8y\_Configuration
+
+*c8y\_Configuration* permits a text-based configuration of the device. Most devices support a textual system configuration file that can be presented and edited using this mechanism. In the inventory, "c8y\_Configuration" represents the currently active configuration on the device. As part of an operation, "c8y\_Configuration" requests the device to make the transmitted configuration the currently active one. To enable configuration through the user interface, add "c8y\_Configuration" to the list of supported operations as described above.
+
+||
+|Name|Type|Description|
+|config|String|A text in a device-specific format, representing the configuration of the device.|
+
+    "c8y_Configuration": {
+      "config": "#Tue Jul 02 16:10:36 UTC 2013\nc8y.log.alarmLevel=ERROR\nc8y.modem.signalPolling=10000\nc8y.log.eventLevel=INFO"
+    }
+
+![Device configuration](images/c8yimages/devicemgmt/configuration.png)
+
+### c8y\_Mobile
+
+*c8y\_Mobile* holds basic connectivity-related information, such as the equipment identifier of the modem (IMEI) in the device. This identifier is globally unique and often used to identify a mobile device.
+
+||
+|Name|Type|Description|
+|imei|String|The equipment identifier (IMEI) of the modem in the device.|
+|cellId|String|The identifier of the cell in the mobile network that the device is currently connected with.|
+|iccid|String|The identifier of the SIM card that is currently in the device (often printed on the card).|
+
+    "c8y_Mobile": {
+      "imei": "861145013087177",
+      "cellId": "4904-A496",
+      "iccid": "89490200000876620613"
+    }
+
+![Modem information](images/c8yimages/devicemgmt/mobile.png)
+
+# Device reports
+
+### c8y\_Battery
+
+*c8y\_Battery* shows the current battery fill level. It is used as part of a measurement.
+
+    "c8y_Battery": {
+      "level": { "value": 23, "unit": "%" }
+    }
+
+### c8y\_SignalStrength
+
+*c8y\_SignalStrength* provides information on the GSM reception of the modem. It is used as part of a measurement and contains two readings: *rssi* and *ber*. "rssi" is the received signal strength in dBm, ranging from -113 dBm (worst) to -51 dBm (best). "ber" is the bit error rate in %.
+
+    "c8y_SignalStrength": {
+      "rssi": { "value": -53, "unit": "dBm" },
+      "ber": { "value": 0.14, "unit": "%" } 
+    }
+
+# Device availability
+
+### c8y\_RequiredAvailability
+
+Devices can be monitored for availability by adding a "c8y\_RequiredAvailability" fragment to the device:
+
+    "c8y_RequiredAvailability": { "responseInterval": ?time in minutes? }
+
+Devices that have not sent any message in the response interval are considered unavailable. Such devices are marked as unavailable (see below) and an unavailability alarm is raised. Devices with a response interval of zero minutes are considered to be under maintenance. No alarm is raised while a device is under maintenance. Devices that do not contain "c8y\_RequiredAvailability" are not monitored.
+
+### c8y\_Availability
+
+The availability information computed by Cumulocity is stored in a fragment "c8y\_Availability" of the device.
+
+    "c8y_Availability": { "lastMessage": "2013-05-21...", "status": "CONNECTED" }
+
+||
+|Name|Type|Description|
+|lastMessage|Date|The time when the device sent the last message to Cumulocity.|
+|status|String|The current status, one of AVAILABLE, CONNECTED, MAINTENANCE, UNAVAILABLE.|
+
+The following messages update the last message timestamp of a device:
+
+-   Create an event, measurement or alarm (for given device as source)
+-   Update an operation (with given deviceId)
+-   Update the device itself (with given id)
+
+A monitored device has one of following statuses:
+
+||
+|Name|Description|
+|CONNECTED|A device push connection is established.|
+|AVAILABLE|The device is not connected through device push, but a message was sent within the required response interval.|
+|MAINTENANCE|"responseInterval" is set to 0; the device is under maintenance.|
+|UNAVAILABLE|"responseInterval" is greater then 0 and the device is neither AVAILABLE nor CONNECTED.|
+
+### c8y\_UnavailabilityAlarm
+
+The alarm sent when a device becomes unavailable is of type "c8y\_UnavailabilityAlarm":
+
+    {
+        ?
+        "type" : "c8y_UnavailabilityAlarm",      
+        "text" : "No communication with device since ?last activity time?",
+        "status" : "active",
+        "severity" : "major",
+        "source" : ?device id?
+        ?
+    }
+
+Updates to the availability status may occur with a delay.
+
+![Availability](images/c8yimages/devicemgmt/availability.png)
+
+To flag a device as available without updating any data, a "ping" can be sent. The "ping" can be carried out by simply sending an empty update message to the device (i.e., a PUT request to the managed object with empty content).
+
+### c8y\_ActiveAlarmsStatus
+
+The number of currently active and acknowledged alarms is stored in a fragment "c8y\_ActiveAlarmsStatus".
+
+    "c8y_ActiveAlarmsStatus": {
+        "minor": 1,
+        "major": 3
+    }
+
+# Miscellaneous
+
+### c8y\_Restart
+
+To restart a device, an operation with a *c8y\_Restart* fragment is sent. To enable a "restart" button in the user interface, add "c8y\_Restart" to the list of supported operations as described above.
+
+    "c8y_Restart": {}
+
+![Restart button](images/c8yimages/devicemgmt/restartsupported.png)

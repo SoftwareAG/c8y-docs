@@ -38,15 +38,17 @@ var docpadConfig = {
 
   events : {
     writeBefore: function (opt) {
-      opt.collection.forEach(function (file) {
-        var path = file.get('outPath');
+      //KEEP THIS COMMENT UNTIL WE FIGURE OUT ALL THE URL AND PATH CONFIG
 
-        if (file.get('render')) {
-          path = simplifyPath(path);
-          file.set('outPath', path);
-        }
-        log(path);
-      });
+      // opt.collection.forEach(function (file) {
+      //   var path = file.get('outPath');
+
+      //   if (file.get('render')) {
+      //     path = simplifyPath(path);
+      //     file.set('outPath', path);
+      //   }
+      //   log(path);
+      // });
     }
   }
 };

@@ -3,20 +3,28 @@
     <title><%= @document.title %> | <%= @site.title %></title>
     <%- @getBlock("meta").toHTML() %>
     <%- @getBlock("styles").toHTML() %>
+    <link rel="stylesheet" type="text/css" href="//netdna.bootstrapcdn.com/bootstrap/3.0.3/css/bootstrap.min.css">
 </head>
 <body>
+    <div class="container">
 
-    <ul>
+    <div class="row">
+
+    <ul class="col-md-3 nav nav-pills nav-stacked">
       <% for page in @getCollection('pages').toJSON():%>
         <li>
-            <a href="<%= page.url%>"> <%= page.title %></a>
+            <a href="<%= page.url%>"> <%= page.title || 'no title' %></a>
         </li>
 
       <% end %>
     </ul>
 
-    <h1><%= @document.title %></h1>
-    <%- @content %>
+        <div class="col-md-9">
+            <h1><%= @document.title %></h1>
+            <%- @content %>
+        </div>
+    </div>
+    </div>
     <%- @getBlock("scripts").toHTML() %>
 </body>
 </html>

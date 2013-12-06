@@ -1,0 +1,22 @@
+<html>
+<head>
+    <title><%= @document.title %> | <%= @site.title %></title>
+    <%- @getBlock("meta").toHTML() %>
+    <%- @getBlock("styles").toHTML() %>
+</head>
+<body>
+
+    <ul>
+      <% for page in @getCollection('pages').toJSON():%>
+        <li>
+            <a href="<%= page.url%>"> <%= page.title %></a>
+        </li>
+
+      <% end %>
+    </ul>
+
+    <h1><%= @document.title %></h1>
+    <%- @content %>
+    <%- @getBlock("scripts").toHTML() %>
+</body>
+</html>

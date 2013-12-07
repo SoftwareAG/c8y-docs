@@ -11,12 +11,20 @@
     <div class="row">
 
     <ul class="col-md-3 nav nav-pills nav-stacked">
-      <% for page in @getCollection('pages').toJSON():%>
-        <li>
-            <a href="<%= page.url%>"> <%= page.title || 'no title' %></a>
-        </li>
 
+      <% for section in @getSections():%>
+        <li><%= section.title %>
+            <ul>
+            <% for page in @getCollection('pages').findAll({relativeDirPath: section.raw}).toJSON():%>
+                <li class="<%= if page.id is @document.id then 'active' %>">
+                    <a href="<%= page.url%>"> <%= page.title || 'no title' %></a>
+                </li>
+            <% end %>
+            </ul>
+        </li>
       <% end %>
+
+
     </ul>
 
         <div class="col-md-9">

@@ -10,11 +10,19 @@ function simplifyPath (path) {
     .join('/');
 }
 
+function humanize(str) {
+  str = str.replace(/[-,_]+/g, ' ');
+  return str.substr(0,1).toUpperCase() + str.substr(1);
+}
+
 function log(item) {
   console.log('\n\n');
   console.log(item);
   console.log('\n\n');
 }
+
+var sections = [],
+  sectionMap = {};
 
 
 var docpadConfig = {
@@ -22,15 +30,32 @@ var docpadConfig = {
     site: {
       title: 'This is the title',
     },
-    getTesting: function () {
-      return 'Allright';
+    getSections: function () {
+      return sections;
+    },
+    getPagesInSection: function (col, section) {
+      col.filter(function (doc) {
+        return section === doc.get('relativeDirPath');
+      });
     }
   },
   collections: {
     pages: function () {
       return this.getCollection('html').on('add', function (model) {
+        var tit = humanize(model.get('basename'));
+        var dir = model.get('relativeDirPath');
+
+        if (dir && !sectionMap[dir] && dir.length > 4) {
+          sectionMap[dir] = {
+            raw: dir,
+            title: humanize(dir)
+          };
+          sections.push(sectionMap[dir]);
+        }
+
         model.setMetaDefaults({
-          layout: 'default'
+          layout: 'default',
+          title: tit
         });
       });
     }

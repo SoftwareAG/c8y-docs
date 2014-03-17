@@ -28,7 +28,7 @@ var sections = [],
 var docpadConfig = {
 	templateData: {
     site: {
-      title: 'This is the title',
+      title: 'Cumulocity',
     },
     getSections: function () {
       return sections;

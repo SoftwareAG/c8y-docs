@@ -64,3 +64,7 @@ If both mechanisms are configured, they can be used in parallel. Users can both 
 Whenever a security-relevant event occurs, it needs to be logged for potential later auditing. Security-relevant events may happen both on application level as well as in the M2M network. A simple example of a security-relevant event on application level is a login to the application. An example of a security-relevant event on the network level is using a local software or local control on a device to manipulate the device.
 
 To capture security-relevant events, Cumulocity offers an [auditing interface](guides/reference-guide/auditing). This interface enables applications and agents to write audit logs, which are persistently stored and cannot be externally modified after being written. Cumulocity itself also writes own audit records related to login and device control operations.
+
+
+
+	The separation concept that was originally described here should move to "securing m2m applications" (confidentiality section?).

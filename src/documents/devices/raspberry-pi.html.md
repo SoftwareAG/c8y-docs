@@ -12,38 +12,55 @@ In this section, we describe how to install a Cumulocity agent with all relevant
 * Identify individual Raspberry Pis remotely based on their hardware serial number.
 * Update the Pi's firmware remotely through the firmware repository on GitHub.
 * Use the [PiFace Digital](http://www.element14.com/community/docs/DOC-52857/l/piface-digital-for-raspberry-pi) adapter board from the cloud.
-* Use [TinkerForge](tinkerforge.html) sensors and controls from the cloud.
+* Use [TinkerForge](/guides/devices/tinkerforge.html) sensors and controls from the cloud.
 
 ![Raspberry Pi image](http://upload.wikimedia.org/wikipedia/commons/thumb/3/3d/RaspberryPi.jpg/640px-RaspberryPi.jpg)
 
 ## Prerequisites
 
-To install the agent, you need a Raspberry Pi with an installation of Java SE 7. Java SE is pre-installed in recent distributions of [Raspbian](http://www.raspberrypi.org/downloads), the default Linux distribution of the Raspberry Pi. To verify, simply type
+To install the agent, you need a Raspberry Pi with an installation of Java SE, Version 7 or later. Java SE is pre-installed in recent distributions of [Raspbian](http://www.raspberrypi.org/downloads), the default Linux distribution of the Raspberry Pi. To verify, simply type
 
 	$ java -version
 	java version "1.7.0_40"
 
-Make sure that your power supply matches the power demands of the Raspberry Pi and its connected devices. A standard USB charger may not be sufficient to connect additional devices as well as a modem. The most simple solution is to use a USB hub that provides power on both the host and client ports, such as [this one](http://www.logilink.eu/showproduct/UA0085.htm). Connect the Raspberry Pi to the host side and all other devices to the client sides.
+You also need to know the serial number of your Raspberry Pi to register it with Cumulocity:
 
-## Installation
+	$ cat /proc/cpuinfo
+	Processor	: ARMv6-compatible processor rev 7 (v6l)
+	BogoMIPS	: 464.48
+	Features	: swp half thumb fastmult vfp edsp java tls 
+	CPU implementer	: 0x41
+	CPU architecture: 7
+	CPU variant	: 0x0
+	CPU part	: 0xb76
+	CPU revision	: 7
+
+	Hardware	: BCM2708
+	Revision	: 000e
+	Serial		: 0000000017b769d5
+
+Write down the number in the line "Serial". Make sure that your power supply matches the power demands of the Raspberry Pi and its connected devices. A standard USB charger may not be sufficient to connect additional devices as well as a modem. The most simple solution is to use a USB hub that provides power on both the host and client ports, such as [this one](http://www.logilink.eu/showproduct/UA0085.htm). Connect the Raspberry Pi to the host side and all other devices to the client sides.
+
+## Installation and registration
 
 Log in to the Raspberry Pi and install the agent.
 
-	sudo rpm -i http://resource.cumulocity.com/rpi-agent-...rpm
+	$ wget http://resources.cumulocity.com/examples/cumulocity-rpi-agent-latest.deb
+	$ sudo dpkg -i cumulocity-rpi-agent-latest.deb
 
-Edit the credentials for accessing Cumulocity stored in the file /etc/cumulocity.properties.
+Open Cumulocity in a web browser and go to the "Registration" page. Enter the serial number that you wrote down in the previous step and click "Register Device".
 
-	host=http://<<mytenant>>.cumulocity.com
-	user=<<my user>>
-	password=<<my password>>
+![Register device](/images/guides/deviceregistration.png)
 
 Restart the Pi.
 
-	sudo shutdown -r now
+	$ sudo reboot
 
-After restart, the Pi appears in the device management user interface as "RaspPi &lt;&lt;hardware model&gt;&gt; &lt;&lt;serial number&gt;&gt;". It may take up to two minutes to boot, dial up to the network, discover sensors and upload them to the cloud. In case of connectvity problems, check the syslog.
+Restarting the Pi can take up to two minutes, depending on installed software, connected sensors and network type. When the restart is completed, accept the registration.
 
-	tail -f /var/log/syslog
+![Accept device](/images/guides/deviceacceptance.png)
+
+Click on "All devices" to manage the Raspberry Pi. It is by default visible as "RaspPi &lt;&lt;hardware model&gt;&gt; &lt;&lt;serial number&gt;&gt;". You can edit the name in the "Info" tab.
 
 ## Using Tinkerforge bricks and bricklets
 
@@ -51,7 +68,7 @@ The agent supports Tinkerforge devices out of the box, provided the [Tinkerforge
 
 ## Using PiFace Digital
 
-The agent includes a simple [PiFace Digital](http://www.element14.com/community/docs/DOC-52857/l/piface-digital-for-raspberry-pi) driver. The driver will create events when switches are pressed and will react to remote control commands to the relays. The events can be further processed through [CEL rules](TBD).
+The agent includes a simple [PiFace Digital](http://www.element14.com/community/docs/DOC-52857/l/piface-digital-for-raspberry-pi) driver. The driver will create events when switches are pressed and will react to remote control commands to the relays. The events can be further processed through [CEL rules](/guides/concepts-guide/real-time-processing-in-cumulocity.html).
 
 The driver depends on [Pi4J](http://pi4j.com/). To install Pi4J, follow the [Pi4J installation instructions](http://pi4j.com/install.html).
 
@@ -61,7 +78,12 @@ There are [numerous descriptions available](http://www.thefanclub.co.za/how-to/h
 
 When using a 3G modem with a Raspberry Pi Model B, a powered USB hub is required. Some modems will not read connectivity statistics concurrently to being dialed up to the Internet on the Raspberry Pi. Hence, this functionality is disabled by default in the Cumulocity Linux modem driver.
 
-To dial up to the Internet at startup, edit /etc/rc.local and add the following line:
+## Troubleshooting
 
-	...wvdial...
+The agent writes debug information to the Pi's syslog. To troubleshoot, for example, connectivity problems, use:
 
+	$ tail -f /var/log/syslog
+
+## Developing the agent
+
+If you would like to connect other devices to the Raspberry Pi and manage these from Cumulocity, check the [Java agent documentation](/guides/devices/java-agent.html).

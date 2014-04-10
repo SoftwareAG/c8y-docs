@@ -26,6 +26,7 @@ var sections = [],
 
 
 var docpadConfig = {
+	watchOptions: { preferredMethods: ['watchFile','watch'] },
 	templateData: {
     site: {
       title: 'Cumulocity',

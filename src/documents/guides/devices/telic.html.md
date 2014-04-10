@@ -35,7 +35,7 @@ To make the tracker send data to Cumulocity, follow these steps with the Telic C
 
 The screenshot below illustrates the setting.
 
-![Telic Communication Configuration](/images/guides/teliccommconf.png)
+![Telic Communication Configuration](/images/guides/devices/teliccommconf.png)
 
 To disable acknowledge, follow these steps:
 
@@ -46,7 +46,7 @@ To disable acknowledge, follow these steps:
 
 This screenshot shows a device configuration.
 
-![Telic Device Configuration](/images/guides/telicdevconf.png)
+![Telic Device Configuration](/images/guides/devices/telicdevconf.png)
 
 Finally, send the data to the device:
 
@@ -54,7 +54,7 @@ Finally, send the data to the device:
 * Verify that the device profile and the server profile that you edited previously are selected on the top left.
 * Click the "Send" button.
 
-![Configure Device](/images/guides/telicconf.png)
+![Configure Device](/images/guides/devices/telicconf.png)
 
 Once you have set up the profiles, you can send the same profiles also to other trackers. You just have to repeat the "Send" part.
 

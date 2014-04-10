@@ -50,7 +50,7 @@ Log in to the Raspberry Pi and install the agent.
 
 Open Cumulocity in a web browser and go to the "Registration" page. Enter the serial number that you wrote down in the previous step and click "Register Device".
 
-![Register device](/images/guides/deviceregistration.png)
+![Register device](/images/guides/devices/deviceregistration.png)
 
 Restart the Pi.
 
@@ -58,7 +58,7 @@ Restart the Pi.
 
 Restarting the Pi can take up to two minutes, depending on installed software, connected sensors and network type. When the restart is completed, accept the registration.
 
-![Accept device](/images/guides/deviceacceptance.png)
+![Accept device](/images/guides/devices/deviceacceptance.png)
 
 Click on "All devices" to manage the Raspberry Pi. It is by default visible as "RaspPi &lt;&lt;hardware model&gt;&gt; &lt;&lt;serial number&gt;&gt;". You can edit the name in the "Info" tab.
 
@@ -78,6 +78,26 @@ There are [numerous descriptions available](http://www.thefanclub.co.za/how-to/h
 
 When using a 3G modem with a Raspberry Pi Model B, a powered USB hub is required. Some modems will not read connectivity statistics concurrently to being dialed up to the Internet on the Raspberry Pi. Hence, this functionality is disabled by default in the Cumulocity Linux modem driver.
 
+## Remote firmware upgrade
+
+The agent permits you to upgrade the firmware of a Raspberry Pi through the [rpi-update](https://github.com/Hexxeh/rpi-update) tool. To configure a firmware version:
+
+* Open Cumulocity and click on "Firmware".
+* Click "Add Firmware". 
+* Enter a name for the firmware. As URL, use the Git hash of the firmware version at https://github.com/Hexxeh/rpi-firmware. (I.e., click on commits and select a particular version there. The hash is the weird garbage at the end of the URL.)
+* Save the firmware version.
+
+WHAT ABOUT THE VERSION?
+
+To roll out the firmware to a Raspberry Pi:
+
+* Click on the "Software" tab of the Raspberry Pi.
+* Click "Install firmware".
+* Select the firmware version to install.
+* Click "Install".
+
+The Raspberry Pi will install the firmware and will reboot. Go to the "Control" tab to follow the upgrade process. After reboot, the operation will be either "Successful" or "Failed". Good luck. 
+
 ## Troubleshooting
 
 The agent writes debug information to the Pi's syslog. To troubleshoot, for example, connectivity problems, use:
@@ -86,4 +106,4 @@ The agent writes debug information to the Pi's syslog. To troubleshoot, for exam
 
 ## Developing the agent
 
-If you would like to connect other devices to the Raspberry Pi and manage these from Cumulocity, check the [Java agent documentation](/guides/devices/java-agent.html).
+If you would like to onnect other devices to the Raspberry Pi and manage these from Cumulocity, check the [Java agent documentation](/guides/devices/java-agent.html).

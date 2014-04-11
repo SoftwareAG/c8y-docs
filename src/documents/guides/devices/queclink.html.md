@@ -1,5 +1,5 @@
 ---
-title: Queclink Trackers
+title: Queclink
 ---
 
 ## Overview

@@ -1,5 +1,5 @@
 ---
-title: Telic Trackers
+title: Telic
 ---
 
 ## Overview

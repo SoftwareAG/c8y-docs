@@ -18,7 +18,7 @@ The Java agent supports Unix-based systems and contains the following functional
 * Firmware management: Upgrade the firmware on the device and restart with the new firmware.
 * Modem support: Provides basic modem information and signal statistics  (IMEI, ICCID, cell ID, signal strength, BER; depending on modem type).
 * Extensibility through driver concept.
-* Ready-made drivers for [Kontron M2M development kit](kontron.html), [PiFace Digital](piface.html) and [Tinkerforge](tinkerforge.html).
+* Ready-made drivers for [Kontron M2M development kit](/guides/devices/smart-agent-for-kontron-m2m.html), [Raspberry Pi](/guides/devices/raspberry-pi.html), [PiFace Digital](/guides/devices/raspberry-pi.html) and [Tinkerforge](tinkerforge.html).
 
 ## Prerequisites
 

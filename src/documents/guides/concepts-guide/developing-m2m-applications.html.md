@@ -1,3 +1,8 @@
+---
+order: 40
+title: Developing M2M applications
+layout: default
+---
 # Overview
 
 This section explains the concepts relevant for implementing and deploying M2M applications. It first shows how Cumulocity supports developing web-based M2M applications and how they can be extended with server-side business logic. Then it describes the elementary application management concepts of Cumulocity.

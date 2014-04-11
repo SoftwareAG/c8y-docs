@@ -1,6 +1,7 @@
 ---
-section: 20
+order: 20
 title: Cumulocity's domain model
+layout: default
 ---
 
 ## Overview

@@ -1,3 +1,8 @@
+---
+order: 50
+title: Securing M2M applications
+layout: default
+---
 # Overview
 
 This section discusses security aspects of cloud-enabled M2M systems using Cumulocity. It first gives an overview on how the communication channels between M2M devices and M2M applications are secured through encryption, authentication and authorization. Then it describes Cumulocity's user and permission management functionality. Finally, it shows how security-relevant events are logged for auditing purposes.

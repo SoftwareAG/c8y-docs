@@ -1,6 +1,7 @@
 ---
-section: 10
+order: 10
 title: Introduction to Cumulocity
+layout: default
 ---
 
 ## Overview

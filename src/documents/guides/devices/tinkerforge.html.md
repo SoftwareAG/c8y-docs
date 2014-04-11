@@ -1,5 +1,6 @@
 ---
-title: Tinkerforge
+layout: "default"
+title: "Tinkerforge"
 ---
 
 ## Overview

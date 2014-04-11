@@ -1,3 +1,8 @@
+---
+order: 30
+title: Interfacing devices
+layout: default
+---
 # Overview
 
 This section explains the concepts relevant for interfacing M2M devices and other M2M-related data sources with Cumulocity.

@@ -24,11 +24,11 @@
 <body>
   <div class="container">
     <div class="row">
-      <ul class="col-md-3 nav nav-pills nav-stacked">
-<% for section in @getSections():%>
+      <ul class="col-md-3">
+<% for section in @sections:%>
         <li><%= section.title %>
           <ul>
-<% for page in @getCollection('pages').findAll({relativeDirPath: section.raw}).toJSON():%>
+<% for page in @getCollection("html").findAllLive({relativeOutDirPath: section.folder }, [ order: 1, title: 1 ] ).toJSON():%>
             <li class="<%= if page.id is @document.id then 'active' %>">
               <a href="<%= page.url%>"> <%= page.title || 'no title' %></a>
             </li>

@@ -1,3 +1,8 @@
+---
+order: 70
+title: Hosting applications
+layout: default
+---
 # Overview
 
 Cumulocity can host your own HTML5 and JavaScript web applications through your domain. These applications can be registered using the administration user interface. Switch to the administration user interface by clicking on the application switcher at the top left of the user interface and selecting "Administration". Then select "Own Applications" and click "Add new".

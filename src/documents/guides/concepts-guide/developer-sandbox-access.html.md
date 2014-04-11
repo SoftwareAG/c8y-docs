@@ -1,3 +1,8 @@
+---
+order: 80
+title: Developer sandbox
+layout: default
+---
 # Overview
 
 The "sandbox" is an instance of the latest production version dedicated to testing and experimentation. It contains a public tenant that is accessible to all registered developers using the same credentials as the ones that you used to register to this web site. Note that the data in the public tenant is also public, i.e., entries that you make will be visible to other registered developers as well.

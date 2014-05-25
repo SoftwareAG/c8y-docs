@@ -12,11 +12,17 @@
 .navbar-default{
   border:0;
   background: @darker;
+  border-radius: 0;
   .navbar-nav {
     > li > a {
       font-weight: 100;
       text-transform: uppercase;
     }
+  }
+  .navbar-toggle{
+    float: left;
+    margin-right: 0;
+    border-color: transparent;
   }
 }
 
@@ -66,4 +72,50 @@
   }
 }
 
+.left-nav{
+  a{
+    color:@darker;
+    &:hover{
+      color:@blue;
+      text-decoration: none;
+    }
+  }
 
+  h3{
+    margin-top: 30px;
+    text-transform: uppercase;
+
+    a{
+      color:@gray;
+    }
+  }
+  .panel{
+    padding: 0;
+    list-style: none;
+    border-radius:2px;
+    h3, p, .list-group-item{
+      padding-left: 30px;
+      padding-right: 30px;
+    }
+    .list-group{
+      border-top: 1px solid #dddddd;
+      margin-top: 18px;
+    }
+  }
+}
+
+a.panel{
+  display: block;
+  padding:20px;
+  color: @gray;
+}
+
+.section{
+  text-align: center;
+  min-height: 200px;
+  text-transform: uppercase;
+  .box-shadow(0 1px 1px rgba(0,0,0,.1));
+  .glyphicon{
+    font-size: 66px;
+  }
+}

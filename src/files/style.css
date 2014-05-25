@@ -6106,10 +6106,16 @@ button.close {
 .navbar-default {
   border: 0;
   background: #031315;
+  border-radius: 0;
 }
 .navbar-default .navbar-nav > li > a {
   font-weight: 100;
   text-transform: uppercase;
+}
+.navbar-default .navbar-toggle {
+  float: left;
+  margin-right: 0;
+  border-color: transparent;
 }
 @media screen and (min-width: 992px) {
   .navbar-default .navbar-nav > li > a {
@@ -6142,6 +6148,53 @@ button.close {
     max-width: 190px;
   }
 }
+.left-nav a {
+  color: #031315;
+}
+.left-nav a:hover {
+  color: #27b3ce;
+  text-decoration: none;
+}
+.left-nav h3 {
+  margin-top: 30px;
+  text-transform: uppercase;
+}
+.left-nav h3 a {
+  color: #8f9ea2;
+}
+.left-nav .panel {
+  padding: 0;
+  list-style: none;
+  border-radius: 2px;
+}
+.left-nav .panel h3,
+.left-nav .panel p,
+.left-nav .panel .list-group-item {
+  padding-left: 30px;
+  padding-right: 30px;
+}
+.left-nav .panel .list-group {
+  border-top: 1px solid #dddddd;
+  margin-top: 18px;
+}
+a.panel {
+  display: block;
+  padding: 20px;
+  color: #8f9ea2;
+}
+.section {
+  text-align: center;
+  min-height: 200px;
+  text-transform: uppercase;
+  -webkit-box-shadow: 0 1px 1px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 1px 1px rgba(0, 0, 0, 0.1);
+}
+.section .glyphicon {
+  font-size: 66px;
+}
+body {
+  background-color: #f8f8f8;
+}
 /*
  * Style tweaks
  * --------------------------------------------------
@@ -6150,9 +6203,6 @@ html,
 body {
   overflow-x: hidden;
   /* Prevent scroll on narrow devices */
-}
-body {
-  padding-top: 70px;
 }
 footer {
   padding: 30px 0;

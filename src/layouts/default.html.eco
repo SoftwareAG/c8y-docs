@@ -24,27 +24,38 @@
     <%- @getBlock("styles").toHTML() %>
 </head>
 <body>
-  <div class="container">
-    <div class="row">
-      <ul class="col-md-3">
-<% for section in @sections:%>
-        <li><%= section.title %>
-          <ul>
-<% for page in @getCollection("html").findAllLive({relativeOutDirPath: section.folder }, [ order: 1, title: 1 ] ).toJSON():%>
-            <li class="<%= if page.id is @document.id then 'active' %>">
-              <a href="<%= page.url%>"> <%= page.title || 'no title' %></a>
-            </li>
-<% end %>
-          </ul>
-        </li>
-<% end %>
+  <%- @partial("header") %>
+<div class="container">
+  <div class="row row-offcanvas row-offcanvas-left">
+
+    <div class="col-xs-6 col-sm-3 sidebar-offcanvas" id="sidebar" role="navigation">
+
+      <ul>
+        <% for section in @sections:%>
+          <li><%= section.title %>
+            <ul>
+              <% for page in @getCollection("html").findAllLive({relativeOutDirPath: section.folder }, [ order: 1, title: 1 ] ).toJSON():%>
+                <li class="<%= if page.id is @document.id then 'active' %>">
+                  <a href="<%= page.url%>"> <%= page.title || 'no title' %></a>
+                </li>
+              <% end %>
+            </ul>
+          </li>
+        <% end %>
       </ul>
-      <div class="col-md-9">
-        <h1><%= @document.title %></h1>
-        <%- @content %>
-      </div>
     </div>
+
+    <div class="col-xs-12 col-sm-9">
+       <p class="visible-xs">
+        <button type="button" class="btn btn-primary btn-xs" data-toggle="offcanvas">Toggle nav</button>
+      </p>
+      <h1><%= @document.title %></h1>
+      <%- @content %>
+    </div>
+
   </div>
+
+</div>
 
 
 <script type="text/javascript">
@@ -60,7 +71,7 @@
   })();
 
 </script>
-<%- @partial("scripts") %>
+  <%- @partial("scripts") %>
 <%- @getBlock("scripts").toHTML() %>
 
 </body>

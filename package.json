@@ -10,6 +10,7 @@
     "docpad": "~6.59.6",
     "docpad-plugin-eco": "~2.0.3",
     "docpad-plugin-livereload": "~2.5.4",
+    "docpad-plugin-partials": "~2.9.0",
     "docpad-plugin-marked": "~2.1.2"
   },
   "main": "node_modules/docpad/bin/docpad-server",

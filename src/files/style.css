@@ -6233,17 +6233,21 @@ button.close {
 .section {
   text-align: center;
   display: block;
-  min-height: 245px;
+  min-height: 200px;
   text-transform: uppercase;
   color: #031315;
-  padding: 40px;
+  padding: 20px;
   -webkit-box-shadow: 0 1px 1px rgba(0, 0, 0, 0.1);
   box-shadow: 0 1px 1px rgba(0, 0, 0, 0.1);
+}
+.section h4 {
+  font-size: 16px;
 }
 .section .glyphicon {
   font-size: 66px;
   padding-bottom: 20px;
   border-bottom: 1px solid #f8f8f8;
+  color: #8f9ea2;
 }
 .section:hover {
   text-decoration: none;
@@ -6285,6 +6289,15 @@ body {
 hr {
   border-top-color: #d9d9d9;
   border-bottom-color: white;
+}
+.main-title {
+  text-transform: uppercase;
+  font-weight: 100;
+  font-size: 42px;
+  margin-bottom: 30px;
+  padding-bottom: 20px;
+  color: #8f9ea2;
+  border-bottom: 1px solid #ffffff;
 }
 /*
  * Style tweaks

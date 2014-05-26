@@ -21,6 +21,7 @@
 
    <link rel="shortcut icon" href="/images/favicon.ico"/>
     <link href="/style.css" rel="stylesheet" id="cumulocity-style-css" type='text/css' media='all' />
+    <link rel="stylesheet" href="http://yandex.st/highlightjs/8.0/styles/default.min.css">
     <%- @getBlock("styles").toHTML() %>
 </head>
 <body>
@@ -32,32 +33,45 @@
 
       <div class="left-nav">
 
-        <ul class="panel">
+        <div id="docs-nav">
           <% for section in @sections:%>
-            <li >
-              <h3><%= section.title %></h3>
-              <ul class="list-group">
-                <% for page in @getCollection("html").findAllLive({relativeOutDirPath: section.folder }, [ order: 1, title: 1 ] ).toJSON():%>
-                  <li class="<%= if page.id is @document.id then 'active' %> list-group-item">
-                    <a href="<%= page.url%>"> <%= page.title || 'no title' %></a>
-                  </li>
-                <% end %>
-              </ul>
-            </li>
+            <div class="panel">
+
+              <a data-toggle="collapse" data-parent="#docs-nav" href="#<%= section.icon %>">
+                <h4><%= section.title %><span class="caret"></span></h4>
+              </a>
+              <div id="<%= section.icon %>"class="collapse">
+                <ul class="list-group">
+                  <% for page in @getCollection("html").findAllLive({relativeOutDirPath: section.folder }, [ order: 1, title: 1 ] ).toJSON():%>
+                    <li class="<%= if page.id is @document.id then 'active' %> list-group-item">
+                      <a href="<%= page.url%>"> <%= page.title || 'no title' %></a>
+                    </li>
+                  <% end %>
+                </ul>
+              </div>
+            </div>
           <% end %>
-        </ul>
+        </div>
 
       </div>
     </div>
 
     <div class="col-xs-12 col-sm-9">
-      <h1><%= @document.title %></h1>
-      <%- @content %>
+      <h1 class="section-title"><%= @document.title %></h1>
+      <div class="content">
+        <%- @content %>
+      </div>
     </div>
 
   </div>
 
 </div>
+<footer>
+  <div class="container">
+    <hr>
+    <small>© 2010-2014 Cumulocity GmbH. All rights reserved.<small>
+  </div>
+</footer>
 
 
 <script type="text/javascript">

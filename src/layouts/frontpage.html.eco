@@ -26,7 +26,7 @@
 <body>
   <%- @partial("header") %>
   <div class="container">
-      <h1><%= @document.title %></h1>
+      <h1 class="section-title"><%= @document.title %></h1>
       <%- @content %>
   </div>
 

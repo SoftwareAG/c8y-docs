@@ -23,6 +23,12 @@
     float: left;
     margin-right: 0;
     border-color: transparent;
+    .icon-bar{
+      background-color: white;
+    }
+    &:hover, &:focus{
+      background-color: lighten(@darker, 10%);
+    }
   }
 }
 
@@ -73,6 +79,28 @@
 }
 
 .left-nav{
+  @media(min-width:@screen-lg-min){
+    width: 263px;
+  }
+  @media(min-width:@screen-md-min){
+    width: 213px;
+  }
+  @media(min-width:@screen-sm-min){
+    width: 158px;
+  }
+  @media(max-width:@screen-xs-max){
+    width: 195px;
+    padding-left: 15px;
+    h4{
+      font-size: 14px;
+    }
+  }
+  &.affix{
+    position: fixed!important;
+  }
+  &.affix-bottom{
+
+  }
   a{
     color:@darker;
     &:hover{
@@ -81,41 +109,63 @@
     }
   }
 
-  h3{
+  h4{
     margin-top: 30px;
     text-transform: uppercase;
-
-    a{
-      color:@gray;
-    }
+  }
+  ul{
+    list-style: none;
+    padding: 0;
   }
   .panel{
     padding: 0;
     list-style: none;
-    border-radius:2px;
-    h3, p, .list-group-item{
-      padding-left: 30px;
-      padding-right: 30px;
+    border-radius:0px;
+    background-color: transparent;
+    border:0;
+    .box-shadow(none);
+    .caret{
+      float: right;
+      margin-top: 10px;
     }
-    .list-group{
-      border-top: 1px solid #dddddd;
-      margin-top: 18px;
+  }
+  .list-group{
+    margin-bottom: 20px;
+    .list-group-item{
+      border-radius: 0;
+      background-color: transparent;
+      border-left-color: transparent;
+      border-right-color: transparent;
+      padding: 10px 0;
+      &.active, &.active:hover, &.active:focus{
+        a{
+          color: @brand-primary;
+        }
+      }
     }
   }
 }
 
-a.panel{
-  display: block;
-  padding:20px;
-  color: @gray;
-}
+
 
 .section{
   text-align: center;
-  min-height: 200px;
+  display: block;
+  min-height: 245px;
   text-transform: uppercase;
+  color:@darker;
+  padding: 40px;
   .box-shadow(0 1px 1px rgba(0,0,0,.1));
   .glyphicon{
     font-size: 66px;
+    padding-bottom: 20px;
+    border-bottom: 1px solid #f8f8f8;
   }
+  &:hover{
+    text-decoration: none;
+    .glyphicon{
+      color: @brand-primary;
+    }
+  }
+
 }

@@ -79,21 +79,21 @@
 }
 
 .left-nav{
-  @media(min-width:@screen-lg-min){
-    width: 263px;
-  }
-  @media(min-width:@screen-md-min){
-    width: 213px;
-  }
-  @media(min-width:@screen-sm-min){
-    width: 158px;
-  }
   @media(max-width:@screen-xs-max){
     width: 195px;
     padding-left: 15px;
     h4{
       font-size: 14px;
     }
+  }
+  @media(min-width:@screen-sm-min){
+    width: 158px;
+  }
+  @media(min-width:@screen-md-min){
+    width: 213px;
+  }
+  @media(min-width:@screen-lg-min){
+    width: 263px;
   }
   &.affix{
     position: fixed!important;

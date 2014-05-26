@@ -7,10 +7,26 @@ body{
   background-color: white;
   padding: 40px;
   .box-shadow(0 1px 1px rgba(0,0,0,0.1));
+  img{
+    .img-responsive();
+  }
 }
 
 .section-title{
   text-transform: uppercase;
+  font-weight: 100;
+  position: relative;
+  padding-left: 40px;
+  margin-bottom: 20px;
+  color: @gray;
+  &:before{
+    position: absolute;
+    left: 0;
+    width: 32px;
+    height:32px;
+    content:'';
+    background-color: @brand-primary;
+  }
 }
 
 hr{

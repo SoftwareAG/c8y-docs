@@ -50,6 +50,7 @@
                 </ul>
               </div>
             </div>
+            <% break %>
           <% end %>
         </div>
 

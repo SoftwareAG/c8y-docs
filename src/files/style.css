@@ -6210,6 +6210,11 @@ button.close {
   float: right;
   margin-top: 10px;
 }
+.left-nav .panel .collapsed .caret {
+  border-top: 4px solid transparent;
+  border-bottom: 4px solid transparent;
+  border-left: 4px solid;
+}
 .left-nav .list-group {
   margin-bottom: 20px;
 }

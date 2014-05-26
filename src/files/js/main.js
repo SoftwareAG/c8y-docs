@@ -14,6 +14,8 @@ $(document).ready(function () {
     }
   });
 
-  $('.left-nav .active').closest('.collapse').addClass('in');
+  $('.left-nav .active').closest('.panel').find('a').trigger('click');
+
+
 
 });

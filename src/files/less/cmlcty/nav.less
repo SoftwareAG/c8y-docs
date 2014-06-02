@@ -117,6 +117,8 @@ body{
   h4{
     margin-top: 30px;
     text-transform: uppercase;
+    font-size: 16px;
+    position: relative;
   }
   ul{
     list-style: none;
@@ -130,8 +132,10 @@ body{
     border:0;
     .box-shadow(none);
     .caret{
-      float: right;
-      margin-top: 10px;
+      position: absolute;
+      top:50%;
+      right: -5px;
+      margin-top: -4px;
 
     }
     .collapsed{
@@ -143,7 +147,7 @@ body{
     }
   }
   .list-group{
-    margin-bottom: 20px;
+    //margin-bottom: 20px;
     .list-group-item{
       border-radius: 0;
       background-color: transparent;

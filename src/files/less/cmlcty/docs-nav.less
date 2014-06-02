@@ -1,3 +1,10 @@
+body{
+  background-color: transparent;
+  .container{
+    width: 100%;
+    padding: 0;
+  }
+}
 
 
 #masthead{
@@ -96,7 +103,9 @@
 }
 
 .left-nav{
-  @media(max-width:@screen-xs-max){
+  background-color: white;
+  padding: 10px 15px;
+ /* @media(max-width:@screen-xs-max){
     width: 195px;
     padding-left: 15px;
     h4{
@@ -111,7 +120,7 @@
   }
   @media(min-width:@screen-lg-min){
     width: 263px;
-  }
+  }*/
   &.affix{
     position: fixed!important;
   }
@@ -119,16 +128,20 @@
 
   }
   a{
-    color:@darker;
+    color:@gray;
+    text-shadow: none;
     &:hover{
-      color:@blue;
+      color:@brand-primary;
       text-decoration: none;
     }
   }
 
   h4{
     margin-top: 30px;
+    position: relative;
     text-transform: uppercase;
+    font-size: 13px;
+    span{ margin-right: 0;}
   }
   ul{
     list-style: none;
@@ -140,10 +153,16 @@
     border-radius:0px;
     background-color: transparent;
     border:0;
+    &:first-child{
+      h4{ margin-top: 10px;}
+    }
+
     .box-shadow(none);
     .caret{
-      float: right;
-      margin-top: 10px;
+      position: absolute;
+      top:50%;
+      right: -5px;
+      margin-top: -4px;
 
     }
     .collapsed{
@@ -155,7 +174,7 @@
     }
   }
   .list-group{
-    margin-bottom: 20px;
+    //margin-bottom: 20px;
     .list-group-item{
       border-radius: 0;
       background-color: transparent;
@@ -171,7 +190,12 @@
   }
 }
 
-
+.section-title{
+  margin: 0;
+  background-color: white;
+  padding: 20px 40px 0 80px;
+  &:before{ left: 40px; background-color: @darker;}
+}
 
 .section{
   text-align: center;
@@ -197,4 +221,8 @@
     }
   }
 
+}
+
+.content{
+  padding-top: 10px;
 }

@@ -49,7 +49,7 @@
             <div class="panel">
 
               <a data-toggle="collapse" data-parent="#docs-nav" href="#<%= section.icon %>">
-                <h4><%= section.title %><span class="caret"></span></h4>
+                <h4><span class="glyphicon <%= section.icon %>"></span> <%= section.title %><span class="caret"></span></h4>
               </a>
               <div id="<%= section.icon %>"class="collapse">
                 <ul class="list-group">

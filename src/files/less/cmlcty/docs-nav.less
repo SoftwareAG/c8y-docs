@@ -1,9 +1,21 @@
-body{
-  background-color: #f8f8f8;
-  padding-top: 60px;
+
+
+#masthead{
+  display: none;
 }
 
 
+.docs-nav-toggle{
+  display: none;
+  float: none;
+  margin-left: -10px;
+  .icon-bar{
+    background-color: @darker;
+  }
+  @media(max-width:@grid-float-breakpoint){
+    display: block;
+  }
+}
 .navbar-brand{
   padding: 15px;
   max-width: 180px;

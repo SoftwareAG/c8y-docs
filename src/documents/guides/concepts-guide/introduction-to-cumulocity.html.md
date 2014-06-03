@@ -17,8 +17,7 @@ All this is provided through a cloud-based subscription service, which makes cre
 
 Cumulocity works with any network architecture, but is specifically designed to work out of the box with mobile networks. In the following sections, we will give a short overview of the different functional areas with references to more detailed descriptions.
 
-	Add reduced version of graphics from partner page here
-
+![Solution building](/images/guides/solution.gif)
 
 ## Hardware kits and software libraries
 
@@ -49,7 +48,7 @@ Cumulocity provides extensive device management for fully certified devices. Thi
 
 The level of depth in device management may depend on device features. (E.g., if a device does not support remote firmware upgrade, it will also not be available through Cumulocity.) For interfacing devices not yet certified with Cumulocity, the [Device Management Library](device-management.html) and the [REST Developer's Guide](device-integration.html) is publicly available.
 
-	Add screenshot of device management
+![Device Management](/images/guides/devicemanagement.png)
 
 ## Visualization and remote control
 
@@ -61,7 +60,7 @@ It also adapts itself to the web browser that you use. For example, if you use a
 
 Through the [Sensor Library](sensor-library.html), common sensor and control types are correctly rendered regardless of the device that produces the sensor data.
 
-	Screenshot of dashboard?
+![Dashboard](/images/guides/dashboard.png)
 
 ## Customization
 
@@ -72,7 +71,7 @@ The functionality described above provides already a wide range of device manage
 * Set up a graphical dashboard with your most important KPIs.
 * Subscribe to plugins that contribute new functionality to the Cumulocity application.
 
-	Screenshot of alarm rules, business rules, smart apps
+![Rules](/images/guides/rules.png)
 
 ## APIs
 

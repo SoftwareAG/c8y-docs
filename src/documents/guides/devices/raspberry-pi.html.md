@@ -1,5 +1,7 @@
 ---
+order: 100
 title: Raspberry Pi
+layout: default
 ---
 
 ## Overview

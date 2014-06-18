@@ -5,7 +5,7 @@ layout: default
 ---
 # Overview
 
-This section explains the concepts relevant for interfacing M2M devices and other M2M-related data sources with Cumulocity.
+This section explains the concepts relevant for interfacing IoT devices and other IoT-related data sources with Cumulocity.
 
 To interface such systems with Cumulocity, a driver software called *agent* is required. We first describe the main responsibilities of an agent and discuss the architecture options for agents. Then we will walk step by step through the life cycle of an agent. Finally, we discuss the usage of agents for acquiring data from other data sources such as a tenant's IT systems.
 
@@ -17,7 +17,7 @@ Related topics can be found in the following sections:
 
 # What is an agent?
 
-Machine-to-machine devices come with a wide variety of protocols, parameters and network connectivity options. Protocols to devices range from low-level serial links to full-blown IT protocols such as web services. Today's M2M standards rarely define exactly how to access particular readings of particular sensors or manipulate particular controls. Devices may be connected through mobile networks and gateways.
+Machine-to-machine devices come with a wide variety of protocols, parameters and network connectivity options. Protocols to devices range from low-level serial links to full-blown IT protocols such as web services. Today's IoT standards rarely define exactly how to access particular readings of particular sensors or manipulate particular controls. Devices may be connected through mobile networks and gateways.
 
 To shield machine-to-machine applications from this diversity, Cumulocity uses so-called *agents*. An agent is a function that fulfills three responsibilities for a given vendor and type of devices:
 
@@ -35,7 +35,7 @@ Cumulocity uses a simple and secure reference protocol based on REST (i.e., HTTP
 
 **Secure remote communication** Devices may provide a protocol that is unsuitable for secure remote communication, in particular in public cloud environments. The protocol may only support local networking, it may not pass through firewalls and proxies and it may carry sensitive data over clear text. To overcome such situations, an agent can be co-located to the device and provide a secure, internet-enabled link to the remote device.
 
-To summarize to benefits of the agent concept: Agents enable M2M applications to securely interface with any type of remote M2M device and without imposing any mandatory system requirement on the device itself. They drastically simplify developing M2M applications by shielding the application from the diversities of M2M devices and protocols.
+To summarize to benefits of the agent concept: Agents enable IoT applications to securely interface with any type of remote IoT device and without imposing any mandatory system requirement on the device itself. They drastically simplify developing IoT applications by shielding the application from the diversities of IoT devices and protocols.
 
 # What agent architectures are supported?
 
@@ -85,7 +85,7 @@ Note that a device agent is assuming data ownership on the device topology and a
 
 ## Receiving data and commands from applications
 
-Now that the topology is established in the inventory, the devices are visible and operable from M2M applications. As described in the device control section of ["Cumulocity's domain model"](/guides/concepts-guide/domain-model), M2M applications can send operations to devices, which are queued in the core. The agent has to query the core for operations targeted to its devices.
+Now that the topology is established in the inventory, the devices are visible and operable from IoT applications. As described in the device control section of ["Cumulocity's domain model"](/guides/concepts-guide/domain-model), IoT applications can send operations to devices, which are queued in the core. The agent has to query the core for operations targeted to its devices.
 
 If an operation was sent to an agent's device, the agent will translate the operation into the device-specific representation. For example, a Multispeak agent would translate an operation to set the state of a switch to a SOAP "initiateConnectDisconnect" request for an electricity meter. The translated operation is then sent to the device.
 
@@ -95,8 +95,8 @@ Finally, the agent acknowledges the execution of the operation. It may also need
 
 Besides remote control of devices, the other main responsibility of agents is to transmit data from sensors. This data can be of various types, as outlined in the domain model:
 
--   Measurements are produced by reading sensor values. In some cases, this data is read in static intervals and sent to the platform (e.g., temperature sensors or electrical meters). In some cases, the data is read on demand or in infrequent intervals (e.g., health devices such as weight scales). Whatever protocol the device supports, the agent is responsible for converting it into a "push" protocol by uploading data to Cumulocity. The Java agent library simplifies regular polling of sensors through a scheduler (see the [developer's guide](/guides/developers-guide)).
--   Events that need to be processed in near-real-time by M2M applications, e.g., notifications from a motion detector or transactions from a vending machine.
+-   Measurements are produced by reading sensor values. In some cases, this data is read in static intervals and sent to the platform (e.g., temperature sensors or electrical meters). In some cases, the data is read on demand or in infrequent intervals (e.g., health devices such as weight scales). Whatever protocol the device supports, the agent is responsible for converting it into a "push" protocol by uploading data to Cumulocity. The Java agent library simplifies regular polling of sensors through a scheduler (see the [developer's guide](/guides/developers-guide/installing-the-sdk)).
+-   Events that need to be processed in near-real-time by IoT applications, e.g., notifications from a motion detector or transactions from a vending machine.
 -   Alarms are events that require human intervention, e.g., tamper events sent by an electrical meter.
 -   Audit logs are events that are recorded for risk management purposes, e.g., logon failures.
 
@@ -106,14 +106,14 @@ Agent configuration may need to be changed during run-time. For example, a new g
 
 # Integrating other data sources
 
-So far, we have mainly discussed data exchanged with M2M devices. However, another frequent use case for agents is in system integration. Enterprises offering M2M-enabled services typically run other IT systems that supply important information on M2M assets and devices. Examples of such systems are:
+So far, we have mainly discussed data exchanged with IoT devices. However, another frequent use case for agents is in system integration. Enterprises offering IoT-enabled services typically run other IT systems that supply important information on IoT assets and devices. Examples of such systems are:
 
 -   Asset management systems can provide additional information on the available devices and where they are installed.
 -   Customer relationship management systems can provide information on the customer that has the device installed.
 -   Workforce management systems can provide information on the maintenance status of devices.
 
-Technically, developing and running an agent for system integration is no different from an agent for device integration. However, the subset of data owned by the systems is different. Agents for device integration own the device hierarchy and device configuration information. Agents for system integration provide additional information for devices and may own parts of the asset hierarchy. Together, they contribute to the device information stored in the inventory to provide a centralized view on everything related to the assets and devices that are relevant for the M2M service.
+Technically, developing and running an agent for system integration is no different from an agent for device integration. However, the subset of data owned by the systems is different. Agents for device integration own the device hierarchy and device configuration information. Agents for system integration provide additional information for devices and may own parts of the asset hierarchy. Together, they contribute to the device information stored in the inventory to provide a centralized view on everything related to the assets and devices that are relevant for the IoT service.
 
 # Summary
 
-To interface M2M data sources such as devices and external IT systems, agents are provided. Agents are software components that enable a centralized perspective on all aspects of the M2M network and central operation of the M2M network.
+To interface IoT data sources such as devices and external IT systems, agents are provided. Agents are software components that enable a centralized perspective on all aspects of the IoT network and central operation of the IoT network.

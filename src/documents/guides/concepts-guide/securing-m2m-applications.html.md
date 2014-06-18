@@ -15,7 +15,7 @@ The figure below illustrates the communication channels from the sensor network 
 
 ![Communication security](images/c8yimages/commsecurity.png)
 
-Inside the sensor networks and from the sensor networks to agents, device- and gateway-specific protocols are used. Hence, securing these is a device-specific matter. Some alternatives are described in the section on agent architectures in ["Interfacing with M2M data sources"](guides/concepts-guide/interfacing-with-m2m-data-sources). Agents run as client towards the Cumulocity core using [HTTPS](http://en.wikipedia.org/wiki/HTTP_Secure) to send and receive data. Similarly, M2M applications use HTTPS towards Cumulocity. If an M2M application exposes own interfaces towards web browsers, it is recommended that these also support HTTPS. This way, the whole path from agents to the end user is secured.
+Inside the sensor networks and from the sensor networks to agents, device- and gateway-specific protocols are used. Hence, securing these is a device-specific matter. Some alternatives are described in the section on agent architectures in ["Interfacing devices"](guides/concepts-guide/interfacing-devices). Agents run as client towards the Cumulocity core using [HTTPS](http://en.wikipedia.org/wiki/HTTP_Secure) to send and receive data. Similarly, M2M applications use HTTPS towards Cumulocity. If an M2M application exposes own interfaces towards web browsers, it is recommended that these also support HTTPS. This way, the whole path from agents to the end user is secured.
 
 # Managing users
 

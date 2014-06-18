@@ -34,7 +34,7 @@ What does this code do?
 -   Line 2 retrieves a handle to the Cumulocity inventory.
 -   Line 3 creates a new managed object.
 -   Line 4 sets the display name of the new managed object.
--   Line 5 creates the managed object in the inventory. This will return the managed object back with an fresh, generated ID. (See "Object identity" section in ["Modeling and managing M2M assets"](guides/concepts-guide/modeling-and-managing-m2m-assets)).
+-   Line 5 creates the managed object in the inventory. This will return the managed object back with an fresh, generated ID. (See "Object identity" section in ["Modeling and managing M2M assets"](guides/concepts-guide/domain-model)).
 -   Line 6 prints the URL to the new managed object that has just been stored in the inventory.
 
 ## Run the agent

@@ -1,3 +1,5 @@
+redirects = require('./redirects')
+
 docpadConfig = {
 	watchOptions: preferredMethods: ['watchFile','watch']
 	templateData: {
@@ -11,6 +13,10 @@ docpadConfig = {
 			{ title: 'Reference Guide', folder: 'guides/reference-guide' ,icon : 'glyphicon-book', description: 'The reference guide contains the detailed technical specifications of the programming interfaces of Cumulocity as reference for software developers.'}
 		]
   }
+	plugins:
+		redirector:
+			redirects:
+				redirects
 }
 
 module.exports = docpadConfig;

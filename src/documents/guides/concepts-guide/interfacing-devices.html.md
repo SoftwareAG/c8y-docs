@@ -7,15 +7,13 @@ layout: default
 
 This section explains the concepts relevant for interfacing M2M devices and other M2M-related data sources with Cumulocity.
 
-To interface such systems with Cumulocity, a driver software called *agent* is required. We first describe the main responsibilities of an agent and discuss the architecture options for agents. Then we will walk step by step through the life cycle of an agent. Finally, we discuss the usage of agents for acquiring data from other data sources such as tenant IT systems.
+To interface such systems with Cumulocity, a driver software called *agent* is required. We first describe the main responsibilities of an agent and discuss the architecture options for agents. Then we will walk step by step through the life cycle of an agent. Finally, we discuss the usage of agents for acquiring data from other data sources such as a tenant's IT systems.
 
 Related topics can be found in the following sections:
 
--   [Modeling and managing M2M assets](guides/concepts-guide/modeling-and-managing-m2m-assets), for understanding the data structures exchanged between agents and the Cumulocity core.
--   [Developer's guide](guides/developers-guide), for understanding how to develop agent software, in particular the [end-to-end example](guides/developers-guide/an-end-to-end-example).
--   [Reference guide](guides/reference-guide), for a detailed specification of the interfaces between agents and the Cumulocity core.
-
-Note that agent management functionality is not included in the current release of Cumulocity.
+-   [Cumulocity's domain model](/guides/concepts-guide/domain-model), for understanding the data structures exchanged between agents and the Cumulocity core.
+-   [Device integration](/guides/rest/device-integration), for understanding how to develop agent software.
+-   [Reference guide](/guides/reference-guide/rest-implementation), for a detailed specification of the interfaces between agents and the Cumulocity core.
 
 # What is an agent?
 
@@ -27,7 +25,7 @@ To shield machine-to-machine applications from this diversity, Cumulocity uses s
 -   It transform whatever domain model the device has to a reference domain model.
 -   It enables secure remote communication in various network architectures.
 
-![Agent architecture](images/c8yimages/agents.png)
+![Agent architecture](/images/guides/agents.png)
 
 **Protocol translation** Configuration parameters, readings, events and other information are either send to an agent ("push") or queried by the agent ("poll") through a device-specific protocol on one side. The agent will convert these messages into the protocol that Cumulocity understands on the other side. It will also receive device control commands from Cumulocity ("switch off that relay") and translate these to whatever protocol the device understands.
 
@@ -41,31 +39,34 @@ To summarize to benefits of the agent concept: Agents enable M2M applications to
 
 # What agent architectures are supported?
 
-Agents can be deployed in a variety of ways, as illustrated in the picture below. We distinguish two main variants: *Managed agents* and *non-managed agents*.
+Agents can be deployed in a variety of ways, as illustrated in the picture below. We distinguish two main variants: *Server-side agents* and *device-side agents*.
 
-![Agent architectures](images/c8yimages/agentarchitectures.png)
+![Agent architectures](/images/guides/agentarchitectures.png)
 
-Managed agents are based on the Cumulocity run-time environment and are deployed and started by Cumulocity on the cloud. Such agents connect from the cloud to the devices in the sensor network using the device-specific protocol. This variant can be chosen whenever there is a secure and internet-enabled communication path to the devices ? either directly supported by the device protocols or through a VPN infrastructure.
+Server-side agents are run in the cloud, either hosted by Cumulocity or managed by yourself. Devices connect to server-side agents using their device-specific protocol. This variant is mainly chosen when one or more of the following are true:
 
-Non-managed agents run on hosts in the local sensor network. Such hosts could be mobile phones, gateways or other devices where the software is pre-installed and pre-configured. The agent software is based on whatever run-time environment the hosts support, hence it cannot be managed from the Cumulocity core (but it might be managed through other technologies like over-the-air programming).
+* The device is "closed", i.e., it is not programmable and supports only a particular, pre-defined protocol to communicate with the outside world.
+* The protocol on the device is secure and internet-enabled.
+* There is a VPN infrastructure between the device and Cumulocity.
 
-Such a run-time environment may be extremely limited, hence Cumulocity relies only on very lightweight communication technologies (REST/JSON, see above). This allows agents to be written with a minimum footprint on devices that may support as little as just being able to open a TCP connection.
+Device-side agents run on a device in the sensor network. Such devices can be, for example, routers, mobile phones or modems. The agents are implemented in whatever run-time environment the device supports, ranging from extremely battery- and memory-constrained embedded microcontrollers to minicomputers running Embedded Linux. The agents will directly query connected sensors and manipulate connected controls, usually resulting in a simpler architecture than server-side agents. 
 
-Non-managed agents are chosen when there is no remote communication mechanism from a sensor (e.g., bluetooth or USB sensors connected to a phone), or that communication mechanism is not secured, or it cannot cross network boundaries to the cloud (and VPN installation is not an option). In the illustration, the agents with the grey boxes are non-managed.
-
-An agent is associated with one tenant in Cumulocity ??? the one that owns the devices that the agent manages.
 
 # The agent lifecycle
 
 ## Starting the agent
 
-As described above, managed agents will be started by Cumulocity, while non-managed agents will typically be started at device boot time. An agent is pre-configured with the [platform endpoint URL](guides/reference-guide/rest-implementation) and credentials to authenticate itself against the platform. After starting, the agent will synchronize the inventory with the sensor sub-network that the agent is responsible for.
+Server-side agents run continuously in the cloud, accepting connections from the device types that they support. Device-side agents run on the device and are started along with other device software when the device is powered on.
+
+Both types of agents are pre-configured with a fixed platform endpoint URL. Using this platform endpoint URL, credentials for each connected device are acquired. These credentials permit the device to connect to a tenant in Cumulocity and to send data to the tenant as well as to accept operations from the tenant. 
+
+After starting, the agent will synchronize the inventory with the sensor sub-network that the agent is responsible for.
 
 ## Synchronizing inventory data
 
-To understand inventory synchronization, let's revisit the communication hierarchy described in ["Modeling and managing M2M assets"](guides/concepts-guide/modeling-and-managing-m2m-assets). In the inventory, agents are located at the roots of the communication hierarchy. Below each agent, the topology of the sub-network that the agent manages is reflected. This topology exists in the real network as well as in snapshot form in the inventory. It may change in the real network, and these changes need to be reflected in the inventory.
+To understand inventory synchronization, let's revisit the communication hierarchy described in ["Cumulocity's domain model"](/guides/concepts-guide/domain-model). In the inventory, agents are located at the roots of the communication hierarchy. Below each agent, the topology of the sub-network that the agent manages is reflected. This topology exists in the real network as well as in snapshot form in the inventory. It may change in the real network, and these changes need to be reflected in the inventory.
 
-![Communication hierarchy](images/c8yimages/commshierarchy.png)
+![Communication hierarchy](/images/guides/commshierarchy.png)
 
 Inventory synchronization is a two step procedure: The first step is to query the agent entry from the inventory and to create it if it is not present. The second step is then to discover the sub-network and synchronize it with the inventory based on the queried agent entry.
 
@@ -84,7 +85,7 @@ Note that a device agent is assuming data ownership on the device topology and a
 
 ## Receiving data and commands from applications
 
-Now that the topology is established in the inventory, the devices are visible and operable from M2M applications. As described in the device control section of ["Modeling and managing M2M assets"](guides/concepts-guide/modeling-and-managing-m2m-assets), M2M applications can send operations to devices, which are queued in the core. The agent has to query the core for operations targeted to its devices.
+Now that the topology is established in the inventory, the devices are visible and operable from M2M applications. As described in the device control section of ["Cumulocity's domain model"](/guides/concepts-guide/domain-model), M2M applications can send operations to devices, which are queued in the core. The agent has to query the core for operations targeted to its devices.
 
 If an operation was sent to an agent's device, the agent will translate the operation into the device-specific representation. For example, a Multispeak agent would translate an operation to set the state of a switch to a SOAP "initiateConnectDisconnect" request for an electricity meter. The translated operation is then sent to the device.
 
@@ -94,8 +95,7 @@ Finally, the agent acknowledges the execution of the operation. It may also need
 
 Besides remote control of devices, the other main responsibility of agents is to transmit data from sensors. This data can be of various types, as outlined in the domain model:
 
--   Measurements are produced by reading sensor values. In some cases, this data is read in static intervals and sent to the platform (e.g., temperature sensors or electrical meters). In some cases, the data is read on demand or in infrequent intervals (e.g., health devices such as weight scales). Whatever protocol the device supports, the agent is responsible for converting it into a "push" protocol by uploading data to Cumulocity. The Java agent library simplifies regular polling of sensors through a scheduler (see the [developer's guide](guides/developers-guide)).[
-    ](https://startups.jira.com/wiki/pages/createpage.action?spaceKey=MTM&title=Developer%27s+guide&linkCreation=true&fromPageId=15073841)
+-   Measurements are produced by reading sensor values. In some cases, this data is read in static intervals and sent to the platform (e.g., temperature sensors or electrical meters). In some cases, the data is read on demand or in infrequent intervals (e.g., health devices such as weight scales). Whatever protocol the device supports, the agent is responsible for converting it into a "push" protocol by uploading data to Cumulocity. The Java agent library simplifies regular polling of sensors through a scheduler (see the [developer's guide](/guides/developers-guide)).
 -   Events that need to be processed in near-real-time by M2M applications, e.g., notifications from a motion detector or transactions from a vending machine.
 -   Alarms are events that require human intervention, e.g., tamper events sent by an electrical meter.
 -   Audit logs are events that are recorded for risk management purposes, e.g., logon failures.

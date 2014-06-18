@@ -35,7 +35,7 @@ When run, the code looks like the screenshot below:
 
 Whenever server-side application logic is required, Cumulocity provides a Java client library and a runtime in the Eclipse SDK. This allows developers to use normal enterprise Java means (such as servlets) to develop the logic. Examples are:
 
--   You need to interfaces with devices or other IT systems (see [Interfacing with M2M data sources](guides/concepts-guide/interfacing-with-m2m-data-sources)).
+-   You need to interfaces with devices or other IT systems (see [Interfacing with M2M data sources](guides/concepts-guide/interfacing-devices)).
 -   You need to provide application logic without web user interface, such as sending regular email reports to tenant users.
 -   You need to back the user interface with additional functionality, such as uploading files with additional asset information from the user interface, or exporting data to spreadsheets.??
 -   You need to expose a REST interface to other systems.

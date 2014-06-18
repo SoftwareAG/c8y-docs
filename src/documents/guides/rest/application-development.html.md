@@ -221,7 +221,7 @@ A state of ?PENDING? means here that the device has not yet picked up the operat
 
 # Listen for events
 
-Besides querying the Cumulocity data store, you can also process and receive events in real-time as described in [Real-time processing in Cumulocity](/guides/concepts-guide/real-time-processing-in-cumulocity.html). For example, assume that you would like to display real-time location updates in a map. Use the administration user interface (or the [REST API](/guides/reference-guide/real-time-statements.html)) to create a new rule module "myRule":
+Besides querying the Cumulocity data store, you can also process and receive events in real-time as described in [Real-time processing in Cumulocity](/guides/concepts-guide/real-time-processing). For example, assume that you would like to display real-time location updates in a map. Use the administration user interface (or the [REST API](/guides/reference-guide/real-time-statements.html)) to create a new rule module "myRule":
 
     select * 
     from EventCreated e

@@ -10,7 +10,7 @@ Cumulocity gives you very fast visibility and control over your remote assets, b
 
 * Certified hardware kits and software libraries that you can use to bring your remote assets into the cloud.
 * Device management, data visualization and remote control functionality through the web.
-* Rapid customization of the above through [Cumulocity Event Language](/guides/concepts-guide/real-time-processing-in-cumulocity) rules and [Cumulocity SmartApps](/guides/concepts-guide/developing-m2m-applications).
+* Rapid customization of the above through [Cumulocity Event Language](/guides/concepts-guide/real-time-processing) rules and [Cumulocity SmartApps](/guides/concepts-guide/developing-m2m-applications).
 * APIs for extending the existing functionality or interfacing Cumulocity with your other IT services such as ERP or CRM systems. Cumulocity can also host your HTML5 applications.
 
 All this is provided through a cloud-based subscription service, which makes creating Internet of Things (IoT) solutions with Cumulocity fundamentally different from bespoke development and RAD (rapid application development). You can start immediately with a large amount of existing functionality, and you can start for free. You do not need to worry about IT infrastructure (such as hosting, networking, security, storage and backup) and IT management (for example, making sure that all software is available for your users). 
@@ -67,7 +67,7 @@ Through the [Sensor Library](/guides/reference-guide/sensor-library), common sen
 The functionality described above provides already a wide range of device management, visualization and control options. But what about custom visualization, new control widgets and custom business logic? Try Cumulocity's extensive customization options:
 
 * Write alarm rules to reprioritize or suppress alarms and to define your SLA parameters.
-* Use [Cumulocity Event Language](/guides/concepts-guide/real-time-processing-in-cumulocity) to implement real-time business rules. For example, get an email when critical events happen, or trigger automated actions on devices in that case.
+* Use [Cumulocity Event Language](/guides/concepts-guide/real-time-processing) to implement real-time business rules. For example, get an email when critical events happen, or trigger automated actions on devices in that case.
 * Set up a graphical dashboard with your most important KPIs.
 * Subscribe to plugins that contribute new functionality to the Cumulocity application.
 
@@ -89,5 +89,5 @@ More conceptual information can be found in the following sections of the concep
 
 * The general technical concepts behind Cumulocity are described in [Cumulocity's domain model](/guides/concepts-guide/domain-model).
 * Concepts related to interfacing devices and other IT systems with Cumulocity are described in [Interfacing devices](/guides/concepts-guide/interfacing-devices).
-* Customization concepts of Cumulocity are described in [Real-time processing in Cumulocity](/guides/concepts-guide/real-time-processing-in-cumulocity) and [Hosting applications](/guides/concepts-guide/hosting).
+* Customization concepts of Cumulocity are described in [Real-time processing in Cumulocity](/guides/concepts-guide/real-time-processing) and [Hosting applications](/guides/concepts-guide/hosting).
 * Security concepts are described in [Securing M2M applications](/guides/concepts-guide/securing-m2m-applications).

@@ -50,7 +50,7 @@ To operate the display from Cumulocity, click the "Control" tab of the display b
 
 ![Display usage](/images/guides/devices/tinkerforgedisplay.png)
 
-The display has four buttons at the bottom. Operating these buttons will send an event to Cumulocity which is shown on the "Events" tab. You can process this event, for example, using a [CEL statement](/guides/concepts-guide/real-time-processing-in-cumulocity.html). The event is of type "c8y_ButtonPressedEvent". The number of the button is part of the text of the event.
+The display has four buttons at the bottom. Operating these buttons will send an event to Cumulocity which is shown on the "Events" tab. You can process this event, for example, using a [CEL statement](/guides/concepts-guide/real-time-processing). The event is of type "c8y_ButtonPressedEvent". The number of the button is part of the text of the event.
 
 ![Events](/images/guides/devices/tinkerforgeevents.png)
 

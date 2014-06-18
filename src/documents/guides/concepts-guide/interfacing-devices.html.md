@@ -12,7 +12,7 @@ To interface such systems with Cumulocity, a driver software called *agent* is r
 Related topics can be found in the following sections:
 
 -   [Cumulocity's domain model](/guides/concepts-guide/domain-model), for understanding the data structures exchanged between agents and the Cumulocity core.
--   [Device integration](/guides/rest/device-integration), for understanding how to develop agent software.
+-   [Device integration](/guides/rest/device-integration), for understanding in detail how to develop agent software.
 -   [Reference guide](/guides/reference-guide/rest-implementation), for a detailed specification of the interfaces between agents and the Cumulocity core.
 
 # What is an agent?
@@ -113,6 +113,14 @@ So far, we have mainly discussed data exchanged with IoT devices. However, anoth
 -   Workforce management systems can provide information on the maintenance status of devices.
 
 Technically, developing and running an agent for system integration is no different from an agent for device integration. However, the subset of data owned by the systems is different. Agents for device integration own the device hierarchy and device configuration information. Agents for system integration provide additional information for devices and may own parts of the asset hierarchy. Together, they contribute to the device information stored in the inventory to provide a centralized view on everything related to the assets and devices that are relevant for the IoT service.
+
+# How does Cumulocity support developing agents?
+
+Cumulocity supports agent development on three different levels:
+
+* There are a number of full-featured open source agents and drivers in Cumulocity's [bitbucket.org](https://bitbucket.org/m2m/cumulocity-examples) and [mbed.org](http://mbed.org/users/vwochnik/code/) repositories. More information can be found in the "Devices" section of this documentation.
+* Client libraries for major runtime environments such as C/C++, JavaME/SE and Lua, again as open source in [bitbucket.org](https://bitbucket.org/m2m).
+* Technology-neutral [REST APIs](/guides/rest/device-integration) for other runtime environments.
 
 # Summary
 

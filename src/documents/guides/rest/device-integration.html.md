@@ -1,6 +1,6 @@
 # Overview
 
-The basic life cycle for integrating devices into Cumulocity is discussed in [Interfacing with M2M data sources](/guides/concepts-guide/interfacing-with-m2m-data-sources). In this section, we will show how this life cycle, depicted below, is implemented on REST level.
+The basic life cycle for integrating devices into Cumulocity is discussed in [Interfacing devices](/guides/concepts-guide/interfacing-devices). In this section, we will show how this life cycle, depicted below, is implemented on REST level.
 
 ![Steps for device integration](/images/c8yimages/flow.png)
 
@@ -166,7 +166,7 @@ Continueing the above example, we would associate the newly created device ?2480
 
 ## Step 4: Update the device in the inventory
 
-If Step 1 above returned that the device was previously registered already, we need to make sure that the inventory representation of the device is up to date with respect to the current state of the actual device. For this purpose, a PUT request is sent to the URL of the device in the inventory. Note that only fragments that can actually change need to be transmitted. (See [Modeling and managing M2M assets](/guides/concepts-guide/modeling-and-managing-m2m-assets) for more information on fragments.)
+If Step 1 above returned that the device was previously registered already, we need to make sure that the inventory representation of the device is up to date with respect to the current state of the actual device. For this purpose, a PUT request is sent to the URL of the device in the inventory. Note that only fragments that can actually change need to be transmitted. (See [Modeling and managing M2M assets](/guides/concepts-guide/domain-model) for more information on fragments.)
 
 For example, the hardware information of a device will usually not change, but the software installation may change. So it may make sense to bring the software information in the inventory up to the latest state after a reboot of the device:
 

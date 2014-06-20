@@ -1,0 +1,20 @@
+---
+title: Cumulocity Guides
+layout: frontpage
+---
+
+  <div class="row">
+    <% for section in @sections:%>
+      <div class="col-sm-3 col-md-2">
+        <% for page in @getCollection("html").findAllLive({relativeOutDirPath: section.folder }, [ order: 1, title: 1 ] ).toJSON():%>
+          <a href="<%= page.url%>" class="panel section">
+            <span class="glyphicon <%= section.icon%>"></span>
+            <h4><%= section.title %></h4>
+          </a>
+          <% break %>
+        <% end %>
+        </div>
+
+    <% end %>
+
+  </div>

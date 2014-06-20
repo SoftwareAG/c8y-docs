@@ -111,7 +111,7 @@ Often, Cumulocity will not be the only IT system dealing with a company?s asset.
 
 # Query particular capabilities
 
-To decouple applications from the specifics of particular types and makes of devices, applications can use so-called fragments to query the inventory (see the [Fragments section of ?Modeling and managing M2M assets?](guides/concepts-guide/modeling-and-managing-m2m-assets)). For example, to find all managed objects having a location, use
+To decouple applications from the specifics of particular types and makes of devices, applications can use so-called fragments to query the inventory (see the [Fragments section of ?Modeling and managing M2M assets?](guides/concepts-guide/domain-model)). For example, to find all managed objects having a location, use
 
     GET /inventory/managedObjects?fragmentType=c8y_Position&withTotalPages=true HTTP/1.1
 
@@ -221,7 +221,7 @@ A state of ?PENDING? means here that the device has not yet picked up the operat
 
 # Listen for events
 
-Besides querying the Cumulocity data store, you can also process and receive events in real-time as described in [Real-time processing in Cumulocity](/guides/concepts-guide/real-time-processing-in-cumulocity.html). For example, assume that you would like to display real-time location updates in a map. Use the administration user interface (or the [REST API](/guides/reference-guide/real-time-statements.html)) to create a new rule module "myRule":
+Besides querying the Cumulocity data store, you can also process and receive events in real-time as described in [Real-time processing in Cumulocity](/guides/concepts-guide/real-time-processing). For example, assume that you would like to display real-time location updates in a map. Use the administration user interface (or the [REST API](/guides/reference-guide/real-time-statements.html)) to create a new rule module "myRule":
 
     select * 
     from EventCreated e

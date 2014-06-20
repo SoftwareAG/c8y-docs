@@ -30,15 +30,15 @@ An application can be any combination of
 * A set of user interface plugins.
 * A set of statements in Cumulocity Event Language.
 
-User interface applications appear in the application switcher widget on the top right of Cumulocity, so that users can navigate between the subscribed applications. They can be hosted on an external web site, in which case the application switcher just directs the user to that web site. They can also be hosted, in which case the application will be made available through a URL <tenant>.cumulocity.com/apps/<application>.
+User interface applications appear in the application switcher widget on the top right of Cumulocity, so that users can navigate between the subscribed applications. They can be hosted on an external web site, in which case the application switcher just directs the user to that web site. They can also be hosted through Cumulocity, in which case the application will be made available through a URL <tenant>.cumulocity.com/apps/<application>.
 
-[App switcher](/images/guides/appswitcher.png)
+![App switcher](/images/guides/concepts-guide/appswitcher.png)
 
 ## Cumulocity applications
 
 The Cumulocity user interface itself is built around a framework based on AngularJS and Bootstrap, the currently most modern HTML5 web application frameworks. It is designed in a modular fashion around a set of plugins that can be dynamically enabled and disabled even by end users. Users can create their own configurations of the Cumulocity user interface with just functionality they need for their particular purpose. For this purpose, the administration application contains a plugin editor -- which is itself a plugin.
 
-	TBD: Screenshot of plugin editor.
+![Plugin editor](/images/guides/concepts-guide/plugineditor.png)
 
 ## Plugins
 
@@ -53,7 +53,7 @@ If the functionality provided by the Cumulocity user interface does not cover yo
 
 This is illustrated below:
 
-[Extension points for plugins](/images/guides/extensionpoints.png)
+![Extension points for plugins](/images/guides/concepts-guide/extensionpoints.png)
 
 For more information on developing plugins, please visit the [Plugin Developer's Guide].
 
@@ -61,7 +61,7 @@ For more information on developing plugins, please visit the [Plugin Developer's
 
 If your application requires new server-side processing functionality, you can add a [Cumulocity Event Language](/guides/reference-guide/realtime-statements) module to it. This is simply a file inside your application at a particular location (META-INF/application-module.cel).
 
-	TBD: How to update the module. Show code snippet with module declaration here
+	TBD: How to update the module.
 
 	module paypalhere;
 	@Name('store_purchase_details1_on_purchase_operation')
@@ -77,6 +77,29 @@ If your application requires new server-side processing functionality, you can a
 
 ## Hosting
 
+To host your own HTML5 and JavaScript web applications through Cumulocity, visit "Own applications" in the Cumulocity administration application and click "Add new".
 
-...If you are satisfied with your application, publishing is just a matter of releasing your code in version control — deployment is handled automatically...
+![List of own applications](/images/guides/concepts-guide/ownapplications.png)
 
+There are two types of applications that can be configured:
+
+-   Type "Hosted": The applications are served from a repository such as Bitbucket or Github to a user-defined path and are visible in the application switcher.
+-   Type "External": The applications are completely external and are just shown in the application switcher.
+
+Assume that you are developing a web application using Bitbucket as code repository. In this case, exposing the application through Cumulocity can be done as follows:
+
+-   Enter the name of the application. This is shown in the application switcher at the top left of the screen.
+-   Optionally, enter an application key. This is used to distinguish your application from other applications in case you want to publish your application to other companies.
+-   Select "Hosted" as type.
+-   Select the URL that is used to make your application available to users.
+-   Enter the URL to your repository. In case of Bitbucket, the URL has the structure shown below.
+-   If your repository is private, enter the username and password of a Bitbucket user that is permitted to access the repository. Currently, basic authentication is the only supported authentication method (i.e., straight Bitbucket username and password, not any of the OpenID providers).
+-   Save the application.
+
+<pre><code>https://bitbucket.org/<bitbucket user>/<bitbucket repository>/raw/<branch>/[path inside repository]</code></pre>
+
+Now the application shows up in the application switcher. You can also click on the link in the list of own applications to verify if the configuration was successful.
+
+![Configuring a new application](/images/guides/concepts-guide/ownapplicationdetail.png)
+
+The above procedure helps you to publish your M2M application much faster to your end users. If you are satisfied with your application, publishing is just a matter of releasing your code in version control -- deployment is handled automatically.

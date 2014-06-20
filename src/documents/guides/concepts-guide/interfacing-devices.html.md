@@ -3,7 +3,7 @@ order: 30
 title: Interfacing devices
 layout: default
 ---
-# Overview
+## Overview
 
 This section explains the concepts relevant for interfacing IoT devices and other IoT-related data sources with Cumulocity.
 
@@ -15,7 +15,7 @@ Related topics can be found in the following sections:
 -   [Device integration](/guides/rest/device-integration), for understanding in detail how to develop agent software.
 -   [Reference guide](/guides/reference-guide/rest-implementation), for a detailed specification of the interfaces between agents and the Cumulocity core.
 
-# What is an agent?
+## What is an agent?
 
 Machine-to-machine devices come with a wide variety of protocols, parameters and network connectivity options. Protocols to devices range from low-level serial links to full-blown IT protocols such as web services. Today's IoT standards rarely define exactly how to access particular readings of particular sensors or manipulate particular controls. Devices may be connected through mobile networks and gateways.
 
@@ -25,7 +25,7 @@ To shield machine-to-machine applications from this diversity, Cumulocity uses s
 -   It transform whatever domain model the device has to a reference domain model.
 -   It enables secure remote communication in various network architectures.
 
-![Agent architecture](/images/guides/agents.png)
+![Agent architecture](/images/guides/concepts-guide/agents.png)
 
 **Protocol translation** Configuration parameters, readings, events and other information are either send to an agent ("push") or queried by the agent ("poll") through a device-specific protocol on one side. The agent will convert these messages into the protocol that Cumulocity understands on the other side. It will also receive device control commands from Cumulocity ("switch off that relay") and translate these to whatever protocol the device understands.
 
@@ -37,11 +37,11 @@ Cumulocity uses a simple and secure reference protocol based on REST (i.e., HTTP
 
 To summarize to benefits of the agent concept: Agents enable IoT applications to securely interface with any type of remote IoT device and without imposing any mandatory system requirement on the device itself. They drastically simplify developing IoT applications by shielding the application from the diversities of IoT devices and protocols.
 
-# What agent architectures are supported?
+## What agent architectures are supported?
 
 Agents can be deployed in a variety of ways, as illustrated in the picture below. We distinguish two main variants: *Server-side agents* and *device-side agents*.
 
-![Agent architectures](/images/guides/agentarchitectures.png)
+![Agent architectures](/images/guides/concepts-guide/agentarchitectures.png)
 
 Server-side agents are run in the cloud, either hosted by Cumulocity or managed by yourself. Devices connect to server-side agents using their device-specific protocol. This variant is mainly chosen when one or more of the following are true:
 
@@ -52,9 +52,9 @@ Server-side agents are run in the cloud, either hosted by Cumulocity or managed 
 Device-side agents run on a device in the sensor network. Such devices can be, for example, routers, mobile phones or modems. The agents are implemented in whatever run-time environment the device supports, ranging from extremely battery- and memory-constrained embedded microcontrollers to minicomputers running Embedded Linux. The agents will directly query connected sensors and manipulate connected controls, usually resulting in a simpler architecture than server-side agents. 
 
 
-# The agent lifecycle
+## The agent lifecycle
 
-## Starting the agent
+### Starting the agent
 
 Server-side agents run continuously in the cloud, accepting connections from the device types that they support. Device-side agents run on the device and are started along with other device software when the device is powered on.
 
@@ -62,11 +62,11 @@ Both types of agents are pre-configured with a fixed platform endpoint URL. Usin
 
 After starting, the agent will synchronize the inventory with the sensor sub-network that the agent is responsible for.
 
-## Synchronizing inventory data
+### Synchronizing inventory data
 
 To understand inventory synchronization, let's revisit the communication hierarchy described in ["Cumulocity's domain model"](/guides/concepts-guide/domain-model). In the inventory, agents are located at the roots of the communication hierarchy. Below each agent, the topology of the sub-network that the agent manages is reflected. This topology exists in the real network as well as in snapshot form in the inventory. It may change in the real network, and these changes need to be reflected in the inventory.
 
-![Communication hierarchy](/images/guides/commshierarchy.png)
+![Communication hierarchy](/images/guides/concepts-guide/commshierarchy.png)
 
 Inventory synchronization is a two step procedure: The first step is to query the agent entry from the inventory and to create it if it is not present. The second step is then to discover the sub-network and synchronize it with the inventory based on the queried agent entry.
 
@@ -83,7 +83,7 @@ The need for an explicit regular inventory upload depends on the particular devi
 
 Note that a device agent is assuming data ownership on the device topology and any configuration properties of the device, and hence may overwrite such information in the inventory.
 
-## Receiving data and commands from applications
+### Receiving data and commands from applications
 
 Now that the topology is established in the inventory, the devices are visible and operable from IoT applications. As described in the device control section of ["Cumulocity's domain model"](/guides/concepts-guide/domain-model), IoT applications can send operations to devices, which are queued in the core. The agent has to query the core for operations targeted to its devices.
 
@@ -91,7 +91,7 @@ If an operation was sent to an agent's device, the agent will translate the oper
 
 Finally, the agent acknowledges the execution of the operation. It may also need to update the inventory. In the above example, it would update the state of the switch in the inventory.
 
-## Sending sensor readings, events, alarms and audit logs
+### Sending sensor readings, events, alarms and audit logs
 
 Besides remote control of devices, the other main responsibility of agents is to transmit data from sensors. This data can be of various types, as outlined in the domain model:
 
@@ -100,11 +100,11 @@ Besides remote control of devices, the other main responsibility of agents is to
 -   Alarms are events that require human intervention, e.g., tamper events sent by an electrical meter.
 -   Audit logs are events that are recorded for risk management purposes, e.g., logon failures.
 
-## Updating agent configuration
+### Updating agent configuration
 
 Agent configuration may need to be changed during run-time. For example, a new gateway to a sensor network may be installed and hence the address and credentials for accessing that gateway may need to be sent to the agent. This is carried out by sending a device control request targeted to the agent itself. After processing the configuration, the agent may want to carry out an upload of possible changes in the device network.
 
-# Integrating other data sources
+## Integrating other data sources
 
 So far, we have mainly discussed data exchanged with IoT devices. However, another frequent use case for agents is in system integration. Enterprises offering IoT-enabled services typically run other IT systems that supply important information on IoT assets and devices. Examples of such systems are:
 
@@ -114,7 +114,7 @@ So far, we have mainly discussed data exchanged with IoT devices. However, anoth
 
 Technically, developing and running an agent for system integration is no different from an agent for device integration. However, the subset of data owned by the systems is different. Agents for device integration own the device hierarchy and device configuration information. Agents for system integration provide additional information for devices and may own parts of the asset hierarchy. Together, they contribute to the device information stored in the inventory to provide a centralized view on everything related to the assets and devices that are relevant for the IoT service.
 
-# How does Cumulocity support developing agents?
+## How does Cumulocity support developing agents?
 
 Cumulocity supports agent development on three different levels:
 
@@ -122,6 +122,6 @@ Cumulocity supports agent development on three different levels:
 * Client libraries for major runtime environments such as C/C++, JavaME/SE and Lua, again as open source in [bitbucket.org](https://bitbucket.org/m2m).
 * Technology-neutral [REST APIs](/guides/rest/device-integration) for other runtime environments.
 
-# Summary
+## Summary
 
 To interface IoT data sources such as devices and external IT systems, agents are provided. Agents are software components that enable a centralized perspective on all aspects of the IoT network and central operation of the IoT network.

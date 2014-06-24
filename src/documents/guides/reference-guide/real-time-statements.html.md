@@ -1,21 +1,51 @@
+---
+order: 130
+title: Real-time statements
+layout: default
+---
+
 The API below is not yet published in "/platform" but can be reached using the URL "/cep".
 
 The real-time statements interface consists of five parts:
 
 -   The *cep* API resource returns a URI to a module collection.
 -   The *module collection* resource retrieves modules and enables creating new modules.
--   The *module* resource represents an individual module that can be queried, modified, deployed or undeployed.??
+-   The *module* resource represents an individual module that can be queried, modified, deployed or undeployed. 
 
 # Module API
 
-## CepApi??[application/vnd.com.nsn.cumulocity.cepApi+json]
+## CepApi [application/vnd.com.nsn.cumulocity.cepApi+json]
 
-||
-|Name|Type|Occurs|Description|
-|self|URL|1|Link to this resource.|
-|modules|ModuleCollection|1|Collection of all modules.|
+<table>
+<colgroup>
+<col width="25%" />
+<col width="25%" />
+<col width="25%" />
+<col width="25%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th align="left">Name
+Type
+Occurs
+Description</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">self
+URL
+1
+Link to this resource.</td>
+<td align="left">modules
+ModuleCollection
+1
+Collection of all modules.</td>
+</tr>
+</tbody>
+</table>
 
-## GET the??CepApi resource
+## GET the CepApi resource
 
 Response body: CepApi
   
@@ -24,26 +54,55 @@ Required role: ROLE\_CEP\_MANAGEMENT\_READ
 Example response:
 
     HTTP/1.1 200 OK
-    Content-Type: application/vnd.com.nsn.cumulocity.cepApi+json;ver=?
-    Content-Length: ?
+    Content-Type: application/vnd.com.nsn.cumulocity.cepApi+json;ver=...
+    Content-Length: ...
     {
-       "self":"?CepAPI URL?",
+       "self":"<<CepAPI URL>>",
        "modules":{
-          "self":"?ModuleCollection URL?"
+          "self":"<<ModuleCollection URL>>"
        }
     }
 
 # Module collection
 
-## ModuleCollection?? [application/vnd.com.nsn.cumulocity.cepModuleCollection+json]
+## ModuleCollection  [application/vnd.com.nsn.cumulocity.cepModuleCollection+json]
 
-||
-|Name|Type|Occurs|Description|
-|self|URI|1|Link to this resource.|
-|modules|Collection|0..n|List of modules, see below.|
-|statistics|PagingStatistics|1|Information about paging statistics.|
-|prev|URI|0..1|Link to a potential previous page of modules.|
-|next|URI|0..1|Link to a potential next page of modules.|
+<table>
+<colgroup>
+<col width="25%" />
+<col width="25%" />
+<col width="25%" />
+<col width="25%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th align="left">Name
+Type
+Occurs
+Description</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">self
+URI
+1
+Link to this resource.</td>
+<td align="left">modules
+Collection
+0..n
+List of modules, see below.</td>
+<td align="left">statistics
+PagingStatistics
+1
+Information about paging statistics.</td>
+<td align="left">prev
+URI
+0..1
+Link to a potential previous page of modules.</td>
+</tr>
+</tbody>
+</table>
 
 ## GET a module collection
 
@@ -54,8 +113,8 @@ Required role: ROLE\_CEP\_MANAGEMENT\_READ
 Example response:
 
     HTTP/1.1 200 OK
-    Content-Type: application/vnd.com.nsn.cumulocity.cepModuleCollection+json;ver=?
-    Content-Length: ?
+    Content-Type: application/vnd.com.nsn.cumulocity.cepModuleCollection+json;ver=...
+    Content-Length: ...
     {
        "id":"1",
        "self":"CURRENT URL",
@@ -65,15 +124,15 @@ Example response:
              "id":"3",
              "key":null,
              "name":"energyapp",
-             "self":"?this module application URL?"
+             "self":"<<this module application URL>>"
           },
-          "self":"?this module application reference URL?"
+          "self":"<<this module application reference URL>>"
        },
        "lastModified":"2012-01-10T17:15:24+01:00",
-       "self": "?URL to this module?"
+       "self": "<<URL to this module>>"
     }
 
-## POST ? Create a new Module with statements
+## POST - Create a new Module with statements
 
 Request body: module file
 Response body: Module (if "Accept" header is provided)  
@@ -81,10 +140,10 @@ Required role: ROLE\_CEP\_MANAGEMENT\_ADMIN.
 
 Example request:
 
-    POST ?
-    Host: ?
-    Authorization: Basic ?
-    Content-Length: ?
+    POST ...
+    Host: ...
+    Authorization: Basic ...
+    Content-Length: ...
     Content-Type: multipart/form-data
 
 Example file:
@@ -97,7 +156,7 @@ Annotation @Name can be skipped - in this case cumulocity platform will assign d
 Example response:
 
     HTTP/1.1 201 Created
-    Content-Type: application/vnd.com.nsn.cumulocity.cepModule+json;ver=?
+    Content-Type: application/vnd.com.nsn.cumulocity.cepModule+json;ver=...
     {
        "id":"3",
        "lastModified":"2013-06-27T15:37:51.091+02:00",
@@ -112,15 +171,55 @@ Module name is considered to be also application name.
 
 # Module
 
-## Module??[application/vnd.com.nsn.cumulocity.cepModule+json]
+## Module [application/vnd.com.nsn.cumulocity.cepModule+json]
 
-||
-|Name|Type|Occurs|Description|PUT/POST|
-|id|String|1|Uniquely identifies a module.|No|
-|self|URI|1|Link to this resource.|No|
-|lastModified|String|1|Time when module was created or modified.|No|
-|name|String|1|The module name.|POST:??Mandatory PUT:??Optional|
-|status|String|1|The module status: DEPLOYED, NOT\_DEPLOYED (default).|POST:??No PUT:??Optional|
+<table>
+<colgroup>
+<col width="20%" />
+<col width="20%" />
+<col width="20%" />
+<col width="20%" />
+<col width="20%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th align="left">Name
+Type
+Occurs
+Description
+PUT/POST</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">id
+String
+1
+Uniquely identifies a module.
+No</td>
+<td align="left">self
+URI
+1
+Link to this resource.
+No</td>
+<td align="left">lastModified
+String
+1
+Time when module was created or modified.
+No</td>
+<td align="left">name
+String
+1
+The module name.
+POST: Mandatory PUT: Optional</td>
+<td align="left">status
+String
+1
+The module status: DEPLOYED, NOT_DEPLOYED (default).
+POST: No PUT: Optional</td>
+</tr>
+</tbody>
+</table>
 
 ## GET Module
 
@@ -131,13 +230,13 @@ Required role: ROLE\_CEP\_MANAGEMENT\_READ
 Example response:
 
     HTTP/1.1 200 OK
-    Content-Type: application/vnd.com.nsn.cumulocity.cepModule+json;ver=?
-    Content-Length: ?
+    Content-Type: application/vnd.com.nsn.cumulocity.cepModule+json;ver=...
+    Content-Length: ...
     {
        "id":"1",
        "lastModified":"2013-04-08T14:35:29.879+02:00",
        "name":"the_module",
-       "self":"?URL of cepModule?",
+       "self":"<<URL of cepModule>>",
        "status":"NOT_DEPLOYED"
     }
 
@@ -151,7 +250,7 @@ Example response:
 
     HTTP/1.1 200 OK
     Content-Type: text/plain
-    Content-Length: ?
+    Content-Length: ...
 
     @Name('test1')select * from EventCreated.win:time(1 hour)@Name('test2')select id, count(*) from MyOffOnStream.win:time(1 hour) group by id;
 
@@ -165,10 +264,10 @@ Response body: Module (if "Accept" header is provided)
 
 Example Request:
 
-    PUT ?
-    Host: ?
-    Authorization: Basic ?
-    Content-Type: application/vnd.com.nsn.cumulocity.cepModule+json;ver=?
+    PUT ...
+    Host: ...
+    Authorization: Basic ...
+    Content-Type: application/vnd.com.nsn.cumulocity.cepModule+json;ver=...
     {
       "name" : "the_module",
       "status" : "DEPLOYED"
@@ -177,9 +276,9 @@ Example Request:
 Example response:
 
     HTTP/1.1 200 OK
-    Content-Type: application/vnd.com.nsn.cumulocity.cepModule+json;ver=?
+    Content-Type: application/vnd.com.nsn.cumulocity.cepModule+json;ver=...
 
-## Update module file ? Modify a Module with statements
+## Update module file - Modify a Module with statements
 
 Request body: module file
 Response body: Module (if "Accept" header is provided)  
@@ -187,10 +286,10 @@ Required role: ROLE\_CEP\_MANAGEMENT\_ADMIN.
 
 Example request:
 
-    PUT ?
-    Host: ?
-    Authorization: Basic ?
-    Content-Length: ?
+    PUT ...
+    Host: ...
+    Authorization: Basic ...
+    Content-Length: ...
     Content-Type: multipart/form-data
 
 Example file:
@@ -201,7 +300,7 @@ Example file:
 Example response:
 
     HTTP/1.1 200 OK
-    Content-Type: application/vnd.com.nsn.cumulocity.cepModule+json;ver=?
+    Content-Type: application/vnd.com.nsn.cumulocity.cepModule+json;ver=...
     {
        "id":"3",
        "lastModified":"2013-06-27T15:37:51.091+02:00",
@@ -237,7 +336,7 @@ Required role: ROLE\_NOTIFICATION\_READ
 
 The subscription channel contains the name of the module in which the real-time statement is defined and the name of the real-time statement itself. It has the following structure:
 
-    /?moduleName?/?statementName?
+    /<<moduleName>>/<<statementName>>
 
 For example, to subscribe on notifications from a statement "overHeatAlarms" in the module "alarms", the subscription channel should be the following string:
 

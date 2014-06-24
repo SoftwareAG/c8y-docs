@@ -1,3 +1,9 @@
+---
+order: 180
+title: Tenants
+layout: default
+---
+
 The API below is not published in "/platform" and don't have API object.
 
 # Tenants
@@ -5,23 +11,52 @@ The API below is not published in "/platform" and don't have API object.
 The Tenant interface is available consists of parts:
 
 -   The tenant collection resource retrieves tenants, accesible by url */tenant/tenants*
--   The tenant resource represents individual tenant that can be view,??accesible by url */tenant/tenants/{tenantId}*
--   The tenant application reference collection resource retrieves applications,??accesible by url??*/tenant/tenants/{tenantId}/applications*
--   The tenant application reference resource represents individual application reference that can be view,??accesible by url??*/tenant/tenants/{tenantId}/applications/{applicationId}*
--   The tenant option collection resource enables creating new option and viewing existing options,??accesible by url??*/tenant/options*
--   The tenant option resource represents individual option that can be view and modified,??accesible by url??*/tenant/options/{optionCategory}/{optionKey}*
+-   The tenant resource represents individual tenant that can be view, accesible by url */tenant/tenants/{tenantId}*
+-   The tenant application reference collection resource retrieves applications, accesible by url */tenant/tenants/{tenantId}/applications*
+-   The tenant application reference resource represents individual application reference that can be view, accesible by url */tenant/tenants/{tenantId}/applications/{applicationId}*
+-   The tenant option collection resource enables creating new option and viewing existing options, accesible by url */tenant/options*
+-   The tenant option resource represents individual option that can be view and modified, accesible by url */tenant/options/{optionCategory}/{optionKey}*
 
 # Tenant collection
 
 ## TenantCollection [application/vnd.com.nsn.cumulocity.tenantCollection+json]
 
-|Name|Type|Occurs|Description|
-|:---|:---|:-----|:----------|
-|self|URI|1|Link to this resource.|
-|tenants|Tenant|0..n|List of Tenant, see below.|
-|statistics|PagingStatistics|1|Information about paging statistics.|
-|prev|URI|0..1|Link to a potential previous page of tenants.|
-|next|URI|0..1|Link to a potential next page of tenants.|
+<table>
+<colgroup>
+<col width="25%" />
+<col width="25%" />
+<col width="25%" />
+<col width="25%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th align="left">Name
+Type
+Occurs
+Description</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">self
+URI
+1
+Link to this resource.</td>
+<td align="left">tenants
+Tenant
+0..n
+List of Tenant, see below.</td>
+<td align="left">statistics
+PagingStatistics
+1
+Information about paging statistics.</td>
+<td align="left">prev
+URI
+0..1
+Link to a potential previous page of tenants.</td>
+</tr>
+</tbody>
+</table>
 
 ## GET a representation of a Tenant Collection.
 
@@ -48,13 +83,13 @@ Example Response :
             "pageSize": 5,
             "totalPages": 1
         },
-        "self": "?Collection URL?",
+        "self": "<<Collection URL>>",
         "tenants": [
             {
                 "adminName": "admin",
                 "applications": {
                     "references": [],
-                    "self":"?ApplicationCollection of This Tenant  URL?",
+                    "self":"<<ApplicationCollection of This Tenant  URL>>",
                 },
                 "company": "sample_company",
                 "domain": "sample_domain.com",
@@ -65,30 +100,30 @@ Example Response :
                             "application": {
                                 "availability": "PRIVATE",
                                 "id": "5",
-                                "key": "?hashed value?",
+                                "key": "<<hashed value>>",
                                 "name": "sample_private_application",
                                 "owner": {
-                                    "self":"?Application Owner Tenant URL?",
+                                    "self":"<<Application Owner Tenant URL>>",
                                     "tenant": {
                                         "id": "sample_tenant"
                                     }
                                 },
-                                "self":"?Application 5 URL?",
+                                "self":"<<Application 5 URL>>",
                                 "type": "EXTERNAL"
                             },
-                            "self":"?This Tenant Application 5 URL?",
+                            "self":"<<This Tenant Application 5 URL>>",
                         },
                         ...
                     ],
-                    "self":"?ApplicationCollection of This Tenant URL?",
+                    "self":"<<ApplicationCollection of This Tenant URL>>",
                 },
-                "self":"?This Tenant URL?",
+                "self":"<<This Tenant URL>>",
                 "status": "ACTIVE"
             },
             {
                 "applications": {
                     "references": [],
-                    "self": "?ApplicationCollection of This Tenant URL?",
+                    "self": "<<ApplicationCollection of This Tenant URL>>",
                 },
                 "company": "sample_company",
                 "domain": "sample_domain.com",
@@ -99,23 +134,23 @@ Example Response :
                             "application": {
                                 "availability": "MARKET",
                                 "id": "6",
-                                "key": "?hashed value?",
+                                "key": "<<hashed value>>",
                                 "name": "market_application",
                                 "owner": {
-                                    "self":"?Application Owner Tenant URL?",
+                                    "self":"<<Application Owner Tenant URL>>",
                                     "tenant": {
                                         "id": "next_sample_tenant"
                                     }
                                 },
-                                "self":"?Application 6 URL?",
+                                "self":"<<Application 6 URL>>",
                                 "type": "EXTERNAL"
                             },
-                            "self":"?This Tenant Application 6 URL?",
+                            "self":"<<This Tenant Application 6 URL>>",
                         }
                     ],
-                    "self":"?ApplicationCollection of This Tenant URL?",
+                    "self":"<<ApplicationCollection of This Tenant URL>>",
                 },
-                "self":"?This Tenant URL?",
+                "self":"<<This Tenant URL>>",
             },
             ...
         ]
@@ -125,18 +160,53 @@ Example Response :
 
 ## Tenant [application/vnd.com.nsn.cumulocity.tenant+json]
 
-|Name|Type|Occurs|Description|Visibility|
-|:---|:---|:-----|:----------|:---------|
-|self|URI|0..1|Link to this resource.|Public|
-|id|String|1|Tenant id|Public|
-|status|String|1|Status of tenant, possible values [ACTIVE, SUSPENDED].|Private|
-|adminName|String|1|Administrator user name|Private|
-|domain|String|1|URL of tenants domain.|Public|
-|company|String|1|Tenants company name.|Public|
-|contactName|String|1|Contact person name.|Public|
-|contactPhone|String|1|Contact person phone number.|Public|
-|applications|ApplicationReferenceCollection|1|Collection of tenant subscribed, applications.|Private|
-|ownedApplications|ApplicationReferenceCollection|1|Collection of tenant owned, applications.|Public - only applications with availability MARKET|
+<table>
+<colgroup>
+<col width="20%" />
+<col width="20%" />
+<col width="20%" />
+<col width="20%" />
+<col width="20%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th align="left">Name
+Type
+Occurs
+Description
+Visibility</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">self
+URI
+0..1
+Link to this resource.
+Public</td>
+<td align="left">id
+String
+1
+Tenant id
+Public</td>
+<td align="left">status
+String
+1
+Status of tenant, possible values [ACTIVE, SUSPENDED].
+Private</td>
+<td align="left">adminName
+String
+1
+Administrator user name
+Private</td>
+<td align="left">domain
+String
+1
+URL of tenants domain.
+Public</td>
+</tr>
+</tbody>
+</table>
 
 ## GET a representation of a Tenant.
 
@@ -161,7 +231,7 @@ Example Response :
         "adminName": "admin",
         "applications": {
             "references": [],
-            "self":"?ApplicationCollection of This Tenant  URL?",
+            "self":"<<ApplicationCollection of This Tenant  URL>>",
         },
         "company": "sample_company",
         "domain": "sample_domain.com",
@@ -172,24 +242,24 @@ Example Response :
                     "application": {
                         "availability": "PRIVATE",
                         "id": "5",
-                        "key": "?hashed value?",
+                        "key": "<<hashed value>>",
                         "name": "sample_private_application",
                         "owner": {
-                            "self":"?Application Owner Tenant URL?",
+                            "self":"<<Application Owner Tenant URL>>",
                             "tenant": {
                                 "id": "sample_tenant"
                             }
                         },
-                        "self":"?Application 5 URL?",
+                        "self":"<<Application 5 URL>>",
                         "type": "EXTERNAL"
                     },
-                    "self":"?This Tenant Application 5 URL?",
+                    "self":"<<This Tenant Application 5 URL>>",
                 },
                ...
             ],
-            "self":"?ApplicationCollection of This Tenant URL?",
+            "self":"<<ApplicationCollection of This Tenant URL>>",
         },
-        "self":"?This Tenant URL?",
+        "self":"<<This Tenant URL>>",
         "status": "ACTIVE"
     }
 
@@ -197,13 +267,42 @@ Example Response :
 
 ## ApplicationReferenceCollection [application/vnd.com.nsn.cumulocity.applicationReferenceCollection+json].
 
-|Name|Type|Occurs|Description|
-|:---|:---|:-----|:----------|
-|self|URI|1|Link to this resource.|
-|references|ApplicationReference|0..n|List of Options, see below.|
-|statistics|PagingStatistics|1|Information about paging statistics.|
-|prev|URI|0..1|Link to a potential previous page of options.|
-|next|URI|0..1|Link to a potential next page of options.|
+<table>
+<colgroup>
+<col width="25%" />
+<col width="25%" />
+<col width="25%" />
+<col width="25%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th align="left">Name
+Type
+Occurs
+Description</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">self
+URI
+1
+Link to this resource.</td>
+<td align="left">references
+ApplicationReference
+0..n
+List of Options, see below.</td>
+<td align="left">statistics
+PagingStatistics
+1
+Information about paging statistics.</td>
+<td align="left">prev
+URI
+0..1
+Link to a potential previous page of options.</td>
+</tr>
+</tbody>
+</table>
 
 ## GET a representation of a ApplicationReferenceCollection.
 
@@ -225,24 +324,24 @@ Example Response :
     Content-Type: application/vnd.com.nsn.cumulocity.applicationReferenceCollection+json;ver=...
     Content-Length: ...
     {
-      "self" : "?Collection URL?",
+      "self" : "<<Collection URL>>",
       "references": [
         {
           "application": {
               "availability": "PRIVATE",
               "id": "5",
-              "key": "?hashed value?",
+              "key": "<<hashed value>>",
               "name": "sample_private_application",
               "owner": {
-                  "self":"?Application Owner Tenant URL?",
+                  "self":"<<Application Owner Tenant URL>>",
                   "tenant": {
                       "id": "sample_tenant"
                   }
               },
-              "self":"?Application 5 URL?",
+              "self":"<<Application 5 URL>>",
               "type": "EXTERNAL"
           },
-          "self":"?This Tenant Application 5 URL?",
+          "self":"<<This Tenant Application 5 URL>>",
         },
             ...
       ],
@@ -259,10 +358,34 @@ Example Response :
 
 ## ApplicationReference [application/vnd.com.nsn.cumulocity.applicationReference+json].
 
-|Name|Type|Occurs|Description|
-|:---|:---|:-----|:----------|
-|self|URI|1|Link to this resource.|
-|reference|Application|0..n|The Application being referenced|
+<table>
+<colgroup>
+<col width="25%" />
+<col width="25%" />
+<col width="25%" />
+<col width="25%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th align="left">Name
+Type
+Occurs
+Description</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">self
+URI
+1
+Link to this resource.</td>
+<td align="left">reference
+Application
+0..n
+The Application being referenced</td>
+</tr>
+</tbody>
+</table>
 
 ## GET a representation of a ApplicationReference.
 
@@ -287,31 +410,60 @@ Example Response :
       "application": {
           "availability": "PRIVATE",
           "id": "5",
-          "key": "?hashed value?",
+          "key": "<<hashed value>>",
           "name": "sample_private_application",
           "owner": {
-              "self":"?Application Owner Tenant URL?",
+              "self":"<<Application Owner Tenant URL>>",
               "tenant": {
                   "id": "sample_tenant"
               }
           },
-          "self":"?Application 5 URL?",
+          "self":"<<Application 5 URL>>",
           "type": "EXTERNAL"
       },
-      "self":"?This Tenant Application 5 URL?",
+      "self":"<<This Tenant Application 5 URL>>",
     }
 
 # Option collection
 
 ## OptionCollection [application/vnd.com.nsn.cumulocity.optionCollection+json].
 
-|Name|Type|Occurs|Description|
-|:---|:---|:-----|:----------|
-|self|URI|1|Link to this resource.|
-|options|Option|0..n|List of Options, see below.|
-|statistics|PagingStatistics|1|Information about paging statistics.|
-|prev|URI|0..1|Link to a potential previous page of options.|
-|next|URI|0..1|Link to a potential next page of options.|
+<table>
+<colgroup>
+<col width="25%" />
+<col width="25%" />
+<col width="25%" />
+<col width="25%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th align="left">Name
+Type
+Occurs
+Description</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">self
+URI
+1
+Link to this resource.</td>
+<td align="left">options
+Option
+0..n
+List of Options, see below.</td>
+<td align="left">statistics
+PagingStatistics
+1
+Information about paging statistics.</td>
+<td align="left">prev
+URI
+0..1
+Link to a potential previous page of options.</td>
+</tr>
+</tbody>
+</table>
 
 ## GET a representation of a OptionCollection.
 
@@ -333,12 +485,12 @@ Example Response :
     Content-Type: application/vnd.com.nsn.cumulocity.optionCollection+json;ver=...
     Content-Length: ...
     {
-      "self" : "?Collection URL?",
+      "self" : "<<Collection URL>>",
       "options": [
             {
                 "category": "access.control",
                 "key": "allow.origin",
-                "self": "?Option access.control.allow.origin URL?",
+                "self": "<<Option access.control.allow.origin URL>>",
                 "value": "*"
             },
             ...
@@ -378,7 +530,7 @@ Example Response :
     Content-Type: application/vnd.com.nsn.cumulocity.option+json;ver=...
     Content-Length: ...
     {
-        "self" : "?Option alarm.type.mapping.temp_too_high URL?"
+        "self" : "<<Option alarm.type.mapping.temp_too_high URL>>"
         "category" : "alarm.type.mapping",
         "key": "temp_too_high",
         "value": "CRITICAL|temperature too high"
@@ -390,19 +542,72 @@ Options are category-key-value tuples, storing tenant configuration. Some catego
 
 ## Available Options
 
-|Category|Key|Default value|Only predefined|Description|
-|:-------|:--|:------------|:--------------|:----------|
-|access.control|allow.origin|\*|yes|Comma separated list of domains allowed for execution of CORS. Wildcards are allowed (e.g. \*.cumuclocity.com)|
-|alarm.type.mapping|?alarm type?||no|?alarm severity?|?alarm text? - severity and text overwriting original alarm severity and text for given alarm type; if severity or text is empty - value will not be overwritten. If severity is "NONE" - alarm will be suppressed.|
+Category
+
+Key
+
+Default value
+
+Only predefined
+
+Description
+
+access.control
+
+allow.origin
+
+\*
+
+yes
+
+Comma separated list of domains allowed for execution of CORS. Wildcards are allowed (e.g. \*.cumuclocity.com)
+
+alarm.type.mapping
+
+\<\<alarm type\>\>
+
+no
+
+\<\<alarm severity\>\>|\<\<alarm text\>\> - severity and text overwriting original alarm severity and text for given alarm type; if severity or text is empty - value will not be overwritten. If severity is "NONE" - alarm will be suppressed.
 
 ## Option [application/vnd.com.nsn.cumulocity.option+json]
 
-|Name|Type|Occurs|Description|
-|:---|:---|:-----|:----------|
-|self|URI|0..1|Link to this resource.|
-|category|String|1|Category of option|
-|key|String|1|Key of option|
-|value|String|1|Value of option|
+<table>
+<colgroup>
+<col width="25%" />
+<col width="25%" />
+<col width="25%" />
+<col width="25%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th align="left">Name
+Type
+Occurs
+Description</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">self
+URI
+0..1
+Link to this resource.</td>
+<td align="left">category
+String
+1
+Category of option</td>
+<td align="left">key
+String
+1
+Key of option</td>
+<td align="left">value
+String
+1
+Value of option</td>
+</tr>
+</tbody>
+</table>
 
 ## GET a representation of a Option.
 
@@ -425,7 +630,7 @@ Example Response :
     {
         "category": "access.control",
         "key": "allow.origin",
-        "self": "?Option access.control.allow.origin URL?",
+        "self": "<<Option access.control.allow.origin URL>>",
         "value": "*"
     }
 
@@ -454,6 +659,6 @@ Example Response :
     {
         "category": "access.control",
         "key": "allow.origin",
-        "self": "?Option access.control.allow.origin URL?",
+        "self": "<<Option access.control.allow.origin URL>>",
         "value": "http://developer.cumulocity.com"
     }

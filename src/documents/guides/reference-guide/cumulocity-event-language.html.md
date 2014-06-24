@@ -1,3 +1,9 @@
+---
+order: 140
+title: Cumulocity event language
+layout: default
+---
+
 # Payload data model
 
 The properties of the various payload types are not exactly identical to the corresponding types in the REST API. Differences lie mainly in the modeling of IDs and references. In this section, the payload data model is described.
@@ -10,10 +16,30 @@ Type *ID* can be constructed using following combinations of properties:
 
 and consists of following properties:
 
-||
-|Name|Type|Description|
-|type|String|Type of the identifier; value always equal to *com\_cumulocity\_model\_ID*.|
-|value|String|Value of the identifier.|
+<table>
+<colgroup>
+<col width="33%" />
+<col width="33%" />
+<col width="33%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th align="left">Name
+Type
+Description</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">type
+String
+Type of the identifier; value always equal to <em>com_cumulocity_model_ID</em>.</td>
+<td align="left">value
+String
+Value of the identifier.</td>
+</tr>
+</tbody>
+</table>
 
 Type *GId* can be constructed using following combinations of properties:
 
@@ -21,10 +47,30 @@ Type *GId* can be constructed using following combinations of properties:
 
 and consists of following properties:
 
-||
-|Name|Type|Description|
-|type|String|Type of the identifier; value always equal to *com\_cumulocity\_model\_idtype\_GId*.|
-|value|String|Value of the identifier.|
+<table>
+<colgroup>
+<col width="33%" />
+<col width="33%" />
+<col width="33%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th align="left">Name
+Type
+Description</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">type
+String
+Type of the identifier; value always equal to <em>com_cumulocity_model_idtype_GId</em>.</td>
+<td align="left">value
+String
+Value of the identifier.</td>
+</tr>
+</tbody>
+</table>
 
 ## Inventory types
 
@@ -40,16 +86,33 @@ Type *ManagedObject* can be constructed using following combinations of properti
 
 and consists of following properties:
 
-||
-|Name|Type|Description|
-|id|GId|Global identifier of the managed object.|
-|type|String|Type of the managed object.|
-|name|String|Name of the managed object.|
-|lastUpdated|Date|The time the managed object was last updated.|
-|owner|String|Login identifier of the user owing the managed object.|
-|childAssets|Set|A collection of *GId*s of the child assets of the managed object.|
-|childDevices|Set|A collection of *GId*s of the child devices of the managed object.|
-|attrs|Map|A key-valued map of fragments of the managed object. Keys are of type *String* and values are of type *Object*.|
+<table>
+<colgroup>
+<col width="33%" />
+<col width="33%" />
+<col width="33%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th align="left">Name
+Type
+Description</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">id
+GId
+Global identifier of the managed object.</td>
+<td align="left">type
+String
+Type of the managed object.</td>
+<td align="left">name
+String
+Name of the managed object.</td>
+</tr>
+</tbody>
+</table>
 
 ## Events types
 
@@ -62,15 +125,33 @@ Type *Event* can be constructed using following combinations of properties:
 
 and consists of following properties:
 
-||
-|Name|Type|Description|
-|id|GId|Global identifier of the event.|
-|type|String|Type of the event.|
-|time|Date|The time the event occured.|
-|creationTime|Date|The time the event was persisted in the database.|
-|text|String|An arbitrary text of the event.|
-|source|ID|The *GId* of the *ManagedObject* that the event originated from.|
-|attrs|Map|A key-valued map of fragments of the event. Keys are of type *String* and values are of type *Object*.|
+<table>
+<colgroup>
+<col width="33%" />
+<col width="33%" />
+<col width="33%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th align="left">Name
+Type
+Description</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">id
+GId
+Global identifier of the event.</td>
+<td align="left">type
+String
+Type of the event.</td>
+<td align="left">time
+Date
+The time the event occured.</td>
+</tr>
+</tbody>
+</table>
 
 ## Measurements types
 
@@ -81,13 +162,33 @@ Type *Measurement* can be constructed using following combinations of properties
 
 and consists of following properties:
 
-||
-|Name|Type|Description|
-|id|GId|Global identifier of the event.|
-|type|String|Type of the event.|
-|time|Date|The time the measurement occured.|
-|source|ID|The *GId* of the *ManagedObject* that the measurement originated from.|
-|attrs|Map|A key-valued map of fragments of the measurement. Keys are of type *String* and values are of type *Object*.|
+<table>
+<colgroup>
+<col width="33%" />
+<col width="33%" />
+<col width="33%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th align="left">Name
+Type
+Description</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">id
+GId
+Global identifier of the event.</td>
+<td align="left">type
+String
+Type of the event.</td>
+<td align="left">time
+Date
+The time the measurement occured.</td>
+</tr>
+</tbody>
+</table>
 
 ## Device control types
 
@@ -102,15 +203,33 @@ Type *Operation* can be constructed using following combinations of properties:
 
 and consists of following properties:
 
-||
-|Name|Type|Description|
-|id|GId|Global identifier of the event.|
-|creationTime|Date|The time the operation was persisted in the database.|
-|status|OperationStatus|The operation status. The value is of enumerated type with following values allowed: *PENDING*, *SUCCESSFUL*, *FAILED*, *EXECUTING*.|
-|failureReason|String|Reason for the operation failure.|
-|deviceId|GId|Identifies the target device on which this operation should be performed.|
-|agentId|GId|Identifies the agent that should execute this operation.|
-|attrs|Map|A key-valued map of fragments of the operation. Keys are of type *String* and values are of type *Object*.|
+<table>
+<colgroup>
+<col width="33%" />
+<col width="33%" />
+<col width="33%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th align="left">Name
+Type
+Description</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">id
+GId
+Global identifier of the event.</td>
+<td align="left">creationTime
+Date
+The time the operation was persisted in the database.</td>
+<td align="left">status
+OperationStatus
+The operation status. The value is of enumerated type with following values allowed: <em>PENDING</em>, <em>SUCCESSFUL</em>, <em>FAILED</em>, <em>EXECUTING</em>.</td>
+</tr>
+</tbody>
+</table>
 
 ## Alarms types
 
@@ -124,36 +243,74 @@ Type *Alarm* can be constructed using following combinations of properties:
 
 and consists of following properties:
 
-||
-|Name|Type|Description|
-|id|GId|Global identifier of the alarm.|
-|type|String|Type of the alarm.|
-|time|Date|The time the alarm occured.|
-|creationTime|Date|The time the alarm was persisted in the database.|
-|text|String|An arbitrary text of the alarm.|
-|source|ID|The *GId* of the *ManagedObject* that the alarm originated from.|
-|status|AlarmStatus|The alarm status. The value is of enumerated type with following values allowed: *ACTIVE*, *ACKNOWLEDGED*, *CLEARED*.|
-|severity|Severity|The alarm severity. The value is of enumerated type with following values allowed: *CRITICAL*, *MAJOR*, *MINOR*, *WARNING*.|
-|attrs|Map|A key-valued map of fragments of the alarm. Keys are of type *String* and values are of type *Object*.|
+<table>
+<colgroup>
+<col width="33%" />
+<col width="33%" />
+<col width="33%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th align="left">Name
+Type
+Description</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">id
+GId
+Global identifier of the alarm.</td>
+<td align="left">type
+String
+Type of the alarm.</td>
+<td align="left">time
+Date
+The time the alarm occured.</td>
+</tr>
+</tbody>
+</table>
 
 # Cumulocity events structure
 
 Cumulocity supports several predefined event types that represent different operations on different types of objects. Each event has associated output stream used to executing dedicated action (store into database or send email).
 
-|API|Event types|Output streams|Description|
-|:--|:----------|:-------------|:----------|
-|Inventory|ManagedObjectCreated ManagedObjectUpdated
- ManagedObjectDeleted|CreateManagedObject UpdateManagedObject
- DeleteManagedObject|This group of events represents creation, modification or deletion of a single ManagedObject.|
-|Events|EventCreated EventDeleted|CreateEvent DeleteEvent|This group of events represents creation or deletion of a single Event.|
-|Measurements|MeasurementCreated MeasurementDeleted|CreateMeasurement DeleteMeasurement|This group of events represents creation or deletion of a single Measurement.|
-|Device control|OperationCreated OperationUpdated
- OperationDeleted|CreateOperation UpdateOperation
- DeleteOperation|This group of events represents creation, modification or deletion of a single Operation.|
-|Alarms|AlarmCreated AlarmUpdated
- AlarmDeleted|CreateAlarm UpdateAlarm
- DeleteAlarm|This group of events represents creation, modification or deletion of a single Alarm.|
-|Emails|*(not used)*|SendEmail|This group of events represents sending of an email.|
+<table>
+<colgroup>
+<col width="25%" />
+<col width="25%" />
+<col width="25%" />
+<col width="25%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th align="left">API
+Event types
+Output streams
+Description</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">Inventory
+ManagedObjectCreated ManagedObjectUpdated<br /> ManagedObjectDeleted
+CreateManagedObject UpdateManagedObject<br /> DeleteManagedObject
+This group of events represents creation, modification or deletion of a single ManagedObject.</td>
+<td align="left">Events
+EventCreated EventDeleted
+CreateEvent DeleteEvent
+This group of events represents creation or deletion of a single Event.</td>
+<td align="left">Measurements
+MeasurementCreated MeasurementDeleted
+CreateMeasurement DeleteMeasurement
+This group of events represents creation or deletion of a single Measurement.</td>
+<td align="left">Device control
+OperationCreated OperationUpdated<br /> OperationDeleted
+CreateOperation UpdateOperation<br /> DeleteOperation
+This group of events represents creation, modification or deletion of a single Operation.</td>
+</tr>
+</tbody>
+</table>
 
 The basic structure of the event types is the same and consist of the following properties: *\_mode*, *\_type*, *attrs* and *payload*.
 
@@ -204,7 +361,6 @@ The full list of complex event properties which can be specified during event co
     -   payload*:ManagedObject*
     -   type*:String*
     -   \_mode*:String*
-
 -   *ManagedObjectUpdated*
     -   childAssets*:Set*
     -   childDevices*:Set*
@@ -217,13 +373,11 @@ The full list of complex event properties which can be specified during event co
     -   payload*:ManagedObject*
     -   type*:String*
     -   \_mode*:String*
-
 -   *ManagedObjectDeleted*
     -   fragments*:Array*
     -   id*:GId*
     -   id*:String*
     -   \_mode*:String*
-
 -   *EventCreated*
     -   creationTime*:Date*
     -   event*:Event*
@@ -237,13 +391,11 @@ The full list of complex event properties which can be specified during event co
     -   time*:Date*
     -   type*:String*
     -   \_mode*:String*
-
 -   *EventDeleted*
     -   fragments*:Array*
     -   id*:GId*
     -   id*:String*
     -   \_mode*:String*
-
 -   *MeasurementCreated*
     -   fragments*:Array*
     -   id*:GId*
@@ -255,13 +407,11 @@ The full list of complex event properties which can be specified during event co
     -   time*:Date*
     -   type*:String*
     -   \_mode*:String*
-
 -   *MeasurementDeleted*
     -   fragments*:Array*
     -   id*:GId*
     -   id*:String*
     -   \_mode*:String*
-
 -   *OperationCreated*
     -   agentId*:GId*
     -   agentId*:String*
@@ -277,7 +427,6 @@ The full list of complex event properties which can be specified during event co
     -   status*:String*
     -   time*:Date*
     -   \_mode*:String*
-
 -   *OperationUpdated*
     -   agentId*:GId*
     -   agentId*:String*
@@ -293,13 +442,11 @@ The full list of complex event properties which can be specified during event co
     -   status*:String*
     -   time*:Date*
     -   \_mode*:String*
-
 -   *OperationDeleted*
     -   fragments*:Array*
     -   id*:GId*
     -   id*:String*
     -   \_mode*:String*
-
 -   *AlarmCreated*
     -   alarm*:Alarm*
     -   creationTime*:Date*
@@ -317,7 +464,6 @@ The full list of complex event properties which can be specified during event co
     -   time*:Date*
     -   type*:String*
     -   \_mode*:String*
-
 -   *AlarmUpdated*
     -   alarm*:Alarm*
     -   creationTime*:Date*
@@ -335,13 +481,11 @@ The full list of complex event properties which can be specified during event co
     -   time*:Date*
     -   type*:String*
     -   \_mode*:String*
-
 -   *AlarmDeleted*
     -   fragments*:Array*
     -   id*:GId*
     -   id*:String*
     -   \_mode*:String*
-
 -   *SendEmail*
     -   receiver*:String*
     -   sender*:String*
@@ -350,9 +494,9 @@ The full list of complex event properties which can be specified during event co
 
 Array of fragments has following format:
 
-*{?key?, ?value?, ?key?, ?value?, ...}*
+*{\<\<key\>\>, \<\<value\>\>, \<\<key\>\>, \<\<value\>\>, ...}*
 
-where ?key? is a dot separated expression representing path to fragment. Nested paths are supported.
+where \<\<key\>\> is a dot separated expression representing path to fragment. Nested paths are supported.
 
 Example:
 
@@ -459,59 +603,39 @@ A detailed reference of the expressions that can be used is [here](http://esper.
 
 Most functions are available in several variants:
 
--   findOne?(?): The function expects exactly one object as query result and fails otherwise.
--   findFirst?(?): The function returns the first object in the query result or "null", if the result is empty.
--   findAll?(?): The function returns all objects in the query result.
+-   findOne...(...): The function expects exactly one object as query result and fails otherwise.
+-   findFirst...(...): The function returns the first object in the query result or "null", if the result is empty.
+-   findAll...(...): The function returns all objects in the query result.
 
-Here is the full list of available functions. Replace the ellipses ("?") with "findOne", "findFirst" or "findAll".
+Here is the full list of available functions. Replace the ellipses ("...") with "findOne", "findFirst" or "findAll".
 
-|Function name (with variants)|Return type|Alternative argument lists|
-|:----------------------------|:----------|:-------------------------|
-|findManagedObjectById|ManagedObject|id*:String*
- id*:GId*|
-|findFirstManagedObjectParent findOneManagedObjectParent|ManagedObject|managedObjectId*:String*
- managedObjectId*:GId*|
-|?ManagedObjectByFragmentType|List | ManagedObject|fragmentType*:String*|
-|?ManagedObjectByType|List | ManagedObject|type*:String*|
-|findEventById|Event|id*:String*
- id*:GId*|
-|?EventByFragmentType|List | Event|fragmentType*:String*|
-|?EventByFragmentTypeAndSource|List | Event|fragmentType*:String*, source*:String*|
-|?EventByFragmentTypeAnd ??SourceAndTimeBetween|List | Event|fragmentType*:String*, source*:String*, from*:Date*, to*:Date*|
-|?EventByFragmentTypeAnd ??SourceAndTimeBetweenAndType|List | Event|fragmentType*:String*, source*:String*, from*:Date*, to*:Date*, type*:String*|
-|?EventByFragmentTypeAnd ??SourceAndType|List | Event|fragmentType*:String*, source*:String*, type*:String*|
-|?EventByFragmentTypeAnd ??TimeBetween|List | Event|fragmentType*:String*, from*:Date*, to*:Date*|
-|?EventByFragmentTypeAnd ??TimeBetweenAndType|List | Event|fragmentType*:String*, from*:Date*, to*:Date*, type*:String*|
-|?EventByFragmentTypeAndType|List | Event|fragmentType*:String*, type*:String*|
-|?EventBySource|List | Event|source*:String*|
-|findMeasurementById|Measurement|id*:String*
- id*:GId*|
-|?MeasurementByFragmentType|List | Measurement|fragmentType*:String*|
-|?MeasurementByFragmentTypeAnd ??Source|List | Measurement|fragmentType*:String*, source*:String*|
-|?MeasurementByFragmentTypeAnd ??SourceAndTimeBetween|List | Measurement|fragmentType*:String*, source*:String*, from*:Date*, to*:Date*|
-|?MeasurementByFragmentTypeAnd ??SourceAndTimeBetweenAndType|List | Measurement|fragmentType*:String*, source*:String*, from*:Date*, to*:Date*, type*:String*|
-|?MeasurementByFragmentTypeAnd ??SourceAndType|List | Measurement|fragmentType*:String*, source*:String*, type*:String*|
-|?MeasurementByFragmentTypeAnd ??TimeBetween|List | Measurement|fragmentType*:String*, from*:Date*, to*:Date*|
-|?MeasurementByFragmentTypeAnd ??TimeBetweenAndType|List | Measurement|fragmentType*:String*, from*:Date*, to*:Date*, type*:String*|
-|?MeasurementByFragmentTypeAnd ??Type|List | Measurement|fragmentType*:String*, type*:String*|
-|?MeasurementBySource|List | Measurement|source*:String*|
-|findOperationById|Operation|id*:String*
- id*:GId*|
-|?OpererationByAgent|List | Operation|agentId*:String*|
-|?OpererationByAgentAndStatus|List | Operation|agentId*:String*, status*:String*|
-|?OpererationByDevice|List | Operation|deviceId*:String*|
-|?OpererationByDeviceAndStatus|List | Operation|deviceId*:String*, status*:String*|
-|?OpererationByStatus|List | Operation|status*:String*|
-|?OpererationByCreationTimeBetween|List | Operation|from*:Date*, to*:Date*|
-|findAlarmById|Alarm|id*:String*
- id*:GId*|
-|?AlarmBySource|List | Alarm|sourceId*:String*|
-|?AlarmBySourceAndStatus|List | Alarm|sourceId*:String*, status*:String*|
-|?AlarmBySourceAnd ??StatusAndTimeBetween|List | Alarm|sourceId*:String*, status*:String*, from*:Date*, to*:Date*|
-|?AlarmBySourceAndTimeBetween|List | Alarm|sourceId*:String*, from*:Date*, to*:Date*|
-|?AlarmByStatus|List | Alarm|status*:String*|
-|?AlarmByStatusAndTimeBetween|List | Alarm|status*:String*, from*:Date*, to*:Date*|
-|?AlarmByTimeBetween|List | Alarm|from*:Date*, to*:Date*|
+<table>
+<colgroup>
+<col width="33%" />
+<col width="33%" />
+<col width="33%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th align="left">Function name (with variants)
+Return type
+Alternative argument lists</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">findManagedObjectById
+ManagedObject
+id<em>:String</em><br /> id<em>:GId</em></td>
+<td align="left">findFirstManagedObjectParent findOneManagedObjectParent
+ManagedObject
+managedObjectId<em>:String</em><br /> managedObjectId<em>:GId</em></td>
+<td align="left">...ManagedObjectByFragmentType
+List | ManagedObject
+fragmentType<em>:String</em></td>
+</tr>
+</tbody>
+</table>
 
 # Email sending
 
@@ -525,7 +649,7 @@ Email can be sent using following CEP statement.
           "Lorem ipsum dolor sit amet, consectetur adipisicing elit..."  
         from OtherStream
 
-Of course in most cases email message need be generated in dynamic way. It can be achieved by simple String concatenation or using javascript. In below example javascript "format(text, params)" function replaces all occurrences of "{?number?}" in the text by corresponding parameter.
+Of course in most cases email message need be generated in dynamic way. It can be achieved by simple String concatenation or using javascript. In below example javascript "format(text, params)" function replaces all occurrences of "{\<\<number\>\>}" in the text by corresponding parameter.
 
     expression string js:prepareEmailText(temp, state) [
         function format(text, params){

@@ -1,3 +1,9 @@
+---
+order: 80
+title: Users
+layout: default
+---
+
 The user interface consists of the following parts:
 
 -   The *user API* resource returns URIs and URI templates to collections of users, groups, and roles, so that all users, groups, roles and user or group with particular name can be queried.
@@ -9,25 +15,79 @@ The user interface consists of the following parts:
 -   The *group collection* resource retrieves sets of groups and enables creating new groups.
 -   The *group* resource represents individual groups that can be queried and deleted.
 -   The *group reference collection* resource retrieves sets of references to groups. It could be, for example, groups of a particular user.
--   The *group**reference* resource represents one individual reference to a group, which can be retrieved or deleted.
+-   The *group* *reference* resource represents one individual reference to a group, which can be retrieved or deleted.
 -   The *role collection* resource retrieves sets of roles.
 -   The *role* resource represents individual roles that can be queried and assigned or unassigned to users or groups.
 -   The *role* reference collection resource retrieves sets of references to roles. These could be, for example, roles of a particular user or group.
--   The *role**reference* resource represents one individual reference to a role, which can be retrieved.
+-   The *role* *reference* resource represents one individual reference to a role, which can be retrieved.
 
 # User API
 
 ## UserAPI [application/vnd.com.nsn.cumulocity.userApi+json]
 
-||
-|Name|Type|Occurs|Description|
-|self|URL|1|Link to this Resource|
-|userByName|URI Template/User|1|A reference to a resource of type User. The template contains a placeholders *realm* and *userName*.|
-|users|URI Template/UserCollection|1|A collection of all users belonging to a given realm. The template contains a placeholder *realm*.|
-|currentUser|URI Template/User|1|A reference to the resource of the logged in User.|
-|groupByName|URI Template/Group|1|A reference to a resource of type Group. The template contains a placeholders *realm* and *groupName*.|
-|groups|URI Template/GroupCollection|1|A collection of all users belonging to a given realm. The template contains a placeholder *realm*.|
-|roles|URI Template/RoleCollection|1|A collection of all roles.|
+Name
+
+Type
+
+Occurs
+
+Description
+
+self
+
+URL
+
+1
+
+Link to this Resource
+
+userByName
+
+URI Template/User
+
+1
+
+A reference to a resource of type User. The template contains a placeholders *realm* and *userName*.
+
+users
+
+URI Template/UserCollection
+
+1
+
+A collection of all users belonging to a given realm. The template contains a placeholder *realm*.
+
+currentUser
+
+URI Template/User
+
+1
+
+A reference to the resource of the logged in User.
+
+groupByName
+
+URI Template/Group
+
+1
+
+A reference to a resource of type Group. The template contains a placeholders *realm* and *groupName*.
+
+groups
+
+URI Template/GroupCollection
+
+1
+
+A collection of all users belonging to a given realm. The template contains a placeholder *realm*.
+
+roles
+
+URI Template/RoleCollection
+
+1
+
+A collection of all roles.
 
 # GET the User API Resource
 
@@ -46,28 +106,66 @@ Example response:
      Content-Type: application/vnd.com.nsn.cumulocity.userApi+json;ver=0.9
      Content-Length: nnn
     {
-         "self" : "?UserAPI URL?",
-         "userByName" : "?URL to the UserByName resource with realm and user name parameter?",
-         "users" : "?URL to the UserCollection resource with realm parameter?",
-         "currentUser" : "?URL to the CurrentUser resource?",
-         "groupByName" : "?URL to the GroupByName resource with realm and group name parameter?",
-         "groups" : "?URL to the GroupCollection resource with realm parameter?",
-         "roles" : "?URL to the RoleCollection resource?"
+         "self" : "<<UserAPI URL>>",
+         "userByName" : "<<URL to the UserByName resource with realm and user name parameter>>",
+         "users" : "<<URL to the UserCollection resource with realm parameter>>",
+         "currentUser" : "<<URL to the CurrentUser resource>>",
+         "groupByName" : "<<URL to the GroupByName resource with realm and group name parameter>>",
+         "groups" : "<<URL to the GroupCollection resource with realm parameter>>",
+         "roles" : "<<URL to the RoleCollection resource>>"
     }
 
 # User collection
 
 # UserCollection [application/vnd.com.nsn.cumulocity.userCollection+json]
 
-||
-|Name|Type|Occurs|Description|
-|self|URI|1|Link to this Resource|
-|users|User|0..n|List of users|
-|statistics|PagingStatistics|1|Information about the paging statistics|
-|prev|URI|0..1|Link to a possible previous page with additional users|
-|next|URI|0..1|Link to a possible next page with additional users|
+Name
 
-??
+Type
+
+Occurs
+
+Description
+
+self
+
+URI
+
+1
+
+Link to this Resource
+
+users
+
+User
+
+0..n
+
+List of users
+
+statistics
+
+PagingStatistics
+
+1
+
+Information about the paging statistics
+
+prev
+
+URI
+
+0..1
+
+Link to a possible previous page with additional users
+
+next
+
+URI
+
+0..1
+
+Link to a possible next page with additional users
 
 # GET a Representation of a User Collection
 
@@ -117,7 +215,7 @@ Example response:
 # POST - CREATE a new User within the Collection
 
 Request body: User
- Response body: User??(when Accept header is not provided, empty response body is returned)
+ Response body: User (when Accept header is not provided, empty response body is returned)
  Example request: Create a new User
 
     POST [URL to the resource]
@@ -131,6 +229,7 @@ Request body: User
       "firstName" : "John",
       "lastName" : "Smith",
       "phone" : "+1234567890",
+      "customProperties" : {"language":"en"},
       "email" : "jsmith@abc.com",
       "enabled" : true
     }
@@ -149,6 +248,7 @@ Example response:
       "lastName" : "Smith",
       "phone" : "+1234567890",
       "email" : "jsmith@abc.com",
+      "customProperties" : {"language":"en"},
       "enabled" : true,
       "groups" : {[collection of groups the user belongs to]},
       "roles" : {[collection of roles the user has]}
@@ -261,6 +361,16 @@ boolean
 1
 
 User activation status (true/false)
+
+optional
+
+customProperties
+
+Object
+
+1
+
+Keeps a list of custom properties
 
 optional
 
@@ -400,13 +510,11 @@ Role
 
 0..n
 
-List of all roles a current user has assigned??(explicitly or implicitly via associated groups).
+List of all roles a current user has assigned (explicitly or implicitly via associated groups).
 
 not allowed
 
-**Embedded user??**contains all properties except password. Password property is never returned in GET user
-
-??
+**Embedded user **contains all properties except password. Password property is never returned in GET user
 
 # GET a representation of a User
 
@@ -470,7 +578,7 @@ Example response:
 # PUT a change to User resource
 
 Request body: User
- Response body: User??(when Accept header is not provided, empty response body is returned)
+ Response body: User (when Accept header is not provided, empty response body is returned)
  Example request: Change the first name of a User
 
     PUT [URL to the resource]
@@ -522,8 +630,6 @@ Request body: N/A
 or
 
 Response body: application/vnd.com.nsn.cumulocity.currentUser+json;ver=0.9
-
-??
 
 Example request: Retrieve information about the logged in user
 
@@ -602,15 +708,53 @@ Example response:
 
 ## UserReferenceCollection [application/vnd.com.nsn.cumulocity.userReferenceCollection+json]
 
-||
-|Name|Type|Occurs|Description|
-|self|URI|1|Link to this Resource|
-|references|UserReference|0..n|List of user references|
-|statistics|PagingStatistics|1|Information about the paging statistics|
-|prev|URI|0..1|Link to a possible previous page with additional user references|
-|next|URI|0..1|Link to a possible next page with additional user references|
+Name
 
-??
+Type
+
+Occurs
+
+Description
+
+self
+
+URI
+
+1
+
+Link to this Resource
+
+references
+
+UserReference
+
+0..n
+
+List of user references
+
+statistics
+
+PagingStatistics
+
+1
+
+Information about the paging statistics
+
+prev
+
+URI
+
+0..1
+
+Link to a possible previous page with additional user references
+
+next
+
+URI
+
+0..1
+
+Link to a possible next page with additional user references
 
 # Add User to a group
 
@@ -710,32 +854,85 @@ Example response:
       "next" : "[URL to next page]"
     }
 
-??
-
 # User reference
 
 # UserReference [application/vnd.com.nsn.cumulocity.userReference+json]
 
-||
-|Name|Type|Occurs|Description|
-|self|URI|1|Link to this Resource|
-|user|User|1|A user resource being referenced|
+Name
 
-??
+Type
+
+Occurs
+
+Description
+
+self
+
+URI
+
+1
+
+Link to this Resource
+
+user
+
+User
+
+1
+
+A user resource being referenced
 
 # Group collection
 
 # GroupCollection [application/vnd.com.nsn.cumulocity.groupCollection+json]
 
-||
-|Name|Type|Occurs|Description|
-|self|URI|1|Link to this Resource|
-|groups|Group|0..n|List of Groups|
-|statistics|PagingStatistics|1|Information about the paging statistics|
-|prev|URI|0..1|Link to a possible previous page with additional groups|
-|next|URI|0..1|Link to a possible next page with additional groups|
+Name
 
-??
+Type
+
+Occurs
+
+Description
+
+self
+
+URI
+
+1
+
+Link to this Resource
+
+groups
+
+Group
+
+0..n
+
+List of Groups
+
+statistics
+
+PagingStatistics
+
+1
+
+Information about the paging statistics
+
+prev
+
+URI
+
+0..1
+
+Link to a possible previous page with additional groups
+
+next
+
+URI
+
+0..1
+
+Link to a possible next page with additional groups
 
 # List all groups
 
@@ -813,22 +1010,59 @@ Example response:
       }
     }
 
-??
-
 # Group
-
-??
 
 # Group [application/vnd.com.nsn.cumulocity.group+json]
 
-||
-|Name|Type|Occurs|Description|Allowed in PUT/POST request|
-|id|String|1|Uniquely identifies a Group|not allowed|
-|self|URI|1|Link to this Resource|not allowed|
-|name|String|1|Descriptive Name of the Group|mandatory|
-|roles|RoleReferenceCollection|1|List of role references|not allowed|
+Name
 
-??
+Type
+
+Occurs
+
+Description
+
+Allowed in PUT/POST request
+
+id
+
+String
+
+1
+
+Uniquely identifies a Group
+
+not allowed
+
+self
+
+URI
+
+1
+
+Link to this Resource
+
+not allowed
+
+name
+
+String
+
+1
+
+Descriptive Name of the Group
+
+mandatory
+
+roles
+
+RoleReferenceCollection
+
+1
+
+List of role references
+
+not allowed
 
 # Show group details
 
@@ -940,23 +1174,57 @@ Example response:
       ...
     }
 
-??
-
 # Group reference collection
-
-??
 
 # GroupReferenceCollection [application/vnd.com.nsn.cumulocity.groupReferenceCollection+json]
 
-||
-|Name|Type|Occurs|Description|
-|self|URI|1|Link to this Resource|
-|groups|GroupReference|0..n|List of group references|
-|statistics|PagingStatistics|1|Information about the paging statistics|
-|prev|URI|0..1|Link to a possible previous page with additional group references|
-|next|URI|0..1|Link to a possible next page with additional group references|
+Name
 
-??
+Type
+
+Occurs
+
+Description
+
+self
+
+URI
+
+1
+
+Link to this Resource
+
+groups
+
+GroupReference
+
+0..n
+
+List of group references
+
+statistics
+
+PagingStatistics
+
+1
+
+Information about the paging statistics
+
+prev
+
+URI
+
+0..1
+
+Link to a possible previous page with additional group references
+
+next
+
+URI
+
+0..1
+
+Link to a possible next page with additional group references
 
 # Get all groups of a user
 
@@ -987,43 +1255,92 @@ Example response:
 
 # Group reference
 
-??
-
 # GroupReference [application/vnd.com.nsn.cumulocity.groupReference+json]
 
-||
-|Name|Type|Occurs|Description|
-|self|URI|1|Link to this Resource|
-|group|Group|1|A group resource being referenced|
+Name
 
-??
+Type
+
+Occurs
+
+Description
+
+self
+
+URI
+
+1
+
+Link to this Resource
+
+group
+
+Group
+
+1
+
+A group resource being referenced
 
 # Role collection
 
-??
-
 # RoleCollection [application/vnd.com.nsn.cumulocity.roleCollection+json]
 
-||
-|Field Name|Type|Occurs|Description|
-|self|URI|1|Link to this Resource|
-|roles|Role|0..n|List of Roles|
-|statistics|PagingStatistics|1|Information about the paging statistics|
-|prev|URI|0..1|Link to a possible previous page with additional roles|
-|next|URI|0..1|Link to a possible next page with additional roles|
-
-??
+<table>
+<colgroup>
+<col width="25%" />
+<col width="25%" />
+<col width="25%" />
+<col width="25%" />
+</colgroup>
+<tbody>
+<tr class="odd">
+<td align="left">Field Name
+Type
+Occurs
+Description</td>
+<td align="left">self
+URI
+1
+Link to this Resource</td>
+<td align="left">roles
+Role
+0..n
+List of Roles</td>
+<td align="left">statistics
+PagingStatistics
+1
+Information about the paging statistics</td>
+</tr>
+</tbody>
+</table>
 
 # Role
 
 ## Role [application/vnd.com.nsn.cumulocity.role+json]
 
-||
-|Name|Type|Occurs|Description|
-|id|String|1|Uniquely identifies a Role|
-|name|String|1|Descriptive name of the role, following role naming pattern.|
+Name
 
-??
+Type
+
+Occurs
+
+Description
+
+id
+
+String
+
+1
+
+Uniquely identifies a Role
+
+name
+
+String
+
+1
+
+Descriptive name of the role, following role naming pattern.
 
 # Get all available roles
 
@@ -1161,23 +1478,57 @@ Example response:
 
     HTTP/1.1  204 NO CONTENT
 
-??
-
 # Role reference collection
-
-??
 
 # RoleReferenceCollection [application/vnd.com.nsn.cumulocity.roleReferenceCollection+json]
 
-||
-|Name|Type|Occurs|Description|
-|self|URI|1|Link to this Resource|
-|references|RoleReference|0..n|List of role references|
-|statistics|PagingStatistics|1|Information about the paging statistics|
-|prev|URI|0..1|Link to a possible previous page with additional role references|
-|next|URI|0..1|Link to a possible next page with additional role references|
+Name
 
-??
+Type
+
+Occurs
+
+Description
+
+self
+
+URI
+
+1
+
+Link to this Resource
+
+references
+
+RoleReference
+
+0..n
+
+List of role references
+
+statistics
+
+PagingStatistics
+
+1
+
+Information about the paging statistics
+
+prev
+
+URI
+
+0..1
+
+Link to a possible previous page with additional role references
+
+next
+
+URI
+
+0..1
+
+Link to a possible next page with additional role references
 
 # Get all roles of a user
 
@@ -1270,17 +1621,32 @@ Example response:
       "next" : "[URL to next page]"
     }
 
-??
-
 # Role reference
-
-??
 
 # RoleReference [application/vnd.com.nsn.cumulocity.roleReference+json]
 
-||
-|Name|Type|Occurs|Description|
-|self|URI|1|Link to this Resource|
-|role|Role|1|A role resource being referenced|
+Name
 
-??
+Type
+
+Occurs
+
+Description
+
+self
+
+URI
+
+1
+
+Link to this Resource
+
+role
+
+Role
+
+1
+
+A role resource being referenced
+
+

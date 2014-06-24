@@ -1,3 +1,9 @@
+---
+order: 90
+title: Auditing
+layout: default
+---
+
 The auditing interface consists of three parts:
 
 -   The *audit API* resource returns URIs and URI templates to collections of audit records, so that they can be queried by criteria such as "all records from a particular user", or "all records from a particular application".
@@ -8,17 +14,42 @@ The auditing interface consists of three parts:
 
 ## AuditRecords [application/vnd.com.nsn.cumulocity.auditApi+json]
 
-||
-|Name|Type|Occurs|Description|
-|self|URL|1|Link to this resource.|
-|auditRecords|AuditRecordCollection|1|Collection of all audit records.|
-|auditRecordsForType|AuditRecordCollection URI template|1|Read-only collection of all audit records of a particular type (placeholder ?type?).|
-|auditRecordsForUser|AuditRecordCollection URI template|1|Read-only collection of all audit records for a particular user (placeholder ?user?).|
-|auditRecordsForApplication|AuditRecordCollection URI template|1|Read-only collection of all audit records for a particular application (placeholder ?application?).|
-|auditRecordsForUserAndType|AuditRecordCollection URI template|1|Read-only collection of all audit records of a particular user and type (placeholder ?user? and ?type?).|
-|auditRecords ??????ForUserAndApplication|AuditRecordCollection URI template|1|Read-only collection of all audit records for a particular user and application (placeholder ?user? and ?application?).|
-|auditRecords ??????ForTypeAndApplication|AuditRecordCollection URI template|1|Read-only collection of all audit records of a particular type and application (placeholder ?type? and ?application?).|
-|auditRecords ??????ForTypeAndUserAndApplication|AuditRecordCollection URI template|1|Read-only collection of all audit records of a particular type, user and application (placeholder ?type?, ?user? and ?application?).|
+<table>
+<colgroup>
+<col width="25%" />
+<col width="25%" />
+<col width="25%" />
+<col width="25%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th align="left">Name
+Type
+Occurs
+Description</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">self
+URL
+1
+Link to this resource.</td>
+<td align="left">auditRecords
+AuditRecordCollection
+1
+Collection of all audit records.</td>
+<td align="left">auditRecordsForType
+AuditRecordCollection URI template
+1
+Read-only collection of all audit records of a particular type (placeholder &lt;&lt;type&gt;&gt;).</td>
+<td align="left">auditRecordsForUser
+AuditRecordCollection URI template
+1
+Read-only collection of all audit records for a particular user (placeholder &lt;&lt;user&gt;&gt;).</td>
+</tr>
+</tbody>
+</table>
 
 ## GET the AuditAPI resource
 
@@ -29,49 +60,78 @@ Required role: ROLE\_AUDIT\_READ
 Example response:
 
     HTTP/1.1 200 OK
-    Content-Type: application/vnd.com.nsn.cumulocity.auditApi+json;ver=?
-    Content-Length: ?
+    Content-Type: application/vnd.com.nsn.cumulocity.auditApi+json;ver=...
+    Content-Length: ...
      
     {
-      "self" : "?AuditAPI URL?",
-      "auditRecords" : { "self" :"?AuditCollection URL?" },
-      "auditRecordsForType" : "?AuditCollection URL??type={type}",
-      "auditRecordsForUser" : "?AuditCollection URL??user={user}",
-      "auditRecordsForApplication" : "?AuditCollection URL??application={application}",
-      "auditRecordsForUserAndType" : "?AuditCollection URL??user={user}&type={type}",
-      "auditRecordsForUserAndApplication" : "?AuditCollection URL??user={user}&application={application}",
-      "auditRecordsForTypeAndApplication" : "?AuditCollection URL??type={type}&application={application}",
-      "auditRecordsForTypeAndUserAndApplication" : "?AuditCollection URL??type={type}&user={user}&application={application}"
+      "self" : "<<AuditAPI URL>>",
+      "auditRecords" : { "self" :"<<AuditCollection URL>>" },
+      "auditRecordsForType" : "<<AuditCollection URL>>?type={type}",
+      "auditRecordsForUser" : "<<AuditCollection URL>>?user={user}",
+      "auditRecordsForApplication" : "<<AuditCollection URL>>?application={application}",
+      "auditRecordsForUserAndType" : "<<AuditCollection URL>>?user={user}&type={type}",
+      "auditRecordsForUserAndApplication" : "<<AuditCollection URL>>?user={user}&application={application}",
+      "auditRecordsForTypeAndApplication" : "<<AuditCollection URL>>?type={type}&application={application}",
+      "auditRecordsForTypeAndUserAndApplication" : "<<AuditCollection URL>>?type={type}&user={user}&application={application}"
     }
 
 # Audit record collection
 
 ## AuditRecordCollection [application/vnd.com.nsn.cumulocity.auditRecordCollection+json]
 
-||
-|Name|Type|Occurs|Description|
-|self|URI|1|Link to this resource.|
-|auditRecords|AuditRecord|0..n|List of audit records, see below.|
-|statistics|PagingStatistics|1|Information about paging statistics.|
-|prev|URI|0..1|Link to a potential previous page of audit records.|
-|next|URI|0..1|Link to a potential next page of audit records.|
+<table>
+<colgroup>
+<col width="25%" />
+<col width="25%" />
+<col width="25%" />
+<col width="25%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th align="left">Name
+Type
+Occurs
+Description</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">self
+URI
+1
+Link to this resource.</td>
+<td align="left">auditRecords
+AuditRecord
+0..n
+List of audit records, see below.</td>
+<td align="left">statistics
+PagingStatistics
+1
+Information about paging statistics.</td>
+<td align="left">prev
+URI
+0..1
+Link to a potential previous page of audit records.</td>
+</tr>
+</tbody>
+</table>
 
 The "source" object of an audit record contains the properties "id" and "self".
 
-## POST ? create a new audit record
+## POST - create a new audit record
 
 Request body: AuditRecord
- Response body: AuditRecord??(when Accept header is not provided, empty response body is returned)
+ Response body: AuditRecord (when Accept header is not provided, empty response body is returned)
   
 Required role: ROLE\_AUDIT\_ADMIN
 
 Example request:
 
-    POST ?
-    Host: ?
-    Authorization: Basic ?
-    Content-Length: ?
-    Content-Type: application/vnd.com.nsn.cumulocity.auditRecord+json;ver=?
+    POST ...
+    Host: ...
+    Authorization: Basic ...
+    Content-Length: ...
+    Content-Type: application/vnd.com.nsn.cumulocity.auditRecord+json;ver=...
     {
       "type" : "com_cumulocity_audit_LoginFailure",
       "time" : "2011-09-06T12:03:27.845Z",
@@ -85,12 +145,12 @@ Example request:
 Example response:
 
     HTTP/1.1 201 Created
-    Content-Type: application/vnd.com.nsn.cumulocity.auditRecord+json;ver=?
-    Content-Length: ?
-    Location: ?URL of new audit record?
+    Content-Type: application/vnd.com.nsn.cumulocity.auditRecord+json;ver=...
+    Content-Length: ...
+    Location: <<URL of new audit record>>
     {
       "id" : "123",
-      "self" : "?URL of new audit record?",
+      "self" : "<<URL of new audit record>>",
       "creationTime" : "2011-09-06T12:03:27.927Z",
       "type" : "com_cumulocity_audit_LoginFailure",
       "time" : "2011-09-06T12:03:27.845Z",
@@ -112,14 +172,14 @@ Required role: ROLE\_AUDIT\_READ
 Example response:
 
     HTTP/1.1 200 OK
-    Content-Type: application/vnd.com.nsn.cumulocity.auditRecordCollection+json;ver=?
-    Content-Length: ?
+    Content-Type: application/vnd.com.nsn.cumulocity.auditRecordCollection+json;ver=...
+    Content-Length: ...
     {
       "self" : "",
       "auditRecords" : [
         {
           "id" : "123",
-          "self" : "?AuditRecord 123 URL?",
+          "self" : "<<AuditRecord 123 URL>>",
           "creationTime" : "2011-09-06T12:03:27.927Z",
           "type" : "com_cumulocity_audit_LoginFailure",
           "time" : "2011-09-06T12:03:27.845Z",
@@ -141,33 +201,53 @@ Example response:
 
 ## AuditRecord [application/vnd.com.nsn.cumulocity.auditRecord+json]
 
-||
-|Name|Type|Occurs|Description|PUT/POST|
-|id|String|1|Uniquely identifies this audit record.|No|
-|self|URI|1|Link to this resource.|No|
-|creationTime|String|1|Time when audit record was created in the database.|No|
-|type|String|1|Identifies the type of this audit record.|POST: Mandatory
-PUT:
-No|
-|time|String|1|Time of the audit record.|POST: Mandatory
-PUT:
-No|
-|text|String|1|Text description of the audit record.|POST: Mandatory
-PUT:
-No|
-|source|ManagedObject|1|An optional ManagedObject that the audit record originated from, as object containing properties "id" and "self".|POST: Mandatory
-PUT:
-No|
-|user|String|1|The user responsible for the audited action.|Optional|
-|application|String|1|The application used to carry out the audited action.|Optional|
-|activity|String|1|The activity that was carried out.|POST: Mandatory
-PUT:
-Optional|
-|severity|String|1|The severity of action: critical, major, minor, warning or information.|POST: Mandatory
-PUT:
-Optional|
-|changes|Set|0..1|An optional collection of objects describing the changes that were carried out.|No|
-|\*|Object|0..n|Additional properties of the audit record.|Optional|
+<table>
+<colgroup>
+<col width="20%" />
+<col width="20%" />
+<col width="20%" />
+<col width="20%" />
+<col width="20%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th align="left">Name
+Type
+Occurs
+Description
+PUT/POST</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">id
+String
+1
+Uniquely identifies this audit record.
+No</td>
+<td align="left">self
+URI
+1
+Link to this resource.
+No</td>
+<td align="left">creationTime
+String
+1
+Time when audit record was created in the database.
+No</td>
+<td align="left">type
+String
+1
+Identifies the type of this audit record.
+POST: Mandatory<br />PUT:<br />No</td>
+<td align="left">time
+String
+1
+Time of the audit record.
+POST: Mandatory<br />PUT:<br />No</td>
+</tr>
+</tbody>
+</table>
 
 ## GET an audit record
 
@@ -178,12 +258,12 @@ Required role: ROLE\_AUDIT\_READ
 Example response:
 
     HTTP/1.1 200 OK
-    Content-Type: application/vnd.com.nsn.cumulocity.auditRecord+json;ver=?
-    Content-Length: ?
+    Content-Type: application/vnd.com.nsn.cumulocity.auditRecord+json;ver=...
+    Content-Length: ...
      
     {
       "id" : "123",
-      "self" : "?AuditRecord URL?",
+      "self" : "<<AuditRecord URL>>",
       "creationTime" : "2011-09-06T12:03:27.927Z",
       "type" : "com_cumulocity_audit_LoginFailure",
       "time" : "2011-09-06T12:03:27.845Z",

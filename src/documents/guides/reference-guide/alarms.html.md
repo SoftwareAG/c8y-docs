@@ -1,3 +1,9 @@
+---
+order: 60
+title: Alarms
+layout: default
+---
+
 The alarms interface consists of three parts:
 
 -   The *alarm API* resource returns URIs and URI templates to collections of alarms, so that all alarms or alarms of a specified source device and/or status can be retrieved.
@@ -8,17 +14,42 @@ The alarms interface consists of three parts:
 
 ## AlarmAPI [application/vnd.com.nsn.cumulocity.alarmApi+json]
 
-||
-|Name|Type|Occurs|Description|
-|self|URL|1|Link to this resource.|
-|alarms|AlarmCollection|1|Collection of all alarms.|
-|alarmsForStatus|AlarmCollection URI template|1|Read-only collection of all alarms in a particular status (placeholder ?status?, see "Alarm" resource below for permitted values).|
-|alarmsForSource|AlarmCollection URI template|1|Read-only collection of all alarms for a particular source object (placeholder ?source?, unique ID of an object in the inventory).|
-|alarmsForSourceAndStatus|AlarmCollection URI template|1|Read-only collection of all alarms for a particular source object in a particular status (placeholder ?source? and ?status?).|
-|alarmsForTime|AlarmCollection URI template|1|Read-only collection of all alarms for a particular time range (placeholder???dateFrom? and???dateTo?).|
-|alarmsForStatusAndTime|AlarmCollection URI template|1|Read-only collection of all alarms for a particular status and time range (placeholder???status?,???dateFrom? and???dateTo?).|
-|alarmsForSourceAndTime|AlarmCollection URI template|1|Read-only collection of all alarms for a particular source and time range (placeholder???source?,???dateFrom? and???dateTo?;).|
-|alarmsForSourceAndStatusAndTime|AlarmCollection URI template|1|Read-only collection of all alarms for a particular source, status and time range (placeholder???source?,???status?,???dateFrom? and???dateTo?;).|
+<table>
+<colgroup>
+<col width="25%" />
+<col width="25%" />
+<col width="25%" />
+<col width="25%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th align="left">Name
+Type
+Occurs
+Description</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">self
+URL
+1
+Link to this resource.</td>
+<td align="left">alarms
+AlarmCollection
+1
+Collection of all alarms.</td>
+<td align="left">alarmsForStatus
+AlarmCollection URI template
+1
+Read-only collection of all alarms in a particular status (placeholder &lt;&lt;status&gt;&gt;, see &quot;Alarm&quot; resource below for permitted values).</td>
+<td align="left">alarmsForSource
+AlarmCollection URI template
+1
+Read-only collection of all alarms for a particular source object (placeholder &lt;&lt;source&gt;&gt;, unique ID of an object in the inventory).</td>
+</tr>
+</tbody>
+</table>
 
 ## GET the AlarmAPI resource
 
@@ -29,21 +60,50 @@ Required role: ROLE\_ALARM\_READ
 Example response:
 
     HTTP/1.1 200 OK
-    Content-Type: application/vnd.com.nsn.cumulocity.alarmApi+json;ver=?
-    Content-Length: ?
-    { "self" : "?AlarmAPI URL?", "alarms" : { "self" :"?AlarmCollection URL?" }, "alarmsForStatus" : "?AlarmCollection URL??status={status}", "alarmsForSource" : "?AlarmCollection URL??source={source}", "alarmsForSourceAndStatus" : "?AlarmCollection URL??source={source}&status={status}", "alarmsForTime" : "?AlarmCollection URL??dateFrom={dateFrom}&dateTo={dateTo}", "alarmsForStatusAndTime" : "?AlarmCollection URL??status={status}&dateFrom={dateFrom}&dateTo={dateTo}", "alarmsForSourceAndTime" : "?AlarmCollection URL??source={source}&dateFrom={dateFrom}&dateTo={dateTo}", "alarmsForSourceAndStatusAndTime" : "?AlarmCollection URL??source={source}&status={status}&dateFrom={dateFrom}&dateTo={dateTo}"}
+    Content-Type: application/vnd.com.nsn.cumulocity.alarmApi+json;ver=...
+    Content-Length: ...
+    { "self" : "<<AlarmAPI URL>>", "alarms" : { "self" :"<<AlarmCollection URL>>" }, "alarmsForStatus" : "<<AlarmCollection URL>>?status={status}", "alarmsForSource" : "<<AlarmCollection URL>>?source={source}", "alarmsForSourceAndStatus" : "<<AlarmCollection URL>>?source={source}&status={status}", "alarmsForTime" : "<<AlarmCollection URL>>?dateFrom={dateFrom}&dateTo={dateTo}", "alarmsForStatusAndTime" : "<<AlarmCollection URL>>?status={status}&dateFrom={dateFrom}&dateTo={dateTo}", "alarmsForSourceAndTime" : "<<AlarmCollection URL>>?source={source}&dateFrom={dateFrom}&dateTo={dateTo}", "alarmsForSourceAndStatusAndTime" : "<<AlarmCollection URL>>?source={source}&status={status}&dateFrom={dateFrom}&dateTo={dateTo}"}
 
 # Alarm collection
 
 ## AlarmCollection [application/vnd.com.nsn.cumulocity.alarmCollection+json]
 
-||
-|Name|Type|Occurs|Description|
-|self|URI|1|Link to this resource.|
-|alarms|Alarm|0..n|List of alarms, see below.|
-|statistics|PagingStatistics|1|Information about paging statistics.|
-|prev|URI|0..1|Link to a potential previous page of alarms.|
-|next|URI|0..1|Link to a potential next page of alarms.|
+<table>
+<colgroup>
+<col width="25%" />
+<col width="25%" />
+<col width="25%" />
+<col width="25%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th align="left">Name
+Type
+Occurs
+Description</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">self
+URI
+1
+Link to this resource.</td>
+<td align="left">alarms
+Alarm
+0..n
+List of alarms, see below.</td>
+<td align="left">statistics
+PagingStatistics
+1
+Information about paging statistics.</td>
+<td align="left">prev
+URI
+0..1
+Link to a potential previous page of alarms.</td>
+</tr>
+</tbody>
+</table>
 
 ## GET an alarm collection
 
@@ -54,39 +114,39 @@ Required role: ROLE\_ALARM\_READ
 Example response:
 
     HTTP/1.1 200 OK
-    Content-Type: application/vnd.com.nsn.cumulocity.alarmCollection+json;ver=?
-    Content-Length: ?
+    Content-Type: application/vnd.com.nsn.cumulocity.alarmCollection+json;ver=...
+    Content-Length: ...
      
     {
-      "self" : "?",
-      "next" : "?",
-      "prev" : "?",
+      "self" : "...",
+      "next" : "...",
+      "prev" : "...",
       "alarms": [
         {
           "id" : "10",
-          "self" : "?",
+          "self" : "...",
           "creationTime" : "2011-09-06T12:03:27.927Z",
           "type" : "com_cumulocity_events_TamperEvent",
           "time" : "2011-09-06T12:03:27.845Z",
           "text" : "Tamper sensor triggered",
-          "status" : "active",
-          "severity" : "major",
-          "source": { "id" : "12345", "self" : "?" },
+          "status" : "ACTIVE",
+          "severity" : "MAJOR",
+          "source": { "id" : "12345", "self" : "..." },
           "count":1,
-          "history": { ? }
+          "history": { ... }
         },
         {
           "id" : "11",
-          "self" : "?",
+          "self" : "...",
           "creationTime" : "2011-09-06T12:03:27.927Z",
           "type" : "com_cumulocity_events_BatteryWarning",
           "time" : "2011-09-06T12:04:27.845Z",
           "text" : "Low battery level",
-          "status" : "active",
-          "severity" : "minor",
-          "source": { "id" : "1122", "self" : "?" },
+          "status" : "ACTIVE",
+          "severity" : "MINOR",
+          "source": { "id" : "1122", "self" : "..." },
           "count":1,
-          "history": { ? }
+          "history": { ... }
         }
       ],
       "statistics" : {
@@ -96,51 +156,51 @@ Example response:
       }
     }
 
-## POST ? Create a new Alarm
+## POST - Create a new Alarm
 
 Request body: Alarm
- Response body: Alarm??(when Accept header is not provided, empty response body is returned)
+ Response body: Alarm (when Accept header is not provided, empty response body is returned)
   
 Required role: ROLE\_ALARM\_ADMIN or owner of source object.
 
 Example request:
 
-    POST ?
-    Host: ?
-    Authorization: Basic ?
-    Content-Length: ?
-    Content-Type: application/vnd.com.nsn.cumulocity.alarm+json;ver=?
+    POST ...
+    Host: ...
+    Authorization: Basic ...
+    Content-Length: ...
+    Content-Type: application/vnd.com.nsn.cumulocity.alarm+json;ver=...
      
     {
       "type" : "com_cumulocity_events_TamperEvent",
       "time" : "2011-09-06T12:03:27.845Z",
       "text" : "Tamper sensor triggered",
-      "status" : "active",
-      "severity" : "major",
-      "source" : { "id" : "12345", "self" : "?" },
-      "com_mycorp_MyProp" : { ? }
+      "status" : "ACTIVE",
+      "severity" : "MAJOR",
+      "source" : { "id" : "12345", "self" : "..." },
+      "com_mycorp_MyProp" : { ... }
     }
 
 Example response:
 
     HTTP/1.1 201 Created
-    Content-Type: application/vnd.com.nsn.cumulocity.alarm+json;ver=?
-    Content-Length: ?
-    Location: ?URL of new alarm?
+    Content-Type: application/vnd.com.nsn.cumulocity.alarm+json;ver=...
+    Content-Length: ...
+    Location: <<URL of new alarm>>
      
     {
       "id" : "10",
-      "self" : "?URL of new alarm?",
+      "self" : "<<URL of new alarm>>",
       "creationTime" : "2011-09-06T12:03:27.927Z",
       "type" : "com_cumulocity_events_TamperEvent",
       "time" : "2011-09-06T12:03:27.845Z",
       "text" : "Tamper sensor triggered",
-      "status" : "active",
-      "severity" : "major",
-      "source" : { "id" : "12345", "self" : "?" },
+      "status" : "ACTIVE",
+      "severity" : "MAJOR",
+      "source" : { "id" : "12345", "self" : "..." },
       "count": 1,
-      "com_mycorp_MyProp" : { ? }
-      "history" : { ? }
+      "com_mycorp_MyProp" : { ... }
+      "history" : { ... }
     }
 
 For POST requests, the source parameter is required to have only an id.
@@ -149,39 +209,161 @@ The "id" and "creationTime" of the new alarm are generated by the server and ret
 
 **Alarm suppression** If the source device is in [maintenance](index.php?option=com_k2&view=item&id=975) mode, the alarm is not created and not reported to the Cumulocity event processing engine.
 
-**Alarm de-duplication** If an active or acknowledged alarm with the same source and type exists, no new alarm is created. Instead, the existing alarm is updated by incrementing the "count" property. The first occurrence of the alarm is recorded in "firstOccurenceTime".
+**Alarm de-duplication** If an active or acknowledged alarm (does not work for cleared) with the same source and type exists, no new alarm is created. Instead, the existing alarm is updated by incrementing the "count" property. The first occurrence of the alarm is recorded in "firstOccurenceTime".
 
 # Alarm
 
 ## Alarm [application/vnd.com.nsn.cumulocity.alarm+json]
 
-||
-|Name|Type|Occurs|Description|PUT/POST|
-|id|String|1|Uniquely identifies an alarm.|No|
-|self|URI|1|Link to this resource.|No|
-|creationTime|String|1|Time when alarm was created in the database.|No|
-|type|String|1|Identifies the type of this alarm, e.g., "com\_cumulocity\_events\_TamperEvent".|POST: Mandatory
+Name
+
+Type
+
+Occurs
+
+Description
+
+PUT/POST
+
+id
+
+String
+
+1
+
+Uniquely identifies an alarm.
+
+No
+
+self
+
+URI
+
+1
+
+Link to this resource.
+
+No
+
+creationTime
+
+String
+
+1
+
+Time when alarm was created in the database.
+
+No
+
+type
+
+String
+
+1
+
+Identifies the type of this alarm, e.g., "com\_cumulocity\_events\_TamperEvent".
+
+POST: Mandatory
 PUT:
-No|
-|time|String|1|Time of the alarm.|POST: Mandatory
+No
+
+time
+
+String
+
+1
+
+Time of the alarm.
+
+POST: Mandatory
 PUT:
-No|
-|text|String|1|Text description of the alarm.|POST: Mandatory
+No
+
+text
+
+String
+
+1
+
+Text description of the alarm.
+
+POST: Mandatory
 PUT:
-No|
-|source|ManagedObject|1|The ManagedObject that the alarm originated from, as object containing the "id" property.|POST: Mandatory
+No
+
+source
+
+ManagedObject
+
+1
+
+The ManagedObject that the alarm originated from, as object containing the "id" property.
+
+POST: Mandatory
 PUT:
-No|
-|status|String|1|The status of the alarm: active, acknowledged or cleared.|POST: Mandatory
+No
+
+status
+
+String
+
+1
+
+The status of the alarm: ACTIVE, ACKNOWLEDGED or CLEARED. Must be upper-case.
+
+POST: Mandatory
 PUT:
-Optional|
-|severity|String|1|The severity of the alarm: critical, major, minor or warning.|POST: Mandatory
+Optional
+
+severity
+
+String
+
+1
+
+The severity of the alarm: CRITICAL, MAJOR, MINOR or WARNING. Must be upper-case.
+
+POST: Mandatory
 PUT:
-Optional|
-|count|Long|1|The number of times this alarm has been sent.|No|
-|firstOccurenceTime|String|1|The first time that this alarm occurred (i.e., where "count" was 1).|No|
-|history|AuditRecordCollection|1|History of modifications tracing property changes.|No|
-|\*|Object|0..n|Additional properties of the event.||
+Optional
+
+count
+
+Long
+
+1
+
+The number of times this alarm has been sent.
+
+No
+
+firstOccurenceTime
+
+String
+
+1
+
+The first time that this alarm occurred (i.e., where "count" was 1).
+
+No
+
+history
+
+AuditRecordCollection
+
+1
+
+History of modifications tracing property changes.
+
+No
+
+\*
+
+Object
+
+0..n
+
+Additional properties of the event.
 
 ## GET an Alarm
 
@@ -192,22 +374,22 @@ Required role: ROLE\_ALARM\_READ
 Example response:
 
     HTTP/1.1 200 OK
-    Content-Type: application/vnd.com.nsn.cumulocity.alarm+json;ver=?
-    Content-Length: ?
+    Content-Type: application/vnd.com.nsn.cumulocity.alarm+json;ver=...
+    Content-Length: ...
     {
       "id" : "10",
-      "self" : "?Alarm URL?",
+      "self" : "<<Alarm URL>>",
       "creationTime" : "2011-09-06T12:03:27.927Z",
       "type" : "com_cumulocity_events_TamperEvent",
       "time" : "2011-09-06T12:03:27.845Z",
       "text" : "Tamper sensor triggered",
-      "status" : "active",
-      "severity" : "major",
-      "source" : { "id" : "12345", "self" : "?" },
-      "com_mycorp_MyProp" : { ? }
+      "status" : "ACTIVE",
+      "severity" : "MAJOR",
+      "source" : { "id" : "12345", "self" : "..." },
+      "com_mycorp_MyProp" : { ... }
       "history" : {
-        "self" : "?",
-        "auditRecords" : [ ? ],
+        "self" : "...",
+        "auditRecords" : [ ... ],
       }
     }
 
@@ -216,15 +398,15 @@ Example response:
 Changes to alarms will generate a new audit record which will be added to the "history" collection. The audit record will include the username and application that triggered the update, if applicable.
 
 Request body: Alarm
- Response body: Alarm??(when Accept header is not provided, empty response body is returned)
+ Response body: Alarm (when Accept header is not provided, empty response body is returned)
  Required : ROLE\_ALARM\_ADMIN or owner of source object
 
 Example Request:
 
-    PUT ?
-    Host: ?
-    Authorization: Basic ?
-    Content-Type: application/vnd.com.nsn.cumulocity.alarm+json;ver=?
+    PUT ...
+    Host: ...
+    Authorization: Basic ...
+    Content-Type: application/vnd.com.nsn.cumulocity.alarm+json;ver=...
     {
       "severity" : "minor"
     }
@@ -232,24 +414,24 @@ Example Request:
 Example response:
 
     HTTP/1.1 200 OK
-    Content-Type: application/vnd.com.nsn.cumulocity.alarm+json;ver=?
-    Content-Length: ?
+    Content-Type: application/vnd.com.nsn.cumulocity.alarm+json;ver=...
+    Content-Length: ...
     {
       "id" : "10",
-      "self" : "?Alarm URL?",
+      "self" : "<<Alarm URL>>",
       "creationTime" : "2011-09-06T12:03:27.927Z",
       "type" : "com_cumulocity_events_TamperEvent",
       "time" : "2011-09-06T12:03:27.845Z",
       "text" : "Tamper sensor triggered",
-      "status" : "acknowledged",
-      "severity" : "minor",
-      "source" : { "id" : "12345", "self" : "?" },
+      "status" : "ACKNOWLEDGED",
+      "severity" : "MINOR",
+      "source" : { "id" : "12345", "self" : "..." },
       "history" : {
         "self" : "link to audit history",
         "auditRecords" : [
           {
             "id" : "123",
-            "self" : "?",
+            "self" : "...",
             "type" : "com_cumulcity_model_alarm_AlarmRaised",
             "creationTime" : "2011-09-06T12:03:32.103Z",
             "time" : "2011-09-06T12:03:27.845Z",
@@ -258,11 +440,11 @@ Example response:
             "application" : "Omniscape",
             "activity" : "Alarm raised",
             "severity" : "MINOR",
-            "source" : { ? }
+            "source" : { ... }
           },
           {
             "id" : "1234",
-            "self" : "?",
+            "self" : "...",
             "type" : "com_cumulcity_model_alarm_AlarmChanged",
             "creationTime" : "2011-09-07T12:04:29.031Z",
             "changes": [{
@@ -277,7 +459,7 @@ Example response:
             "application" : "Omniscape",
             "activity" : "Alarm changed.",
             "severity" : "Minor",
-            "source" : { ? }
+            "source" : { ... }
           }
         ]
       }

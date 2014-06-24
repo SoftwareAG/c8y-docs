@@ -1,3 +1,9 @@
+---
+order: 20
+title: Inventory
+layout: default
+---
+
 The inventory interface consists of the following parts:
 
 -   The *inventory API* resource returns URIs and URI templates to collections of managed objects, so that all objects, all objects of a particular type and all objects with particular capabilities can be queried.
@@ -10,14 +16,42 @@ The inventory interface consists of the following parts:
 
 ## InventoryAPI [application/vnd.com.nsn.cumulocity.inventoryApi+json]
 
-||
-|Name|Type|Occurs|Description|
-|self|URL|1|Link to this resource.|
-|managedObjects|ManagedObjectCollection|1|Collection of all managed objects.|
-|managedObjectsForType|ManagedObjectCollection URI-Template|1|Read-only collection of all managed objects of a particular type (placeholder ?type?).|
-|managedObjectsForFragmentType|ManagedObjectCollection URI-Template|1|Read-only collection of all managed objects with a particular fragment type or capability (placeholder ?fragmentType?).|
-|managedObjectsForListOfIds|ManagedObjectCollection URI-Template|1|Read-only collection of managed objects fetched for a given list of ids (placeholder ?ids?),for example "?ids=41,43,68".|
-|managedObjectsForText|ManagedObjectCollection URI-Template|1|Read-only collection of managed objects containing a text value starting with the given text (placeholder ?text?). Text value is any alphanumeric string starting with a latin letter (A-Z or a-z).|
+<table>
+<colgroup>
+<col width="25%" />
+<col width="25%" />
+<col width="25%" />
+<col width="25%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th align="left">Name
+Type
+Occurs
+Description</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">self
+URL
+1
+Link to this resource.</td>
+<td align="left">managedObjects
+ManagedObjectCollection
+1
+Collection of all managed objects.</td>
+<td align="left">managedObjectsForType
+ManagedObjectCollection URI-Template
+1
+Read-only collection of all managed objects of a particular type (placeholder &lt;&lt;type&gt;&gt;).</td>
+<td align="left">managedObjectsForFragmentType
+ManagedObjectCollection URI-Template
+1
+Read-only collection of all managed objects with a particular fragment type or capability (placeholder &lt;&lt;fragmentType&gt;&gt;).</td>
+</tr>
+</tbody>
+</table>
 
 ## GET the Inventory API resource
 
@@ -30,27 +64,56 @@ Example response:
     Content-Type: application/vnd.com.nsn.cumulocity.inventoryApi+json;ver=...
     Content-Length: ...
     {
-        "self" : "?InventoryAPI URL?",
+        "self" : "<<InventoryAPI URL>>",
         "managedObjects" : {
-            "self" : "?ManagedObjectCollection URL?"
+            "self" : "<<ManagedObjectCollection URL>>"
         },
-        "managedObjectsForType" : "?ManagedObjectCollection URL??type={type}",
-        "managedObjectsForFragmentType" : "?ManagedObjectCollection URL??fragmentType={fragmentType}",
-        "managedObjectsForListOfIds" : "?ManagedObjectCollection URL??ids={ids}",
-        "managedObjectsForText" : "?ManagedObjectCollection URL??text={text}"
+        "managedObjectsForType" : "<<ManagedObjectCollection URL>>?type={type}",
+        "managedObjectsForFragmentType" : "<<ManagedObjectCollection URL>>?fragmentType={fragmentType}",
+        "managedObjectsForListOfIds" : "<<ManagedObjectCollection URL>>?ids={ids}",
+        "managedObjectsForText" : "<<ManagedObjectCollection URL>>?text={text}"
     }
 
 # Managed object collection
 
 ## ManagedObjectCollection [application/vnd.com.nsn.cumulocity.managedObjectCollection+json]
 
-||
-|Name|Type|Occurs|Description|
-|self|URI|1|Link to this resource.|
-|managedObjects|ManagedObject|0..n|List of managed objects, see below.|
-|statistics|PagingStatistics|1|Information about paging statistics.|
-|prev|URI|0..1|Link to a potential previous page of managed objects.|
-|next|URI|0..1|Link to a potential next page of managed objects.|
+<table>
+<colgroup>
+<col width="25%" />
+<col width="25%" />
+<col width="25%" />
+<col width="25%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th align="left">Name
+Type
+Occurs
+Description</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">self
+URI
+1
+Link to this resource.</td>
+<td align="left">managedObjects
+ManagedObject
+0..n
+List of managed objects, see below.</td>
+<td align="left">statistics
+PagingStatistics
+1
+Information about paging statistics.</td>
+<td align="left">prev
+URI
+0..1
+Link to a potential previous page of managed objects.</td>
+</tr>
+</tbody>
+</table>
 
 ## GET a representation of a ManagedObjectCollection
 
@@ -70,17 +133,17 @@ Example Response:
     Content-Type: application/vnd.com.nsn.cumulocity.managedObjectCollection+json;ver=...
     Content-Length: ...
     {
-      "self" : "?Collection URL?",
+      "self" : "<<Collection URL>>",
       "managedObjects" : [
         {
-          "self" : "?Object 42 URL?",
+          "self" : "<<Object 42 URL>>",
           "id" : "42",
           "type" :"bg_mps_D413",
           "name" : "Meter1",
           ...
         },
         {
-          "self" : "?Object 43 URL?",
+          "self" : "<<Object 43 URL>>",
           "id": "43",
           "type" :"bg_mps_D413",
           "name": "Meter2",
@@ -93,10 +156,10 @@ Example Response:
         "currentPage : 1
       },  "next" : "...",  "prev" : "..."}
 
-## POST ? Create a new ManagedObject
+## POST - Create a new ManagedObject
 
 Request body: ManagedObject
- Response body: ManagedObject??(when accept header is not provided, empty response body is returned)
+ Response body: ManagedObject (when accept header is not provided, empty response body is returned)
   
 Required role: ROLE\_INVENTORY\_ADMIN or ROLE\_INVENTORY\_CREATE
 
@@ -117,9 +180,9 @@ Example response:
     HTTP/1.1 201 Created
     Content-Type: application/vnd.com.nsn.cumulocity.managedObject+json;ver=...
     Content-Length: ...
-    Location: ?URL of new object?
+    Location: <<URL of new object>>
     {
-      "self" : "?URL of new object?",
+      "self" : "<<URL of new object>>",
       "id"   : "111",
       "lastUpdated": "2012-04-21T18:03:19.932+02:00",
       "name" : "A brand new switch",
@@ -132,18 +195,53 @@ The "id" and "lastUpdated" of the new managed object are generated by the server
 
 ## Managed Object [application/vnd.com.nsn.cumulocity.managedObject+json]
 
-||
-|Name|Type|Occurs|Description|PUT/POST|
-|id|String|1|Unique identifier of the object, automatically allocated when the object is created (see above).|No|
-|self|URL|1|Link to this resource.|No|
-|type|String|0..1|The most specific type of the managed object as fully qualified Java-style type name, dots replaced by underscores.|Optional|
-|name|String|0..1|Human-readable name that is used for representing the object in user interfaces.|Optional|
-|\*|Object|0..n|Additional properties associated with the specific ManagedObject.|Optional|
-|lastUpdated|TimeStamp|1|The time when the object was last updated.|No|
-|childDevices|ManagedObject ReferenceCollection|0..1|A collection of references to child devices.|No|
-|childAssets|ManagedObject ReferenceCollection|0..1|A collection of references to child assets.|No|
-|deviceParents|ManagedObject ReferenceCollection|0..1|A collection of references to device parent objects.|No|
-|assetParents|ManagedObject ReferenceCollection|0..1|A collection of references to asset parent objects.|No|
+<table>
+<colgroup>
+<col width="20%" />
+<col width="20%" />
+<col width="20%" />
+<col width="20%" />
+<col width="20%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th align="left">Name
+Type
+Occurs
+Description
+PUT/POST</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">id
+String
+1
+Unique identifier of the object, automatically allocated when the object is created (see above).
+No</td>
+<td align="left">self
+URL
+1
+Link to this resource.
+No</td>
+<td align="left">type
+String
+0..1
+The most specific type of the managed object as fully qualified Java-style type name, dots replaced by underscores.
+Optional</td>
+<td align="left">name
+String
+0..1
+Human-readable name that is used for representing the object in user interfaces.
+Optional</td>
+<td align="left">*
+Object
+0..n
+Additional properties associated with the specific ManagedObject.
+Optional</td>
+</tr>
+</tbody>
+</table>
 
 A managed object reference in the "child" and "parents" collections contains only "id", "name" and "self" properties.
 
@@ -163,18 +261,18 @@ Example response:
     {
       "id" : "42",
       "name" : "SomeName",
-      "self" : "?This ManagedObject URL?",
+      "self" : "<<This ManagedObject URL>>",
       "type" :"com_nsn_cumulocity_example_Clazz",
       "lastUpdated": "2012-05-02T19:48:40.006+02:00",
       "com_othercompany_StrongTypedClass" : { ... },
       "childDevices": {
-        "self" : "?ManagedObjectReferenceCollection URL?",
+        "self" : "<<ManagedObjectReferenceCollection URL>>",
         "references" : [
           {
-            "self" : "?ManagedObjectReference URL?",
+            "self" : "<<ManagedObjectReference URL>>",
             "managedObject": {
               "id": "1",
-              "self" : "?ManagedObject URL?"
+              "self" : "<<ManagedObject URL>>"
               "name": "Some Child"
             }
           },
@@ -184,10 +282,10 @@ Example response:
       ...
     }
 
-## PUT ? Update a Managed object
+## PUT - Update a Managed object
 
 Request body: ManangedObject
- Response body: ManangedObject??(when accept header is not provided, empty response body is returned)
+ Response body: ManangedObject (when accept header is not provided, empty response body is returned)
   
 Required role: ROLE\_INVENTORY\_ADMIN or owner
 
@@ -208,7 +306,7 @@ Example response:
     {
       "id" : "42",
       "name" : "Life, the Universe and the REST",
-      "self" : "?This ManagedObject URL?",
+      "self" : "<<This ManagedObject URL>>",
       "type" :"com_nsn_cumulocity_example_Clazz",
       "lastUpdated": "2012-05-02T19:58:40.006+02:00",
       "com_othercompany_StrongTypedClass" : { ... },
@@ -239,13 +337,42 @@ Example Response:
 
 ## ManagedObjectReferenceCollection [application/vnd.com.nsn.cumulocity.managedObjectReferenceCollection+json]
 
-||
-|Name|Type|Occurs|Description|
-|self|URI|1|Link to this resource.|
-|references|ManagedObjectReference|0..n|List of managed object references, see below.|
-|statistics|PagingStatistics|1|Information about paging statistics.|
-|prev|URI|0..1|Link to a potential previous page of managed objects.|
-|next|URI|0..1|Link to a potential next page of managed objects.|
+<table>
+<colgroup>
+<col width="25%" />
+<col width="25%" />
+<col width="25%" />
+<col width="25%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th align="left">Name
+Type
+Occurs
+Description</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">self
+URI
+1
+Link to this resource.</td>
+<td align="left">references
+ManagedObjectReference
+0..n
+List of managed object references, see below.</td>
+<td align="left">statistics
+PagingStatistics
+1
+Information about paging statistics.</td>
+<td align="left">prev
+URI
+0..1
+Link to a potential previous page of managed objects.</td>
+</tr>
+</tbody>
+</table>
 
 ## GET a managed object reference collection
 
@@ -258,21 +385,21 @@ Example Response:
     Content-Length: ...
      
     {
-      "self" : "?This ManagedObjectReferenceCollection URL?",
+      "self" : "<<This ManagedObjectReferenceCollection URL>>",
       "references" : [
         {
-          "self" : "?ManagedObjectReference URL?",
+          "self" : "<<ManagedObjectReference URL>>",
           "managedObject" : {
-            "self" : "?ManagedObject 1 URL?",
+            "self" : "<<ManagedObject 1 URL>>",
             "name" : "Meter1",
             "id" : "1",
             ...
           }
         },
         {
-          "self" : "?ManagedObjectReference URL?",
+          "self" : "<<ManagedObjectReference URL>>",
           "managedObject" : {
-            "self" : "?ManagedObject 2 URL?",
+            "self" : "<<ManagedObject 2 URL>>",
             "name" : "Meter2",
             "id" : "2",
             ...
@@ -287,7 +414,7 @@ Example Response:
       "prev": "..."
     }
 
-## POST ? add a managed object reference to the collection
+## POST - add a managed object reference to the collection
 
 Request body: ManagedObjectReference
  Response body: ManagedObjectReference
@@ -303,7 +430,7 @@ Example Request: Add a ManagedObjectReference
     Content-Type: application/vnd.com.nsn.cumulocity.managedObjectReference+json;ver=...
      
     {
-      "managedObject" : { "self" :"?ManagedObject URL?" }
+      "managedObject" : { "self" :"<<ManagedObject URL>>" }
     }
 
 Example Response:
@@ -311,12 +438,12 @@ Example Response:
     HTTP/1.1 201 Created
     Content-Type: application/vnd.com.nsn.cumulocity.managedObjectReference+json;ver=...
     Content-Length: ...
-    Location: ?This ManagedObjectReference URL?
+    Location: <<This ManagedObjectReference URL>>
     {
-      "self" : "?This ManagedObjectReference URL?,
+      "self" : "<<This ManagedObjectReference URL>>,
       "managedObject" : {
         "id" : "2",
-        "self" : ?ManagedObject 2 URL?,
+        "self" : <<ManagedObject 2 URL>>,
         "name" : "Meter2",
         ...
       }
@@ -326,10 +453,34 @@ Example Response:
 
 ## ManagedObjectReference [application/vnd.com.nsn.cumulocity.managedObjectReference+json]
 
-||
-|Name|Type|Occurs|Description|
-|self|URI|1|Link to this resource.|
-|managedObject|ManagedObject|1|The ManagedObject being referenced.|
+<table>
+<colgroup>
+<col width="25%" />
+<col width="25%" />
+<col width="25%" />
+<col width="25%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th align="left">Name
+Type
+Occurs
+Description</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">self
+URI
+1
+Link to this resource.</td>
+<td align="left">managedObject
+ManagedObject
+1
+The ManagedObject being referenced.</td>
+</tr>
+</tbody>
+</table>
 
 ## GET a managed object reference
 
@@ -343,9 +494,9 @@ Example Response:
     Content-Type: application/vnd.com.nsn.cumulocity.managedObjectReference+json;ver=...
     Content-Length: ...
     {
-      "self" : "?This ManagedObjectReference URL?",
+      "self" : "<<This ManagedObjectReference URL>>",
       "managedObject" : {
-        "self" : "?ManagedObject 4 URL?",
+        "self" : "<<ManagedObject 4 URL>>",
         "name" : "Foo",
         "id" : "4",
         ...

@@ -9,23 +9,23 @@ This section discusses security aspects of Cumulocity, structured into physical 
 
 More information can be found in the security-related sections of the remaining documentation, such as the [REST implementation](/guides/reference-guide/rest-implementation) reference and the [Users API](/guides/reference-guide/users). Permissions required for individual API calls are documented in the respective reference guide sections for the APIs.
 
-Cumulocity complies with Nokia Networks' "Design for Security" and Deutsche Telekom's "Privacy and Security Assessment" (PSA, [detailed criteria in German](http://www.telekom.com/psa)).
+Cumulocity complies with Nokia Networks' "Design for Security" policy and Deutsche Telekom's "Privacy and Security Assessment" (PSA, [detailed criteria in German](http://www.telekom.com/psa)).
 
 ## Physical security aspects
 
 Physical security of IT systems prevents unauthorized physical access to servers, storage and network devices.
 
-Cumulocity Standard Edition accounts are hosted at Amazon Web Services (AWS). AWS has been certified according to [ISO 27001, DSS and other standards](http://aws.amazon.com/compliance/). It features extensive physical security measures and is independently audited. Audit reports can be enquired directly at [AWS Compliance](http://aws.amazon.com/compliance/contact/).
+Cumulocity Standard Edition accounts are hosted at Amazon Web Services (AWS). AWS has been certified according to [ISO 27001, DSS and other standards](http://aws.amazon.com/compliance/). It features extensive physical security measures and is independently audited. Audit reports can be obtained directly at [AWS Compliance](http://aws.amazon.com/compliance/contact/).
 
 In IoT solutions, physical security also includes unauthorized access to IoT devices, for example, to redirect or manipulate data from devices, read credentials from devices or change a device's configuration. We recommend you to review the physical security of the devices that you plan to use for your IoT solution and, e.g., make configuration ports unavailable to unauthorized people or include tamper sensors.
 
 ## Network security aspects
 
-Network security prevents unauthorized access to data transmitted over the network, tampering with the data or modification of it. 
+Network security prevents unauthorized access to data transmitted over the network and tampering with or modification of data. It also ensures that network services are available to you.
 
 Cumulocity ensures that your data stays confidential and cannot be tampered with through an end-to-end implementation of [HTTPS](http://en.wikipedia.org/wiki/HTTP_Secure) from devices to applications. It uses up-to-date encryption technology that has been independently rated "A" by sslabs.com. Any communication with Cumulocity is subject to individual authentication and authorization. 
 
-The communication architecture is illustrated below. Inside the sensor networks and from the sensor networks to agents, device- and gateway-specific protocols may be in use. Hence, securing these is a device-specific matter. Some alternatives are described in the section on agent architectures in ["Interfacing devices"](/guides/concepts-guide/interfacing-devices). Agents run as client towards the Cumulocity using [HTTPS](http://en.wikipedia.org/wiki/HTTP_Secure) to send and receive data. Similarly, IoT applications use HTTPS towards Cumulocity. If an IoT application exposes own interfaces towards web browsers, it is recommended that these also support HTTPS. This way, the whole path from agents to the end user is secured.
+This communication architecture is illustrated below. Inside the sensor networks and from the sensor networks to agents, device- and gateway-specific protocols may be in use (such as ZigBee or Modbus). Hence, securing these is a device-specific matter. Agents run as client towards the Cumulocity using HTTPS to send and receive data. Similarly, IoT applications use HTTPS towards Cumulocity. If an IoT application exposes own interfaces towards web browsers, it is recommended that these also support HTTPS. This way, the whole path from agents to the end user is secured.
 
 ![Communication security](/images/guides/concepts-guide/commsecurity.png)
 

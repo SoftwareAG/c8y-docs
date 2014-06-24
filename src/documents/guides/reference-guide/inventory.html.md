@@ -16,19 +16,19 @@ The inventory interface consists of the following parts:
 
 ## InventoryAPI [application/vnd.com.nsn.cumulocity.inventoryApi+json]
 
-<table>
-<colgroup>
-<col width="25%" />
-<col width="25%" />
-<col width="25%" />
-<col width="25%" />
-</colgroup>
+
+Name | Type | Occurs | Description
+--- | --- | --- | ---
+self | URL | 1 | Link to this resource.
+
+
+<table class="table table-striped">
 <thead>
 <tr class="header">
-<th align="left">Name
-Type
-Occurs
-Description</th>
+<th align="left">Name</th>
+<th>Type</th>
+<th>Occurs</th>
+<th>Description</th>
 </tr>
 </thead>
 <tbody>
@@ -37,8 +37,8 @@ Description</th>
 URL
 1
 Link to this resource.</td>
-<td align="left">managedObjects
-ManagedObjectCollection
+<td align="left">managedObjects</td>
+<td>ManagedObjectCollection</td>
 1
 Collection of all managed objects.</td>
 <td align="left">managedObjectsForType

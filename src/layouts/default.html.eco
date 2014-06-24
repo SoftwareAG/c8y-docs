@@ -51,7 +51,13 @@
               <a data-toggle="collapse" data-parent="#docs-nav" href="#<%= section.icon %>">
                 <h4><span class="glyphicon <%= section.icon %>"></span> <%= section.title %><span class="caret"></span></h4>
               </a>
-              <div id="<%= section.icon %>"class="collapse">
+
+              <% for page in @getCollection("html").findAllLive({relativeOutDirPath: section.folder }, [ order: 1, title: 1 ] ).toJSON():%>
+                <% if page.id is @document.id then $in = 'in' %>
+              <% end %>
+
+              <div id="<%= section.icon %>"class="collapse <%= $in %>">
+                <% $in = '' %>
                 <ul class="list-group">
                   <% for page in @getCollection("html").findAllLive({relativeOutDirPath: section.folder }, [ order: 1, title: 1 ] ).toJSON():%>
                     <li class="<%= if page.id is @document.id then 'active' %> list-group-item">

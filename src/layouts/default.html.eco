@@ -25,9 +25,9 @@
         var isInIFrame = window.location !== window.parent.location;
         if(isInIFrame){
 
-          document.write('<link href="/docstyle.css" rel="stylesheet" id="cumulocity-style-css" type="text/css" media="all" />');
+          document.write('<link href="/docs-iframe-styles.css" rel="stylesheet" id="cumulocity-style-css" type="text/css" media="all" />');
         }else{
-          document.write('<link href="/style.css" rel="stylesheet" id="cumulocity-style-css" type="text/css" media="all" />');
+          document.write('<link href="/docs-styles.css" rel="stylesheet" id="cumulocity-style-css" type="text/css" media="all" />');
         }
   </script>
 

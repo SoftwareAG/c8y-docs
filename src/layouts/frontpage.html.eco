@@ -20,7 +20,7 @@
     <![endif]-->
 
    <link rel="shortcut icon" href="/images/favicon.ico"/>
-    <link href="/style.css" rel="stylesheet" id="cumulocity-style-css" type='text/css' media='all' />
+    <link href="/docs.styles.css" rel="stylesheet" id="cumulocity-style-css" type='text/css' media='all' />
     <%- @getBlock("styles").toHTML() %>
 </head>
 <body>

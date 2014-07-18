@@ -1,9 +1,3 @@
----
-order: 180
-title: Tenants
-layout: default
----
-
 The API below is not published in "/platform" and don't have API object.
 
 # Tenants
@@ -21,42 +15,13 @@ The Tenant interface is available consists of parts:
 
 ## TenantCollection [application/vnd.com.nsn.cumulocity.tenantCollection+json]
 
-<table>
-<colgroup>
-<col width="25%" />
-<col width="25%" />
-<col width="25%" />
-<col width="25%" />
-</colgroup>
-<thead>
-<tr class="header">
-<th align="left">Name
-Type
-Occurs
-Description</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td align="left">self
-URI
-1
-Link to this resource.</td>
-<td align="left">tenants
-Tenant
-0..n
-List of Tenant, see below.</td>
-<td align="left">statistics
-PagingStatistics
-1
-Information about paging statistics.</td>
-<td align="left">prev
-URI
-0..1
-Link to a potential previous page of tenants.</td>
-</tr>
-</tbody>
-</table>
+|Name|Type|Occurs|Description|
+|:---|:---|:-----|:----------|
+|self|URI|1|Link to this resource.|
+|tenants|Tenant|0..n|List of Tenant, see below.|
+|statistics|PagingStatistics|1|Information about paging statistics.|
+|prev|URI|0..1|Link to a potential previous page of tenants.|
+|next|URI|0..1|Link to a potential next page of tenants.|
 
 ## GET a representation of a Tenant Collection.
 
@@ -160,53 +125,18 @@ Example Response :
 
 ## Tenant [application/vnd.com.nsn.cumulocity.tenant+json]
 
-<table>
-<colgroup>
-<col width="20%" />
-<col width="20%" />
-<col width="20%" />
-<col width="20%" />
-<col width="20%" />
-</colgroup>
-<thead>
-<tr class="header">
-<th align="left">Name
-Type
-Occurs
-Description
-Visibility</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td align="left">self
-URI
-0..1
-Link to this resource.
-Public</td>
-<td align="left">id
-String
-1
-Tenant id
-Public</td>
-<td align="left">status
-String
-1
-Status of tenant, possible values [ACTIVE, SUSPENDED].
-Private</td>
-<td align="left">adminName
-String
-1
-Administrator user name
-Private</td>
-<td align="left">domain
-String
-1
-URL of tenants domain.
-Public</td>
-</tr>
-</tbody>
-</table>
+|Name|Type|Occurs|Description|Visibility|
+|:---|:---|:-----|:----------|:---------|
+|self|URI|0..1|Link to this resource.|Public|
+|id|String|1|Tenant id|Public|
+|status|String|1|Status of tenant, possible values [ACTIVE, SUSPENDED].|Private|
+|adminName|String|1|Administrator user name|Private|
+|domain|String|1|URL of tenants domain.|Public|
+|company|String|1|Tenants company name.|Public|
+|contactName|String|1|Contact person name.|Public|
+|contactPhone|String|1|Contact person phone number.|Public|
+|applications|ApplicationReferenceCollection|1|Collection of tenant subscribed, applications.|Private|
+|ownedApplications|ApplicationReferenceCollection|1|Collection of tenant owned, applications.|Public - only applications with availability MARKET|
 
 ## GET a representation of a Tenant.
 
@@ -267,42 +197,13 @@ Example Response :
 
 ## ApplicationReferenceCollection [application/vnd.com.nsn.cumulocity.applicationReferenceCollection+json].
 
-<table>
-<colgroup>
-<col width="25%" />
-<col width="25%" />
-<col width="25%" />
-<col width="25%" />
-</colgroup>
-<thead>
-<tr class="header">
-<th align="left">Name
-Type
-Occurs
-Description</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td align="left">self
-URI
-1
-Link to this resource.</td>
-<td align="left">references
-ApplicationReference
-0..n
-List of Options, see below.</td>
-<td align="left">statistics
-PagingStatistics
-1
-Information about paging statistics.</td>
-<td align="left">prev
-URI
-0..1
-Link to a potential previous page of options.</td>
-</tr>
-</tbody>
-</table>
+|Name|Type|Occurs|Description|
+|:---|:---|:-----|:----------|
+|self|URI|1|Link to this resource.|
+|references|ApplicationReference|0..n|List of Options, see below.|
+|statistics|PagingStatistics|1|Information about paging statistics.|
+|prev|URI|0..1|Link to a potential previous page of options.|
+|next|URI|0..1|Link to a potential next page of options.|
 
 ## GET a representation of a ApplicationReferenceCollection.
 
@@ -358,34 +259,10 @@ Example Response :
 
 ## ApplicationReference [application/vnd.com.nsn.cumulocity.applicationReference+json].
 
-<table>
-<colgroup>
-<col width="25%" />
-<col width="25%" />
-<col width="25%" />
-<col width="25%" />
-</colgroup>
-<thead>
-<tr class="header">
-<th align="left">Name
-Type
-Occurs
-Description</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td align="left">self
-URI
-1
-Link to this resource.</td>
-<td align="left">reference
-Application
-0..n
-The Application being referenced</td>
-</tr>
-</tbody>
-</table>
+|Name|Type|Occurs|Description|
+|:---|:---|:-----|:----------|
+|self|URI|1|Link to this resource.|
+|reference|Application|0..n|The Application being referenced|
 
 ## GET a representation of a ApplicationReference.
 
@@ -428,42 +305,13 @@ Example Response :
 
 ## OptionCollection [application/vnd.com.nsn.cumulocity.optionCollection+json].
 
-<table>
-<colgroup>
-<col width="25%" />
-<col width="25%" />
-<col width="25%" />
-<col width="25%" />
-</colgroup>
-<thead>
-<tr class="header">
-<th align="left">Name
-Type
-Occurs
-Description</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td align="left">self
-URI
-1
-Link to this resource.</td>
-<td align="left">options
-Option
-0..n
-List of Options, see below.</td>
-<td align="left">statistics
-PagingStatistics
-1
-Information about paging statistics.</td>
-<td align="left">prev
-URI
-0..1
-Link to a potential previous page of options.</td>
-</tr>
-</tbody>
-</table>
+|Name|Type|Occurs|Description|
+|:---|:---|:-----|:----------|
+|self|URI|1|Link to this resource.|
+|options|Option|0..n|List of Options, see below.|
+|statistics|PagingStatistics|1|Information about paging statistics.|
+|prev|URI|0..1|Link to a potential previous page of options.|
+|next|URI|0..1|Link to a potential next page of options.|
 
 ## GET a representation of a OptionCollection.
 
@@ -542,72 +390,19 @@ Options are category-key-value tuples, storing tenant configuration. Some catego
 
 ## Available Options
 
-Category
-
-Key
-
-Default value
-
-Only predefined
-
-Description
-
-access.control
-
-allow.origin
-
-\*
-
-yes
-
-Comma separated list of domains allowed for execution of CORS. Wildcards are allowed (e.g. \*.cumuclocity.com)
-
-alarm.type.mapping
-
-\<\<alarm type\>\>
-
-no
-
-\<\<alarm severity\>\>|\<\<alarm text\>\> - severity and text overwriting original alarm severity and text for given alarm type; if severity or text is empty - value will not be overwritten. If severity is "NONE" - alarm will be suppressed.
+|Category|Key|Default value|Only predefined|Description|
+|:-------|:--|:------------|:--------------|:----------|
+|access.control|allow.origin|\*|yes|Comma separated list of domains allowed for execution of CORS. Wildcards are allowed (e.g. \*.cumuclocity.com)|
+|alarm.type.mapping|\<\<alarm type\>\>||no|\<\<alarm severity\>\>|\<\<alarm text\>\> - severity and text overwriting original alarm severity and text for given alarm type; if severity or text is empty - value will not be overwritten. If severity is "NONE" - alarm will be suppressed.|
 
 ## Option [application/vnd.com.nsn.cumulocity.option+json]
 
-<table>
-<colgroup>
-<col width="25%" />
-<col width="25%" />
-<col width="25%" />
-<col width="25%" />
-</colgroup>
-<thead>
-<tr class="header">
-<th align="left">Name
-Type
-Occurs
-Description</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td align="left">self
-URI
-0..1
-Link to this resource.</td>
-<td align="left">category
-String
-1
-Category of option</td>
-<td align="left">key
-String
-1
-Key of option</td>
-<td align="left">value
-String
-1
-Value of option</td>
-</tr>
-</tbody>
-</table>
+|Name|Type|Occurs|Description|
+|:---|:---|:-----|:----------|
+|self|URI|0..1|Link to this resource.|
+|category|String|1|Category of option|
+|key|String|1|Key of option|
+|value|String|1|Value of option|
 
 ## GET a representation of a Option.
 

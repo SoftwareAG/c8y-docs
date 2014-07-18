@@ -1,3 +1,7 @@
+---
+layout: default
+title: Kontron M2MSSDK
+---
 # Overview
 
 This section describes how to interface the??[Kontron M2M Smart Services Developer Kit](http://us.kontron.com/products/systems+and+platforms/m2m/m2m+smart+services+developer+kit.html)??with Cumulocity. It shows how to download and install the Cumulocity Smart Agent for Kontron on the kit. To demonstrate the agent, the kit's accelerometer is queried so that shaking the kit will send an alarm to Cumulocity. This alarm is displayed in the sandbox administration console. Finally, the section shows how to modify the demo to develop new agent functionality.

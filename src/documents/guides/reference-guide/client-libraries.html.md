@@ -1,9 +1,3 @@
----
-order: 120
-title: Client libraries
-layout: default
----
-
 Documentation for the client libraries is available in:
 
 -   [Java](http://resources.cumulocity.com/documentation/javasdk/2.0/)

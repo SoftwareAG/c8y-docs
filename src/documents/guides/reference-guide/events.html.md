@@ -1,9 +1,3 @@
----
-order: 30
-title: Events
-layout: default
----
-
 The events interface consists of three parts:
 
 -   The *event API* resource returns URIs and URI templates to collections of events, so that all events or events of a specified type and/or a specific source device can be retrieved.
@@ -14,42 +8,25 @@ The events interface consists of three parts:
 
 ## EventAPI [application/vnd.com.nsn.cumulocity.eventApi+json]
 
-<table>
-<colgroup>
-<col width="25%" />
-<col width="25%" />
-<col width="25%" />
-<col width="25%" />
-</colgroup>
-<thead>
-<tr class="header">
-<th align="left">Name
-Type
-Occurs
-Description</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td align="left">self
-URL
-1
-Link to this resource.</td>
-<td align="left">events
-EventCollection
-1
-Collection of all events.</td>
-<td align="left">eventsForType
-EventCollection URI template
-1
-Read-only collection of all events of a particular type (placeholder &lt;&lt;type&gt;&gt;).</td>
-<td align="left">eventsForSource
-EventCollection URI template
-1
-Read-only collection of all events from a particular source object (placeholder &lt;&lt;source&gt;&gt;).</td>
-</tr>
-</tbody>
-</table>
+|Name|Type|Occurs|Description|
+|:---|:---|:-----|:----------|
+|self|URL|1|Link to this resource.|
+|events|EventCollection|1|Collection of all events.|
+|eventsForType|EventCollection URI template|1|Read-only collection of all events of a particular type (placeholder \<\<type\>\>).|
+|eventsForSource|EventCollection URI template|1|Read-only collection of all events from a particular source object (placeholder \<\<source\>\>).|
+|eventsForSourceAndType|EventCollection URI template|1|Read-only collection of all events of a particular type and from a particular source (placeholders \<\<type\>\> and \<\<source\>\>).|
+|eventsForTime|EventCollection URI template|1|Read-only collection of all events from a particular period (placeholder \<\<dateFrom\>\>, \<\<dateTo\>\>).|
+|eventsForFragmentType|EventCollection URI template|1|Read-only collection of all events containing a particular fragment type (placeholder \<\<fragmentType\>\>).|
+|eventsForSourceAndTime|EventCollection URI template|1|Read-only collection of all events from a particular source object from a particular period (placeholders \<\<source\>\>, \<\<dateFrom\>\>, \<\<dateTo\>\>).|
+|eventsForSourceAndFragmentType|EventCollection URI template|1|Read-only collection of all events of a particular source object containing a particular fragment type (placeholders \<\<source\>\>, \<\<fragmentType\>\>).|
+|eventsForDateAndFragmentType|EventCollection URI template|1|Read-only collection of all events from a particular period containing a particular fragment type (placeholders \<\<dateFrom\>\>, \<\<dateTo\>\>, \<\<fragmentType\>\>).|
+|eventsForFragmentTypeAndType|EventCollection URI template|1|Read-only collection of all events of a particular type containing a particular fragment type (placeholders \<\<fragmentType\>\>, \<\<type\>\>).|
+|eventsForTimeAndType|EventCollection URI template|1|Read-only collection of all events with a particular type from a particular period (placeholders \<\<type\>\>, \<\<dateFrom\>\>, \<\<dateTo\>\>).|
+|eventsForSourceAnd   DateAndFragmentType|EventCollection URI template|1|Read-only collection of all events from a particular source object, containing a particular fragment type, from a particular period (placeholders \<\<source\>\>, \<\<dateFrom\>\>, \<\<dateTo\>\>, \<\<fragmentType\>\>).|
+|eventsForSourceAnd   DateAndFragmentTypeAndType|EventCollection URI template|1|Read-only collection of all events from a particular source object, with a particular type, containing a particular fragment type, from a particular period (placeholders \<\<source\>\>, \<\<dateFrom\>\>, \<\<dateTo\>\>, \<\<fragmentType\>\>, \<\<type\>\>).|
+|eventsForSourceAnd   FragmentTypeAndType|EventCollection URI template|1|Read-only collection of all events from a particular source object, with a particular type, containing a particular fragment type (placeholders \<\<source\>\>, \<\<fragmentType\>\>, \<\<type\>\>).|
+|eventsForSourceAndTimeAndType|EventCollection URI template|1|Read-only collection of all events from a particular source object, with a particular type, from a particular period (placeholders \<\<source\>\>, \<\<type\>\>, \<\<dateFrom\>\>, \<\<dateTo\>\>).|
+|eventsForDateAnd   FragmentTypeAndType|EventCollection URI template|1|Read-only collection of all events from a particular type, containing a particular fragment type, from a particular period (placeholders \<\<type\>\>, \<\<dateFrom\>\>, \<\<dateTo\>\>, \<\<fragmentType\>\>).|
 
 ## GET the Event API resource
 
@@ -95,42 +72,13 @@ Example response:
 
 ## EventCollection [application/vnd.com.nsn.cumulocity.eventCollection+json]
 
-<table>
-<colgroup>
-<col width="25%" />
-<col width="25%" />
-<col width="25%" />
-<col width="25%" />
-</colgroup>
-<thead>
-<tr class="header">
-<th align="left">Name
-Type
-Occurs
-Description</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td align="left">self
-URI
-1
-Link to this resource.</td>
-<td align="left">events
-Event
-0..n
-List of events, see below.</td>
-<td align="left">statistics
-PagingStatistics
-1
-Information about paging statistics.</td>
-<td align="left">prev
-URI
-0..1
-Link to a potential previous page of events.</td>
-</tr>
-</tbody>
-</table>
+|Name|Type|Occurs|Description|
+|:---|:---|:-----|:----------|
+|self|URI|1|Link to this resource.|
+|events|Event|0..n|List of events, see below.|
+|statistics|PagingStatistics|1|Information about paging statistics.|
+|prev|URI|0..1|Link to a potential previous page of events.|
+|next|URI|0..1|Link to a potential next page of events.|
 
 ## GET an event collection
 
@@ -222,42 +170,16 @@ The "id" and "creationTime" of the new event are generated by the server and ret
 
 ## Event [application/vnd.com.nsn.cumulocity.event+json]
 
-<table>
-<colgroup>
-<col width="25%" />
-<col width="25%" />
-<col width="25%" />
-<col width="25%" />
-</colgroup>
-<thead>
-<tr class="header">
-<th align="left">Name
-Type
-Occurs
-Description</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td align="left">id
-String
-1
-Uniquely identifies an event.</td>
-<td align="left">self
-URI
-1
-Link to this resource.</td>
-<td align="left">creationTime
-String
-1
-Time when event was created in the database.</td>
-<td align="left">type
-String
-1
-Identifies the type of this event.</td>
-</tr>
-</tbody>
-</table>
+|Name|Type|Occurs|Description|
+|:---|:---|:-----|:----------|
+|id|String|1|Uniquely identifies an event.|
+|self|URI|1|Link to this resource.|
+|creationTime|String|1|Time when event was created in the database.|
+|type|String|1|Identifies the type of this event.|
+|time|String|1|Time of the event.|
+|text|String|1|Text description of the event.|
+|source|ManagedObject|1|The ManagedObject that the event originated from, as object containing properties "id", "self", "name", and "type".|
+|\*|Object|0..n|Additional properties of the event.|
 
 ## GET a representation of an Event
 

@@ -1,9 +1,3 @@
----
-order: 100
-title: Device management library
-layout: default
----
-
 # Overview
 
 The device management library defines the data structures that are used in Cumulocity for device management activities such as software management and configuration management.
@@ -46,26 +40,29 @@ A device marked in the inventory with a *c8y\_IsDevice* fragment supports device
 
 *c8y\_Hardware* contains basic hardware information for a device, such as make and serial number. Often, the hardware serial number is printed on the board of the device or on an asset tag on the device to uniquely identify the device within all devices of the same make.
 
-<table>
-<colgroup>
-<col width="33%" />
-<col width="33%" />
-<col width="33%" />
-</colgroup>
-<tbody>
-<tr class="odd">
-<td align="left">Name
+Name
+
 Type
-Description</td>
-<td align="left">model
+
+Description
+
+model
+
 String
-A text identifier of the device's hardware model.</td>
-<td align="left">revision
+
+A text identifier of the device's hardware model.
+
+revision
+
 String
-A text identifier of the hardware revision.</td>
-</tr>
-</tbody>
-</table>
+
+A text identifier of the hardware revision.
+
+serialNumber
+
+String
+
+The hardware serial number of the device.
 
     "c8y_Hardware": {
       "model": "BCM2708",
@@ -79,26 +76,29 @@ A text identifier of the hardware revision.</td>
 
 *c8y\_Firmware* contains information on a device's firmware. In the inventory, "c8y\_Firmware" represents the currently installed firmware on the device. As part of an operation, "c8y\_Firmware" requests the device to install the indicated firmware. To enable firmware installation through the user interface, add "c8y\_Firmware" to the list of supported operations as described above.
 
-<table>
-<colgroup>
-<col width="33%" />
-<col width="33%" />
-<col width="33%" />
-</colgroup>
-<tbody>
-<tr class="odd">
-<td align="left">Name
+Name
+
 Type
-Description</td>
-<td align="left">name
+
+Description
+
+name
+
 String
-Name of the firmware.</td>
-<td align="left">version
+
+Name of the firmware.
+
+version
+
 String
-A version identifier of the hardware.</td>
-</tr>
-</tbody>
-</table>
+
+A version identifier of the hardware.
+
+url
+
+URI
+
+A location to download the firmware from.
 
     "c8y_Firmware": {
       "name": "raspberrypi-bootloader",
@@ -130,23 +130,17 @@ To enable software installation through the user interface, add "c8y\_Software" 
 
 *c8y\_Configuration* permits a text-based configuration of the device. Most devices support a textual system configuration file that can be presented and edited using this mechanism. In the inventory, "c8y\_Configuration" represents the currently active configuration on the device. As part of an operation, "c8y\_Configuration" requests the device to make the transmitted configuration the currently active one. To enable configuration through the user interface, add "c8y\_Configuration" to the list of supported operations as described above.
 
-<table>
-<colgroup>
-<col width="33%" />
-<col width="33%" />
-<col width="33%" />
-</colgroup>
-<tbody>
-<tr class="odd">
-<td align="left">Name
+Name
+
 Type
-Description</td>
-<td align="left">config
+
+Description
+
+config
+
 String
-A text in a device-specific format, representing the configuration of the device.</td>
-</tr>
-</tbody>
-</table>
+
+A text in a device-specific format, representing the configuration of the device.
 
     "c8y_Configuration": {
       "config": "#Tue Jul 02 16:10:36 UTC 2013\nc8y.log.alarmLevel=ERROR\nc8y.modem.signalPolling=10000\nc8y.log.eventLevel=INFO"
@@ -158,26 +152,29 @@ A text in a device-specific format, representing the configuration of the device
 
 *c8y\_Mobile* holds basic connectivity-related information, such as the equipment identifier of the modem (IMEI) in the device. This identifier is globally unique and often used to identify a mobile device.
 
-<table>
-<colgroup>
-<col width="33%" />
-<col width="33%" />
-<col width="33%" />
-</colgroup>
-<tbody>
-<tr class="odd">
-<td align="left">Name
+Name
+
 Type
-Description</td>
-<td align="left">imei
+
+Description
+
+imei
+
 String
-The equipment identifier (IMEI) of the modem in the device.</td>
-<td align="left">cellId
+
+The equipment identifier (IMEI) of the modem in the device.
+
+cellId
+
 String
-The identifier of the cell in the mobile network that the device is currently connected with.</td>
-</tr>
-</tbody>
-</table>
+
+The identifier of the cell in the mobile network that the device is currently connected with.
+
+iccid
+
+String
+
+The identifier of the SIM card that is currently in the device (often printed on the card).
 
     "c8y_Mobile": {
       "imei": "861145013087177",
@@ -222,26 +219,23 @@ The availability information computed by Cumulocity is stored in a fragment "c8y
 
     "c8y_Availability": { "lastMessage": "2013-05-21...", "status": "CONNECTED" }
 
-<table>
-<colgroup>
-<col width="33%" />
-<col width="33%" />
-<col width="33%" />
-</colgroup>
-<tbody>
-<tr class="odd">
-<td align="left">Name
+Name
+
 Type
-Description</td>
-<td align="left">lastMessage
+
+Description
+
+lastMessage
+
 Date
-The time when the device sent the last message to Cumulocity.</td>
-<td align="left">status
+
+The time when the device sent the last message to Cumulocity.
+
+status
+
 String
-The current status, one of AVAILABLE, CONNECTED, MAINTENANCE, UNAVAILABLE.</td>
-</tr>
-</tbody>
-</table>
+
+The current status, one of AVAILABLE, CONNECTED, MAINTENANCE, UNAVAILABLE.
 
 The following messages update the last message timestamp of a device:
 
@@ -251,20 +245,25 @@ The following messages update the last message timestamp of a device:
 
 A monitored device has one of following statuses:
 
-<table>
-<colgroup>
-<col width="50%" />
-<col width="50%" />
-</colgroup>
-<tbody>
-<tr class="odd">
-<td align="left">Name
-Description</td>
-<td align="left">CONNECTED
-A device push connection is established.</td>
-</tr>
-</tbody>
-</table>
+Name
+
+Description
+
+CONNECTED
+
+A device push connection is established.
+
+AVAILABLE
+
+The device is not connected through device push, but a message was sent within the required response interval.
+
+MAINTENANCE
+
+"responseInterval" is set to 0; the device is under maintenance.
+
+UNAVAILABLE
+
+"responseInterval" is greater then 0 and the device is neither AVAILABLE nor CONNECTED.
 
 ### c8y\_UnavailabilityAlarm
 
@@ -304,4 +303,3 @@ To restart a device, an operation with a *c8y\_Restart* fragment is sent. To ena
     "c8y_Restart": {}
 
 ![Restart button](images/c8yimages/devicemgmt/restartsupported.png)
-

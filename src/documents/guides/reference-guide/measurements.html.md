@@ -1,9 +1,3 @@
----
-order: 40
-title: Measurements
-layout: default
----
-
 The measurements interface consists of three parts:
 
 -   The *measurement API* resource returns URIs and URI templates to collections of measurements, so that measurements can be queried according to various filter criteria.
@@ -14,42 +8,25 @@ The measurements interface consists of three parts:
 
 ## MeasurementAPI [application/vnd.com.nsn.cumulocity.measurementApi+json
 
-<table>
-<colgroup>
-<col width="25%" />
-<col width="25%" />
-<col width="25%" />
-<col width="25%" />
-</colgroup>
-<thead>
-<tr class="header">
-<th align="left">Name
-Type
-Occurs
-Description</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td align="left">self
-URL
-1
-Link to this resource.</td>
-<td align="left">measurements
-Measurement Collection
-1
-Collection of all measurements.</td>
-<td align="left">measurementsForSource
-MeasurementCollection URI template
-1
-Read-only collection of all measurements coming from a particular source object (placeholder &lt;&lt;source&gt;&gt;).</td>
-<td align="left">measurementsForDate
-MeasurementCollection URI template
-1
-Read-only collection of all measurements from a particular period (placeholder &lt;&lt;dateFrom&gt;&gt; and &lt;&lt;dateTo&gt;&gt;).</td>
-</tr>
-</tbody>
-</table>
+|Name|Type|Occurs|Description|
+|:---|:---|:-----|:----------|
+|self|URL|1|Link to this resource.|
+|measurements|Measurement Collection|1|Collection of all measurements.|
+|measurementsForSource|MeasurementCollection URI template|1|Read-only collection of all measurements coming from a particular source object (placeholder \<\<source\>\>).|
+|measurementsForDate|MeasurementCollection URI template|1|Read-only collection of all measurements from a particular period (placeholder \<\<dateFrom\>\> and \<\<dateTo\>\>).|
+|measurementsForFragmentType|MeasurementCollection URI template|1|Read-only collection of all measurements containing a particular fragment type (placeholder \<\<fragmentType\>\>).|
+|measurementsForType|MeasurementCollection URI template|1|Read-only collection of all measurements containing a particular type (placeholder \<\<type\>\>).|
+|measurements ForSourceAndDate|MeasurementCollection URI template|1|Read-only collection of all measurements from a particular period and from a particular source object (placeholder \<\<dateFrom\>\>, \<\<dateTo\>\> and \<\<source\>\>).|
+|measurements ForSourceAndFragmentType|MeasurementCollection URI template|1|Read-only collection of all measurements containing a particular fragment type and coming from a particular source object (placeholder \<\<fragmentType\>\> and \<\<source\>\>).|
+|measurements ForSourceAndType|MeasurementCollection URI template|1|Read-only collection of all measurements containing a particular type and coming from a particular source object (placeholder \<\<type\>\> and \<\<source\>\>).|
+|measurements ForDateAndFragmentType|MeasurementCollection URI template|1|Read-only collection of all measurements containing a particular fragment type and being from a particular period (placeholder \<\<fragmentType\>\>, \<\<dateFrom\>\> and \<\<dateTo\>\>).|
+|measurements ForDateAndType|MeasurementCollection URI template|1|Read-only collection of all measurements containing a particular type and being from a particular period (placeholder \<\<type\>\>, \<\<dateFrom\>\> and \<\<dateTo\>\>).|
+|measurements ForFragmentTypeAndType|MeasurementCollection URI template|1|Read-only collection of all measurements containing a particular type and a particular fragment type(placeholder \<\<type\>\> and \<\<fragmentType\>\>).|
+|measurements ForSourceAndDateAndFragmentType|MeasurementCollection URI template|1|Read-only collection of all measurements containing a particular fragment type and being from a particular period and source object (placeholder \<\<fragmentType\>\>, \<\<dateFrom\>\>, \<\<dateTo\>\> and \<\<source\>\>).|
+|measurements ForSourceAndDateAndType|MeasurementCollection URI template|1|Read-only collection of all measurements containing a particular type and being from a particular period and source object (placeholder \<\<type\>\>, \<\<dateFrom\>\>, \<\<dateTo\>\> and \<\<source\>\>).|
+|measurements ForSourceAndFragmentTypeAndType|MeasurementCollection URI template|1|Read-only collection of all measurements containing a particular fragment type and a particular type and source object (placeholder \<\<fragmentType\>\>, \<\<type\>\> and \<\<source\>\>).|
+|measurements ForDateAndFragmentTypeAndType|MeasurementCollection URI template|1|Read-only collection of all measurements containing a particular fragment type and being from a particular period and type object (placeholder \<\<fragmentType\>\>, \<\<dateFrom\>\>, \<\<dateTo\>\> and \<\<type\>\>).|
+|measurementsForSource AndDateAndFragmentTypeAndType|MeasurementCollection URI template|1|Read-only collection of all measurements containing a particular fragment type and type object and being from a particular period and source object (placeholder \<\<fragmentType\>\>, \<\<dateFrom\>\>, \<\<dateTo\>\>, \<\<type\>\> and \<\<source\>\>).|
 
 ## GET the Measurement API resource
 
@@ -85,42 +62,13 @@ Example response:
 
 ## MeasurementCollection [application/vnd.com.nsn.cumulocity.measurementCollection+json]
 
-<table>
-<colgroup>
-<col width="25%" />
-<col width="25%" />
-<col width="25%" />
-<col width="25%" />
-</colgroup>
-<thead>
-<tr class="header">
-<th align="left">Name
-Type
-Occurs
-Description</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td align="left">self
-URL
-1
-Link to this resource.</td>
-<td align="left">measurements
-Measurement
-0..n
-List of measurements, see below.</td>
-<td align="left">statistics
-PagingStatistics
-1
-Information about paging statistics.</td>
-<td align="left">prev
-URI
-0..1
-Link to a potential previous page of measurements.</td>
-</tr>
-</tbody>
-</table>
+|Name|Type|Occurs|Description|
+|:---|:---|:-----|:----------|
+|self|URL|1|Link to this resource.|
+|measurements|Measurement|0..n|List of measurements, see below.|
+|statistics|PagingStatistics|1|Information about paging statistics.|
+|prev|URI|0..1|Link to a potential previous page of measurements.|
+|next|URI|0..1|Link to a potential next page of measurements.|
 
 ## GET a measurement collection
 
@@ -244,88 +192,21 @@ The "id" of the new measurement is generated by the server and returned in the r
 
 ## Measurement [application/vnd.com.nsn.cumulocity.measurement+json]
 
-<table>
-<colgroup>
-<col width="20%" />
-<col width="20%" />
-<col width="20%" />
-<col width="20%" />
-<col width="20%" />
-</colgroup>
-<thead>
-<tr class="header">
-<th align="left">Name
-Type
-Occurs
-Description
-PUT/POST</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td align="left">id
-String
-1
-Uniquely identifies a measurement.
-No</td>
-<td align="left">self
-URI
-1
-Link to this resource.
-No</td>
-<td align="left">time
-String
-1
-Time of the measurement.
-Mandatory</td>
-<td align="left">type
-String
-1
-The most specific type of this entire measurement.
-Mandatory</td>
-<td align="left">source
-ManagedObject
-1
-The ManagedObject which is the source of this measurement, as object containing the properties &quot;id&quot; and &quot;self&quot;.
-Mandatory</td>
-</tr>
-</tbody>
-</table>
+|Name|Type|Occurs|Description|PUT/POST|
+|:---|:---|:-----|:----------|:-------|
+|id|String|1|Uniquely identifies a measurement.|No|
+|self|URI|1|Link to this resource.|No|
+|time|String|1|Time of the measurement.|Mandatory|
+|type|String|1|The most specific type of this entire measurement.|Mandatory|
+|source|ManagedObject|1|The ManagedObject which is the source of this measurement, as object containing the properties "id" and "self".|Mandatory|
+|\*|\*|0..n|List of measurement fragments.|Optional|
 
 Each measurement fragment is an object containing the actual measurements as properties. The property name represents the name of the measurement, the property value is structured as follows:
 
-<table>
-<colgroup>
-<col width="20%" />
-<col width="20%" />
-<col width="20%" />
-<col width="20%" />
-<col width="20%" />
-</colgroup>
-<thead>
-<tr class="header">
-<th align="left">Name
-Type
-Occurs
-Description
-PUT/POST</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td align="left">value
-Number
-1
-The value of the individual measurement.
-Mandatory</td>
-<td align="left">unit
-String
-1
-The unit of the measurement, such as &quot;Wh&quot; or &quot;C&quot;.
-Optional</td>
-</tr>
-</tbody>
-</table>
+|Name|Type|Occurs|Description|PUT/POST|
+|:---|:---|:-----|:----------|:-------|
+|value|Number|1|The value of the individual measurement.|Mandatory|
+|unit|String|1|The unit of the measurement, such as "Wh" or "C".|Optional|
 
 ## GET a representation of a Measurement
 

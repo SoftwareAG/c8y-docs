@@ -9,5 +9,6 @@ redirects =
 	'/guides/concepts-guide/real-time-processing-in-cumulocity.html': '/guides/concepts-guide/real-time-processing'
 	'/guides/concepts-guide/developing-m2m-applications': '/guides/concepts-guide/developing-applications'
 	'/guides/concepts-guide/developing-m2m-applications.html': '/guides/concepts-guide/developing-applications'
+	'/guides/developers-guide/startwitharduino': '/guides/devices/arduino'
 
 module.exports = redirects

@@ -1,9 +1,3 @@
----
-order: 70
-title: Identity
-layout: default
----
-
 The identity interface allows associating identifiers used in external IT systems and devices with unique identifiers used in Cumulocity. It consists of three parts:
 
 -   The *identity API* resource returns URIs and URI templates for associating external identifiers with unique identifiers.
@@ -14,38 +8,11 @@ The identity interface allows associating identifiers used in external IT system
 
 ## Identity [application/vnd.com.nsn.cumulocity.identityApi+json]
 
-<table>
-<colgroup>
-<col width="25%" />
-<col width="25%" />
-<col width="25%" />
-<col width="25%" />
-</colgroup>
-<thead>
-<tr class="header">
-<th align="left">Name
-Type
-Occurs
-Description</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td align="left">self
-URL
-1
-Link to this resource.</td>
-<td align="left">externalId
-ExternalID URI template
-1
-Single external ID, represented by type of the external ID and the value of the external ID, both as strings (placeholders &lt;&lt;type&gt;&gt; and &lt;&lt;value&gt;&gt;).</td>
-<td align="left">externalIdsOfGlobalId
-ExternalIDCollection URI template
-1
-Represents a collection of external ids for a specified global id (placeholder &lt;&lt;globalId&gt;&gt;).</td>
-</tr>
-</tbody>
-</table>
+|Name|Type|Occurs|Description|
+|:---|:---|:-----|:----------|
+|self|URL|1|Link to this resource.|
+|externalId|ExternalID URI template|1|Single external ID, represented by type of the external ID and the value of the external ID, both as strings (placeholders \<\<type\>\> and \<\<value\>\>).|
+|externalIdsOfGlobalId|ExternalIDCollection URI template|1|Represents a collection of external ids for a specified global id (placeholder \<\<globalId\>\>).|
 
 ## GET the Identity API resource
 
@@ -70,42 +37,12 @@ Example response:
 
 As returned by "externalIdsOfGlobalId".
 
-<table>
-<colgroup>
-<col width="25%" />
-<col width="25%" />
-<col width="25%" />
-<col width="25%" />
-</colgroup>
-<thead>
-<tr class="header">
-<th align="left">Name
-Type
-Occurs
-Description</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td align="left">self
-URI
-1
-Link to this resource.</td>
-<td align="left">externalIds
-ExternalId
-0..n
-List of external IDs, see below.</td>
-<td align="left">prev
-URI
-0..1
-Link to a potential previous page of external IDs.</td>
-<td align="left">next
-URI
-0..1
-Link to a potential next page of external IDs.</td>
-</tr>
-</tbody>
-</table>
+|Name|Type|Occurs|Description|
+|:---|:---|:-----|:----------|
+|self|URI|1|Link to this resource.|
+|externalIds|ExternalId|0..n|List of external IDs, see below.|
+|prev|URI|0..1|Link to a potential previous page of external IDs.|
+|next|URI|0..1|Link to a potential next page of external IDs.|
 
 External IDs contained in the collection contain the properties "self", "externalId", "type" and reference to the managed object.
 
@@ -181,48 +118,12 @@ Note that the managed object has to be created first, then the mapping can be re
 
 ## External ID [application/vnd.com.nsn.cumulocity.externalId+json]
 
-<table>
-<colgroup>
-<col width="20%" />
-<col width="20%" />
-<col width="20%" />
-<col width="20%" />
-<col width="20%" />
-</colgroup>
-<thead>
-<tr class="header">
-<th align="left">Name
-Type
-Occurs
-Description
-PUT/POST</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td align="left">externalId
-String
-1
-The identifier used in the external system that Cumulocity interfaces with.
-Mandatory</td>
-<td align="left">self
-URI
-1
-Link to this resource.
-No</td>
-<td align="left">type
-String
-1
-The type of the external identifier as string, e.g., &quot;com_cumulocity_model_idtype_SerialNumber&quot;.
-Mandatory</td>
-<td align="left">managedObject
-ManagedObject
-1
-The ManagedObject linked to the external ID.
-Mandatory</td>
-</tr>
-</tbody>
-</table>
+|Name|Type|Occurs|Description|PUT/POST|
+|:---|:---|:-----|:----------|:-------|
+|externalId|String|1|The identifier used in the external system that Cumulocity interfaces with.|Mandatory|
+|self|URI|1|Link to this resource.|No|
+|type|String|1|The type of the external identifier as string, e.g., "com\_cumulocity\_model\_idtype\_SerialNumber".|Mandatory|
+|managedObject|ManagedObject|1|The ManagedObject linked to the external ID.|Mandatory|
 
 ## GET an ExternalID
 

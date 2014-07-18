@@ -1,9 +1,3 @@
----
-order: 110
-title: Sensor library
-layout: default
----
-
 The sensor library defines a canonical set of predefined sensor and control capabilities. A sensor capability describes that part of a device that can measure some quantity, and a control capability describes that part of a device that can be modified, changed or in some way remotely controlled.
 
 The library is logically divided into subpackages related to the domain to which that capability best fits, although applications a free to select capabilities from any domain. The name of the capability follows the *Fragment* naming convention. There are Java representations of each of these capabilities that can be found in the Java packages corresponding to the Fragment names.
@@ -24,23 +18,17 @@ In a managed object, a temperature sensor is modelled as a simple empty fragment
 
 ### Measurement
 
-<table>
-<colgroup>
-<col width="33%" />
-<col width="33%" />
-<col width="33%" />
-</colgroup>
-<tbody>
-<tr class="odd">
-<td align="left">Measurement
+Measurement
+
 Units
-Description</td>
-<td align="left">T
+
+Description
+
+T
+
 C
-Measured temperature. </td>
-</tr>
-</tbody>
-</table>
+
+Measured temperature. 
 
     "c8y_TemperatureMeasurement": {
         "T": { "value": 23, "unit": "C" }
@@ -58,26 +46,23 @@ In a managed object, a motion sensor is modelled as a simple empty fragment:
 
 ### Measurement
 
-<table>
-<colgroup>
-<col width="33%" />
-<col width="33%" />
-<col width="33%" />
-</colgroup>
-<tbody>
-<tr class="odd">
-<td align="left">Measurement
+Measurement
+
 Units
-Description</td>
-<td align="left">motionDetected
-<em>none</em>
-Boolean value indicating if motion has been detected (non-zero value) or not (zero value).</td>
-<td align="left">speed
+
+Description
+
+motionDetected
+
+*none*
+
+Boolean value indicating if motion has been detected (non-zero value) or not (zero value).
+
+speed
+
 km/h
-Measured speed towards (+ve) or away (-ve) from the sensor.</td>
-</tr>
-</tbody>
-</table>
+
+Measured speed towards (+ve) or away (-ve) from the sensor.
 
     "c8y_MotionMeasurement": {
         "motionDetected": { "value": 1.0, "unit": "", "type": "BOOLEAN" },
@@ -96,23 +81,17 @@ In a managed object, an acceleration sensor is modelled as a simple empty fragme
 
 ### Measurement
 
-<table>
-<colgroup>
-<col width="33%" />
-<col width="33%" />
-<col width="33%" />
-</colgroup>
-<tbody>
-<tr class="odd">
-<td align="left">Measurement
+Measurement
+
 Units
-Description</td>
-<td align="left">acceleration
+
+Description
+
+acceleration
+
 m/s2
-Measured acceleration along the sensor axis (direction of the sensor axis is not defined in this measurement).</td>
-</tr>
-</tbody>
-</table>
+
+Measured acceleration along the sensor axis (direction of the sensor axis is not defined in this measurement).
 
     "c8y_AccelerationMeasurement": {
         "acceleration": { "value": 8.36, "unit": "m/s2" }
@@ -132,26 +111,35 @@ In a managed object, a single phase electricity meter is modelled as a simple em
 
 ### Measurement - Single Phase Meter
 
-<table>
-<colgroup>
-<col width="33%" />
-<col width="33%" />
-<col width="33%" />
-</colgroup>
-<tbody>
-<tr class="odd">
-<td align="left">Measurement
+Measurement
+
 Units
-Description</td>
-<td align="left">A+
+
+Description
+
+A+
+
 kWh
-Total active energy, in</td>
-<td align="left">A-
+
+Total active energy, in
+
+A-
+
 kWh
-Total active energy, out</td>
-</tr>
-</tbody>
-</table>
+
+Total active energy, out
+
+P+
+
+W
+
+Total active power, in
+
+P-
+
+W
+
+Total active power, out
 
     "c8y_SinglePhaseElectricityMeasurement": {
       "A+": { "value": 123, "unit": "kWh" },
@@ -168,26 +156,101 @@ In a managed object, a three phase electricity meter is modelled as a simple emp
 
 ### Measurement - Three Phase Meter
 
-<table>
-<colgroup>
-<col width="33%" />
-<col width="33%" />
-<col width="33%" />
-</colgroup>
-<tbody>
-<tr class="odd">
-<td align="left">Measurement
+Measurement
+
 Units
-Description</td>
-<td align="left">A+
+
+Description
+
+A+
+
 kWh
-Total active energy in, summed across phases</td>
-<td align="left">A+:1(2, 3)
+
+Total active energy in, summed across phases
+
+A+:1(2, 3)
+
 kWh
-Active energy in for phase 1, 2 or 3</td>
-</tr>
-</tbody>
-</table>
+
+Active energy in for phase 1, 2 or 3
+
+A-
+
+kWh
+
+Total active energy out, summed across phases
+
+A-:1(2, 3)
+
+kWh
+
+Active energy out for phase 1, 2, 3
+
+P+
+
+W
+
+Total active power in, summed across phases
+
+P+:1(2, 3)
+
+W
+
+Active power in for phase 1, 2 or 3
+
+P-:1(2, 3)
+
+W
+
+Active power out for phase 1, 2 or 3
+
+Ri+
+
+kVArh
+
+Total reactive inductive energy, in
+
+Ri-
+
+kVArh
+
+Total reactive inductive energy, out
+
+Rc+
+
+kVArh
+
+Total reactive capacitive energy, in
+
+Rc-
+
+kVArh
+
+Total reactive capacitive energy, out
+
+Qi+
+
+kVAr
+
+Total reactive inductive power, in
+
+Qi-
+
+kVAr
+
+Total reactive inductive power, out
+
+Qc+
+
+kVAr
+
+Total reactive capacitive power, in
+
+Qc-
+
+kVAr
+
+Total reactive capacitive power, out
 
     "c8y_ThreePhaseElectricityMeasurement": {
       "A+": { "value": 435, "unit": "kWh" },
@@ -245,23 +308,17 @@ In a managed object, a relay control model includes the state of the control. Wh
 
 ### Operations
 
-<table>
-<colgroup>
-<col width="33%" />
-<col width="33%" />
-<col width="33%" />
-</colgroup>
-<tbody>
-<tr class="odd">
-<td align="left">Operation
+Operation
+
 States
-Description</td>
-<td align="left">state
+
+Description
+
+state
+
 OPEN, CLOSED
-OPEN commands the relay in to the open position, CLOSED commands it to the closed position.</td>
-</tr>
-</tbody>
-</table>
+
+OPEN commands the relay in to the open position, CLOSED commands it to the closed position.
 
 The operation representation is the same as the inventory representation:
 

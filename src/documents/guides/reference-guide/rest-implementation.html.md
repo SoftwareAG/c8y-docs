@@ -3,7 +3,6 @@ order: 10
 title: REST implementation
 layout: default
 ---
-
 # Overview
 
 This section describes the aspects common to all REST-based interfaces of Cumulocity. The interfaces are based on the [Hypertext Transfer Protocol, version 1.1](http://www.w3.org/Protocols/rfc2616/rfc2616.html) using [HTTPS](http://en.wikipedia.org/wiki/HTTP_Secure).
@@ -456,4 +455,3 @@ Integer
 1
 
 The current returned page within the full result set, starting at "1".
-

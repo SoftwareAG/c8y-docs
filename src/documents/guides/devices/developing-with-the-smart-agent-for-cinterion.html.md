@@ -1,3 +1,7 @@
+---
+layout: default
+title: Cinterion Java modules
+---
 # Overview
 
 This section describes how to interface the??[Cinterion EGS5 module](http://www.cinterion.com/EGS5)??with Cumulocity. It shows how to download and run an example J2ME agent on the module. The example agent registers the module in the inventory and sends signal strength readings from the module's built-in modem. Finally, the section shows how to modify the example to develop new agent functionality.

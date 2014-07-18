@@ -1,9 +1,3 @@
----
-order: 170
-title: Applications
-layout: default
----
-
 The API below is not published in "/platform" but can be reached using "/application".
 
 The application interface consists of the following parts:
@@ -16,42 +10,14 @@ The application interface consists of the following parts:
 
 ## ApplicationAPI [application/vnd.com.nsn.cumulocity.applicationApi+json]
 
-<table>
-<colgroup>
-<col width="25%" />
-<col width="25%" />
-<col width="25%" />
-<col width="25%" />
-</colgroup>
-<thead>
-<tr class="header">
-<th align="left">Name
-Type
-Occurs
-Description</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td align="left">self
-URL
-1
-Link to this resource.</td>
-<td align="left">applicationById
-Application/URI-Template
-1
-A reference to resource of type Application (placeholder &lt;&lt;id&gt;&gt;)</td>
-<td align="left">applications
-ApplicationCollection
-1
-Collection of all applications</td>
-<td align="left">applicationsByName
-ApplicationCollection URI-Template
-1
-Read-only collection of all applications with a particular name (placeholder &lt;&lt;name&gt;&gt;).</td>
-</tr>
-</tbody>
-</table>
+|Name|Type|Occurs|Description|
+|:---|:---|:-----|:----------|
+|self|URL|1|Link to this resource.|
+|applicationById|Application/URI-Template|1|A reference to resource of type Application (placeholder \<\<id\>\>)|
+|applications|ApplicationCollection|1|Collection of all applications|
+|applicationsByName|ApplicationCollection URI-Template|1|Read-only collection of all applications with a particular name (placeholder \<\<name\>\>).|
+|applicationsByTenant|ApplicationCollection URI-Template|1|Read-only collection of all applications subscribed by particular tenant (placeholder \<\<tenant\>\>).|
+|applicationsByOwner|ApplicationCollection URI-Template|1|Read-only collection of all applications owned by particular tenant (placeholder \<\<tenant\>\>).|
 
 ## GET the Application API resource
 
@@ -76,42 +42,13 @@ Example response:
 
 ## ApplicationCollection [application/vnd.com.nsn.cumulocity.applicationCollection+json]
 
-<table>
-<colgroup>
-<col width="25%" />
-<col width="25%" />
-<col width="25%" />
-<col width="25%" />
-</colgroup>
-<thead>
-<tr class="header">
-<th align="left">Name
-Type
-Occurs
-Description</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td align="left">self
-URI
-1
-Link to this resource.</td>
-<td align="left">applications
-Application
-0..n
-List of applications, see below.</td>
-<td align="left">statistics
-PagingStatistics
-1
-Information about paging statistics.</td>
-<td align="left">prev
-URI
-0..1
-Link to a potential previous page of applications.</td>
-</tr>
-</tbody>
-</table>
+|Name|Type|Occurs|Description|
+|:---|:---|:-----|:----------|
+|self|URI|1|Link to this resource.|
+|applications|Application|0..n|List of applications, see below.|
+|statistics|PagingStatistics|1|Information about paging statistics.|
+|prev|URI|0..1|Link to a potential previous page of applications.|
+|next|URI|0..1|Link to a potential next page of applications.|
 
 ## GET an application collection
 
@@ -223,53 +160,21 @@ Example response:
 
 ## Application [application/vnd.com.nsn.cumulocity.application+json;ver=0.9]
 
-<table>
-<colgroup>
-<col width="20%" />
-<col width="20%" />
-<col width="20%" />
-<col width="20%" />
-<col width="20%" />
-</colgroup>
-<thead>
-<tr class="header">
-<th align="left">Field Name
-Type
-Occurs
-Description
-PUT/POST</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td align="left">self
-URL
-1
-Link to this Resource
-No</td>
-<td align="left">id
-String
-1
-Unique identifier for an application
-No</td>
-<td align="left">name
-String
-1
-Name of the application
-POST: Mandatory PUT: Optional</td>
-<td align="left">key
-String
-1
-Shared secret of the application
-POST: Mandatory PUT: Optional</td>
-<td align="left">type
-String
-1
-Type of application. Possible values are : EXTERNAL, HOSTED
-POST: Mandatory PUT: No</td>
-</tr>
-</tbody>
-</table>
+|Field Name|Type|Occurs|Description|PUT/POST|
+|:---------|:---|:-----|:----------|:-------|
+|self|URL|1|Link to this Resource|No|
+|id|String|1|Unique identifier for an application|No|
+|name|String|1|Name of the application|POST: Mandatory PUT: Optional|
+|key|String|1|Shared secret of the application|POST: Mandatory PUT: Optional|
+|type|String|1|Type of application. Possible values are : EXTERNAL, HOSTED|POST: Mandatory PUT: No|
+|availability|String|0..1|Access level for other tenants.  Possible values are : "MARKET", "PRIVATE"(default)|Optional|
+|owner|TenantReference| 1|Reference to tenant owning this application|No |
+|contextPath|String|0..1|contextPath of hosted application |POST: Mandatory (when application type is HOSTED) PUT: Optional|
+|resourcesUrl|String|0..1|URL to application base directory hosted on external server|POST: Mandatory (when application type is HOSTED) PUT: Optional|
+|resourcesUsername|String|0..1|authorization username to access resourcesUrl |Optional|
+|resourcesPassword|String|0..1|authorization password to access resourcesUrl |Optional|
+|externalUrl|String|0..1|URL to external application|POST: Mandatory (when application type is EXTERNAL) 
+PUT: Optional|
 
 ## PUT - Update an Application
 

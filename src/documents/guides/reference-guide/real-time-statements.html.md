@@ -1,9 +1,3 @@
----
-order: 130
-title: Real-time statements
-layout: default
----
-
 The API below is not yet published in "/platform" but can be reached using the URL "/cep".
 
 The real-time statements interface consists of five parts:
@@ -16,34 +10,10 @@ The real-time statements interface consists of five parts:
 
 ## CepApi [application/vnd.com.nsn.cumulocity.cepApi+json]
 
-<table>
-<colgroup>
-<col width="25%" />
-<col width="25%" />
-<col width="25%" />
-<col width="25%" />
-</colgroup>
-<thead>
-<tr class="header">
-<th align="left">Name
-Type
-Occurs
-Description</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td align="left">self
-URL
-1
-Link to this resource.</td>
-<td align="left">modules
-ModuleCollection
-1
-Collection of all modules.</td>
-</tr>
-</tbody>
-</table>
+|Name|Type|Occurs|Description|
+|:---|:---|:-----|:----------|
+|self|URL|1|Link to this resource.|
+|modules|ModuleCollection|1|Collection of all modules.|
 
 ## GET the CepApi resource
 
@@ -67,42 +37,13 @@ Example response:
 
 ## ModuleCollection  [application/vnd.com.nsn.cumulocity.cepModuleCollection+json]
 
-<table>
-<colgroup>
-<col width="25%" />
-<col width="25%" />
-<col width="25%" />
-<col width="25%" />
-</colgroup>
-<thead>
-<tr class="header">
-<th align="left">Name
-Type
-Occurs
-Description</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td align="left">self
-URI
-1
-Link to this resource.</td>
-<td align="left">modules
-Collection
-0..n
-List of modules, see below.</td>
-<td align="left">statistics
-PagingStatistics
-1
-Information about paging statistics.</td>
-<td align="left">prev
-URI
-0..1
-Link to a potential previous page of modules.</td>
-</tr>
-</tbody>
-</table>
+|Name|Type|Occurs|Description|
+|:---|:---|:-----|:----------|
+|self|URI|1|Link to this resource.|
+|modules|Collection|0..n|List of modules, see below.|
+|statistics|PagingStatistics|1|Information about paging statistics.|
+|prev|URI|0..1|Link to a potential previous page of modules.|
+|next|URI|0..1|Link to a potential next page of modules.|
 
 ## GET a module collection
 
@@ -173,53 +114,13 @@ Module name is considered to be also application name.
 
 ## Module [application/vnd.com.nsn.cumulocity.cepModule+json]
 
-<table>
-<colgroup>
-<col width="20%" />
-<col width="20%" />
-<col width="20%" />
-<col width="20%" />
-<col width="20%" />
-</colgroup>
-<thead>
-<tr class="header">
-<th align="left">Name
-Type
-Occurs
-Description
-PUT/POST</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td align="left">id
-String
-1
-Uniquely identifies a module.
-No</td>
-<td align="left">self
-URI
-1
-Link to this resource.
-No</td>
-<td align="left">lastModified
-String
-1
-Time when module was created or modified.
-No</td>
-<td align="left">name
-String
-1
-The module name.
-POST: Mandatory PUT: Optional</td>
-<td align="left">status
-String
-1
-The module status: DEPLOYED, NOT_DEPLOYED (default).
-POST: No PUT: Optional</td>
-</tr>
-</tbody>
-</table>
+|Name|Type|Occurs|Description|PUT/POST|
+|:---|:---|:-----|:----------|:-------|
+|id|String|1|Uniquely identifies a module.|No|
+|self|URI|1|Link to this resource.|No|
+|lastModified|String|1|Time when module was created or modified.|No|
+|name|String|1|The module name.|POST: Mandatory PUT: Optional|
+|status|String|1|The module status: DEPLOYED, NOT\_DEPLOYED (default).|POST: No PUT: Optional|
 
 ## GET Module
 

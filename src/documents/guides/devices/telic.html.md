@@ -7,14 +7,12 @@ title: Telic
 
 [Telic GmbH](http://en.telic.de/) offers GPS-based devices for diverse industrial purposes, varying battery lifetime and ruggedness requirements. Cumulocity can record the coordinates of the devices centrally and enables you to create additional business logic on top of the data (for example, sending an email when a geofence is left).
 
-![SBC AVL](http://en.telic.de/images/sbc_avl/sbc_avl_m.jpg)
-![SBC AVL Power](http://en.telic.de/images/sbc_avl_power/sbc_avl_m.jpg)
-![SBC3 CAN](http://en.telic.de/images/sbc3_can/telic_sbc3_can.jpg)
-![Picotrack](http://en.telic.de/images/picotrack/telic_picotrack_m.jpg)
-![Picotrack IP69K](http://en.telic.de/images/picotrack_ip69k/telic_picotrack_ip69k_m.jpg)
-![Endurance Primary](http://en.telic.de/images/picotrack_endurance_primary/picotrack_endurance_primary_m.jpg)
-![Endurance Rechargeable](http://en.telic.de/images/picotrack_endurance/telic_picotrack_endurance_m.jpg)
-
+<img src="/images/guides/devices/telic/sbc_avl_m.jpg" alt="SBC AVL/AVL Power" style="display: inline">
+<img src="/images/guides/devices/telic/sbc3_can.jpg" alt="SBC3 CAN" style="display: inline">
+<img src="/images/guides/devices/telic/picotrack.jpg" alt="Picotrack" style="display: inline">
+<img src="/images/guides/devices/telic/picotrack_ip69k.jpg" alt="Picotrack IP69K" style="display: inline">
+<img src="/images/guides/devices/telic/endurance_primary.jpg" alt="Endurance Primary" style="display: inline">
+<img src="/images/guides/devices/telic/endurance.jpg" alt="Endurance Rechargeable" style="display: inline">
 
 ## Configuring Telic devices for Cumulocity
 
@@ -36,7 +34,7 @@ To make the tracker send data to Cumulocity, follow these steps with the Telic C
 
 The screenshot below illustrates the setting.
 
-![Telic Communication Configuration](/images/guides/devices/teliccommconf.png)
+![Telic Communication Configuration](/images/guides/devices/telic/teliccommconf.png)
 
 To disable acknowledge, follow these steps:
 
@@ -47,15 +45,13 @@ To disable acknowledge, follow these steps:
 
 This screenshot shows a device configuration.
 
-![Telic Device Configuration](/images/guides/devices/telicdevconf.png)
+![Telic Device Configuration](/images/guides/devices/telic/telicdevconf.png)
 
 Finally, send the data to the device:
 
 * Click on the tab "General".
 * Verify that the device profile and the server profile that you edited previously are selected on the top left.
 * Click the "Send" button.
-
-![Configure Device](/images/guides/devices/telicconf.png)
 
 Once you have set up the profiles, you can send the same profiles also to other trackers. You just have to repeat the "Send" part.
 
@@ -70,9 +66,9 @@ To connect the device to your Cumulocity account:
 * Click the "Accept" button.
 * The device will now send location data according to the device configuration that you set. 
 
-![Screen shot of device bar code?]()
+![Device registration](/images/guides/devices/telic/telicregistration.png)
 
-![Screenshot of device registration]()
+Note: Cumulocity currently assumes that the "extended IMEI reporting" option is switched off.
 
 ## Getting additional functionality
 

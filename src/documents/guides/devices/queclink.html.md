@@ -14,7 +14,7 @@ title: Queclink
 * GV300 Advanced Vehicle Tracking Device
 * GV500 OBD Vehicle Tracking Device
 
-The location and traces of the equipped assets are shown in Cumulocity and you can create additional business logic on top of the data (for example, sending an email when a geofence is left). For the GL200, motion tracking and geofencing can be configured from Cumulocity.
+The location and traces of the equipped assets are shown in Cumulocity and you can create additional business logic on top of the data (for example, sending an email when a geofence is left). For the GL200, device-side motion tracking and geofencing can be configured from Cumulocity.
 
 <img src="/images/guides/devices/queclink/GL200.png" alt="GL200" style="display: inline">
 <img src="/images/guides/devices/queclink/GL300.png" alt="GL300" style="display: inline">

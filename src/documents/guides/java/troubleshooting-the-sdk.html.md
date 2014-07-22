@@ -1,3 +1,8 @@
+---
+order: 50
+layout: default
+title: Troubleshooting the SDK
+---
 # Overview
 
 This section describes common problems and their solutions.
@@ -20,9 +25,9 @@ Check if you are using the correct target platform. Go to the "Target Platform" 
 
 # The agent will not compile, I get "Access Restriction" messages
 
-This error may be caused because of a missing package import. Go to the "Dependencies" tab of the project Manifest file and check the package of the type that contains the method giving the access restriction??is present in the Import-Package section.
+This error may be caused because of a missing package import. Go to the "Dependencies" tab of the project Manifest file and check the package of the type that contains the method giving the access restriction is present in the Import-Package section.
 
-You can find the package??by opening the declaration of the method (right-click-\>Open Declaration).
+You can find the package by opening the declaration of the method (right-click-\>Open Declaration).
 
 # When starting an application, I get "address already in use" messages
 
@@ -46,6 +51,6 @@ The best method to troubleshoot startup issue is to launch the development tool 
 
 A likely reason is that you are using HTTPS to communicate with the Cumulocity server and your Java runtime does not accept the SSL certificate. In this case, you will see an error message in connections to the Cumulocity server if you look at the "Network" tab in Firebug (see above). You can solve this in two ways:
 
--   Switch to plain HTTP by using -Dcom.cumulocity.url=http://?sandbox URL?, see "Changing the backend server" in??["Hello, world!"](index.php?option=com_k2&view=item&id=818).
--   Import the Cumulocity certificate as described in??["Installing the SDK"](index.php?option=com_k2&view=item&id=814).
+-   Switch to plain HTTP by using -Dcom.cumulocity.url=http://\<\<sandbox URL\>\>, see "Changing the backend server" in ["Hello, world!"](index.php?option=com_k2&view=item&id=818).
+-   Import the Cumulocity certificate as described in ["Installing the SDK"](index.php?option=com_k2&view=item&id=814).
 

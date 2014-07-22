@@ -1,3 +1,8 @@
+---
+order: 10
+layout: default
+title: Installing the SDK
+---
 # Overview
 
 M2M systems can be developed from any development environment supporting REST interfaces, as illustrated in the figure below. The developer's guide focuses on development using Java, JavaScript and Eclipse. This section shows how to install the Eclipse-based SDK and how to test it against the developer sandbox. Usage of the developer sandbox is subject to our [terms of use](guides/reference-guide/developer-sandbox-usage-terms).
@@ -25,10 +30,10 @@ A note to experienced Eclipse users: Please do not use "Install New Software" to
 
 Here are the steps for configuring Eclipse and downloading the required client software:
 
--   Go to the "Preferences" menu (Eclipse??? Preferences on Mac, Window??? Preferences on Windows) and select "Plug-in Development"??? "Target Platform". Click "Add...".
+-   Go to the "Preferences" menu (Eclipse \> Preferences on Mac, Window \> Preferences on Windows) and select "Plug-in Development" \> "Target Platform". Click "Add...".
 -   Ensure that "Nothing: Start with an empty target definition." is selected and click "Next". Type "Cumulocity runtime" into the "Name" field. Click "Add...".
 -   Select "Software Site" and click "Next".
--   To make the Cumulocity runtime repository available, click "Add...", use "Cumulocity repository" as "Name" and "[http://download.cumulocity.com/p2/repository](http://download.cumulocity.com/sdk/repository)" as "Location". Click "Ok".
+-   To make the Cumulocity runtime repository available, click "Add...", use "Cumulocity repository" as "Name" and "[http://download.cumulocity.com/p2/repository](http://download.cumulocity.com/p2/repository)" as "Location". Click "Ok".
 -   Ensure that the "Cumulocity repository" is selected in the "Work with" drop-down list. Check "Cumulocity" and click "Finish". Select "Finish" again to leave the dialog. Now check the "Cumulocity runtime" entry in the "Target definitions" list and click "Ok".
 -   This procedure has to be carried out once per Eclipse workspace.
 
@@ -42,7 +47,7 @@ The development kit can use both HTTP and HTTPS. By default, HTTPS is used. You 
 
 Answer "yes" to the question "Trust this certificate? [no]:". In Eclipse, open the "Run Configurations..." dialog in the "Run" menu. Double-click "OSGi Framework", the open the "Arguments" tab on the right side. In the "VM arguments" text box, add the following parameter setting after replacing "home directory" with your home directory path:
 
-    -Djavax.net.ssl.trustStore=?home directory?/.keystore
+    -Djavax.net.ssl.trustStore=<<home directory>>/.keystore
 
 Since Java ships with its own set of trusted root certificates, you might still get the error message:
 
@@ -56,11 +61,11 @@ gd\_bundle.crt can be downloaded directly from the [GoDaddy repository](https://
 
 If you just want to use HTTP, you do not need to carry out the above two steps. Instead, you need to tell the development kit to use HTTP.
 
-    -Dcom.cumulocity.url=http://?sandbox URL?
+    -Dcom.cumulocity.url=http://<<sandbox URL>>
 
 Note that using HTTP is not recommended as passwords are transferred in clear text.
 
-Click "Apply" and "Close". For testing the installation, try the??["Hello, world!"](guides/developers-guide/hello-world). If you encounter any problems during the installation, see the??[trouble shooting section](guides/developers-guide/troubleshooting-the-sdk).
+Click "Apply" and "Close". For testing the installation, try the ["Hello, world!"](guides/developers-guide/hello-world). If you encounter any problems during the installation, see the [trouble shooting section](guides/developers-guide/troubleshooting-the-sdk).
 
 # Using OAuth Single Sign-on?
 
@@ -68,11 +73,11 @@ If you registered to Cumulocity using OAuth single sign-on, you need to create a
 
 This can be done through the tenant administration console by following these steps:
 
--   Login to the tenant administration console at [https://?sandbox URL?/ui/tenantadmin](https://??sandbox).
--   Click on the "Welcome, .." link at the top, just to the right of the logo and select "User Settings".??At the top, you will see your username through which you are registered with the system. You will need this username later for the examples and can copy it from here.
+-   Login to the tenant administration console at [https://\<\<sandbox URL\>\>/ui/tenantadmin](https://Â<<sandbox).
+-   Click on the "Welcome, .." link at the top, just to the right of the logo and select "User Settings". At the top, you will see your username through which you are registered with the system. You will need this username later for the examples and can copy it from here.
 -   In the dialog, set a name for yourself and a password to be used and click "Save".
 
-Alternatively, you can also use the Users API from the command line to set the password programmatically.??Use this password and the username displayed in the administration console with the examples.
+Alternatively, you can also use the Users API from the command line to set the password programmatically. Use this password and the username displayed in the administration console with the examples.
 
 If you would like to learn more about the authentication concepts in Cumulocity, please visit the Section "Authenticating users and devices" in ["Securing M2M applications"](index.php?option=com_k2&view=item&id=813).
 
@@ -104,7 +109,7 @@ Then add a dependency on the Java client library to the "dependencies" element:
       <dependency>
         <groupId>com.nsn.cumulocity.clients-java</groupId>
         <artifactId>java-client</artifactId>
-        <version>?</version>
+        <version>...</version>
       </dependency>
     </dependencies>
 

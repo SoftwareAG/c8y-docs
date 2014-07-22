@@ -64,8 +64,8 @@ A convenient way to explore REST interface and the Cumulocity database content a
 
 Here is a shortcut to set up Postman for Cumulocity:
 
-* [Download](/images/guides/rest/Cumulocity.json.postman_collection) the Cumulocity Postman collection and click "Import collection" in Postman (or browse the Postman API directory).
-* Click on drop-down menu next to the little "eye" widget to configure your Cumulocity URL. Click "Manage environments" and "Add". Then type a name for your tenant and configure a key "host" with a value of "https://&lt;yourURL&gt;.cumulocity.com". Click "Submit".
+* [Download](/images/guides/rest/Cumulocity API.json.postman_collection) the Cumulocity Postman collection and click "Import collection" in Postman (or browse the Postman API directory).
+* Click on drop-down menu next to the little "eye" widget to configure your Cumulocity URL. Click "Manage environments" and "Add". Then type a name for your tenant and configure a key "url" with a value of "https://&lt;yourURL&gt;.cumulocity.com". Click "Submit".
 *  Now, you can run REST calls. Click, for example, on "Cumulocity API", "Cumulocity API Overview", "GET Platform". By clicking the "Send" button, you can send the GET request to Cumulocity. The first time that you send a request to Cumulocity, you have to enter your credentials. Click on "Basic Auth" and enter your username and password, followed by a click on "Refresh Headers".
 * To explore the API, click on the links in the responses. Similar to navigate through pages of results, click on the "next" link at the bottom of the response. Add, for example, "?pageSize=100" to the end of the request URL to get more data than the default five items.
 

@@ -5,7 +5,7 @@ layout: default
 
 Introduction what this is about with references to the other docs
 
-# Application manifest file
+## Application manifest file
 
 Application manifest is placed in `cumulocity.json` file in project’s root folder. The following options can be provided there:
 
@@ -25,7 +25,7 @@ Application manifest is placed in `cumulocity.json` file in project’s root fol
 *<applicationName>/<pluginName>*
 
 
-# Common plugin folder layout
+## Common plugin folder layout
 
 In order to create a new plugin you need to create a new folder for it under app/plugins folder. 
 
@@ -47,7 +47,7 @@ The following is common layout for a plugin folder:
 
 * images - contains other images used by the plugin.
 
-# Plugin manifest file - cumulocity.json
+## Plugin manifest file - cumulocity.json
 
 This file contains information about the plugin such as it’s id, name, description and also what files should be processed in order to make it work properly.
 
@@ -166,11 +166,11 @@ Text from the other doc:
 
 
 
-# Main plugin file - index.js
+## Main plugin file - index.js
 
 You can use main plugin file to define its config() function in order to initialize it. You can also use extension points described below to associate plugin functionality with 
 
-# Extension points
+## Extension points
 
 When you are developing custom plugins you can use several extension points to modify or add custom behaviour to standard GUI elements. Extension points allow you for defining or modifying:
 
@@ -190,7 +190,7 @@ When you are developing custom plugins you can use several extension points to m
 
 These extension points are AngularJS providers that provide services. Therefore you can use service provider in config function and service in controllers or other services.
 
-## c8yActions / c8yActionsProvider
+### c8yActions / c8yActionsProvider
 
 In order to add an item to Actions menu from inside a controller or service you can use c8yActions service and its addAction method. You can provide:
 
@@ -244,7 +244,7 @@ The following example adds create dashboard action assigned to /device/:deviceId
 
 `});`
 
-## c8yComponentsProvider
+### c8yComponentsProvider
 
 You can use c8yComponentsProvider to add a definition of new component providing:
 
@@ -270,7 +270,7 @@ The following code sample shows how to add new component:
 
 `});`
 
-## c8yNavigatorProvider
+### c8yNavigatorProvider
 
 You can use c8yNavigatorProvider to add items to the application navigation menu.
 
@@ -310,7 +310,7 @@ The following is sample code that adds a navigation item:
 
 `});`
 
-## c8ySearchProvider
+### c8ySearchProvider
 
 You can use c8ySearchProvider to enable performing specified kind of search.
 
@@ -334,7 +334,7 @@ The following example shows how to add a new kind of search:
 
 `});`
 
-## c8yTabs / c8yTabsProvider
+### c8yTabs / c8yTabsProvider
 
 You can use c8yTabs service or its provider to add new tabs dynamically. You need to provide:
 
@@ -374,7 +374,7 @@ The following sample code shows how to add a new tab using c8yTabsProvider:
 
 `});`
 
-## c8yTitle / c8yTitleProvider
+### c8yTitle / c8yTitleProvider
 
 You can use c8yTitle service and c8yTitleProvider to determine what title should be displayed. Using c8yTitleProvider you can define how should be title and subtitle determined for a given route.
 
@@ -410,7 +410,7 @@ You can use addTitle function to assign a title and subtitle data to a route as 
 
 You can also dynamically change title and subtitle from inside a controller or service using c8yTitle service and its changeTitle function. When invoking this function you need to provide an object containing title and subtitle properties. In case one of them is missing the target title property is not changed. In this way you can alter only subtitle and title will remain as it was.
 
-## c8yViewsProvider
+### c8yViewsProvider
 
 You can use c8yViewsProvider to define application routes and assign templates to them.
 
@@ -494,15 +494,15 @@ The following example demonstrates how to use these options:
 
 `});`
 
-# Services
+## Services
 
 You can use core services as well as your custom ones using AngularJS standard dependency injection mechanism.
 
-## Core services
+### Core services
 
 There are core services which you can use to interact with Cumulocity platform.
 
-### c8yAlarms
+#### c8yAlarms
 
 This service allows for managing alarms.
 
@@ -550,7 +550,7 @@ Usage examples:
 
 `});`
 
-### c8yApplication
+#### c8yApplication
 
 This service allows for managing applications.
 
@@ -582,15 +582,15 @@ Usage examples:
 
 `c8yApplication.save({});`
 
-### c8yAuth
+#### c8yAuth
 
 This service is used for maintaining authentication token, adding authentication data to requests, performing logging out action.
 
-### c8yBase
+#### c8yBase
 
 This is base service for all services that send or receive data from Cumulocity platform containing common properties and functions such as: url, content headers, common paging  and time filters, date format.
 
-### c8yBinary
+#### c8yBinary
 
 This service allows for managing managed objects containing Base64-encoded binary data.
 
@@ -622,7 +622,7 @@ Usage examples:
 
 `});`
 
-### c8yDevices
+#### c8yDevices
 
 This service allows for creating, updating, deleting, getting list or getting details as well as contains other helper methods.
 
@@ -694,41 +694,41 @@ Usage examples:
 
 `c8yDevices.remove(deviceObj);`
 
-### c8yEvents
+#### c8yEvents
 
 This service allows for creating, updating, deleting, getting list or getting details of events.
 
 1. Creating an event:
 
-## Custom services
+### Custom services
 
 Custom services can be defined just as you define any AngularJS service inside a module. The only thing you need to remember here is that plugin’s custom service must be defined in a file that is included in plugin manifest file.
 
-# Controllers
+## Controllers
 
 Similarly you can define controllers that you can use inside your plugin for example in views or when defining routes. They also must be defined in a file included in plugin manifest file.
 
-# Views
+## Views
 
 You can define as much view templates as needed for a plugin. Then you can reference them using their path when defining routes using `c8yViewsProvider`.
 
-# Styles
+## Styles
 
 You can attach stylesheets to your plugin using plain CSS or LESS stylesheets.
 
-## CSS
+### CSS
 
 In order to attach a CSS stylesheet you need just to append CSS filename to css property in plugin manifest file. Then this CSS file will be included on the website.
 
-## LESS
+### LESS
 
 In order to attach LESS stylesheet you need just to append stylesheets (or just the main one if it includes all other stylesheets) to less property in plugin manifest file. Then all LESS stylesheets will be compiled and the concatenated result of compilation will be included on the website.
 
-# Images
+## Images
 
 You can use images in your plugins just by referencing them using proper URL paths to them.
 
-## Gallery images
+### Gallery images
 
 Some of images included within plugin can be used as a screenshots in Plugin Gallery. You need to list all images that you want to be used in Plugin Gallery in plugin manifest file under `gallery` property.
 

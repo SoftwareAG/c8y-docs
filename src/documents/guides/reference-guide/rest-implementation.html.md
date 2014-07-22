@@ -1,10 +1,16 @@
-# Overview
+---
+order: 10
+title: REST implementation
+layout: default
+---
+
+## Overview
 
 This section describes the aspects common to all REST-based interfaces of Cumulocity. The interfaces are based on the [Hypertext Transfer Protocol, version 1.1](http://www.w3.org/Protocols/rfc2616/rfc2616.html) using [HTTPS](http://en.wikipedia.org/wiki/HTTP_Secure).
 
-# HTTP usage
+## HTTP usage
 
-## Authentication
+### Authentication
 
 All requests need to include the [HTTP "Authorization" header](http://en.wikipedia.org/wiki/Basic_access_authentication). For basic authentication with user name and password, the format is:
 
@@ -22,7 +28,7 @@ For OAuth authentication, the format is:
 
     Authorization: Bearer <<Base64 encoded access token>>
 
-## Application management
+### Application management
 
 M2M market applications need to identify themselves for subscription and billing purposes. This identification is carried out by adding the HTTP header "X-Cumulocity-Application-Key".
 
@@ -34,13 +40,13 @@ The application key is defined by the application and registered with the Cumulo
 
 For private applications this header is optional.
 
-## Limited HTTP clients
+### Limited HTTP clients
 
 If you use an HTTP client that can only perform GET and POST methods in HTTP, you can emulate the other methods through an additional "X-HTTP-METHOD" header. Simply issue a POST request and add the header, specifying the actual REST method to be executed. For example, to emulate the "PUT" (modify) method, you can use:
 
     POST ...X-HTTP-METHOD: PUT
 
-## Processing mode
+### Processing mode
 
 Every update request (PUT, POST, DELETE) executes with a so-called *processing mode*. The default processing mode is *PERSISTENT*, which means that all updates will be send both to the Cumulocity database and to real-time processing. The alternative processing mode *TRANSIENT* will only send updates to real-time processing. As part of real-time processing, the user can decide case by case through Cumulocity Event Language scripts whether updates should be stored to the database or not.
 
@@ -48,12 +54,12 @@ To explicitly control the processing mode of an update request, an "X-Cumulocity
 
     X-Cumulocity-Processing-Mode: TRANSIENT
 
-## Authorization
+### Authorization
 
 All requests issued to Cumulocity are subject to authorization. To determine the required permissions, see the   
 Required role" entries in the reference documentation for the individual requests. To learn more about the different permissions and the concept of ownership in Cumulocity, see "Managing permissions and ownership" in the Section "[Securing M2M applications](index.php?option=com_k2&view=item&id=813)".
 
-## Media types
+### Media types
 
 Each type of data is associated with an own media type. The general format of media types is
 
@@ -65,7 +71,7 @@ Each media type contains a parameter "ver" indicating the version of the type. A
 
 Media types are used in HTTP "Content-Type" and "Accept" headers. On Requests that will produce a response message body the client is recommend to specify a media type. For POST/PUT requests, when no "Accept" header is specified, empty response body is returned. If a media type without "ver" parameter is given, the oldest available version will be returned by the server. If the accept header contains the same media type in multiple versions the server will return a representation in the latest supported version.
 
-## Data format
+### Data format
 
 Data exchanged with Cumulocity in HTTP requests and responses is encoded in [JSON format](http://www.ietf.org/rfc/rfc4627.txt) and [UTF-8](http://en.wikipedia.org/wiki/UTF-8) character encoding. Timestamps and dates are accepted and emitted by Cumulocity in [ISO 8601](http://www.w3.org/TR/NOTE-datetime) format:
 
@@ -75,7 +81,7 @@ Data exchanged with Cumulocity in HTTP requests and responses is encoded in [JSO
 
 To avoid ambiguity, all times and timestamps must include timezone information.
 
-## Error reporting
+### Error reporting
 
 In error cases, Cumulocity returns standard HTTP response codes as described in [RFC2616](http://www.w3.org/Protocols/rfc2616/rfc2616-sec10.html). A Client should not only be able to handle individual codes but classes of codes as well (e.g., 4xx). The response body can contain more information about the error, see the error media type definition below. General error interpretations are:
 
@@ -94,9 +100,9 @@ In error cases, Cumulocity returns standard HTTP response codes as described in 
 |500|Internal Server Error|An internal error in the software system has occurred and the request could not be processed.|
 |503|Service Unavailable|The service is currently not available. This may be caused by an overloaded instance or it is down for maintenance. Please try it again in a few minutes.|
 
-# REST usage
+## REST usage
 
-## Interpretation of HTTP verbs
+### Interpretation of HTTP verbs
 
 The semantics described in the [HTTP specification](http://www.w3.org/Protocols/rfc2616/rfc2616-sec9.html#sec9) are used:
 
@@ -105,7 +111,7 @@ The semantics described in the [HTTP specification](http://www.w3.org/Protocols/
 -   PUT updates an existing resource with the contents of the request. I.e., if parts of a resource are passed in the request, only those parts are updated. PUT can not update sub-resources that are identified by a separate URI.
 -   DELETE removes a resource. The response will be "204 NO CONTENT".
 
-## URI space and URI templates
+### URI space and URI templates
 
 Clients should not make assumptions on the layout of URIs used in requests, but construct URIs from previously returned URIs or URI templates. The root interface provides the entry point for clients, see below.
 
@@ -124,7 +130,7 @@ URI templates contain placeholders in curly braces, which need to be filled by t
 
 The client would need to fill the "type" and "source" placeholders with the desired type and source devices of the events to be returned. The meaning of these placeholders is documented in the respective interface descriptions in the reference guide.
 
-## Interface structure
+### Interface structure
 
 In general, Cumulocity REST resources are modelled according to the following pattern:
 
@@ -132,7 +138,7 @@ In general, Cumulocity REST resources are modelled according to the following pa
 -   Collection resources aggregate member resources and allow creating new member resources in the collection. For example, through the "events" collection resource, new events can be created.
 -   Finally, individual resources can be edited.
 
-## Query result paging
+### Query result paging
 
 Collection resources support paging of data to avoid passing huge data volumes in one block from client to server. GET requests to collections accept two query parameters: "pageSize" indicates how many entries of the collection should be returned. By default, 5 entries are returned. The upper limit for one page is currently 2,000 documents, any larger requested page size is trimmed to the upper limit. "currentPage" defines the slice of data to be returned, starting with "1". By default, the first page is returned.
 
@@ -154,11 +160,11 @@ For convenience, collection resources provide a "next" and "prev" links to retri
 
 Total pages for querying by keys/range: To get totalPages calculated in case of querying by keys/by range, an additional query param has to be passed: "withTotalPages=true". Otherwise totalPages is set to null.
 
-# Root interface
+## Root interface
 
 To discover the URIs to the various interfaces of Cumulocity, a "root" interface is provided. This root interface aggregates all the underlying API resources. The root interface of the development sandbox is accessible through http://\<\<sandbox URL\>\>/platform/. For more information on the different API resources, please consult the respective API section of this reference guide. Usage of the development sandbox is subject to the [usage terms](guides/reference-guide/developer-sandbox-usage-terms).
 
-## Platform [application/vnd.com.nsn.cumulocity.platformApi+json]
+### Platform [application/vnd.com.nsn.cumulocity.platformApi+json]
 
 |Name|Type|Occurs|Description|
 |:---|:---|:-----|:----------|
@@ -172,7 +178,7 @@ To discover the URIs to the various interfaces of Cumulocity, a "root" interface
 |user|UserAPI|1|See [user](index.php?option=com_k2&view=item&id=822) interface.|
 |deviceControl|DeviceControlAPI|1|See [device control](index.php?option=com_k2&view=item&id=825) interface.|
 
-## GET the Platform resource
+### GET the Platform resource
 
 Response body: application/vnd.com.nsn.cumulocity.platformApi+json
 
@@ -196,9 +202,9 @@ Example response:
       ...
     }
 
-# Generic media types
+## Generic media types
 
-## Error [application/vnd.com.nsn.cumulocity.error+json]
+### Error [application/vnd.com.nsn.cumulocity.error+json]
 
 The error type provides further information on the reason of a failed request.
 
@@ -218,7 +224,7 @@ Error details are provided in the following structure:
 |expectionStackTrace|String|1|Strack trace of the exception|
 |-|-|-|Specific Error may add further information for diagnostic purpose|
 
-## PagingStatistics [application/vnd.com.nsn.cumulocity.pagingStatistics+json]
+### PagingStatistics [application/vnd.com.nsn.cumulocity.pagingStatistics+json]
 
 Paging statistics for collection resources are provided in the following format:
 

@@ -1,12 +1,17 @@
+---
+order: 70
+title: Identity
+layout: default
+---
 The identity interface allows associating identifiers used in external IT systems and devices with unique identifiers used in Cumulocity. It consists of three parts:
 
 -   The *identity API* resource returns URIs and URI templates for associating external identifiers with unique identifiers.
 -   The *external ID collection* resource contains the set of external IDs for a unique ID.
 -   The *external ID* resource represents an individual external ID that can be queried and deleted.
 
-# Identity API
+## Identity API
 
-## Identity [application/vnd.com.nsn.cumulocity.identityApi+json]
+### Identity [application/vnd.com.nsn.cumulocity.identityApi+json]
 
 |Name|Type|Occurs|Description|
 |:---|:---|:-----|:----------|
@@ -14,7 +19,7 @@ The identity interface allows associating identifiers used in external IT system
 |externalId|ExternalID URI template|1|Single external ID, represented by type of the external ID and the value of the external ID, both as strings (placeholders \<\<type\>\> and \<\<value\>\>).|
 |externalIdsOfGlobalId|ExternalIDCollection URI template|1|Represents a collection of external ids for a specified global id (placeholder \<\<globalId\>\>).|
 
-## GET the Identity API resource
+### GET the Identity API resource
 
 Response body: application/vnd.com.nsn.cumulocity.identityApi+json
   
@@ -31,9 +36,9 @@ Example response:
       "externalIdsOfGlobalId" : "<<GlobalIdCollection URL>>/{globalId}/externalIds"
     }
 
-# External ID collection
+## External ID collection
 
-## ExternalIDCollection [application/vnd.com.nsn.cumulocity.externalIdCollection+json]
+### ExternalIDCollection [application/vnd.com.nsn.cumulocity.externalIdCollection+json]
 
 As returned by "externalIdsOfGlobalId".
 
@@ -46,7 +51,7 @@ As returned by "externalIdsOfGlobalId".
 
 External IDs contained in the collection contain the properties "self", "externalId", "type" and reference to the managed object.
 
-## GET an ExternalIdCollection
+### GET an ExternalIdCollection
 
 Response body: ExternalIdCollection
   
@@ -74,7 +79,7 @@ Example response:
       ]
     }
 
-## POST / Create an External ID
+### POST / Create an External ID
 
 Request body: ExternalId
  Response body: ExternalId (when Accept header is not provided, empty response body is returned)
@@ -114,9 +119,9 @@ Example Response:
 
 Note that the managed object has to be created first, then the mapping can be registered.
 
-# External ID
+## External ID
 
-## External ID [application/vnd.com.nsn.cumulocity.externalId+json]
+### External ID [application/vnd.com.nsn.cumulocity.externalId+json]
 
 |Name|Type|Occurs|Description|PUT/POST|
 |:---|:---|:-----|:----------|:-------|
@@ -125,7 +130,7 @@ Note that the managed object has to be created first, then the mapping can be re
 |type|String|1|The type of the external identifier as string, e.g., "com\_cumulocity\_model\_idtype\_SerialNumber".|Mandatory|
 |managedObject|ManagedObject|1|The ManagedObject linked to the external ID.|Mandatory|
 
-## GET an ExternalID
+### GET an ExternalID
 
 Response body: ExternalId
   
@@ -147,7 +152,7 @@ Example response:
       }
     }
 
-## DELETE an ExternalID
+### DELETE an ExternalID
 
 Request Body: N/A.
  Response Message Body: N/A.

@@ -1,12 +1,17 @@
+---
+order: 50
+title: Device control
+layout: default
+---
 The device control interface consists of three parts:
 
 -   The *device control API* resource returns URIs and URI templates to collections of operations, so that operations can be queried by various criteria.
 -   The *operation collection* resource retrieves operations and enables creating new operations.
 -   The *operation* resource represents individual operations that can be queried and modified.
 
-# Device control API
+## Device control API
 
-## DeviceControlAPI [application/vnd.com.nsn.cumulocity.devicecontrolApi+json]
+### DeviceControlAPI [application/vnd.com.nsn.cumulocity.devicecontrolApi+json]
 
 |Name|Type|Occurs|Description|
 |:---|:---|:-----|:----------|
@@ -18,7 +23,7 @@ The device control interface consists of three parts:
 |operationsByDeviceId|OperationCollection URI template|1|Read-only collection of all operations to be executed on a particular device (placeholder \<\<deviceId\>\> with the unique ID of the device).|
 |operationsByDeviceIdAndStatus|OperationCollection URI template|1|Read-only collection of all operations in particular state, that should be executed on a particular device (placeholder \<\<deviceId\>\> and \<\<status\>\>).|
 
-## GET the Device Control API resource
+### GET the Device Control API resource
 
 Response body: application/vnd.com.nsn.cumulocity.devicecontrolApi+json
   
@@ -39,9 +44,9 @@ Example response:
        "operationsByDeviceIdAndStatus" : "<<OperationsCollection URL>>?deviceId={deviceId}&status={status}"
     }
 
-# Operation collection
+## Operation collection
 
-## OperationCollection [application/vnd.com.nsn.cumulocity.operationCollection+json]
+### OperationCollection [application/vnd.com.nsn.cumulocity.operationCollection+json]
 
 |Name|Type|Occurs|Description|
 |:---|:---|:-----|:----------|
@@ -58,7 +63,7 @@ Notes about Operation Collections:
 -   ****In order to create/retrieve/update an operation for a device, the device must be in the "childDevices" hierarchy of an existing agent.
 -   To create an Agent in the Inventory, you should create a Managed Object with a Fragment with name "com\_cumulocity\_model\_Agent".
 
-## POST - Create an Operation
+### POST - Create an Operation
 
 Request body: Operation
  Response body: Operation (when Accept header is not provided, empty response body is returned)
@@ -103,7 +108,7 @@ Example response:
       }
     }
 
-## Get a collection of operations
+### Get a collection of operations
 
 Response body: OperationCollection  
 Required role: ROLE\_DEVICE\_CONTROL\_READ
@@ -152,9 +157,9 @@ Example Response:
       }
     }
 
-# Operation
+## Operation
 
-## Operation [application/vnd.com.nsn.cumulocity.operation+json]
+### Operation [application/vnd.com.nsn.cumulocity.operation+json]
 
 Name
 
@@ -257,7 +262,7 @@ No
 
 An "ExternalID" embedded in the "deviceExternalIDs" collection contains the properties "type" and "externalId".
 
-## PUT - Update an Operation
+### PUT - Update an Operation
 
 Request body: Operation
  Response body: n/a.
@@ -275,7 +280,7 @@ Example Request:
       "status" : "SUCCESSFUL"
     }
 
-## GET an Operation
+### GET an Operation
 
 Response body: Operation
   
@@ -301,13 +306,13 @@ Example response:
       }
     }
 
-# Notifications
+## Notifications
 
 The real-time notifications allow for receiving almost immediately newly created operations for agent. They are available on URL *"/devicecontrol/notifications"*, the usage is described in separate [document](index.php?option=com_k2&view=item&id=954).
   
 Required role: ROLE\_DEVICE\_CONTROL\_READ
 
-## The subscription channel name format
+### The subscription channel name format
 
 The subscription channel contains the id of the agent. It has the following structure:
 

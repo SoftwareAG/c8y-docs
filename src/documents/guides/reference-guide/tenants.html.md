@@ -1,6 +1,10 @@
-The API below is not published in "/platform" and don't have API object.
+---
+order: 150
+title: Tenants
+layout: default
+---
 
-# Tenants
+## Tenants
 
 The Tenant interface is available consists of parts:
 
@@ -11,9 +15,9 @@ The Tenant interface is available consists of parts:
 -   The tenant option collection resource enables creating new option and viewing existing options, accesible by url */tenant/options*
 -   The tenant option resource represents individual option that can be view and modified, accesible by url */tenant/options/{optionCategory}/{optionKey}*
 
-# Tenant collection
+## Tenant collection
 
-## TenantCollection [application/vnd.com.nsn.cumulocity.tenantCollection+json]
+### TenantCollection [application/vnd.com.nsn.cumulocity.tenantCollection+json]
 
 |Name|Type|Occurs|Description|
 |:---|:---|:-----|:----------|
@@ -23,7 +27,7 @@ The Tenant interface is available consists of parts:
 |prev|URI|0..1|Link to a potential previous page of tenants.|
 |next|URI|0..1|Link to a potential next page of tenants.|
 
-## GET a representation of a Tenant Collection.
+### GET a representation of a Tenant Collection.
 
 Response body: TenantCollection
   
@@ -121,9 +125,9 @@ Example Response :
         ]
     }
 
-# Tenant
+## Tenant
 
-## Tenant [application/vnd.com.nsn.cumulocity.tenant+json]
+### Tenant [application/vnd.com.nsn.cumulocity.tenant+json]
 
 |Name|Type|Occurs|Description|Visibility|
 |:---|:---|:-----|:----------|:---------|
@@ -138,7 +142,7 @@ Example Response :
 |applications|ApplicationReferenceCollection|1|Collection of tenant subscribed, applications.|Private|
 |ownedApplications|ApplicationReferenceCollection|1|Collection of tenant owned, applications.|Public - only applications with availability MARKET|
 
-## GET a representation of a Tenant.
+### GET a representation of a Tenant.
 
 Response body: Option
   
@@ -193,9 +197,9 @@ Example Response :
         "status": "ACTIVE"
     }
 
-# Application reference collection
+## Application reference collection
 
-## ApplicationReferenceCollection [application/vnd.com.nsn.cumulocity.applicationReferenceCollection+json].
+### ApplicationReferenceCollection [application/vnd.com.nsn.cumulocity.applicationReferenceCollection+json].
 
 |Name|Type|Occurs|Description|
 |:---|:---|:-----|:----------|
@@ -205,7 +209,7 @@ Example Response :
 |prev|URI|0..1|Link to a potential previous page of options.|
 |next|URI|0..1|Link to a potential next page of options.|
 
-## GET a representation of a ApplicationReferenceCollection.
+### GET a representation of a ApplicationReferenceCollection.
 
 Response body: ApplicationReferenceCollection
   
@@ -255,16 +259,16 @@ Example Response :
       "prev" : "..."
     }
 
-# Application reference
+## Application reference
 
-## ApplicationReference [application/vnd.com.nsn.cumulocity.applicationReference+json].
+### ApplicationReference [application/vnd.com.nsn.cumulocity.applicationReference+json].
 
 |Name|Type|Occurs|Description|
 |:---|:---|:-----|:----------|
 |self|URI|1|Link to this resource.|
 |reference|Application|0..n|The Application being referenced|
 
-## GET a representation of a ApplicationReference.
+### GET a representation of a ApplicationReference.
 
 Response body: ApplicationReference
   
@@ -301,9 +305,9 @@ Example Response :
       "self":"<<This Tenant Application 5 URL>>",
     }
 
-# Option collection
+## Option collection
 
-## OptionCollection [application/vnd.com.nsn.cumulocity.optionCollection+json].
+### OptionCollection [application/vnd.com.nsn.cumulocity.optionCollection+json].
 
 |Name|Type|Occurs|Description|
 |:---|:---|:-----|:----------|
@@ -313,7 +317,7 @@ Example Response :
 |prev|URI|0..1|Link to a potential previous page of options.|
 |next|URI|0..1|Link to a potential next page of options.|
 
-## GET a representation of a OptionCollection.
+### GET a representation of a OptionCollection.
 
 Response body: OptionCollection
   
@@ -352,7 +356,7 @@ Example Response :
       "prev" : "..."
     }
 
-## POST a representation of a Option.
+### POST a representation of a Option.
 
 Response body: Option
   
@@ -384,18 +388,18 @@ Example Response :
         "value": "CRITICAL|temperature too high"
     }
 
-# Option
+## Option
 
 Options are category-key-value tuples, storing tenant configuration. Some categories of options allow creation of new one, other are limited to predefined set of keys.
 
-## Available Options
+### Available Options
 
 |Category|Key|Default value|Only predefined|Description|
 |:-------|:--|:------------|:--------------|:----------|
 |access.control|allow.origin|\*|yes|Comma separated list of domains allowed for execution of CORS. Wildcards are allowed (e.g. \*.cumuclocity.com)|
 |alarm.type.mapping|\<\<alarm type\>\>||no|\<\<alarm severity\>\>|\<\<alarm text\>\> - severity and text overwriting original alarm severity and text for given alarm type; if severity or text is empty - value will not be overwritten. If severity is "NONE" - alarm will be suppressed.|
 
-## Option [application/vnd.com.nsn.cumulocity.option+json]
+### Option [application/vnd.com.nsn.cumulocity.option+json]
 
 |Name|Type|Occurs|Description|
 |:---|:---|:-----|:----------|
@@ -404,7 +408,7 @@ Options are category-key-value tuples, storing tenant configuration. Some catego
 |key|String|1|Key of option|
 |value|String|1|Value of option|
 
-## GET a representation of a Option.
+### GET a representation of a Option.
 
 Response body: Option
   
@@ -429,7 +433,7 @@ Example Response :
         "value": "*"
     }
 
-## PUT - Update a Option.
+### PUT - Update a Option.
 
 Response body: Option
   

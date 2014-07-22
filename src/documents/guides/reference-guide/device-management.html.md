@@ -1,12 +1,18 @@
-# Overview
+---
+order: 100
+title: Device management library
+layout: default
+---
+
+## Overview
 
 The device management library defines the data structures that are used in Cumulocity for device management activities such as software management and configuration management.
 
 The data structures are expressed as fragments that can be used inside managed objects, operations and other resources. More information on the fragment concept can be found in the Section "[Modelling and managing M2M assets](index.php?option=com_k2&view=item&id=809)". The same section also contains information on the process of running operations on devices and updating the inventory according to the result of the operation. For the usage of fragments in client libraries, see the developer's guides for the respective client library.
 
-# Metadata
+## Metadata
 
-### c8y\_IsDevice
+#### c8y\_IsDevice
 
 A device marked in the inventory with a *c8y\_IsDevice* fragment supports device management. Only devices with this fragment appear in the device management user interface.
 
@@ -14,7 +20,7 @@ A device marked in the inventory with a *c8y\_IsDevice* fragment supports device
 
 ![Device in Device Management](images/c8yimages/devicemgmt/devicemanagement.png)
 
-### c8y\_SupportedOperations
+#### c8y\_SupportedOperations
 
 *c8y\_SupportedOperations* lists the operations that are available for a particular device, so that applications can trigger the operations. For example, if the supported operations list contains "c8y\_Restart" (see below), a restart button will be available in the device management user interface.
 
@@ -22,7 +28,7 @@ A device marked in the inventory with a *c8y\_IsDevice* fragment supports device
 
 ![Device supports restart](images/c8yimages/devicemgmt/restartsupported.png)
 
-### c8y\_SupportedMeasurements
+#### c8y\_SupportedMeasurements
 
 *c8y\_SupportedMeasurements* lists the measurements that are produced by the device. These measurements will be shown as graph in the user interface. For example, if the supported measurements list contains "c8y\_SignalStrength" (see below), a signal strength graph of the modem will be shown. 
 
@@ -34,9 +40,9 @@ A device marked in the inventory with a *c8y\_IsDevice* fragment supports device
 
 *GET /inventory/managedObjects/{mo\_id}/supportedMeasurements*
 
-# Device information
+## Device information
 
-### c8y\_Hardware
+#### c8y\_Hardware
 
 *c8y\_Hardware* contains basic hardware information for a device, such as make and serial number. Often, the hardware serial number is printed on the board of the device or on an asset tag on the device to uniquely identify the device within all devices of the same make.
 
@@ -54,7 +60,7 @@ A device marked in the inventory with a *c8y\_IsDevice* fragment supports device
 
 ![Hardware information](images/c8yimages/devicemgmt/hardware.png)
 
-### c8y\_Firmware
+#### c8y\_Firmware
 
 *c8y\_Firmware* contains information on a device's firmware. In the inventory, "c8y\_Firmware" represents the currently installed firmware on the device. As part of an operation, "c8y\_Firmware" requests the device to install the indicated firmware. To enable firmware installation through the user interface, add "c8y\_Firmware" to the list of supported operations as described above.
 
@@ -74,7 +80,7 @@ A device marked in the inventory with a *c8y\_IsDevice* fragment supports device
 
 In the example above, the device is requested to install firmware version "1.20130207-1". The device has a pre-configured software repository location, hence it only needs the relative URL "31aab9856861b1a587e2094690c2f6e272712cb1" to download the requested firmware image.
 
-### c8y\_Software
+#### c8y\_Software
 
 *c8y\_Software* contains a map of software components to their corresponding versions. In the inventory, "c8y\_Software" represents the currently installed software components on the device.
 
@@ -90,7 +96,7 @@ To enable software installation through the user interface, add "c8y\_Software" 
 
 ![Software information](images/c8yimages/devicemgmt/software.png)
 
-### c8y\_Configuration
+#### c8y\_Configuration
 
 *c8y\_Configuration* permits a text-based configuration of the device. Most devices support a textual system configuration file that can be presented and edited using this mechanism. In the inventory, "c8y\_Configuration" represents the currently active configuration on the device. As part of an operation, "c8y\_Configuration" requests the device to make the transmitted configuration the currently active one. To enable configuration through the user interface, add "c8y\_Configuration" to the list of supported operations as described above.
 
@@ -104,7 +110,7 @@ To enable software installation through the user interface, add "c8y\_Software" 
 
 ![Device configuration](images/c8yimages/devicemgmt/configuration.png)
 
-### c8y\_Mobile
+#### c8y\_Mobile
 
 *c8y\_Mobile* holds basic connectivity-related information, such as the equipment identifier of the modem (IMEI) in the device. This identifier is globally unique and often used to identify a mobile device.
 
@@ -122,9 +128,9 @@ To enable software installation through the user interface, add "c8y\_Software" 
 
 ![Modem information](images/c8yimages/devicemgmt/mobile.png)
 
-# Device reports
+## Device reports
 
-### c8y\_Battery
+#### c8y\_Battery
 
 *c8y\_Battery* shows the current battery fill level. It is used as part of a measurement.
 
@@ -132,7 +138,7 @@ To enable software installation through the user interface, add "c8y\_Software" 
       "level": { "value": 23, "unit": "%" }
     }
 
-### c8y\_SignalStrength
+#### c8y\_SignalStrength
 
 *c8y\_SignalStrength* provides information on the GSM reception of the modem. It is used as part of a measurement and contains two readings: *rssi* and *ber*. "rssi" is the received signal strength in dBm, ranging from -113 dBm (worst) to -51 dBm (best). "ber" is the bit error rate in %.
 
@@ -141,9 +147,9 @@ To enable software installation through the user interface, add "c8y\_Software" 
       "ber": { "value": 0.14, "unit": "%" } 
     }
 
-# Device availability
+## Device availability
 
-### c8y\_RequiredAvailability
+#### c8y\_RequiredAvailability
 
 Devices can be monitored for availability by adding a "c8y\_RequiredAvailability" fragment to the device:
 
@@ -151,7 +157,7 @@ Devices can be monitored for availability by adding a "c8y\_RequiredAvailability
 
 Devices that have not sent any message in the response interval are considered unavailable. Such devices are marked as unavailable (see below) and an unavailability alarm is raised. Devices with a response interval of zero minutes are considered to be under maintenance. No alarm is raised while a device is under maintenance. Devices that do not contain "c8y\_RequiredAvailability" are not monitored.
 
-### c8y\_Availability
+#### c8y\_Availability
 
 The availability information computed by Cumulocity is stored in a fragment "c8y\_Availability" of the device.
 
@@ -177,7 +183,7 @@ A monitored device has one of following statuses:
 |MAINTENANCE|"responseInterval" is set to 0; the device is under maintenance.|
 |UNAVAILABLE|"responseInterval" is greater then 0 and the device is neither AVAILABLE nor CONNECTED.|
 
-### c8y\_UnavailabilityAlarm
+#### c8y\_UnavailabilityAlarm
 
 The alarm sent when a device becomes unavailable is of type "c8y\_UnavailabilityAlarm":
 
@@ -197,7 +203,7 @@ Updates to the availability status may occur with a delay.
 
 To flag a device as available without updating any data, a "ping" can be sent. The "ping" can be carried out by simply sending an empty update message to the device (i.e., a PUT request to the managed object with empty content).
 
-### c8y\_ActiveAlarmsStatus
+#### c8y\_ActiveAlarmsStatus
 
 The number of currently active and acknowledged alarms is stored in a fragment "c8y\_ActiveAlarmsStatus".
 
@@ -206,9 +212,9 @@ The number of currently active and acknowledged alarms is stored in a fragment "
         "major": 3
     }
 
-# Miscellaneous
+## Miscellaneous
 
-### c8y\_Restart
+#### c8y\_Restart
 
 To restart a device, an operation with a *c8y\_Restart* fragment is sent. To enable a "restart" button in the user interface, add "c8y\_Restart" to the list of supported operations as described above.
 

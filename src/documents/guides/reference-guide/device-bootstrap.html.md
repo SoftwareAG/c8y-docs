@@ -1,6 +1,12 @@
-# New device request collection
+---
+order: 65
+title: Device credentials
+layout: default
+---
 
-## NewDeviceRequestCollection 
+## New device request collection
+
+### NewDeviceRequestCollection 
 [application/vnd.com.nsn.cumulocity.newDeviceRequestCollection+json]
 
 |Name|Type|Occurs|Description|
@@ -11,7 +17,7 @@
 |prev|URI|0..1|Link to a potential previous page of operations.|
 |next|URI|0..1|Link to a potential next page of operations.|
 
-## POST - Create a new device request
+### POST - Create a new device request
 
 Request body: application/vnd.com.nsn.cumulocity.newDeviceRequest+json
 Response body: application/vnd.com.nsn.cumulocity.newDeviceRequest+json
@@ -39,7 +45,7 @@ Example response:
       "status" : "WAITING_FOR_CONNECTION",
     }
 
-## GET - returns all new device requests
+### GET - returns all new device requests
 
 Response body: application/vnd.com.nsn.cumulocity.newDeviceRequestCollection+json  
 Required role: ROLE\_DEVICE\_CONTROL\_READ
@@ -67,9 +73,9 @@ Example response:
              "status" : "WAITING_FOR_CONNECTION" }]
     }
 
-# New device request
+## New device request
 
-## NewDeviceRequest [application/vnd.com.nsn.cumulocity.newDeviceRequest+json]
+### NewDeviceRequest [application/vnd.com.nsn.cumulocity.newDeviceRequest+json]
 
 |Name|Type|Occurs|Description|
 |:---|:---|:-----|:----------|
@@ -77,7 +83,7 @@ Example response:
 |status|String|1|Status of registration, one of: WAITING\_FOR\_CONNECTION, PENDING\_ACCEPTANCE, ACCEPTED|
 |self|URL|1|Link to this resource.|
 
-## GET - returns a new device request
+### GET - returns a new device request
 
 Response body: application/vnd.com.nsn.cumulocity.newDeviceRequest+json   
 Required role: ROLE\_DEVICE\_CONTROL\_READ
@@ -99,7 +105,7 @@ Example response:
       "status" : "WAITING_FOR_CONNECTION",
     }
 
-## DELETE - deletes a new device request
+### DELETE - deletes a new device request
 
    
 Required role: ROLE\_DEVICE\_CONTROL\_ADMIN
@@ -113,7 +119,7 @@ Example response:
 
     HTTP/1.1 200 OK
 
-## PUT - updates a new device request
+### PUT - updates a new device request
 
 Request body: application/vnd.com.nsn.cumulocity.newDeviceRequest+json
 Response body: application/vnd.com.nsn.cumulocity.newDeviceRequest+json   
@@ -140,9 +146,9 @@ Example response:
       "status" : "ACCEPTED",
     }
 
-# Device credentials
+## Device credentials
 
-## DeviceCredentials [application/vnd.com.nsn.cumulocity.deviceCredentials+json]
+### DeviceCredentials [application/vnd.com.nsn.cumulocity.deviceCredentials+json]
 
 |Name|Type|Occurs|Description|
 |:---|:---|:-----|:----------|
@@ -152,7 +158,7 @@ Example response:
 |password|String|1|New password|
 |self|URL|1|Link to this resource.|
 
-## POST - creates a device credentials request
+### POST - creates a device credentials request
 
 Request body: application/vnd.com.nsn.cumulocity.deviceCredentials+json
 Response body: application/vnd.com.nsn.cumulocity.deviceCredentials+json   

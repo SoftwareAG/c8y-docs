@@ -1,8 +1,13 @@
-# Payload data model
+---
+order: 130
+title: Cumulocity Event Language
+layout: default
+---
+## Payload data model
 
 The properties of the various payload types are not exactly identical to the corresponding types in the REST API. Differences lie mainly in the modeling of IDs and references. In this section, the payload data model is described.
 
-## General types
+### General types
 
 Type *ID* can be constructed using following combinations of properties:
 
@@ -26,7 +31,7 @@ and consists of following properties:
 |type|String|Type of the identifier; value always equal to *com\_cumulocity\_model\_idtype\_GId*.|
 |value|String|Value of the identifier.|
 
-## Inventory types
+### Inventory types
 
 Type *ManagedObject* can be constructed using following combinations of properties:
 
@@ -51,7 +56,7 @@ and consists of following properties:
 |childDevices|Set|A collection of *GId*s of the child devices of the managed object.|
 |attrs|Map|A key-valued map of fragments of the managed object. Keys are of type *String* and values are of type *Object*.|
 
-## Events types
+### Events types
 
 Type *Event* can be constructed using following combinations of properties:
 
@@ -72,7 +77,7 @@ and consists of following properties:
 |source|ID|The *GId* of the *ManagedObject* that the event originated from.|
 |attrs|Map|A key-valued map of fragments of the event. Keys are of type *String* and values are of type *Object*.|
 
-## Measurements types
+### Measurements types
 
 Type *Measurement* can be constructed using following combinations of properties:
 
@@ -89,7 +94,7 @@ and consists of following properties:
 |source|ID|The *GId* of the *ManagedObject* that the measurement originated from.|
 |attrs|Map|A key-valued map of fragments of the measurement. Keys are of type *String* and values are of type *Object*.|
 
-## Device control types
+### Device control types
 
 Type *Operation* can be constructed using following combinations of properties:
 
@@ -112,7 +117,7 @@ and consists of following properties:
 |agentId|GId|Identifies the agent that should execute this operation.|
 |attrs|Map|A key-valued map of fragments of the operation. Keys are of type *String* and values are of type *Object*.|
 
-## Alarms types
+### Alarms types
 
 Type *Alarm* can be constructed using following combinations of properties:
 
@@ -136,7 +141,7 @@ and consists of following properties:
 |severity|Severity|The alarm severity. The value is of enumerated type with following values allowed: *CRITICAL*, *MAJOR*, *MINOR*, *WARNING*.|
 |attrs|Map|A key-valued map of fragments of the alarm. Keys are of type *String* and values are of type *Object*.|
 
-# Cumulocity events structure
+## Cumulocity events structure
 
 Cumulocity supports several predefined event types that represent different operations on different types of objects. Each event has associated output stream used to executing dedicated action (store into database or send email).
 
@@ -157,7 +162,7 @@ Cumulocity supports several predefined event types that represent different oper
 
 The basic structure of the event types is the same and consist of the following properties: *\_mode*, *\_type*, *attrs* and *payload*.
 
-## The *\_mode* property
+### The *\_mode* property
 
 The *\_mode* property contains the processing mode of the event, see "Processing Mode" in Section "[REST Implementation](index.php?option=com_k2&view=item&id=820)". Possible values are:
 
@@ -170,7 +175,7 @@ The following example selects only events with *TRANSIENT* mode:
     from MeasurementCreated e
     where e._mode = "TRANSIENT";
 
-## Constructing events
+### Constructing events
 
 Each type of event allows several ways of creating it. The simplest one is by passing just the payload value, i.e.:
 
@@ -356,7 +361,7 @@ Example:
 
 Above statement constructs MeasurementCreated object containing *summary* fragment of type Map with entries "total" and "customer\_id".
 
-# Fragments support
+## Fragments support
 
 Fragments are accessible through the following helper functions:
 
@@ -380,7 +385,7 @@ Example:
 
 In above statement we access *value* of *speed* property contained in *c8y\_SpeedMeasurement*fragment.
 
-# Functions and expressions
+## Functions and expressions
 
 As statements get more complicated it may be beneficial to divide them into reusable expressions to improve readability. For example the following expression:
 
@@ -500,7 +505,7 @@ Here is the full list of available functions. Replace the ellipses ("...") with 
 |...AlarmByStatusAndTimeBetween|List | Alarm|status*:String*, from*:Date*, to*:Date*|
 |...AlarmByTimeBetween|List | Alarm|from*:Date*, to*:Date*|
 
-# Email sending
+## Email sending
 
 Email can be sent using following CEP statement.
 

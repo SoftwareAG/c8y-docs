@@ -1,3 +1,9 @@
+---
+order: 160
+title: Applications
+layout: default
+---
+
 The API below is not published in "/platform" but can be reached using "/application".
 
 The application interface consists of the following parts:
@@ -6,9 +12,9 @@ The application interface consists of the following parts:
 -   The *application collection* resource retrieves sets of applications and enables creating new application.
 -   The *application* resource representsapplication that can be queried and deleted.
 
-# Application API
+## Application API
 
-## ApplicationAPI [application/vnd.com.nsn.cumulocity.applicationApi+json]
+### ApplicationAPI [application/vnd.com.nsn.cumulocity.applicationApi+json]
 
 |Name|Type|Occurs|Description|
 |:---|:---|:-----|:----------|
@@ -19,7 +25,7 @@ The application interface consists of the following parts:
 |applicationsByTenant|ApplicationCollection URI-Template|1|Read-only collection of all applications subscribed by particular tenant (placeholder \<\<tenant\>\>).|
 |applicationsByOwner|ApplicationCollection URI-Template|1|Read-only collection of all applications owned by particular tenant (placeholder \<\<tenant\>\>).|
 
-## GET the Application API resource
+### GET the Application API resource
 
 Response body: application/vnd.com.nsn.cumulocity.ApplicationApi+json  
 Required role: ROLE\_Application\_READ
@@ -38,9 +44,9 @@ Example response:
         "applicationsByTenant" : "<<ApplicationAPI URL>>/applicationsByTenant/{tenantName}"
     }
 
-# Application collection
+## Application collection
 
-## ApplicationCollection [application/vnd.com.nsn.cumulocity.applicationCollection+json]
+### ApplicationCollection [application/vnd.com.nsn.cumulocity.applicationCollection+json]
 
 |Name|Type|Occurs|Description|
 |:---|:---|:-----|:----------|
@@ -50,7 +56,7 @@ Example response:
 |prev|URI|0..1|Link to a potential previous page of applications.|
 |next|URI|0..1|Link to a potential next page of applications.|
 
-## GET an application collection
+### GET an application collection
 
 Response body: ApplicationCollection
   
@@ -108,7 +114,7 @@ Example response:
         }
     } 
 
-## POST - Create a new Application
+### POST - Create a new Application
 
 Request body: Application
  Response body: Application (when Accept header is not provided, empty response body is returned)
@@ -156,9 +162,9 @@ Example response:
       "resourcesUsername": "..."
     }
 
-# Application
+## Application
 
-## Application [application/vnd.com.nsn.cumulocity.application+json;ver=0.9]
+### Application [application/vnd.com.nsn.cumulocity.application+json;ver=0.9]
 
 |Field Name|Type|Occurs|Description|PUT/POST|
 |:---------|:---|:-----|:----------|:-------|
@@ -176,7 +182,7 @@ Example response:
 |externalUrl|String|0..1|URL to external application|POST: Mandatory (when application type is EXTERNAL) 
 PUT: Optional|
 
-## PUT - Update an Application
+### PUT - Update an Application
 
 Request body: Application
  Response body: Application (if "ACCEPT" header specified).
@@ -194,7 +200,7 @@ Example Request:
       "availability" : "MARKET"
     }
 
-## GET an Application
+### GET an Application
 
 Response body: Application
   
@@ -221,7 +227,7 @@ Example response:
       "externalUrl":"http://external.host.com/application"
     }
 
-## DELETE an application
+### DELETE an application
 
 Request Body: N/A.
  Response Message Body: N/A.

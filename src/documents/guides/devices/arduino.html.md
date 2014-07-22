@@ -1,3 +1,8 @@
+---
+layout: default
+title: Arduino
+---
+
 ## Overview
 
 This section describes how to get started with the Cumulocity Agent for Arduino and the M2M DevStarter Arduino package from Deutsche Telekom. We start with our instructions from installing and setting up the hardware, as well as showing a step-by-step example how to take sensor data and upload the data into the Cumulocity developer sandbox.

@@ -1,3 +1,8 @@
+---
+order: 80
+title: Users
+layout: default
+---
 The user interface consists of the following parts:
 
 -   The *user API* resource returns URIs and URI templates to collections of users, groups, and roles, so that all users, groups, roles and user or group with particular name can be queried.
@@ -15,9 +20,9 @@ The user interface consists of the following parts:
 -   The *role* reference collection resource retrieves sets of references to roles. These could be, for example, roles of a particular user or group.
 -   The *role**reference* resource represents one individual reference to a role, which can be retrieved.
 
-# User API
+## User API
 
-## UserAPI [application/vnd.com.nsn.cumulocity.userApi+json]
+### UserAPI [application/vnd.com.nsn.cumulocity.userApi+json]
 
 |Name|Type|Occurs|Description|
 |:---|:---|:-----|:----------|
@@ -29,7 +34,7 @@ The user interface consists of the following parts:
 |groups|URI Template/GroupCollection|1|A collection of all users belonging to a given realm. The template contains a placeholder *realm*.|
 |roles|URI Template/RoleCollection|1|A collection of all roles.|
 
-# GET the User API Resource
+## GET the User API Resource
 
 Request body: N/A
  Response body: application/vnd.com.nsn.cumulocity.userApi+json;ver=0.9
@@ -55,9 +60,9 @@ Example response:
          "roles" : "<<URL to the RoleCollection resource>>"
     }
 
-# User collection
+## User collection
 
-# UserCollection [application/vnd.com.nsn.cumulocity.userCollection+json]
+## UserCollection [application/vnd.com.nsn.cumulocity.userCollection+json]
 
 |Name|Type|Occurs|Description|
 |:---|:---|:-----|:----------|
@@ -67,7 +72,7 @@ Example response:
 |prev|URI|0..1|Link to a possible previous page with additional users|
 |next|URI|0..1|Link to a possible next page with additional users|
 
-# GET a Representation of a User Collection
+## GET a Representation of a User Collection
 
 Request body: N/A
  Response body: User Collection
@@ -112,7 +117,7 @@ Example response:
            "currentPage : 1
        },   "prev" : "[URL to previous page]",   "next" : "[URL to next page]" }
 
-# POST - CREATE a new User within the Collection
+## POST - CREATE a new User within the Collection
 
 Request body: User
  Response body: User (when Accept header is not provided, empty response body is returned)
@@ -154,9 +159,9 @@ Example response:
       "roles" : {[collection of roles the user has]}
     }
 
-# User
+## User
 
-# User [application/vnd.com.nsn.cumulocity.user+json]
+## User [application/vnd.com.nsn.cumulocity.user+json]
 
 A "User" resource type contains the following fields:
 
@@ -177,7 +182,7 @@ A "User" resource type contains the following fields:
 
 **Embedded user** contains all properties except password. Password property is never returned in GET user
 
-# User [application/vnd.com.nsn.cumulocity.currentUser+json]
+## User [application/vnd.com.nsn.cumulocity.currentUser+json]
 
 A "currentUser" resource type contains the following fields:
 
@@ -196,7 +201,7 @@ A "currentUser" resource type contains the following fields:
 
 **Embedded user **contains all properties except password. Password property is never returned in GET user
 
-# GET a representation of a User
+## GET a representation of a User
 
 Request body: N/A
  Response body: User
@@ -226,7 +231,7 @@ Example response:
 
 User password is never returned in GET response. Authentication mechanism is provided by another interface.
 
-# GET a representation of a User by his/her name
+## GET a representation of a User by his/her name
 
 Request body: N/A
  Response body: User
@@ -255,7 +260,7 @@ Example response:
       "roles" : {[collection of roles the user has]}
     }
 
-# PUT a change to User resource
+## PUT a change to User resource
 
 Request body: User
  Response body: User (when Accept header is not provided, empty response body is returned)
@@ -288,7 +293,7 @@ Example response:
       "roles" : {[collection of roles the user has]}
     }
 
-# DELETE a representation of a user
+## DELETE a representation of a user
 
 Request body: N/A
  Response body: N/A
@@ -302,7 +307,7 @@ Example response:
 
     HTTP/1.1  204 NO CONTENT
 
-# GET the Current User Resource
+## GET the Current User Resource
 
 Request body: N/A
  Response body: application/vnd.com.nsn.cumulocity.user+json;ver=0.9
@@ -342,7 +347,7 @@ Example response:
         "self": "[URL to the User resource]",
         "userName": "jsmith"} 
 
-# PUT a change to the Current User Resource
+## PUT a change to the Current User Resource
 
 Request body: application/vnd.com.nsn.cumulocity.user+json;ver=0.9
  Response body: application/vnd.com.nsn.cumulocity.user+json;ver=0.9
@@ -384,9 +389,9 @@ Example response:
         "userName": "jsmith"
      }
 
-# User reference collection
+## User reference collection
 
-## UserReferenceCollection [application/vnd.com.nsn.cumulocity.userReferenceCollection+json]
+### UserReferenceCollection [application/vnd.com.nsn.cumulocity.userReferenceCollection+json]
 
 |Name|Type|Occurs|Description|
 |:---|:---|:-----|:----------|
@@ -396,7 +401,7 @@ Example response:
 |prev|URI|0..1|Link to a possible previous page with additional user references|
 |next|URI|0..1|Link to a possible next page with additional user references|
 
-# Add User to a group
+## Add User to a group
 
 Request body: UserReference
  Response body: UserReference
@@ -442,7 +447,7 @@ Example response:
             "userName": "jsmith"
         }}
 
-# Remove User from a group
+## Remove User from a group
 
 Request body: N/A
  Response body: N/A
@@ -456,7 +461,7 @@ Example response:
 
     HTTP/1.1  204 NO CONTENT
 
-# Get all users of a group
+## Get all users of a group
 
 Request body: N/A
  Response body: UserReferenceCollection
@@ -494,18 +499,18 @@ Example response:
       "next" : "[URL to next page]"
     }
 
-# User reference
+## User reference
 
-# UserReference [application/vnd.com.nsn.cumulocity.userReference+json]
+## UserReference [application/vnd.com.nsn.cumulocity.userReference+json]
 
 |Name|Type|Occurs|Description|
 |:---|:---|:-----|:----------|
 |self|URI|1|Link to this Resource|
 |user|User|1|A user resource being referenced|
 
-# Group collection
+## Group collection
 
-# GroupCollection [application/vnd.com.nsn.cumulocity.groupCollection+json]
+## GroupCollection [application/vnd.com.nsn.cumulocity.groupCollection+json]
 
 |Name|Type|Occurs|Description|
 |:---|:---|:-----|:----------|
@@ -515,7 +520,7 @@ Example response:
 |prev|URI|0..1|Link to a possible previous page with additional groups|
 |next|URI|0..1|Link to a possible next page with additional groups|
 
-# List all groups
+## List all groups
 
 Request body: N/A
  Response body: GroupCollection
@@ -554,7 +559,7 @@ Example response:
       "next" : "[URL to next page]"
     }
 
-# Create a group
+## Create a group
 
 Request body: Group
  Response body: Group
@@ -591,9 +596,9 @@ Example response:
       }
     }
 
-# Group
+## Group
 
-# Group [application/vnd.com.nsn.cumulocity.group+json]
+## Group [application/vnd.com.nsn.cumulocity.group+json]
 
 |Name|Type|Occurs|Description|Allowed in PUT/POST request|
 |:---|:---|:-----|:----------|:--------------------------|
@@ -602,7 +607,7 @@ Example response:
 |name|String|1|Descriptive Name of the Group|mandatory|
 |roles|RoleReferenceCollection|1|List of role references|not allowed|
 
-# Show group details
+## Show group details
 
 Request body: N/A
  Response body: Group
@@ -645,7 +650,7 @@ Example response:
          ]
     }
 
-# GET a representation of a Group by its name
+## GET a representation of a Group by its name
 
 Request body: N/A
  Response body: Group
@@ -669,7 +674,7 @@ Example response:
       ...
     }
 
-# Remove a group
+## Remove a group
 
 Request body: N/A
  Response body: N/A
@@ -683,7 +688,7 @@ Example response:
 
     HTTP/1.1  204 NO CONTENT
 
-# Update a group
+## Update a group
 
 Request body: Group
  Response body: Group
@@ -712,9 +717,9 @@ Example response:
       ...
     }
 
-# Group reference collection
+## Group reference collection
 
-# GroupReferenceCollection [application/vnd.com.nsn.cumulocity.groupReferenceCollection+json]
+## GroupReferenceCollection [application/vnd.com.nsn.cumulocity.groupReferenceCollection+json]
 
 |Name|Type|Occurs|Description|
 |:---|:---|:-----|:----------|
@@ -724,7 +729,7 @@ Example response:
 |prev|URI|0..1|Link to a possible previous page with additional group references|
 |next|URI|0..1|Link to a possible next page with additional group references|
 
-# Get all groups of a user
+## Get all groups of a user
 
 Request body: N/A
  Response body: GroupReferenceCollection
@@ -751,18 +756,18 @@ Example response:
        "next" : "[URL to next page]"
     }
 
-# Group reference
+## Group reference
 
-# GroupReference [application/vnd.com.nsn.cumulocity.groupReference+json]
+## GroupReference [application/vnd.com.nsn.cumulocity.groupReference+json]
 
 |Name|Type|Occurs|Description|
 |:---|:---|:-----|:----------|
 |self|URI|1|Link to this Resource|
 |group|Group|1|A group resource being referenced|
 
-# Role collection
+## Role collection
 
-# RoleCollection [application/vnd.com.nsn.cumulocity.roleCollection+json]
+## RoleCollection [application/vnd.com.nsn.cumulocity.roleCollection+json]
 
 |Field Name|Type|Occurs|Description|
 |:---------|:---|:-----|:----------|
@@ -772,16 +777,16 @@ Example response:
 |prev|URI|0..1|Link to a possible previous page with additional roles|
 |next|URI|0..1|Link to a possible next page with additional roles|
 
-# Role
+## Role
 
-## Role [application/vnd.com.nsn.cumulocity.role+json]
+### Role [application/vnd.com.nsn.cumulocity.role+json]
 
 |Name|Type|Occurs|Description|
 |:---|:---|:-----|:----------|
 |id|String|1|Uniquely identifies a Role|
 |name|String|1|Descriptive name of the role, following role naming pattern.|
 
-# Get all available roles
+## Get all available roles
 
 Request body: N/A
  Response body: RoleCollection
@@ -821,7 +826,7 @@ Example response:
       "next" : "[URL to next page]"
     }
 
-# Assign Role to User
+## Assign Role to User
 
 Request body: RoleReference
  Response body: RoleReference
@@ -855,7 +860,7 @@ Example response:
       }
     }
 
-# Assign Role to Group
+## Assign Role to Group
 
 Request body: RoleReference
  Response body: RoleReference
@@ -889,7 +894,7 @@ Example response:
       }
     }
 
-# Unassign Role from User
+## Unassign Role from User
 
 Request body: N/A
  Response body: N/A
@@ -903,7 +908,7 @@ Example response:
 
     HTTP/1.1  204 NO CONTENT
 
-# Unassign Role from Group
+## Unassign Role from Group
 
 Request body: N/A
  Response body: N/A
@@ -917,9 +922,9 @@ Example response:
 
     HTTP/1.1  204 NO CONTENT
 
-# Role reference collection
+## Role reference collection
 
-# RoleReferenceCollection [application/vnd.com.nsn.cumulocity.roleReferenceCollection+json]
+## RoleReferenceCollection [application/vnd.com.nsn.cumulocity.roleReferenceCollection+json]
 
 |Name|Type|Occurs|Description|
 |:---|:---|:-----|:----------|
@@ -929,7 +934,7 @@ Example response:
 |prev|URI|0..1|Link to a possible previous page with additional role references|
 |next|URI|0..1|Link to a possible next page with additional role references|
 
-# Get all roles of a user
+## Get all roles of a user
 
 Request body: N/A
  Response body: RoleReferenceCollection
@@ -974,7 +979,7 @@ Example response:
       "next" : "[URL to next page]"
     }
 
-# Get all roles of a group
+## Get all roles of a group
 
 Request body: N/A
  Response body: RoleReferenceCollection
@@ -1020,9 +1025,9 @@ Example response:
       "next" : "[URL to next page]"
     }
 
-# Role reference
+## Role reference
 
-# RoleReference [application/vnd.com.nsn.cumulocity.roleReference+json]
+## RoleReference [application/vnd.com.nsn.cumulocity.roleReference+json]
 
 |Name|Type|Occurs|Description|
 |:---|:---|:-----|:----------|

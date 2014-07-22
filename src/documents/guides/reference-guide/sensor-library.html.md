@@ -1,22 +1,27 @@
+---
+order: 110
+title: Sensor library
+layout: default
+---
 The sensor library defines a canonical set of predefined sensor and control capabilities. A sensor capability describes that part of a device that can measure some quantity, and a control capability describes that part of a device that can be modified, changed or in some way remotely controlled.
 
 The library is logically divided into subpackages related to the domain to which that capability best fits, although applications a free to select capabilities from any domain. The name of the capability follows the *Fragment* naming convention. There are Java representations of each of these capabilities that can be found in the Java packages corresponding to the Fragment names.
 
-# Environmental Capabilities
+## Environmental Capabilities
 
 Environmental capabilities include sensors that measure properties of the environment such as temperature, humidity, wind speed, etc.
 
-## Temperature Sensor
+### Temperature Sensor
 
 A temperature sensor, or thermometer, reports degrees of hotness. The untis for this sensor type are Centigrade (C).
 
-### Inventory representation
+#### Inventory representation
 
 In a managed object, a temperature sensor is modelled as a simple empty fragment:
 
     "c8y_TemperatureSensor" : {}
 
-### Measurement
+#### Measurement
 
 |Measurement|Units|Description|
 |:----------|:----|:----------|
@@ -26,17 +31,17 @@ In a managed object, a temperature sensor is modelled as a simple empty fragment
         "T": { "value": 23, "unit": "C" }
     }
 
-## Motion Sensor
+### Motion Sensor
 
 A motion sensor detects motion. Simple motion sensors may just detect if there is, or is not motion based on some predefined threshold, whereas more complicated motion sensors (such as police speed radars) can measure the actual speed of the motion. It is assumed in the model that only the speed towards or away from the sensor is measured. The untis for this sensor type are kilometres per hour (km/h).
 
-### Inventory representation
+#### Inventory representation
 
 In a managed object, a motion sensor is modelled as a simple empty fragment:
 
     "c8y_MotionSensor" : {}
 
-### Measurement
+#### Measurement
 
 |Measurement|Units|Description|
 |:----------|:----|:----------|
@@ -48,17 +53,17 @@ In a managed object, a motion sensor is modelled as a simple empty fragment:
         "speed": { "value": -63.2, "unit": "km/h" }
       }
 
-## Acceleration Sensor
+### Acceleration Sensor
 
 An acceleration sensor, or accelerometer, is a device that measures acceleration along an axis. This sensor model does not define the direction of that axis. The untis for this sensor type are metres per second per second (m/s2).
 
-### Inventory representation
+#### Inventory representation
 
 In a managed object, an acceleration sensor is modelled as a simple empty fragment:
 
     "c8y_AccelerationSensor" : {}
 
-### Measurement
+#### Measurement
 
 |Measurement|Units|Description|
 |:----------|:----|:----------|
@@ -68,19 +73,19 @@ In a managed object, an acceleration sensor is modelled as a simple empty fragme
         "acceleration": { "value": 8.36, "unit": "m/s2" }
     }
 
-# Energy
+## Energy
 
-## Electricity Sensor
+### Electricity Sensor
 
 At the most basic level electricity sensors (aka Electricity Meters, Watt-hour meters) measure energy consumption (usually measured in kWh), however they can measure much more depending upon their complexity, such as "demand", or instantaneous power (usually measured in W), reactive power, harmonic distortion, etc. Meters can measure for a single phase (typical just for home usage) or for three phases.
 
-### Inventory representation - Single Phase Meter
+#### Inventory representation - Single Phase Meter
 
 In a managed object, a single phase electricity meter is modelled as a simple empty fragment:
 
     "c8y_SinglePhaseElectricitySensor" : {}
 
-### Measurement - Single Phase Meter
+#### Measurement - Single Phase Meter
 
 |Measurement|Units|Description|
 |:----------|:----|:----------|
@@ -96,13 +101,13 @@ In a managed object, a single phase electricity meter is modelled as a simple em
       "P-": { "value": 0, "unit": "W" }
     }
 
-### Inventory representation - Three Phase Meter
+#### Inventory representation - Three Phase Meter
 
 In a managed object, a three phase electricity meter is modelled as a simple empty fragment:
 
     "c8y_ThreePhaseElectricitySensor" : {}
 
-### Measurement - Three Phase Meter
+#### Measurement - Three Phase Meter
 
 |Measurement|Units|Description|
 |:----------|:----|:----------|
@@ -149,9 +154,9 @@ In a managed object, a three phase electricity meter is modelled as a simple emp
       "Qc-": { "value": 34, "unit": "kVAr" }
     }
 
-# Location Capabilities
+## Location Capabilities
 
-## Position
+### Position
 
 *c8y\_Position* reports the geographical location of an asset in terms of latitude, longitude and altitude. Altitude is given in meters. To report the current location of an asset or a device, "c8y\_Position" is added to the managed object representing the asset or device. To trace the position of an asset or a device, "c8y\_Position" is sent as part of an event of type "c8y\_LocationUpdate".
 
@@ -161,13 +166,13 @@ In a managed object, a three phase electricity meter is modelled as a simple emp
       "lat": 51.211977
     }
 
-# Common Capabilities
+## Common Capabilities
 
-## Relay Control
+### Relay Control
 
 A relay is a kind of binary state switch which can be in the states "OPEN" or "CLOSED". Relays can be used for many purposes, for example to connect or disconnect the consumer power supply through a smart energy meter.
 
-### Inventory representation
+#### Inventory representation
 
 In a managed object, a relay control model includes the state of the control. When the control state changes, the inventory model should be updated to include the new state:
 
@@ -176,7 +181,7 @@ In a managed object, a relay control model includes the state of the control. Wh
       "relayState" : "OPEN"
     }
 
-### Operations
+#### Operations
 
 |Operation|States|Description|
 |:--------|:-----|:----------|

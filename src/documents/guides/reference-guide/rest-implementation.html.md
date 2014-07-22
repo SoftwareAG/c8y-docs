@@ -1,8 +1,3 @@
----
-order: 10
-title: REST implementation
-layout: default
----
 # Overview
 
 This section describes the aspects common to all REST-based interfaces of Cumulocity. The interfaces are based on the [Hypertext Transfer Protocol, version 1.1](http://www.w3.org/Protocols/rfc2616/rfc2616.html) using [HTTPS](http://en.wikipedia.org/wiki/HTTP_Secure).
@@ -84,83 +79,20 @@ To avoid ambiguity, all times and timestamps must include timezone information.
 
 In error cases, Cumulocity returns standard HTTP response codes as described in [RFC2616](http://www.w3.org/Protocols/rfc2616/rfc2616-sec10.html). A Client should not only be able to handle individual codes but classes of codes as well (e.g., 4xx). The response body can contain more information about the error, see the error media type definition below. General error interpretations are:
 
-Code
-
-Name
-
-Description
-
-400
-
-Bad Request
-
-The request could not be understood by the server due to malformed syntax. The client SHOULD NOT repeat the request without modifications.
-
-401
-
-Unauthorized
-
-Authentication has failed, or credential were required but not provided.
-
-403
-
-Forbidden
-
-You are not authorized to access the API.
-
-404
-
-Not Found
-
-Resource not found at given location.
-
-405
-
-Method not allowed
-
-The employed HTTP method cannot be used on this resource (e.g., using "POST" on a read-only resource).
-
-409
-
-Update Conflict
-
-Conflict on resource update, entity was changed in the meantime.
-
-409
-
-Duplicate
-
-The entity already exists in the data source.
-
-422
-
-Invalid Data
-
-General error with entity data format.
-
-422
-
-Non Unique Result
-
-Resource constraints error. Non-unique result from the query.
-
-422
-
-Unprocessable entity
-
-Resource cannot be processed.
-
-500
-
-Internal Server Error
-
-An internal error in the software system has occurred and the request could not be processed.
-
-503
-
-Service Unavailable
-
-The service is currently not available. This may be caused by an overloaded instance or it is down for maintenance. Please try it again in a few minutes.
+|Code|Name|Description|
+|:---|:---|:----------|
+|400|Bad Request|The request could not be understood by the server due to malformed syntax. The client SHOULD NOT repeat the request without modifications.|
+|401|Unauthorized|Authentication has failed, or credential were required but not provided.|
+|403|Forbidden|You are not authorized to access the API.|
+|404|Not Found|Resource not found at given location.|
+|405|Method not allowed|The employed HTTP method cannot be used on this resource (e.g., using "POST" on a read-only resource).|
+|409|Update Conflict|Conflict on resource update, entity was changed in the meantime.|
+|409|Duplicate|The entity already exists in the data source.|
+|422|Invalid Data|General error with entity data format.|
+|422|Non Unique Result|Resource constraints error. Non-unique result from the query.|
+|422|Unprocessable entity|Resource cannot be processed.|
+|500|Internal Server Error|An internal error in the software system has occurred and the request could not be processed.|
+|503|Service Unavailable|The service is currently not available. This may be caused by an overloaded instance or it is down for maintenance. Please try it again in a few minutes.|
 
 # REST usage
 
@@ -228,85 +160,17 @@ To discover the URIs to the various interfaces of Cumulocity, a "root" interface
 
 ## Platform [application/vnd.com.nsn.cumulocity.platformApi+json]
 
-Name
-
-Type
-
-Occurs
-
-Description
-
-self
-
-URI
-
-1
-
-Link to this Resource
-
-inventory
-
-InventoryAPI
-
-1
-
-See [inventory](index.php?option=com_k2&view=item&id=828) interface.
-
-identity
-
-IdentityAPI
-
-1
-
-See [identity](index.php?option=com_k2&view=item&id=823) interface.
-
-event
-
-EventAPI
-
-1
-
-See [event](index.php?option=com_k2&view=item&id=827) interface.
-
-measurement
-
-MeasurementAPI
-
-1
-
-See [measurement](index.php?option=com_k2&view=item&id=826) interface.
-
-audit
-
-AuditAPI
-
-1
-
-See [auditing](index.php?option=com_k2&view=item&id=821) interface.
-
-alarm
-
-AlarmAPI
-
-1
-
-See [alarm](index.php?option=com_k2&view=item&id=824) interface.
-
-user
-
-UserAPI
-
-1
-
-See [user](index.php?option=com_k2&view=item&id=822) interface.
-
-deviceControl
-
-DeviceControlAPI
-
-1
-
-See [device control](index.php?option=com_k2&view=item&id=825) interface.
+|Name|Type|Occurs|Description|
+|:---|:---|:-----|:----------|
+|self|URI|1|Link to this Resource|
+|inventory|InventoryAPI|1|See [inventory](index.php?option=com_k2&view=item&id=828) interface.|
+|identity|IdentityAPI|1|See [identity](index.php?option=com_k2&view=item&id=823) interface.|
+|event|EventAPI|1|See [event](index.php?option=com_k2&view=item&id=827) interface.|
+|measurement|MeasurementAPI|1|See [measurement](index.php?option=com_k2&view=item&id=826) interface.|
+|audit|AuditAPI|1|See [auditing](index.php?option=com_k2&view=item&id=821) interface.|
+|alarm|AlarmAPI|1|See [alarm](index.php?option=com_k2&view=item&id=824) interface.|
+|user|UserAPI|1|See [user](index.php?option=com_k2&view=item&id=822) interface.|
+|deviceControl|DeviceControlAPI|1|See [device control](index.php?option=com_k2&view=item&id=825) interface.|
 
 ## GET the Platform resource
 
@@ -338,120 +202,30 @@ Example response:
 
 The error type provides further information on the reason of a failed request.
 
-Name
-
-Type
-
-Occurs
-
-Description
-
-error
-
-String
-
-1
-
-Error type formatted as "\<\<resource type\>\>/\<\<error name\>\>. For example, for inventory API and something like object not found error, error code would be "inventory/notFound".
-
-message
-
-String
-
-1
-
-Short text description of the error
-
-info
-
-URL
-
-1
-
-URL to an error description on the Internet.
-
-details
-
-Error details
-
-1
-
-Error details. Only available in DEBUG mode.
+|Name|Type|Occurs|Description|
+|:---|:---|:-----|:----------|
+|error|String|1|Error type formatted as "\<\<resource type\>\>/\<\<error name\>\>. For example, for inventory API and something like object not found error, error code would be "inventory/notFound".|
+|message|String|1|Short text description of the error|
+|info|URL|1|URL to an error description on the Internet.|
+|details|Error details|1|Error details. Only available in DEBUG mode.|
 
 Error details are provided in the following structure:
 
-Name
-
-Type
-
-Occurs
-
-Description
-
-expectionClass
-
-String
-
-1
-
-Class name of an exception that caused this error.
-
-exceptionMessage
-
-String
-
-1
-
-Exception message content.
-
-expectionStackTrace
-
-String
-
-1
-
-Strack trace of the exception
-
--
-
--
-
--
-
-Specific Error may add further information for diagnostic purpose
+|Name|Type|Occurs|Description|
+|:---|:---|:-----|:----------|
+|expectionClass|String|1|Class name of an exception that caused this error.|
+|exceptionMessage|String|1|Exception message content.|
+|expectionStackTrace|String|1|Strack trace of the exception|
+|-|-|-|Specific Error may add further information for diagnostic purpose|
 
 ## PagingStatistics [application/vnd.com.nsn.cumulocity.pagingStatistics+json]
 
 Paging statistics for collection resources are provided in the following format:
 
-Name
+|Name|Type|Occurs|Description|
+|:---|:---|:-----|:----------|
+|totalRecords|Integer|1|The approximate total number of records.|
+|pageSize|Integer|1|Maximum number of records contained in this query.|
+|currentPage|Integer|1|The current returned page within the full result set, starting at "1".|
 
-Type
 
-Occurs
-
-Description
-
-totalRecords
-
-Integer
-
-1
-
-The approximate total number of records.
-
-pageSize
-
-Integer
-
-1
-
-Maximum number of records contained in this query.
-
-currentPage
-
-Integer
-
-1
-
-The current returned page within the full result set, starting at "1".

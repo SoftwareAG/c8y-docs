@@ -31,7 +31,7 @@ For example, many operating systems come pre-installed with the "curl" command. 
 
 	curl -u <username>/<password> https://<yourURL>.cumulocity.com/platform
 
-Replace "username" and "password" with the username and password that you used to register to Cumulocity. Similarly, replace "yourURL" with the URL you used at registration time. If you subscribed to Deutsche Telekom's M2M DevFree, use "yourURL" with "dev-dg". 
+Replace "username" and "password" with the username and password that you used to register to Cumulocity. Similarly, replace "yourURL" with the URL you used at registration time. If you subscribed to Deutsche Telekom's M2M DevFree, replace "yourURL" with "dev-dg". 
 
 The command will return links to all basic interfaces of Cumulocity:
 
@@ -39,25 +39,33 @@ The command will return links to all basic interfaces of Cumulocity:
     "inventory": {
         "managedObjects": {
             "references": [], 
-            "self": "http://<yourURL>/inventory/managedObjects"
+            "self": "https://<yourURL>/inventory/managedObjects"
         }, 
-        "managedObjectsForFragmentType": "http://<yourURL>/inventory/managedObjects?fragmentType={fragmentType}", 
-        "managedObjectsForListOfIds": "http://<yourURL>/inventory/managedObjects?ids={ids}", 
-        "managedObjectsForType": "http://<yourURL>/inventory/managedObjects?type={type}", 
-        "self": "http://<yourURL>/inventory"
+        "managedObjectsForFragmentType": "https://<yourURL>/inventory/managedObjects?fragmentType={fragmentType}", 
+        "managedObjectsForListOfIds": "https://<yourURL>/inventory/managedObjects?ids={ids}", 
+        "managedObjectsForType": "https://<yourURL>/inventory/managedObjects?type={type}", 
+        "self": "https://<yourURL>/inventory"
     },
     ...
 
-To format the output more nicely on a Mac, try ?curl ? | python -mjson.tool?.
+To format the output more nicely on a Mac, try "curl ... | python -mjson.tool".
 
-From this point, you can navigate further. For example, display the items in the inventory by following the ?managedObjects? link:
+From this point, you can navigate further. For example, display the items in the inventory by following the "managedObjects" link:
 
-    curl -u <username>/<password> https://<URL>/inventory/managedObjects
+    curl -u <username>/<password> https://<yourURL>.cumulocity.com/inventory/managedObjects
 
-You will notice that just a subset of the items in the inventory is actually returned, a ?page?. More information on page handling can be found under [Query result paging](/guides/reference-guide/rest-implementation).
+You will notice that just a subset of the items in the inventory is actually returned, a so-called "page". More information on page handling can be found under [Query result paging](/guides/reference-guide/rest-implementation#paging).
 
-More convenient than command line tools are browser extensions such as [POSTMAN](https://chrome.google.com/webstore/detail/postman-rest-client-packa/fhbjgbiflinjbdggehcddcbncdddomop?utm_source=chrome-ntp-launcher) or [Advanced REST Client](https://chrome.google.com/webstore/detail/advanced-rest-client/hgmloofddffdnphfgcellkdfbfbjeloo) for Chrome.
+## Using Postman
 
-[Here](/images/c8yimages/Cumulocity.json.postman_collection) is a simple setup for POSTMAN to use Cumulocity interfaces that you can use by clicking ?Import collection? in POSTMAN. Click on, for example, ?Platform?. Enter your Cumulocity URL by clicking on the drop-down menu next to the ?eye? icon on the top right. Enter your credentials by clicking on ?Basic Auth?, typing your username and password and clicking on ?Refresh headers?. You can now navigate through the APIs simply by clicking the links in the output and hitting ?Send?. Similar, if you want to navigate, for example, between pages of items in the inventory, click on the ?next? link at the bottom of the output.
+A convenient way to explore REST interface and the Cumulocity database content are browser extensions such as  [Postman](https://chrome.google.com/webstore/detail/postman-rest-client-packa/fhbjgbiflinjbdggehcddcbncdddomop?utm_source=chrome-ntp-launcher) or [Advanced REST Client](https://chrome.google.com/webstore/detail/advanced-rest-client/hgmloofddffdnphfgcellkdfbfbjeloo) for Chrome.
 
-![Example REST client](/images/c8yimages/postman.png)
+![Example REST client](/images/guides/rest/postman.png)
+
+Here is a shortcut to set up Postman for Cumulocity:
+
+* [Download](/images/guides/rest/Cumulocity.json.postman_collection) the Cumulocity Postman collection and click "Import collection" in Postman (or browse the Postman API directory).
+* Click on drop-down menu next to the little "eye" widget to configure your Cumulocity URL. Click "Manage environments" and "Add". Then type a name for your tenant and configure a key "host" with a value of "https://&lt;yourURL&gt;.cumulocity.com". Click "Submit".
+*  Now, you can run REST calls. Click, for example, on "Cumulocity API", "Cumulocity API Overview", "GET Platform". By clicking the "Send" button, you can send the GET request to Cumulocity. The first time that you send a request to Cumulocity, you have to enter your credentials. Click on "Basic Auth" and enter your username and password, followed by a click on "Refresh Headers".
+* To explore the API, click on the links in the responses. Similar to navigate through pages of results, click on the "next" link at the bottom of the response. Add, for example, "?pageSize=100" to the end of the request URL to get more data than the default five items.
+

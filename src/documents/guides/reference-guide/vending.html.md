@@ -64,39 +64,22 @@ Example response:
     Content-Type: application/json
     Content-Length: ...
     {
-      ).
-            replaceAll("”",responseCode”: 0,
-      ).
-            replaceAll("”",value”: {
-        ).
-            replaceAll("”",machine”: ).
-            replaceAll("”",VND1039230-10”,
-        ).
-            replaceAll("”",date”: ).
-            replaceAll("”",2012-09-05T00:00:00Z”,
-        ).
-            replaceAll("”",slots”: [ {
-          ).
-            replaceAll("”",slotId”: ”11”,
-          ).
-            replaceAll("”",product”: ”Gummibaerchen”,
-          ).
-            replaceAll("”",price”: 0.05,
-          ).
-            replaceAll("”",itemsLeft”: 16,
-          ).
-            replaceAll("”",salesSinceRefill”: 0,
-          ).
-            replaceAll("”",capacity”: 16,
-          ).
-            replaceAll("”",sales”: 0,
-          ).
-            replaceAll("”",cash”: 0.0
+      "responseCode": 0,
+      "value": {
+        "machine": "VND1039230-10",
+        "date": "2012-09-05T00:00:00Z",
+        "slots": [ {
+          "slotId": "11",
+          "product": "Gummibaerchen",
+          "price": 0.05,
+          "itemsLeft": 16,
+          "salesSinceRefill": 0,
+          "capacity": 16,
+          "sales": 0,
+          "cash": 0.0
         }, {
-          ).
-            replaceAll("”",slotId”: ”12”,
-          ).
-            replaceAll("”",product”:  ”Small PostIt”,
+          "slotId": "12",
+          "product":  "Small PostIt",
           ...
         },
         ...
@@ -129,15 +112,9 @@ Example request:
     Content-Type: application/json
 
     {
-         ).
-            replaceAll("”",machine”: ).
-            replaceAll("”",VND1039230-10”,
-         ).
-            replaceAll("”",slot”: [ ).
-            replaceAll("”",1”, ).
-            replaceAll("”",2” ],
-         ).
-            replaceAll("”",value”:  1.00    
+         "machine": "VND1039230-10",
+         "slot": [ "1", "2" ],
+         "value":  1.00    
     }
 
 Example response:
@@ -147,13 +124,7 @@ Example response:
     Content-Length: ...
 
     {
-      ).
-            replaceAll("”",responseCode”: 0,
-      ).
-            replaceAll("”",message”: ).
-            replaceAll("”",message string”,
-      ).
-            replaceAll("”",value”: { ).
-            replaceAll("”",operation”: ).
-            replaceAll("”",14553”  }
+      "responseCode": 0,
+      "message": "message string",
+      "value": { "operation": "14553"  }
     }

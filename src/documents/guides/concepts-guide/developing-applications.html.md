@@ -55,7 +55,7 @@ This is illustrated below:
 
 ![Extension points for plugins](/images/guides/concepts-guide/extensionpoints.png)
 
-For more information on developing plugins, please visit the [Plugin Developer's Guide].
+For more information on developing plugins, please visit the [Plugin Developer's Guide](/guides/plugins/introduction).
 
 ## Modules
 

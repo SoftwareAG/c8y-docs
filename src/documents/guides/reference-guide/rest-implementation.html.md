@@ -12,39 +12,41 @@ This section describes the aspects common to all REST-based interfaces of Cumulo
 
 ### Authentication
 
-All requests need to include the [HTTP "Authorization" header](http://en.wikipedia.org/wiki/Basic_access_authentication). For basic authentication with user name and password, the format is:
+All requests need to include the HTTP ["Authorization" header](http://en.wikipedia.org/wiki/List_of_HTTP_header_fields). The format is:
 
-    Authorization: Basic <<Base64 encoded credentials>>
+	Authorization: Basic <<Base64 encoded credentials>>
 
-The credentials need to have the following structure:
+An example can be found in the [Wikipedia entry](http://en.wikipedia.org/wiki/Basic_access_authentication). For OAuth authentication, the format is:
 
-    <<realm>>/<<user name>>:<<password>>
+	Authorization: Bearer <<Base64 encoded access token>>
 
-To authenticate against a tenant's realm, use the tenant ID. For example, a user "smith" with password "smithspw1" in the tenant "demo" is authenticated with the following string:
+Cumulocity uses the URL in the ["Host" header](http://en.wikipedia.org/wiki/List_of_HTTP_header_fields) to determine the tenant to authenticate against. Alternatively, you can pass the tenant's ID as part of the "Authorization" header in the following form:
 
-    demo/smith:smithspw1
+	<<tenant ID>>/<<user name>>:<<password>>
 
-For OAuth authentication, the format is:
-
-    Authorization: Bearer <<Base64 encoded access token>>
+Typically, the tenant ID corresponds to the first part of the URL that you are using to access Cumulocity. E.g., if you use "mytenant.cumulocity.com" as URL, the tenant ID will be "mytenant".
 
 ### Application management
 
-M2M market applications need to identify themselves for subscription and billing purposes. This identification is carried out by adding the HTTP header "X-Cumulocity-Application-Key".
+Cumulocity uses a so-called "application key" to distinguish requests coming from devices and traffic from applications. If you write an application, pass the following header as part of all requests:
 
-    X-Cumulocity-Application-Key: <<application key>>
+	X-Cumulocity-Application-Key: <<application key>>
 
-The application key is defined by the application and registered with the Cumulocity application management. It is a random, shared, secret key. This is a demo application key registered on the developer sandbox:
+For example, if you registered your application in the Cumulocity administration application with the key "myapp", pass 
 
-    X-Cumulocity-Application-Key: uL27no8nhvLlYmW1JIK1CA==
+	X-Cumulocity-Application-Key: myapp
 
-For private applications this header is optional.
+This makes your application subscribable and billable. If you implement a device, do not pass the key.
+
+> Make sure that you pass the key in **all** requests coming from an application. If you leave out the key, 
+> the request will be considered a device request and the corresponding device will be marked as "available".
 
 ### Limited HTTP clients
 
 If you use an HTTP client that can only perform GET and POST methods in HTTP, you can emulate the other methods through an additional "X-HTTP-METHOD" header. Simply issue a POST request and add the header, specifying the actual REST method to be executed. For example, to emulate the "PUT" (modify) method, you can use:
 
-    POST ...X-HTTP-METHOD: PUT
+	POST ...
+	X-HTTP-METHOD: PUT
 
 ### Processing mode
 
@@ -56,8 +58,8 @@ To explicitly control the processing mode of an update request, an "X-Cumulocity
 
 ### Authorization
 
-All requests issued to Cumulocity are subject to authorization. To determine the required permissions, see the   
-Required role" entries in the reference documentation for the individual requests. To learn more about the different permissions and the concept of ownership in Cumulocity, see "Managing permissions and ownership" in the Section "[Securing M2M applications](index.php?option=com_k2&view=item&id=813)".
+All requests issued to Cumulocity are subject to authorization. To determine the required permissions, see the
+"Required role" entries in the reference documentation for the individual requests. To learn more about the different permissions and the concept of ownership in Cumulocity, see "Managing permissions and ownership" in the Section "[Security aspects](/guides/concepts-guide/securing-m2m-applications)".
 
 ### Media types
 
@@ -69,15 +71,17 @@ Each media type contains a parameter "ver" indicating the version of the type. A
 
     application/vnd.com.nsn.cumulocity.error+json;ver=0.9;charset=UTF-8
 
-Media types are used in HTTP "Content-Type" and "Accept" headers. On Requests that will produce a response message body the client is recommend to specify a media type. For POST/PUT requests, when no "Accept" header is specified, empty response body is returned. If a media type without "ver" parameter is given, the oldest available version will be returned by the server. If the accept header contains the same media type in multiple versions the server will return a representation in the latest supported version.
+Media types are used in HTTP "Content-Type" and "Accept" headers. If you specify an "Accept" header in a POST or PUT request, the response will contain the newly created or updated object. If you do not specify the header, the response body will be empty. 
+
+If a media type without "ver" parameter is given, the oldest available version will be returned by the server. If the accept header contains the same media type in multiple versions the server will return a representation in the latest supported version.
 
 ### Data format
 
 Data exchanged with Cumulocity in HTTP requests and responses is encoded in [JSON format](http://www.ietf.org/rfc/rfc4627.txt) and [UTF-8](http://en.wikipedia.org/wiki/UTF-8) character encoding. Timestamps and dates are accepted and emitted by Cumulocity in [ISO 8601](http://www.w3.org/TR/NOTE-datetime) format:
 
     Date: YYYY-MM-DD
-    Time: hh:mm:ssZÂ±hh:mm
-    Timestamp: YYYY-MM-DDThh:mm:ssZÂ±hh:mm
+    Time: hh:mm:ss±hh:mm
+    Timestamp: YYYY-MM-DDThh:mm:ss±hh:mm
 
 To avoid ambiguity, all times and timestamps must include timezone information.
 
@@ -88,7 +92,7 @@ In error cases, Cumulocity returns standard HTTP response codes as described in 
 |Code|Name|Description|
 |:---|:---|:----------|
 |400|Bad Request|The request could not be understood by the server due to malformed syntax. The client SHOULD NOT repeat the request without modifications.|
-|401|Unauthorized|Authentication has failed, or credential were required but not provided.|
+|401|Unauthorized|Authentication has failed, or credentials were required but not provided.|
 |403|Forbidden|You are not authorized to access the API.|
 |404|Not Found|Resource not found at given location.|
 |405|Method not allowed|The employed HTTP method cannot be used on this resource (e.g., using "POST" on a read-only resource).|
@@ -108,8 +112,10 @@ The semantics described in the [HTTP specification](http://www.w3.org/Protocols/
 
 -   POST creates a new resource. In the response "Location" header, the URI of the newly created resource is returned.
 -   GET retrieves a resource.
--   PUT updates an existing resource with the contents of the request. I.e., if parts of a resource are passed in the request, only those parts are updated. PUT can not update sub-resources that are identified by a separate URI.
--   DELETE removes a resource. The response will be "204 NO CONTENT".
+-   PUT updates an existing resource with the contents of the request. 
+-   DELETE removes a resource. The response will be "204 No Content".
+
+If a PUT request only contains parts of a resource, so called "fragments", only those parts are updated. To remove a fragment, use a PUT request with empty content for the fragemnt. PUT cannot update sub-resources that are identified by a separate URI.
 
 ### URI space and URI templates
 
@@ -158,25 +164,25 @@ For convenience, collection resources provide a "next" and "prev" links to retri
       "next" : "http://...?pageSize=5&Page=3"
     }
 
-Total pages for querying by keys/range: To get totalPages calculated in case of querying by keys/by range, an additional query param has to be passed: "withTotalPages=true". Otherwise totalPages is set to null.
+Please note that the totalPages property can be expensive to compute, hence it is not returned as "null" by default for range queries. To compute totalPages and include in the result, pass the query parameter "withTotalPages=true".
 
 ## Root interface
 
-To discover the URIs to the various interfaces of Cumulocity, a "root" interface is provided. This root interface aggregates all the underlying API resources. The root interface of the development sandbox is accessible through http://\<\<sandbox URL\>\>/platform/. For more information on the different API resources, please consult the respective API section of this reference guide. Usage of the development sandbox is subject to the [usage terms](guides/reference-guide/developer-sandbox-usage-terms).
+To discover the URIs to the various interfaces of Cumulocity, a "root" interface is provided. This root interface aggregates all the underlying API resources and is available through http://&lt;&lt;yourURL&gt;&gt;.cumulocity.com/platform/". For more information on the different API resources, please consult the respective API sections of this reference guide.
 
 ### Platform [application/vnd.com.nsn.cumulocity.platformApi+json]
 
 |Name|Type|Occurs|Description|
 |:---|:---|:-----|:----------|
 |self|URI|1|Link to this Resource|
-|inventory|InventoryAPI|1|See [inventory](index.php?option=com_k2&view=item&id=828) interface.|
-|identity|IdentityAPI|1|See [identity](index.php?option=com_k2&view=item&id=823) interface.|
-|event|EventAPI|1|See [event](index.php?option=com_k2&view=item&id=827) interface.|
-|measurement|MeasurementAPI|1|See [measurement](index.php?option=com_k2&view=item&id=826) interface.|
-|audit|AuditAPI|1|See [auditing](index.php?option=com_k2&view=item&id=821) interface.|
-|alarm|AlarmAPI|1|See [alarm](index.php?option=com_k2&view=item&id=824) interface.|
-|user|UserAPI|1|See [user](index.php?option=com_k2&view=item&id=822) interface.|
-|deviceControl|DeviceControlAPI|1|See [device control](index.php?option=com_k2&view=item&id=825) interface.|
+|inventory|InventoryAPI|1|See [inventory](/guides/reference-guide/inventory) interface.|
+|identity|IdentityAPI|1|See [identity](/guides/reference-guide/identity) interface.|
+|event|EventAPI|1|See [event](/guides/reference-guide/events) interface.|
+|measurement|MeasurementAPI|1|See [measurement](/guides/reference-guide/measurements) interface.|
+|audit|AuditAPI|1|See [auditing](/guides/reference-guide/auditing) interface.|
+|alarm|AlarmAPI|1|See [alarm](/guides/reference-guide/alarms) interface.|
+|user|UserAPI|1|See [user](/guides/reference-guide/users) interface.|
+|deviceControl|DeviceControlAPI|1|See [device control](/guides/reference-guide/device-control) interface.|
 
 ### GET the Platform resource
 
@@ -210,7 +216,7 @@ The error type provides further information on the reason of a failed request.
 
 |Name|Type|Occurs|Description|
 |:---|:---|:-----|:----------|
-|error|String|1|Error type formatted as "\<\<resource type\>\>/\<\<error name\>\>. For example, for inventory API and something like object not found error, error code would be "inventory/notFound".|
+|error|String|1|Error type formatted as "&lt;&lt;resource type&gt;&gt;/&lt;&lt;error name&gt;&gt;". For example, an object not found in the inventory is reported as "inventory/notFound".|
 |message|String|1|Short text description of the error|
 |info|URL|1|URL to an error description on the Internet.|
 |details|Error details|1|Error details. Only available in DEBUG mode.|
@@ -221,8 +227,8 @@ Error details are provided in the following structure:
 |:---|:---|:-----|:----------|
 |expectionClass|String|1|Class name of an exception that caused this error.|
 |exceptionMessage|String|1|Exception message content.|
-|expectionStackTrace|String|1|Strack trace of the exception|
-|-|-|-|Specific Error may add further information for diagnostic purpose|
+|expectionStackTrace|String|1|Strack trace of the exception.|
+|-|-|-|Further diagnostic information depending on error type.|
 
 ### PagingStatistics [application/vnd.com.nsn.cumulocity.pagingStatistics+json]
 

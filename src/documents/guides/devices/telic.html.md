@@ -29,6 +29,7 @@ To make the tracker send data to Cumulocity, follow these steps with the Telic C
 * Set the "IP address" to 79.125.6.11.
 * Set the "Port" to 9090.
 * Verify that "IP Mode" is set to TCP.
+* Verify also that the settings in "Network" are applicable to the SIM card that you inserted into the device (APN, user, password).
 * (The control center is the number where SMS messages from the tracker are sent to.)
 * Click "Save".
 
@@ -61,7 +62,7 @@ To connect the device to your Cumulocity account:
 
 * Open Cumulocity in a web browser and navigate to the "Registration" page. 
 * Locate the IMEI number on the device (below the barcode on the sticker). 
-* Type the *last six digits* of the IMEI into the "Device ID" field and click "Register Device". The IMEI will be listed with status "Waiting for connection".
+* Type the **last six digits** of the IMEI into the "Device ID" field and click "Register Device". The IMEI will be listed with status "Waiting for connection".
 * Switch the device on. After the device has dialled up to the network, an "Accept" button will be visible next to the IMEI.
 * Click the "Accept" button.
 * The device will now send location data according to the device configuration that you set. 

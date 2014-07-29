@@ -17,21 +17,21 @@ The measurements interface consists of three parts:
 |:---|:---|:-----|:----------|
 |self|URL|1|Link to this resource.|
 |measurements|Measurement Collection|1|Collection of all measurements.|
-|measurementsForSource|MeasurementCollection URI template|1|Read-only collection of all measurements coming from a particular source object (placeholder \<\<source\>\>).|
-|measurementsForDate|MeasurementCollection URI template|1|Read-only collection of all measurements from a particular period (placeholder \<\<dateFrom\>\> and \<\<dateTo\>\>).|
-|measurementsForFragmentType|MeasurementCollection URI template|1|Read-only collection of all measurements containing a particular fragment type (placeholder \<\<fragmentType\>\>).|
-|measurementsForType|MeasurementCollection URI template|1|Read-only collection of all measurements containing a particular type (placeholder \<\<type\>\>).|
-|measurements ForSourceAndDate|MeasurementCollection URI template|1|Read-only collection of all measurements from a particular period and from a particular source object (placeholder \<\<dateFrom\>\>, \<\<dateTo\>\> and \<\<source\>\>).|
-|measurements ForSourceAndFragmentType|MeasurementCollection URI template|1|Read-only collection of all measurements containing a particular fragment type and coming from a particular source object (placeholder \<\<fragmentType\>\> and \<\<source\>\>).|
-|measurements ForSourceAndType|MeasurementCollection URI template|1|Read-only collection of all measurements containing a particular type and coming from a particular source object (placeholder \<\<type\>\> and \<\<source\>\>).|
-|measurements ForDateAndFragmentType|MeasurementCollection URI template|1|Read-only collection of all measurements containing a particular fragment type and being from a particular period (placeholder \<\<fragmentType\>\>, \<\<dateFrom\>\> and \<\<dateTo\>\>).|
-|measurements ForDateAndType|MeasurementCollection URI template|1|Read-only collection of all measurements containing a particular type and being from a particular period (placeholder \<\<type\>\>, \<\<dateFrom\>\> and \<\<dateTo\>\>).|
-|measurements ForFragmentTypeAndType|MeasurementCollection URI template|1|Read-only collection of all measurements containing a particular type and a particular fragment type(placeholder \<\<type\>\> and \<\<fragmentType\>\>).|
-|measurements ForSourceAndDateAndFragmentType|MeasurementCollection URI template|1|Read-only collection of all measurements containing a particular fragment type and being from a particular period and source object (placeholder \<\<fragmentType\>\>, \<\<dateFrom\>\>, \<\<dateTo\>\> and \<\<source\>\>).|
-|measurements ForSourceAndDateAndType|MeasurementCollection URI template|1|Read-only collection of all measurements containing a particular type and being from a particular period and source object (placeholder \<\<type\>\>, \<\<dateFrom\>\>, \<\<dateTo\>\> and \<\<source\>\>).|
-|measurements ForSourceAndFragmentTypeAndType|MeasurementCollection URI template|1|Read-only collection of all measurements containing a particular fragment type and a particular type and source object (placeholder \<\<fragmentType\>\>, \<\<type\>\> and \<\<source\>\>).|
-|measurements ForDateAndFragmentTypeAndType|MeasurementCollection URI template|1|Read-only collection of all measurements containing a particular fragment type and being from a particular period and type object (placeholder \<\<fragmentType\>\>, \<\<dateFrom\>\>, \<\<dateTo\>\> and \<\<type\>\>).|
-|measurementsForSource AndDateAndFragmentTypeAndType|MeasurementCollection URI template|1|Read-only collection of all measurements containing a particular fragment type and type object and being from a particular period and source object (placeholder \<\<fragmentType\>\>, \<\<dateFrom\>\>, \<\<dateTo\>\>, \<\<type\>\> and \<\<source\>\>).|
+|measurementsForSource|MeasurementCollection URI template|1|Read-only collection of all measurements coming from a particular source object (placeholder {source}).|
+|measurementsForDate|MeasurementCollection URI template|1|Read-only collection of all measurements from a particular period (placeholder {dateFrom} and {dateTo}).|
+|measurementsForFragmentType|MeasurementCollection URI template|1|Read-only collection of all measurements containing a particular fragment type (placeholder {fragmentType}).|
+|measurementsForType|MeasurementCollection URI template|1|Read-only collection of all measurements containing a particular type (placeholder {type}).|
+|measurements ForSourceAndDate|MeasurementCollection URI template|1|Read-only collection of all measurements from a particular period and from a particular source object (placeholder {dateFrom}, {dateTo} and {source}).|
+|measurements ForSourceAndFragmentType|MeasurementCollection URI template|1|Read-only collection of all measurements containing a particular fragment type and coming from a particular source object (placeholder {fragmentType} and {source}).|
+|measurements ForSourceAndType|MeasurementCollection URI template|1|Read-only collection of all measurements containing a particular type and coming from a particular source object (placeholder {type} and {source}).|
+|measurements ForDateAndFragmentType|MeasurementCollection URI template|1|Read-only collection of all measurements containing a particular fragment type and being from a particular period (placeholder {fragmentType}, {dateFrom} and {dateTo}).|
+|measurements ForDateAndType|MeasurementCollection URI template|1|Read-only collection of all measurements containing a particular type and being from a particular period (placeholder {type}, {dateFrom} and {dateTo}).|
+|measurements ForFragmentTypeAndType|MeasurementCollection URI template|1|Read-only collection of all measurements containing a particular type and a particular fragment type(placeholder {type} and {fragmentType}).|
+|measurements ForSourceAndDateAndFragmentType|MeasurementCollection URI template|1|Read-only collection of all measurements containing a particular fragment type and being from a particular period and source object (placeholder {fragmentType}, {dateFrom}, {dateTo} and {source}).|
+|measurements ForSourceAndDateAndType|MeasurementCollection URI template|1|Read-only collection of all measurements containing a particular type and being from a particular period and source object (placeholder {type}, {dateFrom}, {dateTo} and {source}).|
+|measurements ForSourceAndFragmentTypeAndType|MeasurementCollection URI template|1|Read-only collection of all measurements containing a particular fragment type and a particular type and source object (placeholder {fragmentType}, {type} and {source}).|
+|measurements ForDateAndFragmentTypeAndType|MeasurementCollection URI template|1|Read-only collection of all measurements containing a particular fragment type and being from a particular period and type object (placeholder {fragmentType}, {dateFrom}, {dateTo} and {type}).|
+|measurementsForSource AndDateAndFragmentTypeAndType|MeasurementCollection URI template|1|Read-only collection of all measurements containing a particular fragment type and type object and being from a particular period and source object (placeholder {fragmentType}, {dateFrom}, {dateTo}, {type} and {source}).|
 
 ### GET the Measurement API resource
 

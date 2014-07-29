@@ -19,11 +19,11 @@ The application interface consists of the following parts:
 |Name|Type|Occurs|Description|
 |:---|:---|:-----|:----------|
 |self|URL|1|Link to this resource.|
-|applicationById|Application/URI-Template|1|A reference to resource of type Application (placeholder \<\<id\>\>)|
+|applicationById|Application/URI-Template|1|A reference to resource of type Application (placeholder {id})|
 |applications|ApplicationCollection|1|Collection of all applications|
-|applicationsByName|ApplicationCollection URI-Template|1|Read-only collection of all applications with a particular name (placeholder \<\<name\>\>).|
-|applicationsByTenant|ApplicationCollection URI-Template|1|Read-only collection of all applications subscribed by particular tenant (placeholder \<\<tenant\>\>).|
-|applicationsByOwner|ApplicationCollection URI-Template|1|Read-only collection of all applications owned by particular tenant (placeholder \<\<tenant\>\>).|
+|applicationsByName|ApplicationCollection URI-Template|1|Read-only collection of all applications with a particular name (placeholder {name}).|
+|applicationsByTenant|ApplicationCollection URI-Template|1|Read-only collection of all applications subscribed by particular tenant (placeholder {tenant}).|
+|applicationsByOwner|ApplicationCollection URI-Template|1|Read-only collection of all applications owned by particular tenant (placeholder {tenant}).|
 
 ### GET the Application API resource
 

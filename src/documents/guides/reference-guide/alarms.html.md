@@ -17,13 +17,13 @@ The alarms interface consists of three parts:
 |:---|:---|:-----|:----------|
 |self|URL|1|Link to this resource.|
 |alarms|AlarmCollection|1|Collection of all alarms.|
-|alarmsForStatus|AlarmCollection URI template|1|Read-only collection of all alarms in a particular status (placeholder \<\<status\>\>, see "Alarm" resource below for permitted values).|
-|alarmsForSource|AlarmCollection URI template|1|Read-only collection of all alarms for a particular source object (placeholder \<\<source\>\>, unique ID of an object in the inventory).|
-|alarmsForSourceAndStatus|AlarmCollection URI template|1|Read-only collection of all alarms for a particular source object in a particular status (placeholder \<\<source\>\> and \<\<status\>\>).|
-|alarmsForTime|AlarmCollection URI template|1|Read-only collection of all alarms for a particular time range (placeholder \<\<dateFrom\>\> and \<\<dateTo\>\>).|
-|alarmsForStatusAndTime|AlarmCollection URI template|1|Read-only collection of all alarms for a particular status and time range (placeholder \<\<status\>\>, \<\<dateFrom\>\> and \<\<dateTo\>\>).|
-|alarmsForSourceAndTime|AlarmCollection URI template|1|Read-only collection of all alarms for a particular source and time range (placeholder \<\<source\>\>, \<\<dateFrom\>\> and \<\<dateTo\>\>;).|
-|alarmsForSourceAndStatusAndTime|AlarmCollection URI template|1|Read-only collection of all alarms for a particular source, status and time range (placeholder \<\<source\>\>, \<\<status\>\>, \<\<dateFrom\>\> and \<\<dateTo\>\>;).|
+|alarmsForStatus|AlarmCollection URI template|1|Read-only collection of all alarms in a particular status (placeholder {status}, see "Alarm" resource below for permitted values).|
+|alarmsForSource|AlarmCollection URI template|1|Read-only collection of all alarms for a particular source object (placeholder {source}, unique ID of an object in the inventory).|
+|alarmsForSourceAndStatus|AlarmCollection URI template|1|Read-only collection of all alarms for a particular source object in a particular status (placeholder {source} and {status}).|
+|alarmsForTime|AlarmCollection URI template|1|Read-only collection of all alarms for a particular time range (placeholder {dateFrom} and {dateTo}).|
+|alarmsForStatusAndTime|AlarmCollection URI template|1|Read-only collection of all alarms for a particular status and time range (placeholder {status}, {dateFrom} and {dateTo}).|
+|alarmsForSourceAndTime|AlarmCollection URI template|1|Read-only collection of all alarms for a particular source and time range (placeholder {source}, {dateFrom} and {dateTo};).|
+|alarmsForSourceAndStatusAndTime|AlarmCollection URI template|1|Read-only collection of all alarms for a particular source, status and time range (placeholder {source}, {status}, {dateFrom} and {dateTo};).|
 
 ### GET the AlarmAPI resource
 

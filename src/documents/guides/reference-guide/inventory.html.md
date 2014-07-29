@@ -20,10 +20,10 @@ The inventory interface consists of the following parts:
 |:---|:---|:-----|:----------|
 |self|URL|1|Link to this resource.|
 |managedObjects|ManagedObjectCollection|1|Collection of all managed objects.|
-|managedObjectsForType|ManagedObjectCollection URI-Template|1|Read-only collection of all managed objects of a particular type (placeholder \<\<type\>\>).|
-|managedObjectsForFragmentType|ManagedObjectCollection URI-Template|1|Read-only collection of all managed objects with a particular fragment type or capability (placeholder \<\<fragmentType\>\>).|
-|managedObjectsForListOfIds|ManagedObjectCollection URI-Template|1|Read-only collection of managed objects fetched for a given list of ids (placeholder \<\<ids\>\>),for example "?ids=41,43,68".|
-|managedObjectsForText|ManagedObjectCollection URI-Template|1|Read-only collection of managed objects containing a text value starting with the given text (placeholder \<\<text\>\>). Text value is any alphanumeric string starting with a latin letter (A-Z or a-z).|
+|managedObjectsForType|ManagedObjectCollection URI-Template|1|Read-only collection of all managed objects of a particular type (placeholder {type}).|
+|managedObjectsForFragmentType|ManagedObjectCollection URI-Template|1|Read-only collection of all managed objects with a particular fragment type or capability (placeholder {fragmentType}).|
+|managedObjectsForListOfIds|ManagedObjectCollection URI-Template|1|Read-only collection of managed objects fetched for a given list of ids (placeholder {ids}),for example "?ids=41,43,68".|
+|managedObjectsForText|ManagedObjectCollection URI-Template|1|Read-only collection of managed objects containing a text value starting with the given text (placeholder {text}). Text value is any alphanumeric string starting with a latin letter (A-Z or a-z).|
 
 ### GET the Inventory API resource
 
@@ -102,7 +102,8 @@ Example Response:
 ### POST - Create a new ManagedObject
 
 Request body: ManagedObject
- Response body: ManagedObject (when accept header is not provided, empty response body is returned)
+
+Response body: ManagedObject (when accept header is not provided, empty response body is returned)
   
 Required role: ROLE\_INVENTORY\_ADMIN or ROLE\_INVENTORY\_CREATE
 
@@ -190,10 +191,11 @@ Example response:
       ...
     }
 
-### PUT - Update a Managed object
+### PUT - Update a managed object
 
 Request body: ManangedObject
- Response body: ManangedObject (when accept header is not provided, empty response body is returned)
+
+Response body: ManangedObject (when accept header is not provided, empty response body is returned)
   
 Required role: ROLE\_INVENTORY\_ADMIN or owner
 
@@ -224,10 +226,11 @@ Example response:
       ...
     }
 
-### DELETE a Managed Object
+### DELETE a managed object
 
 Request Body: N/A.
- Response Message Body: N/A.
+
+Response Message Body: N/A.
   
 Required role: ROLE\_INVENTORY\_ADMIN or owner
 
@@ -296,7 +299,8 @@ Example Response:
 ### POST - add a managed object reference to the collection
 
 Request body: ManagedObjectReference
- Response body: ManagedObjectReference
+
+Response body: ManagedObjectReference
   
 Required role: ROLE\_INVENTORY\_ADMIN or ROLE\_INVENTORY\_CREATE
 
@@ -361,7 +365,8 @@ Example Response:
 ### DELETE a managed object reference
 
 Request Body: N/A.
- Response Message Body: N/A.
+
+Response Message Body: N/A.
   
 Required role: ROLE\_INVENTORY\_ADMIN or owner
 

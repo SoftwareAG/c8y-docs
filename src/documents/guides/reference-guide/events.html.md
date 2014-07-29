@@ -17,21 +17,21 @@ The events interface consists of three parts:
 |:---|:---|:-----|:----------|
 |self|URL|1|Link to this resource.|
 |events|EventCollection|1|Collection of all events.|
-|eventsForType|EventCollection URI template|1|Read-only collection of all events of a particular type (placeholder \<\<type\>\>).|
-|eventsForSource|EventCollection URI template|1|Read-only collection of all events from a particular source object (placeholder \<\<source\>\>).|
-|eventsForSourceAndType|EventCollection URI template|1|Read-only collection of all events of a particular type and from a particular source (placeholders \<\<type\>\> and \<\<source\>\>).|
-|eventsForTime|EventCollection URI template|1|Read-only collection of all events from a particular period (placeholder \<\<dateFrom\>\>, \<\<dateTo\>\>).|
-|eventsForFragmentType|EventCollection URI template|1|Read-only collection of all events containing a particular fragment type (placeholder \<\<fragmentType\>\>).|
-|eventsForSourceAndTime|EventCollection URI template|1|Read-only collection of all events from a particular source object from a particular period (placeholders \<\<source\>\>, \<\<dateFrom\>\>, \<\<dateTo\>\>).|
-|eventsForSourceAndFragmentType|EventCollection URI template|1|Read-only collection of all events of a particular source object containing a particular fragment type (placeholders \<\<source\>\>, \<\<fragmentType\>\>).|
-|eventsForDateAndFragmentType|EventCollection URI template|1|Read-only collection of all events from a particular period containing a particular fragment type (placeholders \<\<dateFrom\>\>, \<\<dateTo\>\>, \<\<fragmentType\>\>).|
-|eventsForFragmentTypeAndType|EventCollection URI template|1|Read-only collection of all events of a particular type containing a particular fragment type (placeholders \<\<fragmentType\>\>, \<\<type\>\>).|
-|eventsForTimeAndType|EventCollection URI template|1|Read-only collection of all events with a particular type from a particular period (placeholders \<\<type\>\>, \<\<dateFrom\>\>, \<\<dateTo\>\>).|
-|eventsForSourceAnd   DateAndFragmentType|EventCollection URI template|1|Read-only collection of all events from a particular source object, containing a particular fragment type, from a particular period (placeholders \<\<source\>\>, \<\<dateFrom\>\>, \<\<dateTo\>\>, \<\<fragmentType\>\>).|
-|eventsForSourceAnd   DateAndFragmentTypeAndType|EventCollection URI template|1|Read-only collection of all events from a particular source object, with a particular type, containing a particular fragment type, from a particular period (placeholders \<\<source\>\>, \<\<dateFrom\>\>, \<\<dateTo\>\>, \<\<fragmentType\>\>, \<\<type\>\>).|
-|eventsForSourceAnd   FragmentTypeAndType|EventCollection URI template|1|Read-only collection of all events from a particular source object, with a particular type, containing a particular fragment type (placeholders \<\<source\>\>, \<\<fragmentType\>\>, \<\<type\>\>).|
-|eventsForSourceAndTimeAndType|EventCollection URI template|1|Read-only collection of all events from a particular source object, with a particular type, from a particular period (placeholders \<\<source\>\>, \<\<type\>\>, \<\<dateFrom\>\>, \<\<dateTo\>\>).|
-|eventsForDateAnd   FragmentTypeAndType|EventCollection URI template|1|Read-only collection of all events from a particular type, containing a particular fragment type, from a particular period (placeholders \<\<type\>\>, \<\<dateFrom\>\>, \<\<dateTo\>\>, \<\<fragmentType\>\>).|
+|eventsForType|EventCollection URI template|1|Read-only collection of all events of a particular type (placeholder {type}).|
+|eventsForSource|EventCollection URI template|1|Read-only collection of all events from a particular source object (placeholder {source}).|
+|eventsForSourceAndType|EventCollection URI template|1|Read-only collection of all events of a particular type and from a particular source (placeholders {type} and {source}).|
+|eventsForTime|EventCollection URI template|1|Read-only collection of all events from a particular period (placeholder {dateFrom}, {dateTo}).|
+|eventsForFragmentType|EventCollection URI template|1|Read-only collection of all events containing a particular fragment type (placeholder {fragmentType}).|
+|eventsForSourceAndTime|EventCollection URI template|1|Read-only collection of all events from a particular source object from a particular period (placeholders {source}, {dateFrom}, {dateTo}).|
+|eventsForSourceAndFragmentType|EventCollection URI template|1|Read-only collection of all events of a particular source object containing a particular fragment type (placeholders {source}, {fragmentType}).|
+|eventsForDateAndFragmentType|EventCollection URI template|1|Read-only collection of all events from a particular period containing a particular fragment type (placeholders {dateFrom}, {dateTo}, {fragmentType}).|
+|eventsForFragmentTypeAndType|EventCollection URI template|1|Read-only collection of all events of a particular type containing a particular fragment type (placeholders {fragmentType}, {type}).|
+|eventsForTimeAndType|EventCollection URI template|1|Read-only collection of all events with a particular type from a particular period (placeholders {type}, {dateFrom}, {dateTo}).|
+|eventsForSourceAnd   DateAndFragmentType|EventCollection URI template|1|Read-only collection of all events from a particular source object, containing a particular fragment type, from a particular period (placeholders {source}, {dateFrom}, {dateTo}, {fragmentType}).|
+|eventsForSourceAnd   DateAndFragmentTypeAndType|EventCollection URI template|1|Read-only collection of all events from a particular source object, with a particular type, containing a particular fragment type, from a particular period (placeholders {source}, {dateFrom}, {dateTo}, {fragmentType}, {type}).|
+|eventsForSourceAnd   FragmentTypeAndType|EventCollection URI template|1|Read-only collection of all events from a particular source object, with a particular type, containing a particular fragment type (placeholders {source}, {fragmentType}, {type}).|
+|eventsForSourceAndTimeAndType|EventCollection URI template|1|Read-only collection of all events from a particular source object, with a particular type, from a particular period (placeholders {source}, {type}, {dateFrom}, {dateTo}).|
+|eventsForDateAnd   FragmentTypeAndType|EventCollection URI template|1|Read-only collection of all events from a particular type, containing a particular fragment type, from a particular period (placeholders {type}, {dateFrom}, {dateTo}, {fragmentType}).|
 
 ### GET the Event API resource
 

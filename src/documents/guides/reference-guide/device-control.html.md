@@ -17,11 +17,11 @@ The device control interface consists of three parts:
 |:---|:---|:-----|:----------|
 |self|URL|1|Link to this resource.|
 |operations|OperationCollection|1|Collection of all operations.|
-|operationsByStatus|OperationCollection URI template|1|Read-only collection of all operations in a particular status (placeholder \<\<status\>\>, see the operation media type below for permitted values).|
-|operationsByAgentId|OperationCollection URI template|1|Read-only collection of all operations targeted to a particular agent (placeholder \<\<agentId\>\>, with the unique ID of the agent).|
-|operationsByAgentIdAndStatus|OperationCollection URI template|1|Read-only collection of all operations targeted to a particular agent (placeholder \<\<agentId\>\> and \<\<status\>\>).|
-|operationsByDeviceId|OperationCollection URI template|1|Read-only collection of all operations to be executed on a particular device (placeholder \<\<deviceId\>\> with the unique ID of the device).|
-|operationsByDeviceIdAndStatus|OperationCollection URI template|1|Read-only collection of all operations in particular state, that should be executed on a particular device (placeholder \<\<deviceId\>\> and \<\<status\>\>).|
+|operationsByStatus|OperationCollection URI template|1|Read-only collection of all operations in a particular status (placeholder {status}, see the operation media type below for permitted values).|
+|operationsByAgentId|OperationCollection URI template|1|Read-only collection of all operations targeted to a particular agent (placeholder {agentId}, with the unique ID of the agent).|
+|operationsByAgentIdAndStatus|OperationCollection URI template|1|Read-only collection of all operations targeted to a particular agent (placeholder {agentId} and {status}).|
+|operationsByDeviceId|OperationCollection URI template|1|Read-only collection of all operations to be executed on a particular device (placeholder {deviceId} with the unique ID of the device).|
+|operationsByDeviceIdAndStatus|OperationCollection URI template|1|Read-only collection of all operations in particular state, that should be executed on a particular device (placeholder {deviceId} and {status}).|
 
 ### GET the Device Control API resource
 

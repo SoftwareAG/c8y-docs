@@ -139,7 +139,8 @@ Example response:
 ### POST - create a new measurement
 
 Request body: Measurement
- Response body: Measurement (when accept header is not provided, empty response body is returned)
+
+Response body: Measurement (when accept header is not provided, empty response body is returned)
   
 Required role: ROLE\_MEASUREMENT\_ADMIN or owner of source object
 

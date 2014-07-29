@@ -9,6 +9,8 @@ The device control interface consists of three parts:
 -   The *operation collection* resource retrieves operations and enables creating new operations.
 -   The *operation* resource represents individual operations that can be queried and modified.
 
+> In order to create/retrieve/update an operation for a device, the device must be in the "childDevices" hierarchy of an existing agent. To create an agent in the inventory, you should create a managed object with a fragment "com\_cumulocity\_model\_Agent".
+
 ## Device control API
 
 ### DeviceControlAPI [application/vnd.com.nsn.cumulocity.devicecontrolApi+json]
@@ -58,15 +60,14 @@ Example response:
 
 Notes about Operation Collections:
 
--   The embedded "operation" object contains "deviceExternalIDs" only when queried with an "agentId" parameter. 
+-   The embedded operation object contains "deviceExternalIDs" only when queried with an "agentId" parameter. 
 -   Operations are returned in the order in which they have been created (a [FIFO](http://en.wikipedia.org/wiki/FIFO) queue).
--   ****In order to create/retrieve/update an operation for a device, the device must be in the "childDevices" hierarchy of an existing agent.
--   To create an Agent in the Inventory, you should create a Managed Object with a Fragment with name "com\_cumulocity\_model\_Agent".
 
 ### POST - Create an Operation
 
 Request body: Operation
- Response body: Operation (when Accept header is not provided, empty response body is returned)
+
+Response body: Operation (when Accept header is not provided, empty response body is returned)
   
 Required role: ROLE\_DEVICE\_CONTROL\_ADMIN or owner of source object
 
@@ -121,7 +122,8 @@ Example Request: Get all operations.
 
 Example Response:
 
-    HTTP/1.1 200 OKContent-Type: application/vnd.com.nsn.cumulocity.operationCollection+json;ver=...
+    HTTP/1.1 200 OK
+    Content-Type: application/vnd.com.nsn.cumulocity.operationCollection+json;ver=...
     Content-Length: ...
     {
       "self" : "<<This OperationCollection URL>>",
@@ -161,111 +163,24 @@ Example Response:
 
 ### Operation [application/vnd.com.nsn.cumulocity.operation+json]
 
-Name
-
-Type
-
-Occurs
-
-Description
-
-PUT/POST
-
-id
-
-String
-
-1
-
-Uniquely identifies an operation.
-
-No
-
-self
-
-URI
-
-1
-
-Link to this resource.
-
-No
-
-creationTime
-
-String
-
-1
-
-Time when the operation was created in the database.
-
-No
-
-deviceID
-
-String
-
-1
-
-Identifies the target device on which this operation should be performed.
-
-POST:
-Mandatory
-PUT:
-No
-
-deviceExternalIDs
-
-ExternalIDCollection
-
-0..n
-
-External IDs of the target device, see the [Identity](index.php?option=com_k2&view=item&id=823) interface.
-
-No
-
-status
-
-String
-
-1
-
-Operation status, can be one of SUCCESSFUL, FAILED, EXECUTING or PENDING.
-
-POST:
-No
-PUT:
-Mandatory
-
-failureReason
-
-String
-
-0..1
-
-Reason for the failure.
-
-No
-
-\*
-
-Object
-
-1..n
-
-Additional properties describing the operation which will be performed on the device.
-
-POST:
-Mandatory
-PUT:
-No
+|Name|Type|Occurs|Description|PUT/POST|
+|:---|:---|:-----|:----------|--------|
+|id|String|1|Uniquely identifies an operation.|No|
+|self|URI|1|Link to this resource.|No|
+|creationTime|String|1|Time when the operation was created in the database.|No|
+|deviceID|String|1|Identifies the target device on which this operation should be performed.|POST: Mandatory PUT: No|
+|deviceExternalIDs|ExternalIDCollection|0..n|External IDs of the target device, see the [Identity](/guides/reference-guide/identity) interface.|No|
+|status|String|1|Operation status, can be one of SUCCESSFUL, FAILED, EXECUTING or PENDING.|POST: No PUT: Mandatory|
+|failureReason|String|0..1|Reason for the failure.|No|
+|\*|Object|1..n|Additional properties describing the operation which will be performed on the device.|POST: Mandatory PUT: No|
 
 An "ExternalID" embedded in the "deviceExternalIDs" collection contains the properties "type" and "externalId".
 
 ### PUT - Update an Operation
 
 Request body: Operation
- Response body: n/a.
+
+Response body: n/a.
   
 Required role: ROLE\_DEVICE\_CONTROL\_ADMIN or owner of source object
 
@@ -308,16 +223,16 @@ Example response:
 
 ## Notifications
 
-The real-time notifications allow for receiving almost immediately newly created operations for agent. They are available on URL *"/devicecontrol/notifications"*, the usage is described in separate [document](index.php?option=com_k2&view=item&id=954).
-  
-Required role: ROLE\_DEVICE\_CONTROL\_READ
+Real-time notifications permit an agent to almost immediately receive new operations targeted to it. The basic protocol for receiving notifications is described in the Section "[Real-time notifications](/guides/reference-guide/real-time-notifications)". For control-related notifications, use the URL 
 
-### The subscription channel name format
+	/devicecontrol/notifications
 
-The subscription channel contains the id of the agent. It has the following structure:
+The subscription channel needs to contain the managed object ID of the agent that wants to receive its operations:
 
-    /<<agentId>>
+	/<<agentId>>
 
-For example, to subscribe on notifications about new operations created for agenet with id "5", the subscription channel should be the following string:
+For example, to subscribe on notifications about new operations created for the agent with the ID "5", the subscription channel should be the following string:
 
     /5
+
+Required role: ROLE\_DEVICE\_CONTROL\_READ

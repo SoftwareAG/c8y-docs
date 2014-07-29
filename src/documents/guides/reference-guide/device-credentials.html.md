@@ -4,10 +4,16 @@ title: Device credentials
 layout: default
 ---
 
+The device credentials interface consists of the following parts:
+
+* Device requests are used to register new devices with a tenant.
+* Device credentials provide credentials to registered devices.
+
+For more information on the process of registering devices, see the Section "[Devices integration](/guides/rest/device-integration#step-0-request-device-credentials)".
+
 ## New device request collection
 
-### NewDeviceRequestCollection 
-[application/vnd.com.nsn.cumulocity.newDeviceRequestCollection+json]
+### NewDeviceRequestCollection [application/vnd.com.nsn.cumulocity.newDeviceRequestCollection+json]
 
 |Name|Type|Occurs|Description|
 |:---|:---|:-----|:----------|
@@ -20,8 +26,9 @@ layout: default
 ### POST - Create a new device request
 
 Request body: application/vnd.com.nsn.cumulocity.newDeviceRequest+json
-Response body: application/vnd.com.nsn.cumulocity.newDeviceRequest+json
-(when Accept header is not provided, empty response body is returned)  
+
+Response body: application/vnd.com.nsn.cumulocity.newDeviceRequest+json (when Accept header is not provided, empty response body is returned)  
+
 Required role: ROLE\_DEVICE\_CONTROL\_ADMIN
 
 Example Request:
@@ -47,7 +54,8 @@ Example response:
 
 ### GET - returns all new device requests
 
-Response body: application/vnd.com.nsn.cumulocity.newDeviceRequestCollection+json  
+Response body: application/vnd.com.nsn.cumulocity.newDeviceRequestCollection+json
+
 Required role: ROLE\_DEVICE\_CONTROL\_READ
 
 Example Request:
@@ -66,8 +74,8 @@ Example response:
       "newDeviceRequests": [{
              "id" : "1234",
              "self" : "<<URL of new request>>",
-             "status" : "WAITING_FOR_CONNECTION" },
-    {
+             "status" : "WAITING_FOR_CONNECTION"
+      }, {
              "id" : "12345",
              "self" : "<<URL of new request>>",
              "status" : "WAITING_FOR_CONNECTION" }]
@@ -85,7 +93,8 @@ Example response:
 
 ### GET - returns a new device request
 
-Response body: application/vnd.com.nsn.cumulocity.newDeviceRequest+json   
+Response body: application/vnd.com.nsn.cumulocity.newDeviceRequest+json
+
 Required role: ROLE\_DEVICE\_CONTROL\_READ
 
 Example Request:
@@ -107,7 +116,6 @@ Example response:
 
 ### DELETE - deletes a new device request
 
-   
 Required role: ROLE\_DEVICE\_CONTROL\_ADMIN
 
 Example Request:
@@ -122,7 +130,9 @@ Example response:
 ### PUT - updates a new device request
 
 Request body: application/vnd.com.nsn.cumulocity.newDeviceRequest+json
-Response body: application/vnd.com.nsn.cumulocity.newDeviceRequest+json   
+
+Response body: application/vnd.com.nsn.cumulocity.newDeviceRequest+json
+
 Required role: ROLE\_DEVICE\_CONTROL\_READ
 
 Example Request:
@@ -148,6 +158,8 @@ Example response:
 
 ## Device credentials
 
+Device credentials can be enquired by devices that do not have credentials for accessing a tenant yet. For this purpose, a static is provided that can be enquired from support@cumulocity.com. Do not use your tenant host name and tenant credentials with this API.
+
 ### DeviceCredentials [application/vnd.com.nsn.cumulocity.deviceCredentials+json]
 
 |Name|Type|Occurs|Description|
@@ -161,7 +173,9 @@ Example response:
 ### POST - creates a device credentials request
 
 Request body: application/vnd.com.nsn.cumulocity.deviceCredentials+json
-Response body: application/vnd.com.nsn.cumulocity.deviceCredentials+json   
+
+Response body: application/vnd.com.nsn.cumulocity.deviceCredentials+json
+
 Required role: ROLE\_DEVICE\_BOOTSTRAP
 
 Example Request:

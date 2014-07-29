@@ -166,8 +166,10 @@ Warning: if given statement has default name assigned by cumulocity platform, an
 ### Update Module
 
 Request body: Module
+
 Response body: Module (if "Accept" header is provided)
- Required : ROLE\_CEP\_MANAGEMENT\_ADMIN
+
+Required : ROLE\_CEP\_MANAGEMENT\_ADMIN
 
 Example Request:
 

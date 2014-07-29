@@ -117,7 +117,8 @@ Example response:
 ### POST - Create a new Application
 
 Request body: Application
- Response body: Application (when Accept header is not provided, empty response body is returned)
+
+Response body: Application (when Accept header is not provided, empty response body is returned)
   
 Required role: ROLE\_APPLICATION\_MANAGEMENT\_ADMIN.
 
@@ -185,7 +186,8 @@ PUT: Optional|
 ### PUT - Update an Application
 
 Request body: Application
- Response body: Application (if "ACCEPT" header specified).
+
+Response body: Application (if "ACCEPT" header specified).
   
 Required role: ROLE\_APPLICATION\_MANAGMENT\_ADMIN
 

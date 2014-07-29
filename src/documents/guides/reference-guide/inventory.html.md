@@ -159,7 +159,7 @@ Not every GET response contains "parents" collections. It is required to pass "w
 ### GET a representation of a managed object
 
 Response body: ManagedObject
-  
+
 Required role: ROLE\_INVENTORY\_READ
 
 Example response:
@@ -191,11 +191,26 @@ Example response:
       ...
     }
 
+### GET supported measurements of a managed object
+
+Example request: Get the supported measurements of a management object
+
+	GET <<ManagedObject URL>>/supportedMeasurements
+	Host: ...
+	Authorization: Basic ...
+
+Example response:
+
+	HTTP/1.1 200 OK
+	{
+		"c8y_SupportedMeasurements": ["c8y_AnalogMeasurement", "c8y_MotionMeasurement", "c8y_SignalStrength", "c8y_TemperatureMeasurement"]
+	}
+
 ### PUT - Update a managed object
 
-Request body: ManangedObject
+Request body: ManagedObject
 
-Response body: ManangedObject (when accept header is not provided, empty response body is returned)
+Response body: ManagedObject (when accept header is not provided, empty response body is returned)
   
 Required role: ROLE\_INVENTORY\_ADMIN or owner
 

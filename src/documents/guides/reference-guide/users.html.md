@@ -14,11 +14,13 @@ The user interface consists of the following parts:
 -   The *group collection* resource retrieves sets of groups and enables creating new groups.
 -   The *group* resource represents individual groups that can be queried and deleted.
 -   The *group reference collection* resource retrieves sets of references to groups. It could be, for example, groups of a particular user.
--   The *group**reference* resource represents one individual reference to a group, which can be retrieved or deleted.
+-   The *group reference* resource represents one individual reference to a group, which can be retrieved or deleted.
 -   The *role collection* resource retrieves sets of roles.
 -   The *role* resource represents individual roles that can be queried and assigned or unassigned to users or groups.
--   The *role* reference collection resource retrieves sets of references to roles. These could be, for example, roles of a particular user or group.
--   The *role**reference* resource represents one individual reference to a role, which can be retrieved.
+-   The *role reference collection* resource retrieves sets of references to roles. These could be, for example, roles of a particular user or group.
+-   The *role reference* resource represents one individual reference to a role, which can be retrieved.
+
+> "Realm" as used in this API usually corresponds to a tenant.
 
 ## User API
 
@@ -27,29 +29,30 @@ The user interface consists of the following parts:
 |Name|Type|Occurs|Description|
 |:---|:---|:-----|:----------|
 |self|URL|1|Link to this Resource|
-|userByName|URI Template/User|1|A reference to a resource of type User. The template contains a placeholders *realm* and *userName*.|
-|users|URI Template/UserCollection|1|A collection of all users belonging to a given realm. The template contains a placeholder *realm*.|
+|userByName|URI Template/User|1|A reference to a resource of type User. The template contains a placeholders {realm} and {userName}.|
+|users|URI Template/UserCollection|1|A collection of all users belonging to a given realm. The template contains a placeholder {realm}.|
 |currentUser|URI Template/User|1|A reference to the resource of the logged in User.|
-|groupByName|URI Template/Group|1|A reference to a resource of type Group. The template contains a placeholders *realm* and *groupName*.|
-|groups|URI Template/GroupCollection|1|A collection of all users belonging to a given realm. The template contains a placeholder *realm*.|
+|groupByName|URI Template/Group|1|A reference to a resource of type Group. The template contains a placeholders {realm} and {groupName}.|
+|groups|URI Template/GroupCollection|1|A collection of all users belonging to a given realm. The template contains a placeholder {realm}.|
 |roles|URI Template/RoleCollection|1|A collection of all roles.|
 
 ## GET the User API Resource
 
 Request body: N/A
- Response body: application/vnd.com.nsn.cumulocity.userApi+json;ver=0.9
+
+Response body: application/vnd.com.nsn.cumulocity.userApi+json;ver=0.9
  Example request: Retrieve information about User API Resource
 
     GET [URL to the User resource]
-     Host: [hostname]
-     Authorization: Basic xxxxxxxxxxxxxxxxxxx
-     Accept: application/vnd.com.nsn.cumulocity.userApi+json;ver=0.9
+    Host: [hostname]
+    Authorization: Basic xxxxxxxxxxxxxxxxxxx
+    Accept: application/vnd.com.nsn.cumulocity.userApi+json;ver=0.9
 
 Example response:
 
     HTTP/1.1 200 OK
-     Content-Type: application/vnd.com.nsn.cumulocity.userApi+json;ver=0.9
-     Content-Length: nnn
+    Content-Type: application/vnd.com.nsn.cumulocity.userApi+json;ver=0.9
+    Content-Length: nnn
     {
          "self" : "<<UserAPI URL>>",
          "userByName" : "<<URL to the UserByName resource with realm and user name parameter>>",
@@ -75,20 +78,21 @@ Example response:
 ## GET a Representation of a User Collection
 
 Request body: N/A
- Response body: User Collection
+
+Response body: User Collection
  Example request: Retrieve information about a User Collection
 
     GET [URL to the resource]
-     Host: [hostname]
-     Authorization: Basic xxxxxxxxxxxxxxxxxxx
-     Accept: application/vnd.com.nsn.cumulocity.userCollection+json;ver=0.9
+    Host: [hostname]
+    Authorization: Basic xxxxxxxxxxxxxxxxxxx
+    Accept: application/vnd.com.nsn.cumulocity.userCollection+json;ver=0.9
 
 Example response:
 
     HTTP/1.1 200 OK
-     Content-Type: application/vnd.com.nsn.cumulocity.userCollection+json;ver=0.9
-     Content-Length: nnn
-     {
+    Content-Type: application/vnd.com.nsn.cumulocity.userCollection+json;ver=0.9
+    Content-Length: nnn
+    {
        "self":"[URL to this resource]",
        "users":[
             {
@@ -99,8 +103,10 @@ Example response:
               "lastName" : "Smith",
               "phone" : "+1234567890",
               "email" : "jsmith@abc.com",
-              "enabled" : true,          "groups" : {[collection of groups the user belongs to]},          "roles" : {[collection of roles the user has]}       },
-    ...       {
+              "enabled" : true,
+              "groups" : {[collection of groups the user belongs to]},
+              "roles" : {[collection of roles the user has]}
+            }, ... {
               "id" : "mblack",
               "self" : "[URL to the resource]",
               "userName" : "mblack",
@@ -108,19 +114,25 @@ Example response:
               "lastName" : "Black",
               "phone" : "+10988765432",
               "email" : "mblack@abc.com",
-              "enabled" : true,          "groups" : {[collection of groups the user belongs to]},          "roles" : {[collection of roles the user has]}
+              "enabled" : true,
+              "groups" : {[collection of groups the user belongs to]},
+              "roles" : {[collection of roles the user has]}
             }
        ],
        "statistics" : {
            "totalPages" : 22,
            "pageSize" : 5,
            "currentPage : 1
-       },   "prev" : "[URL to previous page]",   "next" : "[URL to next page]" }
+       },
+       "prev" : "[URL to previous page]",
+       "next" : "[URL to next page]" 
+    }
 
 ## POST - CREATE a new User within the Collection
 
 Request body: User
- Response body: User (when Accept header is not provided, empty response body is returned)
+
+Response body: User (when Accept header is not provided, empty response body is returned)
  Example request: Create a new User
 
     POST [URL to the resource]
@@ -204,7 +216,8 @@ A "currentUser" resource type contains the following fields:
 ## GET a representation of a User
 
 Request body: N/A
- Response body: User
+
+Response body: User
  Example request: Retrieve information about a User
 
     GET ...
@@ -234,7 +247,8 @@ User password is never returned in GET response. Authentication mechanism is pro
 ## GET a representation of a User by his/her name
 
 Request body: N/A
- Response body: User
+
+Response body: User
  Example request: Retrieve information about a User
 
     GET [URL to the resource]
@@ -263,7 +277,8 @@ Example response:
 ## PUT a change to User resource
 
 Request body: User
- Response body: User (when Accept header is not provided, empty response body is returned)
+
+Response body: User (when Accept header is not provided, empty response body is returned)
  Example request: Change the first name of a User
 
     PUT [URL to the resource]
@@ -296,7 +311,8 @@ Example response:
 ## DELETE a representation of a user
 
 Request body: N/A
- Response body: N/A
+
+Response body: N/A
  Example request: Delete a user
 
     DELETE [URL to the resource]
@@ -310,7 +326,8 @@ Example response:
 ## GET the Current User Resource
 
 Request body: N/A
- Response body: application/vnd.com.nsn.cumulocity.user+json;ver=0.9
+
+Response body: application/vnd.com.nsn.cumulocity.user+json;ver=0.9
 
 or
 
@@ -350,7 +367,8 @@ Example response:
 ## PUT a change to the Current User Resource
 
 Request body: application/vnd.com.nsn.cumulocity.user+json;ver=0.9
- Response body: application/vnd.com.nsn.cumulocity.user+json;ver=0.9
+
+Response body: application/vnd.com.nsn.cumulocity.user+json;ver=0.9
  Example request: Change the first name of the logged in user
 
     PUT [URL to the Current User resource]
@@ -404,7 +422,8 @@ Example response:
 ## Add User to a group
 
 Request body: UserReference
- Response body: UserReference
+
+Response body: UserReference
  Example request: Create a new UserReference
 
     POST ...
@@ -450,7 +469,8 @@ Example response:
 ## Remove User from a group
 
 Request body: N/A
- Response body: N/A
+
+Response body: N/A
  Example request: DELETE a UserReference
 
     DELETE ...
@@ -464,7 +484,8 @@ Example response:
 ## Get all users of a group
 
 Request body: N/A
- Response body: UserReferenceCollection
+
+Response body: UserReferenceCollection
  Example request: Retrieve information about all users of a Group
 
     GET ...
@@ -523,7 +544,8 @@ Example response:
 ## List all groups
 
 Request body: N/A
- Response body: GroupCollection
+
+Response body: GroupCollection
  Example request: Retrieve information about a Group Collection
 
     GET [URL to the resource]
@@ -562,7 +584,8 @@ Example response:
 ## Create a group
 
 Request body: Group
- Response body: Group
+
+Response body: Group
  Example request: Create a new Group
 
     POST [URL to the resource]
@@ -610,7 +633,8 @@ Example response:
 ## Show group details
 
 Request body: N/A
- Response body: Group
+
+Response body: Group
  Example request: Retrieve information about a Group
 
     GET [URL to the resource]
@@ -653,7 +677,8 @@ Example response:
 ## GET a representation of a Group by its name
 
 Request body: N/A
- Response body: Group
+
+Response body: Group
  Example request: Retrieve information about a Group
 
     GET [URL to the resource]
@@ -677,7 +702,8 @@ Example response:
 ## Remove a group
 
 Request body: N/A
- Response body: N/A
+
+Response body: N/A
  Example request: DELETE a group
 
     DELETE [URL to the resource]
@@ -691,7 +717,8 @@ Example response:
 ## Update a group
 
 Request body: Group
- Response body: Group
+
+Response body: Group
  Example request: Change the group name
 
     PUT [URL to the resource]
@@ -732,7 +759,8 @@ Example response:
 ## Get all groups of a user
 
 Request body: N/A
- Response body: GroupReferenceCollection
+
+Response body: GroupReferenceCollection
  Example request: Retrieve information about all groups of a User
 
     GET ...
@@ -789,7 +817,8 @@ Example response:
 ## Get all available roles
 
 Request body: N/A
- Response body: RoleCollection
+
+Response body: RoleCollection
  Example request: Retrieve information about a Role Collection
 
     GET [URL to the resource]
@@ -829,7 +858,8 @@ Example response:
 ## Assign Role to User
 
 Request body: RoleReference
- Response body: RoleReference
+
+Response body: RoleReference
  Example request: Create a new RoleReference
 
     POST [URL to the resource]
@@ -863,7 +893,8 @@ Example response:
 ## Assign Role to Group
 
 Request body: RoleReference
- Response body: RoleReference
+
+Response body: RoleReference
  Example request: Create a new RoleReference
 
     POST [URL to the resource]
@@ -897,7 +928,8 @@ Example response:
 ## Unassign Role from User
 
 Request body: N/A
- Response body: N/A
+
+Response body: N/A
  Example request: DELETE a RoleReference
 
     DELETE [URL to the resource]
@@ -911,7 +943,8 @@ Example response:
 ## Unassign Role from Group
 
 Request body: N/A
- Response body: N/A
+
+Response body: N/A
  Example request: DELETE a RoleReference
 
     DELETE [URL to the resource]
@@ -937,7 +970,8 @@ Example response:
 ## Get all roles of a user
 
 Request body: N/A
- Response body: RoleReferenceCollection
+
+Response body: RoleReferenceCollection
  Example request: Retrieve information about a Role Reference Collection
 
     GET [URL to the resource]
@@ -982,7 +1016,8 @@ Example response:
 ## Get all roles of a group
 
 Request body: N/A
- Response body: RoleReferenceCollection
+
+Response body: RoleReferenceCollection
  Example request: Retrieve information about a Role Reference Collection
 
     GET [URL to the resource]

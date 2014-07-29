@@ -8,7 +8,7 @@ layout: default
 
 The device management library defines the data structures that are used in Cumulocity for device management activities such as software management and configuration management.
 
-The data structures are expressed as fragments that can be used inside managed objects, operations and other resources. More information on the fragment concept can be found in the Section "[Modelling and managing M2M assets](index.php?option=com_k2&view=item&id=809)". The same section also contains information on the process of running operations on devices and updating the inventory according to the result of the operation. For the usage of fragments in client libraries, see the developer's guides for the respective client library.
+The data structures are expressed as fragments that can be used inside managed objects, operations and other resources. More information on the fragment concept can be found in the Section "[Cumulocity's domain model](/guides/concepts-guide/domain-model)". The same section also contains information on the process of running operations on devices and updating the inventory according to the result of the operation. For the usage of fragments in client libraries, see the developer's guides for the respective client library.
 
 ## Metadata
 
@@ -18,27 +18,15 @@ A device marked in the inventory with a *c8y\_IsDevice* fragment supports device
 
     "c8y_IsDevice": {}
 
-![Device in Device Management](images/c8yimages/devicemgmt/devicemanagement.png)
+![Device in Device Management](/images/guides/reference-guide/devicemanagement.png)
 
 #### c8y\_SupportedOperations
 
 *c8y\_SupportedOperations* lists the operations that are available for a particular device, so that applications can trigger the operations. For example, if the supported operations list contains "c8y\_Restart" (see below), a restart button will be available in the device management user interface.
 
-    "c8y_SupportedOperations": [ "c8y_Restart", "c8y_Configuration" ]
+    "c8y_SupportedOperations": [ "c8y_Restart" ]
 
-![Device supports restart](images/c8yimages/devicemgmt/restartsupported.png)
-
-#### c8y\_SupportedMeasurements
-
-*c8y\_SupportedMeasurements* lists the measurements that are produced by the device. These measurements will be shown as graph in the user interface. For example, if the supported measurements list contains "c8y\_SignalStrength" (see below), a signal strength graph of the modem will be shown. 
-
-    "c8y_SupportedMeasurements": [ "c8y_SignalStrength", "c8y_Battery" ]
-
-![Device supports signal strength measurement](images/c8yimages/devicemgmt/supportedmeasurements.png)
-
-**This fragment is currently computed dynamically, so there is no need to maintain it manually in the device. To get the list of supported measurements for the device, use the following REST API request:**
-
-*GET /inventory/managedObjects/{mo\_id}/supportedMeasurements*
+![Device supports restart](/images/guides/reference-guide/restartsupported.png)
 
 ## Device information
 
@@ -55,10 +43,10 @@ A device marked in the inventory with a *c8y\_IsDevice* fragment supports device
     "c8y_Hardware": {
       "model": "BCM2708",
       "revision": "000e",
-      "serialNumber": "0000000017b769d5"
+      "serialNumber": "00000000e2f5ad4d"
     }
 
-![Hardware information](images/c8yimages/devicemgmt/hardware.png)
+![Hardware information](/images/guides/reference-guide/hardware.png)
 
 #### c8y\_Firmware
 
@@ -72,13 +60,13 @@ A device marked in the inventory with a *c8y\_IsDevice* fragment supports device
 
     "c8y_Firmware": {
       "name": "raspberrypi-bootloader",
-      "version": "1.20130207-1",
+      "version": "1.20140107-1",
       "url": "31aab9856861b1a587e2094690c2f6e272712cb1"
     }
 
-![Firmware information](images/c8yimages/devicemgmt/firmware.png)
+![Firmware information](/images/guides/reference-guide/firmware.png)
 
-In the example above, the device is requested to install firmware version "1.20130207-1". The device has a pre-configured software repository location, hence it only needs the relative URL "31aab9856861b1a587e2094690c2f6e272712cb1" to download the requested firmware image.
+In the example above, the device is requested to install firmware version "1.20140107-1". The device has a pre-configured software repository location, hence it only needs the relative URL "31aab9856861b1a587e2094690c2f6e272712cb1" to download the requested firmware image.
 
 #### c8y\_Software
 
@@ -89,12 +77,12 @@ As part of an operation, "c8y\_Software" requests the device to ensure that the 
 To enable software installation through the user interface, add "c8y\_Software" to the list of supported operations as described above.
 
     "c8y_Software": {
-     "pi-driver": "pi-driver-3.4.5.jar",
-     "pi4j-gpio-extension": "pi4j-gpio-extension-0.0.5.jar",
+     "jetty-io": "jetty-io-7.6.8.v20121106.jar",
+     "rest-representation": "rest-representation-4.6.0.jar",
      ...
     }
 
-![Software information](images/c8yimages/devicemgmt/software.png)
+![Software information](/images/guides/reference-guide/software.png)
 
 #### c8y\_Configuration
 
@@ -108,7 +96,7 @@ To enable software installation through the user interface, add "c8y\_Software" 
       "config": "#Tue Jul 02 16:10:36 UTC 2013\nc8y.log.alarmLevel=ERROR\nc8y.modem.signalPolling=10000\nc8y.log.eventLevel=INFO"
     }
 
-![Device configuration](images/c8yimages/devicemgmt/configuration.png)
+![Device configuration](/images/guides/reference-guide/configuration.png)
 
 #### c8y\_Mobile
 
@@ -121,12 +109,12 @@ To enable software installation through the user interface, add "c8y\_Software" 
 |iccid|String|The identifier of the SIM card that is currently in the device (often printed on the card).|
 
     "c8y_Mobile": {
-      "imei": "861145013087177",
-      "cellId": "4904-A496",
-      "iccid": "89490200000876620613"
+      "imei": "358901048995390",
+      "cellId": "15DFAC",
+      "iccid": "89430301901300001342"
     }
 
-![Modem information](images/c8yimages/devicemgmt/mobile.png)
+![Modem information](/images/guides/reference-guide/mobile.png)
 
 ## Device reports
 
@@ -146,6 +134,8 @@ To enable software installation through the user interface, add "c8y\_Software" 
       "rssi": { "value": -53, "unit": "dBm" },
       "ber": { "value": 0.14, "unit": "%" } 
     }
+
+![Signal strength report](/images/guides/reference-guide/signalstrength.png)
 
 ## Device availability
 
@@ -181,7 +171,7 @@ A monitored device has one of following statuses:
 |CONNECTED|A device push connection is established.|
 |AVAILABLE|The device is not connected through device push, but a message was sent within the required response interval.|
 |MAINTENANCE|"responseInterval" is set to 0; the device is under maintenance.|
-|UNAVAILABLE|"responseInterval" is greater then 0 and the device is neither AVAILABLE nor CONNECTED.|
+|UNAVAILABLE|"responseInterval" is larger than 0 and the device is neither AVAILABLE nor CONNECTED.|
 
 #### c8y\_UnavailabilityAlarm
 
@@ -199,7 +189,7 @@ The alarm sent when a device becomes unavailable is of type "c8y\_Unavailability
 
 Updates to the availability status may occur with a delay.
 
-![Availability](images/c8yimages/devicemgmt/availability.png)
+![Availability](/images/guides/reference-guide/availability.png)
 
 To flag a device as available without updating any data, a "ping" can be sent. The "ping" can be carried out by simply sending an empty update message to the device (i.e., a PUT request to the managed object with empty content).
 
@@ -212,6 +202,8 @@ The number of currently active and acknowledged alarms is stored in a fragment "
         "major": 3
     }
 
+![Alarm status](/images/guides/reference-guide/alarmstatus.png)
+
 ## Miscellaneous
 
 #### c8y\_Restart
@@ -220,4 +212,4 @@ To restart a device, an operation with a *c8y\_Restart* fragment is sent. To ena
 
     "c8y_Restart": {}
 
-![Restart button](images/c8yimages/devicemgmt/restartsupported.png)
+![Restart button](/images/guides/reference-guide/restartsupported.png)

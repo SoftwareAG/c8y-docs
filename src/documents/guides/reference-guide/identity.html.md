@@ -3,7 +3,7 @@ order: 70
 title: Identity
 layout: default
 ---
-The identity interface allows associating identifiers used in external IT systems and devices with unique identifiers used in Cumulocity. It consists of three parts:
+The identity interface associates identifiers used in external IT systems and devices with unique identifiers used in Cumulocity. It consists of three parts:
 
 -   The *identity API* resource returns URIs and URI templates for associating external identifiers with unique identifiers.
 -   The *external ID collection* resource contains the set of external IDs for a unique ID.
@@ -82,7 +82,8 @@ Example response:
 ### POST / Create an External ID
 
 Request body: ExternalId
- Response body: ExternalId (when Accept header is not provided, empty response body is returned)
+
+Response body: ExternalId (when Accept header is not provided, empty response body is returned)
   
 Required role: ROLE\_IDENTITY\_ADMIN
 
@@ -155,7 +156,8 @@ Example response:
 ### DELETE an ExternalID
 
 Request Body: N/A.
- Response Message Body: N/A.
+
+Response Message Body: N/A.
   
 Required role: ROLE\_IDENTITY\_ADMIN
 

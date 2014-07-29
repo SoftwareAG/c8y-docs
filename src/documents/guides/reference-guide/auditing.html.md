@@ -66,7 +66,8 @@ The "source" object of an audit record contains the properties "id" and "self".
 ### POST - create a new audit record
 
 Request body: AuditRecord
- Response body: AuditRecord (when Accept header is not provided, empty response body is returned)
+
+Response body: AuditRecord (when Accept header is not provided, empty response body is returned)
   
 Required role: ROLE\_AUDIT\_ADMIN
 
@@ -151,26 +152,14 @@ Example response:
 |id|String|1|Uniquely identifies this audit record.|No|
 |self|URI|1|Link to this resource.|No|
 |creationTime|String|1|Time when audit record was created in the database.|No|
-|type|String|1|Identifies the type of this audit record.|POST: Mandatory
-PUT:
-No|
-|time|String|1|Time of the audit record.|POST: Mandatory
-PUT:
-No|
-|text|String|1|Text description of the audit record.|POST: Mandatory
-PUT:
-No|
-|source|ManagedObject|1|An optional ManagedObject that the audit record originated from, as object containing properties "id" and "self".|POST: Mandatory
-PUT:
-No|
+|type|String|1|Identifies the type of this audit record.|POST: Mandatory PUT: No|
+|time|String|1|Time of the audit record.|POST: Mandatory PUT: No|
+|text|String|1|Text description of the audit record.|POST: Mandatory PUT: No|
+|source|ManagedObject|1|An optional ManagedObject that the audit record originated from, as object containing properties "id" and "self".|POST: Mandatory PUT: No|
 |user|String|1|The user responsible for the audited action.|Optional|
 |application|String|1|The application used to carry out the audited action.|Optional|
-|activity|String|1|The activity that was carried out.|POST: Mandatory
-PUT:
-Optional|
-|severity|String|1|The severity of action: critical, major, minor, warning or information.|POST: Mandatory
-PUT:
-Optional|
+|activity|String|1|The activity that was carried out.|POST: Mandatory PUT: Optional|
+|severity|String|1|The severity of action: critical, major, minor, warning or information.|POST: Mandatory PUT: Optional|
 |changes|Set|0..1|An optional collection of objects describing the changes that were carried out.|No|
 |\*|Object|0..n|Additional properties of the audit record.|Optional|
 

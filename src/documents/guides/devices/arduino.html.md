@@ -69,7 +69,7 @@ Start the Arduino IDE once and quit the application again. This will create dire
 
 #### Cumulocity C Client Library for Arduino
 
-Download the Cumulocity Client Library from [https://bitbucket.org/m2m/cumulocity-clients-c/get/default.zip](https://bitbucket.org/m2m/cumulocity-clients-c/get/default.zip).
+Download the Cumulocity Client Library from [https://bitbucket.org/m2m/cumulocity-arduino/downloads/CumulocityArduinoClient-v5.9.0.zip](https://bitbucket.org/m2m/cumulocity-arduino/downloads/CumulocityArduinoClient-v5.9.0.zip).
 
 Unzip the Client Library and install the unpacked folder "CumulocityArduinoClient" into the Arduino library folder, as described in [Library installation](http://arduino.cc/en/Guide/Libraries).
 

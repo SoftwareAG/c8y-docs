@@ -1,6 +1,7 @@
 ---
 layout: default
 title: Arduino
+toc: true
 ---
 
 ## Overview
@@ -8,24 +9,6 @@ title: Arduino
 This section describes how to get started with the Cumulocity Agent for Arduino and the M2M DevStarter Arduino package from Deutsche Telekom. We start with our instructions from installing and setting up the hardware, as well as showing a step-by-step example how to take sensor data and upload the data into the Cumulocity developer sandbox.
 
 If you build something with it, tell us, we are more than happy to hear about your cool Thing !
-
-## Table of contents
-
-1.  Information about hardware
-    -   [What is the M2M DevStarter Arduino package for Cumulocity?](#what-is-the-m2m-devstarter-arduino-package-for-cumulocity)
-    -   [Seeedstudio GSM Shield](#seeedstudio-gsm-shield)
-
-2.  Setting up the software
-    -   [Install the Arduino IDE and the Cucmulocity Client Library](#install-the-arduino-ide-and-the-cumulocity-client-library)
-
-3.  Setting up the hardware
-    -   [Setting up the Deutsche Telekom M2M DevStarter Arduino](#setting-up-the-deutsche-telekom-m2m-devstarter-arduino)
-    -   [Setting up the Seeedstudio GSM Shield](#setting-up-the-seeedstudio-gsm-shield)
-
-4.  Getting started
-    -   [First steps... check GSM connection](#first-steps-check-gsm-connection)
-    -   [Running the sketches](#runing-the-sketches)
-    -   [Sketches explained](#sketches-explained)
 
 ## Information about hardware
 

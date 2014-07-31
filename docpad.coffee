@@ -18,6 +18,10 @@ docpadConfig = {
 		redirector:
 			redirects:
 				redirects
+		tableofcontents:
+			requiredMetadata: true
+			requiredMetadataField: 'toc'
+			headerSelectors: 'h2,h3'
 }
 
 module.exports = docpadConfig;

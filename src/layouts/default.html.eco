@@ -81,6 +81,7 @@
         </button>
       <h1 class="section-title"><%= @document.title %></h1>
       <div class="content">
+        <%- @partial('toc.html.eco', {tocItems: @document.tableOfContents}) %>
         <%- @content %>
       </div>
     </div>

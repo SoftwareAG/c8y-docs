@@ -12,20 +12,20 @@ If you build something with it, tell us, we are more than happy to hear about yo
 ## Table of contents
 
 1.  Information about hardware
-    -   [What is the M2M DevStarter Arduino package for Cumulocity?](#DevStarter)
-    -   [Seeedstudio GSM Shield](#seeedStudioInfo)
+    -   [What is the M2M DevStarter Arduino package for Cumulocity?](#what-is-the-m2m-devstarter-arduino-package-for-cumulocity)
+    -   [Seeedstudio GSM Shield](#seeedstudio-gsm-shield)
 
 2.  Setting up the software
-    -   [Install the Arduino IDE and the Cucmulocity Client Library](#installArduino)
+    -   [Install the Arduino IDE and the Cucmulocity Client Library](#install-the-arduino-ide-and-the-cumulocity-client-library)
 
 3.  Setting up the hardware
-    -   [Setting up the Deutsche Telekom M2M DevStarter Arduino](#setupDevKit)
-    -   [Setting up the Seeedstudio GSM Shield](#setupSeeedstudioShield)
+    -   [Setting up the Deutsche Telekom M2M DevStarter Arduino](#setting-up-the-deutsche-telekom-m2m-devstarter-arduino)
+    -   [Setting up the Seeedstudio GSM Shield](#setting-up-the-seeedstudio-gsm-shield)
 
 4.  Getting started
-    -   [First steps... check GSM connection](#firstSteps)
-    -   [Running the sketches](#runningSketches)
-    -   [Sketches explained](#sketchesExplained)
+    -   [First steps... check GSM connection](#first-steps-check-gsm-connection)
+    -   [Running the sketches](#runing-the-sketches)
+    -   [Sketches explained](#sketches-explained)
 
 ## Information about hardware
 
@@ -157,7 +157,7 @@ Place the GBoard on a non-conductive surface, connect the power supply. Connect 
 >     #define _GSM_TXPIN_ 2
 >     #define _GSM_RXPIN_ 3
 
-### **Setting up the Seeedstudio GSM Shield**
+### Setting up the Seeedstudio GSM Shield
 
 Seeedstudio GSM shield can be used in conjunction with our Client Library Cumulocity. The Seeedstudio shield is a add-on shield to extend your Arduino with mobile network (GSM)
 Connectivity.

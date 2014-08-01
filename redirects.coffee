@@ -3,6 +3,7 @@ redirects =
 	'/guides/rest': '/guides/rest/introduction'
 	'/guides/reference-guide': '/guides/reference-guide/rest-implementation'
 	'/guides/web': '/guides/web/introduction'
+	'/guides/java': '/guides/java/introduction'
 	'/guides/concepts-guide/introduction-to-cumulocity': '/guides/concepts-guide/introduction'
 	'/guides/concepts-guide/introduction-to-cumulocity.html': '/guides/concepts-guide/introduction'
 	'/guides/concepts-guide/modeling-and-managing-m2m-assets': '/guides/concepts-guide/domain-model'

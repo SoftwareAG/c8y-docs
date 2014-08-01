@@ -13,7 +13,7 @@ Environmental capabilities include sensors that measure properties of the enviro
 
 ### Temperature Sensor
 
-A temperature sensor, or thermometer, reports degrees of hotness. The untis for this sensor type are Centigrade (C).
+A temperature sensor reports temperature in degrees Celsius (C).
 
 #### Inventory representation
 

@@ -1,107 +1,142 @@
 ---
 order: 10
 layout: default
-title: Installing the JavaSE SDK
+title: Hello, world!
 ---
+
 ## Overview
 
-Cumulocity comes with elaborate support for developing clients in Java. You can use Java, for example, to 
-
-* Interface Cumulocity with devices supporting Java. Today, many Embedded Linux devices support Java out of the box, such as the [Raspberry Pi](/guides/devices/raspberry-pi).
-* Interface Cumulocity with your enterprise IT systems or develop server-side business logic on top of Cumulocity.
-
-There are ready-made client libraries both for JavaSE and JavaME. This section discusses the installation of the JavaSE libraries. The section "[Installing the JavaME SDK](/guides/java/installing-me)" discusses the installation of the JavaME libraries. There is also [experimental support for Android](https://bitbucket.org/eickler/cumulocity-clients-android/).
-
-The JavaSE client libraries can be installed through Maven or as OSGi runtime through Eclipse P2. We first discuss the general prerequisites for installing the client libraries and then show each of the two installation variants. The client libraries are available in [source form as well](https://bitbucket.org/m2m/cumulocity-clients-java).
-
-Here are some references for getting started with the basic technologies underlying the SDK:
-
--   The client libraries use the Cumulocity REST interfaces as underlying communication protocol as described in the [REST developer's guide](/guides/rest).
--   The SDK integrates nicely with [OSGi](http://www.osgi.org/Specifications/HomePage). OSGi provides a small and efficient runtime that is also available in some embedded environments. Additionally, it is very well support by Eclipse and other development tools. A good introduction can be found in the book [OSGi and Equinox: Creating Highly Modular Java Systems](http://www.amazon.com/OSGi-Equinox-Creating-Modular-Systems/dp/0321585712). 
+This section gives a very basic example of using Java SE with Cumulocity through the Maven build tool. It can also be run straight from Eclipse, provided you have an Eclipse version with Maven support. Maven supported is by default included in recent versions of the [Eclipse IDE for EE Developers](http://eclipse.org/downloads/).
 
 ## Prerequisites
 
-### Java
+Verify that you have Maven 3 installed:
 
-To use the Java client libraries, you need to have at least Version 6 of the [Java Development Kit](http://www.oracle.com/technetwork/java/javase/downloads/index.html) for your operating system. Some of the examples require Java 7. To verify the version of your Java Development Kit, type
+	$ mvn -v
+	Apache Maven 3.1.1 (0728685237757ffbf44136acec0402957f723d9a; 2013-09-17 17:22:22+0200)
+	Maven home: /usr/local/Cellar/maven/3.1.1/libexec
+	Java version: 1.7.0_45, vendor: Oracle Corporation
+	Java home: /Library/Java/JavaVirtualMachines/jdk1.7.0_45.jdk/Contents/Home/jre
+	Default locale: en_US, platform encoding: UTF-8
+	OS name: "mac os x", version: "10.9.4", arch: "x86_64", family: "mac"
 
-	javac -version
+Maven can be downloaded from http://maven.apache.org.
 
-The output needs to show a version number later than "1.6.0\_24". 
+## Develop the "Hello, world!" agent
 
-### Eclipse
+To develop a very simple "Hello, world!" agent for Cumulocity, you need to
 
-To develop for OSGi runtimes, you need at least Version 3.7.1 of Eclipse. If you have Eclipse already installed, check the "About Eclipse" box.
+* Create a Maven project.
+* Add a dependency to the Cumulocity Java client library to the Maven pom.xml.
+* Create a Java application.
+* Build and run the Java application.
 
-### Installing SSL certificates
+### Create a Maven project
 
-You can use both HTTP and HTTPS from the development kit. To use HTTPS, you may need to import the Cumulocity production certificate into your Java runtime environemnt. [Download](/cumulocity.com.cert "cumulocity.com certificate") the certificate and import it using the following command on the command line:
+To create a plain Java project with Maven, run
 
-    $JAVA_HOME/bin/keytool -import -alias cumulocity -file cumulocity.com.crt -storepass changeit
+	$ mvn archetype:create -DgroupId=c8y.example -DartifactId=hello-agent 
 
-Answer "yes" to the question "Trust this certificate? [no]:". Use the following argument to run Java:
+This will create a folder "hello-agent" in the current directory with a skeleton structure for your project.
 
-    -Djavax.net.ssl.trustStore=<<home directory>>/.keystore
+### Add the  Java client library
 
-If you use Eclipse/OSGi, open the "Run Configurations..." dialog in the "Run" menu. Double-click "OSGi Framework", the open the "Arguments" tab on the right side. In the "VM arguments" text box, add the above parameter.
+Edit the "pom.xml" in the "hello-agent" folder. Add a "repositories" element to point to the Cumulocity Maven repository, which stores the client libraries.
 
-Since Java ships with its own set of trusted root certificates, you might still get the error message:
+	<repositories>
+		<repository>
+			<id>cumulocity</id>
+			<layout>default</layout>
+			<url>http://download.cumulocity.com/maven/repository</url>
+		</repository>
+	</repositories>
 
-    java.security.cert.CertificateException: Certificate Not Trusted
+Add "dependency" elements for the Java client library ("java-client") and for the Cumulocity domain model ("device-capability-model") to the "dependencies" section.
 
-In this case, make sure that the Go Daddy Certificate Authority (CACert) is available for your JAVA environment using:
+	<dependency>
+		<groupId>com.nsn.cumulocity.clients-java</groupId>
+		<artifactId>java-client</artifactId>
+		<version>5.9.0</version>
+	</dependency>
+	<dependency>
+		<groupId>com.nsn.cumulocity.model</groupId>
+		<artifactId>device-capability-model</artifactId>
+		<version>5.9.0</version>
+	</dependency>
 
-    keytool -import -v -trustcacerts -alias root -file gd_bundle.crt -keystore $JAVA_HOME/lib/security/cacerts
+Edit the "version" elements to use the latest version of the client library. The version can be determined by checking the ["Announcements" section](https://cumulocity.zendesk.com/hc/en-us/sections/200381323-Announcements) of the Cumulocity Help Center. The full file after editing can be found [here](/images/guides/java/pom.xml).
 
-gd\_bundle.crt can be downloaded directly from the [GoDaddy repository](https://certs.godaddy.com/anonymous/repository.pki)
+### Create a Java application
 
-## Using Maven
+Edit the "App.java" file in the folder "hello-agent/src/main/java/c8y/example" with the following content:
 
-To access the client libraries through Maven, add our Maven repository to the "repositories" element of your pom.xml file:
+	package c8y.example;
+	
+	import c8y.IsDevice;
+	import com.cumulocity.model.authentication.CumulocityCredentials;
+	import com.cumulocity.rest.representation.inventory.ManagedObjectRepresentation;
+	import com.cumulocity.sdk.client.Platform;
+	import com.cumulocity.sdk.client.PlatformImpl;
+	import com.cumulocity.sdk.client.inventory.InventoryApi;
 
-    <repositories>
-      <repository>
-        <id>cumulocity</id>
-        <layout>default</layout>
-        <url>http://download.cumulocity.com/maven/repository</url>
-      </repository>
-    </repositories>
+	public class App 
+	{
+		public static void main( String[] args )
+		{
+			Platform platform = new PlatformImpl("<<yourURL>>", new CumulocityCredentials("<<yourUser>>", "<<yourPassword>>"));
+			InventoryApi inventory = platform.getInventoryApi();
+			ManagedObjectRepresentation mo = new ManagedObjectRepresentation();
+			mo.setName("Hello, world!");
+			mo.set(new IsDevice());
+			mo = inventory.create(mo);
+			System.out.println("URL: " + mo.getSelf());
+		}
+	}
 
-Then add a dependency on the Java client library to the "dependencies" element:
+Replace "&lt;&lt;yourUrl&gt;&gt;", "&lt;&lt;yourUser&gt;&gt;" and "&lt;&lt;yourPassword&gt;&gt;" with your URL (e.g., "https://myurl.cumulocity.com"), username and password.
 
-    <dependencies>
-      <dependency>
-        <groupId>com.nsn.cumulocity.clients-java</groupId>
-        <artifactId>java-client</artifactId>
-        <version>...</version>
-      </dependency>
-    </dependencies>
+What does the code in "main" do?
 
-The latest version of the client library can be determined by checking the ["Announcements" section](https://cumulocity.zendesk.com/hc/en-us/sections/200381323-Announcements) of the Cumulocity Help Center.
+-   Line 1 connects the agent to the platform.
+-   Line 2 retrieves a handle to the Cumulocity inventory.
+-   Line 3 creates a new managed object.
+-   Line 4 sets the display name of the new managed object.
+-   Line 5 says that this managed object should be a device (should show up in device management).
+-   Line 6 creates the managed object in the inventory. This will return the managed object back with a fresh, generated ID. (See "Object identity" section in ["Cumulocity's domain model"](/guides/concepts-guide/domain-model)).
+-   Line 7 prints the URL to the new managed object that has just been stored in the inventory.
 
-## Using OSGi
+### Build and run the agent
 
-### Installation
+To build and run your agent:
 
-Here are the steps for configuring Eclipse and downloading the required client software:
+	$ cd hello-agent
+	$ mvn clean install
+	[INFO] Scanning for projects...
+	[INFO]                                                                         
+	[INFO] ------------------------------------------------------------------------
+	[INFO] Building hello-agent 1.0-SNAPSHOT
+	[INFO] ------------------------------------------------------------------------
+	...
+	$ mvn exec:java -Dexec.mainClass="c8y.example.App"
+	[INFO] Scanning for projects...
+	[INFO]                                                                         
+	[INFO] ------------------------------------------------------------------------
+	[INFO] Building hello-agent 1.0-SNAPSHOT
+	[INFO] ------------------------------------------------------------------------
+	[INFO] 
+	[INFO] --- exec-maven-plugin:1.3.2:java (default-cli) @ hello-agent ---
+	[WARNING] Warning: killAfter is now deprecated. Do you need it ? Please comment on MEXEC-6.
+	SLF4J: Failed to load class "org.slf4j.impl.StaticLoggerBinder".
+	SLF4J: Defaulting to no-operation (NOP) logger implementation
+	SLF4J: See http://www.slf4j.org/codes.html#StaticLoggerBinder for further details.
+	URL: http://demos.cumulocity.com/inventory/managedObjects/110160902
 
--   Go to the "Preferences" menu and select "Plug-in Development", "Target Platform". Click "Add...".
--   Ensure that "Nothing: Start with an empty target definition." is selected and click "Next". Type "Cumulocity runtime" into the "Name" field. Click "Add...".
--   Select "Software Site" and click "Next".
--   To make the Cumulocity runtime repository available, click "Add...", use "Cumulocity repository" as "Name" and "[http://download.cumulocity.com/p2/repository](http://download.cumulocity.com/p2/repository)" as "Location". Click "Ok".
--   Ensure that the "Cumulocity repository" is selected in the "Work with" drop-down list. Check "Cumulocity" and click "Finish". Select "Finish" again to leave the dialog. Now check the "Cumulocity runtime" entry in the "Target definitions" list and click "Ok".
--   This procedure has to be carried out once per Eclipse workspace.
+The last line shows that a new device has been successfully created with a particular URL. Open the Cumulocity application and go to the device list. You should see a new "Hello, world!" device.
 
-> Please do not use "Install New Software" to download the client software. This would install the client as part of your running IDE. Install the SDK target platforms separately using the "Target Platform" preferences as described above.
+![Hello world device](/images/guides/java/hello.png)
 
-> If you would like to install a particular version of the Cumulocity OSGi runtime, please use http://download.cumulocity.com/p2/repository-&lt;&lt;version&gt;&gt;.
+**Got an error message?** Check the [troubleshooting section](/guides/developers-guide/troubleshooting).
 
-### Update
+## Improve the agent
 
-If you need to update or re-load the client software, follow these steps:
-
--   Open the "Target Platform" page in preferences, select the "Cumulocity runtime" and click "Edit".
--   Select the link in the location list and click "Edit".
--   Select "Work with the list of software sites", select "Cumulocity repository" and click "Reload". Click "Ok", "Finish" and "Finish" again to leave the dialog.
--   Click "Reload" in the target platform list and "Ok" to leave the preferences dialog.
--   You may need to re-create your run configuration. I.e., go to "Run", "Run Configurations" and double-click "OSGi Framework" to create a new run configuration, if you have problems.
+Now that you have done your first step, check out the Section [Developing Java client](/guides/java/developing) or examine the [full examples](/guides/java/agents).

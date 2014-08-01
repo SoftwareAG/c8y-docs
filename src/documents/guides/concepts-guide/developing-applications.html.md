@@ -61,8 +61,6 @@ For more information on developing plugins, please visit the [Plugin Developer's
 
 If your application requires new server-side processing functionality, you can add a [Cumulocity Event Language](/guides/reference-guide/realtime-statements) module to it. This is simply a file inside your application at a particular location (META-INF/application-module.cel).
 
-	TBD: How to update the module.
-
 	module paypalhere;
 	@Name('store_purchase_details1_on_purchase_operation')
 	insert into PurchaseDetailsTmp1
@@ -73,7 +71,7 @@ If your application requires new server-side processing functionality, you can a
 	    purchaseEvent.operation.id as purchaseOperationId,
 	    purchaseEvent.operation.deviceId as deviceId
 	from
-		...
+	...
 
 ## Hosting
 

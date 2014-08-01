@@ -27,3 +27,10 @@ Finally, here are some references for getting started with the basic technologie
 -   The SDK integrates nicely with [OSGi](http://www.osgi.org/Specifications/HomePage). OSGi provides a small and efficient runtime that is also available in some embedded environments. Additionally, it is very well support by Eclipse and other development tools. A good introduction can be found in the book [OSGi and Equinox: Creating Highly Modular Java Systems](http://www.amazon.com/OSGi-Equinox-Creating-Modular-Systems/dp/0321585712). 
 -   All examples and libraries are open source -- check https://bitbucket.org/m2m.
 
+## General prerequisites
+
+To use the Java SE client libraries, you need to have at least Version 6 of the [Java Development Kit](http://www.oracle.com/technetwork/java/javase/downloads/index.html) for your operating system. Some of the examples require Java 7. To verify the version of your Java Development Kit, type
+
+	$ javac -version
+
+The output needs to show a version number later than "1.6.0\_24" for the basic examples.

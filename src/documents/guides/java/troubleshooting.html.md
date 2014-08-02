@@ -64,15 +64,3 @@ which will return something like:
     COMMAND PID USER FD TYPE DEVICE SIZE/OFF NODE NAME java 12985 pitchfor 45u IPv6 0x077c76d0 0t0 TCP *:8080 (LISTEN)
 
 so process 12985 is using that port which can then be killed if necessary.
-
-## When starting my application, I just see the "loading" icons
-
-The best method to troubleshoot startup issue is to launch the development tool of the browser that you are using. Chrome, Internet Explorer and Opera have a built-in development support and there's [Firebug](http://getfirebug.com/) for Firefox. Right-click the icon and choose "Inspect Element". In Firebug, click on "Console" to check for syntax errors or "Net" to check if attempts to access the sandbox failed. You may have to reload the page for this to work.
-
-## When starting my application, I just see a blank browser screen
-
-A likely reason is that you are using HTTPS to communicate with the Cumulocity server and your Java runtime does not accept the SSL certificate. In this case, you will see an error message in connections to the Cumulocity server if you look at the "Network" tab in Firebug (see above). You can solve this in two ways:
-
--   Switch to plain HTTP by using -Dcom.cumulocity.url=http://\<\<sandbox URL\>\>, see "Changing the backend server" in ["Hello, world!"](index.php?option=com_k2&view=item&id=818).
--   Import the Cumulocity certificate as described in ["Installing the SDK"](index.php?option=com_k2&view=item&id=814).
-

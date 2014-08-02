@@ -30,7 +30,7 @@ Here are the steps for configuring Eclipse and downloading the required client s
 
 > Please do not use "Install New Software" to download the client software. This would install the client as part of your running IDE. Install the SDK target platforms separately using the "Target Platform" preferences as described above.
 
-> If you would like to install a particular version of the Cumulocity OSGi runtime, please use http://download.cumulocity.com/p2/repository-&lt;version&gt;.
+> If you would like to install a particular version of the Cumulocity OSGi runtime, please use http://download.cumulocity.com/p2/repository-version (replace "version" with the actual version, e.g., "5.9.0").
 
 ## Set up an agent project
 
@@ -68,7 +68,7 @@ Run your agent by right-clicking the "c8y.helloagent" project and select "Run as
 
 	URL: https://<<your URL>>/inventory/managedObjects/<<ID>>
 
-**Got an error message?** Check the [troubleshooting section](/guides/developers-guide/troubleshooting).
+**Got an error message?** Check the [troubleshooting section](/guides/java/troubleshooting).
 
 ## Improve the agent
 

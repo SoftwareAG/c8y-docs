@@ -1,7 +1,7 @@
 ---
 order: 40
 layout: default
-title: Java Reference Agent
+title: Java reference agent
 ---
 
 ## Overview
@@ -19,7 +19,7 @@ The Java agent supports Unix-based systems and contains the following functional
 * Software management: Upgrade the software on the device and restart with the new software.
 * Modem support: Provides basic modem information and signal statistics  (IMEI, ICCID, cell ID, signal strength, BER; depending on modem type).
 * Extensibility through driver concept.
-* Ready-made drivers for [Kontron M2M development kit](/guides/devices/smart-agent-for-kontron-m2m.html), [Raspberry Pi](/guides/devices/raspberry-pi.html), [PiFace Digital](/guides/devices/raspberry-pi.html) and [Tinkerforge](tinkerforge.html).
+* Ready-made drivers for [Kontron M2M development kit](/guides/devices/smart-agent-for-kontron-m2m.html), [Raspberry Pi](/guides/devices/raspberry-pi.html), [PiFace Digital](/guides/devices/raspberry-pi.html) and [Tinkerforge](/guides/devices/tinkerforge).
 
 ## Prerequisites
 
@@ -28,13 +28,13 @@ A Unix-based system with an installation of Java SE 7 is required (for example, 
 	$ java -version
 	java version "1.7.0_45"
 
-To install Java, please visit http://java.com.
+To install Java, please visit http://java.com. There is also a basic Windows driver included for running the agent on Windows systems, for example, along with a Tinkerforge kit. Not all functionality is supported on Windows.
 
 ## Installing
 
 Binary packages are available for the Raspberry Pi, the Kontron M2MSSDK and for MacOS. 
 
-* For the Raspberry Pi, please [visit the Raspberry Pi page](/guides/devices/raspberry-pi.html).
+* For the Raspberry Pi and similar Embedded Linux devices, please [visit the Raspberry Pi page](/guides/devices/raspberry-pi.html).
 * For the Kontron M2MSSDK, please [visit the Kontron M2MSSDK page](/guides/devices/smart-agent-for-kontron-m2m.html).
 * On a Mac, download the package from http://resources.cumulocity.com/examples/cumulocity-mac-agent-latest.tar.gz and unpack it into a new folder.
 
@@ -88,4 +88,9 @@ Extending the agent with drivers for new hardware and new devices requires the f
 * Create a jar file with the class and an additional text file "META-INF/services/c8y.lx.driver.Driver". The text file needs to contain the fully-qualified class name of the Java class.
 * Deploy the jar file either by copying it to the "lib" folder of the agent or by deploying it through Cumulocity's software management.
 
-The [BitBucket repository](https://bitbucket.org/m2m/cumulocity-examples) contains numerous examples of drivers. Usage of the Java client library is described in the [Java Developer's Guide](/guides/java/introduction.html).
+The [BitBucket repository](https://bitbucket.org/m2m/cumulocity-examples) contains numerous examples of drivers. Usage of the Java client library is described in [Developing Java clients](/guides/java/developing).
+
+## Server-side agents
+
+The [BitBucket repository](https://bitbucket.org/m2m/cumulocity-examples) also contains a complete example of a server-side agent for closed devices in the folder "tracker-agent". This example works with tracking devices from Telic and Queclink, see the Section "[Devices](/guides/devices)". It demonstrates solutions to various challenges when developing server-side functionality for mobile devices.
+

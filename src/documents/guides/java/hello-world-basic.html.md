@@ -135,7 +135,7 @@ The last line shows that a new device has been successfully created with a parti
 
 ![Hello world device](/images/guides/java/hello.png)
 
-**Got an error message?** Check the [troubleshooting section](/guides/developers-guide/troubleshooting).
+**Got an error message?** Check the [troubleshooting section](/guides/java/troubleshooting).
 
 ## Improve the agent
 

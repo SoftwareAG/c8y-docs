@@ -459,14 +459,11 @@ Here is the full list of available functions. Replace the ellipses ("...") with 
 
 |Function name (with variants)|Return type|Alternative argument lists|
 |:----------------------------|:----------|:-------------------------|
-|findManagedObjectById|ManagedObject|id*:String*
- id*:GId*|
-|findFirstManagedObjectParent findOneManagedObjectParent|ManagedObject|managedObjectId*:String*
- managedObjectId*:GId*|
+|findManagedObjectById|ManagedObject|id*:String*<br/>id*:GId*|
+|findFirstManagedObjectParent<br/>findOneManagedObjectParent|ManagedObject|managedObjectId*:String*<br/>managedObjectId*:GId*|
 |...ManagedObjectByFragmentType|List | ManagedObject|fragmentType*:String*|
 |...ManagedObjectByType|List | ManagedObject|type*:String*|
-|findEventById|Event|id*:String*
- id*:GId*|
+|findEventById|Event|id*:String*<br/>id*:GId*|
 |...EventByFragmentType|List | Event|fragmentType*:String*|
 |...EventByFragmentTypeAndSource|List | Event|fragmentType*:String*, source*:String*|
 |...EventByFragmentTypeAnd  SourceAndTimeBetween|List | Event|fragmentType*:String*, source*:String*, from*:Date*, to*:Date*|
@@ -476,8 +473,7 @@ Here is the full list of available functions. Replace the ellipses ("...") with 
 |...EventByFragmentTypeAnd  TimeBetweenAndType|List | Event|fragmentType*:String*, from*:Date*, to*:Date*, type*:String*|
 |...EventByFragmentTypeAndType|List | Event|fragmentType*:String*, type*:String*|
 |...EventBySource|List | Event|source*:String*|
-|findMeasurementById|Measurement|id*:String*
- id*:GId*|
+|findMeasurementById|Measurement|id*:String*<br/>id*:GId*|
 |...MeasurementByFragmentType|List | Measurement|fragmentType*:String*|
 |...MeasurementByFragmentTypeAnd  Source|List | Measurement|fragmentType*:String*, source*:String*|
 |...MeasurementByFragmentTypeAnd  SourceAndTimeBetween|List | Measurement|fragmentType*:String*, source*:String*, from*:Date*, to*:Date*|
@@ -487,16 +483,14 @@ Here is the full list of available functions. Replace the ellipses ("...") with 
 |...MeasurementByFragmentTypeAnd  TimeBetweenAndType|List | Measurement|fragmentType*:String*, from*:Date*, to*:Date*, type*:String*|
 |...MeasurementByFragmentTypeAnd  Type|List | Measurement|fragmentType*:String*, type*:String*|
 |...MeasurementBySource|List | Measurement|source*:String*|
-|findOperationById|Operation|id*:String*
- id*:GId*|
+|findOperationById|Operation|id*:String*<br/>id*:GId*|
 |...OpererationByAgent|List | Operation|agentId*:String*|
 |...OpererationByAgentAndStatus|List | Operation|agentId*:String*, status*:String*|
 |...OpererationByDevice|List | Operation|deviceId*:String*|
 |...OpererationByDeviceAndStatus|List | Operation|deviceId*:String*, status*:String*|
 |...OpererationByStatus|List | Operation|status*:String*|
 |...OpererationByCreationTimeBetween|List | Operation|from*:Date*, to*:Date*|
-|findAlarmById|Alarm|id*:String*
- id*:GId*|
+|findAlarmById|Alarm|id*:String*<br/>id*:GId*|
 |...AlarmBySource|List | Alarm|sourceId*:String*|
 |...AlarmBySourceAndStatus|List | Alarm|sourceId*:String*, status*:String*|
 |...AlarmBySourceAnd  StatusAndTimeBetween|List | Alarm|sourceId*:String*, status*:String*, from*:Date*, to*:Date*|

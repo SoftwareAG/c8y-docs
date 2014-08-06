@@ -28,7 +28,7 @@ How can Cumulocity interpret comma-separated values into meaningful REST request
 
 Templates are associated with software or firmware versions of a device. Usually, a particular implementation of a device or application can only issue a particular set of well-defined types of requests. All devices with the same implementation share the same set of request types. Hence, the templates can be defined at implementation time. To make the templates available to Cumulocity, the first device with a particular implementation will send its templates and makes them available for usage by all similar devices.
 
-This process is illustrated below. Assume a device with an implementation version "Device_1.0" starts communicating through SmartREST. After retrieving its credentials, the device will ask the SmartREST proxy if its implementation is already known. If Cumulocity does not find the implementation, the device will send its templates in a single static text request to Cumulocity. Once this procedure has been carried out, all devices with that implementation can start communicating their data in CSV format.
+This process is illustrated below. Assume a device with an implementation version "Device_1.0" starts communicating through SmartREST. After retrieving its credentials, the device will ask the SmartREST proxy if its template is already known. If the template is not found on the server, the device will send its template in a single static text request to Cumulocity. Once this procedure has been carried out, all simmiar devices using that template can start communicating using SmartREST without re-sending the template to the server.
 
 ![SmartREST templates](/images/guides/rest/templates.png)
 

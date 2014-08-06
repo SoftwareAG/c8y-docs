@@ -57,17 +57,32 @@ Finally, you need to create a MIDlet to contain your agent code. A MIDlet is rou
 
 * Right-click your project and select "New", "Java ME MIDlet".
 * Specify a package name and a class name for your MIDlet and click "Finish".
-* Paste the code below into the generated "startApp" method. Replace "&lt;&lt;yourUrl&gt;&gt;", "&lt;&lt;yourUser&gt;&gt;" and "&lt;&lt;yourPassword&gt;&gt;" with your URL (e.g., "https://myurl.cumulocity.com"), username and password. Right-click in the editor and select "Source", "Organize Imports". For an explanation of what the code does, see the [basic "Hello, world!"](/guides/java/hello-world-basic).
+* Paste the code below into the generated "startApp" method. Replace "&lt;&lt;yourUrl&gt;&gt;", "&lt;&lt;yourUser&gt;&gt;" and "&lt;&lt;yourPassword&gt;&gt;" with your URL (e.g., "https://myurl.cumulocity.com"), username and password. "&lt;&lt;tenantId&gt;&gt;" is the first part of your URL (e.g., "myurl" in this case). "&lt;&lt;applicationKey&gt;&gt;" is the key for your application, if you develop an application. If you interface a device, use **null**. Right-click in the editor and select "Source", "Organize Imports". For an explanation of what the code does, see the [basic "Hello, world!"](/guides/java/hello-world-basic).
 
 
-	Platform platform = new PlatformImpl("<<yourURL>>", new CumulocityCredentials("<<yourUser>>", "<<yourPassword>>"));
+	Platform platform = new PlatformImpl("<<yourURL>>", "<<tenant ID>>", "<<yourUser>>", "<<yourPassword>>", "<<applicationKey>>"));
 	InventoryApi inventory = platform.getInventoryApi();
 	ManagedObjectRepresentation mo = new ManagedObjectRepresentation();
 	mo.setName("Hello, world!");
-	mo.set(new IsDevice());
+	//mo.set(new IsDevice());
 	mo = inventory.create(mo);
 	System.out.println("URL: " + mo.getSelf());
 
 ### Run the agent
 
 Now you can run your agent by right-clicking the project and selecting "Run as", "Emulated Java ME MIDlet". This will launch the emulator, deploy your code to the emulator and run it.
+
+## Improve the agent
+
+Now you can improve your agent. The JavaME client library provides mostly the same API as the JavaSE client library. However, since JavaME cannot support automated serialization and deserialization of Java classes, you need to implement this part for your own, custom fragments. Check the  [Cinterion Hello Agent](https://bitbucket.org/m2m/cumulocity-examples) for an example. The general procedure is:
+
+* Create a class for the properties of your new fragment. 
+* Create a JSON converter implementing com.cumulocity.me.rest.convert.JsonConverter.
+* Create a validator implementing com.cumulocity.me.rest.validate.RepresentationValidator.
+* Register the converter and validator with the platform.
+
+As an example for a custom fragment, examine the [SignalStrengthSensor class](https://bitbucket.org/m2m/cumulocity-examples/src/77cc3ca7f1ab529173a1add55352f586e9a0eeb9/cinterion-hello-agent/src/com/cumulocity/me/example/cinterion/SignalStrengthSensor.java?at=default). The convertor and validator are combined into [SignalStrengthSensorConverter class](https://bitbucket.org/m2m/cumulocity-examples/src/77cc3ca7f1ab529173a1add55352f586e9a0eeb9/cinterion-hello-agent/src/com/cumulocity/me/example/cinterion/SignalStrengthSensorConverter.java?at=default). Finally, the converter and validator are registered in the [HelloWorld class](https://bitbucket.org/m2m/cumulocity-examples/src/77cc3ca7f1ab529173a1add55352f586e9a0eeb9/cinterion-hello-agent/src/com/cumulocity/me/example/cinterion/HelloWorld.java?at=default):
+
+    SignalStrengthSensorConverter converter = new SignalStrengthSensorConverter();
+    platform.getConversionService().register(converter);
+    platform.getValidationService().register(converter);

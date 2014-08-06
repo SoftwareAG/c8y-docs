@@ -392,12 +392,12 @@ Example Response :
 
 Options are category-key-value tuples, storing tenant configuration. Some categories of options allow creation of new one, other are limited to predefined set of keys.
 
-### Available Options
+### Default Options
 
 |Category|Key|Default value|Only predefined|Description|
 |:-------|:--|:------------|:--------------|:----------|
 |access.control|allow.origin|\*|yes|Comma separated list of domains allowed for execution of CORS. Wildcards are allowed (e.g. \*.cumuclocity.com)|
-|alarm.type.mapping|\<\<alarm type\>\>||no|\<\<alarm severity\>\>|\<\<alarm text\>\> - severity and text overwriting original alarm severity and text for given alarm type; if severity or text is empty - value will not be overwritten. If severity is "NONE" - alarm will be suppressed.|
+|alarm.type.mapping|<<alarmType>>||no|Overrides severity and alarm text for the alarm with type "<<alarmType>>". Severity and text are specified as "<<alarmSeverity>>\|<<alarmText>>". If either part of the text is empty, the value will not be overridden. If severity is "NONE", the alarm will be suppressed.|
 
 ### Option [application/vnd.com.nsn.cumulocity.option+json]
 

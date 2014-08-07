@@ -91,6 +91,18 @@ The following conventions for actions exists:
    * Inside lists or tables: hover actions
    * Behind COGS Symbol: Use drop down menu
 
+## Device registration
+
+To register new devices, go to the "Device Registration" menu of the Cumulocity application. Carry out the following steps:
+
+* Enter the ID of the device that you would like to connect and click the "Register Device" button. For mobile devices, usually the IMEI of the device is used as ID. Please consult the device documentation for more information on the ID that is actually used for devices of the particular type.
+* The registration is displayed in the list with the status "WAITING FOR CONNECTION". Switch the device on.
+* When device connects, its status is updated to "PENDING ACCEPTANCE".
+* Accept the device by clicking the "Accept" button. The status changes to "ACCEPTED". 
+* Now the device can retrieve credentials to access your Cumulocity tenant. When the device receives the credentials, it disappears from the list. 
+
+Usually, the device will then start discovery and appear in the device list. Note that the credentials of the device are shown in the "Device users" menu of the Cumulocity administration application.
+
 ## Asset Management
 
 ### Overview

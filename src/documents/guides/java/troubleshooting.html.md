@@ -1,7 +1,7 @@
 ---
 order: 50
 layout: default
-title: Troubleshooting the SDK
+title: Troubleshooting
 ---
 ## Overview
 

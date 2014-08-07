@@ -5,7 +5,7 @@ layout: default
 
 ## Overview 
 
-Plugins allow you to add new functionality to Cumulocity's user interface. In the following, we describe step-by-step how to create sample plugins. For the basic concepts of Cumulocity applications, please see [Developing applications](/guides/concepts-guide/developing-applications). For reference information, please see the [Plugins reference](/guides/plugins/reference).
+Plugins allow you to add new functionality to Cumulocity's user interface. In the following, we describe step-by-step how to create sample plugins. For the basic concepts of Cumulocity applications, please see [Developing applications](/guides/concepts/applications). For reference information, please see the [Plugins reference](/guides/web/reference).
 
 ## Prerequisites
 

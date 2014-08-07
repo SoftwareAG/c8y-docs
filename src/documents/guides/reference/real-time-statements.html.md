@@ -235,9 +235,9 @@ Example Response:
 
     HTTP/1.1  204 NO CONTENT
 
-## Notifications
+## <a id="notifications"></a>Notifications
 
-The real-time notifications allow for receiving almost immediately outputs from statements. They are available on URL *"/cep/notifications"*, the usage is described in separate [document](index.php?option=com_k2&view=item&id=954).
+The real-time notifications allow for receiving almost immediately outputs from statements. They are available on URL *"/cep/notifications"*, the usage is described in separate [document](/guides/reference/cumulocity-event-language).
   
 Required role: ROLE\_NOTIFICATION\_READ
 

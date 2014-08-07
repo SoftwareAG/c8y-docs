@@ -87,7 +87,7 @@ For the Foca FTD232 programming adapter you will need to install drivers. Please
 
 One of the example sketches - the devicecontrol sketch, allows you to send a command to Arduino, for example to switch on/off an attached lamp or other device. This DeviceControl sketch does not work with Arduino IDE, which includes avr-gcc 4.3.2, because of a compiler bug. It works with avr-gcc 4.7.2.
 
-In order to compile and run the DeviceControl sketch, you will need to manually update the compiler included in our Arduino IDE. You can find instructions on how to do the update [here](index.php?option=com_k2&view=item&id=955&Itemid=181).
+In order to compile and run the DeviceControl sketch, you will need to manually update the compiler included in our Arduino IDE. You can find instructions on how to do the update below.
 
 ## Setting up the hardware
 

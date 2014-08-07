@@ -17,9 +17,9 @@ This guide explains how to use Cumulocity's REST interfaces to
 
 It first shows you how to use the REST interfaces in general, then discusses [device integration](/guides/rest/device-integration) and finally it describes [application development](/guides/rest/application-development). The description is closely linked to the reference guide, which describes each interface in detail. Relevant chapters in the reference guide are in particular
 
--   [REST implementation](/guides/reference-guide/rest-implementation) is the reference for all general concepts.
--   [Device management library](/guides/reference-guide/device-management) specifies the data model for device management.
--   [Sensor library](/guides/reference-guide/sensor-library) specifies the data model for sensors and controls.
+-   [REST implementation](/guides/reference/rest-implementation) is the reference for all general concepts.
+-   [Device management library](/guides/reference/device-management) specifies the data model for device management.
+-   [Sensor library](/guides/reference/sensor-library) specifies the data model for sensors and controls.
 
 If you develop using Java ME/SE, JavaScript or C/C++, please check the relevant developer's guides for even more convenient access to Cumulocity's functionality. Also, if you use any of the supported development boards, see the corresponding "Devices" section for more information.
 
@@ -54,7 +54,7 @@ From this point, you can navigate further. For example, display the items in the
 
     $ curl -u <username>/<password> https://<yourURL>.cumulocity.com/inventory/managedObjects
 
-You will notice that just a subset of the items in the inventory is actually returned, a so-called "page". More information on page handling can be found under [Query result paging](/guides/reference-guide/rest-implementation#paging).
+You will notice that just a subset of the items in the inventory is actually returned, a so-called "page". More information on page handling can be found under [Query result paging](/guides/reference/rest-implementation#paging).
 
 ## Using Postman
 

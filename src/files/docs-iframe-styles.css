@@ -6389,7 +6389,7 @@ body {
   /* Prevent scroll on narrow devices */
 }
 footer {
-  padding: 30px 0;
+  margin: 30px 0;
 }
 /*
  * Off Canvas

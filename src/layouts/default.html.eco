@@ -32,7 +32,7 @@
   </script>
 
 
-    <link rel="stylesheet" href="http://yandex.st/highlightjs/8.0/styles/default.min.css">
+    <link rel="stylesheet" href="http://yandex.st/highlightjs/8.0/styles/solarized_dark.min.css">
     <%- @getBlock("styles").toHTML() %>
 </head>
 <body>

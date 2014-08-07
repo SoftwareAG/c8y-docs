@@ -7,7 +7,7 @@ layout: default
 
 Cumulocity allows developers and power users to run real-time IoT business logic inside Cumulocity based on a high-level real-time processing language. This section introduces the basic concepts of real-time processing and shows how you can develop your own business logic to be run in Cumulocity.
 
-More information on the interfaces for real-time processing can be found in the Reference Guide, Sections ["Cumulocity Event Language"](/guides/reference-guide/cumulocity-event-language) and ["Real-time Statements"](/guides/reference-guide/real-time-statements).
+More information on the interfaces for real-time processing can be found in the Reference Guide, Sections ["Cumulocity Event Language"](/guides/reference/cumulocity-event-language) and ["Real-time Statements"](/guides/reference/real-time-statements).
 
 ## What is real-time processing in Cumulocity?
 
@@ -41,7 +41,7 @@ As an example, the following statement continuously retrieves all new temperatur
     from MeasurementCreated e
     where getNumber(e, "c8y_TemperatureMeasurement.T.value") > 100
 
-Here, *MeasurementCreated* is a stream containing an event for each measurement that is created in the system. Selecting a subset from these events is done using *where*, similar to SQL. *getNumber()* is a function to read a numeric value from an event, given the event and the property to read. In the example, the event is e, the MeasuremenCreated event and the property is "c8y\_TemperatureMeasurement.T.value", the value in degrees Celsius of a temperature sensor (see the [sensor library](/guides/reference-guide/sensor-library)).
+Here, *MeasurementCreated* is a stream containing an event for each measurement that is created in the system. Selecting a subset from these events is done using *where*, similar to SQL. *getNumber()* is a function to read a numeric value from an event, given the event and the property to read. In the example, the event is e, the MeasuremenCreated event and the property is "c8y\_TemperatureMeasurement.T.value", the value in degrees Celsius of a temperature sensor (see the [sensor library](/guides/reference/sensor-library)).
 
 ## How can I create derived data from CEL?
 
@@ -58,7 +58,7 @@ There are special streams provided by the system which can be used to executing 
     from MeasurementCreated e
     where getNumber(e, "c8y_TemperatureMeasurement.T.value") > 100
 
-Technically, this statement produces a new "AlarmCreated" event each time a temperature sensor reads more than 100 degrees Celsius and puts it into the "CreateAlarm" output stream. The property names in the select clause have to match the properties of "AlarmCreated" (see the [Cumulocity Event Language reference](/guides/reference-guide/cumulocity-event-language)).
+Technically, this statement produces a new "AlarmCreated" event each time a temperature sensor reads more than 100 degrees Celsius and puts it into the "CreateAlarm" output stream. The property names in the select clause have to match the properties of "AlarmCreated" (see the [Cumulocity Event Language reference](/guides/reference/cumulocity-event-language)).
 
 ## How can I control devices from CEL?
 

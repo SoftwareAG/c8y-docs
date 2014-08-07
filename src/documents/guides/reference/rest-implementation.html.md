@@ -48,7 +48,7 @@ If you use an HTTP client that can only perform GET and POST methods in HTTP, yo
 	POST ...
 	X-HTTP-METHOD: PUT
 
-### Processing mode
+### <a id="processingmode"></a> Processing mode
 
 Every update request (PUT, POST, DELETE) executes with a so-called *processing mode*. The default processing mode is *PERSISTENT*, which means that all updates will be send both to the Cumulocity database and to real-time processing. The alternative processing mode *TRANSIENT* will only send updates to real-time processing. As part of real-time processing, the user can decide case by case through Cumulocity Event Language scripts whether updates should be stored to the database or not.
 
@@ -59,7 +59,7 @@ To explicitly control the processing mode of an update request, an "X-Cumulocity
 ### Authorization
 
 All requests issued to Cumulocity are subject to authorization. To determine the required permissions, see the
-"Required role" entries in the reference documentation for the individual requests. To learn more about the different permissions and the concept of ownership in Cumulocity, see "Managing permissions and ownership" in the Section "[Security aspects](/guides/concepts-guide/securing-m2m-applications)".
+"Required role" entries in the reference documentation for the individual requests. To learn more about the different permissions and the concept of ownership in Cumulocity, see "Managing permissions and ownership" in the Section "[Security aspects](/guides/concepts/security)".
 
 ### Media types
 
@@ -144,7 +144,7 @@ In general, Cumulocity REST resources are modelled according to the following pa
 -   Collection resources aggregate member resources and allow creating new member resources in the collection. For example, through the "events" collection resource, new events can be created.
 -   Finally, individual resources can be edited.
 
-### Query result paging
+### <a name="paging"></a>Query result paging
 
 Collection resources support paging of data to avoid passing huge data volumes in one block from client to server. GET requests to collections accept two query parameters: "pageSize" indicates how many entries of the collection should be returned. By default, 5 entries are returned. The upper limit for one page is currently 2,000 documents, any larger requested page size is trimmed to the upper limit. "currentPage" defines the slice of data to be returned, starting with "1". By default, the first page is returned.
 
@@ -175,14 +175,14 @@ To discover the URIs to the various interfaces of Cumulocity, a "root" interface
 |Name|Type|Occurs|Description|
 |:---|:---|:-----|:----------|
 |self|URI|1|Link to this Resource|
-|inventory|InventoryAPI|1|See [inventory](/guides/reference-guide/inventory) interface.|
-|identity|IdentityAPI|1|See [identity](/guides/reference-guide/identity) interface.|
-|event|EventAPI|1|See [event](/guides/reference-guide/events) interface.|
-|measurement|MeasurementAPI|1|See [measurement](/guides/reference-guide/measurements) interface.|
-|audit|AuditAPI|1|See [auditing](/guides/reference-guide/auditing) interface.|
-|alarm|AlarmAPI|1|See [alarm](/guides/reference-guide/alarms) interface.|
-|user|UserAPI|1|See [user](/guides/reference-guide/users) interface.|
-|deviceControl|DeviceControlAPI|1|See [device control](/guides/reference-guide/device-control) interface.|
+|inventory|InventoryAPI|1|See [inventory](/guides/reference/inventory) interface.|
+|identity|IdentityAPI|1|See [identity](/guides/reference/identity) interface.|
+|event|EventAPI|1|See [event](/guides/reference/events) interface.|
+|measurement|MeasurementAPI|1|See [measurement](/guides/reference/measurements) interface.|
+|audit|AuditAPI|1|See [auditing](/guides/reference/auditing) interface.|
+|alarm|AlarmAPI|1|See [alarm](/guides/reference/alarms) interface.|
+|user|UserAPI|1|See [user](/guides/reference/users) interface.|
+|deviceControl|DeviceControlAPI|1|See [device control](/guides/reference/device-control) interface.|
 
 ### GET the Platform resource
 

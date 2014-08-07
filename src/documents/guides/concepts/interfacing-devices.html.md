@@ -11,9 +11,9 @@ To interface such systems with Cumulocity, a driver software called *agent* is r
 
 Related topics can be found in the following sections:
 
--   [Cumulocity's domain model](/guides/concepts-guide/domain-model), for understanding the data structures exchanged between agents and the Cumulocity core.
+-   [Cumulocity's domain model](/guides/concepts/domain-model), for understanding the data structures exchanged between agents and the Cumulocity core.
 -   [Device integration](/guides/rest/device-integration), for understanding in detail how to develop agent software.
--   [Reference guide](/guides/reference-guide/rest-implementation), for a detailed specification of the interfaces between agents and the Cumulocity core.
+-   [Reference guide](/guides/reference/rest-implementation), for a detailed specification of the interfaces between agents and the Cumulocity core.
 
 ## What is an agent?
 
@@ -64,7 +64,7 @@ After starting, the agent will synchronize the inventory with the sensor sub-net
 
 ### Synchronizing inventory data
 
-To understand inventory synchronization, let's revisit the communication hierarchy described in ["Cumulocity's domain model"](/guides/concepts-guide/domain-model). In the inventory, agents are located at the roots of the communication hierarchy. Below each agent, the topology of the sub-network that the agent manages is reflected. This topology exists in the real network as well as in snapshot form in the inventory. It may change in the real network, and these changes need to be reflected in the inventory.
+To understand inventory synchronization, let's revisit the communication hierarchy described in ["Cumulocity's domain model"](/guides/concepts/domain-model). In the inventory, agents are located at the roots of the communication hierarchy. Below each agent, the topology of the sub-network that the agent manages is reflected. This topology exists in the real network as well as in snapshot form in the inventory. It may change in the real network, and these changes need to be reflected in the inventory.
 
 ![Communication hierarchy](/images/guides/concepts-guide/commshierarchy.png)
 
@@ -85,7 +85,7 @@ Note that a device agent is assuming data ownership on the device topology and a
 
 ### Receiving data and commands from applications
 
-Now that the topology is established in the inventory, the devices are visible and operable from IoT applications. As described in the device control section of ["Cumulocity's domain model"](/guides/concepts-guide/domain-model), IoT applications can send operations to devices, which are queued in the core. The agent has to query the core for operations targeted to its devices.
+Now that the topology is established in the inventory, the devices are visible and operable from IoT applications. As described in the device control section of ["Cumulocity's domain model"](/guides/concepts/domain-model), IoT applications can send operations to devices, which are queued in the core. The agent has to query the core for operations targeted to its devices.
 
 If an operation was sent to an agent's device, the agent will translate the operation into the device-specific representation. For example, a Multispeak agent would translate an operation to set the state of a switch to a SOAP "initiateConnectDisconnect" request for an electricity meter. The translated operation is then sent to the device.
 
@@ -95,7 +95,7 @@ Finally, the agent acknowledges the execution of the operation. It may also need
 
 Besides remote control of devices, the other main responsibility of agents is to transmit data from sensors. This data can be of various types, as outlined in the domain model:
 
--   Measurements are produced by reading sensor values. In some cases, this data is read in static intervals and sent to the platform (e.g., temperature sensors or electrical meters). In some cases, the data is read on demand or in infrequent intervals (e.g., health devices such as weight scales). Whatever protocol the device supports, the agent is responsible for converting it into a "push" protocol by uploading data to Cumulocity. The Java agent library simplifies regular polling of sensors through a scheduler (see the [developer's guide](/guides/developers-guide/installing-the-sdk)).
+-   Measurements are produced by reading sensor values. In some cases, this data is read in static intervals and sent to the platform (e.g., temperature sensors or electrical meters). In some cases, the data is read on demand or in infrequent intervals (e.g., health devices such as weight scales). Whatever protocol the device supports, the agent is responsible for converting it into a "push" protocol by uploading data to Cumulocity. The Java agent library simplifies regular polling of sensors through a scheduler (see the [Java agent](/guides/java/agents)).
 -   Events that need to be processed in near-real-time by IoT applications, e.g., notifications from a motion detector or transactions from a vending machine.
 -   Alarms are events that require human intervention, e.g., tamper events sent by an electrical meter.
 -   Audit logs are events that are recorded for risk management purposes, e.g., logon failures.

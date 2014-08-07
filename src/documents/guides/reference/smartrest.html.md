@@ -4,7 +4,7 @@ layout: default
 title: SmartREST
 ---
 
-Topics:
+In progress -- topics:
 
 * Reference to SmartREST description
 * Specification of general request/response format, structure of X-Id (i.e., include software identifier and version)

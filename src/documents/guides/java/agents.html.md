@@ -19,7 +19,7 @@ The Java agent supports Unix-based systems and contains the following functional
 * Software management: Upgrade the software on the device and restart with the new software.
 * Modem support: Provides basic modem information and signal statistics  (IMEI, ICCID, cell ID, signal strength, BER; depending on modem type).
 * Extensibility through driver concept.
-* Ready-made drivers for [Kontron M2M development kit](/guides/devices/smart-agent-for-kontron-m2m.html), [Raspberry Pi](/guides/devices/raspberry-pi.html), [PiFace Digital](/guides/devices/raspberry-pi.html) and [Tinkerforge](/guides/devices/tinkerforge).
+* Ready-made drivers for [Kontron M2M development kit](/guides/devices/kontron), [Raspberry Pi](/guides/devices/raspberry-pi), [PiFace Digital](/guides/devices/raspberry-pi) and [Tinkerforge](/guides/devices/tinkerforge).
 
 ## Prerequisites
 
@@ -34,8 +34,8 @@ To install Java, please visit http://java.com. There is also a basic Windows dri
 
 Binary packages are available for the Raspberry Pi, the Kontron M2MSSDK and for MacOS. 
 
-* For the Raspberry Pi and similar Embedded Linux devices, please [visit the Raspberry Pi page](/guides/devices/raspberry-pi.html).
-* For the Kontron M2MSSDK, please [visit the Kontron M2MSSDK page](/guides/devices/smart-agent-for-kontron-m2m.html).
+* For the Raspberry Pi and similar Embedded Linux devices, please [visit the Raspberry Pi page](/guides/devices/raspberry-pi).
+* For the Kontron M2MSSDK, please [visit the Kontron M2MSSDK page](/guides/devices/kontron).
 * On a Mac, download the package from http://resources.cumulocity.com/examples/cumulocity-mac-agent-latest.tar.gz and unpack it into a new folder.
 
 The packages contain a script "c8y-agent.sh" that can be run at system startup. The script redirects output of the agent to the system log. In case of startup issue, examine the log.
@@ -45,7 +45,7 @@ The packages contain a script "c8y-agent.sh" that can be run at system startup. 
 
 ## Building
 
-Source code is available at https://bitbucket.org/m2m/cumulocity-examples in the folder linux-agent. Instructions for building the agent using Maven are in the [README file](https://bitbucket.org/m2m/cumulocity-examples/src/c1ab2abac58e683697061d2f8740c54da055061b/linux-agent/README.md?at=default).
+Source code is available at https://bitbucket.org/m2m/cumulocity-examples in the folder linux-agent. Instructions for building the agent using Maven are in the [README file](https://bitbucket.org/m2m/cumulocity-examples/src/77cc3ca7f1ab529173a1add55352f586e9a0eeb9/linux-agent?at=default).
 
 ## Running
 
@@ -53,7 +53,7 @@ Source code is available at https://bitbucket.org/m2m/cumulocity-examples in the
 
 When the agent is successfully started, open Cumulocity in a web browser and go to the "Registration" page. Enter the device ID of the device that the agent is running on. The device ID depends on the type of device.
 
-* On a Raspberry Pi, it's the serial number of the Raspberry Pi (see the [instructions](/guides/devices/raspberry-pi.html)).
+* On a Raspberry Pi, it's the serial number of the Raspberry Pi (see the [instructions](/guides/devices/raspberry-pi)).
 * On a Mac, it's the serial number of the Mac. Click on the Apple logo in the menu, "About This Mac", "More Info" to display the serial number.
 * On other Linux devices or as a fallback, the MAC address of the first network interface is used. Use "ifconfig" to print the network interfaces and check for the "HWaddr" entry. Often, the MAC address is also printed on the board.
 
@@ -92,5 +92,5 @@ The [BitBucket repository](https://bitbucket.org/m2m/cumulocity-examples) contai
 
 ## Server-side agents
 
-The [BitBucket repository](https://bitbucket.org/m2m/cumulocity-examples) also contains a complete example of a server-side agent for closed devices in the folder "tracker-agent". This example works with tracking devices from Telic and Queclink, see the Section "[Devices](/guides/devices)". It demonstrates solutions to various challenges when developing server-side functionality for mobile devices.
+The [BitBucket repository](https://bitbucket.org/m2m/cumulocity-examples) also contains a complete example of a server-side agent for closed devices in the folder "tracker-agent". This example works with tracking devices from Telic and Queclink, see the Section "Devices". It demonstrates solutions to various challenges when developing server-side functionality for mobile devices.
 

@@ -88,7 +88,7 @@ Using this approach, modeling devices can be split into modeling the elementary 
 
 The approach also enables developing generic application components. For example, as soon as a managed object has a position fragment ("c8y\_Position"), it can be placed on a map. As soon as it has a relay, it can be switched on and off using the respective device control command (see below).
 
-Fragments use a naming convention to avoid conflicts between different parties contributing fragment information, similar to what is used in Java and other programming languages. In the above example, "c8y_Position" is a combination of "c8y" (a shorthand for "Cumulocity"), an underscore and "Position". A set of standard fragments are defined by the platform in the [sensor library](/guides/reference-guide/sensor-library) and in the [device management library](/guides/reference-guide/device-management).
+Fragments use a naming convention to avoid conflicts between different parties contributing fragment information, similar to what is used in Java and other programming languages. In the above example, "c8y_Position" is a combination of "c8y" (a shorthand for "Cumulocity"), an underscore and "Position". A set of standard fragments are defined by the platform in the [sensor library](/guides/reference/sensor-library) and in the [device management library](/guides/reference/device-management).
 
 Note that Cumulocity follows a document-oriented approach for storing data. All capabilities of an object can be inferred from the document with the object data itself. There is no explicit separate metadata model that needs to be configured and managed. However, applications can, of course, add own metadata and store that as well in the inventory. For example, a vending application can maintain metadata about slot configurations of the diverse vending machine types in the inventory.
 
@@ -104,7 +104,7 @@ To shield applications from this diversity of identifiers, Cumulocity includes a
 
 To illustrate this, assume that a smart meter is faulty and a new meter with another meter number and asset tag needs to be installed in a household. The business process for replacing faulty hardware can now just update the asset tag and meter ID associated with a customer in the identity service. Afterwards both previously collected and new meter readings are related to the correct customer.
 
-More information can be found in the reference guide for [identity](/guides/reference-guide/identity).
+More information can be found in the reference guide for [identity](/guides/reference/identity).
 
 ### Object hierarchies
 
@@ -116,7 +116,7 @@ The asset hierarchy structures the assets that are being remotely supervised and
 
 ![Example asset hierarchy](/images/guides/concepts-guide/assethierarchy.png)
 
-The two hierarchies above are explicitly supported by the [inventory interface](/guides/reference-guide/inventory) and [client libraries](/guides/reference-guide/client-libraries), that provide methods for adding and removing children in the hierarchies. The hierarchies themselves are constructed by client applications. The communication hierarchy is constructed by agents, the asset hierarchy is added by applications on top.
+The two hierarchies above are explicitly supported by the [inventory interface](/guides/reference/inventory) and client libraries, that provide methods for adding and removing children in the hierarchies. The hierarchies themselves are constructed by client applications. The communication hierarchy is constructed by agents, the asset hierarchy is added by applications on top.
 
 Note that the object hierarchies are not required to form a tree, i.e., the same asset can be a child of multiple parent assets. This enables applications to create additional, possibly user-defined groups of objects such as working sets or virtual networks. Applications can, in addition, use fragments to define arbitrary alternative hierarchies.
 
@@ -130,7 +130,7 @@ Addressing the device lifecycle properly is important when designing agents. E.g
 
 ### Working with the inventory
 
-More examples for working with the inventory can be found in the [inventory reference](/guides/reference-guide/inventory).
+More examples for working with the inventory can be found in the [inventory reference](/guides/reference/inventory).
 
 ## Events
 
@@ -212,7 +212,7 @@ This is an example of an alarm that has been cleared:
       ...
     }
 
-More examples can be found in the reference guides for [events](/guides/reference-guide/events), [alarms](/guides/reference-guide/alarms) and [auditing](/guides/reference-guide/auditing).
+More examples can be found in the reference guides for [events](/guides/reference/events), [alarms](/guides/reference/alarms) and [auditing](/guides/reference/auditing).
 
 ## Measurements
 
@@ -241,7 +241,7 @@ Measurements represent regularly acquired readings and statistics from sensors. 
 
 Similar to the inventory model, fragments are used to identify capabilities of particular devices. In the above example, a three-phase electricity meter sends readings for the different electrical phases. Each such fragment maps the names of the individual readings ("A+", "A-", ... in this example) to the actual numeric value and the unit of measurement.
 
-Again, measurements can be extended to hold arbitrary additional information that applications might require. More information can be found in the reference guide for [measurements](guides/reference-guide/measurements).
+Again, measurements can be extended to hold arbitrary additional information that applications might require. More information can be found in the reference guide for [measurements](guides/reference/measurements).
 
 ## Remote control of devices
 
@@ -294,11 +294,11 @@ Operations should be designed to be *idempotent* in as far as possible. Idempote
 
 Idempotence is helpful in error situations. If an operation was executed on a device and the result was an error, the operation can simply be retried. Hence, design operations to be idempotent whenever there is the option. This is, however, not always possible: If a camera is requested to take a picture and this fails for some reason, retrying this often results in a different result.
 
-More information can be found in the reference guide for [device control](/guides/reference-guide/device-control).
+More information can be found in the reference guide for [device control](/guides/reference/device-control).
 
 ## The sensor library
 
-Based on the above groundwork for receiving data from devices and controlling them, Cumulocity includes a [sensor library](/guides/reference-guide/sensor-library "Sensor library") to model specific sensing and controlling capabilities across device products. A single device can have many sensor and control capabilities. The sensor library enables applications to answer questions such as:
+Based on the above groundwork for receiving data from devices and controlling them, Cumulocity includes a [sensor library](/guides/reference/sensor-library "Sensor library") to model specific sensing and controlling capabilities across device products. A single device can have many sensor and control capabilities. The sensor library enables applications to answer questions such as:
 
 -   What devices are installed that measure energy?
 -   What are the energy readings?
@@ -325,7 +325,7 @@ To a JavaScript developer, the same check would look like this:
 
     var state = mo.c8y_Relay.relayState
 
-More detailed information can be found in the reference guide under "[sensor library](/guides/reference-guide/sensor-library "Sensor library")" and "[client libraries](/guides/reference-guide/client-libraries)".
+More detailed information can be found in the reference guide under "[Sensor library](/guides/reference/sensor-library "Sensor library")".
 
 The Cumulocity team welcomes contributions to the sensor library. If you integrate any devices, controls, sensors or other objects and find that your model fragments have a more general applicability beyond your use case or your device, we encourage you to contribute them for inclusion into Cumulocity by contacting our support. This enables others to implement their device integrations so that they support your application, resp. to implement their applications so that they support your devices.
 

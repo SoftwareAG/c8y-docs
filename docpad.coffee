@@ -11,7 +11,7 @@ docpadConfig = {
 			{ title: 'REST Developer\'s Guide', folder: 'guides/rest', icon: 'glyphicon-cog', description: '' },
 			{ title: 'Java Developer\'s Guide', folder: 'guides/java', icon: 'glyphicon-volume-up', description: '' },
 			{ title: 'Web Developer\'s Guide', folder: 'guides/web', icon: 'glyphicon-fast-forward', description: '' },
-			{ title: 'Reference Guide', folder: 'guides/reference-guide' ,icon : 'glyphicon-book', description: 'The reference guide contains the detailed technical specifications of the programming interfaces of Cumulocity as reference for software developers.'}
+			{ title: 'Reference Guide', folder: 'guides/reference' ,icon : 'glyphicon-book', description: 'The reference guide contains the detailed technical specifications of the programming interfaces of Cumulocity as reference for software developers.'}
 		]
   }
 	plugins:

@@ -10,7 +10,7 @@ Cumulocity gives you very fast visibility and control over your remote assets, b
 
 * Certified hardware kits and software libraries that you can use to bring your remote assets into the cloud.
 * Device management, data visualization and remote control functionality through the web.
-* Rapid customization of the above through [Cumulocity Event Language](/guides/concepts-guide/real-time-processing) rules and [Cumulocity applications](/guides/concepts-guide/developing-applications).
+* Rapid customization of the above through [Cumulocity Event Language](/guides/concepts/realtime) rules and [Cumulocity applications](/guides/concepts/applications).
 * APIs for extending the existing functionality or interfacing Cumulocity with your other IT services such as ERP or CRM systems. Cumulocity can also host your HTML5 applications.
 
 All this is provided through a cloud-based subscription service, which makes creating Internet of Things (IoT) solutions with Cumulocity fundamentally different from bespoke development and RAD (rapid application development). You can start immediately with a large amount of existing functionality, and you can start for free. You do not need to worry about IT infrastructure (such as hosting, networking, security, storage and backup) and IT management (for example, making sure that all software is available for your users). 
@@ -21,7 +21,7 @@ Cumulocity works with any network architecture, but is specifically designed to 
 
 ## Hardware kits and software libraries
 
-Cumulocity directly supports various devices with ready-made software libraries and examples. These can be specialized devices for a particular use case, such as locations trackers, OBUs and vending telemetry devices. They can also be developer kits for building generic devices, such as [Arduino](/guides/devices/startwitharduino), [Raspberry Pi](/guides/devices/raspberry-pi), [Cinterion boards](/guides/devices/developing-with-the-smart-agent-for-cinterion), [Tinkerforge sensors](/guides/devices/tinkerforge) and more. These developer kits are described in more detail in the corresponding chapters of the "Devices" section in this documentation.
+Cumulocity directly supports various devices with ready-made software libraries and examples. These can be specialized devices for a particular use case, such as locations trackers, OBUs and vending telemetry devices. They can also be developer kits for building generic devices, such as [Arduino](/guides/devices/arduino), [Raspberry Pi](/guides/devices/raspberry-pi), [Cinterion boards](/guides/devices/cinterion), [Tinkerforge sensors](/guides/devices/tinkerforge) and more. These developer kits are described in more detail in the corresponding chapters of the "Devices" section in this documentation.
 
 Outside of the specific kits, many other devices can run the software with no or little modification. That is why the software is provided in source code form for you to extend it to any other device that you may have. There are also generic client libraries for Java, JavaME, C/C++ and Lua for your own implementation. If your device uses a completely proprietary runtime environment, you can always use Cumulocity's REST resp. HTTP interfaces. These will work on practically any Internet-connected device today, down to the smallest systems.
 
@@ -46,7 +46,7 @@ Cumulocity provides extensive device management for fully certified devices. Thi
 * Frequently used remote controls (e.g., restart button, switches).
 * Troubleshooting features such as event list and operations queue.
 
-The level of depth in device management may depend on device features. (E.g., if a device does not support remote firmware upgrade, it will also not be available through Cumulocity.) For interfacing devices not yet certified with Cumulocity, the [Device Management Library](/guides/reference-guide/device-management) and the [REST Developer's Guide](/guides/rest/device-integration) is publicly available.
+The level of depth in device management may depend on device features. (E.g., if a device does not support remote firmware upgrade, it will also not be available through Cumulocity.) For interfacing devices not yet certified with Cumulocity, the [Device Management Library](/guides/reference/device-management) and the [REST Developer's Guide](/guides/rest/device-integration) is publicly available.
 
 ![Device Management](/images/guides/concepts-guide/devicemanagement.png)
 
@@ -58,7 +58,7 @@ The user interface automatically adapts itself to the devices you connect -- no 
 
 It also adapts itself to the web browser that you use. For example, if you use a mobile phone or tablet with limited screen size, it will change user interface controls to use less screen estate.
 
-Through the [Sensor Library](/guides/reference-guide/sensor-library), common sensor and control types are correctly rendered regardless of the device that produces the sensor data.
+Through the [Sensor Library](/guides/reference/sensor-library), common sensor and control types are correctly rendered regardless of the device that produces the sensor data.
 
 ![Dashboard](/images/guides/concepts-guide/dashboard.png)
 
@@ -67,7 +67,7 @@ Through the [Sensor Library](/guides/reference-guide/sensor-library), common sen
 The functionality described above provides already a wide range of device management, visualization and control options. But what about custom visualization, new control widgets and custom business logic? Try Cumulocity's extensive customization options:
 
 * Write alarm rules to reprioritize or suppress alarms and to define your SLA parameters.
-* Use [Cumulocity Event Language](/guides/concepts-guide/real-time-processing) to implement real-time business rules. For example, get an email when critical events happen, or trigger automated actions on devices in that case.
+* Use [Cumulocity Event Language](/guides/concepts/realtime) to implement real-time business rules. For example, get an email when critical events happen, or trigger automated actions on devices in that case.
 * Set up a graphical dashboard with your most important KPIs.
 * Subscribe to plugins that contribute new functionality to the Cumulocity application.
 
@@ -87,7 +87,7 @@ The plugin concept of Cumulocity enables you to write new user interface functio
 
 More conceptual information can be found in the following sections of the concept's guide:
 
-* The general technical concepts behind Cumulocity are described in [Cumulocity's domain model](/guides/concepts-guide/domain-model).
-* Concepts related to interfacing devices and other IT systems with Cumulocity are described in [Interfacing devices](/guides/concepts-guide/interfacing-devices).
-* Customization concepts of Cumulocity are described in [Real-time processing in Cumulocity](/guides/concepts-guide/real-time-processing) and [Hosting applications](/guides/concepts-guide/hosting).
-* Security concepts are described in [Securing M2M applications](/guides/concepts-guide/securing-m2m-applications).
+* The general technical concepts behind Cumulocity are described in [Cumulocity's domain model](/guides/concepts/domain-model).
+* Concepts related to interfacing devices and other IT systems with Cumulocity are described in [Interfacing devices](/guides/concepts/interfacing-devices).
+* Customization concepts of Cumulocity are described in [Real-time processing in](/guides/concepts/realtime) and [Developing  applications](/guides/concepts/applications).
+* Security concepts are described in [Security aspects](/guides/concepts/security).

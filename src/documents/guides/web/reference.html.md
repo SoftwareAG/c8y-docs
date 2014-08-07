@@ -8,7 +8,7 @@ layout: default
 
 This section provides a reference for Cumulocity web applications. It first describes the folder structure of a Cumulocity web application. Then it specifies the content of the application manifest and the plugin manifest. Finally, it describes the services and extension points that the Cumulocity web application framework provides. 
 
-A detailed reference for the various JavaScript classes is on the [JSDoc site](http://resources.cumulocity.com/documentation/jssdk/latest/). Most of the content of the manifest files corresponds to the application API properties, described in the [REST reference](/guides/reference-guide/applications). Examples of manifest files can be found in the [examples](http://bitbucket.org/m2m/cumulocity-ui-examples).
+A detailed reference for the various JavaScript classes is on the [JSDoc site](http://resources.cumulocity.com/documentation/jssdk/latest/). Most of the content of the manifest files corresponds to the application API properties, described in the [REST reference](/guides/reference/applications). Examples of manifest files can be found in the [examples](http://bitbucket.org/m2m/cumulocity-ui-plugin-examples).
 
 ## Cumulocity web application folder structure
 

@@ -54,7 +54,7 @@ Edit the "pom.xml" in the "hello-agent" folder. Add a "repositories" element to 
 Add "dependency" elements for the Java client library ("java-client") and for the Cumulocity domain model ("device-capability-model") to the "dependencies" section.
 
 	<dependency>
-		<groupId>com.nsn.cumulocity.clients-java</groupId>
+		<groupId>com.nsn.cumulocity.clients-java</groupId> 
 		<artifactId>java-client</artifactId>
 		<version>5.9.0</version>
 	</dependency>
@@ -102,7 +102,7 @@ What does the code in "main" do?
 -   Line 3 creates a new managed object.
 -   Line 4 sets the display name of the new managed object.
 -   Line 5 says that this managed object should be a device (should show up in device management).
--   Line 6 creates the managed object in the inventory. This will return the managed object back with a fresh, generated ID. (See "Object identity" section in ["Cumulocity's domain model"](/guides/concepts-guide/domain-model)).
+-   Line 6 creates the managed object in the inventory. This will return the managed object back with a fresh, generated ID. (See "Object identity" section in ["Cumulocity's domain model"](/guides/concepts/domain-model)).
 -   Line 7 prints the URL to the new managed object that has just been stored in the inventory.
 
 ### Build and run the agent

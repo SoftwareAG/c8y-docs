@@ -147,24 +147,18 @@ Cumulocity supports several predefined event types that represent different oper
 
 |API|Event types|Output streams|Description|
 |:--|:----------|:-------------|:----------|
-|Inventory|ManagedObjectCreated ManagedObjectUpdated
- ManagedObjectDeleted|CreateManagedObject UpdateManagedObject
- DeleteManagedObject|This group of events represents creation, modification or deletion of a single ManagedObject.|
-|Events|EventCreated EventDeleted|CreateEvent DeleteEvent|This group of events represents creation or deletion of a single Event.|
-|Measurements|MeasurementCreated MeasurementDeleted|CreateMeasurement DeleteMeasurement|This group of events represents creation or deletion of a single Measurement.|
-|Device control|OperationCreated OperationUpdated
- OperationDeleted|CreateOperation UpdateOperation
- DeleteOperation|This group of events represents creation, modification or deletion of a single Operation.|
-|Alarms|AlarmCreated AlarmUpdated
- AlarmDeleted|CreateAlarm UpdateAlarm
- DeleteAlarm|This group of events represents creation, modification or deletion of a single Alarm.|
+|Inventory|ManagedObjectCreated<br/>ManagedObjectUpdated<br/>ManagedObjectDeleted|CreateManagedObject<br/>UpdateManagedObject<br/>DeleteManagedObject|This group of events represents creation, modification or deletion of a single ManagedObject.|
+|Events|EventCreated<br/>EventDeleted|CreateEvent<br/>DeleteEvent|This group of events represents creation or deletion of a single Event.|
+|Measurements|MeasurementCreated<br/>MeasurementDeleted|CreateMeasurement<br/>DeleteMeasurement|This group of events represents creation or deletion of a single Measurement.|
+|Device control|OperationCreated<br/>OperationUpdated<br/>OperationDeleted|CreateOperation<br/>UpdateOperation<br/>DeleteOperation|This group of events represents creation, modification or deletion of a single Operation.|
+|Alarms|AlarmCreated<br/>AlarmUpdated<br/>AlarmDeleted|CreateAlarm<br/>UpdateAlarm<br/>DeleteAlarm|This group of events represents creation, modification or deletion of a single Alarm.|
 |Emails|*(not used)*|SendEmail|This group of events represents sending of an email.|
 
 The basic structure of the event types is the same and consist of the following properties: *\_mode*, *\_type*, *attrs* and *payload*.
 
 ### The *\_mode* property
 
-The *\_mode* property contains the processing mode of the event, see "Processing Mode" in Section "[REST Implementation](index.php?option=com_k2&view=item&id=820)". Possible values are:
+The *\_mode* property contains the processing mode of the event, see "Processing Mode" in Section "[REST Implementation](/guides/reference/rest-implementation#processingmode)". Possible values are:
 
 -   *PERSISTENT*: The update represented by this event was sent to the database (before the event was sent to real-time processing).
 -   *TRANSIENT*: The update represented by this event was not sent to the database.
@@ -461,43 +455,43 @@ Here is the full list of available functions. Replace the ellipses ("...") with 
 |:----------------------------|:----------|:-------------------------|
 |findManagedObjectById|ManagedObject|id*:String*<br/>id*:GId*|
 |findFirstManagedObjectParent<br/>findOneManagedObjectParent|ManagedObject|managedObjectId*:String*<br/>managedObjectId*:GId*|
-|...ManagedObjectByFragmentType|List | ManagedObject|fragmentType*:String*|
-|...ManagedObjectByType|List | ManagedObject|type*:String*|
+|...ManagedObjectByFragmentType|List|fragmentType*:String*|
+|...ManagedObjectByType|List|type*:String*|
 |findEventById|Event|id*:String*<br/>id*:GId*|
-|...EventByFragmentType|List | Event|fragmentType*:String*|
-|...EventByFragmentTypeAndSource|List | Event|fragmentType*:String*, source*:String*|
-|...EventByFragmentTypeAnd  SourceAndTimeBetween|List | Event|fragmentType*:String*, source*:String*, from*:Date*, to*:Date*|
-|...EventByFragmentTypeAnd  SourceAndTimeBetweenAndType|List | Event|fragmentType*:String*, source*:String*, from*:Date*, to*:Date*, type*:String*|
-|...EventByFragmentTypeAnd  SourceAndType|List | Event|fragmentType*:String*, source*:String*, type*:String*|
-|...EventByFragmentTypeAnd  TimeBetween|List | Event|fragmentType*:String*, from*:Date*, to*:Date*|
-|...EventByFragmentTypeAnd  TimeBetweenAndType|List | Event|fragmentType*:String*, from*:Date*, to*:Date*, type*:String*|
-|...EventByFragmentTypeAndType|List | Event|fragmentType*:String*, type*:String*|
-|...EventBySource|List | Event|source*:String*|
+|...EventByFragmentType|List|fragmentType*:String*|
+|...EventByFragmentTypeAndSource|List|fragmentType*:String*, source*:String*|
+|...EventByFragmentTypeAnd  SourceAndTimeBetween|List|fragmentType*:String*, source*:String*, from*:Date*, to*:Date*|
+|...EventByFragmentTypeAnd  SourceAndTimeBetweenAndType|List|fragmentType*:String*, source*:String*, from*:Date*, to*:Date*, type*:String*|
+|...EventByFragmentTypeAnd  SourceAndType|List|fragmentType*:String*, source*:String*, type*:String*|
+|...EventByFragmentTypeAnd  TimeBetween|List|fragmentType*:String*, from*:Date*, to*:Date*|
+|...EventByFragmentTypeAnd  TimeBetweenAndType|List|fragmentType*:String*, from*:Date*, to*:Date*, type*:String*|
+|...EventByFragmentTypeAndType|List|fragmentType*:String*, type*:String*|
+|...EventBySource|List|source*:String*|
 |findMeasurementById|Measurement|id*:String*<br/>id*:GId*|
-|...MeasurementByFragmentType|List | Measurement|fragmentType*:String*|
-|...MeasurementByFragmentTypeAnd  Source|List | Measurement|fragmentType*:String*, source*:String*|
-|...MeasurementByFragmentTypeAnd  SourceAndTimeBetween|List | Measurement|fragmentType*:String*, source*:String*, from*:Date*, to*:Date*|
-|...MeasurementByFragmentTypeAnd  SourceAndTimeBetweenAndType|List | Measurement|fragmentType*:String*, source*:String*, from*:Date*, to*:Date*, type*:String*|
-|...MeasurementByFragmentTypeAnd  SourceAndType|List | Measurement|fragmentType*:String*, source*:String*, type*:String*|
-|...MeasurementByFragmentTypeAnd  TimeBetween|List | Measurement|fragmentType*:String*, from*:Date*, to*:Date*|
-|...MeasurementByFragmentTypeAnd  TimeBetweenAndType|List | Measurement|fragmentType*:String*, from*:Date*, to*:Date*, type*:String*|
-|...MeasurementByFragmentTypeAnd  Type|List | Measurement|fragmentType*:String*, type*:String*|
-|...MeasurementBySource|List | Measurement|source*:String*|
+|...MeasurementByFragmentType|List|fragmentType*:String*|
+|...MeasurementByFragmentTypeAnd  Source|List|fragmentType*:String*, source*:String*|
+|...MeasurementByFragmentTypeAnd  SourceAndTimeBetween|List|fragmentType*:String*, source*:String*, from*:Date*, to*:Date*|
+|...MeasurementByFragmentTypeAnd  SourceAndTimeBetweenAndType|List|fragmentType*:String*, source*:String*, from*:Date*, to*:Date*, type*:String*|
+|...MeasurementByFragmentTypeAnd  SourceAndType|List|fragmentType*:String*, source*:String*, type*:String*|
+|...MeasurementByFragmentTypeAnd  TimeBetween|List|fragmentType*:String*, from*:Date*, to*:Date*|
+|...MeasurementByFragmentTypeAnd  TimeBetweenAndType|List|fragmentType*:String*, from*:Date*, to*:Date*, type*:String*|
+|...MeasurementByFragmentTypeAnd  Type|List|fragmentType*:String*, type*:String*|
+|...MeasurementBySource|List|source*:String*|
 |findOperationById|Operation|id*:String*<br/>id*:GId*|
-|...OpererationByAgent|List | Operation|agentId*:String*|
-|...OpererationByAgentAndStatus|List | Operation|agentId*:String*, status*:String*|
-|...OpererationByDevice|List | Operation|deviceId*:String*|
-|...OpererationByDeviceAndStatus|List | Operation|deviceId*:String*, status*:String*|
-|...OpererationByStatus|List | Operation|status*:String*|
-|...OpererationByCreationTimeBetween|List | Operation|from*:Date*, to*:Date*|
+|...OpererationByAgent|List|agentId*:String*|
+|...OpererationByAgentAndStatus|List|agentId*:String*, status*:String*|
+|...OpererationByDevice|List|deviceId*:String*|
+|...OpererationByDeviceAndStatus|List|deviceId*:String*, status*:String*|
+|...OpererationByStatus|List|status*:String*|
+|...OpererationByCreationTimeBetween|List|from*:Date*, to*:Date*|
 |findAlarmById|Alarm|id*:String*<br/>id*:GId*|
-|...AlarmBySource|List | Alarm|sourceId*:String*|
-|...AlarmBySourceAndStatus|List | Alarm|sourceId*:String*, status*:String*|
-|...AlarmBySourceAnd  StatusAndTimeBetween|List | Alarm|sourceId*:String*, status*:String*, from*:Date*, to*:Date*|
-|...AlarmBySourceAndTimeBetween|List | Alarm|sourceId*:String*, from*:Date*, to*:Date*|
-|...AlarmByStatus|List | Alarm|status*:String*|
-|...AlarmByStatusAndTimeBetween|List | Alarm|status*:String*, from*:Date*, to*:Date*|
-|...AlarmByTimeBetween|List | Alarm|from*:Date*, to*:Date*|
+|...AlarmBySource|List|sourceId*:String*|
+|...AlarmBySourceAndStatus|List|sourceId*:String*, status*:String*|
+|...AlarmBySourceAnd  StatusAndTimeBetween|List|sourceId*:String*, status*:String*, from*:Date*, to*:Date*|
+|...AlarmBySourceAndTimeBetween|List|sourceId*:String*, from*:Date*, to*:Date*|
+|...AlarmByStatus|List|status*:String*|
+|...AlarmByStatusAndTimeBetween|List|status*:String*, from*:Date*, to*:Date*|
+|...AlarmByTimeBetween|List|from*:Date*, to*:Date*|
 
 ## Email sending
 

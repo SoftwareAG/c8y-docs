@@ -6,6 +6,7 @@ docpadConfig = {
 		site:
 			title: 'Cumulocity'
 		sections:  [
+			# { title: 'User\'s Guide', folder: 'guides/user-guide', slug: 'users-guide', icon : 'glyphicon-user', description: ''}
 			{ title: 'Concepts Guide', folder: 'guides/concepts', slug: 'concepts-guide', icon: 'glyphicon-asterisk', description: 'The concept descriptions explain the architecture and technical concepts behind Cumulocity. They are intended for anyone technically interested in the machine-to-machine application platform, be it solution architects, system administrators or software developers.' },
 			{ title: 'Device Guides', folder: 'guides/devices' , slug: 'device-guides', icon: 'glyphicon-phone', description: '' },
 			{ title: 'REST Developer\'s Guide', folder: 'guides/rest', slug: 'rest-developer', icon: 'glyphicon-cog', description: '' },

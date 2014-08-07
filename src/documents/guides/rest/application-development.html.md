@@ -109,14 +109,14 @@ Just like you link assets to other child assets, you can link assets also to dev
 
 ## Synchronize assets with external systems
 
-Often, Cumulocity will not be the only IT system dealing with a company's asset. The technical procedure for synchronizing assets stored in external IT systems is exactly the same as the [procedure used for registering devices](/guides/rest/device-integration.html#device_registration_and_inventory_synchronization):
+Often, Cumulocity will not be the only IT system dealing with a company's asset. The technical procedure for synchronizing assets stored in external IT systems is exactly the same as the [procedure used for registering devices](/guides/rest/device-integration#device_registration_and_inventory_synchronization):
 
 -   Use the Identity API to link the asset ID of the external IT system to the asset ID of Cumulocity.
 -   Use the Inventory API to create or update the assets in Cumulocity's inventory based on the external system's data.
 
 ## Query particular capabilities
 
-To decouple applications from the specifics of particular types and makes of devices, applications can use so-called fragments to query the inventory (see the [Fragments section of "Modeling and managing M2M assets"](guides/concepts-guide/modeling-and-managing-m2m-assets)). For example, to find all managed objects having a location, use
+To decouple applications from the specifics of particular types and makes of devices, applications can use so-called fragments to query the inventory (see the [Fragments section of "Cumulocity's domain model"](/guides/concepts/domain-model)). For example, to find all managed objects having a location, use
 
     GET /inventory/managedObjects?fragmentType=c8y_Position&withTotalPages=true HTTP/1.1
 
@@ -150,11 +150,11 @@ To decouple applications from the specifics of particular types and makes of dev
         "self": "https://.../inventory/managedObjects?withTotalPages=true&fragmentType=c8y_Position&pageSize=5&currentPage=1"
     }
 
-Now, you can, for example, place the object in a map. Standard fragments are defined in the [Device management library](/guides/reference-guide/device-management.html) and in the [Sensor library](/guides/reference-guide/sensor-library).
+Now, you can, for example, place the object in a map. Standard fragments are defined in the [Device management library](/guides/reference/device-management) and in the [Sensor library](/guides/reference/sensor-library).
 
-Querying the "/platform" resource will show you further possibilities for querying your data (see the [Introduction](/guides/rest/introduction.html)).
+Querying the "/platform" resource will show you further possibilities for querying your data (see the [Introduction](/guides/rest/introduction)).
 
-Note that queries do not necessarily return all query results at once, but only a "page" of the result. For more information on paging, see the Section [Query result paging](/guides/reference-guide/rest-implementation). The optional parameter "withTotalPages" will make the query contain full page statistics at the expensive of slightly slower performance.
+Note that queries do not necessarily return all query results at once, but only a "page" of the result. For more information on paging, see the Section [Query result paging](/guides/reference/rest-implementation). The optional parameter "withTotalPages" will make the query contain full page statistics at the expensive of slightly slower performance.
 
 ## Query readings from sensors
 
@@ -187,7 +187,7 @@ Similar to the inventory, you can also query for particular sensor readings. For
 
 ## Send operations to devices
 
-To trigger an operation on a device, POST the operation to the [Device Control API](/guides/reference-guide/device-control). The following example restarts the device with the ID "2480300" (which is the Raspberry Pi that we [previously integrated](/guides/rest/device-integration.html)):
+To trigger an operation on a device, POST the operation to the [Device Control API](/guides/reference/device-control). The following example restarts the device with the ID "2480300" (which is the Raspberry Pi that we [previously integrated](/guides/rest/device-integration)):
 
     POST /devicecontrol/operations HTTP/1.1
     Content-Type: application/vnd.com.nsn.cumulocity.operation+json;
@@ -226,13 +226,13 @@ A state of "PENDING" means here that the device has not yet picked up the operat
 
 ## Listen for events
 
-Besides querying the Cumulocity data store, you can also process and receive events in real-time as described in [Real-time processing in Cumulocity](/guides/concepts-guide/real-time-processing-in-cumulocity.html). For example, assume that you would like to display real-time location updates in a map. Use the administration user interface (or the [REST API](/guides/reference-guide/real-time-statements.html)) to create a new rule module "myRule":
+Besides querying the Cumulocity data store, you can also process and receive events in real-time as described in [Real-time processing in Cumulocity](/guides/concepts/realtime). For example, assume that you would like to display real-time location updates in a map. Use the administration user interface (or the [REST API](/guides/reference/real-time-statements)) to create a new rule module "myRule":
 
     select * 
     from EventCreated e
     where e.event.type = "c8y_LocationUpdate";
 
-If you have a device that sends location updates, you should see them immediately in the user interface. To receive them in your own REST client, you use the [Notification API](/guides/reference-guide/real-time-notifications.html) to subscribe to them. The API is based on the Bayeux protocol. First, a handshake is required. The handshake tells Cumulocity what protocols the client supports for notifications and allocates a client ID to the client.
+If you have a device that sends location updates, you should see them immediately in the user interface. To receive them in your own REST client, you use the [Notification API](/guides/reference/real-time-notifications) to subscribe to them. The API is based on the Bayeux protocol. First, a handshake is required. The handshake tells Cumulocity what protocols the client supports for notifications and allocates a client ID to the client.
 
     POST /cep/notifications HTTP/1.1
     Content-Type: application/json

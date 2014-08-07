@@ -169,7 +169,7 @@ Example Response:
 |self|URI|1|Link to this resource.|No|
 |creationTime|String|1|Time when the operation was created in the database.|No|
 |deviceID|String|1|Identifies the target device on which this operation should be performed.|POST: Mandatory PUT: No|
-|deviceExternalIDs|ExternalIDCollection|0..n|External IDs of the target device, see the [Identity](/guides/reference-guide/identity) interface.|No|
+|deviceExternalIDs|ExternalIDCollection|0..n|External IDs of the target device, see the [Identity](/guides/reference/identity) interface.|No|
 |status|String|1|Operation status, can be one of SUCCESSFUL, FAILED, EXECUTING or PENDING.|POST: No PUT: Mandatory|
 |failureReason|String|0..1|Reason for the failure.|No|
 |\*|Object|1..n|Additional properties describing the operation which will be performed on the device.|POST: Mandatory PUT: No|
@@ -223,7 +223,7 @@ Example response:
 
 ## Notifications
 
-Real-time notifications permit an agent to almost immediately receive new operations targeted to it. The basic protocol for receiving notifications is described in the Section "[Real-time notifications](/guides/reference-guide/real-time-notifications)". For control-related notifications, use the URL 
+Real-time notifications permit an agent to almost immediately receive new operations targeted to it. The basic protocol for receiving notifications is described in the Section "[Real-time notifications](/guides/reference/real-time-notifications)". For control-related notifications, use the URL 
 
 	/devicecontrol/notifications
 

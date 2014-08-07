@@ -1,7 +1,13 @@
-General
-=======
+---
+order: 10
+title: Overview
+layout: default
+---
+
+## General
 
 The following sections describe how to access Cumulocity from web browsers. It describes:
+
    * What web browsers are support?
    * How to login to Cumulocity?
    * How to navigate around?
@@ -9,22 +15,22 @@ The following sections describe how to access Cumulocity from web browsers. It d
    * How to use Cumulocity on touch devices?
    * User interface conventions
 
-What web browsers are support?
-------------------------------
+### What web browsers are support?
 
 To use Cumulocity, you need a modern web browser.
 
-We test it with the following web browsers:
+We test with the following web browsers:
+
   * Internet Explorer (Version 10 and 11)
   * Firefox (latest)
   * Chrome (latest)
 
 You can also use the web browser on smartphones and tablet. We have tested it with the following browsers:
+
   * Chrome on Android (latest) on Galaxy Smartphones and Tablets
   * Safari on iOS (latest) on Apple iPhone and iPad.
 
-How to login to Cumulocity?
----------------------------
+### How to login to Cumulocity?
 
 To access the applications for your Cumulocity tenant, use the following URL:
 
@@ -40,36 +46,33 @@ Important: Make sure that the address bar of your browser shows a https connecti
 
 Note: The above link is valid for Cumulocity Standard deployment options. For the deployment options "Reserved" and "Private" the URL is customer specific.
 
-How to navigate around?
------------------------
+### How to navigate around?
 
 Cumulocity Applications have the following layout:
 
 TODO: Picture
 
 The web page has the following areas:
+
   * Navigator: Using the navigator, you can goto the different pages of an application. Click on an entry in the navigator to open the respective page. You can collapse or expand sections in the navigator by clicking on the section headers, i.e. the lines with a triangle in front of the text. 
   * Application Switcher: Using the application switcher, you can change from one application to another. You might have to re-enter your credentials if you have not selected "Remember me" on your original login to Cumulocity.
   * User Id: You can see here, under which username you are logged into the system. To logout, click on the icon and select "Logout".
   * Content: Most of the web page is occupied by the content, which changed from page to page.
 
-
-
-How to link into the application?
----------------------------------
+### How to link into the application?
 
 Each page has its individual URL. For example, to show the basic information for a device, you can enter the following URL:
 
   * https://<tenant>.cumulocity.com/apps/devicemanagement/index.html#/device/<id>/info
 
 Using this URL, you can
+
   * Save bookmarks for specific devices or pages
   * Send Emails (manually or automatic using the real-time event engine) which include a link to devices or sensor data.
   * Use the backwards and forwards button in your browser.
   * Write own web applications, that link directly to information in Cumulocity
 
-How to use Cumulocity on touch devices?
----------------------------------------
+### How to use Cumulocity on touch devices?
 
 The applications can be used with traditional web browsers, using a keyboard and a mouse. And the applications can be used with touch devices, like tablets and smartphones.
 
@@ -78,8 +81,7 @@ Using Cumulocity with touch devices differs slightly compared to using it with t
    * Touch gestures: TBD
    * No hover: "hover" refers to the effect that when your mouse cursor is over an element, additional information appears. For example, in Cumulocity, when you move the cursor over a device in the device list, then a button to delete the device appears. This behaviour can be emulated on a touch device by "touching" the element for a longer time. 
 
-How to execute actions?
------------------------
+### How to execute actions?
 
 To provide a consistent user interface, Cumulocity follows the following certain user interface conventions. The conventions help you to understand what certain user elements do and provide you with a consistent behaviour over different actions.
 
@@ -89,21 +91,33 @@ The following conventions for actions exists:
    * Inside lists or tables: hover actions
    * Behind COGS Symbol: Use drop down menu
 
-Asset Management
-================
+## Device registration
 
-Overview
---------
+To register new devices, go to the "Device Registration" menu of the Cumulocity application. Carry out the following steps:
+
+* Enter the ID of the device that you would like to connect and click the "Register Device" button. For mobile devices, usually the IMEI of the device is used as ID. Please consult the device documentation for more information on the ID that is actually used for devices of the particular type.
+* The registration is displayed in the list with the status "WAITING FOR CONNECTION". Switch the device on.
+* When device connects, its status is updated to "PENDING ACCEPTANCE".
+* Accept the device by clicking the "Accept" button. The status changes to "ACCEPTED". 
+* Now the device can retrieve credentials to access your Cumulocity tenant. When the device receives the credentials, it disappears from the list. 
+
+Usually, the device will then start discovery and appear in the device list. Note that the credentials of the device are shown in the "Device users" menu of the Cumulocity administration application.
+
+## Asset Management
+
+### Overview
 
 Using the Cumulocity Asset Management, you can create, edit and view your assets in various ways. Assets are the "things" in "Internet of the things". These might be cars, machines, buildings, or other items. Also IoT devices are managed as assets.
 
 With asset management you can:
+
  * Register new devices
  * Browse existing assets
  * Searching assets 
  * View assets on maps
 
 Assets can be organized in groups:
+
  * Creating Groups
  * Assign assets to groups
  * Viewing groups
@@ -111,20 +125,8 @@ Assets can be organized in groups:
  
 
 
-Alarm management
-================
+## Alarm management
 
+## Device Control
 
-
-
-
-Device Control
-==============
-
-
-
-Asset Track
-===========
-
-
- 
+## Asset Tracking

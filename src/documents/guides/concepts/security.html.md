@@ -7,7 +7,7 @@ layout: default
 
 This section discusses security aspects of Cumulocity, structured into physical security, network security, application security and access control. Finally, it shows how Cumulocity helps in managing the security of your IoT solution.
 
-More information can be found in the security-related sections of the remaining documentation, such as the [REST implementation](/guides/reference-guide/rest-implementation) reference and the [Users API](/guides/reference-guide/users). Permissions required for individual API calls are documented in the respective reference guide sections for the APIs.
+More information can be found in the security-related sections of the remaining documentation, such as the [REST implementation](/guides/reference/rest-implementation) reference and the [Users API](/guides/reference/users). Permissions required for individual API calls are documented in the respective reference guide sections for the APIs.
 
 Cumulocity complies with Nokia Networks' "Design for Security" policy and Deutsche Telekom's "Privacy and Security Assessment" (PSA, [detailed criteria in German](http://www.telekom.com/psa)).
 
@@ -67,6 +67,6 @@ The inventory also features a "create" permission. A user having just the create
 
 Whenever a security-relevant event occurs, it needs to be logged for potential later auditing. Security-relevant events may happen both on application level as well as in the IoT network. A simple example of a security-relevant event on application level is a login to the application. An example of a security-relevant event on the network level is using a local software or local control on a device to manipulate the device.
 
-To capture security-relevant events, Cumulocity offers an [auditing interface](/guides/reference-guide/auditing). This interface enables applications and agents to write audit logs, which are persistently stored and cannot be externally modified after being written. Cumulocity itself also writes own audit records related to login and device control operations.
+To capture security-relevant events, Cumulocity offers an [auditing interface](/guides/reference/auditing). This interface enables applications and agents to write audit logs, which are persistently stored and cannot be externally modified after being written. Cumulocity itself also writes own audit records related to login and device control operations.
 
 To receive security-related reports about Cumulocity itself, interested parties can subscribe to the [Cumulocity security bulletin](https://cumulocity.zendesk.com/hc/en-us/sections/200381178-Security-bulletin). To report security incidents, please mail to security@cumulocity.com.

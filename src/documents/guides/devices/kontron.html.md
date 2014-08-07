@@ -2,6 +2,9 @@
 layout: default
 title: Kontron M2MSSDK
 ---
+
+> The description below is referring to an older version of the Kontron M2M Smart Services Developer Kit. Today, you can use Kontron Linux and the normal Java agent on the device.
+
 # Overview
 
 This section describes how to interface the??[Kontron M2M Smart Services Developer Kit](http://us.kontron.com/products/systems+and+platforms/m2m/m2m+smart+services+developer+kit.html)??with Cumulocity. It shows how to download and install the Cumulocity Smart Agent for Kontron on the kit. To demonstrate the agent, the kit's accelerometer is queried so that shaking the kit will send an alarm to Cumulocity. This alarm is displayed in the sandbox administration console. Finally, the section shows how to modify the demo to develop new agent functionality.
@@ -17,7 +20,7 @@ Kontron?s M2M Smart Services Developer Kit is designed for developers who requir
 
 After unpacking the device is immediately ready to go and can be used for developing numerous applications.??It can be used as for collection and initial processing of data in wide range of M2M areas such as vending, ATM controller, security system, transportation, energy and resources consumption control. One typical use case is the usage a an M2M gateway device.
 
-![Kontron M2M Smart Services Developer Kit](images/c8yimages/kontron-m2m.jpg)
+![Kontron M2M Smart Services Developer Kit](/images/guides/devices/kontron.jpg)
 
 # Why to use the Cumulocity Smart Agent for Kontron M2M?
 
@@ -148,16 +151,11 @@ At this stage, the managed object for the device has been created in Cumulocity.
 
 -   Open the developer sandbox at https://?sandbox URL?/ui/tenantadmin in your web browser and log in.
 -   Go to the "My devices" tab and find the object "Kontron Smart Agent" with the MAC address of your device.
-
-![Kontron device in inventory](images/c8yimages/kontron-my-devices.png)
-
 -   Go to the "Events" tab and find the "Threshold crossed" alarm that you created by shaking the devices.
-
-![Accelerometer event](images/c8yimages/kontron-events.png)
 
 # Developing with the Smart Agent for Kontron
 
-To develop new functionality with the Smart Agent, make sure that you have the Cumulocity SDK installed as described in "[Installing the SDK](index.php?option=com_k2&view=item&id=814)". It is also beneficial to walk through the ["Hello, world!" example](index.php?option=com_k2&view=item&id=818) to get familiar with the SDK concepts.??It is assumed that you have run the installation steps above and that you are connected to the device. In the following steps, we will import the accelerometer example into the SDK, modify it, install the modification on the device and debug the changes.
+To develop new functionality with the Smart Agent, make sure that you have the Cumulocity SDK installed as described in the "[Java  section](/guides/java)". It is assumed that you have run the installation steps above and that you are connected to the device. In the following steps, we will import the accelerometer example into the SDK, modify it, install the modification on the device and debug the changes.
 
 ## Import the accelerometer example
 
@@ -167,7 +165,7 @@ To install the accelerometer example into the SDK, carry out the following steps
 -   Start Eclipse and click "File", "Import...". In the "General" section, select "Existing Projects into Workspace" and click "Next".
 -   Click the "Browse" button next to "Select root directory" and point the file browser to the "com.cumulocity.kontron" folder within the folder that you just downloaded.
 -   Examine the files:
-    -   The example is an OSGi bundle and hence contains a manifest file in the "META-INF" folder. This manifest file holds dependency information and metadata about the agent, similar to what is demonstrated already in the??["Hello, world!" example](index.php?option=com_k2&view=item&id=818).
+    -   The example is an OSGi bundle and hence contains a manifest file in the "META-INF" folder. This manifest file holds dependency information and metadata about the agent, similar to what is demonstrated already in the ["Hello, world!" example](/guides/java/hello-world-osgi).
     -   The "kontron.agent.properties" file contains default configuration data for the agent.
     -   The Java source code for the accelerometer example is located in "src/main/java/com/cumulocity/kontron". Upon start of the agent, the method "start" of the class "Activator" will be run.
 

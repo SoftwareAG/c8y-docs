@@ -14,7 +14,7 @@ In this section, we describe how to install a Cumulocity agent with all relevant
 * Identify individual Raspberry Pis remotely based on their hardware serial number.
 * Update the Pi's firmware remotely through the firmware repository on GitHub.
 * Use the [PiFace Digital](http://www.element14.com/community/docs/DOC-52857/l/piface-digital-for-raspberry-pi) adapter board from the cloud.
-* Use [TinkerForge](/guides/devices/tinkerforge.html) sensors and controls from the cloud.
+* Use [TinkerForge](/guides/devices/tinkerforge) sensors and controls from the cloud.
 
 ![Raspberry Pi image](http://upload.wikimedia.org/wikipedia/commons/thumb/3/3d/RaspberryPi.jpg/640px-RaspberryPi.jpg)
 
@@ -70,7 +70,7 @@ The agent supports Tinkerforge devices out of the box, provided the [Tinkerforge
 
 ## Using PiFace Digital
 
-The agent includes a simple [PiFace Digital](http://www.element14.com/community/docs/DOC-52857/l/piface-digital-for-raspberry-pi) driver. The driver will create events when switches are pressed and will react to remote control commands to the relays. The events can be further processed through [CEL rules](/guides/concepts-guide/real-time-processing).
+The agent includes a simple [PiFace Digital](http://www.element14.com/community/docs/DOC-52857/l/piface-digital-for-raspberry-pi) driver. The driver will create events when switches are pressed and will react to remote control commands to the relays. The events can be further processed through [CEL rules](/guides/concepts/realtime).
 
 The driver depends on [Pi4J](http://pi4j.com/). To install Pi4J, follow the [Pi4J installation instructions](http://pi4j.com/install.html).
 
@@ -89,8 +89,6 @@ The agent permits you to upgrade the firmware of a Raspberry Pi through the [rpi
 * Enter a name for the firmware. As URL, use the Git hash of the firmware version at https://github.com/Hexxeh/rpi-firmware. (I.e., click on commits and select a particular version there. The hash is the weird garbage at the end of the URL.)
 * Save the firmware version.
 
-WHAT ABOUT THE VERSION?
-
 To roll out the firmware to a Raspberry Pi:
 
 * Click on the "Software" tab of the Raspberry Pi.
@@ -108,4 +106,4 @@ The agent writes debug information to the Pi's syslog. To troubleshoot, for exam
 
 ## Developing the agent
 
-If you would like to onnect other devices to the Raspberry Pi and manage these from Cumulocity, check the [Java agent documentation](/guides/devices/java-agent.html).
+If you would like to connect other devices to the Raspberry Pi and manage these from Cumulocity, check the [Java agent documentation](/guides/java/agents).

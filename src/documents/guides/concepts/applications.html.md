@@ -55,11 +55,11 @@ This is illustrated below:
 
 ![Extension points for plugins](/images/guides/concepts-guide/extensionpoints.png)
 
-For more information on developing plugins, please visit the [Plugin Developer's Guide](/guides/plugins/introduction).
+For more information on developing plugins, please visit the [Plugin Developer's Guide](/guides/web/introduction).
 
 ## Modules
 
-If your application requires new server-side processing functionality, you can add a [Cumulocity Event Language](/guides/reference-guide/realtime-statements) module to it. This is simply a file inside your application at a particular location (META-INF/application-module.cel).
+If your application requires new server-side processing functionality, you can add a [Cumulocity Event Language](/guides/reference/real-time-statements) module to it. This is simply a file inside your application at a particular location (META-INF/application-module.cel).
 
 	module paypalhere;
 	@Name('store_purchase_details1_on_purchase_operation')

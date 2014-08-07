@@ -48,7 +48,7 @@
           <% for section in @sections:%>
             <div class="panel">
 
-              <a data-toggle="collapse" data-parent="#docs-nav" href="#<%= section.slug %>">
+              <a data-toggle="collapse" data-parent="#docs-nav" class="top_docs collapsed" href="#<%= section.slug %>">
                 <h4><span class="glyphicon <%= section.icon %>"></span> <%= section.title %><span class="caret"></span></h4>
               </a>
 

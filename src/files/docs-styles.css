@@ -1367,6 +1367,7 @@ pre {
   -ms-hyphens: none;
   hyphens: none;
   position: relative;
+  border-radius: 4px;
 }
 pre .hljs {
   background-color: transparent;
@@ -6167,6 +6168,17 @@ body {
     max-width: 190px;
   }
 }
+.left-nav {
+  /*a{
+    color:@darker;
+    display: block;
+
+    &:hover{
+      color:@blue;
+      text-decoration: none;
+    }
+  }*/
+}
 @media (max-width: 767px) {
   .left-nav {
     width: 195px;
@@ -6191,12 +6203,7 @@ body {
     width: 263px;
   }
 }
-.left-nav a {
-  color: #031315;
-  display: block;
-}
 .left-nav a:hover {
-  color: #27b3ce;
   text-decoration: none;
 }
 .left-nav h4 {
@@ -6211,11 +6218,13 @@ body {
   padding: 0;
 }
 .left-nav .panel {
-  padding: 0;
+  padding: 10px 0;
   list-style: none;
   border-radius: 0px;
   background-color: transparent;
   border: 0;
+  border-bottom: 4px solid rgba(0, 0, 0, 0.05);
+  margin-bottom: 0;
   -webkit-box-shadow: none;
   box-shadow: none;
 }
@@ -6225,17 +6234,44 @@ body {
   right: -5px;
   margin-top: -4px;
 }
+.left-nav .panel .collapsed {
+  color: #031315;
+}
 .left-nav .panel .collapsed .caret {
   border-top: 4px solid transparent;
   border-bottom: 4px solid transparent;
   border-left: 4px solid;
 }
+.left-nav .list-group {
+  margin-bottom: 0;
+}
 .left-nav .list-group .list-group-item {
   border-radius: 0;
   background-color: transparent;
-  border-left-color: transparent;
-  border-right-color: transparent;
-  padding: 10px 0;
+  border-color: transparent;
+}
+.left-nav .list-group .list-group-item.active {
+  padding: 10px 0 10px 10px;
+  background-color: #ECECEC;
+  position: relative;
+}
+.left-nav .list-group .list-group-item.active:after {
+  content: '';
+  border-top: 21px solid transparent;
+  border-bottom: 21px solid transparent;
+  border-left: 12px solid #ECECEC;
+  position: absolute;
+  left: 100%;
+  top: 50%;
+  margin-top: -21px;
+}
+.left-nav .list-group .list-group-item a {
+  color: #031315;
+  display: block;
+}
+.left-nav .list-group .list-group-item a:hover {
+  color: #27b3ce;
+  text-decoration: none;
 }
 .left-nav .list-group .list-group-item.active a,
 .left-nav .list-group .list-group-item.active:hover a,
@@ -6394,5 +6430,29 @@ footer {
     top: 0;
     width: 240px;
     /* 6 columns */
+  }
+}
+p + h2,
+ul + h2 {
+  margin-top: 70px;
+}
+p + h3,
+ul + h3 {
+  margin-top: 60px;
+}
+p img {
+  margin: 60px 0;
+}
+h3 {
+  font-size: 18px;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+pre {
+  margin: 30px;
+}
+@media (max-width: 767px) {
+  pre {
+    margin: 30px 0;
   }
 }

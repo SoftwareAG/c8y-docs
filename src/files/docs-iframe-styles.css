@@ -1367,6 +1367,7 @@ pre {
   -ms-hyphens: none;
   hyphens: none;
   position: relative;
+  border-radius: 4px;
 }
 pre .hljs {
   background-color: transparent;
@@ -6282,9 +6283,6 @@ body .container {
   @media(min-width:@screen-lg-min){
     width: 263px;
   }*/
-}
-.left-nav.affix {
-  position: fixed!important;
 }
 .left-nav a {
   color: #555555;

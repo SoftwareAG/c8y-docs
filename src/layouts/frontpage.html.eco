@@ -19,8 +19,18 @@
       <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
     <![endif]-->
 
-   <link rel="shortcut icon" href="/images/favicon.ico"/>
-    <link href="/docs-styles.css" rel="stylesheet" id="cumulocity-style-css" type='text/css' media='all' />
+  <link rel="shortcut icon" href="/images/favicon.ico"/>
+
+  <script>
+        var isInIFrame = window.location !== window.parent.location;
+        if(isInIFrame){
+
+          document.write('<link href="/docs-iframe-styles.css" rel="stylesheet" id="cumulocity-style-css" type="text/css" media="all" />');
+        }else{
+          document.write('<link href="/docs-styles.css" rel="stylesheet" id="cumulocity-style-css" type="text/css" media="all" />');
+        }
+  </script>
+
     <%- @getBlock("styles").toHTML() %>
 </head>
 <body>

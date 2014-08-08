@@ -31,7 +31,7 @@ $(function(){
                 stopOn = $( document ).height()-( $( bottomElement ).offset().top)+($( this ).outerHeight() - $( this ).height());
             if( (fromBottom-stopOn) > 200 ){
                 $( this ).css('top', '130px').css('position', '');
-                console.log(fromTop, stopOn)
+                //console.log(fromTop, stopOn)
                 $( this ).affix({
                     offset: {
                         top: fromTop,

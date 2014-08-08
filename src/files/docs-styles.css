@@ -1,3 +1,9 @@
+/*
+---
+standalone: true
+---
+
+*/
 @font-face {
   font-family: "DIN";
   src: url("../fonts/DINWebPro.eot");
@@ -6355,6 +6361,7 @@ body .to-the-top:hover {
 .content {
   background-color: white;
   padding: 40px;
+  position: relative;
   -webkit-box-shadow: 0 1px 1px rgba(0, 0, 0, 0.1);
   box-shadow: 0 1px 1px rgba(0, 0, 0, 0.1);
 }
@@ -6505,17 +6512,14 @@ pre {
     margin: 30px 0;
   }
 }
+blockquote {
+  font-size: 14px;
+}
 .dot-info {
   position: absolute;
   right: 0;
   top: 0;
-  width: 170px;
-  height: 170px;
   background-color: #27b3ce;
-  border-radius: 50%;
-  padding: 20px;
-  margin-left: 20px;
-  box-shadow: 10px 10px 3px rgba(0, 0, 0, 0.15);
 }
 @media (max-width: 767px) {
   .dot-info {
@@ -6525,21 +6529,62 @@ pre {
   }
 }
 .popover-dismiss {
-  background: none;
-  border: 0;
-  width: 100%;
-  height: 100%;
-  border: 3px solid white;
-  border-radius: 50%;
+  display: inline-block;
+  margin-bottom: 0;
+  font-weight: normal;
+  text-align: center;
+  vertical-align: middle;
+  cursor: pointer;
+  background-image: none;
+  border: 1px solid transparent;
+  white-space: nowrap;
+  padding: 6px 12px;
+  font-size: 14px;
+  line-height: 1.428571429;
+  border-radius: 4px;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  background-color: #27b3ce;
   color: white;
+}
+.popover-dismiss:focus,
+.popover-dismiss:active:focus,
+.popover-dismiss.active:focus {
+  outline: thin dotted;
+  outline: 5px auto -webkit-focus-ring-color;
+  outline-offset: -2px;
+}
+.popover-dismiss:hover,
+.popover-dismiss:focus {
+  color: #333333;
+  text-decoration: none;
+}
+.popover-dismiss:active,
+.popover-dismiss.active {
+  outline: 0;
+  background-image: none;
+  -webkit-box-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125);
+  box-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125);
+}
+.popover-dismiss.disabled,
+.popover-dismiss[disabled],
+fieldset[disabled] .popover-dismiss {
+  cursor: not-allowed;
+  pointer-events: none;
+  opacity: 0.65;
+  filter: alpha(opacity=65);
+  -webkit-box-shadow: none;
+  box-shadow: none;
 }
 .popover-dismiss:focus {
   outline: none;
   text-decoration: none;
+  color: white;
 }
 .popover-dismiss + .popover {
   max-width: 296px;
-  margin-left: -80px;
 }
 .popover-dismiss + .popover .popover-content {
   padding: 24px;

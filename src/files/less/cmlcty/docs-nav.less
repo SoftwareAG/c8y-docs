@@ -174,18 +174,44 @@ body{
     }
   }
   .list-group{
-    //margin-bottom: 20px;
+    margin-bottom: 0;
     .list-group-item{
       border-radius: 0;
       background-color: transparent;
-      border-left-color: transparent;
-      border-right-color: transparent;
-      padding: 10px 0;
+      border-color: transparent;
+      &.active{
+        padding: 10px 0 10px 10px;
+        background-color: #ECECEC;
+        position: relative;
+
+        &:after{
+          content: '';
+          border-top: 21px solid transparent;
+          border-bottom: 21px solid transparent;
+          border-left: 12px solid #ECECEC;
+          position: absolute;
+          left: 100%;
+          top: 50%;
+          margin-top: -21px;
+        }
+      }
+
+
+      a{
+        color:@darker;
+        display: block;
+
+        &:hover{
+          color:@blue;
+          text-decoration: none;
+        }
+      }
       &.active, &.active:hover, &.active:focus{
         a{
           color: @brand-primary;
         }
       }
+
     }
   }
 }
@@ -228,25 +254,10 @@ body{
 }
 
 body .to-the-top{
-  width: 47px;
-  background-color: fade(@brand-primary, 50%);
-  color: white;
-  position: fixed;
-  padding: 9px 16px;
-  display: block;
-  opacity: .5;
-  bottom: 20px;
-  right: 7%;
-  margin: 0;
-  z-index: 1030;
+ display: none;
+}
 
-  -webkit-transition: all 0.4s ease;
-  transition: all 0.4s ease;
-  -webkit-transition: all all 0.4s ease ease-out;
-  -moz-transition: all all 0.4s ease ease-out;
-  -o-transition: all all 0.4s ease ease-out;
-  transition: all all 0.4s ease ease-out;
-   &:hover{
-    opacity: 1;
-  }
+
+.main-title{
+  border:0;
 }

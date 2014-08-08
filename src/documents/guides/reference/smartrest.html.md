@@ -141,7 +141,7 @@ Where:
 
 ##### Example
 
-	10,100,POST,/inventory/managedObjects,application/vnd.com.nsn.cumulocity.managedObject+json,application/vnd.com.nsn.cumulocity.managedObject+json,%%,STRING,\"{\"\"name\"\":\"\"Mbed Test Device\"\",\"\"type\"\":\"\"com_ublox_C027_REV-A\"\",\"\"c8y_Hardware\"\":{\"\"revision\"\":\"\"1\"\",\"\"model\"\":\"\"Ublox C027\"\",\"\"serialNumber\"\":\"\"%%\"\"},\"\"c8y_SupportedMeasurements\"\":[\"\"c8y_SignalStrength\"\",\"\"c8y_TemperatureMeasurement\"\",\"\"c8y_AnalogMeasurement\"\",\"\"c8y_MotionMeasurement\"\",\"\"c8y_AnalogMeasurement\"\"],\"\"c8y_RequiredAvailability\"\":{ \"\"responseInterval\"\":15},\"\"c8y_IsDevice\"\":{}}\"\r\n
+	10,100,POST,/inventory/managedObjects,application/vnd.com.nsn.cumulocity.managedObject+json,application/vnd.com.nsn.cumulocity.managedObject+json,%%,STRING,"{""name"":""Test Device"",""type"":""com_example_TestDevice"",""c8y_IsDevice"":{}}"
 
 Explanation:
 
@@ -169,7 +169,7 @@ Where:
 
 ##### Example
 
-	11,201,,$.c8y_IsDevice,$.id
+	11,201,,"$.c8y_IsDevice","$.id"
 
 Explanation:
 

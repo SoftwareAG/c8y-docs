@@ -54,13 +54,14 @@ Using the above example, a SmartREST request would be as follows:
 	POST /s HTTP/1.1
 	Authorization: Basic ...
 	X-Id: Device_1.0
-	
+
 	1,200,20.5
 
 And the corresponding response would be:
 
 	HTTP/1.1 200 OK
-	
+	Content-Length: 6
+
 	20,0
 
 To match the requests and responses, a response line contains, next to the error code, the line of the request that the response answers. In this example, "20" indicates "OK" and "0" refers to the first line of the request.
@@ -76,13 +77,13 @@ As described above, a client using SmartREST will first ask if its SmartREST tem
 If the device implementation is known, the response will return an ID that can be used as "shorthand" in the "X-Id" header of later requests.
 
 	HTTP/1.1 200 OK
-	
+
 	20,<id>
 
 If the device implementation is unknown, the response will be:
 
 	HTTP/1.1 200 OK
-	
+
 	40,"No template for this X-ID"
 
 In this case, create all templates used in your device implementation. 

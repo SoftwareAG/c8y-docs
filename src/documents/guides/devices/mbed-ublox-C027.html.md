@@ -1,5 +1,5 @@
 ---
-layout: default
+layout: devices
 title: UBlox C027
 ---
 

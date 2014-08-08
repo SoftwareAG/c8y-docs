@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="Cumulocity GmbH">
+    <meta name="description" content="<%= @document.description %>">
+    <meta name='robots' content='all'/>
+    <%- @getBlock("meta").toHTML() %>
+
+    <title><%= if @document.title then "#{@site.title} | #{@document.title}" else @site.title %></title>
+
+     <script type='text/javascript' src='//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js'></script>
+
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+      <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+   <link rel="shortcut icon" href="/favicon.ico"/>
+
+  <script>
+        var isInIFrame = window.location !== window.parent.location;
+        if(isInIFrame){
+
+          document.write('<link href="/docs-iframe-styles.css" rel="stylesheet" id="cumulocity-style-css" type="text/css" media="all" />');
+        }else{
+          document.write('<link href="/docs-styles.css" rel="stylesheet" id="cumulocity-style-css" type="text/css" media="all" />');
+        }
+  </script>
+
+
+    <link rel="stylesheet" href="http://yandex.st/highlightjs/8.0/styles/solarized_dark.min.css">
+    <%- @getBlock("styles").toHTML() %>
+</head>
+<body>
+  <%- @partial("header") %>
+<div class="container">
+  <div class="row row-offcanvas row-offcanvas-left">
+
+    <div class="col-xs-6 col-sm-3 sidebar-offcanvas" id="sidebar" role="navigation">
+
+      <div class="left-nav">
+
+        <div id="docs-nav">
+          <% for section in @sections:%>
+              <% $first = 'collapsed' %>
+              <% for page in @getCollection("html").findAllLive({relativeOutDirPath: section.folder }, [ order: 1, title: 1 ] ).toJSON():%>
+                <% if page.id is @document.id then $in = 'in' %>
+                <% if page.id is @document.id then $first = '' %>
+              <% end %>
+
+            <div class="panel">
+              <a data-toggle="collapse" data-parent="#docs-nav" class="top_docs <%= $first %>" href="#<%= section.slug %>">
+                <h4><span class="glyphicon <%= section.icon %>"></span> <%= section.title %><span class="caret"></span></h4>
+              </a>
+
+              <div id="<%= section.slug %>" class="collapse <%= $in %>">
+                <% $in = '' %>
+                <ul class="list-group">
+                  <% for page in @getCollection("html").findAllLive({relativeOutDirPath: section.folder }, [ order: 1, title: 1 ] ).toJSON():%>
+                    <li class="<%= if page.id is @document.id then 'active' %> list-group-item">
+                      <a href="<%= page.url%>"> <%= page.title || 'no title' %></a>
+                    </li>
+                  <% end %>
+                </ul>
+              </div>
+            </div>
+          <% end %>
+        </div>
+
+      </div>
+    </div>
+
+    <div class="col-xs-12 col-sm-9">
+          <button type="button" class="navbar-toggle docs-nav-toggle" data-toggle="offcanvas">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+      <h1 class="section-title"><%= @document.title %></h1>
+
+      <div class="dot-info">
+        <button type="button" class="popover-dismiss" data-html="true" data-toggle="popover" data-content="<p>There is an incredible amount of different hardware types, revisions, firmware versions and other variations of devices on the IoT market. We cannot guarantee plug-and-play compatibility and full functional support for all such variations.</p><p>However, we are happy to help you to get your particular device and variant certified with Cumulocity -- <a href='mailto:info@cumulocity.com'>just mail us</a>.</p><p>Also, many of our device integrations are open source to help you build variants.</p>">About Cumulocity's support for devices ...</button>
+      </div>
+
+      <div class="content">
+        <%- @partial('toc.html.eco', {tocItems: @document.tableOfContents}) %>
+        <%- @content %>
+      </div>
+    </div>
+
+  </div>
+
+</div>
+<footer>
+  <div class="container">
+    <hr>
+    <small>© 2010-2014 Cumulocity GmbH. All rights reserved.</small>
+  </div>
+</footer>
+
+
+<script type="text/javascript">
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-29175101-1']);
+  _gaq.push(['_setDomainName', 'cumulocity.com']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+
+</script>
+  <%- @partial("scripts") %>
+<%- @getBlock("scripts").toHTML() %>
+
+</body>
+</html>

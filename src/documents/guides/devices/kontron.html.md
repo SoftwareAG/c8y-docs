@@ -1,5 +1,5 @@
 ---
-layout: default
+layout: devices
 title: Kontron M2MSSDK
 ---
 

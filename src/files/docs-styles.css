@@ -6330,6 +6330,28 @@ body {
 .section:hover .glyphicon {
   color: #27b3ce;
 }
+body .to-the-top {
+  width: 47px;
+  background-color: rgba(39, 179, 206, 0.5);
+  color: white;
+  position: fixed;
+  padding: 9px 16px;
+  display: block;
+  opacity: .5;
+  bottom: 20px;
+  right: 7%;
+  margin: 0;
+  z-index: 1030;
+  -webkit-transition: all 0.4s ease;
+  transition: all 0.4s ease;
+  -webkit-transition: all all 0.4s ease ease-out;
+  -moz-transition: all all 0.4s ease ease-out;
+  -o-transition: all all 0.4s ease ease-out;
+  transition: all all 0.4s ease ease-out;
+}
+body .to-the-top:hover {
+  opacity: 1;
+}
 .content {
   background-color: white;
   padding: 40px;
@@ -6482,4 +6504,43 @@ pre {
   pre {
     margin: 30px 0;
   }
+}
+.dot-info {
+  position: absolute;
+  right: 0;
+  top: 0;
+  width: 170px;
+  height: 170px;
+  background-color: #27b3ce;
+  border-radius: 50%;
+  padding: 20px;
+  margin-left: 20px;
+  box-shadow: 10px 10px 3px rgba(0, 0, 0, 0.15);
+}
+@media (max-width: 767px) {
+  .dot-info {
+    position: static;
+    display: block;
+    margin: 0 auto;
+  }
+}
+.popover-dismiss {
+  background: none;
+  border: 0;
+  width: 100%;
+  height: 100%;
+  border: 3px solid white;
+  border-radius: 50%;
+  color: white;
+}
+.popover-dismiss:focus {
+  outline: none;
+  text-decoration: none;
+}
+.popover-dismiss + .popover {
+  max-width: 296px;
+  margin-left: -80px;
+}
+.popover-dismiss + .popover .popover-content {
+  padding: 24px;
 }

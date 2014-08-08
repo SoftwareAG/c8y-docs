@@ -226,3 +226,27 @@ body{
 .content{
   padding-top: 10px;
 }
+
+body .to-the-top{
+  width: 47px;
+  background-color: fade(@brand-primary, 50%);
+  color: white;
+  position: fixed;
+  padding: 9px 16px;
+  display: block;
+  opacity: .5;
+  bottom: 20px;
+  right: 7%;
+  margin: 0;
+  z-index: 1030;
+
+  -webkit-transition: all 0.4s ease;
+  transition: all 0.4s ease;
+  -webkit-transition: all all 0.4s ease ease-out;
+  -moz-transition: all all 0.4s ease ease-out;
+  -o-transition: all all 0.4s ease ease-out;
+  transition: all all 0.4s ease ease-out;
+   &:hover{
+    opacity: 1;
+  }
+}

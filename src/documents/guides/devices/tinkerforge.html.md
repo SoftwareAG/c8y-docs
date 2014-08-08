@@ -1,5 +1,5 @@
 ---
-layout: default
+layout: devices
 title: "Tinkerforge"
 ---
 
@@ -10,13 +10,13 @@ title: "Tinkerforge"
 * Build complete machine-to-machine use cases by just plugging off-the-shelf hardware components together. No configuration is required -- the components are automatically discovered by the Cumulocity Java agent and connected to the cloud.
 * Instantly visualize sensor data and remote control devices in real-time.
 
-<img src="/images/guides/devices/tinkerforge/ambient_light.jpg" alt="Ambient Light" style="display: inline">
+<div><img src="/images/guides/devices/tinkerforge/ambient_light.jpg" alt="Ambient Light" style="display: inline">
 <img src="/images/guides/devices/tinkerforge/barometer.jpg" alt="Barometer" style="display: inline">
 <img src="/images/guides/devices/tinkerforge/distance_ir.jpg" alt="Distance IR" style="display: inline">
 <img src="/images/guides/devices/tinkerforge/gps.jpg" alt="GPS" style="display: inline">
 <img src="/images/guides/devices/tinkerforge/humidity.jpg" alt="Humidity" style="display: inline">
 <img src="/images/guides/devices/tinkerforge/lcd12_20x4.jpg" alt="LCD" style="display: inline">
-<img src="/images/guides/devices/tinkerforge/temperature.jpg" alt="Temperatur" style="display: inline">
+<img src="/images/guides/devices/tinkerforge/temperature.jpg" alt="Temperatur" style="display: inline"></div>
 
 ## Installation
 

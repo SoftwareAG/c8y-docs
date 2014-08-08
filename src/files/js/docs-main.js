@@ -5,6 +5,16 @@ $(document).ready(function () {
     $('.row-offcanvas').toggleClass('active');
   });
 
+  var $placement = $(window).width() > 320 ? 'left' : 'bottom';
+  $('.popover-dismiss').popover({
+    trigger: 'focus',
+    placement: $placement
+  });
+
+  $('.to-the-top').click(function(e) {
+    e.preventDefault();
+    $('body, html').animate({scrollTop: 0}, 500, 'swing');
+  });
 
 });
 

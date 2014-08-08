@@ -6377,6 +6377,28 @@ body .container {
 .content {
   padding-top: 10px;
 }
+body .to-the-top {
+  width: 47px;
+  background-color: rgba(86, 162, 206, 0.5);
+  color: white;
+  position: fixed;
+  padding: 9px 16px;
+  display: block;
+  opacity: .5;
+  bottom: 20px;
+  right: 7%;
+  margin: 0;
+  z-index: 1030;
+  -webkit-transition: all 0.4s ease;
+  transition: all 0.4s ease;
+  -webkit-transition: all all 0.4s ease ease-out;
+  -moz-transition: all all 0.4s ease ease-out;
+  -o-transition: all all 0.4s ease ease-out;
+  transition: all all 0.4s ease ease-out;
+}
+body .to-the-top:hover {
+  opacity: 1;
+}
 /*
  * Style tweaks
  * --------------------------------------------------

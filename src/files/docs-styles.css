@@ -6116,6 +6116,24 @@ body {
     max-width: 200px;
   }
 }
+.navbar-default .breadcrumbs {
+  margin: 20px 0 10px;
+  font-weight: 100;
+  color: #a4c8cd;
+}
+.navbar-default .breadcrumbs .navbar-link {
+  color: #a4c8cd;
+}
+.navbar-default .breadcrumbs .navbar-link:hover {
+  color: white;
+  text-decoration: none;
+}
+.navbar-link {
+  color: rgba(255, 255, 255, 0.5);
+}
+.navbar-link:hover {
+  color: #27b3ce;
+}
 .navbar-default {
   border: 0;
   background: #031315;
@@ -6233,6 +6251,15 @@ body {
   top: 50%;
   right: -5px;
   margin-top: -4px;
+}
+.left-nav .panel .top_docs h4 {
+  margin: 0 0 0 16px;
+}
+.left-nav .panel .top_docs h4 .glyphicon {
+  margin-left: -18px;
+}
+.left-nav .panel .top_docs.collapsed .caret {
+  display: none;
 }
 .left-nav .panel .collapsed {
   color: #031315;

@@ -46,15 +46,16 @@
 
         <div id="docs-nav">
           <% for section in @sections:%>
-            <div class="panel">
-
-              <a data-toggle="collapse" data-parent="#docs-nav" class="top_docs collapsed" href="#<%= section.slug %>">
-                <h4><span class="glyphicon <%= section.icon %>"></span> <%= section.title %><span class="caret"></span></h4>
-              </a>
-
+              <% $first = 'collapsed' %>
               <% for page in @getCollection("html").findAllLive({relativeOutDirPath: section.folder }, [ order: 1, title: 1 ] ).toJSON():%>
                 <% if page.id is @document.id then $in = 'in' %>
+                <% if page.id is @document.id then $first = '' %>
               <% end %>
+
+            <div class="panel">
+              <a data-toggle="collapse" data-parent="#docs-nav" class="top_docs <%= $first %>" href="#<%= section.slug %>">
+                <h4><span class="glyphicon <%= section.icon %>"></span> <%= section.title %><span class="caret"></span></h4>
+              </a>
 
               <div id="<%= section.slug %>" class="collapse <%= $in %>">
                 <% $in = '' %>

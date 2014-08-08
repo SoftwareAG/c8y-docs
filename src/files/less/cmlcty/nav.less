@@ -12,6 +12,27 @@ body{
   }
 }
 
+.navbar-default{
+  .breadcrumbs{
+    margin: 20px 0 10px;
+    font-weight: 100;
+    color: @blueish;
+    .navbar-link{
+       color: @blueish;
+      &:hover{
+        color: white;
+        text-decoration: none;
+      }
+    }
+  }
+}
+
+.navbar-link{
+  color: fade(white, 50%);
+  &:hover{
+    color: @brand-primary;
+  }
+}
 
 
 .navbar-default{
@@ -151,7 +172,18 @@ body{
 
     }
     .top_docs{
+      h4{
+        margin: 0 0 0 16px;
+        .glyphicon{
+          margin-left: -18px;
+        }
+        .caret{
 
+        }
+      }
+      &.collapsed{
+        .caret{ display: none;}
+      }
     }
     .collapsed{
       color: @darker;

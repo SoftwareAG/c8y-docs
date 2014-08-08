@@ -6441,6 +6441,9 @@ body .container {
 .left-nav.affix {
   position: static!important;
 }
+.left-nav.affix-bottom {
+  position: static!important;
+}
 .left-nav a {
   color: #555555;
   text-shadow: none;

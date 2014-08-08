@@ -1,9 +1,18 @@
+/*
+---
+standalone: true
+---
+
+*/
+
 $(document).ready(function () {
   hljs.initHighlightingOnLoad();
 
   $('[data-toggle=offcanvas]').click(function () {
     $('.row-offcanvas').toggleClass('active');
   });
+
+  console.log($('body').closest('iframe'));
 
   var $placement = $(window).width() > 320 ? 'left' : 'bottom';
   $('.popover-dismiss').popover({

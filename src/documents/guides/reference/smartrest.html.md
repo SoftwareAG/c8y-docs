@@ -7,15 +7,7 @@ toc: true
 
 ## Overview
 
-Topics:
-
-* Reference to SmartREST description
-* Specification of general request/response format, structure of X-Id (i.e., include software identifier and version)
-* Specification of CSV encoding (character set, escaping, line feeds)
-* Registration API.
-* Templates data structure including permitted values for validation.
-* Error codes.
-* Compatbility (i.e., if you change the request, use a new number or create a new implementation version)
+This reference guide walks through the *SmartREST* protocol, the data format used, as well as the anatomy and registration of *SmartREST* templates. Built-in messages as well as errors are also discussed. For a step-by-step guide, see the [SmartREST guide](/guides/rest/smartrest)
 
 ## The protocol
 
@@ -96,16 +88,42 @@ The following information is contained within a response template:
 
 This reference guide solely focusses on the registration of *SmartREST* templates using the *SmartREST* `/s` endpoint. Alternatively, templates can also be registered using the platform inventory API.
 
-Templates can be registered with one single request to the `/s` endpoint containing the custom `X-Id` header field as well as the *SmartREST* template in the form of *CSV* data. The difference between a template registration and a normal *SmartREST* request is that rows are not processed individually during template registration.
+Before a *SmartREST* template can be registered, its existence must be checked. If the template already exists, a registration is not necessary and yields an error message.
+
+The existence of a *SmartREST* template can be checked by making an empty request:
 
 	POST /s HTTP/1.0
 	Authorization: Basic ...
 	X-Id: ...
-	Content-Length: ...
-	
-	...
+	Content-Length: 0
 
-Should the template registration be successful, a response like this will be returned where the message identifier `20` indicates that the template now exists in the inventory and the parameter `123456` indicates the managed object ID of the template.
+If the template exists, the following response is yielded where the message identifier `20` indicates that the template exists in the inventory and the parameter `123456` indicates the managed object GId of the template:
+
+	HTTP/1.1 200 OK
+	Content-Length: 10
+	
+	20,12345
+
+If the template does not exist, a response containing an error message is yielded:
+
+	HTTP/1.1 200 OK
+	Content-Length: 33
+	
+	40,"No template for this X-ID."
+
+If the template does not exist, a template registration request can be issued using the previously checked `X-Id`.
+
+Templates can be registered with one single request containing *SmartREST* template in the form of *CSV* data. The difference between a template registration request and a normal *SmartREST* request is that rows are not processed individually during template registration.
+
+	POST /s HTTP/1.0
+	Authorization: Basic ...
+	X-Id: ...
+	Content-Length: 275
+	
+	10,100,POST,/inventory/managedObjects,application/vnd.com.nsn.cumulocity.managedObject+json,application/vnd.com.nsn.cumulocity.managedObject+json,%%,STRING,"{""name"":""Test Device"",""type"":""com_example_TestDevice"",""c8y_IsDevice"":{}}"
+	11,201,,"$.c8y_IsDevice","$.id"
+
+Should the template registration be successful, a similar response like above will be returned.
 
 	HTTP/1.1 200 OK
 	Content-Length: 10
@@ -183,5 +201,49 @@ Explanation:
 
 *SmartREST* has a variety of built-in messages.
 
-...
+### Request messages
+
+Message&nbsp;identifier | Message&nbsp;parameters              | Description
+-------------------|-------------------------|------------
+10 | Template&nbsp;message&nbsp;identifier<br>Method<br>Resource&nbsp;identifier<br>Content&nbsp;MIME&nbsp;type<br>Accept&nbsp;MIME&nbsp;type<br>Placeholder<br>Request&nbsp;parameters<br>Template&nbsp;string | Represents a request template. If this message occours in the body, the whole body is treated as a *SmartREST* template and thus, all messages besides `10` and `11` will yield an error.
+11 | Template&nbsp;message&nbsp;identifier<br>Base&nbsp;JSON&nbsp;path<br>Conditional&nbsp;JSON&nbsp;ath<br>Value&nbsp;JSON&nbsp;paths | Represents a response template. If this message occours in the body, the whole body is treated as a *SmartREST* template and thus, all messages besides `10` and `11` will yield an error.
+61 | Device MO GId | Poll device credentials during device bootstrapping process. No `X-Id` header must be present and the device bootstrap authorization must be used.
+
+### Response messages
+
+Message&nbsp;identifier | Message&nbsp;parameters              | Description
+-------------------|-------------------------|------------
+20 | *SmartREST*&nbsp;Template&nbsp;MO&nbsp;GId | Echo response message. Template was found or has been created and everything is OK.
+40 | *None* | Template not found.
+41 | Line&nbsp;number&nbsp;(optional) | Template creation error.
+42 | Line&nbsp;number | Malformed request line
+43 | Line&nbsp;number | Invalid message identifier.
+45 | Line&nbsp;number | Invalid message arguments.
+50 | Line&nbsp;number<br>*HTTP*&nbsp;response&nbsp;code | Server error. This message occurs when an error happened between the *SmartREST* proxy and the platform.
+70 | Line&nbsp;number<br>Unique&nbsp;device&nbsp;identifier<br>Tenant&nbsp;ID<br>Username<br>Password | Device bootstrap polling response with credentials.
+
+#### Error messages
+
+Message&nbsp;identifier | Error&nbsp;message
+-------------------|-------------------------|------------
+41 | Cannot create templates for already existing template object
+41 | Duplicate message identifiers are not allowed
+41 | Bad request template definition
+41 | Bad response template definition
+41 | Bad value type: ...
+41 | Bad pattern
+41 | Not a valid message identifier for template creation
+41 | Invalid JsonPath
+41 | Using JsonPath to refer to a list of objects is not allowed for SmartRest
+41 | Using Filters (?) in JsonPath is not allowed for SmartRest
+41 | No content type supported for {GET or DELETE} templates.	
+41 | No template string supported for {GET or DELETE} templates.
+41 | No content type found for {POST or PUT} templates.
+41 | No template string found for {POST or PUT} templates.
+41 | Values are only supported for templates with placeholder.
+42 | Malformed Request
+43 | Invalid message identifier
+45 | No arguments supported
+45 | Wrong number of arguments
+45 | Value is not a {value type}: {value}
 

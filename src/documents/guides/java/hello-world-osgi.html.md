@@ -26,7 +26,7 @@ Here are the steps for configuring Eclipse and downloading the required client s
 -   Ensure that the "Cumulocity repository" is selected in the "Work with" drop-down list. Check "Cumulocity" and click "Finish". Select "Finish" again to leave the dialog. Now check the "Cumulocity runtime" entry in the "Target definitions" list and click "Ok".
 -   This procedure has to be carried out once per Eclipse workspace.
 
-![Cumulocity configured as OSGi runtime](/images/guides/java/eclipse.png)
+![Cumulocity configured as OSGi runtime](/guides/java/eclipse.png)
 
 > Please do not use "Install New Software" to download the client software. This would install the client as part of your running IDE. Install the SDK target platforms separately using the "Target Platform" preferences as described above.
 

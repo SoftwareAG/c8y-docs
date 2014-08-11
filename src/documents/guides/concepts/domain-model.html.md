@@ -8,7 +8,7 @@ layout: default
 
 Cumulocity captures all relevant aspects of devices and assets in the Internet of Things, as illustrated below.
 
-![Domain model](/images/guides/concepts-guide/model.png)
+![Domain model](/guides/concepts-guide/model.png)
 
 * The *inventory* stores all master data related to devices, their configuration and their connections. It also contains all related assets (such as vehicles, machines, buildings) and their structure.
 * *Measurements* contain numerical data produced by sensors (e.g., temperature readings) or calculated based on information from devices (e.g., service availability of a device).
@@ -98,7 +98,7 @@ Each managed object in the inventory has an own, "global" identifier that is syn
 
 Devices and enterprise IT systems typically have their own concept of identifying devices and assets. Gateways and devices typically use some form of technical identifier to references devices. For example, a smart meter could be identified by a technical meter number, through which it is reachable from a gateway. A customer relationship management (CRM) system would use customer IDs of the customer that has the meter installed. And an enterprise asset management system could track the same meter through an asset tag that is on a label glued to the device. The asset management system would also track the actual meter ID and customer ID.
 
-![Identity service](/images/guides/concepts-guide/identification.png)
+![Identity service](/guides/concepts-guide/identification.png)
 
 To shield applications from this diversity of identifiers, Cumulocity includes an identity service that registers all identifiers for an asset that are used outside of Cumulocity and maps these to the single global identifier that can be used by applications. This service is used by agents (to register external identifiers) and by business processes involving reorganizations and changes of devices (to modify mappings of external identifiers to global identifiers).
 
@@ -110,11 +110,11 @@ More information can be found in the reference guide for [identity](/guides/refe
 
 The inventory model supports two default hierarchies of objects: A communication hierarchy ("childDevices") and an asset hierarchy ("childAssets"). The communication hierarchy tracks how devices are linked to the M2M platform from a communications point of view. A typical communication hierarchy is shown in the picture below: Agents connect the sensor network to Cumulocity. They often communicate through gateway devices or modems with the sensor network. The gateways, in turn, connect to the devices in the sensor network, which contain sensors and controls. The communication hierarchy is used by the platform for communicating with devices and for resolving communication problems.
 
-![Example communication hierarchy](/images/guides/concepts-guide/commshierarchy.png)
+![Example communication hierarchy](/guides/concepts-guide/commshierarchy.png)
 
 The asset hierarchy structures the assets that are being remotely supervised and controlled through the M2M devices. Hence, it is the most relevant for M2M applications. An example asset hierarchy for building management could be buildings containing rooms. Buildings would be associated with gateways connecting the building to Cumulocity, while rooms would be associated with sensors and controls. This example hierarchy is shown in the picture below.
 
-![Example asset hierarchy](/images/guides/concepts-guide/assethierarchy.png)
+![Example asset hierarchy](/guides/concepts-guide/assethierarchy.png)
 
 The two hierarchies above are explicitly supported by the [inventory interface](/guides/reference/inventory) and client libraries, that provide methods for adding and removing children in the hierarchies. The hierarchies themselves are constructed by client applications. The communication hierarchy is constructed by agents, the asset hierarchy is added by applications on top.
 
@@ -282,7 +282,7 @@ The agent will execute the operations on the devices that it manages (Step "3"),
 
 Finally, the application can query the results of the operation (Step "5"). Audit records are generated both for the original request to run the device control operation and for the acknowledgement that the operation was actually run.
 
-![Device control architecture](/images/guides/concepts-guide/control.png)
+![Device control architecture](/guides/concepts-guide/control.png)
 
 Note that communicating the results of an operation (Steps "4" and "5") can additionally happen through a different channel than the device control interface. For example, when a switch state has been changed, the agent would probably need to update the inventory with the new switch state, and the application would need to update its user interface accordingly. As another example, if there is a communication problem in delivering an operation to a device, an alarm might need to be raised by the agent.
 

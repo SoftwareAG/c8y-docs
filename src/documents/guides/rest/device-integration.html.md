@@ -7,7 +7,7 @@ layout: default
 
 The basic life cycle for integrating devices into Cumulocity is discussed in [Interfacing devices](/guides/concepts/interfacing-devices). In this section, we will show how this life cycle, depicted below, is implemented on REST level.
 
-![Steps for device integration](/images/guides/rest/flow.png)
+![Steps for device integration](/guides/rest/flow.png)
 
 -   [Steps 0-5](#register-device-and-synchronize-inventory) ensure that the device and its sensors and controls is connected, registered, visible and up-to-date in the system.
 -   [Steps 6-9](#send-data) send inventory updates, events, alarms and measurements to Cumulocity.

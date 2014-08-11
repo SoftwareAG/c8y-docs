@@ -6,7 +6,7 @@ title: Mbed u-blox C027
 ## Introduction
 
 The [u-blox C027](https://mbed.org/platforms/u-blox-C027/ "u-blox C027") is a complete starter kit that allows quick prototyping of a variety of applications for the Internet of Things. The device has a cellular module as well as a GPS/GNSS receiver, enabling straightforward development of location-aware global communication.  
-<img class="img-responsive center-block" src="/images/guides/devices/mbed/c027.png" title="u-blox C027"/>
+<img class="img-responsive center-block" src="/guides/devices/mbed/c027.png" title="u-blox C027"/>
 
 Cumulocity is supporting the u-blox C027 application board using the *SmartREST* protocol. To get started, follow the steps below.
 

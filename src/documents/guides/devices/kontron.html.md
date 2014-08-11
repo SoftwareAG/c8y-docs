@@ -20,7 +20,7 @@ Kontron?s M2M Smart Services Developer Kit is designed for developers who requir
 
 After unpacking the device is immediately ready to go and can be used for developing numerous applications.??It can be used as for collection and initial processing of data in wide range of M2M areas such as vending, ATM controller, security system, transportation, energy and resources consumption control. One typical use case is the usage a an M2M gateway device.
 
-![Kontron M2M Smart Services Developer Kit](/images/guides/devices/kontron.jpg)
+![Kontron M2M Smart Services Developer Kit](/guides/devices/kontron.jpg)
 
 # Why to use the Cumulocity Smart Agent for Kontron M2M?
 

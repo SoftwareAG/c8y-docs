@@ -30,7 +30,7 @@ This section describes a "Hello world!"-style plugin which is available as an ex
 
 The purpose of this plugin is to add a new menu item which will display a simple "Hello world!" page when selected by user. The following screenshot presents the final result:
 
-![Hello world plugin](/images/guides/plugins/hello.png)
+![Hello world plugin](/guides/plugins/hello.png)
 
 In order to achieve this goal you need to do the following steps:
 
@@ -98,7 +98,7 @@ You will be asked for your tenant name and username the first time you run any r
 
 After registering your application, it appears in the "Own applications" menu of the Cumulocity administration application.
 
-![My Application](/images/guides/plugins/applicationeditor.png)
+![My Application](/guides/plugins/applicationeditor.png)
 
 > Note: Every time you change the application manifest you need to re-register the application.
 
@@ -143,7 +143,7 @@ Alternatively to "pluginRegister", you can also register all plugins at once by 
 
 After registering your plugin, it appears in the "Plugins" tab of your application.
 
-![My Plugin](/images/guides/plugins/plugineditor.png)
+![My Plugin](/guides/plugins/plugineditor.png)
 
 > Note: Every time you change the plugin manifest, you need to re-register the plugin.
 
@@ -242,7 +242,7 @@ If you are using a Bitbucket or GitHub repository for your application (as defin
 
 This section shows how to create a sample branding plugin that changes the icon displayed in the App Switcher. It can be developed further by adding more CSS/LESS rules to alter the appearance of the application. Base layout and styling is provided by the standard Cumulocity branding plugin "core/c8yBranding". The resulting App Switcher looks like this:
 
-![Branding](/images/guides/plugins/branding.png)
+![Branding](/guides/plugins/branding.png)
 
 In order to achieve this goal, you need to execute the following steps:
 
@@ -289,7 +289,7 @@ The "copy" property lists all files that should be copied as such into the build
 
 This section shows how to create a plugin that adds a new tab "Contact" to a device in the Cumulocity application. Clicking on "Contact" presents the user with a simple form for entering contact details. When the user saves the form, the contact details are stored as part of the device in the inventory. The new tab looks like this:
 
-![Contact tab](/images/guides/plugins/contact.png)
+![Contact tab](/guides/plugins/contact.png)
 
 In order to achieve this goal you need to do the following steps:
 

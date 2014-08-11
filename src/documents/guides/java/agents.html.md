@@ -61,13 +61,13 @@ When the agent is successfully started, open Cumulocity in a web browser and go 
 
 By default, the agent is "always on", i.e., it maintains a connection to Cumulocity to receive operations in real-time. Hence, the agent is shown as "Connected" in the user interface. If the connection breaks down, the agent will be shown as "Offline" and an alarm will be sent.
 
-![Availability](/images/guides/devices/javaavailability.png)
+![Availability](/guides/devices/javaavailability.png)
 
 ### Restarting
 
 To restart the device that the agent is running on, go to the "Control" tab and click "Restart".
 
-![Restart and configure](/images/guides/devices/javarestartconfig.png).
+![Restart and configure](/guides/devices/javarestartconfig.png).
 
 ### Tracing
 
@@ -78,7 +78,7 @@ The agent writes a log to Cumulocity. Low-severity log levels are sent to Cumulo
 
 Valid levels are "TRACE", "DEBUG", "INFO", "WARN" and "ERROR". Use "DEBUG" or "TRACE" only for troubleshooting purposes.
 
-![Tracing](/images/guides/devices/javatracing.png).
+![Tracing](/guides/devices/javatracing.png).
 
 ## Extending
 

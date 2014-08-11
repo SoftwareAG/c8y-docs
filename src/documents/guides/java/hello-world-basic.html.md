@@ -64,7 +64,7 @@ Add "dependency" elements for the Java client library ("java-client") and for th
 		<version>5.9.0</version>
 	</dependency>
 
-Edit the "version" elements to use the latest version of the client library. The version can be determined by checking the ["Announcements" section](https://cumulocity.zendesk.com/hc/en-us/sections/200381323-Announcements) of the Cumulocity Help Center. The full file after editing can be found [here](/images/guides/java/pom.xml).
+Edit the "version" elements to use the latest version of the client library. The version can be determined by checking the ["Announcements" section](https://cumulocity.zendesk.com/hc/en-us/sections/200381323-Announcements) of the Cumulocity Help Center. The full file after editing can be found [here](/guides/java/pom.xml).
 
 ### Create a Java application
 
@@ -133,7 +133,7 @@ To build and run your agent:
 
 The last line shows that a new device has been successfully created with a particular URL. Open the Cumulocity application and go to the device list. You should see a new "Hello, world!" device.
 
-![Hello world device](/images/guides/java/hello.png)
+![Hello world device](/guides/java/hello.png)
 
 **Got an error message?** Check the [troubleshooting section](/guides/java/troubleshooting).
 

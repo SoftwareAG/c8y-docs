@@ -27,7 +27,7 @@ Cumulocity ensures that your data stays confidential and cannot be tampered with
 
 This communication architecture is illustrated below. Inside the sensor networks and from the sensor networks to agents, device- and gateway-specific protocols may be in use (such as ZigBee or Modbus). Hence, securing these is a device-specific matter. Agents run as client towards the Cumulocity using HTTPS to send and receive data. Similarly, IoT applications use HTTPS towards Cumulocity. If an IoT application exposes own interfaces towards web browsers, it is recommended that these also support HTTPS. This way, the whole path from agents to the end user is secured.
 
-![Communication security](/images/guides/concepts-guide/commsecurity.png)
+![Communication security](/guides/concepts-guide/commsecurity.png)
 
 As mentioned above, Cumulocity does not require a device to expose any ports or services on the Internet. This is an important property: It not only simplifies connecting devices to Cumulocity, it also drastically simplifies securing devices. When deploying an IoT solution, please review other services that your device may expose on the Internet, such as web-based device managers or SMS-based configuration possibilities.
 
@@ -50,7 +50,7 @@ Cumulocity creates a new realm for each tenant to store the users of that tenant
 
 Each new realm is automatically populated with an initial administrator user who can create further users and user groups, and who can assign permissions to these users and user groups. This enables an enterprise to manage users and their permissions on their own using the administration application.
 
-![User management screenshot](/images/guides/concepts-guide/usermanagement.png)
+![User management screenshot](/guides/concepts-guide/usermanagement.png)
 
 The ability to execute certain functionality in the system depends on two concepts: Permissions and ownership. Permissions define explicitly what functionality can be executed by a user. Cumulocity distinguishes read permissions and administration permissions. Read permissions enable users to read data. Administration permissions enable users to create, update and delete data. Read and administration permissions are separately available for the different types of data in Cumulocity. For example, there are read permissions for inventory data, measurements, operations and so forth.
 

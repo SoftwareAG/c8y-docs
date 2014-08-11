@@ -13,7 +13,7 @@ More information on the interfaces for real-time processing can be found in the 
 
 Cumulocity includes a real-time engine that receives all data coming from devices or other data sources and immediately processes user-defined business logic on the data. This user-defined business logic can, among others, notify applications of the new data, create new data based on the received data (such as sending an alarm when a threshold for a sensor is exceeded), trigger operations on devices or send email. The logic is implemented in *Cumulocity Event Language*, a high-level domain-specific language designed for IoT real-time data.
 
-![CEP architecture](/images/guides/concepts-guide/realtime.png)
+![CEP architecture](/guides/concepts-guide/realtime.png)
 
 Cumulocity Event Language is comprised of *statements*, as illustrated in the examples below. They are grouped into units of deployment, called *modules*. Modules can be deployed as part of a Cumulocity application. They can also be edited with the Cumulocity administration application. Through the REST API, application developers can, for example, develop user-friendly domain-specific business logic wizards for their use cases. For example, a home automation application developer can provide a wizard that readily provides thresholding for temperature sensors and triggering of heating controllers.
 

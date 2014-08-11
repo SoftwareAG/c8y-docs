@@ -25,7 +25,7 @@ To shield machine-to-machine applications from this diversity, Cumulocity uses s
 -   It transform whatever domain model the device has to a reference domain model.
 -   It enables secure remote communication in various network architectures.
 
-![Agent architecture](/images/guides/concepts-guide/agents.png)
+![Agent architecture](/guides/concepts-guide/agents.png)
 
 **Protocol translation** Configuration parameters, readings, events and other information are either send to an agent ("push") or queried by the agent ("poll") through a device-specific protocol on one side. The agent will convert these messages into the protocol that Cumulocity understands on the other side. It will also receive device control commands from Cumulocity ("switch off that relay") and translate these to whatever protocol the device understands.
 
@@ -41,7 +41,7 @@ To summarize to benefits of the agent concept: Agents enable IoT applications to
 
 Agents can be deployed in a variety of ways, as illustrated in the picture below. We distinguish two main variants: *Server-side agents* and *device-side agents*.
 
-![Agent architectures](/images/guides/concepts-guide/agentarchitectures.png)
+![Agent architectures](/guides/concepts-guide/agentarchitectures.png)
 
 Server-side agents are run in the cloud, either hosted by Cumulocity or managed by yourself. Devices connect to server-side agents using their device-specific protocol. This variant is mainly chosen when one or more of the following are true:
 
@@ -66,7 +66,7 @@ After starting, the agent will synchronize the inventory with the sensor sub-net
 
 To understand inventory synchronization, let's revisit the communication hierarchy described in ["Cumulocity's domain model"](/guides/concepts/domain-model). In the inventory, agents are located at the roots of the communication hierarchy. Below each agent, the topology of the sub-network that the agent manages is reflected. This topology exists in the real network as well as in snapshot form in the inventory. It may change in the real network, and these changes need to be reflected in the inventory.
 
-![Communication hierarchy](/images/guides/concepts-guide/commshierarchy.png)
+![Communication hierarchy](/guides/concepts-guide/commshierarchy.png)
 
 Inventory synchronization is a two step procedure: The first step is to query the agent entry from the inventory and to create it if it is not present. The second step is then to discover the sub-network and synchronize it with the inventory based on the queried agent entry.
 

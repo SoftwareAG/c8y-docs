@@ -16,12 +16,12 @@ title: Queclink
 
 The location and traces of the equipped assets are shown in Cumulocity and you can create additional business logic on top of the data (for example, sending an email when a geofence is left). For the GL200, device-side motion tracking and geofencing can be configured from Cumulocity.
 
-<img src="/images/guides/devices/queclink/GL200.png" alt="GL200" style="display: inline">
-<img src="/images/guides/devices/queclink/GL300.png" alt="GL300" style="display: inline">
-<img src="/images/guides/devices/queclink/GL500.png" alt="GL500" style="display: inline">
-<img src="/images/guides/devices/queclink/GV200.png" alt="GV200" style="display: inline">
-<img src="/images/guides/devices/queclink/GV300.png" alt="GV300" style="display: inline">
-<img src="/images/guides/devices/queclink/GV500.png" alt="GV500" style="display: inline">
+<img src="/guides/devices/queclink/GL200.png" alt="GL200" style="display: inline">
+<img src="/guides/devices/queclink/GL300.png" alt="GL300" style="display: inline">
+<img src="/guides/devices/queclink/GL500.png" alt="GL500" style="display: inline">
+<img src="/guides/devices/queclink/GV200.png" alt="GV200" style="display: inline">
+<img src="/guides/devices/queclink/GV300.png" alt="GV300" style="display: inline">
+<img src="/guides/devices/queclink/GV500.png" alt="GV500" style="display: inline">
 
 ## Configuring Queclink devices for Cumulocity
 
@@ -34,7 +34,7 @@ Use the Queclink Manage Tool to set up a device for Cumulocity:
 
 The screenshot below illustrates the setting.
 
-![Queclink Manage Tool](/images/guides/devices/queclink/queclinkmanage.jpg)
+![Queclink Manage Tool](/guides/devices/queclink/queclinkmanage.jpg)
 
 ## Registering Queclink devices with Cumulocity
 
@@ -47,7 +47,7 @@ To connect the device to your Cumulocity account:
 * Click the "Accept" button.
 * The device will now send location data according to the device configuration that you set. 
 
-![Device registration](/images/guides/devices/queclink/queclinkregister.png)
+![Device registration](/guides/devices/queclink/queclinkregister.png)
 
 ## Troubleshooting tracking devices
 

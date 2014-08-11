@@ -20,7 +20,7 @@ Deutsche Telekom offers a DevStarter Arduino Package. It combines the Arduino wi
 
 It's great for building M2M applications from home automation to remote control / remote measurement.
 
-![GBoard](/images/guides/devices/arduino/GBoard.png)
+![GBoard](/guides/devices/arduino/GBoard.png)
 
 The package consists of:
 
@@ -39,7 +39,7 @@ The GSM Shield from Seeedstudio let's your Arduino connect to the internet via m
 The GSM Shield can be used with e.g. An Arduino UNO as an alternative to the described Gboard.
 For more information about the shield, check the Seeedstudio Wiki: [http://www.seeedstudio.com/wiki/GPRS\_Shield](http://www.seeedstudio.com/wiki/GPRS_Shield)
 
-![seedstudio shield](/images/guides/devices/arduino/seedstudio_shield.png)
+![seedstudio shield](/guides/devices/arduino/seedstudio_shield.png)
 
 ## Setting up the software
 
@@ -72,7 +72,7 @@ or like this (on Mac):
 
 #### GSM Library
 
-Download and install a patched version of the Open Electronics GSM Library: [GSMSHIELD.zip](/images/guides/devices/arduino/GSMSHIELD.zip), by performing similar steps as for the Cumulocity Agent Library above.
+Download and install a patched version of the Open Electronics GSM Library: [GSMSHIELD.zip](/guides/devices/arduino/GSMSHIELD.zip), by performing similar steps as for the Cumulocity Agent Library above.
 
 This ensures the library communicates with the pins you will set up during next steps (dip-switches).
 You can find further information about the Open Electronics library here: [GSM Library for Arduino.](http://code.google.com/p/gsm-shield-arduino/)
@@ -103,11 +103,11 @@ Verify that the SIM-card has no pin-code enabled or remove the pin-code using yo
 
 Adjust the switch on the Foca FT232 programming adapter: set the switch to the 3.3 Volt position as shown below.
 
-![foca](/images/guides/devices/arduino/foca.png)
+![foca](/guides/devices/arduino/foca.png)
 
 #### 4. Adjust the dip-switches on the GBoard. Set the dip switches as shown on the picture below.
 
-![](/images/guides/devices/arduino/dipswitch2.jpg)
+![](/guides/devices/arduino/dipswitch2.jpg)
 
 #### 5. Connect the Foca dapter to the GBoard
 
@@ -116,7 +116,7 @@ Connect the Foca Adapter to the GBoard, making sure the PINs are aligned as show
 -   Pin DTR to Pin DTR
 -   Pin VDD33 to Pin VCCIO
 
-![connect1](/images/guides/devices/arduino/connect1.png)
+![connect1](/guides/devices/arduino/connect1.png)
 
 #### 6. Connecting the sensor
 
@@ -124,7 +124,7 @@ You can connect sensors and actors to the M2M DevStarter Arduino to remotely mea
 
 Connect the sensor with the supplied cable to connector as shown below ( Note the while cable is connected to pin 'S' on both ends).
 
-![sensor3](/images/guides/devices/arduino/sensor3.png)
+![sensor3](/guides/devices/arduino/sensor3.png)
 
 #### 7. Final hardware setup steps
 
@@ -145,7 +145,7 @@ Place the GBoard on a non-conductive surface, connect the power supply. Connect 
 Seeedstudio GSM shield can be used in conjunction with our Client Library Cumulocity. The Seeedstudio shield is a add-on shield to extend your Arduino with mobile network (GSM)
 Connectivity.
 
-![seedstudio shield](/images/guides/devices/arduino/seedstudio_shield.png)
+![seedstudio shield](/guides/devices/arduino/seedstudio_shield.png)
 
 1.  **Installing the SIM-card**
 
@@ -161,7 +161,7 @@ Connectivity.
 
     Set the DIP switches on the shield as shown below ( RX=7, TX=8):
 
-    ![seedstudio switch](/images/guides/devices/arduino/seedstudio_switch.png)
+    ![seedstudio switch](/guides/devices/arduino/seedstudio_switch.png)
 
     Configure the same switches in the GSM.cpp file, which resides in the GSM Library folder. Make following settings in line 27 and 28 of the file:
 
@@ -198,7 +198,7 @@ to:
 
 Also add the code "pinMode(6, OUTPUT);"  as shown below. This will enable the GSM Library to power on the GSM module. (Note: For the seeedstudio GSM shield use pin 9 instead of 6).
 
-![arduino2](/images/guides/devices/arduino/arduino2.png)
+![arduino2](/guides/devices/arduino/arduino2.png)
 
 From Arduino IDE Tools menu select the Board type:  Arduino Duemilanove w/ ATMega 328. Press the upload button in Arduino IDE
 
@@ -271,7 +271,7 @@ Alternatively, you can view the device in a DevStarter Arduino Package specific 
 -   Open the developer sandbox at https://&lt;sandbox URL&gt;/ui/arduino in your web browser and log in.
 -   Find the object with the name you have entered in the device list.
 
-![Arduino user interface](/images/guides/devices/arduino/cumulocity-ui.png)
+![Arduino user interface](/guides/devices/arduino/cumulocity-ui.png)
 
 #### SendMeasurement Sketch
 
@@ -492,14 +492,14 @@ In the Package Contents navigate to directory:
 Now MERGE the contents of GCC4.7.2 directories over to the Arduino IDE folders, as shown below.
 Confirm questions about overwriting/replacement of files.
 
-![final mac copy gcc](/images/guides/devices/arduino/final_mac_copy_gcc.png)
+![final mac copy gcc](/guides/devices/arduino/final_mac_copy_gcc.png)
 
 ### Updating Libc 1.8.0
 
 You also need to update libc to version 1.8.0. Unpack the avr-libc 1.8.0 package and MERGE the files over to the Arduini IDE folders as shown  below. Confirm questions about overwriting/replacement of files.
 NOTE: Do not copy whole directories, as this would remove some files in the Arduini IDE directories ( e.g. the ldscripts folder in avr/lib in the IDE).
 
-![final mac copy libc](/images/guides/devices/arduino/final_mac_copy_libc.png)
+![final mac copy libc](/guides/devices/arduino/final_mac_copy_libc.png)
 
 ## Linux
 
@@ -516,7 +516,7 @@ On other distributions you will have to replace libraries in Arduino IDE directo
 
 Please follow instructions here: [http://andybrown.me.uk/wk/2012/04/28/avr-gcc-4-7-0-and-avr-libc-1-8-0-compiled-for-windows/](http://andybrown.me.uk/wk/2012/04/28/avr-gcc-4-7-0-and-avr-libc-1-8-0-compiled-for-windows/)
 
-Note: Instructions are for Arduino IDE 1.0. For Arduino IDE 1.0.4 files from "Step 4" will not work. Please use following files for Arduino IDE 1.0.4: [sources](/images/guides/devices/arduino/sources.zip).
+Note: Instructions are for Arduino IDE 1.0. For Arduino IDE 1.0.4 files from "Step 4" will not work. Please use following files for Arduino IDE 1.0.4: [sources](/guides/devices/arduino/sources.zip).
 
 ### Replace packages
 

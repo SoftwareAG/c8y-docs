@@ -31,6 +31,7 @@ To run the Cumulocity mbed agent, the following items are required:
 * A power supply.
 * An account on https://mbed.org.
 * A SIM card with data plan for Internet access. The SIM card should have no SIM PIN. The SIM PIN can be deactivated using any mobile phone.
+* You need access to Cumulocity platform. If you do not have it yet, click on "TRY CUMULOCITY FREE" on the top right of https://www.cumulocity.com.
 
 ## Preparation
 
@@ -42,6 +43,8 @@ To run the Cumulocity mbed agent, the following items are required:
 * Plug in the power supply and connect it to the application board.
 
 > Note that the device cannot be flashed without the power supply connected.
+
+> Further information is available on http://mbed.org/users/ublox/notebook/u-blox-C027-Getting-Started/ and http://mbed.org/users/ublox/notebook/u-blox-C027-Downloading/.
 
 ## Install the agent
 
@@ -56,7 +59,22 @@ To run the Cumulocity mbed agent, the following items are required:
 * The C027 will now dial up to the Internet. You will see status updated in the LCD display. If the device cannot connect to the Internet, it will display an error message. In case of an error message "No APN found", follow the instructions below in Section "Troubleshooting".
 * Log on to the Cumulocity web interface and enter the IMEI address of the cellular module into the device registration form. The IMEI is printed on the modem chip of the C027.
 * The device appears as *connected*. Click the "Accept" button.
-* The device now registers with Cumulocity and shows up in the device list.
+* The device now registers with Cumulocity and shows up in the device list with the name "Mbed Test Device".
+
+## What next?
+
+The device is now connected to Cumulocity and sends sensor data periodically. You can now browse and process the collected data in the cloud in various ways:
+
+Browse the collected sensor data under "Measurements" tab, as shown in the following screenshot:
+![Measurement Screenshot](/guides/devices/mbed/measurements.png)
+
+Create a dashboard to customise the device presentation. You can create a new dashboard, by selecting the mbed device and then clicking on the small cogs symbol on the top right and selecting "Create Dashboard".
+An example dashboard created for an mbed device is shown below:   
+![Dashboard Screenshot](/guides/devices/mbed/dashboard.png)
+
+For further details, see the Cumulocity User Guide.
+
+> You can change the reporting interval of sensor values by changing the source code of the file "MbedAgent.h" in the line that defines MBED_AGENT_INTERVAL.
 
 ## Common problems
 

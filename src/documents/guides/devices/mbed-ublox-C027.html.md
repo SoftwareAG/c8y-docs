@@ -29,7 +29,7 @@ To run the Cumulocity mbed agent, the following items are required:
 * [mbed appliation shield](https://mbed.org/components/mbed-Application-Shield/).
 * A USB cable.
 * A power supply.
-* An account on https://mbed.org.
+* An account on https://mbed.org. If you do not have a account, signup for as account. It is free.
 * A SIM card with data plan for Internet access. The SIM card should have no SIM PIN. The SIM PIN can be deactivated using any mobile phone.
 * You need access to Cumulocity platform. If you do not have it yet, click on "TRY CUMULOCITY FREE" on the top right of https://www.cumulocity.com.
 
@@ -57,9 +57,10 @@ To run the Cumulocity mbed agent, the following items are required:
 ## Connect the C027
 
 * The C027 will now dial up to the Internet. You will see status updated in the LCD display. If the device cannot connect to the Internet, it will display an error message. In case of an error message "No APN found", follow the instructions below in Section "Troubleshooting".
-* Log on to the Cumulocity web interface and enter the IMEI address of the cellular module into the device registration form. The IMEI is printed on the modem chip of the C027.
-* The device appears as *connected*. Click the "Accept" button.
-* The device now registers with Cumulocity and shows up in the device list with the name "Mbed Test Device".
+* The device will print "Bootstrapping" and below the IMEI of the cellular modem. Note: The IMEI is also printed on the white sticker on modem chip of the C027.
+* Log on to the Cumulocity web interface, select "Registration". Enter the IMEI and press "Register Device".
+* The device appears as *CONNECTED*. Click the "Accept" button.
+* The device now registers with Cumulocity and shows up under "All Devices" with the name "Mbed Test Device".
 
 ## What next?
 

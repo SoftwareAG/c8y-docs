@@ -67,14 +67,14 @@ Remote control in Cumulocity is just another kind of derived data. That is, for 
     insert into CreateOperation
     select 
     "PENDING" as status, 
-    ?heating ID? as deviceId, 
+    <<heating ID>> as deviceId, 
     {
     "c8y_Relay.relayState", "CLOSED"
     } as fragments
     from MeasurementCreated e
     where getNumber(e, "c8y_TemperatureMeasurement.T.value") > 100
 
--   *?heating ID?* is a placeholder for the ID of the heating that should be triggered.
+-   *heating ID* is a placeholder for the ID of the heating that should be triggered.
 -   *fragments* defines the nested content of the operation, in this case a "c8y\_Relay" that is "CLOSED".
 
 The syntax of the *fragments* part is a list of pairs of property names and values surrounded by curly braces: {?key1?, ?value1?, ?key2?, ?value2?, ...}.

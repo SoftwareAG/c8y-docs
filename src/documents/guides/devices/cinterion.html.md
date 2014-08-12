@@ -25,6 +25,7 @@ Start by setting up the [JavaME "Hello, world!"](/guides/java/hello-world-me) in
  * Select "Properties", "Java Build Path", "Order and Export". Check "cwmlib_1.0.jar" and click "OK".
 * Add the convenience method below your MIDlet. The method sends an AT command to the Cinterion modem using the Cinterion utility library.
 
+
 	private ATCommand ATC;
 	
 	private String sendCommand(String command) {
@@ -41,6 +42,7 @@ Start by setting up the [JavaME "Hello, world!"](/guides/java/hello-world-me) in
 	}
 
 * Add the code below at the start of the "startApp" method. Replace "&lt;&lt;APN&gt;&gt;" with the APN of your network provider. These AT commands dial the modem up to the Internet.
+
 
 	sendCommand("AT+CMEE=2");
 	sendCommand("AT^SJNET=\"gprs\",\"<<APN>>\",\"\",\"\"");

@@ -27,34 +27,34 @@ The inventory stores devices and other assets relevant to your IoT solution. We 
 
 The following JSON code shows a minimal example of a managed object in the inventory, in this case a simple switch.
 
+<pre><code class="json">{
+	"id": "47635",
+	"type": "ge_45609",
+	"c8y_Relay" : 
 	{
-		"id": "47635",
-		"type": "ge_45609",
-		"c8y_Relay" : 
-		{
-			"relayState" : "OPEN"
-		},
-		...
-	}
+		"relayState" : "OPEN"
+	},
+	...
+}</code></pre>
 
 An example for another asset stored in the inventory could be a room in which the switch is installed. (Compare the "id" property of the switch with the "managedObject" reference.)
 
-	{
-		"id": "47636",
-		"type": "resortenergymgmt_Room",
-		"name": "Sauna",
-		"childAssets": {
-			"references" : [
-				{ "managedObject": { "id": "47635", ... },
-				...
-				} 
-			]
-		},
-		"resortenergymgmt_RoomProperty": {
-			"size": 56,
+<pre><code class="json">{
+	"id": "47636",
+	"type": "resortenergymgmt_Room",
+	"name": "Sauna",
+	"childAssets": {
+		"references" : [
+			{ "managedObject": { "id": "47635", ... },
 			...
-		}
+			} 
+		]
+	},
+	"resortenergymgmt_RoomProperty": {
+		"size": 56,
+		...
 	}
+}</code></pre>
 
 In general, each managed object consists of
 
@@ -67,20 +67,20 @@ In general, each managed object consists of
 
 Fragments are used to identify capabilities of a managed object. For example, you may want to describe electricity meters from different vendors. Depending on the make of the meter, it may have a relay and it may be able to measure a single phase or three phases. These capabilities are identified by storing a fragment for each of the capabilities as follows:
 
-	{
-		"id": "47635",
-		"type": "elstermetering_AS220",
-		"lastUpdated": "2010-11-13T18:28:36.000Z",
-		"c8y_Position": {
-			"alt": 67,
-			"lng": 6.15173,
-			"lat": 51.211977
-		},
-		"c8y_ThreePhaseElectricitySensor": {},
-		"c8y_Relay": {
-			"state": "CLOSED"
-		}
+<pre><code class="json">{
+	"id": "47635",
+	"type": "elstermetering_AS220",
+	"lastUpdated": "2010-11-13T18:28:36.000Z",
+	"c8y_Position": {
+		"alt": 67,
+		"lng": 6.15173,
+		"lat": 51.211977
+	},
+	"c8y_ThreePhaseElectricitySensor": {},
+	"c8y_Relay": {
+		"state": "CLOSED"
 	}
+}</code></pre>
 
 In this example, a fragment "c8y\_ThreePhaseElectricitySensor" identifies a three phase electricity meter. In addition, the device includes a relay, which can be used to turn the power supply on and off.
 
@@ -142,17 +142,17 @@ Events are used to pass real-time information through Cumulocity. Events come in
 
 An event has a type (in the already described naming convention), a time when the event occurred and a text to describe the event. An event refers to a source managed object in the inventory. This is an example of an event:
 
-    {
-      "type": "c8y_LocationUpdate",
-      "time": "2010-11-13T18:28:36.000Z",
-      "text": "Location updated",
-      "source": { "id": "47634", ... },
-      "c8y_Position": {
-        "alt": 67,
-        "lng": 6.15173,
-        "lat": 51.211977
-      }
-    }
+<pre><code class="json">{
+	"type": "c8y_LocationUpdate",
+	"time": "2010-11-13T18:28:36.000Z",
+	"text": "Location updated",
+	"source": { "id": "47634", ... },
+	"c8y_Position": {
+		"alt": 67,
+		"lng": 6.15173,
+		"lat": 51.211977
+	}
+}</code></pre>
 
 Any event can be extended in the same way as described for managed objects above. In this example, we not only signalled that an object moved, we also included the new position of the object in the form of a "c8y_Position" fragment.
 
@@ -165,17 +165,17 @@ An audit record extends an event through
 
 This is an example of an audit record structure:
 
-    {
-      "type": "c8y_SecurityEvent",
-      "time": "2010-11-13T18:28:36.000Z",
-      "text": "Gateway login failed",
-      "user": "vvirtanen",
-      "application": "Resort energy management",
-      "activity": "login",
-      "severity": "MINOR",
-      "source": { "id": "47633", ... },
-      ...
-    }
+<pre><code class="json">{
+	"type": "c8y_SecurityEvent",
+	"time": "2010-11-13T18:28:36.000Z",
+	"text": "Gateway login failed",
+	"user": "vvirtanen",
+	"application": "Resort energy management",
+	"activity": "login",
+	"severity": "MINOR",
+	"source": { "id": "47633", ... },
+	...
+}</code></pre>
 
 An alarm extends events through
 
@@ -186,31 +186,31 @@ An alarm extends events through
 
 This is an example of an alarm that has been cleared:
 
-    {
-      "type": "c8y_UnavailabilityAlarm",
-      "time": "2010-11-13T19:28:36.000Z",
-      "text": "No communication with device since 2013-11-05T15:23:55.284+01:00",
-      "status": "CLEARED",
-      "severity": "MINOR",
-      "source": { "id": "47633", ... },
-      "history": {
-        "auditRecords": [ {
-          "activity": "Alarm updated",
-          "application": "devicemanagement",
-          "user": "vvirtanen",
-          "time": "2013-11-05T16:37:48.494+01:00",
-          "changes": [ {
-            "attribute": "status"
-            "newValue": "CLEARED"
-            "previousValue": "ACTIVE"
-            "type": "com.cumulocity.model.event.CumulocityAlarmStatuses"
-          } ],
-          ...
-        } ]
-        ...
-      } 
-      ...
-    }
+<pre><code class="json">{
+	"type": "c8y_UnavailabilityAlarm",
+	"time": "2010-11-13T19:28:36.000Z",
+	"text": "No communication with device since 2013-11-05T15:23:55.284+01:00",
+	"status": "CLEARED",
+	"severity": "MINOR",
+	"source": { "id": "47633", ... },
+	"history": {
+		"auditRecords": [ {
+			"activity": "Alarm updated",
+			"application": "devicemanagement",
+			"user": "vvirtanen",
+			"time": "2013-11-05T16:37:48.494+01:00",
+			"changes": [ {
+				"attribute": "status"
+				"newValue": "CLEARED"
+				"previousValue": "ACTIVE"
+				"type": "com.cumulocity.model.event.CumulocityAlarmStatuses"
+			} ],
+			...
+		} ]
+		...
+	} 
+	...
+}</code></pre>
 
 More examples can be found in the reference guides for [events](/guides/reference/events), [alarms](/guides/reference/alarms) and [auditing](/guides/reference/auditing).
 
@@ -218,26 +218,26 @@ More examples can be found in the reference guides for [events](/guides/referenc
 
 Measurements represent regularly acquired readings and statistics from sensors. Measurements consist of a time when the measurement was taken, the unique identifiers of the source of the measurement, and a list of fragments. Here is an example of a measurement:
 
-    {
-      "time": "2011-01-02T03:04:00.000Z",
-      "source": { "id": "1235", ... },
-      "c8y_ThreePhaseElectricityMeasurement": {
-        "A+": { "value": 435, "unit": "kWh" },
-        "A-": { "value": 23, "unit": "kWh" },
-        "P+": { "value": 657, "unit": "W" },
-        "P-": { "value": 0, "unit": "W" },
-        "A+:1": { "value": 123, "unit": "kWh" },
-        "A-:1": { "value": 2, "unit": "kWh" },
-        "P+:1": { "value": 56, "unit": "W" },
-        "P-:1": { "value": 0, "unit": "W" },
-        "A+:2": { "value": 231, "unit": "kWh" },
-        "A-:2": { "value": 23, "unit": "kWh" },
-        "P+:2": { "value": 516, "unit": "W" },
-        "P-:2": { "value": 2, "unit": "W" },  
-        ...
-      },
-      ...
-    }
+<pre><code class="json">{
+	"time": "2011-01-02T03:04:00.000Z",
+	"source": { "id": "1235", ... },
+	"c8y_ThreePhaseElectricityMeasurement": {
+		"A+": { "value": 435, "unit": "kWh" },
+		"A-": { "value": 23, "unit": "kWh" },
+		"P+": { "value": 657, "unit": "W" },
+		"P-": { "value": 0, "unit": "W" },
+		"A+:1": { "value": 123, "unit": "kWh" },
+		"A-:1": { "value": 2, "unit": "kWh" },
+		"P+:1": { "value": 56, "unit": "W" },
+		"P-:1": { "value": 0, "unit": "W" },
+		"A+:2": { "value": 231, "unit": "kWh" },
+		"A-:2": { "value": 23, "unit": "kWh" },
+		"P+:2": { "value": 516, "unit": "W" },
+		"P-:2": { "value": 2, "unit": "W" },  
+		...
+	},
+	...
+}</code></pre>
 
 Similar to the inventory model, fragments are used to identify capabilities of particular devices. In the above example, a three-phase electricity meter sends readings for the different electrical phases. Each such fragment maps the names of the individual readings ("A+", "A-", ... in this example) to the actual numeric value and the unit of measurement.
 
@@ -255,12 +255,12 @@ Devices need to be remotely controlled and managed. Examples are:
 
 In Cumulocity, these use cases are implemented by sending *operations* to a device. The following snippet shows an operation for setting the state of the relay with the ID "42" to "OPEN":
 
-    {
-      "deviceId": "42",
-      "c8y_Relay": {
-         "relayState": "OPEN"
-       }
-    }
+<pre><code class="json">{
+	"deviceId": "42",
+	"c8y_Relay": {
+		"relayState": "OPEN"
+	}
+}</code></pre>
 
 Just like the other types of data, operations are also standardized through the sensor library to simplify application development (see below). For example, setting a switch should be the same for all switches regardless of the make.
 
@@ -308,22 +308,22 @@ It covers basic sensors and controls, and is supported by the Cumulocity client 
 
 Technically, the sensor library defines standard fragments for inventory, measurements, events and device control, following the naming convention outlined above. The example below shows two fragments used for an electricity meter:
 
-    {
-      "id" : "1",
-      "type" : "com_kamstrup_382",
-      "c8y_SinglePhaseElectricityMeasurement": {},
-      "c8y_Relay" : { "state": "OPEN" }
-    }
+<pre><code class="json">{
+	"id" : "1",
+	"type" : "com_kamstrup_382",
+	"c8y_SinglePhaseElectricityMeasurement": {},
+	"c8y_Relay" : { "state": "OPEN" }
+}</code></pre>
 
 To a Java developer, checking the state of a switch in a device "mo" looks like this:
 
-    ManagedObject mo = ...;
-    Relay relay = mo.get(Relay.class);
-    RelayState state = relay.getRelayState();
+<pre><code class="java">ManagedObject mo = ...;
+Relay relay = mo.get(Relay.class);
+RelayState state = relay.getRelayState();</code></pre>
 
 To a JavaScript developer, the same check would look like this:
 
-    var state = mo.c8y_Relay.relayState
+<pre><code class="js">var state = mo.c8y_Relay.relayState</code></pre>
 
 More detailed information can be found in the reference guide under "[Sensor library](/guides/reference/sensor-library "Sensor library")".
 

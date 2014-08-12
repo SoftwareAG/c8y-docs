@@ -28,6 +28,7 @@ To run the Cumulocity mbed agent, the following items are required:
 * [u-blox C027 Internet of Things starter kit](https://mbed.org/platforms/u-blox-C027/).
 * [mbed appliation shield](https://mbed.org/components/mbed-Application-Shield/).
 * A USB cable.
+* A power supply.
 * An account on https://mbed.org.
 * A SIM card with data plan for Internet access. The SIM card should have no SIM PIN. The SIM PIN can be deactivated using any mobile phone.
 

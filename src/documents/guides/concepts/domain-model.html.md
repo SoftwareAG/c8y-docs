@@ -200,9 +200,9 @@ This is an example of an alarm that has been cleared:
 			"user": "vvirtanen",
 			"time": "2013-11-05T16:37:48.494+01:00",
 			"changes": [ {
-				"attribute": "status"
-				"newValue": "CLEARED"
-				"previousValue": "ACTIVE"
+				"attribute": "status",
+				"newValue": "CLEARED",
+				"previousValue": "ACTIVE",
 				"type": "com.cumulocity.model.event.CumulocityAlarmStatuses"
 			} ],
 			...

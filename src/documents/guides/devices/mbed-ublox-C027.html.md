@@ -1,6 +1,6 @@
 ---
 layout: devices
-title: mbed u-blox C027
+title: Mbed u-blox C027
 ---
 
 ## Introduction

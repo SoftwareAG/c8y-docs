@@ -6490,14 +6490,14 @@ footer {
 }
 p + h2,
 ul + h2 {
-  margin-top: 70px;
+  margin-top: 50px;
 }
 p + h3,
 ul + h3 {
-  margin-top: 60px;
+  margin-top: 40px;
 }
 p img {
-  margin: 60px 0;
+  margin: 40px 0;
 }
 h3 {
   font-size: 18px;

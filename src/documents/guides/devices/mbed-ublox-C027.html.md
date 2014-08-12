@@ -1,48 +1,61 @@
 ---
 layout: devices
-title: Mbed u-blox C027
+title: mbed u-blox C027
 ---
 
 ## Introduction
 
 The [u-blox C027](https://mbed.org/platforms/u-blox-C027/ "u-blox C027") is a complete starter kit that allows quick prototyping of a variety of applications for the Internet of Things. The device has a cellular module as well as a GPS/GNSS receiver, enabling straightforward development of location-aware global communication.  
-<img class="img-responsive center-block" src="/guides/devices/mbed/c027.png" title="u-blox C027"/>
 
-Cumulocity is supporting the u-blox C027 application board using the *SmartREST* protocol. To get started, follow the steps below.
+![u-blox C027](/guides/devices/mbed/c027.png)
 
-## Getting Started
+For demonstration purposes, the [mbed application shield](http://mbed.org/components/mbed-Application-Shield/) can be attached to the C027. It provides various sensors and an LCD display.
 
-This guide requires the u-blox C027 REV-B model as the REV-A does not have a debugging LED.
+![mbed application shield](/guides/devices/mbed/applicationshield.jpg)
 
-Furthermore, basic knowledge of the Mbed online IDE is assumed.
+The Cumulocity mbed agent connects the C027 and the application board to Cumulocity and provides the following features:
 
-### Preparation
+* Network dialup using the C027 modem.
+* Efficient communication through [SmartREST](/guides/rest/smartrest).
+* No configuration required through Cumulocity's device registration feature.
+* Connection status monitoring using the LCD display of the application shield.
+* Collection and storage of temperature, GPS and analog sensor readings.
 
-1. Insert an internet-enabled SIM card into the SIM slot on the backside of the u-blox C027 application board.
+## Prerequisites
 
-2. Attach the cellular antenna to the board.
+To run the Cumulocity mbed agent, the following items are required:
 
-3. For GPS/GNSS capabilities, attach the GPS antenna to the board.
+* [u-blox C027 Internet of Things starter kit](https://mbed.org/platforms/u-blox-C027/).
+* [mbed appliation shield](https://mbed.org/components/mbed-Application-Shield/).
+* A USB cable.
+* An account on https://mbed.org.
+* A SIM card with data plan for Internet access. The SIM card should have no SIM PIN. The SIM PIN can be deactivated using any mobile phone.
 
-4. Connect a USB cable to the C027 and to your computer.
+## Preparation
 
-5. Plug in the power supply and connect it to the application board. This step can be done at any time when working with the device. Just be aware that the device cannot be flashed using only the USB connection.
+* Insert the SIM card into the SIM slot on the backside of the u-blox C027.
+* Attach the cellular antenna to the board.
+* For GPS/GNSS capabilities, attach the GPS antenna to the board.
+* Attach the mbed application shield to the C027.
+* Connect a USB cable to the C027 and to your computer. The C027 will appear as "MBED" drive on your computer.
+* Plug in the power supply and connect it to the application board.
 
-### Flash the application
+> Note that the device cannot be flashed without the power supply connected.
 
-1. Go to <a href="http://mbed.org/users/Cumulocity/code/MbedSmartRestMain/" target="_blank" title="Cumulocity Mbed SmartREST main application">the mbed application site</a> and import the program into your online Mbed IDE.
+## Install the agent
 
-2. Upload the application to the u-blox C027 by pressing the *Compile* button and downloading the program image to your Mbed flash drive.
+* Login to the mbed.org site and visit the [C027 page](https://mbed.org/platforms/u-blox-C027/). Click "Add platform".
+* Visit <a href="http://mbed.org/users/Cumulocity/code/MbedSmartRestMain/" target="_blank" title="Cumulocity Mbed SmartREST main application">the mbed application site</a> and click "Import" to import the agent into your online Mbed IDE.
+* In the IDE, click the "Compile" button. The IDE will download the compiled application to your computer.
+* Copy the downloaded file to the "MBED" drive.
+* Press the reset button on the C027 to start the agent.
 
-3. Press the reset button on the C027 to finally start the program.
+## Connect the C027
 
-4. Log on to the Cumulocity web interface and enter the IMEI address of the cellular module into the device registration form.
-
-5. The device should appear as *connected*. Should this not be the case, use a serial console to view the output of the application.
-
-6. Accept the device registration request.
-
-7. A new device should appear in your account. The application will remember the credentials obtained from the registration process upon reset.
+* The C027 will now dial up to the Internet. You will see status updated in the LCD display. If the device cannot connect to the Internet, it will display an error message. In case of an error message "No APN found", follow the instructions below in Section "Troubleshooting".
+* Log on to the Cumulocity web interface and enter the IMEI address of the cellular module into the device registration form. The IMEI is printed on the modem chip of the C027.
+* The device appears as *connected*. Click the "Accept" button.
+* The device now registers with Cumulocity and shows up in the device list.
 
 ## Common problems
 

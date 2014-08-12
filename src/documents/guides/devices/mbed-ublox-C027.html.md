@@ -60,9 +60,9 @@ To run the Cumulocity mbed agent, the following items are required:
 
 ## Common problems
 
-* **The device does not connect to a network**: Review `apndb.cpp` and add an entry with the mobile country code, mobile network code and your APN.
+* **The device does not connect to a network**: Review the source code file `apndb.cpp` and add an entry with the mobile country code, mobile network code and your APN.
 
-* **The device does not appear as *connected* in the device registration process**: Review application output using a serial console.
+* **The device does not appear as *connected* in the device registration process**: Review application output using a serial console. See http://mbed.org/handbook/SerialPC for details.
 
-* **he device does not appear in the devices section on the web interface**: Review application output using a serial console.
+* **The device does not appear in the devices section on the web interface**: Review application output using a serial console. See http://mbed.org/handbook/SerialPC for details.
 

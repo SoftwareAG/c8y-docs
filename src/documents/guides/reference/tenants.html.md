@@ -14,6 +14,7 @@ The Tenant interface is available consists of parts:
 -   The tenant application reference resource represents individual application reference that can be view, accesible by url */tenant/tenants/{tenantId}/applications/{applicationId}*
 -   The tenant option collection resource enables creating new option and viewing existing options, accesible by url */tenant/options*
 -   The tenant option resource represents individual option that can be view and modified, accesible by url */tenant/options/{optionCategory}/{optionKey}*
+-   The tenant usage statistics resources return information on the request load and database usage of tenants.
 
 ## Tenant collection
 
@@ -397,7 +398,7 @@ Options are category-key-value tuples, storing tenant configuration. Some catego
 |Category|Key|Default value|Only predefined|Description|
 |:-------|:--|:------------|:--------------|:----------|
 |access.control|allow.origin|\*|yes|Comma separated list of domains allowed for execution of CORS. Wildcards are allowed (e.g. \*.cumuclocity.com)|
-|alarm.type.mapping|<<alarmType>>||no|Overrides severity and alarm text for the alarm with type "<<alarmType>>". Severity and text are specified as "<<alarmSeverity>>\|<<alarmText>>". If either part of the text is empty, the value will not be overridden. If severity is "NONE", the alarm will be suppressed.|
+|alarm.type.mapping|&lt;&lt;alarmType&gt;&gt;||no|Overrides severity and alarm text for the alarm with type "&lt;&lt;alarmType&gt;&gt;". Severity and text are specified as "&lt;&lt;alarmSeverity&gt;&gt;&#124;&lt;&lt;alarmText&gt;&gt;". If either part of the text is empty, the value will not be overridden. If severity is "NONE", the alarm will be suppressed.|
 
 ### Option [application/vnd.com.nsn.cumulocity.option+json]
 
@@ -460,4 +461,92 @@ Example Response :
         "key": "allow.origin",
         "self": "<<Option access.control.allow.origin URL>>",
         "value": "http://developer.cumulocity.com"
+    }
+
+##  Tenant usage statistics
+
+### UsageStatistics
+
+|Name|Type|Occurs|Description|
+|:---|:---|:-----|:----------|
+|day|String|1|Date of statistics.|
+|requestCount|Number|1|Number of requests that were issued against the current tenant.|
+|storageSize|Number|1|Storage in use by tenant in bytes.|
+
+### TenantUsageStatisticsCollection [application/vnd.com.nsn.cumulocity.tenantUsageStatisticsCollection+json]
+
+|Name|Type|Occurs|Description|
+|:---|:---|:-----|:----------|
+|self|URI|1|Link to this resource.|
+|usageStatistics|UsageStatistics|0..n|List of usage statistics, see above.|
+|statistics|PagingStatistics|1|Information about paging statistics.|
+|prev|URI|0..1|Link to a potential previous page of tenants.|
+|next|URI|0..1|Link to a potential next page of tenants.|
+
+### GET a representation of a TenantUsageStatisticsCollection
+
+Response body: TenantUsageStatisticsCollection
+  
+Required role: ROLE\_TENANT\_STATISTICS\_READ
+
+Example Request: Get statistics of current tenant starting Aug 1st, 2014, until today.
+
+    GET /tenant/statistics?dateFrom=2014-08-01
+    Host: ...
+    Authorization: Basic ...
+
+Example Response :
+
+    HTTP/1.1 200 OK
+    Content-Type: application/vnd.com.nsn.cumulocity.tenantUsageStatisticsCollection+json; charset=UTF-8; ver=0.9
+    Content-Length: ...
+    {
+        "statistics": {
+            "currentPage": 1,
+            "pageSize": 5,
+            "totalPages": 5
+        },
+        "self": "<<Collection URL>>",
+        "usageStatistics": [ {
+            "day": "2014-08-12T00:00:00.000+02:00",
+            "requestCount": 103966,
+            "self": "...",
+            "storageSize": 1005442845
+        },
+        {
+            "day": "2014-08-07T00:00:00.000+02:00",
+            "requestCount": 116378,
+            "self": "...",
+            "storageSize": 1151862557
+        },
+        ...
+        ]
+    }
+
+### TenantUsageStatisticsSummary [application/vnd.com.nsn.cumulocity.tenantUsageStatisticsSummary+json]
+
+
+### GET a representation of a TenantUsageStatisticsSummary
+
+Response body: TenantUsageStatisticsSummary
+  
+Required role: ROLE\_TENANT\_STATISTICS\_READ
+
+Example Request: Get summary of requests and database usage from the start of this month until now.
+
+    GET /tenant/statistics/summary
+    Host: ...
+    Authorization: Basic ...
+
+Example Response :
+
+    HTTP/1.1 200 OK
+    Content-Type: application/vnd.com.nsn.cumulocity.tenantUsageStatisticsSummary+json; charset=UTF-8; ver=0.9
+    Content-Length: ...
+
+    {
+        "self": "...",
+        "day": "2014-08-21T00:00:00.000+02:00",
+        "requestCount": 15013818,
+        "storageSize": 983856925
     }

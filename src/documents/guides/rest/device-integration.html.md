@@ -5,30 +5,39 @@ layout: default
 ---
 ## Overview
 
-The basic life cycle for integrating devices into Cumulocity is discussed in [Interfacing devices](/guides/concepts/interfacing-devices). In this section, we will show how this life cycle, depicted below, is implemented on REST level.
+The basic life cycle for integrating devices into Cumulocity is discussed in [Interfacing devices](/guides/concepts/interfacing-devices). In this section, we will show how this life cycle is implemented on REST level. The life cycle consists of two phases, a startup phase and a cycle phase. 
 
-![Steps for device integration](/guides/rest/flow.png)
+The startup phase is responsible for connecting the device to Cumulocity and updating the device data in the inventory. It also performs cleanup tasks required for operations. It consists of the following steps:
 
--   [Steps 0-5](#register-device-and-synchronize-inventory) ensure that the device and its sensors and controls is connected, registered, visible and up-to-date in the system.
--   [Steps 6-9](#send-data) send inventory updates, events, alarms and measurements to Cumulocity.
--   [Steps 10-13](#receive-operations) enable a device to receive operations from Cumulocity and to process them in a reliable fashion.
-
-Steps 0 to 5 are typically executed during the startup phase of the device. Steps 6-13 are typically executed inside the main loop of the device software: They are repeated periodically until the device is shut down.
-
-## Register device and synchronize inventory
-
-For registering a device, the following steps are carried out:
-
--   [Step 0](#step-0-request-device-credentials): Request device credentials (if required).
+-   [Step 0](#step-0-request-device-credentials): Request device credentials, if they have not been requested yet.
 -   [Step 1](#step-1-check-if-the-device-is-already-registered): Check if the device is already registered.
 -   [Step 2](#step-2-create-the-device-in-the-inventory): If no, create the device in the inventory and
 -   [Step 3](#step-3-register-the-device): Register the device.
 -   [Step 4](#step-4-update-the-device-in-the-inventory): If yes, update the device in the inventory.
 -   [Step 5](#step-5-discover-child-devices-and-create-or-update-them-in-the-inventory): Discover child devices and create or update them in the inventory.
+-   [Step 6](#step-6-finish-operations-and-subscribe): Finish operations that required a restart and subscribe to new operations.
+
+![Startup phase](/guides/rest/startupphase.png)
+
+The cycle phase follows. It continuously updates the inventory, writes measurements, alarms and events and executes operations when required. It can be considered to be the "main loop" of the device which is executed until the device shuts down. The loop consists of the following steps:
+
+-   [Step 7](#step-7-execute-operations): Execute operations.
+-   [Step 8](#step-8-update-inventory): Update inventory.
+-   [Step 9](#step-9-send-measurements): Send measurements.
+-   [Step 10](#step-10-send-events): Send events.
+-   [Step 11](#step-11-send-alarms): Send alarms.
+
+![Cycle phase](/guides/rest/cyclephase.png)
+
+Reference models for the data can be found in the [Device management library](/guides/reference/device-management) and in the [Sensor library](/guides/reference/sensor-library).
+
+## Startup phase
 
 ### Step 0: Request device credentials
 
-Since every request to Cumulocity needs to be authenticated, also requests from devices need to be authenticated. If you want to assign individual credentials to devices, you can use the device credentials API to generate new credentials automatically. This works as follows:
+Since every request to Cumulocity needs to be authenticated, also requests from devices need to be authenticated. If you want to assign individual credentials to devices, you can use the device credentials API to generate new credentials automatically. To do so, request device credentials at first startup through the API and store them locally on the device for further requests. 
+
+The process works as follows:
 
 * Cumulocity assumes each device to have some form of unique ID. A good device identifier may be the MAC address of the network adapter, the IMEI of a mobile device or a hardware serial number 
 * When you take a new device into use, you enter this unique ID into "Device registration" in Cumulocity and start the device.
@@ -221,6 +230,8 @@ For example, the hardware information of a device will usually not change, but t
     }   
     HTTP/1.1 200 OK
 
+> Do not update the name of a device from an agent! An agent creates a default name for a device so that it can be identified in the inventory, but users should be able to edit this name or update it with information from their asset management.
+
 ### Step 5: Discover child devices and create or update them in the inventory
 
 Depending on the complexity of the sensor network, devices may have child devices associated with them. A good example is home automation: You often have a home automation gateway that installs a multitude of different sensors and controls installed in various rooms of the household. The basic registration of child devices is similar to the registration of the main device up to the fact, that child devices usually do not run an agent instance (hence the "com\_cumulocity\_model\_Agent" fragment is left out). To link a device with a child, send a POST request to the child devices URL that was returned when creating the object (see above).
@@ -244,119 +255,15 @@ This does not delete the device itself in the inventory, only the reference. To 
 
 This request will also delete all data associated with the device including its registration information, measurements, alarms, events and operations. Usually, it is not recommended to delete devices automatically. For example, if a device has just temporarily lost its connection, you usually do not want to loose all historical information associated with the device.
 
-## Send data
-
-Now the device is readily registered and up-to-date in the inventory, and data collection can start. Four types of data are usually sent:
-
--   [Step 6](#step_6_inventory_updates): Update inventory.
--   [Step 7](#step_7_measurements): Send measurements.
--   [Step 8](#step_8_events): Send events.
--   [Step 9](#step_9_alarms): Send alarms.
-
-Reference models for the data can be found in the [Device management library](/guides/reference/device-management) and in the [Sensor library](/guides/reference/sensor-library).
-
-### Step 6: Update inventory
-
-The inventory entry of a device usually represents its current state, which may be subject of continuous change. As an example, consider a device with a GPS chip. That device will keep its current location up-to-date in the inventory. At the same time, it will report location updates as well as event to maintain a trace of its locations. Technically, such updates are reported with the same requests as shown in Step 4.
-
-### Step 7: Send measurements
-
-To create new measurements in Cumulocity, issue a POST request with the measurement. The example below shows how to create a signal strength measurement.
-
-    POST /measurement/measurements HTTP/1.1
-    Content-Type: application/vnd.com.nsn.cumulocity.measurement+json
-    ...
-    {
-        "source": { "id": "2480300" },
-        "time": "2013-07-02T16:32:30.152+02:00",
-        "type": "huawei_E3131SignalStrength",
-        "c8y_SignalStrength": {
-            "rssi": { "value": -53, "unit": "dBm" },
-            "ber": { "value": 0.14, "unit": "%" } 
-        }
-    }
-    HTTP/1.1 201 Created
-
-### Step 8: Send events
-
-Similar, use a POST request for events. The following example shows a location update from a GPS sensor.
-
-    POST /event/events HTTP/1.1
-    Content-Type: application/vnd.com.nsn.cumulocity.event+json
-    ...
-    {
-        "source": { "id": "1197500" },
-        "text": "Location updated",
-        "time": "2013-07-19T09:07:22.598+02:00",
-        "type": "queclink_GV200LocationUpdate",
-        "c8y_Position": {
-            "alt": 73.9,
-            "lng": 6.151782,
-            "lat": 51.211971
-        }
-    }
-    HTTP/1.1 201 Created
-
-Note that all data types in Cumulocity can include arbitrary extensions in the form of additional fragments. In this case, the event includes a position, but also self-defined fragments can be added.
-
-### Step 9: Send alarms
-
-Alarms represents events that most likely require human intervention to be solved. For example, if the battery in a device runs out of energy, someone has to visit the device to replace the battery. Creating an alarm is technically very similar to creating an event.
-
-    POST /alarm/alarms HTTP/1.1
-    Content-Type: application/vnd.com.nsn.cumulocity.alarm+json
-    Accept: application/vnd.com.nsn.cumulocity.alarm+json
-    ...
-    {
-        "source": { "id": "10400" },
-        "text": "Tracker lost power",
-        "time": "2013-08-19T21:31:22.740+02:00",
-        "type": "c8y_PowerAlarm",
-        "status": "ACTIVE",
-        "severity": "MAJOR",
-    }
-    HTTP/1.1 201 Created
-    Content-Type: application/vnd.com.nsn.cumulocity.alarm+json
-    ...
-    {
-        "id": "214600",
-        "self": "https://.../alarm/alarms/214600",
-        ...
-    }
-
-However, you most likely should not create an alarm for a device, if there is a similar alarm already active in the system. Creating many alarms may flood the user interface and may require users to manually clear all the alarms. This is an example for finding the active alarms of our Raspberry Pi from above:
-
-    GET /alarm/alarms?source=2480300&status=ACTIVE HTTP/1.1
-
-In contrast to events, alarms can be updated. If an issue is resolved (e.g., the battery was replace, power was restored), the corresponding alarm should be automatically cleared to save manual work. This can be done through a PUT request to the URL of the alarm. In the above example for creating an alarm, we used an "Accept" header to get the URL of the new alarm in the response. We can use this URL to clear the alarm:
-
-    PUT /alarm/alarms/214600 HTTP/1.1
-    Content-Type: application/vnd.com.nsn.cumulocity.alarm+json
-    ...
-    {
-        "status": "CLEARED"
-    }
-    HTTP/1.1 200 OK
-
-If you are uncertain on whether to send an event or raise an alarm, you can simply just raise an event and let the user decide with a [CEL rule](/guides/reference/cumulocity-event-language) if they want to convert the event into an alarm.
-
-## Receive operations
-
-To receive operations sent from Cumulocity in a reliable and fast manner, the following situations have to be taken into account:
-
--   Operations may have been queued for the device while it was offline or out of network coverage.
--   The execution of an operation may have been intentionally or unintentionally interrupted. For example, the device may have been switched off during running an operation. Or, the device needed to be restarted for installing a new firmware or software.
--   Operations should be executed as fast as possible with low networking overhead.
+### Working with operations
 
 Each operation in Cumulocity is cycled through an execution flow. When an operation is created through a Cumulocity application, its state is "PENDING", i.e., it has been queued for executing but it hasn't executed yet. When an agent picks up the operation and starts executing it, it marks the operations as "EXECUTING" in Cumulocity. The agent will then carry out the operation on the device or its children (for examples, it will restart the device, or set a relay). Then it will possibly update the inventory reflecting the new state of the device or its children (e.g., it updates the current state of the relay in the inventory). Then the agent will mark the operation in Cumulocity as either "SUCCESSFUL" or "FAILED", potentially indicating the error.
 
-The following steps need to be carried out after a device resp. an agent is started:
+![Operation status diagram](/guides/rest/operations.png)
 
--   [Step 10](#step_10_finish_executing_operations): Finish executing operations.
--   [Step 11](#step_11_subscribe_to_pending_operations): Subscribe to pending operations.
--   [Step 12](#step_12_query_pending_operations): Query pending operations.
+The benefit of this execution flow is that it support devices that are offline and temporarily out of coverage. It also allows devices to support operations that require a restart -- such as a firmware upgrade. After the restart, the device needs to know what it previously did and hence needs to query all "EXECUTING" operations and see if they were successful. Also, it needs to listen what new operations may be queued for it.
 
-### Step 10: Finish executing operations
+### Step 6: Finish operations and subscribe
 
 To clean up operations that are still in "EXECUTING" status, query operations by agent ID and status. In our example, the request would be:
 
@@ -365,7 +272,7 @@ To clean up operations that are still in "EXECUTING" status, query operations by
     Content-Type: application/vnd.com.nsn.cumulocity.operationCollection+json;; charset=UTF-8; ver=0.9
     ...
     {
-        "next": "https://.../devicecontrol/operations?pageSize=2000&currentPage=2&deviceId=2480300&status=EXECUTING",
+        "next": "https://.../devicecontrol/operations?agentId=2480300&status=EXECUTING",
         "operations": [
             {
                 "creationTime": "2013-08-29T19:49:15.239+02:00",
@@ -373,9 +280,7 @@ To clean up operations that are still in "EXECUTING" status, query operations by
                 "id": "2593101",
                 "self": "https://.../devicecontrol/operations/2480300",
                 "status": "EXECUTING",
-                "description": "Configuration update",
-                "c8y_Configuration": {
-                    "config": "#Thu Aug 29 18:46:40 BST 2013\nc8y.humidity.interval=5000\n..."
+                "c8y_Restart": {
                 }
             }
         ],
@@ -383,22 +288,19 @@ To clean up operations that are still in "EXECUTING" status, query operations by
             "currentPage": 1,
             "pageSize": 2000
         },
-        "self": "https://.../devicecontrol/operations?pageSize=2000&currentPage=1&deviceId=2480300&status=EXECUTING"
+        "self": "https://.../devicecontrol/operations?agentId=2480300&status=EXECUTING"
     }
 
-This operation seems to have failed, so we update it to be in "FAILED" status:
+The restart seems to have executed well -- we are back after all. So let's set the operation to "SUCCESSFUL".
 
     PUT /devicecontrol/operations/2480300 HTTP/1.1
     Content-Type: application/vnd.com.nsn.cumulocity.operation+json
     {
-        "status": "FAILED",
-        "failureReason": "Unknown error."
+        "status": "SUCCESSFUL"
     }
     HTTP/1.1 200 OK
 
-### Step 11: Subscribe to pending operations
-
-In this step, we will listen to new operations created in Cumulocity. The mechanism for listening to real-time data in Cumulocity is described in [Real-time notifications](/guides/reference/real-time-notifications) and is based on the standard Bayeux protocol. First, a handshake is required. The handshake tells Cumulocity what protocols the agent supports for notifications and allocates a client ID to the agent.
+Then, listen to new operations created in Cumulocity. The mechanism for listening to real-time data in Cumulocity is described in [Real-time notifications](/guides/reference/real-time-notifications) and is based on the standard Bayeux protocol. First, a handshake is required. The handshake tells Cumulocity what protocols the agent supports for notifications and allocates a client ID to the agent.
 
     POST /devicecontrol/notifications HTTP/1.1
     Content-Type: application/json
@@ -453,7 +355,17 @@ Finally, the device connects and waits for operations to be sent to it.
         "clientId": "139jhm07u1dlry92fdl63rmq2c"
     } ]
 
-This request will hang until an operation is issued, i.e. the HTTP server will not answer immediately, but wait until an operation is available for the device (long polling). Here is an example of a response with a single configuration operation:
+This request will hang until an operation is issued, i.e. the HTTP server will not answer immediately, but wait until an operation is available for the device (long polling).
+
+Note that there might have been operations that were pending before we subscribed to new incoming operations. We need to query these still. This is done after the subscription to not miss any operations between query and subscription. The technical handling is just like previously described for "EXECUTING" operations, but using "PENDING" instead:
+
+    GET /devicecontrol/operations?agentId=2480300&status=PENDING HTTP/1.1
+
+## Cycle Phase
+
+### Step 7: Execute operations
+
+Assume now that an operation is queued for the agent. This will make the long polling request that we issued above return with the operation. Here is an example of a response with a single configuration operation:
 
     HTTP/1.1 200 OK
     ...
@@ -477,12 +389,92 @@ This request will hang until an operation is issued, i.e. the HTTP server will n
         }
     ]
 
-When the agent picks up the operation, it sets it to "EXECUTING" state in Cumulocity using a PUT request (see above example for "FAILED"). It carries out the operation on the device and runs possible updates of the Cumulocity inventory. Finally, it sets the operation to "SUCCESSFUL" or "FAILED" depending on the outcome.
+When the agent picks up the operation, it sets it to "EXECUTING" state in Cumulocity using a PUT request (see above example for "FAILED"). It carries out the operation on the device and runs possible updates of the Cumulocity inventory. Finally, it sets the operation to "SUCCESSFUL" or "FAILED" depending on the outcome. Then, it will reconnect again to "/devicecontrol/notifications" as described above and wait for the next operation.
 
-The device should reconnect within ten seconds to the server to not loose queued operatins. This interval can be specified upon handshake.
+> The device should reconnect within ten seconds to the server to not loose queued operatins. This is the time that Cumulocity buffers real-time data. The interval can be specified upon handshake.
 
-### Step 12: Query pending operations
+### Step 8: Update inventory
 
-Finally, the agent still needs to query the operations that were pending before it subscribed to new incoming operations. This is done after the subscription to not miss any operations between query and subscription. The technical handling is just like previously described for "EXECUTING" operations, but using "PENDING" instead:
+The inventory entry of a device usually represents its current state, which may be subject of continuous change. As an example, consider a device with a GPS chip. That device will keep its current location up-to-date in the inventory. At the same time, it will report location updates as well as event to maintain a trace of its locations. Technically, such updates are reported with the same requests as shown in Step 4.
 
-    GET /devicecontrol/operations?agentId=2480300&status=PENDING HTTP/1.1
+### Step 9: Send measurements
+
+To create new measurements in Cumulocity, issue a POST request with the measurement. The example below shows how to create a signal strength measurement.
+
+    POST /measurement/measurements HTTP/1.1
+    Content-Type: application/vnd.com.nsn.cumulocity.measurement+json
+    ...
+    {
+        "source": { "id": "2480300" },
+        "time": "2013-07-02T16:32:30.152+02:00",
+        "type": "huawei_E3131SignalStrength",
+        "c8y_SignalStrength": {
+            "rssi": { "value": -53, "unit": "dBm" },
+            "ber": { "value": 0.14, "unit": "%" } 
+        }
+    }
+    HTTP/1.1 201 Created
+
+### Step 10: Send events
+
+Similar, use a POST request for events. The following example shows a location update from a GPS sensor.
+
+    POST /event/events HTTP/1.1
+    Content-Type: application/vnd.com.nsn.cumulocity.event+json
+    ...
+    {
+        "source": { "id": "1197500" },
+        "text": "Location updated",
+        "time": "2013-07-19T09:07:22.598+02:00",
+        "type": "queclink_GV200LocationUpdate",
+        "c8y_Position": {
+            "alt": 73.9,
+            "lng": 6.151782,
+            "lat": 51.211971
+        }
+    }
+    HTTP/1.1 201 Created
+
+Note that all data types in Cumulocity can include arbitrary extensions in the form of additional fragments. In this case, the event includes a position, but also self-defined fragments can be added.
+
+### Step 11: Send alarms
+
+Alarms represents events that most likely require human intervention to be solved. For example, if the battery in a device runs out of energy, someone has to visit the device to replace the battery. Creating an alarm is technically very similar to creating an event.
+
+    POST /alarm/alarms HTTP/1.1
+    Content-Type: application/vnd.com.nsn.cumulocity.alarm+json
+    Accept: application/vnd.com.nsn.cumulocity.alarm+json
+    ...
+    {
+        "source": { "id": "10400" },
+        "text": "Tracker lost power",
+        "time": "2013-08-19T21:31:22.740+02:00",
+        "type": "c8y_PowerAlarm",
+        "status": "ACTIVE",
+        "severity": "MAJOR",
+    }
+    HTTP/1.1 201 Created
+    Content-Type: application/vnd.com.nsn.cumulocity.alarm+json
+    ...
+    {
+        "id": "214600",
+        "self": "https://.../alarm/alarms/214600",
+        ...
+    }
+
+However, you most likely should not create an alarm for a device, if there is a similar alarm already active in the system. Creating many alarms may flood the user interface and may require users to manually clear all the alarms. This is an example for finding the active alarms of our Raspberry Pi from above:
+
+    GET /alarm/alarms?source=2480300&status=ACTIVE HTTP/1.1
+
+In contrast to events, alarms can be updated. If an issue is resolved (e.g., the battery was replace, power was restored), the corresponding alarm should be automatically cleared to save manual work. This can be done through a PUT request to the URL of the alarm. In the above example for creating an alarm, we used an "Accept" header to get the URL of the new alarm in the response. We can use this URL to clear the alarm:
+
+    PUT /alarm/alarms/214600 HTTP/1.1
+    Content-Type: application/vnd.com.nsn.cumulocity.alarm+json
+    ...
+    {
+        "status": "CLEARED"
+    }
+    HTTP/1.1 200 OK
+
+If you are uncertain on whether to send an event or raise an alarm, you can simply just raise an event and let the user decide with a [CEL rule](/guides/reference/cumulocity-event-language) if they want to convert the event into an alarm.
+

@@ -6247,7 +6247,7 @@ p img {
 h3 {
   font-size: 18px;
   font-weight: bold;
-  text-transform: uppercase;
+  /*text-transform: uppercase;*/
 }
 pre {
   margin: 30px;

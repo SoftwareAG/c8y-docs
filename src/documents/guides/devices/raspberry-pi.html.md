@@ -62,7 +62,7 @@ Restarting the Pi can take up to two minutes, depending on installed software, c
 
 ![Accept device](/guides/devices/deviceacceptance.png)
 
-Click on "All devices" to manage the Raspberry Pi. It is by default visible as "RaspPi &lt;&lt;hardware model&gt;&gt; &lt;&lt;serial number&gt;&gt;". You can edit the name in the "Info" tab.
+Click on "All devices" to manage the Raspberry Pi. It is by default visible as "RaspPi <<hardware model>> <<serial number>>". You can edit the name in the "Info" tab.
 
 ## Using Tinkerforge bricks and bricklets
 
@@ -72,7 +72,7 @@ The agent supports Tinkerforge devices out of the box, provided the [Tinkerforge
 
 The agent includes a simple [PiFace Digital](http://www.element14.com/community/docs/DOC-52857/l/piface-digital-for-raspberry-pi) driver. The driver will create events when switches are pressed and will react to remote control commands to the relays. The events can be further processed through [CEL rules](/guides/concepts/realtime).
 
-The driver depends on [Pi4J](http://pi4j.com/). To install Pi4J, follow the [Pi4J installation instructions](http://pi4j.com/install.html).
+Before using your PiFace Digital make sure you have tested it following the instructions on the [official website]http://www.piface.org.uk/guides/Install_PiFace_Software/. You don't have to go through the whole guide. Following it up to the "Testing your PiFace" part is enough.
 
 ## Installing a 3G modem
 

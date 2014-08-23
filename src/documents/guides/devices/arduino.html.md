@@ -6,9 +6,11 @@ toc: true
 
 ## Overview
 
-This section describes how to get started with the Cumulocity Agent for Arduino and the M2M DevStarter Arduino package from Deutsche Telekom. We start with our instructions from installing and setting up the hardware, as well as showing a step-by-step example how to take sensor data and upload the data into the Cumulocity developer sandbox.
+This section describes how to get started with Cumulocity for Arduino and the M2M DevStarter Arduino package from Deutsche Telekom.
 
-If you build something with it, tell us, we are more than happy to hear about your cool Thing !
+This guide first talks about how to set up the hardware contained within the Starter Kit after which basic instructions are given on how to work with the Cumulocity Platform on the Arduino.
+
+If you build something with it, tell us. We are more than happy to hear about your cool Thing!
 
 ## Information about hardware
 
@@ -35,7 +37,7 @@ The DevStarter Arduino Package is available from Deutsche Telekom. To order a pa
 
 ### Seeedstudio GSM Shield
 
-The GSM Shield from Seeedstudio let's your Arduino connect to the internet via mobile network.
+The GSM Shield from Seeedstudio lets your Arduino connect to the internet via mobile network.
 The GSM Shield can be used with e.g. An Arduino UNO as an alternative to the described Gboard.
 For more information about the shield, check the Seeedstudio Wiki: [http://www.seeedstudio.com/wiki/GPRS\_Shield](http://www.seeedstudio.com/wiki/GPRS_Shield)
 
@@ -43,14 +45,87 @@ For more information about the shield, check the Seeedstudio Wiki: [http://www.s
 
 ## Setting up the software
 
-### Install the Arduino IDE and the Cumulocity Client Library
+### Arduino IDE 1.5.7
 
-#### Arduino IDE v1.0.4
-
-Download and install the Arduino IDE 1.0.4, see instructions [here](http://arduino.cc/en/main/software)
+Download and install the Arduino IDE version 1.5.7, see instructions [here](http://arduino.cc/en/Main/software). Versions lower then 1.5.7 will produce errors with some sketches as the compiler is too old.  
 Start the Arduino IDE once and quit the application again. This will create directory structures needed in the next steps.
 
-#### Cumulocity C Client Library for Arduino
+### Foca FTD232 USB drivers
+
+For the Foca FTD232 programming adapter you will need to install drivers. Please check [http://www.ftdichip.com/Drivers/VCP.htm](http://www.ftdichip.com/Drivers/VCP.htm%20)and install the driver that fits your platform (not required for Linux).
+
+## Setting up the hardware
+
+### Setting up the Deutsche Telekom M2M DevStarter Arduino
+
+1. Insert the SIM card into the SIM slot on the backside of the board.
+
+   Verify that the SIM card has no pin code enabled and remove the pin code using your mobile phone if necessary.
+
+2. Connect the Antenna
+
+3. Set the programming adapter to 3.3 volt
+
+   Adjust the switch on the Foca FT232 programming adapter: set the switch to the 3.3 Volt position as shown below.
+
+   ![foca](/guides/devices/arduino/foca.png)
+
+4. Adjust the dip-switches on the GBoard. Set the dip switches as shown on the picture below.
+
+   ![](/guides/devices/arduino/dipswitch2.jpg)
+
+5. Connect the Foca adapter to the GBoard
+
+   Connect the Foca Adapter to the GBoard, making sure the PINs are aligned as shown on the picture below
+
+   * Pin DTR to Pin DTR
+   * Pin VDD33 to Pin VCCIO
+
+   ![connect1](/guides/devices/arduino/connect1.png)
+
+6. Connecting the sensor
+
+   You can connect sensors and actors to the M2M DevStarter Arduino to remotely measure and control things.  The package comes with one example sensors - a light sensor - to get you started easily.
+
+   Connect the sensor with the supplied cable to connector as shown below ( Note the while cable is connected to pin 'S' on both ends).
+
+   ![sensor3](/guides/devices/arduino/sensor3.png)
+
+7. Final hardware setup steps
+
+   Place the GBoard on a non-conductive surface, connect the power supply. Connect the USB cable to your computer and the Foca.
+
+### Setting up the Seeedstudio GSM Shield
+
+Seeedstudio GSM shield can be used in conjunction with our Client library. The Seeedstudio shield is an add-on shield to extend your Arduino with mobile network connectivity.
+
+![seedstudio shield](/guides/devices/arduino/seedstudio_shield.png)
+
+1. Insert the SIM card into the SIM slot on the backside of the board.
+
+   Verify that the SIM card has no pin code enabled and remove the pin code using your mobile phone if necessary.
+
+2. Connect the Antenna
+
+3. Set the power supply switch
+
+   The Seeedstudio GPRS Shield can be either powered by an external 5 volt power supply or can be powered from the Arduino board itself.
+
+   Set the switch to the preferred position. Check the official Seeedstudio shield documentation for details: [http://www.seeedstudio.com/wiki/GPRS\_Shield](http://www.seeedstudio.com/wiki/GPRS_Shield)
+
+4. Set the dip switches on the board and in the GSM Library
+
+   Set the DIP switches on the shield as shown below (RX=7, TX=8):
+
+   ![seedstudio switch](/guides/devices/arduino/seedstudio_switch.png)
+
+## Getting started with the CumulocityPlatform client
+
+### Preparations
+
+#### Install Arduino libraries
+
+##### Cumulocity C Client Library for Arduino
 
 Download the Cumulocity Client Library from [https://bitbucket.org/m2m/cumulocity-arduino/get/default.zip](https://bitbucket.org/m2m/cumulocity-arduino/get/default.zip).
 
@@ -70,7 +145,7 @@ or like this (on Mac):
       Documents/Arduino/libraries/CumulocityArduinoClient/examples
       ...
 
-#### GSM Library
+##### GSM Library
 
 Download and install a patched version of the Open Electronics GSM Library: [GSMSHIELD.zip](/guides/devices/arduino/GSMSHIELD.zip), by performing similar steps as for the Cumulocity Agent Library above.
 
@@ -79,110 +154,39 @@ You can find further information about the Open Electronics library here: [GSM L
 
 Note on the patch: The original library has been changed at two places: A timing issue has been corrected.
 
-#### Installing the USB drivers
+The following sections describe the necessary changes to the library to make it work with the hardware described above.
 
-For the Foca FTD232 programming adapter you will need to install drivers. Please check [http://www.ftdichip.com/Drivers/VCP.htm](http://www.ftdichip.com/Drivers/VCP.htm%20)and install the driver that fits your platform (not required for Linux).
+##### Deutsche Telekom M2M DevStarter Arduino
 
-#### Upgrading avr-gcc compiler version
+For the GBoard, the following library modifications have to be made to get it running:
 
-One of the example sketches - the devicecontrol sketch, allows you to send a command to Arduino, for example to switch on/off an attached lamp or other device. This DeviceControl sketch does not work with Arduino IDE, which includes avr-gcc 4.3.2, because of a compiler bug. It works with avr-gcc 4.7.2.
+1. Open the file `GSM.h` from GSM Library folder and make sure correct pins are set as follows:
 
-In order to compile and run the DeviceControl sketch, you will need to manually update the compiler included in our Arduino IDE. You can find instructions on how to do the update below.
+       #define GSM_ON 6
+       #define GSM_RESET 7
 
-## Setting up the hardware
+2. Configure switches in the `GSM.cpp` file, which resides in the GSM Library folder. Make following settings in line 27 and 28 of the file:
 
-### Setting up the Deutsche Telekom M2M DevStarter Arduino
+        #define _GSM_TXPIN_ 2
+        #define _GSM_RXPIN_ 3
 
-#### 1. Installing the SIM-card
+##### Seeedstudio GSM Shield
 
-Verify that the SIM-card has no pin-code enabled or remove the pin-code using your mobile phone. Install the SIM-card into the GBoard.
+The Seeedstudio GSM Shield requires the following library adjustments:
 
-#### 2. Connect the Antenna
+1. Configure the same switches in the `GSM.cpp` file, which resides in the GSM Library folder. Make following settings in line 27 and 28 of the file:
 
-#### 3. Set programming adapter to 3.3 Volt
+       #define _GSM_TXPIN_ 7
+       #define _GSM_RXPIN_ 8
 
-Adjust the switch on the Foca FT232 programming adapter: set the switch to the 3.3 Volt position as shown below.
+2. Open the file `GSM.h` from GSM Library folder and set:
 
-![foca](/guides/devices/arduino/foca.png)
+       #define GSM_ON 9
 
-#### 4. Adjust the dip-switches on the GBoard. Set the dip switches as shown on the picture below.
+3. Comment out output port definitions in `CumulocityPlatform.cpp` in the Cumulocity library folder as follows:
 
-![](/guides/devices/arduino/dipswitch2.jpg)
-
-#### 5. Connect the Foca dapter to the GBoard
-
-Connect the Foca Adapter to the GBoard, making sure the PINs are aligned as shown on the picture below
-
--   Pin DTR to Pin DTR
--   Pin VDD33 to Pin VCCIO
-
-![connect1](/guides/devices/arduino/connect1.png)
-
-#### 6. Connecting the sensor
-
-You can connect sensors and actors to the M2M DevStarter Arduino to remotely measure and control things.  The package comes with one example sensors - a light sensor - to get you started easily.
-
-Connect the sensor with the supplied cable to connector as shown below ( Note the while cable is connected to pin 'S' on both ends).
-
-![sensor3](/guides/devices/arduino/sensor3.png)
-
-#### 7. Final hardware setup steps
-
-Place the GBoard on a non-conductive surface, connect the power supply. Connect the USB cable to your computer and the Foca.
-
-#### 8. Open the file GSM.h from GSM Library folder and make sure correct pins are set:
-
->     #define GSM_ON 6
->     #define GSM_RESET 7
-
-#### 9. Configure switches in the GSM.cpp file, which resides in the GSM Library folder. Make following settings in line 27 and 28 of the file:
-
->     #define _GSM_TXPIN_ 2
->     #define _GSM_RXPIN_ 3
-
-### Setting up the Seeedstudio GSM Shield
-
-Seeedstudio GSM shield can be used in conjunction with our Client Library Cumulocity. The Seeedstudio shield is a add-on shield to extend your Arduino with mobile network (GSM)
-Connectivity.
-
-![seedstudio shield](/guides/devices/arduino/seedstudio_shield.png)
-
-1.  **Installing the SIM-card**
-
-    Verify that the SIM-card has no pin-code enabled or remove the pin-code using your mobile phone. Install the SIM-card into the GBoard.
-
-2.  **Connect the Antenna**
-3.  **Set power supply switch**
-
-    The Seeedstudio GPRS Shield can be either powered by an external 5Volt power supply or can be powered from Arduino board.
-    Set the switch to the preferred position. Check the official Seeedstudio shield documentation for details: [http://www.seeedstudio.com/wiki/GPRS\_Shield](http://www.seeedstudio.com/wiki/GPRS_Shield)
-
-4.  **Set the dip switches on the board and in the GSM Library**
-
-    Set the DIP switches on the shield as shown below ( RX=7, TX=8):
-
-    ![seedstudio switch](/guides/devices/arduino/seedstudio_switch.png)
-
-    Configure the same switches in the GSM.cpp file, which resides in the GSM Library folder. Make following settings in line 27 and 28 of the file:
-
-    \#define \_GSM\_TXPIN\_ 7
-    \#define \_GSM\_RXPIN\_ 8
-
-5.  **Open the file GSM.h from GSM Library folder and set:**
-
-    \#define GSM\_ON 9
-
-6.  **Comment out output port definitions in Cumulocity Library**
-
-    Open CumulocityPlatform.cpp file from the CumulocityArduinoClient library folder and comment lines as shown below:
-
-    //pinMode(7, OUTPUT);
-    //pinMode(6, OUTPUT);
-
-**
-**
-
-## Getting started
+       //pinMode(7, OUTPUT);
+       //pinMode(6, OUTPUT);
 
 ### First steps... check GSM connection
 
@@ -460,74 +464,69 @@ Raising alarm is very similar to sending measurements. In the sketch you will se
 
 The method used here is raiseAlarm, which accepts type of the alarm, severity of the alarm and the message. Return values are the same as in sendMeasurement.
 
-## Upgrading compiler in Arduino IDE
+## Getting started with SmartREST for Arduino
 
-Currently by default Arduino comes with avr-gcc 4.3.2. This is quite old version and is known to have many bugs. In Cumulocity library these cause Device Control to not work and restart a program. We strongly recommend updating the compiler and 
+### Preparations
 
-Whatever your platform is, please have in mind that avr-gcc 4.7.2 and avr-libc 1.8.0 are the currently the only versions confirmed to be working with Device Control functionality. However, we expect that further versions should work as well.
+#### Install Arduino libraries
 
-Below you find instructions for  Mac, Windows and Linux on how to upgrade compiler and libc.
+Download the necessary libraries from [https://bitbucket.org/m2m/cumulocity-arduino/get/default.zip](https://bitbucket.org/m2m/cumulocity-arduino/get/default.zip).
 
-## Mac OS X
+The `ArduinoSmartRest` and `SIM900Client` libraries need to be copied to the local Arduino library folder located in `Documents/Arduino/libraries` on Mac OSX and in `My Documents\\Arduino\\libraries` on Windows.
 
-### Download packages
+After installation, the directory structure looks like this on Mac OSX:
 
-For Macintosh you can download the latest versions of 'avr-gcc' and 'avr-libc' using MacPorts.   You can also download the packages manually from the package repository. Follow these links to download the latest packages of avr-gcc and avr-libc. Then replace them in Arduino IDE directory.
+    Documents
+    └── Arduino
+        └── libraries
+            ├── ArduinoSmartRest
+            └── SIM900Client
 
-[http://jog.id.packages.macports.org/macports/packages/avr-gcc/](http://jog.id.packages.macports.org/macports/packages/avr-gcc/)
-[http://jog.id.packages.macports.org/macports/packages/avr-libc/](http://jog.id.packages.macports.org/macports/packages/avr-libc/)
+It will look simmilar to this on Windows:
 
-Darwin\_10 package is for Mac OS X 10.6.x, whereas Darwin 11 is for Mac OS X 10.7.x and Darwin 12 for version 10.8.
+    My Documents
+    └── Arduino
+        └── libraries
+            ├── ArduinoSmartRest
+            └── SIM900Client
 
- Next you need to merge the contents of these packages with the contents of the Arduino IDE. NOTE, that on Macintosh copying a directory over another directory will completely replace the directory contents ( as opposed to Windows, where a file merge is done).   Replacing complete directories should not be done - you would loose important files - instead MERGE the contents of the directories.
+### Running the Sketches
 
-Open Arduino IDE directories.  To open the Arduino IDE directories on Macintosh hold "Control" button on keyboard while clicking on the Arduino Application Icon, select "Show Package Contents".
+The `ArduinoSmartRest` library provides Sketches you can use as a starting point to build your own application.
 
-In the Package Contents navigate to directory:
+Click on `File` -\> `Examples` -\> `ArduinoSmartRest` -\> `SIM900ArduinoSmartRest` to load a Sketch which can be used with the hardware described on this page.
 
-    Contents/Resources/Java/hardware/tools/avr
+Next, you have to configure the `SIM900Client` for the device used. For this, uncomment the desired configuration and remove others.
 
-### Updating GCC  compiler
+For the GBoard with the described configuration above, the configuration will look like this:
 
-Now MERGE the contents of GCC4.7.2 directories over to the Arduino IDE folders, as shown below.
-Confirm questions about overwriting/replacement of files.
+    //GSMSHIELD
+    //SIM900Client sim(7, 8, 9);
+    //GBOARD
+    SIM900Client client(2, 3, 6);
 
-![final mac copy gcc](/guides/devices/arduino/final_mac_copy_gcc.png)
+For the Seeedstudio GSM Shield, the configuration looks like this:
 
-### Updating Libc 1.8.0
+    //GSMSHIELD
+    SIM900Client sim(7, 8, 9);
+    //GBOARD
+    //SIM900Client client(2, 3, 6);
 
-You also need to update libc to version 1.8.0. Unpack the avr-libc 1.8.0 package and MERGE the files over to the Arduini IDE folders as shown  below. Confirm questions about overwriting/replacement of files.
-NOTE: Do not copy whole directories, as this would remove some files in the Arduini IDE directories ( e.g. the ldscripts folder in avr/lib in the IDE).
+Next, you will want to change the `ARDUINO_IDENTITY` definition. Make it as unique as possible.
 
-![final mac copy libc](/guides/devices/arduino/final_mac_copy_libc.png)
+    #define ARDUINO_IDENTITY F("EDF5W214G9NI7DXN")
 
-## Linux
+Then, you need to change the GPRS login definitions here:
 
-On Fedora you can just install the latest Arduino with following command:
+    #define GPRS_APN "public4.m2minternet.com"
+    #define GPRS_USER ""
+    #define GPRS_PASS ""
 
-yum install arduino
+If the login data is incorrect, the device will yield an error message telling it cannot attach to the network.
 
-This should install all the required dependencies, including avr-gcc compiler, in the latest version.
+Finally, you must provide the Sketch with Cumulocity login credentials to allow the device access to the platform.
 
-On other distributions you will have to replace libraries in Arduino IDE directory. You can follow these links:
-[http://www.micahcarrick.com/installing-gnu-tools-avr-gcc.html](http://www.micahcarrick.com/installing-gnu-tools-avr-gcc.html)
+    #define CLIENT_USER "tenant/user"
+    #define CLIENT_PASS "********"
 
-## Windows
-
-Please follow instructions here: [http://andybrown.me.uk/wk/2012/04/28/avr-gcc-4-7-0-and-avr-libc-1-8-0-compiled-for-windows/](http://andybrown.me.uk/wk/2012/04/28/avr-gcc-4-7-0-and-avr-libc-1-8-0-compiled-for-windows/)
-
-Note: Instructions are for Arduino IDE 1.0. For Arduino IDE 1.0.4 files from "Step 4" will not work. Please use following files for Arduino IDE 1.0.4: [sources](/guides/devices/arduino/sources.zip).
-
-### Replace packages
-
-By default avr-gcc is located in:
-
-ARDUINO\_DIR/hardware/tools/avr/lib/gcc/avr/
-
-The avr-libc library is located in:
-
-ARDUINO\_DIR/hardware/tools/avr/lib/avr/
-
-This is where you need to place newly downloaded package
-
-
+Now, compile the Sketch and upload it to your GBoard or Arduino by clicking the `Upload` button on the toolbar of the Arduino IDE. You can open a serial monitor to obtain debug information and if everything went well, you should find a new device in your device management.

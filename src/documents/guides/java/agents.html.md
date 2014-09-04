@@ -67,7 +67,7 @@ By default, the agent is "always on", i.e., it maintains a connection to Cumuloc
 
 To restart the device that the agent is running on, go to the "Control" tab and click "Restart".
 
-![Restart and configure](/guides/devices/javarestartconfig.png).
+![Restart and configure](/guides/devices/javarestartconfig.png)
 
 ### Tracing
 

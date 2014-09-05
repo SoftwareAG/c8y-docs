@@ -39,14 +39,9 @@ Using this handle, you can create, retrieve and update managed objects. For exam
 
 This returns a query to get the objects -- it does not actually get them. In practice, such a list of objects could be very large. Hence, it is return in "pages" from the server. To get all pages and iterate over them, use:
 
-	ManagedObjectCollectionRepresentation mos;
-	for (mos = moc.get(); mos != null; mos = moc.getNextPage(mos)) {
-		for (ManagedObjectRepresentation mo : mos.getManagedObjects()) {
+	for (ManagedObjectRepresentation mo : moc.get().allPages()) {
 			System.out.println(mo.getName());
-		}
 	}
-
-The outer loop queries Cumulocity and retrieves the pages, the inner loop iterates over the objects return in a page. Please note that the collection may change while iterating over it. For example, when you retrieve the next page of objects from a client, another client may have deleted all objects in the meantime. Hence you cannot assume at the beginning of the iteration that the collection will stay constant.
 
 To create a new managed object, simply construct a local representation of the object and send it to the platform. The following code snippet shows how to create a new electricity meter with a relay in it:
 

@@ -123,6 +123,35 @@ All properties are optional.
 
 ## More examples
 
+### Create customers in the inventory (through CRM)
+
+### Create customers in the inventory (through a form builder)
+
+* Account for Wufoo
+* Create a form
+* Update inventory action
+
+### Restart a device from your ticketing system
+
+### Send sales to your accounting/invoicing
+
+* Freshbooks/Coinbase/Dwolla
+* OpenERP
+* Google Spreadsheet
+
+### Create tickets from alarms
+
+### Expose events 
+
+* RSS Feed
+* Twitter/Facebook/HipChat
+
+### Post location of machine to CRM?
+
+http://www.geonames.org/export/reverse-geocoding.html
+
 ## Extensions
+
+New ideas? Mail us.
 
 

@@ -23,7 +23,7 @@ The Java agent supports Windows and Unix-based systems and contains the followin
 
 ## Prerequisites
 
-A Unix-based system with an installation of Java SE 7 is required (for example, Linux, MacOS). To verify the availability of Java on your system, type
+Windows or Unix-based system with an installation of Java SE 7 is required (for example, Linux, MacOS). To verify the availability of Java on your system, type
 
 	$ java -version
 	java version "1.7.0_45"
@@ -45,6 +45,11 @@ You can run the agent by running c8y-agent. If you want more debug information y
 cfg/logback.xml to fit your needs.
 
 ## Building
+
+Before building please ensure you have at least [JDK 1.7](http://www.oracle.com/technetwork/java/javase/downloads/index.html) and [Maven 3](http://maven.apache.org/download.cgi). You can do that by running:
+
+	mvn -version
+	javac -version
 
 Source code is available at https://bitbucket.org/m2m/cumulocity-examples in the folder java-agent. To build the agent simply run:
 

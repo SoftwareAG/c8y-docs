@@ -12,7 +12,7 @@ The Java Agent provides a Java-based reference implementation for all device man
 * Use it as a base for your own implementation by adding drivers for additional hardware.
 * Use it as a reference for implementing device management features in other environments.
 
-The Java agent supports Unix-based systems and contains the following functionality: 
+The Java agent supports Windows and Unix-based systems and contains the following functionality: 
 
 * Discovery and hardware identification: Automatically registers a device, its supported functionality and its connected sensors and controls.
 * Availability management: Determine if a device connects as expected and notify the user if not.

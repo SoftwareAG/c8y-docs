@@ -6,13 +6,13 @@ title: Java reference agent
 
 ## Overview
 
-The Java Agent provides a Java-based reference implementation for all device management features of Cumulocity plus drivers for various device kits. There are multiple ways of using the agent:
+The Java agent provides a reference implementation for all device management features of Cumulocity plus drivers for various device kits. There are multiple ways of using the agent:
 
 * Use it as it is for managing your Java-enabled devices.
 * Use it as a base for your own implementation by adding drivers for additional hardware.
 * Use it as a reference for implementing device management features in other environments.
 
-The Java agent supports Unix-based systems and contains the following functionality: 
+The Java agent supports Windows and Unix-based systems and contains the following functionality: 
 
 * Discovery and hardware identification: Automatically registers a device, its supported functionality and its connected sensors and controls.
 * Availability management: Determine if a device connects as expected and notify the user if not.
@@ -23,29 +23,24 @@ The Java agent supports Unix-based systems and contains the following functional
 
 ## Prerequisites
 
-A Unix-based system with an installation of Java SE 7 is required (for example, Linux, MacOS). To verify the availability of Java on your system, type
+An installation of Java SE 7 is required. To verify the availability of Java on your system, type
 
 	$ java -version
 	java version "1.7.0_45"
 
-To install Java, please visit http://java.com. There is also a basic Windows driver included for running the agent on Windows systems, for example, along with a Tinkerforge kit. Not all functionality is supported on Windows.
+To install Java, please visit http://java.com.
 
 ## Installing
 
-Binary packages are available for the Raspberry Pi, the Kontron M2MSSDK and for MacOS. 
+Binary packages are available for the Raspberry Pi, the Kontron M2MSSDK, Mac OS X, Linux and Windows. 
 
-* For the Raspberry Pi and similar Embedded Linux devices, please [visit the Raspberry Pi page](/guides/devices/raspberry-pi).
-* For the Kontron M2MSSDK, please [visit the Kontron M2MSSDK page](/guides/devices/kontron).
-* On a Mac, download the package from http://resources.cumulocity.com/examples/cumulocity-mac-agent-latest.tar.gz and unpack it into a new folder.
+* For the Raspberry Pi and similar Embedded Linux devices, please [check the Raspberry Pi guide](/guides/devices/raspberry-pi).
+* For the Kontron M2MSSDK, please [check the Kontron M2MSSDK guide](/guides/devices/kontron).
+* On a Mac OS X, please download the [latest Mac Agent Archive](http://resources.cumulocity.com/examples/cumulocity-mac-agent-latest.tar.gz).
+* On a Windows OS, please download the [latest Windows Agent Archive](http://resources.cumulocity.com/examples/cumulocity-win-agent-latest.zip).
+* On a Linux OS, please download the [latest Linux Agent Archive](http://resources.cumulocity.com/examples/cumulocity-linux-agent-latest.tar.gz).
 
-The packages contain a script "c8y-agent.sh" that can be run at system startup. The script redirects output of the agent to the system log. In case of startup issue, examine the log.
-
-	$ tail -f /var/log/syslog (On Linux)
-	$ tail -f /var/log/system.log (On a Mac)
-
-## Building
-
-Source code is available at https://bitbucket.org/m2m/cumulocity-examples in the folder linux-agent. Instructions for building the agent using Maven are in the [README file](https://bitbucket.org/m2m/cumulocity-examples/src/77cc3ca7f1ab529173a1add55352f586e9a0eeb9/linux-agent?at=default).
+Unpack your respective package in a new folder. After unpacking, use the script "c8y-agent" to run the agent. If you need more debug information, run the script "c8y-agent-debug" or change the file cfg/logback.xml to use a more fine granular logging.
 
 ## Running
 
@@ -55,6 +50,7 @@ When the agent is successfully started, open Cumulocity in a web browser and go 
 
 * On a Raspberry Pi, it's the serial number of the Raspberry Pi (see the [instructions](/guides/devices/raspberry-pi)).
 * On a Mac, it's the serial number of the Mac. Click on the Apple logo in the menu, "About This Mac", "More Info" to display the serial number.
+* On Windows, it's the serial number of your PC. To get it, run "wmic csproduct get identifyingnumber" from a command prompt.
 * On other Linux devices or as a fallback, the MAC address of the first network interface is used. Use "ifconfig" to print the network interfaces and check for the "HWaddr" entry. Often, the MAC address is also printed on the board.
 
 ### Monitoring the connection
@@ -79,6 +75,17 @@ The agent writes a log to Cumulocity. Low-severity log levels are sent to Cumulo
 Valid levels are "TRACE", "DEBUG", "INFO", "WARN" and "ERROR". Use "DEBUG" or "TRACE" only for troubleshooting purposes.
 
 ![Tracing](/guides/devices/javatracing.png).
+
+## Building
+
+Before building please ensure you have at least [JDK 1.7](http://www.oracle.com/technetwork/java/javase/downloads/index.html) and [Maven 3](http://maven.apache.org/download.cgi). You can do that by running:
+
+	mvn -version
+	javac -version
+
+Source code is available at https://bitbucket.org/m2m/cumulocity-examples in the folder java-agent. To build the agent simply run:
+
+	mvn clean install
 
 ## Extending
 

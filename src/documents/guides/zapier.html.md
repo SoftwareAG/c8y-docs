@@ -28,11 +28,11 @@ In the first example, we connect Cumulocity to Google Spreadsheet and transfer l
 
 ### Prerequisites
 
-To run the example, you need a Google account besides your Zapier account. If you do not have a Google account already, visit https://google.com and click "Sign in", then "Create an account". 
+To run the example, you need a Google account besides your Zapier account. If you do not have a Google account already, visit https://google.com and click "Sign in", then "Create an account". We also assume that you have the default simulated devices running in your account.
 
 ### Step 1: Set up a CEL statement to produce data
 
-Open the Cumulocity administration application, click on "Event Processing" and select "New Module". Give your new module the name "zapier". In the "Examples" drop-down menu, select "Send a measurement to Zapier". Edit the placeholders as follows:
+Open the Cumulocity administration application, click on "Event Processing" and select "New Module". Give your new module the name "zapier". In the "Examples" drop-down menu, select "Send simulator temperature to Zapier". Edit the placeholders as follows:
 
 * Replace "&lt;&lt;type&gt;&gt;" with "c8y_TemperatureMeasurement".
 * Replace "&lt;&lt;value&gt;&gt;" with "c8y_TemperatureMeasurement.T.value".
@@ -119,25 +119,90 @@ All properties are optional.
 
 ### From enterprise IT services to the Internet of Things
 
+The Zapier add-on provides a number of Zapier actions to send data to Cumulocity and to the device managed by Cumulocity. The currently supported actions are:
+
+* Update inventory.
+* New device.
+* Trigger device restart.
+
 ![Actions](/guides/zapier/actions.png)
+
+#### Update inventory
+
+"Update inventory" enables you to create and update assets in the Cumulocity inventory. The following parameters can be defined:
+
+* ID: A technical identifier for the asset.
+* Name: A human-readable name for the asset.
+* Type: The fragment type that is created or updated.
+* Data: The fragment's data as a list of keys and values.
+* Is a device? A flag that will mark the asset as a device, i.e., will make the asset show up when clicking on "All Devices".
+
+Assets are located in the inventory using the following process: 
+
+1 The ID is interpreted as asset ID and the Zapier add-on checks if there is an existing asset with the given asset ID.
+2 The ID is interpreted as a Cumulocity global ID and the Zapier add-on checks for an asset with that global ID. 
+3 The name is used to find an asset with an exactly matching name.
+
+If any of the three steps succeeds, the retrieved asset is updated. If nothing could be found, a new asset is created.
+
+#### New device
+
+"New device" registers a new device so that you can connect it directly. Pass the same device ID (IMEI, serial number) as you would normally use in the "Device registration" user interface.
+
+#### Trigger device restart
+
+"Trigger device restarts" sends a restart operation to a device. The device is identified with the same three-step mechanism as illustrated above in the "Update inventory" action.
 
 ## More examples
 
-### Create customers in the inventory (through CRM)
+### Register a device from a spreadsheet
 
-### Create customers in the inventory (through a form builder)
+In this example, we assume that you maintain a spreadsheet to keep track of your devices, their IMEIs, their SIM cards and their deployment location -- a "poor man's asset management". Whenever a new device is entered this spreadsheet, it should be automatically entered into Cumulocity's device registration. You can then switch on the device and pair it with your account.
 
-* Account for Wufoo
-* Create a form
-* Update inventory action
+As first step, prepare a spreadsheet similar to the one below in the screenshot. The column "IMEI" provides in this case the identifier of the device to be registered.
 
-### Restart a device from your ticketing system
+![Device spreadsheet](/guides/zapier/devicessheet.png)
+
+Then create a new Zap, selecting Google docs as source and Cumulocity as destination. The trigger is "Update Spreadsheet Row", and the action is "New device".
+
+![New device trigger](/guides/zapier/newdevicetrigger.png)
+
+Select your spreadsheet and the workbook in this spreadsheet. Use as "Trigger Column" the column with the device identifier ("IMEI" in this case).
+
+![Select ID column](/guides/zapier/selectidcolumn.png)
+
+Use the same column as value for the "Device ID" field so that the ID is sent to Cumulocity.
+
+![Set ID column](/guides/zapier/setidcolumn.png)
+
+Test the Zap and turn it on. Enter a new device into your spreadsheet. 
+
+![Enter device](/guides/zapier/enterdevice.png)
+
+After a while, the device ID appears in the "Device registration" dialog of Cumulocity.
+
+![Device registered](/guides/zapier/deviceregistration.png)
+
+> Note that, depending on your Zapier plan, it may take up to fifteen minutes until Zapier picks up the change in the spreadsheet.
+
+Now you can play with this setup. For example, you could introduce a workflow column indicating the state of the device (ordered, in stock, rolling out, in production) and only register the device when it is being rolled out.
+
+### Use a form to enter customers into the inventory
+
+* Create a Wufoo account with a form inside the account.
+* Link with update inventory action.
 
 ### Send sales to your accounting/invoicing
+
+In this example, we send vending machine sales automatically to your accounting system. 
 
 * Freshbooks/Coinbase/Dwolla
 * OpenERP
 * Google Spreadsheet
+
+Select "Send sales to Zapier" in the CEP engine.
+
+### Restart a device from your ticketing system
 
 ### Create tickets from alarms
 

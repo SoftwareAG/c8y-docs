@@ -26,7 +26,7 @@ In the first example, we connect Cumulocity to Google Spreadsheet and transfer l
 * Step 3: Set up a Zap to connect rule with spreadsheet.
 * Step 4: Test the Zap.
 
-### Prerequisites
+### What you need
 
 To run the example, you need a Google account besides your Zapier account. If you do not have a Google account already, visit https://google.com and click "Sign in", then "Create an account". We also assume that you have the default simulated devices running in your account.
 
@@ -189,16 +189,45 @@ Now you can play with this setup. For example, you could introduce a workflow co
 
 ### Use a form to enter customers into the inventory
 
-* Create a Wufoo account with a form inside the account.
-* Link with update inventory action.
+In this example, we update the Cumulocity inventory using a Wufoo form.
 
-### Send sales to your accounting/invoicing
+#### What you need
 
-In this example, we send vending machine sales automatically to your accounting system. 
+To run the example, you need a [Wufoo account](http://www.wufoo.com/).
 
-* Freshbooks/Coinbase/Dwolla
-* OpenERP
-* Google Spreadsheet
+#### Create a form on Wufoo
+
+Open the Wufoo form builder and create a form for your inventory entry. For the example, we want to create customer contacts in the inventory. Save the form.
+
+![Wufoo form](/guides/zapier/wufooform.png)
+
+#### Create a Zap to send form data to Cumulocity
+
+Make a new Zap in Zapier.
+
+* Select Wufoo as source and Cumulocity as destination.
+* Use "New Entry" as trigger and "Update inventory" as action.
+* Connect your Wufoo and Cumulocity accounts. 
+* Select the form that you have created in the Wufoo form builder.
+* Match the Wufoo form entries with Cumulocity inventory entries as shown below.
+
+In this case, we are creating a new entry for each customer entered into Wufoo. Hence, the Wufoo entry ID can be used as asset ID in Cumulocity. As name, we use the first and last name of the contact. "Data" contains a list of key/value pairs that you can use for the remaining form data. These key/value pairs are stored in a Cumulocity fragment "c8y_Contact". You can set "Is a device?" to true to see the entered data in the device management application (even though your contact isn't exactly a device).
+
+![Wufoo Zap](/guides/zapier/wufoozap.png)
+
+#### Fill some forms
+
+After testing and activating your Zap, go to the Wufoo entry manager and enter some data. 
+
+TBD: How to test this really? Maybe we should use some data here that we have actually a display for.
+
+### Send sales to your accounting
+
+In this example, we send vending machine sales automatically to your accounting system.
+
+#### What you need
+
+* Freshbooks/OpenERP/Google Spreadsheet
 
 Select "Send sales to Zapier" in the CEP engine.
 

@@ -229,7 +229,13 @@ In this example, we send vending machine sales automatically to your accounting 
 
 * Freshbooks/OpenERP/Google Spreadsheet
 
+#### Set up CEL rule
+
 Select "Send sales to Zapier" in the CEP engine.
+
+#### Create Zap
+
+![Match invoice](/guides/zapier/matchinvoice.png)
 
 ### Restart a device from your ticketing system
 

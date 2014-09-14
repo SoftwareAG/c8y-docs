@@ -120,7 +120,7 @@ Templates can be registered with one single request containing *SmartREST* templ
 	X-Id: ...
 	Content-Length: 275
 	
-	10,100,POST,/inventory/managedObjects,application/vnd.com.nsn.cumulocity.managedObject+json,application/vnd.com.nsn.cumulocity.managedObject+json,%%,STRING,"{""name"":""Test Device"",""type"":""com_example_TestDevice"",""c8y_IsDevice"":{}}"
+	10,100,POST,/inventory/managedObjects,application/vnd.com.nsn.cumulocity.managedObject+json,application/vnd.com.nsn.cumulocity.managedObject+json,,,"{""name"":""Test Device"",""type"":""com_example_TestDevice"",""c8y_IsDevice"":{}}"
 	11,201,,"$.c8y_IsDevice","$.id"
 
 Should the template registration be successful, a similar response like above will be returned.
@@ -159,7 +159,7 @@ Where:
 
 ##### Example
 
-	10,100,POST,/inventory/managedObjects,application/vnd.com.nsn.cumulocity.managedObject+json,application/vnd.com.nsn.cumulocity.managedObject+json,%%,STRING,"{""name"":""Test Device"",""type"":""com_example_TestDevice"",""c8y_IsDevice"":{}}"
+	10,100,POST,/inventory/managedObjects,application/vnd.com.nsn.cumulocity.managedObject+json,application/vnd.com.nsn.cumulocity.managedObject+json,,,"{""name"":""Test Device"",""type"":""com_example_TestDevice"",""c8y_IsDevice"":{}}"
 
 Explanation:
 
@@ -203,28 +203,28 @@ Explanation:
 
 ### Request messages
 
-Message&nbsp;identifier | Message&nbsp;parameters              | Description
+Message identifier | Message parameters              | Description
 -------------------|-------------------------|------------
-10 | Template&nbsp;message&nbsp;identifier<br>Method<br>Resource&nbsp;identifier<br>Content&nbsp;MIME&nbsp;type<br>Accept&nbsp;MIME&nbsp;type<br>Placeholder<br>Request&nbsp;parameters<br>Template&nbsp;string | Represents a request template. If this message occours in the body, the whole body is treated as a *SmartREST* template and thus, all messages besides `10` and `11` will yield an error.
-11 | Template&nbsp;message&nbsp;identifier<br>Base&nbsp;JSON&nbsp;path<br>Conditional&nbsp;JSON&nbsp;ath<br>Value&nbsp;JSON&nbsp;paths | Represents a response template. If this message occours in the body, the whole body is treated as a *SmartREST* template and thus, all messages besides `10` and `11` will yield an error.
+10 | Template message identifier<br>Method<br>Resource identifier<br>Content MIME type<br>Accept MIME type<br>Placeholder<br>Request parameters<br>Template string | Represents a request template. If this message occours in the body, the whole body is treated as a *SmartREST* template and thus, all messages besides `10` and `11` will yield an error.
+11 | Template message identifier<br>Base JSON path<br>Conditional JSON ath<br>Value JSON paths | Represents a response template. If this message occours in the body, the whole body is treated as a *SmartREST* template and thus, all messages besides `10` and `11` will yield an error.
 61 | Device MO GId | Poll device credentials during device bootstrapping process. No `X-Id` header must be present and the device bootstrap authorization must be used.
 
 ### Response messages
 
-Message&nbsp;identifier | Message&nbsp;parameters              | Description
+Message identifier | Message parameters              | Description
 -------------------|-------------------------|------------
-20 | *SmartREST*&nbsp;Template&nbsp;MO&nbsp;GId | Echo response message. Template was found or has been created and everything is OK.
+20 | *SmartREST* Template MO GId | Echo response message. Template was found or has been created and everything is OK.
 40 | *None* | Template not found.
-41 | Line&nbsp;number&nbsp;(optional) | Template creation error.
-42 | Line&nbsp;number | Malformed request line
-43 | Line&nbsp;number | Invalid message identifier.
-45 | Line&nbsp;number | Invalid message arguments.
-50 | Line&nbsp;number<br>*HTTP*&nbsp;response&nbsp;code | Server error. This message occurs when an error happened between the *SmartREST* proxy and the platform.
-70 | Line&nbsp;number<br>Unique&nbsp;device&nbsp;identifier<br>Tenant&nbsp;ID<br>Username<br>Password | Device bootstrap polling response with credentials.
+41 | Line number (optional) | Template creation error.
+42 | Line number | Malformed request line
+43 | Line number | Invalid message identifier.
+45 | Line number | Invalid message arguments.
+50 | Line number<br>*HTTP* response code | Server error. This message occurs when an error happened between the *SmartREST* proxy and the platform.
+70 | Line number<br>Unique device identifier<br>Tenant ID<br>Username<br>Password | Device bootstrap polling response with credentials.
 
 #### Error messages
 
-Message&nbsp;identifier | Error&nbsp;message
+Message identifier | Error message
 -------------------|-------------------------|------------
 41 | Cannot create templates for already existing template object
 41 | Duplicate message identifiers are not allowed

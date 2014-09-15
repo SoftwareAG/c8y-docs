@@ -32,12 +32,7 @@ To run the example, you need a Google account besides your Zapier account. If yo
 
 ### Step 1: Set up a CEL statement to produce data
 
-Open the Cumulocity administration application, click on "Event Processing" and select "New Module". Give your new module the name "zapier". In the "Examples" drop-down menu, select "Send simulator temperature to Zapier". Edit the placeholders as follows:
-
-* Replace "&lt;&lt;type&gt;&gt;" with "c8y_TemperatureMeasurement".
-* Replace "&lt;&lt;value&gt;&gt;" with "c8y_TemperatureMeasurement.T.value".
-
-Click the "Save" button. Your screen should look like the screenshot below.
+Open the Cumulocity administration application, click on "Event Processing" and select "New Module". Give your new module the name "zapier". In the "Examples" drop-down menu, select "Send simulator temperature to Zapier". Click the "Save" button. Your screen should look like the screenshot below.
 
 ![Sample CEL statement](/guides/zapier/samplestatement.png)
 

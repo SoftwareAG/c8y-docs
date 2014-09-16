@@ -96,7 +96,7 @@ Where:
 		c8y.remoteswitch.<device name>.type=B
 		c8y.remoteswitch.<device name>.address=<address>
 		c8y.remoteswitch.<device name>.unit=<unit>	
-Where: 
+Where:	
 &lt;device name&gt; - the name of the device(e.g. socket1, lamp1, etc.).	
 &lt;address&gt; - 16-bit integer (0 to 65534)	
 &lt;unit&gt; - 4-bit integer (0 to 15)
@@ -111,28 +111,28 @@ Where:
 &lt;system code&gt; - 4-bit character (A to P)	
 &lt;device code&gt; - 4-bit integer (0 to 15)	
 
-For more information on Remote Switch bricklet please refer to the [TinkerForge documentation](http://www.tinkerforge.com/en/doc/Hardware/Bricklets/Remote_Switch.html).
+For more information on Remote Switch addressing please refer to the [TinkerForge documentation](http://www.tinkerforge.com/en/doc/Hardware/Bricklets/Remote_Switch.html).
 
 #### Control 
-	
-	The devices can be switched on and off, in order of their configuration, using the c8y_RelayArray operation. "OPEN" would mean off and "CLOSED" - on.
-	Example: An operation
+
+The devices can be switched on and off, in order of their configuration, using the c8y_RelayArray operation. "OPEN" would mean off and "CLOSED" - on.
+Example: An operation
 		
-		"c8y_RelayArray" : {
-			"OPEN",
-			"CLOSED",
-		}
+	"c8y_RelayArray" : {
+		"OPEN",
+		"CLOSED",
+	}
 	
-	on a Remote Switch bricklet with the following configuration
+on a Remote Switch bricklet with the following configuration
 	
-		c8y.remotebricklet.device2.type=B
-		c8y.remotebricklet.device2.address=31337
-		c8y.remotebricklet.device2.unit=7
-		c8y.remotebricklet.device1.type=C
-		c8y.remotebricklet.device1.systemCode=B
-		c8y.remotebricklet.device1.deviceCode=13
+	c8y.remotebricklet.device2.type=B
+	c8y.remotebricklet.device2.address=31337
+	c8y.remotebricklet.device2.unit=7
+	c8y.remotebricklet.device1.type=C
+	c8y.remotebricklet.device1.systemCode=B
+	c8y.remotebricklet.device1.deviceCode=13
 		
-	will turn off "device2" and turn on "device1".
+will turn off "device2" and turn on "device1".
 
 ### IO16 bricklet
 

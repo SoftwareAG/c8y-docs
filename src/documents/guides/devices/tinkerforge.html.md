@@ -81,27 +81,24 @@ The Remote Switch bricklet can be used to toggle on and off various remote socke
 
 * Type A addressing: To add a predefined type A device to the Remote Switch bricklet, append the following lines to the Configuration panel:
 
-		c8y.remoteswitch.&lt;device name&gt;.houseCode=&lt;house code&gt;
-		c8y.remoteswitch.&lt;device name&gt;.receiverCode=&lt;receiver code&gt;
-
+		c8y.remoteswitch.<device name>.houseCode=<house code>
+		c8y.remoteswitch.<device name>.receiverCode=<receiver code>	
 &lt;device name&gt; - the name of the device(e.g. socket1, lamp1, etc.)	
 &lt;house code&gt; - 5-bit integer (0 to 31)	
 &lt;receiver code&gt; - 5-bit integer (0 to 31)
 
 * Type B addressing: To add a predefined type B device to the Remote Switch bricklet, append the following lines to the Configuration panel:
 
-		c8y.remoteswitch.&lt;device name&gt;.address=&lt;address&gt;
-		c8y.remoteswitch.&lt;device name&gt;.unit=&lt;unit&gt;
-
+		c8y.remoteswitch.<device name>.address=<address>
+		c8y.remoteswitch.<device name>.unit=<unit>	
 &lt;device name&gt; - the name of the device(e.g. socket1, lamp1, etc.).	
 &lt;address&gt; - 16-bit integer (0 to 65534)	
 &lt;unit&gt; - 4-bit integer (0 to 31)
 
 * Type C addressing: To add a predefined type C device to the Remote Switch bricklet, append the following lines to the Configuration panel:	
 
-		c8y.remoteswitch.&lt;devicename&gt;.systemCode=&lt;system code&gt;
-		c8y.remoteswitch.&lt;devicename&gt;.deviceCode=&lt;device code&gt;
-	
+		c8y.remoteswitch.<devicename>.systemCode=<system code>
+		c8y.remoteswitch.<devicename>.deviceCode=<device code>	
 &lt;device name&gt; - the name of the device(e.g. socket1, lamp1, etc.).	
 &lt;system code&gt; - 4-bit character (A to P)	
 &lt;device code&gt; - 4bit integer (0 to 31)	

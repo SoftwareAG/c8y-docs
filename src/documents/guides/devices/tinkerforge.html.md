@@ -77,44 +77,75 @@ The 4x7 Segment Display's implementation is similar to that of the LCD Display b
 
 ![Remote Switch bricklet](/guides/devices/tinkerforge/remote_switch.jpg)
 
+#### Configuration
+
 The Remote Switch bricklet can be used to toggle on and off various remote sockets, lamps, etc. It supports three types of addressing.
 
 * Type A addressing: To add a predefined type A device to the Remote Switch bricklet, append the following lines to the Configuration panel:
 
+		c8y.remoteswitch.<device name>.type=A
 		c8y.remoteswitch.<device name>.houseCode=<house code>
 		c8y.remoteswitch.<device name>.receiverCode=<receiver code>	
+Where:	
 &lt;device name&gt; - the name of the device(e.g. socket1, lamp1, etc.)	
 &lt;house code&gt; - 5-bit integer (0 to 31)	
 &lt;receiver code&gt; - 5-bit integer (0 to 31)
 
 * Type B addressing: To add a predefined type B device to the Remote Switch bricklet, append the following lines to the Configuration panel:
 
+		c8y.remoteswitch.<device name>.type=B
 		c8y.remoteswitch.<device name>.address=<address>
 		c8y.remoteswitch.<device name>.unit=<unit>	
+Where: 
 &lt;device name&gt; - the name of the device(e.g. socket1, lamp1, etc.).	
 &lt;address&gt; - 16-bit integer (0 to 65534)	
-&lt;unit&gt; - 4-bit integer (0 to 31)
+&lt;unit&gt; - 4-bit integer (0 to 15)
 
 * Type C addressing: To add a predefined type C device to the Remote Switch bricklet, append the following lines to the Configuration panel:	
 
-		c8y.remoteswitch.<devicename>.systemCode=<system code>
-		c8y.remoteswitch.<devicename>.deviceCode=<device code>	
+		c8y.remoteswitch.<device name>.type=C
+		c8y.remoteswitch.<device name>.systemCode=<system code>
+		c8y.remoteswitch.<device name>.deviceCode=<device code>	
+Where:	
 &lt;device name&gt; - the name of the device(e.g. socket1, lamp1, etc.).	
 &lt;system code&gt; - 4-bit character (A to P)	
-&lt;device code&gt; - 4bit integer (0 to 31)	
+&lt;device code&gt; - 4-bit integer (0 to 15)	
 
 For more information on Remote Switch bricklet please refer to the [TinkerForge documentation](http://www.tinkerforge.com/en/doc/Hardware/Bricklets/Remote_Switch.html).
+
+#### Control 
+	
+	The devices can be switched on and off, in order of their configuration, using the c8y_RelayArray operation. "OPEN" would mean off and "CLOSED" - on.
+	Example: An operation
+		
+		"c8y_RelayArray" : {
+			"OPEN",
+			"CLOSED",
+		}
+	
+	on a Remote Switch bricklet with the following configuration
+	
+		c8y.remotebricklet.device2.type=B
+		c8y.remotebricklet.device2.address=31337
+		c8y.remotebricklet.device2.unit=7
+		c8y.remotebricklet.device1.type=C
+		c8y.remotebricklet.device1.systemCode=B
+		c8y.remotebricklet.device1.deviceCode=13
+		
+	will turn off "device2" and turn on "device1".
 
 ### IO16 bricklet
 
 ![IO16 Bricklet](/guides/devices/tinkerforge/io16.jpg)
 
-The IO16 bricklet provides consist of two ports 8-pins each. It can be configured through the Configuration panel. Available options are:
+#### Configuration
 
-	c8y.io16.porta.direction=&lt;direction&gt;
-	c8y.io16.porta.value=&lt;value&gt;
-	c8y.io16.portb.direction=&lt;direction&gt;
-	c8y.io16.portb.value=&lt;value&gt;
+The IO16 bricklet consist of two ports 8-pins each. It can be configured through the Configuration panel. Available options are:
+
+	c8y.io16.porta.direction=<direction>
+	c8y.io16.porta.value=<value>
+	c8y.io16.portb.direction=<direction>
+	c8y.io16.portb.value=<value>
 
 Where:
 * &lt;direction&gt; is an 8-bit integer(0 to 255) direction mask. 0 - output, 1 - input. 
@@ -125,6 +156,19 @@ For example, configuring port B direction to 192(11000000) and value to 88(01011
 * pins B0, B1, B2, B5 are set as output with logical value 0(0V)
 * pin B6 is set as input with pull up
 * pin B7 is set as default input
+
+#### Control
+
+The IO16 outputs can be switched with a c8y_RelayArray operation.
+
+	"c8y_RelayArray" : {
+		"OPEN",
+		"OPEN",
+		"CLOSED",
+		"OPEN",
+	}
+	
+This operation will find up to four outputs starting from A0 to B7 and switch them.
 
 ### Distance InfraRed and UltraSound bricklets
 

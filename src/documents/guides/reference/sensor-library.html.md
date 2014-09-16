@@ -291,3 +291,29 @@ The operation representation is the same as the inventory representation:
     {
       "relayState" : "OPEN"
     }
+
+### Control an Array of Relays
+
+The c8y_RelayArray operation provides the functionality to control multiple relays.
+
+#### Inventory representation
+
+In a managed object, an array of relays' control model includes the state of each relay. When the state changes, the inventory model should be replaced with the new state:
+
+	"c8y_RelayArray" : {
+		"OPEN",
+		"CLOSED",
+		"CLOSED",
+		"OPEN",
+	}
+	
+#### Operations
+
+The operation representation is the same as the inventory representation:
+
+	"c8y_RelayArray" : {
+		"OPEN",
+		"CLOSED",
+		"CLOSED",
+		"OPEN",
+	}

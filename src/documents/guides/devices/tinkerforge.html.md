@@ -81,30 +81,30 @@ The Remote Switch bricklet can be used to toggle on and off various remote socke
 
 * Type A addressing: To add a predefined type A device to the Remote Switch bricklet, append the following lines to the Configuration panel:
 
-	c8y.remoteswitch.<device name>.houseCode=<house code>
-	c8y.remoteswitch.<device name>.receiverCode=<receiver code>
+	c8y.remoteswitch.&lt;device name&gt;.houseCode=&lt;house code&gt;
+	c8y.remoteswitch.&lt;device name&gt;.receiverCode=&lt;receiver code&gt;
 
-<device name> - the name of the device(e.g. socket1, lamp1, etc.)	
-<house code> - 5-bit integer (0 to 31)	
-<receiver code> - 5-bit integer (0 to 31)
+&lt;device name&gt; - the name of the device(e.g. socket1, lamp1, etc.)	
+&lt;house code&gt; - 5-bit integer (0 to 31)	
+&lt;receiver code&gt; - 5-bit integer (0 to 31)
 
 * Type B addressing: To add a predefined type B device to the Remote Switch bricklet, append the following lines to the Configuration panel:
 
-	c8y.remoteswitch.<device name>.address=<address>
-	c8y.remoteswitch.<device name>.unit=<unit>
+	c8y.remoteswitch.&lt;device name&gt;.address=&lt;address&gt;
+	c8y.remoteswitch.&lt;device name&gt;.unit=&lt;unit&gt;
 
-<device name> - the name of the device(e.g. socket1, lamp1, etc.).	
-<address> - 16-bit integer (0 to 65534)	
-<unit> - 4-bit integer (0 to 31)
+&lt;device name&gt; - the name of the device(e.g. socket1, lamp1, etc.).	
+&lt;address&gt; - 16-bit integer (0 to 65534)	
+&lt;unit&gt; - 4-bit integer (0 to 31)
 
 * Type C addressing: To add a predefined type C device to the Remote Switch bricklet, append the following lines to the Configuration panel:	
 
-	c8y.remoteswitch.<devicename>.systemCode=<system code>
-	c8y.remoteswitch.<devicename>.deviceCode=<device code>
+	c8y.remoteswitch.&lt;devicename&gt;.systemCode=&lt;system code&gt;
+	c8y.remoteswitch.&lt;devicename&gt;.deviceCode=&lt;device code&gt;
 	
-<device name> - the name of the device(e.g. socket1, lamp1, etc.).	
-<system code> - 4-bit character (A to P)	
-<device code> - 4bit integer (0 to 31)	
+&lt;device name&gt; - the name of the device(e.g. socket1, lamp1, etc.).	
+&lt;system code&gt; - 4-bit character (A to P)	
+&lt;device code&gt; - 4bit integer (0 to 31)	
 
 For more information on Remote Switch bricklet please refer to the [TinkerForge documentation](http://www.tinkerforge.com/en/doc/Hardware/Bricklets/Remote_Switch.html).
 
@@ -114,14 +114,14 @@ For more information on Remote Switch bricklet please refer to the [TinkerForge 
 
 The IO16 bricklet provides consist of two ports 8-pins each. It can be configured through the Configuration panel. Available options are:
 
-	c8y.io16.porta.direction=<direction>
-	c8y.io16.porta.value=<value>
-	c8y.io16.portb.direction=<direction>
-	c8y.io16.portb.value=<value>
+	c8y.io16.porta.direction=&lt;direction&gt;
+	c8y.io16.porta.value=&lt;value&gt;
+	c8y.io16.portb.direction=&lt;direction&gt;
+	c8y.io16.portb.value=&lt;value&gt;
 
 Where:
-* <direction> is an 8-bit integer(0 to 255) direction mask. 0 - output, 1 - input. 
-* <value> is an 8-bit integer(0 to 255) value mask describing the type of input or the output value respectively. If a pin is set as output 1 and 0 will simply be the logical values. In case the pin is set as input 1 would mean pull up input and 0 would be default input.
+* &lt;direction&gt; is an 8-bit integer(0 to 255) direction mask. 0 - output, 1 - input. 
+* &lt;value&gt; is an 8-bit integer(0 to 255) value mask describing the type of input or the output value respectively. If a pin is set as output 1 and 0 will simply be the logical values. In case the pin is set as input 1 would mean pull up input and 0 would be default input.
 
 For example, configuring port B direction to 192(11000000) and value to 88(01011000), would mean:
 * pins B3, B4 are set as output with logical value 1(3,3/5 V)

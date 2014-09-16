@@ -130,3 +130,7 @@ Assets can be organized in groups:
 ## Device Control
 
 ## Asset Tracking
+
+## User management
+
+* Permissions explained from the user perspective, not from the API perspective.

@@ -10,7 +10,7 @@ This section describes how to get started with Cumulocity for Arduino and the M2
 
 This guide first talks about how to set up the hardware contained within the Starter Kit after which basic instructions are given on how to work with the Cumulocity Platform on the Arduino.
 
-If you build something with it, tell us. We are more than happy to hear about your cool Thing!
+> For prototyping industrial applications, we recommend to use an industrial kit. Arduino software is provided "as is" with no warranty or support.
 
 ## Information about hardware
 

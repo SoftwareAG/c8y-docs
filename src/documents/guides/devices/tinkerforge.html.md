@@ -35,7 +35,7 @@ Bricklets can be configured remotely using the c8y_Configuration operation. To a
 ### Barometer, humidtiy, ambient light, moisture, distance, voltage, current and temperature bricklets
 
 <div><img src="/guides/devices/tinkerforge/barometer.jpg" alt="Barometer" style="display: inline">
-<img src="/guides/devices/tinkerforge/humidity.jpg" alt="Humidity" style="display: inline">		
+<img src="/guides/devices/tinkerforge/humidity.jpg" alt="Humidity" style="display: inline">
 <img src="/guides/devices/tinkerforge/ambient_light.jpg" alt="Ambient Light" style="display: inline">
 <img src="/guides/devices/tinkerforge/moisture.jpg" alt="Moisture" style="display: inline">
 <img src="/guides/devices/tinkerforge/distance_ir.jpg" alt="Distance IR" style="display: inline">

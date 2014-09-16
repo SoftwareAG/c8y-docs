@@ -73,6 +73,70 @@ In a managed object, an acceleration sensor is modelled as a simple empty fragme
         "acceleration": { "value": 8.36, "unit": "m/s2" }
     }
 
+### Humidity Sensor
+
+A humidity sensor measures the amount of water vapour in the air. 
+
+#### Inventory representation
+
+In a managed object, a humidity sensor is modelled as a simple empty fragment:
+
+	"c8y_HumiditySensor" : {}
+
+#### Measurement
+
+There are three main measurements of humidity: absolute, relative and specific. Absolute humidity is the water content of air. Relative humidity, expressed as a percent, measures the current absolute humidity relative to the maximum for that temperature. Specific humidity is a ratio of the water vapour content of the mixture to the total air content on a mass basis.
+
+|Measurement|Units|Description|
+|:----------|:----|:----------|
+|h|%RH|Relative Humidity measurement|
+
+	"c8y_HumidityMeasurement" : {
+		"h" : { "value" : 13.37, "unit": "%RH"}
+	}
+
+### Moisture Sensor
+
+A moisture sensor measures the water content of a substance.
+
+#### Inventory representation
+
+In a managed object, a moisture sensor is modelled as a simple empty fragment:
+
+	"c8y_MoistureSensor" : {}
+
+#### Measurement
+
+There are three main measurements of moisture: absolute, relative and specific. Absolute moisture is the absolute water content of a substance. Relative moisture, expressed as a percent, measures the current absolute moisture relative to the maximum for that temperature. Specific humidity is a ratio of the water vapour content of the mixture to the total substance content on a mass basis.
+
+|Measurement|Units|Description|
+|:----------|:----|:----------|
+|moisture|%|Relative Moisture measurement|
+
+	"c8y_MoistureMeasurement" : {
+		"moisture" : { "value" : 13.37, "unit" : "%" }
+	}
+
+### Distance Sensor
+
+A distance sensor measures the distance between itself and the closest object in certain direction.
+
+#### Inventory representation
+
+In a managed object, a distance sensor is modelled as a simple empty fragment:
+
+	"c8y_DistanceSensor" : {}
+
+#### Measurement
+
+|Measurement|Units|Description|
+|:----------|:----|:----------|
+|distance|mm|Distance measurement|
+
+	"c8y_DistanceMeasurement" : {
+		"distance" : { "value" : 13.37, "unit" : "mm" }
+	}
+
 ## Energy
 
 ### Electricity Sensor
@@ -153,6 +217,40 @@ In a managed object, a three phase electricity meter is modelled as a simple emp
       "Qc+": { "value": 76, "unit": "kVAr" },
       "Qc-": { "value": 34, "unit": "kVAr" }
     }
+
+### Current sensor
+
+A current sensor measures the current flowing through it.
+
+#### Inventory representation
+
+In a managed object, a current sensor is modelled as a simple empty fragment:
+
+	"c8y_CurrentSensor" : {}
+
+#### Measurement
+
+|Measurement|Units|Description|
+|:----------|:----|:----------|
+|current|A|Current measurement|
+
+	"c8y_CurrentMeasurement" : {
+		"current" : { "value" : 13.37, "unit" : "A" }
+	}
+
+### Voltage sensor
+
+A voltage sensor measures the voltage difference between two points in an electric circuit.
+
+#### Measurement
+
+|Measurement|Units|Description|
+|:----------|:----|:----------|
+|voltage|V|Voltage measurement|
+
+	"c8y_VoltageMeasurement" : {
+		"voltage" : { "value" : 13.37, "unit" : "V" }
+	}
 
 ## Location Capabilities
 

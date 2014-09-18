@@ -69,3 +69,5 @@ Here is a shortcut to set up Postman for Cumulocity:
 *  Now, you can run REST calls. Click, for example, on "Cumulocity API", "Cumulocity API Overview", "GET Platform". By clicking the "Send" button, you can send the GET request to Cumulocity. The first time that you send a request to Cumulocity, you have to enter your credentials. Click on "Basic Auth" and enter your username and password, followed by a click on "Refresh Headers".
 * To explore the API, click on the links in the responses. Similar to navigate through pages of results, click on the "next" link at the bottom of the response. Add, for example, "?pageSize=100" to the end of the request URL to get more data than the default five items.
 
+> Note that Postman has two issues: It always sends a content type even if you do not specify one. If you see an error, please add the "Content-Type" header described in the reference manual. It also sometimes shows "Malformed JSON" as a response, which is a [bug](https://www.bountysource.com/issues/3141137-malformed-json-with-a-200-ok-and-no-content) in Postman.
+

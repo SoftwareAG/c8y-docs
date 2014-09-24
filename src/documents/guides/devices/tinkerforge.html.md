@@ -118,10 +118,10 @@ For more information on Remote Switch addressing please refer to the [TinkerForg
 The devices can be switched on and off, in order of their configuration, using the c8y_RelayArray operation. "OPEN" would mean off and "CLOSED" - on.
 Example: An operation
 		
-	"c8y_RelayArray" : {
+	"c8y_RelayArray" : [
 		"OPEN",
-		"CLOSED",
-	}
+		"CLOSED"
+	]
 	
 on a Remote Switch bricklet with the following configuration
 	
@@ -161,12 +161,12 @@ For example, configuring port B direction to 192(11000000) and value to 88(01011
 
 The IO16 outputs can be switched with a c8y_RelayArray operation.
 
-	"c8y_RelayArray" : {
+	"c8y_RelayArray" : [
 		"OPEN",
 		"OPEN",
 		"CLOSED",
-		"OPEN",
-	}
+		"OPEN"
+	]
 	
 This operation will find up to four outputs starting from A0 to B7 and switch them.
 

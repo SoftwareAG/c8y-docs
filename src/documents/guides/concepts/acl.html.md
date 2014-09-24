@@ -1,22 +1,30 @@
-Inventory-based permissions
----------------------------
+# Inventory-based permissions
 
 This feature enhances the authorization model of Cumulocity. It enables an administrator to restrict user permissions to a subset of assets and devices. It also permits to extend permissions beyond the default "read" and "admin".
 
-User permissions:
-------------------
+To display what permissions user have to a device, go to Device Management -> All Devices, choose the device and in Device Details click Permissions
+
+![Viewing user permissions](/guides/acl/acl_dm1.png)
+
+## User permissions:
+
 To add new device permission to user, go to Administration -> Users and select the user you want to edit.
 
-Group permissions:
-------------------
+![Adding new user permissions](/guides/acl/acl_admin1.jpg)
+
+It is also possible to add new device permission to particular managed object through Device Management. Permissions are visible in device details.
+
+![Adding new user permissions](/guides/acl/acl_dm2.png)
+
+## Group permissions:
+
 To add new device permission to group, go to Administration -> User Groups and select the group you want to edit. If a user is in a user group with an additional permission, that permission applies to the user.
 
-Hierarchy permissions:
-----------------------
+## Hierarchy permissions:
+
 Permissions apply to the managed object that they are attached including its children, regardless of the children type.
 
-Device permission structure:
-----------------------------
+## Device permission structure:
 
 [API:fragment_name:permission] where:
 
@@ -24,8 +32,8 @@ Device permission structure:
 2. fragment name is any fragment name, e.g. "c8y_Restart" or "*"
 3. permission is "ADMIN", "READ" or "*"
 
-Required permission per HTTP-method:
-------------------------------------
+## Required permission per HTTP-method:
+
 + POST - "ADMIN" or "*"
 + PUT - "ADMIN" or "*"
 + DELETE - "ADMIN" or "*"
@@ -33,17 +41,17 @@ Required permission per HTTP-method:
 
 "*" is a wildcard. It enables you to access every API and CRUD objects regardless of fragments that are inside it. 
 
-Querying collections:
----------------------
+## Querying collections:
+
 Only objects that user is allowed to see are returned to the user. It is possible to query next page using next link from page statistics. It is important to note that in this case "currentPage" field represents the offset instead of actual page number.  
 
-Important:
-----------
+## Important:
+
 If an object does not have any fragment in it, then to e.g. read that object you have to put a wildcard to fragment name part of device permission, i.e.
 "10200":["MEASUREMENT:*:READ"]
 
-Example:
---------
+## Example:
+
 There is a user named "Tom" that does not have any roles assigned to him. When he tries to access a resource he gets 403 Forbidden. Now let's suppose we want to allow Tom to read measurement from temperature sensor that he has at his home. Administrator registered that sensor in Cumulocity. It has an id "10200". 
 
 To allow Tom to read all measurements from device "10200" administrator would have to add the following permission to Tom's "devicePermissions" list:

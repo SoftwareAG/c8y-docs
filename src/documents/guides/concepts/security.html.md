@@ -61,75 +61,59 @@ Objects in the inventory also have an owner associated with them. Owners can alw
 
 For example, if you are the owner of a smart meter in the inventory, you can store meter readings for that smart meter even if you do not have any other measurement permissions.
 
-The inventory also features a "create" permission. A user having just the create permission can store new objects in the inventory, but can not read, modify or delete any other data. This is mainly relevant for devices.
+The inventory also features a "create" permission. A user having just the create permission can store new objects in the inventory, but can not read, modify or delete any other data. This is mainly relevant for devices. The "create" permission also includes the possibility to link your object to another object as child device or child asset.
 
-### Inventory-based permissions
+## Limiting access to managed objects
 
-This feature enhances the authorization model of Cumulocity. It enables an administrator to restrict user permissions to a subset of assets and devices. It also permits to extend permissions beyond the default "read" and "admin".
+Cumulocity allows you to set global permissions that are applicable to all managed objects, measurements, events and so forth. It also allows you to limit such permissions
 
-To display what permissions user have to a device, go to Device Management -> All Devices, choose the device and in Device Details click Permissions
+* To only a specific managed object or a set of managed objects. 
+* To a single user or a group of users.
+* To individual fragments.
 
-![Viewing user permissions](/guides/acl/acl_dm1.png)
+### Editing permissions
 
-### User permissions:
+Permissions can be edited both by navigating to a particular managed object in the device management application as well as by navigating to a user or group in the administration application.
 
-To add new device permission to user, go to Administration -> Users and select the user you want to edit.
+To add a new permission to a user, select the user in the administration application. In the "User Permissions" section, 
+
+* Type the name or ID of the device that a permission should be granted for. Auto-completion is supported.
+* Select the scope of permission, i.e., if the permission applies to the inventory ("MANAGED_OBJECT"), operations ("OPERATIONS") asf. Select "*" to make the permission apply to all features.
+* Select the fragment types that the permission applies to. For example, if you select "OPERATIONS" as scope, "c8y_Restart" as type and "ADMIN" as permission, the user can only restart devices. Note that a user has to have permissions for all fragments in an object to be able to retrieve or edit an object. Use "*" to select all fragments or to set permissions on objects without fragments. Auto-completion based on the selected device is supported, but you can use any fragment in the text box (e.g., fragments of child objects).
+* Select the permission ("READ", "ADMIN"). Use "*" to select both "READ" and "ADMIN".
 
 ![Adding new user permissions](/guides/acl/acl_admin1.jpg)
 
-It is also possible to add new device permission to particular managed object through Device Management. Permissions are visible in device details.
+It is also possible to add a new permission to a device. In that case, you need to navigate to a device and select the user or group that the permission applies to. Use the toggle buttons to switch between users and groups.
 
-![Adding new user permissions](/guides/acl/acl_dm2.png)
+![Adding new device permissions](/guides/acl/acl_dm2.png)
 
-### Group permissions:
+### Propagation of permissions
 
-To add new device permission to group, go to Administration -> User Groups and select the group you want to edit. If a user is in a user group with an additional permission, that permission applies to the user.
+Permissions are propagated along two dimensions:
 
-### Hierarchy permissions:
+* Permissions for a group apply to all users in that group.
+* Permissions for a managed object apply to all child devices and child assets.
 
-Permissions apply to the managed object that they are attached including its children, regardless of the children type.
+### Examples
 
-### Device permission structure:
+Permit a user to read the temperature measurement of device "10200":
 
-[API:fragment_name:permission] where:
+	10200, MEASUREMENT, c8y_TemperatureMeasurement, READ
 
-1. API is one of the following values: "OPERATION", "ALARM", "AUDIT", "EVENT", "MANAGED_OBJECT", "MEASUREMENT" or "*"
-2. fragment name is any fragment name, e.g. "c8y_Restart" or "*"
-3. permission is "ADMIN", "READ" or "*"
+Permit a user to read any measurement of device "10200":
 
-### Required permission per HTTP-method:
+	10200, MEASUREMENT, *, READ
 
-+ POST - "ADMIN" or "*"
-+ PUT - "ADMIN" or "*"
-+ DELETE - "ADMIN" or "*"
-+ GET - "READ" or "*"
+Permit a user to restart device "10200":
 
-"*" is a wildcard. It enables you to access every API and CRUD objects regardless of fragments that are inside it. 
+	10200, OPERATION, c8yRestart, ADMIN
 
-### Querying collections:
+### Troubleshooting permissions
 
-Only objects that user is allowed to see are returned to the user. It is possible to query next page using next link from page statistics. It is important to note that in this case "currentPage" field represents the offset instead of actual page number.  
+To determine the permissions of a particular user on a particular device, navigate to the device in the device management application and click on the "Permissions" tab. Then enter the name of the user into the "User" field. This will print all permissions of the user for the device.
 
-### Important:
-
-If an object does not have any fragment in it, then to e.g. read that object you have to put a wildcard to fragment name part of device permission, i.e.
-"10200":["MEASUREMENT:*:READ"]
-
-### Example:
-
-There is a user named "Tom" that does not have any roles assigned to him. When he tries to access a resource he gets 403 Forbidden. Now let's suppose we want to allow Tom to read measurement from temperature sensor that he has at his home. Administrator registered that sensor in Cumulocity. It has an id "10200". 
-
-To allow Tom to read all measurements from device "10200" administrator would have to add the following permission to Tom's "devicePermissions" list:
-
-+ "10200":["MEASUREMENT:c8y_TemperatureMeasurement:READ"]
-
-If Tom would also want to read other types of measurements the sensor, then following permission is required:
-
-+ "10200":["MEASUREMENT:*:READ"]
-
-If Tom would like to read all measurements and also send a command to the sensor to restart itself, then the permission would be:
-
-+ "10200":["MEASUREMENT:c8y_TemperatureMeasurement:READ","OPERATION:c8yRestart:ADMIN"]
+![Viewing user permissions](/guides/acl/acl_dm1.png)
 
 ## Security management aspects
 

@@ -22,7 +22,7 @@ To run the example, you need to
 To develop the "Hello, world!" agent with the Oracle JavaME SDK and Eclipse, you need to
 
 * Create an IMP-NG MIDlet project in Eclipse. IMP-NG is the JavaME profile used on embedded devices.
-* Include the Cumulocity JavaME client libraries into your project.
+* Include the Cumulocity JavaME SmartREST client libraries into your project.
 * Write the agent code.
 * Run the agent.
 
@@ -43,13 +43,15 @@ As first step, you need to create and configure a project that can run on a Java
 
 	MicroEdition-Profile: IMP-NG
 
-### Include the client libraries
+### Prerequisites
 
-The simplest way to include the Cumulocity JavaME client libraries into your project is to just copy the source code into your project. 
+To start developing your agent, you need to
 
-* [Download](https://bitbucket.org/m2m/cumulocity-clients-java/get/tip.zip) the source code and unpack it to some location.
-* Copy the folder "java-me-client/src/main/java/com" into the "src" folder of your project.
+* [Download](https://bitbucket.org/m2m/cumulocity-clients-java/get/tip.zip) our client libraries
+* Copy the folder "java-me-smartrest-client/src/main/java/com" into the "src" folder of your project.
 * Right-click your project and select "Refresh".
+
+Beside this technical requirements you should check our [SmartREST guide](/guides/rest/smartrest) and the [SmartREST reference](/guides/reference/smartrest) to understand the protocol.
 
 ### Write the agent code
 
@@ -57,32 +59,84 @@ Finally, you need to create a MIDlet to contain your agent code. A MIDlet is rou
 
 * Right-click your project and select "New", "Java ME MIDlet".
 * Specify a package name and a class name for your MIDlet and click "Finish".
-* Paste the code below into the generated "startApp" method. Replace "&lt;&lt;yourUrl&gt;&gt;", "&lt;&lt;yourUser&gt;&gt;" and "&lt;&lt;yourPassword&gt;&gt;" with your URL (e.g., "https://myurl.cumulocity.com"), username and password. "&lt;&lt;tenantId&gt;&gt;" is the first part of your URL (e.g., "myurl" in this case). "&lt;&lt;applicationKey&gt;&gt;" is the key for your application, if you develop an application. If you interface a device, use **null**. Right-click in the editor and select "Source", "Organize Imports". For an explanation of what the code does, see the [basic "Hello, world!"](/guides/java/hello-world-basic).
+* Paste the code below into the generated "startApp" method. Replace "&lt;&lt;yourUrl&gt;&gt;", "&lt;&lt;yourUser&gt;&gt;" and "&lt;&lt;yourPassword&gt;&gt;" with your URL (e.g., "https://myurl.cumulocity.com"), username and password. "&lt;&lt;tenantId&gt;&gt;" is the first part of your URL (e.g., "myurl" in this case). "&lt;&lt;yourXId&gt;&gt;" is the XId used in the SmartREST protocol. The code below creates a connection, registeres your template and finally creates a device by using the template.
 
 
-	Platform platform = new PlatformImpl("<<yourURL>>", "<<tenant ID>>", "<<yourUser>>", "<<yourPassword>>", "<<applicationKey>>"));
-	InventoryApi inventory = platform.getInventoryApi();
-	ManagedObjectRepresentation mo = new ManagedObjectRepresentation();
-	mo.setName("Hello, world!");
-	//mo.set(new IsDevice());
-	mo = inventory.create(mo);
-	System.out.println("URL: " + mo.getSelf());
+	String mySmartRestTemplate = "10,100,POST,/inventory/managedObjects/,application/vnd.com.nsn.cumulocity.managedObject+json,application/vnd.com.nsn.cumulocity.managedObject+json,&&,,\"{\"\"name\"\":\"\"&&\"\",\"\"c8y_IsDevice\"\":{}}\"";
+	SmartConnection connection = new SmartHttpConnection("<<yourUrl>>","<<tenantId>>","<<yourUser>>","<<yourPassword>>","<<yourXId>>");
+	connection.templateRegistration(templateString);
+	
+	connection.executeRequest(new SmartRequestImpl("100,myDeviceName"));
 
 ### Run the agent
 
 Now you can run your agent by right-clicking the project and selecting "Run as", "Emulated Java ME MIDlet". This will launch the emulator, deploy your code to the emulator and run it.
 
-## Improve the agent
+## Connecting to Cumulocity
 
-Now you can improve your agent. The JavaME client library provides mostly the same API as the JavaSE client library. However, since JavaME cannot support automated serialization and deserialization of Java classes, you need to implement this part for your own, custom fragments. Check the  [Cinterion Hello Agent](https://bitbucket.org/m2m/cumulocity-examples) for an example. The general procedure is:
+Connections to Cumulocity can be created through implementations of the SmartConnection interface. Our library will already come with the SmartHttpConnection that you can use for sending requests.
 
-* Create a class for the properties of your new fragment. 
-* Create a JSON converter implementing com.cumulocity.me.rest.convert.JsonConverter.
-* Create a validator implementing com.cumulocity.me.rest.validate.RepresentationValidator.
-* Register the converter and validator with the platform.
+	SmartConnection connection = new SmartHttpConnection("http://mypartof.cumulocity.com","myTenant","myUser","myPassword","myXid");
 
-As an example for a custom fragment, examine the [SignalStrengthSensor class](https://bitbucket.org/m2m/cumulocity-examples/src/77cc3ca7f1ab529173a1add55352f586e9a0eeb9/cinterion-hello-agent/src/com/cumulocity/me/example/cinterion/SignalStrengthSensor.java?at=default). The convertor and validator are combined into [SignalStrengthSensorConverter class](https://bitbucket.org/m2m/cumulocity-examples/src/77cc3ca7f1ab529173a1add55352f586e9a0eeb9/cinterion-hello-agent/src/com/cumulocity/me/example/cinterion/SignalStrengthSensorConverter.java?at=default). Finally, the converter and validator are registered in the [HelloWorld class](https://bitbucket.org/m2m/cumulocity-examples/src/77cc3ca7f1ab529173a1add55352f586e9a0eeb9/cinterion-hello-agent/src/com/cumulocity/me/example/cinterion/HelloWorld.java?at=default):
+### Device bootstrap
 
-    SignalStrengthSensorConverter converter = new SignalStrengthSensorConverter();
-    platform.getConversionService().register(converter);
-    platform.getValidationService().register(converter);
+If you don't have credentials for your device you can generate new device credentials. Please have a look at the [Device Intergration](/guides/rest/device-integration#step-0-request-device-credentials) section for how to aquire the neccessary credentials for this process and any further information.
+
+	SmartConnection connection = new SmartHttpConnection("http://mypartof.cumulocity.com","deviceBootstrapTenant","deviceBootstrapUser","deviceBootstrapPassword","myXid");
+	String authenticationHeader = connection.bootstrap("myUniqueDeviceId");
+
+Please note that you can use this method to get the credentials only once for the device. The current connection will automatically use the new credentials but you have to store them for using them after a reboot of the device. You can create the connection also with the authentication header.
+
+	SmartConnection connection = new SmartHttpConnection("http://mypartof.cumulocity.com","myXid","myAuthenticationHeader");
+
+
+### Template registration
+
+After creating a connection with valid credentials your first step should registering the SmarREST templates to Cumulocity. The library will automatically check within the following function if the templates are already registered and only if not send them to the platform.
+
+	String myTemplateString = "...";
+	connection.templateRegistration(myTemplateString);
+
+Once the templates are registered your connection is ready to be used to send requests.
+
+## Sending requests and resolving responses
+ 
+### Creating a request
+
+In SmartREST every request is a single comma seperated line that always starts with the message identifier that relates to the template. Both examples will create the same request.
+
+	SmartRequest request1 = new SmartRequestImpl("100,myValue1,myValue2");
+	SmartRequest request2 = new SmartRequestImpl(100,"myValue1,myValue2");
+
+### Sending a request
+
+You can use your connection to send the request to Cumulocity.
+
+	SmartResponse response1 = connection.executeRequest(request1);
+
+Every line in the response will be put in a SmartRow that will be hold inside an array of the SmartResponse. Be aware that also if you only send one request, SmartREST can return multiple rows inside the response.
+
+### Sending a request asynchronously
+
+If you don't want to wait for the response you can also send the request asynchronously and resolve the response with the SmartResponseEvaluator interface once it is received.
+
+	SmartResponseEvaluator myEvaluator = new MySmartResponseEvaluatorImpl();
+	connection.executeRequestAsync(request2,myEvaluator);
+
+## SmartREST real-time notifications
+
+The library has also a built-in client to make use of the SmartREST real-time notifications. The concept of this functionality is explained in the [SmartREST reference](/guides/reference/smartrest#smartrest-real-time-notifications). To get an overview of the available endpoints and channels offering real-time notifications please have a look the section for [Real-time notifications](/guides/reference/real-time-notifications).
+
+### Example: Listen to operations
+
+Using library to listen to SmartREST real-time notifications will always be done in a separate thread. Therefor the responses have to be evaluated by a SmartResponseEvaluator. The URL for receiving device operations is "/devicecontrol/notifications" and the channel contains the id of the agent that wants to receive its operations.
+
+	
+	SmartCometClient client = new SmartCometClient(connection, myEvaluator);
+	client.startListenTo("/devicecontrol/notifications", new String[]{"/12345"});
+
+You can listen to multiple channels of an endpoint using the same long-polling connection. The "startListenTo" function will execute all steps explained in the [SmartREST reference](/guides/reference/smartrest#smartrest-real-time-notifications) with the long-polling as its last step. To stop the long-polling you can call:
+
+	client.stopListenTo();
+
+

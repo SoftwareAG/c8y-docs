@@ -105,7 +105,8 @@ Example response:
               "email" : "jsmith@abc.com",
               "enabled" : true,
               "groups" : {[collection of groups the user belongs to]},
-              "roles" : {[collection of roles the user has]}
+              "roles" : {[collection of roles the user has]},
+              "devicePermissions": {}
             }, ... {
               "id" : "mblack",
               "self" : "[URL to the resource]",
@@ -116,7 +117,8 @@ Example response:
               "email" : "mblack@abc.com",
               "enabled" : true,
               "groups" : {[collection of groups the user belongs to]},
-              "roles" : {[collection of roles the user has]}
+              "roles" : {[collection of roles the user has]},
+              "devicePermissions": {}
             }
        ],
        "statistics" : {
@@ -168,7 +170,8 @@ Example response:
       "customProperties" : {"language":"en"},
       "enabled" : true,
       "groups" : {[collection of groups the user belongs to]},
-      "roles" : {[collection of roles the user has]}
+      "roles" : {[collection of roles the user has]},
+      "devicePermissions": {}
     }
 
 ## User
@@ -191,6 +194,7 @@ A "User" resource type contains the following fields:
 |customProperties|Object|1|Keeps a list of custom properties|optional|
 |groups|GroupReferenceCollection|1|List of group references|not allowed|
 |roles|RoleReferenceCollection|1|List of role references|not allowed|
+|devicePermissions|Object|1|List of device permissions|optional|
 
 **Embedded user** contains all properties except password. Password property is never returned in GET user
 
@@ -209,6 +213,7 @@ A "currentUser" resource type contains the following fields:
 |phone|String|1|User phone number.|optional|
 |email|String|1|User email address.|optional|
 |enabled|boolean|1|User activation status (true/false)|optional|
+|devicePermissions|Object|1|List of device permissions|optional|
 |effectiveRoles|Role|0..n|List of all roles a current user has assigned (explicitly or implicitly via associated groups).|not allowed|
 
 **Embedded user **contains all properties except password. Password property is never returned in GET user
@@ -239,7 +244,8 @@ Example response:
       "email" : "jsmith@abc.com",
       "enabled" : true,
       "groups" : {[collection of groups the user belongs to]},
-      "roles" : {[collection of roles the user has]}
+      "roles" : {[collection of roles the user has]},
+      "devicePermissions": {}
     }
 
 User password is never returned in GET response. Authentication mechanism is provided by another interface.
@@ -271,7 +277,8 @@ Example response:
       "email" : "jsmith@abc.com",
       "enabled" : true,
       "groups" : {[collection of groups the user belongs to]},
-      "roles" : {[collection of roles the user has]}
+      "roles" : {[collection of roles the user has]},
+      "devicePermissions": {}
     }
 
 ## PUT a change to User resource
@@ -305,7 +312,8 @@ Example response:
       {emailcloak=off}"email" : "jsmith@abc.com",
       "enabled" : true,
       "groups" : {[collection of groups the user belongs to]},
-      "roles" : {[collection of roles the user has]}
+      "roles" : {[collection of roles the user has]},
+      "devicePermissions": {}
     }
 
 ## DELETE a representation of a user
@@ -350,6 +358,7 @@ Example response:
         "email": "jsmith@abc.com",
         "enabled": true,
         "firstName": "John",
+        "devicePermissions": {},
         "groups": {
             "references": [...],
             "self": "[URL to User's Groups]"
@@ -404,7 +413,8 @@ Example response:
             "self": "[URL to the User's Roles]"
         },
         "self": "[URL to the User resource]",
-        "userName": "jsmith"
+        "userName": "jsmith",
+        "devicePermissions": {}
      }
 
 ## User reference collection
@@ -472,7 +482,7 @@ Request body: N/A
 
 Response body: N/A
  Example request: DELETE a UserReference
-
+|devicePermissions|Object|1|List of device permissions|optional|
     DELETE ...
      Host: [hostname]
      Authorization: Basic xxxxxxxxxxxxxxxxxxx
@@ -565,11 +575,18 @@ Example response:
             {
               "id" : "1",
               "self" : "[URL to this resource]",
-              "name" : "administrators",          "roles" : [...],          "users" : [              "self" : "[URL to collection of Users in this Group]"          ]        },
+              "name" : "administrators",          
+              "roles" : [...],
+              "users" : ["self" : "[URL to collection of Users in this Group]"],
+              "devicePermissions": {}
+            },
             {
               "id" : "2",
               "self" : "[URL to this resource]",
-              "name" : "readers",          "roles" : [...],          "users" : [              "self" : "[URL to collection of Users in this Group]"          ]
+              "name" : "readers",          
+	      "roles" : [...],
+              "users" : ["self" : "[URL to collection of Users in this Group]"],
+              "devicePermissions": {}
             }
        ],
        "statistics" : {
@@ -616,7 +633,8 @@ Example response:
       "roles" : {
         "self" : "[URL to the RoleReferenceCollection resource]",
         "references" : []
-      }
+      },
+      "devicePermissions": {}
     }
 
 ## Group
@@ -629,6 +647,7 @@ Example response:
 |self|URI|1|Link to this Resource|not allowed|
 |name|String|1|Descriptive Name of the Group|mandatory|
 |roles|RoleReferenceCollection|1|List of role references|not allowed|
+|devicePermissions|Object|1|List of device permissions|optional|
 
 ## Show group details
 
@@ -651,6 +670,7 @@ Example response:
       "id" : "1",
       "self" : "[URL to this resource]",
       "name" : "administrators",
+      "devicePermissions": {},
       "roles" : {
         "self" : "[URL to the RoleReferenceCollection resource]",
         "references" : [

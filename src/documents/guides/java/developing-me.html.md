@@ -35,7 +35,7 @@ If you don't have credentials for your device you can generate new device creden
 
 Please note that you can use this method to get the credentials only once for the device. The current connection will automatically use the new credentials but you have to store them for using them after a reboot of the device. You can create the connection also with the authentication header.
 
-	SmartConnection connection = new SmartHttpConnection("http://mypartof.cumulocity.com","myAuthenticationHeader","myXid");
+	SmartConnection connection = new SmartHttpConnection("http://mypartof.cumulocity.com","myXid","myAuthenticationHeader");
 
 
 ### Template registration

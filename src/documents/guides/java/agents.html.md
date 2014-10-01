@@ -51,7 +51,7 @@ When the agent is successfully started, open Cumulocity in a web browser and go 
 * On a Raspberry Pi, it's the serial number of the Raspberry Pi (see the [instructions](/guides/devices/raspberry-pi)).
 * On a Mac, it's the serial number of the Mac. Click on the Apple logo in the menu, "About This Mac", "More Info" to display the serial number.
 * On Windows, it's the serial number of your PC. To get it, run "wmic csproduct get identifyingnumber" from a command prompt.
-* On other Linux devices or as a fallback, the MAC address of the first network interface is used. Use "ifconfig" to print the network interfaces and check for the "HWaddr" entry. Often, the MAC address is also printed on the board.
+* On other Linux devices or as a fallback, the MAC address of the first network interface is used. Use "ifconfig" to print the network interfaces and check for the "HWaddr" entry. Keep in mind only the numbers are used, without any semicolons! Often, the MAC address is also printed on the board.
 
 ### Monitoring the connection
 

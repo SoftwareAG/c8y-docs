@@ -73,6 +73,28 @@ In a managed object, an acceleration sensor is modelled as a simple empty fragme
         "acceleration": { "value": 8.36, "unit": "m/s2" }
     }
 
+### Light Sensor
+
+I light sensor measures the intensity of light.
+	
+#### Inventory representation
+
+In a managed object, a light sensor is modelled as a simple empty fragment:
+
+	"c8y_LightSensor" : {}
+	
+#### Measurement
+
+Light is measured with two main alternative sets of units: radiometry consists of measurements of light power at all wavelengths, while photometry measures light with wavelength weighted with respect to a standardised model of human brightness perception. Photometry is useful, for example, to quantify Illumination (lighting) intended for human use.
+
+|Measurement|Units|Description|
+|:----------|:----|:----------|
+|e|lux|Photometrical Light Measurement|
+
+    "c8y_LightMeasurement": {
+        "e": { "value": 8.36, "unit": "lux" }
+    }
+
 ### Humidity Sensor
 
 A humidity sensor measures the amount of water vapour in the air. 
@@ -300,20 +322,20 @@ The c8y_RelayArray operation provides the functionality to control multiple rela
 
 In a managed object, an array of relays' control model includes the state of each relay. When the state changes, the inventory model should be replaced with the new state:
 
-	"c8y_RelayArray" : {
+	"c8y_RelayArray" : [
 		"OPEN",
 		"CLOSED",
 		"CLOSED",
 		"OPEN",
-	}
+	]
 	
 #### Operations
 
 The operation representation is the same as the inventory representation:
 
-	"c8y_RelayArray" : {
+	"c8y_RelayArray" : [
 		"OPEN",
 		"CLOSED",
 		"CLOSED",
 		"OPEN",
-	}
+	]

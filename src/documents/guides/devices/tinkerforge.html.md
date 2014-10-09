@@ -115,7 +115,8 @@ For more information on Remote Switch addressing please refer to the [TinkerForg
 
 #### Control 
 
-The devices can be switched on and off, in order of their configuration, using the c8y_RelayArray operation. "OPEN" would mean off and "CLOSED" - on.
+The devices can be switched on and off, in alphabetical order, using the c8y_RelayArray operation. "OPEN" would mean off and "CLOSED" - on.
+
 Example: An operation
 		
 	"c8y_RelayArray" : [

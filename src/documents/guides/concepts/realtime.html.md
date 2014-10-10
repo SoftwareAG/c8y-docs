@@ -114,7 +114,7 @@ Finally, the aggregation of sales report is calculated through "insert into Crea
 
 As mentioned initially, there are two processing modes for API requests in Cumulocity: *Persistent* and *transient*. The "persistent" mode is the default: It will store data in the Cumulocity database as well as send the data to the real-time engine. After both is done, Cumulocity returns the result of the request.
 
-The "transient" mode will only send the data to the real-time engine and immediately return asynchronously. This mode is for efficiently monitoring particular data in near real-time. In addition, requests in "transient" mode are not counted as potentially chargeable API requests.
+The "transient" mode will only send the data to the real-time engine and immediately return asynchronously. This mode is for efficiently monitoring particular data in near real-time. 
 
 As an example, assume that location updates from cars should be monitored every second while the car is driving, but only be stored once in a minute into the database for reporting purposes. This is done using the following statement:
 

@@ -197,6 +197,98 @@ Explanation:
 * `$.c8y_IsDevice` specifies that values are only extracted if the object has a fragment called `c8y_IsDevice`.
 * `$.id` is the value extracted, namely the device ID.
 
+## SmartREST Real-time Notifications
+
+All available real-time notification endpoints and channels of the Cumulocity platform are also available in a SmartREST syntax. Please have a look at the [Real-time notifications](/guides/reference/real-time-notifications) reference guide to understand the general functionality of the [Bayeux protocol](http://svn.cometd.com/trunk/bayeux/bayeux.html) and get an overview of our available endpoints and channels fo  real-time notifications.
+
+### Using Real-time Notifications with SmartREST
+
+To tell the Cumulocity platform that the real-time notifications should use SmartREST all requests send to the URL must contain the `X-Id` header.
+
+#### Message identifiers
+
+Message identifier | Message parameters              | Description
+-------------------|-------------------------|------------
+80 | *None* | Initial handshake that will return a unique bayeux clientId.
+81 | clientId,channel | Subscribe for the given channel.
+82 | clientId,channel | Unsubscribe for the given channel.
+83 | clientId | Establish conntection for receiving the notifications (long-polling).
+84 | clientId | Disconnect the client from the server.
+
+#### Handshake
+
+Example request:
+
+	80
+
+Example response:
+	
+	Un1q31d3nt1f13r
+
+
+#### Subscribe
+
+Example request:
+	
+	81,Un1q31d3nt1f13r,/mychannel
+
+Example response:
+
+Unless there is an error there is no specific response for the subscribe
+
+#### Unubscribe
+
+Example request:
+	
+	82,Un1q31d3nt1f13r,/mychannel
+
+Example response:
+
+Unless there is an error there is no specific response for the unsubscribe
+
+#### Connect
+
+Example request:
+	
+	83,Un1q31d3nt1f13r
+
+Example response:
+
+The response is formed by the response templates registered via SmartREST for the `X-Id`. Every received notification via real-time will be parsed  with the available templates and every matching template will be returned as response for the connect request.
+
+Keep-Alive:
+
+The Cumulocity platform will send every 10 minutes a space character through an open long-polling connection to detect connection loss. A response for a connect that has been open for a longer time could contain leading space characters in the first line of the response.
+
+#### Disconnect
+
+Example request:
+	
+	84,Un1q31d3nt1f13r
+
+Example response:
+
+Unless there is an error there is no specific response for the disconnect
+
+#### The advice response
+
+The bayeux protocol has a special fragment to tell the client about the recommended settings for timeout of a connection, interval between connect requests and the policy for the follow up after a response for a connect. The advice will be communicated via SmartREST also as a seperate line in the response and can be contained in any response of the above requests.
+
+Response Structure:
+
+	86,<timeout>,<interval>,<reconnect policy>
+
+Timeout and interval will be numbers defining the time in millisecons. The reconnect policy can be one of three values:
+- none: do not reconnect after the response from a connect.
+- retry: do reconnect after the response from a connect.
+- handshake: start with a new handshake (e.g. because the clientId is invalid / server has closed session).
+
+An advice response line does not need to have every value filled
+
+Example:
+
+	86,,10000,retry
+
 ## Built-in messages
 
 *SmartREST* has a variety of built-in messages.
@@ -208,6 +300,11 @@ Message identifier | Message parameters              | Description
 10 | Template message identifier<br>Method<br>Resource identifier<br>Content MIME type<br>Accept MIME type<br>Placeholder<br>Request parameters<br>Template string | Represents a request template. If this message occours in the body, the whole body is treated as a *SmartREST* template and thus, all messages besides `10` and `11` will yield an error.
 11 | Template message identifier<br>Base JSON path<br>Conditional JSON ath<br>Value JSON paths | Represents a response template. If this message occours in the body, the whole body is treated as a *SmartREST* template and thus, all messages besides `10` and `11` will yield an error.
 61 | Device MO GId | Poll device credentials during device bootstrapping process. No `X-Id` header must be present and the device bootstrap authorization must be used.
+80 | *None* | Initial handshake that will return a unique bayeux clientId. SmartREST real-time notifications.
+81 | clientId,channel | Subscribe for the given channel. SmartREST real-time notifications.
+82 | clientId,channel | Unsubscribe for the given channel. SmartREST real-time notifications.
+83 | clientId | Establish conntection for receiving the notifications (long-polling). SmartREST real-time notifications.
+84 | clientId | Disconnect the client from the server. SmartREST real-time notifications.
 
 ### Response messages
 
@@ -221,6 +318,7 @@ Message identifier | Message parameters              | Description
 45 | Line number | Invalid message arguments.
 50 | Line number<br>*HTTP* response code | Server error. This message occurs when an error happened between the *SmartREST* proxy and the platform.
 70 | Line number<br>Unique device identifier<br>Tenant ID<br>Username<br>Password | Device bootstrap polling response with credentials.
+86 | timeout,interval,reconnect policy | Settings advice for the client using SmartREST real-time notifications.
 
 #### Error messages
 

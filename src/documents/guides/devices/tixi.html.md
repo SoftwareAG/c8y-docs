@@ -10,7 +10,7 @@ The [Tixi GmbH](http://www.tixi.de/) provides various gateways for energy manage
 * [Tixi Wand.Box W600](http://www.tixi.com/456/)
 * Tixi Gate H600
 
-Tixi devices can be integrated out-of-the to Cumulocity. The integration provides the following functionality:
+Tixi devices can be integrated out-of-the-box to Cumulocity. The integration provides the following functionality:
 * Automatic Pairing using Cumulocity Bootstrap feature
 * Tixi devices hierarchy, including all m-bus or modbus devices, are automatically created in Cumulocity.
 * Tixi Logfiles are collected as Cumulocity Measurements.

@@ -120,7 +120,6 @@ To create a managed object, issue a POST request on the managed objects collecti
         "type": "c8y_Linux",
         "c8y_IsDevice": {},
         "com_cumulocity_model_Agent": {},
-        "c8y_SupportedMeasurements": [ "c8y_SignalStrength" ],
         "c8y_SupportedOperations": [ "c8y_Restart", "c8y_Configuration", "c8y_Software", "c8y_Firmware" ],
         "c8y_Hardware": {
             "revision": "000e",
@@ -179,7 +178,6 @@ The example above contains a number of metadata items for the device:
 
 -   "c8y\_IsDevice" marks devices that can be managed using Cumulocity's Device Management.
 -   "com\_cumulocity\_model\_Agent" marks devices running a Cumulocity agent. Such devices will receive all operations targeted to themselves and their children for routing.
--   "c8y\_SupportedMeasurement" states that this device emits signal strength measurements from its GSM modem.
 -   "c8y\_SupportedOperations" states that this device can be restarted and configured. In addition, it can carry out software and firmware updated.
 
 For more information, please refer to the [Device management library](/guides/reference/device-management).

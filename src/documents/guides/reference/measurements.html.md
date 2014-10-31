@@ -136,6 +136,8 @@ Example response:
       }
     }
 
+In case of executing range queries on measurements API, like query by dateFrom and dateTo, measurements are returned in order from the last to the latest. It is possible to change the order by adding query parameter "revert=true" to the request URL.
+
 ### POST - create a new measurement
 
 Request body: Measurement

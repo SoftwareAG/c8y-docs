@@ -21,7 +21,7 @@ As an example:
 
 If you use the Java client for developing an application, you need to register an application key (through "Own applications" in the Cumulocity administration application, or through the [Application API](/guides/reference/applications)).
 
-	new CumulocityCredentials("<<user>>", "<<password>>", "<<application key>>")
+	new CumulocityCredentials("<<tenant>>", "<<user>>", "<<password>>", "<<application key>>")
 
 For testing purposes, every tenant is subscribed to the demo application key "uL27no8nhvLlYmW1JIK1CA==". The constructor for PlatformImpl also allows you to specify the default number of objects returned from the server in one reply with the parameter "pageSize".
 

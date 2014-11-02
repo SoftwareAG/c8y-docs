@@ -251,7 +251,7 @@ Place the statement output (id, name, time, text, value) into the widget fields.
 
 You can also put a link to the alarm tab in Cumulocity into the board by using the following link 
 
-	https://&lt;URL&gt;.cumulocity.com/apps/devicemanagement/index.html#/device/&lt;ID&gt;/alarms
+	https://<URL>.cumulocity.com/apps/devicemanagement/index.html#/device/<ID>/alarms
 
 Now test and activate your Zap.
 

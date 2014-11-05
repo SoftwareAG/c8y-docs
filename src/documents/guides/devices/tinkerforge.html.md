@@ -135,6 +135,24 @@ on a Remote Switch bricklet with the following configuration
 		
 will turn off "device2" and turn on "device1".
 
+### Dual Relay Bricklet
+
+![Dual Relay Bricklet](/guides/devices/tinkerforge/dual_relay.jpg)
+
+The dual relay bricklet consists of two relays. Each relay has three terminals such that the terminal in the middle is electrically connected to the terminal left or right depending on the relay state.
+
+#### Control
+
+The Dual Relay bricklet can be switched with the c8y_RelayArray operation.
+
+
+	"c8y_RelayArray" : [
+		"OPEN",
+		"CLOSED"
+	]
+
+For example, the operation above will set the state of relay one to "OPEN" and relay two to "CLOSED".
+
 ### IO16 bricklet
 
 ![IO16 Bricklet](/guides/devices/tinkerforge/io16.jpg)
@@ -194,5 +212,5 @@ The GPS bricklet will report its current location and send location updates as t
 
 ## Extending the TinkerForge driver
 
-The source code for the TinkerForge driver is publicly available at https://bitbucket.org/m2m/cumulocity-examples in the folder linux-agent/tinkerforge-driver.
+The source code for the TinkerForge driver is publicly available at https://bitbucket.org/m2m/cumulocity-examples in the folder java-agent/tinkerforge-driver.
 

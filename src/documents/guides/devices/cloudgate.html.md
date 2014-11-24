@@ -27,7 +27,7 @@ title: "CloudGate"
 
 To configure the plugin login to the CloudGate web interface. And find the plugin configuration page in the "Plugins" tab.  
 
-![CloudGate](/guides/devices/cloudgate/configuration.jpg)
+![CloudGate](/guides/devices/cloudgate/configuration.png)
 
 - URL: Your tenant's URL.
 - Tenant: Your tenant's name.

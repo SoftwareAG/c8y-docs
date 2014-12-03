@@ -17,7 +17,6 @@ To get started, check the "Hello World" examples for the various Java variants.
 * The most simple starting point is the [Java SE example](/guides/java/hello-world-basic).
 * The Java client libraries are OSGi-enabled, so check out the [OSGi example](/guides/java/hello-world-osgi) if you are developing for OSGi.
 * For Java ME devices, see the [Java ME example](/guides/java/hello-world-me). Java ME provides a particularly lightweight environment for embedded devices.
-* And finally, there is [experimental support for Android](https://bitbucket.org/eickler/cumulocity-clients-android/) based on the lightweight Java ME client.
 
 Note that you can develop Cumulocity with any IDE and any build tool that you prefer, but the examples focus on Maven and Eclipse. After reviewing the "Hello worlds", continue with the Section "[Developing Java clients](/guides/java/developing)" or download the complete examples described in the Section "[Java reference agents](/guides/java/agents)". There's one full example of a device-side agent demonstrating nearly all Cumulocity features, and one full example of a server-side agent. 
 

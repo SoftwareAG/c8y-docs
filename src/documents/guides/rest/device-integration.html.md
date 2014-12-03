@@ -51,7 +51,7 @@ From device perspective, this is a single REST request:
     Content-Type: application/vnd.com.nsn.cumulocity.deviceCredentials+json;ver=...
     Authorization: Basic ...
     {
-      "id" : "0000000017b769d5",
+      "id" : "0000000017b769d5"
     }
 
 The device issues this request repeatedly. While the user has not yet registered and accepted the device, the request returns "404 Not Found." After the device is accepted, the following response is returned:

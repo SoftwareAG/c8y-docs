@@ -241,7 +241,7 @@ In the beginning of the sketch you will see a CumulocityPlatform constructor:
     CumulocityPlatform cPlatform("developer.cumulocity.com", "<<tenantId>>", 
     "<<user>>", "<<password>>", "<<applicationKey>>");
 
-Important: Choose a name for your device and configure the name in the sketch. Replace \<\<devicename\>\> with your own name.
+Important: Choose a name for your device and configure the name in the sketch. Replace &lt;&lt;devicename&gt;&gt; with your own name.
 
     result = cPlatform.registerDevice("<<deviceName>>", id, 8);
 

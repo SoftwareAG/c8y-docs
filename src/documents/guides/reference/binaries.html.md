@@ -172,8 +172,8 @@ Response body: Managed Object (when Accept header is not provided, empty respons
 Required role: ROLE\_INVENTORY\_ADMIN
 
 The PUT request will replace the binary attached to the managed object only.
-For changing the managed object storing information about the binary it is possible.
-To update the managed object directly described at this section [Update Managed Object](/guides/reference/inventory#managed-object)
+For changing the managed object storing information about the binary it is possible
+to update the managed object directly as described at this section [Update Managed Object](/guides/reference/inventory#managed-object).
 
 Example request:
 
@@ -185,7 +185,7 @@ Example request:
 
     ...
 
-### DELETE an binary
+### DELETE a binary
 
 Request Body: N/A.
 

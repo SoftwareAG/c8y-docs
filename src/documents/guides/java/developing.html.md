@@ -23,7 +23,7 @@ If you use the Java client for developing an application, you need to register a
 
 	new CumulocityCredentials("<<tenant>>", "<<user>>", "<<password>>", "<<application key>>")
 
-For testing purposes, every tenant is subscribed to the demo application key "uL27no8nhvLlYmW1JIK1CA=="". The constructor for PlatformImpl also allows you to specify the default number of objects returned from the server in one reply with the parameter "pageSize".
+For testing purposes, every tenant is subscribed to the demo application key "uL27no8nhvLlYmW1JIK1CA==". The constructor for PlatformImpl also allows you to specify the default number of objects returned from the server in one reply with the parameter "pageSize".
 
 ## Accessing the inventory
 

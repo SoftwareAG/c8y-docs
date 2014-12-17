@@ -238,17 +238,10 @@ To do that, load the sketch into the Arduino IDE by selecting File-\>Sketchbook-
 
 In the beginning of the sketch you will see a CumulocityPlatform constructor:
 
-    CumulocityPlatform cPlatform("<<host>>", "<<tenantId>>", 
+    CumulocityPlatform cPlatform("developer.cumulocity.com", "<<tenantId>>", 
     "<<user>>", "<<password>>", "<<applicationKey>>");
 
-Make sure to replace parameters with correct credentials to the platform. The host is "developer.cumulocity.com" or "dev-dg.cumulocity.com".
-
-The credentials you use depend on your subscription:
-
--   If you have subscribed to the free Cumulocity Public edition or M2M DevFree, then tenantId is "demo" and application key is "uL27no8nhvLlYmW1JIK1CA==". Use your username and password.
--   If you have purchased an M2M DevStarter package from Deutsche Telekom, you should have received an email which includes the tenant ID, credentials and application key. Alternatively you can use also your M2M DevFree account.
-
-Important: Choose a name for your device and configure the name in the sketch. Replace \<\<devicename\>\> with your own name.
+Important: Choose a name for your device and configure the name in the sketch. Replace &lt;&lt;devicename&gt;&gt; with your own name.
 
     result = cPlatform.registerDevice("<<deviceName>>", id, 8);
 

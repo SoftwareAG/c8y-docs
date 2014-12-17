@@ -326,7 +326,7 @@ In a managed object, an array of relays' control model includes the state of eac
 		"OPEN",
 		"CLOSED",
 		"CLOSED",
-		"OPEN",
+		"OPEN"
 	]
 	
 #### Operations
@@ -337,5 +337,5 @@ The operation representation is the same as the inventory representation:
 		"OPEN",
 		"CLOSED",
 		"CLOSED",
-		"OPEN",
+		"OPEN"
 	]

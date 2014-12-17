@@ -51,7 +51,7 @@ From device perspective, this is a single REST request:
     Content-Type: application/vnd.com.nsn.cumulocity.deviceCredentials+json;ver=...
     Authorization: Basic ...
     {
-      "id" : "0000000017b769d5",
+      "id" : "0000000017b769d5"
     }
 
 The device issues this request repeatedly. While the user has not yet registered and accepted the device, the request returns "404 Not Found." After the device is accepted, the following response is returned:
@@ -107,7 +107,7 @@ If a device is not yet registered, a 404 status code and an error message is ret
 
 ### Step 2: Create the device in the inventory
 
-If Step 1 above indicated that no managed object representing the device exists, create the managed object in Cumulocity. The managed object describes the device, both its instance and metadata. Instance data includes hardware and software information, serial numbers, and device configuration data. Metadata describes the capabilities of the devices, including supported operations and supported measurements.
+If Step 1 above indicated that no managed object representing the device exists, create the managed object in Cumulocity. The managed object describes the device, both its instance and metadata. Instance data includes hardware and software information, serial numbers, and device configuration data. Metadata describes the capabilities of the devices, including the supported operations.
 
 To create a managed object, issue a POST request on the managed objects collection in the Inventory API. The following example creates a Raspberry Pi using the Linux agent:
 
@@ -120,7 +120,6 @@ To create a managed object, issue a POST request on the managed objects collecti
         "type": "c8y_Linux",
         "c8y_IsDevice": {},
         "com_cumulocity_model_Agent": {},
-        "c8y_SupportedMeasurements": [ "c8y_SignalStrength" ],
         "c8y_SupportedOperations": [ "c8y_Restart", "c8y_Configuration", "c8y_Software", "c8y_Firmware" ],
         "c8y_Hardware": {
             "revision": "000e",
@@ -179,7 +178,6 @@ The example above contains a number of metadata items for the device:
 
 -   "c8y\_IsDevice" marks devices that can be managed using Cumulocity's Device Management.
 -   "com\_cumulocity\_model\_Agent" marks devices running a Cumulocity agent. Such devices will receive all operations targeted to themselves and their children for routing.
--   "c8y\_SupportedMeasurement" states that this device emits signal strength measurements from its GSM modem.
 -   "c8y\_SupportedOperations" states that this device can be restarted and configured. In addition, it can carry out software and firmware updated.
 
 For more information, please refer to the [Device management library](/guides/reference/device-management).

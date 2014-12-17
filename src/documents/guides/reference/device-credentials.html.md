@@ -158,7 +158,7 @@ Example response:
 
 ## Device credentials
 
-Device credentials can be enquired by devices that do not have credentials for accessing a tenant yet. Since the device does not have credentials yet, a set of fixed credentials is used for this API. The credentials can be obtained by mailing to support@cumulocity.com. Do not use you tenant credentials with this API.
+Device credentials can be enquired by devices that do not have credentials for accessing a tenant yet. Since the device does not have credentials yet, a set of fixed credentials is used for this API. The credentials can be obtained by mailing to support@cumulocity.com. Do not use your tenant credentials with this API.
 
 ### DeviceCredentials [application/vnd.com.nsn.cumulocity.deviceCredentials+json]
 

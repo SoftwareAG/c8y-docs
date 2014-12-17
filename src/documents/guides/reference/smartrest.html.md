@@ -33,6 +33,8 @@ The *SmartREST* endpoint yields the following response. Note that the *HTTP* res
 
 Each row yielded by the *SmartREST* endpoint represents a set of extracted values from the result of a *SmartREST* request containing a unique unsigned integer, the *SmartREST* request line number and the extracted data values, respectively.
 
+Note: If response from Cumulocity REST API would be empty (e.g. like after deleting a Managed Object) then response from *SmartREST* would be empty as well. Regardless of registered response templates.
+
 ### Data format
 
 The *CSV (comma-separated values)* format is used for communication with the *SmartREST* endpoint. The following rules must be followed to ensure a frictionless communication.

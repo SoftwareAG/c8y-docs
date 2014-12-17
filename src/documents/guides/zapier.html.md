@@ -216,6 +216,47 @@ After testing and activating your Zap, go to the Wufoo entry manager and enter s
 
 TBD: How to test this really? Maybe we should use some data here that we have actually a display for.
 
+### Create mash-up dashboards
+
+In this example, we populate Ducksboard dashboards with device data.
+
+#### What you need
+
+To run the example, you need a [Ducksboard account](https://ducksboard.com).
+
+#### Create a dashboard in Ducksboard
+
+Create a dashboard in Ducksboard and add a few widgets to the dashboard. Click on the "+" icon at the top of the dashboard, then choose "Send data through our API". Choose a widget from the categories "Numbers" or "Text" and give the widget a name. Place it on your dashboard. 
+
+#### Create rules in Cumulocity
+
+Go to the Cumulocity administration application and open "Event Processing". Create a new module "ducksboard" and add a statement for each of the widgets that you have created in Ducksboard. The statement needs to produce the data that you want to show in the corresponding widget. For example, use the "Send simulator temperature to Zapier" example statement to send a number to a chart widget. As another example, send alarms to a timeline widget using the following statement:
+
+	@Name("messages")
+	select
+		e.alarm.source.value as id,
+		findManagedObjectById(e.alarm.source.value).getName() as name,
+		e.alarm.text as text
+	from AlarmCreated e;
+
+#### Make Zaps to send data
+
+Now, link the dashboard widgets and the statements using Zapier. Create a new Zap with "Cumulocity" as trigger and "Ducksboard" as action. On the Cumulocity side, enter the statement name. For example, use "ducksboard/messages" for the above alarm example. 
+
+The choose the widget to send the data to. Click on the "Slot Label" drop-down menu to get a list of widgets matching the action that you have selected previously. For example, if you selected "Timeline Message" as action, you should see all timeline widgets of your dashboard in the drop-down list. 
+
+Place the statement output (id, name, time, text, value) into the widget fields. For example, to show an alarm in a timeline widget, you could place the "name" property into the "title" field and the "text" property into the "content" field. 
+
+![Configure ducksboard](/guides/zapier/ducksboard.png)
+
+You can also put a link to the alarm tab in Cumulocity into the board by using the following link 
+
+	https://<URL>.cumulocity.com/apps/devicemanagement/index.html#/device/<ID>/alarms
+
+Now test and activate your Zap.
+
+![Link timeline to Cumulocity](/guides/zapier/followlink.png)
+
 ### Send sales to your accounting
 
 In this example, we send vending machine sales automatically to your accounting system.

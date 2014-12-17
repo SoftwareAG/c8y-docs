@@ -29,6 +29,7 @@ $(document).ready(function () {
 
 
 // Bootstrap Affix fix
+/*
 $(function(){
     var stickyElement   = '.left-nav',
         bottomElement   = 'footer';
@@ -51,4 +52,4 @@ $(function(){
             $( window ).trigger('scroll');
         });
     }
-});
+}); */

@@ -138,6 +138,66 @@ Example response:
 
 In case of executing range queries on measurements API, like query by dateFrom and dateTo, measurements are returned in order from the last to the latest. It is possible to change the order by adding query parameter "revert=true" to the request URL.
 
+### GET series from measurements
+
+This endpoint returns all series (any fragment that contains a value is a serie) found in measurements in simplified form. Mandatory params are: dateFrom, dateTo and source. No paging is used here.
+It is possible to fetch aggregated results by passing additional param: aggregationType (DAILY, HOURLY). If no aggregation param is specified, the result contains no more than 5000 values.
+Important: for the aggregation to be done correctly the mechanism expects a device to always use the same time zone when it sends dates.
+  
+Required role: ROLE\_MEASUREMENT\_READ
+
+Example request: retrieve all series.
+
+     GET: /measurement/measurements/series...
+     Authorization: Basic ...
+     Accept: application/json
+
+Example response:
+
+    HTTP/1.1 200 OK
+    Content-Type: application/json
+    Content-Length: ...
+
+    {
+     values: {
+         2014-12-04T17:33:01.538+01:00: [
+             {
+              min: 13.37,
+              max: 13.37
+             },
+             {
+              min: 11.37,
+              max: 11.37
+             }],
+         2014-12-04T17:34:01.774+01:00: [
+             {
+              min: 10.2,
+              max: 10.2
+             },
+             {
+              min: 11.37,
+              max: 11.37
+             }]
+     },
+     series: [
+             {
+              unit: "m/s2",
+              name: "acceleration",
+              type: "c8y_AccelerationMeasurement"
+             },
+             {
+              unit: "m/s",
+              name: "velocity",
+              type: "c8y_SpeedMeasurement"
+             }],
+     truncated: false
+    }
+
+Each value in values object is a date taken from a measurement and inside that date there is a list of min and max pairs. Each pair corresponds to single serie definition in series object. If there is no aggregation used, min = max in every pair.
+
+"Truncated" flag tells whether there was more than 5000 values and if the final result was truncated.
+
+
 ### POST - create a new measurement
 
 Request body: Measurement

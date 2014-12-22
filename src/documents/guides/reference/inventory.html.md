@@ -347,6 +347,12 @@ Example Response:
       }
     }
 
+As an alternative it is also allowed to pass the following reference object in the request body when adding to the collection:
+
+    {
+      "managedObject" : { "id" :"<<ManagedObject id>>" }
+    }
+
 ## Managed object reference
 
 ### ManagedObjectReference [application/vnd.com.nsn.cumulocity.managedObjectReference+json]

@@ -218,6 +218,33 @@ A "currentUser" resource type contains the following fields:
 
 **Embedded user **contains all properties except password. Password property is never returned in GET user
 
+### Device permission structure:
+
+[API:fragment_name:permission] where:
+
+1. API is one of the following values: "OPERATION", "ALARM", "AUDIT", "EVENT", "MANAGED_OBJECT", "MEASUREMENT" or "*"
+2. fragment name is any fragment name, e.g. "c8y_Restart" or "*"
+3. permission is "ADMIN", "READ" or "*"
+
+#### Required permission per HTTP-method:
+
++ POST - "ADMIN" or "*"
++ PUT - "ADMIN" or "*"
++ DELETE - "ADMIN" or "*"
++ GET - "READ" or "*"
+
+"*" is a wildcard. It enables you to access every API and CRUD objects regardless of fragments that are inside it. 
+
+#### Querying collections:
+
+Only objects that user is allowed to see are returned to the user. It is possible to query next page using next link from page statistics. It is important to note that in this case "currentPage" field represents the offset instead of actual page number.  
+
+#### Important:
+
+If an object does not have any fragment in it, then to e.g. read that object you have to put a wildcard to fragment name part of device permission, i.e.
+"10200":["MEASUREMENT:*:READ"]
+
+
 ### GET a representation of a User
 
 Request body: N/A

@@ -185,7 +185,7 @@ A "User" resource type contains the following fields:
 |id|String|1|Uniquely identifies a user|not allowed|
 |self|URI|1|Link to this Resource|not allowed|
 |userName|String|1|User name, unique for a given domain.|POST:mandatory PUT:not allowed|
-|password|String|1|User password.|POST:mandatory PUT:optional|
+|password|String|1|User password. Min: 6, max: 32 characters. Only Latin1 chars allowed.|POST:mandatory PUT:optional|
 |firstName|String|1|User first name.|optional|
 |lastName|String|1|User last name.|optional|
 |phone|String|1|User phone number.|optional|
@@ -207,7 +207,7 @@ A "currentUser" resource type contains the following fields:
 |id|String|1|Uniquely identifies a user|not allowed|
 |self|URI|1|Link to this Resource|not allowed|
 |userName|String|1|User name, unique for a given domain.|POST:mandatory PUT:not allowed|
-|password|String|1|User password.|POST:mandatory PUT:optional|
+|password|String|1|User password. Min: 6, max: 32 characters. Only Latin1 chars allowed.|POST:mandatory PUT:optional|
 |firstName|String|1|User first name.|optional|
 |lastName|String|1|User last name.|optional|
 |phone|String|1|User phone number.|optional|

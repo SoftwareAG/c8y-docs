@@ -10,7 +10,7 @@ The application interface consists of the following parts:
 
 -   The *application API* resource returns URIs and URI templates to collections of applications, so that all applications, all applications with a particular name and all applications owned by particular tenant can be queried.
 -   The *application collection* resource retrieves sets of applications and enables creating new application.
--   The *application* resource representsapplication that can be queried and deleted.
+-   The *application* resource represents application that can be queried and deleted.
 
 ## Application API
 
@@ -59,7 +59,7 @@ Example response:
 ### GET an application collection
 
 Response body: ApplicationCollection
-  
+
 Required role: ROLE\_APPLICATIN\_MANAGEMENT\_READ
 
 Example response:
@@ -104,7 +104,7 @@ Example response:
                 "self": "...",
                 "type": "EXTERNAL",
                 "externalUrl": "..."
-                
+
             }
         ],
         "statistics": {
@@ -112,14 +112,14 @@ Example response:
             "pageSize": 5,
             "totalPages": 1
         }
-    } 
+    }
 
 ### POST - Create a new Application
 
 Request body: Application
 
 Response body: Application (when Accept header is not provided, empty response body is returned)
-  
+
 Required role: ROLE\_APPLICATION\_MANAGEMENT\_ADMIN.
 
 Example request:
@@ -129,7 +129,7 @@ Example request:
     Authorization: Basic ...
     Content-Length: ...
     Content-Type: application/vnd.com.nsn.cumulocity.application+json;ver=...
-     
+
     {
       "key": "vehicleControlApplicationSecretKey",
       "name": "vehicleControlApplication",
@@ -144,7 +144,7 @@ Example response:
     Content-Type: application/vnd.com.nsn.cumulocity.application+json;ver=...
     Content-Length: ...
     Location: <<URL of new application>>
-     
+
     {
       "availability": "PRIVATE",
       "id": "105",
@@ -180,7 +180,7 @@ Example response:
 |resourcesUrl|String|0..1|URL to application base directory hosted on external server|POST: Mandatory (when application type is HOSTED) PUT: Optional|
 |resourcesUsername|String|0..1|authorization username to access resourcesUrl |Optional|
 |resourcesPassword|String|0..1|authorization password to access resourcesUrl |Optional|
-|externalUrl|String|0..1|URL to external application|POST: Mandatory (when application type is EXTERNAL) 
+|externalUrl|String|0..1|URL to external application|POST: Mandatory (when application type is EXTERNAL)
 PUT: Optional|
 
 ### POST - Refresh an application
@@ -203,7 +203,7 @@ Example response:
 Request body: Application
 
 Response body: Application (if "ACCEPT" header specified).
-  
+
 Required role: ROLE\_APPLICATION\_MANAGMENT\_ADMIN
 
 Example request:
@@ -213,14 +213,14 @@ Example request:
     Authorization: Basic ...
     Content-Length: ...
     Content-Type: application/vnd.com.nsn.cumulocity.application+json;ver=...
-    { 
+    {
       "availability" : "MARKET"
     }
 
 ### GET an Application
 
 Response body: Application
-  
+
 Required role: ROLE\_APPLICATION\_MANAGEMENT\_READ
 
 Example response:
@@ -248,7 +248,7 @@ Example response:
 
 Request Body: N/A.
  Response Message Body: N/A.
-  
+
 Required role: ROLE\_APPLICATION\_MANAGMENT\_ADMIN and owner
 
 Note: Application can be only removed when is availability is PRIVATE or in other case when has no subscriptions.

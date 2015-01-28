@@ -76,6 +76,7 @@ The unique ID of the device is also used for registering the device in the inven
 To check if a device is already registered, use a GET request on the identity API using the device identifier and its type. The following example shows a check for a Raspberry Pi with hardware serial "0000000017b769d5".
 
     GET /identity/externalIds/c8y_Serial/raspi-0000000017b769d5 HTTP/1.1
+
     HTTP/1.1 200 OK
     Content-Type: application/vnd.com.nsn.cumulocity.externalId+json; charset=UTF-8; ver=0.9
     ...
@@ -96,6 +97,7 @@ In this case, the device is already registered and a status code of 200 is retur
 If a device is not yet registered, a 404 status code and an error message is returned:
 
     GET /identity/externalIds/c8y_Serial/raspi-0000000017b769d6 HTTP/1.1
+
     HTTP/1.1 404 Not Found
     Content-Type: application/vnd.com.nsn.cumulocity.error+json;charset=UTF-8;ver=0.9
     ...
@@ -144,6 +146,7 @@ To create a managed object, issue a POST request on the managed objects collecti
             ...
         }
     }
+
     HTTP/1.1 201 Created
     Content-Type: application/vnd.com.nsn.cumulocity.managedObject+json;charset=UTF-8;ver=0.9
     ...
@@ -198,6 +201,7 @@ Continueing the above example, we would associate the newly created device "2480
         "type" : "c8y_Serial",
         "externalId" : "raspi-0000000017b769d5"
     }
+
     HTTP/1.1 201 Created
     Content-Type: application/vnd.com.nsn.cumulocity.externalId+json;charset=UTF-8;ver=0.9
     ...
@@ -226,6 +230,7 @@ For example, the hardware information of a device will usually not change, but t
             "pi4j-gpio-extension": "pi4j-gpio-extension-0.0.5.jar"
         }
     }   
+
     HTTP/1.1 200 OK
 
 > Do not update the name of a device from an agent! An agent creates a default name for a device so that it can be identified in the inventory, but users should be able to edit this name or update it with information from their asset management.
@@ -239,16 +244,19 @@ For example, assume a child device with the URL "https://.../inventory/managedOb
     POST /inventory/managedObjects/2480300/childDevices HTTP/1.1
     Content-Type: application/vnd.com.nsn.cumulocity.managedObjectReference+json
     { "managedObject" : { "self" : "https://.../inventory/managedObjects/2543801" } } 
+
     HTTP/1.1 201 Created
 
 Finally, devices and references can be deleted by issueing a DELETE request to their URLs. For example, the reference from the parent device to the child device that we just created can be removed by issueing:
 
     DELETE /inventory/managedObjects/2480300/childDevices/2543801 HTTP/1.1
+
     HTTP/1.1 204 No Content
 
 This does not delete the device itself in the inventory, only the reference. To delete the device, issue:
 
     DELETE /inventory/managedObjects/2543801 HTTP/1.1
+
     HTTP/1.1 204 No Content
 
 This request will also delete all data associated with the device including its registration information, measurements, alarms, events and operations. Usually, it is not recommended to delete devices automatically. For example, if a device has just temporarily lost its connection, you usually do not want to loose all historical information associated with the device.
@@ -266,6 +274,7 @@ The benefit of this execution flow is that it support devices that are offline a
 To clean up operations that are still in "EXECUTING" status, query operations by agent ID and status. In our example, the request would be:
 
     GET /devicecontrol/operations?agentId=2480300&status=EXECUTING HTTP/1.1
+
     HTTP/1.1 200 OK
     Content-Type: application/vnd.com.nsn.cumulocity.operationCollection+json;; charset=UTF-8; ver=0.9
     ...
@@ -296,6 +305,7 @@ The restart seems to have executed well -- we are back after all. So let's set t
     {
         "status": "SUCCESSFUL"
     }
+
     HTTP/1.1 200 OK
 
 Then, listen to new operations created in Cumulocity. The mechanism for listening to real-time data in Cumulocity is described in [Real-time notifications](/guides/reference/real-time-notifications) and is based on the standard Bayeux protocol. First, a handshake is required. The handshake tells Cumulocity what protocols the agent supports for notifications and allocates a client ID to the agent.
@@ -309,6 +319,7 @@ Then, listen to new operations created in Cumulocity. The mechanism for listenin
         "channel": "/meta/handshake",
         "version": "1.0"
     } ]
+
     HTTP/1.1 200 OK
     ...
     [ {
@@ -332,6 +343,7 @@ Afterwards, the device respectively the agent needs to subscribe to notification
         "subscription": "/2480300",
         "clientId":"139jhm07u1dlry92fdl63rmq2c"
     }]
+
     HTTP/1.1 200 OK
     ...
     [ { 
@@ -411,6 +423,7 @@ To create new measurements in Cumulocity, issue a POST request with the measurem
             "ber": { "value": 0.14, "unit": "%" } 
         }
     }
+
     HTTP/1.1 201 Created
 
 ### Step 10: Send events
@@ -431,6 +444,7 @@ Similar, use a POST request for events. The following example shows a location u
             "lat": 51.211971
         }
     }
+
     HTTP/1.1 201 Created
 
 Note that all data types in Cumulocity can include arbitrary extensions in the form of additional fragments. In this case, the event includes a position, but also self-defined fragments can be added.
@@ -451,6 +465,7 @@ Alarms represents events that most likely require human intervention to be solve
         "status": "ACTIVE",
         "severity": "MAJOR",
     }
+
     HTTP/1.1 201 Created
     Content-Type: application/vnd.com.nsn.cumulocity.alarm+json
     ...
@@ -472,6 +487,7 @@ In contrast to events, alarms can be updated. If an issue is resolved (e.g., the
     {
         "status": "CLEARED"
     }
+
     HTTP/1.1 200 OK
 
 If you are uncertain on whether to send an event or raise an alarm, you can simply just raise an event and let the user decide with a [CEL rule](/guides/reference/cumulocity-event-language) if they want to convert the event into an alarm.

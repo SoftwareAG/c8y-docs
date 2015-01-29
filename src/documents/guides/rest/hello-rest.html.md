@@ -35,6 +35,7 @@ To create a new device in the inventory of Cumulocity the following REST request
     POST /inventory/managedObjects HTTP/1.1
     Content-Type: application/vnd.com.nsn.cumulocity.managedObject+json; charset=UTF-8; ver=0.9
     Accept: application/vnd.com.nsn.cumulocity.managedObject+json; charset=UTF-8; ver=0.9
+    Authorization: Basic <<Base64 encoded credentials <tenant ID>/<username>:<password> >>
     ...
     {
         "c8y_IsDevice" : {},
@@ -57,6 +58,7 @@ You will receive a response like that:
 
     HTTP/1.1 201 Created
     Content-Type: application/vnd.com.nsn.cumulocity.managedObject+json; charset=UTF-8; ver=0.9
+    Authorization: Basic <<Base64 encoded credentials <tenant ID>/<username>:<password> >>
     ...
     {
         "id": "1231234"

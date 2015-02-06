@@ -21,9 +21,9 @@ The auditing interface consists of three parts:
 |auditRecordsForUser|AuditRecordCollection URI template|1|Read-only collection of all audit records for a particular user (placeholder {user}).|
 |auditRecordsForApplication|AuditRecordCollection URI template|1|Read-only collection of all audit records for a particular application (placeholder {application}).|
 |auditRecordsForUserAndType|AuditRecordCollection URI template|1|Read-only collection of all audit records of a particular user and type (placeholder {user} and {type}).|
-|auditRecords    ForUserAndApplication|AuditRecordCollection URI template|1|Read-only collection of all audit records for a particular user and application (placeholder {user} and {application}).|
-|auditRecords    ForTypeAndApplication|AuditRecordCollection URI template|1|Read-only collection of all audit records of a particular type and application (placeholder {type} and {application}).|
-|auditRecords    ForTypeAndUserAndApplication|AuditRecordCollection URI template|1|Read-only collection of all audit records of a particular type, user and application (placeholder {type}, {user} and {application}).|
+|auditRecords    ForUserAndApplication|AuditRecordCollection URI template|1|Read-only collection of all audit records for a particular user and application (placeholder {user} and {application}).|
+|auditRecords    ForTypeAndApplication|AuditRecordCollection URI template|1|Read-only collection of all audit records of a particular type and application (placeholder {type} and {application}).|
+|auditRecords    ForTypeAndUserAndApplication|AuditRecordCollection URI template|1|Read-only collection of all audit records of a particular type, user and application (placeholder {type}, {user} and {application}).|
 
 ### GET the AuditAPI resource
 
@@ -67,7 +67,7 @@ The "source" object of an audit record contains the properties "id" and "self".
 
 Request body: AuditRecord
 
-Response body: AuditRecord (when Accept header is not provided, empty response body is returned)
+Response body: AuditRecord (when Accept header is not provided, empty response body is returned)
   
 Required role: ROLE\_AUDIT\_ADMIN
 
@@ -143,6 +143,26 @@ Example response:
       }
     }
 
+### DELETE - delete an collection of auditRecords
+
+The DELETE method allows for deletion of auditRecords collections. Applicable query parameters are equivalent to GET method.
+
+Request body: N/A
+
+Response body: N/A
+  
+Required role: ROLE\_AUDIT\_ADMIN
+
+Example request:
+
+     DELETE: /audit/auditRecords ....
+     Host: ...
+     Authorization: Basic ...
+     
+Example response:
+
+    HTTP/1.1  204 NO CONTENT
+    
 ## Audit record
 
 ### AuditRecord [application/vnd.com.nsn.cumulocity.auditRecord+json]

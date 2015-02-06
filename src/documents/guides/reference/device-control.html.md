@@ -60,14 +60,14 @@ Example response:
 
 Notes about Operation Collections:
 
--   The embedded operation object contains "deviceExternalIDs" only when queried with an "agentId" parameter. 
+-   The embedded operation object contains "deviceExternalIDs" only when queried with an "agentId" parameter. 
 -   Operations are returned in the order in which they have been created (a [FIFO](http://en.wikipedia.org/wiki/FIFO) queue).
 
 ### POST - Create an Operation
 
 Request body: Operation
 
-Response body: Operation (when Accept header is not provided, empty response body is returned)
+Response body: Operation (when Accept header is not provided, empty response body is returned)
   
 Required role: ROLE\_DEVICE\_CONTROL\_ADMIN or owner of source object
 
@@ -158,6 +158,26 @@ Example Response:
         "currentPage : 1
       }
     }
+
+### DELETE - delete an collection of operations
+
+The DELETE method allows for deletion of operation collections. Applicable query parameters are equivalent to GET method.
+
+Request body: N/A
+
+Response body: N/A
+  
+Required role: ROLE\_DEVICE\_CONTROL\_ADMIN
+
+Example request:
+
+     DELETE: /devicecontrol/operations ....
+     Host: ...
+     Authorization: Basic ...
+     
+Example response:
+
+    HTTP/1.1  204 NO CONTENT
 
 ## Operation
 

@@ -366,3 +366,4 @@ Example Response:
     ]
 
 Required role: ROLE\_MEASUREMENT\_READ
+

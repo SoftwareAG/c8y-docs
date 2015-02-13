@@ -8,8 +8,9 @@ layout: default
 
 The Device Management application provides you with an overview of your connected devices and lets you manage their health. In Device Management, you can:
 
-* [Connect new devices to your account and disconnect them](#device-registration).
-* [List the connected devices and check their status](#viewing-devices).
+* [Connect](#device-registration) new devices to your account and disconnect them.
+* [List](#viewing-devices), [search](#searching-devices) and [group](#grouping-devices) the connected devices.
+* [View](#device-details) the details of the devices and check their status.
 * Remote control and configure devices.
 * View alarms from devices.
 * Troubleshoot devices.
@@ -82,9 +83,57 @@ To edit a group, click the "Edit" button next to the group. This allows you to e
 
 ## <a name="device-details"></a>Viewing the device details
 
-* What you see is dynamically constructed. If device has not sent measurements yet, no measurements tab. If device doesn't have GPS, no location tab.
+By clicking on a device in a device list, detailed information on the device is displayed. What is actually shown depends on the device and your configuration of the user interface. For example, if a device has not sent any measurements yet, there will be no "Measurement" tab. Similar, if a device permits certain operations, these operations will be visible in the "Control" tab.
+
+At the top of the device details display, the name of the device is shown. Below the name, a list of breadcrumbs are displayed. If the device is part of an asset hierarchy (such as a group), you can use the breadcrumbs to easily navigate up that hierarchy. Since devices can be contained in multiple hierarchies, several rows of breadcrumbs may be shown.
+
+To the right of the name, a cog wheel is shown. Clicking on the cog wheel shows a drop-down menu with further actions that you can carry out, such as creating a dashboard for the device. 
+
+Device details are divided over a number of tabs. The standard tabs that may be visible are:
+
+* [Info](#info)
+* [Child devices](#child-devices)
+* [Measurements](#measurements)
+* [Alarms](#alarms)
+* [Control](#control)
+* [Software](#software)
+* [Events](#events)
+* [Location](#location)
+* [Shell](#shell)
+* [Permissions](#permissions)
+* [Tracking](#tracking)
+* [Service monitoring](#service-monitoring)
+* [Identity](#identity)
+
+![Device details](/guides/users-guide/devicedetails.png)
+
+### <a name="info"></a>Info
+
+
+
+* Connection monitoring
+* Name, type
+* Hardware, Mobile
+* Groups, System
+* Notes
+
+### <a name="child-devices"></a>Child devices
+### <a name="measurements"></a>Measurements
+### <a name="alarms"></a>Alarms
+### <a name="control"></a>Control
+### <a name="software"></a>Software
+### <a name="events"></a>Events
+### <a name="location"></a>Location
+### <a name="shell"></a>Shell
+### <a name="permissions"></a>Permissions
+### <a name="tracking"></a>Tracking
+### <a name="service-monitoring"></a>Service monitoring
+### <a name="identity"></a>Identity
+
 
 ## <a name="connection-monitoring"></a>Connection monitoring
+
+## <a name="service-monitoring"></a>Service monitoring
 
 ## Locating devices
 

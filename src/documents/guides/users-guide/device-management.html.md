@@ -11,10 +11,12 @@ The Device Management application provides you with an overview of your connecte
 * [Connect](#device-registration) new devices to your account and disconnect them.
 * [List](#viewing-devices), [search](#searching-devices) and [group](#grouping-devices) the connected devices.
 * [View](#device-details) the details of the devices and check their status.
-* Remote control and configure devices.
-* View alarms from devices.
-* Troubleshoot devices.
-* Manage the software and the firmware on devices.
+* Monitor the [connection](#connection-monitoring) and the [service](#monitoring-services) of devices.
+* [Locate](#map) devices.
+* Work with [alarms](#alarm-monitoring) from devices.
+* [Remote control](#operation-monitoring) devices.
+* [Troubleshoot](#events-all) devices.
+* [Manage](#software-repo) the software and the firmware on devices.
 
 The following sections will walk you through the various menus of the application.
 
@@ -46,10 +48,10 @@ In all cases, you will see a list of devices as shown in the example below. The 
 * An icon representing the connection status as described in "[Connection monitoring](#connection-monitoring)".
 * The name of the device.
 * Depending on width, the model and the serial number of the device.
-* The alarm status of the device, i.e., how many critical, major, minor or warning level alarms are currently unresolved for the device. See "[Alarms](#alarms)" for more information on working with alarms.
+* The alarm status of the device, i.e., how many critical, major, minor or warning level alarms are currently unresolved for the device. See "[Alarms](#alarm-monitoring)" for more information on working with alarms.
 * A button for deleting the device.
 
-Please note that deleting a device means to remove the device from the database including all its data. As an alternative to deleting a device, you can also arrange devices into groups so that one group holds all historical devices that are not in use anymore. This makes sure that historical reports are still correct. To prevent alarms from being raised for the devices, disable [connection monitoring](#connect-monitoring). Deleting a device does not delete the data of its child devices.
+Please note that deleting a device means to remove the device from the database including all its data. As an alternative to deleting a device, you can also arrange devices into groups so that one group holds all historical devices that are not in use anymore. This makes sure that historical reports are still correct. To prevent alarms from being raised for the devices, disable [connection monitoring](#connection-monitoring). Deleting a device does not delete the data of its child devices.
 
 ![Device list](/guides/users-guide/devicelist.png)
 

@@ -89,6 +89,8 @@ At the top of the device details display, the name of the device is shown. Below
 
 To the right of the name, a cog wheel is shown. Clicking on the cog wheel shows a drop-down menu with further actions that you can carry out, such as creating a dashboard for the device. 
 
+![Device details](/guides/users-guide/devicedetails.png)
+
 Device details are divided over a number of tabs. The standard tabs that may be visible are:
 
 * [Info](#info)
@@ -105,28 +107,105 @@ Device details are divided over a number of tabs. The standard tabs that may be 
 * [Service monitoring](#service-monitoring)
 * [Identity](#identity)
 
-![Device details](/guides/users-guide/devicedetails.png)
-
 ### <a name="info"></a>Info
 
+The "Info" tab displays generic information for a device (from top left to bottom):
 
+* **Connection monitoring**: Set up connection monitoring here, as described in more detail [below](#connection-monitoring). 
+* **Name** and **Type**: The display name of the device for you to edit, as well as an identifier for the specific type of device.
+* **Hardware**: Hardware information read from the device.
+* **Mobile**: If the device contains a modem, mobile network information will be shown here. You will also see a "Locate" link here. If enough information could be obtained, "Locate" will determine the rough location of the device using the opencellid.org database. This will not be always successful and depends on the format that the connected mobile network reports its data to the modem.
+* **Groups**: The groups that the device is part of. You can add and remove groups here. For more information, see "[Grouping devices](#grouping-devices)".
+* **System**: This section shows the
+ * The internal ID of the device (e.g., for access from Cumulocity's APIs).
+ * The "owner" of the device (the Cumulocity user that created the device).
+ * The time stamp when the device data was last updated.
+ * A button to disconnect the device, provided you have administrative access to users and the device was connected using the "[Device registration](#device-registration)" feature.
+* **Notes**: Leave textual notes for a device that can be seen by your co-workers.
 
-* Connection monitoring
-* Name, type
-* Hardware, Mobile
-* Groups, System
-* Notes
+While there are many other fields on this tab editable as well, it only makes sense to edit them if the device does not by itself provide this information. If the device provides this information, your edits will be overwritten by the information from the device. To save your edits, click on the "Save changes" button at the bottom of the screen.
+
+> Note that "Last communication" and "Last updated" are two entirely different time stamps. "Last communication" indicates when a device has last sent data. "Last updated" indicates when the inventory entry of the device was last updated, regardless whether that was done by the device itself, through the web user interface or through another application.
 
 ### <a name="child-devices"></a>Child devices
+
+This tab shows other devices that are connected to the currently displayed device. For example, if you look at a gateway, the tab lists all machines connected to the gateway.
+
 ### <a name="measurements"></a>Measurements
+
+This tab provides a default visualization of numeric data provided by the device in the form of charts. Charts are grouped into types of measurements, which can contain multiple graphs or "series". For example, the screenshot below shows a chart for motion measurement including graphs for acceleration in the three dimensions, and a chart with modem statistics in the form of signal strength and bit error rate. 
+
+![Measurements](/guides/users-guide/measurements.png)
+
+If a chart contains graphs with different units, one Y axis is rendered per unit. For example, motion measurements consist of three parameters with unit "meter per square second", so only one axis is rendered. Modem statistics consist of signal strength in decibel milliwatts and bit error rate in percent, so one axis is rendered for each graph.
+
+To see detailed information about the measured values, hover your mouse cursor over the chart. A tooltip will be displayed with detailed information on the measurement most close to your cursor. (The tooltip will "snap" to the closest measurement.)
+
+By default, charts show the raw data of the last hour. You can change the time range on the X axis by clicking on the drop-down menu reading "Last hour". 
+
+If you increase the time range, the drop-down menu reading "No aggregation" will switch to "hourly" or "daily". This means that chart now shows ranges instead of individual raw data points. For "hourly", the chart will show a range of the minimum and maximum value measured in an hour. For daily, the chart will show the minimum and maximum value measured over the day. Likewise, the tooltips will now show ranges of values instead of individual values. 
+
+This enables you to get an efficient overview over larger time periods. You can manually change the granularity using the drop-down menu. However, a graph will only show at most 5.000 data points per graph to not overload your desktop browser. If you select a fine granularity resulting in more than 5.000 data points, a warning message will be shown: "Data has been truncated. Please use aggregation."
+
+Clicking on the "Realtime" button will enable real-time user interface updates of the graphs as new data flows into the system from the connected devices. You can influence the graphical display and axes limits by setting up so-called "KPIs", see the [Administration](/guides/users-guide/administration#kpis) guide.
+
 ### <a name="alarms"></a>Alarms
+
+The "Alarms" tab displayed the alarms of a device. Please see the Section "[Working with alarms](#alarm-monitoring)" for more information. 
+
 ### <a name="control"></a>Control
+
+This tab lists the operations that are being sent to a device or have been sent to a device. Please see the Section "[Working with operations](#operation-monitoring)" for more information on operations.
+
+The tab also enables you to send some generic remote control operations, depending on whether device supports the operations. The device in the example screenshot below supports a restart and setting its configuration.
+
+![Generic remote control](/guides/users-guide/deviceops.png)
+
 ### <a name="software"></a>Software
+
+This tab allows you to update the firmware of a device and the software installed on a device. To install a new firmware, click on "Install firmware", then select a firmware image from the [firmware repository](#firmware-repo) and click the "Install" button. 
+
+Similar, to install a software on the device, click "Install software", select a software package from the [software repository](#software-repo) and click the "Install" button. Hover over a particular software package and click the "x" button to remove the package from the device.
+
+![Software](/guides/users-guide/software.png)
+
+Installing software and firmware usually includes a restart of the device. This monitor the progress of an installation, visit the "Control" tab.
+
 ### <a name="events"></a>Events
+
+This tab enables low-level troubleshooting of a device, see "[Troubleshooting devices](#events-all)" for more information.
+
 ### <a name="location"></a>Location
+
+The "Location" tab by default shows the location as reported by the device on a map. For devices that do not report a location, you can also manually set the location. Click on the cog wheel on the top right and select "Add location", then place the "pin" on the correct place of the displayed map.
+
 ### <a name="shell"></a>Shell
+
+The device shell enables you to interactively work with remote devices. Many industrial devices support some form of command language, be it AT commands for modems, CSV-style commands for many tracking devices or elaborate scripting mechanisms such as Tixi TiXML. In the shell, you can send commands in the respective language of the device and interactively view the results of the commands.
+
+The shell user interface is split into two parts: 
+
+* A list of the previously executed commands. By default, the last three commands are shown.
+* A command prompt to enter new commands, which are added to the list.
+
+In the list, the status, date, result and text of the command are shown. Clicking on a list item reveals the result of the command (provided it has been executed). 
+
+![Device shell](/guides/users-guide/shell.png)
+
+In the command prompt, you can enter arbitrary command text. To send the command text to the device, click the "Execute" button. The "Execute" button can only be selected if the device is online. 
+
+To help you with the command syntax, frequently used commands are available for some devices by clicking the "Get predefined" button. Select a command and click "Use" to copy the command to the command prompt, or select "Execute" to execute the command straight away.
+
+![Shell commands](/guides/users-guide/shelltemplates.png)
+
 ### <a name="permissions"></a>Permissions
+
+The ability to view, edit or control certain devices can be limited to users and user groups. For more information on managing permissions, please visit the [Administration](/guides/users-guide/administration) guide.
+
 ### <a name="tracking"></a>Tracking
+
+![Tracking](/guides/users-guide/tracking.png)
+
 ### <a name="service-monitoring"></a>Service monitoring
 ### <a name="identity"></a>Identity
 
@@ -135,15 +214,40 @@ Device details are divided over a number of tabs. The standard tabs that may be 
 
 ## <a name="service-monitoring"></a>Service monitoring
 
-## Locating devices
+## <a name="map"></a>Locating devices
 
-## Working with alarms
+## <a name="alarm-monitoring"></a>Working with alarms
 
-## Working with operations
+Discuss ordering of alarms (newest first)
+ navigate to device
+Discuss "Only unresolved" button in the "Alarms" tab.
 
-## Troubleshooting devices
+## <a name="operation-monitoring"></a>Working with operations
 
-## Managing device firmware
+Operations can be in any of four states:
 
-## Managing device software
+* **Pending**: The operation has just been created and is waiting for the device to pick it up.
+* **Executing**: The operation has been picked up by the device and is being executed.
+* **Successful**: The operation has been successfully executed by the device.
+* **Failed**: The operation could not be executed by the device. 
+
+Clicking on an operations shows the parameters of the operation. For example, clicking on a configuration operation will display the configuration that is sent to the device. Clicking on a failed operation shows the reason of the failure.
+
+The "All" button shows all operations for a device, regardless of whether they have been processed already or not. Note that operations are listed in the order in which they have been queued for a device with the oldest on top. Operations are executed strictly in this order.
+
+![Operations](/guides/users-guide/operations.png)
+
+
+## <a name="events-all"></a>Troubleshooting devices
+
+Events are low-level messages sent by devices that are usually used for application-specific processing. For example, a vending telemetry device sends its realtime sales in the form of events. If you need to trouble shoot a device at a more detailed level, visit the "Events" tab. Clicking on indiviudal events will reveal more information on the data contained in the event. 
+
+Since devices may sent larger amounts of event data, you can filter the data shown here 
+
+Realtime 
+
+
+## <a name="firmware-repo"></a> Managing device firmware
+
+## <a name="software-repo"></a>Managing device software
 

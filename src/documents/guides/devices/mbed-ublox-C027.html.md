@@ -17,20 +17,19 @@ The Cumulocity mbed agent connects the C027 application board to Cumulocity and 
 
 * Network dial-up using the C027 modem.
 * Efficient communication through [SmartREST](/guides/rest/smartrest).
-* No configuration required through Cumulocity's device registration feature.
+* Full auto-registration using Cumulocity's bootstrap and device registration.
+* Collection and storage of temperature, GPS, accelerometer and analog sensor readings.
+* Control the device LED's and LCD display remotely from Cumulocity.
 * Connection status monitoring using the LCD display of the application shield.
-* Collection and storage of temperature, GPS and analog sensor readings.
 
 ## Prerequisites
 
 To run the Cumulocity mbed agent, the following items are required:
 
-* [u-blox C027 Internet of Things starter kit](https://mbed.org/platforms/u-blox-C027/).
+* [u-blox C027] (https://mbed.org/platforms/u-blox-C027/) Internet of Things starter kit, 2G or 3G version.
 * [mbed appliation shield](https://mbed.org/components/mbed-Application-Shield/).
 * A USB type A to type B adapter.
 * A power supply.
-* An account on https://mbed.org.
-  > You can simply sign up an account in [mbed](https://mbed.org) for free.
 * A SIM card with data plan for Internet access. The SIM card should have no SIM PIN. The SIM PIN can be deactivated using any mobile phone.
 * You need access to Cumulocity platform. If you do not have it yet, click on "TRY CUMULOCITY FREE" on the top right of https://www.cumulocity.com.
 
@@ -49,11 +48,14 @@ To run the Cumulocity mbed agent, the following items are required:
 
 ## Install the agent
 
-* Login to the mbed.org site and visit the [C027 page](https://mbed.org/platforms/u-blox-C027/). Click "Add to your mbed Compiler".
-* Visit <a href="http://mbed.org/users/Cumulocity/code/MbedSmartRestMain/" target="_blank" title="Cumulocity Mbed SmartREST main application">the mbed application site</a> and click "Import" to import the agent into your online Mbed IDE.
-* In the IDE, click the "Compile" button. The IDE will download the compiled application to your computer.
+* Download the firmware to your computer, see table below.
 * Copy the downloaded file to the "MBED" drive.
 * Press the reset button on the C027 to start the agent.
+
+|Version|Release Date|Download|
+|---|:-:|:-:|
+|1.9|18.Feb 2015| [link](/guides/devices/mbed/firmware-1.9.bin)|
+|2.0| soon  | soon  |
 
 ## Connect the C027
 
@@ -77,7 +79,21 @@ An example dashboard created for an mbed device is shown below:
 
 For further details, see the Cumulocity User Guide.
 
-> You can change the reporting interval of sensor values by changing the source code of the file "MbedAgent.h" in the line that defines MBED_AGENT_INTERVAL.
+## Additional Details
+
+* You can change the reporting interval of sensor values by changing the source code of the file "MbedAgent.h" in the line that defines MBED_AGENT_INTERVAL.
+
+
+## Changing the agent
+
+If you want to change the behaviour of the agent, go to mbed.org and adopt the source code. Here are the steps required to do so:
+
+* Sign up for an account in [mbed](https://mbed.org) for free.
+* Login to the mbed.org site and visit the [C027 page](https://mbed.org/platforms/u-blox-C027/). Click "Add to your mbed Compiler".
+* Visit <a href="http://mbed.org/users/Cumulocity/code/MbedSmartRestMain/" target="_blank" title="Cumulocity Mbed SmartREST main application">Cumulocity Mbed SmartREST main application</a> and click "Import" to import the agent into your online Mbed IDE.
+* In the IDE, click the "Compile" button. The IDE will download the compiled application to your computer.
+* Copy the downloaded file to the "MBED" drive.
+* Press the reset button on the C027 to start the agent.
 
 ## Troubleshooting
 

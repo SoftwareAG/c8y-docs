@@ -4,7 +4,7 @@ title: Overview
 layout: default
 ---
 
-## General
+## Overview
 
 The following sections describe how to access Cumulocity from web browsers. It describes:
 

@@ -1,5 +1,5 @@
 ---
-order: 10
+order: 20
 title: Device management
 layout: default
 ---
@@ -47,11 +47,11 @@ In all cases, you will see a list of devices as shown in the example below. The 
 
 * An icon representing the connection status as described in "[Connection monitoring](#connection-monitoring)".
 * The name of the device.
-* Depending on width, the model and the serial number of the device.
+* Depending on browser width, the model and the serial number of the device.
 * The alarm status of the device, i.e., how many critical, major, minor or warning level alarms are currently unresolved for the device. See "[Alarms](#alarm-monitoring)" for more information on working with alarms.
 * A button for deleting the device.
 
-Please note that deleting a device means to remove the device from the database including all its data. As an alternative to deleting a device, you can also arrange devices into groups so that one group holds all historical devices that are not in use anymore. This makes sure that historical reports are still correct. To prevent alarms from being raised for the devices, disable [connection monitoring](#connection-monitoring). Deleting a device does not delete the data of its child devices.
+Please note that deleting a device means to remove the device from Cumulocity's database including all its data. As an alternative to deleting a device, you can also arrange devices into groups so that one group holds all historical devices that are not in use anymore. This makes sure that historical reports are still correct. To prevent alarms from being raised for the devices, disable [connection monitoring](#connection-monitoring). Deleting a device does not delete the data of its child devices.
 
 ![Device list](/guides/users-guide/devicelist.png)
 
@@ -76,7 +76,7 @@ To create a top-level group, click on "Top-level groups" and select "Add Group".
 You can add devices to a group in two ways: 
 
 * Select a device and locate the "Groups" section on the "Info" tab. Use the drop-down menu or the "Browse groups" button to select a group to add this device to.
-* Select the group and click "Assign devices" at the top right. Search for the devices that should be added in the search field. Then mark the relevant devices in the result and click the "Assign x devices" button at the bottom of the result list. ("x" will be the number or devices that you marked.)
+* Select the group and click "Assign devices" at the top right. Search for the devices that should be added in the search field. Then mark the relevant devices in the result and click the "Assign x devices" button at the bottom of the result list. ("x" will be the number of devices that you marked.)
 
 To create a subgroup, just click "Add Group" when viewing a group.
 
@@ -89,7 +89,7 @@ By clicking on a device in a device list, detailed information on the device is 
 
 At the top of the device details display, the name of the device is shown. Below the name, a list of breadcrumbs are displayed. If the device is part of an asset hierarchy (such as a group), you can use the breadcrumbs to easily navigate up that hierarchy. Since devices can be contained in multiple hierarchies, several rows of breadcrumbs may be shown.
 
-To the right of the name, a cog wheel is shown. Clicking on the cog wheel shows a drop-down menu with further actions that you can carry out, such as creating a dashboard for the device. 
+To the right of the name, a cog wheel is shown. Clicking on the cog wheel displays a drop-down menu with further actions that you can carry out, such as creating a dashboard for the device. 
 
 ![Device details](/guides/users-guide/devicedetails.png)
 
@@ -113,17 +113,17 @@ Device details are divided over a number of tabs. The standard tabs that may be 
 
 The "Info" tab displays generic information for a device (from top left to bottom):
 
-* **Connection monitoring**: Set up connection monitoring here, as described in more detail [below](#connection-monitoring). 
+* **Connection monitoring**: The connection monitoring configuration, as described in more detail [below](#connection-monitoring). 
 * **Name** and **Type**: The display name of the device for you to edit, as well as an identifier for the specific type of device.
 * **Hardware**: Hardware information read from the device.
-* **Mobile**: If the device contains a modem, mobile network information will be shown here. You will also see a "Locate" link here. If enough information could be obtained, "Locate" will determine the rough location of the device using the opencellid.org database. This will not be always successful and depends on the format that the connected mobile network reports its data to the modem.
+* **Mobile**: If the device contains a modem, mobile network information will be shown here. You will also see a "Locate" link here. If enough information could be obtained, "Locate" will determine the rough location of the device using the opencellid.org database. This will not be always successful and depends on the format that the connected mobile network uses to report its data to the modem.
 * **Groups**: The groups that the device is part of. You can add and remove groups here. For more information, see "[Grouping devices](#grouping-devices)".
-* **System**: This section shows the
+* **System**: This section shows 
  * The internal ID of the device (e.g., for access from Cumulocity's APIs).
  * The "owner" of the device (the Cumulocity user that created the device).
  * The time stamp when the device data was last updated.
  * A button to disconnect the device, provided you have administrative access to users and the device was connected using the "[Device registration](#device-registration)" feature.
-* **Notes**: Leave textual notes for a device that can be seen by your co-workers.
+* **Notes**: Textual notes for a device that you can share with your co-workers.
 
 While there are many other fields on this tab editable as well, it only makes sense to edit them if the device does not by itself provide this information. If the device provides this information, your edits will be overwritten by the information from the device. To save your edits, click on the "Save changes" button at the bottom of the screen.
 
@@ -145,7 +145,7 @@ To see detailed information about the measured values, hover your mouse cursor o
 
 By default, charts show the raw data of the last hour. You can change the time range on the X axis by clicking on the drop-down menu reading "Last hour". 
 
-If you increase the time range, the drop-down menu reading "No aggregation" will switch to "hourly" or "daily". This means that chart now shows ranges instead of individual raw data points. For "hourly", the chart will show a range of the minimum and maximum value measured in an hour. For daily, the chart will show the minimum and maximum value measured over the day. Likewise, the tooltips will now show ranges of values instead of individual values. 
+If you increase the time range, the drop-down menu reading "No aggregation" will switch to "hourly" or "daily". This means that the chart now shows ranges instead of individual raw data points. For "hourly", the chart will show a range of the minimum and maximum value measured in an hour. For "daily", the chart will show the minimum and maximum value measured over the day. Likewise, the tooltips will now show ranges of values instead of individual values. 
 
 This enables you to get an efficient overview over larger time periods. You can manually change the granularity using the drop-down menu. However, a graph will only show at most 5.000 data points per graph to not overload your desktop browser. If you select a fine granularity resulting in more than 5.000 data points, a warning message will be shown: "Data has been truncated. Please use aggregation."
 
@@ -159,7 +159,7 @@ The "Alarms" tab displayed the alarms of a device. Please see the Section "[Work
 
 This tab lists the operations that are being sent to a device or have been sent to a device. Please see the Section "[Working with operations](#operation-monitoring)" for more information on operations.
 
-The tab also enables you to send some generic remote control operations, depending on whether device supports the operations. The device in the example screenshot below supports a restart and setting its configuration.
+The tab also enables you to send some generic remote control operations, depending on whether the device supports the operations. The device in the example screenshot below supports being restarted and setting its configuration.
 
 ![Generic remote control](/guides/users-guide/deviceops.png)
 
@@ -171,7 +171,7 @@ Similar, to install a software on the device, click "Install software", select a
 
 ![Software](/guides/users-guide/software.png)
 
-Installing software and firmware usually includes a restart of the device. This monitor the progress of an installation, visit the "Control" tab.
+Installing software and firmware usually includes a restart of the device. To monitor the progress of an installation, visit the "Control" tab.
 
 ### <a name="events"></a>Events
 
@@ -190,7 +190,7 @@ The shell user interface is split into two parts:
 * A list of the previously executed commands. By default, the last three commands are shown.
 * A command prompt to enter new commands, which are added to the list.
 
-In the list, the status, date, result and text of the command are shown. Clicking on a list item reveals the result of the command (provided it has been executed). 
+In the list, the status, date and text of the command are shown. Clicking on a list item reveals the result of the command (provided it has been executed). 
 
 ![Device shell](/guides/users-guide/shell.png)
 
@@ -208,7 +208,7 @@ The ability to view, edit or control certain devices can be limited to users and
 
 Devices can record the history of their movements in Cumulocity. Using the tracking tab, you can select a time period and visualize the movements of the device during this time period. Movements are shown as red lines on the map.
 
-Next to the map, the individual recordings with their time ("location update events") are listed. When you click a recording, a "pin" on the map will show the location at the time of the recording.
+Next to the map, the individual recordings with their time are listed ("location update events"). When you click a recording, a "pin" on the map will show the location at the time of the recording.
 
 ![Tracking](/guides/users-guide/tracking.png)
 
@@ -222,19 +222,19 @@ In addition to connection monitoring, Cumulocity features a separate service mon
 
 Finally, Cumulocity can associate devices and assets with multiple external identities. For example, devices often can be identified by the IMEI of their modem, by a microcontroller serial number as well as by an asset tag. This tab lists all the identities recorded for a particular device.
 
-This is, for example, useful when you have broken hardware and need to replace the hardware without loosing the data that was recorded so far. Just connect the new hardware to your account and modify the identity of the old hardware to contain the identity of the new hardware. 
+This is, for example, useful when you have broken hardware and need to replace the hardware without loosing the data that was recorded so far. Just connect the new hardware to your account and modify the identity entry of the old hardware to contain the identity of the new hardware. 
 
 ## <a name="connection-monitoring"></a>Connection monitoring
 
 Cumulocity can automatically monitor the connection to your devices. If you want the connection to a device to be monitored, visit the "Info" tab of the device. On that tab, check the "Required Interval" field at the top. This field defines how often you expect to hear from the device. For example, if you set "Required interval" to 60, you expect that the device communicates at least once in an hour with Cumulocity. The interval is either set by the device itself, based on the device's knowledge how often it will try to send data, or it is set manually by you.
 
-The various connection states are illustrated in the image below. "Maintenace mode" is a special connection state indicating that the device is currently being maintained and should not be monitored. While a device is being maintained, no alarms for that device are raised. You can enable maintenance mode by setting the required interval to 0.
+The various connection states are illustrated in the image below. "Maintenance mode" is a special connection state indicating that the device is currently being maintained and should not be monitored. While a device is being maintained, no alarms for that device are raised. You can enable maintenance mode by setting the required interval to 0.
 
 ![Connection states](/guides/users-guide/connectionmonitoring.png)
 
-> Note that connection monitoring does not happen in realtime. Depending on configuration, it may take up to ten minutes until the connection status of a device is updated. This is done to reduce the data traffic that is generated by so-called "keepalive" messages to a minimum.
+> Note that connection monitoring is not realtime. Depending on configuration, it may take up to ten minutes until the connection status of a device is updated. This is done to reduce the data traffic that is generated by so-called "keepalive" messages to a minimum.
 
-When a device is detected to be offline, an unavailabilty alarm is created for the device reading "No communication with device since <time>". 
+When a device is detected to be offline, an unavailabilty alarm is created for the device reading "No communication with device since &lt;time&gt;". 
 
 ## <a name="monitoring-services"></a>Service monitoring
 
@@ -246,9 +246,9 @@ Cumulocity considers a device to be in service while there is no critical, unres
 
 ![Service monitoring](/guides/users-guide/servicemonitoring.png)
 
-While a machine is offline, Cumulocity assumes by default that it continues to stay in the service state that it was when it lost connection. I.e., if it was broken before, it continues to be considered broken (unless you clear critical alarms manually). If it was working before, it continues to be considered working. 
+While a machine is offline, Cumulocity assumes by default that it continues to stay in the service state that it was in when it lost connection. I.e., if it was broken before, it continues to be considered broken (unless you clear critical alarms manually). If it was working before, it continues to be considered working. 
 
-This may be not the case for your devices. For example, if your vending machines rely exclusively on cahsless payment, loosing the connection to the network means that you cannot purchase from the machines anymore. Hence, the machine should be considered out of service. In such a case, configure unavailability alarms to have critical priority instead of major priority in the [Administration application](/guides/users-guide/administration#alarm-mapping).
+This may not be the case for your devices or your use case. For example, if your vending machines rely exclusively on cashless payment, loosing the connection to the network means that you cannot purchase from the machines anymore. Hence, the machine should be considered out of service. In such a case, configure unavailability alarms to have "CRITICAL" priority instead of "MAJOR" priority in the [Administration application](/guides/users-guide/administration#alarm-mapping).
 
 Cumulocity can display service availability on the level of individual devices or across all devices. If you select "Service monitoring" in the navigator, the overall service across all devices is shown. On that page, you will also see a histogram of how many devices had what service availability in the past month (see the above screenshot).
 
@@ -261,7 +261,7 @@ By clicking on "Map" in the navigator, a map of all devices in your account is s
 Devices can raise so-called alarms to indicate that there is a problem that requires human intervention. You can view alarms
 
 * By clicking on "Unresolved alarms" in the navigator to see alarms of all devices that have not yet been cleared.
-* By clicking on "Alarms" in the navigator to see the entire alarm history regardless on whether the alarms have been cleared already of not.
+* By clicking on "Alarms" in the navigator to see the entire alarm history regardless on whether the alarms have been cleared already or not.
 * By clicking on a device and selecting the "Alarms tab" to see the alarms of that particular device. By default, only unresolved alarms are shown, but you can disable the "Only unresolved" checkbox to see all alarms.
 
 The alarm display is split into four sections, separately listing alarms of different priorities. In each section, the most recent alarm is displayed first. The image below shows the detailed display of an alarm after it is clicked. The detail view contains the following items:
@@ -296,7 +296,7 @@ Operations can be in any of four states:
 * **Successful**: The operation has been successfully executed by the device.
 * **Failed**: The operation could not be executed by the device. 
 
-Clicking on an operations shows the parameters of the operation. For example, clicking on a configuration operation will display the configuration that is sent to the device. Clicking on a failed operation shows the reason of the failure.
+Clicking on an operation shows the parameters of the operation. For example, clicking on a configuration operation will display the configuration that is sent to the device. Clicking on a failed operation shows the reason of the failure.
 
 The "All" button shows all operations for a device, regardless of whether they have been processed already or not. Note that operations are listed in the order in which they have been queued for a device with the oldest on top. Operations are executed strictly in this order.
 

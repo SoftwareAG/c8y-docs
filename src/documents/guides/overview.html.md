@@ -1,52 +1,64 @@
 ---
 order: 10
-title: Overview
+title: Introduction
 layout: default
 ---
 
 ## Overview
 
-The following sections describe how to access Cumulocity from web browsers. It describes:
+The following sections cover the basic usage of Cumulocity applications. They describe
 
-   * What web browsers are support?
-   * How to login to Cumulocity?
-   * How to navigate around?
-   * How to link into the application?
-   * How to use Cumulocity on touch devices?
-   * User interface conventions
+   * [Accessing Cumulocity applications](#accessing).
+   * [Logging in](#login).
+   * [Navigating in Cumulocity applications](#navigation).
+   * [Using dashboards](#dashboards).
 
-### What web browsers are support?
+## <a name="accessing"></a>Accessing Cumulocity applications
 
-To use Cumulocity, you need a modern web browser.
-
-We test with the following web browsers:
+To use Cumulocity applications, you need a modern web browser. We test with the following desktop web browsers:
 
   * Internet Explorer (Version 10 and 11)
   * Firefox (latest)
   * Chrome (latest)
 
-You can also use the web browser on smartphones and tablet. We have tested it with the following browsers:
+You can also use recent smartphone and tables web browsers. We test with the following mobile web browsers:
 
-  * Chrome on Android (latest) on Galaxy Smartphones and Tablets
+  * Chrome on Android (latest) on Galaxy smartphones and tablets.
   * Safari on iOS (latest) on Apple iPhone and iPad.
 
-### How to login to Cumulocity?
+> Note that using Cumulocity on mobile devices may be constrained by the memory and the processing power available on the devices. For example, loading graphs with large amounts of data points may make the mobile device unresponsive.
 
 To access the applications for your Cumulocity tenant, use the following URL:
 
    * https://<account>.cumulocity.com/
 
-You are then redirected to the login page. On the login page enter your credentials, i.e. your username and password. If you do not have received a username and password, or if you have lost it, then please contact the Cumulocity Administrator in your organisation. This person can reset your password.
+This will direct you to the login page of your default application, shown in the image below.
 
-If you are yourself the Administrator of `<account>` (i.e. you have the username `admin`), then you should have received the credentials from Cumulocity Support. Please contact support if you need to reset you password.
+![Login prompt](/guides/users-guide/login.png)
 
-TODO: Login picture.  
+> Make sure that the address bar of your browser shows a lock symbol. The lock symbol indicates that you are using a secure connection and that you are indeed connected to Cumulocity. 
 
-Important: Make sure that the address bar of your browser shows a https connection. This ensures that the connection from your computer to Cumulocity is encrypted.  
+> The above link is only valid for Cumulocity Standard subscribers. For Reserved and Private deployments of Cumulocity, the URL is specific to your organization.
 
-Note: The above link is valid for Cumulocity Standard deployment options. For the deployment options "Reserved" and "Private" the URL is customer specific.
+## <a name="login"></a>Logging in
 
-### How to navigate around?
+On the login page, enter your username and password to start the application. The "Remember me" checkbox will make the browser remember your credentials, so that you do not have to enter them again when opening the application the next time. This is also convenient if you frequently navigate between Cumulocity applications, as Cumulocity requires you to authenticate each time when starting an application. You can make the browser "forget" your credentials by explciitly logging out using the "Logout" menu item in the application.
+
+![Logout menu](/guides/users-guide/logout.png)
+
+> For security reasons, Cumulocity does not use Cookie technology.
+
+If you forgot your password, click the "Forgot password?" link on the login screen. You can now type your email address and click "Reset password". Check your email for the password reset link. Click the link to enter a new password. The password reset link is valid for one hour.
+
+![Reset password](/guides/users-guide/resetpassword.png)
+
+The automated password reset will only work if your email address is stored with your Cumulocity user. If you get a warning that the password cannot be reset, you are either using a different email address than what is stored with your Cumulocity user, or your Cumulocity user has no email address stored. In either case, contact a Cumulocity administrator in your organization. Administrators can reset your password.
+
+> If you are yourself the primary administrator, the email that you used when registering first to Cumulocity is automatically stored with your user. If you have questions, please contact Cumulocity support from this email address.
+
+To change your password, click on the "User Settings" icon in the application.
+
+## <a name="navigating"></a>Navigating in Cumulocity applications
 
 Cumulocity Applications have the following layout:
 
@@ -59,6 +71,9 @@ The web page has the following areas:
   * User Id: You can see here, under which username you are logged into the system. To logout, click on the icon and select "Logout".
   * Content: Most of the web page is occupied by the content, which changed from page to page.
 
+  How to link straight into Cumulocity applications? How to use Cumulocity on touch devices?
+  
+  
 ### How to link into the application?
 
 Each page has its individual URL. For example, to show the basic information for a device, you can enter the following URL:
@@ -91,46 +106,5 @@ The following conventions for actions exists:
    * Inside lists or tables: hover actions
    * Behind COGS Symbol: Use drop down menu
 
-## Device registration
+## <a name="dashboards"></a>Using dashboards
 
-To register new devices, go to the "Device Registration" menu of the Cumulocity application. Carry out the following steps:
-
-* Enter the ID of the device that you would like to connect and click the "Register Device" button. For mobile devices, usually the IMEI of the device is used as ID. Please consult the device documentation for more information on the ID that is actually used for devices of the particular type.
-* The registration is displayed in the list with the status "WAITING FOR CONNECTION". Switch the device on.
-* When device connects, its status is updated to "PENDING ACCEPTANCE".
-* Accept the device by clicking the "Accept" button. The status changes to "ACCEPTED". 
-* Now the device can retrieve credentials to access your Cumulocity tenant. When the device receives the credentials, it disappears from the list. 
-
-Usually, the device will then start discovery and appear in the device list. Note that the credentials of the device are shown in the "Device users" menu of the Cumulocity administration application.
-
-## Asset Management
-
-### Overview
-
-Using the Cumulocity Asset Management, you can create, edit and view your assets in various ways. Assets are the "things" in "Internet of the things". These might be cars, machines, buildings, or other items. Also IoT devices are managed as assets.
-
-With asset management you can:
-
- * Register new devices
- * Browse existing assets
- * Searching assets 
- * View assets on maps
-
-Assets can be organized in groups:
-
- * Creating Groups
- * Assign assets to groups
- * Viewing groups
- * Removing Groups
- 
-
-
-## Alarm management
-
-## Device Control
-
-## Asset Tracking
-
-## User management
-
-* Permissions explained from the user perspective, not from the API perspective.

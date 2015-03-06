@@ -54,8 +54,8 @@ To run the Cumulocity mbed agent, the following items are required:
 
 |Version|Release Date|Download|
 |---|:-:|:-:|
-|1.9|18.Feb 2015| [link](/guides/devices/mbed/firmware-1.9.bin)|
-|2.0| soon  | soon  |
+|1.9|18.Feb 2015| [download](/guides/devices/mbed/firmware-1.9.bin)|
+|2.0|6.Mar 2015  | [download](/guides/devices/mbed/firmware-2.0.bin)  |
 
 ## Connect the C027
 

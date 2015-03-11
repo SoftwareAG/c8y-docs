@@ -3,7 +3,7 @@ title: Introduction to plugin development
 layout: default
 ---
 
-## Overview 
+## Overview
 
 Plugins allow you to add new functionality to Cumulocity's user interface. In the following, we describe step-by-step how to create sample plugins. For the basic concepts of Cumulocity applications, please see [Developing applications](/guides/concepts/applications). For reference information, please see the [Plugins reference](/guides/web/reference).
 
@@ -18,9 +18,9 @@ Plugins are based on HTML5. You should be familiar with the following technologi
 
 You will need the following prerequisites for being able to develop plugins and to execute the examples:
 
-* You will need [Node.js](http://nodejs.org/) (0.10 or newer) and [Grunt](http://gruntjs.com/) installed. 
+* You will need [Node.js](http://nodejs.org/) (0.10 or newer) and [Grunt](http://gruntjs.com/) installed.
 * You will need access to your Cumulocity account, i.e. you need your tenant name, username and password.
-* You will need a source code repository ([Bitbucket](https://bitbucket.org/) or [GitHub](https://github.com/)) where you can commit your source code and build sources for publishing your applications and plugins. 
+* You will need a source code repository ([Bitbucket](https://bitbucket.org/) or [GitHub](https://github.com/)) where you can commit your source code and build sources for publishing your applications and plugins.
 
 All examples described in the document are available in the repository [https://bitbucket.org/m2m/cumulocity-ui-plugin-examples](https://bitbucket.org/m2m/cumulocity-ui-plugin-examples).
 
@@ -82,9 +82,11 @@ Here's what the configuration file means:
 
 ### Register the application
 
-Next, you need to register your application manifest with Cumulocity using "grunt appRegister":
+Next, you need to register your application manifest with Cumulocity using "grunt appRegister:noImports".
 
-	> grunt appRegister
+The "noImports" flag will ignore the imports in the manifest because Cumulocity does not know your plugins yet.
+
+	> grunt appRegister:noImports
 	Running "c8yAppRegister" task
 	[?] What is your cumulocity tenant? mytenant
 	[?] What is your username? myuser
@@ -99,8 +101,6 @@ You will be asked for your tenant name and username the first time you run any r
 After registering your application, it appears in the "Own applications" menu of the Cumulocity administration application.
 
 ![My Application](/guides/plugins/applicationeditor.png)
-
-> Note: Every time you change the application manifest you need to re-register the application.
 
 ### Configure the plugin manifest
 
@@ -141,11 +141,26 @@ Alternatively to "pluginRegister", you can also register all plugins at once by 
 
 	> grunt pluginRegisterAll
 
-After registering your plugin, it appears in the "Plugins" tab of your application.
+> Note: Every time you change the plugin manifest, you need to re-register the plugin.
+
+### Update plugin imports for your application
+
+Once you registered your plugin you can update your application with the plugin imports.
+
+	> grunt appRegister
+	Running "c8yAppRegister" task
+	[?] What is your password? ********
+	Registering application.
+	>> Application registered
+	Done, without errors.
+
+Your already registered application will be updated with the current manifest. Because of the missing "noImports" flag the plugin imports will also be updated.
+
+You can check your application again in the "Own applications" menu of the Cumulocity administration application. It now contains a list of the imported plugins.
 
 ![My Plugin](/guides/plugins/plugineditor.png)
 
-> Note: Every time you change the plugin manifest, you need to re-register the plugin.
+> Note: Every time you change the application manifest you need to re-register the application.
 
 ### Implement the plugin’s initialization function
 
@@ -154,18 +169,18 @@ Previsouly, while defining the plugin manifest, we mentioned that JavaScript cod
 	angular.module('myapp.helloworld', []).config(['c8yNavigatorProvider', 'c8yViewsProvider',
 	 function (c8yNavigatorProvider, c8yViewsProvider) {
 		'use strict';
-		
+
 		c8yNavigatorProvider.addNavigation({
 			name: 'New plugin',
 			icon: 'cube',
 			priority: 100000,
 			path: 'hello'
 		});
-		
+
 		c8yViewsProvider.when('/hello', {
 			templateUrl: ':::PLUGIN_PATH:::/views/index.html',
 			controller: 'mh_MainCtrl'
-		});	
+		});
 	}]);
 
 With this code, we contribute a menu item ("c8yNavigationProvider") and a view with its controller ("c8yViewsProvider") to our application.
@@ -351,7 +366,7 @@ Now, re-register your application:
 Now, we create an empty "Contact" tab in the device details view, which we will fill with contents in the following step.
 
 * Create the folder "plugins/deviceControl/controllers".
-* Inside the folder, create a file "deviceContact.js" with the content below. 
+* Inside the folder, create a file "deviceContact.js" with the content below.
 
 
 	angular.module('myapp.deviceContact')
@@ -415,7 +430,7 @@ Previously, we only set up a dummy view for device contacts. In this step, we wi
 			"address": "Sample Street 11 A"
 		}
 	}
-	
+
 
 >	UNCLEAR: This load function does not load anything. I assume that the actual loading is done by device detail.
 
@@ -434,14 +449,14 @@ Previously, we only set up a dummy view for device contacts. In this step, we wi
 					$scope.device.c8y_Contact = device.c8y_Contact;
 				});
 			}
-			
+
 			$scope.device = {};
-			
+
 			load();
 		}
 	]);
 
-* Edit the device contact view in "deviceContact.html" with the content below. 
+* Edit the device contact view in "deviceContact.html" with the content below.
 
 
 	<div class="panel panel-clean">
@@ -478,11 +493,11 @@ After completing the following steps, you will be able to save the data edited u
 	function save(device) {
 		c8yDevices.save(device).then(onSave);
 	}
-	
+
 	function onSave() {
 		c8yAlert.success('Contact information successfully saved!');
 	}
-	
+
 	$scope.save = save;
 	...
 

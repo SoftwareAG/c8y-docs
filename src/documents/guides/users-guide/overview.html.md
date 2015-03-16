@@ -30,7 +30,7 @@ You can also use recent smartphone and tables web browsers. We test with the fol
 
 To access the applications for your Cumulocity tenant, use the following URL:
 
-   * https://&lt;account&gt;.cumulocity.com/
+	https://<account>.cumulocity.com/
 
 This will direct you to the login page of your default application, shown in the image below.
 
@@ -88,7 +88,7 @@ On smaller screens, the layout of an application changes, as shown below. The na
 
 Note that you can navigate straight to any place inside a Cumulocity application. For example, to show the basic information for a device, you can enter the following URL:
 
-	https://<tenant>.cumulocity.com/apps/devicemanagement/index.html#/device/<id>/info
+	https://<account>.cumulocity.com/apps/devicemanagement/index.html#/device/<id>/info
 
 Using such a URL, you can
 

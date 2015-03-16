@@ -58,6 +58,7 @@ To run the Cumulocity mbed agent, the following items are required:
 |2.0      | 6.Mar 2015  | [download](/guides/devices/mbed/firmware-2.0c8y.bin)  |
 
 Version for Deutsche Telekom Device Cloud (m2m-devicecloud.com):
+
 |Version|Release Date|Download|
 |---|:-:|:-:|
 |2.0  | 6.Mar 2015  | [download](/guides/devices/mbed/firmware-2.0.bin)  |
@@ -105,21 +106,19 @@ Currently  the u-blox firmware supports three operations:
 
 ## Troubleshooting
 
-* **I can not log-in to the platform**: Due to a badly chosen font option, upper case 'i' and lower case 'l' are indistinguishable on printout, you may need to try out different combinations to make sure the password you entered is the right one. (Applies to Deutsche Telekom Cloud-der-Dinge kit only.)
+* **I can not log-in to the platform** (applies to Deutsche Telekom Industrie 4.0 kit only): Upper case 'i' and lower case 'l' are hard to distinguish. You may need to try different combinations to make sure the password you entered is the right one. 
 
-* **The device freezes or resets when booting up**: This is commonly an issue originated from a bad power connection. Unplug and plug in your power connector again, make sure the connection is firm and stable, this will normally resolve the issue.
+* **The device freezes or resets when booting up**: This is commonly an issue originated from a bad power connection. Unplug and plug in your power connector again and make sure the connection is firm and stable. This will normally resolve the issue.
 
-* **"Modem Init Failure", "No SIM card found", "Or SIM has PIN code"**: Make sure you have inserted the SIM card in the right direction and side, and the SIM card is locked so that it has good contact to the device.
-<p>It is also possible that the SIM card has a PIN code. In this case, you have to manually remove the PIN code to make it work.
+* **"Modem Init Failure", "No SIM card found", or "SIM has PIN code"**: Make sure you have inserted the SIM card in the right direction and side. Verify that the SIM card holder is locked so that the SIM card has good contact to the device. If the SIM card has a PIN code, please remove the PIN code (for example, using a mobile phone).
 
-* **GPS Init Failure**: Sometimes the agent is unable to initialize the GPS unit, simply restart the device should get away this issue.
-<p>Note that the GPS initialization process works without an actual GPS receiver, it is therefore usually not necessary to actually attach a GPS receiver to resolve this problem.
+* **GPS Init Failure**: Sometimes the agent is unable to initialize the GPS unit. Simply restart the device to resolve the issue. Note that the GPS initialization process works without an actual GPS receiver. It is therefore usually not necessary to actually attach the GPS receiver to resolve this problem.
 
-* **No Network Coverage**: Make sure you have the modem antenna correctly mounted, otherwise the device will not be able to connect to a network.
+* **No Network Coverage**: Make sure you have the modem antenna correctly mounted to the "WL_INT" connector, otherwise the device will not be able to connect to a network.
 
-* **Agent Init Failure**: The agent initialization is a complex process and comprises multiple components. It is in this case impossible to locate the actual problem without concrete information. You are recommended to connect the device to your computer and enable debug mode to collect more information via a serial port and trace where the problem actually is. See "Enable Debug Mode" on this page for further details.
+* **Agent Init Failure**: To troubleshoot this issue,we recommend to connect the device to your computer and enable debug mode to collect more information via a serial port. See "Enable Debug Mode" on this page for further details.
 
-* **Integration/Config Failure**: An ill functioning platform can often render this problem. In case you encountered this error message, please ensure that the cloud server is functioning well.
+* **Integration/Config Failure**: This message may appear when the connection to Cumulocity is broken or an error on the server side occurred.
 
 * **The device failed to join a network and displays "Wrong APN setting"**: Review the source code file `C027_Support/MDMAPN.h` and add an entry with the Mobile Country Code (MCC), Mobile Network Code (MNC) and your APN setting. Your MMC and MNC code should be shown on the LCD display below the error message "Wrong APN setting".
 
@@ -129,10 +128,9 @@ Currently  the u-blox firmware supports three operations:
 
 * **Upon boot-up, the device displays "Connect to Cloud" right after "Agent Run", instead of showing "Bootstrapping" and IMEI**: The device is already registered with Cumulocity under another user account, a _factory reset_ has to be performed to unregister the device.
 
-* **The device does not send GPS data**: Due to the weak ability of the GPS receiver, it needs to have direct sight to the sky to receive satellite signals. If you've already done so, keep in mind that a bad weather can also affect the GPS receiver.
+* **The device does not send GPS data**: The GPS receiver needs to have direct sight to the sky to receive satellite signals. Bad weather can also influence GPS reception.
 
-* **I have accidentally deleted my device in device management**: The platform is able to recreate your device the next time it is connecting to the platform, so you only need to restart your u-blox device and wait for sometime for the device to appear again in device management.
-
+* **I have accidentally deleted my device in device management**: Restart your device and wait a while. Your device will automatically re-register with Cumulocity and appear again.
 
 ## Tips and Tricks
 

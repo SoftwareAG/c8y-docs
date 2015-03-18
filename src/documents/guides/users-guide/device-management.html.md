@@ -320,9 +320,9 @@ Cumulocity provides a central place to collect reference firmware and software f
 
 The "Device credentials" menu lists all credentials that have been generated for your connected devices. Each device that has been [registered](#device-registration) shows up here with the naming convention "device_&lt;id&gt;".
 
-In most cases, you should not need to edit anything here. Exceptions are:
+In most cases, you should not need to edit anything. Exceptions are:
 
-* You have carried out a factory reset on a device. In this case, the device will often loose its assigned credentials. Find the credentials and click the "x" button to delete the credentials. Then continue with the normal [registration process](#device-registration) to re-register the device.
+* You have carried out a factory reset on a device. In this case, the device will often loose its assigned credentials. Find the credentials and click the "x" button to delete the credentials in Cumulocity as well. Then continue with the normal [registration process](#device-registration) to re-register the device.
 * You would like to temporarily disconnect a device. In this case, click the "Deactivate" button next to the device credentials.
 * You would like to assign more permissions to an individual device. In this case, click the device credentials and select additional or different user groups for the device.
 

@@ -238,7 +238,7 @@ Example response:
 
 Unless there is an error there is no specific response for the subscribe
 
-#### Unubscribe
+#### Unsubscribe
 
 Example request:
 	

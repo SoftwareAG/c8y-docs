@@ -17,6 +17,7 @@ The Device Management application provides you with an overview of your connecte
 * [Remote control](#operation-monitoring) devices.
 * [Troubleshoot](#events-all) devices.
 * [Manage](#software-repo) the software and the firmware on devices.
+* [Manage](#credentials) the credentials of devices.
 
 The following sections will walk you through the various menus of the application.
 
@@ -314,4 +315,14 @@ Since devices may sent larger amounts of event data, you can filter the data sho
 Cumulocity provides a central place to collect reference firmware and software for devices in the "Firmware repository" and the "Software repository". To add a new firmware image to the repository, visit the "Firmware repository" and click the "Add firmware" button. Then type the name of the firmware, its version and the URL from where the device can download the firmware. Similar, use the "Software repository" to add reference software packages.
 
 > Note that you currently have to visit the [Administration application](/guides/users-guide/administration#file-repository) to store binaries in Cumulocity.
+
+## <a name="credentials"></a>Managing device credentials
+
+The "Device credentials" menu lists all credentials that have been generated for your connected devices. Each device that has been [registered](#device-registration) shows up here with the naming convention "device_&lt;id&gt;".
+
+In most cases, you should not need to edit anything here. Exceptions are:
+
+* You have carried out a factory reset on a device. In this case, the device will often loose its assigned credentials. Find the credentials and click the "x" button to delete the credentials. Then continue with the normal [registration process](#device-registration) to re-register the device.
+* You would like to temporarily disconnect a device. In this case, click the "Deactivate" button next to the device credentials.
+* You would like to assign more permissions to an individual device. In this case, click the device credentials and select additional or different user groups for the device.
 

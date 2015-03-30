@@ -87,7 +87,7 @@ Example response:
 
 |Name|Type|Occurs|Description|
 |:---|:---|:-----|:----------|
-|id|String|1|Device identifier, e.g. IMEI|
+|id|String|1|Device identifier. Max: 1000 characters. E.g. IMEI|
 |status|String|1|Status of registration, one of: WAITING\_FOR\_CONNECTION, PENDING\_ACCEPTANCE, ACCEPTED|
 |self|URL|1|Link to this resource.|
 

@@ -126,24 +126,36 @@ Selecting twelve columns results in a widget that will occupy the full available
 
 <img src="/guides/users-guide/addwidget.png" alt="Add widget" style="max-width: 60%">
 
+For most widgets, you will also see a "Child devices" option. This will allow you to show data from a child device in the widget. By default, the current device is selected.
+
 Once a widget is placed on a dashboard, it can be moved to a new location on the dashboard by dragging its title bar. You can also edit the widget properties by moving your mouse to the title bar, clicking the cog wheel and selecting "Edit". Similar, you can delete a widget by clicking "Remove".
 
 Finally, entire dashboards can be edited, removed and copied by clicking on the larger cog wheel at the top right.
 
 ### Properties
 
+The properties widget shows inventory data of a device, such as hardware or modem information. The data will be shown in tables with one table for each section of information that you select in the "Add widget" or "Edit widget" dialog.
+
 ### Location
+
+The location widget will just show the selected device on a map.
 
 ### Image
 
-### KPI list
+The image widget will show an arbitrary image on the dashboard. You can upload the image to be shown when you add or edit the widget.
 
-### KPI radial gauge
+### KPI list, KPI radial gauge, KPI linear gauge
 
-### KPI linear gauge
+The KPI list, KPI radial gauge and KPI linear gauge are three different visual representations of the current value of a KPI. The KPI list widget shows a table of KPIs with the KPI name, it's target value, the current value and the difference between current and target value. The KPI radial gauge and the KPI linear gauge display the current value in a graphical relationship to "yellow" and "red" values. For more information on KPIs, see "[Using KPIs](#kpis)".
 
 ### KPI graph
 
-## Using KPIs
+The KPI graph widget display the history of a set of KPIs in a graph. 
+
+Time interval, aggregation, refer to measurements
+
+
+## <a name="kpis"></a>Using KPIs
 
 > To be done.
+

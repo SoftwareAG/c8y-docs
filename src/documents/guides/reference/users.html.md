@@ -127,7 +127,7 @@ Example response:
            "currentPage : 1
        },
        "prev" : "[URL to previous page]",
-       "next" : "[URL to next page]" 
+       "next" : "[URL to next page]"
     }
 
 ### POST - CREATE a new User within the Collection
@@ -184,7 +184,7 @@ A "User" resource type contains the following fields:
 |:---|:---|:-----|:----------|:--------------------------|
 |id|String|1|Uniquely identifies a user|not allowed|
 |self|URI|1|Link to this Resource|not allowed|
-|userName|String|1|User name, unique for a given domain.|POST:mandatory PUT:not allowed|
+|userName|String|1|User name, unique for a given domain. Max: 1000 characters|POST:mandatory PUT:not allowed|
 |password|String|1|User password. Min: 6, max: 32 characters. Only Latin1 chars allowed.|POST:mandatory PUT:optional|
 |firstName|String|1|User first name.|optional|
 |lastName|String|1|User last name.|optional|
@@ -206,7 +206,7 @@ A "currentUser" resource type contains the following fields:
 |:---|:---|:-----|:----------|:--------------------------|
 |id|String|1|Uniquely identifies a user|not allowed|
 |self|URI|1|Link to this Resource|not allowed|
-|userName|String|1|User name, unique for a given domain.|POST:mandatory PUT:not allowed|
+|userName|String|1|User name, unique for a given domain. Max: 1000 characters|POST:mandatory PUT:not allowed|
 |password|String|1|User password. Min: 6, max: 32 characters. Only Latin1 chars allowed.|POST:mandatory PUT:optional|
 |firstName|String|1|User first name.|optional|
 |lastName|String|1|User last name.|optional|
@@ -216,6 +216,7 @@ A "currentUser" resource type contains the following fields:
 |devicePermissions|Object|1|List of device permissions|optional|
 |effectiveRoles|Role|0..n|List of all roles a current user has assigned (explicitly or implicitly via associated groups).|not allowed|
 
+**userName** can have a maximum of 1000 characters
 **Embedded user **contains all properties except password. Password property is never returned in GET user
 
 ### Device permission structure:
@@ -233,7 +234,7 @@ A "currentUser" resource type contains the following fields:
 + DELETE - "ADMIN" or "*"
 + GET - "READ" or "*"
 
-"*" is a wildcard. It enables you to access every API and CRUD objects regardless of fragments that are inside it. 
+"*" is a wildcard. It enables you to access every API and CRUD objects regardless of fragments that are inside it.
 
 #### Querying collections:
 
@@ -380,7 +381,7 @@ Example response:
     HTTP/1.1 200 OK
      Content-Type: application/vnd.com.nsn.cumulocity.user+json;ver=0.9
      Content-Length: nnn
-     
+
     {
         "email": "jsmith@abc.com",
         "enabled": true,
@@ -398,7 +399,7 @@ Example response:
             "self": "[URL to the User's Roles]"
         },
         "self": "[URL to the User resource]",
-        "userName": "jsmith"} 
+        "userName": "jsmith"}
 
 ### PUT a change to the Current User Resource
 
@@ -413,7 +414,7 @@ Response body: application/vnd.com.nsn.cumulocity.user+json;ver=0.9
      Accept: application/vnd.com.nsn.cumulocity.user+json;ver=0.9
      Content-Type: application/vnd.com.nsn.cumulocity.user+json;ver=0.9
      Content-Length: nnn
-     
+
     {
        "firstName" : "Robert"
     }
@@ -423,7 +424,7 @@ Example response:
     HTTP/1.1 200 OK
      Content-Type: application/vnd.com.nsn.cumulocity.user+json;ver=0.9
      Content-Length: nnn
-     
+
      {
         "email": "jsmith@abc.com",
         "enabled": true,
@@ -468,7 +469,7 @@ Response body: UserReference
      Authorization: Basic xxxxxxxxxxxxxxxxxxx
      Content-Length: nnn
      Content-Type: application/vnd.com.nsn.cumulocity.userReference+json;ver=0.9
-     
+
     {
       "user" : {
         "self" : "[URL to the User resource]"
@@ -481,7 +482,7 @@ Example response:
      Content-Type: application/vnd.com.nsn.cumulocity.userReference+json;ver=0.9
      Content-Length: nnn
      Location: [location]
-     
+
     {
         "self": "[URL to this resource]",
         "user": {
@@ -534,7 +535,7 @@ Example response:
 
     Content-Type: application/vnd.com.nsn.cumulocity.userReferenceCollection+json;ver=0.9
     Content-Length: nnn
-     
+
     {
       "self" : "[URL to this resource]",
       "references" : [
@@ -595,14 +596,14 @@ Example response:
     HTTP/1.1 200 OK
     Content-Type: application/vnd.com.nsn.cumulocity.groupCollection+json;ver=0.9
     Content-Length: nnn
-     
+
     {
        "self":"[URL to this resource]",
        "groups": [
             {
               "id" : "1",
               "self" : "[URL to this resource]",
-              "name" : "administrators",          
+              "name" : "administrators",
               "roles" : [...],
               "users" : ["self" : "[URL to collection of Users in this Group]"],
               "devicePermissions": {}
@@ -610,7 +611,7 @@ Example response:
             {
               "id" : "2",
               "self" : "[URL to this resource]",
-              "name" : "readers",          
+              "name" : "readers",
 	      "roles" : [...],
               "users" : ["self" : "[URL to collection of Users in this Group]"],
               "devicePermissions": {}
@@ -637,7 +638,7 @@ Response body: Group
      Authorization: Basic xxxxxxxxxxxxxxxxxxx
      Content-Length: nnn
      Content-Type: application/vnd.com.nsn.cumulocity.group+json;ver=0.9
-     
+
     {
       "name" : "monitoring"
     }
@@ -648,7 +649,7 @@ Example response:
      Content-Type: application/vnd.com.nsn.cumulocity.group+json;ver=0.9
      Content-Length: nnn
      Location: [URL to the resource]
-     
+
     {
       "id" : "3",
       "self" : "[URL to this resource]",
@@ -692,7 +693,7 @@ Example response:
 
     Content-Type: application/vnd.com.nsn.cumulocity.group+json;ver=0.9
     Content-Length: nnn
-     
+
     {
       "id" : "1",
       "self" : "[URL to this resource]",
@@ -738,7 +739,7 @@ Example response:
     Content-Type: application/vnd.com.nsn.cumulocity.group+json;ver=0.9
     Content-Location: [main URL of this resource]
     Content-Length: nnn
-     
+
     {
       "id" : "1",
       "self" : "[URL to this resource]",
@@ -774,7 +775,7 @@ Response body: Group
      Accept: application/vnd.com.nsn.cumulocity.group+json;ver=0.9
      Content-Type: application/vnd.com.nsn.cumulocity.group+json;ver=0.9
      Content-Length: nnn
-     
+
     {
        "name" : "PlatformAdministrators"
     }
@@ -783,7 +784,7 @@ Example response:
 
     Content-Type: application/vnd.com.nsn.cumulocity.group+json;ver=0.9
     Content-Length: nnn
-     
+
     {
       "id" : "1",
       "self" : "[URL to this resource]",
@@ -819,7 +820,7 @@ Example response:
 
     Content-Type: application/vnd.com.nsn.cumulocity.groupReferenceCollection+json;ver=0.9
     Content-Length: nnn
-     
+
     {
         "self" : "[URL to this resource]",
         "references": [{        "group": {            "id": 21,            "name": "admins",            "roles": {                "references": [...],                "self": "[URL to this Group's Roles]"            },            "self": "[URL to this Group]",            "users": {                "self": "{URL to this Group's Users]"            }        },        "self": "[URL to this User's Group]"    },   ...   ],   "statistics" : {
@@ -878,7 +879,7 @@ Example response:
     HTTP/1.1 200 OK
      Content-Type: application/vnd.com.nsn.cumulocity.roleCollection+json;ver=0.9
      Content-Length: nnn
-     
+
     {
        "self":"[URL to this resource]",
        "roles": [
@@ -914,7 +915,7 @@ Response body: RoleReference
      Authorization: Basic xxxxxxxxxxxxxxxxxxx
      Content-Length: nnn
      Content-Type: application/vnd.com.nsn.cumulocity.roleReference+json;ver=0.9
-     
+
     {
       "role" : {
         "self" : "[URL to the Role resource]"
@@ -927,7 +928,7 @@ Example response:
      Content-Type: application/vnd.com.nsn.cumulocity.roleReference+json;ver=0.9
      Content-Length: nnn
      Location: [URL to this resource]
-     
+
     {
       "self" : "[URL to this resource]",
       "role" : {
@@ -949,7 +950,7 @@ Response body: RoleReference
      Authorization: Basic xxxxxxxxxxxxxxxxxxx
      Content-Length: nnn
      Content-Type: application/vnd.com.nsn.cumulocity.roleReference+json;ver=0.9
-     
+
     {
       "role" : {
         "self" : "[URL to the Role resource]"
@@ -962,7 +963,7 @@ Example response:
      Content-Type: application/vnd.com.nsn.cumulocity.roleReference+json;ver=0.9
      Content-Length: nnn
      Location: [URL to this resource]
-     
+
     {
       "self" : "[URL to this resource]",
       "role" : {
@@ -1077,7 +1078,7 @@ Example response:
     HTTP/1.1 200 OK
      Content-Type: application/vnd.com.nsn.cumulocity.roleReferenceCollection+json;ver=0.9
      Content-Length: nnn
-     
+
     {
        "self":"[URL to this resource]",
        "references": [
@@ -1115,5 +1116,3 @@ Example response:
 |:---|:---|:-----|:----------|
 |self|URI|1|Link to this Resource|
 |role|Role|1|A role resource being referenced|
-
-

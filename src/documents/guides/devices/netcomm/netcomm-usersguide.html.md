@@ -6,42 +6,125 @@ layout: default
 
 ## Overview
 
-The following shows how to use an Netcomm NTC-6200 with Cumulocity. It describes how to
+The following section shows how to use a Netcomm router with Cumulocity. It describes how to
 
-* [Connect](#connect) the device to your Cumulocity account.
-* Set WAN, LAN and DHCP parameters.
-* Read and configure RDB parameters.
-* Manage software and firmware.
-* Use the built-in GPS functionality.
-* Use the built-in GPIO ports.
-* Connect Modbus devices.
+* [Connect](#connect) the router to your Cumulocity account.
+* Read and configure [RDB](#rbd) parameters.
+* [Set WAN, LAN and DHCP](#network) parameters.
+* Manage [software and firmware](#software).
+* Monitor [system resourcess](#system).
+* Use the built-in [GPS](#gps) functionality.
+* Use the built-in [GPIO](#gpio) ports.
+* Connect [Modbus](#modbus) devices.
 
-It assumes that the device includes the support software for Cumulocity.
+The section assumes that the router includes the software support for Cumulocity. Compatible models are: [NTC-6200](http://www.netcommwireless.com/product/m2m/ntc-6200). For more information on particular device feature, please also consult the respective manuals found in the "Downloads" sections of the router's home page.
 
 ## <a name="connect"></a>Connecting the device
 
-To connect your Netcomm device to your Cumulocity account, you need to register it using the MAC address of the device. The registration process is described in the section "[Connecting devices](/guides/users-guide/device-management/#device-registration)" of the User's Guide. The MAC address of the device is printed on the back side of the device as shown by the screenshot below.
+To connect your Netcomm router to your Cumulocity account, you need to register it using the MAC address of the router's Ethernet port. The registration process is described in the section "[Connecting devices](/guides/users-guide/device-management/#device-registration)" of the User's Guide. The MAC address is printed on the back side of the router as shown by the screenshot below.
 
-![MAC address](/guides/devices/netcomm/mac.jpg)
+![MAC address](/guides/devices/netcomm/mac.png)
 
-After accepting the device, click on "All devices" to navigate to the device, or search for it. The default name of the device is "<model> <serial number>". For example, the above device would appear as "NTC-6200 165711141901036". Click on the device to view the details of the device and access the functionality described in the remaining sections of this document.
+After accepting the router, click on "All devices" to navigate to the router, or search for it. The default name of the router is "&lt;model&gt; &lt;serial number&gt;". For example, the above device would appear as "NTC-6200 165711141901036". Click on the device to view the details of the device and to access the functionality described in the remaining sections of this document. You can change the name of the device on the "Info" tab, which also displays basic information such as serial number of the device and SIM card data.
 
-	
-	* Info tab: You can edit the name in the "Info" tab and potentially change the connection monitoring options. Model and serial number is reported under "Hardware". Basic modem parameters are visible in "Mobile" (IMEI, LAC, Cell ID, ICCID, MCC, MNC).
-	* Measurements tab: There is one measurement type "Analog input" showing the voltage of each input.
-	* Alarms tab: Setting a digital I/O to "high" will trigger an alarm that can be shown here. Setting it to "low" will clear the alarm. A notification mode can be set in the configuration. Supported values are: "event", "alarm", "alarm-inverted" (the inverted polarity sends alarm on "low" level).
-	* Control tab: Contains the controls for setting digital outputs as well as the option to get and edit RDB configuration dumps.
-	* Software tab: Shows the currently installed firmware on the device. 
-	* Location tab: Shows the current location of the device. 
-	* Tracking tab: Shows a location trace of the device over time.
-	* Network tab: Display and edit the networking configuration.
+![Device details](/guides/devices/netcomm/info.jpg)
 
-Note that the "Location" and the "Tracking" tab only appear when GPS is enabled in the device and when the device had the first GPS fix.
+## <a name="rdb"></a>Configuring RDB parameters
 
-Now you can, for example, create KPIs that represent more closely what you have actually connected to the GPIOs and show these KPIs in a real-time dashboard.
-* Reporting of model, serial number, firmware version and installed software.
+Some functionality, such as GPS and GPIO, needs to be configured on the router before it can be used with Cumulocity. For this purpose, you can use the router's web user interface, its command line, its SMS-based remote configuration, or the configuration editor of Cumulocity. 
 
+The configuration editor can be accessed by navigating to the "Control" tab of the router. Since an RDB configuration has a significant size, the editor is initially empty. Click the "Reload" link to request an RDB configuration dump from the router. It may take a few seconds to download the dump. 
 
+The dump shows as a list of parameters and their values, as depicted in the screenshot below. You can navigate to a particular parameter by simply using your web browser's text search functionality. Edit the parameters and click the "Save" button to send your changes to the router and store them there.
 
-## Using Modbus
+![RDB setup](/guides/devices/netcomm/rdb.png)
 
+## <a name="network"></a>Configuring network parameters
+
+You can view and configure the essential mobile network ("WAN") and local area network ("LAN") parameters using the "Network" tab as shown in the screenshot below. 
+
+The mobile network parameters shown in the user interface correspond to the first profile stored in the router. Please note that these parameters can only be remotely edited using SMS, so the router needs to be configured to accept SMS commands. Consult the manuals of the router on the relevant RDB parameters for SMS configuration, or use the router's web user interface. You also need to have an SMS gateway configured with your account. Contact support@cumulocity.com for setting up an SMS gateway.
+
+![WAN parameters](/guides/devices/netcomm/wan.png)
+
+LAN and DHCP parameters can be configured through the normal IP connection to the router and correspond exactly to the parameters of the same name on the device.
+
+![LAN parameters](/guides/devices/netcomm/lan.png)
+
+## <a name="software"></a>Managing software and firmware
+
+The installed software packages on the router can be remotely managed using the standard software and firmware management features of Cumulocity, as described in the [Device management user's guide](/guides/users-guide/device-management#software-repo). Software packages need to be provided in [ipkg](http://en.wikipedia.org/wiki/Ipkg) format. All installation paths (install, upgrade, downgrade, removal) are supported (provided the installation package supports them).
+
+The above applies to the Cumulocity support software on the router itself. Please note that the following packages must remain installed on the router to be able to remotely manage the router through Cumulocity:
+
+* curl_&lt;version&gt;.ipk
+* libconfig_&lt;version&gt;.ipk
+* smartrest-agent_&lt;version&gt;.ipk
+
+Firmware can be uploaded and installed on the router as well using Netcomm firmware images (".cdi" files). Note that firmware downgrades may result in a non-functional router.
+
+TBD: Screenshot
+
+## <a name="system"></a>Monitoring system resources
+
+You can record statistics of the router operating system resources for troubleshooting purposes. The following statistics are available:
+
+* CPU load in percent.
+* Used and total memory in MB.
+* Uplink and downlink traffic over all interfaces in KB/sec.
+
+By default, collection of resource statistics is disabled. To enabled statistics collection, configure the collection interval in the "Control" tab using the following parameter:
+
+	agent.system_resources.interval = <seconds>
+
+TBD: What's the parameter?
+
+## <a name="gps"></a>Using GPS
+
+To locate or trace the router, connect a GPS antenna to the router and enable its GPS functionality. Again, this can be done using any of the available configuration options. From Cumulocity, set the following variable in the configuration editor:
+
+	sensors.gps.0.enable=1
+
+Now, configure the frequency of data collection. 
+
+	agent.gps.interval = <seconds>
+	agent.gps.update_interval = <seconds>
+
+After you applied the configuration changes and after the first GPS data arrives, a "Location" and a "Tracking" tab appear. You may have to reload the web user interface to make the tabs visible. See the "[Location](/guides/users-guide/device-management#location)" and "[Tracking](/guides/users-guide/device-management#tracking)" sections in the user's guide for more information.
+
+TBD: What do the two parameters mean?
+
+## <a name="gpio"></a>Using GPIO
+
+The Netcomm agent supports the following GPIO functionality:
+
+* Send the voltage of the analog inputs as measurements to Cumulocity. In Cumulocity, you can visualize the voltages directly, for example, as graphs and gauges. You can also scale and transform the voltages using rules.
+* Create alarms when a digital input goes high or low.
+* Log the state of the digital inputs as events.
+* Switch a digital output remotely from Cumulocity.
+
+Consult the manual of your router for more information about its IO configuration. Relevant RDB parameters are:
+
+	TBD
+
+To configure polling of the GPIO ports, use the following configuration parameters:
+
+	agent.gpio.interval = <seconds>
+	agent.gpio.<port>.notify = <off | event | alarm | alarm-inverted>
+
+"Port" can be one of the following values: 3v8poe, ign ,vin ,xaux1 ,xaux2 and xaux3. 
+
+* off: The digital input is ignored.
+* event: The value of the input is logged as event.
+* alarm: If the input is set to "high", an alarm is created.
+* alarm-inverted: If the input is set to "low", an alarm is created.
+
+TBD: Screenshots of alarms, measurements, switch
+
+## <a name="modbus"></a>Connecting Modbus devices
+
+You can connect Modbus/TCP devices using the router's LAN port and manage them remotely from Cumulocity. To do so, you need to
+
+* Establish basic LAN connectivity. Use the "[Network](#network)" tab as described above and the corresponding configuration mechanism on the Modbus device to enable IP communication between the router and the device.
+* Subscribe your account to the Cloud Fieldbus app by contacting support@cumulocity.com.
+* Configure Modbus communication as described in the [Cloud Fieldbus user's guide](/guides/users-guide/).

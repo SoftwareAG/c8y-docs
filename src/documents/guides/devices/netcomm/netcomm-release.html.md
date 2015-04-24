@@ -46,7 +46,7 @@ To install the agent:
 
 	http://resources.cumulocity.com/ntc/curl_7.37.0_arm.ipk
 	http://resources.cumulocity.com/ntc/libconfig_1.4.9_arm.ipk
-	http://resources.cumulocity.com/ntc/smartrest-agent_1.5.0_arm.ipk
+	http://resources.cumulocity.com/ntc/smartrest-agent_1.4.6_arm.ipk
 
 * Click on "Install" for each of the above packages in the order listed above.
 

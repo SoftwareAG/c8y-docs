@@ -21,7 +21,7 @@ The section assumes that the router includes the software support for Cumulocity
 
 ## <a name="connect"></a>Connecting the device
 
-To connect your Netcomm router to your Cumulocity account, you need to register it using the MAC address of the router's Ethernet port. The registration process is described in the section "[Connecting devices](/guides/users-guide/device-management/#device-registration)" of the User's Guide. The MAC address is printed on the back side of the router as shown by the screenshot below.
+To connect your Netcomm router to your Cumulocity account, you need to register it using the MAC address of the router's Ethernet port. The registration process is described in the section "[Connecting devices](/guides/users-guide/device-management/#device-registration)" of the User's Guide. The MAC address is printed on the back side of the router as shown by the screenshot below. Please make sure to use lowercase letters when entering the MAC address. For example, the MAC address from the picture would be entered as "006064dda4ae".
 
 ![MAC address](/guides/devices/netcomm/mac.png)
 

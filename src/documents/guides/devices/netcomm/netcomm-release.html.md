@@ -26,11 +26,11 @@ The agent supports the following functionality:
 * Lua plugin API for rapid development of IoT applications.
 * Modbus/TCP support to remotely manage Modbus devices from Cumulocity.
 
-## Known issues
+## Known limitations
 
 * Timestamps on the device and on the server may not be fully in sync, hence you may see updates (e.g., alarms, events) that occur "in future". This is also the reason that it may take a while until the "Location" and the "Measurement" tab appear for new devices.
 * Only WAN profile 1 is supported.
-* Inventory is not automatically synchronized when the device configuration is changed.
+* The success of a software installation can currently not be monitored. install_file does not return error messages.
 
 ## System requirements
 
@@ -38,19 +38,18 @@ The agent was tested on a stock NTC-6200 with firmware version 1.10.40.7. For re
 
 ## Installing the agent
 
-To install the agent:
+To install the agent initially:
 
 * Log in to the web user interface of the NTC-6200.
 * Navigate to the "System" menu. Click on "System configuration" and "Upload".
-* Upload the following packages to the device:
+* Upload the packages below to the device and click "Install" for each package in the order listed below.
+
 
 	http://resources.cumulocity.com/ntc/curl_7.37.0_arm.ipk
 	http://resources.cumulocity.com/ntc/libconfig_1.4.9_arm.ipk
 	http://resources.cumulocity.com/ntc/smartrest-agent_1.4.6_arm.ipk
 
-* Click on "Install" for each of the above packages in the order listed above.
-
-The agent will automatically start after the last package has been installed. If you installed the packages in a different order, you may need to restart the gateway. To upgrade or downgrade the agent, simply install the target version.
+The agent will automatically start after the last package has been installed. If you installed the packages in a different order, you may need to restart the gateway. Further upgrades or downgrades can be done remotely through the software management feature, or directly on the device.
 
 ## Starting the agent manually
 
@@ -69,7 +68,7 @@ The agent configuration file provides default settings for diverse configuration
 
 ## Using the agent
 
-For information on using the agent, please visit the [Netcomm Agent User's Guide](/guides/netcomm/netcomm-usersguide).
+For information on using the agent, please visit the [Netcomm Agent User's Guide](/guides/devices/netcomm/netcomm-usersguide).
 
 ## Troubleshooting
 

@@ -143,7 +143,7 @@ Example request:
 	Content-Type: application/vnd.com.nsn.cumulocity.tenant	+json;ver...
 	
 	{
-		"id" : "sample_tenant"
+		"id" : "sample_tenant",
 		"company" : "sample_company",
 		"domain" : "sample_domain.com",
 		"contactName" : "Mr. Doe",

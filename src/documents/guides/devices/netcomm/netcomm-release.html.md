@@ -4,8 +4,7 @@ title: Netcomm Agent Release Notes
 layout: default
 ---
 
-
-## Release notes for Netcomm Agent 1.4.8
+## Release notes for Netcomm Agent 1.5.0
 
 This document describes the Cumulocity agent package for the [Netcomm Wireless NTC-6200](www.netcommwireless.com/product/m2m/ntc-6200) gateway.
 
@@ -46,9 +45,11 @@ To install the agent initially:
 * Navigate to the "System" menu. Click on "System configuration" and "Upload".
 * Upload the packages below to the device and click "Install" for each package in the order listed below.
 
-	http://resources.cumulocity.com/ntc/curl_7.37.0_arm.ipk
-	http://resources.cumulocity.com/ntc/libconfig_1.4.9_arm.ipk
-	http://resources.cumulocity.com/ntc/smartrest-agent_1.4.8_arm.ipk
+http://resources.cumulocity.com/ntc/curl_7.37.0_arm.ipk
+
+http://resources.cumulocity.com/ntc/libconfig_1.4.9_arm.ipk
+
+http://resources.cumulocity.com/ntc/smartrest-agent_1.5.0_arm.ipk
 
 The agent will automatically start after the last package has been installed. If you installed the packages in a different order, you may need to restart the gateway. Further upgrades or downgrades can be done remotely through the software management feature, or directly on the device.
 
@@ -70,6 +71,10 @@ The agent configuration file provides default settings for diverse configuration
 ## Using the agent
 
 For information on using the agent, please visit the [Netcomm Agent User's Guide](/guides/devices/netcomm/netcomm-usersguide).
+
+## Rapid development of IoT applications
+
+For an alpha version of the Lua-based rapid development feature, visit https://bitbucket.org/m2m/cumulocity-clients-c/src/b68581d239244f301fde91131ff68f157cf91495/Lua.md?at=develop.
 
 ## Troubleshooting
 

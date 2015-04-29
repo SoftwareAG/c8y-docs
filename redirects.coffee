@@ -54,6 +54,7 @@ redirects =
 	'/guides/reference-guide/real-time-notifications.html': '/guides/reference/real-time-notifications'
 	# "index.html" redirects
 	'/guides/concepts': '/guides/concepts/introduction'
+	'/guides/users-guide': '/guides/users-guide/introduction'
 	'/guides/rest': '/guides/rest/introduction'
 	'/guides/reference': '/guides/reference/rest-implementation'
 	'/guides/web': '/guides/web/introduction'

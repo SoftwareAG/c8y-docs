@@ -146,4 +146,4 @@ You can connect Modbus/TCP devices using the router's LAN port and manage them r
 
 * Establish basic LAN connectivity. Use the "[Network](#network)" tab as described above and the corresponding configuration mechanism on the Modbus device to enable IP communication between the router and the device.
 * Subscribe your account to the Cloud Fieldbus app by contacting support@cumulocity.com.
-* Configure Modbus communication as described in the [Cloud Fieldbus user's guide](/guides/users-guide/cloud-fieldbus).
+* Configure Modbus communication as described in the [Cloud Fieldbus user's guide](/guides/devices/netcomm/cloud-fieldbus).

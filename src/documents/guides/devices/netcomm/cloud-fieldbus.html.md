@@ -17,7 +17,7 @@ It is applicable for Cloud Fieldbus Release 2. For connecting Modbus devices, yo
 * Teleorigin RB900 for Modbus/RTU.
 * [Netcomm Wireless NTC-6200](/guides/devices/netcomm/netcomm-usersguide) for Modbus/TCP.
 
-> Want to support Cloud Fieldbus in your terminal? Contact info@cumulocity.com for details.
+> Cloud Fieldbus is currently in beta. Want to support Cloud Fieldbus in your terminal? Contact info@cumulocity.com for details.
 
 ## <a name="connect"></a>Connecting Modbus devices
 

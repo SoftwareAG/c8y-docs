@@ -4,7 +4,7 @@ title: Netcomm Agent Release Notes
 layout: default
 ---
 
-## Release notes for Netcomm Agent 1.5.0
+## Release notes for Netcomm Agent 1.4.10 (beta)
 
 This document describes the Cumulocity agent package for the [Netcomm Wireless NTC-6200](www.netcommwireless.com/product/m2m/ntc-6200) gateway.
 
@@ -30,8 +30,8 @@ The agent supports the following functionality:
 * Timestamps on the device and on the server may not be fully in sync, hence you may see updates (e.g., alarms, events) that occur "in future". This is also the reason that it may take a while until the "Location" and the "Measurement" tab appear for new devices.
 * Only WAN profile 1 is supported.
 * The success of a software installation can currently not be monitored. install_file does not return error messages.
-* The Modbus implementation currently does not support shifting decimal points. (However, divisor can be used.)
-* Sending multiple operations in rapid succession to the router may cause the agent to hang.
+* The Modbus implementation currently does not support shifting decimal points. (However, divisor can be used to create the same effect.)
+* Operations will sometimes hang, in particular when sending configuration dumps.
 
 ## System requirements
 
@@ -49,7 +49,7 @@ http://resources.cumulocity.com/ntc/curl_7.37.0_arm.ipk
 
 http://resources.cumulocity.com/ntc/libconfig_1.4.9_arm.ipk
 
-http://resources.cumulocity.com/ntc/smartrest-agent_1.5.0_arm.ipk
+http://resources.cumulocity.com/ntc/smartrest-agent_1.4.10_arm.ipk
 
 The agent will automatically start after the last package has been installed. If you installed the packages in a different order, you may need to restart the gateway. Further upgrades or downgrades can be done remotely through the software management feature, or directly on the device.
 

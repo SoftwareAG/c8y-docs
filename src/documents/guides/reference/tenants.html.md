@@ -125,6 +125,54 @@ Example Response :
             ...
         ]
     }
+    
+### POST - Create a new Tenant
+
+Request body: Tenant
+
+Response body: Tenant
+
+Required role: ROLE\_TENANT\_MANAGEMENT\_ADMIN
+
+Example request:
+				
+	POST ...
+	Host: ...
+	Authorization: Basic ...
+	Content-Length: ...
+	Content-Type: application/vnd.com.nsn.cumulocity.tenant	+json;ver...
+	
+	{
+		"id" : "sample_tenant",
+		"company" : "sample_company",
+		"domain" : "sample_domain.com",
+		"contactName" : "Mr. Doe",
+		"contactPhone" : "0123-4567829",
+		"adminName" : "firstAdmin",
+		"adminPass" : "myPassword"
+	}
+
+Example Response:
+
+
+	HTTP/1.1 201 Created
+	Content-Type: application/vnd.com.nsn.cumulocity.tenant+json;ver=...
+	Content-Length: ...
+	Location: <<URL of new tenant>>
+	
+	{
+		"id" : "sample_tenant",
+		"self" : "<<URL of new tenant>>",
+		"company" : "sample_company",
+		"domain" : "tenant_nsn.com",
+		"contactName" : "Mr. Doe",
+		"contactPhone" : "0123-4567829",
+		"status" : "ACTIVE",
+		"adminName" : "firstAdmin"
+	}
+
+
+
 
 ## Tenant
 
@@ -145,7 +193,7 @@ Example Response :
 
 ### GET a representation of a Tenant.
 
-Response body: Option
+Response body: Tenant
   
 Required role: ROLE\_TENANT\_MANAGEMENT\_READ
 
@@ -197,6 +245,85 @@ Example Response :
         "self":"<<This Tenant URL>>",
         "status": "ACTIVE"
     }
+    
+### PUT - Update an existing tenant.
+
+Request body: Tenant
+
+Response body: Tenant
+  
+Required role: ROLE\_TENANT\_MANAGEMENT\_ADMIN
+
+Example Request :
+     
+    PUT ...
+    Host: ...
+    Authorization: Basic ...
+    Content-Length: ...
+    Accept: application/vnd.com.nsn.cumulocity.tenant+json;ver=...
+    Content-Type: application/vnd.com.nsn.cumulocity.tenant+json;ver=...
+    
+    {
+       "adminName" : "newAdmin"
+    }
+    
+Example Response :
+
+    HTTP/1.1 200 OK
+    Content-Type: application/vnd.com.nsn.cumulocity.tenant+json;ver=...
+    Content-Length: ...
+    {
+    	 "id": "sample_tenant",
+    	 "self":"<<ApplicationCollection of This Tenant URL>>",
+        "company": "sample_company",
+        "domain": "sample_domain.com",
+        "status": "ACTIVE",
+        "self":"<<This Tenant URL>>",
+        "ownedApplications": {
+            "references": [
+                {
+                    "application": {
+                        "availability": "PRIVATE",
+                        "id": "5",
+                        "key": "<<hashed value>>",
+                        "name": "sample_private_application",
+                        "owner": {
+                            "self":"<<Application Owner Tenant URL>>",
+                            "tenant": {
+                                "id": "sample_tenant"
+                            }
+                        },
+                        "self":"<<Application 5 URL>>",
+                        "type": "EXTERNAL"
+                    },
+                    "self":"<<This Tenant Application 5 URL>>",
+                },
+               ...
+            ],
+        },
+      "adminName" : "newAdmin"
+    }
+    
+    
+### DELETE  a representation of a Tenant.
+
+Response body: N/A
+
+Response body: N/A
+
+Required role: ROLE\_TENANT\_MANAGEMENT\_ADMIN
+
+Example request:
+
+	DELETE [URL to the resource]
+	Host: [hostname]
+	Authorization: Basic xxxxxxxxxxxxxxxxxxx
+    
+Example response:
+
+	HTTP/1.1  204 NO CONTENT
+
+
 
 ## Application reference collection
 

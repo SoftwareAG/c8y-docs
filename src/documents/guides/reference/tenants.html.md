@@ -246,15 +246,15 @@ Example Response :
         "status": "ACTIVE"
     }
     
-### PUT a representation of a Tenant.
+### PUT - Update an existing tenant.
 
-Response body: Tenant
+Request body: Tenant
 
 Response body: Tenant
   
 Required role: ROLE\_TENANT\_MANAGEMENT\_ADMIN
 
-Example: Update Tenant
+Example Request :
      
     PUT ...
     Host: ...
@@ -305,7 +305,7 @@ Example Response :
     }
     
     
-## DELETE  a representation of a Tenant.
+### DELETE  a representation of a Tenant.
 
 Response body: N/A
 
@@ -313,7 +313,7 @@ Response body: N/A
 
 Required role: ROLE\_TENANT\_MANAGEMENT\_ADMIN
 
-Example: Delete a Tenant
+Example request:
 
 	DELETE [URL to the resource]
 	Host: [hostname]

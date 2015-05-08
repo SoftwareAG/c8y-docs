@@ -706,6 +706,40 @@ Example Response :
         ]
     }
 
+### GET a summary of all tenant usage statistics
+
+Response body: application/json
+  
+Required role: ROLE\_TENANT\_MANAGEMENT\_READ
+
+Example Request: Get statistics of all tenants starting Aug 1st, 2014, until today.
+
+    GET /tenant/statistics/allTenantsSummary?dateFrom=2014-08-01
+    Host: ...
+    Authorization: Basic ...
+
+Example Response :
+
+    HTTP/1.1 200 OK
+    Content-Type: application/json
+    Content-Length: ...
+    [
+        {
+            "deviceCount": "5",
+            "requestCount": 116378,
+            "tenantId": "tenant1",
+            "storageSize": 1151862557
+        },
+        {
+            "deviceCount": "2",
+            "requestCount": 116378,
+            "tenantId": "tenant2",
+            "storageSize": 1151862557
+        },
+        ...
+	]
+    
+
 ### TenantUsageStatisticsSummary [application/vnd.com.nsn.cumulocity.tenantUsageStatisticsSummary+json]
 
 

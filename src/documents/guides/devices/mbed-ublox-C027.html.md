@@ -61,7 +61,7 @@ Version for Deutsche Telekom Device Cloud (m2m-devicecloud.com):
 
 |Version|Release Date|Download|
 |---|:-:|:-:|
-|2.0  | 6.Mar 2015  | [download](/guides/devices/mbed/firmware-2.0.bin)  |
+|2.0 DT | 6.Mar 2015  | [download](/guides/devices/mbed/firmware-2.0.bin)  |
 
 These downloads are the same as the above ones, except that device registration (bootstrap) is performed against m2m-devicecloud.com .
 

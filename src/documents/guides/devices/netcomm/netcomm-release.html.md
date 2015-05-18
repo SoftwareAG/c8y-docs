@@ -43,15 +43,9 @@ To install the agent initially:
 
 * Log in to the web user interface of the NTC-6200.
 * Navigate to the "System" menu. Click on "System configuration" and "Upload".
-* Upload the packages below to the device and click "Install" for each package in the order listed below.
+* Download http://resources.cumulocity.com/ntc/smartrest-agent_1.5.0_arm.ipk and upload it to the device. Click "Install" to install the software.
 
-http://resources.cumulocity.com/ntc/curl_7.37.0_arm.ipk
-
-http://resources.cumulocity.com/ntc/libconfig_1.4.9_arm.ipk
-
-http://resources.cumulocity.com/ntc/smartrest-agent_1.4.10_arm.ipk
-
-The agent will automatically start after the last package has been installed. If you installed the packages in a different order, you may need to restart the gateway. Further upgrades or downgrades can be done remotely through the software management feature, or directly on the device.
+The agent will automatically start after installation and the device can be [registered with Cumulocity](/guides/devices/netcomm/netcomm-usersguide#connect). Further upgrades or downgrades can be done remotely through the software management feature, or directly on the device.
 
 ## Starting the agent manually
 
@@ -65,8 +59,8 @@ The optional "-d" option lets you define the log verbosity (3 = error, 4 = warni
 
 The agent configuration file provides default settings for diverse configuration options. Many of the configuration options can also be set through RDB and through the remote configuration management feature in Cumulocity. The most relevant configuration options are:
 
-* **server**: The Cumulocity instance that the device will connect to. (Default: Netcomm instance.)
-* **log**: A log file name. (Default: None.)
+* **server**: The Cumulocity instance that the device will connect to. (Default: 54.75.252.207, the Netcomm instance.)
+* **log**: A log file name. (Default: /opt/sragent.log.)
 
 ## Using the agent
 

@@ -19,7 +19,7 @@ The following example shows the communication between a client and the  *SmartRE
 	Authorization: Basic ...
 	X-Id: ...
 	Content-Length: 13
-	
+
 	100,1234456
 
 Each *SmartREST* request is represented by one row having a unique unsigned integer as its first value determining the action and subsequent values for parameters.
@@ -28,7 +28,7 @@ The *SmartREST* endpoint yields the following response. Note that the *HTTP* res
 
 	HTTP/1.1 200 OK
 	Content-Length: 29
-	
+
 	200,1,123456,Request result
 
 Each row yielded by the *SmartREST* endpoint represents a set of extracted values from the result of a *SmartREST* request containing a unique unsigned integer, the *SmartREST* request line number and the extracted data values, respectively.
@@ -103,14 +103,14 @@ If the template exists, the following response is yielded where the message iden
 
 	HTTP/1.1 200 OK
 	Content-Length: 10
-	
+
 	20,12345
 
 If the template does not exist, a response containing an error message is yielded:
 
 	HTTP/1.1 200 OK
 	Content-Length: 33
-	
+
 	40,"No template for this X-ID."
 
 If the template does not exist, a template registration request can be issued using the previously checked `X-Id`.
@@ -121,7 +121,7 @@ Templates can be registered with one single request containing *SmartREST* templ
 	Authorization: Basic ...
 	X-Id: ...
 	Content-Length: 275
-	
+
 	10,100,POST,/inventory/managedObjects,application/vnd.com.nsn.cumulocity.managedObject+json,application/vnd.com.nsn.cumulocity.managedObject+json,,,"{""name"":""Test Device"",""type"":""com_example_TestDevice"",""c8y_IsDevice"":{}}"
 	11,201,,"$.c8y_IsDevice","$.id"
 
@@ -129,7 +129,7 @@ Should the template registration be successful, a similar response like above wi
 
 	HTTP/1.1 200 OK
 	Content-Length: 10
-	
+
 	20,12345
 
 ### Syntax
@@ -224,14 +224,14 @@ Example request:
 	80
 
 Example response:
-	
+
 	Un1q31d3nt1f13r
 
 
 #### Subscribe
 
 Example request:
-	
+
 	81,Un1q31d3nt1f13r,/mychannel
 
 Example response:
@@ -241,7 +241,7 @@ Unless there is an error there is no specific response for the subscribe
 #### Unsubscribe
 
 Example request:
-	
+
 	82,Un1q31d3nt1f13r,/mychannel
 
 Example response:
@@ -251,7 +251,7 @@ Unless there is an error there is no specific response for the unsubscribe
 #### Connect
 
 Example request:
-	
+
 	83,Un1q31d3nt1f13r
 
 Example response:
@@ -265,7 +265,7 @@ The Cumulocity platform will send every 10 minutes a space character through an 
 #### Disconnect
 
 Example request:
-	
+
 	84,Un1q31d3nt1f13r
 
 Example response:
@@ -290,6 +290,32 @@ An advice response line does not need to have every value filled
 Example:
 
 	86,,10000,retry
+
+### Subscribing with multiple templates
+
+If your device uses multiple templates (e.g. child devices have a different templates than the parent) it is possible to add these templates to your subscribe request. The server will than use all templates (from header and subscribe statement) to parse the responses.
+
+Example request:
+
+	POST /devicecontrol/notifications HTTP/1.0
+	Authorization: Basic ...
+	X-Id: mytemplate1
+
+	81,Un1q31d3nt1f13r,/mychannel,mytemplate2,mytemplate3
+
+In the case multiple templates are used the response will contain an additional line that indicates which lines are parsed with which templates:
+
+87,{number of  parsed rows},{X-Id used to parse the following rows}
+
+Example response:
+
+	HTTP/1.0 200 OK
+
+ 	87,2,mytemplate1
+	100,myvalue
+	101,myvalue2
+	87,1,mytemplate3
+	100,myvalue3
 
 ## Built-in messages
 
@@ -336,7 +362,7 @@ Message identifier | Error message
 41 | Invalid JsonPath
 41 | Using JsonPath to refer to a list of objects is not allowed for SmartRest
 41 | Using Filters (?) in JsonPath is not allowed for SmartRest
-41 | No content type supported for {GET or DELETE} templates.	
+41 | No content type supported for {GET or DELETE} templates.
 41 | No template string supported for {GET or DELETE} templates.
 41 | No content type found for {POST or PUT} templates.
 41 | No template string found for {POST or PUT} templates.
@@ -346,4 +372,3 @@ Message identifier | Error message
 45 | No arguments supported
 45 | Wrong number of arguments
 45 | Value is not a {value type}: {value}
-

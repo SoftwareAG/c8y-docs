@@ -125,6 +125,54 @@ Example Response :
             ...
         ]
     }
+    
+### POST - Create a new Tenant
+
+Request body: Tenant
+
+Response body: Tenant
+
+Required role: ROLE\_TENANT\_MANAGEMENT\_ADMIN
+
+Example request:
+				
+	POST ...
+	Host: ...
+	Authorization: Basic ...
+	Content-Length: ...
+	Content-Type: application/vnd.com.nsn.cumulocity.tenant	+json;ver...
+	
+	{
+		"id" : "sample_tenant",
+		"company" : "sample_company",
+		"domain" : "sample_domain.com",
+		"contactName" : "Mr. Doe",
+		"contactPhone" : "0123-4567829",
+		"adminName" : "firstAdmin",
+		"adminPass" : "myPassword"
+	}
+
+Example Response:
+
+
+	HTTP/1.1 201 Created
+	Content-Type: application/vnd.com.nsn.cumulocity.tenant+json;ver=...
+	Content-Length: ...
+	Location: <<URL of new tenant>>
+	
+	{
+		"id" : "sample_tenant",
+		"self" : "<<URL of new tenant>>",
+		"company" : "sample_company",
+		"domain" : "tenant_nsn.com",
+		"contactName" : "Mr. Doe",
+		"contactPhone" : "0123-4567829",
+		"status" : "ACTIVE",
+		"adminName" : "firstAdmin"
+	}
+
+
+
 
 ## Tenant
 
@@ -145,7 +193,7 @@ Example Response :
 
 ### GET a representation of a Tenant.
 
-Response body: Option
+Response body: Tenant
   
 Required role: ROLE\_TENANT\_MANAGEMENT\_READ
 
@@ -197,6 +245,85 @@ Example Response :
         "self":"<<This Tenant URL>>",
         "status": "ACTIVE"
     }
+    
+### PUT - Update an existing tenant.
+
+Request body: Tenant
+
+Response body: Tenant
+  
+Required role: ROLE\_TENANT\_MANAGEMENT\_ADMIN
+
+Example Request :
+     
+    PUT ...
+    Host: ...
+    Authorization: Basic ...
+    Content-Length: ...
+    Accept: application/vnd.com.nsn.cumulocity.tenant+json;ver=...
+    Content-Type: application/vnd.com.nsn.cumulocity.tenant+json;ver=...
+    
+    {
+       "adminName" : "newAdmin"
+    }
+    
+Example Response :
+
+    HTTP/1.1 200 OK
+    Content-Type: application/vnd.com.nsn.cumulocity.tenant+json;ver=...
+    Content-Length: ...
+    {
+    	 "id": "sample_tenant",
+    	 "self":"<<ApplicationCollection of This Tenant URL>>",
+        "company": "sample_company",
+        "domain": "sample_domain.com",
+        "status": "ACTIVE",
+        "self":"<<This Tenant URL>>",
+        "ownedApplications": {
+            "references": [
+                {
+                    "application": {
+                        "availability": "PRIVATE",
+                        "id": "5",
+                        "key": "<<hashed value>>",
+                        "name": "sample_private_application",
+                        "owner": {
+                            "self":"<<Application Owner Tenant URL>>",
+                            "tenant": {
+                                "id": "sample_tenant"
+                            }
+                        },
+                        "self":"<<Application 5 URL>>",
+                        "type": "EXTERNAL"
+                    },
+                    "self":"<<This Tenant Application 5 URL>>",
+                },
+               ...
+            ],
+        },
+      "adminName" : "newAdmin"
+    }
+    
+    
+### DELETE  a representation of a Tenant.
+
+Response body: N/A
+
+Response body: N/A
+
+Required role: ROLE\_TENANT\_MANAGEMENT\_ADMIN
+
+Example request:
+
+	DELETE [URL to the resource]
+	Host: [hostname]
+	Authorization: Basic xxxxxxxxxxxxxxxxxxx
+    
+Example response:
+
+	HTTP/1.1  204 NO CONTENT
+
+
 
 ## Application reference collection
 
@@ -463,6 +590,62 @@ Example Response :
         "value": "http://developer.cumulocity.com"
     }
 
+## System Options
+
+This endpoint provides a set of read-only properties pre-defined in platform configuration. The response format is exactly the same as for OptionCollection.
+
+Response body: OptionCollection
+  
+Required role: ROLE\_OPTION\_MANAGEMENT\_READ
+
+Example Request: Get system options.
+
+     
+    GET .../tenant/system/options
+    Host: ...
+    Authorization: Basic ...
+    Accept: application/vnd.com.nsn.cumulocity.optionCollection+json;ver=...
+
+Example Response :
+
+    HTTP/1.1 200 OK
+    Content-Type: application/vnd.com.nsn.cumulocity.optionCollection+json;ver=...
+    Content-Length: ...
+    {
+      "options": [
+            {
+                "category": "access.control",
+                "key": "allow.origin",
+                "value": "*"
+            },
+            ...
+      ],
+    }
+
+It is also possible to query a single system option passing in url path category and id:
+
+Response body: Option
+  
+Required role: ROLE\_OPTION\_MANAGEMENT\_READ
+ Example Request: Get single option.
+
+     
+    GET .../tenant/system/option/{category}/{id}
+    Host: ...
+    Authorization: Basic ...
+    Accept: application/vnd.com.nsn.cumulocity.option+json;ver=...
+
+Example Response :
+
+    HTTP/1.1 200 OK
+    Content-Type: application/vnd.com.nsn.cumulocity.optionCollection+json;ver=...
+    Content-Length: ...
+    {
+        "category": "access.control",
+        "key": "allow.origin",
+        "value": "*"
+    }
+
 ##  Tenant usage statistics
 
 ### UsageStatistics
@@ -522,6 +705,40 @@ Example Response :
         ...
         ]
     }
+
+### GET a summary of all tenant usage statistics
+
+Response body: application/json
+  
+Required role: ROLE\_TENANT\_MANAGEMENT\_READ
+
+Example Request: Get statistics of all tenants starting Aug 1st, 2014, until today.
+
+    GET /tenant/statistics/allTenantsSummary?dateFrom=2014-08-01
+    Host: ...
+    Authorization: Basic ...
+
+Example Response :
+
+    HTTP/1.1 200 OK
+    Content-Type: application/json
+    Content-Length: ...
+    [
+        {
+            "deviceCount": "5",
+            "requestCount": 116378,
+            "tenantId": "tenant1",
+            "storageSize": 1151862557
+        },
+        {
+            "deviceCount": "2",
+            "requestCount": 116378,
+            "tenantId": "tenant2",
+            "storageSize": 1151862557
+        },
+        ...
+	]
+    
 
 ### TenantUsageStatisticsSummary [application/vnd.com.nsn.cumulocity.tenantUsageStatisticsSummary+json]
 

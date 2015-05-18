@@ -45,8 +45,8 @@ To install the agent initially:
 
 * Download the software: http://resources.cumulocity.com/ntc/smartrest-agent_1.5.0_arm.ipk.
 * Log in to the web user interface of the NTC-6200.
-* Navigate to the "System" menu. Click on "System configuration", "Choose a file" and select the downloaded software . Click "Upload" to upload the package.
-* Click "Install" to install the software.
+* Navigate to the "System" menu. Click on "System configuration", "Choose a file" and select the downloaded software . Click "Upload" to upload the software.
+* Click the "Install" link next to the uploaded software to install the software.
 
 The agent will automatically start after installation and the device can be [registered with Cumulocity](/guides/devices/netcomm/netcomm-usersguide#connect). Further upgrades or downgrades can be done remotely through the software management feature, or directly on the device.
 

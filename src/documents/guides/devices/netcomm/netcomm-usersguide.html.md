@@ -39,6 +39,8 @@ The dump shows as a list of parameters and their values, as depicted in the scre
 
 ![RDB setup](/guides/devices/netcomm/rdb.png)
 
+> If you do not see one of the configuration parameters mentioned below in the list, simply add a new line to the text and enter the parameter there.
+
 ## <a name="network"></a>Configuring network parameters
 
 You can view and configure the essential mobile network ("WAN") and local area network ("LAN") parameters using the "Network" tab as shown in the screenshot below. 

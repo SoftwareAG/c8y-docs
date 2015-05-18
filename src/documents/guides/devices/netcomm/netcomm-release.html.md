@@ -4,7 +4,7 @@ title: Netcomm Agent Release Notes
 layout: default
 ---
 
-## Release notes for Netcomm Agent 1.4.10 (beta)
+## Release notes for Netcomm Agent 1.5.0 (beta)
 
 This document describes the Cumulocity agent package for the [Netcomm Wireless NTC-6200](www.netcommwireless.com/product/m2m/ntc-6200) gateway.
 
@@ -31,7 +31,7 @@ The agent supports the following functionality:
 * Only WAN profile 1 is supported.
 * The success of a software installation can currently not be monitored. install_file does not return error messages.
 * The Modbus implementation currently does not support shifting decimal points. (However, divisor can be used to create the same effect.)
-* Operations will sometimes hang, in particular when sending configuration dumps.
+* Firmware upgrades work, but will currently deinstall the agent. This will be fixed with the 2.x firmware version.
 
 ## System requirements
 

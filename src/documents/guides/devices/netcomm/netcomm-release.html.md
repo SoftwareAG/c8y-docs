@@ -4,7 +4,7 @@ title: Netcomm Agent Release Notes
 layout: default
 ---
 
-## Release notes for Netcomm Agent 1.5.0 (beta)
+## Release notes for Netcomm Agent 1.4.21 (beta)
 
 This document describes the Cumulocity agent package for the [Netcomm Wireless NTC-6200](www.netcommwireless.com/product/m2m/ntc-6200) gateway.
 
@@ -43,7 +43,7 @@ The agent was tested on a stock NTC-6200 with firmware version 1.10.40.7. For re
 
 To install the agent initially:
 
-* Download the software: http://resources.cumulocity.com/ntc/smartrest-agent_1.5.0_arm.ipk.
+* Download the software: http://resources.cumulocity.com/ntc/smartrest-agent_1.4.21_arm.ipk.
 * Log in to the web user interface of the NTC-6200.
 * Navigate to the "System" menu. Click on "System configuration", "Choose a file" and select the downloaded software . Click "Upload" to upload the software.
 * Click the "Install" link next to the uploaded software to install the software.

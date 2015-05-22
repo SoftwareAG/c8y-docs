@@ -29,9 +29,10 @@ The agent supports the following functionality:
 
 * Timestamps on the device and on the server may not be fully in sync, hence you may see updates (e.g., alarms, events) that occur "in future". This is also the reason that it may take a while until the "Location" and the "Measurement" tab appear for new devices.
 * Only WAN profile 1 is supported.
-* The success of a software installation can currently not be monitored. install_file does not return error messages.
+* The success of a software installation can currently not be monitored. (install_file does not return error messages.)
 * The Modbus implementation currently does not support shifting decimal points. (However, divisor can be used to create the same effect.)
 * Firmware upgrades work, but will currently deinstall the agent. This will be fixed with the 2.x firmware version.
+* RDB configuration dumps may not be correctly written on the device.
 
 ## System requirements
 

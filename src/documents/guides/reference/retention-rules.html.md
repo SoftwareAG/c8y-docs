@@ -5,9 +5,8 @@ layout: default
 ---
 
 ## Retention rules
-
-The Retention rules interface is available consists of parts:
-
+Rules are used to removing retention data from data base once a day. Which data will be deleted shows directly retention rules. Fe. retention rule with dataType=EVENT and maximumAge=30 removes from system all events older than 30 days.  
+The Retention rules interface consists of parts:
 -   The retention rule collection resource retrieves retention rules, accesible by url */retention/retentions*
 -   The retention rule resource represents individual retention rule that can be view, accesible by url */retetion/retentions/{retentionRuleId}*
 
@@ -178,6 +177,8 @@ Example Response (partial POST):
 |type|String|0..1|RetentionRule will be applied to documents with type.|Public|
 |source|String|0..1|RetentionRule will be applied to documnets with source.|Public|
 |maximumAge|Long|1|Maximum age of document in days.|Public|
+- Fields in RetentionRule are joined by way of the logical operation AND.
+- For fields: dataType, fragmentType, type, source can be set value "*". Field with value "*" during matching fits to all.
 
 
 ### GET a representation of a RetentionRule.

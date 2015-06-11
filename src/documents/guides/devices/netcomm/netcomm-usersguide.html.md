@@ -110,7 +110,7 @@ To poll the input voltages of the GPIO ports and send them to Cumulocity, set "[
 
 You can create events and alarms from digital inputs. Currently, this has to be done through setting RDB variables. The format is
 
-	agent.gpio.<port>.notify = <off | event | alarm | alarm-inverted>
+	service.cumulocity.plugin.ntc6200.gpio.<port>.notify = <off | event | alarm | alarm-inverted>
 
 Possible notifications are: 
 

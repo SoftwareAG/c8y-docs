@@ -31,6 +31,7 @@ The agent supports the following functionality:
 * Timestamps on the router and on the server may not be fully in sync, hence you may see updates (e.g., alarms, events) that occur "in future". This is also the reason that it may take a while until the "Location" and the "Measurement" tab appear for new devices.
 * Only WAN profile 1 is supported.
 * The success of a software installation can currently not be monitored. (install_file does not return error messages.)
+* After a firmware upgrade, the router needs to be [re-registered](/guides/devices/netcomm/netcomm-usersguide) and receives new credentials. All data is preserved.
 * The Modbus implementation currently does not support shifting decimal points. (However, divisor can be used to create the same effect.)
 
 ## System requirements

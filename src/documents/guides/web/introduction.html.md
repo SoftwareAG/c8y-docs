@@ -222,7 +222,7 @@ You can use Grunt's server functionality to run your application and plugins loc
 	Running "watch" task
 	Waiting...
 
-Now, you can test your application by opening your browser at the URL "http://localhost:8000/apps/myapplication".
+Now, you can test your application by opening your browser at the URL "http://localhost:8000/apps/myapplication/index.html".
 
 ### Build and publish your application and plugin
 

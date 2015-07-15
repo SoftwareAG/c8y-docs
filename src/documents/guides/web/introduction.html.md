@@ -18,7 +18,7 @@ Plugins are based on HTML5. You should be familiar with the following technologi
 
 You will need the following prerequisites for being able to develop plugins and to execute the examples:
 
-* You will need [Node.js](http://nodejs.org/) (0.10 or newer) and [Grunt](http://gruntjs.com/) installed.
+* You will need [Node.js](http://nodejs.org/) (0.10 or newer, stable) and [Grunt](http://gruntjs.com/) installed.
 * You will need access to your Cumulocity account, i.e. you need your tenant name, username and password.
 * You will need a source code repository ([Bitbucket](https://bitbucket.org/) or [GitHub](https://github.com/)) where you can commit your source code and build sources for publishing your applications and plugins.
 

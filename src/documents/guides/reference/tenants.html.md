@@ -149,7 +149,8 @@ Example request:
 		"contactName" : "Mr. Doe",
 		"contactPhone" : "0123-4567829",
 		"adminName" : "firstAdmin",
-		"adminPass" : "myPassword"
+		"adminPass" : "myPassword",
+		"customProperties" : {"referenceId":"1234567890"}
 	}
 
 Example Response:
@@ -168,7 +169,8 @@ Example Response:
 		"contactName" : "Mr. Doe",
 		"contactPhone" : "0123-4567829",
 		"status" : "ACTIVE",
-		"adminName" : "firstAdmin"
+		"adminName" : "firstAdmin",
+		"customProperties" : {"referenceId":"1234567890"}
 	}
 
 
@@ -189,7 +191,8 @@ Example Response:
 |contactName|String|1|Contact person name.|Public|
 |contactPhone|String|1|Contact person phone number.|Public|
 |applications|ApplicationReferenceCollection|1|Collection of tenant subscribed, applications.|Private|
-|ownedApplications|ApplicationReferenceCollection|1|Collection of tenant owned, applications.|Public - only applications with availability MARKET|
+|ownedApplications|ApplicationReferenceCollection|1|Collection of tenant owned, applications.|Public - only applications with availability MARKET|,
+|customProperties|Object|1|Keeps a list of custom properties|optional|
 
 ### GET a representation of a Tenant.
 

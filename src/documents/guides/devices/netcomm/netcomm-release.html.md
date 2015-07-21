@@ -4,7 +4,7 @@ title: Netcomm Agent Release Notes
 layout: default
 ---
 
-## Release notes for Netcomm Agent 2.0
+## Release notes for Netcomm Agent 2.1
 
 This document describes the Cumulocity agent package for the [Netcomm Wireless NTC-6200](www.netcommwireless.com/product/m2m/ntc-6200) router.
 
@@ -25,6 +25,9 @@ The agent supports the following functionality:
 * Reading RDB configuration dumps.
 * Lua plugin API for rapid development of IoT applications.
 * Modbus/TCP support to remotely manage Modbus devices from Cumulocity.
+* Switch to SMS mode support
+* Configuration file and configuration widget
+* Full info page
 
 ## Known limitations
 
@@ -44,7 +47,7 @@ The agent was tested on a stock NTC-6200 with firmware version 2.0.24.3. For rem
 
 To install the agent initially:
 
-* Download the software: http://resources.cumulocity.com/ntc/smartrest-agent_2.0.0_arm.ipk.
+* Download the software: http://resources.cumulocity.com/ntc/smartrest-agent_2.1.0_arm.ipk.
 * Log in to the web user interface of the NTC-6200.
 * Navigate to the "System" menu. Click on "System configuration", "Choose a file" and select the downloaded software. Click "Upload" to upload the software to the router.
 * Click the "Install" link next to the uploaded software to install the software.

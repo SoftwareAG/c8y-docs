@@ -37,7 +37,10 @@ Optionally, you can activate collection of data in regular intervals:
 * *GPIO analog measurements*: Send the voltages of the analog inputs.
 * *GPS position interval*: Update the current GPS position.
 * *GPS position event*: Send a location trace of the GPS position.
+* *Network/mobile update interval*: Send the network and mobile updates not often then this value. 
 * *System resources measurements*: Get information on CPU, memory and network.
+
+Remember, all intervals are disabled by default (values are set to zero).
 
 These options are described in more detail below.
 
@@ -100,7 +103,7 @@ The agent software supports the following GPIO functionality:
 * Log the state of the digital inputs as events.
 * Switch a digital output remotely from Cumulocity.
 
-Consult the documentation of your router for more information about its IO configuration. The available functionality may vary between device models. For example, the NTC 6200 supports the following GPIO ports: 3v8poe, ign, vin, xaux1, xaux2 and xaux3. 
+Consult the documentation of your router for more information about its IO configuration. The available functionality may vary between device models. For example, the NTC 6200 supports the following GPIO ports: xaux1, xaux2 and xaux3. 
 
 ### Analog input
 
@@ -110,7 +113,9 @@ To poll the input voltages of the GPIO ports and send them to Cumulocity, set "[
 
 You can create events and alarms from digital inputs. Currently, this has to be done through setting RDB variables. The format is
 
-	service.cumulocity.plugin.ntc6200.gpio.<port>.notify = <off | event | alarm | alarm-inverted>
+	service.cumulocity.gpio.<port>.notify = <off | event | alarm | alarm-inverted>
+
+Port <port> is range 1..3.
 
 Possible notifications are: 
 
@@ -123,13 +128,13 @@ The inputs are checked every second for changes.
 
 ### Digital output
 
-Digital outputs can be switched from the "Relay array" widget in the "Control" tab. Currently, all ports are listed regardless of which port is actually switchtable. The ports are listed in the order in which they are listed on the router. For the NTC-6200, the relevant switches for the three GPIO output ports (xaux1-3) are 4-6.
+Digital outputs can be switched from the "Relay array" widget in the "Control" tab. Currently, all ports are listed regardless of which port is actually switchtable. The ports are listed in the order in which they are listed on the router. For the NTC-6200, the relevant switches for the three GPIO output ports (xaux1-3) are 1-3.
 
 > Note that you can also implement own widgets to switch digital outputs and name them according to the router that is connected to the output.
 
-## <a name="rdb"></a>Retrieving RDB parameters
+## <a name="rdb"></a>Retrieving configuration
 
-To troubleshoot the router, you can pull a dump of all RDB parameters available on the device. To do this, navigate to the "Control" tab of the router. Click the "Reload" link to request an RDB configuration dump. It will take a few seconds to download the dump. After the dump has arrived, you will see a list of parameters and their values. You can navigate to a particular parameter by simply using your web browser's text search functionality. Since the dump has a significant size, it is only downloaded on request by using the link.
+You can retrive, modify and send configuration. To do this, navigate to the "Control" tab of the router. Click the "Reload" link to request an RDB configuration. It will take a few seconds to download. After the configuration has arrived, you will see a list of parameters and their values. You can navigate to a particular parameter by simply using your web browser's text search functionality. Since the configuration has a significant size, it is only downloaded on request by using the link.
 
 ![RDB setup](/guides/devices/netcomm/rdb.png)
 

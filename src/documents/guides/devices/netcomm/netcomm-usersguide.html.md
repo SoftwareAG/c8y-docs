@@ -114,6 +114,9 @@ To poll the input voltages of the GPIO ports and send them to Cumulocity, set "[
 You can create events and alarms from digital inputs. Currently, this has to be done through setting RDB variables. The format is
 
 	service.cumulocity.gpio.<port>.notify = <off | event | alarm | alarm-inverted>
+	service.cumulocity.gpio.<port>.debounce.interval = <SECONDS>
+	service.cumulocity.gpio.<port>.text = <ALARM_TEXT>
+	service.cumulocity.gpio.<port>.severity = <severity>
 
 Port <port> is range 1..3.
 
@@ -123,6 +126,17 @@ Possible notifications are:
 * event: The value of the input is logged as event.
 * alarm: If the input is set to "high", an alarm is created.
 * alarm-inverted: If the input is set to "low", an alarm is created.
+
+Debounce interval allow skip oscillation on the pins. You can define how long level should be stable. Default is zero (no delay).
+
+You can override default alarm text if you set ALARM_TEXT. Default this value is empty and alarm text is "Digital input gpioN".
+
+You can also change the alarm severity. Default is MAJOR:. Possible severites are:
+
+ * WARNING
+ * MINOR
+ * MAJOR
+ * CRITICAL
 
 The inputs are checked every second for changes.
 

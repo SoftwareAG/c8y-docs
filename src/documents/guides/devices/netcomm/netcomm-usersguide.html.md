@@ -29,7 +29,7 @@ The support for Cumulocity can be configured through the router's web user inter
 Verify that the toggle switch "Cumulocity agent" is set to "ON" and the URL shown in "Cumulocity server" points to the Cumulocity instance that you want to connect. For example, use
 
 * https://54.75.252.207/s for connecting to Netcomm NRM.
-* https://<tenant>.cumulocity.com/s for connecting to Cumulocity. You can sign-up a free trial tenant on https://cumulocity.com/.
+* https://&lt;tenant&gt;.cumulocity.com/s for connecting to Cumulocity. You can sign-up a free trial tenant on https://cumulocity.com/.
 * https://management.telstra-iot.com/s for connecting to the Telstra IoT platform.
 
 Optionally, you can activate data collecting for the following functionalities:
@@ -48,7 +48,7 @@ To register your NetComm router to Cumulocity, you need the MAC address of the r
 
 ![MAC address](/guides/devices/netcomm/mac.png)
 
-After click the "accept" button, navigate to "All devices", the router should appear here after registration. The default name of a router is _NTC-6200 <serial number>_. For example, the above router would appear as _NTC-6200 165711141901036_. Click on the router to view the detailed information and to access the functionality described in the remaining sections of this document. In order to distinguish a registered router from other devices in the listing, you can change the router's name on the "Info" tab, which also displays basic information such as serial number of the router and SIM card data. After changing the name, remember to click "save changes" button at the bottom of the "Info" page.
+After click the "accept" button, navigate to "All devices", the router should appear here after registration. The default name of a router is `NTC-6200 <serial number>`. For example, the above router would appear as _NTC-6200 165711141901036_. Click on the router to view the detailed information and to access the functionality described in the remaining sections of this document. In order to distinguish a registered router from other devices in the listing, you can change the router's name on the "Info" tab, which also displays basic information such as serial number of the router and SIM card data. After changing the name, remember to click "save changes" button at the bottom of the "Info" page.
 
 ![Device details](/guides/devices/netcomm/info.jpg)
 
@@ -56,7 +56,7 @@ After click the "accept" button, navigate to "All devices", the router should ap
 
 You can view and configure the essential mobile network ("WAN") and local area network ("LAN") parameters in the "Network" tab as shown in the screenshot below.
 
-The mobile network ("WAN") parameters shown in the user interface correspond to the first profile stored in the router. These parameters can be remotely configured via SMS or _Device Shell_. For SMS configuring, the router needs to be configured to accept SMS commands. Consult the router's manual on the relevant RDB parameters for SMS configuration, or use the router's web user interface. You also need to have an SMS gateway configured with your account. Contact support@cumulocity.com for setting up an SMS gateway. _Device Shell_ is a functionality supported by Cumulocity, please refer to the [user guide](https://cumulocity.com/guides/users-guide/device-management/#shell) for how to use it.
+The mobile network ("WAN") parameters shown in the user interface correspond to the first profile stored in the router. These parameters can be remotely configured via SMS or _Device Shell_. For SMS configuring, the router needs to be configured to accept SMS commands. Consult the router's manual on the relevant RDB parameters for SMS configuration, or use the router's web user interface. You also need to have an SMS gateway configured with your account. Contact <support@cumulocity.com> for setting up an SMS gateway. _Device Shell_ is a functionality supported by Cumulocity, please refer to the [user guide](https://cumulocity.com/guides/users-guide/device-management/#shell) for how to use it.
 
 ![WAN parameters](/guides/devices/netcomm/wan.png)
 
@@ -68,11 +68,11 @@ Configuring of LAN and DHCP parameters are directly supported in Cumulocity and 
 
 The installed software and firmware on the router can be remotely managed using the standard software and firmware management feature from Cumulocity, as described in the [Device management user's guide](/guides/users-guide/device-management#software-repo).
 
-Software packages need to be in [ipkg](http://en.wikipedia.org/wiki/Ipkg) format and follow the naming convention <package>_<version>_<arch>.ipk. Version numbers with letters in them are not supported. All package management methods (install, upgrade, downgrade, removal) are supported (provided the router's package manager supports them). If software packages have dependencies, please beware to install the dependencies first.
+Software packages need to be in [ipkg](http://en.wikipedia.org/wiki/Ipkg) format and follow the naming convention `<package>_<version>_<arch>.ipk`. Version numbers with letters in them are not supported. All package management methods (install, upgrade, downgrade, removal) are supported (provided the router's package manager supports them). If software packages have dependencies, please beware to install the dependencies first.
 
-Mind that the package smartrest-agent_<version>.ipk represents the NetComm agent, it must remain installed on the router, otherwise the device will lose connection to Cumulocity.
+Mind that the package `<smartrest-agent_version>.ipk` represents the NetComm agent, it must remain installed on the router, otherwise the device will lose connection to Cumulocity.
 
-Firmware can be uploaded and installed on the router as well using Netcomm firmware images (following the naming convention <name>_<version>.cdi).
+Firmware can be uploaded and installed on the router as well using NetComm firmware images (following the naming convention `<name>_<version>.cdi`).
 
 ![Software/firmware](/guides/devices/netcomm/software.png)
 
@@ -116,7 +116,7 @@ You can create events and alarms from digital inputs. Currently, this has to be 
 	service.cumulocity.gpio.<port>.text = <ALARM_TEXT>
 	service.cumulocity.gpio.<port>.severity = <severity>
 
-Port <port> is range 1..3 for NetComm wireless router NTC 6200.
+Port `<port>` is range 1..3 for NetComm wireless router NTC 6200.
 
 Possible notifications are:
 

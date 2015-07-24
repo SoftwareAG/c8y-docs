@@ -170,6 +170,7 @@ Example Response:
 |creationTime|String|1|Time when the operation was created in the database.|No|
 |deviceID|String|1|Identifies the target device on which this operation should be performed.|POST: Mandatory PUT: No|
 |deviceExternalIDs|ExternalIDCollection|0..n|External IDs of the target device, see the [Identity](/guides/reference/identity) interface.|No|
+|bulkOperationId|String|1|Reference to bulkOperationId, if this operation was scheduled from Bulk Operation|No|
 |status|String|1|Operation status, can be one of SUCCESSFUL, FAILED, EXECUTING or PENDING.|POST: No PUT: Mandatory|
 |failureReason|String|0..1|Reason for the failure.|No|
 |\*|Object|1..n|Additional properties describing the operation which will be performed on the device.|POST: Mandatory PUT: No|
@@ -281,3 +282,218 @@ Example Response:
     ]
 
 Required role: ROLE\_DEVICE\_CONTROL\_READ
+
+## Bulk Operation collection
+
+### BulkOperationCollection [application/vnd.com.nsn.cumulocity.bulkOperationCollection+json]
+
+|Name|Type|Occurs|Description|
+|:---|:---|:-----|:----------|
+|self|URL|1|Link to this resource.|
+|bulkOperations|Operations|0..n|List of bulk operations, see below.|
+|statistics|PagingStatistics|1|Information about paging statistics.|
+|prev|URI|0..1|Link to a potential previous page of bulk operations.|
+|next|URI|0..1|Link to a potential next page of bulk operations.|
+
+### POST - Create a Bulk Operation
+
+Request body: Bulk Operation
+
+Response body: Bulk Operation (when Accept header is not provided, empty response body is returned)
+  
+Required role: ROLE\_BULK\_OPERATION\_ADMIN
+
+Example Request:
+
+    POST /devicecontrol/bulkoperations
+    Content-Type: application/vnd.com.nsn.cumulocity.bulkOperation+json
+    Accept: application/vnd.com.nsn.cumulocity.bulkOperation+json
+    Authorization: Basic ...
+    {
+     "operationPrototype":{"test"=>"TEST1"},
+     "creationRamp":45,
+     "groupId":"10205",
+     "startDate":"2015-05-01T22:21:22"
+    }
+
+Example response:
+
+    HTTP/1.1 201 Created
+    Location: <<URL of new operation>>
+    Content-Type: application/vnd.com.nsn.cumulocity.bulkOperation+json
+
+    {
+     "id":2,
+     "self":"https://dev.cumulocity.com/devicecontrol/bulkoperations/2",
+     "operationPrototype":{"test"=>"TEST1"},
+     "creationRamp":45,
+     "groupId":"10205",
+     "startDate":"2015-05-01T22:21:22"
+     "progress":
+       {
+       "pending":0, "failed":0, "executing":0, "successful":0, "all":1
+       },
+     "status":"ACTIVE"
+    }
+
+### Get a collection of bulk operations
+
+Response body: BulkOperationCollection  
+Required role: ROLE\_BULK\_OPERATION\_READ
+
+Example Request: Get all bulk operations.
+
+    GET /devicecontrol/bulkoperations
+    Accept: application/vnd.com.nsn.cumulocity.bulkOperationCollection+json
+    Authorization: Basic ...
+
+Example Response:
+
+    HTTP/1.1 200 OK
+    Content-Type: application/vnd.com.nsn.cumulocity.bulkOperationCollection+json
+    Content-Length: ...
+    {
+      "self" : "<<This BulkOperationCollection URL>>",
+      "bulkOperations" : [
+        {
+         "id":2,
+         "self":"https://dev.cumulocity.com/devicecontrol/bulkoperations/2",
+         "operationPrototype":{"test"=>"TEST1"},
+         "creationRamp":45,
+         "groupId":"10205",
+         "startDate":"2015-05-01T22:21:22"
+         "progress":
+           {
+            "pending":0, "failed":0, "executing":0, "successful":0, "all":1
+           },
+         "status":"ACTIVE",
+        },
+        {
+         "id":3,
+         "self":"https://dev.cumulocity.com/devicecontrol/bulkoperations/3",
+         "operationPrototype":{"test"=>"TEST2"},
+         "creationRamp":15,
+         "groupId":"10201",
+         "startDate":"2015-05-05T22:21:22"
+         "progress":
+           {
+            "pending":0, "failed":0, "executing":0, "successful":0, "all":5
+           },
+         "status":"ACTIVE",
+        }
+      ],
+      "statistics" : {
+        "pageSize" : 5,
+        "currentPage : 1
+      }
+    }
+
+By default query bulk operations endpoint does not return CANCELLED operations. It is possible to include them in the response by adding additional query parameter: withDeleted=true.
+
+## Bulk Operation
+
+Bulk Operation API allows to schedule an operation on a group of devices to be executed at a specified time. It is required to specify the delay between every operation is created.
+When Bulk Operation is created, it has ACTIVE status. When all operations are created, Bulk Operation has state COMPLETED. It is also possible to cancel already created Bulk Operation by deleting it. 
+
+When you create a Bulk Operation, you can run it in two modes: 
+- when groupId is passed, it works standard way, i.e. takes devices from group and schedules operations on them
+- when failedBulkOperationId is passed, it takes the already processed bulk operation by that id, and schedules operation on devices for which previous operations failed
+
+It is forbidden to pass both: groupId and failedBulkOperationId.
+
+Bulk Operation API requires different roles that standard device control API. These new roles are: BULK_OPERATION_READ and BULK_OPERATION_ADMIN.
+
+### Bulk Operation [application/vnd.com.nsn.cumulocity.bulkOperation+json]
+
+|Name|Type|Occurs|Description|PUT/POST|
+|:---|:---|:-----|:----------|--------|
+|id|String|1|Uniquely identifies an operation.|No|
+|self|URI|1|Link to this resource.|No|
+|groupId|String|1|Identifies the target group on which this operation should be performed.|POST: No PUT: No|
+|failedBulkOperationId|String|1|Identifies the failed bulk operation from which failed operations should be rescheduled.|POST: No PUT: No|
+|startDate|String|1|Time when operations should be created.|POST: Mandatory PUT: No|
+|creationRamp|Number|1|Delay between every operation creation.|POST: Mandatory PUT: No|
+|operationPrototype|OperationRepresentation|1|Operation to be executed for every device in a group.|POST: Mandatory PUT: No|
+|status|String|1|Status of Bulk Operation. Possible values: ACTIVE, COMPLETED, DELETED|No|
+|progress|BulkOperationProgressRepresentation|1|Contains information about number of processed operations.|No|
+
+### PUT - Update a Bulk Operation
+
+Making update on a started bulk operation cancells it and creates/schedules a new one.
+
+Request body: Bulk Operation
+
+Response body: n/a.
+  
+Required role: ROLE\_BULK\_OPERATION\_ADMIN
+
+Example Request:
+
+    PUT /devicecontrol/bulkoperations/{id}
+    Host: ...
+    Authorization: Basic ...
+    Content-Type: application/vnd.com.nsn.cumulocity.bulkoperation+json
+    { 
+      "creationRamp" : 15
+    }
+
+Example response:
+
+    HTTP/1.1 200 OK
+    Content-Type: application/vnd.com.nsn.cumulocity.bulkoperation+json
+
+    {
+      "id" : "123",
+      "self" : "<<This BulkOperation URL>>",
+      "groupId" : "124301",
+      "status" : "ACTIVE",
+      "startDate" : "2011-09-06T12:03:27",
+      "operationPrototype":{"test"=>"TEST1"},
+      "creationRamp":15,
+      "progress":
+        {
+         "pending":0, "failed":0, "executing":0, "successful":0, "all":2
+        }
+    }
+
+### GET a Bulk Operation
+
+Response body: Bulk Operation
+  
+Required role: ROLE\_BULK\_OPERATION\_READ
+
+Example response:
+
+    HTTP/1.1 200 OK
+    Content-Type: application/vnd.com.nsn.cumulocity.bulkoperation+json
+
+    {
+      "id" : "123",
+      "self" : "<<This BulkOperation URL>>",
+      "groupId" : "124301",
+      "status" : "ACTIVE",
+      "startDate" : "2011-09-06T12:03:27",
+      "operationPrototype":{"test"=>"TEST1"},
+      "creationRamp":15,
+      "progress":
+        {
+         "pending":0, "failed":0, "executing":0, "successful":0, "all":2
+        }
+    }
+
+### DELETE a Bulk Operation
+
+Request Body: N/A.
+
+Response Message Body: N/A.
+  
+Required role: ROLE\_BULK\_OPERATION\_ADMIN
+
+Example Request: Delete a Bulk Operation
+
+    DELETE /devicecontrol/bulkoperations/{id}
+    Authorization: Basic ...
+
+Example Response:
+
+    HTTP/1.1  204 NO CONTENT

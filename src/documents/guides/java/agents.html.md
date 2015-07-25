@@ -34,11 +34,10 @@ To install Java, please visit http://java.com.
 
 Binary packages are available for the Raspberry Pi, the Kontron M2MSSDK, Mac OS X, Linux and Windows. 
 
+* On a Linux OS (including Embedded Linux distributions such as Kontron Linux), please download the [latest Linux Agent Archive](http://resources.cumulocity.com/examples/cumulocity-linux-agent-latest.tar.gz).
 * For the Raspberry Pi and similar Embedded Linux devices, please [check the Raspberry Pi guide](/guides/devices/raspberry-pi).
-* For the Kontron M2MSSDK, please [check the Kontron M2MSSDK guide](/guides/devices/kontron).
 * On a Mac OS X, please download the [latest Mac Agent Archive](http://resources.cumulocity.com/examples/cumulocity-mac-agent-latest.tar.gz).
 * On a Windows OS, please download the [latest Windows Agent Archive](http://resources.cumulocity.com/examples/cumulocity-win-agent-latest.zip).
-* On a Linux OS, please download the [latest Linux Agent Archive](http://resources.cumulocity.com/examples/cumulocity-linux-agent-latest.tar.gz).
 
 Unpack your respective package in a new folder. After unpacking, use the script "c8y-agent" to run the agent. If you need more debug information, run the script "c8y-agent-debug" or change the file cfg/logback.xml to use a more fine granular logging.
 

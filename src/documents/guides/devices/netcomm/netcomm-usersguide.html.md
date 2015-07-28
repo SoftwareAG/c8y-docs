@@ -140,11 +140,11 @@ The inputs are checked every second for changes.
 
 ### Digital output
 
-Digital outputs can be controlled in the "Relay array" widget in the "Control" tab. The GPIO pins are listed in the same order as they are listed on the router. For the NTC-6200 model, there are three GPIO pins: xaux1, xaux2, xaux3.
+Digital outputs can be controlled in the "Relay array" widget in the "[Control](/guides/users-guide/device-management#operation-monitoring)" tab, see below in the screenshot. The numbering of the GPIO pins are listed in the same order as they are listed on the router. For the NTC-6200 model, there are three GPIO pins: xaux1, xaux2, xaux3.
 
 ## <a name="rdb"></a>Retrieving configuration
 
-You can retrieve, modify and save configuration. To do this, navigate to the "Control" tab of the router, click on the "Reload" button in the "CONFIGURATION" widget to request RDB configurations. It will take a few seconds to download. After the configurations has arrived, you will see a list of RDB parameters and their corresponding values. As the configuration list is quite size-able, using your web browser's text search functionality to locate specific configuration will save your time searching the list.
+You can retrieve, modify and save configuration. To do this, navigate to the "[Control](/guides/users-guide/device-management#operation-monitoring)" tab of the router, click on the "Reload" button in the "CONFIGURATION" widget to request RDB configurations. It will take a few seconds to download. After the configurations has arrived, you will see a list of RDB parameters and their corresponding values. As the configuration list is quite size-able, using your web browser's text search functionality to locate specific configuration will save your time searching the list.
 
 ![RDB setup](/guides/devices/netcomm/rdb.png)
 

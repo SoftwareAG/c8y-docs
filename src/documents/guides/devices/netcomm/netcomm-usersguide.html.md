@@ -16,6 +16,7 @@ The following sections demonstrate how to use a Netcomm router with Cumulocity. 
 * Use the built-in [GPS](#gps) functionality.
 * Use the built-in [GPIO](#gpio) pins.
 * View [RDB](#rdb) parameters.
+* Remotely execute text commands via [device shell](#shell).
 * Connect [Modbus](#modbus) devices.
 
 The following sections assume that the router has the NetComm [agent](/guides/devices/netcomm/netcomm-release/) package installed. Compatible model is: [NTC-6200](http://www.netcommwireless.com/product/m2m/ntc-6200). For more information on a particular feature of the router, please consult the respective manual found in the "Downloads" section of the router's home page.
@@ -56,7 +57,7 @@ After click the "accept" button, navigate to "All devices", the router should ap
 
 You can view and configure the essential mobile network ("WAN") and local area network ("LAN") parameters in the "Network" tab as shown in the screenshot below.
 
-The mobile network ("WAN") parameters shown in the user interface correspond to the first profile stored in the router. These parameters can be remotely configured via SMS or _Device Shell_. For SMS configuring, the router needs to be configured to accept SMS commands. Consult the router's manual on the relevant RDB parameters for SMS configuration, or use the router's web user interface. You also need to have an SMS gateway configured with your account. Contact <support@cumulocity.com> for setting up an SMS gateway. _Device Shell_ is a functionality supported by Cumulocity, please refer to the [user guide](https://cumulocity.com/guides/users-guide/device-management/#shell) for how to use it.
+The mobile network ("WAN") parameters shown in the user interface correspond to the first profile stored in the router. These parameters can be remotely configured via SMS or [_Device Shell_](#shell). For SMS configuring, the router needs to be configured to accept SMS commands. Consult the router's manual on the relevant RDB parameters for SMS configuration, or use the router's web user interface. You also need to have an SMS gateway configured with your account. Contact <support@cumulocity.com> for setting up an SMS gateway. [_Device Shell_](#shell) is a functionality supported by Cumulocity, please refer to the [user guide](https://cumulocity.com/guides/users-guide/device-management/#shell) for how to use it.
 
 ![WAN parameters](/guides/devices/netcomm/wan.png)
 
@@ -147,6 +148,16 @@ Digital outputs can be controlled in the "Relay array" widget in the "[Control](
 You can retrieve, modify and save configuration. To do this, navigate to the "[Control](/guides/users-guide/device-management#operation-monitoring)" tab of the router, click on the "Reload" button in the "CONFIGURATION" widget to request RDB configurations. It will take a few seconds to download. After the configurations has arrived, you will see a list of RDB parameters and their corresponding values. As the configuration list is quite size-able, using your web browser's text search functionality to locate specific configuration will save your time searching the list.
 
 ![RDB setup](/guides/devices/netcomm/rdb.png)
+
+## <a name="shell"></a>Device Shell
+
+Starting from version 2.1, the NetComm agent added support for the device shell. As shown in the screenshot below, in the "Shell" tab, there is a "COMMAND" widget which features a text box so you can freely type in text commands and then execute them. After executing a command, the state of the execution and the response from the device are displayed above the "COMMAND" widget (see the screenshot).
+
+You can get a predefined list of commands by clicking on the "Get predefined" button. The command syntax varies from device to device. For NetComm devices, the command syntax is the same as for the accepted SMS commands, please consult the NetComm device manual for more information about SMS commands. For more information about device shell, please refer to the [user guide](/guides/users-guide/device-management#shell).
+
+> note: Because the configuration list is quite size-able, it is also recommended you change and read a single configuration parameter via the device shell `set` and `get` commands.
+
+![Device Shell](/guides/devices/netcomm/shell.png)
 
 ## <a name="modbus"></a>Connecting Modbus devices
 

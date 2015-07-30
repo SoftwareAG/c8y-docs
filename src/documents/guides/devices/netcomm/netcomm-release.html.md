@@ -23,6 +23,7 @@ The agent supports the following functionality:
 * WAN, LAN and DHCP configuration.
 * Reading RDB configuration dumps.
 * Lua plugin API for rapid development of IoT applications.
+* Remotely execute commands via device shell interface.
 * Modbus/TCP support to remotely manage Modbus devices from Cumulocity.
 
 ## Known limitations

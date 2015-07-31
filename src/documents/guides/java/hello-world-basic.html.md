@@ -56,12 +56,12 @@ Add "dependency" elements for the Java client library ("java-client") and for th
 	<dependency>
 		<groupId>com.nsn.cumulocity.clients-java</groupId> 
 		<artifactId>java-client</artifactId>
-		<version>5.9.0</version>
+		<version>6.5.0</version>
 	</dependency>
 	<dependency>
 		<groupId>com.nsn.cumulocity.model</groupId>
 		<artifactId>device-capability-model</artifactId>
-		<version>5.9.0</version>
+		<version>6.5.0</version>
 	</dependency>
 
 Edit the "version" elements to use the latest version of the client library. The version can be determined by checking the ["Announcements" section](https://cumulocity.zendesk.com/hc/en-us/sections/200381323-Announcements) of the Cumulocity Help Center. The full file after editing can be found [here](/guides/java/pom.xml).

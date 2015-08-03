@@ -73,6 +73,8 @@ Software packages need to be in [ipkg](http://en.wikipedia.org/wiki/Ipkg) format
 
 Mind that the package `<smartrest-agent_version>.ipk` represents the NetComm agent, it must remain installed on the router, otherwise the device will lose connection to Cumulocity.
 
+When upgrading the smartrest-agent package from versions 2.1.0 or older to 2.1.1 or newer the device needs to be registered to your tenant again afterwards.
+
 Firmware can be uploaded and installed on the router as well using NetComm firmware images (following the naming convention `<name>_<version>.cdi`).
 
 ![Software/firmware](/guides/devices/netcomm/software.png)

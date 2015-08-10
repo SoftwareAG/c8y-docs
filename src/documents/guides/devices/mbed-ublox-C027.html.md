@@ -54,16 +54,18 @@ To run the Cumulocity mbed agent, the following items are required:
 
 |Version|Release Date|Download|
 |---|:-:|:-:|
-|1.9|18.Feb 2015| [download](/guides/devices/mbed/firmware-1.9.bin)|
+|1.9      | 18.Feb 2015 | [download](/guides/devices/mbed/firmware-1.9.bin)     |
 |2.0      | 6.Mar 2015  | [download](/guides/devices/mbed/firmware-2.0c8y.bin)  |
+|2.2      | 10.Aug 2015 | [download](/guides/devices/mbed/firmware-2.2c8y.bin)  |
 
 Version for Deutsche Telekom Device Cloud (m2m-devicecloud.com):
 
 |Version|Release Date|Download|
 |---|:-:|:-:|
 |2.0 DT | 6.Mar 2015  | [download](/guides/devices/mbed/firmware-2.0.bin)  |
+|2.2 DT | 10.Aug 2015 | [download](/guides/devices/mbed/firmware-2.2.bin)  |
 
-These downloads are the same as the above ones, except that device registration (bootstrap) is performed against m2m-devicecloud.com .
+These downloads are the same as the above ones, except that device registration (bootstrap) is performed against m2m-devicecloud.com.
 
 ## Connect the C027
 

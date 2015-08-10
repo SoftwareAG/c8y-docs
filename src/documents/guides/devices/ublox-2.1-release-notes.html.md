@@ -1,3 +1,7 @@
+## [V2.2] - 2015-08-10
+* device push: added support for heartbeat message, less traffic.
+* GPS: added support for new GPS data format.
+
 ## [V2.1] - 2015-05-20
 
 * measurement: code revamp, faster sensor reading, networking-agnostic

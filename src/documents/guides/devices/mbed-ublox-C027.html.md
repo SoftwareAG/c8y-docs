@@ -114,14 +114,15 @@ Currently  the u-blox firmware supports three operations:
 
 * **GPS Init Failure**: Sometimes the agent is unable to initialize the GPS unit. Simply restart the device to resolve the issue. Note that the GPS initialization process works without an actual GPS receiver. It is therefore usually not necessary to actually attach the GPS receiver to resolve this problem.
 
+* **My GPS does not work**: This problem originates from a different data format returned by a new GPS model. Support for this new data format has been added in version 2.2. If your GPS function do not work, please download firmware version 2.2 from the link above and follow the instructions to flash the firmware.
+
 * **No Network Coverage**: Make sure you have the modem antenna correctly mounted to the "WL_INT" connector, otherwise the device will not be able to connect to a network.
 
 * **Agent Init Failure**: To troubleshoot this issue,we recommend to connect the device to your computer and enable debug mode to collect more information via a serial port. See "Enable Debug Mode" on this page for further details.
 
-* **Integration/Config Failure**: This message may appear when the connection to Cumulocity is broken or an error on the server side occurred.
+* **Integration/Config Failure**: This error occurs when you are connecting to a wrong server (probably flashed the wrong firmware). Try performing a _factory reset_ and register the device again. If this doesn't solve the problem, most likely it's a server side issue. Try contacting your network administrator if you are connecting to your own Cloud instance or write an email to <support@cumulocity.com> if you are connecting directly to Cumulocity.
 
-* **Integrate Failure**: See above.
-
+* **Integrate Failure**: Same as the above error message.
 
 * **The device failed to join a network and displays "Wrong APN setting" or "Unknown APN setting"**: Review the source code file `C027_Support/MDMAPN.h` and add an entry with the Mobile Country Code (MCC), Mobile Network Code (MNC) and your APN setting. Your MMC and MNC code should be shown on the LCD display below the error message "Wrong APN setting" or "Unknown APN setting".
 
@@ -163,7 +164,7 @@ By default, the agent runs in production mode, which does not write any informat
 
 The debug information is printed to the serial port of the device. To view its content, see http://mbed.org/handbook/SerialPC for details.
 
-> Please note (applies only to version prior to 2.1): Because the agent only reads the state of the *joystick* once per several seconds, you may need to push up the *joystick* and hold it for several seconds to switch on/off debug mode.
+> Please note (applies only to versions prior to 2.1): Because the agent only reads the state of the *joystick* once per several seconds, you may need to push up the *joystick* and hold it for several seconds to switch on/off debug mode.
 
 > When the agent is running in debug mode, many operations will be slowed down by a factor of 2 to 3 because of the large amount of I/O operations. If you want to disable the debug mode and switch back to express mode, simply push down the *joystick* and hold for several seconds (No holding is required starting from version 2.1).
 

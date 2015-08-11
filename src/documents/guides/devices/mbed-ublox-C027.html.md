@@ -54,26 +54,28 @@ To run the Cumulocity mbed agent, the following items are required:
 
 |Version|Release Date|Download|
 |---|:-:|:-:|
-|1.9|18.Feb 2015| [download](/guides/devices/mbed/firmware-1.9.bin)|
+|1.9      | 18.Feb 2015 | [download](/guides/devices/mbed/firmware-1.9.bin)     |
 |2.0      | 6.Mar 2015  | [download](/guides/devices/mbed/firmware-2.0c8y.bin)  |
+|2.2      | 10.Aug 2015 | [download](/guides/devices/mbed/firmware-2.2c8y.bin)  |
 
 Version for Deutsche Telekom Device Cloud (m2m-devicecloud.com):
 
 |Version|Release Date|Download|
 |---|:-:|:-:|
 |2.0 DT | 6.Mar 2015  | [download](/guides/devices/mbed/firmware-2.0.bin)  |
+|2.2 DT | 10.Aug 2015 | [download](/guides/devices/mbed/firmware-2.2.bin)  |
 
-These downloads are the same as the above ones, except that device registration (bootstrap) is performed against m2m-devicecloud.com .
+These downloads are the same as the above ones, except that device registration (bootstrap) is performed against m2m-devicecloud.com.
 
 ## Connect the C027
 
-* The C027 will now dial up to the Internet. You will see status updated in the LCD display. If the device cannot connect to the Internet, it will display an error message. In case of an error message "Wrong APN settting", follow the instructions below in Section "Troubleshooting".
+* The C027 will now dial up to the Internet. You will see status updated in the LCD display. If the device cannot connect to the Internet, it will display an error message. In case of an error message "Wrong APN setting" or "Unknown APN setting, follow the instructions below in Section "Troubleshooting".
 * On a successful connection for the first time, the device should print "Bootstrapping" and below the IMEI of the cellular modem on the LCD display.
   _Note_: The IMEI can also be found on the white sticker on modem chip of the C027.
 * Log on to the Cumulocity web interface, select "Registration" in the Device Management application. Enter the IMEI and press "Register Device".
 * The device appears as *CONNECTED*. Click the "Accept" button.
 * The device is now registered with Cumulocity and shows up under "All Devices" with the name "Mbed Test Device".
-* After the device is successful connected to the Cumulocity platform, it will update the LCD display regarding its current status. The first line always displays the tenant name (until there is a message received from the platform, see Section "Interacting with the Control Operations"). The second line shows the signal quality in units of dBm. The third line displays information about which sensor data the u-blox is sending and their corresponding values. In case similar sensory values are read comparing with the last sending, the third line is empty to imply a skip of sending.
+* After the device is successful connected to the Cumulocity platform, it will update the LCD display regarding its current status. The first line always displays the tenant name (until there is a message received from the platform, see Section "Interacting with the Control Operations"). The second line shows the signal quality in units of dBm. The third line displays information about which sensor data the u-blox is sending and their corresponding values. In case similar sensory values are read comparing with the last sending, the third line is empty implying a skip of sending.
 
 ## Interacting with the Cumulocity Platform
 
@@ -82,7 +84,7 @@ The device is now connected to Cumulocity and sends sensor data periodically. Yo
 Browse the collected sensor data under "Measurements" tab, as shown in the following screenshot:
 ![Measurement Screenshot](/guides/devices/mbed/measurements.png)
 
-The device sends new sensor data only when the sensor values are changing. If the values are constant, no new values are send. If the values do not change for 15 minutes, then the values are changed anyway. 
+The device sends new sensor data only when the sensor values are changing. If the values remain constant, no new values are sent until 15 minutes when a sending is forced to inform the platform of device connectivity.
 
 Create a dashboard to customize the representation of the sensor data from the device. You can create a new dashboard by selecting the mbed device, clicking on the small cog symbol on the top right and selecting "Create Dashboard".
 An example dashboard created for an mbed device is shown below:
@@ -106,7 +108,7 @@ Currently  the u-blox firmware supports three operations:
 
 ## Troubleshooting
 
-* **I can not log-in to the platform** (applies to Deutsche Telekom Industrie 4.0 kit only): Upper case 'i' and lower case 'l' are hard to distinguish. You may need to try different combinations to make sure the password you entered is the right one. 
+* **I can not log-in to the platform** (applies to Deutsche Telekom Industrie 4.0 kit only): Upper case 'i' and lower case 'l' are hard to distinguish. You may need to try different combinations to make sure the password you entered is the right one.
 
 * **The device freezes or resets when booting up**: This is commonly an issue originated from a bad power connection. Unplug and plug in your power connector again and make sure the connection is firm and stable. This will normally resolve the issue.
 
@@ -114,13 +116,17 @@ Currently  the u-blox firmware supports three operations:
 
 * **GPS Init Failure**: Sometimes the agent is unable to initialize the GPS unit. Simply restart the device to resolve the issue. Note that the GPS initialization process works without an actual GPS receiver. It is therefore usually not necessary to actually attach the GPS receiver to resolve this problem.
 
+* **My GPS does not work**: This problem originates from a different data format returned by a new GPS model. Support for this new data format has been added in version 2.2. If your GPS function do not work, please download firmware version 2.2 from the link above and follow the instructions to flash the firmware.
+
 * **No Network Coverage**: Make sure you have the modem antenna correctly mounted to the "WL_INT" connector, otherwise the device will not be able to connect to a network.
 
 * **Agent Init Failure**: To troubleshoot this issue,we recommend to connect the device to your computer and enable debug mode to collect more information via a serial port. See "Enable Debug Mode" on this page for further details.
 
-* **Integration/Config Failure**: This message may appear when the connection to Cumulocity is broken or an error on the server side occurred.
+* **Integration/Config Failure**: This error occurs when you are connecting to a wrong server (probably flashed the wrong firmware). Try performing a _factory reset_ and register the device again. If this doesn't solve the problem, most likely it's a server side issue. Try contacting your network administrator if you are connecting to your own Cloud instance or write an email to <support@cumulocity.com> if you are connecting directly to Cumulocity.
 
-* **The device failed to join a network and displays "Wrong APN setting"**: Review the source code file `C027_Support/MDMAPN.h` and add an entry with the Mobile Country Code (MCC), Mobile Network Code (MNC) and your APN setting. Your MMC and MNC code should be shown on the LCD display below the error message "Wrong APN setting".
+* **Integrate Failure**: Same as the above error message.
+
+* **The device failed to join a network and displays "Wrong APN setting" or "Unknown APN setting"**: Review the source code file `C027_Support/MDMAPN.h` and add an entry with the Mobile Country Code (MCC), Mobile Network Code (MNC) and your APN setting. Your MMC and MNC code should be shown on the LCD display below the error message "Wrong APN setting" or "Unknown APN setting".
 
 * **The device does not appear as *Connected* in the device registration process**: Review application output using a serial console. See http://mbed.org/handbook/SerialPC for details. Also make sure you flashed the device with correct firmware version, i.e. the one that performs the bootstrap against the right server.
 
@@ -136,7 +142,7 @@ Currently  the u-blox firmware supports three operations:
 
 #### Force a Sensory Data Sending
 
-Subject to the sensitivity threshold, you may not see frequent sending of sensor data because similar sensor readings are not send. This effect is especially noticeable for the temperature sensor. However, it is possible to trigger an immediate sensory data sending by manually imposing a change to the sensory readings.
+Subject to the sensitivity threshold, you may not see frequent sending of sensor data because similar sensor readings are not sent. This effect is especially noticeable for the temperature sensor. However, it is possible to trigger an immediate sensory data sending by manually imposing a change to the sensory readings.
 
 * For *temperature* sensor: place one finger atop the temperature sensor, which is located in the top middle of the u-blox device, above the text "Temperature LM7580". You should immediately see its effect on the LCD display updating its status to send a temperature reading.
 * For *acceleration* sensor: simply turn aside or rotate the device you should immediately see the device is sending an acceleration reading on its LCD display.
@@ -148,7 +154,7 @@ Subject to the sensitivity threshold, you may not see frequent sending of sensor
 When a u-blox device is already registered under a certain tenant, a *Factory Reset* has to be performed to remove the stored credentials so that the device can be re-registered again. The factory reset is performed as follows:
 
 * Press and hold the *joystick* when (re)starting a already registered device.
-* After the LCD display shows "Join Network" and the device is correctly joined the network, you should see "Reset Success" shown on the LCD display, which indicates a successful *Factory Reset*.
+* Prior to 2.1, after the LCD display shows "Join Network" and the device is correctly joined the network, you should see "Reset Success" shown on the LCD display, which indicates a successful *Factory Reset*. Starting from version 2.1, factory reset is much faster, simply wait for "Factory resetting" to appear on the screen, and you can release your finger already, after about 2 seconds, you should see "Reset Success" on the display.
 * Now restart the u-blox device and follow the instructions described in Section "Connect the C027" to register the device again under your tenant.
 
 
@@ -156,13 +162,13 @@ When a u-blox device is already registered under a certain tenant, a *Factory Re
 
 #### Enable Debug Mode
 
-By default, the agent runs in production mode, which does not write any information to the serial port. You can enable the debug mode to see how a detailed log of the agent. In order to enable debug mode, you can either push up the *joystick* before starting the agent, or at any time after the agent is *connected* to the cloud and running.
+By default, the agent runs in production mode, which does not write any information to the serial port. You can enable the debug mode to see a detailed log of the agent running. Prior to version 2.1, in order to enable debug mode, you can either push up the *joystick* before starting the agent, or at any time after the agent is *connected* to the cloud and running. Starting from version 2.1, simply push up the *joystick* at any time debug mode will be enabled.
 
 The debug information is printed to the serial port of the device. To view its content, see http://mbed.org/handbook/SerialPC for details.
 
-> Please note: Because the agent only reads the state of the *joystick* once per several seconds, you may need to push up the *joystick* and hold it for several seconds to switch on/off debug mode.
+> Please note (applies only to versions prior to 2.1): Because the agent only reads the state of the *joystick* once per several seconds, you may need to push up the *joystick* and hold it for several seconds to switch on/off debug mode.
 
-> When the agent is running in debug mode, many operations will be slowed down by a factor of 2 to 3 because of the large amount of I/O operations. If you want to disable the debug mode and switch back to express mode, simply push down the *joystick* and hold for several seconds.
+> When the agent is running in debug mode, many operations will be slowed down by a factor of 2 to 3 because of the large amount of I/O operations. If you want to disable the debug mode and switch back to express mode, simply push down the *joystick* and hold for several seconds (No holding is required starting from version 2.1).
 
 #### Change the Agent Source Code
 
@@ -194,4 +200,3 @@ Due to the jittering nature of the sensory readings, there is a threshold set fo
 * `measurement/LocationUpdate.cpp`: THRESHOLD_PERCENT_LOC [default: 0.05]
 * `measurement/SignalQualityMeasurement.cpp`: THRESHOLD_PERCENT_SIG [default: 0.06]
 * `measurement/Temperature.cpp`: THRESHOLD_PERCENT_TEMP [default: 0.02]
-

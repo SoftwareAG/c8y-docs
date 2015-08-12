@@ -29,7 +29,7 @@ The support for Cumulocity can be configured through the router's web user inter
 Verify that the toggle switch "Cumulocity agent" is set to "ON" and the URL shown in "Cumulocity server" points to the Cumulocity instance that you want to connect. For example, use
 
 * https://54.75.252.207/s for connecting to Netcomm NRM.
-* https://&lt;tenant&gt;.cumulocity.com/s for connecting to Cumulocity. You can sign-up a free trial tenant on https://cumulocity.com/.
+* https://&lt;tenant&gt;.cumulocity.com/s for connecting to Cumulocity, where `<tenant>` is your tenant name for Cumulocity. You can sign-up a free trial tenant on https://cumulocity.com/.
 * https://management.telstra-iot.com/s for connecting to the Telstra IoT platform.
 
 Optionally, you can activate data collecting for the following functionalities:
@@ -44,13 +44,13 @@ All these functionalities are disabled by default (interval is set to zero).
 
 ## <a name="connect"></a>Connecting the router
 
-To register your NetComm router to Cumulocity, you need the MAC address of the router's Ethernet card as _Device ID_. The registration process is described in section "[Connecting devices](/guides/users-guide/device-management/#device-registration)" in the User Guide. The MAC address is printed on the back side of the router as shown in the screenshot below. Alternately, it is also available in the router's web user interface. Please make sure to use only lowercase letters and numbers when entering the MAC address. For example, the MAC address from the picture would be entered as "006064dda4ae".
+To register your NetComm router to Cumulocity, you need the MAC address of the router's Ethernet card as _Device ID_. The registration process is described in section "[Connecting devices](/guides/users-guide/device-management/#device-registration)" in the User Guide. The MAC address is printed on the back side of the router as shown in the screenshot below. Alternately, it is also available in the router's web user interface, in "System" -> "Cumulocity" -> "Device ID". Please make sure to use only lowercase letters and numbers when entering the MAC address. For example, the MAC address from the picture would be entered as "006064dda4ae".
 
 ![MAC address](/guides/devices/netcomm/mac.png)
 
 After click the "accept" button, navigate to "All devices", the router should appear here after registration. The default name of a router is `NTC-6200 <serial number>`. For example, the above router would appear as _NTC-6200 165711141901036_. Click on the router to view the detailed information and to access the functionality described in the remaining sections of this document. In order to distinguish a registered router from other devices in the listing, you can change the router's name on the "Info" tab, which also displays basic information such as serial number of the router and SIM card data. After changing the name, remember to click "save changes" button at the bottom of the "Info" page.
 
-![Device details](/guides/devices/netcomm/info.jpg)
+![Device details](/guides/devices/netcomm/info.png)
 
 ## <a name="network"></a>Configuring network parameters
 
@@ -84,7 +84,7 @@ You can record statistics of the router's system resources usage for troubleshoo
 * Used and total memory in MB.
 * Uplink and downlink traffic over all interfaces in KB/sec.
 
-By default, collection of resource statistics is disabled. They can be enabled by setting a non-zero collection interval in the "[System resources measurements](#configure)". Collected data can be accessed in the "Measurements" tab or in a dashboard.
+By default, collection of resource statistics is disabled. They can be enabled by setting a non-zero collecting interval in the "[System resources measurements](#configure)". Collected data can be accessed in the "Measurements" tab or in a dashboard.
 
 ## <a name="gps"></a>Using GPS
 

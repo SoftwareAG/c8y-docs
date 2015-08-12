@@ -656,8 +656,11 @@ Example Response :
 |Name|Type|Occurs|Description|
 |:---|:---|:-----|:----------|
 |day|String|1|Date of statistics.|
-|requestCount|Number|1|Number of requests that were issued against the current tenant.|
-|storageSize|Number|1|Storage in use by tenant in bytes.|
+|deviceCount|Number|1|Number of devices in the tenant (c8y\_IsDevice).|
+|requestCount|Number|1|Number of requests that were issued against the tenant.|
+|storageSize|Number|1|Database storage in use by the tenant, in bytes.|
+
+"requestCount" contains the sum of all issued requests during the querying period. "deviceCount" and "storageSize" contain the last reported value during the querying period. Note that the latter values do not change in real-time but are updated every six hours. Note also that "storageSize" is affected by your retention rules. It is also affected by the regularly running database optimization functions running in Cumulocity. If the size decreases, it does not necessarily mean that data was deleted.
 
 ### TenantUsageStatisticsCollection [application/vnd.com.nsn.cumulocity.tenantUsageStatisticsCollection+json]
 

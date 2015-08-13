@@ -217,7 +217,9 @@ Example response:
 
 ### Update an Alarm
 
-Changes to alarms will generate a new audit record which will be added to the "history" collection. The audit record will include the username and application that triggered the update, if applicable.
+Changes to alarms will generate a new audit record which will be added to the "history" collection. The audit record will include the username and application that triggered the update, if applicable. 
+
+Please notice that if update actually doesn't change anything (i.e. request body contains data that is identical to already present in database), there will be no audit record added and no notifications will be sent.
 
 Request body: Alarm
 

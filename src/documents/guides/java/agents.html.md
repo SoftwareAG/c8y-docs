@@ -19,7 +19,7 @@ The Java agent supports Windows and Unix-based systems and contains the followin
 * Software management: Upgrade the software on the device and restart with the new software.
 * Modem support: Provides basic modem information and signal statistics  (IMEI, ICCID, cell ID, signal strength, BER; depending on modem type).
 * Extensibility through driver concept.
-* Ready-made drivers for [Kontron M2M development kit](/guides/devices/kontron), [Raspberry Pi](/guides/devices/raspberry-pi), [PiFace Digital](/guides/devices/raspberry-pi) and [Tinkerforge](/guides/devices/tinkerforge).
+* Ready-made drivers for [Raspberry Pi](/guides/devices/raspberry-pi), [PiFace Digital](/guides/devices/raspberry-pi) and [Tinkerforge](/guides/devices/tinkerforge).
 
 ## Prerequisites
 

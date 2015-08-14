@@ -23,6 +23,7 @@ The agent supports the following functionality:
 * WAN, LAN and DHCP configuration.
 * Reading RDB configuration dumps.
 * Lua plugin API for rapid development of IoT applications.
+* Remotely execute commands via device shell interface.
 * Modbus/TCP support to remotely manage Modbus devices from Cumulocity.
 * Debouncing support for eliminating false alarms based on GPIO pin readings.
 
@@ -37,6 +38,7 @@ The agent supports the following functionality:
 ## Bug Fixes
 
 * Operator name in "Info" page is now correctly displayed.
+* Clear credentials button in web ui works now correctly.
 
 ## System requirements
 
@@ -46,7 +48,7 @@ The agent was tested on an NTC-6200 device with firmware version 2.0.24.3. For r
 
 > Note: Previous beta user may need to remove the software before installing the pre-release due to a change in the configuration mechanism.
 
-* Download the software: http://resources.cumulocity.com/ntc/smartrest-agent_2.1.3_arm.ipk.
+* Download the software: http://resources.cumulocity.com/ntc/smartrest-agent_2.1.4_arm.ipk.
 * Log in to the web user interface of the NTC-6200.
 * Navigate to the "System" menu. Click on "System configuration", "Choose a file" and select the downloaded software. Click "Upload" to upload the software to the router.
 * Click the "Install" button for the uploaded software which you want to install.

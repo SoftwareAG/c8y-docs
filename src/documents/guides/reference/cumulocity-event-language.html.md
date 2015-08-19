@@ -438,7 +438,7 @@ or to be able to reuse the expression in a different statement like this:
         from MeasurementCreated e
         where temperatureValue(e) < 0;
 
-A detailed reference of the expressions that can be used is [here](http://esper.codehaus.org/esper/documentation/documentation.html). To query the database for additional data, use one of the pre-defined functions from the list below. For example, to retrieve the source *ManagedObject* of a newly created *Alarm*, use this statement:
+A detailed reference of the expressions that can be used is [here](http://www.espertech.com/esper/documentation.php). To query the database for additional data, use one of the pre-defined functions from the list below. For example, to retrieve the source *ManagedObject* of a newly created *Alarm*, use this statement:
 
     select findManagedObjectById(e.alarm.source)
         from AlarmCreated e;

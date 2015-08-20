@@ -228,22 +228,6 @@ CSV file appears in two forms (regarding to optional tenant column):
 |failedCreationList.deviceId|String|0..1|Id of device, appears if application can obtain it from file|
 |failedCreationList.failureReason|String|1|Reason of error|
 |failedCreationList.line|String|1|Line with error|
-{
-        "credentialUpdatedList" : [
-            {
-                "bulkNewDeviceStatus" : "CREDENTIAL_UPDATED",
-                "deviceId" : "id04"
-            }
-        ],
-        "failedCreationList" : [
-            {
-                "bulkNewDeviceStatus" : "FAILED",
-                "deviceId" : "id04",
-                "failureReason" : "failure",
-                "line" : "DeviceInfo{id='id5', credentials='credentials3', tenant='tenant3'}"
-            }
-        ],
-    }
 
 ### POST - creates a bullk device credentials request
 

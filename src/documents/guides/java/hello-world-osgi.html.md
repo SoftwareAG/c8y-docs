@@ -45,6 +45,7 @@ The manifest editor opens up. Click on the "Dependencies" tab and use the rightm
 -   com.cumulocity.sdk.client.inventory
 -   com.cumulocity.model.authentication
 -   org.slf4j
+-	org.svenson
 
 Save the manifest file.
 

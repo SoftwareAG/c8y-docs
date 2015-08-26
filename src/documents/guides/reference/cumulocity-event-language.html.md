@@ -150,8 +150,8 @@ Cumulocity supports several predefined event types that represent different oper
 |Inventory|ManagedObjectCreated<br/>ManagedObjectUpdated<br/>ManagedObjectDeleted|CreateManagedObject<br/>UpdateManagedObject<br/>DeleteManagedObject|This group of events represents creation, modification or deletion of a single ManagedObject.|
 |Events|EventCreated<br/>EventDeleted|CreateEvent<br/>DeleteEvent|This group of events represents creation or deletion of a single Event.|
 |Measurements|MeasurementCreated<br/>MeasurementDeleted|CreateMeasurement<br/>DeleteMeasurement|This group of events represents creation or deletion of a single Measurement.|
-|Device control|OperationCreated<br/>OperationUpdated<br/>OperationDeleted|CreateOperation<br/>UpdateOperation<br/>DeleteOperation|This group of events represents creation, modification or deletion of a single Operation.|
-|Alarms|AlarmCreated<br/>AlarmUpdated<br/>AlarmDeleted|CreateAlarm<br/>UpdateAlarm<br/>DeleteAlarm|This group of events represents creation, modification or deletion of a single Alarm.|
+|Device control|OperationCreated<br/>OperationUpdated|CreateOperation<br/>UpdateOperation|This group of events represents creation, modification or deletion of a single Operation.|
+|Alarms|AlarmCreated<br/>AlarmUpdated|CreateAlarm<br/>UpdateAlarm|This group of events represents creation, modification or deletion of a single Alarm.|
 |Emails|*(not used)*|SendEmail|This group of events represents sending of an email.|
 
 The basic structure of the event types is the same and consist of the following properties: *\_mode*, *\_type*, *attrs* and *payload*.
@@ -523,6 +523,6 @@ Of course in most cases email message need be generated in dynamic way. It can b
       "Temperature critical!" as subject,
       prepareEmailText(
         getNumber(e, "c8y_TemperatureMeasurement.temperature.value"),
-        getString(e, "c8y_TemperatureMeasurement.temperature.state")   
+        getString(e, "c8y_TemperatureMeasurement.temperature.state")
        ) as text
     from MeasurementCreated e

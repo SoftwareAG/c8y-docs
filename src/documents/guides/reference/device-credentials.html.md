@@ -8,6 +8,7 @@ The device credentials interface consists of the following parts:
 
 * Device requests are used to register new devices with a tenant.
 * Device credentials provide credentials to registered devices.
+* Device credentials provice endpoint to bulk credentials provision.
 
 For more information on the process of registering devices, see the Section "[Devices integration](/guides/rest/device-integration#step-0-request-device-credentials)".
 
@@ -199,4 +200,84 @@ Example response:
       "username" : "device_1234",
       "password" : "3rasfst4swfa",
       "self" : "<<URL to this device credentials>>"
+    }
+
+## Bulk device credentials
+
+Device credentials can be provided from CSV file. CSV file must contains 2 section. First section is the first line of csv file. This line must contains columns 'id', 'credentials' and optional 'tenant', rest of columns will be ommited. Section two is the rest of csv file. Section two contains devices credentials information, order and quantity of data must be the same like order and quantity of columns.
+
+Separator is automatically obtained from CSV file. Valid separator values are: '\t - tabulation mark', '; - semicolon' and ', - comma'.
+
+CSV file appears in two forms (regarding to optional tenant column):
+* when user is logged as management tenant, that columns: 'id', 'credentials' and 'tenant' are mandatory, and credentials for device will be created for tenant mentioned in 'tenant' column,
+* when user is logged on 'not management' tenant i.e. sample_tenant, that columns: 'id' and 'credentials' are mandatory and rest of columns will be omitted, even if fille contains 'tenant' column and credentials for device will be created for tenant from logged user.
+
+### BulkNewDeviceRequest [application/vnd.com.nsn.cumulocity.bulkNewDeviceRequest+json]
+
+|Name|Type|Occurs|Description|
+|:---|:---|:---|:----------|
+|numberOfAll|Number|1|Number of lines processed from CSV file, without first line (column headers)|
+|numberOfCreated|Number|1|Number of created device credentials|
+|numberOfFailed|Number|1|Number of failed creation of device credentials|
+|numberOfSuccessful|Number|1|Number of successful creation of device credentials, contains create and update operations|
+|credentialUpdatedList|List|0..n|Array with updated device credentials|
+|credentialUpdatedList.bulkNewDeviceStatus|String|1|Device credentials creation status, possible values: CREATED, FAILED, CREDENTIAL_UPDATED|
+|credentialUpdatedList.deviceId|String|1|Id of device|
+|failedCreationList|List|0..n|Array with updated device credentials|
+|failedCreationList.bulkNewDeviceStatus|String|1|Device credentials creation status, possible values: CREATED, FAILED, CREDENTIAL_UPDATED|
+|failedCreationList.deviceId|String|0..1|Id of device, appears if application can obtain it from file|
+|failedCreationList.failureReason|String|1|Reason of error|
+|failedCreationList.line|String|1|Line with error|
+
+### POST - creates a bullk device credentials request
+
+Request body: multipart/form-data
+
+Response body: application/vnd.com.nsn.cumulocity.bulkNewDeviceRequest+json
+
+Required role: ROLE\_DEVICE\_CONTROL\_ADMIN
+
+Example Request:
+
+    POST /devicecontrol/bulkNewDeviceRequests
+    Content-Type: multipart/form-data; boundary=myBoundary
+    Accept: application/json
+    Authorization: Basic ...
+
+    --myBoundary
+    Content-Disposition: form-data; name="file"
+    Content-Type: plain/text
+
+    ID;CREDENTIALS;TENANT
+    id01;abcd1234;sample_tenant
+    id02;abcd1234;sample_tenant
+    id03;abcd1234;sample_tenant
+    id04;abcd1234;sample_tenant
+    id05;abcd1234;sample_tenant
+    --myBoundary
+
+Example response:
+
+    HTTP/1.1 201 CREATED
+    Content-Type: application/vnd.com.nsn.cumulocity.bulkNewDeviceRequest+json;ver=...
+    Content-Length: ...
+    {
+        "credentialUpdatedList" : [
+            {
+                "bulkNewDeviceStatus" : "CREDENTIAL_UPDATED",
+                "deviceId" : "id04"
+            }
+        ],
+        "failedCreationList" : [
+            {
+                "bulkNewDeviceStatus" : "FAILED",
+                "deviceId" : "id04",
+                "failureReason" : "failure",
+                "line" : "DeviceInfo{id='id5', credentials='credentials3', tenant='tenant3'}"
+            }
+        ],
+        "numberOfAll" : 5,
+        "numberOfCreated" : 3,
+        "numberOfFailed" : 1,
+        "numberOfSuccessful" : 4
     }

@@ -91,7 +91,7 @@ Request body: Multipart
 
 Response body: Managed Object (when Accept header is not provided, empty response body is returned)
 
-Required role: ROLE\_INVENTORY\_ADMIN
+Required role: ROLE\_INVENTORY\_ADMIN or ROLE\_INVENTORY\_CREATE
 
 Uploading a binary requires to have a multipart with the following three form values:
 
@@ -169,7 +169,7 @@ Request body: Binary
 
 Response body: Managed Object (when Accept header is not provided, empty response body is returned)
 
-Required role: ROLE\_INVENTORY\_ADMIN
+Required role: ROLE\_INVENTORY\_ADMIN or ROLE\_INVENTORY\_CREATE
 
 The PUT request will replace the binary attached to the managed object only.
 For changing the managed object storing information about the binary it is possible
@@ -191,7 +191,7 @@ Request Body: N/A.
 
 Response Message Body: N/A.
 
-Required role: ROLE\_INVENTORY\_ADMIN
+Required role: ROLE\_INVENTORY\_ADMIN or ROLE\_INVENTORY\_CREATE
 
 Note: The request will delete the binary and the associated managed object containing information
 

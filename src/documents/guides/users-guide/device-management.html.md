@@ -326,3 +326,7 @@ In most cases, you should not need to edit anything. Exceptions are:
 * You would like to temporarily disconnect a device. In this case, click the "Deactivate" button next to the device credentials.
 * You would like to assign more permissions to an individual device. In this case, click the device credentials and select additional or different user groups for the device.
 
+![Bulk provisioning](/guides/users-guide/bulk_provisioning.png)
+
+Device credentials can be also provided from CSV file. File can be uploaded using the button pointed with arrow. More details on the file structure can be found in Reference Guide -> Device credentials.
+

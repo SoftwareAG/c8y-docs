@@ -98,7 +98,8 @@ Collected data can be accessed in the "Measurements" tab or in a dashboard.
 
 To locate or trace the router, connect a GPS antenna to the router and enable its GPS functionality. Then [configure](#configure) the frequency of data collection by setting the "GPS position interval" and/or the "GPS position event" to a non-zero value. "GPS position interval" defines how often the current location of the router is updated. "GPS position event" defines how often the current location is stored as location update event for tracing. Similarly, you can set these parameters from Device Shell:
 
-	set service.cumulocity.plugin.ntc6200.gps.interval=<interval>
+	set service.cumulocity.plugin.ntc6200.gps.update_interval=<update interval>
+	set service.cumulocity.plugin.ntc6200.gps.interval=<event interval>
 
 After you applied the configuration changes, wait a moment for the first GPS data to arrive, then refresh the page. A "Location" and a "Tracking" tab should now appear. See the "[Location](/guides/users-guide/device-management#location)" and "[Tracking](/guides/users-guide/device-management#tracking)" sections in the user guide for more information.
 
@@ -111,7 +112,7 @@ The following GPIO functionalities are supported by the agent:
 * Log the state of a digital input as events.
 * Write to a digital output remotely from Cumulocity.
 
-Consult the documentation of your router for more information about its specific IO settings. The available functionalities may vary between different device models. For example, the NTC 6200 model supports the following GPIO pins: xaux1, xaux2 and xaux3.
+Consult the documentation of your router for more information about its specific IO settings. The available functionalities may vary between different device models. For example, the NTC 6200 model supports GPIO pins 1-3.
 
 ### Analog input
 

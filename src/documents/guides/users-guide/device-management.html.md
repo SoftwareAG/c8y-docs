@@ -21,9 +21,9 @@ The Device Management application provides you with an overview of your connecte
 
 The following sections will walk you through the various menus of the application.
 
-## <a name="device-registration"></a>Connecting devices
+## <a name="device-registration"></a>Connecting devices manually
 
-This section describes the general procedure for connecting devices to your Cumulocity account. Some steps in the procedure may be specific to the type of device that you are using. Locate your device type in the "Device Guides" to find more information, or consult the manual of your device.
+This section describes the general procedure for manually connecting devices to your Cumulocity account. Some steps in the procedure may be specific to the type of device that you are using. Locate your device type in the "Device Guides" to find more information, or consult the manual of your device.
 
 To connect devices to your Cumulocity account, click "Device registration" in the navigator and follow these steps:
 
@@ -35,6 +35,20 @@ To connect devices to your Cumulocity account, click "Device registration" in th
 You are now ready to manage the device.
 
 ![Device registration](/guides/users-guide/registration.png)
+
+## <a name="creds-upload"></a>Bulk-registering devices
+
+For connecting larger amounts of devices, you can upload a CSV file with the IDs and credentials. These need to be pre-provisioned on the device. The CSV file needs to have a header row followed by the actual data. The header row needs to contain at least one column marked "ID" and one column marked "Credentials". Here is an example of a valid CSV format:
+
+	ID;Credentials
+	006064ce800a;LF2PWJoLG1Fz
+	006064ce8077;OowoGKAbiNJs
+
+Use the "Upload" button to upload the CSV file, as shown in the screenshot below. After the data is imported, you will get feedback on the number of devices that were pre-registered as well as on any potential errors that may have occurred.
+
+![Bulk registration](/guides/users-guide/autoregister.png)
+
+If you own a Cumulocity Dedicated or Private Edition, you can also register devices across multiple tenants by adding a "tenant" column to the spreadsheet and importing the CSV file from the "management" tenant. For more information on the file format and accepted CSV variants, please see [Bulk device credentials](/guides/reference/device-credentials/).
 
 ## <a name="viewing-devices"></a>Viewing the connected devices
 

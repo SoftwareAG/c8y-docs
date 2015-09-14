@@ -88,6 +88,10 @@ It is also possible to add a new permission to a device. In that case, you need 
 
 ![Adding new device permissions](/guides/acl/acl_dm2.png)
 
+### Globally accessed objects
+
+It is possible to make any object accessible by any user without specific rights. To make it working just add a new fragment called "c8y_Global" to the object.
+
 ### Propagation of permissions
 
 Permissions are propagated along two dimensions:

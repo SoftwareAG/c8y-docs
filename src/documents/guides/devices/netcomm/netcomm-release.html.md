@@ -28,6 +28,8 @@ The agent supports the following functionality:
 * Modbus/TCP support to remotely manage Modbus devices from Cumulocity.
 * Lua plugin API for rapid development of IoT applications.
 * Configuring and displaying of agent settings on the router's web user interface.
+* Get and put device configuration.
+* View log files.
 
 ## Known limitations
 
@@ -73,4 +75,25 @@ For an alpha version of the Lua-based rapid development, visit https://bitbucket
 
 * Configuration snapshot support (requires Cumulocity 6.9).
 * Sending event notifications as alarms.
+
+### 2.1.8
+
+[Download link](http://resources.cumulocity.com/ntc/smartrest-agent_2.1.8_arm.ipk). Changes:
+
+* Save MSISDN number fix
+* Memory leak fix
+* Configuration file tar bar
+
+
+### 2.1.10
+
+[Download link](http://resources.cumulocity.com/ntc/smartrest-agent_2.1.10_arm.ipk). Changes:
+
+* Crash fix
+* Configuration file tar bar and configuration text save fixes
+* Log viewer
+* Support for breakpad (crash tool)
+* Setect wrong plugin name in configuration
+* Removed timeouts in software manager
+* Remove agent log file after install new version
 

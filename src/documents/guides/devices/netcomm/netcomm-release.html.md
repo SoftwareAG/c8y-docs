@@ -26,7 +26,7 @@ The agent supports the following functionality:
 * Remotely execute commands via device shell interface.
 * Sending event notifications as alarms.
 * Modbus/TCP support to remotely manage Modbus devices from Cumulocity.
-* Lua plugin API for rapid development of IoT applications.
+* Lua plug-in API for rapid development of IoT applications.
 * Configuring and displaying of agent settings on the router's web user interface.
 * Get and put device configuration.
 * View log files.
@@ -43,7 +43,7 @@ The agent was tested on an NTC-6200 device with firmware version 2.0.24.3. For r
 
 ## Installing the agent
 
-* Download the software: http://resources.cumulocity.com/ntc/smartrest-agent_2.1.6_arm.ipk.
+* Download the software: http://resources.cumulocity.com/ntc/smartrest-agent_2.1.10_arm.ipk.
 * Log in to the web user interface of the NTC-6200.
 * Navigate to the "System" menu. Click on "System configuration", "Choose a file" and select the downloaded software. Click "Upload" to upload the software to the router.
 * Click the "Install" button for the uploaded software which you want to install.
@@ -67,7 +67,7 @@ For an alpha version of the Lua-based rapid development, visit https://bitbucket
 [Download link](http://resources.cumulocity.com/ntc/smartrest-agent_2.1.4_arm.ipk). Changes:
 
 * Operator name in "Info" page is now correctly displayed.
-* Clear credentials button in web ui works now correctly.
+* Clear credentials button in web UI works now correctly.
 
 ### 2.1.6
 
@@ -93,7 +93,7 @@ For an alpha version of the Lua-based rapid development, visit https://bitbucket
 * Configuration file tar bar and configuration text save fixes
 * Log viewer
 * Support for breakpad (crash tool)
-* Setect wrong plugin name in configuration
+* Detect wrong plug-in name in configuration
 * Removed timeouts in software manager
 * Remove agent log file after install new version
 

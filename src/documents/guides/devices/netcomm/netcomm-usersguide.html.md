@@ -198,8 +198,8 @@ You can download and view logs from the device. Log files can be quite big, you 
 
 ![Log vierer](/guides/devices/netcomm/logs.png)
 
-From right you can set date range (date from and date to), you can select log file. Next you can search the text, and only matching lines are transmited from the device. You can also limit matched lines.o
+From right you can set date range (date from and date to), you can select log file. Next you can search the text, and only matching lines are transmitted from the device. You can also limit matched lines.o
 
-Received logs are visible in a list below. You can click on it to show log file conent aat the bottom of the page. Last requested log is opened automaticly.
+Received logs are visible in a list below. You can click on it to show log file content at the bottom of the page. Last requested log is opened automatically.
 
 

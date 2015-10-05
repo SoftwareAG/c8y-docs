@@ -202,7 +202,7 @@ Example response:
       "self" : "<<URL to this device credentials>>"
     }
 
-## Bulk device credentials
+## <a name="creds-upload"></a>Bulk device credentials
 
 Device credentials can be provided from CSV file. CSV file must contains 2 section. First section is the first line of csv file. This line must contains columns 'id', 'credentials' and optional 'tenant', rest of columns will be ommited. Section two is the rest of csv file. Section two contains devices credentials information, order and quantity of data must be the same like order and quantity of columns.
 

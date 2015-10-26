@@ -37,13 +37,27 @@ Verify that the toggle switch "Cumulocity agent" is set to "ON" and the URL show
 
 Optionally, you can activate data collecting for the following functionalities:
 
-* *GPIO analog measurements*: Send the voltages of the analog inputs [seconds].
-* *GPS position interval*: Update the current GPS position [seconds].
-* *GPS position event*: Send a location trace of the GPS position [seconds].
-* *Network/mobile update interval*: Send the network and mobile updates not often than this interval [seconds].
-* *System resources measurements*: Get information on CPU, memory and network [seconds].
+* GPIO analog measurements: Send the voltages of the analog inputs [seconds].
+* GPS position interval: Update the current GPS position [seconds].
+* GPS position event: Send a location trace of the GPS position [seconds].
+* Network/mobile update interval: Send the network and mobile updates not often than this interval [seconds].
+* System resources measurements: Get information on CPU, memory and network [seconds].
 
-All these functionalities are disabled by default (interval is set to zero).
+All these options are disabled by default (the interval is set to zero).
+
+The web interface also shows the status of the connection to Cumulocity:
+
+ * Off: The software is disabled.
+ * Initializing: The software is initializing.
+ * Registering: The device waits for being registered to Cumulocity (see next section). 
+ * Starting: The software starts all its components.
+ * No credentials: The device did not get credentials for accessing Cumulocity, the credentials were deactivated, or the credentials were wrong.
+ * Started: The software is started.
+ * Connecting: The software is connecting to Cumulocity.
+ * Connected: The software is connected to Cumulocity.
+ * Disconnected: The software is not connected to Cumulocity.
+ * Reconnecting: The software is retrying the connection.
+ * Stopping: The software is terminating. 
 
 ## <a name="connect"></a>Connecting the router
 
@@ -106,7 +120,7 @@ After you applied the configuration changes, wait a moment for the first GPS dat
 
 ## <a name="gpio"></a>Using GPIO
 
-The following GPIO functionalities are supported by the agent:
+The following GPIO functionalities are supported:
 
 * Send the voltage of an analog input as measurements to Cumulocity.
 * Create or clear alarms when a digital input turn 1 or 0, respectively.

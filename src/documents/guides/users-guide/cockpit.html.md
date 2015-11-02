@@ -89,7 +89,7 @@ The welcome page opens the first time you log into Cumulocity Cockpit for the fi
 
 Afterwards a page similar to the one below is shown.
 
-![image alt text](image_0.png)
+![image alt text](/guides/users-guide/image_0.png)
 
 The welcome page shows the following sections:
 
@@ -115,7 +115,7 @@ To make the welcome page again the default page, select "Welcome" in the navigat
 
 When starting the application, and have deselected the "Welcome" page, you see the following dashboard:
 
-![image alt text](image_1.png)
+![image alt text](/guides/users-guide/image_1.png)
 
 The dashboard shows data for the overall tenant.
 
@@ -137,7 +137,7 @@ An asset represents the business object, for example, buildings, machines, or ca
 
 Assets are organized in a hierarchies. For example, an energy monitoring application might have the following asset hierarchy:
 
-![image alt text](image_2.png)
+![image alt text](/guides/users-guide/image_2.png)
 
 The asset hierarchy is composed out of two types of objects:
 
@@ -169,13 +169,13 @@ Cumulocity Cockpit has been designed to manage both types of devices. The follow
 
 For smart devices, find below an example how which smart devices are linked into the asset hierarchy:
 
-![image alt text](image_3.png)
+![image alt text](/guides/users-guide/image_3.png)
 
 Smart devices are represented in Device Management (right side) as top level devices. In the Cockpit application, you might want to organize smart devices into groups, as the arrows indicate in the above diagram.
 
 For gateway devices, find below an example on how to use the Cockpit application:
 
-![image alt text](image_4.png)
+![image alt text](/guides/users-guide/image_4.png)
 
 Gateway devices are represented in Device Management as top level devices, and their attached devices (i.e. Zigbee, Modbus or KNX devices) are shown as "Child Devices" (right side). These child devices can be organized in the asset hierarchy as shown above. Note that the asset hierarchy and the device hierarchy are independent: While inside the Device Management applications all child devices are below the gateway device, the same child devices are organized in two different buildings in the Cockpit application. While the gateway device is easily visible in the Device Management application, it is not visible at all in the Cockpit application (as it does not provide business relevant data, at least in this example).
 
@@ -198,11 +198,11 @@ Further details are available under "Adding Assets".
 Children may include other asset groups or devices visible as assets. 
 Children are also shown in the tab "Sub-assets".
 
-![image alt text](image_5.png)
+![image alt text](/guides/users-guide/image_5.png)
 
 When selecting an asset, the right part of the application shows more details about the selected object:
 
-![image alt text](image_6.png)
+![image alt text](/guides/users-guide/image_6.png)
 
 The visible tabs on the right of the navigator differ based on the selection in the navigator. The following table shows which tabs are visible based on the selection in the navigator:
 
@@ -256,13 +256,13 @@ To search for assets or devices, enter the name of the asset or device into the 
 
 To add a new top-level asset, click on the "+" in the top of the application and select “Add Asset…”. This will show the following dialog:
 
-![image alt text](image_7.png)
+![image alt text](/guides/users-guide/image_7.png)
 
 This will create a new asset with the selected assigned devices. After pressing "Create Asset with n Devices", the asset is shown in navigator as top level object.
 
 To add a new asset as a children of an existing asset, click the "+ Add Asset" in the “Sub-assets” tab.
 
-![image alt text](image_8.png)
+![image alt text](/guides/users-guide/image_8.png)
 
 ### Assign Devices to Assets 
 
@@ -272,7 +272,7 @@ To assign newly connected devices into the asset hierarchy, select the asset und
 
 In the following dialog, search for devices and select the devices (or sub-devices) that should be assigned.
 
-### ![image alt text](image_9.png) 
+### ![image alt text](/guides/users-guide/image_9.png) 
 
 ### Delete Assets
 
@@ -324,7 +324,7 @@ When clicking on the tab "Data explorer", the data explorer opens.
 
 It is prefilled with available data points of the object (asset or device). The first 5 data points are shown by default.
 
-![image alt text](image_10.png)
+![image alt text](/guides/users-guide/image_10.png)
 
 The visualisation depends on the data point properties.
 
@@ -336,13 +336,13 @@ The data points properties (min, max, color, ..) are pre-filled as follows:
 
 There might be more than one matching data point entry. In that case, the first one is selected automatically by the system. The user might override this selection by using the settings symbol (o) and selecting "Load X from Library", where X refers to the entry in the data point library.
 
-![image alt text](image_11.png)
+![image alt text](/guides/users-guide/image_11.png)
 
 ### Adding data points
 
 Additional data points can be added to the data explorer by pressing "+Add data point". This will bring up the following dialog:
 
-![image alt text](image_12.png)
+![image alt text](/guides/users-guide/image_12.png)
 
 In the top of the dialog, select a device from the asset hierarchy. Only the asset hierarchy below the objects selected in the navigator is shown. In case the entry "Data explorer" in the navigator was selected, the complete asset hierarchy is hown.
 
@@ -422,7 +422,7 @@ Use the menu and select "Send as widget to dashboard".
 
 This will show a modal dialog with all dashboards of the current object. Move to the relevant dashboard and press "Select" to create a new widget in the selected dashboard.
 
-![image alt text](image_13.png)
+![image alt text](/guides/users-guide/image_13.png)
 
 ## Working with Dashboards
 
@@ -442,7 +442,7 @@ To create a dashboard, navigate to an object in the asset hierarchy. Afterwards 
 
 * "Apply dashboard to all devices of type": Whether the dashboard should be visible only for this object or for all devices of the same type.
 
-![image alt text](image_14.png)
+![image alt text](/guides/users-guide/image_14.png)
 
 Click "Save" to create and open the dashboard. While there are no widgets on the dashboard, you will see an "Add Widget" button. Use this button to add your first widget to the dashboard.
 
@@ -450,7 +450,7 @@ Click "Save" to create and open the dashboard. While there are no widgets on the
 
 To add a widget to a dashboard, ensure that the dashboard is visible. Afterwards click on the cogwheel icon at the top right. Select "Add widget to dashboard". This will open a dialog where you can select the type of widget you want to add to the dashboard.
 
-![image alt text](image_15.png)
+![image alt text](/guides/users-guide/image_15.png)
 
 When selecting a widget type, additional fields for this widget type will be shown. The number and type of fields depend on the widget type and are described below under "[Widget Package](#heading=h.aihj3mi3v41q)".
 
@@ -462,7 +462,7 @@ You can edit the dashboard properties by clicking on the cogwheel icon and selec
 
 You can rearrange the widgets on the dashboard. By dragging and dropping the header of the widget, you can move the widget to another position on the page. By dragging and dropping the arrows on the bottom right corner of a widget, you can resize a widget. By clicking on the cross icon in the top right corner, you can delete the widget. By clicking on the cogwheel icon on the top right corner of the widget, you can edit the widget properties. The following figure shows a widget with all mentioned icons visible:
 
-![image alt text](image_16.png)   
+![image alt text](/guides/users-guide/image_16.png)   
 
 Note: On non-touch devices, the icons only appear when you hover over the widget header.
 
@@ -613,9 +613,9 @@ Parameters to configure:
 Example:
 
 * In the following screenshot, five columns are configured. Three property columns "Meter", “Vendor”, and “Owner”, which refer to the properties “name”, type” and “owner”. Plus two actions, one for toggling the maintenance mode, and one to reboot the device. 
-![image alt text](image_17.png)
+![image alt text](/guides/users-guide/image_17.png)
 
-* The resulting table is visualized as follows:![image alt text](image_18.png)
+* The resulting table is visualized as follows:![image alt text](/guides/users-guide/image_18.png)
 
 
 The list of properties can be edited as follows:
@@ -623,7 +623,7 @@ The list of properties can be edited as follows:
 * Add new properties: Click on "+ Add Properties" and select one or more properties. The selected properties will then be added to the end of the columns.
 
 * Add a new action: Click on "+ Add Action". You can then add the predefined action to toggle the maintenance mode. Or you select “Create Operation” to create a button that will execute a shell command. In the following dialog you can then enter the label for the button and the shell command to be executed.
-![image alt text](image_19.png) 
+![image alt text](/guides/users-guide/image_19.png) 
 Note: The dialog shows the predefined shell commands of the first device that supports shell commands. The list is empty if there is no such device. For details about shell commands, see [http://www.cumulocity.com/guides/users-guide/device-management/#shell](http://www.cumulocity.com/guides/users-guide/device-management/#shell) . 
 Note: You can also enter the JSON format of the operation that should be send to the device. For details, please contact the device vendor for supported operations.
 
@@ -651,7 +651,7 @@ To add a new report, select the "+" button in the header and select “Create ne
 
 Fill out the fields "Name" and “Icon” in the dialog and press “Save”.
 
-![image alt text](image_20.png)
+![image alt text](/guides/users-guide/image_20.png)
 
 Afterwards widgets can be added to the creates device.
 
@@ -677,11 +677,11 @@ Additionally, the properties of data point library are used by threshold busines
 
 When selecting "Data Point Library" in the navigator, a list of predefined data points with their properties opens. 
 
-![image alt text](image_21.png)
+![image alt text](/guides/users-guide/image_21.png)
 
 When clicking on an entry, a single entry in the data point library can be edited:
 
-![image alt text](image_22.png)
+![image alt text](/guides/users-guide/image_22.png)
 
 ## Working with Smart Rules
 
@@ -710,7 +710,7 @@ Smart Rules are created as follows:
 * Press "CREATE".
 
 A list of smart rules is shown below. Note that the number of smart rules rules shown might differ based on your installation. 
-![image alt text](image_23.png)
+![image alt text](/guides/users-guide/image_23.png)
 
 Afterwards, the rule is active for all devices and assets. See next section on how to deactivate a smart rule for specific objects.
 
@@ -722,11 +722,11 @@ A single Smart Rules can be activated (switched on) and deactivated (switched of
 
 To de-activate a smart rule for a device, use the Info tab, and click on the button to activate or disable the rule.  
 
-### ![image alt text](image_24.png)
+### ![image alt text](/guides/users-guide/image_24.png)
 
 If you activate a rule for an asset, then Cumulocity asks you if you want to activate it for all childs (Click "YES"), or if you want to activate the rule for the single asset only (Click “NO”).
 
-![image alt text](image_25.png)
+![image alt text](/guides/users-guide/image_25.png)
 
 ### Example: Defining explicit thresholds
 
@@ -739,13 +739,13 @@ To define a threshold rule do as follows:
 * If your data point is not visible by default, select "Add data point" and add your data point.
 
 * For the data point that should raise the threshold, click on the "cogs wheel" icon in the end of the row and select “Create Smart Rule”.
-![image alt text](image_26.png)
+![image alt text](/guides/users-guide/image_26.png)
 
 * Select "On measurement explicit threshold create alarm"
 
 * Fill in the rule parameter:
 
-![image alt text](image_27.png)
+![image alt text](/guides/users-guide/image_27.png)
 
 * You can fill in the minimum and maximum value. When the values are between these values, a threshold alarm will be raised.
 
@@ -779,7 +779,7 @@ Using this mechanism, you can configure global threshold ranges in the data poin
 
 The rules uses the following rule parameters:
 
-![image alt text](image_28.png)
+![image alt text](/guides/users-guide/image_28.png)
 
 * Fragment: Name of the measurement fragment. The incoming measurement must have exactly the same fragment name as configured. Note: When creating a rule from the data explorer, the fragment is already filled in.
 
@@ -835,7 +835,7 @@ When an alarm is created, an email is send.
 
 The rules uses the following rule parameters:
 
-### ![image alt text](image_29.png)
+### ![image alt text](/guides/users-guide/image_29.png)
 
 * Alarm type: The type of the alarm that triggers the rule: For each newly created alarm of this type the rule is triggered.
 
@@ -857,7 +857,7 @@ Note that his rule is only available if your tenant has a configured SMS provide
 
 The rules uses the following rule parameters:
 
-### ![image alt text](image_30.png)
+### ![image alt text](/guides/users-guide/image_30.png)
 
 * Alarm type: The type of the alarm that triggers the rule: For each newly created alarm of this type the rule is triggered.
 
@@ -869,7 +869,7 @@ The rules uses the following rule parameters:
 
 If an alarm is active for a certain time, increase the severity.
 
-The rules uses the following rule parameters:![image alt text](image_31.png)
+The rules uses the following rule parameters:![image alt text](/guides/users-guide/image_31.png)
 
 * Alarm type: The type of the alarm that triggers the rule.
 
@@ -889,9 +889,9 @@ Create an alarm if a device leaves the defined geofence.
 
 The rules uses the following rule parameters:
 
-![image alt text](image_32.png)
+![image alt text](/guides/users-guide/image_32.png)
 
-* Geofence: Define a polygon that defines the border of an area. To do this, click on "Edit geofence", navigate to your area (e.g. using the “Search address” field), and define a polygon by clicking once for each point of the border.![image alt text](image_33.png)
+* Geofence: Define a polygon that defines the border of an area. To do this, click on "Edit geofence", navigate to your area (e.g. using the “Search address” field), and define a polygon by clicking once for each point of the border.![image alt text](/guides/users-guide/image_33.png)
 
 * Type: Type of the alarm that will be raised.
 
@@ -905,7 +905,7 @@ Create consumption data point based on data from an electric-, gas-, water- mete
 
 The rules uses the following rule parameters:
 
-![image alt text](image_34.png)
+![image alt text](/guides/users-guide/image_34.png)
 
 * Fragment: Name of the measurement fragment. The incoming measurement must have exactly the same fragment name as configured. Note: When creating a rule from the data explorer, the fragment is already filled in.
 
@@ -923,7 +923,7 @@ Create an alarm if there was no new data received for a selected measurement (da
 
 The rules uses the following rule parameters:
 
-![image alt text](image_35.png)
+![image alt text](/guides/users-guide/image_35.png)
 
 * Type: Type of the measurement fragment. The incoming measurement must have exactly the same type as configured. Note: When creating a rule from the data explorer, the fragment is already filled in.
 
@@ -943,7 +943,7 @@ If a certain alarm occurred, send the specified operation to the device.
 
 The rules uses the following rule parameters:
 
-![image alt text](image_36.png)
+![image alt text](/guides/users-guide/image_36.png)
 
 * Alarm type: The type of the alarm that triggers the rule.
 
@@ -955,7 +955,7 @@ When the measurement value enters or leaves the defined range, a MAJOR alarm is 
 
 This rule is similar to the above threshold rule. However, in this rule the threshold values are provided explicitly. The other threshold rule above extracts the thresholds values from the asset or device or data point library
 
-The rules uses the following rule parameters:![image alt text](image_37.png)
+The rules uses the following rule parameters:![image alt text](/guides/users-guide/image_37.png)
 
 * Fragment: Name of the measurement fragment. The incoming measurement must have exactly the same fragment name as configured. Note: When creating a rule from the data explorer, the fragment is already filled in.
 

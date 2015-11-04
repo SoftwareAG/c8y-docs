@@ -31,7 +31,7 @@ Required role: ROLE\_INVENTORY\_READ
 
 Example request:
 
-    POST /inventory/binaries
+    GET /inventory/binaries
     Host: ...
     Authorization: Basic ...
 

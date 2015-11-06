@@ -91,13 +91,13 @@ To add additional users click on **Add user**
 - [Grant Application Access](#application-access)
 - Click on the **Save** button
 	
-![Add User](#/guides/users-guide/adduserpage.png)
+![Add User](/guides/users-guide/adduserpage.png)
 
 Fields without an asterisk" * "(e.g. **First name**, **Last name**) are not mandatory.
 
 ####<a name="user-permissions"></a>User Permissions
 
-Different **User Permissions** can be given to each User for a specific device.Permissions can be given or revoked during the [creation](#add-user) or [editing](#edit-user) of a User. 
+Different **User Permissions** can be given to each User for a specific device. Permissions can be given or revoked during the [creation](#add-user) or [editing](#edit-user) of a User. 
 When a device is chosen one can give permissions in a specific scope(e.g. **Alarm**, **Audit**, **Event**).
 
 To grant **User Permissions**:
@@ -113,7 +113,7 @@ Note: If you wish to select all of the Scopes click on the asterisk " * " in the
 
 Note: Admin does not have Read permissions, to grant all permissions to a User choose the asterisk " * " option from the drop down menu. 
 
-![User Permissions](/guide/users-guide/userpermissions.png)
+![User Permissions](/guides/users-guide/userpermissions.png)
 
 ####<a name="application-access"></a>Application Access
 
@@ -150,7 +150,7 @@ All of the user details except **Username** can be edited including **User Group
 
 Hovering over a user reveals the deactivate and delete buttons on the right side. The Deactivate button simply disables the user, while the cross button permanently deletes the user.
 
-![Delete User](/guides/user-guide/deleteuser.png)
+![Delete User](/guides/users-guide/deleteuser.png)
 
 ###<a name="manage-groups"></a>Manage Groups
 
@@ -158,7 +158,7 @@ Cumulocity allows you to easily manage Users which have the same permissions and
 
 If you wish to manage **User groups** click on User groups under the **Accounts** tab.
 
-![User groups](/guides/user-guide/usergroups.png)
+![User groups](/guides/users-guide/usergroups.png)
 
 Note: If you do not see **User groups** click on **Accounts** first and then **User groups**.
 
@@ -177,7 +177,7 @@ To add new group:
 
 - click on **Create user group**
 
-![Create user group](/guides/user-guide/creategroup.png)
+![Create user group](/guides/users-guide/creategroup.png)
 
 - Enter **Name** of the group
 - [Assign **Roles**](#assign-roles)
@@ -205,7 +205,7 @@ Hint: If you wish to select or clear **ALL** Roles an easier approach would be t
 - **Select all Read** - Selects Read role for all types and deselects the other roles
 - **Select all Admin** - Selects Admin role for all types and deselects the rest. 
 
-![All roles](#/guides/user-guide/allroles.png)
+![All roles](/guides/users-guide/allroles.png)
 
 ####<a name="type"></a>Types
 
@@ -232,7 +232,7 @@ Here we are going to describe all Types:
 
 ####<a name="group-permissions"></a>Group Permissions
 
-When multiple users need the same permissions or restriction they can be added to a group for easier handling. Group Permissions are similar to [User Permissions](#user-permissions). Permissions can be given during [creation](#create-group) or [editing](#edit-group) of a group. When a device is chosen one can give permissions in a specific scope(e.g. **Alarm**, **Audit**, **Event**).
+When multiple users need the same permissions or restriction they can be added to a group for easier handling. Group Permissions are similar to [User Permissions](#users-permissions). Permissions can be given during [creation](#create-group) or [editing](#edit-group) of a group. When a device is chosen one can give permissions in a specific scope(e.g. **Alarm**, **Audit**, **Event**).
 
 To grant **User Permissions**:
 
@@ -243,7 +243,7 @@ To grant **User Permissions**:
 - Click on the **Add** button
 - Click on the **Save** button
 
-![Group Permissions](/guides/user-guide/grouppermissions.png)
+![Group Permissions](/guides/users-guide/grouppermissions.png)
 
 Note: If you wish to select all of the Scopes click on the asterisk " * " in the drop down menu.
 
@@ -265,4 +265,4 @@ All of User groups details can be edited. To edit a group click on the **name** 
 
 To Remove a group simply hover over the group name and click on the cross button. A confirmation pop-up window will appear, click "OK" and the group will be deleted.
 
-![Remove Group](/guides/user-guide/removegroup.png)
+![Remove Group](/guides/users-guide/removegroup.png)

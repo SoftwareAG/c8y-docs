@@ -66,7 +66,7 @@ Click on "All devices" to manage the Raspberry Pi. It is by default visible as "
 
 ## Using Tinkerforge bricks and bricklets
 
-The agent supports Tinkerforge devices out of the box, provided the [Tinkerforge daemon for Raspberry Pi](http://www.tinkerforge.com/de/doc/Embedded/Raspberry_Pi.html) is installed. For more information about using Tinkerforge with Cumulocity, see the [Tinkerforge section](tinkerforge.html).
+The agent supports Tinkerforge devices out of the box, provided the [Tinkerforge daemon for Raspberry Pi](http://www.tinkerforge.com/de/doc/Embedded/Raspberry_Pi.html) is installed. For more information about using Tinkerforge with Cumulocity, see the [Tinkerforge section](/guides/devices/tinkerforge).
 
 ## Using PiFace Digital
 

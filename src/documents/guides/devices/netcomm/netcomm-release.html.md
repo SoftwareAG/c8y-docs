@@ -6,7 +6,7 @@ layout: default
 
 ## Release notes for NetComm Agent 2.1
 
-This document describes the Cumulocity agent package for the [NetComm Wireless NTC-6200](www.netcommwireless.com/product/m2m/ntc-6200) router.
+This document describes the Cumulocity agent package for the [NetComm Wireless NTC-6200](http://www.netcommwireless.com/product/m2m/ntc-6200) router.
 
 ## Supported functionality
 

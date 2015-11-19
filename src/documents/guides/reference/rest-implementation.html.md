@@ -85,7 +85,7 @@ Data exchanged with Cumulocity in HTTP requests and responses is encoded in [JSO
 
 To avoid ambiguity, all times and timestamps must include timezone information.
 
-### Error reporting
+### <a name="error_reporting"></a>Error reporting
 
 In error cases, Cumulocity returns standard HTTP response codes as described in [RFC2616](http://www.w3.org/Protocols/rfc2616/rfc2616-sec10.html). A Client should not only be able to handle individual codes but classes of codes as well (e.g., 4xx). The response body can contain more information about the error, see the error media type definition below. General error interpretations are:
 

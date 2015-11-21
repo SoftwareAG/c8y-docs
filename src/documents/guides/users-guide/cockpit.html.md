@@ -2,9 +2,8 @@
 order: 15
 title: Cockpit
 layout: default
+toc: true
 ---
-
-# Cockpit Application User Guide
 
 ## Introduction
 
@@ -18,13 +17,15 @@ By default, three applications are available for Cumulocity end users:
 
 Cumulocity Cockpit can be used in many industrial areas, including in:
 
+* Conditions monitoring
+
+* Alarm monitoring and escalation
+
 * Building asset monitoring.
 
-* Asset consumption of industrial factories and equipment.
+* Energy consumption of industrial factories and equipment.
 
 * Sensor data monitoring.
-
-* Alarm Monitoring of assets, e.g. in smart grids.
 
 In the following, the Cockpit application is described. It offers the following functionality:
 
@@ -42,15 +43,19 @@ In the following, the Cockpit application is described. It offers the following 
 
 * **Alarm Management:** Monitor problems of your asset using severities and workflows.
 
-* Get on introduction and overview using the Welcome Dashboard and Home Dashboard, respectively. 
+* **Easy of use**: Get on introduction and overview using the Welcome Dashboard and Home Dashboard, respectively. 
 
-* Organize thousands of devices using profiles.
+* **Data point library**: Manage default settings ("profiles") of your devices and apply them automatically using the "Data point library".
 
 ### Concepts
 
 The main concepts of the Cockpit application are the following:
 
 **Asset**: An asset represents the business object, for example, buildings, machines, or cars.
+
+**Asset Hierarchy**: Assets are organised in a hierarchy (tree). The nodes of thee tree are groups, and the leaves of the tree are devices. 
+
+**Group**: A way to organise devices and assets in a asset hierarchy. A group can contain one or multiple devices, child devices or other groups.
 
 **Device**: An IoT Device, either an gateway device, or a device indirectly connected via a gateway (e.g. modbus or KNX device), or a sensor.
 
@@ -99,7 +104,7 @@ The welcome page shows the following sections:
 
 * A list of available applications
 
-* A list of news based on the Cumulocity twitter channel. Note: This is only available on tenants hosted by www.cumulocity.com. 
+* A list of news based on the Cumulocity twitter channel. Note: This is may only be available on tenants hosted by www.cumulocity.com. 
 
 * A link to different parts of the documentation.
 
@@ -119,7 +124,7 @@ When starting the application, and have deselected the "Welcome" page, you see t
 
 The dashboard shows data for the overall tenant.
 
-The home dashboard is a page shared by all users of the tenant. It consists out of widgets, which visualize IoT data. By default, the home dashboard includes five widgets, which show a welcome text, a summary of available objects, assets with alarms, recent alarms and a map of all objects.
+The home dashboard is a page shared by all users of the tenant. It consists out of widgets, which visualise IoT data. By default, the home dashboard includes five widgets, which show a welcome text, a summary of available objects, assets with alarms, recent alarms and a map of all objects.
 
 The home dashboard can be edited, similar to other Cockpit dashboard: you can add, remove or change the shown widgets. To do that, use the settings symbol on the top right or move the cursor inside a widget and use the settings symbol of the individual widget. 
 
@@ -141,33 +146,28 @@ Assets are organized in a hierarchies. For example, an energy monitoring applica
 
 The asset hierarchy is composed out of two types of objects:
 
-* Asset objects: These are created in the Cockpit Application and can group other asset group objects or asset devices.
+* Group objects: These are created in the Cockpit application and can group other objects, i.e. other groups and devices.
 
 * Device objects: These are devices that are linked into the asset hierarchy.
 
-In this example, asset objects represent the building. The asset names and hierarchy can be freely defined by the user. The hierarchy can have multiple levels, e.g. region level, city level, street level, building level, floor level and room level. An device can be part of multiple different hierarchies, e.g. part of of regional hierarchy and part of customer hierarchy. 
-
-In most cases, devices register themselves to the platform when they are switched on. 
+In this example, group objects represent the building asset. Device objects represent the room asset. The group names and hierarchy can be freely defined by the user. The hierarchy can have multiple levels, e.g. region level, city level, street level, building level, floor level and room level. An device can be part of multiple different hierarchies, e.g. part of of regional hierarchy and part of customer hierarchy. 
 
 Device are not managed in the Cockpit application. Instead, use the Device Management Application.
-
-To position a device in the asset hierarchy, you have to "assign" the device to the respective asset. See description below for details.
+To position a device in the asset hierarchy, you have to "assign" the device to the respective group. See description below for details.
 
 ### Asset Hierarchy versus Device Hierarchy
 
 Cumulocity supports two hierarchies of objects: A device hierarchy and an asset hierarchy. The device hierarchy tracks how devices are linked to Cumulocity from a communications point of view. The asset hierarchy structures the assets that are being remotely supervised and controlled through the M2M devices. For details, please refer to "[Cumulocity's Domain Model](/guides/concepts/domain-model)"
 
- 
+In the Cockpit application, you construct your asset hierarchy by creating group objects and by linking device into the hierarchy. Typically, the asset hierarchy depends on the kind of IoT device that is used. While there are many IoT devices, two kinds are very common: 
 
-In the Cockpit application, you construct your asset hierarchy by creating asset objects and by linking device into the hierarchy. Typically, the asset hierarchy depends on the kind of IoT device that is used. While there are many IoT devices, two kinds are very common: 
+* **Smart devices** are self-contained devices that include sensors, actuators and a communication module. They are typically connected to a single asset. Typical smart devices are trackers, weather station or "smart" sensors with built-in communication module.
 
-* **Smart devices **are self-contained devices that include sensors, actuators and a communication module. They are typically connected to a single asset. Typical smart devices are trackers, weather station or "smart" sensors with built-in communication module.
-
-* **Gateway** **devices** establish the communication from other devices to Cumulocity, but do not include sensors or actuators. Typical gateway devices include Zigbee, Modbus, M-Bus or KNX gateways. 
+* **Gateway devices** establish the communication from other devices to Cumulocity, but do not include sensors or actuators. Typical gateway devices include Zigbee, Modbus, M-Bus or KNX gateways. 
 
 Cumulocity Cockpit has been designed to manage both types of devices. The following paragraphs explain how to use Cockpit with smart devices and gateway devices, respectively.
 
-For smart devices, find below an example how which smart devices are linked into the asset hierarchy:
+For smart devices, find below an example how smart devices are linked into the asset hierarchy:
 
 ![image alt text](/guides/users-guide/image_3.png)
 
@@ -177,7 +177,9 @@ For gateway devices, find below an example on how to use the Cockpit application
 
 ![image alt text](/guides/users-guide/image_4.png)
 
-Gateway devices are represented in Device Management as top level devices, and their attached devices (i.e. Zigbee, Modbus or KNX devices) are shown as "Child Devices" (right side). These child devices can be organized in the asset hierarchy as shown above. Note that the asset hierarchy and the device hierarchy are independent: While inside the Device Management applications all child devices are below the gateway device, the same child devices are organized in two different buildings in the Cockpit application. While the gateway device is easily visible in the Device Management application, it is not visible at all in the Cockpit application (as it does not provide business relevant data, at least in this example).
+Gateway devices are represented in Device Management as top level devices, and their attached devices (i.e. Zigbee, Modbus or KNX devices) are shown as "Child Devices" (right side). These child devices can be organized in the asset hierarchy as shown above. 
+
+Note that the asset hierarchy and the device hierarchy are independent: While inside the Device Management applications all child devices are below the gateway device, the same child devices are organized in two different buildings in the Cockpit application. While the gateway device is easily visible in the Device Management application, it is not visible at all in the Cockpit application (as it does not provide business relevant data, at least in this example).
 
 ### Cockpit Assets versus Business Assets
 
@@ -185,62 +187,33 @@ There is no one-to-one mapping of objects in the Cockpit asset hierarchy to busi
 
 * For example for tracking users, each device represents a business asset: if you install a tracker device in each of your trucks, then the tracker device represents the truck inside Cumulocity.
 
-* For building management, a certain level of assets in the hierarchy represents a business asset: if you have multiple devices deployed in a building to monitor it, then the Cockpit asset object "house" to group all these devices represents your business asset. 
+* For building management, a certain level of assets in the hierarchy represents a business asset: if you have multiple devices deployed in a building to monitor it, then the group object "Building" represents your asset. 
+
+Because of these differences, the Cockpit application does not have a built-in "asset" object. Instead, either groups or devices represent your asset, depending on your use case.
 
 ### Navigating Assets
 
-The navigator shows a hierarchy of assets under "ASSETS" (See screenshot below):
+The navigator shows a hierarchy of assets under "GROUPS" (See screenshot below):
 
-* On the top, the top level assets are shown.
-Further details are available under "Adding Assets".
+* On the top, the top level groups are shown.
+Further details are available under "Adding Groups".
 
-* When expanding an asset, all its children are shown. 
-Children may include other asset groups or devices visible as assets. 
+* When expanding an group, all its children are shown. 
+Children may include other groups or devices assigned to the group. 
 Children are also shown in the tab "Sub-assets".
 
 ![image alt text](/guides/users-guide/image_5.png)
 
-When selecting an asset, the right part of the application shows more details about the selected object:
+When selecting an object in the asset hierarchy, the right part of the application shows more details about the selected object:
 
 ![image alt text](/guides/users-guide/image_6.png)
 
 The visible tabs on the right of the navigator differ based on the selection in the navigator. The following table shows which tabs are visible based on the selection in the navigator:
 
-<table>
-  <tr>
-    <td></td>
-    <td>Tabs shown on page (righ side)</td>
-    <td></td>
-    <td></td>
-    <td></td>
-    <td></td>
-  </tr>
-  <tr>
-    <td>Selection in Asset Tree</td>
-    <td><Name of Dashboard></td>
-    <td>Info</td>
-    <td>Sub-assets</td>
-    <td>Location</td>
-    <td>Data Explorer</td>
-  </tr>
-  <tr>
-    <td>Asset</td>
-    <td>Yes, if configured</td>
-    <td>Yes</td>
-    <td>Yes</td>
-    <td>No</td>
-    <td>Yes, showing all data points of all children</td>
-  </tr>
-  <tr>
-    <td>Device</td>
-    <td>Yes, if configured</td>
-    <td>Yes</td>
-    <td>No</td>
-    <td>Yes, show location and trace</td>
-    <td>Yes, showing all data points of all children</td>
-  </tr>
-</table>
-
+|Name of tab|_Name of Dashboard_|Info|Sub-assets|Location|Data explorer|
+|:---|:---|:-----|:----------|:----------|:----------|
+|Group selected:|Yes, if configured|Yes|Yes|No|Yes, showing all data points of the children|
+|Device select:|Yes, if configured|Yes|No|Yes|Yes, showing all data points of the children|
 
 Note that there might be additional tabs visible in case the application has been extended with plugins. See "[Introduction to plugin development](/guides/web/introduction)" for details.
 
@@ -250,43 +223,43 @@ To navigate down in the asset hierarchy, either use the navigator or select an o
 
 ### Search Assets
 
-To search for assets or devices, enter the name of the asset or device into the search entry field. Afterwards press "Enter".  The matching assets and devices are then shown on the right side. Select one of the search results by clicking on it. The selected asset or device is then selected in the navigator on the left and details of it are shown on the right.
+To search for groups or devices, enter the name of the group or device into the search entry field. Afterwards press "Enter".  The matching groups and devices are then shown on the right side. Select one of the search results by clicking on it. The selected group or device is then selected in the navigator on the left and details of it are shown on the right.
 
-### Adding Asset
+### Adding Groups
 
-To add a new top-level asset, click on the "+" in the top of the application and select “Add Asset…”. This will show the following dialog:
+To add a new top-level group, click on the "+" in the top of the application and select “Add Group…”. This will show the following dialog:
 
 ![image alt text](/guides/users-guide/image_7.png)
 
-This will create a new asset with the selected assigned devices. After pressing "Create Asset with n Devices", the asset is shown in navigator as top level object.
+This will create a new group with the selected assigned devices. After pressing "Create Group with n Devices", the group is shown in navigator as top level object.
 
-To add a new asset as a children of an existing asset, click the "+ Add Asset" in the “Sub-assets” tab.
+To add a new group as a children of an existing asset, click the "+ Add Group" in the “Sub-assets” tab.
 
 ![image alt text](/guides/users-guide/image_8.png)
 
-### Assign Devices to Assets 
+### Assign Devices to Groups 
 
 Before adding a device to the asset hierarchy, it must be connected to Cumulocity. Connect devices to the platform using Device Management application. Please refer to "[Connecting Devices](/guides/users-guide/device-management#device-registration)" in the Device Management user guide.
 
-To assign newly connected devices into the asset hierarchy, select the asset under which the device should appear, click on "sub assets" and press “+ Assign Device” button. 
+To assign newly connected devices into the asset hierarchy, select the group under which the device should appear, click on "sub assets" and press “+ Assign Device” button. 
 
 In the following dialog, search for devices and select the devices (or sub-devices) that should be assigned.
 
-### ![image alt text](/guides/users-guide/image_9.png) 
+![image alt text](/guides/users-guide/image_9.png) 
 
-### Delete Assets
+### Delete Groups
 
-You can delete asset by hover over the asset in the "Sub-assets" tab. You will see a red [X], which you can click to delete it.
+You can delete a group by hover over the group in the "Sub-assets" tab. You will see a red [X], which you can click to delete it.
 
 ### Unassigning Devices
 
-To un-assign a device from an asset, select the asset in the navigator. Then hover over the device in the "Sub-assets" tab and press the red [X] button.
+To un-assign a device from a group, select the group in the navigator. Then hover over the device in the "Sub-assets" tab and press the red [X] button.
 
-Note that un-assigning a device does not remove the device, sub-devices or any associated data. The device is just removed from its location in the asset hierarchy. It can be assigned afterwards to other assets again.
+Note that un-assigning a device does not remove the device, sub-devices or any associated data. The device is just removed from its location in the asset hierarchy. It can be assigned afterwards to other groups again.
 
-### Editing Assets
+### Editing Groups
 
-To edit the name of the asset, click on the "Info" tab and edit the name.
+To edit the name of the group, click on the "Info" tab and edit the name.
 
 ## Using the Data Explorer to Visualize Data
 
@@ -294,15 +267,15 @@ Data points (measurements or sensor data) can be visualized in the Cockpit in th
 
 * Clicking on the "data explorer" in the navigator. You have access to all data points of all assets.
 
-* Navigate to a specific asset  and click on the tab "Data Explorer". You have access to all data points of the assets and sub-assets.
+* Navigate to a specific asset and click on the tab "Data Explorer". You have access to all data points of the assets and sub-assets.
 
 * Adding data points related widgets to the dashboard. Here you can view pre-defined reports easily. 
 
-A typical use is the following to visualize the data points:
+To visualize data points, perform the following steps:
 
-* Go to the asset or device, and click on "Data Explorer".
+* Go to the group or device, and click on "Data Explorer".
 
-* The first five data points of the selected device or asset are shown.
+* The first five data points of the selected device or group are shown.
 
 * Add additional data point by selecting "Add data points..."
 
@@ -322,7 +295,7 @@ The data explorer and dashboards are closely related:
 
 When clicking on the tab "Data explorer", the data explorer opens.
 
-It is prefilled with available data points of the object (asset or device). The first 5 data points are shown by default.
+It is prefilled with available data points of the object (group or device). The first 5 data points are shown by default.
 
 ![image alt text](/guides/users-guide/image_10.png)
 
@@ -334,21 +307,21 @@ The data points properties (min, max, color, ..) are pre-filled as follows:
 
 * If the data points have a matching definition in the "Data Point Library" (i.e. measurement name and series are identical), then the values from the data point library are used.
 
-There might be more than one matching data point entry. In that case, the first one is selected automatically by the system. The user might override this selection by using the settings symbol (o) and selecting "Load X from Library", where X refers to the entry in the data point library.
+There might be more than one matching data point entry in the "Data Point Library". In that case, the first one is selected automatically by the system. You can override this selection by using the cogs wheel symbol and selecting "Load X from Library", where X refers to the entry in the data point library.
 
 ![image alt text](/guides/users-guide/image_11.png)
 
 ### Adding data points
 
-Additional data points can be added to the data explorer by pressing "+Add data point". This will bring up the following dialog:
+Additional data points can be added to the data explorer by pressing "+ Add data point". This will bring up the following dialog:
 
 ![image alt text](/guides/users-guide/image_12.png)
 
-In the top of the dialog, select a device from the asset hierarchy. Only the asset hierarchy below the objects selected in the navigator is shown. In case the entry "Data explorer" in the navigator was selected, the complete asset hierarchy is hown.
+In the top of the dialog, select a device from the asset hierarchy. Only the asset hierarchy below the objects selected in the navigator is shown. In case the entry "Data explorer" in the navigator was selected, the complete asset hierarchy is shown.
 
-The bottom of the dialog shows all data points of the selected device. Select the data points you want to show in the data explorer. Press "Add" to add all selected data points to the list of shown data points.
+The bottom of the dialog shows all data points of the selected object. Select the data points you want to show in the data explorer. Press "Add" to add all selected data points to the list of shown data points.
 
-*Note: The table shows pre-filled data point properties as described beforehand. *
+> Note: The table shows pre-filled data point properties as described beforehand.
 
 ### Changing data point visualisation
 
@@ -446,6 +419,14 @@ To create a dashboard, navigate to an object in the asset hierarchy. Afterwards 
 
 Click "Save" to create and open the dashboard. While there are no widgets on the dashboard, you will see an "Add Widget" button. Use this button to add your first widget to the dashboard.
 
+### Creating a dashboard for all devices of the same type
+
+You can create a single dashboard that will appear for all devices of the same type. To do that, create a new dashboard as described above. Before pressing "Save", select the option "Apply dashboard to all devices of type _type_". The text "_type_" is replaced with the type of the device that is currently selected.
+
+Afterwards the dashboard should appear for all respective devices. Changes made to dashboard are automatically visible in all dashboard.
+
+> Note: You can only add widgets and data to the dashboard for the device itself. It is not possible to add data from childrens, because the structure of the children might be different from device to device. 
+
 ### Adding a Widget to a Dashboard
 
 To add a widget to a dashboard, ensure that the dashboard is visible. Afterwards click on the cogwheel icon at the top right. Select "Add widget to dashboard". This will open a dialog where you can select the type of widget you want to add to the dashboard.
@@ -468,6 +449,10 @@ Note: On non-touch devices, the icons only appear when you hover over the widget
 
 Note: Edit a dashboard using your PC. Editing on touch devices (smartphones, tablets) does not support all functions. To show the widget icons on touch devices, please touch the widget header shortly.
 
+### Cloning a dashboard
+
+To copy a dashboard form one object to another, use the cogs wheel on the top right and select "Copy dashboard". Afterwards select the object where the dashboard should be applied and press "Paste Dashboard" to insert the dashboard.
+
 ### Removing a Dashboard
 
 To add a widget to a dashboard, ensure that the dashboard is visible. Afterwards click on the cogwheel icon at the top right. Select "Remove dashboard".
@@ -478,7 +463,7 @@ Cumulocity Cockpit includes predefined widget types. Each widget type provides d
 
 ### Widget "Asset Properties"
 
-Show a user-defined list of property of the current object. The current object can be a device or the asset object.
+Show a user-defined list of property of the current object. The current object can be a device or the group object.
 
 Parameters to configure:
 
@@ -496,7 +481,7 @@ The parameters to configure are the same as in the data explorer. Please refer t
 
 ### Widget "Map"
 
-Show location of a device or all devices in the asset. The map provides the following features:
+Show location of a device or all devices in the group. The map provides the following features:
 
 * The map can be used normally, i.e. drag it and zoom in/out.
 
@@ -516,7 +501,7 @@ Show location of a device or all devices in the asset. The map provides the foll
 
 Parameters to configure:
 
-* Target device or asset: Select what devices should be shown on the map. If an asset is selected, all devices included in the asset are shown.
+* Target device or group: Select what devices should be shown on the map. If an group is selected, all devices included in the group are shown.
 
 Note: If none of the target device(s) has a known location, then the widget will be blank and show a corresponding message.
 
@@ -526,7 +511,7 @@ Show user-defined content. The content can be formatted using HTML.
 
 Parameter to configure:
 
-* Target device or asset: Select for which object optional HTML expressions should be evaluated. See below for details.
+* Target device or group: Select for which object optional HTML expressions should be evaluated. See below for details.
 
 * HTML content: 
 
@@ -536,7 +521,7 @@ Variables that can be used inside the HTML content:
 
 * {{usersCount}}: Total number of users.
 
-* {{deviceGroupsCount}}: Total number of asset/groups.
+* {{deviceGroupsCount}}: Total number of groups.
 
 * {{device.name}}: The name of device.
 
@@ -554,7 +539,7 @@ Some notes on the above:
 
 ### Widget "Asset alarms"
 
-Show all assets who have a critical alarm. There are no additional parameters to configure.
+Show all objects who have a critical alarm. There are no additional parameters to configure.
 
 ### Widget "Asset count"
 
@@ -566,7 +551,7 @@ Show a list of alarms, filter for objects, alarm severity and alarm status.
 
 Parameter to configure:
 
-* Target device or asset: Select for which object optional HTML expressions should be evaluated. See below for details.
+* Target device or group: Select for which object optional HTML expressions should be evaluated. See below for details.
 
 * Status: Show only alarms which have the selected alarm status.
 
@@ -578,7 +563,7 @@ Parameter to configure:
 
 Show all alarms of all severity sorted by time. There are no additional parameters to configure.
 
-### Data point list
+### Widget "Data point list"
 
 Show data points (measurements), one in each row, with current values and data point properties.
 
@@ -598,15 +583,15 @@ Parameters to configure:
 
     * Diff %: Percentage of difference between current value and target value.
 
-    * Asset: Name of the asset of the data point.
+    * Asset: Name of the device or group of the data point.
 
 ### Widget "Asset table"
 
-Shows details of all child assets (or devices) in a table. This is a very powerful widget, which allows you arrange selected properties of objects in a table.
+Shows details of all child devices in a table. This is a very powerful widget, which allows you arrange selected properties of objects in a table.
 
 Parameters to configure:
 
-* Target device or asset: Select for which object all child assets should be shown. This is typically an asset object.
+* Target device or group: Select for which object all child devices should be shown. This is typically a group object.
 
 * Properties: Select properties or actions of an object to visualize them as columns in the table. In the configuration dialog, you see a list of configured columns, each column can be either a property or an action.
 
@@ -620,11 +605,12 @@ Example:
 
 The list of properties can be edited as follows:
 
-* Add new properties: Click on "+ Add Properties" and select one or more properties. The selected properties will then be added to the end of the columns.
+* Add new properties: Click on "+ Add Properties" and select one or more properties. The selected properties will then be added to the end of the columns.<br>
+Note: The property "Active Alarm Status" shows active alarms as icons in the table. If you select this property, please also configure the renderer "Active Alarm Status" in the list of columns.
 
 * Add a new action: Click on "+ Add Action". You can then add the predefined action to toggle the maintenance mode. Or you select “Create Operation” to create a button that will execute a shell command. In the following dialog you can then enter the label for the button and the shell command to be executed.
 ![image alt text](/guides/users-guide/image_19.png) 
-Note: The dialog shows the predefined shell commands of the first device that supports shell commands. The list is empty if there is no such device. For details about shell commands, see [http://www.cumulocity.com/guides/users-guide/device-management/#shell](http://www.cumulocity.com/guides/users-guide/device-management/#shell) . 
+Note: The dialog shows the predefined shell commands of the first device that supports shell commands. The list is empty if there is no such device. For details about shell commands, see [http://www.cumulocity.com/guides/users-guide/device-management/#shell](http://www.cumulocity.com/guides/users-guide/device-management/#shell).<br> 
 Note: You can also enter the JSON format of the operation that should be send to the device. For details, please contact the device vendor for supported operations.
 
 * Edit column header: To edit the header of the column, click on the column "Label" and edit the label. 
@@ -639,7 +625,7 @@ Working with alarms is identical to working with alarms in Device Management. Se
 
 ## Working with Reports
 
-Reports are global dashboards, that are independent of assets.
+Reports are global dashboards, that are independent of the asset hierarchy.
 
 ### Browsing reports
 
@@ -667,13 +653,13 @@ You can add widgets to the report freely, similar to dashboard widgets.
 
 To view a report, open the "Reports" in the navigator and click on the related report. The report will then be shown.
 
-## Configuring Data Points Library
+## Using the Data Point Library
 
-The Data Point Library provides default values for data point properties. To find the default visualisation for a data point like color or label, Cumulocity searches the data point library and tries to find a matching entry. A entries is considered as "matching", if the value for  fragment and series in the data point library match those of the measurement. If a matching entry is found, the corresponding data point properties are used for default visualisation.
+The Data Point Library provides default values for data point properties. Data point properties are similar to "paragraph formats" in word processing applications: You do not want to format each paragraph individually. Instead you want to define a set of default formats and afterwards apply them to your paragraphs in your document. The Data Point Library provides the same functionality for data points: It provides a number of default data point formats, that can be applied easily to your data points from different devices.
+
+How does the Cockpit application use the data point library? To find the default visualisation for a data point like color or label, Cockpit searches the data point library and tries to find a matching entry. A entries is considered as "matching", if the value for fragment and series in the data point library match those of the measurement. If a matching entry is found, the corresponding data point properties are used for default visualisation.
 
 Additionally, the properties of data point library are used by threshold business rules: The red and yellow values configured in the data point library are used by the threshold rules to raise alarms.
-
- 
 
 When selecting "Data Point Library" in the navigator, a list of predefined data points with their properties opens. 
 
@@ -693,7 +679,7 @@ Smart Rules are parameterized. There are two sources for parameters:
 
 **Rule Parameter** are provided by the user when creating a smart rule from its template. Examples are email addresses and alarm texts.
 
-**Object Parameter** are stored in the asset or device. These parameters can be edited also after the smart rule has been created. Example include min and max values for thresholds.
+**Object Parameter** are stored in the group or device. These parameters can be edited also after the smart rule has been created. Example include min and max values for thresholds.
 
 ### Creating a Smart Rule
 
@@ -712,19 +698,19 @@ Smart Rules are created as follows:
 A list of smart rules is shown below. Note that the number of smart rules rules shown might differ based on your installation. 
 ![image alt text](/guides/users-guide/image_23.png)
 
-Afterwards, the rule is active for all devices and assets. See next section on how to deactivate a smart rule for specific objects.
+Afterwards, the rule is active for all devices and groups. See next section on how to deactivate a smart rule for specific objects.
 
 Smart Rules can be instantiated multiple times.
 
 ### Activating and deactivating Smart Rules
 
-A single Smart Rules can be activated (switched on) and deactivated (switched off) for a single object (asset or device). For example, if a device is misbehaving and generated too many threshold alarms, you can deactivate the rule for this single object. The rule is still active for all other objects.
+A single Smart Rules can be activated (switched on) and deactivated (switched off) for a single object (group or device). For example, if a device is misbehaving and generated too many threshold alarms, you can deactivate the rule for this single object. The rule is still active for all other objects.
 
 To de-activate a smart rule for a device, use the Info tab, and click on the button to activate or disable the rule.  
 
-### ![image alt text](/guides/users-guide/image_24.png)
+![image alt text](/guides/users-guide/image_24.png)
 
-If you activate a rule for an asset, then Cumulocity asks you if you want to activate it for all childs (Click "YES"), or if you want to activate the rule for the single asset only (Click “NO”).
+If you activate a rule for a group, then Cumulocity asks you if you want to activate it for all childs (Click "YES"), or if you want to activate the rule for the single group only (Click “NO”).
 
 ![image alt text](/guides/users-guide/image_25.png)
 
@@ -732,7 +718,7 @@ If you activate a rule for an asset, then Cumulocity asks you if you want to act
 
 To define a threshold rule do as follows:
 
-* In the asset navigator, navigate to asset or device
+* In the asset navigator, navigate to the groups or device
 
 * Click on "Data explorer".
 
@@ -751,7 +737,7 @@ To define a threshold rule do as follows:
 
 * Under "Create Alarm" you can optionally edit the alarm type and the alarm text.
 
-* Under "Activate for target asset or devices" you can select for which objects the rule should be activated.
+* Under "Activate for target group or devices" you can select for which objects the rule should be activated.
 
 * Press "CREATE"
 
@@ -767,9 +753,9 @@ On crossing defined yellow and red ranges, alarms are generated and cleared.
 
 The rules uses the following object parameter:
 
-* Object red range: Range when the system should create major alarms. These values can be edited in the Data Explorer for each data point.
+* Object red range: Range when the system should create CRITICAL alarms. These values can be edited in the Data Explorer for each data point.
 
-* Object yellow range: Range when the system should create minor alarms. These values can be edited in the Data Explorer for each data point.
+* Object yellow range: Range when the system should create MINOR alarms. These values can be edited in the Data Explorer for each data point.
 
 * Data point library red range: When there is no red range stored in the respective object, then data point library is searched for the configured data point entry and uses the related red range.
 
@@ -795,37 +781,37 @@ Detailed description of steps that this smart rule performs for each incoming me
 
 * Check, if the measurement includes data for the fragment and series (rule parameter).
 
-* Check, if the rule is activated for the source asset.
+* Check, if the rule is activated for the source object.
 
 * Collect the red and yellow range from either 
-a) the source asset or (if the source asset does not have these defined) 
+a) the source object or (if the source object does not have these defined) 
 b) the "data point library" (rule parameter). 
 If there are no red/yellow ranges defined and there is no KPI parameter set, then no alarms are generated. 
 Note: This “merge” is done on single values, e.g. if the data point library defines  all thresholds, then the device can then override just the yellow max value.
 
 * If the incoming value  if inside the yellow range:
 
-    * If there is an active alarm of given type for the asset:
+    * If there is an active alarm of given type for the object:
 
-        * Set severity to "Minor"
+        * Set severity to "MINOR"
 
     * Otherwise
 
-        * Create new "Minor" alarm with given parameters
+        * Create new "MINOR" alarm with given parameters
 
 * If the incoming value is inside the red range:
 
-    * If there is an active alarm of given type for the asset:
+    * If there is an active alarm of given type for the object:
 
-        * Set severity to "Major"
+        * Set severity to "CRITICAL"
 
     * Otherwise
 
-        * Create new "Major" alarm with given parameters
+        * Create new "CRITICAL" alarm with given parameters
 
 * If the measurement if outside of yellow and red range:
 
-    * If there is an active alarm of given type for the asset:
+    * If there is an active alarm of given type for the object:
 
         * Clear the alarm
 
@@ -835,7 +821,7 @@ When an alarm is created, an email is send.
 
 The rules uses the following rule parameters:
 
-### ![image alt text](/guides/users-guide/image_29.png)
+![image alt text](/guides/users-guide/image_29.png)
 
 * Alarm type: The type of the alarm that triggers the rule: For each newly created alarm of this type the rule is triggered.
 
@@ -857,7 +843,7 @@ Note that his rule is only available if your tenant has a configured SMS provide
 
 The rules uses the following rule parameters:
 
-### ![image alt text](/guides/users-guide/image_30.png)
+![image alt text](/guides/users-guide/image_30.png)
 
 * Alarm type: The type of the alarm that triggers the rule: For each newly created alarm of this type the rule is triggered.
 
@@ -953,7 +939,7 @@ The rules uses the following rule parameters:
 
 When the measurement value enters or leaves the defined range, a MAJOR alarm is generated or cleared, respectively.
 
-This rule is similar to the above threshold rule. However, in this rule the threshold values are provided explicitly. The other threshold rule above extracts the thresholds values from the asset or device or data point library
+This rule is similar to the above threshold rule. However, in this rule the threshold values are provided explicitly. The other threshold rule above extracts the thresholds values from the groups or device or data point library
 
 The rules uses the following rule parameters:![image alt text](/guides/users-guide/image_37.png)
 

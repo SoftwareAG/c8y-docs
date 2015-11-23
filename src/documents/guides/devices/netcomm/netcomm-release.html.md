@@ -113,3 +113,4 @@ For an alpha version of the Lua-based rapid development, visit https://bitbucket
 * Log rotation and log quota setting (through RDB parameter service.cumulocity.log.quota).
 * Remote log viewing of ipsec.log.
 * Log API for Lua.
+

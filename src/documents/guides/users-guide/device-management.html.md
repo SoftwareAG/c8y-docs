@@ -130,6 +130,7 @@ Device details are divided over a number of tabs. The standard tabs that may be 
 * [Permissions](#permissions)
 * [Tracking](#tracking)
 * [Service monitoring](#service-monitoring)
+* [Logs](#logs)
 * [Identity](#identity)
 
 ### <a name="info"></a>Info
@@ -241,6 +242,36 @@ Depending on the type of device and its integration into Cumulocity, you can als
 
 In addition to connection monitoring, Cumulocity features a separate service monitoring for machines. See "[Service monitoring](#monitoring-services)" for more information.
 
+###<a name="logs"></a>Logs
+
+With Cumulocity "Logs" feature, users can inspect the activity of their devices. One can also choose to view logs in a specific date range. This would be useful if users wants to have more control over their devices, since they can view when a change was made. 
+
+To *Request logs* of a certain device first click on "All devices" and then click on the name of the device. When the device has been selected a new tab will appear with different options (e.g. "Info", "Measurement", "Alarm").
+
+- Click on "Logs"
+
+![Device logs](/guides/users-guide/logs.png)
+
+- Select date range
+- Choose type of log
+  - *syslog*   - Used mainly for system management, security auditing and general information
+  - *ipseclog* - Users can check whether changes in security protocols have occurred 
+  - *dmsg* - Shows information about kernel and kernel modules
+  - *sragent* - simply an "Agent" that monitors everything that a user does
+- **Optionally** write filter by text. For example if you write "Users" only lines with the word "Users" in them will appear in the log
+- Select number of "Last lines to display" (e.g. Choosing 1000 will display the last 1000 lines)
+- Click *Request log*
+
+![Request log](/guides/users-guide/requestlog.png)
+
+After the log has been requested it will appear in the same window. The device number is also shown and if you click on it you will be redirected to the "Info" tab. Users can also see the selected date range for each log. 
+
+**To download** a "Log file request" first hover over the desired log and then click on the "Download" button.
+
+![View Logs](/guides/users-guide/viewlogs.png)
+
+**To delete** a log simply click on the cross button while hovering over the "Log file request". 
+
 ### <a name="identity"></a>Identity
 
 Finally, Cumulocity can associate devices and assets with multiple external identities. For example, devices often can be identified by the IMEI of their modem, by a microcontroller serial number as well as by an asset tag. This tab lists all the identities recorded for a particular device.
@@ -328,7 +359,7 @@ The "All" button shows all operations for a device, regardless of whether they h
 
 ## <a name="events-all"></a>Troubleshooting devices
 
-Events are low-level messages sent by devices that are usually used for application-specific processing. For example, a vending device sends its realtime sales in the form of events. If you need to troubleshoot a device at a more detailed level, visit the "Events" tab. Clicking on indiviudal events will reveal more information on the data contained in the event. Similar, you can see all events across all devices by selecting "Events" in the navigator.
+Events are low-level messages sent by devices that are usually used for application-specific processing. For example, a vending device sends its realtime sales in the form of events. If you need to troubleshoot a device at a more detailed level, visit the "Events" tab. Clicking on individual events will reveal more information on the data contained in the event. Similar, you can see all events across all devices by selecting "Events" in the navigator.
 
 Since devices may sent larger amounts of event data, you can filter the data shown here by date. You can also click the "realtime" checkbox to see events coming in from the devices in realtime. 
 

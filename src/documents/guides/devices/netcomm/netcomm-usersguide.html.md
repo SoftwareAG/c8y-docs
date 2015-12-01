@@ -143,14 +143,12 @@ Navigate to the "Measurements" tab to view the visualized result, or create your
 
 You can create events and alarms from digital inputs. These can be configured using the router user interface or through Device Shell. The format is
 
-	set service.cumulocity.gpio.<port>.notify = <off | event | alarm | alarm-inverted>
-	set service.cumulocity.gpio.<port>.debounce.interval = <SECONDS>
-	set service.cumulocity.gpio.<port>.text = <ALARM_TEXT>
-	set service.cumulocity.gpio.<port>.severity = <severity>
+	set service.cumulocity.gpio.<port>.notify=<off | event | alarm | alarm-inverted>
+	set service.cumulocity.gpio.<port>.debounce.interval=<SECONDS>
+	set service.cumulocity.gpio.<port>.text=<ALARM_TEXT>
+	set service.cumulocity.gpio.<port>.severity=<severity>
 
-Port `<port>` is range 1..3 for NetComm wireless router NTC 6200.
-
-Possible notifications are:
+For the NTC-6200, replace "&lt;port&gt;" with 1, 2 or 3. The values of the notify parameter are:
 
 * off: The digital input is ignored.
 * event: The value of the input is logged as event.

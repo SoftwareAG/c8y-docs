@@ -9,26 +9,24 @@ toc: enabled
 
 ## Overview
 
-With the Administration Application Cumulocity provides the ability for all account owners to easily manage their *Users*, *User groups* and *Applications*. User and Group permissions can be set and access to unique applications can be granted. 
+The Administration application provides the ability for all account owners to easily manage their *Users*, *User groups* and *Applications*. User and Group permissions can be set and access to applications can be granted and revoked. 
 
-The "Applications" tab gives the opportunity to configure *Own applications* or *Add simulators*. With *Business rules* one can add alarms that will activate only when certain event occurs or when certain amount of time has passed. Alarms can be mapped to different severities (e.g. Minor, Major, Critical).
+The "Applications" tab gives the opportunity to configure *applications* or *simulators*. With *Business rules* one can add scripts for the builtin real-time analytics engine. Additionally, alarms can be mapped to different severities (e.g. Minor, Major, Critical).
 
-Retention rules can be added, for example alarms or event can be set to expire after " X " amount of days. Large number of files can be uploaded on the cloud repository. Various devices and sensors can be tested via "Simulators".
-
-To view the "Home" tab click on "Home" located in the administration panel
+Retention rules can be added, for example alarms or event can be deleted after a number of days. Using the file repository, files can be uploaded on the cloud repository.
 
 ![Home](/guides/users-guide/home.png)
 
-In the "Home" section it is shown how much API requests, storage, devices and users were used from the administrator for "This month" and "Last month". Where API requests are queries to the cumulocity database. For example each time you create or edit a user an API request is created. Administrators can also see all subscribed applications.
+The "Home" page shows how much API requests, storage, devices and users were used for "This month" and "Last month". Where API requests are queries to the Cumulocity database. For example each time you create or edit a user an API request is created. Administrators can also see all subscribed applications.
 
-## Account Management
+## User Account Management
 
-In the Accounts tab users and user groups can be managed. The administrator have the ability to choose which user will have access to which application and what kind of permissions will users have to specific "Scope" of a device. If many users have the same permissions they can be added to a user group. User groups can be used to assign specific permissions 
+In the Accounts tab users and user groups can be managed. The administrator has the ability to choose which user will have access to which application and what kind of permissions the users have to specific "Scope" of a device. If many users have the same permissions they can be added to a user group. User groups can be used to assign specific permissions 
 to a particular device for all the users in the group. 
 
 ### Manage Users
 
-In order to manage users in your account click on Users in your Administration panel.By default after the account creation there are 2 Users automatically added. The first one is the admin user that is configured in the administration setup after the account creation and the second one is "sysadmin".The admin user cannot be removed, he can only be edited.
+In order to manage users in your tenant click on Users in your Administration panel.By default after the account creation there are 2 Users automatically added. The first one is the admin user that is configured in the administration setup after the account creation and the second one is "sysadmin".The admin user cannot be removed, he can only be edited.
 
 ![Click Users](/guides/users-guide/Users.png)
 
@@ -220,7 +218,7 @@ To Remove a group simply hover over the group name and click on the cross button
 
 ## Applications Management
 
-With cumulocity all users have the ability to easily handle their applications. They can create, modify and remove their own Smartapps and Applications. 
+With Cumulocity all users have the ability to easily handle their applications. They can create, modify and remove their own Smartapps and Applications. 
 
 When the application has been created, if you hover over it a *Clone*, *Open* and [Cross](#remove-app) buttons will be revealed.The "Clone" function duplicates the application, while The "Open" button simply opens the application. After the "Clone" button is pressed a pop-up window will appear in which unique "Application name" and "Application path" have to be given. 
 

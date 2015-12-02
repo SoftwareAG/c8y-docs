@@ -2,79 +2,12 @@
 order: 30
 title: Administration
 layout: default
+toc: enabled
 ---
 
-#Administration Panel Guide
-## Table of Content
-1. [Overview](#overview) 
-2. [Accounts Management](#accounts)
+# Administration Panel Guide
 
-	* [Manage Users](#manage-users)
-		* [Add Users](#add-user)
-		* [User Permissions](#user-permissions)
-		* [Application access](#application-access)
-		* [Assign User Groups](#assign-group)
-		* [Change User Password](#change-pass)
-		* [Edit User Details](#edit-user)
-		* [Deactivate or Remove Users](#dod-user)
-	* [Manage User Groups](#manage-groups)
-
-		* [Create User Groups](#create-group)
-		* [Assign Roles](#assign-roles)
-		* [Group Permissions](#group-permissions)
-		* [Group Application Access](#app-access)     
-		* [Edit User Groups](#edit-group)
-		* [Remove User Group](#remove-group)
-
-3. [Applications Management](#manage-apps)
-
-	* [Create Smartapps](#create-smartapp)
-	* [Create Applications](#create-app)
-
-		* [Hosted](#hosted)
-		* [Repository](#repo)
-		* [External](#external)
-	* [Edit or remove applications](#edit-app)
-		* [Plugins](#plugins)
-		* [Archives](#archives)
-	* [Remove applications](#remove-app)
-
-4. [Simulator](#simulator)
-
-	* [Add Simulator](#add-simulator)
-
-		* [Sensors](#sensors)
-		* [Edit or Remove simulator](#eor-simulator)     
-
-5. [Dealing with Business rules](#business-rules)
-
-	* [Event processing](#event-processing)
-
-	* [Create New modules](#new-modules)
-	* [Module management](#modules-management)
-
-	* [Alarm mapping](#alarm-mapping)
-
-		* [Add alarm mapping](#add-alarmmapping)
-		* [Change or Remove alarm severity](#eor-alarmsev)
-
-5. [Settings Configuration](#settings)
-
-	* [Change Password Settings](#pass-settings)
-
-	* [Access control](#access-control)
-
-6. [Management](#management)
-
-	* [Retention rules](#ret-rules)
-
-	* [Manage Repository](#manage-repo)
-
-		* [Upload files](#upload-files)
-		* [Download or delete files](dd-files)
-
-
-## <a name="overview"></a>Overview
+## Overview
 
 With the Administration Panel Cumulocity provides the ability for all account owners to easily manage their *Users*, *User groups* and *Applications*. User and Group permissions can be set and access to unique applications can be granted. 
 
@@ -88,12 +21,12 @@ To view the "Home" tab click on "Home" located in the administration panel
 
 In the "Home" section it is shown how much API requests, storage, devices and users were used from the administrator for "This month" and "Last month". Where API requests are queries to the cumulocity database. For example each time you create or edit a user an API request is created. Administrators can also see all subscribed applications.
 
-##<a name="accounts"></a>Account Management
+## Account Management
 
 In the Accounts tab users and user groups can be managed. The administrator have the ability to choose which user will have access to which application and what kind of permissions will users have to specific "Scope" of a device. If many users have the same permissions they can be added to a user group. User groups can be used to assign specific permissions 
 to a particular device for all the users in the group. 
 
-###<a name="manage-users"></a>Manage Users
+### Manage Users
 
 In order to manage users in your account click on Users in your Administration panel.By default after the account creation there are 2 Users automatically added. The first one is the admin user that is configured in the administration setup after the account creation and the second one is "sysadmin".The admin user cannot be removed, he can only be edited.
 
@@ -101,7 +34,7 @@ In order to manage users in your account click on Users in your Administration p
 
 Note: If you do not see "Users" click on "ACCOUNTS" first and then "Users".
 
-####<a name="add-user"></a>Add user
+#### <a name="add-user"></a> Add user
 
 To add additional users click on **Add user**
 
@@ -120,7 +53,7 @@ To add additional users click on **Add user**
 
 Fields without an asterisk" * "(e.g. "First name", "Last name") are not mandatory.
 
-####<a name="user-permissions"></a>User Permissions
+#### <a name="user-permissions"></a> User Permissions
 
 Different *User Permissions* can be given to each User for a specific device.  Permissions can be given or revoked during the [creation](#add-user) or [editing](#edit-user) of a user. 
 When a device is chosen one can give permissions in a specific scope(e.g. *Alarm*, *Audit*, *Event*).
@@ -140,7 +73,7 @@ To grant **User Permissions**:
 
 **Note**: "Admin" does not have "Read" permissions, to grant all permissions to a user choose the asterisk " * " option from the drop down menu. 
 
-####<a name="scopes"></a>Scopes
+#### <a name="scopes"></a> Scopes
 
 Cumulocity provides users the ability to grant permissions in a specific scope of an object.
 
@@ -153,7 +86,7 @@ Available scopes:
 - Measurement - Users can manage measurement data
 - Operation - Allows users to do operations on a certain device. For example users can turn on or off a certain LED. "Admin" role will allow the user to modify or delete operations.
 
-####<a name="application-access"></a>Application Access
+#### <a name="application-access"></a> Application Access
 
 During user [creation](#add-user), access to different *Marketplace Applications* can be granted to the user.That way you will control which users have access to which applications. 
 
@@ -161,7 +94,7 @@ To grant access to specific applications, click on the checkbox of the desired a
 
 **Note**: More than one "Marketplace Applications" can be selected at the same time.
 
-####<a name="assign-group"></a>Assigning a user to a group
+#### <a name="assign-group"> Assigning a user to a group
 
 Groups membership can be given amid [adding](#add-user) or [editing](#edit-user) of a user.
 
@@ -173,24 +106,24 @@ To assign a user to **User groups**:
 
 **Note**: More than one "User Groups" can be selected at the same time.
 
-####<a name="change-pass"></a>To change the password of a user:
+#### To change the password of a user:
 	
 - Locate the user in the Users section and click on his "Username".
 - Choose "Change password"
 - Enter and confirm the new password.
 - Click on the "Save" button.
 
-####<a name="edit-user"></a>Edit Users
+#### Edit Users
 
 All of the user details except "Username" can be modified including "User Groups" and "Application accesses". In the "Users" page clicking on the "Username" will open the editing window. When the changing of the user details is completed click on the "Save" button to finish with the edit.
 
-####<a name="dod-user"></a>Deactivate or Delete Users
+#### Deactivate or Delete Users
 
 Hovering over a user reveals the deactivate and delete buttons on the right side. The "Deactivate" button simply disables the user, while the cross button permanently deletes the user.
 
 ![Delete User](/guides/users-guide/deleteuser.png)
 
-###<a name="manage-groups"></a>Manage Groups
+### Manage Groups
 
 Cumulocity allows you to easily manage Users which have the same permissions and roles via User Groups. Application Access can also be set.  
 
@@ -209,7 +142,7 @@ By default after the account creation there are 4 groups that are automatically 
 
 All of the groups can be modified or deleted. Additional groups can also be added.
 
-####<a name="create-group"></a>Create User groups
+#### Create User groups
 
 To **add new group**:
 
@@ -227,7 +160,7 @@ To **add new group**:
 
 ![Create user group 2](/guides/users-guide/createusergroup2.png)
 
-####<a name="assign-roles"></a>Assign Group Roles
+#### <a name="assign roles"></a> Assign Group Roles
 
 Distinct roles can be chosen for each 
 **Type** of control interface:
@@ -247,7 +180,7 @@ Hint: If you wish to select or clear **ALL** roles an easier approach would be t
 
 ![All roles](/guides/users-guide/allroles.png)
 
-####<a name="group-permissions"></a>Group Permissions
+#### <a name="group-permissions"> Group Permissions
 
 When multiple users need the same permissions or restriction they can be added to a group for easier handling. Group Permissions are similar to ["User Permissions"](#users-permissions). Permissions can be given during [creation](#create-group) or [editing](#edit-group) of a group. When a device is chosen one can give permissions in a specific scope(e.g. "Alarm", "Audit", "Event").
 
@@ -266,7 +199,7 @@ To grant **User Permissions**:
 
 **Note**: Admin does not have Read permissions, to grant all permissions to a User choose the asterisk " * " option from the drop down menu.
 
-####<a name="app-access"></a>Application access
+#### <a name="app-access"> Application access
 
 Identical to [User Application access](#application-access) Group access to a particular application can be granted during the [creation of a group](#create-group).
 
@@ -274,18 +207,18 @@ To grant access to specific applications, click on the checkbox of the desired a
 
 **Note**: More than one Marketplace Applications can be selected at the same time.
 
-####<a name="edit-group"></a>Edit Groups
+#### Edit Groups
 
 All of User groups details can be edited. To edit a group click on the name of the group. After you have finished modifying the group details click on the "Save" button.
 
-####<a name="remove-group"></a>Remove Groups
+#### Remove Groups
 
 To Remove a group simply hover over the group name and click on the cross button. A confirmation pop-up window will appear, click "OK" and the group will be deleted.
 
 ![Remove Group](/guides/users-guide/removegroup.png)
 
 
-##<a name="manage-apps"></a>Applications Management
+## Applications Management
 
 With cumulocity all users have the ability to easily handle their applications. They can create, modify and remove their own Smartapps and Applications. 
 
@@ -298,7 +231,7 @@ first navigate to *Own applications* in the Administration panel.
 
 **Note**: If you do not see "Own Applications" click on "Applications" first and then "Own Applications".
 
-###<a name="create-smartapp"></a>Create smartapp
+### Create smartapp
 
 To add smartapp:
 
@@ -310,7 +243,7 @@ To add smartapp:
 - Add *Application path*
 - Click on the *Create* button
 
-###<a name="create	-app"></a>Create Application
+### Create Application
 
 To create application:
 
@@ -326,7 +259,7 @@ To create application:
 
 Depending on what "Type" was chosen, different details will have to be given.
 
-####<a name="hosted"></a>Hosted 
+#### <a name="hosted"></a> Hosted 
 
 Hosted applications allow administrators to operate a software application entirely from the cloud. They have considerable benefits over locally installed applications.
 
@@ -336,7 +269,7 @@ If Hosted Type was selected 2 additional fields will be shown. To finish with th
 - select the *Archive* which contains the application from your computer. 
 - click on *Save* to finish the process.
 
-####<a name="repo"></a>Repository
+#### <a name="repo"></a> Repository
 
 If the Repository "Type" was chosen 4 additional fields will be shown. Only fields with asterisk (" * ") are necessary to be filled.
 - Add *Path*
@@ -345,17 +278,17 @@ If the Repository "Type" was chosen 4 additional fields will be shown. Only fiel
 - Enter *Password* (optional)
 - When ready click on *Save*
 
-####<a name="external"></a>External
+#### <a name="external"></a> External
 
 When External Type is selected only 1 additional field will be shown. Give the *External URL* and click on the *Save* button to create the application.
 
-###<a name="edit-app"></a>Edit Applications
+### Edit Applications
 
 To edit applications simply click on their name. Depending on the type of the application (e.g. Hosted, External) different fields can be modified. 
 
 **Note**: "ID", "Application key" and "Path" fields cannot be changed! 
 
-####<a name="plugins"></a>Plugins
+#### Plugins
 
 If the application's type is "Hosted" or "Repository" one can also subscribe to different *Plugins*.
 
@@ -382,7 +315,7 @@ To **unsubscribe** plugins:
  
 ![Unsubscribe](/guides/users-guide/unsubscribe.png)
 
-####<a name="archives"></a>Archives
+#### Archives
 
 If the type of the application is "Hosted" you can also *Upload archive* and choose which archive will become active.
 
@@ -398,21 +331,21 @@ Archives can be downloaded, *Set active* or removed if necessary. To download ar
 
 **Note**: Active archives cannot be removed!
 
-###<a name="remove-app"></a>Remove applications
+### Remove applications
 
 To *Remove* applications simply hover over the application name and click the cross button. A confirmation pop-up window will appear, click "OK" and the group will be deleted.
 
 ![Remove application](/guides/users-guide/removeapp.png)
 
 
-##<a name="simulator"></a>Simulator
+## Simulator
 
 Cumulocity provides the ability to test specific devices and sensors via "Simulators". This way users can test their applications during development. To view the simulator section click on
 "Simulator" under the "Applications" tab in the administration panel. 
 
 ![Simulator](/guides/users-guide/simulator.png)
 
-###<a name="add-simulator"></a>Add Simulator
+### Add Simulator
 
 To add new simulator click on "Add simulator
 
@@ -424,7 +357,7 @@ To add new simulator click on "Add simulator
 The second field is "Interval"(in seconds).
 - Click "Save"
 
-####<a name="sensors"></a>Sensors
+#### <a name="sensors"></a> Sensors
 
 Here we are going to explain all available sensors. They are the following:
 
@@ -436,7 +369,7 @@ Here we are going to explain all available sensors. They are the following:
   
 **Note**: For more info you can visit the [Sensor library](/guides/reference/sensor-library). 
 
-###<a name="sor-simulator"></a>Start, Pause or Remove Simulator
+### Start, Pause or Remove Simulator
 
 Simulators can have only 2 states(Running and Paused).To **start** a simulator first hover over his name, then click on the "Run device" button.
 
@@ -450,11 +383,11 @@ To **delete** simulator hover over the simulator name, press the cross button an
 
 **Note**: Simulators cannot be edited, instead you will have to add a new one.
 
-##<a name="business-rules"></a>Business Rules
+## Business Rules
 
 *Business Rules* allow the administrator to set up events and alarms. Via "Event processing" *New modules* can be created to add alarms that will activate when a certain event occurs or after certain amount of time have passed. *Alarm mapping* will allow administrators to choose between alarm severities. By using severities you can monitor problems with your assets.
 
-###<a name="event-processing"></a>Event processing
+### Event processing
 
 To see your current modules or to create new one click on *Event processing* located under "Business Rules" tab.
 
@@ -462,7 +395,7 @@ To see your current modules or to create new one click on *Event processing* loc
  
 **Note**: If you do not see "Event processing" click on "Business Rules".
 
-####<a name="new-modules"></a>Create New modules
+#### Create New modules
 
 Modules can be used to create alarms a
 when certain event conditions have been met (e.g. Temperature threshold has been exceeded). Later even [alarm severities](#alarm-mapping) for the events can be set.
@@ -483,7 +416,7 @@ After the *Body* has been completed click on the "Save" button.
 
 ![Create New module](/guides/users-guide/createnewmodule.png)
 
-####<a name="modules-management"></a>Module Management
+#### Module Management
 
 **To modify** your module simply click on the module's name
 
@@ -493,7 +426,7 @@ After the *Body* has been completed click on the "Save" button.
 
 **Note**: Instead of deleting the module it can be disabled by setting the "Status" in the edit menu to "Not deployed". Click on the "Save" button when ready.
 
-###<a name="alarm-mapping"></a>Alarm mapping
+### Alarm mapping
 
 To deal with "Alarm mapping" first click on "Alarm mapping" in the administration panel.
 
@@ -501,7 +434,7 @@ To deal with "Alarm mapping" first click on "Alarm mapping" in the administratio
 
 Alarm mapping helps administrators add severity level to  each alarm. With severity levels in use they will know when something requires their immediate attention or not.
 
-####<a name="add-alarmmapping"></a>Add alarm mapping
+#### Add alarm mapping
 
 There are 5 types of **alarm severities**:
 
@@ -520,7 +453,7 @@ To select alarm severity for a certain alarm click on *Add alarm mapping*
 - Give "New description"(optional)
 - Click on "Save"
 
-####<a name="eor-alarmsev"></a>Change or Remove alarm severities
+#### Change or Remove alarm severities
 
 To **change alarm severities**:
 
@@ -533,7 +466,7 @@ To **delete alarm severities** hover over the alarm name and click on the cross 
 ![Remove alarm mapping](/guides/users-guide/removealarmmapping.png)
 
 
-##<a name="settings"></a>Settings
+## Settings
 
 The "Settings" tab grants administrators the following options:
 
@@ -542,7 +475,7 @@ The "Settings" tab grants administrators the following options:
 - [Grant *Access control*](#access-control)
 - ["Enable" or "Disable" dashboard via e-mail](#server-agents)
 
-###<a name="pass-settings"></a>Change Password Settings
+### Change Password Settings
 
 To change password settings click on Password under "Settings" tab
 
@@ -558,13 +491,13 @@ One can also choose to enable "Enforce that all password are "strong" " by click
 
 After the modification is complete click on "Save".
 
-###<a name="access-control"></a>Access control
+### Access control
 
 Via the "Access Control" tab administrators can enable cross-origin resource sharing or "CORS" by writing the address of the desired domain. "CORS" allows restricted resources to be requested from another domain.
 
 **Note**: Beware not to lock yourself out of the platform by writing invalid address.
 
-###<a name="server-agents"></a>Server-side agents
+### Server-side agents
 
 In the *Server-side agents* tab "Send dashboard via e-mail" smart rule can be "Enabled" or "Disabled".
 
@@ -576,11 +509,11 @@ To change "Server-side agents settings" click on "Server-side agents in the admi
 
 Afterwards click "Save".
 
-##<a name="management"></a>Management
+## Management
 
 Cumulocity provides administrators with the ability to upload their files on the cloud using the *Files repository* and to add and manage their own *Retention rules*.
 
-###<a name="ret-rules"></a>Retention rules
+### Retention rules
 
 To add, modify or delete rules click on "Retention rules" in the administration tab
 
@@ -590,7 +523,7 @@ To add, modify or delete rules click on "Retention rules" in the administration 
 
 To add additional "Retention rules" click on "Add rule"
 
-![Add rule](/guides/users-guide/addrule.png)
+![Add rule](/guides/users-guide/addrules.png)
 
 - Select *Data type*
 - Enter *Fragment type*
@@ -605,7 +538,7 @@ To add additional "Retention rules" click on "Add rule"
 
 To delete a rule click on the cross button and then press " OK " after the pop-up window appears.
 
-###<a name="file-repo"></a>Manage Repository
+### Manage Repository
 
 The *Files repository* allows administrators to upload and store files on the cloud. 
 
@@ -613,7 +546,7 @@ To see files in the repository click on "Files repository" in the administration
 
 ![Files repository](/guides/users-guide/filesrepo.png)
 
-####<a name="upload-files"></a>Upload files
+#### Upload files
 
 There are 2 ways to **upload files** in the repository:
 
@@ -625,7 +558,7 @@ There are 2 ways to **upload files** in the repository:
 
 **Note**: Do not use the "Application archives" as repository. 
 
-####<a name="dd-files"></a>Download or Delete files
+#### Download or Delete files
 
 **To download** a file in the repository hover over the desired file and click on the Download button.
 

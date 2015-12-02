@@ -5,11 +5,11 @@ layout: default
 toc: enabled
 ---
 
-# Administration Panel Guide
+# Administration Guide
 
 ## Overview
 
-With the Administration Panel Cumulocity provides the ability for all account owners to easily manage their *Users*, *User groups* and *Applications*. User and Group permissions can be set and access to unique applications can be granted. 
+With the Administration Application Cumulocity provides the ability for all account owners to easily manage their *Users*, *User groups* and *Applications*. User and Group permissions can be set and access to unique applications can be granted. 
 
 The "Applications" tab gives the opportunity to configure *Own applications* or *Add simulators*. With *Business rules* one can add alarms that will activate only when certain event occurs or when certain amount of time has passed. Alarms can be mapped to different severities (e.g. Minor, Major, Critical).
 

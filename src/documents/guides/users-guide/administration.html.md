@@ -17,24 +17,23 @@ Retention rules can be added, for example alarms or event can be deleted after a
 
 ![Home](/guides/users-guide/home.png)
 
-The "Home" page shows how much API requests, storage, devices and users were used for "This month" and "Last month". Where API requests are queries to the Cumulocity database. For example each time you create or edit a user an API request is created. Administrators can also see all subscribed applications.
+The "Home" page shows all subscribed applications, also how many API requests, storage, devices and users were used for "This month" and "Last month". API requests are queries to the Cumulocity database. For example every time you create or edit a user an API request is created.
 
-## User Account Management
+## Managing accounts
 
-In the Accounts tab users and user groups can be managed. The administrator has the ability to choose which user will have access to which application and what kind of permissions the users have to specific "Scope" of a device. If many users have the same permissions they can be added to a user group. User groups can be used to assign specific permissions 
-to a particular device for all the users in the group. 
+In the Accounts tab users and user groups can be managed. Administrators have the ability to choose which user will have access to which application and what kind of permissions the users have to specific "Scope" of a device. If many users have the same permissions they can be added to a user group. User groups can be used to assign specific permissions to a particular device for all the users in the group. 
 
-### Manage Users
+### Managing users
 
-In order to manage users in your tenant click on Users in your Administration panel.By default after the account creation there are 2 Users automatically added. The first one is the admin user that is configured in the administration setup after the account creation and the second one is "sysadmin".The admin user cannot be removed, he can only be edited.
+In order to manage users in your tenant click on Users in your Administration menu. By default after tenant creation there are 2 Users automatically added. The first one is the admin user that is configured in the administration setup and the second one is "sysadmin". The admin user cannot be removed, he can only be edited. 
 
 ![Click Users](/guides/users-guide/Users.png)
 
-Note: If you do not see "Users" click on "ACCOUNTS" first and then "Users".
+> Note that if you do not see "Users" click on "Accounts" first and then "Users".
 
-#### <a name="add-user"></a> Add user
+### Adding users
 
-To add additional users click on **Add user**
+To add additional users click on "Add user"
 
 ![Add User](/guides/users-guide/addusers.png)
 
@@ -42,24 +41,25 @@ To add additional users click on **Add user**
 - Choose if the User will be *Enabled* or *Disabled*
 - Enter *Password* and *Confirm password*
 - If you choose to click on *Password reset* the "User" will have to reset the password on his next login
-- [Assign Group membership](#assign-group) 
-- [Give User Permissions](#user-permissions)
-- [Grant Application Access](#application-access)
+- [Assign Group membership](#assigning-users-to-a-group) 
+- [Give User Permissions](#handling-user-permissions)
+- [Grant Application Access](#granting-application-access)
 - Click on the *Save* button
 	
 ![Add User](/guides/users-guide/adduserpage.png)
 
 Fields without an asterisk" * "(e.g. "First name", "Last name") are not mandatory.
 
-#### <a name="user-permissions"></a> User Permissions
+### Handling user permissions
 
-Different *User Permissions* can be given to each User for a specific device.  Permissions can be given or revoked during the [creation](#add-user) or [editing](#edit-user) of a user. 
-When a device is chosen one can give permissions in a specific scope(e.g. *Alarm*, *Audit*, *Event*).
+Different *User Permissions* can be granted to every User for a specific device. Permissions can be granted or revoked during the [creation](#adding-users) or [editing](#editing-users) of a user.
 
-To grant **User Permissions**:
+When a device is selected one can give permissions in a specific scope(e.g. *Alarm*, *Audit*, *Event*).
+
+To grant "User Permissions":
 
 - Choose *Managed Object* by writing the id or the name of the desired device
-- Select [*Scope*](#scopes) of permission for a particular object 
+- Select [*Scope*](#dealing-with-scopes) of permission for a particular object 
 - Write the *Type* of the Permission(e.g. c8y-software)
 - Select *Permission*
 - Click on the *Add* button
@@ -67,11 +67,11 @@ To grant **User Permissions**:
 
 ![User Permissions](/guides/users-guide/userpermissions.png)
 
-**Note**: If you wish to select all of the scopes click on the asterisk " * " in the drop down menu.
+> Note that to select all of the scopes click on the asterisk " * " in the drop down menu.
 
-**Note**: "Admin" does not have "Read" permissions, to grant all permissions to a user choose the asterisk " * " option from the drop down menu. 
+> Please also note that "Admin" does not have "Read" permissions, to grant all permissions to a user choose the asterisk " * " option from the drop down menu. 
 
-#### <a name="scopes"></a> Scopes
+### Dealing with scopes
 
 Cumulocity provides users the ability to grant permissions in a specific scope of an object.
 
@@ -82,56 +82,54 @@ Available scopes:
 - Event - Users can create, update and delete "Events"
 - Managed_Object - Grants users with view permission
 - Measurement - Users can manage measurement data
-- Operation - Allows users to do operations on a certain device. For example users can turn on or off a certain LED. "Admin" role will allow the user to modify or delete operations.
+- Operation - Allows users to do operations on a certain device. For example users can turn on or off a certain LED. Note that "Admin" role will allow the user to modify or delete operations
 
-#### <a name="application-access"></a> Application Access
+### Granting application access
 
-During user [creation](#add-user), access to different *Marketplace Applications* can be granted to the user.That way you will control which users have access to which applications. 
+During user [creation](#adding-users), access to different *Marketplace Applications* can be granted to the user. That way you will control which users have access to which applications. 
 
 To grant access to specific applications, click on the checkbox of the desired application. When the selection is completed click on the "Save" button.
 
-**Note**: More than one "Marketplace Applications" can be selected at the same time.
+> Note that more than one "Marketplace Applications" can be selected at the same time.
 
-#### <a name="assign-group"> Assigning a user to a group
+### Assigning users to a group
 
-Groups membership can be given amid [adding](#add-user) or [editing](#edit-user) of a user.
+Groups membership can be given amid [adding](#adding-users) or [editing](#editing-users) of a user.
 
-To assign a user to **User groups**:
+To assign a user to "User groups":
 
--  Locate the user in the users section and click on his "Username".
-- In *User Groups* section choose the desired group by clicking on the checkbox.
-- Click on the "Save" button.
+-  Locate the user in the users section and click on his "Username"
+- In *User Groups* section choose the desired group by clicking on the checkbox
+- Click on the "Save" button
 
-**Note**: More than one "User Groups" can be selected at the same time.
+> Note that more than one "User Groups" can be selected at the same time.
 
-#### To change the password of a user:
+### Changing user password
 	
-- Locate the user in the Users section and click on his "Username".
+- Locate the user in the Users section and click on his "Username"
 - Choose "Change password"
-- Enter and confirm the new password.
-- Click on the "Save" button.
+- Enter and confirm the new password
+- Click on the "Save" button
 
-#### Edit Users
+### Editing users
 
-All of the user details except "Username" can be modified including "User Groups" and "Application accesses". In the "Users" page clicking on the "Username" will open the editing window. When the changing of the user details is completed click on the "Save" button to finish with the edit.
+All of the user details except "Username" can be modified including "User Groups" and "Application accesses". In the "Users" page clicking on the "Username" will open the editing window. When the change is complete, click on the "Save" button to finish with the edit.
 
-#### Deactivate or Delete Users
+### Deactivating or deleting users
 
 Hovering over a user reveals the deactivate and delete buttons on the right side. The "Deactivate" button simply disables the user, while the cross button permanently deletes the user.
 
 ![Delete User](/guides/users-guide/deleteuser.png)
 
-### Manage Groups
+### Managing user groups
 
-Cumulocity allows you to easily manage Users which have the same permissions and roles via User Groups. Application Access can also be set.  
-
-If you wish to manage *User groups* click on "User groups" under the *Accounts* tab.
+Cumulocity allows you to easily manage Users which have the same permissions and roles via User Groups. Application Access can also be set.
 
 ![User groups](/guides/users-guide/usergroups.png)
 
-**Note**: If you do not see "User groups" click on "ACCOUNTS" first and then "User groups".
+> Note that If you do not see "User groups" click on "Accounts" first and then "User groups".
 
-By default after the account creation there are 4 groups that are automatically created:
+By default after tenant creation there are 4 groups that are automatically created:
 
 - *Business*
 - *Admins*
@@ -140,28 +138,28 @@ By default after the account creation there are 4 groups that are automatically 
 
 All of the groups can be modified or deleted. Additional groups can also be added.
 
-#### Create User groups
+### Creating user groups
 
-To **add new group**:
+To add additional groups:
 
 - click on *Create user group*
 
 ![Create user group](/guides/users-guide/creategroup.png)
 
 - Enter *Name* of the group
-- [Assign *Roles*](#assign-roles)
-- [Give *Group Permissions*](#group-permissions)
-- [Grant "Application access"](#app-access)
+- [Assign *Roles*](#assigning-group-roles)
+- [Give *Group Permissions*](#dealing-with-group-permissions)
+- [Grant "Application access"](#granting-group-application-access)
 - Click on the *Save* button
 
 ![Create user group 1](/guides/users-guide/createusergroup1.png)
 
 ![Create user group 2](/guides/users-guide/createusergroup2.png)
 
-#### <a name="assign roles"></a> Assign Group Roles
+### Assigning group roles
 
 Distinct roles can be chosen for each 
-**Type** of control interface:
+type of control interface:
 
 - *Read*
 - *Admin*
@@ -169,7 +167,7 @@ Distinct roles can be chosen for each
 
 "Read" roles allows "READ" operation.*Admin* role allows "CREATE, "UPDATE" and "DELETE" operations over given functionality area. To assign roles click on the checkbox under the desired role.
 
-Hint: If you wish to select or clear **ALL** roles an easier approach would be to click on the respective button for the desired effect. The buttons are located under "ROLES".
+> Hint: If you wish to select or clear ALL roles an easier approach would be to click on the respective button for the desired effect. The buttons are located under "ROLES".
 
 - *Clear all* - Clears all of the checked roles.
 - *Select all* - Selects ALL of the roles.
@@ -178,14 +176,14 @@ Hint: If you wish to select or clear **ALL** roles an easier approach would be t
 
 ![All roles](/guides/users-guide/allroles.png)
 
-#### <a name="group-permissions"> Group Permissions
+### Dealing with group permissions
 
-When multiple users need the same permissions or restriction they can be added to a group for easier handling. Group Permissions are similar to ["User Permissions"](#users-permissions). Permissions can be given during [creation](#create-group) or [editing](#edit-group) of a group. When a device is chosen one can give permissions in a specific scope(e.g. "Alarm", "Audit", "Event").
+When multiple users need the same permissions or restrictions they can be added to a group for easier handling. Group Permissions are similar to ["User Permissions"](#users-permissions). Permissions can be given during [creation](#creating-user-groups) or [editing](#editing-groups) of a group. When a device is selected one can give permissions in a specific scope(e.g. "Alarm", "Audit", "Event").
 
-To grant **User Permissions**:
+To grant "User Permissions":
 
 - Choose *Managed Object* by writing " ID " or " Name " of the desired device
-- [*Scope*](#scopes) of permission can be selected for a specific object.
+- [*Scope*](#dealing-with-scopes) of permission can be selected for a specific object.
 - Write the *Type* of the Permission(e.g. c8y-software)
 - Select *Permission*("READ", "ADMIN", " * ")
 - Click on the *Add* button
@@ -193,43 +191,42 @@ To grant **User Permissions**:
 
 ![Group Permissions](/guides/users-guide/grouppermissions.png)
 
-**Note**: If you wish to select all of the Scopes click on the asterisk " * " in the drop down menu.
+> Note that to select all of the Scopes click on the asterisk " * " in the drop down menu.
 
-**Note**: Admin does not have Read permissions, to grant all permissions to a User choose the asterisk " * " option from the drop down menu.
+> Please note that admin does not have Read permissions, to grant all permissions to a User choose the asterisk " * " option from the drop down menu.
 
-#### <a name="app-access"> Application access
+### Granting application access
 
-Identical to [User Application access](#application-access) Group access to a particular application can be granted during the [creation of a group](#create-group).
+Identical to [User Application access](#granting-application-access) Group access to a particular application can be granted during the [creation of a group](#creating-user-groups).
 
 To grant access to specific applications, click on the checkbox of the desired application. When the selection is completed click on the "Save" button.
 
-**Note**: More than one Marketplace Applications can be selected at the same time.
+> Note that more than one Marketplace Applications can be selected at the same time.
 
-#### Edit Groups
+### Editing groups
 
 All of User groups details can be edited. To edit a group click on the name of the group. After you have finished modifying the group details click on the "Save" button.
 
-#### Remove Groups
+### Removing groups
 
-To Remove a group simply hover over the group name and click on the cross button. A confirmation pop-up window will appear, click "OK" and the group will be deleted.
+To remove a group simply hover over the group name and click on the cross button. A confirmation pop-up window will appear, click "OK" and the group will be deleted.
 
 ![Remove Group](/guides/users-guide/removegroup.png)
 
 
-## Applications Management
+## Managing applications
 
-With Cumulocity all users have the ability to easily handle their applications. They can create, modify and remove their own Smartapps and Applications. 
+With Cumulocity all tenants have the ability to easily handle their applications. They can create, modify and remove their own Smartapps and Applications. 
 
-When the application has been created, if you hover over it a *Clone*, *Open* and [Cross](#remove-app) buttons will be revealed.The "Clone" function duplicates the application, while The "Open" button simply opens the application. After the "Clone" button is pressed a pop-up window will appear in which unique "Application name" and "Application path" have to be given. 
+When the application has been created, if you hover over it a *Clone*, *Open* and [Cross](#removing-applications) buttons will be revealed. The "Clone" function duplicates the application, while The "Open" button simply opens the application. After the "Clone" button is pressed a pop-up window will appear in which unique "Application name" and "Application path" have to be entered. 
 
-If you wish to create *Own Application*
-first navigate to *Own applications* in the Administration panel.
+To create applications first navigate to *Own applications* in the Administration menu.
 
 ![Own Applications](/guides/users-guide/ownapplications.png) 
 
-**Note**: If you do not see "Own Applications" click on "Applications" first and then "Own Applications".
+> Note that if you do not see "Own Applications" first expand "Applications".
 
-### Create smartapp
+### Creating smartapp
 
 To add smartapp:
 
@@ -241,11 +238,11 @@ To add smartapp:
 - Add *Application path*
 - Click on the *Create* button
 
-### Create Application
+### Creating applications
 
-To create application:
+To create an application:
 
-- Click on *Create application* located on the right side of "[Create smartapp](#create-smartapp)"
+- Click on *Create application* located on the right side of "[Create smartapp](#creating-smartapp)"
 - Enter unique name otherwise an error will occur
 - Write the *Application key*
 - Choose *Type* of the application
@@ -255,9 +252,9 @@ To create application:
 
 ![Create app](/guides/users-guide/createapp.png)
 
-Depending on what "Type" was chosen, different details will have to be given.
+Depending on what "Type" was selected, different details will have to be given.
 
-#### <a name="hosted"></a> Hosted 
+### Working with hosted applications
 
 Hosted applications allow administrators to operate a software application entirely from the cloud. They have considerable benefits over locally installed applications.
 
@@ -267,26 +264,26 @@ If Hosted Type was selected 2 additional fields will be shown. To finish with th
 - select the *Archive* which contains the application from your computer. 
 - click on *Save* to finish the process.
 
-#### <a name="repo"></a> Repository
+### Working with repository applications
 
-If the Repository "Type" was chosen 4 additional fields will be shown. Only fields with asterisk (" * ") are necessary to be filled.
+If the Repository "Type" was selected 4 additional fields will be shown. Only fields with asterisk (" * ") are necessary to be filled.
 - Add *Path*
 - Add *Server URL*
 - Enter *Username* (optional)
 - Enter *Password* (optional)
 - When ready click on *Save*
 
-#### <a name="external"></a> External
+### Working with external applications
 
 When External Type is selected only 1 additional field will be shown. Give the *External URL* and click on the *Save* button to create the application.
 
-### Edit Applications
+### Editing applications
 
 To edit applications simply click on their name. Depending on the type of the application (e.g. Hosted, External) different fields can be modified. 
 
-**Note**: "ID", "Application key" and "Path" fields cannot be changed! 
+> Note that "ID", "Application key" and "Path" fields cannot be changed! 
 
-#### Plugins
+### Subscribing to plugins
 
 If the application's type is "Hosted" or "Repository" one can also subscribe to different *Plugins*.
 
@@ -299,13 +296,13 @@ To subscribe to "Plugins":
 
 ![plugins](/guides/users-guide/plugins.png)
 
-**Note**: For easier search, explicit category can be selected.
+> Note that for easier search, explicit category can be selected.
 
-**Note**: Instead of hovering, if you click on the Plugin a small description will be displayed.
+> Have in mind that instead of hovering, if you click on the plugin a small description will be displayed.
 
 After subscribing to plugins they will be displayed under the *Subscribed plugins* tab. 
 
-To **unsubscribe** plugins:
+To *unsubscribe* plugins:
 
 - Hover over the subscribed plugin
 - Click the *Unsubscribe* button
@@ -313,7 +310,7 @@ To **unsubscribe** plugins:
  
 ![Unsubscribe](/guides/users-guide/unsubscribe.png)
 
-#### Archives
+### Uploading archives
 
 If the type of the application is "Hosted" you can also *Upload archive* and choose which archive will become active.
 
@@ -325,37 +322,41 @@ To upload archives:
 
 ![Upload archive](/guides/users-guide/uploadarchive.png)
 
-Archives can be downloaded, *Set active* or removed if necessary. To download archives, hover over the desired archive and click the "Download" button. To set active archive click the "Set active" button or click the cross button to remove the archive.
+Archives can be downloaded, *Set active* or removed if necessary.
 
-**Note**: Active archives cannot be removed!
+To download archives, hover over the desired archive and click the "Download" button.
 
-### Remove applications
+To set active archive click the "Set active" button or click the cross button to remove the archive.
+
+> Note that active archives cannot be removed!
+
+### Removing applications
 
 To *Remove* applications simply hover over the application name and click the cross button. A confirmation pop-up window will appear, click "OK" and the group will be deleted.
 
 ![Remove application](/guides/users-guide/removeapp.png)
 
 
-## Simulator
+## Dealing with simulators
 
 Cumulocity provides the ability to test specific devices and sensors via "Simulators". This way users can test their applications during development. To view the simulator section click on
-"Simulator" under the "Applications" tab in the administration panel. 
+"Simulator" under the "Applications" tab in the administration menu. 
 
 ![Simulator](/guides/users-guide/simulator.png)
 
-### Add Simulator
+### Adding a simulator
 
-To add new simulator click on "Add simulator
+To add new simulator click on "Add simulator"
 
 ![Add simulator](/guides/users-guide/addsimulator.png)
 
-- Write a "Name"
+- Write simulator "Name"
 - Select number of instances for the simulator. For example choosing 2 instances, 2 simulated devices will be created. This can be used for example to test network code between the two devices
-- Clicking on the checkbox of the desired [Sensor](#sensors) will reveal 2 new fields. The first field is "Values". To give more than one sensor value you will have to separate them via semicolons(e.g. "16.7;34.25;12").
+- Clicking on the checkbox of the desired [Sensor](#working-with-sensors) will reveal 2 new fields. The first field is "Values". To give more than one sensor value you will have to separate them via semicolons(e.g. "16.7;34.25;12").
 The second field is "Interval"(in seconds).
 - Click "Save"
 
-#### <a name="sensors"></a> Sensors
+### Working with sensors
 
 Here we are going to explain all available sensors. They are the following:
 
@@ -365,82 +366,85 @@ Here we are going to explain all available sensors. They are the following:
 - *distanceSensor* - Measures distance between the sensor and the closest device.
 - *temperatureSensor* - The temperature sensor is used to measure and report temperature in degrees	Celsius(C)
   
-**Note**: For more info you can visit the [Sensor library](/guides/reference/sensor-library). 
+For more info you can visit the [Sensor library](/guides/reference/sensor-library). 
 
-### Start, Pause or Remove Simulator
+### Starting, pausing or removing simulators
 
-Simulators can have only 2 states(Running and Paused).To **start** a simulator first hover over his name, then click on the "Run device" button.
+Simulators can have only 2 states(Running and Paused). To start a simulator first hover over his name, then click on the "Run device" button.
 
 ![Start simulator](/guides/users-guide/startsimulator.png)
 
-To **stop** simulator simply press the "Stop device" button, while hovering over the desired simulator name.
+To stop simulators simply press the "Stop device" button while hovering over the desired simulator name.
 
 ![Stop simulator](/guides/users-guide/stopsimulator.png)
 
-To **delete** simulator hover over the simulator name, press the cross button and after the pop-up window appears press "OK".
+To delete a simulator hover over the simulator's name, press the cross button and after the pop-up window appears press "OK".
 
-**Note**: Simulators cannot be edited, instead you will have to add a new one.
+> Note that simulators cannot be edited, instead you will have to add a new one.
 
-## Business Rules
+## Handling business rules
 
 *Business Rules* allow the administrator to set up events and alarms. Via "Event processing" *New modules* can be created to add alarms that will activate when a certain event occurs or after certain amount of time have passed. *Alarm mapping* will allow administrators to choose between alarm severities. By using severities you can monitor problems with your assets.
 
-### Event processing
+### Dealing with event processing
 
-To see your current modules or to create new one click on *Event processing* located under "Business Rules" tab.
+To see your current modules or to create new one click on *Event processing*.
 
 ![Event processing](/guides/users-guide/eventprocessing.png)
  
-**Note**: If you do not see "Event processing" click on "Business Rules".
+> Note that if you do not see "Event processing" click on "Business Rules".
 
-#### Create New modules
+### Creating new modules
 
 Modules can be used to create alarms a
-when certain event conditions have been met (e.g. Temperature threshold has been exceeded). Later even [alarm severities](#alarm-mapping) for the events can be set.
+when certain event conditions have been met (e.g. Temperature threshold has been exceeded). Later even [alarm severities](#adding-alarm-mapping) for the events can be set.
 
-To **create new modules** first click on "New module".
+To create new modules first click on "New module".
 
 ![New module](/guides/users-guide/newmodule.png)
 
-Write "Name" of the module. Set status to *Deployed* or *Not deployed*.
+- Write "Name" of the module.
+- Set status to *Deployed* or *Not deployed*.
+- Body examples can be seen by clicking on the drop-down menu under "Examples". Select the desired event (e.g. "Create alarm when temperature below 0 degree") and click on "Append example"
+- After the *Body* has been completed click on the "Save" button.
 
-**Note**: Selecting "Deployed" status will set the module immediately to "Connected" after creation. 
-
-Body examples can be seen by clicking on the drop-down menu under "Examples". Select the desired event (e.g. "Create alarm when temperature below 0 degree") and click on "Append example".
-
-After the *Body* has been completed click on the "Save" button.
-
-**Note**: The *Clear all* button will clear all of the incoming data.
+> Note that selecting "Deployed" status will set the module immediately to "Connected" after creation. 
+ 
+> The *Clear all* button will clear all of the incoming data.
 
 ![Create New module](/guides/users-guide/createnewmodule.png)
 
-#### Module Management
+#### Managing modules
 
-**To modify** your module simply click on the module's name
+To modify your module simply click on the module's name
 
-**To remove** your module hover over the module's name and click the cross button. A confirmation window will pop-up, press " OK " and the module will be removed.
+To remove your module hover over the module's name and click the cross button. A confirmation window will pop-up, press "OK" and the module will be removed.
 
 ![Remove modules](/guides/users-guide/removemodules.png)
 
-**Note**: Instead of deleting the module it can be disabled by setting the "Status" in the edit menu to "Not deployed". Click on the "Save" button when ready.
+> Note that instead of deleting the module it can be disabled by setting the "Status" in the edit menu to "Not deployed". Do not forget to click on the "Save" button when ready.
 
-### Alarm mapping
+### Dealing with alarm mapping
 
-To deal with "Alarm mapping" first click on "Alarm mapping" in the administration panel.
+To deal with "Alarm mapping" first click on "Alarm mapping" in the administration menu.
 
 ![Alarm mapping](/guides/users-guide/alarmmapping.png)
 
 Alarm mapping helps administrators add severity level to  each alarm. With severity levels in use they will know when something requires their immediate attention or not.
 
-#### Add alarm mapping
+### Adding alarm mapping
 
-There are 5 types of **alarm severities**:
+There are 5 types of alarm severities:
 
-- *Drop* - There is no alarm or it is set to ["Not deployed"](#modules-management)
+- *Drop* - There is no alarm or it is set to ["Not deployed"](#creating-new-modules)
 - *Critical* - Something requires your immediate attention
-- *Major* - Indicates that there is a major problem
+- *Major* - Indicates that there is a major problem which should be fixed
 - *Minor* - There is a minor problem
 - *Warning* - Does not require immediate attention
+
+> Note that setting up alarm severities depends entirely on the user's choice, we offer only an example usage of the alarms severities. 
+
+For more info about alarms please refer to [Working with alarms.](#/guides/users-guide/device-management/#alarm-monitoring)
 
 To select alarm severity for a certain alarm click on *Add alarm mapping*
 
@@ -451,69 +455,63 @@ To select alarm severity for a certain alarm click on *Add alarm mapping*
 - Give "New description"(optional)
 - Click on "Save"
 
-#### Change or Remove alarm severities
+### Changing or Removing alarm severities
 
-To **change alarm severities**:
+To change alarm severities:
 
 - Locate the alarm the "Alarm mapping" section and click on her name
 - Under "New severity" change to the desired severity level
 - Click on the "Save" button
 
-To **delete alarm severities** hover over the alarm name and click on the cross button. Confirmation window will pop-up, press " OK " and the "Alarm mapping" will be deleted.
+To delete alarm severities hover over the alarm name and click on the cross button. Confirmation window will pop-up, press " OK " and the "Alarm mapping" will be deleted.
 
 ![Remove alarm mapping](/guides/users-guide/removealarmmapping.png)
 
 
-## Settings
+## Changing settings
 
-The "Settings" tab grants administrators the following options:
+By expanding the "Settings" tab administrators have the following options:
 
-- [Change password](#pass-settings) validity for particular amount of days
+- [Change password](#changing-password-settings) validity for particular amount of days
 - Enforce whether all passwords are "strong"
-- [Grant *Access control*](#access-control)
-- ["Enable" or "Disable" dashboard via e-mail](#server-agents)
+- [Grant *Access control*](#granting-access-control)
+- ["Enable" or "Disable" dashboard via e-mail](#enabling-server-side-agents)
 
-### Change Password Settings
+### Changing password settings
 
 To change password settings click on Password under "Settings" tab
 
 ![Change Password Settings](/guides/users-guide/passsettings.png)
 
-**Note**: If "Password" is not visible first click on settings and then "Password".
-
 Here password limit validity can be set, meaning that after " X " number of days the password will have to be changed. 
 
-**Note**: The default value is 0 for unlimited validity.
+> Note that the default value is set to "0" for unlimited validity.
 
-One can also choose to enable "Enforce that all password are "strong" " by clicking on the checkbox. This setting will allow users to type "easy" passwords which will be counted as "strong", due to security reasons it is not recommended.
+One can also choose to enable "Enforce that all password are "strong" " by clicking on the checkbox. This setting will allow users to type "easy" passwords which will be counted as "strong". Note that due to security reasons it is not recommended.
 
 After the modification is complete click on "Save".
 
-### Access control
+### Granting access control
 
 Via the "Access Control" tab administrators can enable cross-origin resource sharing or "CORS" by writing the address of the desired domain. "CORS" allows restricted resources to be requested from another domain.
 
-**Note**: Beware not to lock yourself out of the platform by writing invalid address.
+> Beware not to lock yourself out of the platform by writing invalid address!
 
-### Server-side agents
+### Enabling server-side agents
 
 In the *Server-side agents* tab "Send dashboard via e-mail" smart rule can be "Enabled" or "Disabled".
 
-To change "Server-side agents settings" click on "Server-side agents in the administration panel.
+To change "Server-side agents settings" click on "Server-side agents in the administration menu.
 
 ![Server-side agents](/guides/users-guide/serversideagents.png)
 
-**Note**:If you do not see "Server-side agents" click on "Settings" first.
-
 Afterwards click "Save".
 
-## Management
+## Handling management tab
 
 Cumulocity provides administrators with the ability to upload their files on the cloud using the *Files repository* and to add and manage their own *Retention rules*.
 
-### Retention rules
-
-To add, modify or delete rules click on "Retention rules" in the administration tab
+### Working with retention rules
 
 ![Retention rules](/guides/users-guide/retrules.png)
 
@@ -527,39 +525,39 @@ To add additional "Retention rules" click on "Add rule"
 - Enter *Fragment type*
 - Write *Type* only to data that has "Type" property
 - Write *Source*
-- Choose *Maximum age*
+- Enter *Maximum age*
 - Click on the "Save" button
 
 ![Add rule](/guides/users-guide/addrulepage.png)
 
-**Note**: For more info about "Data types" please refer to the [Reference](/guides/reference/alarms) guides.
+> For more info about "Data types" please refer to the [Reference](/guides/reference/alarms) guides.
 
-To delete a rule click on the cross button and then press " OK " after the pop-up window appears.
+To delete a rule click on the cross button and then press "OK" after the pop-up window appears.
 
-### Manage Repository
+### Managing repository
 
 The *Files repository* allows administrators to upload and store files on the cloud. 
 
-To see files in the repository click on "Files repository" in the administration panel.
+To see files in the repository click on "Files repository" in the administration menu.
 
 ![Files repository](/guides/users-guide/filesrepo.png)
 
-#### Upload files
+#### Uploading files
 
-There are 2 ways to **upload files** in the repository:
+There are 2 ways to upload files in the repository:
 
 - In the "Files repository" tab under "Management" click on "Upload file" located at the top-right. A pop-up window will appear, select the desired file and click "Upload" to finish the process.
 
 ![Upload file](/guides/users-guide/uploadfile.png)
 
-- If there are [Hosted applications](#hosted), files can be uploaded at the [Archives](#archives) page. Later they can be seen in the repository.
+- If there are [Hosted applications](#working-with-hosted-applications), files can be uploaded at the [Archives](#uploading-archives) page. Later they can be seen in the repository.
 
-**Note**: Do not use the "Application archives" as repository. 
+> Note that using the "Application archives" as repository is not recommended. 
 
-#### Download or Delete files
+#### Downloading or Deleting files
 
-**To download** a file in the repository hover over the desired file and click on the Download button.
+To download a file in the repository hover over the desired file and click on the Download button.
 
-**To delete** a file click on the cross button and press "OK" when the pop-up window appears.
+To delete a file click on the cross button and press "OK" when the pop-up window appears.
 
-**Note**: "Application archive" files cannot be deleted from the "Files repository".
+> Please note that "Application archive" files cannot be deleted from the "Files repository".

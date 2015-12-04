@@ -25,7 +25,7 @@ In the Accounts tab users and user groups can be managed. Administrators have th
 
 ### Managing users
 
-In order to manage users in your tenant click on Users in your Administration menu. By default after tenant creation there are 2 Users automatically added. The first one is the admin user that is configured in the administration setup and the second one is "sysadmin". The admin user cannot be removed, he can only be edited. 
+In order to manage users in your tenant click on Users in your Administration menu. By default after tenant creation there are 2 users automatically added. The first one is the admin user that is configured in the administration setup and the second one is "sysadmin". The admin user cannot be removed, he can only be edited. 
 
 ![Click Users](/guides/users-guide/Users.png)
 
@@ -38,7 +38,7 @@ To add additional users click on "Add user"
 ![Add User](/guides/users-guide/addusers.png)
 
 - Enter *Username*
-- Choose if the User will be *Enabled* or *Disabled*
+- Choose if the user will be *Enabled* or *Disabled*
 - Enter *Password* and *Confirm password*
 - If you choose to click on *Password reset* the "User" will have to reset the password on his next login
 - [Assign Group membership](#assigning-users-to-a-group) 
@@ -52,7 +52,7 @@ Fields without an asterisk" * "(e.g. "First name", "Last name") are not mandator
 
 ### Handling user permissions
 
-Different *User Permissions* can be granted to every User for a specific device. Permissions can be granted or revoked during the [creation](#adding-users) or [editing](#editing-users) of a user.
+Different *User Permissions* can be granted to every user for a specific device. Permissions can be granted or revoked during the [creation](#adding-users) or [editing](#editing-users) of a user.
 
 When a device is selected one can give permissions in a specific scope(e.g. *Alarm*, *Audit*, *Event*).
 
@@ -67,7 +67,7 @@ To grant "User Permissions":
 
 ![User Permissions](/guides/users-guide/userpermissions.png)
 
-> Note that to select all of the scopes click on the asterisk " * " in the drop down menu.
+> Note that to select all scopes click on the asterisk " * " in the drop down menu.
 
 > Please also note that "Admin" does not have "Read" permissions, to grant all permissions to a user choose the asterisk " * " option from the drop down menu. 
 
@@ -106,7 +106,7 @@ To assign a user to "User groups":
 
 ### Changing user password
 	
-- Locate the user in the Users section and click on his "Username"
+- Locate the user in the "Users" section and click on his "Username"
 - Choose "Change password"
 - Enter and confirm the new password
 - Click on the "Save" button
@@ -123,7 +123,7 @@ Hovering over a user reveals the deactivate and delete buttons on the right side
 
 ### Managing user groups
 
-Cumulocity allows you to easily manage Users which have the same permissions and roles via User Groups. Application Access can also be set.
+Cumulocity allows you to easily manage "Users" which have the same permissions and roles via "User Groups". Application Access can also be set.
 
 ![User groups](/guides/users-guide/usergroups.png)
 
@@ -178,7 +178,7 @@ type of control interface:
 
 ### Dealing with group permissions
 
-When multiple users need the same permissions or restrictions they can be added to a group for easier handling. Group Permissions are similar to ["User Permissions"](#users-permissions). Permissions can be given during [creation](#creating-user-groups) or [editing](#editing-groups) of a group. When a device is selected one can give permissions in a specific scope(e.g. "Alarm", "Audit", "Event").
+When multiple users need the same permissions or restrictions they can be added to a group for easier handling. "Group Permissions" are similar to ["User Permissions"](#users-permissions). Permissions can be given during [creation](#creating-user-groups) or [editing](#editing-groups) of a group. When a device is selected one can give permissions in a specific scope(e.g. "Alarm", "Audit", "Event").
 
 To grant "User Permissions":
 
@@ -197,7 +197,7 @@ To grant "User Permissions":
 
 ### Granting application access
 
-Identical to [User Application access](#granting-application-access) Group access to a particular application can be granted during the [creation of a group](#creating-user-groups).
+Identical to ["User Application access"](#granting-application-access),       group access to a particular application can be granted during the [creation of a group](#creating-user-groups).
 
 To grant access to specific applications, click on the checkbox of the desired application. When the selection is completed click on the "Save" button.
 
@@ -205,7 +205,7 @@ To grant access to specific applications, click on the checkbox of the desired a
 
 ### Editing groups
 
-All of User groups details can be edited. To edit a group click on the name of the group. After you have finished modifying the group details click on the "Save" button.
+All of the "User Groups" details can be edited. To edit a group click on the name of the group. After you have finished modifying the group details click on the "Save" button.
 
 ### Removing groups
 
@@ -216,11 +216,11 @@ To remove a group simply hover over the group name and click on the cross button
 
 ## Managing applications
 
-With Cumulocity all tenants have the ability to easily handle their applications. They can create, modify and remove their own Smartapps and Applications. 
+With Cumulocity all tenants have the ability to easily handle their applications. They can create, modify and remove their own *Smartapps* and *Applications*. 
 
 When the application has been created, if you hover over it a *Clone*, *Open* and [Cross](#removing-applications) buttons will be revealed. The "Clone" function duplicates the application, while The "Open" button simply opens the application. After the "Clone" button is pressed a pop-up window will appear in which unique "Application name" and "Application path" have to be entered. 
 
-To create applications first navigate to *Own applications* in the Administration menu.
+To create applications first navigate to *Own applications* in the administration menu.
 
 ![Own Applications](/guides/users-guide/ownapplications.png) 
 
@@ -266,7 +266,7 @@ If Hosted Type was selected 2 additional fields will be shown. To finish with th
 
 ### Working with repository applications
 
-If the Repository "Type" was selected 4 additional fields will be shown. Only fields with asterisk (" * ") are necessary to be filled.
+If the repository type was selected 4 additional fields will be shown. Only fields with asterisk (" * ") are necessary to be filled.
 - Add *Path*
 - Add *Server URL*
 - Enter *Username* (optional)
@@ -275,7 +275,7 @@ If the Repository "Type" was selected 4 additional fields will be shown. Only fi
 
 ### Working with external applications
 
-When External Type is selected only 1 additional field will be shown. Give the *External URL* and click on the *Save* button to create the application.
+When external type is selected only 1 additional field will be shown. Give the *External URL* and click on the "Save" button to create the application.
 
 ### Editing applications
 
@@ -418,7 +418,7 @@ To create new modules first click on "New module".
 
 To modify your module simply click on the module's name
 
-To remove your module hover over the module's name and click the cross button. A confirmation window will pop-up, press "OK" and the module will be removed.
+To remove your module hover over the module's name and click the cross button. Confirmation window will pop-up, press "OK" and the module will be removed.
 
 ![Remove modules](/guides/users-guide/removemodules.png)
 
@@ -556,7 +556,7 @@ There are 2 ways to upload files in the repository:
 
 #### Downloading or Deleting files
 
-To download a file in the repository hover over the desired file and click on the Download button.
+To download a file in the repository hover over the desired file and click on the "Download" button.
 
 To delete a file click on the cross button and press "OK" when the pop-up window appears.
 

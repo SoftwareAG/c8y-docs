@@ -26,7 +26,7 @@ You can also use recent smartphone and tables web browsers. We test with the fol
   * Chrome on Android (latest) on Galaxy smartphones and tablets.
   * Safari on iOS (latest) on Apple iPhone and iPad.
 
-> Note that using Cumulocity on mobile devices may be constrained by the memory and the processing power available on the devices. For example, loading graphs with large amounts of data points may make the mobile device unresponsive.
+> Note that using the private mode on browsers may not work. Note also that using Cumulocity on mobile devices may be constrained by the memory and the processing power available on the devices. For example, loading graphs with large amounts of data points may make the mobile device unresponsive.
 
 To access the applications for your Cumulocity tenant, use the following URL:
 

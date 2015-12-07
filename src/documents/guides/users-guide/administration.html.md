@@ -412,7 +412,7 @@ To create new modules first click on "New module".
 
 ![Create New module](/guides/users-guide/createnewmodule.png)
 
-#### Managing modules
+### Managing modules
 
 To modify your module simply click on the module's name
 

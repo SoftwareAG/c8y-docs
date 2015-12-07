@@ -11,21 +11,19 @@ toc: enabled
 
 The Administration application provides the ability for all account owners to easily manage their *Users*, *User groups* and *Applications*. User and Group permissions can be set and access to applications can be granted and revoked. 
 
+In the "Accounts" tab users and user groups can be managed. Administrators have the ability to choose which user will have access to which application and what kind of permissions the users have to specific "Scope" of a device. If many users have the same permissions they can be added to a user group. User groups can be used to assign specific permissions to a particular device for all the users in the group.
+
 The "Applications" tab gives the opportunity to configure *applications* or *simulators*. With *Business rules* one can add scripts for the builtin real-time analytics engine. Additionally, alarms can be mapped to different severities (e.g. Minor, Major, Critical).
 
 Retention rules can be added, for example alarms or event can be deleted after a number of days. Using the file repository, files can be uploaded on the cloud repository.
 
 ![Home](/guides/users-guide/home.png)
 
-The "Home" page shows all subscribed applications, also how many API requests, storage, devices and users were used for "This month" and "Last month". API requests are queries to the Cumulocity database. For example every time you create or edit a user an API request is created.
+The "Home" page shows all subscribed applications, also how many API requests, storage, devices and users were used for "This month" and "Last month". API requests are queries to the Cumulocity database. For example, every time you create or edit a user an API request is created. 
 
-## Managing accounts
+## Managing users
 
-In the Accounts tab users and user groups can be managed. Administrators have the ability to choose which user will have access to which application and what kind of permissions the users have to specific "Scope" of a device. If many users have the same permissions they can be added to a user group. User groups can be used to assign specific permissions to a particular device for all the users in the group. 
-
-### Managing users
-
-In order to manage users in your tenant click on Users in your Administration menu. By default after tenant creation there are 2 users automatically added. The first one is the admin user that is configured in the administration setup and the second one is "sysadmin". The admin user cannot be removed, he can only be edited. 
+In order to manage users in your tenant click on "Users" in your administration menu. By default after tenant creation there are 2 users automatically added. The first one is the admin user that is configured in the administration setup and the second one is "sysadmin". The admin user cannot be removed, he can only be edited. 
 
 ![Click Users](/guides/users-guide/Users.png)
 
@@ -48,7 +46,7 @@ To add additional users click on "Add user"
 	
 ![Add User](/guides/users-guide/adduserpage.png)
 
-Fields without an asterisk" * "(e.g. "First name", "Last name") are not mandatory.
+> Fields without an asterisk" * "(e.g. "First name", "Last name") are not mandatory.
 
 ### Handling user permissions
 
@@ -67,7 +65,7 @@ To grant "User Permissions":
 
 ![User Permissions](/guides/users-guide/userpermissions.png)
 
-> Note that to select all scopes click on the asterisk " * " in the drop down menu.
+> Note that to select all scopes wyou will have to click on the asterisk " * " in the drop down menu.
 
 > Please also note that "Admin" does not have "Read" permissions, to grant all permissions to a user choose the asterisk " * " option from the drop down menu. 
 
@@ -102,7 +100,7 @@ To assign a user to "User groups":
 - In *User Groups* section choose the desired group by clicking on the checkbox
 - Click on the "Save" button
 
-> Note that more than one "User Groups" can be selected at the same time.
+> More than one "User Groups" can be selected at the same time.
 
 ### Changing user password
 	
@@ -117,17 +115,17 @@ All of the user details except "Username" can be modified including "User Groups
 
 ### Deactivating or deleting users
 
-Hovering over a user reveals the deactivate and delete buttons on the right side. The "Deactivate" button simply disables the user, while the cross button permanently deletes the user.
+Hovering over a user reveals the deactivate and delete buttons on the right side. The "Deactivate" button simply disables the user, while the "X" button permanently deletes the user.
 
 ![Delete User](/guides/users-guide/deleteuser.png)
 
-### Managing user groups
+## Managing user groups
 
 Cumulocity allows you to easily manage "Users" which have the same permissions and roles via "User Groups". Application Access can also be set.
 
 ![User groups](/guides/users-guide/usergroups.png)
 
-> Note that If you do not see "User groups" click on "Accounts" first and then "User groups".
+> If you do not see "User groups" click on "Accounts" first and then "User groups".
 
 By default after tenant creation there are 4 groups that are automatically created:
 
@@ -195,13 +193,11 @@ To grant "User Permissions":
 
 > Please note that admin does not have Read permissions, to grant all permissions to a User choose the asterisk " * " option from the drop down menu.
 
-### Granting application access
+### Granting group application access
 
 Identical to ["User Application access"](#granting-application-access),       group access to a particular application can be granted during the [creation of a group](#creating-user-groups).
 
 To grant access to specific applications, click on the checkbox of the desired application. When the selection is completed click on the "Save" button.
-
-> Note that more than one Marketplace Applications can be selected at the same time.
 
 ### Editing groups
 
@@ -209,7 +205,7 @@ All of the "User Groups" details can be edited. To edit a group click on the nam
 
 ### Removing groups
 
-To remove a group simply hover over the group name and click on the cross button. A confirmation pop-up window will appear, click "OK" and the group will be deleted.
+To remove a group simply hover over the group name and click on the "X" button. A confirmation pop-up window will appear, click "OK" and the group will be deleted.
 
 ![Remove Group](/guides/users-guide/removegroup.png)
 
@@ -218,13 +214,13 @@ To remove a group simply hover over the group name and click on the cross button
 
 With Cumulocity all tenants have the ability to easily handle their applications. They can create, modify and remove their own *Smartapps* and *Applications*. 
 
-When the application has been created, if you hover over it a *Clone*, *Open* and [Cross](#removing-applications) buttons will be revealed. The "Clone" function duplicates the application, while The "Open" button simply opens the application. After the "Clone" button is pressed a pop-up window will appear in which unique "Application name" and "Application path" have to be entered. 
+When the application has been created, if you hover over it a *Clone*, *Open* and ["X"](#removing-applications) buttons will be revealed. The "Clone" function duplicates the application, while The "Open" button simply opens the application. After the "Clone" button is pressed a pop-up window will appear in which unique "Application name" and "Application path" have to be entered. 
 
 To create applications first navigate to *Own applications* in the administration menu.
 
 ![Own Applications](/guides/users-guide/ownapplications.png) 
 
-> Note that if you do not see "Own Applications" first expand "Applications".
+> If you do not see "Own Applications" first expand "Applications".
 
 ### Creating smartapp
 
@@ -246,9 +242,9 @@ To create an application:
 - Enter unique name otherwise an error will occur
 - Write the *Application key*
 - Choose *Type* of the application
-  - [*Hosted*](#hosted)
-  - [*Repository*](#repo)
-  - [*External*](#external)
+  - [*Hosted*](#working-with-hosted-applications)
+  - [*Repository*](#working-with-repository-applications)
+  - [*External*](#working-with-external-applications)
 
 ![Create app](/guides/users-guide/createapp.png)
 
@@ -258,7 +254,9 @@ Depending on what "Type" was selected, different details will have to be given.
 
 Hosted applications allow administrators to operate a software application entirely from the cloud. They have considerable benefits over locally installed applications.
 
-If Hosted Type was selected 2 additional fields will be shown. To finish with the app creation you will have to: 
+If Hosted Type was selected 2 additional fields will have to be filled. 
+
+To finish with the app creation you will have to: 
 
 - Add *Path*
 - select the *Archive* which contains the application from your computer. 
@@ -266,7 +264,7 @@ If Hosted Type was selected 2 additional fields will be shown. To finish with th
 
 ### Working with repository applications
 
-If the repository type was selected 4 additional fields will be shown. Only fields with asterisk (" * ") are necessary to be filled.
+If the repository type was selected 4 additional fields will appear. Only fields with asterisk (" * ") are necessary to be filled.
 - Add *Path*
 - Add *Server URL*
 - Enter *Username* (optional)
@@ -275,7 +273,7 @@ If the repository type was selected 4 additional fields will be shown. Only fiel
 
 ### Working with external applications
 
-When external type is selected only 1 additional field will be shown. Give the *External URL* and click on the "Save" button to create the application.
+When external type is selected only 1 additional field will appear. Give the *External URL* and click on the "Save" button to create the application.
 
 ### Editing applications
 
@@ -285,7 +283,7 @@ To edit applications simply click on their name. Depending on the type of the ap
 
 ### Subscribing to plugins
 
-If the application's type is "Hosted" or "Repository" one can also subscribe to different *Plugins*.
+If the application's type is "Hosted" or "Repository" one can also subscribe to different *Plugins*. Plugins allow you to add new functionalities to Cumulocity's user interface. 
 
 To subscribe to "Plugins":
 
@@ -324,15 +322,15 @@ To upload archives:
 
 Archives can be downloaded, *Set active* or removed if necessary.
 
-To download archives, hover over the desired archive and click the "Download" button.
+To download archives, hover over the desired archive and click on the "Download" button.
 
-To set active archive click the "Set active" button or click the cross button to remove the archive.
+To set active archive click the "Set active" button or click the "X" button to remove the archive.
 
 > Note that active archives cannot be removed!
 
 ### Removing applications
 
-To *Remove* applications simply hover over the application name and click the cross button. A confirmation pop-up window will appear, click "OK" and the group will be deleted.
+To *Remove* applications simply hover over the application name and click the "X" button. A confirmation pop-up window will appear, click "OK" and the group will be deleted.
 
 ![Remove application](/guides/users-guide/removeapp.png)
 
@@ -378,7 +376,7 @@ To stop simulators simply press the "Stop device" button while hovering over the
 
 ![Stop simulator](/guides/users-guide/stopsimulator.png)
 
-To delete a simulator hover over the simulator's name, press the cross button and after the pop-up window appears press "OK".
+To delete a simulator hover over the simulator's name, press the "X" button and after the pop-up window appears press "OK".
 
 > Note that simulators cannot be edited, instead you will have to add a new one.
 
@@ -418,7 +416,7 @@ To create new modules first click on "New module".
 
 To modify your module simply click on the module's name
 
-To remove your module hover over the module's name and click the cross button. Confirmation window will pop-up, press "OK" and the module will be removed.
+To remove your module hover over the module's name and click the "X" button. Confirmation window will pop-up, press "OK" and the module will be removed.
 
 ![Remove modules](/guides/users-guide/removemodules.png)
 
@@ -463,7 +461,7 @@ To change alarm severities:
 - Under "New severity" change to the desired severity level
 - Click on the "Save" button
 
-To delete alarm severities hover over the alarm name and click on the cross button. Confirmation window will pop-up, press " OK " and the "Alarm mapping" will be deleted.
+To delete alarm severities hover over the alarm name and click on the "X" button. Confirmation window will pop-up, press " OK " and the "Alarm mapping" will be deleted.
 
 ![Remove alarm mapping](/guides/users-guide/removealarmmapping.png)
 
@@ -487,7 +485,7 @@ Here password limit validity can be set, meaning that after " X " number of days
 
 > Note that the default value is set to "0" for unlimited validity.
 
-One can also choose to enable "Enforce that all password are "strong" " by clicking on the checkbox. This setting will allow users to type "easy" passwords which will be counted as "strong". Note that due to security reasons it is not recommended.
+One can also choose to enable "Enforce that all password are "strong" " by clicking on the checkbox. This setting will allow you to type "easy" passwords which will be counted as "strong". Note that due to security reasons it is not recommended.
 
 After the modification is complete click on "Save".
 
@@ -532,7 +530,7 @@ To add additional "Retention rules" click on "Add rule"
 
 > For more info about "Data types" please refer to the [Reference](/guides/reference/alarms) guides.
 
-To delete a rule click on the cross button and then press "OK" after the pop-up window appears.
+To delete a rule click on the "X" button and then press "OK" after the pop-up window appears.
 
 ### Managing repository
 
@@ -558,6 +556,6 @@ There are 2 ways to upload files in the repository:
 
 To download a file in the repository hover over the desired file and click on the "Download" button.
 
-To delete a file click on the cross button and press "OK" when the pop-up window appears.
+To delete a file click on the "X" button and press "OK" when the pop-up window appears.
 
 > Please note that "Application archive" files cannot be deleted from the "Files repository".

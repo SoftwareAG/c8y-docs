@@ -65,7 +65,7 @@ To grant "User Permissions":
 
 ![User Permissions](/guides/users-guide/userpermissions.png)
 
-> Note that to select all scopes wyou will have to click on the asterisk " * " in the drop down menu.
+> Note that to select all scopes you will have to click on the asterisk " * " in the drop down menu.
 
 > Please also note that "Admin" does not have "Read" permissions, to grant all permissions to a user choose the asterisk " * " option from the drop down menu. 
 
@@ -191,7 +191,9 @@ To grant "User Permissions":
 
 > Note that to select all of the Scopes click on the asterisk " * " in the drop down menu.
 
-> Please note that admin does not have Read permissions, to grant all permissions to a User choose the asterisk " * " option from the drop down menu.
+> Please also note that admin does not have Read permissions, to grant all permissions to a User choose the asterisk " * " option from the drop down menu.
+
+> Have in mind that in order to have read access to a particular device you need to have read access to the group.
 
 ### Granting group application access
 

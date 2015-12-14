@@ -107,4 +107,4 @@ Using such a URL, you can
 
 To change the settings for your user, click on the user symbol at the top right and select "User settings". Set the user interface language using the "Language" drop-down menu. Change your password by clicking "Change password". Finally, click "Save" to store your changes or "Cancel" to discard them.
 
-<img src="/guides/users-guide/usersettings.png" alt="User settings"  style="max-width: 50%">
+<img src="/guides/users-guide/usersettings.png" alt="User settings"  style="max-width: 60%">

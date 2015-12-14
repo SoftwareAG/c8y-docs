@@ -27,7 +27,7 @@ The "Home" screen provides navigation links to the main parts of the administrat
 
 "This month" shows the usage information from the start of the current month. "Last month" shows the last full month. 
 
-![Home](/guides/users-guide/home.png)
+<img src="/guides/users-guide/home.png" alt="Home" style="max-width: 60%">
 
 ## <a name="users"></a>Managing users
 
@@ -36,6 +36,8 @@ In order to manage users in your tenant, click on the "Users" menu. New accounts
 > Note that the sysadmin user may not be present depending on your provider.
 
 ![Click Users](/guides/users-guide/Users.png)
+
+### Adding users
 
 To add additional users, click on "Add user".
 
@@ -47,348 +49,267 @@ To add additional users, click on "Add user".
 - If you choose to check "Password reset", the user will have to choose a new password after the next login.
 - Enter a password and confirm the password. (See "[Logging in](/guides/users-guide/overview#login)" for more information on password strength.)
 - Add users to relevant [user groups](#user-groups).
-- Assign [device-specific permissions](#permissions).
+- Assign device and application [permissions](#permissions).
 - Finally, click the "Save" button.
 
 ![Add User](/guides/users-guide/adduserpage.png)
 
-> Fields without an asterisk" * "(e.g. "First name", "Last name") are not mandatory.
-
-### Handling user permissions
-
-Different *User Permissions* can be granted to every user for a specific device. Permissions can be granted or revoked during the [creation](#adding-users) or [editing](#editing-users) of a user.
-
-When a device is selected one can give permissions in a specific scope(e.g. *Alarm*, *Audit*, *Event*).
-
-To grant "User Permissions":
-
-- Choose *Managed Object* by writing the id or the name of the desired device
-- Select [*Scope*](#dealing-with-scopes) of permission for a particular object 
-- Write the *Type* of the Permission(e.g. c8y-software)
-- Select *Permission*
-- Click on the *Add* button
-- Click on the *Save* button
-
-![User Permissions](/guides/users-guide/userpermissions.png)
-
-> Note that to select all scopes you will have to click on the asterisk " * " in the drop down menu.
-
-> Please also note that "Admin" does not have "Read" permissions, to grant all permissions to a user choose the asterisk " * " option from the drop down menu. 
-
-### Dealing with scopes
-
-Cumulocity provides users the ability to grant permissions in a specific scope of an object.
-
-Available scopes:
-
-- *Alarm* - Gives users the ability to create, update or delete alarms
-- *Audit* - Usually when alarms are triggered one has the ability to either acknowledge them or to disregard them. "Audit" grants users permission to see who acknowledged, disregarded, updated, created or deleted alarms
-- Event - Users can create, update and delete "Events"
-- Managed_Object - Grants users with view permission
-- Measurement - Users can manage measurement data
-- Operation - Allows users to do operations on a certain device. For example users can turn on or off a certain LED. Note that "Admin" role will allow the user to modify or delete operations
-
-### Granting application access
-
-During user [creation](#adding-users), access to different *Marketplace Applications* can be granted to the user. That way you will control which users have access to which applications. 
-
-To grant access to specific applications, click on the checkbox of the desired application. When the selection is completed click on the "Save" button.
-
-> Note that more than one "Marketplace Applications" can be selected at the same time.
-
-### Assigning users to a group
-
-Groups membership can be given amid [adding](#adding-users) or [editing](#editing-users) of a user.
-
-To assign a user to "User groups":
-
--  Locate the user in the users section and click on his "Username"
-- In *User Groups* section choose the desired group by clicking on the checkbox
-- Click on the "Save" button
-
-> More than one "User Groups" can be selected at the same time.
-
-### Changing user password
-	
-- Locate the user in the "Users" section and click on his "Username"
-- Choose "Change password"
-- Enter and confirm the new password
-- Click on the "Save" button
+> Fields without an asterisk ("*", e.g., "First name", "Last name") are not mandatory.
 
 ### Editing users
 
-All of the user details except "Username" can be modified including "User Groups" and "Application accesses". In the "Users" page clicking on the "Username" will open the editing window. When the change is complete, click on the "Save" button to finish with the edit.
+To edit an existing user, just click on the user in the list. All user details other than the username can be modified. To change the password, click on "Change password". Click "Save" after you have finished editing.
 
 ### Deactivating or deleting users
 
-Hovering over a user reveals the deactivate and delete buttons on the right side. The "Deactivate" button simply disables the user, while the "X" button permanently deletes the user.
+Hovering over a user reveals the deactivate and delete buttons on the right side. The "Deactivate" button simply disables the user. The user continues to exist, but will not be able to log in. The delete button ("X") permanently deletes the user.
 
 ![Delete User](/guides/users-guide/deleteuser.png)
 
-## Managing user groups
+## <a name="user-groups></a>Managing user groups
 
-Cumulocity allows you to easily manage "Users" which have the same permissions and roles via "User Groups". Application Access can also be set.
+To simplify user management, users with the same permissions can be placed into user groups representing typical permission sets. A single user can be part of multiple user groups. New account will usually contain four user groups by default. These user groups have common useful permission settings:
+
+* Admins: A group with all permissions set.
+* Business: Users in this group can work with all devices and their data, but cannot administer the account.
+* Readers: User in this group can read all data but cannot make any changes (including sending commands to devices, for example).
+* Devices: A group with typical minimal default permissions for devices. 
+
+All groups can be modified and deleted.
 
 ![User groups](/guides/users-guide/usergroups.png)
 
-> If you do not see "User groups" click on "Accounts" first and then "User groups".
+### Adding user groups
 
-By default after tenant creation there are 4 groups that are automatically created:
+To add a user group:
 
-- *Business*
-- *Admins*
-- *Readers*
-- *Devices*
-
-All of the groups can be modified or deleted. Additional groups can also be added.
-
-### Creating user groups
-
-To add additional groups:
-
-- click on *Create user group*
-
-![Create user group](/guides/users-guide/creategroup.png)
-
-- Enter *Name* of the group
-- [Assign *Roles*](#assigning-group-roles)
-- [Give *Group Permissions*](#dealing-with-group-permissions)
-- [Grant "Application access"](#granting-group-application-access)
-- Click on the *Save* button
-
-![Create user group 1](/guides/users-guide/createusergroup1.png)
-
-![Create user group 2](/guides/users-guide/createusergroup2.png)
-
-### Assigning group roles
-
-Distinct roles can be chosen for each 
-type of control interface:
-
-- *Read*
-- *Admin*
-- *Create*
-
-"Read" roles allows "READ" operation.*Admin* role allows "CREATE, "UPDATE" and "DELETE" operations over given functionality area. To assign roles click on the checkbox under the desired role.
-
-> Hint: If you wish to select or clear ALL roles an easier approach would be to click on the respective button for the desired effect. The buttons are located under "ROLES".
-
-- *Clear all* - Clears all of the checked roles.
-- *Select all* - Selects ALL of the roles.
-- *Select all Read* - Selects Read role for all types and deselects the other roles
-- *Select all Admin* - Selects Admin role for all types and deselects the rest. 
-
-![All roles](/guides/users-guide/allroles.png)
-
-### Dealing with group permissions
-
-When multiple users need the same permissions or restrictions they can be added to a group for easier handling. "Group Permissions" are similar to ["User Permissions"](#users-permissions). Permissions can be given during [creation](#creating-user-groups) or [editing](#editing-groups) of a group. When a device is selected one can give permissions in a specific scope(e.g. "Alarm", "Audit", "Event").
-
-To grant "User Permissions":
-
-- Choose *Managed Object* by writing " ID " or " Name " of the desired device
-- [*Scope*](#dealing-with-scopes) of permission can be selected for a specific object.
-- Write the *Type* of the Permission(e.g. c8y-software)
-- Select *Permission*("READ", "ADMIN", " * ")
-- Click on the *Add* button
-- Click *Save* 
-
-![Group Permissions](/guides/users-guide/grouppermissions.png)
-
-> Note that to select all of the Scopes click on the asterisk " * " in the drop down menu.
-
-> Please also note that admin does not have Read permissions, to grant all permissions to a User choose the asterisk " * " option from the drop down menu.
-
-> Have in mind that in order to have read access to a particular device you need to have read access to the group.
-
-### Granting group application access
-
-Identical to ["User Application access"](#granting-application-access),       group access to a particular application can be granted during the [creation of a group](#creating-user-groups).
-
-To grant access to specific applications, click on the checkbox of the desired application. When the selection is completed click on the "Save" button.
+- Click on "Create user group".
+- Enter the name of the user group.
+- Edit the [permissions](#permissions).
+- Click on the "Save" button.
 
 ### Editing groups
 
-All of the "User Groups" details can be edited. To edit a group click on the name of the group. After you have finished modifying the group details click on the "Save" button.
+All user group details can be edited. To edit a group, click on the name of the group in the group list. After you have finished modifying the group, click on the "Save" button. Editing a user group may change the permission for all users in the group and may affect the correct functioning of devices. Hence you have to confirm your changes as shown in the screenshot below.
+
+<img src="/guides/users-guide/confirmgroup.png" alt="Confirm group editing" style="max-width: 60%">
 
 ### Removing groups
 
-To remove a group simply hover over the group name and click on the "X" button. A confirmation pop-up window will appear, click "OK" and the group will be deleted.
+To remove a group, simply hover over the group name and click on the "X" button. A confirmation dialog will appear. Click "OK" and the group will be deleted.
 
 ![Remove Group](/guides/users-guide/removegroup.png)
 
+## <a name="permissions"></a>Managing permissions
 
-## Managing applications
+Cumulocity distinguishes three types of permissions that you can assign to users and user groups:
 
-With Cumulocity all tenants have the ability to easily handle their applications. They can create, modify and remove their own *Smartapps* and *Applications*. 
+* Account-wide permissions ("roles"): These are flags that enable a user to unconditionally read or modify certain types of data in your account, such as seeing all devices and being able to edit all devices.
+* Device- or device group-specific permissions: These permissions define on a granular level access to data in your account, such as being able to work with alarms of a particular group of devices.
+* Application access permissions: These define the applications that the user will see in their application switcher.
 
-When the application has been created, if you hover over it a *Clone*, *Open* and ["X"](#removing-applications) buttons will be revealed. The "Clone" function duplicates the application, while The "Open" button simply opens the application. After the "Clone" button is pressed a pop-up window will appear in which unique "Application name" and "Application path" have to be entered. 
+The total set of permissions that a user has is calculated using the following rules:
 
-To create applications first navigate to *Own applications* in the administration menu.
+* A user has the sum of the permissions that are granted to all groups that the user is part of.
+* If a user has an account-wide permissions, corresponding more specific perissions are ignored. For example, if a user has the permission to see all applications, you cannot edit application access permissions until you remove the permission to see all applications. Likewise, if a user has full access to the complete inventory, any inventory-related permissions are ignored.
+* Device-/group-specific permissions are inherited to all direct and indirect child devices and child assets. For example, if you assign "read" permission to a group of devices, the user will be automatically able to see all devices in the group.
+
+### Assigning account-wide permissions
+
+When you edit a group, a table with with "roles" is listed below the group name. These represent permission on the following types of data:
+
+* Tenant statistics: View the usage data for this account, as shown on the home page of the administration application.
+* Option management: View or edit account options such as password policies.
+* Application management: View or edit the applications available in this account.
+* User management: View or edit users, user groups and permissions.
+* Own user management: View or edit your own user.
+* Identity: View or edit identifiers for devices.
+* Inventory: View or edit inventory data.
+* Measurements: View or create measurements for devices.
+* Events: View or create events for devices.
+* Alarms: View or edit alarms for devices.
+* Audits: View or create audit records for devices.
+* Device control: View or edit commands for devices resp. send commands to devices.
+* CEP management: View or edit Cumulocity Event Language rules.
+* Retention rules: View or edit retention rules.
+* Bulk operations: View or create bulk operations.
+
+For the various types, the following permissions are available:
+
+- Read: Read the particular type of data.
+- Admin: Create, modify and delete the particular type of data. (Not including "Read"!)
+
+Note that not all types of data can be modified (e.g., audit records). For inventory data, there is one additional type of permission: "Create". The "Create" permission enables the user to create devices in the inventory and to fully manage these devices owned by the user. However, the user cannot read or manage devices owned by other users. This is mainly used to limit the permissions available to devices.
+
+To assign permissions click on the relevant checkbox. If you wish to select or clear ALL entries in a particular column, use the buttons at the top:
+
+- Clear all: Clears all of the checked roles.
+- Select all: Selects all of the roles.
+- Select all Read: Selects "Read" for all types and deselects the other roles.
+- Select all Admin: Selects "Admin" for all types and deselects the rest. 
+
+![All roles](/guides/users-guide/allroles.png)
+
+### Assigning device-specific permissions
+
+To assign more granular permissions on device level or device group level, visit the "User permissions" section while editing users, or "Group permissions" section while editing user groups.
+
+- Select a managed object (device or group of devices) by typing the ID or the name of the managed object.
+- Select the scope of this permission for the selected managed object. The scope limits the permission to particular types of data for this managed object. Use an asterisk ("*") to grant permission to all types of data of the managed object.
+- Limit the permission to particular content in the data ("type"). For example, to limit a user to only send restart commands to a device, use "OPERATION" as scope and "c8y_Restart" as type. Again, use an asterisk ("*")  as wildcard for any content.
+- Select the permission to grant: Use "Read" to read the data. Use "Admin" to create, modify and delete the data. Use an asterisk ("*") to assign both read and admin permission.
+- Click on the "Add" button.
+- Click on the "Save" button.
+
+![User Permissions](/guides/users-guide/userpermissions.png)
+
+> As mentioned above, permissions for groups of devices are inherited to the child devices and child assets of the group.
+
+### Assigning application access permissions
+
+To assign applications to particular users and user groups, visit the "Application access" section of that user or user group. Note that the application access section is not visible, if the user or user group already has access to all applications. The section showns marketplace applications and own applications. Marketplace applications are generally available applications that your account is subscribed to. Own applications are applications that you added to your account, see [below](#applications). Check all applications that should be made available to the user or user group.
+
+<img src="/guides/users-guide/applicationaccess.png" alt="Application access" style="max-width: 60%">
+
+## <a name="applications"></a>Managing applications
+
+Besides the readily available marketplace applications, you can also provide own applications in your account by visiting the "Own applications" menu. These applications can be "Smartapps" or generic HTML5 applications.
+
+Smartapps are modular applications built on top of the Cumulocity user interface framework, just like the standard Device Management, Cockpit and Administration applications. Smartapps are assembled from a set of so-called "plugins". Plugins provide new functionality in the user interface. Even without programming, you can create variations of the pre-provided applications by simply assembling their plugins in different ways and, for example, hiding unneeded plugins. For more information, see the [Concepts guide](/guides/concepts/applications). 
+
+When an application has been created, you can clone, open and delete it by hovering your mouse over the application. The "Clone" function duplicates the application, while the "Open" button simply opens the application. After the "Clone" button is pressed a pop-up window will appear in which a unique application name and application path need to be entered.
 
 ![Own Applications](/guides/users-guide/ownapplications.png) 
 
-> If you do not see "Own Applications" first expand "Applications".
-
-### Creating smartapp
+### <a name="creating-smartapp"></a>Adding a smartapp
 
 To add smartapp:
 
-- click on *Create smartapp*
+- Click on "Create smartapp".
+- Enter the name of the application. The name will be shown as title on the top left of the application. It will also be shown in the application switcher.
+- Enter the application path. This path will be part of the URL to invoke the application. For example, if you use "hello" as application path, the URL of the application will be "/apps/hello".
+- Click the "Create" button.
 
-![Create smartapp](/guides/users-guide/createsmartapp.png)
+<img src="/guides/users-guide/createsmartapp.png" alt="Create Smartapp" style="max-width: 60%">
 
-- Enter *Application name*
-- Add *Application path*
-- Click on the *Create* button
+### Adding an HTML5 application
 
-### Creating applications
+To add an HTML5 application:
 
-To create an application:
-
-- Click on *Create application* located on the right side of "[Create smartapp](#creating-smartapp)"
-- Enter unique name otherwise an error will occur
-- Write the *Application key*
-- Choose *Type* of the application
-  - [*Hosted*](#working-with-hosted-applications)
-  - [*Repository*](#working-with-repository-applications)
-  - [*External*](#working-with-external-applications)
+- Click on "Create application", located to the right of "[Create smartapp](#creating-smartapp)"
+- Enter the name of the application, as shown in the application switcher.
+- Enter an application key. The application key is used to identify requests from this application and to make it available for subscription, see the [Concepts guide](/guides/concepts/applications).
+- Choose the type of the application
+  - [Hosted](#working-with-hosted-applications)
+  - [Repository](#working-with-repository-applications)
+  - [External](#working-with-external-applications)
 
 ![Create app](/guides/users-guide/createapp.png)
 
-Depending on what "Type" was selected, different details will have to be given.
+Depending on the selected type, different further options will appear.
 
-### Working with hosted applications
+### <a name="working-with-hosted-applications"></a>Working with hosted applications
 
-Hosted applications allow administrators to operate a software application entirely from the cloud. They have considerable benefits over locally installed applications.
+"Hosted applications" are HTML5 applications hosted through Cumulocity servers. These applications are packaged as ZIP archives having an "index.html" file in the root folder of the archive. To complete the configuration:
 
-If Hosted Type was selected 2 additional fields will have to be filled. 
+- Enter the application path. This path will be part of the URL to invoke the application. For example, if you use "hello" as application path, the URL of the application will be "/apps/hello".
+- Select the archive file that contains the application and upload it.
+- Click *Save*.
 
-To finish with the app creation you will have to: 
+### <a name="working-with-repository-applications"></a>Working with repository applications
 
-- Add *Path*
-- select the *Archive* which contains the application from your computer. 
-- click on *Save* to finish the process.
+"Repository applications" are HTML5 applications hosted through an external repository. Such a repository can be, for example, a version control system such as Bitbucket or Github. To complete the configuration:
 
-### Working with repository applications
+- Enter the application path. This path will be part of the URL to invoke the application. For example, if you use "hello" as application path, the URL of the application will be "/apps/hello".
+- Enter the server URL where your application is hosted. At this URL, there needs to be an index.html file that provides the entry point to your application.
+- Enter a username to access your repository (optional).
+- Enter a password to access your repository (optional).
+- Click *Save*.
 
-If the repository type was selected 4 additional fields will appear. Only fields with asterisk (" * ") are necessary to be filled.
-- Add *Path*
-- Add *Server URL*
-- Enter *Username* (optional)
-- Enter *Password* (optional)
-- When ready click on *Save*
+Username and password are transmitted using HTTP Basic Authentication.
 
-### Working with external applications
+### <a name="working-with-external-applications"></a>Working with external applications
 
-When external type is selected only 1 additional field will appear. Give the *External URL* and click on the "Save" button to create the application.
+"External applications" are simply links to applications running elsewhere. Provide the URL of that application and click "Save" to make the link available in the application switcher.
 
 ### Editing applications
 
-To edit applications simply click on their name. Depending on the type of the application (e.g. Hosted, External) different fields can be modified. 
+To edit an application, simply click on its name. Depending on the type of the application (e.g. Hosted, External). different fields can be modified. 
 
-> Note that "ID", "Application key" and "Path" fields cannot be changed! 
+> Note that "ID", "Application key" and "Path" cannot be changed once configured.
 
 ### Subscribing to plugins
 
-If the application's type is "Hosted" or "Repository" one can also subscribe to different *Plugins*. Plugins allow you to add new functionalities to Cumulocity's user interface. 
+To configure the functionality provided through a smartapps, select the "Plugins" tab. To subscribe to "Plugins":
 
-To subscribe to "Plugins":
-
-- Select application by clicking on her name
-- Click on "Plugins"
-- Hover over the desired plugin and click the *Subscribe* button
+- Select application by clicking on its name.
+- Click on "Plugins".
+- Locate the desired plugin by scrolling through the list of available plugins. You can reduce the list by selecting a plugin category from the drop-down menu, or by starting to type the plugin's name. Clicking on the plugin name unfolds a description of the plugin.
+- Hover over the desired plugin and click the *Subscribe* button.
 - Click on the *Save changes* button
 
 ![plugins](/guides/users-guide/plugins.png)
 
-> Note that for easier search, explicit category can be selected.
+After subscribing to plugins, they will be displayed under the "Subscribed plugins" list. To unsubscribe a plugin:
 
-> Have in mind that instead of hovering, if you click on the plugin a small description will be displayed.
-
-After subscribing to plugins they will be displayed under the *Subscribed plugins* tab. 
-
-To *unsubscribe* plugins:
-
-- Hover over the subscribed plugin
-- Click the *Unsubscribe* button
-- Click on "Save changes"
+- Hover over the subscribed plugin.
+- Click "Unsubscribe".
+- Click "Save changes".
  
 ![Unsubscribe](/guides/users-guide/unsubscribe.png)
 
 ### Uploading archives
 
-If the type of the application is "Hosted" you can also *Upload archive* and choose which archive will become active.
+You can upload different versions of a hosted application at the same time and switch between these versions. To upload an archive:
 
-To upload archives:
-
-- Select application by clicking on her name
-- Click on *Archives*
-- Click on *Upload archive* and navigate to the archive directory in your computer
+- Select the application by clicking on its name.
+- Click on the "Archives" tab.
+- Click on "Upload archive" and navigate select the archive on your folder. 
+- Click on "Upload" to upload the archive to Cumulocity.
 
 ![Upload archive](/guides/users-guide/uploadarchive.png)
 
-Archives can be downloaded, *Set active* or removed if necessary.
-
-To download archives, hover over the desired archive and click on the "Download" button.
-
-To set active archive click the "Set active" button or click the "X" button to remove the archive.
-
-> Note that active archives cannot be removed!
+Once uploaded, archives can be downloaded, activated or removed if necessary. The active archive (indicated by a cloud icon) is the version of the application that is currently being served to the users of your account. This version cannot be deleted.
 
 ### Removing applications
 
-To *Remove* applications simply hover over the application name and click the "X" button. A confirmation pop-up window will appear, click "OK" and the group will be deleted.
+To *Remove* applications simply hover over the application name and click the "X" button. A confirmation pop-up window will appear. Click "OK" and the group will be deleted.
 
 ![Remove application](/guides/users-guide/removeapp.png)
 
+## <a name="simulators"></a>Dealing with simulators
 
-## Dealing with simulators
-
-Cumulocity provides the ability to test specific devices and sensors via "Simulators". This way users can test their applications during development. To view the simulator section click on
-"Simulator" under the "Applications" tab in the administration menu. 
+Cumulocity provides a simple capability to simulate devices. This way, users can test their applications against simulated devices during development. To view the simulator section, click on
+"Simulator" in the "Applications" menu.
 
 ![Simulator](/guides/users-guide/simulator.png)
 
 ### Adding a simulator
 
-To add new simulator click on "Add simulator"
+To add new simulator, click on "Add simulator"
 
 ![Add simulator](/guides/users-guide/addsimulator.png)
 
-- Write simulator "Name"
-- Select number of instances for the simulator. For example choosing 2 instances, 2 simulated devices will be created. This can be used for example to test network code between the two devices
-- Clicking on the checkbox of the desired [Sensor](#working-with-sensors) will reveal 2 new fields. The first field is "Values". To give more than one sensor value you will have to separate them via semicolons(e.g. "16.7;34.25;12").
-The second field is "Interval"(in seconds).
+- Enter the simulator name. The name will be used in the simulated devices.
+- Select the number of simulated instances. For example, if you choose two instances, two sets of simulated devices with the selected sensors are created. 
+- Select the desired [sensors](#working-with-sensors). This will reveal two new fields: "Values" and "Interval". "Values" contains a playlist of numbers separated by semicolons, which will be played in "Interval" seconds. For example, if you use "16.7;18;20" as "Values" and 5 seconds as interval, the first simulated sensor reading will be 16.7. After five seconds, a second value of 18 will be recorded. After another five seconds, 20 will be recorded. After further five seconds, the procedure will start from the first value.
 - Click "Save"
-
-### Working with sensors
-
-Here we are going to explain all available sensors. They are the following:
-
-- *accelerationSensor* - Measures acceleration along an axis in metres per second per second (m/s2)
-- *humiditySensor* - Measures the amount of water vapour in the air 
-- *moistureSensor* - Measures the water content of a substance
-- *distanceSensor* - Measures distance between the sensor and the closest device.
-- *temperatureSensor* - The temperature sensor is used to measure and report temperature in degrees	Celsius(C)
-  
-For more info you can visit the [Sensor library](/guides/reference/sensor-library). 
 
 ### Starting, pausing or removing simulators
 
-Simulators can have only 2 states(Running and Paused). To start a simulator first hover over his name, then click on the "Run device" button.
+Simulators can have two states, running and paused. To start a simulator first hover over its name, then click on the "Run device" button.
 
 ![Start simulator](/guides/users-guide/startsimulator.png)
 
-To stop simulators simply press the "Stop device" button while hovering over the desired simulator name.
+To stop a simulator, simply press the "Stop device" button while hovering over the desired simulator name.
 
 ![Stop simulator](/guides/users-guide/stopsimulator.png)
 
-To delete a simulator hover over the simulator's name, press the "X" button and after the pop-up window appears press "OK".
+To delete a simulator, hover over the simulator's name, press the "X" button and confirm the pop-up window.
 
-> Note that simulators cannot be edited, instead you will have to add a new one.
+> Note that simulators cannot be edited currently. Instead, you will have to add a new one.
 
-## Handling business rules
+## <a name="event-processing"></a>Handling business rules
 
 *Business Rules* allow the administrator to set up events and alarms. Via "Event processing" *New modules* can be created to add alarms that will activate when a certain event occurs or after certain amount of time have passed. *Alarm mapping* will allow administrators to choose between alarm severities. By using severities you can monitor problems with your assets.
 

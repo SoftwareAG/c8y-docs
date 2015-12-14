@@ -1,5 +1,5 @@
 ---
-order: 30
+order: 15
 title: Cockpit
 layout: default
 toc: true

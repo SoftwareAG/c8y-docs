@@ -29,7 +29,7 @@ The "Home" screen provides navigation links to the main parts of the administrat
 
 ![Home](/guides/users-guide/home.png)
 
-## <a href="users"></a>Managing users
+## <a name="users"></a>Managing users
 
 In order to manage users in your tenant, click on the "Users" menu. New accounts will usually contain two users: The initial administrator user and the "sysadmin" user. The initial administrator user was configured when your account was created. This user cannot be removed, only edited. The "sysadmin" user is a user that the Cumulocity support uses to guide you through your trial phase.
 
@@ -45,7 +45,7 @@ To add additional users, click on "Add user".
 - Enter the email address of the user. Note that you need to provide a valid, unique email address here to enable users to reset their password.
 - Enter the telephone number. Again, this is purely informational.
 - If you choose to check "Password reset", the user will have to choose a new password after the next login.
-- Enter a password and confirm the password. A password needs to consist of at least eight characters. It should use a mixture of character classes (uppercase and lowercase letters, numbers and symbols). The strength of the password is indicated while you are typing the password. A strong password uses at least three of the above four character classes.
+- Enter a password and confirm the password. (See "[Logging in](/guides/users-guide/overview#login)" for more information on password strength.)
 - Add users to relevant [user groups](#user-groups).
 - Assign [device-specific permissions](#permissions).
 - Finally, click the "Save" button.

@@ -4,9 +4,9 @@ title: NetComm Agent Release Notes
 layout: default
 ---
 
-## Release notes for NetComm Agent 2.1
+## Release notes for NetComm Agent 2.2
 
-This document describes the Cumulocity agent package for the [NetComm Wireless NTC-6200](www.netcommwireless.com/product/m2m/ntc-6200) router.
+This document describes the Cumulocity agent package for the [NetComm Wireless NTC-6200](http://www.netcommwireless.com/product/m2m/ntc-6200) router.
 
 ## Supported functionality
 
@@ -23,19 +23,21 @@ The agent supports the following functionality:
 * Remote controlling of GPIO pins (digital output) from Cumulocity.
 * Editing the router configuration.
 * Managing router configuration snapshots.
-* Remotely execute commands via device shell interface.
+* Remotely executing commands via device shell interface.
 * Sending event notifications as alarms.
 * Modbus/TCP support to remotely manage Modbus devices from Cumulocity.
 * Lua plug-in API for rapid development of IoT applications.
 * Configuring and displaying of agent settings on the router's web user interface.
 * Get and put device configuration.
-* View log files.
+* View system, ipsec and agent log files.
 
-## Known limitations
+## Known limitations and bugs
 
 * The time on the router and on the server may not be fully in sync, hence you may see updates (e.g., alarms, events) that occur "in future". This is also the reason that it may take a while until the "Location" and the "Measurement" tab appear for new devices.
-* Only WAN profile 1 is supported.
+* Only WAN profile 1 is supported. To set APNs, the "auto APN" mode on the device needs to be disabled.
 * The Modbus implementation currently does not support shifting decimal points. (However, divisor can be used to achieve the same effect.)
+* Under some circumstances, a command sent to the device may be lost while switching between SMS and IP mode.
+* Saving configuration snapshots can lead to disconnecting the device.
 
 ## System requirements
 
@@ -45,7 +47,7 @@ Agent versions 2.1.10 and up require at least Cumulocity 6.10 to support the new
 
 ## Installing the agent
 
-* Download the software: http://resources.cumulocity.com/ntc/smartrest-agent_2.1.10_arm.ipk.
+* Download the software: http://resources.cumulocity.com/ntc/smartrest-agent_2.2.6_arm.ipk.
 * Log in to the web user interface of the NTC-6200.
 * Navigate to the "System" menu. Click on "System configuration", "Choose a file" and select the downloaded software. Click "Upload" to upload the software to the router.
 * Click the "Install" button for the uploaded software which you want to install.
@@ -98,4 +100,17 @@ For an alpha version of the Lua-based rapid development, visit https://bitbucket
 * Detect wrong plug-in name in configuration
 * Removed timeouts in software manager
 * Remove agent log file after install new version
+
+### 2.2.6
+
+[Download link](http://resources.cumulocity.com/ntc/smartrest-agent_2.2.6_arm.ipk). Changes:
+
+* GPIO alarm status is updated on device start.
+* GPIO debouncing fixes.
+* Performance and reliability improvements for operations.
+* Device Shell robustness improvements.
+* Modbus stability improvements and corrections.
+* Log rotation and log quota setting (through RDB parameter service.cumulocity.log.quota).
+* Remote log viewing of ipsec.log.
+* Log API for Lua.
 

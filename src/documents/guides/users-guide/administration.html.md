@@ -1,49 +1,55 @@
 ---
-order: 30
+order: 40
 title: Administration
 layout: default
-toc: enabled
 ---
-
-# Administration Guide
 
 ## Overview
 
-The Administration application provides the ability for all account owners to easily manage their *Users*, *User groups* and *Applications*. User and Group permissions can be set and access to applications can be granted and revoked. 
+The Administration application lets account administrators manage their users, applications, rules and stored files, as well as configure a number of options for the account. You can:
 
-In the "Accounts" tab users and user groups can be managed. Administrators have the ability to choose which user will have access to which application and what kind of permissions the users have to specific "Scope" of a device. If many users have the same permissions they can be added to a user group. User groups can be used to assign specific permissions to a particular device for all the users in the group.
+* View [subscription information](#home) for your account.
+* Manage [users](#users) and [user groups](#user-groups), including their [permissions](#permissions).
+* Configure [applications](#applications) and [simulators](#simulators).
+* Set up real-time [event processing](#event-processing) scripts and [reprioritize alarms](#reprio-alarms).
+* Change [security policies](#security-policies) and [access settings](#access-settings).
+* Configure the [retention policies](#retention) for your data.
+* Manage [stored files](#files) such as firmware images or log files.
 
-The "Applications" tab gives the opportunity to configure *applications* or *simulators*. With *Business rules* one can add scripts for the builtin real-time analytics engine. Additionally, alarms can be mapped to different severities (e.g. Minor, Major, Critical).
+## <a name="home"></a>The home screen
 
-Retention rules can be added, for example alarms or event can be deleted after a number of days. Using the file repository, files can be uploaded on the cloud repository.
+The "Home" screen provides navigation links to the main parts of the administration application. It also shows subscription information for your account. The subscription information describes how much capacity you have used and what optional applications your are subscribed to. The capacity section shows:
+
+* API requests: Counted whenever some functionality in Cumulocity is invoked, regardless of whether the functionality is invoked from a device (for example, sending a measurement) or from an application (for example, viewing the list of devices).
+* Storage: The total amount of data stored in your account. This amount can be influenced by [retention policies](#retention) and by the amount and size of [stored files](#files).
+* Devices: The total number of devices connected to your account. This is the sum of the devices listed in the "[All devices](/guides/users-guide/device-management#viewing-devices)" menu of the Device Management application and their direct and indirect child devices.
+* Users: The sum of all users configured in this account, active and inactive.
+
+"This month" shows the usage information from the start of the current month. "Last month" shows the last full month. 
 
 ![Home](/guides/users-guide/home.png)
 
-The "Home" page shows all subscribed applications, also how many API requests, storage, devices and users were used for "This month" and "Last month". API requests are queries to the Cumulocity database. For example, every time you create or edit a user an API request is created. 
+## <a href="users"></a>Managing users
 
-## Managing users
+In order to manage users in your tenant, click on the "Users" menu. New accounts will usually contain two users: The initial administrator user and the "sysadmin" user. The initial administrator user was configured when your account was created. This user cannot be removed, only edited. The "sysadmin" user is a user that the Cumulocity support uses to guide you through your trial phase.
 
-In order to manage users in your tenant click on "Users" in your administration menu. By default after tenant creation there are 2 users automatically added. The first one is the admin user that is configured in the administration setup and the second one is "sysadmin". The admin user cannot be removed, he can only be edited. 
+> Note that the sysadmin user may not be present depending on your provider.
 
 ![Click Users](/guides/users-guide/Users.png)
 
-> Note that if you do not see "Users" click on "Accounts" first and then "Users".
+To add additional users, click on "Add user".
 
-### Adding users
+- Enter the username that the user will use for logging in to your account.
+- Choose if the user will be active. If this switch is set to "disabled", the user will not be able to log in.
+- Enter first and last name of the user. This is purely for information and will be shown on the top right next to the user symbol when the user logs in.
+- Enter the email address of the user. Note that you need to provide a valid, unique email address here to enable users to reset their password.
+- Enter the telephone number. Again, this is purely informational.
+- If you choose to check "Password reset", the user will have to choose a new password after the next login.
+- Enter a password and confirm the password. A password needs to consist of at least eight characters. It should use a mixture of character classes (uppercase and lowercase letters, numbers and symbols). The strength of the password is indicated while you are typing the password. A strong password uses at least three of the above four character classes.
+- Add users to relevant [user groups](#user-groups).
+- Assign [device-specific permissions](#permissions).
+- Finally, click the "Save" button.
 
-To add additional users click on "Add user"
-
-![Add User](/guides/users-guide/addusers.png)
-
-- Enter *Username*
-- Choose if the user will be *Enabled* or *Disabled*
-- Enter *Password* and *Confirm password*
-- If you choose to click on *Password reset* the "User" will have to reset the password on his next login
-- [Assign Group membership](#assigning-users-to-a-group) 
-- [Give User Permissions](#handling-user-permissions)
-- [Grant Application Access](#granting-application-access)
-- Click on the *Save* button
-	
 ![Add User](/guides/users-guide/adduserpage.png)
 
 > Fields without an asterisk" * "(e.g. "First name", "Last name") are not mandatory.

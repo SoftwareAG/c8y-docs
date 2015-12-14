@@ -11,7 +11,6 @@ The following sections cover the basic usage of Cumulocity applications. They de
    * [Accessing Cumulocity applications](#accessing).
    * [Logging in](#login).
    * [Navigating in Cumulocity applications](#navigating).
-   * [Using dashboards](#dashboards).
 
 ## <a name="accessing"></a>Accessing Cumulocity applications
 
@@ -102,60 +101,4 @@ Using such a URL, you can
   * Write own web applications that link directly to information contained in a Cumulocity application.
 
 > Usually, Cumulocity applications provide tooltips when you hover over a particular user interface element. When you use Cumulocity applications on touch devices, tooltips are shown when you touch a user interface element for a longer time. 
-
-## <a name="dashboards"></a>Using dashboards
-
-Dashboards provide you with a customized visualization of your data, consisting of a set of freely arrangable so-called "widgets". Widgets can display maps, images, graphs, tables and other graphical representations of data. Cumulocity comes with a number of pre-provided widgets, but you can develop also your own widgets and add them to your Cumulocity account. See the [Web developer's guide](/guides/web/).
-
-To create a dashboard, navigate to a device and click on the cog wheel icon at the top right. Select "Create dashboard". This will open a dialog in which you enter
-
-* The name of the dashboard, which will show in the menu.
-* The location of the dashboard in the menu.
-* The icon which is rendered next to the name in the menu.
-
-<img src="/guides/users-guide/createdashboard.png" alt="Create dashboard" style="max-width: 60%">
-
-Click "Create" to create and open the dashboard. While there are no widgets on the dashboard, you will see an "Add Widget" button. Use this button to add your first widget to the dashboard, or click the cog wheel again and select "Add widget to dashboard".
-
-The following dialog will allow you to choose a widget to add from the list of widgets available in your account. You will also always have the option to edit two further properties:
-
-* The title of the widget, that will be rendered just above the widget.
-* The width of the widget as number between one and twelve columns. 
-
-Selecting twelve columns results in a widget that will occupy the full available width of the dashboard. Selecting one column results in a widget occupying one twelth of the available width. If the screen estate of the dashboard gets smaller, widgets are automatically rearranged to consume less space and may be ultimately all rendered in a single column. Depending on the widget, further properties for configuration will be visible. These are discussed below.
-
-<img src="/guides/users-guide/addwidget.png" alt="Add widget" style="max-width: 60%">
-
-For most widgets, you will also see a "Child devices" option. This will allow you to show data from a child device in the widget. By default, the current device is selected.
-
-Once a widget is placed on a dashboard, it can be moved to a new location on the dashboard by dragging its title bar. You can also edit the widget properties by moving your mouse to the title bar, clicking the cog wheel and selecting "Edit". Similar, you can delete a widget by clicking "Remove".
-
-Finally, entire dashboards can be edited, removed and copied by clicking on the larger cog wheel at the top right.
-
-### Properties
-
-The properties widget shows inventory data of a device, such as hardware or modem information. The data will be shown in tables with one table for each section of information that you select in the "Add widget" or "Edit widget" dialog.
-
-### Location
-
-The location widget will just show the selected device on a map.
-
-### Image
-
-The image widget will show an arbitrary image on the dashboard. You can upload the image to be shown when you add or edit the widget.
-
-### KPI list, KPI radial gauge, KPI linear gauge
-
-The KPI list, KPI radial gauge and KPI linear gauge are three different visual representations of the current value of a KPI. The KPI list widget shows a table of KPIs with the KPI name, it's target value, the current value and the difference between current and target value. The KPI radial gauge and the KPI linear gauge display the current value in a graphical relationship to "yellow" and "red" values. For more information on KPIs, see "[Using KPIs](#kpis)".
-
-### KPI graph
-
-The KPI graph widget display the history of a set of KPIs in a graph. 
-
-Time interval, aggregation, refer to measurements
-
-
-## <a name="kpis"></a>Using KPIs
-
-> To be done.
 

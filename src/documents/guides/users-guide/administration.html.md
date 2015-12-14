@@ -515,7 +515,7 @@ Cumulocity provides administrators with the ability to upload their files on the
 
 ![Retention rules](/guides/users-guide/retrules.png)
 
-*Retention rules* will give the administrator ability to control for how long will a specific *Data type* be retained. For example an alarm can be established to expire after certain duration. When the time have passed the alarm will be deleted. 
+*Retention rules* will give the administrator ability to control for how long will a specific *Data type* be retained. For example an alarm can be established to expire after certain duration. When the time have passed the alarm will be deleted (note: it only applies to CLEARED alarms, ACTIVE and ACKNOWLEDGED are not deleted). 
 
 To add additional "Retention rules" click on "Add rule"
 

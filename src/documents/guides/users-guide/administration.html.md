@@ -12,11 +12,11 @@ The Administration application lets account administrators manage their users, a
 * Manage [users](#users) and [user groups](#user-groups), including their [permissions](#permissions).
 * Configure [applications](#applications) and [simulators](#simulators).
 * Set up real-time [event processing](#event-processing) scripts and [reprioritize alarms](#reprio-alarms).
-* Change [security policies](#security-policies) and [access settings](#access-settings).
+* Change [settings](#settings).
 * Configure the [retention policies](#retention) for your data.
 * Manage [stored files](#files) such as firmware images or log files.
 
-## <a name="home"></a>The home screen
+## <a name="home"></a>The home screenshot
 
 The "Home" screen provides navigation links to the main parts of the administration application. It also shows subscription information for your account. The subscription information describes how much capacity you have used and what optional applications your are subscribed to. The capacity section shows:
 
@@ -66,14 +66,14 @@ Hovering over a user reveals the deactivate and delete buttons on the right side
 
 ![Delete User](/guides/users-guide/deleteuser.png)
 
-## <a name="user-groups></a>Managing user groups
+## <a name="user-groups"></a>Managing user groups
 
 To simplify user management, users with the same permissions can be placed into user groups representing typical permission sets. A single user can be part of multiple user groups. New account will usually contain four user groups by default. These user groups have common useful permission settings:
 
-* Admins: A group with all permissions set.
-* Business: Users in this group can work with all devices and their data, but cannot administer the account.
-* Readers: User in this group can read all data but cannot make any changes (including sending commands to devices, for example).
-* Devices: A group with typical minimal default permissions for devices. 
+* admins: A group with all permissions set.
+* business: Users in this group can work with all devices and their data, but cannot administer the account.
+* readers: User in this group can read all data but cannot make any changes (including sending commands to devices, for example).
+* devices: A group with typical minimal default permissions for devices. 
 
 All groups can be modified and deleted.
 
@@ -90,7 +90,7 @@ To add a user group:
 
 ### Editing groups
 
-All user group details can be edited. To edit a group, click on the name of the group in the group list. After you have finished modifying the group, click on the "Save" button. Editing a user group may change the permission for all users in the group and may affect the correct functioning of devices. Hence you have to confirm your changes as shown in the screenshot below.
+All user group details can be edited. To edit a group, click on the name of the group in the group list. After you have finished modifying the group, click on the "Save" button. Editing a user group may change the permission for all users in the group and may affect the correct functioning of devices. Hence, you have to confirm your changes as shown in the screenshot below.
 
 <img src="/guides/users-guide/confirmgroup.png" alt="Confirm group editing" style="max-width: 60%">
 
@@ -214,7 +214,7 @@ Depending on the selected type, different further options will appear.
 
 - Enter the application path. This path will be part of the URL to invoke the application. For example, if you use "hello" as application path, the URL of the application will be "/apps/hello".
 - Select the archive file that contains the application and upload it.
-- Click *Save*.
+- Click "Save".
 
 ### <a name="working-with-repository-applications"></a>Working with repository applications
 
@@ -224,7 +224,7 @@ Depending on the selected type, different further options will appear.
 - Enter the server URL where your application is hosted. At this URL, there needs to be an index.html file that provides the entry point to your application.
 - Enter a username to access your repository (optional).
 - Enter a password to access your repository (optional).
-- Click *Save*.
+- Click "Save".
 
 Username and password are transmitted using HTTP Basic Authentication.
 
@@ -245,8 +245,8 @@ To configure the functionality provided through a smartapps, select the "Plugins
 - Select application by clicking on its name.
 - Click on "Plugins".
 - Locate the desired plugin by scrolling through the list of available plugins. You can reduce the list by selecting a plugin category from the drop-down menu, or by starting to type the plugin's name. Clicking on the plugin name unfolds a description of the plugin.
-- Hover over the desired plugin and click the *Subscribe* button.
-- Click on the *Save changes* button
+- Hover over the desired plugin and click the "Subscribe" button.
+- Click on the "Save changes" button
 
 ![plugins](/guides/users-guide/plugins.png)
 
@@ -256,7 +256,7 @@ After subscribing to plugins, they will be displayed under the "Subscribed plugi
 - Click "Unsubscribe".
 - Click "Save changes".
  
-![Unsubscribe](/guides/users-guide/unsubscribe.png)
+<img src="/guides/users-guide/unsubscribe.png" alt="Unsubscribe plugin" style="max-width: 40%">
 
 ### Uploading archives
 
@@ -273,7 +273,7 @@ Once uploaded, archives can be downloaded, activated or removed if necessary. Th
 
 ### Removing applications
 
-To *Remove* applications simply hover over the application name and click the "X" button. A confirmation pop-up window will appear. Click "OK" and the group will be deleted.
+To remove an application, simply hover over the application name and click the "X" button. A confirmation pop-up window will appear. Click "OK" and the group will be deleted.
 
 ![Remove application](/guides/users-guide/removeapp.png)
 
@@ -282,18 +282,16 @@ To *Remove* applications simply hover over the application name and click the "X
 Cumulocity provides a simple capability to simulate devices. This way, users can test their applications against simulated devices during development. To view the simulator section, click on
 "Simulator" in the "Applications" menu.
 
-![Simulator](/guides/users-guide/simulator.png)
-
 ### Adding a simulator
 
 To add new simulator, click on "Add simulator"
 
-![Add simulator](/guides/users-guide/addsimulator.png)
-
 - Enter the simulator name. The name will be used in the simulated devices.
 - Select the number of simulated instances. For example, if you choose two instances, two sets of simulated devices with the selected sensors are created. 
-- Select the desired [sensors](#working-with-sensors). This will reveal two new fields: "Values" and "Interval". "Values" contains a playlist of numbers separated by semicolons, which will be played in "Interval" seconds. For example, if you use "16.7;18;20" as "Values" and 5 seconds as interval, the first simulated sensor reading will be 16.7. After five seconds, a second value of 18 will be recorded. After another five seconds, 20 will be recorded. After further five seconds, the procedure will start from the first value.
+- Select the desired sensors. This will reveal two new fields: "Values" and "Interval". "Values" contains a playlist of numbers separated by semicolons, which will be played in "Interval" seconds. For example, if you use "16.7;18;20" as "Values" and 5 seconds as interval, the first simulated sensor reading will be 16.7. After five seconds, a second value of 18 will be recorded. After another five seconds, 20 will be recorded. After further five seconds, the procedure will start from the first value.
 - Click "Save"
+
+![Add simulator](/guides/users-guide/addsimulator.png)
 
 ### Starting, pausing or removing simulators
 
@@ -301,190 +299,117 @@ Simulators can have two states, running and paused. To start a simulator first h
 
 ![Start simulator](/guides/users-guide/startsimulator.png)
 
-To stop a simulator, simply press the "Stop device" button while hovering over the desired simulator name.
-
-![Stop simulator](/guides/users-guide/stopsimulator.png)
-
-To delete a simulator, hover over the simulator's name, press the "X" button and confirm the pop-up window.
+To stop a simulator, simply press the "Stop device" button while hovering over the desired simulator name. To delete a simulator, hover over the simulator's name, press the "X" button and confirm the pop-up window.
 
 > Note that simulators cannot be edited currently. Instead, you will have to add a new one.
 
-## <a name="event-processing"></a>Handling business rules
+## <a name="event-processing"></a>Managing event processing
 
-*Business Rules* allow the administrator to set up events and alarms. Via "Event processing" *New modules* can be created to add alarms that will activate when a certain event occurs or after certain amount of time have passed. *Alarm mapping* will allow administrators to choose between alarm severities. By using severities you can monitor problems with your assets.
-
-### Dealing with event processing
-
-To see your current modules or to create new one click on *Event processing*.
+Using event processing, you can specify real-time business logic that is automatically run by Cumulocity as soon as new data arrives or existing data is modified. The logic is deployed in so-called "modules". Modules consist of a set of statements that you write in [Cumulocity Event Language](/guides/concepts/realtime). Click on "Event processing" to see the current modules or to create new modules.
 
 ![Event processing](/guides/users-guide/eventprocessing.png)
- 
-> Note that if you do not see "Event processing" click on "Business Rules".
+
+> A user-friendly way to specify real-time business logic is provided in the Cockpit application through the so-called "[Smart Rules](/guides/users-guide/cockpit#working-with-smart-rules)". Smart Rules are "under the hood" also implemented as Cumulocity Event Language statements, and you can see them when you click on "Event Processing". However, you cannot edit Smart Rules from the Event Processing user interface.
 
 ### Creating new modules
 
-Modules can be used to create alarms a
-when certain event conditions have been met (e.g. Temperature threshold has been exceeded). Later even [alarm severities](#adding-alarm-mapping) for the events can be set.
+To create a new module, click on "New module".
 
-To create new modules first click on "New module".
+- Enter a name for the module. You can only use alphanumeric characters without blanks.
+- If you want to run the statements in the module immediately, leave the status set to "Deployed". Otherwise, set the status to "Not deployed".
+- Start typing your CEL statements into the large text field labelled "Body". To get some inspiration, select an example from the "Examples" drop-down menu and click "Append example". The example CEL statement will be pasted into the "Body" text field at the position of the cursor.
+- Click the "Save" button.
 
 ![New module](/guides/users-guide/newmodule.png)
 
-- Write "Name" of the module.
-- Set status to *Deployed* or *Not deployed*.
-- Body examples can be seen by clicking on the drop-down menu under "Examples". Select the desired event (e.g. "Create alarm when temperature below 0 degree") and click on "Append example"
-- After the *Body* has been completed click on the "Save" button.
-
-> Note that selecting "Deployed" status will set the module immediately to "Connected" after creation. 
- 
-> The *Clear all* button will clear all of the incoming data.
-
-![Create New module](/guides/users-guide/createnewmodule.png)
+If you selected the "Deployed" status, you will see a small green "Connected" box in the user interface. Whenever your statements produce some output, you will see it below this "Connected" box. Clicking on a line of output unfolds the detailed output of the statement. Clicking "Clear all" removes the output from the screen.
 
 ### Managing modules
 
-To modify your module simply click on the module's name
-
-To remove your module hover over the module's name and click the "X" button. Confirmation window will pop-up, press "OK" and the module will be removed.
+To modify your module, simply click on the module's name. To remove your module, hover over the module's name and click the "X" button. A confirmation window will pop up. Press "OK" and the module will be removed.
 
 ![Remove modules](/guides/users-guide/removemodules.png)
 
-> Note that instead of deleting the module it can be disabled by setting the "Status" in the edit menu to "Not deployed". Do not forget to click on the "Save" button when ready.
+> Note that instead of deleting the module, you can also disable it temporarily by setting the "Status" in the edit menu to "Not deployed". Do not forget to click on the "Save" button.
 
-### Dealing with alarm mapping
+## <a name="reprio-alarms"></a>Reprioritizing alarms
 
-To deal with "Alarm mapping" first click on "Alarm mapping" in the administration menu.
+"Alarm mapping" lets you change the severity and text of alarms to adapt them to your business priorities. For example, a loss of the connection to a device may be critical to you, but it is, by default, a "MAJOR" alarm. To change this, add an alarm mapping to change alarms related to connection losses to "CRITICAL".
 
 ![Alarm mapping](/guides/users-guide/alarmmapping.png)
 
-Alarm mapping helps administrators add severity level to  each alarm. With severity levels in use they will know when something requires their immediate attention or not.
+### Adding an alarm mapping
 
-### Adding alarm mapping
+To modify the severity of an alarm, determine the type of the alarm that you want to modify by clicking on an alarm in the [alarm list](/guides/users-guide/device-management#alarm-monitoring). Then click "Add alarm mapping" in the "Alarm mapping" menu.
 
-There are 5 types of alarm severities:
+- Enter the alarm type to modify.
+- Select desired new severity, or select "Drop" to not show the alarm at all.
+- Enter a new text for the alarm. This step is optional. If you do not enter any text, the original text in the alarm will be preserved.
+- Click "Save".
 
-- *Drop* - There is no alarm or it is set to ["Not deployed"](#creating-new-modules)
-- *Critical* - Something requires your immediate attention
-- *Major* - Indicates that there is a major problem which should be fixed
-- *Minor* - There is a minor problem
-- *Warning* - Does not require immediate attention
+### Changing or deleting alarm mappings
 
-> Note that setting up alarm severities depends entirely on the user's choice, we offer only an example usage of the alarms severities. 
+To change an alarm mapping, 
 
-For more info about alarms please refer to [Working with alarms.](#/guides/users-guide/device-management/#alarm-monitoring)
+- Locate the alarm in the "Alarm mapping" section and click on its name.
+- Change the severity and/or text.
+- Click "Save".
 
-To select alarm severity for a certain alarm click on *Add alarm mapping*
+To delete alarm severities, hover over the alarm type and click the "X" button. A confirmation window will pop up. Press "OK" to delete the alarm mapping.
 
-![Add alarm mapping](/guides/users-guide/addalarmmapping.png)
+## <a name="settings"></a>Changing settings
 
-- Match the name of the alarm to which the severity will be mapped
-- Select desired severity
-- Give "New description"(optional)
-- Click on "Save"
+By expanding the "Settings" menu, administrators can:
 
-### Changing or Removing alarm severities
+- Change the [password policy](#changing-password-settings).
+- Change the [access control](#access-control) settings.
+- [Enable or disable the dashboards via e-mail feature](#enabling-server-side-agents)
 
-To change alarm severities:
+### <a name="changing-password-settings"></a>Changing the password policy
 
-- Locate the alarm the "Alarm mapping" section and click on her name
-- Under "New severity" change to the desired severity level
-- Click on the "Save" button
+To change password settings, click on "Password". To limit the validity of user passwords, set the number of days after which users have to change their passwords. If you do not want to force your users to change passwords, use "0" for unlimited validity of passwords. 
 
-To delete alarm severities hover over the alarm name and click on the "X" button. Confirmation window will pop-up, press " OK " and the "Alarm mapping" will be deleted.
+By default, users can use any password that consists of eight characters or longer. If you select "Enforce that all password are "strong" (green)", your users must provide strong passwords as described in "[Logging in](/guides/users-guide/overview#login)".
 
-![Remove alarm mapping](/guides/users-guide/removealarmmapping.png)
+Click "Save" to store the settings.
 
+<img src="/guides/users-guide/passsettings.png" alt="Password settings" style="max-width: 50%">
 
-## Changing settings
+### <a name="access-control"></a>Changing access control settings
 
-By expanding the "Settings" tab administrators have the following options:
+Via the "Access Control" menu, administrators can enable cross-origin resource sharing or "CORS" on the Cumulocity API. For more information, see http://enable-cors.org.
 
-- [Change password](#changing-password-settings) validity for particular amount of days
-- Enforce whether all passwords are "strong"
-- [Grant *Access control*](#granting-access-control)
-- ["Enable" or "Disable" dashboard via e-mail](#enabling-server-side-agents)
+### <a name="enabling-server-side-agents"></a>Enabling server-side agents
 
-### Changing password settings
+In the "Server-side agents" menu, the "Send dashboard via e-mail" smart rule can be enabled or disabled. To enable, select the checkbox and click "Save".
 
-To change password settings click on Password under "Settings" tab
+## <a name="retention"></a>Managing data retention
 
-![Change Password Settings](/guides/users-guide/passsettings.png)
+"Retention rules" let you control how long data will be stored in your account. For example, you may want to store measurements for 90 days, but delete alarms already after 10 days. By default, all historical data is deleted after 60 days.
 
-Here password limit validity can be set, meaning that after " X " number of days the password will have to be changed. 
-
-> Note that the default value is set to "0" for unlimited validity.
-
-One can also choose to enable "Enforce that all password are "strong" " by clicking on the checkbox. This setting will allow you to type "easy" passwords which will be counted as "strong". Note that due to security reasons it is not recommended.
-
-After the modification is complete click on "Save".
-
-### Granting access control
-
-Via the "Access Control" tab administrators can enable cross-origin resource sharing or "CORS" by writing the address of the desired domain. "CORS" allows restricted resources to be requested from another domain.
-
-> Beware not to lock yourself out of the platform by writing invalid address!
-
-### Enabling server-side agents
-
-In the *Server-side agents* tab "Send dashboard via e-mail" smart rule can be "Enabled" or "Disabled".
-
-To change "Server-side agents settings" click on "Server-side agents in the administration menu.
-
-![Server-side agents](/guides/users-guide/serversideagents.png)
-
-Afterwards click "Save".
-
-## Handling management tab
-
-Cumulocity provides administrators with the ability to upload their files on the cloud using the *Files repository* and to add and manage their own *Retention rules*.
-
-### Working with retention rules
-
-![Retention rules](/guides/users-guide/retrules.png)
-
-*Retention rules* will give the administrator ability to control for how long will a specific *Data type* be retained. For example an alarm can be established to expire after certain duration. When the time have passed the alarm will be deleted (note: it only applies to CLEARED alarms, ACTIVE and ACKNOWLEDGED are not deleted). 
-
-To add additional "Retention rules" click on "Add rule"
+Retention rules are usually run during the night. When you edit a retention rule, you will not see an immediate effect, for example, in the usage section on the home page of the administration application.
 
 ![Add rule](/guides/users-guide/addrules.png)
 
-- Select *Data type*
-- Enter *Fragment type*
-- Write *Type* only to data that has "Type" property
-- Write *Source*
-- Enter *Maximum age*
-- Click on the "Save" button
+To add additional "Retention rules", click on "Add rule". Up to the "Maximum age" field, you can enter an asterisk ("*") into all fields to permit any value in that field.
 
-![Add rule](/guides/users-guide/addrulepage.png)
+- Select the type of data to clean up (alarms, measurements, events, operations, audit logs).
+- Enter a fragment type or type, if you want to be more specific about the data to be cleaned up. For example, to clean up all connection loss alarms with this rule, select "alarms" and enter "c8y_UnavailabilityAlarm" into "type".
+- If you want to remove only data from a specific device, enter the device ID into "Source".
+- Enter the "Maximum age" in days.
+- Click the "Save" button.
 
-> For more info about "Data types" please refer to the [Reference](/guides/reference/alarms) guides.
+<img src="/guides/users-guide/addrulepage.png" alt="Add retention rule" style="max-width: 50%">
 
-To delete a rule click on the "X" button and then press "OK" after the pop-up window appears.
+> Note that alarms are only removed if they are in "CLEARED" state.
 
-### Managing repository
+To delete a rule, click on the "X" button and then press "OK" after the pop-up window appears.
 
-The *Files repository* allows administrators to upload and store files on the cloud. 
+## <a name="files"></a>Managing files
 
-To see files in the repository click on "Files repository" in the administration menu.
+The file repository provides an overview of the files stored in your account. To see the files, click on "Files repository" in the administration menu. Note that the files listed here may come from various sources. For example, they may be software images, configuration snapshots taken from devices, log files from devices or web applications uploaded using the "Own applications" menu. To delete a file, click the "X" button next to the file. 
 
 ![Files repository](/guides/users-guide/filesrepo.png)
 
-#### Uploading files
+> If the file corresponds to an active application, it cannot be deleted from here. You first need to remove or upgrade the application to be able to delete it.
 
-There are 2 ways to upload files in the repository:
-
-- In the "Files repository" tab under "Management" click on "Upload file" located at the top-right. A pop-up window will appear, select the desired file and click "Upload" to finish the process.
-
-![Upload file](/guides/users-guide/uploadfile.png)
-
-- If there are [Hosted applications](#working-with-hosted-applications), files can be uploaded at the [Archives](#uploading-archives) page. Later they can be seen in the repository.
-
-> Note that using the "Application archives" as repository is not recommended. 
-
-#### Downloading or Deleting files
-
-To download a file in the repository hover over the desired file and click on the "Download" button.
-
-To delete a file click on the "X" button and press "OK" when the pop-up window appears.
-
-> Please note that "Application archive" files cannot be deleted from the "Files repository".

@@ -18,7 +18,7 @@ The Administration application lets account administrators manage their users, a
 
 ## <a name="home"></a>The home screenshot
 
-The "Home" screen provides navigation links to the main parts of the administration application. It also shows subscription information for your account. The subscription information describes how much capacity you have used and what optional applications your are subscribed to. The capacity section shows:
+The "Home" screen provides navigation links to the main parts of the administration application. It also shows subscription information for your account. The subscription information describes how much capacity you have used and what optional applications you are subscribed to. The capacity section shows:
 
 * API requests: Counted whenever some functionality in Cumulocity is invoked, regardless of whether the functionality is invoked from a device (for example, sending a measurement) or from an application (for example, viewing the list of devices).
 * Storage: The total amount of data stored in your account. This amount can be influenced by [retention policies](#retention) and by the amount and size of [stored files](#files).
@@ -111,12 +111,12 @@ Cumulocity distinguishes three types of permissions that you can assign to users
 The total set of permissions that a user has is calculated using the following rules:
 
 * A user has the sum of the permissions that are granted to all groups that the user is part of.
-* If a user has an account-wide permissions, corresponding more specific perissions are ignored. For example, if a user has the permission to see all applications, you cannot edit application access permissions until you remove the permission to see all applications. Likewise, if a user has full access to the complete inventory, any inventory-related permissions are ignored.
+* If a user has an account-wide permissions, corresponding more specific permissions are ignored. For example, if a user has the permission to see all applications, you cannot edit application access permissions until you remove the permission to see all applications. Likewise, if a user has full access to the complete inventory, any inventory-related permissions are ignored.
 * Device-/group-specific permissions are inherited to all direct and indirect child devices and child assets. For example, if you assign "read" permission to a group of devices, the user will be automatically able to see all devices in the group.
 
 ### Assigning account-wide permissions
 
-When you edit a group, a table with with "roles" is listed below the group name. These represent permission on the following types of data:
+When you edit a group, a table with "roles" is listed below the group name. These represent permission on the following types of data:
 
 * Tenant statistics: View the usage data for this account, as shown on the home page of the administration application.
 * Option management: View or edit account options such as password policies.
@@ -167,7 +167,7 @@ To assign more granular permissions on device level or device group level, visit
 
 ### Assigning application access permissions
 
-To assign applications to particular users and user groups, visit the "Application access" section of that user or user group. Note that the application access section is not visible, if the user or user group already has access to all applications. The section showns marketplace applications and own applications. Marketplace applications are generally available applications that your account is subscribed to. Own applications are applications that you added to your account, see [below](#applications). Check all applications that should be made available to the user or user group.
+To assign applications to particular users and user groups, visit the "Application access" section of that user or user group. Note that the application access section is not visible, if the user or user group already has access to all applications. The section shows marketplace applications and own applications. Marketplace applications are generally available applications that your account is subscribed to. Own applications are applications that you added to your account, see [below](#applications). Check all applications that should be made available to the user or user group.
 
 <img src="/guides/users-guide/applicationaccess.png" alt="Application access" style="max-width: 60%">
 
@@ -234,7 +234,7 @@ Username and password are transmitted using HTTP Basic Authentication.
 
 ### Editing applications
 
-To edit an application, simply click on its name. Depending on the type of the application (e.g. Hosted, External). different fields can be modified. 
+To edit an application, simply click on its name. Depending on the type of the application (e.g. Hosted, External), different fields can be modified. 
 
 > Note that "ID", "Application key" and "Path" cannot be changed once configured.
 
@@ -317,7 +317,7 @@ To create a new module, click on "New module".
 
 - Enter a name for the module. You can only use alphanumeric characters without blanks.
 - If you want to run the statements in the module immediately, leave the status set to "Deployed". Otherwise, set the status to "Not deployed".
-- Start typing your CEL statements into the large text field labelled "Body". To get some inspiration, select an example from the "Examples" drop-down menu and click "Append example". The example CEL statement will be pasted into the "Body" text field at the position of the cursor.
+- Start typing your CEL statements into the large text field labeled "Body". To get some inspiration, select an example from the "Examples" drop-down menu and click "Append example". The example CEL statement will be pasted into the "Body" text field at the position of the cursor.
 - Click the "Save" button.
 
 ![New module](/guides/users-guide/newmodule.png)

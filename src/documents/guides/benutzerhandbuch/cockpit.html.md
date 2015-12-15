@@ -1,5 +1,5 @@
 ---
-order: 30
+order: 15
 title: Cockpit
 layout: default
 toc: true
@@ -396,34 +396,6 @@ Use the menu and select "Send as widget to dashboard".
 This will show a modal dialog with all dashboards of the current object. Move to the relevant dashboard and press "Select" to create a new widget in the selected dashboard.
 
 ![image alt text](/guides/users-guide/image_13.png)
-
-### Exporting Measurement data to csv or xls files
-
-With Cumulocity, administrators have the ability to download measurement data in both csv or xls files. 
- 	
-To download measurement data in either csv or xls:
-
-- Navigate to "Data Explorer"
-- Click on the small wheel button located at the top-right
-
-![Export measurement data](/guides/users-guide/exportmeasuredata.png)
-
-- Choose whether to download CSV or Excel(XLS) 
-
-"Generating Report" window will appear. The files will load depending on how many data points you have added to the "Data Explorer". Once loading is complete click on the "Download" button.
-
-### Exporting Inventory data to csv or xls files
-
-To export "Inventory data" to csv or xls files navigate to "Reporting" located under the "Reports" tab
-
-![Reporting](/guides/users-guide/reporting.png)
-
-- Select the desired files that you wish to export by clicking on their respective checkbox
-- Click on "Export"
-
-![Exporting](/guides/users-guide/exportinventorydata.png)
-
-You will receive an e-mail with the links to each file.
 
 ## Working with Dashboards
 

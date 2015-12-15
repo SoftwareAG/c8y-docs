@@ -61,7 +61,9 @@ The web interface also shows the status of the connection to Cumulocity:
 
 ## <a name="connect"></a>Connecting the router
 
-To register your NetComm router to Cumulocity, you need the MAC address of the router's Ethernet card as _Device ID_. The registration process is described in section "[Connecting devices](/guides/users-guide/device-management/#device-registration)" in the User Guide. The MAC address is printed on the back side of the router as shown in the screenshot below. Alternately, it is also available in the router's web user interface. Navigate to "System", "Cumulocity" and view the "Device ID" field as shown in the screenshot above. Please make sure to use only lowercase letters and numbers when entering the MAC address. Do not use colons to separate the MAC address. For example, the MAC address from the picture would be entered as "006064dda4ae".
+To register your NetComm router to Cumulocity, you need the MAC address of the router's Ethernet card as _Device ID_. The registration process is described in section "[Connecting devices](/guides/users-guide/device-management/#device-registration)" in the User Guide. The MAC address is printed on the back side of the router as shown in the screenshot below. Alternately, it is also available in the router's web user interface. Navigate to "System", "Cumulocity" and view the "Device ID" field as shown in the screenshot above. Please make sure to use only lowercase letters and numbers when entering the MAC address. Do not use colons to separate the MAC address. For example, the MAC address from the picture would be entered as
+
+	006064dda4ae
 
 ![MAC address](/guides/devices/netcomm/mac.png)
 
@@ -141,14 +143,12 @@ Navigate to the "Measurements" tab to view the visualized result, or create your
 
 You can create events and alarms from digital inputs. These can be configured using the router user interface or through Device Shell. The format is
 
-	set service.cumulocity.gpio.<port>.notify = <off | event | alarm | alarm-inverted>
-	set service.cumulocity.gpio.<port>.debounce.interval = <SECONDS>
-	set service.cumulocity.gpio.<port>.text = <ALARM_TEXT>
-	set service.cumulocity.gpio.<port>.severity = <severity>
+	set service.cumulocity.gpio.<port>.notify=<off | event | alarm | alarm-inverted>
+	set service.cumulocity.gpio.<port>.debounce.interval=<SECONDS>
+	set service.cumulocity.gpio.<port>.text=<ALARM_TEXT>
+	set service.cumulocity.gpio.<port>.severity=<severity>
 
-Port `<port>` is range 1..3 for NetComm wireless router NTC 6200.
-
-Possible notifications are:
+For the NTC-6200, replace "&lt;port&gt;" with 1, 2 or 3. The values of the notify parameter are:
 
 * off: The digital input is ignored.
 * event: The value of the input is logged as event.

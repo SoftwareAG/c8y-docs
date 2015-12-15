@@ -11,7 +11,7 @@ The following sections cover the basic usage of Cumulocity applications. They de
    * [Accessing Cumulocity applications](#accessing).
    * [Logging in](#login).
    * [Navigating in Cumulocity applications](#navigating).
-   * [Changing your user settings](#settings).
+   * [Using dashboards](#dashboards).
 
 ## <a name="accessing"></a>Accessing Cumulocity applications
 
@@ -21,12 +21,12 @@ To use Cumulocity applications, you need a modern web browser. We test with the 
   * Firefox (latest)
   * Chrome (latest)
 
-You can also use recent smartphone and tablet web browsers. We test with the following mobile web browsers:
+You can also use recent smartphone and tables web browsers. We test with the following mobile web browsers:
 
   * Chrome on Android (latest) on Galaxy smartphones and tablets.
   * Safari on iOS (latest) on Apple iPhone and iPad.
 
-> Note that using the private mode on browsers may not work. Note also that using Cumulocity on mobile devices may be constrained by the memory and the processing power available on the devices. For example, loading graphs with large amounts of data points may make the mobile device unresponsive.
+> Note that using Cumulocity on mobile devices may be constrained by the memory and the processing power available on the devices. For example, loading graphs with large amounts of data points may make the mobile device unresponsive.
 
 To access the applications for your Cumulocity tenant, use the following URL:
 
@@ -38,7 +38,7 @@ This will direct you to the login page of your default application, shown in the
 
 > Make sure that the address bar of your browser shows a lock symbol. The lock symbol indicates that you are using a secure connection and that you are indeed connected to Cumulocity. 
 
-> The above URL is only valid for Cumulocity Standard Edition subscribers. For Dedicated and Private Edition, deployments of Cumulocity, the URL is specific to your organization.
+> The above link is only valid for Cumulocity Standard subscribers. For Reserved and Private deployments of Cumulocity, the URL is specific to your organization.
 
 ## <a name="login"></a>Logging in
 
@@ -57,7 +57,7 @@ The automated password reset will only work if your email address is stored with
 
 > If you are yourself the primary administrator, the email that you used when registering first to Cumulocity is automatically stored with your user. If you have questions, please contact the Cumulocity support from this email address.
 
-To change your password, click on the "User Settings" icon in the application. Please make sure to pick a strong password. To support you in picking good passwords, a password strength indicator is displayed along with a password change. A password needs to consist of at least eight characters. It should use a mixture of character classes (uppercase and lowercase letters, numbers and symbols). A strong password uses at least three of the above four character classes.
+To change your password, click on the "User Settings" icon in the application. Please make sure to pick a strong password. To support you in picking good passwords, a password strength indicator is displayed along with a password change.
 
 <img src="/guides/users-guide/passwordstrength.png" alt="Reset password" style="max-width: 50%">
 
@@ -103,8 +103,59 @@ Using such a URL, you can
 
 > Usually, Cumulocity applications provide tooltips when you hover over a particular user interface element. When you use Cumulocity applications on touch devices, tooltips are shown when you touch a user interface element for a longer time. 
 
-## <a name="settings"></a>User settings
+## <a name="dashboards"></a>Using dashboards
 
-To change the settings for your user, click on the user symbol at the top right and select "User settings". Set the user interface language using the "Language" drop-down menu. Change your password by clicking "Change password". Finally, click "Save" to store your changes or "Cancel" to discard them.
+Dashboards provide you with a customized visualization of your data, consisting of a set of freely arrangable so-called "widgets". Widgets can display maps, images, graphs, tables and other graphical representations of data. Cumulocity comes with a number of pre-provided widgets, but you can develop also your own widgets and add them to your Cumulocity account. See the [Web developer's guide](/guides/web/).
 
-<img src="/guides/users-guide/usersettings.png" alt="User settings"  style="max-width: 60%">
+To create a dashboard, navigate to a device and click on the cog wheel icon at the top right. Select "Create dashboard". This will open a dialog in which you enter
+
+* The name of the dashboard, which will show in the menu.
+* The location of the dashboard in the menu.
+* The icon which is rendered next to the name in the menu.
+
+<img src="/guides/users-guide/createdashboard.png" alt="Create dashboard" style="max-width: 60%">
+
+Click "Create" to create and open the dashboard. While there are no widgets on the dashboard, you will see an "Add Widget" button. Use this button to add your first widget to the dashboard, or click the cog wheel again and select "Add widget to dashboard".
+
+The following dialog will allow you to choose a widget to add from the list of widgets available in your account. You will also always have the option to edit two further properties:
+
+* The title of the widget, that will be rendered just above the widget.
+* The width of the widget as number between one and twelve columns. 
+
+Selecting twelve columns results in a widget that will occupy the full available width of the dashboard. Selecting one column results in a widget occupying one twelth of the available width. If the screen estate of the dashboard gets smaller, widgets are automatically rearranged to consume less space and may be ultimately all rendered in a single column. Depending on the widget, further properties for configuration will be visible. These are discussed below.
+
+<img src="/guides/users-guide/addwidget.png" alt="Add widget" style="max-width: 60%">
+
+For most widgets, you will also see a "Child devices" option. This will allow you to show data from a child device in the widget. By default, the current device is selected.
+
+Once a widget is placed on a dashboard, it can be moved to a new location on the dashboard by dragging its title bar. You can also edit the widget properties by moving your mouse to the title bar, clicking the cog wheel and selecting "Edit". Similar, you can delete a widget by clicking "Remove".
+
+Finally, entire dashboards can be edited, removed and copied by clicking on the larger cog wheel at the top right.
+
+### Properties
+
+The properties widget shows inventory data of a device, such as hardware or modem information. The data will be shown in tables with one table for each section of information that you select in the "Add widget" or "Edit widget" dialog.
+
+### Location
+
+The location widget will just show the selected device on a map.
+
+### Image
+
+The image widget will show an arbitrary image on the dashboard. You can upload the image to be shown when you add or edit the widget.
+
+### KPI list, KPI radial gauge, KPI linear gauge
+
+The KPI list, KPI radial gauge and KPI linear gauge are three different visual representations of the current value of a KPI. The KPI list widget shows a table of KPIs with the KPI name, it's target value, the current value and the difference between current and target value. The KPI radial gauge and the KPI linear gauge display the current value in a graphical relationship to "yellow" and "red" values. For more information on KPIs, see "[Using KPIs](#kpis)".
+
+### KPI graph
+
+The KPI graph widget display the history of a set of KPIs in a graph. 
+
+Time interval, aggregation, refer to measurements
+
+
+## <a name="kpis"></a>Using KPIs
+
+> To be done.
+

@@ -78,7 +78,7 @@ Please note that deleting a device means to remove the device from Cumulocity's 
 
 ![Device list](/guides/users-guide/devicelist.png)
 
-In case a list contains more than 1.000 entries, only the first 1.000 entries are shown. Click the "Load more" link at the bottom to load the next 1.000 enties.
+In case a list contains more than 1.000 entries, only the first 1.000 entries are shown. Click the "Load more" link at the bottom to load the next 1.000 entries.
 
 ## <a name="searching-devices"></a>Searching for devices
 
@@ -110,9 +110,9 @@ To edit a group, click the "Edit" button next to the group. This allows you to e
 
 By clicking on a device in a device list, detailed information on the device is displayed. What is actually shown depends on the device and your configuration of the user interface. For example, if a device has not sent any measurements yet, there will be no "Measurement" tab. Similar, if a device permits certain operations, these operations will be visible in the "Control" tab.
 
-At the top of the device details display, the name of the device is shown. Below the name, a list of breadcrumbs are displayed. If the device is part of an asset hierarchy (such as a group), you can use the breadcrumbs to easily navigate up that hierarchy. Since devices can be contained in multiple hierarchies, several rows of breadcrumbs may be shown.
+At the top of the device details display, the name of the device is shown. Below the name, a list of breadcrumbs is displayed. If the device is part of an asset hierarchy (such as a group), you can use the breadcrumbs to easily navigate up that hierarchy. Since devices can be contained in multiple hierarchies, several rows of breadcrumbs may be shown.
 
-To the right of the name, a cog wheel is shown. Clicking on the cog wheel displays a drop-down menu with further actions that you can carry out, such as creating a dashboard for the device. 
+To the right of the name, a cogwheel is shown. Clicking on the cogwheel displays a drop-down menu with further actions that you can carry out, such as creating a dashboard for the device. 
 
 ![Device details](/guides/users-guide/devicedetails.png)
 
@@ -151,7 +151,7 @@ The "Info" tab displays generic information for a device (from top left to botto
 
 While there are many other fields on this tab editable as well, it only makes sense to edit them if the device does not by itself provide this information. If the device provides this information, your edits will be overwritten by the information from the device. To save your edits, click on the "Save changes" button at the bottom of the screen.
 
-> Note that "Last communication" and "Last updated" are two entirely different time stamps. "Last communication" indicates when a device has last sent data. "Last updated" indicates when the inventory entry of the device was last updated, regardless whether that was done by the device itself, through the web user interface or through another application.
+> Note that "Last communication" and "Last updated" are two entirely different time stamps. "Last communication" indicates when a device has last sent data. "Last updated" indicates when the inventory entry of the device was last updated. This update may have originated from the device, from the web user interface or from another application.
 
 ### <a name="child-devices"></a>Child devices
 
@@ -163,11 +163,11 @@ This tab provides a default visualization of numeric data provided by the device
 
 ![Measurements](/guides/users-guide/measurements.png)
 
-If a chart contains graphs with different units, one Y axis is rendered per unit. For example, motion measurements consist of three parameters with unit "meter per square second", so only one axis is rendered. Modem statistics consist of signal strength in decibel milliwatts and bit error rate in percent, so one axis is rendered for each graph.
+If a chart contains graphs with different units, one Y-axis is rendered per unit. For example, motion measurements consist of three parameters with unit "meter per square second"; so only one axis is rendered. Modem statistics consist of signal strength in decibel milliwatts and bit error rate in percent, so one axis is rendered for each graph.
 
 To see detailed information about the measured values, hover your mouse cursor over the chart. A tooltip will be displayed with detailed information on the measurement most close to your cursor. (The tooltip will "snap" to the closest measurement.)
 
-By default, charts show the raw data of the last hour. You can change the time range on the X axis by clicking on the drop-down menu reading "Last hour". 
+By default, charts show the raw data of the last hour. You can change the time range on the X-axis by clicking on the drop-down menu reading "Last hour". 
 
 If you increase the time range, the drop-down menu reading "No aggregation" will switch to "hourly" or "daily". This means that the chart now shows ranges instead of individual raw data points. For "hourly", the chart will show a range of the minimum and maximum value measured in an hour. For "daily", the chart will show the minimum and maximum value measured over the day. Likewise, the tooltips will now show ranges of values instead of individual values. 
 
@@ -203,7 +203,7 @@ This tab enables low-level troubleshooting of a device, see "[Troubleshooting de
 
 ### <a name="location"></a>Location
 
-The "Location" tab by default shows the location as reported by the device on a map. For devices that do not report a location, you can also manually set the location. Click on the cog wheel on the top right and select "Add location", then place the "pin" on the correct place of the displayed map.
+The "Location" tab by default shows the location as reported by the device on a map. For devices that do not report a location, you can also manually set the location. Click on the cogwheel on the top right and select "Add location", then place the "pin" on the correct place of the displayed map.
 
 ### <a name="shell"></a>Shell
 
@@ -242,35 +242,21 @@ Depending on the type of device and its integration into Cumulocity, you can als
 
 In addition to connection monitoring, Cumulocity features a separate service monitoring for machines. See "[Service monitoring](#monitoring-services)" for more information.
 
-###<a name="logs"></a>Logs
+### <a name="logs"></a>Logs
 
-With Cumulocity "Logs" feature, users can inspect the activity of their devices. One can also choose to view logs in a specific date range. This would be useful if users wants to have more control over their devices, since they can view when a change was made. 
+Using the "Logs" tab, you can request log information from devices. Log information can be filtered according to date ranges, type of log, keywords and maximum number of lines to transfer. 
 
-To *Request logs* of a certain device first click on "All devices" and then click on the name of the device. When the device has been selected a new tab will appear with different options (e.g. "Info", "Measurement", "Alarm").
+To request a log from a device, 
 
-- Click on "Logs"
-
-![Device logs](/guides/users-guide/logs.png)
-
-- Select date range
-- Choose type of log
-  - *syslog*   - Used mainly for system management, security auditing and general information
-  - *ipseclog* - Users can check whether changes in security protocols have occurred 
-  - *dmsg* - Shows information about kernel and kernel modules
-  - *sragent* - simply an "Agent" that monitors everything that a user does
-- **Optionally** write filter by text. For example if you write "Users" only lines with the word "Users" in them will appear in the log
-- Select number of "Last lines to display" (e.g. Choosing 1000 will display the last 1000 lines)
-- Click *Request log*
+- Select the date and time range.
+- Choose the type of log. The supported logs are usually device-specific.
+- Enter an optional text to filter the log with. For example, if you enter "Users", only lines with the word "Users" in them will appear in the returned log information.
+- Select the maximum number of lines to display (counted from the end).
+- Click "Request log".
 
 ![Request log](/guides/users-guide/requestlog.png)
 
-After the log has been requested it will appear in the same window. The device number is also shown and if you click on it you will be redirected to the "Info" tab. Users can also see the selected date range for each log. 
-
-**To download** a "Log file request" first hover over the desired log and then click on the "Download" button.
-
-![View Logs](/guides/users-guide/viewlogs.png)
-
-**To delete** a log simply click on the cross button while hovering over the "Log file request". 
+Requesting a log from a device may take some time. After the log has been transferred from the device to Cumulocity, it will appear in the list below the selection widgets. The entry in the list includes the log time range that was queried. Click on the entry in the list to show the log on the page. Hover over the entry to access the download and delete symbols. Using the download symbol, you can download the log excerpt to your local PC. Using the delete symbol, you can delete the log file.
 
 ### <a name="identity"></a>Identity
 
@@ -286,13 +272,13 @@ The various connection states are illustrated in the image below. "Maintenance m
 
 ![Connection states](/guides/users-guide/connectionmonitoring.png)
 
-> Note that connection monitoring is not realtime. Depending on configuration, it may take up to ten minutes until the connection status of a device is updated. This is done to reduce the data traffic that is generated by so-called "keepalive" messages to a minimum.
+> Note that connection monitoring is not real-time. Depending on configuration, it may take up to ten minutes until the connection status of a device is updated. This is done to reduce the data traffic that is generated by so-called "keepalive" messages to a minimum.
 
 When a device is detected to be offline, an unavailabilty alarm is created for the device reading "No communication with device since &lt;time&gt;". 
 
 ## <a name="monitoring-services"></a>Service monitoring
 
-Cumulocity distinguishes between connection monitoring and service monitoring. Connection monitoring merely indicates that the device is communicating with Cumulocity, whether it fulfils its service or not. 
+Cumulocity distinguishes between connection monitoring and service monitoring. Connection monitoring merely indicates that the device is communicating with Cumulocity, whether it fulfills its service or not. 
 
 Service monitoring indicates if the device is in service. For example, a vending machine is in service if it is ready to sell goods. A vending machine may be well selling goods using cash money without being connected to Cumulocity -- so from the perspective of the merchant it is in service. Similar, if you switch off the power on a gateway, the devices behind the gateway may well continue to work.
 
@@ -322,7 +308,7 @@ The alarm display is split into four sections, separately listing alarms of diff
 
 * **Alarm severity**: The severity of the alarm. Cumulocity's alarm severities are:
  * **Critical**: The device is out of service and should be fixed immediately.
- * **Major**: The device has a problem which should be fixed.
+ * **Major**: The device has a problem that should be fixed.
  * **Minor**: The device has a problem that may be fixed.
  * **Warning**: There is a warning.
 * **Status**: The status of the alarm. An alarm can be:
@@ -359,9 +345,9 @@ The "All" button shows all operations for a device, regardless of whether they h
 
 ## <a name="events-all"></a>Troubleshooting devices
 
-Events are low-level messages sent by devices that are usually used for application-specific processing. For example, a vending device sends its realtime sales in the form of events. If you need to troubleshoot a device at a more detailed level, visit the "Events" tab. Clicking on individual events will reveal more information on the data contained in the event. Similar, you can see all events across all devices by selecting "Events" in the navigator.
+Events are low-level messages sent by devices that are usually used for application-specific processing. For example, a vending device sends its real-time sales in the form of events. If you need to troubleshoot a device at a more detailed level, visit the "Events" tab. Clicking on individual events will reveal more information on the data contained in the event. Similar, you can see all events across all devices by selecting "Events" in the navigator.
 
-Since devices may sent larger amounts of event data, you can filter the data shown here by date. You can also click the "realtime" checkbox to see events coming in from the devices in realtime. 
+Since devices may send larger amounts of event data, you can filter the data shown here by date. You can also click the "realtime" checkbox to see events coming in from the devices in real-time. 
 
 ## <a name="software-repo"></a> Managing device firmware and software
 

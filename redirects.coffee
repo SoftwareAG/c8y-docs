@@ -48,6 +48,8 @@ redirects =
 	'/guides/reference-guide/real-time-statements.html': '/guides/reference/real-time-statements'
 	'/guides/reference-guide/cumulocity-event-language.html': '/guides/reference/cumulocity-event-language'
 	'/guides/reference-guide/real-time-notifications.html': '/guides/reference/real-time-notifications'
+	'/guides/devices/netcomm/netcomm-release': '/guides/devices/netcomm-release'
+	'/guides/devices/netcomm/netcomm-usersguide': '/guides/devices/netcommwireless'	
 	# "index.html" redirects
 	'/guides/concepts': '/guides/concepts/introduction'
 	'/guides/users-guide': '/guides/users-guide/overview'

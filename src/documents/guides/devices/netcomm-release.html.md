@@ -1,6 +1,5 @@
 ---
-order: 10
-title: NetComm Agent Release Notes
+title: NetCommWireless Agent Release Notes
 layout: default
 ---
 

@@ -50,6 +50,7 @@ redirects =
 	'/guides/reference-guide/real-time-notifications.html': '/guides/reference/real-time-notifications'
 	'/guides/devices/netcomm/netcomm-release': '/guides/devices/netcomm-release'
 	'/guides/devices/netcomm/netcomm-usersguide': '/guides/devices/netcommwireless'	
+	'/guides/devices/netcomm/cloud-fieldbus': '/guides/users-guide/cloud-fieldbus'	
 	# "index.html" redirects
 	'/guides/concepts': '/guides/concepts/introduction'
 	'/guides/users-guide': '/guides/users-guide/overview'

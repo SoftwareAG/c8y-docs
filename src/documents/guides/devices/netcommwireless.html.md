@@ -21,7 +21,7 @@ The following sections demonstrate how to use a NetComm router with Cumulocity. 
 * Connect [Modbus](#modbus) devices.
 * View [logs](#logs).
 
-The following sections assume that the router has the NetComm [agent](/guides/devices/netcomm/netcomm-release/) package installed. Compatible model is: [NTC-6200](http://www.netcommwireless.com/product/m2m/ntc-6200). For more information on a particular feature of the router, please consult the respective manual found in the "Downloads" section of the router's home page.
+The following sections assume that the router has the NetComm [agent](/guides/devices/netcomm-release) package installed. Compatible model is: [NTC-6200](http://www.netcommwireless.com/product/m2m/ntc-6200). For more information on a particular feature of the router, please consult the respective manual found in the "Downloads" section of the router's home page.
 
 ## <a name="configure"></a>Configuring the router
 
@@ -204,7 +204,7 @@ You can connect Modbus/TCP devices using the router's LAN port and manage them r
 
 * Establish basic LAN connectivity. Use the "[Network](#network)" tab as described above and the corresponding configuration mechanism on the Modbus device to enable IP communication between the router and the device.
 * Subscribe your account to the Cloud Fieldbus app by contacting <support@cumulocity.com>.
-* Configure Modbus communication as described in the [Cloud Fieldbus user's guide](/guides/devices/netcomm/cloud-fieldbus).
+* Configure Modbus communication as described in the [Cloud Fieldbus user's guide](/guides/users-guide/cloud-fieldbus).
 
 ## <a name="logs"></a>Log viewer
 

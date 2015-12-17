@@ -68,7 +68,6 @@ Once connected, you can now manage your device. Click "Child devices" on a termi
 * [Send alarms on coil or register changes](#alarms).
 * [Log coil and register changes as events](#logging).
 * [Monitor the status of coils and registers](#status).
-* [Configure the device](#configuration).
 
 ### <a name="collect"></a>Collecting measurements
 
@@ -90,25 +89,47 @@ Similar to alarms, changes in Modbus devices can be monitored and logged as even
 
 ![Modbus events](/guides/users-guide/modbusevents.png)
 
-### <a name="status"></a>Monitoring status
+### <a name="status"></a>Monitoring device status 
 
-The status of a device can be monitored in the Cockpit application by adding the "Fieldbus device widget" to the dashboard. To do so:
+The status of devices can be monitored in real-time using dashboard widgets in the Cockpit application. Navigate to the Cockpit application, create a dashboard or report, and add widgets as described in the [Cockpit user's guide](/guides/users-guide/cockpit). Cloud Fieldbus adds two new widgets: The "Fieldbus Device" widget and the "SCADA" widget.
 
-* Navigate to the Cockpit application, create a group and add the device to the group as described in the [Cockpit user's guide](/guides/users-guide/cockpit#adding-groups).
-* Create a dashboard and select "Add widget to dashboard".
+### Monitoring device status using the Fieldbus Device widget
+
+The Fieldbus Device widget provides you with a tabular display of the status of a device. The status of the device can also be modified through the widget. To use the Fieldbus Device widget,
+
+* Select a dashboard and click "Add widget to dashboard" using the cogwheel on the top right.
 * Select the "Fieldbus Device Widget" and edit the title of the widget.
 * Choose the device that should be shown in the widget in the "Target assets or devices" section.
 * Select the coils and registers that should be shown on the widget.
 
 ![Adding the Fieldbus Device Widget](/guides/users-guide/modbusedit.png)
 
-In the widget, the selected coils and registers are grouped into display categories as configured in the device type. All values shown in the Fieldbus Device Widget update automatically as soon as there is new data available. You do not need to click reload.
+In the widget, the selected coils and registers are grouped into display categories as configured in the device type. The Fieldbus Device Widget updates automatically as soon as there is new data available. You do not need to click reload.
 
 ![Use the Fieldbus Device Widget](/guides/users-guide/modbusstatus.png)
 
-### <a name="configuration"></a>Configuring devices
-
 Registers and coils that can be changed are represented by active widgets. For example, in the screenshot above, the "Master switch" coil and the "Mode" register are editable. If you click a switch, an operation to change the corresponding coil or register is sent to the terminal. Similar, if you change a value and click "Set", an operation is created. The terminal will then carry out the configuration change on the device, as requested through the operation. While the operation is being processed, a progress indicator is shown.
+
+### Monitoring status using the SCADA widget
+
+The SCADA widget provides you with a graphical representation of the status of a device. To use the SCADA widget:
+
+* Select a dashboard and click "Add widget to dashboard" using the cogwheel on the top right.
+* Select the "SCADA" widget and edit the title of the widget.
+* Choose the device that should be shown in the widget in the "Target assets or devices" section.
+* Upload an SVG file with the graphical representation of the device. SVG files are vector graphics that have to be specifically prepared with placeholders for the status information. See "[Preparing SVG files for the SCADA widget](#scadasvg)" below.
+
+![Adding the SCADA Widget](/guides/users-guide/scadaedit.png)
+
+After the upload, the placeholders in the SVG file are shown in a list. You now need to assign each placeholder to a property of the device. 
+
+* Hover over each placeholder and select the "Assign device property" button or the "Assign fieldbus property" button.
+* This will pop up a dialog box that allows you to choose basic device properties or fieldbus properties (i.e., status coils and registers). Select a property and click "Select".
+* After assigning all placeholders, a preview of the widget with the current values of the properties is shown.
+* Click "Save" to place the widget on the dashboard.
+
+![Assigning properties](/guides/users-guide/scadaassign.png)
+
 
 ## <a name="configure"></a>Configuring Modbus device types
 
@@ -167,4 +188,15 @@ To export a device type, hover over the device type that you would like to expor
 To import a device type, click the "Import" link. This will open a dialog that lets you choose between importing a ready-made device type and uploading a previously exported device type. You can change the name of the device type during import using the "New device type name" field.
 
 ![Import device type](/guides/users-guide/fieldbusimport.png)
+
+## <a name="scadasvg"></a>Preparing SVG files for the SCADA widget
+
+The SCADA widgets inspects uploaded SVG files for placeholders. These placeholders are replaced by actual values from devices. Placeholders have a specific syntax and can be used anywhere in the SVG file. To add a placeholder, enter the name of the placeholder in double curly braces using your design application or a text editor. This is an example of a text element containing a placeholder "batteryValue", taken from our [sample SVG file](/guides/users-guide/scadademo.svg):
+
+	<text class="text" xt-anchor="middle" x="100" y="236.982125" width="200" ...>
+		{{batteryValue}}
+	</text>
+
+
+
 

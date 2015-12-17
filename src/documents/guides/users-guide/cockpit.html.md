@@ -416,7 +416,7 @@ To download measurement data in either csv or xls:
 
 To export "Inventory data" to csv or xls files navigate to "Reporting" located under the "Reports" tab
 
-![Reporting](/guides/users-guide/reporting.png)
+![Reporting](/guides/users-guide/reportingbutton.png)
 
 - Select the desired files that you wish to export by clicking on their respective checkbox
 - Click on "Export"
@@ -427,7 +427,7 @@ You will receive an e-mail with the links to each file.
 
 ## Working with Dashboards
 
-Dashboards provide you with a customized visualization of your data, consisting of a set of freely arrangeable so-called "widgets". Widgets can display maps, images, graphs, tables and other graphical representations of data. Cumulocity comes with a number of pre-provided widgets, see section "[Widget Package](#heading=h.aihj3mi3v41q)" for details. You can develop also your own widgets and add them to your Cumulocity account. See the [Web developer's guide](/guides/web/).
+Dashboards provide you with a customized visualization of your data, consisting of a set of freely arrangeable so-called "widgets". Widgets can display maps, images, graphs, tables and other graphical representations of data. Cumulocity comes with a number of pre-provided widgets, see section "[Widget Package](#widget-package)" for details. You can develop also your own widgets and add them to your Cumulocity account. See the [Web developer's guide](/guides/web/).
 
 ### Creating a new Dashboards
 
@@ -453,7 +453,7 @@ You can create a single dashboard that will appear for all devices of the same t
 
 Afterwards the dashboard should appear for all respective devices. Changes made to dashboard are automatically visible in all dashboard.
 
-> Note: You can only add widgets and data to the dashboard for the device itself. It is not possible to add data from childrens, because the structure of the children might be different from device to device. 
+> Note: You can only add widgets and data to the dashboard for the device itself. It is not possible to add data from children, because the structure of the children might be different from device to device. 
 
 ### Adding a Widget to a Dashboard
 
@@ -461,7 +461,7 @@ To add a widget to a dashboard, ensure that the dashboard is visible. Afterwards
 
 ![image alt text](/guides/users-guide/image_15.png)
 
-When selecting a widget type, additional fields for this widget type will be shown. The number and type of fields depend on the widget type and are described below under "[Widget Package](#heading=h.aihj3mi3v41q)".
+When selecting a widget type, additional fields for this widget type will be shown. The number and type of fields depend on the widget type and are described below under "[Widget Package](#widget-package)".
 
 ### Editing a Dashboard
 
@@ -497,7 +497,7 @@ Parameters to configure:
 
 * Title of widget
 
-* List of properties, see "[Configuring a property list](#heading=h.hwcoirdwfobi)" below
+* List of properties, see "[Configuring a property list](#widget-asset-table-)" below
 
 ### Widget "Data Point Graph"
 
@@ -505,7 +505,7 @@ Show a data points (measurements) in a graph. The visualisation is the same as i
 
 Note: The easiest way to create a data point graph widget is to navigate to the data explorer and then select "Send to dashboard".
 
-The parameters to configure are the same as in the data explorer. Please refer to to "[Data Explorer](#heading=h.sl2sr7ipu5io)" for further details.
+The parameters to configure are the same as in the data explorer. Please refer to to "[Data Explorer](#using-the-data-explorer-to-visualize-data)" for further details.
 
 ### Widget "Map"
 
@@ -649,7 +649,7 @@ Note: You can also enter the JSON format of the operation that should be send to
 
 ## Working with Alarms
 
-Working with alarms is identical to working with alarms in Device Management. See "[Working with alarms](http://tobedone//guides/users-guide/device-management/#alarm-monitoring)" in Device Management User Guide.
+Working with alarms is identical to working with alarms in Device Management. See "[Working with alarms](http://cumulocity.com/guides/users-guide/device-management/#alarm-monitoring)" in Device Management User Guide.
 
 ## Working with Reports
 

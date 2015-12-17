@@ -397,34 +397,6 @@ This will show a modal dialog with all dashboards of the current object. Move to
 
 ![image alt text](/guides/users-guide/image_13.png)
 
-### Exporting Measurement data to csv or xls files
-
-With Cumulocity, administrators have the ability to download measurement data in both csv or xls files. 
- 	
-To download measurement data in either csv or xls:
-
-- Navigate to "Data Explorer"
-- Click on the small wheel button located at the top-right
-
-![Export measurement data](/guides/users-guide/exportmeasuredata.png)
-
-- Choose whether to download CSV or Excel(XLS) 
-
-"Generating Report" window will appear. The files will load depending on how many data points you have added to the "Data Explorer". Once loading is complete click on the "Download" button.
-
-### Exporting Inventory data to csv or xls files
-
-To export "Inventory data" to csv or xls files navigate to "Reporting" located under the "Reports" tab
-
-![Reporting](/guides/users-guide/reportingbutton.png)
-
-- Select the desired files that you wish to export by clicking on their respective checkbox
-- Click on "Export"
-
-![Exporting](/guides/users-guide/exportinventorydata.png)
-
-You will receive an e-mail with the links to each file.
-
 ## Working with Dashboards
 
 Dashboards provide you with a customized visualization of your data, consisting of a set of freely arrangeable so-called "widgets". Widgets can display maps, images, graphs, tables and other graphical representations of data. Cumulocity comes with a number of pre-provided widgets, see section "[Widget Package](#widget-package)" for details. You can develop also your own widgets and add them to your Cumulocity account. See the [Web developer's guide](/guides/web/).

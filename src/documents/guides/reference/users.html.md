@@ -43,7 +43,7 @@ Request body: N/A
 Response body: application/vnd.com.nsn.cumulocity.userApi+json;ver=0.9
  Example request: Retrieve information about User API Resource
 
-    GET [URL to the User resource]
+    GET {{url}}/user
     Host: [hostname]
     Authorization: Basic xxxxxxxxxxxxxxxxxxx
     Accept: application/vnd.com.nsn.cumulocity.userApi+json;ver=0.9
@@ -82,7 +82,7 @@ Request body: N/A
 Response body: User Collection
  Example request: Retrieve information about a User Collection
 
-    GET [URL to the resource]
+    GET {{url}}/user/{{tenant}}/users
     Host: [hostname]
     Authorization: Basic xxxxxxxxxxxxxxxxxxx
     Accept: application/vnd.com.nsn.cumulocity.userCollection+json;ver=0.9
@@ -137,14 +137,14 @@ Request body: User
 Response body: User (when Accept header is not provided, empty response body is returned)
  Example request: Create a new User
 
-    POST [URL to the resource]
+    POST {{url}}/user/{{tenant}}/users
      Host: [hostname]
      Authorization: Basic xxxxxxxxxxxxxxxxxxx
      Content-Length: nnn
      Content-Type: application/vnd.com.nsn.cumulocity.user+json;ver=0.9
     {
       "userName" : "jsmith",
-      "password" : "password"
+      "password" : "password",
       "firstName" : "John",
       "lastName" : "Smith",
       "phone" : "+1234567890",
@@ -253,7 +253,7 @@ Request body: N/A
 Response body: User
  Example request: Retrieve information about a User
 
-    GET ...
+    GET {{url}}/user/{{tenant}}/users/{{userId}}
      Host: [hostname]
      Authorization: Basic xxxxxxxxxxxxxxxxxxx
      Accept: application/vnd.com.nsn.cumulocity.user+json;ver=0.9
@@ -285,7 +285,7 @@ Request body: N/A
 Response body: User
  Example request: Retrieve information about a User
 
-    GET [URL to the resource]
+    GET {{url}}/user/{{tenant}}/userByName/{{userName}}
      Host: [hostname]
      Authorization: Basic xxxxxxxxxxxxxxxxxxx
      Accept: application/vnd.com.nsn.cumulocity.user+json;ver=0.9
@@ -316,7 +316,7 @@ Request body: User
 Response body: User (when Accept header is not provided, empty response body is returned)
  Example request: Change the first name of a User
 
-    PUT [URL to the resource]
+    PUT {{url}}/user/{{tenant}}/users/{{userId}}
      Host: [hostname]
      Authorization: Basic xxxxxxxxxxxxxxxxxxx
      Accept: application/vnd.com.nsn.cumulocity.user+json;ver=0.9
@@ -351,7 +351,7 @@ Request body: N/A
 Response body: N/A
  Example request: Delete a user
 
-    DELETE [URL to the resource]
+    DELETE {{url}}/user/{{tenant}}/users/{{userName}}
      Host: [hostname]
      Authorization: Basic xxxxxxxxxxxxxxxxxxx
 
@@ -371,7 +371,7 @@ Response body: application/vnd.com.nsn.cumulocity.currentUser+json;ver=0.9
 
 Example request: Retrieve information about the logged in user
 
-    GET [URL to the Current User resource]
+    GET {{url}}/user/currentUser
      Host: [hostname]
      Authorization: Basic xxxxxxxxxxxxxxxxxxx
      Accept: application/vnd.com.nsn.cumulocity.user+json;ver=0.9
@@ -408,7 +408,7 @@ Request body: application/vnd.com.nsn.cumulocity.user+json;ver=0.9
 Response body: application/vnd.com.nsn.cumulocity.user+json;ver=0.9
  Example request: Change the first name of the logged in user
 
-    PUT [URL to the Current User resource]
+    PUT {{url}}/user/currentUser
      Host: [hostname]
      Authorization: Basic xxxxxxxxxxxxxxxxxxx
      Accept: application/vnd.com.nsn.cumulocity.user+json;ver=0.9
@@ -464,7 +464,7 @@ Request body: UserReference
 Response body: UserReference
  Example request: Create a new UserReference
 
-    POST ...
+    POST {{url}}/user/{{tenant}}/groups/{{groupId}}/users
      Host: [hostname]
      Authorization: Basic xxxxxxxxxxxxxxxxxxx
      Content-Length: nnn
@@ -526,7 +526,7 @@ Request body: N/A
 Response body: UserReferenceCollection
  Example request: Retrieve information about all users of a Group
 
-    GET ...
+    GET {{url}}/user/management/groups/{{groupId}}
      Host: [hostname]
      Authorization: Basic xxxxxxxxxxxxxxxxxxx
      Accept: application/vnd.com.nsn.cumulocity.userReferenceCollection+json;ver=0.9
@@ -586,7 +586,7 @@ Request body: N/A
 Response body: GroupCollection
  Example request: Retrieve information about a Group Collection
 
-    GET [URL to the resource]
+    GET {{url}}/user/management/groups/
      Host: [hostname]
      Authorization: Basic xxxxxxxxxxxxxxxxxxx
      Accept: application/vnd.com.nsn.cumulocity.groupCollection+json;ver=0.9

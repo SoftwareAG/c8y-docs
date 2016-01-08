@@ -42,7 +42,7 @@ Response body: Event Api
 Required role: ROLE\_EVENT\_READ
  Example request: Retrieve information about Event API Resource
 
-    GET [URL to the Event resource]
+    GET {{url}}/event
      Host: [hostname]
      Authorization: Basic xxxxxxxxxxxxxxxxxxx
      Accept: application/vnd.com.nsn.cumulocity.eventApi+json;ver=0.9
@@ -95,7 +95,7 @@ Response body: Event Collection
 Required role: ROLE\_EVENT\_READ
  Example request: Retrieve information about an Event Collection
 
-    GET [URL to the Event Collection]
+    GET {{url}}/event/events
      Host: [hostname]
      Authorization: Basic xxxxxxxxxxxxxxxxxxx
      Accept: application/vnd.com.nsn.cumulocity.eventCollection+json;ver=0.9
@@ -140,7 +140,7 @@ Required role: ROLE\_EVENT\_ADMIN or owner of source object
 
 Example request: Create a new Event
 
-    POST ...
+    POST {{url}}/event/events
     Host: ...
     Authorization: Basic ...
     Content-Length: ...
@@ -199,7 +199,7 @@ Required role: ROLE\_EVENT\_READ
 
 Example request: Retrieve information about an Event
 
-    GET [URL to the resource]
+    GET {{url}}/event/events/{{eventID}}
      Host: [hostname]
      Authorization: Basic xxxxxxxxxxxxxxxxxxx
      Accept: application/vnd.com.nsn.cumulocity.event+json;ver=0.9
@@ -229,7 +229,7 @@ Required role: ROLE\_EVENT\_ADMIN or owner of source object.
 
 Example Request: Delete an event
 
-    DELETE [URL to the resource]
+    DELETE {{url}}/event/events/{{eventID}
      Host: [hostname]
      Authorization: Basic xxxxxxxxxxxxxxxxxxx
 

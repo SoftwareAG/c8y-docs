@@ -75,14 +75,15 @@ Example response:
 |prev|URI|0..1|Link to a potential previous page of measurements.|
 |next|URI|0..1|Link to a potential next page of measurements.|
 
-### GET a measurement collection
+### GET a collection of measurements
 
 Response body: MeasurementCollection
   
 Required role: ROLE\_MEASUREMENT\_READ
 
 Example request: Retrieve energy readings.
-
+	
+     GET: {{url}}/measurement/measurements
      Host: ...
      Authorization: Basic ...
      Accept: application/vnd.com.nsn.cumulocity.measurementCollection+json;ver=...
@@ -148,7 +149,7 @@ Required role: ROLE\_MEASUREMENT\_READ
 
 Example request: retrieve all series.
 
-     GET: /measurement/measurements/series...
+     GET: {{url}}/measurement/measurements/series...
      Authorization: Basic ...
      Accept: application/json
 
@@ -208,7 +209,7 @@ Required role: ROLE\_MEASUREMENT\_ADMIN or owner of source object
 
 Example Request:
 
-    POST ...
+    POST {{url}}/measurement/measurements
     Host: ...
     Authorization: Basic ...
     Content-Length: ...
@@ -312,7 +313,7 @@ Required role: ROLE\_MEASUREMENT\_ADMIN or owner of source object
 
 Example Request: Delete a measurement
 
-    DELETE [URL to the resource]
+    DELETE {{url}}/measurement/measurements/{{measurementID}}
      Host: [hostname]
      Authorization: Basic xxxxxxxxxxxxxxxxxxx
 

@@ -89,7 +89,7 @@ Required role: ROLE\_IDENTITY\_ADMIN
 
 Example Request:
 
-    POST ...
+    POST {{url}}/identity/globalIds/{{deviceId}}/externalIds
     Host: ...
     Authorization: Basic ...
     Accept: application/vnd.com.nsn.cumulocity.externalId+json;ver=...
@@ -163,7 +163,7 @@ Required role: ROLE\_IDENTITY\_ADMIN
 
 Example Request: Delete an External ID
 
-    DELETE [URL to the resource]
+    DELETE {{url}}/identity/externalIds/{{externalIdType}}/{{externalId}}
      Host: [hostname]
      Authorization: Basic xxxxxxxxxxxxxxxxxxx
 

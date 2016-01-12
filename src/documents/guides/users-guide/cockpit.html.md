@@ -743,6 +743,14 @@ To define a threshold rule do as follows:
 
 After the rule has been created, it is automatic active and alarms should appear, assuming that there are min and max values defined for the selected data point.
 
+### Cyclic Execution Protection
+
+Smart Rules can create new data item in the platform. For example, the threshold rule creates new alarms.
+Using this mechanism, it would in theory be possible to overload the platform by having rules that have cyclic dependencies. 
+
+To protect the platform from this scenario, these dependencies are not allowed.
+Therefore one rule cannot trigger another rule.
+
 ## Business Rule Package
 
 The following smart rule templates are available in the system.

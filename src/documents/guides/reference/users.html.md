@@ -633,7 +633,7 @@ Request body: Group
 Response body: Group
  Example request: Create a new Group
 
-    POST [URL to the resource]
+    POST {{url}}/user/management/groups
      Host: [hostname]
      Authorization: Basic xxxxxxxxxxxxxxxxxxx
      Content-Length: nnn
@@ -684,7 +684,7 @@ Request body: N/A
 Response body: Group
  Example request: Retrieve information about a Group
 
-    GET [URL to the resource]
+    GET {{url}}/user/management/groups/{{groupId}}
      Host: [hostname]
      Authorization: Basic xxxxxxxxxxxxxxxxxxx
      Accept: application/vnd.com.nsn.cumulocity.group+json;ver=0.9
@@ -729,7 +729,7 @@ Request body: N/A
 Response body: Group
  Example request: Retrieve information about a Group
 
-    GET [URL to the resource]
+    GET {{url}}/user/{{tenant}}/groupByName/{{groupName}}
      Host: [hostname]
      Authorization: Basic xxxxxxxxxxxxxxxxxxx
      Accept: application/vnd.com.nsn.cumulocity.group+json;ver=0.9
@@ -754,7 +754,7 @@ Request body: N/A
 Response body: N/A
  Example request: DELETE a group
 
-    DELETE [URL to the resource]
+    DELETE {{url}}/user/{{tenant}}/groups/{{groupId}}
      Host: [hostname]
      Authorization: Basic xxxxxxxxxxxxxxxxxxx
 
@@ -769,7 +769,7 @@ Request body: Group
 Response body: Group
  Example request: Change the group name
 
-    PUT [URL to the resource]
+    PUT {{url}}/user/{{tenant}}/groups/{{groupId}}
      Host: [hostname]
      Authorization: Basic xxxxxxxxxxxxxxxxxxx
      Accept: application/vnd.com.nsn.cumulocity.group+json;ver=0.9
@@ -811,7 +811,7 @@ Request body: N/A
 Response body: GroupReferenceCollection
  Example request: Retrieve information about all groups of a User
 
-    GET ...
+    GET {{url}}/user/{{tenant}}/users/{{userName}}/groups
      Host: [hostname]
      Authorization: Basic xxxxxxxxxxxxxxxxxxx
      Accept: application/vnd.com.nsn.cumulocity.groupReferenceCollection+json;ver=0.9
@@ -869,10 +869,9 @@ Request body: N/A
 Response body: RoleCollection
  Example request: Retrieve information about a Role Collection
 
-    GET [URL to the resource]
+    GET {{url}}/user/roles
      Host: [hostname]
      Authorization: Basic xxxxxxxxxxxxxxxxxxx
-     Accept: application/vnd.com.nsn.cumulocity.roleCollection+json;ver=0.9
 
 Example response:
 
@@ -910,7 +909,7 @@ Request body: RoleReference
 Response body: RoleReference
  Example request: Create a new RoleReference
 
-    POST [URL to the resource]
+    POST {{url}}/user/{{tenant}}/users/{{userName}}/roles
      Host: [hostname]
      Authorization: Basic xxxxxxxxxxxxxxxxxxx
      Content-Length: nnn
@@ -945,7 +944,7 @@ Request body: RoleReference
 Response body: RoleReference
  Example request: Create a new RoleReference
 
-    POST [URL to the resource]
+    POST {{url}}/user/{{tenant}}/groups/{{groupId}}/roles
      Host: [hostname]
      Authorization: Basic xxxxxxxxxxxxxxxxxxx
      Content-Length: nnn
@@ -980,7 +979,7 @@ Request body: N/A
 Response body: N/A
  Example request: DELETE a RoleReference
 
-    DELETE [URL to the resource]
+    DELETE {{url}}/user/{{tenant}}/users/{{userName}}/roles/{{roleName (Example:ROLE_TENANT_MANAGEMENT_ADMIN)}}
      Host: [hostname]
      Authorization: Basic xxxxxxxxxxxxxxxxxxx
 
@@ -995,8 +994,7 @@ Request body: N/A
 Response body: N/A
  Example request: DELETE a RoleReference
 
-    DELETE [URL to the resource]
-     Host: [hostname]
+    DELETE {{url}}/user/{{tenant}}/groups/{{groupId}}/roles/{{roleName (Example:ROLE_TENANT_MANAGEMENT_ADMIN)}}
      Authorization: Basic xxxxxxxxxxxxxxxxxxx
 
 Example response:
@@ -1022,7 +1020,7 @@ Request body: N/A
 Response body: RoleReferenceCollection
  Example request: Retrieve information about a Role Reference Collection
 
-    GET [URL to the resource]
+    GET {{url}}/user/{{tenant}}/users/{{userName}}/roles
      Host: [hostname]
      Authorization: Basic xxxxxxxxxxxxxxxxxxx
      Accept: application/vnd.com.nsn.cumulocity.roleReferenceCollection+json;ver=0.9
@@ -1068,7 +1066,7 @@ Request body: N/A
 Response body: RoleReferenceCollection
  Example request: Retrieve information about a Role Reference Collection
 
-    GET [URL to the resource]
+    GET {{url}}/user/{{tenant}}/groups/{{groupId}}/roles
      Host: [hostname]
      Authorization: Basic xxxxxxxxxxxxxxxxxxx
      Accept: application/vnd.com.nsn.cumulocity.roleReferenceCollection+json;ver=0.9

@@ -124,7 +124,7 @@ Required role: ROLE\_APPLICATION\_MANAGEMENT\_ADMIN.
 
 Example request:
 
-    POST ...
+    POST {{url}}/application/applications
     Host: ...
     Authorization: Basic ...
     Content-Length: ...
@@ -191,7 +191,7 @@ Required role: ROLE\_APPLICATION\_MANAGMENT\_ADMIN
 
 Example request:
 
-	POST /applications/application/81/refresh
+	POST {{url}}/applications/application/{{applicationId}}/refresh
 	...
 
 Example response:
@@ -208,7 +208,7 @@ Required role: ROLE\_APPLICATION\_MANAGMENT\_ADMIN
 
 Example request:
 
-    PUT ...
+    PUT {{url}}/application/applications/{{applicationId}}
     Host: ...
     Authorization: Basic ...
     Content-Length: ...
@@ -255,7 +255,7 @@ Note: Application can be only removed when is availability is PRIVATE or in othe
 
 Example Request: Delete a application
 
-    DELETE [URL to the application]
+    DELETE {{url}}/application/applications/{{applicationId}}
      Host: [hostname]
      Authorization: Basic xxxxxxxxxxxxxxxxxxx
 

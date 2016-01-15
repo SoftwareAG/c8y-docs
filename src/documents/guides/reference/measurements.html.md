@@ -38,6 +38,12 @@ The measurements interface consists of three parts:
 Response body: application/vnd.com.nsn.cumulocity.measurementApi+json
  Require role: ROLE\_MEASUREMENT\_READ
 
+Example request:
+
+    GET: {{url}}/measurement
+    Host: ...
+    Authorization: Basic ...
+
 Example response:
 
     HTTP/1.1 200 OK
@@ -209,7 +215,7 @@ Required role: ROLE\_MEASUREMENT\_ADMIN or owner of source object
 
 Example Request:
 
-    POST {{url}}/measurement/measurements
+    POST: {{url}}/measurement/measurements
     Host: ...
     Authorization: Basic ...
     Content-Length: ...
@@ -283,6 +289,10 @@ Response body: Measurement
   
 Required role: ROLE\_MEASUREMENT\_READ
 
+Example request:
+
+    GET: {{url}}/measurement/measurements/{{measurementId}}
+
 Example response:
 
     Content-Type: application/vnd.com.nsn.cumulocity.measurement+json;ver=...
@@ -313,7 +323,7 @@ Required role: ROLE\_MEASUREMENT\_ADMIN or owner of source object
 
 Example Request: Delete a measurement
 
-    DELETE {{url}}/measurement/measurements/{{measurementID}}
+    DELETE: {{url}}/measurement/measurements/{{measurementID}}
      Host: [hostname]
      Authorization: Basic xxxxxxxxxxxxxxxxxxx
 

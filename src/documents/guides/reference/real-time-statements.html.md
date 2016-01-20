@@ -23,9 +23,17 @@ The real-time statements interface consists of five parts:
 
 ### GET the CepApi resource
 
+Request body: N/A
+
 Response body: CepApi
   
 Required role: ROLE\_CEP\_MANAGEMENT\_READ
+
+Example request: Retrieve the CepApi resource collection
+
+	GET: {{url}}/cep
+	Host: ...
+	Authorization: Basic ...
 
 Example response:
 
@@ -53,9 +61,17 @@ Example response:
 
 ### GET a module collection
 
+Request body: N/A
+
 Response body: ModuleCollection
   
 Required role: ROLE\_CEP\_MANAGEMENT\_READ
+
+Example request: Get collection of all modules
+
+	GET: {{url}}/cep/modules
+	Host: ...
+	Authorization: Basic ...
 
 Example response:
 
@@ -87,7 +103,7 @@ Required role: ROLE\_CEP\_MANAGEMENT\_ADMIN.
 
 Example request:
 
-    POST ...
+    POST {{url}}/cep/modules
     Host: ...
     Authorization: Basic ...
     Content-Length: ...
@@ -149,6 +165,8 @@ Example response:
 
 ### GET Module file with statements
 
+Request body: N/A
+
 Response body: text/plain
   
 Required role: ROLE\_CEP\_MANAGEMENT\_READ
@@ -167,13 +185,13 @@ Warning: if given statement has default name assigned by cumulocity platform, an
 
 Request body: Module
 
-Response body: Module (if "Accept" header is provided)
+Response body: Module (only if "Accept" header is provided)
 
 Required : ROLE\_CEP\_MANAGEMENT\_ADMIN
 
 Example Request:
 
-    PUT ...
+    PUT {{url}}/cep/module/{{moduleId}}
     Host: ...
     Authorization: Basic ...
     Content-Type: application/vnd.com.nsn.cumulocity.cepModule+json;ver=...
@@ -195,7 +213,7 @@ Required role: ROLE\_CEP\_MANAGEMENT\_ADMIN.
 
 Example request:
 
-    PUT ...
+    PUT {{url}}/cep/module/{{moduleId}}
     Host: ...
     Authorization: Basic ...
     Content-Length: ...
@@ -227,7 +245,7 @@ Required : ROLE\_CEP\_MANAGEMENT\_ADMIN
 
 Example Request: Delete a module
 
-    DELETE [URL to the resource]
+    DELETE {{url}}/cep/module/{{moduleId}}
      Host: [hostname]
      Authorization: Basic xxxxxxxxxxxxxxxxxxx
 

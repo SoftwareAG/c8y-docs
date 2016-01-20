@@ -30,6 +30,8 @@ The Tenant interface is available consists of parts:
 
 ### GET a representation of a Tenant Collection.
 
+Request body: N/A
+
 Response body: TenantCollection
   
 Required role: ROLE\_TENANT\_MANAGEMENT\_READ
@@ -195,6 +197,8 @@ Example Response:
 
 ### GET a representation of a Tenant.
 
+Request body: N/A
+
 Response body: Tenant
   
 Required role: ROLE\_TENANT\_MANAGEMENT\_READ
@@ -341,6 +345,8 @@ Example response:
 
 ### GET a representation of a ApplicationReferenceCollection.
 
+Request body: N/A
+
 Response body: ApplicationReferenceCollection
   
 Required role: ROLE\_TENANT\_MANAGEMENT\_READ
@@ -400,6 +406,8 @@ Example Response :
 
 ### GET a representation of a ApplicationReference.
 
+Request body: N/A
+
 Response body: ApplicationReference
   
 Required role: ROLE\_TENANT\_MANAGEMENT\_READ
@@ -407,7 +415,7 @@ Required role: ROLE\_TENANT\_MANAGEMENT\_READ
 Example Request: Get options.
 
      
-    GET ...
+    GET {{url}}/tenant/tenants/{{tenantId}}/applications/{{applicationId}}
     Host: ...
     Authorization: Basic ...
     Accept: application/vnd.com.nsn.cumulocity.applicationReference+json;ver=...
@@ -449,6 +457,8 @@ Example Response :
 
 ### GET a representation of a OptionCollection.
 
+Request body: N/A
+
 Response body: OptionCollection
   
 Required role: ROLE\_OPTION\_MANAGEMENT\_READ
@@ -487,6 +497,8 @@ Example Response :
     }
 
 ### POST a representation of a Option.
+
+Request body: Option
 
 Response body: Option
   
@@ -540,13 +552,15 @@ Options are category-key-value tuples, storing tenant configuration. Some catego
 
 ### GET a representation of a Option.
 
+Request body: N/A
+
 Response body: Option
   
 Required role: ROLE\_OPTION\_MANAGEMENT\_READ
  Example Request: Get single option.
 
      
-    GET ...
+    GET {{url}}/tenant/options/{{category}}/{{key}}
     Host: ...
     Authorization: Basic ...
     Accept: application/vnd.com.nsn.cumulocity.option+json;ver=...
@@ -565,13 +579,15 @@ Example Response :
 
 ### PUT - Update a Option.
 
+Request body: Option
+
 Response body: Option
   
 Required role: ROLE\_OPTION\_MANAGEMENT\_ADMIN
  Example Request: Update access.control.allow.origin option.
 
      
-    PUT ...
+    PUT {{url}}/tenant/options/{{category}}/{{key}}
     Host: ...
     Authorization: Basic ...
     Content-Type: application/vnd.com.nsn.cumulocity.option+json;ver=...
@@ -595,6 +611,8 @@ Example Response :
 ## System Options
 
 This endpoint provides a set of read-only properties pre-defined in platform configuration. The response format is exactly the same as for OptionCollection.
+
+Request body: OptionCollection
 
 Response body: OptionCollection
   

@@ -83,6 +83,8 @@ Example response:
 
 ### GET a collection of measurements
 
+Request body: N/A
+
 Response body: MeasurementCollection
   
 Required role: ROLE\_MEASUREMENT\_READ
@@ -285,6 +287,8 @@ Each measurement fragment is an object containing the actual measurements as pro
 
 ### GET a representation of a Measurement
 
+Request body: N/A
+
 Response body: Measurement
   
 Required role: ROLE\_MEASUREMENT\_READ
@@ -292,6 +296,8 @@ Required role: ROLE\_MEASUREMENT\_READ
 Example request:
 
     GET: {{url}}/measurement/measurements/{{measurementId}}
+	Host: ...
+	Authorization: Basic ...
 
 Example response:
 
@@ -317,7 +323,8 @@ Example response:
 ### DELETE a Measurement
 
 Request Body: N/A.
- Response Message Body: N/A.
+ 
+Response Message Body: N/A.
   
 Required role: ROLE\_MEASUREMENT\_ADMIN or owner of source object
 

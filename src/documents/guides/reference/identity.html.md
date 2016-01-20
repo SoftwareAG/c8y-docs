@@ -21,7 +21,9 @@ The identity interface associates identifiers used in external IT systems and de
 
 ### GET the Identity API resource
 
-Response body: application/vnd.com.nsn.cumulocity.identityApi+json
+Request body: N/A
+
+Response body: identityApi
   
 Required role: ROLE\_IDENTITY\_READ
 
@@ -52,6 +54,8 @@ As returned by "externalIdsOfGlobalId".
 External IDs contained in the collection contain the properties "self", "externalId", "type" and reference to the managed object.
 
 ### GET an ExternalIdCollection
+
+Request body: N/A
 
 Response body: ExternalIdCollection
   
@@ -133,9 +137,18 @@ Note that the managed object has to be created first, then the mapping can be re
 
 ### GET an ExternalID
 
+Request body: ExernalId
+
 Response body: ExternalId
   
 Required role: ROLE\_IDENTITY\_READ
+
+Example request:
+
+	GET: {{url}}/identity/externalIds/{{externalIdType}}/{{externalId}}
+	Host: ...
+	Authorization: Basic ...
+	Accept: application/vnd.com.nsn.cumulocity.externalId+json;ver=...
 
 Example response:
 

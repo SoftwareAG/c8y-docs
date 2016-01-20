@@ -40,7 +40,7 @@ The user interface consists of the following parts:
 
 Request body: N/A
 
-Response body: application/vnd.com.nsn.cumulocity.userApi+json;ver=0.9
+Response body: userApi
  Example request: Retrieve information about User API Resource
 
     GET {{url}}/user
@@ -79,7 +79,7 @@ Example response:
 
 Request body: N/A
 
-Response body: User Collection
+Response body: userCollection
  Example request: Retrieve information about a User Collection
 
     GET {{url}}/user/{{tenant}}/users
@@ -363,11 +363,11 @@ Example response:
 
 Request body: N/A
 
-Response body: application/vnd.com.nsn.cumulocity.user+json;ver=0.9
+Response body: user
 
 or
 
-Response body: application/vnd.com.nsn.cumulocity.currentUser+json;ver=0.9
+Response body: currentUser
 
 Example request: Retrieve information about the logged in user
 
@@ -403,9 +403,9 @@ Example response:
 
 ### PUT a change to the Current User Resource
 
-Request body: application/vnd.com.nsn.cumulocity.user+json;ver=0.9
+Request body: user
 
-Response body: application/vnd.com.nsn.cumulocity.user+json;ver=0.9
+Response body: user
  Example request: Change the first name of the logged in user
 
     PUT {{url}}/user/currentUser
@@ -508,10 +508,9 @@ Example response:
 
 Request body: N/A
 
-Response body: N/A
- Example request: DELETE a UserReference
-|devicePermissions|Object|1|List of device permissions|optional|
-    DELETE ...
+Response body: N/A Example request: DELETE a UserReference
+ 			 
+     DELETE {{url}}/user/{{tenant}}/groups/{{groupId}}/users/{{yourUserName}}
      Host: [hostname]
      Authorization: Basic xxxxxxxxxxxxxxxxxxx
 
@@ -581,7 +580,7 @@ Example response:
 
 ### List all groups
 
-Request body: N/A
+Request body: GroupCollection
 
 Response body: GroupCollection
  Example request: Retrieve information about a Group Collection
@@ -869,7 +868,7 @@ Request body: N/A
 Response body: RoleCollection
  Example request: Retrieve information about a Role Collection
 
-    GET {{url}}/user/roles
+     GET {{url}}/user/roles
      Host: [hostname]
      Authorization: Basic xxxxxxxxxxxxxxxxxxx
 

@@ -27,8 +27,17 @@ The application interface consists of the following parts:
 
 ### GET the Application API resource
 
-Response body: application/vnd.com.nsn.cumulocity.ApplicationApi+json  
+Request body: N/A
+
+Response body: ApplicationApi
+  
 Required role: ROLE\_Application\_READ
+
+Example request:
+
+	GET: {{url}}/application
+	Host: ...
+	Authorization: Basic ...
 
 Example response:
 
@@ -58,9 +67,17 @@ Example response:
 
 ### GET an application collection
 
+Request body: N/A
+
 Response body: ApplicationCollection
 
 Required role: ROLE\_APPLICATIN\_MANAGEMENT\_READ
+
+Example request:
+
+	GET: {{url}}/application/applications
+	Host: ...
+	Authorization: Basic ...
 
 Example response:
 
@@ -192,7 +209,8 @@ Required role: ROLE\_APPLICATION\_MANAGMENT\_ADMIN
 Example request:
 
 	POST {{url}}/applications/application/{{applicationId}}/refresh
-	...
+	Host: ...
+	Authorization: Basic ...
 
 Example response:
 
@@ -247,7 +265,8 @@ Example response:
 ### DELETE an application
 
 Request Body: N/A.
- Response Message Body: N/A.
+ 
+Response Body: N/A.
 
 Required role: ROLE\_APPLICATION\_MANAGMENT\_ADMIN and owner
 

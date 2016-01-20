@@ -27,7 +27,9 @@ The device control interface consists of three parts:
 
 ### GET the Device Control API resource
 
-Response body: application/vnd.com.nsn.cumulocity.devicecontrolApi+json
+Request body: N/A
+
+Response body: devicecontrolApi
   
 Required role: ROLE\_DEVICE\_CONTROL\_READ
 
@@ -117,7 +119,10 @@ Example response:
 
 ### Get a collection of operations
 
+Request body: N/A
+
 Response body: OperationCollection  
+
 Required role: ROLE\_DEVICE\_CONTROL\_READ
 
 Example Request: Get all operations.
@@ -351,7 +356,10 @@ Example response:
 
 ### Get a collection of bulk operations
 
+Request body: N/A
+
 Response body: BulkOperationCollection  
+
 Required role: ROLE\_BULK\_OPERATION\_READ
 
 Example Request: Get all bulk operations.
@@ -470,6 +478,8 @@ Example response:
     }
 
 ### GET a Bulk Operation
+
+Request body: N/A
 
 Response body: Bulk Operation
   

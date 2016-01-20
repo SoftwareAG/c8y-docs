@@ -27,7 +27,10 @@ The inventory interface consists of the following parts:
 
 ### GET a representation of the Inventory API resource
 
-Response body: application/vnd.com.nsn.cumulocity.inventoryApi+json  
+Request body: N/A
+
+Response body: inventoryApi
+  
 Required role: ROLE\_INVENTORY\_READ
 
 Example request: Get the Inventory API resource
@@ -66,7 +69,10 @@ Example response:
 
 ### GET a representation of a ManagedObjectCollection
 
+Reqeust body: N/A
+
 Response body: ManagedObjectCollection  
+
 Required role: ROLE\_INVENTORY\_READ
 
 Example Request: Get managed objects of a particular type.
@@ -113,7 +119,7 @@ Response body: ManagedObject (when accept header is not provided, empty respons
   
 Required role: ROLE\_INVENTORY\_ADMIN or ROLE\_INVENTORY\_CREATE
 
-Example request :
+Example request : Add a new ManagedObject
 
     POST: {{url}}/inventory/managedObjects
     Host: ...
@@ -164,6 +170,8 @@ Not every GET response contains "parents" collections. It is required to pass "w
 
 ### GET a representation of a managed object
 
+Request body: ManagedObject
+
 Response body: ManagedObject
 
 Required role: ROLE\_INVENTORY\_READ
@@ -206,7 +214,7 @@ Example response:
 
 ### GET supported measurements of a managed object
 
-Example request:
+Example request: Retrieve supported measurements of a managed object
 
 	GET: {{url}}/inventory/managedObjects/{{deviceId}}/supportedMeasurements
 	Host: ...
@@ -285,6 +293,8 @@ Example Response:
 |next|URI|0..1|Link to a potential next page of managed objects.|
 
 ### GET a managed object reference collection
+
+Request body: N/A
 
 Response body: ManagedObjectReferenceCollection
 
@@ -385,6 +395,8 @@ As an alternative it is also allowed to pass the following reference object in t
 |managedObject|ManagedObject|1|The ManagedObject being referenced.|
 
 ### GET a managed object reference
+
+Request body: ManagedObjectReference
 
 Response body: ManagedObjectReference
   

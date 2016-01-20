@@ -25,6 +25,8 @@ The binaries interface consists of the following parts:
 
 ### GET a binaries collection
 
+Request body: N/A
+
 Response body: ManagedObjectCollection
 
 Required role: ROLE\_INVENTORY\_READ
@@ -145,14 +147,16 @@ Example response:
 
 ### GET - Download a binary
 
+Request body: Binary
+
 Response body: Binary
 
 Required role: ROLE\_INVENTORY\_READ
 
 Example request:
 
-  	GET {{url}}/inventory/binaries/{{binaryiD}}
-  	...
+	GET {{url}}/inventory/binaries/{{binaryiD}}
+ 	...
 
 Example response:
 

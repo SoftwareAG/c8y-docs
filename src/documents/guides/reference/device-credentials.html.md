@@ -26,9 +26,9 @@ For more information on the process of registering devices, see the Section "[De
 
 ### POST - Create a new device request
 
-Request body: application/vnd.com.nsn.cumulocity.newDeviceRequest+json
+Request body: newDeviceRequest
 
-Response body: application/vnd.com.nsn.cumulocity.newDeviceRequest+json (when Accept header is not returned, empty response body is returned)  
+Response body: newDeviceRequest (when Accept header is not returned, empty response body is returned)  
 
 Required role: ROLE\_DEVICE\_CONTROL\_ADMIN
 
@@ -55,7 +55,9 @@ Example response:
 
 ### GET - returns all new device requests
 
-Response body: application/vnd.com.nsn.cumulocity.newDeviceRequestCollection+json
+Request body: N/A
+
+Response body: newDeviceRequestCollection
 
 Required role: ROLE\_DEVICE\_CONTROL\_READ
 
@@ -94,15 +96,17 @@ Example response:
 
 ### GET - returns a new device request
 
-Response body: application/vnd.com.nsn.cumulocity.newDeviceRequest+json
+Request body: N/A
+
+Response body: newDeviceRequest
 
 Required role: ROLE\_DEVICE\_CONTROL\_READ
 
 Example Request:
 
     GET: {{url}}/devicecontrol/newDeviceRequests/1234
-    Accept: application/vnd.com.nsn.cumulocity.newDeviceRequest+json;ver=...
     Authorization: Basic ...
+	Accept: application/vnd.com.nsn.cumulocity.newDeviceRequest+json;ver=...
 
 Example response:
 
@@ -117,6 +121,10 @@ Example response:
 
 ### DELETE - deletes a new device request
 
+Request body: N/A
+
+Response body: N/A
+
 Required role: ROLE\_DEVICE\_CONTROL\_ADMIN
 
 Example Request:
@@ -130,9 +138,9 @@ Example response:
 
 ### PUT - updates a new device request
 
-Request body: application/vnd.com.nsn.cumulocity.newDeviceRequest+json
+Request body: newDeviceRequest
 
-Response body: application/vnd.com.nsn.cumulocity.newDeviceRequest+json
+Response body: newDeviceRequest
 
 Required role: ROLE\_DEVICE\_CONTROL\_READ
 
@@ -173,9 +181,9 @@ Device credentials can be enquired by devices that do not have credentials for a
 
 ### POST - creates a device credentials request
 
-Request body: application/vnd.com.nsn.cumulocity.deviceCredentials+json
+Request body: deviceCredentialsn
 
-Response body: application/vnd.com.nsn.cumulocity.deviceCredentials+json
+Response body: deviceCredentials
 
 Required role: ROLE\_DEVICE\_BOOTSTRAP
 
@@ -233,7 +241,7 @@ CSV file appears in two forms (regarding to optional tenant column):
 
 Request body: multipart/form-data
 
-Response body: application/vnd.com.nsn.cumulocity.bulkNewDeviceRequest+json
+Response body: bulkNewDeviceRequest
 
 Required role: ROLE\_DEVICE\_CONTROL\_ADMIN
 

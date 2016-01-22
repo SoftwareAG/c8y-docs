@@ -49,7 +49,9 @@ On the login page, enter your username and password to start the application. Th
 
 > For security reasons, Cumulocity does not use Cookie technology.
 
-If you forgot your password, click the "Forgot password?" link on the login screen. You can now type your email address and click "Reset password". Check your email for the password reset link. Click the link to enter a new password. The password reset link is valid for one hour.
+If you forgot your password, click the "Forgot password?" link on the login screen. You can now type your email address and click "Reset password". Check your email for the password reset link. Click the link to enter a new password.
+
+> The password reset link is valid for one day.
 
 <img src="/guides/users-guide/resetpassword.png" alt="Reset password" style="max-width: 50%">
 

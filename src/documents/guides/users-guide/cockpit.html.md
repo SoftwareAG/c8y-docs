@@ -37,7 +37,7 @@ In the following, the Cockpit application is described. It offers the following 
 
 * **Business Rule Package:** Use pre-defined business rules for geofencing, thresholds or alarm escalation and notifications (SMS/Email).
 
-* **Reporting:** Create reports based on dashboards layout and send distribute them by Email.
+* **Reporting:** Create reports based on the dashboards layout and send distribute them by Email.
 
 * **Asset Management:** Organize your connected assets in hierarchies.
 
@@ -53,7 +53,7 @@ The main concepts of the Cockpit application are the following:
 
 **Asset**: An asset represents the business object, for example, buildings, machines, or cars.
 
-**Asset Hierarchy**: Assets are organised in a hierarchy (tree). The nodes of thee tree are groups, and the leaves of the tree are devices. 
+**Asset Hierarchy**: Assets are organised in a hierarchy (tree). The nodes of the tree are groups, and the leaves of the tree are devices. 
 
 **Group**: A way to organise devices and assets in a asset hierarchy. A group can contain one or multiple devices, child devices or other groups.
 
@@ -114,7 +114,7 @@ You can hide the welcome page to not show it as default page when you enter the 
 
 ### Reset Welcome page as default
 
-To make the welcome page again the default page, select "Welcome" in the navigator on the bottom left. Afterwards, un-select “Don't show on startup”.
+To make the welcome page again the default page, select "Welcome" in the navigator on the top left. Afterwards, un-select “Don't show on startup”.
 
 ## Home Dashboard
 
@@ -150,7 +150,7 @@ The asset hierarchy is composed out of two types of objects:
 
 * Device objects: These are devices that are linked into the asset hierarchy.
 
-In this example, group objects represent the building asset. Device objects represent the room asset. The group names and hierarchy can be freely defined by the user. The hierarchy can have multiple levels, e.g. region level, city level, street level, building level, floor level and room level. An device can be part of multiple different hierarchies, e.g. part of of regional hierarchy and part of customer hierarchy. 
+In this example, group objects represent the building asset. Device objects represent the room asset. The group names and hierarchy can be freely defined by the user. The hierarchy can have multiple levels, e.g. region level, city level, street level, building level, floor level and room level. An device can be part of multiple different hierarchies, e.g. part of regional hierarchy and part of customer hierarchy. 
 
 Device are not managed in the Cockpit application. Instead, use the Device Management Application.
 To position a device in the asset hierarchy, you have to "assign" the device to the respective group. See description below for details.
@@ -295,7 +295,7 @@ The data explorer and dashboards are closely related:
 
 When clicking on the tab "Data explorer", the data explorer opens.
 
-It is prefilled with available data points of the object (group or device). The first 5 data points are shown by default.
+It is pre-filled with available data points of the object (group or device). The first 5 data points are shown by default.
 
 ![image alt text](/guides/users-guide/image_10.png)
 
@@ -357,7 +357,7 @@ The following properties are available for data points:
 
 * Y Axis: Select on which y-axis the data point should be shown. Options are: Auto, left, right.
 
-* Asset: The of the asset of the data point. This field is not editable. Additionally, the internal name of the data point (measurement fragment and series) is shown.
+* Asset: The name of the asset of the data point. This field is not editable. Additionally, the internal name of the data point (measurement fragment and series) is shown.
 
 ### Browsing in the data explorer
 
@@ -473,11 +473,11 @@ Parameters to configure:
 
 ### Widget "Data Point Graph"
 
-Show a data points (measurements) in a graph. The visualisation is the same as in the data explorer. 
+Show a data point (measurements) in a graph. The visualisation is the same as in the data explorer. 
 
 Note: The easiest way to create a data point graph widget is to navigate to the data explorer and then select "Send to dashboard".
 
-The parameters to configure are the same as in the data explorer. Please refer to to "[Data Explorer](#using-the-data-explorer-to-visualize-data)" for further details.
+The parameters to configure are the same as in the data explorer. Please refer to "[Data Explorer](#using-the-data-explorer-to-visualize-data)" for further details.
 
 ### Widget "Map"
 

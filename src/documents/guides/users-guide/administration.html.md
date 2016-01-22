@@ -68,7 +68,7 @@ Hovering over a user reveals the deactivate and delete buttons on the right side
 
 ## <a name="user-groups"></a>Managing user groups
 
-To simplify user management, users with the same permissions can be placed into user groups representing typical permission sets. A single user can be part of multiple user groups. New account will usually contain four user groups by default. These user groups have common useful permission settings:
+To simplify user management, users with the same permissions can be placed into user groups representing typical permission sets. A single user can be part of multiple user groups. New accounts will usually contain four user groups by default. These user groups have common useful permission settings:
 
 * admins: A group with all permissions set.
 * business: Users in this group can work with all devices and their data, but cannot administer the account.
@@ -111,7 +111,7 @@ Cumulocity distinguishes three types of permissions that you can assign to users
 The total set of permissions that a user has is calculated using the following rules:
 
 * A user has the sum of the permissions that are granted to all groups that the user is part of.
-* If a user has an account-wide permissions, corresponding more specific permissions are ignored. For example, if a user has the permission to see all applications, you cannot edit application access permissions until you remove the permission to see all applications. Likewise, if a user has full access to the complete inventory, any inventory-related permissions are ignored.
+* If a user has account-wide permissions, corresponding more specific permissions are ignored. For example, if a user has the permission to see all applications, you cannot edit application access permissions until you remove the permission to see all applications. Likewise, if a user has full access to the complete inventory, any inventory-related permissions are ignored.
 * Device-/group-specific permissions are inherited to all direct and indirect child devices and child assets. For example, if you assign "read" permission to a group of devices, the user will be automatically able to see all devices in the group.
 
 ### Assigning account-wide permissions
@@ -264,7 +264,7 @@ You can upload different versions of a hosted application at the same time and s
 
 - Select the application by clicking on its name.
 - Click on the "Archives" tab.
-- Click on "Upload archive" and navigate select the archive on your folder. 
+- Click on "Upload archive" and navigate to the archive in your folder. 
 - Click on "Upload" to upload the archive to Cumulocity.
 
 ![Upload archive](/guides/users-guide/uploadarchive.png)
@@ -273,7 +273,7 @@ Once uploaded, archives can be downloaded, activated or removed if necessary. Th
 
 ### Removing applications
 
-To remove an application, simply hover over the application name and click the "X" button. A confirmation pop-up window will appear. Click "OK" and the group will be deleted.
+To remove an application, simply hover over the application name and click the "X" button. A confirmation pop-up window will appear. Click "OK" and the application will be deleted.
 
 ![Remove application](/guides/users-guide/removeapp.png)
 

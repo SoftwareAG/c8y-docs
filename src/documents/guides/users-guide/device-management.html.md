@@ -103,7 +103,7 @@ You can add devices to a group in two ways:
 
 To create a subgroup, just click "Add Group" when viewing a group.
 
-To edit a group, click the "Edit" button next to the group. This allows you to edit the name of the group and assign user permissions for the group. For more information on permissions, see the [Administration](/guides/users-guide/administration) guide.
+To edit a group, click on the group's name. This allows you to edit the name of the group and assign user permissions for the group. For more information on permissions, see the [Administration](/guides/users-guide/administration) guide.
 
 
 ## <a name="device-details"></a>Viewing the device details
@@ -203,7 +203,7 @@ This tab enables low-level troubleshooting of a device, see "[Troubleshooting de
 
 ### <a name="location"></a>Location
 
-The "Location" tab by default shows the location as reported by the device on a map. For devices that do not report a location, you can also manually set the location. Click on the cogwheel on the top right and select "Add location", then place the "pin" on the correct place of the displayed map.
+The "Location" tab by default shows the location as reported by the device on a map. For devices that do not report a location, you can also manually set the location. Simply place the "pin" on the correct place of the displayed map.
 
 ### <a name="shell"></a>Shell
 
@@ -300,7 +300,7 @@ By clicking on "Map" in the navigator, a map of all devices in your account is s
 
 Devices can raise so-called alarms to indicate that there is a problem that requires human intervention. You can view alarms
 
-* By clicking on "Unresolved alarms" in the navigator to see alarms of all devices that have not yet been cleared.
+* By clicking on "Only unresolved" in the "Alarms" tab to see alarms of all devices that have not yet been cleared.
 * By clicking on "Alarms" in the navigator to see the entire alarm history regardless on whether the alarms have been cleared already or not.
 * By clicking on a device and selecting the "Alarms tab" to see the alarms of that particular device. By default, only unresolved alarms are shown, but you can disable the "Only unresolved" checkbox to see all alarms.
 

@@ -31,7 +31,7 @@ Required role: ROLE\_CEP\_MANAGEMENT\_READ
 
 Example request: Retrieve the CepApi resource collection
 
-	GET: {{url}}/cep
+	GET: /cep
 	Host: ...
 	Authorization: Basic ...
 
@@ -69,7 +69,7 @@ Required role: ROLE\_CEP\_MANAGEMENT\_READ
 
 Example request: Get collection of all modules
 
-	GET: {{url}}/cep/modules
+	GET: /cep/modules
 	Host: ...
 	Authorization: Basic ...
 
@@ -103,7 +103,7 @@ Required role: ROLE\_CEP\_MANAGEMENT\_ADMIN.
 
 Example request:
 
-    POST {{url}}/cep/modules
+    POST: /cep/modules
     Host: ...
     Authorization: Basic ...
     Content-Length: ...
@@ -191,7 +191,7 @@ Required : ROLE\_CEP\_MANAGEMENT\_ADMIN
 
 Example Request:
 
-    PUT {{url}}/cep/module/{{moduleId}}
+    PUT: /cep/module/{{moduleId}}
     Host: ...
     Authorization: Basic ...
     Content-Type: application/vnd.com.nsn.cumulocity.cepModule+json;ver=...
@@ -213,7 +213,7 @@ Required role: ROLE\_CEP\_MANAGEMENT\_ADMIN.
 
 Example request:
 
-    PUT {{url}}/cep/module/{{moduleId}}
+    PUT: /cep/module/{{moduleId}}
     Host: ...
     Authorization: Basic ...
     Content-Length: ...
@@ -245,7 +245,7 @@ Required : ROLE\_CEP\_MANAGEMENT\_ADMIN
 
 Example Request: Delete a module
 
-    DELETE {{url}}/cep/module/{{moduleId}}
+    DELETE: /cep/module/{{moduleId}}
      Host: [hostname]
      Authorization: Basic xxxxxxxxxxxxxxxxxxx
 

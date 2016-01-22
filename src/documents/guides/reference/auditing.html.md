@@ -35,7 +35,7 @@ Required role: ROLE\_AUDIT\_READ
 
 Example request: Retrieve AuditAPI resource
 
-	GET: {{url}}/audit
+	GET: /audit
 	Host: ...
 	Authorization: Basic ...
 
@@ -81,7 +81,7 @@ Required role: ROLE\_AUDIT\_ADMIN
 
 Example request:
 
-    POST: {{url}}/audit/auditRecords
+    POST: /audit/auditRecords
     Host: ...
     Authorization: Basic ...
     Content-Length: ...
@@ -127,7 +127,7 @@ Required role: ROLE\_AUDIT\_READ
 
 Example request: Retrieve audit records
 
-	GET: {{url}}/audit/auditRecords
+	GET: /audit/auditRecords
 	Host: ...
 	Authorization: Basic ...
 	Accept: application/vnd.com.nsn.cumulocity.auditRecordCollection+json;
@@ -190,7 +190,7 @@ Required role: ROLE\_AUDIT\_READ
 
 Example request: Get a specific audit record
 
-	GET: {{url}}/audit/auditRecords/{{recordId}}
+	GET: /audit/auditRecords/{{recordId}}
 	Host: ...
 	Authorization: Basic ...
 	Accept: application/vnd.com.nsn.cumulocity.auditRecord+json;

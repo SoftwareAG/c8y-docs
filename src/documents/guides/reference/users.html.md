@@ -43,7 +43,7 @@ Request body: N/A
 Response body: userApi
  Example request: Retrieve information about User API Resource
 
-    GET {{url}}/user
+    GET: /user
     Host: [hostname]
     Authorization: Basic xxxxxxxxxxxxxxxxxxx
     Accept: application/vnd.com.nsn.cumulocity.userApi+json;ver=0.9
@@ -82,7 +82,7 @@ Request body: N/A
 Response body: userCollection
  Example request: Retrieve information about a User Collection
 
-    GET {{url}}/user/{{tenant}}/users
+    GET: /user/{{tenant}}/users
     Host: [hostname]
     Authorization: Basic xxxxxxxxxxxxxxxxxxx
     Accept: application/vnd.com.nsn.cumulocity.userCollection+json;ver=0.9
@@ -137,7 +137,7 @@ Request body: User
 Response body: User (when Accept header is not provided, empty response body is returned)
  Example request: Create a new User
 
-    POST {{url}}/user/{{tenant}}/users
+    POST: /user/{{tenant}}/users
      Host: [hostname]
      Authorization: Basic xxxxxxxxxxxxxxxxxxx
      Content-Length: nnn
@@ -253,7 +253,7 @@ Request body: N/A
 Response body: User
  Example request: Retrieve information about a User
 
-    GET {{url}}/user/{{tenant}}/users/{{userId}}
+    GET: /user/{{tenant}}/users/{{userId}}
      Host: [hostname]
      Authorization: Basic xxxxxxxxxxxxxxxxxxx
      Accept: application/vnd.com.nsn.cumulocity.user+json;ver=0.9
@@ -285,7 +285,7 @@ Request body: N/A
 Response body: User
  Example request: Retrieve information about a User
 
-    GET {{url}}/user/{{tenant}}/userByName/{{userName}}
+    GET: /user/{{tenant}}/userByName/{{userName}}
      Host: [hostname]
      Authorization: Basic xxxxxxxxxxxxxxxxxxx
      Accept: application/vnd.com.nsn.cumulocity.user+json;ver=0.9
@@ -316,7 +316,7 @@ Request body: User
 Response body: User (when Accept header is not provided, empty response body is returned)
  Example request: Change the first name of a User
 
-    PUT {{url}}/user/{{tenant}}/users/{{userId}}
+    PUT: /user/{{tenant}}/users/{{userId}}
      Host: [hostname]
      Authorization: Basic xxxxxxxxxxxxxxxxxxx
      Accept: application/vnd.com.nsn.cumulocity.user+json;ver=0.9
@@ -351,7 +351,7 @@ Request body: N/A
 Response body: N/A
  Example request: Delete a user
 
-    DELETE {{url}}/user/{{tenant}}/users/{{userName}}
+    DELETE: /user/{{tenant}}/users/{{userName}}
      Host: [hostname]
      Authorization: Basic xxxxxxxxxxxxxxxxxxx
 
@@ -371,7 +371,7 @@ Response body: currentUser
 
 Example request: Retrieve information about the logged in user
 
-    GET {{url}}/user/currentUser
+    GET: /user/currentUser
      Host: [hostname]
      Authorization: Basic xxxxxxxxxxxxxxxxxxx
      Accept: application/vnd.com.nsn.cumulocity.user+json;ver=0.9
@@ -408,7 +408,7 @@ Request body: user
 Response body: user
  Example request: Change the first name of the logged in user
 
-    PUT {{url}}/user/currentUser
+    PUT: /user/currentUser
      Host: [hostname]
      Authorization: Basic xxxxxxxxxxxxxxxxxxx
      Accept: application/vnd.com.nsn.cumulocity.user+json;ver=0.9
@@ -464,7 +464,7 @@ Request body: UserReference
 Response body: UserReference
  Example request: Create a new UserReference
 
-    POST {{url}}/user/{{tenant}}/groups/{{groupId}}/users
+    POST: /user/{{tenant}}/groups/{{groupId}}/users
      Host: [hostname]
      Authorization: Basic xxxxxxxxxxxxxxxxxxx
      Content-Length: nnn
@@ -510,7 +510,7 @@ Request body: N/A
 
 Response body: N/A Example request: DELETE a UserReference
  			 
-     DELETE {{url}}/user/{{tenant}}/groups/{{groupId}}/users/{{yourUserName}}
+     DELETE: /user/{{tenant}}/groups/{{groupId}}/users/{{yourUserName}}
      Host: [hostname]
      Authorization: Basic xxxxxxxxxxxxxxxxxxx
 
@@ -525,7 +525,7 @@ Request body: N/A
 Response body: UserReferenceCollection
  Example request: Retrieve information about all users of a Group
 
-    GET {{url}}/user/management/groups/{{groupId}}
+    GET: /user/management/groups/{{groupId}}
      Host: [hostname]
      Authorization: Basic xxxxxxxxxxxxxxxxxxx
      Accept: application/vnd.com.nsn.cumulocity.userReferenceCollection+json;ver=0.9
@@ -585,7 +585,7 @@ Request body: GroupCollection
 Response body: GroupCollection
  Example request: Retrieve information about a Group Collection
 
-    GET {{url}}/user/management/groups/
+    GET: /user/management/groups/
      Host: [hostname]
      Authorization: Basic xxxxxxxxxxxxxxxxxxx
      Accept: application/vnd.com.nsn.cumulocity.groupCollection+json;ver=0.9
@@ -632,7 +632,7 @@ Request body: Group
 Response body: Group
  Example request: Create a new Group
 
-    POST {{url}}/user/management/groups
+    POST: /user/management/groups
      Host: [hostname]
      Authorization: Basic xxxxxxxxxxxxxxxxxxx
      Content-Length: nnn
@@ -683,7 +683,7 @@ Request body: N/A
 Response body: Group
  Example request: Retrieve information about a Group
 
-    GET {{url}}/user/management/groups/{{groupId}}
+    GET: /user/management/groups/{{groupId}}
      Host: [hostname]
      Authorization: Basic xxxxxxxxxxxxxxxxxxx
      Accept: application/vnd.com.nsn.cumulocity.group+json;ver=0.9
@@ -728,7 +728,7 @@ Request body: N/A
 Response body: Group
  Example request: Retrieve information about a Group
 
-    GET {{url}}/user/{{tenant}}/groupByName/{{groupName}}
+    GET: /user/{{tenant}}/groupByName/{{groupName}}
      Host: [hostname]
      Authorization: Basic xxxxxxxxxxxxxxxxxxx
      Accept: application/vnd.com.nsn.cumulocity.group+json;ver=0.9
@@ -753,7 +753,7 @@ Request body: N/A
 Response body: N/A
  Example request: DELETE a group
 
-    DELETE {{url}}/user/{{tenant}}/groups/{{groupId}}
+    DELETE: /user/{{tenant}}/groups/{{groupId}}
      Host: [hostname]
      Authorization: Basic xxxxxxxxxxxxxxxxxxx
 
@@ -768,7 +768,7 @@ Request body: Group
 Response body: Group
  Example request: Change the group name
 
-    PUT {{url}}/user/{{tenant}}/groups/{{groupId}}
+    PUT: /user/{{tenant}}/groups/{{groupId}}
      Host: [hostname]
      Authorization: Basic xxxxxxxxxxxxxxxxxxx
      Accept: application/vnd.com.nsn.cumulocity.group+json;ver=0.9
@@ -810,7 +810,7 @@ Request body: N/A
 Response body: GroupReferenceCollection
  Example request: Retrieve information about all groups of a User
 
-    GET {{url}}/user/{{tenant}}/users/{{userName}}/groups
+    GET: /user/{{tenant}}/users/{{userName}}/groups
      Host: [hostname]
      Authorization: Basic xxxxxxxxxxxxxxxxxxx
      Accept: application/vnd.com.nsn.cumulocity.groupReferenceCollection+json;ver=0.9
@@ -868,7 +868,7 @@ Request body: N/A
 Response body: RoleCollection
  Example request: Retrieve information about a Role Collection
 
-     GET {{url}}/user/roles
+     GET: /user/roles
      Host: [hostname]
      Authorization: Basic xxxxxxxxxxxxxxxxxxx
 
@@ -908,7 +908,7 @@ Request body: RoleReference
 Response body: RoleReference
  Example request: Create a new RoleReference
 
-    POST {{url}}/user/{{tenant}}/users/{{userName}}/roles
+    POST: /user/{{tenant}}/users/{{userName}}/roles
      Host: [hostname]
      Authorization: Basic xxxxxxxxxxxxxxxxxxx
      Content-Length: nnn
@@ -943,7 +943,7 @@ Request body: RoleReference
 Response body: RoleReference
  Example request: Create a new RoleReference
 
-    POST {{url}}/user/{{tenant}}/groups/{{groupId}}/roles
+    POST: /user/{{tenant}}/groups/{{groupId}}/roles
      Host: [hostname]
      Authorization: Basic xxxxxxxxxxxxxxxxxxx
      Content-Length: nnn
@@ -978,7 +978,7 @@ Request body: N/A
 Response body: N/A
  Example request: DELETE a RoleReference
 
-    DELETE {{url}}/user/{{tenant}}/users/{{userName}}/roles/{{roleName (Example:ROLE_TENANT_MANAGEMENT_ADMIN)}}
+    DELETE: /user/{{tenant}}/users/{{userName}}/roles/{{roleName (Example:ROLE_TENANT_MANAGEMENT_ADMIN)}}
      Host: [hostname]
      Authorization: Basic xxxxxxxxxxxxxxxxxxx
 
@@ -993,7 +993,7 @@ Request body: N/A
 Response body: N/A
  Example request: DELETE a RoleReference
 
-    DELETE {{url}}/user/{{tenant}}/groups/{{groupId}}/roles/{{roleName (Example:ROLE_TENANT_MANAGEMENT_ADMIN)}}
+    DELETE: /user/{{tenant}}/groups/{{groupId}}/roles/{{roleName (Example:ROLE_TENANT_MANAGEMENT_ADMIN)}}
      Authorization: Basic xxxxxxxxxxxxxxxxxxx
 
 Example response:
@@ -1019,7 +1019,7 @@ Request body: N/A
 Response body: RoleReferenceCollection
  Example request: Retrieve information about a Role Reference Collection
 
-    GET {{url}}/user/{{tenant}}/users/{{userName}}/roles
+    GET: /user/{{tenant}}/users/{{userName}}/roles
      Host: [hostname]
      Authorization: Basic xxxxxxxxxxxxxxxxxxx
      Accept: application/vnd.com.nsn.cumulocity.roleReferenceCollection+json;ver=0.9
@@ -1065,7 +1065,7 @@ Request body: N/A
 Response body: RoleReferenceCollection
  Example request: Retrieve information about a Role Reference Collection
 
-    GET {{url}}/user/{{tenant}}/groups/{{groupId}}/roles
+    GET: /user/{{tenant}}/groups/{{groupId}}/roles
      Host: [hostname]
      Authorization: Basic xxxxxxxxxxxxxxxxxxx
      Accept: application/vnd.com.nsn.cumulocity.roleReferenceCollection+json;ver=0.9

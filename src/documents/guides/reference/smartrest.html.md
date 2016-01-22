@@ -15,7 +15,7 @@ This reference guide walks through the *SmartREST* protocol, the data format use
 
 The following example shows the communication between a client and the  *SmartREST* endpoint. Note the `Authorization` header and the custom `X-Id` header in the request which specifies the *SmartREST* template to use for this request.
 
-	POST /s HTTP/1.0
+	POST: /s HTTP/1.0
 	Authorization: Basic ...
 	X-Id: ...
 	Content-Length: 13
@@ -94,7 +94,7 @@ Before a *SmartREST* template can be registered, its existence must be checked. 
 
 The existence of a *SmartREST* template can be checked by making an empty request:
 
-	POST /s HTTP/1.0
+	POST: /s HTTP/1.0
 	Authorization: Basic ...
 	X-Id: ...
 	Content-Length: 0
@@ -117,7 +117,7 @@ If the template does not exist, a template registration request can be issued us
 
 Templates can be registered with one single request containing *SmartREST* template in the form of *CSV* data. The difference between a template registration request and a normal *SmartREST* request is that rows are not processed individually during template registration.
 
-	POST /s HTTP/1.0
+	POST: /s HTTP/1.0
 	Authorization: Basic ...
 	X-Id: ...
 	Content-Length: 275
@@ -297,7 +297,7 @@ If your device uses multiple templates (e.g. child devices have a different temp
 
 Example request:
 
-	POST /devicecontrol/notifications HTTP/1.0
+	POST: /devicecontrol/notifications HTTP/1.0
 	Authorization: Basic ...
 	X-Id: mytemplate1
 

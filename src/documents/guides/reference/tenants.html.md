@@ -39,7 +39,7 @@ Required role: ROLE\_TENANT\_MANAGEMENT\_READ
 Example Request: Get tenants as sample\_tenant.
 
      
-    GET {{url}}/tenant/tenants
+    GET: /tenant/tenants
     Host: ...
     Authorization: Basic ...
 
@@ -137,7 +137,7 @@ Required role: ROLE\_TENANT\_MANAGEMENT\_ADMIN
 
 Example request:
 				
-	POST {{url}}/tenant/tenants
+	POST: /tenant/tenants
 	Host: ...
 	Authorization: Basic ...
 	Content-Length: ...
@@ -184,13 +184,13 @@ Example Response:
 |Name|Type|Occurs|Description|Visibility|
 |:---|:---|:-----|:----------|:---------|
 |self|URI|0..1|Link to this resource.|Public|
-|id|String|1|Tenant id|Public|
+|id|String: max length="32"|1|Tenant id|Public|
 |status|String|1|Status of tenant, possible values [ACTIVE, SUSPENDED].|Private|
-|adminName|String|1|Administrator user name|Private|
-|domain|String|1|URL of tenants domain.|Public|
-|company|String|1|Tenants company name.|Public|
-|contactName|String|1|Contact person name.|Public|
-|contactPhone|String|1|Contact person phone number.|Public|
+|adminName|String: max length = "50"|1|Administrator user name|Private|
+|domain|String: max length = "256"|1|URL of tenants domain.|Public|
+|company|String: max length = "256"|1|Tenants company name.|Public|
+|contactName|String: max length = "30"|1|Contact person name.|Public|
+|contactPhone|String: max length= "20"|1|Contact person phone number.|Public|
 |applications|ApplicationReferenceCollection|1|Collection of tenant subscribed, applications.|Private|
 |ownedApplications|ApplicationReferenceCollection|1|Collection of tenant owned, applications.|Public - only applications with availability MARKET|,
 |customProperties|Object|1|Keeps a list of custom properties|optional|
@@ -206,7 +206,7 @@ Required role: ROLE\_TENANT\_MANAGEMENT\_READ
 Example Request: Get single tenant.
 
      
-    GET {{url}}/tenant/tenants/{{tenantId}}
+    GET: /tenant/tenants/{{tenantId}}
     Host: ...
     Authorization: Basic ...
     Accept: application/vnd.com.nsn.cumulocity.tenant+json;ver=...
@@ -262,7 +262,7 @@ Required role: ROLE\_TENANT\_MANAGEMENT\_ADMIN
 
 Example Request :
      
-    PUT {{url}}/tenant/tenants/{{tenantId}}
+    PUT: /tenant/tenants/{{tenantId}}
     Host: ...
     Authorization: Basic ...
     Content-Length: ...
@@ -321,7 +321,7 @@ Required role: ROLE\_TENANT\_MANAGEMENT\_ADMIN
 
 Example request:
 
-	DELETE {{url}}/tenant/tenants/{{tenantId}}
+	DELETE: /tenant/tenants/{{tenantId}}
 	Host: [hostname]
 	Authorization: Basic xxxxxxxxxxxxxxxxxxx
     
@@ -354,7 +354,7 @@ Required role: ROLE\_TENANT\_MANAGEMENT\_READ
 Example Request: Get Application reference collection.
 
      
-    GET {{url}}/tenant/tenants/{{tenantId}}/applications
+    GET: /tenant/tenants/{{tenantId}}/applications
     Host: ...
     Authorization: Basic ...
     Accept: application/vnd.com.nsn.cumulocity.applicationReferenceCollection+json;ver=...
@@ -415,7 +415,7 @@ Required role: ROLE\_TENANT\_MANAGEMENT\_READ
 Example Request: Get options.
 
      
-    GET {{url}}/tenant/tenants/{{tenantId}}/applications/{{applicationId}}
+    GET: /tenant/tenants/{{tenantId}}/applications/{{applicationId}}
     Host: ...
     Authorization: Basic ...
     Accept: application/vnd.com.nsn.cumulocity.applicationReference+json;ver=...
@@ -466,7 +466,7 @@ Required role: ROLE\_OPTION\_MANAGEMENT\_READ
 Example Request: Get options.
 
      
-    GET {{url}}/tenant/options
+    GET: /tenant/options
     Host: ...
     Authorization: Basic ...
     Accept: application/vnd.com.nsn.cumulocity.optionCollection+json;ver=...
@@ -507,7 +507,7 @@ Required role: ROLE\_OPTION\_MANAGEMENT\_ADMIN
 Example Request: Post option.
 
      
-    POST {{url}}/tenant/options
+    POST: /tenant/options
     Host: ...
     Authorization: Basic ...
     Content-Type: application/vnd.com.nsn.cumulocity.option+json;ver=...
@@ -560,7 +560,7 @@ Required role: ROLE\_OPTION\_MANAGEMENT\_READ
  Example Request: Get single option.
 
      
-    GET {{url}}/tenant/options/{{category}}/{{key}}
+    GET: /tenant/options/{{category}}/{{key}}
     Host: ...
     Authorization: Basic ...
     Accept: application/vnd.com.nsn.cumulocity.option+json;ver=...
@@ -587,7 +587,7 @@ Required role: ROLE\_OPTION\_MANAGEMENT\_ADMIN
  Example Request: Update access.control.allow.origin option.
 
      
-    PUT {{url}}/tenant/options/{{category}}/{{key}}
+    PUT: /tenant/options/{{category}}/{{key}}
     Host: ...
     Authorization: Basic ...
     Content-Type: application/vnd.com.nsn.cumulocity.option+json;ver=...
@@ -621,7 +621,7 @@ Required role: ROLE\_OPTION\_MANAGEMENT\_READ
 Example Request: Get system options.
 
      
-    GET {{url}}/tenant/system/options
+    GET: /tenant/system/options
     Host: ...
     Authorization: Basic ...
     Accept: application/vnd.com.nsn.cumulocity.optionCollection+json;ver=...
@@ -650,7 +650,7 @@ Required role: ROLE\_OPTION\_MANAGEMENT\_READ
  Example Request: Get single option.
 
      
-    GET {{url}}/tenant/system/option/{category}/{id}
+    GET: /tenant/system/option/{category}/{id}
     Host: ...
     Authorization: Basic ...
     Accept: application/vnd.com.nsn.cumulocity.option+json;ver=...
@@ -701,7 +701,7 @@ Required role: ROLE\_TENANT\_STATISTICS\_READ
 
 Example Request: Get statistics of current tenant starting Aug 1st, 2014, until today.
 
-    GET {{url}}/tenant/statistics?dateFrom=2014-08-01
+    GET: /tenant/statistics?dateFrom=2014-08-01
     Host: ...
     Authorization: Basic ...
 
@@ -741,7 +741,7 @@ Required role: ROLE\_TENANT\_MANAGEMENT\_READ
 
 Example Request: Get statistics of all tenants starting Aug 1st, 2014, until today.
 
-    GET {{url}}/tenant/statistics/allTenantsSummary?dateFrom=2014-08-01
+    GET: /tenant/statistics/allTenantsSummary?dateFrom=2014-08-01
     Host: ...
     Authorization: Basic ...
 
@@ -778,7 +778,7 @@ Required role: ROLE\_TENANT\_STATISTICS\_READ
 
 Example Request: Get summary of requests and database usage from the start of this month until now.
 
-    GET {{url}}/tenant/statistics/summary
+    GET: /tenant/statistics/summary
     Host: ...
     Authorization: Basic ...
 

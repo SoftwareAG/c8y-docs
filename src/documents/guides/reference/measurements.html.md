@@ -40,7 +40,7 @@ Response body: application/vnd.com.nsn.cumulocity.measurementApi+json
 
 Example request:
 
-    GET: {{url}}/measurement
+    GET: /measurement
     Host: ...
     Authorization: Basic ...
 
@@ -91,7 +91,7 @@ Required role: ROLE\_MEASUREMENT\_READ
 
 Example request: Retrieve energy readings.
 	
-     GET: {{url}}/measurement/measurements
+     GET: /measurement/measurements
      Host: ...
      Authorization: Basic ...
      Accept: application/vnd.com.nsn.cumulocity.measurementCollection+json;ver=...
@@ -157,7 +157,7 @@ Required role: ROLE\_MEASUREMENT\_READ
 
 Example request: retrieve all series.
 
-     GET: {{url}}/measurement/measurements/series...
+     GET: /measurement/measurements/series...
      Authorization: Basic ...
      Accept: application/json
 
@@ -217,7 +217,7 @@ Required role: ROLE\_MEASUREMENT\_ADMIN or owner of source object
 
 Example Request:
 
-    POST: {{url}}/measurement/measurements
+    POST: /measurement/measurements
     Host: ...
     Authorization: Basic ...
     Content-Length: ...
@@ -295,7 +295,7 @@ Required role: ROLE\_MEASUREMENT\_READ
 
 Example request:
 
-    GET: {{url}}/measurement/measurements/{{measurementId}}
+    GET: /measurement/measurements/{{measurementId}}
 	Host: ...
 	Authorization: Basic ...
 
@@ -330,7 +330,7 @@ Required role: ROLE\_MEASUREMENT\_ADMIN or owner of source object
 
 Example Request: Delete a measurement
 
-    DELETE: {{url}}/measurement/measurements/{{measurementID}}
+    DELETE: /measurement/measurements/{{measurementID}}
      Host: [hostname]
      Authorization: Basic xxxxxxxxxxxxxxxxxxx
 

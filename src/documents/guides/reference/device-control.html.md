@@ -35,7 +35,7 @@ Required role: ROLE\_DEVICE\_CONTROL\_READ
 
 Example request:
 
-    GET: {{url}}/devicecontrol
+    GET: /devicecontrol
     Host: ...
     Authorization: Basic ...
 
@@ -81,7 +81,7 @@ Required role: ROLE\_DEVICE\_CONTROL\_ADMIN or owner of source object
 
 Example Request:
 
-    POST: {{url}}/devicecontrol/operations/
+    POST: /devicecontrol/operations/
     Content-Type: application/vnd.com.nsn.cumulocity.operation+json;ver=...
     Accept: application/vnd.com.nsn.cumulocity.operation+json;ver=...
     Authorization: Basic ...
@@ -127,7 +127,7 @@ Required role: ROLE\_DEVICE\_CONTROL\_READ
 
 Example Request: Get all operations.
 
-    GET: {{url}}/devicecontrol/operations
+    GET: /devicecontrol/operations
     Accept: application/vnd.com.nsn.cumulocity.operationCollection+json;ver=...
     Authorization: Basic ...
 
@@ -198,7 +198,7 @@ Required role: ROLE\_DEVICE\_CONTROL\_ADMIN or owner of source object
 
 Example Request:
 
-    PUT: {{url}}/devicecontrol/operations/{{operationId}}
+    PUT: /devicecontrol/operations/{{operationId}}
     Host: ...
     Authorization: Basic ...
     Content-Length: ...
@@ -215,7 +215,7 @@ Required role: ROLE\_DEVICE\_CONTROL\_READ
 
 Example request:
 
-    GET: {{url}}/devicecontrol/operations/{{operationId}}
+    GET: /devicecontrol/operations/{{operationId}}
     Host: ...
     Authorization: Basic ... 
     Accept: application/vnd.com.nsn.cumulocity.operation+json;ver=...
@@ -323,7 +323,7 @@ Required role: ROLE\_BULK\_OPERATION\_ADMIN
 
 Example Request:
 
-    POST: {{url}}/devicecontrol/bulkoperations
+    POST: /devicecontrol/bulkoperations
     Content-Type: application/vnd.com.nsn.cumulocity.bulkOperation+json
     Accept: application/vnd.com.nsn.cumulocity.bulkOperation+json
     Authorization: Basic ...
@@ -364,7 +364,7 @@ Required role: ROLE\_BULK\_OPERATION\_READ
 
 Example Request: Get all bulk operations.
 
-    GET: {{url}}/devicecontrol/bulkoperations
+    GET: /devicecontrol/bulkoperations
     Accept: application/vnd.com.nsn.cumulocity.bulkOperationCollection+json
     Authorization: Basic ...
 
@@ -450,7 +450,7 @@ Required role: ROLE\_BULK\_OPERATION\_ADMIN
 
 Example Request:
 
-    PUT: {{url}}/devicecontrol/bulkoperations/{{bulkoperationId}}
+    PUT: /devicecontrol/bulkoperations/{{bulkoperationId}}
     Host: ...
     Authorization: Basic ...
     Content-Type: application/vnd.com.nsn.cumulocity.bulkoperation+json
@@ -487,7 +487,7 @@ Required role: ROLE\_BULK\_OPERATION\_READ
 
 Example request:
 
-    GET: {{url}}/devicecontrol/bulkoperations/{{bulkoperationId}}
+    GET: /devicecontrol/bulkoperations/{{bulkoperationId}}
     Host: ...
     Authorization: Basic ...
     Accept: application/vnd.com.nsn.cumulocity.bulkoperation+json;ver=...
@@ -521,7 +521,7 @@ Required role: ROLE\_BULK\_OPERATION\_ADMIN
 
 Example Request: Delete a Bulk Operation
 
-    DELETE /devicecontrol/bulkoperations/{{id}}
+    DELETE: /devicecontrol/bulkoperations/{{id}}
     Authorization: Basic ...
 
 Example Response:

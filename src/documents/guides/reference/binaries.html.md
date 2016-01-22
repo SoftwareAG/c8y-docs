@@ -33,7 +33,7 @@ Required role: ROLE\_INVENTORY\_READ
 
 Example request:
 
-    GET {{url}}/inventory/binaries
+    GET: /inventory/binaries
     Host: ...
     Authorization: Basic ...
 
@@ -103,7 +103,7 @@ Uploading a binary requires to have a multipart with the following three form va
 
 Example request:
 
-    POST {{url}}/invenotry/binaries
+    POST: /invenotry/binaries
     Host: ...
     Authorization: Basic ...
     Content-Length: ...
@@ -155,7 +155,7 @@ Required role: ROLE\_INVENTORY\_READ
 
 Example request:
 
-	GET {{url}}/inventory/binaries/{{binaryiD}}
+	GET: /inventory/binaries/{{binaryiD}}
  	...
 
 Example response:
@@ -181,7 +181,7 @@ to update the managed object directly as described at this section [Update Manag
 
 Example request:
 
-    PUT {{url}}/inventory/binaries/{{binaryId}}
+    PUT: /inventory/binaries/{{binaryId}}
     Host: ...
     Authorization: Basic ...
     Content-Length: ...
@@ -201,7 +201,7 @@ Note: The request will delete the binary and the associated managed object conta
 
 Example Request:
 
-    DELETE {{url}}/inventory/binaries/{{binaryId}}
+    DELETE: /inventory/binaries/{{binaryId}}
     Host: ...
     Authorization: Basic ...
 

@@ -34,7 +34,7 @@ Required role: ROLE\_DEVICE\_CONTROL\_ADMIN
 
 Example Request:
 
-    POST: {{url}}/devicecontrol/newDeviceRequests
+    POST: /devicecontrol/newDeviceRequests
     Content-Type: application/vnd.com.nsn.cumulocity.newDeviceRequest+json;ver=...
     Accept: application/vnd.com.nsn.cumulocity.newDeviceRequest+json;ver=...
     Authorization: Basic ...
@@ -63,7 +63,7 @@ Required role: ROLE\_DEVICE\_CONTROL\_READ
 
 Example Request:
 
-    GET: {{url}}/devicecontrol/newDeviceRequests
+    GET: /devicecontrol/newDeviceRequests
     Accept: application/vnd.com.nsn.cumulocity.newDeviceRequestCollection+json;ver=...
     Authorization: Basic ...
 
@@ -104,7 +104,7 @@ Required role: ROLE\_DEVICE\_CONTROL\_READ
 
 Example Request:
 
-    GET: {{url}}/devicecontrol/newDeviceRequests/1234
+    GET: /devicecontrol/newDeviceRequests/1234
     Authorization: Basic ...
 	Accept: application/vnd.com.nsn.cumulocity.newDeviceRequest+json;ver=...
 
@@ -129,7 +129,7 @@ Required role: ROLE\_DEVICE\_CONTROL\_ADMIN
 
 Example Request:
 
-    DELETE: {{url}}/devicecontrol/newDeviceRequests/1234
+    DELETE: /devicecontrol/newDeviceRequests/1234
     Authorization: Basic ...
 
 Example response:
@@ -146,7 +146,7 @@ Required role: ROLE\_DEVICE\_CONTROL\_READ
 
 Example Request:
 
-    PUT: {{url}}/devicecontrol/newDeviceRequests/1234
+    PUT: /devicecontrol/newDeviceRequests/1234
     Content-Type: application/vnd.com.nsn.cumulocity.newDeviceRequest+json;ver=...
     Accept: application/vnd.com.nsn.cumulocity.newDeviceRequest+json;ver=...
     Authorization: Basic ...
@@ -189,7 +189,7 @@ Required role: ROLE\_DEVICE\_BOOTSTRAP
 
 Example Request:
 
-    POST: {{url}}/devicecontrol/deviceCredentials
+    POST: /devicecontrol/deviceCredentials
     Content-Type: application/vnd.com.nsn.cumulocity.deviceCredentials+json;ver=...
     Accept: application/vnd.com.nsn.cumulocity.deviceCredentials+json;ver=...
     Authorization: Basic ...
@@ -247,7 +247,7 @@ Required role: ROLE\_DEVICE\_CONTROL\_ADMIN
 
 Example Request:
 
-    POST: {{url}}/devicecontrol/bulkNewDeviceRequests
+    POST: /devicecontrol/bulkNewDeviceRequests
     Content-Type: multipart/form-data; boundary=myBoundary
     Accept: application/json
     Authorization: Basic ...

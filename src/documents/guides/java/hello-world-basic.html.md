@@ -41,7 +41,7 @@ This will create a folder "hello-agent" in the current directory with a skeleton
 
 ### Add the  Java client library
 
-Edit the "pom.xml" in the "hello-agent" folder. Add a "repositories" element to point to the Cumulocity Maven repository, which stores the client libraries.
+Edit the "pom.xml" in the "hello-agent" folder. Add a "repositories" and a "pluginRepositories" element to point to the Cumulocity Maven repository, which stores the client libraries.
 
 	<repositories>
 		<repository>
@@ -50,6 +50,13 @@ Edit the "pom.xml" in the "hello-agent" folder. Add a "repositories" element to 
 			<url>http://download.cumulocity.com/maven/repository</url>
 		</repository>
 	</repositories>
+	<pluginRepositories>
+		<pluginRepository>
+			<id>public</id>
+			<url>http://download.cumulocity.com/maven/repository</url>
+		</pluginRepository>
+        </pluginRepositories>
+
 
 Add "dependency" elements for the Java client library ("java-client") and for the Cumulocity domain model ("device-capability-model") to the "dependencies" section.
 

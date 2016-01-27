@@ -12,6 +12,8 @@ The inventory interface consists of the following parts:
 -   The *managed object reference collection* resource retrieves sets of references to managed objects. These could be, for example, child devices of a particular managed object. It also enables adding new references to a collection (e.g., adding a new child device).
 -   The *managed object reference* resource represents one individual reference to a managed object, which can be retrieved or deleted.
 
+> Note that for all PUT/POST requests accept header should be provided, otherwise an empty response body will be returned.
+
 ## Inventory API
 
 ### InventoryAPI [application/vnd.com.nsn.cumulocity.inventoryApi+json]
@@ -27,15 +29,13 @@ The inventory interface consists of the following parts:
 
 ### GET a representation of the Inventory API resource
 
-Request body: N/A
-
 Response body: inventoryApi
   
 Required role: ROLE\_INVENTORY\_READ
 
 Example request: Get the Inventory API resource
 
-    GET: /inventory
+    GET /inventory
     Host: ...
     Authorization: Basic ...
 
@@ -69,15 +69,13 @@ Example response:
 
 ### GET a representation of a ManagedObjectCollection
 
-Reqeust body: N/A
-
 Response body: ManagedObjectCollection  
 
 Required role: ROLE\_INVENTORY\_READ
 
 Example Request: Get managed objects of a particular type.
 
-    GET: /inventory/managedObjects
+    GET /inventory/managedObjects
     Host: ...
     Authorization: Basic ...
     Accept: application/vnd.com.nsn.cumulocity.managedObjectCollection+json;ver=...
@@ -115,7 +113,7 @@ Example Response:
 
 Request body: ManagedObject
 
-Response body: ManagedObject (when accept header is not provided, empty response body is returned)
+Response body: ManagedObject 
   
 Required role: ROLE\_INVENTORY\_ADMIN or ROLE\_INVENTORY\_CREATE
 
@@ -170,15 +168,13 @@ Not every GET response contains "parents" collections. It is required to pass "w
 
 ### GET a representation of a managed object
 
-Request body: ManagedObject
-
 Response body: ManagedObject
 
 Required role: ROLE\_INVENTORY\_READ
 
 Example request: Get a representation of a specific manage object
 
-    GET: /inventory/managedObjects/{{deviceId}}
+    GET /inventory/managedObjects/{{deviceId}}
     Host: ... 
     Authorization: Basic ...
     Accept: application/vnd.com.nsn.cumulocity.managedObject+json;=ver...
@@ -216,7 +212,7 @@ Example response:
 
 Example request: Retrieve supported measurements of a managed object
 
-	GET: /inventory/managedObjects/{{deviceId}}/supportedMeasurements
+	GET /inventory/managedObjects/{{deviceId}}/supportedMeasurements
 	Host: ...
 	Authorization: Basic ...
 
@@ -231,13 +227,13 @@ Example response:
 
 Request body: ManagedObject
 
-Response body: ManagedObject (when accept header is not provided, empty response body is returned)
+Response body: ManagedObject 
   
 Required role: ROLE\_INVENTORY\_ADMIN or owner
 
 Example Request: Change the name of a managed object
 
-    PUT: /inventory/managedObjects/{{deviceId}}
+    PUT /inventory/managedObjects/{{deviceId}}
     Host: ...
     Authorization: Basic ...
     Accept: application/vnd.com.nsn.cumulocity.managedObject+json;ver=...
@@ -264,7 +260,7 @@ Example response:
 
 ### DELETE a managed object
 
-Request Body: N/A.
+Request body: N/A.
 
 Response Message Body: N/A.
   
@@ -272,7 +268,7 @@ Required role: ROLE\_INVENTORY\_ADMIN or owner
 
 Example Request: Delete a managed object
 
-    DELETE: /inventory/managedObjects/{{deviceId}}
+    DELETE /inventory/managedObjects/{{deviceId}}
      Host: [hostname]
      Authorization: Basic xxxxxxxxxxxxxxxxxxx
 
@@ -294,15 +290,13 @@ Example Response:
 
 ### GET a managed object reference collection
 
-Request body: N/A
-
 Response body: ManagedObjectReferenceCollection
 
 Example Request: Get reference collection of a certain managed object
 
 Note that a "404 Not Found" error will appear if the object has no references.
 
-    GET: /inventory/managedObjects/{{deviceId}}/references
+    GET /inventory/managedObjects/{{deviceId}}/references
     Host: ...
     Authorization: Basic
     Accept: application/vnd.com.nsn.cumulocity.managedObjectReferenceCollection+json;ver=...
@@ -347,13 +341,13 @@ Example Response:
 
 Request body: ManagedObjectReference
 
-Response body: ManagedObjectReference(when accept header is not provided, empty response body is returned)
+Response body: ManagedObjectReference
   
 Required role: ROLE\_INVENTORY\_ADMIN or ROLE\_INVENTORY\_CREATE
 
 Example Request: Add a ManagedObjectReference
 
-    POST: /inventory/managedObjects/{{deviceId}}
+    POST /inventory/managedObjects/{{deviceId}}
     Host: ...
     Authorization: Basic ...
     Content-Length: ...
@@ -396,15 +390,13 @@ As an alternative it is also allowed to pass the following reference object in t
 
 ### GET a managed object reference
 
-Request body: ManagedObjectReference
-
 Response body: ManagedObjectReference
   
 Required role: ROLE\_INVENTORY\_READ
 
 Example request:
 
-    GET: /inventory/managedObjects/{{deviceId}}/references/{{referenceId}}
+    GET /inventory/managedObjects/{{deviceId}}/references/{{referenceId}}
     Host: ...
     Authorization: Basic ...
     Accept: application/vnd.com.nsn.cumulocity.managedObjectReference+json;ver=...
@@ -436,7 +428,7 @@ Note: This operations just removes the reference, it does not delete the object 
 
 Example Request: Delete a managed object reference
 
-    DELETE: /inventory/managedObjects/{{deviceId}}/references/{{referenceId}}
+    DELETE /inventory/managedObjects/{{deviceId}}/references/{{referenceId}}
      Host: [hostname]
      Authorization: Basic xxxxxxxxxxxxxxxxxxx
 

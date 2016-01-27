@@ -16,6 +16,8 @@ The Tenant interface is available consists of parts:
 -   The tenant option resource represents individual option that can be view and modified, accesible by url */tenant/options/{optionCategory}/{optionKey}*
 -   The tenant usage statistics resources return information on the request load and database usage of tenants.
 
+> Note that for all PUT/POST requests accept header should be provided, otherwise an empty response body will be returned.
+
 ## Tenant collection
 
 ### TenantCollection [application/vnd.com.nsn.cumulocity.tenantCollection+json]
@@ -30,8 +32,6 @@ The Tenant interface is available consists of parts:
 
 ### GET a representation of a Tenant Collection.
 
-Request body: N/A
-
 Response body: TenantCollection
   
 Required role: ROLE\_TENANT\_MANAGEMENT\_READ
@@ -39,7 +39,7 @@ Required role: ROLE\_TENANT\_MANAGEMENT\_READ
 Example Request: Get tenants as sample\_tenant.
 
      
-    GET: /tenant/tenants
+    GET /tenant/tenants
     Host: ...
     Authorization: Basic ...
 
@@ -137,7 +137,7 @@ Required role: ROLE\_TENANT\_MANAGEMENT\_ADMIN
 
 Example request:
 				
-	POST: /tenant/tenants
+	POST /tenant/tenants
 	Host: ...
 	Authorization: Basic ...
 	Content-Length: ...
@@ -197,8 +197,6 @@ Example Response:
 
 ### GET a representation of a Tenant.
 
-Request body: N/A
-
 Response body: Tenant
   
 Required role: ROLE\_TENANT\_MANAGEMENT\_READ
@@ -206,7 +204,7 @@ Required role: ROLE\_TENANT\_MANAGEMENT\_READ
 Example Request: Get single tenant.
 
      
-    GET: /tenant/tenants/{{tenantId}}
+    GET /tenant/tenants/{{tenantId}}
     Host: ...
     Authorization: Basic ...
     Accept: application/vnd.com.nsn.cumulocity.tenant+json;ver=...
@@ -262,7 +260,7 @@ Required role: ROLE\_TENANT\_MANAGEMENT\_ADMIN
 
 Example Request :
      
-    PUT: /tenant/tenants/{{tenantId}}
+    PUT /tenant/tenants/{{tenantId}}
     Host: ...
     Authorization: Basic ...
     Content-Length: ...
@@ -321,7 +319,7 @@ Required role: ROLE\_TENANT\_MANAGEMENT\_ADMIN
 
 Example request:
 
-	DELETE: /tenant/tenants/{{tenantId}}
+	DELETE /tenant/tenants/{{tenantId}}
 	Host: [hostname]
 	Authorization: Basic xxxxxxxxxxxxxxxxxxx
     
@@ -345,8 +343,6 @@ Example response:
 
 ### GET a representation of a ApplicationReferenceCollection.
 
-Request body: N/A
-
 Response body: ApplicationReferenceCollection
   
 Required role: ROLE\_TENANT\_MANAGEMENT\_READ
@@ -354,7 +350,7 @@ Required role: ROLE\_TENANT\_MANAGEMENT\_READ
 Example Request: Get Application reference collection.
 
      
-    GET: /tenant/tenants/{{tenantId}}/applications
+    GET /tenant/tenants/{{tenantId}}/applications
     Host: ...
     Authorization: Basic ...
     Accept: application/vnd.com.nsn.cumulocity.applicationReferenceCollection+json;ver=...
@@ -406,8 +402,6 @@ Example Response :
 
 ### GET a representation of a ApplicationReference.
 
-Request body: N/A
-
 Response body: ApplicationReference
   
 Required role: ROLE\_TENANT\_MANAGEMENT\_READ
@@ -415,7 +409,7 @@ Required role: ROLE\_TENANT\_MANAGEMENT\_READ
 Example Request: Get options.
 
      
-    GET: /tenant/tenants/{{tenantId}}/applications/{{applicationId}}
+    GET /tenant/tenants/{{tenantId}}/applications/{{applicationId}}
     Host: ...
     Authorization: Basic ...
     Accept: application/vnd.com.nsn.cumulocity.applicationReference+json;ver=...
@@ -457,8 +451,6 @@ Example Response :
 
 ### GET a representation of a OptionCollection.
 
-Request body: N/A
-
 Response body: OptionCollection
   
 Required role: ROLE\_OPTION\_MANAGEMENT\_READ
@@ -466,7 +458,7 @@ Required role: ROLE\_OPTION\_MANAGEMENT\_READ
 Example Request: Get options.
 
      
-    GET: /tenant/options
+    GET /tenant/options
     Host: ...
     Authorization: Basic ...
     Accept: application/vnd.com.nsn.cumulocity.optionCollection+json;ver=...
@@ -507,7 +499,7 @@ Required role: ROLE\_OPTION\_MANAGEMENT\_ADMIN
 Example Request: Post option.
 
      
-    POST: /tenant/options
+    POST /tenant/options
     Host: ...
     Authorization: Basic ...
     Content-Type: application/vnd.com.nsn.cumulocity.option+json;ver=...
@@ -552,15 +544,13 @@ Options are category-key-value tuples, storing tenant configuration. Some catego
 
 ### GET a representation of a Option.
 
-Request body: N/A
-
 Response body: Option
   
 Required role: ROLE\_OPTION\_MANAGEMENT\_READ
  Example Request: Get single option.
 
      
-    GET: /tenant/options/{{category}}/{{key}}
+    GET /tenant/options/{{category}}/{{key}}
     Host: ...
     Authorization: Basic ...
     Accept: application/vnd.com.nsn.cumulocity.option+json;ver=...
@@ -587,7 +577,7 @@ Required role: ROLE\_OPTION\_MANAGEMENT\_ADMIN
  Example Request: Update access.control.allow.origin option.
 
      
-    PUT: /tenant/options/{{category}}/{{key}}
+    PUT /tenant/options/{{category}}/{{key}}
     Host: ...
     Authorization: Basic ...
     Content-Type: application/vnd.com.nsn.cumulocity.option+json;ver=...
@@ -612,8 +602,6 @@ Example Response :
 
 This endpoint provides a set of read-only properties pre-defined in platform configuration. The response format is exactly the same as for OptionCollection.
 
-Request body: OptionCollection
-
 Response body: OptionCollection
   
 Required role: ROLE\_OPTION\_MANAGEMENT\_READ
@@ -621,7 +609,7 @@ Required role: ROLE\_OPTION\_MANAGEMENT\_READ
 Example Request: Get system options.
 
      
-    GET: /tenant/system/options
+    GET /tenant/system/options
     Host: ...
     Authorization: Basic ...
     Accept: application/vnd.com.nsn.cumulocity.optionCollection+json;ver=...
@@ -650,7 +638,7 @@ Required role: ROLE\_OPTION\_MANAGEMENT\_READ
  Example Request: Get single option.
 
      
-    GET: /tenant/system/option/{category}/{id}
+    GET /tenant/system/option/{category}/{id}
     Host: ...
     Authorization: Basic ...
     Accept: application/vnd.com.nsn.cumulocity.option+json;ver=...
@@ -701,7 +689,7 @@ Required role: ROLE\_TENANT\_STATISTICS\_READ
 
 Example Request: Get statistics of current tenant starting Aug 1st, 2014, until today.
 
-    GET: /tenant/statistics?dateFrom=2014-08-01
+    GET /tenant/statistics?dateFrom=2014-08-01
     Host: ...
     Authorization: Basic ...
 
@@ -741,7 +729,7 @@ Required role: ROLE\_TENANT\_MANAGEMENT\_READ
 
 Example Request: Get statistics of all tenants starting Aug 1st, 2014, until today.
 
-    GET: /tenant/statistics/allTenantsSummary?dateFrom=2014-08-01
+    GET /tenant/statistics/allTenantsSummary?dateFrom=2014-08-01
     Host: ...
     Authorization: Basic ...
 
@@ -778,7 +766,7 @@ Required role: ROLE\_TENANT\_STATISTICS\_READ
 
 Example Request: Get summary of requests and database usage from the start of this month until now.
 
-    GET: /tenant/statistics/summary
+    GET /tenant/statistics/summary
     Host: ...
     Authorization: Basic ...
 

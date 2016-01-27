@@ -12,6 +12,8 @@ The application interface consists of the following parts:
 -   The *application collection* resource retrieves sets of applications and enables creating new application.
 -   The *application* resource represents application that can be queried and deleted.
 
+> Note that for all PUT/POST requests accept header should be provided, otherwise an empty response body will be returned.
+
 ## Application API
 
 ### ApplicationAPI [application/vnd.com.nsn.cumulocity.applicationApi+json]
@@ -27,15 +29,13 @@ The application interface consists of the following parts:
 
 ### GET the Application API resource
 
-Request body: N/A
-
 Response body: ApplicationApi
   
 Required role: ROLE\_Application\_READ
 
 Example request:
 
-	GET: /application
+	GET /application
 	Host: ...
 	Authorization: Basic ...
 
@@ -67,15 +67,13 @@ Example response:
 
 ### GET an application collection
 
-Request body: N/A
-
 Response body: ApplicationCollection
 
 Required role: ROLE\_APPLICATIN\_MANAGEMENT\_READ
 
 Example request:
 
-	GET: /application/applications
+	GET /application/applications
 	Host: ...
 	Authorization: Basic ...
 
@@ -135,13 +133,13 @@ Example response:
 
 Request body: Application
 
-Response body: Application (when Accept header is not provided, empty response body is returned)
+Response body: Application 
 
 Required role: ROLE\_APPLICATION\_MANAGEMENT\_ADMIN.
 
 Example request:
 
-    POST: /application/applications
+    POST /application/applications
     Host: ...
     Authorization: Basic ...
     Content-Length: ...
@@ -208,7 +206,7 @@ Required role: ROLE\_APPLICATION\_MANAGMENT\_ADMIN
 
 Example request:
 
-	POST: /applications/application/{{applicationId}}/refresh
+	POST /applications/application/{{applicationId}}/refresh
 	Host: ...
 	Authorization: Basic ...
 
@@ -226,7 +224,7 @@ Required role: ROLE\_APPLICATION\_MANAGMENT\_ADMIN
 
 Example request:
 
-    PUT: /application/applications/{{applicationId}}
+    PUT /application/applications/{{applicationId}}
     Host: ...
     Authorization: Basic ...
     Content-Length: ...
@@ -274,7 +272,7 @@ Note: Application can be only removed when is availability is PRIVATE or in othe
 
 Example Request: Delete a application
 
-    DELETE: /application/applications/{{applicationId}}
+    DELETE /application/applications/{{applicationId}}
      Host: [hostname]
      Authorization: Basic xxxxxxxxxxxxxxxxxxx
 

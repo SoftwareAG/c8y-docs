@@ -11,6 +11,8 @@ The binaries interface consists of the following parts:
 -   The *binaries collection* resource retrieves sets with information about uploaded binaries and enables uploading new binaries.
 -   The *binaries* resource represents binaries that can be downloaded, updated or deleted.
 
+> Note that for all PUT/POST requests accept header should be provided, otherwise an empty response body will be returned.
+
 ## Binaries collection
 
 ### BinariesCollection [application/vnd.com.nsn.cumulocity.managedObjectCollection+json]
@@ -25,15 +27,13 @@ The binaries interface consists of the following parts:
 
 ### GET a binaries collection
 
-Request body: N/A
-
 Response body: ManagedObjectCollection
 
 Required role: ROLE\_INVENTORY\_READ
 
 Example request:
 
-    GET: /inventory/binaries
+    GET /inventory/binaries
     Host: ...
     Authorization: Basic ...
 
@@ -91,7 +91,7 @@ Example response:
 
 Request body: Multipart
 
-Response body: Managed Object (when Accept header is not provided, empty response body is returned)
+Response body: Managed Object
 
 Required role: ROLE\_INVENTORY\_ADMIN or ROLE\_INVENTORY\_CREATE
 
@@ -103,7 +103,7 @@ Uploading a binary requires to have a multipart with the following three form va
 
 Example request:
 
-    POST: /invenotry/binaries
+    POST /invenotry/binaries
     Host: ...
     Authorization: Basic ...
     Content-Length: ...
@@ -147,15 +147,13 @@ Example response:
 
 ### GET - Download a binary
 
-Request body: Binary
-
 Response body: Binary
 
 Required role: ROLE\_INVENTORY\_READ
 
 Example request:
 
-	GET: /inventory/binaries/{{binaryiD}}
+	GET /inventory/binaries/{{binaryId}}
  	...
 
 Example response:
@@ -171,7 +169,7 @@ Example response:
 
 Request body: Binary
 
-Response body: Managed Object (when Accept header is not provided, empty response body is returned)
+Response body: Managed Object 
 
 Required role: ROLE\_INVENTORY\_ADMIN or ROLE\_INVENTORY\_CREATE
 
@@ -181,7 +179,7 @@ to update the managed object directly as described at this section [Update Manag
 
 Example request:
 
-    PUT: /inventory/binaries/{{binaryId}}
+    PUT /inventory/binaries/{{binaryId}}
     Host: ...
     Authorization: Basic ...
     Content-Length: ...
@@ -201,7 +199,7 @@ Note: The request will delete the binary and the associated managed object conta
 
 Example Request:
 
-    DELETE: /inventory/binaries/{{binaryId}}
+    DELETE /inventory/binaries/{{binaryId}}
     Host: ...
     Authorization: Basic ...
 

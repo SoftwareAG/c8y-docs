@@ -9,6 +9,8 @@ The identity interface associates identifiers used in external IT systems and de
 -   The *external ID collection* resource contains the set of external IDs for a unique ID.
 -   The *external ID* resource represents an individual external ID that can be queried and deleted.
 
+> Note that for all PUT/POST requests accept header should be provided, otherwise an empty response body will be returned.
+
 ## Identity API
 
 ### Identity [application/vnd.com.nsn.cumulocity.identityApi+json]
@@ -21,11 +23,15 @@ The identity interface associates identifiers used in external IT systems and de
 
 ### GET the Identity API resource
 
-Request body: N/A
-
 Response body: identityApi
   
 Required role: ROLE\_IDENTITY\_READ
+
+Example request: 
+
+	GET /identity
+	Host: ...
+	Authorization: Basic ...
 
 Example response:
 
@@ -54,8 +60,6 @@ As returned by "externalIdsOfGlobalId".
 External IDs contained in the collection contain the properties "self", "externalId", "type" and reference to the managed object.
 
 ### GET an ExternalIdCollection
-
-Request body: N/A
 
 Response body: ExternalIdCollection
   
@@ -87,13 +91,13 @@ Example response:
 
 Request body: ExternalId
 
-Response body: ExternalId (when Accept header is not provided, empty response body is returned)
-  
+Response body: ExternalId
+
 Required role: ROLE\_IDENTITY\_ADMIN
 
 Example Request:
 
-    POST: /identity/globalIds/{{deviceId}}/externalIds
+    POST /identity/globalIds/{{deviceId}}/externalIds
     Host: ...
     Authorization: Basic ...
     Accept: application/vnd.com.nsn.cumulocity.externalId+json;ver=...
@@ -137,15 +141,13 @@ Note that the managed object has to be created first, then the mapping can be re
 
 ### GET an ExternalID
 
-Request body: ExernalId
-
 Response body: ExternalId
   
 Required role: ROLE\_IDENTITY\_READ
 
 Example request:
 
-	GET: /identity/externalIds/{{externalIdType}}/{{externalId}}
+	GET /identity/externalIds/{{externalIdType}}/{{externalId}}
 	Host: ...
 	Authorization: Basic ...
 	Accept: application/vnd.com.nsn.cumulocity.externalId+json;ver=...
@@ -176,7 +178,7 @@ Required role: ROLE\_IDENTITY\_ADMIN
 
 Example Request: Delete an External ID
 
-    DELETE: /identity/externalIds/{{externalIdType}}/{{externalId}}
+    DELETE /identity/externalIds/{{externalIdType}}/{{externalId}}
      Host: [hostname]
      Authorization: Basic xxxxxxxxxxxxxxxxxxx
 

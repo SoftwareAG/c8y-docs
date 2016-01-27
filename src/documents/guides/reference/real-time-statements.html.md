@@ -12,6 +12,8 @@ The real-time statements interface consists of five parts:
 -   The *module collection* resource retrieves modules and enables creating new modules.
 -   The *module* resource represents an individual module that can be queried, modified, deployed or undeployed. 
 
+> Note that for all PUT/POST requests accept header should be provided, otherwise an empty response body will be returned.
+
 ## Module API
 
 ### CepApi [application/vnd.com.nsn.cumulocity.cepApi+json]
@@ -23,15 +25,13 @@ The real-time statements interface consists of five parts:
 
 ### GET the CepApi resource
 
-Request body: N/A
-
 Response body: CepApi
   
 Required role: ROLE\_CEP\_MANAGEMENT\_READ
 
 Example request: Retrieve the CepApi resource collection
 
-	GET: /cep
+	GET /cep
 	Host: ...
 	Authorization: Basic ...
 
@@ -61,15 +61,13 @@ Example response:
 
 ### GET a module collection
 
-Request body: N/A
-
 Response body: ModuleCollection
   
 Required role: ROLE\_CEP\_MANAGEMENT\_READ
 
 Example request: Get collection of all modules
 
-	GET: /cep/modules
+	GET /cep/modules
 	Host: ...
 	Authorization: Basic ...
 
@@ -103,7 +101,7 @@ Required role: ROLE\_CEP\_MANAGEMENT\_ADMIN.
 
 Example request:
 
-    POST: /cep/modules
+    POST /cep/modules
     Host: ...
     Authorization: Basic ...
     Content-Length: ...
@@ -165,8 +163,6 @@ Example response:
 
 ### GET Module file with statements
 
-Request body: N/A
-
 Response body: text/plain
   
 Required role: ROLE\_CEP\_MANAGEMENT\_READ
@@ -191,7 +187,7 @@ Required : ROLE\_CEP\_MANAGEMENT\_ADMIN
 
 Example Request:
 
-    PUT: /cep/module/{{moduleId}}
+    PUT /cep/module/{{moduleId}}
     Host: ...
     Authorization: Basic ...
     Content-Type: application/vnd.com.nsn.cumulocity.cepModule+json;ver=...
@@ -213,7 +209,7 @@ Required role: ROLE\_CEP\_MANAGEMENT\_ADMIN.
 
 Example request:
 
-    PUT: /cep/module/{{moduleId}}
+    PUT /cep/module/{{moduleId}}
     Host: ...
     Authorization: Basic ...
     Content-Length: ...
@@ -245,7 +241,7 @@ Required : ROLE\_CEP\_MANAGEMENT\_ADMIN
 
 Example Request: Delete a module
 
-    DELETE: /cep/module/{{moduleId}}
+    DELETE /cep/module/{{moduleId}}
      Host: [hostname]
      Authorization: Basic xxxxxxxxxxxxxxxxxxx
 

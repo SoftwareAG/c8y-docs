@@ -12,6 +12,8 @@ The device credentials interface consists of the following parts:
 
 For more information on the process of registering devices, see the Section "[Devices integration](/guides/rest/device-integration#step-0-request-device-credentials)".
 
+> Note that for all PUT/POST requests accept header should be provided, otherwise an empty response body will be returned.
+
 ## New device request collection
 
 ### NewDeviceRequestCollection [application/vnd.com.nsn.cumulocity.newDeviceRequestCollection+json]
@@ -26,9 +28,9 @@ For more information on the process of registering devices, see the Section "[De
 
 ### POST - Create a new device request
 
-Request body: application/vnd.com.nsn.cumulocity.newDeviceRequest+json
+Request body: newDeviceRequest
 
-Response body: application/vnd.com.nsn.cumulocity.newDeviceRequest+json (when Accept header is not returned, empty response body is returned)  
+Response body: newDeviceRequest
 
 Required role: ROLE\_DEVICE\_CONTROL\_ADMIN
 
@@ -55,7 +57,7 @@ Example response:
 
 ### GET - returns all new device requests
 
-Response body: application/vnd.com.nsn.cumulocity.newDeviceRequestCollection+json
+Response body: newDeviceRequestCollection
 
 Required role: ROLE\_DEVICE\_CONTROL\_READ
 
@@ -94,15 +96,15 @@ Example response:
 
 ### GET - returns a new device request
 
-Response body: application/vnd.com.nsn.cumulocity.newDeviceRequest+json
+Response body: newDeviceRequest
 
 Required role: ROLE\_DEVICE\_CONTROL\_READ
 
 Example Request:
 
-    GET /devicecontrol/newDeviceRequests/1234
-    Accept: application/vnd.com.nsn.cumulocity.newDeviceRequest+json;ver=...
+    GET /devicecontrol/newDeviceRequests/{{requestId}}
     Authorization: Basic ...
+	Accept: application/vnd.com.nsn.cumulocity.newDeviceRequest+json;ver=...
 
 Example response:
 
@@ -117,11 +119,15 @@ Example response:
 
 ### DELETE - deletes a new device request
 
+Request body: N/A
+
+Response body: N/A
+
 Required role: ROLE\_DEVICE\_CONTROL\_ADMIN
 
 Example Request:
 
-    DELETE /devicecontrol/newDeviceRequests/1234
+    DELETE /devicecontrol/newDeviceRequests/{{requestId}}
     Authorization: Basic ...
 
 Example response:
@@ -130,15 +136,15 @@ Example response:
 
 ### PUT - updates a new device request
 
-Request body: application/vnd.com.nsn.cumulocity.newDeviceRequest+json
+Request body: newDeviceRequest
 
-Response body: application/vnd.com.nsn.cumulocity.newDeviceRequest+json
+Response body: newDeviceRequest
 
 Required role: ROLE\_DEVICE\_CONTROL\_READ
 
 Example Request:
 
-    PUT /devicecontrol/newDeviceRequests/1234
+    PUT /devicecontrol/newDeviceRequests/{{requestId}}
     Content-Type: application/vnd.com.nsn.cumulocity.newDeviceRequest+json;ver=...
     Accept: application/vnd.com.nsn.cumulocity.newDeviceRequest+json;ver=...
     Authorization: Basic ...
@@ -173,9 +179,9 @@ Device credentials can be enquired by devices that do not have credentials for a
 
 ### POST - creates a device credentials request
 
-Request body: application/vnd.com.nsn.cumulocity.deviceCredentials+json
+Request body: deviceCredentialsn
 
-Response body: application/vnd.com.nsn.cumulocity.deviceCredentials+json
+Response body: deviceCredentials
 
 Required role: ROLE\_DEVICE\_BOOTSTRAP
 
@@ -233,7 +239,7 @@ CSV file appears in two forms (regarding to optional tenant column):
 
 Request body: multipart/form-data
 
-Response body: application/vnd.com.nsn.cumulocity.bulkNewDeviceRequest+json
+Response body: bulkNewDeviceRequest
 
 Required role: ROLE\_DEVICE\_CONTROL\_ADMIN
 

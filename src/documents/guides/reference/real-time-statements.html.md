@@ -12,6 +12,8 @@ The real-time statements interface consists of five parts:
 -   The *module collection* resource retrieves modules and enables creating new modules.
 -   The *module* resource represents an individual module that can be queried, modified, deployed or undeployed. 
 
+> Note that for all PUT/POST requests accept header should be provided, otherwise an empty response body will be returned.
+
 ## Module API
 
 ### CepApi [application/vnd.com.nsn.cumulocity.cepApi+json]
@@ -26,6 +28,12 @@ The real-time statements interface consists of five parts:
 Response body: CepApi
   
 Required role: ROLE\_CEP\_MANAGEMENT\_READ
+
+Example request: Retrieve the CepApi resource collection
+
+	GET /cep
+	Host: ...
+	Authorization: Basic ...
 
 Example response:
 
@@ -57,6 +65,12 @@ Response body: ModuleCollection
   
 Required role: ROLE\_CEP\_MANAGEMENT\_READ
 
+Example request: Get collection of all modules
+
+	GET /cep/modules
+	Host: ...
+	Authorization: Basic ...
+
 Example response:
 
     HTTP/1.1 200 OK
@@ -87,7 +101,7 @@ Required role: ROLE\_CEP\_MANAGEMENT\_ADMIN.
 
 Example request:
 
-    POST ...
+    POST /cep/modules
     Host: ...
     Authorization: Basic ...
     Content-Length: ...
@@ -167,13 +181,13 @@ Warning: if given statement has default name assigned by cumulocity platform, an
 
 Request body: Module
 
-Response body: Module (if "Accept" header is provided)
+Response body: Module (only if "Accept" header is provided)
 
 Required : ROLE\_CEP\_MANAGEMENT\_ADMIN
 
 Example Request:
 
-    PUT ...
+    PUT /cep/module/{{moduleId}}
     Host: ...
     Authorization: Basic ...
     Content-Type: application/vnd.com.nsn.cumulocity.cepModule+json;ver=...
@@ -195,7 +209,7 @@ Required role: ROLE\_CEP\_MANAGEMENT\_ADMIN.
 
 Example request:
 
-    PUT ...
+    PUT /cep/module/{{moduleId}}
     Host: ...
     Authorization: Basic ...
     Content-Length: ...
@@ -227,7 +241,7 @@ Required : ROLE\_CEP\_MANAGEMENT\_ADMIN
 
 Example Request: Delete a module
 
-    DELETE [URL to the resource]
+    DELETE /cep/module/{{moduleId}}
      Host: [hostname]
      Authorization: Basic xxxxxxxxxxxxxxxxxxx
 

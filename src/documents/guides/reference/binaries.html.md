@@ -11,6 +11,8 @@ The binaries interface consists of the following parts:
 -   The *binaries collection* resource retrieves sets with information about uploaded binaries and enables uploading new binaries.
 -   The *binaries* resource represents binaries that can be downloaded, updated or deleted.
 
+> Note that for all PUT/POST requests accept header should be provided, otherwise an empty response body will be returned.
+
 ## Binaries collection
 
 ### BinariesCollection [application/vnd.com.nsn.cumulocity.managedObjectCollection+json]
@@ -89,7 +91,7 @@ Example response:
 
 Request body: Multipart
 
-Response body: Managed Object (when Accept header is not provided, empty response body is returned)
+Response body: Managed Object
 
 Required role: ROLE\_INVENTORY\_ADMIN or ROLE\_INVENTORY\_CREATE
 
@@ -151,8 +153,8 @@ Required role: ROLE\_INVENTORY\_READ
 
 Example request:
 
-  	GET /inventory/binaries/1
-  	...
+	GET /inventory/binaries/{{binaryId}}
+ 	...
 
 Example response:
 
@@ -167,7 +169,7 @@ Example response:
 
 Request body: Binary
 
-Response body: Managed Object (when Accept header is not provided, empty response body is returned)
+Response body: Managed Object 
 
 Required role: ROLE\_INVENTORY\_ADMIN or ROLE\_INVENTORY\_CREATE
 
@@ -177,7 +179,7 @@ to update the managed object directly as described at this section [Update Manag
 
 Example request:
 
-    PUT /inventory/binaries/1
+    PUT /inventory/binaries/{{binaryId}}
     Host: ...
     Authorization: Basic ...
     Content-Length: ...
@@ -197,7 +199,7 @@ Note: The request will delete the binary and the associated managed object conta
 
 Example Request:
 
-    DELETE /inventory/binaries/1
+    DELETE /inventory/binaries/{{binaryId}}
     Host: ...
     Authorization: Basic ...
 

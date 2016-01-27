@@ -9,6 +9,8 @@ The identity interface associates identifiers used in external IT systems and de
 -   The *external ID collection* resource contains the set of external IDs for a unique ID.
 -   The *external ID* resource represents an individual external ID that can be queried and deleted.
 
+> Note that for all PUT/POST requests accept header should be provided, otherwise an empty response body will be returned.
+
 ## Identity API
 
 ### Identity [application/vnd.com.nsn.cumulocity.identityApi+json]
@@ -21,9 +23,15 @@ The identity interface associates identifiers used in external IT systems and de
 
 ### GET the Identity API resource
 
-Response body: application/vnd.com.nsn.cumulocity.identityApi+json
+Response body: identityApi
   
 Required role: ROLE\_IDENTITY\_READ
+
+Example request: 
+
+	GET /identity
+	Host: ...
+	Authorization: Basic ...
 
 Example response:
 
@@ -83,13 +91,13 @@ Example response:
 
 Request body: ExternalId
 
-Response body: ExternalId (when Accept header is not provided, empty response body is returned)
-  
+Response body: ExternalId
+
 Required role: ROLE\_IDENTITY\_ADMIN
 
 Example Request:
 
-    POST ...
+    POST /identity/globalIds/{{deviceId}}/externalIds
     Host: ...
     Authorization: Basic ...
     Accept: application/vnd.com.nsn.cumulocity.externalId+json;ver=...
@@ -137,6 +145,13 @@ Response body: ExternalId
   
 Required role: ROLE\_IDENTITY\_READ
 
+Example request:
+
+	GET /identity/externalIds/{{externalIdType}}/{{externalId}}
+	Host: ...
+	Authorization: Basic ...
+	Accept: application/vnd.com.nsn.cumulocity.externalId+json;ver=...
+
 Example response:
 
     HTTP/1.1 200 OK
@@ -163,7 +178,7 @@ Required role: ROLE\_IDENTITY\_ADMIN
 
 Example Request: Delete an External ID
 
-    DELETE [URL to the resource]
+    DELETE /identity/externalIds/{{externalIdType}}/{{externalId}}
      Host: [hostname]
      Authorization: Basic xxxxxxxxxxxxxxxxxxx
 

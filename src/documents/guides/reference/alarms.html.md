@@ -9,6 +9,8 @@ The alarms interface consists of three parts:
 -   The *alarm collection* resource retrieves alarms and enables creating new alarms.
 -   The *alarm* resource represents individual alarms that can be queried, modified and progressed through an alarm workflow.
 
+> Note that for all PUT/POST requests accept header should be provided, otherwise an empty response body will be returned.
+
 ## Alarm API
 
 ### AlarmAPI [application/vnd.com.nsn.cumulocity.alarmApi+json]
@@ -30,6 +32,12 @@ The alarms interface consists of three parts:
 Response body: application/vnd.com.nsn.cumulocity.alarmApi+json
   
 Required role: ROLE\_ALARM\_READ
+
+Example request:
+
+    GET /alarm
+    Host: ...
+    Authorization: Basic ...
 
 Example response:
 
@@ -65,6 +73,13 @@ Example response:
 Response body: AlarmCollection
   
 Required role: ROLE\_ALARM\_READ
+
+Example request:
+
+    GET /alarm/alarms
+    Host: ...
+    Authorization: Basic ...
+    Accept: application/vnd.com.nsn.cumulocity.alarmCollection+json;ver=...
 
 Example response:
 
@@ -115,13 +130,13 @@ Example response:
 
 Request body: Alarm
 
-Response body: Alarm (when Accept header is not provided, empty response body is returned)
+Response body: Alarm
   
 Required role: ROLE\_ALARM\_ADMIN or owner of source object.
 
 Example request:
 
-    POST ...
+    POST /alarm/alarms
     Host: ...
     Authorization: Basic ...
     Content-Length: ...
@@ -193,6 +208,13 @@ Response body: Alarm
   
 Required role: ROLE\_ALARM\_READ
 
+Example request:
+
+    GET /alarm/alarms/{{alarmId}}
+    Host: ...
+    Authorization: Basic ...
+    Accept: application/vnd.com.nsn.cumulocity.alarm+json;ver=...
+
 Example response:
 
     HTTP/1.1 200 OK
@@ -223,13 +245,13 @@ Please notice that if update actually doesn't change anything (i.e. request body
 
 Request body: Alarm
 
-Response body: Alarm (when Accept header is not provided, empty response body is returned)
+Response body: Alarm 
 
 Required : ROLE\_ALARM\_ADMIN or owner of source object
 
 Example Request:
 
-    PUT ...
+    PUT /alarm/alarms/{{alarmId}}
     Host: ...
     Authorization: Basic ...
     Content-Type: application/vnd.com.nsn.cumulocity.alarm+json;ver=...

@@ -11,6 +11,8 @@ The device control interface consists of three parts:
 
 > In order to create/retrieve/update an operation for a device, the device must be in the "childDevices" hierarchy of an existing agent. To create an agent in the inventory, you should create a managed object with a fragment "com\_cumulocity\_model\_Agent".
 
+> Note that for all PUT/POST requests accept header should be provided, otherwise an empty response body will be returned.
+
 ## Device control API
 
 ### DeviceControlAPI [application/vnd.com.nsn.cumulocity.devicecontrolApi+json]
@@ -27,9 +29,15 @@ The device control interface consists of three parts:
 
 ### GET the Device Control API resource
 
-Response body: application/vnd.com.nsn.cumulocity.devicecontrolApi+json
+Response body: devicecontrolApi
   
 Required role: ROLE\_DEVICE\_CONTROL\_READ
+
+Example request:
+
+    GET /devicecontrol
+    Host: ...
+    Authorization: Basic ...
 
 Example response:
 
@@ -67,13 +75,13 @@ Notes about Operation Collections:
 
 Request body: Operation
 
-Response body: Operation (when Accept header is not provided, empty response body is returned)
+Response body: Operation 
   
 Required role: ROLE\_DEVICE\_CONTROL\_ADMIN or owner of source object
 
 Example Request:
 
-    POST ...
+    POST /devicecontrol/operations/
     Content-Type: application/vnd.com.nsn.cumulocity.operation+json;ver=...
     Accept: application/vnd.com.nsn.cumulocity.operation+json;ver=...
     Authorization: Basic ...
@@ -112,11 +120,12 @@ Example response:
 ### Get a collection of operations
 
 Response body: OperationCollection  
+
 Required role: ROLE\_DEVICE\_CONTROL\_READ
 
 Example Request: Get all operations.
 
-    GET ...
+    GET /devicecontrol/operations
     Accept: application/vnd.com.nsn.cumulocity.operationCollection+json;ver=...
     Authorization: Basic ...
 
@@ -187,7 +196,7 @@ Required role: ROLE\_DEVICE\_CONTROL\_ADMIN or owner of source object
 
 Example Request:
 
-    PUT ...
+    PUT /devicecontrol/operations/{{operationId}}
     Host: ...
     Authorization: Basic ...
     Content-Length: ...
@@ -201,6 +210,13 @@ Example Request:
 Response body: Operation
   
 Required role: ROLE\_DEVICE\_CONTROL\_READ
+
+Example request:
+
+    GET /devicecontrol/operations/{{operationId}}
+    Host: ...
+    Authorization: Basic ... 
+    Accept: application/vnd.com.nsn.cumulocity.operation+json;ver=...
 
 Example response:
 
@@ -299,7 +315,7 @@ Required role: ROLE\_DEVICE\_CONTROL\_READ
 
 Request body: Bulk Operation
 
-Response body: Bulk Operation (when Accept header is not provided, empty response body is returned)
+Response body: Bulk Operation
   
 Required role: ROLE\_BULK\_OPERATION\_ADMIN
 
@@ -338,7 +354,10 @@ Example response:
 
 ### Get a collection of bulk operations
 
+Request body: N/A
+
 Response body: BulkOperationCollection  
+
 Required role: ROLE\_BULK\_OPERATION\_READ
 
 Example Request: Get all bulk operations.
@@ -419,7 +438,7 @@ Bulk Operation API requires different roles that standard device control API. Th
 
 ### PUT - Update a Bulk Operation
 
-Making update on a started bulk operation cancells it and creates/schedules a new one.
+Making update on a started bulk operation cancels it and creates/schedules a new one.
 
 Request body: Bulk Operation
 
@@ -429,7 +448,7 @@ Required role: ROLE\_BULK\_OPERATION\_ADMIN
 
 Example Request:
 
-    PUT /devicecontrol/bulkoperations/{id}
+    PUT /devicecontrol/bulkoperations/{{bulkoperationId}}
     Host: ...
     Authorization: Basic ...
     Content-Type: application/vnd.com.nsn.cumulocity.bulkoperation+json
@@ -462,6 +481,13 @@ Response body: Bulk Operation
   
 Required role: ROLE\_BULK\_OPERATION\_READ
 
+Example request:
+
+    GET /devicecontrol/bulkoperations/{{bulkoperationId}}
+    Host: ...
+    Authorization: Basic ...
+    Accept: application/vnd.com.nsn.cumulocity.bulkoperation+json;ver=...
+
 Example response:
 
     HTTP/1.1 200 OK
@@ -491,7 +517,7 @@ Required role: ROLE\_BULK\_OPERATION\_ADMIN
 
 Example Request: Delete a Bulk Operation
 
-    DELETE /devicecontrol/bulkoperations/{id}
+    DELETE /devicecontrol/bulkoperations/{{id}}
     Authorization: Basic ...
 
 Example Response:

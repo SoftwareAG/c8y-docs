@@ -231,3 +231,38 @@ To communicate the results of a particular command, the device adds a property "
 
 Please contact support@cumulocity.com if you would like to publish sample commands for your device type.
 
+#### c8y\_LogfileRequest
+
+You can request a device to send a log file and view the log file in Cumulocity's log viewer. If a device supports log viewing, it needs to add "c8y\_LogfileRequest" to its supported operations. In addition, it needs to specify which logs are available on the device:
+
+	c8y_SupportedLogs: ["syslog", "dmesg"]
+
+A log file request has the following structure:
+
+	"c8y_LogfileRequest": {
+		"logFile": "syslog",
+		"dateFrom": "2016-01-27T13:45:24+0100",
+		"dateTo": "2016-01-28T13:45:24+0100",
+		"searchText": "sms",
+		"maximumLines": 1000
+	}
+
+The parameters in the request define filtering criteria to be applied to the log before sending it:
+
+* "logFile" indicates the log file to select.
+* "dateFrom" and "dateTo" specify the time range of log entries in the log file to be sent.
+* "searchText" provides a text that needs to be present in the log entry.
+* "maximumLines" gives an upper limit of the number of lines that should be sent to Cumulocity after filtering.
+
+When the device receives such a request, it filters the log file according to the criteria and sends the result as a file to the [Binary API](/guides/reference/binaries). It then puts a link to this file into the log file request:
+
+	"c8y_LogfileRequest": {
+		"logFile": "syslog",
+		"dateFrom": "2016-01-27T13:45:24+0100",
+		"dateTo": "2016-01-28T13:45:24+0100",
+		"searchText": "sms",
+		"maximumLines": 1000,
+		"file": "http://...cumulocity.com/inventory/binaries/30761423"
+	}
+
+

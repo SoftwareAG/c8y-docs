@@ -208,8 +208,24 @@ The number of currently active and acknowledged alarms is stored in a fragment "
 
 #### c8y\_Restart
 
-To restart a device, an operation with a *c8y\_Restart* fragment is sent. To enable a "restart" button in the user interface, add "c8y\_Restart" to the list of supported operations as described above.
+To restart a device, an operation with a "c8y\_Restart" fragment is sent. To enable a "restart" button in the user interface, add "c8y\_Restart" to the list of supported operations as described above.
 
     "c8y_Restart": {}
 
 ![Restart button](/guides/reference-guide/restartsupported.png)
+
+#### c8y\_Command
+
+To carry out interactive sessions with a device, use the "c8y\_Command" fragment. If this fragment is in the list of supported operations for a device, a tab "Shell" will be shown. Using the "Shell" tab, the user can send commands in an arbitrary, device-specific syntax to the device. The command is sent to the device in a property "text":
+
+	"c8y_Command": {
+		"text": "get uboot.sn"
+	}
+
+To communicate the results of a particular command, the device adds a property "result":
+
+	"c8y_Command": {
+		"text": "get uboot.sn",
+		"result": "165711141901401"
+	}
+

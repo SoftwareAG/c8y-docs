@@ -21,7 +21,7 @@ The following sections demonstrate how to use a NetComm router with Cumulocity. 
 * Connect [Modbus](#modbus) devices.
 * View [logs](#logs).
 
-The following sections assume that the router has the NetComm [agent](/guides/devices/netcomm-release) package installed. Compatible model is: [NTC-6200](http://www.netcommwireless.com/product/m2m/ntc-6200). For more information on a particular feature of the router, please consult the respective manual found in the "Downloads" section of the router's home page.
+The following sections assume that the router has the NetComm [agent](/guides/devices/netcomm-release) package installed. The agent is compatible with the [NTC-6200](http://www.netcommwireless.com/product/m2m/ntc-6200). For more information on a particular feature of the router, please consult the respective manual found in the "Downloads" section of the router's home page.
 
 ## <a name="configure"></a>Configuring the router
 
@@ -93,7 +93,7 @@ Software packages need to be in [ipkg](http://en.wikipedia.org/wiki/Ipkg) format
 
 > When upgrading from versions older than 2.1.1, the device needs to be re-registered.
 
-Firmware can be uploaded and installed on the router as well using NetComm firmware images (following the naming convention "&lt;name&gt;\_&lt;version&gt;.cdi").
+Firmware can be uploaded and installed on the router as well. To successfully upgrade the firmware, make sure that the target firmware includes the agent package. If the agent package is not included in the target firmware, the agent will not start after the installation. Firmware files need to follow Netcomm's naming convention ("&lt;name&gt;\_&lt;version&gt;.cdi").
 
 ![Software/firmware](/guides/devices/netcomm/software.png)
 

@@ -229,3 +229,5 @@ To communicate the results of a particular command, the device adds a property "
 		"result": "165711141901401"
 	}
 
+Please contact support@cumulocity.com if you would like to publish sample commands for your device type.
+

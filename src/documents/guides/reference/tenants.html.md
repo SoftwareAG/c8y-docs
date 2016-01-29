@@ -151,7 +151,8 @@ Example request:
 		"contactPhone" : "0123-4567829",
 		"adminName" : "firstAdmin",
 		"adminPass" : "myPassword",
-		"customProperties" : {"referenceId":"1234567890"}
+		"customProperties" : {"referenceId":"1234567890"},
+		"sendPasswordResetEmail": true
 	}
 
 Example Response:

@@ -110,3 +110,11 @@ Using such a URL, you can
 To change the settings for your user, click on the user symbol at the top right and select "User settings". Set the user interface language using the "Language" drop-down menu. Change your password by clicking "Change password". Finally, click "Save" to store your changes or "Cancel" to discard them.
 
 <img src="/guides/users-guide/usersettings.png" alt="User settings"  style="max-width: 60%">
+
+The displayed language is defined from:
+
+1. The language selected in the Cumulocity user settings.
+2. The language selected in the browser preferences.
+3. If neither of these is selected the language will automatically be set to English.
+
+> Note that the language selected in the Cumulocity user settings has higher priority than the language in browser preferences.

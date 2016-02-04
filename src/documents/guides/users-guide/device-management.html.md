@@ -353,7 +353,16 @@ Since devices may send larger amounts of event data, you can filter the data sho
 
 Cumulocity provides a central place to collect reference firmware and software for devices in the "Firmware repository" and the "Software repository". To add a new firmware image to the repository, visit the "Firmware repository" and click the "Add firmware" button. Then type the name of the firmware, its version and the URL from where the device can download the firmware. Similar, use the "Software repository" to add reference software packages.
 
-> Note that you currently have to visit the [Administration application](/guides/users-guide/administration#file-repository) to store binaries in Cumulocity.
+To update firmware on a specific device you have to follow three steps:
+
+1. Upload the firmware files in the [Administration application](/guides/users-guide/administration#files). (This step is optional, since the manufacturer might offer the firmware online.) 
+
+2. Select and save the files in the "Firmware repository" as stated [above](/guides/users-guide/device-management#software-repo). 
+
+3. Install the software on a specific device. (For more info on this step please refer to ["Software"](/guides/users-guide/device-management#software).)
+
+> Note that you currently have to visit the [Administration application](/guides/users-guide/administration#files) to store binaries in Cumulocity.
+
 
 ## <a name="credentials"></a>Managing device credentials
 

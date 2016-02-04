@@ -351,15 +351,15 @@ Since devices may send larger amounts of event data, you can filter the data sho
 
 ## <a name="software-repo"></a> Managing device firmware and software
 
-Cumulocity provides a central place to collect reference firmware and software for devices in the "Firmware repository" and the "Software repository". To add a new firmware image to the repository, visit the "Firmware repository" and click the "Add firmware" button. Then type the name of the firmware, its version and the URL from where the device can download the firmware. Similar, use the "Software repository" to add reference software packages.
+Cumulocity provides a central place to collect reference firmware and software for devices in the "Firmware repository" and the "Software repository".
 
-To update firmware on a specific device you have to follow three steps:
+To update firmware or to add software packages on a specific device you have to follow three steps:
 
-1. Upload the firmware files in the [Administration application](/guides/users-guide/administration#files). (This step is optional, since the manufacturer might offer the firmware online.) 
+1. Upload the firmware or software files in the [Administration application](/guides/users-guide/administration#files). (This step is optional and is not mandatory since the manufacturer might offer the firmware online.) 
 
-2. Select and save the files in the "Firmware repository" as stated [above](/guides/users-guide/device-management#software-repo). 
+2. Select and save the files in the "Firmware repository". To add a new firmware image to the repository, visit the "Firmware repository" and click the "Add firmware" button. Then type the name of the firmware, its version and the URL from where the device can download the firmware. Similar use the "Software repository" to add reference software packages.
 
-3. Install the software on a specific device. (For more info on this step please refer to ["Software"](/guides/users-guide/device-management#software).)
+3. Install the firmware on a specific device. First navigate to "All Devices", select the desired device, then go to "Software" on Device Details and click on "Install firmware". Similar install software packages, but click on "Install software" instead. (For more info on this step please refer to ["Software"](/guides/users-guide/device-management#software).)
 
 > Note that you currently have to visit the [Administration application](/guides/users-guide/administration#files) to store binaries in Cumulocity.
 

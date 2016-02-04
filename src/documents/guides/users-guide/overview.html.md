@@ -111,10 +111,10 @@ To change the settings for your user, click on the user symbol at the top right 
 
 <img src="/guides/users-guide/usersettings.png" alt="User settings"  style="max-width: 60%">
 
-The displayed language is defined from:
+The displayed local language is defined from:
 
 1. The language selected in the Cumulocity user settings.
 2. The language selected in the browser preferences.
-3. If neither of these is selected the language will automatically be set to English.
+3. If neither of these have selected language, the local language will automatically be set to English.
 
 > Note that the language selected in the Cumulocity user settings has higher priority than the language in browser preferences.

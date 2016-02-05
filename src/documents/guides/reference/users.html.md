@@ -149,7 +149,8 @@ Response body: User 
       "phone" : "+1234567890",
       "customProperties" : {"language":"en"},
       "email" : "jsmith@abc.com",
-      "enabled" : true
+      "enabled" : true,
+	  "sendPasswordResetEmail": true
     }
 
 Example response:

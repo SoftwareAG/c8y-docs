@@ -31,8 +31,8 @@ The support for Cumulocity can be configured through the router's web user inter
 
 Verify that the toggle switch "Cumulocity agent" is set to "ON" and the URL shown in "Cumulocity server" points to the Cumulocity instance that you want to connect. For example, use
 
-* https://54.75.252.207/s for connecting to NetComm NRM.
 * https://management.cumulocity.com/s for connecting to Cumulocity.
+* https://management.ram.m2m.telekom.com/s for connecting to Deutsche Telekom Cloud of Things.
 * https://management.telstra-iot.com/s for connecting to the Telstra IoT platform.
 
 Optionally, you can activate data collecting for the following functionalities:

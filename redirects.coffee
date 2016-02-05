@@ -58,5 +58,6 @@ redirects =
 	'/guides/reference': '/guides/reference/rest-implementation'
 	'/guides/web': '/guides/web/introduction'
 	'/guides/java': '/guides/java/introduction'
+	'/guides/users-guide/cloud-fieldbus': '/guides/cloud-fieldbus'
 
 module.exports = redirects

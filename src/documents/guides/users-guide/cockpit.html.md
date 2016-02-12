@@ -945,7 +945,7 @@ The rules uses the following rule parameters:
 
 ### On measurement explicit threshold create alarm
 
-When the measurement value enters or leaves the defined range, a MAJOR alarm is generated or cleared, respectively.
+When the measurement value enters or leaves the defined range, a CRITICAL alarm is generated or cleared, respectively.
 
 > Please note that violation of the red range will result into CRITICAL alarm.
 

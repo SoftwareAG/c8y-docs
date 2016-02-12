@@ -241,7 +241,7 @@ Measurements represent regularly acquired readings and statistics from sensors. 
 
 Similar to the inventory model, fragments are used to identify capabilities of particular devices. In the above example, a three-phase electricity meter sends readings for the different electrical phases. Each such fragment maps the names of the individual readings ("A+", "A-", ... in this example) to the actual numeric value and the unit of measurement.
 
-Again, measurements can be extended to hold arbitrary additional information that applications might require. More information can be found in the reference guide for [measurements](guides/reference/measurements).
+Again, measurements can be extended to hold arbitrary additional information that applications might require. More information can be found in the reference guide for [measurements](/guides/reference/measurements).
 
 ## Remote control of devices
 

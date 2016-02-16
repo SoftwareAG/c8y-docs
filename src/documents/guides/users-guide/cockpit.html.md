@@ -2,18 +2,23 @@
 order: 30
 title: Cockpit
 layout: default
-toc: true
 ---
 
-## Introduction
+## Overview
 
-By default, three applications are available for Cumulocity end users:
+The Cockpit application provides you with the ability to manage the Internet of Things (IoT) assets and business data. In this guide we are going to show you how to:
 
-* Cockpit application, to manage Internet of the Things (IoT) assets and business data.
+- Start [using Cumulocity Cockpit](#start) and deal with the [home](#home) dashboard
+- [Connect](#connect) devices and manage [assets](#asset)
+- [Visualize](#visualize) data using the data explorer
+- Work with [dashboards](#dashboards)
+- Handle the [widget](#widget) and the [business rule](#business) package
+- Manage [alarms](#alarms), [reports](#reports) and [smart rules](#rules)
+- Use the [data point library](#library)
 
-* Device management application, to manage the Internet of the Things (IoT) devices.
+For more information about the cockpit application please refer to [introduction](#intro).
 
-* Administration application, to manage users, rules and tenant configuration.
+## <a name="intro"></a>Introduction
 
 Cumulocity Cockpit can be used in many industrial areas, including in:
 
@@ -29,19 +34,19 @@ Cumulocity Cockpit can be used in many industrial areas, including in:
 
 In the following, the Cockpit application is described. It offers the following functionality:
 
-* **Data Explorer:** Interactively explore, compare and visualize IoT data.
+* **Data Explorer**: Interactively explore, compare and visualize IoT data.
 
-* **Dashboards:** Create your own web pages by freely selecting and arranging widgets. Select from various widgets including maps, tables, graphs, charts, controls and more. 
+* **Dashboards**: Create your own web pages by freely selecting and arranging widgets. Select from various widgets including maps, tables, graphs, charts, controls and more. 
 
-* **Smart Rule Builder:** Easily create  business rules to perform actions on incoming data in real-time.
+* **Smart Rule Builder**: Easily create  business rules to perform actions on incoming data in real-time.
 
-* **Business Rule Package:** Use pre-defined business rules for geofencing, thresholds or alarm escalation and notifications (SMS/Email).
+* **Business Rule Package**: Use pre-defined business rules for geofencing, thresholds or alarm escalation and notifications (SMS/Email).
 
-* **Reporting:** Create reports based on the dashboards layout and send distribute them by Email.
+* **Reporting**: Create reports based on dashboards layout and send distribute them by Email.
 
-* **Asset Management:** Organize your connected assets in hierarchies.
+* **Asset Management**: Organize your connected assets in hierarchies.
 
-* **Alarm Management:** Monitor problems of your asset using severities and workflows.
+* **Alarm Management**: Monitor problems of your asset using severities and workflows.
 
 * **Easy of use**: Get on introduction and overview using the Welcome Dashboard and Home Dashboard, respectively. 
 
@@ -53,13 +58,13 @@ The main concepts of the Cockpit application are the following:
 
 **Asset**: An asset represents the business object, for example, buildings, machines, or cars.
 
-**Asset Hierarchy**: Assets are organised in a hierarchy (tree). The nodes of the tree are groups, and the leaves of the tree are devices. 
+**Asset Hierarchy**: Assets are organised in a hierarchy (tree). The nodes of thee tree are groups, and the leaves of the tree are devices. 
 
 **Group**: A way to organise devices and assets in a asset hierarchy. A group can contain one or multiple devices, child devices or other groups.
 
-**Device**: An IoT Device, either an gateway device, or a device indirectly connected via a gateway (e.g. modbus or KNX device), or a sensor.
+**Device**: An IoT Device, either a gateway device, or a device indirectly connected via a gateway (e.g. modbus or KNX device), or a sensor.
 
-**Data Point**: Representing the measured sensor data, e.g. the temperature time series. Also called Measurement in other parts of Cumulocity. Other terms used are time series or variable.
+**Data Point**: Representing the measured sensor data, e.g. the temperature time series. In other parts of Cumulocity called Measurement. Other terms used are time series or variable.
 
 **Data Point Properties**: Metadata for a data point, representing additional properties that has been added by the user, e.g. label, min/max values, thresholds,  etc.
 
@@ -67,7 +72,7 @@ The main concepts of the Cockpit application are the following:
 
 **Report**: Similar to dashboards, with different reporting period and scope.
 
-**Smart Rules:** Cumulocity business rules, which have been instantiated from smart rule templates using the Smart Rule Builder.
+**Smart Rules**: Cumulocity business rules, which have been instantiated from smart rule templates using the Smart Rule Builder.
 
 ### Cumulocity Applications
 
@@ -86,7 +91,7 @@ To learn about the following items, please consult "[Introduction](/guides/users
 
 *    User interface conventions
 
-## Starting to use Cumulocity Cockpit
+## <a name="start"></a>Starting to use Cumulocity Cockpit
 
 ### Welcome page
 
@@ -114,9 +119,9 @@ You can hide the welcome page to not show it as default page when you enter the 
 
 ### Reset Welcome page as default
 
-To make the welcome page again the default page, select "Welcome" in the navigator on the top left. Afterwards, un-select “Don't show on startup”.
+To make the welcome page again the default page, select "Welcome" in the navigator on the bottom left. Afterwards, un-select “Don't show on startup”.
 
-## Home Dashboard
+## <a name="home"></a>Home Dashboard
 
 When starting the application, and have deselected the "Welcome" page, you see the following dashboard:
 
@@ -132,15 +137,15 @@ For details, see "Editing a Dashboard" below.
 
 To reset the dashboard to the original content, use the menu item "Reset default dashboard" from the cog symbol.
 
-## Connecting Devices
+## <a name="connect"></a>Connecting Devices
 
 To use the Cockpit application, you have to connect IoT devices. Connecting new devices is done in the "Device Management" application. Change to the “Device Management” application in the Application Switcher on the top right, and then select “Registration”. For details, please see [Device Management User Guide](/guides/users-guide/device-management).
 
-## Asset Management
+## <a name="asset"></a>Asset Management
 
 An asset represents the business object, for example, buildings, machines, or cars.
 
-Assets are organized in a hierarchies. For example, an energy monitoring application might have the following asset hierarchy:
+Assets are organized in hierarchies. For example, an energy monitoring application might have the following asset hierarchy:
 
 ![image alt text](/guides/users-guide/image_2.png)
 
@@ -187,7 +192,7 @@ There is no one-to-one mapping of objects in the Cockpit asset hierarchy to busi
 
 * For example for tracking users, each device represents a business asset: if you install a tracker device in each of your trucks, then the tracker device represents the truck inside Cumulocity.
 
-* For building management, a certain level of assets in the hierarchy represents a business asset: if you have multiple devices deployed in a building to monitor it, then the group object "Building" represents your asset. 
+* For building management, a certain level of assets in the hierarchy represents a business asset: if you have multiple devices deployed in a building to monitor it, then the group's object "Building" represents your asset. 
 
 Because of these differences, the Cockpit application does not have a built-in "asset" object. Instead, either groups or devices represent your asset, depending on your use case.
 
@@ -261,7 +266,7 @@ Note that un-assigning a device does not remove the device, sub-devices or any a
 
 To edit the name of the group, click on the "Info" tab and edit the name.
 
-## Using the Data Explorer to Visualize Data
+## <a name="visualize"></a>Using the Data Explorer to Visualize Data
 
 Data points (measurements or sensor data) can be visualized in the Cockpit in three places:
 
@@ -295,7 +300,7 @@ The data explorer and dashboards are closely related:
 
 When clicking on the tab "Data explorer", the data explorer opens.
 
-It is pre-filled with available data points of the object (group or device). The first 5 data points are shown by default.
+It is prefilled with available data points of the object (group or device). The first 5 data points are shown by default.
 
 ![image alt text](/guides/users-guide/image_10.png)
 
@@ -349,15 +354,15 @@ The following properties are available for data points:
 
 * Target value: The target value is currently not shown in the diagram. The value is used in the "Data Point List" widget.
 
-* Yellow Range Min / Max: Defines the range when minor alarms should be raised by threshold rule. These value are currently not visualized. See Smart Rules below for details.
+* Yellow Range Min / Max: Defines the range when minor alarms should be raised by threshold rule. These values are currently not visualized. See Smart Rules below for details.
 
-* Red Range Min / Max: Defines the range when major alarms should be raised by threshold rules. These value are currently not visualized. See Smart Rules below for details.
+* Red Range Min / Max: Defines the range when major alarms should be raised by threshold rules. These values are currently not visualised. See Smart Rules below for details.
 
 * Chart Type: For aggregated data, select what aggregated value should be visualized. Options are: min, max, area
 
 * Y Axis: Select on which y-axis the data point should be shown. Options are: Auto, left, right.
 
-* Asset: The name of the asset of the data point. This field is not editable. Additionally, the internal name of the data point (measurement fragment and series) is shown.
+* Asset: The asset of the data point. This field is not editable. Additionally, the internal name of the data point (measurement fragment and series) is shown.
 
 ### Browsing in the data explorer
 
@@ -397,9 +402,28 @@ This will show a modal dialog with all dashboards of the current object. Move to
 
 ![image alt text](/guides/users-guide/image_13.png)
 
-## Working with Dashboards
+### Exporting Measurement data to csv or xlsx files
 
-Dashboards provide you with a customized visualization of your data, consisting of a set of freely arrangeable so-called "widgets". Widgets can display maps, images, graphs, tables and other graphical representations of data. Cumulocity comes with a number of pre-provided widgets, see section "[Widget Package](#widget-package)" for details. You can develop also your own widgets and add them to your Cumulocity account. See the [Web developer's guide](/guides/web/).
+With Cumulocity, users have the ability to download measurement data in csv or xlsx files. The exported measurement data is divided into six columns:
+
+ - Time - Date and time when the specific measurement was taken
+ - Source of the measurement
+ - Device name - Name of the device you are using
+ - Fragment series - (e.g. c8y_SpeedMeasurement)
+ - Value - Simply the value of the measurement
+ - Unit - The unit used for the particular measurement (e.g. "C", "km/h", "sec"...)
+ 	
+To download measurement data in either csv or xlsx first navigate to "Data Explorer", then click on the small wheel button located at the top-right
+
+![Export measurement data](/guides/users-guide/exportmeasuredata.png)
+
+Choose whether to download CSV or Excel(XLSX) 
+
+"Generating Report" window will appear. The files will load depending on how many data points you have added to the "Data Explorer". Once the loading has finished click on the "Download" button.
+
+## <a name="dashboards"></a>Working with Dashboards
+
+Dashboards provides you with a customized visualization of your data, consisting of a set of freely arrangeable so-called "widgets". Widgets can display maps, images, graphs, tables and other graphical representations of data. Cumulocity comes with a number of pre-provided widgets, see section "[Widget Package](#widget-package)" for details. You can develop also your own widgets and add them to your Cumulocity account. See the [Web developer's guide](/guides/web/).
 
 ### Creating a new Dashboards
 
@@ -423,7 +447,7 @@ Click "Save" to create and open the dashboard. While there are no widgets on the
 
 You can create a single dashboard that will appear for all devices of the same type. To do that, create a new dashboard as described above. Before pressing "Save", select the option "Apply dashboard to all devices of type _type_". The text "_type_" is replaced with the type of the device that is currently selected.
 
-Afterwards the dashboard should appear for all respective devices. Changes made to dashboard are automatically visible in all dashboard.
+Afterwards the dashboard should appear for all respective devices. Changes made to a dashboard are automatically visible in all dashboards.
 
 > Note: You can only add widgets and data to the dashboard for the device itself. It is not possible to add data from children, because the structure of the children might be different from device to device. 
 
@@ -437,7 +461,7 @@ When selecting a widget type, additional fields for this widget type will be sho
 
 ### Editing a Dashboard
 
-The various aspects of an dashboard can be edited as described in this section. 
+The various aspects of a dashboard can be edited as described in this section. 
 
 You can edit the dashboard properties by clicking on the cogwheel icon and select "Edit dashboard". This will present a similar dialog to the one when you created the dashboard. You can change the dashboard name, icon, position and permissions.
 
@@ -457,13 +481,13 @@ To copy a dashboard form one object to another, use the cogs wheel on the top ri
 
 To add a widget to a dashboard, ensure that the dashboard is visible. Afterwards click on the cogwheel icon at the top right. Select "Remove dashboard".
 
-## Widget Package
+## <a name="widget"></a>Widget Package
 
-Cumulocity Cockpit includes predefined widget types. Each widget type provides different parameters to configure the widget and the data shown by the widget. The following section describe each available widget type and the configuration properties it provides.
+Cumulocity Cockpit includes predefined widget types. Each widget type provides different parameters to configure the widget and the data shown by the widget. The following section describes each available widget type and the configuration properties it provides.
 
 ### Widget "Asset Properties"
 
-Show a user-defined list of property of the current object. The current object can be a device or the group object.
+Show a user-defined list of property of the current object. The current object can be a device or the group's object.
 
 Parameters to configure:
 
@@ -473,11 +497,11 @@ Parameters to configure:
 
 ### Widget "Data Point Graph"
 
-Show a data point (measurements) in a graph. The visualisation is the same as in the data explorer. 
+Show a data points (measurements) in a graph. The visualisation is the same as in the data explorer. 
 
 Note: The easiest way to create a data point graph widget is to navigate to the data explorer and then select "Send to dashboard".
 
-The parameters to configure are the same as in the data explorer. Please refer to "[Data Explorer](#using-the-data-explorer-to-visualize-data)" for further details.
+The parameters to configure are the same as in the data explorer. Please refer to to "[Data Explorer](#using-the-data-explorer-to-visualize-data)" for further details.
 
 ### Widget "Map"
 
@@ -487,7 +511,7 @@ Show location of a device or all devices in the group. The map provides the foll
 
 * A device can be selected and, when clicked, the application navigates to the device.
 
-* The icons representing the devices are color coded. The color used depends on the the following rule:
+* The icons representing the devices are color coded. The color used depends on the following rule:
 
     * At least one critical alarm: red
 
@@ -593,11 +617,11 @@ Parameters to configure:
 
 * Target device or group: Select for which object all child devices should be shown. This is typically a group object.
 
-* Properties: Select properties or actions of an object to visualize them as columns in the table. In the configuration dialog, you see a list of configured columns, each column can be either a property or an action.
+* Properties: Select properties or actions of an object to visualize them as columns in the table. In the configuration dialog, you see a list of configured columns, each  of the columns can be either a property or an action.
 
 Example:
 
-* In the following screenshot, five columns are configured. Three property columns "Meter", “Vendor”, and “Owner”, which refer to the properties “name”, type” and “owner”. Plus two actions, one for toggling the maintenance mode, and one to reboot the device. 
+* In the following screenshot, five columns are configured. Three property columns "Meter", “Vendor”, and “Owner”, which refer to the properties “name”, type” and “owner”. Additionally there are two actions, one for toggling the maintenance mode, and one to reboot the device. 
 ![image alt text](/guides/users-guide/image_17.png)
 
 * The resulting table is visualized as follows:![image alt text](/guides/users-guide/image_18.png)
@@ -618,20 +642,20 @@ Note: You can also enter the JSON format of the operation that should be send to
 * Arrange columns: You can rearrange the columns by dragging and dropping them using the handle before the column "Label".
 
 * Remove properties: Click on the red icon in the end of a row to remove the column.
+	
+## <a name="alarms"></a>Working with Alarms
 
-## Working with Alarms
+Working with alarms is identical to working with alarms in Device Management. See "[Working with alarms](http://cumulocity.com//guides/users-guide/device-management/#alarm-monitoring)" in Device Management User Guide. 
 
-Working with alarms is identical to working with alarms in Device Management. See "[Working with alarms](http://cumulocity.com/guides/users-guide/device-management/#alarm-monitoring)" in Device Management User Guide.
+## <a name="reports"></a>Working with Dashboard Reports
 
-## Working with Reports
-
-Reports are global dashboards, that are independent of the asset hierarchy.
+There are two type of reports in the cockpit application. Dashboard reports with which you can keep track of applications, alarms, assets, events and many other widgets. The second type of reports is ["Exporting data with Reports"](#reporting) where you can export specific data to either csv or xlsx files.
 
 ### Browsing reports
 
-The navigator shows all reports under the entry "Reports". To show all reports, expand the “Reports” widget.
+Dashboard reports are global dashboards that are independent of the asset hierarchy. The navigator shows all reports under the entry "Reports". To show all reports, expand the “Reports” widget.
 
-### Adding reports
+### Creating new reports
 
 To add a new report, select the "+" button in the header and select “Create new Report”.
 
@@ -649,13 +673,99 @@ To delete a report, press the cogs wheel icon and choose Remove report
 
 You can add widgets to the report freely, similar to dashboard widgets.
 
-### View Reports
+### View reports
 
 To view a report, open the "Reports" in the navigator and click on the related report. The report will then be shown.
 
-## Using the Data Point Library
+## <a name="reporting"></a>Exporting data with reports
 
-The Data Point Library provides default values for data point properties. Data point properties are similar to "paragraph formats" in word processing applications: You do not want to format each paragraph individually. Instead you want to define a set of default formats and afterwards apply them to your paragraphs in your document. The Data Point Library provides the same functionality for data points: It provides a number of default data point formats, that can be applied easily to your data points from different devices.
+With the "Reporting" feature, you can request csv or xlsx reports for the whole tenant. Additionally you can choose to *Filter* according to specific devices, time ranges or *Fields*. The reports contain information about all specified "Filters" and enabled "Fields".
+
+To work with dashboard reports please refer to [Working with Dashboard Reports](#reports).
+
+To show all reports, expand "Reports" and click on "Reporting". 
+
+When a report has been created, you can choose to clone it. To clone reports first navigate to the report's name and then click on "Clone". After the "Clone" button is pressed you will be redirected to a new window where all of the data of the current report will be duplicated. You can apply changes if you wish. To finish press the "Save" button.
+
+### Adding reports
+
+To create additional reports, click on "Add Report"
+
+- Enter "Name" of the report.
+- Choose if the file type will be either "csv" or "Excel".
+- [Add Filters](#filters) to request object or time specific reports.
+- [Select Fields](#fields) of the report.
+- Click on the "Save" button to finish.
+
+![Add Reports](/guides/users-guide/addreports.png)
+
+<a name="filters"> **Filters** </a>
+
+Reports can be filtered to particular objects or time ranges. To choose the object to be exported, first navigate to the "Object to Export" search bar located under the "Filters" section. Specific devices or groups can be selected by writing their name or property value in the search bar. When you click the "Search" button cockpit will search for a matching entry in your device library. After all matching devices have been found they will be displayed under the search bar. To select a device simply click on their name and they will be highlighted in green.
+
+![Object filter](/guides/users-guide/objectfilter.png)
+
+Additional filters such as "Time Range" can be enabled. You have the possibility to filter object reports to "Last year", "Last month", "Last week" or simply enter a custom date-hour range. To select time range click on the scroll down menu and choose your desired time period. If you choose to customize the time range two small date fields will appear. Simply select a time range.
+
+![Time range](/guides/users-guide/timerange.png)
+
+Note that, to enable filters you will have to click on the checkbox located under "Enabled".
+
+<a name="fields"> **Fields** </a>
+
+In order to easily handle reports, different fields can be selected. For example if you select "Alarms" and "Events" you will filter the reports only to those two fields. Overall there are four fields that you can choose from.
+
+- Alarms
+- Events
+- Managed object
+- Measurements
+
+To enable a field simply click on the name of the field.
+
+![Fields](/guides/users-guide/enabledordisabledfields.png)
+
+When a certain field is enabled, predefined or empty properties can be added. If you choose to add empty properties click on "Add". To enter label or path click on either "Column" or "Path" located in the red row. For example if you enable the "Alarms" field you can type "Severity" in column and path to receive report only for alarm severities. 
+
+To add predefined properties first click on "Add predefined".
+
+To select predefined properties click on the respective checkbox located under "SHOW". After the desired properties have been selected click on "Select".
+
+![Select](/guides/users-guide/select.png)
+
+Note that to search for a specific property efficiently, you can use the search field.
+
+If the "Measurements" field was enabled one can also "Add from datapoint".
+
+![Add from datapoint](/guides/users-guide/addfromdatapoint.png)
+
+To choose a data point click on the checkbox. When the selection is completed, click on "Add".
+
+Have in mind that the "Search field" can be used for easier handling. Simply type the desired device's name or value of any property in the "Search field" and press "Submit". This way all matching entries will be displayed.
+
+![Add datapoint](/guides/users-guide/adddatapoint.png)
+
+### Exporting Inventory data to csv or xlsx files
+
+To export "Inventory data" to csv or xlsx files navigate to "Reporting" located under the "Reports" tab
+
+- Select the desired files that you wish to export by clicking on the relevant checkbox
+- Click on "Export"
+
+![Exporting](/guides/users-guide/exportinventorydata.png)
+
+You will receive an e-mail with the links to each file.
+
+### Editing reports
+
+To **edit** reports simply click on the name of the report. To apply changes click on the "Save" button.
+
+### Removing reports
+
+To remove reports hover over the report's name and click on the "X" button.
+
+## <a name="library"></a>Using the Data Point Library
+
+The Data Point Library provides default values for data point properties. Data point properties are similar to "paragraph formats" in word processing applications: You do not want to format each paragraph individually. Instead you want to define a set of default formats and afterwards apply them to your paragraphs in your document. The Data Point Library provides the same functionality for data points: It provides a number of default data point formats that can be applied easily to your data points from different devices.
 
 How does the Cockpit application use the data point library? To find the default visualisation for a data point like color or label, Cockpit searches the data point library and tries to find a matching entry. A entries is considered as "matching", if the value for fragment and series in the data point library match those of the measurement. If a matching entry is found, the corresponding data point properties are used for default visualisation.
 
@@ -669,7 +779,7 @@ When clicking on an entry, a single entry in the data point library can be edite
 
 ![image alt text](/guides/users-guide/image_22.png)
 
-## Working with Smart Rules
+## <a name="rules"></a>Working with Smart Rules
 
 Cumulocity includes a rule engine to analyse data in real-time and to perform actions based on data. These rules are specified in a scripting language and are managed in the Administration Application.
 
@@ -679,7 +789,7 @@ Smart Rules are parameterized. There are two sources for parameters:
 
 **Rule Parameter** are provided by the user when creating a smart rule from its template. Examples are email addresses and alarm texts.
 
-**Object Parameter** are stored in the group or device. These parameters can be edited also after the smart rule has been created. Example include min and max values for thresholds.
+**Object Parameter** are stored in the group or device. These parameters can be edited also after the smart rule has been created. Example includes min and max values for thresholds.
 
 ### Creating a Smart Rule
 
@@ -695,7 +805,7 @@ Smart Rules are created as follows:
 
 * Press "CREATE".
 
-A list of smart rules is shown below. Note that the number of smart rules rules shown might differ based on your installation. 
+A list of smart rules is shown below. Note that the number of smart rules shown might differ based on your installation. 
 ![image alt text](/guides/users-guide/image_23.png)
 
 Afterwards, the rule is active for all devices and groups. See next section on how to deactivate a smart rule for specific objects.
@@ -710,7 +820,7 @@ To de-activate a smart rule for a device, use the Info tab, and click on the but
 
 ![image alt text](/guides/users-guide/image_24.png)
 
-If you activate a rule for a group, then Cumulocity asks you if you want to activate it for all childs (Click "YES"), or if you want to activate the rule for the single group only (Click “NO”).
+If you activate a rule for a group, then Cumulocity asks you if you want to activate it for all children (Click "YES"), or if you want to activate the rule for the single group only (Click “NO”).
 
 ![image alt text](/guides/users-guide/image_25.png)
 
@@ -751,7 +861,7 @@ Using this mechanism, it would in theory be possible to overload the platform by
 To protect the platform from this scenario, these dependencies are not allowed.
 Therefore one rule cannot trigger another rule.
 
-## Business Rule Package
+## <a name="business"></a>Business Rule Package
 
 The following smart rule templates are available in the system.
 
@@ -759,7 +869,7 @@ The following smart rule templates are available in the system.
 
 On crossing defined yellow and red ranges, alarms are generated and cleared.
 
-The rules uses the following object parameter:
+The rules use the following object parameter:
 
 * Object red range: Range when the system should create CRITICAL alarms. These values can be edited in the Data Explorer for each data point.
 
@@ -795,7 +905,7 @@ Detailed description of steps that this smart rule performs for each incoming me
 a) the source object or (if the source object does not have these defined) 
 b) the "data point library" (rule parameter). 
 If there are no red/yellow ranges defined and there is no KPI parameter set, then no alarms are generated. 
-Note: This “merge” is done on single values, e.g. if the data point library defines  all thresholds, then the device can then override just the yellow max value.
+Note: This “merge” is done on single values, e.g. if the data point library defines all thresholds, then the device can then override just the yellow max value.
 
 * If the incoming value  if inside the yellow range:
 
@@ -885,7 +995,7 @@ The rules uses the following rule parameters:
 
 ![image alt text](/guides/users-guide/image_32.png)
 
-* Geofence: Define a polygon that defines the border of an area. To do this, click on "Edit geofence", navigate to your area (e.g. using the “Search address” field), and define a polygon by clicking once for each point of the border.![image alt text](/guides/users-guide/image_33.png)
+* Geofence: Define a polygon that defines the border of an area. To do this, click on "Edit geofence", navigate to your area (e.g. using the “Search address” field), and define a polygon by clicking once for each point of the border. ![image alt text](/guides/users-guide/image_33.png)
 
 * Type: Type of the alarm that will be raised.
 
@@ -1028,4 +1138,3 @@ The following table list the supported variables:
 
 
 **Note: **In case the variable does exists or is misspelled, the name of the variable is replaced as content.** **
-

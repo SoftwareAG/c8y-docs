@@ -23,8 +23,8 @@ The following sections describe
 
 * How to [link your Jasper Control Center account](#link-account) to your Cumulocity tenant.
 * How to [link SIMs](#link-sims) and mobile devices.
+* What information is [shown](#jasperinfo).
 * How to [manage connectivity](#managing) from Device Management.
-* How to [use SMS](#sms) to communicate with devices.
 
 ## <a name="link-account"></a>Linking your Jasper Control Center account
 
@@ -59,14 +59,64 @@ The add-on is now set up.
 
 Now change to the Device Management application and navigate to a device that is connected through a SIM card managed by Jasper Control Center. You should see a tab "Connectivity". If this tab is not shown, 
 
+* Your user does not have permissions on "Connectivity".
 * The device is not linked to a SIM card. 
 * The device is linked to a SIM card, but the card is not managed by the Jasper Control Center account.
+
+To assign permissions, navigate to the administration application and select "Read" or "Admin" permissions on "Connectivity" as shown below.
+
+<img src="/guides/users-guide/connectivityperms.png" alt="Connectivity permission settings"  style="max-width: 80%">
 
 Jasper Control Center identifies SIM cards through their ICCID ("integrated circuit card identifier"). In most cases,  devices will report the ICCID of their SIM card automatically to Cumulocity. If the ICCID is not shown:
 
 * Determine the ICCID of the SIM card. It is printed on the SIM card and is visible in Control Center.
 * Enter the ICCID in the "Info" tab, then click "Save".
 * Click the "Reload" button of the browser to make the "Connectivity" tab appear.
+
+> Note that it may take a few seconds until the tab appears for the first time on a device, as Cumulocity checks if the particular SIM card is managed by Jasper Control Center.
+
+## <a name="jasperinfo"></a>Browsing the "Connectivity" tab
+
+Now navigate to the "Connectivity" tab. It shows several sections of information:
+
+* Status.
+* SMS.
+* Sessions.
+* Audit log.
+
+> Some sections may not appear or may be empty. For example, if there have been no SMS sent and you do not have permission to send SMS, you will not see the SMS section.
+
+The "Status" section lists summary information for the SIM card, as visible in the screenshot below. The first row shows if the device is currently running a data session. If it is, the start of the session and the current WAN IP address of the device is displayed. 
+
+The left side of the section shows further status information: The ICCID of the SIM card, the activation state of the SIM card and, if set, the fixed IP address assigned to the SIM card. Provided you have "Admin" permission for "Connectivity", you can change the activation state by using the drop-down menu.
+
+The right side of the section shows usage information for the current month, i.e., from the first of the month till today. Hovering over the tooltip shows the covered time period, including the usage during the past month.
+
+![Status section](/guides/users-guide/jasperstatus.png)
+
+The "SMS" section shows the text messages sent to the device and received from the device, including
+
+* When the message was sent respectively received,
+* Where it was sent from and where it was sent to.
+* What the delivery status of the message is: 
+ * For messages to the device: "Pending", if it was not yet received by the device, or "Delivered", if it was received by the device.
+ * For messages from the device: "Received", if it was received by Control Center, or "Cancelled", if it was not yet received by Control Center.
+* What the direction of the message is: MT ("Mobile terminated"), if it went to the device, or MO ("Mobile originated"), if it came from the device.
+
+Provided you have "Admin" permission for "Connectivity", you can also send text messages to the device by entering the text and clicking "Send SMS".
+
+![SMS section](/guides/users-guide/jaspersms.png)
+
+The "Sessions" section shows the log of data sessions carried out by the device. It lists when the session started, how long it took and how much data traffic was consumed.
+
+![Sessions section](/guides/users-guide/jaspersessions.png)
+
+Finally, the "Audit logs" sections lists all changes to the SIM card and its tariff. It shows the type of change, old and new value, when the change was carried out by whom, and if it was successful.
+
+![Audit logs section](/guides/users-guide/jasperaudits.png)
+
+> This tab does not update in realtime. To show current data, click the "Reload" link at the top.
+
 
 ## <a name="managing"></a>Managing connectivity
 
@@ -75,7 +125,7 @@ If you suspect that a device is not correctly reporting to Cumulocity, or it is 
 * The SIM is activated. If the SIM card is not activated, you can activate it selecting "Activated" from the status drop-down menu. It may take a while until the SIM card is activated in the network. There may be a reset of the device needed to make it dial up to the network again.
 * The device is connected to the network. If the device is not connected to the network, this may have several reasons:
  * The device is in a location without mobile network coverage. If the device reports network quality parameters, you can navigate to the ["Measurements" tab](/guides/users-guide/device-management#measurements) of the device and verify the last reported signal strength and error rate parameters. 
- * There is a network or hardware problem (antenna, modem). Select the cog wheel icon on the top right and click "Run diagnostics" to open the Jasper Control Center diagnostics tool. If the device is not attempting to connect to the network, it may be broken.
+ * There is a network or hardware problem (antenna, modem). Select the cog wheel icon on the top right and click "SIM details", then open the Jasper Control Center diagnostics tool. If the device is not attempting to connect to the network, it may be broken.
 * The device is in a data session. If the device is not in a data session, this may, again, have several reasons:
  * The APN settings are incorrectly configured in the device.
  * The SIM card is over traffic limit.
@@ -89,26 +139,11 @@ Data connectivity can be analyzed in various places:
 * If the device supports Shell, navigate to the ["Shell" tab](/guides/users-guide/device-management/#shell) and verify, potentially edit, APN settings and roaming configuration.
 * Check the "Sessions" section on the "Connectivity" tab to see if the device has been communicating earlier and how much traffic it used.
 * Check the "Audit logs" section on the "Connectivity" tab to see if there were any recent changes to the SIM card.
-* Finally, click the cog wheel on the top right and select "Get SIM details" to navigate to the SIM configuratin in Jasper Control Center.
+* Finally, click the cog wheel on the top right and select "SIM details" to navigate to the SIM configuratin in Jasper Control Center.
 
-> The "Get SIM details" and "Run diagnostics" menu items require you to have a login for Jasper Control Center. This login is independently provided by your administrator. 
+> The "SIM details" menu item requires you to have a login for Jasper Control Center. This login is independently provided by your administrator. 
 
 Finally, if the device is still not reporting to Cumulocity, there may be a configuration or software problem on the device.
 
 * The device may have lost its credentials, for example, due to a factory reset or full loss of power. In this case, you can [re-register the device](/guides/users-guide/device-management#device-registration).
 * There may be a configuration or software problem with the device, which has to be analyzed in a device-specifc way.
-
-![Jasper details shown in Cumulocity](/guides/users-guide/jasperdetails.png)
-
-## <a name="sms"></a>Using SMS to communicate with devices
-
-If the device supports communication through text messages, you can use the "Connectivity" tab to send text commands to the device and read reports from the device. The "SMS" section shows a list of text messages exchanged with the device. It also provides a text field for you to send commands to the device.
-
-[Shell](/guides/users-guide/device-management/#shell) also supports communcation through text messages.
-
-> TBD: Improve with real screenshot and some more text
-
-![Jasper SMS communication](/guides/users-guide/jaspersms.png)
-
-
-

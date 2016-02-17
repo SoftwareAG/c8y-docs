@@ -8,9 +8,9 @@ layout: default
 
 The Jasper Control Center add-on to Cumulocity provides you with a holistic view of mobile device connectivity from within the Cumulocity Device Management application. While Cumulocity itself communicates directly with devices and shows connectivity information as reported by the device, the Jasper Control Center add-on complements this with a view of connectivity as reported by the mobile network.
 
-![Jasper architecture](/guides/users-guide/jasperarchitecture.png)
+<img src="/guides/users-guide/jasperarchitecture.png" alt="Jasper architecture"  style="max-width: 80%">
 
-If you have a Jasper Control Center account with your network provider, you can link that account to your Cumulocity account. This lets you
+If you have a Jasper Control Center account with your network provider, you can link that account to your Cumulocity tenant. This lets you
 
 * Check the status of the SIM card in the device and activate respectively deactivate it.
 * Check the online status of the device as reported by the network.
@@ -21,14 +21,16 @@ If you have a Jasper Control Center account with your network provider, you can 
 
 The following sections describe
 
-* How to [link your Jasper Control Center account](#link-account) to your Cumulocity account.
+* How to [link your Jasper Control Center account](#link-account) to your Cumulocity tenant.
 * How to [link SIMs](#link-sims) and mobile devices.
 * How to [manage connectivity](#managing) from Device Management.
 * How to [use SMS](#sms) to communicate with devices.
 
 ## <a name="link-account"></a>Linking your Jasper Control Center account
 
-To link your Jasper Control Center account with your Cumulocity account, you need four pieces of information: An API license key, an API server URL, a username and a password. To determine your API license key and API server URL:
+Cumulocity accesses your Jasper Control Center account using a dedicated user that you need to create in Control Center and configure in Cumulocity. This user is used for all access from Cumulocity to Jasper Control Center, so the permissions of the user influence that functionality that is available in Cumulocity.
+
+Besides the user, you also need a so-called API license key and API server URL. To determine your API license key and API server URL:
 
 * Use a Control Center administrator user to log in to your Control Center account and click "API integration" on the Control Center home page. 
 * Your API license key and the API server URL are displayed on the top left.
@@ -39,21 +41,19 @@ We recommend to create a dedicated user in Jasper Control Center:
 * Click the "Create New" button.
 * Enter the user name and further details of the user. 
 * If you want to be able to activate and deactivate SIM cards from Cumulocity, or to send SMS from Cumulocity, use the role "ACCOUNTUSER". Otherwise, use the role "ACCOUNTREADONLY".
-* Click "Ok" to create a user, then enter your Control Center password (not the user's password!). Then click "Ok" again.
+* Click "Ok" to create a user, then enter your password. Then click "Ok" again. (Note: You need to enter your password, not the password that the new user should get.)
 
 ![Jasper user management](/guides/users-guide/jasperadmin.png)
 
 The user is now created, but does not have a password yet. Follow the instructions emailed to you by Control Center to set a password. Now link your Jasper Control Center account to Cumulocity:
 
 * Use a Cumulocity administrator user to log in to the Cumulocity Administration application.
-* Click on the "Connectivity" menu.
+* Click on the "Connectivity" menu. If the menu does not show, please [make sure that your user has the "admin" permission for option management](/guides/users-guide/administration#permissions). If the menu still does not show, contact support@cumulocity.com to make the Jasper Control Center add-on available in your tenant.
 * Enter key, URL, username and password, then click "Save".
 
 ![Jasper settings](/guides/users-guide/jaspersettings.png)
 
 The add-on is now set up.
-
-> If you do not see the "Connectivity" menu, please contact support@cumulocity.com for making the Jasper Control Center add-on available in your account.
 
 ## <a name="link-sims"></a>Linking SIMs  and mobile devices
 

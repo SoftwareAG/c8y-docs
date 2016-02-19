@@ -413,13 +413,13 @@ With Cumulocity, users have the ability to download measurement data in csv or x
  - Value - Simply the value of the measurement
  - Unit - The unit used for the particular measurement (e.g. "C", "km/h", "sec"...)
  	
-To download measurement data in either csv or xlsx first navigate to "Data Explorer", then click on the small wheel button located at the top-right
+To download measurement data in either csv or xlsx first navigate to "Data Explorer", select your desired time range and then click on the small wheel button located at the top-right.
 
 ![Export measurement data](/guides/users-guide/exportmeasuredata.png)
 
 Choose whether to download CSV or Excel(XLSX) 
 
-"Generating Report" window will appear. The files will load depending on how many data points you have added to the "Data Explorer". Once the loading has finished click on the "Download" button.
+"Generating Report" window will appear. The files will load depending on how many data points you have added to the "Data Explorer". Once the loading has been completed click on the "Download" button.
 
 ## <a name="dashboards"></a>Working with Dashboards
 

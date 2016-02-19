@@ -190,7 +190,7 @@ Example Response:
 |id|String: max length="32"|1|Tenant id|Public|
 |status|String|1|Status of tenant, possible values [ACTIVE, SUSPENDED].|Private|
 |adminName|String: max length = "50"|1|Administrator user name|Private|
-|adminEmail|String: max length = "50"|1|Administrator Email|Private|
+|adminEmail|String|1|Administrator Email|Private|
 |adminPassword|String|1|Administrator Password|Private|
 |sendPasswordResetEmail|boolean|1|Enable password reset|Private|
 |domain|String: max length = "256"|1|URL of tenants domain.|Public|

@@ -149,6 +149,7 @@ Example request:
 		"domain" : "sample_domain.com",
 		"contactName" : "Mr. Doe",
 		"contactPhone" : "0123-4567829",
+		"adminEmail" : "myEmail@gmail.com",
 		"adminName" : "firstAdmin",
 		"adminPass" : "myPassword",
 		"customProperties" : {"referenceId":"1234567890"},
@@ -172,6 +173,7 @@ Example Response:
 		"contactPhone" : "0123-4567829",
 		"status" : "ACTIVE",
 		"adminName" : "firstAdmin",
+		"adminEmail" : "myEmail@gmail.com",
 		"customProperties" : {"referenceId":"1234567890"}
 	}
 
@@ -188,6 +190,9 @@ Example Response:
 |id|String: max length="32"|1|Tenant id|Public|
 |status|String|1|Status of tenant, possible values [ACTIVE, SUSPENDED].|Private|
 |adminName|String: max length = "50"|1|Administrator user name|Private|
+|adminEmail|String: max length = "50"|1|Administrator Email|Private|
+|adminPassword|String|1|Administrator Password|Private|
+|sendPasswordResetEmail|boolean|1|Enable password reset|Private|
 |domain|String: max length = "256"|1|URL of tenants domain.|Public|
 |company|String: max length = "256"|1|Tenants company name.|Public|
 |contactName|String: max length = "30"|1|Contact person name.|Public|

@@ -451,11 +451,9 @@ Note: Edit a dashboard using your PC. Editing on touch devices (smartphones, tab
 
 ### Copying a dashboard
 
-To copy a dashboard form one object to another, use the cogs wheel on the top right and select "Copy dashboard". Afterwards select the object where the dashboard should be applied and press "Paste Dashboard" to insert the dashboard.
+To copy a dashboard from one object to another, use the cogs wheel on the top right and select "Copy dashboard". Afterwards select the object where the dashboard should be applied and press "Paste Dashboard" to insert the dashboard.
 
-One can also use the "[Dashboard per type](#creating-a-dashboard-for-all-devices-of-the-same-type)" approach to copy a dashboard.
-
-> Note that if you use the "Dashboard per type" approach the identical dashboard is going to be available for all dashboard.
+An alternative way to copy a dashboard is to use the "[Dashboard per type](#creating-a-dashboard-for-all-devices-of-the-same-type)" approach.  With the "Dashboard per type" approach you copy the dashboard from one object to **all** objects of the same type. 
 
 ### Removing a Dashboard
 

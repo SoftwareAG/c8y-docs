@@ -3,7 +3,7 @@ title: NetCommWireless Agent Release Notes
 layout: default
 ---
 
-## Release notes for NetComm Agent 2.2
+## Release notes for NetComm Agent 2.3
 
 This document describes the Cumulocity agent package for the [NetComm Wireless NTC-6200](http://www.netcommwireless.com/product/m2m/ntc-6200) router.
 
@@ -46,7 +46,7 @@ Agent versions 2.1.10 and up require at least Cumulocity 6.10 to support the new
 
 ## Installing the agent
 
-* Download the software: http://resources.cumulocity.com/ntc/smartrest-agent_2.2.6_arm.ipk.
+* Download the software: http://resources.cumulocity.com/ntc/smartrest-agent_2.3.5_arm.ipk.
 * Log in to the web user interface of the NTC-6200.
 * Navigate to the "System" menu. Click on "System configuration", "Choose a file" and select the downloaded software. Click "Upload" to upload the software to the router.
 * Click the "Install" button for the uploaded software which you want to install.
@@ -113,3 +113,12 @@ For an alpha version of the Lua-based rapid development, visit https://bitbucket
 * Remote log viewing of ipsec.log.
 * Log API for Lua.
 
+### 2.3.5
+[Download link](http://resources.cumulocity.com/ntc/smartrest-agent_2.3.5_arm.ipk). Changes:
+
+* Full support for fieldbus 4.
+* *fix*: Unintentionally include device credential when uploading configuration.
+* *fix*: Device shell plugin for operations that restart agent/device.
+* *fix* Unexpectedly restarting of the agent when set log level via device shell.
+* *fix*: Duplicate events and incorrect status updates
+* *fix*: Operation of set register for first holding register hangs

@@ -42,7 +42,9 @@ The agent supports the following functionality:
 
 The agent was tested on an NTC-6200 device with firmware version 2.0.24.3. For remote configuration of WAN parameters, you need a SIM card with SMS function. Currently, GSMA OneAPI (e.g., on Ericsson DCP), OpenIT and Jasper Wireless are supported APIs for SMS providers. Please contact <support@cumulocity.com> for connecting to an SMS provider.
 
-Agent versions 2.1.10 and up require at least Cumulocity 6.10 to support the new log viewer.
+> Agent versions 2.1.10 and up require at least Cumulocity 6.10 to support the new log viewer.
+
+> Agent versions 2.3 and up require Cloud Fieldbus 4. They are not compatible with earlier versions of the Cloud Fieldbus application.
 
 ## Installing the agent
 

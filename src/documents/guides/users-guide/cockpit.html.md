@@ -356,7 +356,7 @@ The following properties are available for data points:
 
 * Yellow Range Min / Max: Defines the range when minor alarms should be raised by threshold rule. These values are currently not visualized. See Smart Rules below for details.
 
-* Red Range Min / Max: Defines the range when major alarms should be raised by threshold rules. These values are currently not visualised. See Smart Rules below for details.
+* Red Range Min / Max: Defines the range when CRITICAL alarms should be raised by threshold rules. These values are currently not visualised. See Smart Rules below for details.
 
 * Chart Type: For aggregated data, select what aggregated value should be visualized. Options are: min, max, area
 

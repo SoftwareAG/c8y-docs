@@ -49,7 +49,7 @@ The web interface also shows the status of the connection to Cumulocity:
 
  * Off: The software is disabled.
  * Initializing: The software is initializing.
- * Registering: The device waits for being registered to Cumulocity (see next section). 
+ * Registering: The device waits for being registered to Cumulocity (see next section).
  * Starting: The software starts all its components.
  * No credentials: The device did not get credentials for accessing Cumulocity, the credentials were deactivated, or the credentials were wrong.
  * Started: The software is started.
@@ -57,7 +57,7 @@ The web interface also shows the status of the connection to Cumulocity:
  * Connected: The software is connected to Cumulocity.
  * Disconnected: The software is not connected to Cumulocity.
  * Reconnecting: The software is retrying the connection.
- * Stopping: The software is terminating. 
+ * Stopping: The software is terminating.
 
 ## <a name="connect"></a>Connecting the router
 
@@ -87,7 +87,7 @@ LAN and DHCP parameters can be directly configured from Cumulocity as well.
 
 The installed software and firmware on the router can be remotely managed using the standard software and firmware management feature from Cumulocity, as described in the [Device management user's guide](/guides/users-guide/device-management#software-repo).
 
-Software packages need to be in [ipkg](http://en.wikipedia.org/wiki/Ipkg) format and follow the naming convention "&lt;package&gt;\_&lt;version&gt;\_&lt;arch&gt;.ipk". Version numbers including letters are not supported. All package management methods (install, upgrade, downgrade, removal) are supported through the router's package manager. If software packages have dependencies, please make sure to install these first. 
+Software packages need to be in [ipkg](http://en.wikipedia.org/wiki/Ipkg) format and follow the naming convention "&lt;package&gt;\_&lt;version&gt;\_&lt;arch&gt;.ipk". Version numbers including letters are not supported. All package management methods (install, upgrade, downgrade, removal) are supported through the router's package manager. If software packages have dependencies, please make sure to install these first.
 
 > The package "smartrest-agent\_&lt;version&gt;\_arm.ipk" represents the NetComm agent. it must remain installed on the router, otherwise the device will lose connection to Cumulocity.
 
@@ -198,13 +198,15 @@ The router reports certain system events as notifications, which can be forwarde
 
 ![Event notifications](/guides/devices/netcomm/notifications.png)
 
-## <a name="modbus"></a>Connecting Modbus devices
+## <a name="modbus"></a>Cloud Fieldbus
 
 You can connect Modbus/TCP devices using the router's LAN port and manage them remotely from Cumulocity. To do so, you need to
 
 * Establish basic LAN connectivity. Use the "[Network](#network)" tab as described above and the corresponding configuration mechanism on the Modbus device to enable IP communication between the router and the device.
+* Configure the Modbus TCP port in the Cumulocity menu on NetComm device's web UI, see "[Configuring the router](#configure)".
 * Subscribe your account to the Cloud Fieldbus app by contacting <support@cumulocity.com>.
 * Configure Modbus communication as described in the [Cloud Fieldbus user's guide](/guides/users-guide/cloud-fieldbus).
+* Enable or disable write permission by toggle the Modbus read-only property on the device, see "[Configuring the router](#configure)".
 
 ## <a name="logs"></a>Log viewer
 
@@ -215,5 +217,3 @@ You can download and view logs from the device. Log files can be quite big, you 
 From right you can set date range (date from and date to), you can select log file. Next you can search the text, and only matching lines are transmitted from the device. You can also limit matched lines.o
 
 Received logs are visible in a list below. You can click on it to show log file content at the bottom of the page. Last requested log is opened automatically.
-
-

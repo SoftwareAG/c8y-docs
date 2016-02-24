@@ -210,13 +210,33 @@ Example response:
 
 ## <a name="creds-upload"></a>Bulk device credentials
 
-Device credentials can be provided from CSV file. CSV file must contains 2 section. First section is the first line of csv file. This line must contains columns 'id', 'credentials' and optional 'tenant', rest of columns will be ommited. Section two is the rest of csv file. Section two contains devices credentials information, order and quantity of data must be the same like order and quantity of columns.
+Device credentials and itself device can be provided from CSV file. CSV file must contains 2 section.
+
+First section is the first line of csv file. This line must contains columns:
+|Name|Occurs|Description|
+|:---|:---|:----------|
+|ID|1|The external id for device|
+|CREDENTIALS|1|Password for the user of device|
+|TENANT|0..1|The name of tenant, in which context import will have created device|
+|TYPE|0..1|The type of device|
+|NAME|0..1|The name of device|
+|ICCID|0..1|The iccid of device (sim card number). If 'iccid' appers in file, import will have added to fragment 'c8y_Mobile.iccid'. 'Iccid' value is not mandatory for each row, please see below example of http request.|
+|IDTYPE|0..1|The type of external Id. If 'idtype' doesn't appear in file, the default value will have used. The default value is 'c8y_Serial'. 'Idtype' value is not mandatory for each row, please see below example of http request.|
+|PATH|0..1|The path of groups where device will have added. Path contains name for each group separated by '/', i.e: Main group/Subgroup/.../Last subgroup. If group doesn't exists, import will have added this group.|
+|SHELL|0..1|If this column contains value 1, import will have added to device 'Shell' feature. 'Shell' value is not mandatory for each row, please see below example of http request.|
+
+Section two is the rest of csv file. Section two contains devices information, order and quantity of data must be the same like order and quantity of columns.
 
 Separator is automatically obtained from CSV file. Valid separator values are: '\t - tabulation mark', '; - semicolon' and ', - comma'.
 
-CSV file appears in two forms (regarding to optional tenant column):
+CSV file can appear in many forms (regarding to optional tenant column, and occurrence of device information):
 * when user is logged as management tenant, that columns: 'id', 'credentials' and 'tenant' are mandatory, and credentials for device will be created for tenant mentioned in 'tenant' column,
-* when user is logged on 'not management' tenant i.e. sample_tenant, that columns: 'id' and 'credentials' are mandatory and rest of columns will be omitted, even if fille contains 'tenant' column and credentials for device will be created for tenant from logged user.
+* when user is logged on 'not management' tenant i.e. sample_tenant, that columns: 'id' and 'credentials' are mandatory and rest of columns will be omitted, even if fille contains 'tenant' column and credentials for device will be created for tenant from logged user,
+* when user want to add information about device columns named 'type' nad 'name' must appear in csv file,
+* when user want to add information about sim card number columns named 'type', 'name' and 'iccid' must appear in csv file,
+* when user want to change the type of external id columns named 'type', 'name' and 'idtype' must appear in csv file,
+* when user want to add device to group columns named 'type', 'name' and 'path' must appear in csv file,
+* when user want to add shell feature columns named 'type', 'name' and 'shell' must appear in csv file and column 'shell'  must contains value 1.
 
 ### BulkNewDeviceRequest [application/vnd.com.nsn.cumulocity.bulkNewDeviceRequest+json]
 
@@ -254,12 +274,14 @@ Example Request:
     Content-Disposition: form-data; name="file"
     Content-Type: plain/text
 
-    ID;CREDENTIALS;TENANT
-    id01;abcd1234;sample_tenant
-    id02;abcd1234;sample_tenant
-    id03;abcd1234;sample_tenant
-    id04;abcd1234;sample_tenant
-    id05;abcd1234;sample_tenant
+    ID;CREDENTIALS;TYPE;NAME;ICCID;IDTYPE;PATH;SHELL
+    id_101;abcd1234;type_of_device;Device 101;111111111;;csv device/subgroup0;1
+    id_102;abcd1234;type_of_device;Device 102;222222222;;csv device/subgroup0;0
+    id_111;abcd1234;type_of_device;Device 111;333333333;c8y_Imei;csv device1/subgroup1;0
+    id_112;abcd1234;type_of_device;Device 112;444444444;;csv device1/subgroup1;1
+    id_121;abcd1234;type_of_device;Device 121;555555555;;csv device1/subgroup2;1
+    id_122;abcd1234;type_of_device;Device 122;;;csv device1/subgroup2;
+    id_131;abcd1234;type_of_device;Device 131;;;csv device1/subgroup3;
     --myBoundary
 
 Example response:

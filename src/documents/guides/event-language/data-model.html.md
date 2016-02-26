@@ -505,7 +505,7 @@ Example:
 class: com.cumulocity.model.event.Severity
 
 Severity is the interface for the enum implementation CumulocitySeverities.
-CumulocityServerities offers the following values:
+CumulocitySeverities offers the following values:
 `CRITICAL`, `MAJOR`, `MINOR`, `WARNING`
 
 

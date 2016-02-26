@@ -119,7 +119,7 @@ If you have a trigger like this
 
     from EventCreated e;
 
-the functionality is identical with this trigger using pattern
+the functionality is identical with this trigger using a pattern
 
     from pattern [every e=EventCreated];
 
@@ -133,6 +133,7 @@ You can trigger by joining streams
     where e.event.source = a.alarm.source;
 
 This will trigger on every EventCreated (defined through the keyword unidirectional) and add the latest AlarmCreated if it is from the same device.
+
 _Note: it will not add the latest AlarmCreated of the device but the latest AlarmCreated overall if it is from the same device_
 
 

@@ -270,7 +270,7 @@ Cumulocity can automatically monitor the connection to your devices. If you want
 
 The various connection states are illustrated in the image below.
  
-* Top arrow represents data traffic connection and can be green or red.
+* Top arrow represents data traffic connection and can be green, red or white.
 * Bottom arrow represents push connection and is green or grey.
 * "Maintenance mode" is a special connection state indicating that the device is currently being maintained and should not be monitored. While a device is being maintained, no alarms for that device are raised. You can enable maintenance mode by setting the required interval to negative value.
 

@@ -85,3 +85,155 @@ Here are some general hints if your tracking device does not connect to Cumuloci
 
 If you need support for particular features of the tracker models, [contact us](mailto:info@cumulocity.com).
 
+## Data created by Telic device
+
+Telik is creating following events and measurements:
+
+### Location update event
+
+	{        
+		  ...
+		  "time":"2016-01-01T17:15:00.123+01:00",
+		  "text":"Location updated",
+		  "type":"c8y_LocationUpdate",
+		  "c8y_Position" : {
+			   "lat":51.1967,
+			   "lng":7.0738,
+			   "alt":221,
+			   "accuracy":0,
+			   "satellitesForCalculation":7,
+			   "GPSTimestamp": "2016-01-01T17:15:00.123+01:00",
+			   "logTimestamp": "2016-01-01T17:15:00.321+01:00",
+			   "reportReason":"Time Event",
+			   "fixType":"3D Fix"
+		  }
+		  ...
+	}
+
+Where
+* "satellitesForCalculation" - is the number of satellites used to position calculation.
+* "GPSTimestamp" - is the GPS timestamp.
+* "logTimestamp" - is the value representing timestamp when the logging happened. This value is also substituted for time of all created events and measurements.
+* "reportReason" - is the report reason and can have one of the folowing values: "Time Event", "Distance Event", "Angular Change Event", "Power Event", "Geofence Area Enter", "Geofence Area Exit", "Motion Start", "Motion Stop".
+The "c8y_Position" fragment of the event is also updated in the device ManagedObject.
+* "Fix type" - GPS fix: "No Fix", "2D Fix" or "3D Fix".
+
+### Altitude measurement:
+
+	{  
+		...
+	   "type":"c8y_Altitude",
+	   "c8y_Altitude":{  
+		  "altitude":{  
+		     "unit":"m",
+		     "value":200
+		  }
+	   }
+		...
+	}
+
+### Speed measurement:
+
+	{  
+		...
+	   "type":"c8y_Speed",
+	   "c8y_SpeedMeasurement":{  
+		  "speed":{  
+		     "unit":"km/h",
+		     "value":60
+		  }
+	   }
+		...
+	}
+
+### Mileage measurement:
+
+	{  
+		...
+	   "type":"c8y_TrackerMileage",
+	   "c8y_TrackerMileage":{  
+		  "c8y_DistanceMeasurement":{  
+		     "unit":"km",
+		     "value":1500
+		  }
+	   }
+		...
+	}
+
+### Battery level measurement:
+
+	{  
+		...
+	   "type":"c8y_TrackerBattery",
+	   "c8y_TrackerBattery":{  
+		  "level":{  
+		     "unit":"mV",
+		     "value":1500
+		  }
+	   }
+		...
+	}
+
+### Geofence enter event:
+
+	{        
+		...
+		"text":"Geofence enter",
+		"type":"c8y_GeofenceEnter"      
+		...
+	}
+
+### Geofence exit event:
+
+	{        
+		...
+		"text":"Geofence exit",
+		"type":"c8y_GeofenceExit"      
+		...
+	}
+
+### Motion started event:
+
+	{   
+		...     
+		"text":"Motion detected",
+		"type":"c8y_MotionEvent"
+		...
+	}
+
+### Motion ended event:
+
+	{   
+		...     
+		"text":"Motion ended",
+		"type":"c8y_MotionEndedEvent"
+		...
+	}
+
+### Motion measurement:
+
+	{  
+	   ...
+	   "type":"c8y_TrackerMotion",
+	   "c8y_TrackerMotion":{  
+		  "c8y_TrackerMotion":{  
+		     "value":[1 | 0]
+		  }
+	   }
+	   ...
+	}
+
+where 1 is motion, 0 is stationary.
+
+
+### Charger connected event:
+
+	{     
+		...   
+		"text":"Charger connected",
+		"type":"c8y_ChargerConnected"
+		...
+	}
+
+
+

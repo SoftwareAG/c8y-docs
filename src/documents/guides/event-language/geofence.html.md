@@ -6,16 +6,16 @@ layout: default
 
 ## Overview
 
-The below shown module will give an in depth example of how you can create more complex rules. It will use multiple of the features explained in the other guide sections.
+The module shown below will give an in depth example of how you can create more complex rules. It will use multiple of the features explained in the other guide sections.
 If you are just starting with the Cumulocity Event Language please take a look at [these examples](/guides/event-language/examples).
 
 ## Prerequisites
 
 ### Goal
 
-We want our tracking devices that are continuously sending location events to automatically generate alarms while they are outside of a geofence.
-This geofence will be a circle and should be configurable for each device differently. The alarm will be created at the moment the device moves outside the geofence.
-While it is moving outside it should not create new alarms because the first on is still active and de-duplication would anyways filter these.
+We want our tracking devices that are continuously sending location events to automatically generate alarms if they move outside of a geofence.
+This geofence will be a circle and should be configurable for each device separately. The alarm will be created at the moment the device moves outside the geofence.
+While it is moving outside it should not create new alarms because the first one is still active and de-duplication would filter the newly created alarms anyways.
 As soon as the device moves back into the geofence the alarm can be cleared.
 
 ### Cumulocity data model
@@ -146,7 +146,7 @@ For the configuration we will just check if the device contains the fragment "c8
 ## Step 4: Creating the trigger
 
 As mentioned earlier the device is outside of the fence if the distance between the current device position and the geofence center is bigger than the configured geofence radius.
-To now trigger the alarm we need 2 events so we can check if within these two events the device entered or left the geofence.
+To trigger the alarm we need 2 events so we can check if within these two events the device entered or left the geofence.
 
 In the first step we calculate the distance with the function mentioned earlier
 

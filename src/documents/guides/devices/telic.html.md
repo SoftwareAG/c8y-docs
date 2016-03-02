@@ -105,7 +105,8 @@ Telik is creating following events and measurements:
 			   "GPSTimestamp": "2016-01-01T17:15:00.123+01:00",
 			   "logTimestamp": "2016-01-01T17:15:00.321+01:00",
 			   "reportReason":"Time Event",
-			   "fixType":"3D Fix"
+			   "fixType":"3D Fix",
+			   "trackingProtocol":"TELIC"
 		  }
 		  ...
 	}
@@ -117,6 +118,7 @@ Where
 * "reportReason" - is the report reason and can have one of the folowing values: "Time Event", "Distance Event", "Angular Change Event", "Power Event", "Geofence Area Enter", "Geofence Area Exit", "Motion Start", "Motion Stop".
 The "c8y_Position" fragment of the event is also updated in the device ManagedObject.
 * "Fix type" - GPS fix: "No Fix", "2D Fix" or "3D Fix".
+* "trackingProtocol" - is  the name of tracking protocol.
 
 ### Altitude measurement:
 

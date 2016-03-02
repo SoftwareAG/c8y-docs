@@ -111,7 +111,8 @@ Telik is creating following events and measurements:
 		  ...
 	}
 
-Where
+Where:
+
 * "satellitesForCalculation" - is the number of satellites used to position calculation.
 * "GPSTimestamp" - is the GPS timestamp.
 * "logTimestamp" - is the value representing timestamp when the logging happened. This value is also substituted for time of all created events and measurements.

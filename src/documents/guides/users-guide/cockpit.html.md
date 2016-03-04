@@ -1055,7 +1055,16 @@ The rules uses the following rule parameters:
 
 ### On measurement explicit threshold create alarm
 
-When the measurement value enters or leaves the defined range, a MAJOR alarm is generated or cleared, respectively.
+When the measurement value enters or leaves the defined range, a CRITICAL alarm is generated or cleared, respectively.
+
+There is also device configuration which can influence the alarm severity. The severity of alarm is determined by:
+
+* If measurement value goes to RED range then severity is CRITICAL
+
+* If measurement value goes to YELLOW range then severity is MINOR
+
+* If measurement value goes to GREEN range the alarm is not created
+
 
 This rule is similar to the above threshold rule. However, in this rule the threshold values are provided explicitly. The other threshold rule above extracts the thresholds values from the groups or device or data point library
 

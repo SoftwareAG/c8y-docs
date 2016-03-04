@@ -15,6 +15,7 @@ The Device Management application provides you with an overview of your connecte
 * [Locate](#map) devices.
 * Work with [alarms](#alarm-monitoring) from devices.
 * [Remote control](#operation-monitoring) devices.
+* [Configure SMS-mode](#sms-mode) on devices.
 * [Troubleshoot](#events-all) devices.
 * [Manage](#software-repo) the software and the firmware on devices.
 * [Manage](#credentials) the credentials of devices.
@@ -346,6 +347,31 @@ The "All" button shows all operations for a device, regardless of whether they h
 
 ![Operations](/guides/users-guide/operations.png)
 
+##<a name="sms-mode"></a>Configuring devices to SMS-mode
+
+Necessary configuration to send SMS to Netcomm devices:
+
+Preconditions:
+
+- SMS agent (server side) running on instance.
+- Netcomm agent (server side) running for tenant. (Requires adding it to config file on server and restart of agent).
+- SMS service provider with working credentials configured in tenant options (here you can see our [accounts](https://cumulocity.atlassian.net/wiki/display/MTM/SMS+Configuration)).
+- Netcomm device is configured correctly for SMS messaging (On device in menu "Services>SMS. messaging>Diagnostics" everything on and either "Only accept authenticated SMS messages" off or sender number of SMS provider whitelisted below).
+
+Sending SMS:
+
+Sending SMS is done by creating an operation that fulfils certain criteria. The Netcomm agent (server side) will pick up operations that match at least one of the following.
+
+- [Device is in SMS-Mode](/guides/reference/device-management#communication_mode)
+- The operation is marked to be transported via SMS, indicated by the operation containing the "deliveryType" property with value "SMS" at its top level 
+
+Limitations:
+
+- This only applies to Netcomm devices, because we use the Netcomm agent (server side) to trigger this process on created operations. Other devices do not have this functionality currently.
+- The new Microservice Jasper Wireless API is not involved in this feature.
+- The Netcomm agent (server side) can only process either c8y_Command (typically from device shell) or c8y_Network (typically from network config tab) operations, because it needs to translate them into appropriate Netcomm command string format.
+- The Netcomm agent (server side) listens to all operations on the tenant for which it is activated. It will only process certain operations but this still makes the agent scale very poorly.
+- To activate the Netcomm agent (server side) for a tenant root access to production systems is required. Customers cannot do this themselves.
 
 ## <a name="events-all"></a>Troubleshooting devices
 

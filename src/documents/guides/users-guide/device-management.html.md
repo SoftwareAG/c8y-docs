@@ -268,7 +268,7 @@ This is, for example, useful when you have broken hardware and need to replace t
 
 Cumulocity can automatically monitor the connection to your devices. If you want the connection to a device to be monitored, visit the "Info" tab of the device. On that tab, check the "Required Interval" field at the top. This field defines how often you expect to hear from the device. For example, if you set "Required interval" to 60, you expect that the device communicates at least once in an hour with Cumulocity. The interval is either set by the device itself, based on the device's knowledge how often it will try to send data, or it is set manually by you.
 
-The various connection states are illustrated in the image below. The top arrow represents traffic from the device to Cumulocity. It can be green, red or white. Green means that data was sent within the required interval. Red means that it was not sent within the required interval. White means that no required interval is configured.
+The various connection states are illustrated in the image below. The top arrow represents traffic from the device to Cumulocity. It can be green, red or grey. Green means that data was sent within the required interval. Red means that it was not sent within the required interval. Grey means that no required interval is configured.
 
 The bottom arrow indicates the state of the push connection that is used to send commands from Cumulocity to the device. It can green or grey. Green means that the connection is established. Grey means that the connection is not established. In case of a grey arrow, either the device does not support push connections, or there is an error.
 

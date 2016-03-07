@@ -48,7 +48,7 @@ The agent was tested on an NTC-6200 device with firmware version 2.0.24.3. For r
 
 ## Installing the agent
 
-* Download the software: http://resources.cumulocity.com/ntc/smartrest-agent_2.3.5_arm.ipk.
+* Download the software: http://resources.cumulocity.com/ntc/smartrest-agent_2.3.6_arm.ipk.
 * Log in to the web user interface of the NTC-6200.
 * Navigate to the "System" menu. Click on "System configuration", "Choose a file" and select the downloaded software. Click "Upload" to upload the software to the router.
 * Click the "Install" button for the uploaded software which you want to install.
@@ -124,3 +124,9 @@ For an alpha version of the Lua-based rapid development, visit https://bitbucket
 * *fix* Unexpectedly restarting of the agent when set log level via device shell.
 * *fix*: Duplicate events and incorrect status updates
 * *fix*: Operation of set register for first holding register hangs
+
+### 2.3.6
+[Download link](http://resources.cumulocity.com/ntc/smartrest-agent_2.3.6_arm.ipk). Changes:
+
+* [MTM-11911]*fix*: not respect multiplier, divisor and decimalPlaces definition in FieldBus 4 when sending event.
+* [MTM-11740] string update: use generic IoT tokens instead of Cumulocity.

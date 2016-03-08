@@ -240,12 +240,15 @@ Example response:
 
 ## <a name="control_via_sms"></a> Device control via SMS
 
-To send SMS commands to devices at least one of the following should be true:
+In order to send operations via SMS either the device managed object should contain the fragment:
 
-- [Communication mode](/guides/reference/device-management#communication_mode) should be enabled
-- The operation that is to be transported should contain a "deliveryType" property of "SMS"
+		"c8y_CommunicationMode": {
+    		"mode": "SMS"
+		}
 
-		"deliveryType: "SMS"
+or the operation should contain the entry:
+
+		"deliveryType": "SMS"
 
 ## Notifications
 

@@ -216,14 +216,15 @@ To restart a device, an operation with a "c8y\_Restart" fragment is sent. To ena
 
 #### <a name="communication_mode"></a>c8y\_CommunicationMode
 
-In order to send SMS to Netcomm devices, the devices must be set in SMS-Mode, indicated by the device managed object containing the "c8y_CommunicationMode" fragment with value "SMS".
+In order to send commands as text messages to devices, the devices must be put into SMS mode. To indicate that it supports SMS mode, a device needs to add the fragment "c8y_CommunicationMode" with a mode property of "SMS".
+
 
 	"c8y_CommunicationMode": {
 		"mode": "SMS"
 	}
 
-For more info please refer to [Configuring devices to SMS-mode](/guides/users-guide/device-management#sms-mode)
-
+For more info please refer to [Device control via SMS](/guides/reference/device-control#control_via_sms)
+*
 #### c8y\_Command
 
 To carry out interactive sessions with a device, use the "c8y\_Command" fragment. If this fragment is in the list of supported operations for a device, a tab "Shell" will be shown. Using the "Shell" tab, the user can send commands in an arbitrary, device-specific syntax to the device. The command is sent to the device in a property "text":

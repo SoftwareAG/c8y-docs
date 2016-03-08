@@ -238,6 +238,15 @@ Example response:
       }
     }
 
+## <a name="control_via_sms"></a> Device control via SMS
+
+To send SMS commands to devices at least one of the following should be true:
+
+- [Communication mode](/guides/reference/device-management#communication_mode) should be enabled
+- The operation that is to be transported should contain a "deliveryType" property of "SMS"
+
+		"deliveryType: "SMS"
+
 ## Notifications
 
 There are two options to receive real-time notifications for the device control API.

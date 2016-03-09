@@ -40,7 +40,7 @@ In the following, the Cockpit application is described. It offers the following 
 
 * **Smart Rule Builder**: Easily create  business rules to perform actions on incoming data in real-time.
 
-* **Business Rule Package**: Use pre-defined business rules for geofencing, thresholds or alarm escalation and notifications (SMS/Email).
+* **Business Rule Package**: Use pre-defined business rules for geofencing, thresholds or alarm escalation and notifications (SMS/Email/Speech).
 
 * **Reporting**: Create reports based on the dashboards layout and send distribute them by Email.
 
@@ -843,7 +843,7 @@ To define a threshold rule do as follows:
 
 ![image alt text](/guides/users-guide/image_27.png)
 
-* You can fill in the minimum and maximum value. When the values are between these values, a threshold alarm will be raised.
+* You can fill in the red range minimum and red range maximum value. When the values are between these values, a threshold alarm will be raised.
 
 * Under "Create Alarm" you can optionally edit the alarm type and the alarm text.
 
@@ -851,15 +851,14 @@ To define a threshold rule do as follows:
 
 * Press "CREATE"
 
-After the rule has been created, it is automatic active and alarms should appear, assuming that there are min and max values defined for the selected data point.
+After the rule has been created, it is automatic active and alarms should appear.
 
-### Cyclic Execution Protection
+### Chain rule execution
 
-Smart Rules can create new data item in the platform. For example, the threshold rule creates new alarms.
-Using this mechanism, it would in theory be possible to overload the platform by having rules that have cyclic dependencies. 
-
-To protect the platform from this scenario, these dependencies are not allowed.
-Therefore one rule cannot trigger another rule.
+Smart Rules can create new data item in the platform. For example, the threshold rule creates new alarms. 
+Those new data can be further handled by smart rules. For example, by "On alarm send e-mail" rule.
+Using this mechanism, it is possible to create the chain of smart rules. However, please notice, there is a risk of creating cycle
+that can overload the platform and cause an excess of unwanted data.
 
 ## <a name="business"></a>Business Rule Package
 
@@ -901,13 +900,16 @@ Detailed description of steps that this smart rule performs for each incoming me
 
 * Check, if the rule is activated for the source object.
 
-* Collect the red and yellow range from either 
-a) the source object or (if the source object does not have these defined) 
-b) the "data point library" (rule parameter). 
-If there are no red/yellow ranges defined and there is no KPI parameter set, then no alarms are generated. 
+* Collect the red and yellow range from either:
+
+	a) the source object or (if the source object does not have these defined) 
+
+	b) the "data point library" (rule parameter). 
+
+If there are no red/yellow ranges defined neither in a) and b), then no alarms are generated. 
 Note: This “merge” is done on single values, e.g. if the data point library defines all thresholds, then the device can then override just the yellow max value.
 
-* If the incoming value  if inside the yellow range:
+* If the incoming value is inside the yellow range:
 
     * If there is an active alarm of given type for the object:
 
@@ -915,7 +917,7 @@ Note: This “merge” is done on single values, e.g. if the data point library 
 
     * Otherwise
 
-        * Create new "MINOR" alarm with given parameters
+        * Create new "MINOR" alarm with given parameters.
 
 * If the incoming value is inside the red range:
 
@@ -925,15 +927,56 @@ Note: This “merge” is done on single values, e.g. if the data point library 
 
     * Otherwise
 
-        * Create new "CRITICAL" alarm with given parameters
+        * Create new "CRITICAL" alarm with given parameters.
 
-* If the measurement if outside of yellow and red range:
+* If the measurement is outside of yellow and red range:
 
     * If there is an active alarm of given type for the object:
 
-        * Clear the alarm
+        * Clear the alarm.
 
-### On alarm send EMail
+** Troubleshooting **
+
+If, despite the occurrence of measurement alarm seems not generated, please assure:
+
+* If there was not active alarm with the same source and type: in this case no new alarm will be created because of de-duplication policy.
+
+* If device is not in [maintenance](/guides/reference/device-management) mode: in this case no new alarm will be created because of suppression policy.
+
+* If you dont have an Alarm mapping rule (see: [Reprioritizing alarms](/guides/users-guide/administration#reprio-alarms)) which change the alarm severity: in this case the alarm may have different severity than expected.
+
+* If alarm have not been already cleared by one of the next measurements with value in GREEN range.
+
+### On measurement explicit threshold create alarm
+
+When the measurement value enters or leaves the RED range, a CRITICAL alarm is generated or cleared, respectively.
+
+There is also device configuration which can influence the alarm severity. The severity of alarm is determined by:
+
+* If measurement value goes to RED range then severity is CRITICAL
+
+* If measurement value goes to GREEN range the alarm is cleared
+
+
+This rule is similar to the above threshold rule. However, in this rule the RED threshold value is provided explicitly. The other threshold rule above extracts the thresholds values from the device or data point library
+
+The rules uses the following rule parameters:![image alt text](/guides/users-guide/image_37.png)
+
+* Fragment: Name of the measurement fragment. The incoming measurement must have exactly the same fragment name as configured. Note: When creating a rule from the data explorer, the fragment is already filled in.
+
+* Series: Similar to fragment, just for the series.
+
+* Minimum, Maximum: When a value is in the range [minimum; maximum], the configured alarm is raised. 
+
+* Type: Type of the alarm that will be raised.
+
+* Text: Text of the alarm that will be raised. 
+
+** Troubleshooting **
+
+Similar to threshold rule above.
+
+### On alarm send E-mail
 
 When an alarm is created, an email is send. 
 
@@ -941,17 +984,23 @@ The rules uses the following rule parameters:
 
 ![image alt text](/guides/users-guide/image_29.png)
 
-* Alarm type: The type of the alarm that triggers the rule: For each newly created alarm of this type the rule is triggered.
+* Alarm type: The type of the alarm that triggers the rule. For each newly created alarm of this type the rule is triggered.
 
-* Send to: Email addresses for sending the EMail to. Multiple addresses can be seperated by a comma (",", do not use a space!).
+* Send to: Email addresses for sending the e-mail to. Multiple addresses can be seperated by a comma (",", do not use a space!).
 
-* Send CC to: As previously, just for Email "CC" field.
+* Send CC to: As previously, just for e-mail "CC" field.
 
-* Send BCC to: As previously, just for Email "BCC" field.
+* Send BCC to: As previously, just for e-mail "BCC" field.
 
-* Subject: Subject of Email. You can use variable of the form #{name}. Supported variables are listed under "Smart Rule Variables" below.
+* Reply to: Address that should be used to reply to the message.
 
-* Text: Text of Email. You can use variable of the form #{name}. Supported variables are listed under "Smart Rule Variables" below.
+* Subject: Subject of e-mail. You can use variable of the form #{name}. Supported variables are listed under "Smart Rule Variables" below.
+
+* Text: Text of e-mail. You can use variable of the form #{name}. Supported variables are listed under "Smart Rule Variables" below.
+
+** Troubleshooting **
+
+If, despite the alarm, the e-mail have not been received, please check your span folder.
 
 ### On alarm send SMS
 
@@ -987,9 +1036,11 @@ Description of the rule:
 
 * If the alarm is 'CRITICAL' stop monitoring because there isn't any higher severity.
 
+Note: the time beetwen the actions executed by the rule may vary from the duration, because this rule monitors existing alarms every minute.
+
 ### On geofence create alarm
 
-Create an alarm if a device leaves the defined geofence.
+Create an alarm if a device leaves the defined geofence. Clear existing alarm if a device enters the geofence.
 
 The rules uses the following rule parameters:
 
@@ -1003,7 +1054,9 @@ The rules uses the following rule parameters:
 
 * Severity: Severity of the alarm that will be raised.
 
-### Calculate Energy Consumption
+Note: alarm will not be generated if a device will be located outside the geofence at the time of creating a rule. In order to generate alarm device must be inside-then-outside the geofence.
+
+### Calculate energy consumption
 
 Create consumption data point based on data from an electric-, gas-, water- meter.
 
@@ -1015,11 +1068,15 @@ The rules uses the following rule parameters:
 
 * Series: Similar to fragment, just for the series.
 
-* Duration: Time period, for which consumption values should be calculated.
+* Duration: Time period at which consumption values should be calculated.
 
 * Consumption Fragment: Name of the measurement fragment that should be generated.
 
 * Consumption Series: Name of the measurement series that should be generated.
+
+Consumption value is the difference between values of consecutive measurements divided by the time elapsed between those measurement (in units of hour). For example, lets have value 100 at 12pm and 200 at 12.15pm. Incremet is 100 in the quarter, therefore consumption is 400.
+
+If duration parameter is set to 1 minute, the consumption measurement will be generated every minute based on the measurements received since the last execution. If no measurements have been received consumption value will be 0.
 
 ### On missing measurements create alarm
 
@@ -1029,17 +1086,17 @@ The rules uses the following rule parameters:
 
 ![image alt text](/guides/users-guide/image_35.png)
 
-* Type: Type of the measurement fragment. The incoming measurement must have exactly the same type as configured. Note: When creating a rule from the data explorer, the fragment is already filled in.
+* Type: Type of the measurement. The incoming measurement must have exactly the same type as configured. Note: When creating a rule from the data explorer, the fragment is already filled in.
 
-* Series: Similar to fragment, just for the series.
-
-* Duration: Time period, for which consumption values should be calculated.
+* Time interval: Time interval, for which consumption values should be calculated.
 
 * Type: Type of the alarm that will be raised.
 
-* Text: Text of the alarm that will be raised.  
-
 * Severity: Severity of the alarm that will be raised.
+
+* Text: Text of the alarm that will be raised.
+
+Note: the time beetwen the actions executed by the rule may vary from the time interval, because this rule monitors existing alarms every minute.
 
 ### On alarm create operation
 
@@ -1053,36 +1110,93 @@ The rules uses the following rule parameters:
 
 * Operation: The operation that should be send. The operation is provided as JSON description. Contact the device description for details about the supported operations. A few standard operations can be selected below the operations fields. To use a standard operation, select one, and press the arrow button to the right. This will insert the JSON of the selected operation. 
 
-### On measurement explicit threshold create alarm
 
-When the measurement value enters or leaves the defined range, a CRITICAL alarm is generated or cleared, respectively.
+## On geofence send e-mail
 
-There is also device configuration which can influence the alarm severity. The severity of alarm is determined by:
+Send the email if a device leaves the defined geofence.
 
-* If measurement value goes to RED range then severity is CRITICAL
+The rules uses the following rule parameters:
 
-* If measurement value goes to YELLOW range then severity is MINOR
+![image alt text](/guides/users-guide/ongeofencesendemail.png)
 
-* If measurement value goes to GREEN range the alarm is not created
+* Geofence: Define a polygon in the way similar to the rule "On geofence create alarm".
+
+* Send to: Email addresses for sending the e-mail to. Multiple addresses can be seperated by a comma (",", do not use a space!).
+
+* Send CC to: As previously, just for e-mail "CC" field.
+
+* Send BCC to: As previously, just for e-mail "BCC" field.
+
+* Reply to: Address that should be used to reply to the message.
+
+* Subject: Subject of e-mail. You can use variable of the form #{name}. Supported variables are listed under "Smart Rule Variables" below.
+
+* Text: Text of e-mail. You can use variable of the form #{name}. Supported variables are listed under "Smart Rule Variables" below.
+
+Note: alarm will not be generated if a device will be located outside the geofence at the time of creating a rule. In order to generate alarm device must be inside-then-outside the geofence.
+
+** Troubleshooting **
+
+If, despite the alarm, the e-mail have not been received, please check your span folder.
 
 
-This rule is similar to the above threshold rule. However, in this rule the threshold values are provided explicitly. The other threshold rule above extracts the thresholds values from the groups or device or data point library
+## On alarm initiate text-to-speech call
 
-The rules uses the following rule parameters:![image alt text](/guides/users-guide/image_37.png)
+When alarm is created initiates text-to-speach call.
 
-* Fragment: Name of the measurement fragment. The incoming measurement must have exactly the same fragment name as configured. Note: When creating a rule from the data explorer, the fragment is already filled in.
+The rules uses the following rule parameters:
 
-* Series: Similar to fragment, just for the series.
+![image alt text](/guides/users-guide/onalarmsendtexttospeach.png)
 
-* Minimum, Maximum: When a value is in the range [minimum - maximum], the configured alarm is raised. 
+* Alarm type: The type of the alarm that triggers the rule.
 
-* Type: Type of the alarm that will be raised.
+* Phone number: Target phone number. You must include the mobile country code with "+" infront of the number, e.g. “+49” for Germany. 
 
-* Text: Text of the alarm that will be raised. 
+* Message: The message read by the rule.
+
+* Retries: The number of retries to get connected.
+
+* Interval: The interval beetwen retries (in minutes).
+
+* Acknowledgement: Flag indicating that alarm acknowledge scenario will be defined.
+
+* Acknowledgement text: Text informing about acknowledgement, for example: "Please acknowledge this call by pressing the button 5"
+
+* Acknowledgement number: The number of the acknowledgement button. If button will be pushed, the alarm status will be changed to acknowledged, otherwise alarm will stay active.
+
+## On alarm escalate it
+
+When alarm is created send e-mail, sms, or/and initiates text-to-speech.
+
+The rules uses the following rule parameters:
+
+![image alt text](/guides/users-guide/escalatealarm1.png)
+
+* Alarm type: The type of the alarm that triggers the rule.
+
+The rule allows to define the chain of action steps. In order to add step click button "Add step". Form with following parameters will appear:
+
+![image alt text](/guides/users-guide/escalatealarm2.png) 
+
+* Type of action: type of action executed in the step. Possible values are:
+
+	* e-mail (see On alarm send e-mail rule for parameter descriptions)
+
+	* sms (see On alarm send SMS rule for parameter descriptions)
+
+	* phone (see On alarm initiate text-to-speech call rule for parameter descriptions)
+
+* Condition: the condition under which the action is executed. Possible values are:
+
+	* always: Action will be executed unconditionally.
+
+	* always: On step N failed: Action will be executed if N-th step of chain have failed. This option appears if one of prepending steps have type phone, because only phone action may fail.
+
+
 
 ### Smart Rule Variables
 
-You can use variables in certain rule parameters. When a rule is triggered, the variables are replaced by their actual values. You can use this mechanism to insert device names or alarm text into various outputs (Email, SMS, Text-to-Voice).
+You can use variables in certain rule parameters. When a rule is triggered, the variables are replaced by their actual values. You can use this mechanism to insert device names or alarm text into various outputs (E-mail, SMS, Text-to-Voice).
 
 The following table list the supported variables:
 
@@ -1112,7 +1226,7 @@ The following table list the supported variables:
     <td>Name of the device.</td>
   </tr>
   <tr>
-    <td>#{source.c8y_Hardware.serialNumber}</td>
+    <td nowrap>#{source.c8y_Hardware.serialNumber}</td>
     <td>Serialnumber of the device.</td>
   </tr>
   <tr>
@@ -1146,4 +1260,4 @@ The following table list the supported variables:
 </table>
 
 
-**Note: **In case the variable does exists or is misspelled, the name of the variable is replaced as content.** **
+**Note: **In case the variable does not exist or is misspelled, the name of the variable is replaced as content.** **

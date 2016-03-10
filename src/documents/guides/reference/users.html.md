@@ -246,7 +246,7 @@ If an object does not have any fragment in it, then to e.g. read that object you
 "10200":["MEASUREMENT:*:READ"]
 
 ### Audit log
-Any change in user's roles, device permissions and groups stores suitable audit record with type 'User' and activity 'User updated' with information which properties have been changed.
+Any change in user's roles, device permissions and groups creates suitable audit record with type 'User' and activity 'User updated' with information which properties have been changed.
 
 
 ### GET a representation of a User
@@ -344,7 +344,7 @@ Example response:
       "devicePermissions": {}
     }
 
-When user is updated with changed permissions or groups, suitable audit record is stored with type 'User' and activity 'User updated'.
+When user is updated with changed permissions or groups, suitable audit record is created with type 'User' and activity 'User updated'.
 
 ### DELETE a representation of a user
 
@@ -504,7 +504,7 @@ Example response:
             "userName": "jsmith"
         }}
         
-When user is added to group, suitable audit record is stored with type 'User' and activity 'User updated'.
+When user is added to group, suitable audit record is created with type 'User' and activity 'User updated'.
 
 ### Remove User from a group
 
@@ -520,7 +520,7 @@ Example response:
 
     HTTP/1.1  204 NO CONTENT
 
-When user is removed from group, suitable audit record is stored with type 'User' and activity 'User updated'.
+When user is removed from group, suitable audit record is created with type 'User' and activity 'User updated'.
 
 ### Get all users of a group
 
@@ -581,7 +581,7 @@ Example response:
 |next|URI|0..1|Link to a possible next page with additional groups|
 
 ### Audit log
-Any change in group's roles and device permissions stores suitable audit record with type 'Group' and activity 'Group updated' with information which properties have been changed.
+Any change in group's roles and device permissions creates suitable audit record with type 'Group' and activity 'Group updated' with information which properties have been changed.
 
 ### List all groups
 
@@ -761,7 +761,7 @@ Example response:
 
     HTTP/1.1  204 NO CONTENT
     
-When group is removed, suitable audit records are stored with type 'User' and activity 'User updated' with information that user has been removed from group.
+When group is removed, suitable audit records are created with type 'User' and activity 'User updated' with information that user has been removed from group.
 
 ### Update a group
 
@@ -793,7 +793,7 @@ Example response:
       ...
     }
     
-When group is updated with changed roles or permissions, suitable audit record is stored with type 'Group' and activity 'Group updated'.
+When group is updated with changed roles or permissions, suitable audit record is created with type 'Group' and activity 'Group updated'.
 
 ## Group reference collection
 
@@ -936,7 +936,7 @@ Example response:
       }
     }
     
-When role is assigned to user, suitable audit record is stored with type 'User' and activity 'User updated'.
+When role is assigned to user, suitable audit record is created with type 'User' and activity 'User updated'.
 
 ### Assign Role to Group
 
@@ -973,7 +973,7 @@ Example response:
       }
     }
 
-When role is assigned to group, suitable audit record is stored with type 'Group' and activity 'Group updated'.
+When role is assigned to group, suitable audit record is created with type 'Group' and activity 'Group updated'.
 
 ### Unassign Role from User
 
@@ -1004,7 +1004,7 @@ Example response:
 
     HTTP/1.1  204 NO CONTENT
 
-When role is unassigned from group, suitable audit record is stored with type 'Group' and activity 'Group updated'.
+When role is unassigned from group, suitable audit record is created with type 'Group' and activity 'Group updated'.
 
 ## Role reference collection
 

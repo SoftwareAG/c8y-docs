@@ -16,7 +16,7 @@ The following sections demonstrate how to use a NetComm router with Cumulocity. 
 * Use the built-in [GPS](#gps) functionality.
 * Use the built-in [GPIO](#gpio) pins.
 * View [configuration](#rdb) parameters.
-* Configure devices to use [SMS mode](#sms-mode)
+* Configure devices to use [SMS mode](#sms_mode)
 * Remotely execute text commands via [device shell](#shell).
 * Get [event notifications](#notifications).
 * Connect [Modbus](#modbus) devices.

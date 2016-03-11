@@ -53,6 +53,7 @@ Use the "Upload" button to upload the CSV file, as shown in the screenshot below
 To connect the devices, the devices need to be pre-provisioned with related information. More specifically, each device needs to be configured as follows:
 * Username: The username to access Cumulocity must have the form &lt;tenant&gt;/device_&lt;id&gt;, where &lt;tenant&gt; refers to the tenant into which the CSV file is imported, and  &lt;id&gt; refers to the respective value in the CSV file.
 * Password: The password to access Cumulocity, same as the value "Credentials" in the CSV file.
+* Device in managed object representation. Fields: "Type", "Name", "Iccid", "Idtype", "Path", "Shell" in the CSV file. 
 
 If you own a Cumulocity Dedicated or Private Edition, you can also register devices across multiple tenants by adding a "tenant" column to the spreadsheet and importing the CSV file from the "management" tenant. 
 

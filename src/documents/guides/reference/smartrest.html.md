@@ -199,6 +199,18 @@ Explanation:
 * `$.c8y_IsDevice` specifies that values are only extracted if the object has a fragment called `c8y_IsDevice`.
 * `$.id` is the value extracted, namely the device ID.
 
+## Using SmartREST with multiple X-Ids
+
+SmartREST supports sending of messages for different X-Ids within the same request. In this case the X-Id header is not used but instead the body will contain additional information about which lines belong to which template.
+
+### Sending messages
+
+To indicate the X-Id in the body it is possible to include the following line
+
+	15,myxid
+
+
+
 ## SmartREST Real-time Notifications
 
 All available real-time notification endpoints and channels of the Cumulocity platform are also available in a SmartREST syntax. Please have a look at the [Real-time notifications](/guides/reference/real-time-notifications) reference guide to understand the general functionality of the [Bayeux protocol](http://svn.cometd.com/trunk/bayeux/bayeux.html) and get an overview of our available endpoints and channels fo  real-time notifications.

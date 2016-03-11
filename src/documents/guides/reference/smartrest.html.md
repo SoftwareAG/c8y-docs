@@ -201,7 +201,7 @@ Explanation:
 
 ## Using SmartREST with multiple X-Ids
 
-SmartREST supports sending of messages for different X-Ids within the same request. In this case the X-Id header is not used but instead the body will contain additional information about which lines belong to which template.
+SmartREST supports sending of messages for different X-Ids within the same request. In this case the X-Id header mustn't be used but instead the body will contain additional information about which lines belong to which X-Id.
 
 ### Sending messages
 
@@ -209,7 +209,51 @@ To indicate the X-Id in the body it is possible to include the following line
 
 	15,myxid
 
+All following lines will be handled with the given X-Id until you enter the next X-Id line.
 
+	15,myxid1
+	...
+	...
+	15,myxid2
+	...
+
+### Receiving messages
+
+When sending with multiple X-Ids the response also can contain responses from multiple X-Ids. The response will contain an additional line that will indicate which X-Id the following lines are from.
+The second value in this line indicates how many lines are following from this X-Id.
+
+	87,2,myxid1
+	...
+	...
+	87,1,myxid2
+	...
+
+### Checking if templates are registered
+
+You can check if templates are already existing by just include X-Id lines in the body.
+
+	15,myxid1
+	15,myxid2
+	15,myxid3
+	15,myxid4
+
+You will get the same response like described in the registration process but for every line.
+
+	20,12345
+	20,12346
+	40,"No template for this X-ID."
+	20,12347
+
+### Registering templates
+
+Template registration also supports the use of the X-Id in the body. Therefore you can create multiple in a single request.
+
+	15,myxid1
+	10,100,POST,/inventory/managedObjects,application/vnd.com.nsn.cumulocity.managedObject+json,application/vnd.com.nsn.cumulocity.managedObject+json,,,"{""name"":""Test Device"",""type"":""com_example_TestDevice"",""c8y_IsDevice"":{}}"
+	11,201,,"$.c8y_IsDevice","$.id"
+	15,myxid2
+	10,100,POST,/inventory/managedObjects,application/vnd.com.nsn.cumulocity.managedObject+json,application/vnd.com.nsn.cumulocity.managedObject+json,,,"{""name"":""Test Device"",""type"":""com_example_TestDevice"",""c8y_IsDevice"":{}}"
+	11,201,,"$.c8y_IsDevice","$.id"
 
 ## SmartREST Real-time Notifications
 
@@ -339,6 +383,7 @@ Message identifier | Message parameters              | Description
 -------------------|-------------------------|------------
 10 | Template message identifier<br>Method<br>Resource identifier<br>Content MIME type<br>Accept MIME type<br>Placeholder<br>Request parameters<br>Template string | Represents a request template. If this message occours in the body, the whole body is treated as a *SmartREST* template and thus, all messages besides `10` and `11` will yield an error.
 11 | Template message identifier<br>Base JSON path<br>Conditional JSON ath<br>Value JSON paths | Represents a response template. If this message occours in the body, the whole body is treated as a *SmartREST* template and thus, all messages besides `10` and `11` will yield an error.
+15 | X-Id | Defines which X-Id to use for the following lines. You must not use the X-Id header when using this line.
 61 | Device MO GId | Poll device credentials during device bootstrapping process. No `X-Id` header must be present and the device bootstrap authorization must be used.
 80 | *None* | Initial handshake that will return a unique bayeux clientId. SmartREST real-time notifications.
 81 | clientId,channel | Subscribe for the given channel. SmartREST real-time notifications.
@@ -359,6 +404,7 @@ Message identifier | Message parameters              | Description
 50 | Line number<br>*HTTP* response code | Server error. This message occurs when an error happened between the *SmartREST* proxy and the platform.
 70 | Line number<br>Unique device identifier<br>Tenant ID<br>Username<br>Password | Device bootstrap polling response with credentials.
 86 | timeout,interval,reconnect policy | Settings advice for the client using SmartREST real-time notifications.
+87 | amount of lines, X-Id | Indicates which X-Id was used to create the amount of following response lines.
 
 #### Error messages
 

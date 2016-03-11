@@ -183,7 +183,7 @@ You can retrieve, modify and save user configuration data. To do this, navigate 
 
 ## <a name="sms_mode"></a> Configuring devices to use SMS mode	
 
-To use SMS commands for devices the 
+To use SMS commands for devices, the 
 Netcomm device should be configured correctly for SMS messaging (In device menu "Services>SMS messaging>Diagnostics" everything on and either "Only accept authenticated SMS messages" off or sender number of SMS provider whitelisted below).
 
 ![Enable SMS mode](/guides/devices/netcomm/sms_mode.png)

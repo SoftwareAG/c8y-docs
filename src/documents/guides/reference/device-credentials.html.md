@@ -210,33 +210,34 @@ Example response:
 
 ## <a name="creds-upload"></a>Bulk device credentials
 
-Device credentials and itself device can be provided from CSV file. CSV file must contains 2 section.
+Device credentials and device representation can be provided from CSV file. CSV file must have 2 sections.
 
-First section is the first line of csv file. This line must contains columns:
+First section is the first line of csv file. This line contains column names (headers):
+
 |Name|Occurs|Description|
 |:---|:---|:----------|
-|ID|1|The external id for device|
-|CREDENTIALS|1|Password for the user of device|
-|TENANT|0..1|The name of tenant, in which context import will have created device|
-|TYPE|0..1|The type of device|
-|NAME|0..1|The name of device|
-|ICCID|0..1|The iccid of device (sim card number). If 'iccid' appers in file, import will have added to fragment 'c8y_Mobile.iccid'. 'Iccid' value is not mandatory for each row, please see below example of http request.|
-|IDTYPE|0..1|The type of external Id. If 'idtype' doesn't appear in file, the default value will have used. The default value is 'c8y_Serial'. 'Idtype' value is not mandatory for each row, please see below example of http request.|
-|PATH|0..1|The path of groups where device will have added. Path contains name for each group separated by '/', i.e: Main group/Subgroup/.../Last subgroup. If group doesn't exists, import will have added this group.|
-|SHELL|0..1|If this column contains value 1, import will have added to device 'Shell' feature. 'Shell' value is not mandatory for each row, please see below example of http request.|
+|ID|1|The external id of a device|
+|CREDENTIALS|1|Password for the device's user|
+|TENANT|0..1|The name of tenant for which registration is executed (allowed only by management tenant)|
+|TYPE|0..1|The type of device representation|
+|NAME|0..1|The name of device representation|
+|ICCID|0..1|The iccid of device (sim card number). If 'iccid' appers in file, import adds a fragment 'c8y_Mobile.iccid'. 'Iccid' value is not mandatory for each row, please see below example of http request|
+|IDTYPE|0..1|The type of external Id. If 'idtype' doesn't appear in file, the default value is used. The default value is 'c8y_Serial'. 'Idtype' value is not mandatory for each row, please see below example of http request|
+|PATH|0..1|The path in the groups hierarchy where device is added. Path contains name of each group separated by '/', i.e: Main group/Subgroup/.../Last subgroup. If group doesn't exists, import creates the group|
+|SHELL|0..1|If this column contains value 1, import adds for device 'Shell' feature (specifically: c8y_SupportedOperations fragment). 'Shell' value is not mandatory for each row, please see below example of http request|
 
-Section two is the rest of csv file. Section two contains devices information, order and quantity of data must be the same like order and quantity of columns.
+Section two is the rest of csv file. Section two contains devices information. Order and quantity of values must be the same like order and quantity of headers.
 
 Separator is automatically obtained from CSV file. Valid separator values are: '\t - tabulation mark', '; - semicolon' and ', - comma'.
 
-CSV file can appear in many forms (regarding to optional tenant column, and occurrence of device information):
-* when user is logged as management tenant, that columns: 'id', 'credentials' and 'tenant' are mandatory, and credentials for device will be created for tenant mentioned in 'tenant' column,
-* when user is logged on 'not management' tenant i.e. sample_tenant, that columns: 'id' and 'credentials' are mandatory and rest of columns will be omitted, even if fille contains 'tenant' column and credentials for device will be created for tenant from logged user,
-* when user want to add information about device columns named 'type' nad 'name' must appear in csv file,
-* when user want to add information about sim card number columns named 'type', 'name' and 'iccid' must appear in csv file,
-* when user want to change the type of external id columns named 'type', 'name' and 'idtype' must appear in csv file,
-* when user want to add device to group columns named 'type', 'name' and 'path' must appear in csv file,
-* when user want to add shell feature columns named 'type', 'name' and 'shell' must appear in csv file and column 'shell'  must contains value 1.
+CSV file can appear in many forms (regarding to optional tenant column and occurrence of device information):
+* when user is logged as management tenant, then columns: 'id', 'credentials' and 'tenant' are mandatory, and credentials for device will be created for tenant mentioned in 'tenant' column,
+* when user is logged in as 'not management' tenant i.e. sample_tenant, then columns: 'id' and 'credentials' are mandatory (if file contains 'tenant' column, it is ignored and credentials for device will be created for tenant that is logged in),
+* when user wants to add information about device, columns 'type' nad 'name' must appear in csv file,
+* when user wants to add information about sim card number, columns 'type', 'name' and 'iccid' must appear in csv file,
+* when user wants to change the type of external id, columns 'type', 'name' and 'idtype' must appear in csv file,
+* when user wants to add device to group, columns 'type', 'name' and 'path' must appear in csv file,
+* when user wants to add shell feature, columns 'type', 'name' and 'shell' must appear in csv file and column 'shell' must contain value 1.
 
 ### BulkNewDeviceRequest [application/vnd.com.nsn.cumulocity.bulkNewDeviceRequest+json]
 

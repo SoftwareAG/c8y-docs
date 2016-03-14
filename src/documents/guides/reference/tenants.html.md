@@ -16,6 +16,8 @@ The Tenant interface is available consists of parts:
 -   The tenant option resource represents individual option that can be view and modified, accesible by url */tenant/options/{optionCategory}/{optionKey}*
 -   The tenant usage statistics resources return information on the request load and database usage of tenants.
 
+> Note that for all PUT/POST requests accept header should be provided, otherwise an empty response body will be returned.
+
 ## Tenant collection
 
 ### TenantCollection [application/vnd.com.nsn.cumulocity.tenantCollection+json]
@@ -37,10 +39,9 @@ Required role: ROLE\_TENANT\_MANAGEMENT\_READ
 Example Request: Get tenants as sample\_tenant.
 
      
-    GET ...
+    GET /tenant/tenants
     Host: ...
     Authorization: Basic ...
-    Accept: application/vnd.com.nsn.cumulocity.optionCollection+json;ver=...
 
 Example Response :
 
@@ -136,11 +137,11 @@ Required role: ROLE\_TENANT\_MANAGEMENT\_ADMIN
 
 Example request:
 				
-	POST ...
+	POST /tenant/tenants
 	Host: ...
 	Authorization: Basic ...
 	Content-Length: ...
-	Content-Type: application/vnd.com.nsn.cumulocity.tenant	+json;ver...
+	Content-Type: application/vnd.com.nsn.cumulocity.tenant+json;ver...
 	
 	{
 		"id" : "sample_tenant",
@@ -148,9 +149,11 @@ Example request:
 		"domain" : "sample_domain.com",
 		"contactName" : "Mr. Doe",
 		"contactPhone" : "0123-4567829",
+		"adminEmail" : "john.doe@sample_domain.com",
 		"adminName" : "firstAdmin",
 		"adminPass" : "myPassword",
-		"customProperties" : {"referenceId":"1234567890"}
+		"customProperties" : {"referenceId":"1234567890"},
+		"sendPasswordResetEmail": true
 	}
 
 Example Response:
@@ -170,6 +173,7 @@ Example Response:
 		"contactPhone" : "0123-4567829",
 		"status" : "ACTIVE",
 		"adminName" : "firstAdmin",
+		"adminEmail" : "john.doe@sample_domain.com",
 		"customProperties" : {"referenceId":"1234567890"}
 	}
 
@@ -183,13 +187,16 @@ Example Response:
 |Name|Type|Occurs|Description|Visibility|
 |:---|:---|:-----|:----------|:---------|
 |self|URI|0..1|Link to this resource.|Public|
-|id|String|1|Tenant id|Public|
+|id|String: max length="32"|1|Tenant id|Public|
 |status|String|1|Status of tenant, possible values [ACTIVE, SUSPENDED].|Private|
-|adminName|String|1|Administrator user name|Private|
-|domain|String|1|URL of tenants domain.|Public|
-|company|String|1|Tenants company name.|Public|
-|contactName|String|1|Contact person name.|Public|
-|contactPhone|String|1|Contact person phone number.|Public|
+|adminName|String: max length = "50"|1|Administrator user name|Private|
+|adminEmail|String|1|Administrator Email|Private|
+|adminPassword|String|1|Administrator Password|Private|
+|sendPasswordResetEmail|boolean|1|Enable password reset|Private|
+|domain|String: max length = "256"|1|URL of tenants domain.|Public|
+|company|String: max length = "256"|1|Tenants company name.|Public|
+|contactName|String: max length = "30"|1|Contact person name.|Public|
+|contactPhone|String: max length= "20"|1|Contact person phone number.|Public|
 |applications|ApplicationReferenceCollection|1|Collection of tenant subscribed, applications.|Private|
 |ownedApplications|ApplicationReferenceCollection|1|Collection of tenant owned, applications.|Public - only applications with availability MARKET|,
 |customProperties|Object|1|Keeps a list of custom properties|optional|
@@ -203,7 +210,7 @@ Required role: ROLE\_TENANT\_MANAGEMENT\_READ
 Example Request: Get single tenant.
 
      
-    GET ...
+    GET /tenant/tenants/{{tenantId}}
     Host: ...
     Authorization: Basic ...
     Accept: application/vnd.com.nsn.cumulocity.tenant+json;ver=...
@@ -259,7 +266,7 @@ Required role: ROLE\_TENANT\_MANAGEMENT\_ADMIN
 
 Example Request :
      
-    PUT ...
+    PUT /tenant/tenants/{{tenantId}}
     Host: ...
     Authorization: Basic ...
     Content-Length: ...
@@ -318,7 +325,7 @@ Required role: ROLE\_TENANT\_MANAGEMENT\_ADMIN
 
 Example request:
 
-	DELETE [URL to the resource]
+	DELETE /tenant/tenants/{{tenantId}}
 	Host: [hostname]
 	Authorization: Basic xxxxxxxxxxxxxxxxxxx
     
@@ -349,7 +356,7 @@ Required role: ROLE\_TENANT\_MANAGEMENT\_READ
 Example Request: Get Application reference collection.
 
      
-    GET ...
+    GET /tenant/tenants/{{tenantId}}/applications
     Host: ...
     Authorization: Basic ...
     Accept: application/vnd.com.nsn.cumulocity.applicationReferenceCollection+json;ver=...
@@ -408,7 +415,7 @@ Required role: ROLE\_TENANT\_MANAGEMENT\_READ
 Example Request: Get options.
 
      
-    GET ...
+    GET /tenant/tenants/{{tenantId}}/applications/{{applicationId}}
     Host: ...
     Authorization: Basic ...
     Accept: application/vnd.com.nsn.cumulocity.applicationReference+json;ver=...
@@ -457,7 +464,7 @@ Required role: ROLE\_OPTION\_MANAGEMENT\_READ
 Example Request: Get options.
 
      
-    GET ...
+    GET /tenant/options
     Host: ...
     Authorization: Basic ...
     Accept: application/vnd.com.nsn.cumulocity.optionCollection+json;ver=...
@@ -489,6 +496,8 @@ Example Response :
 
 ### POST a representation of a Option.
 
+Request body: Option
+
 Response body: Option
   
 Required role: ROLE\_OPTION\_MANAGEMENT\_ADMIN
@@ -496,7 +505,7 @@ Required role: ROLE\_OPTION\_MANAGEMENT\_ADMIN
 Example Request: Post option.
 
      
-    POST ...
+    POST /tenant/options
     Host: ...
     Authorization: Basic ...
     Content-Type: application/vnd.com.nsn.cumulocity.option+json;ver=...
@@ -547,7 +556,7 @@ Required role: ROLE\_OPTION\_MANAGEMENT\_READ
  Example Request: Get single option.
 
      
-    GET ...
+    GET /tenant/options/{{category}}/{{key}}
     Host: ...
     Authorization: Basic ...
     Accept: application/vnd.com.nsn.cumulocity.option+json;ver=...
@@ -566,13 +575,15 @@ Example Response :
 
 ### PUT - Update a Option.
 
+Request body: Option
+
 Response body: Option
   
 Required role: ROLE\_OPTION\_MANAGEMENT\_ADMIN
  Example Request: Update access.control.allow.origin option.
 
      
-    PUT ...
+    PUT /tenant/options/{{category}}/{{key}}
     Host: ...
     Authorization: Basic ...
     Content-Type: application/vnd.com.nsn.cumulocity.option+json;ver=...
@@ -604,7 +615,7 @@ Required role: ROLE\_OPTION\_MANAGEMENT\_READ
 Example Request: Get system options.
 
      
-    GET .../tenant/system/options
+    GET /tenant/system/options
     Host: ...
     Authorization: Basic ...
     Accept: application/vnd.com.nsn.cumulocity.optionCollection+json;ver=...
@@ -625,7 +636,7 @@ Example Response :
       ],
     }
 
-It is also possible to query a single system option passing in url path category and id:
+It is also poss	ible to query a single system option passing in url path category and id:
 
 Response body: Option
   
@@ -633,7 +644,7 @@ Required role: ROLE\_OPTION\_MANAGEMENT\_READ
  Example Request: Get single option.
 
      
-    GET .../tenant/system/option/{category}/{id}
+    GET /tenant/system/option/{category}/{id}
     Host: ...
     Authorization: Basic ...
     Accept: application/vnd.com.nsn.cumulocity.option+json;ver=...
@@ -660,7 +671,11 @@ Example Response :
 |requestCount|Number|1|Number of requests that were issued against the tenant.|
 |storageSize|Number|1|Database storage in use by the tenant, in bytes.|
 
-"requestCount" contains the sum of all issued requests during the querying period. "deviceCount" and "storageSize" contain the last reported value during the querying period. Note that the latter values do not change in real-time but are updated every six hours. Note also that "storageSize" is affected by your retention rules. It is also affected by the regularly running database optimization functions running in Cumulocity. If the size decreases, it does not necessarily mean that data was deleted.
+"requestCount" contains the sum of all issued requests during the querying period. "deviceCount" and "storageSize" contain the last reported value during the querying period. Please note:
+
+ * "deviceCount" and "storageSize" are updated every six hours.
+ * "storageSize" is affected by your retention rules. It is also affected by the regularly running database optimization functions running in Cumulocity. If the size decreases, it does not necessarily mean that data was deleted.
+ * Days are counted according to server timezone.
 
 ### TenantUsageStatisticsCollection [application/vnd.com.nsn.cumulocity.tenantUsageStatisticsCollection+json]
 

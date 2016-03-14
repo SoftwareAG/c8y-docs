@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg width="815px" height="544px" viewBox="0 0 815 544" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:sketch="http://www.bohemiancoding.com/sketch/ns">
+    <!-- Generator: Sketch 3.3.3 (12072) - http://www.bohemiancoding.com/sketch -->
+    <!-- {{millSpeed}} -->
+    <style type="text/css">
+      #fan {
+        transform-origin: 119px 146px;
+        animation-iteration-count: infinite;
+        animation-timing-function: linear;
+      }
+
+      #fan.running {
+         animation-name: spin;
+      }
+
+      #fan.slow {
+        animation-duration: 3000ms;
+      }
+
+      #fan.medium {
+        animation-duration: 1000ms;
+      }
+
+      #fan.fast {
+        animation-duration: 500ms;
+      }
+
+      .text {
+       font-size: 24px;
+      }
+
+      @keyframes spin {
+        from {
+            transform: rotate(0deg);
+        } to {
+            transform: rotate(360deg);
+        }
+      }
+    </style>
+    <title>scada</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" sketch:type="MSPage">
+        <g id="pipes" sketch:type="MSLayerGroup" transform="translate(115.000000, 439.000000)" stroke="#4990E2" stroke-width="10" stroke-linecap="square">
+            <path d="M5.16727467,99 L600.999977,99" id="Line" sketch:type="MSShapeGroup"></path>
+            <path d="M240,92.5 L240,0.304555416" id="pipe-bat1" sketch:type="MSShapeGroup"></path>
+            <path d="M5,92.5 L5,0.304555416" id="pipe-mill" sketch:type="MSShapeGroup"></path>
+            <path d="M400,93.5 L400,1.30455542" id="pipe-bat2" sketch:type="MSShapeGroup"></path>
+            <path d="M601,97.5 L601,5.30455542" id="pipe-bat3" sketch:type="MSShapeGroup"></path>
+        </g>
+        <g id="Mill" sketch:type="MSLayerGroup" transform="translate(1.000000, 0.000000)">
+            <path d="M132.824161,428.777703 L123.536094,225.726601 L113.435063,225.726601 L105.510388,428.777703 L132.824161,428.777703 Z" id="Shape" fill="#4990E2" sketch:type="MSShapeGroup"></path>
+            <g id="fan" transform="translate(0.000000, 49.000000)" fill="#4990E2" sketch:type="MSShapeGroup"  ng-class="{running: millSpeed, slow: millSpeed < 33, medium: millSpeed >= 33 && millSpeed < 66, fast: millSpeed >= 66 }">
+                <path d="M125.017386,117.900839 C129.893793,117.900839 133.853046,112.719709 133.853046,107.846817 L125.214115,10.6698119 C125.214115,5.79691967 125.181898,0 120.304806,0 L119.124433,0 C114.248026,0 113.821666,5.79691967 113.821666,10.6698119 L105.576193,107.846817 C105.576193,112.719709 109.528591,117.900839 114.412538,117.900839 L125.017386,117.900839 L125.017386,117.900839 Z" id="Shape"></path>
+                <path d="M229.579089,220.566526 C233.688459,223.192709 238.591599,226.284674 241.219677,222.178266 L241.855789,221.189166 C244.484552,217.082072 239.824067,213.604469 235.707157,210.98445 L158.183669,151.73915 C154.074299,149.112967 147.571967,149.65615 144.949373,153.769408 L139.246979,162.697335 C136.618902,166.804429 138.860377,172.921915 142.976601,175.548784 L229.579089,220.566526 L229.579089,220.566526 Z" id="Shape"></path>
+                <path d="M13.5016282,220.566526 L100.1096,175.535084 C104.219655,172.908216 106.461815,166.790729 103.833053,162.683636 L98.130659,153.755708 C95.5025815,149.648615 89.0064181,149.104747 84.8970481,151.725451 L7.37356016,210.976915 C3.26350469,213.603784 -1.39698016,217.075223 1.22492814,221.181631 L1.8610408,222.170731 C4.48843283,226.283989 9.39157272,223.192709 13.5016282,220.566526 L13.5016282,220.566526 Z" id="Shape"></path>
+                <ellipse id="Oval" cx="119.170359" cy="145.738794" rx="13.5879969" ry="13.5782038"></ellipse>
+            </g>
+            <text class="text" text-anchor="middle" x="120" y="33.1074219" width="200" id="Name" sketch:type="MSTextLayer" text-anchor="middle" font-size="36" font-weight="normal" sketch:alignment="middle" fill="#000000">
+                {{millName}}
+            </text>
+        </g>
+        <g id="battery3" sketch:type="MSLayerGroup" transform="translate(611.000000, 60.000000)">
+            <text class="text" text-anchor="middle" x="100" y="33.596733" width="200" id="Name-Copy-3" sketch:type="MSTextLayer" text-anchor="middle" font-size="36" font-weight="normal" sketch:alignment="middle" fill="#000000">
+                {{batteryName}}
+            </text>
+            <path d="M181.675271,79.0736342 L152.667836,79.0736342 L152.667836,64.5368171 C152.667836,56.5056532 146.177755,50 138.164877,50 L65.64629,50 C57.6334126,50 51.1425725,56.5056532 51.1425725,64.5368171 L51.1425725,79.0736342 L22.1351375,79.0736342 C10.1400892,79.0736342 0.379182156,88.8568171 0.379182156,100.87924 L0.379182156,348.005131 C0.379182156,360.026793 10.1400892,369.810736 22.1351375,369.810736 L181.67603,369.810736 C193.67032,369.810736 203.431985,360.027553 203.431985,348.005131 L203.431985,100.87924 C203.431227,88.8568171 193.67032,79.0736342 181.675271,79.0736342 L181.675271,79.0736342 Z M188.927509,348.004371 C188.927509,352.016152 185.678677,355.272399 181.67603,355.272399 L22.1351375,355.272399 C18.1324907,355.272399 14.883658,352.016152 14.883658,348.004371 L14.883658,100.87924 C14.883658,96.8674584 18.1324907,93.6112114 22.1351375,93.6112114 L65.64629,93.6112114 L138.164877,93.6112114 L181.67603,93.6112114 C185.678677,93.6112114 188.927509,96.8674584 188.927509,100.87924 L188.927509,348.004371 L188.927509,348.004371 Z" id="Shape" fill="#F6A623" sketch:type="MSShapeGroup"></path>
+            <rect ng-show="batteryValue > 80" id="level3" fill="#F6A623" sketch:type="MSShapeGroup" x="29.3866171" y="108.147268" width="145.037175" height="72.6840855"></rect>
+            <rect ng-show="batteryValue > 50" id="level2" fill="#F6A623" sketch:type="MSShapeGroup" x="29.3866171" y="188.100143" width="145.037175" height="72.6840855"></rect>
+            <rect ng-show="batteryValue > 20" id="level1" fill="#F6A623" sketch:type="MSShapeGroup" x="29.3866171" y="269.052257" width="145.037175" height="72.6840855"></rect>
+            <text class="text" xt-anchor="middle" x="100" y="236.982125" width="200" id="Value" sketch:type="MSTextLayer" text-anchor="middle" font-size="36" font-weight="normal" sketch:alignment="middle" fill="#000000">
+                {{batteryValue}}
+            </text>
+        </g>
+        <g id="Battery2" sketch:type="MSLayerGroup" transform="translate(452.000000, 187.000000)">
+            <path d="M111.320632,64.807601 L93.5464684,64.807601 L93.5464684,55.9038005 C93.5464684,50.9847126 89.5697026,47 84.6598513,47 L40.2244424,47 C35.3145911,47 31.3373606,50.9847126 31.3373606,55.9038005 L31.3373606,64.807601 L13.563197,64.807601 C6.21328996,64.807601 0.232342007,70.7998005 0.232342007,78.1635344 L0.232342007,229.528143 C0.232342007,236.891411 6.21328996,242.884076 13.563197,242.884076 L111.321097,242.884076 C118.670539,242.884076 124.651952,236.891876 124.651952,229.528143 L124.651952,78.1635344 C124.651487,70.7998005 118.670539,64.807601 111.320632,64.807601 L111.320632,64.807601 Z M115.764405,229.527677 C115.764405,231.984893 113.773699,233.979344 111.321097,233.979344 L13.563197,233.979344 C11.1105948,233.979344 9.11988848,231.984893 9.11988848,229.527677 L9.11988848,78.1635344 C9.11988848,75.7063183 11.1105948,73.711867 13.563197,73.711867 L40.2244424,73.711867 L84.6598513,73.711867 L111.321097,73.711867 C113.773699,73.711867 115.764405,75.7063183 115.764405,78.1635344 L115.764405,229.527677 L115.764405,229.527677 Z" id="Shape" fill="#F6A623" sketch:type="MSShapeGroup"></path>
+            <rect ng-show="batteryValue > 80" id="level3" fill="#F6A623" sketch:type="MSShapeGroup" x="18.0065056" y="82.6152019" width="88.8708178" height="44.5190024"></rect>
+            <rect ng-show="batteryValue > 50" id="level2" fill="#F6A623" sketch:type="MSShapeGroup" x="18.0065056" y="131.586337" width="88.8708178" height="44.5190024"></rect>
+            <rect ng-show="batteryValue > 20" id="level1" fill="#F6A623" sketch:type="MSShapeGroup" x="18.0065056" y="180.557007" width="88.8708178" height="44.5190024"></rect>
+            <text class="text" text-anchor="middle" x="60" y="33.596733" width="200" id="Name" sketch:type="MSTextLayer" text-anchor="middle" font-size="36" font-weight="normal" sketch:alignment="middle" fill="#000000">
+                {{batteryName}}
+            </text>
+            <text class="text" ext-anchor="middle" x="60" y="171.961073" width="200" id="Value" sketch:type="MSTextLayer" text-anchor="middle" font-size="36" font-weight="normal" sketch:alignment="middle" fill="#000000">
+                {{batteryValue}}
+            </text>
+        </g>
+        <g id="Group" sketch:type="MSLayerGroup" transform="translate(293.000000, 187.000000)">
+            <path d="M111.320632,65.807601 L93.5464684,65.807601 L93.5464684,56.9038005 C93.5464684,51.9847126 89.5697026,48 84.6598513,48 L40.2244424,48 C35.3145911,48 31.3373606,51.9847126 31.3373606,56.9038005 L31.3373606,65.807601 L13.563197,65.807601 C6.21328996,65.807601 0.232342007,71.7998005 0.232342007,79.1635344 L0.232342007,230.528143 C0.232342007,237.891411 6.21328996,243.884076 13.563197,243.884076 L111.321097,243.884076 C118.670539,243.884076 124.651952,237.891876 124.651952,230.528143 L124.651952,79.1635344 C124.651487,71.7998005 118.670539,65.807601 111.320632,65.807601 L111.320632,65.807601 Z M115.764405,230.527677 C115.764405,232.984893 113.773699,234.979344 111.321097,234.979344 L13.563197,234.979344 C11.1105948,234.979344 9.11988848,232.984893 9.11988848,230.527677 L9.11988848,79.1635344 C9.11988848,76.7063183 11.1105948,74.711867 13.563197,74.711867 L40.2244424,74.711867 L84.6598513,74.711867 L111.321097,74.711867 C113.773699,74.711867 115.764405,76.7063183 115.764405,79.1635344 L115.764405,230.527677 L115.764405,230.527677 Z" id="Shape" fill="#F6A623" sketch:type="MSShapeGroup"></path>
+
+            <rect ng-show="batteryValue > 80" id="Rectangle-path" fill="#F6A623" sketch:type="MSShapeGroup" x="18.0065056" y="83.6152019" width="88.8708178" height="44.5190024"></rect>
+            <rect ng-show="batteryValue > 50" id="Rectangle-path" fill="#F6A623" sketch:type="MSShapeGroup" x="18.0065056" y="132.586337" width="88.8708178" height="44.5190024"></rect>
+            <rect ng-show="batteryValue > 20" id="Rectangle-path" fill="#F6A623" sketch:type="MSShapeGroup" x="18.0065056" y="181.557007" width="88.8708178" height="44.5190024"></rect>
+            <text class="text" text-anchor="middle" x="60" y="33.596733" width="200" id="Name-Copy" sketch:type="MSTextLayer" text-anchor="middle" font-size="36" font-weight="normal" sketch:alignment="middle" fill="#000000">
+                {{batteryName}}
+            </text>
+            <text class="text" text-anchor="middle" x="60" y="175.04946" width="200" id="Value-Copy" sketch:type="MSTextLayer" text-anchor="middle" font-size="36" font-weight="normal" sketch:alignment="middle" fill="#000000">
+                {{batteryValue}}
+            </text>
+        </g>
+    </g>
+</svg>

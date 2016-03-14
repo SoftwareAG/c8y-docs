@@ -21,9 +21,9 @@ The Device Management application provides you with an overview of your connecte
 
 The following sections will walk you through the various menus of the application.
 
-## <a name="device-registration"></a>Connecting devices
+## <a name="device-registration"></a>Connecting devices manually
 
-This section describes the general procedure for connecting devices to your Cumulocity account. Some steps in the procedure may be specific to the type of device that you are using. Locate your device type in the "Device Guides" to find more information, or consult the manual of your device.
+This section describes the general procedure for manually connecting devices to your Cumulocity account. Some steps in the procedure may be specific to the type of device that you are using. Locate your device type in the "Device Guides" to find more information, or consult the manual of your device.
 
 To connect devices to your Cumulocity account, click "Device registration" in the navigator and follow these steps:
 
@@ -35,6 +35,29 @@ To connect devices to your Cumulocity account, click "Device registration" in th
 You are now ready to manage the device.
 
 ![Device registration](/guides/users-guide/registration.png)
+
+## <a name="creds-upload"></a>Bulk-registering devices
+
+For connecting larger amounts of devices, you can upload a CSV file with the IDs and credentials. When uploading the CSV file, Cumulocity creates user accounts for each device listed in the file. Devices can then connect securely to Cumulocity without the need to do a manual "Device Registration" step as described in the previous section.
+
+The CSV file needs to have a header row followed by the actual data. The header row needs to contain at least one column marked "ID" and one column marked "Credentials". Here is an example of a valid CSV format:
+
+	ID;Credentials
+	006064ce800a;LF2PWJoLG1Fz
+	006064ce8077;OowoGKAbiNJs
+
+Use the "Upload" button to upload the CSV file, as shown in the screenshot below. After the data is imported, you will get feedback on the number of devices that were pre-registered as well as on any potential errors that may have occurred.
+
+![Bulk registration](/guides/users-guide/autoregister.png)
+
+To connect the devices, the devices need to be pre-provisioned with related information. More specifically, each device needs to be configured as follows:
+* Username: The username to access Cumulocity must have the form &lt;tenant&gt;/device_&lt;id&gt;, where &lt;tenant&gt; refers to the tenant into which the CSV file is imported, and  &lt;id&gt; refers to the respective value in the CSV file.
+* Password: The password to access Cumulocity, same as the value "Credentials" in the CSV file.
+* Device in managed object representation. Fields: "Type", "Name", "Iccid", "Idtype", "Path", "Shell" in the CSV file. 
+
+If you own a Cumulocity Dedicated or Private Edition, you can also register devices across multiple tenants by adding a "tenant" column to the spreadsheet and importing the CSV file from the "management" tenant.
+
+For more information on the file format and accepted CSV variants, please see [Bulk device credentials](/guides/reference/device-credentials/#creds-upload).
 
 ## <a name="viewing-devices"></a>Viewing the connected devices
 
@@ -56,11 +79,11 @@ Please note that deleting a device means to remove the device from Cumulocity's 
 
 ![Device list](/guides/users-guide/devicelist.png)
 
-In case a list contains more than 1.000 entries, only the first 1.000 entries are shown. Click the "Load more" link at the bottom to load the next 1.000 enties.
+In case a list contains more than 1.000 entries, only the first 1.000 entries are shown. Click the "Load more" link at the bottom to load the next 1.000 entries.
 
 ## <a name="searching-devices"></a>Searching for devices
 
-Cumulocity includes a full-text search for devices. By entering a search term into the "search ..." text field, you can find all devices that contain that term. The image below shows an example of searching for devices that contain the term "Ublox C027". Note that you can search for any textual property of a device. Prefixes are also supported. For example, a search for "Ublox" would also return the devices containing "Ublox C027".
+Cumulocity includes a full-text search for devices. By entering a search term into the "search ..." text field, you can find all devices that contain that term. The image below shows an example of searching for devices that contain the term "Ublox C027". Note that you can search for any textual property of a device. Prefixes are also supported. For example, a search for "Ublox" would also return the devices containing "Ublox C027". Infixes are currently not supported. For example, searching for "C027" would not return the "Ublox C027".
 
 ![Full-text search](/guides/users-guide/searching.png)
 
@@ -81,16 +104,16 @@ You can add devices to a group in two ways:
 
 To create a subgroup, just click "Add Group" when viewing a group.
 
-To edit a group, click the "Edit" button next to the group. This allows you to edit the name of the group and assign user permissions for the group. For more information on permissions, see the [Administration](/guides/users-guide/administration) guide.
+To edit a group, click on the group's name. This allows you to edit the name of the group and assign user permissions for the group. For more information on permissions, see the [Administration](/guides/users-guide/administration) guide.
 
 
 ## <a name="device-details"></a>Viewing the device details
 
 By clicking on a device in a device list, detailed information on the device is displayed. What is actually shown depends on the device and your configuration of the user interface. For example, if a device has not sent any measurements yet, there will be no "Measurement" tab. Similar, if a device permits certain operations, these operations will be visible in the "Control" tab.
 
-At the top of the device details display, the name of the device is shown. Below the name, a list of breadcrumbs are displayed. If the device is part of an asset hierarchy (such as a group), you can use the breadcrumbs to easily navigate up that hierarchy. Since devices can be contained in multiple hierarchies, several rows of breadcrumbs may be shown.
+At the top of the device details display, the name of the device is shown. Below the name, a list of breadcrumbs is displayed. If the device is part of an asset hierarchy (such as a group), you can use the breadcrumbs to easily navigate up that hierarchy. Since devices can be contained in multiple hierarchies, several rows of breadcrumbs may be shown.
 
-To the right of the name, a cog wheel is shown. Clicking on the cog wheel displays a drop-down menu with further actions that you can carry out, such as creating a dashboard for the device. 
+To the right of the name, a cogwheel is shown. Clicking on the cogwheel displays a drop-down menu with further actions that you can carry out, such as creating a dashboard for the device. 
 
 ![Device details](/guides/users-guide/devicedetails.png)
 
@@ -108,6 +131,7 @@ Device details are divided over a number of tabs. The standard tabs that may be 
 * [Permissions](#permissions)
 * [Tracking](#tracking)
 * [Service monitoring](#service-monitoring)
+* [Logs](#logs)
 * [Identity](#identity)
 
 ### <a name="info"></a>Info
@@ -128,7 +152,7 @@ The "Info" tab displays generic information for a device (from top left to botto
 
 While there are many other fields on this tab editable as well, it only makes sense to edit them if the device does not by itself provide this information. If the device provides this information, your edits will be overwritten by the information from the device. To save your edits, click on the "Save changes" button at the bottom of the screen.
 
-> Note that "Last communication" and "Last updated" are two entirely different time stamps. "Last communication" indicates when a device has last sent data. "Last updated" indicates when the inventory entry of the device was last updated, regardless whether that was done by the device itself, through the web user interface or through another application.
+> Note that "Last communication" and "Last updated" are two entirely different time stamps. "Last communication" indicates when a device has last sent data. "Last updated" indicates when the inventory entry of the device was last updated. This update may have originated from the device, from the web user interface or from another application.
 
 ### <a name="child-devices"></a>Child devices
 
@@ -140,11 +164,11 @@ This tab provides a default visualization of numeric data provided by the device
 
 ![Measurements](/guides/users-guide/measurements.png)
 
-If a chart contains graphs with different units, one Y axis is rendered per unit. For example, motion measurements consist of three parameters with unit "meter per square second", so only one axis is rendered. Modem statistics consist of signal strength in decibel milliwatts and bit error rate in percent, so one axis is rendered for each graph.
+If a chart contains graphs with different units, one Y-axis is rendered per unit. For example, motion measurements consist of three parameters with unit "meter per square second"; so only one axis is rendered. Modem statistics consist of signal strength in decibel milliwatts and bit error rate in percent, so one axis is rendered for each graph.
 
 To see detailed information about the measured values, hover your mouse cursor over the chart. A tooltip will be displayed with detailed information on the measurement most close to your cursor. (The tooltip will "snap" to the closest measurement.)
 
-By default, charts show the raw data of the last hour. You can change the time range on the X axis by clicking on the drop-down menu reading "Last hour". 
+By default, charts show the raw data of the last hour. You can change the time range on the X-axis by clicking on the drop-down menu reading "Last hour". 
 
 If you increase the time range, the drop-down menu reading "No aggregation" will switch to "hourly" or "daily". This means that the chart now shows ranges instead of individual raw data points. For "hourly", the chart will show a range of the minimum and maximum value measured in an hour. For "daily", the chart will show the minimum and maximum value measured over the day. Likewise, the tooltips will now show ranges of values instead of individual values. 
 
@@ -180,7 +204,7 @@ This tab enables low-level troubleshooting of a device, see "[Troubleshooting de
 
 ### <a name="location"></a>Location
 
-The "Location" tab by default shows the location as reported by the device on a map. For devices that do not report a location, you can also manually set the location. Click on the cog wheel on the top right and select "Add location", then place the "pin" on the correct place of the displayed map.
+The "Location" tab by default shows the location as reported by the device on a map. For devices that do not report a location, you can also manually set the location. Simply place the "pin" on the correct place of the displayed map.
 
 ### <a name="shell"></a>Shell
 
@@ -219,6 +243,22 @@ Depending on the type of device and its integration into Cumulocity, you can als
 
 In addition to connection monitoring, Cumulocity features a separate service monitoring for machines. See "[Service monitoring](#monitoring-services)" for more information.
 
+### <a name="logs"></a>Logs
+
+Using the "Logs" tab, you can request log information from devices. Log information can be filtered according to date ranges, type of log, keywords and maximum number of lines to transfer. 
+
+To request a log from a device, 
+
+- Select the date and time range.
+- Choose the type of log. The supported logs are usually device-specific.
+- Enter an optional text to filter the log with. For example, if you enter "Users", only lines with the word "Users" in them will appear in the returned log information.
+- Select the maximum number of lines to display (counted from the end).
+- Click "Request log".
+
+![Request log](/guides/users-guide/requestlog.png)
+
+Requesting a log from a device may take some time. After the log has been transferred from the device to Cumulocity, it will appear in the list below the selection widgets. The entry in the list includes the log time range that was queried. Click on the entry in the list to show the log on the page. Hover over the entry to access the download and delete symbols. Using the download symbol, you can download the log excerpt to your local PC. Using the delete symbol, you can delete the log file.
+
 ### <a name="identity"></a>Identity
 
 Finally, Cumulocity can associate devices and assets with multiple external identities. For example, devices often can be identified by the IMEI of their modem, by a microcontroller serial number as well as by an asset tag. This tab lists all the identities recorded for a particular device.
@@ -229,17 +269,21 @@ This is, for example, useful when you have broken hardware and need to replace t
 
 Cumulocity can automatically monitor the connection to your devices. If you want the connection to a device to be monitored, visit the "Info" tab of the device. On that tab, check the "Required Interval" field at the top. This field defines how often you expect to hear from the device. For example, if you set "Required interval" to 60, you expect that the device communicates at least once in an hour with Cumulocity. The interval is either set by the device itself, based on the device's knowledge how often it will try to send data, or it is set manually by you.
 
-The various connection states are illustrated in the image below. "Maintenance mode" is a special connection state indicating that the device is currently being maintained and should not be monitored. While a device is being maintained, no alarms for that device are raised. You can enable maintenance mode by setting the required interval to negative value.
+The various connection states are illustrated in the image below. The top arrow represents traffic from the device to Cumulocity. It can be green, red or grey. Green means that data was sent within the required interval. Red means that it was not sent within the required interval. Grey means that no required interval is configured.
+
+The bottom arrow indicates the state of the push connection that is used to send commands from Cumulocity to the device. It can green or grey. Green means that the connection is established. Grey means that the connection is not established. In case of a grey arrow, either the device does not support push connections, or there is an error.
+
+"Maintenance mode" is a special connection state indicating that the device is currently being maintained and should not be monitored. While a device is being maintained, no alarms for that device are raised. You can enable maintenance mode by setting the required interval to negative value.
 
 ![Connection states](/guides/users-guide/connectionmonitoring.png)
 
-> Note that connection monitoring is not realtime. Depending on configuration, it may take up to ten minutes until the connection status of a device is updated. This is done to reduce the data traffic that is generated by so-called "keepalive" messages to a minimum.
+> Note that connection monitoring is not real-time. For example, the state of the connection will not change immediately when you switch off a device. Depending on your network, it may take about 20 minutes until a broken connection is discovered, since the network will retry sending data for a significant amount of time.
 
-When a device is detected to be offline, an unavailabilty alarm is created for the device reading "No communication with device since &lt;time&gt;". 
+When a device is detected to be offline (stops sending data within required interval and top arrow changes to red color), an unavailabilty alarm is created for the device reading "No communication with device since &lt;time&gt;". 
 
 ## <a name="monitoring-services"></a>Service monitoring
 
-Cumulocity distinguishes between connection monitoring and service monitoring. Connection monitoring merely indicates that the device is communicating with Cumulocity, whether it fulfils its service or not. 
+Cumulocity distinguishes between connection monitoring and service monitoring. Connection monitoring merely indicates that the device is communicating with Cumulocity, whether it fulfills its service or not. 
 
 Service monitoring indicates if the device is in service. For example, a vending machine is in service if it is ready to sell goods. A vending machine may be well selling goods using cash money without being connected to Cumulocity -- so from the perspective of the merchant it is in service. Similar, if you switch off the power on a gateway, the devices behind the gateway may well continue to work.
 
@@ -261,7 +305,7 @@ By clicking on "Map" in the navigator, a map of all devices in your account is s
 
 Devices can raise so-called alarms to indicate that there is a problem that requires human intervention. You can view alarms
 
-* By clicking on "Unresolved alarms" in the navigator to see alarms of all devices that have not yet been cleared.
+* By clicking on "Only unresolved" in the "Alarms" tab to see alarms of all devices that have not yet been cleared.
 * By clicking on "Alarms" in the navigator to see the entire alarm history regardless on whether the alarms have been cleared already or not.
 * By clicking on a device and selecting the "Alarms tab" to see the alarms of that particular device. By default, only unresolved alarms are shown, but you can disable the "Only unresolved" checkbox to see all alarms.
 
@@ -269,7 +313,7 @@ The alarm display is split into four sections, separately listing alarms of diff
 
 * **Alarm severity**: The severity of the alarm. Cumulocity's alarm severities are:
  * **Critical**: The device is out of service and should be fixed immediately.
- * **Major**: The device has a problem which should be fixed.
+ * **Major**: The device has a problem that should be fixed.
  * **Minor**: The device has a problem that may be fixed.
  * **Warning**: There is a warning.
 * **Status**: The status of the alarm. An alarm can be:
@@ -306,15 +350,24 @@ The "All" button shows all operations for a device, regardless of whether they h
 
 ## <a name="events-all"></a>Troubleshooting devices
 
-Events are low-level messages sent by devices that are usually used for application-specific processing. For example, a vending device sends its realtime sales in the form of events. If you need to troubleshoot a device at a more detailed level, visit the "Events" tab. Clicking on indiviudal events will reveal more information on the data contained in the event. Similar, you can see all events across all devices by selecting "Events" in the navigator.
+Events are low-level messages sent by devices that are usually used for application-specific processing. For example, a vending device sends its real-time sales in the form of events. If you need to troubleshoot a device at a more detailed level, visit the "Events" tab. Clicking on individual events will reveal more information on the data contained in the event. Similar, you can see all events across all devices by selecting "Events" in the navigator.
 
-Since devices may sent larger amounts of event data, you can filter the data shown here by date. You can also click the "realtime" checkbox to see events coming in from the devices in realtime. 
+Since devices may send larger amounts of event data, you can filter the data shown here by date. You can also click the "realtime" checkbox to see events coming in from the devices in real-time. 
 
 ## <a name="software-repo"></a> Managing device firmware and software
 
-Cumulocity provides a central place to collect reference firmware and software for devices in the "Firmware repository" and the "Software repository". To add a new firmware image to the repository, visit the "Firmware repository" and click the "Add firmware" button. Then type the name of the firmware, its version and the URL from where the device can download the firmware. Similar, use the "Software repository" to add reference software packages.
+Cumulocity provides a central place to collect reference firmware and software for devices in the "Firmware repository" and the "Software repository".
 
-> Note that you currently have to visit the [Administration application](/guides/users-guide/administration#file-repository) to store binaries in Cumulocity.
+To update firmware or to add software packages on a specific device you have to follow three steps:
+
+1. Upload the firmware or software files in the [Administration application](/guides/users-guide/administration#files). (This step is optional and is not mandatory since the manufacturer might offer the firmware online.) 
+
+2. Select and save the files in the "Firmware repository". To add a new firmware image to the repository, visit the "Firmware repository" and click the "Add firmware" button. Then type the name of the firmware, its version and the URL from where the device can download the firmware. Similar use the "Software repository" to add reference software packages.
+
+3. Install the firmware on a specific device. First navigate to "All Devices", select the desired device, then go to "Software" on Device Details and click on "Install firmware". Similar install software packages, but click on "Install software" instead. (For more info on this step please refer to ["Software"](/guides/users-guide/device-management#software).)
+
+> Note that you currently have to visit the [Administration application](/guides/users-guide/administration#files) to store binaries in Cumulocity.
+
 
 ## <a name="credentials"></a>Managing device credentials
 
@@ -328,5 +381,5 @@ In most cases, you should not need to edit anything. Exceptions are:
 
 ![Bulk provisioning](/guides/users-guide/bulk_provisioning.png)
 
-Device credentials can be also provided from CSV file. File can be uploaded using the button pointed with arrow. More details on the file structure can be found in Reference Guide -> Device credentials.
+Device credentials can be also provided from CSV file. File can be uploaded using the button pointed with arrow. More details on the file structure can be found in under [Bulk-registering devices](#creds-upload) above.
 

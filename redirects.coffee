@@ -33,10 +33,6 @@ redirects =
 	'/guides/developers-guide/smart-agent-for-kontron-m2m.html': '/guides/devices/kontron'
 	'/guides/developers-guide/developing-with-the-smart-agent-for-cinterion': '/guides/devices/cinterion'
 	'/guides/developers-guide/developing-with-the-smart-agent-for-cinterion.html': '/guides/devices/cinterion'
-	'/guides/developers-guide/startwitharduino': '/guides/devices/arduino'
-	'/guides/developers-guide/startwitharduino.html': '/guides/devices/arduino'
-	'/guides/developers-guide/arduinoupgradingcompiler': '/guides/devices/arduino'
-	'/guides/developers-guide/arduinoupgradingcompiler.html': '/guides/devices/arduino'
 	'/guides/reference-guide/rest-implementation': '/guides/reference/rest-implementation'
 	'/guides/reference-guide/inventory': '/guides/reference/inventory'
 	'/guides/reference-guide/events': '/guides/reference/events'
@@ -52,6 +48,9 @@ redirects =
 	'/guides/reference-guide/real-time-statements.html': '/guides/reference/real-time-statements'
 	'/guides/reference-guide/cumulocity-event-language.html': '/guides/reference/cumulocity-event-language'
 	'/guides/reference-guide/real-time-notifications.html': '/guides/reference/real-time-notifications'
+	'/guides/devices/netcomm/netcomm-release': '/guides/devices/netcomm-release'
+	'/guides/devices/netcomm/netcomm-usersguide': '/guides/devices/netcommwireless'	
+	'/guides/devices/netcomm/cloud-fieldbus': '/guides/users-guide/cloud-fieldbus'	
 	# "index.html" redirects
 	'/guides/concepts': '/guides/concepts/introduction'
 	'/guides/users-guide': '/guides/users-guide/overview'
@@ -59,5 +58,6 @@ redirects =
 	'/guides/reference': '/guides/reference/rest-implementation'
 	'/guides/web': '/guides/web/introduction'
 	'/guides/java': '/guides/java/introduction'
+	'/guides/users-guide/cloud-fieldbus': '/guides/cloud-fieldbus'
 
 module.exports = redirects

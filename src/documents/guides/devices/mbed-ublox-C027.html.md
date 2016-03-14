@@ -5,7 +5,7 @@ title: Mbed u-blox C027
 
 ## Introduction
 
-The [u-blox C027](https://mbed.org/platforms/u-blox-C027/ "u-blox C027") is a complete starter kit that allows quick prototyping of a variety of applications for the Internet of Things. The device also comes with a detachable cellular module as well as a GPS/GNSS receiver, which enable straightforward development of applications with location-aware global communication capability.
+The [u-blox C027](https://mbed.org/platforms/u-blox-C027/ "u-blox C027") is a starter kit that allows quick prototyping of a variety of applications for the Internet of Things. The device comes with a cellular module as well as a GPS/GNSS receiver, which enable straightforward development of applications with location-aware communication capability.
 
 ![u-blox C027](/guides/devices/mbed/c027.png)
 
@@ -20,7 +20,7 @@ The Cumulocity mbed agent connects the C027 application board to Cumulocity and 
 * Full auto-registration using Cumulocity's bootstrap and device registration.
 * Collection and storage of temperature, GPS, accelerometer and analog sensor readings.
 * Control the device LED's and LCD display remotely from Cumulocity.
-* Connection status monitoring using the LCD display of the application shield.
+* Status monitoring using the LCD display of the application shield.
 
 ## Prerequisites
 

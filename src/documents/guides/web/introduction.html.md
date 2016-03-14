@@ -432,8 +432,6 @@ Previously, we only set up a dummy view for device contacts. In this step, we wi
 	}
 
 
->	UNCLEAR: This load function does not load anything. I assume that the actual loading is done by device detail.
-
 * Add a "load" function to "deviceContact.js" as shown below. The function gets the details of the currently displayed device ("$routeParams.deviceId") and adds the device's "id" and "c8y_Contact" fragment to the local scope "$scope".
 
 

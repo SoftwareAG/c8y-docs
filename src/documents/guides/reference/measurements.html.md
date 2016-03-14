@@ -9,6 +9,8 @@ The measurements interface consists of three parts:
 -   The *measurement collection* resource retrieves measurements and enables creating new measurements.
 -   The *measurement* resource represents individual measurements that can be queried and deleted.
 
+> Note that for all PUT/POST requests accept header should be provided, otherwise an empty response body will be returned.
+
 ## Measurement API
 
 ### MeasurementAPI [application/vnd.com.nsn.cumulocity.measurementApi+json
@@ -37,6 +39,12 @@ The measurements interface consists of three parts:
 
 Response body: application/vnd.com.nsn.cumulocity.measurementApi+json
  Require role: ROLE\_MEASUREMENT\_READ
+
+Example request:
+
+    GET /measurement
+    Host: ...
+    Authorization: Basic ...
 
 Example response:
 
@@ -75,14 +83,15 @@ Example response:
 |prev|URI|0..1|Link to a potential previous page of measurements.|
 |next|URI|0..1|Link to a potential next page of measurements.|
 
-### GET a measurement collection
+### GET a collection of measurements
 
 Response body: MeasurementCollection
   
 Required role: ROLE\_MEASUREMENT\_READ
 
 Example request: Retrieve energy readings.
-
+	
+     GET /measurement/measurements
      Host: ...
      Authorization: Basic ...
      Accept: application/vnd.com.nsn.cumulocity.measurementCollection+json;ver=...
@@ -148,7 +157,7 @@ Required role: ROLE\_MEASUREMENT\_READ
 
 Example request: retrieve all series.
 
-     GET: /measurement/measurements/series...
+     GET /measurement/measurements/series...
      Authorization: Basic ...
      Accept: application/json
 
@@ -202,13 +211,13 @@ Each value in values object is a date taken from a measurement and inside that d
 
 Request body: Measurement
 
-Response body: Measurement (when accept header is not provided, empty response body is returned)
+Response body: Measurement
   
 Required role: ROLE\_MEASUREMENT\_ADMIN or owner of source object
 
 Example Request:
 
-    POST ...
+    POST /measurement/measurements
     Host: ...
     Authorization: Basic ...
     Content-Length: ...
@@ -282,6 +291,12 @@ Response body: Measurement
   
 Required role: ROLE\_MEASUREMENT\_READ
 
+Example request:
+
+    GET /measurement/measurements/{{measurementId}}
+	Host: ...
+	Authorization: Basic ...
+
 Example response:
 
     Content-Type: application/vnd.com.nsn.cumulocity.measurement+json;ver=...
@@ -306,13 +321,14 @@ Example response:
 ### DELETE a Measurement
 
 Request Body: N/A.
- Response Message Body: N/A.
+ 
+Response Message Body: N/A.
   
 Required role: ROLE\_MEASUREMENT\_ADMIN or owner of source object
 
 Example Request: Delete a measurement
 
-    DELETE [URL to the resource]
+    DELETE /measurement/measurements/{{measurementID}}
      Host: [hostname]
      Authorization: Basic xxxxxxxxxxxxxxxxxxx
 

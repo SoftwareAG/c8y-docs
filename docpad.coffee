@@ -12,7 +12,8 @@ docpadConfig = {
 			{ title: 'REST Developer\'s Guide', folder: 'guides/rest', slug: 'rest-developer', icon: 'glyphicon-cog', description: '' },
 			{ title: 'Java Developer\'s Guide', folder: 'guides/java', slug: 'java-developer', icon: 'glyphicon-cog', description: '' },
 			{ title: 'Web Developer\'s Guide', folder: 'guides/web', slug: 'web-developer', icon: 'glyphicon-cog', description: '' },
-			{ title: 'Reference Guide', folder: 'guides/reference' , slug: 'reference-guide', icon : 'glyphicon-book', description: 'The reference guide contains the detailed technical specifications of the programming interfaces of Cumulocity as reference for software developers.'}
+			{ title: 'Reference Guide', folder: 'guides/reference' , slug: 'reference-guide', icon : 'glyphicon-book', description: 'The reference guide contains the detailed technical specifications of the programming interfaces of Cumulocity as reference for software developers.'},
+			{ title: 'Cumulocity Event Language', folder: 'guides/event-language' , slug: 'event-language', icon : 'glyphicon-book', description: 'TBD'}
 		]
   }
 	plugins:

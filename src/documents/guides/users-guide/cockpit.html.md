@@ -950,7 +950,7 @@ _Note_: Range values defined in the source object have a higher priority than th
 
 When the measurement value enters or leaves the RED range, a CRITICAL alarm is generated or cleared, respectively.
 
-There is also device configuration which can influence the alarm severity. The severity of alarm is determined by:
+The severity of alarm is determined by:
 
 * If measurement value goes to RED range then severity is CRITICAL
 

@@ -1098,15 +1098,14 @@ The rule uses the following parameters:
 * Consumption Series: Name of the measurement series that should be generated.
 
 The unit of the consumption measurement is always per hour (e.g. if the measurements are in "kg" the consumption will be in "kg/h").
-The rule will take the last measurement of the configured duration period and compare it to the one from the period before that.
+The rule will take the last two measurement every configured duration.
 It will then calculate the difference in value and time and calculate the consumption per hour.
 
 Example:
 
 The rule is configured to calculate every 20 minutes. There are the following measurements incoming:
 100 kg at 11:59 and 200 kg at 12:14.
-At 12:20 the rule will trigger the next time and it will take the last measurement of the current period (12:00 to 12:20) which is the 200 kg measurement and the last measurement of the previous period (11:40 to 12:00) which is the 100 kg measurement.
-The value difference is +100 and the the time difference is +15 minutes. The consumption measurement created at 12:20 will therefore be 400 kg/h.
+At 12:20 the rule will trigger the next time and it will take the last two measurements. It will calculate value and time difference. The consumption measurement created at 12:20 will therefore be 400 kg/h.
 If there hasn't been any new measurement created in the last period a measurement with consumption 0 will be created.
 
 ### On missing measurements create alarm

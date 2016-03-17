@@ -149,7 +149,7 @@ Afterwards it is going to wait for the next EventCreated.
 Instead of using streams for triggering a statement there is also the possibility to trigger by timers.
 You can either trigger in a certain interval
 
-    select pattern [timer:interval(5 minutes)];
+    from pattern [timer:interval(5 minutes)];
 
 or as a cron job
 
@@ -161,11 +161,11 @@ or as a cron job
     // daysOfWeek: 	0 (Sunday) - 6 (Saturday)
     // seconds: 0-59
 
-    select pattern [timer:at(*, *, *, *, *)]; // trigger every minute
-    select pattern [timer:at(*, *, *, *, *, *)]; // trigger every second
-    select pattern [timer:at(*/10, *, *, *)]; // trigger every 10 minutes
-    select pattern [timer:at(0, 1, *, *, [1,3,5])]; // trigger at 1am every monday, wednesday and friday
-    select pattern [timer:at(0, */2, (1-7), *, *)]; // trigger every 2 hours on every day in the first week of every month
+    from pattern [timer:at(*, *, *, *, *)]; // trigger every minute
+    from pattern [timer:at(*, *, *, *, *, *)]; // trigger every second
+    from pattern [timer:at(*/10, *, *, *)]; // trigger every 10 minutes
+    from pattern [timer:at(0, 1, *, *, [1,3,5])]; // trigger at 1am every monday, wednesday and friday
+    from pattern [timer:at(0, */2, (1-7), *, *)]; // trigger every 2 hours on every day in the first week of every month
 
 You can also combine timer patterns with other patterns.
 For example you can check if there was an event within a certain time after another event

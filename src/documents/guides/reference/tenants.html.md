@@ -149,7 +149,7 @@ Example request:
 		"domain" : "sample_domain.com",
 		"contactName" : "Mr. Doe",
 		"contactPhone" : "0123-4567829",
-		"adminEmail" : "myEmail@gmail.com",
+		"adminEmail" : "john.doe@sample_domain.com",
 		"adminName" : "firstAdmin",
 		"adminPass" : "myPassword",
 		"customProperties" : {"referenceId":"1234567890"},
@@ -173,7 +173,7 @@ Example Response:
 		"contactPhone" : "0123-4567829",
 		"status" : "ACTIVE",
 		"adminName" : "firstAdmin",
-		"adminEmail" : "myEmail@gmail.com",
+		"adminEmail" : "john.doe@sample_domain.com",
 		"customProperties" : {"referenceId":"1234567890"}
 	}
 

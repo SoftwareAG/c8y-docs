@@ -46,8 +46,8 @@ $ sudo apt-get install libcurl3 liblua5.2-0
 Third, download and install the latest Linux agent:
 
 ```shell
-$ wget http://resources.cumulocity.com/examples/c8ydemo-agent-latest.deb
-$ sudo dpkg -i cumulocity-c8ydemo-agent-latest.deb
+$ wget http://resources.cumulocity.com/examples/c8ydemo-agent-armhf-latest.deb
+$ sudo dpkg -i c8ydemo-agent-armhf-latest.deb
 ```
 
 Finally, reboot the device to automatically start the agent:

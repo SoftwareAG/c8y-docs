@@ -62,10 +62,14 @@ A convenient way to explore REST interface and the Cumulocity database content a
 
 ![Example REST client](/guides/rest/postman.png)
 
-Here is a shortcut to set up Postman for Cumulocity:
+To set up Postman and import sample REST API commands, click the button below:
 
-* [Download](/guides/rest/Cumulocity API.json.postman_collection) the Cumulocity Postman collection and click "Import collection" in Postman (or get it from the [Postman API directory](https://www.getpostman.com/collections/da85bbe3f176fbfb845b)).
-* Click on drop-down menu next to the little "eye" widget to configure your Cumulocity URL. Click "Manage environments" and "Add". Then type a name for your tenant and configure a key "url" with a value of "https://&lt;yourURL&gt;.cumulocity.com". Click "Submit".
+[![Run in Postman](https://run.pstmn.io/button.svg)](https://www.getpostman.com/run-collection/5009664378e0f5ed9960#?env%5BPostman%20Button%20Demo%5D=W3sia2V5IjoiYXV0aCIsInZhbHVlIjoiQmFzaWMgY0c5emRHMWhiam8zYVRGdWFGRlVNbVZUYmtJPSIsInR5cGUiOiJ0ZXh0IiwiZW5hYmxlZCI6dHJ1ZX0seyJrZXkiOiJ1cmwiLCJ2YWx1ZSI6Imh0dHBzOi8vZGVtb3MuY3VtdWxvY2l0eS5jb20iLCJ0eXBlIjoidGV4dCIsImVuYWJsZWQiOnRydWV9XQ==)
+
+Install Postman as described and import the examples ("API collection"). The collection comes with a sample, read-only environment. To configure further environments: 
+
+* Click on drop-down menu next to the little "eye" widget to configure your Cumulocity URL. Click "Manage environments" and "Add". 
+* Then type a name for your tenant. Configure a key "url" with a value of "https://&lt;yourURL&gt;.cumulocity.com". Click "Submit".
 * Now, you can run REST calls. Click, for example, on "Cumulocity API", "Cumulocity API Overview", "GET Platform". By clicking the "Send" button, you can send the GET request to Cumulocity. The first time that you send a request to Cumulocity, you have to enter your credentials. Click on "Basic Auth" and enter your username and password, followed by a click on "Refresh Headers".
 * To explore the API, click on the links in the responses. Similar to navigate through pages of results, click on the "next" link at the bottom of the response. Add, for example, "?pageSize=100" to the end of the request URL to get more data than the default five items.
 

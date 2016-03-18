@@ -755,6 +755,8 @@ To export "Inventory data" to csv or xlsx files navigate to "Reporting" located 
 
 You will receive an e-mail with the links to each file.
 
+Note that standard time properties of documents (like time or creationTime in alarms) are expored as Date to xlsx files but are exported as String to csv files.
+
 ### Editing reports
 
 To **edit** reports simply click on the name of the report. To apply changes click on the "Save" button.

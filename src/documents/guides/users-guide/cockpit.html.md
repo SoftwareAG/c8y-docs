@@ -16,7 +16,7 @@ The Cockpit application provides you with the ability to manage the Internet of 
 - Manage [alarms](#alarms), [reports](#reports) and [smart rules](#rules)
 - Use the [data point library](#library)
 
-For more information about the cockpit application please refer to [introduction](#intro).
+For more information about the cockpit application please refer to the introduction below.
 
 ## <a name="intro"></a>Introduction
 
@@ -575,7 +575,7 @@ Show a list of alarms, filter for objects, alarm severity and alarm status.
 
 Parameter to configure:
 
-* Target device or group: Select for which object optional HTML expressions should be evaluated. See below for details.
+* Target device or group: Select for which object optional HTML expressions should be evaluated.
 
 * Status: Show only alarms which have the selected alarm status.
 
@@ -634,7 +634,7 @@ Note: The property "Active Alarm Status" shows active alarms as icons in the tab
 
 * Add a new action: Click on "+ Add Action". You can then add the predefined action to toggle the maintenance mode. Or you select “Create Operation” to create a button that will execute a shell command. In the following dialog you can then enter the label for the button and the shell command to be executed.
 ![image alt text](/guides/users-guide/image_19.png)
-Note: The dialog shows the predefined shell commands of the first device that supports shell commands. The list is empty if there is no such device. For details about shell commands, see [http://www.cumulocity.com/guides/users-guide/device-management/#shell](http://www.cumulocity.com/guides/users-guide/device-management/#shell).<br>
+Note: The dialog shows the predefined shell commands of the first device that supports shell commands. The list is empty if there is no such device. For more details please refer to [shell commands](http://www.cumulocity.com/guides/users-guide/device-management/#shell).<br>
 Note: You can also enter the JSON format of the operation that should be send to the device. For details, please contact the device vendor for supported operations.
 
 * Edit column header: To edit the header of the column, click on the column "Label" and edit the label.
@@ -663,7 +663,7 @@ Fill out the fields "Name" and “Icon” in the dialog and press “Save”.
 
 ![image alt text](/guides/users-guide/image_20.png)
 
-Afterwards widgets can be added to the creates device.
+Afterwards widgets can be added to the created report.
 
 ### Deleting reports
 

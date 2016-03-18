@@ -38,7 +38,7 @@ You are now ready to manage the device.
 
 ## <a name="creds-upload"></a>Bulk-registering devices
 
-For connecting larger amounts of devices, you can upload a CSV file with the IDs and credentials. When uploading the CSV file, Cumulocity creates user accounts for each device listed in the file. Devices can then connect securely to Cumulocity without the need to do a manual "Device Registration" step as described in the previous section.
+For connecting larger amounts of devices, you can upload a CSV file with the IDs and credentials. When uploading the CSV file, Cumulocity creates user accounts for each device listed in the file. Devices can then connect securely to Cumulocity without the need to do a manual "Device Registration" step as described in the previous section. 
 
 The CSV file needs to have a header row followed by the actual data. The header row needs to contain at least one column marked "ID" and one column marked "Credentials". Here is an example of a valid CSV format:
 
@@ -55,7 +55,7 @@ To connect the devices, the devices need to be pre-provisioned with related info
 * Password: The password to access Cumulocity, same as the value "Credentials" in the CSV file.
 * Device in managed object representation. Fields: "Type", "Name", "Iccid", "Idtype", "Path", "Shell" in the CSV file. 
 
-If you own a Cumulocity Dedicated or Private Edition, you can also register devices across multiple tenants by adding a "tenant" column to the spreadsheet and importing the CSV file from the "management" tenant.
+If you own a Cumulocity Dedicated or Private Edition, you can also register devices across multiple tenants by adding a "tenant" column to the spreadsheet and importing the CSV file from the "management" tenant. 
 
 For more information on the file format and accepted CSV variants, please see [Bulk device credentials](/guides/reference/device-credentials/#creds-upload).
 

@@ -23,8 +23,8 @@ To connect a Telic device to Cumulocity, you need to
 
 To make the tracker send data to Cumulocity, follow these steps with the Telic Configuration Tool:
 
-* Click on the tab "Communication Configuration". 
-* In the section "Server" at the bottom, click the "New" button. 
+* Click on the tab "Communication Configuration".
+* In the section "Server" at the bottom, click the "New" button.
 * Set a profile name (for example, "Cumulocity").
 * Set the "IP address" to 79.125.6.11.
 * Set the "Port" to 9090.
@@ -60,12 +60,12 @@ Once you have set up the profiles, you can send the same profiles also to other 
 
 To connect the device to your Cumulocity account:
 
-* Open Cumulocity in a web browser and navigate to the "Registration" page. 
-* Locate the IMEI number on the device (below the barcode on the sticker). 
+* Open Cumulocity in a web browser and navigate to the "Registration" page.
+* Locate the IMEI number on the device (below the barcode on the sticker).
 * Type the **last six digits** of the IMEI into the "Device ID" field and click "Register Device". The IMEI will be listed with status "Waiting for connection".
 * Switch the device on. After the device has dialled up to the network, an "Accept" button will be visible next to the IMEI.
 * Click the "Accept" button.
-* The device will now send location data according to the device configuration that you set. 
+* The device will now send location data according to the device configuration that you set.
 
 ![Device registration](/guides/devices/telic/telicregistration.png)
 
@@ -87,11 +87,11 @@ If you need support for particular features of the tracker models, [contact us](
 
 ## Data created by Telic device
 
-Telik is creating following events and measurements:
+Telic is creating following events and measurements:
 
 ### Location update event
 
-	{        
+	{
 		  ...
 		  "time":"2016-01-01T17:15:00.123+01:00",
 		  "text":"Location updated",
@@ -179,26 +179,26 @@ The "c8y_Position" fragment of the event is also updated in the device ManagedOb
 
 ### Geofence enter event:
 
-	{        
+	{
 		...
 		"text":"Geofence enter",
-		"type":"c8y_GeofenceEnter"      
+		"type":"c8y_GeofenceEnter"
 		...
 	}
 
 ### Geofence exit event:
 
-	{        
+	{
 		...
 		"text":"Geofence exit",
-		"type":"c8y_GeofenceExit"      
+		"type":"c8y_GeofenceExit"
 		...
 	}
 
 ### Motion started event:
 
-	{   
-		...     
+	{
+		...
 		"text":"Motion detected",
 		"type":"c8y_MotionEvent"
 		...
@@ -206,8 +206,8 @@ The "c8y_Position" fragment of the event is also updated in the device ManagedOb
 
 ### Motion ended event:
 
-	{   
-		...     
+	{
+		...
 		"text":"Motion ended",
 		"type":"c8y_MotionEndedEvent"
 		...
@@ -231,12 +231,9 @@ where 1 is motion, 0 is stationary.
 
 ### Charger connected event:
 
-	{     
-		...   
+	{
+		...
 		"text":"Charger connected",
 		"type":"c8y_ChargerConnected"
 		...
 	}
-
-
-

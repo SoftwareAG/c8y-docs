@@ -16,7 +16,7 @@ The Cockpit application provides you with the ability to manage the Internet of 
 - Manage [alarms](#alarms), [reports](#reports) and [smart rules](#rules)
 - Use the [data point library](#library)
 
-For more information about the cockpit application please refer to introduction.
+For more information about the cockpit application please refer to the introduction below.
 
 ## <a name="intro"></a>Introduction
 

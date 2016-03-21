@@ -755,7 +755,7 @@ To export "Inventory data" to csv or xlsx files navigate to "Reporting" located 
 
 You will receive an e-mail with the links to each file.
 
-Note that standard time properties of documents (like time or creationTime in alarms) are exported to xlsx without time zone.
+Note that standard time properties of documents (like time or creationTime in alarms) are exported to xlsx without time zone. CSV export contains full timestamps with time zone.
 
 ### Editing reports
 

@@ -16,7 +16,7 @@ The following sections demonstrate how to use a NetComm router with Cumulocity. 
 * Use the built-in [GPS](#gps) functionality.
 * Use the built-in [GPIO](#gpio) pins.
 * View [configuration](#rdb) parameters.
-* Configure devices to use [SMS mode](#sms_mode)
+* Configure devices to use [SMS mode](#sms_mode).
 * Remotely execute text commands via [device shell](#shell).
 * Get [event notifications](#notifications).
 * Connect [Modbus](#modbus) devices.
@@ -183,8 +183,10 @@ You can retrieve, modify and save user configuration data. To do this, navigate 
 
 ## <a name="sms_mode"></a> Configuring devices to use SMS mode	
 
-To use SMS commands for devices, the 
-Netcomm device should be configured correctly for SMS messaging (In device menu "Services>SMS messaging>Diagnostics" everything on and either "Only accept authenticated SMS messages" off or sender number of SMS provider whitelisted below).
+To use SMS commands for devices, open the router's web interface and navigate to "Services", "SMS messaging", then "Diagnostics". Configure the device as follows: 
+
+* Either disable "Only accept authenticated SMS messages", or add permitted senders to the white list. Usage of passwords is not supported.
+* Turn the other settings on.
 
 ![Enable SMS mode](/guides/devices/netcomm/sms_mode.png)
 

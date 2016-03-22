@@ -223,8 +223,8 @@ In order to send commands as text messages to devices, the devices must be put i
 		"mode": "SMS"
 	}
 
-For more info please refer to [Device control via SMS](/guides/reference/device-control#control_via_sms)
-*
+For more information, please refer to [Device control via SMS](/guides/reference/device-control#control_via_sms).
+
 #### c8y\_Command
 
 To carry out interactive sessions with a device, use the "c8y\_Command" fragment. If this fragment is in the list of supported operations for a device, a tab "Shell" will be shown. Using the "Shell" tab, the user can send commands in an arbitrary, device-specific syntax to the device. The command is sent to the device in a property "text":

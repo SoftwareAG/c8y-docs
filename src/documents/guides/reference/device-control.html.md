@@ -241,6 +241,18 @@ Example response:
       }
     }
 
+## <a name="control_via_sms"></a> Device control via SMS
+
+In order to send operations via SMS, either the device managed object should contain the fragment:
+
+		"c8y_CommunicationMode": {
+    		"mode": "SMS"
+		}
+
+or the operation should contain the property:
+
+		"deliveryType": "SMS"
+
 ## Notifications
 
 There are two options to receive real-time notifications for the device control API.

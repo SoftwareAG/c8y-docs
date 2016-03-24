@@ -214,6 +214,17 @@ To restart a device, an operation with a "c8y\_Restart" fragment is sent. To ena
 
 ![Restart button](/guides/reference-guide/restartsupported.png)
 
+#### <a name="communication_mode"></a>c8y\_CommunicationMode
+
+In order to send commands as text messages to devices, the devices must be put into SMS mode. To indicate that it supports SMS mode, a device needs to add the fragment "c8y_CommunicationMode" with a mode property of "SMS".
+
+
+	"c8y_CommunicationMode": {
+		"mode": "SMS"
+	}
+
+For more information, please refer to [Device control via SMS](/guides/reference/device-control#control_via_sms).
+
 #### c8y\_Command
 
 To carry out interactive sessions with a device, use the "c8y\_Command" fragment. If this fragment is in the list of supported operations for a device, a tab "Shell" will be shown. Using the "Shell" tab, the user can send commands in an arbitrary, device-specific syntax to the device. The command is sent to the device in a property "text":

@@ -347,7 +347,6 @@ The "All" button shows all operations for a device, regardless of whether they h
 
 ![Operations](/guides/users-guide/operations.png)
 
-
 ## <a name="events-all"></a>Troubleshooting devices
 
 Events are low-level messages sent by devices that are usually used for application-specific processing. For example, a vending device sends its real-time sales in the form of events. If you need to troubleshoot a device at a more detailed level, visit the "Events" tab. Clicking on individual events will reveal more information on the data contained in the event. Similar, you can see all events across all devices by selecting "Events" in the navigator.

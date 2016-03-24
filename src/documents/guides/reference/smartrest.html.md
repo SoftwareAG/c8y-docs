@@ -201,7 +201,7 @@ Explanation:
 
 ## SmartREST Real-time Notifications
 
-All available real-time notification endpoints and channels of the Cumulocity platform are also available in a SmartREST syntax. Please have a look at the [Real-time notifications](/guides/reference/real-time-notifications) reference guide to understand the general functionality of the [Bayeux protocol](http://svn.cometd.com/trunk/bayeux/bayeux.html) and get an overview of our available endpoints and channels fo  real-time notifications.
+All available real-time notification endpoints and channels of the Cumulocity platform are also available in a SmartREST syntax. Please have a look at the [Real-time notifications](/guides/reference/real-time-notifications) reference guide to understand the general functionality of the [Bayeux protocol](https://docs.cometd.org/current/reference/#_concepts_bayeux_protocol) and get an overview of our available endpoints and channels fo  real-time notifications.
 
 ### Using Real-time Notifications with SmartREST
 

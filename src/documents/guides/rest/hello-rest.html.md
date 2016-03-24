@@ -99,7 +99,7 @@ In our case, we will send a temperature measurement in the unit of Celsius which
 >Please replace the id value with the appropriate value you received in the fist step.
 
 >Furthermore, you should update the time value to a recent timestamp in order to make it easy to find back the measurement on Cumulocity UI later. 
->Please note the data format for timestamp values which is explained in the [reference guide](guides/references/rest-implementation).
+>Please note the data format for timestamp values which is explained in the [reference guide](http://www.cumulocity.com/guides/reference/rest-implementation/).
 
     curl -v -u <username>:<password> \
        -H 'Accept: application/vnd.com.nsn.cumulocity.measurement+json; charset=UTF-8; ver=0.9' \

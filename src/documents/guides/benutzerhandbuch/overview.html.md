@@ -4,158 +4,116 @@ title: Introduction
 layout: default
 ---
 
-## Overview
+## Einleitung
 
-The following sections cover the basic usage of Cumulocity applications. They describe
+In den folgenden Kapiteln wird der Umgang mit Cumulocity Anwendungen beschrieben.
+Sie erhalten eine Übersicht über
 
-   * [Accessing Cumulocity applications](#accessing).
-   * [Logging in](#login).
-   * [Navigating in Cumulocity applications](#navigating).
-   * [Using dashboards](#dashboards).
+   * die [Nutzung von Cumulocity Anwendungen](#accessing).
+   * die [Anmeldung](#login) bei Cumulocity.
+   * das [Navigieren](#navigating) in Cumulocity Anwendungen.
+   * die Nutzung von [Dashboards](#dashboards).
 
-## <a name="accessing"></a>Accessing Cumulocity applications
+## <a name="accessing"></a>Nutzung von Cumulocity Anwendungen
 
-To use Cumulocity applications, you need a modern web browser. We test with the following desktop web browsers:
+Um Cumulocity Anwendungen nutzen zu können, benötigen Sie einen modernen Web Browser. Die Cumulocity Anwendungen werden mit folgenden Web Browsern getestet:
 
-  * Internet Explorer (Version 10 and 11)
-  * Firefox (latest)
-  * Chrome (latest)
+  * Internet Explorer (Version 10 und 11)
+  * Firefox (aktuellste Version)
+  * Chrome (aktuellste Version)
 
-You can also use recent smartphone and tables web browsers. We test with the following mobile web browsers:
+Sie können die Web Browser von neueren Smartphones und Tablets ebenfalls verwenden. Die Cumulocity Anwendungen werden mit folgenden Web Browsern getestet:
 
-  * Chrome on Android (latest) on Galaxy smartphones and tablets.
-  * Safari on iOS (latest) on Apple iPhone and iPad.
+  * Chrome für Android (aktuellste Version) auf Galaxy Smartphones und Tablets.
+  * Safari für iOS (aktuellste Version) auf Apple iPhones und iPads.
 
-> Note that using Cumulocity on mobile devices may be constrained by the memory and the processing power available on the devices. For example, loading graphs with large amounts of data points may make the mobile device unresponsive.
+> Beachten Sie, dass die Nutzung von Cumulocity von der Speicherkapazität und Rechenkraft des Geräts abhängt. Z.B. falls Graphen mit einer riesigen Datenmenge erstellt werden, kann es sein, dass die Anwendung nicht mehr reagiert. Weiterhin ist es möglich, dass der private Modus Ihres Web Browsers nicht funktioniert.
 
-To access the applications for your Cumulocity tenant, use the following URL:
+Um auf die Anwendungen Ihres Cumulocity Mandanten zugreifen zu können, benutzen Sie die folgende URL:
 
-	https://<account>.cumulocity.com/
+	https://<mandant>.cumulocity.com/
 
-This will direct you to the login page of your default application, shown in the image below.
+Die URL wird Sie auf eine Seite weiterleiten, auf der Sie sich anmelden können.
 
 <img src="/guides/users-guide/login.png" alt="Login prompt" style="max-width: 50%">
 
-> Make sure that the address bar of your browser shows a lock symbol. The lock symbol indicates that you are using a secure connection and that you are indeed connected to Cumulocity. 
+> Stellen Sie sicher, dass die Addressleiste Ihres Browsers ein Schloss-Symbol aufweist. Das Symbol zeigt an, dass Sie eine sichere Verbindung nutzen und auch tatsächlich mit Cumulocity verbunden sind.
 
-> The above link is only valid for Cumulocity Standard subscribers. For Reserved and Private deployments of Cumulocity, the URL is specific to your organization.
+> Der oben angegebene Link ist nur für Abonnenten der Cumulocity Standard Edition gültig. Für Abonnenten der Cumulocity Reserved oder Private Edition hängt die URL von Ihrer Organisation ab.
 
-## <a name="login"></a>Logging in
+## <a name="login"></a>Anmeldung
 
-On the login page, enter your username and password to start the application. The "Remember me" checkbox will make the browser remember your credentials, so that you do not have to enter them again when opening the application the next time. This is also convenient if you frequently navigate between Cumulocity applications, as Cumulocity requires you to authenticate each time when starting an application. You can make the browser "forget" your credentials by explciitly logging out using the "Logout" menu item in the application.
+Um Ihre Anwendung zu starten, geben Sie Ihren Nutzernamen und Ihr Passwort ein. Das "" Kontrollkästchen bewirkt, dass sich der Web Browser Ihre Zugangsdaten merkt. Auf diese Weise müssen Sie Ihre Zugangsdaten nicht noch einmal eingeben, wenn Sie die Anwendung das nächste Mal starten, oder zwischen Anwendungen hin und her wechseln möchten. Um den Web Browser Ihre Zugangsdaten "vergessen" zu lassen, müssen Sie sich abmelden. Wenn Sie auf Ihren Nutzernamen oben rechts klicken, erscheint der Menüpunkt "", mit welchem Sie sich abmelden können.
 
 <img src="/guides/users-guide/logout.png" alt="Logout menu" style="max-width: 60%">
 
+> Aus Sicherheitsgründen verwendet Cumulocity keine Cookies.
 
-> For security reasons, Cumulocity does not use Cookie technology.
-
-If you forgot your password, click the "Forgot password?" link on the login screen. You can now type your email address and click "Reset password". Check your email for the password reset link. Click the link to enter a new password. The password reset link is valid for one hour.
+Falls Sie Ihr Passwort vergessen haben sollten, klicken Sie auf den "Passwort vergessen?" Link auf der Anmeldeseite. Tragen Sie Ihre E-Mail Addresse ein und klicken Sie auf "Passwort zurücksetzen". Anschließend sollten Sie eine E-Mail mit einem Link erhalten, mit welchem Sie Ihr Passwort zurücksetzen können. Folgen Sie dem Link und geben Sie Ihr neues Passwort ein. Der Link ist nur für eine Stunde gültig.
 
 <img src="/guides/users-guide/resetpassword.png" alt="Reset password" style="max-width: 50%">
 
-The automated password reset will only work if your email address is stored with your Cumulocity user. If you get a warning that the password cannot be reset, you are either using a different email address than the one stored with your Cumulocity user, or your Cumulocity user has no email address stored. In either case, contact a Cumulocity administrator in your organization. Administrators can reset your password.
+Das Zurücksetzen eines Passworts ist nur möglich, falls Sie Ihre E-Mail in Ihrem Cumulocity Nutzerkonto eingetragen haben. Falls Sie eine Warnung erhalten, dass Ihr Passwort nicht zurückgesetzt werden konnte, verwenden Sie entweder eine andere E-Mail Addresse als die, die Sie in Ihrem Nutzerkonto eingetragen haben, oder im Nutzerkonto wurde keine E-Mail Addresse eingetragen. In beiden Fällen müssen Sie sich an den Cumulocity Administrator Ihres Mandanten wenden. Administratoren sind in der Lage, Passwörter zurückzusetzen.
 
-> If you are yourself the primary administrator, the email that you used when registering first to Cumulocity is automatically stored with your user. If you have questions, please contact the Cumulocity support from this email address.
+> Falls Sie der primäre Administrator sind, dann ist Ihre E-Mail, die Sie anfangs zur Registrierung bei Cumulocity verwendet haben, automatisch in Ihrem Nutzerkonto gespeichert. Falls Sie Fragen haben, kontaktieren Sie bitte den Cumulocity Support über diese E-Mail Addresse.
 
-To change your password, click on the "User Settings" icon in the application. Please make sure to pick a strong password. To support you in picking good passwords, a password strength indicator is displayed along with a password change.
+Um Ihr Passwort zu ändern, klicken Sie auf den Menüpunkt "Benutzereinstellungen" in der Anwendung. Stellen Sie sicher, dass Ihr Passwort sicher genug ist. Um Sie bei der Auswahl eines sicheren Passworts zu unterstützen, wird Ihnen die Stärke Ihres Passworts angezeigt. Ein Passwort muss aus mindestens acht Buchstaben bestehen. Es sollte außerdem große und kleine Buchstaben, sowie Zahlen und Symbole enthalten. Ein starkes Passwort enthält mindesten drei dieser Buchstabenklassen.
 
 <img src="/guides/users-guide/passwordstrength.png" alt="Reset password" style="max-width: 50%">
 
-> Your administrator may have configured your account to enforce a password policy. You may be required to pick a strong password or to change your password regularly. 
+> Als Administrator ist es möglich, die Passwortrichtlinien einzustellen. Dadurch kann es sein, dass Sie ein sicheres Passwort wählen, oder Ihr Passwort regelmäßig ändern müssen.
 
-## <a name="navigating"></a>Navigating in Cumulocity applications
+## <a name="navigating"></a>Navigation in Cumulocity Anwendungen
 
 Once you are logged in, your default Cumulocity application will open. The content of Cumulocity applications is entirely dynamic and is generated based on various criteria:
+Der Inhalt von Cumulocity Anwendungen wird dynamisch anhand folgender Kriterien generiert:
 
-* The applications that your organization has subscribed to.
-* The applications that your organization has configured or developed itself for Cumulocity.
-* The functionality that your user is permitted to see. 
-* The configuration of the user interface, such as groups and reports.
-* The functionality of the devices that are used by you.
+* Anwendungen, die von Ihner Organisation abonniert wurden.
+* Anwendungen, die von Ihrer Organisation selbst konfiguriert oder für Cumulocity erstellt wurden.
+* Funktionalitäten, die Ihr Nutzer sehen darf.
+* Konfigurationen der Benutzeroberfläche, wie Gruppen oder Berichte.
+* Funktionalitäten der Geräte, die Sie verwenden.
 
-The general structure of a Cumulocity application is shown in the screenshot below:
+Die generelle Struktur einer Cumulocity Anwendung wird in der nächsten Abbildung gezeigt.
 
-* The name of the currently visible application is shown in the top left.
-* Using the navigator, you can go to the different pages of an application. Click on an entry in the navigator to open the respective page. You can collapse or expand sections in the navigator by clicking the section headers (i.e., the rows with the little triangle in front of the text).
-* On some pages, additional "tabs" are available depending on how much information is required to be shown.
-* The top area of the application is used as message bar whenever a status (green) or an error (red) needs to be shown.
-* The "search" field provides a full-text search where available.
-* Using the application switcher, you can change from one application to another. You might have to re-enter your credentials if you have not selected "Remember me" on your original login to Cumulocity.
-* The user menu shows your user name. By clicking on the user name, a popup menu appear. The popup menu allows you to log out of the application (even if you clicked "Remember me") and provides access to user settings and help.
-* In some areas, a cog wheel on the top right provides access to further functionality through a drop-down menu.
+* Der Name der aktuell verwendeten Anwendung wird oben links angezeigt.
+* Mit Hilfe des Menüs auf der linken Seite können Sie zu verschiedenen Sichten der Anwendungen gelangen. Klicken Sie auf einen Menüpunkt, um die entsprechende Seite zu öffnen. In dem Menü gibt es auch Sektionen, die durch einen Pfeil links neben den Namen des Menüpunkts gekennzeichnet werden. Mit einem Klick auf so eine Sektion können Sie den Inhalt ein- bzw. ausklappen. 
+* Bei manchen Seiten werden zusätzliche Reiter angezeigt. Das hängt davon ab, wie viel Information angezeigt werden soll.
+* Der obere Bereich der Anwendung wird als Meldungsleiste genutzt, wann immer ein Status (grün) der ein Fehler (rot) angezeigt werden muss.
+* Das Suchfeld bietet die Möglichkeit, textuell nach Informationen zu suchen, sofern diese vorhanden sind.
+* Mit dem Kachel-Symbol oben rechts können Sie zwischen den Anwendungen wechseln. Falls Sie bei der Anmeldung das "" Kontrollkästchen nicht bestätigt haben, müssen Sie Ihre Zugangsdaten erneut eingeben.
+* Mit einem Klick auf Ihren Nutzernamen oben rechts öffnen Sie das Nutzer-Menü. Sie können sich über dieses Menü abmelden (selbst wenn Sie auf "" geklickt haben), die Benutzereinstellungen ändern oder das Hilfe-Menü aufrufen. 
+* In manchen Seiten können Sie ein Zahnrad-Symbol oben rechts vorfinden, mit welchem Sie auf weitere Funktionalitäten zugreifen können.
 
 ![Cumulocity application](/guides/users-guide/app.png)
 
-On smaller screens, the layout of an application changes, as shown below. The navigator is hidden and only some of the tabs are in the visible screen area. To access the navigator, click on the three lines on the top left. To access other tabs, scroll the tabs left or right. (The way to scroll the tabs may depend on your device.)
+Auf kleineren Bildschirmen ändert sich das Layout der Anwendung, wie Sie in der unteren Abbildung sehen können. Das Menü wird verborgen und nur einige der Reiter werden angezeigt. Um das Menü nutzen zu können, klicken Sie auf das Symbol mit den drei Linien oben links. Um weitere Reiter abrufen zu können, "schieben" Sie die Reiter nach links oder rechts. (Wie Sie die Reiter "schieben" können, hängt von Ihrem Gerät ab)
 
 <img src="/guides/users-guide/appsmall.png" alt="Layout on small devices" style="max-width: 50%">
 
-Note that you can navigate straight to any place inside a Cumulocity application. For example, to show the basic information for a device, you can enter the following URL:
+Beachten Sie, dass Sie jede Ressource in einer Cumulocity Anwendung ansteuern können. Um z.B. Informationen über ein Gerät abzurufen, können Sie folgende URL verwenden:
 
-	https://<account>.cumulocity.com/apps/devicemanagement/index.html#/device/<id>/info
+	https://<mandant>.cumulocity.com/apps/devicemanagement/index.html#/device/<id>/info
 
-Using such a URL, you can
+Mit so einer URL können Sie
 
-  * Save bookmarks for specific devices or pages.
-  * Send Emails (manually or automatically using the real-time event engine) which include a link to devices or sensor data.
-  * Use the backward and forward navigation of your browser.
-  * Write own web applications that link directly to information contained in a Cumulocity application.
+  * Lesezeichen für bestimmte Geräte oder Seiten setzen.
+  * E-Mails versenden (manuell oder automatisch durch die Verarbeitung von Ereignissen in Echtzeit), welche eine Verknüpfung zu Daten eines bestimmten Geräts oder Sensors enthalten.
+  * die "eine Seite zurück/vor" Navigation in Ihrem Web Browser nutzen.
+  * eigene Web Anwendungen entwickeln, die direkt auf Informationen in einer Cumulocity Anwendung verweisen.
 
-> Usually, Cumulocity applications provide tooltips when you hover over a particular user interface element. When you use Cumulocity applications on touch devices, tooltips are shown when you touch a user interface element for a longer time. 
+> Normalerweise werden Tooltips angezeigt, wenn Sie sich mit dem Mauszeiger über einem Element in der Benutzeroberfläche befinden. Falls Sie jedoch ein Touch-Gerät verwenden, müssen Sie stattdessen das Element länger berühren.
 
-## <a name="dashboards"></a>Using dashboards
+## <a name="settings"></a>Benutzereinstellungen
 
-Dashboards provide you with a customized visualization of your data, consisting of a set of freely arrangable so-called "widgets". Widgets can display maps, images, graphs, tables and other graphical representations of data. Cumulocity comes with a number of pre-provided widgets, but you can develop also your own widgets and add them to your Cumulocity account. See the [Web developer's guide](/guides/web/).
+Um die Einstellungen Ihres Nutzerkontos zu ändern, klicken Sie auf das Nutzer-Symbol oben rechts und dann auf "Benutzereinstellungen". Mit Hilfe des "" Auswahlmenüs können Sie einstellen, welche Sprache in der Cumulocity Anwendung angezeigt werden soll. Ihr Passwort können Sie ändern, indem Sie auf "Passwort ändern" klicken. Falls Sie Änderungen übernehmen möchten, klicken Sie auf "Speichern". Wenn Sie auf "Abbrechen" klicken, werden die Änderungen nicht übernommen.
 
-To create a dashboard, navigate to a device and click on the cog wheel icon at the top right. Select "Create dashboard". This will open a dialog in which you enter
+<img src="/guides/users-guide/usersettings.png" alt="User settings"  style="max-width: 60%">
 
-* The name of the dashboard, which will show in the menu.
-* The location of the dashboard in the menu.
-* The icon which is rendered next to the name in the menu.
+Die dargestellte Sprache hängt ab von:
 
-<img src="/guides/users-guide/createdashboard.png" alt="Create dashboard" style="max-width: 60%">
+1. Der Sprache, die Sie in der Cumulocity Anwendung angegeben haben.
+2. Der Sprache, die Sie in Ihrem Web Browser eingestellt haben.
+3. Falls weder in Cumulocity, noch im Web Browser eine Sprache angegeben wurde, wird die Sprache automatisch auf Englisch eingetellt.
 
-Click "Create" to create and open the dashboard. While there are no widgets on the dashboard, you will see an "Add Widget" button. Use this button to add your first widget to the dashboard, or click the cog wheel again and select "Add widget to dashboard".
-
-The following dialog will allow you to choose a widget to add from the list of widgets available in your account. You will also always have the option to edit two further properties:
-
-* The title of the widget, that will be rendered just above the widget.
-* The width of the widget as number between one and twelve columns. 
-
-Selecting twelve columns results in a widget that will occupy the full available width of the dashboard. Selecting one column results in a widget occupying one twelth of the available width. If the screen estate of the dashboard gets smaller, widgets are automatically rearranged to consume less space and may be ultimately all rendered in a single column. Depending on the widget, further properties for configuration will be visible. These are discussed below.
-
-<img src="/guides/users-guide/addwidget.png" alt="Add widget" style="max-width: 60%">
-
-For most widgets, you will also see a "Child devices" option. This will allow you to show data from a child device in the widget. By default, the current device is selected.
-
-Once a widget is placed on a dashboard, it can be moved to a new location on the dashboard by dragging its title bar. You can also edit the widget properties by moving your mouse to the title bar, clicking the cog wheel and selecting "Edit". Similar, you can delete a widget by clicking "Remove".
-
-Finally, entire dashboards can be edited, removed and copied by clicking on the larger cog wheel at the top right.
-
-### Properties
-
-The properties widget shows inventory data of a device, such as hardware or modem information. The data will be shown in tables with one table for each section of information that you select in the "Add widget" or "Edit widget" dialog.
-
-### Location
-
-The location widget will just show the selected device on a map.
-
-### Image
-
-The image widget will show an arbitrary image on the dashboard. You can upload the image to be shown when you add or edit the widget.
-
-### KPI list, KPI radial gauge, KPI linear gauge
-
-The KPI list, KPI radial gauge and KPI linear gauge are three different visual representations of the current value of a KPI. The KPI list widget shows a table of KPIs with the KPI name, it's target value, the current value and the difference between current and target value. The KPI radial gauge and the KPI linear gauge display the current value in a graphical relationship to "yellow" and "red" values. For more information on KPIs, see "[Using KPIs](#kpis)".
-
-### KPI graph
-
-The KPI graph widget display the history of a set of KPIs in a graph. 
-
-Time interval, aggregation, refer to measurements
-
-
-## <a name="kpis"></a>Using KPIs
-
-> To be done.
-
+> Beachten Sie, dass die Sprache, die in Cumulocity eingestellt wurde, eine höhere Priorität besitzt, als die Sprache, die Sie in Ihrem Web Browser angegeben haben.

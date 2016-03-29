@@ -275,7 +275,7 @@ The bottom arrow indicates the state of the push connection that is used to send
 
 "Maintenance mode" is a special connection state indicating that the device is currently being maintained and should not be monitored. While a device is being maintained, no alarms for that device are raised. You can enable maintenance mode by setting the required interval to negative value.
 
-![Connection states](/guides/users-guide/connectionmonitoring.png)
+![Connection states](/guides/users-guide/connection_monitoring.png)
 
 > Note that connection monitoring is not real-time. For example, the state of the connection will not change immediately when you switch off a device. Depending on your network, it may take about 20 minutes until a broken connection is discovered, since the network will retry sending data for a significant amount of time.
 

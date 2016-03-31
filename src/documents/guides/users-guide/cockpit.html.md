@@ -643,6 +643,18 @@ Note: You can also enter the JSON format of the operation that should be send to
 
 * Remove properties: Click on the red icon in the end of a row to remove the column.
 
+### Widget "Relay control"
+
+Allows you to switch a device relay on or off. Only available for devices that support this type of operation.
+
+### Widget "Relay array"
+
+Given an array of relays, you can switch relays on or off independently. Only available for devices that support this type of operation.
+
+### Widget "Message sending"
+
+Sends a message to a device. The behaviour on the device itself is device dependent. Only available for devices that support this type of operation
+
 ## <a name="alarms"></a>Working with Alarms
 
 Working with alarms is identical to working with alarms in Device Management. See "[Working with alarms](http://cumulocity.com//guides/users-guide/device-management/#alarm-monitoring)" in Device Management User Guide.
@@ -757,7 +769,7 @@ You will receive an e-mail with the links to each file.
 
 <<<<<<< local
 =======
-Standard time properties of documents (like time or creationTime in alarms) are exported 
+Standard time properties of documents (like time or creationTime in alarms) are exported
 
 * to xlsx file in the format: 03/13/2016 00:00:24
 * to csv file in the format: 2016-03-13T00:01:24.000Z

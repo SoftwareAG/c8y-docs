@@ -38,7 +38,7 @@ You are now ready to manage the device.
 
 ## <a name="creds-upload"></a>Bulk-registering devices
 
-For connecting larger amounts of devices, you can upload a CSV file with the IDs and credentials. When uploading the CSV file, Cumulocity creates user accounts for each device listed in the file. Devices can then connect securely to Cumulocity without the need to do a manual "Device Registration" step as described in the previous section. 
+For connecting larger amounts of devices, you can upload a CSV file with the IDs and credentials. When uploading the CSV file, Cumulocity creates user accounts for each device listed in the file. Devices can then connect securely to Cumulocity without the need to do a manual "Device Registration" step as described in the previous section.
 
 The CSV file needs to have a header row followed by the actual data. The header row needs to contain at least one column marked "ID" and one column marked "Credentials". Here is an example of a valid CSV format:
 
@@ -53,14 +53,15 @@ Use the "Upload" button to upload the CSV file, as shown in the screenshot below
 To connect the devices, the devices need to be pre-provisioned with related information. More specifically, each device needs to be configured as follows:
 * Username: The username to access Cumulocity must have the form &lt;tenant&gt;/device_&lt;id&gt;, where &lt;tenant&gt; refers to the tenant into which the CSV file is imported, and  &lt;id&gt; refers to the respective value in the CSV file.
 * Password: The password to access Cumulocity, same as the value "Credentials" in the CSV file.
+* Device in managed object representation. Fields: "Type", "Name", "Iccid", "Idtype", "Path", "Shell" in the CSV file.
 
-If you own a Cumulocity Dedicated or Private Edition, you can also register devices across multiple tenants by adding a "tenant" column to the spreadsheet and importing the CSV file from the "management" tenant. 
+If you own a Cumulocity Dedicated or Private Edition, you can also register devices across multiple tenants by adding a "tenant" column to the spreadsheet and importing the CSV file from the "management" tenant.
 
 For more information on the file format and accepted CSV variants, please see [Bulk device credentials](/guides/reference/device-credentials/#creds-upload).
 
 ## <a name="viewing-devices"></a>Viewing the connected devices
 
-To view the connected devices, you can 
+To view the connected devices, you can
 
 * Select "All devices", which lists all connected devices (in pages of 1.000 devices).
 * [Search](#searching-devices) for the device using the "search" text field.
@@ -88,7 +89,7 @@ Cumulocity includes a full-text search for devices. By entering a search term in
 
 ## <a name="grouping-devices"></a>Grouping devices
 
-Devices can be arbitrarily grouped according to your use case. A device can be located in multiple groups, and groups themselves can be part of multiple groups again. 
+Devices can be arbitrarily grouped according to your use case. A device can be located in multiple groups, and groups themselves can be part of multiple groups again.
 
 Cumulocity distinguishes between top-level groups and subgroups. Top-level groups are shown in the navigator at top-level in the section "Groups". They are your main entry point. Subgroups are used to further subdivide groups.
 
@@ -96,7 +97,7 @@ To create a top-level group, click on "Top-level groups" and select "Add Group".
 
 ![Adding top-level groups](/guides/users-guide/toplevelgroups.png)
 
-You can add devices to a group in two ways: 
+You can add devices to a group in two ways:
 
 * Select a device and locate the "Groups" section on the "Info" tab. Use the drop-down menu or the "Browse groups" button to select a group to add this device to.
 * Select the group and click "Assign devices" at the top right. Search for the devices that should be added in the search field. Then mark the relevant devices in the result and click the "Assign x devices" button at the bottom of the result list. ("x" will be the number of devices that you marked.)
@@ -108,11 +109,11 @@ To edit a group, click on the group's name. This allows you to edit the name of 
 
 ## <a name="device-details"></a>Viewing the device details
 
-By clicking on a device in a device list, detailed information on the device is displayed. What is actually shown depends on the device and your configuration of the user interface. For example, if a device has not sent any measurements yet, there will be no "Measurement" tab. Similar, if a device permits certain operations, these operations will be visible in the "Control" tab.
+By clicking on a device in a device list, detailed information on the device is displayed. What is actually shown depends on the device and your configuration of the user interface. For example, if a device has not sent any measurements yet, there will be no "Measurement" tab.
 
 At the top of the device details display, the name of the device is shown. Below the name, a list of breadcrumbs is displayed. If the device is part of an asset hierarchy (such as a group), you can use the breadcrumbs to easily navigate up that hierarchy. Since devices can be contained in multiple hierarchies, several rows of breadcrumbs may be shown.
 
-To the right of the name, a cogwheel is shown. Clicking on the cogwheel displays a drop-down menu with further actions that you can carry out, such as creating a dashboard for the device. 
+To the right of the name, a cogwheel is shown. Clicking on the cogwheel displays a drop-down menu with further actions that you can carry out, such as creating a dashboard for the device.
 
 ![Device details](/guides/users-guide/devicedetails.png)
 
@@ -137,12 +138,12 @@ Device details are divided over a number of tabs. The standard tabs that may be 
 
 The "Info" tab displays generic information for a device (from top left to bottom):
 
-* **Connection monitoring**: The connection monitoring configuration, as described in more detail [below](#connection-monitoring). 
+* **Connection monitoring**: The connection monitoring configuration, as described in more detail [below](#connection-monitoring).
 * **Name** and **Type**: The display name of the device for you to edit, as well as an identifier for the specific type of device.
 * **Hardware**: Hardware information read from the device.
 * **Mobile**: If the device contains a modem, mobile network information will be shown here. You will also see a "Locate" link here. If enough information could be obtained, "Locate" will determine the rough location of the device using the opencellid.org database. This will not be always successful and depends on the format that the connected mobile network uses to report its data to the modem.
 * **Groups**: The groups that the device is part of. You can add and remove groups here. For more information, see "[Grouping devices](#grouping-devices)".
-* **System**: This section shows 
+* **System**: This section shows
  * The internal ID of the device (e.g., for access from Cumulocity's APIs).
  * The "owner" of the device (the Cumulocity user that created the device).
  * The time stamp when the device data was last updated.
@@ -159,7 +160,7 @@ This tab shows other devices that are connected to the currently displayed devic
 
 ### <a name="measurements"></a>Measurements
 
-This tab provides a default visualization of numeric data provided by the device in the form of charts. Charts are grouped into types of measurements, which can contain multiple graphs or "series". For example, the screenshot below shows a chart for motion measurement including graphs for acceleration in the three dimensions, and a chart with modem statistics in the form of signal strength and bit error rate. 
+This tab provides a default visualization of numeric data provided by the device in the form of charts. Charts are grouped into types of measurements, which can contain multiple graphs or "series". For example, the screenshot below shows a chart for motion measurement including graphs for acceleration in the three dimensions, and a chart with modem statistics in the form of signal strength and bit error rate.
 
 ![Measurements](/guides/users-guide/measurements.png)
 
@@ -167,9 +168,9 @@ If a chart contains graphs with different units, one Y-axis is rendered per unit
 
 To see detailed information about the measured values, hover your mouse cursor over the chart. A tooltip will be displayed with detailed information on the measurement most close to your cursor. (The tooltip will "snap" to the closest measurement.)
 
-By default, charts show the raw data of the last hour. You can change the time range on the X-axis by clicking on the drop-down menu reading "Last hour". 
+By default, charts show the raw data of the last hour. You can change the time range on the X-axis by clicking on the drop-down menu reading "Last hour".
 
-If you increase the time range, the drop-down menu reading "No aggregation" will switch to "hourly" or "daily". This means that the chart now shows ranges instead of individual raw data points. For "hourly", the chart will show a range of the minimum and maximum value measured in an hour. For "daily", the chart will show the minimum and maximum value measured over the day. Likewise, the tooltips will now show ranges of values instead of individual values. 
+If you increase the time range, the drop-down menu reading "No aggregation" will switch to "hourly" or "daily". This means that the chart now shows ranges instead of individual raw data points. For "hourly", the chart will show a range of the minimum and maximum value measured in an hour. For "daily", the chart will show the minimum and maximum value measured over the day. Likewise, the tooltips will now show ranges of values instead of individual values.
 
 This enables you to get an efficient overview over larger time periods. You can manually change the granularity using the drop-down menu. However, a graph will only show at most 5.000 data points per graph to not overload your desktop browser. If you select a fine granularity resulting in more than 5.000 data points, a warning message will be shown: "Data has been truncated. Please use aggregation."
 
@@ -177,19 +178,17 @@ Clicking on the "Realtime" button will enable real-time user interface updates o
 
 ### <a name="alarms"></a>Alarms
 
-The "Alarms" tab displayed the alarms of a device. Please see the Section "[Working with alarms](#alarm-monitoring)" for more information. 
+The "Alarms" tab displayed the alarms of a device. Please see the Section "[Working with alarms](#alarm-monitoring)" for more information.
 
 ### <a name="control"></a>Control
 
 This tab lists the operations that are being sent to a device or have been sent to a device. Please see the Section "[Working with operations](#operation-monitoring)" for more information on operations.
 
-The tab also enables you to send some generic remote control operations, depending on whether the device supports the operations. The device in the example screenshot below supports being restarted and setting its configuration.
-
-![Generic remote control](/guides/users-guide/deviceops.png)
+![Operations](/guides/users-guide/operations.png)
 
 ### <a name="software"></a>Software
 
-This tab allows you to update the firmware of a device and the software installed on a device. To install a new firmware, click on "Install firmware", then select a firmware image from the [firmware repository](#software-repo) and click the "Install" button. 
+This tab allows you to update the firmware of a device and the software installed on a device. To install a new firmware, click on "Install firmware", then select a firmware image from the [firmware repository](#software-repo) and click the "Install" button.
 
 Similar, to install a software on the device, click "Install software", select a software package from the [software repository](#software-repo) and click the "Install" button. Hover over a particular software package and click the "x" button to remove the package from the device.
 
@@ -209,16 +208,16 @@ The "Location" tab by default shows the location as reported by the device on a 
 
 The device shell enables you to interactively work with remote devices. Many industrial devices support some form of command language, be it AT commands for modems, CSV-style commands for many tracking devices or elaborate scripting mechanisms such as Tixi TiXML. In the shell, you can send commands in the respective language of the device and interactively view the results of the commands.
 
-The shell user interface is split into two parts: 
+The shell user interface is split into two parts:
 
 * A list of the previously executed commands. By default, the last three commands are shown.
 * A command prompt to enter new commands, which are added to the list.
 
-In the list, the status, date and text of the command are shown. Clicking on a list item reveals the result of the command (provided it has been executed). 
+In the list, the status, date and text of the command are shown. Clicking on a list item reveals the result of the command (provided it has been executed).
 
 ![Device shell](/guides/users-guide/shell.png)
 
-In the command prompt, you can enter arbitrary command text. To send the command text to the device, click the "Execute" button. The "Execute" button can only be selected if the device is online. 
+In the command prompt, you can enter arbitrary command text. To send the command text to the device, click the "Execute" button. The "Execute" button can only be selected if the device is online.
 
 To help you with the command syntax, frequently used commands are available for some devices by clicking the "Get predefined" button. Select a command and click "Use" to copy the command to the command prompt, or select "Execute" to execute the command straight away.
 
@@ -244,9 +243,9 @@ In addition to connection monitoring, Cumulocity features a separate service mon
 
 ### <a name="logs"></a>Logs
 
-Using the "Logs" tab, you can request log information from devices. Log information can be filtered according to date ranges, type of log, keywords and maximum number of lines to transfer. 
+Using the "Logs" tab, you can request log information from devices. Log information can be filtered according to date ranges, type of log, keywords and maximum number of lines to transfer.
 
-To request a log from a device, 
+To request a log from a device,
 
 - Select the date and time range.
 - Choose the type of log. The supported logs are usually device-specific.
@@ -262,7 +261,7 @@ Requesting a log from a device may take some time. After the log has been transf
 
 Finally, Cumulocity can associate devices and assets with multiple external identities. For example, devices often can be identified by the IMEI of their modem, by a microcontroller serial number as well as by an asset tag. This tab lists all the identities recorded for a particular device.
 
-This is, for example, useful when you have broken hardware and need to replace the hardware without loosing the data that was recorded so far. Just connect the new hardware to your account and modify the identity entry of the old hardware to contain the identity of the new hardware. 
+This is, for example, useful when you have broken hardware and need to replace the hardware without loosing the data that was recorded so far. Just connect the new hardware to your account and modify the identity entry of the old hardware to contain the identity of the new hardware.
 
 ## <a name="connection-monitoring"></a>Connection monitoring
 
@@ -274,15 +273,15 @@ The bottom arrow indicates the state of the push connection that is used to send
 
 "Maintenance mode" is a special connection state indicating that the device is currently being maintained and should not be monitored. While a device is being maintained, no alarms for that device are raised. You can enable maintenance mode by setting the required interval to negative value.
 
-![Connection states](/guides/users-guide/connectionmonitoring.png)
+![Connection states](/guides/users-guide/connection_monitoring.png)
 
 > Note that connection monitoring is not real-time. For example, the state of the connection will not change immediately when you switch off a device. Depending on your network, it may take about 20 minutes until a broken connection is discovered, since the network will retry sending data for a significant amount of time.
 
-When a device is detected to be offline (stops sending data within required interval and top arrow changes to red color), an unavailabilty alarm is created for the device reading "No communication with device since &lt;time&gt;". 
+When a device is detected to be offline (stops sending data within required interval and top arrow changes to red color), an unavailabilty alarm is created for the device reading "No communication with device since &lt;time&gt;".
 
 ## <a name="monitoring-services"></a>Service monitoring
 
-Cumulocity distinguishes between connection monitoring and service monitoring. Connection monitoring merely indicates that the device is communicating with Cumulocity, whether it fulfills its service or not. 
+Cumulocity distinguishes between connection monitoring and service monitoring. Connection monitoring merely indicates that the device is communicating with Cumulocity, whether it fulfills its service or not.
 
 Service monitoring indicates if the device is in service. For example, a vending machine is in service if it is ready to sell goods. A vending machine may be well selling goods using cash money without being connected to Cumulocity -- so from the perspective of the merchant it is in service. Similar, if you switch off the power on a gateway, the devices behind the gateway may well continue to work.
 
@@ -290,7 +289,7 @@ Cumulocity considers a device to be in service while there is no critical, unres
 
 ![Service monitoring](/guides/users-guide/servicemonitoring.png)
 
-While a machine is offline, Cumulocity assumes by default that it continues to stay in the service state that it was in when it lost connection. I.e., if it was broken before, it continues to be considered broken (unless you clear critical alarms manually). If it was working before, it continues to be considered working. 
+While a machine is offline, Cumulocity assumes by default that it continues to stay in the service state that it was in when it lost connection. I.e., if it was broken before, it continues to be considered broken (unless you clear critical alarms manually). If it was working before, it continues to be considered working.
 
 This may not be the case for your devices or your use case. For example, if your vending machines rely exclusively on cashless payment, loosing the connection to the network means that you cannot purchase from the machines anymore. Hence, the machine should be considered out of service. In such a case, configure unavailability alarms to have "CRITICAL" priority instead of "MAJOR" priority in the [Administration application](/guides/users-guide/administration#alarm-mapping).
 
@@ -338,7 +337,7 @@ Operations can be in any of four states:
 * **Pending**: The operation has just been created and is waiting for the device to pick it up.
 * **Executing**: The operation has been picked up by the device and is being executed.
 * **Successful**: The operation has been successfully executed by the device.
-* **Failed**: The operation could not be executed by the device. 
+* **Failed**: The operation could not be executed by the device.
 
 Clicking on an operation shows the parameters of the operation. For example, clicking on a configuration operation will display the configuration that is sent to the device. Clicking on a failed operation shows the reason of the failure.
 
@@ -346,12 +345,11 @@ The "All" button shows all operations for a device, regardless of whether they h
 
 ![Operations](/guides/users-guide/operations.png)
 
-
 ## <a name="events-all"></a>Troubleshooting devices
 
 Events are low-level messages sent by devices that are usually used for application-specific processing. For example, a vending device sends its real-time sales in the form of events. If you need to troubleshoot a device at a more detailed level, visit the "Events" tab. Clicking on individual events will reveal more information on the data contained in the event. Similar, you can see all events across all devices by selecting "Events" in the navigator.
 
-Since devices may send larger amounts of event data, you can filter the data shown here by date. You can also click the "realtime" checkbox to see events coming in from the devices in real-time. 
+Since devices may send larger amounts of event data, you can filter the data shown here by date. You can also click the "realtime" checkbox to see events coming in from the devices in real-time.
 
 ## <a name="software-repo"></a> Managing device firmware and software
 
@@ -359,7 +357,7 @@ Cumulocity provides a central place to collect reference firmware and software f
 
 To update firmware or to add software packages on a specific device you have to follow three steps:
 
-1. Upload the firmware or software files in the [Administration application](/guides/users-guide/administration#files). (This step is optional and is not mandatory since the manufacturer might offer the firmware online.) 
+1. Upload the firmware or software files in the [Administration application](/guides/users-guide/administration#files). (This step is optional and is not mandatory since the manufacturer might offer the firmware online.)
 
 2. Select and save the files in the "Firmware repository". To add a new firmware image to the repository, visit the "Firmware repository" and click the "Add firmware" button. Then type the name of the firmware, its version and the URL from where the device can download the firmware. Similar use the "Software repository" to add reference software packages.
 
@@ -381,4 +379,3 @@ In most cases, you should not need to edit anything. Exceptions are:
 ![Bulk provisioning](/guides/users-guide/bulk_provisioning.png)
 
 Device credentials can be also provided from CSV file. File can be uploaded using the button pointed with arrow. More details on the file structure can be found in under [Bulk-registering devices](#creds-upload) above.
-

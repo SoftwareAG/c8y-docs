@@ -17,8 +17,7 @@
 </ul>
 <% end %>
 <% end %>
-<% if @tocItems.length: %>
+<% if @tockItems && @tocItems.length: %>
 <h2>Table of contents</h2>
 <%= renderToc(@tocItems, true) %>
 <% end %>
-

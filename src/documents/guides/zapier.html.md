@@ -13,79 +13,9 @@ The Zapier add-on to Cumulocity helps you to bring real-life data from your asse
 * Create forms to support manual maintenance of master data for your assets.
 * Improve customer service by automating standard interactions such as machine resets from your help desk tools.
 
-This section describes how to easily implement these and many other use cases by combining Cumulocity with [Zapier](https://zapier.com). It first starts with a simple "Hello, world!"-style example that you can execute using the pre-configured simulator setup in your tenant. Then, the section describes in more detail the functionality behind the Zapier add-on. Finally, it shows more examples of using the add-on followed by options of extending the add-on to adapt it better to your use cases.
+This section describes how to easily implement these and many other use cases by combining Cumulocity with [Zapier](https://zapier.com). It will show all available triggers and actions the Cumulocity Zapier app will offer and describe how you can connect them with other services.
 
 All the examples in this section require a Zapier account, which you can obtain for free at https://zapier.com.
-
-## Example
-
-In the first example, we connect Cumulocity to Google Spreadsheet and transfer live measurements from your account into the spreadsheet. You can use the measurements for ad-hoc analysis, for example, to compare the performance of different devices. The example consists of four steps:
-
-* Step 1: Set up a CEL statement to produce data.
-* Step 2: Set up a spreadsheet to hold the data.
-* Step 3: Set up a Zap to connect rule with spreadsheet.
-* Step 4: Test the Zap.
-
-### What you need
-
-To run the example, you need a Google account besides your Zapier account. If you do not have a Google account already, visit https://google.com and click "Sign in", then "Create an account". We also assume that you have the default simulated devices running in your account.
-
-### Step 1: Set up a CEL statement to produce data
-
-Open the Cumulocity administration application, click on "Event Processing" and select "New Module". Give your new module the name "zapier". In the "Examples" drop-down menu, select "Send simulator temperature to Zapier". Click the "Save" button. Your screen should look like the screenshot below.
-
-![Sample CEL statement](/guides/zapier/samplestatement.png)
-
-The above statement selects all new temperature measurements in your account and formats them for the Zapier add-on. The output of the statement is printed live next to the statement. If you have the default simulator configuration running, it should start showing values. For more information on the statements, please visit the Section "[Real-time processing](/guides/concepts/realtime)".
-
-### Step 2: Set up a spreadsheet to hold the data
-
-You also need to create a spreadsheet that will later hold the data from Cumulocity. Visit https://docs.google.com and click "New" and select "Google Sheets". Click on the "Untitled Spreadsheet" text at the top of the screen and give your spreadsheet a name such as "Test spreadsheet". In the spreadsheet, create a header row and a row with sample data as illustrated in the screenshot below.  The header row and the sample data will be used by used by Zapier to simplify the setup of your "Zap", i.e., your new system integration. 
-
-![Sample spreadsheet](/guides/zapier/samplespreadsheet.png)
-
-More information on using spreadsheets with Zapier can be found at https://zapier.com/support/questions/2301/using-zapier-with-google-docs/.
-
-### Step 3: Set up a Zap to connect CEL statement and spreadsheet
-
-Now, you are ready to set up your Zap. Go to https://zapier.com and click the "Make a Zap!" link. 
-
-* Choose "Cumulocity" as "Trigger app" on the left side.
-* Click "Choose a Trigger" and select "New event".
-* Choose "Google Docs" as "Action app" on the right side.
-* Click "Choose an Action" and select "Create Spreadsheet Row".
-
-Your screen should look like the screenshot below. 
-
-![Step 1](/guides/zapier/step1.png)
-
-Next, select the Cumulocity account to use and the Google Docs account to use. For Cumulocity, you need to enter your username, password and the subdomain that you use when connecting to Cumulocity (i.e., your tenant). For Google Docs, you may need to sign in to Google. Then, accept the permission request from Zapier. Make sure that both accounts are marked as working OK.
-
-![Step 2-3](/guides/zapier/step23.png)
-
-Next, enter the CEL statement that you created in Step 1 in the "Feed" field. If you have used "zapier" as name for the CEL module and "measurements" as name for the CEL statement, enter "zapier/metrics".
-
-![Step 4](/guides/zapier/step4.png)
-
-Finally, select the spreadshee that you created in Step 2 in the "Spreadsheet" drop-down menu and select "Sheet1" in the "Worksheet" drop-down menu. Match the output fields of the CEL statement with the columns of the spreadsheet, i.e., insert the "Date" field into the "date" column, insert the "Object" field into the "object" column and insert the "Value" field into the "value column". If you screen looks like the screenshot below, you are ready to test your Zap.
-
-![Step 5](/guides/zapier/step5.png)
-
-### Step 4: Test the Zap
-
-Now, click on "Test Cumulocity trigger". 
-
-![Test Zap](/guides/zapier/testzap.png)
-
-If you do not receive an error, give the Zap a name and turn it on using the "Turn Zap on" button. 
-
-![Run Zap](/guides/zapier/runzap.png)
-
-Open the spreadsheet to watch data from the simulator flowing in.
-
-![Result](/guides/zapier/result.png)
-
-> For more information on setting up Zaps, please visit https://zapier.com/help/. Note that the Zapier plans have limitations on the volume of data that can be transferred. Sending data outside of your plan may deactivate your Zap temporarily.
 
 ## How does it work?
 
@@ -96,59 +26,148 @@ The Zapier add-on connects Cumulocity in two ways to enterprise IT services:
 
 ### From the Internet of Things to enterprise IT services
 
-To send data to enterprise IT services, you need to set up a CEL statement in Cumulocity and a Zap in Zapier, as depicted below. 
+To send data to enterprise IT services, you need to set up a CEL statement in Cumulocity (or use one of your existing SmartRules) and a Zap in Zapier, as depicted below.
 
 ![Triggers](/guides/zapier/triggers.png)
 
-The CEL statement contains the business logic for pre-processing the data that is actually sent. It selects the required data out of all data that is coming into your Cumulocity account. For example, it may select only temperature measurements exceeding a particular threshold to be sent. It may also join the measurement information with inventory data, or aggregate information.
 
-The Zap then links the data produced by the CEL statement ("trigger") with the target IT system ("action"). The CEL statement has to produce the data in a certain format so that the Zapier add-on understands it. It needs to output the following properties:
+#### New SmartRule Event
 
-* *id*: A technical identifier of the device or asset that sent the data. (A character string holding, e.g., a Cumulocity ID, IMEI or a vending machine ID).
-* *name*: The human-readable name of the device or asset that sent the data.
-* *time*:  A timestamp when the data was produced. (E.g., the time when a measurement was taken by a sensor.)
-* *value*: A numerical value. (E.g., a sensor measurement.)
-* *text*: Textual information. (E.g., an alarm or event text or any other additional information that you may want to include.)
+The New SmartRule Event trigger enables you to add additional actions when your SmartRule is executed (e.g. a threshold rule creates a threshold alarm).
+Please ensure that you have created and activated a SmartRule in Cumulocity before using this feature.
+After choosing this trigger and selecting your Cumulocity account, you can specify your SmartRule:
 
-All properties are optional.
+![Cumulocity account](/guides/zapier/setUpSmartRule.png)
+
+|Input|Description|
+|:--|:-------------|
+|SmartRule type|The type of the SmartRule you want to trigger on.|
+|Statement|The statement in the SmartRule you want to trigger on. Some SmartRules support multiple trigger statements.|
+|SmartRule|The SmartRule from your Cumulocity account you want to trigger on. If none is displayed you don't have a SmartRule of that type created.|
+
+All inputs are provided as drop down lists.
+
+In the test step in Zapier we will provide you with an example of how Zapier will receive the data.
+
+
+
+#### New CEL Event
+
+The New CEL Event trigger provides a more generic way to forward any statement of any of your CEL modules to Zapier. Before using this feature you need to deploy your module in Cumulocity.
+After choosing this trigger and selecting your Cumulocity account, you can specify your CEL module:
+
+![Cumulocity account](/guides/zapier/setUpCEL.png)
+
+|Input|Description|
+|:--|:-------------|
+|Module name|The of your CEL module in Cumulocity.|
+|Statement name|The statement in the CEL module you want to trigger on.|
+|Is Channel?|Whether you want to listen to a statement or a channel.|
+
+In the test step in Zapier we will provide you with an example of how Zapier will receive the data but the structure depends purely on how your statement in the CEL looks like. Therefore it might be that some of the fields in our example don't exist in your CEL statement.
+
+Please have a look at our [example](/guides/zapier#examples) for this trigger if you want to know more .
 
 ### From enterprise IT services to the Internet of Things
 
 The Zapier add-on provides a number of Zapier actions to send data to Cumulocity and to the device managed by Cumulocity. The currently supported actions are:
 
-* Update inventory.
-* New device.
-* Trigger device restart.
+* New Device.
+* Update Inventory.
+* Create Operation
 
 ![Actions](/guides/zapier/actions.png)
 
-#### Update inventory
+#### New Device
+
+"New device" registers a new device so that you can connect it directly. Pass the same device ID (IMEI, serial number) as you would normally use in the "Device registration" user interface.
+
+![Device Registration](/guides/zapier/actionDeviceRegistration.png)
+
+#### Update Inventory
 
 "Update inventory" enables you to create and update assets in the Cumulocity inventory. The following parameters can be defined:
 
-* ID: A technical identifier for the asset.
-* Name: A human-readable name for the asset.
-* Type: The fragment type that is created or updated.
-* Data: The fragment's data as a list of keys and values.
-* Is a device? A flag that will mark the asset as a device, i.e., will make the asset show up when clicking on "All Devices".
+|Input|Description|
+|:--|:-------------|
+|ID|A technical identifier for the asset.|
+|Name|A human-readable name for the asset.|
+|Fragment|The fragment type that is created or updated.|
+|Data|The fragment's data as a list of keys and values.|
+|Is a device?|A flag that will mark the asset as a device, i.e., will make the asset show up when clicking on "All Devices".|
 
-Assets are located in the inventory using the following process: 
+Assets are located in the inventory using the following process:
 
 1 The ID is interpreted as asset ID and the Zapier add-on checks if there is an existing asset with the given asset ID.
-2 The ID is interpreted as a Cumulocity global ID and the Zapier add-on checks for an asset with that global ID. 
+2 The ID is interpreted as a Cumulocity global ID and the Zapier add-on checks for an asset with that global ID.
 3 The name is used to find an asset with an exactly matching name.
 
 If any of the three steps succeeds, the retrieved asset is updated. If nothing could be found, a new asset is created.
 
-#### New device
+![Inventory](/guides/zapier/actionInventory.png)
 
-"New device" registers a new device so that you can connect it directly. Pass the same device ID (IMEI, serial number) as you would normally use in the "Device registration" user interface.
+#### Create Operation
 
-#### Trigger device restart
+"Trigger device restarts" sends a restart operation to a device.
 
-"Trigger device restarts" sends a restart operation to a device. The device is identified with the same three-step mechanism as illustrated above in the "Update inventory" action.
+|Input|Description|
+|:--|:-------------|
+|ID|A technical identifier for the device.|
+|Name|A human-readable name for the device.|
+|Description|The description of the operation.|
+|Fragment|The fragment that will be added to the operation.|
+|Data|The fragment's data as a list of keys and values.|
 
-## More examples
+The device is identified with the same three-step mechanism as illustrated above in the "Update inventory" action.
+
+![Operation](/guides/zapier/actionOperation.png)
+
+### Configuring your Cumulocity account in Zapier
+
+Each trigger and action will require you to add valid Cumulocity credentials. If you are creating your first Zap with Cumulocity connection you need to connect a new account and will get to the following dialog where you enter your Cumulocity credentials.
+
+![Cumulocity account](/guides/zapier/credentials.png)
+
+## Examples
+
+> For detailed information on setting up Zaps, please visit https://zapier.com/help/. Note that the Zapier plans have limitations on the volume of data that can be transferred. Sending data outside of your plan may deactivate your Zap temporarily.
+
+### Store CEL data in a Google Spreadsheet
+
+In the first example, we connect Cumulocity to Google Spreadsheet and transfer live measurements from your account into the spreadsheet. You can use the measurements for ad-hoc analysis, for example, to compare the performance of different devices. The example consists of four steps.
+
+To run the example, you need a Google account besides your Zapier account. If you do not have a Google account already, visit https://google.com and click "Sign in", then "Create an account". We also assume that you have the default simulated devices running in your account.
+
+Open the Cumulocity administration application, click on "Event Processing" and select "New Module". Give your new module the name "zapier". In the "Examples" drop-down menu, select "Send simulator temperature to Zapier". Click the "Save" button. Your screen should look like the screenshot below.
+
+![Sample CEL statement](/guides/zapier/samplestatement.png)
+
+The above statement selects all new temperature measurements in your account and formats them for the Zapier add-on. The output of the statement is printed live next to the statement. If you have the default simulator configuration running, it should start showing values. For more information on the statements, please visit the Section "[Real-time processing](/guides/concepts/realtime)".
+
+You also need to create a spreadsheet that will later hold the data from Cumulocity. Visit https://docs.google.com and click "New" and select "Google Sheets". Click on the "Untitled Spreadsheet" text at the top of the screen and give your spreadsheet a name such as "Test spreadsheet". In the spreadsheet, create a header row and a row with sample data as illustrated in the screenshot below.  The header row and the sample data will be used by used by Zapier to simplify the setup of your "Zap", i.e., your new system integration.
+
+![Sample spreadsheet](/guides/zapier/samplespreadsheet.png)
+
+More information on using spreadsheets with Zapier can be found at https://zapier.com/support/questions/2301/using-zapier-with-google-docs/.
+
+Now, you are ready to set up your Zap:
+
+* Choose "Cumulocity" as "Trigger app".
+* Select "New CEL event".
+* Connect your Cumulocity Account in Zapier (or select it if you previously connected it).
+* Enter "zapier"  in the "Module name" input and "simulatortemperature" in the "Statement" input
+* Choose "Google Sheets" as "Action app" on the right side.
+* Select "Create Spreadsheet Row".
+* Connect your Google Account in Zapier (or select it if you previously connected it).
+* Select your spreadsheet and worksheet from the pull down menus
+
+Your screen should look like the screenshot below after going through all steps:
+
+![Example 1](/guides/zapier/example1.png)
+
+Activate the Zap in Zapier and open the spreadsheet to watch data from the simulator flowing in.
+
+![Result](/guides/zapier/result.png)
 
 ### Register a device from a spreadsheet
 
@@ -158,19 +177,22 @@ As first step, prepare a spreadsheet similar to the one below in the screenshot.
 
 ![Device spreadsheet](/guides/zapier/devicessheet.png)
 
-Then create a new Zap, selecting Google docs as source and Cumulocity as destination. The trigger is "Update Spreadsheet Row", and the action is "New device".
+Now, you are ready to set up your Zap:
 
-![New device trigger](/guides/zapier/newdevicetrigger.png)
+* Choose "Google Sheets" as "Trigger app".
+* Select "New Spreadsheet Row".
+* Connect your Google Account in Zapier (or select it if you previously connected it).
+* Select your spreadsheet and worksheet from the pull down menus
+* Choose "Cumulocity" as "Action app" on the right side.
+* Select "New Device".
+* Connect your Cumulocity Account in Zapier (or select it if you previously connected it).
+* Select the IMEI column from the fields list to use in the "Device ID" input
 
-Select your spreadsheet and the workbook in this spreadsheet. Use as "Trigger Column" the column with the device identifier ("IMEI" in this case).
+Your screen should look like the screenshot below after going through all steps:
 
-![Select ID column](/guides/zapier/selectidcolumn.png)
+![Example 2](/guides/zapier/example2.png)
 
-Use the same column as value for the "Device ID" field so that the ID is sent to Cumulocity.
-
-![Set ID column](/guides/zapier/setidcolumn.png)
-
-Test the Zap and turn it on. Enter a new device into your spreadsheet. 
+Test the Zap and turn it on. Enter a new device into your spreadsheet.
 
 ![Enter device](/guides/zapier/enterdevice.png)
 
@@ -186,49 +208,38 @@ Now you can play with this setup. For example, you could introduce a workflow co
 
 In this example, we update the Cumulocity inventory using a Wufoo form.
 
-#### What you need
-
 To run the example, you need a [Wufoo account](http://www.wufoo.com/).
-
-#### Create a form on Wufoo
 
 Open the Wufoo form builder and create a form for your inventory entry. For the example, we want to create customer contacts in the inventory. Save the form.
 
 ![Wufoo form](/guides/zapier/wufooform.png)
 
-#### Create a Zap to send form data to Cumulocity
+Now, you are ready to set up your Zap:
 
-Make a new Zap in Zapier.
-
-* Select Wufoo as source and Cumulocity as destination.
-* Use "New Entry" as trigger and "Update inventory" as action.
-* Connect your Wufoo and Cumulocity accounts. 
-* Select the form that you have created in the Wufoo form builder.
-* Match the Wufoo form entries with Cumulocity inventory entries as shown below.
+* Choose "Wufoo" as "Trigger app".
+* Select "New Entry".
+* Connect your Wufoo Account in Zapier (or select it if you previously connected it).
+* Select your form from the pull down menus
+* Choose "Cumulocity" as "Action app" on the right side.
+* Select "Update Inventory".
+* Connect your Cumulocity Account in Zapier (or select it if you previously connected it).
+* Fill the data fields from the Wufoo form into the Update Inventory inputs (e.g. like in the screenshot below)
 
 In this case, we are creating a new entry for each customer entered into Wufoo. Hence, the Wufoo entry ID can be used as asset ID in Cumulocity. As name, we use the first and last name of the contact. "Data" contains a list of key/value pairs that you can use for the remaining form data. These key/value pairs are stored in a Cumulocity fragment "c8y_Contact". You can set "Is a device?" to true to see the entered data in the device management application (even though your contact isn't exactly a device).
 
 ![Wufoo Zap](/guides/zapier/wufoozap.png)
 
-#### Fill some forms
+Your screen should look like the screenshot below after going through all steps:
 
-After testing and activating your Zap, go to the Wufoo entry manager and enter some data. 
-
-TBD: How to test this really? Maybe we should use some data here that we have actually a display for.
+![Example 3](/guides/zapier/example3.png)
 
 ### Create mash-up dashboards
 
 In this example, we populate Ducksboard dashboards with device data.
 
-#### What you need
-
 To run the example, you need a [Ducksboard account](https://ducksboard.com).
 
-#### Create a dashboard in Ducksboard
-
-Create a dashboard in Ducksboard and add a few widgets to the dashboard. Click on the "+" icon at the top of the dashboard, then choose "Send data through our API". Choose a widget from the categories "Numbers" or "Text" and give the widget a name. Place it on your dashboard. 
-
-#### Create rules in Cumulocity
+Create a dashboard in Ducksboard and add a few widgets to the dashboard. Click on the "+" icon at the top of the dashboard, then choose "Send data through our API". Choose a widget from the categories "Numbers" or "Text" and give the widget a name. Place it on your dashboard.
 
 Go to the Cumulocity administration application and open "Event Processing". Create a new module "ducksboard" and add a statement for each of the widgets that you have created in Ducksboard. The statement needs to produce the data that you want to show in the corresponding widget. For example, use the "Send simulator temperature to Zapier" example statement to send a number to a chart widget. As another example, send alarms to a timeline widget using the following statement:
 
@@ -239,17 +250,22 @@ Go to the Cumulocity administration application and open "Event Processing". Cre
 		e.alarm.text as text
 	from AlarmCreated e;
 
-#### Make Zaps to send data
+Now, you are ready to set up your Zap:
 
-Now, link the dashboard widgets and the statements using Zapier. Create a new Zap with "Cumulocity" as trigger and "Ducksboard" as action. On the Cumulocity side, enter the statement name. For example, use "ducksboard/messages" for the above alarm example. 
+* Choose "Cumulocity" as "Trigger app".
+* Select "New CEL event".
+* Connect your Cumulocity Account in Zapier (or select it if you previously connected it).
+* Enter "ducksboard"  in the "Module name" input and "messages" in the "Statement" input
+* Choose "Ducksboard" as "Action app" on the right side.
+* Select "Timeline Message".
+* Connect your Ducksboard Account in Zapier (or select it if you previously connected it).
+* Fill the data fields from your CEL statement into the Ducksboard inputs
 
-The choose the widget to send the data to. Click on the "Slot Label" drop-down menu to get a list of widgets matching the action that you have selected previously. For example, if you selected "Timeline Message" as action, you should see all timeline widgets of your dashboard in the drop-down list. 
+Your screen should look like the screenshot below after going through all steps:
 
-Place the statement output (id, name, time, text, value) into the widget fields. For example, to show an alarm in a timeline widget, you could place the "name" property into the "title" field and the "text" property into the "content" field. 
+![Example 4](/guides/zapier/example4.png)
 
-![Configure ducksboard](/guides/zapier/ducksboard.png)
-
-You can also put a link to the alarm tab in Cumulocity into the board by using the following link 
+You can also put a link to the alarm tab in Cumulocity into the board by using the following link
 
 	https://<URL>.cumulocity.com/apps/devicemanagement/index.html#/device/<ID>/alarms
 
@@ -257,37 +273,8 @@ Now test and activate your Zap.
 
 ![Link timeline to Cumulocity](/guides/zapier/followlink.png)
 
-### Send sales to your accounting
-
-In this example, we send vending machine sales automatically to your accounting system.
-
-#### What you need
-
-* Freshbooks/OpenERP/Google Spreadsheet
-
-#### Set up CEL rule
-
-Select "Send sales to Zapier" in the CEP engine.
-
-#### Create Zap
-
-![Match invoice](/guides/zapier/matchinvoice.png)
-
-### Restart a device from your ticketing system
-
-### Create tickets from alarms
-
-### Expose events 
-
-* RSS Feed
-* Twitter/Facebook/HipChat
-
-### Post location of machine to CRM?
-
-http://www.geonames.org/export/reverse-geocoding.html
-
 ## Extensions
 
-New ideas? Mail us.
+Zapier offers an built-in action to send pure REST requests called "Webhooks". You are able to use this action to send any data to our documented APIs directly.
 
-
+Still have ideas for features in the Cumulocity app? Mail us.

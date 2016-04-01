@@ -1,4 +1,4 @@
-redirects = 
+redirects =
 	# Legacy redirects
 	'/guides/concepts-guide': '/guides/concepts/introduction'
 	'/guides/concepts-guide/introduction-to-cumulocity': '/guides/concepts/introduction'
@@ -49,8 +49,9 @@ redirects =
 	'/guides/reference-guide/cumulocity-event-language.html': '/guides/reference/cumulocity-event-language'
 	'/guides/reference-guide/real-time-notifications.html': '/guides/reference/real-time-notifications'
 	'/guides/devices/netcomm/netcomm-release': '/guides/devices/netcomm-release'
-	'/guides/devices/netcomm/netcomm-usersguide': '/guides/devices/netcommwireless'	
-	'/guides/devices/netcomm/cloud-fieldbus': '/guides/users-guide/cloud-fieldbus'	
+	'/guides/devices/netcomm/netcomm-usersguide': '/guides/devices/netcommwireless'
+	'/guides/devices/netcomm/cloud-fieldbus': '/guides/users-guide/cloud-fieldbus'
+	'/guides/reference/cumulocity-event-language': '/guides/event-language/introduction'	
 	# "index.html" redirects
 	'/guides/concepts': '/guides/concepts/introduction'
 	'/guides/users-guide': '/guides/users-guide/overview'

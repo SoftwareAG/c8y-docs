@@ -93,19 +93,20 @@ Devices can be arbitrarily grouped according to your use case. A device can be l
 
 Cumulocity distinguishes between top-level groups and subgroups. Top-level groups are shown in the navigator at top-level in the section "Groups". They are your main entry point. Subgroups are used to further subdivide groups.
 
-To create a top-level group, click on "Top-level groups" and select "Add Group". Enter the name of your new group and click the "Add Group" button.
+To create a top-level group, click on the cross button at the top-right, then select "Add new group". Small window will pop-up. Enter group name and search for the desired devices that should be added to the group. Mark the devices and press the "Create group with X devices" button to finish the process. ("X" will be the number of devices that you marked.)
 
-![Adding top-level groups](/guides/users-guide/toplevelgroups.png)
+> Note that a group can be created with "0" devices in it.
 
-You can add devices to a group in two ways:
+![Adding top-level groups](/guides/users-guide/addtopgroup.png)
+
+You can also add devices to a group in two other ways: 
 
 * Select a device and locate the "Groups" section on the "Info" tab. Use the drop-down menu or the "Browse groups" button to select a group to add this device to.
-* Select the group and click "Assign devices" at the top right. Search for the devices that should be added in the search field. Then mark the relevant devices in the result and click the "Assign x devices" button at the bottom of the result list. ("x" will be the number of devices that you marked.)
+* Select the group and go to "Sub-assets", click "Assign devices" at the top right. Search for the devices that should be added in the search field. Then mark the relevant devices in the result and click the "Assign x devices" button at the bottom of the result list. 
 
 To create a subgroup, just click "Add Group" when viewing a group.
 
 To edit a group, click on the group's name. This allows you to edit the name of the group and assign user permissions for the group. For more information on permissions, see the [Administration](/guides/users-guide/administration) guide.
-
 
 ## <a name="device-details"></a>Viewing the device details
 

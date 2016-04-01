@@ -291,7 +291,7 @@ To add new simulator, click on "Add simulator"
 - Select the desired sensors. This will reveal two new fields: "Values" and "Interval". "Values" contains a playlist of numbers separated by semicolons, which will be played in "Interval" seconds. For example, if you use "16.7;18;20" as "Values" and 5 seconds as interval, the first simulated sensor reading will be 16.7. After five seconds, a second value of 18 will be recorded. After another five seconds, 20 will be recorded. After further five seconds, the procedure will start from the first value.
 - Click "Save"
 
-Please note that the maximum number of simulators is 9.
+Please note that the maximum number of simulators is 10.
 
 ![Add simulator](/guides/users-guide/addsimulator.png)
 

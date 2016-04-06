@@ -34,7 +34,6 @@ Verify that the toggle switch "Cumulocity agent" is set to "ON" and the URL show
 
 * https://management.cumulocity.com/s for connecting to Cumulocity.
 * https://management.ram.m2m.telekom.com/s for connecting to Deutsche Telekom Cloud of Things.
-* https://management.telstra-iot.com/s for connecting to the Telstra IoT platform.
 
 Optionally, you can activate data collecting for the following functionalities:
 

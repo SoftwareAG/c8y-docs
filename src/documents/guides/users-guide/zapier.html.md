@@ -1,6 +1,6 @@
 ---
 layout: default
-title: Zapier add-on
+title: Zapier
 ---
 
 ## Overview
@@ -16,6 +16,10 @@ The Zapier add-on to Cumulocity helps you to bring real-life data from your asse
 This section describes how to easily implement these and many other use cases by combining Cumulocity with [Zapier](https://zapier.com). It will show all available triggers and actions the Cumulocity Zapier app will offer and describe how you can connect them with other services.
 
 All the examples in this section require a Zapier account, which you can obtain for free at https://zapier.com.
+
+## Access Cumulocity app in Zapier
+
+If you want to get access to the app and try it out please contact us at support@cumulocity.com.
 
 ## How does it work?
 

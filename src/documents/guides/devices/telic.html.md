@@ -23,8 +23,8 @@ To connect a Telic device to Cumulocity, you need to
 
 To make the tracker send data to Cumulocity, follow these steps with the Telic Configuration Tool:
 
-* Click on the tab "Communication Configuration". 
-* In the section "Server" at the bottom, click the "New" button. 
+* Click on the tab "Communication Configuration".
+* In the section "Server" at the bottom, click the "New" button.
 * Set a profile name (for example, "Cumulocity").
 * Set the "IP address" to 79.125.6.11.
 * Set the "Port" to 9090.
@@ -60,12 +60,13 @@ Once you have set up the profiles, you can send the same profiles also to other 
 
 To connect the device to your Cumulocity account:
 
-* Open Cumulocity in a web browser and navigate to the "Registration" page. 
-* Locate the IMEI number on the device (below the barcode on the sticker). 
+* Open Cumulocity in a web browser and navigate to the "Registration" page.
+* Locate the IMEI number on the device (below the barcode on the sticker).
 * Type the **last six digits** of the IMEI into the "Device ID" field and click "Register Device". The IMEI will be listed with status "Waiting for connection".
 * Switch the device on. After the device has dialled up to the network, an "Accept" button will be visible next to the IMEI.
 * Click the "Accept" button.
-* The device will now send location data according to the device configuration that you set. 
+* If this is the first tracking device you connect to your tenant you also need the register the tracker agent. Type tracker-agent-{tenant} (where {tenant} is your tenant name) into the "Device ID" field and click "Register Device". Click the "Accept" button once it shows up.
+* The device will now send location data according to the device configuration that you set.
 
 ![Device registration](/guides/devices/telic/telicregistration.png)
 

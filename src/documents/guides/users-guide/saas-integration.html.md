@@ -237,46 +237,6 @@ Your screen should look like the screenshot below after going through all steps:
 
 ![Example 3](/guides/zapier/example3.png)
 
-### Create mash-up dashboards
-
-In this example, we populate Ducksboard dashboards with device data.
-
-To run the example, you need a [Ducksboard account](https://ducksboard.com).
-
-Create a dashboard in Ducksboard and add a few widgets to the dashboard. Click on the "+" icon at the top of the dashboard, then choose "Send data through our API". Choose a widget from the categories "Numbers" or "Text" and give the widget a name. Place it on your dashboard.
-
-Go to the Cumulocity administration application and open "Event Processing". Create a new module "ducksboard" and add a statement for each of the widgets that you have created in Ducksboard. The statement needs to produce the data that you want to show in the corresponding widget. For example, use the "Send simulator temperature to Zapier" example statement to send a number to a chart widget. As another example, send alarms to a timeline widget using the following statement:
-
-	@Name("messages")
-	select
-		e.alarm.source.value as id,
-		findManagedObjectById(e.alarm.source.value).getName() as name,
-		e.alarm.text as text
-	from AlarmCreated e;
-
-Now, you are ready to set up your Zap:
-
-* Choose "Cumulocity" as "Trigger app".
-* Select "New CEL event".
-* Connect your Cumulocity Account in Zapier (or select it if you previously connected it).
-* Enter "ducksboard"  in the "Module name" input and "messages" in the "Statement" input
-* Choose "Ducksboard" as "Action app" on the right side.
-* Select "Timeline Message".
-* Connect your Ducksboard Account in Zapier (or select it if you previously connected it).
-* Fill the data fields from your CEL statement into the Ducksboard inputs
-
-Your screen should look like the screenshot below after going through all steps:
-
-![Example 4](/guides/zapier/example4.png)
-
-You can also put a link to the alarm tab in Cumulocity into the board by using the following link
-
-	https://<URL>.cumulocity.com/apps/devicemanagement/index.html#/device/<ID>/alarms
-
-Now test and activate your Zap.
-
-![Link timeline to Cumulocity](/guides/zapier/followlink.png)
-
 ## Extensions
 
 Zapier offers an built-in action to send pure REST requests called "Webhooks". You are able to use this action to send any data to our documented APIs directly.

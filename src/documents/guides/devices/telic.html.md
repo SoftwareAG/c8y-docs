@@ -103,7 +103,7 @@ The central point is location event which has properties:
 * "GPSTimestamp" - is the GPS timestamp.
 * "logTimestamp" - is the value representing timestamp when the logging happened. This value is also substituted for time of all created events and measurements.
 * "reportReason" - is the report reason and can have one of the folowing values: "Time Event", "Distance Event", "Angular Change Event", "Power Event", "Geofence Area Enter", "Geofence Area Exit", "Motion Start", "Motion Stop".
-* The "c8y_Position" fragment of the event; it is also updated in the device ManagedObject. Supported resolutions of the position data are: 100 μDegree or 1 μDegree.
+The "c8y_Position" fragment of the event is also updated in the device ManagedObject.
 * "Fix type" - GPS fix: "No Fix", "2D Fix" or "3D Fix".
 * "trackingProtocol" - is  the name of tracking protocol.
 

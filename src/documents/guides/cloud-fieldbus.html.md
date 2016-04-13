@@ -14,7 +14,7 @@ Cloud Fieldbus is a Cumulocity application that lets you collect data from field
 
 Cloud Fieldbus is currently in beta. It supports Modbus out of the box on the following terminals:
 
-* Teleorigin RB900 for Modbus/RTU.
+* Pssystec Smartbox-Modbus.
 * [Netcomm Wireless NTC-6200](/guides/devices/netcommwireless) for Modbus/TCP.
 
 > If you want to support Cloud Fieldbus in your terminal, please contact info@cumulocity.com for more information.
@@ -31,7 +31,7 @@ To connect a Modbus/RTU device:
 * Give the device a unique Modbus address according to the instructions provided with the Modbus device (e.g., by setting a jumper on the device).
 * Check the serial communication settings of the device according to the instructions provided with the device (i.e., baud rates and communication protocol). These have to match on all devices on the bus.
 * Navigate to the terminal in Cumulocity and click on the "Modbus" tab.
-* Change the communication settings shown in the section "Serial Communication" to match the settings on the bus, if needed. 
+* Change the communication settings shown in the section "Serial Communication" to match the settings on the bus, if needed.
 * Change the transmit rate and the polling rate according to your requirements. The polling rate is the frequency at which the Modbus devices are polled for changes. The transmit rate is the frequency at which measurements are sent to Cumulocity.
 * Click "Save changes" if you made changes.
 
@@ -39,7 +39,7 @@ To connect a Modbus/RTU device:
 
 * To start communication between the terminal and the Modbus device, click "Add new device".
 * Enter a name for the device and select the type of the device from the drop-down box. To add new device types, see "[Configuring Modbus device types](#configure)" below. Set the Modbus address of the connected device.
-* Click "Add". Cumulocity will now send a notification to the Modbus terminal that a new device is ready to be managed. This may take a few seconds. 
+* Click "Add". Cumulocity will now send a notification to the Modbus terminal that a new device is ready to be managed. This may take a few seconds.
 
 After the progress indicator vanishes, a new child device has been added to the terminal and can now be managed. You can click on the name of the device in the table to navigate to the device. If you have not yet added Modbus devices to the terminal, you may have to reload your browser window to make the "Child Devices" tab visible.
 
@@ -48,13 +48,13 @@ After the progress indicator vanishes, a new child device has been added to the 
 To connect a Modbus/TCP device:
 
 * Make sure that the Modbus/TCP device is connected to the terminal, e.g., directly through an Ethernet cable or through a switch. If you are using a Modbus gateway, configure the gateway so that it can communicate with the Modbus devices behind the gateway.
-* Check the network settings of the device using the instructions provided with the device. 
+* Check the network settings of the device using the instructions provided with the device.
 * Navigate to the terminal in Cumulocity and click on the "Network" tab. Verify that the LAN settings of the terminal match the settings of the device so that TCP communication can be established.
 * Navigate to the "Modbus" tab.
 * Change the transmit rate and the polling rate according to your requirements. The polling rate is the frequency at which the Modbus devices are polled for changes. The transmit rate is the frequency at which measurements are sent to Cumulocity. Click "Save changes" if you made changes.
 * To start communication between the terminal and the Modbus device, click "Add new device".
 * Enter a name for the device and select the type of the device from the drop-down box. To add new device types, see "[Configuring Modbus device types](#configure)" below. Set the Modbus address and the IP address of the connected device.
-* Click "Add". Cumulocity will now send a notification to the Modbus terminal that a new device is ready to be managed. This may take a few seconds. 
+* Click "Add". Cumulocity will now send a notification to the Modbus terminal that a new device is ready to be managed. This may take a few seconds.
 
 ![Add Modbus device](/guides/users-guide/newmodbustcpdevice.png)
 
@@ -89,7 +89,7 @@ Similar to alarms, changes in Modbus devices can be monitored and logged as even
 
 ![Modbus events](/guides/users-guide/modbusevents.png)
 
-### <a name="status"></a>Monitoring device status 
+### <a name="status"></a>Monitoring device status
 
 The status of devices can be monitored in real-time using dashboard widgets in the Cockpit application. Navigate to the Cockpit application, create a dashboard or report, and add widgets as described in the [Cockpit user's guide](/guides/users-guide/cockpit). Cloud Fieldbus adds two new widgets: The "Fieldbus Device" widget and the "SCADA" widget.
 
@@ -121,7 +121,7 @@ The SCADA widget provides you with a graphical representation of the status of a
 
 ![Adding the SCADA Widget](/guides/users-guide/scadaedit.png)
 
-After the upload, the placeholders in the SVG file are shown in a list. You now need to assign each placeholder to a property of the device. 
+After the upload, the placeholders in the SVG file are shown in a list. You now need to assign each placeholder to a property of the device.
 
 * Hover over each placeholder and select the "Assign device property" button or the "Assign fieldbus property" button.
 * This will pop up a dialog box that allows you to choose basic device properties or fieldbus properties (i.e., status coils and registers). Select a property and click "Select".
@@ -196,7 +196,3 @@ The SCADA widgets inspects uploaded SVG files for placeholders. These placeholde
 	<text class="text" xt-anchor="middle" x="100" y="236.982125" width="200" ...>
 		{{batteryValue}}
 	</text>
-
-
-
-

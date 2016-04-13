@@ -1005,7 +1005,7 @@ The rule uses the following parameters:
 
 ![image alt text](/guides/users-guide/image_29.png)
 
-* Alarm type: The type of the alarm that triggers the rule. For each newly created alarm of this type the rule is triggered.
+* Alarm types: The types of the alarms that triggers the rule. For each newly created alarm one of these types the rule is triggered.
 
 * Send to: Email addresses for sending the e-mail to. Multiple addresses can be separated by a comma (",", do not use a space!).
 
@@ -1039,7 +1039,7 @@ The rule uses the following parameters:
 
 ![image alt text](/guides/users-guide/image_30.png)
 
-* Alarm type: The type of the alarm that triggers the rule: For each newly created alarm of this type the rule is triggered.
+* Alarm types: The types of the alarms that triggers the rule. For each newly created alarm one of these types the rule is triggered.
 
 * Phone number: Target phone number. It is recommended to include mobile country code for all numbers, e.g. "+49" or "0049" for Germany. Multiple numbers can be separated by a comma (",", do not use a space!).
 
@@ -1061,7 +1061,7 @@ If an alarm is active for a certain time, increase the severity.
 
 The rule uses the following parameters:![image alt text](/guides/users-guide/image_31.png)
 
-* Alarm type: The type of the alarm that triggers the rule.
+* Alarm types: The types of the alarms that triggers the rule.
 
 * Duration: How long must the alarm be active to trigger the rule?
 
@@ -1158,7 +1158,7 @@ The rule uses the following parameters:
 
 ![image alt text](/guides/users-guide/image_36.png)
 
-* Alarm type: The type of the alarm that triggers the rule.
+* Alarm types: The types of the alarms that triggers the rule. For each newly created alarm one of these types the rule is triggered.
 
 * Operation: The operation that should be send. The operation is provided as JSON description. A few standard operations can be selected below the operations fields. To use a standard operation, select one, and press the arrow button to the right. This will insert the JSON of the selected operation.
 
@@ -1202,7 +1202,7 @@ The rule uses the following parameters:
 
 ![image alt text](/guides/users-guide/onalarmsendtexttospeach.png)
 
-* Alarm type: The type of the alarm that triggers the rule.
+* Alarm types: The types of the alarms that triggers the rule. For each newly created alarm one of these types the rule is triggered.
 
 * Phone number: Target phone number. It is recommended to include mobile country code for all numbers, e.g. "+49" or "0049" for Germany.
 
@@ -1234,7 +1234,7 @@ The rule uses the following parameters:
 
 ![image alt text](/guides/users-guide/escalatealarm1.png)
 
-* Alarm type: The type of the alarm that triggers the rule.
+* Alarm types: The types of the alarms that triggers the rule. For each newly created alarm one of these types the rule is triggered.
 
 The rule allows to define the chain of action steps. In order to add step click button "Add step". Form with following parameters will appear:
 

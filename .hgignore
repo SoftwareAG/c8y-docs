@@ -4,3 +4,4 @@ out/
 .docpad.db
 syntax: glob
 codekit-config.json
+npm-debug.log

@@ -392,7 +392,7 @@ It is possible to have more than one mail address in the parameters receiver,cc 
 
 _Note:_
 
-This feature will only work if the respective server side agent for sending dashboards is activated for your tenant. [How to activate this feature](guides/users-guide/administration/#settings)
+This feature will only work if the respective server side agent for sending dashboards is activated for your tenant. [How to activate this feature](http://www.cumulocity.com/guides/users-guide/administration/#settings)
 
 
 Example:

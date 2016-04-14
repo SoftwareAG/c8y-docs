@@ -69,6 +69,7 @@ Example response:
 Notes about Operation Collections:
 
 -   The embedded operation object contains "deviceExternalIDs" only when queried with an "agentId" parameter. 
+-   The embedded operation object is filled with "deviceName", but only when requesting resource: Get a collection of operations. 
 -   Operations are returned in the order in which they have been created (a [FIFO](http://en.wikipedia.org/wiki/FIFO) queue).
 
 ### POST - Create an Operation
@@ -141,6 +142,7 @@ Example Response:
           "id" : "123",
           "self" : "<<This Operation URL>>",
           "deviceId" : "1234",
+	  "deviceName" : "WebCamDevice",
           "status" : "PENDING",
           "creationTime" : "2011-09-06T12:03:27.927Z",
           "com_cumulocity_model_WebCamDevice" : {
@@ -155,6 +157,7 @@ Example Response:
           "id" : "124",
           "self" : "<<This Operation URL>>",
           "deviceId" : "1234",
+          "deviceName" : "DiscreteStateDevice",
           "status" : "PENDING",
           "creationTime" : "2011-09-06T12:03:27.927Z",
           "com_cumulocity_model_DiscreteStateDevice" : {
@@ -237,6 +240,18 @@ Example response:
         }
       }
     }
+
+## <a name="control_via_sms"></a> Device control via SMS
+
+In order to send operations via SMS, either the device managed object should contain the fragment:
+
+		"c8y_CommunicationMode": {
+    		"mode": "SMS"
+		}
+
+or the operation should contain the property:
+
+		"deliveryType": "SMS"
 
 ## Notifications
 

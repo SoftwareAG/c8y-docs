@@ -43,9 +43,9 @@ Die URL wird Sie auf eine Seite weiterleiten, auf der Sie sich anmelden können.
 
 ## <a name="login"></a>Anmeldung
 
-Um Ihre Anwendung zu starten, geben Sie Ihren Nutzernamen und Ihr Passwort ein. Das "" Kontrollkästchen bewirkt, dass sich der Web Browser Ihre Zugangsdaten merkt. Auf diese Weise müssen Sie Ihre Zugangsdaten nicht noch einmal eingeben, wenn Sie die Anwendung das nächste Mal starten, oder zwischen Anwendungen hin und her wechseln möchten. Um den Web Browser Ihre Zugangsdaten "vergessen" zu lassen, müssen Sie sich abmelden. Wenn Sie auf Ihren Nutzernamen oben rechts klicken, erscheint der Menüpunkt "", mit welchem Sie sich abmelden können.
+Um Ihre Anwendung zu starten, geben Sie Ihren Nutzernamen und Ihr Passwort ein. Das "" Kontrollkästchen bewirkt, dass sich der Web Browser Ihre Zugangsdaten merkt. Auf diese Weise müssen Sie Ihre Zugangsdaten nicht noch einmal eingeben, wenn Sie die Anwendung das nächste Mal starten, oder zwischen Anwendungen hin und her wechseln möchten. Um den Web Browser Ihre Zugangsdaten "vergessen" zu lassen, müssen Sie sich abmelden. Wenn Sie auf Ihren Nutzernamen oben rechts klicken, erscheint der Menüpunkt "Ausloggen", mit welchem Sie sich abmelden können.
 
-<img src="/guides/users-guide/logout.png" alt="Logout menu" style="max-width: 60%">
+<img src="/guides/benutzerhandbuch/overview/logout.png" alt="Logout menu" style="max-width: 60%">
 
 > Aus Sicherheitsgründen verwendet Cumulocity keine Cookies.
 
@@ -65,8 +65,7 @@ Um Ihr Passwort zu ändern, klicken Sie auf den Menüpunkt "Benutzereinstellunge
 
 ## <a name="navigating"></a>Navigation in Cumulocity Anwendungen
 
-Once you are logged in, your default Cumulocity application will open. The content of Cumulocity applications is entirely dynamic and is generated based on various criteria:
-Der Inhalt von Cumulocity Anwendungen wird dynamisch anhand folgender Kriterien generiert:
+Sobald Sie sich angemeldet haben, werden Sie zu Ihrer Standard Cumulocity Anwendung weitergeleitet. Der Inhalt von Cumulocity Anwendungen wird dynamisch anhand folgender Kriterien generiert:
 
 * Anwendungen, die von Ihner Organisation abonniert wurden.
 * Anwendungen, die von Ihrer Organisation selbst konfiguriert oder für Cumulocity erstellt wurden.
@@ -82,10 +81,10 @@ Die generelle Struktur einer Cumulocity Anwendung wird in der nächsten Abbildun
 * Der obere Bereich der Anwendung wird als Meldungsleiste genutzt, wann immer ein Status (grün) der ein Fehler (rot) angezeigt werden muss.
 * Das Suchfeld bietet die Möglichkeit, textuell nach Informationen zu suchen, sofern diese vorhanden sind.
 * Mit dem Kachel-Symbol oben rechts können Sie zwischen den Anwendungen wechseln. Falls Sie bei der Anmeldung das "" Kontrollkästchen nicht bestätigt haben, müssen Sie Ihre Zugangsdaten erneut eingeben.
-* Mit einem Klick auf Ihren Nutzernamen oben rechts öffnen Sie das Nutzer-Menü. Sie können sich über dieses Menü abmelden (selbst wenn Sie auf "" geklickt haben), die Benutzereinstellungen ändern oder das Hilfe-Menü aufrufen. 
+* Mit einem Klick auf Ihren Nutzernamen oben rechts öffnen Sie das Nutzer-Menü. Sie können sich über dieses Menü abmelden (selbst wenn Sie auf "" geklickt haben), die Benutzereinstellungen ändern oder eine Anfrage an den Support stellen. 
 * In manchen Seiten können Sie ein Zahnrad-Symbol oben rechts vorfinden, mit welchem Sie auf weitere Funktionalitäten zugreifen können.
 
-![Cumulocity application](/guides/users-guide/app.png)
+![Cumulocity application](/guides/benutzerhandbuch/overview/app.png)
 
 Auf kleineren Bildschirmen ändert sich das Layout der Anwendung, wie Sie in der unteren Abbildung sehen können. Das Menü wird verborgen und nur einige der Reiter werden angezeigt. Um das Menü nutzen zu können, klicken Sie auf das Symbol mit den drei Linien oben links. Um weitere Reiter abrufen zu können, "schieben" Sie die Reiter nach links oder rechts. (Wie Sie die Reiter "schieben" können, hängt von Ihrem Gerät ab)
 
@@ -106,9 +105,9 @@ Mit so einer URL können Sie
 
 ## <a name="settings"></a>Benutzereinstellungen
 
-Um die Einstellungen Ihres Nutzerkontos zu ändern, klicken Sie auf das Nutzer-Symbol oben rechts und dann auf "Benutzereinstellungen". Mit Hilfe des "" Auswahlmenüs können Sie einstellen, welche Sprache in der Cumulocity Anwendung angezeigt werden soll. Ihr Passwort können Sie ändern, indem Sie auf "Passwort ändern" klicken. Falls Sie Änderungen übernehmen möchten, klicken Sie auf "Speichern". Wenn Sie auf "Abbrechen" klicken, werden die Änderungen nicht übernommen.
+Um die Einstellungen Ihres Nutzerkontos zu ändern, klicken Sie auf das Nutzer-Symbol oben rechts und dann auf "Benutzereinstellungen". Mit Hilfe des "Sprache" Auswahlmenüs können Sie einstellen, welche Sprache in der Cumulocity Anwendung angezeigt werden soll. Ihr Passwort können Sie ändern, indem Sie auf "Passwort ändern" klicken. Falls Sie Änderungen übernehmen möchten, klicken Sie auf "Speichern". Wenn Sie auf "Abbrechen" klicken, werden die Änderungen nicht übernommen.
 
-<img src="/guides/users-guide/usersettings.png" alt="User settings"  style="max-width: 60%">
+<img src="/guides/benutzerhandbuch/overview/usersettings.png" alt="User settings"  style="max-width: 60%">
 
 Die dargestellte Sprache hängt ab von:
 

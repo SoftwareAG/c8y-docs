@@ -214,6 +214,47 @@ Example response:
 
 	204 No Content
 
+### POST - Copy an application
+
+A POST request to the "clone" resource creates new application based on already existing one. 
+Properties are copied to newly created application.
+For name, key and context path there is added "clone" prefix in order to be unique. 
+If target application is hosted and have active version then new application will have the active version with the same content.
+Response contains representation of newly created application.
+
+Required role: ROLE\_APPLICATION\_MANAGMENT\_ADMIN
+
+Example request:
+
+    POST /application/applications/{{application_id}}/clone HTTP/1.1
+    Authorization: Basic ...
+    Accept: application/vnd.com.nsn.cumulocity.application+json
+
+Example response:
+
+    HTTP/1.1 201 Created
+    Location: .../application/applications/{{application_id}}
+    Content-Type: application/vnd.com.nsn.cumulocity.application+json; charset=UTF-8; ver=0.9
+    
+    {
+        "activeVersionId": "10414",
+        "availability": "MARKET",
+        "contextPath": "clonetest",
+        "id": "1115",
+        "key": "clonesecretKeyForTheApplication",
+        "manifest": {},
+        "name": "clonetestApplicationName",
+        "owner": {
+            "self": ".../tenant/tenants/management",
+            "tenant": {
+                "id": "management"
+            }
+        },
+        "resourcesUrl": "/test",
+        "self": ".../application/applications/1115",
+        "type": "HOSTED"
+    }
+
 ### PUT - Update an Application
 
 Request body: Application

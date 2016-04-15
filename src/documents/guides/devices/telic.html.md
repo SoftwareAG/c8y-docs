@@ -80,7 +80,7 @@ Here are some general hints if your tracking device does not connect to Cumuloci
 * Devices can only registered after they start sending data to Cumulocity.
 * Devices may send the location of the last GPS fix if there is no GPS reception.
 * The "Location" and "Tracking" tabs appear only in the user interface when the first GPS coordinate has been received.
-* The agent currently only supports the 100μ° resolution data format.
+* The agent currently supports the 100μ° and the 1μ°resolution data format.
 
 ## Getting additional functionality
 

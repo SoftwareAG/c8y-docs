@@ -473,9 +473,11 @@ Note: On non-touch devices, the icons only appear when you hover over the widget
 
 Note: Edit a dashboard using your PC. Editing on touch devices (smartphones, tablets) does not support all functions. To show the widget icons on touch devices, please touch the widget header shortly.
 
-### Cloning a dashboard
+### Copying a dashboard
 
-To copy a dashboard form one object to another, use the cogs wheel on the top right and select "Copy dashboard". Afterwards select the object where the dashboard should be applied and press "Paste Dashboard" to insert the dashboard.
+To copy a dashboard from one object to another, use the cogs wheel on the top right and select "Copy dashboard". Afterwards select the object where the dashboard should be applied and press "Paste Dashboard" to insert the dashboard.
+
+An alternative way to copy a dashboard is to use the "[Dashboard per type](#creating-a-dashboard-for-all-devices-of-the-same-type)" approach.  With the "Dashboard per type" approach you copy the dashboard from one object to **all** objects of the same type. 
 
 ### Removing a Dashboard
 

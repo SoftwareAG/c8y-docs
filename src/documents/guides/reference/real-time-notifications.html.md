@@ -16,7 +16,7 @@ Each service has his own subscription channel name format and URL which are desc
 -   [Device control](/guides/reference/device-control).
 -   [Alarms](/guides/reference/alarms).
 
-The real-time notifications API enables responsive communication from Cumulocity over restricted networks towards clients such as web browser and mobile devices. Clients subscribe to so-called channels to receive messages. These channels are filled by Cumulocity with the output of [real-time statements](/guides/reference/cumulocity-event-language) or newly created [operations](/guides/reference/device-control). In addition, particular system channels are used for initial handshake with clients, subscription to channels, removal from channels and connection. As communication mechanism, the [Bayeux protocol](http://svn.cometd.com/trunk/bayeux/bayeux.html) over HTTP is used.
+The real-time notifications API enables responsive communication from Cumulocity over restricted networks towards clients such as web browser and mobile devices. Clients subscribe to so-called channels to receive messages. These channels are filled by Cumulocity with the output of [real-time statements](/guides/reference/cumulocity-event-language) or newly created [operations](/guides/reference/device-control). In addition, particular system channels are used for initial handshake with clients, subscription to channels, removal from channels and connection. As communication mechanism, the [Bayeux protocol](https://docs.cometd.org/current/reference/#_concepts_bayeux_protocol) over HTTP is used.
 
 > Note that for all PUT/POST requests accept header should be provided, otherwise an empty response body will be returned.
 

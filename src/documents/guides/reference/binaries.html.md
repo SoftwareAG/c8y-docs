@@ -206,3 +206,105 @@ Example Request:
 Example Response:
 
     HTTP/1.1  204 NO CONTENT
+
+
+## Application Plugin Binaries    
+
+### Binaries [multipart/form-data]
+
+### POST - Adding a plugin
+
+Posting a plugin adds new plugin to existing active application, merges content to specified directory and updates application with new active version. 
+If plugin already exists,"bad request" response is returned.
+Uploaded plugin binary is required to have content. 
+Plugin directory name is the same as "plugin_name" used in the url.
+Response contains representation of managed object which contains new application content.
+
+Request body: Multipart
+
+Response body: ManagedObject
+
+Required role: ROLE\_APPLICATION\_MANAGEMENT\_ADMIN
+
+Example request:
+
+    POST /application/applications/{{application_id}}/binaries/plugins/{{plugin_name}} HTTP/1.1
+    Accept: application/vnd.com.nsn.cumulocity.managedObject+json
+    Content-Type: multipart/form-data; boundary=myBoundary
+    Content-Disposition: form-data; name="file"
+    Content-Length: 742
+    Authorization: Basic ...
+    
+    --myBoundary
+    Content-Disposition: form-data; name="file"; filename="hello-world-application.zip"
+    Content-Type: application/zip
+    
+    ... zip content ...
+    --myBoundary--
+    
+Example response:
+    
+    HTTP/1.1 201 Created
+    Location: .../application/applications/{{application_id}}/binaries/{{id}}
+    Content-Type: application/vnd.com.nsn.cumulocity.managedObject+json; charset=UTF-8; ver=0.9
+    
+    {... managed object content ...}
+
+### PUT - Updating plugin
+
+Putting a plugin updates existing plugin in existing application, merges content to specified directory and updates application with new active version.
+If plugin doesn't exist, "bad request" response is returned. 
+Uploaded plugin binary is required to have content. 
+Plugin directory name is the same as "plugin_name" used in the url.
+Response contains representation of managed object which contains new application content.
+
+Request body: Multipart
+
+Response body: ManagedObject
+
+Required role: ROLE\_APPLICATION\_MANAGEMENT\_ADMIN
+
+Example request:
+
+    PUT /application/applications/{{application_id}}/binaries/plugins/{{plugin_name}} HTTP/1.1
+    Accept: application/vnd.com.nsn.cumulocity.managedObject+json
+    Content-Type: multipart/form-data; boundary=myBoundary
+    Content-Disposition: form-data; name="file"
+    Content-Length: 742
+    Authorization: Basic ...
+    
+    --myBoundary
+    Content-Disposition: form-data; name="file"; filename="hello-world-application.zip"
+    Content-Type: application/zip
+    
+    ... zip content ...
+    --myBoundary--
+
+Example response:
+
+    HTTP/1.1 200 OK
+    Content-Type: application/vnd.com.nsn.cumulocity.managedObject+json; charset=UTF-8; ver=0.9
+    
+    {... managed object content ...}
+
+### DELETE - Deleting plugin
+
+Deleting a plugin removes existing plugin directory from existing application and updates application with new active version. 
+Plugin directory name is the same as "plugin_name" used in the url. 
+Response contains representation of managed object which contains new application content.
+
+Response body: ManagedObject
+
+Required role: ROLE\_APPLICATION\_MANAGEMENT\_ADMIN
+
+Example request:
+
+    DELETE /application/applications/{{application_id}}/binaries/plugins/{{plugin_name}} HTTP/1.1
+    Authorization: Basic ...
+
+Example response:
+
+    HTTP/1.1 200 OK
+    Content-Type: application/vnd.com.nsn.cumulocity.managedObject+json; charset=UTF-8; ver=0.9
+
+    {... managed object content ...}

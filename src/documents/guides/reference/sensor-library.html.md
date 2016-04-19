@@ -283,8 +283,12 @@ A voltage sensor measures the voltage difference between two points in an electr
     "c8y_Position": {
       "alt": 67,
       "lng": 6.15173,
-      "lat": 51.211977
+      "lat": 51.211977,
+      "trackingProtocol" : "TELIC",
+      "reportReason" : "Time Event"
     }
+
+Properties "trackingProtocol" and "reportReason" are used by tracker agent and describes tracking context of positioning report: why the report was sent and in which protocol.
 
 ## Common Capabilities
 

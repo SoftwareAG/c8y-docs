@@ -346,7 +346,7 @@ The "All" button shows all operations for a device, regardless of whether they h
 
 ![Operations](/guides/users-guide/operations.png)
 
-##<a name="bulk-operations"></a>Dealing with bulk operations
+## <a name="bulk-operations"></a>Dealing with bulk operations
 
 For easier handling of devices Cumulocity features "Bulk operations". With "Bulk operations" you can now easily execute operations for each device in the whole group.
 
@@ -358,13 +358,13 @@ To execute bulk operations for the whole group:
 - Click on the cogwheel
 - Click on "Execute for whole group"
 
-![Execute bulk operations](/guides/users-guide/executebulkoperations)
+![Execute bulk operations](/guides/users-guide/executebulkoperations.png)
 
 > For more information about operations refer to [Working with operations](#operation-monitoring).
 
 In order to view the status and progress of your operations simply click on the desired group, then click on "Bulk operations".
 
-![Bulk operations tab](/guides/users-guide/bulkoperations)
+![Bulk operations tab](/guides/users-guide/bulkoperations.png)
 
 Bulk operations can also be edited. To edit an operation hover over the desired operation first and then click on the blue marker button. New window will pop-up. "Start Date" and "Delay" values can be changed. To change operation details click on "Show operation details". When ready click on "Reschedule" to apply changes or click on "Cancel" to discard changes. 
 

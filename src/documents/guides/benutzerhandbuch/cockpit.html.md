@@ -210,10 +210,10 @@ When selecting an object in the asset hierarchy, the right part of the applicati
 
 The visible tabs on the right of the navigator differ based on the selection in the navigator. The following table shows which tabs are visible based on the selection in the navigator:
 
-|Name of tab|_Name of Dashboard_|Info|Sub-assets|Location|Data explorer|
-|:---|:---|:-----|:----------|:----------|:----------|
-|Group selected:|Yes, if configured|Yes|Yes|No|Yes, showing all data points of the children|
-|Device select:|Yes, if configured|Yes|No|Yes|Yes, showing all data points of the children|
+|Name of tab|_Name of Dashboard_|Info|Alarms|Sub-assets|Location|Data explorer|
+|:---|:---|:-----|:-----|:----------|:----------|:----------|
+|Group selected:|Yes, if configured|Yes|No|Yes|No|Yes, showing all data points of the children|
+|Device selected:|Yes, if configured|Yes|Yes|No|Yes|Yes, showing all data points of the children|
 
 Note that there might be additional tabs visible in case the application has been extended with plugins. See "[Introduction to plugin development](/guides/web/introduction)" for details.
 

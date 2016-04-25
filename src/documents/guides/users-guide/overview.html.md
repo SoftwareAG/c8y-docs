@@ -12,6 +12,7 @@ The following sections cover the basic usage of Cumulocity applications. They de
    * [Logging in](#login).
    * [Navigating in Cumulocity applications](#navigating).
    * [Changing your user settings](#settings).
+   * [Searching in Cumulocity](#searching).
 
 ## <a name="accessing"></a>Accessing Cumulocity applications
 
@@ -36,7 +37,7 @@ This will direct you to the login page of your default application, shown in the
 
 <img src="/guides/users-guide/login.png" alt="Login prompt" style="max-width: 50%">
 
-> Make sure that the address bar of your browser shows a lock symbol. The lock symbol indicates that you are using a secure connection and that you are indeed connected to Cumulocity. 
+> Make sure that the address bar of your browser shows a lock symbol. The lock symbol indicates that you are using a secure connection and that you are indeed connected to Cumulocity.
 
 > The above URL is only valid for Cumulocity Standard Edition subscribers. For Dedicated and Private Edition, deployments of Cumulocity, the URL is specific to your organization.
 
@@ -63,7 +64,7 @@ To change your password, click on the "User Settings" icon in the application. P
 
 <img src="/guides/users-guide/passwordstrength.png" alt="Reset password" style="max-width: 50%">
 
-> Your administrator may have configured your account to enforce a password policy. You may be required to pick a strong password or to change your password regularly. 
+> Your administrator may have configured your account to enforce a password policy. You may be required to pick a strong password or to change your password regularly.
 
 ## <a name="navigating"></a>Navigating in Cumulocity applications
 
@@ -71,7 +72,7 @@ Once you are logged in, your default Cumulocity application will open. The conte
 
 * The applications that your organization has subscribed to.
 * The applications that your organization has configured or developed itself for Cumulocity.
-* The functionality that your user is permitted to see. 
+* The functionality that your user is permitted to see.
 * The configuration of the user interface, such as groups and reports.
 * The functionality of the devices that are used by you.
 
@@ -81,7 +82,7 @@ The general structure of a Cumulocity application is shown in the screenshot bel
 * Using the navigator, you can go to the different pages of an application. Click on an entry in the navigator to open the respective page. You can collapse or expand sections in the navigator by clicking the section headers (i.e., the rows with the little triangle in front of the text).
 * On some pages, additional "tabs" are available depending on how much information is required to be shown.
 * The top area of the application is used as message bar whenever a status (green) or an error (red) needs to be shown.
-* The "search" field provides a full-text search where available.
+* The "search" field provides a [full-text search](#searching) where available.
 * Using the application switcher, you can change from one application to another. You might have to re-enter your credentials if you have not selected "Remember me" on your original login to Cumulocity.
 * The user menu shows your user name. By clicking on the user name, a popup menu appear. The popup menu allows you to log out of the application (even if you clicked "Remember me") and provides access to user settings and help.
 * In some areas, a cog wheel on the top right provides access to further functionality through a drop-down menu.
@@ -103,7 +104,7 @@ Using such a URL, you can
   * Use the backward and forward navigation of your browser.
   * Write own web applications that link directly to information contained in a Cumulocity application.
 
-> Usually, Cumulocity applications provide tooltips when you hover over a particular user interface element. When you use Cumulocity applications on touch devices, tooltips are shown when you touch a user interface element for a longer time. 
+> Usually, Cumulocity applications provide tooltips when you hover over a particular user interface element. When you use Cumulocity applications on touch devices, tooltips are shown when you touch a user interface element for a longer time.
 
 ## <a name="settings"></a>User settings
 
@@ -118,3 +119,20 @@ The displayed local language is defined from:
 3. If neither of these have selected language, the local language will automatically be set to English.
 
 > Note that the language selected in the Cumulocity user settings has higher priority than the language in browser preferences.
+
+## <a name="searching"></a>Full-text search
+
+The Cumulocity search field will provide a full-text search for the whole inventory. Entering multiple texts (separated by space) will return all objects that match any of the search texts.
+
+E.g. _My Demo Device_ will search the inventory for objects containing "My" or "Demo" or "Device".
+
+If you want to match the exact combination of all 3 texts you can enter _"My Demo Device"_.
+
+You can also negate texts for you search using a hyphen-minus (-) at the start of the text to explicitly remove objects containing the text from your result:
+
+E.g. _My Demo -Device_ will search the inventory for objects containing "My" or "Demo" and not "Device".
+
+**Note:** If you negated all texts your search will not return any results.
+
+
+The full-text search is case insensitive. _My Demo Device_ and _my demo device_ return the same result.

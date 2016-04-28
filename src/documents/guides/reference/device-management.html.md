@@ -114,6 +114,18 @@ To enable software installation through the user interface, add "c8y\_Software" 
       "iccid": "89430301901300001342"
     }
 
+Other possible values are:
+c8y_Mobile.imsi
+c8y_Mobile.currentOperator
+c8y_Mobile.currentBand
+c8y_Mobile.connType
+c8y_Mobile.rssi
+c8y_Mobile.ecn0
+c8y_Mobile.rcsp
+c8y_Mobile.mnc
+c8y_Mobile.lac
+c8y_Mobile.msisdn
+
 ![Modem information](/guides/reference-guide/mobile.png)
 
 ## Device reports

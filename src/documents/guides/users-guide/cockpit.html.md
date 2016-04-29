@@ -820,7 +820,7 @@ Smart Rules are parameterized. There are two sources for parameters:
 
 ### Creating a Smart Rule
 
-Smart Rules can be created either under "Configuration -> Smart Rules" or under the "Info tab" of a group or device.
+Smart Rules can be created either under "Configuration -> Smart Rules" or under the "Info tab" of a group or a device.
 
 Smart Rules are created as follows:
 
@@ -848,7 +848,7 @@ Smart Rules can be instantiated multiple times.
 
 ### Activating and deactivating Smart Rules
 
-Smart Rules can easily be seen under the info tab of a given device or group, whether they are active on group or child level and for how many children it is active.
+Smart Rules can be seen under the info tab of a given device or group, whether they are active on group or child level and for how many children it is active.
 
 A single Smart Rule can be activated (switched on) and deactivated (switched off) for a single object (group or device). For example, if a device is misbehaving and generated too many threshold alarms, you can deactivate the rule for this single object. The rule is still active for all other objects.
 
@@ -1021,7 +1021,7 @@ The rule uses the following parameters:
 
 ![image alt text](/guides/users-guide/image_29.png)
 
-* Alarm types: The types of the alarms that triggers the rule. For each newly created alarm one of these types the rule is triggered.
+* Alarm types: The types of the alarms that triggers the rule. For each newly created alarm with one of these types in the list the rule is triggered. 
 
 * Send to: Email addresses for sending the e-mail to. Multiple addresses can be separated by a comma (",", do not use a space!).
 

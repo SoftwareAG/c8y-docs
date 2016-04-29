@@ -1,9 +1,9 @@
 ---
-title: NetCommWireless Agent Release Notes
+title: NTC-6200 Release Notes
 layout: default
 ---
 
-## Release notes for NetComm Agent 2.3
+## Release notes for NetComm Agent 3.0
 
 This document describes the Cumulocity agent package for the [NetComm Wireless NTC-6200](http://www.netcommwireless.com/product/m2m/ntc-6200) router.
 
@@ -34,9 +34,7 @@ The agent supports the following functionality:
 
 * The time on the router and on the server may not be fully in sync, hence you may see updates (e.g., alarms, events) that occur "in future". This is also the reason that it may take a while until the "Location" and the "Measurement" tab appear for new devices.
 * Only WAN profile 1 is supported. To set APNs, the "auto APN" mode on the device needs to be disabled.
-* The Modbus implementation currently does not support shifting decimal points. (However, divisor can be used to achieve the same effect.)
 * Under some circumstances, a command sent to the device may be lost while switching between SMS and IP mode.
-* Saving configuration snapshots can lead to disconnecting the device.
 
 ## System requirements
 
@@ -48,10 +46,11 @@ The agent was tested on an NTC-6200 device with firmware version 2.0.24.3. For r
 
 ## Installing the agent
 
-* Download the software: http://resources.cumulocity.com/ntc/smartrest-agent_2.3.6_arm.ipk.
+* Download the software: http://resources.cumulocity.com/ntc/smartrest-agent_3.0.0_arm.ipk.
 * Log in to the web user interface of the NTC-6200.
 * Navigate to the "System" menu. Click on "System configuration", "Choose a file" and select the downloaded software. Click "Upload" to upload the software to the router.
 * Click the "Install" button for the uploaded software which you want to install.
+* Reboot the NetComm router.
 
 The agent will automatically start after installation and the router can then be [registered with Cumulocity](/guides/devices/netcommwireless#connect). Subsequent upgrades or downgrades can be performed remotely via the agent's software management feature, or locally via the router's web portal.
 
@@ -60,10 +59,6 @@ The agent will automatically start after installation and the router can then be
 ## Using the agent
 
 For information on using the agent, please visit the [NetComm Agent User's Guide](/guides/devices/netcommwireless).
-
-## Rapid development of IoT applications
-
-For an alpha version of the Lua-based rapid development, visit https://bitbucket.org/m2m/cumulocity-clients-c/src/b68581d239244f301fde91131ff68f157cf91495/Lua.md?at=develop.
 
 ## History
 
@@ -130,3 +125,12 @@ For an alpha version of the Lua-based rapid development, visit https://bitbucket
 
 * [MTM-11911]*fix*: not respect multiplier, divisor and decimalPlaces definition in FieldBus 4 when sending event.
 * [MTM-11740] string update: use generic IoT tokens instead of Cumulocity.
+
+### 3.0.0
+[Download link](http://resources.cumulocity.com/ntc/smartrest-agent_3.0.0_arm.ipk). Changes:
+* [MTM-12034](https://cumulocity.atlassian.net/browse/MTM-12034): add measurement poll support.
+* [COT-60](https://cumulocity.atlassian.net/browse/COT-60): implement modbus-RTU support for Cloud Fieldbus 4.
+* [MTM-12239](https://cumulocity.atlassian.net/browse/MTM-12239): add timestamp to description of uploaded configuration snapshot.
+* [MTM-11785](https://cumulocity.atlassian.net/browse/MTM-11785): report GPS fix on boot.
+* [MTM-11830](https://cumulocity.atlassian.net/browse/MTM-11830): Add support for serial number in registration.
+* [MTM-12283](https://cumulocity.atlassian.net/browse/MTM-12283): disallow removing agent from Cumulocity Software Management.

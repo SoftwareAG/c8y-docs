@@ -346,6 +346,29 @@ The "All" button shows all operations for a device, regardless of whether they h
 
 ![Operations](/guides/users-guide/operations.png)
 
+## <a name="bulk-operations"></a>Dealing with bulk operations
+
+For easier handling of devices Cumulocity features "Bulk operations". With "Bulk operations" you can now easily execute operations for each device in the whole group.
+
+To execute bulk operations for the whole group:
+
+- Select a device and navigate to the "Control" tab
+- Create an operation
+- Hover over the operation you want to execute
+- Click on the cogwheel
+- Click on "Execute for whole group"
+
+![Execute bulk operations](/guides/users-guide/executebulkoperations.png)
+
+> For more information about operations refer to [Working with operations](#operation-monitoring).
+
+In order to view the status and progress of your operations simply click on the desired group, then click on "Bulk operations".
+
+![Bulk operations tab](/guides/users-guide/bulkoperations.png)
+
+Bulk operations can also be edited. To edit an operation hover over the desired operation first and then click on the blue marker button. New window will pop-up. "Start Date" and "Delay" values can be changed. To change operation details click on "Show operation details". When ready click on "Reschedule" to apply changes or click on "Cancel" to discard changes. 
+
+To delete operations click on the cross button.
 ## <a name="events-all"></a>Troubleshooting devices
 
 Events are low-level messages sent by devices that are usually used for application-specific processing. For example, a vending device sends its real-time sales in the form of events. If you need to troubleshoot a device at a more detailed level, visit the "Events" tab. Clicking on individual events will reveal more information on the data contained in the event. Similar, you can see all events across all devices by selecting "Events" in the navigator.
@@ -360,12 +383,21 @@ To update firmware or to add software packages on a specific device you have to 
 
 1. Upload the firmware or software files in the [Administration application](/guides/users-guide/administration#files). (This step is optional and is not mandatory since the manufacturer might offer the firmware online.)
 
-2. Select and save the files in the "Firmware repository". To add a new firmware image to the repository, visit the "Firmware repository" and click the "Add firmware" button. Then type the name of the firmware, its version and the URL from where the device can download the firmware. Similar use the "Software repository" to add reference software packages.
+2. Select and save the files in the "Firmware repository". To add a new firmware image to the repository, visit the "Firmware repository" and click the "Add firmware" button. Then type the name of the firmware, its version and the URL from which the device can download the firmware. Similar use the "Software repository" to add reference software packages.
 
 3. Install the firmware on a specific device. First navigate to "All Devices", select the desired device, then go to "Software" on Device Details and click on "Install firmware". Similar install software packages, but click on "Install software" instead. (For more info on this step please refer to ["Software"](/guides/users-guide/device-management#software).)
 
 > Note that you currently have to visit the [Administration application](/guides/users-guide/administration#files) to store binaries in Cumulocity.
 
+Cumulocity provides users with the ability to execute firmware or software updates for multiple devices simultaneously. To do so:
+
+- Execute the software update in a single device to test that the new version really works
+- Navigate to the operation and select "Execute for whole group"
+- Fill the form to schedule the bulk operation and click on the "Create" button
+
+The operation status can be viewed under the name of the selected group in the "Bulk operation" tab.
+
+> For more info on bulk operations refer to [Dealing with bulk operations](#bulk-operations) 
 
 ## <a name="credentials"></a>Managing device credentials
 

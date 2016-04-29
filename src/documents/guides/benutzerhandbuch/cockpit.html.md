@@ -210,10 +210,10 @@ When selecting an object in the asset hierarchy, the right part of the applicati
 
 The visible tabs on the right of the navigator differ based on the selection in the navigator. The following table shows which tabs are visible based on the selection in the navigator:
 
-|Name of tab|_Name of Dashboard_|Info|Sub-assets|Location|Data explorer|
-|:---|:---|:-----|:----------|:----------|:----------|
-|Group selected:|Yes, if configured|Yes|Yes|No|Yes, showing all data points of the children|
-|Device select:|Yes, if configured|Yes|No|Yes|Yes, showing all data points of the children|
+|Name of tab|_Name of Dashboard_|Info|Alarms|Sub-assets|Location|Data explorer|
+|:---|:---|:-----|:-----|:----------|:----------|:----------|
+|Group selected:|Yes, if configured|Yes|No|Yes|No|Yes, showing all data points of the children|
+|Device selected:|Yes, if configured|Yes|Yes|No|Yes|Yes, showing all data points of the children|
 
 Note that there might be additional tabs visible in case the application has been extended with plugins. See "[Introduction to plugin development](/guides/web/introduction)" for details.
 
@@ -485,9 +485,7 @@ Show location of a device or all devices in the group. The map provides the foll
 
 * The map can be used normally, i.e. drag it and zoom in/out.
 
-* A device can be selected and, when clicked, the application navigates to the device.
-
-* The icons representing the devices are color coded. The color used depends on the the following rule:
+* The icons representing the devices are color coded. The color used depends on the following rule:
 
     * At least one critical alarm: red
 
@@ -499,11 +497,19 @@ Show location of a device or all devices in the group. The map provides the foll
 
     * No alarm: green
 
+* When clicking on a device icon, a popup is displayed with the following information:
+
+    * the device name. When clicked, the application navigates to the device.
+
+    * the date at which the device last reported its location, if available.
+
+    * the option to show/hide the device tracks for the previous and current days.
+
 Parameters to configure:
 
 * Target device or group: Select what devices should be shown on the map. If an group is selected, all devices included in the group are shown.
 
-Note: If none of the target device(s) has a known location, then the widget will be blank and show a corresponding message.
+Note: If none of the target device(s) has a known location, then the widget show a world map with no icons.
 
 ### Widget "HTML"
 

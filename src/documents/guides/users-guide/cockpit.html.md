@@ -820,36 +820,47 @@ Smart Rules are parameterized. There are two sources for parameters:
 
 ### Creating a Smart Rule
 
-Smart Rules are created as follows:
+Smart Rules can be created either under "Configuration -> Smart Rules" or under the "Info tab" of a group or device.
 
-* Under "Configuration", click on “Smart Rules”
+Smart Rules are created as follows:
 
 * Click on "+ Add Smart Rule"
 
 * Click on one of the Smart Rule Templates.
 
-* In the next form, enter the rule parameter. The rule parameters differ from rule to rule, for details see individual rule descriptions below.
+* In the next form, enter the rule parameters. The rule parameters differ from rule to rule, for details see individual rule descriptions below.
+
+* Using the search field you can also activate the current Smart Rule for target devices or assets. Note that this step is optional.
+
+* Select whether the rule will be enabled or disabled. 
 
 * Press "CREATE".
 
 A list of smart rules is shown below. Note that the number of smart rules shown might differ based on your installation.
+
 ![image alt text](/guides/users-guide/image_23.png)
 
-Afterwards, the rule is active for all devices and groups. See next section on how to deactivate a smart rule for specific objects.
+Afterwards, if the rule was set to enabled and was not activated for specific objects, the rule will be active for all devices and groups. See next section on how to deactivate a smart rule for specific objects.
+
+If a smart rule is disabled, then the rule is not shown on group or device level in the “Info” tab. This makes it easier to understand which rules are actually relevant.
 
 Smart Rules can be instantiated multiple times.
 
 ### Activating and deactivating Smart Rules
 
-A single Smart Rules can be activated (switched on) and deactivated (switched off) for a single object (group or device). For example, if a device is misbehaving and generated too many threshold alarms, you can deactivate the rule for this single object. The rule is still active for all other objects.
+Smart Rules can easily be seen under the info tab of a given device or group, whether they are active on group or child level and for how many children it is active.
 
-To de-activate a smart rule for a device, use the Info tab, and click on the button to activate or disable the rule.  
+A single Smart Rule can be activated (switched on) and deactivated (switched off) for a single object (group or device). For example, if a device is misbehaving and generated too many threshold alarms, you can deactivate the rule for this single object. The rule is still active for all other objects.
 
-![image alt text](/guides/users-guide/image_24.png)
+To de-activate or activate a Smart Rule for a group or device, simply go to the Info tab and click on the button to enable or disable the rule.  
 
-If you activate a rule for a group, then Cumulocity asks you if you want to activate it for all children (Click "YES"), or if you want to activate the rule for the single group only (Click “NO”).
+![Info tab](/guides/users-guide/infotab.png)	
 
-![image alt text](/guides/users-guide/image_25.png)
+### Editing, cloning or removing Smart Rules
+
+To edit, clone or remove a specific Smart Rule simply click on the cogwheel located to the far right of the Smart Rule and click on the desired option.
+
+For easier debugging there is a direct link from a smart rule to a corresponding event processing module. Click on the cogwheel and then "Inspect". 
 
 ### Example: Defining explicit thresholds
 

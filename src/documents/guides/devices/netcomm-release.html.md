@@ -128,6 +128,7 @@ For information on using the agent, please visit the [NetComm Agent User's Guide
 
 ### 3.0.0
 [Download link](http://resources.cumulocity.com/ntc/smartrest-agent_3.0.0_arm.ipk). Changes:
+
 * [MTM-12034](https://cumulocity.atlassian.net/browse/MTM-12034): add measurement poll support.
 * [COT-60](https://cumulocity.atlassian.net/browse/COT-60): implement modbus-RTU support for Cloud Fieldbus 4.
 * [MTM-12239](https://cumulocity.atlassian.net/browse/MTM-12239): add timestamp to description of uploaded configuration snapshot.

@@ -14,7 +14,7 @@ The following data is currently recorded:
 * Speed and distance.
 * Battery level.
 
-The protocol support was tested with MT90 devices. It may not apply to all Meitrack models. In particular, the battery level calculation will be only correct for devices with compatible hardware. See the [Meitrack protocol documentation](http://www.meitrack.com/en/protocols/) for more information.
+The Meitrack protocol support was tested with MT90 devices. It may not apply to all Meitrack models. In particular, the battery level calculation will be only correct for devices with compatible hardware. See the [Meitrack protocol documentation](http://www.meitrack.com/en/protocols/) for more information.
 
 ## Configuring Meitrack devices for Cumulocity
 
@@ -24,7 +24,7 @@ To connect a Meitrack device to Cumulocity, you need to configure it to send dat
 * The IP/Domain to tracker.cumulocity.com.
 * The Port to 9091.
 
-The screenshot below illustrates the settings.
+The screenshot below illustrates the required settings in the "Tracking" menu.
 
 ![Meitrack configuration](/guides/devices/meitrackconf.png)
 

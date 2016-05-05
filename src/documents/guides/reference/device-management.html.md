@@ -114,6 +114,18 @@ To enable software installation through the user interface, add "c8y\_Software" 
       "iccid": "89430301901300001342"
     }
 
+Other possible values are:
+c8y_Mobile.imsi
+c8y_Mobile.currentOperator
+c8y_Mobile.currentBand
+c8y_Mobile.connType
+c8y_Mobile.rssi
+c8y_Mobile.ecn0
+c8y_Mobile.rcsp
+c8y_Mobile.mnc
+c8y_Mobile.lac
+c8y_Mobile.msisdn
+
 ![Modem information](/guides/reference-guide/mobile.png)
 
 ## Device reports
@@ -213,6 +225,17 @@ To restart a device, an operation with a "c8y\_Restart" fragment is sent. To ena
     "c8y_Restart": {}
 
 ![Restart button](/guides/reference-guide/restartsupported.png)
+
+#### <a name="communication_mode"></a>c8y\_CommunicationMode
+
+In order to send commands as text messages to devices, the devices must be put into SMS mode. To indicate that it supports SMS mode, a device needs to add the fragment "c8y_CommunicationMode" with a mode property of "SMS".
+
+
+	"c8y_CommunicationMode": {
+		"mode": "SMS"
+	}
+
+For more information, please refer to [Device control via SMS](/guides/reference/device-control#control_via_sms).
 
 #### c8y\_Command
 

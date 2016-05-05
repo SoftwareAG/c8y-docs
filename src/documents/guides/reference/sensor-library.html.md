@@ -76,13 +76,13 @@ In a managed object, an acceleration sensor is modelled as a simple empty fragme
 ### Light Sensor
 
 I light sensor measures the intensity of light.
-	
+
 #### Inventory representation
 
 In a managed object, a light sensor is modelled as a simple empty fragment:
 
 	"c8y_LightSensor" : {}
-	
+
 #### Measurement
 
 Light is measured with two main alternative sets of units: radiometry consists of measurements of light power at all wavelengths, while photometry measures light with wavelength weighted with respect to a standardised model of human brightness perception. Photometry is useful, for example, to quantify Illumination (lighting) intended for human use.
@@ -97,7 +97,7 @@ Light is measured with two main alternative sets of units: radiometry consists o
 
 ### Humidity Sensor
 
-A humidity sensor measures the amount of water vapour in the air. 
+A humidity sensor measures the amount of water vapour in the air.
 
 #### Inventory representation
 
@@ -300,7 +300,7 @@ A relay is a kind of binary state switch which can be in the states "OPEN" or "C
 
 In a managed object, a relay control model includes the state of the control. When the control state changes, the inventory model should be updated to include the new state:
 
-    "c8y_Relay" : 
+    "c8y_Relay" :
     {
       "relayState" : "OPEN"
     }
@@ -313,7 +313,7 @@ In a managed object, a relay control model includes the state of the control. Wh
 
 The operation representation is the same as the inventory representation:
 
-    "c8y_Relay" : 
+    "c8y_Relay" :
     {
       "relayState" : "OPEN"
     }
@@ -332,7 +332,7 @@ In a managed object, an array of relays' control model includes the state of eac
 		"CLOSED",
 		"OPEN"
 	]
-	
+
 #### Operations
 
 The operation representation is the same as the inventory representation:
@@ -343,3 +343,39 @@ The operation representation is the same as the inventory representation:
 		"CLOSED",
 		"OPEN"
 	]
+
+### Mobile information
+
+c8y_Mobile holds the information about the mobile connection status (e.g. cell information) and the sim card (e.g. ICCID) of the device. Whenever the status changes the fragment in the device should be updated. The assumption for not moving devices is that these values rarely change.
+For more frequently changing mobile information (e.g. signal strength) a measurement can be used.
+
+#### Inventory representation
+
+    "c8y_Mobile" : {
+      "imsi": "..."
+      "imei": "..."
+      "currentOperator": "..."
+      "currentBand": "..."
+      "connType": "..."
+      "rssi": "..."
+      "ecn0": "..."
+      "rcsp": "..."
+      "mnc": "..."
+      "lac": "..."
+      "cellId": "..."
+      "msisdn": "..."
+      "iccid": "..."
+    }
+
+#### Measurement
+
+|Measurement|Units|Description|
+|:----------|:----|:----------|
+|rssi|dBm|RSSI measurement|
+
+    "c8y_SignalStrength": {
+      "rssi": {
+        "unit": "dBm",
+        "value": -63
+      }
+    }

@@ -215,10 +215,10 @@ When selecting an object in the asset hierarchy, the right part of the applicati
 
 The visible tabs on the right of the navigator differ based on the selection in the navigator. The following table shows which tabs are visible based on the selection in the navigator:
 
-|Name of tab|_Name of Dashboard_|Info|Sub-assets|Location|Data explorer|
-|:---|:---|:-----|:----------|:----------|:----------|
-|Group selected:|Yes, if configured|Yes|Yes|No|Yes, showing all data points of the children|
-|Device select:|Yes, if configured|Yes|No|Yes|Yes, showing all data points of the children|
+|Name of tab|_Name of Dashboard_|Info|Alarms|Sub-assets|Location|Data explorer|
+|:---|:---|:-----|:-----|:----------|:----------|:----------|
+|Group selected:|Yes, if configured|Yes|No|Yes|No|Yes, showing all data points of the children|
+|Device selected:|Yes, if configured|Yes|Yes|No|Yes|Yes, showing all data points of the children|
 
 Note that there might be additional tabs visible in case the application has been extended with plugins. See "[Introduction to plugin development](/guides/web/introduction)" for details.
 
@@ -473,9 +473,11 @@ Note: On non-touch devices, the icons only appear when you hover over the widget
 
 Note: Edit a dashboard using your PC. Editing on touch devices (smartphones, tablets) does not support all functions. To show the widget icons on touch devices, please touch the widget header shortly.
 
-### Cloning a dashboard
+### Copying a dashboard
 
-To copy a dashboard form one object to another, use the cogs wheel on the top right and select "Copy dashboard". Afterwards select the object where the dashboard should be applied and press "Paste Dashboard" to insert the dashboard.
+To copy a dashboard from one object to another, use the cogs wheel on the top right and select "Copy dashboard". Afterwards select the object where the dashboard should be applied and press "Paste Dashboard" to insert the dashboard.
+
+An alternative way to copy a dashboard is to use the "[Dashboard per type](#creating-a-dashboard-for-all-devices-of-the-same-type)" approach.  With the "Dashboard per type" approach you copy the dashboard from one object to **all** objects of the same type. 
 
 ### Removing a Dashboard
 
@@ -509,8 +511,6 @@ Show location of a device or all devices in the group. The map provides the foll
 
 * The map can be used normally, i.e. drag it and zoom in/out.
 
-* A device can be selected and, when clicked, the application navigates to the device.
-
 * The icons representing the devices are color coded. The color used depends on the following rule:
 
     * At least one critical alarm: red
@@ -523,11 +523,19 @@ Show location of a device or all devices in the group. The map provides the foll
 
     * No alarm: green
 
+* When clicking on a device icon, a popup is displayed with the following information:
+
+    * the device name. When clicked, the application navigates to the device.
+
+    * the date at which the device last reported its location, if available.
+
+    * the option to show/hide the device tracks for the previous and current days.
+
 Parameters to configure:
 
 * Target device or group: Select what devices should be shown on the map. If an group is selected, all devices included in the group are shown.
 
-Note: If none of the target device(s) has a known location, then the widget will be blank and show a corresponding message.
+Note: If none of the target device(s) has a known location, then the widget show a world map with no icons.
 
 ### Widget "HTML"
 
@@ -643,6 +651,18 @@ Note: You can also enter the JSON format of the operation that should be send to
 
 * Remove properties: Click on the red icon in the end of a row to remove the column.
 
+### Widget "Relay control"
+
+Allows you to switch a device relay on or off. Only available for devices that support this type of operation.
+
+### Widget "Relay array"
+
+Given an array of relays, you can switch relays on or off independently. Only available for devices that support this type of operation.
+
+### Widget "Message sending"
+
+Sends a message to a device. The behaviour on the device itself is device dependent. Only available for devices that support this type of operation
+
 ## <a name="alarms"></a>Working with Alarms
 
 Working with alarms is identical to working with alarms in Device Management. See "[Working with alarms](http://cumulocity.com//guides/users-guide/device-management/#alarm-monitoring)" in Device Management User Guide.
@@ -754,6 +774,13 @@ To export "Inventory data" to csv or xlsx files navigate to "Reporting" located 
 ![Exporting](/guides/users-guide/exportinventorydata.png)
 
 You will receive an e-mail with the links to each file.
+
+Standard time properties of documents (like time or creationTime in alarms) are exported
+
+* to xlsx file in the format: 03/13/2016 00:00:24
+* to csv file in the format: 2016-03-13T00:01:24.000Z
+
+Note that only csv time contains miliseconds and timezone.
 
 ### Editing reports
 
@@ -983,7 +1010,7 @@ The rule uses the following parameters:
 
 ![image alt text](/guides/users-guide/image_29.png)
 
-* Alarm type: The type of the alarm that triggers the rule. For each newly created alarm of this type the rule is triggered.
+* Alarm types: The types of the alarms that triggers the rule. For each newly created alarm one of these types the rule is triggered.
 
 * Send to: Email addresses for sending the e-mail to. Multiple addresses can be separated by a comma (",", do not use a space!).
 
@@ -1017,7 +1044,7 @@ The rule uses the following parameters:
 
 ![image alt text](/guides/users-guide/image_30.png)
 
-* Alarm type: The type of the alarm that triggers the rule: For each newly created alarm of this type the rule is triggered.
+* Alarm types: The types of the alarms that triggers the rule. For each newly created alarm one of these types the rule is triggered.
 
 * Phone number: Target phone number. It is recommended to include mobile country code for all numbers, e.g. "+49" or "0049" for Germany. Multiple numbers can be separated by a comma (",", do not use a space!).
 
@@ -1039,7 +1066,7 @@ If an alarm is active for a certain time, increase the severity.
 
 The rule uses the following parameters:![image alt text](/guides/users-guide/image_31.png)
 
-* Alarm type: The type of the alarm that triggers the rule.
+* Alarm types: The types of the alarms that triggers the rule.
 
 * Duration: How long must the alarm be active to trigger the rule?
 
@@ -1051,7 +1078,7 @@ Description of the rule:
 
 * If the alarm is 'CRITICAL' stop monitoring because there isn't any higher severity.
 
-_Note:_ The rule checks if the the configured duration was exceeded once a minute. Therefore it can occur that the alarm severity won't be changed in the second it exceeds the duration but at the next check.
+_Note:_ The rule checks if the configured duration was exceeded once a minute. Therefore it can occur that the alarm severity won't be changed in the second it exceeds the duration but at the next check.
 
 ### On geofence create alarm
 
@@ -1126,7 +1153,7 @@ The rule uses the following parameters:
 
 * Text: Text of the alarm that will be raised.
 
-_Note:_ The rule checks if the the configured time interval was exceeded once a minute. Therefore it can take up to one minute to create the alarm after the time interval was exceeded. To check if the time interval has been exceeded there needs to be at least on measurement of the configured type created after activation of the rule.
+_Note:_ The rule checks if the configured time interval was exceeded once a minute. Therefore it can take up to one minute to create the alarm after the time interval was exceeded. To check if the time interval has been exceeded there needs to be at least on measurement of the configured type created after activation of the rule.
 
 ### On alarm create operation
 
@@ -1136,7 +1163,7 @@ The rule uses the following parameters:
 
 ![image alt text](/guides/users-guide/image_36.png)
 
-* Alarm type: The type of the alarm that triggers the rule.
+* Alarm types: The types of the alarms that triggers the rule. For each newly created alarm one of these types the rule is triggered.
 
 * Operation: The operation that should be send. The operation is provided as JSON description. A few standard operations can be selected below the operations fields. To use a standard operation, select one, and press the arrow button to the right. This will insert the JSON of the selected operation.
 
@@ -1180,7 +1207,7 @@ The rule uses the following parameters:
 
 ![image alt text](/guides/users-guide/onalarmsendtexttospeach.png)
 
-* Alarm type: The type of the alarm that triggers the rule.
+* Alarm types: The types of the alarms that triggers the rule. For each newly created alarm one of these types the rule is triggered.
 
 * Phone number: Target phone number. It is recommended to include mobile country code for all numbers, e.g. "+49" or "0049" for Germany.
 
@@ -1212,7 +1239,7 @@ The rule uses the following parameters:
 
 ![image alt text](/guides/users-guide/escalatealarm1.png)
 
-* Alarm type: The type of the alarm that triggers the rule.
+* Alarm types: The types of the alarms that triggers the rule. For each newly created alarm one of these types the rule is triggered.
 
 The rule allows to define the chain of action steps. In order to add step click button "Add step". Form with following parameters will appear:
 

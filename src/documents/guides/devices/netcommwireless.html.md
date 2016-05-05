@@ -1,6 +1,6 @@
 ---
 order: 20
-title: NetCommWireless Agent User's Guide
+title: NTC-6200
 layout: default
 ---
 
@@ -16,6 +16,7 @@ The following sections demonstrate how to use a NetComm router with Cumulocity. 
 * Use the built-in [GPS](#gps) functionality.
 * Use the built-in [GPIO](#gpio) pins.
 * View [configuration](#rdb) parameters.
+* Configure devices to use [SMS mode](#sms_mode).
 * Remotely execute text commands via [device shell](#shell).
 * Get [event notifications](#notifications).
 * Connect [Modbus](#modbus) devices.
@@ -25,27 +26,27 @@ The following sections assume that the router has the NetComm [agent](/guides/de
 
 ## <a name="configure"></a>Configuring the router
 
-The support for Cumulocity can be configured through the router's web user interface. To do so, login to the user interface as described in the router's manual. Navigate to the "System" tab and click on the "Cumulocity" menu item.
+The support for Cumulocity can be configured through the router's web user interface. To do so, login to the user interface as described in the router's manual. Navigate to the "System" tab and click on the "Internet of Things" menu item.
 
 ![Cumulocity configuration](/guides/devices/netcomm/routerconf.png)
 
-Verify that the toggle switch "Cumulocity agent" is set to "ON" and the URL shown in "Cumulocity server" points to the Cumulocity instance that you want to connect. For example, use
+Verify that the toggle switch "Cumulocity agent" is set to "ON" and the URL shown in "Server" points to the Cumulocity instance that you want to connect. For example, use
 
-* https://management.cumulocity.com/s for connecting to Cumulocity.
+* https://developer.cumulocity.com/s for connecting to Cumulocity.
 * https://management.ram.m2m.telekom.com/s for connecting to Deutsche Telekom Cloud of Things.
-* https://management.telstra-iot.com/s for connecting to the Telstra IoT platform.
 
 Optionally, you can activate data collecting for the following functionalities:
 
 * GPIO analog measurements: Send the voltages of the analog inputs [seconds].
 * GPS position interval: Update the current GPS position [seconds].
 * GPS position event: Send a location trace of the GPS position [seconds].
-* Network/mobile update interval: Send the network and mobile updates not often than this interval [seconds].
-* System resources measurements: Get information on CPU, memory and network [seconds].
+* System resources measurements: Get information about CPU usage, memory usage and network traffic [seconds].
 
-All these options are disabled by default (the interval is set to zero).
+All these options are disabled by default (the interval is set to 0).
 
 The web interface also shows the status of the connection to Cumulocity:
+
+(For version 2.x)
 
  * Off: The software is disabled.
  * Initializing: The software is initializing.
@@ -59,15 +60,28 @@ The web interface also shows the status of the connection to Cumulocity:
  * Reconnecting: The software is retrying the connection.
  * Stopping: The software is terminating.
 
+(For version 3.x)
+* Checking network connection: waiting for mobile network connection at boot.
+* Bootstrapping: load credentials or request credentials from Cumulocity.
+* Integrating: Connecting to Cumulocity.
+* Loading plugins: loading Lua plugins.
+* Connected: The agent is successfully connected to Cumulocity.
+* No server URL: no or invalid server URL.
+* Bootstrap failed: Can not get credentials from Cumulocity.
+* Integration failed: can not connect to Cumulocity.
+* Create threads failed: not able to start reporter or device push.
+
 ## <a name="connect"></a>Connecting the router
 
-To register your NetComm router to Cumulocity, you need the MAC address of the router's Ethernet card as _Device ID_. The registration process is described in section "[Connecting devices](/guides/users-guide/device-management/#device-registration)" in the User Guide. The MAC address is printed on the back side of the router as shown in the screenshot below. Alternately, it is also available in the router's web user interface. Navigate to "System", "Cumulocity" and view the "Device ID" field as shown in the screenshot above. Please make sure to use only lowercase letters and numbers when entering the MAC address. Do not use colons to separate the MAC address. For example, the MAC address from the picture would be entered as
+To register your NetComm router to Cumulocity, you need the router's serial number as _Device ID_. The registration process is described in section "[Connecting devices](/guides/users-guide/device-management/#device-registration)" in the User Guide. The serial number is printed on the back side of the router as shown below. Alternately, it is also available in the router's web user interface. Navigate to "System", "Internet of Things" and view the "Device ID" field.
+
+> Users of version 2.x or upgrading from 2.x to 3.x should use the router's MAC address. Please make sure to use only lowercase letters and numbers when entering the MAC address. Do not use colons to separate the MAC address. For example, the MAC address from the picture would be entered as
 
 	006064dda4ae
 
 ![MAC address](/guides/devices/netcomm/mac.png)
 
-After clicking the "accept" button, navigate to "All devices", the router should appear here after registration. The default name of a router is "NTC-6200 <serial number>". For example, the above router would appear as "NTC-6200 165711141901036". Click on the router to view the detailed information and to access the functionality described in the remaining sections of this document. In order to distinguish a registered router from other devices in the listing, you can change the router's name on the "Info" tab, which also displays basic information such as serial number of the router and SIM card data. After changing the name, remember to click "save changes" button at the bottom of the "Info" page.
+After clicking the "accept" button, navigate to "All devices", the router should appear here after registration. The default name of a router is "NTC-6200 (S/N &lt;serial number&gt;)". For example, the above router would appear as "NTC-6200 (S/N 165711141901036)". Click on the router to view the detailed information and to access the functionality described in the remaining sections of this document. In order to distinguish a registered router from other devices in the listing, you can change the router's name on the "Info" tab, which also displays basic information such as serial number of the router and SIM card data. After changing the name, remember to click "save changes" button at the bottom of the "Info" page.
 
 ![Device details](/guides/devices/netcomm/info.png)
 
@@ -89,7 +103,7 @@ The installed software and firmware on the router can be remotely managed using 
 
 Software packages need to be in [ipkg](http://en.wikipedia.org/wiki/Ipkg) format and follow the naming convention "&lt;package&gt;\_&lt;version&gt;\_&lt;arch&gt;.ipk". Version numbers including letters are not supported. All package management methods (install, upgrade, downgrade, removal) are supported through the router's package manager. If software packages have dependencies, please make sure to install these first.
 
-> The package "smartrest-agent\_&lt;version&gt;\_arm.ipk" represents the NetComm agent. it must remain installed on the router, otherwise the device will lose connection to Cumulocity.
+> The package "smartrest-agent\_&lt;version&gt;\_arm.ipk" represents the NetComm agent. It is prohibited to remove this package from Cumulocity.
 
 > When upgrading from versions older than 2.1.1, the device needs to be re-registered.
 
@@ -179,6 +193,17 @@ You can retrieve, modify and save user configuration data. To do this, navigate 
 ![RDB setup](/guides/devices/netcomm/rdb.png)
 
 > Prior to Cumulocity 6.9, this widget was in the "Control" tab. Starting from Cumulocity 6.9, you can also take entire configuration snapshots including the non-textual parts of the device and send reference configuration snapshots back to the device.
+
+## <a name="sms_mode"></a> Configuring devices to use SMS mode
+
+To use SMS commands for devices, open the router's web interface and navigate to "Services", "SMS messaging", then "Diagnostics". Configure the device as follows:
+
+* Either disable "Only accept authenticated SMS messages", or add permitted senders to the white list. Usage of passwords is not supported.
+* Turn the other settings on.
+
+![Enable SMS mode](/guides/devices/netcomm/sms_mode.png)
+
+> For more information please refer to "[Control devices via SMS](/guides/reference/device-control#control_via_sms)".
 
 ## <a name="shell"></a>Device Shell
 

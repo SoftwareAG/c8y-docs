@@ -17,7 +17,7 @@ Cumulocity includes a real-time engine that receives all data coming from device
 
 Cumulocity Event Language is comprised of *statements*, as illustrated in the examples below. They are grouped into units of deployment, called *modules*. Modules can be deployed as part of a Cumulocity application. They can also be edited with the Cumulocity administration application. Through the REST API, application developers can, for example, develop user-friendly domain-specific business logic wizards for their use cases. For example, a home automation application developer can provide a wizard that readily provides thresholding for temperature sensors and triggering of heating controllers.
 
-The image above also illustrates another feature of Cumulocity: The possibility to send data exclusively for real-time processing. Data marked as "transient" is not stored into Cumulocity's database but just handled by the real-time engine. This allows you to save on storage and processing cost if you want to, for example, track some devices in real-time but do not require data to be persisted at such a high resolution. 
+The image above also illustrates another feature of Cumulocity: The possibility to send data exclusively for real-time processing. Data marked as "transient" is not stored into Cumulocity's database but just handled by the real-time engine. This allows you to save on storage and processing cost if you want to, for example, track some devices in real-time but do not require data to be persisted at such a high resolution.
 
 ## What are the benefits of using real-time processing?
 
@@ -37,7 +37,7 @@ Cumulocity Event Language is syntactically similar to the SQL language. In SQL, 
 
 As an example, the following statement continuously retrieves all new temperature sensor readings above a particular temperature:
 
-    select * 
+    select *
     from MeasurementCreated e
     where getNumber(e, "c8y_TemperatureMeasurement.T.value") > 100
 
@@ -48,13 +48,13 @@ Here, *MeasurementCreated* is a stream containing an event for each measurement 
 There are special streams provided by the system which can be used to executing predefined operations (like storing data into database or sending data by email). One such stream is *CreateAlarm*, which can be used to store an alarm inside Cumulocity. For example, assume that an alarm should be produced immediately when the temperature of a sensor becomes too high. This is done using the following statement:
 
     insert into CreateAlarm
-    select 
+    select
      e.measurement.time as time,
      e.measurement.source.value as source,
      "c8y_TemperatureAlert" as type,
      "Temperature too high" as text,
      "ACTIVE" as status,
-     "CRITICAL" as severity    
+     "CRITICAL" as severity
     from MeasurementCreated e
     where getNumber(e, "c8y_TemperatureMeasurement.T.value") > 100
 
@@ -65,9 +65,9 @@ Technically, this statement produces a new "AlarmCreated" event each time a temp
 Remote control in Cumulocity is just another kind of derived data. That is, for running an operation on a device, just create a new operation targeted to the device. The following example illustrates switching a relay based on temperature readings:
 
     insert into CreateOperation
-    select 
-    "PENDING" as status, 
-    <<heating ID>> as deviceId, 
+    select
+    "PENDING" as status,
+    <<heating ID>> as deviceId,
     {
     "c8y_Relay.relayState", "CLOSED"
     } as fragments
@@ -90,18 +90,18 @@ Sometimes, it is required to query related information from the Cumulocity datab
     )
 
     insert into SalesReport
-    select 
+    select
         e.event as event,
         findOneManagedObjectParent(e.event.source.value) as customer
     from EventCreated as e
 
     insert into CreateMeasurement
     select
-        "total_cust_trx", 
+        "total_cust_trx",
         "customer_trx_counter",
         {
             "total", count(*),
-            "customer_id", sales_report.customer.id.value 
+            "customer_id", sales_report.customer.id.value
         }
     from SalesReport as sales_report
     group by sales_report.customer.id.value
@@ -114,7 +114,7 @@ Finally, the aggregation of sales report is calculated through "insert into Crea
 
 As mentioned initially, there are two processing modes for API requests in Cumulocity: *Persistent* and *transient*. The "persistent" mode is the default: It will store data in the Cumulocity database as well as send the data to the real-time engine. After both is done, Cumulocity returns the result of the request.
 
-The "transient" mode will only send the data to the real-time engine and immediately return asynchronously. This mode is for efficiently monitoring particular data in near real-time. 
+The "transient" mode will only send the data to the real-time engine and immediately return asynchronously. This mode is for efficiently monitoring particular data in near real-time.
 
 As an example, assume that location updates from cars should be monitored every second while the car is driving, but only be stored once in a minute into the database for reporting purposes. This is done using the following statement:
 

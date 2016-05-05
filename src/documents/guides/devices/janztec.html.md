@@ -1,5 +1,4 @@
 ---
-order: 20
 title: Janz Tec emPC-A/RPI
 layout: default
 ---

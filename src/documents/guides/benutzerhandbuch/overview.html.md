@@ -79,7 +79,7 @@ Die generelle Struktur einer Cumulocity Anwendung wird in der nächsten Abbildun
 * Mit Hilfe des Menüs auf der linken Seite können Sie zu verschiedenen Sichten der Anwendungen gelangen. Klicken Sie auf einen Menüpunkt, um die entsprechende Seite zu öffnen. In dem Menü gibt es auch Sektionen, die durch einen Pfeil links neben den Namen des Menüpunkts gekennzeichnet werden. Mit einem Klick auf so eine Sektion können Sie den Inhalt ein- bzw. ausklappen. 
 * Bei manchen Seiten werden zusätzliche Reiter angezeigt. Das hängt davon ab, wie viel Information angezeigt werden soll.
 * Der obere Bereich der Anwendung wird als Meldungsleiste genutzt, wann immer ein Status (grün) der ein Fehler (rot) angezeigt werden muss.
-* Das Suchfeld bietet die Möglichkeit, textuell nach Informationen zu suchen, sofern diese vorhanden sind.
+* Das [Suchfeld](#searching) bietet die Möglichkeit, textuell nach Informationen zu suchen, sofern diese vorhanden sind.
 * Mit dem Kachel-Symbol oben rechts können Sie zwischen den Anwendungen wechseln. Falls Sie bei der Anmeldung das "" Kontrollkästchen nicht bestätigt haben, müssen Sie Ihre Zugangsdaten erneut eingeben.
 * Mit einem Klick auf Ihren Nutzernamen oben rechts öffnen Sie das Nutzer-Menü. Sie können sich über dieses Menü abmelden (selbst wenn Sie auf "" geklickt haben), die Benutzereinstellungen ändern oder eine Anfrage an den Support stellen. 
 * In manchen Seiten können Sie ein Zahnrad-Symbol oben rechts vorfinden, mit welchem Sie auf weitere Funktionalitäten zugreifen können.
@@ -116,3 +116,19 @@ Die dargestellte Sprache hängt ab von:
 3. Falls weder in Cumulocity, noch im Web Browser eine Sprache angegeben wurde, wird die Sprache automatisch auf Englisch eingetellt.
 
 > Beachten Sie, dass die Sprache, die in Cumulocity eingestellt wurde, eine höhere Priorität besitzt, als die Sprache, die Sie in Ihrem Web Browser angegeben haben.
+
+## <a name="searching"></a>Volltextsuche
+
+Das Suchfeld von Cumulocity bietet eine Volltextsuche nach den gesamten Stammdaten. Eine Suche nach mehreren Texten (durch ein Leerzeichen getrennt) wird alle Objekte wiedergeben, die einem der Texte entsprechen.
+
+Z.b. _My Demo Device_ wird in den Stammdaten nach Objekten suchen, die "My", "Demo" oder "Device" enthalten.
+
+Falls Sie nach Objekten suchen möchten, die die Kombination von allen drei Texten beinhalten, geben Sie "My Demo Device" (mit den Anführungsstrichen) ein.
+
+Sie können ebenfalls Texte bei der Suche ausschließen. Ein Bindestrich/Minus (-) vor einem Text bewirkt, dass nur Objekte angezeigt werden, die diesen Text nicht beinhalten.
+
+Z.b. _My Demo -Device_ wird in den Stammdaten nach Objekten suchen, die "My" und "Demo" enthalten, und nicht "Device".
+
+**Beachten Sie:** Falls Sie alle Text negieren, wird kein Ergebnis angezeigt.
+
+Die Volltextsuche ist beachtet die Groß- und Kleinschreibung nicht. _My Demo Device_ und _my demo device_ werden zum gleichen Ergebnis führen.

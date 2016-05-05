@@ -1,5 +1,4 @@
 ---
-order: 100
 title: INSYS
 layout: devices
 ---

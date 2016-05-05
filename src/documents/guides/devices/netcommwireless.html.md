@@ -1,5 +1,4 @@
 ---
-order: 20
 title: NTC-6200
 layout: default
 ---

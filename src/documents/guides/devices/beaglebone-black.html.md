@@ -1,5 +1,4 @@
 ---
-order: 20
 title: BeagleBone Black
 layout: default
 ---

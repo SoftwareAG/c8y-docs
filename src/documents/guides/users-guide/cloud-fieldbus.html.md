@@ -118,18 +118,11 @@ The SCADA widget provides you with a graphical representation of the status of a
 * Select the "SCADA" widget and edit the title of the widget.
 * Choose the device that should be shown in the widget in the "Target assets or devices" section.
 * Upload an SVG file with the graphical representation of the device. SVG files are vector graphics that have to be specifically prepared with placeholders for the status information. See "[Preparing SVG files for the SCADA widget](#scadasvg)" below.
+* Assign placeholders to devices. Note that multiple devices can be taken as source.
+* You now need to assign each placeholder to a property of the device. Hover over each placeholder and select the "Assign device property" button or the "Assign fieldbus property" button. A dialog box will pop-up, it allows you to choose basic device properties or fieldbus properties (i.e., status coils and registers). Select the desired property and click "Select".
+* After assigning all placeholders, a preview of the widget with the current values of the properties is shown. Click "Save" to place the widget on the dashboard.
 
 ![Adding the SCADA Widget](/guides/users-guide/scadaedit.png)
-
-After the upload, the placeholders in the SVG file are shown in a list. You now need to assign each placeholder to a property of the device. 
-
-* Hover over each placeholder and select the "Assign device property" button or the "Assign fieldbus property" button.
-* This will pop up a dialog box that allows you to choose basic device properties or fieldbus properties (i.e., status coils and registers). Select a property and click "Select".
-* After assigning all placeholders, a preview of the widget with the current values of the properties is shown.
-* Click "Save" to place the widget on the dashboard.
-
-![Assigning properties](/guides/users-guide/scadaassign.png)
-
 
 ## <a name="configure"></a>Configuring Modbus device types
 

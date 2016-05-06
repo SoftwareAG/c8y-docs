@@ -848,7 +848,7 @@ Smart Rules can be instantiated multiple times.
 
 ### Activating and deactivating Smart Rules
 
-Smart Rules can be seen under the info tab of a given device or group, whether they are active on group or child level and for how many children it is active.
+Smart Rules can be seen under the info tab of a given device or group, whether they are active on group or child level and for how many children they are active.
 
 A single Smart Rule can be activated (switched on) and deactivated (switched off) for a single object (group or device). For example, if a device is misbehaving and generated too many threshold alarms, you can deactivate the rule for this single object. The rule is still active for all other objects.
 

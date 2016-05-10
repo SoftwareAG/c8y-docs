@@ -398,7 +398,7 @@ To add additional "Retention rules", click on "Add rule". Up to the "Maximum age
 - Select the type of data to clean up (alarms, measurements, events, operations, audit logs).
 - Enter a fragment type or type, if you want to be more specific about the data to be cleaned up. For example, to clean up all connection loss alarms with this rule, select "alarms" and enter "c8y_UnavailabilityAlarm" into "type".
 - If you want to remove only data from a specific device, enter the device ID into "Source".
-- Enter the "Maximum age" in days.
+- Enter the "Maximum age" in days (max. allowed value is 10 years in days).
 - Click the "Save" button.
 
 <img src="/guides/users-guide/addrulepage.png" alt="Add retention rule" style="max-width: 50%">

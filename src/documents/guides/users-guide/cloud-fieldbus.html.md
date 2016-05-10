@@ -110,7 +110,7 @@ In the widget, the selected coils and registers are grouped into display categor
 
 Registers and coils that can be changed are represented by active widgets. For example, in the screenshot above, the "Master switch" coil and the "Mode" register are editable. If you click a switch, an operation to change the corresponding coil or register is sent to the terminal. Similar, if you change a value and click "Set", an operation is created. The terminal will then carry out the configuration change on the device, as requested through the operation. While the operation is being processed, a progress indicator is shown.
 
-### Monitoring status using the SCADA widget
+### <a name="scada"></a>Monitoring status using the SCADA widget
 
 The SCADA widget provides you with a graphical representation of the status of a device. To use the SCADA widget:
 

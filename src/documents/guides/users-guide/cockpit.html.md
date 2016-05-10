@@ -477,7 +477,7 @@ Note: Edit a dashboard using your PC. Editing on touch devices (smartphones, tab
 
 To copy a dashboard from one object to another, use the cogs wheel on the top right and select "Copy dashboard". Afterwards select the object where the dashboard should be applied and press "Paste Dashboard" to insert the dashboard.
 
-An alternative way to copy a dashboard is to use the "[Dashboard per type](#creating-a-dashboard-for-all-devices-of-the-same-type)" approach.  With the "Dashboard per type" approach you copy the dashboard from one object to **all** objects of the same type. 
+An alternative way to copy a dashboard is to use the "[Dashboard per type](#creating-a-dashboard-for-all-devices-of-the-same-type)" approach.  With the "Dashboard per type" approach you copy the dashboard from one object to **all** objects of the same type.
 
 ### Removing a Dashboard
 
@@ -1096,7 +1096,9 @@ The rule uses the following parameters:
 
 * Severity: Severity of the alarm that will be raised.
 
-_Note:_ The rule will trigger on crossing the geofence border. Therefore if your device is located outside the geofence when creating the rule no alarm will be generated until the device moves into the geofence first.
+* TriggerAlarmOn: Defining on which geofence interaction the alarm should be created. Values: "leaving", "entering" or "both". Not setting the value results in "leaving".
+
+_Note:_ The rule will trigger on crossing the geofence border. Therefore if your device stays outside or inside the geofence when creating the rule no alarm will be generated until the device crosses the geofence border for the first time.
 
 ** Troubleshooting **
 

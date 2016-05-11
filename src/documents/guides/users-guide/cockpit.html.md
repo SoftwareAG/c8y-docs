@@ -746,6 +746,8 @@ To enable a field simply click on the name of the field.
 
 When a certain field is enabled, predefined or empty properties can be added. If you choose to add empty properties click on "Add". To enter label or path click on either "Column" or "Path" located in the red row. For example if you enable the "Alarms" field you can type "Severity" in column and path to receive report only for alarm severities.
 
+If you have at least one Field in Fields section that is not picked from "Add predefined" list, but rather defined as a custom property, then it is required that at least one such property has to exist in the exported object to have it included in the excel. As an example if report has 4 Fields defined: time, device name, type and c8y_SpeedMeasurement.speed.value, then the first 3 are predefined properties, and the last one is a custom property. If measurement being exported does not have such custom property c8y_SpeedMeasurement.speed.value, then it is not included into the excel.
+
 To add predefined properties first click on "Add predefined".
 
 To select predefined properties click on the respective checkbox located under "SHOW". After the desired properties have been selected click on "Select".

@@ -116,6 +116,8 @@ At the top of the device details display, the name of the device is shown. Below
 
 To the right of the name, a cogwheel is shown. Clicking on the cogwheel displays a drop-down menu with further actions that you can carry out, such as creating a dashboard for the device.
 
+If the device is compatible, a "Initiate measurement poll" menu item is available in the cogwheel. Using this item, you can request a device to send measurements with specific frequency for a specific duration. With this debugging is simplified and not too much data traffic is generated.
+
 ![Device details](/guides/users-guide/devicedetails.png)
 
 Device details are divided over a number of tabs. The standard tabs that may be visible are:

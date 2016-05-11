@@ -270,7 +270,7 @@ Cumulocity can automatically monitor the connection to your devices. If you want
 
 The various connection states are illustrated in the image below. The top arrow represents traffic from the device to Cumulocity. It can be green, red or grey. Green means that data was sent within the required interval. Red means that it was not sent within the required interval. Grey means that no required interval is configured.
 
-The bottom arrow indicates the state of the push connection that is used to send commands from Cumulocity to the device. It can green or grey. Green means that the connection is established. Grey means that the connection is not established. In case of a grey arrow, either the device does not support push connections, or there is an error.
+The bottom arrow indicates the state of the push connection that is used to send commands from Cumulocity to the device (ie. connection to /devicecontrol/notifications API, NOT to realtime API). It can green or grey. Green means that the connection is established. Grey means that the connection is not established. In case of a grey arrow, either the device does not support push connections, or there is an error.
 
 "Maintenance mode" is a special connection state indicating that the device is currently being maintained and should not be monitored. While a device is being maintained, no alarms for that device are raised. You can enable maintenance mode by setting the required interval to negative value.
 

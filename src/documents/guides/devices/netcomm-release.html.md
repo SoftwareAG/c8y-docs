@@ -46,7 +46,7 @@ The agent was tested on an NTC-6200 device with firmware version 2.0.24.3. For r
 
 ## Installing the agent
 
-* Download the software: http://resources.cumulocity.com/ntc/smartrest-agent_3.1.1_arm.ipk.
+* Download the software: http://resources.cumulocity.com/ntc/smartrest-agent_3.1.2_arm.ipk.
 * Log in to the web user interface of the NTC-6200.
 * Navigate to the "System" menu. Click on "System configuration", "Choose a file" and select the downloaded software. Click "Upload" to upload the software to the router.
 * Click the "Install" button for the uploaded software which you want to install.
@@ -136,8 +136,8 @@ For information on using the agent, please visit the [NetComm Agent User's Guide
 * [MTM-11830](https://cumulocity.atlassian.net/browse/MTM-11830): Add support for serial number in registration.
 * [MTM-12283](https://cumulocity.atlassian.net/browse/MTM-12283): disallow removing agent from Cumulocity Software Management.
 
-### 3.1.1
-[Download link](http://resources.cumulocity.com/ntc/smartrest-agent_3.1.1_arm.ipk). Changes:
+### 3.1.2
+[Download link](http://resources.cumulocity.com/ntc/smartrest-agent_3.1.2_arm.ipk). Changes:
 
 * *fix*: fragile start-up process when send fails after register templates.
 * *fix*: Fixed one-hour off issue because of DST in logviewer.

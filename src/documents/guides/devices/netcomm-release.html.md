@@ -3,7 +3,7 @@ title: NTC-6200 Release Notes
 layout: default
 ---
 
-## Release notes for NetComm Agent 3.0
+## Release notes for NetComm Agent 3.1
 
 This document describes the Cumulocity agent package for the [NetComm Wireless NTC-6200](http://www.netcommwireless.com/product/m2m/ntc-6200) router.
 
@@ -24,7 +24,7 @@ The agent supports the following functionality:
 * Managing router configuration snapshots.
 * Remotely executing commands via device shell interface.
 * Sending event notifications as alarms.
-* Modbus/TCP support to remotely manage Modbus devices from Cumulocity.
+* Modbus-RTU and Modbus-TCP support for remotely managing Modbus devices from Cumulocity.
 * Lua plug-in API for rapid development of IoT applications.
 * Configuring and displaying of agent settings on the router's web user interface.
 * Get and put device configuration.
@@ -46,7 +46,7 @@ The agent was tested on an NTC-6200 device with firmware version 2.0.24.3. For r
 
 ## Installing the agent
 
-* Download the software: http://resources.cumulocity.com/ntc/smartrest-agent_3.0.0_arm.ipk.
+* Download the software: http://resources.cumulocity.com/ntc/smartrest-agent_3.1.1_arm.ipk.
 * Log in to the web user interface of the NTC-6200.
 * Navigate to the "System" menu. Click on "System configuration", "Choose a file" and select the downloaded software. Click "Upload" to upload the software to the router.
 * Click the "Install" button for the uploaded software which you want to install.
@@ -135,3 +135,13 @@ For information on using the agent, please visit the [NetComm Agent User's Guide
 * [MTM-11785](https://cumulocity.atlassian.net/browse/MTM-11785): report GPS fix on boot.
 * [MTM-11830](https://cumulocity.atlassian.net/browse/MTM-11830): Add support for serial number in registration.
 * [MTM-12283](https://cumulocity.atlassian.net/browse/MTM-12283): disallow removing agent from Cumulocity Software Management.
+
+### 3.1.1
+[Download link](http://resources.cumulocity.com/ntc/smartrest-agent_3.1.1_arm.ipk). Changes:
+
+* *fix*: fragile start-up process when send fails after register templates.
+* *fix*: Fixed one-hour off issue because of DST in logviewer.
+* [MTM-11104](https://cumulocity.atlassian.net/browse/MTM-11104): raise alarm when modbus slave reading fails.
+* *fix*: in logview get *last* N lines instead of *first* N lines in the given timeframe.
+* [MTM-9815](https://cumulocity.atlassian.net/browse/MTM-9815): use decimal instead of hex for LAC for OpenCellID to work.
+* [MTM-12039](https://cumulocity.atlassian.net/browse/MTM-12039): add RDB dump support.

@@ -88,7 +88,11 @@ After clicking the "accept" button, navigate to "All devices", the router should
 
 You can view and configure the essential mobile network ("WAN") and local area network ("LAN") parameters in the "Network" tab as shown in the screenshot below.
 
-The mobile network ("WAN") parameters shown in the user interface correspond to the first profile stored in the router. These parameters can be remotely configured via SMS or [Device Shell](#shell). For SMS configuring, the router needs to be configured to accept SMS commands. Consult the router's manual on the relevant parameters for SMS configuration, or use the router's web user interface. You also need to have an SMS gateway configured with your account. Contact <support@cumulocity.com> for setting up an SMS gateway. For more information on Device Shell, consult the  [user's guide](https://cumulocity.com/guides/users-guide/device-management/#shell).
+The mobile network ("WAN") parameters shown in the user interface correspond to the first profile stored in the router. These parameters can be remotely configured directly or via SMS.
+
+For SMS configuring, the router needs to be configured to accept SMS commands. Consult the router's manual on the relevant parameters for SMS configuration, or use the router's web user interface. You also need to have an SMS gateway configured with your account. Contact <support@cumulocity.com> for setting up an SMS gateway. For more information on Device Shell, consult the  [user's guide](https://cumulocity.com/guides/users-guide/device-management/#shell).
+
+> Note configuring WAN parameters via both IP and SMS mode requires Cumulocity 7.26. When you configure a wrong APN setting, the device will lose mobile network connection and can only be managed by limited SMS functionality.
 
 ![WAN parameters](/guides/devices/netcomm/wan.png)
 
@@ -149,28 +153,28 @@ Consult the documentation of your router for more information about its specific
 To regularly poll the input voltage of a GPIO pin and send it to Cumulocity, set "[GPIO analog measurements](#configure)" to a non-zero value. Alternatively, use Device Shell:
 
 	set service.cumulocity.plugin.ntc6200.gpio.interval=<interval>
+	set service.cumulocity.gpio.<port>.notify=measurement
 
-Navigate to the "Measurements" tab to view the visualized result, or create your own dashboard.
+&lt;port&gt; is the numbering of the GPIO pin. For the NTC-6200, replace &lt;port&gt; with 1, 2 or 3. The Visualized result is then visible in "Measurements".
 
 ### Digital input
 
-You can create events and alarms from digital inputs. These can be configured using the router user interface or through Device Shell. The format is
+You can raise alarms from digital inputs. These can be configured using the router user interface or through Device Shell. The format is
 
-	set service.cumulocity.gpio.<port>.notify=<off | event | alarm | alarm-inverted>
+	set service.cumulocity.gpio.<port>.notify=alarm
 	set service.cumulocity.gpio.<port>.debounce.interval=<SECONDS>
 	set service.cumulocity.gpio.<port>.text=<ALARM_TEXT>
 	set service.cumulocity.gpio.<port>.severity=<severity>
 
-For the NTC-6200, replace "&lt;port&gt;" with 1, 2 or 3. The values of the notify parameter are:
+Possible values for the notify parameter are:
 
-* off: The digital input is ignored.
-* event: The value of the input is logged as event.
-* alarm: If the input is set to "high", an alarm is created.
-* alarm-inverted: If the input is set to "low", an alarm is created.
+* off: The pin is disabled for any notification.
+* alarm: An alarm is raised when the pin reading is "high".
+* measurement: Analog reading of voltage will be send as measurement.
 
-The debounce interval reduces electrical noise from the GPIO inputs: The shorter the interval, the noisier the value but the faster the reaction to signal changes. The default debounce interval is zero (no delay).
+The debounce interval reduces electrical noise from the GPIO inputs: The shorter the interval, the noisier the value but the faster the reaction to signal changes. The default debounce interval is 10 mins.
 
-You can override the default alarm text by setting the "text" property. By default, this value is empty and "Digital input gpio<N>" is used as text, where <N> is the numbering of a GPIO pin.
+You can override the default alarm text by setting the "text" property. By default, this value is empty and "gpio<N> is active" is used as text, where <N> is the numbering of a GPIO pin.
 
 Valid alarm severities are:
 
@@ -183,11 +187,17 @@ The inputs are checked every second for changes.
 
 ### Digital output
 
-Digital outputs can be controlled using the "Relay array" widget in the "[Control](/guides/users-guide/device-management#operation-monitoring)" tab, see below in the screenshot. The numbering of the GPIO pins are listed in the same order as they are listed on the router. For the NTC-6200 model, three GPIO pins can be set.
+Digital outputs can be controlled using the "Relay array" plugin, see below in the screenshot. The numbering of the GPIO pins are the same as listed on the router. For the NTC-6200 model, three GPIO pins can be set.
 
-## <a name="rdb"></a>Retrieving configuration
+![Relay Array](/guides/devices/netcomm/relayarray.png)
 
-You can retrieve, modify and save user configuration data. To do this, navigate to the "[Configuration](/guides/users-guide/device-management#operation-monitoring)" tab of the router, click on the "Reload" button in the "CONFIGURATION" widget to request configuration data. It will take a few seconds to download. After the configuration data has arrived, you will see a list of parameters and their corresponding values. You can use your web browser's text search functionality to locate specific configuration.
+## <a name="rdb"></a>Configuration Management
+
+You can retrieve, modify and save user configuration data. To do this, navigate to the "[Configuration](/guides/users-guide/device-management#operation-monitoring)" tab of the router, click on the "Reload" button in the "CONFIGURATION" widget to request configuration data. It will take a few seconds to download. After the configuration data has arrived, you will see a list of parameters and their corresponding values. You can then make changes to the configuration and save them back to the device.
+
+You can also request a configuration snapshot from the device and later apply the configuration snapshot to other devices.
+
+Starting from agent version 3.1.1 and Cumulocity version 7.26 there is also RDB snapshot support, which is a super-set of the configurations. This is mainly for troubleshooting purpose.
 
 ![RDB setup](/guides/devices/netcomm/rdb.png)
 
@@ -224,10 +234,20 @@ The router reports certain system events as notifications, which can be forwarde
 
 ## <a name="modbus"></a>Cloud Fieldbus
 
-You can connect Modbus/TCP devices using the router's LAN port and manage them remotely from Cumulocity. To do so, you need to
+You can connect Modbus-TCP and Modbus-RTU slaves to the router via LAN and serial port, respectively, and manage them remotely in Cumulocity. To do so, you need to
 
-* Establish basic LAN connectivity. Use the "[Network](#network)" tab as described above and the corresponding configuration mechanism on the Modbus device to enable IP communication between the router and the device.
-* Configure the Modbus TCP port in the Cumulocity menu on NetComm device's web UI, see "[Configuring the router](#configure)".
+For Modbus-TCP setup:
+
+* Establish LAN connectivity. Use the "[Network](#network)" tab as described above and the corresponding configuration mechanism on the Modbus device to enable IP communication between the router and the your Modbus-TCP slaves.
+* Configure the Modbus-TCP port in the Cumulocity menu on NetComm device's web UI, see "[Configuring the router](#configure)".
+
+For Modbus-RTU setup:
+
+* Connect the router and your Modbus-RTU slaves via a RS-485 cable.
+* Configure the Modbus-RTU port in the Cumulocity menu on NetComm device's web UI, see "[Configuring the router](#configure)".
+
+Then:
+
 * Subscribe your account to the Cloud Fieldbus app by contacting <support@cumulocity.com>.
 * Configure Modbus communication as described in the [Cloud Fieldbus user's guide](/guides/users-guide/cloud-fieldbus).
 * Enable or disable write permission by toggle the Modbus read-only property on the device, see "[Configuring the router](#configure)".
@@ -236,8 +256,8 @@ You can connect Modbus/TCP devices using the router's LAN port and manage them r
 
 You can download and view logs from the device. Log files can be quite big, you can set filtering criteria to get only what is interesting for you.
 
-![Log vierer](/guides/devices/netcomm/logs.png)
-
-From right you can set date range (date from and date to), you can select log file. Next you can search the text, and only matching lines are transmitted from the device. You can also limit matched lines.o
+From right you can set date range (date from and date to), you can select log file. Next you can search the text, and only matching lines are retrieved from the device. You can also limit matched lines.
 
 Received logs are visible in a list below. You can click on it to show log file content at the bottom of the page. Last requested log is opened automatically.
+
+![Log vierer](/guides/devices/netcomm/logs.png)

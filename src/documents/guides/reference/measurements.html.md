@@ -150,7 +150,7 @@ In case of executing range queries on measurements API, like query by dateFrom a
 ### GET series from measurements
 
 This endpoint returns all series (any fragment that contains a value is a serie) found in measurements in simplified form. Mandatory params are: dateFrom, dateTo and source. No paging is used here.
-It is possible to fetch aggregated results by passing additional param: aggregationType (DAILY, HOURLY). If no aggregation param is specified, the result contains no more than 5000 values.
+It is possible to fetch aggregated results by passing additional param: aggregationType (DAILY, HOURLY, MINUTELY). If no aggregation param is specified, the result contains no more than 5000 values.
 Important: for the aggregation to be done correctly the mechanism expects a device to always use the same time zone when it sends dates.
   
 Required role: ROLE\_MEASUREMENT\_READ

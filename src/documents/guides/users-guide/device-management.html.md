@@ -179,6 +179,23 @@ This enables you to get an efficient overview over larger time periods. You can 
 
 Clicking on the "Realtime" button will enable real-time user interface updates of the graphs as new data flows into the system from the connected devices. You can influence the graphical display and axes limits by setting up so-called "KPIs", see the [Administration](/guides/users-guide/administration#kpis) guide.
 
+Important: In order to see measurement graphs, device has to send measurements with specific fragment format, ie.
+
+"fragment_name" : {
+	"serie_name" : {
+		"value" : ...
+		"unit" : ...
+	}
+}
+
+Real example: 
+
+"c8y_SpeedMeasurement": {
+      "Speed": { "value": 1234, "unit": "km/h" }
+}
+
+Fragment_name and serie_name can be replaced by any other valid json property name. The structure has to be exactly as above, two-level deep json object.
+
 ### <a name="alarms"></a>Alarms
 
 The "Alarms" tab displayed the alarms of a device. Please see the Section "[Working with alarms](#alarm-monitoring)" for more information.

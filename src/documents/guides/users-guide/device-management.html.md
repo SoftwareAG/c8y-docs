@@ -224,6 +224,8 @@ This tab enables low-level troubleshooting of a device, see "[Troubleshooting de
 
 The "Location" tab by default shows the location as reported by the device on a map. For devices that do not report a location, you can also manually set the location. Simply place the "pin" on the correct place of the displayed map.
 
+The tab shows up when device contains c8y_Position property. When you send a new c8y position event, you can also set the same c8y_Position fragment in the device to have device current position marked on the map.
+
 ### <a name="shell"></a>Shell
 
 The device shell enables you to interactively work with remote devices. Many industrial devices support some form of command language, be it AT commands for modems, CSV-style commands for many tracking devices or elaborate scripting mechanisms such as Tixi TiXML. In the shell, you can send commands in the respective language of the device and interactively view the results of the commands.
@@ -252,6 +254,8 @@ The ability to view, edit or control certain devices can be limited to users and
 Devices can record the history of their movements in Cumulocity. Using the tracking tab, you can select a time period and visualize the movements of the device during this time period. Movements are shown as red lines on the map.
 
 Next to the map, the individual recordings with their time are listed ("location update events"). When you click a recording, a "pin" on the map will show the location at the time of the recording.
+
+The Tracking tab shows up when device contains c8y_Position property.
 
 ![Tracking](/guides/users-guide/tracking.png)
 

@@ -142,8 +142,7 @@ After you applied the configuration changes, wait a moment for the first GPS dat
 The following GPIO functionalities are supported:
 
 * Send the voltage of an analog input as measurements to Cumulocity.
-* Create or clear alarms when a digital input turn 1 or 0, respectively.
-* Log the state of a digital input as events.
+* Raise or clear alarms when a digital input turn 1 or 0, respectively.
 * Write to a digital output remotely from Cumulocity.
 
 Consult the documentation of your router for more information about its specific IO settings. The available functionalities may vary between different device models. For example, the NTC 6200 model supports GPIO pins 1-3.
@@ -163,8 +162,8 @@ You can raise alarms from digital inputs. These can be configured using the rout
 
 	set service.cumulocity.gpio.<port>.notify=alarm
 	set service.cumulocity.gpio.<port>.debounce.interval=<SECONDS>
-	set service.cumulocity.gpio.<port>.text=<ALARM_TEXT>
-	set service.cumulocity.gpio.<port>.severity=<severity>
+	set service.cumulocity.gpio.<port>.alarm.text=<ALARM_TEXT>
+	set service.cumulocity.gpio.<port>.alarm.severity=<severity>
 
 Possible values for the notify parameter are:
 
@@ -174,7 +173,7 @@ Possible values for the notify parameter are:
 
 The debounce interval reduces electrical noise from the GPIO inputs: The shorter the interval, the noisier the value but the faster the reaction to signal changes. The default debounce interval is 10 mins.
 
-You can override the default alarm text by setting the "text" property. By default, this value is empty and "gpio<N> is active" is used as text, where <N> is the numbering of a GPIO pin.
+You can override the default alarm text by setting the "text" property. By default, this value is empty and "gpio&lt;N&gt; is active" is used as text, where &lt;N&gt; is the numbering of a GPIO pin.
 
 Valid alarm severities are:
 
@@ -245,6 +244,9 @@ For Modbus-RTU setup:
 
 * Connect the router and your Modbus-RTU slaves via a RS-485 cable.
 * Configure the Modbus-RTU port in the Cumulocity menu on NetComm device's web UI, see "[Configuring the router](#configure)".
+
+> The serial port should be /dev/ttyS&lt;N&gt;, where &lt;N&gt; is the port number. To identify the correct serial port number, connect your serial port, and request a `dmesg` log. In the last few lines, you should find relevant log entry about new serial port and its corresponding port number.
+> Reconfigure the serial port requires rebooting the device.
 
 Then:
 

@@ -477,7 +477,7 @@ Note: Edit a dashboard using your PC. Editing on touch devices (smartphones, tab
 
 To copy a dashboard from one object to another, use the cogs wheel on the top right and select "Copy dashboard". Afterwards select the object where the dashboard should be applied and press "Paste Dashboard" to insert the dashboard.
 
-An alternative way to copy a dashboard is to use the "[Dashboard per type](#creating-a-dashboard-for-all-devices-of-the-same-type)" approach.  With the "Dashboard per type" approach you copy the dashboard from one object to **all** objects of the same type. 
+An alternative way to copy a dashboard is to use the "[Dashboard per type](#creating-a-dashboard-for-all-devices-of-the-same-type)" approach.  With the "Dashboard per type" approach you copy the dashboard from one object to **all** objects of the same type.
 
 ### Removing a Dashboard
 
@@ -745,6 +745,8 @@ To enable a field simply click on the name of the field.
 ![Fields](/guides/users-guide/enabledordisabledfields.png)
 
 When a certain field is enabled, predefined or empty properties can be added. If you choose to add empty properties click on "Add". To enter label or path click on either "Column" or "Path" located in the red row. For example if you enable the "Alarms" field you can type "Severity" in column and path to receive report only for alarm severities.
+
+If you have at least one Field in Fields section that is not picked from "Add predefined" list, but rather defined as a custom property, then it is required that at least one such property has to exist in the exported object to have it included in the excel. As an example if report has 4 Fields defined: time, device name, type and c8y_SpeedMeasurement.speed.value, then the first 3 are predefined properties, and the last one is a custom property. If measurement being exported does not have such custom property c8y_SpeedMeasurement.speed.value, then it is not included into the excel.
 
 To add predefined properties first click on "Add predefined".
 
@@ -1107,7 +1109,9 @@ The rule uses the following parameters:
 
 * Severity: Severity of the alarm that will be raised.
 
-_Note:_ The rule will trigger on crossing the geofence border. Therefore if your device is located outside the geofence when creating the rule no alarm will be generated until the device moves into the geofence first.
+* TriggerAlarmOn: Defining on which geofence interaction the alarm should be created. Values: "leaving", "entering" or "both". Not setting the value results in "leaving".
+
+_Note:_ The rule will trigger on crossing the geofence border. Therefore if your device stays outside or inside the geofence when creating the rule no alarm will be generated until the device crosses the geofence border for the first time.
 
 ** Troubleshooting **
 

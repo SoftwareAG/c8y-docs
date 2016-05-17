@@ -73,6 +73,8 @@ If your application requires new server-side processing functionality, you can a
 	from
 	...
 
+Please note that module deployment within application is not supported for local zip applications, so the resource url has to point to some external resource from where the file can be downloaded. The file has to be named application-module.cel and be inside directory META-INF.
+
 ## Hosting
 
 To host your own HTML5 and JavaScript web applications through Cumulocity, visit "Own applications" in the Cumulocity administration application and click "Add new".

@@ -223,6 +223,23 @@ Example response:
 		"c8y_SupportedMeasurements": ["c8y_AnalogMeasurement", "c8y_MotionMeasurement", "c8y_SignalStrength", "c8y_TemperatureMeasurement"]
 	}
 
+Important: In order to have fragment names included in supported measurements list, fragment has to have specific structure:
+
+"fragment_name" : {
+	"serie_name" : {
+		"value" : ...
+		"unit" : ...
+	}
+}
+
+Real example: 
+
+"c8y_SpeedMeasurement": {
+      "Speed": { "value": 1234, "unit": "km/h" }
+}
+
+Fragment_name and serie_name can be replaced by any other valid json property name. The structure has to be exactly as above, two-level deep json object.
+
 ### PUT - Update a managed object
 
 Request body: ManagedObject

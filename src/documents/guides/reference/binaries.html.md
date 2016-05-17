@@ -215,7 +215,6 @@ Example Response:
 ### POST - Adding a plugin
 
 Posting a plugin adds new plugin to existing active application, merges content to specified directory and updates application with new active version. 
-If plugin already exists,"bad request" response is returned.
 Uploaded plugin binary is required to have content. 
 Plugin directory name is the same as "plugin_name" used in the url.
 Response contains representation of managed object which contains new application content.
@@ -253,7 +252,6 @@ Example response:
 ### PUT - Updating plugin
 
 Putting a plugin updates existing plugin in existing application, merges content to specified directory and updates application with new active version.
-If plugin doesn't exist, "bad request" response is returned. 
 Uploaded plugin binary is required to have content. 
 Plugin directory name is the same as "plugin_name" used in the url.
 Response contains representation of managed object which contains new application content.

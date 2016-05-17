@@ -179,6 +179,23 @@ This enables you to get an efficient overview over larger time periods. You can 
 
 Clicking on the "Realtime" button will enable real-time user interface updates of the graphs as new data flows into the system from the connected devices. You can influence the graphical display and axes limits by setting up so-called "KPIs", see the [Administration](/guides/users-guide/administration#kpis) guide.
 
+Important: In order to see measurement graphs, device has to send measurements with specific fragment format, ie.
+
+"fragment_name" : {
+	"serie_name" : {
+		"value" : ...
+		"unit" : ...
+	}
+}
+
+Real example: 
+
+"c8y_SpeedMeasurement": {
+      "Speed": { "value": 1234, "unit": "km/h" }
+}
+
+Fragment_name and serie_name can be replaced by any other valid json property name. The structure has to be exactly as above, two-level deep json object.
+
 ### <a name="alarms"></a>Alarms
 
 The "Alarms" tab displayed the alarms of a device. Please see the Section "[Working with alarms](#alarm-monitoring)" for more information.
@@ -206,6 +223,8 @@ This tab enables low-level troubleshooting of a device, see "[Troubleshooting de
 ### <a name="location"></a>Location
 
 The "Location" tab by default shows the location as reported by the device on a map. For devices that do not report a location, you can also manually set the location. Simply place the "pin" on the correct place of the displayed map.
+
+The tab shows up when device contains c8y_Position property. When you send a new c8y position event, you can also set the same c8y_Position fragment in the device to have device current position marked on the map.
 
 ### <a name="shell"></a>Shell
 
@@ -235,6 +254,8 @@ The ability to view, edit or control certain devices can be limited to users and
 Devices can record the history of their movements in Cumulocity. Using the tracking tab, you can select a time period and visualize the movements of the device during this time period. Movements are shown as red lines on the map.
 
 Next to the map, the individual recordings with their time are listed ("location update events"). When you click a recording, a "pin" on the map will show the location at the time of the recording.
+
+The Tracking tab shows up when device contains c8y_Position property.
 
 ![Tracking](/guides/users-guide/tracking.png)
 

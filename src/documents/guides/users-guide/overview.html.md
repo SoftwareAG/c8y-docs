@@ -39,7 +39,7 @@ This will direct you to the login page of your default application, shown in the
 
 > Make sure that the address bar of your browser shows a lock symbol. The lock symbol indicates that you are using a secure connection and that you are indeed connected to Cumulocity.
 
-> The above URL is only valid for Cumulocity Standard Edition subscribers. For Dedicated and Private Edition, deployments of Cumulocity, the URL is specific to your organization.
+> The above URL is only valid for Cumulocity Standard Edition subscribers. For Dedicated and Private Edition deployments of Cumulocity, the URL is specific to your organization.
 
 ## <a name="login"></a>Logging in
 
@@ -84,7 +84,7 @@ The general structure of a Cumulocity application is shown in the screenshot bel
 * The top area of the application is used as message bar whenever a status (green) or an error (red) needs to be shown.
 * The "search" field provides a [full-text search](#searching) where available.
 * Using the application switcher, you can change from one application to another. You might have to re-enter your credentials if you have not selected "Remember me" on your original login to Cumulocity.
-* The user menu shows your user name. By clicking on the user name, a popup menu appear. The popup menu allows you to log out of the application (even if you clicked "Remember me") and provides access to user settings and help.
+* The user menu shows your user name. By clicking on the user name, a popup menu appears. The popup menu allows you to log out of the application (even if you clicked "Remember me") and provides access to user settings and help.
 * In some areas, a cog wheel on the top right provides access to further functionality through a drop-down menu.
 
 ![Cumulocity application](/guides/users-guide/app.png)
@@ -112,27 +112,31 @@ To change the settings for your user, click on the user symbol at the top right 
 
 <img src="/guides/users-guide/usersettings.png" alt="User settings"  style="max-width: 60%">
 
-The displayed local language is defined from:
+The user interface language is selected using the following criteria, in the order listed below:
 
 1. The language selected in the Cumulocity user settings.
 2. The language selected in the browser preferences.
-3. If neither of these have selected language, the local language will automatically be set to English.
+3. The operating system language.
 
-> Note that the language selected in the Cumulocity user settings has higher priority than the language in browser preferences.
+The default language is English.
 
 ## <a name="searching"></a>Full-text search
 
-The Cumulocity search field will provide a full-text search for the whole inventory. Entering multiple texts (separated by space) will return all objects that match any of the search texts.
+The Cumulocity search field provides a full-text search of the whole inventory. Entering multiple words separated by a blank returns all objects that match any of the words. For example, entering
 
-E.g. _My Demo Device_ will search the inventory for objects containing "My" or "Demo" or "Device".
+	My Demo Device
 
-If you want to match the exact combination of all 3 texts you can enter _"My Demo Device"_.
+will return objects containing "My", "Demo" or "Device". If you want to match the exact phrase, enter
 
-You can also negate texts for you search using a hyphen-minus (-) at the start of the text to explicitly remove objects containing the text from your result:
+	"My Demo Device"
 
-E.g. _My Demo -Device_ will search the inventory for objects containing "My" or "Demo" and not "Device".
+You can also exclude words by putting a hypen before the word. For example, enter
 
-**Note:** If you negated all texts your search will not return any results.
+	My Demo -Device
 
+to search the inventory for objects containing "My" or "Demo" but not "Device".
 
-The full-text search is case insensitive. _My Demo Device_ and _my demo device_ return the same result.
+Case is ignored. The following search texts return the same result:
+
+	My Demo Device
+	My demo device

@@ -42,9 +42,9 @@ For connecting larger amounts of devices, you can upload a CSV file with the IDs
 
 The CSV file needs to have a header row followed by the actual data. The header row needs to contain at least one column marked "ID" and one column marked "Credentials". Here is an example of a valid CSV format:
 
-	ID;Credentials
-	006064ce800a;LF2PWJoLG1Fz
-	006064ce8077;OowoGKAbiNJs
+	ID;Credentials;Tenant;Group;ICCID;NAME
+	006064ce800a;LF2PWJoLG1Fz;management;Sample_Düsseldorf;+491555555;Sample_Device1
+	006064ce8077;OowoGKAbiNJs;management;Sample_Düsseldorf;+491555555;Sample_Device2
 
 Use the "Upload" button to upload the CSV file, as shown in the screenshot below. After the data is imported, you will get feedback on the number of devices that were pre-registered as well as on any potential errors that may have occurred.
 

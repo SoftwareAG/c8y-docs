@@ -21,6 +21,7 @@ The Administration application lets account administrators manage their users, a
 The "Home" screen provides navigation links to the main parts of the administration application. It also shows subscription information for your account. The subscription information describes how much capacity you have used and what optional applications you are subscribed to. The capacity section shows:
 
 * API requests: Counted whenever some functionality in Cumulocity is invoked, regardless of whether the functionality is invoked from a device (for example, sending a measurement) or from an application (for example, viewing the list of devices).
+* Device API requests: Counted only when the API is called from a device (for example, sending a measurement)
 * Storage: The total amount of data stored in your account. This amount can be influenced by [retention policies](#retention) and by the amount and size of [stored files](#files).
 * Devices: The total number of devices connected to your account. This is the sum of the devices listed in the "[All devices](/guides/users-guide/device-management#viewing-devices)" menu of the Device Management application and their direct and indirect child devices.
 * Users: The sum of all users configured in this account, active and inactive.

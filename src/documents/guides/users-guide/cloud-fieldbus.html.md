@@ -14,7 +14,7 @@ Cloud Fieldbus is a Cumulocity application that lets you collect data from field
 
 Cloud Fieldbus is currently in beta. It supports Modbus out of the box on the following terminals:
 
-* Teleorigin RB900 for Modbus/RTU.
+* [Pssystec Smartbox-Modbus](/guides/devices/smartbox-modbus) for Modbus/RTU.
 * [Netcomm Wireless NTC-6200](/guides/devices/netcommwireless) for Modbus/TCP.
 
 > If you want to support Cloud Fieldbus in your terminal, please contact info@cumulocity.com for more information.

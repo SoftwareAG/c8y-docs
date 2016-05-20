@@ -51,7 +51,9 @@ redirects =
 	'/guides/devices/netcomm/netcomm-release': '/guides/devices/netcomm-release'
 	'/guides/devices/netcomm/netcomm-usersguide': '/guides/devices/netcommwireless'
 	'/guides/devices/netcomm/cloud-fieldbus': '/guides/users-guide/cloud-fieldbus'
-	'/guides/reference/cumulocity-event-language': '/guides/event-language/introduction'	
+	'/guides/reference/cumulocity-event-language': '/guides/event-language/introduction'
+	'/guides/zapier': '/guides/users-guide/saas-integration'
+	'/guides/users-guide/zapier': '/guides/users-guide/saas-integration'
 	# "index.html" redirects
 	'/guides/concepts': '/guides/concepts/introduction'
 	'/guides/users-guide': '/guides/users-guide/overview'

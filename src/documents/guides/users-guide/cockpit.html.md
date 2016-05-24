@@ -507,7 +507,7 @@ The parameters to configure are the same as in the data explorer. Please refer t
 
 ### Widget "Data Point Table"
 
-This widget configuration is identical  to data points graph. Except visualizing the data as a line-chart, data is visualized in a tabular format.
+This widget configuration is identical  to data points graph, except instead of visualizing the data as a line-chart, data is visualized in a tabular format.
 
 * The data points table widget displays data based on selected data points, time interval and aggregation.
 

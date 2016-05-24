@@ -5,7 +5,7 @@ title: SIGFOX
 
 ## Overview
 
-The following data is currently recorded:
+The following data are currently recorded:
 
 * Raw SIGFOX data as event
 * Signal strength measurement including RSSI (Received signal strength indication), SNR (Signal noise ratio) and average SNR
@@ -17,7 +17,7 @@ The following data is currently recorded:
 
 ## Configuring SIGFOX devices for Cumulocity
 
-To forward SIGFOX data to CUmulocity, you need to add several callbacks to your device type in the [SIGFOX backend](https://backend.sigfox.com). Please note that in SIGFOX a callback is linked to a device type and not a single device.
+To forward SIGFOX data to Cumulocity, you need to add several callbacks to your device type in the [SIGFOX backend](https://backend.sigfox.com). Please note that in SIGFOX a callback is linked to a device type and not a single device.
 All devices with that type connected to your SIGFOX account will trigger the callback.
 You will need to add valid Cumulocity credentials to all configured callbacks. We recommend creating a dedicated user in Cumulocity for that and add it to the devices group.
 
@@ -52,7 +52,7 @@ Setting the type to bi-directional (BIDIR) enables Cumulocity to send commands i
 
 ### Service acknowledge callback
 
-The service acknowledge callback will tell Cumulocity the status of the last send operation. Depending on the content Cumulocity will set the operation to SUCCESSFUL or FAILED including the failure reason provided by SIGFOX.
+The service acknowledge callback will tell Cumulocity the status of the last sent operation. Depending on the content, Cumulocity will set the operation to SUCCESSFUL or FAILED including the failure reason provided by SIGFOX.
 Additionally there will be a warning created whenever SIGFOX sends true for the downlinkOverusage.
 
 You need to add a new custom callback and change the following parameters:

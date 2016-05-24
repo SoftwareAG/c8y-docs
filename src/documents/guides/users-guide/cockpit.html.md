@@ -505,6 +505,16 @@ Note: The easiest way to create a data point graph widget is to navigate to the 
 
 The parameters to configure are the same as in the data explorer. Please refer to "[Data Explorer](#using-the-data-explorer-to-visualize-data)" for further details.
 
+### Widget "Data Point Table"
+
+This widget configuration is identical  to data points graph, except instead of visualizing the data as a line-chart, data is visualized in a tabular format.
+
+* The data points table widget displays data based on selected data points, time interval and aggregation.
+
+* Out of range values, based on configured yellow and red ranges, are highlighted in the table.
+
+![Data point table](/guides/users-guide/datapointtable.png)
+
 ### Widget "Map"
 
 Show location of a device or all devices in the group. The map provides the following features:

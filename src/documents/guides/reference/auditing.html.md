@@ -161,6 +161,26 @@ Example response:
 In case of executing range queries on audit logs API, like query by dateFrom and dateTo, audits are returned in order from the last to the latest. 
 It is possible to change the order by adding query parameter "revert=true" to the request URL.
 
+### DELETE - delete an collection of auditRecords
+
+The DELETE method allows for deletion of auditRecords collections. Applicable query parameters are equivalent to GET method.
+
+Request body: N/A
+
+Response body: N/A
+  
+Required role: ROLE\_AUDIT\_ADMIN
+
+Example request:
+
+     DELETE: /audit/auditRecords ....
+     Host: ...
+     Authorization: Basic ...
+     
+Example response:
+
+    HTTP/1.1  204 NO CONTENT
+    
 ## Audit record
 
 ### AuditRecord [application/vnd.com.nsn.cumulocity.auditRecord+json]

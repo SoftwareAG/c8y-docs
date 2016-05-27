@@ -1,5 +1,5 @@
 ---
-title: SMARTBox-Modbus
+title: SMARTBox
 layout: devices
 ---
 

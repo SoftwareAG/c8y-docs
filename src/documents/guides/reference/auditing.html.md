@@ -157,6 +157,9 @@ Example response:
         "currentPage" : 1
       }
     }
+    
+In case of executing range queries on audit logs API, like query by dateFrom and dateTo, audits are returned in order from the last to the latest. 
+It is possible to change the order by adding query parameter "revert=true" to the request URL.
 
 ## Audit record
 

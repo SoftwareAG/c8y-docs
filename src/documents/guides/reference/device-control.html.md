@@ -171,6 +171,26 @@ Example Response:
       }
     }
 
+### DELETE - delete an collection of operations
+
+The DELETE method allows for deletion of operation collections. Applicable query parameters are equivalent to GET method.
+
+Request body: N/A
+
+Response body: N/A
+  
+Required role: ROLE\_DEVICE\_CONTROL\_ADMIN
+
+Example request:
+
+     DELETE: /devicecontrol/operations ....
+     Host: ...
+     Authorization: Basic ...
+     
+Example response:
+
+    HTTP/1.1  204 NO CONTENT
+
 ## Operation
 
 ### Operation [application/vnd.com.nsn.cumulocity.operation+json]

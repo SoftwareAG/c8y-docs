@@ -245,6 +245,9 @@ Only objects that user is allowed to see are returned to the user. It is possibl
 If an object does not have any fragment in it, then to e.g. read that object you have to put a wildcard to fragment name part of device permission, i.e.
 "10200":["MEASUREMENT:*:READ"]
 
+### Audit log
+Any change in user's roles, device permissions and groups creates suitable audit record with type 'User' and activity 'User updated' with information which properties have been changed.
+
 
 ### GET a representation of a User
 
@@ -340,6 +343,8 @@ Example response:
       "roles" : {[collection of roles the user has]},
       "devicePermissions": {}
     }
+
+When user is updated with changed permissions or groups, suitable audit record is created with type 'User' and activity 'User updated'.
 
 ### DELETE a representation of a user
 
@@ -498,6 +503,8 @@ Example response:
             "self": "[URL to the User resource]",
             "userName": "jsmith"
         }}
+        
+When user is added to group, suitable audit record is created with type 'User' and activity 'User updated'.
 
 ### Remove User from a group
 
@@ -512,6 +519,8 @@ Response body: N/A. Example request: DELETE a UserReference
 Example response:
 
     HTTP/1.1  204 NO CONTENT
+
+When user is removed from group, suitable audit record is created with type 'User' and activity 'User updated'.
 
 ### Get all users of a group
 
@@ -570,6 +579,9 @@ Example response:
 |statistics|PagingStatistics|1|Information about the paging statistics|
 |prev|URI|0..1|Link to a possible previous page with additional groups|
 |next|URI|0..1|Link to a possible next page with additional groups|
+
+### Audit log
+Any change in group's roles and device permissions creates suitable audit record with type 'Group' and activity 'Group updated' with information which properties have been changed.
 
 ### List all groups
 
@@ -748,6 +760,8 @@ Response body: N/A.
 Example response:
 
     HTTP/1.1  204 NO CONTENT
+    
+When group is removed, suitable audit records are created with type 'User' and activity 'User updated' with information that user has been removed from group.
 
 ### Update a group
 
@@ -778,6 +792,8 @@ Example response:
       "name" : "PlatformAdministrators",
       ...
     }
+    
+When group is updated with changed roles or permissions, suitable audit record is created with type 'Group' and activity 'Group updated'.
 
 ## Group reference collection
 
@@ -919,6 +935,8 @@ Example response:
         "name" : "ROLE_USER_MGMT_ADMIN"
       }
     }
+    
+When role is assigned to user, suitable audit record is created with type 'User' and activity 'User updated'.
 
 ### Assign Role to Group
 
@@ -955,6 +973,8 @@ Example response:
       }
     }
 
+When role is assigned to group, suitable audit record is created with type 'Group' and activity 'Group updated'.
+
 ### Unassign Role from User
 
 Request body: N/A.
@@ -983,6 +1003,8 @@ Response body: N/A.
 Example response:
 
     HTTP/1.1  204 NO CONTENT
+
+When role is unassigned from group, suitable audit record is created with type 'Group' and activity 'Group updated'.
 
 ## Role reference collection
 

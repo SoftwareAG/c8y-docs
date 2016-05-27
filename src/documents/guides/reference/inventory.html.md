@@ -410,6 +410,8 @@ Example response:
       ...
     }
 
+When managed object of type 'c8y_SmartRule' is updated, audit record is created with type 'SmartRule' and activity 'Smart rule updated', 'Smart rule enabled' or 'Smart rule disabled'.
+
 ### DELETE a managed object
 
 Request Body: N/A.

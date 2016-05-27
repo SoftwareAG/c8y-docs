@@ -996,6 +996,8 @@ _Note_: Range values defined in the source object have a higher priority than th
 
 * If alarm have not been already cleared by one of the next measurements with value in GREEN range.
 
+* Please note that if you clear an alarm, you state that the alarm is resolved. A new alarm is not raised unless the device changes its state and crosses the thresholds again.
+
 ### On measurement explicit threshold create alarm
 
 When the measurement value enters or leaves the RED range, a CRITICAL alarm is generated or cleared, respectively.
@@ -1024,6 +1026,7 @@ The rule uses the following parameters:![image alt text](/guides/users-guide/ima
 ** Troubleshooting **
 
 * Please check the same steps as for the threshold rule above.
+
 
 ### On alarm send E-mail
 

@@ -29,8 +29,7 @@ The inventory interface consists of the following parts:
 
 ### GET a representation of the Inventory API resource
 
-Response body: inventoryApi
-  
+Response body: application/vnd.com.nsn.cumulocity.inventoryApi+json  
 Required role: ROLE\_INVENTORY\_READ
 
 Example request: Get the Inventory API resource
@@ -109,11 +108,147 @@ Example Response:
         "currentPage : 1
       },  "next" : "...",  "prev" : "..."}
 
+### GET a representation of a ManagedObjectCollection by query
+
+Response body: ManagedObjectCollection  
+Required role: ROLE\_INVENTORY\_READ
+
+Example Request: Get managed objects finded by query.
+
+    GET with parameter ?q=(query language statement)
+    Host: ...
+    Authorization: Basic ...
+    Accept: application/vnd.com.nsn.cumulocity.managedObjectCollection+json;ver=...
+
+Example Response:
+
+    HTTP/1.1 200 OK
+    Content-Type: application/vnd.com.nsn.cumulocity.managedObjectCollection+json;ver=...
+    Content-Length: ...
+    {
+      "self" : "<<Collection URL>>",
+      "managedObjects" : [
+        {
+          "self" : "<<Object 42 URL>>",
+          "id" : "42",
+          "type" :"bg_mps_D413",
+          "name" : "Meter1",
+          ...
+        },
+        {
+          "self" : "<<Object 43 URL>>",
+          "id": "43",
+          "type" :"bg_mps_D413",
+          "name": "Meter2",
+          ...
+        }
+      ],
+      "statistics" : {
+        "totalPages" : 42,
+        "pageSize" : 5,
+        "currentPage : 1
+      },  "next" : "...",  "prev" : "..."}
+
+### Query Language
+
+##### User can put query via 'q' parameter. Parameter can be:
+* only query to database: ...?q=name eq 'M01'
+* keyword $filter=: ...?q=$filter=name eq  'M01'
+* keyword $orderby=: ...?q=$orderby=id asc
+* keywords $filter= and $orderby=: ...?q=$filter=name eq 'M01' $orderby=id,
+
+This part explain, how application will be handle query in parameter 'q'.
+
+##### Supported query operations:
+* eq(Equal): City eq 'Redmond'
+* gt(Greater than): Price gt 20
+* ge(Greater than or equal): Price ge 10
+* lt(Less than): Price lt 20
+* le(Less than or equal): Price le 100
+* and(Logical and): Price le 200 and Price gt 3.5
+* or(Logical or): Price le 3.5 or Price gt 200
+
+##### Supported query functions:
+* has: has(name) - match objects with property name
+* bygroupid(12) - match objects from group with id equals 12
+
+##### Supported query values:
+* string
+    * examples: name eq 'Dev_002', name eq 'Dev*', name eq '*_001', name eq '*'
+    * string must be surround single quote
+    * string can contains wildcard '*' and this wildcard match form 0 to N characters
+    * matching is insensitive in case
+* number
+* date
+    * examples: creationTime gt '2015-10-24T09:00:53.351+01:00'
+
+##### Supported query properties:
+* simple: name
+* nested: c8y_Availability.status
+* array: c8y_Availability.statuses = [1, 2, 3]
+
+##### Grouping query operators:
+* ( ) Precedence grouping: (p1 eq 1) and (p2 eq 5 or p2 eq 6)
+
+##### Supported sort operations:
+* desc
+    * example: $orderby=name desc
+* asc
+    * example: $orderby=name, $orderby=name asc
+
+##### Examples:
+Example data:
+
+    {
+        "_id": 1,
+        "name": "Dev_001",
+        "num": 1,
+        "c8y_Availability": {
+            "statusId": 1
+        }
+    },
+    {
+        "_id": 2,
+        "name": "Dev_002",
+        "num": 2,
+        "c8y_Availability": {
+            "statusId": 1
+        }
+    },
+    {
+        "_id": 3,
+        "name": "Mo_003",
+        "num": 3,
+        "c8y_Availability": {
+            "statusId": 2
+        }
+    },
+    {
+        "_id": 4,
+        "name": "Mo_004",
+        "num": 4,
+        "c8y_Availability": {
+            "statusId": 2
+        }
+    }
+
+and query will return:
+
+    ...q=num eq 1 - {"_id": 1, ...}
+    ...q=name eq 'Dev_002' - {"_id": 2, ...}
+    ...q=name eq '*00*' - return all 4 rows
+    ...q=name eq '*dev_001*' - {"_id": 1, ...}
+    ...q=c8y_Availability.statusId eq 2 - {"_id": 3, ...}, {"_id": 4, ...}
+    ...q=num gt 2 - {"_id": 3, ...}, {"_id": 4, ...}
+    ...q=num le 2 - {"_id": 1, ...}, {"_id": 2, ...}
+    ...q=num eq 1 or num eq 2 - {"_id": 1, ...}, {"_id": 2, ...}
+    ...q=has(name) - return all 4 rows
+
 ### POST - Create a new ManagedObject
 
 Request body: ManagedObject
 
-Response body: ManagedObject 
+Response body: ManagedObject (when accept header is not provided, empty response body is returned)
   
 Required role: ROLE\_INVENTORY\_ADMIN or ROLE\_INVENTORY\_CREATE
 
@@ -244,8 +379,8 @@ Fragment_name and serie_name can be replaced by any other valid json property na
 
 Request body: ManagedObject
 
-Response body: ManagedObject 
-  
+Response body: ManagedObject (when accept header is not provided, empty response body is returned)
+
 Required role: ROLE\_INVENTORY\_ADMIN or owner
 
 Example Request: Change the name of a managed object
@@ -275,12 +410,14 @@ Example response:
       ...
     }
 
+When managed object of type 'c8y_SmartRule' is updated, audit record is created with type 'SmartRule' and activity 'Smart rule updated', 'Smart rule enabled' or 'Smart rule disabled'.
+
 ### DELETE a managed object
 
-Request body: N/A.
+Request Body: N/A.
 
 Response Message Body: N/A.
-  
+
 Required role: ROLE\_INVENTORY\_ADMIN or owner
 
 Example Request: Delete a managed object
@@ -325,7 +462,7 @@ Example Response:
     HTTP/1.1 200 OK
     Content-Type: application/vnd.com.nsn.cumulocity.managedObjectReferenceCollection+json;ver=...
     Content-Length: ...
-     
+
     {
       "self" : "<<This ManagedObjectReferenceCollection URL>>",
       "references" : [
@@ -361,7 +498,7 @@ Example Response:
 Request body: ManagedObjectReference
 
 Response body: ManagedObjectReference
-  
+
 Required role: ROLE\_INVENTORY\_ADMIN or ROLE\_INVENTORY\_CREATE
 
 Example Request: Add a ManagedObjectReference
@@ -371,7 +508,7 @@ Example Request: Add a ManagedObjectReference
     Authorization: Basic ...
     Content-Length: ...
     Content-Type: application/vnd.com.nsn.cumulocity.managedObjectReference+json;ver=...
-     
+
     {
       "managedObject" : { "self" :"<<ManagedObject URL>>" }
     }
@@ -440,7 +577,7 @@ Example Response:
 Request Body: N/A.
 
 Response Message Body: N/A.
-  
+
 Required role: ROLE\_INVENTORY\_ADMIN or owner
 
 Note: This operations just removes the reference, it does not delete the object itself.
@@ -458,7 +595,7 @@ Example Response:
 
 ## Notifications
 
-Inventory notifications permit the monitoring of changes in the inventory (creation, update and deletion). 
+Inventory notifications permit the monitoring of changes in the inventory (creation, update and deletion).
 The basic protocol for receiving notifications is described in the Section "[Real-time notifications](/guides/reference/real-time-notifications)". The URL is
 
     /cep/realtime
@@ -471,13 +608,13 @@ The response will additionally to the managed object contain a "realtimeAction" 
 
 Example Response:
 
-    HTTP/1.1 200 OK 
+    HTTP/1.1 200 OK
     Content-Type: application/json
     [
       {
-        "channel": "/managedobjects/12345", 
-        "successful": true, 
-        "error": "", 
+        "channel": "/managedobjects/12345",
+        "successful": true,
+        "error": "",
         "data": [{
           "realtimeAction": "UPDATE",
           "data": {
@@ -488,8 +625,8 @@ Example Response:
             "c8y_IsDevice": {},
             "c8y_Location": { ... }
           }
-        }], 
-        "clientId": "Un1q31d3nt1f13r" 
+        }],
+        "clientId": "Un1q31d3nt1f13r"
       }
     ]
 

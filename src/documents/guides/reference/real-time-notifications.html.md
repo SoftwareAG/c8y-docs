@@ -39,7 +39,7 @@ A real-time notifications client initiates connection negotiation by sending a m
 
 |Name|Type|Occurs|Description|
 |:---|:---|:-----|:----------|
-|timeout|Integer|0..1|Interval in milliseconds between sending of connect message and response from server . Overrides server default settings for session. Default value : 3600000, maximum value 7200000|
+|timeout|Integer|0..1|Max. time in milliseconds between sending of a connect message and response from server .Overrides server default settings for session. Default value : 3600000, maximum value 7200000|
 |interval|Integer|0..1|Period above which server will close session, if not received next connect message from client. Overrides server default settings for session. Default value : 10000|
 
 Example request:
@@ -50,7 +50,7 @@ Example request:
     Content-Length: ...
     Content-Type: application/json
     [
-      { 
+      {
         "channel": "/meta/handshake",
         "version": "1.0",
         "mininumVersion": "1.0beta",
@@ -74,31 +74,31 @@ Example request:
 
 Example of successful response:
 
-    HTTP/1.1 200 OK 
+    HTTP/1.1 200 OK
     Content-Type: application/json
     [
       {
-        "channel": "/meta/handshake", 
-        "version": "1.0", 
-        "minimumVersion": "1.0beta", 
-        "supportedConnectionTypes": ["long-polling"], 
-        "clientId": "Un1q31d3nt1f13r", 
-        "successful": true 
+        "channel": "/meta/handshake",
+        "version": "1.0",
+        "minimumVersion": "1.0beta",
+        "supportedConnectionTypes": ["long-polling"],
+        "clientId": "Un1q31d3nt1f13r",
+        "successful": true
       }
     ]
 
 Example of failed response:
 
-    HTTP/1.1 200 OK 
+    HTTP/1.1 200 OK
     Content-Type: application/json
     [
       {
-        "channel": "/meta/handshake", 
-        "successful": false, 
-        "error":"403::Handshake denied" 
+        "channel": "/meta/handshake",
+        "successful": false,
+        "error":"403::Handshake denied"
       }
     ]
-        
+
 
 ## Subscribe
 
@@ -121,7 +121,7 @@ The format of channels names is different according to REST api in which the rea
 Example Request:
 
     POST /cep/realtime
-    Host: ... 
+    Host: ...
     Authorization: Basic ...
     Content-Length: ...
     Content-Type: application/json
@@ -132,7 +132,7 @@ Example Request:
         "subscription": "/alarms/overHeatAlarms"
       }
     ]
-        
+
 
 ### Response
 
@@ -147,7 +147,7 @@ Example Request:
 
 Example response:
 
-    HTTP/1.1 200 OK 
+    HTTP/1.1 200 OK
     Content-Type: application/json
     [
       {
@@ -175,7 +175,7 @@ To stop receiving notifications from a channel, send a message to "/meta/unsubsc
 Example Request:
 
     POST /cep/realtime
-    Host: ... 
+    Host: ...
     Authorization: Basic ...
     Content-Length: ...
     Content-Type: application/json
@@ -200,7 +200,7 @@ Example Request:
 
 Example response:
 
-    HTTP/1.1 200 OK 
+    HTTP/1.1 200 OK
     Content-Type: application/json
     [
       {
@@ -236,7 +236,7 @@ After a Bayeux client has discovered the server's capabilities with a handshake 
 Example Request :
 
     POST /cep/realtime
-    Host: ... 
+    Host: ...
     Authorization: Basic ...
     Content-Length: ...
     Content-Type: application/json
@@ -262,13 +262,13 @@ Example Request :
 
 Example response:
 
-    HTTP/1.1 200 OK 
+    HTTP/1.1 200 OK
     Content-Type: application/json
     [
       {
-        "channel": "/cepModuleName/cepStatementName", 
-        "successful": true, 
-        "error": "", 
+        "channel": "/cepModuleName/cepStatementName",
+        "successful": true,
+        "error": "",
         "data": [{
            "id" : "10",
            "self" : "...",
@@ -278,12 +278,12 @@ Example response:
            "text" : "Door sensor was triggered.",
            "com_othercompany_Extension" : { ... },
            "source":{ "id":"12345", "self": "..." }
-        }], 
-        "clientId": "Un1q31d3nt1f13r" 
+        }],
+        "clientId": "Un1q31d3nt1f13r"
       },{
-        "channel": "/cepModuleName/cepStatementName", 
-        "successful": true, 
-        "error": "", 
+        "channel": "/cepModuleName/cepStatementName",
+        "successful": true,
+        "error": "",
         "data": [{
            "id" : "11",
            "self" : "...",
@@ -293,8 +293,8 @@ Example response:
            "text" : "Door sensor was triggered.",
            "com_othercompany_Extension" : { ... },
            "source":{ "id":"12345", "self": "..." }
-        }], 
-        "clientId": "Un1q31d3nt1f13r" 
+        }],
+        "clientId": "Un1q31d3nt1f13r"
       },
       {
         "channel":"/meta/connect",
@@ -310,83 +310,43 @@ To stop receiving notifications from all channels and close the conversation, se
 
 |Name|Type|Occurs|Description|
 |:---|:---|:-----|:----------|
-|id|Integer|0..1|Id of message, required to match reponse message|
+|id|Integer|0..1|Id of message, required to match response message|
 |channel|URI|1|Name of channel, required value "/meta/disconnect".|
 |clientId|String|1|Unique ID of client received during handshake.|
 
 Example response :
 
     POST /cep/realtime
-    Host: ... 
+    Host: ...
     Authorization: Basic ...
     Content-Length: ...
     Content-Type: application/json
     [
-      { 
+      {
         "channel": "/meta/disconnect",
-        "clientId": "Un1q31d3nt1f13r", 
+        "clientId": "Un1q31d3nt1f13r",
       }
     ]
 
 ### Response
 
-Name
-
-Type
-
-Occurs
-
-Description
-
-id
-
-Integer
-
-0..1
-
-Id of message passed in request message
-
-channel
-
-URI
-
-1
-
-Name of channel, required value "/meta/disconnect".
-
-successful
-
-Boolean
-
-1
-
-Result of disconnect operation.
-
-clientId
-
-String
-
-1
-
-Unique ID of client.
-
-error
-
-String
-
-0..1
-
-Disconnect failure reason.
+|Name|Type|Occurs|Description|
+|:---|:---|:-----|:----------|
+|id|Integer|0..1|Id of message passed in request message|
+|channel|URI|1|Name of channel, required value "/meta/disconnect".|
+|successful|Boolean|1|Result of disconnect operation.|
+|clientId|String|1|Unique ID of client received during handshake.|
+|error|String|0..1|Disconnect failure reason.|
 
 Example response :
 
-    HTTP/1.1 200 OK 
+    HTTP/1.1 200 OK
     Content-Type: application/json
     [
       {
-        "channel": "/meta/disconnect", 
-        "clientId": "Un1q31d3nt1f13r", 
-        "successful": true 
+        "channel": "/meta/disconnect",
+        "clientId": "Un1q31d3nt1f13r",
+        "successful": true
       }
     ]
 
@@ -401,5 +361,3 @@ Listening to notifications through long polling generates certain traffic depend
 |month|210 kB|
 
 During handshake or connect, a client can override default server connection settings such as timeout and interval. In case of the long polling transport, a client can change the long poll request duration by passing a timeout value. Longer timeout values reduce the traffic needed for sending request and response messages but can result in a loss of the connection. Clients can also set longer interval values and wait with sending the next connect message after receiving the last response (at the expensive of less interactivity).
-
-

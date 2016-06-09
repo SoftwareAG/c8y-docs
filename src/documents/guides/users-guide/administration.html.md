@@ -374,7 +374,7 @@ To change password settings, click on "Password". To limit the validity of user 
 
 By default, users can use any password that consists of eight characters or longer. If you select "Enforce that all password are "strong" (green)", your users must provide strong passwords as described in "[Logging in](/guides/users-guide/overview#login)".
 
-By default, system restricts users to not use password used in history, in other hands last N passwords provided by user are remembered by system and system restrict user to not use them. The N is configurable and default value for N is 10.
+By default, system restricts users to not use password used in history, in other words last N passwords provided by user are remembered by system and system restricts user to not use them. The N is configurable and default value for N is 10.
 
 Click "Save" to store the settings.
 

@@ -242,11 +242,14 @@ For Modbus-TCP setup:
 
 For Modbus-RTU setup:
 
-* Connect the router and your Modbus-RTU slaves via a RS-485 cable.
-* Configure the Modbus-RTU port in the Cumulocity menu on NetComm device's web UI, see "[Configuring the router](#configure)".
+* Connect the router and your Modbus-RTU slaves via a serial cable.
+* Configure serial port mode via device shell:
 
-> The serial port should be /dev/ttyS&lt;N&gt;, where &lt;N&gt; is the port number. To identify the correct serial port number, connect your serial port, and request a `dmesg` log. In the last few lines, you should find relevant log entry about new serial port and its corresponding port number.
-> Reconfigure the serial port requires rebooting the device.
+        set serial.iomode.default=<mode>
+
+where `<mode>` can be rs232, rs422 or rs485. You may need to reboot the device after changing the mode.
+
+> Some USB to serial adapters have echo mode enabled by default, this can render the Modbus communication stop working completely. If you have one of these adapters, consult the adapter's manufacturer about how to disable it.
 
 Then:
 

@@ -1108,7 +1108,7 @@ _Note:_ The rule checks if the configured duration was exceeded once a minute. T
 
 ### On geofence create alarm
 
-Create an alarm if a device leaves the defined geofence. Clear existing alarm if a device enters the geofence.
+The Geofence-Smart Rule can be configured to create an alarm upon leaving or entering the geofence (or both). Existing alarms are cleared when the opposite condition is true gain.
 
 The rule uses the following parameters:
 

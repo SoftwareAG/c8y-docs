@@ -682,6 +682,7 @@ Example Response :
 |deviceWithChildrenCount|Number|1|Number of devices with all children.|
 |requestCount|Number|1|Number of requests that were issued against the tenant.|
 |storageSize|Number|1|Database storage in use by the tenant, in bytes.|
+|subscribedApplications|List|1|Names of tenant subscribed applications.|
 
 "requestCount" and "deviceRequestCount" contains the sum of all issued requests during the querying period. "deviceCount" and "storageSize" contain the last reported value during the querying period. Please note:
 
@@ -730,7 +731,10 @@ Example Response :
             "deviceWithChildrenCount": 5,
             "requestCount": 103966,
             "self": "...",
-            "storageSize": 1005442845
+            "storageSize": 1005442845,
+	    "subscribedApplications": [
+                "testadmin"
+            ]
         },
         {
             "day": "2014-08-07T00:00:00.000+02:00",
@@ -739,7 +743,10 @@ Example Response :
             "deviceWithChildrenCount": 38,
             "requestCount": 116378,
             "self": "...",
-            "storageSize": 1151862557
+            "storageSize": 1151862557,
+	    "subscribedApplications": [
+                "testadmin"
+            ]
         },
         ...
         ]
@@ -769,7 +776,10 @@ Example Response :
             "deviceWithChildrenCount": 5,
             "requestCount": 116378,
             "tenantId": "tenant1",
-            "storageSize": 1151862557
+            "storageSize": 1151862557,
+	    "subscribedApplications": [
+                "testadmin"
+            ]
         },
         {
             "deviceCount": "2",
@@ -777,7 +787,10 @@ Example Response :
             "deviceWithChildrenCount": 2,
             "requestCount": 116378,
             "tenantId": "tenant2",
-            "storageSize": 1151862557
+            "storageSize": 1151862557,
+	    "subscribedApplications": [
+                "testadmin"
+            ]
         },
         ...
 	]
@@ -811,5 +824,8 @@ Example Response :
         "deviceRequestCount": 15006838,
         "deviceWithChildrenCount": 38,
         "requestCount": 15013818,
-        "storageSize": 983856925
+        "storageSize": 983856925,
+	"subscribedApplications": [
+            "testadmin"
+        ]
     }

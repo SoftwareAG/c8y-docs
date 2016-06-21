@@ -58,6 +58,7 @@ Example Response :
         "tenants": [
             {
                 "adminName": "admin",
+		"allowCreateTenants": false,
                 "applications": {
                     "references": [],
                     "self":"<<ApplicationCollection of This Tenant  URL>>",
@@ -89,6 +90,7 @@ Example Response :
                     "self":"<<ApplicationCollection of This Tenant URL>>",
                 },
                 "self":"<<This Tenant URL>>",
+		"parent": "parentTenant",
                 "status": "ACTIVE"
             },
             {
@@ -166,6 +168,7 @@ Example Response:
 	
 	{
 		"id" : "sample_tenant",
+		"allowCreateTenants": false,
 		"self" : "<<URL of new tenant>>",
 		"company" : "sample_company",
 		"domain" : "tenant_nsn.com",
@@ -173,6 +176,7 @@ Example Response:
 		"contactPhone" : "0123-4567829",
 		"status" : "ACTIVE",
 		"adminName" : "firstAdmin",
+		"parent": "parentTenant",
 		"adminEmail" : "john.doe@sample_domain.com",
 		"customProperties" : {"referenceId":"1234567890"}
 	}
@@ -191,6 +195,7 @@ Example Response:
 |status|String|1|Status of tenant, possible values [ACTIVE, SUSPENDED].|Private|
 |adminName|String: max length = "50"|1|Administrator user name|Private|
 |adminEmail|String|1|Administrator Email|Private|
+|allowCreateTenants|boolean|1|Can this tenant create its own tenants.|Private|
 |adminPassword|String|1|Administrator Password|Private|
 |sendPasswordResetEmail|boolean|1|Enable password reset|Private|
 |domain|String: max length = "256"|1|URL of tenants domain.|Public|
@@ -200,6 +205,7 @@ Example Response:
 |applications|ApplicationReferenceCollection|1|Collection of tenant subscribed, applications.|Private|
 |ownedApplications|ApplicationReferenceCollection|1|Collection of tenant owned, applications.|Public - only applications with availability MARKET|,
 |customProperties|Object|1|Keeps a list of custom properties|optional|
+|parent|String|1|Name of parent tenant, the creator of this tenant.|Public|
 
 ### GET a representation of a Tenant.
 
@@ -228,6 +234,7 @@ Example Response :
         },
         "company": "sample_company",
         "domain": "sample_domain.com",
+	"allowCreateTenants": false,
         "id": "sample_tenant",
         "ownedApplications": {
             "references": [
@@ -253,6 +260,7 @@ Example Response :
             "self":"<<ApplicationCollection of This Tenant URL>>",
         },
         "self":"<<This Tenant URL>>",
+	"parent": "parentTenant",
         "status": "ACTIVE"
     }
     
@@ -289,6 +297,8 @@ Example Response :
         "domain": "sample_domain.com",
         "status": "ACTIVE",
         "self":"<<This Tenant URL>>",
+	"allowCreateTenants": false,
+	"parent": "parentTenant",
         "ownedApplications": {
             "references": [
                 {
@@ -672,6 +682,7 @@ Example Response :
 |deviceWithChildrenCount|Number|1|Number of devices with all children.|
 |requestCount|Number|1|Number of requests that were issued against the tenant.|
 |storageSize|Number|1|Database storage in use by the tenant, in bytes.|
+|subscribedApplications|List|1|Names of tenant subscribed applications.|
 
 "requestCount" and "deviceRequestCount" contains the sum of all issued requests during the querying period. "deviceCount" and "storageSize" contain the last reported value during the querying period. Please note:
 
@@ -720,7 +731,10 @@ Example Response :
             "deviceWithChildrenCount": 5,
             "requestCount": 103966,
             "self": "...",
-            "storageSize": 1005442845
+            "storageSize": 1005442845,
+	    "subscribedApplications": [
+                "testadmin"
+            ]
         },
         {
             "day": "2014-08-07T00:00:00.000+02:00",
@@ -729,7 +743,10 @@ Example Response :
             "deviceWithChildrenCount": 38,
             "requestCount": 116378,
             "self": "...",
-            "storageSize": 1151862557
+            "storageSize": 1151862557,
+	    "subscribedApplications": [
+                "testadmin"
+            ]
         },
         ...
         ]
@@ -759,7 +776,10 @@ Example Response :
             "deviceWithChildrenCount": 5,
             "requestCount": 116378,
             "tenantId": "tenant1",
-            "storageSize": 1151862557
+            "storageSize": 1151862557,
+	    "subscribedApplications": [
+                "testadmin"
+            ]
         },
         {
             "deviceCount": "2",
@@ -767,7 +787,10 @@ Example Response :
             "deviceWithChildrenCount": 2,
             "requestCount": 116378,
             "tenantId": "tenant2",
-            "storageSize": 1151862557
+            "storageSize": 1151862557,
+	    "subscribedApplications": [
+                "testadmin"
+            ]
         },
         ...
 	]
@@ -801,5 +824,8 @@ Example Response :
         "deviceRequestCount": 15006838,
         "deviceWithChildrenCount": 38,
         "requestCount": 15013818,
-        "storageSize": 983856925
+        "storageSize": 983856925,
+	"subscribedApplications": [
+            "testadmin"
+        ]
     }

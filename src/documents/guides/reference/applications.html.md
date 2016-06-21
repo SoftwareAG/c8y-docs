@@ -188,7 +188,7 @@ Example response:
 |id|String|1|Unique identifier for an application|No|
 |name|String|1|Name of the application|POST: Mandatory PUT: Optional|
 |key|String|1|Shared secret of the application|POST: Mandatory PUT: Optional|
-|type|String|1|Type of application. Possible values are : EXTERNAL, HOSTED|POST: Mandatory PUT: No|
+|type|String|1|Type of application. Possible values are : EXTERNAL, HOSTED, MICROSERVICE|POST: Mandatory PUT: No|
 |availability|String|0..1|Access level for other tenants.  Possible values are : "MARKET", "PRIVATE"(default)|Optional|
 |owner|TenantReference| 1|Reference to tenant owning this application|No |
 |contextPath|String|0..1|contextPath of hosted application |POST: Mandatory (when application type is HOSTED) PUT: Optional|

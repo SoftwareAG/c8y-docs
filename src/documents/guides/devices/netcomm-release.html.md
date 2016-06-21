@@ -46,7 +46,7 @@ The agent was tested on an NTC-6200 device with firmware version 2.0.24.3. For r
 
 ## Installing the agent
 
-* Download the software: http://resources.cumulocity.com/ntc/smartrest-agent_3.1.2_arm.ipk.
+* Download the software: http://resources.cumulocity.com/ntc/smartrest-agent_3.1.6_arm.ipk.
 * Log in to the web user interface of the NTC-6200.
 * Navigate to the "System" menu. Click on "System configuration", "Choose a file" and select the downloaded software. Click "Upload" to upload the software to the router.
 * Click the "Install" button for the uploaded software which you want to install.
@@ -145,3 +145,16 @@ For information on using the agent, please visit the [NetComm Agent User's Guide
 * *fix*: in logview get *last* N lines instead of *first* N lines in the given timeframe.
 * [MTM-9815](https://cumulocity.atlassian.net/browse/MTM-9815): use decimal instead of hex for LAC for OpenCellID to work.
 * [MTM-12039](https://cumulocity.atlassian.net/browse/MTM-12039): add RDB dump support.
+
+### 3.1.6
+[Download link](http://resources.cumulocity.com/ntc/smartrest-agent_3.1.6_arm.ipk). Changes:
+
+* [fix]Modbus: read per contiguous block.
+* [MTM-12594](https://cumulocity.atlassian.net/browse/MTM-12594)[fix]lua/config: save configuration doesn't have effect.
+* ntcagent/postinst: set default serial port to /dev/ttyAPP4.
+* Modbus: add mbmanager so change serial configuration no longer requires a reboot.
+* [fix]lua/net: filter out deliveryType=SMS for configuring WAN operation.
+* Modbus: shorten modbus-TCP timeout from 50 sec to 10 sec.
+* [fix]Modbus: transmit rate not working because msg composing improperly.
+* [fix]Modbus: set byte timeout to 1 sec for getting slow Modbus-RTU to work.
+* [fix]lua/gps: use correct format DDDMM.MMmmm instead of DDMM.SSsss for GPS position.

@@ -306,6 +306,32 @@ To stop a simulator, simply press the "Stop device" button while hovering over t
 
 > Note that simulators cannot be edited currently. Instead, you will have to add a new one.
 
+## <a name="tenants"></a>Managing tenants
+
+Sub-tenants are like normal tenants with all related features (e.g. user management, app management...). If tenant administrators have subscribed to the sub-tenant feature and have the appropriate permissions, they can manage sub-tenants. Sub-tenant management include: Tenant creation, activation, deletion, subscribed applications and options.
+A special tenant "management" is provided. This tenant is a super tenant of all other sub-tenants.
+
+![Sub-tenants](/guides/users-guide/sub-tenant.png)
+
+> Note that tenant ID's remain unique, so no two tenants can create sub-tenants with the same URL/ID.
+
+### Adding sub-tenants
+
+To add additional users, click on "Create Tenant"
+
+- Enter the domain/url of the new tenant. This url will be used by the tenant to access the application(e.g. testtenant@cumulocity.com).
+- Enter the name of the company.
+- Enter the administrator's email. Note that you need to provide a valid, unique email address here to enable users to reset their password.
+- Enter username of the administrator.
+- Enter contact name.
+- Enter contact phone.
+- Select whether you wish to have the password reset link sent as an e-mail.
+- Press the "Save" button when ready
+
+> Please note that fields with an asterisk(" * ") are mandatory.
+
+![Tenant-creation](/guides/users-guide/createtenant.png)
+
 ## <a name="event-processing"></a>Managing event processing
 
 Using event processing, you can specify real-time business logic that is automatically run by Cumulocity as soon as new data arrives or existing data is modified. The logic is deployed in so-called "modules". Modules consist of a set of statements that you write in [Cumulocity Event Language](/guides/concepts/realtime). Click on "Event processing" to see the current modules or to create new modules.

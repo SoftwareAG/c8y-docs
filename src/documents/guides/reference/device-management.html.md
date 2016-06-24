@@ -129,6 +129,11 @@ c8y_Mobile.msisdn
 
 ![Modem information](/guides/reference-guide/mobile.png)
 
+#### c8y\_CellInfo
+
+*c8y\_CellInfo* contains cell ID information ->http://www.cumulocity.com/guides/reference/device-management/
+
+
 ## Device reports
 
 #### c8y\_Battery

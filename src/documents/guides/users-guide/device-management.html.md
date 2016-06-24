@@ -261,6 +261,8 @@ The Tracking tab shows up when device contains c8y_Position property.
 
 Depending on the type of device and its integration into Cumulocity, you can also configure device-side geo-fencing and motion detection here.
 
+Additionally, when the feature is activated, and with compatible devices, Cell ID information can be used to determine the position of the device. Currently, the services from [Combain](https://combain.com/) and [Google](https://developers.google.com/maps/documentation/geolocation/intro) are supported. In that case, the user can see the tracks based on both data, or filter out GPS based data or Cell ID based data.
+
 ### <a name="service-monitoring"></a>Service monitoring
 
 In addition to connection monitoring, Cumulocity features a separate service monitoring for machines. See "[Service monitoring](#monitoring-services)" for more information.

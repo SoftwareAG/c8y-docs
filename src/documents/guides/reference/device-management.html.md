@@ -131,7 +131,7 @@ c8y_Mobile.msisdn
 
 #### c8y\_CellInfo
 
-*c8y\_CellInfo* provides information about the closest mobile cell towers.
+*c8y\_CellInfo* provides detailed information about the closest mobile cell towers. When the functionality is activated, the location of the device is determined based on this fragment, in order to track the device whereabouts when GPS tracking is not available. 
 
 |Name|Type|Description|
 |:---|:---|:----------|

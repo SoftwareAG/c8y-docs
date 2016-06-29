@@ -314,15 +314,10 @@ A tenant provides users or customers with a new environment. By creating subtena
 
 The data in subtenants is separated from the data in your tenant. Tenants do not have access to the data of the subtenant so they are isolated in both directions.
 
-% optional
-This feature is an optional feature which is not available for all tenants.
-In case you do not see it, contact support.
-This feature is avaiable for normal tenants. Subtenants cannot create an additional level of subtenants.
+This feature is an optional feature which is not available for all tenants. This feature is available for normal tenants. Subtenants cannot create an additional level of subtenants.
+This feature is available for normal tenants. Subtenants cannot create an additional level of subtenants.
 
->  have the appropriate permissions, they can manage subtenants..
-
-% Usage
-In order to manage subtenants click on the subtenants menu.   Subtenant management includes: Tenant creation, activation, suspension, subscribed applications and options.
+In order to manage subtenants click on the subtenants menu. Subtenant management includes: Tenant creation, activation, suspension, subscribed applications and options.
 
 ![Sub-tenants](/guides/users-guide/sub-tenant.png)
 
@@ -331,6 +326,8 @@ In order to manage subtenants click on the subtenants menu.   Subtenant manageme
 ### Adding sub-tenants
 
 To add additional tenants, click on "Create Tenant"
+
+> Please note that fields with an asterisk(" * ") are mandatory.
 
 - Enter unique domain/url of the new tenant. This url will be used by the tenant to access the application(e.g. tenant@cumulocity.com).
 - Enter the name of the company.
@@ -343,9 +340,6 @@ To add additional tenants, click on "Create Tenant"
 - Choose whether you wish to have the password reset link sent as an e-mail. If you have not selected this option you will have to enter a password and confirm the password. (See "[Logging in](/guides/users-guide/overview#login)" for more information on password strength.)
 - Press the "Save" button when ready
 
-> Please note that fields with an asterisk(" * ") are mandatory.
-=> Move to introduction
-
 ![Tenant-creation](/guides/users-guide/createtenant.png)
 
 ### Editing, suspending and removing sub-tenants
@@ -353,9 +347,6 @@ To add additional tenants, click on "Create Tenant"
 % Descirbe remove and suspending
 
 In order to edit subtenants simply click on the desired subtenant. All the fields can be edited except "ID" and "Administrators Username".
-
-You can either subscribe the subtenant to additional applications or unsubscribe him from applications he is already subscribed to.
-=> Test
 
 When you have finished editing click on the "Save" button.
 

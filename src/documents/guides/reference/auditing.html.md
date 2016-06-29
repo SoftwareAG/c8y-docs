@@ -209,7 +209,7 @@ Required role: ROLE\_AUDIT\_READ
 
 Example request: Get a specific audit record
 
-	GET /audit/auditRecords/{{recordId}}
+	GET /audit/auditRecords/<<recordId>>
 	Host: ...
 	Authorization: Basic ...
 	Accept: application/vnd.com.nsn.cumulocity.auditRecord+json;

@@ -215,7 +215,7 @@ Required role: ROLE\_EVENT\_READ
 
 Example request: Retrieve information about an Event
 
-    GET /event/events/{{eventID}}
+    GET /event/events/<<eventID>>
      Host: [hostname]
      Authorization: Basic xxxxxxxxxxxxxxxxxxx
      Accept: application/vnd.com.nsn.cumulocity.event+json;ver=0.9
@@ -246,7 +246,7 @@ Required role: ROLE\_EVENT\_ADMIN or owner of source object.
 
 Example Request: Delete an event
 
-    DELETE /event/events/{{eventID}
+    DELETE /event/events/<<eventID>>
      Host: [hostname]
      Authorization: Basic xxxxxxxxxxxxxxxxxxx
 

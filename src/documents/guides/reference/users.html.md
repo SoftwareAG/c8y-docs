@@ -81,7 +81,7 @@ Response body: userCollection
  
 Example request: Retrieve information about a User Collection
 
-    GET /user/{{tenant}}/users
+    GET /user/<<tenant>>/users
     Host: [hostname]
     Authorization: Basic xxxxxxxxxxxxxxxxxxx
     Accept: application/vnd.com.nsn.cumulocity.userCollection+json;ver=0.9
@@ -136,7 +136,7 @@ Request body: User
 Response body: User 
  Example request: Create a new User
 
-    POST /user/{{tenant}}/users
+    POST /user/<<tenant>>/users
      Host: [hostname]
      Authorization: Basic xxxxxxxxxxxxxxxxxxx
      Content-Length: nnn
@@ -254,7 +254,7 @@ Any change in user's roles, device permissions and groups creates suitable audit
 Response body: User
  Example request: Retrieve information about a User
 
-    GET /user/{{tenant}}/users/{{userId}}
+    GET /user/<<tenant>>/users/<<userId>>
      Host: [hostname]
      Authorization: Basic xxxxxxxxxxxxxxxxxxx
      Accept: application/vnd.com.nsn.cumulocity.user+json;ver=0.9
@@ -284,7 +284,7 @@ User password is never returned in GET response. Authentication mechanism is pro
 Response body: User
  Example request: Retrieve information about a User
 
-    GET /user/{{tenant}}/userByName/{{userName}}
+    GET /user/<<tenant>>/userByName/<<userName>>
      Host: [hostname]
      Authorization: Basic xxxxxxxxxxxxxxxxxxx
      Accept: application/vnd.com.nsn.cumulocity.user+json;ver=0.9
@@ -316,7 +316,7 @@ Response body: User 
 
 Example request: Change the first name of a User
 
-    PUT /user/{{tenant}}/users/{{userId}}
+    PUT /user/<<tenant>>/users/<<userId>>
      Host: [hostname]
      Authorization: Basic xxxxxxxxxxxxxxxxxxx
      Accept: application/vnd.com.nsn.cumulocity.user+json;ver=0.9
@@ -353,7 +353,7 @@ Request body: N/A.
 Response body: N/A.
  Example request: Delete a user
 
-    DELETE /user/{{tenant}}/users/{{userName}}
+    DELETE /user/<<tenant>>/users/<<userName>>
      Host: [hostname]
      Authorization: Basic xxxxxxxxxxxxxxxxxxx
 
@@ -464,7 +464,7 @@ Request body: UserReference
 Response body: UserReference
  Example request: Create a new UserReference
 
-    POST /user/{{tenant}}/groups/{{groupId}}/users
+    POST /user/<<tenant>>/groups/<<groupId>>/users
      Host: [hostname]
      Authorization: Basic xxxxxxxxxxxxxxxxxxx
      Content-Length: nnn
@@ -512,7 +512,7 @@ Request body: N/A.
 
 Response body: N/A. Example request: DELETE a UserReference
  			 
-     DELETE /user/{{tenant}}/groups/{{groupId}}/users/{{yourUserName}}
+     DELETE /user/<<tenant>>/groups/<<groupId>>/users/<<yourUserName>>
      Host: [hostname]
      Authorization: Basic xxxxxxxxxxxxxxxxxxx
 
@@ -527,7 +527,7 @@ When user is removed from group, suitable audit record is created with type 'Use
 Response body: UserReferenceCollection
  Example request: Retrieve information about all users of a Group
 
-    GET /user/management/groups/{{groupId}}
+    GET /user/management/groups/<<groupId>>
      Host: [hostname]
      Authorization: Basic xxxxxxxxxxxxxxxxxxx
      Accept: application/vnd.com.nsn.cumulocity.userReferenceCollection+json;ver=0.9
@@ -685,7 +685,7 @@ Example response:
 Response body: Group
  Example request: Retrieve information about a Group
 
-    GET /user/management/groups/{{groupId}}
+    GET /user/management/groups/<<groupId>>
      Host: [hostname]
      Authorization: Basic xxxxxxxxxxxxxxxxxxx
      Accept: application/vnd.com.nsn.cumulocity.group+json;ver=0.9
@@ -728,7 +728,7 @@ Example response:
 Response body: Group
  Example request: Retrieve information about a Group
 
-    GET /user/{{tenant}}/groupByName/{{groupName}}
+    GET /user/<<tenant>>/groupByName/<<groupName>>
      Host: [hostname]
      Authorization: Basic xxxxxxxxxxxxxxxxxxx
      Accept: application/vnd.com.nsn.cumulocity.group+json;ver=0.9
@@ -753,7 +753,7 @@ Request body: N/A.
 Response body: N/A.
  Example request: DELETE a group
 
-    DELETE /user/{{tenant}}/groups/{{groupId}}
+    DELETE /user/<<tenant>>/groups/<<groupId>>
      Host: [hostname]
      Authorization: Basic xxxxxxxxxxxxxxxxxxx
 
@@ -770,7 +770,7 @@ Request body: Group
 Response body: Group
  Example request: Change the group name
 
-    PUT /user/{{tenant}}/groups/{{groupId}}
+    PUT /user/<<tenant>>/groups/<<groupId>>
      Host: [hostname]
      Authorization: Basic xxxxxxxxxxxxxxxxxxx
      Accept: application/vnd.com.nsn.cumulocity.group+json;ver=0.9
@@ -812,7 +812,7 @@ When group is updated with changed roles or permissions, suitable audit record i
 Response body: GroupReferenceCollection
  Example request: Retrieve information about all groups of a User
 
-    GET /user/{{tenant}}/users/{{userName}}/groups
+    GET /user/<<tenant>>/users/<<userName>>/groups
      Host: [hostname]
      Authorization: Basic xxxxxxxxxxxxxxxxxxx
      Accept: application/vnd.com.nsn.cumulocity.groupReferenceCollection+json;ver=0.9
@@ -908,7 +908,7 @@ Request body: RoleReference
 Response body: RoleReference
  Example request: Create a new RoleReference
 
-    POST /user/{{tenant}}/users/{{userName}}/roles
+    POST /user/<<tenant>>/users/<<userName>>/roles
      Host: [hostname]
      Authorization: Basic xxxxxxxxxxxxxxxxxxx
      Content-Length: nnn
@@ -945,7 +945,7 @@ Request body: RoleReference
 Response body: RoleReference
  Example request: Create a new RoleReference
 
-    POST /user/{{tenant}}/groups/{{groupId}}/roles
+    POST /user/<<tenant>>/groups/<<groupId>>/roles
      Host: [hostname]
      Authorization: Basic xxxxxxxxxxxxxxxxxxx
      Content-Length: nnn
@@ -982,7 +982,7 @@ Request body: N/A.
 Response body: N/A.
  Example request: DELETE a RoleReference
 
-    DELETE /user/{{tenant}}/users/{{userName}}/roles/{{roleName (Example:ROLE_TENANT_MANAGEMENT_ADMIN)}}
+    DELETE /user/<<tenant>>/users/<<userName>>/roles/<<roleName>> (Example:ROLE_TENANT_MANAGEMENT_ADMIN)}}
      Host: [hostname]
      Authorization: Basic xxxxxxxxxxxxxxxxxxx
 
@@ -997,7 +997,7 @@ Request body: N/A.
 Response body: N/A.
  Example request: DELETE a RoleReference
 
-    DELETE /user/{{tenant}}/groups/{{groupId}}/roles/{{roleName (Example:ROLE_TENANT_MANAGEMENT_ADMIN)}}
+    DELETE /user/<<tenant>>/groups/<<groupId>>/roles/<<roleName>> (Example:ROLE_TENANT_MANAGEMENT_ADMIN)}}
      Authorization: Basic xxxxxxxxxxxxxxxxxxx
 
 Example response:
@@ -1023,7 +1023,7 @@ When role is unassigned from group, suitable audit record is created with type '
 Response body: RoleReferenceCollection
  Example request: Retrieve information about a Role Reference Collection
 
-    GET /user/{{tenant}}/users/{{userName}}/roles
+    GET /user/<<tenant>>/users/<<userName>>/roles
      Host: [hostname]
      Authorization: Basic xxxxxxxxxxxxxxxxxxx
      Accept: application/vnd.com.nsn.cumulocity.roleReferenceCollection+json;ver=0.9
@@ -1067,7 +1067,7 @@ Example response:
 Response body: RoleReferenceCollection
  Example request: Retrieve information about a Role Reference Collection
 
-    GET /user/{{tenant}}/groups/{{groupId}}/roles
+    GET /user/<<tenant>>/groups/<<groupId>>/roles
      Host: [hostname]
      Authorization: Basic xxxxxxxxxxxxxxxxxxx
      Accept: application/vnd.com.nsn.cumulocity.roleReferenceCollection+json;ver=0.9

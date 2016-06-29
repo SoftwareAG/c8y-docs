@@ -129,6 +129,34 @@ c8y_Mobile.msisdn
 
 ![Modem information](/guides/reference-guide/mobile.png)
 
+#### c8y\_CellInfo
+
+*c8y\_CellInfo* provides information about the closest mobile cell towers.
+
+|Name|Type|Description|
+|:---|:---|:----------|
+|radioType|String|The radio type of this cell tower. (Optional)|
+|cellTowers|Array|Detailed information about the neighbouring cell towers.|
+|cellTowers.radioType|String|The radio type of this cell tower. Can also be put directly in root JSON element if all cellTowers have same radioType. (Optional)|
+|cellTowers.mobileCountryCode|Number|The Mobile Country Code (MCC).|
+|cellTowers.mobileNetworkCode|Number|The Mobile Noetwork Code (MNC) for GSM, WCDMA and LTE. The SystemID (sid) for CDMA.|
+|cellTowers.locationAreaCode|Number|The Location Area Code (LAC) for GSM, WCDMA and LTE. The Network ID for CDMA.|
+|cellTowers.cellId|Number|The Cell ID (CID) for GSM, WCDMA and LTE. The Basestation ID for CDMA.|
+|cellTowers.timingAdvance|Number|The timing advance value for this cell tower when available. (Optional)|
+|cellTowers.signalStrength|Number|The signal strength for this cell tower in dBm. (Optional)|
+|cellTowers.primaryScramblingCode|Number|The primary scrambling code for WCDMA and physical CellId for LTE. (Optional)|
+|cellTowers.serving|Number|Specify with 0/1 if the cell is serving or not. If not specified, the first cell is assumed to be serving. (Optional)|
+
+    "c8y_CellInfo": {
+      "radioType": "gsm",
+      "cellTowers": [{
+        "mobileCountryCode": 240,
+        "mobileNetworkCode": 1,
+        "locationAreaCode": 3012,
+        "cellId": 11950
+      }]
+    }
+
 ## Device reports
 
 #### c8y\_Battery

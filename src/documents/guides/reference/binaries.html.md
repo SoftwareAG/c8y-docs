@@ -153,7 +153,7 @@ Required role: ROLE\_INVENTORY\_READ
 
 Example request:
 
-	GET /inventory/binaries/{{binaryId}}
+	GET /inventory/binaries/<<binaryId>>
  	...
 
 Example response:
@@ -179,7 +179,7 @@ to update the managed object directly as described at this section [Update Manag
 
 Example request:
 
-    PUT /inventory/binaries/{{binaryId}}
+    PUT /inventory/binaries/<<binaryId>>
     Host: ...
     Authorization: Basic ...
     Content-Length: ...
@@ -199,7 +199,7 @@ Note: The request will delete the binary and the associated managed object conta
 
 Example Request:
 
-    DELETE /inventory/binaries/{{binaryId}}
+    DELETE /inventory/binaries/<<binaryId>>
     Host: ...
     Authorization: Basic ...
 
@@ -227,7 +227,7 @@ Required role: ROLE\_APPLICATION\_MANAGEMENT\_ADMIN
 
 Example request:
 
-    POST /application/applications/{{application_id}}/binaries/plugins/{{plugin_name}} HTTP/1.1
+    POST /application/applications/<<application_id>>/binaries/plugins/<<plugin_name>> HTTP/1.1
     Accept: application/vnd.com.nsn.cumulocity.managedObject+json
     Content-Type: multipart/form-data; boundary=myBoundary
     Content-Disposition: form-data; name="file"
@@ -262,7 +262,7 @@ Required role: ROLE\_APPLICATION\_MANAGEMENT\_ADMIN
 
 Example request:
 
-    DELETE /application/applications/{{application_id}}/binaries/plugins/{{plugin_name}} HTTP/1.1
+    DELETE /application/applications/<<application_id>>/binaries/plugins/<<plugin_name>> HTTP/1.1
     Authorization: Basic ...
 
 Example response:
@@ -283,7 +283,7 @@ Required role: ROLE\_APPLICATION\_MANAGEMENT\_READ
 
 Example request:
 
-    GET /application/applications/{{application_id}}/binaries/plugins HTTP/1.1
+    GET /application/applications/<<application_id>>/binaries/plugins HTTP/1.1
     Authorization: Basic ...
     
 Example response:
@@ -314,7 +314,7 @@ Required role: ROLE\_APPLICATION\_MANAGEMENT\_ADMIN
 
 Example request:
 
-    POST /application/applications/{{application_id}}/binaries/files HTTP/1.1
+    POST /application/applications/<<application_id>>/binaries/files HTTP/1.1
     Accept: application/vnd.com.nsn.cumulocity.managedObject+json
     Content-Type: multipart/form-data; boundary=myBoundary
     Content-Disposition: form-data; name="filepath"

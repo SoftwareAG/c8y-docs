@@ -216,7 +216,7 @@ Required role: ROLE\_TENANT\_MANAGEMENT\_READ
 Example Request: Get single tenant.
 
      
-    GET /tenant/tenants/{{tenantId}}
+    GET /tenant/tenants/<<tenantId>>
     Host: ...
     Authorization: Basic ...
     Accept: application/vnd.com.nsn.cumulocity.tenant+json;ver=...
@@ -274,7 +274,7 @@ Required role: ROLE\_TENANT\_MANAGEMENT\_ADMIN
 
 Example Request :
      
-    PUT /tenant/tenants/{{tenantId}}
+    PUT /tenant/tenants/<<tenantId>>
     Host: ...
     Authorization: Basic ...
     Content-Length: ...
@@ -335,7 +335,7 @@ Required role: ROLE\_TENANT\_MANAGEMENT\_ADMIN
 
 Example request:
 
-	DELETE /tenant/tenants/{{tenantId}}
+	DELETE /tenant/tenants/<<tenantId>>
 	Host: [hostname]
 	Authorization: Basic xxxxxxxxxxxxxxxxxxx
     
@@ -366,7 +366,7 @@ Required role: ROLE\_TENANT\_MANAGEMENT\_READ
 Example Request: Get Application reference collection.
 
      
-    GET /tenant/tenants/{{tenantId}}/applications
+    GET /tenant/tenants/<<tenantId>>/applications
     Host: ...
     Authorization: Basic ...
     Accept: application/vnd.com.nsn.cumulocity.applicationReferenceCollection+json;ver=...
@@ -425,7 +425,7 @@ Required role: ROLE\_TENANT\_MANAGEMENT\_READ
 Example Request: Get options.
 
      
-    GET /tenant/tenants/{{tenantId}}/applications/{{applicationId}}
+    GET /tenant/tenants/<<tenantId>>/applications/<<applicationId>>
     Host: ...
     Authorization: Basic ...
     Accept: application/vnd.com.nsn.cumulocity.applicationReference+json;ver=...
@@ -566,7 +566,7 @@ Required role: ROLE\_OPTION\_MANAGEMENT\_READ
  Example Request: Get single option.
 
      
-    GET /tenant/options/{{category}}/{{key}}
+    GET /tenant/options/<<category>>/<<key>>
     Host: ...
     Authorization: Basic ...
     Accept: application/vnd.com.nsn.cumulocity.option+json;ver=...
@@ -593,7 +593,7 @@ Required role: ROLE\_OPTION\_MANAGEMENT\_ADMIN
  Example Request: Update access.control.allow.origin option.
 
      
-    PUT /tenant/options/{{category}}/{{key}}
+    PUT /tenant/options/<<category>>/<<key>>
     Host: ...
     Authorization: Basic ...
     Content-Type: application/vnd.com.nsn.cumulocity.option+json;ver=...

@@ -115,7 +115,7 @@ Required role: ROLE\_INVENTORY\_READ
 
 Example Request: Get managed objects finded by query.
 
-    GET with parameter ?q=(query language statement)
+    GET /inventory/managedObjects?q=<<query language statement>>
     Host: ...
     Authorization: Basic ...
     Accept: application/vnd.com.nsn.cumulocity.managedObjectCollection+json;ver=...
@@ -309,7 +309,7 @@ Required role: ROLE\_INVENTORY\_READ
 
 Example request: Get a representation of a specific manage object
 
-    GET /inventory/managedObjects/{{deviceId}}
+    GET /inventory/managedObjects/<<deviceId>>
     Host: ... 
     Authorization: Basic ...
     Accept: application/vnd.com.nsn.cumulocity.managedObject+json;=ver...
@@ -347,7 +347,7 @@ Example response:
 
 Example request: Retrieve supported measurements of a managed object
 
-	GET /inventory/managedObjects/{{deviceId}}/supportedMeasurements
+	GET /inventory/managedObjects/<<deviceId>>/supportedMeasurements
 	Host: ...
 	Authorization: Basic ...
 
@@ -385,7 +385,7 @@ Required role: ROLE\_INVENTORY\_ADMIN or owner
 
 Example Request: Change the name of a managed object
 
-    PUT /inventory/managedObjects/{{deviceId}}
+    PUT /inventory/managedObjects/<<deviceId>>
     Host: ...
     Authorization: Basic ...
     Accept: application/vnd.com.nsn.cumulocity.managedObject+json;ver=...
@@ -422,7 +422,7 @@ Required role: ROLE\_INVENTORY\_ADMIN or owner
 
 Example Request: Delete a managed object
 
-    DELETE /inventory/managedObjects/{{deviceId}}
+    DELETE /inventory/managedObjects/<<deviceId>>
      Host: [hostname]
      Authorization: Basic xxxxxxxxxxxxxxxxxxx
 
@@ -452,10 +452,12 @@ Example Request: Get reference collection of a certain managed object
 
 Note that a "404 Not Found" error will appear if the object has no references.
 
-    GET /inventory/managedObjects/{{deviceId}}/references
+    GET /inventory/managedObjects/<<deviceId>>/<<references>>
     Host: ...
     Authorization: Basic
     Accept: application/vnd.com.nsn.cumulocity.managedObjectReferenceCollection+json;ver=...
+
+> Please note that references can be either childDevices or childAssets.
 
 Example Response:
 
@@ -503,7 +505,7 @@ Required role: ROLE\_INVENTORY\_ADMIN or ROLE\_INVENTORY\_CREATE
 
 Example Request: Add a ManagedObjectReference
 
-    POST /inventory/managedObjects/{{deviceId}}
+    POST /inventory/managedObjects/<<deviceId>>
     Host: ...
     Authorization: Basic ...
     Content-Length: ...
@@ -552,7 +554,7 @@ Required role: ROLE\_INVENTORY\_READ
 
 Example request:
 
-    GET /inventory/managedObjects/{{deviceId}}/references/{{referenceId}}
+    GET /inventory/managedObjects/<<deviceId>>/references/<<referenceId>>
     Host: ...
     Authorization: Basic ...
     Accept: application/vnd.com.nsn.cumulocity.managedObjectReference+json;ver=...
@@ -584,7 +586,7 @@ Note: This operations just removes the reference, it does not delete the object 
 
 Example Request: Delete a managed object reference
 
-    DELETE /inventory/managedObjects/{{deviceId}}/references/{{referenceId}}
+    DELETE /inventory/managedObjects/<<deviceId>>/references/<<referenceId>>
      Host: [hostname]
      Authorization: Basic xxxxxxxxxxxxxxxxxxx
 

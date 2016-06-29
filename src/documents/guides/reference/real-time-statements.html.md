@@ -187,7 +187,7 @@ Required : ROLE\_CEP\_MANAGEMENT\_ADMIN
 
 Example Request:
 
-    PUT /cep/module/{{moduleId}}
+    PUT /cep/module/<<moduleId>>
     Host: ...
     Authorization: Basic ...
     Content-Type: application/vnd.com.nsn.cumulocity.cepModule+json;ver=...
@@ -209,7 +209,7 @@ Required role: ROLE\_CEP\_MANAGEMENT\_ADMIN.
 
 Example request:
 
-    PUT /cep/module/{{moduleId}}
+    PUT /cep/module/<<moduleId>>
     Host: ...
     Authorization: Basic ...
     Content-Length: ...
@@ -241,7 +241,7 @@ Required : ROLE\_CEP\_MANAGEMENT\_ADMIN
 
 Example Request: Delete a module
 
-    DELETE /cep/module/{{moduleId}}
+    DELETE /cep/module/<<moduleId>>
      Host: [hostname]
      Authorization: Basic xxxxxxxxxxxxxxxxxxx
 

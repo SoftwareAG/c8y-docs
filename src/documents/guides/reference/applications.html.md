@@ -206,7 +206,7 @@ Required role: ROLE\_APPLICATION\_MANAGMENT\_ADMIN
 
 Example request:
 
-	POST /applications/application/{{applicationId}}/refresh
+	POST /applications/application/<<applicationId>>/refresh
 	Host: ...
 	Authorization: Basic ...
 
@@ -226,7 +226,7 @@ Required role: ROLE\_APPLICATION\_MANAGMENT\_ADMIN
 
 Example request:
 
-    POST /application/applications/{{application_id}}/clone HTTP/1.1
+    POST /application/applications/<<application_id>>/clone HTTP/1.1
     Authorization: Basic ...
     Accept: application/vnd.com.nsn.cumulocity.application+json
 
@@ -265,7 +265,7 @@ Required role: ROLE\_APPLICATION\_MANAGMENT\_ADMIN
 
 Example request:
 
-    PUT /application/applications/{{applicationId}}
+    PUT /application/applications/<<applicationId>>
     Host: ...
     Authorization: Basic ...
     Content-Length: ...
@@ -313,7 +313,7 @@ Note: Application can be only removed when is availability is PRIVATE or in othe
 
 Example Request: Delete a application
 
-    DELETE /application/applications/{{applicationId}}
+    DELETE /application/applications/<<applicationId>>
      Host: [hostname]
      Authorization: Basic xxxxxxxxxxxxxxxxxxx
 

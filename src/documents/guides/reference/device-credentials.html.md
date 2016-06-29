@@ -102,7 +102,7 @@ Required role: ROLE\_DEVICE\_CONTROL\_READ
 
 Example Request:
 
-    GET /devicecontrol/newDeviceRequests/{{requestId}}
+    GET /devicecontrol/newDeviceRequests/<<requestId>>
     Authorization: Basic ...
 	Accept: application/vnd.com.nsn.cumulocity.newDeviceRequest+json;ver=...
 
@@ -127,7 +127,7 @@ Required role: ROLE\_DEVICE\_CONTROL\_ADMIN
 
 Example Request:
 
-    DELETE /devicecontrol/newDeviceRequests/{{requestId}}
+    DELETE /devicecontrol/newDeviceRequests/<<requestId>>
     Authorization: Basic ...
 
 Example response:
@@ -144,7 +144,7 @@ Required role: ROLE\_DEVICE\_CONTROL\_READ
 
 Example Request:
 
-    PUT /devicecontrol/newDeviceRequests/{{requestId}}
+    PUT /devicecontrol/newDeviceRequests/<<requestId>>
     Content-Type: application/vnd.com.nsn.cumulocity.newDeviceRequest+json;ver=...
     Accept: application/vnd.com.nsn.cumulocity.newDeviceRequest+json;ver=...
     Authorization: Basic ...

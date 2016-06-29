@@ -314,7 +314,7 @@ Required role: ROLE\_MEASUREMENT\_READ
 
 Example request:
 
-    GET /measurement/measurements/{{measurementId}}
+    GET /measurement/measurements/<<measurementId>>
 	Host: ...
 	Authorization: Basic ...
 
@@ -349,7 +349,7 @@ Required role: ROLE\_MEASUREMENT\_ADMIN or owner of source object
 
 Example Request: Delete a measurement
 
-    DELETE /measurement/measurements/{{measurementID}}
+    DELETE /measurement/measurements/<<measurementID>>
      Host: [hostname]
      Authorization: Basic xxxxxxxxxxxxxxxxxxx
 

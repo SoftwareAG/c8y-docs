@@ -178,15 +178,34 @@ Besides the readily available marketplace applications, you can also provide own
 
 Smartapps are modular applications built on top of the Cumulocity user interface framework, just like the standard Device Management, Cockpit and Administration applications. Smartapps are assembled from a set of so-called "plugins". Plugins provide new functionality in the user interface. Even without programming, you can create variations of the pre-provided applications by simply assembling their plugins in different ways and, for example, hiding unneeded plugins. For more information, see the [Concepts guide](/guides/concepts/applications). 
 
-When an application has been created, you can clone, open and delete it by hovering your mouse over the application. The "Clone" function duplicates the application, while the "Open" button simply opens the application. After the "Clone" button is pressed a pop-up window will appear in which a unique application name and application path need to be entered.
+When an application has been created, you can clone, open and remove. The "Clone" function duplicates the application, while the "Open" button simply opens the application. In order to clone an application:
+
+- Click on "Add application"
+- Click on "Clone existing application"
+- Select the desired application that you wish to clone
+- Enter the name of the application. The name will be shown as title on the top left of the application. It will also be shown in the application switcher.
+- Enter an application key. The application key is used to identify requests from this application and to make it available for subscription, see the [Concepts guide](/guides/concepts/applications).
+- Enter the application path. This path will be part of the URL to invoke the application. For example, if you use "hello" as application path, the URL of the application will be "/apps/hello".
+- Click on the "Clone" button.
+
+> Note that the "Open" button is revealed when you hover over the application's name.
+
+There are several methods that you can add applications with 
+
+- Upload Zip file: This is a type of hosted application. "Hosted applications" are HTML5 applications hosted through Cumulocity servers. These applications are packaged as ZIP archives having an "index.html" file in the root folder of the archive.
+- Http(s) proxy: This is a type of repository application. "Repository applications" are HTML5 applications hosted through an external repository. Such a repository can be, for example, a version control system such as Bitbucket or Github.
+- External application: "External applications" are simply links to applications running elsewhere. Provide the URL of that application and click "Save" to make the link available in the application switcher.
+- Clone existing application
+- Create legacy smartapp
 
 ![Own Applications](/guides/users-guide/ownapplications.png) 
 
-### <a name="creating-smartapp"></a>Adding a smartapp
+### <a name="creating-smartapp"></a>Adding a legacy smartapp
 
-To add smartapp:
+To add legacy smartapp:
 
-- Click on "Create smartapp".
+- Click on "Add application".
+- Click on "Create legacy smartapp".
 - Enter the name of the application. The name will be shown as title on the top left of the application. It will also be shown in the application switcher.
 - Enter the application path. This path will be part of the URL to invoke the application. For example, if you use "hello" as application path, the URL of the application will be "/apps/hello".
 - Click the "Create" button.
@@ -206,32 +225,6 @@ To add an HTML5 application:
   - [External](#working-with-external-applications)
 
 ![Create app](/guides/users-guide/createapp.png)
-
-Depending on the selected type, different further options will appear.
-
-### <a name="working-with-hosted-applications"></a>Working with hosted applications
-
-"Hosted applications" are HTML5 applications hosted through Cumulocity servers. These applications are packaged as ZIP archives having an "index.html" file in the root folder of the archive. To complete the configuration:
-
-- Enter the application path. This path will be part of the URL to invoke the application. For example, if you use "hello" as application path, the URL of the application will be "/apps/hello".
-- Select the archive file that contains the application and upload it.
-- Click "Save".
-
-### <a name="working-with-repository-applications"></a>Working with repository applications
-
-"Repository applications" are HTML5 applications hosted through an external repository. Such a repository can be, for example, a version control system such as Bitbucket or Github. To complete the configuration:
-
-- Enter the application path. This path will be part of the URL to invoke the application. For example, if you use "hello" as application path, the URL of the application will be "/apps/hello".
-- Enter the server URL where your application is hosted. At this URL, there needs to be an index.html file that provides the entry point to your application.
-- Enter a username to access your repository (optional).
-- Enter a password to access your repository (optional).
-- Click "Save".
-
-Username and password are transmitted using HTTP Basic Authentication.
-
-### <a name="working-with-external-applications"></a>Working with external applications
-
-"External applications" are simply links to applications running elsewhere. Provide the URL of that application and click "Save" to make the link available in the application switcher.
 
 ### Editing applications
 

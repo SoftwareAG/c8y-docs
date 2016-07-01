@@ -347,7 +347,7 @@ When you have finished editing, click on the "Save" button.
 
 > Note that when a tenant is suspended, his data still remains in the database and he can be reactivated at any later date. On the other hand when the tenant has been removed his data will be deleted.
 
-Hovering over a tenant will reveal the "Suspend" and the "Remove" buttons. The "Remove" button is shown as a red cross. To suspend or remove a tenant click on the respective button.
+Hovering over a tenant will reveal the "Suspend" and the "Remove" buttons. The "Remove" button is shown as a red cross. To suspend or remove a tenant, click on the respective button.
 
 ### <a name="usage-stats"></a> Retrieving usage statistics
 

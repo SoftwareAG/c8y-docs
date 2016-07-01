@@ -311,10 +311,9 @@ To stop a simulator, simply press the "Stop device" button while hovering over t
 
 A tenant provides users or customers with a new environment. By creating subtenants, you create a new tenant that is linked to your tenant. Subtenants are like normal tenants with all related features (e.g. user management, app management): So subtenants can manage their own users account, independent of the main tenant user account.
 
-The data in subtenants is separated from the data in your tenant. Tenants do not have access to the data of the subtenant so they are isolated in both directions.
+The data in subtenants is separated from the data in your tenant. Tenants do not have access to the data of the subtenant, so they are isolated in both directions.
 
-This feature is an optional feature which is not available for all tenants. This feature is available for normal tenants. Subtenants cannot create an additional level of subtenants.
-This feature is available for normal tenants. Subtenants cannot create an additional level of subtenants.
+This feature is an optional feature which is not available for all tenants. Subtenants cannot create an additional level of subtenants. In case you are subscribed to the feature, but you do not see it, contact support.
 
 In order to manage subtenants click on the subtenants menu. Subtenant management includes: Tenant creation, activation, suspension, subscribed applications and options.
 

@@ -309,7 +309,6 @@ To stop a simulator, simply press the "Stop device" button while hovering over t
 
 ## <a name="tenants"></a>Managing tenants
 
-% Explain tenants: what and why?
 A tenant provides users or customers with a new environment. By creating subtenants, you create a new tenant that is linked to your tenant. Subtenants are like normal tenants with all related features (e.g. user management, app management): So subtenants can manage their own users account, independent of the main tenant user account.
 
 The data in subtenants is separated from the data in your tenant. Tenants do not have access to the data of the subtenant so they are isolated in both directions.
@@ -327,13 +326,11 @@ In order to manage subtenants click on the subtenants menu. Subtenant management
 
 To add additional tenants, click on "Create Tenant"
 
-> Please note that fields with an asterisk(" * ") are mandatory.
+> Please note that fields with an asterisk (" * ") are mandatory.
 
-- Enter unique domain/url of the new tenant. This url will be used by the tenant to access the application(e.g. tenant@cumulocity.com).
+- Enter unique domain/url of the new tenant. This url will be used by the tenant to access the application (e.g. tenant@cumulocity.com).
 - Enter the name of the company.
-- Enter the administrator's email. Note that you need to provide a valid, unique email address here to enable users to reset their password.
-=> Check scope of uniquness
-
+- Enter the administrator's email. Note that you need to provide a valid email address here to enable users to reset their password.
 - Enter username of the administrator which will be used when logging in.
 - Enter contact name. This field is purely optional.
 - Enter contact phone. Again, this field is optional.
@@ -344,23 +341,23 @@ To add additional tenants, click on "Create Tenant"
 
 ### Editing, suspending and removing sub-tenants
 
-% Descirbe remove and suspending
-
 In order to edit subtenants simply click on the desired subtenant. All the fields can be edited except "ID" and "Administrators Username".
 
-When you have finished editing click on the "Save" button.
+When you have finished editing, click on the "Save" button.
 
-Hovering over a tenant will reveal the suspend and the remove button. The remove button is shown as a red cross. To suspend or remove a tenant click on the respective button.
+> Note that when a tenant is suspended, his data still remains in the database and he can be reactivated at any later date. On the other hand when the tenant has been removed his data will be deleted.
+
+Hovering over a tenant will reveal the "Suspend" and the "Remove" buttons. The "Remove" button is shown as a red cross. To suspend or remove a tenant click on the respective button.
 
 ### <a name="usage-stats"></a> Retrieving usage statistics
 
-The usage statistics menu provides you with information about each subtenant. The statistics show:
+Usage statistics menu provides you with information about each subtenant. The statistics show:
 
 - Id: Unique id of the subtenant.
 - External reference: This field is for free usage, for example, you can add a link to the CRM system here or an internal customer number.
 - API requests: Number of API requests, including requests from  devices and applications.
 - Device API requests: Number of API requests called from devices
-- Storage(MB): The amount of data stored in your account.
+- Storage (MB): The amount of data stored in your account.
 - Devices: Total number of devices connected to your account.
 - Subscribed application: This column shows number of applications that the subtenant is subscribed to.
 - Creation time: The date and time of the creation of the subtenant.

@@ -309,7 +309,7 @@ To stop a simulator, simply press the "Stop device" button while hovering over t
 
 ## <a name="tenants"></a>Managing tenants
 
-A tenant provides users or customers with a new environment. By creating subtenants, you create a new tenant that is linked to your tenant. Subtenants are like normal tenants with all related features (e.g. user management, app management): So subtenants can manage their own users account, independent of the main tenant user account.
+A tenant provides users or customers with a new environment. By creating subtenants, you create a new tenant that is linked to your tenant. Subtenants are like normal tenants with all related features (e.g. user management, app management): Subtenants can manage their own users account, independent of the main tenant user account.
 
 The data in subtenants is separated from the data in your tenant. Tenants do not have access to the data of the subtenant, so they are isolated in both directions.
 
@@ -323,24 +323,24 @@ In order to manage subtenants click on the subtenants menu. Subtenant management
 
 ### Adding sub-tenants
 
-To add additional tenants, click on "Create Tenant"
+To add a new subtenant, click on "Create Tenant"
 
 > Please note that fields with an asterisk (" * ") are mandatory.
 
-- Enter unique domain/url of the new tenant. This url will be used by the tenant to access the application (e.g. tenant@cumulocity.com).
+- Enter unique domain/url of the new tenant. This url will be used to access the application (e.g. tenant@cumulocity.com).
 - Enter the name of the company.
 - Enter the administrator's email. Note that you need to provide a valid email address here to enable users to reset their password.
 - Enter username of the administrator which will be used when logging in.
-- Enter contact name. This field is purely optional.
+- Enter contact name. This field is optional.
 - Enter contact phone. Again, this field is optional.
 - Choose whether you wish to have the password reset link sent as an e-mail. If you have not selected this option you will have to enter a password and confirm the password. (See "[Logging in](/guides/users-guide/overview#login)" for more information on password strength.)
-- Press the "Save" button when ready
+- Press the "Save" button.
 
 ![Tenant-creation](/guides/users-guide/createtenant.png)
 
 ### Editing, suspending and removing sub-tenants
 
-In order to edit subtenants simply click on the desired subtenant. All the fields can be edited except "ID" and "Administrators Username".
+In order to edit subtenants, click on the desired subtenant. All the fields can be edited except "ID" and "Administrators Username".
 
 When you have finished editing, click on the "Save" button.
 
@@ -355,7 +355,7 @@ Usage statistics menu provides you with information about each subtenant. The st
 - Id: Unique id of the subtenant.
 - External reference: This field is for free usage, for example, you can add a link to the CRM system here or an internal customer number.
 - API requests: Number of API requests, including requests from  devices and applications.
-- Device API requests: Number of API requests called from devices
+- Device API requests: Number of API requests from devices
 - Storage (MB): The amount of data stored in your account.
 - Devices: Total number of devices connected to your account.
 - Subscribed application: This column shows number of applications that the subtenant is subscribed to.

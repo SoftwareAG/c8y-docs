@@ -309,7 +309,7 @@ To stop a simulator, simply press the "Stop device" button while hovering over t
 
 ## <a name="tenants"></a>Managing tenants
 
-Subtenants provide users or customers with all tenant related features (e.g. user management, app management). Subtenants, are linked to your tenant. They can manage their own users account, independent of the main tenant user account, so they are isolated in both directions. This feature is an optional feature which is not available for all tenants.
+Subtenants provide users or customers with all tenant related features (e.g. user management, app management). Subtenants are linked to your tenant. They can manage their own users account, independent of the main tenant user account, they are isolated in both directions. This feature is an optional feature which is not available for all tenants.
 
 > In case you are subscribed to the feature, but you do not see it, contact support.
 

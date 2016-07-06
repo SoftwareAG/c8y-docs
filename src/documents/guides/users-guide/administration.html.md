@@ -174,11 +174,53 @@ To assign applications to particular users and user groups, visit the "Applicati
 
 ## <a name="applications"></a>Managing applications
 
-Besides the readily available marketplace applications, you can also provide own applications in your account by visiting the "Own applications" menu. These applications can be "Smartapps" or generic HTML5 applications.
+Besides the readily available marketplace applications, you can also provide own applications in your account by visiting the "Own applications" menu. These applications can be "Legacy Smartapps" or generic HTML5 applications.
 
-Smartapps are modular applications built on top of the Cumulocity user interface framework, just like the standard Device Management, Cockpit and Administration applications. Smartapps are assembled from a set of so-called "plugins". Plugins provide new functionality in the user interface. Even without programming, you can create variations of the pre-provided applications by simply assembling their plugins in different ways and, for example, hiding unneeded plugins. For more information, see the [Concepts guide](/guides/concepts/applications). 
+"Smartapps" are modular applications built on top of the Cumulocity user interface framework, just like the standard Device Management, Cockpit and Administration applications. Legacy smartapps are assembled from a set of so-called "plugins". Plugins provide new functionality in the user interface. Even without programming, you can create variations of the pre-provided applications by simply assembling their plugins in different ways and for example, hiding unneeded plugins. For more information, see the [Concepts guide](/guides/concepts/applications). 
 
-When an application has been created, you can clone, open and remove. The "Clone" function duplicates the application, while the "Open" button simply opens the application. In order to clone an application:
+When an application has been created, you can clone, open and remove. The "Clone" function duplicates the application, while the "Open" button simply opens the application.
+
+> Note that the "Open" button is revealed when you hover over the application's name.
+
+![Own Applications](/guides/users-guide/ownapplications.png) 
+
+### Working with ZIP file applications
+
+This is a type of hosted application. "Hosted applications" are HTML5 applications hosted through Cumulocity servers. These applications are packaged as ZIP archives having an "index.html" file in the root folder of the archive. To upload a ZIP file application:
+
+- Click on "Add application".
+- Click on "Upload ZIP file".
+- Drag the ZIP file into the box or browse your computer.
+
+> Note that the name of the ZIP file will be used as the name of the application.
+
+![Upload ZIP file](/guides/users-guide/zipfile.png)
+
+### Working with HTTP(S) proxy applications
+
+This is a type of repository application. "Repository applications" are HTML5 applications hosted through an external repository. Such a repository can be, for example, a version control system such as Bitbucket or Github. To add a HTTP(S) proxy application:
+
+- Click on "Add application".
+- Click on "HTTP(S) proxy".
+- Enter the name of the application, as shown in the application switcher.
+- Enter an application key. The application key is used to identify requests from this application and to make it available for subscription, see the [Concepts guide](/guides/concepts/applications).
+- Enter the application path. This path will be part of the URL to invoke the application. For example, if you use "hello" as application path, the URL of the application will be "/apps/hello".
+- Enter the server URL where your application is hosted. At this URL, there needs to be an index.html file that provides the entry point to your application.
+- Enter a username to access your repository (optional).
+- Enter a password to access your repository (optional).
+- Click "Save".
+
+> Note that, username and password are transmitted using HTTP Basic Authentication.
+
+![https proxy app](/guides/users-guide/httpsproxy.png)
+
+### Working with external applications
+
+"External applications" are links to applications running elsewhere. Enter name of the application and application key, then provide the URL of that application and click "Save" to make the link available in the application switcher.
+
+### Cloning applications
+
+In order to clone an application:
 
 - Click on "Add application"
 - Click on "Clone existing application"
@@ -187,18 +229,6 @@ When an application has been created, you can clone, open and remove. The "Clone
 - Enter an application key. The application key is used to identify requests from this application and to make it available for subscription, see the [Concepts guide](/guides/concepts/applications).
 - Enter the application path. This path will be part of the URL to invoke the application. For example, if you use "hello" as application path, the URL of the application will be "/apps/hello".
 - Click on the "Clone" button.
-
-> Note that the "Open" button is revealed when you hover over the application's name.
-
-There are several methods that you can add applications with 
-
-- Upload Zip file: This is a type of hosted application. "Hosted applications" are HTML5 applications hosted through Cumulocity servers. These applications are packaged as ZIP archives having an "index.html" file in the root folder of the archive.
-- Http(s) proxy: This is a type of repository application. "Repository applications" are HTML5 applications hosted through an external repository. Such a repository can be, for example, a version control system such as Bitbucket or Github.
-- External application: "External applications" are simply links to applications running elsewhere. Provide the URL of that application and click "Save" to make the link available in the application switcher.
-- Clone existing application
-- Create legacy smartapp
-
-![Own Applications](/guides/users-guide/ownapplications.png) 
 
 ### <a name="creating-smartapp"></a>Adding a legacy smartapp
 
@@ -210,21 +240,7 @@ To add legacy smartapp:
 - Enter the application path. This path will be part of the URL to invoke the application. For example, if you use "hello" as application path, the URL of the application will be "/apps/hello".
 - Click the "Create" button.
 
-<img src="/guides/users-guide/createsmartapp.png" alt="Create Smartapp" style="max-width: 60%">
-
-### Adding an HTML5 application
-
-To add an HTML5 application:
-
-- Click on "Create application", located to the right of "[Create smartapp](#creating-smartapp)"
-- Enter the name of the application, as shown in the application switcher.
-- Enter an application key. The application key is used to identify requests from this application and to make it available for subscription, see the [Concepts guide](/guides/concepts/applications).
-- Choose the type of the application
-  - [Hosted](#working-with-hosted-applications)
-  - [Repository](#working-with-repository-applications)
-  - [External](#working-with-external-applications)
-
-![Create app](/guides/users-guide/createapp.png)
+![Legacy smartapps](/guides/users-guide/smartapps.png)
 
 ### Editing applications
 
@@ -250,7 +266,7 @@ After subscribing to plugins, they will be displayed under the "Subscribed plugi
 - Click "Unsubscribe".
 - Click "Save changes".
  
-<img src="/guides/users-guide/unsubscribe.png" alt="Unsubscribe plugin" style="max-width: 40%">
+![unsubscribe](/guides/users-guide/unsubscribe.png)
 
 ### Uploading archives
 
@@ -267,9 +283,7 @@ Once uploaded, archives can be downloaded, activated or removed if necessary. Th
 
 ### Removing applications
 
-To remove an application, simply hover over the application name and click the "X" button. A confirmation pop-up window will appear. Click "OK" and the application will be deleted.
-
-![Remove application](/guides/users-guide/removeapp.png)
+To remove an application, simply hover over the application name and click on the cogwheel, then press the "Remove" button. A confirmation pop-up window will appear. Click "OK" and the application will be deleted.
 
 ## <a name="simulators"></a>Dealing with simulators
 

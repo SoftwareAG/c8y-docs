@@ -614,6 +614,58 @@ Example Response :
         "value": "http://developer.cumulocity.com"
     }
 
+### PUT - Update multiple options in provided category
+
+Request body: Option
+
+Response body: Option
+  
+Required role: ROLE\_OPTION\_MANAGEMENT\_ADMIN
+ Example Request: Update options in provided category.
+
+     
+    PUT /tenant/options/<<category>>
+    Host: ...
+    Authorization: Basic ...
+    Content-Type: application/vnd.com.nsn.cumulocity.option+json;ver=...
+    Accept: application/vnd.com.nsn.cumulocity.option+json;ver=...
+    {
+        "key1": "value1",
+        "key2": "value2",
+        "key3": "value3",
+        "key4": "value4"
+    }
+
+Example Response :
+
+    HTTP/1.1 200 OK
+    Content-Type: application/vnd.com.nsn.cumulocity.option+json;ver=...
+
+### GET Options from provided category.
+
+Response body: Option
+  
+Required role: ROLE\_OPTION\_MANAGEMENT\_READ
+ Example Request: Get options from given category.
+
+     
+    GET /tenant/options/<<category>>
+    Host: ...
+    Authorization: Basic ...
+    Accept: application/vnd.com.nsn.cumulocity.option+json;ver=...
+
+Example Response :
+
+    HTTP/1.1 200 OK
+    Content-Type: application/vnd.com.nsn.cumulocity.optionCollection+json;ver=...
+    Content-Length: ...
+     {
+       "key1": "value1"
+       "key2": "value2",
+       "key3": "value3",
+       "key4": "value4",
+     }
+
 ## System Options
 
 This endpoint provides a set of read-only properties pre-defined in platform configuration. The response format is exactly the same as for OptionCollection.

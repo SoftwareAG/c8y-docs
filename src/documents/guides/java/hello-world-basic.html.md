@@ -10,7 +10,7 @@ This section gives a very basic example of using Java SE with Cumulocity through
 
 ## Prerequisites
 
-Verify that you have Maven 3 installed:
+Verify that you have Maven 3 installed with Java (6 or 7):
 
 	$ mvn -v
 	Apache Maven 3.1.1 (0728685237757ffbf44136acec0402957f723d9a; 2013-09-17 17:22:22+0200)

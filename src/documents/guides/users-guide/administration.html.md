@@ -309,17 +309,16 @@ To stop a simulator, simply press the "Stop device" button while hovering over t
 
 ## <a name="tenants"></a>Managing tenants
 
-A tenant provides users or customers with a new environment. By creating subtenants, you create a new tenant that is linked to your tenant. Subtenants are like normal tenants with all related features (e.g. user management, app management): Subtenants can manage their own users account, independent of the main tenant user account.
+Subtenants provide users or customers with all tenant related features (e.g. user management, app management). Subtenants, are linked to your tenant. They can manage their own users account, independent of the main tenant user account, so they are isolated in both directions. This feature is an optional feature which is not available for all tenants.
 
-The data in subtenants is separated from the data in your tenant. Tenants do not have access to the data of the subtenant, so they are isolated in both directions.
-
-This feature is an optional feature which is not available for all tenants. Subtenants cannot create an additional level of subtenants. In case you are subscribed to the feature, but you do not see it, contact support.
+> In case you are subscribed to the feature, but you do not see it, contact support.
 
 In order to manage subtenants click on the subtenants menu. Subtenant management includes: Tenant creation, activation, suspension, subscribed applications and options.
 
 ![Sub-tenants](/guides/users-guide/sub-tenant.png)
 
 > Note that tenant ID's remain unique, so no two tenants can create subtenants with the same "URL/ID".
+> Also note that subtenants cannot create an additional level of subtenants.
 
 ### Adding sub-tenants
 
@@ -357,7 +356,7 @@ Usage statistics menu provides you with information about each subtenant. The st
 - API requests: Number of API requests, including requests from  devices and applications.
 - Device API requests: Number of API requests from devices
 - Storage (MB): The amount of data stored in your account.
-- Devices: Total number of devices connected to your account.
+- Devices: Total number of devices connected to the tenant. 
 - Subscribed application: This column shows number of applications that the subtenant is subscribed to.
 - Creation time: The date and time of the creation of the subtenant.
 

@@ -709,7 +709,7 @@ To view a report, open the "Reports" in the navigator and click on the related r
 
 ## <a name="reporting"></a>Exporting data with reports
 
-With the "Reporting" feature, you can request csv or xlsx reports for the whole tenant. Additionally you can choose to *Filter* according to specific devices, time ranges or *Fields*. The reports contain information about all specified "Filters" and enabled "Fields".
+With the "Reporting" feature, you can request csv or xlsx reports for the whole tenant. Additionally you can choose to *Filter* according to specific devices, time ranges or *Fields*. The reports contain information about all specified "Filters" and enabled "Fields". Maximum number of documents that can be exported into a single xlsx file is 1 million. If the number of documents for defined "Filters" exceeds the limit, the resulted document gets only first 1 million of documents.
 
 To work with dashboard reports please refer to [Working with Dashboard Reports](#reports).
 

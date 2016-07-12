@@ -309,7 +309,13 @@ To stop a simulator, simply press the "Stop device" button while hovering over t
 
 ## <a name="tenants"></a>Managing tenants
 
-Subtenants provide users or customers with all tenant related features (e.g. user management, app management). Subtenants are linked to your tenant. They can manage their own users account, independent of the main tenant user account, they are isolated in both directions. This feature is an optional feature which is not available for all tenants.
+With subtenants you can 100% separate data from one customer to another customer.
+
+Background: As tenant administrator, all the data in your tenant is 100% isolated from the data in all other tenants. However, the data inside your tenant is by default shared with all users that have an account, unless restricted via user permissions. In addition, data like user accounts and analytic rules are shared by all users.
+
+If you want 100% data isolation instead of dealing with user permissions, then use the subtenants. Each subtenant has a fully isolated data area. All Cumulocity features (e.g. user management, app management, rule management) are available for each subtenant without visibility to other subtenants.
+
+This feature is an optional feature which is not available for all tenants.
 
 > In case you are subscribed to the feature, but you do not see it, contact support.
 
@@ -343,7 +349,7 @@ In order to edit subtenants, click on the desired subtenant. All the fields can 
 
 When you have finished editing, click on the "Save" button.
 
-> Note that when a tenant is suspended, his data still remains in the database and he can be reactivated at any later date. On the other hand when the tenant has been removed his data will be deleted.
+> Note that when a tenant is suspended, his data still remains in the database and he can be reactivated at any later date. On the other hand when the tenant has been removed its data will be deleted.
 
 Hovering over a tenant will reveal the "Suspend" and the "Remove" buttons. The "Remove" button is shown as a red cross. To suspend or remove a tenant, click on the respective button.
 

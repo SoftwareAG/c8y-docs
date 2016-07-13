@@ -8,12 +8,12 @@ layout: default
 
 The Tenant interface is available consists of parts:
 
--   The tenant collection resource retrieves tenants, accesible by url */tenant/tenants*
--   The tenant resource represents individual tenant that can be view, accesible by url */tenant/tenants/{tenantId}*
--   The tenant application reference collection resource retrieves applications, accesible by url */tenant/tenants/{tenantId}/applications*
--   The tenant application reference resource represents individual application reference that can be view, accesible by url */tenant/tenants/{tenantId}/applications/{applicationId}*
--   The tenant option collection resource enables creating new option and viewing existing options, accesible by url */tenant/options*
--   The tenant option resource represents individual option that can be view and modified, accesible by url */tenant/options/{optionCategory}/{optionKey}*
+-   The tenant collection resource retrieves tenants, accessible by url */tenant/tenants*
+-   The tenant resource represents individual tenant that can be view, accessible by url */tenant/tenants/{tenantId}*
+-   The tenant application reference collection resource retrieves applications, accessible by url */tenant/tenants/{tenantId}/applications*
+-   The tenant application reference resource represents individual application reference that can be view, accessible by url */tenant/tenants/{tenantId}/applications/{applicationId}*
+-   The tenant option collection resource enables creating new option and viewing existing options, accessible by url */tenant/options*
+-   The tenant option resource represents individual option that can be view and modified, accessible by url */tenant/options/{optionCategory}/{optionKey}*
 -   The tenant usage statistics resources return information on the request load and database usage of tenants.
 
 > Note that for all PUT/POST requests accept header should be provided, otherwise an empty response body will be returned.
@@ -59,6 +59,7 @@ Example Response :
             {
                 "adminName": "admin",
 		"allowCreateTenants": false,
+    "storageLimitPerDevice": 10485760,
                 "applications": {
                     "references": [],
                     "self":"<<ApplicationCollection of This Tenant  URL>>",
@@ -196,6 +197,7 @@ Example Response:
 |adminName|String: max length = "50"|1|Administrator user name|Private|
 |adminEmail|String|1|Administrator Email|Private|
 |allowCreateTenants|boolean|1|Can this tenant create its own tenants.|Private|
+|storageLimitPerDevice|number|1|Storage quota per device the user has.|Private|
 |adminPassword|String|1|Administrator Password|Private|
 |sendPasswordResetEmail|boolean|1|Enable password reset|Private|
 |domain|String: max length = "256"|1|URL of tenants domain.|Public|
@@ -235,6 +237,7 @@ Example Response :
         "company": "sample_company",
         "domain": "sample_domain.com",
 	"allowCreateTenants": false,
+  "storageLimitPerDevice": 10485760,
         "id": "sample_tenant",
         "ownedApplications": {
             "references": [
@@ -298,6 +301,7 @@ Example Response :
         "status": "ACTIVE",
         "self":"<<This Tenant URL>>",
 	"allowCreateTenants": false,
+  "storageLimitPerDevice": 10485760,
 	"parent": "parentTenant",
         "ownedApplications": {
             "references": [

@@ -11,7 +11,6 @@ The Administration application lets account administrators manage their users, a
 * View [subscription information](#home) for your account.
 * Manage [users](#users) and [user groups](#user-groups), including their [permissions](#permissions).
 * Configure [applications](#applications) and [simulators](#simulators).
-* Manage [subtenants](#tenants) and check the [usage statistics](#usage-stats).
 * Set up real-time [event processing](#event-processing) scripts and [reprioritize alarms](#reprio-alarms).
 * Change [settings](#settings).
 * Configure the [retention policies](#retention) for your data.
@@ -24,6 +23,7 @@ The "Home" screen provides navigation links to the main parts of the administrat
 * API requests: Counted whenever some functionality in Cumulocity is invoked, regardless of whether the functionality is invoked from a device (for example, sending a measurement) or from an application (for example, viewing the list of devices).
 * Device API requests: Counted only when the API is called from a device (for example, sending a measurement)
 * Storage: The total amount of data stored in your account. This amount can be influenced by [retention policies](#retention) and by the amount and size of [stored files](#files).
+* Storage quota: if the storage limit per device is set, the user is restricted to a [maximum data usage](#storageQuota).
 * Devices: The total number of devices connected to your account. This is the sum of the devices listed in the "[All devices](/guides/users-guide/device-management#viewing-devices)" menu of the Device Management application and their direct and indirect child devices.
 * Users: The sum of all users configured in this account, active and inactive.
 
@@ -484,3 +484,16 @@ The file repository provides an overview of the files stored in your account. To
 ![Files repository](/guides/users-guide/filesrepo.png)
 
 > If the file corresponds to an active application, it cannot be deleted from here. You first need to remove or upgrade the application to be able to delete it.
+
+## <a name="storageQuota"></a>Storage quota
+
+The storage quota is in place for a tenant when a storage quota per device is set by the platform administrator. The total storage available to the user is calculated using the formula `storage quota per device x number of devices`. A check is performed every night to ensure the quota is not exceeded.
+
+In case the quota is exceeded, an e-mail is sent to all the tenant administrators to warn them that data will be deleted the following night. After 24h, if the quota is still exceeded, all the data retention limits are reduced by 10% and an e-mail is sent to all the tenant administrators. This operation is then repeated every night until the quota is met again.
+
+For example, let us assume that a tenant has a storage quota of 10GB. 
+- Day 1: In the nightly check, the total storage is calculated at 13GB. An e-mail is sent to all the tenant administrators.
+- Day 2: the total storage is still at 13GB. The data retention, initially set at 90 days, is reduced to 81 days. An e-mail is also sent to all administrators to inform them.
+- Day 3: the total storage is at 11GB. The data retention is now set to 73 days. An e-mail is sent again to all administrators to inform them.
+- Day 4: the total storage is at 9GB.
+

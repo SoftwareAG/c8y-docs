@@ -27,7 +27,7 @@ The "Home" screen provides navigation links to the main parts of the administrat
 * Devices: The total number of devices connected to your account. This is the sum of the devices listed in the "[All devices](/guides/users-guide/device-management#viewing-devices)" menu of the Device Management application and their direct and indirect child devices.
 * Users: The sum of all users configured in this account, active and inactive.
 
-"This month" shows the usage information from the start of the current month. "Last month" shows the last full month. 
+"This month" shows the usage information from the start of the current month. "Last month" shows the last full month.
 
 <img src="/guides/users-guide/home.png" alt="Home" style="max-width: 60%">
 
@@ -75,7 +75,7 @@ To simplify user management, users with the same permissions can be placed into 
 * admins: A group with all permissions set.
 * business: Users in this group can work with all devices and their data, but cannot administer the account.
 * readers: User in this group can read all data but cannot make any changes (including sending commands to devices, for example).
-* devices: A group with typical minimal default permissions for devices. 
+* devices: A group with typical minimal default permissions for devices.
 
 All groups can be modified and deleted.
 
@@ -148,7 +148,7 @@ To assign permissions click on the relevant checkbox. If you wish to select or c
 - Clear all: Clears all of the checked roles.
 - Select all: Selects all of the roles.
 - Select all Read: Selects "Read" for all types and deselects the other roles.
-- Select all Admin: Selects "Admin" for all types and deselects the rest. 
+- Select all Admin: Selects "Admin" for all types and deselects the rest.
 
 ![All roles](/guides/users-guide/allroles.png)
 
@@ -177,11 +177,11 @@ To assign applications to particular users and user groups, visit the "Applicati
 
 Besides the readily available marketplace applications, you can also provide own applications in your account by visiting the "Own applications" menu. These applications can be "Smartapps" or generic HTML5 applications.
 
-Smartapps are modular applications built on top of the Cumulocity user interface framework, just like the standard Device Management, Cockpit and Administration applications. Smartapps are assembled from a set of so-called "plugins". Plugins provide new functionality in the user interface. Even without programming, you can create variations of the pre-provided applications by simply assembling their plugins in different ways and, for example, hiding unneeded plugins. For more information, see the [Concepts guide](/guides/concepts/applications). 
+Smartapps are modular applications built on top of the Cumulocity user interface framework, just like the standard Device Management, Cockpit and Administration applications. Smartapps are assembled from a set of so-called "plugins". Plugins provide new functionality in the user interface. Even without programming, you can create variations of the pre-provided applications by simply assembling their plugins in different ways and, for example, hiding unneeded plugins. For more information, see the [Concepts guide](/guides/concepts/applications).
 
 When an application has been created, you can clone, open and delete it by hovering your mouse over the application. The "Clone" function duplicates the application, while the "Open" button simply opens the application. After the "Clone" button is pressed a pop-up window will appear in which a unique application name and application path need to be entered.
 
-![Own Applications](/guides/users-guide/ownapplications.png) 
+![Own Applications](/guides/users-guide/ownapplications.png)
 
 ### <a name="creating-smartapp"></a>Adding a smartapp
 
@@ -236,7 +236,7 @@ Username and password are transmitted using HTTP Basic Authentication.
 
 ### Editing applications
 
-To edit an application, simply click on its name. Depending on the type of the application (e.g. Hosted, External), different fields can be modified. 
+To edit an application, simply click on its name. Depending on the type of the application (e.g. Hosted, External), different fields can be modified.
 
 > Note that "ID", "Application key" and "Path" cannot be changed once configured.
 
@@ -257,7 +257,7 @@ After subscribing to plugins, they will be displayed under the "Subscribed plugi
 - Hover over the subscribed plugin.
 - Click "Unsubscribe".
 - Click "Save changes".
- 
+
 <img src="/guides/users-guide/unsubscribe.png" alt="Unsubscribe plugin" style="max-width: 40%">
 
 ### Uploading archives
@@ -266,7 +266,7 @@ You can upload different versions of a hosted application at the same time and s
 
 - Select the application by clicking on its name.
 - Click on the "Archives" tab.
-- Click on "Upload archive" and navigate to the archive in your folder. 
+- Click on "Upload archive" and navigate to the archive in your folder.
 - Click on "Upload" to upload the archive to Cumulocity.
 
 ![Upload archive](/guides/users-guide/uploadarchive.png)
@@ -289,7 +289,7 @@ Cumulocity provides a simple capability to simulate devices. This way, users can
 To add new simulator, click on "Add simulator"
 
 - Enter the simulator name. The name will be used in the simulated devices.
-- Select the number of simulated instances. For example, if you choose two instances, two sets of simulated devices with the selected sensors are created. 
+- Select the number of simulated instances. For example, if you choose two instances, two sets of simulated devices with the selected sensors are created.
 - Select the desired sensors. This will reveal two new fields: "Values" and "Interval". "Values" contains a playlist of numbers separated by semicolons, which will be played in "Interval" seconds. For example, if you use "16.7;18;20" as "Values" and 5 seconds as interval, the first simulated sensor reading will be 16.7. After five seconds, a second value of 18 will be recorded. After another five seconds, 20 will be recorded. After further five seconds, the procedure will start from the first value.
 - Click "Save"
 
@@ -306,6 +306,67 @@ Simulators can have two states, running and paused. To start a simulator first h
 To stop a simulator, simply press the "Stop device" button while hovering over the desired simulator name. To delete a simulator, hover over the simulator's name, press the "X" button and confirm the pop-up window.
 
 > Note that simulators cannot be edited currently. Instead, you will have to add a new one.
+
+## <a name="tenants"></a>Managing tenants
+
+With subtenants you can 100% separate data from one customer to another customer.
+
+Background: As tenant administrator, all the data in your tenant is 100% isolated from the data in all other tenants. However, the data inside your tenant is by default shared with all users that have an account, unless restricted via user permissions. In addition, data like user accounts and analytic rules are shared by all users.
+
+If you want 100% data isolation instead of dealing with user permissions, then use the subtenants. Each subtenant has a fully isolated data area. All Cumulocity features (e.g. user management, app management, rule management) are available for each subtenant without visibility to other subtenants.
+
+This feature is an optional feature which is not available for all tenants.
+
+> In case you are subscribed to the feature, but you do not see it, contact support.
+
+In order to manage subtenants click on the subtenants menu. Subtenant management includes: Tenant creation, activation, suspension, subscribed applications and options.
+
+![Sub-tenants](/guides/users-guide/sub-tenant.png)
+
+> Note that tenant ID's remain unique, so no two tenants can create subtenants with the same "URL/ID".
+> Also note that subtenants cannot create an additional level of subtenants.
+
+### Adding sub-tenants
+
+To add a new subtenant, click on "Create Tenant"
+
+> Please note that fields with an asterisk (" * ") are mandatory.
+
+- Enter unique domain/url of the new tenant. This url will be used to access the application (e.g. tenant@cumulocity.com).
+- Enter the name of the company.
+- Enter the administrator's email. Note that you need to provide a valid email address here to enable users to reset their password.
+- Enter username of the administrator which will be used when logging in.
+- Enter contact name. This field is optional.
+- Enter contact phone. Again, this field is optional.
+- Choose whether you wish to have the password reset link sent as an e-mail. If you have not selected this option you will have to enter a password and confirm the password. (See "[Logging in](/guides/users-guide/overview#login)" for more information on password strength.)
+- Press the "Save" button.
+
+![Tenant-creation](/guides/users-guide/createtenant.png)
+
+### Editing, suspending and removing sub-tenants
+
+In order to edit subtenants, click on the desired subtenant. All the fields can be edited except "ID" and "Administrators Username".
+
+When you have finished editing, click on the "Save" button.
+
+> Note that when a tenant is suspended, his data still remains in the database and he can be reactivated at any later date. On the other hand when the tenant has been removed its data will be deleted.
+
+Hovering over a tenant will reveal the "Suspend" and the "Remove" buttons. The "Remove" button is shown as a red cross. To suspend or remove a tenant, click on the respective button.
+
+### <a name="usage-stats"></a> Retrieving usage statistics
+
+Usage statistics menu provides you with information about each subtenant. The statistics show:
+
+- Id: Unique id of the subtenant.
+- External reference: This field is for free usage, for example, you can add a link to the CRM system here or an internal customer number.
+- API requests: Number of API requests, including requests from  devices and applications.
+- Device API requests: Number of API requests from devices
+- Storage (MB): The amount of data stored in your account.
+- Devices: Total number of devices connected to the tenant. 
+- Subscribed application: This column shows number of applications that the subtenant is subscribed to.
+- Creation time: The date and time of the creation of the subtenant.
+
+![Usage statistics](/guides/users-guide/usagestats.png)
 
 ## <a name="event-processing"></a>Managing event processing
 
@@ -353,7 +414,7 @@ To modify the severity of an alarm, determine the type of the alarm that you wan
 
 ### Changing or deleting alarm mappings
 
-To change an alarm mapping, 
+To change an alarm mapping,
 
 - Locate the alarm in the "Alarm mapping" section and click on its name.
 - Change the severity and/or text.
@@ -372,7 +433,7 @@ By expanding the "Settings" menu, administrators can:
 
 ### <a name="changing-password-settings"></a>Changing the password policy
 
-To change password settings, click on "Password". To limit the validity of user passwords, set the number of days after which users have to change their passwords. If you do not want to force your users to change passwords, use "0" for unlimited validity of passwords. 
+To change password settings, click on "Password". To limit the validity of user passwords, set the number of days after which users have to change their passwords. If you do not want to force your users to change passwords, use "0" for unlimited validity of passwords.
 
 By default, users can use any password that consists of eight characters or longer. If you select "Enforce that all password are "strong" (green)", your users must provide strong passwords as described in "[Logging in](/guides/users-guide/overview#login)".
 
@@ -418,7 +479,7 @@ To delete a rule, click on the "X" button and then press "OK" after the pop-up w
 
 ## <a name="files"></a>Managing files
 
-The file repository provides an overview of the files stored in your account. To see the files, click on "Files repository" in the administration menu. Note that the files listed here may come from various sources. For example, they may be software images, configuration snapshots taken from devices, log files from devices or web applications uploaded using the "Own applications" menu. To delete a file, click the "X" button next to the file. 
+The file repository provides an overview of the files stored in your account. To see the files, click on "Files repository" in the administration menu. Note that the files listed here may come from various sources. For example, they may be software images, configuration snapshots taken from devices, log files from devices or web applications uploaded using the "Own applications" menu. To delete a file, click the "X" button next to the file.
 
 ![Files repository](/guides/users-guide/filesrepo.png)
 

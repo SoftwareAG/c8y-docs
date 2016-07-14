@@ -427,6 +427,7 @@ To delete alarm severities, hover over the alarm type and click the "X" button. 
 By expanding the "Settings" menu, administrators can:
 
 - Change the [password policy](#changing-password-settings).
+- Change the [default application](#default-app).
 - Change the [access control](#access-control) settings.
 - [Enable or disable the dashboards via e-mail feature](#enabling-server-side-agents)
 - Enter [OpenIT credentials](#openIT-credentials)
@@ -443,9 +444,13 @@ Click "Save" to store the settings.
 
 <img src="/guides/users-guide/passsettings.png" alt="Password settings" style="max-width: 50%">
 
+### <a name="default-app"></a>Changing the default application
+
+Via the "Application" menu, administrators can change the default application reached by all users in the tenant when no application was defined in the URL. Please make sure however to use an application that all user have access to.
+
 ### <a name="access-control"></a>Changing access control settings
 
-Via the "Access Control" menu, administrators can enable cross-origin resource sharing or "CORS" on the Cumulocity API. For more information, see http://enable-cors.org.
+Via the "Application" menu, administrators can enable cross-origin resource sharing or "CORS" on the Cumulocity API. For more information, see http://enable-cors.org.
 
 ### <a name="enabling-server-side-agents"></a>Enabling server-side agents
 

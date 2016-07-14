@@ -82,7 +82,8 @@ Here's what the configuration file means:
 
 ### Register the application
 
-Next, you need to register your application manifest with Cumulocity using "grunt appRegister:noImports".
+Next, you need to register your application manifest with Cumulocity using "grunt appRegister:noImports". 
+In case you do not use domain {tenant}.cumulocity.com, you have to also provide the "host" parameter to the command and put there address to Cumulocity installation where your application should be registered, ie. "grunt appRegister:noImports --host=..."
 
 The "noImports" flag will ignore the imports in the manifest because Cumulocity does not know your plugins yet.
 

@@ -367,6 +367,7 @@ By expanding the "Settings" menu, administrators can:
 - Change the [password policy](#changing-password-settings).
 - Change the [access control](#access-control) settings.
 - [Enable or disable the dashboards via e-mail feature](#enabling-server-side-agents)
+- Enter [OpenIT credentials](#openIT-credentials)
 
 ### <a name="changing-password-settings"></a>Changing the password policy
 
@@ -387,6 +388,10 @@ Via the "Access Control" menu, administrators can enable cross-origin resource s
 ### <a name="enabling-server-side-agents"></a>Enabling server-side agents
 
 In the "Server-side agents" menu, the "Send dashboard via e-mail" smart rule can be enabled or disabled. To enable, select the checkbox and click "Save".
+
+### <a name="openIT-credentials"></a>Enter OpenIT credentials
+ 
+SMS sending is used by several features within the application. it can be used to make login more secure with two-factors authentication. An SMS can be sent when an alarm is triggered. SMSes can be used to send instructions to devices. The service provided by [Openit](https://sms.openit.de/main.php) can be used to this effect. In this section, the user can enter its credentials to activate the features that require SMS sending.
 
 ## <a name="retention"></a>Managing data retention
 

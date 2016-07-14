@@ -164,7 +164,7 @@ For convenience, collection resources provide a "next" and "prev" links to retri
       "next" : "http://...?pageSize=5&Page=3"
     }
 
-Please note that the totalPages property can be expensive to compute, hence it is not returned as "null" by default for range queries. To compute totalPages and include in the result, pass the query parameter "withTotalPages=true".
+Please note that the totalPages property can be expensive to compute, hence it is not returned by default for range queries. To include totalPages in the result, add the query parameter "withTotalPages=true".
 
 ## Root interface
 

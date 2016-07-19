@@ -197,7 +197,7 @@ When an application has been created it will be available in the application swi
 
 ### Working with ZIP file applications
 
-This is a type of hosted application. "Hosted applications" are HTML5 applications hosted through Cumulocity servers. These applications are packaged as ZIP archives having an "index.html" file in the root folder of the archive. To upload a ZIP file application:
+To upload a ZIP file application:
 
 - Click on "Add application".
 - Click on "Upload ZIP file".
@@ -209,7 +209,7 @@ This is a type of hosted application. "Hosted applications" are HTML5 applicatio
 
 ### Working with HTTP(S) proxy applications
 
-This is a type of repository application. "Repository applications" are HTML5 applications hosted through an external repository. Such a repository can be, for example, a version control system such as Bitbucket or Github. To add a HTTP(S) proxy application:
+To add a HTTP(S) proxy application:
 
 - Click on "Add application".
 - Click on "HTTP(S) proxy".

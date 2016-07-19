@@ -273,6 +273,8 @@ To configure the functionality provided through a smartapps, select the "Plugins
 - Hover over the desired plugin and click the "Subscribe" button.
 - Click on the "Save changes" button
 
+> A subscribed application can be frozen, i.e. you can stay with a certain version of an application. To do that, clone the subscribed application.
+
 ![plugins](/guides/users-guide/plugins.png)
 
 After subscribing to plugins, they will be displayed under the "Subscribed plugins" list. To unsubscribe a plugin:
@@ -297,6 +299,9 @@ You can upload different versions of a hosted application at the same time and s
 Once uploaded, archives can be downloaded, activated or removed if necessary. The active archive (indicated by a cloud icon) is the version of the application that is currently being served to the users of your account. This version cannot be deleted.
 
 ### Removing applications
+
+If you remove an application that overrides a subscribed application, you make the currently available subscribed application available to all users. Additionally the users will then also benefit from future upgrades of the subscribed application.
+It is not possible to remove subscribed apps. This is only possible for the owner of the subscribed application. 
 
 To remove an application, simply hover over the application name and click on the cogwheel, then press the "Remove" button. A confirmation pop-up window will appear. Click "OK" and the application will be deleted.
 

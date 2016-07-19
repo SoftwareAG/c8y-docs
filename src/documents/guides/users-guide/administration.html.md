@@ -174,13 +174,24 @@ To assign applications to particular users and user groups, visit the "Applicati
 
 ## <a name="applications"></a>Managing applications
 
-Besides the readily available marketplace applications, you can also provide own applications in your account by visiting the "Own applications" menu. These applications can be "Legacy Smartapps" or generic HTML5 applications.
+Besides the readily available applications, you can also provide own applications in your account by visiting the "Own applications" menu. These applications can be "Smartapps" or generic HTML5 applications:
 
-"Smartapps" are modular applications built on top of the Cumulocity user interface framework, just like the standard Device Management, Cockpit and Administration applications. Legacy smartapps are assembled from a set of so-called "plugins". Plugins provide new functionality in the user interface. Even without programming, you can create variations of the pre-provided applications by simply assembling their plugins in different ways and for example, hiding unneeded plugins. For more information, see the [Concepts guide](/guides/concepts/applications). 
+- HTML5 applications:​ These are applications that are based on HTML, JavaScript and CSS. Cumulocity allows you to use the HTML5 library of your choice, like jQuery, ExtJS, AngularJS, Dojo or others. If you prefer to use AngularJS, Cumulocity provides you with example and source code as part of the “Smart Apps Toolkit”.
+- "Smartapps" applications: These are HTML5 applications that can be extended by adding plugins. The power user can add and remove plugins in the Administration Application.
 
-When an application has been created, you can clone, open and remove. The "Clone" function duplicates the application, while the "Open" button simply opens the application.
+An application has a context path.​This is part of the URL that is used to access the
+application. For example, the context path of device management is “devicemanagement”.
+This application can then be accessed under “/apps/devicemanagement”. Own applications
+can have the same context path as subscribed application to override them.
 
-> Note that the "Open" button is revealed when you hover over the application's name.
+When deploying plugins​, the plugins are deployed into a specific application. For example,
+a plugin might add a specific widget to the Cockpit dashboard.
+
+Plugin can only be added to own applications, because the application itself is modified when adding the plugin. When adding a plugin to a subscribed application (e.g. an application owned by management tenant), then the application is first copied into an own application. Afterwards the plugin is added. This process is supported by the Administration Application wizard.
+
+When an application has been created it will be available in the application switcher.
+
+> Note that the "Open" button of the application is revealed when you hover over the application's name.
 
 ![Own Applications](/guides/users-guide/ownapplications.png) 
 
@@ -220,6 +231,10 @@ This is a type of repository application. "Repository applications" are HTML5 ap
 
 ### Cloning applications
 
+This option will copy the application. Cloning a subscribed application creates a copy of the application as own application, with a link to the original application.
+
+> Note that ZIP file based applications cannot be copied
+
 In order to clone an application:
 
 - Click on "Add application"
@@ -230,9 +245,9 @@ In order to clone an application:
 - Enter the application path. This path will be part of the URL to invoke the application. For example, if you use "hello" as application path, the URL of the application will be "/apps/hello".
 - Click on the "Clone" button.
 
-### <a name="creating-smartapp"></a>Adding a legacy smartapp
+### <a name="creating-smartapp"></a>Adding a smartapp
 
-To add legacy smartapp:
+To add a smartapp:
 
 - Click on "Add application".
 - Click on "Create legacy smartapp".

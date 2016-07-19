@@ -203,7 +203,7 @@ The availability information computed by Cumulocity is stored in fragments: "c8y
 The following messages update the last message timestamp of a device:
 
 -   Create an event, measurement or alarm (for given device as source)
--   Update an operation (with given deviceId)
+-   Update an operation to status "SUCCESSFUL" or "FAILED" (with given deviceId)
 -   Update the device itself (with given id) sending empty PUT request or request with id only, ie. {} or {"id":...}
 
 A monitored device has one of following statuses:

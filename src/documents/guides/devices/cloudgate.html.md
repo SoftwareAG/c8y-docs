@@ -77,7 +77,6 @@ To be able to run the node, the following parameters need to be defined:
 The following parameters are optional:
 - Enable queueing: Enables queueing messages when there is no connection.
   - Q config: Select a queue configuration. Defines how many message can be stored in memory.
-- Name: The name of the node which is shown in the user interface.
 
 If you want to add multiple series to a measurement, you have to add a new measurement with the same type to the list.
 
@@ -102,7 +101,6 @@ The following parameters are optional:
 - Enable queueing: Enables queueing messages when there is no connection.
   - Q config: Select a queue configuration. Defines how many message can be stored in memory.
 - Default text: The text which will be used if there is no payload.
-- Name: The name of the node which is shown in the user interface.
 
 ![c8y alarm](/guides/devices/cloudgate/c8yalarm.png)
 
@@ -122,9 +120,7 @@ To be able to run the node, the following parameters need to be defined:
 The following parameters are optional:
 - Enable queueing: Enables queueing messages when there is no connection.
   - Q config: Select a queue configuration. Defines how many message can be stored in memory.
-- Send c8y_LocationUpdate event?: Sets the type to "c8y_LocationUpdate".
 - Default text: The text which will be used if there is no payload.
-- Name: The name of the node which is shown in the user interface.
 
 ![c8y event](/guides/devices/cloudgate/c8yevent.png)
 
@@ -166,8 +162,10 @@ For more information on the node, refer to the description which can be seen on 
 
 This node is not visible in the list of nodes on the left side as it is used as a configuration which can be shared by multiple nodes. The configuration node defines the type of connection and the credentials which will be used to communicate with Cumulocity.
 
+![c8y platform](/guides/devices/cloudgate/c8yplatform.png)
+
 To be able to use the configuration, the type of provision has to be specified ("Manually" or "Automatically").
 
-In case of "Manually", the user has to enter a tenant, username and password. After starting the workflow, the nodes which use this configuration node should be able to connect to Cumulocity, provided that the credentials are correct.
+In case of "Manually", the user has to enter a tenant, username and password. After starting the workflow, the nodes which use this configuration should be able to connect to Cumulocity, provided that the credentials are correct.
 
-In case of "Automatically", the user can enter a servername and authentication string. If not, the node will use default values. Before or after starting the workflow, the user has to register the device with its serial number in the tenant. For more information on registering devices, refer to "[Connecting devices manually](/guides/users-guide/device-management/#device-registration)". After accepting the device in the tenant, the nodes which use this configuration node should be able to connect to Cumulocity, provided that the credentials are correct.
+In case of "Automatically", the user can enter a servername and authentication string. If not, the node will use default values. Before or after starting the workflow, the user has to register the device with its serial number in the desired tenant. For more information on registering devices, refer to "[Connecting devices manually](/guides/users-guide/device-management/#device-registration)". After accepting the device in the tenant, the nodes which use this configuration should be able to connect to Cumulocity, provided that the credentials are correct.

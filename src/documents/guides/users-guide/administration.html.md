@@ -14,6 +14,7 @@ The Administration application lets account administrators manage their users, a
 * Set up real-time [event processing](#event-processing) scripts and [reprioritize alarms](#reprio-alarms).
 * Change [settings](#settings).
 * Configure the [retention policies](#retention) for your data.
+* Configure the recipients and trigger of the [warning e-mail](#warningEmail) for maximum storage being reached.
 * Manage [stored files](#files) such as firmware images or log files.
 
 ## <a name="home"></a>The home screenshot
@@ -482,6 +483,11 @@ To add additional "Retention rules", click on "Add rule". Up to the "Maximum age
 
 To delete a rule, click on the "X" button and then press "OK" after the pop-up window appears.
 
+## <a name="warningEmail"></a>Managing storage quota warning e-mail
+
+This section is only visible if a storage quota was set for the tenant. The tenant administrators can set a user group and threshold for an e-mail to be sent once a day if the storage used is higher than a percentage of the storage quota. The e-mail warning can also be disabled. The default setup is sending an e-mail to the "admins" group when the storage reaches 80% of maximum storage.
+
+
 ## <a name="files"></a>Managing files
 
 The file repository provides an overview of the files stored in your account. To see the files, click on "Files repository" in the administration menu. Note that the files listed here may come from various sources. For example, they may be software images, configuration snapshots taken from devices, log files from devices or web applications uploaded using the "Own applications" menu. To delete a file, click the "X" button next to the file.
@@ -494,11 +500,9 @@ The file repository provides an overview of the files stored in your account. To
 
 The storage quota is in place for a tenant when a storage quota per device is set by the platform administrator. The total storage available to the user is calculated using the formula `storage quota per device x number of devices`. A check is performed every night to ensure the quota is not exceeded.
 
-In case the quota is exceeded, an e-mail is sent to all the tenant administrators to warn them that data will be deleted the following night. After 24h, if the quota is still exceeded, all the data retention limits are reduced by 10% and an e-mail is sent to all the tenant administrators. This operation is then repeated every night until the quota is met again.
+In case the quota is exceeded, an e-mail is sent to all the tenant administrators to warn them that data will be deleted the following night. After 24h, if the quota is still exceeded, all the data retention limits are reduced by a fixed percentage. This percentage is determined to be the minimum that allows the stored data to be under the quota.
 
-For example, let us assume that a tenant has a storage quota of 10GB. 
+For example, let us assume that a tenant has a storage quota of 10GB. Retention rules are 80 days for measurements, 90 days for all other data.
 - Day 1: In the nightly check, the total storage is calculated at 13GB. An e-mail is sent to all the tenant administrators.
-- Day 2: the total storage is still at 13GB. The data retention, initially set at 90 days, is reduced to 81 days. An e-mail is also sent to all administrators to inform them.
-- Day 3: the total storage is at 11GB. The data retention is now set to 73 days. An e-mail is sent again to all administrators to inform them.
-- Day 4: the total storage is at 9GB.
+- Day 2: the total storage is still at 13GB. The system determines that a 15% reduction of the retention rules is sufficient to be under the storage quota. So any measurement older than 68 days (80 days - 15%) and any other data older that 77 days (90 days - 15% results in 76.5 days, rounded to 77 days) is deleted. The total storage is now at 9.8GB.
 

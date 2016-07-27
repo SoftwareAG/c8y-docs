@@ -75,7 +75,7 @@ Media types are used in HTTP "Content-Type" and "Accept" headers. If you specify
 
 If a media type without "ver" parameter is given, the oldest available version will be returned by the server. If the accept header contains the same media type in multiple versions the server will return a representation in the latest supported version.
 
-### Data format
+### Date format
 
 Data exchanged with Cumulocity in HTTP requests and responses is encoded in [JSON format](http://www.ietf.org/rfc/rfc4627.txt) and [UTF-8](http://en.wikipedia.org/wiki/UTF-8) character encoding. Timestamps and dates are accepted and emitted by Cumulocity in [ISO 8601](http://www.w3.org/TR/NOTE-datetime) format:
 
@@ -83,7 +83,7 @@ Data exchanged with Cumulocity in HTTP requests and responses is encoded in [JSO
     Time: hh:mm:ss±hh:mm
     Timestamp: YYYY-MM-DDThh:mm:ss±hh:mm
 
-To avoid ambiguity, all times and timestamps must include timezone information.
+To avoid ambiguity, all times and timestamps must include timezone information. Please take into account that the plus character "+" must be encoded as "%2B".
 
 ### <a name="error_reporting"></a>Error reporting
 

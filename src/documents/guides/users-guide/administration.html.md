@@ -184,46 +184,17 @@ application. For example, the context path of device management is “devicemana
 This application can then be accessed under “/apps/devicemanagement”. Own applications
 can have the same context path as subscribed application to override them.
 
-When deploying plugins​, the plugins are deployed into a specific application. For example,
-a plugin might add a specific widget to the Cockpit dashboard.
+When deploying plugins​, the plugins are deployed into a specific application. For example, a plugin might add a specific widget to the Cockpit dashboard.
 
 Plugin can only be added to own applications, because the application itself is modified when adding the plugin. When adding a plugin to a subscribed application (e.g. an application owned by management tenant), then the application is first copied into an own application. Afterwards the plugin is added. This process is supported by the Administration Application wizard.
 
 When an application has been created it will be available in the application switcher.
 
+For more info on the different types of applications see [here](/guides/concepts/applications#hosting).
+
 > Note that the "Open" button of the application is revealed when you hover over the application's name.
 
 ![Own Applications](/guides/users-guide/ownapplications.png) 
-
-### Working with ZIP file applications
-
-To upload a ZIP file application:
-
-- Click on "Add application".
-- Click on "Upload ZIP file".
-- Drag the ZIP file into the box or browse your computer.
-
-> Note that the name of the ZIP file will be used as the name of the application.
-
-![Upload ZIP file](/guides/users-guide/zipfile.png)
-
-### Working with HTTP(S) proxy applications
-
-To add a HTTP(S) proxy application:
-
-- Click on "Add application".
-- Click on "HTTP(S) proxy".
-- Enter the name of the application, as shown in the application switcher.
-- Enter an application key. The application key is used to identify requests from this application and to make it available for subscription, see the [Concepts guide](/guides/concepts/applications).
-- Enter the application path. This path will be part of the URL to invoke the application. For example, if you use "hello" as application path, the URL of the application will be "/apps/hello".
-- Enter the server URL where your application is hosted. At this URL, there needs to be an index.html file that provides the entry point to your application.
-- Enter a username to access your repository (optional).
-- Enter a password to access your repository (optional).
-- Click "Save".
-
-> Note that, username and password are transmitted using HTTP Basic Authentication.
-
-![https proxy app](/guides/users-guide/httpsproxy.png)
 
 ### Working with external applications
 

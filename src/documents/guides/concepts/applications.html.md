@@ -75,7 +75,7 @@ If your application requires new server-side processing functionality, you can a
 
 Please note that module deployment within application is not supported for local zip applications, so the resource url has to point to some external resource from where the file can be downloaded. The file has to be named application-module.cel and be inside directory META-INF.
 
-## Hosting
+## <a name="hosting"></a>Hosting
 
 To host your own HTML5 and JavaScript web applications through Cumulocity, visit "Own applications" in the Cumulocity administration application and click "Add new".
 
@@ -89,13 +89,19 @@ There are three types of applications that can be configured:
 
 Assume that you are developing a web application using Bitbucket as code repository. In this case, exposing the application through Cumulocity can be done as follows:
 
--   Enter the name of the application. This is shown in the application switcher at the top left of the screen.
--   Optionally, enter an application key. This is used to distinguish your application from other applications in case you want to publish your application to other companies.
--   Select "Hosted" as type.
--   Select the URL that is used to make your application available to users.
--   Enter the URL to your repository. In case of Bitbucket, the URL has the structure shown below.
--   If your repository is private, enter the username and password of a Bitbucket user that is permitted to access the repository. Currently, basic authentication is the only supported authentication method (i.e., straight Bitbucket username and password, not any of the OpenID providers).
--   Save the application.
+- Click on "Add application".
+- Click on "HTTP(S) proxy".
+- Enter the name of the application, as shown in the application switcher.
+- Enter an application key. The application key is used to identify requests from this application and to make it available for subscription.
+- Enter the application path. This path will be part of the URL to invoke the application. For example, if you use "hello" as application path, the URL of the application will be "/apps/hello".
+- Enter the server URL where your application is hosted. At this URL, there needs to be an index.html file that provides the entry point to your application.
+- Enter a username to access your repository (optional).
+- Enter a password to access your repository (optional).
+- Click "Save".
+
+> Note that, username and password are transmitted using HTTP Basic Authentication.
+
+![https proxy app](/guides/concepts/httpsproxy.png)
 
 <pre><code>https://bitbucket.org/<bitbucket user>/<bitbucket repository>/raw/<branch>/[path inside repository]</code></pre>
 

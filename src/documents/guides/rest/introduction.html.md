@@ -64,7 +64,7 @@ A convenient way to explore REST interface and the Cumulocity database content a
 
 To set up Postman and import sample REST API commands, click the button below:
 
-[![Run in Postman](https://run.pstmn.io/button.svg)](https://www.getpostman.com/run-collection/5009664378e0f5ed9960#?env%5BPostman%20Button%20Demo%5D=W3sia2V5IjoiYXV0aCIsInZhbHVlIjoiQmFzaWMgY0c5emRHMWhiam8zYVRGdWFGRlVNbVZUYmtJPSIsInR5cGUiOiJ0ZXh0IiwiZW5hYmxlZCI6dHJ1ZX0seyJrZXkiOiJ1cmwiLCJ2YWx1ZSI6Imh0dHBzOi8vZGVtb3MuY3VtdWxvY2l0eS5jb20iLCJ0eXBlIjoidGV4dCIsImVuYWJsZWQiOnRydWV9XQ==)
+[![Run in Postman](https://run.pstmn.io/button.svg)](https://app.getpostman.com/run-collection/7c7d00719ab238097686)
 
 Install Postman as described and import the examples ("API collection"). The collection comes with a sample, read-only environment. To configure further environments: 
 

@@ -289,6 +289,14 @@ Finally, Cumulocity can associate devices and assets with multiple external iden
 
 This is, for example, useful when you have broken hardware and need to replace the hardware without loosing the data that was recorded so far. Just connect the new hardware to your account and modify the identity entry of the old hardware to contain the identity of the new hardware.
 
+## <a name="config"></a>Configuration
+
+This tab allows you to retrieve, modify or save user configuration data. You can also make changes to the configuration and save them back to the device. Configuration snapshot can be requested from the device and later it can be applied to other devices. As of Cumulocity version 7.26 there is also RDB snapshot support. This is mainly for troubleshooting purposes.
+
+The configuration snapshot could be used if, for example you have a lot of devices and you would like them to have the same configuration. Then, you can configure one device, download the snapshot and apply it to the other devices.  
+
+![Configuration](/guides/users-guide/configuration.png)
+
 ## <a name="connection-monitoring"></a>Connection monitoring
 
 Cumulocity can automatically monitor the connection to your devices. If you want the connection to a device to be monitored, visit the "Info" tab of the device. On that tab, check the "Required Interval" field at the top. This field defines how often you expect to hear from the device. For example, if you set "Required interval" to 60, you expect that the device communicates at least once in an hour with Cumulocity. The interval is either set by the device itself, based on the device's knowledge how often it will try to send data, or it is set manually by you.

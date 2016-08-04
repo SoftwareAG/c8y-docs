@@ -35,7 +35,7 @@ Cumulocity uses a simple and secure reference protocol based on REST (i.e., HTTP
 
 **Secure remote communication** Devices may provide a protocol that is unsuitable for secure remote communication, in particular in public cloud environments. The protocol may only support local networking, it may not pass through firewalls and proxies and it may carry sensitive data over clear text. To overcome such situations, an agent can be co-located to the device and provide a secure, internet-enabled link to the remote device.
 
-To summarize to benefits of the agent concept: Agents enable IoT applications to securely interface with any type of remote IoT device and without imposing any mandatory system requirement on the device itself. They drastically simplify developing IoT applications by shielding the application from the diversities of IoT devices and protocols.
+To summarize the benefits of the agent concept: Agents enable IoT applications to securely interface with any type of remote IoT device and without imposing any mandatory system requirement on the device itself. They drastically simplify developing IoT applications by shielding the application from the diversities of IoT devices and protocols.
 
 ## What agent architectures are supported?
 

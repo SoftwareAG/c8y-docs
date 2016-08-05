@@ -55,7 +55,7 @@ GPS accuracy reporting is not available on all Telic devices. To enable accuracy
 * Select the Tab "Logging Type"
 * Enable the checkbox "Extended Data (incl. DOPs and Accuracy)"
 
-This screenshot shows a device configuration.
+This screenshot shows a extended device configuration.
 
 ![Telic Device Configuration](/guides/devices/telic/telicdevlogtype.png)
 

@@ -32,7 +32,7 @@ You need to add a new custom callback and change the following parameters:
 * type: DATA BIDIR
 * Url pattern: https://sigfox-agent.cumulocity.com/sigfoxDataCallback
 * Use HTTP Method: POST
-* Headers: Authentication _&lt;your Base64 encoded password&gt;_ (the password needs to be encoded in the format: tenant/username:password)
+* Headers: Authorization _&lt;your Base64 encoded password&gt;_ (the password needs to be encoded in the format: tenant/username:password)
 * Content-Type: application/json
 * Body:
 
@@ -62,7 +62,7 @@ You need to add a new custom callback and change the following parameters:
 * type: SERVICE ACKNOWLEDGE
 * Url pattern: https://sigfox-agent.cumulocity.com/sigfoxServiceAcknowledgeCallback
 * Use HTTP Method: POST
-* Headers: Authentication _&lt;your Base64 encoded password&gt;_ (the password needs to be encoded in the format: tenant/username:password)
+* Headers: Authorization _&lt;your Base64 encoded password&gt;_ (the password needs to be encoded in the format: tenant/username:password)
 * Content-Type: application/json
 * Body:
 
@@ -85,7 +85,7 @@ You need to add a new custom callback and change the following parameters:
 * type: SERVICE STATUS
 * Url pattern: https://sigfox-agent.cumulocity.com/sigfoxServiceStatusCallback
 * Use HTTP Method: POST
-* Headers: Authentication _&lt;your Base64 encoded password&gt;_ (the password needs to be encoded in the format: tenant/username:password)
+* Headers: Authorization _&lt;your Base64 encoded password&gt;_ (the password needs to be encoded in the format: tenant/username:password)
 * Content-Type: application/json
 * Body:
 
@@ -107,7 +107,7 @@ You need to add a new custom callback and change the following parameters:
 * type: ERROR
 * Url pattern: https://sigfox-agent.cumulocity.com/sigfoxErrorCallback
 * Use HTTP Method: POST
-* Headers: Authentication _&lt;your Base64 encoded password&gt;_ (the password needs to be encoded in the format: tenant/username:password)
+* Headers: Authorization _&lt;your Base64 encoded password&gt;_ (the password needs to be encoded in the format: tenant/username:password)
 * Content-Type: application/json
 * Body:
 

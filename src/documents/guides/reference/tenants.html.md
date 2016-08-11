@@ -136,7 +136,7 @@ Request body: Tenant
 
 Response body: Tenant
 
-Required role: ROLE\_TENANT\_MANAGEMENT\_ADMIN
+Required role: ROLE\_TENANT\_MANAGEMENT\_ADMIN or ROLE\_TENANT\_MANAGEMENT\_CREATE
 
 Example request:
 				
@@ -273,7 +273,7 @@ Request body: Tenant
 
 Response body: Tenant
   
-Required role: ROLE\_TENANT\_MANAGEMENT\_ADMIN
+Required role: ROLE\_TENANT\_MANAGEMENT\_ADMIN or ROLE\_TENANT\_MANAGEMENT\_UPDATE
 
 Example Request :
      

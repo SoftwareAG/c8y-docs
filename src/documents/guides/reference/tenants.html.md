@@ -182,7 +182,7 @@ Example Response:
 		"customProperties" : {"referenceId":"1234567890"}
 	}
 
-
+Note that creating a tenant with adminName, adminPass and adminEmail, creates an admin user with these settings.
 
 
 ## Tenant
@@ -327,6 +327,8 @@ Example Response :
         },
       "adminName" : "newAdmin"
     }
+
+Note that updating adminPass and adminEmail updates these settings in the admin user of the tenant. Updating adminName has no effect.
     
     
 ### DELETE  a representation of a Tenant.

@@ -54,3 +54,77 @@ All customization options listed in the following shall be added in your *init.m
 9.  `SR_SSL_VERIFYCERT=1`
 
     Whether to verify server's certificate when using HTTPS, defaults to 1. Many embedded devices have no CA certificates installed and thus not be able to verify server's certificate when communicating via HTTPS. As a workaround, you can disable certificate verification by setting this macro to 0.
+
+10. `SR_FILEBUF_PAGE_SCALE=3`
+
+    Set scale of page size for file backed buffering, default is 3. When `filebuf` feature is enabled for `SrReporter`, messages are managed at a minimum unit of one page, instead of single message, for easy and efficient buffer managing. Therefore, larger page size will buffer more messages, but messages are also discarded in bigger chunks. In contrary, smaller page size buffers less messages, but messages are also discarded in smaller chunks. Possible page scale values and corresponding page size can be found in Table 1.
+    
+<table id="tab:pagescale" border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+<caption class="t-above"><span class="table-number">Table 1:</span> List of page scale and corresponding page size for filebuf.</caption>
+
+<colgroup>
+<col  class="left" />
+
+<col  class="left" />
+</colgroup>
+<thead>
+<tr>
+<th scope="col" class="left">Page Scale</th>
+<th scope="col" class="left">Page Size</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td class="left">0</td>
+<td class="left">512 B</td>
+</tr>
+    
+<tr>
+<td class="left">1</td>
+<td class="left">1 KB</td>
+</tr>
+    
+    
+<tr>
+<td class="left">2</td>
+<td class="left">2 KB</td>
+</tr>
+    
+    
+<tr>
+<td class="left">3</td>
+<td class="left">4 KB</td>
+</tr>
+    
+    
+<tr>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+</tr>
+    
+    
+<tr>
+<td class="left">4</td>
+<td class="left">8 KB</td>
+</tr>
+    
+
+<tr>
+<td class="left">5</td>
+<td class="left">16 KB</td>
+</tr>
+    
+    
+<tr>
+<td class="left">6</td>
+<td class="left">32 KB</td>
+</tr>
+    
+    
+<tr>
+<td class="left">7</td>
+<td class="left">64 KB</td>
+</tr>
+</tbody>
+</table>

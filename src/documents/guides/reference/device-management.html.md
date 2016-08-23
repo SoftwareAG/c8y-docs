@@ -99,6 +99,10 @@ To enable software installation through the user interface, add "c8y\_Software" 
 
 ![Device configuration](/guides/reference-guide/configuration.png)
 
+#### c8y\_SendConfiguration
+
+To enable reloading configuration through the user interface, add "c8y\_SendConfiguration" to the list of supported operations as described above.
+
 #### c8y\_Mobile
 
 *c8y\_Mobile* holds basic connectivity-related information, such as the equipment identifier of the modem (IMEI) in the device. This identifier is globally unique and often used to identify a mobile device.

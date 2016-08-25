@@ -12,7 +12,7 @@ Cloud Fieldbus is a Cumulocity application that lets you collect data from field
 * [Manage](#manage) the connected fieldbus devices.
 * [Configure](#configure) the remote management capabilities of particular types of devices and [import and export](#import) them.
 
-Cloud Fieldbus is currently in beta. It supports Modbus out of the box on the following terminals:
+It is supported out of the box on the following terminals:
 
 * [Pssystec Smartbox-Modbus](/guides/devices/smartbox-modbus) for Modbus/RTU.
 * [Netcomm Wireless NTC-6200](/guides/devices/netcommwireless) for Modbus/TCP and Modbus/RTU.
@@ -73,9 +73,11 @@ To connect a CAN device:
 * Click "Save changes" if you made changes.
 * To start communication between the terminal and the CAN device, click "Add CAN device".
 * Enter a name for the device and select the type of the device from the drop-down box. To add new device types, see "[Configuring Fieldbus device types](#configure)" below.
-* Click "Add". Cumulocity will now send a notification to the Modbus terminal that a new device is ready to be managed. This may take a few seconds.
+* Click "Add". Cumulocity will now send a notification to the Fieldbus terminal that a new device is ready to be managed. This may take a few seconds.
 
-After the progress indicator vanishes, a new child device has been added to the terminal and can now be managed. You can click on the name of the device in the table to navigate to the device. If you have not yet added Modbus devices to the terminal, you may have to reload your browser window to make the "Child Devices" tab visible.
+After the progress indicator vanishes, a new child device has been added to the terminal and can now be managed. You can click on the name of the device in the table to navigate to the device. If you have not yet added Fieldbus devices to the terminal, you may have to reload your browser window to make the "Child Devices" tab visible.
+
+![Add CAN device](/guides/users-guide/newcandevice.png)
 
 ## <a name="manage"></a>Managing Fieldbus devices
 
@@ -90,19 +92,19 @@ Once connected, you can now manage your device. Click "Child devices" on a termi
 
 If the device type of the Fieldbus device is configured to collect measurements, these will be visible in the "Measurements" tab. They will also be available for usage in the [Data Explorer](/guides/users-guide/cockpit#using-the-data-explorer-to-visualize-data) and in [Dashboard widgets](/guides/users-guide/cockpit#working-with-dashboards).
 
-Data is collected according to the interval specified in the "transmit rate" property of the terminal as described above. To optimize the data traffic, data that is exactly the same as collected previously is not sent again.
+Data is collected according to the interval specified in the "transmit rate" property of the terminal as described above. To optimize the data traffic, data that is exactly the same as collected previously may not be sent again.
 
 ![Fieldbus measurements](/guides/users-guide/modbusmeasurements.png)
 
 ### <a name="alarms"></a>Monitoring alarms
 
-If the device type of the Modbus device is configured to send alarms, these will be visible in the "Alarms" tab and usable in widgets. To determine the alarm status, the Modbus devices are monitored for changes according to the "polling rate" setting of the terminal. If a particular coil or register is non-zero, an alarm will be raised. If the value goes back to zero, the alarm will be cleared.
+If the device type of the Fieldbus device is configured to send alarms, these will be visible in the "Alarms" tab and usable in widgets. To determine the alarm status, the Fieldbus devices are monitored for changes according to the "polling rate" setting of the terminal. If a particular coil or register is non-zero, an alarm will be raised. If the value goes back to zero, the alarm will be cleared.
 
 ![Fieldbus alarms](/guides/users-guide/modbusalarms.png)
 
 ### <a name="logging"></a>Logging events
 
-Similar to alarms, changes in Modbus devices can be monitored and logged as events. Each time, the value of the monitored coil or register changes, an event is created. You can see the events in the "Events" tab of the device or use them in widgets. You can inspect the new value of the monitored coil or register by clicking on the event and unfolding the event details.
+Similar to alarms, changes in Fieldbus devices can be monitored and logged as events. Each time, the value of the monitored coil or register changes, an event is created. You can see the events in the "Events" tab of the device or use them in widgets. You can inspect the new value of the monitored coil or register by clicking on the event and unfolding the event details.
 
 ![Fieldbus events](/guides/users-guide/modbusevents.png)
 
@@ -143,7 +145,7 @@ The SCADA widget provides you with a graphical representation of the status of a
 
 ## <a name="configure"></a>Configuring Fieldbus device types
 
-New Modbus device types can be set up in the "Device Database" menu. Click "New". Define the type of your device, give it a name and start adding coils and register definitions to the device type. Depending on the selected type the options will change.
+New Fieldbus device types can be set up in the "Device Database" menu. Click "New". Define the protocol of your device, give it a name and start adding coils and register definitions to the device type. Depending on the selected protocol, the options below will change.
 
 ![Device Database](/guides/users-guide/devicedatabase.png)
 
@@ -191,12 +193,12 @@ Finally, don't forget to click "Save" to store your edits. If you edit a device 
 
 ## <a name="configureCAN"></a>Configuring CAN bus data
 
-For the CAN protocol Holding registers are used to map data from CAN messages identified by their ID. Input registers or any form of coils are not applicable to the CAN protocol. Configuring Holding registers for CAN types is very similar to adding registers for Modbus types, therfore the following segment will only detail the differences. For more information about basic register configuration see [Configuring Modbus data](#configureModbus).
+For the CAN protocol holding registers are used to map data from CAN messages identified by their ID. Configuring Holding registers for CAN types is very similar to adding registers for Modbus types. The following segment will only detail the differences form holding registers in modbus context. For more information about basic register configuration see [Configuring Modbus data](#configureModbus).
 
 Click the "Add" link next to "Holding Registers" to add a register definition. This opens a dialog to enter the details of the register definition:
 
 * To address your register the message ID of CAN messages is used. Enter it as hexadecimal number.
-* Scaling of values is added by an offset parameter. This will be added or substracted from the register value, depending on its sign. The offset calculation is done after applying multiplier and divisor, and before performing decimal shifting.
+* Conversion of values is extended by an offset parameter. This will be added or substracted from the register value, depending on its sign. The offset calculation is done after applying multiplier and divisor, and before performing decimal shifting.
 
 ![Add CAN register](/guides/users-guide/addregisterCAN.png)
 

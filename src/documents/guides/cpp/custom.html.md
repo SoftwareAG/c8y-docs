@@ -35,17 +35,17 @@ All customization options listed in the following shall be added in your *init.m
 
     Polling interval for `SrAgent`, defaults to 5 milliseconds. Internally `SrAgent` schedules all `SrTimerHandler` and `SrMsgHandler` by constantly polling for expired `SrTimer` and arrived messages from ingress `SrQueue`, this parameter dictates the interval between two consecutive polling. When is parameter is set too high, the agent may appear to be sluggish, whereas when set too low, many CPU cycles are wasted. This is a trade-off parameter that needs to be fine-tuned for any particular device.
 
-5.  `SR_REPORTER_NUM=32`
+5.  `SR_REPORTER_NUM=512`
 
-    Maximum number of aggregated requests, defaults to 32. For saving traffic use, `SrReporter` has a mechanism to aggregate many messages into one request and send them all in once. This number dictates the maximum number of messages that can be aggregated.
+    Maximum number of aggregated requests, defaults to 512. For saving traffic use, `SrReporter` has a mechanism to aggregate many messages into one request and send them all in once. This number dictates the maximum number of messages that can be aggregated.
 
 6.  `SR_REPORTER_VAL=400`
 
     Maximum waiting time between two consecutive requests for aggregation, defaults to 400 milliseconds. When aggregating requests, `SrReporter` will wait for consecutive messages with a defined timeout. If the next messages comes after the timeout, `SrReporter` will stop the waiting loop and starts sending the already aggregated messages. When set to a higher number, higher aggregation can be expected, therefore, results in lower traffic use, whereas when set to a lower number, agent will be more responsive since it will not wait for aggregating next message. This is a trade-off parameter that needs to be fine-tuned for any particular use case.
 
-7.  `SR_REPORTER_RETRIES=10`
+7.  `SR_REPORTER_RETRIES=9`
 
-    Maximum number of retries when sending fails, defaults to 10 times. For counteracting temporary network failures, `SrReporter` implemented an exponential wait and multi-trials measure. When the first trial fails, it waits 1 second and retries again, when the second trial fails, it waits 2 seconds, when the third trial fails, it waits 4 seconds, and so on, until the defined number of retries exhausted. Note when `SrReporter` enters the retry loop, messages sent via `SrAgent` will be queued up in the egress `SrQueue`, until the `SrReporter` successfully sends the aggregated requests so far or exhausts all retries.
+    Maximum number of retries when sending fails, defaults to 9 times. For counteracting temporary network failures, `SrReporter` implemented an exponential wait and multi-trials measure. When the first trial fails, it waits 1 second and retries again, when the second trial fails, it waits 2 seconds, when the third trial fails, it waits 4 seconds, and so on, until the defined number of retries exhausted. Note when `SrReporter` enters the retry loop, messages sent via `SrAgent` will be queued up in the egress `SrQueue`, until the `SrReporter` successfully sends the aggregated requests so far or exhausts all retries.
 
 8.  `SR_CURL_SIGNAL=1`
 
@@ -79,49 +79,50 @@ All customization options listed in the following shall be added in your *init.m
 <td class="left">0</td>
 <td class="left">512 B</td>
 </tr>
-    
+
+
 <tr>
 <td class="left">1</td>
 <td class="left">1 KB</td>
 </tr>
-    
-    
+
+
 <tr>
 <td class="left">2</td>
 <td class="left">2 KB</td>
 </tr>
-    
-    
+
+
 <tr>
 <td class="left">3</td>
 <td class="left">4 KB</td>
 </tr>
-    
-    
+
+
 <tr>
 <td class="left">&#xa0;</td>
 <td class="left">&#xa0;</td>
 </tr>
-    
-    
+
+
 <tr>
 <td class="left">4</td>
 <td class="left">8 KB</td>
 </tr>
-    
+
 
 <tr>
 <td class="left">5</td>
 <td class="left">16 KB</td>
 </tr>
-    
-    
+
+
 <tr>
 <td class="left">6</td>
 <td class="left">32 KB</td>
 </tr>
-    
-    
+
+
 <tr>
 <td class="left">7</td>
 <td class="left">64 KB</td>

@@ -149,7 +149,7 @@ New Fieldbus device types can be set up in the "Device Database" menu. Click "Ne
 
 ![Device Database](/guides/users-guide/devicedatabase.png)
 
-## <a name="configureModbus"></a>Configuring Modbus data
+### <a name="configureModbus"></a>Configuring Modbus data
 
 Click the "Add" link next to "Coils (discrete inputs)" to add a coil definition. This will open a dialog to specify the coil. Enter the following information:
 
@@ -191,13 +191,12 @@ Finally, don't forget to click "Save" to store your edits. If you edit a device 
 * Restart the terminals that use the device type.
 * Reconfigure dashboards and widgets that use the device type.
 
-## <a name="configureCAN"></a>Configuring CAN bus data
+### <a name="configureCAN"></a>Configuring CAN bus data
 
-For the CAN protocol holding registers are used to map data from CAN messages identified by their ID. Configuring Holding registers for CAN types is very similar to adding registers for Modbus types. The following segment will only detail the differences form holding registers in modbus context. For more information about basic register configuration see [Configuring Modbus data](#configureModbus).
+CAN device types can be configured in a very similar manner as Modbus device types. For more information on configuring Modbus device types, see [Configuring Modbus data](#configureModbus) above. The differences are:
 
-Click the "Add" link next to "Holding Registers" to add a register definition. This opens a dialog to enter the details of the register definition:
-
-* To address your register the message ID of CAN messages is used. Enter it as hexadecimal number.
+* Holding registers are used to describe the different pieces of data inside CAN messages.
+* Enter the CAN message ID of the specifict message the data should be extracted from. Please use a hexadecimal number for the message ID.
 * Conversion of values is extended by an offset parameter. This will be added or substracted from the register value, depending on its sign. The offset calculation is done after applying multiplier and divisor, and before performing decimal shifting.
 
 ![Add CAN register](/guides/users-guide/addregisterCAN.png)

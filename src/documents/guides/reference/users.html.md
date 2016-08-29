@@ -184,7 +184,7 @@ A "User" resource type contains the following fields:
 |:---|:---|:-----|:----------|:--------------------------|
 |id|String|1|Uniquely identifies a user|not allowed|
 |self|URI|1|Link to this Resource|not allowed|
-|userName|String|1|User name, unique for a given domain. Max: 1000 characters|POST:mandatory PUT:not allowed|
+|userName|String|1|User name, unique for a given domain. Max: 1000 characters. Whitespaces, slashes, +$ characters not allowed|POST:mandatory PUT:not allowed|
 |password|String|1|User password. Min: 6, max: 32 characters. Only Latin1 chars allowed.|POST:mandatory PUT:optional|
 |firstName|String|1|User first name.|optional|
 |lastName|String|1|User last name.|optional|

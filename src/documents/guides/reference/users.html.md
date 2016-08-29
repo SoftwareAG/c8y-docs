@@ -184,11 +184,11 @@ A "User" resource type contains the following fields:
 |:---|:---|:-----|:----------|:--------------------------|
 |id|String|1|Uniquely identifies a user|not allowed|
 |self|URI|1|Link to this Resource|not allowed|
-|userName|String|1|User name, unique for a given domain. Max: 1000 characters|POST:mandatory PUT:not allowed|
+|userName|String|1|User name, unique for a given domain. Max: 1000 characters. Whitespaces, slashes, +$ characters not allowed|POST:mandatory PUT:not allowed|
 |password|String|1|User password. Min: 6, max: 32 characters. Only Latin1 chars allowed.|POST:mandatory PUT:optional|
 |firstName|String|1|User first name.|optional|
 |lastName|String|1|User last name.|optional|
-|phone|String|1|User phone number.|optional|
+|phone|String|1|User phone number. Format: "+[country code][number]", has to be a valid MSISDN|optional|
 |email|String|1|User email address.|optional|
 |enabled|boolean|1|User activation status (true/false)|optional|
 |customProperties|Object|1|Keeps a list of custom properties|optional|
@@ -210,7 +210,7 @@ A "currentUser" resource type contains the following fields:
 |password|String|1|User password. Min: 6, max: 32 characters. Only Latin1 chars allowed.|POST:mandatory PUT:optional|
 |firstName|String|1|User first name.|optional|
 |lastName|String|1|User last name.|optional|
-|phone|String|1|User phone number.|optional|
+|phone|String|1|User phone number. Format: "+[country code][number]", has to be a valid MSISDN|optional|
 |email|String|1|User email address.|optional|
 |enabled|boolean|1|User activation status (true/false)|optional|
 |devicePermissions|Object|1|List of device permissions|optional|

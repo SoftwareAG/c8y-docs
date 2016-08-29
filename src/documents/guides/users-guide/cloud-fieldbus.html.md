@@ -12,10 +12,11 @@ Cloud Fieldbus is a Cumulocity application that lets you collect data from field
 * [Manage](#manage) the connected fieldbus devices.
 * [Configure](#configure) the remote management capabilities of particular types of devices and [import and export](#import) them.
 
-Cloud Fieldbus is currently in beta. It supports Modbus out of the box on the following terminals:
+It is supported out of the box on the following terminals:
 
 * [Pssystec Smartbox-Modbus](/guides/devices/smartbox-modbus) for Modbus/RTU.
-* [Netcomm Wireless NTC-6200](/guides/devices/netcommwireless) for Modbus/TCP.
+* [Netcomm Wireless NTC-6200](/guides/devices/netcommwireless) for Modbus/TCP and Modbus/RTU.
+* [Cinterion Java modules](/guides/devices/cinterion) for Modbus/RTU and CAN bus
 
 > If you want to support Cloud Fieldbus in your terminal, please contact info@cumulocity.com for more information.
 
@@ -31,15 +32,15 @@ To connect a Modbus/RTU device:
 * Give the device a unique Modbus address according to the instructions provided with the Modbus device (e.g., by setting a jumper on the device).
 * Check the serial communication settings of the device according to the instructions provided with the device (i.e., baud rates and communication protocol). These have to match on all devices on the bus.
 * Navigate to the terminal in Cumulocity and click on the "Modbus" tab.
-* Change the communication settings shown in the section "Serial Communication" to match the settings on the bus, if needed. 
+* Change the communication settings shown in the section "Serial Communication" to match the settings on the bus, if needed.
 * Change the transmit rate and the polling rate according to your requirements. The polling rate is the frequency at which the Modbus devices are polled for changes. The transmit rate is the frequency at which measurements are sent to Cumulocity.
 * Click "Save changes" if you made changes.
 
 ![Add Modbus device](/guides/users-guide/newmodbusrtudevice.png)
 
 * To start communication between the terminal and the Modbus device, click "Add new device".
-* Enter a name for the device and select the type of the device from the drop-down box. To add new device types, see "[Configuring Modbus device types](#configure)" below. Set the Modbus address of the connected device.
-* Click "Add". Cumulocity will now send a notification to the Modbus terminal that a new device is ready to be managed. This may take a few seconds. 
+* Enter a name for the device and select the type of the device from the drop-down box. To add new device types, see "[Configuring Fieldbus device types](#configure)" below. Set the Modbus address of the connected device.
+* Click "Add". Cumulocity will now send a notification to the Modbus terminal that a new device is ready to be managed. This may take a few seconds.
 
 After the progress indicator vanishes, a new child device has been added to the terminal and can now be managed. You can click on the name of the device in the table to navigate to the device. If you have not yet added Modbus devices to the terminal, you may have to reload your browser window to make the "Child Devices" tab visible.
 
@@ -48,21 +49,39 @@ After the progress indicator vanishes, a new child device has been added to the 
 To connect a Modbus/TCP device:
 
 * Make sure that the Modbus/TCP device is connected to the terminal, e.g., directly through an Ethernet cable or through a switch. If you are using a Modbus gateway, configure the gateway so that it can communicate with the Modbus devices behind the gateway.
-* Check the network settings of the device using the instructions provided with the device. 
+* Check the network settings of the device using the instructions provided with the device.
 * Navigate to the terminal in Cumulocity and click on the "Network" tab. Verify that the LAN settings of the terminal match the settings of the device so that TCP communication can be established.
 * Navigate to the "Modbus" tab.
 * Change the transmit rate and the polling rate according to your requirements. The polling rate is the frequency at which the Modbus devices are polled for changes. The transmit rate is the frequency at which measurements are sent to Cumulocity. Click "Save changes" if you made changes.
 * To start communication between the terminal and the Modbus device, click "Add new device".
-* Enter a name for the device and select the type of the device from the drop-down box. To add new device types, see "[Configuring Modbus device types](#configure)" below. Set the Modbus address and the IP address of the connected device.
-* Click "Add". Cumulocity will now send a notification to the Modbus terminal that a new device is ready to be managed. This may take a few seconds. 
+* Enter a name for the device and select the type of the device from the drop-down box. To add new device types, see "[Configuring Fieldbus device types](#configure)" below. Set the Modbus address and the IP address of the connected device.
+* Click "Add". Cumulocity will now send a notification to the Modbus terminal that a new device is ready to be managed. This may take a few seconds.
 
 ![Add Modbus device](/guides/users-guide/newmodbustcpdevice.png)
 
 > We assume that all Modbus/TCP communication uses the standard Modbus/TCP port 502. On the NTC-6200, the port to be used can be configured through the variable "service.cumulocity.plugin.lua__modbus.port" using, for example, Device Shell or the local web user interface of the device.
 
-## <a name="manage"></a>Managing Modbus devices
+### Connecting CAN devices
 
-Once connected, you can now manage your device. Click "Child devices" on a terminal to list the connected Modbus devices and navigate to a Modbus device. Depending on the capabilities of the device and its configuration in Cumulocity, you can:
+To connect a CAN device:
+
+* Physically wire the CAN device through to the terminal.
+* Check the serial communication baud rate of the device according to the instructions provided with the device. These have to match on all devices on the bus.
+* Navigate to the terminal in Cumulocity and click on the "CAN bus" tab.
+* Change the baud rate setting shown in the section "CAN bus communication" to match the settings on the bus, if needed.
+* Change the transmit rate according to your requirements. The transmit rate is the frequency at which measurements are sent to Cumulocity.
+* Click "Save changes" if you made changes.
+* To start communication between the terminal and the CAN device, click "Add CAN device".
+* Enter a name for the device and select the type of the device from the drop-down box. To add new device types, see "[Configuring Fieldbus device types](#configure)" below.
+* Click "Add". Cumulocity will now send a notification to the Fieldbus terminal that a new device is ready to be managed. This may take a few seconds.
+
+After the progress indicator vanishes, a new child device has been added to the terminal and can now be managed. You can click on the name of the device in the table to navigate to the device. If you have not yet added Fieldbus devices to the terminal, you may have to reload your browser window to make the "Child Devices" tab visible.
+
+![Add CAN device](/guides/users-guide/newcandevice.png)
+
+## <a name="manage"></a>Managing Fieldbus devices
+
+Once connected, you can now manage your device. Click "Child devices" on a terminal to list the connected Fieldbus devices and navigate to a Fieldbus device. Depending on the capabilities of the device and its configuration in Cumulocity, you can:
 
 * [Collect measurements](#collect).
 * [Send alarms on coil or register changes](#alarms).
@@ -71,25 +90,25 @@ Once connected, you can now manage your device. Click "Child devices" on a termi
 
 ### <a name="collect"></a>Collecting measurements
 
-If the device type of the Modbus device is configured to collect measurements, these will be visible in the "Measurements" tab. They will also be available for usage in the [Data Explorer](/guides/users-guide/cockpit#using-the-data-explorer-to-visualize-data) and in [Dashboard widgets](/guides/users-guide/cockpit#working-with-dashboards).
+If the device type of the Fieldbus device is configured to collect measurements, these will be visible in the "Measurements" tab. They will also be available for usage in the [Data Explorer](/guides/users-guide/cockpit#using-the-data-explorer-to-visualize-data) and in [Dashboard widgets](/guides/users-guide/cockpit#working-with-dashboards).
 
-Data is collected according to the interval specified in the "transmit rate" property of the terminal as described above. To optimize the data traffic, data that is exactly the same as collected previously is not sent again.
+Data is collected according to the interval specified in the "transmit rate" property of the terminal as described above. To optimize the data traffic, data that is exactly the same as collected previously may not be sent again.
 
-![Modbus measurements](/guides/users-guide/modbusmeasurements.png)
+![Fieldbus measurements](/guides/users-guide/modbusmeasurements.png)
 
 ### <a name="alarms"></a>Monitoring alarms
 
-If the device type of the Modbus device is configured to send alarms, these will be visible in the "Alarms" tab and usable in widgets. To determine the alarm status, the Modbus devices are monitored for changes according to the "polling rate" setting of the terminal. If a particular coil or register is non-zero, an alarm will be raised. If the value goes back to zero, the alarm will be cleared.
+If the device type of the Fieldbus device is configured to send alarms, these will be visible in the "Alarms" tab and usable in widgets. To determine the alarm status, the Fieldbus devices are monitored for changes according to the "polling rate" setting of the terminal. If a particular coil or register is non-zero, an alarm will be raised. If the value goes back to zero, the alarm will be cleared.
 
-![Modbus alarms](/guides/users-guide/modbusalarms.png)
+![Fieldbus alarms](/guides/users-guide/modbusalarms.png)
 
 ### <a name="logging"></a>Logging events
 
-Similar to alarms, changes in Modbus devices can be monitored and logged as events. Each time, the value of the monitored coil or register changes, an event is created. You can see the events in the "Events" tab of the device or use them in widgets. You can inspect the new value of the monitored coil or register by clicking on the event and unfolding the event details.
+Similar to alarms, changes in Fieldbus devices can be monitored and logged as events. Each time, the value of the monitored coil or register changes, an event is created. You can see the events in the "Events" tab of the device or use them in widgets. You can inspect the new value of the monitored coil or register by clicking on the event and unfolding the event details.
 
-![Modbus events](/guides/users-guide/modbusevents.png)
+![Fieldbus events](/guides/users-guide/modbusevents.png)
 
-### <a name="status"></a>Monitoring device status 
+### <a name="status"></a>Monitoring device status
 
 The status of devices can be monitored in real-time using dashboard widgets in the Cockpit application. Navigate to the Cockpit application, create a dashboard or report, and add widgets as described in the [Cockpit user's guide](/guides/users-guide/cockpit). Cloud Fieldbus adds two new widgets: The "Fieldbus Device" widget and the "SCADA" widget.
 
@@ -124,11 +143,13 @@ The SCADA widget provides you with a graphical representation of the status of a
 
 ![Adding the SCADA Widget](/guides/users-guide/scadaedit.png)
 
-## <a name="configure"></a>Configuring Modbus device types
+## <a name="configure"></a>Configuring Fieldbus device types
 
-New Modbus device types can be set up in the "Device Database" menu. Click "New", give the new device type a name and start adding coils and register definitions to the device type.
+New Fieldbus device types can be set up in the "Device Database" menu. Click "New". Define the protocol of your device, give it a name and start adding coils and register definitions to the device type. Depending on the selected protocol, the options below will change.
 
 ![Device Database](/guides/users-guide/devicedatabase.png)
+
+### <a name="configureModbus"></a>Configuring Modbus data
 
 Click the "Add" link next to "Coils (discrete inputs)" to add a coil definition. This will open a dialog to specify the coil. Enter the following information:
 
@@ -170,6 +191,16 @@ Finally, don't forget to click "Save" to store your edits. If you edit a device 
 * Restart the terminals that use the device type.
 * Reconfigure dashboards and widgets that use the device type.
 
+### <a name="configureCAN"></a>Configuring CAN bus data
+
+CAN device types can be configured in a very similar manner as Modbus device types. For more information on configuring Modbus device types, see [Configuring Modbus data](#configureModbus) above. The differences are:
+
+* Holding registers are used to describe the different pieces of data inside CAN messages.
+* Enter the CAN message ID of the specifict message the data should be extracted from. Please use a hexadecimal number for the message ID.
+* Conversion of values is extended by an offset parameter. This will be added or substracted from the register value, depending on its sign. The offset calculation is done after applying multiplier and divisor, and before performing decimal shifting.
+
+![Add CAN register](/guides/users-guide/addregisterCAN.png)
+
 ## <a name="import"></a>Importing and exporting device types
 
 To more conveniently manage device types, you can export device types to a file once they are edited in the user interface. The file can be imported again to more easily set up other Cumulocity accounts or to restore the types from a backup. The import functionality also supports importing ready-made device types provided by device manufacturers.
@@ -189,7 +220,3 @@ The SCADA widgets inspects uploaded SVG files for placeholders. These placeholde
 	<text class="text" xt-anchor="middle" x="100" y="236.982125" width="200" ...>
 		{{batteryValue}}
 	</text>
-
-
-
-

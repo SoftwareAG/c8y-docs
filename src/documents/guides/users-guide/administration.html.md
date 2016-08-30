@@ -158,8 +158,8 @@ To assign permissions click on the relevant checkbox. If you wish to select or c
 
 Support users are users in management tenant that have special permissions to login to normal tenants. 
 To allow login into normal tenants, support user account must have support access rights.
-When support user logs in to tenant, he has the same privileges as one of users in subtenant. 
-This user from subtenant is specified on login page.  
+When support user logs in to tenant, he has the same privileges as the subtenant user. 
+The user from subtenant is specified on login page.  
 
 Support users can login using own password and username in form
 

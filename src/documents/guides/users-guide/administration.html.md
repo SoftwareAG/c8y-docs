@@ -136,6 +136,7 @@ When you edit a group, a table with "roles" is listed below the group name. Thes
 * CEP management: View or edit Cumulocity Event Language rules.
 * Retention rules: View or edit retention rules.
 * Bulk operations: View or create bulk operations.
+* Support operations: Allows user to log in to other tenants as support user.
 
 For the various types, the following permissions are available:
 
@@ -152,6 +153,38 @@ To assign permissions click on the relevant checkbox. If you wish to select or c
 - Select all Admin: Selects "Admin" for all types and deselects the rest.
 
 ![All roles](/guides/users-guide/allroles.png)
+
+#### Using Support Permission
+
+##### Overview
+
+Support users are users in management tenant that have special permissions to login to normal tenants. 
+To allow login into normal tenants, support user account must have support access rights.
+When support user logs in to tenant, he has the same privileges as the subtenant user. 
+The user from subtenant is specified on login page.  
+
+Support users can login using own password and username in form
+
+> support_user$user
+
+Where "support_user" is name of support user in management tenant and "user" is name of user which context will be used
+
+or
+
+> support_user$
+
+Where "support_user" is name of user in management tenant. In this case support user will use context of one of admin users.
+
+##### Configuration
+
+Support user functionality is enabled by default. 
+If it is disabled by platform operator then any user has "Activate support access" option available in upper right menu.
+After selecting this option, support user has access to tenant for one day.
+
+##### Audit logs
+
+Audit logs for all action performed by support user will have information about actual author. 
+In column "Who?" will be author's name in form "support_user$user".  
 
 ### Assigning device-specific permissions
 

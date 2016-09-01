@@ -156,6 +156,8 @@ To assign permissions click on the relevant checkbox. If you wish to select or c
 
 #### Using Support Permission
 
+##### Overview
+
 Support users are users in management tenant that have special permissions to login to normal tenants. 
 To allow login into normal tenants, support user account must have support access rights.
 When support user logs in to tenant, he has the same privileges as the subtenant user. 
@@ -173,9 +175,16 @@ or
 
 Where "support_user" is name of user in management tenant. In this case support user will use context of one of admin users.
 
+##### Configuration
+
+Support user functionality is enabled by default. 
+If it is disabled by platform operator then any user has "Activate support access" option available in upper right menu.
+After selecting this option, support user has access to tenant for one day.
+
+##### Audit logs
+
 Audit logs for all action performed by support user will have information about actual author. 
 In column "Who?" will be author's name in form "support_user$user".  
-
 
 ### Assigning device-specific permissions
 

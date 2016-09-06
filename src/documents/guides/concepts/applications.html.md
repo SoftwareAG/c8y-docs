@@ -16,11 +16,11 @@ This section introduces the basic concepts around applications in Cumulocity.
 
 ## Applications and subscriptions
 
-Applications are registered in Cumulocity either as "own applications" or "Applications owned by management tenant". 
+Applications are registered in Cumulocity either as "own applications" or "Subscribed applications". 
 
 "Own applications" are only available to users of a particular tenant and are registered by the tenant's administrator. Own applications are used, for example, during application development when you do not yet want to make a particular application version available for a wide audience. They are also used for functionality that is proprietary for an enterprise, for example, interactions with in-house IT systems.
 
-"Applications owned by management tenant" are available to all tenants of Cumulocity. Subscribing a tenant to a market application makes the application available to the tenant. To certify an application as market application, please [contact us](mailto:info@cumulocity.com).
+"Subscribed applications" are applications owned by the tenant "Management". Subscribing a tenant to a market application makes the application available to the tenant. To certify an application as market application, please [contact us](mailto:info@cumulocity.com).
 
 Applications are identified by a so-called *application key*, which is included into requests that an application makes. The application key enables Cumulocity to associate a request with a particular application and to distinguish the request from other requests coming from devices.
 
@@ -30,7 +30,7 @@ An application can be any combination of:
 * A set of user interface plugins.
 * A set of statements in Cumulocity Event Language.
 
-User interface applications appear in the application switcher widget on the top right of Cumulocity, so that users can navigate between the subscribed applications. They can be hosted on an external web site, in which case the application switcher just directs the user to that web site. They can also be hosted through Cumulocity, in which case the application will be made available through a URL <tenant>.cumulocity.com/apps/<application>.
+User interface applications appear in the application switcher widget on the top right of Cumulocity, so that users can navigate between the applications. They can be hosted on an external web site, in which case the application switcher just directs the user to that web site. They can also be hosted through Cumulocity, in which case the application will be made available through a URL <tenant>.cumulocity.com/apps/<application>.
 
 ![App switcher](/guides/concepts-guide/appswitcher.png)
 
@@ -74,39 +74,3 @@ If your application requires new server-side processing functionality, you can a
 	...
 
 Please note that module deployment within application is not supported for local zip applications, so the resource url has to point to some external resource from where the file can be downloaded. The file has to be named application-module.cel and be inside directory META-INF.
-
-## <a name="hosting"></a>Hosting
-
-To host your own HTML5 and JavaScript web applications through Cumulocity, visit "Own applications" in the Cumulocity administration application and click "Add new".
-
-![List of own applications](/guides/concepts-guide/ownapplications.png)
-
-There are three types of applications that can be configured:
-
--   Type "Hosted": "Zip file applications" are a type of hosted applications. "Hosted applications" are HTML5 applications hosted through Cumulocity servers. These applications are packaged as ZIP archives having an "index.html" file in the root folder of the archive. 
--   Type "Repository": HTTP(S) proxy applications are a type of repository application. "Repository applications" are HTML5 applications hosted through an external repository. Such a repository can be, for example, a version control system such as Bitbucket or Github. 
--   Type "External": The applications are completely external and are just shown in the application switcher.
-
-Assume that you are developing a web application using Bitbucket as code repository. In this case, exposing the application through Cumulocity can be done as follows:
-
-- Click on "Add application".
-- Click on "HTTP(S) proxy".
-- Enter the name of the application, as shown in the application switcher.
-- Enter an application key. The application key is used to identify requests from this application and to make it available for subscription.
-- Enter the application path. This path will be part of the URL to invoke the application. For example, if you use "hello" as application path, the URL of the application will be "/apps/hello".
-- Enter the server URL where your application is hosted. At this URL, there needs to be an index.html file that provides the entry point to your application.
-- Enter a username to access your repository (optional).
-- Enter a password to access your repository (optional).
-- Click "Save".
-
-> Note that, username and password are transmitted using HTTP Basic Authentication.
-
-![https proxy app](/guides/concepts/httpsproxy.png)
-
-<pre><code>https://bitbucket.org/<bitbucket user>/<bitbucket repository>/raw/<branch>/[path inside repository]</code></pre>
-
-Now the application shows up in the application switcher. You can also click on the link in the list of own applications to verify if the configuration was successful.
-
-![Configuring a new application](/guides/concepts-guide/ownapplicationdetail.png)
-
-The above procedure helps you to publish your M2M application much faster to your end users. If you are satisfied with your application, publishing is just a matter of releasing your code in version control -- deployment is handled automatically.

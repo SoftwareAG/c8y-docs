@@ -186,7 +186,7 @@ can have the same context path as subscribed application to override them.
 
 When deploying plugins​, the plugins are deployed into a specific application. For example, a plugin might add a specific widget to the Cockpit dashboard.
 
-Plugin can only be added to own applications, because the application itself is modified when adding the plugin. When adding a plugin to a subscribed application (e.g. an application owned by management tenant), then the application is first copied into an own application. Afterwards the plugin is added. This process is supported by the Administration Application wizard.
+Plugin can only be added to own applications, because the application itself is modified when adding the plugin. When adding a plugin to a subscribed application ,the application is first copied into an own application. Afterwards the plugin is added. This process is supported by the Administration Application wizard.
 
 When an application has been created it will be available in the application switcher.
 
@@ -195,6 +195,42 @@ For more info on the different types of applications see [here](/guides/concepts
 > Note that the "Open" button of the application is revealed when you hover over the application's name.
 
 ![Own Applications](/guides/users-guide/ownapplications.png) 
+
+## <a name="hosting"></a>Hosting
+
+To host your own HTML5 and JavaScript web applications through Cumulocity, visit "Own applications" in the Cumulocity administration application and click "Add new".
+
+![List of own applications](/guides/concepts-guide/ownapplications.png)
+
+There are three types of applications that can be configured:
+
+-   Type "Hosted": "Zip file applications" are a type of hosted applications. "Hosted applications" are HTML5 applications hosted through Cumulocity servers. These applications are packaged as ZIP archives having an "index.html" file in the root folder of the archive. 
+-   Type "Repository": HTTP(S) proxy applications are a type of repository application. "Repository applications" are HTML5 applications hosted through an external repository. Such a repository can be, for example, a version control system such as Bitbucket or Github. 
+-   Type "External": The applications are completely external and are just shown in the application switcher.
+
+Assume that you are developing a web application using Bitbucket as code repository. In this case, exposing the application through Cumulocity can be done as follows:
+
+- Click on "Add application".
+- Click on "HTTP(S) proxy".
+- Enter the name of the application, as shown in the application switcher.
+- Enter an application key. The application key is used to identify requests from this application and to make it available for subscription.
+- Enter the application path. This path will be part of the URL to invoke the application. For example, if you use "hello" as application path, the URL of the application will be "/apps/hello".
+- Enter the server URL where your application is hosted. At this URL, there needs to be an index.html file that provides the entry point to your application.
+- Enter a username to access your repository (optional).
+- Enter a password to access your repository (optional).
+- Click "Save".
+
+> Note that, username and password are transmitted using HTTP Basic Authentication.
+
+![https proxy app](/guides/users-guide/httpsproxy.png)
+
+<pre><code>https://bitbucket.org/<bitbucket user>/<bitbucket repository>/raw/<branch>/[path inside repository]</code></pre>
+
+Now the application shows up in the application switcher. You can also click on the link in the list of own applications to verify if the configuration was successful.
+
+![Configuring a new application](/guides/users-guide/ownapplicationdetail.png)
+
+The above procedure helps you to publish your M2M application much faster to your end users. If you are satisfied with your application, publishing is just a matter of releasing your code in version control -- deployment is handled automatically.
 
 ### Working with external applications
 
@@ -233,28 +269,6 @@ To add a smartapp:
 To edit an application, simply click on its name. Depending on the type of the application (e.g. Hosted, External), different fields can be modified. 
 
 > Note that "ID", "Application key" and "Path" cannot be changed once configured.
-
-### Subscribing to plugins
-
-To configure the functionality provided through a smartapps, select the "Plugins" tab. To subscribe to "Plugins":
-
-- Select application by clicking on its name.
-- Click on "Plugins".
-- Locate the desired plugin by scrolling through the list of available plugins. You can reduce the list by selecting a plugin category from the drop-down menu, or by starting to type the plugin's name. Clicking on the plugin name unfolds a description of the plugin.
-- Hover over the desired plugin and click the "Subscribe" button.
-- Click on the "Save changes" button
-
-> A subscribed application can be frozen, i.e. you can stay with a certain version of an application. To do that, clone the subscribed application.
-
-![plugins](/guides/users-guide/plugins.png)
-
-After subscribing to plugins, they will be displayed under the "Subscribed plugins" list. To unsubscribe a plugin:
-
-- Hover over the subscribed plugin.
-- Click "Unsubscribe".
-- Click "Save changes".
- 
-![unsubscribe](/guides/users-guide/unsubscribe.png)
 
 ### Uploading archives
 

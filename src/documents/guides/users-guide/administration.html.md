@@ -198,7 +198,7 @@ Tenant managed object can be found by type "c8y_Tenant" or name equals to tenant
 
 ### <a name="tenant_management_object"></a>Tenant management objects
 
-Tenant management objects are devices in tenant "management" representing existing tenants. Once new tenant is created, new tenant management object is also created in tenant "management" with type "c8y_Tenant" and name equals to tenant id. This object contains also fragment "origin" with "externalReference" and other custom properties of associated tenant.
+Tenant management objects are devices in tenant "management" representing existing tenants. Once new tenant is created, new tenant management object is also created in tenant "management" with type "c8y_Tenant" and name equals to tenant id. This object contains also fragment "customProperties" with "externalReference" and other custom properties of associated tenant.
 
 Warning: if tenant management object is accidentally deleted, it may be recreated by updating any property of associated tenant, however tenant-specific permissions related to the tenant will be lost.
 

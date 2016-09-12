@@ -174,10 +174,7 @@ To assign applications to particular users and user groups, visit the "Applicati
 
 ## <a name="applications"></a>Managing applications
 
-Besides the readily available applications, you can also provide own applications in your account by visiting the "Own applications" menu. These applications can be "Smartapps" or generic HTML5 applications:
-
-- HTML5 applications:​ These are applications that are based on HTML, JavaScript and CSS. Cumulocity allows you to use the HTML5 library of your choice, like jQuery, ExtJS, AngularJS, Dojo or others. If you prefer to use AngularJS, Cumulocity provides you with example and source code as part of the “Smart Apps Toolkit”.
-- "Smartapps" applications: These are HTML5 applications that can be extended by adding plugins. The power user can add and remove plugins in the Administration Application.
+Besides the readily available applications, you can also provide own applications in your account by visiting the "Own applications" menu. These applications can be "Smartapps" or generic HTML5 applications.
 
 An application has a context path.​This is part of the URL that is used to access the
 application. For example, the context path of device management is “devicemanagement”.

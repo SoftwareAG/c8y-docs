@@ -174,64 +174,56 @@ To assign applications to particular users and user groups, visit the "Applicati
 
 ## <a name="applications"></a>Managing applications
 
-Besides the readily available applications, you can also provide own applications in your account by visiting the "Own applications" menu. These applications can be "Smartapps" or generic HTML5 applications.
+Besides the readily available applications, you can also provide own applications in your account by visiting the "Own applications" menu. These applications can be "Smartapps" or generic HTML5 applications. “Smartapps” applications are HTML5 applications that can be extended by adding plugins. When deploying plugins, the plugins are deployed into a specific application. For example, a plugin might add a specific widget to the Cockpit dashboard.
 
-An application has a context path.​This is part of the URL that is used to access the
-application. For example, the context path of device management is “devicemanagement”.
-This application can then be accessed under “/apps/devicemanagement”. Own applications
-can have the same context path as subscribed application to override them.
+Plugin can only be added to own applications, because the application itself is modified when adding the plugin. When adding a plugin to subscribed applications, then the application is first copied into an own application. Afterwards the plugin is added. This process is supported by the Administration Application wizard.
 
-When deploying plugins​, the plugins are deployed into a specific application. For example, a plugin might add a specific widget to the Cockpit dashboard.
-
-Plugin can only be added to own applications, because the application itself is modified when adding the plugin. When adding a plugin to a subscribed application ,the application is first copied into an own application. Afterwards the plugin is added. This process is supported by the Administration Application wizard.
-
-When an application has been created it will be available in the application switcher.
-
-For more info on the different types of applications see [here](/guides/concepts/applications#hosting).
+When an application has been created it will be available in the application switcher. 
 
 > Note that the "Open" button of the application is revealed when you hover over the application's name.
 
-![Own Applications](/guides/users-guide/ownapplications.png) 
+![List of own applications](/guides/users-guide/ownapplications.png)
 
 ## <a name="hosting"></a>Hosting
 
-To host your own HTML5 and JavaScript web applications through Cumulocity, visit "Own applications" in the Cumulocity administration application and click "Add new".
-
-![List of own applications](/guides/concepts-guide/ownapplications.png)
-
-There are three types of applications that can be configured:
-
--   Type "Hosted": "Zip file applications" are a type of hosted applications. "Hosted applications" are HTML5 applications hosted through Cumulocity servers. These applications are packaged as ZIP archives having an "index.html" file in the root folder of the archive. 
--   Type "Repository": HTTP(S) proxy applications are a type of repository application. "Repository applications" are HTML5 applications hosted through an external repository. Such a repository can be, for example, a version control system such as Bitbucket or Github. 
--   Type "External": The applications are completely external and are just shown in the application switcher.
-
-Assume that you are developing a web application using Bitbucket as code repository. In this case, exposing the application through Cumulocity can be done as follows:
-
-- Click on "Add application".
-- Click on "HTTP(S) proxy".
-- Enter the name of the application, as shown in the application switcher.
-- Enter an application key. The application key is used to identify requests from this application and to make it available for subscription.
-- Enter the application path. This path will be part of the URL to invoke the application. For example, if you use "hello" as application path, the URL of the application will be "/apps/hello".
-- Enter the server URL where your application is hosted. At this URL, there needs to be an index.html file that provides the entry point to your application.
-- Enter a username to access your repository (optional).
-- Enter a password to access your repository (optional).
-- Click "Save".
-
-> Note that, username and password are transmitted using HTTP Basic Authentication.
+To host your own HTML5 and JavaScript web applications through Cumulocity, visit "Own applications" in the Cumulocity administration application and click "Add application".
 
 ![https proxy app](/guides/users-guide/httpsproxy.png)
 
-<pre><code>https://bitbucket.org/<bitbucket user>/<bitbucket repository>/raw/<branch>/[path inside repository]</code></pre>
+There are three types of applications that can be configured:
 
-Now the application shows up in the application switcher. You can also click on the link in the list of own applications to verify if the configuration was successful.
+* Type "Hosted": "Zip file applications" are a type of hosted applications. "Hosted applications" are
+HTML5 applications hosted through Cumulocity servers. These applications are packaged as ZIP archives
+having an "index.html" file in the root folder of the archive.
+* Type "Repository": HTTP(S) proxy applications are a type of repository application. "Repository
+applications" are HTML5 applications hosted through an external repository. Such a repository can be,
+for example, a version control system such as Bitbucket or Github.
+* Type "External": The applications are completely external and are just shown in the application
+switcher.
 
-![Configuring a new application](/guides/users-guide/ownapplicationdetail.png)
+Assume that you are developing a web application using Bitbucket as code repository. In this case,
+exposing the application through Cumulocity can be done as follows:
 
-The above procedure helps you to publish your M2M application much faster to your end users. If you are satisfied with your application, publishing is just a matter of releasing your code in version control -- deployment is handled automatically.
+* Click on "Add application".
+* Click on "HTTP(S) proxy".
+* Enter the name of the application, as shown in the application switcher.
+* Enter an application key. The application key is used to identify requests from this application and to
+make it available for subscription.
+* Enter the application path. This path will be part of the URL to invoke the application. For example, if
+you use "hello" as application path, the URL of the application will be "/apps/hello".
+* Enter the server URL where your application is hosted. At this URL, there needs to be an index.html file
+that provides the entry point to your application.
+* Enter a username to access your repository (optional).
+* Enter a password to access your repository (optional).
+* Click "Save".
+
+> Note that, username and password are transmitted using HTTP Basic Authentication.
 
 ### Working with external applications
 
-"External applications" are links to applications running elsewhere. Enter name of the application and application key, then provide the URL of that application and click "Save" to make the link available in the application switcher.
+"External applications" are links to applications running elsewhere. Enter name of the application and
+application key, then provide the URL of that application and click "Save" to make the link available in
+the application switcher.
 
 ### Cloning applications
 
@@ -266,6 +258,14 @@ To add a smartapp:
 To edit an application, simply click on its name. Depending on the type of the application (e.g. Hosted, External), different fields can be modified. 
 
 > Note that "ID", "Application key" and "Path" cannot be changed once configured.
+
+### Adding and removing plugins
+
+In order to configure and extend the functionality provided through a smartapp, you can add plugins (as ZIP files) to your applications. To add additional plugins, go to “Own applications”, hover over your desired applications and click on “Add Plugin”. You can then drag the plugin into the box or simply browse your computer.
+
+![Plugins](/guides/users-guide/plugins.png)
+
+To remove a plugin, click on the cogwheel next to the desired plugin and click remove.
 
 ### Uploading archives
 

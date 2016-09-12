@@ -20,28 +20,30 @@ Applications are registered in Cumulocity either as "own applications" or "Subsc
 
 "Own applications" are only available to users of a particular tenant and are registered by the tenant's administrator. Own applications are used, for example, during application development when you do not yet want to make a particular application version available for a wide audience. They are also used for functionality that is proprietary for an enterprise, for example, interactions with in-house IT systems. The applications can be either "HTML5 applications" or "Smartapps"
 
-- HTML5 applications:​ These are applications that are based on HTML, JavaScript and CSS. Cumulocity allows you to use the HTML5 library of your choice, like jQuery, ExtJS, AngularJS, Dojo or others. If you prefer to use AngularJS, Cumulocity provides you with example and source code as part of the “Smart Apps Toolkit”.
+- HTML5 applications: These are applications that are based on HTML, JavaScript and CSS. Cumulocity allows you to use the HTML5 library of your choice, like jQuery, ExtJS, AngularJS, Dojo or others. If you prefer to use AngularJS, Cumulocity provides you with example and source code as part of the “Smart Apps Toolkit”.
 - "Smartapps" applications: These are HTML5 applications that can be extended by adding plugins. The power user can add and remove plugins in the Administration Application.
 
-"Subscribed applications" are applications owned by the tenant "Management". Subscribing a tenant to a market application makes the application available to the tenant. To certify an application as market application, please [contact us](mailto:info@cumulocity.com).
+"Subscribed applications" are applications owned by the tenant "Management". Subscribing a tenant to a market application makes the application available to the tenant. To certify an application as market application, please [contact us](mailto:info@cumulocity.com). 
 
-Applications are identified by a so-called *application key*, which is included into requests that an application makes. The application key enables Cumulocity to associate a request with a particular application and to distinguish the request from other requests coming from devices.
+Applications are identified by a so-called *application key*, which is included into requests that an application makes. The application key enables Cumulocity to associate a request with a particular application and to distinguish the request from other requests coming from devices. Applications also have a context path. This is part of the URL that is used to access the application. For example, the context path of device management is “devicemanagement”. This application can then be accessed under “/apps/devicemanagement”. Own applications can have the same context path as subscribed application to override them.
 
-An application can be any combination of:
-
-* A complete, standalone user interface application, regardless if based on the Cumulocity UI framework (see below) or any other web components of your choice.
+ An application can be any combination of:
+* A complete, standalone user interface application, regardless if based on the Cumulocity UI framework
+(see below) or any other web components of your choice.
 * A set of user interface plugins.
 * A set of statements in Cumulocity Event Language.
 
-User interface applications appear in the application switcher widget on the top right of Cumulocity, so that users can navigate between the applications. They can be hosted on an external web site, in which case the application switcher just directs the user to that web site. They can also be hosted through Cumulocity, in which case the application will be made available through a URL <tenant>.cumulocity.com/apps/<application>.
+User interface applications appear in the application switcher widget on the top right of Cumulocity, so
+that users can navigate between the applications. They can be hosted on an external web site, in which
+case the application switcher just directs the user to that web site. They can also be hosted through
+Cumulocity, in which case the application will be made available through a URL
+<tenant>.cumulocity.com/apps/<application>.
 
 ![App switcher](/guides/concepts-guide/appswitcher.png)
 
-## Cumulocity applications
-
 The Cumulocity user interface itself is built around a framework based on AngularJS and Bootstrap, the currently most modern HTML5 web application frameworks. It is designed in a modular fashion around a set of plugins that can be dynamically enabled and disabled even by end users. Users can create their own configurations of the Cumulocity user interface with just functionality they need for their particular purpose. For this purpose, the administration application contains a plugin editor -- which is itself a plugin.
 
-![Plugin editor](/guides/concepts-guide/plugineditor.png)
+![Plugin editor](/guides/users-guide/plugins.png)
 
 ## Plugins
 

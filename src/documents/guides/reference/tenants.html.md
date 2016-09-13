@@ -183,7 +183,7 @@ Example Response:
 	}
 
 Note that creating a tenant with adminName, adminPass and adminEmail, creates an admin user with these settings.
-
+For the tenant id SQL keywords (e.g., select, cross, where) are not allowed. 
 
 ## Tenant
 

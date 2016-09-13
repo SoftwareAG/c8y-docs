@@ -176,7 +176,7 @@ To assign applications to particular users and user groups, visit the "Applicati
 
 Besides the readily available applications, you can also provide own applications in your account by visiting the "Own applications" menu. These applications can be "Smartapps" or generic HTML5 applications. “Smartapps” applications are HTML5 applications that can be extended by adding plugins. When deploying plugins, the plugins are deployed into a specific application. For example, a plugin might add a specific widget to the Cockpit dashboard.
 
-Plugin can only be added to own applications, because the application itself is modified when adding the plugin. When adding a plugin to subscribed applications, then the application is first copied into an own application. Afterwards the plugin is added. This process is supported by the Administration Application wizard.
+Plugin can only be added to own applications, because the application itself is modified when adding the plugin. When adding a plugin to subscribed applications, the application is first copied into an own application. Afterwards the plugin is added. This process is supported by the Administration Application wizard.
 
 When an application has been created it will be available in the application switcher. 
 
@@ -184,25 +184,9 @@ When an application has been created it will be available in the application swi
 
 ![List of own applications](/guides/users-guide/ownapplications.png)
 
-## <a name="hosting"></a>Hosting
+### Creating an application
 
-To host your own HTML5 and JavaScript web applications through Cumulocity, visit "Own applications" in the Cumulocity administration application and click "Add application".
-
-![https proxy app](/guides/users-guide/httpsproxy.png)
-
-There are three types of applications that can be configured:
-
-* Type "Hosted": "Zip file applications" are a type of hosted applications. "Hosted applications" are
-HTML5 applications hosted through Cumulocity servers. These applications are packaged as ZIP archives
-having an "index.html" file in the root folder of the archive.
-* Type "Repository": HTTP(S) proxy applications are a type of repository application. "Repository
-applications" are HTML5 applications hosted through an external repository. Such a repository can be,
-for example, a version control system such as Bitbucket or Github.
-* Type "External": The applications are completely external and are just shown in the application
-switcher.
-
-Assume that you are developing a web application using Bitbucket as code repository. In this case,
-exposing the application through Cumulocity can be done as follows:
+Assume that you are developing a web application using Bitbucket as code repository. In this case, exposing the application through Cumulocity can be done as follows:
 
 * Click on "Add application".
 * Click on "HTTP(S) proxy".
@@ -217,13 +201,19 @@ that provides the entry point to your application.
 * Enter a password to access your repository (optional).
 * Click "Save".
 
+![https proxy app](/guides/users-guide/httpsproxy.png)
+
 > Note that, username and password are transmitted using HTTP Basic Authentication.
+
+Another way to add an application is if you upload a "ZIP file" application. In order to do that:
+
+- Click on "Add application".
+- Click on "Upload ZIP file". 
+- Either drop the file into the box or simply browse your computer.
 
 ### Working with external applications
 
-"External applications" are links to applications running elsewhere. Enter name of the application and
-application key, then provide the URL of that application and click "Save" to make the link available in
-the application switcher.
+"External applications" are links to applications running elsewhere. Enter name of the application and application key, then provide the URL of that application and click "Save" to make the link available in the application switcher.
 
 ### Cloning applications
 
@@ -253,19 +243,43 @@ To add a smartapp:
 
 ![Legacy smartapps](/guides/users-guide/smartapps.png)
 
-### Editing applications
-
-To edit an application, simply click on its name. Depending on the type of the application (e.g. Hosted, External), different fields can be modified. 
-
-> Note that "ID", "Application key" and "Path" cannot be changed once configured.
-
 ### Adding and removing plugins
 
 In order to configure and extend the functionality provided through a smartapp, you can add plugins (as ZIP files) to your applications. To add additional plugins, go to “Own applications”, hover over your desired applications and click on “Add Plugin”. You can then drag the plugin into the box or simply browse your computer.
 
 ![Plugins](/guides/users-guide/plugins.png)
 
-To remove a plugin, click on the cogwheel next to the desired plugin and click remove.
+To remove a plugin, click on the cogwheel next to the desired plugin and click remove. The following tables list the navigator items, menu items and their respective plugins.
+
+
+|Navigator Item|Plugin|
+|:-------------|:-----|
+|Welcome|Welcome screen|
+|Home|Cockpit Home|
+|Smart Rules|Smart Rules UI|
+|Groups|Groups Hierarchy|
+|Data Explorer|Data Point Explorer UI|
+|Data Point Library|Data Point Explorer UI|
+|Reporting|Reporting|
+|Reports|Dashboard (Note: There are two plugins with this name. Select the one with the description: "Reports are stand alone dashboards without a context")|
+|Alarms|Alarm Management|
+
+|Menu Item|Plugin|
+|:--------|:-----|
+|Info|Not possible to disable|
+|Subassets|Not possible to disable|
+|Permissions|Device Permission Management Plugin|
+|Data Explorer|Data Point Explorer UI|
+
+> Please note the "UI" in the end of the plugin names. 
+
+### Restoring to an older application version
+
+Users can restore old versions of an application.
+If you “set active” a specific version of the app, then this will be the version used by users.
+If you “set active” the subscribed version of the app then it will revert to the originally used application (not to the current version of the subscribed application).
+
+>Note that the “Archive” tab is not available for subscribed applications, as only the owner of the application can perform this action.
 
 ### Uploading archives
 
@@ -280,10 +294,29 @@ You can upload different versions of a hosted application at the same time and s
 
 Once uploaded, archives can be downloaded, activated or removed if necessary. The active archive (indicated by a cloud icon) is the version of the application that is currently being served to the users of your account. This version cannot be deleted.
 
+### Hosting
+
+To host your own HTML5 and JavaScript web applications through Cumulocity, visit "Own applications" in the Cumulocity administration application and click "Add application".
+
+There are three types of applications that can be configured:
+
+* Type "Hosted": "Zip file applications" are a type of hosted applications. "Hosted applications" are HTML5 applications hosted through Cumulocity servers. These applications are packaged as ZIP archives having an "index.html" file in the root folder of the archive.
+* Type "Repository": HTTP(S) proxy applications are a type of repository application. "Repository applications" are HTML5 applications hosted through an external repository. Such a repository can be, for example, a version control system such as Bitbucket or Github.
+* Type "External": The applications are completely external and are just shown in the application
+switcher.
+
+### Editing applications
+
+To edit an application, simply click on its name. Depending on the type of the application (e.g. Hosted, External), different fields can be modified. 
+
+> Note that "ID", "Application key" and "Path" cannot be changed once configured.
+
 ### Removing applications
 
 If you remove an application that overrides a subscribed application, you make the currently available subscribed application available to all users. Additionally the users will then also benefit from future upgrades of the subscribed application.
 It is not possible to remove subscribed apps. This is only possible for the owner of the subscribed application. 
+
+> Note that in order to override a "Subscribed application" the "Own Application" must have the same context-path as the "Subscribed application".
 
 To remove an application, simply hover over the application name and click on the cogwheel, then press the "Remove" button. A confirmation pop-up window will appear. Click "OK" and the application will be deleted.
 

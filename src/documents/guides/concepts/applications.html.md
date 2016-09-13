@@ -14,7 +14,7 @@ Cumulocity was designed to run arbitrary vertical IoT applications in addition t
 
 This section introduces the basic concepts around applications in Cumulocity.
 
-## Applications and subscriptions
+## Applications and subscriptions 
 
 Applications are registered in Cumulocity either as "own applications" or "Subscribed applications". 
 
@@ -61,6 +61,19 @@ This is illustrated below:
 ![Extension points for plugins](/guides/concepts-guide/extensionpoints.png)
 
 For more information on developing plugins, please visit the [Plugin Developer's Guide](/guides/web/introduction).
+
+## Compatibility
+
+Backwards compatibility for all REST APIs is guaranteed, while backward compatibilities for JavaScript APIs are not. We try to keep the JavaScript incompatibilities to a minimum, there are cases where they will happen. Therefore new application versions might cause older versions of the plugins to fail.
+
+However, this is taken care by automatically by the previous mentioned mechanism to copy subscribed applications. For example, if a user adds a plugin to the builtin application “Cockpit Version 2.0”, then the application is copied. That means that the application is “freezed”. Updates of the Cockpit application will not be automatically available in the copied version. This ensures that the added plugin will work successfully. And because of the compatibility of the REST API the copied version is ensured to work also for the new backend version.
+
+## Migration
+
+The old SmartApps functionality is still available, both in the REST API and in the
+Administration App. However, the Administration App has been changed so that the new SmartApps are by default and using the old SmartApps are available only when loading additional options. The old SmartApps are not updated anymore. This ensures working of existing Plugins. If you want to use their Plugins with updated version of Cockpit or Device management, then you need to port their Plugins to the new SmartApps mechanism.
+
+
 
 ## Modules
 

@@ -136,6 +136,7 @@ When you edit a group, a table with "roles" is listed below the group name. Thes
 * CEP management: View or edit Cumulocity Event Language rules.
 * Retention rules: View or edit retention rules.
 * Bulk operations: View or create bulk operations.
+* Support operations: Allows user to log in to other tenants as support user.
 
 For the various types, the following permissions are available:
 
@@ -153,7 +154,55 @@ To assign permissions click on the relevant checkbox. If you wish to select or c
 
 ![All roles](/guides/users-guide/allroles.png)
 
-### Assigning device-specific permissions
+#### Using Support Permission
+
+##### Overview
+
+Support users are users in management tenant that have special permissions to login to normal tenants. 
+To allow login into normal tenants, support user account must have support access rights.
+When support user logs in to tenant, he has the same privileges as the subtenant user. 
+The user from subtenant is specified on login page.  
+
+Support users can login using own password and username in form
+
+> support_user$user
+
+Where "support_user" is name of support user in management tenant and "user" is name of user which context will be used
+
+or
+
+> support_user$
+
+Where "support_user" is name of user in management tenant. In this case support user will use context of one of admin users.
+
+##### Configuration
+
+Support user functionality is enabled by default. 
+If it is disabled by platform operator then any user has "Activate support access" option available in upper right menu.
+After selecting this option, support user has access to tenant for one day.
+
+##### Audit logs
+
+Audit logs for all action performed by support user will have information about actual author. 
+In column "Who?" will be author's name in form "support_user$user".
+
+##### Tenant-specific permissions
+
+It is sometimes required to assign support access rights to specific tenants only. It can be done by [device-specific permissions](#assigning_device_specific_permissions) for the user and [tenant managed object] (tenant_management_object) with scope "SUPPORT", type "*" and permission "*".
+
+Bellow screen shows how to grant access to tenant "myTenant".
+
+<img src="/guides/users-guide/support_permission.png" alt="Application access" style="max-width: 60%">
+
+Tenant managed object can be found by type "c8y_Tenant" or name equals to tenant id.
+
+### <a name="tenant_management_object"></a>Tenant management objects
+
+Tenant management objects are devices in tenant "management" representing existing tenants. Once new tenant is created, new tenant management object is also created in tenant "management" with type "c8y_Tenant" and name equals to tenant id. This object contains also fragment "customProperties" with "externalReference" and other custom properties of associated tenant.
+
+Warning: if tenant management object is accidentally deleted, it may be recreated by updating any property of associated tenant, however tenant-specific permissions related to the tenant will be lost.
+
+### <a name="assigning_device_specific_permissions"></a>Assigning device-specific permissions
 
 To assign more granular permissions on device level or device group level, visit the "User permissions" section while editing users, or "Group permissions" section while editing user groups.
 

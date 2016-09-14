@@ -435,7 +435,7 @@ To create a dashboard, navigate to an object in the asset hierarchy. Afterwards 
 
 * The icon which is rendered next to the name in the menu.
 
-* "Set dashboard as global": Whether the dashboard is visible to everyone (“global”) or just a subset of users.
+* "Set dashboard as global": Whether the dashboard is visible to everyone (“global”) or just a subset of users. This setting makes sense only if other users do not have INVENTORY_READ permission and user permissions are set for concrete devices.
 
 * "Apply dashboard to all devices of type": Whether the dashboard should be visible only for this object or for all devices of the same type.
 

@@ -215,6 +215,20 @@ The configuration snapshot could be used if, for example you have a lot of devic
 
 ![Configuration](/guides/users-guide/configuration.png)
 
+In order to apply a new snapshot first navigate to a device and then click on "Configuration". Scroll down and under "Configuration snapshot" you can select a configuration repository entry to use. When the entry is selected click on "Put new snapshot to device". 
+
+![Configuration Snapshot](/guides/users-guide/configsnap.png)
+
+Note that, new entries can be added in the "Configuration snapshots" list by clicking on "Add configuration snapshot". Then you will be redirected to the "Configuration snapshots repository". To add a new snapshot:
+
+- Enter "Name".
+- Enter "Description.
+- Write the "Device Type" which can be found in the device information tab of the target device.
+- Add the "Configuration snapshot file" by clicking either "Upload" or "Choose file".
+- When ready, click "Save".
+
+![Configuration Snapshot Repository](/guides/users-guide/configsnaprepo.png)
+
 ### <a name="software"></a>Software
 
 This tab allows you to update the firmware of a device and the software installed on a device. To install a new firmware, click on "Install firmware", then select a firmware image from the [firmware repository](#software-repo) and click the "Install" button.

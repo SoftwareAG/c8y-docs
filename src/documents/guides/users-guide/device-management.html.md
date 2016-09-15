@@ -127,6 +127,7 @@ Device details are divided over a number of tabs. The standard tabs that may be 
 * [Measurements](#measurements)
 * [Alarms](#alarms)
 * [Control](#control)
+* [Configuration](#config)
 * [Software](#software)
 * [Events](#events)
 * [Location](#location)
@@ -205,6 +206,14 @@ The "Alarms" tab displayed the alarms of a device. Please see the Section "[Work
 This tab lists the operations that are being sent to a device or have been sent to a device. Please see the Section "[Working with operations](#operation-monitoring)" for more information on operations.
 
 ![Operations](/guides/users-guide/operations.png)
+
+### <a name="config"></a>Configuration
+
+This tab allows you to retrieve, modify or save user configuration data. You can also make changes to the configuration and save them back to the device. Configuration snapshot can be requested from the device and later it can be applied to other devices. As of Cumulocity version 7.26 there is also RDB snapshot support. This is mainly for troubleshooting purposes.
+
+The configuration snapshot could be used if, for example you have a lot of devices and you would like them to have the same configuration. Then, you can configure one device, download the snapshot and apply it to the other devices.  
+
+![Configuration](/guides/users-guide/configuration.png)
 
 ### <a name="software"></a>Software
 
@@ -289,13 +298,6 @@ Finally, Cumulocity can associate devices and assets with multiple external iden
 
 This is, for example, useful when you have broken hardware and need to replace the hardware without loosing the data that was recorded so far. Just connect the new hardware to your account and modify the identity entry of the old hardware to contain the identity of the new hardware.
 
-## <a name="config"></a>Configuration
-
-This tab allows you to retrieve, modify or save user configuration data. You can also make changes to the configuration and save them back to the device. Configuration snapshot can be requested from the device and later it can be applied to other devices. As of Cumulocity version 7.26 there is also RDB snapshot support. This is mainly for troubleshooting purposes.
-
-The configuration snapshot could be used if, for example you have a lot of devices and you would like them to have the same configuration. Then, you can configure one device, download the snapshot and apply it to the other devices.  
-
-![Configuration](/guides/users-guide/configuration.png)
 
 ## <a name="connection-monitoring"></a>Connection monitoring
 

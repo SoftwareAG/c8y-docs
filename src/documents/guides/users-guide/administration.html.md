@@ -178,6 +178,8 @@ Besides the readily available applications, you can also provide own application
 
 Plugins can only be added to own applications, because the application itself is modified when adding the plugin. When adding a plugin to subscribed applications, the application is first copied into an own application. Afterwards the plugin is added. This process is supported by the Administration Application wizard.
 
+> Please note that in the new "Smartapps" the plugin is "inserted" into the application. Either into the tenant-specific application or into the "management-tenant" "Global" application.
+
 When an application has been created it will be available in the application switcher. 
 
 > Note that the "Open" button of the application is revealed when you hover over the application's name.
@@ -240,6 +242,8 @@ To add a smartapp:
 - Enter the name of the application. The name will be shown as title on the top left of the application. It will also be shown in the application switcher.
 - Enter the application path. This path will be part of the URL to invoke the application. For example, if you use "hello" as application path, the URL of the application will be "/apps/hello".
 - Click the "Create" button.
+
+> Please note that these are the old "Smartapps" in which the plugins that you wish to add to your application must be selected from a list. 
 
 ![Legacy smartapps](/guides/users-guide/smartapps.png)
 

@@ -192,7 +192,7 @@ It is sometimes required to assign support access rights to specific tenants onl
 
 Bellow screen shows how to grant access to tenant "myTenant".
 
-<img src="/guides/users-guide/support_permission.png" alt="Support permission" style="max-width: 60%">
+<img src="/guides/users-guide/support_permission.png" alt="Support permission">
 
 Tenant managed object can be found by type "c8y_Tenant" or name equals to tenant id.
 

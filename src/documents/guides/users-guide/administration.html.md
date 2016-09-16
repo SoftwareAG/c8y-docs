@@ -176,7 +176,7 @@ To assign applications to particular users and user groups, visit the "Applicati
 
 Besides the readily available applications, you can also provide own applications in your account by visiting the "Own applications" menu. These applications can be "Smartapps" or generic HTML5 applications. “Smartapps” applications are HTML5 applications that can be extended by adding plugins. When deploying plugins, the plugins are deployed into a specific application. For example, a plugin might add a specific widget to the Cockpit dashboard.
 
-Plugin can only be added to own applications, because the application itself is modified when adding the plugin. When adding a plugin to subscribed applications, the application is first copied into an own application. Afterwards the plugin is added. This process is supported by the Administration Application wizard.
+Plugins can only be added to own applications, because the application itself is modified when adding the plugin. When adding a plugin to subscribed applications, the application is first copied into an own application. Afterwards the plugin is added. This process is supported by the Administration Application wizard.
 
 When an application has been created it will be available in the application switcher. 
 
@@ -186,7 +186,7 @@ When an application has been created it will be available in the application swi
 
 ### Creating an application
 
-Assume that you are developing a web application using Bitbucket as code repository. In this case, exposing the application through Cumulocity can be done as follows:
+Assume that you are developing a web application, using Bitbucket as code repository. In this case, exposing the application through Cumulocity can be done as follows:
 
 * Click on "Add application".
 * Click on "HTTP(S) proxy".

@@ -188,7 +188,7 @@ In column "Who?" will be author's name in form "support_user$user".
 
 ##### Tenant-specific permissions
 
-It is sometimes required to assign support access rights to specific tenants only. It can be done by [device-specific permissions](#assigning_device_specific_permissions) for the user and [tenant managed object] (tenant_management_object) with scope "SUPPORT", type "*" and permission "*".
+It is sometimes required to assign support access rights to specific tenants only. It can be done by [device-specific permissions](#assigning_device_specific_permissions) for the user and [tenant managed object] (tenant_management_object) with scope "SUPPORT", type "&#42;" and permission "&#42;".
 
 Bellow screen shows how to grant access to tenant "myTenant".
 

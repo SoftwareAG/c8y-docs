@@ -57,7 +57,7 @@ The ability to execute certain functionality in the system depends on two concep
 Objects in the inventory also have an owner associated with them. Owners can always, regardless of their other permissions,
 
 -   Read, Update and delete the inventory objects they own.
--   Create, read, update and delete data associated with the objects they own.
+-   Create, update and delete data associated with the objects they own.
 
 For example, if you are the owner of a smart meter in the inventory, you can store meter readings for that smart meter even if you do not have any other measurement permissions.
 

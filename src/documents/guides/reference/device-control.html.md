@@ -453,7 +453,9 @@ When you create a Bulk Operation, you can run it in two modes:
 - when groupId is passed, it works standard way, i.e. takes devices from group and schedules operations on them
 - when failedBulkOperationId is passed, it takes the already processed bulk operation by that id, and schedules operation on devices for which previous operations failed
 
-It is forbidden to pass both: groupId and failedBulkOperationId.
+Hints and tips:
+- it is forbidden to pass both: groupId and failedBulkOperationId,
+- bulk operation works with device group of types: static and 'dynamic'.
 
 Bulk Operation API requires different roles that standard device control API. These new roles are: BULK_OPERATION_READ and BULK_OPERATION_ADMIN.
 

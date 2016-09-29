@@ -225,64 +225,119 @@ To assign applications to particular users and user groups, visit the "Applicati
 
 ## <a name="applications"></a>Managing applications
 
-Besides the readily available marketplace applications, you can also provide own applications in your account by visiting the "Own applications" menu. These applications can be "Smartapps" or generic HTML5 applications.
+Besides the readily available applications, you can also provide own applications in your account by visiting the "Own applications" menu. These applications can be "Smartapps" or generic HTML5 applications. “Smartapps” applications are HTML5 applications that can be extended by adding plugins. When deploying plugins, the plugins are deployed into a specific application. For example, a plugin might add a specific widget to the Cockpit dashboard.
 
-Smartapps are modular applications built on top of the Cumulocity user interface framework, just like the standard Device Management, Cockpit and Administration applications. Smartapps are assembled from a set of so-called "plugins". Plugins provide new functionality in the user interface. Even without programming, you can create variations of the pre-provided applications by simply assembling their plugins in different ways and, for example, hiding unneeded plugins. For more information, see the [Concepts guide](/guides/concepts/applications).
+Plugins can only be added to own applications, because the application itself is modified when adding the plugin. When adding a plugin to subscribed applications, the application must be cloned first into an own application. Afterwards the plugin can be added. This process is supported by the Administration Application wizard.
 
-When an application has been created, you can clone, open and delete it by hovering your mouse over the application. The "Clone" function duplicates the application, while the "Open" button simply opens the application. After the "Clone" button is pressed a pop-up window will appear in which a unique application name and application path need to be entered.
+> Please note that in the new "Smartapps" the plugin is "inserted" into the application. This has changed from the old Smartapps which could reference plugins stored in other applications.
 
-![Own Applications](/guides/users-guide/ownapplications.png)
+When an application has been created it will be available in the application switcher. 
+
+> Note that the "Open" button of the application is revealed when you hover over the application's name.
+
+![List of own applications](/guides/users-guide/ownapplications.png)
+
+### Creating an application
+
+To add an application, you can upload a "ZIP file" application. In order to do that:
+
+- Click on "Add application".
+- Click on "Upload ZIP file". 
+- Either drop the file into the box or simply browse your computer.
+
+### Working with bitbucked hosted application
+
+Assume that you are developing a web application, using Bitbucket as code repository. In this case, exposing the application through Cumulocity can be done as follows:
+
+* Click on "Add application".
+* Click on "HTTP(S) proxy".
+* Enter the name of the application, as shown in the application switcher.
+* Enter an application key. The application key is used to identify requests from this application and to
+make it available for subscription.
+* Enter the application path. This path will b	e part of the URL to invoke the application. For example, if
+you use "hello" as application path, the URL of the application will be "/apps/hello".
+* Enter the server URL where your application is hosted. At this URL, there needs to be an index.html file
+that provides the entry point to your application.
+* Enter a username to access your repository (optional).
+* Enter a password to access your repository (optional).
+* Click "Save".
+
+![https proxy app](/guides/users-guide/httpsproxy.png)
+
+> Note that, username and password are transmitted using HTTP Basic Authentication.
+
+> We do not recommend to use bitbucket hosted application anymore, because downtime of bitbucket results into downtime of the application.
+
+### Working with external applications
+
+"External applications" are links to applications running elsewhere. Enter name of the application and application key, then provide the URL of that application and click "Save" to make the link available in the application switcher.
+
+### Cloning applications
+
+This option will copy the application. Cloning a subscribed application creates a copy of the application as own application, with a link to the original application.
+
+In order to clone an application:
+
+- Click on "Add application"
+- Click on "Clone existing application"
+- Select the desired application that you wish to clone. Note that also subscribed applications are shown.
+- Enter the name of the application. The name will be shown as title on the top left of the application. It will also be shown in the application switcher.
+- Enter an application key. The application key is used to identify requests from this application and to make it available for subscription, see the [Concepts guide](/guides/concepts/applications).
+- Enter the application path. This path will be part of the URL to invoke the application. For example, if you use "hello" as application path, the URL of the application will be "/apps/hello".
+- Click on the "Clone" button.
 
 ### <a name="creating-smartapp"></a>Adding a smartapp
 
-To add smartapp:
+> Note that this functionality is depreciated and will be removed in future versions of the product.
 
-- Click on "Create smartapp".
+To add a smartapp:
+
+- Click on "Add application".
+- Click on "Create legacy smartapp".
 - Enter the name of the application. The name will be shown as title on the top left of the application. It will also be shown in the application switcher.
 - Enter the application path. This path will be part of the URL to invoke the application. For example, if you use "hello" as application path, the URL of the application will be "/apps/hello".
 - Click the "Create" button.
 
-<img src="/guides/users-guide/createsmartapp.png" alt="Create Smartapp" style="max-width: 60%">
+> Please note that these are the old "Smartapps" in which the plugins that you wish to add to your application must be selected from a list. 
 
-### Adding an HTML5 application
+![Legacy smartapps](/guides/users-guide/smartapps.png)
 
-To add an HTML5 application:
+### Adding and removing plugins
 
-- Click on "Create application", located to the right of "[Create smartapp](#creating-smartapp)"
-- Enter the name of the application, as shown in the application switcher.
-- Enter an application key. The application key is used to identify requests from this application and to make it available for subscription, see the [Concepts guide](/guides/concepts/applications).
-- Choose the type of the application
-  - [Hosted](#working-with-hosted-applications)
-  - [Repository](#working-with-repository-applications)
-  - [External](#working-with-external-applications)
+In order to configure and extend the functionality provided through a smartapp, you can add plugins (as ZIP files) to your applications. To add additional plugins, go to “Own applications”, hover over your desired applications and click on “Add Plugin”. You can then drag the plugin into the box or simply browse your computer.
 
-![Create app](/guides/users-guide/createapp.png)
+![Plugins](/guides/users-guide/plugins.png)
 
-Depending on the selected type, different further options will appear.
+To remove a plugin, click on the cogwheel next to the desired plugin and click remove. The following tables list the navigator items, menu items and their respective plugins:
 
-### <a name="working-with-hosted-applications"></a>Working with hosted applications
 
-"Hosted applications" are HTML5 applications hosted through Cumulocity servers. These applications are packaged as ZIP archives having an "index.html" file in the root folder of the archive. To complete the configuration:
+|Navigator Item|Plugin|
+|:-------------|:-----|
+|Welcome|Welcome screen|
+|Home|Cockpit Home|
+|Smart Rules|Smart Rules UI|
+|Groups|Groups Hierarchy|
+|Data Explorer|Data Point Explorer UI|
+|Data Point Library|Data Point Explorer UI|
+|Reporting|Reporting|
+|Reports|Dashboard (Note: There are two plugins with this name. Select the one with the description: "Reports are stand alone dashboards without a context")|
+|Alarms|Alarm Management|
 
-- Enter the application path. This path will be part of the URL to invoke the application. For example, if you use "hello" as application path, the URL of the application will be "/apps/hello".
-- Select the archive file that contains the application and upload it.
-- Click "Save".
+|Menu Item|Plugin|
+|:--------|:-----|
+|Info|Not possible to disable|
+|Subassets|Not possible to disable|
+|Permissions|Device Permission Management Plugin|
+|Data Explorer|Data Point Explorer UI|
 
-### <a name="working-with-repository-applications"></a>Working with repository applications
+> Please note the "UI" in the end of the plugin names. 
 
-"Repository applications" are HTML5 applications hosted through an external repository. Such a repository can be, for example, a version control system such as Bitbucket or Github. To complete the configuration:
+### Restoring to an older application version
 
-- Enter the application path. This path will be part of the URL to invoke the application. For example, if you use "hello" as application path, the URL of the application will be "/apps/hello".
-- Enter the server URL where your application is hosted. At this URL, there needs to be an index.html file that provides the entry point to your application.
-- Enter a username to access your repository (optional).
-- Enter a password to access your repository (optional).
-- Click "Save".
+Users can restore old versions of an application.
+If you “set active” a specific version of the app, then this will be the version used by users.
 
-Username and password are transmitted using HTTP Basic Authentication.
-
-### <a name="working-with-external-applications"></a>Working with external applications
-
-"External applications" are simply links to applications running elsewhere. Provide the URL of that application and click "Save" to make the link available in the application switcher.
+>Note that the “Archive” tab is not available for subscribed applications, as only the owner of the application can perform this action.
 
 ### Editing applications
 
@@ -290,29 +345,9 @@ To edit an application, simply click on its name. Depending on the type of the a
 
 > Note that "ID", "Application key" and "Path" cannot be changed once configured.
 
-### Subscribing to plugins
-
-To configure the functionality provided through a smartapps, select the "Plugins" tab. To subscribe to "Plugins":
-
-- Select application by clicking on its name.
-- Click on "Plugins".
-- Locate the desired plugin by scrolling through the list of available plugins. You can reduce the list by selecting a plugin category from the drop-down menu, or by starting to type the plugin's name. Clicking on the plugin name unfolds a description of the plugin.
-- Hover over the desired plugin and click the "Subscribe" button.
-- Click on the "Save changes" button
-
-![plugins](/guides/users-guide/plugins.png)
-
-After subscribing to plugins, they will be displayed under the "Subscribed plugins" list. To unsubscribe a plugin:
-
-- Hover over the subscribed plugin.
-- Click "Unsubscribe".
-- Click "Save changes".
-
-<img src="/guides/users-guide/unsubscribe.png" alt="Unsubscribe plugin" style="max-width: 40%">
-
 ### Uploading archives
 
-You can upload different versions of a hosted application at the same time and switch between these versions. To upload an archive:
+For applications that have been created by uploading ZIP files, multiple ZIP file versions can be stored in Cumulocity. Each version is called an archive. You can upload different versions at the same time and switch between these versions. To upload an archive:
 
 - Select the application by clicking on its name.
 - Click on the "Archives" tab.
@@ -323,11 +358,20 @@ You can upload different versions of a hosted application at the same time and s
 
 Once uploaded, archives can be downloaded, activated or removed if necessary. The active archive (indicated by a cloud icon) is the version of the application that is currently being served to the users of your account. This version cannot be deleted.
 
+### Editing applications
+
+To edit an application, simply click on its name. Depending on the type of the application (e.g. Hosted, External), different fields can be modified. 
+
+> Note that "ID", "Application key" and "Path" cannot be changed once configured.
+
 ### Removing applications
 
-To remove an application, simply hover over the application name and click the "X" button. A confirmation pop-up window will appear. Click "OK" and the application will be deleted.
+If you remove an application that overrides a subscribed application, you make the currently available subscribed application available to all users. Additionally the users will then also benefit from future upgrades of the subscribed application.
+It is not possible to remove subscribed apps. This is only possible for the owner of the subscribed application. 
 
-![Remove application](/guides/users-guide/removeapp.png)
+> Note that in order to override a "Subscribed application" the "Own Application" must have the same context-path as the "Subscribed application".
+
+To remove an application, simply hover over the application name and click on the cogwheel, then press the "Remove" button. A confirmation pop-up window will appear. Click "OK" and the application will be deleted.
 
 ## <a name="simulators"></a>Dealing with simulators
 

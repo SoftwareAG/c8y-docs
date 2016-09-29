@@ -19,7 +19,10 @@ The following data are currently recorded:
 
 To forward SIGFOX data to Cumulocity, you need to add several callbacks to your device type in the [SIGFOX backend](https://backend.sigfox.com). Please note that in SIGFOX a callback is linked to a device type and not a single device.
 All devices with that type connected to your SIGFOX account will trigger the callback.
-You will need to add valid Cumulocity credentials to all configured callbacks. We recommend creating a dedicated user in Cumulocity for that and add it to the devices group.
+
+### Device registration
+
+The SIGFOX integration does not use the normal device registration process. You will need to add valid Cumulocity credentials to all configured callbacks. We recommend creating a dedicated user in Cumulocity for that and add it to the devices group. The SIGFOX agent will automatically create one device per received deviceId by the SIGFOX backend.
 
 ### Data callback
 
@@ -29,7 +32,7 @@ You need to add a new custom callback and change the following parameters:
 * type: DATA BIDIR
 * Url pattern: https://sigfox-agent.cumulocity.com/sigfoxDataCallback
 * Use HTTP Method: POST
-* Headers: Authentication _&lt;your Base64 encoded password&gt;_ (the password needs to be encoded in the format: tenant/username:password)
+* Headers: Authorization _&lt;your Base64 encoded password&gt;_ (the password needs to be encoded in the format: tenant/username:password)
 * Content-Type: application/json
 * Body:
 
@@ -59,7 +62,7 @@ You need to add a new custom callback and change the following parameters:
 * type: SERVICE ACKNOWLEDGE
 * Url pattern: https://sigfox-agent.cumulocity.com/sigfoxServiceAcknowledgeCallback
 * Use HTTP Method: POST
-* Headers: Authentication _&lt;your Base64 encoded password&gt;_ (the password needs to be encoded in the format: tenant/username:password)
+* Headers: Authorization _&lt;your Base64 encoded password&gt;_ (the password needs to be encoded in the format: tenant/username:password)
 * Content-Type: application/json
 * Body:
 
@@ -82,7 +85,7 @@ You need to add a new custom callback and change the following parameters:
 * type: SERVICE STATUS
 * Url pattern: https://sigfox-agent.cumulocity.com/sigfoxServiceStatusCallback
 * Use HTTP Method: POST
-* Headers: Authentication _&lt;your Base64 encoded password&gt;_ (the password needs to be encoded in the format: tenant/username:password)
+* Headers: Authorization _&lt;your Base64 encoded password&gt;_ (the password needs to be encoded in the format: tenant/username:password)
 * Content-Type: application/json
 * Body:
 
@@ -104,7 +107,7 @@ You need to add a new custom callback and change the following parameters:
 * type: ERROR
 * Url pattern: https://sigfox-agent.cumulocity.com/sigfoxErrorCallback
 * Use HTTP Method: POST
-* Headers: Authentication _&lt;your Base64 encoded password&gt;_ (the password needs to be encoded in the format: tenant/username:password)
+* Headers: Authorization _&lt;your Base64 encoded password&gt;_ (the password needs to be encoded in the format: tenant/username:password)
 * Content-Type: application/json
 * Body:
 

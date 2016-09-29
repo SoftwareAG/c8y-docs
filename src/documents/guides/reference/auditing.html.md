@@ -201,6 +201,9 @@ Example response:
 |changes|Set|0..1|An optional collection of objects describing the changes that were carried out.|No|
 |\*|Object|0..n|Additional properties of the audit record.|Optional|
 
+Please note that the source can contain not only ManagedObject with id and self, but in case of "Operation" type - operation id and in case of Alarm type - alarm Id.
+In such cases the self link in source is not correct, but it is kept there to not break the clients that expected to get ManagedObject in source. 
+
 ### GET an audit record
 
 Response body: AuditRecord

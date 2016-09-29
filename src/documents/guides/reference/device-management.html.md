@@ -99,6 +99,10 @@ To enable software installation through the user interface, add "c8y\_Software" 
 
 ![Device configuration](/guides/reference-guide/configuration.png)
 
+#### c8y\_SendConfiguration
+
+To enable reloading configuration through the user interface, add "c8y\_SendConfiguration" to the list of supported operations as described above.
+
 #### c8y\_Mobile
 
 *c8y\_Mobile* holds basic connectivity-related information, such as the equipment identifier of the modem (IMEI) in the device. This identifier is globally unique and often used to identify a mobile device.
@@ -203,7 +207,6 @@ The availability information computed by Cumulocity is stored in fragments: "c8y
 The following messages update the last message timestamp of a device:
 
 -   Create an event, measurement or alarm (for given device as source)
--   Update an operation (with given deviceId)
 -   Update the device itself (with given id) sending empty PUT request or request with id only, ie. {} or {"id":...}
 
 A monitored device has one of following statuses:

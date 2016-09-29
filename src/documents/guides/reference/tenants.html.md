@@ -8,12 +8,12 @@ layout: default
 
 The Tenant interface is available consists of parts:
 
--   The tenant collection resource retrieves tenants, accesible by url */tenant/tenants*
--   The tenant resource represents individual tenant that can be view, accesible by url */tenant/tenants/{tenantId}*
--   The tenant application reference collection resource retrieves applications, accesible by url */tenant/tenants/{tenantId}/applications*
--   The tenant application reference resource represents individual application reference that can be view, accesible by url */tenant/tenants/{tenantId}/applications/{applicationId}*
--   The tenant option collection resource enables creating new option and viewing existing options, accesible by url */tenant/options*
--   The tenant option resource represents individual option that can be view and modified, accesible by url */tenant/options/{optionCategory}/{optionKey}*
+-   The tenant collection resource retrieves tenants, accessible by url */tenant/tenants*
+-   The tenant resource represents individual tenant that can be view, accessible by url */tenant/tenants/{tenantId}*
+-   The tenant application reference collection resource retrieves applications, accessible by url */tenant/tenants/{tenantId}/applications*
+-   The tenant application reference resource represents individual application reference that can be view, accessible by url */tenant/tenants/{tenantId}/applications/{applicationId}*
+-   The tenant option collection resource enables creating new option and viewing existing options, accessible by url */tenant/options*
+-   The tenant option resource represents individual option that can be view and modified, accessible by url */tenant/options/{optionCategory}/{optionKey}*
 -   The tenant usage statistics resources return information on the request load and database usage of tenants.
 
 > Note that for all PUT/POST requests accept header should be provided, otherwise an empty response body will be returned.
@@ -59,6 +59,7 @@ Example Response :
             {
                 "adminName": "admin",
 		"allowCreateTenants": false,
+    "storageLimitPerDevice": 10485760,
                 "applications": {
                     "references": [],
                     "self":"<<ApplicationCollection of This Tenant  URL>>",
@@ -135,7 +136,7 @@ Request body: Tenant
 
 Response body: Tenant
 
-Required role: ROLE\_TENANT\_MANAGEMENT\_ADMIN
+Required role: ROLE\_TENANT\_MANAGEMENT\_ADMIN or ROLE\_TENANT\_MANAGEMENT\_CREATE
 
 Example request:
 				
@@ -181,8 +182,8 @@ Example Response:
 		"customProperties" : {"referenceId":"1234567890"}
 	}
 
-
-
+Note that creating a tenant with adminName, adminPass and adminEmail, creates an admin user with these settings.
+For the tenant id SQL keywords (e.g., select, cross, where) are not allowed. 
 
 ## Tenant
 
@@ -193,9 +194,10 @@ Example Response:
 |self|URI|0..1|Link to this resource.|Public|
 |id|String: max length="32"|1|Tenant id|Public|
 |status|String|1|Status of tenant, possible values [ACTIVE, SUSPENDED].|Private|
-|adminName|String: max length = "50"|1|Administrator user name|Private|
+|adminName|String: max length = "50"|1|Administrator user name. Whitespaces, slashes, +$: characters not allowed|Private|
 |adminEmail|String|1|Administrator Email|Private|
 |allowCreateTenants|boolean|1|Can this tenant create its own tenants.|Private|
+|storageLimitPerDevice|number|1|Storage quota per device the user has.|Private|
 |adminPassword|String|1|Administrator Password|Private|
 |sendPasswordResetEmail|boolean|1|Enable password reset|Private|
 |domain|String: max length = "256"|1|URL of tenants domain.|Public|
@@ -235,6 +237,7 @@ Example Response :
         "company": "sample_company",
         "domain": "sample_domain.com",
 	"allowCreateTenants": false,
+  "storageLimitPerDevice": 10485760,
         "id": "sample_tenant",
         "ownedApplications": {
             "references": [
@@ -270,7 +273,7 @@ Request body: Tenant
 
 Response body: Tenant
   
-Required role: ROLE\_TENANT\_MANAGEMENT\_ADMIN
+Required role: ROLE\_TENANT\_MANAGEMENT\_ADMIN or ROLE\_TENANT\_MANAGEMENT\_UPDATE
 
 Example Request :
      
@@ -298,6 +301,7 @@ Example Response :
         "status": "ACTIVE",
         "self":"<<This Tenant URL>>",
 	"allowCreateTenants": false,
+  "storageLimitPerDevice": 10485760,
 	"parent": "parentTenant",
         "ownedApplications": {
             "references": [
@@ -323,6 +327,8 @@ Example Response :
         },
       "adminName" : "newAdmin"
     }
+
+Note that updating adminPass and adminEmail updates these settings in the admin user of the tenant. Updating adminName has no effect.
     
     
 ### DELETE  a representation of a Tenant.
@@ -613,6 +619,58 @@ Example Response :
         "self": "<<Option access.control.allow.origin URL>>",
         "value": "http://developer.cumulocity.com"
     }
+
+### PUT - Update multiple options in provided category
+
+Request body: Option
+
+Response body: Option
+  
+Required role: ROLE\_OPTION\_MANAGEMENT\_ADMIN
+ Example Request: Update options in provided category.
+
+     
+    PUT /tenant/options/<<category>>
+    Host: ...
+    Authorization: Basic ...
+    Content-Type: application/vnd.com.nsn.cumulocity.option+json;ver=...
+    Accept: application/vnd.com.nsn.cumulocity.option+json;ver=...
+    {
+        "key1": "value1",
+        "key2": "value2",
+        "key3": "value3",
+        "key4": "value4"
+    }
+
+Example Response :
+
+    HTTP/1.1 200 OK
+    Content-Type: application/vnd.com.nsn.cumulocity.option+json;ver=...
+
+### GET Options from provided category.
+
+Response body: Option
+  
+Required role: ROLE\_OPTION\_MANAGEMENT\_READ
+ Example Request: Get options from given category.
+
+     
+    GET /tenant/options/<<category>>
+    Host: ...
+    Authorization: Basic ...
+    Accept: application/vnd.com.nsn.cumulocity.option+json;ver=...
+
+Example Response :
+
+    HTTP/1.1 200 OK
+    Content-Type: application/vnd.com.nsn.cumulocity.optionCollection+json;ver=...
+    Content-Length: ...
+     {
+       "key1": "value1"
+       "key2": "value2",
+       "key3": "value3",
+       "key4": "value4",
+     }
 
 ## System Options
 

@@ -15,20 +15,19 @@ Cumulocity comes with elaborate support for developing clients in Java. You can 
 To get started, check the "Hello World" examples for the various Java variants.
 
 * The most simple starting point is the [Java SE example](/guides/java/hello-world-basic).
-* The Java client libraries are OSGi-enabled, so check out the [OSGi example](/guides/java/hello-world-osgi) if you are developing for OSGi.
 * For Java ME devices, see the [Java ME example](/guides/java/hello-world-me). Java ME provides a particularly lightweight environment for embedded devices.
 
 Note that you can develop Cumulocity with any IDE and any build tool that you prefer, but the examples focus on Maven and Eclipse. After reviewing the "Hello worlds", continue with the Section "[Developing Java clients](/guides/java/developing)" or download the complete examples described in the Section "[Java reference agents](/guides/java/agents)". There's one full example of a device-side agent demonstrating nearly all Cumulocity features, and one full example of a server-side agent. 
 
 Finally, here are some references for getting started with the basic technologies underlying the SDK:
 
--   The client libraries use the Cumulocity REST interfaces as underlying communication protocol as described in the [REST developer's guide](/guides/rest).
--   The SDK integrates nicely with [OSGi](http://www.osgi.org/Specifications/HomePage). OSGi provides a small and efficient runtime that is also available in some embedded environments. Additionally, it is very well supported by Eclipse and other development tools. A good introduction can be found in the book [OSGi and Equinox: Creating Highly Modular Java Systems](http://www.amazon.com/OSGi-Equinox-Creating-Modular-Systems/dp/0321585712). 
+-   The client libraries use the Cumulocity REST interfaces as underlying communication protocol as described in the [REST developer's guide](/guides/rest). 
 -   All examples and libraries are open source -- check https://bitbucket.org/m2m.
 
 ## General prerequisites
 
-To use the Java SE client libraries, you need to have at least Version 6 of the [Java Development Kit](http://www.oracle.com/technetwork/java/javase/downloads/index.html) for your operating system. Some of the examples require Java 7. To verify the version of your Java Development Kit, type
+To use the Java SE client libraries, you need to have at least Version 6 of the [Java Development Kit](http://www.oracle.com/technetwork/java/javase/downloads/index.html) for your operating system. Some of the examples require Java 7. Java 8 is not supported and some features may not work correctly with Java 8. 
+To verify the version of your Java Development Kit, type
 
 	$ javac -version
 

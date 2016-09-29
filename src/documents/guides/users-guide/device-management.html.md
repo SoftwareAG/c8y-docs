@@ -194,7 +194,7 @@ Real example:
       "Speed": { "value": 1234, "unit": "km/h" }
 }
 
-Fragment_name and serie_name can be replaced by any other valid json property name. The structure has to be exactly as above, two-level deep json object.
+Fragment_name and serie_name can be replaced by different valid json property name, but that name cannot contain whitespaces and special characters like [],*. The structure has to be exactly as above, two-level deep json object.
 
 ### <a name="alarms"></a>Alarms
 

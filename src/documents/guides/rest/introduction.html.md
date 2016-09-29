@@ -29,7 +29,7 @@ Most programming environments today have particular support for REST-based commu
 
 For example, many operating systems come pre-installed with the "curl" command. If you want to start browsing the Cumulocity APIs, enter on a command line:
 
-	$ curl -u <username>/<password> https://<yourURL>.cumulocity.com/platform
+	$ curl -u <username>:<password> https://<yourURL>.cumulocity.com/platform
 
 Replace "username" and "password" with the username and password that you used to register to Cumulocity. Similarly, replace "yourURL" with the URL you used at registration time. If you subscribed to Deutsche Telekom's M2M DevFree, replace "yourURL" with "dev-dg". 
 
@@ -52,7 +52,7 @@ To format the output more nicely on a Mac, try "curl ... | python -mjson.tool".
 
 From this point, you can navigate further. For example, display the items in the inventory by following the "managedObjects" link:
 
-    $ curl -u <username>/<password> https://<yourURL>.cumulocity.com/inventory/managedObjects
+    $ curl -u <username>:<password> https://<yourURL>.cumulocity.com/inventory/managedObjects
 
 You will notice that just a subset of the items in the inventory is actually returned, a so-called "page". More information on page handling can be found under [Query result paging](/guides/reference/rest-implementation#paging).
 
@@ -64,7 +64,7 @@ A convenient way to explore REST interface and the Cumulocity database content a
 
 To set up Postman and import sample REST API commands, click the button below:
 
-[![Run in Postman](https://run.pstmn.io/button.svg)](https://www.getpostman.com/run-collection/5009664378e0f5ed9960#?env%5BPostman%20Button%20Demo%5D=W3sia2V5IjoiYXV0aCIsInZhbHVlIjoiQmFzaWMgY0c5emRHMWhiam8zYVRGdWFGRlVNbVZUYmtJPSIsInR5cGUiOiJ0ZXh0IiwiZW5hYmxlZCI6dHJ1ZX0seyJrZXkiOiJ1cmwiLCJ2YWx1ZSI6Imh0dHBzOi8vZGVtb3MuY3VtdWxvY2l0eS5jb20iLCJ0eXBlIjoidGV4dCIsImVuYWJsZWQiOnRydWV9XQ==)
+[![Run in Postman](https://run.pstmn.io/button.svg)](https://app.getpostman.com/run-collection/7c7d00719ab238097686)
 
 Install Postman as described and import the examples ("API collection"). The collection comes with a sample, read-only environment. To configure further environments: 
 

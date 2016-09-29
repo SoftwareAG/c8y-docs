@@ -435,7 +435,7 @@ To create a dashboard, navigate to an object in the asset hierarchy. Afterwards 
 
 * The icon which is rendered next to the name in the menu.
 
-* "Set dashboard as global": Whether the dashboard is visible to everyone (“global”) or just a subset of users.
+* "Set dashboard as global": Whether the dashboard is visible to everyone (“global”) or just a subset of users. This setting makes sense only if other users do not have INVENTORY_READ permission and user permissions are set for concrete devices.
 
 * "Apply dashboard to all devices of type": Whether the dashboard should be visible only for this object or for all devices of the same type.
 
@@ -709,7 +709,7 @@ To view a report, open the "Reports" in the navigator and click on the related r
 
 ## <a name="reporting"></a>Exporting data with reports
 
-With the "Reporting" feature, you can request csv or xlsx reports for the whole tenant. Additionally you can choose to *Filter* according to specific devices, time ranges or *Fields*. The reports contain information about all specified "Filters" and enabled "Fields".
+With the "Reporting" feature, you can request csv or xlsx reports for the whole tenant. Additionally you can choose to *Filter* according to specific devices, time ranges or *Fields*. The reports contain information about all specified "Filters" and enabled "Fields". Maximum number of documents that can be exported into a single xlsx file is 1 million. If the number of documents for defined "Filters" exceeds the limit, the resulted document gets only first 1 million of documents.
 
 To work with dashboard reports please refer to [Working with Dashboard Reports](#reports).
 
@@ -757,6 +757,8 @@ To enable a field simply click on the name of the field.
 When a certain field is enabled, predefined or empty properties can be added. If you choose to add empty properties click on "Add". To enter label or path click on either "Column" or "Path" located in the red row. For example if you enable the "Alarms" field you can type "Severity" in column and path to receive report only for alarm severities.
 
 If you have at least one Field in Fields section that is not picked from "Add predefined" list, but rather defined as a custom property, then it is required that at least one such property has to exist in the exported object to have it included in the excel. As an example if report has 4 Fields defined: time, device name, type and c8y_SpeedMeasurement.speed.value, then the first 3 are predefined properties, and the last one is a custom property. If measurement being exported does not have such custom property c8y_SpeedMeasurement.speed.value, then it is not included into the excel.
+
+If your field is a valid.key.with.dot then refer to it as ['fragment.key.with.dot'] in the path, e.g. ['fragment.key.with.dot'].serie.value
 
 To add predefined properties first click on "Add predefined".
 

@@ -176,9 +176,9 @@ To assign applications to particular users and user groups, visit the "Applicati
 
 Besides the readily available applications, you can also provide own applications in your account by visiting the "Own applications" menu. These applications can be "Smartapps" or generic HTML5 applications. “Smartapps” applications are HTML5 applications that can be extended by adding plugins. When deploying plugins, the plugins are deployed into a specific application. For example, a plugin might add a specific widget to the Cockpit dashboard.
 
-Plugins can only be added to own applications, because the application itself is modified when adding the plugin. When adding a plugin to subscribed applications, the application is first copied into an own application. Afterwards the plugin is added. This process is supported by the Administration Application wizard.
+Plugins can only be added to own applications, because the application itself is modified when adding the plugin. When adding a plugin to subscribed applications, the application must be cloned first into an own application. Afterwards the plugin can be added. This process is supported by the Administration Application wizard.
 
-> Please note that in the new "Smartapps" the plugin is "inserted" into the application. Either into the tenant-specific application or into the "management-tenant" "Global" application.
+> Please note that in the new "Smartapps" the plugin is "inserted" into the application. This has changed from the old Smartapps which could reference plugins stored in other applications.
 
 When an application has been created it will be available in the application switcher. 
 
@@ -187,6 +187,14 @@ When an application has been created it will be available in the application swi
 ![List of own applications](/guides/users-guide/ownapplications.png)
 
 ### Creating an application
+
+To add an application, you can upload a "ZIP file" application. In order to do that:
+
+- Click on "Add application".
+- Click on "Upload ZIP file". 
+- Either drop the file into the box or simply browse your computer.
+
+### Working with bitbucked hosted application
 
 Assume that you are developing a web application, using Bitbucket as code repository. In this case, exposing the application through Cumulocity can be done as follows:
 
@@ -207,11 +215,7 @@ that provides the entry point to your application.
 
 > Note that, username and password are transmitted using HTTP Basic Authentication.
 
-Another way to add an application is if you upload a "ZIP file" application. In order to do that:
-
-- Click on "Add application".
-- Click on "Upload ZIP file". 
-- Either drop the file into the box or simply browse your computer.
+> We do not recommend to use bitbucket hosted application anymore, because downtime of bitbucket results into downtime of the application.
 
 ### Working with external applications
 
@@ -221,19 +225,19 @@ Another way to add an application is if you upload a "ZIP file" application. In 
 
 This option will copy the application. Cloning a subscribed application creates a copy of the application as own application, with a link to the original application.
 
-> Note that ZIP file based applications cannot be copied
-
 In order to clone an application:
 
 - Click on "Add application"
 - Click on "Clone existing application"
-- Select the desired application that you wish to clone
+- Select the desired application that you wish to clone. Note that also subscribed applications are shown.
 - Enter the name of the application. The name will be shown as title on the top left of the application. It will also be shown in the application switcher.
 - Enter an application key. The application key is used to identify requests from this application and to make it available for subscription, see the [Concepts guide](/guides/concepts/applications).
 - Enter the application path. This path will be part of the URL to invoke the application. For example, if you use "hello" as application path, the URL of the application will be "/apps/hello".
 - Click on the "Clone" button.
 
 ### <a name="creating-smartapp"></a>Adding a smartapp
+
+> Note that this functionality is depreciated and will be removed in future versions of the product.
 
 To add a smartapp:
 
@@ -281,13 +285,12 @@ To remove a plugin, click on the cogwheel next to the desired plugin and click r
 
 Users can restore old versions of an application.
 If you “set active” a specific version of the app, then this will be the version used by users.
-If you “set active” the subscribed version of the app then it will revert to the originally used application (not to the current version of the subscribed application).
 
 >Note that the “Archive” tab is not available for subscribed applications, as only the owner of the application can perform this action.
 
 ### Uploading archives
 
-You can upload different versions of a hosted application at the same time and switch between these versions. To upload an archive:
+For applications that have been created by uploading ZIP files, multiple ZIP file versions can be stored in Cumulocity. Each version is called an archive. You can upload different versions at the same time and switch between these versions. To upload an archive:
 
 - Select the application by clicking on its name.
 - Click on the "Archives" tab.
@@ -297,17 +300,6 @@ You can upload different versions of a hosted application at the same time and s
 ![Upload archive](/guides/users-guide/uploadarchive.png)
 
 Once uploaded, archives can be downloaded, activated or removed if necessary. The active archive (indicated by a cloud icon) is the version of the application that is currently being served to the users of your account. This version cannot be deleted.
-
-### Hosting
-
-To host your own HTML5 and JavaScript web applications through Cumulocity, visit "Own applications" in the Cumulocity administration application and click "Add application".
-
-There are three types of applications that can be configured:
-
-* Type "Hosted": "Zip file applications" are a type of hosted applications. "Hosted applications" are HTML5 applications hosted through Cumulocity servers. These applications are packaged as ZIP archives having an "index.html" file in the root folder of the archive.
-* Type "Repository": HTTP(S) proxy applications are a type of repository application. "Repository applications" are HTML5 applications hosted through an external repository. Such a repository can be, for example, a version control system such as Bitbucket or Github.
-* Type "External": The applications are completely external and are just shown in the application
-switcher.
 
 ### Editing applications
 

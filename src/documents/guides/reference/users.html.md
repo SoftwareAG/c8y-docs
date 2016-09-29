@@ -708,7 +708,7 @@ Example response:
           "role" : {
               "self" :  "[URL to the Role resource]",
               "id" : "1",
-              "name" : "ROLE_USER_MGMT_ADMIN"
+              "name" : "ROLE_USER_MANAGEMENT_ADMIN"
           }
         },
         {
@@ -716,7 +716,7 @@ Example response:
           "role" : {
                 "self" :  "[URL to the Role resource]",
                 "id" : "1",
-                "name" : "ROLE_INVENTORY_MGMT_ADMIN"
+                "name" : "ROLE_INVENTORY_MANAGEMENT_ADMIN"
               }
             },
         ...
@@ -888,8 +888,8 @@ Example response:
          },
          {
            "self" :  "[URL to the Role resource]",
-           "id" : "ROLE_USER_MGMT_ADMIN",
-           "name" : "ROLE_USER_MGMT_ADMIN"
+           "id" : "ROLE_USER_MANAGEMENT_ADMIN",
+           "name" : "ROLE_USER_MANAGEMENT_ADMIN"
          },    ...
        ],
        "statistics" : {
@@ -931,8 +931,8 @@ Example response:
       "self" : "[URL to this resource]",
       "role" : {
         "self" :  "[URL to the Role resource]",
-        "id" : "ROLE_USER_MGMT_ADMIN",
-        "name" : "ROLE_USER_MGMT_ADMIN"
+        "id" : "ROLE_USER_MANAGEMENT_ADMIN",
+        "name" : "ROLE_USER_MANAGEMENT_ADMIN"
       }
     }
     
@@ -968,8 +968,8 @@ Example response:
       "self" : "[URL to this resource]",
       "role" : {
         "self" :  "[URL to the Role resource]",
-        "id" : "ROLE_USER_MGMT_ADMIN",
-        "name" : "ROLE_USER_MGMT_ADMIN"
+        "id" : "ROLE_USER_MANAGEMENT_ADMIN",
+        "name" : "ROLE_USER_MANAGEMENT_ADMIN"
       }
     }
 
@@ -1048,8 +1048,8 @@ Example response:
            "self" :  "[URL to the Role Reference resource]",
            "role" : {
               "self" :  "[URL to the Role resource]",
-              "id" : "ROLE_USER_MGMT_ADMIN",
-              "name" : "ROLE_USER_MGMT_ADMIN"
+              "id" : "ROLE_USER_MANAGEMENT_ADMIN",
+              "name" : "ROLE_USER_MANAGEMENT_ADMIN"
            }
          }
        ],
@@ -1093,8 +1093,8 @@ Example response:
            "self" :  "[URL to the Role Reference resource]",
            "role" : {
               "self" :  "[URL to the Role resource]",
-              "id" : "ROLE_USER_MGMT_ADMIN",
-              "name" : "ROLE_USER_MGMT_ADMIN"
+              "id" : "ROLE_USER_MANAGEMENT_ADMIN",
+              "name" : "ROLE_USER_MANAGEMENT_ADMIN"
            }
          }
        ],

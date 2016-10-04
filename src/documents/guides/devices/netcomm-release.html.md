@@ -3,7 +3,7 @@ title: NTC-6200 Release Notes
 layout: default
 ---
 
-## Release notes for NetComm Agent 3.1
+## Release notes for NetComm Agent 3.2
 
 This document describes the Cumulocity agent package for the [NetComm Wireless NTC-6200](http://www.netcommwireless.com/product/m2m/ntc-6200) router.
 
@@ -44,9 +44,11 @@ The agent was tested on an NTC-6200 device with firmware version 2.0.24.3. For r
 
 > Agent versions 2.3 and up require Cloud Fieldbus 4. They are not compatible with earlier versions of the Cloud Fieldbus application.
 
+> Agent version 3.2.0 and up require backend minimum version 7.20 for multip-XID support.
+
 ## Installing the agent
 
-* Download the software: http://resources.cumulocity.com/ntc/smartrest-agent_3.1.6_arm.ipk.
+* Download the software: http://resources.cumulocity.com/ntc/smartrest-agent_3.2.0_arm.ipk.
 * Log in to the web user interface of the NTC-6200.
 * Navigate to the "System" menu. Click on "System configuration", "Choose a file" and select the downloaded software. Click "Upload" to upload the software to the router.
 * Click the "Install" button for the uploaded software which you want to install.
@@ -158,3 +160,12 @@ For information on using the agent, please visit the [NetComm Agent User's Guide
 * [fix]Modbus: transmit rate not working because msg composing improperly.
 * [fix]Modbus: set byte timeout to 1 sec for getting slow Modbus-RTU to work.
 * [fix]lua/gps: use correct format DDDMM.MMmmm instead of DDMM.SSsss for GPS position.
+
+### 3.2.0
+[Download link](http://resources.cumulocity.com/ntc/smartrest-agent_3.2.0_arm.ipk). Changes:
+
+* [MTM-12808](https://cumulocity.atlassian.net/browse/MTM-12808)ntcagent: Use file backed buffering for sending measurement, events, etc.
+* [fix]Modbus: write partial holding register crash in 3.1.6.
+* Query pending operations at boot time.
+* [fix]Makefile: separate LDLIBS for smsagent so smsagent build correctly and without unnecessary dependencies.
+* [fix]ntcagent: remove trailing slash in server URL so URL with trailing slash also works.

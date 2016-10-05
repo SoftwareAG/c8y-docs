@@ -433,6 +433,29 @@ Example:
       "12345" as deviceId
     from AlarmCreated;
 
+### SendPush
+
+This stream enables the possibility to send push notifications from Cumulocity via the Telekom push service to mobile applications.
+
+|Parameter|Data type|Description|Mandatory|
+|:--|:----------|:-------------|:----------|
+|type|String|Push Provider Type. Currently only TELEKOM is possible.|yes|
+|message|String|The body of the push message.|yes|
+|deviceId|String|The ID of the device generating the push message.|yes|
+
+_Note:_
+
+This feature will only work if your tenant is linked to a push provider. For more information please contact support@cumulocity.com.
+
+Example:
+
+    insert into SendPush
+    select
+    "TELEKOM" as type,
+    "sample push message" as message,
+    a.alarm.source.value as deviceId
+    from AlarmCreated a;
+
 ### SendSpeech
 
 |Parameter|Data type|Description|Mandatory|

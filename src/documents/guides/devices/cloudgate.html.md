@@ -7,12 +7,11 @@ title: "CloudGate"
 
 ## Overview
 
-In this section, we describe how to configure CloudGate to be able to remotely manage the CloudGate from Cumulocity and work with its connected sensors and controls. This allows you to:
+In this section, we describe how to configure the CloudGate device so that you are able to remotely manage the CloudGate from Cumulocity and work with its connected sensors and controls. This allows you to:
 - Install Firmware updates
 - Perform device-specific operations
 - Change the configuration
-- Send sensor data as measurement data
-- Send events and alarms
+- Send measurements, events and alarms
 
 [CloudGate](http://www.option.com/product/cloudgate/) is [Option](http://www.option.com/)’s M2M Gateway. It provides competitively priced LAN to WWAN routing and GPS functionality in a single basic unit certified by all major US cellular operators (CDMA/EvDO and WCDMA/HSPA+). CloudGate is simple to configure locally or remotely from your PC, tablet or smartphone.
 
@@ -78,7 +77,7 @@ On the left side of the user interface, you can see a list of nodes which are re
 
 ### Basic workflow
 
-In general, a node can have an input and/or output depending on the functionality. Two nodes can be connected by linking the output of one node with the input of the other node. A dialog for configuring the node will appear when double-clicking it. After configuring the nodes, the workflow is ready to be deployed. Click on the "Deploy" button in the top right corner to start the workflow. If there are changes in the configuration which have not been deployed yet, a blue dot will appear above the node. If there is at least one parameter in the configuration which has to be specified but is not, a red triangle will appear above the node.
+In general, a node can have an input and/or output depending on the functionality. Two nodes can be connected by linking the output of one node with the input of another node. A dialog for configuring the node will appear when double-clicking it. After configuring the nodes, the workflow is ready to be deployed. Click on the "Deploy" button in the top right corner to start the workflow. If there are changes in the configuration which have not been deployed yet, a blue dot will appear above the node. If there is at least one parameter in the configuration which has to be specified but is not, a red triangle will appear above the node.
 
 In the following example, the "inject" and "debug" node will be used. Drag both nodes into the middle area and connect them by clicking on the output of the "inject" node", holding the mouse and releasing it above the input of the "debug" node.
 
@@ -254,20 +253,63 @@ In case of "Manually", the user has to enter a tenant, username and password. Af
 In case of "Automatically", the user can enter a servername and authentication string. If not, the node will use default values. Before or after starting the workflow, the user has to register the device with its serial number in the desired tenant. For more information on registering devices, refer to "[Connecting devices manually](/guides/users-guide/device-management/#device-registration)". After accepting the device in the tenant, the nodes which use this configuration should be able to connect to Cumulocity, provided that the credentials are correct.
 
 ## LuvitRED example
-LuvitRED example
-   <Can you do an example that provide more feature, and make itt available e.g. in Forum?>
+
+The following example workflow is a bit more complex but shows a possible use case. Imagine that you have a device which measures the temperatures and publishes the measurements via MQTT. With the help of the "MQTT" node in LuvitRED, we are able to subscribe to the channel the measurements are published on.
+
+You can use the following workflow to simulate a device which publishes measurements on a channel of our choice.
+
+![c8y platform](/guides/devices/cloudgate/luvitred_example_mqtt_publisher.png)
+
+![c8y platform](/guides/devices/cloudgate/luvitred_example_mqtt_subscriber.png)
 
 ## Import/Export LuvitRED flows
 
-
+To facilitate the reuse of workflows LuvitRED offers the possibility to import/export workflows.
 
 ### Export LuvitRED flows
 
-For the device to be able to import or export a workflow, there has to be a correctly configured "c8y platform" node in your workflow.
+To export your workflows, you can either use the LuvitRED or Cumulocity user interface.
 
-To import or export a LuvitRED flow, you need to have "c8y" node with a correctly configured "c8y platform" configuration node, otherwise the CloudGate will not be able to connect with Cumulocity. Furthermore, the "Flow deploy ?" checkbox needs to be checked in your "c8y platform" node.  
+If you want to use the LuvitRED user interface
 
-* Import/Export LuvitRED flow:
--for the device to be able to import/export a flow, there has to be a configured cumulocity node (platform node)
--the exported flow immediately starts working (no deploy necessary)
-Flows deployed must contain a Cumulocity platform configuration node to reduce the chance of deploying a flow that looses communication with Cumulocity. Flows can either be retrieved from the Cumulocity server via the 'get new snapshot from device' function or can be uploaded to Cumulocity after exporting from the LuvitRED editor. If exporting via the LuvitRED editor please make sure that you export the full flow rather than a selected portion (which is not a valid flow and will not load) and note that when a node's configuration contains credentials (usernames and passwords) these are not exported via the LuvitRED editor.
+* Click on the icon in the top right corner to open the menu.
+* Go to the menu item "Export".
+* Select "File - All nodes".
+* Choose a name for your JSON file.
+* Click on the "OK" button.
+
+If you want to use the Cumulocity user interface, you have to make sure that one of your workflows contains a "c8y" node with a correctly configured "c8y platform" configuration node. Moreover, the "Flow deploy ?" checkbox needs to be checked in this "c8y platform" configuration node.
+
+* Navigate to your CloudGate device in the "Device Management" application.
+* Open the "Configuration" tab.
+* Click on the "Get new snapshot from device" button.
+* After the command successfully completed, you can find the JSON file in the "Configuration repository" menu.
+
+> Note that if there is no correctly configured "c8y platform" configuration node in your workflows, Cumulocity will not be able to communicate with the device and therefore will not be able to retrieve the JSON file.
+
+> Note that when a "c8y platform" configuration node contains credentials (usernames and passwords), these are not exported via the LuvitRED editor.
+
+### Import LuvitRED flows
+
+To import your workflows, you can either use the LuvitRED or Cumulocity user interface.
+
+If you want to use the LuvitRED user interface
+
+* Click on the icon in the top right corner to open the menu.
+* Go to the menu item "Import".
+* Select "From File".
+* Click on the "Choose a file" button.
+* Navigate to the JSON file you want to import and select it.
+* Click on the "OK" button.
+
+If you want to use the Cumulocity user interface, you have to make sure that one of your current workflows contains a "c8y" node with a correctly configured "c8y platform" configuration node. Moreover, the "Flow deploy ?" checkbox needs to be checked in this "c8y platform" configuration node. When importing, your current workflows will be replaced with the workflows in the JSON file so make sure to save workflows that are not to be replaced, too.
+
+* Navigate to your CloudGate device in the "Device Management" application.
+* Open the "Configuration" tab.
+* Go to the "Apply new snapshot" section and select the JSON file you want to import in the drop-down menu.
+* Click on the "Put new snapshot to device" button.
+* After the command successfully completed, refresh the LuvitRED tab in your browser. You should be able to see the imported workflows now.
+
+> Note that if there is no correctly configured "c8y platform" configuration node in one of your current workflows, Cumulocity will not be able to communicate with the device and therefore will not be able to push the JSON file onto the device.
+
+The workflows should start automatically as soon as they are imported which means that it is not necessary to deploy them, provided that the "c8y platform" configuration node(s) in your imported workflows were configured correctly.

@@ -10,6 +10,7 @@ title: Queclink
 * GL200 Multi-Function Mini Asset Tracker
 * GL300 Advanced Asset Tracker
 * GL500 Hibernating Asset Tracking Device
+* GL505 Waterproof Hibernating Asset Tracking Device
 * GV200 Full Featured Vehicle Tracker
 * GV300 Advanced Vehicle Tracking Device
 * GV500 OBD Vehicle Tracking Device
@@ -19,6 +20,7 @@ The location and traces of the equipped assets are shown in Cumulocity and you c
 <img src="/guides/devices/queclink/GL200.png" alt="GL200" style="display: inline">
 <img src="/guides/devices/queclink/GL300.png" alt="GL300" style="display: inline">
 <img src="/guides/devices/queclink/GL500.png" alt="GL500" style="display: inline">
+<img src="/guides/devices/queclink/GL505.png" alt="GL505" style="display: inline">
 <img src="/guides/devices/queclink/GV200.png" alt="GV200" style="display: inline">
 <img src="/guides/devices/queclink/GV300.png" alt="GV300" style="display: inline">
 <img src="/guides/devices/queclink/GV500.png" alt="GV500" style="display: inline">
@@ -59,6 +61,29 @@ Here are some general hints if your tracking device does not connect to Cumuloci
 * Devices may send the location of the last GPS fix if there is no GPS reception.
 * The "Location" and "Tracking" tabs appear only in the user interface when the first GPS coordinate has been received.
 
+## Supported features
+
+Supported events:
+
+* Location update event
+* Motion started event
+* Motion ended event
+
+![Queclink Events](/guides/devices/queclink/Events.png)
+
+Supported measurements:
+
+* Battery level measurement
+* Signal strength measurement
+* Tracker mileage measurement
+
+![Queclink Measurement](/guides/devices/queclink/Measurement.png)
+
+Supported alarms:
+
+* Geofence exit alarm
+
 ## Getting additional functionality
 
 If you need support for particular features of the above products or other Queclink products, [contact us](mailto:info@cumulocity.com).
+

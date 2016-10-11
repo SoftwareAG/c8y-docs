@@ -127,7 +127,8 @@ Device details are divided over a number of tabs. The standard tabs that may be 
 * [Measurements](#measurements)
 * [Alarms](#alarms)
 * [Control](#control)
-* [Configuration](#config)
+* [Text configuration](#config)
+* [Snapshot configuration](#snapconfig)
 * [Software](#software)
 * [Events](#events)
 * [Location](#location)
@@ -209,9 +210,9 @@ This tab lists the operations that are being sent to a device or have been sent 
 
 ### <a name="config"></a>Configuration
 
-This tab allows you to retrieve, modify or save user configuration data. You can also make changes to the configuration and save them back to the device. Configuration snapshot can be requested from the device and later it can be applied to other devices. As of Cumulocity version 7.26 there is also RDB snapshot support. This is mainly for troubleshooting purposes.
+This tab allows you to retrieve, modify or save configuration data. Configuration snapshot can be requested from the device and later it can be applied to other devices.
 
-The configuration snapshot could be used if, for example you have a lot of devices and you would like them to have the same configuration. Then, you can configure one device, download the snapshot and apply it to the other devices.  
+A good use-case for the configuration snapshot is applying the same configuration to multiple devices. Then, you can configure one device, download the snapshot and apply it to the other devices.
 
 ![Configuration](/guides/users-guide/configuration.png)
 

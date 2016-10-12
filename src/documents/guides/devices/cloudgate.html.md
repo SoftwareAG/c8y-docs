@@ -256,11 +256,15 @@ In case of "Automatically", the user can enter a servername and authentication s
 
 The following example workflow is a bit more complex but shows a possible use case. Imagine that you have a device which measures the temperatures and publishes the measurements via MQTT. With the help of the "MQTT" node in LuvitRED, we are able to subscribe to the channel the measurements are published on.
 
-You can use the following workflow to simulate a device which publishes measurements on a channel of our choice.
-
 ![c8y platform](/guides/devices/cloudgate/luvitred_example_mqtt_publisher.png)
 
+After the measurement was received, the "json" node converts the input to JSON format. Then the "switch" node decides to which node it will forward the input to depending on a user-defined condition. In this case, if the temperature is above a certain threshold, an alarm will be sent. Otherwise, a measurement will be sent to Cumulocity.
+
+If you do not have a device which supports MQTT, you can use this workflow instead to simulate such a device.
+
 ![c8y platform](/guides/devices/cloudgate/luvitred_example_mqtt_subscriber.png)
+
+This workflow uses two "inject" nodes to simulate a measurement which triggers either the "c8y measurement" node or the "c8y alarm" node in the other workflow.
 
 ## Import/Export LuvitRED flows
 

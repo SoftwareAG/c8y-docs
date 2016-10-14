@@ -181,7 +181,7 @@ The example above contains a number of metadata items for the device:
 
 -   "c8y\_IsDevice" marks devices that can be managed using Cumulocity's Device Management.
 -   "com\_cumulocity\_model\_Agent" marks devices running a Cumulocity agent. Such devices will receive all operations targeted to themselves and their children for routing.
--   "c8y\_SupportedOperations" states that this device can be restarted and configured. In addition, it can carry out software and firmware updated.
+-   "c8y\_SupportedOperations" states that this device can be restarted and configured. In addition, it can carry out software and firmware updates.
 
 For more information, please refer to the [Device management library](/guides/reference/device-management).
 

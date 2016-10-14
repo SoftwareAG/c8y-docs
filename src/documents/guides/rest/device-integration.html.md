@@ -92,7 +92,7 @@ To check if a device is already registered, use a GET request on the identity AP
 
 Note that while MAC addresses are guaranteed to be globally unique, serial numbers for hardware may overlap across different hardwares. Hence, in the above example, we prefixed the serial number with a "raspi-".
 
-In this case, the device is already registered and a status code of 200 is returned. In the response, a URL to the device in the inventory is returned in "managedObject.self". This URL can be used to work with the device lateron.
+In this case, the device is already registered and a status code of 200 is returned. In the response, a URL to the device in the inventory is returned in "managedObject.self". This URL can be used to work with the device later on.
 
 If a device is not yet registered, a 404 status code and an error message is returned:
 

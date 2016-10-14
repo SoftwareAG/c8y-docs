@@ -35,3 +35,7 @@ In the cumulocity Cloud Fieldbus app go to the menu and there find Devices -> Re
 After accepting the device you should be able to see it in the All Devices list within 30 second.
 
 ![The Terminal in the List of All Devices](/guides/devices/smartbox-modbus/terminal-in-all-devices.png)
+
+## References
+
+For further information please refer to the [manual](/guides/devices/smartbox/Manual_Smartbox_29-09-2016.pdf) and [datasheet](/guides/devices/smartbox/Datasheet_Smartbox_29-09-2016.pdf) provided by PSsystec.

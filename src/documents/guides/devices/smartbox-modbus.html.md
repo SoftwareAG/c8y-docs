@@ -71,3 +71,7 @@ To connect this data center application to Cumulocity follow these steps:
 In Cumulocity, each Field device come up as a single child device of the Terminal. So in this case we would have 3 child devices. After saving the changes, the terminal will discover all child devices and its Modbus items and begin feeding the platform with measurements, alarms, events, values. *Note: Without a setup network, the terminal will not send any data.*
 
 The default name of the terminal is the IMEI. Click on the terminal to view the detailed information. You can change the terminal's name on the "Info" tab, which also displays basic information such as serial number of the router and SIM card data. After changing the name, remember to click "save changes" button at the bottom of the "Info" page. All data coming from the field devices are available under the section child devices.
+
+## References
+
+For further information please refer to the [manual](/guides/devices/smartbox-modbus/Manual_Smartbox-Modbus_29-09-2016.pdf) and [datasheet](/guides/devices/smartbox-modbus/Datasheet_Smartbox-Modbus_26-09-2016.pdf) provided by PSsystec.

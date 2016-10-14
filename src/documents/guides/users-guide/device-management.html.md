@@ -10,6 +10,7 @@ The Device Management application provides you with an overview of your connecte
 
 * [Connect](#device-registration) new devices to your account and disconnect them.
 * [List](#viewing-devices), [search](#searching-devices) and [group](#grouping-devices) the connected devices.
+* Create [smart groups](#smart-groups) using the filtering criteria.
 * [View](#device-details) the details of the devices and check their status.
 * Monitor the [connection](#connection-monitoring) and the [service](#monitoring-services) of devices.
 * [Locate](#map) devices.
@@ -107,6 +108,23 @@ You can also add devices to a group in two other ways:
 To create a subgroup, just click "Add Group" when viewing a group.
 
 To edit a group, click on the group's name. This allows you to edit the name of the group and assign user permissions for the group. For more information on permissions, see the [Administration](/guides/users-guide/administration) guide.
+
+## <a name="smart-groups"></a> Using Smart Groups
+
+Smart groups are groups that are dynamically constructed based on filtering criteria. What device is part of a smart group is determined when you visit the group. This can be used, for example, for bulk upgrades off devices of a certain type to a new software or firmware version. 
+
+Smart groups can be created by selecting "All devices". To create a new group, simply use filters to select devices. Now click on “Create smart group” and give a name to the new group.
+![Create smart group](/guides/users-guide/create_smartgroup.png)
+
+![Create smart group](/guides/users-guide/filters.png)
+
+When the group is created, it will appear as top-level group in the “Groups” section. You can adjust filtering criteria, simply select  the "Sub-assets" tab and modify the filter settings.
+
+User can delete smart group from the top level groups, this operation is irreversible. 
+
+![Delete smart group](/guides/users-guide/delete_smartgroup.png)
+
+> Note that, smart groups are currently not shown in Cockpit.
 
 ## <a name="device-details"></a>Viewing the device details
 

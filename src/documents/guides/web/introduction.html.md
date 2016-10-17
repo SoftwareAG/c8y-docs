@@ -11,18 +11,45 @@ Plugins allow you to add new functionality to Cumulocity's user interface. In th
 
 Plugins are based on HTML5. You should be familiar with the following technologies:
 
-* [HTML5](http://www.w3schools.com/html/html5_intro.asp) and [CSS](http://www.w3schools.com/css/css3_intro.asp).
-* [JavaScript](http://www.w3schools.com/js/).
-* [AngularJS](https://angularjs.org/).
-* [Grunt](http://gruntjs.com/).
+* [HTML5](https://developer.mozilla.org/en-US/docs/Web/Guide/HTML/HTML5) and [CSS](https://developer.mozilla.org/en-US/docs/Web/CSS).
+* [JavaScript](https://developer.mozilla.org/en-US/docs/Web/JavaScript)
+* [AngularJS 1.x](https://angularjs.org/).
+
 
 You will need the following prerequisites for being able to develop plugins and to execute the examples:
 
-* You will need [Node.js](http://nodejs.org/) (0.10 or newer, stable) and [Grunt](http://gruntjs.com/) installed.
+* You will need [Node.js](http://nodejs.org/) (6.7 or newer)
+* You will need [npm](https://www.npmjs.com/) *(installed with Node.js)*
 * You will need access to your Cumulocity account, i.e. you need your tenant name, username and password.
-* You will need a source code repository ([Bitbucket](https://bitbucket.org/) or [GitHub](https://github.com/)) where you can commit your source code and build sources for publishing your applications and plugins.
 
 All examples described in the document are available in the repository [https://bitbucket.org/m2m/cumulocity-ui-plugin-examples](https://bitbucket.org/m2m/cumulocity-ui-plugin-examples).
+
+## Command line interface
+
+Applications based on Cumulocity UI are always a collection of plugins. We provide a set of plugins you can build on and you can add your own. For dealing with the process of building, theming, translating and deploying your apps and plugins the cli tool must be installed globally the development machine.
+
+```sh
+npm i http://resources.cumulocity.com/webapps/node-tools/c8y-2.0.0-SNAPSHOT.tar -g
+```
+You can check the available commands with:
+
+```sh
+c8y --help
+```
+
+## Installing Cumulocity UI plugins
+
+Comulocity UI plugins to be used in your application are loaded via npm. For this you must have have a ```package.json``` in your project.
+To create one simply run:
+
+```
+npm init
+```
+Then proceed to install Cumulocity plugins
+
+```
+npm i http://resources.cumulocity.com/webapps/ui/7.37.0.tar.gz --save
+```
 
 ## "Hello world!"
 
@@ -82,7 +109,7 @@ Here's what the configuration file means:
 
 ### Register the application
 
-Next, you need to register your application manifest with Cumulocity using "grunt appRegister:noImports". 
+Next, you need to register your application manifest with Cumulocity using "grunt appRegister:noImports".
 In case you do not use domain {tenant}.cumulocity.com, you have to also provide the "host" parameter to the command and put there address to Cumulocity installation where your application should be registered, ie. "grunt appRegister:noImports --host=..."
 
 The "noImports" flag will ignore the imports in the manifest because Cumulocity does not know your plugins yet.

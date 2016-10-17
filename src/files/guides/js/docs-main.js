@@ -6,13 +6,23 @@ standalone: true
 */
 
 $(document).ready(function () {
+  $('[class*="lang-"]').each(function () {
+    var $this = $(this);
+    var classes= $this.attr('class').split(/\s+/).filter(function (cls) {
+      return /lang-/.test(cls);
+    });
+    if (classes.length) {
+      var cls = classes[0];
+      var lang = cls.split('-')[1];
+      $this.removeClass(cls);
+      $this.addClass(lang);
+    }
+  });
   hljs.initHighlightingOnLoad();
 
   $('[data-toggle=offcanvas]').click(function () {
     $('.row-offcanvas').toggleClass('active');
   });
-
-  console.log($('body').closest('iframe'));
 
   var $placement = $(window).width() > 320 ? 'left' : 'bottom';
   $('.popover-dismiss').popover({

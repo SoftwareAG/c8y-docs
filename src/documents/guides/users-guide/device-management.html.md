@@ -208,19 +208,25 @@ This tab lists the operations that are being sent to a device or have been sent 
 
 ![Operations](/guides/users-guide/operations.png)
 
-### <a name="config"></a>Configuration
+### <a name="configsnap"></a>Binary configuration
 
 This tab allows you to retrieve, modify or save configuration data. Configuration snapshot can be requested from the device and later it can be applied to other devices.
 
 A good use-case for the configuration snapshot is applying the same configuration to multiple devices. Then, you can configure one device, download the snapshot and apply it to the other devices.
 
-![Configuration](/guides/users-guide/configuration.png)
-
-In order to apply a new snapshot first navigate to a device and then click on "Configuration". Scroll down and under "Configuration snapshot" you can select a configuration repository entry to use. When the entry is selected click on "Put new snapshot to device". 
-
 ![Configuration Snapshot](/guides/users-guide/configsnap.png)
 
-Note that, new entries can be added in the "Configuration snapshots" list by clicking on "Add configuration snapshot". Then you will be redirected to the "Configuration snapshots repository". To add a new snapshot:
+#### Retrieving current snapshot configuration from a device	
+
+In order to retrieve the current snapshot from a device, first navigate to a device and then click on "Configuration". Scroll down and under "Configuration snapshot"
+
+#### Applying snapshot configuration from a device
+
+In order to apply a new snapshot first navigate to a device and then click on "Configuration". Scroll down and under "Configuration snapshot" you can select a configuration repository entry to use. When the entry is selected, click on "Put new snapshot to device".
+
+#### Creating a snapshot configuration from a file
+
+Note that, new entries can be added in the "Configuration snapshots" list by clicking on "Add configuration snapshot". Then you will be redirected to the "Configuration repository". To add a new snapshot:
 
 - Enter "Name".
 - Enter "Description.

@@ -183,7 +183,7 @@ Example Response:
 	}
 
 Note that creating a tenant with adminName, adminPass and adminEmail, creates an admin user with these settings.
-
+For the tenant id SQL keywords (e.g., select, cross, where) are not allowed. 
 
 ## Tenant
 
@@ -194,7 +194,7 @@ Note that creating a tenant with adminName, adminPass and adminEmail, creates an
 |self|URI|0..1|Link to this resource.|Public|
 |id|String: max length="32"|1|Tenant id|Public|
 |status|String|1|Status of tenant, possible values [ACTIVE, SUSPENDED].|Private|
-|adminName|String: max length = "50"|1|Administrator user name. Whitespaces, slashes, +$ characters not allowed|Private|
+|adminName|String: max length = "50"|1|Administrator user name. Whitespaces, slashes, +$: characters not allowed|Private|
 |adminEmail|String|1|Administrator Email|Private|
 |allowCreateTenants|boolean|1|Can this tenant create its own tenants.|Private|
 |storageLimitPerDevice|number|1|Storage quota per device the user has.|Private|

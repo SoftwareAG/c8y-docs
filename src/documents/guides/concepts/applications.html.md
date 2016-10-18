@@ -14,31 +14,36 @@ Cumulocity was designed to run arbitrary vertical IoT applications in addition t
 
 This section introduces the basic concepts around applications in Cumulocity.
 
-## Applications and subscriptions
+## Applications and subscriptions 
 
-Applications are registered in Cumulocity either as "own" applications or "market" applications. 
+Applications are registered in Cumulocity either as "own applications" or "Subscribed applications". 
 
-"Own" applications are only available to users of a particular tenant and are registered by the tenant's administrator. Own applications are used, for example, during application development when you do not yet want to make a particular application version available for a wide audience. They are also used for functionality that is proprietary for an enterprise, for example, interactions with in-house IT systems.
+"Own applications" are only available to users of a particular tenant and are registered by the tenant's administrator. Own applications are used, for example, during application development when you do not yet want to make a particular application version available for a wide audience. They are also used for functionality that is proprietary for an enterprise, for example, interactions with in-house IT systems. The applications can be either "HTML5 applications" or "Smartapps".
 
-"Market" applications are available to all tenants of Cumulocity. Subscribing a tenant to a market application makes the application available to the tenant. To certify an application as market application, please [contact us](mailto:info@cumulocity.com).
+- HTML5 applications: These are applications that are based on HTML, JavaScript and CSS. Cumulocity allows you to use the HTML5 library of your choice, like jQuery, ExtJS, AngularJS, Dojo or others. If you prefer to use AngularJS, Cumulocity provides you with example and source code as part of the “Smart Apps Toolkit”.
+- "Smartapps" applications: These are HTML5 applications that can be extended by adding plugins. The power user can add and remove plugins in the Administration Application.
 
-Applications are identified by a so-called *application key*, which is included into requests that an application makes. The application key enables Cumulocity to associate a request with a particular application and to distinguish the request from other requests coming from devices.
+"Subscribed applications" are applications owned by the tenant "Management". Subscribing a tenant to a market application makes the application available to the tenant. To certify an application as market application, please [contact us](mailto:info@cumulocity.com) or simply change your application availability setting to "MARKET". 
 
-An application can be any combination of 
+Applications are identified by a so-called *application key*, which is included into requests that an application makes. The application key enables Cumulocity to associate a request with a particular application and to distinguish the request from other requests coming from devices. Applications also have a context path. This is part of the URL that is used to access the application. For example, the context path of device management is “devicemanagement”. This application can then be accessed under “/apps/devicemanagement”. Own applications can have the same context path as subscribed application to override them.
 
-* A complete, standalone user interface application, regardless if based on the Cumulocity UI framework (see below) or any other web components of your choice.
+ An application can be any combination of:
+* A complete, standalone user interface application, regardless if based on the Cumulocity UI framework
+(see below) or any other web components of your choice.
 * A set of user interface plugins.
 * A set of statements in Cumulocity Event Language.
 
-User interface applications appear in the application switcher widget on the top right of Cumulocity, so that users can navigate between the subscribed applications. They can be hosted on an external web site, in which case the application switcher just directs the user to that web site. They can also be hosted through Cumulocity, in which case the application will be made available through a URL <tenant>.cumulocity.com/apps/<application>.
+User interface applications appear in the application switcher widget on the top right of Cumulocity, so
+that users can navigate between the applications. They can be hosted on an external web site, in which
+case the application switcher just directs the user to that web site. They can also be hosted through
+Cumulocity, in which case the application will be made available through a URL
+<tenant>.cumulocity.com/apps/<application>.
 
 ![App switcher](/guides/concepts-guide/appswitcher.png)
 
-## Cumulocity applications
-
 The Cumulocity user interface itself is built around a framework based on AngularJS and Bootstrap, the currently most modern HTML5 web application frameworks. It is designed in a modular fashion around a set of plugins that can be dynamically enabled and disabled even by end users. Users can create their own configurations of the Cumulocity user interface with just functionality they need for their particular purpose. For this purpose, the administration application contains a plugin editor -- which is itself a plugin.
 
-![Plugin editor](/guides/concepts-guide/plugineditor.png)
+![Plugin editor](/guides/users-guide/plugins.png)
 
 ## Plugins
 
@@ -57,6 +62,19 @@ This is illustrated below:
 
 For more information on developing plugins, please visit the [Plugin Developer's Guide](/guides/web/introduction).
 
+## Compatibility
+
+Backwards compatibility for all REST APIs is guaranteed, while backward compatibilities for JavaScript APIs are not. We try to keep the JavaScript incompatibilities to a minimum, there are cases where they will happen. Therefore new application versions might cause older versions of the plugins to fail.
+
+However, this is taken care by automatically by the previous mentioned mechanism to copy subscribed applications. For example, if a user adds a plugin to the builtin application “Cockpit Version 2.0”, then the application is copied. That means that the application is “freezed”. Updates of the Cockpit application will not be automatically available in the copied version. This ensures that the added plugin will work successfully. And because of the compatibility of the REST API the copied version is ensured to work also for the new backend version.
+
+## Migration
+
+The old "Smartapps" functionality is still available, both in the REST API and in the
+Administration App. However, the Administration App has been changed so that the new "Smartapps" are by default and using the old "Smartapps" are available only when loading additional options. The old "Smartapps" are not updated anymore. This ensures working of existing Plugins. If you want to use their Plugins with updated version of Cockpit or Device management, then you need to port their Plugins to the new "Smartapps" mechanism.
+
+
+
 ## Modules
 
 If your application requires new server-side processing functionality, you can add a [Cumulocity Event Language](/guides/reference/real-time-statements) module to it. This is simply a file inside your application at a particular location (META-INF/application-module.cel).
@@ -74,32 +92,3 @@ If your application requires new server-side processing functionality, you can a
 	...
 
 Please note that module deployment within application is not supported for local zip applications, so the resource url has to point to some external resource from where the file can be downloaded. The file has to be named application-module.cel and be inside directory META-INF.
-
-## Hosting
-
-To host your own HTML5 and JavaScript web applications through Cumulocity, visit "Own applications" in the Cumulocity administration application and click "Add new".
-
-![List of own applications](/guides/concepts-guide/ownapplications.png)
-
-There are two types of applications that can be configured:
-
--   Type "Hosted": The applications are served from a repository such as Bitbucket or Github to a user-defined path and are visible in the application switcher.
--   Type "External": The applications are completely external and are just shown in the application switcher.
-
-Assume that you are developing a web application using Bitbucket as code repository. In this case, exposing the application through Cumulocity can be done as follows:
-
--   Enter the name of the application. This is shown in the application switcher at the top left of the screen.
--   Optionally, enter an application key. This is used to distinguish your application from other applications in case you want to publish your application to other companies.
--   Select "Hosted" as type.
--   Select the URL that is used to make your application available to users.
--   Enter the URL to your repository. In case of Bitbucket, the URL has the structure shown below.
--   If your repository is private, enter the username and password of a Bitbucket user that is permitted to access the repository. Currently, basic authentication is the only supported authentication method (i.e., straight Bitbucket username and password, not any of the OpenID providers).
--   Save the application.
-
-<pre><code>https://bitbucket.org/<bitbucket user>/<bitbucket repository>/raw/<branch>/[path inside repository]</code></pre>
-
-Now the application shows up in the application switcher. You can also click on the link in the list of own applications to verify if the configuration was successful.
-
-![Configuring a new application](/guides/concepts-guide/ownapplicationdetail.png)
-
-The above procedure helps you to publish your M2M application much faster to your end users. If you are satisfied with your application, publishing is just a matter of releasing your code in version control -- deployment is handled automatically.

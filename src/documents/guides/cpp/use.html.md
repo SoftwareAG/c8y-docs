@@ -399,6 +399,11 @@ The example also shows how to define your own `Lua` library and share its variab
        return 0                     -- signify successful initialization
     end
 
+<div class="note">
+You may encounter an error saying "Package lua was not found in the pkg-config search path." when building this example, then you would need to modify the expression `$(shell pkg-config --cflags lua)` to add a proper version number to `lua`. The proper version number depends on your installed Lua version and your Linux distribution.
+
+</div>
+
 <div id="footnotes">
 <h2 class="footnotes">Footnotes: </h2>
 <div id="text-footnotes">

@@ -265,7 +265,7 @@ $ c8y deploy:app <appName>
 ```
 
 The build process for plugins is:
-* Annotate angular functions with ```$inject```. (Using [babel-plugin-angularjs-annotate](https://github.com/schmod/babel-plugin-angularjs-annotate) )
+* Annotate angular functions with ```$inject```. (Using [ng-annotate](https://github.com/olov/ng-annotate) )
 * Replace the ```:::PLUGIN_PATH:::``` by the proper strings
 * Transform every html file to be included via ```$templateCache```.
 * Concatenate and minify all the defined js files in the manifest (using [UglifyJS 2](https://github.com/mishoo/UglifyJS2))
@@ -283,8 +283,10 @@ The build process for an app is:
 
 ## Branding plugin
 
-Our main css is based on the popular css framework [Bootstrap 3](http://getbootstrap.com/). It possible to build a branding plugin based on Cumulocity simply by overriding less variables.
-Inside the repo ```cumulocity-ui-plugin``` you can find an example plugin called ```piedpiperBranding```. To create your branding you can copy this folder, rename it and update the information inside cumulocity.json.
+Our main css is based on 	the popular css framework [Bootstrap 3](http://getbootstrap.com/). It possible to build a branding plugin based on Cumulocity simply by overriding less variables.
+Inside the repo ```cumulocity-ui-plugin-examples``` you can find an example plugin called ```branding```. To create your branding you can copy this folder, rename it and update the information inside cumulocity.json.
+
+![Branding example](/guides/plugins/branding.png)
 
 To use it in an application just need to replace ```core/c8yBranding``` with ```<appName>/<pluginName>``` inside the import array defined in the ```cumulocity.json``` of the application.
 
@@ -297,15 +299,15 @@ This section shows how to create a plugin that adds a new tab "Contact" to a dev
 
 In order to achieve this goal you need to do the following steps:
 
-* Create and register a plugin stub.
-* Add the plugin stub to the application.
+* Create a plugin
+* Add the plugin to the application manifest
 * Add a tab to a device.
 * Display data in the tab.
 * Allow user to save the data.
 
-We assume that you already have created an application to add the new plugin to. You can use "myapplication" from the previous example. The example is also contained in the folder "plugins/deviceContact" of  https://bitbucket.org/m2m/cumulocity-ui-plugin-examples.
+We assume that you already have created an application to add the new plugin to. You can use ```myapplication``` from the previous example. The example is also contained in the folder ```plugins/deviceContact``` of  https://bitbucket.org/m2m/cumulocity-ui-plugin-examples.
 
-### Create and register a plugin stub
+### Create a plugin
 
 In your application, run the command:
 
@@ -336,7 +338,7 @@ Then create a file ```index.js``` at the plugin's root folder to have the follow
 })();
 ```
 
-Update the application manifest (cumulocity.json) to add this new plugin to the import list.
+Update the application manifest (```cumulocity.json```) to add this new plugin to the import list.
 
 ```
 {

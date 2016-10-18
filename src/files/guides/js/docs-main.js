@@ -14,7 +14,6 @@ $(document).ready(function () {
     if (classes.length) {
       var cls = classes[0];
       var lang = cls.split('-')[1];
-      $this.removeClass(cls);
       $this.addClass(lang);
     }
   });

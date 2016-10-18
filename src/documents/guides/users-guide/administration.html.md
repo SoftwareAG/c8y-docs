@@ -556,7 +556,7 @@ SMS sending is used by several features within the application. it can be used t
 
 ## <a name="retention"></a>Managing data retention
 
-"Retention rules" let you control how long data will be stored in your account. For example, you may want to store measurements for 90 days, but delete alarms already after 10 days. By default, all historical data is deleted after 60 days.
+"Retention rules" let you control how long data will be stored in your account. For example, you may want to store measurements for 90 days, but delete alarms already after 10 days. By default, all historical data is deleted after 60 days (this can be changed in system settings).
 
 Retention rules are usually run during the night. When you edit a retention rule, you will not see an immediate effect, for example, in the usage section on the home page of the administration application.
 

@@ -45,10 +45,10 @@ To create one simply run:
 ```bash
 $ npm init
 ```
-Then proceed to install Cumulocity's plugin, which you can reuse to build your application on.
+Then proceed to install Cumulocity UI package containing our plugins, which you can reuse to build your application on.
 
 ```bash
-$ npm i http://resources.cumulocity.com/webapps/ui/7.37.0.tar.gz --save
+$ c8y install latest
 ```
 
 ## "Hello world!"

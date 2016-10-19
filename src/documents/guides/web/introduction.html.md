@@ -51,6 +51,12 @@ Then proceed to install Cumulocity UI package containing our plugins, which you 
 $ c8y install latest
 ```
 
+This command will:
+- Check for the latest version of the UI
+- Download the package
+- Add it as a dependency inside ```package.json```
+Have in mind that that, when sharing your project, other developers only need to run  ```npm install``` as the version of the Cumulocity UI is already defined as a dependency. You can always install other versions by running the ```c8y install``` command again.
+
 ## "Hello world!"
 
 This section describes a "Hello world!"-style plugin which is available as an example in the repository "cumulocity-ui-plugin" as "myplugin".
@@ -73,11 +79,11 @@ In order to achieve this goal you need to do the following steps:
 
 ### Set up an application project
 
-* [Download](https://bitbucket.org/m2m/cumulocity-ui-plugin/get/tip.zip) the plugin boilerplate from Bitbucket. *(Alternatively, clone the repository if you use Mercurial)*
-* In a terminal window, go to the project's root folder and install the project dependencies.
+* [Download](https://bitbucket.org/m2m/cumulocity-ui-plugin/get/tip.zip) the plugin boilerplate from Bitbucket. *(Alternatively, clone the repository if you use Mercurial. As the package.json is already created here, you don't need to npm init)*
+* In a terminal window, go to the project's root folder and install the Cumulocity UI plugins
 
 ```bash
-$ npm install
+$ c8y install latest
 ```
 ### Configure the application manifest
 

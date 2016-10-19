@@ -49,9 +49,9 @@ To add additional users, click on "Add user".
 - Enter first and last name of the user. This is purely for information and will be shown on the top right next to the user symbol when the user logs in.
 - Enter the e-mail address of the user. Note that you need to provide a valid, unique e-mail address here to enable users to reset their password.
 - Enter the telephone number. Again, this is purely informational.
-- If you choose to check "Enable two-factor authentication", the user will be forced to provide phone number and on login the pin code will be required for successful authentication
+- If you choose to check "Enable two-factor authentication", the user will be forced to provide phone number and on login the pin code will be required for successful authentication.
 - If you choose to check "Password reset", the user will have to choose a new password after the next login.
-- If you choose to check "Send password reset link as e-mail", the e-mail message will be sent to provided e-mail address with link to reset password
+- If you choose to check "Send password reset link as e-mail", the e-mail message will be sent to provided e-mail address with link to set a password.
 - Enter a password and confirm the password. (See "[Logging in](/guides/users-guide/overview#login)" for more information on password strength.)
 - Add users to relevant [user groups](#user-groups).
 - Assign device and application [permissions](#permissions).

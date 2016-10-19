@@ -18,7 +18,7 @@ Plugins are based on HTML5. You should be familiar with the following technologi
 
 You will need the following prerequisites for being able to develop plugins and to execute the examples:
 
-* You will need [Node.js](http://nodejs.org/) (6.7 or newer)
+* You will need [Node.js](http://nodejs.org/) *(6.7 or newer)*
 * You will need [npm](https://www.npmjs.com/) *(installed with Node.js)*
 * You will need access to your Cumulocity account, i.e. you need your tenant name, username and password.
 
@@ -29,7 +29,7 @@ All examples described in the document are available in the repository [https://
 Applications based on Cumulocity UI are always a collection of plugins. We provide a set of plugins you can build on and you can add your own. For dealing with the process of building, theming, translating and deploying your apps and plugins the cli tool must be installed globally the development machine.
 
 ```bash
-$ npm i http://resources.cumulocity.com/webapps/node-tools/c8y-2.0.0-SNAPSHOT.tar -g
+$ npm i cumulocity-tools -g
 ```
 You can check the available commands with:
 
@@ -39,7 +39,7 @@ $ c8y --help
 
 ## Installing Cumulocity UI plugins
 
-Comulocity UI plugins to be used in your application are loaded via npm. For this you must have have a ```package.json``` in your project.
+Cumulocity UI plugins to be used in your application are loaded via npm. For this you must have have a ```package.json``` in your project.
 To create one simply run:
 
 ```bash

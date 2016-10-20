@@ -125,7 +125,7 @@ $ c8y deploy:app myapplication
 ? Tenant piedpiper
 ? User admin
 ? Password ***********
-? Base url https://piedpier.cummulocity.com
+? Base url https://piedpier.cumulocity.com
 GET application/applicationsByOwner/piedpier?pageSize=10000 200
 POST application/applications/31337/binaries/ 201
 PUT /application/applications/31337 200

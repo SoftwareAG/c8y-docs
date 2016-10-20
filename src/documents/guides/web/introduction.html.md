@@ -137,6 +137,26 @@ After deploying your application, it appears in the *"Own applications"* menu of
 
 ![My Application](/guides/plugins/applicationeditor.png)
 
+### Test your application
+
+To run your application locally just run ```c8y server```
+You can pass an options ```-u https://piedpiper.cumulocity.com``` with the instance where you want your api calls to be proxied to.
+
+```console
+$ c8y server
+Cumulocity UI development server running in port 9000.
+Proxying api requests to https://bazinga.staging.c8y.io
+140 modules loaded.
+5 application manifest loaded.
+http://localhost:9000/apps/myapplication/ cumulocity.json
+http://localhost:9000/apps/fieldbus4/  Packaged App
+http://localhost:9000/apps/administration/  Packaged App
+http://localhost:9000/apps/cockpit/  Packaged App
+http://localhost:9000/apps/devicemanagement/  Packaged App
+```
+
+Now, you can test your application by opening your browser at the URL "http://localhost:9000/apps/myapplication/".
+
 ### Configure the plugin manifest
 
 Each plugin comes in a separate subfolder of the ```plugins``` folder of your application. The example contains a subfolder ```myplugin```. Inside ```myplugin```, you will another ```cumulocity.json``` file, the plugin manifest. The plugin manifest provides information about a plugin, such as the name, short description, files to be loaded, and angular modules to be added to the main app.
@@ -212,7 +232,7 @@ With this code, we contribute a menu item (```c8yNavigationProvider```) and a vi
 
 ### Implement the controller
 
-```index.js``` contains one more function, a controller ```mh_MainCtrl```. This controller defines a variable ```hello``` to contain the simple static text ```Hello world!```:
+```index.js``` contains one more function, a controller ```MainController```. This controller defines a variable ```hello``` to contain the simple static text ```Hello world!```:
 
 ```js
 function MainController($scope) {
@@ -227,26 +247,6 @@ The variable ```hello``` is used in the view template that renders the user inte
 ```html
 	<h1>{{hello}}</h1>
 ```
-
-### Test your application
-
-To run your application locally just run ```c8y server```
-You can pass an options ```-u https://piedpiper.cumulocity.com``` with the instance where you want your api calls to be proxied to.
-
-```console
-$ c8y server
-Cumulocity UI development server running in port 9000.
-Proxying api requests to https://bazinga.staging.c8y.io
-140 modules loaded.
-5 application manifest loaded.
-http://localhost:9000/apps/myapplication/ cumulocity.json
-http://localhost:9000/apps/fieldbus4/  Packaged App
-http://localhost:9000/apps/administration/  Packaged App
-http://localhost:9000/apps/cockpit/  Packaged App
-http://localhost:9000/apps/devicemanagement/  Packaged App
-```
-
-Now, you can test your application by opening your browser at the URL "http://localhost:9000/apps/myapplication/".
 
 ### Build and deploy your application and plugins
 
@@ -296,7 +296,7 @@ The build process for an app includes the following steps:
 ## Branding plugin
 
 Our main css is based on 	the popular css framework [Bootstrap 3](http://getbootstrap.com/). It is possible to build a branding plugin based on Cumulocity own base branding simply by overriding less variables.
-Inside the repo ```cumulocity-ui-plugin-examples``` you can find an example plugin called ```myBranding```. To create your branding you can copy this folder, rename it and update the information inside ```cumulocity.json```. Each branding plugin *must* be named ```<something>Branding```.
+Inside the repo [cumulocity-ui-plugin-examples](https://bitbucket.org/m2m/cumulocity-ui-plugin-examples) you can find an example plugin called ```myBranding```. To create your branding you can copy this folder, rename it and update the information inside ```cumulocity.json```. Each branding plugin *must* be named ```<something>Branding```.
 
 ![Branding example](/guides/plugins/branding.png)
 
@@ -317,7 +317,21 @@ In order to achieve this goal you need to do the following steps:
 * Display data in the tab.
 * Persist the data to Cumulocity backend
 
-We assume that you already have created an application to add the new plugin to. You can use ```myapplication``` from the previous example. The example is also contained in the folder ```plugins/deviceContact``` of  https://bitbucket.org/m2m/cumulocity-ui-plugin-examples.
+We assume that you already have created an application to add the new plugin to. You can use ```myapplication``` from the previous example. The example is also contained in the folder ```plugins/deviceContact``` of  [cumulocity-ui-plugin-examples](https://bitbucket.org/m2m/cumulocity-ui-plugin-examples).
+
+### Adding dependencies
+
+For this exercise we will reuse some Cumylocity's plugins. More specifically:
+
+```console
+"core/deviceList",
+"core/groupsHierarchy",
+"core/deviceDetail"
+```
+These values should be added to the ```imports``` definition of the application manifest. You can see this in ```cumulocity.json``` inside [cumulocity-ui-plugin-examples](https://bitbucket.org/m2m/cumulocity-ui-plugin-examples).
+
+* **TIP**
+If you open the json file ```_apps.json``` inside ```node_modules/cumulocity-ui-build``` you can see the manifests for Cumulocity default applications. All of these plugins can be reused in your own applicatons.
 
 ### Create a plugin
 

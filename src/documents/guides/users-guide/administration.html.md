@@ -47,7 +47,7 @@ To add additional users, click on "Add user".
 - Enter the username that the user will use for logging in to your account.
 - Choose if the user will be active. If this switch is set to "disabled", the user will not be able to log in.
 - Enter first and last name of the user. This is purely for information and will be shown on the top right next to the user symbol when the user logs in.
-- Enter the email address of the user. Note that you need to provide a valid, unique email address here to enable users to reset their password.
+- Enter the e-mail address of the user. Note that you need to provide a valid, unique e-mail address here to enable users to reset their password.
 - Enter the telephone number. Again, this is purely informational.
 - If you choose to check "Password reset", the user will have to choose a new password after the next login.
 - Enter a password and confirm the password. (See "[Logging in](/guides/users-guide/overview#login)" for more information on password strength.)
@@ -69,6 +69,24 @@ Hovering over a user reveals the deactivate and delete buttons on the right side
 
 ![Delete User](/guides/users-guide/deleteuser.png)
 
+### <a name="tfa"></a>Using two-factor authentication
+
+The Two-factor authentication(TFA) is an extra layer of security that requires not only a username and password, but SMS verification as well. TFA can only be enabled by administrators. When TFA is enabled, it's not possible to configure it from the "User settings", it is configurable from the administration UI.
+
+> Note that phone number is required when adding a user and TFA is enabled. When users without a phone number try to login when TFA is enforced, the user will be redirected to a window, to enter his/her mobile phone number.
+
+To see whether TFA is enabled for a certain user, go to the "Users" menu and check the TFA status column.
+
+![TFA satus](/guides/users-guide/tfastatus.png)
+
+In order enable two-factor authentication for a user: 
+
+- Go to the "Users" menu.
+- Click on the desired user.
+- Click on the checkbox next to "Enable two-factor authentication.
+- Click "Save".
+
+![Enable TFA](/guides/users-guide/enabletfa.png)
 ## <a name="user-groups"></a>Managing user groups
 
 To simplify user management, users with the same permissions can be placed into user groups representing typical permission sets. A single user can be part of multiple user groups. New accounts will usually contain four user groups by default. These user groups have common useful permission settings:
@@ -121,6 +139,7 @@ The total set of permissions that a user has is calculated using the following r
 
 When you edit a group, a table with "roles" is listed below the group name. These represent permission on the following types of data:
 
+* Tenant management: View, create, edit or delete subtenants.
 * Tenant statistics: View the usage data for this account, as shown on the home page of the administration application.
 * Option management: View or edit account options such as password policies.
 * Application management: View or edit the applications available in this account.
@@ -154,47 +173,55 @@ To assign permissions click on the relevant checkbox. If you wish to select or c
 
 ![All roles](/guides/users-guide/allroles.png)
 
-#### Using Support Permission
+### Using Support Permission
 
-##### Overview
+#### Overview
 
 Support users are users in management tenant that have special permissions to login to normal tenants. 
 To allow login into normal tenants, support user account must have support access rights.
-When support user logs in to tenant, he has the same privileges as the subtenant user. 
-The user from subtenant is specified on login page.  
+When support user logs into a tenant, he has the same privileges as the subtenant user. 
+The user is specified on login page.  
 
-Support users can login using own password and username in form
+Support users can login using own password and username in form:
 
 > support_user$user
 
-Where "support_user" is name of support user in management tenant and "user" is name of user which context will be used
+Where "support_user" is the name of the support user in management tenant and "user" is the name of the user which content will be used.
 
-or
+or, you can use as well:
 
 > support_user$
 
-Where "support_user" is name of user in management tenant. In this case support user will use context of one of admin users.
+Where "support_user" is the name of the user in management tenant. In this case, the support user will use the content of one of the admin users.
 
-##### Configuration
+#### Configuration
 
-Support user functionality is enabled by default. 
-If it is disabled by platform operator then any user has "Activate support access" option available in upper right menu.
-After selecting this option, support user has access to tenant for one day.
+The support user functionality is enabled by default. 
+If it is disabled by the platform operator, then every user has "Activate support access" option, it is available in the upper right menu.
+After selecting this option, support users have access to the tenant for one day.
 
-##### Audit logs
+#### Audit logs
 
-Audit logs for all action performed by support user will have information about actual author. 
-In column "Who?" will be author's name in form "support_user$user".
+Audit logs for all action performed by support users will have information about the actual author. 
+In column "Who?" the author's name will be shown in form of:
 
-##### Tenant-specific permissions
+> "support_user$user"
 
-It is sometimes required to assign support access rights to specific tenants only. It can be done by [device-specific permissions](#assigning_device_specific_permissions) for the user and [tenant managed object](#tenant_management_object) with scope "SUPPORT", type "&#42;" and permission "&#42;".
+#### Tenant-specific permissions
 
-Bellow screen shows how to grant access to tenant "myTenant".
+Sometimes, it is required to assign support access rights to specific tenants only. It can be done by [device-specific permissions](#assigning_device_specific_permissions) for the user and [tenant managed object](#tenant_management_object) with scope "SUPPORT", type "&#42;" and permission "&#42;".
+
+The screenshot below shows you, how to grant access to the tenant "myTenant".
 
 <img src="/guides/users-guide/support_permission.png" alt="Support permission">
 
-Tenant managed object can be found by type "c8y_Tenant" or name equals to tenant id.
+Tenant managed object can be found by type "c8y_Tenant" or name equal to tenant id.
+
+### Restricting tenant deletion
+
+Users with tenant management "Admin" permissions can create, update and delete tenants. For example, in order to restrict a user from deleting tenants only create and update permissions should be given. This way, the user can only create and update the tenants, but not delete them.
+
+![tenant delete restriction](/guides/users-guide/restrict_tenant_deletion.png)
 
 ### <a name="tenant_management_object"></a>Tenant management objects
 
@@ -428,7 +455,7 @@ To add a new subtenant, click on "Create Tenant"
 
 - Enter unique domain/url of the new tenant. This url will be used to access the application (e.g. tenant@cumulocity.com).
 - Enter the name of the company.
-- Enter the administrator's email. Note that you need to provide a valid email address here to enable users to reset their password.
+- Enter the administrator's e-mail. Note that you need to provide a valid e-mail address here to enable users to reset their password.
 - Enter username of the administrator which will be used when logging in.
 - Enter contact name. This field is optional.
 - Enter contact phone. Again, this field is optional.
@@ -446,6 +473,8 @@ When you have finished editing, click on the "Save" button.
 > Note that when a tenant is suspended, his data still remains in the database and he can be reactivated at any later date. On the other hand when the tenant has been removed its data will be deleted.
 
 Hovering over a tenant will reveal the "Suspend" and the "Remove" buttons. The "Remove" button is shown as a red cross. To suspend or remove a tenant, click on the respective button.
+
+> Please note that there is an additional check during tenant suspension. The user will have to provide his own password in order to proceed. After the tenant is suspended, an e-mail is sent to the suspended tenant administrator. The e-mail is sent only if the property in the config file is enabled and if the tenant administrator provided an e-mail address during creation. 
 
 ### <a name="usage-stats"></a> Retrieving usage statistics
 
@@ -532,7 +561,11 @@ To change password settings, click on "Password". To limit the validity of user 
 
 By default, users can use any password that consists of eight characters or longer. If you select "Enforce that all password are "strong" (green)", your users must provide strong passwords as described in "[Logging in](/guides/users-guide/overview#login)".
 
-By default, system restricts users to not use password used in history, in other words last N passwords provided by user are remembered by system and system restricts user to not use them. The N is configurable and default value for N is 10.
+> Note that "Enforce that all password are green" and the "Password validity limit" can be mandatory and non-editable, if configured by the platform administrator.
+
+Strong (green) passwords must have M characters. By default, system restricts users to not use password s used in history, in other words last N passwords provided by user are remembered by the system and the system restricts users to not use them. The default value for N is 10.
+
+> Note that M and N can be configured by the platform administrator.
 
 Click "Save" to store the settings.
 
@@ -552,11 +585,11 @@ In the "Server-side agents" menu, the "Send dashboard via e-mail" smart rule can
 
 ### <a name="openIT-credentials"></a>Enter OpenIT credentials
  
-SMS sending is used by several features within the application. it can be used to make login more secure with two-factors authentication. An SMS can be sent when an alarm is triggered. SMSes can be used to send instructions to devices. The service provided by [Openit](https://sms.openit.de/main.php) can be used to this effect. In this section, the user can enter its credentials to activate the features that require SMS sending.
+SMS sending is used by several features within the application. it can be used to make login more secure with [two-factors authentication](/guides/users-guide/administration#tfa). An SMS can be sent when an alarm is triggered. SMSes can be used to send instructions to devices. The service provided by [Openit](https://sms.openit.de/main.php) can be used to this effect. In this section, the user can enter its credentials to activate the features that require SMS sending.
 
 ## <a name="retention"></a>Managing data retention
 
-"Retention rules" let you control how long data will be stored in your account. For example, you may want to store measurements for 90 days, but delete alarms already after 10 days. By default, all historical data is deleted after 60 days.
+"Retention rules" let you control how long data will be stored in your account. For example, you may want to store measurements for 90 days, but delete alarms already after 10 days. By default, all historical data is deleted after 60 days (this can be changed in system settings).
 
 Retention rules are usually run during the night. When you edit a retention rule, you will not see an immediate effect, for example, in the usage section on the home page of the administration application.
 

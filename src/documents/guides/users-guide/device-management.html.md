@@ -128,7 +128,7 @@ Device details are divided over a number of tabs. The standard tabs that may be 
 * [Alarms](#alarms)
 * [Control](#control)
 * [Text configuration](#config)
-* [Snapshot configuration](#snapconfig)
+* [Binary configuration](#configsnap)
 * [Software](#software)
 * [Events](#events)
 * [Location](#location)
@@ -208,9 +208,13 @@ This tab lists the operations that are being sent to a device or have been sent 
 
 ![Operations](/guides/users-guide/operations.png)
 
+### <a name="config"></a> Text configuration
+
+The text configuration allows you to configure the parameters and initial settings of your device. You may manually edit or add a device configuration by navigating to the "Configuration" tab of the specific device. 
+
 ### <a name="configsnap"></a>Binary configuration
 
-This tab allows you to retrieve, modify or save configuration data. Configuration snapshot can be requested from the device and later it can be applied to other devices.
+This tab allows you to retrieve, modify or save configuration data. 
 
 A good use-case for the configuration snapshot is applying the same configuration to multiple devices. Then, you can configure one device, download the snapshot and apply it to the other devices.
 
@@ -218,15 +222,35 @@ A good use-case for the configuration snapshot is applying the same configuratio
 
 #### Retrieving current snapshot configuration from a device	
 
-In order to retrieve the current snapshot from a device, first navigate to a device and then click on "Configuration". Scroll down and under "Configuration snapshot"
+In order to retrieve the current snapshot from a device, first navigate to a device and then click on "Configuration". Scroll down and under "Configuration snapshot", click on "Get new snapshot from device". Then, you can find the retrieved snapshot in the "Configuration repository".
 
-#### Applying snapshot configuration from a device
+> Note that, the "Configuration repository" is located under the "Management" menu. 
 
-In order to apply a new snapshot first navigate to a device and then click on "Configuration". Scroll down and under "Configuration snapshot" you can select a configuration repository entry to use. When the entry is selected, click on "Put new snapshot to device".
+![Retrieve Configuration Snapshot](/guides/users-guide/retrievesnap.png)
 
+#### Applying snapshot configuration to a device
+
+In order to apply a new snapshot, first navigate to a device and then click on "Configuration". Scroll down and under "Configuration snapshot", you can select a configuration repository entry to use from the drop down menu. When the entry is selected, click on "Put new snapshot to device". This way, you can add a snapshot  retrieved from another device.
+
+> Please note that, when you apply snapshot configuration from one device to another, the configuration may contain data that is device specific!
+
+![Apply new snapshot to a device](/guides/users-guide/addsnap.png)
+
+#### Applying a snapshot configuration from one device to other devices
+
+To apply snapshot configuration from one device to multiple devices: 
+
+- Navigate to the configuration tab of the device that already has your desired snapshot configuration.
+- Retrieve the current snapshot from the device by clicking on "Get new snapshot from device".
+- Add all devices to a group. For more info on grouping devices, see [here](/guides/users-guide/device-management#grouping-devices).
+- Navigate to the configuration tab of one of the devices in the group, select the new snapshot from the drop down menu, then click on "Put new snapshot to device".
+- Navigate to the control tab of the same device, hover over the latest operation "Apply configuration snapshot", click on the cogwheel and then "Execute for the whole group".
+ 
+> Please note that, when you apply snapshot configuration from one device to another, the configuration may contain data that is device specific!
+ 
 #### Creating a snapshot configuration from a file
 
-Note that, new entries can be added in the "Configuration snapshots" list by clicking on "Add configuration snapshot". Then you will be redirected to the "Configuration repository". To add a new snapshot:
+New entries can be added to the "Configuration snapshots" list, by clicking on "Add configuration snapshot". Then you will be redirected to the "Configuration repository". To add a new snapshot:
 
 - Enter "Name".
 - Enter "Description.

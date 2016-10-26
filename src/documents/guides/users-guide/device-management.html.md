@@ -216,13 +216,13 @@ The text configuration allows you to configure the parameters and initial settin
 
 This tab allows you to retrieve, modify or save configuration data. 
 
-A good use-case for the configuration snapshot is applying the same configuration to multiple devices. Then, you can configure one device, download the snapshot and apply it to the other devices.
+A good use-case for the configuration snapshot is applying the same configuration to multiple devices. This way, you can configure one device, download the snapshot and apply it to the other devices.
 
 ![Configuration Snapshot](/guides/users-guide/configsnap.png)
 
 #### Retrieving current snapshot configuration from a device	
 
-In order to retrieve the current snapshot from a device, first navigate to a device and then click on "Configuration". Scroll down and under "Configuration snapshot", click on "Get new snapshot from device". Then, you can find the retrieved snapshot in the "Configuration repository".
+In order to retrieve the current snapshot from a device, first navigate to the device and then click on "Configuration". Scroll down and under "Configuration snapshot", click on "Get new snapshot from device". Then, you can find the retrieved snapshot in the "Configuration repository".
 
 > Note that, the "Configuration repository" is located under the "Management" menu. 
 
@@ -236,15 +236,13 @@ In order to apply a new snapshot, first navigate to a device and then click on "
 
 ![Apply new snapshot to a device](/guides/users-guide/addsnap.png)
 
-#### Applying a snapshot configuration from one device to other devices
+#### Applying a snapshot configuration from one device to another device
 
-To apply snapshot configuration from one device to multiple devices: 
+To apply snapshot configuration from one device to another device: 
 
 - Navigate to the configuration tab of the device that already has your desired snapshot configuration.
 - Retrieve the current snapshot from the device by clicking on "Get new snapshot from device".
-- Add all devices to a group. For more info on grouping devices, see [here](/guides/users-guide/device-management#grouping-devices).
-- Navigate to the configuration tab of one of the devices in the group, select the new snapshot from the drop down menu, then click on "Put new snapshot to device".
-- Navigate to the control tab of the same device, hover over the latest operation "Apply configuration snapshot", click on the cogwheel and then "Execute for the whole group".
+- Navigate to the configuration tab of the other device, select the new snapshot from the drop down menu and click on "Put new snapshot to device".
  
 > Please note that, when you apply snapshot configuration from one device to another, the configuration may contain data that is device specific!
  

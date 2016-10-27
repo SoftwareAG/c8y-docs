@@ -16,13 +16,13 @@ This section introduces the basic concepts around applications in Cumulocity.
 ## Available applications to each tenant
 
 The users in each tenant have access to the applications that:
-* Have been created by them (*Own applications*)
+* Have been created by users of that same tenant (*Own applications*)
 * The tenant is subscribed to (*Subscribed Applications*)
 
 ### Own applications
-Are only available to users of a particular tenant and are created by a user with application administration permissions. *Own applications* are used, for example, during application development when you do not yet want to make a particular application version available for a wide audience. They are also used for functionality that is proprietary for an enterprise, for example, interactions with in-house IT systems. The applications can be either:
+Are only available to users of a particular tenant and are created by a user with application ADMIN permissions. *Own applications* are used, for example, during application development when you do not yet want to make a particular application version available for a wide audience. They are also used for functionality that is proprietary for an enterprise, for example, interactions with in-house IT systems. The applications can be either:
   * **HTML5 Application**
-  These are regular client side applications based on HTML, Javascript and CSS. There is no limitation on whatever library or framework you can use. If you choose to use [AngularJS 1.x](https://angularjs.org/) examples and source code are provided as part of the [Smart Apps Toolkit](/guides/web/smart-toolkit/)
+  Regular client side applications based on HTML, Javascript and CSS. There is no limitation on whatever library or framework you can use. If you choose to use [AngularJS 1.x](https://angularjs.org/) examples and source code are provided as part of the [Smart Apps Toolkit](/guides/web/smart-toolkit/)
   * **Smartapps**
   These web applications are built upon the Cumulocity UI platform, which uses AngularJS 1.x. It's a completely modular system that allows to:
     * Extend built in applications
@@ -33,40 +33,40 @@ Are only available to users of a particular tenant and are created by a user wit
   To build a *Smartapp* you can follow the guide [Introduction to plugin development](/guides/web/introduction/).
 
 ### Subscribed applications
-These are  owned by the tenant ```management```. Subscribing to a market application makes it available to that tenant. To certify an application as market application, please [contact us](mailto:info@cumulocity.com) or simply change your application ```availability``` setting to ```MARKET```.
+These are  owned by the tenant management. Subscribing to a market application makes it available to that tenant. To certify an application as market application, please [contact us](mailto:info@cumulocity.com) or simply change your application availability setting to MARKET.
 
 ## Properties
 
 Applications are managed via the [Application API](/guides/reference/applications/).
-The essential properties on an application object are:
+The essential properties of an application object are:
 * **name** A human friendly name for the application to be displayed on UI
-* **contextPath** The url where the app will be available. If it is set to  ```devicemanagement``` the application will be available in at the url ```/apps/devicemanagement```. This value *must* be unique for all the apps owned by a single tenant.
-If a specific tenant owns that an application with the same context path of another app which it is also subscribed to, the owned application will overide the subscribed one.
+* **contextPath** The url where the app will be available. If it is set to  devicemanagement the application will be available in at the url /apps/devicemanagement. This value *must* be unique for all the apps owned by a single tenant.
+If a specific tenant owns that an application with the same context path of another app which it is also subscribed to, the owned application will override the subscribed one.
 * **applicationKey** This key is included in every request an application executes to the api. It is a mechanism to associate requests with a specific application and distinguish from other request coming from devices. This value *must* be unique for all the applications owned by a single tenant.
 
 ## Contents
-A ```HOSTED``` application can contain:
+A HOSTED application can contain:
 * A complete, standalone client side  web application, regardless if it is a *Smartapp* based on Cumlocity UI platform, or any other frontend stack.
-* A ```cumulocity.json``` manifest on the root of the app in the case of *Smartapps*
+* A cumulocity.json manifest on the root of the app in the case of *Smartapps*
 * A set of statements in Cumulocity Event Language.
 
 ## Applications in user interface
 
 Applications available to each user are listed in the **application switcher** on the top right corner of built in applications or any other *Smartapp*, so
-that users can navigate between them. They can be ```HOSTED``` on an ```EXTERNAL``` web site.
-* ```HOSTED``` are available via ```<tenant>.cumulocity.com/apps/<application>``` can serve files files uploaded in a zip archive or simply proxy he request to another webserver.
-* ```EXTERNAL``` are nothing more than a link, and the user will navigate to that address. They can also be hosted through
+that users can navigate between them. They can be HOSTED on an EXTERNAL web site.
+* HOSTED are available via *[tenant].cumulocity.com/apps/[application]* can serve files files uploaded in a zip archive or simply proxy he request to another web server defined in *resourcesUrl*.
+* EXTERNAL are nothing more than a link, and the user will navigate to that address.
 
 ![App switcher](/guides/concepts-guide/appswitcher.png)
 
-The Cumulocity build in applications are based on AngularJS 1.x. It is designed in a modular fashion around a set of plugins that can be dynamically enabled and disabled even by end users.
-As so, each built in app as any *Smartapp* is simply a set of plugins assembled together. These plugins can be uploaded or removed via the administration user interface and developers can leverage these same plugins to develop new plugins and assemble multiple applications.
+The Cumulocity build in applications are based on AngularJS 1.x. It is modular system around a set of plugins that can be dynamically enabled and disabled even by end users.
+As so, each built in app as any *Smartapp* is simply a set of plugins put together together. These plugins can be uploaded or removed via the administration user interface and developers can leverage these same plugins to develop new plugins and assemble multiple applications.
 
 ![Plugin editor](/guides/users-guide/plugins.png)
 
 ## Plugins
 
-A plugin is nothing else than a module that contains javascript, css, and any other kind of asset. Although it can contain any kind of code or library, the developer will probably want to integrate with existing UI using extension points:
+A plugin is a module that contains javascript, css, and any other kind of asset. Although it can contain any kind of code or library, the developer will probably want to integrate with existing UI using extension points:
 
 * Add search functionality.
 * Contribute menu items to the navigation bar on the left.
@@ -86,7 +86,7 @@ For more information on developing plugins, please visit the [Plugin Developer's
 
 Backwards compatibility for all REST APIs is guaranteed, while backward compatibilities for JavaScript APIs are not. We try to keep the JavaScript incompatibilities to a minimum, there are cases where they will happen. Therefore new application versions might cause older versions of the plugins to fail.
 
-However, this is taken care by automatically by the previous mentioned mechanism to copy subscribed applications. For example, if a user adds a plugin to the builtin application ‚ÄúCockpit Version 2.0‚Äù, then the application is copied. That means that the application is ‚Äúfreezed‚Äù. Updates of the Cockpit application will not be automatically available in the copied version. This ensures that the added plugin will work successfully. And because of the compatibility of the REST API the copied version is ensured to work also for the new backend version.
+However, this is taken care by automatically by the previous mentioned mechanism to copy subscribed applications. For example, if a user adds a plugin to the builtin application ìCockpit Version 2.0î, then the application is copied. That means that the application is ìfreezedî. Updates of the Cockpit application will not be automatically available in the copied version. This ensures that the added plugin will work successfully. And because of the compatibility of the REST API the copied version is ensured to work also for the new backend version.
 
 ## Migration
 
@@ -97,7 +97,7 @@ In the new paradigm described in [Plugin Developer's Guide](/guides/web/introduc
 
 ## Modules
 
-If your application requires new server-side processing functionality, you can add a [Cumulocity Event Language](/guides/reference/real-time-statements) module to it. This is simply a file inside your application at a particular location (```META-INF/application-module.cel```).
+If your application requires new server-side processing functionality, you can add a [Cumulocity Event Language](/guides/reference/real-time-statements) module to it. This is simply a file inside your application at a particular location (META-INF/application-module.cel).
 
 ```console
 module paypalhere;
@@ -113,4 +113,4 @@ from
 ...
 ```
 
-Please note that module deployment within application is not supported for local zip applications, so the ```resourceUrl``` has to point to some external resource from where the file can be downloaded. The file has to be named ```application-module.cel``` and be inside directory ```META-INF```.
+Please note that module deployment within application is not supported for local zip applications, so the resourceUrl has to point to some external resource from where the file can be downloaded. The file has to be named application-module.cel and be inside directory META-INF.

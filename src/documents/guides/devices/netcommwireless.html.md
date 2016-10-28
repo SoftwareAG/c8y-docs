@@ -90,7 +90,7 @@ You can view and configure the essential mobile network ("WAN") and local area n
 
 The mobile network ("WAN") parameters shown in the user interface correspond to the first profile stored in the router. These parameters can be remotely configured directly or via SMS.
 
-For SMS configuring, the router needs to be configured to accept SMS commands. Consult the router's manual on the relevant parameters for SMS configuration, or use the router's web user interface. You also need to have an SMS gateway configured with your account. Contact <support@cumulocity.com> for setting up an SMS gateway. For more information on Device Shell, consult the  [user's guide](https://cumulocity.com/guides/users-guide/device-management/#shell).
+For SMS configuring, the router needs to be configured to accept SMS commands. Consult the router's manual on the relevant parameters for SMS configuration, or use the router's web user interface. You also need to have an SMS gateway configured with your account. Contact [support](https://support.cumulocity.com) for setting up an SMS gateway. For more information on Device Shell, consult the  [user's guide](https://cumulocity.com/guides/users-guide/device-management/#shell).
 
 > Note configuring WAN parameters via both IP and SMS mode requires Cumulocity 7.26. When you configure a wrong APN setting, the device will lose mobile network connection and can only be managed by limited SMS functionality.
 
@@ -255,7 +255,7 @@ where `<mode>` can be rs232, rs422 or rs485. You may need to reboot the device a
 
 Then:
 
-* Subscribe your account to the Cloud Fieldbus app by contacting <support@cumulocity.com>.
+* Subscribe your account to the Cloud Fieldbus app by contacting [support](https://support.cumulocity.com).
 * Configure Modbus communication as described in the [Cloud Fieldbus user's guide](/guides/users-guide/cloud-fieldbus).
 * Enable or disable write permission by setting the "Modbus read only" property in the Cumulocity menu on the device's web UI, see "[Configuring the router](#configure)". Set it to 0 means allow write permission, while 1 means disallow Modbus write permission.
 

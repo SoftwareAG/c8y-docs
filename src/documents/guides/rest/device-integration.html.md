@@ -41,7 +41,7 @@ The process works as follows:
 
 * Cumulocity assumes each device to have some form of unique ID. A good device identifier may be the MAC address of the network adapter, the IMEI of a mobile device or a hardware serial number 
 * When you take a new device into use, you enter this unique ID into "Device registration" in Cumulocity and start the device.
-* The device will connect to Cumulocity and send its unique ID repeatedly. For this purpose, Cumulocity provides a static host that can be enquired from support@cumulocity.com.
+* The device will connect to Cumulocity and send its unique ID repeatedly. For this purpose, Cumulocity provides a static host that can be enquired by contacting [support](https://support.cumulocity.com).
 * You can accept the connection from the device in "Device registration", in which case Cumulocity sends generated credentials to the device.
 * The device will use these credentials for all further requests.
 

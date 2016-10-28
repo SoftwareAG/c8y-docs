@@ -422,7 +422,7 @@ Although it is technically not required by Cumulocity to have the country code w
 
 _Note:_
 
-This feature will only work if your tenant is linked to a sms provider. For more information please contact support@cumulocity.com.
+This feature will only work if your tenant is linked to a sms provider. For more information please contact [support](https://support.cumulocity.com).
 
 Example:
 
@@ -445,7 +445,7 @@ This stream enables the possibility to send push notifications from Cumulocity v
 
 _Note:_
 
-This feature will only work if your tenant is linked to a push provider. For more information please contact support@cumulocity.com.
+This feature will only work if your tenant is linked to a push provider. For more information please contact [support](https://support.cumulocity.com).
 
 Example:
 
@@ -471,7 +471,7 @@ Example:
 
 _Note:_
 
-This feature will only work if your tenant is linked to a speech provider. For more information please contact support@cumulocity.com.
+This feature will only work if your tenant is linked to a speech provider. For more information please contact [support](https://support.cumulocity.com).
 
 Example:
 

@@ -34,7 +34,7 @@ The "Home" screen provides navigation links to the main parts of the administrat
 
 ## <a name="users"></a>Managing users
 
-In order to manage users in your tenant, click on the "Users" menu. New accounts will usually contain two users: The initial administrator user and the "sysadmin" user. The initial administrator user was configured when your account was created. This user cannot be removed, only edited. The "sysadmin" user is a user that the Cumulocity support uses to guide you through your trial phase.
+In order to manage users in your tenant, click on the "Users" menu. New tenants will usually contain two users: The initial administrator user and the "sysadmin" user. The initial administrator user was configured when your account was created. This user cannot be removed, only edited. The "sysadmin" user is a user that the Cumulocity support uses to guide you through your trial phase.
 
 > Note that the sysadmin user may not be present depending on your provider.
 
@@ -91,7 +91,7 @@ In order enable two-factor authentication for a user:
 ![Enable TFA](/guides/users-guide/enabletfa.png)
 ## <a name="user-groups"></a>Managing user groups
 
-To simplify user management, users with the same permissions can be placed into user groups representing typical permission sets. A single user can be part of multiple user groups. New accounts will usually contain four user groups by default. These user groups have common useful permission settings:
+To simplify user management, users with the same permissions can be placed into user groups representing typical permission sets. A single user can be part of multiple user groups. New tenants will usually contain four user groups by default. These user groups have common useful permission settings:
 
 * admins: A group with all permissions set.
 * business: Users in this group can work with all devices and their data, but cannot administer the account.

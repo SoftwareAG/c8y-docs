@@ -48,7 +48,7 @@ We recommend to create a dedicated user in Jasper Control Center:
 The user is now created, but does not have a password yet. Follow the instructions emailed to you by Control Center to set a password. Now link your Jasper Control Center account to Cumulocity:
 
 * Use a Cumulocity administrator user to log in to the Cumulocity Administration application.
-* Click on the "Connectivity" menu. If the menu does not show, please [make sure that your user has the "admin" permission for option management](/guides/users-guide/administration#permissions). If the menu still does not show, contact support@cumulocity.com to make the Jasper Control Center add-on available in your tenant.
+* Click on the "Connectivity" menu. If the menu does not show, please [make sure that your user has the "admin" permission for option management](/guides/users-guide/administration#permissions). If the menu still does not show, contact [support](https://support.cumulocity.com) to make the Jasper Control Center add-on available in your tenant.
 * Enter key, URL, username and password, then click "Save".
 
 ![Jasper settings](/guides/users-guide/jaspersettings.png)

@@ -90,6 +90,10 @@ Here is the full list of available functions. Replace the ellipses ("...") with 
 |...MeasurementByFragmentTypeAndTimeBetweenAndType|List|fragmentType*:String*, from*:Date*, to*:Date*, type*:String*|
 |...MeasurementByFragmentTypeAndType|List|fragmentType*:String*, type*:String*|
 |...MeasurementBySource|List|source*:String*|
+|findLastMeasurementByFragmentTypeAndSourceAndTimeBetween|Measurement|fragmentType*:String*, source*:String*, from*:Date*, to*:Date*|
+|findLastMeasurementByFragmentTypeAndSourceAndTimeBetweenAndType|Measurement|fragmentType*:String*, source*:String*, from*:Date*, to*:Date*, type*:String*|
+|findLastMeasurementByFragmentTypeAndTimeBetween|Measurement|fragmentType*:String*, from*:Date*, to*:Date*|
+|findLastMeasurementByFragmentTypeAndTimeBetweenAndType|Measurement|fragmentType*:String*, from*:Date*, to*:Date*, type*:String*|
 |findOperationById|Operation|id*:String*<br/>id*:GId*|
 |...OpererationByAgent|List|agentId*:String*|
 |...OpererationByAgentAndStatus|List|agentId*:String*, status*:String*|

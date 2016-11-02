@@ -30,7 +30,7 @@ Combined RS232/RS485 Interface. After StartUp (≈ 60sec) the RS232 is switched 
 ## Configure the Terminal
 
 By default the terminal supports cloud fieldbus from Cumulocity. To use it you should:
-* Subscribe your account to the Cloud Fieldbus app by contacting support@cumulocity.com.
+* Subscribe your account to the Cloud Fieldbus app by contacting [support](https://support.cumulocity.com).
 * Configure the terminal:
   1. Power on the Terminal.
   2. Configure the Terminal's APN by sending an SMS to Terminal's SIM card with the following syntax: `GPRS=APN,username,password` (e.g. `GPRS==public4.m2minternet.com,,`)

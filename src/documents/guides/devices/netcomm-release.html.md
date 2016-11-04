@@ -7,7 +7,7 @@ layout: default
 
 This document describes the Cumulocity agent package for the [NetComm Wireless NTC-6200](http://www.netcommwireless.com/product/3g-m2m-router-series) router.
 
-> The agent has also been tested and fully works on the newer 4G model [NetComm Wireless NTC-140W](http://www.netcommwireless.com/product/4g-wifi-m2m-router)
+> The agent has also been tested and fully works on the newer 4G model [NetComm Wireless NTC-140W](http://www.netcommwireless.com/product/4g-wifi-m2m-router).
 
 ## Supported functionality
 

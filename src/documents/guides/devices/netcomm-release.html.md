@@ -5,7 +5,9 @@ layout: default
 
 ## Release notes for NetComm Agent 3.2
 
-This document describes the Cumulocity agent package for the [NetComm Wireless NTC-6200](http://www.netcommwireless.com/product/m2m/ntc-6200) router.
+This document describes the Cumulocity agent package for the [NetComm Wireless NTC-6200](http://www.netcommwireless.com/product/3g-m2m-router-series) router.
+
+> The agent has also been tested and fully works on the newer 4G model [NetComm Wireless NTC-140W](http://www.netcommwireless.com/product/4g-wifi-m2m-router)
 
 ## Supported functionality
 
@@ -24,7 +26,7 @@ The agent supports the following functionality:
 * Managing router configuration snapshots.
 * Remotely executing commands via device shell interface.
 * Sending event notifications as alarms.
-* Modbus-RTU and Modbus-TCP support for remotely managing Modbus devices from Cumulocity.
+* Modbus-RTU (NTC-6200 only) and Modbus-TCP support for remotely managing Modbus devices from Cumulocity.
 * Lua plug-in API for rapid development of IoT applications.
 * Configuring and displaying of agent settings on the router's web user interface.
 * Get and put device configuration.
@@ -38,7 +40,7 @@ The agent supports the following functionality:
 
 ## System requirements
 
-The agent was tested on an NTC-6200 device with firmware version 2.0.24.3. For remote configuration of WAN parameters, you need a SIM card with SMS function. Currently, GSMA OneAPI (e.g., on Ericsson DCP), OpenIT and Jasper Wireless are supported APIs for SMS providers. Please contact <support@cumulocity.com> for connecting to an SMS provider.
+The agent has been tested on an NTC-6200 and NTC-140W device with firmware version 2.0.24.3. For remote configuration of WAN parameters, you need a SIM card with SMS function. Currently, GSMA OneAPI (e.g., on Ericsson DCP), OpenIT and Jasper Wireless are supported APIs for SMS providers. Please contact <support@cumulocity.com> for connecting to an SMS provider.
 
 > Agent versions 2.1.10 and up require at least Cumulocity 6.10 to support the new log viewer.
 
@@ -49,7 +51,7 @@ The agent was tested on an NTC-6200 device with firmware version 2.0.24.3. For r
 ## Installing the agent
 
 * Download the software: http://resources.cumulocity.com/ntc/smartrest-agent_3.2.0_arm.ipk.
-* Log in to the web user interface of the NTC-6200.
+* Log in to the web user interface of the NTC-6200 or NTC-140W.
 * Navigate to the "System" menu. Click on "System configuration", "Choose a file" and select the downloaded software. Click "Upload" to upload the software to the router.
 * Click the "Install" button for the uploaded software which you want to install.
 * Reboot the NetComm router.

@@ -21,7 +21,7 @@ The following sections demonstrate how to use a NetComm router with Cumulocity. 
 * Connect [Modbus](#modbus) devices.
 * View [logs](#logs).
 
-The following sections assume that the router has the NetComm [agent](/guides/devices/netcomm-release) package installed. The agent is compatible with the [NTC-6200](http://www.netcommwireless.com/product/m2m/ntc-6200). For more information on a particular feature of the router, please consult the respective manual found in the "Downloads" section of the router's home page.
+The following sections assume that the router has the NetComm [agent](/guides/devices/netcomm-release) package installed. The agent is compatible with the [NTC-6200](http://www.netcommwireless.com/product/m2m/ntc-6200) and [NTC-140W](http://www.netcommwireless.com/product/4g-wifi-m2m-router). For more information on a particular feature of the router, please consult the respective manual found in the "Downloads" section of the router's home page.
 
 ## <a name="configure"></a>Configuring the router
 
@@ -80,7 +80,7 @@ To register your NetComm router to Cumulocity, you need the router's serial numb
 
 ![MAC address](/guides/devices/netcomm/mac.png)
 
-After clicking the "accept" button, navigate to "All devices", the router should appear here after registration. The default name of a router is "NTC-6200 (S/N &lt;serial number&gt;)". For example, the above router would appear as "NTC-6200 (S/N 165711141901036)". Click on the router to view the detailed information and to access the functionality described in the remaining sections of this document. In order to distinguish a registered router from other devices in the listing, you can change the router's name on the "Info" tab, which also displays basic information such as serial number of the router and SIM card data. After changing the name, remember to click "save changes" button at the bottom of the "Info" page.
+After clicking the "accept" button, navigate to "All devices", the router should appear here after registration. The default name of a router is "&lt;model&gt; (S/N &lt;serial number&gt;)", where &lt;model&gt; is the device model name. For example, the above router would appear as "NTC-6200-02 (S/N 165711141901036)". Click on the router to view the detailed information and to access the functionality described in the remaining sections of this document. In order to distinguish a registered router from other devices in the listing, you can change the router's name on the "Info" tab, which also displays basic information such as serial number of the router and SIM card data. After changing the name, remember to click "save changes" button at the bottom of the "Info" page.
 
 ![Device details](/guides/devices/netcomm/info.png)
 
@@ -145,7 +145,7 @@ The following GPIO functionalities are supported:
 * Raise or clear alarms when a digital input turn 1 or 0, respectively.
 * Write to a digital output remotely from Cumulocity.
 
-Consult the documentation of your router for more information about its specific IO settings. The available functionalities may vary between different device models. For example, the NTC 6200 model supports GPIO pins 1-3.
+Consult the documentation of your router for more information about its specific IO settings. The available functionalities may vary between different device models. For example, the NTC 6200 model supports GPIO pins 1-3, while the NTC 140W model supports only GPIO pin 1.
 
 ### Analog input
 
@@ -154,7 +154,7 @@ To regularly poll the input voltage of a GPIO pin and send it to Cumulocity, set
 	set service.cumulocity.plugin.ntc6200.gpio.interval=<interval>
 	set service.cumulocity.gpio.<port>.notify=measurement
 
-&lt;port&gt; is the numbering of the GPIO pin. For the NTC-6200, replace &lt;port&gt; with 1, 2 or 3. The Visualized result is then visible in "Measurements".
+&lt;port&gt; is the numbering of the GPIO pin. For the NTC-6200, &lt;port&gt; can be 1, 2 or 3, while for NTC-140W, &lt;port&gt; can only be 1. The Visualized result is then visible in "Measurements".
 
 ### Digital input
 
@@ -186,7 +186,7 @@ The inputs are checked every second for changes.
 
 ### Digital output
 
-Digital outputs can be controlled using the "Relay array" plugin, see below in the screenshot. The numbering of the GPIO pins are the same as listed on the router. For the NTC-6200 model, three GPIO pins can be set.
+Digital outputs can be controlled using the "Relay array" plugin, see below in the screenshot. The numbering of the GPIO pins are the same as listed on the router. For the NTC-6200 model, three GPIO pins can be set, while for the NTC-140W model, only the first pin has effect.
 
 ![Relay Array](/guides/devices/netcomm/relayarray.png)
 
@@ -252,6 +252,10 @@ where `<mode>` can be rs232, rs422 or rs485. You may need to reboot the device a
 > The default serial port `/dev/ttyAPP4` should work with no further configuration. In case it's empty or you need to configure a different port, it can be configured in the Cumulocity menu in devices' web UI, see "[Configuring the router](#configure)".
 
 > Some USB to serial adapters have echo mode enabled by default, this can render the Modbus communication stop working completely. If you have one of these adapters, consult the adapter's manufacturer about how to disable it.
+
+> Model NTC-140W doesn't support modbus RTU, so you will not see the corresponding functionality in the UI.
+
+> Model NTC-140W doesn't support modbus RTU, so you will not see the corresponding functionality in the UI.
 
 Then:
 

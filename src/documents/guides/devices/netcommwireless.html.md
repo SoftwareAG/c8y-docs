@@ -80,7 +80,7 @@ To register your NetComm router to Cumulocity, you need the router's serial numb
 
 ![MAC address](/guides/devices/netcomm/mac.png)
 
-After clicking the "accept" button, navigate to "All devices", the router should appear here after registration. The default name of a router is "&lt;model&gt; (S/N &lt;serial number&gt;)", where <model> is the device model name. For example, the above router would appear as "NTC-6200-02 (S/N 165711141901036)". Click on the router to view the detailed information and to access the functionality described in the remaining sections of this document. In order to distinguish a registered router from other devices in the listing, you can change the router's name on the "Info" tab, which also displays basic information such as serial number of the router and SIM card data. After changing the name, remember to click "save changes" button at the bottom of the "Info" page.
+After clicking the "accept" button, navigate to "All devices", the router should appear here after registration. The default name of a router is "&lt;model&gt; (S/N &lt;serial number&gt;)", where &lt;model&gt; is the device model name. For example, the above router would appear as "NTC-6200-02 (S/N 165711141901036)". Click on the router to view the detailed information and to access the functionality described in the remaining sections of this document. In order to distinguish a registered router from other devices in the listing, you can change the router's name on the "Info" tab, which also displays basic information such as serial number of the router and SIM card data. After changing the name, remember to click "save changes" button at the bottom of the "Info" page.
 
 ![Device details](/guides/devices/netcomm/info.png)
 
@@ -252,6 +252,8 @@ where `<mode>` can be rs232, rs422 or rs485. You may need to reboot the device a
 > The default serial port `/dev/ttyAPP4` should work with no further configuration. In case it's empty or you need to configure a different port, it can be configured in the Cumulocity menu in devices' web UI, see "[Configuring the router](#configure)".
 
 > Some USB to serial adapters have echo mode enabled by default, this can render the Modbus communication stop working completely. If you have one of these adapters, consult the adapter's manufacturer about how to disable it.
+
+> Model NTC-140W doesn't support modbus RTU, so you will not see the corresponding functionality in the UI.
 
 > Model NTC-140W doesn't support modbus RTU, so you will not see the corresponding functionality in the UI.
 

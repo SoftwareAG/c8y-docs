@@ -5,55 +5,50 @@ layout: default
 ---
 ## Overview
 
-This tutorial will give you quick entry into using the MQTT implementation of Cumulocity with the help of the predefined static templates.
+In this tutorial, you will learn how to use MQTT with Cumulocity using pre-defined messages (called "static templates").
 
 ## Prerequisites
 
-In order to follow this tutorial, check if the following prerequisites are fulfilled:
+In order to follow this tutorial, check the following prerequisites:
 
 * You have a valid tenant, user and password in order to access Cumulocity.
 * You have installed the Chrome extension [MQTTLens](https://chrome.google.com/webstore/detail/mqttlens/hemojaaeigabkbcookmlgmdigohjobjm) or a similar MQTT Tool (e.g. [MQTTBox](https://chrome.google.com/webstore/detail/mqttbox/kaajoficamnjijhkeomgfljpicifbkaf)).
 
-The screen shots in the tutorial will be for MQTTLens but it will look similar on other tools
+The screen shots in the tutorial use MQTTLens. Other tools may look slightly different.
 
 ## Talking MQTT
 
 ### Configure the MQTT connection
 
+To configure the MQTT connection, you need to pass the following connection parameters (see the screenshot below).
+* Hostname: For this example, please use TCP and Port 1883. You also need to pass the URL to your tenant (e.g. developer.cumulocity.com)
+* Client ID: You can use the "Generate a random ID" button (most tools will offer such a button) or fill one in yourself. This ID will be linked to your device. To reconnect to the same device, use the same ID.
+* Username: You need to enter your tenant and username separated by a slash (tenant/username). You can use the same user that you use for logging into Cumulocity for this example.
+* Password: The password of the user.
+
 ![Example MQTTLens Configuration](/guides/mqtt/mqttLensConfig.png)
 
-To configure the MQTT connection you need to pass the following parameters for the connection (also shown in the screen shot below for MQTTLens).
-* Hostname: For this example please use TCP and Port 1883. You also  need to pass the URL to your tenant (e.g. developer.cumulocity.com)
-* Client ID: You can use the "Generate a random ID" button (most tools will offer such a button) or either fill it yourself. Note that this ID will be linked to the device so to reconnect to the same device the ID also needs to be the same.
-* Username: You need to enter your tenant and username separated by a slash (tenant/username). You can use the same user that you use for logging into Cumulocity for this example.
-* Password: The password of the user
-
-The other configurations like "clean session" are not important for this example. You can change them as you see fit.
-
-After clicking on "save changes" you should have a screen similar to the following screen shot.
+The other configurations like "clean session" are not important for this example. You can change them as you see fit. After clicking on "save changes", you should see a screen similar to the following screen shot.
 
 ![MQTTLens Established Connection](/guides/mqtt/mqttLensSuccess.png)
 
-If the icon beside the connection on the left does not become green and stays red you should verify the configuration (especially username and password).
-
-If the icon is green you successfully established a MQTT connection to Cumulocity.
+If the icon next to your connection on the left is read, verify your configuration (especially username and password). If the icon is green, you successfully established an MQTT connection to Cumulocity.
 
 ### Sending data
 
-All following MQTT publish message will be going to the topic s/us which is the topic for the static templates provided by Cumulocity out of the box.
+All MQTT publish messages in this tutorial will be sent to the topic "s/us". This is the topic used for Cumulocity's pre-provided static templates.
 
 ![MQTTLens Publish Message](/guides/mqtt/mqttLensPublish.png)
 
 #### Creating the device
 
-The first message we will send will create our device. Although the static templates support automatic device creation in this example we will create it manually.
-The template 100 will create a new device and can be used with two optional parameters (deviceName, deviceType).
+The first message we will send will create our device. Although the static templates support automatic device creation, in this example we will create the device manually. The template 100 will create a new device. It can be used with two optional parameters (deviceName, deviceType).
 
 ```
 100,My first MQTT device,c8y_MQTTdevice
 ```
 
-Afterwards you can check in the device management application and should find your new device. If you go to the identity tab inside the device you will notice that there is an identity automatically created to link the device to the MQTT ClientId that you used.
+Afterwards, you can check in the device management application and should find your new device. If you go to the identity tab inside the device you will notice that there is an identity automatically created to link the device to the MQTT ClientId that you used.
 Besides the name and the type the device is still quite empty so lets add some master data to it.
 
 You can use multiple static templates per publish separated by a line break (one template per row).

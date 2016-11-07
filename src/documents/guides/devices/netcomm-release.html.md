@@ -1,5 +1,5 @@
 ---
-title: NTC-6200 Release Notes
+title: Netcomm Release Notes
 layout: default
 ---
 

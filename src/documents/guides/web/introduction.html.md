@@ -71,7 +71,7 @@ In order to achieve this goal you need to do the following steps:
 * Configure the application manifest.
 * Create the application in your tenant.
 * Configure the plugin manifest.
-* Implement the pluginâ€™s initialization function to add a menu item and associate it with a view template.
+* Implement the plugin’s initialization function to add a menu item and associate it with a view template.
 * Implement the controller to provide data for the view template (a simple text in this case).
 * Add the view template to display the data.
 * Test the application.
@@ -170,7 +170,7 @@ Inspect myplugins/cumulocity.json manifest:
 You have more detailed information about manifests in the [Plugins Reference](/guides/web/reference)
 
 
-### Implement the pluginâ€™s initialization function
+### Implement the plugin’s initialization function
 
 Previsouly, while defining the plugin manifest, we mentioned that JavaScript code from the file index.js in the plugin folder should be loaded.
 Inspect index.js:
@@ -319,12 +319,12 @@ We assume that you already have created an application to add the new plugin to.
 ### Adding dependencies
 
 For this exercise let's consider you want to extend Device management. In practice this means importing the set of plugins used in Device management and add your own to the list.
-You can print the list of imported plugins by any available app in your dev environment by executing the command ```c8y show:imports <appContextPath>```.
+You can print the list of imported plugins by any available app in your dev environment by executing the command ```c8y util:showimports <appContextPath>```.
 
 In this case:
 
 ```console
-$ c8y show:imports devicemanagement
+$ c8y util:showimports devicemanagement
 ```
 
 These values should be added to the imports definition of the application manifest. Beware to exclude the c8yBranding plugin if you have already defined your own branding plugin.

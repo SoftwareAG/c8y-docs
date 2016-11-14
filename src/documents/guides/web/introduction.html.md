@@ -39,7 +39,7 @@ $ c8y --help
 
 ## Installing Cumulocity UI plugins
 
-Cumulocity UI plugins to be used in your application are loaded via npm. For this you must have have a ```package.json``` in your project.
+Cumulocity UI plugins to be used in your application are loaded via npm. For this you must have have a package.json in your project.
 To create one simply run:
 
 ```bash
@@ -54,12 +54,12 @@ $ c8y install latest
 This command will:
 - Check for the latest version of the UI
 - Download the package
-- Add it as a dependency inside ```package.json```
+- Add it as a dependency inside package.json
 Have in mind that that, when sharing your project, other developers only need to run  ```npm install``` as the version of the Cumulocity UI is already defined as a dependency. You can always install other versions by running the ```c8y install``` command again.
 
 ## "Hello world!"
 
-This section describes a "Hello world!"-style plugin which is available as an example in the repository "cumulocity-ui-plugin" as "myplugin".
+This section describes a "Hello world!" style plugin which is available as an example in the repository "cumulocity-ui-plugin" as "myplugin".
 
 The purpose of this plugin is to add a new menu item which will display a simple "Hello world!" page when selected by user. The following screenshot presents the final result:
 
@@ -71,7 +71,7 @@ In order to achieve this goal you need to do the following steps:
 * Configure the application manifest.
 * Create the application in your tenant.
 * Configure the plugin manifest.
-* Implement the pluginâ€™s initialization function to add a menu item and associate it with a view template.
+* Implement the plugin’s initialization function to add a menu item and associate it with a view template.
 * Implement the controller to provide data for the view template (a simple text in this case).
 * Add the view template to display the data.
 * Test the application.
@@ -87,7 +87,7 @@ $ c8y install latest
 ```
 ### Configure the application manifest
 
-The application manifest contains information about the Cumulocity application that holds your plugins, such as its name, key, URL and dependencies. It needs to be placed in a file named ```cumulocity.json``` in the project's root folder. Inspect the "boilerplate" application manifest:
+The application manifest contains information about the Cumulocity application that holds your plugins, such as its name, key, URL and dependencies. It needs to be placed in a file named cumulocity.json in the project's root folder. Inspect the "boilerplate" application manifest:
 
 ```json
 	{
@@ -103,25 +103,17 @@ The application manifest contains information about the Cumulocity application t
 		]
 	}
 ```
-Here's what the configuration file means:
-
-* A ```PRIVATE``` application is only available for you to use inside your tenant. If you are satisfied with your application, you can publish it and make it a ```MARKET``` application for everyone to subscribe to.
-* Your application will be available using the URL ```<tenant>.cumulocity.com/apps/myapplication```.
-* Your application uses the key ```myapplication-appkey```. This key is used to identify what applications users are subscribed to.
-* The name of your application is "My application". This is how it will show up in user interfaces, for example, in the App Switcher at the top right of the application.
-* The type of the application is ```HOSTED```, which means it is a Cumulocity application served through a "cumulocity.com" URL. (```EXTERNAL``` can be used to add legacy applications to the App Switcher, but this is out of scope of this guide.)
-* Every app need the ```core``` plugin but it is added automatically to the imports so there is no need to add it explicitly.
-* By default we are using ```c8yBranding``` for the look and feel of the app. However it is also include an example of how to customize a new branding. To activate it simply replace ```core/c8yBranding``` with ```myapplication/piedpiperBranding```.
-
+You have more detailed information about manifests in the [Plugins Reference](/guides/web/reference)
 
 ### Create the application on your tenant
 
 After a successful login in a Cumulocity UI application the application key is fetched automatically.
 As so, to develop an application we need to make sure that the application is created in our tenant.
-To create the application in our tenant we simply deploy it using using ```c8y deploy:app <appName>```.
+To create the application in our tenant we simply deploy it using using ```c8y deploy:app [appContextPath]```.
+If you omit appContextPath the contextPath will be read from the cumulocity.json at the path where the command was executed.
 
 ```bash
-$ c8y deploy:app myapplication
+$ c8y deploy:app
 ? Tenant piedpiper
 ? User admin
 ? Password ***********
@@ -159,8 +151,8 @@ Now, you can test your application by opening your browser at the URL "http://lo
 
 ### Configure the plugin manifest
 
-Each plugin comes in a separate subfolder of the ```plugins``` folder of your application. The example contains a subfolder ```myplugin```. Inside ```myplugin```, you will another ```cumulocity.json``` file, the plugin manifest. The plugin manifest provides information about a plugin, such as the name, short description, files to be loaded, and angular modules to be added to the main app.
-Inspect ```myplugins/cumulocity.json``` manifest:
+Each plugin comes in a separate subfolder of the plugins folder of your application. The example contains a subfolder myplugin. Inside myplugin, you will another cumulocity.json file, the plugin manifest. The plugin manifest provides information about a plugin, such as the name, short description, files to be loaded, and angular modules to be added to the main app.
+Inspect myplugins/cumulocity.json manifest:
 
 ```json
 {
@@ -175,20 +167,13 @@ Inspect ```myplugins/cumulocity.json``` manifest:
 }
 ```
 
-Here's what this configuration file means:
-
-* The plugin shows up as "Hello world plugin testing" in the plugin list on the administration UI.
-* It's description there is "Simple hello world plugin."
-* The plugin exposes the ```myapp.helloworld``` AngularJS module.
-* The plugin loads the JavaScript code in ```index.js```, located in the plugin's root folder.
-* Like you have ```js``` files declared you can add ```css``` and ```less``` too.
-* ```copy``` entry will copy each files to the build of the plugin. Is supports file globs and is typically used for images and font files.
+You have more detailed information about manifests in the [Plugins Reference](/guides/web/reference)
 
 
-### Implement the pluginâ€™s initialization function
+### Implement the plugin’s initialization function
 
-Previsouly, while defining the plugin manifest, we mentioned that JavaScript code from the file ```index.js``` in the plugin folder should be loaded.
-Inspect ```index.js```:
+Previsouly, while defining the plugin manifest, we mentioned that JavaScript code from the file index.js in the plugin folder should be loaded.
+Inspect index.js:
 
 ```js
 //Main module name must be defined in ngModules of the plugin manifest
@@ -221,18 +206,18 @@ function MainController($scope) {
 }
 ```
 
-With this code, we contribute a menu item (```c8yNavigationProvider```) and a view with its controller (```c8yViewsProvider```) to our application.
+With this code, we contribute a menu item (c8yNavigationProvider) and a view with its controller (c8yViewsProvider) to our application.
 
 * The menu item has the name *"New plugin"*.
-* The menu item has a little cube icon. Icons are provided by the great Font Awesome library and you can use any of their [icon names](http://fontawesome.io/icons/) without the ```fa-``` prefix here.
+* The menu item has a little cube icon. Icons are provided by the great Font Awesome library and you can use any of their [icon names](http://fontawesome.io/icons/) without the *fa-* prefix here.
 * The menu item is sorted into the menu with a priority of 100000, which means that all menu items with a priority lower than 100000 appear before this menu item and all with a priority higher than 100000 appear after this menu item.
-* It points to a URL ```/hello```.
-* When the user opens the URL ```/hello``` (resp. clicks on the menu item), the view ```/views/index.html``` inside the plugin's folder is displayed. The plugin's folder is represented using the magic string ```:::PLUGIN_PATH:::```, which is replaced by the actual path during the build process.
-* Finally we just hook a redirect from the homepage to our ```/hello``` view.
+* It points to a URL /hello.
+* When the user opens the URL /hello (resp. clicks on the menu item), the view /views/index.html inside the plugin's folder is displayed. The plugin's folder is represented using the magic string ```:::PLUGIN_PATH:::```, which is replaced by the actual path during the build process.
+* Finally we just hook a redirect from the homepage to our /hello view.
 
 ### Implement the controller
 
-```index.js``` contains one more function, a controller ```MainController```. This controller defines a variable ```hello``` to contain the simple static text ```Hello world!```:
+index.js contains one more function, a controller *MainController*. This controller defines a variable *hello* to contain the simple static text "Hello world!":
 
 ```js
 function MainController($scope) {
@@ -242,7 +227,7 @@ function MainController($scope) {
 
 ### View template
 
-The variable ```hello``` is used in the view template that renders the user interface of our plugin. Inspect the file ```views/index.html``` in the plugin folder:
+The variable *hello* is used in the view template that renders the user interface of our plugin. Inspect the file views/index.html in the plugin folder:
 
 ```html
 	<h1>{{hello}}</h1>
@@ -255,33 +240,36 @@ You can choose to build application or plugin resulting in zip file that you can
 
 #### build:app
 Builds the application to the specified folder (./build by default).
-Inside the ```outputFolder``` you will find a directory named ```<appName>```and a zip file ```<appName>.zip```. This zip file can be upload in the administration interface and added to any tenant.
+Inside the outputFolder you will find a directory named [appContextPath] and a zip file [appContextPath].zip. This zip file can be upload in the administration interface and added to any tenant.
+If you omit appContextPath the contextPath will be read from the cumulocity.json at the path where the command was executed.
+
 ```bash
-$ c8y build:app <appName> [outputFolder]
+$ c8y build:app [appContextPath] [outputFolder]
 ```
 
 #### build:plugin
-Builds the application to the specified folder (./build by default).
-Inside the ```outputFolder``` you will find a directory named ```<pluginName>```and a zip file ```<pluginName>.zip```. This zip file can be uploaded in the administration interface and added to any application.
+Builds the plugin to the specified folder (./build by default).
+Inside the outputFolder you will find a directory named [pluginName] and a zip file [pluginName].zip. This zip file can be uploaded in the administration interface and added to any application.
 ```bash
 $ c8y build:plugin <pluginName> [outputFolder]
 ```
 
 #### deploy:app
-Builds all the plugins, assembles the application and uploads it to the defined tenant. If the app doens't yet exist on the remote instance it will be automatically created.
+Builds all the plugins, assembles the application and uploads it to the defined tenant. If the app doesn't yet exist on the remote instance it will be automatically created.
+If you omit appContextPath the contextPath will be read from the cumulocity.json at the path where the command was executed.
 ```bash
-$ c8y deploy:app <appName>
+$ c8y deploy:app [appContextPath]
 ```
 
 The build process for plugins includes the following steps:
-1. Annotate angular functions with ```$inject```. (Using [ng-annotate](https://github.com/olov/ng-annotate) )
+1. Annotate angular functions with *$inject*. (Using [ng-annotate](https://github.com/olov/ng-annotate) )
 2. Replace the ```:::PLUGIN_PATH:::``` by the proper strings
-3. Transform every html file to be included via ```$templateCache```.
+3. Transform every html file to be included via *$templateCache*.
 4. Concatenate and minify all the defined js files in the manifest (using [UglifyJS 2](https://github.com/mishoo/UglifyJS2))
 5. Compile all the less files
 6. Concatenate and minify all the css and result of the less files
 7. Copy all the files defined in 'copy' in the manifest
-8. Copy all the localization files that may be available inside ```locales``` folder inside the plugin
+8. Copy all the localization files that may be available inside locales folder inside the plugin
 9. Copy the plugin manifest
 10. Create a zip file with the above contents
 
@@ -296,11 +284,20 @@ The build process for an app includes the following steps:
 ## Branding plugin
 
 Our main css is based on 	the popular css framework [Bootstrap 3](http://getbootstrap.com/). It is possible to build a branding plugin based on Cumulocity own base branding simply by overriding less variables.
-Inside the repo [cumulocity-ui-plugin-examples](https://bitbucket.org/m2m/cumulocity-ui-plugin-examples) you can find an example plugin called ```myBranding```. To create your branding you can copy this folder, rename it and update the information inside ```cumulocity.json```. Each branding plugin *must* be named ```<something>Branding```.
+
+Inside the repo [cumulocity-ui-plugin-examples](https://bitbucket.org/m2m/cumulocity-ui-plugin-examples) you can find all the plugins described in this tutorial.
+
+As the myBranding example is much more extensive than the other plugins copy over the myBranding folder into your plugins folder.
+Although there a few files there, the strategy is straight forward: defining less variables that are overriding the setting on the base theme c8yBranding.
+
+You can inspect the less files to see what variables are available for configuration.
+
+A branding plugins are simply distinguished by their name: must end in *Branding* (e.g. *piedpiperBranding* ). To use it in an application add it to the imports statement of an application manifest cumulocity.json, as it is in [cumulocity-ui-plugin-examples](https://bitbucket.org/m2m/cumulocity-ui-plugin-examples) repo.
+
+Make sure there is only single branding plugin declared otherwise both of them will be loaded.
+
 
 ![Branding example](/guides/plugins/branding.png)
-
-To use it in an application just need to replace ```core/c8yBranding``` with ```<appName>/myBranding``` inside the import array defined in the ```cumulocity.json``` of the application.
 
 
 ## Device Contact Plugin
@@ -312,26 +309,31 @@ This section shows how to create a plugin that adds a new tab "Contact" to a dev
 In order to achieve this goal you need to do the following steps:
 
 * Create a plugin
-* Declare the plugin on the ```imports``` list of the application manifest (```cumulocity.json```)
+* Declare the plugin on the imports list of the application manifest (cumulocity.json)
 * Add a tab to a device.
 * Display data in the tab.
 * Persist the data to Cumulocity backend
 
-We assume that you already have created an application to add the new plugin to. You can use ```myapplication``` from the previous example. The example is also contained in the folder ```plugins/deviceContact``` of  [cumulocity-ui-plugin-examples](https://bitbucket.org/m2m/cumulocity-ui-plugin-examples).
+We assume that you already have created an application to add the new plugin to. You can use myapplication from the previous example. The example is also contained in the folder plugins/deviceContact of  [cumulocity-ui-plugin-examples](https://bitbucket.org/m2m/cumulocity-ui-plugin-examples).
 
 ### Adding dependencies
 
-For this exercise we will reuse some Cumylocity's plugins. More specifically:
+For this exercise let's consider you want to extend Device management. In practice this means importing the set of plugins used in Device management and add your own to the list.
+You can print the list of imported plugins by any available app in your dev environment by executing the command ```c8y util:showimports <appContextPath>```.
+
+In this case:
 
 ```console
-"core/deviceList",
-"core/groupsHierarchy",
-"core/deviceDetail"
+$ c8y util:showimports devicemanagement
 ```
-These values should be added to the ```imports``` definition of the application manifest. You can see this in ```cumulocity.json``` inside [cumulocity-ui-plugin-examples](https://bitbucket.org/m2m/cumulocity-ui-plugin-examples).
+
+These values should be added to the imports definition of the application manifest. Beware to exclude the c8yBranding plugin if you have already defined your own branding plugin.
+
+However if you prefer a more minimalistic approach you can read the cumulocity.json in [cumulocity-ui-plugin-examples](https://bitbucket.org/m2m/cumulocity-ui-plugin-examples) and only import the essential for the Device Contact plugin to work.
 
 * **TIP**
-If you open the json file ```_apps.json``` inside ```node_modules/cumulocity-ui-build``` you can see the manifests for Cumulocity default applications. All of these plugins can be reused in your own applicatons.
+Run ```c8y show:imports cockpit``` or ```c8y show:imports administration``` to see other plugins available to you.
+The manifests for the built in applications are stored in *_apps.json* inside node_modules/cumulocity-ui-build.
 
 ### Create a plugin
 
@@ -340,7 +342,7 @@ In your application, run the command:
 ```console
 $ c8y create:plugin deviceContact
 ```
-Then edit the ```cumulocity.json``` file to add the following information:
+Then edit the cumulocity.json file to add the following information:
 
 ```json
 {
@@ -379,7 +381,7 @@ Update the application manifest (```cumulocity.json```) to add this new plugin t
 ### Adding Contact tab in Device Details view
 
 Now, we create an empty "Contact" tab in the device details view, which we will fill with contents in the following step.
-Inside the plugin folder, create a file ```deviceContact.controller.js``` with the content below.
+Inside the plugin folder, create a file deviceContact.controller.js with the content below.
 
 ```js
 (function () {
@@ -394,7 +396,7 @@ Inside the plugin folder, create a file ```deviceContact.controller.js``` with t
 })();
 ```
 
-* Declare the file in the ```js``` array inside the plugin manifest in ```plugins/deviceControl/cumulocity.json```:
+* Declare the file in the js array inside the plugin manifest in plugins/deviceControl/cumulocity.json:
 
 ```console
 	{
@@ -406,7 +408,7 @@ Inside the plugin folder, create a file ```deviceContact.controller.js``` with t
 	}
 ```
 
-* Inside the plugin folder Create a file ```deviceContact.html``` with the contents:
+* Inside the plugin folder Create a file deviceContact.html with the contents:
 
 ```html
 	<div class="panel panel-clean">
@@ -416,8 +418,8 @@ Inside the plugin folder, create a file ```deviceContact.controller.js``` with t
 	</div>
 ```
 
-* Add the "Contact" tab to the device details just like we did in the "Hello world!" example. Edit ```index.js``` and add the content below.
-Note that when multiple views are attached to the route (```/device/:deviceId``` in this case) tabs are created automatically for each of them. Since the device details view uses ```/device/:deviceId``` for device details already, "Contact" is rendered as a tab.
+* Add the "Contact" tab to the device details just like we did in the "Hello world!" example. Edit index.js and add the content below.
+Note that when multiple views are attached to the route (/device/:deviceId in this case) tabs are created automatically for each of them. Since the device details view uses /device/:deviceId for device details already, "Contact" is rendered as a tab.
 
 ```js
 (function () {
@@ -436,7 +438,7 @@ Note that when multiple views are attached to the route (```/device/:deviceId```
 
 ### Display data in the "Contact" tab
 
-Previously, we only set up a dummy view for device contacts. In this step, we will display the actual contact information stored with a device in the view. We will define that contact data is stored in a fragment ```c8y_Contact``` of a device in the inventory like this:
+Previously, we only set up a dummy view for device contacts. In this step, we will display the actual contact information stored with a device in the view. We will define that contact data is stored in a fragment c8y_Contact of a device in the inventory like this:
 
 ```json
 	{
@@ -449,7 +451,7 @@ Previously, we only set up a dummy view for device contacts. In this step, we wi
 	}
 ```
 
-* Add a ```load``` function to ```deviceContact.controller.js``` as shown below. The function gets the details of the currently displayed device (```$routeParams.deviceId```) and adds the device's ```id``` and ```c8y_Contact``` fragment to the local scope ```$scope```.
+* Add a load function to deviceContact.controller.js as shown below. The function gets the details of the currently displayed device ($routeParams.deviceId) and adds the device's id and c8y_Contact fragment to the local scope $scope.
 
 ```js
 (function () {
@@ -475,7 +477,7 @@ Previously, we only set up a dummy view for device contacts. In this step, we wi
 ```
 
 
-* Edit the device contact view in ```deviceContact.html``` with the content below.
+* Edit the device contact view in deviceContact.html with the content below.
 
 ```html
 	<div class="panel panel-clean">
@@ -506,7 +508,7 @@ Previously, we only set up a dummy view for device contacts. In this step, we wi
 
 After completing the following steps, you will be able to save the data edited using the new contact form.
 
-* Update the controller in ```deviceContact.js``` to also save data by adding the content below just after the closing brace of the ```load``` function. ```c8yDevices.save``` is a library function that stores a device using the Cumulocity REST API. ```c8yAlert.success``` is a library function that displays a green confirmation box at the top of the user interface.
+* Update the controller in deviceContact.js to also save data by adding the content below just after the closing brace of the load function. c8yDevices.save is a library function that stores a device using the Cumulocity REST API. c8yAlert.success is a library function that displays a green confirmation box at the top of the user interface.
 
 
 ```js
@@ -521,7 +523,7 @@ After completing the following steps, you will be able to save the data edited u
 	$scope.save = save;
 ```
 
-* Add a *"Save changes"* button to the device contact view. Paste the ```<div>``` below just before the ```</form>``` in ```deviceContact.html```. The button will trigger the ```save``` function that we just defined.
+* Add a *"Save changes"* button to the device contact view. Paste the div below just before the closing form tag in deviceContact.html. The button will trigger the ```save``` function that we just defined.
 
 ```html
 	<div>

@@ -422,42 +422,23 @@ Example Response :
 |self|URI|1|Link to this resource.|
 |reference|Application|0..n|The Application being referenced|
 
-### GET a representation of a ApplicationReference.
+### DELETE application reference from tenant's applications.
 
 Response body: ApplicationReference
   
-Required role: ROLE\_TENANT\_MANAGEMENT\_READ
+Required role: ROLE\_TENANT\_MANAGEMENT\_ADMIN
 
-Example Request: Get options.
+Example Request: Delete reference.
 
      
-    GET /tenant/tenants/<<tenantId>>/applications/<<applicationId>>
+    DELETE /tenant/tenants/<<tenantId>>/applications/<<applicationId>>
     Host: ...
     Authorization: Basic ...
-    Accept: application/vnd.com.nsn.cumulocity.applicationReference+json;ver=...
 
 Example Response :
 
-    HTTP/1.1 200 OK
-    Content-Type: application/vnd.com.nsn.cumulocity.applicationReference+json;ver=...
-    Content-Length: ...
-    {
-      "application": {
-          "availability": "PRIVATE",
-          "id": "5",
-          "key": "<<hashed value>>",
-          "name": "sample_private_application",
-          "owner": {
-              "self":"<<Application Owner Tenant URL>>",
-              "tenant": {
-                  "id": "sample_tenant"
-              }
-          },
-          "self":"<<Application 5 URL>>",
-          "type": "EXTERNAL"
-      },
-      "self":"<<This Tenant Application 5 URL>>",
-    }
+    HTTP/1.1  204 NO CONTENT
+    
 
 ## Option collection
 

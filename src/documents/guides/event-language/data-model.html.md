@@ -26,6 +26,7 @@ Types:
 |ManagedObjectUpdated|MANAGED_OBJECT_UPDATE|
 |ManagedObjectDeleted|MANAGED_OBJECT_DELETE|
 |EventCreated|EVENT_CREATE|
+|EventUpdated|EVENT_UPDATE|
 |EventDeleted|EVENT_DELETE|
 |MeasurementCreated|MEASUREMENT_CREATE|
 |MeasurementDeleted|MEASUREMENT_DELETE|
@@ -226,6 +227,7 @@ Example:
 |Available outputs|
 |:----------------|
 |CreateEvent|
+|UpdateEvent|
 |DeleteEvent|
 
 |Parameter|Data type|Description|Mandatory|

@@ -30,7 +30,7 @@ For interacting with the Cumulocity backend you can create an event on the respe
 |API|Input streams|Output streams|Description|
 |:--|:----------|:-------------|:----------|
 |Inventory|ManagedObjectCreated<br/>ManagedObjectUpdated<br/>ManagedObjectDeleted|CreateManagedObject<br/>UpdateManagedObject<br/>DeleteManagedObject|This group of events represents creation, modification or deletion of a single ManagedObject.|
-|Events|EventCreated<br/>EventDeleted|CreateEvent<br/>DeleteEvent|This group of events represents creation or deletion of a single Event.|
+|Events|EventCreated<br/>EventUpdated<br/>EventDeleted|CreateEvent<br/>UpdateEvent<br/>DeleteEvent|This group of events represents creation or deletion of a single Event.|
 |Measurements|MeasurementCreated<br/>MeasurementDeleted|CreateMeasurement<br/>DeleteMeasurement|This group of events represents creation or deletion of a single Measurement.|
 |Device control|OperationCreated<br/>OperationUpdated|CreateOperation<br/>UpdateOperation|This group of events represents creation or modification of a single Operation.|
 |Alarms|AlarmCreated<br/>AlarmUpdated|CreateAlarm<br/>UpdateAlarm|This group of events represents creation or modification of a single Alarm.|

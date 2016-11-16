@@ -71,7 +71,7 @@ In order to achieve this goal you need to do the following steps:
 * Configure the application manifest.
 * Create the application in your tenant.
 * Configure the plugin manifest.
-* Implement the plugin’s initialization function to add a menu item and associate it with a view template.
+* Implement the plugin's initialization function to add a menu item and associate it with a view template.
 * Implement the controller to provide data for the view template (a simple text in this case).
 * Add the view template to display the data.
 * Test the application.
@@ -170,7 +170,7 @@ Inspect myplugins/cumulocity.json manifest:
 You have more detailed information about manifests in the [Plugins Reference](/guides/web/reference)
 
 
-### Implement the plugin’s initialization function
+### Implement the plugin's initialization function
 
 Previsouly, while defining the plugin manifest, we mentioned that JavaScript code from the file index.js in the plugin folder should be loaded.
 Inspect index.js:
@@ -332,7 +332,7 @@ These values should be added to the imports definition of the application manife
 However if you prefer a more minimalistic approach you can read the cumulocity.json in [cumulocity-ui-plugin-examples](https://bitbucket.org/m2m/cumulocity-ui-plugin-examples) and only import the essential for the Device Contact plugin to work.
 
 * **TIP**
-Run ```c8y show:imports cockpit``` or ```c8y show:imports administration``` to see other plugins available to you.
+Run ```c8y util:showimports cockpit``` or ```c8y util:showimports administration``` to see other plugins available to you.
 The manifests for the built in applications are stored in *_apps.json* inside node_modules/cumulocity-ui-build.
 
 ### Create a plugin

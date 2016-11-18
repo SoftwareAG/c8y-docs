@@ -233,16 +233,16 @@ Example response:
 
 ### Event [application/vnd.com.nsn.cumulocity.event+json]
 
-|Name|Type|Occurs|Description|
-|:---|:---|:-----|:----------|
-|id|String|1|Uniquely identifies an event.|
-|self|URI|1|Link to this resource.|
-|creationTime|String|1|Time when event was created in the database.|
-|type|String|1|Identifies the type of this event.|
-|time|String|1|Time of the event.|
-|text|String|1|Text description of the event.|
-|source|ManagedObject|1|The ManagedObject that the event originated from, as object containing properties "id", "self", "name", and "type".|
-|\*|Object|0..n|Additional properties of the event.|
+|Name|Type|Occurs|Description|PUT/POST|
+|:---|:---|:-----|:----------|:-------|
+|id|String|1|Uniquely identifies an event.|No|
+|self|URI|1|Link to this resource.|No|
+|creationTime|String|1|Time when event was created in the database.|No|
+|type|String|1|Identifies the type of this event.|POST: Mandatory PUT: No|
+|time|String|1|Time of the event.|POST: Mandatory PUT: No|
+|text|String|1|Text description of the event.|POST: Mandatory PUT: Optional|
+|source|ManagedObject|1|The ManagedObject that the event originated from, as object containing properties "id", "self", "name", and "type".|POST: Mandatory PUT: No|
+|\*|Object|0..n|Additional properties of the event.|POST: Optional PUT: Optional|
 
 ### GET a representation of an Event
 

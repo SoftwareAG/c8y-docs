@@ -1,5 +1,5 @@
 ---
-title: NTC-6200 Release Notes
+title: Netcomm Release Notes
 layout: default
 ---
 
@@ -38,7 +38,7 @@ The agent supports the following functionality:
 
 ## System requirements
 
-The agent was tested on an NTC-6200 device with firmware version 2.0.24.3. For remote configuration of WAN parameters, you need a SIM card with SMS function. Currently, GSMA OneAPI (e.g., on Ericsson DCP), OpenIT and Jasper Wireless are supported APIs for SMS providers. Please contact <support@cumulocity.com> for connecting to an SMS provider.
+The agent was tested on an NTC-6200 device with firmware version 2.0.24.3. For remote configuration of WAN parameters, you need a SIM card with SMS function. Currently, GSMA OneAPI (e.g., on Ericsson DCP), OpenIT and Jasper Wireless are supported APIs for SMS providers. Please contact [support](https://support.cumulocity.com) for connecting to an SMS provider.
 
 > Agent versions 2.1.10 and up require at least Cumulocity 6.10 to support the new log viewer.
 
@@ -48,7 +48,7 @@ The agent was tested on an NTC-6200 device with firmware version 2.0.24.3. For r
 
 ## Installing the agent
 
-* Download the software: http://resources.cumulocity.com/ntc/smartrest-agent_3.2.0_arm.ipk.
+* Download the software: http://resources.cumulocity.com/ntc/smartrest-agent_3.2.2_arm.ipk.
 * Log in to the web user interface of the NTC-6200.
 * Navigate to the "System" menu. Click on "System configuration", "Choose a file" and select the downloaded software. Click "Upload" to upload the software to the router.
 * Click the "Install" button for the uploaded software which you want to install.
@@ -169,3 +169,12 @@ For information on using the agent, please visit the [NetComm Agent User's Guide
 * Query pending operations at boot time.
 * [fix]Makefile: separate LDLIBS for smsagent so smsagent build correctly and without unnecessary dependencies.
 * [fix]ntcagent: remove trailing slash in server URL so URL with trailing slash also works.
+
+### 3.2.2
+[Download link](http://resources.cumulocity.com/ntc/smartrest-agent_3.2.2_arm.ipk). Changes:
+
+* [MTM-13384](https://cumulocity.atlassian.net/browse/MTM-13384)signal: report RSRP signal strength instead of RSCP when using 4G network.
+* [MTM-13384](https://cumulocity.atlassian.net/browse/MTM-13384)integrate: use RDB uboot.hw_id as name when creating device.
+* [MTM-13384](https://cumulocity.atlassian.net/browse/MTM-13384)modbus: disable Modbus-RTU support when model is NTC-140W.
+* [MTM-13904](https://cumulocity.atlassian.net/browse/MTM-13384)modbus/mbbase: write modbus response values to agent log for easier troubleshooting.
+* [fix]modbus: fix regression bug introduced in 3.2.0 that reading is offset by 1 when data model doesn't start from number 1.

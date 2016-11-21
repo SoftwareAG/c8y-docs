@@ -1,0 +1,263 @@
+body{
+  background-color: transparent;
+  .container{
+    width: 100%;
+    padding: 0;
+  }
+}
+
+
+#masthead{
+  display: none;
+}
+
+
+.docs-nav-toggle{
+  display: none;
+  float: none;
+  margin-left: -10px;
+  .icon-bar{
+    background-color: @darker;
+  }
+  @media(max-width:@grid-float-breakpoint){
+    display: block;
+  }
+}
+.navbar-brand{
+  padding: 15px;
+  max-width: 180px;
+  @media screen and(min-width: @screen-md-max){
+    max-width: 200px;
+  }
+}
+
+
+
+.navbar-default{
+  border:0;
+  background: @darker;
+  border-radius: 0;
+  .navbar-nav {
+    > li > a {
+      font-weight: 100;
+      text-transform: uppercase;
+    }
+  }
+  .navbar-toggle{
+    float: left;
+    margin-right: 0;
+    border-color: transparent;
+    .icon-bar{
+      background-color: white;
+    }
+    &:hover, &:focus{
+      background-color: lighten(@darker, 10%);
+    }
+  }
+}
+
+@media screen and(min-width: @screen-md-min){
+
+  .navbar-default{
+    .navbar-nav {
+      > li > a {
+        font-size: 16px;
+        padding-left: 12px;
+        padding-right: 12px;
+      }
+    }
+  }
+}
+
+
+
+@media screen and(min-width:@screen-sm-min)and(max-width: @screen-sm-max){
+
+  .navbar-default{
+    .navbar-nav {
+      > li > a {
+       padding-left: 5px;
+       padding-right: 5px;
+       font-size: 12px;
+      }
+    }
+    .login{
+      margin-top: 16px;
+      .btn-success{
+        font-size: 12px;
+        padding-bottom: 4px;
+        padding-right: 8px;
+        padding-left: 8px;
+      }
+    }
+  }
+}
+
+@media screen and(max-width:@grid-float-breakpoint){
+  .navbar-default.navbar{
+    min-height: 50px;
+  }
+  .navbar-brand{
+    max-width: 190px;
+  }
+}
+
+.left-nav{
+  background-color: white;
+  padding: 10px 15px;
+ /* @media(max-width:@screen-xs-max){
+    width: 195px;
+    padding-left: 15px;
+    h4{
+      font-size: 14px;
+    }
+  }
+  @media(min-width:@screen-sm-min){
+    width: 158px;
+  }
+  @media(min-width:@screen-md-min){
+    width: 213px;
+  }
+  @media(min-width:@screen-lg-min){
+    width: 263px;
+  }*/
+  &.affix{
+    position: static!important;
+  }
+  &.affix-bottom{
+    position: static!important;
+  }
+  a{
+    color:@gray;
+    text-shadow: none;
+    &:hover{
+      color:@brand-primary;
+      text-decoration: none;
+    }
+  }
+
+  h4{
+    margin-top: 30px;
+    position: relative;
+    text-transform: uppercase;
+    font-size: 13px;
+    span{ margin-right: 0;}
+  }
+  ul{
+    list-style: none;
+    padding: 0;
+  }
+  .panel{
+    padding: 0;
+    list-style: none;
+    border-radius:0px;
+    background-color: transparent;
+    border:0;
+    &:first-child{
+      h4{ margin-top: 10px;}
+    }
+
+    .box-shadow(none);
+    .caret{
+      position: absolute;
+      top:50%;
+      right: -5px;
+      margin-top: -4px;
+
+    }
+    .collapsed{
+      .caret{
+        border-top: 4px solid transparent;
+        border-bottom: 4px solid transparent;
+        border-left: 4px solid;
+      }
+    }
+  }
+  .list-group{
+    margin-bottom: 0;
+    .list-group-item{
+      border-radius: 0;
+      background-color: transparent;
+      border-color: transparent;
+      &.active{
+        padding: 10px 0 10px 10px;
+        background-color: #ECECEC;
+        position: relative;
+
+        &:after{
+          content: '';
+          border-top: 21px solid transparent;
+          border-bottom: 21px solid transparent;
+          border-left: 12px solid #ECECEC;
+          position: absolute;
+          left: 100%;
+          top: 50%;
+          margin-top: -21px;
+        }
+      }
+
+
+      a{
+        color:@darker;
+        display: block;
+
+        &:hover{
+          color:@blue;
+          text-decoration: none;
+        }
+      }
+      &.active, &.active:hover, &.active:focus{
+        a{
+          color: @brand-primary;
+        }
+      }
+
+    }
+  }
+}
+
+.section-title{
+  margin: 0;
+  background-color: white;
+  padding: 20px 40px 0 80px;
+  &:before{ left: 40px; background-color: @darker;}
+}
+
+.section{
+  text-align: center;
+  display: block;
+  min-height: 200px;
+  text-transform: uppercase;
+  color:@darker;
+  padding: 20px;
+  .box-shadow(0 1px 1px rgba(0,0,0,.1));
+  h4{
+    font-size: 16px;
+  }
+  .glyphicon{
+    font-size: 66px;
+    padding-bottom: 20px;
+    border-bottom: 1px solid #f8f8f8;
+    color:@gray;
+  }
+  &:hover{
+    text-decoration: none;
+    .glyphicon{
+      color: @brand-primary;
+    }
+  }
+
+}
+
+.content{
+  padding-top: 10px;
+}
+
+body .to-the-top{
+ display: none;
+}
+
+
+.main-title{
+  border:0;
+}

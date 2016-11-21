@@ -122,7 +122,7 @@ Currently  the u-blox firmware supports three operations:
 
 * **Agent Init Failure**: To troubleshoot this issue,we recommend to connect the device to your computer and enable debug mode to collect more information via a serial port. See "Enable Debug Mode" on this page for further details.
 
-* **Integration/Config Failure**: This error occurs when you are connecting to a wrong server (probably flashed the wrong firmware). Try performing a _factory reset_ and register the device again. If this doesn't solve the problem, most likely it's a server side issue. Try contacting your network administrator if you are connecting to your own Cloud instance or write an email to <support@cumulocity.com> if you are connecting directly to Cumulocity.
+* **Integration/Config Failure**: This error occurs when you are connecting to a wrong server (probably flashed the wrong firmware). Try performing a _factory reset_ and register the device again. If this doesn't solve the problem, most likely it's a server side issue. Try contacting your network administrator if you are connecting to your own Cloud instance or contact [support](https://support.cumulocity.com) if you are connecting directly to Cumulocity.
 
 * **Integrate Failure**: Same as the above error message.
 

@@ -41,7 +41,7 @@ The process works as follows:
 
 * Cumulocity assumes each device to have some form of unique ID. A good device identifier may be the MAC address of the network adapter, the IMEI of a mobile device or a hardware serial number 
 * When you take a new device into use, you enter this unique ID into "Device registration" in Cumulocity and start the device.
-* The device will connect to Cumulocity and send its unique ID repeatedly. For this purpose, Cumulocity provides a static host that can be enquired from support@cumulocity.com.
+* The device will connect to Cumulocity and send its unique ID repeatedly. For this purpose, Cumulocity provides a static host that can be enquired by contacting [support](https://support.cumulocity.com).
 * You can accept the connection from the device in "Device registration", in which case Cumulocity sends generated credentials to the device.
 * The device will use these credentials for all further requests.
 
@@ -92,7 +92,7 @@ To check if a device is already registered, use a GET request on the identity AP
 
 Note that while MAC addresses are guaranteed to be globally unique, serial numbers for hardware may overlap across different hardwares. Hence, in the above example, we prefixed the serial number with a "raspi-".
 
-In this case, the device is already registered and a status code of 200 is returned. In the response, a URL to the device in the inventory is returned in "managedObject.self". This URL can be used to work with the device lateron.
+In this case, the device is already registered and a status code of 200 is returned. In the response, a URL to the device in the inventory is returned in "managedObject.self". This URL can be used to work with the device later on.
 
 If a device is not yet registered, a 404 status code and an error message is returned:
 
@@ -181,7 +181,7 @@ The example above contains a number of metadata items for the device:
 
 -   "c8y\_IsDevice" marks devices that can be managed using Cumulocity's Device Management.
 -   "com\_cumulocity\_model\_Agent" marks devices running a Cumulocity agent. Such devices will receive all operations targeted to themselves and their children for routing.
--   "c8y\_SupportedOperations" states that this device can be restarted and configured. In addition, it can carry out software and firmware updated.
+-   "c8y\_SupportedOperations" states that this device can be restarted and configured. In addition, it can carry out software and firmware updates.
 
 For more information, please refer to the [Device management library](/guides/reference/device-management).
 

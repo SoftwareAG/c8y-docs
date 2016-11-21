@@ -69,19 +69,35 @@ A device marked in the inventory with a *c8y\_IsDevice* fragment supports device
 
 In the example above, the device is requested to install firmware version "1.20140107-1". The device has a pre-configured software repository location, hence it only needs the relative URL "31aab9856861b1a587e2094690c2f6e272712cb1" to download the requested firmware image.
 
-#### c8y\_Software
+#### c8y\_SoftwareList
 
-*c8y\_Software* contains a map of software components to their corresponding versions. In the inventory, "c8y\_Software" represents the currently installed software components on the device.
+*c8y\_SoftwareList* is a List of software entries that define the name, version and url for the software.
 
-As part of an operation, "c8y\_Software" requests the device to ensure that the indicated software components and versions are installed. This means that software not contained in "c8y\_Software" should be removed, software not installed on the device should be installed and software installed in a different version on the device should be upgraded respectively downgraded. Depending on the installation mechanisms of the device, a version may actually be a URL or URI pointing to a particular download location.
+|Name|Type|Description|
+|:---|:---|:----------|
+|name|String|Name of the software.|
+|version|String|A version identifier of the software.|
+|url|URI|A location to download the software from.|
 
-To enable software installation through the user interface, add "c8y\_Software" to the list of supported operations as described above.
 
-    "c8y_Software": {
-     "jetty-io": "jetty-io-7.6.8.v20121106.jar",
-     "rest-representation": "rest-representation-4.6.0.jar",
-     ...
-    }
+In the inventory, "c8y\_SoftwareList" represents the currently installed software components on the device.
+
+As part of an operation, "c8y\_SoftwareList" requests the device to ensure that the indicated software components and versions are installed. This means that software not contained in "c8y\_SoftwareList" should be removed, software not installed on the device should be installed and software installed in a different version on the device should be upgraded respectively downgraded.
+
+To enable software installation through the user interface, add "c8y\_SoftwareList" to the list of supported operations as described above.
+
+    "c8y_SoftwareList": [
+      {
+        "name": "Software A",
+        "version": "1.0.1",
+        "url": "www.some-external-url.com"
+      },
+      {
+        "name": "Software B",
+        "version": "2.1.0",
+        "url": "mytenant.cumulocity.com/inventory/binaries/12345"
+      }
+    ]
 
 ![Software information](/guides/reference-guide/software.png)
 
@@ -135,7 +151,7 @@ c8y_Mobile.msisdn
 
 #### c8y\_CellInfo
 
-*c8y\_CellInfo* provides detailed information about the closest mobile cell towers. When the functionality is activated, the location of the device is determined based on this fragment, in order to track the device whereabouts when GPS tracking is not available. 
+*c8y\_CellInfo* provides detailed information about the closest mobile cell towers. When the functionality is activated, the location of the device is determined based on this fragment, in order to track the device whereabouts when GPS tracking is not available.
 
 |Name|Type|Description|
 |:---|:---|:----------|
@@ -177,7 +193,7 @@ c8y_Mobile.msisdn
 
     "c8y_SignalStrength": {
       "rssi": { "value": -53, "unit": "dBm" },
-      "ber": { "value": 0.14, "unit": "%" } 
+      "ber": { "value": 0.14, "unit": "%" }
     }
 
 ![Signal strength report](/guides/reference-guide/signalstrength.png)
@@ -224,7 +240,7 @@ The alarm sent when a device becomes unavailable is of type "c8y\_Unavailability
 
     {
         ...
-        "type" : "c8y_UnavailabilityAlarm",      
+        "type" : "c8y_UnavailabilityAlarm",
         "text" : "No communication with device since <<last activity time>>",
         "status" : "active",
         "severity" : "major",
@@ -285,7 +301,7 @@ To communicate the results of a particular command, the device adds a property "
 		"result": "165711141901401"
 	}
 
-Please contact support@cumulocity.com if you would like to publish sample commands for your device type.
+Please contact [support](https://support.cumulocity.com) if you would like to publish sample commands for your device type.
 
 #### c8y\_LogfileRequest
 
@@ -320,5 +336,3 @@ When the device receives such a request, it filters the log file according to th
 		"maximumLines": 1000,
 		"file": "http://...cumulocity.com/inventory/binaries/30761423"
 	}
-
-

@@ -72,6 +72,7 @@ Supported events:
 * Location update event
 * Motion started event
 * Motion ended event
+* Crash detected event
 
 ![Queclink Events](/guides/devices/queclink/Events.png)
 

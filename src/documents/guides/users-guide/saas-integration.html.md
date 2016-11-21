@@ -19,7 +19,7 @@ All the examples in this section require a Zapier account, which you can obtain 
 
 ## Access Cumulocity app in Zapier
 
-If you want to get access to the app and try it out please contact us at support@cumulocity.com.
+If you want to get access to the app and try it out please contact us at [support](https://support.cumulocity.com).
 
 ## How does it work?
 

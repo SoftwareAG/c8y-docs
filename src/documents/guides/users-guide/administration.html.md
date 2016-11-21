@@ -34,7 +34,7 @@ The "Home" screen provides navigation links to the main parts of the administrat
 
 ## <a name="users"></a>Managing users
 
-In order to manage users in your tenant, click on the "Users" menu. New accounts will usually contain two users: The initial administrator user and the "sysadmin" user. The initial administrator user was configured when your account was created. This user cannot be removed, only edited. The "sysadmin" user is a user that the Cumulocity support uses to guide you through your trial phase.
+In order to manage users in your tenant, click on the "Users" menu. New tenants will usually contain two users: The initial administrator user and the "sysadmin" user. The initial administrator user was configured when your account was created. This user cannot be removed, only edited. The "sysadmin" user is a user that the Cumulocity support uses to guide you through your trial phase.
 
 > Note that the sysadmin user may not be present depending on your provider.
 
@@ -47,9 +47,11 @@ To add additional users, click on "Add user".
 - Enter the username that the user will use for logging in to your account.
 - Choose if the user will be active. If this switch is set to "disabled", the user will not be able to log in.
 - Enter first and last name of the user. This is purely for information and will be shown on the top right next to the user symbol when the user logs in.
-- Enter the email address of the user. Note that you need to provide a valid, unique email address here to enable users to reset their password.
+- Enter the e-mail address of the user. Note that you need to provide a valid, unique e-mail address here to enable users to reset their password.
 - Enter the telephone number. Again, this is purely informational.
+- If you choose to check "Enable two-factor authentication", the user will be asked to provide phone number and on login the pin code will be required for successful authentication.
 - If you choose to check "Password reset", the user will have to choose a new password after the next login.
+- If you choose to check "Send password reset link as e-mail", the e-mail message will be sent to provided e-mail address with link to set a password.
 - Enter a password and confirm the password. (See "[Logging in](/guides/users-guide/overview#login)" for more information on password strength.)
 - Add users to relevant [user groups](#user-groups).
 - Assign device and application [permissions](#permissions).
@@ -61,7 +63,7 @@ To add additional users, click on "Add user".
 
 ### Editing users
 
-To edit an existing user, just click on the user in the list. All user details other than the username can be modified. To change the password, click on "Change password". Click "Save" after you have finished editing.
+To edit an existing user, just click on the user in the list. All user details other than the username and "Send password reset link as e-mail" checkbox can be modified. To change the password, click on "Change password". Click "Save" after you have finished editing.
 
 ### Deactivating or deleting users
 
@@ -69,9 +71,27 @@ Hovering over a user reveals the deactivate and delete buttons on the right side
 
 ![Delete User](/guides/users-guide/deleteuser.png)
 
+### <a name="tfa"></a>Using two-factor authentication
+
+The Two-factor authentication(TFA) is an extra layer of security that requires not only a username and password, but SMS verification as well. TFA can only be enabled by administrators. When TFA is enabled, it's not possible to configure it from the "User settings", it is configurable from the administration UI.
+
+> Note that phone number is required when adding a user and TFA is enabled. When users without a phone number try to login when TFA is enforced, the user will be redirected to a window, to enter his/her mobile phone number.
+
+To see whether TFA is enabled for a certain user, go to the "Users" menu and check the TFA status column.
+
+![TFA satus](/guides/users-guide/tfastatus.png)
+
+In order enable two-factor authentication for a user:
+
+- Go to the "Users" menu.
+- Click on the desired user.
+- Click on the checkbox next to "Enable two-factor authentication.
+- Click "Save".
+
+![Enable TFA](/guides/users-guide/enabletfa.png)
 ## <a name="user-groups"></a>Managing user groups
 
-To simplify user management, users with the same permissions can be placed into user groups representing typical permission sets. A single user can be part of multiple user groups. New accounts will usually contain four user groups by default. These user groups have common useful permission settings:
+To simplify user management, users with the same permissions can be placed into user groups representing typical permission sets. A single user can be part of multiple user groups. New tenants will usually contain four user groups by default. These user groups have common useful permission settings:
 
 * admins: A group with all permissions set.
 * business: Users in this group can work with all devices and their data, but cannot administer the account.
@@ -121,6 +141,7 @@ The total set of permissions that a user has is calculated using the following r
 
 When you edit a group, a table with "roles" is listed below the group name. These represent permission on the following types of data:
 
+* Tenant management: View, create, edit or delete subtenants.
 * Tenant statistics: View the usage data for this account, as shown on the home page of the administration application.
 * Option management: View or edit account options such as password policies.
 * Application management: View or edit the applications available in this account.
@@ -154,47 +175,55 @@ To assign permissions click on the relevant checkbox. If you wish to select or c
 
 ![All roles](/guides/users-guide/allroles.png)
 
-#### Using Support Permission
+### Using Support Permission
 
-##### Overview
+#### Overview
 
-Support users are users in management tenant that have special permissions to login to normal tenants. 
+Support users are users in management tenant that have special permissions to login to normal tenants.
 To allow login into normal tenants, support user account must have support access rights.
-When support user logs in to tenant, he has the same privileges as the subtenant user. 
-The user from subtenant is specified on login page.  
+When support user logs into a tenant, he has the same privileges as the subtenant user.
+The user is specified on login page.  
 
-Support users can login using own password and username in form
+Support users can login using own password and username in form:
 
 > support_user$user
 
-Where "support_user" is name of support user in management tenant and "user" is name of user which context will be used
+Where "support_user" is the name of the support user in management tenant and "user" is the name of the user which content will be used.
 
-or
+or, you can use as well:
 
 > support_user$
 
-Where "support_user" is name of user in management tenant. In this case support user will use context of one of admin users.
+Where "support_user" is the name of the user in management tenant. In this case, the support user will use the content of one of the admin users.
 
-##### Configuration
+#### Configuration
 
-Support user functionality is enabled by default. 
-If it is disabled by platform operator then any user has "Activate support access" option available in upper right menu.
-After selecting this option, support user has access to tenant for one day.
+The support user functionality is enabled by default.
+If it is disabled by the platform operator, then every user has "Activate support access" option, it is available in the upper right menu.
+After selecting this option, support users have access to the tenant for one day.
 
-##### Audit logs
+#### Audit logs
 
-Audit logs for all action performed by support user will have information about actual author. 
-In column "Who?" will be author's name in form "support_user$user".
+Audit logs for all action performed by support users will have information about the actual author.
+In column "Who?" the author's name will be shown in form of:
 
-##### Tenant-specific permissions
+> "support_user$user"
 
-It is sometimes required to assign support access rights to specific tenants only. It can be done by [device-specific permissions](#assigning_device_specific_permissions) for the user and [tenant managed object](#tenant_management_object) with scope "SUPPORT", type "&#42;" and permission "&#42;".
+#### Tenant-specific permissions
 
-Bellow screen shows how to grant access to tenant "myTenant".
+Sometimes, it is required to assign support access rights to specific tenants only. It can be done by [device-specific permissions](#assigning_device_specific_permissions) for the user and [tenant managed object](#tenant_management_object) with scope "SUPPORT", type "&#42;" and permission "&#42;".
+
+The screenshot below shows you, how to grant access to the tenant "myTenant".
 
 <img src="/guides/users-guide/support_permission.png" alt="Support permission">
 
-Tenant managed object can be found by type "c8y_Tenant" or name equals to tenant id.
+Tenant managed object can be found by type "c8y_Tenant" or name equal to tenant id.
+
+### Restricting tenant deletion
+
+Users with tenant management "Admin" permissions can create, update and delete tenants. For example, in order to restrict a user from deleting tenants only create and update permissions should be given. This way, the user can only create and update the tenants, but not delete them.
+
+![tenant delete restriction](/guides/users-guide/restrict_tenant_deletion.png)
 
 ### <a name="tenant_management_object"></a>Tenant management objects
 
@@ -231,7 +260,7 @@ Plugins can only be added to own applications, because the application itself is
 
 > Please note that in the new "Smartapps" the plugin is "inserted" into the application. This has changed from the old Smartapps which could reference plugins stored in other applications.
 
-When an application has been created it will be available in the application switcher. 
+When an application has been created it will be available in the application switcher.
 
 > Note that the "Open" button of the application is revealed when you hover over the application's name.
 
@@ -242,7 +271,7 @@ When an application has been created it will be available in the application swi
 To add an application, you can upload a "ZIP file" application. In order to do that:
 
 - Click on "Add application".
-- Click on "Upload ZIP file". 
+- Click on "Upload ZIP file".
 - Either drop the file into the box or simply browse your computer.
 
 ### Working with bitbucked hosted application
@@ -298,7 +327,7 @@ To add a smartapp:
 - Enter the application path. This path will be part of the URL to invoke the application. For example, if you use "hello" as application path, the URL of the application will be "/apps/hello".
 - Click the "Create" button.
 
-> Please note that these are the old "Smartapps" in which the plugins that you wish to add to your application must be selected from a list. 
+> Please note that these are the old "Smartapps" in which the plugins that you wish to add to your application must be selected from a list.
 
 ![Legacy smartapps](/guides/users-guide/smartapps.png)
 
@@ -330,7 +359,7 @@ To remove a plugin, click on the cogwheel next to the desired plugin and click r
 |Permissions|Device Permission Management Plugin|
 |Data Explorer|Data Point Explorer UI|
 
-> Please note the "UI" in the end of the plugin names. 
+> Please note the "UI" in the end of the plugin names.
 
 ### Restoring to an older application version
 
@@ -360,14 +389,14 @@ Once uploaded, archives can be downloaded, activated or removed if necessary. Th
 
 ### Editing applications
 
-To edit an application, simply click on its name. Depending on the type of the application (e.g. Hosted, External), different fields can be modified. 
+To edit an application, simply click on its name. Depending on the type of the application (e.g. Hosted, External), different fields can be modified.
 
 > Note that "ID", "Application key" and "Path" cannot be changed once configured.
 
 ### Removing applications
 
 If you remove an application that overrides a subscribed application, you make the currently available subscribed application available to all users. Additionally the users will then also benefit from future upgrades of the subscribed application.
-It is not possible to remove subscribed apps. This is only possible for the owner of the subscribed application. 
+It is not possible to remove subscribed apps. This is only possible for the owner of the subscribed application.
 
 > Note that in order to override a "Subscribed application" the "Own Application" must have the same context-path as the "Subscribed application".
 
@@ -428,7 +457,7 @@ To add a new subtenant, click on "Create Tenant"
 
 - Enter unique domain/url of the new tenant. This url will be used to access the application (e.g. tenant@cumulocity.com).
 - Enter the name of the company.
-- Enter the administrator's email. Note that you need to provide a valid email address here to enable users to reset their password.
+- Enter the administrator's e-mail. Note that you need to provide a valid e-mail address here to enable users to reset their password.
 - Enter username of the administrator which will be used when logging in.
 - Enter contact name. This field is optional.
 - Enter contact phone. Again, this field is optional.
@@ -447,6 +476,8 @@ When you have finished editing, click on the "Save" button.
 
 Hovering over a tenant will reveal the "Suspend" and the "Remove" buttons. The "Remove" button is shown as a red cross. To suspend or remove a tenant, click on the respective button.
 
+> Please note that there is an additional check during tenant suspension. The user will have to provide his own password in order to proceed. After the tenant is suspended, an e-mail is sent to the suspended tenant administrator. The e-mail is sent only if the property in the config file is enabled and if the tenant administrator provided an e-mail address during creation.
+
 ### <a name="usage-stats"></a> Retrieving usage statistics
 
 Usage statistics menu provides you with information about each subtenant. The statistics show:
@@ -456,7 +487,7 @@ Usage statistics menu provides you with information about each subtenant. The st
 - API requests: Number of API requests, including requests from  devices and applications.
 - Device API requests: Number of API requests from devices
 - Storage (MB): The amount of data stored in your account.
-- Devices: Total number of devices connected to the tenant. 
+- Devices: Total number of devices connected to the tenant.
 - Subscribed application: This column shows number of applications that the subtenant is subscribed to.
 - Creation time: The date and time of the creation of the subtenant.
 
@@ -532,7 +563,11 @@ To change password settings, click on "Password". To limit the validity of user 
 
 By default, users can use any password that consists of eight characters or longer. If you select "Enforce that all password are "strong" (green)", your users must provide strong passwords as described in "[Logging in](/guides/users-guide/overview#login)".
 
-By default, system restricts users to not use password used in history, in other words last N passwords provided by user are remembered by system and system restricts user to not use them. The N is configurable and default value for N is 10.
+> Note that "Enforce that all password are green" and the "Password validity limit" can be mandatory and non-editable, if configured by the platform administrator.
+
+Strong (green) passwords must have M characters. By default, system restricts users to not use password s used in history, in other words last N passwords provided by user are remembered by the system and the system restricts users to not use them. The default value for N is 10.
+
+> Note that M and N can be configured by the platform administrator.
 
 Click "Save" to store the settings.
 
@@ -551,12 +586,12 @@ Via the "Application" menu, administrators can enable cross-origin resource shar
 In the "Server-side agents" menu, the "Send dashboard via e-mail" smart rule can be enabled or disabled. To enable, select the checkbox and click "Save".
 
 ### <a name="openIT-credentials"></a>Enter OpenIT credentials
- 
-SMS sending is used by several features within the application. it can be used to make login more secure with two-factors authentication. An SMS can be sent when an alarm is triggered. SMSes can be used to send instructions to devices. The service provided by [Openit](https://sms.openit.de/main.php) can be used to this effect. In this section, the user can enter its credentials to activate the features that require SMS sending.
+
+SMS sending is used by several features within the application. it can be used to make login more secure with [two-factors authentication](/guides/users-guide/administration#tfa). An SMS can be sent when an alarm is triggered. SMSes can be used to send instructions to devices. The service provided by [Openit](https://sms.openit.de/main.php) can be used to this effect. In this section, the user can enter its credentials to activate the features that require SMS sending.
 
 ## <a name="retention"></a>Managing data retention
 
-"Retention rules" let you control how long data will be stored in your account. For example, you may want to store measurements for 90 days, but delete alarms already after 10 days. By default, all historical data is deleted after 60 days.
+"Retention rules" let you control how long data will be stored in your account. For example, you may want to store measurements for 90 days, but delete alarms already after 10 days. By default, all historical data is deleted after 60 days (this can be changed in system settings).
 
 Retention rules are usually run during the night. When you edit a retention rule, you will not see an immediate effect, for example, in the usage section on the home page of the administration application.
 
@@ -598,4 +633,3 @@ In case the quota is exceeded, an e-mail is sent to all the tenant administrator
 For example, let us assume that a tenant has a storage quota of 10GB. Retention rules are 80 days for measurements, 90 days for all other data.
 - Day 1: In the nightly check, the total storage is calculated at 13GB. An e-mail is sent to all the tenant administrators.
 - Day 2: the total storage is still at 13GB. The system determines that a 15% reduction of the retention rules is sufficient to be under the storage quota. So any measurement older than 68 days (80 days - 15%) and any other data older that 77 days (90 days - 15% results in 76.5 days, rounded to 77 days) is deleted. The total storage is now at 9.8GB.
-

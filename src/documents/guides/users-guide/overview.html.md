@@ -60,7 +60,9 @@ The automated password reset will only work if your email address is stored with
 
 > If you are yourself the primary administrator, the email that you used when registering first to Cumulocity is automatically stored with your user. If you have questions, please contact the Cumulocity support from this email address.
 
-To change your password, click on the "User Settings" icon in the application. Please make sure to pick a strong password. To support you in picking good passwords, a password strength indicator is displayed along with a password change. A password needs to consist of at least eight characters. It should use a mixture of character classes (uppercase and lowercase letters, numbers and symbols). A strong password uses at least three of the above four character classes.
+To change your password, click on the "User Settings" icon in the application. Please make sure to pick a strong password. To support you in picking good passwords, a password strength indicator is displayed along with a password change. By default, the password needs to consist of at least eight characters. It should use a mixture of character classes (uppercase and lowercase letters, numbers and symbols). A strong password uses at least three of the above four character classes.
+
+> Note that, the above password rules can be configured by the administrator.
 
 <img src="/guides/users-guide/passwordstrength.png" alt="Reset password" style="max-width: 50%">
 

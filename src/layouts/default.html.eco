@@ -27,7 +27,7 @@
 
           document.write('<link href="/guides/css/docs-iframe-styles.css" rel="stylesheet" id="cumulocity-style-css" type="text/css" media="all" />');
         }else{
-          document.write('<link href="/guides/css/docs-styles.css" rel="stylesheet" id="cumulocity-style-css" type="text/css" media="all" />');
+          document.write('<link href="/guides/less/docs-styles.css" rel="stylesheet" id="cumulocity-style-css" type="text/css" media="all" />');
         }
   </script>
 

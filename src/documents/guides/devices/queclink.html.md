@@ -61,6 +61,10 @@ Here are some general hints if your tracking device does not connect to Cumuloci
 * Devices may send the location of the last GPS fix if there is no GPS reception.
 * The "Location" and "Tracking" tabs appear only in the user interface when the first GPS coordinate has been received.
 
+## Enable sms mode
+
+Sending operations to the tracker device via sms is supported. Tracker device's phone number information should be provided beforehand and one of the settings described at "[Control devices via SMS](/guides/reference/device-control#control_via_sms)" section should be done to use the functionality.
+ 
 ## Supported features
 
 Supported events:

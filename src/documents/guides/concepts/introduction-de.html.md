@@ -1,8 +1,13 @@
 
+---
+order: 10
+title: Einführung in Cumulocity
+layout: default
+---
 
+## Übersicht
 
-# Übersicht
-###Bestimmungsgemäßer Gebrauch
+### Bestimmungsgemäßer Gebrauch
 
 Cumulocity gibt Ihnen sehr schnelle Kontrolle und Sichtbarkeit von Geräten und Assets, seien sie Häuser, Autos, Maschinen oder andere Geräte, die Sie überwachen und steuern möchten. Cumulocity hat hierzu:
 
@@ -14,8 +19,10 @@ Cumulocity gibt Ihnen sehr schnelle Kontrolle und Sichtbarkeit von Geräten und 
 Alle diese Dienste werden über einen Cloud Service zur Verfügung gestellt, mit dem Sie "Internet of Things" (IoT) Lösungen mit Cumulocity fundamental anders als mit massgeschneiderten Entwicklungen und RAD angehen werden. Sie können sofort mit einer grossen Anzahl an bestehender Funktionalität und Lösungen starten und Sie können kostenlos starten. Sie brauchen sich keine Gedanken über IT Infrastruktur zu machen (wie etwa Hosting, Netzwerke, Sicherheit, Kapazität und Backup) und ebenso nicht über IT Management (das alle Software fuer alle beteiligten User installiert wäre). 
 
 Cumulocity arbeitet mit jeder Netzwerk Architektur, ist aber speziell designed mit mobilen Netzwerken zu arbeiten. Hier nachfolgend geben wir Ihnen eine kurze Übersicht über die verschiedenen Funktionen mit Referenzen und detailierten Beschreibungen.
-![Solution building](/guides/concepts-guide/solution.gif)
+![Solution building](/guides/concepts-guide/solutionde.png)
 
+Terms and Conditions zum Gebrauch von Cumulocity:
+[Terms and Conditions](http://cumulocity.com/terms-and-conditions/)
 ## Hardware Baukästen und Software Bibliotheken
 ###Funktionalität innerhalb von Cumulocity
 

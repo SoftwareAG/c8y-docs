@@ -1,7 +1,9 @@
 ---
 order: 40
-title: Developing applications
+title: Anwendungen entwickeln
 layout: default 
+---
+
 ## Übersicht
 
 

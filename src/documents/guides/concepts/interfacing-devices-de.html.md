@@ -1,9 +1,10 @@
 ---
 order: 30
-title: Interfacing devices
+title: Geräteschnittstellen
 layout: default
 ---
-## Einführung in Schnittstellengeräte
+
+## Einführung in Geräteschnittstellen
 
 In diesem Abschnitt werden Konzepte für die Anbindung von IoT-Geräten und anderen IoT-bezogenen Datenquellen mit Cumulocity erläutert.
 
@@ -25,7 +26,7 @@ Um Maschinen-zu-Maschine-Anwendungen vor dieser Anzahl von Zugriffsoptionen zu s
 -   Es übersetzt das spezifische Domänenmodell des Geräts zu einem Referenzdomänenmodell.
 -   Es ermöglicht eine sichere Fernkommunikation in verschiedenen Netzwerkarchitekturen.
 
-![Agent architecture](/guides/concepts-guide/agents.png)
+![Agent architecture](/guides/concepts-guide/agentsde.png)
 
 **Protokoll Übersetzung:** Die Konfiguration von Parametern, Messwerten, Ereignissen und anderen Informationen erfolgt entweder über ein gerätespezifisches Protokoll auf der einen Seite an einen Agenten ( "push") oder von einem Agenten abgefragt ("pull"). Der Agent konvertiert diese Nachrichten in das Protokoll, das Cumulocity benötigt. Es werden auch Geräte- Steuerbefehle von Cumulocity ( "Relais ausschalten") empfangen und diese übersetzt in ein passendes Geräte- Protokoll.
 
@@ -42,7 +43,7 @@ Um die Vorteile des Agentenkonzepts zusammenzufassen: Agents ermöglichen IoT-An
 
 Agenten können auf verschiedene Weise bereitgestellt werden, wie im Bild unten dargestellt. Wir unterscheiden zwei Hauptvarianten: *Serverseitige Agenten* und *geräteseitige Agenten*.
 
-![Agent architectures](/guides/concepts-guide/agentarchitectures.png)
+![Agent architectures](/guides/concepts-guide/agentarchitecturede.png)
 
 Serverseitige Agenten werden in einer Cloud ausgeführt, die von Cumulocity gehostet oder von Ihnen verwaltet wird. Geräte werden über ein gerätespezifisches Protokoll mit Server-Agents verbunden. Diese Option wird hauptsächlich gewählt, wenn eine oder mehrere der folgenden Bedingungen erfüllt ist:
 
@@ -65,7 +66,7 @@ Nach dem Start synchronisiert der Agent das Inventar mit dem Sensor-Subnetz, fü
 
 Um die Stammdaten Synchronisation zu verstehen, sollte man sich kurz die Kommunikationshierarchie aus dem Domain Modell in Erinnerung rufen. ["Cumulocity's domain model"](/guides/concepts/domain-model). In den Stammdateb befinden sich die Agenten an den Wurzeln der Hierarchie. Unterhalb jedes Agenten wird die Topology des Subnetzwerkes, für das der Agent verantwortlich ist, abgebildet. Diese Topologie existiert sowohl im realen Netzwerk als auch als Abbild im Inventar. Sie kann sich im realen Netzwerk ändern, und diese Änderungen müssen in den Stammdaten widergespiegelt werden.
 
-![Communication hierarchy](/guides/concepts-guide/commshierarchy.png)
+![Communication hierarchy](/guides/concepts-guide/commshierarchyde.png)
 
 Stammdatensynchronisierung ist ein zweistufiges Verfahren: Der erste Schritt besteht darin, den Eintrag des Agenten aus den Stammdaten abzufragen und im Netzwerk zu erstellen. Der zweite Schritt besteht dann darin, das Subnetzwerk zu ermitteln und mit dem Inventar zu synchronisieren, basierend auf dem Eintrag des abgefragten Agenten.
 

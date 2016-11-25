@@ -1,8 +1,9 @@
 ---
 order: 35
-title: Real-time processing
+title: Automatische Aktualisierung
 layout: default
 ---
+
 ## Übersicht
 
 Cumulocity ermöglicht Entwicklern und Power-Usern, Echtzeit-IoT-Business-Logik in Cumulocity auf einer hochentwickelten Echtzeit-Verarbeitungsprache zu verarbeiten. Dieser Abschnitt stellt die grundlegenden Konzepte der Echtzeitverarbeitung vor und zeigt, wie Sie Ihre eigene Geschäftsfunktionalität bei Cumulocity entwickeln können.
@@ -12,7 +13,7 @@ Mehr Information über die Oberflächen für Automatische Aktualisierung findet 
 ## Was ist Automatische Aktualisierung in Cumulocity?
 Cumulocity hat eine Echtzeit-Engine die alle Daten aus Geräten oder anderen Datenquellen für die sofortige Verarbeitung von benutzerdefinierten Geschäftsprozessen empfängt. Diese benutzerdefinierten Operationen können Anwendungen auf neue eingehenden Daten aufmerksam machen, neue Operationen starten basierend auf den empfangenen Daten (z. B. das Senden eines Alarms, wenn ein Grenzwert für einen Sensor überschritten wird), Triggeroperationen auf Geräte oder E-Mails senden. Diese Operationslogik ist implementiert in der *Cumulocity Event Language*, einer domänenspezifischen High-Level-Sprache für IoT-Echtzeitdaten.
 
-![CEP architecture](/guides/concepts-guide/realtime.png)
+![CEP architecture](/guides/concepts-guide/realtimede.png)
 
 Cumulocity Event Language umfasst *Anweisungen*, wie in den folgenden Beispielen veranschaulicht. Sie sind in Einheiten des Einsatzes, genannt *Module* gruppiert. Module können als Teil einer Cumulocity-Anwendung bereitgestellt werden. Sie können mit der Cumulocity-Verwaltungsanwendung bearbeitet werden. Über die REST-API können Anwendungsentwickler benutzerfreundliche Domäne-spezifische Business-Assistenten für ihre spezifischen Anwendungsfälle entwickeln. Beispielsweise kann ein Hausautomationsentwickler einen Assistenten erstellen, der Schwellenwerte für Temperatursensoren bereitstellt, um Heizungen zu steuern.
 Das Bild oben zeigt auch ein weiteres Merkmal von Cumulocity: Die Möglichkeit, Daten ausschließlich für die Echtzeit-Verarbeitung zu senden. Daten, die als "temporär" markiert sind, werden nicht in der Datenbank von Cumulocity gespeichert, sondern nur von der Echtzeit-Engine verarbeitet. Dies spart Speicher- und Verarbeitungskosten, zum Beispiel bei der Verfolgung von Geräten in Echtzeit, ohne dass Daten gespeichert werden müssen.

@@ -1,8 +1,13 @@
 
+---
+order: 10
+title: Introduction to Cumulocity
+layout: default
+---
 
+## Overview
 
-# Overview
-###Intended Use
+### Intended Use
 
 Cumulocity gives you very fast visibility and control over your remote assets, be these houses, cars, machines or any other assets that you need to manage. 
 
@@ -18,6 +23,9 @@ All this is provided through a cloud-based subscription service making the creat
 Cumulocity works with any network architecture, but is specifically designed to work out of the box with mobile networks. In the following sections, we will give a short overview of the different functional areas with references to more detailed descriptions.
 
 ![Solution building](/guides/concepts-guide/solution.gif)
+
+Terms and Conditions to use Cumulocity:
+[Terms and Conditions](http://cumulocity.com/terms-and-conditions/)
 
 ## Hardware kits and software libraries
 ###Functionality within Cumulocity

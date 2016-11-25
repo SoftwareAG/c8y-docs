@@ -1,8 +1,9 @@
 ---
 order: 50
-title: Security aspects
+title: Sicherheitsaspekte
 layout: default
 ---
+
 ## Überblick
 
 Dieser Abschnitt zeigt Sicherheitskonzepte und Aspekte von Cumulocity, die in physische Sicherheit, Netzwerksicherheit, Anwendungssicherheit und Zugriffskontrolle gegliedert ist. Schließlich zeigt es, wie Cumulocity bei der Verwaltung der Sicherheit Ihrer IoT-Lösung hilft. Dieser Abschnitt ist speziell für IT-Sicherheitspersonal und Führungskräfte gedacht. IT-Sicherheitsexpertise ist erforderlich, wenn Sie Cumulocity ausführen und anwenden möchten.
@@ -10,6 +11,7 @@ Dieser Abschnitt zeigt Sicherheitskonzepte und Aspekte von Cumulocity, die in ph
 Mehr hierzu gibt es auch noch in anderen Abschnitten der Nutzerdokumentation, wie die [REST implementation](/guides/reference/rest-implementation) und [Users API](/guides/reference/users). Für einzelne API-Aufrufe erforderliche Berechtigungen sind in den jeweiligen Referenzleitfaden-Abschnitten für die APIs dokumentiert.
 
 Cumulocity entspricht den Richtlinien von Nokia Networks, die nicht öffentlich zugänglich sind, und der "Privacy and Security Assessment, PSA Richtlinie" der Deutschen Telekom.
+
 (PSA,[detailed criteria in English](https://www.telekom.com/en/corporate-responsibility/data-protection---data-security/security/security/privacy-and-security-assessment-process-358312)  
 [detailed criteria in German](http://www.telekom.com/psa)).
 
@@ -31,7 +33,7 @@ Cumulocity stellt von der Platformseite her sicher, dass Daten vertraulich bleib
 
 Diese Kommunikationsarchitektur ist nachfolgend dargestellt. Innerhalb der Sensornetze und von den Sensornetzwerken zu Agenten können geräte- und Gateway-spezifische Protokolle verwendet werden (wie z. B. ZigBee oder Modbus). Die Sicherung ist eine gerätespezifische Angelegenheit. Agenten kommunizieren mit der Cumulocity-Plattform mit HTTPS zum Senden und Empfangen von Daten. Ebenso verwenden IoT-Anwendungen HTTPS zur Kommunikation. Wenn eine IoT-Anwendung eigene Schnittstellen zu Webbrowsern freigibt, wird empfohlen, dass diese HTTPS verwenden. Auf diese Weise wird der gesamte Weg von Agenten zum Endverbraucher gesichert.
 
-![Communication security](/guides/concepts-guide/commsecurity.png)
+<center><img src="/guides/concepts-guide/commsecurityde.png" alt="Communication security" style="max-width: 100%"></center>
 
 Wie oben erwähnt, erfordert Cumulocity kein Gerät, welches evtl. Ports oder Dienste im Internet freilegen könnte. Dies ist eine wichtige Eigenschaft: Es vereinfacht nicht nur die Verbindung von Geräten zu Cumulocity, sondern vereinfacht auch die Sicherung dieser Geräte drastisch. Überprüfen Sie bei der Bereitstellung einer IoT-Lösung auch andere Dienste, die möglicherweise ein Gerät im Internet verfügbar machen , z. B. durch webbasierte Geräteverwalter oder SMS-basierte Konfigurationsmöglichkeiten.
 
@@ -50,7 +52,7 @@ Cumulocity folgt Standardpraktiken für die Härtung auf Anwendungsebene, um sic
 
 Cumulocity verwendet einen standardmäßigen Authentifizierungs- und Berechtigungsprozess basierend auf Realms, Benutzern, Benutzergruppen und Behörden. Ein * realm * ist eine Datenbank von Benutzern und Benutzergruppen, die die gleiche Authentifizierungs- und Autorisierungsrichtlinie verfolgen. Ein * Benutzer * ist eine Person oder ein externes System, das berechtigt ist, auf geschützte Ressourcen in Cumulocity zuzugreifen. Der Zugriff wird über Berechtigungen gesteuert. Zur Vereinfachung der Administration können Benutzer in * Benutzergruppen * gruppiert werden, die ähnliche Berechtigungen verwenden. Ein Benutzer kann Mitglied mehrerer Benutzergruppen sein, sodass der Benutzer über die Berechtigungen für die Gruppen verfügt.
 
-Cumulocity schafft einen neuen Realm für jeden Mieter, um die Benutzer des Mieters zu speichern. Realms bietet einen eigenen Namensraum für Benutzernamen, so dass Benutzer die Namen, die sie kennen, aus ihren eigenen Unternehmen IT oder andere IT-Systeme zu halten. Es gibt keinen Konflikt zwischen Benutzernamen: Ein Benutzer "smith" eines bestimmten Mieters unterscheidet sich von einem Benutzer "Smith" eines anderen Mieters. Dieser Benutzername ist gültig für alle Cumulocity-Anwendungen, die ein Mieter abonniert hat.
+Cumulocity schafft einen neuen Realm für jeden Mandanten, um die Benutzer des Mieters zu speichern. Realms bietet einen eigenen Namensraum für Benutzernamen, so dass Benutzer die Namen, die sie kennen, aus ihren eigenen Unternehmen IT oder andere IT-Systeme zu halten. Es gibt keinen Konflikt zwischen Benutzernamen: Ein Benutzer "smith" eines bestimmten Mandanten unterscheidet sich von einem Benutzer "Smith" eines anderen Mandanten. Dieser Benutzername ist gültig für alle Cumulocity-Anwendungen, die ein Mandant abonniert hat.
 
 Jeder neue Bereich wird automatisch mit einem ersten Administrator-Benutzer gefüllt, der weitere Benutzer und Benutzergruppen erstellen kann und die Berechtigungen für diese Benutzer und Benutzergruppen vergeben können. Dies ermöglicht es einem Unternehmen, Benutzer und ihre Berechtigungen über die Administrationsanwendung selbst zu verwalten.
 
@@ -63,12 +65,12 @@ Objekte im Inventar haben auch einen Eigentümer mit ihnen verbunden. Eigentüme
 -   lesen, Aktualisieren und Löschen der Inventarobjekte, die sie besitzen.
 -   erstellen, Lesen, Aktualisieren und Löschen von Daten, die den Objekten zugeordnet sind.
 
-Wenn Sie zum Beispiel der Besitzer eines Smart Meter im Inventar sind, können Sie Zählerstände für diesen Smart Meter speichern, auch wenn Sie keine anderen Messberechtigungen besitzen.
+Wenn Sie zum Beispiel der Besitzer eines Smart Meter in den Stammdaten sind, können Sie Zählerstände für diesen Smart Meter speichern, auch wenn Sie keine anderen Messberechtigungen besitzen.
 
-Das Inventar enthält auch eine "create" -Erlaubnis. Ein Benutzer, der nur die Erstellungsberechtigung hat, kann neue Objekte im Inventar speichern, aber keine anderen Daten lesen, ändern oder löschen. Dies ist vor allem für Geräte relevant. Die Berechtigung "create" beinhaltet auch die Möglichkeit, Ihr Objekt als untergeordnetes Element oder untergeordnetes Objekt mit einem anderen Objekt zu verknüpfen.
+Die Stammdaten enthalten auch eine Erlaubnis zur Erstellung. Ein Benutzer, der nur die Erstellungsberechtigung hat, kann neue Objekte in den Stammdaten speichern, aber keine anderen Daten lesen, ändern oder löschen. Dies ist vor allem für Geräte relevant. Die Berechtigung "erstellen" beinhaltet auch die Möglichkeit, ein Objekt als untergeordnetes Element oder untergeordnetes Objekt mit einem anderen Objekt zu verknüpfen.
 
-## Begrenzung des Zugriffs auf verwaltete Objekte
-Mit Cumulocity können Sie globale Berechtigungen festlegen, die für alle verwalteten Objekte, Messungen, Ereignisse und so weiter gelten. Es erlaubt auch eine Beschränkung der Genehmigungen.
+## Begrenzung des Zugriffs auf Objekte
+Mit Cumulocity können Sie globale Berechtigungen festlegen, die für alle Objekte, Messungen, Ereignisse und so weiter gelten. Es erlaubt auch eine Beschränkung der Genehmigungen.
 
 * An bestimmte verwaltete Objekte oder einen Satz verwalteter Objekte.
 * An einen einzelnen Benutzer oder eine Gruppe von Benutzern.
@@ -100,7 +102,7 @@ Es ist möglich, jedes Objekt ohne spezielle Rechte von jedem Benutzer zugängli
 Berechtigungen werden in zwei Dimensionen erweitert:
 
 * Berechtigungen für eine Gruppe gelten für alle Benutzer in dieser Gruppe.
-* Berechtigungen für ein verwaltetes Objekt gelten für alle untergeordneten Geräte und untergeordneten Elemente.
+* Berechtigungen für ein Objekt gelten für alle Kindgeräte und untergeordneten Elemente.
 
 ### Beispiele
 

@@ -1,6 +1,11 @@
-#Overview
-
 ---
+order: 20
+title: Cumulocity's domain model
+layout: default
+---
+
+## Overview
+
 
 ***Cumulocity captures all relevant aspects of devices and assets in the Internet of Things.***
 

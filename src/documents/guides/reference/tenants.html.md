@@ -58,8 +58,8 @@ Example Response :
         "tenants": [
             {
                 "adminName": "admin",
-		"allowCreateTenants": false,
-    "storageLimitPerDevice": 10485760,
+				"allowCreateTenants": false,
+				"storageLimitPerDevice": 10485760,
                 "applications": {
                     "references": [],
                     "self":"<<ApplicationCollection of This Tenant  URL>>",
@@ -236,8 +236,8 @@ Example Response :
         },
         "company": "sample_company",
         "domain": "sample_domain.com",
-	"allowCreateTenants": false,
-  "storageLimitPerDevice": 10485760,
+		"allowCreateTenants": false,
+		"storageLimitPerDevice": 10485760,
         "id": "sample_tenant",
         "ownedApplications": {
             "references": [
@@ -300,9 +300,9 @@ Example Response :
         "domain": "sample_domain.com",
         "status": "ACTIVE",
         "self":"<<This Tenant URL>>",
-	"allowCreateTenants": false,
-  "storageLimitPerDevice": 10485760,
-	"parent": "parentTenant",
+		"allowCreateTenants": false,
+		"storageLimitPerDevice": 10485760,
+		"parent": "parentTenant",
         "ownedApplications": {
             "references": [
                 {

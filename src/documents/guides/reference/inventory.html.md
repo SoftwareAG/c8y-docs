@@ -151,6 +151,8 @@ Example Response:
 
 ### Query Language
 
+Query language is applied only on devices, i.e. managed objects with property c8y_IsDevice.
+
 ##### User can put query via 'q' parameter. Parameter can be:
 * only query to database: ...?q=name eq 'M01'
 * keyword $filter=: ...?q=$filter=name eq  'M01'

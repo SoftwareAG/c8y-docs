@@ -89,6 +89,9 @@ In order enable two-factor authentication for a user:
 - Click "Save".
 
 ![Enable TFA](/guides/users-guide/enabletfa.png)
+
+
+
 ## <a name="user-groups"></a>Managing user groups
 
 To simplify user management, users with the same permissions can be placed into user groups representing typical permission sets. A single user can be part of multiple user groups. New tenants will usually contain four user groups by default. These user groups have common useful permission settings:
@@ -574,14 +577,17 @@ Click "Save" to store the settings.
 
 <img src="/guides/users-guide/passsettings.png" alt="Password settings" style="max-width: 50%">
 
-### <a name="changing-tfa-settings"></a>Changing the tfa settings
+### <a name="changing-tfa-settings"></a>Changing the TFA settings
 
-To change the TFA settings, click on "Password" under the "Settings" menu item. There are two tfa settings that can be changed:
+To change the TFA settings, click on "Password" under the "Settings" menu item. There are two TFA settings that can be changed:
 
- - "Limit token validity". You can set the lifetime of each session. When the session expires, the user has to enter a new verification code.
- - "Limit PIN validity". Set the lifetime of each verification code sent via SMS. When the verification code expires, in order to login the user has to request a new verification code.
+ - "Limit token validity"- You can set the lifetime of each session. When the session expires, the user has to enter a new verification code.
+ - "Limit PIN validity"- Set the lifetime of each verification code sent via SMS. When the verification code expires, in order to login the user has to request a new verification code.
+ - When ready, click "Save TFA settings".
 
 ![TFA settings](/guides/users-guide/tfasettings.png)
+
+To disable two-factor authentication, simply deselect the box "Allow two-factor authentication". Click on "Save TFA settings" to apply your changes.
 
 ### <a name="default-app"></a>Changing the default application
 

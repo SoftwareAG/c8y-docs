@@ -47,7 +47,6 @@ On the login page, enter your username and password to start the application. Th
 
 <img src="/guides/users-guide/logout.png" alt="Logout menu" style="max-width: 60%">
 
-
 > For security reasons, Cumulocity does not use Cookie technology.
 
 If you forgot your password, click the "Forgot password?" link on the login screen. You can now type your email address and click "Reset password". Check your email for the password reset link. Click the link to enter a new password.
@@ -72,7 +71,11 @@ To change your password, click on the "User Settings" icon in the application. P
 
 Two-factor authentication, or TFA as it's commonly abbreviated, adds an extra step to your basic log-in procedure. Without TFA, you enter in your username and password, and then you're done. The password is your single factor of authentication. The second factor is a code send via SMS and it makes your account more secure. If TFA is disabled and you want to enable it, click [here](/guides/users-guide/administration/#tfa) for more info.
 
-To login when TFA is enabled, first enter your username and password on the login page. Afterwards, verification code will be sent to you via SMS.
+To login when TFA is enabled, first enter your username and password on the login page and click "Login". 
+
+<img src="/guides/users-guide/login.png" alt="Login prompt" style="max-width: 50%">
+
+Afterwards, if your credentials are correct, verification code will be sent to your phone number via SMS.
 
 > Note that, to use TFA, a valid phone number is required!
 

@@ -552,6 +552,7 @@ To delete alarm severities, hover over the alarm type and click the "X" button. 
 By expanding the "Settings" menu, administrators can:
 
 - Change the [password policy](#changing-password-settings).
+- Change the [TFA settings](#changing-tfa-settings).
 - Change the [default application](#default-app).
 - Change the [access control](#access-control) settings.
 - [Enable or disable the dashboards via e-mail feature](#enabling-server-side-agents)
@@ -572,6 +573,15 @@ Strong (green) passwords must have M characters. By default, system restricts us
 Click "Save" to store the settings.
 
 <img src="/guides/users-guide/passsettings.png" alt="Password settings" style="max-width: 50%">
+
+### <a name="changing-tfa-settings"></a>Changing the tfa settings
+
+To change the TFA settings, click on "Password" under the "Settings" menu item. There are two tfa settings that can be changed:
+
+ - "Limit token validity". You can set the lifetime of each session. When the session expires, the user has to enter a new verification code.
+ - "Limit PIN validity". Set the lifetime of each verification code sent via SMS. When the verification code expires, in order to login the user has to request a new verification code.
+
+![TFA settings](/guides/users-guide/tfasettings.png)
 
 ### <a name="default-app"></a>Changing the default application
 

@@ -68,6 +68,27 @@ To change your password, click on the "User Settings" icon in the application. P
 
 > Your administrator may have configured your account to enforce a password policy. You may be required to pick a strong password or to change your password regularly.
 
+## <a name="tfalogin"></a>Logging in with Two-Factor Authentication
+
+Two-factor authentication, or TFA as it's commonly abbreviated, adds an extra step to your basic log-in procedure. Without TFA, you enter in your username and password, and then you're done. The password is your single factor of authentication. The second factor is a code send via SMS and it makes your account more secure. If TFA is disabled and you want to enable it, click [here](/guides/users-guide/administration/#tfa) for more info.
+
+To login when TFA is enabled, first enter your username and password on the login page. Afterwards, verification code will be sent to you via SMS.
+
+> Note that, to use TFA, a valid phone number is required!
+
+![smscode](/guides/users-guide/smscode.png)
+
+Enter the code that you received and click "Verify". If the code is valid, you will be logged in. To request a new verification code, if the old one has already expired, simply click on "Send new code". To return to the login page, press "Login".
+
+<img src="/guides/users-guide/tfacode.png" alt="TFAcode" style="max-width: 50%">
+
+There are two time outs that you should be aware of:
+
+ - Verification code time out. The verification code times out when it's lifetime expires.
+ - TFA session time out. When the lifetime of your current session expires, you will have to login again and enter a new verification code.
+
+> Note that, the values of both time outs can be edited in the Administration application. For more info see [here](/guides/users-guide/administration/#tfaflags).
+
 ## <a name="navigating"></a>Navigating in Cumulocity applications
 
 Once you are logged in, your default Cumulocity application will open. The content of Cumulocity applications is entirely dynamic and is generated based on various criteria:

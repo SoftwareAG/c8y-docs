@@ -4,9 +4,9 @@ title: Introduction
 layout: default
 ---
 
-## Overview
+## Introduction
 
-The following sections cover the basic usage of Cumulocity applications. They describe
+The following section is a basic introduction to the Cumulocity platform. It describes:
 
    * [Accessing Cumulocity applications](#accessing).
    * [Logging in](#login).
@@ -16,18 +16,18 @@ The following sections cover the basic usage of Cumulocity applications. They de
 
 ## <a name="accessing"></a>Accessing Cumulocity applications
 
-To use Cumulocity applications, you need a modern web browser. We test with the following desktop web browsers:
+To use Cumulocity applications, you need an up to date web browser. We test with the following desktop web browsers:
 
-  * Internet Explorer (Version 10 and 11)
-  * Firefox (latest)
-  * Chrome (latest)
+  * Edge Browser  <img src="/guides/users-guide/edgesymbol.png" alt="Reset password" style="max-width: 5%">
+  * Firefox (latest)       <img src="/guides/users-guide/firefoxsymbol.png" alt="Reset password" style="max-width: 5%">  
+  * Chrome (latest)<img src="/guides/users-guide/chromesymbol.png" alt="Reset password" style="max-width: 5%">
 
 You can also use recent smartphone and tablet web browsers. We test with the following mobile web browsers:
 
-  * Chrome on Android (latest) on Galaxy smartphones and tablets.
-  * Safari on iOS (latest) on Apple iPhone and iPad.
-
-> Note that using the private mode on browsers may not work. Note also that using Cumulocity on mobile devices may be constrained by the memory and the processing power available on the devices. For example, loading graphs with large amounts of data points may make the mobile device unresponsive.
+  * Chrome on Android (latest) on Galaxy smartphones and tablets.<img src="/guides/users-guide/chromesymbol.png" alt="Reset password" style="max-width: 5%">  
+  * Safari on iOS (latest) on Apple iPhone and iPad.<img src="/guides/users-guide/safarilogo.png" alt="Reset password" style="max-width: 5%">  
+  
+> The private mode in browsers may not work. Using Cumulocity on mobile devices may be constrained by the memory and the processing power available on the devices. Loading large visualizations may turn the mobile device unresponsive.
 
 To access the applications for your Cumulocity tenant, use the following URL:
 
@@ -35,63 +35,65 @@ To access the applications for your Cumulocity tenant, use the following URL:
 
 This will direct you to the login page of your default application, shown in the image below.
 
-<img src="/guides/users-guide/login.png" alt="Login prompt" style="max-width: 50%">
+<center><img src="/guides/users-guide/login.png" alt="Login prompt" style="max-width: 50%"></center>
+
 
 > Make sure that the address bar of your browser shows a lock symbol. The lock symbol indicates that you are using a secure connection and that you are indeed connected to Cumulocity.
-
+<img src="/guides/users-guide/locksymbol.png" alt="Login prompt" style="max-width: 5%">
 > The above URL is only valid for Cumulocity Standard Edition subscribers. For Dedicated and Private Edition deployments of Cumulocity, the URL is specific to your organization.
+> 
 
 ## <a name="login"></a>Logging in
 
-On the login page, enter your username and password to start the application. The "Remember me" checkbox will make the browser remember your credentials, so that you do not have to enter them again when opening the application the next time. This is also convenient if you frequently navigate between Cumulocity applications, as Cumulocity requires you to authenticate each time when starting an application. You can make the browser "forget" your credentials by explciitly logging out using the "Logout" menu item in the application.
+On the login page, enter your username and password to start the application. The "Remember me" checkbox will make the browser remember your credentials so you do not have to enter them over and over again. This is also convenient if you navigate frequently between Cumulocity applications, as Cumulocity requires you to authenticate each time when starting an application. You can choose to "forget" your credentials by explicitly logging out using the "Logout" menu item in the application.
 
-<img src="/guides/users-guide/logout.png" alt="Logout menu" style="max-width: 60%">
+<center><img src="/guides/users-guide/logout.png" alt="Logout menu" style="max-width: 60%"></center>
 
 
 > For security reasons, Cumulocity does not use Cookie technology.
 
 If you forgot your password, click the "Forgot password?" link on the login screen. You can now type your email address and click "Reset password". Check your email for the password reset link. Click the link to enter a new password.
 
-> The password reset link is valid for one day.
+> The password reset link is valid for one day only.
 
-<img src="/guides/users-guide/resetpassword.png" alt="Reset password" style="max-width: 50%">
+<center><img src="/guides/users-guide/resetpassword.png" alt="Reset password" style="max-width: 50%"></center>
 
-The automated password reset will only work if your email address is stored with your Cumulocity user. If you get a warning that the password cannot be reset, you are either using a different email address than the one stored with your Cumulocity user, or your Cumulocity user has no email address stored. In either case, contact a Cumulocity administrator in your organization. Administrators can reset your password.
+The automated password reset will only work if your email address is stored with your Cumulocity user or tenant. If you get a warning that the password cannot be reset, you are either using a different email address than the one stored with your Cumulocity user, or your Cumulocity user has no email address stored. In either case, contact a Cumulocity administrator in your organization. Administrators can reset your password.
 
-> If you are yourself the primary administrator, the email that you used when registering first to Cumulocity is automatically stored with your user. If you have questions, please contact the Cumulocity support from this email address.
+> If you are yourself the primary administrator, the email that you used when registering first to Cumulocity is automatically stored. If you have questions, please contact the Cumulocity support from this original email address.
 
-To change your password, click on the "User Settings" icon in the application. Please make sure to pick a strong password. To support you in picking good passwords, a password strength indicator is displayed along with a password change. By default, the password needs to consist of at least eight characters. It should use a mixture of character classes (uppercase and lowercase letters, numbers and symbols). A strong password uses at least three of the above four character classes.
+To change your password, click on the "User Settings" icon in the application. Please make sure to pick a strong password. To support you in picking good passwords, a password strength indicator is displayed along with a password change. A password needs to consist of at least eight characters. It should use a mixture of character classes (uppercase and lowercase letters, numbers and symbols). A strong password uses at least three of the above four character classes.
 
-> Note that, the above password rules can be configured by the administrator.
+<center><img src="/guides/users-guide/passwordstrength.png" alt="Password Quaility" style="max-width: 50%"></center>
 
-<img src="/guides/users-guide/passwordstrength.png" alt="Reset password" style="max-width: 50%">
+> Your administrator can configure your account to enforce a password policy. You are then required to pick a strong password or to change your password regularly.
 
-> Your administrator may have configured your account to enforce a password policy. You may be required to pick a strong password or to change your password regularly.
+## <a name="navigating"></a>Navigating inside Cumulocity 
 
-## <a name="navigating"></a>Navigating in Cumulocity applications
 
 Once you are logged in, your default Cumulocity application will open. The content of Cumulocity applications is entirely dynamic and is generated based on various criteria:
 
 * The applications that your organization has subscribed to.
-* The applications that your organization has configured or developed itself for Cumulocity.
-* The functionality that your user is permitted to see.
-* The configuration of the user interface, such as groups and reports.
+* The applications that your organization has configured or developed themselves for Cumulocity.
+* The functionality that a specific user is permitted to see.
+* The configuration of the user interface, like groups and reports.
 * The functionality of the devices that are used by you.
 
-The general structure of a Cumulocity application is shown in the screenshot below:
+### The look of Cumulocity and the menu structure
 
-* The name of the currently visible application is shown in the top left.
-* Using the navigator, you can go to the different pages of an application. Click on an entry in the navigator to open the respective page. You can collapse or expand sections in the navigator by clicking the section headers (i.e., the rows with the little triangle in front of the text).
+* The name of the currently visible application is shown in the top left.They look like these.
+<img src="/guides/users-guide/appbar.png" alt="Application" style="max-width: 100%">
+* Using the navigator, you can go to the different pages of an application. Click on an entry in the navigator to open the respective page. You can collapse or expand sections in the navigator by clicking the section headers (like the rows with the little triangle in front of the text).
 * On some pages, additional "tabs" are available depending on how much information is required to be shown.
 * The top area of the application is used as message bar whenever a status (green) or an error (red) needs to be shown.
-* The "search" field provides a [full-text search](#searching) where available.
+* The "search" field provides a [full-text search](#searching) where available.<img src="/guides/users-guide/searchbox2.png" alt="Logout menu" style="max-width: 25%" align="center">
 * Using the application switcher, you can change from one application to another. You might have to re-enter your credentials if you have not selected "Remember me" on your original login to Cumulocity.
-* The user menu shows your user name. By clicking on the user name, a popup menu appears. The popup menu allows you to log out of the application (even if you clicked "Remember me") and provides access to user settings and help.
-* In some areas, a cog wheel on the top right provides access to further functionality through a drop-down menu.
+* The user menu shows your username. By clicking on the user name, a popup menu appears. The popup menu allows you to log out of the application (even if you clicked "Remember me") and provides access to user settings and help.
+* In some areas, a cog wheel on the top right provides access to further functionality through a drop-down menue.
 
-![Cumulocity application](/guides/users-guide/app.png)
+<img src="/guides/users-guide/app.png" alt="Logout menu" style="max-width: 100%">
 
-On smaller screens, the layout of an application changes, as shown below. The navigator is hidden and only some of the tabs are in the visible screen area. To access the navigator, click on the three lines on the top left. To access other tabs, scroll the tabs left or right. (The way to scroll the tabs may depend on your device.)
+On smaller screens the layout of the user surface changes, as shown below. The navigator is hidden and only some tabs are shown in the screen area. To access the navigator, click on the three lines on the top left. To access other tabs, scroll left or right.  (The way to scroll within tabs may depend on your device.)
 
 <img src="/guides/users-guide/appsmall.png" alt="Layout on small devices" style="max-width: 50%">
 
@@ -138,7 +140,7 @@ You can also exclude words by putting a hypen before the word. For example, ente
 
 to search the inventory for objects containing "My" or "Demo" but not "Device".
 
-Case is ignored. The following search texts return the same result:
+Uppercase and lowercase are ignored. The following search texts return the same result:
 
 	My Demo Device
 	My demo device

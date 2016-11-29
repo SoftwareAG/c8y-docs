@@ -6,13 +6,12 @@ layout: default
 
 ## <a name="overview"></a>Overview
 
-The Device Management application provides you with an overview of your connected devices and lets you manage their health. In Device Management, you can:
+The Device Management application shows you your connected devices and enables you to manage their status. Device Management gives you the following options:
 
 * [Connect](#device-registration) new devices to your account and disconnect them.
 * [List](#viewing-devices), [search](#searching-devices) and [group](#grouping-devices) the connected devices.
-* Create [smart groups](#smart-groups) using the filtering criteria.
-* [View](#device-details) the details of the devices and check their status.
-* Monitor the [connection](#connection-monitoring) and the [service](#monitoring-services) of devices.
+* [View](#device-details) details of the devices and check their status.
+* Monitor the [connection](#connection-monitoring) quality and the [service](#monitoring-services) status of devices.
 * [Locate](#map) devices.
 * Work with [alarms](#alarm-monitoring) from devices.
 * [Remote control](#operation-monitoring) devices.
@@ -20,22 +19,28 @@ The Device Management application provides you with an overview of your connecte
 * [Manage](#software-repo) the software and the firmware on devices.
 * [Manage](#credentials) the credentials of devices.
 
-The following sections will walk you through the various menus of the application.
+The Device Management Application looks like this:
+
+<center><img src="/guides/users-guide/app.png" alt="Device Management" style="max-width: 100%"></center>
+
+The following sections will walk you through the various menus of the Device Management application.
+
+<center><img src="/guides/users-guide/dmanageround.png" alt="Device Management" style="max-width: 30%"></center>
 
 ## <a name="device-registration"></a>Connecting devices manually
 
-This section describes the general procedure for manually connecting devices to your Cumulocity account. Some steps in the procedure may be specific to the type of device that you are using. Locate your device type in the "Device Guides" to find more information, or consult the manual of your device.
+This section describes the general procedure for manually connecting devices to your Cumulocity account. Only some steps in the procedure may be specific to the type of device that you are using. Locate your device type in the "Device Guide ", the start page of the developer center of our website, to find more information, or consult the manual of your device if there are any difficulties.
 
-To connect devices to your Cumulocity account, click "Device registration" in the navigator and follow these steps:
+To connect devices to your Cumulocity account, click "Device Registration" in the navigator and follow these steps:
 
 1.  Enter the ID of the device in the "Device ID" text field and click "Register Device". To determine the ID, consult the device documentation. For mobile devices, the ID is usually the IMEI (International Mobile Equipment Identity) often found on the back of the device.
-2.  You should now see your device listed by its IMEI number with the status reading as "Waiting for connection". Turn on the device and wait for a connection to be established.
+2.  Now the device listed is visible by its IMEI number with the status reading as "Waiting for connection". Turn on the device and wait for a connection to be established.
 3.  After the device connected, the status should change to "Waiting for acceptance". You will need to confirm that this is indeed the device you want to add by clicking on the green "accept" button on the right of your device's listing.
 4.  The status of your device should now read "Accepted". Once that happens your device will be connected to your account.
 
 You are now ready to manage the device.
 
-![Device registration](/guides/users-guide/registration.png)
+<img src="/guides/users-guide/registration2.png" alt="Device registration" style="max-width: 100%">
 
 ## <a name="creds-upload"></a>Bulk-registering devices
 
@@ -49,7 +54,8 @@ The CSV file needs to have a header row followed by the actual data. The header 
 
 Use the "Upload" button to upload the CSV file, as shown in the screenshot below. After the data is imported, you will get feedback on the number of devices that were pre-registered as well as on any potential errors that may have occurred.
 
-![Bulk registration](/guides/users-guide/autoregister.png)
+<img src="/guides/users-guide/autoregister.png" alt="Bulk registration" style="max-width: 100%">
+
 
 To connect the devices, the devices need to be pre-provisioned with related information. More specifically, each device needs to be configured as follows:
 * Username: The username to access Cumulocity must have the form &lt;tenant&gt;/device_&lt;id&gt;, where &lt;tenant&gt; refers to the tenant into which the CSV file is imported, and  &lt;id&gt; refers to the respective value in the CSV file.
@@ -58,7 +64,8 @@ To connect the devices, the devices need to be pre-provisioned with related info
 
 If you own a Cumulocity Dedicated or Private Edition, you can also register devices across multiple tenants by adding a "tenant" column to the spreadsheet and importing the CSV file from the "management" tenant.
 
-For more information on the file format and accepted CSV variants, please see [Bulk device credentials](/guides/reference/device-credentials/#creds-upload).
+For more information on the file format and accepted CSV variants, please see 
+[Bulk device credentials](/guides/reference/device-credentials/#creds-upload).
 
 ## <a name="viewing-devices"></a>Viewing the connected devices
 
@@ -66,19 +73,19 @@ To view the connected devices, you can
 
 * Select "All devices", which lists all connected devices (in pages of 1.000 devices).
 * [Search](#searching-devices) for the device using the "search" text field.
-* [Arrange](#grouping-devices) the devices in groups and view the groups.
+* [Arrange](#grouping-devices) devices in groups and view the groups.
 
 In all cases, you will see a list of devices as shown in the example below. The list consists of the following columns:
 
 * An icon representing the connection status as described in "[Connection monitoring](#connection-monitoring)".
 * The name of the device.
 * Depending on browser width, the model and the serial number of the device.
-* The alarm status of the device, i.e., how many critical, major, minor or warning level alarms are currently unresolved for the device. See "[Alarms](#alarm-monitoring)" for more information on working with alarms.
+* The alarm status of the device, how many critical, major, minor or warning level alarms are currently unresolved for the device. See "[Alarms](#alarm-monitoring)" for more information on working with alarms.
 * A button for deleting the device.
 
 Please note that deleting a device means to remove the device from Cumulocity's database including all its data. As an alternative to deleting a device, you can also arrange devices into groups so that one group holds all historical devices that are not in use anymore. This makes sure that historical reports are still correct. To prevent alarms from being raised for the devices, disable [connection monitoring](#connection-monitoring). Deleting a device does not delete the data of its child devices.
 
-![Device list](/guides/users-guide/devicelist.png)
+<img src="/guides/users-guide/devicelist.png" alt="Device List" style="max-width: 100%">
 
 In case a list contains more than 1.000 entries, only the first 1.000 entries are shown. Click the "Load more" link at the bottom to load the next 1.000 entries.
 
@@ -86,59 +93,69 @@ In case a list contains more than 1.000 entries, only the first 1.000 entries ar
 
 Cumulocity includes a full-text search for devices. By entering a search term into the "search ..." text field, you can find all devices that contain that term. The image below shows an example of searching for devices that contain the term "Ublox C027". Note that you can search for any textual property of a device. Prefixes are also supported. For example, a search for "Ublox" would also return the devices containing "Ublox C027". Infixes are currently not supported. For example, searching for "C027" would not return the "Ublox C027".
 
-![Full-text search](/guides/users-guide/searching.png)
-
-## <a name="grouping-devices"></a>Grouping devices
+<img src="/guides/users-guide/searching.png" alt="Full Text Search" style="max-width: 100%">
 
 Devices can be arbitrarily grouped according to your use case. A device can be located in multiple groups, and groups themselves can be part of multiple groups again.
 
 Cumulocity distinguishes between top-level groups and subgroups. Top-level groups are shown in the navigator at top-level in the section "Groups". They are your main entry point. Subgroups are used to further subdivide groups.
 
-To create a top-level group, click on the cross button at the top-right, then select "Add new group". Small window will pop-up. Enter group name and search for the desired devices that should be added to the group. Mark the devices and press the "Create group with X devices" button to finish the process. ("X" will be the number of devices that you marked.)
+To create a top-level group, click on the cross button at the top-right, then select "Add new group". A small window will pop-up. Enter group name and search for the desired devices that should be added to the group. Mark the devices and press the "Create group with X devices" button to finish the process. ("X" will be the number of devices that you marked.)
 
-> Note that a group can be created with "0" devices in it.
+> A group can be created with "0" devices in it.
 
-![Adding top-level groups](/guides/users-guide/addtopgroup.png)
+<img src="/guides/users-guide/addtopgroup.png" alt="Adding top-level groups" style="max-width: 100%">
 
 You can also add devices to a group in two other ways: 
 
-* Select a device and locate the "Groups" section on the "Info" tab. Use the drop-down menu or the "Browse groups" button to select a group to add this device to.
-* Select the group and go to "Sub-assets", click "Assign devices" at the top right. Search for the devices that should be added in the search field. Then mark the relevant devices in the result and click the "Assign x devices" button at the bottom of the result list. 
+* Select a device and scroll down to the "Groups" section on the "Info" tab. Use the drop-down menu called "Select and Search groups" to select a group to add this device to.
+* Select the group and go to the tab "Sub-assets" on the left and select it. Then click "Assign devices" at the top right of the group list. A new menu pops up. Search for the devices that should be added in the search field. Then mark the relevant devices in the result and click the "Assign x devices" button at the bottom of the result list. 
+
+
+<center><img src="/guides/users-guide/subassetadd.png" alt="Adding top-level groups" style="max-width: 100%"></center>
+
 
 To create a subgroup, just click "Add Group" when viewing a group.
 
 To edit a group, click on the group's name. This allows you to edit the name of the group and assign user permissions for the group. For more information on permissions, see the [Administration](/guides/users-guide/administration) guide.
 
-## <a name="smart-groups"></a> Using Smart Groups
+## <a name="Using Smart Groups"></a>Using Smart Groups
 
-Smart groups are groups that are dynamically constructed based on filtering criteria. What device is part of a smart group is determined when you visit the group. This can be used, for example, for bulk upgrades off devices of a certain type to a new software or firmware version. 
+
+Smart groups are groups dynamically constructed based on filtering criteria. They have a temporary character because the group members can change constantly. These groups do not have fixed member listings. This group options can be used, for example, for bulk upgrades off devices of a certain type to a new software or firmware version.
 
 Smart groups can be created by selecting "All devices". To create a new group, simply use filters to select devices. Now click on “Create smart group” and give a name to the new group.
-![Create smart group](/guides/users-guide/create_smartgroup.png)
 
-![Create smart group](/guides/users-guide/filters.png)
+<img src="/guides/users-guide/smartgroup1.png" alt="Create a smart group" style="max-width: 100%">
 
-When the group is created, it will appear as top-level group in the “Groups” section. You can adjust filtering criteria, simply select  the "Sub-assets" tab and modify the filter settings.
+<center><img src="/guides/users-guide/smartgroup2.png" alt="Adding filters" style="max-width: 100%"></center>
 
-User can delete smart group from the top level groups, this operation is irreversible. 
+<center><img src="/guides/users-guide/smartgroup3.png" alt="Adding filters" style="max-width: 100%"></center>
 
-![Delete smart group](/guides/users-guide/delete_smartgroup.png)
 
-> Note that, smart groups are currently not shown in Cockpit.
+<center><img src="/guides/users-guide/filters.png" alt="Delete a smart group" style="max-width: 100%"></center>
+
+When the group is created, it will appear as top-level group in the “Groups” section. You can adjust filtering criteria by simply select the "Sub-assets" tab and modify the filter settings.
+
+Users can also delete smart groups from the top level groups. This operation is irreversible.
+
+<center><img src="/guides/users-guide/delete_smartgroup.png" alt="Delete a smart group" style="max-width: 100%"></center>
+
+> Smart groups are not shown when using the Cockpit application.
+
 
 ## <a name="device-details"></a>Viewing the device details
 
-By clicking on a device in a device list, detailed information on the device is displayed. What is actually shown depends on the device and your configuration of the user interface. For example, if a device has not sent any measurements yet, there will be no "Measurement" tab.
+By clicking on a device in a device list, detailed information about the device is displayed. What is actually shown depends on the device and your configuration of the user interface. For example, if a device has not sent any measurements yet, there will be no "Measurement" tab.
 
-At the top of the device details display, the name of the device is shown. Below the name, a list of breadcrumbs is displayed. If the device is part of an asset hierarchy (such as a group), you can use the breadcrumbs to easily navigate up that hierarchy. Since devices can be contained in multiple hierarchies, several rows of breadcrumbs may be shown.
+At the top of the device details display, the name of the device is shown. Below the name, a list of breadcrumbs is displayed. If the device is part of an asset hierarchy (such as a group), you can use the breadcrumbs to easily navigate up that hierarchy. Since devices can be part of multiple hierarchies, several rows of breadcrumbs may be shown.
 
-To the right of the name, a cogwheel is shown. Clicking on the cogwheel displays a drop-down menu with further actions that you can carry out, such as creating a dashboard for the device.
+To the right of the name, a cogwheel is shown. Clicking on the cogwheel displays a drop-down menu with further actions that you can take, like creating a dashboard for the device.
 
-If the device is compatible, a "Initiate measurement poll" menu item is available in the cogwheel. Using this item, you can request a device to send measurements with specific frequency for a specific duration. With this debugging is simplified and not too much data traffic is generated.
+If the device is compatible, a "Initiate measurement poll" menu item is available from the cogwheel. Using this item, you can request a device to send measurements with specific frequency for a specific duration. This type of debugging avoids too much data traffic generated by sending measurements.
 
-![Device details](/guides/users-guide/devicedetails.png)
+<img src="/guides/users-guide/devicedetails.png" alt="Device details" style="max-width: 100%">
 
-Device details are divided over a number of tabs. The standard tabs that may be visible are:
+Device details are divided into a number of tabs. The most common standard tabs visible are:
 
 * [Info](#info)
 * [Child devices](#child-devices)
@@ -164,18 +181,18 @@ The "Info" tab displays generic information for a device (from top left to botto
 * **Connection monitoring**: The connection monitoring configuration, as described in more detail [below](#connection-monitoring).
 * **Name** and **Type**: The display name of the device for you to edit, as well as an identifier for the specific type of device.
 * **Hardware**: Hardware information read from the device.
-* **Mobile**: If the device contains a modem, mobile network information will be shown here. You will also see a "Locate" link here. If enough information could be obtained, "Locate" will determine the rough location of the device using the opencellid.org database. This will not be always successful and depends on the format that the connected mobile network uses to report its data to the modem.
-* **Groups**: The groups that the device is part of. You can add and remove groups here. For more information, see "[Grouping devices](#grouping-devices)".
+* **Mobile**: If the device contains a modem, the mobile network information will be shown here. You will also see a "Locate" link. If enough information could be obtained, "Locate" will determine the rough location of the device using the opencellid.org database. This will not always be successful and depends on the format that the connected mobile network uses to report its data to the modem.
+* **Groups**: The groups this device is a part of. You can add and remove groups here. For more information, see "[Grouping devices](#grouping-devices)".
 * **System**: This section shows
- * The internal ID of the device (e.g., for access from Cumulocity's APIs).
- * The "owner" of the device (the Cumulocity user that created the device).
+ * The internal ID of the device (for access from Cumulocity's APIs).
+ * The "owner" of the device (the Cumulocity user who created the device).
  * The time stamp when the device data was last updated.
  * A button to disconnect the device, provided you have administrative access to users and the device was connected using the "[Device registration](#device-registration)" feature.
-* **Notes**: Textual notes for a device that you can share with your co-workers.
+* **Notes**: Text notes for a device you can share with your co-workers.
 
-While there are many other fields on this tab editable as well, it only makes sense to edit them if the device does not by itself provide this information. If the device provides this information, your edits will be overwritten by the information from the device. To save your edits, click on the "Save changes" button at the bottom of the screen.
+Many other fields in this tab are editable. It only makes sense to edit them if the device does not provide this information by itself. If the device provides this information, your edits will be overwritten by incoming information from the device. To save your edits, click on the "Save changes" button at the bottom of the screen.
 
-> Note that "Last communication" and "Last updated" are two entirely different time stamps. "Last communication" indicates when a device has last sent data. "Last updated" indicates when the inventory entry of the device was last updated. This update may have originated from the device, from the web user interface or from another application.
+> "Last communication" and "Last updated" are two entirely different time stamps. "Last communication" indicates when a device has last sent data. "Last updated" indicates when the inventory entry of the device was last updated. This update may have originated from the device, from the web user interface or from another application.
 
 ### <a name="child-devices"></a>Child devices
 
@@ -183,23 +200,23 @@ This tab shows other devices that are connected to the currently displayed devic
 
 ### <a name="measurements"></a>Measurements
 
-This tab provides a default visualization of numeric data provided by the device in the form of charts. Charts are grouped into types of measurements, which can contain multiple graphs or "series". For example, the screenshot below shows a chart for motion measurement including graphs for acceleration in the three dimensions, and a chart with modem statistics in the form of signal strength and bit error rate.
+This tab provides a default visualisation of numeric data provided by the device in the form of charts. Charts are grouped into types of measurements, which can contain multiple graphs or "series". For example, the screenshot below shows a chart for motion measurement including graphs for acceleration in the three dimensions, and a chart with modem statistics in the form of signal strength and bit error rate.
 
 ![Measurements](/guides/users-guide/measurements.png)
 
-If a chart contains graphs with different units, one Y-axis is rendered per unit. For example, motion measurements consist of three parameters with unit "meter per square second"; so only one axis is rendered. Modem statistics consist of signal strength in decibel milliwatts and bit error rate in percent, so one axis is rendered for each graph.
+If a chart contains graphs with different units, one Y-axis is rendered per unit. For example, motion measurements consists of three parameters with unit "meter per square second"; so only one axis is rendered. Modem statistics consist of signal strength in decibel milliwatts and bit error rate in percent, so one axis is rendered for each graph.
 
 To see detailed information about the measured values, hover your mouse cursor over the chart. A tooltip will be displayed with detailed information on the measurement most close to your cursor. (The tooltip will "snap" to the closest measurement.)
 
 By default, charts show the raw data of the last hour. You can change the time range on the X-axis by clicking on the drop-down menu reading "Last hour".
 
-If you increase the time range, the drop-down menu reading "No aggregation" will switch to "hourly" or "daily". This means that the chart now shows ranges instead of individual raw data points. For "hourly", the chart will show a range of the minimum and maximum value measured in an hour. For "daily", the chart will show the minimum and maximum value measured over the day. Likewise, the tooltips will now show ranges of values instead of individual values.
+If you increase the time range, the drop-down menu reading "No aggregation" will switch to "hourly" or "daily". The chart now shows ranges instead of individual raw data points. For "hourly", the chart will show a range of the minimum and maximum value measured in one hour. For "daily", the chart will show the minimum and maximum value measured over one day. Likewise, the tooltips will now show ranges of values instead of individual values.
 
-This enables you to get an efficient overview over larger time periods. You can manually change the granularity using the drop-down menu. However, a graph will only show at most 5.000 data points per graph to not overload your desktop browser. If you select a fine granularity resulting in more than 5.000 data points, a warning message will be shown: "Data has been truncated. Please use aggregation."
+This enables you to get an efficient overview over larger time periods. A graph will only show 5.000 data points per graph maximum not to overload your desktop browser. If you select a fine focus resulting in more than 5.000 data points, a warning message will be shown: "Data has been truncated. Please use aggregation."
 
 Clicking on the "Realtime" button will enable real-time user interface updates of the graphs as new data flows into the system from the connected devices. You can influence the graphical display and axes limits by setting up so-called "KPIs", see the [Administration](/guides/users-guide/administration#kpis) guide.
 
-Important: In order to see measurement graphs, device has to send measurements with specific fragment format, ie.
+Important: In order to see measurement graphs, device has to send measurements with specific fragment format.
 
 "fragment_name" : {
 	"serie_name" : {
@@ -218,7 +235,7 @@ Fragment_name and serie_name can be replaced by different valid json property na
 
 ### <a name="alarms"></a>Alarms
 
-The "Alarms" tab displayed the alarms of a device. Please see the Section "[Working with alarms](#alarm-monitoring)" for more information.
+The "Alarms" tab displayes the alarms of a device. Please see the Section "[Working with alarms](#alarm-monitoring)" for more information.
 
 ### <a name="control"></a>Control
 
@@ -230,7 +247,9 @@ This tab lists the operations that are being sent to a device or have been sent 
 
 The text configuration allows you to configure the parameters and initial settings of your device. You can manually add or edit a device configuration.
 
-#### Adding or editing a device configuration
+<img src="/guides/users-guide/textconfig.png" alt="Device details" style="max-width: 100%">
+
+### Adding or editing a device configuration
 
 To manually add or edit a device configuration:
 
@@ -239,33 +258,30 @@ To manually add or edit a device configuration:
 - Under "Configuration", you can add or edit the device configuration as desired.
 - When ready, click "Save".
 
-![Device Config](/guides/users-guide/textconfig.png)
-
-### <a name="configsnap"></a>Binary configuration
+### <a name="configsnap"></a> Binary configuration
 
 The binary configuration allows you to retrieve, modify or save configuration data. The configuration data contains the parameters and the initial settings of your device.
-
-A good use-case for the configuration snapshot is applying the same configuration to multiple devices. This way, you can configure one device, download the snapshot and apply it to the other devices.
+This option can be found here:
+<center><img src="/guides/users-guide/configrepscreenshot.png" alt="Device details" style="max-width: 100%"></center>
+A good use-case for the configuration snapshot is applying the same configuration to multiple devices. This way, you can configure one device, download the snapshot and apply it to other devices.
 
 ![Configuration Snapshot](/guides/users-guide/configsnap.png)
 
-#### Retrieving current snapshot configuration from a device	
+### Retrieving a current snapshot configuration from a device
 
-In order to retrieve the current snapshot from a device, first navigate to the device and then click on  the "Configuration" tab. Scroll down and under "Configuration snapshot", click on "Get new snapshot from device". The retrieved snapshot can be found in the "Configuration repository".
+In order to retrieve a current snapshot from a device, first navigate to the device and then click on the "Configuration" tab. Click on "Get new snapshot from device" at the top right corner. The retrieved snapshot can be found in the "Configuration repository".
 
-> Note that, the "Configuration repository" is located under the "Management" menu. 
+The "Configuration repository" is located under the "Management" menu. 
 
 ![Retrieve Configuration Snapshot](/guides/users-guide/retrievesnap.png)
 
-#### Applying snapshot configuration to a device
+### Applying snapshot configuration to a device
 
-In order to apply a new snapshot, first navigate to a device and then click on "Configuration". Scroll down and under "Configuration snapshot", you can select a configuration repository entry to use from the drop down menu. When the entry is selected, click on "Put new snapshot to device".
-
-> Please note that, when you apply snapshot configuration from one device to another, the configuration may contain data that is device specific!
+In order to apply a new snapshot, first navigate to a device and then click on "Configuration". Under "Configuration snapshot", you can select a configuration repository entry to use from the drop down menu. When the entry is selected, click on "Put new snapshot to device".
 
 ![Apply new snapshot to a device](/guides/users-guide/addsnap.png)
 
-#### Applying a snapshot configuration from one device to another device
+### Applying a snapshot configuration from one device to another device 
 
 To apply snapshot configuration from one device to another device: 
 
@@ -273,15 +289,15 @@ To apply snapshot configuration from one device to another device:
 - Retrieve the current snapshot from the device by clicking on "Get new snapshot from device".
 - Navigate to the configuration tab of the other device, select the new snapshot from the drop down menu and click on "Put new snapshot to device".
  
-> Please note that, when you apply snapshot configuration from one device to another, the configuration may contain data that is device specific!
+> When you apply snapshot configuration from one device to another, the configuration may contain data that is device specific!
  
-#### Creating a snapshot configuration from a file
+### Creating a snapshot configuration from a file
 
 New configurations can be added to the "Configuration snapshots" list by clicking on "Add configuration snapshot". Then, you will be redirected to the "Configuration repository". All device configurations are kept in the "Configuration repository" which is located under the "Management" menu item. To add a new snapshot:
 
 - Enter "Name".
 - Enter "Description.
-- Write the "Device Type" which can be found in the "Info" tab of the target device. For more info, see [here](/guides/users-guide/device-management/#info).
+- Write the "Device Type" which can be found in the "Info" tab of the target device.
 - Add the "Configuration snapshot file" by clicking either "Upload" or "Choose file".
 - When ready, click "Save".
 
@@ -289,7 +305,7 @@ New configurations can be added to the "Configuration snapshots" list by clickin
 
 ### <a name="software"></a>Software
 
-This tab allows you to update the firmware of a device and the software installed on a device. To install a new firmware, click on "Install firmware", then select a firmware image from the [firmware repository](#software-repo) and click the "Install" button.
+This tab allows you to manage and update the firmware of a device and the software installed on a device. To install a new firmware, click on "Install firmware", then select a firmware image from the [firmware repository](#software-repo) and click the "Install" button.
 
 Similar, to install a software on the device, click "Install software", select a software package from the [software repository](#software-repo) and click the "Install" button. Hover over a particular software package and click the "x" button to remove the package from the device.
 
@@ -305,7 +321,7 @@ This tab enables low-level troubleshooting of a device, see "[Troubleshooting de
 
 The "Location" tab by default shows the location as reported by the device on a map. For devices that do not report a location, you can also manually set the location. Simply place the "pin" on the correct place of the displayed map.
 
-The tab shows up when device contains c8y_Position property. When you send a new c8y position event, you can also set the same c8y_Position fragment in the device to have device current position marked on the map.
+The tab shows when a device contains c8y_Position property. When you send a new c8y position event, you can also set the same c8y_Position fragment on the device and it will automatically mark it's position on the map.
 
 ### <a name="shell"></a>Shell
 
@@ -313,10 +329,10 @@ The device shell enables you to interactively work with remote devices. Many ind
 
 The shell user interface is split into two parts:
 
-* A list of the previously executed commands. By default, the last three commands are shown.
+* A list of the previously executed commands. By default, the last three commands are visible.
 * A command prompt to enter new commands, which are added to the list.
 
-In the list, the status, date and text of the command are shown. Clicking on a list item reveals the result of the command (provided it has been executed).
+The list displays status, date and text of a command. Clicking on a list item reveals the result of the command (provided it has been executed).
 
 ![Device shell](/guides/users-guide/shell.png)
 
@@ -328,7 +344,7 @@ To help you with the command syntax, frequently used commands are available for 
 
 ### <a name="permissions"></a>Permissions
 
-The ability to view, edit or control certain devices can be limited to users and user groups. For more information on managing permissions, please visit the [Administration](/guides/users-guide/administration) guide.
+The ability to view, edit or control certain devices can be limited to users and user groups. For more information on managing permissions, please visit the [Administration](/guides/users-guide/administration) guide. Use the application switcher to go to the Administration application.
 
 ### <a name="tracking"></a>Tracking
 
@@ -340,9 +356,9 @@ The Tracking tab shows up when device contains c8y_Position property.
 
 ![Tracking](/guides/users-guide/tracking.png)
 
-Depending on the type of device and its integration into Cumulocity, you can also configure device-side geo-fencing and motion detection here.
+Depending on the type of device and the integration into Cumulocity, you can also configure device-side geo-fencing and motion detection.
 
-Additionally, when the feature is activated, and with compatible devices, Cell ID information can be used to determine the position of the device. Currently, the services from [Combain](https://combain.com/) and [Google](https://developers.google.com/maps/documentation/geolocation/intro) are supported. In that case, the user can see the tracks based on both data, or filter out GPS based data or Cell ID based data.
+Additionally, when the feature is activated, and with compatible devices, Cell ID information can be used to determine the position of the device. Currently, the services from [Combain](https://combain.com/) and [Google](https://developers.google.com/maps/documentation/geolocation/intro) are supported. The user can see the tracks based on both data, or filter out GPS based data or Cell ID based data.
 
 ### <a name="service-monitoring"></a>Service monitoring
 
@@ -356,8 +372,8 @@ To request a log from a device,
 
 - Select the date and time range.
 - Choose the type of log. The supported logs are usually device-specific.
-- Enter an optional text to filter the log with. For example, if you enter "Users", only lines with the word "Users" in them will appear in the returned log information.
-- Select the maximum number of lines to display (counted from the end).
+- Enter an optional text to filter the log. For example, if you enter "Users", only lines with the word "Users" in them will appear in the returned log information.
+- Select the maximum number of lines to display (descending).
 - Click "Request log".
 
 ![Request log](/guides/users-guide/requestlog.png)
@@ -375,7 +391,7 @@ This is, for example, useful when you have broken hardware and need to replace t
 
 Cumulocity can automatically monitor the connection to your devices. If you want the connection to a device to be monitored, visit the "Info" tab of the device. On that tab, check the "Required Interval" field at the top. This field defines how often you expect to hear from the device. For example, if you set "Required interval" to 60, you expect that the device communicates at least once in an hour with Cumulocity. The interval is either set by the device itself, based on the device's knowledge how often it will try to send data, or it is set manually by you.
 
-The various connection states are illustrated in the image below. The top arrow represents traffic from the device to Cumulocity. It can be green, red or grey. Green means that data was sent within the required interval. Red means that it was not sent within the required interval. Grey means that no required interval is configured.
+The various connection states are illustrated on the image below. The top arrow represents traffic from the device to Cumulocity. It can be green, red or grey. Green means that data was sent within the required interval. Red means that it was not sent within the required interval. Grey means that no required interval is configured.
 
 The bottom arrow indicates the state of the push connection that is used to send commands from Cumulocity to the device (ie. connection to /devicecontrol/notifications API, NOT to realtime API). It can green or grey. Green means that the connection is established. Grey means that the connection is not established. In case of a grey arrow, either the device does not support push connections, or there is an error.
 
@@ -383,25 +399,25 @@ The bottom arrow indicates the state of the push connection that is used to send
 
 ![Connection states](/guides/users-guide/connection_monitoring.png)
 
-> Note that connection monitoring is not real-time. For example, the state of the connection will not change immediately when you switch off a device. Depending on your network, it may take about 20 minutes until a broken connection is discovered, since the network will retry sending data for a significant amount of time.
+> Connection monitoring is not real-time. For example, the state of the connection will not change immediately when you switch off a device. Depending on your network, it may take about 20 minutes until a broken connection is discovered, since the network will retry sending data for a significant amount of time.
 
 When a device is detected to be offline (stops sending data within required interval and top arrow changes to red color), an unavailabilty alarm is created for the device reading "No communication with device since &lt;time&gt;".
 
 ## <a name="monitoring-services"></a>Service monitoring
 
-Cumulocity distinguishes between connection monitoring and service monitoring. Connection monitoring merely indicates that the device is communicating with Cumulocity, whether it fulfills its service or not.
+Cumulocity distinguishes between connection monitoring and service monitoring. Connection monitoring only indicates that the device is communicating with Cumulocity, it does not automatically mean it is functional or not.
 
-Service monitoring indicates if the device is in service. For example, a vending machine is in service if it is ready to sell goods. A vending machine may be well selling goods using cash money without being connected to Cumulocity -- so from the perspective of the merchant it is in service. Similar, if you switch off the power on a gateway, the devices behind the gateway may well continue to work.
+Service monitoring indicates if the device is in service. For example, a vending machine is in service if it is ready to sell goods. A vending machine can sell goods using cash money without a connection to Cumulocity -- so from the perspective of the merchant it is in service. Similar, if you switch off the power on a gateway, the devices behind the gateway can still continue to work.
 
 Cumulocity considers a device to be in service while there is no critical, unresolved alarm present for the machine. This is displayed as a share of time such an alarm was present. If a machine didn't have any critical alarms whatsoever during a time period, it was 100% in service. If half of the time there was some critical, unresolved alarm, the machine was 50% in service.
 
 ![Service monitoring](/guides/users-guide/servicemonitoring.png)
 
-While a machine is offline, Cumulocity assumes by default that it continues to stay in the service state that it was in when it lost connection. I.e., if it was broken before, it continues to be considered broken (unless you clear critical alarms manually). If it was working before, it continues to be considered working.
+While a machine is offline, Cumulocity assumes by default that it continues to stay in the same service state until it lost connection. If it was broken before, it continues to be considered broken (unless you clear critical alarms manually). If it was working before, it continues to be considered working.
 
-This may not be the case for your devices or your use case. For example, if your vending machines rely exclusively on cashless payment, loosing the connection to the network means that you cannot purchase from the machines anymore. Hence, the machine should be considered out of service. In such a case, configure unavailability alarms to have "CRITICAL" priority instead of "MAJOR" priority in the [Administration application](/guides/users-guide/administration#alarm-mapping).
+There can be exceptions from this rule. If your vending machines rely exclusively on cashless payment, loosing the connection to the network means that your machine is out of service and stops selling. For this case, unavailability alarms must be set to have "CRITICAL" priority instead of "MAJOR" priority in the [Administration application](/guides/users-guide/administration#alarm-mapping).
 
-Cumulocity can display service availability on the level of individual devices or across all devices. If you select "Service monitoring" in the navigator, the overall service across all devices is shown. On that page, you will also see a histogram of how many devices had what service availability in the past month (see the above screenshot).
+Cumulocity can display service availability at the level of individual devices or across all devices. If you select "Service monitoring" in the navigator, the overall service across all devices is shown. On that page, you will also see a histogram of how many devices had what service availability in the past month (see the above screenshot).
 
 ## <a name="map"></a>Locating devices
 
@@ -409,11 +425,12 @@ By clicking on "Map" in the navigator, a map of all devices in your account is s
 
 ## <a name="alarm-monitoring"></a>Working with alarms
 
-Devices can raise so-called alarms to indicate that there is a problem that requires human intervention. You can view alarms
+Devices can raise alarms to indicate that there is a problem requiring an intervention. They can be viewed
+in various places:
 
-* By clicking on "Only unresolved" in the "Alarms" tab to see alarms of all devices that have not yet been cleared.
-* By clicking on "Alarms" in the navigator to see the entire alarm history regardless on whether the alarms have been cleared already or not.
-* By clicking on a device and selecting the "Alarms tab" to see the alarms of that particular device. By default, only unresolved alarms are shown, but you can disable the "Only unresolved" checkbox to see all alarms.
+* By clicking on "Only unresolved" in the "Alarms" tab to see alarms of all devices that have not been cleared yet.
+* By clicking on "Alarms" in the navigator to see the entire alarm history.
+* By clicking on a device and selecting the "Alarms tab" to see the alarms of that device. By default, only unresolved alarms are shown, but you can disable the "Only unresolved" checkbox to see all alarms.
 
 The alarm display is split into four sections, separately listing alarms of different priorities. In each section, the most recent alarm is displayed first. The image below shows the detailed display of an alarm after it is clicked. The detail view contains the following items:
 
@@ -424,9 +441,9 @@ The alarm display is split into four sections, separately listing alarms of diff
  * **Warning**: There is a warning.
 * **Status**: The status of the alarm. An alarm can be:
  * **Active**: When it was raised and nobody is so far working on the alarm.
- * **Acknowledged**: When someone clicked the "ack" button to indicate that he or she is working on the alarm.
+ * **Acknowledged**: When someone clicked the "acknowledged" button to indicate that someone is working on the alarm.
  * **Cleared**: When either someone clicked the "clear" button to manually clear an alarm, or when the device detected by itself that the problem was removed.
-* **Count**: The number of times that this alarm was sent by the device. Cumulocity de-duplicates alarms so that only one alarm of a particular type can be active for a particular device. If another alarm of the same type is sent by the device, the count is increased.
+* **Count**: The number of times that this alarm was sent by the device. Cumulocity duplicates alarms so that only one alarm of a particular type can be active for a particular device. If another alarm of the same type is sent by the device, the count is increased.
 * **Description**: A textual description of the alarm.
 * **Device**: The name of the device. Clicking the name leads you to the detail view of the device.
 * **Date created**: The timestamp when the alarm was created first.
@@ -494,7 +511,7 @@ To update firmware or to add software packages on a specific device you have to 
 
 3. Install the firmware on a specific device. First navigate to "All Devices", select the desired device, then go to "Software" on Device Details and click on "Install firmware". Similar install software packages, but click on "Install software" instead. (For more info on this step please refer to ["Software"](/guides/users-guide/device-management#software).)
 
-> Note that you currently have to visit the [Administration application](/guides/users-guide/administration#files) to store binaries in Cumulocity.
+> You currently have to visit the [Administration application](/guides/users-guide/administration#files) to store binaries in Cumulocity.
 
 Cumulocity provides users with the ability to execute firmware or software updates for multiple devices simultaneously. To do so:
 

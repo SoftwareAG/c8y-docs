@@ -18,7 +18,7 @@ The following sections cover the basic usage of Cumulocity applications. They de
 
 To use Cumulocity applications, you need a modern web browser. We test with the following desktop web browsers:
 
-  * Internet Explorer (Version 10 and 11)
+  * Internet Explorer (latest)
   * Firefox (latest)
   * Chrome (latest)
 

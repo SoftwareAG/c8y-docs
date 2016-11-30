@@ -19,6 +19,7 @@ The following section is a basic introduction to the Cumulocity platform. It des
 To use Cumulocity applications, you need an up to date web browser. We test with the following desktop web browsers:
 
   * Edge Browser  <img src="/guides/users-guide/edgesymbol.png" alt="Reset password" style="max-width: 5%">
+  * Internet Explorer (latest)<img src="/guides/users-guide/ieicon.png" alt="Reset password" style="max-width: 5%">  
   * Firefox (latest)       <img src="/guides/users-guide/firefoxsymbol.png" alt="Reset password" style="max-width: 5%">  
   * Chrome (latest)<img src="/guides/users-guide/chromesymbol.png" alt="Reset password" style="max-width: 5%">
 

@@ -26,7 +26,7 @@ The Device Management Application looks like this:
 
 **The following sections will walk you through the various menus of the Device Management application.**
 
-<center><img src="/guides/users-guide/dmanageround.png" alt="Device Management" style="max-width: 30%"></center>
+<center><img src="/guides/users-guide/dmround.png" alt="Device Management" style="max-width: 30%"></center>
 
 ## <a name="device-registration"></a>Connecting devices manually
 
@@ -440,12 +440,12 @@ The alarm display is split into four sections, separately listing alarms of diff
  * **Acknowledged**: When someone clicked the "acknowledged" button to indicate that someone is working on the alarm.
  * **Cleared**: When either someone clicked the "clear" button to manually clear an alarm, or when the device detected by itself that the problem was removed.
 * **Count**: The number of times that this alarm was sent by the device. Cumulocity duplicates alarms so that only one alarm of a particular type can be active for a particular device. If another alarm of the same type is sent by the device, the count is increased.
-* **Description**: A textual description of the alarm.
+* **Description**: A text description of the alarm.
 * **Device**: The name of the device. Clicking the name leads you to the detail view of the device.
 * **Date created**: The timestamp when the alarm was created first.
-* **Type**: The type of the alarm. This text is used for de-duplicating alarms and for configuring the priority of alarms in the [Administration application](/guides/users-guide/administration#alarm-mapping).
+* **Type**: The type of the alarm. This text is used for duplicating alarms and for configuring the priority of alarms in the [Administration application](/guides/users-guide/administration#alarm-mapping).
 * **Additional information**: An alarm can contain arbitrary additional information provided by the device.
-* **Audit log**: Along with the alarm, a log of changes to the alarm is stored. This can be used to see who created, updated and cleared an alarm and when that happened.
+* **Audit log**: Along with the alarm, a log of changes to the alarm is stored. This creates an alarm history with various data.
 
 ![Alarm display](/guides/users-guide/alarm2.png)
 
@@ -462,21 +462,21 @@ Operations can be in any of four states:
 
 Clicking on an operation shows the parameters of the operation. For example, clicking on a configuration operation will display the configuration that is sent to the device. Clicking on a failed operation shows the reason of the failure.
 
-The "All" button shows all operations for a device, regardless of whether they have been processed already or not. Note that operations are listed in the order in which they have been queued for a device with the oldest on top. Operations are executed strictly in this order.
+The "All" button shows all operations for a device, regardless of whether they were processed already. The device is listing these operations in ascending time order. Operations are executed strictly according to this order.
 
 ![Operations](/guides/users-guide/operations.png)
 
-## <a name="bulk-operations"></a>Dealing with bulk operations
+## <a name="bulk-operations"></a>Bulk Operations
 
-For easier handling of devices Cumulocity features "Bulk operations". With "Bulk operations" you can now easily execute operations for each device in the whole group.
+For easier handling of devices, Cumulocity features "Bulk operations". With "Bulk operations" you can now easily execute operations for each device in one group.
 
-To execute bulk operations for the whole group:
+To execute bulk operations for the one group you have those options:
 
-- Select a device and navigate to the "Control" tab
-- Create an operation
-- Hover over the operation you want to execute
-- Click on the cogwheel
-- Click on "Execute for whole group"
+- Select a device and navigate to the "Control" tab.
+- Create an operation.
+- Hover over the operation you want to execute.
+- Click on the cogwheel.
+- Click on "Execute for entire group".
 
 ![Execute bulk operations](/guides/users-guide/executebulkoperations.png)
 
@@ -486,14 +486,15 @@ In order to view the status and progress of your operations simply click on the 
 
 ![Bulk operations tab](/guides/users-guide/bulkoperations.png)
 
-Bulk operations can also be edited. To edit an operation hover over the desired operation first and then click on the blue marker button. New window will pop-up. "Start Date" and "Delay" values can be changed. To change operation details click on "Show operation details". When ready click on "Reschedule" to apply changes or click on "Cancel" to discard changes. 
+Bulk operations can also be edited. To edit an operation hover over the desired operation first and then click on the blue marker button.A new window will pop-up. "Start Date" and "Delay" values can be changed. To change operation details click on "Show operation details". When ready click on "Reschedule" to apply changes or click on "Cancel" to discard changes. 
 
 To delete operations click on the cross button.
+
 ## <a name="events-all"></a>Troubleshooting devices
 
 Events are low-level messages sent by devices that are usually used for application-specific processing. For example, a vending device sends its real-time sales in the form of events. If you need to troubleshoot a device at a more detailed level, visit the "Events" tab. Clicking on individual events will reveal more information on the data contained in the event. Similar, you can see all events across all devices by selecting "Events" in the navigator.
 
-Since devices may send larger amounts of event data, you can filter the data shown here by date. You can also click the "realtime" checkbox to see events coming in from the devices in real-time.
+Since devices may send larger amounts of event data, you can filter the data shown here by date. You can also click the "real-time" checkbox to see events coming in from the devices in real-time.
 
 ## <a name="software-repo"></a> Managing device firmware and software
 
@@ -505,14 +506,14 @@ To update firmware or to add software packages on a specific device you have to 
 
 2. Select and save the files in the "Firmware repository". To add a new firmware image to the repository, visit the "Firmware repository" and click the "Add firmware" button. Then type the name of the firmware, its version and the URL from which the device can download the firmware. Similar use the "Software repository" to add reference software packages.
 
-3. Install the firmware on a specific device. First navigate to "All Devices", select the desired device, then go to "Software" on Device Details and click on "Install firmware". Similar install software packages, but click on "Install software" instead. (For more info on this step please refer to ["Software"](/guides/users-guide/device-management#software).)
+3. Install the firmware on a specific device. First navigate to "All Devices", select the desired device, then go to "Software" on Device Details and click on "Install firmware". Installing software packages is very similar. You follow the same steps as mentioned before, but you choose "install software" instead. (For more info on this step please refer to ["Software"](/guides/users-guide/device-management#software).)
 
-> You currently have to visit the [Administration application](/guides/users-guide/administration#files) to store binaries in Cumulocity.
+> You must visit the [Administration application](/guides/users-guide/administration#files) to store binaries in Cumulocity.
 
 Cumulocity provides users with the ability to execute firmware or software updates for multiple devices simultaneously. To do so:
 
 - Execute the software update in a single device to test that the new version really works
-- Navigate to the operation and select "Execute for whole group"
+- Navigate to the operation and select "Execute for the whole group"
 - Fill the form to schedule the bulk operation and click on the "Create" button
 
 The operation status can be viewed under the name of the selected group in the "Bulk operation" tab.
@@ -526,9 +527,9 @@ The "Device credentials" menu lists all credentials that have been generated for
 In most cases, you should not need to edit anything. Exceptions are:
 
 * You have carried out a factory reset on a device. In this case, the device will often loose its assigned credentials. Find the credentials and click the "x" button to delete the credentials in Cumulocity as well. Then continue with the normal [registration process](#device-registration) to re-register the device.
-* You would like to temporarily disconnect a device. In this case, click the "Deactivate" button next to the device credentials.
-* You would like to assign more permissions to an individual device. In this case, click the device credentials and select additional or different user groups for the device.
+* If you would like to temporarily disconnect a device use the "Deactivate" button next to the device credentials.
+* If you would like to assign more permissions to an individual device click the device credentials and select additional or different user groups for the device.
 
-![Bulk provisioning](/guides/users-guide/bulk_provisioning.png)
+![Bulk provisioning](/guides/users-guide/bulk_provisioning2.png)
 
-Device credentials can be also provided from CSV file. File can be uploaded using the button pointed with arrow. More details on the file structure can be found in under [Bulk-registering devices](#creds-upload) above.
+Device credentials can be also provided from CSV file. Files can be uploaded using the button pointed with an arrow. More details on the file structure can be found in under [Bulk-registering devices](#creds-upload) above.

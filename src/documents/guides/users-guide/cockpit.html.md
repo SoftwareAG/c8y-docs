@@ -19,7 +19,7 @@ The Cockpit application provides you with options to manage the Internet of Thin
 
 For more information about the cockpit application please refer to the introduction below.
 
-<center><img src="guides/users-guide/cockpitround.png" alt="Device Management" style="max-width: 30%"></center>
+<center><img src="/guides/users-guide/cockpitround.png" alt="Cockpit" style="max-width: 30%"></center>
 
 ## <a name="intro"></a>Introduction
 
@@ -45,37 +45,35 @@ In the following section, the Cockpit application is described. It offers lots o
 
 * **Business Rule Package**: Use pre-defined business rules for geofencing, thresholds or alarm escalation and notifications (SMS/Email/Speech).
 
-* **Reporting**: Create reports based on the dashboards layout and send distribute them by Email.
+* **Reporting**: Create reports based on the dashboards layout and distribute them by Email.
 
 * **Asset Management**: Organize your connected assets in hierarchies.
 
 * **Alarm Management**: Monitor problems of your asset using severities and workflows.
 
-* **Easy of use**: Get an introduction and overview using the Welcome Dashboard and Home Dashboard, respectively.
-
 * **Data point library**: Manage default settings ("profiles") of your devices and apply them automatically using the "Data point library".
 
 ### Concepts
 
-The main concepts of the Cockpit application are these:
+The main concepts of the Cockpit application are those:
 
-**Asset**: An asset represents the business object which can be buildings, machines, or cars.
+**Asset**: An asset represents a business object like buildings, machines, or cars.
 
 **Asset Hierarchy**: Assets are organised in hierarchies (trees). The nodes of the tree represent groups, and the leaves of the tree represent devices.
 
-**Group**: A way to organise devices and assets in an asset hierarchy. A group can contain one or multiple devices, child devices or other groups.
+**Group**: A group is a way to organise devices and assets in an asset hierarchy. A group can contain one or multiple devices, child devices or other groups.
 
 **Device**: An IoT Device can be either a gateway device, or a device indirectly connected via a gateway (like modbus or KNX device), or a sensor.
 
 **Data Point**: They represent sensor data, like temperature time series. In other parts of Cumulocity they are called measurements. Other terms used can be time series or variable, but they are always sensor produced data.
 
-**Data Point Properties**: Metadata for a data point, representing additional properties that has been added by the user, label, min/max values, thresholds,  or other.
+**Data Point Properties**: Metadata for a data point, representing additional properties added by the user like label, min/max values, thresholds, or other.
 
 **Dashboard**: A user defined page with individual content from various widgets.
 
-**Report**: Similar to dashboards, but with analytical content from a limited time frame or scope of work.
+**Report**: Similar to dashboards, but with analytical content based on a limited time frame or scope of work.
 
-**Smart Rules**: Cumulocity business rules, instances from a smart rule template using the Smart Rule Builder.
+**Smart Rules**: Cumulocity business rules are instances from a smart rule template using the Smart Rule Builder.
 
 ### Cumulocity Applications
 
@@ -94,7 +92,7 @@ To learn about the following items, please consult "[Introduction](/guides/users
 
 *    User interface conventions
 
-## <a name="start"></a>Starting to use Cumulocity Cockpit
+## <a name="start"></a>Start using Cumulocity Cockpit
 
 ### Welcome page
 
@@ -102,7 +100,7 @@ The welcome page opens the first time you log into Cumulocity Cockpit.
 
 Afterwards a page similar to the one below is shown.
 
-![image alt text](guides/users-guide/image_0.png)
+![image alt text](/guides/users-guide/image_0.png)
 
 The welcome page shows the following sections:
 
@@ -128,13 +126,13 @@ To make the welcome page again the default page, select "Welcome" in the navigat
 
 When starting the application, and have deselected the "Welcome" page, you see the following dashboard:
 
-![image alt text](guides/users-guide/image_1.png)
+![image alt text](/guides/users-guide/image_1.png)
 
 The dashboard shows data for the general tenant.
 
 The home dashboard is a page shared by all users of the tenant. It consists out of widgets, which visualise IoT data. By default, the home dashboard includes five widgets, which show a welcome text, a summary of available objects, assets with alarms, recent alarms and a map of all objects.
 
-The home dashboard can be edited, similar to other Cockpit dashboard: you can add, remove or change the widgets displayed. To do so, use the settings symbol on the top right or move the cursor inside a widget and use the settings symbol of the individual widget.
+The home dashboard can be edited, similar to other Cockpit dashboards: You can add, remove or change the widgets displayed. Use the settings symbol on the top right or move the cursor inside a widget and use the settings symbol of the individual widget.
 
 For details, see "Editing a Dashboard" below.
 
@@ -143,14 +141,14 @@ To reset the dashboard to the original content, use the menu item "Reset default
 ## <a name="connect"></a>Connecting Devices
 
 To use the Cockpit application, you have to connect IoT devices. Devices are connected in the Device Management application. Change to the “Device Management” using the Application Switcher on the top right, and then select “Registration”. For details, please see [Device Management User Guide](/guides/users-guide/device-management).
-<img src="guides/users-guide/app.png" alt="Logout menu" style="max-width: 100%">
+<img src="/guides/users-guide/app.png" alt="Logout menu" style="max-width: 100%">
 ## <a name="asset"></a>Asset Management
 
 An asset represents the business object in general like buildings, machines, production units or cars.
 
 Assets are organized in hierarchies. For example, an energy monitoring application might have the following asset hierarchy:
 
-![image alt text](guides/users-guide/image_2.png)
+![image alt text](/guides/users-guide/image_2.png)
 
 The asset hierarchy is composed out of two types of objects:
 
@@ -165,7 +163,7 @@ To position a device in the asset hierarchy, you have to "assign" the device to 
 
 ### Asset Hierarchy versus Device Hierarchy
 
-Cumulocity supports two hierarchies of objects: A device hierarchy and an asset hierarchy. The device hierarchy tracks how devices are linked to Cumulocity from a communications point of view. The asset hierarchy structures the assets that are being remotely supervised and controlled through the M2M devices. For details, please refer to "[Cumulocity's Domain Model](/guides/concepts/domain-model)"
+Cumulocity supports two types of hierarchies: A device hierarchy and an asset hierarchy. The device hierarchy tracks how devices are linked to Cumulocity from a communications point of view. The asset hierarchy structures the assets that are being remotely supervised and controlled through the M2M devices. For details, please refer to "[Cumulocity's Domain Model](/guides/concepts/domain-model)"
 
 In the Cockpit application, you construct your asset hierarchy by creating group objects and by linking devices into the hierarchy. Typically, the asset hierarchy depends on the kind of IoT device that are used. There are many IoT devices, these two types are very common:
 
@@ -177,23 +175,23 @@ The following section explains how to use Cockpit with smart devices and gateway
 
 Below is an example how smart devices are linked into the asset hierarchy:
 
-![app](guides/users-guide/appbar2.png)
-![image alt text](guides/users-guide/image_3.png)
+![app](/guides/users-guide/appbar2.png)
+![image alt text](/guides/users-guide/image_3.png)
 
-Smart devices are represented in Device Management (right side) as top level devices. In the Cockpit application, you might want to organize smart devices into groups, as the arrows indicate in the above diagram.
+Smart devices are represented in Device Management (right side) as top level devices. In the Cockpit application, you can organize smart devices into groups, as the arrows indicate in the above diagram.
 
 For gateway devices, find below an example on how to use the Cockpit application:
 
-![image alt text](guides/users-guide/image_4.png)
+![image alt text](/guides/users-guide/image_4.png)
 
-Gateway devices are represented in Device Management as top level devices, and their attached devices (i.e. Zigbee, Modbus or KNX devices) are shown as "Child Devices" (right side). These child devices can be organized in the asset hierarchy as shown above.
+Gateway devices are represented in Device Management as top level devices. Their attached devices (like Zigbee, Modbus or KNX devices) are shown as "Child Devices" (right side). These child devices can be organized in the asset hierarchy as shown above.
 
 The asset hierarchy and the device hierarchy are self sufficient: While inside the Device Management applications all child devices are below the gateway device, the same child devices are organized in two different buildings in the Cockpit application. 
 **Summary:** Devices can have totally different hierarchies in the Device Management Application or in the Cockpit Application.
 
 ### Cockpit Assets versus Business Assets
 
-The mapping of objects in the Cockpit asset hierarchy is still a virtual hierarchy. 
+The mapping of objects in the Cockpit asset hierarchy is a virtual hierarchy. 
 If you manage trucks within the Cumulocity platform, then each truck is represented via its individual tracking device communicating with Cumulocity.
 
 For building management, it is most common that a group of sensors inside a building represents the building as a group communicating with the Cumulocity platform.
@@ -204,15 +202,15 @@ The navigator shows a hierarchy of assets under "GROUPS" (See screenshot below):
 
 * On the top, top level groups are shown.
 
-* When expanding an group, all its children are shown.
+* When expanding a group, all its children are shown.
 Children may include other groups or devices assigned to the group.
 Children are also shown in the tab "Sub-assets".
 
-![image alt text](guides/users-guide/image_5.png)
+![image alt text](/guides/users-guide/image_5.png)
 
 When selecting an object in the asset hierarchy, the right part of the application shows more details about the selected object:
 
-![image alt text](guides/users-guide/image_6.png)
+![image alt text](/guides/users-guide/image_6.png)
 
 The visible tabs on the right of the navigator differ based on the selection in the navigator. The following table shows which tabs are visible based on the selection in the navigator:
 
@@ -223,35 +221,35 @@ The visible tabs on the right of the navigator differ based on the selection in 
 
 There can be additional tabs visible in case the application has been extended with plugins. See "[Introduction to plugin development](/guides/web/introduction)" for details.
 
-If you add a gateway device, the child devices are not shown. To show child devices, you must add them explicitly to the related asset. To browse details related to the child hierarchy, you must use the Device Management Application.
+If you add a gateway device, the child devices are not shown. To show child devices, you must add them to the related asset. Details related to the child hierarchy are visible and editable in the Device Management Application.
 
-To navigate down in the asset hierarchy, either use the navigator or select an object in the "Sub-Asset" tab. To navigate up in the asset hierarchy, use the breadcrumb entry below the name of the asset.
+To navigate further in the asset hierarchy, use the navigator or select an object in the "Sub-Asset" tab. To navigate up in the asset hierarchy, use the breadcrumb entry below the name of the asset.
 
 ### Search Assets
 
-To search for groups or devices, enter the name of the group or device into the search entry field and click "Enter". You can click on the results shown. The selected group or device is then selected in the navigator on the left and details of it are shown on the right.
+To search for groups or devices, enter the name of the group or device into the search entry field and click "Enter". You can click on the results . The selected group or device is then selected in the navigator on the left and details of it are shown on the right.
 
 ### Adding Groups
 
 To add a new top-level group, click on the "+" in the top of the application and select “Add Group…”. This will show the following dialog:
 
-![image alt text](guides/users-guide/image_7.png)
+![image alt text](/guides/users-guide/image_7.png)
 
 This will create a new group with the selected assigned devices. After clicking "Create group with devices", the group is shown in navigator as top level object.
 
 To add a new group as a children of an existing asset, click the "+ Add Group" in the “Sub-assets” tab.
 
-![image alt text](guides/users-guide/image_8.png)
+![image alt text](/guides/users-guide/image_8.png)
 
 ### Assign Devices to Groups
 
-Before adding a device to the asset hierarchy, it must be connected to Cumulocity. Connect devices to the platform using Device Management application. Please refer to "[Connecting Devices](/guides/users-guide/device-management#device-registration)" in the Device Management user guide.
+Before adding a device to the asset hierarchy, it must be connected to Cumulocity. Connect devices to the platform using the Device Management application. Please refer to "[Connecting Devices](/guides/users-guide/device-management#device-registration)" in the Device Management user guide.
 
-To assign newly connected devices into the asset hierarchy, select the group under which the device should appear, click on "sub assets" and click the “+ Assign Device” button.
+To assign newly connected devices into the asset hierarchy, select the group where the device should appear, click on "sub assets" and click the “+ Assign Device” button.
 
 In the following dialog, search for devices and select the devices (or sub-devices) that should be assigned.
 
-![image alt text](guides/users-guide/image_9.png)
+![image alt text](/guides/users-guide/image_9.png)
 
 ### Delete Groups
 
@@ -271,13 +269,13 @@ To edit the name of the group, click on the "Info" tab and edit the name.
 
 Data points (measurements or sensor data) can be visualised inside the Cockpit in three places:
 
-* Clicking on the "data explorer" in the navigator. You have access to all data points of all assets.
+* Clicking on the "data explorer" in the navigator. You have access to all data points of all assets from there.
 
 * Navigate to a specific asset and click on the tab "Data Explorer". You have access to all data points of the assets and sub-assets.
 
 * Adding data points related widgets to the dashboard. Here you can view pre-defined reports easily.
 
-To visualise data points, perform the following steps:
+To visualise data points, follow these steps:
 
 * Go to the group or device, and click on "Data Explorer".
 
@@ -287,7 +285,7 @@ To visualise data points, perform the following steps:
 
 * Adjust colors, ranges, and other visualisation properties.
 
-* Browse the shown data by changing the time period or value ranges.
+* Browse more data by changing the time period or value ranges.
 
 * If you want to store your current configuration for later, save it as a widget using "Send as widget to dashboard..."
 
@@ -303,7 +301,7 @@ When clicking on the tab "Data explorer", the data explorer opens.
 
 It is pre-filled with available data points of the object (group or device). The first 5 data points are shown by default.
 
-![image alt text](guides/users-guide/image_10.png)
+![image alt text](/guides/users-guide/image_10.png)
 
 The visualisation is generated based on data point properties.
 
@@ -315,13 +313,13 @@ The data points properties (min, max, color, ..) are pre-filled as follows:
 
 There can be more than one matching data point entry in the "Data Point Library". In that case, the first one is selected automatically by the system. You can overwrite this selection by using the cogwheel symbol and selecting "Load X from Library". X refers to the entry in the data point library.
 
-![image alt text](guides/users-guide/image_11.png)
+![image alt text](/guides/users-guide/image_11.png)
 
 ### Adding data points
 
 Additional data points can be added to the data explorer by clicking "+ Add data point". This will bring up the following dialog:
 
-![image alt text](guides/users-guide/image_12.png)
+![image alt text](/guides/users-guide/image_12.png)
 
 In the top of the dialog, select a device from the asset hierarchy. Only the asset hierarchy below the objects selected in the navigator is visible. If "Data explorer" in the navigator was selected, the complete asset hierarchy is visible.
 
@@ -397,7 +395,7 @@ Use the menu and select "Send as widget to dashboard".
 
 This will show a modal dialog with all dashboards of the current object. Move to the relevant dashboard and press "Select" to create a new widget in the selected dashboard.
 
-![image alt text](guides/users-guide/image_13.png)
+![image alt text](/guides/users-guide/image_13.png)
 
 ### Exporting Measurement data to csv or xlsx files
 
@@ -412,7 +410,7 @@ With Cumulocity, users have the option to download measurement data in csv or xl
 
 To download measurement data in either csv or xlsx first navigate to "Data Explorer", select your desired time range and then click on the small wheel button located at the top-right.
 
-![Export measurement data](guides/users-guide/exportmeasuredata.png)
+![Export measurement data](/guides/users-guide/exportmeasuredata.png)
 
 Choose whether to download CSV or Excel(XLSX)
 
@@ -420,7 +418,7 @@ Choose whether to download CSV or Excel(XLSX)
 
 ## <a name="dashboards"></a>Working with Dashboards
 
-Dashboards provides you with a customized visualisation of your data with a set of widgets. Widgets can display maps, images, graphs, tables and other graphical representations of data. Cumulocity comes with a number of pre-provided widgets, see section "[Widget Package](#widget-package)" for details. You can develop also your own widgets and add them to your Cumulocity account. See the [Web developer's guide](/guides/web/).
+Dashboards provides you with a customized visualisation of your data with a set of widgets. Widgets can display maps, images, graphs, tables and other graphic representations of data. Cumulocity comes with a number of pre-provided widgets, see section "[Widget Package](#widget-package)" for details. You can develop also your own widgets and add them to your Cumulocity account. See the [Web developer's guide](/guides/web/).
 
 ### Creating a new Dashboards
 
@@ -436,7 +434,7 @@ To create a dashboard, navigate to an object in the asset hierarchy. Afterwards 
 
 * "Apply dashboard to all devices of type": Whether the dashboard should be visible only for this object or for all devices of the same type.
 
-![image alt text](guides/users-guide/image_14.png)
+![image alt text](/guides/users-guide/image_14.png)
 
 Click "Save" to create and open the dashboard. While there are no widgets on the dashboard, you will see an "Add Widget" button. Use this button to add your first widget to the dashboard.
 
@@ -452,7 +450,7 @@ Afterwards the dashboard should appear for all identical devices. Changes made t
 
 To add a widget to a dashboard, ensure that the dashboard is visible. Afterwards click on the cogwheel icon at the top right. Select "Add widget to dashboard". This will open a dialog with a selection of widgets you can add to the dashboard.
 
-![image alt text](guides/users-guide/image_15.png)
+![image alt text](/guides/users-guide/image_15.png)
 
 When selecting a widget type, additional input fields for this widget type will pop up. More information about the "[Widget Package](#widget-package)".
 
@@ -462,7 +460,7 @@ You can edit dashboard properties by clicking on the cogwheel icon and select "E
 
 You can rearrange the widgets on the dashboard. By dragging and dropping the header of the widget, you can move the widget to another position on the page. By dragging and dropping the arrows on the bottom right corner of a widget, you can resize a widget. By clicking on the cross icon in the top right corner, you can delete the widget. By clicking on the cogwheel icon on the top right corner of the widget, you can edit the widget properties. The following figure shows a widget with all mentioned icons visible:
 
-![image alt text](guides/users-guide/image_16.png)
+![image alt text](/guides/users-guide/image_16.png)
 
 On user devices like a laptop these icons only appear when you hover over the widget header.
 
@@ -507,13 +505,13 @@ This widget configuration is identical to the data points graph, except instead 
 
 * Out of range values, based on configured yellow and red ranges, are highlighted in the table.
 
-![Data point table](guides/users-guide/datapointtable.png)
+![Data point table](/guides/users-guide/datapointtable.png)
 
 ### Widget "Map"
 
 Show location of a device or all devices in the group. The map provides the following features:
 
-* The map can be used normally, i.e. drag it and zoom in/out.
+* The map has functionality like drag it and zoom in/out.
 
 * The icons representing the devices are color coded. The color used depends on the following rule:
 
@@ -527,17 +525,17 @@ Show location of a device or all devices in the group. The map provides the foll
 
     * No alarm: green
 
-* When clicking on a device icon, a popup is displayed with the following information:
+* When clicking on a device icon, a popup appears with the following information:
 
-    * the device name. When clicked, the application navigates to the device.
+    * The device name: When clicked, the application navigates to the device.
 
-    * the date at which the device last reported its location, if available.
+    * The date at which the device last reported its location, if available.
 
-    * the option to show/hide the device tracks for the previous and current days.
+    * The option to show/hide the device tracks for the previous and current days.
 
 Parameters to configure:
 
-* Target device or group: Select what devices should be shown on the map. If an group is selected, all devices included in the group are shown.
+* Target device or group: Select what devices should be shown on the map. If an group is selected, all devices included in the group are visible.
 
 Note: If none of the target device(s) has a known location, then the widget show a world map with no icons.
 
@@ -567,19 +565,19 @@ Variables that can be used inside the HTML content:
 
 * {{device.*fragment*.*property*}}: More general form of the above. You can address any property of any fragment of the device.
 
-Some notes on the above:
+Addtitional Information:
 
-* "device" refers to the target device, as selected in the widget configuration parameter.
+* "Device" refers to the target device, as selected in the widget configuration parameter.
 
-* *fragment.property* refers to the properties of the respective device. To learn about the available property names, you can use the "Asset property" or “Asset table” widget and press the “+ Add property” link in the widget configuration. This will show a table of supported properties. You can copy and paste the values from the column “Property”. Note: Computed properties of these widgets are not available in the HTML widgets, i.e. all properties whose name includes “count”.
-
+* *fragment.property* refers to the properties of the respective device. To learn about the available property names, you can use the "Asset property" or “Asset table” widget and click the “+ Add property” link in the widget configuration. This will show a table of supported properties. You can copy and paste the values from the column “Property”. Generated properties of these widgets are not available in the HTML widgets.
+* 
 ### Widget "Asset alarms"
 
 Show all objects who have a critical alarm. There are no additional parameters to configure.
 
 ### Widget "Asset count"
 
-Shows the number of devices, those that are online and those with critical alarms. There are no additional parameters to configure.
+Shows the number of devices online and with alarms. There are no additional parameters to configure.
 
 ### Widget "Alarm list"
 
@@ -587,11 +585,11 @@ Show a list of alarms, filter for objects, alarm severity and alarm status.
 
 Parameter to configure:
 
-* Target device or group: Select for which object optional HTML expressions should be evaluated.
+* Target device or group: Select groups or devices, optional HTML expressions which should be evaluated.
 
-* Status: Show only alarms which have the selected alarm status.
+* Status: Show only devices with alarms of a specified alarm status.
 
-* Type: Show only alarms of the specified type. The type of an alarm can be seen when clicking once on an alarm.
+* Type: Show only alarms of the specified type. Details can be seen when clicking once on an alarm.
 
 * Severity: Show only alarms of the selected alarm severity.
 
@@ -623,7 +621,7 @@ Parameters to configure:
 
 ### Widget "Asset table"
 
-Shows details of all child devices in a table. This is a very powerful widget, which allows you arrange selected properties of objects in a table.
+Shows details of all child devices in a table. This is a very powerful widget, allowing to arrange selected properties of objects in a table.
 
 Parameters to configure:
 
@@ -634,9 +632,10 @@ Parameters to configure:
 Example:
 
 * In the following screenshot, five columns are configured. Three property columns "Meter", “Vendor”, and “Owner”, which refer to the properties “name”, type” and “owner”. Additionally there are two actions, one for toggling the maintenance mode, and one to reboot the device.
-![image alt text](guides/users-guide/image_17.png)
+![image alt text](/guides/users-guide/image_17.png)
 
-* The resulting table is visualised as follows:![image alt text](guides/users-guide/image_18.png)
+* The resulting table is visualised as follows:
+![image alt text](/guides/users-guide/image_18.png)
 
 
 The list of properties can be edited as follows:
@@ -645,7 +644,7 @@ The list of properties can be edited as follows:
 Note: The property "Active Alarm Status" shows active alarms as icons in the table. If you select this property, please also configure the renderer "Active Alarm Status" in the list of columns.
 
 * Add a new action: Click on "+ Add Action". You can then add the predefined action to toggle the maintenance mode. Or you select “Create Operation” to create a button that will execute a shell command. In the following dialog you can then enter the label for the button and the shell command to be executed.
-![image alt text](guides/users-guide/image_19.png)
+![image alt text](/guides/users-guide/image_19.png)
 Note: The dialog shows the predefined shell commands of the first device that supports shell commands. The list is empty if there is no such device. For more details please refer to [shell commands](http://www.cumulocity.com/guides/users-guide/device-management/#shell).<br>
 Note: You can also enter the JSON format of the operation that should be send to the device. For details, please contact the device vendor for supported operations.
 
@@ -685,17 +684,17 @@ To add a new report, select the "+" button in the header and select “Create ne
 
 Fill out the fields "Name" and “Icon” in the dialog and press “Save”.
 
-![image alt text](guides/users-guide/image_20.png)
+![image alt text](/guides/users-guide/image_20.png)
 
 Afterwards widgets can be added to the created report.
 
 ### Deleting reports
 
-To delete a report, press the cogs wheel icon and choose Remove report
+To delete a report, press the cogwheel icon and choose Remove report
 
 ### Adding widgets to reports
 
-You can add widgets to the report freely, similar to dashboard widgets.
+You can add widgets to the report, similar to dashboard widgets.
 
 ### View reports
 
@@ -709,7 +708,7 @@ To work with dashboard reports please refer to [Working with Dashboard Reports](
 
 To show all reports, expand "Reports" and click on "Reporting".
 
-When a report has been created, you can choose to clone it. To clone reports first navigate to the report's name and then click on "Clone". After the "Clone" button is pressed you will be redirected to a new window where all of the data of the current report will be duplicated. You can apply changes if you wish. To finish press the "Save" button.
+When a report has been created, you can choose to clone it. To clone reports first navigate to the report's name and then click on "Clone". After the "Clone" button is clicked you will be redirected to a new window where all of the data of the current report will be duplicated. You can apply changes if you wish. To finish press the "Save" button.
 
 ### Adding reports
 
@@ -721,19 +720,19 @@ To create additional reports, click on "Add Report"
 - [Select Fields](#fields) of the report.
 - Click on the "Save" button to finish.
 
-![Add Reports](guides/users-guide/addreports.png)
+![Add Reports](/guides/users-guide/addreports.png)
 
 <a name="filters"> **Filters** </a>
 
-Reports can be filtered to particular objects or a time range. To choose the object to be exported, first navigate to the "Object to Export" search bar located under the "Filters" section. Specific devices or groups can be selected by writing their name or property value in the search bar. When you click the "Search" button cockpit will search for a matching entry in your device library. After all matching devices have been found they will be displayed under the search bar. To select a device simply click on their name and they will be highlighted in green.
+Reports can be filtered to particular objects or a time range. To choose the object to be exported, first navigate to the "Object to Export" search bar located under the "Filters" section. Specific devices or groups can be selected by writing their name or property value in the search bar. When you click the "Search" button cockpit will search for a matching entry in your device library. After all matching devices have been found they will be displayed under the search bar. To select a device simply click on its name and it will be highlighted in green.
 
-![Object filter](guides/users-guide/objectfilter.png)
+![Object filter](/guides/users-guide/objectfilter.png)
 
 Additional filters such as "Time Range" can be enabled. You have the option to filter object reports to "Last year", "Last month", "Last week" or simply enter a custom date-hour range. To select time range click on the scroll down menu and choose your desired time period. If you choose to customize the time range two small date fields will appear. Simply select a time range.
 
-![Time range](guides/users-guide/timerange.png)
+![Time range](/guides/users-guide/timerange.png)
 
-Note that, to enable filters you will have to click on the checkbox located under "Enabled".
+To enable filters you will have to click on the checkbox located under "Enabled".
 
 <a name="fields"> **Fields** </a>
 
@@ -746,11 +745,11 @@ In order to easily handle reports, different fields can be selected. For example
 
 To enable a field simply click on the name of the field.
 
-![Fields](guides/users-guide/enabledordisabledfields.png)
+![Fields](/guides/users-guide/enabledordisabledfields.png)
 
 When a certain field is enabled, predefined or empty properties can be added. If you choose to add empty properties click on "Add". To enter label or path click on either "Column" or "Path" located in the red row. For example if you enable the "Alarms" field you can type "Severity" in column and path to receive report only for alarm severities.
 
-If you have at least one Field in Fields section that is not picked from "Add predefined" list, but rather defined as a custom property, then it is required that at least one such property has to exist in the exported object to have it included in the excel. As an example if report has 4 Fields defined: time, device name, type and c8y_SpeedMeasurement.speed.value, then the first 3 are predefined properties, and the last one is a custom property. If measurement being exported does not have such custom property c8y_SpeedMeasurement.speed.value, then it is not included into the excel.
+==If you have one field in Fields section that is not picked from "Add predefined" list, but defined as a custom property, then it is required that at least one property has to exist in the exported object to have it included in the excel. As an example if report has 4 Fields defined: time, device name, type and c8y_SpeedMeasurement.speed.value, then the first 3 are predefined properties, and the last one is a custom property. If measurement being exported does not have such custom property c8y_SpeedMeasurement.speed.value, then it is not included into the excel.==
 
 If your field is a valid.key.with.dot then refer to it as ['fragment.key.with.dot'] in the path, e.g. ['fragment.key.with.dot'].serie.value
 
@@ -758,19 +757,19 @@ To add predefined properties first click on "Add predefined".
 
 To select predefined properties click on the respective checkbox located under "SHOW". After the desired properties have been selected click on "Select".
 
-![Select](guides/users-guide/select.png)
+![Select](/guides/users-guide/select.png)
 
-Note that to search for a specific property efficiently, you can use the search field.
+To search for a specific property efficiently, you can use the search field.
 
 If the "Measurements" field was enabled one can also "Add from datapoint".
 
-![Add from datapoint](guides/users-guide/addfromdatapoint.png)
+![Add from datapoint](/guides/users-guide/addfromdatapoint.png)
 
 To choose a data point click on the checkbox. When the selection is completed, click on "Add".
 
 Have in mind that the "Search field" can be used for easier handling. Simply type the desired device's name or value of any property in the "Search field" and press "Submit". This way all matching entries are displayed.
 
-![Add datapoint](guides/users-guide/adddatapoint.png)
+![Add datapoint](/guides/users-guide/adddatapoint.png)
 
 ### Exporting Inventory data to csv or xlsx files
 
@@ -779,7 +778,7 @@ To export "Inventory data" to csv or xlsx files navigate to "Reporting" located 
 - Select the desired files that you wish to export by clicking on the relevant checkbox
 - Click on "Export"
 
-![Exporting](guides/users-guide/exportinventorydata.png)
+![Exporting](/guides/users-guide/exportinventorydata.png)
 
 You will receive an e-mail with the links to each file.
 
@@ -800,19 +799,19 @@ To remove reports hover over the report's name and click on the "X" button.
 
 ## <a name="library"></a>Using the Data Point Library
 
-The Data Point Library provides default values for data point properties. Data point properties are similar to "paragraph formats" in word processing applications: You do not want to format each paragraph individually. Instead you want to define a set of default formats and afterwards apply them to your paragraphs in your document. The Data Point Library provides the same functionality for data points: It provides a number of default data point formats that can be applied easily to your data points from different devices.
+The Data Point Library provides default values for data point properties. Data point properties are similar to "paragraph formats" in word processing applications: You do not want to format each paragraph individually. Instead you want to define a set of default formats and apply them to your paragraphs in your document. The Data Point Library provides the same functionality for data points: It provides a number of default data point formats that can be applied easily to your data points from different devices.
 
-How does the Cockpit application use the data point library? To find the default visualisation for a data point like color or label, Cockpit searches the data point library and tries to find a matching entry. A entries is considered as "matching", if the value for fragment and series in the data point library match those of the measurement. If a matching entry is found, the corresponding data point properties are used for default visualisation.
+How does the Cockpit application use the data point library? To find the default visualisation for a data point like color or label, Cockpit searches the data point library and tries to find a matching entry. A entries is considered as "matching", if the value for fragment and series in the data point library match those of the measurement. If a matching entry is found, the corresponding data point properties are used for a default visualisation.
 
 Additionally, the properties of data point library are used by threshold business rules: The red and yellow values configured in the data point library are used by the threshold rules to raise alarms.
 
-When selecting "Data Point Library" in the navigator, a list of predefined data points with their properties opens.
+When selecting "Data Point Library" in the navigator, a list of predefined data points including their properties opens.
 
-![image alt text](guides/users-guide/image_21.png)
+![image alt text](/guides/users-guide/image_21.png)
 
 When clicking on an entry, a single entry in the data point library can be edited:
 
-![image alt text](guides/users-guide/image_22.png)
+![image alt text](/guides/users-guide/image_22.png)
 
 ## <a name="rules"></a>Working with Smart Rules
 
@@ -846,75 +845,74 @@ Smart Rules are created as follows:
 
 A list of smart rules is shown below. Note that the number of smart rules shown might differ based on your installation.
 
-![image alt text](guides/users-guide/image_23.png)
+![image alt text](/guides/users-guide/image_23.png)
 
 Afterwards, if the rule was set to enabled and was not activated for specific objects, the rule will be active for all devices and groups. See next section on how to deactivate a smart rule for specific objects.
 
-If a smart rule is disabled, then the rule is not shown on group or device level in the “Info” tab. This makes it easier to understand which rules are actually relevant.
-
+Disabled Smart Rules are not displayed in group menus or device menus to avoid confusion.
 Smart Rules can be instantiated multiple times.
 
 ### Activating and deactivating Smart Rules
 
-Smart Rules can be seen under the info tab of a given device or group, whether they are active on group or child level and for how many children they are active.
+Smart Rules can be seen under the info tab of a device or group, They must be active within this group and can also be active on child asset level.
 
 A single Smart Rule can be activated (switched on) and deactivated (switched off) for a single object (group or device). For example, if a device is generating too many threshold alarms, you can deactivate the rule for this single object. The rule is still active for all other objects.
 
 To de-activate or activate a Smart Rule for a group or device, simply go to the Info tab and click on the button to enable or disable the rule.  
 
-![Info tab](guides/users-guide/infotab.png)	
+![Info tab](/guides/users-guide/infotab.png)	
 
 ### Editing, cloning or removing Smart Rules
 
 To edit, clone or remove a specific Smart Rule just click on the cogwheel located to the far right of the Smart Rule and click on the desired option.
 
-For easier debugging there is a direct link from a smart rule to a corresponding event processing module. Click on the cogwheel and then "Inspect". 
+For easier debugging there is a direct link from a smart rule to a corresponding event processing module. Click on the cogwheel and then choose "Inspect". 
 
 ### Example: Defining explicit thresholds
 
-To define a threshold rule do as follows:
+To define a threshold rule follow these steps:
 
-* In the asset navigator, navigate to the groups or device
+* In the asset navigator, navigate to the desired group or device to apply a threshold to.
 
 * Click on "Data explorer".
 
-* If your data point is not visible by default, select "Add data point" and add your data point.
+* If your data point is not visible by default, select "Add data point" and add a data point.
 
-* For the data point that should raise the threshold, click on the "cogs wheel" icon in the end of the row and select “Create Smart Rule”.
-![image alt text](guides/users-guide/image_26.png)
+* For the data point that should raise the threshold, click on the "cogwheel" icon in the end of the row and select “Create Smart Rule”.
+
+![image alt text](/guides/users-guide/image_26.png)
 
 * Select "On measurement explicit threshold create alarm"
 
 * Fill in the rule parameter:
 
-![image alt text](guides/users-guide/image_27.png)
+![image alt text](/guides/users-guide/image_27.png)
 
-* You can fill in the red range minimum and red range maximum value. When the values are between these values, a threshold alarm will be raised.
+* ==You can fill in the red range minimum and red range maximum value. When the values are between these values, a threshold alarm will be raised.==
 
 * Under "Create Alarm" you can optionally edit the alarm type and the alarm text.
 
-* Under "Activate for target group or devices" you can select for which objects the rule should be activated.
+* Under "Activate for target group or devices" you can select for which objects the rule is activated.
 
 * Press "CREATE"
 
-After the rule has been created, it is automatic active and alarms should appear.
+After the rule has been created, it is automatically set active and alarms should appear if they arise.
 
 ### Chain rule execution
 
-Smart Rules can create new data item in the platform. For example, the threshold rule creates new alarms.
-Those new data can be further handled by smart rules. For example, by "On alarm send e-mail" rule.
-Using this mechanism, it is possible to create the chain of smart rules. However, please notice, there is a risk of creating cycle
-that can overload the platform and cause an excess of unwanted data.
+Smart Rules can create new data item on the platform. For example, the threshold rule creates new alarms.
+Those new data can be handled further by selected smart rules. For example, by a "On alarm send e-mail" rule.
+Using this mechanism, it is possible to create a chain of smart rules. If you create a rule chain you must have an idea how much data will be created to avoid overload or excessive amount of data.
 
 ## <a name="business"></a>Business Rule Package
 
-The following smart rule templates are available in the system.
+The following smart rule templates are available in our system.
 
-### On measurement threshold create alarm
+### Measurement threshold alarms
 
-On crossing defined yellow and red ranges, alarms are generated and cleared.
+When crossing defined yellow and red ranges, alarms are generated and cleared.
 
-The rule use the following parameter from the device object or data point library:
+The rule uses the following parameter from the device object or data point library:
 
 * Object red range: Range when the system should create CRITICAL alarms. These values can be edited in the Data Explorer for each data point.
 
@@ -928,7 +926,7 @@ Using this mechanism, you can configure global threshold ranges in the data poin
 
 The rule uses the following parameters:
 
-![image alt text](guides/users-guide/image_28.png)
+![image alt text](/guides/users-guide/image_28.png)
 
 * Fragment: Name of the measurement fragment. The incoming measurement must have exactly the same fragment name as configured. Note: When creating a rule from the data explorer, the fragment is already filled in.
 
@@ -956,35 +954,35 @@ If there are no red/yellow ranges defined in either of them, then no alarms are 
 
 _Note_: Range values defined in the source object have a higher priority than the ones defined in the data point library. You can also just override a single value (e.g. yellow range max) by setting it in the source object. The other values will then be taken by from the data point library.
 
-* If the incoming value is inside the yellow range:
+ - If the incoming value is inside the yellow range.
 
-    * If there is an active alarm of given type for the object:
+ - If there is an active alarm of given type for the object:
 
-        * Set severity to "MINOR"
+* Set severity to "MINOR"
 
-    * Otherwise
+* Otherwise
 
-        * Create new "MINOR" alarm with given parameters.
+* Create new "MINOR" alarm with given parameters.
 
-* If the incoming value is inside the red range:
+ - If the incoming value is inside the red range:
 
-    * If there is an active alarm of given type for the object:
+ - If there is an active alarm of given type for the object:
 
-        * Set severity to "CRITICAL"
+* Set severity to "CRITICAL"
 
-    * Otherwise
+* Otherwise
 
-        * Create new "CRITICAL" alarm with given parameters.
+* Create new "CRITICAL" alarm with given parameters.
 
-* If the measurement is outside of yellow and red range:
+- If the measurement is outside of yellow and red range.
 
-    * If there is an active alarm of given type for the object:
+- If there is an active alarm of given type for the object.
 
-        * Clear the alarm.
+* Clear the alarm.
 
 ** Troubleshooting **
 
-* Please verify that the alarm was created and not de-duplicated.
+* Please verify that the alarm was created and not duplicated from somewhere.
 
 * If device is not in [maintenance](/guides/reference/device-management) mode: in this case no new alarm will be created because of suppression policy.
 
@@ -994,9 +992,9 @@ _Note_: Range values defined in the source object have a higher priority than th
 
 * Please note that if you clear an alarm, you state that the alarm is resolved. A new alarm is not raised unless the device changes its state and crosses the thresholds again.
 
-### On measurement explicit threshold create alarm
+### On measurement create a threshold alarm
 
-When the measurement value enters or leaves the RED range, a CRITICAL alarm is generated or cleared, respectively.
+When the measurement value enters or leaves the RED range, a CRITICAL alarm is generated or cleared.
 
 The severity of alarm is determined by:
 
@@ -1007,11 +1005,11 @@ The severity of alarm is determined by:
 
 This rule is similar to the above threshold rule. However, in this rule the RED threshold value is provided explicitly. The other threshold rule above extracts the thresholds values from the device or data point library
 
-The rule uses the following parameters:![image alt text](guides/users-guide/image_37.png)
+The rule uses the following parameters:![image alt text](/guides/users-guide/image_37.png)
 
-* Fragment: Name of the measurement fragment. The incoming measurement must have exactly the same fragment name as configured. Note: When creating a rule from the data explorer, the fragment is already filled in.
+* Fragment: Name of the measurement fragment. The incoming measurement must have exactly the same fragment name as configured. Note: When creating a rule from the data explorer, the fragment name is already filled in.
 
-* Series: Similar to fragment, just for the series.
+* Series: Similar to fragment, just for series.
 
 * Minimum, Maximum: When a value is in the range [minimum; maximum], the configured alarm is raised.
 
@@ -1019,7 +1017,7 @@ The rule uses the following parameters:![image alt text](guides/users-guide/imag
 
 * Text: Text of the alarm that will be raised.
 
-** Troubleshooting **
+**Troubleshooting **
 
 * Please check the same steps as for the threshold rule above.
 
@@ -1030,9 +1028,9 @@ When an alarm is created, an email is send.
 
 The rule uses the following parameters:
 
-![image alt text](guides/users-guide/image_29.png)
+![image alt text](/guides/users-guide/image_29.png)
 
-* Alarm types: The types of the alarms that triggers the rule. For each newly created alarm with one of these types in the list the rule is triggered. 
+* Alarm types: The types of the alarms triggering the rule. For each newly created alarm with one of these types in the list the rule is triggered. 
 
 * Send to: Email addresses for sending the e-mail to. Multiple addresses can be separated by a comma (",", do not use a space!).
 
@@ -1042,13 +1040,13 @@ The rule uses the following parameters:
 
 * Reply to: Address that should be used to reply to the message.
 
-* Subject: Subject of e-mail. You can use variable of the form #{name}. Supported variables are listed under "Smart Rule Variables" below.
+* Subject: Subject of e-mail. You can use a variable of the form #{name}. Supported variables are listed under "Smart Rule Variables" below.
 
-* Text: Text of e-mail. You can use variable of the form #{name}. Supported variables are listed under "Smart Rule Variables" below.
+* Text: Text of the e-mail. You can use a variable of the form #{name}. Supported variables are listed under "Smart Rule Variables" below.
+* 
+**Troubleshooting**
 
-** Troubleshooting **
-
-* Please verify that the alarm was created and not de-duplicated.
+* Please verify that the alarm was created and not duplicated.
 
 * If device is not in [maintenance](/guides/reference/device-management) mode: in this case no new alarm will be created because of suppression policy.
 
@@ -1058,15 +1056,15 @@ The rule uses the following parameters:
 
 ### On alarm send SMS
 
-When an alarm is created, an SMS is send.
+When an alarm is created, a SMS is send.
 
-Note that this rule is only available if your tenant has a configured SMS provider.
+This rule is only available if your tenant has a configured SMS provider.
 
 The rule uses the following parameters:
 
-![image alt text](guides/users-guide/image_30.png)
+![image alt text](/guides/users-guide/image_30.png)
 
-* Alarm types: The types of the alarms that triggers the rule. For each newly created alarm one of these types the rule is triggered.
+* Alarm types: The types of alarm which trigger the rule. For each newly created alarm one of these types the rule is triggered.
 
 * Phone number: Target phone number. It is recommended to include mobile country code for all numbers, e.g. "+49" or "0049" for Germany. Multiple numbers can be separated by a comma (",", do not use a space!).
 
@@ -1074,7 +1072,7 @@ The rule uses the following parameters:
 
 ** Troubleshooting **
 
-* Please verify that the alarm was created and not de-duplicated.
+* Please verify that the alarm was created and not duplicated.
 
 * If device is not in [maintenance](/guides/reference/device-management) mode: in this case no new alarm will be created because of suppression policy.
 
@@ -1086,31 +1084,31 @@ The rule uses the following parameters:
 
 If an alarm is active for a certain time, increase the severity.
 
-The rule uses the following parameters:![image alt text](guides/users-guide/image_31.png)
+The rule uses the following parameters:![image alt text](/guides/users-guide/image_31.png)
 
-* Alarm types: The types of the alarms that triggers the rule.
+* Alarm types: The types of alarm which will trigger the rule.
 
-* Duration: How long must the alarm be active to trigger the rule?
+* Duration: How long must there be an active alarm to trigger the rule?
 
 Description of the rule:
 
-* When an alarm with configured type is raised start monitoring for how long the alarm is active.
+* When a configured type of alarm is raised it starts monitoring how long the alarm stays active.
 
-* If the alarm is still active after configured duration, increase the severity one level, i.e. from MINOR to MAJOR.
+* If the alarm is still active after specified duration,it will increase the severity one level, like from MINOR to MAJOR.
 
-* If the alarm is 'CRITICAL' stop monitoring because there isn't any higher severity.
+* If the alarm is 'CRITICAL' it will stop monitoring because there is no further action available.
 
-_Note:_ The rule checks if the configured duration was exceeded once a minute. Therefore it can occur that the alarm severity won't be changed in the second it exceeds the duration but at the next check.
+_Note:_ The rule checks if the configured duration was exceeded once a minute. Therefore it can occur that the alarm severity won't change in the second it exceeds the duration but only during the following check.
 
-### On geofence create alarm
+### On geofence crossing create alarm
 
-The Geofence-Smart Rule can be configured to create an alarm upon leaving or entering the geofence (or both). Existing alarms are cleared when the opposite condition is true gain.
+The Geofence-Smart Rule can be configured to create an alarm upon crossing the geofence (or both). Existing alarms are cleared when the opposite condition is true gain like if a tracked car which has left the geofence area is re-entering the geofence area.
 
 The rule uses the following parameters:
 
-![image alt text](guides/users-guide/image_32.png)
+![image alt text](/guides/users-guide/image_32.png)
 
-* Geofence: Define a polygon that defines the border of an area. To do this, click on "Edit geofence", navigate to your area (e.g. using the “Search address” field), and define a polygon by clicking once for each point of the border. ![image alt text](guides/users-guide/image_33.png)
+* Geofence: Define a polygon that defines the border of an area. Click on "Edit geofence", navigate to your area (like using the “Search address” field), and define a polygon by clicking once for each point of the border. ![image alt text](/guides/users-guide/image_33.png)
 
 * Type: Type of the alarm that will be raised.
 
@@ -1136,7 +1134,7 @@ Create consumption data point based on data from an electric-, gas-, water- mete
 
 The rule uses the following parameters:
 
-![image alt text](guides/users-guide/image_34.png)
+![image alt text](/guides/users-guide/image_34.png)
 
 * Fragment: Name of the measurement fragment. The incoming measurement must have exactly the same fragment name as configured. _Note:_ When creating a rule from the data explorer, the fragment is already filled in.
 
@@ -1148,7 +1146,7 @@ The rule uses the following parameters:
 
 * Consumption Series: Name of the measurement series that should be generated.
 
-The unit of the consumption measurement is always per hour (e.g. if the measurements are in "kg" the consumption will be in "kg/h").
+The unit of the consumption measurement is always per hour (like if the measurements are in "kg" the consumption will be in "kg/h").
 The rule will take the last two measurement every configured duration.
 It will then calculate the difference in value and time and calculate the consumption per hour.
 
@@ -1161,23 +1159,23 @@ If there hasn't been any new measurement created in the last period a measuremen
 
 ### On missing measurements create alarm
 
-Create an alarm if there was no new data received for a selected measurement (data point) for the given time.
+Create an alarm if there was no new measurement data received for a specified time.
 
 The rule uses the following parameters:
 
-![image alt text](guides/users-guide/image_35.png)
+![image alt text](/guides/users-guide/image_35.png)
 
-* Type: Type of the measurement. The incoming measurement must have exactly the same type as configured. _Note:_ When creating a rule from the data explorer, the type is already filled in.
+* Type: Type of measurement. The incoming measurement must have the same type as configured. _Note:_ When creating a rule from the data explorer, the type is already filled in.
 
-* Time interval: Time interval, for which consumption values should be calculated.
+* Time interval: Time interval, for calculating consumption values. 
 
-* Type: Type of the alarm that will be raised.
+* Type: Type of the raised alarm.
 
-* Severity: Severity of the alarm that will be raised.
+* Severity: Severity of the raised alarm.
 
-* Text: Text of the alarm that will be raised.
+* Text: Text of the raised alarm.
 
-_Note:_ The rule checks if the configured time interval was exceeded once a minute. Therefore it can take up to one minute to create the alarm after the time interval was exceeded. To check if the time interval has been exceeded there needs to be at least on measurement of the configured type created after activation of the rule.
+The rule checks if the configured time interval was exceeded once a minute. Therefore it can take up to one minute to create the alarm after the time interval was exceeded. To check if the time interval was exceeded there must be at least one incoming measurement after the activation of the rule.
 
 ### On alarm create operation
 
@@ -1185,22 +1183,22 @@ If a certain alarm occurred, send the specified operation to the device.
 
 The rule uses the following parameters:
 
-![image alt text](guides/users-guide/image_36.png)
+![image alt text](/guides/users-guide/image_36.png)
 
-* Alarm types: The types of the alarms that triggers the rule. For each newly created alarm one of these types the rule is triggered.
+* Alarm types: The types of the alarm trigger the rule. For each new specified alarm this rule is triggered.
 
-* Operation: The operation that should be send. The operation is provided as JSON description. A few standard operations can be selected below the operations fields. To use a standard operation, select one, and press the arrow button to the right. This will insert the JSON of the selected operation.
+* Operation: The operation that will be send. The operation is provided as JSON description. Some standard operations can be selected below the operations field. To use a standard operation, select one, and press the arrow button on the right. This will insert the JSON of the selected operation.
 
 
-## On geofence send e-mail
+## On geofence crossing send e-mail
 
-Send the email if a device leaves the defined geofence.
+Send the email if a device leaves or enters the defined geofence.
 
 The rule uses the following parameters:
 
-![image alt text](guides/users-guide/ongeofencesendemail.png)
+![image alt text](/guides/users-guide/ongeofencesendemail.png)
 
-* Geofence: Define a polygon in the way similar to the rule "On geofence create alarm".
+* Geofence: Define a polygon in the way similar to the rule "On geofence crossing create alarm".
 
 * Send to: Email addresses for sending the e-mail to. Multiple addresses can be seperated by a comma (",", do not use a space!).
 
@@ -1208,13 +1206,13 @@ The rule uses the following parameters:
 
 * Send BCC to: As previously, just for e-mail "BCC" field.
 
-* Reply to: Address that should be used to reply to the message.
+* Reply to: Address that must be used to reply to the message.
 
 * Subject: Subject of e-mail. You can use variable of the form #{name}. Supported variables are listed under "Smart Rule Variables" below.
 
 * Text: Text of e-mail. You can use variable of the form #{name}. Supported variables are listed under "Smart Rule Variables" below.
 
-_Note:_ Like the "On geofence create alarm" this rule triggers on crossing the border of the geofence. In order to send out the e-mail the device had to be inside the geofence at least once after creating the rule.
+_Note:_ Like the "On geofence crossing create alarm" this rule triggers on crossing the border of the geofence. In order to send out the e-mail the device had to be inside the geofence at least once after creating the rule.
 
 ** Troubleshooting **
 
@@ -1229,73 +1227,73 @@ When alarm is created initiates text-to-speach call.
 
 The rule uses the following parameters:
 
-![image alt text](guides/users-guide/onalarmsendtexttospeach.png)
+![image alt text](/guides/users-guide/onalarmsendtexttospeach.png)
 
-* Alarm types: The types of the alarms that triggers the rule. For each newly created alarm one of these types the rule is triggered.
+* Alarm types: The types of the alarm trigger this rule. It will be applied to all new specified alarms.
 
-* Phone number: Target phone number. It is recommended to include mobile country code for all numbers, e.g. "+49" or "0049" for Germany.
+* Phone number: Target phone number. It is recommended to include mobile country code for all numbers, like "+49" or "0049" for Germany.
 
-* Message: The message read by the rule.
+* Message: The text read out by the rule.
 
-* Retries: The number of retries to reach the target phone number if not successful (e.g. phone is busy or call gets rejected).
+* Retries: The number of retries to reach the target phone number if not successful (like phone is busy or call gets rejected).
 
 * Interval: The time interval between the retries (in minutes).
 
 * Acknowledgement: Flag indicating that the receiver of the call has to acknowledge the call (if checked a not acknowledge call will not count as a successful call)
 
-* Acknowledgement text: The acknowledgement message read (will be read after the main message), for example: "Please acknowledge this call by pressing the button 5"
+* Acknowledgement text: The acknowledgement message read (will be read after the main message), for example: "Please acknowledge this call by clicking on 5"
 
-* Acknowledgement number: The number of the button the receiver has to push to acknowledge. If the button will be pushed, the call will be successful and the alarm status will be changed to acknowledged as well.
+* Acknowledgement number: The number of the button the receiver has to push to acknowledge. If the button will be pushed, the call will be successful and the alarm status will be changed to acknowledged. 
 
 ** Troubleshooting **
 
-* Please verify that the alarm was created and not de-duplicated.
+* Check that the alarm was created and not duplicated.
 
 * If device is not in [maintenance](/guides/reference/device-management) mode: in this case no new alarm will be created because of suppression policy.
 
 * If you don't have an alarm mapping rule (see: [Reprioritizing alarms](/guides/users-guide/administration#reprio-alarms)) which change the alarm severity: in this case the alarm may have different severity than expected.
 
-## On alarm escalate it
+## On alarm escalate actions
 
 When alarm is created send e-mail, sms, or/and initiates text-to-speech.
 
 The rule uses the following parameters:
 
-![image alt text](guides/users-guide/escalatealarm1.png)
+![image alt text](/guides/users-guide/escalatealarm1.png)
 
-* Alarm types: The types of the alarms that triggers the rule. For each newly created alarm one of these types the rule is triggered.
+* Alarm types: The types of the alarm trigger this rule. It will be applied to all new specified alarms.
 
-The rule allows to define the chain of action steps. In order to add step click button "Add step". Form with following parameters will appear:
+The rule defines a chain of action in steps. In order to add steps click the button "Add step". A form with following parameters will appear:
 
-![image alt text](guides/users-guide/escalatealarm2.png)
+![image alt text](/guides/users-guide/escalatealarm2.png)
 
-* Type of action: type of action executed in the step. Possible values are:
+* Type of action: Type of action executed in the step. Possible values are:
 
-	* e-mail (see On alarm send e-mail rule for parameter descriptions)
+	* Send e-mail (see On alarm send e-mail rule for parameter descriptions)
 
-	* sms (see On alarm send SMS rule for parameter descriptions)
+	* Send sms (see On alarm send SMS rule for parameter descriptions)
 
-	* phone (see On alarm initiate text-to-speech call rule for parameter descriptions)
+	* Call phone (see On alarm initiate text-to-speech call rule for parameter descriptions)
 
-* Condition: the condition under which the action is executed. Possible values are:
+* Condition: The condition applied when the rule will be executed. Possible values are:
 
-	* always: Action will be executed unconditionally.
+	* Always: Action will be executed always.
 
-	* always: On step N failed: Action will be executed if N-th step of chain have failed. Only phone steps may fail. The step is marked as failed once all retries have been made without a successful call. This option appears if there is already a phone step configured that can be referred to.
+	* Always: If step N failed: Only phone steps may fail. The step is marked as failed once all retries have been made without a successful call. This option appears if there is already a phone step configured that can be referred to.
 
 ** Troubleshooting **
 
-* Please verify that the alarm was created and not de-duplicated.
+* Please check that the alarm was created and not duplicated.
 
 * If device is not in [maintenance](/guides/reference/device-management) mode: in this case no new alarm will be created because of suppression policy.
 
-* If you don't have an alarm mapping rule (see: [Reprioritizing alarms](/guides/users-guide/administration#reprio-alarms)) which change the alarm severity: in this case the alarm may have different severity than expected.
+* If you don't have an alarm mapping rule (see: [Reprioritizing alarms](/guides/users-guide/administration#reprio-alarms)) which change the alarm severity: In this case the alarm may have different severity than expected.
 
 
 ### Smart Rule Variables
 
 You can use variables in certain rule parameters. When a rule is triggered, the variables are replaced by their actual values. You can use this mechanism to insert device names or alarm text into various outputs (E-mail, SMS, Text-to-Voice).
-You can include any information of the triggering event (e.g. the alarm) and the source device of it.
+You can include any information of the triggering event (like the alarm) and the source device of it.
 
 The following table lists example variables:
 
@@ -1326,11 +1324,11 @@ The following table lists example variables:
   </tr>
   <tr>
     <td nowrap>#{source.c8y_Hardware.serialNumber}</td>
-    <td>Serialnumber of the device.</td>
+    <td>Serial number of the device.</td>
   </tr>
   <tr>
     <td>#{source.c8y_Notes}</td>
-    <td>Notes field of the device.</td>
+    <td>Note field of the device.</td>
   </tr>
   <tr>
     <td>#{status}</td>

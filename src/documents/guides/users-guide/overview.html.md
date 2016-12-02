@@ -69,7 +69,7 @@ To change your password, click on the "User Settings" icon in the application. P
 
 ## <a name="tfalogin"></a>Logging in with Two-Factor Authentication
 
-Two-factor authentication, or TFA as it's commonly abbreviated, adds an extra step to your basic log-in procedure. Without TFA, you enter in your username and password, and then you're done. The password is your single factor of authentication. The second factor is a code send via SMS and it makes your account more secure. If TFA is disabled and you want to enable it, click [here](/guides/users-guide/administration/#tfa) for more info.
+Two-factor authentication (abbreviated TFA), adds an extra step to your login procedure. Without TFA, you enter in your username and password to login. The password is your single factor of authentication. The second factor is a code send via SMS and it makes your account more secure. If TFA is disabled and you want to enable it, click [here](/guides/users-guide/administration/#tfa) for more info.
 
 To login when TFA is enabled, first enter your username and password on the login page and click "Login". 
 
@@ -77,7 +77,7 @@ To login when TFA is enabled, first enter your username and password on the logi
 
 Afterwards, if your credentials are correct, verification code will be sent to your phone number via SMS.
 
-> Note that, to use TFA, a valid phone number is required!
+> Note that, to use TFA, a valid phone number must be stored in the property "Telephone" of the user settings!
 
 ![smscode](/guides/users-guide/smscode.png)
 
@@ -87,7 +87,7 @@ Enter the code that you received and click "Verify". If the code is valid, you w
 
 There are two time outs that you should be aware of:
 
- - Verification code time out. The verification code times out when it's lifetime expires.
+ - Verification code time out. When the verification code times out, request a new one by pressing "Send new code".
  - TFA session time out. When the lifetime of your current session expires, you will have to login again and enter a new verification code.
 
 > Note that, the values of both time outs can be edited in the Administration application. For more info see [here](/guides/users-guide/administration/#tfaflags).

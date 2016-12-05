@@ -662,7 +662,7 @@ Given an array of relays, you can switch relays on or off independently. Only av
 
 ### Widget "Message sending"
 
-Sends a message to a device. The behaviour on the device itself is device dependent. Only available for devices that support this type of operation
+Sends a message to a device. The behavior of the device itself is device dependent. Only available for devices that support this type of operation.
 
 ## <a name="alarms"></a>Working with Alarms
 
@@ -670,11 +670,11 @@ Working with alarms is identical to working with alarms in Device Management. Se
 
 ## <a name="reports"></a>Working with Dashboard Reports
 
-There are two type of reports in the cockpit application. Dashboard reports with which you can keep track of applications, alarms, assets, events and many other widgets. The second type of reports is ["Exporting data with Reports"](#reporting) where you can export specific data to either csv or xlsx files.
+There are two types of a report in the cockpit application. Dashboard reports enable you to track applications, alarms, assets, events and many other widgets. The second type of report is ["Exporting data with Reports"](#reporting) where you can export specific data to either csv or xlsx files.
 
 ### Browsing reports
 
-Dashboard reports are global dashboards that are independent of the asset hierarchy. The navigator shows all reports under the entry "Reports". To show all reports, expand the “Reports” widget.
+Dashboard reports are global dashboard pages, regardless of the asset hierarchy. The navigator displays a "Reports" button. To view all existing reports, expand the Reports menu, and then see all the saved reports.
 
 ### Creating new reports
 
@@ -684,11 +684,11 @@ Fill out the fields "Name" and “Icon” in the dialog and press “Save”.
 
 ![image alt text](/guides/users-guide/image_20.png)
 
-Afterwards widgets can be added to the created report.
+Then widgets can be added to the created report.
 
 ### Deleting reports
 
-To delete a report, press the cogwheel icon and choose Remove report
+To delete a report, press the cogwheel icon and choose "Remove" report
 
 ### Adding widgets to reports
 
@@ -696,17 +696,17 @@ You can add widgets to the report, similar to dashboard widgets.
 
 ### View reports
 
-To view a report, open the "Reports" in the navigator and click on the related report. The report will then be shown.
+To view a report, open the "Reports" in the navigator and click on the related report. The report will show.
 
 ## <a name="reporting"></a>Exporting data with reports
 
-With the "Reporting" feature, you can request csv or xlsx reports for the whole tenant. Additionally you can choose to *Filter* according to specific devices, time ranges or *Fields*. The reports contain information about all specified "Filters" and enabled "Fields". Maximum number of documents that can be exported into a single xlsx file is 1 million. If the number of documents for defined "Filters" exceeds the limit, the resulted document gets only first 1 million of documents.
+With the "Reporting" feature, you can request csv or xlsx reports for the whole tenant. Additionally, you can choose to *Filter* according to specific devices, time ranges or *Fields*. The reports contain information about all specified "Filters" and enabled "Fields". Maximum number of documents that can be exported into a single xlsx file is 1 million. If the number of documents for defined "Filters" exceeds the limit, the resulted document gets only first 1 million of documents.
 
 To work with dashboard reports please refer to [Working with Dashboard Reports](#reports).
 
 To show all reports, expand "Reports" and click on "Reporting".
 
-When a report has been created, you can choose to clone it. To clone reports first navigate to the report's name and then click on "Clone". After the "Clone" button is clicked you will be redirected to a new window where all of the data of the current report will be duplicated. You can apply changes if you wish. To finish press the "Save" button.
+If a report has been created, you can duplicate it. To do so, go to the report configuration for the desired report and click "Duplicate" at the end of its row. A new window will open where all the data in the current report will be duplicated. You can apply changes if you want. To exit, press the "Save" button.
 
 ### Adding reports
 
@@ -726,7 +726,7 @@ Reports can be filtered to particular objects or a time range. To choose the obj
 
 ![Object filter](/guides/users-guide/objectfilter.png)
 
-Additional filters such as "Time Range" can be enabled. You have the option to filter object reports to "Last year", "Last month", "Last week" or simply enter a custom date-hour range. To select time range click on the scroll down menu and choose your desired time period. If you choose to customize the time range two small date fields will appear. Simply select a time range.
+Additional filters such as "Time Range" can be enabled. You have the option to filter object reports to "Last year", "Last month", "Last week" or simply enter a custom date-hour range. To select time range click on the scroll down menu and choose your desired time period. If you choose to customize the time range two small date fields will appear to select a time range.
 
 ![Time range](/guides/users-guide/timerange.png)
 
@@ -734,7 +734,7 @@ To enable filters you will have to click on the checkbox located under "Enabled"
 
 <a name="fields"> **Fields** </a>
 
-In order to easily handle reports, different fields can be selected. For example if you select "Alarms" and "Events" you will filter the reports only to those two fields. Overall there are four fields that you can choose from.
+In order to process reports, different fields can be selected. For example, if you select "Alarms" and "Events" you will filter the reports only to those two fields. Overall there are four fields that you can choose from.
 
 - Alarms
 - Events
@@ -745,13 +745,13 @@ To enable a field simply click on the name of the field.
 
 ![Fields](/guides/users-guide/enabledordisabledfields.png)
 
-When a certain field is enabled, predefined or empty properties can be added. If you choose to add empty properties click on "Add". To enter label or path click on either "Column" or "Path" located in the red row. For example if you enable the "Alarms" field you can type "Severity" in column and path to receive report only for alarm severities.
+When a certain field is enabled, predefined or empty properties can be added. If you choose to add empty properties click on "Add". To enter label or path click on either "Column" or "Path" located in the red row. For example, if you enable the "Alarms" field you can type "Severity" in column and path to receive report only for alarm severities.
 
-If you have one field in Fields section that is not originated from "Add predefined" list, but defined as a custom property, then it is required that at least one property must be set up for exporting for the custom values, so it will appear in the exported excel sheet. As an example if report has 4 Fields defined: time, device name, type and c8y_SpeedMeasurement.speed.value, then the first 3 are predefined properties, and the last one is a custom property. If any measurement for export does not have a custom property c8y_SpeedMeasurement.speed.value, then it will not appear on the excel sheet. 
+If you have one field in Fields section that is not originated from "Add predefined" list but defined as a custom property, then it is required that at least one property must be set up for exporting for the custom values, so it will appear in the exported excel sheet. As an example, if  a report has 4 Fields defined: time, device name, type and c8y_SpeedMeasurement.speed.value, then the first 3 are predefined properties, and the last one is a custom property. If any measurement for export does not have a custom property c8y_SpeedMeasurement.speed.value, then it will not appear on the excel sheet.
 
 If your field is a valid.key.with.dot then refer to it as ['fragment.key.with.dot'] in the path, e.g. ['fragment.key.with.dot'].serie.value
 
-To add predefined properties first click on "Add predefined".
+To add predefined properties click on "Add predefined".
 
 To select predefined properties click on the respective checkbox located under "SHOW". After the desired properties have been selected click on "Select".
 
@@ -759,13 +759,13 @@ To select predefined properties click on the respective checkbox located under "
 
 To search for a specific property efficiently, you can use the search field.
 
-If the "Measurements" field was enabled one can also "Add from datapoint".
+If the "Measurements" field was enabled one can also "Add from data point".
 
 ![Add from datapoint](/guides/users-guide/addfromdatapoint.png)
 
 To choose a data point click on the checkbox. When the selection is completed, click on "Add".
 
-Have in mind that the "Search field" can be used for easier handling. Simply type the desired device's name or value of any property in the "Search field" and press "Submit". This way all matching entries are displayed.
+The "Search field" can also be used for easier handling. Type the desired device's name or value of any property in the "Search field" and click "Submit". All matching entries are displayed.
 
 ![Add datapoint](/guides/users-guide/adddatapoint.png)
 
@@ -785,11 +785,11 @@ Standard time properties of documents (like time or creationTime in alarms) are 
 * to xlsx file in the format: 03/13/2016 00:00:24
 * to csv file in the format: 2016-03-13T00:01:24.000Z
 
-Note that only csv time contains miliseconds and timezone.
+Only csv time contains miliseconds and timezone.
 
 ### Editing reports
 
-To **edit** reports simply click on the name of the report. To apply changes click on the "Save" button.
+To **edit** reports, just click on them and save the changes.
 
 ### Removing reports
 
@@ -815,19 +815,17 @@ When clicking on an entry, a single entry in the data point library can be edite
 
 Cumulocity includes a rule engine to analyze data in real-time and to perform actions based on data. These rules are specified in a scripting language and are managed in the Administration Application.
 
-To create rules easily, the Cockpit Application includes a Smart Rule Builder. Using the Smart Rules builder, rules can be created from templates. These rules are called smart rules. The templates are called smart rule templates.
+To create rules, the Cockpit Application includes a Smart Rule Builder. Using the Smart Rules builder, rules can be created from templates. These rules are called smart rules. The templates are called smart rule templates.
 
 Smart Rules are parameterized. There are two sources for parameters:
 
-**Rule Parameter** are provided by the user when creating a smart rule from its template. Examples are email addresses and alarm texts.
+**Rule Parameter** are provided by the user when creating a smart rule from a template. Examples are email addresses and alarm texts.
 
-**Object Parameter** are stored in the group or device. These parameters can be edited also after the smart rule has been created. Example includes min and max values for thresholds.
+**Object Parameter** are stored in the group or device. These parameters can be edited also after the smart rule was created. An example includes min and max values for thresholds.
 
 ### Creating a Smart Rule
 
 Smart Rules can be created either under "Configuration -> Smart Rules" or under the "Info tab" of a group or a device.
-
-Smart Rules are created as follows:
 
 * Click on "+ Add Smart Rule"
 
@@ -839,13 +837,13 @@ Smart Rules are created as follows:
 
 * Select whether the rule will be enabled or disabled. 
 
-* Press "CREATE".
+* Click "CREATE".
 
 A list of smart rules is shown below. Note that the number of smart rules shown might differ based on your installation.
 
 ![image alt text](/guides/users-guide/image_23.png)
 
-Afterwards, if the rule was set to enabled and was not activated for specific objects, the rule will be active for all devices and groups. See next section on how to deactivate a smart rule for specific objects.
+Afterward, if the rule was set to enabled and was not activated for specific objects, the rule will be active for all devices and groups. See next section on how to deactivate a smart rule for specific objects.
 
 Disabled Smart Rules are not displayed in group menus or device menus to avoid confusion.
 Smart Rules can be instantiated multiple times.
@@ -856,7 +854,7 @@ Smart Rules can be seen under the info tab of a device or group, They must be ac
 
 A single Smart Rule can be activated (switched on) and deactivated (switched off) for a single object (group or device). For example, if a device is generating too many threshold alarms, you can deactivate the rule for this single object. The rule is still active for all other objects.
 
-To de-activate or activate a Smart Rule for a group or device, simply go to the Info tab and click on the button to enable or disable the rule.  
+To deactivate or activate a Smart Rule for a group or device, simply go to the Info tab and click on the button to enable or disable the rule.  
 
 ![Info tab](/guides/users-guide/infotab.png)	
 
@@ -864,7 +862,7 @@ To de-activate or activate a Smart Rule for a group or device, simply go to the 
 
 To edit, clone or remove a specific Smart Rule just click on the cogwheel located to the far right of the Smart Rule and click on the desired option.
 
-For easier debugging there is a direct link from a smart rule to a corresponding event processing module. Click on the cogwheel and then choose "Inspect". 
+For easier debugging, there is a direct link from a smart rule to a corresponding event processing module. Click on the cogwheel and then choose "Inspect". 
 
 ### Example: Defining explicit thresholds
 
@@ -880,19 +878,19 @@ To define a threshold rule follow these steps:
 
 ![image alt text](/guides/users-guide/image_26.png)
 
-* Select "On measurement explicit threshold create alarm"
+* Select "On measurement exceeding threshold create alarm"
 
 * Fill in the rule parameter:
 
 ![image alt text](/guides/users-guide/image_27.png)
 
-* You can fill in the red range minimum and red range maximum value. When the values are between these min and max values, a threshold alarm will be raised.
+* You can fill in the red range minimum and red range maximum value. When the values are outside these values, a threshold alarm will be raised.
 
 * Under "Create Alarm" you can optionally edit the alarm type and the alarm text.
 
 * Under "Activate for target group or devices" you can select the object this rule will be applied to.
 
-* Press "CREATE"
+* Click "CREATE"
 
 After the rule has been created, it is automatically set active and alarms should appear if they arise.
 

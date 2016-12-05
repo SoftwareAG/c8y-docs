@@ -23,7 +23,7 @@ For more information about the cockpit application please refer to the introduct
 
 ## <a name="intro"></a>Introduction
 
-Cumulocity Cockpit can be used in many industrial areas, including:
+The Cumulocity Cockpit can be used in many industrial areas, including:
 
 * Condition monitoring
 
@@ -59,15 +59,15 @@ The main concepts of the Cockpit application are those:
 
 **Asset**: An asset represents a business object like buildings, machines, or cars.
 
-**Asset Hierarchy**: Assets are organised in hierarchies (trees). The nodes of the tree represent groups, and the leaves of the tree represent devices.
+**Asset Hierarchy**: Assets are organized in hierarchies (trees). The nodes of the tree represent groups, and the leaves of the tree represent devices.
 
-**Group**: A group is a way to organise devices and assets in an asset hierarchy. A group can contain one or multiple devices, child devices or other groups.
+**Group**: A group is a way to organize devices and assets in an asset hierarchy. A group can contain one or multiple devices, child devices or other groups.
 
 **Device**: An IoT Device can be either a gateway device, or a device indirectly connected via a gateway (like modbus or KNX device), or a sensor.
 
-**Data Point**: They represent sensor data, like temperature time series. In other parts of Cumulocity they are called measurements. Other terms used can be time series or variable, but they are always sensor produced data.
+**Data Point**: They represent sensor data, like temperature time series. In other parts of Cumulocity they are called measurements. Other terms used are time series or variable. They are always sensor generated data.
 
-**Data Point Properties**: Metadata for a data point, representing additional properties added by the user like label, min/max values, thresholds, or other.
+**Data Point Properties**: Metadata for a data point, representing additional properties added by the user like a label, min/max values, thresholds, or other.
 
 **Dashboard**: A user defined page with individual content from various widgets.
 
@@ -98,8 +98,6 @@ To learn about the following items, please consult "[Introduction](/guides/users
 
 The welcome page opens the first time you log into Cumulocity Cockpit.
 
-Afterwards a page similar to the one below is shown.
-
 ![image alt text](/guides/users-guide/image_0.png)
 
 The welcome page shows the following sections:
@@ -110,21 +108,21 @@ The welcome page shows the following sections:
 
 * A list of available applications
 
-* A list of news based on the Cumulocity twitter channel. Note: This is only be available on tenants hosted by www.cumulocity.com.
+* A list of news based on the Cumulocity twitter channel. Note: This is only available for tenants hosted by www.cumulocity.com.
 
 * A link to different parts of the documentation.
 
 ### Hiding the Welcome page
 
-You can hide the welcome page to not show it as default page when you enter the Cockpit application. To do so, click "Don't show on startup" on the top right.
+To do so, click "Don't show on startup" on the top right.
 
-### Reset Welcome page as default
+### Restore Welcome page as default
 
-To make the welcome page again the default page, select "Welcome" in the navigator on the top left. Afterwards, un-select “Don't show on startup”.
+To restore the welcome page, select "Welcome" in the navigator on the top left. Then deselect “Don't show on startup”.
 
 ## <a name="home"></a>Home Dashboard
 
-When starting the application, and have deselected the "Welcome" page, you see the following dashboard:
+The cockpit start page is a dashboard page:
 
 ![image alt text](/guides/users-guide/image_1.png)
 
@@ -165,7 +163,7 @@ To position a device in the asset hierarchy, you have to "assign" the device to 
 
 Cumulocity supports two types of hierarchies: A device hierarchy and an asset hierarchy. The device hierarchy tracks how devices are linked to Cumulocity from a communications point of view. The asset hierarchy structures the assets that are being remotely supervised and controlled through the M2M devices. For details, please refer to "[Cumulocity's Domain Model](/guides/concepts/domain-model)"
 
-In the Cockpit application, you construct your asset hierarchy by creating group objects and by linking devices into the hierarchy. Typically, the asset hierarchy depends on the kind of IoT device that are used. There are many IoT devices, these two types are very common:
+In the Cockpit application, you construct your asset hierarchy by creating group objects and by linking devices into the hierarchy. The asset hierarchy depends on the IoT devices used. There are many IoT devices, but these two types are very common:
 
 * **Smart devices** are self-contained devices that include sensors, actuators and a communication module. They are typically connected to a single asset. Smart devices are trackers, weather station or general "smart" sensors with built-in communication module.
 
@@ -178,9 +176,9 @@ Below is an example how smart devices are linked into the asset hierarchy:
 ![app](/guides/users-guide/appbar2.png)
 ![image alt text](/guides/users-guide/image_3.png)
 
-Smart devices are represented in Device Management (right side) as top level devices. In the Cockpit application, you can organize smart devices into groups, as the arrows indicate in the above diagram.
+Smart devices are represented in the Device Management (right side) as top-level devices. In the Cockpit application, you can organize smart devices into groups, as the arrows indicate in the above diagram.
 
-For gateway devices, find below an example on how to use the Cockpit application:
+Gateway devices can use the Cockpit application like this.
 
 ![image alt text](/guides/users-guide/image_4.png)
 
@@ -200,10 +198,10 @@ For building management, it is most common that a group of sensors inside a buil
 
 The navigator shows a hierarchy of assets under "GROUPS" (See screenshot below):
 
-* On the top, top level groups are shown.
+* At the top, top level groups are shown.
 
 * When expanding a group, all its children are shown.
-Children may include other groups or devices assigned to the group.
+Children can include other groups or devices assigned to the group.
 Children are also shown in the tab "Sub-assets".
 
 ![image alt text](/guides/users-guide/image_5.png)
@@ -237,7 +235,7 @@ To add a new top-level group, click on the "+" in the top of the application and
 
 This will create a new group with the selected assigned devices. After clicking "Create group with devices", the group is shown in navigator as top level object.
 
-To add a new group as a children of an existing asset, click the "+ Add Group" in the “Sub-assets” tab.
+To add a new group as children of an existing asset, click the "+ Add Group" in the “Sub-assets” tab.
 
 ![image alt text](/guides/users-guide/image_8.png)
 
@@ -245,7 +243,7 @@ To add a new group as a children of an existing asset, click the "+ Add Group" i
 
 Before adding a device to the asset hierarchy, it must be connected to Cumulocity. Connect devices to the platform using the Device Management application. Please refer to "[Connecting Devices](/guides/users-guide/device-management#device-registration)" in the Device Management user guide.
 
-To assign newly connected devices into the asset hierarchy, select the group where the device should appear, click on "sub assets" and click the “+ Assign Device” button.
+To assign newly connected devices into the asset hierarchy, select the group where the device should appear, click on "sub-assets" and click the “+ Assign Device” button.
 
 In the following dialog, search for devices and select the devices (or sub-devices) that should be assigned.
 
@@ -253,13 +251,13 @@ In the following dialog, search for devices and select the devices (or sub-devic
 
 ### Delete Groups
 
-You can delete a group by hover over the group in the "Sub-assets" tab. You will see a red [X], which you can click to delete it.
+You can delete a group by hover over the group in the "Sub-assets" tab. You will see a red [X], which you can click to delete the group.
 
 ### Unassigning Devices
 
 To un-assign a device from a group, select the group in the navigator. Then hover over the device in the "Sub-assets" tab and click the red [X] button.
 
-Note that un-assigning a device does not remove the device, sub-devices or any associated data. The device is just removed from its location in the asset hierarchy. It can be assigned afterwards to other groups again.
+Un-assigning a device does not remove the device, sub-devices or any associated data. The device is only removed from its location in the asset hierarchy. It can be assigned afterward to other groups again.
 
 ### Editing Groups
 
@@ -273,7 +271,7 @@ Data points (measurements or sensor data) can be visualised inside the Cockpit i
 
 * Navigate to a specific asset and click on the tab "Data Explorer". You have access to all data points of the assets and sub-assets.
 
-* Adding data points related widgets to the dashboard. Here you can view pre-defined reports easily.
+* Adding data points related widgets to a dashboard to view pre-defined reports.
 
 To visualise data points, follow these steps:
 
@@ -291,13 +289,13 @@ To visualise data points, follow these steps:
 
 The data explorer and dashboards are closely related:
 
-* When sending a data explorer configuration as widget to a dashboard, you can select the dashboard to which the new widget will be saved.
+* When sending a data explorer configuration as a widget to a dashboard, you can select the dashboard where the new widget will be saved.
 
 * When clicking on the configuration icon of a "Data points graph" widget, you are taken to a dialog similar to the data explorer, and here you can configure the widget.
 
 ### Opening the data explorer
 
-When clicking on the tab "Data explorer", the data explorer opens.
+When clicking on the tab "Data explorer", it will open.
 
 It is pre-filled with available data points of the object (group or device). The first 5 data points are shown by default.
 
@@ -363,7 +361,7 @@ The following properties are available for data points:
 
 ### Browsing in the data explorer
 
-To navigate in the data explorer using gestures and/or mouse:
+To navigate the data explorer :
 
 * Moving time period: Move to the x-axis and drag it to the left or right.
 
@@ -371,7 +369,7 @@ To navigate in the data explorer using gestures and/or mouse:
 
 * Double click, to finish editing time range
 
-### Working with multiple Y-Axis
+### Working with the Y-Axis
 
 In the data explorer, you can configure a column called "y-axis" with the following values:
 
@@ -387,11 +385,11 @@ Each data point is shown on its own y-axis, unless the following condition is me
 
 * Two data points having the same minimum and the same maximum value share a common y-axis.
 
-In this case, both data points are shown with a single y-axis. Additionally the y-axis only shows the unit (or multiple units, in case they are different). The label is not shown.
+In this case, both data points are shown with a single y-axis. Additionally, the y-axis only shows the unit (or multiple units, in case they are different). The label is not shown.
 
 ### Creating widgets from the data explorer
 
-Use the menu and select "Send as widget to dashboard".
+Use the menu and select "Send as a widget to a dashboard".
 
 This will show a modal dialog with all dashboards of the current object. Move to the relevant dashboard and press "Select" to create a new widget in the selected dashboard.
 
@@ -399,30 +397,30 @@ This will show a modal dialog with all dashboards of the current object. Move to
 
 ### Exporting Measurement data to csv or xlsx files
 
-With Cumulocity, users have the option to download measurement data in csv or xlsx files. The exported measurement data is divided into six columns:
+Users have the option to download measurement data as csv or xlsx files. The exported data is divided into six columns:
 
  - Time - Date and time when the specific measurement was taken
  - Source of the measurement
  - Device name - Name of the device you are using
  - Fragment series - (e.g. c8y_SpeedMeasurement)
  - Value - Simply the value of the measurement
- - Unit - The unit used for the particular measurement (like "C", "km/h", "sec"...)
+ - Unit - The unit used for a particular measurement (like "C", "km/h", "sec"...)
 
-To download measurement data in either csv or xlsx first navigate to "Data Explorer", select your desired time range and then click on the small wheel button located at the top-right.
+To download measurement data in either csv or xlsx first navigate to "Data Explorer", select your desired time range and then click on the small cogwheel button located at the top-right.
 
 ![Export measurement data](/guides/users-guide/exportmeasuredata.png)
 
 Choose whether to download CSV or Excel(XLSX)
 
-"Generating Report" window will appear. The files will load depending on how many data points you have added to the "Data Explorer". Once the loading has been completed click on the "Download" button.
+A"Generating Report" window will appear. The files will load depending on how many data points you have added to the "Data Explorer". Once the loading has been completed click on the "Download" button.
 
 ## <a name="dashboards"></a>Working with Dashboards
 
-Dashboards provides you with a customized visualisation of your data with a set of widgets. Widgets can display maps, images, graphs, tables and other graphic representations of data. Cumulocity comes with a number of pre-provided widgets, see section "[Widget Package](#widget-package)" for details. You can develop also your own widgets and add them to your Cumulocity account. See the [Web developer's guide](/guides/web/).
+Dashboards provide you with a customized visualisation of your data with a set of widgets. Widgets can display maps, images, graphs, tables and other graphic representations of data. Cumulocity comes with a number of preset widgets, see section "[Widget Package](#widget-package)" for details. You can develop also your own widgets and add them to your Cumulocity account. See the [Web developer's guide](/guides/web/).
 
-### Creating a new Dashboards
+### Creating new Dashboards
 
-To create a dashboard, navigate to an object in the asset hierarchy. Afterwards click on the cogwheel icon at the top right. Select "Create dashboard". This will open a dialog in which you enter
+To create a dashboard, navigate to an object in the asset hierarchy. Afterward, click on the cogwheel icon at the top right. Select "Create dashboard". This will open a dialog:
 
 * The name of the dashboard, which will show in the menu.
 
@@ -442,13 +440,13 @@ Click "Save" to create and open the dashboard. While there are no widgets on the
 
 You can create one dashboard that will appear for all identical devices. To do so, create a new dashboard as described above. Before clicking "Save", select the option "Apply dashboard to all devices of type _type_". The text "_type_" is replaced with the type of the device that is currently selected.
 
-Afterwards the dashboard should appear for all identical devices. Changes made to a dashboard are automatically applied to all dashboards.
+Then this dashboard should appear for all identical devices. Changes made to this dashboard are automatically applied to all dashboards.
 
-> You can only add widgets and data to the dashboard for the device itself. It is not possible to add data from children, because the structure of the children might be different from device to device.
+> You can only add widgets and data to the dashboard for the device itself. It is not possible to add data from child devices because the structure of these devices might be different from device to device.
 
 ### Adding a Widget to a Dashboard
 
-To add a widget to a dashboard, ensure that the dashboard is visible. Afterwards click on the cogwheel icon at the top right. Select "Add widget to dashboard". This will open a dialog with a selection of widgets you can add to the dashboard.
+To add a widget to a dashboard, ensure that the dashboard is visible. Afterward, click on the cogwheel icon at the top right. Select "Add a widget to a dashboard". This will open a dialog with a selection of widgets you can add to the dashboard.
 
 ![image alt text](/guides/users-guide/image_15.png)
 
@@ -462,23 +460,23 @@ You can rearrange the widgets on the dashboard. By dragging and dropping the hea
 
 ![image alt text](/guides/users-guide/image_16.png)
 
-On user devices like a laptop these icons only appear when you hover over the widget header.
+On a laptop, these icons only appear when you hover over the widget header.
 
 Editing on touch devices like smartphones or tablets do not support all functions. To show the widget icons on touch devices, please hover over the widget header.
 
 ### Copying a dashboard
 
-To copy a dashboard from one object to another, use the cogwheel on the top right and select "Copy dashboard". Afterwards select the object where the dashboard should be applied to and click "Paste Dashboard" to insert the dashboard.
+To copy a dashboard from one object to another, use the cogwheel on the top right and select "Copy dashboard". Afterward select the object where the dashboard should be applied to and click "Paste Dashboard" to insert the dashboard.
 
 An alternative way to copy a dashboard is to use the "[Dashboard per type](#creating-a-dashboard-for-all-devices-of-the-same-type)" approach.  With the "Dashboard per type" approach you copy the dashboard from one object to **all** identical objects.
 
 ### Removing a Dashboard
 
-To add a widget to a dashboard, ensure that the dashboard is visible.The same applies when removing it. Click on the cogwheel icon at the top right. Select "Remove dashboard" to remove a dashbord.
+To add a widget to a dashboard, ensure the dashboard is visible.The same applies when removing it. Click on the cogwheel icon at the top right. Select "Remove dashboard" to remove a dashbord.
 
 ## <a name="widget"></a>Widget Package
 
-Cumulocity Cockpit includes predefined widget types. Each widget type provides different parameters to configure the widget and the data shown by the widget. The following section describes each available widget type and the configuration properties.
+The Cockpit includes preset widget types. Each widget type provides different parameters to configure and different data displayed. The following section describes each available widget type and the configuration properties.
 
 ### Widget "Asset Properties"
 A user-defined list of attributes of the current object is displayed. The current object can be a device or the group object.
@@ -535,7 +533,7 @@ Show location of a device or all devices in the group. The map provides the foll
 
 Parameters to configure:
 
-* Target device or group: Select what devices should be shown on the map. If an group is selected, all devices included in the group are visible.
+* Target device or group: Select which devices are shown on the map. If a group is selected, all devices are visible.
 
 Note: If none of the target device(s) has a known location, then the widget show a world map with no icons.
 
@@ -543,9 +541,9 @@ Note: If none of the target device(s) has a known location, then the widget show
 
 Show user-defined content. The content can be formatted using HTML.
 
-Parameter to configure:
+The parameter to configure:
 
-* Target device or group: Select for which object optional HTML expressions should be evaluated. See below for details.
+* Target device or group: Select the object for which optional HTML expressions are evaluated. 
 
 * HTML content:
 
@@ -565,15 +563,15 @@ Variables that can be used inside the HTML content:
 
 * {{device.*fragment*.*property*}}: More general form of the above. You can address any property of any fragment of the device.
 
-Addtitional Information:
+Additional Information:
 
 * "Device" refers to the target device, as selected in the widget configuration parameter.
 
-* *fragment.property* refers to the properties of the respective device. To learn about the available property names, you can use the "Asset property" or “Asset table” widget and click the “+ Add property” link in the widget configuration. This will show a table of supported properties. You can copy and paste the values from the column “Property”. Generated properties of these widgets are not available in the HTML widgets.
+* *fragment.property* refers to the properties of the respective device. To see the available property names, you can use the "Asset property" or “Asset table” widget and click the “+ Add property” link in the widget configuration. This will show a table of supported properties. You can copy and paste the values from the column “Property”. Generated properties of these widgets are not available in the HTML widgets.
 * 
 ### Widget "Asset alarms"
 
-Show all objects who have a critical alarm. There are no additional parameters to configure.
+Show all objects with a critical alarm. There are no additional parameters to configure.
 
 ### Widget "Asset count"
 
@@ -583,7 +581,7 @@ Shows the number of devices online and with alarms. There are no additional para
 
 Show a list of alarms, filter for objects, alarm severity and alarm status.
 
-Parameter to configure:
+Parameters to configure:
 
 * Target device or group: Select groups or devices, optional HTML expressions which should be evaluated.
 
@@ -631,7 +629,7 @@ Parameters to configure:
 
 Example:
 
-* In the following screenshot, five columns are configured. Three property columns "Meter", “Vendor”, and “Owner”, which refer to the properties “name”, type” and “owner”. Additionally there are two actions, one for toggling the maintenance mode, and one to reboot the device.
+* In the following screenshot, five columns are configured. Three property columns "Meter", “Vendor”, and “Owner”, which refer to the properties “name”, type” and “owner”. Additionally, there are two actions, one for toggling the maintenance mode, and one to reboot the device.
 ![image alt text](/guides/users-guide/image_17.png)
 
 * The resulting table is visualised as follows:
@@ -643,16 +641,16 @@ The list of properties can be edited as follows:
 * Add new properties: Click on "+ Add Properties" and select one or more properties. The selected properties will then be added to the end of the columns.<br>
 Note: The property "Active Alarm Status" shows active alarms as icons in the table. If you select this property, please also configure the renderer "Active Alarm Status" in the list of columns.
 
-* Add a new action: Click on "+ Add Action". You can then add the predefined action to toggle the maintenance mode. Or you select “Create Operation” to create a button that will execute a shell command. In the following dialog you can then enter the label for the button and the shell command to be executed.
+* Add a new action: Click on "+ Add Action". You can add the predefined action to toggle the maintenance mode. Or you select “Create Operation” to create a button that will execute a shell command. In the following dialog you can then enter the label for the button and the shell command to be executed.
 ![image alt text](/guides/users-guide/image_19.png)
 Note: The dialog shows the predefined shell commands of the first device that supports shell commands. The list is empty if there is no such device. For more details please refer to [shell commands](http://www.cumulocity.com/guides/users-guide/device-management/#shell).<br>
-Note: You can also enter the JSON format of the operation that should be send to the device. For details, please contact the device vendor for supported operations.
+You can also enter the JSON format for the operation that will be sent to the device. For details, please contact the device vendor for supported operations.
 
 * Edit column header: To edit the header of the column, click on the column "Label" and edit the label.
 
 * Arrange columns: You can rearrange the columns by dragging and dropping them using the handle before the column "Label".
 
-* Remove properties: Click on the red icon in the end of a row to remove the column.
+* Remove properties: Click on the red icon at the end of a row to remove the column.
 
 ### Widget "Relay control"
 
@@ -749,7 +747,7 @@ To enable a field simply click on the name of the field.
 
 When a certain field is enabled, predefined or empty properties can be added. If you choose to add empty properties click on "Add". To enter label or path click on either "Column" or "Path" located in the red row. For example if you enable the "Alarms" field you can type "Severity" in column and path to receive report only for alarm severities.
 
-==If you have one field in Fields section that is not picked from "Add predefined" list, but defined as a custom property, then it is required that at least one property has to exist in the exported object to have it included in the excel. As an example if report has 4 Fields defined: time, device name, type and c8y_SpeedMeasurement.speed.value, then the first 3 are predefined properties, and the last one is a custom property. If measurement being exported does not have such custom property c8y_SpeedMeasurement.speed.value, then it is not included into the excel.==
+If you have one field in Fields section that is not originated from "Add predefined" list, but defined as a custom property, then it is required that at least one property must be set up for exporting for the custom values, so it will appear in the exported excel sheet. As an example if report has 4 Fields defined: time, device name, type and c8y_SpeedMeasurement.speed.value, then the first 3 are predefined properties, and the last one is a custom property. If any measurement for export does not have a custom property c8y_SpeedMeasurement.speed.value, then it will not appear on the excel sheet. 
 
 If your field is a valid.key.with.dot then refer to it as ['fragment.key.with.dot'] in the path, e.g. ['fragment.key.with.dot'].serie.value
 
@@ -888,11 +886,11 @@ To define a threshold rule follow these steps:
 
 ![image alt text](/guides/users-guide/image_27.png)
 
-* ==You can fill in the red range minimum and red range maximum value. When the values are between these values, a threshold alarm will be raised.==
+* You can fill in the red range minimum and red range maximum value. When the values are between these min and max values, a threshold alarm will be raised.
 
 * Under "Create Alarm" you can optionally edit the alarm type and the alarm text.
 
-* Under "Activate for target group or devices" you can select for which objects the rule is activated.
+* Under "Activate for target group or devices" you can select the object this rule will be applied to.
 
 * Press "CREATE"
 

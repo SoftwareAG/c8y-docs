@@ -9,7 +9,7 @@ This section will list the implementation details for the MQTT protocol. The Cum
 
 ## Connecting via MQTT
 
-Cumulocity supports MQTT both via TCP and WebSockets.
+Cumulocity supports MQTT both via TCP and WebSockets. As the URL you can use mqtt.cumulocity.com.
 
 Available ports:
 

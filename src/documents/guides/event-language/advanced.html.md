@@ -176,7 +176,7 @@ This will trigger if there is an EventCreated and within 10 minutes there is no 
 
 ### Outputs
 
-Outputs give you the possibility to not take every event on a stream into account and to directly control whe
+Outputs give you the possibility to not take every event on a stream into account and to directly control when a statement should output its result.
 If you have a measurement that is taken every 10 seconds and you want to do calculations with it maybe it is not necessary to calculate with all measurements but only a subset.
 
     // will output the last measurement arrived every 1 minute

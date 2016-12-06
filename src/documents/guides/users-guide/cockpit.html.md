@@ -896,8 +896,8 @@ After the rule has been created, it is automatically set active and alarms shoul
 
 ### Chain rule execution
 
-Smart Rules can create new data item on the platform. For example, the threshold rule creates new alarms.
-Those new data can be handled further by selected smart rules. For example, by a "On alarm send e-mail" rule.
+Smart Rules can create a new data item on the platform. For example, the threshold rule creates new alarms.
+Those new data can be handled further by selected smart rules. For example, by an "On alarm send e-mail" rule.
 Using this mechanism, it is possible to create a chain of smart rules. If you create a rule chain you must have an idea how much data will be created to avoid overload or excessive amount of data.
 
 ## <a name="business"></a>Business Rule Package
@@ -924,7 +924,7 @@ The rule uses the following parameters:
 
 ![image alt text](/guides/users-guide/image_28.png)
 
-* Fragment: Name of the measurement fragment. The incoming measurement must have exactly the same fragment name as configured. Note: When creating a rule from the data explorer, the fragment is already filled in.
+* Fragment: Name of the measurement fragment. The incoming measurement must have exactly the same fragment name as configured. When creating a rule from the data explorer, the fragment data is already filled in.
 
 * Series: Similar to fragment, just for the series.
 
@@ -934,21 +934,22 @@ The rule uses the following parameters:
 
 * Text: Text of the alarm that will be raised.  
 
-Detailed description of steps that this smart rule performs for each incoming measurement value:
+A detailed description of steps that this smart rule performs for each incoming measurement value:
 
 * Check, if the measurement includes data for the fragment and series (rule parameter).
 
 * Check, if the rule is activated for the source object.
 
-* Collect the red and yellow range from either:
+* The data of the red and yellow range is collected from either:
 
-  - the source object (of the measurement)
+- the source object (the measurement)
 
-  - the data point library (rule parameter).
+- the data point library (control parameter).
 
-If there are no red/yellow ranges defined in either of them, then no alarms are generated.
+If no red / yellow ranges are defined, no alarms are generated.
 
-_Note_: Range values defined in the source object have a higher priority than the ones defined in the data point library. You can also just override a single value (e.g. yellow range max) by setting it in the source object. The other values will then be taken by from the data point library.
+
+_Note_: Range values defined in the source object have a higher priority than the ones defined in the data point library. You can also just overwrite a single value (e.g. yellow range max) by setting it in the source object. The other values will then be taken by from the data point library.
 
  - If the incoming value is inside the yellow range.
 
@@ -976,7 +977,7 @@ _Note_: Range values defined in the source object have a higher priority than th
 
 * Clear the alarm.
 
-** Troubleshooting **
+##Troubleshooting
 
 * Please verify that the alarm was created and not duplicated from somewhere.
 
@@ -984,7 +985,7 @@ _Note_: Range values defined in the source object have a higher priority than th
 
 * If you don't have an alarm mapping rule (see: [Reprioritizing alarms](/guides/users-guide/administration#reprio-alarms)) which change the alarm severity: in this case the alarm may have different severity than expected.
 
-* If alarm have not been already cleared by one of the next measurements with value in GREEN range.
+* Check if an alarm was already cleared by the next scheduled measurements with resulting value in a green range.
 
 * Please note that if you clear an alarm, you state that the alarm is resolved. A new alarm is not raised unless the device changes its state and crosses the thresholds again.
 
@@ -994,12 +995,12 @@ When the measurement value enters or leaves the RED range, a CRITICAL alarm is g
 
 The severity of alarm is determined by:
 
-* If measurement value goes to RED range then severity is CRITICAL
+* If the measurement value moves into RED range then severity is CRITICAL
 
-* If measurement value goes to GREEN range the alarm is cleared
+* If the measurement value moves into GREEN range the alarm is cleared
 
 
-This rule is similar to the above threshold rule. However, in this rule the RED threshold value is provided explicitly. The other threshold rule above extracts the thresholds values from the device or data point library
+This rule is similar to the above threshold rule. However, in this rule the RED threshold value is provided explicitly. The other threshold rule above extracts the thresholds values from the device or data point library.
 
 The rule uses the following parameters:![image alt text](/guides/users-guide/image_37.png)
 
@@ -1013,14 +1014,14 @@ The rule uses the following parameters:![image alt text](/guides/users-guide/ima
 
 * Text: Text of the alarm that will be raised.
 
-**Troubleshooting **
+##Troubleshooting
 
 * Please check the same steps as for the threshold rule above.
 
 
 ### On alarm send E-mail
 
-When an alarm is created, an email is send.
+When an alarm is created, an email is sent.
 
 The rule uses the following parameters:
 
@@ -1039,20 +1040,16 @@ The rule uses the following parameters:
 * Subject: Subject of e-mail. You can use a variable of the form #{name}. Supported variables are listed under "Smart Rule Variables" below.
 
 * Text: Text of the e-mail. You can use a variable of the form #{name}. Supported variables are listed under "Smart Rule Variables" below.
-* 
-**Troubleshooting**
 
-* Please verify that the alarm was created and not duplicated.
+##Troubleshooting
 
-* If device is not in [maintenance](/guides/reference/device-management) mode: in this case no new alarm will be created because of suppression policy.
-
-* If you don't have an alarm mapping rule (see: [Reprioritizing alarms](/guides/users-guide/administration#reprio-alarms)) which change the alarm severity: in this case the alarm may have different severity than expected.
+* Please check the same steps as for the threshold rule above.
 
 * Please check your spam folder.
 
 ### On alarm send SMS
 
-When an alarm is created, a SMS is send.
+When an alarm is created, an SMS is sent.
 
 This rule is only available if your tenant has a configured SMS provider.
 
@@ -1066,15 +1063,11 @@ The rule uses the following parameters:
 
 * Message: Text of SMS with max. 160 characters. You can use variable of the form #{name}. Supported variables are listed under "Smart Rule Variables" below.
 
-** Troubleshooting **
+##Troubleshooting 
 
-* Please verify that the alarm was created and not duplicated.
+* Please check the same steps as for the threshold rule above.
 
-* If device is not in [maintenance](/guides/reference/device-management) mode: in this case no new alarm will be created because of suppression policy.
-
-* If you don't have an alarm mapping rule (see: [Reprioritizing alarms](/guides/users-guide/administration#reprio-alarms)) which change the alarm severity: in this case the alarm may have different severity than expected.
-
-* If you use variables keep in mind that the limit of 160 is applied after filling the variables. If after filling the variables the text is bigger than 160 characters the SMS will not be send,
+* If you use a variable there is a limit of 160 applied as a total count. If after applying the variables the text count more than 160 characters the SMS will not be sent.
 
 ### On alarm duration increase severity
 
@@ -1104,7 +1097,7 @@ The rule uses the following parameters:
 
 ![image alt text](/guides/users-guide/image_32.png)
 
-* Geofence: Define a polygon that defines the border of an area. Click on "Edit geofence", navigate to your area (like using the “Search address” field), and define a polygon by clicking once for each point of the border. ![image alt text](/guides/users-guide/image_33.png)
+* Geofence: Define a polygon that defines the border of an area. Click on "Edit geofence", navigate to your area (like using the “Search address” field), and define a polygon by clicking once on each point of the border. ![image alt text](/guides/users-guide/image_33.png)
 
 * Type: Type of the alarm that will be raised.
 
@@ -1112,15 +1105,15 @@ The rule uses the following parameters:
 
 * Severity: Severity of the alarm that will be raised.
 
-* TriggerAlarmOn: Defining on which geofence interaction the alarm should be created. Values: "leaving", "entering" or "both". Not setting the value results in "leaving".
+* TriggerAlarmOn: Definition which geofence interaction creates the alarm. Values: "leaving", "entering" or "both". "leaving" is set as default value.
 
-_Note:_ The rule will trigger on crossing the geofence border. Therefore if your device stays outside or inside the geofence when creating the rule no alarm will be generated until the device crosses the geofence border for the first time.
+No alarm will be generated until the device crosses the geofence border for the first time.
 
-** Troubleshooting **
+##Troubleshooting 
 
 * Please make sure the device was inside the geofence at least once after creating/activating the rule
 
-* If device is not in [maintenance](/guides/reference/device-management) mode: in this case no new alarm will be created because of suppression policy.
+* If the device is not in [maintenance](/guides/reference/device-management) mode: No new alarm will be created because of suppression policy.
 
 * If you don't have an alarm mapping rule (see: [Reprioritizing alarms](/guides/users-guide/administration#reprio-alarms)) which change the alarm severity: in this case the alarm may have different severity than expected.
 
@@ -1132,18 +1125,18 @@ The rule uses the following parameters:
 
 ![image alt text](/guides/users-guide/image_34.png)
 
-* Fragment: Name of the measurement fragment. The incoming measurement must have exactly the same fragment name as configured. _Note:_ When creating a rule from the data explorer, the fragment is already filled in.
+* Fragment: Name of the measurement fragment. The incoming measurement must have exactly the same fragment name as configured. When creating a rule from the data explorer, the fragment is already filled in.
 
 * Series: Similar to fragment, just for the series.
 
-* Duration: Time period at which consumption values should be calculated. _Note:_ This will only define how often the consumption is calculated not the unit of the consumption measurement.
+* Duration: Time period at which consumption values should be calculated.This will only define how often the consumption is calculated not the unit of the consumption measurement.
 
 * Consumption Fragment: Name of the measurement fragment that should be generated.
 
 * Consumption Series: Name of the measurement series that should be generated.
 
 The unit of the consumption measurement is always per hour (like if the measurements are in "kg" the consumption will be in "kg/h").
-The rule will take the last two measurement every configured duration.
+The rule will take the last two measurements for a specified time.
 It will then calculate the difference in value and time and calculate the consumption per hour.
 
 Example:
@@ -1181,9 +1174,9 @@ The rule uses the following parameters:
 
 ![image alt text](/guides/users-guide/image_36.png)
 
-* Alarm types: The types of the alarm trigger the rule. For each new specified alarm this rule is triggered.
+* Alarm types: The types of the alarm trigger the rule. For each new specified alarm, this rule is triggered.
 
-* Operation: The operation that will be send. The operation is provided as JSON description. Some standard operations can be selected below the operations field. To use a standard operation, select one, and press the arrow button on the right. This will insert the JSON of the selected operation.
+* Operation: The operation that will be sent. The operation is provided as JSON description. Some standard operations can be selected below the operations field. To use a standard operation, select one, and press the arrow button on the right. This will insert the JSON of the selected operation.
 
 
 ## On geofence crossing send e-mail
@@ -1196,7 +1189,7 @@ The rule uses the following parameters:
 
 * Geofence: Define a polygon in the way similar to the rule "On geofence crossing create alarm".
 
-* Send to: Email addresses for sending the e-mail to. Multiple addresses can be seperated by a comma (",", do not use a space!).
+* Send to: Email addresses for sending the e-mail to. Multiple addresses can be separated by a comma (",", do not use a space!).
 
 * Send CC to: As previously, just for e-mail "CC" field.
 
@@ -1204,9 +1197,9 @@ The rule uses the following parameters:
 
 * Reply to: Address that must be used to reply to the message.
 
-* Subject: Subject of e-mail. You can use variable of the form #{name}. Supported variables are listed under "Smart Rule Variables" below.
+* Subject: Subject of e-mail. You can use a variable of the form #{name}. Supported variables are listed under "Smart Rule Variables" below.
 
-* Text: Text of e-mail. You can use variable of the form #{name}. Supported variables are listed under "Smart Rule Variables" below.
+* Text: Text of e-mail. You can use a variable of the form #{name}. Supported variables are listed under "Smart Rule Variables" below.
 
 _Note:_ Like the "On geofence crossing create alarm" this rule triggers on crossing the border of the geofence. In order to send out the e-mail the device had to be inside the geofence at least once after creating the rule.
 
@@ -1219,7 +1212,7 @@ _Note:_ Like the "On geofence crossing create alarm" this rule triggers on cross
 
 ## On alarm initiate text-to-speech call
 
-When alarm is created initiates text-to-speach call.
+When an alarm is created it initiates a text-to-speach call.
 
 The rule uses the following parameters:
 
@@ -1231,21 +1224,21 @@ The rule uses the following parameters:
 
 * Message: The text read out by the rule.
 
-* Retries: The number of retries to reach the target phone number if not successful (like phone is busy or call gets rejected).
+* Retries: The number of retries to reach the target phone number if not successful (like the phone is busy or call gets rejected).
 
 * Interval: The time interval between the retries (in minutes).
 
-* Acknowledgement: Flag indicating that the receiver of the call has to acknowledge the call (if checked a not acknowledge call will not count as a successful call)
+* Acknowledgment: Flag indicating that the receiver of the call has to acknowledge the call (if checked a not acknowledge call will not count as a successful call)
 
-* Acknowledgement text: The acknowledgement message read (will be read after the main message), for example: "Please acknowledge this call by clicking on 5"
+* Acknowledgment text: The acknowledgment message (will be read after the main message), for example: "Please acknowledge this call by clicking on 5"
 
-* Acknowledgement number: The number of the button the receiver has to push to acknowledge. If the button will be pushed, the call will be successful and the alarm status will be changed to acknowledged. 
+* Acknowledgment number: The number of the button the receiver has to push to acknowledge. If the button will be pushed, the call will be successful and the alarm status will be changed to acknowledged. 
 
-** Troubleshooting **
+###Troubleshooting
 
 * Check that the alarm was created and not duplicated.
 
-* If device is not in [maintenance](/guides/reference/device-management) mode: in this case no new alarm will be created because of suppression policy.
+* If the device is not in [maintenance](/guides/reference/device-management) mode: No new alarm will be created because of suppression policy.
 
 * If you don't have an alarm mapping rule (see: [Reprioritizing alarms](/guides/users-guide/administration#reprio-alarms)) which change the alarm severity: in this case the alarm may have different severity than expected.
 
@@ -1353,4 +1346,4 @@ The following table lists example variables:
 </table>
 
 
-**Note: **In case the variable does not exist or is misspelled, the name of the variable is replaced as content.** **
+**Note:In case the variable does not exist or is misspelled, the generated content is displayed. **

@@ -17,24 +17,24 @@ The Administration application enables account administrators to manage their us
 * Configure the recipients and trigger of the [warning e-mail](#warningEmail) for maximum storage being reached.
 * Manage [stored files](#files) such as firmware images or log files.
 
-## <a name="home"></a>The home screenshot
+## <a name="home"></a>The Home Screen
 
-The "Home" screen provides navigation links to the main parts of the administration application. It also shows subscription information for your account. The subscription information describes how much capacity you have used and what optional applications you are subscribed to. The capacity section shows:
+The "Home" screen provides navigation links to the main parts of the administration application. It also shows subscription information for your account. The subscription information describes how much capacity you have used and the optional applications you are subscribed to. The capacity section shows:
 
-* API requests: Counted whenever some functionality in Cumulocity is invoked, regardless of whether the functionality is invoked from a device (for example, sending a measurement) or from an application (for example, viewing the list of devices).
+* API requests: It counts whenever some function in Cumulocity is invoked, regardless of whether the function is invoked from a device (for example, sending a measurement) or from an application (for example, viewing the list of devices).
 * Device API requests: Counted only when the API is called from a device (for example, sending a measurement)
-* Storage: The total amount of data stored in your account. This amount can be influenced by [retention policies](#retention) and by the amount and size of [stored files](#files).
-* Storage quota: if the storage limit per device is set, the user is restricted to a [maximum data usage](#storageQuota).
+* Storage: The total amount of data stored in your account. This amount can be changed by [retention policies](#retention) and by the amount and size of [stored files](#files).
+* Storage quota: If the storage limit per device is set, the user is restricted to a [maximum data usage](#storageQuota).
 * Devices: The total number of devices connected to your account. This is the sum of the devices listed in the "[All devices](/guides/users-guide/device-management#viewing-devices)" menu of the Device Management application and their direct and indirect child devices.
 * Users: The sum of all users configured in this account, active and inactive.
 
 "This month" shows the usage information starting with the current month. "Last month" shows the last full month.
 
-<img src="/guides/users-guide/home.png" alt="Home" style="max-width: 60%">
+<img src="/guides/users-guide/home.png" alt="Home" style="max-width: 100%">
 
 ## <a name="users"></a>Managing users
 
-In order to manage users in your tenant account, click on the "Users" menu. New tenants will usually contain two users: The initial administrator user and the "sysadmin" user. The initial administrator user was configured when your account was created. This user cannot be removed, only edited. The "sysadmin" user is a user that the Cumulocity support uses to guide you through your trial phase.
+In order to manage users in your tenant account, click on the "Users" menu. New tenants will usually find two users: The initial administrator user and the "sysadmin" user. The initial administrator user was configured when your account was created. This user cannot be removed, only edited. The "sysadmin" user is a user that the Cumulocity support uses to guide you through your trial phase.
 
 > Note that the sysadmin user may not be present depending on your provider.
 
@@ -49,14 +49,14 @@ To add additional users, click on "Add user".
 
 > If the switch is set to "disabled", the user will not be able to log in.
 
-- Enter first and last name of the user. This is purely for information and will be shown on the top right next to the user symbol when the user logs in.
-- Enter the e-mail address of the user. Note that you need to provide a valid, unique e-mail address to enable users to reset their password.
+- Enter first and last name of the user. This will be shown on the top right next to the user symbol when the user logs in.
+- Enter the e-mail address of the user. You need to provide a valid, unique e-mail address to enable users to reset their password.
 - Enter a telephone number. 
-- If you choose to check "Enable two-factor authentication", the user will be asked to provide a phone number and on login the pin code (which is sent to a phone) will be required for successful authentication.
+- If you choose to check "Enable two-factor authentication", the user will be asked to provide a phone number and on login the pin code (which is sent to a phone) will be required for a successful authentication.
 - If you choose to check "Password reset", the user will have to choose a new password after the next login.
 - If you choose to check "Send password reset link as e-mail", the e-mail message will be sent to provided e-mail address with link to set a password.
 - Enter a password and confirm the password. (See "[Logging in](/guides/users-guide/overview#login)" for more information on password strength.)
-- Add users to relevant [user groups](#user-groups).
+- Add users to [user groups](#user-groups).
 - Assign devices and applications [permissions](#permissions).
 - Click the "Save" button to save all the previous data.
 
@@ -66,7 +66,7 @@ To add additional users, click on "Add user".
 
 ### Editing users
 
-To edit an existing user, just click on the user in the list. All user details other than the username and "Send password reset link as e-mail" checkbox can be modified. To change the password, click on "Change password". Click "Save" after you have finished editing.
+To edit an existing user, just click on the user in the list. All user details other than the username and "Send password reset link as e-mail" checkbox can be modified. To change the password, click on "Change password". Click "Save" after you finished editing.
 
 ### Deactivating or deleting users
 
@@ -78,7 +78,7 @@ Hovering over a user displays the deactivate and delete buttons on the right sid
 
 The Two-factor authentication(TFA) is an extra layer of security that requires not only a username and password, but SMS verification as well. TFA can only be set up by administrators. When TFA is enabled, it is impossible to configure it from the "User settings", it is configurable from the administration UI.
 
-> Note that phone number is required when adding a user and TFA is enabled. When users without a phone number try to login using TFA, the user will be redirected to a window, to enter his/her mobile phone number. Without a login is impossible.
+> Note that a phone number is required when adding a user and TFA is enabled. When users without a phone number try to login using TFA, the user will be redirected to a window, to enter his/her mobile phone number. Without a phone number a login is impossible.
 
 To see whether TFA is enabled for a certain user, go to the "Users" menu and check the TFA status column.
 
@@ -128,13 +128,13 @@ To remove a group, simply hover over the group name and click on the "X" button.
 
 ![Remove Group](/guides/users-guide/removegroup.png)
 
-## <a name="permissions"></a>Managing permissions
+## <a name="permissions"></a>Managing Permissions
 
 Cumulocity distinguishes three types of permissions that are assigned to users and user groups:
 
-* Account-wide permissions ("roles"): These flags enable a user to read or modify all data in your account, like seeing all devices and being able to edit all devices.
-* Device- or device group-specific permissions: These permissions define a granular level access to data in your account, restricted to a group of devices.
-* Application access permissions: These define the applications that the user will see in their application switcher.
+* Account-wide permissions ("roles"): These flags enable a user to read or modify all data in an account, like seeing all devices and being able to edit all devices.
+* Device- or device group-specific permissions: These permissions define a specific level access to data in your account, restricted to a group of devices.
+* Application access permissions: These define the applications that users will see in their application switcher.
 
 From the view point of a user:
 
@@ -144,7 +144,7 @@ From the view point of a user:
 
 ### Assigning account-wide permissions
 
-When you edit a group, a table with "roles" is listed below the group name. These represent permission on the following types of data:
+When you edit a group, a table with "roles" is listed below the group name. They represent permissions within the following types of data:
 
 * Tenant management: View, create, edit or delete subtenants.
 * Tenant statistics: View the usage data for this account, as shown on the home page of the administration application.
@@ -169,7 +169,7 @@ For the various types, the following permissions are available:
 - Read: Read specified data.
 - Admin: Create, modify and delete specified data. (Not including "Read"!)
 
-Not all types of data can be modified ( audit records). For inventory data, there is one additional type of permission: "Create". The "Create" permission enables the user to create devices in the inventory and to fully manage these devices owned by the user. However, the user cannot read or manage devices owned by other users. This is mainly used to limit the permissions available to devices.
+Not all types of data can be modified ( audit records). For inventory data, there is one additional type of permission: "Create". The "Create" permission enables the user to create devices in the inventory and to fully manage these devices owned by the user. The user cannot read or manage devices owned by other users. This is mainly used to limit the permissions available to devices.
 
 To assign permissions click on the relevant checkbox. If you wish to select or clear ALL entries in a particular column, use the buttons at the top:
 
@@ -184,7 +184,7 @@ To assign permissions click on the relevant checkbox. If you wish to select or c
 
 #### Overview
 
-Support users are users in the management tenant area with a  special permissions to login to tenants accounts.
+Support users are users in the management tenant area with a special permission to login to tenants accounts.
 To allow login to tenants, the support user account must have support access rights.
 When a support user logs into a tenant account, the user has the same privileges as a subtenant user.
 This user type is specified on the login page.  
@@ -193,17 +193,17 @@ Support users can login using own passwords and usernames:
 
 > support_user$user
 
-Where "support_user" is the name of the support user obviously, "user" is the name of the user whose set of permissions will be accessed.
+The "support_user" is the name of the support user obviously, "user" is the name of the user whose environment will be accessed.
 
-or, you can use as well:
+Alternatively:
 
 > support_user$
 
-The "support_user" is the name of this user in the management tenant area. In this use case, the support user will access the content of one of the admin users.
+The "support_user" is the name of this user in the management tenant area. In this use case, the support user will access the environment of one of the admin users.
 
 #### Configuration
 
-The support user functionality is enabled by default.
+The support user function is enabled by default.
 If it is disabled by the platform operator, then every user has an "Activate support access" option. It is available in the upper right menu.
 After selecting this option, support users have access to this tenant account for one day.
 
@@ -222,23 +222,24 @@ The screenshot below shows you, how to grant access to the tenant "myTenant".
 
 <img src="/guides/users-guide/support_permission.png" alt="Support permission">
 
-Tenant managed object can be found by type "c8y_Tenant" or name equal to tenant id.
+A tenant managed object can be found by type "c8y_Tenant" or name equal to tenant id.
 
 ### Restricting tenant deletion
 
-Users with tenant management "Admin" permissions can create, update and delete tenants. For example, in order to prevent a user from deleting tenants only create and update permissions should be given. 
+Users with tenant management function and  "Admin" permissions can create, update and delete tenants. To prevent a user from deleting tenants only a "create and update" permission should be granted. 
 
 ![tenant delete restriction](/guides/users-guide/restrict_tenant_deletion.png)
 
 ### <a name="tenant_management_object"></a>Tenant management objects
 
-Tenant management objects are devices in tenant "management" representing existing tenants. Once a new tenant is created, a new tenant management object is also created in the tenant "management" with type "c8y_Tenant" and a name equal to tenant id. This object contains also fragment "customProperties" with "externalReference" and other custom properties of the associated tenant.
+Tenant management objects are devices in tenant "management" representing existing tenants. Once a new tenant is created, a new tenant management object is also created in the tenant "management" with type "c8y_Tenant" and a name equal to tenant ID. This object contains also fragment "customProperties" with "externalReference" and other custom properties of the associated tenant.
 
-Warning: If the tenant management object is accidentally deleted, it can be recovered by updating any property of the associated tenant, however tenant-specific permissions related to the tenant account will be lost.
+Warning: If the tenant management object is accidentally deleted, it can be recovered by updating any property of the associated tenant. Tenant-specific permissions related to the tenant account will be lost.
+
 
 ### <a name="assigning_device_specific_permissions"></a>Assigning device-specific permissions
 
-To assign more granular permissions on device level or device group level, visit the "User permissions" section while editing users, or "Group permissions" section while editing user groups.
+To assign more specific permissions on device level or device group level, go to the "User permissions" section while editing users, or "Group permissions" section while editing user groups.
 
 - Select a managed object (device or group of devices) by typing the ID or the name of the managed object.
 - Select the scope of the permission for the selected managed object. The scope limits the permission to particular types of data for this managed object. Use an asterisk ("*") to grant permission to all types of data of the managed object.
@@ -253,15 +254,15 @@ To assign more granular permissions on device level or device group level, visit
 
 ### Assigning application access permissions
 
-To assign applications to particular users and user groups, visit the "Application access" section of that user or user group. The application access section is not visible, if the user or user group already has access to all applications. The section shows marketplace applications and own applications. Marketplace applications are generally subscribed applications for your account. Own applications are applications that you added to your account, see [below](#applications). Check all applications that should be made available to the user or user group.
+To assign applications to particular users and user groups, go to the "Application access" section of that user or user group. The application access section is not visible if the user or user group already has access to all applications. The section shows marketplace applications and own applications. Marketplace applications are generally subscribed applications for your account. Own applications are applications that you added to your account, see [Applications](#applications). Check all applications that should be made available to the user or user group.
 
 <img src="/guides/users-guide/applicationaccess.png" alt="Application access" style="max-width: 60%">
 
 ## <a name="applications"></a>Managing applications
 
-Besides the available applications, you can also provide own applications in your account by checking the "Own applications" menu. These applications can be "Smartapps" or generic HTML5 applications. “Smartapps” applications are HTML5 applications that can be extended by adding plugins. When deploying plugins, the plugins are deployed into a specific application. For example, a plugin might add a specific widget to the Cockpit dashboard.
+Besides the available applications, you can also provide own applications in your account by checking the "Own applications" menu. These applications can be "Smartapps" or generic HTML5 applications. “Smartapps” applications are HTML5 applications that can be extended by adding plugins. When deploying, the plugins are deployed into a specific application. For example, a plugin might add a specific widget to the Cockpit dashboard.
 
-Plugins can only be added to own applications, because the application itself is modified when adding the plugin. When adding a plugin to subscribed applications, the application must be cloned first into an own application. Afterwards the plugin can be added. This process is supported by the Administration Application wizard.
+Plugins can only be added to own applications because the application itself is modified when adding the plugin. When adding a plugin to subscribed applications, the application must be cloned first into an own application. Afterward the plugin can be added. This process is supported by the Administration Application wizard.
 
 > "Smartapps" insert the plugin into the application. This has changed from the old Smartapps referencing plugins stored in other applications.
 
@@ -279,28 +280,26 @@ To add an application, you can upload a "ZIP file" application.
 - Click on "Upload ZIP file".
 - Either drop the file into the box or simply browse your computer.
 
-### Working with "bitbucked" hosted applications
+### Working with "Bitbucket" hosted applications
 
 Assume that you are developing a web application, using Bitbucket as code repository. In this case, exposing the application through Cumulocity works as follows:
 
 * Click on "Add application".
 * Click on "HTTP(S) proxy".
 * Enter the name of the application, as shown in the application switcher.
-* Enter an application key. The application key is used to identify requests from this application and to
-make it available for subscription.
-* Enter the application path. This path will b	e part of the URL to invoke the application. For example, if
+* Enter an application key. The application key is used to identify requests from this application and to make it available for subscription.
+* Enter the application path. This path will be part of the URL to invoke the application. For example, if
 you use "hello" as application path, the URL of the application will be "/apps/hello".
-* Enter the server URL where your application is hosted. At this URL, there needs to be an index.html file
-that provides the entry point to your application.
+* Enter the server URL where your application is hosted. At this URL, there needs to be an index.html file providing the entry point to your application.
 * Enter a username to access your repository (optional).
 * Enter a password to access your repository (optional).
 * Click "Save".
 
 ![https proxy app](/guides/users-guide/httpsproxy.png)
 
-> Note that, username and password are transmitted using HTTP Basic Authentication.
+> Username and password are transmitted using HTTP Basic Authentication.
 
-> We do not recommend to use bitbucket hosted application anymore, because downtime of bitbucket results into downtime of the application.
+> We do not recommend to use bitbucket hosted applications anymore because a downtime of "Bitbucket" results into a downtime of the applications hosted by them.
 
 ### Working with external applications
 
@@ -322,9 +321,8 @@ In order to clone an application:
 
 ### <a name="creating-smartapp"></a>Adding a smartapp
 
-> Note that this functionality is depreciated and will be removed in future versions of the product.
+> This function is depreciated and will be removed in future versions of the product.
 
-To add a smartapp:
 
 - Click on "Add application".
 - Click on "Create legacy smartapp".
@@ -332,13 +330,13 @@ To add a smartapp:
 - Enter the application path. This path will be part of the URL to invoke the application. For example, if you use "hello" as application path, the URL of the application will be "/apps/hello".
 - Click the "Create" button.
 
-> Please note that these are the old "Smartapps" with the plugins that you wish to add to your application must be selected from a list.
+> These are the old "Smartapps" with the plugins that you wish to add to your application must be selected from a list.
 
 ![Legacy smartapps](/guides/users-guide/smartapps.png)
 
 ### Adding and removing plugins
 
-In order to configure and extend the functionality provided through a smartapp, you can add plugins (as ZIP files) to your applications. To add additional plugins, go to “Own applications”, hover over your desired applications and click on “Add Plugin”. You can then drag the plugin into the box or just pick them from your computer.
+In order to configure and extend the function provided with a smartapp, you can add plugins (as ZIP files) to your applications. To add additional plugins, go to “Own applications”, move the cursor over your desired applications and click on “Add Plugin”. You can drag the plugin into the box or just select them from your computer.
 
 ![Plugins](/guides/users-guide/plugins.png)
 
@@ -364,7 +362,7 @@ To remove a plugin, click on the cogwheel next to the desired plugin and click r
 |Permissions|Device Permission Management Plugin|
 |Data Explorer|Data Point Explorer UI|
 
-> Please note the "UI" in the end of the plugin names.
+> Please note the "UI" at the end of the plugin names.
 
 ### Restoring to an older application version
 
@@ -381,7 +379,7 @@ To edit an application, simply click on its name. Depending on the type of the a
 
 ### Uploading archives
 
-Applications which were created by uploading ZIP files, multiple ZIP file versions can be stored in Cumulocity. Each version is called an archive. You can upload different versions at the same time and switch between these versions. To upload an archive:
+Multiple archive ZIP file versions can be stored in Cumulocity when they were created by uploading ZIP files. Each version is called an archive. You can upload different versions at the same time and switch between these versions. To upload an archive:
 
 - Select the application by clicking on its name.
 - Click on the "Archives" tab.
@@ -416,7 +414,7 @@ Cumulocity provides an option to simulate devices. This way, users can test thei
 
 To add new simulator, click on "Add simulator"
 
-- Enter the simulator name. The name will be used in the simulated devices.
+- Enter a name for the simulator. The name will be used with the simulated devices.
 - Select the number of simulated instances. For example, if you choose two instances, two sets of simulated devices with the selected sensors are created.
 - Select the desired sensors. This will bring up two new fields: "Values" and "Interval". "Values" contains a playlist of numbers separated by semicolons, which will be played in "Interval" seconds. For example, if you use "16.7;18;20" as "Values" and 5 seconds as interval, the first simulated sensor reading will be 16.7. After five seconds, a second value of 18 will be recorded. After another five seconds, 20 will be recorded. After further five seconds, the procedure will start from the first value.
 - Click "Save"
@@ -427,19 +425,19 @@ Please note that the maximum number of simulators is 10.
 
 ### Starting, pausing or removing simulators
 
-Simulators can have two states, running and paused. To start a simulator first hover over its name, then click on the "Run device" button.
+Simulators can have two states, running or paused. To start a simulator first move the cursor over its name, then click on the "Run device" button.
 
 ![Start simulator](/guides/users-guide/startsimulator.png)
 
-To stop a simulator, simply press the "Stop device" button while hovering over the desired simulator name. To delete a simulator, hover over the simulator's name, press the "X" button and confirm the pop-up window.
+To stop a simulator, simply click the "Stop device" button while hovering over the desired simulator name. To delete a simulator, hover over the simulator's name, click the "X" button and confirm the pop-up window.
 
-> Simulators cannot be currently edited. Instead, you will have to add a new one.
+> Simulators cannot be currently edited. You can only add a new one.
 
 ## <a name="tenants"></a>Managing tenants
 
-With subtenants you can 100% separate data from one customer to another customer.
+With the subtenant concept you can separate the data of the individual tenants one hundred percent.
 
-> Background: As tenant administrator, all the data in your tenant is 100% seperated from the data in  other tenants. The data inside your tenant is shared with all account users by default, unless it is restricted by user permissions. 
+> Background: As a tenant administrator, all data in your tenant account is 100% separated from the data of other tenants. The data inside your tenant is shared with all account users by default unless it is restricted by user permissions. 
 
 If you want 100% data safety instead of dealing with user permissions, then use the subtenants. Each subtenant has a seperated data area. All Cumulocity features (e.g. user management, app management, rule management) are available for each subtenant without visibility to other subtenants.
 
@@ -460,14 +458,14 @@ To add a new subtenant, click on "Create Tenant"
 
 > Please note that fields with an asterisk (" * ") are mandatory.
 
-- Enter unique domain/url of the new tenant. This url will be used to access the application (e.g. tenant@cumulocity.com).
+- Enter unique domain/URL of the new tenant. This URL will be used to access the application (e.g. tenant@cumulocity.com).
 - Enter the name of the company.
 - Enter the administrator's e-mail. You must provide a valid e-mail address to enable users to reset their password.
 - Enter username of the administrator for logging in.
 - Enter contact name. This field is optional.
 - Enter contact phone. Again, this field is optional.
 - Choose whether you wish to have the password reset link sent as an e-mail. If you have not selected this option you will have to enter a password and confirm the password. (See "[Logging in](/guides/users-guide/overview#login)" for more information on password strength.)
-- Press the "Save" button.
+- Click the "Save" button.
 
 ![Tenant-creation](/guides/users-guide/createtenant.png)
 
@@ -488,7 +486,7 @@ Hovering over a tenant will bring up the "Suspend" and the "Remove" buttons. The
 The usage statistics menu provides you with information about each subtenant. The statistics show:
 
 - Id: Unique id of the subtenant.
-- External reference: This field is for free usage, for example, you can add a link to the CRM system here or an internal customer number.
+- External reference: This field is for individual usage, for example, you can add a link to the CRM system here or an internal customer number.
 - API requests: Number of API requests, including requests from  devices and applications.
 - Device API requests: Number of API requests from devices
 - Storage (MB): The amount of data stored in your account.
@@ -529,7 +527,7 @@ To modify your module, simply click on the module's name. To remove your module,
 
 ## <a name="reprio-alarms"></a>Reprioritizing alarms
 
-"Alarm mapping" lets you change the severity and text of alarms to adapt them to your business priorities. For example, a loss of the connection to a device may be critical to you, but it is, by default, a "MAJOR" alarm. To change this, add an alarm mapping to change alarms related to connection losses to "CRITICAL".
+"Alarm mapping" enables you to change the severity and text of alarms to adapt them to your business priorities. For example, a loss of the connection to a device may be critical to you, but it is, by default, a "MAJOR" alarm. To change this, add an alarm mapping to change alarms related to connection losses to "CRITICAL".
 
 ![Alarm mapping](/guides/users-guide/alarmmapping.png)
 
@@ -568,11 +566,11 @@ To change password settings, click on "Password". To limit the validity of user 
 
 By default, users can use any password with eight characters or more. If you select "Enforce that all password are "strong" (green)", your users must provide strong passwords as described in "[Logging in](/guides/users-guide/overview#login)".
 
-> Note that "Enforce that all password are green" and the "Password validity limit" can be mandatory and non-editable, if configured by the platform administrator.
+> "Enforce that all password are green" and the "Password validity limit" can be mandatory and non-editable, if configured by the platform administrator.
 
-Strong (green) passwords must have M characters. By default, system restricts users to not use passwords used in history, in other words last N passwords provided by user are remembered by the system and the system restricts users to not use them. The default value for N is 10.
+Strong (green) passwords must have M characters. By default, the system restricts users to not use passwords used in history, in other words, last N passwords provided by a user are remembered by the system and the system restricts users to not use them. The default value for N is 10.
 
-> Note that M and N can be configured by the platform administrator.
+> "M" and "N" can be configured by the platform administrator.
 
 Click "Save" to store the settings.
 
@@ -592,13 +590,13 @@ In the "Server-side agents" menu, the "Send dashboard via e-mail" smart rule can
 
 ### <a name="openIT-credentials"></a>Enter OpenIT credentials
 
-SMS sending is used by several features within the application. It can be used to make login more secure with [two-factors authentication](/guides/users-guide/administration#tfa). An SMS can be sent when an alarm is triggered. SMSes can be used to send instructions to devices. The service provided by [Openit](https://sms.openit.de/main.php) can be used similar. In this section, the user can enter credentials to activate features requiring SMS meassages.
+SMS sending is used by several features within the application. It can be used to make login more secure with [two-factors authentication](/guides/users-guide/administration#tfa). An SMS can be sent when an alarm is triggered. SMSes can be used to send instructions to devices. The service provided by [Openit](https://sms.openit.de/main.php) can be used similar. In this section, the user can enter credentials to activate features requiring SMS messages.
 
 ## <a name="retention"></a>Managing data retention
 
 "Retention rules" gives you control how long data is stored in your account. For example, you want to store measurements for 90 days, but delete alarms already after 10 days. By default, all historical data is deleted after 60 days (This can be edited in system settings).
 
-Retention rules are usually run during the night. When you edit a retention rule, you will not see an immediate effect, for example, in the usage section on the home page of the administration application.
+Retention rules are usually run during the night. When you edit a retention rule, you will not see an immediate effect in the usage section on the home page of the administration application.
 
 ![Add rule](/guides/users-guide/addrules.png)
 
@@ -635,6 +633,11 @@ The storage quota is in place for a tenant when a storage quota per device is se
 
 In case the quota is exceeded, an e-mail is sent to all tenant administrators to warn them that data will be deleted the following night. After 24h, if the quota is still exceeded, all data retention limits are reduced by a fixed percentage. The storage quota per device will be reduced as a result of this rule.
 
-For example, let us assume that a tenant has a storage quota of 10GB. Retention rules are 80 days for measurements, 90 days for all other data.
-- Day 1: In the nightly check, the total storage is calculated at 13GB. An e-mail is sent to all the tenant administrators.
-- Day 2: the total storage is still at 13GB. The system determines that a 15% reduction of the retention rules is sufficient to be under the storage quota. So any measurement older than 68 days (80 days - 15%) and any other data older that 77 days (90 days - 15% results in 76.5 days, rounded to 77 days) is deleted. The total storage is now at 9.8GB.
+> Let us assume that a tenant has a storage quota of 10GB. Retention rules are 80 days for measurements, 90 days for all other data.
+> 
+>
+> - Day 1: In the nightly check, the total storage is calculated at 13GB. An e-mail is sent to all the tenant administrators.
+> 
+> - Day 2: the total storage is still at 13GB. The system determines that a 15% reduction of the retention rules is sufficient to be under the storage quota. So any measurement older than 68 days (80 days - 15%) and any other data older that 77 days (90 days - 15% results in 76.5 days, rounded to 77 days) is deleted. 
+> 
+> The total storage is now at 9.8GB.

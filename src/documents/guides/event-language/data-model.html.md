@@ -26,6 +26,7 @@ Types:
 |ManagedObjectUpdated|MANAGED_OBJECT_UPDATE|
 |ManagedObjectDeleted|MANAGED_OBJECT_DELETE|
 |EventCreated|EVENT_CREATE|
+|EventUpdated|EVENT_UPDATE|
 |EventDeleted|EVENT_DELETE|
 |MeasurementCreated|MEASUREMENT_CREATE|
 |MeasurementDeleted|MEASUREMENT_DELETE|
@@ -226,6 +227,7 @@ Example:
 |Available outputs|
 |:----------------|
 |CreateEvent|
+|UpdateEvent|
 |DeleteEvent|
 
 |Parameter|Data type|Description|Mandatory|
@@ -442,6 +444,7 @@ This stream enables the possibility to send push notifications from Cumulocity v
 |type|String|Push Provider Type. Currently only TELEKOM is possible.|yes|
 |message|String|The body of the push message.|yes|
 |deviceId|String|The ID of the device generating the push message.|yes|
+|customProperties|Map or [ManagedObject](/guides/event-language/data-model#managedobject) or [Event](/guides/event-language/data-model#event) or [Measurement](/guides/event-language/data-model#measurement) or [Operation](/guides/event-language/data-model#operation) or [Alarm](/guides/event-language/data-model#alarm)|Additional information.|yes|
 
 _Note:_
 

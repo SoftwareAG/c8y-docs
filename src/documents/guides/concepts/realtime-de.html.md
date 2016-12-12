@@ -8,7 +8,7 @@ layout: default
 
 Cumulocity ermöglicht Entwicklern und Power-Usern, Echtzeit-IoT-Business-Logik in Cumulocity auf einer hochentwickelten Echtzeit-Verarbeitungsprache zu verarbeiten. Dieser Abschnitt stellt die grundlegenden Konzepte der Echtzeitverarbeitung vor und zeigt, wie Sie Ihre eigene Geschäftsfunktionalität bei Cumulocity entwickeln können.
 
-Mehr Information über die Oberflächen für Automatische Aktualisierung findet man im Referenzhandbuch. ["Cumulocity Event Language"](/guides/reference/cumulocity-event-language) and ["Real-time Statements"](/guides/reference/real-time-statements).
+Mehr Information über die Oberflächen für Automatische Aktualisierung findet man im Referenzhandbuch. ["Cumulocity Ereignis Anweisung"](/guides/reference/cumulocity-event-language) and ["Real-time Statements"](/guides/reference/real-time-statements).
 
 ## Was ist Automatische Aktualisierung in Cumulocity?
 Cumulocity hat eine Echtzeit-Engine die alle Daten aus Geräten oder anderen Datenquellen für die sofortige Verarbeitung von benutzerdefinierten Geschäftsprozessen empfängt. Diese benutzerdefinierten Operationen können Anwendungen auf neue eingehenden Daten aufmerksam machen, neue Operationen starten basierend auf den empfangenen Daten (z. B. das Senden eines Alarms, wenn ein Grenzwert für einen Sensor überschritten wird), Triggeroperationen auf Geräte oder E-Mails senden. Diese Operationslogik ist implementiert in der *Cumulocity Event Language*, einer domänenspezifischen High-Level-Sprache für IoT-Echtzeitdaten.
@@ -40,7 +40,7 @@ Als Beispiel liest die folgende Aussage kontinuierlich neue Temperatursensor-Mes
     from MeasurementCreated e
     where getNumber(e, "c8y_TemperatureMeasurement.T.value") > 100
 
-Hier ist * MeasurementCreated * ein Stream mit einem Ereignis für jede Messung, die im System erzeugt wird. Die Auswahl einer Teilmenge dieser Ereignisse erfolgt mit * where *, ähnlich SQL. * GetNumber () * ist eine Funktion zum Auslesen eines numerischen Wertes aus einem Ereignis. In diesem Beispiel ist "e" das Ereignis "MeasurementCreated" und die Eigenschaft "c8y \ _TemperatureMeasurement". "T.value", ist ein Wert in Grad Celsius eines Temperatursensors (see the [sensor library](/guides/reference/sensor-library)).
+Hier ist * MeasurementCreated * ein Stream mit einem Ereignis für jede Messung, die im System erzeugt wird. Die Auswahl einer Teilmenge dieser Ereignisse erfolgt mit * where *, ähnlich SQL. * GetNumber () * ist eine Funktion zum Auslesen eines numerischen Wertes aus einem Ereignis. In diesem Beispiel ist "e" das Ereignis "MeasurementCreated" und die Eigenschaft "c8y \ _TemperatureMeasurement". "T.value", ist ein Wert in Grad Celsius eines Temperatursensors (see the [Sensor Bibliothek](/guides/reference/sensor-library)).
 
 ## Wie kann ich abgeleitete Daten aus CEL erstellen?
 
@@ -57,7 +57,7 @@ Es gibt spezielle Streams, die vom System bereitgestellt werden, um vordefiniert
     from MeasurementCreated e
     where getNumber(e, "c8y_TemperatureMeasurement.T.value") > 100
 
-Technisch erzeugt diese Aussage ein neues Ereignis "AlarmCreated" jedes Mal, wenn ein Temperatursensor mehr als 100 Grad Celsius liest und in den Ausgangsstrom "CreateAlarm" einspeist. Die Eigenschaftsnamen in der ausgewählten Klausel müssen den Eigenschaften von "AlarmCreated" entsprechen(siehe auch [Cumulocity Event Language reference](/guides/reference/cumulocity-event-language)).
+Technisch erzeugt diese Aussage ein neues Ereignis "AlarmCreated" jedes Mal, wenn ein Temperatursensor mehr als 100 Grad Celsius liest und in den Ausgangsstrom "CreateAlarm" einspeist. Die Eigenschaftsnamen in der ausgewählten Klausel müssen den Eigenschaften von "AlarmCreated" entsprechen(siehe auch [Cumulocity Event Language Referenz](/guides/reference/cumulocity-event-language)).
 
 ## Wie kann ich Geräte mit CEL steuern?
 

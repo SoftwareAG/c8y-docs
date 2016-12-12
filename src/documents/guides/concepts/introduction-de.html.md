@@ -7,7 +7,7 @@ layout: default
 
 ## Übersicht
 
-### Bestimmungsgemäßer Gebrauch
+#### Bestimmungsgemäßer Gebrauch
 
 Cumulocity gibt Ihnen sehr schnelle Kontrolle und Sichtbarkeit von Geräten und Assets, seien sie Häuser, Autos, Maschinen oder andere Geräte, die Sie überwachen und steuern möchten. Cumulocity hat hierzu:
 
@@ -16,9 +16,9 @@ Cumulocity gibt Ihnen sehr schnelle Kontrolle und Sichtbarkeit von Geräten und 
 * Schnelle Anpassung der oben genannten Eigenschaften mit [Cumulocity Event Language](/guides/concepts/realtime) Regelwerken und [Cumulocity applications](/guides/concepts/applications).
 * APIs um existierende Funktionalität auszubauen  oder um Cumulocity mit anderen IT Services wie ERP oder CRM zu vereinen. Cumulocity kann auch ihre HTML5 Anwendungen hosten.
 
-Alle diese Dienste werden über einen Cloud Service zur Verfügung gestellt, mit dem Sie "Internet of Things" (IoT) Lösungen mit Cumulocity fundamental anders als mit massgeschneiderten Entwicklungen und RAD angehen werden. Sie können sofort mit einer grossen Anzahl an bestehender Funktionalität und Lösungen starten und Sie können kostenlos starten. Sie brauchen sich keine Gedanken über IT Infrastruktur zu machen (wie etwa Hosting, Netzwerke, Sicherheit, Kapazität und Backup) und ebenso nicht über IT Management (das alle Software fuer alle beteiligten User installiert wäre). 
+Alle diese Dienste werden über einen Cloud Service zur Verfügung gestellt, mit dem Sie "Internet of Things" (IoT) Lösungen mit Cumulocity fundamental anders als mit massgeschneiderten Entwicklungen und RAD angehen werden. Sie können sofort mit einer grossen Anzahl an bestehender Funktionalität und Lösungen starten und Sie können kostenlos starten. Sie brauchen sich keine Gedanken über IT Infrastruktur zu machen (wie etwa Hosting, Netzwerke, Sicherheit, Kapazität und Backup) und ebenso nicht über IT Management (das alle Software für alle beteiligten User installiert wäre). 
 
-Cumulocity arbeitet mit jeder Netzwerk Architektur, ist aber speziell designed mit mobilen Netzwerken zu arbeiten. Hier nachfolgend geben wir Ihnen eine kurze Übersicht über die verschiedenen Funktionen mit Referenzen und detailierten Beschreibungen.
+Cumulocity arbeitet mit jeder Netzwerk Architektur, ist aber speziell ausgelegt mit mobilen Netzwerken zu arbeiten. Hier nachfolgend geben wir Ihnen eine kurze Übersicht über die verschiedenen Funktionen mit Referenzen und detailierten Beschreibungen.
 ![Solution building](/guides/concepts-guide/solutionde.png)
 
 Terms and Conditions zum Gebrauch von Cumulocity:

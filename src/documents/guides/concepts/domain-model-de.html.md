@@ -107,7 +107,7 @@ Dieser Ansatz ermöglicht auch die Entwicklung von generischen Anwendungskompone
 ### Namenskonventionen bei Fragmenten
 **Fragmente benutzen eine Namenskonvention um Konflikte zwischen verschiedenen Informationsquellen von Frgament Information zu vermeiden. Ähnliches verwendet auch Java, oder andere Programmiersprachen.** 
 
-Im obenstehenden Beispiel, "c8y_Position"ist eine Kombination von "c8y" (Kürzel für "Cumulocity"), einem Unterstrich und "Position". Zusammen gestalten sie ein Standard Fragement Set. Fragment Definitionen finden Sie auch hier [sensor library](/guides/reference/sensor-library) und hier [device management library](/guides/reference/device-management).
+Im obenstehenden Beispiel, "c8y_Position"ist eine Kombination von "c8y" (Kürzel für "Cumulocity"), einem Unterstrich und "Position". Zusammen gestalten sie ein Standard Fragement Set. Fragment Definitionen finden Sie auch hier [Sensor Bibliothek](/guides/reference/sensor-library) und hier [Device Management Bibliothek](/guides/reference/device-management).
 
 
 Cumulocity folgt einem dokumentorientierten Ansatz zur Speicherung von Daten. Alle Eigenschaften eines Objektes können von den Objektdaten selbst abgeleitet werden. Es gibt kein bestimmtes Metadaten Modell, welchem man folgen muss oder welches konfiguriert werden muss. Programme können aber zusätzlich noch Metadaten im Inventar speichern. Eine Verkaufsprogramm kann Metadaten über  slot Konfigurationen von verschiedenen Verkaufsautomaten speichern.
@@ -127,7 +127,7 @@ Dieser Dienst wird von Agenten benutzt  (um externe Identifikatoren zu registrie
 
 Als Beispiel sei angenommen, dass ein intelligenter Zähler fehlerhaft wäre und ein neuer Zähler mit einer anderen Zählernummer und einem Asset-Tag in einem Haushalt installiert werden muss. Der routinemäßige Geschäftsprozess zum Ersetzen fehlerhafter Hardware kann nun nur die Asset-ID und die Zähler-ID aktualisieren, die einem Kunden im Identitätsdienst zugeordnet ist. Danach werden sowohl vorher gesammelte als auch neue Zählerstände auf den richtigen Kunden bezogen.
 
-Weitere Informationen hierzu sind in der Referenz abgelegt. [identity](/guides/reference/identity).
+Weitere Informationen hierzu sind in der Referenz abgelegt. [Identität](/guides/reference/identity).
 
 ## Objekt Hierarchien
 ***Das Stammdaten Model unterstützt zwei Standardhierarchien von Objekten: Eine Kommunikationshierarchie ("Kindgerät") und eine Assethierarchie ("Kindasset").***
@@ -145,7 +145,7 @@ Eine Beispiel Asset Hierarchie für Gebäudemanagement wäre ein Standardkomplex
 ![Example asset hierarchy](/guides/concepts-guide/assethierarchyde.png)
 
 ### "Kindobjekte" in Hierarchien 
-Diese Beispielhierarchien werden unterstützt durch die Inventar Benutzeroberfläche [inventory interface](/guides/reference/inventory) und durch die Bibliothek, die beispielhafte Methoden untergeordnete Objekte zu definieren beinhaltet. Die Hierarchien selber werden mit Anwendungen konstruiert. Die Kommunikationshierarchie wird von Agenten konstruiert, die Asset Hierarchie wird von Anwendungen hinzugefügt.
+Diese Beispielhierarchien werden unterstützt durch die Stammdaten Benutzeroberfläche [Stammdaten Benutzeroberfläche](/guides/reference/inventory) und durch die Bibliothek, die beispielhafte Methoden untergeordnete Objekte zu definieren beinhaltet. Die Hierarchien selber werden mit Anwendungen konstruiert. Die Kommunikationshierarchie wird von Agenten konstruiert, die Asset Hierarchie wird von Anwendungen hinzugefügt.
 
 Die Objekthierarchien müssen nicht notwendigerweise eine Baumstruktur besitzen. Ein Asset kann ein Kindbjekt verschiedener übergeordneter Objekte sein. Damit können Anwendungen verschiedene Nutzergruppen von Objekten (virtuelle Netzwerke) erstellen.  Anwendungen können zusätzlich Fragmente zur Schaffung von alternativen Hierarchien benutzen.
 
@@ -159,7 +159,7 @@ Der Lebenszyklus von Geräten muss richtig behandelt werden, wenn man Agenten ge
 
 ### Arbeiten mit Stammdaten
 
-Weitere Beispiele zum Arbeiten mit Stammdaten befinden sich hier:  [inventory reference](/guides/reference/inventory).
+Weitere Beispiele zum Arbeiten mit Stammdaten befinden sich hier:  [Stammdaten Referenz](/guides/reference/inventory).
 
 ## Ereignisse
 
@@ -245,7 +245,7 @@ Dies ist ein Beispiel für einen Alarm, der geklärt wurde:
 	...
 }</code></pre>
 
-Mehr Beispiele hier:  [events](/guides/reference/events), [alarms](/guides/reference/alarms) and [auditing](/guides/reference/auditing).
+Mehr Beispiele hier:  [Ereignisse](/guides/reference/events), [Alarme](/guides/reference/alarms) and [Auditing](/guides/reference/auditing).
 
 ## Messungen
 
@@ -277,7 +277,7 @@ Die Messungen bestehen aus einer Zeitmessung, den eindeutigen Kennungen der Mess
 Ähnlich dem Inventarmodell werden Fragmente verwendet, um die Eigenschaften bestimmter Vorrichtungen zu identifizieren. Im obigen Beispiel sendet ein Dreiphasen-Stromzähler Messwerte für die verschiedenen elektrischen Phasen. Jedes solches Fragment bildet die Namen der einzelnen Messwerte ( "A +", "A-", ... in diesem Beispiel) auf den aktuellen numerischen Wert und die Maßeinheit ab.
 
 
-Messwerte können verschiedene zusätzliche Informationen enthalten, die Anwendungen erfordern können. Nähere Informationen dazu finden Sie im Referenzhandbuch[measurements](/guides/reference/measurements).
+Messwerte können verschiedene zusätzliche Informationen enthalten, die Anwendungen erfordern können. Nähere Informationen dazu finden Sie im Referenzhandbuch [Messungen](/guides/reference/measurements).
 
 ## Fernsteuerung von Geräten
 
@@ -334,11 +334,11 @@ Manchmal gibt es Verzögerungen zwischen dem Senden einer Operation an ein Gerä
 
 Zum Beispiel ist eine Operation zum Setzen eines Schalters auf einen bestimmten Zustand idempotent. Egal wie oft der Schalter auf "an" gestellt ist, danach wird er "an" sein. Eine Operation zum Umschalten eines Schalters ist nicht idempotent - das Ergebnis hängt davon ab, ob der Vorgang eine ungerade oder eine gerade Zahl ausgeführt wurde.
 
-Mehr Information hierzu im Referenzhandbuch.  [device control](/guides/reference/device-control).
+Mehr Information hierzu im Referenzhandbuch.  [Gerätesteuerung](/guides/reference/device-control).
 
 ## Die Sensorbibliothek
 
-Cumulocity beinhaltet eine [sensor library](/guides/reference/sensor-library "Sensor library") um spezifische Sensor- und Steuerungs-Fähigkeiten von Geräten und Produkten zu formen. Ein einziges Gerät kann viele Sensor- und Steuereigenschaften aufweisen. Die Sensorbibliothek ermöglicht Anwendungen die Beantwortung von Fragen wie:
+Cumulocity beinhaltet eine [Sensoren Bibliothek](/guides/reference/sensor-library "Sensor library") um spezifische Sensor- und Steuerungs-Fähigkeiten von Geräten und Produkten zu formen. Ein einziges Gerät kann viele Sensor- und Steuereigenschaften aufweisen. Die Sensorbibliothek ermöglicht Anwendungen die Beantwortung von Fragen wie:
 
 -   Welche Geräte sind installiert, die den Energiedurchfluss messen??
 -   Wie sind die Messwerte?
@@ -366,7 +366,7 @@ Um einen JavaScript-Entwickler, würde die gleiche Prüfung wie folgt aussehen:
 
 <pre><code class="js">var state = mo.c8y_Relay.relayState</code></pre>
 
-Mehr Information hierzu im Referenzhandbuch. "[Sensor library](/guides/reference/sensor-library "Sensor library")".
+Mehr Information hierzu im Referenzhandbuch. "[Sensoren Bibliothek](/guides/reference/sensor-library "Sensor library")".
 
 
 Das Cumulocity-Team begrüßt Beiträge zur Sensorbibliothek. Wenn Sie Geräte, Steuerelemente, Sensoren oder andere Objekte integrieren und feststellen, dass Ihre Modellfragmente über Ihren eigenen Fall oder Ihr Gerät hinaus eine allgemeinere Benutzerfreundlichkeit haben, empfehlen wir Ihnen, diese in Cum

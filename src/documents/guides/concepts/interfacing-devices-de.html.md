@@ -12,9 +12,9 @@ Um diese Systeme mit Cumulocity zu verbinden, ist eine Treibersoftware, ein "Age
 
 Verwandte Themen hierzu befinden sich in den folgenden Abschnitten:
 
--   [Cumulocity's domain model](/guides/concepts/domain-model), erklärt den Austausch von Datenstrukturen zwischen Agenten und Cumulocity. 
--   [Device integration](/guides/rest/device-integration), erklärt wie man Agenten selber entwickelt.
--   [Reference guide](/guides/reference/rest-implementation), für eine detaillierte Spezifikation der Schnittstellen zwischen Agenten und dem Cumulocity-Kern.
+-   [Cumulocity's Domain Model](/guides/concepts/domain-model), erklärt den Austausch von Datenstrukturen zwischen Agenten und Cumulocity. 
+-   [Geräte Integration](/guides/rest/device-integration), erklärt wie man Agenten selber entwickelt.
+-   [Referenz Handbuch](/guides/reference/rest-implementation), für eine detaillierte Spezifikation der Schnittstellen zwischen Agenten und dem Cumulocity-Kern.
 
 ## Was ist ein Agent?
 
@@ -64,7 +64,7 @@ Nach dem Start synchronisiert der Agent das Inventar mit dem Sensor-Subnetz, fü
 
 ### Synchronisieren der Stammdaten
 
-Um die Stammdaten Synchronisation zu verstehen, sollte man sich kurz die Kommunikationshierarchie aus dem Domain Modell in Erinnerung rufen. ["Cumulocity's domain model"](/guides/concepts/domain-model). In den Stammdateb befinden sich die Agenten an den Wurzeln der Hierarchie. Unterhalb jedes Agenten wird die Topology des Subnetzwerkes, für das der Agent verantwortlich ist, abgebildet. Diese Topologie existiert sowohl im realen Netzwerk als auch als Abbild im Inventar. Sie kann sich im realen Netzwerk ändern, und diese Änderungen müssen in den Stammdaten widergespiegelt werden.
+Um die Stammdaten Synchronisation zu verstehen, sollte man sich kurz die Kommunikationshierarchie aus dem Domain Modell in Erinnerung rufen. ["Cumulocity's Domain Model"](/guides/concepts/domain-model). In den Stammdateb befinden sich die Agenten an den Wurzeln der Hierarchie. Unterhalb jedes Agenten wird die Topology des Subnetzwerkes, für das der Agent verantwortlich ist, abgebildet. Diese Topologie existiert sowohl im realen Netzwerk als auch als Abbild im Inventar. Sie kann sich im realen Netzwerk ändern, und diese Änderungen müssen in den Stammdaten widergespiegelt werden.
 
 ![Communication hierarchy](/guides/concepts-guide/commshierarchyde.png)
 
@@ -85,7 +85,7 @@ Es ist wichtig zu wissen, dass der Geräteagent Dateneigentum an Konfigurationse
 
 ### Empfangen von Daten und Befehlen aus Anwendungen
 
-Nachdem die Topologie in den Stammdaten erstellt wurde, sind die Geräte sichtbar und können von IoT-Applikationen betrieben werden. Wie in der Geräte Management Sektion beschrieben ["Cumulocity's domain model"](/guides/concepts/domain-model), IoT Anwendungen können Vorgänge an Vorrichtungen senden, die in der Warteschlange stehen. Der Agent muss den Cumulocity-Kern nach Vorgänge abfragen, die für seine Geräte bestimmt sind.
+Nachdem die Topologie in den Stammdaten erstellt wurde, sind die Geräte sichtbar und können von IoT-Applikationen betrieben werden. Wie in der Geräte Management Sektion beschrieben ["Cumulocity's Domain Model"](/guides/concepts/domain-model), IoT Anwendungen können Vorgänge an Vorrichtungen senden, die in der Warteschlange stehen. Der Agent muss den Cumulocity-Kern nach Vorgänge abfragen, die für seine Geräte bestimmt sind.
 
 Wenn eine Operation an ein Agentengerät gesendet wurde, übersetzt der Agent die Operation in die gerätespezifische Darstellung. Beispielsweise würde ein Multispeak-Agent eine Operation zum Setzen des Zustands eines Schalters auf eine SOAP-Anfrage "initiateConnectDisconnect" für einen Elektrizitätszähler übersetzen. Der übersetzte Vorgang wird dann an das Gerät gesendet.
 
@@ -95,7 +95,7 @@ Schließlich erkennt der Agent die Ausführung der Operation, und er würde den 
 
 Neben der Fernbedienung von Geräten besteht die Hauptaufgabe der Agenten darin, Daten von Sensoren zu übertragen. Diese Daten können wie im Abschnitt Domänenmodell beschrieben variieren:
 
--   Messungen werden durch Lesen von Sensorwerten erzeugt. In einigen Fällen werden diese Daten in statischen Intervallen gelesen und an die Plattform gesendet (z. B. Temperatursensoren oder elektrische Zähler). In einigen Fällen werden die Daten auf Anforderung oder in unregelmäßigen Intervallen (z.B. Gesundheitsvorrichtungen, wie etwa Gewichtskalen) gelesen. Unabhängig davon, welche Art von Protokoll das Gerät unterstützt, ist der Agent verantwortlich für die Umwandlung in ein "Push" -Protokoll durch das Hochladen von Daten an Cumulocity.Die Java-Agentenbibliothek vereinfacht die regelmäßige Abfrage von Sensoren über einen Scheduler( [Java agent](/guides/java/agents)).
+-   Messungen werden durch Lesen von Sensorwerten erzeugt. In einigen Fällen werden diese Daten in statischen Intervallen gelesen und an die Plattform gesendet (z. B. Temperatursensoren oder elektrische Zähler). In einigen Fällen werden die Daten auf Anforderung oder in unregelmäßigen Intervallen (z.B. Gesundheitsvorrichtungen, wie etwa Gewichtskalen) gelesen. Unabhängig davon, welche Art von Protokoll das Gerät unterstützt, ist der Agent verantwortlich für die Umwandlung in ein "Push" -Protokoll durch das Hochladen von Daten an Cumulocity.Die Java-Agentenbibliothek vereinfacht die regelmäßige Abfrage von Sensoren über einen Scheduler( [Java Agent](/guides/java/agents)).
 -   Ereignisse, die in Echtzeit durch IoT-Anwendungen verarbeitet werden müssen, z. B. Benachrichtigungen von einem Bewegungsdetektor oder Transaktionen von einem Verkaufsautomaten.
 -   Alarme sind Ereignisse, die menschlichen Eingriff erfordern, z. B. Sabotageereignisse, die von einem elektrischen Zähler gesendet werden.
 -   Prüfprotokolle sind Ereignisse, die für Risikomanagementzwecke aufgezeichnet werden, z. B. Anmeldefehler.

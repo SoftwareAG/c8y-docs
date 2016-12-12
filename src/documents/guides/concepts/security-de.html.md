@@ -8,18 +8,18 @@ layout: default
 
 Dieser Abschnitt zeigt Sicherheitskonzepte und Aspekte von Cumulocity, die in physische Sicherheit, Netzwerksicherheit, Anwendungssicherheit und Zugriffskontrolle gegliedert ist. Schließlich zeigt es, wie Cumulocity bei der Verwaltung der Sicherheit Ihrer IoT-Lösung hilft. Dieser Abschnitt ist speziell für IT-Sicherheitspersonal und Führungskräfte gedacht. IT-Sicherheitsexpertise ist erforderlich, wenn Sie Cumulocity ausführen und anwenden möchten.
 
-Mehr hierzu gibt es auch noch in anderen Abschnitten der Nutzerdokumentation, wie die [REST implementation](/guides/reference/rest-implementation) und [Users API](/guides/reference/users). Für einzelne API-Aufrufe erforderliche Berechtigungen sind in den jeweiligen Referenzleitfaden-Abschnitten für die APIs dokumentiert.
+Mehr hierzu gibt es auch noch in anderen Abschnitten der Nutzerdokumentation, wie die [REST Implementation](/guides/reference/rest-implementation) und [Benutzer API](/guides/reference/users). Für einzelne API-Aufrufe erforderliche Berechtigungen sind in den jeweiligen Referenzleitfaden-Abschnitten für die APIs dokumentiert.
 
 Cumulocity entspricht den Richtlinien von Nokia Networks, die nicht öffentlich zugänglich sind, und der "Privacy and Security Assessment, PSA Richtlinie" der Deutschen Telekom.
 
 (PSA,[detailed criteria in English](https://www.telekom.com/en/corporate-responsibility/data-protection---data-security/security/security/privacy-and-security-assessment-process-358312)  
-[detailed criteria in German](http://www.telekom.com/psa)).
+[PSA Richtlinie](http://www.telekom.com/psa)).
 
 ## Physische Sicherheitsaspekte
 
 Die physische Sicherheit von IT-Systemen verhindert den unbefugten Zugriff auf Server, Speicher und Netzwerkgeräte.
 
-Cumulocity Standard Edition-Konten werden bei Amazon Web Services (AWS) gehostet. AWS ist zertifiziert nach [ISO 27001, DSS and other standards](http://aws.amazon.com/compliance/). Es verfügt über umfangreiche physische Sicherheitsmaßnahmen und wird unabhängig auditiert. Nicht alle Details sind aus tatsächlichen Sicherheitsgründen veröffentlicht. Audit Berichte erhalten Sie direkt bei[AWS Compliance](http://aws.amazon.com/compliance/contact/).
+Cumulocity Standard Edition-Konten werden bei Amazon Web Services (AWS) gehostet. AWS ist zertifiziert nach [ISO 27001, DSS und andere Standards](http://aws.amazon.com/compliance/). Es verfügt über umfangreiche physische Sicherheitsmaßnahmen und wird unabhängig auditiert. Nicht alle Details sind aus tatsächlichen Sicherheitsgründen veröffentlicht. Audit Berichte erhalten Sie direkt bei[AWS Compliance](http://aws.amazon.com/compliance/contact/).
 Unsere strategischen Hosting-Partner nutzen aktuelle Konzepte für ihre Kundendatensicherheit.
 
 In IoT-Lösungen schließt die physische Sicherheit auch den unberechtigten Zugriff auf IoT-Geräte ein, beispielsweise um Daten von Geräten umzulenken oder zu manipulieren, Anmeldeinformationen von Geräten zu lesen oder die Konfiguration eines Geräts zu ändern. Wir empfehlen Ihnen, die physische Sicherheit der Geräte, die Sie für Ihre IoT-Lösung verwenden möchten, zu überprüfen und **Konfigurations-Ports für nicht autorisierte Personen nicht verfügbar zu machen** oder Manipulationsentdecker-Sensoren als zusätzliche Sicherheitskontrolle in Ihrem eigenen System einzuführen.
@@ -128,9 +128,9 @@ Um die Berechtigungen eines bestimmten Benutzers auf einem bestimmten Gerät zu 
 
 Immer wenn ein sicherheitsrelevantes Ereignis eintritt, muss es für potenzielle Audits protokolliert werden. Sicherheitsrelevante Ereignisse können sowohl auf Applikationsebene als auch im IoT-Netzwerk auftreten. Ein einfaches Beispiel für ein sicherheitsrelevantes Ereignis auf Anwendungsebene ist eine Anmeldung zur Anwendung. Ein Beispiel für ein sicherheitsrelevantes Ereignis auf Netzwerkebene ist die Verwendung einer lokalen Software oder einer lokalen Steuerung auf einem Gerät, um das Gerät zu manipulieren.
 
-Zur Erfassung sicherheitsrelevanter Ereignisse bietet Cumulocity eine [auditing interface](/guides/reference/auditing).Diese Schnittstelle ermöglicht Anwendungen und Agenten, Prüfprotokolle zu schreiben, die persistent gespeichert und nach dem Schreiben nicht extern geändert werden können. Cumulocity selbst schreibt auch eigene Prüfprotokolle, die sich auf Login- und Device-Control-Operationen beziehen.
+Zur Erfassung sicherheitsrelevanter Ereignisse bietet Cumulocity eine [Auditing Nutzeroberfläche](/guides/reference/auditing).Diese Schnittstelle ermöglicht Anwendungen und Agenten, Prüfprotokolle zu schreiben, die persistent gespeichert und nach dem Schreiben nicht extern geändert werden können. Cumulocity selbst schreibt auch eigene Prüfprotokolle, die sich auf Login- und Device-Control-Operationen beziehen.
 
-Um sicherheitsrelevante Berichte über Cumulocity selbst zu erhalten, können sich Interessierte an die[Cumulocity security bulletin](https://cumulocity.zendesk.com/hc/en-us/sections/200381178-Security-bulletin). Um Sicherheitsvorfälle zu melden, senden Sie bitte eine E-Mail an security@cumulocity.com.
+Um sicherheitsrelevante Berichte über Cumulocity selbst zu erhalten, können sich Interessierte an die [Cumulocity Sicherheits Bulletin](https://cumulocity.zendesk.com/hc/en-us/sections/200381178-Security-bulletin). Um Sicherheitsvorfälle zu melden, senden Sie bitte eine E-Mail an security@cumulocity.com.
 
 ## Zusammenfassung
 

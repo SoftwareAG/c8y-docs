@@ -202,9 +202,9 @@ CAN device types can be configured in a very similar manner as Modbus device typ
 
 ## <a name="import"></a>Importing and exporting device types
 
-To more conveniently manage device types, you can export device types to a file once they are edited in the user interface. The file can be imported again to more easily set up other Cumulocity accounts or to restore the types from a backup. The import functionality also supports importing ready-made device types provided by device manufacturers.
+To manage device types more conveniently, you can export device types to a file once they are edited in the user interface. The file can be re-imported to  set up other Cumulocity accounts easily or to restore the types from a backup. The import functionality also supports importing ready-made device types provided by device manufacturers.
 
-To export a device type, hover over the device type that you would like to export and click the download symbol. You browser will download a file named "&lt;device type&gt;.json" with the device type definition.
+To export a device type, hover over the device type that you would like to export and click the download symbol. Your browser will download a file named "&lt;device type&gt;.json" with the device type definition.
 
 ![Export device type](/guides/users-guide/fieldbusexport.png)
 
@@ -214,7 +214,7 @@ To import a device type, click the "Import" link. This will open a dialog that l
 
 ## <a name="scadasvg"></a>Preparing SVG files for the SCADA widget
 
-The SCADA widgets inspects uploaded SVG files for placeholders. These placeholders are replaced by actual values from devices. Placeholders have a specific syntax and can be used anywhere in the SVG file. To add a placeholder, enter the name of the placeholder in double curly braces using your design application or a text editor. This is an example of a text element containing a placeholder "batteryValue", taken from our [sample SVG file](/guides/users-guide/scadademo.svg):
+The SCADA widgets inspect uploaded SVG files for placeholders. These placeholders are replaced by actual values from devices. Placeholders have a specific syntax and can be used anywhere in the SVG file. To add a placeholder, enter the name of the placeholder in double curly braces using your design application or a text editor. This is an example of a text element containing a placeholder "batteryValue", taken from our [sample SVG file](/guides/users-guide/scadademo.svg):
 
 	<text class="text" xt-anchor="middle" x="100" y="236.982125" width="200" ...>
 		{{batteryValue}}

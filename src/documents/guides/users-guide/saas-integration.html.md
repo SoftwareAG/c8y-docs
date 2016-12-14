@@ -13,11 +13,11 @@ The Zapier add-on to Cumulocity helps you to bring real-life data from your asse
 * Create forms to support manual maintenance of master data for your assets.
 * Improve customer service by automating standard interactions such as machine resets from your help desk tools.
 
-This section describes how to easily implement these and many other use cases by combining Cumulocity with [Zapier](https://zapier.com). It will show all available triggers and actions the Cumulocity Zapier app will offer and describe how you can connect them with other services.
+This section describes how to implement these and many other use cases by combining Cumulocity with [Zapier](https://zapier.com). It will show all available triggers and actions the Cumulocity Zapier app will offer and describe how you can connect them with other services.
 
 All the examples in this section require a Zapier account, which you can obtain for free at https://zapier.com.
 
-## Access Cumulocity app in Zapier
+## Access Cumulocity App in Zapier
 
 If you want to get access to the app and try it out please contact us at [support](https://support.cumulocity.com).
 
@@ -49,9 +49,9 @@ After choosing this trigger and selecting your Cumulocity account, you can speci
 |Statement|The statement in the SmartRule you want to trigger on. Some SmartRules support multiple trigger statements.|
 |SmartRule|The SmartRule from your Cumulocity account you want to trigger on. If none is displayed you don't have a SmartRule of that type created.|
 
-All inputs are provided as drop down lists.
+All inputs are provided as a drop down list.
 
-In the test step in Zapier we will provide you with an example of how Zapier will receive the data.
+In the test step in Zapier, we will provide you with an example of how Zapier will receive the data.
 
 
 
@@ -68,7 +68,7 @@ After choosing this trigger and selecting your Cumulocity account, you can speci
 |Statement name|The statement in the CEL module you want to trigger on.|
 |Is Channel?|Whether you want to listen to a statement or a channel.|
 
-In the test step in Zapier we will provide you with an example of how Zapier will receive the data but the structure depends purely on how your statement in the CEL looks like. Therefore it might be that some of the fields in our example don't exist in your CEL statement.
+In the test step in Zapier, we will provide you with an example of how Zapier will receive the data but the structure depends purely on how your statement in the CEL looks like. Therefore it might be that some of the fields in our example don't exist in your CEL statement.
 
 Please have a look at our [example](/guides/zapier#examples) for this trigger if you want to know more .
 
@@ -95,12 +95,12 @@ The Zapier add-on provides a number of Zapier actions to send data to Cumulocity
 |Input|Description|
 |:--|:-------------|
 |ID|A technical identifier for the asset.|
-|Name|A human-readable name for the asset.|
+|Name|A readable name for the asset.|
 |Fragment|The fragment type that is created or updated.|
 |Data|The fragment's data as a list of keys and values.|
-|Is a device?|A flag that will mark the asset as a device, i.e., will make the asset show up when clicking on "All Devices".|
+|Is a device?|A flag that will mark the asset as a device. The asset shows up when "All Devices" is clicked.|
 
-Assets are located in the inventory using the following process:
+Assets migrate into the inventory using the following process:
 
 1 The ID is interpreted as asset ID and the Zapier add-on checks if there is an existing asset with the given asset ID.
 2 The ID is interpreted as a Cumulocity global ID and the Zapier add-on checks for an asset with that global ID.
@@ -116,10 +116,10 @@ If any of the three steps succeeds, the retrieved asset is updated. If nothing c
 
 |Input|Description|
 |:--|:-------------|
-|ID|A technical identifier for the device.|
-|Name|A human-readable name for the device.|
+|ID|A technical identifier for a device.|
+|Name|A readable name for a device.|
 |Description|The description of the operation.|
-|Fragment|The fragment that will be added to the operation.|
+|Fragment|The fragment which is added to the operation.|
 |Data|The fragment's data as a list of keys and values.|
 
 The device is identified with the same three-step mechanism as illustrated above in the "Update inventory" action.
@@ -148,7 +148,7 @@ Open the Cumulocity administration application, click on "Event Processing" and 
 
 The above statement selects all new temperature measurements in your account and formats them for the Zapier add-on. The output of the statement is printed live next to the statement. If you have the default simulator configuration running, it should start showing values. For more information on the statements, please visit the Section "[Real-time processing](/guides/concepts/realtime)".
 
-You also need to create a spreadsheet that will later hold the data from Cumulocity. Visit https://docs.google.com and click "New" and select "Google Sheets". Click on the "Untitled Spreadsheet" text at the top of the screen and give your spreadsheet a name such as "Test spreadsheet". In the spreadsheet, create a header row and a row with sample data as illustrated in the screenshot below.  The header row and the sample data will be used by used by Zapier to simplify the setup of your "Zap", i.e., your new system integration.
+You must create a spreadsheet for holding the data coming from Cumulocity. Visit https://docs.google.com and click "New" and select "Google Sheets". Click on the "Untitled Spreadsheet" text at the top of the screen and give your spreadsheet a name such as "Test spreadsheet". In the spreadsheet, create a header row and a row with sample data as illustrated in the screenshot below.  The header row and the sample data will be used by used by Zapier to simplify the setup of your "Zap",your new system integration.
 
 ![Sample spreadsheet](/guides/zapier/samplespreadsheet.png)
 
@@ -175,9 +175,9 @@ Activate the Zap in Zapier and open the spreadsheet to watch data from the simul
 
 ### Register a device from a spreadsheet
 
-In this example, we assume that you maintain a spreadsheet to keep track of your devices, their IMEIs, their SIM cards and their deployment location -- a "poor man's asset management". Whenever a new device is entered this spreadsheet, it should be automatically entered into Cumulocity's device registration. You can then switch on the device and pair it with your account.
-
-As first step, prepare a spreadsheet similar to the one below in the screenshot. The column "IMEI" provides in this case the identifier of the device to be registered.
+In this example, we assume that you maintain a spreadsheet to keep track of your devices, their IMEIs, their SIM cards and their deployment location -- a "poor man's asset management". Whenever new devices have entered this spreadsheet, it should be automatically entered into Cumulocity's device registration. You can then switch on the device and pair it with your account.
+ 
+As a first step, prepare a spreadsheet similar to the one below in the screenshot. The column "IMEI" provides the identifier of the device in registration.
 
 ![Device spreadsheet](/guides/zapier/devicessheet.png)
 
@@ -204,7 +204,7 @@ After a while, the device ID appears in the "Device registration" dialog of Cumu
 
 ![Device registered](/guides/zapier/deviceregistration.png)
 
-> Note that, depending on your Zapier plan, it may take up to fifteen minutes until Zapier picks up the change in the spreadsheet.
+> It may take up to fifteen minutes until Zapier picks up the change in the spreadsheet.
 
 Now you can play with this setup. For example, you could introduce a workflow column indicating the state of the device (ordered, in stock, rolling out, in production) and only register the device when it is being rolled out.
 
@@ -229,7 +229,7 @@ Now, you are ready to set up your Zap:
 * Connect your Cumulocity Account in Zapier (or select it if you previously connected it).
 * Fill the data fields from the Wufoo form into the Update Inventory inputs (e.g. like in the screenshot below)
 
-In this case, we are creating a new entry for each customer entered into Wufoo. Hence, the Wufoo entry ID can be used as asset ID in Cumulocity. As name, we use the first and last name of the contact. "Data" contains a list of key/value pairs that you can use for the remaining form data. These key/value pairs are stored in a Cumulocity fragment "c8y_Contact". You can set "Is a device?" to true to see the entered data in the device management application (even though your contact isn't exactly a device).
+In this case, we are creating a new entry for each customer entered into Wufoo. The Wufoo entry ID can be used as asset ID in Cumulocity. As a name, we use the first and last name of the contact. "Data" contains a list of key/value pairs that you can use for the remaining form data. These key/value pairs are stored in a Cumulocity fragment "c8y_Contact". You can set "Is a device?" to true to see the entered data in the device management application (even though your contact isn't exactly a device).
 
 ![Wufoo Zap](/guides/zapier/wufoozap.png)
 
@@ -239,6 +239,6 @@ Your screen should look like the screenshot below after going through all steps:
 
 ## Extensions
 
-Zapier offers an built-in action to send pure REST requests called "Webhooks". You are able to use this action to send any data to our documented APIs directly.
+Zapier offers a built-in action to send pure REST requests called "Webhooks". You are able to use this action to send any data to our documented APIs directly.
 
-Still have ideas for features in the Cumulocity app? Mail us.
+Still, have ideas for features in the Cumulocity app? Mail us.

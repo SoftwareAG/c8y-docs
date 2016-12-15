@@ -3,7 +3,6 @@ order: 20
 title: Device management
 layout: default
 ---
-
 ## <a name="overview"></a>Overview
 
 The Device Management application shows you your connected devices and enables you to manage their status. Device Management gives you the following options:

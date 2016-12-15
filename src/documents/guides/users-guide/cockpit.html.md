@@ -568,7 +568,7 @@ Additional Information:
 * "Device" refers to the target device, as selected in the widget configuration parameter.
 
 * *fragment.property* refers to the properties of the respective device. To see the available property names, you can use the "Asset property" or “Asset table” widget and click the “+ Add property” link in the widget configuration. This will show a table of supported properties. You can copy and paste the values from the column “Property”. Generated properties of these widgets are not available in the HTML widgets.
-* 
+
 ### Widget "Asset alarms"
 
 Show all objects with a critical alarm. There are no additional parameters to configure.
@@ -977,7 +977,7 @@ _Note_: Range values defined in the source object have a higher priority than th
 
 * Clear the alarm.
 
-##Troubleshooting
+### Troubleshooting
 
 * Please verify that the alarm was created and not duplicated from somewhere.
 
@@ -1014,7 +1014,7 @@ The rule uses the following parameters:![image alt text](/guides/users-guide/ima
 
 * Text: Text of the alarm that will be raised.
 
-##Troubleshooting
+### Troubleshooting
 
 * Please check the same steps as for the threshold rule above.
 
@@ -1041,7 +1041,7 @@ The rule uses the following parameters:
 
 * Text: Text of the e-mail. You can use a variable of the form #{name}. Supported variables are listed under "Smart Rule Variables" below.
 
-##Troubleshooting
+### Troubleshooting
 
 * Please check the same steps as for the threshold rule above.
 
@@ -1063,7 +1063,7 @@ The rule uses the following parameters:
 
 * Message: Text of SMS with max. 160 characters. You can use variable of the form #{name}. Supported variables are listed under "Smart Rule Variables" below.
 
-##Troubleshooting 
+### Troubleshooting 
 
 * Please check the same steps as for the threshold rule above.
 
@@ -1109,7 +1109,7 @@ The rule uses the following parameters:
 
 No alarm will be generated until the device crosses the geofence border for the first time.
 
-##Troubleshooting 
+### Troubleshooting 
 
 * Please make sure the device was inside the geofence at least once after creating/activating the rule
 
@@ -1234,7 +1234,7 @@ The rule uses the following parameters:
 
 * Acknowledgment number: The number of the button the receiver has to push to acknowledge. If the button will be pushed, the call will be successful and the alarm status will be changed to acknowledged. 
 
-###Troubleshooting
+### Troubleshooting
 
 * Check that the alarm was created and not duplicated.
 

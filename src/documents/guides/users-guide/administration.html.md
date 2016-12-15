@@ -30,7 +30,7 @@ The "Home" screen provides navigation links to the main parts of the administrat
 
 "This month" shows the usage information starting with the current month. "Last month" shows the last full month.
 
-<img src="/guides/users-guide/home.png" alt="Home" style="max-width: 100%">
+![Home](/guides/users-guide/adminscreen.png)
 
 ## <a name="users"></a>Managing users
 

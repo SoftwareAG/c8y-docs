@@ -4,8 +4,6 @@ title: Introduction
 layout: default
 ---
 
-## Introduction
-
 The following section is a basic introduction to the Cumulocity platform. It describes:
 
    * [Accessing Cumulocity applications](#accessing).
@@ -39,8 +37,7 @@ This will direct you to the login page of your default application, shown in the
 <center><img src="/guides/users-guide/login.png" alt="Login prompt" style="max-width: 50%"></center>
 
 
-> Make sure that the address bar of your browser shows a lock symbol. The lock symbol indicates that you are using a secure connection and that you are indeed connected to Cumulocity.
-<img src="/guides/users-guide/locksymbol.png" alt="Login prompt" style="max-width: 5%">
+> Make sure that the address bar of your browser shows a lock symbol. The lock symbol indicates that you are using a secure connection and that you are indeed connected to Cumulocity.<img src="/guides/users-guide/locksymbol.png" alt="Login prompt" style="max-width: 5%">
 > The above URL is only valid for Cumulocity Standard Edition subscribers. For Dedicated and Private Edition deployments of Cumulocity, the URL is specific to your organization.
 > 
 
@@ -51,7 +48,7 @@ On the login page, enter your username and password to start the application. Th
 <center><img src="/guides/users-guide/logout.png" alt="Logout menu" style="max-width: 60%"></center>
 
 
-> For security reasons, Cumulocity does not use Cookie technology.
+**For security reasons, Cumulocity does not use Cookie technology.**
 
 If you forgot your password, click the "Forgot password?" link on the login screen. You can now type your email address and click "Reset password". Check your email for the password reset link. Click the link to enter a new password.
 
@@ -98,7 +95,7 @@ On smaller screens the layout of the user surface changes, as shown below. The n
 
 <img src="/guides/users-guide/appsmall.png" alt="Layout on small devices" style="max-width: 50%">
 
-Note that you can navigate straight to any place inside a Cumulocity application. For example, to show the basic information for a device, you can enter the following URL:
+You can navigate straight to any place inside a Cumulocity application. For example, to show the basic information for a device, you can enter the following URL:
 
 	https://<account>.cumulocity.com/apps/devicemanagement/index.html#/device/<id>/info
 

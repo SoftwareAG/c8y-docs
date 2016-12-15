@@ -64,29 +64,11 @@ As so, each built in app as any *Smartapp* is simply a set of plugins put togeth
 
 ![Plugin editor](/guides/users-guide/plugins.png)
 
-## Plugins
-
-A plugin is a module that contains javascript, css, and any other kind of asset. Although it can contain any kind of code or library, the developer will probably want to integrate with existing UI using extension points:
-
-* Add search functionality.
-* Contribute menu items to the navigation bar on the left.
-* Add views or "tabs" to devices.
-* Add menu items to the drop-down menu of a device.
-* Add widgets.
-* Modify the branding
-
-This is illustrated below:
-
-![Extension points for plugins](/guides/concepts-guide/extensionpoints.png)
-
-
-For more information on developing plugins, please visit the [Plugin Developer's Guide](/guides/web/introduction).
-
 ## Compatibility
 
 Backwards compatibility for all REST APIs is guaranteed, while backward compatibilities for JavaScript APIs are not. We try to keep the JavaScript incompatibilities to a minimum, there are cases where they will happen. Therefore new application versions might cause older versions of the plugins to fail.
 
-However, this is taken care by automatically by the previous mentioned mechanism to copy subscribed applications. For example, if a user adds a plugin to the builtin application “Cockpit Version 2.0”, then the application is copied. That means that the application is “freezed”. Updates of the Cockpit application will not be automatically available in the copied version. This ensures that the added plugin will work successfully. And because of the compatibility of the REST API the copied version is ensured to work also for the new backend version.
+However, this is taken care by automatically by the previous mentioned mechanism to copy subscribed applications. For example, if a user adds a plugin to the builtin application ï¿½Cockpit Version 2.0ï¿½, then the application is copied. That means that the application is ï¿½freezedï¿½. Updates of the Cockpit application will not be automatically available in the copied version. This ensures that the added plugin will work successfully. And because of the compatibility of the REST API the copied version is ensured to work also for the new backend version.
 
 ## Migration
 

@@ -1,13 +1,128 @@
 ---
-title: Introduction to plugin development
+title: Web SDK for plugins
 layout: default
 ---
 
 ## Overview
 
-Plugins allow you to add new functionality to Cumulocity's user interface. In the following, we describe step-by-step how to create sample plugins. For the basic concepts of Cumulocity applications, please see [Developing applications](/guides/concepts/applications). For reference information, please see the [Plugins reference](/guides/web/reference).
+In the following section you will get an overview on the Web Software Development Kit (SDK) which allows you to
+* extend Cumulocity’s web application with your own applications.
+* enhance the visualization of data with custom widgets.
+* implement functionalities tailored to your use case.
 
-## Prerequisites
+First, this section describes the concept behind applications and plugins. Then it specifies the folder structure of an application and plugin, as well as the content of an application manifest and plugin manifest. SETUP . The Web SDK guide is structured as follows:
+* [Concepts](#concepts)
+	* [Project structure](#project-structure)
+	* [Manifests](#manifests)
+* [Setup](#setup)
+	* [Prerequisites](#prerequisites)
+	* [Cumulocity CLI tool](#cli-tool)
+	* [Cumulocity UI package](#ui-package)
+* ["Hello World!"](#hello-world)
+* [Services and extension points](#service-points)
+
+Afterwards, we describe how to create a sample plugin step-by-step:
+* [HelloWorld application plugin](#hello-word-app-plugin)
+
+You can also find other, more complex examples in the following documents:
+* [Branding plugin](/guides/web/branding-plugin)
+* [Tab plugins](/guides/tab-plugin)
+* [Widget plugins](/guides/widget-plugin)
+
+Although an overview of the concepts of applications and plugins will be provided in this chapter, we recommend to take a look at the basic concept of Cumulocity applications described in [Developing applications](/guides/concepts/applications) before.
+
+## <a name="concepts"></a>Concepts
+Before building an application or plugin, it is important to understand what exactly applications and plugins are. In this context, applications are based on the Cumulocity UI framework and make up the Cumulocity UI. By default, the Cumulocity UI consists of three core applications, namely "Device Management", "Administration" and "Cockpit". In turn, applications consist of plugins. A plugin represents any functionality you would like to add to an application. With a plugin, you can:
+* Modify the branding,
+* Add new navigation items to the menu,
+* Add new widgets to dashboards,
+* Add new menu items to the drop-down menus,
+* Add new views or tabs to groups and devices
+* Or any other kind of functionality (f.e. for the search) you would like to integrate.
+
+This is illustrated below:
+
+![Extension points for plugins](/guides/concepts-guide/extensionpoints.png)
+
+Or let us look at the “Cockpit” application as an example. It consists of, i.a.
+* Cockpit Home: a plugin, which adds the "Home" menu to the navigator.
+* Dashboard: a plugin, which adds a new view/tab to groups and devices functioning as a container for widgets.
+* Data point table: a plugin, which adds an widget to dashboards providing a visualization of measurements in tabular form.
+* etc.
+
+> Note that you cannot extend the core applications of Cumulocity (Administration, Cockpit, Device Management) with new functionality. Instead, you can create a duplicate of the desired application and work on the duplicate itself. To create a duplicate of an application, you can either copy it via the UI in "Administration" or create a new application which uses the exact same plugins as the desired application.
+
+### Project structure
+
+Whenever you create a new application or plugin, you have to comply with the following structure. Otherwise the application or plugin will not work.
+The default folder structure of an application is as follows:
+
+```console
+<<root folder>>
+├── cumulocity.json
+|	...
+└── plugins
+		└── <<plugin name>>
+				├── cumulocity.json
+				└── index.js
+			...
+```
+
+Inside the root folder of your application, the so-called "[application manifest](#application-manifest)" is stored in a file "cumulocity.json". The folder "plugins" contains one folder per plugin contributed by the application. The plugin folder name together with the application name uniquely identifies the plugin. Inside each plugin folder, the so-called "[plugin manifest](#plugin-manifest)" is stored in another "cumulocity.json" file. The format of the application manifest and the plugin manifest is described [below](#manifests).
+In case that you only want to create a plugin and add it to an already existing application, use the exact folder structure described above:
+
+```console
+<<root folder>>
+└── <<plugin name>>
+		├── cumulocity.json
+		└── index.js
+		...
+```
+
+### <a name="manifests"></a>Manifests
+
+#### <a name="application-manifest"></a>Application manifest
+
+The application manifest describes where your application is stored and how it is exposed to Cumulocity. The following properties are available:
+
+* **name**: A descriptive name for the application.
+* **availability**: "PRIVATE", if the application is only available in your tenant, "MARKET", if it is a public application.
+* **contextPath**: The path to be used for hosted applications. The URL of the application will be "&lt;&lt;yourURL&gt;&gt;/apps/&lt;&lt;contextPath&gt;&gt;".
+* **key**: The application key that is used for associating requests of an application with the application and for subscribing to applications.
+* **resourcesUrl**: If the app is serving an upload zip file (is the case for Smartapps) this value will be '/'. If it's a full url all the request will proxied to that address.
+* **type**: *HOSTED*, if the application is hosted through Cumulocity, *EXTERNAL*, if the application is hosted elsewhere.
+* **imports**: A list of plugins used by the application. List of *&lt;&lt;applicationName&gt;&gt;/&lt;&lt;pluginName&gt;&gt;*.
+* **noAppSwitcher**: If set to true, application will not appear in the App Switcher menu. Optional, use, for example, if the application only exposes plugins.
+* **options**:
+	* **tabsHorizontal**: A boolean, which if set true
+	* **hide_navigator**: A boolean, which if set true collapses the navigator menu on the left by default, optional.
+	* **globalTitle**: A title that will be used as the global title of the web application, optional.
+	* **hide_powered**: A boolean, which if set true
+	* **supportUrl**:
+	* **login_extra_link**: An object that adds an url with a certain label to the login screen, optional.
+
+> Note that "contextPath" and "key" need to be unique. For "PRIVATE" applications, "name" and "contextPath" need to be only unique within your tenant.
+
+> You can see the list of plugins an application uses by utilizing the command "c8y util:showimports \[appContextPath\]".
+
+#### <a name="plugin-manifest"></a>Plugin manifest
+
+The plugin manifest describes how your plugin is shown in the Cumulocity administration application (name, description, category, gallery, list) and what files need to be built and loaded in order to run the plugin (ngModules, js, imports, css, less, copy).
+
+* **name**: A descriptive name for the plugin, required.
+* **description**: A longer description of the plugin, optional.
+* **category**: A category for the plugin to be used in the filtering in user interface, this is optional.
+* **ngModules**: A list of AngularJS modules that are provided by plugin, at least one is required.
+* **js**: A list of JavaScript files to be loaded, such as "index.js", controllers, services, asf. The path is relative to the plugin's root folder. Optional.
+* **css**: A list of CSS files to be loaded, paths relative to plugin’s root folder, optional.
+* **less**: A list of LESS files to be loaded, paths relative to plugin’s root folder, optional.
+* **copy**: A list of files that should be copied into the built, optional.
+
+Most of the content of the manifest files corresponds to the application API properties, described in the [REST reference](/guides/reference/applications). Examples of manifest files can be found in the [examples](http://bitbucket.org/m2m/cumulocity-ui-plugin-examples).
+
+## <a name="setup"></a>Setup
+
+### Prerequisites
 
 Plugins are based on HTML5. You should be familiar with the following technologies:
 
@@ -22,30 +137,31 @@ You will need the following prerequisites for being able to develop plugins and 
 * You will need [npm](https://www.npmjs.com/) *(installed with Node.js)*
 * You will need access to your Cumulocity account, i.e. you need your tenant name, username and password.
 
-All examples described in the document are available in the repository [https://bitbucket.org/m2m/cumulocity-ui-plugin-examples](https://bitbucket.org/m2m/cumulocity-ui-plugin-examples).
+### Cumulocity CLI tool
 
-## Command line interface
-
-Applications based on Cumulocity UI are always a collection of plugins. We provide a set of plugins you can build on and you can add your own. For dealing with the process of building, theming, translating and deploying your apps and plugins the cli tool must be installed globally the development machine.
+Once all prerequisites are fulfilled, you are almost ready to go to build your own application and plugin. For the process of developing a plugin (building, theming, translating and deploying your apps and plugins), you will need the npm package "cumulocity-tools" installed globally on your machine. To install the npm package, execute the following command on your terminal.
 
 ```bash
 $ npm i cumulocity-tools -g
 ```
-You can check the available commands with:
+
+Now you are ready to use the command line interface (CLI) tool. Try it out by executing the following command:
 
 ```bash
 $ c8y --help
 ```
 
-## Installing Cumulocity UI plugins
+The "--help" option displays all available commands for the CLI tool.
 
-Cumulocity UI plugins to be used in your application are loaded via npm. For this you must have have a package.json in your project.
-To create one simply run:
+### Cumulocity UI package
+
+As already described above, applications are always a collection of plugins. We provide a set of plugins you can build on in addition to your own. But before that, you must add a package.json file to your project. To do so, simply run:
 
 ```bash
 $ npm init
 ```
-Then proceed to install Cumulocity UI package containing our plugins, which you can reuse to build your application on.
+
+Then proceed to install the Cumulocity UI package containing the set of plugins:
 
 ```bash
 $ c8y install latest
@@ -55,7 +171,12 @@ This command will:
 - Check for the latest version of the UI
 - Download the package
 - Add it as a dependency inside package.json
-Have in mind that that, when sharing your project, other developers only need to run  ```npm install``` as the version of the Cumulocity UI is already defined as a dependency. You can always install other versions by running the ```c8y install``` command again.
+
+> Have in mind that that, when sharing your project, other developers only need to run  ```npm install``` as the version of the Cumulocity UI is already defined as a dependency. You can always install other versions by running the ```c8y install``` command again.
+
+## Sample plugins
+
+After setting up everything and getting an insight into the folder structure and manifests, you can finally start building your first application and plugin. All examples described in the document are available in the repository [https://bitbucket.org/m2m/cumulocity-ui-plugin-examples](https://bitbucket.org/m2m/cumulocity-ui-plugin-examples).
 
 ## "Hello world!"
 
@@ -91,10 +212,10 @@ The application manifest contains information about the Cumulocity application t
 
 ```json
 	{
+		"name": "My application",
 		"availability": "PRIVATE",
 		"contextPath": "myapplication",
 		"key": "myapplication-appkey",
-		"name": "My application",
 		"resourcesUrl": "/",
 		"type": "HOSTED",
 		"imports": [
@@ -280,254 +401,6 @@ The build process for an app includes the following steps:
 5. Copy the application manifest
 6. Create a zip file with the above contents
 
+## Services and extension points
 
-## Branding plugin
-
-Our main css is based on 	the popular css framework [Bootstrap 3](http://getbootstrap.com/). It is possible to build a branding plugin based on Cumulocity own base branding simply by overriding less variables.
-
-Inside the repo [cumulocity-ui-plugin-examples](https://bitbucket.org/m2m/cumulocity-ui-plugin-examples) you can find all the plugins described in this tutorial.
-
-As the myBranding example is much more extensive than the other plugins copy over the myBranding folder into your plugins folder.
-Although there a few files there, the strategy is straight forward: defining less variables that are overriding the setting on the base theme c8yBranding.
-
-You can inspect the less files to see what variables are available for configuration.
-
-A branding plugins are simply distinguished by their name: must end in *Branding* (e.g. *piedpiperBranding* ). To use it in an application add it to the imports statement of an application manifest cumulocity.json, as it is in [cumulocity-ui-plugin-examples](https://bitbucket.org/m2m/cumulocity-ui-plugin-examples) repo.
-
-Make sure there is only single branding plugin declared otherwise both of them will be loaded.
-
-
-![Branding example](/guides/plugins/branding.png)
-
-
-## Device Contact Plugin
-
-This section shows how to create a plugin that adds a new tab "Contact" to a device in the Cumulocity application. Clicking on "Contact" presents the user with a simple form for entering contact details. When the user saves the form, the contact details are stored as part of the device object in the inventory. The new tab looks like this:
-
-![Contact tab](/guides/plugins/contact.png)
-
-In order to achieve this goal you need to do the following steps:
-
-* Create a plugin
-* Declare the plugin on the imports list of the application manifest (cumulocity.json)
-* Add a tab to a device.
-* Display data in the tab.
-* Persist the data to Cumulocity backend
-
-We assume that you already have created an application to add the new plugin to. You can use myapplication from the previous example. The example is also contained in the folder plugins/deviceContact of  [cumulocity-ui-plugin-examples](https://bitbucket.org/m2m/cumulocity-ui-plugin-examples).
-
-### Adding dependencies
-
-For this exercise let's consider you want to extend Device management. In practice this means importing the set of plugins used in Device management and add your own to the list.
-You can print the list of imported plugins by any available app in your dev environment by executing the command ```c8y util:showimports <appContextPath>```.
-
-In this case:
-
-```console
-$ c8y util:showimports devicemanagement
-```
-
-These values should be added to the imports definition of the application manifest. Beware to exclude the c8yBranding plugin if you have already defined your own branding plugin.
-
-However if you prefer a more minimalistic approach you can read the cumulocity.json in [cumulocity-ui-plugin-examples](https://bitbucket.org/m2m/cumulocity-ui-plugin-examples) and only import the essential for the Device Contact plugin to work.
-
-* **TIP**
-Run ```c8y util:showimports cockpit``` or ```c8y util:showimports administration``` to see other plugins available to you.
-The manifests for the built in applications are stored in *_apps.json* inside node_modules/cumulocity-ui-build.
-
-### Create a plugin
-
-In your application, run the command:
-
-```console
-$ c8y create:plugin deviceContact
-```
-Then edit the cumulocity.json file to add the following information:
-
-```json
-{
-	"name": "Device Details - Contact",
-	"description": "Plugin adds a Contact tab to Device Details view",
-	"ngModules": [
-		"myapp.deviceContact"
-	],
-	"js": [
-		"index.js"
-	]
-}
-```
-
-Then create a file ```index.js``` at the plugin's root folder to have the following content:
-
-```js
-(function () {
-	angular.module('myapp.deviceContact', []).config(function () {
-	});
-})();
-```
-
-Update the application manifest (```cumulocity.json```) to add this new plugin to the import list.
-
-```console
-{
-	...
-	"imports": [
-		...
-		"myapplication/deviceContact"
-	]
-}
-```
-
-### Adding Contact tab in Device Details view
-
-Now, we create an empty "Contact" tab in the device details view, which we will fill with contents in the following step.
-Inside the plugin folder, create a file deviceContact.controller.js with the content below.
-
-```js
-(function () {
-	'use strict';
-	angular.module('myapp.deviceContact')
-		.controller('deviceContactCtrl', Controller)
-
-	function Controller($scope, $routeParams, c8yDevices, c8yAlert) {
-
-	});
-
-})();
-```
-
-* Declare the file in the js array inside the plugin manifest in plugins/deviceControl/cumulocity.json:
-
-```console
-	{
-		...
-		"js": [
-			...,
-			"deviceContact.controller.js"
-		]
-	}
-```
-
-* Inside the plugin folder Create a file deviceContact.html with the contents:
-
-```html
-	<div class="panel panel-clean">
-		<div class="panel-body">
-			Contact
-		</div>
-	</div>
-```
-
-* Add the "Contact" tab to the device details just like we did in the "Hello world!" example. Edit index.js and add the content below.
-Note that when multiple views are attached to the route (/device/:deviceId in this case) tabs are created automatically for each of them. Since the device details view uses /device/:deviceId for device details already, "Contact" is rendered as a tab.
-
-```js
-(function () {
-	angular.module('myapp.deviceContact', []).config(function (c8yViewsProvider) {
-		c8yViewsProvider.when('/device/:deviceId', {
-			name: 'Contact',
-			icon: 'envelope-o',
-			priority: 1000,
-			templateUrl: ':::PLUGIN_PATH:::/deviceContact.html',
-			controller: 'deviceContactCtrl'
-		});
-	});
-})();
-```
-
-
-### Display data in the "Contact" tab
-
-Previously, we only set up a dummy view for device contacts. In this step, we will display the actual contact information stored with a device in the view. We will define that contact data is stored in a fragment c8y_Contact of a device in the inventory like this:
-
-```json
-	{
-		"c8y_Contact": {
-			"name": "John Smith",
-			"email": "john.smith@example.com",
-			"phone": "123-456-789",
-			"address": "Sample Street 11 A"
-		}
-	}
-```
-
-* Add a load function to deviceContact.controller.js as shown below. The function gets the details of the currently displayed device ($routeParams.deviceId) and adds the device's id and c8y_Contact fragment to the local scope $scope.
-
-```js
-(function () {
-	'use strict';
-	angular.module('myapp.deviceContact')
-		.controller('deviceContactCtrl', Controller)
-
-	function Controller($scope, $routeParams, c8yDevices, c8yAlert) {
-		function load() {
-			c8yDevices.detail($routeParams.deviceId).then(function (res) {
-				var device = res.data;
-				$scope.device.id = device.id;
-				$scope.device.c8y_Contact = device.c8y_Contact;
-			});
-		}
-
-		$scope.device = {};
-
-		load();
-	});
-
-})();
-```
-
-
-* Edit the device contact view in deviceContact.html with the content below.
-
-```html
-	<div class="panel panel-clean">
-		<div class="panel-body">
-			<form name="contactForm">
-				<div class="form-group">
-					<label for="contact_name">Name</label>
-					<input id="contact_name" type="text" class="form-control" ng-model="device.c8y_Contact.name">
-				</div>
-				<div class="form-group">
-					<label for="contact_email">E-mail address</label>
-					<input id="contact_email" type="text" class="form-control" ng-model="device.c8y_Contact.email">
-				</div>
-				<div class="form-group">
-					<label for="contact_phone">Phone</label>
-					<input id="contact_phone" type="text" class="form-control" ng-model="device.c8y_Contact.phone">
-				</div>
-				<div class="form-group">
-					<label for="contact_address">Address</label>
-					<input id="contact_address" type="text" class="form-control" ng-model="device.c8y_Contact.address">
-				</div>
-			</form>
-		</div>
-	</div>
-```
-
-### Allow user to save the data.
-
-After completing the following steps, you will be able to save the data edited using the new contact form.
-
-* Update the controller in deviceContact.js to also save data by adding the content below just after the closing brace of the load function. c8yDevices.save is a library function that stores a device using the Cumulocity REST API. c8yAlert.success is a library function that displays a green confirmation box at the top of the user interface.
-
-
-```js
-	function save(device) {
-		c8yDevices.save(device).then(onSave);
-	}
-
-	function onSave() {
-		c8yAlert.success('Contact information successfully saved!');
-	}
-
-	$scope.save = save;
-```
-
-* Add a *"Save changes"* button to the device contact view. Paste the div below just before the closing form tag in deviceContact.html. The button will trigger the ```save``` function that we just defined.
-
-```html
-	<div>
-		<a href="" class="btn btn-primary" ng-click="save(device)" ng-disabled="contactForm.$invalid">Save changes</a>
-	</div>
-```
-Now your plugin is done! Open your application in the web browser and click on a device to see the new "Contact" tab.
+For more information on the JavaScript APIs, consult the [JSDoc site](http://resources.cumulocity.com/documentation/jssdk/latest/). Services to access Cumulocity APIs are provided in the "core" package, extension points to, for example, add new menu items or widgets are provided in the "ui" package.

@@ -7,7 +7,7 @@ layout: default
 
 ## Overview
 
-### Intended Use
+**Intended Use**
 
 Cumulocity gives you very fast visibility and control over your remote assets, be these houses, cars, machines or any other assets that you need to manage. 
 
@@ -58,9 +58,9 @@ The level of depth in device management may depend on device features. (E.g., if
 
 ![Device Management](/guides/concepts-guide/devicemanagement.png)
 
-## Visualisation and remote control
+## Visualization and remote control
 
-Cumulocity visualises your sensor data centrally and graphically through its modern web user interface. It also exposes common remote controls to users with the relevant permissions.
+Cumulocity visualizes your sensor data centrally and graphically through its modern web user interface. It also exposes common remote controls to users with the relevant permissions.
 
 The user interface automatically adapts itself to the devices you connect -- no configuration required. For example, if you connect a device that supports being restarted from remote, you will see a "Restart" button. If the device sends light sensor data, you will see a graph with the readings from the sensor.
 

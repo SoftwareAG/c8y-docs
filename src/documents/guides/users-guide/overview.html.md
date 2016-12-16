@@ -37,7 +37,7 @@ This will direct you to the login page of your default application, shown in the
 <center><img src="/guides/users-guide/login.png" alt="Login prompt" style="max-width: 50%"></center>
 
 
-> Make sure that the address bar of your browser shows a lock symbol. The lock symbol indicates that you are using a secure connection and that you are indeed connected to Cumulocity.<img src="/guides/users-guide/locksymbol.png" alt="Login prompt" style="max-width: 5%">
+> Make sure that the address bar of your browser shows a lock symbol. The lock symbol indicates that you are using a secure connection and that you are indeed connected to Cumulocity.
 > The above URL is only valid for Cumulocity Standard Edition subscribers. For Dedicated and Private Edition deployments of Cumulocity, the URL is specific to your organization.
 > 
 

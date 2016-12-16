@@ -8,7 +8,7 @@ layout: default
 
 The Jasper Control Center Add-On to Cumulocity provides you with a holistic view of mobile device connectivity. This Add-On works from within the Cumulocity Device Management Application. While Cumulocity itself communicates directly with devices and shows connectivity information as reported by the device, the Jasper Control Center Add-On complements this with a view of connectivity.
 
-<img src="/guides/users-guide/jasperarchitecturede.png" alt="Jasper architecture"  style="max-width: 80%">
+<img src="/guides/users-guide/jasperarchitecture.png" alt="Jasper architecture"  style="max-width: 80%">
 
 If you have a Jasper Control Center account with your network provider, you can link that account to your Cumulocity tenant. With this combination you can:
 

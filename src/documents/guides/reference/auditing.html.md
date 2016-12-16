@@ -11,6 +11,13 @@ The auditing interface consists of three parts:
 
 > Note that for all PUT/POST requests accept header should be provided, otherwise an empty response body will be returned.
 
+## Audited informations
+
+-   Alarm modifications
+-   Login atteps
+-   Compolex Event Processing module midifications
+
+
 ## Audit API
 
 ### AuditRecords [application/vnd.com.nsn.cumulocity.auditApi+json]

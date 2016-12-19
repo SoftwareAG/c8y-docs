@@ -6,7 +6,7 @@ layout: default
 
 ## Overview
 
-The module shown below will give an in depth example of how you can create more complex rules. It will use multiple of the features explained in the other guide sections.
+This module will give an in depth example how you can create more complex rules. It will use multiple of the features explained before in the other guide sections.
 If you are just starting with the Cumulocity Event Language please take a look at [these examples](/guides/event-language/examples).
 
 ## Prerequisites
@@ -15,8 +15,8 @@ If you are just starting with the Cumulocity Event Language please take a look a
 
 We want our tracking devices that are continuously sending location events to automatically generate alarms if they move outside of a geofence.
 This geofence will be a circle and should be configurable for each device separately. The alarm will be created at the moment the device moves outside the geofence.
-While it is moving outside it should not create new alarms because the first one is still active and de-duplication would filter the newly created alarms anyways.
-As soon as the device moves back into the geofence the alarm can be cleared.
+While it is moving outside it should not create new alarms because the first one will keep active.
+As soon as the device moves back into the geofence the alarm will be cleared.
 
 ### Cumulocity data model
 

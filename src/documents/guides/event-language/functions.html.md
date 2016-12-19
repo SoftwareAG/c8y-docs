@@ -7,8 +7,7 @@ toc: true
 
 ## Overview
 
-With the Cumulocity Event Language it is possible to make use of functions. This section will cover the already built-in functions
-you can use in your statements. For a guide how to write your own function please check this [section](/guides/event-language/advanced#creating-own-functions).
+With the Cumulocity Event Language it is possible to utilize functions. This section will cover the already built-in functions ready to use. For a guide how to write your own functions please check this [section](/guides/event-language/advanced#creating-own-functions).
 
 ## Java functions
 
@@ -19,7 +18,7 @@ Every module automatically imports the following libraries:
     java.text.*
     java.util.*
 
-You can use any of the functions contained in those libraries.
+You can use any of the functions located in those libraries.
 
 Examples:
 
@@ -54,7 +53,7 @@ Using java.math.BigDecimal
 
 ## Database functions
 
-To interact with your historical data you can use one of the following functions to directly query the database
+To interact with your historical data you can use one of the following functions to directly query the database.
 
 Most functions are available in several variants:
 
@@ -219,8 +218,8 @@ Example:
 
 ### toNumberSetParameter
 
-The toNumberSetParameter() function helps you to be able to configure timer patterns outside of the module. When deploying a module with timer patterns the pattern has to be fixed at the point of deployment and cannot be changed without redeploying the module.
-But it is possible to configure timer patterns with variables if the variables get resolved immediately on deployment. This enables you for example to have the timer pattern stored in a ManagedObject that you load on deployment and then fill it the timer pattern.
+The toNumberSetParameter() function helps you to configure timer patterns outside of the module. When deploying a module with timer patterns the pattern has to be fixed to the point of deployment and cannot be changed without redeploying the module.
+It is possible to configure timer patterns with variables if the variables get resolved immediately on deployment. This enables you to store the timer pattern in a ManagedObject. On deployment you load it and fill it with the timer pattern.
 The toNumberSetParameter() function transforms strings to the NumberSetParameter type which is the input for timer patterns.
 For more information about timer patterns please check [here](/guides/event-language/advanced).
 

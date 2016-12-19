@@ -178,8 +178,8 @@ Example:
 
 Output streams create the possibility to CREATE, UPDATE and DELETE data in Cumulocity.
 When updating or deleting data it is necessary to provide the ID of the object that will be updated or deleted.
-When creating data Cumulocity will generated an ID if not set in the event processing. The creation of data also requires certain parameters to be set (the same as at our REST APIs).
-In addition to the predefined parameters listed it is possible to add any custom fragment to the data. Please take a look at ---->this<---- for adding custom fragments.
+When creating data, Cumulocity will generate an ID if not set in the event processing. The creation of data also requires certain parameters to be set (the same as at our REST APIs).
+In addition to the predefined parameters listed, it is possible to add any custom fragment to the data. Please take a look at ---->this<---- for adding custom fragments.
 
 Note:
 Creating your own ID will only work on ManagedObjects.
@@ -362,7 +362,7 @@ The streams mentioned in this section do not interact with the Cumulocity databa
 |subject|String|The subject line of the mail|yes|
 |text|String|The body of the mail|yes|
 
-It is possible to have more than one mail address in the parameters receiver,cc and bcc. Therefore create a string that contains all mail addresses separated by commas e.g. "receiver1@mail.com,receiver2@mail.com".
+It is possible to have more than one mail address in the parameters receiver,cc and bcc. Therefore create a string that contains all mail addresses separated by commas. "receiver1@mail.com,receiver2@mail.com".
 
 Example:
 
@@ -388,7 +388,7 @@ Example:
 |text|String|The body of the mail|yes|
 |dashboardUrl|String|The URL of the page that will be attached to the mail|yes
 
-It is possible to have more than one mail address in the parameters receiver,cc and bcc. Therefore create a string that contains all mail addresses separated by commas e.g. "receiver1@mail.com,receiver2@mail.com".
+It is possible to have more than one mail address in the parameters receiver,cc and bcc. Therefore create a string that contains all mail addresses separated by commas . "receiver1@mail.com,receiver2@mail.com".
 
 _Note:_
 

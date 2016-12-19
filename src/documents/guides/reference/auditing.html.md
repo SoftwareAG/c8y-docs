@@ -14,8 +14,11 @@ The auditing interface consists of three parts:
 ## Audited informations
 
 -   Alarm modifications
--   Login atteps
--   Compolex Event Processing module midifications
+-   Operation modifications
+-   Two factor authentication login attempts
+-   Smart rule modifications
+-   Complex Event Processing module modifications
+-   User and group permissions modifications
 
 
 ## Audit API

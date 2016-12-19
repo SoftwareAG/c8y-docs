@@ -72,7 +72,7 @@ Through the [Sensor Library](/guides/reference/sensor-library), common sensor an
 
 ## Customization
 
-The functionality described above provides already a wide range of device management, visualisation and control options. Furthermore it produces custom visualisation, new control widgets and custom business logic. Cumulocity's has extensive customisation options:
+The functionality described above provides already a wide range of device management, visualization and control options. Furthermore it produces custom visualization, new control widgets and custom business logic. Cumulocity's has extensive customization options:
 
 * Write alarm rules to reprioritize or suppress alarms and to define your SLA parameters.
 * Use [Cumulocity Event Language](/guides/concepts/realtime) to implement real-time business rules. For example, get an email when critical events happen, or trigger automated actions on devices in that case.

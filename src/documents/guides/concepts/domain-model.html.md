@@ -23,7 +23,7 @@ layout: default
 
 * *Operations* relate to data that is sent to devices for execution or processing, such as switching a relay in a power meter or sending a credit to a vending machine.
 
-- One of the great innovations in Cumulocity is its standardised representation of common devices and sensors as well as concepts for flexibly extending and modifying this representation. By default, Cumulocity comes with detailed visualisations of  sensors, smart meters, trackers and other devices. It has many options to fit in local customizations.
+- One of the great innovations in Cumulocity is its standardized representation of common devices and sensors as well as concepts for flexibly extending and modifying this representation. By default, Cumulocity comes with detailed visualizations of  sensors, smart meters, trackers and other devices. It has many options to fit in local customizations.
 
 
 - As a result Internet of Things applications can be written independently from connected devices and underlying sensor networks, customized for specific cases in different web configurations or different devices from manufacturers.

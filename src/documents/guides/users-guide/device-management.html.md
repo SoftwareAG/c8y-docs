@@ -5,7 +5,7 @@ layout: default
 ---
 ## <a name="overview"></a>Overview
 
-The Device Management application shows you your connected devices and enables you to manage their status. Device Management gives you the following options:
+The Device Management application shows you your connected devices and enables you to manage their status. The Device Management gives you the following options:
 
 * [Connect](#device-registration) new devices to your account and disconnect them.
 * [List](#viewing-devices), [search](#searching-devices) and [group](#grouping-devices) the connected devices.
@@ -57,7 +57,7 @@ Use the "Upload" button to upload the CSV file, as shown in the screenshot below
 <img src="/guides/users-guide/autoregister.png" alt="Bulk registration" style="max-width: 100%">
 
 
-To connect the devices, the devices need to be pre-provisioned with related information. More specifically, each device needs to be configured as follows:
+To connect the devices, the devices need to be pre-provisioned with related information. More specific, each device needs to be configured as follows:
 
 * Username: The username to access Cumulocity must have the form &lt;tenant&gt;/device_&lt;id&gt;. &lt;Tenant&gt; refers to the tenant where the CSV file is imported, and  &lt;id&gt; refers to the respective value in the CSV file.
 * Password: The password to access Cumulocity, equals the value "Credentials" in the CSV file.
@@ -128,7 +128,7 @@ Smart groups can be created by selecting "All devices". To create a new group, s
 
 <img src="/guides/users-guide/smartgroup.png" alt="Create a smart group" style="max-width: 100%">
 
-When the group is created, it will appear as top-level group in the “Groups” section. You can adjust filtering criteria by simply select the "Sub-assets" tab and modify the filter settings.
+When the group is created, it will appear as top-level group in the “Groups” section. You can adjust filter criteria by selecting the "Sub-assets" tab and modify the filter settings.
 
 Users can also delete smart groups from the top level groups. This operation is irreversible.
 
@@ -193,7 +193,7 @@ This tab shows other devices that are connected to the currently displayed devic
 
 ### <a name="measurements"></a>Measurements
 
-This tab provides a default visualisation of numeric data provided by the device in the form of charts. Charts are grouped into types of measurements, which can contain multiple graphs or "series". For example, the screenshot below shows a chart for motion measurement including graphs for acceleration in the three dimensions, and a chart with modem statistics in the form of signal strength and bit error rate.
+This tab provides a default visualization of numeric data provided by the device in the form of charts. Charts are grouped into types of measurements, which can contain multiple graphs or "series". For example, the screenshot below shows a chart for motion measurement including graphs for acceleration in the three dimensions, and a chart with modem statistics in the form of signal strength and bit error rate.
 
 ![Measurements](/guides/users-guide/measurements.png)
 
@@ -264,7 +264,7 @@ A good use-case example for the configuration snapshot is when applying the same
 
 ### Retrieving a current snapshot configuration from a device
 
-In order to retrieve a current snapshot from a device,  navigate to the device and then click on the "Configuration" tab. Then click on "Get new snapshot from device" at the top right corner. The retrieved snapshot can be found in the "Configuration repository".
+In order to retrieve a current snapshot from a device, navigate to the device and then click on the "Configuration" tab. Then click on "Get new snapshot from device" at the top right corner. The retrieved snapshot can be found in the "Configuration repository".
 
 The "Configuration repository" is located under the "Management" menu. 
 
@@ -315,7 +315,7 @@ This tab enables low-level troubleshooting of a device, see "[Troubleshooting de
 
 The "Location" tab by default shows the location as reported by the device on a map. For devices that do not report a location, you can also manually set the location. Simply place the "pin" in the correct place of the displayed map.
 
-The tab shows when a device contains c8y_Position property. When you send a new c8y position event, you can also set the same c8y_Position fragment on the device and it will automatically mark it's position on the map.
+The tab shows when a device contains c8y_Position property. When you send a new c8y position event, you can also set the same c8y_Position fragment on the device and it will automatically mark its position on the map.
 
 ### <a name="shell"></a>Shell
 
@@ -368,7 +368,7 @@ To request a log from a device you have the following options:
 - Select the date and time range.
 - Choose the type of log. The supported logs are usually device-specific.
 - Enter an optional text to filter the log. For example, if you enter "Users", only lines with the word "Users" in them will appear in the returned log information.
-- Select the maximum number of lines to display (descending).
+- Select the maximum number of lines to display (counted from the end).
 - Click "Request log".
 
 ![Request log](/guides/users-guide/requestlog.png)
@@ -507,7 +507,7 @@ To update firmware or to add software packages on a specific device you have to 
 
 3. Install the firmware on a specific device. First navigate to "All Devices", select the desired device, then go to "Software" on Device Details and click on "Install firmware". Installing software packages is very similar. You follow the same steps as mentioned before, but you choose "install software" instead. (For more info on this step please refer to ["Software"](/guides/users-guide/device-management#software).)
 
-> You must visit the [Administration application](/guides/users-guide/administration#files) to store binaries in Cumulocity.
+> You must visit the [Administration application](/guides/users-guide/administration#files) to store other types of binaries in Cumulocity.
 
 Cumulocity provides users with the ability to execute firmware or software updates for multiple devices simultaneously. To do so:
 

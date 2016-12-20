@@ -5,12 +5,12 @@ layout: default
 
 ## Overview
 
-In the following section you will get an overview on the Web Software Development Kit (SDK) which allows you to
+In the following document you will get an overview on the Web Software Development Kit (SDK) which allows you to
 * extend Cumulocity’s web application with your own applications.
 * enhance the visualization of data with custom widgets.
 * implement functionalities tailored to your use case.
 
-First, this section describes the concept behind applications and plugins. Then it specifies the folder structure of an application and plugin, as well as the content of an application manifest and plugin manifest. SETUP . The Web SDK guide is structured as follows:
+First, this document describes the concept behind applications and plugins. Then it specifies the folder structure as well as the content of the application and plugin manifests which helps understanding how applications and plugins are built. Subsequently, the setup necessary for developing applications and plugins is described. The Web SDK guide is structured as follows:
 * [Concepts](#concepts)
 	* [Project structure](#project-structure)
 	* [Manifests](#manifests)
@@ -18,11 +18,10 @@ First, this section describes the concept behind applications and plugins. Then 
 	* [Prerequisites](#prerequisites)
 	* [Cumulocity CLI tool](#cli-tool)
 	* [Cumulocity UI package](#ui-package)
-* ["Hello World!"](#hello-world)
-* [Services and extension points](#service-points)
 
 Afterwards, we describe how to create a sample plugin step-by-step:
-* [HelloWorld application plugin](#hello-word-app-plugin)
+* ["Hello World!"](#hello-world)
+* [Services and extension points](#service-points)
 
 You can also find other, more complex examples in the following documents:
 * [Branding plugin](/guides/web/branding-plugin)
@@ -122,7 +121,7 @@ Most of the content of the manifest files corresponds to the application API pro
 
 ## <a name="setup"></a>Setup
 
-### Prerequisites
+### <a name="prerequisites"></a>Prerequisites
 
 Plugins are based on HTML5. You should be familiar with the following technologies:
 
@@ -137,7 +136,7 @@ You will need the following prerequisites for being able to develop plugins and 
 * You will need [npm](https://www.npmjs.com/) *(installed with Node.js)*
 * You will need access to your Cumulocity account, i.e. you need your tenant name, username and password.
 
-### Cumulocity CLI tool
+### <a name="cli-tool"></a>Cumulocity CLI tool
 
 Once all prerequisites are fulfilled, you are almost ready to go to build your own application and plugin. For the process of developing a plugin (building, theming, translating and deploying your apps and plugins), you will need the npm package "cumulocity-tools" installed globally on your machine. To install the npm package, execute the following command on your terminal.
 
@@ -153,40 +152,42 @@ $ c8y --help
 
 The "--help" option displays all available commands for the CLI tool.
 
-### Cumulocity UI package
+### <a name="ui-package"></a>Cumulocity UI package
 
-As already described above, applications are always a collection of plugins. We provide a set of plugins you can build on in addition to your own. But before that, you must add a package.json file to your project. To do so, simply run:
+As already described above, applications are always a collection of plugins. We provide a set of plugins you can build on in addition to your own. But before that, you must add a package.json file to the root folder of your application project. To generate the package.json file automatically, simply run:
 
 ```bash
 $ npm init
 ```
 
-Then proceed to install the Cumulocity UI package containing the set of plugins:
+Then proceed to install the Cumulocity UI package containing the set of plugins by typing in the following command:
 
 ```bash
 $ c8y install latest
 ```
 
 This command will:
-- Check for the latest version of the UI
-- Download the package
-- Add it as a dependency inside package.json
+- Check for the latest version of the Cumulocity UI package.
+- Download the package.
+- Add it as a dependency inside the package.json file.
 
-> Have in mind that that, when sharing your project, other developers only need to run  ```npm install``` as the version of the Cumulocity UI is already defined as a dependency. You can always install other versions by running the ```c8y install``` command again.
+> Note that when sharing your project, other developers only need to run  ```npm install``` inside the root folder of the application project, as the version of the Cumulocity UI package is already defined as a dependency in the package.json file. You can always install other versions by running the ```c8y install``` command again.
 
 ## Sample plugins
 
-After setting up everything and getting an insight into the folder structure and manifests, you can finally start building your first application and plugin. All examples described in the document are available in the repository [https://bitbucket.org/m2m/cumulocity-ui-plugin-examples](https://bitbucket.org/m2m/cumulocity-ui-plugin-examples).
+After setting up everything and getting an insight into the folder structure and manifests, you can finally start building your first application and plugin. The following chapter will guide you through the process of building a "Hello World!" style plugin. You can find the "Hello World!" and all other examples described in this section in the repository [https://bitbucket.org/m2m/cumulocity-ui-plugin-examples](https://bitbucket.org/m2m/cumulocity-ui-plugin-examples). However, we recommend to build the "Hello World!" example from scratch to gain a better understanding of how applications and plugins work.
 
-## "Hello world!"
+CLONE OR ZIP?
 
-This section describes a "Hello world!" style plugin which is available as an example in the repository "cumulocity-ui-plugin" as "myplugin".
+## <a name="hello-world"></a>"Hello world!"
 
-The purpose of this plugin is to add a new menu item which will display a simple "Hello world!" page when selected by user. The following screenshot presents the final result:
+The following "Hello world!" plugin is available as an example in the repository "cumulocity-ui-plugin" as "myplugin". You can use this repository as a reference if you encounter bugs during development.
+
+The purpose of this plugin is to add a new application to the app switcher menu. This application will consist of a single menu item which will display a simple "Hello world!" page when selected by the user. At the end, the application should look as follows:
 
 ![Hello world plugin](/guides/plugins/hello.png)
 
-In order to achieve this goal you need to do the following steps:
+In order to achieve this goal we need to do the following steps:
 
 * Set up an application project.
 * Configure the application manifest.
@@ -197,6 +198,19 @@ In order to achieve this goal you need to do the following steps:
 * Add the view template to display the data.
 * Test the application.
 * Finally, build and publish the application and the plugin.
+
+### Set up an application project
+
+First, we need to create the application project by
+* Creating a new folder with an arbitrary name.
+* Creating a "cumulocity.json" file inside this folder, representing our application manifest.
+* Running the command "npm init" to create a new package.json file.
+* Running the command "c8y install latest" to get the latest core plugins.
+
+
+===================================================
+===================================================
+===================================================
 
 ### Set up an application project
 

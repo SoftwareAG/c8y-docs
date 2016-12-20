@@ -45,7 +45,7 @@ This will direct you to the login page of your default application, shown in the
 
 On the login page, enter your username and password to start the application. The "Remember me" checkbox will make the browser remember your credentials so you do not have to enter them over and over again. This is also convenient if you navigate frequently between Cumulocity applications, as Cumulocity requires you to authenticate each time when starting an application. You can choose to "forget" your credentials by explicitly logging out using the "Logout" menu item in the application.
 
-<center><img src="/guides/users-guide/logout.png" alt="Logout menu" style="max-width: 60%"></center>
+<center><img src="/guides/users-guide/logout2.png" alt="Logout menu" style="max-width: 60%"></center>
 
 
 **For security reasons, Cumulocity does not use Cookie technology.**

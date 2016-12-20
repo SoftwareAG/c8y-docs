@@ -46,7 +46,7 @@ Die oben genannte URL ist nur für Abonnenten der Cumulocity Standard Edition g�
 
 Geben Sie auf der Anmeldeseite Ihren Benutzernamen und Ihr Passwort ein, um die Anwendung zu starten. Das Kontrollkästchen "An mich erinnern" lässt den Browser sich an Ihre Anmeldeinformationen erinnern, so dass Sie sie nicht immer wieder eingeben müssen. Dies ist auch praktisch, wenn Sie häufig zwischen Cumulocity-Anwendungen navigieren, da Cumulocity erfordert, dass Sie sich jedes Mal beim Starten einer Anwendung authentifizieren. Sie können wählen, Ihre Anmeldeinformationen zu "vergessen", indem Sie sich explizit mit dem Menüpunkt "Abmelden" in der Anwendung abmelden.
 
-<center><img src="/guides/users-guide/logout.png" alt="Logout menu" style="max-width: 60%"></center>
+<center><img src="/guides/users-guide/logout2.png" alt="Logout menu" style="max-width: 60%"></center>
 
 
 **Aus Sicherheitsgründen wird keine Cookie Technologie angewandt.**

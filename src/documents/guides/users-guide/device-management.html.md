@@ -20,7 +20,7 @@ The Device Management application shows you your connected devices and enables y
 
 The Device Management Application looks like this:
 
-<center><img src="/guides/users-guide/dmapp.png" alt="Device Management" style="max-width: 100%"></center>
+<center><img src="/guides/users-guide/app2.png" alt="Device Management" style="max-width: 100%"></center>
 
 
 **The following sections will walk you through the various menus of the Device Management application.**
@@ -104,7 +104,9 @@ To create a top-level group, click on the cross button at the top-right next to 
 
 > A group can be created with "0" devices in it.
 
-<img src="/guides/users-guide/addtopgroup.png" alt="Adding top-level groups" style="max-width: 100%">
+
+<center><img src="/guides/users-guide/addtopgroup.png" alt="Device Management" style="max-width: 100%"></center>
+
 
 You can also add devices to a group in two other ways: 
 
@@ -126,7 +128,7 @@ Smart groups are groups dynamically constructed based on filtering criteria. The
 
 Smart groups can be created by selecting "All devices". To create a new group, simply use filters to select devices. Now click on “Create smart group” and name the group.
 
-<img src="/guides/users-guide/smartgroup.png" alt="Create a smart group" style="max-width: 100%">
+<img src="/guides/users-guide/smartgroup4.png" alt="Create a smart group" style="max-width: 100%">
 
 When the group is created, it will appear as top-level group in the “Groups” section. You can adjust filter criteria by selecting the "Sub-assets" tab and modify the filter settings.
 

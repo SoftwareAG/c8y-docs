@@ -73,7 +73,7 @@ Die oben beschriebene Funktionalität bietet bereits eine breite Palette an Ger�
 * Mit Hilfe von [Cumulocity Event Language](/guides/concepts/realtime) implementieren Sie Regeln. Bsp dass Sie eine Email bekommen, wenn Grenzwerte überschritten werden oder andere automatisierte Nachrichten. 
 * Richten Sie eine grafisches Anzeige mit den wichtigsten KPIs ein.
 * Abonnieren von Plugins, die neue Funktionen zur Cumulocity-Anwendung beitragen.
-* 
+
 ![Rules](/guides/concepts-guide/rules.png)
 
 ## APIs

@@ -21,7 +21,7 @@ Die Device Management Anwendung zeigt Ihnen Ihre angeschlossenen Geräte an und 
 
 Diese Anwendung sieht so aus:
 
-<center><img src="/guides/users-guide/appde.png" alt="Device Management" style="max-width: 100%">
+<center><img src="/guides/users-guide/app2de.png" alt="Device Management" style="max-width: 100%">
 </center>
 
 **Die folgenden Abschnitte führen Sie durch die verschiedenen Menüs der Device Management-Anwendung.**
@@ -128,7 +128,7 @@ Dynamische Gruppen sind Gruppen basierend auf Filterkriterien. Sie haben einen v
 
 Durch Auswahl von "Alle Geräte" können dynamische Gruppen angelegt werden. Um eine neue Gruppe zu erstellen, verwenden Sie einfach Filter, um Geräte auszuwählen. Klicken Sie nun auf "Dynamische Gruppe erstellen" und geben Sie der Gruppe einen Namen.
 
-<img src="/guides/users-guide/dyngruppe.png" alt="Create a smart group" style="max-width: 100%">
+<img src="/guides/users-guide/dyngruppe3.png" alt="Create a smart group" style="max-width: 100%">
 
 Wenn die Gruppe erstellt wird, wird sie als Gruppe der obersten Ebene im Abschnitt "Gruppen" angezeigt. Sie können Filterkriterien anpassen, indem Sie einfach die Registerkarte "Kindassets" auswählen und die Filtereinstellungen ändern.
 

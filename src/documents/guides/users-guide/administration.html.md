@@ -269,7 +269,7 @@ When an application has been created it will be available in the application swi
 
 ![List of own applications](/guides/users-guide/ownapplications.png)
 
-### Creating an application
+### <a name="upload-application"></a>Creating an application
 
 To add an application, you can upload a "ZIP file" application. In order to do that:
 
@@ -304,7 +304,7 @@ that provides the entry point to your application.
 
 "External applications" are links to applications running elsewhere. Enter name of the application and application key, then provide the URL of that application and click "Save" to make the link available in the application switcher.
 
-### Cloning applications
+### <a name="clone-application"></a>Cloning applications
 
 This option will copy the application. Cloning a subscribed application creates a copy of the application as own application, with a link to the original application.
 
@@ -334,7 +334,7 @@ To add a smartapp:
 
 ![Legacy smartapps](/guides/users-guide/smartapps.png)
 
-### Adding and removing plugins
+### <a name="add-remove-plugin"></a>Adding and removing plugins
 
 In order to configure and extend the functionality provided through a smartapp, you can add plugins (as ZIP files) to your applications. To add additional plugins, go to “Own applications”, hover over your desired applications and click on “Add Plugin”. You can then drag the plugin into the box or simply browse your computer.
 

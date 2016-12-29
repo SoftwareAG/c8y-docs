@@ -10,7 +10,7 @@ In the following document you will get an overview on the Web Software Developme
 * enhance the visualization of data with custom widgets.
 * implement functionalities tailored to your use case.
 
-First, this document describes the concept behind applications and plugins. Then it specifies the folder structure as well as the content of the application and plugin manifests which helps understanding how applications and plugins are built. Subsequently, the setup necessary for developing applications and plugins is described. The Web SDK guide is structured as follows:
+First, this document describes the concept behind applications and plugins. Then it specifies the required folder structure and different configuration options for applications and plugins. Subsequently, the setup necessary for developing applications and plugins is described. The Web SDK guide is structured as follows:
 * [Concepts](#concepts)
 	* [Project structure](#project-structure)
 	* [Manifests](#manifests)
@@ -43,17 +43,17 @@ This is illustrated below:
 
 ![Extension points for plugins](/guides/concepts-guide/extensionpoints.png)
 
-Or let us look at the “Cockpit” application as an example. It consists of, i.a.
+Or let us take a look at the “Cockpit” application as an example. It consists of, i.a.
 * Cockpit Home: a plugin, which adds the "Home" menu to the navigator.
-* Dashboard: a plugin, which adds a new view/tab to groups and devices functioning as a container for widgets.
-* Data point table: a plugin, which adds an widget to dashboards providing a visualization of measurements in tabular form.
+* Dashboard: a plugin, which adds a new view/tab to groups and devices, functioning as a container for widgets.
+* Data point table: a plugin, which adds a widget to dashboards providing a visualization of measurements in tabular form.
 * etc.
 
-> Note that you cannot extend the core applications of Cumulocity (Administration, Cockpit, Device Management) with new functionality. Instead, you can create a duplicate of the desired application and work on the duplicate itself. To create a duplicate of an application, you can either copy it via the UI in "Administration" or create a new application which uses the exact same plugins as the desired application.
+> Note that you cannot extend the core applications of Cumulocity (Administration, Cockpit, Device Management) with new functionality. Instead, you can create a duplicate of the desired application and work on the duplicate itself. To create a duplicate of an application, you can either [copy it via the UI in "Administration"](/guides/users-guide/administration#clone-application) or create a new application which uses the exact same plugins as the desired application.
 
 ### Project structure
 
-Whenever you create a new application or plugin, you have to comply with the following structure. Otherwise the application or plugin will not work.
+Whenever you create a new application or plugin, you have to comply with the following folder structure. Otherwise the application or plugin will not work.
 The default folder structure of an application is as follows:
 
 ```console
@@ -67,8 +67,8 @@ The default folder structure of an application is as follows:
 			...
 ```
 
-Inside the root folder of your application, the so-called "[application manifest](#application-manifest)" is stored in a file "cumulocity.json". The folder "plugins" contains one folder per plugin contributed by the application. The plugin folder name together with the application name uniquely identifies the plugin. Inside each plugin folder, the so-called "[plugin manifest](#plugin-manifest)" is stored in another "cumulocity.json" file. The format of the application manifest and the plugin manifest is described [below](#manifests).
-In case that you only want to create a plugin and add it to an already existing application, use the exact folder structure described above:
+Inside the root folder of your application, the so-called "[application manifest](#application-manifest)" is stored in the "cumulocity.json" file. The folder "plugins" contains one folder per plugin contributed by the application. The plugin folder name together with the application name uniquely identifies the plugin. Inside each plugin folder, the so-called "[plugin manifest](#plugin-manifest)" is stored in another "cumulocity.json" file. The format of the application manifest and the plugin manifest is described [below](#manifests).
+In case that you only want to create a plugin and [add it to an already existing application](/guides/users-guide/administration#add-remove-plugin), use the exact folder structure described above:
 
 ```console
 <<root folder>>
@@ -88,36 +88,34 @@ The application manifest describes where your application is stored and how it i
 * **availability**: "PRIVATE", if the application is only available in your tenant, "MARKET", if it is a public application.
 * **contextPath**: The path to be used for hosted applications. The URL of the application will be "&lt;&lt;yourURL&gt;&gt;/apps/&lt;&lt;contextPath&gt;&gt;".
 * **key**: The application key that is used for associating requests of an application with the application and for subscribing to applications.
-* **resourcesUrl**: If the app is serving an upload zip file (is the case for Smartapps) this value will be '/'. If it's a full url all the request will proxied to that address.
+* **resourcesUrl**: If the app is serving an upload zip file (which is the case for Smartapps) this value will be '/'. If it's a full url all the request will proxied to that address.
 * **type**: *HOSTED*, if the application is hosted through Cumulocity, *EXTERNAL*, if the application is hosted elsewhere.
 * **imports**: A list of plugins used by the application. List of *&lt;&lt;applicationName&gt;&gt;/&lt;&lt;pluginName&gt;&gt;*.
-* **noAppSwitcher**: If set to true, the application will not appear in the App Switcher menu. Optional, use, for example, if the application only exposes plugins.
+* **noAppSwitcher**: [OPTIONAL] If set to true, the application will not appear in the App Switcher menu. A possible use case is, for example, if the application only exposes plugins.
 * **options**:
-	* **tabsHorizontal**: A boolean, which if set true
-	* **hide_navigator**: A boolean, which if set true collapses the navigator menu on the left by default, optional.
-	* **globalTitle**: A title that will be used as the global title of the web application, optional.
-	* **hide_powered**: A boolean, which if set true
-	* **supportUrl**:
-	* **login_extra_link**: An object that adds an url with a certain label to the login screen, optional.
+	* **tabsHorizontal**: [OPTIONAL] A boolean, which if set true
+	* **hide_navigator**: [OPTIONAL] A boolean, which if set true collapses the navigator menu on the left by default.
+	* **globalTitle**: [OPTIONAL] A title that will be used as the global title of the web application.
+	* **hide_powered**: [OPTIONAL] A boolean, which if set true
+	* **supportUrl**: [OPTIONAL]
+	* **login_extra_link**: [OPTIONAL] An object that adds an url with a certain label to the login screen.
 
-> Note that "contextPath" and "key" need to be unique. For "PRIVATE" applications, "name" and "contextPath" need to be only unique within your tenant.
-
-> You can see the list of plugins an application uses by utilizing the command "c8y util:showimports \[appContextPath\]".
+> Note that "contextPath" and "key" need to be unique. For "PRIVATE" applications, the properties "name" and "contextPath" need to be unique within your tenant only.
 
 #### <a name="plugin-manifest"></a>Plugin manifest
 
 The plugin manifest describes how your plugin is shown in the Cumulocity administration application (name, description, category, gallery, list) and what files need to be built and loaded in order to run the plugin (ngModules, js, imports, css, less, copy).
 
 * **name**: A descriptive name for the plugin, required.
-* **description**: A longer description of the plugin, optional.
-* **category**: A category for the plugin to be used in the filtering in user interface, this is optional.
+* **description**: [OPTIONAL] A longer description of the plugin.
+* **category**: [OPTIONAL] A category for the plugin to be used in the filtering in user interface.
 * **ngModules**: A list of AngularJS modules that are provided by plugin, at least one is required.
-* **js**: A list of JavaScript files to be loaded, such as "index.js", controllers, services, asf. The path is relative to the plugin's root folder. Optional.
-* **css**: A list of CSS files to be loaded, paths relative to plugin’s root folder, optional.
-* **less**: A list of LESS files to be loaded, paths relative to plugin’s root folder, optional.
-* **copy**: A list of files that should be copied into the built, optional.
+* **js**: [OPTIONAL] A list of JavaScript files to be loaded, such as "index.js", controllers, services, asf. The path is relative to the plugin's root folder.
+* **css**: [OPTIONAL] A list of CSS files to be loaded, paths relative to plugin’s root folder.
+* **less**: [OPTIONAL] A list of LESS files to be loaded, paths relative to plugin’s root folder.
+* **copy**: [OPTIONAL] A list of files that should be copied into the built.
 
-Most of the content of the manifest files corresponds to the application API properties, described in the [REST reference](/guides/reference/applications). Examples of manifest files can be found in the [examples](http://bitbucket.org/m2m/cumulocity-ui-plugin-examples).
+Most of the content of the manifest file corresponds to the application API properties, described in the [REST reference](/guides/reference/applications). Examples of manifest files can be found in the [examples](http://bitbucket.org/m2m/cumulocity-ui-plugin-examples).
 
 ## <a name="setup"></a>Setup
 
@@ -174,13 +172,13 @@ This command will:
 
 > Note that when sharing your project, other developers only need to run  ```npm install``` inside the root folder of the application project, as the version of the Cumulocity UI package is already defined as a dependency in the package.json file. You can always install other versions by running the ```c8y install``` command again.
 
+> You can see the list of plugins an application uses by utilizing the command "c8y util:showimports \[appContextPath\]".
+
 ## Sample plugins
 
-After setting up everything and getting an insight into the folder structure and manifests, you can finally start building your first application and plugin. The following chapter will guide you through the process of building a "Hello World!" style plugin. You can find the "Hello World!" plugin in the repository [https://github.com/dwiyatci/cumulocity-hello-plugin-modular](https://github.com/dwiyatci/cumulocity-hello-plugin-modular). You are free to download or clone the repository, but we recommend to build the "Hello World!" example from scratch and to use the repository as a reference to gain a better understanding of how applications and plugins work.
+After setting up everything and getting an insight into the folder structure and manifests, you can finally start building your first application and plugin. The following chapter will guide you through the process of building a "Hello world!" style plugin. You can find the "Hello World!" plugin in the repository [https://github.com/dwiyatci/cumulocity-hello-plugin-modular](https://github.com/dwiyatci/cumulocity-hello-plugin-modular). You are free to download or clone the repository, but we recommend to build the "Hello World!" example from scratch and to use the repository as a reference if you encounter bugs during development. This way you will have a better understanding of how applications and plugins work.
 
 ## <a name="hello-world"></a>"Hello world!"
-
-The following "Hello world!" plugin is available as an example in the repository "cumulocity-ui-plugin" as "myplugin". You can use this repository as a reference if you encounter bugs during development.
 
 The purpose of this plugin is to add a new application to the app switcher menu. This application will consist of a single menu item which will display a simple "Hello world!" page when selected by the user. At the end, the application should look as follows:
 
@@ -211,6 +209,7 @@ After these steps you should have the following folder structure:
 ```console
 <<root folder>>
 ├── node_modules
+|		└── ...
 ├── cumulocity.js
 └── package.json
 ```
@@ -233,16 +232,16 @@ Second, we have to fill out the application manifest (the cumulocity.json file i
 	}
 ```
 
-With the project structure so far, we can already test our application. We already added the "c8yBranding" plugin from the Cumulocity UI package to our imports so that our application is not completely empty when we try to access it. As the name already indicates, it adds the branding of Cumulocity to our application. Before we can test an application locally, we have to create it on our tenant first.
+With the project structure so far, we can already test our application. By adding the "c8yBranding" plugin from the Cumulocity UI package to our imports, our application will not be completely empty when we try to access it. As the name already indicates, the plugin adds the Cumulocity's branding to our application. Before we can test an application locally, we have to create it on our tenant first.
 
-For more details about the other properties of the manifest, revisit "[Manifests](#manifests)".
+For more details on other properties of the manifest, see "[Manifests](#manifests)".
 
-### Create the application on your tenant
+### Create the application in your tenant
 
-After a successful login in a Cumulocity UI application the application key is fetched automatically. As so, to develop an application we need to make sure that the application is created in our tenant. To create the application in our tenant we simply deploy it using using ```c8y deploy:app [appContextPath]```. If you omit appContextPath the contextPath will be read from the cumulocity.json at the path where the command was executed.
+After successfully logging in into a Cumulocity UI application, the application key is fetched automatically. Thus, to develop an application we need to make sure that the application is created in our tenant. To create the application in our tenant we simply deploy it using ```c8y deploy:app [appContextPath]```. If you omit appContextPath the contextPath will be read from the cumulocity.json at the path where the command was executed.
 
 ```bash
-$ c8y deploy:app
+$ c8y deploy:app helloapp
 ? Tenant piedpiper
 ? User admin
 ? Password ***********
@@ -252,9 +251,9 @@ POST application/applications/31337/binaries/ 201
 PUT /application/applications/31337 200
 ```
 
-You will be asked for your tenant name, username, password and base url for you tenant. To prevent filling out these prompts over and over again, you can define the following environment variables on your computer: ```C8Y_TENANT```, ```C8Y_USER```, ```C8Y_PASS``` and ```C8Y_BASE_URL```.
+You will be asked for the name and base url of your tenant, as well as your username and password. To prevent filling out these prompts over and over again, you can define the following environment variables on your computer: ```C8Y_TENANT```, ```C8Y_USER```, ```C8Y_PASS``` and ```C8Y_BASE_URL```.
 
-After deploying your application, it appears in the *"Own applications"* menu of the Cumulocity "Administration" application.
+After deploying your application, it appears in the *"Own applications"* menu of the "Administration" application.
 
 ![My Application](/guides/plugins/applicationeditor.png)
 
@@ -313,9 +312,9 @@ The plugin manifest provides information about our plugin, such as the name, a s
 }
 ```
 
-For more details about the other properties of the manifest, revisit "[Manifests](#manifests)".
+For more details on other properties of the manifest, see "[Manifests](#manifests)".
 
-Now that we have added a plugin to our application, we also have to add it to the imports of our application manifest. The name of the import consists of two parts seperated by a slash. The first part has to be the context path of the application the plugin is located in and the second part has to be the name of the plugin folder. In our case, our plugin is located in our application with the context path "myapplication" as specified in the application manifest and our plugin folder is named "myplugin" which results in:
+Now that we have added a plugin to our application, we also have to add it to the imports of our application manifest. The name of the import consists of two parts seperated by a slash. The first part has to be the context path of the application the plugin is located in and the second part has to be the name of the plugin folder. In our case, our plugin is located in our application with the context path "helloapp" as specified in the application manifest and our plugin folder is named "myplugin" which results in:
 
 ```json
 	{
@@ -331,7 +330,7 @@ After we added the plugin folder to our application, we can start implementing t
 
 ### Implement the plugin's initialization function
 
-Even though the scope of this example is very small, we recommend to use a modular approach. For this reason, create a file for the module "hello.module.js", for the config "hello.config.js" and for the controller "hello.controller.js" inside your "hello" folder.
+Even though the scope of this example is very small, we recommend to use a modular approach. For this reason, create a file "hello.module.js" for the module, a file "hello.config.js" for the config and a file "hello.controller.js" for the controller inside the "hello" folder.
 
 Inside the "hello.module.js" file, we initialize the module for our plugin:
 
@@ -362,32 +361,25 @@ In our "hello.config.js" file, we have to configure our plugin so that it adds a
     c8yNavigatorProvider,
     c8yViewsProvider
   ) {
-    c8yNavigatorProvider.addNavigation({
-      name: 'hello',
-      icon: 'cube',
-      priority: 100000,
-      path: 'hello'
+    c8yNavigatorProvider.addNavigation({ // adds a menu item to the navigator with ...
+      name: 'hello', // ... the name *"hello"*
+      icon: 'cube', // ... the cube icon (icons are provided by the great Font Awesome library and you can use any of their [icon names](http://fontawesome.io/icons/) without the *fa-* prefix here
+      priority: 100000, // ... a priority of 100000, which means that all menu items with a priority lower than 100000 appear before this menu item and all with a priority higher than 100000 appear after this menu item
+      path: 'hello' // ... */hello* as path
     });
 
-    c8yViewsProvider.when('/hello', {
-      templateUrl: ':::PLUGIN_PATH:::/views/hello.html',
-      controller: 'HelloController',
+    c8yViewsProvider.when('/hello', { // when the path "/hello" is accessed ...
+      templateUrl: ':::PLUGIN_PATH:::/views/hello.html', //  ... display our html file "hello.html" inside the "views" folder of our plugin (the plugin's folder is represented using the magic string ```:::PLUGIN_PATH:::```, which is replaced by the actual path during the build process)
+      controller: 'HelloController', // ... use "HelloController" as controller
       controllerAs: 'vm'
     });
   }
 }());
 ```
 
-* The menu item has the name *"hello"*.
-* The menu item has a little cube icon. Icons are provided by the great Font Awesome library and you can use any of their [icon names](http://fontawesome.io/icons/) without the *fa-* prefix here.
-* The menu item is sorted into the menu with a priority of 100000, which means that all menu items with a priority lower than 100000 appear before this menu item and all with a priority higher than 100000 appear after this menu item.
-* It points to a URL /hello.
-* When the user opens the URL /hello (resp. clicks on the menu item), the view /views/hello.html inside the plugin's folder is displayed. The plugin's folder is represented using the magic string ```:::PLUGIN_PATH:::```, which is replaced by the actual path during the build process.
-* Finally we just hook a redirect from the homepage to our /hello view.
-
 ### Implement the controller
 
-Second, we have to implement the controller for our view. For this example, the controller just defines variable "text" to contain the simple static text "hello, world":
+Second, we have to implement the controller for our view. For this example, the controller just defines a variable "text" which contains the simple static text "hello, world":
 
 ```js
 (function () {
@@ -405,6 +397,23 @@ Second, we have to implement the controller for our view. For this example, the 
 }());
 ```
 
+Now that we have added the module, config and controller to our plugin, we have to specify "helloapp.hello" as our module and add each javascript file to our plugin manifest:
+
+```json
+{
+	"name": "Hello world plugin testing",
+	"description": "Simple hello world plugin.",
+	"ngModules": [
+    "helloapp.hello"
+	],
+	"js": [
+    "hello.module.js",
+    "hello.config.js",
+    "hello.controller.js"
+	]
+}
+```
+
 ### View template
 
 After we defined the variable "text", we can access it in our view template. To render the text, add the following to your hello.html file:
@@ -413,15 +422,20 @@ After we defined the variable "text", we can access it in our view template. To 
 <div>{{vm.text}}</div>
 ```
 
+### Test your application
+
+To test your application, use the command ```c8y server -u https://piedpiper.cumulocity.com``` and specify the url your tenant as parameter again. Go to your application and select the "hello" menu item. If you followed the guide correctly, it should look as the [screenshot](#hello-world) shown at the beginning of the "Hello world!" example.
+
 ### Build and deploy your application and plugins
 
-If you run ```c8y --help``` your will the list of commands available.
-You can choose to build application or plugin resulting in zip file that you can add by hand in any Cumulocity administration application or you can deploy the app directly to your tenant.
+After making sure that your application works locally, you can now deploy it to your tenant so that others can access it as well. To deploy an application, you can choose to either build it, resulting in a zip file that you can [add by hand](/guides/users-guide/administration#upload-application) in the "Administration" application, or you can deploy it directly to your tenant using the CLI tool.
+
+> Note that the only way to deploy a single plugin is to build and [upload](/guides/users-guide/administration#add-remove-plugin) it as a zip file.
 
 #### build:app
 Builds the application to the specified folder (./build by default).
-Inside the outputFolder you will find a directory named [appContextPath] and a zip file [appContextPath].zip. This zip file can be upload in the administration interface and added to any tenant.
-If you omit appContextPath the contextPath will be read from the cumulocity.json at the path where the command was executed.
+Inside the [outputFolder] you will find a directory named [appContextPath] and a zip file [appContextPath].zip. This zip file can be upload in the administration interface and added to any tenant.
+If you omit [appContextPath] the contextPath will be read from the cumulocity.json at the path where the command was executed.
 
 ```bash
 $ c8y build:app [appContextPath] [outputFolder]
@@ -429,43 +443,38 @@ $ c8y build:app [appContextPath] [outputFolder]
 
 #### build:plugin
 Builds the plugin to the specified folder (./build by default).
-Inside the outputFolder you will find a directory named [pluginName] and a zip file [pluginName].zip. This zip file can be uploaded in the administration interface and added to any application.
+Inside the [outputFolder] you will find a directory named <pluginName> and a zip file <pluginName>.zip. This zip file can be uploaded in the administration interface and added to any application. <pluginName> cannot be omitted.
+
 ```bash
 $ c8y build:plugin <pluginName> [outputFolder]
 ```
 
 #### deploy:app
-Builds all the plugins, assembles the application and uploads it to the defined tenant. If the app doesn't yet exist on the remote instance it will be automatically created.
-If you omit appContextPath the contextPath will be read from the cumulocity.json at the path where the command was executed.
+Builds all the plugins, assembles the application and uploads it to the defined tenant. If the application does not exist on the remote instance yet it will be automatically created.
+If you omit [appContextPath] the contextPath will be read from the cumulocity.json at the path where the command was executed.
 ```bash
 $ c8y deploy:app [appContextPath]
 ```
 
 The build process for plugins includes the following steps:
 1. Annotate angular functions with *$inject*. (Using [ng-annotate](https://github.com/olov/ng-annotate) )
-2. Replace the ```:::PLUGIN_PATH:::``` by the proper strings
+2. Replace the ```:::PLUGIN_PATH:::``` by the proper strings.
 3. Transform every html file to be included via *$templateCache*.
-4. Concatenate and minify all the defined js files in the manifest (using [UglifyJS 2](https://github.com/mishoo/UglifyJS2))
-5. Compile all the less files
-6. Concatenate and minify all the css and result of the less files
-7. Copy all the files defined in 'copy' in the manifest
-8. Copy all the localization files that may be available inside locales folder inside the plugin
-9. Copy the plugin manifest
-10. Create a zip file with the above contents
+4. Concatenate and minify all js files defined in the manifest. (Using [UglifyJS 2](https://github.com/mishoo/UglifyJS2))
+5. Compile all less files.
+6. Concatenate and minify all css files and the result of the less files.
+7. Copy all the files defined in the manifest under 'copy'.
+8. Copy all the localization files that may be available inside locales folder inside the plugin.
+9. Copy the plugin manifest.
+10. Create a zip file with the above contents.
 
-The build process for an app includes the following steps:
-1. Copy a built version of each plugin defined in the imports list
+The build process for an application includes the following steps:
+1. Copy a built version of each plugin defined in the imports list.
 2. Assemble all the localization files available in each plugin and assemble them in a single .json and .po file for each available language.
-3. Generate an index.html
-5. Copy the application manifest
-6. Create a zip file with the above contents
-
-## Other examples
-
-[https://bitbucket.org/m2m/cumulocity-ui-plugin-examples](https://bitbucket.org/m2m/cumulocity-ui-plugin-examples).
-
-* [Download](https://bitbucket.org/m2m/cumulocity-ui-plugin/get/tip.zip) the plugin boilerplate from Bitbucket. *(Alternatively, clone the repository if you use Mercurial. As the package.json is already created here, you don't need to npm init)*
+3. Generate an index.html file.
+5. Copy the application manifest.
+6. Create a zip file with the above contents.
 
 ## Services and extension points
 
-For more information on the JavaScript APIs, consult the [JSDoc site](http://resources.cumulocity.com/documentation/jssdk/latest/). Services to access Cumulocity APIs are provided in the "core" package, extension points to, for example, add new menu items or widgets are provided in the "ui" package.
+For more information on the JavaScript APIs, consult the [JSDoc site](http://resources.cumulocity.com/documentation/jssdk/latest/). Services to access Cumulocity APIs are provided in the "core" package. Extension points to, for example, add new menu items or widgets are provided in the "ui" package.

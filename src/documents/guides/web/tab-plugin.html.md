@@ -3,6 +3,14 @@ title: Tab Plugin
 layout: default
 ---
 
+## Overview
+
+In the following document
+
+Before you start working on the tab plugins, we recommend you to take a look at the [introduction](/guides/web/introduction) which deals with the basic concepts of applications and plugins as well as an "Hello world!" style demo plugin.
+
+You can find this and all the other plugins described in the documentation inside the repository [cumulocity-ui-plugin-examples](https://bitbucket.org/m2m/cumulocity-ui-plugin-examples).
+
 ## Device Contact Plugin
 
 This section shows how to create a plugin that adds a new tab "Contact" to a device in the Cumulocity application. Clicking on "Contact" presents the user with a simple form for entering contact details. When the user saves the form, the contact details are stored as part of the device object in the inventory. The new tab looks like this:

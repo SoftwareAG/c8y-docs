@@ -21,7 +21,7 @@ The screen shots in the tutorial use MQTTLens. Other tools may look slightly dif
 ### Configure the MQTT connection
 
 To configure the MQTT connection, you need to pass the following connection parameters (see the screenshot below).
-* Hostname: For this example, please use TCP and Port 1883. You also need to pass the URL to your tenant (e.g. developer.cumulocity.com)
+* Hostname: For this example, please use TCP and Port 1883. You also need to pass the URL to your tenant (e.g. mqtt.cumulocity.com)
 * Client ID: You can use the "Generate a random ID" button (most tools will offer such a button) or fill one in yourself. This ID will be linked to your device. To reconnect to the same device, use the same ID.
 * Username: You need to enter your tenant and username separated by a slash (tenant/username). You can use the same user that you use for logging into Cumulocity for this example.
 * Password: The password of the user.

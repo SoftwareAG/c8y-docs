@@ -145,6 +145,8 @@ Device details are divided over a number of tabs. The standard tabs that may be 
 * [Measurements](#measurements)
 * [Alarms](#alarms)
 * [Control](#control)
+* [Text configuration](#config)
+* [Binary configuration](#configsnap)
 * [Software](#software)
 * [Events](#events)
 * [Location](#location)
@@ -223,6 +225,67 @@ The "Alarms" tab displayed the alarms of a device. Please see the Section "[Work
 This tab lists the operations that are being sent to a device or have been sent to a device. Please see the Section "[Working with operations](#operation-monitoring)" for more information on operations.
 
 ![Operations](/guides/users-guide/operations.png)
+
+### <a name="config"></a> Text configuration
+
+The text configuration allows you to configure the parameters and initial settings of your device. You can manually add or edit a device configuration.
+
+#### Adding or editing a device configuration
+
+To manually add or edit a device configuration:
+
+- Navigate to your desired device.
+- Click on the "Configuration" tab.
+- Under "Configuration", you can add or edit the device configuration as desired.
+- When ready, click "Save".
+
+![Device Config](/guides/users-guide/textconfig.png)
+
+### <a name="configsnap"></a>Binary configuration
+
+The binary configuration allows you to retrieve, modify or save configuration data. The configuration data contains the parameters and the initial settings of your device.
+
+A good use-case for the configuration snapshot is applying the same configuration to multiple devices. This way, you can configure one device, download the snapshot and apply it to the other devices.
+
+![Configuration Snapshot](/guides/users-guide/configsnap.png)
+
+#### Retrieving current snapshot configuration from a device	
+
+In order to retrieve the current snapshot from a device, first navigate to the device and then click on  the "Configuration" tab. Scroll down and under "Configuration snapshot", click on "Get new snapshot from device". The retrieved snapshot can be found in the "Configuration repository".
+
+> Note that, the "Configuration repository" is located under the "Management" menu. 
+
+![Retrieve Configuration Snapshot](/guides/users-guide/retrievesnap.png)
+
+#### Applying snapshot configuration to a device
+
+In order to apply a new snapshot, first navigate to a device and then click on "Configuration". Scroll down and under "Configuration snapshot", you can select a configuration repository entry to use from the drop down menu. When the entry is selected, click on "Put new snapshot to device".
+
+> Please note that, when you apply snapshot configuration from one device to another, the configuration may contain data that is device specific!
+
+![Apply new snapshot to a device](/guides/users-guide/addsnap.png)
+
+#### Applying a snapshot configuration from one device to another device
+
+To apply snapshot configuration from one device to another device: 
+
+- Navigate to the configuration tab of the device that already has your desired configuration.
+- Retrieve the current snapshot from the device by clicking on "Get new snapshot from device".
+- Navigate to the configuration tab of the other device, select the new snapshot from the drop down menu and click on "Put new snapshot to device".
+ 
+> Please note that, when you apply snapshot configuration from one device to another, the configuration may contain data that is device specific!
+ 
+#### Creating a snapshot configuration from a file
+
+New configurations can be added to the "Configuration snapshots" list by clicking on "Add configuration snapshot". Then, you will be redirected to the "Configuration repository". All device configurations are kept in the "Configuration repository" which is located under the "Management" menu item. To add a new snapshot:
+
+- Enter "Name".
+- Enter "Description.
+- Write the "Device Type" which can be found in the "Info" tab of the target device. For more info, see [here](/guides/users-guide/device-management/#info).
+- Add the "Configuration snapshot file" by clicking either "Upload" or "Choose file".
+- When ready, click "Save".
+
+![Configuration Snapshot Repository](/guides/users-guide/configsnaprepo.png)
 
 ### <a name="software"></a>Software
 
@@ -306,6 +369,7 @@ Requesting a log from a device may take some time. After the log has been transf
 Finally, Cumulocity can associate devices and assets with multiple external identities. For example, devices often can be identified by the IMEI of their modem, by a microcontroller serial number as well as by an asset tag. This tab lists all the identities recorded for a particular device.
 
 This is, for example, useful when you have broken hardware and need to replace the hardware without loosing the data that was recorded so far. Just connect the new hardware to your account and modify the identity entry of the old hardware to contain the identity of the new hardware.
+
 
 ## <a name="connection-monitoring"></a>Connection monitoring
 

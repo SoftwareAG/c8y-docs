@@ -26,6 +26,7 @@ Types:
 |ManagedObjectUpdated|MANAGED_OBJECT_UPDATE|
 |ManagedObjectDeleted|MANAGED_OBJECT_DELETE|
 |EventCreated|EVENT_CREATE|
+|EventUpdated|EVENT_UPDATE|
 |EventDeleted|EVENT_DELETE|
 |MeasurementCreated|MEASUREMENT_CREATE|
 |MeasurementDeleted|MEASUREMENT_DELETE|
@@ -179,10 +180,10 @@ Example:
 Output streams create the possibility to CREATE, UPDATE and DELETE data in Cumulocity.
 When updating or deleting data it is necessary to provide the ID of the object that will be updated or deleted.
 When creating data Cumulocity will generated an ID if not set in the event processing. The creation of data also requires certain parameters to be set (the same as at our REST APIs).
-In addition to the predefined parameters listed it is possible to add any custom fragment to the data. Please take a look at ---->this<---- for adding custom fragments.
+In addition to the predefined parameters listed it is possible to add any custom fragment to the data. Please take a look at [this section](/guides/event-language/advanced) for adding custom fragments.
 
 Note:
-Creating your own ID will only work on ManagedObjects.
+You cannot define your own ID when using a "Create" output. It will be replaced by the ID generated from Cumulocity.
 
 ### ManagedObjects
 
@@ -226,6 +227,7 @@ Example:
 |Available outputs|
 |:----------------|
 |CreateEvent|
+|UpdateEvent|
 |DeleteEvent|
 
 |Parameter|Data type|Description|Mandatory|
@@ -442,6 +444,7 @@ This stream enables the possibility to send push notifications from Cumulocity v
 |type|String|Push Provider Type. Currently only TELEKOM is possible.|yes|
 |message|String|The body of the push message.|yes|
 |deviceId|String|The ID of the device generating the push message.|yes|
+|customProperties|Map or [ManagedObject](/guides/event-language/data-model#managedobject) or [Event](/guides/event-language/data-model#event) or [Measurement](/guides/event-language/data-model#measurement) or [Operation](/guides/event-language/data-model#operation) or [Alarm](/guides/event-language/data-model#alarm)|Additional information.|yes|
 
 _Note:_
 

@@ -10,6 +10,8 @@ In the following document you will get an overview on the Web Software Developme
 * enhance the visualization of data with custom widgets.
 * implement functionalities tailored to your use case.
 
+![overview](/guides/plugins/pluginoverview.png)
+
 First, this document describes the concept behind applications and plugins. Then it specifies the required folder structure and different configuration options for applications and plugins. Subsequently, the setup necessary for developing applications and plugins is described. The Web SDK guide is structured as follows:
 * [Concepts](#concepts)
 	* [Project structure](#project-structure)
@@ -25,8 +27,8 @@ Afterwards, we describe how to create a sample plugin step-by-step:
 
 You can also find other, more complex examples in the following documents:
 * [Branding plugin](/guides/web/branding-plugin)
-* [Tab plugins](/guides/tab-plugin)
-* [Widget plugins](/guides/widget-plugin)
+* [Tab plugins](/guides/web/tab-plugin)
+* [Widget plugins](/guides/web/widget-plugin)
 
 Although an overview of the concepts of applications and plugins will be provided in this chapter, we recommend to take a look at the basic concept of Cumulocity applications described in [Developing applications](/guides/concepts/applications) before.
 
@@ -475,6 +477,6 @@ The build process for an application includes the following steps:
 5. Copy the application manifest.
 6. Create a zip file with the above contents.
 
-## Services and extension points
+## <a name="service-points"></a>Services and extension points
 
 For more information on the JavaScript APIs, consult the [JSDoc site](http://resources.cumulocity.com/documentation/jssdk/latest/). Services to access Cumulocity APIs are provided in the "core" package. Extension points to, for example, add new menu items or widgets are provided in the "ui" package.

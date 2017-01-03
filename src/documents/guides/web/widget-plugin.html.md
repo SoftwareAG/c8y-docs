@@ -5,7 +5,7 @@ layout: default
 
 ## Overview
 
-In the following document
+In the following document you will get an overview on how to develop a plugin that adds a new widget to dashboards.
 
 Before you start working on the widget plugins, we recommend you to take a look at the [introduction](/guides/web/introduction) which deals with the basic concepts of applications and plugins as well as an "Hello world!" style demo plugin.
 

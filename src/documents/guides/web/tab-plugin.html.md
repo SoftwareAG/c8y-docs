@@ -5,7 +5,7 @@ layout: default
 
 ## Overview
 
-In the following document
+In the following document you will get an overview on how to develop a plugin that adds a new tab to devices.
 
 Before you start working on the tab plugins, we recommend you to take a look at the [introduction](/guides/web/introduction) which deals with the basic concepts of applications and plugins as well as an "Hello world!" style demo plugin.
 
@@ -13,24 +13,23 @@ You can find this and all the other plugins described in the documentation insid
 
 ## Device Contact Plugin
 
-This section shows how to create a plugin that adds a new tab "Contact" to a device in the Cumulocity application. Clicking on "Contact" presents the user with a simple form for entering contact details. When the user saves the form, the contact details are stored as part of the device object in the inventory. The new tab looks like this:
+This section shows how to create a plugin that adds a new tab "Contact" to devices in your application. Clicking on "Contact" presents the user with a simple form for entering contact details. When the user saves the form, the contact details are stored as part of the device object in the inventory. The new tab looks like this:
 
 ![Contact tab](/guides/plugins/contact.png)
 
 In order to achieve this goal you need to do the following steps:
 
-* Create a plugin
-* Declare the plugin on the imports list of the application manifest (cumulocity.json)
-* Add a tab to a device.
+* Create a plugin.
+* Declare the plugin on the imports list of the [application manifest](/guides/web/branding-plugin#application-manifest).
+* Add a tab to devices.
 * Display data in the tab.
-* Persist the data to Cumulocity backend
+* Persist the data to Cumulocity backend.
 
-We assume that you already have created an application to add the new plugin to. You can use myapplication from the previous example. The example is also contained in the folder plugins/deviceContact of  [cumulocity-ui-plugin-examples](https://bitbucket.org/m2m/cumulocity-ui-plugin-examples).
+We assume that you already have created an application that you can add the new plugin to. If not, you can use the application provided in the [repository](https://bitbucket.org/m2m/cumulocity-ui-plugin-examples) mentioned above. You can also find the example described here in the folder "plugins/deviceContact".
 
 ### Adding dependencies
 
-For this exercise let's consider you want to extend Device management. In practice this means importing the set of plugins used in Device management and add your own to the list.
-You can print the list of imported plugins by any available app in your dev environment by executing the command ```c8y util:showimports <appContextPath>```.
+For this exercise, let us consider you want to extend the application "Device Management". In practice, this means adding the set of plugins used in Device Management and adding your own to the list of imports in your application manifest. You can print the list of used plugins by any available application in your development environment by executing the command ```c8y util:showimports <appContextPath>```.
 
 In this case:
 
@@ -38,22 +37,24 @@ In this case:
 $ c8y util:showimports devicemanagement
 ```
 
-These values should be added to the imports definition of the application manifest. Beware to exclude the c8yBranding plugin if you have already defined your own branding plugin.
+Add the printed list of plugins to the imports definition of your application manifest.
 
-However if you prefer a more minimalistic approach you can read the cumulocity.json in [cumulocity-ui-plugin-examples](https://bitbucket.org/m2m/cumulocity-ui-plugin-examples) and only import the essential for the Device Contact plugin to work.
+> Note that you have to exclude the c8yBranding plugin if you have already defined your own branding plugin.
+
+However, if you prefer a more minimalistic approach you can also read the cumulocity.json file in [cumulocity-ui-plugin-examples](https://bitbucket.org/m2m/cumulocity-ui-plugin-examples) and only import the essential plugins for the Device Contact plugin to work.
 
 * **TIP**
 Run ```c8y util:showimports cockpit``` or ```c8y util:showimports administration``` to see other plugins available to you.
-The manifests for the built in applications are stored in *_apps.json* inside node_modules/cumulocity-ui-build.
+The manifests for the built-in applications are stored in *_apps.json* inside node_modules/cumulocity-ui-build.
 
 ### Create a plugin
 
-In your application, run the command:
+Inside your application folder, run the command:
 
 ```console
 $ c8y create:plugin deviceContact
 ```
-Then edit the cumulocity.json file to add the following information:
+Then edit the [plugin manifest](/guides/web/branding-plugin#plugin-manifest) in /plugins/deviceControl to add the following information:
 
 ```json
 {
@@ -68,7 +69,7 @@ Then edit the cumulocity.json file to add the following information:
 }
 ```
 
-Then create a file ```index.js``` at the plugin's root folder to have the following content:
+Then create a file index.js at the plugin's root folder to have the following content:
 
 ```js
 (function () {
@@ -77,7 +78,7 @@ Then create a file ```index.js``` at the plugin's root folder to have the follow
 })();
 ```
 
-Update the application manifest (```cumulocity.json```) to add this new plugin to the import list.
+Update the application manifest to add this new plugin to the import list.
 
 ```console
 {
@@ -107,7 +108,7 @@ Inside the plugin folder, create a file deviceContact.controller.js with the con
 })();
 ```
 
-* Declare the file in the js array inside the plugin manifest in plugins/deviceControl/cumulocity.json:
+* Declare the file in the js array inside the plugin manifest:
 
 ```console
 	{
@@ -119,7 +120,7 @@ Inside the plugin folder, create a file deviceContact.controller.js with the con
 	}
 ```
 
-* Inside the plugin folder Create a file deviceContact.html with the contents:
+* Inside the plugin folder, create a file deviceContact.html with the contents:
 
 ```html
 	<div class="panel panel-clean">
@@ -129,7 +130,7 @@ Inside the plugin folder, create a file deviceContact.controller.js with the con
 	</div>
 ```
 
-* Add the "Contact" tab to the device details just like we did in the "Hello world!" example. Edit index.js and add the content below.
+* Add the "Contact" tab to the device details just like we did in the ["Hello world!"](/guides/web/branding-plugin#hello-world) example. Edit index.js and add the content below.
 Note that when multiple views are attached to the route (/device/:deviceId in this case) tabs are created automatically for each of them. Since the device details view uses /device/:deviceId for device details already, "Contact" is rendered as a tab.
 
 ```js
@@ -146,10 +147,9 @@ Note that when multiple views are attached to the route (/device/:deviceId in th
 })();
 ```
 
-
 ### Display data in the "Contact" tab
 
-Previously, we only set up a dummy view for device contacts. In this step, we will display the actual contact information stored with a device in the view. We will define that contact data is stored in a fragment c8y_Contact of a device in the inventory like this:
+Previously, we only set up a dummy view for device contacts. In this step, we will display the actual contact information stored with a device in the view. We will define that contact data is stored in a fragment "c8y_Contact" of a device in the inventory like this:
 
 ```json
 	{
@@ -162,7 +162,7 @@ Previously, we only set up a dummy view for device contacts. In this step, we wi
 	}
 ```
 
-* Add a load function to deviceContact.controller.js as shown below. The function gets the details of the currently displayed device ($routeParams.deviceId) and adds the device's id and c8y_Contact fragment to the local scope $scope.
+* Add a load function to deviceContact.controller.js as shown below. The function gets the details of the currently displayed device ($routeParams.deviceId) and adds the device's id and c8y_Contact fragment to the local scope.
 
 ```js
 (function () {
@@ -186,7 +186,6 @@ Previously, we only set up a dummy view for device contacts. In this step, we wi
 
 })();
 ```
-
 
 * Edit the device contact view in deviceContact.html with the content below.
 
@@ -219,10 +218,12 @@ Previously, we only set up a dummy view for device contacts. In this step, we wi
 
 After completing the following steps, you will be able to save the data edited using the new contact form.
 
-* Update the controller in deviceContact.js to also save data by adding the content below just after the closing brace of the load function. c8yDevices.save is a library function that stores a device using the Cumulocity REST API. c8yAlert.success is a library function that displays a green confirmation box at the top of the user interface.
+* Update the controller in deviceContact.js to also save data by adding the content below just after the closing brace of the load function. c8yDevices.save is a [library function](/guides/web/introduction#service-points) that stores a device using the Cumulocity REST API. c8yAlert.success is a library function that displays a green confirmation box at the top of the user interface.
 
 
 ```js
+  // ... function load() { ... }
+
 	function save(device) {
 		c8yDevices.save(device).then(onSave);
 	}
@@ -232,6 +233,8 @@ After completing the following steps, you will be able to save the data edited u
 	}
 
 	$scope.save = save;
+
+	// $scope.device = {}; ...
 ```
 
 * Add a *"Save changes"* button to the device contact view. Paste the div below just before the closing form tag in deviceContact.html. The button will trigger the ```save``` function that we just defined.
@@ -241,4 +244,5 @@ After completing the following steps, you will be able to save the data edited u
 		<a href="" class="btn btn-primary" ng-click="save(device)" ng-disabled="contactForm.$invalid">Save changes</a>
 	</div>
 ```
+
 Now your plugin is done! Open your application in the web browser and click on a device to see the new "Contact" tab.

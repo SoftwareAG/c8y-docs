@@ -86,11 +86,11 @@ Example response:
 ### GET a collection of measurements
 
 Response body: MeasurementCollection
-  
+
 Required role: ROLE\_MEASUREMENT\_READ
 
 Example request: Retrieve energy readings.
-	
+
      GET /measurement/measurements
      Host: ...
      Authorization: Basic ...
@@ -101,7 +101,7 @@ Example response:
     HTTP/1.1 200 OK
     Content-Type: application/vnd.com.nsn.cumulocity.measurementCollection+json;ver=...
     Content-Length: ...
-     
+
     {
       "self":"...",
       "measurements":[
@@ -145,15 +145,15 @@ Example response:
       }
     }
 
-In case of executing range queries on measurements API, like query by dateFrom and dateTo, measurements are returned in order from the last to the latest. It is possible to change the order by adding query parameter "revert=true" to the request URL. 
+In case of executing range queries on measurements API, like query by dateFrom and dateTo, measurements are returned in order from the last to the latest. It is possible to change the order by adding query parameter "revert=true" to the request URL.
 In many use cases it is needed to get the latest measurement sent from the device. This can be accomplished by passing "revert" param together with "dateFrom" and "dateTo" params to sort the outcome by date, e.g. pass dateFrom from a year ago, and dateTo from the feature.
 
-### GET series from measurements
+### GET - retrieve all or some series of measurements
 
-This endpoint returns all series (any fragment that contains a value is a serie) found in measurements in simplified form. Mandatory params are: dateFrom, dateTo and source. No paging is used here.
+This endpoint returns a list of series (all or only those matching specified names; a series is any fragment in measurement that contains "value" property) and their values within given period. Mandatory params are: dateFrom, dateTo and source. No paging is used here.
 It is possible to fetch aggregated results by passing additional param: aggregationType (DAILY, HOURLY, MINUTELY). If no aggregation param is specified, the result contains no more than 5000 values.
 Important: for the aggregation to be done correctly the mechanism expects a device to always use the same time zone when it sends dates.
-  
+
 Required role: ROLE\_MEASUREMENT\_READ
 
 Example request: retrieve all series.
@@ -203,9 +203,46 @@ Example response:
      truncated: false
     }
 
-Each value in values object is a date taken from a measurement and inside that date there is a list of min and max pairs. Each pair corresponds to single serie definition in series object. If there is no aggregation used, min = max in every pair.
+Series can be filtered by providing additional "series" param with full name of a series (measurement type and series name).
+You can specify more series to filter by adding more "series" param occurrences, e.g.: ...series=c8y_AccelerationMeasurement.acceleration&series=c8y_SpeedMeasurement.velocity...
 
-"Truncated" flag tells whether there was more than 5000 values and if the final result was truncated.
+Example request: retrieve only specific series.
+
+     GET /measurement/measurements/series?series=c8y_AccelerationMeasurement.acceleration&dateFrom=...
+     Authorization: Basic ...
+     Accept: application/json
+
+Example response:
+
+    HTTP/1.1 200 OK
+    Content-Type: application/json
+    Content-Length: ...
+
+    {
+     values: {
+         2014-12-04T17:33:01.538+01:00: [
+             {
+              min: 13.37,
+              max: 13.37
+             }],
+         2014-12-04T17:34:01.774+01:00: [
+             {
+              min: 10.2,
+              max: 10.2
+             }]
+     },
+     series: [
+             {
+              unit: "m/s2",
+              name: "acceleration",
+              type: "c8y_AccelerationMeasurement"
+             }],
+     truncated: false
+    }
+
+Each key in "values" object is a date taken from measurement and it contains a list of min and max pairs. Each pair corresponds to single series definition in "series" object. If there is no aggregation used, min = max in every pair.
+
+Flag "truncated" indicates whether there were more than 5000 values and if the final result was truncated.
 
 
 ### POST - create a new measurement
@@ -213,7 +250,7 @@ Each value in values object is a date taken from a measurement and inside that d
 Request body: Measurement
 
 Response body: Measurement
-  
+
 Required role: ROLE\_MEASUREMENT\_ADMIN or owner of source object
 
 Example Request:
@@ -223,7 +260,7 @@ Example Request:
     Authorization: Basic ...
     Content-Length: ...
     Content-Type: application/vnd.com.nsn.cumulocity.measurement+json;ver=...
-     
+
     {
       "time" : "2011-09-19T12:03:27.845Z",
       "type" : "KamstrupA220Reading",
@@ -244,7 +281,7 @@ Example response:
     HTTP/1.1 201 Created
     Content-Type: application/vnd.com.nsn.cumulocity.measurement+json;ver=...
     Content-Length: ...
-     
+
     {
       "id" : "43",
       "self" : "<<URL of new measurement>>",
@@ -275,7 +312,7 @@ The DELETE method allows for deletion of measurement collections. Applicable que
 Request body: N/A
 
 Response body: N/A
-  
+
 Required role: ROLE\_MEASUREMENT\_ADMIN
 
 Example request:
@@ -283,7 +320,7 @@ Example request:
      DELETE: /measurement/measurements....
      Host: ...
      Authorization: Basic ...
-     
+
 Example response:
 
     HTTP/1.1  204 NO CONTENT
@@ -311,7 +348,7 @@ Each measurement fragment is an object containing the actual measurements as pro
 ### GET a representation of a Measurement
 
 Response body: Measurement
-  
+
 Required role: ROLE\_MEASUREMENT\_READ
 
 Example request:
@@ -344,9 +381,9 @@ Example response:
 ### DELETE a Measurement
 
 Request Body: N/A.
- 
+
 Response Message Body: N/A.
-  
+
 Required role: ROLE\_MEASUREMENT\_ADMIN or owner of source object
 
 Example Request: Delete a measurement
@@ -374,33 +411,33 @@ The response will additionally to the measurement object contain a "realtimeActi
 
 Example Response:
 
-    HTTP/1.1 200 OK 
+    HTTP/1.1 200 OK
     Content-Type: application/json
     [
       {
-        "channel": "/measurement/12345", 
-        "successful": true, 
-        "error": "", 
+        "channel": "/measurement/12345",
+        "successful": true,
+        "error": "",
         "data": [{
           "realtimeAction": "CREATE",
           "data": {
             "id": "1",
             "self": "...",
-            "source": { 
+            "source": {
               "12345"
             },
             "creationTime": "2011-09-06T12:03:27.927+02:00",
             "c8y_TemperatureMeasurement": {
-              "T": { 
+              "T": {
                 "value": 25,
-                "unit": "C" 
+                "unit": "C"
               }
             },
-            "time":"2011-09-06T12:03:17.927+02:00", 
+            "time":"2011-09-06T12:03:17.927+02:00",
             "type": "TemperatureMeasurement"
           }
-        }], 
-        "clientId": "Un1q31d3nt1f13r" 
+        }],
+        "clientId": "Un1q31d3nt1f13r"
       }
     ]
 

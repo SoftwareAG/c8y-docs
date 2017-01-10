@@ -26,7 +26,7 @@ Um Cumulocity zu nutzen, müssen Sie einen Browser auf dem neuesten Stand instal
 Sie können auch aktuelle Smartphone- und Tablet-Webbrowser verwenden. Wir testen mit folgenden mobilen Webbrowsern:
 
   * Chrome für Android (Neuester) auf Galaxy smartphones und Tablets.<img src="/guides/users-guide/chromesymbol.png" alt="Reset password" style="max-width: 5%">  
-  * Safari auf iOS (Neuester) für Apple iPhone und iPad.<img src="/guides/users-guide/safarilogo.png" alt="Reset password" style="max-width: 5%">  
+  * Safari auf iOS (Neuester) fuer Apple iPhone und iPad.<img src="/guides/users-guide/safarilogo.png" alt="Reset password" style="max-width: 5%">  
   
 > Der private Modus in Browsern funktioniert möglicherweise nicht. Die Verwendung von Cumulocity auf mobilen Geräten kann durch den Speicher und die auf den Geräten verfügbare Verarbeitungsleistung eingeschränkt sein. Beim Laden großer Visualisierungen kann das mobile Gerät kommunikationsunfähig werden.
 
@@ -39,14 +39,14 @@ Dadurch gelangen Sie zur Anmeldeseite Ihrer Standardanwendung, die in der folgen
 <center><img src="/guides/users-guide/login.png" alt="Login prompt" style="max-width: 50%"></center>
 
 
-> Stellen Sie sicher, dass die Adressleiste Ihres Browsers ein Sperrsymbol anzeigt. Das Sperrsymbol zeigt an, dass Sie eine sichere Verbindung verwenden und dass Sie tatsächlich mit Cumulocity verbunden sind.
+> Stellen Sie sicher, dass die Adressleiste Ihres Browsers ein Sperrsymbol anzeigt. Das Sperrsymbol zeigt an, dass Sie eine sichere Verbindung verwenden und dass Sie tatsächlich mit Cumulocity verbunden sind.<img src="/guides/users-guide/locksymbol.png" alt="Login prompt" style="max-width: 5%">
 Die oben genannte URL ist nur für Abonnenten der Cumulocity Standard Edition gültig. Für spezialisierte- und private Edition-Bereitstellungen von Cumulocity ist die URL für Ihr Unternehmen spezifisch.
 
 ## <a name="login"></a>Logging in
 
 Geben Sie auf der Anmeldeseite Ihren Benutzernamen und Ihr Passwort ein, um die Anwendung zu starten. Das Kontrollkästchen "An mich erinnern" lässt den Browser sich an Ihre Anmeldeinformationen erinnern, so dass Sie sie nicht immer wieder eingeben müssen. Dies ist auch praktisch, wenn Sie häufig zwischen Cumulocity-Anwendungen navigieren, da Cumulocity erfordert, dass Sie sich jedes Mal beim Starten einer Anwendung authentifizieren. Sie können wählen, Ihre Anmeldeinformationen zu "vergessen", indem Sie sich explizit mit dem Menüpunkt "Abmelden" in der Anwendung abmelden.
 
-<center><img src="/guides/users-guide/logout2.png" alt="Logout menu" style="max-width: 60%"></center>
+<center><img src="/guides/users-guide/logout.png" alt="Logout menu" style="max-width: 60%"></center>
 
 
 **Aus Sicherheitsgründen wird keine Cookie Technologie angewandt.**

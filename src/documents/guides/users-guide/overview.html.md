@@ -89,7 +89,7 @@ The general structure of a Cumulocity application is shown in the screenshot bel
 * The user menu shows your user name. By clicking on the user name, a popup menu appears. The popup menu allows you to log out of the application (even if you clicked "Remember me") and provides access to user settings and help.
 * In some areas, a cog wheel on the top right provides access to further functionality through a drop-down menu.
 
-![Cumulocity application](/guides/users-guide/app.png)
+![Cumulocity application](/guides/users-guide/app2.png)
 
 On smaller screens, the layout of an application changes, as shown below. The navigator is hidden and only some of the tabs are in the visible screen area. To access the navigator, click on the three lines on the top left. To access other tabs, scroll the tabs left or right. (The way to scroll the tabs may depend on your device.)
 

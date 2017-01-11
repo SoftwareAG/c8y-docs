@@ -94,7 +94,7 @@ In case a list contains more than 1.000 entries, only the first 1.000 entries ar
 
 Cumulocity includes a full-text search for devices. By entering a search term into the "search ..." text field, you can find all devices that contain that term. The image below shows an example of searching for devices that contain the term "Ublox C027". You can search for any text properties of a device. Prefixes are also supported. For example, a search for "Ublox" would also return the devices containing "Ublox C027". Suffixes are currently not supported. For example, searching for "C027" would not return the "Ublox C027".
 
-<img src="/guides/users-guide/searching.png" alt="Full Text Search" style="max-width: 100%">
+<img src="/guides/users-guide/searchbox.png" alt="Full Text Search" style="max-width: 100%">
 
 Devices can be arbitrarily grouped according to your use case. A device can be located in multiple groups, and groups themselves can be part of multiple groups again.
 
@@ -105,8 +105,7 @@ To create a top-level group, click on the cross button at the top-right next to 
 > A group can be created with "0" devices in it.
 
 
-<center><img src="/guides/users-guide/addtopgroup.png" alt="Device Management" style="max-width: 100%"></center>
-
+<img src="/guides/users-guide/addtopgroup.png" alt="Device Management" style="max-width: 100%">
 
 You can also add devices to a group in two other ways: 
 
@@ -114,7 +113,7 @@ You can also add devices to a group in two other ways:
 * Select a group and go to the tab "Sub-assets" on the left and select it. Then click "Assign devices" at the top right of the group list. A new menu appears. Search for the devices that should be added in the search field. Then mark the relevant devices in the result and click the "Assign x devices" button at the bottom of the result list. 
 
 
-<center><img src="/guides/users-guide/subassetadd.png" alt="Adding top-level groups" style="max-width: 100%"></center>
+<img src="/guides/users-guide/subassetadd.png" alt="Adding top-level groups" style="max-width: 100%">
 
 
 To create a subgroup, just click "Add Group" when viewing a group.
@@ -126,17 +125,22 @@ To edit a group, click on the group's name. This allows you to edit the name of 
 
 Smart groups are groups dynamically constructed based on filtering criteria. They have a temporary character because the group members can change constantly. These groups do not have fixed member listings.They have fixed criteria instead. This type of group can be used, for bulk upgrades for devices of a certain type to a new software or firmware version.
 
+<img src="/guides/users-guide/smartfilters.png" alt="Adding top-level groups" style="max-width: 100%">
+
 Smart groups can be created by selecting "All devices". To create a new group, simply use filters to select devices. Now click on “Create smart group” and name the group.
 
-<img src="/guides/users-guide/smartgroup4.png" alt="Create a smart group" style="max-width: 100%">
+<img src="/guides/users-guide/smartgroup1.png" alt="Create a smart group" style="max-width: 100%">
 
 When the group is created, it will appear as top-level group in the “Groups” section. You can adjust filter criteria by selecting the "Sub-assets" tab and modify the filter settings.
+
+<img src="/guides/users-guide/smartgroup2.png" alt="Adding top-level groups" style="max-width: 100%">
 
 Users can also delete smart groups from the top level groups. This operation is irreversible.
 
 
 > Smart groups are not shown when using the Cockpit application.
 
+<img src="/guides/users-guide/smartgroupdelete.png" alt="Adding top-level groups" style="max-width: 100%">
 
 ## <a name="device-details"></a>Viewing the device details
 

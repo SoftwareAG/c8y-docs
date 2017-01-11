@@ -114,7 +114,7 @@ Sie können auch Geräte auf zwei andere Weisen hinzufügen:
 * Wählen Sie eine Gruppe aus und gehen Sie auf die Registerkarte "Kindgeräte" auf der linken Seite und wählen Sie sie aus. Klicken Sie dann rechts oben in der Gruppenliste auf "Zur Gruppe hinzufügen". Suchen Sie nach den Geräten, die im Suchfeld hinzugefügt werden sollen. Markieren Sie dann die entsprechenden Geräte im Ergebnis und klicken Sie auf die Schaltfläche "Zur Gruppe hinzufügen" am unteren Rand der Ergebnisliste.
 
 
-<center><img src="/guides/users-guide/subassetadd.png" alt="Adding top-level groups" style="max-width: 100%"></center>
+<img src="/guides/users-guide/subassetadd.png" alt="Adding top-level groups" style="max-width: 100%">
 
 
 Um eine Untergruppe zu erstellen, klicken Sie einfach auf "Gruppe hinzufügen", wenn Sie eine Gruppe ansehen.
@@ -126,17 +126,22 @@ Um eine Gruppe zu bearbeiten, klicken Sie auf den Namen der Gruppe. Auf diese We
 
 Dynamische Gruppen sind Gruppen basierend auf Filterkriterien. Sie haben einen vorübergehenden Charakter, da sich die Anzahl der Mitglieder ständig verändern können. Diese Gruppen haben keine festen Mitgliederlisten, sondern bestimmte Auswahlkriterien stattdessen. Diese Art von Gruppe kann verwendet werden, für Bulk-Upgrades eines Gerätyps auf eine neue Software oder Firmware-Version.
 
+<img src="/guides/users-guide/smartfilters.png" alt="Adding top-level groups" style="max-width: 100%">
+
 Durch Auswahl von "Alle Geräte" können dynamische Gruppen angelegt werden. Um eine neue Gruppe zu erstellen, verwenden Sie einfach Filter, um Geräte auszuwählen. Klicken Sie nun auf "Dynamische Gruppe erstellen" und geben Sie der Gruppe einen Namen.
 
-<img src="/guides/users-guide/dyngruppe.png" alt="Create a smart group" style="max-width: 100%">
+<img src="/guides/users-guide/smartgroup1.png" alt="Adding top-level groups" style="max-width: 100%">
 
 Wenn die Gruppe erstellt wird, wird sie als Gruppe der obersten Ebene im Abschnitt "Gruppen" angezeigt. Sie können Filterkriterien anpassen, indem Sie einfach die Registerkarte "Kindassets" auswählen und die Filtereinstellungen ändern.
+
+<img src="/guides/users-guide/smartgroup2.png" alt="Adding top-level groups" style="max-width: 100%">
 
 Benutzer können auch dynamische Gruppen aus den Gruppen der obersten Ebene löschen. Dieser Vorgang ist irreversibel.
 
 
 > Dynamische Gruppen können nicht in der Cockpit Anwendung genutzt werden.
 
+<img src="/guides/users-guide/smartgroupdelete.png" alt="Adding top-level groups" style="max-width: 100%">
 
 ## <a name="device-details"></a>Anzeigen der Gerätedetails
 

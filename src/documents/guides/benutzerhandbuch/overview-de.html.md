@@ -25,8 +25,8 @@ Um Cumulocity zu nutzen, müssen Sie einen Browser auf dem neuesten Stand instal
 
 Sie können auch aktuelle Smartphone- und Tablet-Webbrowser verwenden. Wir testen mit folgenden mobilen Webbrowsern:
 
-  * Chrome für Android (Neuester) auf Galaxy smartphones und Tablets.<img src="/guides/users-guide/chromesymbol.png" alt="Reset password" style="max-width: 5%">  
-  * Safari auf iOS (Neuester) fuer Apple iPhone und iPad.<img src="/guides/users-guide/safarilogo.png" alt="Reset password" style="max-width: 5%">  
+  * Chrome für Android (Neuester) auf Galaxy smartphones und Tablets.<img src="/guides/users-guide/chromesymbol.png" alt="chrome" style="max-width: 5%">  
+  * Safari auf iOS (Neuester) fuer Apple iPhone und iPad.<img src="/guides/users-guide/safarilogo.png" alt="safari" style="max-width: 5%">  
   
 > Der private Modus in Browsern funktioniert möglicherweise nicht. Die Verwendung von Cumulocity auf mobilen Geräten kann durch den Speicher und die auf den Geräten verfügbare Verarbeitungsleistung eingeschränkt sein. Beim Laden großer Visualisierungen kann das mobile Gerät kommunikationsunfähig werden.
 

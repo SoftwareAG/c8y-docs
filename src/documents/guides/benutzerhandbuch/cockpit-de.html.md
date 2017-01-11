@@ -133,7 +133,7 @@ Um das Dashboard auf den ursprünglichen Inhalt zurückzusetzen, verwenden Sie d
 Um die Cockpit-Anwendung zu verwenden, müssen Sie IoT-Geräte anschließen. Geräte werden im Device Management angeschlossen. Wechseln Sie mit dem Application Switcher rechts oben in das "Device Management" und wählen Sie dann "Registrierung".
 
 Hier nochmal die Details: [Device Management User Guide](/guides/users-guide/device-management).
-<img src="/guides/users-guide/app.png" alt="Logout menu" style="max-width: 100%">
+<img src="/guides/users-guide/app2.png" alt="Logout menu" style="max-width: 100%">
 
 ## <a name="asset"></a>Asset Management
 
@@ -955,7 +955,7 @@ Sonst
 * ..wird der Alarm gestoppt.
 
 
-### Troubleshooting
+**Troubleshooting**
 
 * Stellen Sie sicher, dass der Alarm erstellt wurde und nicht irgendwo dupliziert wurde.
 
@@ -984,7 +984,7 @@ Die Parameter dieser Regel:![image alt text](/guides/users-guide/image_37de.png)
 * Typ: Typ des Alarms, der ausgelöst wird.
 * Text: Text des Alarms, der ausgelöst wird.
 
-### Troubleshooting
+**Troubleshooting**
 
 * Bitte überprüfen Sie die gleichen Schritte wie für die Schwellenregel oben.
 
@@ -1013,7 +1013,7 @@ Die Regel verwendet die folgenden Parameter:
 
 * Antwort auf: Adresse, die verwendet werden soll, um auf die Nachricht zu antworten.
 
-### Troubleshooting
+**Troubleshooting**
 
 * Bitte überprüfen Sie die gleichen Schritte wie für die Schwellenregel oben.
 
@@ -1035,7 +1035,7 @@ Die Regel verwendet die folgenden Parameter:
 
 * Nachricht: SMS-Text mit max. 160 Zeichen. Sie können die Variable # {name} verwenden. Unterstützte Variablen werden unter "Smart Rule Variables" weiter unten aufgelistet.
 
-###Troubleshooting 
+**Troubleshooting** 
 
 * Bitte überprüfen Sie die gleichen Schritte wie für die Schwellenregel oben.
 
@@ -1079,7 +1079,7 @@ Die Regel verwendet die folgenden Parameter:
 
 Es wird kein Alarm ausgelöst, bis das Gerät zum ersten Mal die Geofence-Grenze überquert.
 
-###Troubleshooting 
+**Troubleshooting** 
 
 * Bitte stellen Sie sicher, dass das Gerät innerhalb der Geofence war, einmal mindestens nach dem Erstellen / Aktivieren der Regel
 
@@ -1164,7 +1164,7 @@ Die Regel verwendet die folgenden Parameter:
 
 * Text: E-Mail-Text. Sie können eine Variable des Formulars # {name} verwenden. Unterstützte Variablen werden unter "Smart Rule Variables" weiter unten aufgelistet.
 
-###Troubleshooting
+**Troubleshooting**
 
 * Es wird kein Alarm ausgelöst, bis das Gerät zum ersten Mal die Geofence-Grenze überquert.
 * Den Spam Ordner überprüfen.
@@ -1193,7 +1193,7 @@ Die Regel verwendet die folgenden Parameter:
 
 * Acknowledgement Number: Die Nummer der Taste, die der Empfänger zur Bestätigung drücken muss. Wenn die Taste gedrückt wird, ist der Anruf erfolgreich und der Alarmstatus wird quittiert.
 
-###Troubleshooting
+**Troubleshooting**
 
 * Überprüfen Sie, dass der Alarm erstellt und nicht dupliziert wurde.
 
@@ -1228,7 +1228,7 @@ Die Regel definiert eine Kette von Aktionen in Schritten. Um Schritte hinzuzufü
 
 * Immer: Wenn Schritt N fehlgeschlagen ist: Nur Telefonschritte können fehlschlagen. Der Schritt wird als fehlgeschlagen markiert, sobald alle Wiederholungen ohne erfolgreichen Aufruf durchgeführt wurden. Diese Option wird angezeigt, wenn bereits ein Telefonschritt konfiguriert ist, auf den verwiesen werden kann.
 
-### Troubleshooting
+**Troubleshooting**
 
 * Überprüfen Sie, dass der Alarm erstellt und nicht dupliziert wurde.
 

@@ -36,7 +36,7 @@ Verwenden Sie die folgende URL, um auf die Anwendungen für Ihr Cumulocity-Paket
 
 Dadurch gelangen Sie zur Anmeldeseite Ihrer Standardanwendung, die in der folgenden Abbildung dargestellt ist.
 
-<center><img src="/guides/users-guide/login.png" alt="Login prompt" style="max-width: 50%"></center>
+<img src="/guides/users-guide/login.png" alt="Login prompt" style="max-width: 50%">
 
 
 > Stellen Sie sicher, dass die Adressleiste Ihres Browsers ein Sperrsymbol anzeigt. Das Sperrsymbol zeigt an, dass Sie eine sichere Verbindung verwenden und dass Sie tatsächlich mit Cumulocity verbunden sind.<img src="/guides/users-guide/locksymbol.png" alt="Login prompt" style="max-width: 5%">
@@ -46,7 +46,7 @@ Die oben genannte URL ist nur für Abonnenten der Cumulocity Standard Edition g�
 
 Geben Sie auf der Anmeldeseite Ihren Benutzernamen und Ihr Passwort ein, um die Anwendung zu starten. Das Kontrollkästchen "An mich erinnern" lässt den Browser sich an Ihre Anmeldeinformationen erinnern, so dass Sie sie nicht immer wieder eingeben müssen. Dies ist auch praktisch, wenn Sie häufig zwischen Cumulocity-Anwendungen navigieren, da Cumulocity erfordert, dass Sie sich jedes Mal beim Starten einer Anwendung authentifizieren. Sie können wählen, Ihre Anmeldeinformationen zu "vergessen", indem Sie sich explizit mit dem Menüpunkt "Abmelden" in der Anwendung abmelden.
 
-<center><img src="/guides/users-guide/logout.png" alt="Logout menu" style="max-width: 60%"></center>
+<img src="/guides/users-guide/logout.png" alt="Logout menu" style="max-width: 60%">
 
 
 **Aus Sicherheitsgründen wird keine Cookie Technologie angewandt.**
@@ -55,7 +55,7 @@ Wenn Sie Ihr Passwort vergessen haben, klicken Sie auf den "Passwort vergessen?"
 
 > Der Passwort zurücksetzen Link ist nur ein Tag gültig.
 
-<center><img src="/guides/users-guide/resetpassword.png" alt="Reset password" style="max-width: 50%"></center>
+<img src="/guides/users-guide/resetpassword.png" alt="Reset password" style="max-width: 50%">
 
 Der automatische Passwort Reset wird nur funktionieren, wenn ihre Email Adresse mit einem Cumulocity Nutzerkonto verbunden und gespeichert ist. Wenn Sie eine Warnung erhalten, dass Sie ihr Passwort nicht zurücksetzen koennen, dann benutzen sie entweder eine andere Email Adresse, als die die gespeichert wurde oder sie ist garnicht gespeichert. In jedem Fall sprechen Sie einen Cumulocity Administrator in ihrer Firma oder Organisation an. Administratoren können ihr Passwort zuruecksetzen.
 
@@ -63,7 +63,7 @@ Der automatische Passwort Reset wird nur funktionieren, wenn ihre Email Adresse 
 
 Um Ihr Passwort zu ändern, klicken Sie in der Anwendung auf das Symbol "Benutzereinstellungen". Bitte achten Sie darauf ein starkes Passwort auszuwählen. Um Sie bei der Auswahl von passwortgeschützten Passwörtern zu unterstützen, wird eine Passwortstärkeanzeige zusammen mit einer Passwortänderung angezeigt. Ein Passwort muss aus mindestens acht Zeichen bestehen. Es sollte eine Mischung aus Zeichenklassen (Groß- und Kleinbuchstaben, Zahlen und Symbolen) verwenden. Ein sicheres Kennwort verwendet mindestens drei der oben genannten vier Zeichenklassen.
 
-<center><img src="/guides/users-guide/passwordstrength.png" alt="Reset password" style="max-width: 50%"></center>
+<img src="/guides/users-guide/passwordstrength.png" alt="Reset password" style="max-width: 50%">
 
 > Ihr Administrator kann Ihr Konto so konfigurieren, dass es eine Kennwortrichtlinie erzwingt. Sie müssen dann ein starkes Passwort auswählen oder Ihr Passwort regelmäßig ändern.
 
@@ -90,11 +90,11 @@ Sobald Sie angemeldet sind, wird Ihre Standard-Cumulocity-Anwendung geöffnet. D
 * Das Benutzermenü zeigt Ihren Benutzernamen an. Durch Anklicken des Benutzernamens erscheint ein Popup-Menü. Das Popup-Menü erlaubt Ihnen, sich von der Anwendung abzumelden (auch wenn Sie auf "Remember me" geklickt haben) und bietet Zugriff auf Benutzereinstellungen und Hilfe.
 * In einigen Bereichen bietet ein Zahnrad oben rechts Zugriff auf weitere Funktionalität über ein Dropdown-Menü.
 
-<center><img src="/guides/users-guide/appde.png" alt="Logout menu" style="max-width: 100%"></center>
+<img src="/guides/users-guide/appde.png" alt="Logout menu" style="max-width: 100%">
 
 Bei kleineren Bildschirmen ändert sich das Layout der Benutzeroberfläche wie unten gezeigt. Der Navigator ist ausgeblendet und nur einige Registerkarten werden im Bildschirmbereich angezeigt. Um auf den Navigator zuzugreifen, klicken Sie auf die drei Zeilen links oben. Um auf andere Registerkarten zuzugreifen, navigieren Sie nach links oder rechts.(Wie man genau scrollt ist abhängig vom Gerätetyp.)
 
-<center><img src="/guides/users-guide/appsmall.png" alt="Layout on small devices" style="max-width: 50%"></center>
+<img src="/guides/users-guide/appsmall.png" alt="Layout on small devices" style="max-width: 50%">
 
 Beachten Sie, dass Sie direkt zu jeder Stelle in einer Cumulocity-Anwendung navigieren können. Um beispielsweise die grundlegenden Informationen für ein Gerät anzuzeigen, können Sie die folgende URL eingeben:
 	https://<account>.cumulocity.com/apps/devicemanagement/index.html#/device/<id>/info
@@ -112,7 +112,7 @@ Mit dieser URL, können Sie
 
 Um die Einstellungen für Ihren Benutzer zu ändern, klicken Sie oben rechts auf das Benutzersymbol und wählen "Benutzereinstellungen". Stellen Sie die Sprache der Benutzeroberfläche über das Dropdown-Menü "Sprache" ein. Ändern Sie Ihr Passwort, indem Sie auf "Passwort ändern" klicken. Schließlich klicken Sie auf "Speichern", um Ihre Änderungen zu speichern oder "Abbrechen", um sie zu verwerfen.
 
-<center><img src="/guides/users-guide/usersettings.png" alt="User settings"  style="max-width: 60%"></center>
+<img src="/guides/users-guide/usersettings.png" alt="User settings"  style="max-width: 60%">
 
 Die Sprache der Benutzeroberfläche wird nach folgenden Kriterien in der folgenden Reihenfolge ausgewählt:
 

@@ -251,7 +251,7 @@ and query will return:
 Request body: ManagedObject
 
 Response body: ManagedObject (when accept header is not provided, empty response body is returned)
-  
+
 Required role: ROLE\_INVENTORY\_ADMIN or ROLE\_INVENTORY\_CREATE
 
 Example request : Add a new ManagedObject
@@ -312,7 +312,7 @@ Required role: ROLE\_INVENTORY\_READ
 Example request: Get a representation of a specific manage object
 
     GET /inventory/managedObjects/<<deviceId>>
-    Host: ... 
+    Host: ...
     Authorization: Basic ...
     Accept: application/vnd.com.nsn.cumulocity.managedObject+json;=ver...
 
@@ -340,7 +340,7 @@ Example response:
             }
           },
           ...
-        ]    
+        ]
       },
       ...
     }
@@ -369,7 +369,7 @@ Important: In order to have fragment names included in supported measurements li
 	}
 }
 
-Real example: 
+Real example:
 
 "c8y_SpeedMeasurement": {
       "Speed": { "value": 1234, "unit": "km/h" }
@@ -459,7 +459,7 @@ Note that a "404 Not Found" error will appear if the object has no references.
     Authorization: Basic
     Accept: application/vnd.com.nsn.cumulocity.managedObjectReferenceCollection+json;ver=...
 
-> Please note that references can be either childDevices or childAssets.
+> Please note that references can be either **childDevices** or **childAssets**.
 
 Example Response:
 
@@ -507,7 +507,7 @@ Required role: ROLE\_INVENTORY\_ADMIN or ROLE\_INVENTORY\_CREATE
 
 Example Request: Add a ManagedObjectReference
 
-    POST /inventory/managedObjects/<<deviceId>>
+    POST /inventory/managedObjects/<<deviceId>>/<<references>>
     Host: ...
     Authorization: Basic ...
     Content-Length: ...
@@ -551,12 +551,12 @@ As an alternative it is also allowed to pass the following reference object in t
 ### GET a managed object reference
 
 Response body: ManagedObjectReference
-  
+
 Required role: ROLE\_INVENTORY\_READ
 
 Example request:
 
-    GET /inventory/managedObjects/<<deviceId>>/references/<<referenceId>>
+    GET /inventory/managedObjects/<<deviceId>>/<<references>>/<<referenceId>>
     Host: ...
     Authorization: Basic ...
     Accept: application/vnd.com.nsn.cumulocity.managedObjectReference+json;ver=...
@@ -588,7 +588,7 @@ Note: This operations just removes the reference, it does not delete the object 
 
 Example Request: Delete a managed object reference
 
-    DELETE /inventory/managedObjects/<<deviceId>>/references/<<referenceId>>
+    DELETE /inventory/managedObjects/<<deviceId>>/<<references>>/<<referenceId>>
      Host: [hostname]
      Authorization: Basic xxxxxxxxxxxxxxxxxxx
 

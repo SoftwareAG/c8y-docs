@@ -176,7 +176,7 @@ Example:
 
 ### General structure
 
-Output streams include the possibility to CREATE, UPDATE and DELETE data in Cumulocity.
+Output streams create the possibility to CREATE, UPDATE and DELETE data in Cumulocity.
 When updating or deleting data it is necessary to provide the ID of the object that will be updated or deleted.
 When creating data, Cumulocity will generate an ID if not set in the event processing. The creation of data also requires certain parameters to be set (the same as at our REST APIs).
 In addition to the predefined parameters listed, it is possible to add any custom fragment to the data. Please take a look at ---->this<---- for adding custom fragments.

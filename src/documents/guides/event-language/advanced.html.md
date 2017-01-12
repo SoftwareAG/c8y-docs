@@ -7,7 +7,7 @@ toc: true
 
 ## Custom fragments
 
-Cumulocity APIs give you the possibility to structure your data. In the Cumulocity Event Language this is also the case.
+Cumulocity APIs give you the possibility to structure your data freely. In the Cumulocity Event Language this is also the case.
 Each of the output streams can be extended with custom fragments.
 You can add fragments by setting the fragments field in the stream with a list of key, value pairs. The key is the full JsonPath to the value.
 
@@ -109,7 +109,7 @@ This will result in the following json structure:
 
 ## Advanced trigger  
 
-Triggering a statement by an arriving event in some stream is not the only option.
+Triggering a statement by an arriving event in some stream is not the only possibility.
 The following sections will cover other ways to trigger statements and combining triggers.
 
 ### Pattern
@@ -176,7 +176,7 @@ This will trigger if there is an EventCreated and within 10 minutes there is no 
 
 ### Outputs
 
-Outputs give you the possibility to skip specified events on a stream and to control wether you want to interact or not.
+Outputs give you the possibility to not take every event on a stream into account and to directly control whe
 If you have a measurement that is taken every 10 seconds and you want to do calculations with it maybe it is not necessary to calculate with all measurements but only a subset.
 
     // will output the last measurement arrived every 1 minute
@@ -194,7 +194,7 @@ If you have a measurement that is taken every 10 seconds and you want to do calc
     where e.measurement.type = "c8y_TemperatureMeasurement"
     output every 20 events;
 
-If you need to take all measurements into account because you want to calculate the sum of your measurements and you do not want to update it for every new measurement.
+If you need to take all measurements into account because e.g. you want to calculate the sum of your measurements and you do not want to update it for every new measurement.
 
     select
         sum(getNumber(e, "myCustomMeasurement.mySeries.value")),
@@ -208,7 +208,7 @@ Every 50 measurements this statement will output the sum (of all measurements si
 ## Event windows
 
 Event windows give you the possibility to batch together multiple events in a stream for further analysis.
-There are two ways to create windows:
+There are mainly two ways to create windows:
 
 1. Windows for a certain time
 
@@ -305,7 +305,7 @@ _Note: Stream names are unique and once declared (regardless if implicit or expl
 
 ## Creating own functions
 
-If you want to make more complex calculation than a sum or average you can create your own helper functions and expressions.
+If you want to make more complex calculation than e.g. sum or average you can create your own helper functions and expressions.
 For writing the function you can use JavaScript as the scripting language. You can also import Java classes into your expressions using importClass.
 
 Examples:

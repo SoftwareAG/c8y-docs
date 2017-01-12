@@ -115,7 +115,7 @@ Required role: ROLE\_INVENTORY\_READ
 
 Example Request: Get managed objects finded by query.
 
-    GET /inventory/managedObjects?q=<<query language statement>>
+    GET /inventory/managedObjects?query=<<query language statement>>
     Host: ...
     Authorization: Basic ...
     Accept: application/vnd.com.nsn.cumulocity.managedObjectCollection+json;ver=...
@@ -151,15 +151,15 @@ Example Response:
 
 ### Query Language
 
-Query language is applied to all the managed objects.
+Query language is applied to all managed objects.
 
-##### User can put query via 'q' parameter. Parameter can be:
-* only query to database: ...?q=name eq 'M01'
-* keyword $filter=: ...?q=$filter=name eq  'M01'
-* keyword $orderby=: ...?q=$orderby=id asc
-* keywords $filter= and $orderby=: ...?q=$filter=name eq 'M01' $orderby=id,
+##### User can put query via 'query' parameter. Parameter can be:
+* only query to database: ...?query=name eq 'M01'
+* keyword $filter=: ...?query=$filter=name eq  'M01'
+* keyword $orderby=: ...?query=$orderby=id asc
+* keywords $filter= and $orderby=: ...?query=$filter=name eq 'M01' $orderby=id,
 
-This part explain, how application will be handle query in parameter 'q'.
+This part explain, how application will be handle query in parameter 'query'.
 
 ##### Supported query operations:
 * eq(Equal): City eq 'Redmond'
@@ -236,15 +236,15 @@ Example data:
 
 and query will return:
 
-    ...q=num eq 1 - {"_id": 1, ...}
-    ...q=name eq 'Dev_002' - {"_id": 2, ...}
-    ...q=name eq '*00*' - return all 4 rows
-    ...q=name eq '*dev_001*' - {"_id": 1, ...}
-    ...q=c8y_Availability.statusId eq 2 - {"_id": 3, ...}, {"_id": 4, ...}
-    ...q=num gt 2 - {"_id": 3, ...}, {"_id": 4, ...}
-    ...q=num le 2 - {"_id": 1, ...}, {"_id": 2, ...}
-    ...q=num eq 1 or num eq 2 - {"_id": 1, ...}, {"_id": 2, ...}
-    ...q=has(name) - return all 4 rows
+    ...query=num eq 1 - {"_id": 1, ...}
+    ...query=name eq 'Dev_002' - {"_id": 2, ...}
+    ...query=name eq '*00*' - return all 4 rows
+    ...query=name eq '*dev_001*' - {"_id": 1, ...}
+    ...query=c8y_Availability.statusId eq 2 - {"_id": 3, ...}, {"_id": 4, ...}
+    ...query=num gt 2 - {"_id": 3, ...}, {"_id": 4, ...}
+    ...query=num le 2 - {"_id": 1, ...}, {"_id": 2, ...}
+    ...query=num eq 1 or num eq 2 - {"_id": 1, ...}, {"_id": 2, ...}
+    ...query=has(name) - return all 4 rows
 
 ### POST - Create a new ManagedObject
 

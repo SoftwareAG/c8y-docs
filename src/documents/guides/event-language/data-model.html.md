@@ -13,9 +13,9 @@ All input streams share the same base structure
 
 |Parameter|Data type|Description|
 |:--|:----------|:-------------|
-|_type|String|The type of the event. See the table below for which type values apply for the different streams|
+|_type|String|The type of the event. See the table below for which value types can be used for different streams|
 |_mode|String|The processing mode in which the data was sent to Cumulocity. See [Processing mode](/guides/reference/rest-implementation#processing-mode)|
-|_origin|String|The origin of the event. If the data was created by a cep rule the origin will be "cep"|
+|_origin|String|The origin of the event. If the data was created by a cep rule the origin will be "cep".|
 |payload|Object|The actual data contained in the event|
 
 Types:

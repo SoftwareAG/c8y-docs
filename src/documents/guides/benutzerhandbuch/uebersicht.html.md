@@ -90,7 +90,7 @@ Sobald Sie angemeldet sind, wird Ihre Standard-Cumulocity-Anwendung geöffnet. D
 * Das Benutzermenü zeigt Ihren Benutzernamen an. Durch Anklicken des Benutzernamens erscheint ein Popup-Menü. Das Popup-Menü erlaubt Ihnen, sich von der Anwendung abzumelden (auch wenn Sie auf "Remember me" geklickt haben) und bietet Zugriff auf Benutzereinstellungen und Hilfe.
 * In einigen Bereichen bietet ein Zahnrad oben rechts Zugriff auf weitere Funktionalität über ein Dropdown-Menü.
 
-<img src="/guides/users-guide/appde.png" alt="Logout menu" style="max-width: 100%">
+<img src="/guides/users-guide/appdeutsch.png" alt="Logout menu" style="max-width: 100%">
 
 Bei kleineren Bildschirmen ändert sich das Layout der Benutzeroberfläche wie unten gezeigt. Der Navigator ist ausgeblendet und nur einige Registerkarten werden im Bildschirmbereich angezeigt. Um auf den Navigator zuzugreifen, klicken Sie auf die drei Zeilen links oben. Um auf andere Registerkarten zuzugreifen, navigieren Sie nach links oder rechts.(Wie man genau scrollt ist abhängig vom Gerätetyp.)
 

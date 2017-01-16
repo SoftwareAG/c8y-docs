@@ -132,7 +132,7 @@ Um das Dashboard auf den ursprünglichen Inhalt zurückzusetzen, verwenden Sie d
 Um die Cockpit-Anwendung zu verwenden, müssen Sie IoT-Geräte anschließen. Geräte werden im Device Management angeschlossen. Wechseln Sie mit dem Application Switcher rechts oben in das "Device Management" und wählen Sie dann "Registrierung".
 
 Hier nochmal die Details: [Device Management User Guide](/guides/users-guide/device-management).
-<img src="/guides/users-guide/app2.png" alt="Logout menu" style="max-width: 100%">
+<img src="/guides/users-guide/appdeutsch.png" alt="Logout menu" style="max-width: 100%">
 
 ## <a name="asset"></a>Asset Management
 
@@ -164,7 +164,7 @@ In der Cockpit-Anwendung konstruieren Sie Ihre Assethierarchie, indem Sie Gruppe
 
 Im folgenden Abschnitt wird die Verwendung von Cockpit mit Smart Devices und Gateway-Geräten erläutert und wie intelligente Geräte in die Assethierarchie eingebunden sind:
 
-![app](/guides/users-guide/appbar2.png)
+
 ![image alt text](/guides/users-guide/image_3de.png)
 
 Smart Devices werden im Device Management (rechte Seite) als Top-Level-Geräte dargestellt. In der Cockpit-Anwendung können Sie intelligente Geräte in Gruppen organisieren, wie die Pfeile im obigen Diagramm angeben. 

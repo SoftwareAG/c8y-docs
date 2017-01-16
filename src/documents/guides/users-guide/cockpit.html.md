@@ -138,7 +138,7 @@ To reset the dashboard to the original content, use the menu item "Reset default
 ## <a name="connect"></a>Connecting Devices
 
 To use the Cockpit application, you have to connect IoT devices. Devices are connected in the Device Management application. Change to the “Device Management” using the Application Switcher on the top right, and then select “Registration”. For details, please see [Device Management User Guide](/guides/users-guide/device-management).
-<img src="/guides/users-guide/app2.png" alt="Logout menu" style="max-width: 100%">
+<img src="/guides/users-guide/app.png" alt="Logout menu" style="max-width: 100%">
 ## <a name="asset"></a>Asset Management
 
 An asset represents the business object in general like buildings, machines, production units or cars.
@@ -172,7 +172,7 @@ The following section explains how to use Cockpit with smart devices and gateway
 
 Below is an example how smart devices are linked into the asset hierarchy:
 
-![app](/guides/users-guide/appbar2.png)
+
 ![image alt text](/guides/users-guide/image_3.png)
 
 Smart devices are represented in the Device Management (right side) as top-level devices. In the Cockpit application, you can organize smart devices into groups, as the arrows indicate in the above diagram.

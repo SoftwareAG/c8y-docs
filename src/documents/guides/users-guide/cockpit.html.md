@@ -102,7 +102,7 @@ The welcome page opens the first time you log into Cumulocity Cockpit.
 
 The welcome page shows the following sections:
 
-* An welcome notice with the number of devices (or assets) connected.
+* A welcome notice with the number of devices (or assets) connected.
 
 * A list of quick links.
 

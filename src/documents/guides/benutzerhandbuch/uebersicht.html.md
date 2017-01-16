@@ -18,16 +18,16 @@ Dieser Abschnitt ist eine Basis-Einführung in die Cumulocity Plattform. Sie bes
 
 Um Cumulocity zu nutzen, müssen Sie einen Browser auf dem neuesten Stand installiert haben. Wir testen die Anwendungen mit den folgenden Browsern:
 
-  * Edge Browser  <img src="/guides/users-guide/edgesymbol.png" alt="Reset password" style="max-width: 5%">
-  * Internet Explorer (Neuester) <img src="/guides/users-guide/ieicon.png" alt="Reset password" style="max-width: 5%">  
-  * Firefox (Neuester)       <img src="/guides/users-guide/firefoxsymbol.png" alt="Reset password" style="max-width: 5%">  
-  * Chrome (Neuester)<img src="/guides/users-guide/chromesymbol.png" alt="Reset password" style="max-width: 5%">
-
+  * Edge Browser 
+  * Internet Explorer (Neuester) 
+  * Firefox (Neuester) 
+  * Chrome (Neuester)
+  
 Sie können auch aktuelle Smartphone- und Tablet-Webbrowser verwenden. Wir testen mit folgenden mobilen Webbrowsern:
 
-  * Chrome für Android (Neuester) auf Galaxy smartphones und Tablets.<img src="/guides/users-guide/chromesymbol.png" alt="chrome" style="max-width: 5%">  
-  * Safari auf iOS (Neuester) fuer Apple iPhone und iPad.<img src="/guides/users-guide/safarilogo.png" alt="safari" style="max-width: 5%">  
-  
+  * Chrome für Android (Neuester) auf Galaxy smartphones und Tablets.
+  * Safari auf iOS (Neuester) fuer Apple iPhone und iPad.
+    
 > Der private Modus in Browsern funktioniert möglicherweise nicht. Die Verwendung von Cumulocity auf mobilen Geräten kann durch den Speicher und die auf den Geräten verfügbare Verarbeitungsleistung eingeschränkt sein. Beim Laden großer Visualisierungen kann das mobile Gerät kommunikationsunfähig werden.
 
 Verwenden Sie die folgende URL, um auf die Anwendungen für Ihr Cumulocity-Paket zuzugreifen:

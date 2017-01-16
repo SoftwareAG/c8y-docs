@@ -21,13 +21,10 @@ Die Device Management Anwendung zeigt Ihnen Ihre angeschlossenen Geräte an und 
 
 Diese Anwendung sieht so aus:
 
-<center><img src="/guides/users-guide/appde.png" alt="Device Management" style="max-width: 100%">
+<center><img src="/guides/users-guide/appdeutsch.png" alt="Device Management" style="max-width: 100%">
 </center>
 
 **Die folgenden Abschnitte führen Sie durch die verschiedenen Menüs der Device Management-Anwendung.**
-
-<center><img src="/guides/users-guide/dmround.png" alt="Device Management" style="max-width: 30%">
-</center>
 
 ## <a name="device-registration"></a>Manuell Geräte verbinden
 

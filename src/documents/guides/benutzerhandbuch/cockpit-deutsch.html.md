@@ -19,7 +19,6 @@ Die Cockpit-Anwendung bietet Ihnen Optionen, um Internet der Dinge (IoT) Assets 
 
 Weitere Informationen zur Cockpit-Anwendung finden Sie in der folgenden Einführung.
 
-<center><img src="/guides/users-guide/cockpitround.png" alt="Cockpit" style="max-width: 30%"></center>
 
 ## <a name="intro"></a>Einführung
 

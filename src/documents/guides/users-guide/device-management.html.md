@@ -20,12 +20,10 @@ The Device Management application shows you your connected devices and enables y
 
 The Device Management Application looks like this:
 
-<center><img src="/guides/users-guide/app2.png" alt="Device Management" style="max-width: 100%"></center>
+<center><img src="/guides/users-guide/app.png" alt="Device Management" style="max-width: 100%"></center>
 
 
 **The following sections will walk you through the various menus of the Device Management application.**
-
-<center><img src="/guides/users-guide/dmround.png" alt="Device Management" style="max-width: 30%"></center>
 
 ## <a name="device-registration"></a>Connecting devices manually
 

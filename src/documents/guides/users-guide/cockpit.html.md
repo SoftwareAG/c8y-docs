@@ -19,7 +19,6 @@ The Cockpit application provides you with options to manage the Internet of Thin
 
 For more information about the cockpit application please refer to the introduction below.
 
-<center><img src="/guides/users-guide/cockpitround.png" alt="Cockpit" style="max-width: 30%"></center>
 
 ## <a name="intro"></a>Introduction
 

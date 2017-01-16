@@ -6,23 +6,23 @@ layout: default
 
 ## <a name="overview"></a>Overview
 
-Cloud Fieldbus is a Cumulocity application that lets you collect data from fieldbus devices and remotely manage them. This section describes how to
+Cloud Fieldbus is a Cumulocity application with the ability to collect data from fieldbus devices and remotely manage them. This section describes how to
 
 * [Connect](#connect) fieldbus devices.
 * [Manage](#manage) the connected fieldbus devices.
 * [Configure](#configure) the remote management capabilities of particular types of devices and [import and export](#import) them.
 
-It is supported out of the box on the following terminals:
+It is supported out of the box by the following terminals:
 
 * [Pssystec Smartbox-Modbus](/guides/devices/smartbox-modbus) for Modbus/RTU.
 * [Netcomm Wireless NTC-6200](/guides/devices/netcommwireless) for Modbus/TCP and Modbus/RTU.
 * [Cinterion Java modules](/guides/devices/cinterion) for Modbus/RTU and CAN bus
 
-> If you want to support Cloud Fieldbus in your terminal, please contact info@cumulocity.com for more information.
+> If you want to support Cloud Fieldbus with your terminal, please contact info@cumulocity.com for more information.
 
 ## <a name="connect"></a>Connecting Modbus devices
 
-In the following, we assume that you have a Cloud Fieldbus terminal available, and that you have it registered and visible in your Cumulocity tenant. To register a terminal with Cumulocity, follow the instructions provided with the terminal.
+For the following instructions, we assume you have a Cloud Fieldbus terminal available and it is registered and visible in your Cumulocity tenant. To register a terminal with Cumulocity, follow the instructions provided with the terminal.
 
 ### Connecting Modbus/RTU devices
 
@@ -30,10 +30,10 @@ To connect a Modbus/RTU device:
 
 * Physically wire the Modbus/RTU device through RS/485 or RS/232 to the terminal.
 * Give the device a unique Modbus address according to the instructions provided with the Modbus device (e.g., by setting a jumper on the device).
-* Check the serial communication settings of the device according to the instructions provided with the device (i.e., baud rates and communication protocol). These have to match on all devices on the bus.
+* Check the serial communication settings of the device according to the instructions provided with the device (i.e., baud rates and communication protocol). These have to match with all devices on the bus.
 * Navigate to the terminal in Cumulocity and click on the "Modbus" tab.
 * Change the communication settings shown in the section "Serial Communication" to match the settings on the bus, if needed.
-* Change the transmit rate and the polling rate according to your requirements. The polling rate is the frequency at which the Modbus devices are polled for changes. The transmit rate is the frequency at which measurements are sent to Cumulocity.
+* Change the transmit rate and the polling rate according to your requirements. The polling rate is the frequency at which the Modbus devices are polled for changes. The transmit rate is the frequency where measurements are sent to Cumulocity.
 * Click "Save changes" if you made changes.
 
 ![Add Modbus device](/guides/users-guide/newmodbusrtudevice.png)
@@ -46,9 +46,8 @@ After the progress indicator vanishes, a new child device has been added to the 
 
 ### Connecting Modbus/TCP devices
 
-To connect a Modbus/TCP device:
 
-* Make sure that the Modbus/TCP device is connected to the terminal, e.g., directly through an Ethernet cable or through a switch. If you are using a Modbus gateway, configure the gateway so that it can communicate with the Modbus devices behind the gateway.
+* Make sure that the Modbus/TCP device is connected to the terminal, e.g., directly through an Ethernet cable or through a switch. If you are using a Modbus gateway, configure the gateway in a way it can communicate with the Modbus devices behind the gateway.
 * Check the network settings of the device using the instructions provided with the device.
 * Navigate to the terminal in Cumulocity and click on the "Network" tab. Verify that the LAN settings of the terminal match the settings of the device so that TCP communication can be established.
 * Navigate to the "Modbus" tab.
@@ -66,10 +65,10 @@ To connect a Modbus/TCP device:
 To connect a CAN device:
 
 * Physically wire the CAN device through to the terminal.
-* Check the serial communication baud rate of the device according to the instructions provided with the device. These have to match on all devices on the bus.
+* Check the serial communication baud rate of the device according to the instructions provided with the device. These have to match all devices on the bus.
 * Navigate to the terminal in Cumulocity and click on the "CAN bus" tab.
 * Change the baud rate setting shown in the section "CAN bus communication" to match the settings on the bus, if needed.
-* Change the transmit rate according to your requirements. The transmit rate is the frequency at which measurements are sent to Cumulocity.
+* Change the transmit rate according to your requirements. The transmit rate is the frequency where measurements are sent to Cumulocity.
 * Click "Save changes" if you made changes.
 * To start communication between the terminal and the CAN device, click "Add CAN device".
 * Enter a name for the device and select the type of the device from the drop-down box. To add new device types, see "[Configuring Fieldbus device types](#configure)" below.
@@ -108,13 +107,13 @@ Similar to alarms, changes in Fieldbus devices can be monitored and logged as ev
 
 ![Fieldbus events](/guides/users-guide/modbusevents.png)
 
-### <a name="status"></a>Monitoring device status
+### <a name="status"></a>Monitor a device status
 
-The status of devices can be monitored in real-time using dashboard widgets in the Cockpit application. Navigate to the Cockpit application, create a dashboard or report, and add widgets as described in the [Cockpit user's guide](/guides/users-guide/cockpit). Cloud Fieldbus adds two new widgets: The "Fieldbus Device" widget and the "SCADA" widget.
+The status of devices can be monitored in real-time using dashboard widgets in the Cockpit application. Navigate to the Cockpit application, create a dashboard or report, and add widgets as described in the [Cockpit user's guide](/guides/users-guide/cockpit). The Cloud Fieldbus has two new widgets: The "Fieldbus Device" widget and the "SCADA" widget.
 
 ### Monitoring device status using the Fieldbus Device widget
 
-The Fieldbus Device widget provides you with a tabular display of the status of a device. The status of the device can also be modified through the widget. To use the Fieldbus Device widget,
+The Fieldbus Device widget provides you with a tabular display of the status of a device. The status of the device can also be modified through the widget. To use the Fieldbus Device widget,..
 
 * Select a dashboard and click "Add widget to dashboard" using the cogwheel on the top right.
 * Select the "Fieldbus Device Widget" and edit the title of the widget.
@@ -123,7 +122,7 @@ The Fieldbus Device widget provides you with a tabular display of the status of 
 
 ![Adding the Fieldbus Device Widget](/guides/users-guide/modbusedit.png)
 
-In the widget, the selected coils and registers are grouped into display categories as configured in the device type. The Fieldbus Device Widget updates automatically as soon as there is new data available. You do not need to click reload.
+In the widget, the selected coils and registers are grouped into display categories as configured in the device type. The Fieldbus Device Widget updates automatically as soon as there is new data available. You do not need to click on reload.
 
 ![Use the Fieldbus Device Widget](/guides/users-guide/modbusstatus.png)
 
@@ -131,12 +130,12 @@ Registers and coils that can be changed are represented by active widgets. For e
 
 ### <a name="scada"></a>Monitoring status using the SCADA widget
 
-The SCADA widget provides you with a graphical representation of the status of a device. To use the SCADA widget:
+The SCADA widget provides you with a graphic representation of the status of a device. To use the SCADA widget:
 
 * Select a dashboard and click "Add widget to dashboard" using the cogwheel on the top right.
 * Select the "SCADA" widget and edit the title of the widget.
 * Choose the device that should be shown in the widget in the "Target assets or devices" section.
-* Upload an SVG file with the graphical representation of the device. SVG files are vector graphics that have to be specifically prepared with placeholders for the status information. See "[Preparing SVG files for the SCADA widget](#scadasvg)" below.
+* Upload an SVG file with the graphic representation of the device. SVG files are vector graphics that have to be specifically prepared with placeholders for the status information. See "[Preparing SVG files for the SCADA widget](#scadasvg)" below.
 * Assign placeholders to devices. Note that multiple devices can be taken as source.
 * You now need to assign each placeholder to a property of the device. Hover over each placeholder and select the "Assign device property" button or the "Assign fieldbus property" button. A dialog box will pop-up, it allows you to choose basic device properties or fieldbus properties (i.e., status coils and registers). Select the desired property and click "Select".
 * After assigning all placeholders, a preview of the widget with the current values of the properties is shown. Click "Save" to place the widget on the dashboard.
@@ -164,7 +163,7 @@ Click the "Add" link next to "Coils (discrete inputs)" to add a coil definition.
 
 ![Add coil](/guides/users-guide/addcoil.png)
 
-The same functionality is available for discrete inputs. However, it is not possible to update the status of a discrete input.
+The same functions are available for discrete inputs. However, it is not possible to update the status of a discrete input.
 
 Click the "Add" link next to "Holding Registers" to add a register definition. This opens a dialog to enter the details of the register definition:
 
@@ -178,13 +177,13 @@ Click the "Add" link next to "Holding Registers" to add a register definition. T
 * Check "Show status" if you want to show the current value of the register in the Fieldbus Device Widget.
 * Check "Update status" if you want to be able to edit the register from the Fieldbus Device Widget. If "Update status" is checked, two additional fields "Minimum" and "Maximum" appear. Using these fields, you can constrain numerical values entered in the widget.
 * Click "Send measurement" if you want the values of the register to be regularly collected according to the transmit interval (see [above](#connect)). In this case, add a measurement type and a series to be used. For each measurement type, a chart is created in the "Measurements" tab. For each series, a graph is created in the chart. The unit is used for labeling the measurement in the chart and in the Fieldbus Device Widget.
-* Check "Raise alarm" if an alarm should be raised when the register is non-zero in the device. In this case, you can specify the type of the alarm that is raised, its text and its severity. Note that there can be only one alarm active of a particular type for a particular device.
+* Check "Raise alarm" if an alarm should be raised when the register is not zero in the device measurement. In this case, you can specify the type of the alarm raised, its text and its severity. Note that there can be only one alarm active of a particular type for a particular device.
 * Check "Send event" if an event should be generated each time the value of the register changes. If "Send event" is checked, you can specify the type of event and the text in the event.
 * Click "OK" to finish editing the register.
 
 ![Add register](/guides/users-guide/addregister.png)
 
-"Use server time" lets you select if the time stamps for data are generated on the terminal or on the server. If you need to support buffering of data on the terminal, leave this checkbox unchecked.
+"Use server time" is a tool to select if the time stamps for data is generated on the terminal or on the server. If you need to support buffering of data on the terminal, leave this checkbox unchecked.
 
 Finally, don't forget to click "Save" to store your edits. If you edit a device type that is currently in use, you may need to
 
@@ -196,16 +195,16 @@ Finally, don't forget to click "Save" to store your edits. If you edit a device 
 CAN device types can be configured in a very similar manner as Modbus device types. For more information on configuring Modbus device types, see [Configuring Modbus data](#configureModbus) above. The differences are:
 
 * Holding registers are used to describe the different pieces of data inside CAN messages.
-* Enter the CAN message ID of the specifict message the data should be extracted from. Please use a hexadecimal number for the message ID.
+* Enter the CAN message ID of the specific message the data should be extracted from. Please use a hexadecimal number for the message ID.
 * Conversion of values is extended by an offset parameter. This will be added or substracted from the register value, depending on its sign. The offset calculation is done after applying multiplier and divisor, and before performing decimal shifting.
 
 ![Add CAN register](/guides/users-guide/addregisterCAN.png)
 
 ## <a name="import"></a>Importing and exporting device types
 
-To more conveniently manage device types, you can export device types to a file once they are edited in the user interface. The file can be imported again to more easily set up other Cumulocity accounts or to restore the types from a backup. The import functionality also supports importing ready-made device types provided by device manufacturers.
+To manage device types more conveniently, you can export device types to a file once they are edited in the user interface. The file can be re-imported to  set up other Cumulocity accounts easily or to restore the types from a backup. The import functionality also supports importing ready-made device types provided by device manufacturers.
 
-To export a device type, hover over the device type that you would like to export and click the download symbol. You browser will download a file named "&lt;device type&gt;.json" with the device type definition.
+To export a device type, hover over the device type that you would like to export and click the download symbol. Your browser will download a file named "&lt;device type&gt;.json" with the device type definition.
 
 ![Export device type](/guides/users-guide/fieldbusexport.png)
 
@@ -215,7 +214,7 @@ To import a device type, click the "Import" link. This will open a dialog that l
 
 ## <a name="scadasvg"></a>Preparing SVG files for the SCADA widget
 
-The SCADA widgets inspects uploaded SVG files for placeholders. These placeholders are replaced by actual values from devices. Placeholders have a specific syntax and can be used anywhere in the SVG file. To add a placeholder, enter the name of the placeholder in double curly braces using your design application or a text editor. This is an example of a text element containing a placeholder "batteryValue", taken from our [sample SVG file](/guides/users-guide/scadademo.svg):
+The SCADA widgets inspect uploaded SVG files for placeholders. These placeholders are replaced by actual values from devices. Placeholders have a specific syntax and can be used anywhere in the SVG file. To add a placeholder, enter the name of the placeholder in double curly braces using your design application or a text editor. This is an example of a text element containing a placeholder "batteryValue", taken from our [sample SVG file](/guides/users-guide/scadademo.svg):
 
 	<text class="text" xt-anchor="middle" x="100" y="236.982125" width="200" ...>
 		{{batteryValue}}

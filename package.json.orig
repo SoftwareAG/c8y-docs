@@ -1,0 +1,24 @@
+{
+  "name": "no-skeleton.docpad",
+  "version": "0.1.0",
+  "description": "DocPad project for Cumulocity technical documentation",
+  "engines": {
+    "node": ">5.8.0",
+    "npm": "~3.7.3"
+  },
+  "dependencies": {
+    "docpad": "6.78.4",
+    "docpad-plugin-cleanurls": "2.8.1",
+    "docpad-plugin-eco": "2.1.0",
+    "docpad-plugin-less": "~2.4.1",
+    "docpad-plugin-livereload": "2.7.1",
+    "docpad-plugin-marked": "2.3.0",
+    "docpad-plugin-partials": "2.9.2",
+    "docpad-plugin-redirector": "2.0.1"
+  },
+  "main": "node_modules/docpad/bin/docpad-server",
+  "scripts": {
+    "start": "node_modules/docpad/bin/docpad-server",
+    "build": "node_modules/docpad/bin/docpad generate --env static"
+  }
+}

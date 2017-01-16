@@ -6,17 +6,17 @@ layout: default
 
 ## Overview
 
-The module shown below will give an in depth example of how you can create more complex rules. It will use multiple of the features explained in the other guide sections.
+This module will give an in depth example how you can create more complex rules. It will use multiple of the features explained before in the other guide sections.
 If you are just starting with the Cumulocity Event Language please take a look at [these examples](/guides/event-language/examples).
 
 ## Prerequisites
 
 ### Goal
 
-We want our tracking devices that are continuously sending location events to automatically generate alarms if they move outside of a geofence.
+We want our tracking devices that are continuously sending location events to automatically generate alarms if they move outside a geofence.
 This geofence will be a circle and should be configurable for each device separately. The alarm will be created at the moment the device moves outside the geofence.
-While it is moving outside it should not create new alarms because the first one is still active and de-duplication would filter the newly created alarms anyways.
-As soon as the device moves back into the geofence the alarm can be cleared.
+While it is moving outside it should not create new alarms because the first one will keep active.
+As soon as the device moves back into the geofence the alarm will be cleared.
 
 ### Cumulocity data model
 
@@ -82,7 +82,7 @@ The above function will return the distance in meters.
 
 ## Step 1: Filter the input
 
-The main input for this module will be events. To discard not matching events as early as possible we will create a filter in one statement that only matches events that contain a position.
+The main input for this module will be events. To discard non- matching events as early as possible we will create a filter in one statement that only matching events will pass.
 These will be put to a new stream.
 
     create schema LocationEvent(
@@ -215,11 +215,11 @@ We do not need to care about whether there is an existing alarm at this point. I
 
 ## Step 7: Creating a device context
 
-Our rule is already working now but there is still one issue left. So far we did not pay attention to what device send the location event.
-If device A sends a location event which is inside its geofence and the next event is from device B which is outside the rule would create an alarm.
-The alarm would be generated for device A because when creating the alarm we take the source of the first arriving event as source for the alarm creation.
-We need to configure that the window that holds the latest two events should only hold events of the same device.
-If there is an event from another device a new window should be created so that in the end there is a separate window for every device.
+Our rule is already working now but there is one issue left: where to send the location event.
+If a device A sends a location event which is inside its geofence and the following event is from a device B which is outside the geofence it would create an alarm.
+The alarm would be generated for device A because when creating the alarm we regard the source of the first arriving event as source for the alarm creation.
+We need to configure that the window which holds the latest two events should only hold events of the same device.
+If there is an event from another device a new window should be created so there is one window for each device.
 
 This can be achieved with a context. We only need the context at the point where we create the window.
 The partition for the context should be the device id so that the engine automatically creates a separate context partition for every device.
@@ -227,8 +227,8 @@ The partition for the context should be the device id so that the engine automat
     create context GeofenceDeviceContext
 	   partition by event.source.value from LocationEventWithDistance;
 
-Now we can add the context to the statement where we create the window. A context can only applied to statements where the input of the statement is configured in the context.
-Otherwise the engine would not know which value to take to create context partitions.
+Now we can add the context to the statement where we create the window. A context can only be applied to statements where the input of the statement is configured in the context.
+Otherwise the engine would not know which value to take for creating context partitions.
 
     @Name('last_two_positions')
     context GeofenceDeviceContext

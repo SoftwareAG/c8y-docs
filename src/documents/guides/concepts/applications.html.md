@@ -5,112 +5,105 @@ layout: default
 ---
 ## Overview
 
-Cumulocity was designed to run arbitrary vertical IoT applications in addition to the built in Cumulocity applications. Tenants can subscribe to applications to get
+Cumulocity was designed to accommodate arbitrary vertical IoT applications in addition to its generic functionality. Tenants can subscribe to applications to get
 
-* Extend Cumulocity user interface.
+* Extensions to the Cumulocity user interface.
 * Entirely new user interfaces.
+* Branding of the Cumulocity user interface.
 * New server-side business logic.
 
 This section introduces the basic concepts around applications in Cumulocity.
 
-## Available applications to each tenant
+## Applications and subscriptions
 
-The users in each tenant have access to the applications that:
-* Have been created by users of that same tenant (*Own applications*)
-* The tenant is subscribed to (*Subscribed Applications*)
+Applications are registered in Cumulocity either as "own" applications or "market" applications. 
 
-### Own applications
-Are only available to users of a particular tenant and are created by a user with application ADMIN permissions. *Own applications* are used, for example, during application development when you do not yet want to make a particular application version available for a wide audience. They are also used for functionality that is proprietary for an enterprise, for example, interactions with in-house IT systems. The applications can be either:
-  * **HTML5 Application**
-  Regular client side applications based on HTML, Javascript and CSS. There is no limitation on whatever library or framework you can use. If you choose to use [AngularJS 1.x](https://angularjs.org/) examples and source code are provided as part of the [Smart Apps Toolkit](/guides/web/smart-toolkit/)
-  * **Smartapps**
-  These web applications are built upon the Cumulocity UI platform, which uses AngularJS 1.x. It's a completely modular system that allows to:
-    * Extend built in applications
-    * Create custom applications applications reusing built in applications functionality
-    * Create branded versions of built in applications
-    * Create translations for the UI
-    * Create plugins that can be uploaded and removed via *Application management* in *Administration* to any application of this type.
-  To build a *Smartapp* you can follow the guide [Introduction to plugin development](/guides/web/introduction/).
+"Own" applications are only available to users of a particular tenant and are registered by the tenant's administrator. Own applications are used, for example, during application development when you do not yet want to make a particular application version available for a wide audience. They are also used for functionality that is proprietary for an enterprise, for example, interactions with in-house IT systems.
 
-### Subscribed applications
-These are  owned by the tenant management. Subscribing to a market application makes it available to that tenant. To certify an application as market application, please [contact us](mailto:info@cumulocity.com) or simply change your application availability setting to MARKET.
+"Market" applications are available to all tenants of Cumulocity. Subscribing a tenant to a market application makes this application available to the tenant. To certify an application as market application, please [contact us](mailto:info@cumulocity.com).
 
-## Properties
+Applications are identified by a so-called *application key*. The application key enables Cumulocity to associate a request with one particular application.
 
-Applications are managed via the [Application API](/guides/reference/applications/).
-The essential properties of an application object are:
-* **name** A human friendly name for the application to be displayed on UI
-* **contextPath** The url where the app will be available. If it is set to  devicemanagement the application will be available in at the url /apps/devicemanagement. This value *must* be unique for all the apps owned by a single tenant.
-If a specific tenant owns that an application with the same context path of another app which it is also subscribed to, the owned application will override the subscribed one.
-* **applicationKey** This key is included in every request an application executes to the api. It is a mechanism to associate requests with a specific application and distinguish from other request coming from devices. This value *must* be unique for all the applications owned by a single tenant.
+An application can be any combination of 
 
-## Contents
-A HOSTED application can contain:
-* A complete, standalone client side  web application, regardless if it is a *Smartapp* based on Cumlocity UI platform, or any other frontend stack.
-* A cumulocity.json manifest on the root of the app in the case of *Smartapps*
+* A complete, standalone user interface application, regardless if based on the Cumulocity UI framework (see below) or any other web components of your choice.
+* A set of user interface plugins.
 * A set of statements in Cumulocity Event Language.
 
-## Applications in user interface
-
-Applications available to each user are listed in the **application switcher** on the top right corner of built in applications or any other *Smartapp*, so
-that users can navigate between them. They can be HOSTED on an EXTERNAL web site.
-* HOSTED are available via *[tenant].cumulocity.com/apps/[application]* can serve files files uploaded in a zip archive or simply proxy he request to another web server defined in *resourcesUrl*.
-* EXTERNAL are nothing more than a link, and the user will navigate to that address.
+User interface applications appear in the application switcher widget on the top right of Cumulocity, so that users can navigate between the subscribed applications. They can be hosted on an external web site, in which case the application switcher just directs the user to that website. They can also be hosted through Cumulocity, in which case the application will be made available through a URL <tenant>.cumulocity.com/apps/<application>.
 
 ![App switcher](/guides/concepts-guide/appswitcher.png)
 
-The Cumulocity build in applications are based on AngularJS 1.x. It is modular system around a set of plugins that can be dynamically enabled and disabled even by end users.
-As so, each built in app as any *Smartapp* is simply a set of plugins put together together. These plugins can be uploaded or removed via the administration user interface and developers can leverage these same plugins to develop new plugins and assemble multiple applications.
+## Cumulocity applications
 
-![Plugin editor](/guides/users-guide/plugins.png)
+The Cumulocity user interface itself is built around a framework based on AngularJS and Bootstrap, the currently most modern HTML5 web application frameworks. It is designed in a modular fashion around a set of plugins that can be dynamically enabled and disabled even by end users. Users can create their own configurations of the Cumulocity user interface with just functionality they need for their particular purpose. For this purpose, the administration application contains a plugin editor -- which is itself a plugin.
+
+![Plugin editor](/guides/concepts-guide/plugineditor.png)
 
 ## Plugins
 
-A plugin is a module that contains javascript, css, and any other kind of asset. Although it can contain any kind of code or library, the developer will probably want to integrate with existing UI using extension points:
+If the functionality provided by the Cumulocity user interface does not cover your use case, you can extend it with own plugins. Extension points for plugins are:
 
 * Add search functionality.
-* Contribute menu items to the navigation bar on the left.
-* Add views or "tabs" to devices.
-* Add menu items to the drop-down menu of a device.
+* Contribute menu items to the navigation bar on the left. 
+* Add views or "tabs" to devices. 
+* Add menu items to the drop-down menu of a device. 
 * Add widgets.
 * Modify the branding
 
-This is illustrated below:
 
 ![Extension points for plugins](/guides/concepts-guide/extensionpoints.png)
 
-
-For more information on developing plugins, please visit the [Plugin Developer's Guide](/guides/web/introduction).
-
-## Compatibility
-
-Backwards compatibility for all REST APIs is guaranteed, while backward compatibilities for JavaScript APIs are not. We try to keep the JavaScript incompatibilities to a minimum, there are cases where they will happen. Therefore new application versions might cause older versions of the plugins to fail.
-
-However, this is taken care by automatically by the previous mentioned mechanism to copy subscribed applications. For example, if a user adds a plugin to the builtin application “Cockpit Version 2.0”, then the application is copied. That means that the application is “freezed”. Updates of the Cockpit application will not be automatically available in the copied version. This ensures that the added plugin will work successfully. And because of the compatibility of the REST API the copied version is ensured to work also for the new backend version.
-
-## Migration
-
-If you have built a *Smartapp* built on the previous version where the plugins would be loaded from other applications at runtime, just read [Plugin Developer's Guide](/guides/web/introduction) and copy your plugins and application manifest to the new project structure.
-The old "Smartapps" functionality is still available in the REST API although it's creation has been removed from the administration UI. The old *Smartapps* are not updated anymore (*frozen at 7.33*), this ensures working of existing Plugins.
-If you want to use their Plugins with updated version of Cockpit or Device management, then you need to port their Plugins to the new *Smartapps* mechanism.
-In the new paradigm described in [Plugin Developer's Guide](/guides/web/introduction) you can choose which version of UI to build your application with, as so you have total control over what is deployed and executed in each app.
+For more information on developing plugins, please look into the developer guide. [Plugin Developer's Guide](/guides/web/introduction)
 
 ## Modules
 
 If your application requires new server-side processing functionality, you can add a [Cumulocity Event Language](/guides/reference/real-time-statements) module to it. This is simply a file inside your application at a particular location (META-INF/application-module.cel).
 
-```console
-module paypalhere;
-@Name('store_purchase_details1_on_purchase_operation')
-insert into PurchaseDetailsTmp1
-select
-    findManagedObjectById(purchaseEvent.operation.deviceId.value) as vendingMachine,
-    getString(purchaseEvent.operation, "c8y_Purchase.tabId") as tabId,
-    getNumber(purchaseEvent.operation, "c8y_Purchase.amount") as amount,
-    purchaseEvent.operation.id as purchaseOperationId,
-    purchaseEvent.operation.deviceId as deviceId
-from
-...
-```
+	module paypalhere;
+	@Name('store_purchase_details1_on_purchase_operation')
+	insert into PurchaseDetailsTmp1
+	select
+	    findManagedObjectById(purchaseEvent.operation.deviceId.value) as vendingMachine,
+	    getString(purchaseEvent.operation, "c8y_Purchase.tabId") as tabId,
+	    getNumber(purchaseEvent.operation, "c8y_Purchase.amount") as amount,
+	    purchaseEvent.operation.id as purchaseOperationId,
+	    purchaseEvent.operation.deviceId as deviceId
+	from
+	...
 
-Please note that module deployment within application is not supported for local zip applications, so the resourceUrl has to point to some external resource from where the file can be downloaded. The file has to be named application-module.cel and be inside directory META-INF.
+Please note that module deployment within the application is not supported for local zip applications, so the resource url has to point to some external resource from where the file can be downloaded. The file has to be named application-module.cel and be inside directory META-INF.
+
+## Hosting
+
+To host your own HTML5 and JavaScript web applications through Cumulocity, visit "Own applications" in the Cumulocity administration application and click "Add new".
+
+![List of own applications](/guides/concepts-guide/ownapplications.png)
+
+There are two types of applications that can be configured:
+
+-  "Hosted": The applications are served from a repository such as Bitbucket or Github to a user-defined path and are visible in the application switcher.
+-   "External": The applications are completely external and are just shown in the application switcher.
+
+Assume that you are developing a web application using Bitbucket as a code repository. In this case, exposing the application through Cumulocity can be done as follows:
+
+-   Enter the name of the application. This is shown in the application switcher at the top left of the screen.
+-   Optionally, enter an application key. This is used to distinguish your application from other applications in case you want to publish your application to other companies.
+-   Select "Hosted" as type.
+-   Select the URL that is used to make your application available to users.
+-   Enter the URL to your repository. In case of Bitbucket, the URL has the structure shown below.
+-   If your repository is private, enter the username and password of a Bitbucket user that is permitted to access the repository. Currently, basic authentication is the only supported authentication method (i.e., straight Bitbucket username and password, not any of the OpenID providers).
+-   Save the application.
+
+<pre><code>https://bitbucket.org/<bitbucket user>/<bitbucket repository>/raw/<branch>/[path inside repository]</code></pre>
+
+Now the application shows up in the application switcher. You can also click on the link in the list of own applications to verify if the configuration was successful.
+
+![Configuring a new application](/guides/concepts-guide/ownapplicationdetail.png)
+
+The above procedure helps you to publish your M2M application much faster to your end users. If you are satisfied with your application, publishing is just a matter of releasing your code in version control -- deployment is handled automatically.
+
+## Summary
+
+Cumulocity is designed to accommodate arbitrary vertical IoT applications in addition to its generic functionality. Applications are registered in Cumulocity either as "own" applications or "market" applications. An application can be any combination of a complete, standalone user interface application, or a set of user interface plugins, or a set of statements in Cumulocity Event Language.
+With Cumulocity users can publish any software to other users or customers.

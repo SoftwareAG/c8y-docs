@@ -285,6 +285,8 @@ To add an application, you can upload a "ZIP file" application.
 
 ### Working with "Bitbucket" hosted applications
 
+> Note that, this functionality is depreciated and will be removed in future versions of the product. Instead, host your applications with Cumulocity, by uploading a "ZIP file" as described in the section above.
+
 Assume that you are developing a web application, using Bitbucket as code repository. In this case, exposing the application through Cumulocity works as follows:
 
 * Click on "Add application".

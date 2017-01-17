@@ -39,7 +39,7 @@ Dadurch gelangen Sie zur Anmeldeseite Ihrer Standardanwendung, die in der folgen
 <img src="/guides/users-guide/login.png" alt="Login prompt" style="max-width: 50%">
 
 
-> Stellen Sie sicher, dass die Adressleiste Ihres Browsers ein Sperrsymbol anzeigt. Das Sperrsymbol zeigt an, dass Sie eine sichere Verbindung verwenden und dass Sie tatsächlich mit Cumulocity verbunden sind.<img src="/guides/users-guide/locksymbol.png" alt="Login prompt" style="max-width: 5%">
+> Stellen Sie sicher, dass die Adressleiste Ihres Browsers ein Sperrsymbol anzeigt. Das Sperrsymbol zeigt an, dass Sie eine sichere Verbindung verwenden und dass Sie tatsächlich mit Cumulocity verbunden sind.
 Die oben genannte URL ist nur für Abonnenten der Cumulocity Standard Edition gültig. Für spezialisierte- und private Edition-Bereitstellungen von Cumulocity ist die URL für Ihr Unternehmen spezifisch.
 
 ## <a name="login"></a>Logging in
@@ -78,14 +78,13 @@ Sobald Sie angemeldet sind, wird Ihre Standard-Cumulocity-Anwendung geöffnet. D
 * Die Konfiguration der Benutzeroberfläche, wie Gruppen und Berichte.
 * Die Funktionalität der von Ihnen verwendeten Geräte.
 
-###Die Benutzeroberfläche von Cumulocity und Menü Struktur
+##Die Benutzeroberfläche von Cumulocity und Menü Struktur
 
-* Der Name der aktuell sichtbaren Anwendung wird oben links angezeigt. Sie sehen so aus.
-<img src="/guides/users-guide/appbar.png" alt="Administration" style="max-width: 100%">
+* Der Name der aktuell sichtbaren Anwendung wird oben links angezeigt. 
 * Mit dem Navigator können Sie zu den verschiedenen Seiten einer Anwendung gelangen. Klicken Sie auf einen Eintrag im Navigator, um die entsprechende Seite zu öffnen. Sie können Bereiche im Navigator reduzieren, indem Sie auf die Abschnittsüberschriften klicken (wie die Zeilen mit dem kleinen Dreieck vor dem Text) oder auch expandieren.
 * Auf einigen Seiten sind zusätzliche "Tabs" verfügbar, je nachdem, wie viele Informationen angezeigt werden müssen.
 * Der obere Bereich der Anwendung wird als Meldungsleiste verwendet, wenn ein Status (grün) oder ein Fehler (rot) angezeigt werden muss.
-* Das Feld "search" bietet eine  [Volltextsuche](#searching) an.<img src="/guides/users-guide/searchbox2.png" alt="Logout menu" style="max-width: 25%" align="center">
+* Das Feld "search" bietet eine  [Volltextsuche](#searching) an.
 * Mit dem Application Switcher können Sie von einer Anwendung zur anderen wechseln. Möglicherweise müssen Sie Ihre Anmeldeinformationen erneut eingeben, wenn Sie "Remember me" nicht auf Ihrem ursprünglichen Login für Cumulocity ausgewählt haben.
 * Das Benutzermenü zeigt Ihren Benutzernamen an. Durch Anklicken des Benutzernamens erscheint ein Popup-Menü. Das Popup-Menü erlaubt Ihnen, sich von der Anwendung abzumelden (auch wenn Sie auf "Remember me" geklickt haben) und bietet Zugriff auf Benutzereinstellungen und Hilfe.
 * In einigen Bereichen bietet ein Zahnrad oben rechts Zugriff auf weitere Funktionalität über ein Dropdown-Menü.

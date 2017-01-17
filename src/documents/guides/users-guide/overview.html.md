@@ -18,15 +18,16 @@ The following sections cover the basic usage of Cumulocity applications. They de
 
 To use Cumulocity applications, you need a modern web browser. We test with the following desktop web browsers:
 
-  * Internet Explorer (latest)
-  * Firefox (latest)
-  * Chrome (latest)
+* Edge Browser 
+* Internet Explorer (Latest) 
+* Firefox (Latest)    
+* Chrome (Latest)
 
 You can also use recent smartphone and tablet web browsers. We test with the following mobile web browsers:
 
-  * Chrome on Android (latest) on Galaxy smartphones and tablets.
+  * Chrome on Android (latest) on Galaxy smartphones and tablets. 
   * Safari on iOS (latest) on Apple iPhone and iPad.
-
+  
 > Note that using the private mode on browsers may not work. Note also that using Cumulocity on mobile devices may be constrained by the memory and the processing power available on the devices. For example, loading graphs with large amounts of data points may make the mobile device unresponsive.
 
 To access the applications for your Cumulocity tenant, use the following URL:
@@ -47,6 +48,7 @@ On the login page, enter your username and password to start the application. Th
 
 <img src="/guides/users-guide/logout.png" alt="Logout menu" style="max-width: 60%">
 
+
 > For security reasons, Cumulocity does not use Cookie technology.
 
 If you forgot your password, click the "Forgot password?" link on the login screen. You can now type your email address and click "Reset password". Check your email for the password reset link. Click the link to enter a new password.
@@ -66,31 +68,6 @@ To change your password, click on the "User Settings" icon in the application. P
 <img src="/guides/users-guide/passwordstrength.png" alt="Reset password" style="max-width: 50%">
 
 > Your administrator may have configured your account to enforce a password policy. You may be required to pick a strong password or to change your password regularly.
-
-## <a name="tfalogin"></a>Logging in with Two-Factor Authentication
-
-Two-factor authentication (abbreviated TFA), adds an extra step to your login procedure. Without TFA, you enter in your username and password to login. The password is your single factor of authentication. The second factor is a code send via SMS and it makes your account more secure. If TFA is disabled and you want to enable it, click [here](/guides/users-guide/administration/#tfa) for more info.
-
-To login when TFA is enabled, first enter your username and password on the login page and click "Login". 
-
-<img src="/guides/users-guide/login.png" alt="Login prompt" style="max-width: 50%">
-
-Afterwards, if your credentials are correct, verification code will be sent to your phone number via SMS.
-
-> Note that, to use TFA, a valid phone number must be stored in the property "Telephone" of the user settings!
-
-![smscode](/guides/users-guide/smscode.png)
-
-Enter the code that you received and click "Verify". If the code is valid, you will be logged in. To request a new verification code, if the old one has already expired, simply click on "Send new code". To return to the login page, press "Login".
-
-<img src="/guides/users-guide/tfacode.png" alt="TFAcode" style="max-width: 50%">
-
-There are two time outs that you should be aware of:
-
- - Verification code time out. When the verification code times out, request a new one by pressing "Send new code".
- - TFA session time out. When the lifetime of your current session expires, you will have to login again and enter a new verification code.
-
-> Note that, the values of both time outs can be edited in the Administration application. For more info see [here](/guides/users-guide/administration/#tfaflags).
 
 ## <a name="navigating"></a>Navigating in Cumulocity applications
 

@@ -45,15 +45,14 @@ In order to manage users in your tenant account, click on the "Users" menu. New 
 To add additional users, click on "Add user".
 
 - Enter a username for this user to log on.
-- Choose if the user will be active. 
+- Choose if the user will be active.
 
 > If the switch is set to "disabled", the user will not be able to log in.
 
 - Enter first and last name of the user. This will be shown on the top right next to the user symbol when the user logs in.
 - Enter the e-mail address of the user. You need to provide a valid, unique e-mail address to enable users to reset their password.
-- Enter a telephone number. 
-- If you choose to check "Enable two-factor authentication", the user will be asked to provide a phone number and on login the pin code (which is sent to a phone) will be required for a successful authentication.
-- If you choose to check "Password reset", the user will have to choose a new password after the next login.
+- Enter a telephone number.
+- If you choose to check "User must reset password on next login", the user will have to choose a new password after the next login.
 - If you choose to check "Send password reset link as e-mail", the e-mail message will be sent to provided e-mail address with link to set a password.
 - Enter a password and confirm the password. (See "[Logging in](/guides/users-guide/overview#login)" for more information on password strength.)
 - Add users to [user groups](#user-groups).
@@ -66,7 +65,7 @@ To add additional users, click on "Add user".
 
 ### Editing users
 
-To edit an existing user, just click on the user in the list. All user details other than the username and "Send password reset link as e-mail" checkbox can be modified. To change the password, click on "Change password". Click "Save" after you finished editing.
+To edit an existing user, just click on the user in the list. All user details other than the username, "User must reset password on next login" and "Send password reset link as e-mail" checkbox can be modified. To change the password, click on "Change password". Click "Save" after you finished editing.
 
 ### Deactivating or deleting users
 

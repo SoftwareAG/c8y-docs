@@ -8,7 +8,6 @@ layout: default
 
 Using the Cumulocity real-time event processing, you can add your own logic to your IoT solution. This includes data analytics logic but it is not limited to it. To define new analytics, you will use the Cumulocity Event Language. The language allows to analyze incoming data. It is using a powerful pattern and time window based query language. You can create, update and delete your data in real-time.
 
-![Datamodel](/guides/event-language/datamodel.png)
 
 Typical real-time analytics use cases include:
 * Remote control: Turn a device off if it's temperature rises over 40 degrees.

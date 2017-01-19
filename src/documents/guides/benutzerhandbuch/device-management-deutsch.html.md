@@ -39,7 +39,7 @@ Um Geräte mit Ihrem Cumulocity-Konto zu verbinden, klicken Sie im Navigator auf
 
 Jetzt können Sie das Gerät verwalten.
 
-<img src="/guides/users-guide/regdeutsch.png" alt="Device registration" style="max-width: 100%">
+<img src="/guides/users-guide/registrierung.png" alt="Device registration" style="max-width: 100%">
 
 ## <a name="creds-upload"></a>Gruppen Registrierung
 

@@ -14,7 +14,7 @@ Cumulocity gives you very fast visibility and control over your remote assets, b
 Cumulocity provides
 
 * Certified hardware kits and software libraries you can use to bring your remote assets into the cloud.
-* Device management, data visualisation and remote control functionality through the web.
+* Device management, data visualization and remote control functionality through the web.
 * Rapid customization of the above through [Cumulocity Event Language](/guides/concepts/realtime) rules and [Cumulocity applications](/guides/concepts/applications).
 * APIs for extending the existing functionality or interfacing Cumulocity with your other IT services such as ERP or CRM systems. Cumulocity can also host your HTML5 applications.
 

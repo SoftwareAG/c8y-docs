@@ -282,33 +282,6 @@ To add an application, you can upload a "ZIP file" application.
 - Click on "Upload ZIP file".
 - Either drop the file into the box or simply browse your computer.
 
-### Working with "Bitbucket" hosted applications
-
-> Note that, this functionality is depreciated and will be removed in future versions of the product. Instead, host your applications with Cumulocity, by uploading a "ZIP file" as described in the section above.
-
-Assume that you are developing a web application, using Bitbucket as code repository. In this case, exposing the application through Cumulocity works as follows:
-
-* Click on "Add application".
-* Click on "HTTP(S) proxy".
-* Enter the name of the application, as shown in the application switcher.
-* Enter an application key. The application key is used to identify requests from this application and to make it available for subscription.
-* Enter the application path. This path will be part of the URL to invoke the application. For example, if
-you use "hello" as application path, the URL of the application will be "/apps/hello".
-* Enter the server URL where your application is hosted. At this URL, there needs to be an index.html file providing the entry point to your application.
-* Enter a username to access your repository (optional).
-* Enter a password to access your repository (optional).
-* Click "Save".
-
-![https proxy app](/guides/users-guide/httpsproxy.png)
-
-> Username and password are transmitted using HTTP Basic Authentication.
-
-> We do not recommend to use bitbucket hosted applications anymore because a downtime of "Bitbucket" results into a downtime of the applications hosted by them.
-
-### Working with external applications
-
-"External applications" are links to applications running elsewhere. Enter name of the application and application key, then provide the URL of that application and click "Save" to make the link available in the application switcher.
-
 ### Cloning applications
 
 This option will copy the application. Cloning a subscribed application creates a copy of the application as an own application, with a link to the original application.
@@ -322,21 +295,6 @@ In order to clone an application:
 - Enter an application key. The application key is used to identify requests from this application and to make it available for subscription, see the [Concepts guide](/guides/concepts/applications).
 - Enter the application path. This path will be part of the URL to invoke the application. For example, if you use "hello" as application path, the URL of the application will be "/apps/hello".
 - Click on the "Clone" button.
-
-### <a name="creating-smartapp"></a>Adding a smartapp
-
-> This function is depreciated and will be removed in future versions of the product.
-
-
-- Click on "Add application".
-- Click on "Create legacy smartapp".
-- Enter the name of the application. The name will be shown as title on the top left of the application. It will also be shown in the application switcher.
-- Enter the application path. This path will be part of the URL to invoke the application. For example, if you use "hello" as application path, the URL of the application will be "/apps/hello".
-- Click the "Create" button.
-
-> These are the old "Smartapps" with the plugins that you wish to add to your application must be selected from a list.
-
-![Legacy smartapps](/guides/users-guide/smartapps.png)
 
 ### Adding and removing plugins
 
@@ -387,6 +345,49 @@ Multiple archive ZIP file versions can be stored in Cumulocity when they were cr
 ![Upload archive](/guides/users-guide/uploadarchive.png)
 
 Once uploaded, archives can be downloaded, activated or removed if necessary. The active archive (indicated by a cloud icon) is the version of the application that is currently being served to the users of your account. This version cannot be deleted.
+
+### Working with bitbucked hosted application (Deprecated)
+
+Assume that you are developing a web application, using Bitbucket as code repository. In this case, exposing the application through Cumulocity can be done as follows:
+
+* Click on "Add application".
+* Click on "HTTP(S) proxy".
+* Enter the name of the application, as shown in the application switcher.
+* Enter an application key. The application key is used to identify requests from this application and to
+make it available for subscription.
+* Enter the application path. This path will b	e part of the URL to invoke the application. For example, if
+you use "hello" as application path, the URL of the application will be "/apps/hello".
+* Enter the server URL where your application is hosted. At this URL, there needs to be an index.html file
+that provides the entry point to your application.
+* Enter a username to access your repository (optional).
+* Enter a password to access your repository (optional).
+* Click "Save".
+
+![https proxy app](/guides/users-guide/httpsproxy.png)
+
+> Note that, username and password are transmitted using HTTP Basic Authentication.
+
+> We do not recommend to use bitbucket hosted application anymore, because downtime of bitbucket results into downtime of the application.
+
+### <a name="creating-smartapp"></a>Adding a smartapp (Deprecated)
+
+> Note that this functionality is depreciated and will be removed in future versions of the product.
+
+To add a smartapp:
+
+- Click on "Add application".
+- Click on "Create legacy smartapp".
+- Enter the name of the application. The name will be shown as title on the top left of the application. It will also be shown in the application switcher.
+- Enter the application path. This path will be part of the URL to invoke the application. For example, if you use "hello" as application path, the URL of the application will be "/apps/hello".
+- Click the "Create" button.
+
+> Please note that these are the old "Smartapps" in which the plugins that you wish to add to your application must be selected from a list.
+
+![Legacy smartapps](/guides/users-guide/smartapps.png)
+
+### Working with external applications
+
+"External applications" are links to applications running elsewhere. Enter name of the application and application key, then provide the URL of that application and click "Save" to make the link available in the application switcher.
 
 ### Editing applications
 

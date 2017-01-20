@@ -402,6 +402,7 @@ Using stream json parses like [java json](http://docs.oracle.com/javaee/7/api/ja
 To activate streaming you need to send as Accept header `applicatnion/json-stream`
 
 Example : 
+
      GET /measurement/measurements
      Host: [hostname]
      Authorization: Basic xxxxxxxxxxxxxxxxxxx

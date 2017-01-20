@@ -371,12 +371,6 @@ If you “set active” a specific version of the app, then this will be the ver
 
 >Note that the “Archive” tab is not available for subscribed applications, as only the owner of the application can perform this action.
 
-### Editing applications
-
-To edit an application, simply click on its name. Depending on the type of the application (e.g. Hosted, External), different fields can be modified.
-
-> Note that "ID", "Application key" and "Path" cannot be changed once configured.
-
 ### Uploading archives
 
 For applications that have been created by uploading ZIP files, multiple ZIP file versions can be stored in Cumulocity. Each version is called an archive. You can upload different versions at the same time and switch between these versions. To upload an archive:

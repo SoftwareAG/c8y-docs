@@ -11,7 +11,7 @@ The Cockpit application provides you with options to manage the Internet of Thin
 
 - Start [using Cumulocity Cockpit](#start) and work with the [home](#home) dashboard
 - [Connect](#connect) devices and manage [assets](#asset)
-- [Visualise](#visualise) data using the data explorer
+- [Visualize](#visualize) data using the data explorer
 - Work with [dashboards](#dashboards)
 - Handle [widgets](#widgets) and the [business rule](#business) package
 - Manage [alarms](#alarms), [reports](#reports) and [smart rules](#rules)
@@ -36,7 +36,7 @@ The Cumulocity Cockpit can be used in many industrial areas, including:
 
 In the following section, the Cockpit application is described. It offers lots of functionality:
 
-* **Data Explorer**: Interactively explore, compare and visualise IoT data.
+* **Data Explorer**: Interactively explore, compare and visualize IoT data.
 
 * **Dashboards**: Create your own analytics and monitor pages by selecting and arranging widgets. Select from various widgets including maps, tables, graphs, charts, controls and more.
 
@@ -127,7 +127,7 @@ The cockpit start page is a dashboard page:
 
 The dashboard shows data for the general tenant.
 
-The home dashboard is a page shared by all users of the tenant. It consists out of widgets, which visualise IoT data. By default, the home dashboard includes five widgets, which show a welcome text, a summary of available objects, assets with alarms, recent alarms and a map of all objects.
+The home dashboard is a page shared by all users of the tenant. It consists out of widgets, which visualize IoT data. By default, the home dashboard includes five widgets, which show a welcome text, a summary of available objects, assets with alarms, recent alarms and a map of all objects.
 
 The home dashboard can be edited, similar to other Cockpit dashboards: You can add, remove or change the widgets displayed. Use the settings symbol on the top right or move the cursor inside a widget and use the settings symbol of the individual widget.
 
@@ -262,9 +262,9 @@ Un-assigning a device does not remove the device, sub-devices or any associated 
 
 To edit the name of the group, click on the "Info" tab and edit the name.
 
-## <a name="visualise"></a>Using the Data Explorer to Visualise Data
+## <a name="visualize"></a>Using the Data Explorer to Visualize Data
 
-Data points (measurements or sensor data) can be visualised inside the Cockpit in three places:
+Data points (measurements or sensor data) can be visualized inside the Cockpit in three places:
 
 * Clicking on the "data explorer" in the navigator. You have access to all data points of all assets from there.
 
@@ -272,7 +272,7 @@ Data points (measurements or sensor data) can be visualised inside the Cockpit i
 
 * Adding data points related widgets to a dashboard to view pre-defined reports.
 
-To visualise data points, follow these steps:
+To visualize data points, follow these steps:
 
 * Go to the group or device, and click on "Data Explorer".
 
@@ -322,11 +322,11 @@ In the top of the dialog, select a device from the asset hierarchy. Only the ass
 
 The bottom of the dialog shows all data points of the selected object. Select the data points you want to show in the data explorer. Click "Add" to add all selected data points to the list of data points.
 
-### Changing data point visualisation
+### Changing data point visualization
 
-To change the data point visualisation, change the properties below the diagram.
+To change the data point visualization, change the properties below the diagram.
 
-The entry fields are designed to specify a precise time period to visualise:
+The entry fields are designed to specify a precise time period to visualize:
 
 * Left field: Start time of x-axis
 
@@ -336,7 +336,7 @@ The entry fields are designed to specify a precise time period to visualise:
 
 The following properties are available for data points:
 
-* v: Select whether to visualise the data point or not.
+* v: Select whether to visualize the data point or not.
 
 * Color: Color of the graph.
 
@@ -350,9 +350,9 @@ The following properties are available for data points:
 
 * Yellow Range Min / Max: Defines the range when minor alarms should be raised by threshold rule. These values are currently not visualized. See Smart Rules below for details.
 
-* Red Range Min / Max: Defines the range when CRITICAL alarms should be raised by threshold rules. These values are currently not visualised. See Smart Rules below for details.
+* Red Range Min / Max: Defines the range when CRITICAL alarms should be raised by threshold rules. These values are currently not visualized. See Smart Rules below for details.
 
-* Chart Type: For aggregated data, select what aggregated value should be visualised. Options are: min, max, area
+* Chart Type: For aggregated data, select what aggregated value should be visualized. Options are: min, max, area
 
 * Y Axis: Select on which y-axis the data point should be shown. Options are: Auto, left, right.
 
@@ -492,11 +492,11 @@ Show a data point (measurements) in a graph. The visualisation is the same as th
 
 The easiest way to create a data point graph widget is to navigate to the data explorer and then select "Send to dashboard".
 
-The parameters to configure are the same as in the data explorer. Please refer to "[Data Explorer](#using-the-data-explorer-to-visualise-data)" for further details.
+The parameters to configure are the same as in the data explorer. Please refer to "[Data Explorer](#using-the-data-explorer-to-visualize-data)" for further details.
 
 ### Widget "Data Point Table"
 
-This widget configuration is identical to the data points graph, except instead of visualising the data as a line-chart, data is visualised as a table.
+This widget configuration is identical to the data points graph, except instead of visualizing the data as a line-chart, data is visualized as a table.
 
 * The data points table widget displays data based on selected data points, time interval and aggregation.
 
@@ -624,14 +624,14 @@ Parameters to configure:
 
 * Target device or group: Select for which object all child devices should be shown. This is typically a group object.
 
-* Properties: Select properties or actions of an object to visualise them as columns in the table. In the configuration dialog, you see a list of configured columns, each  of the columns can be either a property or an action.
+* Properties: Select properties or actions of an object to visualize them as columns in the table. In the configuration dialog, you see a list of configured columns, each  of the columns can be either a property or an action.
 
 Example:
 
 * In the following screenshot, five columns are configured. Three property columns "Meter", “Vendor”, and “Owner”, which refer to the properties “name”, type” and “owner”. Additionally, there are two actions, one for toggling the maintenance mode, and one to reboot the device.
 ![image alt text](/guides/users-guide/image_17.png)
 
-* The resulting table is visualised as follows:
+* The resulting table is visualized as follows:
 ![image alt text](/guides/users-guide/image_18.png)
 
 

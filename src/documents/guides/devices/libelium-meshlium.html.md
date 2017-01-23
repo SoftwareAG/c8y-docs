@@ -5,7 +5,7 @@ layout: default
 
 ## Overview
 
-Meshlium works as a gateway, receiving sensors measurements from all the Waspmotes connected to it, then sending those measurements to Cumulocity.
+Meshlium works as a gateway, receiving sensor measurements from all the Waspmotes connected to it, then sending those measurements to Cumulocity.
 
 The following sections demonstrate how to use a Meshlium device with Cumulocity. It describes how to
 

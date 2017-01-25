@@ -10,7 +10,7 @@ The Administration application enables account administrators to manage their us
 
 * View [subscription information](#home) for your account.
 * Manage [users](#users) and [user groups](#user-groups), including their [permissions](#permissions).
-* View all operations done by users via the [audit logs](audit-logs).
+* View all operations done by users via the [audit logs](#audit).
 * Configure [applications](#applications) and [simulators](#simulators).
 * Set up real-time [event processing](#event-processing) scripts and [reprioritize alarms](#reprio-alarms).
 * Change [settings](#settings).
@@ -62,7 +62,7 @@ To add additional users, click on "Add user".
 
 ![Add User](/guides/users-guide/adduserpage.png)
 
-> Fields without an asterisk ("*", like "First name", "Last name") are optional
+> Fields without an asterisk ("*", like "First name", "Last name") are optional.
 
 ### Editing users
 
@@ -259,7 +259,7 @@ To assign applications to particular users and user groups, go to the "Applicati
 
 <img src="/guides/users-guide/applicationaccess.png" alt="Application access" style="max-width: 60%">
 
-## <a name="audit-logs"></a>Viewing audit logs
+## <a name="audit"></a>Viewing audit logs
 
  By visiting the "Audit logs" menu you can view all operations that users have carried out. The following fields can be observed:
 
@@ -284,7 +284,7 @@ In order to easily search through logs, you have the ability to filter them. The
 
 ![Filter settings](/guides/users-guide/filtersettings.png)
 
-> Note that it is not necessary to use all filters.
+> It is not necessary to use all filters.
 
 To apply filters, simply click on the "Apply filters" button.
 

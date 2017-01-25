@@ -10,6 +10,7 @@ The Administration application enables account administrators to manage their us
 
 * View [subscription information](#home) for your account.
 * Manage [users](#users) and [user groups](#user-groups), including their [permissions](#permissions).
+* View all operations done by users via the [audit logs](audit-logs).
 * Configure [applications](#applications) and [simulators](#simulators).
 * Set up real-time [event processing](#event-processing) scripts and [reprioritize alarms](#reprio-alarms).
 * Change [settings](#settings).
@@ -91,8 +92,6 @@ Enable two-factor authentication for a user:
 - Click "Save".
 
 ![Enable TFA](/guides/users-guide/enabletfa.png)
-
-
 
 ## <a name="user-groups"></a>Managing user groups
 
@@ -259,6 +258,37 @@ To assign more specific permissions on device level or device group level, go to
 To assign applications to particular users and user groups, go to the "Application access" section of that user or user group. The application access section is not visible if the user or user group already has access to all applications. The section shows marketplace applications and own applications. Marketplace applications are generally subscribed applications for your account. Own applications are applications that you added to your account, see [Applications](#applications). Check all applications that should be made available to the user or user group.
 
 <img src="/guides/users-guide/applicationaccess.png" alt="Application access" style="max-width: 60%">
+
+## <a name="audit-logs"></a>Viewing audit logs
+
+ By visiting the "Audit logs" menu you can view all operations that users have carried out. The following fields can be observed:
+
+ - "When?": Shows the server time when the change occurred.
+ - "What?": This field shows what changed. ("Smart Rule Deleted")
+ - "Who?": Displays the user who did the change. 
+ - "Text": Small summary of the change. ("Cep module "smartRule<number>" updated") - "Type": Type of change. ("Smart rule", "Alarm", "User") 
+ - "Time": Shows the device time when the change occurred. It can be different from the server time. 
+
+> Only the last 100 logs are visible, in order to view more press the "search more" button.
+
+![Audit logs](/guides/users-guide/auditlogs.png)
+
+### Filtering logs
+
+In order to easily search through logs, you have the ability to filter them. The following filters can be used:
+
+ - Type: There are six types of logs, "Alarm", "Event processing", "Group", "Operation", "Smart rule" and "User".
+ - Date from: Simply select date from which you wish to filter the log.
+ - Date to: Select date to which you wish to filter the log.
+ - User: View logs of a specific user only.
+
+![Filter settings](/guides/users-guide/filtersettings.png)
+
+> Note that it is not necessary to use all filters.
+
+To apply filters, simply click on the "Apply filters" button.
+
+To discard filters or to see all audit logs, click on the "cross" button.
 
 ## <a name="applications"></a>Managing applications
 

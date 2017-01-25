@@ -62,7 +62,7 @@ To add additional users, click on "Add user".
 
 ![Add User](/guides/users-guide/adduserpage.png)
 
-> Fields without an asterisk ("*", like "First name", "Last name") are optional.
+> Fields without an asterisk ("*", like "First name", "Last name") are optional
 
 ### Editing users
 

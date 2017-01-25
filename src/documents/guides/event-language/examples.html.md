@@ -52,7 +52,7 @@ Module:
 
 ## Create alarm if the operation was not executed
 
-Operations usually run to a fixed sequence when handled by the device
+Operations usually run to a fixed sequence when handled by the device.
 
  - PENDING (after creation)
  - EXECUTING (once device received the operation and starts the handling)
@@ -66,7 +66,7 @@ We will check for the following sequence:
  - OperationCreated
  - OperationUpdated for the same operation within 10 minutes that sets the status to either SUCCESSFUL or FAILED
 
-If the second part does *not* appear we will create a new alarm
+If the second part does *not* appear we will create a new alarm:
 
     @Name("handle_not_finished_operation")
     insert into CreateAlarm  
@@ -217,7 +217,7 @@ Creating a measurement like this
       "type": "c8y_BinaryFaultRegister"
     }
 
-will trigger the last statement three times
+will trigger the last statement three times.
 
  - measurement and bit position 1
  - measurement and bit position 2

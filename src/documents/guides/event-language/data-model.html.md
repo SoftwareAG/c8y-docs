@@ -9,7 +9,7 @@ toc: true
 
 ### General structure
 
-All input streams share the same base structure
+All input streams share the same base structure.
 
 |Parameter|Data type|Description|
 |:--|:----------|:-------------|

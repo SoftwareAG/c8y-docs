@@ -10,6 +10,7 @@ Using the Cumulocity real-time event processing, you can add your own logic to y
 
 
 Typical real-time analytics use cases include:
+
 * Remote control: Turn a device off if it's temperature rises over 40 degrees.
 * Validation: Discard negative meter readings or meter readings that are lower than the previous.
 * Derived data: Calculate the volume of sales transactions per vending machine per day.

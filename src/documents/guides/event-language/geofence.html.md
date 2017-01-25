@@ -148,7 +148,7 @@ For the configuration we will just check if the device contains the fragment "c8
 As mentioned earlier the device is outside of the fence if the distance between the current device position and the geofence center is bigger than the configured geofence radius.
 To trigger the alarm we need 2 events so we can check if within these two events the device entered or left the geofence.
 
-In the first step we calculate the distance with the function mentioned earlier
+In the first step we calculate the distance with the function mentioned earlier:
 
     create schema LocationEventWithDistance (
     	event Event,

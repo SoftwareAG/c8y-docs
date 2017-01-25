@@ -196,8 +196,8 @@ To enrich your texts you can either use concatenation
 
 If the texts get longer and have more values that are dynamically set from the data you can use the replaceAllPlaceholders() function.
 Another advantage of this function is that you can not only use the current object but also access all information of the device that created the alarm, measurment, event.
-In your text string you mark the placeholders with the JsonPath to the value (without the root element $) and surround it by #{}. If you want to access data from the device
-you start the JsonPath with source.
+
+In your text string you mark the placeholders with the JsonPath to the value (without the root element $) and surround it by #{}. If you want to access data from the device you start the JsonPath with source.
 
 The function gets called with the string which contains the placeholders and the object which you want to use for filling the placeholders. The source device will then be automatically queried.
 

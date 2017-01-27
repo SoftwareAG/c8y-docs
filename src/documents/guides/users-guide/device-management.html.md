@@ -92,7 +92,6 @@ In case a list contains more than 1.000 entries, only the first 1.000 entries ar
 
 Cumulocity includes a full-text search for devices. By entering a search term into the "search ..." text field, you can find all devices that contain that term. The image below shows an example of searching for devices that contain the term "Ublox C027". You can search for any text properties of a device. Prefixes are also supported. For example, a search for "Ublox" would also return the devices containing "Ublox C027". Suffixes are currently not supported. For example, searching for "C027" would not return the "Ublox C027".
 
-![Searching](/guides/users-guide/searching.png)
 
 ## <a name="grouping-devices"></a>Grouping Devices
 

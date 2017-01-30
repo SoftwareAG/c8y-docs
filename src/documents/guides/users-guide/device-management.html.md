@@ -17,7 +17,8 @@ The Device Management application shows you your connected devices and enables y
 * [Troubleshoot](#events-all) devices.
 * [Manage](#software-repo) the software and the firmware on devices.
 * [Manage](#credentials) the credentials of devices.
-
+* [Simulate](#simulator) devices.
+* 
 The Device Management Application looks like this:
 
 <center><img src="/guides/users-guide/app.png" alt="Device Management" style="max-width: 100%"></center>
@@ -534,11 +535,12 @@ In most cases, you should not need to edit anything. Exceptions are:
 * If you would like to temporarily disconnect a device use the "Deactivate" button next to the device credentials.
 * If you would like to assign more permissions to an individual device click the device credentials and select additional or different user groups for the device.
 
-![Bulk provisioning](/guides/users-guide/bulk_provisioning2.png)
+![Bulk provisioning](/guides/users-guide/autoregister.png)
 
 Device credentials can be also provided from CSV file. Files can be uploaded using the button pointed with an arrow. More details on the file structure can be found in under [Bulk-registering devices](#creds-upload) above.
 
-##Simulators
+## <a name="simulator"></a>Simulators
+
 
 With the Cumulocity Simulator, all aspects of IoT devices can be simulated:
 
@@ -624,6 +626,7 @@ Directly underneath the instructions tab, you find supported operations. In this
 Some operations are turned on. You can also specify customized operations by using the add custom operation button.
 
 ###Alarms (within the Simulator menu)
+
 The last tab in the simulator menu are alarms.
 
 ![Simulator Alarm](/guides/users-guide/simalarm.png)

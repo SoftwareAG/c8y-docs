@@ -216,6 +216,8 @@ To import a device type, click the "Import" link. This will open a dialog that l
 
 The SCADA widgets inspect uploaded SVG files for placeholders. These placeholders are replaced by actual values from devices. Placeholders have a specific syntax and can be used anywhere in the SVG file. To add a placeholder, enter the name of the placeholder in double curly braces using your design application or a text editor. This is an example of a text element containing a placeholder "batteryValue", taken from our [sample SVG file](/guides/users-guide/scadademo.svg):
 
+> When creating svg files, we recommend you to use "https://boxy-svg.com/". It is easy to use, quality chrome extension. 
+
 	<text class="text" xt-anchor="middle" x="100" y="236.982125" width="200" ...>
 		{{batteryValue}}
 	</text>

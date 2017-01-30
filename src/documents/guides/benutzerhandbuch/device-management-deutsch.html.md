@@ -18,6 +18,7 @@ Die Device Management Anwendung zeigt Ihnen Ihre angeschlossenen Geräte an und 
 * [Troubleshoot](#events-all) von Geräten.
 * [Verwalten](#software-repo) von Software und Firmware.
 * [Verwalten](#credentials) der Zugangsdaten von Geräten.
+* [Simulatoren](#simulators) von Geräten hinzufügen.
 
 Diese Anwendung sieht so aus:
 
@@ -543,7 +544,7 @@ Mit dem Cumulocity Simulator, können alle Aspekte von IoT Geräten simuliert we
 * Legen Sie fest, welche Vorgänge das Gerät verarbeiten kann
 * Erstellen Sie Arbeitsanweisungen basierend auf vordefinierten Arbeitsvorlagen oder benutzerdefinierten Schablonen und planen Sie Arbeitsschritte
 * Erstellen Sie bis zu zehn Geräte eines definierten Typs
-* Generieren Sie Meldungen für Messungen, Alarme, Ereignisse und Inventur
+* Generieren Sie Meldungen für Messungen, Alarme, Ereignisse und Stammmdaten
 * Simulationsprobleme als Alarme anzeigen
 
 ###Was ist ein Simulator?

@@ -18,11 +18,10 @@ The Device Management application shows you your connected devices and enables y
 * [Manage](#software-repo) the software and the firmware on devices.
 * [Manage](#credentials) the credentials of devices.
 * [Simulate](#simulator) devices.
-* 
+
 The Device Management Application looks like this:
 
-<center><img src="/guides/users-guide/app.png" alt="Device Management" style="max-width: 100%"></center>
-
+<img src="/guides/users-guide/app.png" alt="Device Management" style="max-width: 100%">
 
 **The following sections will walk you through the various menus of the Device Management application.**
 

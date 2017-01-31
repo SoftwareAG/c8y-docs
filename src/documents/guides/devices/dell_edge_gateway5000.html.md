@@ -5,7 +5,7 @@ layout: default
 
 ## Overview
 
-The Edge Gateway 5000 Series for the Internet of Things (IoT) offers cost-effective security and manageability tools for operations professionals.
+The Edge Gateway 5000 Series for the Internet of Things (IoT) offers cost-effective security and manageability tools for operation professionals.
 
 The following sections demonstrate how to use your device with Cumulocity. It describes how to
 

@@ -152,7 +152,7 @@ For information on using the agent, please visit the [NetComm Agent User's Guide
 [Download link](http://resources.cumulocity.com/ntc/smartrest-agent_3.1.6_arm.ipk). Changes:
 
 * [fix]Modbus: read per contiguous block.
-* [MTM-12594](https://cumulocity.atlassian.net/browse/MTM-12594)[fix]lua/config: save configuration doesn't have effect.
+* [MTM-12594](https://cumulocity.atlassian.net/browse/MTM-12594) [fix]lua/config: save configuration doesn't have effect.
 * ntcagent/postinst: set default serial port to /dev/ttyAPP4.
 * Modbus: add mbmanager so change serial configuration no longer requires a reboot.
 * [fix]lua/net: filter out deliveryType=SMS for configuring WAN operation.

@@ -64,17 +64,18 @@ Then edit the [plugin manifest](/guides/web/branding-plugin#plugin-manifest) in 
 		"myapp.deviceContact"
 	],
 	"js": [
-		"index.js"
+		"deviceContact.module.js"
 	]
 }
 ```
 
-Then create a file index.js at the plugin's root folder to have the following content:
+Then create a file "deviceContact.module.js" at the plugin's root folder to have the following content:
 
 ```js
 (function () {
-	angular.module('myapp.deviceContact', []).config(function () {
-	});
+	'use strict';
+
+	angular.module('myapp.deviceContact', []);
 })();
 ```
 
@@ -98,17 +99,19 @@ Inside the plugin folder, create a file deviceContact.controller.js with the con
 ```js
 (function () {
 	'use strict';
-	angular.module('myapp.deviceContact')
-		.controller('deviceContactCtrl', Controller)
 
-	function Controller($scope, $routeParams, c8yDevices, c8yAlert) {
+	angular
+    .module('myapp.deviceContact')
+    .controller('deviceContactCtrl', DeviceContactController);
+
+	function DeviceContactController() {
 
 	});
 
 })();
 ```
 
-* Declare the file in the js array inside the plugin manifest:
+Declare the file in the js array inside the plugin manifest:
 
 ```console
 	{
@@ -120,7 +123,7 @@ Inside the plugin folder, create a file deviceContact.controller.js with the con
 	}
 ```
 
-* Inside the plugin folder, create a file deviceContact.html with the contents:
+Inside the plugin folder, create a file deviceContact.html with the contents:
 
 ```html
 	<div class="panel panel-clean">
@@ -130,21 +133,32 @@ Inside the plugin folder, create a file deviceContact.controller.js with the con
 	</div>
 ```
 
-* Add the "Contact" tab to the device details just like we did in the ["Hello world!"](/guides/web/branding-plugin#hello-world) example. Edit index.js and add the content below.
+Add the "Contact" tab to the device details just like we did in the ["Hello world!"](/guides/web/branding-plugin#hello-world) example. Create "deviceContact.config.js" and add the content below.
 Note that when multiple views are attached to the route (/device/:deviceId in this case) tabs are created automatically for each of them. Since the device details view uses /device/:deviceId for device details already, "Contact" is rendered as a tab.
 
 ```js
-(function () {
-	angular.module('myapp.deviceContact', []).config(function (c8yViewsProvider) {
-		c8yViewsProvider.when('/device/:deviceId', {
-			name: 'Contact',
-			icon: 'envelope-o',
-			priority: 1000,
-			templateUrl: ':::PLUGIN_PATH:::/deviceContact.html',
-			controller: 'deviceContactCtrl'
-		});
-	});
-})();
+(function() {
+  'use strict';
+
+  angular
+    .module('myapp.deviceContact')
+    .config(configure);
+
+  configure.$inject = [
+    'c8yViewsProvider'
+  ];
+
+  function configure(c8yViewsProvider) {
+    c8yViewsProvider.when('/device/:deviceId', {
+      name: 'Contact',
+      icon: 'envelope-o',
+      priority: 1000,
+      templateUrl: ':::PLUGIN_PATH:::/deviceContact.html',
+      controller: 'deviceContactCtrl'
+    });
+  }
+
+}());
 ```
 
 ### Display data in the "Contact" tab
@@ -162,32 +176,41 @@ Previously, we only set up a dummy view for device contacts. In this step, we wi
 	}
 ```
 
-* Add a load function to deviceContact.controller.js as shown below. The function gets the details of the currently displayed device ($routeParams.deviceId) and adds the device's id and c8y_Contact fragment to the local scope.
+Add a load function to deviceContact.controller.js and the necessary injection dependencies as shown below. The function gets the details of the currently displayed device ($routeParams.deviceId) and adds the device's id and c8y_Contact fragment to the local scope.
 
 ```js
-(function () {
-	'use strict';
-	angular.module('myapp.deviceContact')
-		.controller('deviceContactCtrl', Controller)
+(function() {
+  'use strict';
 
-	function Controller($scope, $routeParams, c8yDevices, c8yAlert) {
-		function load() {
-			c8yDevices.detail($routeParams.deviceId).then(function (res) {
-				var device = res.data;
-				$scope.device.id = device.id;
-				$scope.device.c8y_Contact = device.c8y_Contact;
-			});
-		}
+  angular
+    .module('myapp.deviceContact')
+    .controller('deviceContactCtrl', DeviceContactController);
 
-		$scope.device = {};
+  DeviceContactController.$inject = [
+    '$scope',
+    '$routeParams',
+    'c8yDevices'
+  ];
 
-		load();
-	});
+  function DeviceContactController($scope, $routeParams, c8yDevices) {
 
-})();
+    function load() {
+      c8yDevices.detail($routeParams.deviceId).then(function (res) {
+        var device = res.data;
+        $scope.device.id = device.id;
+        $scope.device.c8y_Contact = device.c8y_Contact;
+      });
+    }
+
+    $scope.device = {};
+
+    load();
+  }
+
+}());
 ```
 
-* Edit the device contact view in deviceContact.html with the content below.
+Edit the device contact view in deviceContact.html with the content below.
 
 ```html
 	<div class="panel panel-clean">
@@ -218,26 +241,52 @@ Previously, we only set up a dummy view for device contacts. In this step, we wi
 
 After completing the following steps, you will be able to save the data edited using the new contact form.
 
-* Update the controller in deviceContact.js to also save data by adding the content below just after the closing brace of the load function. c8yDevices.save is a [library function](/guides/web/introduction#service-points) that stores a device using the Cumulocity REST API. c8yAlert.success is a library function that displays a green confirmation box at the top of the user interface.
+Update the controller in deviceContact.js to also save data by adding another injection dependency and the content below just after the closing brace of the load function. c8yDevices.save is a [library function](/guides/web/introduction#service-points) that stores a device using the Cumulocity REST API. c8yAlert.success is a library function that displays a green confirmation box at the top of the user interface.
 
 
 ```js
-  // ... function load() { ... }
+(function() {
+  'use strict';
 
-	function save(device) {
-		c8yDevices.save(device).then(onSave);
-	}
+  angular
+    .module('myapp.deviceContact')
+    .controller('deviceContactCtrl', DeviceContactController);
 
-	function onSave() {
-		c8yAlert.success('Contact information successfully saved!');
-	}
+  DeviceContactController.$inject = [
+    '$scope',
+    '$routeParams',
+    'c8yDevices',
+    'c8yAlert'
+  ];
 
-	$scope.save = save;
+  function DeviceContactController($scope, $routeParams, c8yDevices, c8yAlert) {
 
-	// $scope.device = {}; ...
+    function load() {
+      c8yDevices.detail($routeParams.deviceId).then(function (res) {
+        var device = res.data;
+        $scope.device.id = device.id;
+        $scope.device.c8y_Contact = device.c8y_Contact;
+      });
+    }
+
+    function save(device) {
+      c8yDevices.save(device).then(onSave);
+    }
+
+    function onSave() {
+      c8yAlert.success('Contact information successfully saved!');
+    }
+
+    $scope.save = save;
+    $scope.device = {};
+
+    load();
+  }
+
+}());
 ```
 
-* Add a *"Save changes"* button to the device contact view. Paste the div below just before the closing form tag in deviceContact.html. The button will trigger the ```save``` function that we just defined.
+Add a *"Save changes"* button to the device contact view. Paste the div below just before the closing form tag in deviceContact.html. The button will trigger the ```save``` function that we just defined.
 
 ```html
 	<div>

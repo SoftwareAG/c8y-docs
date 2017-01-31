@@ -12,7 +12,7 @@ In the following document you will get an overview on the Web Software Developme
 
 ![Architecture](/guides/plugins/overview.png)
 
-The illustration above shows the structure behind the application and plugin development. The same as the core applications, your applications will be built on AngularJS and the "c8y.core" and "c8y.ui" [JavaScript API](#service-points) which in turn use the [REST API](/guides/rest/introduction) provided by Cumulocity.
+The illustration above shows the structure behind the application and plugin development. The same as the core applications, your applications will be built on AngularJS and the "c8y.core" and "c8y.ui" [JavaScript API](http://resources.cumulocity.com/documentation/jssdk/latest/) which in turn use the [REST API](/guides/rest/introduction) provided by Cumulocity.
 
 First, this document describes the concept behind applications and plugins. Then it specifies the required folder structure and different configuration options for applications and plugins. Subsequently, the setup necessary for developing applications and plugins is described. The Web SDK guide is structured as follows:
 * [Concepts](#concepts)
@@ -22,11 +22,9 @@ First, this document describes the concept behind applications and plugins. Then
 	* [Prerequisites](#prerequisites)
 	* [Cumulocity CLI tool](#cli-tool)
 	* [Cumulocity UI package](#ui-package)
-* [Target](#target)
 
 Afterwards, we describe how to create a sample plugin step-by-step:
 * ["Hello World!"](#hello-world)
-* [Services and extension points](#service-points)
 
 You can also find other, more complex examples in the following documents:
 * [Branding plugin](/guides/web/branding-plugin)
@@ -448,6 +446,7 @@ $ c8y build:app [appContextPath] [outputFolder]
 #### build:plugin
 Builds the plugin to the specified folder (./build by default).
 Inside the outputFolder you will find a directory named [pluginName] and a zip file [pluginName].zip. This zip file can be uploaded in the administration interface and added to any application.
+
 ```bash
 $ c8y build:plugin <pluginName> [outputFolder]
 ```
@@ -455,6 +454,7 @@ $ c8y build:plugin <pluginName> [outputFolder]
 #### deploy:app
 Builds all the plugins, assembles the application and uploads it to the defined tenant. If the app doesn't yet exist on the remote instance it will be automatically created.
 If you omit appContextPath the contextPath will be read from the "cumulocity.json" at the path where the command was executed.
+
 ```bash
 $ c8y deploy:app [appContextPath]
 ```
@@ -478,9 +478,9 @@ The build process for an app includes the following steps:
 5. Copy the application manifest
 6. Create a zip file with the above contents
 
-## <a name="target"></a>Target
+### <a name="target"></a>Deploy your plugin to the core applications
 
-You can also add or replace plugins in the core applications by specifying a target .json file. This file is not restricted in its name or path.
+You can also add or [replace](/guides/web/branding-plugin#branding) plugins in the core applications by specifying a target .json file. This file is not restricted in its name or path.
 
 ```json
 {
@@ -496,9 +496,17 @@ You can also add or replace plugins in the core applications by specifying a tar
 }
 ```
 
-The example above shows how to replace the Cumulocity branding plugin with your own custom-made branding and how to add your self-developed plugin to one of the core applications, in this case the administration application. When specifying a plugin, ensure to include the contextPath of the application the plugin is in. In the example above, the plugin "myplugin" is located in the plugins folder of the application with the contextPath "myapplication".
+The example above shows how to add your self-developed plugin to one of the core applications, in this case the administration application. When specifying a plugin, ensure to include the contextPath of the application the plugin is in. In this case, the plugin "myplugin" is located in the plugins folder of the application with the contextPath "myapplication".
 
-To deploy a target file, you have to add the option ```-t pathToTargetFile/target.json``` when deploying your application. Assuming that we have the following folder structure
+If you are not deploying to a management tenant, you need to include the following fragment to your target .json file:
+
+```json
+	"allApplications": {
+		"availability": "PRIVATE"
+	}
+```
+
+To deploy a target file, you have to add the option ```-t pathToTargetFile/target.json``` when deploying your application. Assuming that we have the following folder structure:
 
 ```console
 <<root folder>>
@@ -510,12 +518,8 @@ To deploy a target file, you have to add the option ```-t pathToTargetFile/targe
 └── package.json
 ```
 
-we would have to execute the following command
+we would have to execute the following command:
 
 ```bash
 c8y deploy:app myapplication -t targets/target.json
 ```
-
-## Services and extension points
-
-For more information on the JavaScript APIs, consult the [JSDoc site](http://resources.cumulocity.com/documentation/jssdk/latest/). Services to access Cumulocity APIs are provided in the "core" package, extension points to, for example, add new menu items or widgets are provided in the "ui" package.

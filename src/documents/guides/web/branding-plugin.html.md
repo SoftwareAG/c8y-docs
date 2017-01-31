@@ -11,7 +11,9 @@ Before you start working on the branding plugin, we recommend you to take a look
 
 You can find this and all the other plugins described in the documentation inside the repository [cumulocity-ui-plugin-examples](https://bitbucket.org/m2m/cumulocity-ui-plugin-examples).
 
-## Branding plugin
+## <a name="branding">Branding plugin
+
+![Branding example](/guides/plugins/branding.png)
 
 Our main css is based on the popular css framework [Bootstrap 3](http://getbootstrap.com/). It is possible to build a branding plugin based on Cumulocity's own base branding simply by overriding less variables.
 
@@ -22,6 +24,14 @@ You can inspect the less files to see what variables are available for configura
 
 Because branding plugins are simply distinguished by their name, the name has to be unique. Besides that, it has to end in *Branding* (e.g. *piedpiperBranding* ). To use it in an application, add it to the imports statement of the [application manifest](/guides/web/branding-plugin#application-manifest), as it is in the [cumulocity-ui-plugin-examples](https://bitbucket.org/m2m/cumulocity-ui-plugin-examples) repository.
 
-Make sure there is only a single branding plugin declared, otherwise both of them will be loaded.
+Make sure there is only a single branding plugin declared, otherwise both of them will be loaded. To replace the c8yBranding plugin in the core applications, you have to create a target .json file with at least the following content
 
-![Branding example](/guides/plugins/branding.png)
+```json
+{
+	"name": "Examples",
+	"comment": "Release with new branding plugin",
+  "replaceImports": {
+    "core/c8yBranding": "myapplication/myBranding"
+  }
+}
+```

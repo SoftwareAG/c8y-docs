@@ -5,7 +5,7 @@ layout: default
 toc: true
 ---
 
-## Calculating hourly averages of a measurement
+## Calculating an hourly median of  measurements
 
 We are assuming the input data looks like this:
 
@@ -23,7 +23,7 @@ We are assuming the input data looks like this:
       "type": "c8y_TemperatureMeasurement"
     }
 
-To create the average we need the following parts in the module:
+To create the median we need the following parts in the module:
 
  - A context to separate the measurements correctly per device
  - A time window over one hour
@@ -50,15 +50,15 @@ Module:
     where getObject(m, "c8y_TemperatureMeasurement") is not null
     output last every 1 hours;
 
-## Create alarm if operation has not been executed
+## Create alarm if the operation was not executed
 
-Operations usually run to a fixed sequence when handled by the device
+Operations usually run to a fixed sequence when handled by the device.
 
  - PENDING (after creation)
  - EXECUTING (once device received the operation and starts the handling)
- - SUCCESSFUL or FAILED (depending of the execution result)
+ - SUCCESSFUL or FAILED (depending on the execution result)
 
-A operation that does not reach SUCCESSFUL or FAILED within a certain time usually indicates an issue (e.g. device lost connection or device got stuck while handling).
+An operation that does not reach SUCCESSFUL or FAILED within a certain time usually indicates an issue (like device lost connection or device got stuck while handling).
 Even if the operation was not handled successfully the device should update the operation as FAILED.
 For this example we will use 10 minutes as a acceptable duration for operation handling.
 We will check for the following sequence:
@@ -66,7 +66,7 @@ We will check for the following sequence:
  - OperationCreated
  - OperationUpdated for the same operation within 10 minutes that sets the status to either SUCCESSFUL or FAILED
 
-If the second part does *not* appear we will create a new alarm
+If the second part does *not* appear we will create a new alarm:
 
     @Name("handle_not_finished_operation")
     insert into CreateAlarm  
@@ -88,8 +88,8 @@ If the second part does *not* appear we will create a new alarm
 
 ## Creating alarms from bit measurements
 
-Devices often keep alarm statuses in registers and don't have the knowledge themselves what the register means.
-In this example we assume that a device just sends the whole register as a binary value in a measurement and the rule will identify the bits and create the respective alarm.
+Devices often keep alarm statuses in registers and  can not interpret the meaning of alarms.
+In this example we assume that a device just sends the entire register as a binary value in a measurement. A rule must identify the bits and create the respective alarm.
 
 We create three expressions to resolve alarm text, type and severity for each of the bits.
 
@@ -157,8 +157,8 @@ We create three expressions to resolve alarm text, type and severity for each of
 
 To analyze the binary measurement value we will interpret it as a string value and loop through each character.
 The getActiveBits() function will do that and return a list of the bit positions at where the measurement had a "1".
-It will not return it as a List<Integer> but instead as a List<Map> where the map structure matches the schema BitPosition so we can handle it as if it is a stream.
-This will give as the possibility to join the streams and trigger an alarm not only the measurement but the measurement joined with every element in the list.
+It will not return it as a List<Integer> but instead as a List<Map> where the map structure matches the scheme BitPosition so we can handle it as if it is a stream.
+This is used as an option to join the stream and trigger an alarm by individual measurement values listed.
 
     create schema BitPosition(
       position int
@@ -217,7 +217,7 @@ Creating a measurement like this
       "type": "c8y_BinaryFaultRegister"
     }
 
-will trigger the last statement three times
+will trigger the last statement three times.
 
  - measurement and bit position 1
  - measurement and bit position 2

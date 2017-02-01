@@ -7,13 +7,13 @@ title: Adeunis LoRaWAN Demonstrator
 
 The following data are currently recorded:
 
-* Raw Adeunis data as event.
-* Signal strength measurement including RSSI (Received signal strength indication), SNR (Signal noise ratio) and average SNR.
-* Battery voltage measurement.
-* Device temperature measurement.
-* Accelerometer warning  as alarm.
-* Button 1 triggered as event.
-* GPS position as event and location update.
+* Raw Adeunis data as event
+* Signal strength measurement including RSSI (Received signal strength indication), SNR (Signal noise ratio) and average SNR
+* Battery voltage measurement
+* Device temperature measurement
+* Accelerometer warning  as alarm
+* Button 1 triggered as event
+* GPS position as event and location update
 
 ## Configuring Adeunis devices for Cumulocity
 

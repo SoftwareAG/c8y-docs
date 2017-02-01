@@ -119,15 +119,15 @@ If you have a trigger like this
 
     from EventCreated e;
 
-the functionality is identical with this trigger using a pattern
+the functionality is identical with this trigger using a pattern.
 
     from pattern [every e=EventCreated];
 
-It is also possible to add filters in the pattern
+It is also possible to add filters in the pattern.
 
     from pattern [every e=EventCreated(event.type = "myEventType")];
 
-You can trigger by joining streams
+You can trigger by joining streams.
 
     from EventCreated e unidirectional, AlarmCreated.std:lastevent() a
     where e.event.source = a.alarm.source;
@@ -137,7 +137,7 @@ This will trigger on every EventCreated (defined through the keyword unidirectio
 _Note: it will not add the latest AlarmCreated of the device but the latest AlarmCreated overall if it is from the same device_
 
 
-You can also trigger by sequences
+You can also trigger by sequences.
 
     from pattern[every (e=EventCreated -> a=AlarmCreated(alarm.source = e.event.source))];
 
@@ -151,7 +151,7 @@ You can either trigger in a certain interval
 
     from pattern [timer:interval(5 minutes)];
 
-or as a cron job
+or as a cron job.
 
     // timer:at(minutes, hours, daysOfMonth, month, daysOfWeek, (optional) seconds)
     // minutes: 0-59
@@ -168,7 +168,7 @@ or as a cron job
     from pattern [timer:at(0, */2, (1-7), *, *)]; // trigger every 2 hours on every day in the first week of every month
 
 You can also combine timer patterns with other patterns.
-For example you can check if there was an event within a certain time after another event
+For example you can check if there was an event within a certain time after another event.
 
     from pattern [every e=EventCreated -> (timer:interval(10 minutes) and not a=AlarmCreated)];
 
@@ -229,7 +229,7 @@ The difference between the two statements is that the first one will trigger on 
 The second statement only triggers every hour and will only output the last average (calculated when the last MeasurementCreated was received).
 
 
-2. Windows with a certain amount of events
+2. Windows with a certain amount of events:
 
     select
       avg(getNumber(e, "myCustomMeasurement.mySeries.value")),
@@ -244,7 +244,7 @@ The second statement only triggers every hour and will only output the last aver
     where e.measurement.type = "myCustomMeasurement"
     output last every 100 events;
 
-Windows can also be globally declared
+Windows can also be globally declared:
 
     create window MeasurementCreated.win:length(20) as MyMeasurementWindow;
 
@@ -254,7 +254,7 @@ Windows can also be globally declared
     from MyMeasurementWindow e
     where e.measurement.type = "myCustomMeasurement";
 
-Declaring a window gives you also the possibility of clearing the window
+Declaring a window gives you also the possibility of clearing the window.
 
     on AlarmCreated delete from MyMeasurementWindow
 
@@ -270,7 +270,7 @@ It is not required to define a stream. If you use a unknown stream name it will 
 
     select e.type from MyEvent e;
 
-If you now try to add
+If you now try to add:
 
     insert into MyEvent
     select
@@ -280,13 +280,13 @@ If you now try to add
 You will not be able to deploy the statement because the stream MyEvent has already been declared with one variable e of type Event.
 This statement tries to set a value of type AlarmCreated to e.
 
-You can also explicitly create a new stream
+You can also explicitly create a new stream.
 
     create schema MyEvent(
       e Event
     );
 
-The general syntax is
+The general syntax is:
 
     create schema StreamName(
       var1Name var1Type,
@@ -348,7 +348,7 @@ Calculating the distance between two geo-coordinates:
 
 ## Variables
 
-You can define variables in your modules
+You can define variables in your modules.
 
     create variable String myEmailText = "Hello World";
     create variable List supportedOperationsList = cast({"c8y_Restart", "c8y_Relay"}, java.util.List);
@@ -382,7 +382,7 @@ Creating a context is like telling the statement where it can find the informati
 
 This context definition declares that in the stream MeasurementCreated the context key (by which we want to separate the events) can be found at measurement.source.value which is the ID of the device.
 
-Now we can add the context to the statement
+Now we can add the context to the statement:
 
     context DeviceAwareContext
     select
@@ -403,7 +403,7 @@ If you have multiple statements that need to be context aware and have different
         event.source.value from EventCreated,
         operation.deviceId.value from OperationCreated;
 
-You can also create context keys of multiple values
+You can also create context keys of multiple values:
 
     create context DeviceAwareContext
       partition by measurement.source.value and measurement.type from MeasurementCreated;

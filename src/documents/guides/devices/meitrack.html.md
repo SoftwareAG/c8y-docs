@@ -5,7 +5,7 @@ title: Meitrack
 
 ## Overview
 
-[Meitrack Group](http://www.meitrack.com/) provides GPS-based vehicle, asset and personal trackers that can be connected to Cumulocity to centrally record coordinates and tracking information. After connecting the devices, you can create additional business logic in Cumulocity by using, for example, geofence or threshold Smart Rules.
+[Meitrack Group](http://www.meitrack.com/) provides GPS-based vehicle, asset and personal trackers that can be connected to Cumulocity to record coordinates and tracking information. After connecting the devices, you can create additional business logic in Cumulocity by using, for example, geofence or threshold Smart Rules.
 
 The following data is currently recorded:
 

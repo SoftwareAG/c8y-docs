@@ -1,3 +1,4 @@
+
 ---
 order: 10
 title: Introduction to Cumulocity
@@ -6,22 +7,31 @@ layout: default
 
 ## Overview
 
-Cumulocity gives you very fast visibility and control over your remote assets, be these houses, cars, machines or any other assets that you might need to manage. Cumulocity provides
+**Intended Use**
 
-* Certified hardware kits and software libraries that you can use to bring your remote assets into the cloud.
+Cumulocity gives you very fast visibility and control over your remote assets, be these houses, cars, machines or any other assets that you need to manage. 
+
+Cumulocity provides
+
+* Certified hardware kits and software libraries you can use to bring your remote assets into the cloud.
 * Device management, data visualization and remote control functionality through the web.
 * Rapid customization of the above through [Cumulocity Event Language](/guides/concepts/realtime) rules and [Cumulocity applications](/guides/concepts/applications).
 * APIs for extending the existing functionality or interfacing Cumulocity with your other IT services such as ERP or CRM systems. Cumulocity can also host your HTML5 applications.
 
-All this is provided through a cloud-based subscription service, which makes creating Internet of Things (IoT) solutions with Cumulocity fundamentally different from bespoke development and RAD (rapid application development). You can start immediately with a large amount of existing functionality, and you can start for free. You do not need to worry about IT infrastructure (such as hosting, networking, security, storage and backup) and IT management (for example, making sure that all software is available for your users). 
+All this is provided through a cloud-based subscription service making the creation of Internet of Things (IoT) solutions with Cumulocity fundamentally different from bespoke development and RAD (rapid application development). You can start immediately with a large amount of existing functionality, and you can start for free. You do not need to worry about IT infrastructure (hosting, networking, security, storage and backup) and IT management (all software is available to your users). 
 
 Cumulocity works with any network architecture, but is specifically designed to work out of the box with mobile networks. In the following sections, we will give a short overview of the different functional areas with references to more detailed descriptions.
 
 ![Solution building](/guides/concepts-guide/solution.gif)
 
+Terms and Conditions to use Cumulocity:
+[Terms and Conditions](http://cumulocity.com/terms-and-conditions/)
+
 ## Hardware kits and software libraries
 
-Cumulocity directly supports various devices with ready-made software libraries and examples. These can be specialized devices for a particular use case, such as locations trackers, OBUs and vending telemetry devices. They can also be developer kits for building generic devices, such as [Arduino](/guides/devices/arduino), [Raspberry Pi](/guides/devices/raspberry-pi), [Cinterion boards](/guides/devices/cinterion), [Tinkerforge sensors](/guides/devices/tinkerforge) and more. These developer kits are described in more detail in the corresponding chapters of the "Devices" section in this documentation.
+**Functionality within Cumulocity**
+
+Cumulocity directly supports various devices with ready-made software libraries and examples. These can be specialized devices for a particular use case, as locations trackers, OBUs and vending telemetry devices. They can also be developer kits for building generic devices, such as [Arduino](/guides/devices/arduino), [Raspberry Pi](/guides/devices/raspberry-pi), [Cinterion boards](/guides/devices/cinterion), [Tinkerforge sensors](/guides/devices/tinkerforge) and more. These developer kits are described in more detail in the corresponding chapters of the "Devices" section in this documentation.
 
 Outside of the specific kits, many other devices can run the software with no or little modification. That is why the software is provided in source code form for you to extend it to any other device that you may have. There are also generic client libraries for Java, JavaME, C/C++ and Lua for your own implementation. If your device uses a completely proprietary runtime environment, you can always use Cumulocity's REST resp. HTTP interfaces. These will work on practically any Internet-connected device today, down to the smallest systems.
 
@@ -29,9 +39,9 @@ Outside of the specific kits, many other devices can run the software with no or
 
 ## Mobile networking support
 
-Cumulocity supports any type of Internet connectivity in a secure manner. It gracefully deals with intermittent, bandwidth-restricted and uni-directional connections (such as communication through NAT). Where desired, Cumulocity can control remote devices in a near real-time fashion.
+Cumulocity supports any type of Internet connectivity in a secure manner. It gracefully deals with intermittent, bandwidth-restricted and uni-directional connections (such as communication through NAT). Where desired, Cumulocity can control remote devices in a real-time manner.
 
-Mobile Internet connectivity is an ideal choice for many machine-to-machine applications, since it works "over the top" nearly everywhere without requiring any integration with a company's network infrastructure. This is especially true if your M2M SIM card allows for free roaming between mobile networks. Also, the large bandwidths requirements of consumer applications are often not required. With Cumulocity, you can benefit from mobile connectivity without requiring additional network provider services such as VPNs and public or even static IP addressing.
+Mobile Internet connectivity is an ideal choice for many machine-to-machine applications, since it works well nearly everywhere without requiring any integration with a company's network infrastructure. This is especially true if your M2M SIM card allows for free roaming between mobile networks. The large bandwidths requirements of consumer applications are often not required. With Cumulocity, you can benefit from mobile connectivity without requiring additional network provider services such as VPNs and public or even static IP addressing.
 
 ## Device management
 
@@ -58,13 +68,13 @@ The user interface automatically adapts itself to the devices you connect -- no 
 
 It also adapts itself to the web browser that you use. For example, if you use a mobile phone or tablet with limited screen size, it will change user interface controls to use less screen estate.
 
-Through the [Sensor Library](/guides/reference/sensor-library), common sensor and control types are correctly rendered regardless of the device that produces the sensor data.
+Through the [Sensor Library](/guides/reference/sensor-library), common sensor and control types are rendered  correctly regardless of the device that produces the sensor data.
 
 ![Dashboard](/guides/concepts-guide/dashboard.png)
 
 ## Customization
 
-The functionality described above provides already a wide range of device management, visualization and control options. But what about custom visualization, new control widgets and custom business logic? Try Cumulocity's extensive customization options:
+The functionality described above provides already a wide range of device management, visualization and control options. Furthermore it produces custom visualization, new control widgets and custom business logic. Cumulocity's has extensive customization options:
 
 * Write alarm rules to reprioritize or suppress alarms and to define your SLA parameters.
 * Use [Cumulocity Event Language](/guides/concepts/realtime) to implement real-time business rules. For example, get an email when critical events happen, or trigger automated actions on devices in that case.
@@ -91,3 +101,10 @@ More conceptual information can be found in the following sections of the concep
 * Concepts related to interfacing devices and other IT systems with Cumulocity are described in [Interfacing devices](/guides/concepts/interfacing-devices).
 * Customization concepts of Cumulocity are described in [Real-time processing in](/guides/concepts/realtime) and [Developing  applications](/guides/concepts/applications).
 * Security concepts are described in [Security aspects](/guides/concepts/security).
+
+#Summary:
+Cumulocity is an independent Device and Application Management Internet of Things (Io T) platform. It connects and manages your devices and assets efficiently and can control them remotely.
+
+* Connect your devices and assets over any network
+* Monitor conditions and generate real-time analytics
+* React immediately to conditions or situations 

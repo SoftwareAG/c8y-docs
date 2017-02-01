@@ -5,7 +5,7 @@ layout: default
 
 ## Overview
 
-[BeagleBone - Black](https://beagleboard.org/black) is a  community-supported development platform perfect for IoT applications. The device features the following interfaces:
+[BeagleBone - Black](https://beagleboard.org/black) is a  community-supported development platform for IoT applications. The device features the following interfaces:
 
 > 1 x 10/100 MBit/s Ethernet
 

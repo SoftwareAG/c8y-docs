@@ -38,7 +38,7 @@ Um Benutzer in Ihrem Mandantenkonto zu verwalten, klicken Sie auf das Menü "Ben
 
 > Der Sysadmin-Benutzer ist möglicherweise nicht vorhanden, abhängig von Ihrem Provider.
 
-![Click Users](/guides/users-guide/Users.png)
+![Click Users](/guides/users-guide/Usersde.png)
 
 ### Benutzer hinzufügen
 
@@ -120,7 +120,7 @@ Alle Benutzergruppendetails können bearbeitet werden. Um eine Gruppe zu bearbei
 
 > Gehen Sie mit Bedacht vor: Das Bearbeiten einer Benutzergruppe kann die Berechtigung für alle Benutzer in der Gruppe ändern und das ordnungsgemäße Funktionieren der Geräte beeinträchtigen.
 
-<img src="/guides/users-guide/confirmgroup.png" alt="Confirm group editing" style="max-width: 60%">
+<img src="/guides/users-guide/confirmgroupde.png" alt="Confirm group editing" style="max-width: 60%">
 
 ### Gruppen Entfernen
 
@@ -446,7 +446,7 @@ Diese Funktion ist eine optionale Funktion, die nicht für alle Mandanten verfü
 
 In order to manage subtenants click on the subtenants menu. Subtenant management includes: Tenant creation, activation, suspension, subscribed applications and options.
 
-![Sub-tenants](/guides/users-guide/sub-tenant.png)
+![Sub-tenants](/guides/users-guide/sub-tenantde.png)
 
 > Tenant ID's must remain unique, two tenants cannot create subtenants with the same "URL/ID".
 > Subtenants cannot create an additional level of subtenants.

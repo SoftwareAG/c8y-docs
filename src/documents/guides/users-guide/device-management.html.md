@@ -139,7 +139,9 @@ Users can also delete smart groups from the top level groups. This operation is 
 
 > Smart groups are not shown when using the Cockpit application.
 
-<img src="/guides/users-guide/smartgroupdelete.png" alt="Adding top-level groups" style="max-width: 100%">
+<img src="/guides/users-guide/smartgroupdelete1.png" alt="Adding top-level groups" style="max-width: 100%">
+
+<img src="/guides/users-guide/smartgroupdelete2.png" alt="Adding top-level groups" style="max-width: 100%">
 
 ## <a name="device-details"></a>Viewing the device details
 

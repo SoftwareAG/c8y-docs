@@ -54,7 +54,7 @@ Die CSV-Datei muss eine Kopfzeile haben, gefolgt von den tatsächlichen Daten. D
 
 Verwenden Sie die Schaltfläche "Hochladen", um die CSV-Datei hochzuladen, wie im Screenshot unten gezeigt. Nachdem die Daten importiert wurden, erhalten Sie eine Rückmeldung über die Anzahl der vorregistrierten Geräte sowie über mögliche Fehler.
 
-<img src="/guides/users-guide/autoregister.png" alt="Bulk registration" style="max-width: 100%">
+<img src="/guides/users-guide/autoregisterde.png" alt="Bulk registration" style="max-width: 100%">
 
 
 Um die Geräte anzuschließen, müssen die Geräte mit entsprechenden Informationen vorbereitet werden. Insbesondere muss jedes Gerät wie folgt konfiguriert werden:
@@ -87,7 +87,7 @@ In jedem Fall sehen Sie eine Liste der Geräte, wie im folgenden Beispiel gezeig
 
 Das Löschen eines Geräts bedeutet, das Gerät aus der Cumulocity-Datenbank zu entfernen, einschließlich aller damit generierten Daten. Alternativ zum Löschen eines Gerätes können Sie auch alle ausgeschalteten Geräte in eine Gruppe organisieren. Dadurch wird sichergestellt, dass alle alten Berichte korrekt bleiben. Um zu verhindern, dass Alarme für die ausgeschalteten Geräte angeschaltet werden, deaktivieren Sie die [Verbindungsüberwachung] (#connection-monitoring). Beim Löschen eines Geräts werden die Daten seiner Kindgeräte nicht gelöscht.
 
-<img src="/guides/users-guide/devicelist.png" alt="Device List" style="max-width: 100%">
+<img src="/guides/users-guide/devicelistde.png" alt="Device List" style="max-width: 100%">
 
 Falls eine Liste mehr als 1.000 Einträge enthält, werden nur die ersten 1.000 Einträge angezeigt. Klicken Sie unten auf den Link "Laden", um die nächsten 1.000 Einträge zu laden.
 
@@ -112,7 +112,7 @@ Sie können auch Geräte auf zwei andere Weisen hinzufügen:
 * Wählen Sie eine Gruppe aus und gehen Sie auf die Registerkarte "Kindgeräte" auf der linken Seite und wählen Sie sie aus. Klicken Sie dann rechts oben in der Gruppenliste auf "Zur Gruppe hinzufügen". Suchen Sie nach den Geräten, die im Suchfeld hinzugefügt werden sollen. Markieren Sie dann die entsprechenden Geräte im Ergebnis und klicken Sie auf die Schaltfläche "Zur Gruppe hinzufügen" am unteren Rand der Ergebnisliste.
 
 
-<img src="/guides/users-guide/subassetadd.png" alt="Adding top-level groups" style="max-width: 100%">
+<img src="/guides/users-guide/subassetaddde.png" alt="Adding top-level groups" style="max-width: 100%">
 
 
 Um eine Untergruppe zu erstellen, klicken Sie einfach auf "Gruppe hinzufügen", wenn Sie eine Gruppe ansehen.
@@ -124,11 +124,11 @@ Um eine Gruppe zu bearbeiten, klicken Sie auf den Namen der Gruppe. Auf diese We
 
 Dynamische Gruppen sind Gruppen basierend auf Filterkriterien. Sie haben einen vorübergehenden Charakter, da sich die Anzahl der Mitglieder ständig verändern können. Diese Gruppen haben keine festen Mitgliederlisten, sondern bestimmte Auswahlkriterien stattdessen. Diese Art von Gruppe kann verwendet werden, für Bulk-Upgrades eines Gerätyps auf eine neue Software oder Firmware-Version.
 
-<img src="/guides/users-guide/smartfilters.png" alt="Adding top-level groups" style="max-width: 100%">
+<img src="/guides/users-guide/smartfiltersde.png" alt="Adding top-level groups" style="max-width: 100%">
 
 Durch Auswahl von "Alle Geräte" können dynamische Gruppen angelegt werden. Um eine neue Gruppe zu erstellen, verwenden Sie einfach Filter, um Geräte auszuwählen. Klicken Sie nun auf "Dynamische Gruppe erstellen" und geben Sie der Gruppe einen Namen.
 
-<img src="/guides/users-guide/smartgroup1.png" alt="Adding top-level groups" style="max-width: 100%">
+<img src="/guides/users-guide/smartgroup1de.png" alt="Adding top-level groups" style="max-width: 100%">
 
 Wenn die Gruppe erstellt wird, wird sie als Gruppe der obersten Ebene im Abschnitt "Gruppen" angezeigt. Sie können Filterkriterien anpassen, indem Sie einfach die Registerkarte "Kindassets" auswählen und die Filtereinstellungen ändern.
 
@@ -139,7 +139,9 @@ Benutzer können auch dynamische Gruppen aus den Gruppen der obersten Ebene lös
 
 > Dynamische Gruppen können nicht in der Cockpit Anwendung genutzt werden.
 
-<img src="/guides/users-guide/smartgroupdelete.png" alt="Adding top-level groups" style="max-width: 100%">
+<img src="/guides/users-guide/smartgroupdelete1de.png" alt="Adding top-level groups" style="max-width: 100%">
+
+<img src="/guides/users-guide/smartgroupdelete2de.png" alt="Adding top-level groups" style="max-width: 100%">
 
 ## <a name="device-details"></a>Anzeigen der Gerätedetails
 

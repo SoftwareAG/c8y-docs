@@ -33,7 +33,7 @@ Eine Anwendung ist eine der folgenden Kombinationen:
 
 Benutzeroberflächen-Anwendungen werden im Anwendungs-Switcher-Widget oben rechts in Cumulocity angezeigt, so dass Benutzer zwischen den abonnierten Anwendungen navigieren können. Sie können auf einer externen Website gehostet werden, in diesem Fall die Anwendung Switcher nur leitet den Benutzer auf diese Website. Sie können auch über Cumulocity gehostet werden. In diesem Fall wird die Anwendung über eine URL <tenant> .cumulocity.com / apps / <application> zur Verfügung gestellt.
 
-![App switcher](/guides/concepts-guide/appswitcher.png)
+![App switcher](/guides/concepts-guide/appswitcherde.png)
 
 ## Cumulocity Anwendungen
 

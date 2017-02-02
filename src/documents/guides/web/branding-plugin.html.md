@@ -24,7 +24,7 @@ You can inspect the less files to see what variables are available for configura
 
 Because branding plugins are simply distinguished by their name, the name has to be unique. Besides that, it has to end in *Branding* (e.g. *piedpiperBranding* ). To use it in an application, add it to the imports statement of the [application manifest](/guides/web/branding-plugin#application-manifest), as it is in the [cumulocity-ui-plugin-examples](https://bitbucket.org/m2m/cumulocity-ui-plugin-examples) repository.
 
-Make sure there is only a single branding plugin declared, otherwise both of them will be loaded. To replace the c8yBranding plugin in the core applications, you have to create a target .json file with at least the following content
+Make sure there is only a single branding plugin declared, otherwise both of them will be loaded. To replace the c8yBranding plugin in the core applications, you have to create a target .json file with at least the following content:
 
 ```json
 {

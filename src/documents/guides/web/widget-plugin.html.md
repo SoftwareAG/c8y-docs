@@ -85,7 +85,10 @@ Next, we have to create a config file, which adds a menu item to the widget menu
     'gettext'
   ];
 
-  function configure( c8yComponentsProvider, gettext) {
+  function configure(
+    c8yComponentsProvider,
+    gettext
+  ) {
     c8yComponentsProvider.add({ // adds a menu item to the widget menu list with ...
       name: 'Icon Map', // ... the name *"Icon Map"*
       nameDisplay: gettext('Icon Map'), // ... the displayed name *"Icon Map"*
@@ -116,7 +119,12 @@ To start with, we need to define an array "markers" which contains markers for e
     'c8yBinary'
   ];
 
-  function iconmapController($scope, $q, c8yInventory, c8yBinary) {
+  function iconmapController(
+    $scope,
+    $q,
+    c8yInventory,
+    c8yBinary
+  ) {
     $scope.markers = [];
 
     var getDevicesAndBinaries = {

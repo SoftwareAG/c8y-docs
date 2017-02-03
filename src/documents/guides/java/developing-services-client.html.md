@@ -72,15 +72,15 @@ The sms provider and their required credentials should be given in the tenant op
 
 #### Sending a message:
 
-To send a sms message using the Api, prepare the message with send message request builder and call send messaging api's send message function with sender address and the message.
+To send a sms message using the Api, prepare the message with send message request builder and call send message function of the Api with the message.
 
     SendMessageRequest smsMessage = SendMessageRequest.builder()
+            .withSender(Address.phoneNumber("<phone number>"))
             .withReceiver(Address.phoneNumber("<phone number>"))
             .withMessage("<message text>")
             .build();
-    Address senderAddress = Address.phoneNumber("<phone number>");
 
-    smsMessagingApi.sendMessage(senderAddress, smsMessage);
+    smsMessagingApi.sendMessage(smsMessage);
 
 #### Receiving all messages:
 

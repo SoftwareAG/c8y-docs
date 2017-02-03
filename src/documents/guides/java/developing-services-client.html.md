@@ -57,11 +57,59 @@ The new endpoint is a POST to /email/emails expecting an email as json. For exam
 
 For using an Email messaging API a role EMAIL_ADMIN is required. By default, every newly created user of the admin group obtains an EMAIL_ADMIN permission.
 
-### Accessing SMS API
+### Accessing SMS Messaging API
 
 The following code snippet shows how to obtain a handle to the sms api from Java:
 
-	SmsMessagingApi smsMessaging = platform.getSmsMessagingApi();
+    SmsMessagingApi smsMessagingApi = platform.getSmsMessagingApi();
 
-Using this handle, you can send and retrieve the sms messages. User of the platform should have the required role to use this feature.
+Using this handle, you can send and retrieve the sms messages from Java by calling its functions. 
+
+#### Prerequisites
+
+To use the sms messaging Api group of the user should have required roles such as 'SMS_ADMIN' for sending and 'SMS_READ' for receiving messages.
+Note that not every sms provider supports receiving messages.
+The sms provider and their required credentials should be given in the tenant options before using the Api.
+
+#### Sending a message:
+
+To send a sms message using the Api, prepare the message with send message request builder and call send messaging api's send message function with sender address and the message.
+
+    SendMessageRequest smsMessage = SendMessageRequest.builder()
+            .withReceiver(Address.phoneNumber("<phone number>"))
+            .withMessage("<message text>")
+            .build();
+    Address senderAddress = Address.phoneNumber("<phone number>");
+
+    smsMessagingApi.sendMessage(senderAddress, smsMessage);
+
+#### Receiving all messages:
+
+Note that not every sms provider supports receiving messages. 
+
+To receive all sms messages you can use Api as follows.
+
+    smsMessagingApi.getAllMessages(Address.phoneNumber("<phone number>"));
+
+
+
+#### Receiving the last message:
+
+Note that not every sms provider supports receiving messages. 
+
+To receive last sms message you can use Api as follows.
+
+    smsMessagingApi.getLastMessage(Address.phoneNumber("<phone number>"));
+
+
+
+#### Receiving a specific message:
+
+Note that not every sms provider supports receiving messages. 
+
+To receive a specific sms message you can use Api as follows.
+
+    smsMessagingApi.getMessage(Address.phoneNumber("<phone number>"), "<message id>");
+
+
 

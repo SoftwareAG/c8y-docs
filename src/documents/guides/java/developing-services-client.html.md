@@ -4,18 +4,58 @@ layout: default
 title: Developing Java clients for services
 ---
 ## Overview
+This section describes how to use a simple Java client sending Email messages from Cumulocity platform. It also reveals an endpoint for Email management and the expected format of the request to that resource.
 
-## Connecting to Cumulocity
+In addition, it demonstrates a way for accessing SMS API from Java code.
 
-The root interface for connecting to Cumulocity's services from Java is called "ServicesPlatform". It provides access to all other interfaces of the platform for services, such as the sms and email. In its simplest form, it is instantiated as follows:
+## Using Services Platform
+
+The services platform interface is aimed at connecting to Cumulocity from Java is called "Platform" (see "Connecting to Cumulocity" in the [Developing Java clients](/guides/java/developing) of the Java developer’s guide). To instantiate a platform it is sufficient to pass credentials used with Cumulocity:
 
     ServicesPlatform platform = new ServicesPlatformImpl("<<URL>>", new CumulocityCredentials("<<tenant>>", "<<user>>", "<<password>>", "<application key>"));
 
-As an example:
-
-    Platform platform = new PlatformImpl("https://demos.cumulocity.com", new CumulocityCredentials("mytenant", "myuser", "mypassword", null));
+For example, a URL pointing to the platform can be https://demos.cumulocity.com which will process all the API requests.
 
 ## Accessing the Service APIs
+
+### Sending an Email via Java Client API
+
+The interface for handling email service can be obtained from Java by using the platform method as follows:
+
+    EmailSendingApi emailSendingApi = platform.getEmailSendingApi();
+
+Using this interface you can send Email messages on behalf of the platform. For example, if you would like to send an Email from Java via POST endpoint email/emails, please, build an Email object and call a respective method of an email sending api:
+
+    Email email = EmailBuilder.aEmail().
+                               withTo("primarydestination@somemail.com").
+                               withCc("copydestination@somemail.com").
+                               withReplyTo("wheretoreply@somemail.com").
+                               withSubject("New incoming message").
+                               withText("Hello World!").
+                               build();
+    HttpStatus httpStatus = emailSendingApi.sendEmail(email);
+
+The destination, copy and blind copy fields can contain several values, e. g., withTo("to1@email.com", "to2@email.com"). An email can also contain attachments being the object of com.cumulocity.model.email.Attachment class.
+
+A call to an Email sending API returns an HTTP status of a request, 200 OK in case if an email was sent successfully.
+
+
+#### Email management endpoint
+
+The new endpoint is a POST to /email/emails expecting an email as json. For example:
+
+    {
+      "to": ["first@somemail.com", "second@somemail.com"],
+      "cc": ["copydestination@somemail.com"],
+      "replyTo": "wheretoreply@somemail.com",
+      "subject": "New incoming message",
+      "text": "Hello world!"
+    }
+
+
+#### Prerequisites
+
+For using an Email messaging API a role EMAIL_ADMIN is required. By default, every newly created user of the admin group obtains an EMAIL_ADMIN permission.
 
 ### Accessing SMS API
 
@@ -24,6 +64,4 @@ The following code snippet shows how to obtain a handle to the sms api from Java
 	SmsMessagingApi smsMessaging = platform.getSmsMessagingApi();
 
 Using this handle, you can send and retrieve the sms messages. User of the platform should have the required role to use this feature.
-
-### Accessing Email API
 

@@ -39,6 +39,9 @@ The destination, copy and blind copy fields can contain several values, e. g., w
 
 A call to an Email sending API returns an HTTP status of a request, 200 OK in case if an email was sent successfully.
 
+#### Prerequisites
+
+For using an Email messaging API a role 'EMAIL_ADMIN' is required. By default, every newly created user of the admin group obtains an 'EMAIL_ADMIN' permission.
 
 #### Email management endpoint
 
@@ -52,10 +55,6 @@ The new endpoint is a POST to /email/emails expecting an email as json. For exam
       "text": "Hello world!"
     }
 
-
-#### Prerequisites
-
-For using an Email messaging API a role EMAIL_ADMIN is required. By default, every newly created user of the admin group obtains an EMAIL_ADMIN permission.
 
 ### Accessing SMS Messaging API
 

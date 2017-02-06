@@ -11,7 +11,7 @@ The Administration application enables account administrators to manage their us
 * View [subscription information](#home) for your account.
 * Manage [users](#users) and [user groups](#user-groups), including their [permissions](#permissions).
 * View all operations done by users via the [audit logs](#audit).
-* Configure [applications](#applications) and [simulators](#simulators).
+* Configure [applications](#applications).
 * Set up real-time [event processing](#event-processing) scripts and [reprioritize alarms](#reprio-alarms).
 * Change [settings](#settings).
 * Configure the [retention policies](#retention) for your data.
@@ -434,33 +434,6 @@ It is not possible to remove subscribed apps. This is only possible for the owne
 
 To remove an application, simply hover over the application name and click on the cogwheel, then press the "Remove" button. A confirmation pop-up window will appear. Click "OK" and the application will be deleted.
 
-## <a name="simulators"></a>Dealing with simulators
-
-Cumulocity provides an option to simulate devices. This way, users can test their applications against simulated devices during development. To view the simulator section, click on
-"Simulator" in the "Applications" menu.
-
-### Adding a simulator
-
-To add new simulator, click on "Add simulator"
-
-- Enter a name for the simulator. The name will be used with the simulated devices.
-- Select the number of simulated instances. For example, if you choose two instances, two sets of simulated devices with the selected sensors are created.
-- Select the desired sensors. This will bring up two new fields: "Values" and "Interval". "Values" contains a playlist of numbers separated by semicolons, which will be played in "Interval" seconds. For example, if you use "16.7;18;20" as "Values" and 5 seconds as interval, the first simulated sensor reading will be 16.7. After five seconds, a second value of 18 will be recorded. After another five seconds, 20 will be recorded. After further five seconds, the procedure will start from the first value.
-- Click "Save"
-
-Please note that the maximum number of simulators is 10.
-
-![Add simulator](/guides/users-guide/addsimulator.png)
-
-### Starting, pausing or removing simulators
-
-Simulators can have two states, running or paused. To start a simulator first move the cursor over its name, then click on the "Run device" button.
-
-![Start simulator](/guides/users-guide/startsimulator.png)
-
-To stop a simulator, simply click the "Stop device" button while hovering over the desired simulator name. To delete a simulator, hover over the simulator's name, click the "X" button and confirm the pop-up window.
-
-> Simulators cannot be currently edited. You can only add a new one.
 
 ## <a name="tenants"></a>Managing tenants
 

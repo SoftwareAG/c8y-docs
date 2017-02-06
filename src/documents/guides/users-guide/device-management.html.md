@@ -554,13 +554,13 @@ With the Cumulocity Simulator, all aspects of IoT devices can be simulated:
 
 ###What is a simulator?
 
-With the simulator you can create artificial devices that have the same level of functionality as connected hardware devices.
+With the simulator, you can create artificial devices that have the same level of functionality as connected hardware devices.
 
 A simulator uses a playlist to simulate messages that the device sends to the Cumulocity platform. A playlist is a series of instructions that the simulator executes one after the other. When the last instruction is reached, the simulator starts again with the first one.
 
 An instruction can be either sending a message (measurements, alarms, events and inventory) or wait for a specified time (sleep). 
 
-A message is defined by choosing a message template (like sending a temperature) and providing the values for this template (23.0 degrees). Many predefined message templates are provided, for example “create measurement” , “send event”, “create” and “cancel” an alarm or “update operation status”. These are based in MQTT static templates. Additionally, custom message templates can be defined using the SmartREST template editor. 
+A message is defined by choosing a message template (like sending a temperature) and providing the values for this template (23.0 degrees). Many predefined message templates are provided, for example, “create measurement”, “send event”, “create” and “cancel” an alarm or “update operation status”. These are based on MQTT static templates. Additionally, custom message templates can be defined using the SmartREST template editor. 
 
 ###Set up a simulator
 
@@ -574,7 +574,7 @@ Simulators can be added by clicking on "New" which will open a card. You can cho
 
 ###Presets
 
-The other option available is to create a simulator from a preset. Currently there are two different presets available: A "temperature measurement" preset and a "position update" event preset.
+The other option available is to create a simulator from a preset. Currently, there are two different presets available: A "temperature measurement" preset and a "position update" event preset.
 
 <img src="/guides/users-guide/addtempsim.png" alt="Add Add Temperature Preset" style="max-width: 60%">
 
@@ -582,11 +582,11 @@ The other option available is to create a simulator from a preset. Currently the
 
 ![Edit Simulator](/guides/users-guide/editcloneremsim.png)
 
-The number of instances of a simulator is limited to 10. Existing simulators are listed on this page. Simulators can be edited, cloned or removed by clicking on the cogwheel in the top right corner of the card. That opens a dropdown menu with those options.
+The number of instances of a simulator is limited to 10. Existing simulators are listed on this page. Simulators can be edited, cloned or removed by clicking on the cogwheel in the top right corner of the card. That opens a drop-down menu with those options.
 
 ###Adding Instructions to the Simulator
 
-After setting up a simulator you can add instructions what your simulator should do. Instructions are single worksteps added to a playlist. The simulator will work through this list. To see an example click on the Temperature Simulator. 
+After setting up a simulator you can add instructions what your simulator should do. Instructions are single work steps added to a playlist. The simulator will work through this list. To see an example click on the Temperature Simulator. 
 
 ![Add Instructions](/guides/users-guide/addinstructions.png)
 
@@ -618,7 +618,7 @@ The "Sleep" instruction requires one value for its duration in seconds. The pane
 
 ###Adding Operations to a Simulator
 
-Directly underneath the instructions tab, you find supported operations. In this menu you can turn on or off specific operations like Configuration or Software/Firmware update.
+Directly underneath the instructions tab, you find supported operations. In this menu, you can turn on or off specific operations like Configuration or Software/Firmware update.
 
 ![Operations Off](/guides/users-guide/supop1.png)
 

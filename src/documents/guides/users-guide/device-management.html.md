@@ -558,9 +558,9 @@ With the simulator, you can create artificial devices that have the same level o
 
 A simulator uses a playlist to simulate messages that the device sends to the Cumulocity platform. A playlist is a series of instructions that the simulator executes one after the other. When the last instruction is reached, the simulator starts again with the first one.
 
-An instruction can be either sending a message (measurements, alarms, events and inventory) or wait for a specified time (sleep). 
+An instruction can either send a message (measurements, alarms, events and inventory) or wait for a specified time (sleep). 
 
-A message is defined by choosing a message template (like sending a temperature) and providing the values for this template (23.0 degrees). Many predefined message templates are provided, for example, “create measurement”, “send event”, “create” and “cancel” an alarm or “update operation status”. These are based on MQTT static templates. Additionally, custom message templates can be defined using the SmartREST template editor. 
+A message is defined by choosing a message template (like sending a temperature) and providing the values for this template (23.0 degrees). Many predefined message templates are provided,  “create measurement”, “send event”, “create” and “cancel” an alarm. These are based on MQTT static templates. Additionally, custom message templates can be defined using the SmartREST template editor. 
 
 ###Set up a simulator
 
@@ -568,7 +568,7 @@ To set up a simulator go to the Navigator in the Device Management and choose "S
 
 ![New Simulator](/guides/users-guide/newsim.png)
 
-Simulators can be added by clicking on "New" which will open a card. You can choose now if you want to define a new simulator or choose a preset. The name of the simulator will be determined and up to 10 instances from this simulator. 
+Simulators can be added by clicking on "New" which will open a card. Then you can choose if you want to define a new simulator or choose a preset. The name of the simulator will be determined and up to 10 instances from this simulator. 
 
 <img src="/guides/users-guide/addsim.png" alt="Add Simulator" style="max-width: 60%">
 
@@ -582,7 +582,7 @@ The other option available is to create a simulator from a preset. Currently, th
 
 ![Edit Simulator](/guides/users-guide/editcloneremsim.png)
 
-The number of instances of a simulator is limited to 10. Existing simulators are listed on this page. Simulators can be edited, cloned or removed by clicking on the cogwheel in the top right corner of the card. That opens a drop-down menu with those options.
+Existing simulators are listed on this page. Simulators can be edited, cloned or removed by clicking on the cogwheel in the top right corner of the card. That opens a drop-down menu with those options.
 
 ###Adding Instructions to the Simulator
 
@@ -594,7 +594,7 @@ The following overview will appear:
 
 ![Add Instructions Step 2](/guides/users-guide/addinstructions2.png)
 
-Within this preset there are sample instructions already added. You can identify 2 steps. "Create measurement" and "Sleep". 
+Within this preset there are sample instructions already added. You can identify 2 steps: "Create measurement" and "Sleep". 
 
 ###Instruction Details
 

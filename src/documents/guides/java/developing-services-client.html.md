@@ -66,9 +66,112 @@ Using this handle, you can send and retrieve the sms messages from Java by calli
 
 #### Prerequisites
 
+1.Sms Gateway Microservice and setting tenant options
+
+The information about sms-gateway microservice's url should be given in the tenant options.
+Please use our Rest Api to store this information as following:
+
+    POST /tenant/options
+    Host: ...
+    Authorization: Basic ...
+
+    {
+      "category": "sms",
+      "key": "microservice.url",
+      "value": "<IP/Domain>:8688/sms-gateway"
+    }
+
+2.Giving required roles
+
 To use the sms messaging Api group of the user should have required roles such as 'SMS_ADMIN' for sending and 'SMS_READ' for receiving messages.
-Note that not every sms provider supports receiving messages.
-The sms provider and their required credentials should be given in the tenant options before using the Api.
+Please see '[Assigning account-wide permissions](/guides/users-guide/administration/)'
+
+3.Choosing a sms provider
+  
+* OpenIT
+
+OpenIT credentials can be given using the Administration application. Click on OpenIT credentials from the menu and save credentials for your tenant.
+![OpenIT Credentials](/guides/java/java-client-services/openit_credentials.png)
+Note that receiving messages and receiving specific message are not supported for this provider.
+* Jasper Control Center
+
+Please see [Jasper Control Center](/guides/users-guide/jasper/) to have detailed information about how to set the credentials.
+
+* Ericsson
+
+For this provider, please use our Rest Api to store tenant options seperately for each key:
+
+    POST /tenant/options
+    Host: ...
+    Authorization: Basic ...
+
+Provider:
+
+      {
+        "category": "messaging",
+        "key": "provider",
+        "value": "ericsson-dcp"
+      }
+
+Base url:
+
+      {
+        "category": "messaging",
+        "key": "ericsson-dcp.baseUrl",
+        "value": "<url>"
+      }
+
+Username:
+
+      {
+        "category": "messaging",
+        "key": "ericsson-dcp.username",
+        "value": "<username>"
+      }
+
+Password:
+
+      {
+        "category": "messaging",
+        "key": "ericsson-dcp.password",
+        "value": "<password>"
+      }
+
+Note that receiving specific message is not supported for this provider.
+
+* Tropo
+
+For this provider, please use our Rest Api to store tenant options seperately for each key
+
+    POST /tenant/options
+    Host: ...
+    Authorization: Basic ...
+
+Provider:
+
+      {
+        "category": "messaging",
+        "key": "provider",
+        "value": "tropo"
+      }
+ 
+Base url:
+
+      {
+        "category": "messaging",
+        "key": "tropo.baseUrl",
+        "value": "<url>"
+      }
+
+Credentials: 
+
+      {
+        "category": "messaging",
+        "key": "tropo.credentials",
+        "value": "<credentials>"
+      }
+
+Note that receiving messages and receiving specific message are not supported for this provider.
 
 #### Sending a message:
 
@@ -89,18 +192,6 @@ Note that not every sms provider supports receiving messages.
 To receive all sms messages you can use Api as follows.
 
     smsMessagingApi.getAllMessages(Address.phoneNumber("<phone number>"));
-
-
-
-#### Receiving the last message:
-
-Note that not every sms provider supports receiving messages. 
-
-To receive last sms message you can use Api as follows.
-
-    smsMessagingApi.getLastMessage(Address.phoneNumber("<phone number>"));
-
-
 
 #### Receiving a specific message:
 

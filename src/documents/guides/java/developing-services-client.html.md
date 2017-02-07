@@ -4,13 +4,11 @@ layout: default
 title: Developing Java clients for services
 ---
 ## Overview
-This section describes how to use a simple Java client sending Email messages from Cumulocity platform. It also reveals an endpoint for Email management and the expected format of the request to that resource.
-
-In addition, it demonstrates a way for accessing SMS API from Java code.
+This section describes the Cumulocity Email and SMS API and how to access them using Cumulocity Java Client.
 
 ## Using Services Platform
 
-The services platform interface is aimed at connecting to Cumulocity from Java is called "Platform" (see "Connecting to Cumulocity" in the [Developing Java clients](/guides/java/developing) of the Java developer’s guide). To instantiate a platform it is sufficient to pass credentials used with Cumulocity:
+The ServicesPlatform interface is responsible for connecting to Services (Email, SMS) API from Java.
 
     ServicesPlatform platform = new ServicesPlatformImpl("<<URL>>", new CumulocityCredentials("<<tenant>>", "<<user>>", "<<password>>", "<application key>"));
 
@@ -22,9 +20,9 @@ For example, a URL pointing to the platform can be https://demos.cumulocity.com 
 
 The interface for handling email service can be obtained from Java by using the platform method as follows:
 
-    EmailSendingApi emailSendingApi = platform.getEmailSendingApi();
+    EmailApi emailApi = platform.getEmailApi();
 
-Using this interface you can send Email messages on behalf of the platform. For example, if you would like to send an Email from Java via POST endpoint email/emails, please, build an Email object and call a respective method of an email sending api:
+For example, if you would like to send an email from Java, build an Email object and call a respective method of an Email API:
 
     Email email = EmailBuilder.aEmail().
                                withTo("primarydestination@somemail.com").
@@ -33,11 +31,11 @@ Using this interface you can send Email messages on behalf of the platform. For 
                                withSubject("New incoming message").
                                withText("Hello World!").
                                build();
-    HttpStatus httpStatus = emailSendingApi.sendEmail(email);
+    HttpStatus httpStatus = emailApi.sendEmail(email);
 
 The destination, copy and blind copy fields can contain several values, e. g., withTo("to1@email.com", "to2@email.com"). An email can also contain attachments being the object of com.cumulocity.model.email.Attachment class.
 
-A call to an Email sending API returns an HTTP status of a request, 200 OK in case if an email was sent successfully.
+A call to an Email API returns an HTTP status of a request, 200 OK in case if an email was sent successfully.
 
 #### Prerequisites
 
@@ -46,7 +44,11 @@ For using an Email messaging API a role 'EMAIL_ADMIN' is required. By default, e
 #### Email management endpoint
 
 The new endpoint is a POST to /email/emails expecting an email as json. For example:
-
+    
+    POST /email/emails
+    Host: ...
+    Authorization: Basic ...
+    Content-Type: application/json
     {
       "to": ["first@somemail.com", "second@somemail.com"],
       "cc": ["copydestination@somemail.com"],
@@ -58,7 +60,7 @@ The new endpoint is a POST to /email/emails expecting an email as json. For exam
 
 ### Accessing SMS Messaging API
 
-The following code snippet shows how to obtain a handle to the sms api from Java:
+The following code snippet shows how to obtain a handle to the Sms API from Java:
 
     SmsMessagingApi smsMessagingApi = platform.getSmsMessagingApi();
 
@@ -69,7 +71,7 @@ Using this handle, you can send and retrieve the sms messages from Java by calli
 1.Sms Gateway Microservice and setting tenant options
 
 The information about sms-gateway microservice's url should be given in the tenant options.
-Please use our Rest Api to store this information as following:
+Please use our Rest API to store this information as following:
 
     POST /tenant/options
     Host: ...
@@ -83,7 +85,7 @@ Please use our Rest Api to store this information as following:
 
 2.Giving required roles
 
-To use the sms messaging Api group of the user should have required roles such as 'SMS_ADMIN' for sending and 'SMS_READ' for receiving messages.
+To use the Sms messaging API group of the user should have required roles such as 'SMS_ADMIN' for sending and 'SMS_READ' for receiving messages.
 Please see '[Assigning account-wide permissions](/guides/users-guide/administration/)'
 
 3.Choosing a sms provider
@@ -99,7 +101,7 @@ Please see [Jasper Control Center](/guides/users-guide/jasper/) to have detailed
 
 * Ericsson
 
-For this provider, please use our Rest Api to store tenant options seperately for each key:
+For this provider, please use our Rest API to store tenant options seperately for each key:
 
     POST /tenant/options
     Host: ...
@@ -141,7 +143,7 @@ Note that receiving specific message is not supported for this provider.
 
 * Tropo
 
-For this provider, please use our Rest Api to store tenant options seperately for each key
+For this provider, please use our Rest API to store tenant options seperately for each key
 
     POST /tenant/options
     Host: ...
@@ -175,7 +177,7 @@ Note that receiving messages and receiving specific message are not supported fo
 
 #### Sending a message:
 
-To send a sms message using the Api, prepare the message with send message request builder and call send message function of the Api with the message.
+To send a sms message using the API, prepare the message with send message request builder and call send message function of the API with the message.
 
     SendMessageRequest smsMessage = SendMessageRequest.builder()
             .withSender(Address.phoneNumber("<phone number>"))
@@ -189,7 +191,7 @@ To send a sms message using the Api, prepare the message with send message reque
 
 Note that not every sms provider supports receiving messages. 
 
-To receive all sms messages you can use Api as follows.
+To receive all sms messages you can use API as follows.
 
     smsMessagingApi.getAllMessages(Address.phoneNumber("<phone number>"));
 
@@ -197,9 +199,72 @@ To receive all sms messages you can use Api as follows.
 
 Note that not every sms provider supports receiving messages. 
 
-To receive a specific sms message you can use Api as follows.
+To receive a specific sms message you can use API as follows.
 
     smsMessagingApi.getMessage(Address.phoneNumber("<phone number>"), "<message id>");
 
+#### Sms management endpoints
+
+To accomplish the same behaviour, Rest API can be used.
+
+Sending message:
+
+    POST /service/sms/smsmessaging/outbound/tel:<sender phone number>/requests
+    Host: ...
+    Authorization: Basic ...
+    Content-Type: application/json
+    {
+        "outboundSMSMessageRequest": {
+		"address": ["tel:<phone number>"],
+		"senderAddress": "tel:<phone number>",
+		"outboundSMSTextMessage": {
+			"message": "<message text>"
+		},
+		"receiptRequest": {
+			"notifyUrl": <notify url>,
+			"callbackData": <callback data>
+		},
+		"senderName": <sender name>
+        }
+    }
+
+Receiving all messages:
+
+    GET /service/sms/smsmessaging/inbound/registrations/tel:<receiver phone number>/messages
+    Host: ...
+    Authorization: Basic ...
+
+    HTTP/1.1 200 OK
+    {
+         "inboundSMSMessageList": [
+            {
+                "inboundSMSMessage": {
+                "dateTime": "<date>",
+                "destinationAddress": "<destination address>",
+                "messageId": "<message id>",
+                "message": "<message>",
+                "resourceURL": "<resource url>",
+                "senderAddress": "<sender address>"
+            }
+         ]
+    }
+    
+Receiving a specific message:
+
+    GET /service/sms/smsmessaging/inbound/registrations/tel:<receiver phone number>/messages/<message id>
+    Host: ...
+    Authorization: Basic ...
+
+    HTTP/1.1 200 OK
+    {
+        "inboundSMSMessage": {
+            "dateTime": "<date>",
+            "destinationAddress": "<destination address>",
+            "messageId": "<message id>",
+            "message": "<message>",
+            "resourceURL": "<resource url>",
+            "senderAddress": "<sender address>"
+        }
+    }
 
 

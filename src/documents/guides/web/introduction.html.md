@@ -5,9 +5,9 @@ layout: default
 
 ## Overview
 
-In the following document you will get an overview on the Web Software Development Kit (SDK) which allows you to
-* upgrade Cumulocity's core applications with your own plugins.
-* extend Cumulocity’s web application with your own applications.
+In the following document you will get an overview on the Web SDK for Plugins which allows you to
+* extend applications with your own plugins.
+* add your own applications to Cumulocity’s web application.
 * enhance the visualization of data with custom widgets.
 * implement functionalities tailored to your use case.
 
@@ -15,7 +15,7 @@ In the following document you will get an overview on the Web Software Developme
 
 The illustration above shows the structure behind the application and plugin development. The same as the core applications, your applications will be built on AngularJS and the "c8y.core" and "c8y.ui" [JavaScript API](http://resources.cumulocity.com/documentation/jssdk/latest/) which in turn use the [REST API](/guides/rest/introduction) provided by Cumulocity.
 
-First, this document describes the concept behind applications and plugins. Then it specifies the required folder structure and different configuration options for applications and plugins. Subsequently, the setup necessary for developing applications and plugins is described. The Web SDK guide is structured as follows:
+First, this document describes the concept behind applications and plugins. Then it specifies the required folder structure and different configuration options for applications and plugins. Subsequently, the setup necessary for developing applications and plugins is described. The Web SDK for Plugins guide is structured as follows:
 * [Concepts](#concepts)
 	* [Project structure](#project-structure)
 	* [Manifests](#manifests)
@@ -23,6 +23,8 @@ First, this document describes the concept behind applications and plugins. Then
 	* [Prerequisites](#prerequisites)
 	* [Cumulocity CLI tool](#cli-tool)
 	* [Cumulocity UI package](#ui-package)
+* [Sample plugins](#sample-plugins)
+ 	* [Running the examples](#running-examples)
 
 Afterwards, we describe how to create a sample plugin step-by-step:
 * ["Hello World!"](#hello-world)
@@ -53,7 +55,7 @@ Or, as an example, let us take a look at an extract of the list of plugins the �
 * Data point table: a plugin, which adds a widget to dashboards providing a visualization of measurements in tabular form.
 * etc.
 
-> Note that you can [extend](#target) the core applications of Cumulocity (Administration, Cockpit, Device Management) with new functionality. Also, you can create a duplicate of one of the core applications and work on the duplicate itself. To create a duplicate of an application, you can either [copy it via the UI in "Administration"](/guides/users-guide/administration#clone-application) or [create a new application which uses the exact same plugins as the desired application](/guides/web/tab-plugin#dependencies).
+> Note that you can [extend](#target) the core applications of Cumulocity (Administration, Cockpit, Device Management) with new functionality. For normal tenants, you must create a duplicate of the core application before you can extend it. To create a duplicate of an application, you can either [copy it via the UI in "Administration"](/guides/users-guide/administration#clone-application) or [create a new application which uses the exact same plugins as the desired application](/guides/web/tab-plugin#dependencies).
 
 ### Project structure
 
@@ -152,7 +154,7 @@ The "--help" option displays all available commands for the CLI tool.
 
 ### <a name="ui-package"></a>Cumulocity UI package
 
-As already described above, applications are always a collection of plugins. We provide a set of plugins you can build on in addition to your own. But before that, you must add a "package.json" file to the root folder of your application project. To generate the "package.json" file automatically, simply run:
+As already described above, applications are always a collection of plugins. We provide a set of plugins you can build on in addition to your own. But before that, you must add a "package.json" file to the folder you will use for your application. To generate the "package.json" file automatically, simply run:
 
 ```bash
 $ npm init
@@ -177,9 +179,21 @@ Instead of "latest", you can also specify a certain version number, but this ver
 
 > You can see the list of plugins an application uses by utilizing the command "c8y util:showimports \[appContextPath\]".
 
-## Sample plugins
+## <a name="sample-plugins"></a>Sample plugins
 
-After setting up everything and getting an insight into the folder structure and manifests, you can finally start building your first application and plugin. The following chapter will guide you through the process of building a "Hello World!" style plugin. You can find the "Hello World!" plugin in the repository [https://bitbucket.org/m2m/cumulocity-ui-plugin-examples](https://bitbucket.org/m2m/cumulocity-ui-plugin-examples). You are free to download or clone the repository, but we recommend to build the "Hello World!" example from scratch and to use the repository as a reference if you encounter bugs during development. This way you will have a better understanding of how applications and plugins work.
+After setting up everything and getting an insight into the folder structure and manifests, you can finally start building your first application and plugin. The following chapter will show you how to get the plugin running. After that you can find a guide which goes through the process of building a "Hello World!" style plugin in detail. You can download or clone the "Hello World!" plugin as well as other plugin examples from the repository [https://bitbucket.org/m2m/cumulocity-ui-plugin-examples](https://bitbucket.org/m2m/cumulocity-ui-plugin-examples).
+
+### <a name="running-examples"></a>Running the examples
+
+After you downloaded or cloned the repository, create the application containing the example plugins in your tenant by executing the command ```c8y deploy:app [appContextPath]```. If you omit appContextPath the contextPath will be read from the "cumulocity.json" at the path where the command was executed.
+
+You will be asked for the name and base url of your tenant, as well as your username and password. To prevent filling out these prompts over and over again, you can define the following environment variables on your computer: ```C8Y_TENANT```, ```C8Y_USER```, ```C8Y_PASS``` and ```C8Y_BASE_URL```.
+
+After deploying the application, it appears in the *"Own applications"* menu of the "Administration" application.
+
+![My Application](/guides/plugins/applicationeditor.png)
+
+To see the "Hello world!" plugin, navigate to the example you just created an select the menu "New plugin". You should be able to see the text "Hello world!". You can also try out the other example plugins. For further information on the example plugins, visit the respective documents in the documentation.
 
 ## <a name="hello-world"></a>"Hello world!"
 

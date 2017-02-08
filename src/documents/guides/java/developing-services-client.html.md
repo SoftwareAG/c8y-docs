@@ -4,25 +4,25 @@ layout: default
 title: Developing Java clients for services
 ---
 ## Overview
-This section describes the Cumulocity Email and SMS API and how to access them using Cumulocity Java Client.
+This section describes the Cumulocity Email and SMS API and shows how to access them using the Cumulocity Java Client.
 
 ## Using Services Platform
 
-The ServicesPlatform interface is responsible for connecting to Services (Email, SMS) API from Java.
+The "services platform interface" is responsible for connecting to Services (Email, SMS) API from Java.
 
     ServicesPlatform platform = new ServicesPlatformImpl("<<URL>>", new CumulocityCredentials("<<tenant>>", "<<user>>", "<<password>>", "<application key>"));
 
-For example, a URL pointing to the platform can be https://demos.cumulocity.com which will process all the API requests.
+For example, an URL pointing to the platform can be https://demos.cumulocity.com which will process all the API requests.
 
 ## Accessing the Service APIs
 
 ### Sending an Email via Java Client API
 
-The interface for handling email service can be obtained from Java by using the platform method as follows:
+The interface for handling email services can be obtained from Java by using the platform method as follows:
 
     EmailApi emailApi = platform.getEmailApi();
 
-For example, if you would like to send an email from Java, build an Email object and call a respective method of an Email API:
+If you would like to send an email from Java, build an email object and call a respective method of an email API:
 
     Email email = EmailBuilder.aEmail().
                                withTo("primarydestination@somemail.com").
@@ -33,13 +33,14 @@ For example, if you would like to send an email from Java, build an Email object
                                build();
     HttpStatus httpStatus = emailApi.sendEmail(email);
 
-The destination, copy and blind copy fields can contain several values, e. g., withTo("to1@email.com", "to2@email.com"). An email can also contain attachments being the object of com.cumulocity.model.email.Attachment class.
+The destination and the copy and blind copy fields can contain several values, like
+withTo("to1@email.com", "to2@email.com"). An email can also contain attachments defined as an object of com.cumulocity.model.email.Attachment class.
 
-A call to an Email API returns an HTTP status of a request, 200 OK in case if an email was sent successfully.
+A call to an email API returns an HTTP status of a request, 200 OK in case if an email was sent successfully.
 
 #### Prerequisites
 
-For using an Email messaging API a role 'EMAIL_ADMIN' is required. By default, every newly created user of the admin group obtains an 'EMAIL_ADMIN' permission.
+For using an email messaging API a role 'EMAIL_ADMIN' is required. By default, every newly created user of the admin group obtains an 'EMAIL_ADMIN' permission.
 
 #### Email management endpoint
 
@@ -60,7 +61,7 @@ The new endpoint is a POST to /email/emails expecting an email as json. For exam
 
 ### Accessing SMS Messaging API
 
-The following code snippet shows how to obtain a handle to the Sms API from Java:
+The following code snippet shows how to obtain a handle to the sms API from Java:
 
     SmsMessagingApi smsMessagingApi = platform.getSmsMessagingApi();
 
@@ -70,8 +71,8 @@ Using this handle, you can send and retrieve the sms messages from Java by calli
 
 1.Sms Gateway Microservice and setting tenant options
 
-The information about sms-gateway microservice's url should be given in the tenant options.
-Please use our Rest API to store this information as following:
+The information about sms-gateway microservice's URL should be given in the tenant options.
+Please use our Rest API to store this information as the following:
 
     POST /tenant/options
     Host: ...
@@ -83,21 +84,24 @@ Please use our Rest API to store this information as following:
       "value": "<IP/Domain>:8688/sms-gateway"
     }
 
-2.Giving required roles
+2.Assigning required roles
 
-To use the Sms messaging API group of the user should have required roles such as 'SMS_ADMIN' for sending and 'SMS_READ' for receiving messages.
+To use the sms messaging API group of the user should have required roles such as 'SMS_ADMIN' for sending and 'SMS_READ' for receiving messages.
 Please see '[Assigning account-wide permissions](/guides/users-guide/administration/)'
 
 3.Choosing a sms provider
   
 * OpenIT
 
-OpenIT credentials can be given using the Administration application. Click on OpenIT credentials from the menu and save credentials for your tenant.
+OpenIT credentials can be assigned using the Administration application. Click on OpenIT credentials from the menu and save these credentials for your tenant.
+
 ![OpenIT Credentials](/guides/java/java-client-services/openit_credentials.png)
-Note that receiving messages and receiving specific message are not supported for this provider.
+
+Note that receiving messages and receiving specific messages are not supported for this provider.
+
 * Jasper Control Center
 
-Please see [Jasper Control Center](/guides/users-guide/jasper/) to have detailed information about how to set the credentials.
+Please see [Jasper Control Center](/guides/users-guide/jasper/) for information about how to set the credentials.
 
 * Ericsson
 
@@ -177,7 +181,7 @@ Note that receiving messages and receiving specific message are not supported fo
 
 #### Sending a message:
 
-To send a sms message using the API, prepare the message with send message request builder and call send message function of the API with the message.
+To send a sms message using the API, prepare the message with the "send message request builder" and call the "send message" function of the API with the message.
 
     SendMessageRequest smsMessage = SendMessageRequest.builder()
             .withSender(Address.phoneNumber("<phone number>"))
@@ -189,17 +193,17 @@ To send a sms message using the API, prepare the message with send message reque
 
 #### Receiving all messages:
 
-Note that not every sms provider supports receiving messages. 
+Not every sms provider supports receiving messages. 
 
-To receive all sms messages you can use API as follows.
+To receive all sms messages you can use API as follows:
 
     smsMessagingApi.getAllMessages(Address.phoneNumber("<phone number>"));
 
 #### Receiving a specific message:
 
-Note that not every sms provider supports receiving messages. 
+Not every sms provider supports receiving messages. 
 
-To receive a specific sms message you can use API as follows.
+To receive a specific sms message you can use API as follows:
 
     smsMessagingApi.getMessage(Address.phoneNumber("<phone number>"), "<message id>");
 

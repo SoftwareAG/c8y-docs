@@ -54,7 +54,7 @@ Die CSV-Datei muss eine Kopfzeile haben, gefolgt von den tatsächlichen Daten. D
 
 Verwenden Sie die Schaltfläche "Hochladen", um die CSV-Datei hochzuladen, wie im Screenshot unten gezeigt. Nachdem die Daten importiert wurden, erhalten Sie eine Rückmeldung über die Anzahl der vorregistrierten Geräte sowie über mögliche Fehler.
 
-<img src="/guides/users-guide/autoregister.png" alt="Bulk registration" style="max-width: 100%">
+<img src="/guides/users-guide/autoregisterde.png" alt="Bulk registration" style="max-width: 100%">
 
 
 Um die Geräte anzuschließen, müssen die Geräte mit entsprechenden Informationen vorbereitet werden. Insbesondere muss jedes Gerät wie folgt konfiguriert werden:
@@ -87,7 +87,7 @@ In jedem Fall sehen Sie eine Liste der Geräte, wie im folgenden Beispiel gezeig
 
 Das Löschen eines Geräts bedeutet, das Gerät aus der Cumulocity-Datenbank zu entfernen, einschließlich aller damit generierten Daten. Alternativ zum Löschen eines Gerätes können Sie auch alle ausgeschalteten Geräte in eine Gruppe organisieren. Dadurch wird sichergestellt, dass alle alten Berichte korrekt bleiben. Um zu verhindern, dass Alarme für die ausgeschalteten Geräte angeschaltet werden, deaktivieren Sie die [Verbindungsüberwachung] (#connection-monitoring). Beim Löschen eines Geräts werden die Daten seiner Kindgeräte nicht gelöscht.
 
-<img src="/guides/users-guide/devicelist.png" alt="Device List" style="max-width: 100%">
+<img src="/guides/users-guide/devicelistde.png" alt="Device List" style="max-width: 100%">
 
 Falls eine Liste mehr als 1.000 Einträge enthält, werden nur die ersten 1.000 Einträge angezeigt. Klicken Sie unten auf den Link "Laden", um die nächsten 1.000 Einträge zu laden.
 
@@ -112,7 +112,7 @@ Sie können auch Geräte auf zwei andere Weisen hinzufügen:
 * Wählen Sie eine Gruppe aus und gehen Sie auf die Registerkarte "Kindgeräte" auf der linken Seite und wählen Sie sie aus. Klicken Sie dann rechts oben in der Gruppenliste auf "Zur Gruppe hinzufügen". Suchen Sie nach den Geräten, die im Suchfeld hinzugefügt werden sollen. Markieren Sie dann die entsprechenden Geräte im Ergebnis und klicken Sie auf die Schaltfläche "Zur Gruppe hinzufügen" am unteren Rand der Ergebnisliste.
 
 
-<img src="/guides/users-guide/subassetadd.png" alt="Adding top-level groups" style="max-width: 100%">
+<img src="/guides/users-guide/subassetaddde.png" alt="Adding top-level groups" style="max-width: 100%">
 
 
 Um eine Untergruppe zu erstellen, klicken Sie einfach auf "Gruppe hinzufügen", wenn Sie eine Gruppe ansehen.
@@ -124,11 +124,11 @@ Um eine Gruppe zu bearbeiten, klicken Sie auf den Namen der Gruppe. Auf diese We
 
 Dynamische Gruppen sind Gruppen basierend auf Filterkriterien. Sie haben einen vorübergehenden Charakter, da sich die Anzahl der Mitglieder ständig verändern können. Diese Gruppen haben keine festen Mitgliederlisten, sondern bestimmte Auswahlkriterien stattdessen. Diese Art von Gruppe kann verwendet werden, für Bulk-Upgrades eines Gerätyps auf eine neue Software oder Firmware-Version.
 
-<img src="/guides/users-guide/smartfilters.png" alt="Adding top-level groups" style="max-width: 100%">
+<img src="/guides/users-guide/smartfiltersde.png" alt="Adding top-level groups" style="max-width: 100%">
 
 Durch Auswahl von "Alle Geräte" können dynamische Gruppen angelegt werden. Um eine neue Gruppe zu erstellen, verwenden Sie einfach Filter, um Geräte auszuwählen. Klicken Sie nun auf "Dynamische Gruppe erstellen" und geben Sie der Gruppe einen Namen.
 
-<img src="/guides/users-guide/smartgroup1.png" alt="Adding top-level groups" style="max-width: 100%">
+<img src="/guides/users-guide/smartgroup1de.png" alt="Adding top-level groups" style="max-width: 100%">
 
 Wenn die Gruppe erstellt wird, wird sie als Gruppe der obersten Ebene im Abschnitt "Gruppen" angezeigt. Sie können Filterkriterien anpassen, indem Sie einfach die Registerkarte "Kindassets" auswählen und die Filtereinstellungen ändern.
 
@@ -139,7 +139,9 @@ Benutzer können auch dynamische Gruppen aus den Gruppen der obersten Ebene lös
 
 > Dynamische Gruppen können nicht in der Cockpit Anwendung genutzt werden.
 
-<img src="/guides/users-guide/smartgroupdelete.png" alt="Adding top-level groups" style="max-width: 100%">
+<img src="/guides/users-guide/smartgroupdelete1de.png" alt="Adding top-level groups" style="max-width: 100%">
+
+<img src="/guides/users-guide/smartgroupdelete2de.png" alt="Adding top-level groups" style="max-width: 100%">
 
 ## <a name="device-details"></a>Anzeigen der Gerätedetails
 
@@ -151,7 +153,7 @@ Rechts neben dem Namen wird ein Zahnrad angezeigt. Wenn Sie auf das Zahnrad klic
 
 Ist das Gerät kompatibel, steht über das Zahnrad ein Menüpunkt "Messwertabfrage starten" zur Verfügung. Mit dieser Option können Sie ein Gerät anfordern, um Messungen mit einer bestimmten Frequenz für eine bestimmte Dauer zu senden. Diese Art von Debugging vermeidet zu viel Datenverkehr, der durch das Senden von Messungen erzeugt wird.
 
-<img src="/guides/users-guide/devicedetails.png" alt="Device details" style="max-width: 100%">
+<img src="/guides/users-guide/devicedetailsde.png" alt="Device details" style="max-width: 100%">
 
 Die Gerätedetails sind in eine Anzahl von Registerkarten unterteilt. Die gängigsten Standard-Tabs sind:
 
@@ -261,11 +263,11 @@ So können Sie eine Gerätekonfiguration manuell hinzufügen oder bearbeiten:
 Die binäre Konfiguration erlaubt Ihnen, Konfigurationsdaten abzurufen, zu ändern oder zu speichern. Die Konfigurationsdaten enthalten die Parameter und die Grundeinstellungen Ihres Gerätes.
 Diese Option finden Sie hier:
 
-<center><img src="/guides/users-guide/configrepscreenshot.png" alt="Device details" style="max-width: 100%"></center>
+<center><img src="/guides/users-guide/configrepscreenshotde.png" alt="Device details" style="max-width: 100%"></center>
 
 Ein gutes Anwendungsbeispiel für den Konfigurations-Snapshot ist, wenn die gleiche Konfiguration auf mehrere Geräte angewendet wird. Mit dem Konfigurations-Snapshot können Sie ein Gerät konfigurieren, den Snapshot herunterladen und auf andere Geräte übertragen.
 
-![Configuration Snapshot](/guides/users-guide/configsnap.png)
+![Configuration Snapshot](/guides/users-guide/configsnapde.png)
 
 ### Abrufen einer aktuellen Snapshot-Konfiguration von einem Gerät
 
@@ -332,13 +334,13 @@ Die Shell-Benutzeroberfläche ist in zwei Teile aufgeteilt:
 * Eine Eingabeaufforderung zur Eingabe neuer Befehle, die zur Liste hinzugefügt werden.
 Die Liste zeigt Status, Datum und Text eines Befehls an. Wenn Sie auf einen Listeneintrag klicken, wird das Ergebnis des Befehls angezeigt (sofern er ausgeführt wurde).
 
-![Device shell](/guides/users-guide/shell.png)
+![Device shell](/guides/users-guide/shellde.png)
 
 In der Eingabeaufforderung können Sie beliebigen Befehlstext eingeben. Um den Befehlstext an das Gerät zu senden, klicken Sie auf die Schaltfläche "Ausführen". Die Schaltfläche "Ausführen" kann nur gewählt werden, wenn das Gerät verbunden ist.
 
 Um Ihnen mit der Befehlssyntax zu helfen, sind häufig verwendete Befehle für einige Geräte verfügbar, indem Sie auf die Schaltfläche "Vordefiniert erhalten" klicken. Wählen Sie einen Befehl aus und klicken Sie auf "Use", um den Befehl an die Eingabeaufforderung zu kopieren, oder wählen Sie "Execute", um den Befehl sofort auszuführen.
 
-![Shell commands](/guides/users-guide/shelltemplates.png)
+![Shell commands](/guides/users-guide/shelltemplatesde.png)
 
 ### <a name="permissions"></a>Berechtigungen
 
@@ -376,7 +378,7 @@ hat man folgende Optionen:
 - Wählen Sie die maximale Anzahl der anzuzeigenden Zeilen (absteigend) aus.
 - Klicken Sie auf "Protokoll anfordern".
 - 
-![Request log](/guides/users-guide/requestlog.png)
+![Request log](/guides/users-guide/requestlogde.png)
 
 Das Anfordern eines Protokolls von einem Gerät kann einige Zeit in Anspruch nehmen. Nachdem das Protokoll vom Cumulocity-Gerät übertragen wurde, erscheint es in der Liste unterhalb der Auswahl-Widgets. Der Eintrag in der Liste enthält den Protokollzeitbereich, der abgefragt wurde. Klicken Sie auf den Eintrag in der Liste, um das Protokoll auf der Seite anzuzeigen. Bewegen Sie den Mauszeiger über den Eintrag, um auf die Download- und Löschsymbole zuzugreifen. Mit dem Download-Symbol können Sie den Log-Auszug auf Ihren lokalen PC herunterladen. Mit dem Löschsymbol können Sie die Protokolldatei löschen.
 
@@ -468,7 +470,7 @@ Wenn Sie auf einen Vorgang klicken, werden die Parameter des Vorgangs angezeigt.
 
 Die Schaltfläche "Alle" zeigt alle Vorgänge für ein Gerät an, unabhängig davon, ob sie bereits verarbeitet wurden. Das Gerät führt diese Operationen in aufsteigender Zeitreihenfolge auf. Operationen werden streng nach dieser Reihenfolge ausgeführt.
 
-![Operations](/guides/users-guide/operations.png)
+![Operations](/guides/users-guide/operationsde.png)
 
 ## <a name="bulk-operations"></a>Bulk Vorgänge
 
@@ -487,7 +489,7 @@ Dazu haben Sie folgende Möglichkeiten:
 
 Um den Status und den Fortschritt Ihrer Vorgänge anzuzeigen, klicken Sie einfach auf die gewünschte Gruppe und dann auf "Bulk-Vorgänge".
 
-![Bulk operations tab](/guides/users-guide/bulkoperations.png)
+![Bulk operations tab](/guides/users-guide/bulkoperationsde.png)
 
 Auch Bulk-Vorgänge können bearbeitet werden. Um einen Vorgang zu bearbeiten, den Mauszeiger über den Vorgang bewegen und dann auf die blaue Markierungsschaltfläche zu klicken. Ein neues Fenster wird eingeblendet. Die Werte "Startdatum" und "Verzögerung" können geändert werden. Um die Betriebsdaten zu ändern, klicken Sie auf "Details anzeigen". Wenn Sie fertig sind, klicken Sie auf "Reschedule", um Änderungen zu übernehmen oder klicken Sie auf "Abbrechen", um Änderungen zu verwerfen.
 
@@ -535,7 +537,7 @@ In den meisten Fällen sollten Sie nichts bearbeiten müssen. Ausnahmen sind:
 
 Die Geräte-Anmeldeinformationen können auch aus der CSV-Datei bereitgestellt werden. Dateien können über die mit einem Pfeil markierte Schaltfläche hochgeladen werden. Weitere Details zur Dateistruktur finden Sie unter [Bulk-registering devices] (# creds-upload) oben.
 
-## <a name="simulator"></a>Simulatoren
+## <a name="simulators"></a>Simulatoren
 
 
 Mit dem Cumulocity Simulator, können alle Aspekte von IoT Geräten simuliert werden:

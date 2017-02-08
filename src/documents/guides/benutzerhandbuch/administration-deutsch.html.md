@@ -10,7 +10,7 @@ Die Administrationsanwendung ermöglicht es Administratoren, ihre Benutzer, Anwe
 
 * Die [Abonnement Information](#home) einsehen.
 * [Nutzer](#users) und [Benutzergruppen](#user-groups) verwalten, einschliesslich ihrer [Berechtigungen](#permissions).
-* [Anwendungen](#applications) und [Simulatoren](#simulators) anlegen und verwalten.
+* [Anwendungen](#applications) anlegen und verwalten.
 * Echtzeit [Ereignis Verarbeitung](#event-processing), Scripte und [Alarme Re-Priorisieren](#reprio-alarms).
 * [Einstellungen](#settings) ändern.
 * [Aufbewahrungsrichtlinien](#retention) fuer Daten konfigurieren
@@ -38,7 +38,7 @@ Um Benutzer in Ihrem Mandantenkonto zu verwalten, klicken Sie auf das Menü "Ben
 
 > Der Sysadmin-Benutzer ist möglicherweise nicht vorhanden, abhängig von Ihrem Provider.
 
-![Click Users](/guides/users-guide/Users.png)
+![Click Users](/guides/users-guide/Usersde.png)
 
 ### Benutzer hinzufügen
 
@@ -120,7 +120,7 @@ Alle Benutzergruppendetails können bearbeitet werden. Um eine Gruppe zu bearbei
 
 > Gehen Sie mit Bedacht vor: Das Bearbeiten einer Benutzergruppe kann die Berechtigung für alle Benutzer in der Gruppe ändern und das ordnungsgemäße Funktionieren der Geräte beeinträchtigen.
 
-<img src="/guides/users-guide/confirmgroup.png" alt="Confirm group editing" style="max-width: 60%">
+<img src="/guides/users-guide/confirmgroupde.png" alt="Confirm group editing" style="max-width: 60%">
 
 ### Gruppen Entfernen
 
@@ -405,32 +405,6 @@ Es ist nicht möglich, abonnierte Anwendungen zu entfernen. Dies ist nur für de
 
 Um eine Anwendung zu entfernen, bewegen Sie den Cursor über den Anwendungsnamen und klicken Sie auf das Zahnrad, und klicken Sie dann auf die Schaltfläche "Entfernen". Ein Bestätigungs-Popup-Fenster erscheint. Klicken Sie auf "OK" und die Anwendung wird gelöscht.
 
-## <a name="simulators"></a>Umgang mit Simulatoren
-
-Cumulocity bietet die Möglichkeit, Geräte zu simulieren. Auf diese Weise können Benutzer ihre Anwendungen mit simulierten Geräten während der Entwicklung testen. Um den Simulator-Bereich anzusehen, klicken Sie auf
-"Simulator" im Menü "Anwendungen".
-
-### Simulator Hinzufügen
-
-Um einen neuen Simulator hinzuzufügen, klicken Sie auf "Simulator hinzufügen"
-
-- Geben Sie einen Namen für den Simulator ein. Der Name wird mit den simulierten Geräten verwendet.
-- Wählen Sie die Anzahl der simulierten Instanzen aus. Wenn Sie z. B. zwei Instanzen auswählen, werden zwei Sätze simulierter Geräte mit den ausgewählten Sensoren erstellt.
-- Wählen Sie die gewünschten Sensoren. Dadurch ergeben sich zwei neue Felder: "Werte" und "Intervall". "Werte" enthält eine Wiedergabeliste mit durch Semikolons getrennten Zahlen, die in "Intervall" Sekunden abgespielt werden. Wenn Sie z. B. "16.7; 18; 20" als "Werte" und 5 Sekunden als Intervall verwenden, beträgt der erste simulierte Sensorwert 16.7. Nach fünf Sekunden wird ein zweiter Wert von 18 aufgezeichnet. Nach weiteren fünf Sekunden werden 20 aufgezeichnet. Nach weiteren fünf Sekunden beginnt die Prozedur mit dem ersten Wert.
-- Klicken Sie auf "Speichern"
-
-Bitte beachten Sie, dass die maximale Anzahl der Simulatoren 10 ist.
-
-![Add simulator](/guides/users-guide/addsimulatorde.png)
-
-### Simulatoren starten, pausieren oder entfernen
-Simulatoren können zwei Zustände haben, laufen oder pausieren. Um einen Simulator zu starten, bewegen Sie zuerst den Cursor über seinen Namen und klicken dann auf die Schaltfläche "Gerät ausführen".
-
-![Start simulator](/guides/users-guide/startsimulator.png)
-
-Um einen Simulator zu stoppen, klicken Sie auf die Schaltfläche "Stop device", während Sie die Maus über den gewünschten Simulatornamen bewegen. Um einen Simulator zu löschen, klicken Sie auf die Schaltfläche "X" und bestätigen diese Aktion im Popup-Fenster.
-
-> Simulatoren können momentan nicht bearbeitet werden. Sie können nur Neue hinzufügen.
 
 ## <a name="tenants"></a>Mandanten Verwalten
 
@@ -446,7 +420,7 @@ Diese Funktion ist eine optionale Funktion, die nicht für alle Mandanten verfü
 
 In order to manage subtenants click on the subtenants menu. Subtenant management includes: Tenant creation, activation, suspension, subscribed applications and options.
 
-![Sub-tenants](/guides/users-guide/sub-tenant.png)
+![Sub-tenants](/guides/users-guide/sub-tenantde.png)
 
 > Tenant ID's must remain unique, two tenants cannot create subtenants with the same "URL/ID".
 > Subtenants cannot create an additional level of subtenants.

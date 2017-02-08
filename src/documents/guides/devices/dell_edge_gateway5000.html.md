@@ -1,5 +1,5 @@
 ---
-title: Meshlium
+title: Dell Edge Gateway
 layout: default
 ---
 
@@ -43,7 +43,7 @@ The device id will be where <device_id> is located, use this value to register t
 
 The agent will start automatically every time the system restarts.
 
-## <a name="connect"></a>Connecting your Meshlium to your Cumulocity account
+## <a name="connect"></a>Connecting your Edge Gateway to your Cumulocity account
 
 First you need a Cumulocity account, then on the left side panel click on "DEVICES > Registration"
 

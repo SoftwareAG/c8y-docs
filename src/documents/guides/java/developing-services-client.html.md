@@ -143,6 +143,22 @@ Password:
         "value": "<password>"
       }
 
+Sender address:
+
+      {
+        "category": "messaging",
+        "key": "sms.senderAddress",
+        "value": "<The phone number all SMS will be sent from (provided by Ericsson DCP)>"
+      }
+
+Sender name: 
+
+      {
+        "category": "messaging",
+        "key": "sms.senderName",
+        "value": "<The name associated with the phone number>"
+      }
+
 Note that receiving specific message is not supported for this provider.
 
 * Tropo
@@ -175,6 +191,22 @@ Credentials:
         "category": "messaging",
         "key": "tropo.credentials",
         "value": "<credentials>"
+      }
+
+Sender address:
+
+      {
+        "category": "messaging",
+        "key": "sms.senderAddress",
+        "value": "cumulocity"
+      }
+
+Sender name: 
+
+      {
+        "category": "messaging",
+        "key": "sms.senderName",
+        "value": "cumulocity"
       }
 
 Note that receiving messages and receiving specific message are not supported for this provider.

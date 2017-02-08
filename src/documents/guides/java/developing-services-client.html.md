@@ -38,10 +38,6 @@ withTo("to1@email.com", "to2@email.com"). An email can also contain attachments 
 
 A call to an email API returns an HTTP status of a request, 200 OK in case if an email was sent successfully.
 
-#### Prerequisites
-
-For using an email messaging API a role 'EMAIL_ADMIN' is required. By default, every newly created user of the admin group obtains an 'EMAIL_ADMIN' permission.
-
 #### Email management endpoint
 
 The new endpoint is a POST to /email/emails expecting an email as json. For example:

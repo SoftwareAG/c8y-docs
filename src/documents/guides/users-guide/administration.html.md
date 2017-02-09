@@ -312,7 +312,7 @@ To add an application, you can upload a "ZIP file" application.
 - Click on "Upload ZIP file".
 - Either drop the file into the box or simply browse your computer.
 
-### Cloning applications
+### <a name="clone-application"></a>Cloning applications
 
 This option will copy the application. Cloning a subscribed application creates a copy of the application as an own application, with a link to the original application.
 
@@ -326,7 +326,7 @@ In order to clone an application:
 - Enter the application path. This path will be part of the URL to invoke the application. For example, if you use "hello" as application path, the URL of the application will be "/apps/hello".
 - Click on the "Clone" button.
 
-### Adding and removing plugins
+### <a name="add-remove-plugin"></a>Adding and removing plugins
 
 In order to configure and extend the function provided with a smartapp, you can add plugins (as ZIP files) to your applications. To add additional plugins, go to â€œOwn applicationsâ€, move the cursor over your desired applications and click on â€œAdd Pluginâ€. You can drag the plugin into the box or just select them from your computer.
 

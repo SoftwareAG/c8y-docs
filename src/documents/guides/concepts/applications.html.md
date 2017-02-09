@@ -40,21 +40,7 @@ The Cumulocity user interface itself is built around a framework based on Angula
 
 ![Plugin editor](/guides/concepts-guide/plugineditor.png)
 
-## Plugins
-
-If the functionality provided by the Cumulocity user interface does not cover your use case, you can extend it with own plugins. Extension points for plugins are:
-
-* Add search functionality.
-* Contribute menu items to the navigation bar on the left.
-* Add views or "tabs" to devices.
-* Add menu items to the drop-down menu of a device.
-* Add widgets.
-* Modify the branding
-
-
-![Extension points for plugins](/guides/concepts-guide/extensionpoints.png)
-
-For more information on developing plugins, please look into the developer guide. [Plugin Developer's Guide](/guides/web/introduction)
+For more information on developing plugins, please look into the developer guide [Web SDK for Plugins](/guides/web/introduction).
 
 ## Modules
 

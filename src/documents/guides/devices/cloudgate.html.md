@@ -8,12 +8,13 @@ title: "CloudGate"
 ## Overview
 
 In this section, we describe how to configure the CloudGate device so that you are able to remotely manage the CloudGate from Cumulocity and work with its connected sensors and controls. This allows you to:
+
 - Install Firmware updates
 - Perform device-specific operations
 - Change the configuration
 - Send measurements, events and alarms
 
-[CloudGate](http://www.option.com/product/cloudgate/) is [Option](http://www.option.com/)’s M2M Gateway. It provides competitively priced LAN to WWAN routing and GPS functionality in a single basic unit certified by all major US cellular operators (CDMA/EvDO and WCDMA/HSPA+). CloudGate is simple to configure locally or remotely from your PC, tablet or smartphone.
+[CloudGate](http://www.option.com/product/cloudgate/) is [Option’s](http://www.option.com/) M2M Gateway. It provides competitively priced LAN to WWAN routing and GPS functionality in a single basic unit certified by all major US cellular operators (CDMA/EvDO and WCDMA/HSPA+). CloudGate is simple to configure locally or remotely from your PC, tablet or smartphone.
 
 ![CloudGate](/guides/devices/cloudgate/cloudgate-front.jpg)
 
@@ -21,7 +22,8 @@ In this section, we describe how to configure the CloudGate device so that you a
 
 After setting up the CloudGate device, make sure to have the latest firmware installed. To install firmware on your CloudGate device, you can either register your CloudGate to the Option provisioning server or you can upload it manually. In both cases you have to [create an account](https://cloudgateuniverse.com/) first.
 
-For upgrading your CloudGate remotely
+For upgrading your CloudGate remotely:
+
 - Log in at [CloudGate Universe](https://cloudgateuniverse.com/).
 - Go to the "Devices" tab.
 - Before activating a new device, you need to create a new group first. Click on "New group" and fill out the form.
@@ -31,11 +33,12 @@ For upgrading your CloudGate remotely
 
 ![CloudGate](/guides/devices/cloudgate/change_firmware.png)
 
-For upgrading your CloudGate manually
+For upgrading your CloudGate manually:
+
 - Log in at [CloudGate Universe](https://cloudgateuniverse.com/).
 - Go to the "Library" tab.
 - Click on "View firmware" in the "Firmware" section.
-- Go to the appropriate firmware depending on your device type and click "View details".
+- Go to the firmware matching your device type and click "View details".
 - Click on the download icon next to the version you intend to install.
 - Access your CloudGate device via web browser.
 - Log into the CloudGate web interface. The default username and password are both admin.
@@ -142,7 +145,7 @@ After configurating the "c8y measurement", the workflow is ready to be deployed.
 
 ## LuvitRED Cumulocity Nodes
 
-### <a name="measurement"></a>"c8y measurement" node
+### <a name="measurement"></a>" c8y measurement " node
 
 The following node allows you to send a measurement to the Cumulocity server. As input it expects the payload to be a numeric value or in case of a measurement with multiple series a field containing properties with a numeric value each.
 

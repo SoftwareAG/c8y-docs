@@ -447,7 +447,7 @@ To test your application, use the command ```c8y server``` with the complete url
 ### Build and deploy your application and plugins
 
 If you run ```c8y --help``` you will list all available commands.
-You can choose to build applications or plugins which results in a zip file that you can add by hand in any Cumulocity administration application or you can deploy the app directly to your tenant.
+You can choose to build applications or plugins which results in a zip file that you can add by hand in any Cumulocity "Administration" application or you can deploy the app directly to your tenant.
 
 #### build:app
 Builds the application to the specified folder (./build by default).
@@ -460,7 +460,7 @@ $ c8y build:app [appContextPath] [outputFolder]
 
 #### build:plugin
 Builds the plugin to the specified folder (./build by default).
-Inside the outputFolder you will find a directory named [pluginName] and a zip file [pluginName].zip. This zip file can be uploaded in the administration interface and added to any application.
+Inside the outputFolder you will find a directory named [pluginName] and a zip file [pluginName].zip. This zip file can be uploaded in the "Administration" interface and added to any application.
 
 ```bash
 $ c8y build:plugin <pluginName> [outputFolder]
@@ -510,7 +510,7 @@ You can also add or [replace](/guides/web/branding-plugin#branding) plugins in t
 }
 ```
 
-The example above shows how to add your self-developed plugin to one of the core applications, in this case the administration application. When specifying a plugin, ensure to include the contextPath of the application the plugin is in. In this case, the plugin "myplugin" is located in the plugins folder of the application with the contextPath "myapplication".
+The example above shows how to add your self-developed plugin to one of the core applications, in this case the "Administration" application. When specifying a plugin, ensure to include the contextPath of the application the plugin is in. In this case, the plugin "myplugin" is located in the plugins folder of the application with the contextPath "myapplication".
 
 If you are not deploying to a management tenant, you need to include the following fragment to your target .json file:
 

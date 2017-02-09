@@ -30,7 +30,7 @@ The device control interface consists of three parts:
 ### GET the Device Control API resource
 
 Response body: devicecontrolApi
-  
+
 Required role: ROLE\_DEVICE\_CONTROL\_READ
 
 Example request:
@@ -69,7 +69,7 @@ Example response:
 Notes about Operation Collections:
 
 -   The embedded operation object contains "deviceExternalIDs" only when queried with an "agentId" parameter. 
--   The embedded operation object is filled with "deviceName", but only when requesting resource: Get a collection of operations. 
+-   The embedded operation object is filled with "deviceName", but only when requesting resource: Get a collection of operations.
 -   Operations are returned in the order in which they have been created (a [FIFO](http://en.wikipedia.org/wiki/FIFO) queue).
 
 ### POST - Create an Operation
@@ -77,7 +77,7 @@ Notes about Operation Collections:
 Request body: Operation
 
 Response body: Operation 
-  
+
 Required role: ROLE\_DEVICE\_CONTROL\_ADMIN or owner of source object
 
 Example Request:
@@ -178,7 +178,7 @@ The DELETE method allows for deletion of operation collections. Applicable query
 Request body: N/A
 
 Response body: N/A
-  
+
 Required role: ROLE\_DEVICE\_CONTROL\_ADMIN
 
 Example request:
@@ -186,7 +186,7 @@ Example request:
      DELETE: /devicecontrol/operations ....
      Host: ...
      Authorization: Basic ...
-     
+
 Example response:
 
     HTTP/1.1  204 NO CONTENT
@@ -214,7 +214,7 @@ An "ExternalID" embedded in the "deviceExternalIDs" collection contains the prop
 Request body: Operation
 
 Response body: n/a.
-  
+
 Required role: ROLE\_DEVICE\_CONTROL\_ADMIN or owner of source object
 
 Example Request:
@@ -224,21 +224,21 @@ Example Request:
     Authorization: Basic ...
     Content-Length: ...
     Content-Type: application/vnd.com.nsn.cumulocity.operation+json;ver=...
-    { 
+    {
       "status" : "SUCCESSFUL"
     }
 
 ### GET an Operation
 
 Response body: Operation
-  
+
 Required role: ROLE\_DEVICE\_CONTROL\_READ
 
 Example request:
 
     GET /devicecontrol/operations/<<operationId>>
     Host: ...
-    Authorization: Basic ... 
+    Authorization: Basic ...
     Accept: application/vnd.com.nsn.cumulocity.operation+json;ver=...
 
 Example response:
@@ -280,7 +280,7 @@ The basic protocol for receiving notifications is described in the Section "[Rea
 
 ### Receive operations for an agent
 
-Real-time notifications permit an agent to almost immediately receive new operations targeted to it. For control-related notifications, use the URL 
+Real-time notifications permit an agent to almost immediately receive new operations targeted to it. For control-related notifications, use the URL
 
 	/devicecontrol/notifications
 
@@ -308,13 +308,13 @@ The response will additionally to the operation object contain a "realtimeAction
 
 Example Response:
 
-    HTTP/1.1 200 OK 
+    HTTP/1.1 200 OK
     Content-Type: application/json
     [
       {
-        "channel": "/operations/12345", 
-        "successful": true, 
-        "error": "", 
+        "channel": "/operations/12345",
+        "successful": true,
+        "error": "",
         "data": [{
           "realtimeAction": "CREATE",
           "data": {
@@ -327,8 +327,8 @@ Example Response:
             "description": "Deactivate motion tracking",
             "c8y_MotionTracking": { ... }
           }
-        }], 
-        "clientId": "Un1q31d3nt1f13r" 
+        }],
+        "clientId": "Un1q31d3nt1f13r"
       }
     ]
 
@@ -351,7 +351,7 @@ Required role: ROLE\_DEVICE\_CONTROL\_READ
 Request body: Bulk Operation
 
 Response body: Bulk Operation
-  
+
 Required role: ROLE\_BULK\_OPERATION\_ADMIN
 
 Example Request:
@@ -361,7 +361,10 @@ Example Request:
     Accept: application/vnd.com.nsn.cumulocity.bulkOperation+json
     Authorization: Basic ...
     {
-     "operationPrototype":{"test"=>"TEST1"},
+     "operationPrototype":{
+       "description": "Restart device",
+       "c8y_Restart": {}
+     },
      "creationRamp":45,
      "groupId":"10205",
      "startDate":"2015-05-01T22:21:22"
@@ -376,7 +379,10 @@ Example response:
     {
      "id":2,
      "self":"https://dev.cumulocity.com/devicecontrol/bulkoperations/2",
-     "operationPrototype":{"test"=>"TEST1"},
+     "operationPrototype":{
+       "description": "Restart device",
+       "c8y_Restart": {}
+     },
      "creationRamp":45,
      "groupId":"10205",
      "startDate":"2015-05-01T22:21:22"
@@ -412,7 +418,10 @@ Example Response:
         {
          "id":2,
          "self":"https://dev.cumulocity.com/devicecontrol/bulkoperations/2",
-         "operationPrototype":{"test"=>"TEST1"},
+         "operationPrototype":{
+           "description": "Restart device",
+           "c8y_Restart": {}
+         },
          "creationRamp":45,
          "groupId":"10205",
          "startDate":"2015-05-01T22:21:22"
@@ -425,7 +434,12 @@ Example Response:
         {
          "id":3,
          "self":"https://dev.cumulocity.com/devicecontrol/bulkoperations/3",
-         "operationPrototype":{"test"=>"TEST2"},
+         "operationPrototype":{
+           "description": "Send Command",
+           "c8y_Command": {
+             "text": "Do something"
+           }
+         },
          "creationRamp":15,
          "groupId":"10201",
          "startDate":"2015-05-05T22:21:22"
@@ -447,9 +461,9 @@ By default query bulk operations endpoint does not return CANCELLED operations. 
 ## Bulk Operation
 
 Bulk Operation API allows to schedule an operation on a group of devices to be executed at a specified time. It is required to specify the delay between every operation is created.
-When Bulk Operation is created, it has ACTIVE status. When all operations are created, Bulk Operation has state COMPLETED. It is also possible to cancel already created Bulk Operation by deleting it. 
+When Bulk Operation is created, it has ACTIVE status. When all operations are created, Bulk Operation has state COMPLETED. It is also possible to cancel already created Bulk Operation by deleting it.
 
-When you create a Bulk Operation, you can run it in two modes: 
+When you create a Bulk Operation, you can run it in two modes:
 - when groupId is passed, it works standard way, i.e. takes devices from group and schedules operations on them
 - when failedBulkOperationId is passed, it takes the already processed bulk operation by that id, and schedules operation on devices for which previous operations failed
 
@@ -480,7 +494,7 @@ Making update on a started bulk operation cancels it and creates/schedules a new
 Request body: Bulk Operation
 
 Response body: n/a.
-  
+
 Required role: ROLE\_BULK\_OPERATION\_ADMIN
 
 Example Request:
@@ -489,7 +503,7 @@ Example Request:
     Host: ...
     Authorization: Basic ...
     Content-Type: application/vnd.com.nsn.cumulocity.bulkoperation+json
-    { 
+    {
       "creationRamp" : 15
     }
 
@@ -504,7 +518,10 @@ Example response:
       "groupId" : "124301",
       "status" : "ACTIVE",
       "startDate" : "2011-09-06T12:03:27",
-      "operationPrototype":{"test"=>"TEST1"},
+      "operationPrototype":{
+        "description": "Restart device",
+        "c8y_Restart": {}
+      },
       "creationRamp":15,
       "progress":
         {
@@ -515,7 +532,7 @@ Example response:
 ### GET a Bulk Operation
 
 Response body: Bulk Operation
-  
+
 Required role: ROLE\_BULK\_OPERATION\_READ
 
 Example request:
@@ -536,7 +553,10 @@ Example response:
       "groupId" : "124301",
       "status" : "ACTIVE",
       "startDate" : "2011-09-06T12:03:27",
-      "operationPrototype":{"test"=>"TEST1"},
+      "operationPrototype":{
+        "description": "Restart device",
+        "c8y_Restart": {}
+      },
       "creationRamp":15,
       "progress":
         {
@@ -549,7 +569,7 @@ Example response:
 Request Body: N/A.
 
 Response Message Body: N/A.
-  
+
 Required role: ROLE\_BULK\_OPERATION\_ADMIN
 
 Example Request: Delete a Bulk Operation

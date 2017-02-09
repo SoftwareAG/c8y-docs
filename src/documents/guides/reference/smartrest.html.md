@@ -161,6 +161,8 @@ Where:
 
 ##### Example
 
+Create a device:
+
 	10,100,POST,/inventory/managedObjects,application/vnd.com.nsn.cumulocity.managedObject+json,application/vnd.com.nsn.cumulocity.managedObject+json,,,"{""name"":""Test Device"",""type"":""com_example_TestDevice"",""c8y_IsDevice"":{}}"
 
 Explanation:
@@ -173,6 +175,10 @@ Explanation:
 * `application/vnd.com.nsn.cumulocity.managedObject+json` is the accept content type.
 * `%%` is the placeholder string.
 * `STRING` specifies that the request accepts one parameter which must be a string.
+
+Update operation to EXECUTING:
+
+10,101,PUT,/devicecontrol/operations/%%, application/vnd.com.nsn.cumulocity.operation+json, application/vnd.com.nsn.cumulocity.operation+json,%%,INTEGER,"{""status"":""EXECUTING""}"
 
 #### Response templates
 

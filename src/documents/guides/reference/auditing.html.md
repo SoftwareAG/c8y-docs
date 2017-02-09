@@ -11,6 +11,16 @@ The auditing interface consists of three parts:
 
 > Note that for all PUT/POST requests accept header should be provided, otherwise an empty response body will be returned.
 
+## Audited informations
+
+-   Alarm modifications
+-   Operation modifications
+-   Two factor authentication login attempts
+-   Smart rule modifications
+-   Complex Event Processing module modifications
+-   User and group permissions modifications
+
+
 ## Audit API
 
 ### AuditRecords [application/vnd.com.nsn.cumulocity.auditApi+json]

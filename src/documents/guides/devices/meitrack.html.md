@@ -5,7 +5,7 @@ title: Meitrack
 
 ## Overview
 
-[Meitrack Group](http://www.meitrack.com/) provides GPS-based vehicle, asset and personal trackers that can be connected to Cumulocity to centrally record coordinates and tracking information. After connecting the devices, you can create additional business logic in Cumulocity by using, for example, geofence or threshold Smart Rules.
+[Meitrack Group](http://www.meitrack.com/) provides GPS-based vehicle, asset and personal trackers that can be connected to Cumulocity to record coordinates and tracking information. After connecting the devices, you can create additional business logic in Cumulocity by using, for example, geofence or threshold Smart Rules.
 
 The following data is currently recorded:
 
@@ -37,6 +37,7 @@ To connect the device to your Cumulocity account:
 * Type the IMEI into the "Device ID" field and click "Register Device". The IMEI will be listed with status "Waiting for connection".
 * Switch the device on and wait until the device connects to both the mobile network and GPS. 
 * When the device sends the first report, an "Accept" button will be visible next to the IMEI. Click the "Accept" button.
+* If this is the first tracking device you connect to your tenant you also need the register the tracker agent. Type tracker-agent-{tenant} (where {tenant} is your tenant name) into the "Device ID" field and click "Register Device". Click the "Accept" button once it shows up.
 * The device will now transmit  data according to the device configuration that you set. 
 
 ## Troubleshooting tracking devices

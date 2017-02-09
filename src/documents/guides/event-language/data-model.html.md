@@ -9,13 +9,13 @@ toc: true
 
 ### General structure
 
-All input streams share the same base structure
+All input streams share the same base structure.
 
 |Parameter|Data type|Description|
 |:--|:----------|:-------------|
-|_type|String|The type of the event. See the table below for which type values apply for the different streams|
+|_type|String|The type of the event. See the table below for which value types can be used for different streams|
 |_mode|String|The processing mode in which the data was sent to Cumulocity. See [Processing mode](/guides/reference/rest-implementation#processing-mode)|
-|_origin|String|The origin of the event. If the data was created by a cep rule the origin will be "cep"|
+|_origin|String|The origin of the event. If the data was created by a cep rule the origin will be "cep".|
 |payload|Object|The actual data contained in the event|
 
 Types:
@@ -26,7 +26,6 @@ Types:
 |ManagedObjectUpdated|MANAGED_OBJECT_UPDATE|
 |ManagedObjectDeleted|MANAGED_OBJECT_DELETE|
 |EventCreated|EVENT_CREATE|
-|EventUpdated|EVENT_UPDATE|
 |EventDeleted|EVENT_DELETE|
 |MeasurementCreated|MEASUREMENT_CREATE|
 |MeasurementDeleted|MEASUREMENT_DELETE|
@@ -179,11 +178,11 @@ Example:
 
 Output streams create the possibility to CREATE, UPDATE and DELETE data in Cumulocity.
 When updating or deleting data it is necessary to provide the ID of the object that will be updated or deleted.
-When creating data Cumulocity will generated an ID if not set in the event processing. The creation of data also requires certain parameters to be set (the same as at our REST APIs).
-In addition to the predefined parameters listed it is possible to add any custom fragment to the data. Please take a look at [this section](/guides/event-language/advanced) for adding custom fragments.
+When creating data, Cumulocity will generate an ID if not set in the event processing. The creation of data also requires certain parameters to be set (the same as at our REST APIs).
+In addition to the predefined parameters listed, it is possible to add any custom fragment to the data. Please take a look at ---->this<---- for adding custom fragments.
 
 Note:
-You cannot define your own ID when using a "Create" output. It will be replaced by the ID generated from Cumulocity.
+Creating your own ID will only work on ManagedObjects.
 
 ### ManagedObjects
 
@@ -227,7 +226,6 @@ Example:
 |Available outputs|
 |:----------------|
 |CreateEvent|
-|UpdateEvent|
 |DeleteEvent|
 
 |Parameter|Data type|Description|Mandatory|
@@ -364,7 +362,7 @@ The streams mentioned in this section do not interact with the Cumulocity databa
 |subject|String|The subject line of the mail|yes|
 |text|String|The body of the mail|yes|
 
-It is possible to have more than one mail address in the parameters receiver,cc and bcc. Therefore create a string that contains all mail addresses separated by commas e.g. "receiver1@mail.com,receiver2@mail.com".
+It is possible to have more than one mail address in the parameters receiver,cc and bcc. Therefore create a string that contains all mail addresses separated by commas. "receiver1@mail.com,receiver2@mail.com".
 
 Example:
 
@@ -390,7 +388,7 @@ Example:
 |text|String|The body of the mail|yes|
 |dashboardUrl|String|The URL of the page that will be attached to the mail|yes
 
-It is possible to have more than one mail address in the parameters receiver,cc and bcc. Therefore create a string that contains all mail addresses separated by commas e.g. "receiver1@mail.com,receiver2@mail.com".
+It is possible to have more than one mail address in the parameters receiver,cc and bcc. Therefore create a string that contains all mail addresses separated by commas . "receiver1@mail.com,receiver2@mail.com".
 
 _Note:_
 
@@ -444,7 +442,6 @@ This stream enables the possibility to send push notifications from Cumulocity v
 |type|String|Push Provider Type. Currently only TELEKOM is possible.|yes|
 |message|String|The body of the push message.|yes|
 |deviceId|String|The ID of the device generating the push message.|yes|
-|customProperties|Map or [ManagedObject](/guides/event-language/data-model#managedobject) or [Event](/guides/event-language/data-model#event) or [Measurement](/guides/event-language/data-model#measurement) or [Operation](/guides/event-language/data-model#operation) or [Alarm](/guides/event-language/data-model#alarm)|Additional information.|yes|
 
 _Note:_
 

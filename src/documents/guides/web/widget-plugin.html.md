@@ -7,8 +7,8 @@ layout: default
 
 In the following document you will get an overview on how to develop a plugin that adds a new widget to dashboards.
 
-* [Iconmap Plugin](#iconmap)
-* [Weather Plugin](#weather)
+* [Iconmap Plugin](#iconmap): Creates a plugin which displays devices as images instead of markers on a map.
+* [Weather Plugin](#weather): Creates a plugin which displays weather information based on the location of a certain device.
 
 Before you start working on the widget plugins, we recommend you to take a look at the [introduction](/guides/web/introduction) which deals with the basic concepts of applications and plugins as well as an "Hello world!" style demo plugin.
 
@@ -18,7 +18,7 @@ You can find this and all the other plugins described in the documentation insid
 
 With the following plugin a new widget will be available for dashboards which displays devices as icons on a map. The new widget looks like this:
 
-![Iconmap Widget](/guides/plugins/iconmap.png)
+![Iconmap Widget](/guides/plugins/iconmapwidget.png)
 
 In order to achieve this goal you need to do the following steps:
 
@@ -28,7 +28,7 @@ In order to achieve this goal you need to do the following steps:
 * Get the images for the devices.
 * Create a view for the widget.
 
-We assume that you already have created an application that you can add the new plugin to. If not, you can use the application provided in the [repository](https://bitbucket.org/m2m/cumulocity-ui-plugin-examples) mentioned above. You can also find the example described here in the folder "plugins/iconmap".
+We assume that you have already created an application that you can add the new plugin to. If not, you can use the application provided in the [repository](https://bitbucket.org/m2m/cumulocity-ui-plugin-examples) mentioned above. You can also find the example described here in the folder "plugins/iconmap".
 
 ### Create a plugin
 
@@ -70,7 +70,7 @@ Update the application manifest to add this new plugin to the import list.
 
 ### Add an item to the widget menu list
 
-Next, we have to create a config file, which adds a menu item to the widget menu list. For that purpose, we can use the service "c8yComponentsProvider" provided by the [Cumulocity JavaScript API](http://resources.cumulocity.com/documentation/jssdk/latest/). Inject the service into your config and call the following function:
+Next, we have to create a config file which adds a menu item to the widget menu list. For that purpose, we can use the service "c8yComponentsProvider" provided by the [Cumulocity JavaScript API](http://resources.cumulocity.com/documentation/jssdk/latest/). Inject the service into your config and call the following function:
 
 ```js
 (function () {
@@ -236,11 +236,17 @@ In our config, we already specified the .html file which contains our view for t
 </div>
 ```
 
-The "leaflet" tag adds a map to our widget. To display the devices on the map, we just need to assign the array we defined in the controller to the "markers" attribute of the "leaflet" tag.
+The "leaflet" tag adds an [interactive map](http://leafletjs.com/) to our widget. To display the devices on the map, we just need to assign the array we defined in the controller to the "markers" attribute of the "leaflet" tag.
+
+### Test your plugin
+
+After [deploying](/guides/web/introduction#create-application) the plugin to your tenant, you should be able to create a widget "Icon Map". Note that in order to see an image for your device, you have to upload an image with the device type as file name to the [file repository](/guides/users-guide/administration#files) of your tenant.
 
 ## <a name="weather"></a>Weather Plugin
 
-With the following plugin a new widget will be available for dashboards which shows the current weather at the location of a device.
+With the following plugin a new widget will be available for dashboards which shows the current weather at the location of a device. The new widget looks like this:
+
+![Weather Widget](/guides/plugins/weatherwidget.png)
 
 In order to achieve this goal you need to do the following steps:
 
@@ -626,3 +632,7 @@ In our config, we already specified the .html file which contains our view for t
   </div>
 </div>
 ```
+
+### Test your plugin
+
+After [deploying](/guides/web/introduction#create-application) the plugin to your tenant, you should be able to create a widget "Weather". Note that you have to enter the API key first to see the weather information.

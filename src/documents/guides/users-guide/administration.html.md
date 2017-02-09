@@ -98,7 +98,7 @@ Enable two-factor authentication for a user:
 Users with the same permissions can be placed into user groups representing typical permission sets. A single user can be part of multiple user groups. New tenant accounts have four user groups by default. These user groups have different default permission settings:
 
 * Admins: A group with **all permissions** by default.
-* Business: A group to work with all devices and their data but without administration rights. 
+* Business: A group to work with all devices and their data but without administration rights.
 * Readers: A group who can read all data but cannot edit.
 * Devices: A group with typical minimal default permissions for devices.
 
@@ -117,9 +117,9 @@ To add a user group:
 
 ### Editing groups
 
-All user group details can be edited. To edit a group, click on the name of the group in the group list. After you have finished modifying the group, click on the "Save" button. 
+All user group details can be edited. To edit a group, click on the name of the group in the group list. After you have finished modifying the group, click on the "Save" button.
 
-> Editing a user group can change the permission for all users in the group and can affect the correct functioning of devices. 
+> Editing a user group can change the permission for all users in the group and can affect the correct functioning of devices.
 
 <img src="/guides/users-guide/confirmgroup.png" alt="Confirm group editing" style="max-width: 60%">
 
@@ -140,7 +140,7 @@ Cumulocity distinguishes three types of permissions that are assigned to users a
 From the view point of a user:
 
 * A user has the sum of permissions granted to all groups the user is part of.
-* If a user has account-wide permissions, other permissions are ignored. 
+* If a user has account-wide permissions, other permissions are ignored.
 * Device-/group-specific permissions are inherited to all direct and indirect child devices and child assets. If you assign "read" permission to a group of devices, the user will be automatically able to see all devices in the group.
 
 ### Assigning account-wide permissions
@@ -227,7 +227,7 @@ A tenant managed object can be found by type "c8y_Tenant" or name equal to tenan
 
 ### Restricting tenant deletion
 
-Users with tenant management function and  "Admin" permissions can create, update and delete tenants. To prevent a user from deleting tenants only a "create and update" permission should be granted. 
+Users with tenant management function and  "Admin" permissions can create, update and delete tenants. To prevent a user from deleting tenants only a "create and update" permission should be granted.
 
 ![tenant delete restriction](/guides/users-guide/restrict_tenant_deletion.png)
 
@@ -265,9 +265,9 @@ To assign applications to particular users and user groups, go to the "Applicati
 
  - "When?": Shows the server time when the change occurred.
  - "What?": This field shows what changed. ("Smart Rule Deleted")
- - "Who?": Displays the user who did the change. 
- - "Text": Small summary of the change. ("Cep module "smartRule<number>" updated") - "Type": Type of change. ("Smart rule", "Alarm", "User") 
- - "Time": Shows the device time when the change occurred. It can be different from the server time. 
+ - "Who?": Displays the user who did the change.
+ - "Text": Small summary of the change. ("Cep module "smartRule<number>" updated") - "Type": Type of change. ("Smart rule", "Alarm", "User")
+ - "Time": Shows the device time when the change occurred. It can be different from the server time.
 
 > Only the last 100 logs are visible, in order to view more press the "search more" button.
 
@@ -292,7 +292,7 @@ To discard filters or to see all audit logs, click on the "cross" button.
 
 ## <a name="applications"></a>Managing applications
 
-Besides the available applications, you can also provide own applications in your account by checking the "Own applications" menu. These applications can be "Smartapps" or generic HTML5 applications. “Smartapps” applications are HTML5 applications that can be extended by adding plugins. When deploying, the plugins are deployed into a specific application. For example, a plugin might add a specific widget to the Cockpit dashboard.
+Besides the available applications, you can also provide own applications in your account by checking the "Own applications" menu. These applications can be "Smartapps" or generic HTML5 applications. â€œSmartappsâ€ applications are HTML5 applications that can be extended by adding plugins. When deploying, the plugins are deployed into a specific application. For example, a plugin might add a specific widget to the Cockpit dashboard.
 
 Plugins can only be added to own applications because the application itself is modified when adding the plugin. When adding a plugin to subscribed applications, the application must be cloned first into an own application. Afterward the plugin can be added. This process is supported by the Administration Application wizard.
 
@@ -306,7 +306,7 @@ When an application has been created it will be available in the application swi
 
 ### Creating an application
 
-To add an application, you can upload a "ZIP file" application. 
+To add an application, you can upload a "ZIP file" application.
 
 - Click on "Add application".
 - Click on "Upload ZIP file".
@@ -328,7 +328,7 @@ In order to clone an application:
 
 ### Adding and removing plugins
 
-In order to configure and extend the function provided with a smartapp, you can add plugins (as ZIP files) to your applications. To add additional plugins, go to “Own applications”, move the cursor over your desired applications and click on “Add Plugin”. You can drag the plugin into the box or just select them from your computer.
+In order to configure and extend the function provided with a smartapp, you can add plugins (as ZIP files) to your applications. To add additional plugins, go to â€œOwn applicationsâ€, move the cursor over your desired applications and click on â€œAdd Pluginâ€. You can drag the plugin into the box or just select them from your computer.
 
 ![Plugins](/guides/users-guide/plugins.png)
 
@@ -359,9 +359,9 @@ To remove a plugin, click on the cogwheel next to the desired plugin and click r
 ### Restoring to an older application version
 
 Users can restore old versions of an application.
-If you “set active” a specific version of the app, then this will be the version used by users.
+If you â€œset activeâ€ a specific version of the app, then this will be the version used by users.
 
->Note that the “Archive” tab is not available for subscribed applications, as only the owner of the application can perform this action.
+>Note that the â€œArchiveâ€ tab is not available for subscribed applications, as only the owner of the application can perform this action.
 
 ### Uploading archives
 
@@ -439,7 +439,7 @@ To remove an application, simply hover over the application name and click on th
 
 With the subtenant concept you can separate the data of the individual tenants one hundred percent.
 
-> Background: As a tenant administrator, all data in your tenant account is 100% separated from the data of other tenants. The data inside your tenant is shared with all account users by default unless it is restricted by user permissions. 
+> Background: As a tenant administrator, all data in your tenant account is 100% separated from the data of other tenants. The data inside your tenant is shared with all account users by default unless it is restricted by user permissions.
 
 If you want 100% data safety instead of dealing with user permissions, then use the subtenants. Each subtenant has a seperated data area. All Cumulocity features (e.g. user management, app management, rule management) are available for each subtenant without visibility to other subtenants.
 
@@ -479,7 +479,7 @@ When you have finished editing, click on the "Save" button.
 
 > If a tenant is suspended, his data still remains in the database and he can be reactivated at any time later. If the tenant is removed his data will be deleted.
 
-Hovering over a tenant will bring up the "Suspend" and the "Remove" buttons. The "Remove" button is shown as a red cross. 
+Hovering over a tenant will bring up the "Suspend" and the "Remove" buttons. The "Remove" button is shown as a red cross.
 
 > Please note that there is an additional check during tenant suspension. The user will have to provide his own password in order to proceed. After the tenant is suspended, an e-mail is sent to the suspended tenant administrator. The e-mail is sent only if the property in the config file is enabled and if the tenant administrator provided an e-mail address during creation.
 
@@ -649,10 +649,10 @@ The storage quota is in place for a tenant when a storage quota per device is se
 In case the quota is exceeded, an e-mail is sent to all tenant administrators to warn them that data will be deleted the following night. After 24h, if the quota is still exceeded, all data retention limits are reduced by a fixed percentage. The storage quota per device will be reduced as a result of this rule.
 
 > Let us assume that a tenant has a storage quota of 10GB. Retention rules are 80 days for measurements, 90 days for all other data.
-> 
+>
 >
 > - Day 1: In the nightly check, the total storage is calculated at 13GB. An e-mail is sent to all the tenant administrators.
-> 
-> - Day 2: the total storage is still at 13GB. The system determines that a 15% reduction of the retention rules is sufficient to be under the storage quota. So any measurement older than 68 days (80 days - 15%) and any other data older that 77 days (90 days - 15% results in 76.5 days, rounded to 77 days) is deleted. 
-> 
+>
+> - Day 2: the total storage is still at 13GB. The system determines that a 15% reduction of the retention rules is sufficient to be under the storage quota. So any measurement older than 68 days (80 days - 15%) and any other data older that 77 days (90 days - 15% results in 76.5 days, rounded to 77 days) is deleted.
+>
 > The total storage is now at 9.8GB.

@@ -1,4 +1,5 @@
 ---
+order: 1
 title: Smart Apps Toolkit v1.0
 layout: default
 ---

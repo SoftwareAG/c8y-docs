@@ -1,6 +1,6 @@
 ---
-order: 1
-title: Smart Apps Toolkit v1.0
+order: 70
+title: Web SDK for Angular JS
 layout: default
 ---
 

@@ -21,7 +21,7 @@ The following devices support Cumulocity(Monitoring App 2.5.2 or higher must be 
 
 ### Prerequisites
 
-*	You have a functional monitoring application with one of above INSYS Smart.
+*	You have a functional monitoring application with one of the above INSYS Smart devices.
 *	The Monitoring App is installed on the INSYS Smart Device and the required monitoring package is available and licensed.
 *	The INSYS Smart Device has Internet connection.
 
@@ -133,4 +133,4 @@ The Monitoring App is now configured and the INSYS Smart Device will connect to 
 
 ![Device Registration: Pending Acceptance](/guides/devices/insys/deviceRegistrationPending.png)
 
-Refer to [the INSYS website](www.insys-icom.com/monitoring-app) for further information.
+Refer to [the INSYS website](https://www.insys-icom.com/monitoring-app) for further information.

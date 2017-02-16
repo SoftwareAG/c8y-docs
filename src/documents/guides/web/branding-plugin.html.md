@@ -1,4 +1,5 @@
 ---
+order: 20
 title: Branding Plugin
 layout: default
 ---

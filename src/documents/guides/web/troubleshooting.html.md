@@ -1,5 +1,5 @@
 ---
-order: 30
+order: 50
 title: Troubleshooting
 layout: default
 ---
@@ -28,7 +28,7 @@ If you get error messages only when running your application through your tenant
 
 ## I cannot get a 3rd party library to run in my plugin
 
-An easy way to include 3rd party libraries into your plugin is to use [Bower](http://bower.io). List the 3rd party libraries in your bower.json file and install them using "bower install". Then list the needed artifacts from the 3rd party library in your plugin. 
+An easy way to include 3rd party libraries into your plugin is to use [Bower](http://bower.io). List the 3rd party libraries in your bower.json file and install them using "bower install". Then list the needed artifacts from the 3rd party library in your plugin.
 
 For example, to include the latest version of Chart.js in your plugin, create a bower.json file in the root folder of your application with the following content:
 
@@ -46,4 +46,3 @@ Then run "bower install". In the "cumulocity.json" manifest of your plugin, refe
 		...
 		"bower_components/Chart.js/Chart.js"
 	]
-

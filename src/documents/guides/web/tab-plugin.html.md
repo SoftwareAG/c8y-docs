@@ -1,4 +1,5 @@
 ---
+order: 30
 title: Tab Plugin
 layout: default
 ---

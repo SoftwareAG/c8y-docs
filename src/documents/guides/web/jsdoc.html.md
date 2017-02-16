@@ -1,5 +1,5 @@
 ---
-order: 1000
+order: 60
 layout: default
 title: JSDoc
 ---

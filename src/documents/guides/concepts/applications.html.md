@@ -16,7 +16,7 @@ This section introduces the basic concepts around applications in Cumulocity.
 
 ## Applications and subscriptions
 
-Applications are registered in Cumulocity either as "own" applications or "market" applications. 
+Applications are registered in Cumulocity either as "own" applications or "market" applications.
 
 "Own" applications are only available to users of a particular tenant and are registered by the tenant's administrator. Own applications are used, for example, during application development when you do not yet want to make a particular application version available for a wide audience. They are also used for functionality that is proprietary for an enterprise, for example, interactions with in-house IT systems.
 
@@ -24,7 +24,7 @@ Applications are registered in Cumulocity either as "own" applications or "marke
 
 Applications are identified by a so-called *application key*. The application key enables Cumulocity to associate a request with one particular application.
 
-An application can be any combination of 
+An application can be any combination of
 
 * A complete, standalone user interface application, regardless if based on the Cumulocity UI framework (see below) or any other web components of your choice.
 * A set of user interface plugins.
@@ -40,21 +40,7 @@ The Cumulocity user interface itself is built around a framework based on Angula
 
 ![Plugin editor](/guides/concepts-guide/plugineditor.png)
 
-## Plugins
-
-If the functionality provided by the Cumulocity user interface does not cover your use case, you can extend it with own plugins. Extension points for plugins are:
-
-* Add search functionality.
-* Contribute menu items to the navigation bar on the left. 
-* Add views or "tabs" to devices. 
-* Add menu items to the drop-down menu of a device. 
-* Add widgets.
-* Modify the branding
-
-
-![Extension points for plugins](/guides/concepts-guide/extensionpoints.png)
-
-For more information on developing plugins, please look into the developer guide. [Plugin Developer's Guide](/guides/web/introduction)
+For more information on developing plugins, please look into the developer guide [Web SDK for Plugins](/guides/web/introduction).
 
 ## Modules
 

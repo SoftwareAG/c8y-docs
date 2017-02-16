@@ -7,7 +7,7 @@ layout: devices
 
 All [INSYS icom](http://www.insys-icom.com/) industrial routers and condition monitors support the automatic data transmission from monitored PLC or other devices to the Cumulocity Cloud. This is realized by the Monitoring App, an addition to the standard INSYS OS firmware. The app allows an easy and efficient monitoring of Siemens LOGO!™ and S7 controls as well as Modbus TCP/RTU devices or the I/Os of an INSYS IMON fault monitor. Measurement values, conditions, events and alarms can be transmitted to the Cumulocity Cloud. All available data can be setup directly in the Monitoring App and are automatically provided to the cloud account for (automatically self-scaling) charts and lists. Several PLCs can be monitored in parallel with one INSYS Smart Device. The transmission of data to several cloud accounts is also possible. If Cumulocity is not available, data can be processed or stored on the INSYS Smart Device in the meantime.
 
-The following devices support Cumulocity(Monitoring App 2.5.2 or higher must be installed)::
+The following devices support Cumulocity (Monitoring App 2.5.2 or higher must be installed)::
 
 * [IMON series](http://insys-icom.com/IMON): Condition Monitors
 * [EBW series](http://insys-icom.com/EBW): Basic Industrial Routers
@@ -21,7 +21,7 @@ The following devices support Cumulocity(Monitoring App 2.5.2 or higher must be 
 
 ### Prerequisites
 
-*	You have a functional monitoring application with one of the above INSYS Smart devices.
+*	You have a functional monitoring application with one of the above INSYS Smart Devices.
 *	The Monitoring App is installed on the INSYS Smart Device and the required monitoring package is available and licensed.
 *	The INSYS Smart Device has Internet connection.
 

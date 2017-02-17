@@ -1,6 +1,6 @@
 ---
 order: 10
-title: Introduction
+title: Einführung
 layout: default
 ---
 
@@ -11,7 +11,7 @@ Dieser Abschnitt ist eine Basis-Einführung in die Cumulocity Plattform. Sie bes
    * [Zugriff auf Cumulocity Anwendungen](#zugriff).
    * [Einloggen](#login).
    * [Navigation in Cumulocity](#navigating).
-   * [Veraenderung der Nutzer Einstellungen](#settings).
+   * [Veränderung der Nutzer Einstellungen](#settings).
    * [Suchen in Cumulocity](#searching).
 
 ## <a name="zugriff"></a>Zugriff auf Cumulocity Anwendungen

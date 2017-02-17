@@ -537,7 +537,7 @@ In den meisten Fällen sollten Sie nichts bearbeiten müssen. Ausnahmen sind:
 
 Die Geräte-Anmeldeinformationen können auch aus der CSV-Datei bereitgestellt werden. Dateien können über die mit einem Pfeil markierte Schaltfläche hochgeladen werden. Weitere Details zur Dateistruktur finden Sie unter [Bulk-registering devices] (# creds-upload) oben.
 
-## <a name="simulators"></a>Simulatoren
+## <a name="simulators"></a> Simulatoren
 
 
 Mit dem Cumulocity Simulator, können alle Aspekte von IoT Geräten simuliert werden:
@@ -549,7 +549,7 @@ Mit dem Cumulocity Simulator, können alle Aspekte von IoT Geräten simuliert we
 * Generieren Sie Meldungen für Messungen, Alarme, Ereignisse und Stammmdaten
 * Simulationsprobleme als Alarme anzeigen
 
-###Was ist ein Simulator?
+### Was ist ein Simulator?
 
 Mit dem Simulator können Sie künstliche Geräte mit gleicher Funktionalität wie angeschlossene Hardware-Geräte erstellen.
 
@@ -559,74 +559,74 @@ Eine Anweisung kann entweder eine Nachricht senden (Messungen, Alarme, Ereigniss
 
 Eine Nachricht wird durch Auswählen einer Vorlage (zB Senden einer Temperatur) und Bereitstellen der Werte für diese Vorlage (23,0 Grad) definiert. Es stehen viele vordefinierte Meldevorlagen stehen zur Verfügung, zB "Messwert erstellen", "Ereignis senden", "Erstellen" und "Abbrechen" eines Alarms oder "Update Betriebszustand". Diese basieren auf statischen MQTT-Vorlagen. Darüber hinaus können benutzerdefinierte Nachrichtenvorlagen mit dem SmartREST-Template-Editor definiert werden.
 
-###Einrichten eines Simulators
+### Einrichten eines Simulators
 
 Um einen Simulator einzurichten geht man zur Navigation im Device Management und wählt Simulatoren und dem Abschnitt Geräte aus.
 
-![New Simulator](/guides/users-guide/newsim.png)
+![New Simulator](/guides/users-guide/newsimde.png)
 
 Simulatoren können hinzugefügt werden, indem Sie auf "Neu" klicken, um eine Karte zu öffnen. Sie können nun wählen, ob Sie einen neuen Simulator definieren oder ein Preset auswählen möchten. Aus diesem Simulator wird der Name des Simulators und bis zu 10 Instanzen ermittelt.
 
-<img src="/guides/users-guide/addsim.png" alt="Add Simulator" style="max-width: 60%">
+<img src="/guides/users-guide/addsimde.png" alt="Add Simulator" style="max-width: 60%">
 
-###Presets
+### Presets
 
 Die andere Möglichkeit ist, einen Simulator aus einem Preset zu erstellen. Derzeit stehen zwei verschiedene Presets zur Verfügung: Ein Preset "Temperaturmessung" und ein Preset "Positionsaktualisierung".
 
-<img src="/guides/users-guide/addtempsim.png" alt="Add Add Temperature Preset" style="max-width: 60%">
+<img src="/guides/users-guide/addtempsimde.png" alt="Add Add Temperature Preset" style="max-width: 60%">
 
-<img src="/guides/users-guide/addpossim.png" alt="Add Position Preset" style="max-width: 60%">
+<img src="/guides/users-guide/addpossimde.png" alt="Add Position Preset" style="max-width: 60%">
 
-![Edit Simulator](/guides/users-guide/editcloneremsim.png)
+![Edit Simulator](/guides/users-guide/editcloneremsimde.png)
 
 Die Anzahl der Instanzen eines Simulators ist auf 10 begrenzt. Vorhandene Simulatoren finden Sie auf dieser Seite. Simulatoren können durch Klicken auf das Zahnrad in der rechten oberen Ecke der Karte bearbeitet, geklont oder entfernt werden. Das öffnet ein Dropdown-Menü mit diesen Optionen.
 
-###Hinzufügen von Anweisungen für den Simulator
+### Hinzufügen von Anweisungen für den Simulator
 
 Nach dem Einrichten eines Simulators können Sie Anweisungen hinzufügen, was Ihr Simulator tun soll. Anweisungen sind einzelne Arbeitsschritte, die zu einer Wiedergabeliste hinzugefügt werden. Der Simulator wird diese Liste durcharbeiten. Um ein Beispiel zu sehen, klicken Sie auf den Temperatursimulator.
 
-![Add Instructions](/guides/users-guide/addinstructions.png)
+![Add Instructions](/guides/users-guide/addinstructionsde.png)
 
 Die folgende Übersicht erscheint:
 
-![Add Instructions Step 2](/guides/users-guide/addinstructions2.png)
+![Add Instructions Step 2](/guides/users-guide/addinstructions2de.png)
 
 Innerhalb dieses Presets sind bereits Musteranleitungen enthalten. Sie können 2 Schritte identifizieren. "Messung erstellen" und "Sleep".
 
-###Details der Anweisungen
+### Details der Anweisungen
 
 **Fragmente:**
 
 Die Messanweisung bezieht sich auf ein Fragment. Dieses ist das unten gezeigte Beispiel. Fragmente werden verwendet, um die Fähigkeiten eines verwalteten Objekts zu identifizieren. Mehr Informationen über Fragmente finden Sie hier:
 [Sensor Library ](https://www.cumulocity.com/guides/reference/sensor-library/) 
 
-![Add Instructions Step 3](/guides/users-guide/addinstructions3.png)
+![Add Instructions Step 3](/guides/users-guide/addinstructions3de.png)
 
 **Smart Rest Vorlagen**
 
 Andere Optionen zeigen eine Auswahl von Smart Rest-Vorlagen. Die Smart Rest Vorlagen werden im Navigator unter dem Eintrag "Gerätetypen"> "SmartREST temSmart Rest Vorlagenplatten" erstellt. Diese Vorlagen sind eine Antwortvorlage, die eine Liste von Werten erzeugt, die eine Operation als Endergebnis beschreiben. Die unten aufgeführte Smart Rest-Vorlage erstellt einen Warnalarm mit Text zu einem bestimmten Zeitpunkt.
 Spezifische Informationen und Muster einer Vielzahl von Vorlagen sind erhältlich bei der [MQTT Developer's Guide](https://www.cumulocity.com/guides/mqtt/introduction/). 
 
-![Rest Template](/guides/users-guide/resttemplate.png)
+![Rest Template](/guides/users-guide/resttemplatede.png)
 
-![Add Instructions Step 4](/guides/users-guide/addinstructions4.png)
+![Add Instructions Step 4](/guides/users-guide/addinstructions4de.png)
 
 Die Anweisung "Sleep" erfordert einen Wert für die Dauer in Sekunden. Das Bedienfeld auf der rechten Bildschirmhälfte ändert sich entsprechend der Art der Anweisungen, die Sie wählen.
 
-###Hinzufügen von Operationen zu einem Simulator
+### Hinzufügen von Operationen zu einem Simulator
 
 Direkt unter der Registerkarte "Anweisungen" finden Sie die unterstützten Operationen. In diesem Menü können Sie bestimmte Funktionen wie Konfiguration oder Software / Firmware-Update aktivieren oder deaktivieren.
 
-![Operations Off](/guides/users-guide/supop1.png)
+![Operations Off](/guides/users-guide/supop1de.png)
 
-![Operations On](/guides/users-guide/supop2.png)
+![Operations On](/guides/users-guide/supop2de.png)
 
 Einige Operationen sind aktiviert. Sie können auch benutzerdefinierte Vorgänge mithilfe der Schaltfläche zum Hinzufügen einer benutzerdefinierten Operation festlegen.
 
-###Alarme (innerhalb der Simulator Funktion)
+### Alarme (innerhalb der Simulator Funktion)
 
 Der letzte Tab im Simulator menu sind Alarme.
 
-![Simulator Alarm](/guides/users-guide/simalarm.png)
+![Simulator Alarm](/guides/users-guide/simalarmde.png)
 
 Dieses sind nicht etwa die Alarme, die durch die simulierten Geräte erzeugt werden, sondern diese Alarme beziehen sich auf den Simulator selber. Wenn der Simulator nicht richtig arbeitet, dann wird das hier sichtbar.

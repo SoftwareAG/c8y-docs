@@ -208,7 +208,7 @@ Um einen Gerätetyp zu importieren, klicken Sie auf den Link "Importieren". Dadu
 
 ## <a name="scadasvg"></a>Vorbereitung der SVG-Dateien für das SCADA-Widget
 
-Die SCADA-Widgets überprüfen hochgeladene SVG-Dateien auf Platzhalter. Diese Platzhalter werden durch tatsächliche Werte von Geräten ersetzt. Platzhalter haben eine bestimmte Syntax und können überall in der SVG-Datei verwendet werden. Um einen Platzhalter hinzuzufügen, geben Sie den Namen des Platzhalters in doppelte geschweifte Klammern mit Ihrer Entwurfsanwendung oder einem Texteditor ein. Dies ist ein Beispiel für ein Textelement, das einen Platzhalter "batteryValue" enthält [Beispiel SVG file](/guides/users-guide/scadademo.svg):
+Die SCADA-Widgets überprüfen hochgeladene SVG-Dateien auf Platzhalter. Diese Platzhalter werden durch tatsächliche Werte von Geräten ersetzt. Platzhalter haben eine bestimmte Syntax und können überall in der SVG-Datei verwendet werden. Um einen Platzhalter hinzuzufügen, geben Sie den Namen des Platzhalters in doppelte geschweifte Klammern mit Ihrer Entwurfsanwendung oder einem Texteditor ein. 
 
 	<text class="text" xt-anchor="middle" x="100" y="236.982125" width="200" ...>
 		{{batteryValue}}

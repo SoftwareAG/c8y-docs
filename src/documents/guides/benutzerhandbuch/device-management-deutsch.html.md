@@ -132,7 +132,7 @@ Durch Auswahl von "Alle Geräte" können dynamische Gruppen angelegt werden. Um 
 
 Wenn die Gruppe erstellt wird, wird sie als Gruppe der obersten Ebene im Abschnitt "Gruppen" angezeigt. Sie können Filterkriterien anpassen, indem Sie einfach die Registerkarte "Kindassets" auswählen und die Filtereinstellungen ändern.
 
-<img src="/guides/users-guide/smartgroup2.png" alt="Adding top-level groups" style="max-width: 100%">
+<img src="/guides/users-guide/smartgroup2de.png" alt="Adding top-level groups" style="max-width: 100%">
 
 Benutzer können auch dynamische Gruppen aus den Gruppen der obersten Ebene löschen. Dieser Vorgang ist irreversibel.
 
@@ -414,7 +414,7 @@ Die Serviceüberwachung zeigt an, ob das Gerät in Betrieb ist. Zum Beispiel ist
 
 Cumulocity ist der Auffassung, dass ein Gerät in Betrieb ist, solange kein kritischer, nicht aufgelöster Alarm für die Maschine vorhanden ist. Dies wird als Zeitanteil angezeigt, wenn ein solcher Alarm vorliegt. Wenn eine Maschine keine kritischen Alarme irgendwann während eines Zeitraums hatte, war sie 100% im Service. Wenn die Hälfte der Zeit gab es einige kritische, ungelöste Alarm war die Maschine 50% im Service.
 
-![Service monitoring](/guides/users-guide/servicemonitoring.png)
+![Service monitoring](/guides/users-guide/servicemonitoringde.png)
 
 Während ein Gerät offline ist, nimmt Cumulocity standardmäßig an, dass das Gerät weiterhin im Dienst bleibt, wie es war, bevor es die Verbindung verloren hatte. Wenn es zuvor nicht in Betrieb war, geht Cumulocity davon aus, dass das Gerät während eines Verbindungsausfalls außer Betrieb ist.
 

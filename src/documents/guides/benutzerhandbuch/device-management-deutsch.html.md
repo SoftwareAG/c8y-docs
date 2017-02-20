@@ -507,13 +507,13 @@ Cumulocity bietet einen zentralen Platz für die Erfassung von Referenz-Firmware
 
 Um Firmware zu aktualisieren oder Softwarepakete auf einem bestimmten Gerät hinzuzufügen, müssen Sie drei Schritte durchführen:
 
-1. Firmware und Software Files hochladen: [Administration application](/guides/users-guide/administration#files). (Dieser Schritt ist optional und nicht zwingend erforderlich, da der Hersteller die Firmware auch online anbieten kann.)
+1. Firmware und Software Files hochladen: [Administration Anwendung](/guides/benutzerhandbuch/administration-deutsch#files). (Dieser Schritt ist optional und nicht zwingend erforderlich, da der Hersteller die Firmware auch online anbieten kann.)
 
 2. Wählen und speichern Sie die Dateien im "Firmware-Repository". Um ein neues Firmware-Image zum Repository hinzuzufügen, besuchen Sie das "Firmware-Repository" und klicken Sie auf die Schaltfläche "Firmware hinzufügen". Geben Sie dann den Namen der Firmware, die Version und die URL ein, von der das Gerät die Firmware herunterladen kann. Ähnliches verwenden Sie das "Software-Repository", um Referenz-Softwarepakete hinzuzufügen.
 
-3. Installieren Sie die Firmware auf einem bestimmten Gerät. Zuerst navigieren Sie zu "Alle Geräte", wählen Sie das gewünschte Gerät, gehen Sie dann auf "Software" auf Gerätedetails und klicken Sie auf "Firmware installieren". Die Installation von Softwarepaketen ist sehr ähnlich. Sie folgen den gleichen Schritten wie zuvor erwähnt, aber Sie wählen stattdessen "Software installieren".(Mehr hierzu ["Software"](/guides/users-guide/device-management#software).)
+3. Installieren Sie die Firmware auf einem bestimmten Gerät. Zuerst navigieren Sie zu "Alle Geräte", wählen Sie das gewünschte Gerät, gehen Sie dann auf "Software" auf Gerätedetails und klicken Sie auf "Firmware installieren". Die Installation von Softwarepaketen ist sehr ähnlich. Sie folgen den gleichen Schritten wie zuvor erwähnt, aber Sie wählen stattdessen "Software installieren".(Mehr hierzu ["Software"](/guides/benutzerhandbuch/device-management-deutsch#software-repo).)
 
-> Sie müssen die Administrationsanwendung aufrufen, um Binärdateien in Cumulocity zu speichern. [Administration application](/guides/users-guide/administration#files).
+> Sie müssen die Administrationsanwendung aufrufen, um Binärdateien in Cumulocity zu speichern. [Administration application](/guides/benutzerhandbuch/administration-deutsch#files).
 
 Cumulocity bietet Benutzern die Möglichkeit, Firmware oder Softwareupdates für mehrere Geräte gleichzeitig auszuführen. Um dies zu tun:
 

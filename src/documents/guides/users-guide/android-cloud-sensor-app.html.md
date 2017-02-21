@@ -22,7 +22,7 @@ Clicking on “Add phone” will start a wizard showing the QR code for download
 
 Scan this QR code with any scanning application you have on your smartphone or install a QR scanner available. Scan the code and download the app. The Android Cloud Sensor App will start after being downloaded.
 
-## Registering the Cloud Sensor App to your Cumulocity IoT Sensor Demo tenant
+## Registering the Cloud Sensor App to your Cumulocity IoT Sensor tenant
 
 To register a smartphone as a new device in your tenant you have two options:
 
@@ -53,7 +53,7 @@ Next, select the instance where your IoT Sensor tenant is hosted like cumulocity
 
 ![Select Instance](/guides/users-guide/selectinstance.png)
 
-Click the “Register” button to start registration. Afterward, scroll to the bottom of a main Cloud Sensor App screen, there will be the device id which needs to be entered during Device Registration in the Cumulocity IoT Sensor Demo tenant:
+Click the “Register” button to start registration. Afterward, scroll to the bottom of a main Cloud Sensor App screen, there will be the device id which needs to be entered during Device Registration in the Cumulocity IoT Sensor tenant:
 
 ![Get device Id](/guides/users-guide/getdeviceid.png)
 

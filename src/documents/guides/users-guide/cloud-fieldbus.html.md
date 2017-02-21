@@ -16,11 +16,13 @@ It is supported out of the box by the following terminals:
 
 * [Pssystec Smartbox-Modbus](/guides/devices/smartbox-modbus) for Modbus/RTU.
 * [Netcomm Wireless NTC-6200](/guides/devices/netcommwireless) for Modbus/TCP and Modbus/RTU.
-* [Cinterion Java modules](/guides/devices/cinterion) for Modbus/RTU and CAN bus
+* [Cinterion Java modules](/guides/devices/cinterion) for Modbus/RTU and CAN bus.
+
+OPC UA support is implemented in Java and runs on any system running JRE7 (Java Runtime Environment 7) or newer.
 
 > If you want to support Cloud Fieldbus with your terminal, please contact info@cumulocity.com for more information.
 
-## <a name="connect"></a>Connecting Modbus devices
+## <a name="connect"></a>Connecting Fieldbus devices
 
 For the following instructions, we assume you have a Cloud Fieldbus terminal available and it is registered and visible in your Cumulocity tenant. To register a terminal with Cumulocity, follow the instructions provided with the terminal.
 
@@ -46,6 +48,7 @@ After the progress indicator vanishes, a new child device has been added to the 
 
 ### Connecting Modbus/TCP devices
 
+To connect a Modbus/TCP device:
 
 * Make sure that the Modbus/TCP device is connected to the terminal, e.g., directly through an Ethernet cable or through a switch. If you are using a Modbus gateway, configure the gateway in a way it can communicate with the Modbus devices behind the gateway.
 * Check the network settings of the device using the instructions provided with the device.
@@ -77,6 +80,28 @@ To connect a CAN device:
 After the progress indicator vanishes, a new child device has been added to the terminal and can now be managed. You can click on the name of the device in the table to navigate to the device. If you have not yet added Fieldbus devices to the terminal, you may have to reload your browser window to make the "Child Devices" tab visible.
 
 ![Add CAN device](/guides/users-guide/newcandevice.png)
+
+### <a name="connect-opcua"></a>Connecting OPC UA servers
+
+To connect an OPC UA server to Cumulocity, you need a gateway or industrial PC running the Cumulocity OPC UA agent. 
+
+* Make sure that the OPC UA server is connected to the gateway or PC, e.g., directly through an Ethernet cable or through a switch. 
+* Check the network settings of the gateway and make sure that the OPC UA server is reachable from the gateway.
+* Navigate to the gateway in the platform and click on the "OPCUA" tab.
+* Enter the URL of the OPC UA server as seen from the gateway into the field "URL".
+* Set the username and password to access the OPC UA server.
+* Change the transmit rate and the polling rate according to your requirements. The transmit rate is the frequency at which measurements are sent to Cumulocity. The polling rate is the frequency at which the OPC UA server polls for changes. Note that not all OPC UA servers support setting a polling rate. In such cases, the OPC UA server sends data usually whenever it changes.
+* Click "Save changes" if you made changes. 
+* To start communication between the gateway and the OPC UA server, click "Add OPCUA device". An OPC UA server may host many devices as part of its object model.
+* Enter a name for the OPC UA device.
+* Enter the absolute "browse path" of the OPC UA device. The browse path of the device is configured on the OPC UA server and represents the "root" of the OPC UA device in the OPC UA server object model.
+* Select the type of the child device from the drop-down box. To add new device types, see "[Configuring Fieldbus device types](#configure)" below.
+* Click "Add".
+
+Cumulocity will now send a notification to the OPC UA agent that a new device is ready to be managed. This may take a few seconds. 
+After the progress indicator vanishes, a new child device has been added to the gateway and can now be managed. You can click on the name of the device in the table to navigate to the device.
+
+![Add OPCUA device](/guides/users-guide/newopcuadevice.png)
 
 ## <a name="manage"></a>Managing Fieldbus devices
 
@@ -199,6 +224,21 @@ CAN device types can be configured in a very similar manner as Modbus device typ
 * Conversion of values is extended by an offset parameter. This will be added or substracted from the register value, depending on its sign. The offset calculation is done after applying multiplier and divisor, and before performing decimal shifting.
 
 ![Add CAN register](/guides/users-guide/addregisterCAN.png)
+
+### <a name="configureOPCUA"></a>Configuring OPC UA data
+
+Again, OPC UA device types can be configured in a very similar manner as Modbus device types. For more information on configuring Modbus device types, see [Configuring Modbus data](#configureModbus) above. 
+
+The main difference is how data is addressed. OPC UA servers provide a hierarchical object model of connected nodes. The nodes are addressed by the browse path from the root of the object model to the respective node. 
+
+To simplify configuration, the browse path is split into two parts in Cloud Fieldbus: 
+
+ * From the root to the OPC UA device (configured [above](#connect-opcua)).
+ * From the OPC UA device to a node with data of that device.
+
+When you click "Add", enter the second part of the path into the "browse path" field as shown in the image below. Note that the OPC UA agent currently only supports nodes of type "Variable". The description of the paths should be either provided with your OPC UA server or with your devices.
+
+![Add OPCUA register](/guides/users-guide/addregisterOPCUA.png)
 
 ## <a name="import"></a>Importing and exporting device types
 

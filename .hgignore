@@ -2,6 +2,7 @@
 node_modules
 out/
 .docpad.db
+.idea/
 syntax: glob
 codekit-config.json
 npm-debug.log

@@ -16,7 +16,9 @@ It is supported out of the box by the following terminals:
 
 * [Pssystec Smartbox-Modbus](/guides/devices/smartbox-modbus) for Modbus/RTU.
 * [Netcomm Wireless NTC-6200](/guides/devices/netcommwireless) for Modbus/TCP and Modbus/RTU.
-* [Cinterion Java modules](/guides/devices/cinterion) for Modbus/RTU and CAN bus
+* [Cinterion Java modules](/guides/devices/cinterion) for Modbus/RTU and CAN bus.
+
+OPC UA support is implemented in Java and runs on any system running JRE7 (Java Runtime Environment 7) or newer.
 
 > If you want to support Cloud Fieldbus with your terminal, please contact info@cumulocity.com for more information.
 
@@ -46,6 +48,7 @@ After the progress indicator vanishes, a new child device has been added to the 
 
 ### Connecting Modbus/TCP devices
 
+To connect a Modbus/TCP device:
 
 * Make sure that the Modbus/TCP device is connected to the terminal, e.g., directly through an Ethernet cable or through a switch. If you are using a Modbus gateway, configure the gateway in a way it can communicate with the Modbus devices behind the gateway.
 * Check the network settings of the device using the instructions provided with the device.
@@ -78,38 +81,24 @@ After the progress indicator vanishes, a new child device has been added to the 
 
 ![Add CAN device](/guides/users-guide/newcandevice.png)
 
-### Connecting OPC-UA device
+### <a name="connect-opcua"></a>Connecting OPC UA servers
 
-OPC-UA is the interoperability standard for the secure and reliable exchange of data in the industrial automation space and in other industries. 
-It is platform independent and ensures the seamless flow of information among devices from multiple vendors.
+To connect an OPC UA server to Cumulocity, you need a gateway or industrial PC running the Cumulocity OPC UA agent. 
 
-For connecting OPC-UA device to Cumulocity platform you need the actual OPC-UA device and OPC-UA gateway application provided by Cumulocity.
-The OPC-UA gateway is device-side agent that integrates Cloud Fieldbus model to OPC-UA data model.
-The only configuration of gateway is its identifier ("Device ID") which is used in registration process. 
-By default it is "opcua" and it can be changed in gateway's configuration file. 
-The gateway is written in Java and needs to be running on machine with installed Java Runtime Environment 7.
-Along with OPC-UA device there will be provided all necessary connection information like used protocol, URL and credentials.
-
-To configure a OPC-UA gateway:
-* Make sure that OPC-UA gateway is set in a way it can communicate with the OPC-UA device behind the gateway and with Cumulocity platform.
-* Make sure that OPC-UA gateway is registered in the platform.
+* Make sure that the OPC UA server is connected to the gateway or PC, e.g., directly through an Ethernet cable or through a switch. 
+* Check the network settings of the gateway and make sure that the OPC UA server is reachable from the gateway.
 * Navigate to the gateway in the platform and click on the "OPCUA" tab.
-* Set the URL of OPC-UA device to allow OPC-UA gateway to connect to it.
-* Set username and password that are provided with device.
-* Change the transmit rate and the polling rate according to your requirements. The polling rate is the frequency at which the OPC-UA devices are polled for changes. 
-The transmit rate is the frequency at which measurements are sent to Cumulocity. Note that not all OPC-UA devices supports polling rate.
+* Enter the URL of the OPC UA server as seen from the gateway into the field "URL".
+* Set the username and password to access the OPC UA server.
+* Change the transmit rate and the polling rate according to your requirements. The transmit rate is the frequency at which measurements are sent to Cumulocity. The polling rate is the frequency at which the OPC UA server polls for changes. Note that not all OPC UA servers support setting a polling rate. In such cases, the OPC UA server sends data usually whenever it changes.
 * Click "Save changes" if you made changes. 
-
-To configure a OPC-UA child device
-* Navigate to the gateway in Cumulocity and click on the "OPCUA" tab.
-* To start communication between the gateway and the OPC-UA device, click "Add OPCUA device".
-* Enter a name for child device
-* Enter absolute "browse path" of the child device. Browse path is unique "address" of object in OPC-UA data model which contains meaningful data.
-Description of data model should be provided together with device.
+* To start communication between the gateway and the OPC UA server, click "Add OPCUA device". An OPC UA server may host many devices as part of its object model.
+* Enter a name for the OPC UA device.
+* Enter the absolute "browse path" of the OPC UA device. The browse path of the device is configured on the OPC UA server and represents the "root" of the OPC UA device in the OPC UA server object model.
 * Select the type of the child device from the drop-down box. To add new device types, see "[Configuring Fieldbus device types](#configure)" below.
 * Click "Add".
 
-Cumulocity will now send a notification to the OPC-UA gateway that a new device is ready to be managed. This may take a few seconds. 
+Cumulocity will now send a notification to the OPC UA agent that a new device is ready to be managed. This may take a few seconds. 
 After the progress indicator vanishes, a new child device has been added to the gateway and can now be managed. You can click on the name of the device in the table to navigate to the device.
 
 ![Add OPCUA device](/guides/users-guide/newopcuadevice.png)
@@ -236,24 +225,18 @@ CAN device types can be configured in a very similar manner as Modbus device typ
 
 ![Add CAN register](/guides/users-guide/addregisterCAN.png)
 
-### <a name="configureOPCUA"></a>Configuring OPC-UA bus data
+### <a name="configureOPCUA"></a>Configuring OPC UA data
 
-Click the "Add" link next to "Variables" to add a variable definition. This will open a dialog to specify the variable. Enter the following information:
+Again, OPC UA device types can be configured in a very similar manner as Modbus device types. For more information on configuring Modbus device types, see [Configuring Modbus data](#configureModbus) above. 
 
-* Enter the name of the variable as shown in the user interface.
-* Optionally, enter the display category to structure your data in widgets.
-* Enter the "browse path" of variable in OPC-UA device nodes hierarchy. Browse path is unique "address" of object in OPC-UA data model which contains meaningful data. 
-Description of data model should be provided together with device.
-* To scale the integer value read from the Fieldbus device, you can enter a multiplier, a divisor and a number of decimal places. The register value is first multiplied by the "multiplier", then divided by the "divisor" and then shifted by the number of decimal places.
-* Indicate the unit of the data, for example, "C" for temperature values.
-* Check "Signed" if the register value should be interpreted as signed number.
-* Check "Enumeration type" if the register value should be interpreted as enumeration of discrete values. If "Enumeration type" is checked, you can click "Add value" to add mappings from a discrete value to a text to be shown for this value in the widget. Click "Remove value" to remove the mapping.
-* Check "Show status" if you want to show the current value of the register in the Fieldbus Device Widget.
-* Check "Update status" if you want to be able to edit the register from the Fieldbus Device Widget. If "Update status" is checked, two additional fields "Minimum" and "Maximum" appear. Using these fields, you can constrain numerical values entered in the widget.
-* Click "Send measurement" if you want the values of the register to be regularly collected according to the transmit interval (see [above](#connect)). In this case, add a measurement type and a series to be used. For each measurement type, a chart is created in the "Measurements" tab. For each series, a graph is created in the chart. The unit is used for labeling the measurement in the chart and in the Fieldbus Device Widget.
-* Check "Raise alarm" if an alarm should be raised when the register is not zero in the device measurement. In this case, you can specify the type of the alarm raised, its text and its severity. Note that there can be only one alarm active of a particular type for a particular device.
-* Check "Send event" if an event should be generated each time the value of the register changes. If "Send event" is checked, you can specify the type of event and the text in the event.
-* Click "OK" to finish editing the variable.
+The main difference is how data is addressed. OPC UA servers provide a hierarchical object model of connected nodes. The nodes are addressed by the browse path from the root of the object model to the respective node. 
+
+To simplify configuration, the browse path is split into two parts in Cloud Fieldbus: 
+
+ * From the root to the OPC UA device (configured [above](#connect-opcua)).
+ * From the OPC UA device to a node with data of that device.
+
+When you click "Add", enter the second part of the path into the "browse path" field as shown in the image below. Note that the OPC UA agent currently only supports nodes of type "Variable". The description of the paths should be either provided with your OPC UA server or with your devices.
 
 ![Add OPCUA register](/guides/users-guide/addregisterOPCUA.png)
 

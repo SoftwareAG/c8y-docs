@@ -20,7 +20,7 @@ It is supported out of the box by the following terminals:
 
 > If you want to support Cloud Fieldbus with your terminal, please contact info@cumulocity.com for more information.
 
-## <a name="connect"></a>Connecting Modbus devices
+## <a name="connect"></a>Connecting Fieldbus devices
 
 For the following instructions, we assume you have a Cloud Fieldbus terminal available and it is registered and visible in your Cumulocity tenant. To register a terminal with Cumulocity, follow the instructions provided with the terminal.
 
@@ -77,6 +77,26 @@ To connect a CAN device:
 After the progress indicator vanishes, a new child device has been added to the terminal and can now be managed. You can click on the name of the device in the table to navigate to the device. If you have not yet added Fieldbus devices to the terminal, you may have to reload your browser window to make the "Child Devices" tab visible.
 
 ![Add CAN device](/guides/users-guide/newcandevice.png)
+
+### Connecting OPC-UA device
+
+To connect a OPCUA device:
+* Make sure that OPCUA gateway is set up properly in a way it can communicate with the OPCUA devices behind the gateway.
+* Navigate to the terminal in Cumulocity and click on the "OPCUA" tab.
+* Change the url of OPCUA device.
+* Set username and password if device supports it.
+* Change the transmit rate and the polling rate according to your requirements. The polling rate is the frequency at which the OPCUA devices are polled for changes. The transmit rate is the frequency at which measurements are sent to Cumulocity. Note that not all OPCUA devices supports polling rate.
+* Click "Save changes" if you made changes. 
+* To start communication between the terminal and the CAN device, click "Add OPCUA device".
+* Enter a name for the device
+* Enter browse path in OPCUA node hierarchy which reflects root node of the device.
+* Select the type of the device from the drop-down box. To add new device types, see "[Configuring Fieldbus device types](#configure)" below.
+* Click "Add".
+
+Cumulocity will now send a notification to the Fieldbus terminal that a new device is ready to be managed. This may take a few seconds. 
+After the progress indicator vanishes, a new child device has been added to the terminal and can now be managed. You can click on the name of the device in the table to navigate to the device.
+
+![Add OPCUA device](/guides/users-guide/newopcuadevice.png)
 
 ## <a name="manage"></a>Managing Fieldbus devices
 
@@ -199,6 +219,26 @@ CAN device types can be configured in a very similar manner as Modbus device typ
 * Conversion of values is extended by an offset parameter. This will be added or substracted from the register value, depending on its sign. The offset calculation is done after applying multiplier and divisor, and before performing decimal shifting.
 
 ![Add CAN register](/guides/users-guide/addregisterCAN.png)
+
+### <a name="configureOPCUA"></a>Configuring OPC-UA bus data
+
+Click the "Add" link next to "Variables" to add a variable definition. This will open a dialog to specify the variable. Enter the following information:
+
+* Enter the name of the variable as shown in the user interface.
+* Optionally, enter the display category to structure your data in widgets.
+* Enter the browse path of variable in OPCUA device nodes hierarchy.
+* To scale the integer value read from the Fieldbus device, you can enter a multiplier, a divisor and a number of decimal places. The register value is first multiplied by the "multiplier", then divided by the "divisor" and then shifted by the number of decimal places.
+* Indicate the unit of the data, for example, "C" for temperature values.
+* Check "Signed" if the register value should be interpreted as signed number.
+* Check "Enumeration type" if the register value should be interpreted as enumeration of discrete values. If "Enumeration type" is checked, you can click "Add value" to add mappings from a discrete value to a text to be shown for this value in the widget. Click "Remove value" to remove the mapping.
+* Check "Show status" if you want to show the current value of the register in the Fieldbus Device Widget.
+* Check "Update status" if you want to be able to edit the register from the Fieldbus Device Widget. If "Update status" is checked, two additional fields "Minimum" and "Maximum" appear. Using these fields, you can constrain numerical values entered in the widget.
+* Click "Send measurement" if you want the values of the register to be regularly collected according to the transmit interval (see [above](#connect)). In this case, add a measurement type and a series to be used. For each measurement type, a chart is created in the "Measurements" tab. For each series, a graph is created in the chart. The unit is used for labeling the measurement in the chart and in the Fieldbus Device Widget.
+* Check "Raise alarm" if an alarm should be raised when the register is not zero in the device measurement. In this case, you can specify the type of the alarm raised, its text and its severity. Note that there can be only one alarm active of a particular type for a particular device.
+* Check "Send event" if an event should be generated each time the value of the register changes. If "Send event" is checked, you can specify the type of event and the text in the event.
+* Click "OK" to finish editing the variable.
+
+![Add OPCUA register](/guides/users-guide/addregisterOPCUA.png)
 
 ## <a name="import"></a>Importing and exporting device types
 

@@ -80,21 +80,37 @@ After the progress indicator vanishes, a new child device has been added to the 
 
 ### Connecting OPC-UA device
 
-To connect a OPCUA device:
-* Make sure that OPCUA gateway is set up properly in a way it can communicate with the OPCUA devices behind the gateway.
-* Navigate to the terminal in Cumulocity and click on the "OPCUA" tab.
-* Change the url of OPCUA device.
-* Set username and password if device supports it.
-* Change the transmit rate and the polling rate according to your requirements. The polling rate is the frequency at which the OPCUA devices are polled for changes. The transmit rate is the frequency at which measurements are sent to Cumulocity. Note that not all OPCUA devices supports polling rate.
+OPC-UA is the interoperability standard for the secure and reliable exchange of data in the industrial automation space and in other industries. 
+It is platform independent and ensures the seamless flow of information among devices from multiple vendors.
+
+For connecting OPC-UA device to Cumulocity platform you need the actual OPC-UA device and OPC-UA gateway application provided by Cumulocity.
+The OPC-UA gateway is device-side agent that integrates Cloud Fieldbus model to OPC-UA data model.
+The only configuration of gateway is its identifier ("Device ID") which is used in registration process. 
+By default it is "opcua" and it can be changed in gateway's configuration file. 
+The gateway is written in Java and needs to be running on machine with installed Java Runtime Environment 7.
+Along with OPC-UA device there will be provided all necessary connection information like used protocol, URL and credentials.
+
+To configure a OPC-UA gateway:
+* Make sure that OPC-UA gateway is set in a way it can communicate with the OPC-UA device behind the gateway and with Cumulocity platform.
+* Make sure that OPC-UA gateway is registered in the platform.
+* Navigate to the gateway in the platform and click on the "OPCUA" tab.
+* Set the URL of OPC-UA device to allow OPC-UA gateway to connect to it.
+* Set username and password that are provided with device.
+* Change the transmit rate and the polling rate according to your requirements. The polling rate is the frequency at which the OPC-UA devices are polled for changes. 
+The transmit rate is the frequency at which measurements are sent to Cumulocity. Note that not all OPC-UA devices supports polling rate.
 * Click "Save changes" if you made changes. 
-* To start communication between the terminal and the CAN device, click "Add OPCUA device".
-* Enter a name for the device
-* Enter browse path in OPCUA node hierarchy which reflects root node of the device.
-* Select the type of the device from the drop-down box. To add new device types, see "[Configuring Fieldbus device types](#configure)" below.
+
+To configure a OPC-UA child device
+* Navigate to the gateway in Cumulocity and click on the "OPCUA" tab.
+* To start communication between the gateway and the OPC-UA device, click "Add OPCUA device".
+* Enter a name for child device
+* Enter absolute "browse path" of the child device. Browse path is unique "address" of object in OPC-UA data model which contains meaningful data.
+Description of data model should be provided together with device.
+* Select the type of the child device from the drop-down box. To add new device types, see "[Configuring Fieldbus device types](#configure)" below.
 * Click "Add".
 
-Cumulocity will now send a notification to the Fieldbus terminal that a new device is ready to be managed. This may take a few seconds. 
-After the progress indicator vanishes, a new child device has been added to the terminal and can now be managed. You can click on the name of the device in the table to navigate to the device.
+Cumulocity will now send a notification to the OPC-UA gateway that a new device is ready to be managed. This may take a few seconds. 
+After the progress indicator vanishes, a new child device has been added to the gateway and can now be managed. You can click on the name of the device in the table to navigate to the device.
 
 ![Add OPCUA device](/guides/users-guide/newopcuadevice.png)
 
@@ -226,7 +242,8 @@ Click the "Add" link next to "Variables" to add a variable definition. This will
 
 * Enter the name of the variable as shown in the user interface.
 * Optionally, enter the display category to structure your data in widgets.
-* Enter the browse path of variable in OPCUA device nodes hierarchy.
+* Enter the "browse path" of variable in OPC-UA device nodes hierarchy. Browse path is unique "address" of object in OPC-UA data model which contains meaningful data. 
+Description of data model should be provided together with device.
 * To scale the integer value read from the Fieldbus device, you can enter a multiplier, a divisor and a number of decimal places. The register value is first multiplied by the "multiplier", then divided by the "divisor" and then shifted by the number of decimal places.
 * Indicate the unit of the data, for example, "C" for temperature values.
 * Check "Signed" if the register value should be interpreted as signed number.

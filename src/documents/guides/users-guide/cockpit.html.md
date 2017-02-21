@@ -113,11 +113,11 @@ The welcome page shows the following sections:
 
 ### Hiding the Welcome page
 
-To do so, click "Don't show on startup" on the top right.
+To do so, click "Don't use as start page" on the top right.
 
 ### Restore Welcome page as default
 
-To restore the welcome page, select "Welcome" in the navigator on the top left. Then deselect “Don't show on startup”.
+To restore the welcome page, select "Welcome" in the navigator on the top left. Then deselect "Don't use as start page".
 
 ## <a name="home"></a>Home Dashboard
 

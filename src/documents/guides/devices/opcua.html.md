@@ -14,19 +14,19 @@ There is number of implementation of OPC-UA Servers provided by other companies 
 
 ## Architecture
 Cumulocity provides OPC-UA agent written in Java which integrates Cloud Fieldbus model and OPC-UA data model.
-The OPC UA Server is connected to a OPC UA agent using OPC UA/SOAP or binary protocol. 
+The OPC UA Server is connected to the OPC UA agent using OPC UA/SOAP or binary protocol. 
 The OPC UA agent finally communicates with the Cumulocity using the REST API.
 
 ## Prerequisites
-OPC-UA agent is written in java is running on industrial PC and required Java Runtime Environment 7 or newer.
+OPC-UA agent is written in java and needs to be running on industrial PC and required Java Runtime Environment 7 or newer.
 
 > Note that Java must be in your path variable
 
 ## Configuration
 ### Configuration of OPC-UA Server
-OPC-UA is specification owned by OPC Foundation, actual OPC-UA Servers are implemented by other companies and configuration is specific to implementation. 
+OPC-UA is specification owned by OPC Foundation, actual OPC-UA Servers are implemented by other companies and configuration is specific to the implementation. 
 You need to follow instruction that is provided along with OPC-UA Server. 
-Instruction have to provide URL of the server and credentials which we will need to configure OPC-UA agent.
+Instruction have to provide URL of the server and credentials which will be needed to configure OPC-UA agent.
 
 ### Configuration of OPC-UA Agent
 > Note that all shell commands are for linux
@@ -96,7 +96,8 @@ For rpm installation
     gateway.identifier=opcua
 
 ### Register to Cumulocity
-To register the agent to Cumulocity, follow [Device registration guide](/guides/users-guide/device-management/#device-registration)
+To register the agent to Cumulocity, follow [Device registration guide](/guides/users-guide/device-management/#device-registration) using identifier configured in properties file. 
+If identifier is already used, use unique one.
 
 ### Configure devices
 To configure the agent, follow [Cloud Fieldbus connect guide](/guides/users-guide/cloud-fieldbus/#connect)

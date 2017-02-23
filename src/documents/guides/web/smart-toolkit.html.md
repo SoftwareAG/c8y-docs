@@ -1,14 +1,21 @@
 ---
 order: 70
-title: Web SDK for Angular JS
+title: Web SDK for AngularJS
 layout: default
 ---
 
-## Overview
+## Web SDK for AngularJS Overview
 
-*Smart Apps Toolkit* allows you to create [AngularJS](https://angularjs.org/) components that are connected to Cumulocity ecosystem. With `c8y.sdk`, you can use *AngularJS* services as documented [here](http://resources.cumulocity.com/documentation/jssdk/latest/). In this document, we describe step-by-step how to create a simple *AngularJS* application using *c8y.sdk*. For the basic concepts of Cumulocity applications, please see [Developing applications](/guides/concepts/applications). For reference information, please see the [Plugins reference](/guides/web/reference).
+In the following document you will get an overview on the *Web SDK for AngularJS* which allows you to
 
-The result of this tutorial is available at [https://bitbucket.org/m2m/cumulocity-examples](https://bitbucket.org/m2m/cumulocity-examples) under folder `hello-core-api`. If you wish to run it, either clone the repo or download it from bitbucket and do as follows:
+* create [AngularJS](https://angularjs.org/) components that are connected to Cumulocity ecosystem by making use of *AngularJS* services from `c8y.core` as documented [here](http://resources.cumulocity.com/documentation/jssdk/latest/)
+* implement custom functionalities tailored to your use case
+
+For the basic concepts of Cumulocity applications, please see [Developing applications](/guides/concepts/applications).
+
+## Developing an Application
+
+The following chapter will guide you through the process of building a simple AngularJS application using `c8y.sdk`. The resulting solution is available at [https://bitbucket.org/m2m/cumulocity-examples](https://bitbucket.org/m2m/cumulocity-examples) under folder `hello-core-api`. If you wish to run it, either clone the repo or download it from bitbucket and do as follows:
 
 > Go to `hello-core-api/js/app.js` and find the lines with `c8yCumulocityProvider`. Use `c8yCumulocityProvider.setAppKey` and `c8yCumulocityProvider.setBaseUrl` to set your application key and your *Cumulocity domain*. Then:
 
@@ -28,7 +35,7 @@ You should be familiar with the following technologies:
 * [HTML5](http://www.w3schools.com/html/html5_intro.asp) and [CSS](http://www.w3schools.com/css/css3_intro.asp).
 * [JavaScript](http://www.w3schools.com/js/).
 * [AngularJS](https://angularjs.org/).
-* [Grunt](http://gruntjs.com/).'
+* [Grunt](http://gruntjs.com/).
 * [kriskowal/q](https://github.com/kriskowal/q), an informal introduction can be found at [www.promisejs.org](https://www.promisejs.org/).
 
 You will need the following prerequisites for being able to develop plugins and to execute the examples:
@@ -100,24 +107,24 @@ Create the following folder structure for the project:
 ```
 hello-core-api
 .
-├── Gruntfile.js
-├── bower.json
 ├── css
-├── index.html
 ├── js
 │   ├── alarms_ctrl.js
 │   ├── app.js
 │   ├── login_ctrl.js
 │   ├── main_ctrl.js
 │   └── section_dir.js
+├── sections
+│   ├── alarms.html
+│   ├── devices.html
+│   └── events.html
+├── bower.json
+├── Gruntfile.js
+├── index.html
 ├── login.html
 ├── main.html
-├── package.json
-├── section.html
-└── sections
-    ├── alarms.html
-    ├── devices.html
-    └── events.html
+└── package.json
+
 ```
 Copy `css` files from [the example project](https://bitbucket.org/m2m/cumulocity-examples) under folder `hello-core-api/css`.
 
@@ -129,7 +136,7 @@ Copy the following into `bower.json`:
   "name": "hello-core-api",
   "dependencies": {
     "bootstrap": "~3.3.5",
-    "angular-route": "1.2.20",
+    "angular-route": "1.5.8",
     "cumulocity-clients-javascript": "latest"
   }
 }
@@ -267,17 +274,23 @@ Let's create a login screen. `c8y.core` won't work without tenant,username and p
 ```js
 angular.module('helloCoreApi').controller('LoginCtrl', [
   '$location',
+  '$rootScope',
   'c8yUser',
   LoginCtrl
 ]);
 
 function LoginCtrl(
   $location,
+  $rootScope,
   c8yUser
 ) {
+
   c8yUser.current().then(function () {
     $location.path('/');
+    $rootScope.c8y.user = c8yUser;
   });
+  
+  this.credentials = {};
   this.onSuccess = function () {
     $location.path('/');
   };
@@ -338,22 +351,27 @@ angular.module('helloCoreApi').controller('MainCtrl', [
   '$location',
   '$routeParams',
   'c8yUser',
+  'c8yAuth',
    MainCtrl
 ]);
 
 function MainCtrl(
   $location,
   $routeParams,
+  c8yAuth,
   c8yUser
 ) {
-  c8yUser.current().catch(function () {
-    $location.path('/login');
+
+  c8yAuth.initializing.then(function() {
+    if(c8yUser.current().$$state.status != 1) {
+      $location.path('/login');
+    }
   });
 
   if (!$routeParams.section) {
     $location.path('/devices');
   }
-
+    
   this.currentSection = $routeParams.section;
   this.sections = {
     Devices: 'devices',
@@ -367,7 +385,7 @@ function MainCtrl(
   };
 }
 ```
-Similar to what we have done in login, we redirect to login screen if current user promise fails. In addition, we check if `$routeParams.section` exists or not (remember `when('/:section')`?). If it doesn't, then we redirect it to devices screen as an empty content won't make sense. We assign `currentSection` onto `this` to be able to access it from `main.html`. `this.sections` is a key-value dictionary of menu label, section name pairs. 'this.filter' is used to have one synchronized filter object for a whole section. `this.logout` will be used as a logout callback. Now for `main.html`:
+We redirect to login screen if the authorization process is finished and a Promise of the current user is not resolved. In addition, we check if `$routeParams.section` exists or not (remember `when('/:section')`?). If it doesn't, then we redirect it to devices screen as an empty content won't make sense. We assign `currentSection` onto `this` to be able to access it from `main.html`. `this.sections` is a key-value dictionary of menu label, section name pairs. 'this.filter' is used to have one synchronized filter object for a whole section. `this.logout` will be used as a logout callback. Now for `main.html`:
 
 ```html
 <div ng-if="c8y.user">
@@ -597,7 +615,7 @@ If you haven't figured already, there's a 2-level chain of 2-way bindings in thi
 
 ## Conclusion
 
-You have created an AngularJS app from scratch using `c8y.core` API, better known as *Smart Apps Toolkit*. Congratulations!
+You have created an AngularJS app from scratch using `c8y.core` API, better known as *Web SDK for AngularJS*. Congratulations!
 
 ***
 

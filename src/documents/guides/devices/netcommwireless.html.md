@@ -1,6 +1,6 @@
 ---
 title: Netcomm
-layout: default
+layout: devices
 ---
 
 ## Overview

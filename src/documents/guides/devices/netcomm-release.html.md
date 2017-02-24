@@ -1,6 +1,6 @@
 ---
 title: Netcomm Release Notes
-layout: default
+layout: devices
 ---
 
 ## Release notes for NetComm Agent 3.2

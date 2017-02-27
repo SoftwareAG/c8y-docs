@@ -409,7 +409,7 @@ Example :
      Accept application/json-stream
 
 ## Other response formats
-In order to get measurements in format other than JSON or JSON stream you can one of the following supported `Accept` headers:
+In order to get measurements in other formats than JSON you can use one of the following supported `Accept` headers:
 
 - `text/csv`,
 - `application/vnd.ms-excel`.

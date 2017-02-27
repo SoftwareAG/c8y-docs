@@ -408,6 +408,12 @@ Example :
      Authorization: Basic xxxxxxxxxxxxxxxxxxx
      Accept application/json-stream
 
+## Other response formats
+In order to get measurements in format other than JSON or JSON stream you can one of the following supported `Accept` headers:
+
+- `text/csv`,
+- `application/vnd.ms-excel`.
+
 ## Notifications
 
 The measurement notification API permits to receive updates for all measurements for a specific device.

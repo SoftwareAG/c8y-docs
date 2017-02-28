@@ -103,14 +103,14 @@ Beispiel:
 
 class: com.cumulocity.model.measurement.Measurement
 
-|Parameter|Data type|Description|
+|Parameter|Daten Typ|Beschreibung|
 |:--|:----------|:-------------|:----------|
-|id|[ID](/guides/event-language/data-model#id)|The ID of the Measurement|
-|type|String|The type of the Measurement|
-|time|Date|The time when the Measurement was created (as sent by device)|
-|source|[ID](/guides/event-language/data-model#id)|The ID of the device which created the Measurement|
+|id|[ID](/guides/event-language/data-model#id)|Die ID der Messung|
+|type|String|Der Typ der Messung|
+|time|Date|Der Zeitpunkt wann die Messung erstellt wurde (vom Gerät vermeldet)|
+|source|[ID](/guides/event-language/data-model#id)|Die ID des Gerätes welches die Messung erstellt hat.|
 
-Example:
+Beispiel:
 
     select
       event.measurement.id,
@@ -120,18 +120,18 @@ Example:
     from MeasurementCreated event;
 
 
-### Operation
+### Vorgänge
 
 class: com.cumulocity.model.operation.Operation
 
-|Parameter|Data type|Description|
+|Parameter|Daten Typ|Beschreibung|
 |:--|:----------|:-------------|:----------|
-|id|[ID](/guides/event-language/data-model#id)|The ID of the Operation|
-|creationTime|Date|The time when the Operation was created in the database|
-|status|[OperationStatus](/guides/event-language/data-model#operationstatus)|The current status of the Operation|
-|deviceId|[ID](/guides/event-language/data-model#id)|The ID of the device which should execute the Operation|
+|id|[ID](/guides/event-language/data-model#id)|Die ID des Vorgangs.|
+|creationTime|Date|Die Zeit, in der der Vorgang in der Datenbank erstellt wurde.|
+|status|[OperationStatus](/guides/event-language/data-model#operationstatus)|Der Status des Vorgangs|
+|deviceId|[ID](/guides/event-language/data-model#id)|Die ID des Gerätes, das den Vorgang ausführen soll|
 
-Example:
+Beispiel:
 
     select
       event.operation.id,
@@ -140,23 +140,23 @@ Example:
       event.operation.deviceId
     from OperationCreated event;
 
-### Alarm
+### Alarme
 
 class: com.cumulocity.model.event.Alarm
 
-|Parameter|Data type|Description|
+|Parameter|Daten Typ|Beschreibung|
 |:--|:----------|:-------------|:----------|
-|id|[ID](/guides/event-language/data-model#id)|The ID of the Alarm|
-|creationTime|Date|The time when the Alarm was created in the database|
-|type|String|The type of the Alarm|
-|count|long|The number of times the alarm was reported while active|
-|severity|[Severity](/guides/event-language/data-model#severity)|The severity of the Alarm|
-|status|[AlarmStatus](/guides/event-language/data-model#alarmstatus)|The status of the Alarm|
-|text|String|The text of the Event|
-|time|Date|The time when the Event was created (as sent by device)|
-|source|[ID](/guides/event-language/data-model#id)|The ID of the device which created the Alarm|
+|id|[ID](/guides/event-language/data-model#id)|Die ID des Alarms|
+|creationTime|Date|Der Zeitpunkt, der Erstellung in der Datenbank|
+|type|String|Der Typ des Alarms|
+|count|long|Die Anzahl der Alarme, die gemeldet wurden als der Alarm aktiv war.|
+|severity|[Severity](/guides/event-language/data-model#severity)|Der Schweregrad des Alarms|
+|status|[AlarmStatus](/guides/event-language/data-model#alarmstatus)|Der Status des Alarms|
+|text|String|Der Text des Ereignisses|
+|time|Date|Die Zeit, in der der Vorgang in der Datenbank erstellt wurde.|
+|source|[ID](/guides/event-language/data-model#id)|Die ID des Gerätes, welches den Alarm erstellt hat.|
 
-Example:
+Beispiel:
 
     select
       event.alarm.id,
@@ -170,17 +170,16 @@ Example:
       event.alarm.source
     from AlarmCreated event;
 
-## Output streams
+## Ausgabe streams
 
-### General structure
+### Generelle Struktur
 
-Output streams create the possibility to CREATE, UPDATE and DELETE data in Cumulocity.
-When updating or deleting data it is necessary to provide the ID of the object that will be updated or deleted.
-When creating data, Cumulocity will generate an ID if not set in the event processing. The creation of data also requires certain parameters to be set (the same as at our REST APIs).
-In addition to the predefined parameters listed, it is possible to add any custom fragment to the data. Please take a look at ---->this<---- for adding custom fragments.
-
-Note:
-Creating your own ID will only work on ManagedObjects.
+Ausgabestreams enthalten die Möglichkeit, Daten in Cumulocity zu erstellen, zu aktualisieren und zu löschen.
+Beim Aktualisieren oder Löschen von Daten ist es notwendig, die ID des Objekts anzugeben, das aktualisiert oder gelöscht wird.
+Beim Erstellen von Daten erzeugt Cumulocity eine ID, wenn sie nicht in der Ereignisverarbeitung gesetzt ist. Die Erstellung von Daten erfordert auch bestimmte Parameter (wie bei unseren REST-APIs).
+Zusätzlich zu den vordefinierten Parametern, die aufgeführt sind, ist es möglich, jedem benutzerdefinierten Fragment die Daten hinzuzufügen. Bitte werfen Sie einen Blick auf ----> this <---- für das Hinzufügen von benutzerdefinierten Fragmenten.
+Beachte:
+Das Erstellen Ihrer eigenen ID funktioniert nur auf ManagedObjects.
 
 ### ManagedObjects
 
@@ -190,16 +189,16 @@ Creating your own ID will only work on ManagedObjects.
 |UpdateManagedObject|
 |DeleteManagedObject|
 
-|Parameter|Data type|Description|Mandatory|
+|Parameter|Daten Typ|Beschreibung|Zwingend notwendig|
 |:--|:----------|:-------------|:----------|
-|id|[ID](/guides/event-language/data-model#id) or String|ID of the ManagedObject|UPDATE and DELETE|
-|type|String|The type of the ManagedObject|No|
-|name|String|The name of the ManagedObject|No|
-|owner|String|The owner of the ManagedObject. If not set data created from event processing will have the owner "cep"|No|
-|childAssets|Set&lt;String&gt; or Set&lt;[ID](/guides/event-language/data-model#id)&gt;|A set of [IDs](/guides/event-language/data-model#id) of all child assets|No|
-|childDevices|Set&lt;String&gt; or Set&lt;[ID](/guides/event-language/data-model#id)&gt;|A set of [IDs](/guides/event-language/data-model#id) of all child devices|No|
+|id|[ID](/guides/event-language/data-model#id) or String|ID of the ManagedObject|UPDATE und DELETE|
+|type|String|Der Typ des ManagedObject|Nein|
+|name|String|Der Name des ManagedObject|Nein|
+|owner|String|Der Besitzer des ManagedObject. Wenn nicht von der Ereignisverarbeitung erstellt, haben Daten den Besitzer "cep".|Nein|
+|KindAssets|Set&lt;String&gt; or Set&lt;[ID](/guides/event-language/data-model#id)&gt;|Verschiedene [IDs](/guides/event-language/data-model#id) von allen Kindassets|Nein|
+|childDevices|Set&lt;String&gt; or Set&lt;[ID](/guides/event-language/data-model#id)&gt;|Verschiedene IDs[IDs](/guides/event-language/data-model#id) von allen KindGeräten|Nein|
 
-Example:
+Beispiel:
 
     insert into CreateManagedObject
     select
@@ -219,7 +218,7 @@ Example:
     from EventCreated event;
 
 
-### Events
+### Ereignisse
 
 |Available outputs|
 |:----------------|

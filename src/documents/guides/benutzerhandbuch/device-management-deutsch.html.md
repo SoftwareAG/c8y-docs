@@ -149,7 +149,7 @@ Durch Anklicken eines Geräts in einer Geräteliste werden detaillierte Informat
 
 Am oberen Rand der Gerätedetails wird der Name des Gerätes angezeigt. Unterhalb des Namens wird eine Pfadnavigation angezeigt. Wenn das Gerät Teil einer Asset-Hierarchie (z. B. einer Gruppe) ist, können Sie mit der Pfadnavigation problemlos nach oben navigieren. Da Geräte Teil von mehreren Hierarchien sein können, können mehrere Reihen von Pfadnavigationen gezeigt werden.
 
-Rechts neben dem Namen wird ein Zahnrad angezeigt. Wenn Sie auf das Zahnrad klicken, wird ein Dropdown-Menü mit weiteren Aktionen angezeigt, wie das Erstellen eines Dashboards für das Gerät.
+Rechts neben dem Namen wird ein Zahnrad angezeigt. Wenn Sie auf das Zahnrad klicken, wird ein Dropdown-Menü mit weiteren Aktionen angezeigt.
 
 Ist das Gerät kompatibel, steht über das Zahnrad ein Menüpunkt "Messwertabfrage starten" zur Verfügung. Mit dieser Option können Sie ein Gerät anfordern, um Messungen mit einer bestimmten Frequenz für eine bestimmte Dauer zu senden. Diese Art von Debugging vermeidet zu viel Datenverkehr, der durch das Senden von Messungen erzeugt wird.
 

@@ -220,12 +220,12 @@ Beispiel:
 
 ### Ereignisse
 
-|Available outputs|
+|Verfügbare Outputs|
 |:----------------|
 |CreateEvent|
 |DeleteEvent|
 
-|Parameter|Data type|Description|Mandatory|
+|Parameter|Daten Typ|Beschreibung|zwingend notwendig|
 |:--|:----------|:-------------|:----------|
 |id|[ID](/guides/event-language/data-model#id) or String|The ID of the Event|DELETE|
 |type|String|The type of the Event|CREATE|

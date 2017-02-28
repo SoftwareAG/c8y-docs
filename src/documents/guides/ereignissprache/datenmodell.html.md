@@ -1,24 +1,23 @@
 ---
 order: 20
-title: Data model
+title: Datenmodell
 layout: default
 toc: true
 ---
 
 ## Input streams
 
-### General structure
+### Generelle Struktur
 
-All input streams share the same base structure.
+Alle Eingangsstreams haben die gleiche Grundstruktur.
 
-|Parameter|Data type|Description|
+|Parameter|Data type|Beschreibung|
 |:--|:----------|:-------------|
-|_type|String|The type of the event. See the table below for which value types can be used for different streams|
-|_mode|String|The processing mode in which the data was sent to Cumulocity. See [Processing mode](/guides/reference/rest-implementation#processing-mode)|
-|_origin|String|The origin of the event. If the data was created by a cep rule the origin will be "cep".|
-|payload|Object|The actual data contained in the event|
-
-Types:
+|_type|String|Typ des Ereignisses. Die Tabelle unterhalb zeigt, welcher Typ Wert in verschiedenen Streams genutzt werden kann.|
+|_mode|String|Der Verarbeitungsmodus, in dem die Daten an Cumulocity gesendet wurden. Siehe [Processing mode](/guides/reference/rest-implementation#processing-mode)|
+|_origin|String|Der Ursprung des Ereignisses. Wenn die Daten von einer CEP Regel erstellt wurden, dann ist ihr Ursprung  "cep".|
+|payload|Object|Die tatsächlichen Daten in einem Ereigniss.|
+Typen:
 
 |Stream|Type|
 |:--|:----------|
@@ -34,9 +33,9 @@ Types:
 |AlarmCreated|ALARM_CREATE|
 |AlarmUpdated|ALARM_UPDATE|
 
-For simpler access you can receive the payload directly in the data type of the respective stream by accessing it via a API specific parameter:
+Für einen einfacheren Zugriff können Sie die Nutzdaten direkt im Datentyp des jeweiligen Streams empfangen, indem Sie über einen API-spezifischen Parameter auf sie zugreifen:
 
-|API|Parameter|Data type|
+|API|Parameter|Daten Typ|
 |:--|:----------|:-------------|
 |Inventory|managedObject|[ManagedObject](/guides/event-language/data-model#managedobject)|
 |Events|event|[Event](/guides/event-language/data-model#event)|
@@ -48,21 +47,20 @@ For simpler access you can receive the payload directly in the data type of the 
 
 class: com.cumulocity.model.ManagedObject
 
-|Parameter|Data type|Description|
+|Parameter|Data type|Beschreibung|
 |:--|:----------|:-------------|:----------|
-|id|[ID](/guides/event-language/data-model#id)|ID of the ManagedObject|
-|type|String|The type of the ManagedObject|
-|name|String|The name of the ManagedObject|
-|lastUpdated|Date|The time when the ManagedObject was last updated|
-|owner|String|The owner of the ManagedObject|
-|childAssets|Object[]|An array of the [IDs](/guides/event-language/data-model#id) of all child assets|
-|childDevices|Object[]|An array of the [IDs](/guides/event-language/data-model#id) of all child devices|
-|assetParents|Object[]|An array of the [IDs](/guides/event-language/data-model#id) of all parent assets|
-|deviceParents|Object[]|An array of the [IDs](/guides/event-language/data-model#id) of all child devices|
+|id|[ID](/guides/event-language/data-model#id)|ID des Objektes|
+|type|String|Typ des ManagedObject|
+|name|String|Name des ManagedObject|
+|lastUpdated|Datum|Zeitpunkt zu welchem das ManagedObject aktualisiert wurde.|
+|Besitzer|String|Besitzer des ManagedObject|
+|KindAssets|Object[]|Aufreihung der [IDs](/guides/event-language/data-model#id) von allen Kind Assets|
+|assetParents|Object[]|Aufreihung der [IDs](/guides/event-language/data-model#id) von allen Parent Assets|
+|deviceParents|Object[]|Eine Aufreihung von [IDs](/guides/event-language/data-model#id) aller Kindassets|
 
-The Object[] for the references to the parents and children contains only [IDs](/guides/event-language/data-model#id). You can use the cast function e.g. `cast(event.managedObject.childAssets[0], com.cumulocity.model.ID)`.
+Das Objekt [] für die Verweise auf die Eltern und Kinder enthält nur [IDs](/guides/event-language/data-model#id). Sie können die "cast" Funktion nutzen,z.B.`cast(event.managedObject.childAssets[0], com.cumulocity.model.ID)`.
 
-Example:
+Beispiel:
 
     select
       event.managedObject.id,
@@ -76,20 +74,20 @@ Example:
       event.managedObject.deviceParents
     from ManagedObjectCreated event;
 
-### Event
+### Ereignis
 
 class: com.cumulocity.model.event.Event
 
-|Parameter|Data type|Description|
+|Parameter|Daten Typ|Beschreibung|
 |:--|:----------|:-------------|:----------|
-|id|[ID](/guides/event-language/data-model#id)|The ID of the Event|
-|creationTime|Date|The time when the Event was created in the database|
-|type|String|The type of the Event|
-|text|String|The text of the Event|
-|time|Date|The time when the Event was created (as sent by device)|
-|source|[ID](/guides/event-language/data-model#id)|The ID of the device which created the Event|
+|id|[ID](/guides/event-language/data-model#id)|Die ID des Ereignisses|
+|creationTime|Datum|Der Zeitpunkt, wann das Ereignis erstellt wurde.|
+|type|String|Der Ereignis Typ|
+|text|String|Der Ereignis Text|
+|time|Date|Der Zeitpunkt, wann das Ereignis erstellt wurde. (vom Gerät vermeldet)|
+|source|[ID](/guides/event-language/data-model#id)|Die ID des Gerätes, das das Ereignis erstellt hat|
 
-Example:
+Beispiel:
 
     select
       event.event.id,
@@ -101,7 +99,7 @@ Example:
     from EventCreated event;
 
 
-### Measurement
+### Messungen
 
 class: com.cumulocity.model.measurement.Measurement
 

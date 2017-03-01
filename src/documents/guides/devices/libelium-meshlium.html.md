@@ -1,6 +1,6 @@
 ---
 title: Libelium-Meshlium
-layout: default
+layout: devices
 ---
 
 ## Overview

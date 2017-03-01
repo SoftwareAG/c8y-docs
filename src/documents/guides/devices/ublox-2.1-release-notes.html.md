@@ -1,8 +1,19 @@
-## [V2.2] - 2015-08-10
+---
+layout: devices
+title: Mbed u-blox C027, Page2
+---
+
+## Introduction
+
+The [u-blox C027](https://mbed.org/platforms/u-blox-C027/ "u-blox C027") is a starter kit that allows quick prototyping of a variety of applications for the Internet of Things. The device comes with a cellular module as well as a GPS/GNSS receiver, which enable straightforward development of applications with location-aware communication capability.## [V2.2] - 2015-08-10
 * device push: added support for heartbeat message, less traffic.
 * GPS: added support for new GPS data format.
 
-## [V2.1] - 2015-05-20
+The basic description is located here: [Mbed u-blox C027](https://www.cumulocity.com/guides/devices/mbed-ublox-C027/)
+
+## These are release notes for this device. 
+
+###[V2.1] - 2015-05-20
 
 * measurement: code revamp, faster sensor reading, networking-agnostic
 * measurement/poti: drastically improved data smoothing, no spikes
@@ -31,7 +42,7 @@
 * _fix_: *crash* when reporting many operation states
 * _fix_: mysterious *connection loss* after 6 minutes
 
-### technical (under the hood)
+### Technical (under the hood)
 
 * _stability_: removed all _malloc_ and _new_
 * _stability_: removed executing Thread 1

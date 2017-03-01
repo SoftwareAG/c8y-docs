@@ -1,6 +1,6 @@
 ---
 title: Janz Tec emPC-A/RPI
-layout: default
+layout: devices
 ---
 
 ## Overview

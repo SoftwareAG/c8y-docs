@@ -28,7 +28,7 @@ You can also use recent smartphone and tablet web browsers. We test with the fol
   * Chrome on Android (latest) on Galaxy smartphones and tablets. 
   * Safari on iOS (latest) on Apple iPhone and iPad.
   
-> Note that using the private mode on browsers may not work. Note also that using Cumulocity on mobile devices may be constrained by the memory and the processing power available on the devices. For example, loading graphs with large amounts of data points may make the mobile device unresponsive.
+> Note that using the private mode on browsers may not work. Cumulocity on mobile devices may be constrained by the memory and the processing power available on the devices. For example, loading graphs with large amounts of data points may make the mobile device unresponsive.
 
 To access the applications for your Cumulocity tenant, use the following URL:
 
@@ -40,7 +40,7 @@ This will direct you to the login page of your default application, shown in the
 
 > Make sure that the address bar of your browser shows a lock symbol. The lock symbol indicates that you are using a secure connection and that you are indeed connected to Cumulocity.
 
-> The above URL is only valid for Cumulocity Standard Edition subscribers. For Dedicated and Private Edition deployments of Cumulocity, the URL is specific to your organization.
+> The above URL is only valid for Cumulocity Standard Edition subscribers. For Enterprise Edition deployments of Cumulocity, the URL is specific to your organization.
 
 ## <a name="login"></a>Logging in
 

@@ -32,8 +32,8 @@ If you do not name a statement it will automatically be named "statement_{number
 ## Using device contexts
 
 If you need a device context, it is usually not necessary to put every statement into context.
-If you do aggregation of measurements most of the time you only need the context in the statement that does the actual aggregation.
-It is a useful concept to develop the module completely without the context first and add it at the end to those statements where it applies.
+If you use aggregation of measurements most of the time you only need the context in the statement that executes the actual aggregation.
+It is a useful concept to develop the module completely without the context first and add it at the end to those statements where the context applies.
 
 ## Splitting modules
 
@@ -49,7 +49,7 @@ Keep in mind that this will create dependencies within the modules (e.g. module 
 
 ## Number formats
 
-Whwn interacting with measurements the values will be in BigDecimal (if you use getNumber()).
+When interacting with measurements the values will be in BigDecimal (if you use getNumber()).
 When calculating with BigDecimal there will be an error if the result is a repeating decimal. This will result into a null return from built-in functions like avg().
 There are two ways to prevent this issue:
 

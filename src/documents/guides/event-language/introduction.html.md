@@ -6,7 +6,7 @@ layout: default
 
 ## Overview
 
-Using the Cumulocity real-time event processing, you can add your own logic to your IoT solution. This includes data analytics logic but it is not limited to it. To define new analytics, you will use the Cumulocity Event Language. The language allows to analyze incoming data. It is using a powerful pattern and time window based query language. You can create, update and delete your data in real-time.
+Using the Cumulocity real-time event processing, you can add your own logic to your IoT solution. This includes data analytics logic but it is not limited to it. To define new analytics, you will use the Cumulocity Event Language. The language allows analyzing incoming data. It is using a powerful pattern and time window based query language. You can create, update and delete your data in real-time.
 
 
 Typical real-time analytics use cases include:
@@ -18,7 +18,7 @@ Typical real-time analytics use cases include:
 * Notifications: Send me an email if there's a power outage in one of my machines.
 * Compression: Store location updates of all cars only once every five minutes (but still send real-time data for the car that I am looking at to the user interface).
 
-In the following sections we describe the basics for understanding how the Cumulocity Event Language works and how you can create your own analytics or other server-side business logic and automation.
+In the following sections, we describe the basics for understanding how the Cumulocity Event Language works and how you can create your own analytics or other server-side business logic and automation.
 
 ## Event streams
 
@@ -26,7 +26,7 @@ In the Cumulocity Event Language data flows in streams. You can create events in
 
 ### Predefined streams
 
-There are some predefined streams to interact with several Cumulocity APIs. For each input stream Cumulocity will automatically create a new event when the respective API call was made. If a measurement was created via REST API there will be a new event in the MeasurementCreated stream.
+There are some predefined streams to interact with several Cumulocity APIs. For each input stream, Cumulocity will automatically create a new event when the respective API call was made. If a measurement was created via REST API there will be a new event in the MeasurementCreated stream.
 For interacting with the Cumulocity backend you can create an event on the respective output stream and Cumulocity will automatically execute either the database query or create the API calls necessary for sending mails, sms, or similar. To create a new alarm in the database you can create a new event in the CreateAlarm stream.
 
 |API|Input streams|Output streams|Description|
@@ -44,7 +44,7 @@ Look at the data model to see how the events for each stream are structured.
 
 ### Creating events in a stream
 
-Creating an event is done by the keywords `insert into` and `select`. First you need to specify the "insert into" followed by the stream name for which stream you want to create an event. After that you can use the "select" clause to specify the parameters of the event.
+Creating an event is done by the keywords `insert into` and `select`. First, you need to specify the "insert into" followed by the stream name for which stream you want to create an event. After that you can use the "select" clause to specify the parameters of the event.
 A parameter gets specified by the following syntax: `value as parameter`. You can specify multiple parameters by separating them by commas. The order of the parameters does not matter. Please notice that streams can have mandatory parameters you need to specify in the "select" clause.
 
 ### Listening to events in a stream
@@ -57,13 +57,13 @@ Adding conditions can be done with the keyword `where` to not trigger your event
 
 ## Example
 
-As an example we create a statement. It should listen to a stream and create a new event in another stream whenever the specified condition applies.
+As an example, we create a statement. It should listen to a stream and create a new event in another stream whenever the specified condition applies.
 As example we want to create an alarm for each temperature measurement that is created.
 
 1. To create an alarm we need to `insert into` the stream `CreateAlarm`.
 2. We need to specify all parameters for the event in the `select` clause.
 3. We want the alarm to be created when an event `from` the stream `MeasurementCreated` is received.
-4. We want the alarm only be created under certain conditions of the event from the `MeasurementCreated` stream which we specific in the `where` clause.
+4. We want the alarm only be created under certain conditions of the event from the `MeasurementCreated` stream which we specify in the `where` clause.
 
 The resulting statement can look like this:
 

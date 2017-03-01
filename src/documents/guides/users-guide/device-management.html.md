@@ -61,7 +61,7 @@ To connect the devices, the devices need to be pre-provisioned with related info
 * Password: The password to access Cumulocity, equals the value "Credentials" in the CSV file.
 * Device in managed object representation. Fields: "Type", "Name", "Iccid", "Idtype", "Path", "Shell" in the CSV file.
 
-If you own a Cumulocity Dedicated or Private Edition, you can also register devices across multiple tenants by adding a "tenant" column to the spreadsheet and importing the CSV file from the "management" tenant.
+If you own a Cumulocity Enterprise Edition, you can also register devices across multiple tenants by adding a "tenant" column to the spreadsheet and importing the CSV file from the "management" tenant.
 
 For more information on the file format and accepted CSV variants, please see 
 [Bulk device credentials](/guides/reference/device-credentials/#creds-upload).

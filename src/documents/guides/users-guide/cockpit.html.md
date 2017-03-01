@@ -419,17 +419,19 @@ Dashboards provide you with a customized visualisation of your data with a set o
 
 ### Creating new Dashboards
 
-To create a dashboard, navigate to an object in the asset hierarchy. Afterward, click on the cogwheel icon at the top right. Select "Create dashboard". This will open a dialog:
+To create a dashboard, navigate to an object in the asset hierarchy. Afterwards, click on the cogwheel icon at the top right. Select "Create dashboard". This will open a dialog:
+
+![Dashboard cogwheel](/guides/users-guide/dashboardcogwheel.png)
 
 * The name of the dashboard, which will show in the menu.
 
-* The location of the dashboard in the menu.
+* The location of the dashboard in navigation.
 
 * The icon which is rendered next to the name in the menu.
 
-* "Set dashboard as global": Whether the dashboard is visible to everyone (“global”) or just limited numbers of users.
+* "Dashboard visible to all users": Whether the dashboard is visible to everyone (“global”) or just limited number of users.
 
-* "Apply dashboard to all devices of type": Whether the dashboard should be visible only for this object or for all devices of the same type.
+* "Dashboard layout": Configure the layout of your dashboard. Select a "Dashboard Theme", "Default Widget Header Style" and "Default Widget Margin". Afterwards, you can see your currently selected layout under "Preview".
 
 ![image alt text](/guides/users-guide/image_14.png)
 
@@ -443,21 +445,45 @@ Then this dashboard should appear for all identical devices. Changes made to thi
 
 > You can only add widgets and data to the dashboard for the device itself. It is not possible to add data from child devices because the structure of these devices might be different from device to device.
 
+### Adding permissions to a Dashboard
+ 
+Permissions can be granted to a specific group only. To do so, create a new dashboard as described above or edit a dashboard. 
+
+> To edit a dashboard, click on the cogwheel on the top-right and select "Edit Dashboard".
+
+In order to grant permissions to a specific group, first deselect both "Dashboard visible to all users" and "Apply dashboard to all devices of type "_type_".
+
+![Add permissions](/guides/users-guide/dashboardaddright.png)
+
+Then, click on "Add permissions" and select a group.
+
+![Select group](/guides/users-guide/dashboardforgroup.png)
+
+Afterwards, select the desired permission for the selected group.
+
+![Select permission](/guides/users-guide/dashboardpermission.png)
+
+> Note that, permissions can be granted for more than one groups.
+
 ### Adding a Widget to a Dashboard
 
-To add a widget to a dashboard, ensure that the dashboard is visible. Afterward, click on the cogwheel icon at the top right. Select "Add a widget to a dashboard". This will open a dialog with a selection of widgets you can add to the dashboard.
+To add a widget to a dashboard, ensure that the dashboard is visible. Afterwards, click on the cogwheel icon at the top right. Select "Add a widget to a dashboard". This will open a dialog with a selection of widgets you can add to the dashboard.
 
 ![image alt text](/guides/users-guide/image_15.png)
 
-When selecting a widget type, additional input fields for this widget type will pop up. More information about the "[Widget Package](#widget-package)".
+When selecting a widget type, additional input fields for this widget type will pop up. More information about the "[Widget Package](#widget-package)". Similar to dashboards you can "Customize widget style". The currently selected style can be seen in the preview shown on the right side.
 
 ### Editing a Dashboard
 
-You can edit dashboard properties by clicking on the cogwheel icon and select "Edit dashboard". This will bring up a similar dialog like creating a dashboard. In this dialog the dashboard name, icon, position and permissions can be edited.
-
-You can rearrange the widgets on the dashboard. By dragging and dropping the header of the widget, you can move the widget to another position on the page. By dragging and dropping the arrows on the bottom right corner of a widget, you can resize a widget. By clicking on the cross icon in the top right corner, you can delete the widget. By clicking on the cogwheel icon on the top right corner of the widget, you can edit the widget properties. The following figure shows a widget with all mentioned icons visible:
+You can edit dashboard properties by clicking on the cogwheel icon and select "Edit dashboard". This will bring up a similar dialog like creating a dashboard. In this dialog the dashboard name, icon, position, style and permissions can be edited.
 
 ![image alt text](/guides/users-guide/image_16.png)
+
+You can rearrange the widgets on the dashboard. By dragging and dropping the header of the widget, you can move the widget to another position on the page. By dragging and dropping the arrows on the bottom right corner of a widget, you can resize a widget. By clicking on the icon at the top right corner of the widget, you can delete or edit the widget properties.
+
+> If the dashboard is locked, widgets cannot be rearranged. In order to lock/unlock a dashboard, click on the cogwheel at the top right and then click on "Lock Dashboard"/"Unlock Dashboard".
+
+![dashboard lock](/guides/users-guide/dashboardlock.png)
 
 On a laptop, these icons only appear when you hover over the widget header.
 
@@ -465,13 +491,13 @@ Editing on touch devices like smartphones or tablets do not support all function
 
 ### Copying a dashboard
 
-To copy a dashboard from one object to another, use the cogwheel on the top right and select "Copy dashboard". Afterward select the object where the dashboard should be applied to and click "Paste Dashboard" to insert the dashboard.
+To copy a dashboard from one object to another, use the cogwheel on the top right and select "Copy dashboard". Afterwards select the object where the dashboard should be applied to and click "Paste Dashboard" to insert the dashboard.
 
 An alternative way to copy a dashboard is to use the "[Dashboard per type](#creating-a-dashboard-for-all-devices-of-the-same-type)" approach.  With the "Dashboard per type" approach you copy the dashboard from one object to **all** identical objects.
 
 ### Removing a Dashboard
 
-To add a widget to a dashboard, ensure the dashboard is visible.The same applies when removing it. Click on the cogwheel icon at the top right. Select "Remove dashboard" to remove a dashbord.
+To add a widget to a dashboard, ensure the dashboard is visible.The same applies when removing it. Click on the cogwheel icon at the top right. Select "Remove dashboard" to remove a dashboard.
 
 ## <a name="widget"></a>Widget Package
 
@@ -842,7 +868,7 @@ A list of smart rules is shown below. Note that the number of smart rules shown 
 
 ![image alt text](/guides/users-guide/image_23.png)
 
-Afterward, if the rule was set to enabled and was not activated for specific objects, the rule will be active for all devices and groups. See next section on how to deactivate a smart rule for specific objects.
+Afterwards, if the rule was set to enabled and was not activated for specific objects, the rule will be active for all devices and groups. See next section on how to deactivate a smart rule for specific objects.
 
 Disabled Smart Rules are not displayed in group menus or device menus to avoid confusion.
 Smart Rules can be instantiated multiple times.

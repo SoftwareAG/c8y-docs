@@ -40,7 +40,7 @@ Dadurch gelangen Sie zur Anmeldeseite Ihrer Standardanwendung, die in der folgen
 
 
 > Stellen Sie sicher, dass die Adressleiste Ihres Browsers ein Sperrsymbol anzeigt. Das Sperrsymbol zeigt an, dass Sie eine sichere Verbindung verwenden und dass Sie tatsächlich mit Cumulocity verbunden sind.
-Die oben genannte URL ist nur für Abonnenten der Cumulocity Standard Edition gültig. Für spezialisierte- und private Edition-Bereitstellungen von Cumulocity ist die URL für Ihr Unternehmen spezifisch.
+Die oben genannte URL ist nur für Abonnenten der Cumulocity Standard Edition gültig. Für Enterprise Editions von Cumulocity ist die URL für Ihr Unternehmen spezifisch.
 
 ## <a name="login"></a>Logging in
 

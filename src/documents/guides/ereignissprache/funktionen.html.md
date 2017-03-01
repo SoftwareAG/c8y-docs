@@ -1,11 +1,11 @@
 ---
 order: 30
-title: Functions
+title: Funktionen
 layout: default
 toc: true
 ---
 
-## Overview
+## Überblick
 
 With the Cumulocity Event Language it is possible to utilize functions. This section will cover the already built-in functions ready to use. For a guide how to write your own functions please check this [section](/guides/event-language/advanced#creating-own-functions).
 

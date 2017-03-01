@@ -58,7 +58,8 @@ class: com.cumulocity.model.ManagedObject
 |assetParents|Object[]|Aufreihung der [IDs](/guides/event-language/data-model#id) von allen Parent Assets|
 |deviceParents|Object[]|Eine Aufreihung von [IDs](/guides/event-language/data-model#id) aller Kindassets|
 
-Das Objekt [] für die Verweise auf die Eltern und Kinder enthält nur [IDs](/guides/event-language/data-model#id). Sie können die "cast" Funktion nutzen,z.B.`cast(event.managedObject.childAssets[0], com.cumulocity.model.ID)`.
+Das Objekt [] für die Verweise auf die Eltern und Kinder enthält nur [IDs](/guides/event-language/data-model#id). Sie können die "cast" Funktion nutzen,z.B.
+`cast(event.managedObject.childAssets[0], com.cumulocity.model.ID)`.
 
 Beispiel:
 
@@ -153,7 +154,7 @@ class: com.cumulocity.model.event.Alarm
 |severity|[Severity](/guides/event-language/data-model#severity)|Der Schweregrad des Alarms|
 |status|[AlarmStatus](/guides/event-language/data-model#alarmstatus)|Der Status des Alarms|
 |text|String|Der Text des Ereignisses|
-|time|Date|Die Zeit, in der der Vorgang in der Datenbank erstellt wurde.|
+|time|Date|Der Zeitpunkt, in der der Vorgang in der Datenbank erstellt wurde.|
 |source|[ID](/guides/event-language/data-model#id)|Die ID des Gerätes, welches den Alarm erstellt hat.|
 
 Beispiel:
@@ -177,7 +178,7 @@ Beispiel:
 Ausgabestreams enthalten die Möglichkeit, Daten in Cumulocity zu erstellen, zu aktualisieren und zu löschen.
 Beim Aktualisieren oder Löschen von Daten ist es notwendig, die ID des Objekts anzugeben, das aktualisiert oder gelöscht wird.
 Beim Erstellen von Daten erzeugt Cumulocity eine ID, wenn sie nicht in der Ereignisverarbeitung gesetzt ist. Die Erstellung von Daten erfordert auch bestimmte Parameter (wie bei unseren REST-APIs).
-Zusätzlich zu den vordefinierten Parametern, die aufgeführt sind, ist es möglich, jedem benutzerdefinierten Fragment die Daten hinzuzufügen. Bitte werfen Sie einen Blick auf ----> this <---- für das Hinzufügen von benutzerdefinierten Fragmenten.
+Zusätzlich zu den vordefinierten Parametern, die aufgeführt sind, ist es möglich, jedem benutzerdefinierten Fragment die Daten hinzuzufügen. Bitte werfen Sie einen Blick auf ----> dies <---- für das Hinzufügen von benutzerdefinierten Fragmenten.
 Beachte:
 Das Erstellen Ihrer eigenen ID funktioniert nur auf ManagedObjects.
 
@@ -191,7 +192,7 @@ Das Erstellen Ihrer eigenen ID funktioniert nur auf ManagedObjects.
 
 |Parameter|Daten Typ|Beschreibung|Zwingend notwendig|
 |:--|:----------|:-------------|:----------|
-|id|[ID](/guides/event-language/data-model#id) or String|ID of the ManagedObject|UPDATE und DELETE|
+|id|[ID](/guides/event-language/data-model#id) or String|ID of the ManagedObject|UPDATE und LOESCHEN|
 |type|String|Der Typ des ManagedObject|Nein|
 |name|String|Der Name des ManagedObject|Nein|
 |owner|String|Der Besitzer des ManagedObject. Wenn nicht von der Ereignisverarbeitung erstellt, haben Daten den Besitzer "cep".|Nein|
@@ -227,13 +228,13 @@ Beispiel:
 
 |Parameter|Daten Typ|Beschreibung|zwingend notwendig|
 |:--|:----------|:-------------|:----------|
-|id|[ID](/guides/event-language/data-model#id) or String|The ID of the Event|DELETE|
-|type|String|The type of the Event|CREATE|
-|text|String|The text of the Event|CREATE|
-|time|Date|The time when the Event was created (as sent by device)|CREATE|
-|source|[ID](/guides/event-language/data-model#id) or String|The ID of the device which created the Event|CREATE|
+|id|[ID](/guides/event-language/data-model#id) or String|Die ID des Events|LOESCHEN|
+|type|String|Der Typ des Events|ERSTELLEN|
+|text|String|Der Text des Events|ERSTELLEN|
+|time|Date|Der Zeitpunkt, wann der Event erstellt wurde. (vom Gerät erstellt)|ERSTELLEN|
+|source|[ID](/guides/event-language/data-model#id) or String|Die ID des Gerätes, das den Zeitpunkt erstellt hat|ERSTELLEN|
 
-Example:
+Beispiel:
 
     insert into CreateEvent
     select
@@ -250,19 +251,19 @@ Example:
 
 ### Measurements
 
-|Available outputs|
+|Verfügbare Outputs|
 |:----------------|
 |CreateMeasurement|
 |DeleteMeasurement|
 
-|Parameter|Data type|Description|Mandatory|
+|Parameter|Daten Typ|Beschreibung|zwingend erforderlich|
 |:--|:----------|:-------------|:----------|
-|id|[ID](/guides/event-language/data-model#id) or String|The ID of the Measurement|DELETE|
-|type|String|The type of the Measurement|CREATE|
-|time|Date|The time when the Measurement was created (as sent by device)|CREATE|
-|source|[ID](/guides/event-language/data-model#id) or String|The ID of the device which created the Measurement|CREATE|
+|id|[ID](/guides/event-language/data-model#id) or String|Die ID der Messung|LOESCHEN|
+|Typ|String|Typ der Messung|ERSTELLEN|
+|Zeit|Date|Zeitpunkt der Erstellung(vom Gerät erstellt)|ERSTELLEN|
+|source|[ID](/guides/event-language/data-model#id) or String|Die ID des Gerätes welches die Messung vorgenommen hat.|ERSTELLEN|
 
-Example:
+Beispiel:
 
     insert into CreateMeasurement
     select
@@ -279,20 +280,20 @@ Example:
       "12345" as id
     from EventCreated event;
 
-### Operations
+### Vorgänge
 
-|Available outputs|
+|Verfügbare Outputs|
 |:----------------|
 |CreateOperation|
 |UpdateOperation|
 
-|Parameter|Data type|Description|Mandatory|
+|Parameter|Daten Typ|Beschreibung|zwingend erforderlich|
 |:--|:----------|:-------------|:----------|
-|id|[ID](/guides/event-language/data-model#id) or String|The ID of the Operation|UPDATE|
-|status|[OperationStatus](/guides/event-language/data-model#operationstatus) or String|The current status of the Operation|CREATE|
-|deviceId|[ID](/guides/event-language/data-model#id) or String|The ID of the device which should execute the Operation|CREATE|
+|id|[ID](/guides/event-language/data-model#id) or String|Die ID des Vorgangs|UPDATE|
+|status|[OperationStatus](/guides/event-language/data-model#operationstatus) oder String|Status des Vorgangs|ERSTELLEN|
+|deviceId|[ID](/guides/event-language/data-model#id) or String|Die ID des Gerates, welches den Vorgang ausführen soll.|ERSTELLEN|
 
-Example:
+Beispiel:
 
     insert into CreateOperation
     select
@@ -309,24 +310,24 @@ Example:
       OperationStatus.EXECUTING as status
     from EventCreated event;
 
-### Alarms
+### Alarme
 
-|Available outputs|
+|Verfügbare outputs|
 |:----------------|
 |CreateAlarm|
 |UpdateAlarm|
 
-|Parameter|Data type|Description|Mandatory|
+|Parameter|Daten Typ|Beschreibung|zwingend erforderlich|
 |:--|:----------|:-------------|:----------|
-|id|[ID](/guides/event-language/data-model#id) or String|The ID of the Alarm|UPDATE|
-|type|String|The type of the Alarm|CREATE|
-|severity|[Severity](/guides/event-language/data-model#severity) or String|The severity of the Alarm|CREATE|
-|status|[AlarmStatus](/guides/event-language/data-model#alarmstatus) or String|The status of the Alarm|CREATE|
-|text|String|The text of the Event|CREATE|
-|time|Date|The time when the Event was created (as sent by device)|CREATE|
-|source|[ID](/guides/event-language/data-model#id) or String|The ID of the device which created the Alarm|CREATE|
+|id|[ID](/guides/event-language/data-model#id) or String|Die ID des Alarms|UPDATE|
+|type|String|Der Typ des Alarms|ERSTELLEN|
+|severity|[Severity](/guides/event-language/data-model#severity) oder String|Der Schweregrad des Alarms|ERSTELLEN|
+|status|[AlarmStatus](/guides/event-language/data-model#alarmstatus) oder String|Der Status des Alarms|ERSTELLEN|
+|text|String|Der Text des Events|ERSTELLEN|
+|time|Date|Zeitpunkt der Erstellung (vom Gerät geschickt)|ERSTELLEN|
+|source|[ID](/guides/event-language/data-model#id) or String|Die ID des Gerätes, welches den Alarm erstellt hat.|ERSTELLEN|
 
-Example:
+Beispiel:
 
     insert into CreateAlarm
     select
@@ -344,24 +345,24 @@ Example:
       CumulocityAlarmStatuses.ACKNOWLEDGED as status
     from EventCreated event;
 
-## Special streams
+## Spezielle Streams
 
-The streams mentioned in this section do not interact with the Cumulocity database but will create calls to external services.
+Die in diesem Abschnitt erwähnten Streams interagieren nicht mit der Cumulocity-Datenbank, sondern werden Anrufe zu externen Diensten erstellen.
 
 ### SendMail
 
-|Parameter|Data type|Description|Mandatory|
+|Parameter|Daten Typ|Beschreibung|zwingend erforderlich|
 |:--|:----------|:-------------|:----------|
-|receiver|String|The mail address of the receiver|yes|
-|cc|String|The mail address of the cc|no|
-|bcc|String|The mail address of the bcc|no|
-|replyTo|String|The mail address which should receive replies to the sent mail|no|
-|subject|String|The subject line of the mail|yes|
-|text|String|The body of the mail|yes|
+|receiver|String|Mail-Empfängeradresse|JA|
+|cc|String|Mail-Empfängeradresse cc|NEIN|
+|bcc|String|Mail-Empfängeradresse bcc|NEIN|
+|replyTo|String|Mail-Rückantwortadresse|NEIN|
+|subject|String|Titelzeile|JA|
+|text|String|Body Text|JA|
 
-It is possible to have more than one mail address in the parameters receiver,cc and bcc. Therefore create a string that contains all mail addresses separated by commas. "receiver1@mail.com,receiver2@mail.com".
+Es ist möglich, mehr als eine Mail-Adresse in den Parametern Empfänger, cc und bcc zu haben. Erstellen Sie daher einen String, der alle durch Kommas getrennten Mail-Adressen enthält. "receiver1@mail.com,receiver2@mail.com".
 
-Example:
+Beispiel:
 
     insert into SendEmail
     select
@@ -373,26 +374,26 @@ Example:
       "This mail was sent to test the SendEmail stream in Cumulocity" as text
     from AlarmCreated;
 
-### SendDashboard
+### Dashboard versenden
 
-|Parameter|Data type|Description|Mandatory|
+|Parameter|Daten Typ|Beschreibung|zwingend erforderlich|
 |:--|:----------|:-------------|:----------|
-|receiver|String|The mail address of the receiver|yes|
-|cc|String|The mail address of the cc|no|
-|bcc|String|The mail address of the bcc|no|
-|replyTo|String|The mail address which should receive replies to the sent mail|no|
-|subject|String|The subject line of the mail|yes|
-|text|String|The body of the mail|yes|
-|dashboardUrl|String|The URL of the page that will be attached to the mail|yes
+|receiver|String|Emailadresse des Empfängers|JA|
+|cc|String|Die Emailadresse vom cc|NEIN|
+|bcc|String|Die Emailadresse vom bcc|NEIN|
+|replyTo|String|Mail-Rückantwortadresse|NEIN|
+|subject|String|Titelzeile|JA|
+|text|String|Body Text|NEIN|
+|dashboardUrl|String|Die URL des Attachments|JA
 
-It is possible to have more than one mail address in the parameters receiver,cc and bcc. Therefore create a string that contains all mail addresses separated by commas . "receiver1@mail.com,receiver2@mail.com".
+Es ist möglich, mehr als eine Mail-Adresse in den Parametern Empfänger, cc und bcc zu haben. Erstellen Sie daher einen String, der alle durch Kommas getrennten Mail-Adressen enthält. "receiver1@mail.com,receiver2@mail.com".
 
 _Note:_
 
-This feature will only work if the respective server side agent for sending dashboards is activated for your tenant. [How to activate this feature](http://www.cumulocity.com/guides/users-guide/administration/#settings)
+Diese Funktion funktioniert nur, wenn der jeweilige serverseitige Agent zum Senden von Dashboards für Ihren Mandanten aktiviert ist. [How to activate this feature](http://www.cumulocity.com/guides/users-guide/administration/#settings)
 
 
-Example:
+Beispiel:
 
     insert into SendDashboard
     select
@@ -406,22 +407,22 @@ Example:
     from AlarmCreated;
 
 
-### SendSms
+### Sms versenden
 
-|Parameter|Data type|Description|Mandatory|
+|Parameter|Daten Typ|Beschreibung|zwingend erforderlich|
 |:--|:----------|:-------------|:----------|
-|receiver|String|The phone number of the receiver|yes|
-|text|String|The body of the sms. Max. 160 characters|yes|
-|deviceId|String|The ID of the device generating the sms. A log event will be created for the device|no|
+|receiver|String|Nummer des Empfängers|JA|
+|text|String|Body Text sms. Max. 160 characters|JA|
+|deviceId|String|Die Geräte ID des Erstellers der sms. Es wird ein Protokoll für das Gerät erstellt.|NEIN|
 
-It is possible to have more than one phone number in the parameter receiver. Therefore create a string that contains all phone numbers separated by commas e.g. "+49123456789,+49987654321".
-Although it is technically not required by Cumulocity to have the country code we recommend using it because the sms gateway might require it. You can use the notation like e.g. "0049" or "+49" (for Germany).
+Es ist möglich, mehr als eine Telefonnummer im Parameter-Empfänger zu haben. Erstellen Sie daher einen String, der alle Telefonnummern enthält, die durch Kommas getrennt sind. "+49123456789,+49987654321".
+Obwohl es technisch nicht von Cumulocity benötigt wird, empfehlen wir den Ländercode zu benutzen, weil das sms-Gateway es erfordern könnte. Sie können die Notation verwenden: "0049" or "+49" (for Germany).
 
 _Note:_
 
-This feature will only work if your tenant is linked to a sms provider. For more information please contact [support](https://support.cumulocity.com).
+Diese Funktion funktioniert nur, wenn Ihr Mandant mit einem SMS-Provider verknüpft ist. Für mehr Informationen, kontaktieren sie bitte [support](https://support.cumulocity.com).
 
-Example:
+Beispiel:
 
     insert into SendSms
     select
@@ -432,19 +433,19 @@ Example:
 
 ### SendPush
 
-This stream enables the possibility to send push notifications from Cumulocity via the Telekom push service to mobile applications.
+Dieser Stream ermöglicht die Möglichkeit, Push-Meldungen von Cumulocity über den Telekom-Push-Service an mobile Anwendungen zu senden.
 
-|Parameter|Data type|Description|Mandatory|
+|Parameter|Daten Typ|Beschreibung|zwingend erforderlich|
 |:--|:----------|:-------------|:----------|
-|type|String|Push Provider Type. Currently only TELEKOM is possible.|yes|
-|message|String|The body of the push message.|yes|
-|deviceId|String|The ID of the device generating the push message.|yes|
+|type|String|Push Provider Typ. Momentan nur TELEKOM |JA|
+|message|String|Body Text push Nachricht.|JA|
+|deviceId|String|Die Geräte ID des Erstellers der push Nachricht.|JA|
 
 _Note:_
 
-This feature will only work if your tenant is linked to a push provider. For more information please contact [support](https://support.cumulocity.com).
+Diese Funktion funktioniert nur, wenn Ihr Mandant mit einem Push-Provider verbunden ist. Für mehr Informationen, kontaktieren sie bitte[support](https://support.cumulocity.com).
 
-Example:
+Beispiel:
 
     insert into SendPush
     select
@@ -455,22 +456,22 @@ Example:
 
 ### SendSpeech
 
-|Parameter|Data type|Description|Mandatory|
+|Parameter|Daten Typ|Beschreibung|zwingend erforderlich|
 |:--|:----------|:-------------|:----------|
-|phoneNumber|String|The phone number of the receiver|yes|
-|textToSpeech|String|The text that will be read to the receiver|yes|
-|deviceId|String|The ID of the device generating the phone call. A log event will be created for the device|yes|
-|attempts|Long|Amount of additional attempts if the receiver could not be reached (0 = no additional attempts)|yes|
-|timeout|Long|Minutes between two call attempts|yes|
-|alarmId|String|The ID of the alarm generating the call (for acknowledgment)|yes|
-|questionText|String|Acknowledgment question that will be read to the receiver|no|
-|acknowledgeButton|Long|Number of the button the receiver has to press to acknowledge the call|no|
+|phoneNumber|String|Fon Nummer des Empfängers|JA|
+|textToSpeech|String|Inhalt der Nachricht als Text|JA|
+|deviceId|String|Die ID des Gerätes, welches die Nachricht erstellt. Ein Protokoll wird für das Gerät erstellt.|JA|
+|attempts|Long|Wie oft soll versucht werden den Empfänger zu erreichen (0 = kein extra Versuch)|JA|
+|timeout|Long|Minuten zwischen Anwahlversuchen|JA|
+|alarmId|String|Die ID des Gerätes , dass den Anruf veranlasst(zur Bestaetigung)|JA|
+|questionText|String|Sicherheitsfrage fuer den Empfänger der Nachricht|NEIN|
+|acknowledgeButton|Long|Tastenummer zur Bestätigung der Sicherheitsabfrage|NEIN|
 
 _Note:_
 
-This feature will only work if your tenant is linked to a speech provider. For more information please contact [support](https://support.cumulocity.com).
+Diese Funktion funktioniert nur, wenn Ihr Mieter mit einem Sprachanbieter verbunden ist. Für mehr Informationen, kontaktieren sie bitte [support](https://support.cumulocity.com).
 
-Example:
+Beispiel:
 
     insert into SendSpeech
     select
@@ -490,13 +491,13 @@ Example:
 
 class: com.cumulocity.model.ID
 
-|Parameter|Data type|Description|
+|Parameter|Daten Typ|Beschreibung
 |:--|:----------|:-------------|:----------|
 |value|String|The actual ID value|
 |type|String|The type of the ID|
 |name|String|The name of the device (only if the ID refers to a device like in measurement.source)|
 
-Example:
+Beispiel:
 
     select
       event.measurement.source.value,
@@ -512,7 +513,7 @@ class: com.cumulocity.model.operation.OperationStatus
 OperationStatus is an enum offering the following values:
 `PENDING`, `SUCCESSFUL`, `FAILED`, `EXECUTING`
 
-Example:
+Beispiel:
 
     insert into UpdateOperation
     select
@@ -520,7 +521,7 @@ Example:
       OperationStatus.FAILED as status
     from OperationCreated event;
 
-### Severity
+### Schweregrad
 
 class: com.cumulocity.model.event.Severity
 
@@ -529,7 +530,7 @@ CumulocitySeverities offers the following values:
 `CRITICAL`, `MAJOR`, `MINOR`, `WARNING`
 
 
-Example:
+Beispiel:
 
     insert into UpdateAlarm
     select
@@ -546,7 +547,7 @@ CumulocityAlarmStatuses offers the following values:
 `ACTIVE`, `ACKNOWLEDGED`, `CLEARED`
 
 
-Example:
+Beispiel:
 
     insert into UpdateAlarm
     select

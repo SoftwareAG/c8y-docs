@@ -421,7 +421,7 @@ Dashboards provide you with a customized visualisation of your data with a set o
 
 To create a dashboard, navigate to an object in the asset hierarchy. Afterward, click on the cogwheel icon at the top right. Select "Create dashboard". This will open a dialog and you can:
 
-![Dashboard cogwheel](/guides/users-guide/dashboardcogwheel.png)
+![Dashboard via cogwheel](/guides/users-guide/dashboardcogwheel.png)
 
 * Name the the dashboard you are creating, which will be displayed as a card reader.
 

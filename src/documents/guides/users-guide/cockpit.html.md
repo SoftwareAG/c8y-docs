@@ -419,11 +419,11 @@ Dashboards provide you with a customized visualisation of your data with a set o
 
 ### Creating new Dashboards
 
-To create a dashboard, navigate to an object in the asset hierarchy. Afterwards, click on the cogwheel icon at the top right. Select "Create dashboard". This will open a dialog and you can:
+To create a dashboard, navigate to an object in the asset hierarchy. Afterward, click on the cogwheel icon at the top right. Select "Create dashboard". This will open a dialog and you can:
 
 ![Dashboard cogwheel](/guides/users-guide/dashboardcogwheel.png)
 
-* Name the the dashboard you are creating, which will be displayed as a cardreader.
+* Name the the dashboard you are creating, which will be displayed as a card reader.
 
 * Specify the location of the dashboard in the navigation.
 
@@ -451,7 +451,7 @@ Permissions can be granted to a specific user role only. To do so, create a new 
 
 > To edit a dashboard, click on the cogwheel on the top-right and select "Edit Dashboard".
 
-In order to grant permissions to a specific users, first deselect both "Dashboard visible to all users" and deselect "Apply dashboard to all devices of type "_type_".
+In order to grant permissions to specific users,  deselect both "Dashboard visible to all users" and deselect "Apply dashboard to all devices of type "_type_".
 
 ![Add permissions](/guides/users-guide/dashboardaddright.png)
 
@@ -463,7 +463,7 @@ Afterward, select the desired permission for the selected group.
 
 ![Select permission](/guides/users-guide/dashboardpermission.png)
 
-> Permissions can be granted for several groups.
+> Permissions can be granted to several groups.
 
 ### Adding a Widget to a Dashboard
 
@@ -491,7 +491,7 @@ Editing on touch devices like smartphones or tablets do not support all function
 
 ### Copying a dashboard
 
-To copy a dashboard from one object to another, use the cogwheel on the top right and select "Copy dashboard". Afterwards select the object where the dashboard should be applied to and click "Paste Dashboard" to insert the dashboard.
+To copy a dashboard from one object to another, use the cogwheel on the top right and select "Copy dashboard". Afterward, select the object where the dashboard should be applied to and click "Paste Dashboard" to insert the dashboard.
 
 An alternative way to copy a dashboard is to use the "[Dashboard per type](#creating-a-dashboard-for-all-devices-of-the-same-type)" approach.  With the "Dashboard per type" approach you copy the dashboard from one object to **all** identical objects.
 

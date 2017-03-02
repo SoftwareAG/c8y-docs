@@ -433,7 +433,7 @@ To create a dashboard, navigate to an object in the asset hierarchy. Afterward, 
 
 * "Dashboard layout": Configure the layout of your dashboard. Select a "Dashboard Theme", "Default Widget Header Style" and "Default Widget Margin". Afterwards, you can see your currently selected layout under "Preview".
 
-![image alt text](/guides/users-guide/image_14.png)
+![Create Dashboard](/guides/users-guide/dashboardcreate.png)
 
 Click "Save" to create and open the dashboard. While there are no widgets on the dashboard, you will see an "Add Widget" button. Use this button to add your first widget to the dashboard.
 
@@ -469,7 +469,7 @@ Afterward, select the desired permission for the selected group.
 
 To add a widget to a dashboard, ensure that the dashboard is visible. Afterward, click on the cogwheel icon at the top right. Select "Add a widget to a dashboard". This will open a dialog with a selection of widgets you can add to the dashboard.
 
-![image alt text](/guides/users-guide/image_15.png)
+![Add Widget](/guides/users-guide/widgetcogwheel.png)
 
 When selecting a widget type, additional input fields for this widget type will pop up. More information about the "[Widget Package](#widget-package)" can be found with this link. Similar to dashboards you can "Customize the widget style". The currently selected style can be seen in the preview shown on the right side.
 
@@ -477,7 +477,7 @@ When selecting a widget type, additional input fields for this widget type will 
 
 You can edit dashboard properties by clicking on the cogwheel icon and select "Edit dashboard". This will bring up a similar dialog like "Creating a dashboard". In this dialog the dashboard name, icon, position, style and permissions can be edited.
 
-![image alt text](/guides/users-guide/image_16.png)
+![Edit Dashboard](/guides/users-guide/dashboardedit.png)
 
 You can rearrange the widgets of the dashboard. By dragging and dropping the header of the widget, you can move the widget to another position on the page. By dragging and dropping the arrows on the bottom right corner of a widget, you can resize a widget. By clicking on the icon at the top right corner of the widget, you can delete or edit the widget properties.
 

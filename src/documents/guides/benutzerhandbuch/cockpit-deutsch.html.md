@@ -424,7 +424,7 @@ Um ein Dashboard zu erstellen, navigieren Sie zu einem Objekt in der Asset-Hiera
 
 * "Dashboard-Layout": Konfigurieren Sie das Layout Ihres Dashboards. Wähle ein "Dashboard Theme", "Default Widget Header Style" und "Default Widget Margin". Danach können Sie Ihr aktuell ausgewähltes Layout im Vorschaufenster sehen.
 
-![image alt text](/guides/users-guide/image_14.png)
+![Create Dashboard](/guides/users-guide/dashboardcreatede.png)
 
 Klicken Sie auf "Speichern", um das Dashboard zu erstellen und zu öffnen. Solange es keine Widgets auf dem Armaturenbrett gibt, sehen Sie eine "Widget" -Schaltfläche. Verwenden Sie diese Schaltfläche, um Ihr erstes Widget dem Dashboard hinzuzufügen.
 
@@ -460,7 +460,7 @@ Danach wählen Sie die gewünschte Berechtigung für die ausgewählte Gruppe aus
 
 Um ein Widget zu einem Dashboard hinzuzufügen, stellen Sie sicher, dass das Dashboard sichtbar ist. Danach klicken Sie rechts oben auf das Zahnrad-Symbol. Wählen Sie "Hinzufügen eines Widgets zu einem Dashboard". Dies öffnet einen Dialog mit einer Auswahl von Widgets, die Sie dem Dashboard hinzufügen können.
 
-![image alt text](/guides/users-guide/image_15.png)
+![Add Widget](/guides/users-guide/widgetcogwheelde.png)
 
 Bei der Auswahl eines Widget-Typs werden zusätzliche Eingabefelder für diesen Widget-Typ angezeigt. Weitere Informationen zum "Widget Package] (# widget-package)" finden Sie mit diesem Link. Ähnlich wie bei den Dashboards können Sie den Widget Stil anpassen. Der aktuell ausgewählte Stil ist in der Vorschau auf der rechten Seite zu sehen.
 
@@ -468,7 +468,7 @@ Bei der Auswahl eines Widget-Typs werden zusätzliche Eingabefelder für diesen 
 
 Sie können die Dashboard-Eigenschaften bearbeiten, indem Sie auf das Zahnrad-Symbol klicken und "Dashboard editieren" auswählen. Dies wird Sie zu einen ähnlichen Dialog wie "Erstellen eines Dashboards" bringen. In diesem Dialog können den Dashboard Namen, Symbol, Position, Stil und Berechtigungen bearbeitet werden.
 
-![image alt text](/guides/users-guide/image_16.png)
+![Edit Dashboard](/guides/users-guide/dashboardeditde.png)
 
 Sie können die Widgets des Dashboards neu anordnen. Durch drag und drop der Kopfzeile des Widgets können Sie das Widget auf eine andere Position auf der Seite verschieben. Durch drag und drop der Pfeile in der unteren rechten Ecke eines Widgets können Sie ein Widget ändern. Durch Anklicken des Symbols in der rechten oberen Ecke des Widgets können Sie die Widget-Eigenschaften löschen oder editieren.
 

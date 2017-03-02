@@ -433,7 +433,7 @@ To create a dashboard, navigate to an object in the asset hierarchy. Afterward, 
 
 * "Dashboard layout": Configure the layout of your dashboard. Select a "Dashboard Theme", "Default Widget Header Style" and "Default Widget Margin". Afterwards, you can see your currently selected layout under "Preview".
 
-![Create Dashboard](/guides/users-guide/dashboardcreate.png)
+![Create Dashboard](/guides/users-guide/dashboard-create.png)
 
 Click "Save" to create and open the dashboard. While there are no widgets on the dashboard, you will see an "Add Widget" button. Use this button to add your first widget to the dashboard.
 

@@ -424,7 +424,7 @@ Um ein Dashboard zu erstellen, navigieren Sie zu einem Objekt in der Asset-Hiera
 
 * "Dashboard-Layout": Konfigurieren Sie das Layout Ihres Dashboards. Wähle ein "Dashboard Theme", "Default Widget Header Style" und "Default Widget Margin". Danach können Sie Ihr aktuell ausgewähltes Layout im Vorschaufenster sehen.
 
-![Create Dashboard](/guides/users-guide/dashboardcreatede.png)
+![Create Dashboard](/guides/users-guide/dashboard-createde.png)
 
 Klicken Sie auf "Speichern", um das Dashboard zu erstellen und zu öffnen. Solange es keine Widgets auf dem Armaturenbrett gibt, sehen Sie eine "Widget" -Schaltfläche. Verwenden Sie diese Schaltfläche, um Ihr erstes Widget dem Dashboard hinzuzufügen.
 

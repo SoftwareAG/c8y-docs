@@ -1,14 +1,13 @@
 ---
 order: 50
-title: Examples
+title: Beispiele
 layout: default
 toc: true
 ---
 
-## Calculating an hourly median of  measurements
+## Berechnen eines stündlichen Medians von Messungen
 
-We are assuming the input data looks like this:
-
+Wir gehen davon aus, dass die Eingabedaten so aussehen:
     {
       "c8y_TemperatureMeasurement": {
         "T": {
@@ -23,14 +22,14 @@ We are assuming the input data looks like this:
       "type": "c8y_TemperatureMeasurement"
     }
 
-To create the median we need the following parts in the module:
+Um den Median zu erstellen, benötigen wir folgende Teile im Modul: 
 
- - A context to separate the measurements correctly per device
- - A time window over one hour
- - An output that returns only the last average calculation every hour
- - Everything created as a new measurement
+* Ein Kontext, um die Messungen korrekt pro Gerät zu trennen 
+* Ein Zeitfenster über eine Stunde 
+* Eine Ausgabe, die nur die letzte durchschnittliche Berechnung pro Stunde zurückgibt 
+* Jedes neu erstellte Maß wird als neue Messung betrachtet
 
-Module:
+Modul:
 
     create context HourlyAvgMeasurementDeviceContext
       partition measurement.source.value from MeasurementCreated;
@@ -50,23 +49,23 @@ Module:
     where getObject(m, "c8y_TemperatureMeasurement") is not null
     output last every 1 hours;
 
-## Create alarm if the operation was not executed
+## Erstellen Sie einen Alarm, wenn die Operation nicht ausgeführt wurde
 
-Operations usually run to a fixed sequence when handled by the device.
+Operationen laufen in der Regel auf einer festen Sequenz, wenn sie vom Gerät ausgeführt werden.
 
- - PENDING (after creation)
- - EXECUTING (once device received the operation and starts the handling)
- - SUCCESSFUL or FAILED (depending on the execution result)
-
-An operation that does not reach SUCCESSFUL or FAILED within a certain time usually indicates an issue (like device lost connection or device got stuck while handling).
-Even if the operation was not handled successfully the device should update the operation as FAILED.
-For this example we will use 10 minutes as a acceptable duration for operation handling.
-We will check for the following sequence:
+ - PENDING (nach Erstellung) 
+ - EXECUTING (das Gerät erhielt den Vorgang und startet das Abarbeiten) 
+ - ERFOLGREICH oder FEHLGESCHLAGEN (abhängig vom Ausführungsergebnis)
+ 
+Eine Operation, die in einer bestimmten Zeit nicht ERFOLGREICH oder FEHLGESCHLAGEN ist, zeigt in der Regel ein Problem an (wie das Gerät hat die Verbindung verloren oder Gerät bleibt in der Abarbeitung stecken).
+Auch wenn der Vorgang nicht erfolgreich bearbeitet wurde, sollte das Gerät den Vorgang als FEHLGESCHLAGEN aktualisieren.
+Für dieses Beispiel verwenden wir 10 Minuten als akzeptable Dauer für die Bedienung.
+Wir prüfen die folgende Sequenz:
 
  - OperationCreated
- - OperationUpdated for the same operation within 10 minutes that sets the status to either SUCCESSFUL or FAILED
-
-If the second part does *not* appear we will create a new alarm:
+ - OperationUpdated für den gleichen Vorgang innerhalb von 10 Minuten, die den Status entweder entweder ERFOLGREICH oder FEHLGESCHLAGEN setzt.
+ 
+Wenn der zweite Teil *nicht* erscheint, erstellen wir einen neuen Alarm:
 
     @Name("handle_not_finished_operation")
     insert into CreateAlarm  
@@ -86,7 +85,7 @@ If the second part does *not* appear we will create a new alarm:
         	))
     ];
 
-## Creating alarms from bit measurements
+##Erstellen von Alarmen aus Bit-Messungen
 
 Devices often keep alarm statuses in registers and  can not interpret the meaning of alarms.
 In this example we assume that a device just sends the entire register as a binary value in a measurement. A rule must identify the bits and create the respective alarm.

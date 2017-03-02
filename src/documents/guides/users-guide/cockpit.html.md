@@ -419,17 +419,17 @@ Dashboards provide you with a customized visualisation of your data with a set o
 
 ### Creating new Dashboards
 
-To create a dashboard, navigate to an object in the asset hierarchy. Afterwards, click on the cogwheel icon at the top right. Select "Create dashboard". This will open a dialog:
+To create a dashboard, navigate to an object in the asset hierarchy. Afterwards, click on the cogwheel icon at the top right. Select "Create dashboard". This will open a dialog and you can:
 
 ![Dashboard cogwheel](/guides/users-guide/dashboardcogwheel.png)
 
-* The name of the dashboard, which will show in the menu.
+* Name the the dashboard you are creating, which will be displayed as a cardreader.
 
-* The location of the dashboard in navigation.
+* Specify the location of the dashboard in the navigation.
 
-* The icon which is rendered next to the name in the menu.
+* Choose the icon which is rendered next to the name in the menu.
 
-* "Dashboard visible to all users": Whether the dashboard is visible to everyone (“global”) or just limited number of users.
+* Choose visibility: "Dashboard visible to all users", whether the dashboard is visible to everyone (“global”) or just limited number of users.
 
 * "Dashboard layout": Configure the layout of your dashboard. Select a "Dashboard Theme", "Default Widget Header Style" and "Default Widget Margin". Afterwards, you can see your currently selected layout under "Preview".
 
@@ -447,39 +447,39 @@ Then this dashboard should appear for all identical devices. Changes made to thi
 
 ### Adding permissions to a Dashboard
  
-Permissions can be granted to a specific group only. To do so, create a new dashboard as described above or edit a dashboard. 
+Permissions can be granted to a specific user role only. To do so, create a new dashboard as described above or edit a dashboard. 
 
 > To edit a dashboard, click on the cogwheel on the top-right and select "Edit Dashboard".
 
-In order to grant permissions to a specific group, first deselect both "Dashboard visible to all users" and "Apply dashboard to all devices of type "_type_".
+In order to grant permissions to a specific users, first deselect both "Dashboard visible to all users" and deselect "Apply dashboard to all devices of type "_type_".
 
 ![Add permissions](/guides/users-guide/dashboardaddright.png)
 
-Then, click on "Add permissions" and select a group.
+Then, click on "Add permissions" and select a group from the dropdown menu.
 
 ![Select group](/guides/users-guide/dashboardforgroup.png)
 
-Afterwards, select the desired permission for the selected group.
+Afterward, select the desired permission for the selected group.
 
 ![Select permission](/guides/users-guide/dashboardpermission.png)
 
-> Note that, permissions can be granted for more than one groups.
+> Permissions can be granted for several groups.
 
 ### Adding a Widget to a Dashboard
 
-To add a widget to a dashboard, ensure that the dashboard is visible. Afterwards, click on the cogwheel icon at the top right. Select "Add a widget to a dashboard". This will open a dialog with a selection of widgets you can add to the dashboard.
+To add a widget to a dashboard, ensure that the dashboard is visible. Afterward, click on the cogwheel icon at the top right. Select "Add a widget to a dashboard". This will open a dialog with a selection of widgets you can add to the dashboard.
 
 ![image alt text](/guides/users-guide/image_15.png)
 
-When selecting a widget type, additional input fields for this widget type will pop up. More information about the "[Widget Package](#widget-package)". Similar to dashboards you can "Customize widget style". The currently selected style can be seen in the preview shown on the right side.
+When selecting a widget type, additional input fields for this widget type will pop up. More information about the "[Widget Package](#widget-package)" can be found with this link. Similar to dashboards you can "Customize the widget style". The currently selected style can be seen in the preview shown on the right side.
 
 ### Editing a Dashboard
 
-You can edit dashboard properties by clicking on the cogwheel icon and select "Edit dashboard". This will bring up a similar dialog like creating a dashboard. In this dialog the dashboard name, icon, position, style and permissions can be edited.
+You can edit dashboard properties by clicking on the cogwheel icon and select "Edit dashboard". This will bring up a similar dialog like "Creating a dashboard". In this dialog the dashboard name, icon, position, style and permissions can be edited.
 
 ![image alt text](/guides/users-guide/image_16.png)
 
-You can rearrange the widgets on the dashboard. By dragging and dropping the header of the widget, you can move the widget to another position on the page. By dragging and dropping the arrows on the bottom right corner of a widget, you can resize a widget. By clicking on the icon at the top right corner of the widget, you can delete or edit the widget properties.
+You can rearrange the widgets of the dashboard. By dragging and dropping the header of the widget, you can move the widget to another position on the page. By dragging and dropping the arrows on the bottom right corner of a widget, you can resize a widget. By clicking on the icon at the top right corner of the widget, you can delete or edit the widget properties.
 
 > If the dashboard is locked, widgets cannot be rearranged. In order to lock/unlock a dashboard, click on the cogwheel at the top right and then click on "Lock Dashboard"/"Unlock Dashboard".
 
@@ -497,7 +497,7 @@ An alternative way to copy a dashboard is to use the "[Dashboard per type](#crea
 
 ### Removing a Dashboard
 
-To add a widget to a dashboard, ensure the dashboard is visible.The same applies when removing it. Click on the cogwheel icon at the top right. Select "Remove dashboard" to remove a dashboard.
+To add a widget to a dashboard, ensure the dashboard is visible. The same applies when removing it. Click on the cogwheel icon at the top right. Select "Remove dashboard" to remove a dashboard.
 
 ## <a name="widget"></a>Widget Package
 

@@ -711,6 +711,8 @@ Example Response :
 
 ##  Tenant usage statistics
 
+Usage statistics are calculated daily at 00:05 for all tenants.
+
 ### UsageStatistics
 
 |Name|Type|Occurs|Description|

@@ -57,7 +57,7 @@ The following examples illustrate the rules stated above:
 
 ### Processing mode
 
-Similar to [Cumulocity REST implementation](/guides/reference/rest-implementation) every communication in *SmartREST* which can lead to data update (i. e., POST, PUT, DELETE) supports two processing modes, *PERSISTENT* or *TRANSIENT*. If the data sent to the *SmartREST* endpoint must be both stored in Cumulocity database and be transferred to real-time processing, then *PERSISTENT* mode should be used. It is also enabled by default and does not require additional configuration.
+Similar to [Cumulocity REST implementation](/guides/reference/rest-implementation) every communication in *SmartREST* which can lead to data update (i. e., POST, PUT, DELETE) supports two processing modes, *PERSISTENT* or *TRANSIENT*. If the data sent to the *SmartREST* endpoint must be both stored in Cumulocity database and be transferred to real-time processing, then *PERSISTENT* mode should be set. It is also enabled by default and does not require additional configuration.
 
 In case when it is only needed to communicate data to real-time processing, the *TRANSIENT* processing mode should be specified by adding it to the header of *HTTP* request:
 
@@ -69,7 +69,9 @@ In case when it is only needed to communicate data to real-time processing, the 
 
 	100,1234456
 
-During real-time processing, the Cumulocity Event Language scripts can be used to specify if updates should be stored to the database or not.
+Please, note that with *TRANSIENT* mode in the header the body data is not persisted in Cumulocity database.
+
+During real-time processing, the Cumulocity Event Language scripts can be used to define if updates should be stored in the database or not.
 
 ## Templates
 

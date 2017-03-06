@@ -39,7 +39,7 @@ Tailing commas are not required. The two lines below result in the same message.
 
 ## Publish templates
 
-The following templates can be used to publish data on the topics "s/us" as well as "t/us".
+The following templates can be used to publish data on the topics "s/us" as well as "t/us". For more information about t/ topic for transient data processing, please refer to [Processing Mode](/guides/reference/smartrest#processing-mode).
 
 ### Inventory templates (1xx)
 

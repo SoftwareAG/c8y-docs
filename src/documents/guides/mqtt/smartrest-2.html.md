@@ -90,10 +90,6 @@ Empty publish to s/ut/myNotExistingTemplateCollection
 41,myNotExistingTemplateCollection
 ```
 
-#### Transient message processing
-
-For passing published message to real-time processing without storing any data in Cumulocity database, please publish to the topic that starts with t/ instead of s/.
-
 ### Request templates
 
 A request template contains the following basic fields:

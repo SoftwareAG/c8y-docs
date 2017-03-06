@@ -395,11 +395,11 @@ Example Request: Delete a measurement
 Example Response:
 
     HTTP/1.1  204 NO CONTENT
-    
+
 ## Data Streaming 
-Measurement collection API allows to fetch the data in form of data stream. The respons format stays same but data is transmited by server directly from database element by element so it can be received in same way. 
+Measurement collection API allows to fetch the data in form of data stream. The response format stays same but data is transmitted by server directly from database element by element so it can be received in same way.
 Using stream json parses like [java json](http://docs.oracle.com/javaee/7/api/javax/json/stream/JsonParser.html) or [javascript json](http://oboejs.com/) parsers we are able to transmit high data volumes in single request. 
-To activate streaming you need to send as Accept header `applicatnion/json-stream`
+To activate streaming you need to send as Accept header `application/json-stream`
 
 Example : 
 
@@ -407,6 +407,12 @@ Example :
      Host: [hostname]
      Authorization: Basic xxxxxxxxxxxxxxxxxxx
      Accept application/json-stream
+
+## Other response formats
+In order to get measurements in other formats than JSON you can use one of the following supported `Accept` headers:
+
+- `text/csv`,
+- `application/vnd.ms-excel`.
 
 ## Notifications
 

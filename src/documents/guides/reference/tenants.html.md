@@ -741,6 +741,11 @@ Example Response :
 
 ### GET a representation of a TenantUsageStatisticsCollection
 
+| Query param |    type  |
+|:------------|:---------|
+| dateFrom    | datetime |
+| dateTill    | datetime |
+
 Response body: TenantUsageStatisticsCollection
   
 Required role: ROLE\_TENANT\_STATISTICS\_READ
@@ -793,6 +798,11 @@ Example Response :
 
 ### GET a summary of all tenant usage statistics
 
+| Query param |    type  |
+|:------------|:---------|
+| dateFrom    | datetime |
+| dateTo      | datetime |
+
 Response body: application/json
   
 Required role: ROLE\_TENANT\_MANAGEMENT\_READ
@@ -802,6 +812,7 @@ Example Request: Get statistics of all tenants starting Aug 1st, 2014, until tod
     GET /tenant/statistics/allTenantsSummary?dateFrom=2014-08-01
     Host: ...
     Authorization: Basic ...
+
 
 Example Response :
 
@@ -839,6 +850,11 @@ Example Response :
 
 
 ### GET a representation of a TenantUsageStatisticsSummary
+
+| Query param |    type  |
+|:------------|:---------|
+| dateFrom    | datetime |
+| dateTill    | datetime |
 
 Response body: TenantUsageStatisticsSummary
   

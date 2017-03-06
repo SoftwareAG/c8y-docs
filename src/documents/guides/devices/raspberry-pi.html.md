@@ -49,7 +49,7 @@ Log in to the Raspberry Pi and install the agent.
 	$ wget http://resources.cumulocity.com/examples/cumulocity-rpi-agent-latest.deb
 	$ sudo dpkg -i cumulocity-rpi-agent-latest.deb
 
-When agent is installed, you should update the configuration file which is usually located at "/etc/cumulocity-agent.properties" and fill the host property value.
+When agent is installed, you should update the configuration file which is usually located at "./cfg/cumulocity-config.properties" and fill the host property value.
 Open Cumulocity in a web browser and go to the "Registration" page. Enter the serial number that you wrote down in the previous step and click "Register Device".
 
 ![Register device](/guides/devices/deviceregistration.png)

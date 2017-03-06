@@ -1,6 +1,6 @@
 ---
 title: Dell Edge Gateway
-layout: default
+layout: devices
 ---
 
 ## Overview

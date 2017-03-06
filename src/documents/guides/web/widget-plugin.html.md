@@ -91,7 +91,7 @@ Next, we have to create a config file which adds a menu item to the widget menu 
     gettext
   ) {
     c8yComponentsProvider.add({ // adds a menu item to the widget menu list with ...
-      name: 'Icon Map', // ... the name *"Icon Map"*
+      name: 'iconmap', // ... the identifier *"iconmap"* which has to be unique among the widgets in the application
       nameDisplay: gettext('Icon Map'), // ... the displayed name *"Icon Map"*
       description: gettext('Displays a map with icons for devices instead of markers'), // ... a description
       templateUrl: ':::PLUGIN_PATH:::/views/iconmap.main.html', // ... displaying *"iconmap.main.html"* when added to the dashboard
@@ -482,10 +482,10 @@ Next, we have to create a config file, which adds a menu item to the widget menu
 
   function configure(c8yComponentsProvider, gettext) {
     c8yComponentsProvider.add({ // adds a menu item to the widget menu list with ...
-      name: 'weather', // ... the name *"weather"*
+      name: 'weather', // ... the identifier *"weather"* which has to be unique among the widgets in the application
       nameDisplay: gettext('Weather'), // ... the displayed name *"weather"*
       description: gettext('Shows the current weather at the location of a device'), // ... a description
-      templateUrl: ':::PLUGIN_PATH:::/views/weather.main.html' // ... displaying *"iconmap.main.html"* when added to the dashboard
+      templateUrl: ':::PLUGIN_PATH:::/views/weather.main.html' // ... displaying *"weather.main.html"* when added to the dashboard
     });
   }
 }());

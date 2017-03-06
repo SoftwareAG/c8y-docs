@@ -15,7 +15,9 @@ docpadConfig = {
 			{ title: 'Java Developer\'s Guide', folder: 'guides/java', slug: 'java-developer', icon: 'glyphicon-cog', description: '' },
 			{ title: 'Web Developer\'s Guide', folder: 'guides/web', slug: 'web-developer', icon: 'glyphicon-cog', description: '' },
 			{ title: 'C++ Developer\'s Guide', folder: 'guides/cpp', slug: 'cpp-developer', icon: 'glyphicon-cog', description: '' },
-			{ title: 'Reference Guide', folder: 'guides/reference' , slug: 'reference-guide', icon : 'glyphicon-book', description: 'The reference guide contains the detailed technical specifications of the programming interfaces of Cumulocity as reference for software developers.'}
+			{ title: 'Reference Guide', folder: 'guides/reference' , slug: 'reference-guide', icon : 'glyphicon-book', description: 'The reference guide contains the detailed technical specifications of the programming interfaces of Cumulocity as reference for software developers.'},
+			{ title: 'Konzepte', folder: 'guides/konzepte', slug: 'Konzepte', icon: 'glyphicon-asterisk', description: 'Erklaerung des Konzepts und der Systemarchitektur in Cumulocity fuer alle Interessierten.i' },
+			{ title: 'Benutzerhandbuch', folder: 'guides/benutzerhandbuch', slug: 'Benutzerhandbuch', icon : 'glyphicon-user', description: ''}
 		]
   }
 	plugins:

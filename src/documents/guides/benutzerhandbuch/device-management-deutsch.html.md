@@ -64,7 +64,7 @@ Um die Geräte anzuschließen, müssen die Geräte mit entsprechenden Informatio
 * Passwort: Das Passwort für den Zugriff auf Cumulocity, muss den "Zugangsdaten" in der CSV-Datei entsprechen.
 * Gerät in der Objektdarstellung. Felder: "Typ", "Name", "Iccid", "Idtype", "Pfad", "Shell" in der CSV-Datei.
 
-Wenn Sie eine Spezialisierte oder Private Cumulocity Edition besitzen, können Sie auch Geräte über mehrere Mandanten registrieren, indem Sie der Tabelle eine Spalte  mit "Mandanten" hinzufügen und die CSV-Datei aus der Mandantenverwaltung importieren.
+Wenn Sie eine Enterprise Edition von Cumulocity besitzen, können Sie auch Geräte über mehrere Mandanten registrieren, indem Sie der Tabelle eine Spalte  mit "Mandanten" hinzufügen und die CSV-Datei aus der Mandantenverwaltung importieren.
 
 Weitere Informationen zum Dateiformat und akzeptierten CSV-Varianten finden Sie unter
 [Bulk device credentials](/guides/reference/device-credentials/#creds-upload).
@@ -132,7 +132,7 @@ Durch Auswahl von "Alle Geräte" können dynamische Gruppen angelegt werden. Um 
 
 Wenn die Gruppe erstellt wird, wird sie als Gruppe der obersten Ebene im Abschnitt "Gruppen" angezeigt. Sie können Filterkriterien anpassen, indem Sie einfach die Registerkarte "Kindassets" auswählen und die Filtereinstellungen ändern.
 
-<img src="/guides/users-guide/smartgroup2.png" alt="Adding top-level groups" style="max-width: 100%">
+<img src="/guides/users-guide/smartgroup2de.png" alt="Adding top-level groups" style="max-width: 100%">
 
 Benutzer können auch dynamische Gruppen aus den Gruppen der obersten Ebene löschen. Dieser Vorgang ist irreversibel.
 
@@ -149,7 +149,7 @@ Durch Anklicken eines Geräts in einer Geräteliste werden detaillierte Informat
 
 Am oberen Rand der Gerätedetails wird der Name des Gerätes angezeigt. Unterhalb des Namens wird eine Pfadnavigation angezeigt. Wenn das Gerät Teil einer Asset-Hierarchie (z. B. einer Gruppe) ist, können Sie mit der Pfadnavigation problemlos nach oben navigieren. Da Geräte Teil von mehreren Hierarchien sein können, können mehrere Reihen von Pfadnavigationen gezeigt werden.
 
-Rechts neben dem Namen wird ein Zahnrad angezeigt. Wenn Sie auf das Zahnrad klicken, wird ein Dropdown-Menü mit weiteren Aktionen angezeigt, wie das Erstellen eines Dashboards für das Gerät.
+Rechts neben dem Namen wird ein Zahnrad angezeigt. Wenn Sie auf das Zahnrad klicken, wird ein Dropdown-Menü mit weiteren Aktionen angezeigt.
 
 Ist das Gerät kompatibel, steht über das Zahnrad ein Menüpunkt "Messwertabfrage starten" zur Verfügung. Mit dieser Option können Sie ein Gerät anfordern, um Messungen mit einer bestimmten Frequenz für eine bestimmte Dauer zu senden. Diese Art von Debugging vermeidet zu viel Datenverkehr, der durch das Senden von Messungen erzeugt wird.
 
@@ -414,7 +414,7 @@ Die Serviceüberwachung zeigt an, ob das Gerät in Betrieb ist. Zum Beispiel ist
 
 Cumulocity ist der Auffassung, dass ein Gerät in Betrieb ist, solange kein kritischer, nicht aufgelöster Alarm für die Maschine vorhanden ist. Dies wird als Zeitanteil angezeigt, wenn ein solcher Alarm vorliegt. Wenn eine Maschine keine kritischen Alarme irgendwann während eines Zeitraums hatte, war sie 100% im Service. Wenn die Hälfte der Zeit gab es einige kritische, ungelöste Alarm war die Maschine 50% im Service.
 
-![Service monitoring](/guides/users-guide/servicemonitoring.png)
+![Service monitoring](/guides/users-guide/servicemonitoringde.png)
 
 Während ein Gerät offline ist, nimmt Cumulocity standardmäßig an, dass das Gerät weiterhin im Dienst bleibt, wie es war, bevor es die Verbindung verloren hatte. Wenn es zuvor nicht in Betrieb war, geht Cumulocity davon aus, dass das Gerät während eines Verbindungsausfalls außer Betrieb ist.
 
@@ -507,13 +507,13 @@ Cumulocity bietet einen zentralen Platz für die Erfassung von Referenz-Firmware
 
 Um Firmware zu aktualisieren oder Softwarepakete auf einem bestimmten Gerät hinzuzufügen, müssen Sie drei Schritte durchführen:
 
-1. Firmware und Software Files hochladen: [Administration application](/guides/users-guide/administration#files). (Dieser Schritt ist optional und nicht zwingend erforderlich, da der Hersteller die Firmware auch online anbieten kann.)
+1. Firmware und Software Files hochladen: [Administration Anwendung](/guides/benutzerhandbuch/administration-deutsch#files). (Dieser Schritt ist optional und nicht zwingend erforderlich, da der Hersteller die Firmware auch online anbieten kann.)
 
 2. Wählen und speichern Sie die Dateien im "Firmware-Repository". Um ein neues Firmware-Image zum Repository hinzuzufügen, besuchen Sie das "Firmware-Repository" und klicken Sie auf die Schaltfläche "Firmware hinzufügen". Geben Sie dann den Namen der Firmware, die Version und die URL ein, von der das Gerät die Firmware herunterladen kann. Ähnliches verwenden Sie das "Software-Repository", um Referenz-Softwarepakete hinzuzufügen.
 
-3. Installieren Sie die Firmware auf einem bestimmten Gerät. Zuerst navigieren Sie zu "Alle Geräte", wählen Sie das gewünschte Gerät, gehen Sie dann auf "Software" auf Gerätedetails und klicken Sie auf "Firmware installieren". Die Installation von Softwarepaketen ist sehr ähnlich. Sie folgen den gleichen Schritten wie zuvor erwähnt, aber Sie wählen stattdessen "Software installieren".(Mehr hierzu ["Software"](/guides/users-guide/device-management#software).)
+3. Installieren Sie die Firmware auf einem bestimmten Gerät. Zuerst navigieren Sie zu "Alle Geräte", wählen Sie das gewünschte Gerät, gehen Sie dann auf "Software" auf Gerätedetails und klicken Sie auf "Firmware installieren". Die Installation von Softwarepaketen ist sehr ähnlich. Sie folgen den gleichen Schritten wie zuvor erwähnt, aber Sie wählen stattdessen "Software installieren".(Mehr hierzu ["Software"](/guides/benutzerhandbuch/device-management-deutsch#software-repo).)
 
-> Sie müssen die Administrationsanwendung aufrufen, um Binärdateien in Cumulocity zu speichern. [Administration application](/guides/users-guide/administration#files).
+> Sie müssen die Administrationsanwendung aufrufen, um Binärdateien in Cumulocity zu speichern. [Administration application](/guides/benutzerhandbuch/administration-deutsch#files).
 
 Cumulocity bietet Benutzern die Möglichkeit, Firmware oder Softwareupdates für mehrere Geräte gleichzeitig auszuführen. Um dies zu tun:
 
@@ -537,7 +537,7 @@ In den meisten Fällen sollten Sie nichts bearbeiten müssen. Ausnahmen sind:
 
 Die Geräte-Anmeldeinformationen können auch aus der CSV-Datei bereitgestellt werden. Dateien können über die mit einem Pfeil markierte Schaltfläche hochgeladen werden. Weitere Details zur Dateistruktur finden Sie unter [Bulk-registering devices] (# creds-upload) oben.
 
-## <a name="simulators"></a>Simulatoren
+## <a name="simulators"></a> Simulatoren
 
 
 Mit dem Cumulocity Simulator, können alle Aspekte von IoT Geräten simuliert werden:
@@ -549,7 +549,7 @@ Mit dem Cumulocity Simulator, können alle Aspekte von IoT Geräten simuliert we
 * Generieren Sie Meldungen für Messungen, Alarme, Ereignisse und Stammmdaten
 * Simulationsprobleme als Alarme anzeigen
 
-###Was ist ein Simulator?
+### Was ist ein Simulator?
 
 Mit dem Simulator können Sie künstliche Geräte mit gleicher Funktionalität wie angeschlossene Hardware-Geräte erstellen.
 
@@ -559,74 +559,74 @@ Eine Anweisung kann entweder eine Nachricht senden (Messungen, Alarme, Ereigniss
 
 Eine Nachricht wird durch Auswählen einer Vorlage (zB Senden einer Temperatur) und Bereitstellen der Werte für diese Vorlage (23,0 Grad) definiert. Es stehen viele vordefinierte Meldevorlagen stehen zur Verfügung, zB "Messwert erstellen", "Ereignis senden", "Erstellen" und "Abbrechen" eines Alarms oder "Update Betriebszustand". Diese basieren auf statischen MQTT-Vorlagen. Darüber hinaus können benutzerdefinierte Nachrichtenvorlagen mit dem SmartREST-Template-Editor definiert werden.
 
-###Einrichten eines Simulators
+### Einrichten eines Simulators
 
 Um einen Simulator einzurichten geht man zur Navigation im Device Management und wählt Simulatoren und dem Abschnitt Geräte aus.
 
-![New Simulator](/guides/users-guide/newsim.png)
+![New Simulator](/guides/users-guide/newsimde.png)
 
 Simulatoren können hinzugefügt werden, indem Sie auf "Neu" klicken, um eine Karte zu öffnen. Sie können nun wählen, ob Sie einen neuen Simulator definieren oder ein Preset auswählen möchten. Aus diesem Simulator wird der Name des Simulators und bis zu 10 Instanzen ermittelt.
 
-<img src="/guides/users-guide/addsim.png" alt="Add Simulator" style="max-width: 60%">
+<img src="/guides/users-guide/addsimde.png" alt="Add Simulator" style="max-width: 60%">
 
-###Presets
+### Presets
 
 Die andere Möglichkeit ist, einen Simulator aus einem Preset zu erstellen. Derzeit stehen zwei verschiedene Presets zur Verfügung: Ein Preset "Temperaturmessung" und ein Preset "Positionsaktualisierung".
 
-<img src="/guides/users-guide/addtempsim.png" alt="Add Add Temperature Preset" style="max-width: 60%">
+<img src="/guides/users-guide/addtempsimde.png" alt="Add Add Temperature Preset" style="max-width: 60%">
 
-<img src="/guides/users-guide/addpossim.png" alt="Add Position Preset" style="max-width: 60%">
+<img src="/guides/users-guide/addpossimde.png" alt="Add Position Preset" style="max-width: 60%">
 
-![Edit Simulator](/guides/users-guide/editcloneremsim.png)
+![Edit Simulator](/guides/users-guide/editcloneremsimde.png)
 
 Die Anzahl der Instanzen eines Simulators ist auf 10 begrenzt. Vorhandene Simulatoren finden Sie auf dieser Seite. Simulatoren können durch Klicken auf das Zahnrad in der rechten oberen Ecke der Karte bearbeitet, geklont oder entfernt werden. Das öffnet ein Dropdown-Menü mit diesen Optionen.
 
-###Hinzufügen von Anweisungen für den Simulator
+### Hinzufügen von Anweisungen für den Simulator
 
 Nach dem Einrichten eines Simulators können Sie Anweisungen hinzufügen, was Ihr Simulator tun soll. Anweisungen sind einzelne Arbeitsschritte, die zu einer Wiedergabeliste hinzugefügt werden. Der Simulator wird diese Liste durcharbeiten. Um ein Beispiel zu sehen, klicken Sie auf den Temperatursimulator.
 
-![Add Instructions](/guides/users-guide/addinstructions.png)
+![Add Instructions](/guides/users-guide/addinstructionsde.png)
 
 Die folgende Übersicht erscheint:
 
-![Add Instructions Step 2](/guides/users-guide/addinstructions2.png)
+![Add Instructions Step 2](/guides/users-guide/addinstructions2de.png)
 
 Innerhalb dieses Presets sind bereits Musteranleitungen enthalten. Sie können 2 Schritte identifizieren. "Messung erstellen" und "Sleep".
 
-###Details der Anweisungen
+### Details der Anweisungen
 
 **Fragmente:**
 
 Die Messanweisung bezieht sich auf ein Fragment. Dieses ist das unten gezeigte Beispiel. Fragmente werden verwendet, um die Fähigkeiten eines verwalteten Objekts zu identifizieren. Mehr Informationen über Fragmente finden Sie hier:
 [Sensor Library ](https://www.cumulocity.com/guides/reference/sensor-library/) 
 
-![Add Instructions Step 3](/guides/users-guide/addinstructions3.png)
+![Add Instructions Step 3](/guides/users-guide/addinstructions3de.png)
 
 **Smart Rest Vorlagen**
 
 Andere Optionen zeigen eine Auswahl von Smart Rest-Vorlagen. Die Smart Rest Vorlagen werden im Navigator unter dem Eintrag "Gerätetypen"> "SmartREST temSmart Rest Vorlagenplatten" erstellt. Diese Vorlagen sind eine Antwortvorlage, die eine Liste von Werten erzeugt, die eine Operation als Endergebnis beschreiben. Die unten aufgeführte Smart Rest-Vorlage erstellt einen Warnalarm mit Text zu einem bestimmten Zeitpunkt.
 Spezifische Informationen und Muster einer Vielzahl von Vorlagen sind erhältlich bei der [MQTT Developer's Guide](https://www.cumulocity.com/guides/mqtt/introduction/). 
 
-![Rest Template](/guides/users-guide/resttemplate.png)
+![Rest Template](/guides/users-guide/resttemplatede.png)
 
-![Add Instructions Step 4](/guides/users-guide/addinstructions4.png)
+![Add Instructions Step 4](/guides/users-guide/addinstructions4de.png)
 
 Die Anweisung "Sleep" erfordert einen Wert für die Dauer in Sekunden. Das Bedienfeld auf der rechten Bildschirmhälfte ändert sich entsprechend der Art der Anweisungen, die Sie wählen.
 
-###Hinzufügen von Operationen zu einem Simulator
+### Hinzufügen von Operationen zu einem Simulator
 
 Direkt unter der Registerkarte "Anweisungen" finden Sie die unterstützten Operationen. In diesem Menü können Sie bestimmte Funktionen wie Konfiguration oder Software / Firmware-Update aktivieren oder deaktivieren.
 
-![Operations Off](/guides/users-guide/supop1.png)
+![Operations Off](/guides/users-guide/supop1de.png)
 
-![Operations On](/guides/users-guide/supop2.png)
+![Operations On](/guides/users-guide/supop2de.png)
 
 Einige Operationen sind aktiviert. Sie können auch benutzerdefinierte Vorgänge mithilfe der Schaltfläche zum Hinzufügen einer benutzerdefinierten Operation festlegen.
 
-###Alarme (innerhalb der Simulator Funktion)
+### Alarme (innerhalb der Simulator Funktion)
 
 Der letzte Tab im Simulator menu sind Alarme.
 
-![Simulator Alarm](/guides/users-guide/simalarm.png)
+![Simulator Alarm](/guides/users-guide/simalarmde.png)
 
 Dieses sind nicht etwa die Alarme, die durch die simulierten Geräte erzeugt werden, sondern diese Alarme beziehen sich auf den Simulator selber. Wenn der Simulator nicht richtig arbeitet, dann wird das hier sichtbar.

@@ -471,11 +471,11 @@ Wenn Sie den Cursor über einen Mandanten bewegen, werden die Schaltflächen "Su
 
 ## <a name="event-processing"></a>Verwalten der Ereignisverarbeitung
 
-Mithilfe der Ereignisverarbeitung können Sie eine Echtzeit-Geschäftsverarbeitungslogik angeben, die automatisch von Cumulocity ausgeführt wird, sobald neue Daten eingehen oder vorhandene Daten geändert werden. Die Logik wird in sogenannten "Modulen" eingesetzt. Module bestehen aus einer Menge von Anweisungen, die Sie schreiben [Cumulocity Event Language](/guides/concepts/realtime). Klicken Sie auf "Ereignisverarbeitung", um die aktuellen Module zu sehen oder neue Module anzulegen.
+Mithilfe der Ereignisverarbeitung können Sie eine Echtzeit-Geschäftsverarbeitungslogik angeben, die automatisch von Cumulocity ausgeführt wird, sobald neue Daten eingehen oder vorhandene Daten geändert werden. Die Logik wird in sogenannten "Modulen" eingesetzt. Module bestehen aus einer Menge von Anweisungen, die Sie schreiben [Cumulocity Event Language](/guides/konzepte/echtzeit). Klicken Sie auf "Ereignisverarbeitung", um die aktuellen Module zu sehen oder neue Module anzulegen.
 
 ![Event processing](/guides/users-guide/eventprocessingde.png)
 
-> Eine benutzerfreundliche Art, Echtzeit-Geschäftsverarbeitung zu spezifizieren, wird in der Cockpit-Anwendung über die sogenannte"[Smart Rules](/guides/users-guide/cockpit#working-with-smart-rules)". Smart Rules sind "unter einem Dach" auch als Cumulocity Event Language-Anweisungen implementiert, und Sie können sie sehen, wenn Sie auf "Ereignis Verarbeitung" klicken. Sie können jedoch nicht Smart Rules von der Ereignisverarbeitung-Benutzeroberfläche bearbeiten.
+> Eine benutzerfreundliche Art, Echtzeit-Geschäftsverarbeitung zu spezifizieren, wird in der Cockpit-Anwendung über die sogenannte"[Smart Rules](/guides/benutzerhandbuch/cockpit-deutsch#rules)". Smart Rules sind "unter einem Dach" auch als Cumulocity Event Language-Anweisungen implementiert, und Sie können sie sehen, wenn Sie auf "Ereignis Verarbeitung" klicken. Sie können jedoch nicht Smart Rules von der Ereignisverarbeitung-Benutzeroberfläche bearbeiten.
 
 ### Neue Module Erstellen
 
@@ -506,7 +506,7 @@ Mit "Alarmzuordnung" können Sie die Schwere und den Text der Alarme ändern, um
 
 ### Alarmzuordnung Hinzufügen
 
-Um die Schwere eines Alarms zu ändern, bestimmen Sie den Typ des Alarms, den Sie ändern möchten, indem Sie auf einen Alarm klicken [Alarm Liste](/guides/users-guide/device-management#alarm-monitoring). Klicken Sie dann im Menü "Alarmzuordnung" auf "Alarmzuordnung hinzufügen".
+Um die Schwere eines Alarms zu ändern, bestimmen Sie den Typ des Alarms, den Sie ändern möchten, indem Sie auf einen Alarm klicken [Alarm Liste](/guides/benutzerhandbuch/device-management-deutsch#alarm-monitoring). Klicken Sie dann im Menü "Alarmzuordnung" auf "Alarmzuordnung hinzufügen".
 
 - Geben Sie den zu ändernden Alarmtyp ein.
 - Wählen Sie den gewünschten neuen Schweregrad aus, oder wählen Sie "Drop", um den Alarm überhaupt nicht anzuzeigen.
@@ -537,7 +537,7 @@ Durch die Erweiterung des Menüs "Einstellungen" können Administratoren:
 
 Um die Passworteinstellungen zu ändern, klicken Sie auf "Passwort". Um die Gültigkeit von Benutzerpasswörtern zu begrenzen, legen Sie die Anzahl der Tage fest, zu denen Benutzer ihre Passwörter ändern müssen. Wenn Sie Ihre Benutzer nicht dazu zwingen möchten, Kennwörter zu ändern, verwenden Sie "0" für die unbegrenzte Gültigkeit von Passwörtern.
 
-Standardmäßig können Benutzer jedes Kennwort mit acht Zeichen oder mehr verwenden. Wenn Sie "Erzwingen, dass alle Kennwörter" stark "(grün)" sind, müssen Ihre Benutzer starke Kennwörter wie unter "[Logging in](/guides/users-guide/overview#login)" beschrieben verwenden.
+Standardmäßig können Benutzer jedes Kennwort mit acht Zeichen oder mehr verwenden. Wenn Sie "Erzwingen, dass alle Kennwörter" stark "(grün)" sind, müssen Ihre Benutzer starke Kennwörter wie unter "[Logging in](/guides/benutzerhandbuch/uebersicht#login)" beschrieben verwenden.
 
 > "Erzwingen Sie, dass alle Kennwort grün sind" und die "Kennwortgültigkeitsbegrenzung" kann zwingend und nicht bearbeitbar sein, wenn sie so vom Plattformadministrator konfiguriert wird.
 
@@ -563,7 +563,7 @@ Im Menü "Serverseitige Agenten" kann die Smart-Regel "Dashboard über E-Mail se
 
 ### <a name="openIT-credentials"></a>OpenIT Zugangsdaten Eingeben
 
-SMS werden von verschiedenen Funktionen benutzt. Es kann für sicheren Zugang benutzt werden [Zwei-Faktor Authentifikation](/guides/users-guide/administration#tfa). Eine SMS kann gesendet werden, wenn ein Alarm ausgelöst wird. Mit SMS können Befehle an Geräte gesendet werden. TDer Service von [Openit](https://sms.openit.de/main.php) wird ähnlich benutzt. In diesem Abschnitt kann der Benutzer Anmeldeinformationen eingeben, um Funktionen zu aktivieren, die SMS-Nachrichten erfordern.
+SMS werden von verschiedenen Funktionen benutzt. Es kann für sicheren Zugang benutzt werden [Zwei-Faktor Authentifikation](/guides/benutzerhandbuch/administration-deutsch#users). Eine SMS kann gesendet werden, wenn ein Alarm ausgelöst wird. Mit SMS können Befehle an Geräte gesendet werden. TDer Service von [Openit](https://sms.openit.de/main.php) wird ähnlich benutzt. In diesem Abschnitt kann der Benutzer Anmeldeinformationen eingeben, um Funktionen zu aktivieren, die SMS-Nachrichten erfordern.
 
 ## <a name="retention"></a>Verwalten der Datenaufbewahrung
 

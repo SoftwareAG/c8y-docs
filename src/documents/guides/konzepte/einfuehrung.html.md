@@ -13,7 +13,7 @@ Cumulocity gibt Ihnen sehr schnelle Kontrolle und Sichtbarkeit von Geräten und 
 
 * Zertifizierte Hardware Baukästen und Software Bibliotheken um fernsteuerbare Assets in eine Cloud zu bringen.
 * Gerätemanagement, Datenvisualisierung und Fernsteuerfunktionen über das Internet.
-* Schnelle Anpassung der oben genannten Eigenschaften mit [Cumulocity Event Language](/guides/concepts/realtime) Regelwerken und [Cumulocity applications](/guides/concepts/applications).
+* Schnelle Anpassung der oben genannten Eigenschaften mit [Cumulocity Event Language](/guides/konzepte/echtzeit) Regelwerken und [Cumulocity applications](/guides/konzepte/anwendungen).
 * APIs um existierende Funktionalität auszubauen  oder um Cumulocity mit anderen IT Services wie ERP oder CRM zu vereinen. Cumulocity kann auch ihre HTML5 Anwendungen hosten.
 
 Alle diese Dienste werden über einen Cloud Service zur Verfügung gestellt, mit dem Sie "Internet of Things" (IoT) Lösungen mit Cumulocity fundamental anders als mit massgeschneiderten Entwicklungen und RAD angehen werden. Sie können sofort mit einer grossen Anzahl an bestehender Funktionalität und Lösungen starten und Sie können kostenlos starten. Sie brauchen sich keine Gedanken über IT Infrastruktur zu machen (wie etwa Hosting, Netzwerke, Sicherheit, Kapazität und Backup) und ebenso nicht über IT Management (das alle Software für alle beteiligten User installiert wäre). 
@@ -70,7 +70,7 @@ Durch die [Sensor Library](/guides/reference/sensor-library), werden gemeinsame 
 Die oben beschriebene Funktionalität bietet bereits eine breite Palette an Geräteverwaltungs-, Visualisierungs- und Steuerungsoptionen. Aber was über benutzerdefinierte Visualisierung, neue Steuerelement Widgets und benutzerdefinierte Business-Logik? Versuchen Sie die umfangreichen Anpassungsoptionen von Cumulocity:
 
 * Schreiben Sie Regeln zu Warnungen oder unterdrücken Sie Alarm oder repriorisieren Sie Warnungen indem Sie SLA Parameter definieren.
-* Mit Hilfe von [Cumulocity Event Language](/guides/concepts/realtime) implementieren Sie Regeln. Bsp dass Sie eine Email bekommen, wenn Grenzwerte überschritten werden oder andere automatisierte Nachrichten. 
+* Mit Hilfe von [Cumulocity Event Language](/guides/konzepte/echtzeit) implementieren Sie Regeln. Bsp dass Sie eine Email bekommen, wenn Grenzwerte überschritten werden oder andere automatisierte Nachrichten. 
 * Richten Sie eine grafisches Anzeige mit den wichtigsten KPIs ein.
 * Abonnieren von Plugins, die neue Funktionen zur Cumulocity-Anwendung beitragen.
 * 

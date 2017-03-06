@@ -1,6 +1,6 @@
 ---
 order: 10
-title: Introduction
+title: Einführung
 layout: default
 ---
 
@@ -11,7 +11,7 @@ Dieser Abschnitt ist eine Basis-Einführung in die Cumulocity Plattform. Sie bes
    * [Zugriff auf Cumulocity Anwendungen](#zugriff).
    * [Einloggen](#login).
    * [Navigation in Cumulocity](#navigating).
-   * [Veraenderung der Nutzer Einstellungen](#settings).
+   * [Veränderung der Nutzer Einstellungen](#settings).
    * [Suchen in Cumulocity](#searching).
 
 ## <a name="zugriff"></a>Zugriff auf Cumulocity Anwendungen
@@ -40,7 +40,7 @@ Dadurch gelangen Sie zur Anmeldeseite Ihrer Standardanwendung, die in der folgen
 
 
 > Stellen Sie sicher, dass die Adressleiste Ihres Browsers ein Sperrsymbol anzeigt. Das Sperrsymbol zeigt an, dass Sie eine sichere Verbindung verwenden und dass Sie tatsächlich mit Cumulocity verbunden sind.
-Die oben genannte URL ist nur für Abonnenten der Cumulocity Standard Edition gültig. Für spezialisierte- und private Edition-Bereitstellungen von Cumulocity ist die URL für Ihr Unternehmen spezifisch.
+Die oben genannte URL ist nur für Abonnenten der Cumulocity Standard Edition gültig. Für Enterprise Editions von Cumulocity ist die URL für Ihr Unternehmen spezifisch.
 
 ## <a name="login"></a>Logging in
 

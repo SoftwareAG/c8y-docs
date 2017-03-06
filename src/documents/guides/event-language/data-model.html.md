@@ -13,7 +13,7 @@ All input streams share the same base structure.
 
 |Parameter|Data type|Description|
 |:--|:----------|:-------------|
-|_type|String|The type of the event. See the table below for which value types can be used for different streams|
+|_type|String|The type of the event. See the table below which value types can be used for different streams|
 |_mode|String|The processing mode in which the data was sent to Cumulocity. See [Processing mode](/guides/reference/rest-implementation#processing-mode)|
 |_origin|String|The origin of the event. If the data was created by a cep rule the origin will be "cep".|
 |payload|Object|The actual data contained in the event|
@@ -34,7 +34,7 @@ Types:
 |AlarmCreated|ALARM_CREATE|
 |AlarmUpdated|ALARM_UPDATE|
 
-For simpler access you can receive the payload directly in the data type of the respective stream by accessing it via a API specific parameter:
+For simpler access you can receive the payload directly in the data type of the respective stream by accessing it via an API specific parameter:
 
 |API|Parameter|Data type|
 |:--|:----------|:-------------|
@@ -176,7 +176,7 @@ Example:
 
 ### General structure
 
-Output streams create the possibility to CREATE, UPDATE and DELETE data in Cumulocity.
+Output streams contain the possibility to CREATE, UPDATE and DELETE data in Cumulocity.
 When updating or deleting data it is necessary to provide the ID of the object that will be updated or deleted.
 When creating data, Cumulocity will generate an ID if not set in the event processing. The creation of data also requires certain parameters to be set (the same as at our REST APIs).
 In addition to the predefined parameters listed, it is possible to add any custom fragment to the data. Please take a look at ---->this<---- for adding custom fragments.

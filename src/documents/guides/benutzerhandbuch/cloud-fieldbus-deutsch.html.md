@@ -73,6 +73,28 @@ Nachdem die Fortschrittsanzeige verschwindet, wurde ein neues Kindgerät zum Ter
 
 ![Add CAN device](/guides/users-guide/newcandevicede.png)
 
+### <a name="connect-opcua"></a>OPC UA Server verbinden
+
+Um einen OPC UA Server mit Cumulocity zu verbinden, benötigen Sie einen Gateway oder Industriecomputer mit dem Cumulocity OPC UA Agenten.
+
+* Vergewissern Sie sich, dass der OPC-UA-Server mit dem Gateway oder PC verbunden ist, z. B. direkt über ein Ethernet-Kabel oder über einen Switch.
+* Überprüfen Sie die Netzwerkeinstellungen des Gateways und stellen Sie sicher, dass der OPC UA Server vom Gateway aus erreichbar ist.
+* Navigieren Sie zum Gateway in der Plattform und klicken Sie auf die Registerkarte "OPC UA".
+* Geben Sie die URL des OPC UA Servers aus dem Gateway in das Feld "URL" ein.
+* Setzen Sie den Benutzernamen und das Passwort, um auf den OPC UA Server zuzugreifen.
+* Ändern Sie die Übertragungsrate und die Abfragerate nach Ihren Anforderungen. Die Übertragungsrate ist die Frequenz, bei der Messungen an Cumulocity gesendet werden. Die Abfragerate ist die Häufigkeit, mit der der OPC-UA-Server nach Änderungen abfragt. Beachten Sie, dass nicht alle OPC-UA-Server die Einstellung einer Abfragerate unterstützen. In solchen Fällen sendet der OPC-UA-Server Daten, wann immer sie sich ändern.
+* Klicken Sie auf "Änderungen speichern", wenn Sie Änderungen vorgenommen haben.
+* Um die Kommunikation zwischen dem Gateway und dem OPC UA Server zu starten, klicken Sie auf "OPCUA Gerät hinzufügen". Ein OPC-UA-Server kann viele Geräte als Teil seines Objektmodells hosten.
+* Geben Sie einen Namen für das OPC UA-Gerät ein.
+* Geben Sie den absoluten "browse Pfad" des OPC UA Gerätes ein. Der Pfad des Gerätes ist auf dem OPC UA Server konfiguriert und stellt den "Root" des OPC UA Gerätes im OPC UA Server Objektmodell dar.
+* Wählen Sie im Dropdown-Feld den Typ des untergeordneten Geräts aus. Um neue Gerätetypen hinzuzufügen, siehe"[Fieldbus Geräte konfigurieren](#configure)" unten.
+* "Hinzufügen" klicken.
+
+Cumulocity sendet nun eine Benachrichtigung an den OPC UA-Agenten, dass ein neues Gerät bereit ist, verwaltet zu werden. Dies kann einige Sekunden dauern.
+Nachdem die Fortschrittsanzeige verschwindet, wurde dem Gateway ein neues Kindgerät hinzugefügt und kann nun verwaltet werden. Sie können auf den Namen des Geräts in der Tabelle klicken, um zum Gerät zu navigieren.
+
+![Add OPCUA device](/guides/users-guide/newopcuadevice.png)
+
 ## <a name="manage"></a>Fieldbus Geräte verwalten
 Sobald die Verbindung hergestellt ist, können Sie Ihr Gerät jetzt verwalten. Klicken Sie auf "Kindgeräte" auf einem Terminal, um die angeschlossenen Feldbusgeräte aufzulisten und zu einem Feldbusgerät zu navigieren. Abhängig von den Fähigkeiten des Geräts und seiner Konfiguration in Cumulocity können Sie:
 
@@ -208,7 +230,7 @@ Um einen Gerätetyp zu importieren, klicken Sie auf den Link "Importieren". Dadu
 
 ## <a name="scadasvg"></a>Vorbereitung der SVG-Dateien für das SCADA-Widget
 
-Die SCADA-Widgets überprüfen hochgeladene SVG-Dateien auf Platzhalter. Diese Platzhalter werden durch tatsächliche Werte von Geräten ersetzt. Platzhalter haben eine bestimmte Syntax und können überall in der SVG-Datei verwendet werden. Um einen Platzhalter hinzuzufügen, geben Sie den Namen des Platzhalters in doppelte geschweifte Klammern mit Ihrer Entwurfsanwendung oder einem Texteditor ein. Dies ist ein Beispiel für ein Textelement, das einen Platzhalter "batteryValue" enthält [Beispiel SVG file](/guides/users-guide/scadademo.svg):
+Die SCADA-Widgets überprüfen hochgeladene SVG-Dateien auf Platzhalter. Diese Platzhalter werden durch tatsächliche Werte von Geräten ersetzt. Platzhalter haben eine bestimmte Syntax und können überall in der SVG-Datei verwendet werden. Um einen Platzhalter hinzuzufügen, geben Sie den Namen des Platzhalters in doppelte geschweifte Klammern mit Ihrer Entwurfsanwendung oder einem Texteditor ein. 
 
 	<text class="text" xt-anchor="middle" x="100" y="236.982125" width="200" ...>
 		{{batteryValue}}

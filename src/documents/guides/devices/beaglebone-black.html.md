@@ -1,6 +1,6 @@
 ---
 title: BeagleBone Black
-layout: default
+layout: devices
 ---
 
 ## Overview

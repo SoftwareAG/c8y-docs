@@ -18,6 +18,13 @@ To publish messages:
 s/uc/<X-ID>
 ```
 
+To publish messages in *TRANSIENT* mode:
+```
+t/uc/<X-ID>
+```
+
+Please, refer to [Processing Mode](/guides/reference/smartrest#processing-mode) section in SmartREST for more information about transient data processing.
+
 To subscribe for responses:
 ```
 s/dc/<X-ID>

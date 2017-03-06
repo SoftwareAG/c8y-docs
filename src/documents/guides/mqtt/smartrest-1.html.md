@@ -30,6 +30,16 @@ Topic:
 s/ul/<X-ID>;
 ```
 
+### Processing mode
+
+Since [Cumulocity SmartREST protocol](/guides/reference/smartrest) supports *TRANSIENT* processing mode for avoiding storage of sent data in the database, publishing on MQTT t/ topic instead of s/ topic will only pass the data to real-time processing.
+
+Topic:
+```
+t/ul/<X-ID>;
+``` 
+
+
 ## Receiving SmartREST 1.0
 
 If a template triggers a response template the returning message will be published by the server on the following topic.

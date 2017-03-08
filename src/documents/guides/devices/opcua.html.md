@@ -45,11 +45,6 @@ Create the configuration file:
 Then add content:
 
     gateway.identifier=opcua
-    
-    platform.url=http://developers.cumulocity.com
-    platform.bootstrap.user=devicebootstrap
-    platform.bootstrap.tenant=management
-    platform.bootstrap.password=Fhdt1bb1f
 
 Start the agent:
 
@@ -88,7 +83,7 @@ For a rpm installation
 
     platform.bootstrap.user=devicebootstrap
     platform.bootstrap.tenant=management
-    platform.bootstrap.password=Fhdt1bb1f
+    platform.bootstrap.password=<password>
 
 ##### To change the agent identifier used in the bootstrap process:
 

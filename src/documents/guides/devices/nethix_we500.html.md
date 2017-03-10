@@ -1,5 +1,5 @@
 ---
-title: WE500
+title: Nethix - WE500
 layout: default
 ---
 

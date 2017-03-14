@@ -103,6 +103,8 @@ Edit the "App.java" file in the folder "hello-mqtt-java/src/main/java/c8y/exampl
     
 Replace "&lt;&lt;clientId&gt;&gt;", "&lt;&lt;serverUrl&gt;&gt;", "&lt;&lt;tenant&gt;&gt;", "&lt;&lt;username&gt;&gt;", and "&lt;&lt;password&gt;&gt;" with your data.
 
+Cumulocity MQTT protocol supports both unsecured TCP and also secured SSL connections (e.g. ``tcp://mqtt.cumulocity.com:1883`` or ``ssl://mqtt.cumulocity.com:8883``), so as the "&lt;&lt;serverUrl&gt;&gt;" you can pick the one which fits for you.
+
 What does the code in "main" do?
 
 -   Configure MQTT connection

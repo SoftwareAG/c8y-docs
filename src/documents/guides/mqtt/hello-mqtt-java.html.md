@@ -114,6 +114,8 @@ What does the code in "main" do?
 -   Subscribe to the static operation templates for the device and print all received operations to the console
 -   Create new thread which sends temperature measurement every 3 seconds
 
+Note that subscription is established after device creation, otherwise if there is no device for a given ``clientId`` server will not accept it.
+
 ### Build and run
 
 To build:
@@ -149,7 +151,7 @@ To run:
     Received operation 510,123456789
 
 After starting application you should see new device in the Cumulocity application in the device list.
-Additionally if there will be a new operation created for this device, (for example ``c8y_Restart``) information about it will be printed to the console. 
+Additionally if there will be a new operation created for this device, (for example ``c8y_Restart``) information about it will be printed to the console.
 
 ## Improve the agent
 

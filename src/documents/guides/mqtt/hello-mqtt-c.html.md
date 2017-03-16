@@ -14,11 +14,11 @@ In order to follow this tutorial, check the following prerequisites:
 * You have a valid tenant, user and password in order to access Cumulocity.
 * Verify that you have gcc compiler installed:
   
-    gcc --version
-    gcc (Ubuntu 5.4.0-6ubuntu1~16.04.4) 5.4.0 20160609
-    Copyright (C) 2015 Free Software Foundation, Inc.
-    This is free software; see the source for copying conditions.  There is NO
-    warranty; not even for MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
+  	gcc --version
+  	gcc (Ubuntu 5.4.0-6ubuntu1~16.04.4) 5.4.0 20160609
+  	Copyright (C) 2015 Free Software Foundation, Inc.
+  	This is free software; see the source for copying conditions.  There is NO
+  	warranty; not even for MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
   
 * Download, compile and install MQTT C Paho Client, you will find more details on the [Paho webside](http://www.eclipse.org/paho/clients/c/)
 
@@ -100,11 +100,11 @@ When using SSL remember to configure ``MQTTClient_SSLOptions`` and set it in the
 What does the code in "main" do?
 
 -   Configure MQTT connection
--   Register ``message`` callback function which will print incoming messages
+-   Register ``on_message`` callback function which will print incoming messages
 -   Connect with the Cumulocity via MQTT protocol
 -   Create a new device with ``C MQTT`` name and ``c8y_MQTTDevice`` type
 -   Update device hardware information by putting ``S123456789`` serial, ``MQTT test model`` model and ``Rev0.1`` revision
--   Subscribe to the static operation templates for the device and print all received operations to the console
+-   Subscribe to the static operation templates for the device - this will result in ``on_message`` method call every time new operation is created
 -   Send temperature measurement every 3 seconds
 
 What does the code in "publish" do?
@@ -112,6 +112,8 @@ What does the code in "publish" do?
 -   Create new MQTT message and set payload
 -   Publish message via MQTT protocol
 -   Wait maximum 1 second to message delivered ACK from server
+
+Note that subscription is established after device creation, otherwise if there is no device for a given ``clientId`` server will not accept it. 
 
 ### Build and run
 

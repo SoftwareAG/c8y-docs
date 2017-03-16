@@ -44,20 +44,28 @@ Create script file, for example "hello_mqtt.py" with the following content:
     
     def sendMeasurements():
       print("Sending temperature measurement")
-      client.publish("s/us", "211,25");
+      publish("s/us", "211,25");
       threading.Timer(3, sendMeasurements).start()
+      
+    def publish(topic, message):
+      mid = client.publish(topic, message, 2)[1]
+      while mid not in receivedMessages:
+        time.sleep(0.25)
+    
+    def on_publish(client, userdata, mid):
+      receivedMessages.append(mid)
     
     client = mqtt.Client(client_id="<<clientId>>")
     client.on_message = on_message
+    client.on_publish = on_publish
     client.username_pw_set("<<tenant>>/<<username>>", "<<password>>")
     client.tls_set("<<certsFile>>", cert_reqs = ssl.CERT_NONE)
     client.tls_insecure_set(True)
     
     client.connect("<<serverUrl>>", 8883)
     client.loop_start()
-    client.publish("s/us", "100,Python MQTT,c8y_MQTTDevice", 2)
-    time.sleep(1)
-    client.publish("s/us", "110,S123456789,MQTT test model,Rev0.1", 2)
+    publish("s/us", "100,Python MQTT,c8y_MQTTDevice")
+    publish("s/us", "110,S123123,MQTT test model,Rev0.1")
     client.subscribe("s/ds")
     sendMeasurements()
 
@@ -71,12 +79,19 @@ What does the script do?
 
 -   Configure MQTT connection
 -   Register ``on_message`` callback function which will print incoming messages
+-   Register ``on_publish`` callback function which will be called after publish message has been delivered 
 -   Connect with the Cumulocity via MQTT protocol
 -   Create a new device with ``Python MQTT`` name and ``c8y_MQTTDevice`` type
--   Wait a little bit to be sure that the device was registered???
 -   Update device hardware information by putting ``S123456789`` serial, ``MQTT test model`` model and ``Rev0.1`` revision
--   Subscribe to the static operation templates for the device and print all received operations to the console
--   Send temperature measurement every 3 seconds
+-   Subscribe to the static operation templates for the device - this will result in ``on_message`` method call every time new operation is created
+-   Call ``sendMeasurements`` method which sends temperature measurement every 3 seconds
+
+What does the ``publish`` message do?
+
+-   Publish given message on the given topic via MQTT
+-   When publishing message it uses QoS 2 so to be sure that the message was delivered it will wait for server ACK (until ``on_publish`` method is called with the matching message id)
+
+Note that subscription is established after device creation, otherwise if there is no device for a given ``clientId`` server will not accept it.
 
 ### Run script
 
@@ -87,7 +102,7 @@ To run the script just call:
 After starting application you should see new device in the Cumulocity application in the device list.
 Additionally if there will be a new operation created for this device, (for example ``c8y_Restart``) information about it will be printed to the console.
 
-In the console there should be an 
+In the console you should see following output 
 
  
     Sending temperature measurement

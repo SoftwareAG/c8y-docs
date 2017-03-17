@@ -92,7 +92,7 @@ Create source file, for example "hello_mqtt.c" with the following content:
         return rc;
     }
     
-Replace "&lt;&lt;clientId&gt;&gt;", "&lt;&lt;serverUrl&gt;&gt;", "&lt;&lt;tenant&gt;&gt;", "&lt;&lt;username&gt;&gt;", "&lt;&lt;password&gt;&gt;" and optionally if you are using secured connection "&lt;&lt;certsFile&gt;&gt;" with your data.
+Replace "&lt;&lt;clientId&gt;&gt;", "&lt;&lt;serverUrl&gt;&gt;", "&lt;&lt;tenant&gt;&gt;", "&lt;&lt;username&gt;&gt;", "&lt;&lt;password&gt;&gt;" with your data.
 
 Cumulocity MQTT protocol supports both unsecured TCP and also secured SSL connections (e.g. ``tcp://mqtt.cumulocity.com:1883`` or ``ssl://mqtt.cumulocity.com:8883``), so as the "&lt;&lt;serverUrl&gt;&gt;" you can pick the one which fits for you.
 When using SSL remember to configure ``MQTTClient_SSLOptions`` and set it in the ``MQTTClient_connectOptions``.
@@ -111,7 +111,7 @@ What does the code in "publish" do?
 
 -   Create new MQTT message and set payload
 -   Publish message via MQTT protocol
--   Wait maximum 1 second to message delivered ACK from server
+-   Wait maximum 1 second for message delivered ACK from server
 
 Note that subscription is established after device creation, otherwise if there is no device for a given ``clientId`` server will not accept it. 
 

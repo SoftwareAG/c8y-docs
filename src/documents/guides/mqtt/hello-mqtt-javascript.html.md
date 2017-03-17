@@ -18,7 +18,7 @@ In order to follow this tutorial, check the following prerequisites:
 To develop a very simple "Hello, world!" MQTT client for Cumulocity, you need to
 
 * Create a JavaScript application.
-* Run script.
+* Run the application.
     
 ### Create a JavaScript application
 
@@ -31,7 +31,7 @@ Create html file, for example "hello_mqtt_js.html" with the following content:
         <script type="text/javascript">
             var undeliveredMessages = []
     
-            var client = new Paho.MQTT.Client("localhost", 8999, "", "33333333333");
+            var client = new Paho.MQTT.Client("<<serverUrl>>", 8999, "", "<<clientId>>");
             client.onMessageArrived = onMessageArrived;
             client.onMessageDelivered = onMessageDelivered;
     
@@ -75,8 +75,8 @@ Create html file, for example "hello_mqtt_js.html" with the following content:
     
             function init() {
                 client.connect({
-                    userName: "management/admin",
-                    password: "Pyi1bo1r",
+                    userName: "<<tenant>>/<<username>>",
+                    password: "<<password>>",
                     onSuccess: createDevice
                 });
             }
@@ -96,9 +96,9 @@ Cumulocity MQTT protocol supports both unsecured TCP and also secured SSL connec
 What does the code do?
 
 -   Configure MQTT connection
--   Register ``onMessageArrived`` callback function which will print incoming messages
+-   Register ``onMessageArrived`` callback function which will print all incoming messages
 -   Register ``onMessageDelivered`` callback function which will be called after publish message has been delivered
--   After page is fully loaded call ``init`` which connect with the Cumulocity via MQTT protocol
+-   After page is fully loaded call ``init`` function which connects with the Cumulocity via MQTT protocol
 -   After connection is established call ``createDevice`` function
 -   Create a new device with ``JS MQTT`` name and ``c8y_MQTTDevice`` type
 -   Update device hardware information by putting ``S123456789`` serial, ``MQTT test model`` model and ``Rev0.1`` revision
@@ -110,7 +110,7 @@ Note that subscription is established after device creation, otherwise if there 
 ### Run
 
 Open "hello_mqtt_js.html" in the browser, after that you should see new device in the Cumulocity application in the device list.
-Additionally if there will be a new operation created for this device, (for example ``c8y_Restart``) information about it will be printed to the console.
+Additionally if there will be a new operation created for this device, (for example ``c8y_Restart``) information about it will be printed in the browser page.
 
 ## Improve the agent
 

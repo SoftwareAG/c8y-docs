@@ -56,16 +56,16 @@ Create script file, for example "hello_mqtt.py" with the following content:
       receivedMessages.append(mid)
     
     client = mqtt.Client(client_id="<<clientId>>")
-    client.on_message = on_message
-    client.on_publish = on_publish
     client.username_pw_set("<<tenant>>/<<username>>", "<<password>>")
     client.tls_set("<<certsFile>>", cert_reqs = ssl.CERT_NONE)
     client.tls_insecure_set(True)
+    client.on_message = on_message
+    client.on_publish = on_publish
     
     client.connect("<<serverUrl>>", 8883)
     client.loop_start()
     publish("s/us", "100,Python MQTT,c8y_MQTTDevice")
-    publish("s/us", "110,S123123,MQTT test model,Rev0.1")
+    publish("s/us", "110,S123456789,MQTT test model,Rev0.1")
     client.subscribe("s/ds")
     sendMeasurements()
 

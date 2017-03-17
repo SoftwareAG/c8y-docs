@@ -12,7 +12,7 @@ In this tutorial, you will learn how to use MQTT with Cumulocity using pre-defin
 In order to follow this tutorial, check the following prerequisites:
 
 * You have a valid tenant, user and password in order to access Cumulocity.
-* You have installed the Chrome extension [MQTTLens](https://chrome.google.com/webstore/detail/mqttlens/hemojaaeigabkbcookmlgmdigohjobjm) or a similar MQTT Tool (e.g. [MQTTBox](https://chrome.google.com/webstore/detail/mqttbox/kaajoficamnjijhkeomgfljpicifbkaf)).
+* You have installed the Chrome extension [MQTTLens](https://chrome.google.com/webstore/detail/mqttlens/hemojaaeigabkbcookmlgmdigohjobjm) or a similar MQTT tool (e.g. [MQTTBox](https://chrome.google.com/webstore/detail/mqttbox/kaajoficamnjijhkeomgfljpicifbkaf)).
 
 The screen shots in the tutorial use MQTTLens. Other tools may look slightly different.
 
@@ -28,7 +28,7 @@ To configure the MQTT connection, you need to pass the following connection para
 
 ![Example MQTTLens Configuration](/guides/mqtt/mqttLensConfig.png)
 
-The other configurations like "clean session" are not important for this example. You can change them as you see fit. After clicking on "save changes", you should see a screen similar to the following screen shot.
+The other configurations like "clean session" are not important for this example. You can change them to your liking. After clicking on "save changes", you should see a screen similar to the following screenshot.
 
 ![MQTTLens Established Connection](/guides/mqtt/mqttLensSuccess.png)
 
@@ -36,23 +36,23 @@ If the icon next to your connection on the left is read, verify your configurati
 
 ### Sending data
 
-All MQTT publish messages in this tutorial will be sent to the topic "s/us". This is the topic used for Cumulocity's pre-provided static templates.
+All MQTT published messages in this tutorial will be sent to the topic "s/us". This is the topic used for Cumulocity's pre-provided static templates.
 
 ![MQTTLens Publish Message](/guides/mqtt/mqttLensPublish.png)
 
 #### Creating the device
 
-The first message we will send will create our device. Although the static templates support automatic device creation, in this example we will create the device manually. The template 100 will create a new device. It can be used with two optional parameters (deviceName, deviceType).
+The first message sent will create our device. Although the static templates support automatic device creation, in this example we will create the device manually. The template 100 will create a new device. It can be used with two optional parameters (deviceName, deviceType).
 
 ```
 100,My first MQTT device,c8y_MQTTdevice
 ```
 
-Afterwards, you can check in the device management application and should find your new device. If you go to the identity tab inside the device you will notice that there is an identity automatically created to link the device to the MQTT ClientId that you used.
-Besides the name and the type the device is still quite empty so lets add some master data to it.
+Afterwards, you will find this device in the device management application as a new device. If you go to the identity tab of the the device you will notice that there was an identity created automatically to link the device to the MQTT ClientId.
+Besides the name and the type the device is empty so master data needs to be added.
 
-You can use multiple static templates per publish separated by a line break (one template per row).
-We will use that feature now to set the hardware and the required interval for the device in a single publish message.
+You can use multiple static templates per publishing separated by a line break (one template per row).
+This feature is used to set the hardware and the required interval for the device in a single published message.
 The hardware can be set with the template 110. It can take 3 parameters (serialNumber, model, revision). Optional parameters in static templates can be left empty if you don't want to set them. For the hardware all parameters are optional.
 The required interval can be set with the template 117 and just takes a single parameter (the interval in minutes)
 
@@ -61,18 +61,18 @@ The required interval can be set with the template 117 and just takes a single p
 117,10
 ```
 
-After a reload of the info page of your device in device management you should see the newly added information.
+After a reload of the info page of your device in device management you should see the information we just added.
 
 #### Creating measurements
 
-Now that the device isn't looking so empty anymore we can start sending some measurement data.
+Now the device has some master data and we can start sending some measurements.
 There are a couple of measurements that can be created directly by using a static template:
 * 210: Signal strength measurement
 * 211: Temperature measurement
 * 212: Battery measurement
 
 The temperature and battery measurement just take the value and time as parameters. For the signal strength you can pass two values (RSSI and BER). Passing timestamps in the Cumulocity MQTT implementation is always optional. If you don't pass them along the server will automatically create a timestamp with the current server time.
-We will make use of this feature in this example. Also if you don't set the last parameters you do not need to type the remaining commas.
+We will make use of this feature in this example. Also if you don't set the last parameters you do not need to enter the remaining commas.
 
 ```
 210,-87
@@ -80,13 +80,13 @@ We will make use of this feature in this example. Also if you don't set the last
 212,95
 ```
 
-Besides the measurements above we can also use the template 200 to create a more custom measurement. It will take the measurement fragment, series, value, unit and time as parameters
+Besides the measurements above we can also use the template 200 to create a more custom measurement. It will take the measurement fragment, series, value, unit and time as its parameters.
 
 ```
 200,myCustomTemperatureMeasurement,fahrenheit,75.2,F
 ```
 
-After a reload of device management you should the the "measurements" tab in you device with 4 graphs.
+**After a reload of the device management application you should go to the "measurements" tab in you device with 4 graphs.???????Aehhhh**
 
 #### Creating alarms
 
@@ -96,14 +96,14 @@ In the next step we want to create some alarm for the device. There are 4 templa
 * 303: MINOR
 * 304: WARNING
 
-They each take a type (which is mandatory), a text and a time (both optional).
+Each of them note a type (which is mandatory), a text and a time (both optional).
 
 ```
 301,gpio_critical,There is a GPIO alarm
 304,simple_warning
 ```
 
-The alarm list of you device should now contain one critical alarm and one warning.
+The alarm list of your device should now contain one critical alarm and one warning. **(Where?)**
 Note that we did not set any text for the warning therefore it was created with a default alarm text.
 
 In the next step we want to clear the critical alarm again.
@@ -118,14 +118,14 @@ Note that you did not have to handle any alarm IDs with the MQTT implementation.
 
 #### Creating events
 
-Next we want to create some location events for the device. You can use [this website](http://www.latlong.net/) to get the latitude and longitude for your city if you want.
+Next we want to create some location events for the device. You can use [External Link](http://www.latlong.net/) to get the latitude and longitude for your city if you want.
 The template 401 lets you create location events and takes latitude, longitude, altitude, accuracy and the time as parameters but for now we will just use the first two.
 
 ```
 401,51.227741,6.773456
 ```
 
-In device management you can now see one event in the event list but the location has not been updated. This is because on REST these are different request. In MQTT instead of the template 401 you can use the template 402. It works exactly the same as 401 but additionally it also updates the position of the device itself.
+In device management you can now see one event in the event list but the location has not been updated. This is because on REST these are different requests. Instead of the template 401 you can use the template 402 in MQTT. It works exactly the same as 401 but additionally it also updates the position of the device itself.
 
 ```
 402,51.227741,6.773456
@@ -141,7 +141,7 @@ To achieve that we first need to subscribe to the responsible topic. We will do 
 * s/ds : This will subscribe to the static operation templates for the device
 * s/e :  This will subscribe to an error topic that can be used for debugging
 
-You can enter both topics after another into the subscribe field and hit subscribe. The QoS selection does not matter for this example.
+You can enter both topics after another in the subscribe field and hit subscribe. The QoS selection does not matter for this example.
 
 Afterwards your MQTTLens should look like this:
 
@@ -149,7 +149,7 @@ Afterwards your MQTTLens should look like this:
 
 #### Receiving operations
 
-Currently the UI does not show any tabs for operations because so far the device did not say what it supports. We can set the list of supported operations with the template 114 and just list the operations behind it.
+At the current state the UI does not show any tabs for operations because up to now it was unkown what exactly the device supports. But the list of supported operations can be modified with the template 114. A list of supported operations can be added here. 
 We will add support for the configuration and shell.
 
 
@@ -157,23 +157,23 @@ We will add support for the configuration and shell.
 114,c8y_Command,c8y_Configuration
 ```
 
-After a reload of the UI the two tabs should appear.
+After reloading the UI the two new tabs should appear. (Which?)
 We can now create a shell command from the UI and click "Execute".
 
 In the MQTTLens you should now have received a new message for the s/ds subscription
 
 ![MQTTLens Received Operation](/guides/mqtt/mqttLensReceivedOperation.png)
 
-The 511 is indicating which kind of operation we received (in this case c8y_Command). After that there will be the deviceIdentifier for which device the operation was dedicated. This is required if you have a hierarchy with multiple children in which case you need to know for which of the children the operation was dedicated.
+The 511 is indicating what kind of operation we received (in this case c8y_Command). Behind there will be the deviceIdentifier to locate the device with the dedicated operation. This is required if you have a hierarchy with multiple children in which case you need to know for which of the children the operation was dedicated.
 Finally you have the operation specific parameters which in case of c8y_Command is only the command text.
 
-Now that we received the operation we can first set it to EXECUTING to indicate that the client starts handling the operation. Similar like for changing the status of an alarm this happens for operation also by adding the type of the operation to the template.
+NAfter receiving the operation we can start EXECUTING  it to initiate the client's handling the operation. Similar like changing the status of an alarm you can add the type of operation to the template.
 
 ```
 501,c8y_Command
 ```
 
-After finishing the handling we can set the operation to successful with the template 503.
+After finishing the handling the operation can be set to successful with the template 503.
 Besides the operation type this operation can also take additional parameters based on what kind of operation it was. For the c8y_Command we can return a result.
 
 ```
@@ -182,7 +182,7 @@ Besides the operation type this operation can also take additional parameters ba
 
 #### Learning from errors
 
-The topic s/e can help you debugging what went wrong with.
+The topic s/e can help you debugging in case something went wrong.
 If we for example try to send
 
 ```

@@ -36,7 +36,7 @@ If the icon next to your connection on the left is read, verify your configurati
 
 ### Sending data
 
-All MQTT published messages in this tutorial will be sent to the topic "s/us". This is the topic used for Cumulocity's pre-provided static templates.
+All MQTT "publish messages" in this tutorial will be sent to the topic "s/us". This is the topic used for Cumulocity's pre-provided static templates.
 
 ![MQTTLens Publish Message](/guides/mqtt/mqttLensPublish.png)
 
@@ -103,7 +103,7 @@ Each of them note a type (which is mandatory), a text and a time (both optional)
 304,simple_warning
 ```
 
-The alarm list of your device should now contain one critical alarm and one warning. **(Where?)**
+The alarm list of your device should now contain one critical alarm and one warning.
 Note that we did not set any text for the warning therefore it was created with a default alarm text.
 
 With the next step, we want to clear the critical alarm again.
@@ -118,7 +118,7 @@ Note that you did not have to handle any alarm IDs with the MQTT implementation.
 
 #### Creating events
 
-Next, we want to create some location events for the device. You can use [External Link](http://www.latlong.net/) to get the latitude and longitude for your city if you want.
+Next, we want to create some location events for the device. You can use this [External Link](http://www.latlong.net/) to get the latitude and longitude for your city if you want.
 The template "401" lets you create location events and takes latitude, longitude, altitude, accuracy and the time as parameters but for now, we will just use the first two.
 
 ```

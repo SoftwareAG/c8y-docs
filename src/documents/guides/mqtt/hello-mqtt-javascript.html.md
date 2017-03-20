@@ -31,12 +31,21 @@ Create html file, for example "hello_mqtt_js.html" with the following content:
         <script type="text/javascript">
             var undeliveredMessages = []
     
-            var client = new Paho.MQTT.Client("<<serverUrl>>", 8999, "", "<<clientId>>");
+            var client = new Paho.MQTT.Client("<<serverHost>>", 8999, "", "<<clientId>>");
             client.onMessageArrived = onMessageArrived;
             client.onMessageDelivered = onMessageDelivered;
     
             function onMessageArrived(message) {
                 log('Received operation "' + message.payloadString + '"');
+                if (message.payloadString.indexOf("510") == 0) {
+                    log("Simulating device restart...");
+                    publish("s/us", "501,c8y_Restart");
+                    log("...restarting...");
+                    setTimeout(function() {
+                        publish("s/us", "503,c8y_Restart");
+                    }, 1000);
+                    log("...done...");
+                }
             }
     
             function onMessageDelivered(message) {
@@ -89,14 +98,14 @@ Create html file, for example "hello_mqtt_js.html" with the following content:
     <body onload="init();"><div id="logger"></div></body>
     </html>
     
-Replace "&lt;&lt;clientId&gt;&gt;", "&lt;&lt;serverUrl&gt;&gt;", "&lt;&lt;tenant&gt;&gt;", "&lt;&lt;username&gt;&gt;", and "&lt;&lt;password&gt;&gt;" with your data.
+Replace "&lt;&lt;clientId&gt;&gt;", "&lt;&lt;serverHost&gt;&gt;", "&lt;&lt;tenant&gt;&gt;", "&lt;&lt;username&gt;&gt;", and "&lt;&lt;password&gt;&gt;" with your data.
 
-Cumulocity MQTT protocol supports both unsecured TCP and also secured SSL connections, so when configuring MQTT port you can pick the one which fits for you.
+Cumulocity MQTT protocol supports both unsecured TCP and also secured SSL connections, so when configuring MQTT port you can pick the one which fits for you. No matter which connection type you choose "&lt;&lt;serverHost&gt;&gt;" should stay the same (e.g. ``mqtt.cumulocity.com``).
 
 What does the code do?
 
 -   Configure MQTT connection
--   Register ``onMessageArrived`` callback function which will print all incoming messages
+-   Register ``onMessageArrived`` callback function which will print all incoming messages and in case of ``c8y_Restart`` operation simulate device restart
 -   Register ``onMessageDelivered`` callback function which will be called after publish message has been delivered
 -   After page is fully loaded call ``init`` function which connects with the Cumulocity via MQTT protocol
 -   After connection is established call ``createDevice`` function

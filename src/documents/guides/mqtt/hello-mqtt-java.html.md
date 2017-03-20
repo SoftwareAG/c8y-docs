@@ -84,10 +84,19 @@ Edit the "App.java" file in the folder "hello-mqtt-java/src/main/java/c8y/exampl
             //listen for operation
             client.subscribe("s/ds", new IMqttMessageListener() {
                 public void messageArrived(final String topic, final MqttMessage message) throws Exception {
-                    System.out.println("Received operation " + new String(message.getPayload()));
+                    final String payload = new String(message.getPayload());
+                    System.out.println("Received operation " + payload);
+                    if (payload.startsWith("510")) {
+                        System.out.println("Simulating device restart...");
+                        client.publish("s/us", "501,c8y_Restart".getBytes(), 2, false);
+                        System.out.println("...restarting...");
+                        Thread.sleep(TimeUnit.SECONDS.toMillis(1));
+                        client.publish("s/us", "503,c8y_Restart".getBytes(), 2, false);
+                        System.out.println("...done...");
+                    }
                 }
             });
-            
+    
             Executors.newSingleThreadScheduledExecutor().scheduleWithFixedDelay(new Runnable() {
                 public void run() {
                     try {
@@ -111,7 +120,7 @@ What does the code in "main" do?
 -   Connect with the Cumulocity via MQTT protocol
 -   Create a new device with ``My MQTT device`` name and ``c8y_MQTTDevice`` type
 -   Update device hardware information by putting ``S123456789`` serial, ``MQTT test model`` model and ``Rev0.1`` revision
--   Subscribe to the static operation templates for the device and print all received operations to the console
+-   Subscribe to the static operation templates for the device, print all received operations to the console and in case of ``c8y_Restart`` operation simulate device restart
 -   Create new thread which sends temperature measurement every 3 seconds
 
 Note that subscription is established after device creation, otherwise if there is no device for a given ``clientId`` server will not accept it.

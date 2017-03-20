@@ -39,46 +39,62 @@ Create script file, for example "hello_mqtt.py" with the following content:
     import paho.mqtt.client as mqtt
     import time, threading, ssl
     
+    receivedMessages = []
+    
     def on_message(client, userdata, message):
       print("Received operation " + str(message.payload))
+      if (message.payload.startswith("510")):
+         print("Simulating device restart...")
+         publish("s/us", "501,c8y_Restart");
+         print("...restarting...")
+         time.sleep(1)
+         publish("s/us", "503,c8y_Restart");
+         print("...done...")
     
     def sendMeasurements():
-      print("Sending temperature measurement")
-      publish("s/us", "211,25");
-      threading.Timer(3, sendMeasurements).start()
-      
-    def publish(topic, message):
+      try:
+        print("Sending temperature measurement")
+        publish("s/us", "211,25");
+        thread = threading.Timer(3, sendMeasurements)
+        thread.daemon=True
+        thread.start()
+        while True: time.sleep(100)
+      except (KeyboardInterrupt, SystemExit):
+        print 'Received keyboard interrupt, quitting ...'
+    
+    
+    def publish(topic, message, waitForAck = False):
       mid = client.publish(topic, message, 2)[1]
-      while mid not in receivedMessages:
-        time.sleep(0.25)
+      if (waitForAck):
+        while mid not in receivedMessages:
+          time.sleep(0.25)
     
     def on_publish(client, userdata, mid):
       receivedMessages.append(mid)
     
     client = mqtt.Client(client_id="<<clientId>>")
     client.username_pw_set("<<tenant>>/<<username>>", "<<password>>")
-    client.tls_set("<<certsFile>>", cert_reqs = ssl.CERT_NONE)
-    client.tls_insecure_set(True)
     client.on_message = on_message
     client.on_publish = on_publish
     
-    client.connect("<<serverUrl>>", 8883)
+    client.connect("<<serverHost>>", 1883)
     client.loop_start()
-    publish("s/us", "100,Python MQTT,c8y_MQTTDevice")
+    publish("s/us", "100,Python MQTT,c8y_MQTTDevice", True)
     publish("s/us", "110,S123456789,MQTT test model,Rev0.1")
     client.subscribe("s/ds")
     sendMeasurements()
 
     
-Replace "&lt;&lt;clientId&gt;&gt;", "&lt;&lt;serverUrl&gt;&gt;", "&lt;&lt;tenant&gt;&gt;", "&lt;&lt;username&gt;&gt;", "&lt;&lt;password&gt;&gt;" and optionally if you are using secured connection "&lt;&lt;certsFile&gt;&gt;" with your data.
+Replace "&lt;&lt;clientId&gt;&gt;", "&lt;&lt;serverHost&gt;&gt;", "&lt;&lt;tenant&gt;&gt;", "&lt;&lt;username&gt;&gt;", "&lt;&lt;password&gt;&gt;" with your data.
 
-Cumulocity MQTT protocol supports both unsecured TCP and also secured SSL, so when configuring port please remember to use proper one.
-Above example uses SSL connection, but the certification check has been turned off which is fine for tests only.
+Cumulocity MQTT protocol supports both unsecured TCP and also secured SSL connections, so when configuring port please remember to use proper one. No matter which connection type you choose "&lt;&lt;serverHost&gt;&gt;" should stay the same (e.g. ``mqtt.cumulocity.com``).
+
+Above example uses TCP connection, if you would like to use SSL please remember about proper configuration in the Paho MQTT client, more information [here](http://www.eclipse.org/paho/clients/python/docs/#option-functions).
 
 What does the script do?
 
 -   Configure MQTT connection
--   Register ``on_message`` callback function which will print incoming messages
+-   Register ``on_message`` callback function which will print incoming messages and in case of ``c8y_Restart`` operation simulate device restart
 -   Register ``on_publish`` callback function which will be called after publish message has been delivered 
 -   Connect with the Cumulocity via MQTT protocol
 -   Create a new device with ``Python MQTT`` name and ``c8y_MQTTDevice`` type

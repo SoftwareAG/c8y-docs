@@ -31,7 +31,7 @@ Create html file, for example "hello_mqtt_js.html" with the following content:
         <script type="text/javascript">
             var undeliveredMessages = []
     
-            var client = new Paho.MQTT.Client("<<serverHost>>", 8999, "", "<<clientId>>");
+            var client = new Paho.MQTT.Client("<<serverUrl>>", "<<clientId>>");
             client.onMessageArrived = onMessageArrived;
             client.onMessageDelivered = onMessageDelivered;
     
@@ -98,9 +98,9 @@ Create html file, for example "hello_mqtt_js.html" with the following content:
     <body onload="init();"><div id="logger"></div></body>
     </html>
     
-Replace "&lt;&lt;clientId&gt;&gt;", "&lt;&lt;serverHost&gt;&gt;", "&lt;&lt;tenant&gt;&gt;", "&lt;&lt;username&gt;&gt;", and "&lt;&lt;password&gt;&gt;" with your data.
+Replace "&lt;&lt;clientId&gt;&gt;", "&lt;&lt;serverUrl&gt;&gt;", "&lt;&lt;tenant&gt;&gt;", "&lt;&lt;username&gt;&gt;", and "&lt;&lt;password&gt;&gt;" with your data.
 
-Cumulocity MQTT protocol supports both unsecured TCP and also secured SSL connections, so when configuring MQTT port you can pick the one which fits for you. No matter which connection type you choose "&lt;&lt;serverHost&gt;&gt;" should stay the same (e.g. ``mqtt.cumulocity.com``).
+Cumulocity MQTT protocol supports both unsecured TCP and also secured SSL connections (e.g. ``ws://mqtt.cumulocity.com/mqtt`` or ``wss://mqtt.cumulocity.com/mqtt``), so as the "&lt;&lt;serverUrl&gt;&gt;" you can pick the one which fits for you.
 
 What does the code do?
 

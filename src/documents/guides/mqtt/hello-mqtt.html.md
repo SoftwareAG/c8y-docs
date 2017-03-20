@@ -86,7 +86,7 @@ Besides the measurements above we can also use the template "200" to create a mo
 200,myCustomTemperatureMeasurement,fahrenheit,75.2,F
 ```
 
-**After a reload of the device management application you should go to the "measurements" tab in you device with 4 graphs.(I need to ask Slawomir, what he means by that.)**
+After a reload in the "Device Management Application"  in the "measurement" tab of your device you should see 4 graphs with the newly added measurements.
 
 #### Creating alarms
 
@@ -157,7 +157,7 @@ We will add support for the configuration and shell.
 114,c8y_Command,c8y_Configuration
 ```
 
-After reloading the UI the two new tabs should appear. **(Which?, check with Slawomir.**
+After reloading the UI the two new tabs should appear ("Configuration" and "Shell").
 We can now create a shell command from the UI and click "Execute".
 
 In the MQTTLens you should now have received a new message for the s/ds subscription

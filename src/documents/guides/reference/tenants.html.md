@@ -725,8 +725,8 @@ Example Response :
 
 "requestCount" and "deviceRequestCount" contains the sum of all issued requests during the querying period. "deviceCount" and "storageSize" contain the last reported value during the querying period. Please note:
 
- * "requestCount" and "deviceRequestCount" are updated in every 5 minutes.
- * "deviceCount", "deviceWithChildrenCount", "storageSize" and "subscribedApplications" update starts daily at 23:57.
+ * "requestCount" and "deviceRequestCount" are updated every 5 minutes.
+ * "deviceCount", "deviceWithChildrenCount", "storageSize" and "subscribedApplications" are updated daily starting at 23:57.
  * "storageSize" is affected by your retention rules. It is also affected by the regularly running database optimization functions running in Cumulocity. If the size decreases, it does not necessarily mean that data was deleted.
  * Days are counted according to server timezone.
 

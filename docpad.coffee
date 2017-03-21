@@ -18,15 +18,12 @@ docpadConfig = {
 			{ title: 'C++ Developer\'s Guide', folder: 'guides/cpp', slug: 'cpp-developer', icon: 'glyphicon-cog', description: '' },
 			{ title: 'Reference Guide', folder: 'guides/reference' , slug: 'reference-guide', icon : 'glyphicon-book', description: 'The reference guide contains the detailed technical specifications of the programming interfaces of Cumulocity as reference for software developers.'},
 		]
-  }
+    }
 	plugins:
 		redirector:
 			redirects:
 				redirects
-		tableofcontents:
-			requiredMetadata: true
-			requiredMetadataField: 'toc'
-			headerSelectors: 'h2,h3'
+	ignoreHiddenFiles: true
 }
 
 module.exports = docpadConfig;

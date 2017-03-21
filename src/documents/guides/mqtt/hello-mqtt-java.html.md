@@ -13,7 +13,8 @@ In order to follow this tutorial, check the following prerequisites:
 
 * You have a valid tenant, user and password in order to access Cumulocity.
 * Verify that you have Maven 3 installed with Java 7:
-  
+
+
   	mvn -v
   	Apache Maven 3.3.9 (bb52d8502b132ec0a5a3f4c09453c07478323dc5; 2015-11-10T17:41:47+01:00)
   	Maven home: /home/schm/development/devtools/apache-maven-3.3.9
@@ -21,8 +22,9 @@ In order to follow this tutorial, check the following prerequisites:
   	Java home: /usr/lib/jvm/java-7-oracle/jre
   	Default locale: pl_PL, platform encoding: UTF-8
   	OS name: "linux", version: "4.4.0-66-generic", arch: "amd64", family: "unix"
-  
-  Maven can be downloaded from http://maven.apache.org.
+
+
+Maven can be downloaded from http://maven.apache.org.
 
 ## Develop the "Hello, MQTT world!" client
 

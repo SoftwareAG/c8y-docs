@@ -78,7 +78,7 @@ Sobald Sie angemeldet sind, wird Ihre Standard-Cumulocity-Anwendung geöffnet. D
 * Die Konfiguration der Benutzeroberfläche, wie Gruppen und Berichte.
 * Die Funktionalität der von Ihnen verwendeten Geräte.
 
-##Die Benutzeroberfläche von Cumulocity und Menü Struktur
+## Die Benutzeroberfläche von Cumulocity und Menü Struktur
 
 * Der Name der aktuell sichtbaren Anwendung wird oben links angezeigt. 
 * Mit dem Navigator können Sie zu den verschiedenen Seiten einer Anwendung gelangen. Klicken Sie auf einen Eintrag im Navigator, um die entsprechende Seite zu öffnen. Sie können Bereiche im Navigator reduzieren, indem Sie auf die Abschnittsüberschriften klicken (wie die Zeilen mit dem kleinen Dreieck vor dem Text) oder auch expandieren.

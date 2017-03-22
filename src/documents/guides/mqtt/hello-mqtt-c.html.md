@@ -11,8 +11,8 @@ In this tutorial, you will learn how to use MQTT client in C with Cumulocity usi
 
 In order to follow this tutorial, check the following prerequisites:
 
-* You have a valid tenant, user and password in order to access Cumulocity.
-* Verify that you have gcc compiler installed:
+* You have a valid tenant, a user, and a password in order to access Cumulocity.
+* Verify that you have a gcc compiler installed:
   
   	gcc --version
   	gcc (Ubuntu 5.4.0-6ubuntu1~16.04.4) 5.4.0 20160609
@@ -20,18 +20,18 @@ In order to follow this tutorial, check the following prerequisites:
   	This is free software; see the source for copying conditions.  There is NO
   	warranty; not even for MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
   
-* Download, compile and install MQTT C Paho Client, you will find more details on the [Paho website](http://www.eclipse.org/paho/clients/c/)
+* Download, compile and install the MQTT C Paho Client, you will find more details about Paho on this website. [Paho website](http://www.eclipse.org/paho/clients/c/)
 
 ## Develop the "Hello, MQTT world!" client
 
 To develop a very simple "Hello, world!" MQTT client for Cumulocity, you need to
 
-* Create application.
+* Create the application.
 * Build and run the application.
 
 ### Create application
 
-Create source file, for example "hello_mqtt.c" with the following content:
+Create a source file, for example "hello_mqtt.c" with the following content:
 
     #include "stdlib.h"
     #include "string.h"
@@ -94,26 +94,26 @@ Create source file, for example "hello_mqtt.c" with the following content:
     
 Replace "&lt;&lt;clientId&gt;&gt;", "&lt;&lt;serverUrl&gt;&gt;", "&lt;&lt;tenant&gt;&gt;", "&lt;&lt;username&gt;&gt;", "&lt;&lt;password&gt;&gt;" with your data.
 
-Cumulocity MQTT protocol supports both unsecured TCP and also secured SSL connections (e.g. ``tcp://mqtt.cumulocity.com:1883`` or ``ssl://mqtt.cumulocity.com:8883``), so as the "&lt;&lt;serverUrl&gt;&gt;" you can pick the one which fits for you.
+The Cumulocity MQTT protocol supports both unsecured TCP and also secured SSL connections (e.g. ``tcp://mqtt.cumulocity.com:1883`` or ``ssl://mqtt.cumulocity.com:8883``), so as the "&lt;&lt;serverUrl&gt;&gt;" you can pick the one which fits for you.
 When using SSL remember to configure ``MQTTClient_SSLOptions`` and set it in the ``MQTTClient_connectOptions``.
 
 What does the code in "main" do?
 
--   Configure MQTT connection
--   Register ``on_message`` callback function which will print incoming messages
--   Connect with the Cumulocity via MQTT protocol
--   Create a new device with ``C MQTT`` name and ``c8y_MQTTDevice`` type
--   Update device hardware information by putting ``S123456789`` serial, ``MQTT test model`` model and ``Rev0.1`` revision
--   Subscribe to the static operation templates for the device - this will result in ``on_message`` method call every time new operation is created
--   Send temperature measurement every 3 seconds
+-   Configure an MQTT connection.
+-   Register a ``on_message`` callback function which will print incoming messages.
+-   Connect with Cumulocity via an MQTT protocol.
+-   Create a new device with a``C MQTT`` name and a``c8y_MQTTDevice`` type.
+-   Update the device hardware information by putting a ``S123456789`` serial, a ``MQTT test model`` model and a ``Rev0.1`` revision.
+-   Subscribe to the static operation templates for the device - this will result in a ``on_message`` method call every time new operation is created.
+-   Send temperature measurement every 3 seconds.
 
 What does the code in "publish" do?
 
--   Create new MQTT message and set payload
--   Publish message via MQTT protocol
--   Wait maximum 1 second for message delivered ACK from server
+-   Create a new MQTT message and set a payload.
+-   Publish message via MQTT protocol.
+-   Wait maximum 1 second for a message delivered ACK from the server.
 
-Note that subscription is established after device creation, otherwise if there is no device for a given ``clientId`` server will not accept it. 
+Note that the subscription is established after the device creation, otherwise if there is no device for a given ``clientId`` the server will not accept it. 
 
 ### Build and run
 
@@ -127,8 +127,8 @@ To run:
     Message '100,C MQTT,c8y_MQTTDevice' with delivery token 1 delivered
     ...
 
-After starting application you should see new device in the Cumulocity application in the device list.
-Additionally if there will be a new operation created for this device, (for example ``c8y_Restart``) information about it will be printed to the console. 
+After starting the application you should see a new device in the Cumulocity application in the device list.
+Additionally, if there will be a new operation created for this device, (for example ``c8y_Restart``) information about it will be printed to the console. 
 
 ## Improve the agent
 

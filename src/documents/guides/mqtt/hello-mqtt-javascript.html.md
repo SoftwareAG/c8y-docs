@@ -5,13 +5,13 @@ layout: default
 ---
 ## Overview
 
-In this tutorial, you will learn how to use JavaScript MQTT client with Cumulocity using pre-defined messages (called "static templates").
+In this tutorial, you will learn how to use the JavaScript MQTT client with Cumulocity using pre-defined messages (called "static templates").
 
 ## Prerequisites
 
 In order to follow this tutorial, check the following prerequisites:
 
-* You have a valid tenant, user and password in order to access Cumulocity.
+* You have a valid tenant, a user, and a password in order to access Cumulocity.
 
 ## Develop the "Hello, MQTT world!" client
 
@@ -22,7 +22,7 @@ To develop a very simple "Hello, world!" MQTT client for Cumulocity, you need to
     
 ### Create a JavaScript application
 
-Create html file, for example "hello_mqtt_js.html" with the following content:
+Create an html file, for example "hello_mqtt_js.html" with the following content:
 
     <html>
     <head>
@@ -98,27 +98,27 @@ Create html file, for example "hello_mqtt_js.html" with the following content:
     <body onload="init();"><div id="logger"></div></body>
     </html>
     
-Replace "&lt;&lt;clientId&gt;&gt;", "&lt;&lt;serverUrl&gt;&gt;", "&lt;&lt;tenant&gt;&gt;", "&lt;&lt;username&gt;&gt;", and "&lt;&lt;password&gt;&gt;" with your data.
+Replace "&lt;&lt;clientId&gt;&gt;", "&lt;&lt;serverUrl&gt;&gt;", "&lt;&lt;tenant&gt;&gt;", "&lt;&lt;username&gt;&gt;", and "&lt;&lt;password&gt;&gt;" with your valid data.
 
-Cumulocity MQTT protocol supports both unsecured TCP and also secured SSL connections (e.g. ``ws://mqtt.cumulocity.com/mqtt`` or ``wss://mqtt.cumulocity.com/mqtt``), so as the "&lt;&lt;serverUrl&gt;&gt;" you can pick the one which fits for you.
+The Cumulocity MQTT protocol supports both unsecured TCP and also secured SSL connections (e.g. ``ws://mqtt.cumulocity.com/mqtt`` or ``wss://mqtt.cumulocity.com/mqtt``), so as the "&lt;&lt;serverUrl&gt;&gt;" you can pick the one which fits for you.
 
 What does the code do?
 
--   Configure MQTT connection
--   Register ``onMessageArrived`` callback function which will print all incoming messages and in case of ``c8y_Restart`` operation simulate device restart
--   Register ``onMessageDelivered`` callback function which will be called after publish message has been delivered
--   After page is fully loaded call ``init`` function which connects with the Cumulocity via MQTT protocol
--   After connection is established call ``createDevice`` function
--   Create a new device with ``JS MQTT`` name and ``c8y_MQTTDevice`` type
--   Update device hardware information by putting ``S123456789`` serial, ``MQTT test model`` model and ``Rev0.1`` revision
--   Subscribe to the static operation templates for the device - this will result in ``onMessageArrived`` method call every time new operation is created
--   Send temperature measurement every 3 seconds
+-   Configure the MQTT connection.
+-   Register ``onMessageArrived`` a callback function which will print all incoming messages and in case of ``c8y_Restart`` operation it will simulate a device restart.
+-   Register ``onMessageDelivered`` a callback function which will be called after a publish message has been delivered.
+-   After the page is fully loaded call ``init`` function which connects with Cumulocity via a MQTT protocol.
+-   After the connection is established call a ``createDevice`` function.
+-   Create a new device with a ``JS MQTT`` name and a ``c8y_MQTTDevice`` type.
+-   Update the device hardware information by putting  a ``S123456789`` serial, a ``MQTT test model`` model and a ``Rev0.1`` revision.
+-   Subscribe to the static operation templates for the device - this will result in ``onMessageArrived`` method call every time a new operation is created.
+-   Send temperature measurement every 3 seconds.
 
-Note that subscription is established after device creation, otherwise if there is no device for a given ``clientId`` server will not accept it.
+Note that subscription is established after the device creation, otherwise if there is no device for a given ``clientId`` the server will not accept it.
 
 ### Run
 
-Open "hello_mqtt_js.html" in the browser, after that you should see new device in the Cumulocity application in the device list.
+Open "hello_mqtt_js.html" in a browser. After that you should see the new device in the Cumulocity application in the device list.
 Additionally if there will be a new operation created for this device, (for example ``c8y_Restart``) information about it will be printed in the browser page.
 
 ## Improve the agent

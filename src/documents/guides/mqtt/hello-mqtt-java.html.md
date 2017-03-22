@@ -5,13 +5,13 @@ layout: default
 ---
 ## Overview
 
-In this tutorial, you will learn how to use Java MQTT client with Cumulocity using pre-defined messages (called "static templates").
+In this tutorial, you will learn how to use the Java MQTT client with Cumulocity using pre-defined messages (called "static templates").
 
 ## Prerequisites
 
 In order to follow this tutorial, check the following prerequisites:
 
-* You have a valid tenant, user and password in order to access Cumulocity.
+* You have a valid tenant, a user, and a password in order to access Cumulocity.
 * Verify that you have Maven 3 installed with Java 7:
 
 
@@ -24,7 +24,7 @@ In order to follow this tutorial, check the following prerequisites:
   	OS name: "linux", version: "4.4.0-66-generic", arch: "amd64", family: "unix"
 
 
-Maven can be downloaded from http://maven.apache.org.
+Maven can be downloaded from [Maven](http://maven.apache.org).
 
 ## Develop the "Hello, MQTT world!" client
 
@@ -45,7 +45,7 @@ This will create a folder "hello-mqtt-java" in the current directory with a skel
 
 ### Add MQTT Java client library
 
-Edit the "pom.xml" in the "hello-mqtt-java" folder. Add dependency to the MQTT Paho Java Client.
+Edit the "pom.xml" in the "hello-mqtt-java" folder. Add a dependency to the MQTT Paho Java Client.
 
     <dependency>
         <groupId>org.eclipse.paho</groupId>
@@ -118,14 +118,14 @@ Cumulocity MQTT protocol supports both unsecured TCP and also secured SSL connec
 
 What does the code in "main" do?
 
--   Configure MQTT connection
--   Connect with the Cumulocity via MQTT protocol
--   Create a new device with ``My MQTT device`` name and ``c8y_MQTTDevice`` type
--   Update device hardware information by putting ``S123456789`` serial, ``MQTT test model`` model and ``Rev0.1`` revision
--   Subscribe to the static operation templates for the device, print all received operations to the console and in case of ``c8y_Restart`` operation simulate device restart
--   Create new thread which sends temperature measurement every 3 seconds
+-   Configure the MQTT connection.
+-   Connect with Cumulocity via a MQTT protocol.
+-   Create a new device with a ``My MQTT device`` name and a ``c8y_MQTTDevice`` type.
+-   Update the device hardware information by putting a ``S123456789`` serial, a ``MQTT test model`` model and a ``Rev0.1`` revision.
+-   Subscribe to the static operation templates for the device, print all received operations to the console and in case of a ``c8y_Restart`` operation simulate device restart.
+-   Create a new thread which sends temperature measurement every 3 seconds.
 
-Note that subscription is established after device creation, otherwise if there is no device for a given ``clientId`` server will not accept it.
+Note that the subscription is established after the device creation, otherwise if there is no device for a given ``clientId`` the server will not accept it.
 
 ### Build and run
 
@@ -161,7 +161,7 @@ To run:
     [INFO] --- exec-maven-plugin:1.6.0:java (default-cli) @ hello-mqtt-java ---
     Received operation 510,123456789
 
-After starting application you should see new device in the Cumulocity application in the device list.
+After starting the application you should see a new device in the Cumulocity application in the device list.
 Additionally if there will be a new operation created for this device, (for example ``c8y_Restart``) information about it will be printed to the console.
 
 ## Improve the agent

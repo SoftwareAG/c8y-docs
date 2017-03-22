@@ -5,13 +5,13 @@ layout: default
 ---
 ## Overview
 
-In this tutorial, you will learn how to use Python MQTT client with Cumulocity using pre-defined messages (called "static templates").
+In this tutorial, you will learn how to use the Python MQTT client with Cumulocity using pre-defined messages (called "static templates").
 
 ## Prerequisites
 
 In order to follow this tutorial, check the following prerequisites:
 
-* You have a valid tenant, user and password in order to access Cumulocity.
+* You have a valid tenant, a user, and a password in order to access Cumulocity.
 * Verify that you have Python installed:
   
   	python --version
@@ -32,7 +32,7 @@ To develop a very simple "Hello, world!" MQTT client for Cumulocity, you need to
 
 ### Create python script
 
-Create script file, for example "hello_mqtt.py" with the following content:
+Create a script file, for example "hello_mqtt.py" with the following content:
 
     #!/usr/bin/env python
     # -*- coding: utf-8 -*-
@@ -87,27 +87,28 @@ Create script file, for example "hello_mqtt.py" with the following content:
     
 Replace "&lt;&lt;clientId&gt;&gt;", "&lt;&lt;serverHost&gt;&gt;", "&lt;&lt;tenant&gt;&gt;", "&lt;&lt;username&gt;&gt;", "&lt;&lt;password&gt;&gt;" with your data.
 
-Cumulocity MQTT protocol supports both unsecured TCP and also secured SSL connections, so when configuring port please remember to use proper one. No matter which connection type you choose "&lt;&lt;serverHost&gt;&gt;" should stay the same (e.g. ``mqtt.cumulocity.com``).
+Cumulocity MQTT protocol supports both unsecured TCP and also secured SSL connections, so when configuring  a port please remember to use the correct one. No matter which connection type you choose your "&lt;&lt;serverHost&gt;&gt;" should stay the same.
+(like ``mqtt.cumulocity.com``).
 
-Above example uses TCP connection, if you would like to use SSL please remember about proper configuration in the Paho MQTT client, more information [here](http://www.eclipse.org/paho/clients/python/docs/#option-functions).
+The above example uses a TCP connection, if you would like to use an SSL please remember the proper configuration in the Paho MQTT client, more information [here](http://www.eclipse.org/paho/clients/python/docs/#option-functions).
 
 What does the script do?
 
--   Configure MQTT connection
--   Register ``on_message`` callback function which will print incoming messages and in case of ``c8y_Restart`` operation simulate device restart
--   Register ``on_publish`` callback function which will be called after publish message has been delivered 
--   Connect with the Cumulocity via MQTT protocol
--   Create a new device with ``Python MQTT`` name and ``c8y_MQTTDevice`` type
--   Update device hardware information by putting ``S123456789`` serial, ``MQTT test model`` model and ``Rev0.1`` revision
--   Subscribe to the static operation templates for the device - this will result in ``on_message`` method call every time new operation is created
--   Call ``sendMeasurements`` method which sends temperature measurement every 3 seconds
+-   Configure a MQTT connection.
+-   Register a ``on_message`` callback function which will print incoming messages and in case of a ``c8y_Restart`` operation it will simulate a device restart.
+-   Register an ``on_publish`` callback function which will be called after a publish message has been delivered.
+-   Connect with Cumulocity via the MQTT protocol.
+-   Create a new device with a ``Python MQTT`` name and a ``c8y_MQTTDevice`` type.
+-   Update the device hardware information by putting  a ``S123456789`` serial, a ``MQTT test model`` model and a ``Rev0.1`` revision.
+-   Subscribe to the static operation templates for the device - this will result in a ``on_message`` method call every time a new operation is created.
+-   Call the ``sendMeasurements`` method which sends temperature measurement every 3 seconds.
 
 What does the ``publish`` message do?
 
--   Publish given message on the given topic via MQTT
--   When publishing message it uses QoS 2 so to be sure that the message was delivered it will wait for server ACK (until ``on_publish`` method is called with the matching message id)
+-   Publish a given message about the given topic via MQTT.
+-   When publishing the message it uses QoS 2. So to be sure that the message was delivered it will wait for server ACK (until the ``on_publish`` method is called with the matching message id).
 
-Note that subscription is established after device creation, otherwise if there is no device for a given ``clientId`` server will not accept it.
+Note that the subscription is established after the device creation, otherwise if there is no device for a given ``clientId`` the server will not accept it.
 
 ### Run script
 
@@ -115,7 +116,7 @@ To run the script just call:
 
     python hello_mqtt.py 
 
-After starting application you should see new device in the Cumulocity application in the device list.
+After starting the application you should see a new device in the Cumulocity application in the device list.
 Additionally if there will be a new operation created for this device, (for example ``c8y_Restart``) information about it will be printed to the console.
 
 In the console you should see following output 

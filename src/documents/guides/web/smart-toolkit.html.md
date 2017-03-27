@@ -196,7 +196,7 @@ Now let's create the `index.html` file:
     <script src="js/app.js"></script>
     <script src="js/login_ctrl.js"></script>
     <script src="js/main_ctrl.js"></script>
-    <script src="js/section_ctrl.js"></script>
+    <script src="js/section_dir.js"></script>
   </head>
   <body ng-app="helloCoreApi">
     <ng-view />
@@ -354,6 +354,7 @@ angular.module('helloCoreApi').controller('MainCtrl', [
   'c8yAuth',
    MainCtrl
 ]);
+var loggedIn = false;
 
 function MainCtrl(
   $location,
@@ -362,15 +363,15 @@ function MainCtrl(
   c8yUser
 ) {
 
+  $rootScope.$on('authStateChange', function (evt, state) {
+    loggedIn = state.hasAuth;
+  });
+
   c8yAuth.initializing.then(function() {
-    if(c8yUser.current().$$state.status != 1) {
+    if(!loggedIn) {
       $location.path('/login');
     }
   });
-
-  if (!$routeParams.section) {
-    $location.path('/devices');
-  }
     
   this.currentSection = $routeParams.section;
   this.sections = {
@@ -385,7 +386,7 @@ function MainCtrl(
   };
 }
 ```
-We redirect to login screen if the authorization process is finished and a Promise of the current user is not resolved. In addition, we check if `$routeParams.section` exists or not (remember `when('/:section')`?). If it doesn't, then we redirect it to devices screen as an empty content won't make sense. We assign `currentSection` onto `this` to be able to access it from `main.html`. `this.sections` is a key-value dictionary of menu label, section name pairs. 'this.filter' is used to have one synchronized filter object for a whole section. `this.logout` will be used as a logout callback. Now for `main.html`:
+We redirect to login screen if current user's `state.hasAuth` is equals to `false`. We assign `currentSection` onto `this` to be able to access it from `main.html`. `this.sections` is a key-value dictionary of menu label, section name pairs. 'this.filter' is used to have one synchronized filter object for a whole section. `this.logout` will be used as a logout callback. Now for `main.html`:
 
 ```html
 <div ng-if="c8y.user">

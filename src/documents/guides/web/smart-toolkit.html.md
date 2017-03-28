@@ -228,10 +228,6 @@ app.config([
   '$routeProvider',
   configRoutes
 ]);
-app.config([
-  'c8yCumulocityProvider',
-  configCumulocity
-]);
 
 function configRoutes(
   $routeProvider

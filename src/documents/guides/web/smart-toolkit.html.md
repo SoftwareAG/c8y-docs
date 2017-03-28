@@ -137,7 +137,8 @@ Copy the following into `bower.json`:
   "dependencies": {
     "bootstrap": "~3.3.5",
     "angular-route": "1.5.8",
-    "cumulocity-clients-javascript": "latest"
+    "cumulocity-clients-javascript": "latest",
+    "angular-ui-bootstrap-bower": "0.11.0"
   }
 }
 ```
@@ -227,6 +228,11 @@ app.config([
   '$routeProvider',
   configRoutes
 ]);
+app.config([
+  'c8yCumulocityProvider',
+  configCumulocity
+]);
+
 function configRoutes(
   $routeProvider
 ) {
@@ -350,7 +356,7 @@ The main screen is consisted of a top navigator, left navigator and a content ar
 angular.module('helloCoreApi').controller('MainCtrl', [
   '$location',
   '$routeParams',
-  'c8yUser',
+  '$rootScope',
   'c8yAuth',
    MainCtrl
 ]);
@@ -359,8 +365,8 @@ var loggedIn = false;
 function MainCtrl(
   $location,
   $routeParams,
-  c8yAuth,
-  c8yUser
+  $rootScope,
+  c8yAuth
 ) {
 
   $rootScope.$on('authStateChange', function (evt, state) {

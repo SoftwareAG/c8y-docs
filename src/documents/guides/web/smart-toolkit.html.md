@@ -388,7 +388,7 @@ function MainCtrl(
   };
 }
 ```
-We redirect to login screen if current user's `state.hasAuth` is equals to `false`. We assign `currentSection` onto `this` to be able to access it from `main.html`. `this.sections` is a key-value dictionary of menu label, section name pairs. 'this.filter' is used to have one synchronized filter object for a whole section. `this.logout` will be used as a logout callback. Now for `main.html`:
+We redirect to the login screen if current user's `state.hasAuth` equals to `false`. We assign `currentSection` onto `this` to be able to access it from `main.html`. `this.sections` is a key-value dictionary of menu label, section name pairs. `this.filter` is used to have one synchronized filter object for a whole section. `this.logout` will be used as a logout callback. Now for `main.html`:
 
 ```html
 <div ng-if="c8y.user">

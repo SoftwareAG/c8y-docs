@@ -187,8 +187,9 @@ To assign permissions click on the relevant checkbox. If you wish to select or c
 
 Support users are users in the management tenant area with a special permission to login to tenants accounts.
 To allow login to tenants, the support user account must have support access rights.
-When a support user logs into a tenant account, the user has the same privileges as a subtenant user.
-This user type is specified on the login page.  
+When a support user logs into a tenant account, the user has the same privileges as a subtenant user. This user type is specified on the login page.
+  
+It is important to note that, support users cannot access "own applications" of other tenants. For example, if you use a management tenant and you want to access a private application in another tenant, an error will occur. In order to go around this, you could move the application to the management tenant and subscribe the other tenant to it. This way, the app will be available for both tenants and it will be shown to the support user.
 
 Support users can login using own passwords and usernames:
 

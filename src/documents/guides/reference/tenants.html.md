@@ -363,6 +363,30 @@ Example response:
 |prev|URI|0..1|Link to a potential previous page of options.|
 |next|URI|0..1|Link to a potential next page of options.|
 
+### POST application to tenant applications
+
+Example Request: Adds application reference to tenant's applications.
+
+Required role: ROLE\_TENANT\_MANAGEMENT\_ADMIN or ROLE\_TENANT\_MANAGEMENT\_UPDATE
+
+    POST /tenant/tenants/<<tenantId>>/applications
+    Host: ...
+    Authorization: Basic ...
+    Content-Type: application/vnd.com.nsn.cumulocity.applicationReference+json;ver=...
+    {
+        "application":{"self":"<<Application URL>>"}
+    }
+
+
+Example Response :
+
+    HTTP/1.1 200 OK
+    Content-Type: application/vnd.com.nsn.cumulocity.applicationReference+json;ver=...
+    Content-Length: ...
+    {
+        "application":{"self":"<<Application URL>>", "id":...}
+    }
+
 ### GET a representation of a ApplicationReferenceCollection.
 
 Response body: ApplicationReferenceCollection

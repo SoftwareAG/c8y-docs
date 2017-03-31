@@ -97,12 +97,12 @@ Enable two-factor authentication for a user:
 
 Users with the same permissions can be placed into user groups representing typical permission sets. A single user can be part of multiple user groups. New tenant accounts have four user groups by default. These user groups have different default permission settings:
 
-* Admins: A group with **all permissions** by default.
+* Admins: A group with **all permissions** by default. This group can not be deleted.
 * Business: A group to work with all devices and their data but without administration rights.
 * Readers: A group who can read all data but cannot edit.
-* Devices: A group with typical minimal default permissions for devices.
+* Devices: A group with typical minimal default permissions for devices. This group can not be deleted.
 
-All groups can be modified and deleted.
+All groups can be modified. If the group is not *ADMINS* or *DEVICES*, it can be deleted.
 
 ![User groups](/guides/users-guide/usergroups.png)
 
@@ -128,6 +128,8 @@ All user group details can be edited. To edit a group, click on the name of the 
 To remove a group, simply hover over the group name and click on the "X" button. A confirmation dialog will appear. Click on "OK" will delete the group.
 
 ![Remove Group](/guides/users-guide/removegroup.png)
+
+Please, note that the *ADMINS* and *DEVICES* groups can not be deleted.
 
 ## <a name="permissions"></a>Managing Permissions
 

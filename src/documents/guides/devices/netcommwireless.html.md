@@ -20,6 +20,8 @@ The following sections demonstrate how to use a NetComm router with Cumulocity. 
 * Get [event notifications](#notifications).
 * Connect [Modbus](#modbus) devices.
 * View [logs](#logs).
+* [VNC](#vnc) remote access.
+* Configure [MQTT](#mqtt).
 
 The following sections assume that the router has the NetComm [agent](/guides/devices/netcomm-release) package installed. The agent is compatible with the [NTC-6200](http://www.netcommwireless.com/product/m2m/ntc-6200) and [NTC-140W](http://www.netcommwireless.com/product/4g-wifi-m2m-router). For more information on a particular feature of the router, please consult the respective manual found in the "Downloads" section of the router's home page.
 
@@ -59,7 +61,7 @@ The web interface also shows the status of the connection to Cumulocity:
  * Reconnecting: The software is retrying the connection.
  * Stopping: The software is terminating.
 
-(For version 3.x)
+(For version 3.x onwards)
 * Checking network connection: waiting for mobile network connection at boot.
 * Bootstrapping: load credentials or request credentials from Cumulocity.
 * Integrating: Connecting to Cumulocity.
@@ -271,4 +273,28 @@ From right you can set date range (date from and date to), you can select log fi
 
 Received logs are visible in a list below. You can click on it to show log file content at the bottom of the page. Last requested log is opened automatically.
 
-![Log vierer](/guides/devices/netcomm/logs.png)
+![Log viewer](/guides/devices/netcomm/logs.png)
+
+## <a name="vnc"></a>VNC remote access
+
+If you have a device which supports VNC remote access, it's now possible to manage your VNC device via Cumulocity starting from Agent v4.0.0.
+
+As shown in the screenshot, you can add your VNC server as an endpoint with appropriate IP and port in _Remote Access_ tab in "Device Management", then simply click on button "Connect", a new browser window will pop up, showing the display content of your remote VNC server.
+
+![VNC](/guides/devices/netcomm/vnc.png)
+
+## <a name="mqtt"></a>MQTT
+
+Starting from v4.0.0, agent added supported for MQTT protocol. In case you want to upgrade from previous 2.x or 3.x versions, no additional configurations are required for enabling MQTT. However, in case you need to manually configure MQTT enablement, run following command via "Device Shell":
+
+    set service.cumulocity.mqtt.enable = <0|1>
+
+to either disable or enable MQTT communication. The configured server URL remains the same. For example, http://demos.cumulocity.com if you want to use plain MQTT, or https://demos.cumulocity.com if you want secure MQTT + TLS.
+
+To configure the MQTT keepalive interval (default to 240 seconds):
+
+    set service.cumulocity.mqtt.keepalive = <seconds>
+
+to change the keepalive interval.
+
+> Changing keepalive interval only has affect after the next reboot.

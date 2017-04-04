@@ -1,5 +1,5 @@
 ---
-order: 20
+order: 25
 title: Customize
 layout: default
 ---

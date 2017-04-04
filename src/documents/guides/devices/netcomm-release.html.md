@@ -3,9 +3,9 @@ title: Netcomm Release Notes
 layout: devices
 ---
 
-## Release notes for NetComm Agent 3.2
+## Release notes for NetComm Agent 4.0
 
-This document describes the Cumulocity agent package for the [NetComm Wireless NTC-6200](http://www.netcommwireless.com/product/m2m/ntc-6200) router.
+This document describes the Cumulocity agent package for the [NetComm Wireless NTC-6200](http://www.netcommwireless.com/product/m2m/ntc-6200) and the [NetComm Wireless NTC-140W](http://support.netcommwireless.com/product/4g/ntc-140w) router.
 
 ## Supported functionality
 
@@ -29,6 +29,8 @@ The agent supports the following functionality:
 * Configuring and displaying of agent settings on the router's web user interface.
 * Get and put device configuration.
 * View system, ipsec and agent log files.
+* VNC remote access.
+* MQTT as alternative communication protocol.
 
 ## Known limitations and bugs
 
@@ -48,7 +50,9 @@ The agent was tested on an NTC-6200 device with firmware version 2.0.24.3. For r
 
 ## Installing the agent
 
-* Download the software: http://resources.cumulocity.com/ntc/smartrest-agent_3.2.2_arm.ipk.
+* Download the agent software: http://resources.cumulocity.com/ntc/smartrest-agent_4.0.0_arm.ipk.
+* Download the CA certificate bundle: http://resources.cumulocity.com/ntc/ca-cumulocity_20170118.0_arm.ipk.
+* Download the VNC proxy if you want to use VNC remote access: http://resources.cumulocity.com/ntc/vncproxy_1.0_arm.ipk.
 * Log in to the web user interface of the NTC-6200.
 * Navigate to the "System" menu. Click on "System configuration", "Choose a file" and select the downloaded software. Click "Upload" to upload the software to the router.
 * Click the "Install" button for the uploaded software which you want to install.
@@ -178,3 +182,12 @@ For information on using the agent, please visit the [NetComm Agent User's Guide
 * [MTM-13384](https://cumulocity.atlassian.net/browse/MTM-13384)modbus: disable Modbus-RTU support when model is NTC-140W.
 * [MTM-13904](https://cumulocity.atlassian.net/browse/MTM-13384)modbus/mbbase: write modbus response values to agent log for easier troubleshooting.
 * [fix]modbus: fix regression bug introduced in 3.2.0 that reading is offset by 1 when data model doesn't start from number 1.
+
+### 4.0.0
+[Agent Software](http://resources.cumulocity.com/ntc/smartrest-agent_4.0.0_arm.ipk),
+[CA certificate bundle](http://resources.cumulocity.com/ntc/ca-cumulocity_20170118.0_arm.ipk),
+[VNC Proxy](http://resources.cumulocity.com/ntc/vncproxy_1.0_arm.ipk). Changes:
+
+* [MTM-13859](https://cumulocity.atlassian.net/browse/MTM-13859)Add support for server certificate verification.
+* [MTM-14125](https://cumulocity.atlassian.net/browse/MTM-14125)Add MQTT support as an alternative protocol alongside HTTP.
+* [CP-45](https://cumulocity.atlassian.net/browse/CP-45)Support for VNC remote access.

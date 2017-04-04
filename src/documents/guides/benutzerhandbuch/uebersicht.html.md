@@ -96,8 +96,8 @@ Bei kleineren Bildschirmen ändert sich das Layout der Benutzeroberfläche wie u
 <img src="/guides/users-guide/appsmall.png" alt="Layout on small devices" style="max-width: 50%">
 
 Beachten Sie, dass Sie direkt zu jeder Stelle in einer Cumulocity-Anwendung navigieren können. Um beispielsweise die grundlegenden Informationen für ein Gerät anzuzeigen, können Sie die folgende URL eingeben:
-	https://<account>.cumulocity.com/apps/devicemanagement/index.html#/device/<id>/info
-
+	[https://<account>.cumulocity.com/apps/devicemanagement/index.html#/device/<id>/info
+](Device ID)
 Mit dieser URL, können Sie
 
   * Speichern von Lesezeichen für bestimmte Geräte oder Seiten.
@@ -135,7 +135,7 @@ Sie können Wörter auch ausschließen, indem Sie vor dem Wort einen Bindestrich
 
 	My Demo -Device
 
-um im Inventar nach "My" oder "Demo" aber nicht nach "Device" zu suchen.
+um in den Stammdaten nach "My" oder "Demo" aber nicht nach "Device" zu suchen.
 
 Groß- und Kleinschreibung wird ignoriert. Folgende Suchtexte liefern das gleiche Ergebnis:
 

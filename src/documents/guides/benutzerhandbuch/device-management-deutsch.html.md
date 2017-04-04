@@ -85,7 +85,7 @@ In jedem Fall sehen Sie eine Liste der Geräte, wie im folgenden Beispiel gezeig
 * Der Alarmstatus des Gerätes, wie viele kritische, Major-, Minor- oder Warnstufenalarme für das Gerät derzeit nicht gelöst sind. Siehe "[Alarme](#alarm-monitoring)" für weitere Informationen über das Arbeiten mit Alarmen.
 * Eine Schaltfläche zum Löschen des Gerätes.
 
-Das Löschen eines Geräts bedeutet, das Gerät aus der Cumulocity-Datenbank zu entfernen, einschließlich aller damit generierten Daten. Alternativ zum Löschen eines Gerätes können Sie auch alle ausgeschalteten Geräte in eine Gruppe organisieren. Dadurch wird sichergestellt, dass alle alten Berichte korrekt bleiben. Um zu verhindern, dass Alarme für die ausgeschalteten Geräte angeschaltet werden, deaktivieren Sie die [Verbindungsüberwachung] (#connection-monitoring). Beim Löschen eines Geräts werden die Daten seiner Kindgeräte nicht gelöscht.
+Das Löschen eines Geräts bedeutet, das Gerät aus der Cumulocity-Datenbank zu entfernen, einschließlich aller damit generierten Daten. Alternativ zum Löschen eines Gerätes können Sie auch alle ausgeschalteten Geräte in eine Gruppe organisieren. Dadurch wird sichergestellt, dass alle alten Berichte korrekt bleiben. Um zu verhindern, dass Alarme für die ausgeschalteten Geräte angeschaltet werden, deaktivieren Sie die [Verbindungsüberwachung](#connection-monitoring). Beim Löschen eines Geräts werden die Daten seiner Kindgeräte nicht gelöscht.
 
 <img src="/guides/users-guide/devicelistde.png" alt="Device List" style="max-width: 100%">
 

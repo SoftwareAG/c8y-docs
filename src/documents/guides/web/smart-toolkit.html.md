@@ -4,29 +4,29 @@ title: Web SDK for AngularJS
 layout: default
 ---
 
-## Web SDK for AngularJS Overview
+## Overview
 
 In the following document you will get an overview on the *Web SDK for AngularJS* which allows you to
 
-* create [AngularJS](https://angularjs.org/) components that are connected to Cumulocity ecosystem by making use of *AngularJS* services from `c8y.core` as documented [here](http://resources.cumulocity.com/documentation/jssdk/latest/)
-* implement custom functionalities tailored to your use case
+* Create [AngularJS](https://angularjs.org/) components that are connected to the Cumulocity ecosystem by making use of *AngularJS* services from the module "c8y.core" as documented [here](http://resources.cumulocity.com/documentation/jssdk/latest/).
+* Implement custom functionalities tailored to your use case.
 
-For the basic concepts of Cumulocity applications, please see [Developing applications](/guides/concepts/applications).
+For the basic concepts of Cumulocity applications, you can find more details [here](/guides/concepts/applications).
 
-## Developing an Application
+## Developing an application
 
-The following chapter will guide you through the process of building a simple AngularJS application using `c8y.sdk`. The resulting solution is available at [https://bitbucket.org/m2m/cumulocity-examples](https://bitbucket.org/m2m/cumulocity-examples) under folder `hello-core-api`. If you wish to run it, either clone the repo or download it from bitbucket and do as follows:
+The following chapter will guide you through the process of building a simple AngularJS application using the Web SDK. The resulting solution is available at [https://bitbucket.org/m2m/cumulocity-examples](https://bitbucket.org/m2m/cumulocity-examples) under the folder "hello-core-api". If you wish to run it, either clone the repository or download it from bitbucket and do as follows:
 
-> Go to `hello-core-api/js/app.js` and find the lines with `c8yCumulocityProvider`. Use `c8yCumulocityProvider.setAppKey` and `c8yCumulocityProvider.setBaseUrl` to set your application key and your *Cumulocity domain*. Then:
+* Go to "hello-core-api/js/app.js" and find the lines with `c8yCumulocityProvider`. Use `c8yCumulocityProvider.setAppKey` and `c8yCumulocityProvider.setBaseUrl` to set your application key and your *Cumulocity domain*. Then:
 
-> ```sh
+```sh
 $ cd hello-core-api
 $ npm install
 $ bower install
 $ grunt server
 ```
 
-Now go to [localhost:8080/](http://localhost:8080) in your browser.
+* Now go to [localhost:8080/](http://localhost:8080) in your browser.
 
 ## Prerequisites
 
@@ -38,12 +38,12 @@ You should be familiar with the following technologies:
 * [Grunt](http://gruntjs.com/).
 * [kriskowal/q](https://github.com/kriskowal/q), an informal introduction can be found at [www.promisejs.org](https://www.promisejs.org/).
 
-You will need the following prerequisites for being able to develop plugins and to execute the examples:
+You will need the following prerequisites for developing plugins and executing the examples:
 
-* You will need [Node.js](http://nodejs.org/) (0.10 or newer, stable) and [Grunt](http://gruntjs.com/) installed.
+* You will need [Node.js](http://nodejs.org/) (0.10 or newer, stable), [Bower](https://bower.io/) and [Grunt](http://gruntjs.com/) to be installed.
 * You will need access to your Cumulocity account, i.e. you need your tenant name, username and password.
 
-If you are sure that you have `node`, `grunt` and `bower` installed on your system, you can skip to *Step 1*.
+If you are sure that you have Node, Bower and Grunt installed on your system, you can skip to [step 1](#step-1).
 
 ## Steps
 
@@ -51,10 +51,10 @@ If you are sure that you have `node`, `grunt` and `bower` installed on your syst
 <li>[Check dependency versions](#step-0)</li>
 <li>[Setup project structure](#step-1)</li>
 <li>[Setup dependencies](#step-2)</li>
-<li>[Create `index.html`](#step-3)</li>
+<li>[Create "index.html"](#step-3)</li>
 <li>[Create an AngularJS app](#step-4)</li>
-<li>[Create login screen](#step-5)</li>
-<li>[Create main screen](#step-6)</li>
+<li>[Create a login screen](#step-5)</li>
+<li>[Create a main screen](#step-6)</li>
 <li>[Create device/alarm/event lists](#step-7)</li>
 <li>[Implement filtering](#step-8)</li>
 <li>[Create a refresh button](#step-9)</li>
@@ -63,39 +63,54 @@ If you are sure that you have `node`, `grunt` and `bower` installed on your syst
 
 ## 0. Check dependency versions<a name="step-0"></a>
 
-#### `node`
+#### Node
+
 Start with checking your node version and make sure that it is `0.10` or newer:
+
 ```sh
 ~ $ node --version
 v0.10.39
 ```
 
-#### `bower`
-You need `bower` installed globally. First check if you have it:
+#### Bower
+
+You need Bower installed globally. First check if you have it:
+
 ```sh
 ~ $ bower --version
 1.4.1
 ```
-If `bower` command cannot be found:
+
+If the "bower" command cannot be found:
+
 ```sh
 ~ $ npm install bower -g
 ```
-To update `bower` to the latest version:
+
+To update Bower to the latest version:
+
 ```sh
 ~ $ npm update bower -g
 ```
-#### `grunt-cli`
-You need `grunt-cli` installed globally. First check if you have it:
+
+#### Grunt CLI
+
+You need the command line interface of Grunt installed globally. First check if you have it:
+
 ```sh
 ~ $ grunt --version
 grunt-cli v0.1.13
 grunt v0.4.5
 ```
-If `grunt` command cannot be found:
+
+If the "grunt" command cannot be found:
+
 ```sh
 ~ $ npm install grunt-cli -g
 ```
-To update `grunt-cli` to the latest version:
+
+To update "grunt-cli" to the latest version:
+
 ```sh
 ~ $ npm update grunt-cli -g
 ```
@@ -106,7 +121,6 @@ Create the following folder structure for the project:
 
 ```
 hello-core-api
-.
 ├── css
 ├── js
 │   ├── alarms_ctrl.js
@@ -124,13 +138,14 @@ hello-core-api
 ├── login.html
 ├── main.html
 └── package.json
-
 ```
-Copy `css` files from [the example project](https://bitbucket.org/m2m/cumulocity-examples) under folder `hello-core-api/css`.
+
+Copy the CSS files from [the example project](https://bitbucket.org/m2m/cumulocity-examples) under the folder "hello-core-api/css".
 
 ## 2. Setup dependencies<a name="step-2"></a>
 
-Copy the following into `bower.json`:
+Copy the following into the "bower.json" file:
+
 ```js
 {
   "name": "hello-core-api",
@@ -143,12 +158,16 @@ Copy the following into `bower.json`:
 }
 ```
 
-This `json` file defines modules/libraries that our example project depends on. Now you can run the following:
+This JSON file defines modules and libraries that our example project depends on. Now you can run the following:
+
 ```sh
 hello-core-api $ bower install
 ```
+
 ***
-Copy the following into `package.json`:
+
+Copy the following into the "package.json" file:
+
 ```js
 {
   "name": "hello-core-api",
@@ -159,12 +178,17 @@ Copy the following into `package.json`:
   }
 }
 ```
-We are going to use `http-server` as a mini http server that serves static files (because browsers prohibit making AJAX requests from a `file://` domain). Now install dependencies:
+
+We are going to use "http-server" as a mini HTTP server that serves static files (because browsers prohibit making AJAX requests from a "file://" domain). Now install the dependencies:
+
 ```sh
 hello-core-api $ npm install
 ```
+
 ***
-Copy the following into `Gruntfile.js`:
+
+Copy the following into the "Gruntfile.js" file:
+
 ```js
 module.exports = function(grunt) {
   grunt.config('http-server.dev', {
@@ -177,11 +201,13 @@ module.exports = function(grunt) {
   grunt.registerTask('server', ['http-server:dev']);
 };
 ```
-This registers a `grunt` task to start http server.
 
-## 3. Create `index.html`<a name="step-3"></a>
+This registers a grunt task to start the HTTP server.
 
-Now let's create the `index.html` file:
+## 3. Create "index.html"<a name="step-3"></a>
+
+Create the "index.html" file:
+
 ```html
 <html>
   <head>
@@ -190,7 +216,7 @@ Now let's create the `index.html` file:
     <link href="css/login.css" rel="stylesheet">
     <link href="css/dashboard.css" rel="stylesheet">
 
-    <!-- Put cumulocity Javascript dependencies here such as angular, lodash etc. You can copy them from the example project. -->
+    <!-- Put cumulocity JavaScript dependencies here such as angular, lodash etc. You can copy them from the example project. -->
     <!--<script src="bower_components/angular/angular.js"></script>-->
 
     <script src="bower_components/cumulocity-clients-javascript/build/main.js"></script>
@@ -204,16 +230,22 @@ Now let's create the `index.html` file:
   </body>
 </html>
 ```
+
 Now you can run the following:
+
 ```sh
 hello-core-api $ grunt server
 ```
-If you visit [http://localhost:8080](http://localhost:8080) from your browser, it should load an empty page, with a bunch of errors in browser console because some Javascript files cannot be found.
-* `ng-app`: bootstraps an AngularJS app, from a module defined with given name.
-* `ng-view`: `angular-route` directive that loads partial `HTML` files as defined in routes configuration.
 
-## 4. Create an AngularJS app<a name="step-4"></a>
-Let's create the AngularJS app. In `js/app.js`:
+If you visit [http://localhost:8080](http://localhost:8080) in your browser, it should load an empty page, with a bunch of errors in the browser console, because some JavaScript files cannot be found.
+
+* `ng-app`: bootstraps an AngularJS app, from a module defined with given name.
+* `ng-view`: `angular-route` directive that loads partial HTML files as defined in routes configuration.
+
+## 4. Create an AngularJS application<a name="step-4"></a>
+
+To create the AngularJS application, insert the following into the "js/app.js" file:
+
 ```js
 var app = angular.module('helloCoreApi', [
   'c8y.sdk',
@@ -221,7 +253,8 @@ var app = angular.module('helloCoreApi', [
   'ui.bootstrap'
 ]);
 ```
-`helloCoreApi` is the module name that is used with `ng-app` directive. Everything between brackets are dependencies to other modules. Cumulocity services are defined in `c8y.core`.
+
+"helloCoreApi" is the module name that is used with the `ng-app` directive. Everything between the brackets is a dependency to another module. Cumulocity's services are defined in "c8y.sdk".
 
 ```js
 app.config([
@@ -250,7 +283,8 @@ function configRoutes(
     });
 }
 ```
-AngularJS uses syntax similar to [AMD](http://requirejs.org/docs/whyamd.html#amd) to declare dependencies. For more information see [AngularJS DI Guide](https://docs.angularjs.org/guide/di). `$routeProvider` lets you choose which HTML file to load and which controller to execute depending depending on the route. For example, if browser goes to [localhost:8080/index.html/#/login](localhost:8080/index.html/#/login), `login.html` will load and `LoginCtrl` will be executed. `.when('/:section')` allows `:section` part of the URL to be anything, and you can access that value from controllers. `controllerAs` value is important as it will be the variable name that is going to be used in HTML files to access controller values (e.g. `login.username`).
+
+AngularJS uses syntax similar to [AMD](http://requirejs.org/docs/whyamd.html#amd) to declare dependencies. For more information, see [AngularJS DI Guide](https://docs.angularjs.org/guide/di). `$routeProvider` lets you choose which HTML file to load and which controller to execute depending on the route. For example, if your browser goes to [localhost:8080/index.html/#/login](localhost:8080/index.html/#/login), the file "login.html" will be loaded and the controller `LoginCtrl` will be executed. `.when('/:section')` allows the `:section` part of the URL to be anything, and you can access that value from the controller. The `controllerAs` value is important as it will be the variable name that is going to be used in HTML files to access values from the controller (e.g. `login.username`).
 
 ```js
 app.config([
@@ -264,15 +298,15 @@ function configCumulocity(
   c8yCumulocityProvider.setBaseUrl('https://my-tenant.cumulocity.com/');
 }
 ```
-This is how you configure `c8y.core` to set your application key, tenant and domain that serves Cumulocity application.
 
-## 5. Create login screen<a name="step-5"></a>
+This is how you configure "c8y.core" to set your application key, tenant and domain that serve Cumulocity applications.
+
+## 5. Create a login screen<a name="step-5"></a>
 
 ![Login screen](/guides/smart-toolkit/login.png)
 
-Let's create a login screen. `c8y.core` won't work without tenant,username and password set; so you need it.
+Create a login screen by using the following code. "c8y.core" will not work without specifying a tenant, username and password, so you explicitly have to set it in "src/login_ctrl.js":
 
-`src/login_ctrl.js`:
 ```js
 angular.module('helloCoreApi').controller('LoginCtrl', [
   '$location',
@@ -291,14 +325,15 @@ function LoginCtrl(
     $location.path('/');
     $rootScope.c8y.user = c8yUser;
   });
-  
+
   this.credentials = {};
   this.onSuccess = function () {
     $location.path('/');
   };
 }
 ```
-That was easy right? `c8yUser.current` returns a `Promise` of currently logged in user. If a user is already logged in, a redirection to `/` is triggered. We define `onSuccess` function that redirects the application to `/`.
+
+`c8yUser.current` returns a `Promise` of the currently logged in user. If a user is already logged in, a redirection to "/" is triggered. In addition, we define the  function `onSuccess` that also redirects the application to "/".
 
 ```html
 <div class="container">
@@ -325,7 +360,9 @@ That was easy right? `c8yUser.current` returns a `Promise` of currently logged i
   </form>
 </div>
 ```
-`ng-model` is very well documented by AngularJS [here](https://docs.angularjs.org/api/ng/directive/ngModel). `c8y-login` directive is defined in `c8y.core` module. It logs in the user for which credentials are provided and it has the following signature:
+
+`ng-model` is very well [documented by AngularJS](https://docs.angularjs.org/api/ng/directive/ngModel). The `c8y-login` directive is defined in the "c8y.core" module. It logs in the user for which credentials are provided. It has the following signature:
+
 ```html
 <ANY c8y-login
   tenant="tenantName"
@@ -339,15 +376,14 @@ That was easy right? `c8yUser.current` returns a `Promise` of currently logged i
 
 If you visit [localhost:8080/index.html/#/login](http://localhost:8080/index.html/#/login), you should see the login screen. You can type in your credentials and login, but we still have nothing at [localhost:8080/#/](http://localhost:8080/#/).
 
-If you want to omit tenant field in login screen, you can set tenant once using `c8yCumulocityProvider.setTenant` function in the config phase.
+If you want to omit the tenant field in the login screen, you can set the tenant once using `c8yCumulocityProvider.setTenant` in the config phase.
 
-## 6. Create main screen<a name="step-6"></a>
+## 6. Create a main screen<a name="step-6"></a>
 
 ![Main screen](/guides/smart-toolkit/main.png)
 
-The main screen is consisted of a top navigator, left navigator and a content area. When we implement device/alarm/event screens, content will be visible but for now, let's concentrate on the task on hand:
+The main screen consists of a top navigator, left navigator and a content area. When we implement the device, alarm and event screens, content will be visible, but for now we will concentrate on the main screen. Add the following functionality to the "js/main_ctrl.js" file:
 
-`js/main_ctrl.js`:
 ```js
 angular.module('helloCoreApi').controller('MainCtrl', [
   '$location',
@@ -374,7 +410,7 @@ function MainCtrl(
       $location.path('/login');
     }
   });
-    
+
   this.currentSection = $routeParams.section;
   this.sections = {
     Devices: 'devices',
@@ -388,7 +424,8 @@ function MainCtrl(
   };
 }
 ```
-We redirect to the login screen if current user's `state.hasAuth` equals to `false`. We assign `currentSection` onto `this` to be able to access it from `main.html`. `this.sections` is a key-value dictionary of menu label, section name pairs. `this.filter` is used to have one synchronized filter object for a whole section. `this.logout` will be used as a logout callback. Now for `main.html`:
+
+We redirect to the login screen, if the current user's `state.hasAuth` equals `false`. We assign `currentSection` to `this` so that it can be accessed from "main.html". `this.sections` is a key-value dictionary of menu label and section name pairs. `this.filter` is used to have one synchronized filter object for a whole section. `this.logout` will be used as a logout callback. Now for "main.html":
 
 ```html
 <div ng-if="c8y.user">
@@ -435,24 +472,27 @@ We redirect to the login screen if current user's `state.hasAuth` equals to `fal
 </div>
 
 ```
-`c8y-logout` is a directive that removes all user and session information from `c8y.core`, when clicked. It can be used in conjunction with `ng-click`, which is executed after logout is complete. Its signature is as follows:
+
+`c8y-logout` is a directive that removes all user and session information from "c8y.core", when clicked. It can be used in conjunction with `ng-click`, which is executed after the logout is complete. Its signature is as follows:
+
 ```html
 <ANY c8y-logout>
 </ANY>
 ```
-`eg-section` is a directive that we will create in *step 7*. It renders a table to display either device, alarm or event list depending on the value of `main.currentSection`. The content between its tags will be put above the rendered table, using `ng-transclude`. We will use that capability to render  components that filter lists.
 
-`c8y.user` is an object that is available when there exists a logged in Cumulocity user. It is defined on [`$rootScope`](https://docs.angularjs.org/api/ng/service/$rootScope). To learn more about the user object structure, see [c8yUser documentation](http://resources.cumulocity.com/documentation/jssdk/latest/#/core/c8y.core.service:c8yUser).
+`eg-section` is a directive that we will create in *step 7*. It renders a table to display either device, alarm or event list depending on the value of `main.currentSection`. The content between its tags will be put above the rendered table, using `ng-transclude`. We will use that capability to render components that filter lists.
 
-The rest is simple AngularJS directives such as `ng-switch`, `ng-repeat` about which you can get more information from AngularJS docs.
+`c8y.user` is an object that is available, if there is a logged in Cumulocity user. It is defined on [`$rootScope`](https://docs.angularjs.org/api/ng/service/$rootScope). To learn more about the user object structure, see the [documentation](http://resources.cumulocity.com/documentation/jssdk/latest/#/core/c8y.core.service:c8yUser).
 
-Why don't you give [localhost:8080/index.html/#/](http://localhost:8080/index.html/#/) a try now?
+The rest is simple AngularJS such as `ng-switch` and `ng-repeat` about which you can get more information from the AngularJS documentations.
+
+Try and visit [localhost:8080/index.html/#/](http://localhost:8080/index.html/#/) now.
 
 ## 7. Create device/alarm/event lists<a name="step-7"></a>
 
 ![Devices screen](/guides/smart-toolkit/devices.png)
 
-As all section screens; namely devices, alarms and events, will share common functionality, let's start with creating `js/section_dir.js`:
+As all section screens, the screens for devices, alarms and events, will share a common functionality defined in "js/section_dir.js":
 
 ```js
 angular.module('helloCoreApi').controller('SectionCtrl', [
@@ -491,7 +531,8 @@ function egSection(
 }
 ```
 
-`section.html`:
+The lists also share a view defined in "section.html":
+
 ```html
 <div>
   <div ng-transclude></div>
@@ -509,9 +550,10 @@ function egSection(
 </div>
 ```
 
-We define a directive `eg-section` that will be used for all section screens. It makes use of [`ngTransclude`](https://docs.angularjs.org/api/ng/directive/ngTransclude), [`$watch`](https://docs.angularjs.org/api/ng/type/$rootScope.Scope) and [`controller as`](https://docs.angularjs.org/api/ng/directive/ngController) syntax. It assigns `filter.pageSize` to 10. If you are familiar with [Cumulocity REST API](https://www.cumulocity.com/guides/reference/rest-implementation/), you should have noticed we are limiting the number of result objects that are returned from `GET` requests.
+We define a directive `eg-section` that will be used for all section screens. It makes use of the [`ngTransclude`](https://docs.angularjs.org/api/ng/directive/ngTransclude), [`$watch`](https://docs.angularjs.org/api/ng/type/$rootScope.Scope) and [`controllerAs`](https://docs.angularjs.org/api/ng/directive/ngController) syntax. It assigns `filter.pageSize` to 10. If you are familiar with the [Cumulocity REST API](https://www.cumulocity.com/guides/reference/rest-implementation/), you should have noticed we are limiting the number of result objects that are returned from GET-requests.
 
-The game breaker here is `c8y-repeat` directive. Its signature is as follows:
+The decisive component here is the `c8y-repeat` directive. Its signature is as follows:
+
 ```html
 <ANY
   c8y-repeat="repeat_expression"
@@ -520,22 +562,24 @@ The game breaker here is `c8y-repeat` directive. Its signature is as follows:
 ...
 </ANY>
 ```
-`repeat_expression`: `someVar in *` where `*` can be one of  supported services. See bottom of this document.
 
-We use `controller as` syntax here as we did when we defined routes. `refresh` is set by `c8y-repeat`, then you can use it to refresh the data. Note that you must obey to the [dot rule](https://www.youtube.com/watch?v=DTx23w4z6Kc) as it uses 2-way data-binding.
+`repeat_expression` can be an expression similar to `someVar in *`, where `*` can be one of the supported services. See the bottom of this document.
 
-For supported filters, see respective service documentation at [resources.cumulocity.com/documentation/jssdk/latest/#/core](http://resources.cumulocity.com/documentation/jssdk/latest/#/core).
+We use the `controllerAs` syntax here as we did when we defined the routes. You can use `refresh` set by `c8y-repeat` to refresh the data. Note that you must obey to the [dot rule](https://www.youtube.com/watch?v=DTx23w4z6Kc) as it uses two-way data-binding.
+
+For supported filters, see the respective [service documentation](http://resources.cumulocity.com/documentation/jssdk/latest/#/core).
 
 Now we have a fully functional web application that can list devices, alarms and events.
 
 ## 8. Implement filtering<a name="step-8"></a>
+
 In this part, we will implement device filtering by text and alarm filtering by severity.
 
 #### Device search
 
 ![Device search screen](/guides/smart-toolkit/fdevices.png)
 
-Add the following to `sections/devices.html` at the beginning, inside `<div ng-controller=...`:
+Add the following to "sections/devices.html" at the beginning, inside the tag `<div ng-controller=...`:
 
 ```html
 <form ng-submit="main.filter.text = main.textFilter">
@@ -548,13 +592,13 @@ Add the following to `sections/devices.html` at the beginning, inside `<div ng-c
 </form>
 ```
 
-There are `main.filter.text` and `main.textFilter` variables which are almost the same thing but differs a little. `c8y-repeat` will refresh its data when filter changes. Because we don't want it to be refreshed each time user types in a character in the search field, we use two separate variables and synchronize them in `ng-submit`.
+There are `main.filter.text` and `main.textFilter` variables which are almost the same thing but differ a little. `c8y-repeat` will refresh its data when the filter changes. Because we do not want it to be refreshed each time the user types in a character in the search field, we use two separate variables and synchronize them in `ng-submit`.
 
 Now check [localhost:8080/index.html/#/devices](http://localhost:8080/index.html/#/devices) again.
 
 #### Alarm filtering by severity
 
-Alarm filtering by severity will be more verbose so let's create a controller first at `js/alarms_ctrl.js`:
+Alarm filtering by severity will be more verbose so let us create a controller in "js/alarms_ctrl.js" first:
 
 ```js
 angular.module('helloCoreApi').controller('AlarmsCtrl', [
@@ -584,7 +628,8 @@ angular.module('helloCoreApi').controller('AlarmsCtrl', [
   }
 ```
 
-`HTML`:
+The respective HTML file looks as follows:
+
 ```html
 <div ng-controller="AlarmsCtrl as alarms" class="btn-group alarm-severity" role="group" aria-label="...">
   <style>
@@ -602,11 +647,11 @@ angular.module('helloCoreApi').controller('AlarmsCtrl', [
 </div>
 ```
 
-For this filtering, we define an array of objects that can represent alarm severities. Iterating over them using `ng-repeat` is trivial. When one of them is clicked, it either toggles off and sets `filter.severity` to `undefined`, or actually sets the severity. As `c8y-repeat` refreshes automatically when filter changes, that's all we have to do.
+For this filtering, we define an array of objects that can represent alarm severities. Iterating over them using `ng-repeat` is trivial. When one of them is clicked, it either toggles off and sets `filter.severity` to `undefined`, or actually sets the severity. As `c8y-repeat` refreshes automatically when the filter changes, there is nothing else we have to do.
 
 ## 9. Create a refresh button<a name="step-9"></a>
 
-In this final example, we won't create a filter. As we won't have a filter, we need another way of refreshing data. Here is how we do it in `sections/events.html`:
+In this final example, we will not create a filter. As we will not have a filter, we need another way of refreshing data. Here is how we do it in "sections/events.html":
 
 ```html
 <div>
@@ -614,11 +659,11 @@ In this final example, we won't create a filter. As we won't have a filter, we n
 </div>
 ```
 
-If you haven't figured already, there's a 2-level chain of 2-way bindings in this example. `eg-section` directive binds `main.refresh` and `section.refresh` to each other. `c8y-repeat` binds `section.refresh` to its own private refresh function. Inside `events.html`, we have no access to `section` because it is *ngIncluded* inside `main.html` and not `section.html`.
+If you have not figured already, there is a two-level chain of two-way bindings in this example. The `eg-section` directive binds `main.refresh` and `section.refresh` to each other. `c8y-repeat` binds `section.refresh` to its own private refresh function. Inside "events.html", we have no access to `section` because it is *ngIncluded* inside "main.html" and not "section.html".
 
 ## Conclusion
 
-You have created an AngularJS app from scratch using `c8y.core` API, better known as *Web SDK for AngularJS*. Congratulations!
+You have created an AngularJS application from scratch using the "c8y.core" API, better known as *Web SDK for AngularJS*. Congratulations!
 
 ***
 

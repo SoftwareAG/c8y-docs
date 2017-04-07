@@ -634,3 +634,76 @@ The last tab in the simulator menu are alarms.
 
 These are not the alarms related to the simulated device, these are alarms connected to the simulator itself. If a simulator does not work correctly, you will see alarms or a warning here.
 
+## <a name="cloud_remote_access"></a>Cloud Remote Access
+
+### Overview
+
+Cumulocity Cloud Remote Access implements Virtual Network Computing (VNC) to remotely access operating panels and other devices with a graphic user interface. The operators of the devices can thus work with the devices via a web browser, as if they were in front of them.
+
+![VNC](/guides/users-guide/VNC1a.png)
+
+Cloud Remote Access works as in the illustration below. Starting from the remote-controlled device: The device runs a VNC server and is connected to a gateway compatible with Cloud Remote Access. This gateway must be registered as a device within the "Device Management" application in Cumulocity. More information about registering devices and instructions can be found here: [Device Registration](https://www.cumulocity.com/guides/users-guide/device-management/#device-registration)
+
+![VNC2](/guides/users-guide/VNC2.png)
+
+With Cloud Remote Access a user can
+
+- View status visualizations and track updates of remote devices immediately as if the user is at the device location
+- Connect to remote devices easily, because complex VPN setups are not required. 
+
+![VNC1b](/guides/users-guide/VNC1b.png)
+
+The connection to remote devices is securely encrypted through TLS technology. Additionally, passwords are encrypted in your Cumulocity account, so that you do not need to manage them elsewhere.
+
+### Using Cloud Remote Access
+
+Cloud Remote Access is available in the Device Management application. 
+
+**Prerequisites:**
+- A Cloud Remote Access compatible gateway connected to your Cumulocity account. 
+- A device with a VNC server that is connected to the gateway and reachable from the gateway.
+- Cloud Remote Access included into your subscription plan. If you do not see the "Remote access" tab below, please contact sales@cumulocity.com
+
+In Cumulocity you can locate gateway devices with “All devices” inside the Device Management application. 
+
+![router device](/guides/users-guide/routerdevice.png)
+
+Select the gateway from the list. Below can see the tab “Remote access” if your subscription plan includes Cloud Remote Access. Click on it and a list panel will appear.
+
+![Endpoints](/guides/users-guide/endpoints.png)
+
+You can configure remote devices by clicking on “Add endpoint”. 
+
+*The "endpoint" is the IP address and port of the VNC server running on the device. This IP address and port need to be reachable from the gateway.* 
+
+
+*To be able to configure an endpoint, you need the following permissions: Remote access: set to “Change” and Device Control set to “Change”. To read data a “Read” permission is sufficient. For more information on setting up permissions, please see the [administration user's guide](https://www.cumulocity.com/guides/users-guide/administration/#users)*
+
+A dialog will open as shown below. Enter the IP address and port, as well as the password of the VNC server. Once the endpoint is added, it will be displayed in the list. 
+
+![Remote access endpoint](/guides/users-guide/remoteaccess.png)
+
+To connect to configured endpoints go to the Tab “Remote access” and choose an endpoint to connect to. These endpoints represent the remote controlled devices. When you click on “connect”, the VNC connection will start. To do so you need to have at least “Read” rights for the remote access functionality and “Change” for the Device Control. More information about users and rights can be found [here.](https://www.cumulocity.com/guides/users-guide/administration/#users)
+
+![Connect Endpoint](/guides/users-guide/connectendp.png)
+
+A new browser tab will open and you see the front screen or operating panel of the device you are connected to within moments. The top bar of the screen will state “starting VNC handshake” when the process is starting. 
+
+The small cogwheel at the end of the row opens a dialog to edit or remove endpoints.
+
+![Edit endpoints](/guides/users-guide/editendpoint.png)
+
+### Troubleshooting:
+
+Please check if you have sufficient permissions, if you want to set up new endpoints.
+To do so you need to have “Change” rights for Remote Access and Device Control.
+Without Device Control “Change”, you can not register any device and without Remote Access “Change” you can not add an endpoint for remote access.
+To establish a connection to a remote operating panel a “Read” permission for Remote Access is sufficient.
+
+The VNC connection via a Gateway to a remote VNC server can also fail because of network problems. In this case you need to contact your network administrator.
+
+Tested on the following VNC Servers:
+- Real VNC Connect 6.0.2	
+- TightVNC 1.3.9
+- TigerVNC 1.7.0
+- EfonVNC 4.2

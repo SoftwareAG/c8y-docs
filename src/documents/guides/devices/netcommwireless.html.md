@@ -291,6 +291,8 @@ Starting from v4.0.0, agent added supported for MQTT protocol. In case you want 
 
 to either disable or enable MQTT communication. The configured server URL remains the same. For example, http://demos.cumulocity.com if you want to use plain MQTT, or https://demos.cumulocity.com if you want secure MQTT + TLS.
 
+> Server URL http://developer.cumulocity.com will not work with MQTT since it points one different instance which doesn't have MQTT enabled. You should use http://demos.cumulocity.com instead.
+
 To configure the MQTT keepalive interval (default to 240 seconds):
 
     set service.cumulocity.mqtt.keepalive = <seconds>

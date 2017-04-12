@@ -88,10 +88,10 @@ If the second part does *not* appear we will create a new alarm:
 
 ## Creating alarms from bit measurements
 
-Devices often keep alarm statuses in registers and  can not interpret the meaning of alarms.
-In this example we assume that a device just sends the entire register as a binary value in a measurement. A rule must identify the bits and create the respective alarm.
+Devices often keep alarm statuses in registers and can not interpret the meaning of alarms.
+In this example, we assume that a device just sends the entire register as a binary value in a measurement. A rule must identify the bits and create the respective alarm.
 
-We create three expressions to resolve alarm text, type and severity for each of the bits.
+We create three expressions to resolve alarm text, type, and severity for each of the bits.
 
     create expression String getFaultRegisterAlarmType(position) [
         switch (position) {

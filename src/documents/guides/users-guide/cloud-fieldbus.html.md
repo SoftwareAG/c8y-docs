@@ -17,6 +17,7 @@ It is supported out of the box by the following terminals:
 * [Pssystec Smartbox-Modbus](/guides/devices/smartbox-modbus) for Modbus/RTU.
 * [Netcomm Wireless NTC-6200](/guides/devices/netcommwireless) for Modbus/TCP and Modbus/RTU.
 * [Cinterion Java modules](/guides/devices/cinterion) for Modbus/RTU and CAN bus.
+* [OPC-UA](/guides/devices/opcua) for OPC-UA Servers
 
 OPC UA support is implemented in Java and runs on any system running JRE7 (Java Runtime Environment 7) or newer.
 

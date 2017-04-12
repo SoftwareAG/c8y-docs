@@ -619,7 +619,7 @@ In our config, we already specified the .html file which contains our view for t
         </tr>
         <tr>
           <td>{{ 'Humidity' | translate }}</td>
-          <td>{{weather.currently.humidity}} %</td>
+          <td>{{weather.currently.humidity * 100}} %</td>
         </tr>
         <tr>
           <td>{{ 'Wind' | translate }}</td>

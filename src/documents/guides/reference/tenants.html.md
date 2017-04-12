@@ -363,6 +363,30 @@ Example response:
 |prev|URI|0..1|Link to a potential previous page of options.|
 |next|URI|0..1|Link to a potential next page of options.|
 
+### POST application to tenant applications
+
+Example Request: Adds application reference to tenant's applications.
+
+Required role: ROLE\_TENANT\_MANAGEMENT\_ADMIN or ROLE\_TENANT\_MANAGEMENT\_UPDATE
+
+    POST /tenant/tenants/<<tenantId>>/applications
+    Host: ...
+    Authorization: Basic ...
+    Content-Type: application/vnd.com.nsn.cumulocity.applicationReference+json;ver=...
+    {
+        "application":{"self":"<<Application URL>>"}
+    }
+
+
+Example Response :
+
+    HTTP/1.1 200 OK
+    Content-Type: application/vnd.com.nsn.cumulocity.applicationReference+json;ver=...
+    Content-Length: ...
+    {
+        "application":{"self":"<<Application URL>>", "id":...}
+    }
+
 ### GET a representation of a ApplicationReferenceCollection.
 
 Response body: ApplicationReferenceCollection
@@ -725,7 +749,8 @@ Example Response :
 
 "requestCount" and "deviceRequestCount" contains the sum of all issued requests during the querying period. "deviceCount" and "storageSize" contain the last reported value during the querying period. Please note:
 
- * "deviceCount", "deviceWithChildrenCount" and "storageSize" are updated every six hours.
+ * "requestCount" and "deviceRequestCount" are updated every 5 minutes.
+ * "deviceCount", "deviceWithChildrenCount", "storageSize" and "subscribedApplications" are updated daily starting at 23:57.
  * "storageSize" is affected by your retention rules. It is also affected by the regularly running database optimization functions running in Cumulocity. If the size decreases, it does not necessarily mean that data was deleted.
  * Days are counted according to server timezone.
 

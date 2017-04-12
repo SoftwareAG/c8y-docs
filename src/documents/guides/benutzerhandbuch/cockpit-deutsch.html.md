@@ -408,61 +408,88 @@ Das Fenster "Bericht erstellen" erscheint. Die Dateien werden abhängig davon ge
 
 Dashboards bieten Ihnen eine individuelle Visualisierung Ihrer Daten mit einer Reihe von Widgets. Widgets können Karten, Bilder, Graphen, Tabellen und andere grafische Darstellungen von Daten anzeigen. Cumulocity kommt mit einer Reihe von voreingestellten Widgets, siehe Abschnitt "[Widget Package](#widget-package)". Sie können auch eigene Widgets entwickeln und diese zu Ihrem Cumulocity-Konto hinzufügen. Siehe [Web developer's guide](/guides/web/).
 
-### Dashboards Erstellen
+### Ein neues Dashboard erstellen
 
-Um ein Dashboard zu erstellen, navigieren Sie zu einem Objekt in der Assethierarchie. Anschließend klicken Sie oben rechts auf das Zahnradsymbol. Wählen Sie "Dashboard erstellen". Daraufhin öffnet sich ein Dialog:
+Um ein Dashboard zu erstellen, navigieren Sie zu einem Objekt in der Asset-Hierarchie. Anschließend klicken Sie rechts oben auf das Zahnrad-Symbol. Wählen Sie "Dashboard erstellen". Dies öffnet einen Dialog und Sie können:
 
-* Der Name des Dashboards, das im Menü angezeigt wird.
+![Dashboard cogwheel](/guides/users-guide/dashboardcogwheelde.png)
 
-* Die Position des Dashboards im Menü.
+* Benennen Sie das von Ihnen erstellte Dashboard, das auch als Menüreiter angezeigt wird.
 
-* Das Symbol, das neben dem Namen im Menü dargestellt wird.
+* Geben Sie den Standort des Dashboards in der Navigation an.
 
-* "Dashboard als global setzen": Ob das Dashboard für alle sichtbar ist ("global") oder nur begrenzte Anzahl von Benutzern.
+* Wählen Sie das Symbol, das neben dem Namen im Menü angezeigt wird.
 
-* "Dashboard auf alle Geräte des Typs anwenden": Das Dashboard sollte nur für dieses Objekt oder für alle Geräte desselben Typs sichtbar sein.
+* Wählen Sie die Sichtbarkeit: "Dashboard für alle Benutzer sichtbar", ob das Dashboard für alle sichtbar ist ("global") oder nur begrenzte Anzahl von Benutzern.
 
-![image alt text](/guides/users-guide/image_14de.png)
+* "Dashboard-Layout": Konfigurieren Sie das Layout Ihres Dashboards. Wähle ein "Dashboard Theme", "Default Widget Header Style" und "Default Widget Margin". Danach können Sie Ihr aktuell ausgewähltes Layout im Vorschaufenster sehen.
 
-Klicken Sie auf "Speichern", um das Dashboard zu erstellen und zu öffnen. Während es keine Widgets auf dem Dashboard gibt, sehen Sie ein "Add Widget" -Button. Verwenden Sie diese Schaltfläche, um Ihr erstes Widget zum Dashboard hinzuzufügen.
+![Create Dashboard](/guides/users-guide/dashboard-createde.png)
 
-### Ein Dashboard erstellen für identische Geräte
+Klicken Sie auf "Speichern", um das Dashboard zu erstellen und zu öffnen. Solange es keine Widgets auf dem Armaturenbrett gibt, sehen Sie eine "Widget" -Schaltfläche. Verwenden Sie diese Schaltfläche, um Ihr erstes Widget dem Dashboard hinzuzufügen.
 
-Sie können ein Dashboard erstellen, das für alle identischen Geräte angezeigt wird. Erstellen Sie dazu ein neues Dashboard wie oben beschrieben. Bevor Sie auf "Speichern" klicken, wählen Sie die Option "Dashboard auf alle Geräte des Typs _typ hier eintragen_ anwenden". 
+### Erstellen eines Dashboards für identische Geräte
 
-Dieses Dashboard wird dann für alle identischen Geräte angezeigt. Änderungen an diesem Dashboard werden automatisch auf alle Dashboards angewendet.
+Sie können ein Dashboard erstellen, das für alle identischen Geräte angezeigt wird. Um dies zu tun, erstellen Sie ein neues Dashboard wie oben beschrieben. Bevor Sie auf "Speichern" klicken, wählen Sie die Option "Dashboard anwenden an alle Geräte des Typs _type_". Der Text "_type_" wird durch den Typ des aktuell ausgewählten Gerätes ersetzt.
 
-> Sie können dem Dashboard für das Gerät nur Widgets und Daten hinzufügen. Es ist nicht möglich, Daten von Kindgeräten hinzuzufügen, da die Struktur dieser Geräte von Gerät zu Gerät unterschiedlich sein könnte.
+Dann sollte dieses Dashboard für alle identischen Geräte erscheinen. Änderungen an diesem Dashboard werden automatisch auf alle Dashboards angewendet.
 
-### Ein Widget einem Dashboard hinzufügen
+> Sie können nur Widgets und Daten zum Dashboard für das Gerät selbst hinzufügen. Es ist nicht möglich, Daten von untergeordneten Geräten hinzuzufügen, da die Struktur dieser Geräte von Gerät zu Gerät unterschiedlich sein könnte.
 
-Um ein Widget zu einem Dashboard hinzuzufügen, stellen Sie sicher, dass das Dashboard sichtbar ist. Anschließend klicken Sie oben rechts auf das Zahnradsymbol. Wählen Sie "Hinzufügen eines Widgets zu einem Dashboard". Dadurch wird ein Dialog mit einer Auswahl von Widgets geöffnet, die Sie dem Dashboard hinzufügen können.
+### Hinzufügen von Berechtigungen zu einem Dashboard
+ 
+Berechtigungen können nur einer bestimmten Benutzerrolle gewährt werden. Um dies zu tun, erstellen Sie ein neues Dashboard wie oben beschrieben oder editieren Sie ein Dashboard.
 
-![image alt text](/guides/users-guide/image_15de.png)
+> Um ein Dashboard zu editieren clicken Se auf das Zahnrad Symbol und wählen Dashboard editieren aus.
 
-Wenn Sie einen Widget-Typ auswählen, werden zusätzliche Eingabefelder für diesen Widget-Typ angezeigt. Weitere Informationen über die"[Widget Package](#widget-package)" finden Sie hier.
+Um Berechtigungen für bestimmte Benutzer zu erteilen, deaktivieren Sie das "Dashboard für alle Benutzer sichtbar" und deaktivieren Sie "Dashboard an alle Geräte des Typs" _type_ "anwenden.
 
-### Ein Dashboard editieren
+![Add permissions](/guides/users-guide/dashboardaddrightde.png)
 
-Sie können die Dashboard-Eigenschaften bearbeiten, indem Sie auf das Zahnrad-Symbol klicken und "Dashboard bearbeiten" wählen. Dadurch wird ein ähnlicher Dialog wie ein Armaturenbrett erstellt. In diesem Dialog können der Dashboard-Name, das Symbol, die Position und die Berechtigungen editiert werden.
+Dann klicken Sie auf "Berechtigungen hinzufügen" und wählen Sie eine Gruppe aus dem Dropdown-Menü.
 
-Sie können die Widgets auf dem Dashboard neu anordnen. Durch Ziehen und Ablegen des Headers des Widgets können Sie das Widget an eine andere Position auf der Seite verschieben. Durch Ziehen und Ablegen der Pfeile in der unteren rechten Ecke eines Widgets können Sie ein Widget vergrößern. Indem Sie auf das Kreuz-Symbol in der rechten oberen Ecke klicken, können Sie das Widget löschen. Indem Sie auf das Zahnrad-Symbol in der rechten oberen Ecke des Widgets klicken, können Sie die Widget-Eigenschaften bearbeiten. Die folgende Abbildung zeigt ein Widget mit allen genannten Symbolen:
+![Select group](/guides/users-guide/dashboardforgroupde.png)
 
-![image alt text](/guides/users-guide/image_16.png)
+Danach wählen Sie die gewünschte Berechtigung für die ausgewählte Gruppe aus.
 
-> Auf einem Laptop erscheinen diese Symbole nur, wenn Sie mit der Maus über den Widget-Header sind.
+![Select permission](/guides/users-guide/dashboardpermissionde.png)
 
-> Die Bearbeitung von Touchgeräten wie Smartphones oder Tablets unterstützt nicht alle Funktionen. Um die Widget-Symbole auf Touch-Geräten anzuzeigen, bewegen Sie sich über den Widget-Header.
+> Berechtigungen können mehreren Gruppen gewährt werden.
 
-### Ein Dashboard kopieren
+### Hinzufügen eines Widget zu einem Dashboard
 
-Um ein Dashboard von einem Objekt in ein anderes zu kopieren, verwenden Sie das Zahnrad oben rechts und wählen Sie "Dashboard kopieren". Wählen Sie danach das Objekt aus, auf das das Dashboard angewendet werden soll, und klicken Sie auf "Dashboard einfügen", um das Dashboard einzufügen.
+Um ein Widget zu einem Dashboard hinzuzufügen, stellen Sie sicher, dass das Dashboard sichtbar ist. Danach klicken Sie rechts oben auf das Zahnrad-Symbol. Wählen Sie "Hinzufügen eines Widgets zu einem Dashboard". Dies öffnet einen Dialog mit einer Auswahl von Widgets, die Sie dem Dashboard hinzufügen können.
 
-Eine alternative Möglichkeit, ein Dashboard zu kopieren, ist die Verwendung von"[Dashboard per type](#creating-a-dashboard-for-all-devices-of-the-same-type)" .  Mit dem Konzept "Dashboard pro Typ" kopieren Sie das Dashboard von einem Objekt auf **alle** identischen Objekte.
+![Add Widget](/guides/users-guide/widgetcogwheelde.png)
 
-### Dashboard entfernen
+Bei der Auswahl eines Widget-Typs werden zusätzliche Eingabefelder für diesen Widget-Typ angezeigt. Weitere Informationen zum "Widget Package] (# widget-package)" finden Sie mit diesem Link. Ähnlich wie bei den Dashboards können Sie den Widget Stil anpassen. Der aktuell ausgewählte Stil ist in der Vorschau auf der rechten Seite zu sehen.
 
-Um ein Widget zu einem Dashboard hinzuzufügen, stellen Sie sicher, dass das Dashboard sichtbar ist. Das gleiche gilt beim Entfernen. Klicken Sie auf das Zahnrad-Symbol oben rechts. Wählen Sie "Dashboard entfernen", um ein Dashbord zu entfernen.
+### Dashboard editieren
+
+Sie können die Dashboard-Eigenschaften bearbeiten, indem Sie auf das Zahnrad-Symbol klicken und "Dashboard editieren" auswählen. Dies wird Sie zu einen ähnlichen Dialog wie "Erstellen eines Dashboards" bringen. In diesem Dialog können den Dashboard Namen, Symbol, Position, Stil und Berechtigungen bearbeitet werden.
+
+![Edit Dashboard](/guides/users-guide/dashboardeditde.png)
+
+Sie können die Widgets des Dashboards neu anordnen. Durch drag und drop der Kopfzeile des Widgets können Sie das Widget auf eine andere Position auf der Seite verschieben. Durch drag und drop der Pfeile in der unteren rechten Ecke eines Widgets können Sie ein Widget ändern. Durch Anklicken des Symbols in der rechten oberen Ecke des Widgets können Sie die Widget-Eigenschaften löschen oder editieren.
+
+> Wenn das Dashboard gesperrt ist, können Widgets nicht neu geordnet werden. Um ein Armaturenbrett zu sperren / zu entsperren, klicken Sie rechts oben auf das Zahnrad und dann auf "Dashboard sperren" / "Dashboard entsperren".
+
+![dashboard lock](/guides/users-guide/dashboardlockde.png)
+
+Auf einem Laptop erscheinen diese Symbole nur, wenn man mit der Maus über den Widget-Header fährt.
+
+Die Bearbeitung auf Touch-Geräten wie Smartphones oder Tablets unterstützt nicht alle Funktionen. Um die Widget-Icons auf Touch-Geräten anzuzeigen, fahren Sie mit der Maus über den Widget-Header.
+
+### Dashboard kopieren
+
+Um ein Dashboard von einem Objekt in ein anderes zu kopieren, verwenden Sie das Zahnrad oben rechts und wählen Sie "Dashboard kopieren". Danach wählen Sie das Objekt aus, auf das das Dashboard angewendet werden soll, und klicken Sie auf "Dashboard einfügen", um das Dashboard einzufügen.
+
+Eine alternative Möglichkeit, ein Dashboard zu kopieren, besteht darin, das "[Dashboard per type] (# create-a-dashboard-for-all-devices-of-the-same-type)" -Ansatz zu verwenden. Mit dem "Dashboard per type" -Ansatz kopieren Sie das Dashboard von einem Objekt auf **alle** identischen Objekte.
+
+### Dashboard löschen
+
+Um ein Widget zu einem Dashboard hinzuzufügen, stellen Sie sicher, dass das Dashboard sichtbar ist. Das gleiche gilt beim Löschvorgang. Klicken Sie oben rechts auf das Zahnrad-Symbol. Wählen Sie "Dashboard löschen", um ein Dashboard zu löschen.
+
 
 ## <a name="widget"></a>Widget Paket
 

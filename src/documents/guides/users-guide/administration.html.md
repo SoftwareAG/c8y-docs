@@ -226,7 +226,9 @@ The screenshot below shows you, how to grant access to the tenant "myTenant".
 
 <img src="/guides/users-guide/support_permission.png" alt="Support permission">
 
-A tenant managed object can be found by type "c8y_Tenant" or name equal to tenant id.
+A tenant managed object can be found by type "c8y_Tenant" or name equal to tenant id. 
+
+In addition, tenant managed objects can be put into a group (like other device objects in device management UI) that can be used to provide access for support user to multiple tenants at a time. To achieve that, the group should be passed in device-specific-permissions instead of tenant managed object.
 
 ### Restricting tenant deletion
 

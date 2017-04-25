@@ -129,34 +129,34 @@ For information on using the agent, please visit the [NetComm Agent User's Guide
 ### 2.3.6
 [Download link](http://resources.cumulocity.com/ntc/smartrest-agent_2.3.6_arm.ipk). Changes:
 
-* [MTM-11911]*fix*: not respect multiplier, divisor and decimalPlaces definition in FieldBus 4 when sending event.
-* [MTM-11740] string update: use generic IoT tokens instead of Cumulocity.
+* *fix*: not respect multiplier, divisor and decimalPlaces definition in FieldBus 4 when sending event.
+* string update: use generic IoT tokens instead of Cumulocity.
 
 ### 3.0.0
 [Download link](http://resources.cumulocity.com/ntc/smartrest-agent_3.0.0_arm.ipk). Changes:
 
-* [MTM-12034](https://cumulocity.atlassian.net/browse/MTM-12034): add measurement poll support.
-* [COT-60](https://cumulocity.atlassian.net/browse/COT-60): implement modbus-RTU support for Cloud Fieldbus 4.
-* [MTM-12239](https://cumulocity.atlassian.net/browse/MTM-12239): add timestamp to description of uploaded configuration snapshot.
-* [MTM-11785](https://cumulocity.atlassian.net/browse/MTM-11785): report GPS fix on boot.
-* [MTM-11830](https://cumulocity.atlassian.net/browse/MTM-11830): Add support for serial number in registration.
-* [MTM-12283](https://cumulocity.atlassian.net/browse/MTM-12283): disallow removing agent from Cumulocity Software Management.
+* Add measurement poll support.
+* Implement modbus-RTU support for Cloud Fieldbus 4.
+* Add timestamp to description of uploaded configuration snapshot.
+* Report GPS fix on boot.
+* Add support for serial number in registration.
+* Disallow removing agent from Cumulocity Software Management.
 
 ### 3.1.2
 [Download link](http://resources.cumulocity.com/ntc/smartrest-agent_3.1.2_arm.ipk). Changes:
 
 * *fix*: fragile start-up process when send fails after register templates.
 * *fix*: Fixed one-hour off issue because of DST in logviewer.
-* [MTM-11104](https://cumulocity.atlassian.net/browse/MTM-11104): raise alarm when modbus slave reading fails.
+* Raise alarm when modbus slave reading fails.
 * *fix*: in logview get *last* N lines instead of *first* N lines in the given timeframe.
-* [MTM-9815](https://cumulocity.atlassian.net/browse/MTM-9815): use decimal instead of hex for LAC for OpenCellID to work.
-* [MTM-12039](https://cumulocity.atlassian.net/browse/MTM-12039): add RDB dump support.
+* Use decimal instead of hex for LAC for OpenCellID to work.
+* Add RDB dump support.
 
 ### 3.1.6
 [Download link](http://resources.cumulocity.com/ntc/smartrest-agent_3.1.6_arm.ipk). Changes:
 
 * [fix]Modbus: read per contiguous block.
-* [MTM-12594](https://cumulocity.atlassian.net/browse/MTM-12594) [fix]lua/config: save configuration doesn't have effect.
+* [fix]lua/config: save configuration doesn't have effect.
 * ntcagent/postinst: set default serial port to /dev/ttyAPP4.
 * Modbus: add mbmanager so change serial configuration no longer requires a reboot.
 * [fix]lua/net: filter out deliveryType=SMS for configuring WAN operation.
@@ -168,7 +168,7 @@ For information on using the agent, please visit the [NetComm Agent User's Guide
 ### 3.2.0
 [Download link](http://resources.cumulocity.com/ntc/smartrest-agent_3.2.0_arm.ipk). Changes:
 
-* [MTM-12808](https://cumulocity.atlassian.net/browse/MTM-12808)ntcagent: Use file backed buffering for sending measurement, events, etc.
+* ntcagent: Use file backed buffering for sending measurement, events, etc.
 * [fix]Modbus: write partial holding register crash in 3.1.6.
 * Query pending operations at boot time.
 * [fix]Makefile: separate LDLIBS for smsagent so smsagent build correctly and without unnecessary dependencies.
@@ -177,10 +177,10 @@ For information on using the agent, please visit the [NetComm Agent User's Guide
 ### 3.2.2
 [Download link](http://resources.cumulocity.com/ntc/smartrest-agent_3.2.2_arm.ipk). Changes:
 
-* [MTM-13384](https://cumulocity.atlassian.net/browse/MTM-13384)signal: report RSRP signal strength instead of RSCP when using 4G network.
-* [MTM-13384](https://cumulocity.atlassian.net/browse/MTM-13384)integrate: use RDB uboot.hw_id as name when creating device.
-* [MTM-13384](https://cumulocity.atlassian.net/browse/MTM-13384)modbus: disable Modbus-RTU support when model is NTC-140W.
-* [MTM-13904](https://cumulocity.atlassian.net/browse/MTM-13384)modbus/mbbase: write modbus response values to agent log for easier troubleshooting.
+* signal: report RSRP signal strength instead of RSCP when using 4G network.
+* integrate: use RDB uboot.hw_id as name when creating device.
+* modbus: disable Modbus-RTU support when model is NTC-140W.
+* modbus/mbbase: write modbus response values to agent log for easier troubleshooting.
 * [fix]modbus: fix regression bug introduced in 3.2.0 that reading is offset by 1 when data model doesn't start from number 1.
 
 ### 4.0.0
@@ -188,6 +188,6 @@ For information on using the agent, please visit the [NetComm Agent User's Guide
 [CA certificate bundle](http://resources.cumulocity.com/ntc/ca-cumulocity_20170118.0_arm.ipk),
 [VNC Proxy](http://resources.cumulocity.com/ntc/vncproxy_1.0_arm.ipk). Changes:
 
-* [MTM-13859](https://cumulocity.atlassian.net/browse/MTM-13859)Add support for server certificate verification.
-* [MTM-14125](https://cumulocity.atlassian.net/browse/MTM-14125)Add MQTT support as an alternative protocol alongside HTTP.
-* [CP-45](https://cumulocity.atlassian.net/browse/CP-45)Support for VNC remote access.
+* Add support for server certificate verification.
+* Add MQTT support as an alternative protocol alongside HTTP.
+* Support for VNC remote access.

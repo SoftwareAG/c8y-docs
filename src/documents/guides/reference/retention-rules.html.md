@@ -128,7 +128,8 @@ Example Response (full POST):
         "fragmentType":"fragmentType",
         "type":"type",
         "source":"source",
-        "maximumAge":"12"
+        "maximumAge":"12",
+        "editable":"true"
     }
 	
 Example request (partial POST):
@@ -158,7 +159,8 @@ Example Response (partial POST):
         "fragmentType":"*",
         "type":"*",
         "source":"*",
-        "maximumAge":"12"
+        "maximumAge":"12",
+        "editable":"true"
     }
 
 
@@ -177,6 +179,7 @@ Example Response (partial POST):
 |type|String|0..1|RetentionRule will be applied to documents with type.|Public|
 |source|String|0..1|RetentionRule will be applied to documnets with source.|Public|
 |maximumAge|Long|1|Maximum age of document in days.|Public|
+|editable|boolean|1|Whether the rule is editable. Can be updated only by management tenant.|Public|
 - Fields in RetentionRule are joined by way of the logical operation AND.
 - For fields: dataType, fragmentType, type, source can be set value "*". Field with value "*" during matching fits to all.
 
@@ -207,7 +210,8 @@ Example Response :
         "maximumAge": 12,
         "self" : "<<URL of new retetionRule>>",
         "source": "source",
-        "type": "*"
+        "type": "*",
+        "editable":"true"
 }
     
     
@@ -244,7 +248,8 @@ Example Response :
         "maximumAge": 12,
         "self" : "<<URL of new retetionRule>>",
         "source": "source",
-        "type": "*"
+        "type": "*",
+        "editable":"true"
     }
     
     

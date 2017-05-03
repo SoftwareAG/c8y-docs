@@ -1,3 +1,9 @@
+---
+order: 70
+title: User and permissions
+layout: default
+---
+
 ## <a name="tenants"></a>Managing tenants
 
 With the subtenant concept you can separate the data of the individual tenants one hundred percent.
@@ -250,7 +256,149 @@ To assign permissions click on the relevant checkbox.
 
 More examples for specific User Roles:
 
+|Type of Role|Description|Permission|
+|:-----------|:---------|:---------|
+|Tenant Manager|This role manages tenant wide applications, tenant options and retention rules.|- Tenant Statistics (READ)
+- Tenant Management
+- Option Management
+- Application Management
+- Retention Rules
+- Data Broker
+	-has access to Administration Application.|
+|Global User Manager|Can access and modify the full user hierarchy|- User Management Administration 
+- has access to Administration Application.|
+|Shared User Manager|Can create users as his sub-users and manage them.|- User Management (CREATE)|
+Global Reader|This role reads data from all devices.|READ for the following APIs:
+- Alarms
+- Measurements
+- Events
+- Inventory
+- Audit
+- Identity
+- Device Control|
+|Global Manager|This role can read and write in all data from all devices.|READ and CHANGE for the following APIs:
+- Alarms
+- Measurements
+- Events
+- Inventory
+- Audit
+- Identity
+- Device Control|
 
+### Inventory Roles
+
+Inventory Roles are sets of permissions that allow groups of devices to perform certain operations in a particular context. A group can have one or more members.
+- It is a three way assignment: It is a role (a specific set of permissions) and it is assigned to a device group and a user. 
+
+> Please note that inventory roles do not cover dashboards and smart rules created before version 7.47
+
+The Roles Panel shows you also how many permissions are involved in one inventory role. On the right side there is also a description field provided to store additional information about this inventory role.
+
+There are several sample roles provided, but they can be modified to meet user specific requirements. The names are self- explanatory:
+- Alarms Read
+- Events Read
+- Inventory Read
+- Measurement read
+- Full access (read and write on everything)
+- New Role
+
+![Role details](/guides/users-guide/roledetails.png)
+
+Above is the list of permissions for an example "Read permissions for alarms". In this case, you can select the alarm type and the type of authorization. All alarms are selected by setting an asterisk. The second column specifies whether this inventory role has read authorization, has administrative rights, or has all rights. Other permissions can be chosen according to the list and you can save your own combinations according to different requirements.
+- Alarms
+- Audits
+- Events
+- Inventory
+- Measurements
+- Device Control
+- Support
+- Full Access
+
+![Role permissions](/guides/users-guide/roleperm.png)
+
+### Examples how to use an Inventory role:
+
+- Support: You can create inventory support roles by giving access to inventory and alarms with “Read” status.
+- Selected Measurements: A device is processing temperature measurements for example. This device gets an inventory role with “Read” access. The type in the first column is specified as c8y_TemperatureMeasurement and c8y_Battery, both permissions are set to read. It is important to assign both permissions, otherwise no measurement is shown at all.
+- Inventory Access: A device processing tracking related events for assets is specified as an Inventory Role with inventory access set to read and an event access added for c8y_Position set to “Read” permission.
+
+### Assigning Roles to Users and Device Groups
+
+Navigate back to the Users menu and click on the cogwheel at the row-end of a user and choose “edit user”. On the top of the following panel you find horizontal tabs where you can choose if you will edit Global Roles for the user, inventory roles and assign Cumulocity applications this user can access.
+
+### Profile / Global Roles
+
+The first panel shows the User profile and Global Roles. Global Roles are assigned to users by choosing the checkbox next to it. 
+
+![User page](/guides/users-guide/userpage.png)
+
+### Assigning Inventory Roles
+
+Inventory Roles are assigned to groups and subgroups of devices. In this panel you will see a list of devices and device groups. By clicking on the small down-arrow at the end of the row you will see a list of Inventory Roles you can assign to this device or device group exactly as on the screenshot below. These are the inventory roles you created before for your devices. Sub- groups inherit Inventory Roles from their parent group, but parents do not adopt Inventory Roles from children.
+
+![Inventory roles](/guides/users-guide/inventoryroles.png)
+
+Clicking on the arrow next to a group opens a dropdown menu with inventory roles available for this group. You can choose inventory roles that were created before from there.You can also copy inventory roles from another user by merging or replacing roles. A pop up card will show the choices available, when you click on the “Copy (inventory) roles from another user” button.
+
+SCREENSHOT MUST BE ADDED
+
+Example: User 1 works with 2 or 3 groups of devices and those groups have inventory roles assigned. If you want to transfer this inventory roles from that user to another user, then you will use this copy function to transfer this inventory roles from user 1 to a user 2.
+
+### Grant application access
+
+The last index tag shows available Cumulocity application options for this user.
+These application are visible in the application switcher of this specific user. To choose them you need to set a tick in the checkbox. If a user has one of the user management permissions, he or she has access to all applications by default.
+
+![Application access](/guides/users-guide/appaccess.png)
+
+### EDITING GROUPS 
+
+The device groups are created inside the device management application. To add devices to groups click on “All devices” in the Navigation and open the “Info” tab. Here you can assign devices to groups. Further information:
+
+https://www.cumulocity.com/guides/users-guide/device-management/#viewing-devices
+
+Groups are created and edited under “Groups” in the Navigation. To edit a group, click on the name of the group in the group list. After you have finished modifying the group, click on the "Save" button. Further information:
+
+https://www.cumulocity.com/guides/users-guide/device-management/#grouping-devices
+
+Assets with groups can also be created in the Cockpit application after registering them in Device Management. Further information:
+
+https://www.cumulocity.com/guides/users-guide/cockpit/#connect
+
+Warning: Editing a user group can change the permission for all users in the group and can affect the functionality of devices.
+
+### Removing Groups
+
+To remove a group, hover over the group name and click on the "X" button. A confirmation dialog will appear. Clicking on "OK" will delete the group.
+
+## Using Support Permission 
+
+### Overview
+
+Support users are users in the management tenant area with a special permission to log in to tenants accounts. To allow login to tenants, the support user account must have support access rights. When a support user logs into a tenant account, the user has the same privileges as a subtenant user. This user type is specified on the login page.
+Support users can log in using own passwords and usernames:
+support_user$user
+The "support_user" is the name of the support user obviously, "user" is the name of the user whose environment will be accessed.
+Alternatively:
+support_user$
+The "support_user" is the name of this user in the management tenant area. In this use case, the support user will access the environment of one of the admin users.
+
+### Configuration
+
+The support user function is enabled by default. If it is disabled by the platform operator, then every user has an "Activate support access" option. It is available in the upper right menu. After selecting this option, support users have access to this tenant account for one day.
+
+### Audit logs
+
+Audit logs for all actions performed by support users will have information about the actual author. In the column "Who?" the author's name will be shown in form of:
+"support_user$user"
+
+### Troubleshooting:
+
+If a user attempts to perform actions without sufficient permissions or a sufficient user role an error message will be displayed either next to the menu item that should perform this action or on top of the browser screen. The error message will have information about the type of mistake, so a user will know what needs to be done to be able to perform the desired action.
+
+On the image below the user is attempting to access an application where he or she does not have access to. The application access is granted, but the user still does not have rights to do anything in this area. The pop - up window describes the missing permissions.
+
+![Warning](/guides/users-guide/warning2.png)
 
 ## <a name="user-groups"></a>Managing user groups
 

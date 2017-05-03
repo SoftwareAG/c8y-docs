@@ -47,6 +47,15 @@ Cumulocity follows standard practices for application-level hardening as making 
 * As discussed above, devices are clients at Cumulocity and therefore popular attacks to devices will not work.
 * Devices are individually connected with Cumulocity's device registration feature. This means that if a device is stolen or tampered with, it can be individually disconnected from Cumulocity.
 
+Here, you can see a list of security features available for users:
+
+- Password reset. 
+- Password policy management
+- Two-factor authentication
+- Hierarchical user and permission management
+	- User hierarchies
+	- Asset hierarchies
+
 ## Access control
 
 Cumulocity uses a standard authentication and authorization process based on realms, users,user groups, and authorities. A *realm* is a database of users and user groups, who follow the same authentication and authorization policy. A *user* is a person or an external system entitled to access protected resources inside Cumulocity. Access is controlled through permissions. For simplifying administration, users can be grouped into *user groups* sharing similar permissions. A user can be a member of several user groups so that the user has the combined permissions of the groups.

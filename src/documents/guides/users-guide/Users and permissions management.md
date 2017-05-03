@@ -1,3 +1,51 @@
+## <a name="tenants"></a>Managing tenants
+
+With the subtenant concept you can separate the data of the individual tenants one hundred percent.
+
+> Background: As a tenant administrator, all data in your tenant account is 100% separated from the data of other tenants. The data inside your tenant is shared with all account users by default unless it is restricted by user permissions.
+
+If you want 100% data safety instead of dealing with user permissions, then use the subtenants. Each subtenant has a separated data area. All Cumulocity features (e.g. user management, app management, rule management) are available for each subtenant without visibility to other subtenants.
+
+This feature is an optional feature which is not available for all tenants.
+
+> In case you are subscribed to the feature, but you do not see it, contact support.
+
+In order to manage subtenants click on the subtenants menu. Subtenant management includes: Tenant creation, activation, suspension, subscribed applications and options.
+
+![Sub-tenants](/guides/users-guide/sub-tenant.png)
+
+> Tenant ID's must remain unique, two tenants cannot create subtenants with the same "URL/ID".
+> Subtenants cannot create an additional level of subtenants.
+
+### Adding sub-tenants
+
+To add a new subtenant, click on "Create Tenant"
+
+> Please note that fields with an asterisk (" * ") are mandatory.
+
+- Enter unique domain/URL of the new tenant. This URL will be used to access the application (e.g. tenant@cumulocity.com).
+- Enter the name of the company.
+- Enter the administrator's e-mail. You must provide a valid e-mail address to enable users to reset their password.
+- Enter username of the administrator for logging in.
+- Enter contact name. This field is optional.
+- Enter contact phone. Again, this field is optional.
+- Choose whether you wish to have the password reset link sent as an e-mail. If you have not selected this option you will have to enter a password and confirm the password. (See "[Logging in](/guides/users-guide/overview#login)" for more information on password strength.)
+- Click the "Save" button.
+
+![Tenant-creation](/guides/users-guide/createtenant.png)
+
+### Editing, suspending and removing sub-tenants
+
+To edit subtenants, click on the desired subtenant. All the fields can be edited except "ID" and "Administrators Username".
+
+When you have finished editing, click on the "Save" button.
+
+> If a tenant is suspended, his data still remains in the database and he can be reactivated at any time later. If the tenant is removed his data will be deleted.
+
+Hovering over a tenant will bring up the "Suspend" and the "Remove" buttons. The "Remove" button is shown as a red cross.
+
+> Please note that there is an additional check during tenant suspension. The user will have to provide his own password in order to proceed. After the tenant is suspended, an e-mail is sent to the suspended tenant administrator. The e-mail is sent only if the property in the config file is enabled and if the tenant administrator provided an e-mail address during creation.
+
 ## <a name="users"></a>Managing users
 
 The "User" menu lets you manage the individual users within a tenant. You can create, edit and delete users. You can also edit their permissions.
@@ -101,6 +149,107 @@ Important: A user can only have the same roles or less assigned than his owner u
 With the “delegated by” button you can only delegate your user hierarchy and your own user permissions to this “New User” in this example. Basically you can choose any existing user in your tenant.
 
 >  Delegation works only inside the user hierarchy management and does not have an implication to other system places. 
+
+Example: If an admin user will go on vacation and give another user his or her user permissions by delegation, the delegated user will be able manage the user hierarchy, but if this person also needs to manage specific devices, the admin user must assign this device permissions directly to the intended user. This can be done by using the “Copy inventory roles from another user”.
+
+![User Delegation](/guides/users-guide/delegation.png)
+
+## Troubleshooting
+
+In the example shown below, the user has no access rights to change his or her access to applications, because his owner has no USER_MANAGEMENT_* permission included in his role. As a result, the owner user can not assign built-in applications (and the owned user can not use them).
+
+![Warning](/guides/users-guide/warning.png)
+
+## Using two-factor authentication
+
+The Two-factor authentication (TFA) is an extra layer of security that requires not only a username and a password but SMS verification as well. TFA can only be set up by administrators. When TFA is enabled, it is impossible to configure it from the "User settings", it is configurable from the administration UI.
+
+> Note that, a phone number is required when adding a user and TFA is enabled. When users without a phone number try to log in using TFA, the user will be redirected to a window, to enter his/her mobile phone number. Without a phone number, a login is impossible.
+
+To see whether TFA is enabled for a certain user, go to the "Users" menu and check the TFA status column.
+
+![TFA satus](/guides/users-guide/tfastatus.png)
+
+Enable two-factor authentication for a user:
+
+- Go to the "Users" menu.
+- Click on the user name.
+- Click on the checkbox next to "Enable two-factor authentication.
+- Click "Save".
+
+## Roles
+
+Cumulocity distinguishes three types of roles for users and groups:
+
+- Account-wide “Global Roles”: These enable a user to create, administrate or read data in an account.
+- Device or device-group-specific permissions “Inventory Roles”: Those define a specific level access to data in your account, restricted to a group of devices and their child objects and a specific user.
+
+Attached to the roles functionality is also:
+
+- “Application access”: This access defines the applications that users will see in their application switcher and are able to use in Cumulocity in general.
+
+A role is a global set of permissions for a user.
+With this function you can:
+
+- Assign, change or remove roles from users.
+- Assign inventory roles to specific user groups and their associated hierarchy.
+
+All users with a global role are defined and set up as a user with global permissions within this menu. Another role option is a device-group which gets an inventory role assigned. 
+
+![Roles](/guides/users-guide/roles.png)
+
+### Global Roles
+
+- Admins: A group with all permissions by default.
+- Business: A group to work with all devices and their data but without administration rights.
+- Devices: A group with typical minimal default permissions for devices.
+- Readers: A group who can read all data but cannot edit it.
+- “Add Role”: Create a role for your specific needs.
+
+> All Roles can be modified. These roles here serve as an example to explain “Roles”.
+
+The panel dialog behind the role cards show all editable permission right details for each role. For each detail you can choose if this role has “Read” rights or “Admin” rights. This example shows an admin role.
+
+Click on the “admin” role card for example to open the list of permissions you can specify for this role and the choose the application access rights for it.
+
+![Admin example](/guides/users-guide/adminsample.png)
+
+In addition to the permissions, there is also a link to Help & Documentation provided. Choose the built-in applications the global role will be able to use.
+
+The type of permissions are listed below:
+
+- Alarms: Read or edit alarms for devices.		
+- Application management: Read or edit the applications available in this account.			
+- Audits: Read or create audit records for devices.
+- Bulk operations: Read or create bulk operations.
+- CEP management: Read or edit Cumulocity Event Language rules.				
+- Device control: Read or edit commands for devices resp. send commands to devices.			
+- Email: Read and create E-mail notifications.
+- Events: Read or create events for devices.	
+- Identity: Read or edit identifiers for devices.	
+- Inventory: Read or edit inventory data.			
+- Measurements: Read or create measurements for devices.
+- Option management: Read or edit account options such as password policies.	
+- Remote Access: Read or Create remote access
+- Retention rules: Read or edit retention rules.	
+- Simulator: Read or create simulated devices.	
+- SMS: Read or create SMS notifications.	
+- Tenant statistics: Read the usage data for this account.
+- User management: Read or edit users, roles and permissions.			
+- Own user management: Read or edit your own user.
+
+For these various types, the following permissions are available:
+
+- Read: Read specified data.
+- Change: Modify and delete specified data. (Not including "Read"!)
+- Create: Create new data like users and inventory data and edit users within your hierarchy.
+
+All types of data can be modified, with one exception to this rule which are the “audit logs”. The "Create" permission enables the user to create devices in the inventory and to fully manage these devices owned by the user. The user cannot read or manage devices owned by other users. This is mainly used to limit the permissions available to devices.
+
+To assign permissions click on the relevant checkbox.
+
+More examples for specific User Roles:
+
 
 
 ## <a name="user-groups"></a>Managing user groups

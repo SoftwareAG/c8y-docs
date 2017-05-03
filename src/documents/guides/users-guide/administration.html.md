@@ -227,55 +227,6 @@ It is not possible to remove subscribed apps. This is only possible for the owne
 
 To remove an application, simply hover over the application name and click on the cogwheel, then press the "Remove" button. A confirmation pop-up window will appear. Click "OK" and the application will be deleted.
 
-
-## <a name="tenants"></a>Managing tenants
-
-With the subtenant concept you can separate the data of the individual tenants one hundred percent.
-
-> Background: As a tenant administrator, all data in your tenant account is 100% separated from the data of other tenants. The data inside your tenant is shared with all account users by default unless it is restricted by user permissions.
-
-If you want 100% data safety instead of dealing with user permissions, then use the subtenants. Each subtenant has a seperated data area. All Cumulocity features (e.g. user management, app management, rule management) are available for each subtenant without visibility to other subtenants.
-
-This feature is an optional feature which is not available for all tenants.
-
-> In case you are subscribed to the feature, but you do not see it, contact support.
-
-In order to manage subtenants click on the subtenants menu. Subtenant management includes: Tenant creation, activation, suspension, subscribed applications and options.
-
-![Sub-tenants](/guides/users-guide/sub-tenant.png)
-
-> Tenant ID's must remain unique, two tenants cannot create subtenants with the same "URL/ID".
-> Subtenants cannot create an additional level of subtenants.
-
-### Adding sub-tenants
-
-To add a new subtenant, click on "Create Tenant"
-
-> Please note that fields with an asterisk (" * ") are mandatory.
-
-- Enter unique domain/URL of the new tenant. This URL will be used to access the application (e.g. tenant@cumulocity.com).
-- Enter the name of the company.
-- Enter the administrator's e-mail. You must provide a valid e-mail address to enable users to reset their password.
-- Enter username of the administrator for logging in.
-- Enter contact name. This field is optional.
-- Enter contact phone. Again, this field is optional.
-- Choose whether you wish to have the password reset link sent as an e-mail. If you have not selected this option you will have to enter a password and confirm the password. (See "[Logging in](/guides/users-guide/overview#login)" for more information on password strength.)
-- Click the "Save" button.
-
-![Tenant-creation](/guides/users-guide/createtenant.png)
-
-### Editing, suspending and removing sub-tenants
-
-To edit subtenants, click on the desired subtenant. All the fields can be edited except "ID" and "Administrators Username".
-
-When you have finished editing, click on the "Save" button.
-
-> If a tenant is suspended, his data still remains in the database and he can be reactivated at any time later. If the tenant is removed his data will be deleted.
-
-Hovering over a tenant will bring up the "Suspend" and the "Remove" buttons. The "Remove" button is shown as a red cross.
-
-> Please note that there is an additional check during tenant suspension. The user will have to provide his own password in order to proceed. After the tenant is suspended, an e-mail is sent to the suspended tenant administrator. The e-mail is sent only if the property in the config file is enabled and if the tenant administrator provided an e-mail address during creation.
-
 ### <a name="usage-stats"></a> Retrieving usage statistics
 
 The usage statistics menu provides you with information about each subtenant. The statistics show:

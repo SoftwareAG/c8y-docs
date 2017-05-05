@@ -135,11 +135,11 @@ Clicking on the "Global Roles Field" opens a list with available roles and a che
 
 ![Global role and TFA view](/guides/users-guide/globalroleview.png)
 
-## Using “Owner” and the “delegated by” functionality
+## Working with the "User hierarchies"
 
-These functions are strictly administrative functions to create a user hierarchy and delegate a user hierarchy and permissions. The tenant must be subscribed to this feature in order to use it.
+These functions explained below are strictly administrative functions to create a user hierarchy and delegate a user hierarchy and permissions. The tenant must be subscribed to this feature in order to use it.
 
-On the screenshot below you can see how to assign ownership to a user. You can choose available user from a list and check (or uncheck) them to assign ownership.
+ By setting the “owner” you create a hierarchy of users, where each user can see the hierarchical user tree. The “owner” can assign roles and grant permissions to the rest of the users in the hierarchy tree. Users, who have an “owner” can at most take the same global roles as their “owner”. Below, you can observe the hierarchy tree. 
 
 ADD SCREENSHOT!!!
 
@@ -351,7 +351,7 @@ These application are visible in the application switcher of this specific user.
 
 ![Application access](/guides/users-guide/appaccess.png)
 
-### EDITING GROUPS 
+### Editing groups
 
 The device groups are created inside the device management application. To add devices to groups click on “All devices” in the Navigation and open the “Info” tab. Here you can assign devices to groups. Further information:
 
@@ -399,143 +399,6 @@ If a user attempts to perform actions without sufficient permissions or a suffic
 On the image below the user is attempting to access an application where he or she does not have access to. The application access is granted, but the user still does not have rights to do anything in this area. The pop - up window describes the missing permissions.
 
 ![Warning](/guides/users-guide/warning2.png)
-
-## <a name="user-groups"></a>Managing user groups
-
-Users with the same permissions can be placed into user groups representing typical permission sets. A single user can be part of multiple user groups. New tenant accounts have four user groups by default. These user groups have different default permission settings:
-
-* Admins: A group with **all permissions** by default. This group can not be deleted.
-* Business: A group to work with all devices and their data but without administration rights.
-* Readers: A group who can read all data but cannot edit.
-* Devices: A group with typical minimal default permissions for devices. This group can not be deleted.
-
-All groups can be modified. If the group is not *ADMINS* or *DEVICES*, it can be deleted.
-
-![User groups](/guides/users-guide/usergroups.png)
-
-### Adding user groups
-
-To add a user group:
-
-- Click on "Create user group".
-- Enter the name of the user group.
-- Edit the [permissions](#permissions).
-- Click on the "Save" button.
-
-### Editing groups
-
-All user group details can be edited. To edit a group, click on the name of the group in the group list. After you have finished modifying the group, click on the "Save" button.
-
-> Editing a user group can change the permission for all users in the group and can affect the correct functioning of devices.
-
-<img src="/guides/users-guide/confirmgroup.png" alt="Confirm group editing" style="max-width: 60%">
-
-### Removing groups
-
-To remove a group, simply hover over the group name and click on the "X" button. A confirmation dialog will appear. Click on "OK" will delete the group.
-
-![Remove Group](/guides/users-guide/removegroup.png)
-
-Please, note that the *ADMINS* and *DEVICES* groups can not be deleted.
-
-## <a name="permissions"></a>Managing Permissions
-
-Cumulocity distinguishes three types of permissions that are assigned to users and user groups:
-
-* Account-wide permissions ("roles"): These flags enable a user to read or modify all data in an account, like seeing all devices and being able to edit all devices.
-* Device- or device group-specific permissions: These permissions define a specific level access to data in your account, restricted to a group of devices.
-* Application access permissions: These define the applications that users will see in their application switcher.
-
-From the view point of a user:
-
-* A user has the sum of permissions granted to all groups the user is part of.
-* If a user has account-wide permissions, other permissions are ignored.
-* Device-/group-specific permissions are inherited to all direct and indirect child devices and child assets. If you assign "read" permission to a group of devices, the user will be automatically able to see all devices in the group.
-
-### Assigning account-wide permissions
-
-When you edit a group, a table with "roles" is listed below the group name. They represent permissions within the following types of data:
-
-* Tenant management: View, create, edit or delete subtenants.
-* Tenant statistics: View the usage data for this account, as shown on the home page of the administration application.
-* Option management: View or edit account options such as password policies.
-* Application management: View or edit the applications available in this account.
-* User management: View or edit users, user groups and permissions.
-* Own user management: View or edit your own user.
-* Identity: View or edit identifiers for devices.
-* Inventory: View or edit inventory data.
-* Measurements: View or create measurements for devices.
-* Events: View or create events for devices.
-* Alarms: View or edit alarms for devices.
-* Audits: View or create audit records for devices.
-* Device control: View or edit commands for devices resp. send commands to devices.
-* CEP management: View or edit Cumulocity Event Language rules.
-* Retention rules: View or edit retention rules.
-* Bulk operations: View or create bulk operations.
-* Support operations: Allows user to log in to other tenants as support user.
-
-For the various types, the following permissions are available:
-
-- Read: Read specified data.
-- Admin: Create, modify and delete specified data. (Not including "Read"!)
-
-Not all types of data can be modified ( audit records). For inventory data, there is one additional type of permission: "Create". The "Create" permission enables the user to create devices in the inventory and to fully manage these devices owned by the user. The user cannot read or manage devices owned by other users. This is mainly used to limit the permissions available to devices.
-
-To assign permissions click on the relevant checkbox. If you wish to select or clear ALL entries in a particular column, use the buttons at the top:
-
-- Clear all: Clears all of the checked roles.
-- Select all: Selects all of the roles.
-- Select all Read: Selects "Read" for all types and deselects the other roles.
-- Select all Admin: Selects "Admin" for all types and deselects the rest.
-
-![All roles](/guides/users-guide/allroles.png)
-
-### Using Support Permission
-
-#### Overview
-
-Support users are users in the management tenant area with a special permission to login to tenants accounts.
-To allow login to tenants, the support user account must have support access rights.
-When a support user logs into a tenant account, the user has the same privileges as a subtenant user. This user type is specified on the login page.
-  
-Please note that support users cannot access "own applications" of other tenants. For example, if you are a user of the management tenant and you want to access a private application in another tenant, an error will occur. In order to go around this, you can move the application to the management tenant and subscribe the other tenant to it. This way, the app will be available for both tenants.
-
-Support users can login using own passwords and usernames:
-
-> support_user$user
-
-The "support_user" is the name of the support user obviously, "user" is the name of the user whose environment will be accessed.
-
-Alternatively:
-
-> support_user$
-
-The "support_user" is the name of this user in the management tenant area. In this use case, the support user will access the environment of one of the admin users.
-
-#### Configuration
-
-The support user function is enabled by default.
-If it is disabled by the platform operator, then every user has an "Activate support access" option. It is available in the upper right menu.
-After selecting this option, support users have access to this tenant account for one day.
-
-#### Audit logs
-
-Audit logs for all actions performed by support users will have information about the actual author.
-In column "Who?" the author's name will be shown in form of:
-
-> "support_user$user"
-
-#### Tenant-specific permissions
-
-Sometimes, it is required to assign support access rights to specific tenants only. It can be done by [device-specific permissions](#assigning_device_specific_permissions) for the user and [tenant managed object](#tenant_management_object) with scope "SUPPORT", type "&#42;" and permission "&#42;".
-
-The screenshot below shows you, how to grant access to the tenant "myTenant".
-
-<img src="/guides/users-guide/support_permission.png" alt="Support permission">
-
-A tenant managed object can be found by type "c8y_Tenant" or name equal to tenant id. 
-
-In addition, tenant managed objects can be put into a group (like other device objects in device management UI) that can be used to provide access for support user to multiple tenants at a time. To achieve that, the group should be passed in device-specific-permissions instead of tenant managed object.
 
 ### Restricting tenant deletion
 

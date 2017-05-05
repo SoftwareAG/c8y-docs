@@ -47,14 +47,14 @@ Cumulocity follows standard practices for application-level hardening as making 
 * As discussed above, devices are clients at Cumulocity and therefore popular attacks to devices will not work.
 * Devices are individually connected with Cumulocity's device registration feature. This means that if a device is stolen or tampered with, it can be individually disconnected from Cumulocity.
 
-Here, you can see a list of security features available for users:
+Here, you can see a list of all available security features for users:
 
-- Password reset. 
-- Password policy management
-- Two-factor authentication
+- Password reset
+- [Password policy management](/guides/users-guide/administration/#changing-password-settings)
+- [Two-factor authentication](/guides/users-guide/administration/#tfa)
 - Hierarchical user and permission management
 	- User hierarchies
-	- Asset hierarchies
+	- [Asset hierarchies](/guides/users-guide/device-management/#grouping-devices)
 
 ## Access control
 

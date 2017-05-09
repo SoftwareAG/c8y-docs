@@ -409,3 +409,12 @@ You can also create context keys of multiple values:
       partition by measurement.source.value and measurement.type from MeasurementCreated;
 
 This context will not only create an own partition for each device but also for each measurement type.
+
+## State resilience
+
+By default, Cumulocity Event Language is processed purely in memory. This is often sufficient, as many statements do not require state to be preserved over longer time periods. If you rely on such state (for example, as part of an event window), you need to annotate your statement as follows:
+
+	@Resilient
+	insert into ...
+
+By adding "@Resilient" just before your statement, its state is regularly stored. In case of server maintenance or outages, the state can be recovered and the statement can continue as if nothing has happened.

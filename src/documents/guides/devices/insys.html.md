@@ -1,13 +1,13 @@
 ---
-title: INSYS
+title: INSYS Smart Devices – INSYS OS
 layout: devices
 ---
 
 ## Overview
 
-All [INSYS icom](http://www.insys-icom.com/) industrial routers and condition monitors support the automatic data transmission from monitored PLC or other devices to the Cumulocity Cloud. This is realized by the Monitoring App, an addition to the standard INSYS OS firmware. The app allows an easy and efficient monitoring of Siemens LOGO!™ and S7 controls as well as Modbus TCP/RTU devices or the I/Os of an INSYS IMON fault monitor. Measurement values, conditions, events and alarms can be transmitted to the Cumulocity Cloud. All available data can be setup directly in the Monitoring App and are automatically provided to the cloud account for (automatically self-scaling) charts and lists. Several PLCs can be monitored in parallel with one INSYS Smart Device. The transmission of data to several cloud accounts is also possible. If Cumulocity is not available, data can be processed or stored on the INSYS Smart Device in the meantime.
+The [INSYS icom](http://www.insys-icom.com/) industrial routers and fault monitors with INSYS OS support automatic data transmission from monitored PLCs or other devices to the Cumulocity Cloud. This is realised by the [Monitoring App](http://www.insys-icom.com/monitoring-app), an addition to the standard INSYS OS firmware. The app allows an easy and efficient monitoring of Siemens LOGO!™ and S7 controls as well as Modbus TCP/RTU devices or the I/Os of an INSYS IMON fault monitor. Measurement values, conditions, events and alarms can be transmitted to the Cumulocity Cloud. All available data can be setup directly in the Monitoring App and are automatically provided to the cloud account for (automatically self-scaling) charts and lists. Several PLCs can be monitored in parallel with one INSYS Smart Device. The transmission of data to several cloud accounts is also possible If the cloud service or transmission path is (temporarily) not available, data can be buffered on the INSYS Smart Device or transmitted via redundant transmission paths in the meantime. Cloud Control enables the modification of parameters of the INSYS Smart Device from the cloud service.
 
-The following devices support Cumulocity (Monitoring App 2.5.2 or higher must be installed)::
+The following INSYS OS Smart Devices support Cumulocity (Monitoring App 2.5.2 or higher must be installed):
 
 * [IMON series](http://insys-icom.com/IMON): Condition Monitors
 * [EBW series](http://insys-icom.com/EBW): Basic Industrial Routers
@@ -17,20 +17,32 @@ The following devices support Cumulocity (Monitoring App 2.5.2 or higher must be
 <img src="/guides/devices/insys/insys-ebw.png" alt="INSYS EBW" style="display: inline;max-width: 25%">
 <img src="/guides/devices/insys/insys-mores.png" alt="INSYS MoReS" style="display: inline;max-width: 25%">
 
+Cumulocity support for INSYS Smart Devices with icom OS is described [here](/guides/devices/icom).
+
 ## How to Setup Cumulocity Cloud
+
+The following example for a simple monitoring application (monitoring input 1 of an INSYS IMON Smart Device and displaying the status in Cumulocity) is broken up in two steps:
+
+* [Device registration](/guides/devices/insys#device-registration)
+* [Application configuration](/guides/devices/insys#application-configuration)
+
+It is necessary to make the following settings in both web interfaces, of Cumulocity and the Monitoring App of the Smart Device.
 
 ### Prerequisites
 
-*	You have a functional monitoring application with one of the above INSYS Smart Devices.
-*	The Monitoring App is installed on the INSYS Smart Device and the required monitoring package is available and licensed.
-*	The INSYS Smart Device has Internet connection.
+* You have a functional Monitoring App with one of above INSYS Smart Devices.
+* The Monitoring App is installed on the INSYS Smart Device and the required monitoring package is available and licensed.
+* The INSYS Smart Device has Internet connection.
 
-### Device Registration in Cumulocity
 
-You need to register the INSYS Smart Device in your Cumulocity Cloud account first. The self-registration functionality of Cumulocity uses the serial number of the INSYS Smart Device as unique identifier. The serial number is indicated on the device label and can also be displayed in the System menu on the System data page of the INSYS Smart Device.
+### Device Registration
+
+You need to register the INSYS Smart Device in your Cumulocity Cloud account first. The self-registration functionality of Cumulocity uses the serial number of the INSYS Smart Device as unique identifier. The serial number is indicated on the device label and can also be displayed in the System menu on the System data page in the web interface of the INSYS Smart Device.
 
 ![Serial Number](/guides/devices/insys/serialNumber.png)
 ![System Data](/guides/devices/insys/systemData.png)
+
+#### Registering the device in Cumulocity
 
 Enter the serial number of the INSYS Smart Device in the Device Management menu on the Registration page of Cumulocity and click on Register Device.
 
@@ -40,18 +52,7 @@ The device is registered in Cumulocity with this. Cumulocity is waiting for the 
 
 ![Device Registration: Waiting for Connection](/guides/devices/insys/deviceRegistrationWaiting.png)
 
-Upon this connection you’ll need to accept the registration (refer to [Final Steps](#final-steps) at the end of this page).
-
-### Monitoring App Configuration
-
-The following simple exemplary application monitors input 1 of an INSYS IMON fault monitor and transmits the condition of input 1 to Cumulocity every time it changes. The following Monitoring App configuration steps are necessary for this:
-
-*	Adding Cumulocity as recipient
-*	Adding the IMON as device
-*	Adding input 1 as element
-*	Adding monitoring of input 1
-*	Adding the server feed action
-*	Adding the assignment of monitoring and action
+Now you need to go to the web interface ot the Monitoring App to proceed.
 
 #### Adding Cumulocity as recipient
 
@@ -67,7 +68,24 @@ It is necessary to add the Cumulocity Cloud as a recipient in the Monitoring App
 
 ![Add Recipient](/guides/devices/insys/addRecipient.png)
 
-The INSYS Smart Device will now establish the connection to Cumulocity. You’ll then need to accept the registration in the Device Management menu on the Registration page of Cumulocity (refer to [Final Steps](#final-steps) at the end of this page).
+The INSYS Smart Device will now establish the connection to Cumulocity. You’ll then need to accept the registration as outline in the following section.
+
+#### Accepting the registration
+
+The Monitoring App has configured the recipient now and will connect to Cumulocity via the INSYS Smart Device. This is indicated by the pending acceptance message. You only need to accept the registration in the Devices menu on the Registration page of Cumulocity now and the device is available in Cumulocity.
+
+![Device Registration](/guides/devices/insys/deviceRegistrationPending.png)
+
+
+### Application Configuration
+
+The following simple exemplary application monitors input 1 of an INSYS IMON fault monitor and transmits the condition of input 1 to Cumulocity every time it changes. The following configuration steps in the web interface of the Monitoring App are necessary for this (adding Cumulocity as recipient has already been done in the previous steps):
+
+* [Adding the IMON as device](/guides/devices/insys#adding-the-imon-as-device)
+* [Adding input 1 as element](/guides/devices/insys#adding-input-1-as-element)
+* [Adding monitoring of input 1](/guides/devices/insys#adding-monitoring-of-input-1)
+* [Adding the server feed action](/guides/devices/insys#adding-the-server-feed-action)
+* [Adding the assignment of monitoring and action](/guides/devices/insys#adding-the-assignment-of-monitoring-and-action)
 
 #### Adding the IMON as device
 
@@ -88,16 +106,15 @@ It is necessary to add input 1 as an element in the Monitoring App. To do so, pr
 2.	Enter a descriptive Name for the element and select the Device IO, IMON and Input Number 1
 3.	Click on OK
 
-
 ![Add Element](/guides/devices/insys/addElement.png)
+
 #### Adding monitoring of input 1
 
 It is necessary to add a monitoring. In this example, we’ll monitor the IMON for a change of input 1.
 
 1.	In the Monitoring menu, click on Add monitoring
 2.	Enter a descriptive Name for the monitoring and select the Source Element, IN1 and toggles
-3.	Choose the Protocol https
-4.	Click on OK
+3.	Click on OK
 
 ![Add Monitoring](/guides/devices/insys/addMonitoring.png)
 
@@ -127,10 +144,14 @@ It is necessary to assign the monitoring to the action that is to be triggered w
 
 ![Add Assignment](/guides/devices/insys/addAssignment.png)
 
-### Final Steps
+### Checking the result
 
-The Monitoring App is now configured and the INSYS Smart Device will connect to Cumulocity. You only need to accept the registration in the Device Management menu on the Registration page of Cumulocity now and the device is available in Cumulocity.
+It is necessary to assign the monitoring to the action that is to be triggered when the monitored condition is detected.
 
-![Device Registration: Pending Acceptance](/guides/devices/insys/deviceRegistrationPending.png)
+1.	In the Actions menu on the Assignments page, click on Add assignment
+2.	Assign the previously added Monitoring to the respective Action
+3.	Click on OK
+
+![Final Result](/guides/devices/insys/finalResult.png)
 
 Refer to [the INSYS website](https://www.insys-icom.com/monitoring-app) for further information.

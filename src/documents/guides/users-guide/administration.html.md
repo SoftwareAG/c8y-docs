@@ -18,7 +18,7 @@ The Administration application enables account administrators to manage their us
 * Configure the recipients and trigger of the [warning e-mail](#warningEmail) for maximum storage being reached.
 * Manage [stored files](#files) such as firmware images or log files.
 
-For more information on users and permissions, please see the ["User and permissions management](/guides/users-guide/User-and-permissions-management) guide.
+For more information on users and permissions, please see the ["User and permissions management"](/guides/users-guide/User-and-permissions-management) guide.
 
 ## <a name="home"></a>The Home Screen
 

@@ -229,7 +229,7 @@ When you add a permission, you may see a small exclamation mark. The exclamation
 
 ![Overridden permission](/guides/users-guide/overriddenperm.png)
 
-As another example, assume that you are using tracking devices. Your user should be able to see all devices, but should not be able to change anything. In addition, the user should be able to follow tracks of devices on a map. Tracks are recorded using an event with fragment type "c8y_Position" (see [Sensor library](/guides/reference/sensor-library). To do so, assign read permissions on inventory as well as on events with type "c8y_Position" as shown in the image below.
+As another example, assume that you are using tracking devices. Your user should be able to see all devices, but should not be able to change anything. In addition, the user should be able to follow tracks of devices on a map. Tracks are recorded using an event with fragment type "c8y_Position" (see [Sensor library](/guides/reference/sensor-library)). To do so, assign read permissions on inventory as well as on events with type "c8y_Position" as shown in the image below.
 
 ![Example](/guides/users-guide/permexample.png)
 

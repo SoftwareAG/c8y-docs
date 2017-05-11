@@ -9,14 +9,16 @@ layout: default
 The Administration application enables account administrators to manage their users, applications, rules and stored files, as well as configure a number of options for their account. Here you can:
 
 * View [subscription information](#home) for your account.
-* Manage [users](#users) and [user groups](#user-groups), including their [permissions](#permissions).
 * View all operations done by users via the [audit logs](#audit).
 * Configure [applications](#applications).
+* Manage [tenants](#tenants).
 * Set up real-time [event processing](#event-processing) scripts and [reprioritize alarms](#reprio-alarms).
 * Change [settings](#settings).
 * Configure the [retention policies](#retention) for your data.
 * Configure the recipients and trigger of the [warning e-mail](#warningEmail) for maximum storage being reached.
 * Manage [stored files](#files) such as firmware images or log files.
+
+For more information on users and permissions, please see the ["User and permissions management](/guides/users-guide/User-and-permission-management] guide.
 
 ## <a name="home"></a>The Home Screen
 
@@ -32,25 +34,6 @@ The "Home" screen provides navigation links to the main parts of the administrat
 "This month" shows the usage information starting with the current month. "Last month" shows the last full month.
 
 ![Home](/guides/users-guide/adminscreen.png)
-
-### <a name="tfa"></a>Using two-factor authentication
-
-The Two-factor authentication(TFA) is an extra layer of security that requires not only a username and password, but SMS verification as well. TFA can only be set up by administrators. When TFA is enabled, it is impossible to configure it from the "User settings", it is configurable from the administration UI.
-
-> Note that a phone number is required when adding a user and TFA is enabled. When users without a phone number try to login using TFA, the user will be redirected to a window, to enter his/her mobile phone number. Without a phone number a login is impossible.
-
-To see whether TFA is enabled for a certain user, go to the "Users" menu and check the TFA status column.
-
-![TFA satus](/guides/users-guide/tfastatus.png)
-
-Enable two-factor authentication for a user:
-
-- Go to the "Users" menu.
-- Click on the user name.
-- Click on the checkbox next to "Enable two-factor authentication.
-- Click "Save".
-
-![Enable TFA](/guides/users-guide/enabletfa.png)
 
 ## <a name="audit"></a>Viewing audit logs
 
@@ -227,6 +210,74 @@ It is not possible to remove subscribed apps. This is only possible for the owne
 
 To remove an application, simply hover over the application name and click on the cogwheel, then press the "Remove" button. A confirmation pop-up window will appear. Click "OK" and the application will be deleted.
 
+## <a name="tenants"></a>Managing tenants
+
+If you are a service provider or subscribed to the Enterprise Edition of Cumulocity, you can manage your own subtenants. You can create subtenants, subscribe them to the applications that you have available and potentially deactivate tenants if they are not in use anymore.
+
+> There is an important difference between providing tenants and providing users with different permissions within one tenant. Tenants are physically separated data spaces with a separate URL, own users, separate application management and no sharing of data by default. Users in a single tenant by default share the same URL and the same data space. For example, if your users are separate customers of yours and you need to strictly separate them because they may be competitors, we strongly recommend you to do so by using tenants.
+
+> If you would like to use this feature, please contact sales@cumulocity.com.
+
+To be able to use the functionality below, your user needs to have the appropriate permissions. See ["Creating and editing global roles"](/guides/users-guide/User-and-permissions-management#create-edit-roles) for information on editing permissions. Since editing tenants is a sensitive operation, permissions for editing tenants are more granular:
+
+- Read: Browse and view tenants.
+- Create: Create new tenants.
+- Update: Edit tenants (incl. subscriptions) and suspend or activate them.
+- Change: Create, edit and delete tenants.
+
+### Browsing sub-tenants
+
+To browse the subtenants, click on the subtenants menu. The panel shows the following information:
+
+- Tenant status: The small icon indicates the status of a tenant. It can show a green checkmark to indicate that the tenant is active or a red cross to indicate that the tenant is suspended and cannot be accessed.
+- ID: An identifier for this tenant. When you create a tenant, the ID is the first part of the URL. For example, if you create a tenant with the ID "acme" on cumulocity.com, the tenant's URL will be "acme.cumulocity.com". Note that while you can change the URL later on, you cannot change the ID anymore after the tenant was created.
+- Name: A name for this tenant, for example, the company name of your customer. 
+- Domain: The URL that users will use to access this tenant.
+- Contact name: An administrative contact for the tenant.
+- Phone: The phone number of the administrative contact.
+- External reference: A free text field that you can use for arbitrary additional information on the tenant. For example, you can store a reference to your CRM system here.
+- Creation time: The time when the tenant was created.
+- Parent tenant: If you are using the management tenant, you will see an additional column "parent tenant". This column shows the tenant that created the listed tenant.
+
+![Sub-tenants](/guides/users-guide/sub-tenant.png)
+
+### Adding sub-tenants
+
+To add a new tenant, click on "Create tenant" on the top right of the "Subtenants" panel, fill in the fields and click save. Note that:
+
+- Tenant IDs must be unique within the system.
+- Tenant URLs also must be unique. You can only use one subdomain level. For example, you can only use "acme.cumulocity.com" on cumulocity.com. You cannot use "mycustomer.acme.cumulocity.com". This is not permitted by the TLS standard.
+- You must provide a valid administrator email address to enable users to reset their password.
+- Fields with an asterisk (" * ") are mandatory.
+
+When a tenant is created, it is automatically provisioned with a first, administrative user ("Administrator's username"). This user can create first users and set their permissions. The first user cannot be deleted to prevent you from locking yourself out. You can choose to have the password reset link sent as an e-mail. If you have not selected this option you will have to enter a password and confirm the password. (See "[Logging in](/guides/users-guide/overview#login)" for more information on password strength.)
+
+From the management tenant, you can enable other tenants to create subtenants. To do so, check "Allow creation of subtenants".
+
+![Tenant-creation](/guides/users-guide/createtenant.png)
+
+### Editing, suspending and deleting sub-tenants
+
+To edit subtenants, click on the desired subtenant. All the fields can be edited except the ID and the administrator's username. When you have finished editing, click on the "Save" button.
+
+Click on the "Applications" tab to subscribe tenants to applications or remove the applications from the tenant. By default, tenants will be subscribed to the standard Cumulocity applications. To subscribe an application to a tenant, hover over one of the "Available applications" on the right side and click the "Subscribe" button.
+
+![Subscibe tenant](/guides/users-guide/subscribetenant.png)
+
+To remove an application, hover over one of the "Subscribed applications" on the left side and click "unsubscribe".
+
+![Unsubscribe tenant](guides/users-guide/unsubtenant.png)
+
+You can temporarily suspend tenants. Suspending tenants blocks any access to this tenant, regardless whether the access is from devices, user or other applications. To suspend a tenant, hover over a tenant in the list of tenants and click the "Suspend" button. Confirm the action by clicking "Ok" and entering your password. The tenant will be shown with a red cross icon. As part of suspending the tenant, an informational email is sent to the tenant administrator if an email address is configured for that administrator.
+
+> If you are a service provider, you can suppress this email.
+
+![Suspend tenant](/guides/users-guide/suspendtenant.png)
+
+If a tenant is suspended, the tenant's data remains in the database and can be made available any time later. To do so, click the "Activate" button.
+
+To finally delete a tenant and remove all the data of the tenant, click the "x" button while hovering over the tenant in the list. This action cannot be reverted. For security reasons, it is only available in the management tenant.
+
 ### <a name="usage-stats"></a> Retrieving usage statistics
 
 The usage statistics menu provides you with information about each subtenant. The statistics show:
@@ -241,6 +292,25 @@ The usage statistics menu provides you with information about each subtenant. Th
 - Creation time: The date and time of the creation of the subtenant.
 
 ![Usage statistics](/guides/users-guide/usagestats.png)
+
+## <a name="tfa"></a>Using two-factor authentication
+
+The Two-factor authentication(TFA) is an extra layer of security that requires not only a username and password, but SMS verification as well. TFA can only be set up by administrators. When TFA is enabled, it is impossible to configure it from the "User settings", it is configurable from the administration UI.
+
+> Note that a phone number is required when adding a user and TFA is enabled. When users without a phone number try to login using TFA, the user will be redirected to a window, to enter his/her mobile phone number. Without a phone number a login is impossible.
+
+To see whether TFA is enabled for a certain user, go to the "Users" menu and check the TFA status column.
+
+![TFA satus](/guides/users-guide/tfastatus.png)
+
+Enable two-factor authentication for a user:
+
+- Go to the "Users" menu.
+- Click on the user name.
+- Click on the checkbox next to "Enable two-factor authentication.
+- Click "Save".
+
+![Enable TFA](/guides/users-guide/enabletfa.png)
 
 ## <a name="event-processing"></a>Managing event processing
 

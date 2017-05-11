@@ -9,14 +9,16 @@ layout: default
 The Administration application enables account administrators to manage their users, applications, rules and stored files, as well as configure a number of options for their account. Here you can:
 
 * View [subscription information](#home) for your account.
-* Manage [users](#users) and [user groups](#user-groups), including their [permissions](#permissions).
 * View all operations done by users via the [audit logs](#audit).
 * Configure [applications](#applications).
+* Manage [tenants](#tenants).
 * Set up real-time [event processing](#event-processing) scripts and [reprioritize alarms](#reprio-alarms).
 * Change [settings](#settings).
 * Configure the [retention policies](#retention) for your data.
 * Configure the recipients and trigger of the [warning e-mail](#warningEmail) for maximum storage being reached.
 * Manage [stored files](#files) such as firmware images or log files.
+
+For more information on users and permissions, please see the ["User and permissions management"](/guides/users-guide/User-and-permissions-management) guide.
 
 ## <a name="home"></a>The Home Screen
 
@@ -32,237 +34,6 @@ The "Home" screen provides navigation links to the main parts of the administrat
 "This month" shows the usage information starting with the current month. "Last month" shows the last full month.
 
 ![Home](/guides/users-guide/adminscreen.png)
-
-## <a name="users"></a>Managing users
-
-In order to manage users in your tenant account, click on the "Users" menu. New tenants will usually find two users: The initial administrator user and the "sysadmin" user. The initial administrator user was configured when your account was created. This user cannot be removed, only edited. The "sysadmin" user is a user that the Cumulocity support uses to guide you through your trial phase.
-
-> Note that the sysadmin user may not be present depending on your provider.
-
-![Click Users](/guides/users-guide/Users.png)
-
-### Adding users
-
-To add additional users, click on "Add user".
-
-- Enter a username for this user to log on.
-- Choose if the user will be active.
-
-> If the switch is set to "disabled", the user will not be able to log in.
-
-- Enter first and last name of the user. This will be shown on the top right next to the user symbol when the user logs in.
-- Enter the e-mail address of the user. You need to provide a valid, unique e-mail address to enable users to reset their password.
-- Enter a telephone number.
-- If you choose to check "User must reset password on next login", the user will have to choose a new password after the next login.
-- If you choose to check "Send password reset link as e-mail", the e-mail message will be sent to provided e-mail address with link to set a password.
-- Enter a password and confirm the password. (See "[Logging in](/guides/users-guide/overview#login)" for more information on password strength.)
-- Add users to [user groups](#user-groups).
-- Assign devices and applications [permissions](#permissions).
-- Click the "Save" button to save all the previous data.
-
-![Add User](/guides/users-guide/adduserpage.png)
-
-> Fields without an asterisk ("*", like "First name", "Last name") are optional.
-
-### Editing users
-
-To edit an existing user, just click on the user in the list. All user details other than the username, "User must reset password on next login" and "Send password reset link as e-mail" checkbox can be modified. To change the password, click on "Change password". Click "Save" after you finished editing.
-
-### Deactivating or deleting users
-
-Hovering over a user displays the deactivate and delete buttons on the right side. The "Deactivate" button simply disables the user. The user still exists, but will not be able to log in. The delete button ("X") permanently deletes a user.
-
-![Delete User](/guides/users-guide/deleteuser.png)
-
-### <a name="tfa"></a>Using two-factor authentication
-
-The Two-factor authentication(TFA) is an extra layer of security that requires not only a username and password, but SMS verification as well. TFA can only be set up by administrators. When TFA is enabled, it is impossible to configure it from the "User settings", it is configurable from the administration UI.
-
-> Note that a phone number is required when adding a user and TFA is enabled. When users without a phone number try to login using TFA, the user will be redirected to a window, to enter his/her mobile phone number. Without a phone number a login is impossible.
-
-To see whether TFA is enabled for a certain user, go to the "Users" menu and check the TFA status column.
-
-![TFA satus](/guides/users-guide/tfastatus.png)
-
-Enable two-factor authentication for a user:
-
-- Go to the "Users" menu.
-- Click on the user name.
-- Click on the checkbox next to "Enable two-factor authentication.
-- Click "Save".
-
-![Enable TFA](/guides/users-guide/enabletfa.png)
-
-## <a name="user-groups"></a>Managing user groups
-
-Users with the same permissions can be placed into user groups representing typical permission sets. A single user can be part of multiple user groups. New tenant accounts have four user groups by default. These user groups have different default permission settings:
-
-* Admins: A group with **all permissions** by default. This group can not be deleted.
-* Business: A group to work with all devices and their data but without administration rights.
-* Readers: A group who can read all data but cannot edit.
-* Devices: A group with typical minimal default permissions for devices. This group can not be deleted.
-
-All groups can be modified. If the group is not *ADMINS* or *DEVICES*, it can be deleted.
-
-![User groups](/guides/users-guide/usergroups.png)
-
-### Adding user groups
-
-To add a user group:
-
-- Click on "Create user group".
-- Enter the name of the user group.
-- Edit the [permissions](#permissions).
-- Click on the "Save" button.
-
-### Editing groups
-
-All user group details can be edited. To edit a group, click on the name of the group in the group list. After you have finished modifying the group, click on the "Save" button.
-
-> Editing a user group can change the permission for all users in the group and can affect the correct functioning of devices.
-
-<img src="/guides/users-guide/confirmgroup.png" alt="Confirm group editing" style="max-width: 60%">
-
-### Removing groups
-
-To remove a group, simply hover over the group name and click on the "X" button. A confirmation dialog will appear. Click on "OK" will delete the group.
-
-![Remove Group](/guides/users-guide/removegroup.png)
-
-Please, note that the *ADMINS* and *DEVICES* groups can not be deleted.
-
-## <a name="permissions"></a>Managing Permissions
-
-Cumulocity distinguishes three types of permissions that are assigned to users and user groups:
-
-* Account-wide permissions ("roles"): These flags enable a user to read or modify all data in an account, like seeing all devices and being able to edit all devices.
-* Device- or device group-specific permissions: These permissions define a specific level access to data in your account, restricted to a group of devices.
-* Application access permissions: These define the applications that users will see in their application switcher.
-
-From the view point of a user:
-
-* A user has the sum of permissions granted to all groups the user is part of.
-* If a user has account-wide permissions, other permissions are ignored.
-* Device-/group-specific permissions are inherited to all direct and indirect child devices and child assets. If you assign "read" permission to a group of devices, the user will be automatically able to see all devices in the group.
-
-### Assigning account-wide permissions
-
-When you edit a group, a table with "roles" is listed below the group name. They represent permissions within the following types of data:
-
-* Tenant management: View, create, edit or delete subtenants.
-* Tenant statistics: View the usage data for this account, as shown on the home page of the administration application.
-* Option management: View or edit account options such as password policies.
-* Application management: View or edit the applications available in this account.
-* User management: View or edit users, user groups and permissions.
-* Own user management: View or edit your own user.
-* Identity: View or edit identifiers for devices.
-* Inventory: View or edit inventory data.
-* Measurements: View or create measurements for devices.
-* Events: View or create events for devices.
-* Alarms: View or edit alarms for devices.
-* Audits: View or create audit records for devices.
-* Device control: View or edit commands for devices resp. send commands to devices.
-* CEP management: View or edit Cumulocity Event Language rules.
-* Retention rules: View or edit retention rules.
-* Bulk operations: View or create bulk operations.
-* Support operations: Allows user to log in to other tenants as support user.
-
-For the various types, the following permissions are available:
-
-- Read: Read specified data.
-- Admin: Create, modify and delete specified data. (Not including "Read"!)
-
-Not all types of data can be modified ( audit records). For inventory data, there is one additional type of permission: "Create". The "Create" permission enables the user to create devices in the inventory and to fully manage these devices owned by the user. The user cannot read or manage devices owned by other users. This is mainly used to limit the permissions available to devices.
-
-To assign permissions click on the relevant checkbox. If you wish to select or clear ALL entries in a particular column, use the buttons at the top:
-
-- Clear all: Clears all of the checked roles.
-- Select all: Selects all of the roles.
-- Select all Read: Selects "Read" for all types and deselects the other roles.
-- Select all Admin: Selects "Admin" for all types and deselects the rest.
-
-![All roles](/guides/users-guide/allroles.png)
-
-### Using Support Permission
-
-#### Overview
-
-Support users are users in the management tenant area with a special permission to login to tenants accounts.
-To allow login to tenants, the support user account must have support access rights.
-When a support user logs into a tenant account, the user has the same privileges as a subtenant user. This user type is specified on the login page.
-  
-Please note that support users cannot access "own applications" of other tenants. For example, if you are a user of the management tenant and you want to access a private application in another tenant, an error will occur. In order to go around this, you can move the application to the management tenant and subscribe the other tenant to it. This way, the app will be available for both tenants.
-
-Support users can login using own passwords and usernames:
-
-> support_user$user
-
-The "support_user" is the name of the support user obviously, "user" is the name of the user whose environment will be accessed.
-
-Alternatively:
-
-> support_user$
-
-The "support_user" is the name of this user in the management tenant area. In this use case, the support user will access the environment of one of the admin users.
-
-#### Configuration
-
-The support user function is enabled by default.
-If it is disabled by the platform operator, then every user has an "Activate support access" option. It is available in the upper right menu.
-After selecting this option, support users have access to this tenant account for one day.
-
-#### Audit logs
-
-Audit logs for all actions performed by support users will have information about the actual author.
-In column "Who?" the author's name will be shown in form of:
-
-> "support_user$user"
-
-#### Tenant-specific permissions
-
-Sometimes, it is required to assign support access rights to specific tenants only. It can be done by [device-specific permissions](#assigning_device_specific_permissions) for the user and [tenant managed object](#tenant_management_object) with scope "SUPPORT", type "&#42;" and permission "&#42;".
-
-The screenshot below shows you, how to grant access to the tenant "myTenant".
-
-<img src="/guides/users-guide/support_permission.png" alt="Support permission">
-
-A tenant managed object can be found by type "c8y_Tenant" or name equal to tenant id. 
-
-In addition, tenant managed objects can be put into a group (like other device objects in device management UI) that can be used to provide access for support user to multiple tenants at a time. To achieve that, the group should be passed in device-specific-permissions instead of tenant managed object.
-
-### Restricting tenant deletion
-
-Users with tenant management function and  "Admin" permissions can create, update and delete tenants. To prevent a user from deleting tenants only a "create and update" permission should be granted.
-
-![tenant delete restriction](/guides/users-guide/restrict_tenant_deletion.png)
-
-### <a name="tenant_management_object"></a>Tenant management objects
-
-Tenant management objects are devices in tenant "management" representing existing tenants. Once a new tenant is created, a new tenant management object is also created in the tenant "management" with type "c8y_Tenant" and a name equal to tenant ID. This object contains also fragment "customProperties" with "externalReference" and other custom properties of the associated tenant.
-
-Warning: If the tenant management object is accidentally deleted, it can be recovered by updating any property of the associated tenant. Tenant-specific permissions related to the tenant account will be lost.
-
-
-### <a name="assigning_device_specific_permissions"></a>Assigning device-specific permissions
-
-To assign more specific permissions on device level or device group level, go to the "User permissions" section while editing users, or "Group permissions" section while editing user groups.
-
-- Select a managed object (device or group of devices) by typing the ID or the name of the managed object.
-- Select the scope of the permission for the selected managed object. The scope limits the permission to particular types of data for this managed object. Use an asterisk ("*") to grant permission to all types of data of the managed object.
-- Limit the permission to particular content in the data ("type"). For example, to limit a user to only send restart commands to a device, use "OPERATION" as scope and "c8y_Restart" as type. Again, use an asterisk ("*")  as wildcard for any content.
-- Select the permission to grant: Use "Read" to read the data. Use "Admin" to create, modify and delete the data. Use an asterisk ("*") to assign both read and admin permission.
-- Click on the "Add" button.
-- Click on the "Save" button.
-
-![User Permissions](/guides/users-guide/userpermissions.png)
-
-> As mentioned above, permissions for groups of devices are inherited to the child devices and child assets of the group.
-
-### Assigning application access permissions
-
-To assign applications to particular users and user groups, go to the "Application access" section of that user or user group. The application access section is not visible if the user or user group already has access to all applications. The section shows marketplace applications and own applications. Marketplace applications are generally subscribed applications for your account. Own applications are applications that you added to your account, see [Applications](#applications). Check all applications that should be made available to the user or user group.
-
-<img src="/guides/users-guide/applicationaccess.png" alt="Application access" style="max-width: 60%">
 
 ## <a name="audit"></a>Viewing audit logs
 
@@ -297,7 +68,7 @@ To discard filters or to see all audit logs, click on the "cross" button.
 
 ## <a name="applications"></a>Managing applications
 
-Besides the available applications, you can also provide own applications in your account by checking the "Own applications" menu. These applications can be "Smartapps" or generic HTML5 applications. â€œSmartappsâ€ applications are HTML5 applications that can be extended by adding plugins. When deploying, the plugins are deployed into a specific application. For example, a plugin might add a specific widget to the Cockpit dashboard.
+Besides the available applications, you can also provide own applications in your account by checking the "Own applications" menu. These applications can be "Smartapps" or generic HTML5 applications. "Smartapps" are HTML5 applications that can be extended by adding plugins. When deploying, the plugins are deployed into a specific application. For example, a plugin might add a specific widget to the Cockpit dashboard.
 
 Plugins can only be added to own applications because the application itself is modified when adding the plugin. When adding a plugin to subscribed applications, the application must be cloned first into an own application. Afterward the plugin can be added. This process is supported by the Administration Application wizard.
 
@@ -439,54 +210,73 @@ It is not possible to remove subscribed apps. This is only possible for the owne
 
 To remove an application, simply hover over the application name and click on the cogwheel, then press the "Remove" button. A confirmation pop-up window will appear. Click "OK" and the application will be deleted.
 
-
 ## <a name="tenants"></a>Managing tenants
 
-With the subtenant concept you can separate the data of the individual tenants one hundred percent.
+If you are a service provider or subscribed to the Enterprise Edition of Cumulocity, you can manage your own subtenants. You can create subtenants, subscribe them to the applications that you have available and potentially deactivate tenants if they are not in use anymore.
 
-> Background: As a tenant administrator, all data in your tenant account is 100% separated from the data of other tenants. The data inside your tenant is shared with all account users by default unless it is restricted by user permissions.
+> There is an important difference between providing tenants and providing users with different permissions within one tenant. Tenants are physically separated data spaces with a separate URL, own users, separate application management and no sharing of data by default. Users in a single tenant by default share the same URL and the same data space. For example, if your users are separate customers of yours and you need to strictly separate them because they may be competitors, we strongly recommend you to do so by using tenants.
 
-If you want 100% data safety instead of dealing with user permissions, then use the subtenants. Each subtenant has a seperated data area. All Cumulocity features (e.g. user management, app management, rule management) are available for each subtenant without visibility to other subtenants.
+> If you would like to use this feature, please contact sales@cumulocity.com.
 
-This feature is an optional feature which is not available for all tenants.
+To be able to use the functionality below, your user needs to have the appropriate permissions. See ["Creating and editing global roles"](/guides/users-guide/User-and-permissions-management#create-edit-roles) for information on editing permissions. Since editing tenants is a sensitive operation, permissions for editing tenants are more granular:
 
-> In case you are subscribed to the feature, but you do not see it, contact support.
+- Read: Browse and view tenants.
+- Create: Create new tenants.
+- Update: Edit tenants (incl. subscriptions) and suspend or activate them.
+- Change: Create, edit and delete tenants.
 
-In order to manage subtenants click on the subtenants menu. Subtenant management includes: Tenant creation, activation, suspension, subscribed applications and options.
+### Browsing sub-tenants
+
+To browse the subtenants, click on the subtenants menu. The panel shows the following information:
+
+- Tenant status: The small icon indicates the status of a tenant. It can show a green checkmark to indicate that the tenant is active or a red cross to indicate that the tenant is suspended and cannot be accessed.
+- ID: An identifier for this tenant. When you create a tenant, the ID is the first part of the URL. For example, if you create a tenant with the ID "acme" on cumulocity.com, the tenant's URL will be "acme.cumulocity.com". Note that while you can change the URL later on, you cannot change the ID anymore after the tenant was created.
+- Name: A name for this tenant, for example, the company name of your customer. 
+- Domain: The URL that users will use to access this tenant.
+- Contact name: An administrative contact for the tenant.
+- Phone: The phone number of the administrative contact.
+- External reference: A free text field that you can use for arbitrary additional information on the tenant. For example, you can store a reference to your CRM system here.
+- Creation time: The time when the tenant was created.
+- Parent tenant: If you are using the management tenant, you will see an additional column "parent tenant". This column shows the tenant that created the listed tenant.
 
 ![Sub-tenants](/guides/users-guide/sub-tenant.png)
 
-> Tenant ID's must remain unique, two tenants cannot create subtenants with the same "URL/ID".
-> Subtenants cannot create an additional level of subtenants.
-
 ### Adding sub-tenants
 
-To add a new subtenant, click on "Create Tenant"
+To add a new tenant, click on "Create tenant" on the top right of the "Subtenants" panel, fill in the fields and click save. Note that:
 
-> Please note that fields with an asterisk (" * ") are mandatory.
+- Tenant IDs must be unique within the system.
+- Tenant URLs also must be unique. You can only use one subdomain level. For example, you can only use "acme.cumulocity.com" on cumulocity.com. You cannot use "mycustomer.acme.cumulocity.com". This is not permitted by the TLS standard.
+- You must provide a valid administrator email address to enable users to reset their password.
+- Fields with an asterisk (" * ") are mandatory.
 
-- Enter unique domain/URL of the new tenant. This URL will be used to access the application (e.g. tenant@cumulocity.com).
-- Enter the name of the company.
-- Enter the administrator's e-mail. You must provide a valid e-mail address to enable users to reset their password.
-- Enter username of the administrator for logging in.
-- Enter contact name. This field is optional.
-- Enter contact phone. Again, this field is optional.
-- Choose whether you wish to have the password reset link sent as an e-mail. If you have not selected this option you will have to enter a password and confirm the password. (See "[Logging in](/guides/users-guide/overview#login)" for more information on password strength.)
-- Click the "Save" button.
+When a tenant is created, it is automatically provisioned with a first, administrative user ("Administrator's username"). This user can create first users and set their permissions. The first user cannot be deleted to prevent you from locking yourself out. You can choose to have the password reset link sent as an e-mail. If you have not selected this option you will have to enter a password and confirm the password. (See "[Logging in](/guides/users-guide/overview#login)" for more information on password strength.)
+
+From the management tenant, you can enable other tenants to create subtenants. To do so, check "Allow creation of subtenants".
 
 ![Tenant-creation](/guides/users-guide/createtenant.png)
 
-### Editing, suspending and removing sub-tenants
+### Editing, suspending and deleting sub-tenants
 
-To edit subtenants, click on the desired subtenant. All the fields can be edited except "ID" and "Administrators Username".
+To edit subtenants, click on the desired subtenant. All the fields can be edited except the ID and the administrator's username. When you have finished editing, click on the "Save" button.
 
-When you have finished editing, click on the "Save" button.
+Click on the "Applications" tab to subscribe tenants to applications or remove the applications from the tenant. By default, tenants will be subscribed to the standard Cumulocity applications. To subscribe an application to a tenant, hover over one of the "Available applications" on the right side and click the "Subscribe" button.
 
-> If a tenant is suspended, his data still remains in the database and he can be reactivated at any time later. If the tenant is removed his data will be deleted.
+![Subscibe tenant](/guides/users-guide/subscribetenant.png)
 
-Hovering over a tenant will bring up the "Suspend" and the "Remove" buttons. The "Remove" button is shown as a red cross.
+To remove an application, hover over one of the "Subscribed applications" on the left side and click "unsubscribe".
 
-> Please note that there is an additional check during tenant suspension. The user will have to provide his own password in order to proceed. After the tenant is suspended, an e-mail is sent to the suspended tenant administrator. The e-mail is sent only if the property in the config file is enabled and if the tenant administrator provided an e-mail address during creation.
+![Unsubscribe tenant](guides/users-guide/unsubtenant.png)
+
+You can temporarily suspend tenants. Suspending tenants blocks any access to this tenant, regardless whether the access is from devices, user or other applications. To suspend a tenant, hover over a tenant in the list of tenants and click the "Suspend" button. Confirm the action by clicking "Ok" and entering your password. The tenant will be shown with a red cross icon. As part of suspending the tenant, an informational email is sent to the tenant administrator if an email address is configured for that administrator.
+
+> If you are a service provider, you can suppress this email.
+
+![Suspend tenant](/guides/users-guide/suspendtenant.png)
+
+If a tenant is suspended, the tenant's data remains in the database and can be made available any time later. To do so, click the "Activate" button.
+
+To finally delete a tenant and remove all the data of the tenant, click the "x" button while hovering over the tenant in the list. This action cannot be reverted. For security reasons, it is only available in the management tenant.
 
 ### <a name="usage-stats"></a> Retrieving usage statistics
 
@@ -502,6 +292,25 @@ The usage statistics menu provides you with information about each subtenant. Th
 - Creation time: The date and time of the creation of the subtenant.
 
 ![Usage statistics](/guides/users-guide/usagestats.png)
+
+## <a name="tfa"></a>Using two-factor authentication
+
+The Two-factor authentication(TFA) is an extra layer of security that requires not only a username and password, but SMS verification as well. TFA can only be set up by administrators. When TFA is enabled, it is impossible to configure it from the "User settings", it is configurable from the administration UI.
+
+> Note that a phone number is required when adding a user and TFA is enabled. When users without a phone number try to login using TFA, the user will be redirected to a window, to enter his/her mobile phone number. Without a phone number a login is impossible.
+
+To see whether TFA is enabled for a certain user, go to the "Users" menu and check the TFA status column.
+
+![TFA satus](/guides/users-guide/tfastatus.png)
+
+Enable two-factor authentication for a user:
+
+- Go to the "Users" menu.
+- Click on the user name.
+- Click on the checkbox next to "Enable two-factor authentication.
+- Click "Save".
+
+![Enable TFA](/guides/users-guide/enabletfa.png)
 
 ## <a name="event-processing"></a>Managing event processing
 

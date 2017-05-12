@@ -223,15 +223,15 @@ For example, assume that your device sends measurements related to device manage
 
 Use "*" to select all types. Just like for global roles, the "Change" permission does not include the permission to read. Use "All" to enable a user to read and change something.
 
-<img src="showperm.png" alt="Role permissions" style="width: 500px;"/>
+<img src="showperm.png" alt="Role permissions" style="max-width: 500px">
 
 When you add a permission, you may see a small exclamation mark. The exclamation mark indicates that the permission that you have just added is not effective, because there is another permission that permits the user to do more already. Check if you have set, for example, "Full access" or if there is another permission in the same section with "*" as type and "All" as permission.
 
-<img src="overriddenperm.png" alt="Role permissions" style="width: 500px;"/>
+<img src="overriddenperm.png" alt="warning message" style="max-width: 500px">
 
 As another example, assume that you are using tracking devices. Your user should be able to see all devices, but should not be able to change anything. In addition, the user should be able to follow tracks of devices on a map. Tracks are recorded using an event with fragment type "c8y_Position" (see [Sensor library](/guides/reference/sensor-library)). To do so, assign read permissions on inventory as well as on events with type "c8y_Position" as shown in the image below.
 
-<img src="permexample.png" alt="Role permissions" style="width: 500px;"/>
+<img src="permexample.png" alt="Permission example" style="max-width: 500px">
 
 ### <a name="attach-inventory"></a>Attaching inventory roles to users
 

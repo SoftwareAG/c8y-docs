@@ -18,7 +18,7 @@ The Administration application enables account administrators to manage their us
 * Configure the recipients and trigger of the [warning e-mail](#warningEmail) for maximum storage being reached.
 * Manage [stored files](#files) such as firmware images or log files.
 
-For more information on users and permissions, please see the ["User and permissions management"](/guides/users-guide/User-and-permissions-management) guide.
+For more information on users and permissions, please see the ["User and permissions management"](/guides/users-guide/user-and-permissions-management) guide.
 
 ## <a name="home"></a>The Home Screen
 
@@ -218,7 +218,7 @@ If you are a service provider or subscribed to the Enterprise Edition of Cumuloc
 
 > If you would like to use this feature, please contact sales@cumulocity.com.
 
-To be able to use the functionality below, your user needs to have the appropriate permissions. See ["Creating and editing global roles"](/guides/users-guide/User-and-permissions-management#create-edit-roles) for information on editing permissions. Since editing tenants is a sensitive operation, permissions for editing tenants are more granular:
+To be able to use the functionality below, your user needs to have the appropriate permissions. See ["Creating and editing global roles"](/guides/users-guide/user-and-permissions-management#create-edit-roles) for information on editing permissions. Since editing tenants is a sensitive operation, permissions for editing tenants are more granular:
 
 - Read: Browse and view tenants.
 - Create: Create new tenants.

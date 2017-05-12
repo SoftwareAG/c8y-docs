@@ -262,11 +262,11 @@ To edit subtenants, click on the desired subtenant. All the fields can be edited
 
 Click on the "Applications" tab to subscribe tenants to applications or remove the applications from the tenant. By default, tenants will be subscribed to the standard Cumulocity applications. To subscribe an application to a tenant, hover over one of the "Available applications" on the right side and click the "Subscribe" button.
 
-<img src="/guides/users-guide/subscribetenant.png" alt="Subscribe tenant" style="max-width: 500px">
+<img src="/guides/users-guide/subscribetenant.png" alt="Subscribe tenant" style="max-width: 50%">
 
 To remove an application, hover over one of the "Subscribed applications" on the left side and click "unsubscribe".
 
-<img src="/guides/users-guide/unsubtenant.png" alt="Usubscribe tenant" style="max-width: 500px">
+<img src="/guides/users-guide/unsubtenant.png" alt="Usubscribe tenant" style="max-width: 50%">
 
 You can temporarily suspend tenants. Suspending tenants blocks any access to this tenant, regardless whether the access is from devices, user or other applications. To suspend a tenant, hover over a tenant in the list of tenants and click the "Suspend" button. Confirm the action by clicking "Ok" and entering your password. The tenant will be shown with a red cross icon. As part of suspending the tenant, an informational email is sent to the tenant administrator if an email address is configured for that administrator.
 

@@ -12,9 +12,10 @@ layout: default
 <li><a href="#sec:start">1.1. Getting Started</a></li>
 <li><a href="#sec-1-2">1.2. Integrate to Cumulocity</a></li>
 <li><a href="#sec-1-3">1.3. Send Measurement</a></li>
-<li><a href="#sec-1-4">1.4. Handle Operation</a></li>
+<li><a href="#sec:op">1.4. Handle Operation</a></li>
 <li><a href="#sec-1-5">1.5. Store SmartREST Templates in a File</a></li>
 <li><a href="#sec-1-6">1.6. Lua Plugin</a></li>
+<li><a href="#sec-1-7">1.7. Use MQTT instead of HTTP</a></li>
 </ul>
 </li>
 </ul>
@@ -35,6 +36,7 @@ Before we really get started, we will need a *Cumulocity* account. Go to <https:
 Without any further ado, let's write our first program, the customary *hello world* example shown in Listing 1.
 
     // ex-01-hello: src/main.cc
+    #include <iostream>
     #include <sragent.h>
     #include <srlogger.h>
     using namespace std;
@@ -246,7 +248,8 @@ If you add a `SrTimer` to the `SrAgent`, you must ensure its existence throughou
 
 </div>
 
-## Handle Operation<a id="sec-1-4" name="sec-1-4"></a>
+## Handle Operation<a id="sec:op" name="sec:op"></a>
+
 
 Besides sending requests, e.g., measurements to *Cumulocity*, the other important functionality is handle messages, either responses from *GET* queries or real-time operations from *Cumulocity*. Listing 8 demonstrates how to handle the *c8y<sub>Restart</sub>* operation. Again, first we will need to register necessary SmartREST templates. Then we define a message handler for handling restart operation.
 
@@ -403,6 +406,30 @@ The example also shows how to define your own `Lua` library and share its variab
 You may encounter an error saying "Package lua was not found in the pkg-config search path." when building this example, then you would need to modify the expression `$(shell pkg-config --cflags lua)` to add a proper version number to `lua`. The proper version number depends on your installed Lua version and your Linux distribution.
 
 </div>
+
+## Use MQTT instead of HTTP<a id="sec-1-7" name="sec-1-7"></a>
+
+MQTT is a publish and subscribe based light-weight messaging protocol, renders it very suitable for IoT communication. It solves two major issues inherit to HTTP: 1) HTTP header predominantly overweights SmartREST payload since SmartREST messages are generally very short. 2) MQTT has built-in support for real-time notification via subscribe and publish mechanism, hence, there is no need for a separate connection for device push.
+
+Above examples are all using HTTP as the transportation layer. Besides HTTP, `SrReporter` also supports MQTT as the transportation layer. Listing 13 shows the modification needed for transforming the example in Section (See section 1.4) from using HTTP into using MQTT.
+
+    // ex-07-mqtt-legacy: src/main.cc
+    
+    int main()
+    {
+            // ...
+            SrReporter reporter(string(server) + ":1883", deviceID, agent.XID(),
+                                agent.tenant() + '/' + agent.username(),
+                                agent.password(), agent.egress, agent.ingress);
+            // set MQTT keep-alive interval to 180 seconds.
+            reporter.mqttSetOpt(SR_MQTTOPT_KEEPALIVE, 180);
+            if (reporter.start() != 0)      // Start the reporter thread
+                    return 0;
+            agent.loop();
+            return 0;
+    }
+
+As you can see, all modification needed is to construct `SrReporter` with a different constructor so `SrReporter` knows to use MQTT as underlying communication protocol, and remove `SrDevicePush` in the code since MQTT has built-in support for real-time notification. Optionally, you can set the keep-alive interval for MQTT to prevent the underlying TCP connection from being interrupted.
 
 <div id="footnotes">
 <h2 class="footnotes">Footnotes: </h2>

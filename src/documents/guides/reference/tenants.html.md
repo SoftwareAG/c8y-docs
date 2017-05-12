@@ -551,7 +551,10 @@ Example Response :
 
 ## Option
 
-Options are category-key-value tuples, storing tenant configuration. Some categories of options allow creation of new one, other are limited to predefined set of keys.
+Options are category-key-value tuples, storing tenant configuration. Some categories of options allow creation of new one, other are limited to predefined set of keys. 
+
+Any option of any tenant can be defined as "non-editable" by "management" tenant. 
+Afterwards, any PUT or DELETE requests made on that option by the owner tenant, will result in 403 error (Unauthorized).
 
 ### Default Options
 
@@ -676,6 +679,37 @@ Example Response :
        "key3": "value3",
        "key4": "value4",
      }
+
+### PUT - Define option editability.
+
+Request body: Option
+
+Response body: Option
+  
+Required role: ROLE\_OPTION\_MANAGEMENT\_ADMIN, Required tenant: management
+ Example Request: Update access.control.allow.origin option.
+
+     
+    PUT /tenant/options/<<category>>/<<key>>/editable
+    Host: ...
+    Authorization: Basic ...
+    Content-Type: application/vnd.com.nsn.cumulocity.option+json;ver=...
+    Accept: application/vnd.com.nsn.cumulocity.option+json;ver=...
+    {
+        "editable": "false"
+    }
+
+Example Response :
+
+    HTTP/1.1 200 OK
+    Content-Type: application/vnd.com.nsn.cumulocity.option+json;ver=...
+    Content-Length: ...
+    {
+        "category": "access.control",
+        "key": "allow.origin",
+        "self": "<<Option access.control.allow.origin URL>>",
+        "value": "http://developer.cumulocity.com"
+    }
 
 ## System Options
 

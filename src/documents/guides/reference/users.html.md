@@ -763,6 +763,8 @@ Example response:
     
 When group is removed, suitable audit records are created with type 'User' and activity 'User updated' with information that user has been removed from group.
 
+Please, note that the *ADMINS* and *DEVICES* groups can not be deleted.
+
 ### Update a group
 
 Request body: Group

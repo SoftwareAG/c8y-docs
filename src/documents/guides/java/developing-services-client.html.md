@@ -157,6 +157,56 @@ Sender name:
 
 Note that receiving specific message is not supported for this provider.
 
+* Telia Sonera
+
+For this provider, please use our Rest API to store tenant options seperately for each key:
+
+    POST /tenant/options
+    Host: ...
+    Authorization: Basic ...
+
+Provider:
+
+      {
+        "category": "messaging",
+        "key": "provider",
+        "value": "soneraoma"
+      }
+
+Username of Telia Sonera Client Application:
+
+      {
+        "category": "messaging",
+        "key": "soneraoma.username",
+        "value": "<username>"
+      }
+
+Password assigned for Telia Sonera Client Application:
+
+      {
+        "category": "messaging",
+        "key": "soneraoma.password",
+        "value": "<password>"
+      }
+
+Telia Sonera OAUTH Service Endpoint:
+
+      {
+        "category": "messaging",
+        "key": "soneraoma.authUrl",
+        "value": "<OAUTH Service endpoint url as appears in TS Application Profile, e. g., https://api.sonera.fi/autho4api/v1>"
+      }
+
+Telia Sonera Messaging OMA v1 Endpoint:
+
+      {
+        "category": "messaging",
+        "key": "soneraoma.messagingUrl",
+        "value": "<Messaging endpoint url as appears in TS Application Profile, e. g., https://api.sonera.fi/sandbox/messaging/v1>"
+      }
+
+Note that receiving messages and receiving specific messages are not supported for this provider.
+
 * Tropo
 
 For this provider, please use our Rest API to store tenant options seperately for each key

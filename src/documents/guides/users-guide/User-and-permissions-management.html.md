@@ -61,7 +61,7 @@ Next,
 - Enter the first and the last name of the user. (This name will be shown on the top right next to the user symbol when the user logs in.)
 - Enter the e-mail address of this user. You need to provide a valid, unique email address to enable users to reset their password.
 - Enter a phone number. The phone number is especially important if this user is supposed to use two-factor authentication.
--If you check "User must reset the password on next login", the user will have to set a password after the next login.
+- If you check "User must reset the password on next login", the user will have to set a password after the next login.
 - If you check "Send password reset link as e-mail", the user will receive an email message with a link to set a password. The email will be sent to the email address configured above.
 - Enter a password and confirm it. While entering the password, the strength of the password will be displayed. See ["Logging in"](/guides/users-guide/overview/#login) for more information on password strength  You can only enter a password if "Send password reset link as e-mail" is not checked.
 - Add global roles to the user.

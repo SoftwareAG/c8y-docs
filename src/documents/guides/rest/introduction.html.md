@@ -31,7 +31,7 @@ For example, many operating systems come pre-installed with the "curl" command. 
 
 	$ curl -u <username>:<password> https://<yourURL>.cumulocity.com/platform
 
-Replace "username" and "password" with the username and password that you used to register to Cumulocity. Similarly, replace "yourURL" with the URL you used at registration time. If you subscribed to Deutsche Telekom's M2M DevFree, replace "yourURL" with "dev-dg". 
+Replace "username" and "password" with the username and password that you used to register to Cumulocity. Similarly, replace "yourURL" with the URL you used at registration time. 
 
 The command will return links to all basic interfaces of Cumulocity:
 
@@ -58,21 +58,26 @@ You will notice that just a subset of the items in the inventory is actually ret
 
 ## Using Postman
 
-A convenient way to explore REST interface and the Cumulocity database content are browser extensions such as  [Postman](https://chrome.google.com/webstore/detail/postman-rest-client-packa/fhbjgbiflinjbdggehcddcbncdddomop?utm_source=chrome-ntp-launcher) or [Advanced REST Client](https://chrome.google.com/webstore/detail/advanced-rest-client/hgmloofddffdnphfgcellkdfbfbjeloo) for Chrome.
+A convenient way to explore REST interface and the Cumulocity database content are graphical REST clients such as [Postman](https://www.getpostman.com/).
 
 ![Example REST client](/guides/rest/postman.png)
 
-To set up Postman and import sample REST API commands, click the button below:
+Cumulocity provides numerous online API examples. If you want to make use of them, [download and install Postman](https://www.getpostman.com/). After starting Postman, you can choose to either create an account or click "Take me straight to the app". Then click the button below and choose the variant of Postman that you have just installed. You may see a browser security prompt asking you whether you actually want to run Postman (on Windows "Electron").
 
 [![Run in Postman](https://run.pstmn.io/button.svg)](https://app.getpostman.com/run-collection/7c7d00719ab238097686)
 
-Install Postman as described and import the examples ("API collection"). The collection comes with a sample, read-only environment. To configure further environments: 
+Now, click the "Collections" tab on the top left of Postman. You should see a folder "Cumulocity API" with the examples. Open that folder and the sub-folder "Alarms", then click on "Get collection of alarms". This shows an example on how to get alarms from Cumulocity. 
 
-* Click on drop-down menu next to the little "eye" widget to configure your Cumulocity URL. Click "Manage environments" and "Add". 
-* Then type a name for your tenant. Configure a key "url" with a value of "https://&lt;yourURL&gt;.cumulocity.com". Click "Submit".
-* Now, you can run REST calls. Click, for example, on "Cumulocity API", "Cumulocity API Overview", "GET Platform". By clicking the "Send" button, you can send the GET request to Cumulocity. The first time that you send a request to Cumulocity, you have to enter your credentials. Click on "Basic Auth" and enter your username and password, followed by a click on "Refresh Headers".
-* To explore the API, click on the links in the responses. Similar to navigate through pages of results, click on the "next" link at the bottom of the response. Add, for example, "?pageSize=100" to the end of the request URL to get more data than the default five items.
+Note that the example contains placeholders, in this case a placeholder "url" in "{{url}}/alarm/alarms". You need to tell Postman how to fill these placeholders and by this, how to connect to your Cumulocity account. To do so, create an ["environment"](https://www.getpostman.com/docs/environments) and configure the placeholders.
 
-> Note that Postman has two issues: It always sends a content type even if you do not specify one. If you see an error, please add the "Content-Type" header described in the reference manual. It also sometimes shows "Malformed JSON" as a response, which is a [bug](https://www.bountysource.com/issues/3141137-malformed-json-with-a-200-ok-and-no-content) in Postman.
+* Click on the cogwheel on the top right and choose "Manage Environments", then click the "Add".
+* Enter a name for the environment (e.g., your tenant name), then add values for the placeholders.
+* Configure a key "url" with a value of "https://&lt;yourURL&gt;.cumulocity.com". Click "Submit".
+* Configure a key "auth" with the value of the "Authorization" header for the REST requests.
+* Click "Add", then close the dialog. Now select your newly created environment from the drop-down box on the top right, that initially reads "No environment".
 
-> You can also configure a key "auth" in your Postman environment so that you do not have to enter your credentials each time. "auth" contains the HTTP authorization header with your Base64-encoded credentials. Example: Assume your username is "me" and your password is "secret". Go to http://ostermiller.org/calc/encode.html, type "me:secret" into the text area, then click the "Encode" button in the row "Base 64". The resulting text is "bWU6c2VjcmV0". Use "Basic bWU6c2VjcmV0" as value for "auth".
+<img src="/guides/rest/postmanenvironment.png" alt="Postman environment setup" style="max-width: 50%">
+
+> A simple way to determine the correct value for the "auth" key is to use a web tool. Example: Assume your username is "me" and your password is "secret". Go to http://ostermiller.org/calc/encode.html, type "me:secret" into the text area, then click the "Encode" button in the row "Base 64". The resulting text is "bWU6c2VjcmV0". Use "Basic bWU6c2VjcmV0" as value for "auth".
+
+Now start exploring the API.

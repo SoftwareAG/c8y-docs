@@ -11,7 +11,7 @@ Die Administrationsanwendung ermöglicht es Administratoren, ihre Benutzer, Anwe
 * Die [Abonnement Information](#home) einsehen.
 * [Nutzer](#users) und [Benutzergruppen](#user-groups) verwalten, einschliesslich ihrer [Berechtigungen](#permissions).
 * [Anwendungen](#applications) anlegen und verwalten.
-* Echtzeit [Ereignis Verarbeitung](#event-processing), Scripte und [Alarme Re-Priorisieren](#reprio-alarms).
+* [Echtzeitregeln](#event-processing) implementieren und [Alarme umpriorisieren](#reprio-alarms).
 * [Einstellungen](#settings) ändern.
 * [Aufbewahrungsrichtlinien](#retention) fuer Daten konfigurieren
 * [Email Warnung](#warningEmail) beim Erreichen des max. Datenvolumen einrichten und die Empfänger bestimmen. 
@@ -469,13 +469,13 @@ Wenn Sie den Cursor über einen Mandanten bewegen, werden die Schaltflächen "Su
 
 ![Usage statistics](/guides/users-guide/usagestats.png)
 
-## <a name="event-processing"></a>Verwalten der Ereignisverarbeitung
+## <a name="event-processing"></a>Verwalten von Echtzeitregeln
 
-Mithilfe der Ereignisverarbeitung können Sie eine Echtzeit-Geschäftsverarbeitungslogik angeben, die automatisch von Cumulocity ausgeführt wird, sobald neue Daten eingehen oder vorhandene Daten geändert werden. Die Logik wird in sogenannten "Modulen" eingesetzt. Module bestehen aus einer Menge von Anweisungen, die Sie schreiben [Cumulocity Event Language](/guides/konzepte/echtzeit). Klicken Sie auf "Ereignisverarbeitung", um die aktuellen Module zu sehen oder neue Module anzulegen.
+Echtzeitregeln führen automatisch eine Logik aus, sobald neue Daten eingehen oder vorhandene Daten geändert werden. Die Logik wird in sogenannten "Modulen" implementiert. Module bestehen aus einer Menge von Anweisungen, die Sie in der sogenannten [Cumulocity Event Language](/guides/concepts/realtime) schreiben. Klicken Sie auf "Echtzeitregeln", um die aktuellen Module zu sehen oder neue Module anzulegen.
 
 ![Event processing](/guides/users-guide/eventprocessingde.png)
 
-> Eine benutzerfreundliche Art, Echtzeit-Geschäftsverarbeitung zu spezifizieren, wird in der Cockpit-Anwendung über die sogenannte"[Smart Rules](/guides/benutzerhandbuch/cockpit-deutsch#rules)". Smart Rules sind "unter einem Dach" auch als Cumulocity Event Language-Anweisungen implementiert, und Sie können sie sehen, wenn Sie auf "Ereignis Verarbeitung" klicken. Sie können jedoch nicht Smart Rules von der Ereignisverarbeitung-Benutzeroberfläche bearbeiten.
+> Die sogenannten "[Smart Rules](/guides/benutzerhandbuch/cockpit-deutsch#rules)" sind eine benutzerfreundliche Art, Echtzeitverarbeitung in Standardsituationen wie beispielsweise Schwellwertanalyse durchzuführen. Auch Smart Rules sind "unter der Haube" in der Cumulocity Event Language realisiert. Sie können die Smart Rules in der Liste der Echtzeitregeln sehen, sie können sie jedoch dort nicht editieren.
 
 ### Neue Module Erstellen
 

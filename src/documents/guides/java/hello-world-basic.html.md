@@ -35,7 +35,7 @@ To develop a very simple "Hello, world!" agent for Cumulocity, you need to
 
 To create a plain Java project with Maven, run
 
-	$ mvn archetype:generate -DgroupId=c8y.example -DartifactId=hello-agent nt -DarchetypeArtifactId=maven-archetype-quickstart -DinteractiveMode=false
+	$ mvn archetype:generate -DgroupId=c8y.example -DartifactId=hello-agent -DarchetypeArtifactId=maven-archetype-quickstart -DinteractiveMode=false
 
 This will create a folder "hello-agent" in the current directory with a skeleton structure for your project.
 

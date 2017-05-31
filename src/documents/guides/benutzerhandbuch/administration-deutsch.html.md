@@ -420,7 +420,7 @@ Diese Funktion ist eine optionale Funktion, die nicht für alle Mandanten verfü
 
 In order to manage subtenants click on the subtenants menu. Subtenant management includes: Tenant creation, activation, suspension, subscribed applications and options.
 
-![Sub-tenants](/guides/users-guide/sub-tenantde.png)
+![Sub-tenants](/guides/users-guide/sub-tenantsde.png)
 
 > Tenant ID's must remain unique, two tenants cannot create subtenants with the same "URL/ID".
 > Subtenants cannot create an additional level of subtenants.

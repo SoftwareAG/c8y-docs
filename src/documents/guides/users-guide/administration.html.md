@@ -231,7 +231,7 @@ To browse the subtenants, click on the subtenants menu. The panel shows the foll
 
 - Tenant status: The small icon indicates the status of a tenant. It can show a green checkmark to indicate that the tenant is active or a red cross to indicate that the tenant is suspended and cannot be accessed.
 - ID: An identifier for this tenant. When you create a tenant, the ID is the first part of the URL. For example, if you create a tenant with the ID "acme" on cumulocity.com, the tenant's URL will be "acme.cumulocity.com". Note that while you can change the URL later on, you cannot change the ID anymore after the tenant was created.
-- Name: A name for this tenant, for example, the company name of your customer. 
+- Name: A name for this tenant, for example, the company name of your customer.
 - Domain: The URL that users will use to access this tenant.
 - Contact name: An administrative contact for the tenant.
 - Phone: The phone number of the administrative contact.
@@ -429,7 +429,7 @@ Retention rules are usually run during the night. When you edit a retention rule
 
 ![Add rule](/guides/users-guide/addrules.png)
 
-To add additional "Retention rules", click on "Add rule". Up to the "Maximum age" field, you can enter an asterisk ("*") into all fields to permit any value in that field.
+To add additional "Retention rules", click on "Add rule". Up to the "Maximum age" field, you can enter an asterisk ("\*") into all fields to permit any value in that field.
 
 - Select the type of data to clean up (alarms, measurements, events, operations, audit logs).
 - Enter a fragment type, if you want to be more specific about the data to be cleaned up. To clean up all connection loss alarms with this rule, select "alarms" and enter "c8y_UnavailabilityAlarm" into "type".
@@ -470,3 +470,85 @@ In case the quota is exceeded, an e-mail is sent to all tenant administrators to
 > - Day 2: the total storage is still at 13GB. The system determines that a 15% reduction of the retention rules is sufficient to be under the storage quota. So any measurement older than 68 days (80 days - 15%) and any other data older that 77 days (90 days - 15% results in 76.5 days, rounded to 77 days) is deleted.
 >
 > The total storage is now at 9.8GB.
+
+## <a name="data-broker"></a>Data Broker
+
+Data Broker is a place where you can manage data forwarding between different tenants across your infrastructure. Data Broker allows you to forward such data like:
+
+- events
+- alarms
+- measurements
+- managed objects
+
+Data Broker features two different views for connection management.
+
+![Data broker in navigator](/guides/users-guide/data-broker-on-navigator.JPG)
+
+### <a name="data-broker-connectors"></a> Connectors
+
+Connectors are used to define new destination tenant connection. It specifies where data should be forwarded and what data should it be, and under what condition it should happen.
+
+#### <a name="data-broker-connectors-list"></a> Connectors list
+
+Connectors list view displays all connectors currently defined on platform and statuses for those connectors.
+
+![Data broker connectors list](/guides/users-guide/data-broker-connectors-list.JPG)
+
+View supports following actions:
+
+* **disable connector** - stops data forwarding to destination tenant.
+* **enable connector** - starts data forwarding to destination tenant.
+* **edit connector** - allows to change connector filters configuration.
+* **duplicate connector** - creates new connector with filter configuration same as in connector it was duplicated from.
+* **remove connector** - removes connector definition. Upon removal of connector data forwarding is terminated.
+
+Connectors list view supporting real-time updates, so whenever there is new connector available, list will be updated.
+
+> Note that hovering over question mark near status label on connector will display tooltip.
+
+
+#### <a name="data-broker-connector-edit"></a> Connector edit
+
+Connector edit view allows you to create new connector or edit one of existing.
+
+![Data broker edit connector](/guides/users-guide/data-broker-edit-connector.JPG)
+
+When creating new connector form asks for following data:
+
+* **target url for data connector** - this is destination tenant url, to which data will be forwarded. This value is not allowed for change in edit view.
+* **description** - description for the connector, which will also be visible in subscriptions list after finishing subscription bootstrap process.
+* **data filters** - define filters for the connector. Connector must be provided with at least one filter.
+
+> Note that filter defines set of rules for data to be forwarded.
+
+Each data filter can be provided with following information:
+
+* **API** - defines what kind of data should be forwarded
+* **fragments to filter** - list of fragments required in the document. Documents not containing these fragments would not be forwarded.
+* **fragments to copy** - list of fragment names which should be copied from local document to remote document in forwarding process. If not selected by default copies only standard fragments.
+* **type filter** - type required in the document to be forwarded. Documents not containing this type would not be forwarded.
+
+> Note that if filter was added but no value modified only standard properties will be forwarded. See filer header to get hint about current filter configuration.
+
+List of standard properties to be forwarded in case of standard filter configuration:
+
+* **for alarm create:** "type", "text", "time", "severity", "status"
+* **for alarm update:** "status", "text", "severity"
+* **for event create:** "type", "text", "time"
+* **for measurement create:** "type", "text", "time"
+* **for managed object create and update:** "type", "name", "c8y_IsBinary", "c8y_IsDeviceGroup", "c8y_IsDevice", "c8y_DeviceGroup", "c8y_DeviceSubgroup", "c8y_SmartRule", "c8y_applications_storage", "c8y_DynamicGroup", "c8y_DeviceQueryString"
+
+
+### <a name="data-broker-subscriptions"></a> Subscriptions
+
+Subscription list view shows available subscriptions and their statuses.
+
+![Data broker subscriptions list](/guides/users-guide/data-broker-subscriptions-list.JPG)
+
+As you can see on image above there're shown 4 different views for 4 different subscriptions. Description for each of those in order from left to right
+represent bootstrap process for subscription registration:
+
+* **add subscription** - represent view shown when user clicks "`add subscription`" link. It requires connector's security code to be provided in order to create new subscription.
+* **waiting for connection** - view which comes right after registration. Current view shows that subscription has been created and waiting for connector to send some data.
+* **accept view** - when connection has been established, the connection must be accepted in order to finish subscription registration.
+* **active subscription** - the last view shows fully configured subscription. This view features such information like subscription status and controls for subscription state.

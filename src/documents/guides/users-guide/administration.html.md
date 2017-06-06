@@ -278,6 +278,14 @@ If a tenant is suspended, the tenant's data remains in the database and can be m
 
 To finally delete a tenant and remove all the data of the tenant, click the "x" button while hovering over the tenant in the list. This action cannot be reverted. For security reasons, it is only available in the management tenant.
 
+### <a name="tenants-custom-properties"></a>Editing custom properties
+
+In order to edit custom properties those should be first defined via ["Properties Library"](#properties)
+
+![Custom Properties](/guides/users-guide/subtenant-custom-properties.JPG)
+
+This view allows to define values for defined custom properties. Those properties are displayed after in [statistics table](#usage-stats-custom-properties).
+
 ### <a name="usage-stats"></a> Retrieving usage statistics
 
 The usage statistics menu provides you with information about each subtenant. The statistics show:
@@ -299,6 +307,11 @@ The usage statistics menu provides you with information about each subtenant. Th
 
 Statistics table can also contain custom properties created by users. Content of tenant statistics table can be sorted based on those properties.
 
+Statistics can be exported by clicking "Export CSV" link. Then dialog will appear to customize CSV output (see image below).
+
+<img src="/guides/users-guide/usage-statistics-export.JPG" style="width:400px;"></img>
+
+> Note that you can define custom properties in ["Properties Library"](#properties) and then assign some value to it in [Subtenant "Custom Properties"](#tenants-custom-properties).
 
 ## <a name="tfa"></a>Using two-factor authentication
 
@@ -421,7 +434,7 @@ In the properties library, additional custom properties can be added to tenants,
 
 ![Properties library](/guides/users-guide/properties_library.png)
 
-To create a new property click on "Add property". Afterwards, a form will pop-up. Enter the name of the new property, label and select the desired type of the property (String, number, boolean, etc.). Additionally, you can also check the validation rules which will be required for the new property: 
+To create a new property click on "Add property". Afterwards, a form will pop-up. Enter the name of the new property, label and select the desired type of the property (String, number, boolean, etc.). Additionally, you can also check the validation rules which will be required for the new property:
 
 - "Required": If this validation rule is checked, the property will be required to be filled (During alarm creation for example). If the property type is "Boolean", this rule cannot be checked.
 - "Default Value":  Add a default value which will be automatically filled in the custom property field. Please note that, only "String" type properties can have this validation rule.
@@ -431,7 +444,7 @@ To create a new property click on "Add property". Afterwards, a form will pop-up
 - "Maximum length": Enter the maximum length required for the string.
 - "Regular expression": Add the regular expression which will be required in order to fill the custom property field.
 
-When ready, click save. 
+When ready, click save.
 
 ![Add new property](/guides/users-guide/addproperty.png)
 
@@ -461,7 +474,7 @@ Retention rules are usually run during the night. When you edit a retention rule
 
 ![Add rule](/guides/users-guide/addrules.png)
 
-To add additional "Retention rules", click on "Add rule". Up to the "Maximum age" field, you can enter an asterisk ("*") into all fields to permit any value in that field.
+To add additional "Retention rules", click on "Add rule". Up to the "Maximum age" field, you can enter an asterisk ("\*") into all fields to permit any value in that field.
 
 - Select the type of data to clean up (alarms, measurements, events, operations, audit logs).
 - Enter a fragment type, if you want to be more specific about the data to be cleaned up. To clean up all connection loss alarms with this rule, select "alarms" and enter "c8y_UnavailabilityAlarm" into "type".

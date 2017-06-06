@@ -379,6 +379,7 @@ By expanding the "Settings" menu, administrators can:
 
 - Change the [password policy](#changing-password-settings).
 - Change the [TFA settings](#changing-tfa-settings).
+- Manage the [properties library](#properties).
 - Change the [default application](#default-app).
 - Change the [access control](#access-control) settings.
 - [Enable or disable the dashboards via e-mail feature](#enabling-server-side-agents)
@@ -411,6 +412,30 @@ To change the TFA settings, click on "Password" under the "Settings" menu item. 
 ![TFA settings](/guides/users-guide/tfasettings.png)
 
 To disable two-factor authentication, simply deselect the box "Allow two-factor authentication". Click on "Save TFA settings" to apply your changes.
+
+### <a name="properties"></a>Managing the properties library
+
+In the properties library, additional custom properties can be added to tenants, alarms, events or inventory items. These properties can be customized to your own preference.
+
+> Custom properties for “Subtenants” also can be observed or exported in the “Usage statistics” menu.
+
+![Properties library](/guides/users-guide/properties_library.png)
+
+To create a new property click on "Add property". Afterwards, a form will pop-up. Enter the name of the new property, label and select the desired type of the property (String, number, boolean, etc.). Additionally, you can also check the validation rules which will be required for the new property: 
+
+- "Required": If this validation rule is checked, the property will be required to be filled (During alarm creation for example). If the property type is "Boolean", this rule cannot be checked.
+- "Default Value":  Add a default value which will be automatically filled in the custom property field. Please note that, only "String" type properties can have this validation rule.
+- "Minimum": Enter a minimum integer value.
+- "Maximum": Enter a maximum integer value.
+- "Minimum length": Enter the minimum length required for the string.
+- "Maximum length": Enter the maximum length required for the string.
+- "Regular expression": Add the regular expression which will be required in order to fill the custom property field.
+
+When ready, click save. 
+
+![Add new property](/guides/users-guide/addproperty.png)
+
+To edit a property, simply click on the name of the property. To remove a property, click on the property first and then click on “Remove”.
 
 ### <a name="default-app"></a>Changing the default application
 

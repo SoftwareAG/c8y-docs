@@ -473,7 +473,7 @@ In case the quota is exceeded, an e-mail is sent to all tenant administrators to
 
 ## <a name="data-broker"></a>Data Broker
 
-Data Broker is a place where you can manage data forwarding between different tenants across your infrastructure. Data Broker allows you to forward such data like:
+Data Broker is a place where you can manage data forwarding between different tenants across your infrastructure. Data Broker allows you to forward the following data:
 
 - events
 - alarms
@@ -490,7 +490,7 @@ Connectors are used to define new destination tenant connection. It specifies wh
 
 #### <a name="data-broker-connectors-list"></a> Connectors list
 
-Connectors list view displays all connectors currently defined on platform and statuses for those connectors.
+Connectors list view displays all connectors currently defined on platform and their statuses.
 
 ![Data broker connectors list](/guides/users-guide/data-broker-connectors-list.JPG)
 
@@ -502,14 +502,14 @@ View supports following actions:
 * **duplicate connector** - creates new connector with filter configuration same as in connector it was duplicated from.
 * **remove connector** - removes connector definition. Upon removal of connector data forwarding is terminated.
 
-Connectors list view supporting real-time updates, so whenever there is new connector available, list will be updated.
+Connectors list view supports real-time updates, so whenever there is new connector available, list will be updated.
 
 > Note that hovering over question mark near status label on connector will display tooltip.
 
 
 #### <a name="data-broker-connector-edit"></a> Connector edit
 
-Connector edit view allows you to create new connector or edit one of existing.
+Connector edit view allows you to create new connector or edit existing one.
 
 ![Data broker edit connector](/guides/users-guide/data-broker-edit-connector.JPG)
 
@@ -525,10 +525,10 @@ Each data filter can be provided with following information:
 
 * **API** - defines what kind of data should be forwarded
 * **fragments to filter** - list of fragments required in the document. Documents not containing these fragments would not be forwarded.
-* **fragments to copy** - list of fragment names which should be copied from local document to remote document in forwarding process. If not selected by default copies only standard fragments.
-* **type filter** - type required in the document to be forwarded. Documents not containing this type would not be forwarded.
+* **fragments to copy** - list of fragment names which should be copied from local document to remote document in forwarding process. If not selected then only standard fragments are copied by default (see the list below).
+* **type filter** - type required in the document to be forwarded. Documents not containing this type will not be forwarded.
 
-> Note that if filter was added but no value modified only standard properties will be forwarded. See filer header to get hint about current filter configuration.
+> Note that if filter was added but no value modified only standard properties will be forwarded. See filter header to get hint about current filter configuration.
 
 List of standard properties to be forwarded in case of standard filter configuration:
 
@@ -545,10 +545,9 @@ Subscription list view shows available subscriptions and their statuses.
 
 ![Data broker subscriptions list](/guides/users-guide/data-broker-subscriptions-list.JPG)
 
-As you can see on image above there're shown 4 different views for 4 different subscriptions. Description for each of those in order from left to right
-represent bootstrap process for subscription registration:
+As you can see in the image above there're shown 4 different views for 4 different subscriptions. Description for each of those in order from left to right represent bootstrap process for subscription registration:
 
-* **add subscription** - represent view shown when user clicks "`add subscription`" link. It requires connector's security code to be provided in order to create new subscription.
-* **waiting for connection** - view which comes right after registration. Current view shows that subscription has been created and waiting for connector to send some data.
-* **accept view** - when connection has been established, the connection must be accepted in order to finish subscription registration.
-* **active subscription** - the last view shows fully configured subscription. This view features such information like subscription status and controls for subscription state.
+* **add subscription** - presents a view shown when user clicks "`add subscription`" link. It requires connector's security code to be provided in order to create new subscription.
+* **waiting for connection** - view which comes right after registration. This view shows that subscription has been created and is waiting for connector to send some data.
+* **accept view** - when connection has been established, it must be accepted in order to finish subscription registration.
+* **active subscription** - the last view shows fully configured subscription. This view features information such as subscription status and controls for subscription state.

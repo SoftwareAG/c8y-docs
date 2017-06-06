@@ -17,6 +17,7 @@ The Administration application enables account administrators to manage their us
 * Configure the [retention policies](#retention) for your data.
 * Configure the recipients and trigger of the [warning e-mail](#warningEmail) for maximum storage being reached.
 * Manage [stored files](#files) such as firmware images or log files.
+* Forward data between different tenants with [data broker](#data-broker).
 
 For more information on users and permissions, please see the ["User and permissions management"](/guides/users-guide/user-and-permissions-management) guide.
 

@@ -487,11 +487,11 @@ Data Broker features two different views for connection management.
 
 ### <a name="data-broker-connectors"></a> Connectors
 
-Connectors are used to define new destination tenant connection. It specifies where data should be forwarded and what data should it be, and under what condition it should happen.
+Connectors are used to define connection to new destination tenant. It specifies where data should be forwarded and what data should it be, and under what condition it should happen.
 
 #### <a name="data-broker-connectors-list"></a> Connectors list
 
-Connectors list view displays all connectors currently defined on platform and their statuses.
+Connectors list view displays all connectors currently defined on the platform and their statuses.
 
 ![Data broker connectors list](/guides/users-guide/data-broker-connectors-list.JPG)
 
@@ -503,7 +503,7 @@ View supports following actions:
 * **duplicate connector** - creates new connector with filter configuration same as in connector it was duplicated from.
 * **remove connector** - removes connector definition. Upon removal of connector data forwarding is terminated.
 
-Connectors list view supports real-time updates, so whenever there is new connector available, list will be updated.
+Connectors list view supports real-time updates, so whenever there is a new connector available, list will be updated.
 
 > Note that hovering over question mark near status label on connector will display tooltip.
 
@@ -514,7 +514,7 @@ Connector edit view allows you to create new connector or edit existing one.
 
 ![Data broker edit connector](/guides/users-guide/data-broker-edit-connector.JPG)
 
-When creating new connector form asks for following data:
+When creating new connector, form asks for following data:
 
 * **target url for data connector** - this is destination tenant url, to which data will be forwarded. This value is not allowed for change in edit view.
 * **description** - description for the connector, which will also be visible in subscriptions list after finishing subscription bootstrap process.
@@ -529,7 +529,7 @@ Each data filter can be provided with following information:
 * **fragments to copy** - list of fragment names which should be copied from local document to remote document in forwarding process. If not selected then only standard fragments are copied by default (see the list below).
 * **type filter** - type required in the document to be forwarded. Documents not containing this type will not be forwarded.
 
-> Note that if filter was added but no value modified only standard properties will be forwarded. See filter header to get hint about current filter configuration.
+> Note that if filter was added, but no value modified, then only standard properties will be forwarded. See filter header to get hint about current filter configuration.
 
 List of standard properties to be forwarded in case of standard filter configuration:
 
@@ -546,9 +546,13 @@ Subscription list view shows available subscriptions and their statuses.
 
 ![Data broker subscriptions list](/guides/users-guide/data-broker-subscriptions-list.JPG)
 
-As you can see in the image above there're shown 4 different views for 4 different subscriptions. Description for each of those in order from left to right represent bootstrap process for subscription registration:
+As you can see in the image above, there're shown 4 different views for 4 different subscriptions. Description for each of those in order from left to right represent bootstrap process for subscription registration:
 
 * **add subscription** - presents a view shown when user clicks "`add subscription`" link. It requires connector's security code to be provided in order to create new subscription.
 * **waiting for connection** - view which comes right after registration. This view shows that subscription has been created and is waiting for connector to send some data.
 * **accept view** - when connection has been established, it must be accepted in order to finish subscription registration.
 * **active subscription** - the last view shows fully configured subscription. This view features information such as subscription status and controls for subscription state.
+
+When subscription reaches last **active subscription** state, it means that data forwarding process already started. You can explore data received by going to **Cockpit application** and look up for special group in there with same name as created subscription (see image below).  
+
+![Data broker group in cockpit app](/guides/users-guide/data-broker-group-created.JPG)

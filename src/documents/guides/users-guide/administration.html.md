@@ -231,7 +231,7 @@ To browse the subtenants, click on the subtenants menu. The panel shows the foll
 
 - Tenant status: The small icon indicates the status of a tenant. It can show a green checkmark to indicate that the tenant is active or a red cross to indicate that the tenant is suspended and cannot be accessed.
 - ID: An identifier for this tenant. When you create a tenant, the ID is the first part of the URL. For example, if you create a tenant with the ID "acme" on cumulocity.com, the tenant's URL will be "acme.cumulocity.com". Note that while you can change the URL later on, you cannot change the ID anymore after the tenant was created.
-- Name: A name for this tenant, for example, the company name of your customer. 
+- Name: A name for this tenant, for example, the company name of your customer.
 - Domain: The URL that users will use to access this tenant.
 - Contact name: An administrative contact for the tenant.
 - Phone: The phone number of the administrative contact.
@@ -282,16 +282,23 @@ To finally delete a tenant and remove all the data of the tenant, click the "x" 
 
 The usage statistics menu provides you with information about each subtenant. The statistics show:
 
-- Id: Unique id of the subtenant.
-- External reference: This field is for individual usage, for example, you can add a link to the CRM system here or an internal customer number.
+- Id: Unique id of the subtenant
 - API requests: Number of API requests, including requests from  devices and applications.
 - Device API requests: Number of API requests from devices
 - Storage (MB): The amount of data stored in your account.
+- Root Devices: The amount of devices excluding child devices.
 - Devices: Total number of devices connected to the tenant.
 - Subscribed application: This column shows number of applications that the subtenant is subscribed to.
 - Creation time: The date and time of the creation of the subtenant.
+- Parent: shows parent tenant if created with subtenant (management tenant only).
+- External reference: This field is for individual usage, for example, you can add a link to the CRM system here or an internal customer number.
 
-![Usage statistics](/guides/users-guide/usagestats.png)
+![Usage statistics](/guides/users-guide/usage-statistics-list.JPG)
+
+#### <a name="usage-stats-custom-properties"></a> Custom properties
+
+Statistics table can also contain custom properties created by users. Content of tenant statistics table can be sorted based on those properties.
+
 
 ## <a name="tfa"></a>Using two-factor authentication
 

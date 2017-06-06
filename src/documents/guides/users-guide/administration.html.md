@@ -414,7 +414,7 @@ In the properties library, additional custom properties can be added to tenants,
 
 ![Properties library](/guides/users-guide/properties_library.png)
 
-To create a new property click on "Add property". Afterwards, a form will pop-up. Enter the name of the new property, label and select the desired type of the property (String, number, boolean, etc.). Additionally, you can also check the validation rules which will be required for the new property: 
+To create a new property, click on "Add property". Afterwards, a form will pop-up. Enter the name of the new property, enter the label and select the desired type of the property (String, number, boolean, etc.). Additionally, you can also check the validation rules which will be required for the new property:
 
 - "Required": If this validation rule is checked, the property will be required to be filled (During alarm creation for example). If the property type is "Boolean", this rule cannot be checked.
 - "Default Value":  Add a default value which will be automatically filled in the custom property field. Please note that, only "String" type properties can have this validation rule.
@@ -424,9 +424,13 @@ To create a new property click on "Add property". Afterwards, a form will pop-up
 - "Maximum length": Enter the maximum length required for the string.
 - "Regular expression": Add the regular expression which will be required in order to fill the custom property field.
 
-When ready, click save. 
+When ready, click save.
 
 ![Add new property](/guides/users-guide/addproperty.png)
+
+Once created, the custom properties can be observed in the “Custom properties” tab as shown in the screenshot below. In this case, a tenant property named “Custom” was created. 
+
+![Custom properties tab](/guides/users-guide/customproptab.png)
 
 To edit a property, simply click on the name of the property. To remove a property, click on the property first and then click on “Remove”.
 

@@ -280,7 +280,7 @@ To finally delete a tenant and remove all the data of the tenant, click the "x" 
 
 ### <a name="tenants-custom-properties"></a>Editing custom properties
 
-In order to edit custom properties those should be first defined via ["Properties Library"](#properties)
+"Custom properties" tab allows you to view and modify values of custom properties, either predefined ones (like "External reference") or those defined in ["Properties library"](#properties). Such properties are also displayed as columns in [usage statistics table](#usage-stats-custom-properties).
 
 ![Custom Properties](/guides/users-guide/subtenant-custom-properties.JPG)
 
@@ -298,20 +298,20 @@ The usage statistics menu provides you with information about each subtenant. Th
 - Devices: Total number of devices connected to the tenant.
 - Subscribed application: This column shows number of applications that the subtenant is subscribed to.
 - Creation time: The date and time of the creation of the subtenant.
-- Parent: shows parent tenant if created with subtenant (management tenant only).
+- Parent: The name of parent tenant (available only for management tenant).
 - External reference: This field is for individual usage, for example, you can add a link to the CRM system here or an internal customer number.
 
 ![Usage statistics](/guides/users-guide/usage-statistics-list.JPG)
 
 #### <a name="usage-stats-custom-properties"></a> Custom properties
 
-Statistics table can also contain custom properties created by users. Content of tenant statistics table can be sorted based on those properties.
+Statistics table also displays custom properties and allows you to sort and filter the list of tenants by their values.
 
-Statistics can be exported by clicking "Export CSV" link. Then dialog will appear to customize CSV output (see image below).
+It's possible to export current view of statistics table to CSV file by clicking "Export CSV" link (it will show a dialog where you can customize CSV output, see screenshot below).
 
 <img src="/guides/users-guide/usage-statistics-export.JPG" style="width:400px;"></img>
 
-> Note that you can define custom properties in ["Properties Library"](#properties) and then assign some value to it in [Subtenant "Custom Properties"](#tenants-custom-properties).
+> Note that you can define custom properties in ["Properties Library"](#properties) and then set their values in tenant's ["Custom Properties"](#tenants-custom-properties) tab.
 
 ## <a name="tfa"></a>Using two-factor authentication
 
@@ -448,7 +448,7 @@ When ready, click save.
 
 ![Add new property](/guides/users-guide/addproperty.png)
 
-Once created, the custom properties can be observed in the “Custom properties” tab as shown in the screenshot below. In this case, a tenant property named “Custom” was created. 
+Once created, the custom properties can be observed in the “Custom properties” tab as shown in the screenshot below. In this case, a tenant property named “Custom” was created.
 
 ![Custom properties tab](/guides/users-guide/customproptab.png)
 

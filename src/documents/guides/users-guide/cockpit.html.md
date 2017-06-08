@@ -398,6 +398,8 @@ Use the menu and select "Send as a widget to a dashboard".
 
 This will show a modal dialog with all dashboards of the current object. Move to the relevant dashboard and press "Select" to create a new widget in the selected dashboard.
 
+> Note that dashboard should be created before to appear in this dialog. You can create one by selecting "Add dashboard" option from mentioned menu.
+
 ![send to dashboard](/guides/users-guide/data-explorer-send-to-dashboard.JPG)
 
 ### Exporting Measurement data to csv or xlsx files
@@ -421,7 +423,7 @@ A"Generating Report" window will appear. The files will load depending on how ma
 
 ## <a name="dashboards"></a>Working with Dashboards
 
-Dashboards provide you with a customized visualisation of your data with a set of widgets. Widgets can display maps, images, graphs, tables and other graphic representations of data. Cumulocity comes with a number of preset widgets, see section "[Widget Package](#widget-package)" for details. You can develop also your own widgets and add them to your Cumulocity account. See the [Web developer's guide](/guides/web/).
+Dashboards provide you with a customized visualization of your data with a set of widgets. Widgets can display maps, images, graphs, tables and other graphic representations of data. Cumulocity comes with a number of preset widgets, see section "[Widget Package](#widget-package)" for details. You can develop also your own widgets and add them to your Cumulocity account. See the [Web developer's guide](/guides/web/).
 
 ### Creating new Dashboards
 

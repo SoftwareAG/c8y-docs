@@ -183,12 +183,12 @@ Gateway devices can use the Cockpit application like this.
 
 Gateway devices are represented in Device Management as top level devices. Their attached devices (like Zigbee, Modbus or KNX devices) are shown as "Child Devices" (right side). These child devices can be organized in the asset hierarchy as shown above.
 
-The asset hierarchy and the device hierarchy are self sufficient: While inside the Device Management applications all child devices are below the gateway device, the same child devices are organized in two different buildings in the Cockpit application. 
+The asset hierarchy and the device hierarchy are self sufficient: While inside the Device Management applications all child devices are below the gateway device, the same child devices are organized in two different buildings in the Cockpit application.
 **Summary:** Devices can have totally different hierarchies in the Device Management Application or in the Cockpit Application.
 
 ### Cockpit Assets versus Business Assets
 
-The mapping of objects in the Cockpit asset hierarchy is a virtual hierarchy. 
+The mapping of objects in the Cockpit asset hierarchy is a virtual hierarchy.
 If you manage trucks within the Cumulocity platform, then each truck is represented via its individual tracking device communicating with Cumulocity.
 
 For building management, it is most common that a group of sensors inside a building represents the building as a group communicating with the Cumulocity platform.
@@ -284,7 +284,13 @@ To visualize data points, follow these steps:
 
 * Browse more data by changing the time period or value ranges.
 
-* If you want to store your current configuration for later, save it as a widget using "Send as widget to dashboard..."
+* If you want to store your current configuration for later, save it as a widget using "Send as widget to dashboard" or "Send as widget to report" (see image below).
+
+<img src="/guides/users-guide/data-explorer-send-as-widget.JPG" name="data-explorer-send-widget-to-dashboard" style="width:25%;"/>
+"Send as widget to dashboard"
+
+<img src="/guides/users-guide/data-explorer-save-as-report.JPG" name="data-explorer-send-widget-to-report" style="width:25%;"/>
+"Send as widget to report"
 
 The data explorer and dashboards are closely related:
 
@@ -298,7 +304,7 @@ When clicking on the tab "Data explorer", it will open.
 
 It is pre-filled with available data points of the object (group or device). The first 5 data points are shown by default.
 
-![image alt text](/guides/users-guide/image_10.png)
+![data explorer](/guides/users-guide/data-explorer-main-view.JPG)
 
 The visualisation is generated based on data point properties.
 
@@ -310,13 +316,13 @@ The data points properties (min, max, color, ..) are pre-filled as follows:
 
 There can be more than one matching data point entry in the "Data Point Library". In that case, the first one is selected automatically by the system. You can overwrite this selection by using the cogwheel symbol and selecting "Load X from Library". X refers to the entry in the data point library.
 
-![image alt text](/guides/users-guide/image_11.png)
+![edit data points](/guides/users-guide/data-explorer-save-as-report.JPG)
 
 ### Adding data points
 
 Additional data points can be added to the data explorer by clicking "+ Add data point". This will bring up the following dialog:
 
-![image alt text](/guides/users-guide/image_12.png)
+![add data point](/guides/users-guide/data-explorer-add-data-point.JPG)
 
 In the top of the dialog, select a device from the asset hierarchy. Only the asset hierarchy below the objects selected in the navigator is visible. If "Data explorer" in the navigator was selected, the complete asset hierarchy is visible.
 
@@ -356,7 +362,7 @@ The following properties are available for data points:
 
 * Y Axis: Select on which y-axis the data point should be shown. Options are: Auto, left, right.
 
-* Asset: The name of the asset of the data point. This field is not editable. The internal name of the data point (measurement fragment and series) is shown.
+* Target: The name of the asset of the data point. This field is not editable. The internal name of the data point (measurement fragment and series) is shown.
 
 ### Browsing in the data explorer
 
@@ -366,7 +372,7 @@ To navigate the data explorer :
 
 * Select a time range in the diagram
 
-* Double click, to finish editing time range
+> Note that moving time period to the past or selecting time range in the past will switch off real-time updates.
 
 ### Working with the Y-Axis
 
@@ -392,7 +398,7 @@ Use the menu and select "Send as a widget to a dashboard".
 
 This will show a modal dialog with all dashboards of the current object. Move to the relevant dashboard and press "Select" to create a new widget in the selected dashboard.
 
-![image alt text](/guides/users-guide/image_13.png)
+![send to dashboard](/guides/users-guide/data-explorer-send-to-dashboard.JPG)
 
 ### Exporting Measurement data to csv or xlsx files
 
@@ -407,7 +413,7 @@ Users have the option to download measurement data as csv or xlsx files. The exp
 
 To download measurement data in either csv or xlsx first navigate to "Data Explorer", select your desired time range and then click on the small cogwheel button located at the top-right.
 
-![Export measurement data](/guides/users-guide/exportmeasuredata.png)
+![Export measurement data](/guides/users-guide/data-explorer-export-data.JPG)
 
 Choose whether to download CSV or Excel(XLSX)
 
@@ -437,7 +443,7 @@ To create a dashboard, navigate to an object in the asset hierarchy. Afterward, 
 
 Click "Save" to create and open the dashboard. While there are no widgets on the dashboard, you will see an "Add Widget" button. Use this button to add your first widget to the dashboard.
 
-### Creating a dashboard for identical devices 
+### Creating a dashboard for identical devices
 
 You can create one dashboard that will appear for all identical devices. To do so, create a new dashboard as described above. Before clicking "Save", select the option "Apply dashboard to all devices of type _type_". The text "_type_" is replaced with the type of the device that is currently selected.
 
@@ -446,8 +452,8 @@ Then this dashboard should appear for all identical devices. Changes made to thi
 > You can only add widgets and data to the dashboard for the device itself. It is not possible to add data from child devices because the structure of these devices might be different from device to device.
 
 ### Adding permissions to a Dashboard
- 
-Permissions can be granted to a specific user role only. To do so, create a new dashboard as described above or edit a dashboard. 
+
+Permissions can be granted to a specific user role only. To do so, create a new dashboard as described above or edit a dashboard.
 
 > To edit a dashboard, click on the cogwheel on the top-right and select "Edit Dashboard".
 
@@ -568,7 +574,7 @@ Show user-defined content. The content can be formatted using HTML.
 
 The parameter to configure:
 
-* Target device or group: Select the object for which optional HTML expressions are evaluated. 
+* Target device or group: Select the object for which optional HTML expressions are evaluated.
 
 * HTML content:
 
@@ -860,7 +866,7 @@ Smart Rules can be created either under "Configuration -> Smart Rules" or under 
 
 * Using the search field you can also activate the current Smart Rule for target devices or assets. Note that this step is optional.
 
-* Select whether the rule will be enabled or disabled. 
+* Select whether the rule will be enabled or disabled.
 
 * Click "CREATE".
 
@@ -881,13 +887,13 @@ A single Smart Rule can be activated (switched on) and deactivated (switched off
 
 To deactivate or activate a Smart Rule for a group or device, simply go to the Info tab and click on the button to enable or disable the rule.  
 
-![Info tab](/guides/users-guide/infotab.png)	
+![Info tab](/guides/users-guide/infotab.png)
 
 ### Editing, cloning or removing Smart Rules
 
 To edit, clone or remove a specific Smart Rule just click on the cogwheel located to the far right of the Smart Rule and click on the desired option.
 
-For easier debugging, there is a direct link from a smart rule to a corresponding event processing module. Click on the cogwheel and then choose "Inspect". 
+For easier debugging, there is a direct link from a smart rule to a corresponding event processing module. Click on the cogwheel and then choose "Inspect".
 
 ### Example: Defining explicit thresholds
 
@@ -1052,7 +1058,7 @@ The rule uses the following parameters:
 
 ![image alt text](/guides/users-guide/image_29.png)
 
-* Alarm types: The types of the alarms triggering the rule. For each newly created alarm with one of these types in the list the rule is triggered. 
+* Alarm types: The types of the alarms triggering the rule. For each newly created alarm with one of these types in the list the rule is triggered.
 
 * Send to: Email addresses for sending the e-mail to. Multiple addresses can be separated by a comma (",", do not use a space!).
 
@@ -1088,7 +1094,7 @@ The rule uses the following parameters:
 
 * Message: Text of SMS with max. 160 characters. You can use variable of the form #{name}. Supported variables are listed under "Smart Rule Variables" below.
 
-### Troubleshooting 
+### Troubleshooting
 
 * Please check the same steps as for the threshold rule above.
 
@@ -1134,7 +1140,7 @@ The rule uses the following parameters:
 
 No alarm will be generated until the device crosses the geofence border for the first time.
 
-### Troubleshooting 
+### Troubleshooting
 
 * Please make sure the device was inside the geofence at least once after creating/activating the rule
 
@@ -1181,7 +1187,7 @@ The rule uses the following parameters:
 
 * Type: Type of measurement. The incoming measurement must have the same type as configured. _Note:_ When creating a rule from the data explorer, the type is already filled in.
 
-* Time interval: Time interval, for calculating consumption values. 
+* Time interval: Time interval, for calculating consumption values.
 
 * Type: Type of the raised alarm.
 
@@ -1257,7 +1263,7 @@ The rule uses the following parameters:
 
 * Acknowledgment text: The acknowledgment message (will be read after the main message), for example: "Please acknowledge this call by clicking on 5"
 
-* Acknowledgment number: The number of the button the receiver has to push to acknowledge. If the button will be pushed, the call will be successful and the alarm status will be changed to acknowledged. 
+* Acknowledgment number: The number of the button the receiver has to push to acknowledge. If the button will be pushed, the call will be successful and the alarm status will be changed to acknowledged.
 
 ### Troubleshooting
 

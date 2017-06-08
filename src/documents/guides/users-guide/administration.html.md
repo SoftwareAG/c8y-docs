@@ -284,8 +284,6 @@ To finally delete a tenant and remove all the data of the tenant, click the "x" 
 
 ![Custom Properties](/guides/users-guide/subtenant-custom-properties.JPG)
 
-This view allows to define values for defined custom properties. Those properties are displayed after in [statistics table](#usage-stats-custom-properties).
-
 ### <a name="usage-stats"></a> Retrieving usage statistics
 
 The usage statistics menu provides you with information about each subtenant. The statistics show:

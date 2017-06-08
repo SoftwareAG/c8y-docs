@@ -105,7 +105,7 @@ In order to clone an application:
 
 ### <a name="add-remove-plugin"></a>Adding and removing plugins
 
-In order to configure and extend the function provided with a smartapp, you can add plugins (as ZIP files) to your applications. To add additional plugins, go to â€œOwn applicationsâ€, move the cursor over your desired applications and click on â€œAdd Pluginâ€. You can drag the plugin into the box or just select them from your computer.
+In order to configure and extend the function provided with a smartapp, you can add plugins (as ZIP files) to your applications. To add additional plugins, go to "Own applications", move the cursor over your desired applications and click on "Add Plugin". You can drag the plugin into the box or just select them from your computer.
 
 ![Plugins](/guides/users-guide/plugins.png)
 
@@ -136,9 +136,9 @@ To remove a plugin, click on the cogwheel next to the desired plugin and click r
 ### Restoring to an older application version
 
 Users can restore old versions of an application.
-If you â€œset activeâ€ a specific version of the app, then this will be the version used by users.
+If you "set active" a specific version of the app, then this will be the version used by users.
 
->Note that the â€œArchiveâ€ tab is not available for subscribed applications, as only the owner of the application can perform this action.
+>Note that the "Archive" tab is not available for subscribed applications, as only the owner of the application can perform this action.
 
 ### Uploading archives
 
@@ -530,10 +530,11 @@ Each data filter can be provided with following information:
 * **type filter** - type required in the document to be forwarded. Documents not containing this type will not be forwarded.
 
 > Note that if filter was added, but no value modified, then only standard properties will be forwarded. See filter header to get hint about current filter configuration.
+> For example, if you add a filter for Alarms API but you leave "Fragments to copy" empty, then only standard fields will be forwarded [standard properties for alarm](#data-broker-standard-properties-for-alarms). If you check "Copy all" checkbox then all fragments will be forwarded.
 
 List of standard properties to be forwarded in case of standard filter configuration:
 
-* **for alarm create:** "type", "text", "time", "severity", "status"
+* <a name="data-broker-standard-properties-for-alarms"></a>**for alarm create:** "type", "text", "time", "severity", "status"
 * **for alarm update:** "status", "text", "severity"
 * **for event create:** "type", "text", "time"
 * **for measurement create:** "type", "text", "time"

@@ -546,7 +546,7 @@ Subscription list view shows available subscriptions and their statuses.
 
 ![Data broker subscriptions list](/guides/users-guide/data-broker-subscriptions-list.JPG)
 
-As you can see in the image above, there're shown 4 different views for 4 different subscriptions. Description for each of those in order from left to right represent bootstrap process for subscription registration:
+In the screenshot above you can see 4 views. Each of them represent a state in subscription's bootstrap process. These states can be described as follows (in order from left to right):
 
 * **add subscription** - presents a view shown when user clicks "`add subscription`" link. It requires connector's security code to be provided in order to create new subscription.
 * **waiting for connection** - view which comes right after registration. This view shows that subscription has been created and is waiting for connector to send some data.

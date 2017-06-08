@@ -553,6 +553,6 @@ As you can see in the image above, there're shown 4 different views for 4 differ
 * **accept view** - when connection has been established, it must be accepted in order to finish subscription registration.
 * **active subscription** - the last view shows fully configured subscription. This view features information such as subscription status and controls for subscription state.
 
-When subscription reaches last **active subscription** state, it means that data forwarding process already started. You can explore data received by going to **Cockpit application** and look up for special group in there with same name as created subscription (see image below).  
+When subscription reaches last **active subscription** state, it means that data forwarding process has already started. You can explore received data by going to **Cockpit application** and finding a new group created automatically with the same name as your subscription (see image below).  
 
 ![Data broker group in cockpit app](/guides/users-guide/data-broker-group-created.JPG)

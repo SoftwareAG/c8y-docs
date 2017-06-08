@@ -105,7 +105,7 @@ In order to clone an application:
 
 ### <a name="add-remove-plugin"></a>Adding and removing plugins
 
-In order to configure and extend the function provided with a smartapp, you can add plugins (as ZIP files) to your applications. To add additional plugins, go to "Own applications", move the cursor over your desired applications and click on "Add Plugin". You can drag the plugin into the box or just select them from your computer.
+In order to configure and extend the function provided with a smartapp, you can add plugins (as ZIP files) to your applications. To add additional plugins, go to "Own applications", move the cursor over your desired applications and click on "Add Plugin". You can drag the plugin into the box or just select them from your computer.
 
 ![Plugins](/guides/users-guide/plugins.png)
 
@@ -136,9 +136,9 @@ To remove a plugin, click on the cogwheel next to the desired plugin and click r
 ### Restoring to an older application version
 
 Users can restore old versions of an application.
-If you "set active" a specific version of the app, then this will be the version used by users.
+If you "set active" a specific version of the app, then this will be the version used by users.
 
->Note that the "Archive" tab is not available for subscribed applications, as only the owner of the application can perform this action.
+>Note that the "Archive" tab is not available for subscribed applications, as only the owner of the application can perform this action.
 
 ### Uploading archives
 

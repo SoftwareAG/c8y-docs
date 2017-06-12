@@ -487,6 +487,30 @@ Example:
       5 as acknowledgeButton
     from EventCreated e
 
+### SendRequest
+
+This stream enables the possibility to send HTTP requests from Cumulocity to external systems.
+
+|Parameter|Data type|Description|Mandatory|
+|:--|:----------|:-------------|:----------|
+|url|String|Url of external system|yes|
+|method|String|Method of HTTP request|yes|
+|body|String|Body of http reqeust|no|
+|authorization|String|HTTP Authorization header|no|
+|contentType|String|HTTP Content-Type header|no|
+|headers|Map<String,String>|HTTP headers|no|
+
+Example:
+
+    insert into SendRequest
+    select 
+      'post' as method,
+      'htto://some.external.service.com' as url,
+      'application/json' as contentType,
+      toJSON(m.getPayload()) as body
+    from MeasurementCreated m
+
+
 ## Additional data models
 
 ### ID

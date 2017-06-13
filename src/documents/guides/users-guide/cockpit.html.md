@@ -372,7 +372,7 @@ To navigate the data explorer :
 
 * Select a time range in the diagram
 
-> Note that moving time period to the past or selecting time range in the past will switch off real-time updates.
+> Note that real-time updates will be switched off if you set a time range in the past (either by moving time axis or using date selectors).
 
 ### Working with the Y-Axis
 
@@ -398,7 +398,7 @@ Use the menu and select "Send as a widget to a dashboard".
 
 This will show a modal dialog with all dashboards of the current object. Move to the relevant dashboard and press "Select" to create a new widget in the selected dashboard.
 
-> Note that dashboard should be created before to appear in this dialog. You can create one by selecting "Add dashboard" option from mentioned menu.
+> Note that a dashboard should be created beforehand to be listed in this dialog. You can create one by selecting "Add dashboard" option from mentioned menu.
 
 ![send to dashboard](/guides/users-guide/data-explorer-send-to-dashboard.JPG)
 
@@ -1379,4 +1379,4 @@ The following table lists example variables:
 </table>
 
 
-**Note:In case the variable does not exist or is misspelled, the generated content is displayed. **
+**Note: In case the variable does not exist or is misspelled, the generated content is displayed. **

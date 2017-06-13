@@ -530,7 +530,7 @@ Each data filter can be provided with following information:
 * **type filter** - type required in the document to be forwarded. Documents not containing this type will not be forwarded.
 
 > Note that if filter was added, but no value modified, then only standard properties will be forwarded. See filter header to get hint about current filter configuration.
-> For example, if you add a filter for Alarms API but you leave "Fragments to copy" empty, then only standard fields will be forwarded [standard properties for alarm](#data-broker-standard-properties-for-alarms). If you check "Copy all" checkbox then all fragments will be forwarded.
+> For example, if you add a filter for Alarms API but you leave "Fragments to copy" empty, then only [standard properties for alarm](#data-broker-standard-properties-for-alarms) will be forwarded. If you check "Copy all" checkbox then all fragments will be forwarded.
 
 List of standard properties to be forwarded in case of standard filter configuration:
 

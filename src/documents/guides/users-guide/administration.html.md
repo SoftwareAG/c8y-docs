@@ -472,88 +472,83 @@ In case the quota is exceeded, an e-mail is sent to all tenant administrators to
 >
 > The total storage is now at 9.8GB.
 
-## <a name="data-broker"></a>Data Broker
+## <a name="data-broker"></a>Data broker
 
-Data Broker is a place where you can manage data forwarding between different tenants across your infrastructure. Data Broker allows you to forward the following data:
+Data broker lets you share data selectively with another tenant. You can share:
 
-- events
-- alarms
-- measurements
-- managed objects
+- Devices (and more generically, managed objects),
+- Events,
+- Alarms,
+- Measurements.
 
-Data Broker features two different views for connection management.
+Navigate to "Data connectors" if you would like to send data to another tenant. Navigate to "Data subscriptions", if you want to receive data from another tenant.
 
-![Data broker in navigator](/guides/users-guide/data-broker-on-navigator.JPG)
+<img src="/guides/users-guide/data-broker-on-navigator.JPG" alt="Data broker menus" style="max-width: 25%">
 
-### <a name="data-broker-connectors"></a> Connectors
+> Devices that are forwarded using the data broker are accounted like normal devices also in the destination tenant.
 
-Connectors are used to define connection to new destination tenant. It specifies where data should be forwarded and what data should it be, and under what condition it should happen.
+### <a name="data-broker-connectors"></a> Data connectors
 
-#### <a name="data-broker-connectors-list"></a> Connectors list
+A data connector describes the subset of the data that you would like to send to a destination tenant, as well as the URL of that destination tenant. 
 
-Connectors list view displays all connectors currently defined on the platform and their statuses.
+#### <a name="data-broker-connectors-list"></a> Viewing data connectors
+
+In the "Data connectors" menu, you can create new data connectors and manage the existing data connectors. Click on "Data connectors" to see a list of all currently defined data connectors with their status.
 
 ![Data broker connectors list](/guides/users-guide/data-broker-connectors-list.JPG)
 
-View supports following actions:
+Each card supports the following actions:
 
-* **disable connector** - stops data forwarding to destination tenant.
-* **enable connector** - starts data forwarding to destination tenant.
-* **edit connector** - allows to change connector filters configuration.
-* **duplicate connector** - creates new connector with filter configuration same as in connector it was duplicated from.
-* **remove connector** - removes connector definition. Upon removal of connector data forwarding is terminated.
+* Use the slider to enable and disable data forwarding to the destination tenant. If data is being forwarded, the slider reads "active". If data is not being forwarded, the slider reads "suspended" or "pending". "Suspended" means that you have disabled forwarding. "Pending" means that the destination tenant has disabled forwarding.
+* Click "Edit" in the menu on the top right of the card to modify the data connector's configuration. The configuration is described in more detail below.
+* Click "Duplicate" in the menu to create another data connector with the same configuration.
+* Click "Delete" in the menu to stop data forwarding and remove the data connector.
 
-Connectors list view supports real-time updates, so whenever there is a new connector available, list will be updated.
+#### <a name="data-broker-connector-edit"></a> Editing data connectors
 
-> Note that hovering over question mark near status label on connector will display tooltip.
-
-
-#### <a name="data-broker-connector-edit"></a> Connector edit
-
-Connector edit view allows you to create new connector or edit existing one.
+Click "Add data connector" to create a new data connector or use the "Edit" menu on a particular data connector to edit its configuration.
 
 ![Data broker edit connector](/guides/users-guide/data-broker-edit-connector.JPG)
 
-When creating new connector, form asks for following data:
+When creating a new data connector, enter
 
-* **target url for data connector** - this is destination tenant url, to which data will be forwarded. This value is not allowed for change in edit view.
-* **description** - description for the connector, which will also be visible in subscriptions list after finishing subscription bootstrap process.
-* **data filters** - define filters for the connector. Connector must be provided with at least one filter.
+* The name of the data connector at the top using the small pencil icon.
+* **Target URL for data connector**: The URL of the tenant to which data will be forwarded. Once saved, you cannot edit this value anymore. 
+* **Description**: A textual description of the configuration. Both the name and the description will be visible on the destination side after accepting the subscription.
+* **Data filters**: A set of filters that define what is copied to the destination. You need to configure at least one filter.
 
-> Note that filter defines set of rules for data to be forwarded.
+Each data filter contains the following information:
 
-Each data filter can be provided with following information:
+* **Group or device**: The group or device that is forwarded. Selecting a group here results in all sub-groups and sub-devces being forwarded. By default, all data is forwarded.
+* **API**: Defines the type of data being forwarded.
+* **Fragments to filter**: The fragments that need to be present in a device to be forwarded.
+* **Fragments to copy**: The fragments that are copied to the destination. If nothing is specified here, only standard properties of managed objects, alarms, events and measurements are forwarded (see below). Select "Copy all fragments" to forward the entire object.
+* **Type filter**: Forwarded data needs to have this value in its "type" property.
 
-* **API** - defines what kind of data should be forwarded
-* **fragments to filter** - list of fragments required in the document. Documents not containing these fragments would not be forwarded.
-* **fragments to copy** - list of fragment names which should be copied from local document to remote document in forwarding process. If not selected then only standard fragments are copied by default (see the list below).
-* **type filter** - type required in the document to be forwarded. Documents not containing this type will not be forwarded.
+The heading of a data filter summarizes the configuration in one line. The standard properties that are copied by default are:
 
-> Note that if filter was added, but no value modified, then only standard properties will be forwarded. See filter header to get hint about current filter configuration.
-> For example, if you add a filter for Alarms API but you leave "Fragments to copy" empty, then only [standard properties for alarm](#data-broker-standard-properties-for-alarms) will be forwarded. If you check "Copy all" checkbox then all fragments will be forwarded.
+* **For created alarms**: "type", "text", "time", "severity", "status".
+* **For updated alarms**: "status", "text", "severity".
+* **For created events**: "type", "text", "time".
+* **For created measurements**: "type", "text", "time"
+* **For created and updated devices**: "type", "name", "c8y_IsBinary", "c8y_IsDeviceGroup", "c8y_IsDevice", "c8y_DeviceGroup", "c8y_DeviceSubgroup", "c8y_SmartRule", "c8y_applications_storage", "c8y_DynamicGroup", "c8y_DeviceQueryString".
 
-List of standard properties to be forwarded in case of standard filter configuration:
+Once you have configured your filters, save the configuration. After saving, you will see a security code printed below your configuration. The security code prevents unintended forwarding of data. You need to communicate this security key separately to an administrative user of the destination tenant. You can use the icon next to the security code to copy the code to your clipboard.
 
-* <a name="data-broker-standard-properties-for-alarms"></a>**for alarm create:** "type", "text", "time", "severity", "status"
-* **for alarm update:** "status", "text", "severity"
-* **for event create:** "type", "text", "time"
-* **for measurement create:** "type", "text", "time"
-* **for managed object create and update:** "type", "name", "c8y_IsBinary", "c8y_IsDeviceGroup", "c8y_IsDevice", "c8y_DeviceGroup", "c8y_DeviceSubgroup", "c8y_SmartRule", "c8y_applications_storage", "c8y_DynamicGroup", "c8y_DeviceQueryString"
+![Security code](/guides/users-guide/securitycode.png)
 
+### <a name="data-broker-subscriptions"></a> Data subscriptions
 
-### <a name="data-broker-subscriptions"></a> Subscriptions
-
-Subscription list view shows available subscriptions and their statuses.
+Click on "Data subscriptions" to view the data that is being forwarded to your tenant. The screenshot below illustrates the process of setting up data forwarding on the receiving end. Each card shows one step in the process.
 
 ![Data broker subscriptions list](/guides/users-guide/data-broker-subscriptions-list.JPG)
 
-In the screenshot above you can see 4 views. Each of them represent a state in subscription's bootstrap process. These states can be described as follows (in order from left to right):
+The steps are:
 
-* **add subscription** - presents a view shown when user clicks "`add subscription`" link. It requires connector's security code to be provided in order to create new subscription.
-* **waiting for connection** - view which comes right after registration. This view shows that subscription has been created and is waiting for connector to send some data.
-* **accept view** - when connection has been established, it must be accepted in order to finish subscription registration.
-* **active subscription** - the last view shows fully configured subscription. This view features information such as subscription status and controls for subscription state.
+* First, click "Add data subscription" to receive data. You will see the card shown on the left of the screenshot. Enter the security code that you received from the sending end of the data.
+* The card will temporarily change to a progress indicator. When the connection is established, click the "Accept" button to start forwarding data into your tenant. The subscription is active now.
+* You can click the slider in the card to temporarily stop forwarding data into your tenant. 
 
-When subscription reaches last **active subscription** state, it means that data forwarding process has already started. You can explore received data by going to **Cockpit application** and finding a new group created automatically with the same name as your subscription (see image below).  
+You can now navigate to the Device Management application or the Cockpit application. There will be a new "virtual group" with a specific icon (see the screenshot below) showing the forwarded devices. The group will have the same name as your subscription. Devices are "lazily" created on the destination side whenever they send data for the first time after setting up an active subscription.
 
 ![Data broker group in cockpit app](/guides/users-guide/data-broker-group-created.JPG)

@@ -282,7 +282,7 @@ To finally delete a tenant and remove all the data of the tenant, click the "x" 
 
 "Custom properties" tab allows you to view and modify values of custom properties, either predefined ones (like "External reference") or those defined in ["Properties library"](#properties). Such properties are also displayed as columns in [usage statistics table](#usage-stats-custom-properties).
 
-![Custom Properties](/guides/users-guide/subtenant-custom-properties.JPG)
+![Custom Properties](/guides/users-guide/subtenant-custom-properties.PNG)
 
 ### <a name="usage-stats"></a> Retrieving usage statistics
 
@@ -299,7 +299,7 @@ The usage statistics menu provides you with information about each subtenant. Th
 - Parent: The name of parent tenant (available only for management tenant).
 - External reference: This field is for individual usage, for example, you can add a link to the CRM system here or an internal customer number.
 
-![Usage statistics](/guides/users-guide/usage-statistics-list.JPG)
+![Usage statistics](/guides/users-guide/usage-statistics-list.PNG)
 
 #### <a name="usage-stats-custom-properties"></a> Custom properties
 
@@ -307,7 +307,7 @@ Statistics table also displays custom properties and allows you to sort and filt
 
 It's possible to export current view of statistics table to CSV file by clicking "Export CSV" link (it will show a dialog where you can customize CSV output, see screenshot below).
 
-<img src="/guides/users-guide/usage-statistics-export.JPG" style="width:400px;"></img>
+<img src="/guides/users-guide/usage-statistics-export.PNG" style="width:400px;"></img>
 
 > Note that you can define custom properties in ["Properties Library"](#properties) and then set their values in tenant's ["Custom Properties"](#tenants-custom-properties) tab.
 

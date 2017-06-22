@@ -33,7 +33,7 @@ The support for Cumulocity can be configured through the router's web user inter
 
 Verify that the toggle switch "Cumulocity agent" is set to "ON" and the URL shown in "Server" points to the Cumulocity instance that you want to connect. For example, use
 
-* https://developer.cumulocity.com/s for connecting to Cumulocity.
+* https://demos.cumulocity.com/s for connecting to Cumulocity.
 * https://management.ram.m2m.telekom.com/s for connecting to Deutsche Telekom Cloud of Things.
 
 Optionally, you can activate data collecting for the following functionalities:

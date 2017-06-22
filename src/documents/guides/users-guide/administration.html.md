@@ -231,7 +231,7 @@ To browse the subtenants, click on the subtenants menu. The panel shows the foll
 
 - Tenant status: The small icon indicates the status of a tenant. It can show a green checkmark to indicate that the tenant is active or a red cross to indicate that the tenant is suspended and cannot be accessed.
 - ID: An identifier for this tenant. When you create a tenant, the ID is the first part of the URL. For example, if you create a tenant with the ID "acme" on cumulocity.com, the tenant's URL will be "acme.cumulocity.com". Note that while you can change the URL later on, you cannot change the ID anymore after the tenant was created.
-- Name: A name for this tenant, for example, the company name of your customer. 
+- Name: A name for this tenant, for example, the company name of your customer.
 - Domain: The URL that users will use to access this tenant.
 - Contact name: An administrative contact for the tenant.
 - Phone: The phone number of the administrative contact.
@@ -278,20 +278,38 @@ If a tenant is suspended, the tenant's data remains in the database and can be m
 
 To finally delete a tenant and remove all the data of the tenant, click the "x" button while hovering over the tenant in the list. This action cannot be reverted. For security reasons, it is only available in the management tenant.
 
+### <a name="tenants-custom-properties"></a>Editing custom properties
+
+"Custom properties" tab allows you to view and modify values of custom properties, either predefined ones (like "External reference") or those defined in ["Properties library"](#properties). Such properties are also displayed as columns in [usage statistics table](#usage-stats-custom-properties).
+
+![Custom Properties](/guides/users-guide/subtenant-custom-properties.PNG)
+
 ### <a name="usage-stats"></a> Retrieving usage statistics
 
 The usage statistics menu provides you with information about each subtenant. The statistics show:
 
-- Id: Unique id of the subtenant.
-- External reference: This field is for individual usage, for example, you can add a link to the CRM system here or an internal customer number.
+- Id: Unique id of the subtenant
 - API requests: Number of API requests, including requests from  devices and applications.
 - Device API requests: Number of API requests from devices
 - Storage (MB): The amount of data stored in your account.
+- Root Devices: The amount of devices excluding child devices.
 - Devices: Total number of devices connected to the tenant.
 - Subscribed application: This column shows number of applications that the subtenant is subscribed to.
 - Creation time: The date and time of the creation of the subtenant.
+- Parent: The name of parent tenant (available only for management tenant).
+- External reference: This field is for individual usage, for example, you can add a link to the CRM system here or an internal customer number.
 
-![Usage statistics](/guides/users-guide/usagestats.png)
+![Usage statistics](/guides/users-guide/usage-statistics-list.PNG)
+
+#### <a name="usage-stats-custom-properties"></a> Custom properties
+
+Statistics table also displays custom properties and allows you to sort and filter the list of tenants by their values.
+
+It's possible to export current view of statistics table to CSV file by clicking "Export CSV" link (it will show a dialog where you can customize CSV output, see screenshot below).
+
+<img src="/guides/users-guide/usage-statistics-export.PNG" style="width:400px;"></img>
+
+> Note that you can define custom properties in ["Properties Library"](#properties) and then set their values in tenant's ["Custom Properties"](#tenants-custom-properties) tab.
 
 ## <a name="tfa"></a>Using two-factor authentication
 
@@ -428,7 +446,7 @@ When ready, click save.
 
 ![Add new property](/guides/users-guide/addproperty.png)
 
-Once created, the custom properties can be observed in the “Custom properties” tab as shown in the screenshot below. In this case, a tenant property named “Custom” was created. 
+Once created, the custom properties can be observed in the “Custom properties” tab as shown in the screenshot below. In this case, a tenant property named “Custom” was created.
 
 ![Custom properties tab](/guides/users-guide/customproptab.png)
 
@@ -458,7 +476,7 @@ Retention rules are usually run during the night. When you edit a retention rule
 
 ![Add rule](/guides/users-guide/addrules.png)
 
-To add additional "Retention rules", click on "Add rule". Up to the "Maximum age" field, you can enter an asterisk ("*") into all fields to permit any value in that field.
+To add additional "Retention rules", click on "Add rule". Up to the "Maximum age" field, you can enter an asterisk ("\*") into all fields to permit any value in that field.
 
 - Select the type of data to clean up (alarms, measurements, events, operations, audit logs).
 - Enter a fragment type, if you want to be more specific about the data to be cleaned up. To clean up all connection loss alarms with this rule, select "alarms" and enter "c8y_UnavailabilityAlarm" into "type".

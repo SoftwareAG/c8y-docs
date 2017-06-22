@@ -286,10 +286,10 @@ To visualize data points, follow these steps:
 
 * If you want to store your current configuration for later, save it as a widget using "Send as widget to dashboard" or "Send as widget to report" (see image below).
 
-<img src="/guides/users-guide/data-explorer-send-as-widget.JPG" name="data-explorer-send-widget-to-dashboard" style="width:25%;"/>
+<img src="/guides/users-guide/data-explorer-send-as-widget.PNG" name="data-explorer-send-widget-to-dashboard" style="width:25%;"/>
 "Send as widget to dashboard"
 
-<img src="/guides/users-guide/data-explorer-save-as-report.JPG" name="data-explorer-send-widget-to-report" style="width:25%;"/>
+<img src="/guides/users-guide/data-explorer-save-as-report.PNG" name="data-explorer-send-widget-to-report" style="width:25%;"/>
 "Send as widget to report"
 
 The data explorer and dashboards are closely related:
@@ -304,7 +304,7 @@ When clicking on the tab "Data explorer", it will open.
 
 It is pre-filled with available data points of the object (group or device). The first 5 data points are shown by default.
 
-![data explorer](/guides/users-guide/data-explorer-main-view.JPG)
+![data explorer](/guides/users-guide/data-explorer-main-view.PNG)
 
 The visualisation is generated based on data point properties.
 
@@ -316,13 +316,13 @@ The data points properties (min, max, color, ..) are pre-filled as follows:
 
 There can be more than one matching data point entry in the "Data Point Library". In that case, the first one is selected automatically by the system. You can overwrite this selection by using the cogwheel symbol and selecting "Load X from Library". X refers to the entry in the data point library.
 
-![edit data points](/guides/users-guide/data-explorer-save-as-report.JPG)
+![edit data points](/guides/users-guide/data-explorer-data-points-edit.PNG)
 
 ### Adding data points
 
 Additional data points can be added to the data explorer by clicking "+ Add data point". This will bring up the following dialog:
 
-![add data point](/guides/users-guide/data-explorer-add-data-point.JPG)
+![add data point](/guides/users-guide/data-explorer-add-data-point.PNG)
 
 In the top of the dialog, select a device from the asset hierarchy. Only the asset hierarchy below the objects selected in the navigator is visible. If "Data explorer" in the navigator was selected, the complete asset hierarchy is visible.
 
@@ -400,7 +400,7 @@ This will show a modal dialog with all dashboards of the current object. Move to
 
 > Note that a dashboard should be created beforehand to be listed in this dialog. You can create one by selecting "Add dashboard" option from mentioned menu.
 
-![send to dashboard](/guides/users-guide/data-explorer-send-to-dashboard.JPG)
+![send to dashboard](/guides/users-guide/data-explorer-send-to-dashboard.PNG)
 
 ### Exporting Measurement data to csv or xlsx files
 
@@ -415,7 +415,7 @@ Users have the option to download measurement data as csv or xlsx files. The exp
 
 To download measurement data in either csv or xlsx first navigate to "Data Explorer", select your desired time range and then click on the small cogwheel button located at the top-right.
 
-![Export measurement data](/guides/users-guide/data-explorer-export-data.JPG)
+![Export measurement data](/guides/users-guide/data-explorer-export-data.PNG)
 
 Choose whether to download CSV or Excel(XLSX)
 

@@ -483,19 +483,19 @@ Data broker lets you share data selectively with another tenant. You can share:
 
 Navigate to "Data connectors" if you would like to send data to another tenant. Navigate to "Data subscriptions", if you want to receive data from another tenant.
 
-<img src="/guides/users-guide/data-broker-on-navigator.JPG" alt="Data broker menus" style="max-width: 25%">
+<img src="/guides/users-guide/data-broker-on-navigator.PNG" alt="Data broker menus" style="max-width: 25%">
 
 > Devices that are forwarded using the data broker are accounted like normal devices also in the destination tenant.
 
 ### <a name="data-broker-connectors"></a> Data connectors
 
-A data connector describes the subset of the data that you would like to send to a destination tenant, as well as the URL of that destination tenant. 
+A data connector describes the subset of the data that you would like to send to a destination tenant, as well as the URL of that destination tenant.
 
 #### <a name="data-broker-connectors-list"></a> Viewing data connectors
 
 In the "Data connectors" menu, you can create new data connectors and manage the existing data connectors. Click on "Data connectors" to see a list of all currently defined data connectors with their status.
 
-![Data broker connectors list](/guides/users-guide/data-broker-connectors-list.JPG)
+![Data broker connectors list](/guides/users-guide/data-broker-connectors-list.PNG)
 
 Each card supports the following actions:
 
@@ -508,12 +508,12 @@ Each card supports the following actions:
 
 Click "Add data connector" to create a new data connector or use the "Edit" menu on a particular data connector to edit its configuration.
 
-![Data broker edit connector](/guides/users-guide/data-broker-edit-connector.JPG)
+![Data broker edit connector](/guides/users-guide/data-broker-edit-connector.PNG)
 
 When creating a new data connector, enter
 
 * The name of the data connector at the top using the small pencil icon.
-* **Target URL for data connector**: The URL of the tenant to which data will be forwarded. Once saved, you cannot edit this value anymore. 
+* **Target URL for data connector**: The URL of the tenant to which data will be forwarded. Once saved, you cannot edit this value anymore.
 * **Description**: A textual description of the configuration. Both the name and the description will be visible on the destination side after accepting the subscription.
 * **Data filters**: A set of filters that define what is copied to the destination. You need to configure at least one filter.
 
@@ -541,14 +541,14 @@ Once you have configured your filters, save the configuration. After saving, you
 
 Click on "Data subscriptions" to view the data that is being forwarded to your tenant. The screenshot below illustrates the process of setting up data forwarding on the receiving end. Each card shows one step in the process.
 
-![Data broker subscriptions list](/guides/users-guide/data-broker-subscriptions-list.JPG)
+![Data broker subscriptions list](/guides/users-guide/data-broker-subscriptions-list.PNG)
 
 The steps are:
 
 * First, click "Add data subscription" to receive data. You will see the card shown on the left of the screenshot. Enter the security code that you received from the sending end of the data.
 * The card will temporarily change to a progress indicator. When the connection is established, click the "Accept" button to start forwarding data into your tenant. The subscription is active now.
-* You can click the slider in the card to temporarily stop forwarding data into your tenant. 
+* You can click the slider in the card to temporarily stop forwarding data into your tenant.
 
 You can now navigate to the Device Management application or the Cockpit application. There will be a new "virtual group" with a specific icon (see the screenshot below) showing the forwarded devices. The group will have the same name as your subscription. Devices are "lazily" created on the destination side whenever they send data for the first time after setting up an active subscription.
 
-![Data broker group in cockpit app](/guides/users-guide/data-broker-group-created.JPG)
+![Data broker group in cockpit app](/guides/users-guide/data-broker-group-created.PNG)

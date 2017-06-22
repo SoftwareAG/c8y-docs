@@ -286,10 +286,10 @@ To visualize data points, follow these steps:
 
 * If you want to store your current configuration for later, save it as a widget using "Send as widget to dashboard" or "Send as widget to report" (see image below).
 
-<img src="/guides/users-guide/data-explorer-send-as-widget.PNG" name="data-explorer-send-widget-to-dashboard" style="width:25%;"/>
+<img src="/guides/users-guide/data-explorer-send-as-widget.PNG" name="data-explorer-send-widget-to-dashboard" style="width:75%;"/>
 "Send as widget to dashboard"
 
-<img src="/guides/users-guide/data-explorer-save-as-report.PNG" name="data-explorer-send-widget-to-report" style="width:25%;"/>
+<img src="/guides/users-guide/data-explorer-save-as-report.PNG" name="data-explorer-send-widget-to-report" style="width:75%;"/>
 "Send as widget to report"
 
 The data explorer and dashboards are closely related:

@@ -279,20 +279,38 @@ If a tenant is suspended, the tenant's data remains in the database and can be m
 
 To finally delete a tenant and remove all the data of the tenant, click the "x" button while hovering over the tenant in the list. This action cannot be reverted. For security reasons, it is only available in the management tenant.
 
+### <a name="tenants-custom-properties"></a>Editing custom properties
+
+"Custom properties" tab allows you to view and modify values of custom properties, either predefined ones (like "External reference") or those defined in ["Properties library"](#properties). Such properties are also displayed as columns in [usage statistics table](#usage-stats-custom-properties).
+
+![Custom Properties](/guides/users-guide/subtenant-custom-properties.PNG)
+
 ### <a name="usage-stats"></a> Retrieving usage statistics
 
 The usage statistics menu provides you with information about each subtenant. The statistics show:
 
-- Id: Unique id of the subtenant.
-- External reference: This field is for individual usage, for example, you can add a link to the CRM system here or an internal customer number.
+- Id: Unique id of the subtenant
 - API requests: Number of API requests, including requests from  devices and applications.
 - Device API requests: Number of API requests from devices
 - Storage (MB): The amount of data stored in your account.
+- Root Devices: The amount of devices excluding child devices.
 - Devices: Total number of devices connected to the tenant.
 - Subscribed application: This column shows number of applications that the subtenant is subscribed to.
 - Creation time: The date and time of the creation of the subtenant.
+- Parent: The name of parent tenant (available only for management tenant).
+- External reference: This field is for individual usage, for example, you can add a link to the CRM system here or an internal customer number.
 
-![Usage statistics](/guides/users-guide/usagestats.png)
+![Usage statistics](/guides/users-guide/usage-statistics-list.PNG)
+
+#### <a name="usage-stats-custom-properties"></a> Custom properties
+
+Statistics table also displays custom properties and allows you to sort and filter the list of tenants by their values.
+
+It's possible to export current view of statistics table to CSV file by clicking "Export CSV" link (it will show a dialog where you can customize CSV output, see screenshot below).
+
+<img src="/guides/users-guide/usage-statistics-export.PNG" style="width:400px;"></img>
+
+> Note that you can define custom properties in ["Properties Library"](#properties) and then set their values in tenant's ["Custom Properties"](#tenants-custom-properties) tab.
 
 ## <a name="tfa"></a>Using two-factor authentication
 
@@ -373,6 +391,7 @@ By expanding the "Settings" menu, administrators can:
 
 - Change the [password policy](#changing-password-settings).
 - Change the [TFA settings](#changing-tfa-settings).
+- Manage the [properties library](#properties).
 - Change the [default application](#default-app).
 - Change the [access control](#access-control) settings.
 - [Enable or disable the dashboards via e-mail feature](#enabling-server-side-agents)
@@ -405,6 +424,34 @@ To change the TFA settings, click on "Password" under the "Settings" menu item. 
 ![TFA settings](/guides/users-guide/tfasettings.png)
 
 To disable two-factor authentication, simply deselect the box "Allow two-factor authentication". Click on "Save TFA settings" to apply your changes.
+
+### <a name="properties"></a>Managing the properties library
+
+In the properties library, additional custom properties can be added to tenants, alarms, events or inventory items. These properties can be customized to your own preference.
+
+> Custom properties for “Subtenants” also can be observed or exported in the “Usage statistics” menu.
+
+![Properties library](/guides/users-guide/properties_library.png)
+
+To create a new property, click on "Add property". Afterwards, a form will pop-up. Enter the name of the new property, enter the label and select the desired type of the property (String, number, boolean, etc.). Additionally, you can also check the validation rules which will be required for the new property:
+
+- "Required": If this validation rule is checked, the property will be required to be filled (During alarm creation for example). If the property type is "Boolean", this rule cannot be checked.
+- "Default Value":  Add a default value which will be automatically filled in the custom property field. Please note that, only "String" type properties can have this validation rule.
+- "Minimum": Enter a minimum integer value.
+- "Maximum": Enter a maximum integer value.
+- "Minimum length": Enter the minimum length required for the string.
+- "Maximum length": Enter the maximum length required for the string.
+- "Regular expression": Add the regular expression which will be required in order to fill the custom property field.
+
+When ready, click save.
+
+![Add new property](/guides/users-guide/addproperty.png)
+
+Once created, the custom properties can be observed in the “Custom properties” tab as shown in the screenshot below. In this case, a tenant property named “Custom” was created.
+
+![Custom properties tab](/guides/users-guide/customproptab.png)
+
+To edit a property, simply click on the name of the property. To remove a property, click on the property first and then click on “Remove”.
 
 ### <a name="default-app"></a>Changing the default application
 

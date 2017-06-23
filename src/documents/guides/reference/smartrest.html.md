@@ -18,7 +18,7 @@ The following example shows the communication between a client and the  *SmartRE
 	POST /s HTTP/1.0
 	Authorization: Basic ...
 	X-Id: ...
-	Content-Length: 13
+	Transfer-Encoding: chunked
 
 	100,1234456
 
@@ -65,7 +65,7 @@ In case when it is only needed to communicate data to real-time processing, the 
 	Authorization: Basic ...
 	X-Id: ...
 	X-Cumulocity-Processing-Mode: TRANSIENT
-	Content-Length: 13
+	Transfer-Encoding: chunked
 
 	100,1234456
 
@@ -115,7 +115,7 @@ The existence of a *SmartREST* template can be checked by making an empty reques
 	POST /s HTTP/1.0
 	Authorization: Basic ...
 	X-Id: ...
-	Content-Length: 0
+	Transfer-Encoding: chunked
 
 If the template exists, the following response is yielded where the message identifier `20` indicates that the template exists in the inventory and the parameter `123456` indicates the managed object GId of the template:
 
@@ -138,7 +138,7 @@ Templates can be registered with one single request containing *SmartREST* templ
 	POST /s HTTP/1.0
 	Authorization: Basic ...
 	X-Id: ...
-	Content-Length: 275
+	Transfer-Encoding: chunked
 
 	10,100,POST,/inventory/managedObjects,application/vnd.com.nsn.cumulocity.managedObject+json,application/vnd.com.nsn.cumulocity.managedObject+json,,,"{""name"":""Test Device"",""type"":""com_example_TestDevice"",""c8y_IsDevice"":{}}"
 	11,201,,"$.c8y_IsDevice","$.id"

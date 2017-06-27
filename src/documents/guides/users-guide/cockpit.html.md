@@ -856,14 +856,18 @@ Smart Rules are parameterized. There are two sources for parameters:
 
 **Object Parameter** are stored in the group or device. These parameters can be edited also after the smart rule was created. An example includes min and max values for thresholds.
 
-Smart rules can be seen under the "Info" tab of a device or group. They can also be seen in the "Smart Rules" menu item. There are two different kinds of smart rules:
+Smart rules can be seen under the "Info" tab of a device or group. They can also be seen in the "Smart Rules" menu item. 
+
+![Smart Rules info tab](/guides/users-guide/smartruleinfo.png)
+
+There are two different kinds of smart rules:
 
 - Local: Smart rules created in either group or a device. They are visible to everyone with access to the group/device.
 - Global: These smart rules are created in a global context (smart rules section, alarms, data explorer, etc...). They are only visible to users with the correct permissions.
 
 > In the "Smart Rules" navigation item only the global smart rules are shown. 
 
-Without the correct permission, only the local smart rules are shown. Otherwise, with the proper permissions, both local and global permissions are seen.
+Without the correct permission, only the local smart rules are shown. Otherwise, with the proper permissions, both local and global permissions can be seen.
 
 The permissions required in order to see the global smart rules are:
 - Smart rule "read".

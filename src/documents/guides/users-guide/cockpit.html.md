@@ -566,7 +566,7 @@ Show location of a device or all devices in the group. The map provides the foll
 
 Parameters to configure:
 
-* Target device or group: Select which devices are shown on the map. If a group is selected, all devices are visible.
+* Target device or group: Select which devices are shown on the map. If a group is selected, all devices in that group (but not in any subgroups) are visible.
 
 Note: If none of the target device(s) has a known location, then the widget show a world map with no icons.
 

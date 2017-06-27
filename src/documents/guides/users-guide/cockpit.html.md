@@ -856,6 +856,20 @@ Smart Rules are parameterized. There are two sources for parameters:
 
 **Object Parameter** are stored in the group or device. These parameters can be edited also after the smart rule was created. An example includes min and max values for thresholds.
 
+Smart rules can be seen under the "Info" tab of a device or group. They can also be seen in the "Smart Rules" menu item. There are two different kinds of smart rules:
+
+- Local: Smart rules created in either group or a device. They are visible to everyone with access to the group/device.
+- Global: These smart rules are created in a global context (smart rules section, alarms, data explorer, etc...). They are only visible to users with the correct permissions.
+
+> In the "Smart Rules" navigation item only the global smart rules are shown. 
+
+Without the correct permission, only the local smart rules are shown. Otherwise, with the proper permissions, both local and global permissions are seen.
+
+The permissions required in order to see the global smart rules are:
+- Smart rule "read".
+- Smart rule "admin".
+- CEP management "admin".
+
 ### Creating a Smart Rule
 
 Smart Rules can be created either under "Configuration -> Smart Rules" or under the "Info tab" of a group or a device.
@@ -882,8 +896,6 @@ Disabled Smart Rules are not displayed in group menus or device menus to avoid c
 Smart Rules can be instantiated multiple times.
 
 ### Activating and deactivating Smart Rules
-
-Smart Rules can be seen under the info tab of a device or group, They must be active within this group and can also be active on child asset level.
 
 A single Smart Rule can be activated (switched on) and deactivated (switched off) for a single object (group or device). For example, if a device is generating too many threshold alarms, you can deactivate the rule for this single object. The rule is still active for all other objects.
 

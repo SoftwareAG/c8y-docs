@@ -850,6 +850,8 @@ Cumulocity includes a rule engine to analyze data in real-time and to perform ac
 
 To create rules, the Cockpit Application includes a Smart Rule Builder. Using the Smart Rules builder, rules can be created from templates. These rules are called smart rules. The templates are called smart rule templates.
 
+> Please note that, smart rules are only visible, if the tenant is subscribed to the smart rule application.
+
 Smart Rules are parameterized. There are two sources for parameters:
 
 **Rule Parameter** are provided by the user when creating a smart rule from a template. Examples are email addresses and alarm texts.
@@ -862,12 +864,12 @@ Smart rules can be seen under the "Info" tab of a device or group. They can also
 
 There are two different kinds of smart rules:
 
-- Local: Smart rules created in either group or a device. They are visible to everyone with access to the group/device.
-- Global: These smart rules are created in a global context (smart rules section, alarms, data explorer, etc...). They are only visible to users with the correct permissions.
+- Local: Smart rules created in either a group or a device. They are visible to everyone with access to the group/device.
+- Global: These	 smart rules are created in a global context (smart rules section, alarms, data explorer, etc...). They are only visible to users with the relevant permissions.
 
 > In the "Smart Rules" navigation item only the global smart rules are shown. 
 
-Without the correct permission, only the local smart rules are shown. Otherwise, with the proper permissions, both local and global permissions can be seen.
+In a local context (group or device) and without the relevant permissions, only the local smart rules are shown. Otherwise, with the relevant permissions, both local and global smart rules are shown.		
 
 The permissions required in order to see the global smart rules are:
 - Smart rule "read".

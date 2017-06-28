@@ -865,7 +865,7 @@ Smart rules can be seen under the "Info" tab of a device or group. They can also
 There are two different kinds of smart rules:
 
 - Local: Smart rules created in either a group or a device. They are visible to everyone with access to the group/device.
-- Global: These	 smart rules are created in a global context (smart rules section, alarms, data explorer, etc...). They are only visible to users with the relevant permissions.
+- Global: These smart rules are created in a global context (smart rules section, alarms, data explorer, etc...). They are only visible to users with the relevant permissions.
 
 > In the "Smart Rules" navigation item only the global smart rules are shown. 
 

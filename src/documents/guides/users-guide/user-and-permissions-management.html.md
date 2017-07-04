@@ -332,7 +332,9 @@ A number next to the user name shows how many direct sub-users a user has. Sub-u
 
 ### Creating sub-users
 
-User hierarchies are created by assigning an "owner" to a user. The "owner" can manage the user. The user can have at most the same permissions as the owner. The screenshot below shows how to assign an owner to a user. You can choose available users from a list and check (or uncheck) them to assign ownership.
+User hierarchies are created by assigning an "owner" to a user. The "owner" can manage the user. The user can have at most the same permissions as the owner. The screenshot below shows how to assign an owner to a user. You can choose available users from a list and check (or uncheck) them to assign ownership. 
+
+Please note that only "USER ADMIN" can define new user's owner on user creation form. When user with "USER CREATE" permission creates a user, owner is automatically set with the name of the logged in user. The owner can be changed afterwards, when updating the newly created user.
 
 > If you want an owner to manage only their sub-users, please make sure that the owner does not have a global role with user management permissions for all users.
 

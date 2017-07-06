@@ -107,7 +107,11 @@ Messages published by Cumulocity like operations and errors do not contain the r
 
 ### MQTT Last Will
 
-The Last Will feature is currently not supported in Cumulocity.
+In MQTT, the "last will" is a message that is specified at connection time and that is executed when the client looses the connection. For example, using
+
+    400,c8y_ConnectionEvent,"Device connection was lost."
+
+as last will message and "s/us" as last will topic raises an event whenever the device looses the connection.
 
 ## Debugging
 

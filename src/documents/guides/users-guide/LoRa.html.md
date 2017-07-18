@@ -5,7 +5,7 @@ layout: default
 ---
 
 ## <a name="overview"></a>Overview
-LoRa Actility allows you to collect and visualize payload data from managed LoRa devices. New LoRa devices can be easily provisioned using the Cumulocity Device Management. No further interaction in the ThingPark user interface is required. This section describes how to:
+LoRa Actility allows you to collect and visualize payload data from managed LoRa devices. New LoRa devices can be easily provisioned using the Cumulocity Device Management. No further interaction in the ThingPark user interface is required. The LoRa Actility service is only available if you have subscribed to it. This section describes how to:
 
 * [Configure your ThingPark account credentials](#configure-credentials) in Cumulocity
 * [Create device types](#create-device-types) with Cumulocity's device database
@@ -19,6 +19,9 @@ In order to create new credentials or replace existing ones, go to the Administr
 
 If you go to "Connectivity" for the first time, you will be asked to provide credentials. 
 Enter your profile ID, username, password and application EUI. 
+
+The profile ID is ...
+The application EUI is ...
 
 ![Register devices](/guides/users-guide/actility/credentials-new-2.png)
 
@@ -52,7 +55,8 @@ In the Device database window, click the "New" button.
 Select "LoRa" as the device type and name your device. Click the "Add" button and add the relevant values for your device:
 
 - name of the value and possibly its display category
-- message ID and message source (the latter is always "Payload")
+- message ID 
+- message source (either "FPORT", i. e. the message value, or "Payload", i. e. the message ID inside the payload)
 - information to decode the payload (such as starting bit, number of bits, multiplier, divisor, decimal places)
 
 Select the options, if required ("signed" or "packed decimal").
@@ -78,15 +82,15 @@ Click "Actility".
 
 In the next window fill in the required information: 
 
-- Device profile: Select "LoRaWAN Demonstrator".
-- Device type: Select the appropriate device type. 
+- Device profile: Select the appropriate device profile from the drop-down list. 
+- Device type: Select the appropriate device type from the drop-down list. 
 - Device EUI and application key: You can find this information on the device itself.
-- Connectivity plan: Select a connectivity plan, if required.
+- Connectivity plan: Select the appropriate connectivity plan from the drop-down list.
 
 The following picture shows an example for device registration. 
 ![Register devices](/guides/users-guide/actility/deviceRegistration3.png)
 
-After clicking "Next" the device registration request will be submitted.
+After clicking "Next" the device registration request will be submitted and the device will be created.
 
 For more information on viewing and managing your connected devices, also refer to 
 [Device management](/guides/users-guide/device-management).

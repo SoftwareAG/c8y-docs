@@ -24,8 +24,6 @@ Enter your profile ID, username, password and application EUI.
 
 Click "Save". If everything is okay, there will be a message "Credentials successfully saved".
 
-???*** Explain profile ID, e.g. "dev1-api", and application EUI? Are these clear to the user?  ***???
-
 ### <a name="replace-credentials"></a>Replacing account credentials
 
 In order to replace your credentials, click the "Replace credentials" button.
@@ -90,6 +88,6 @@ The following picture shows an example for device registration.
 
 After clicking "Next" the device registration request will be submitted.
 
-For more information on viewing and managing your connected LoRa devices, see 
+For more information on viewing and managing your connected devices, also refer to 
 [Device management](/guides/users-guide/device-management).
 

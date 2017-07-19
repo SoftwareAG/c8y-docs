@@ -5,7 +5,7 @@ layout: default
 ---
 
 ## <a name="overview"></a>Overview
-LoRa Actility allows you to collect and visualize payload data from managed LoRa devices. New LoRa devices can be easily provisioned using the Cumulocity Device Management. No further interaction in the ThingPark user interface is required. The LoRa Actility service is only available if you have subscribed to it. This section describes how to:
+LoRa Actility allows you to collect and visualize payload data from managed LoRa devices. New LoRa devices can be easily provisioned using the Cumulocity Device Management. No further interaction in the ThingPark user interface is required. The LoRa functionalities are only available for tenants who have subscribed to the Actility-device-provider-agent application. This section describes how to:
 
 * [Configure your ThingPark account credentials](#configure-credentials) in Cumulocity
 * [Create device types](#create-device-types) with Cumulocity's device database
@@ -18,10 +18,12 @@ In order to create new credentials or replace existing ones, go to the Administr
 ### <a name="create-new-credentials"></a>Creating new account credentials
 
 If you go to "Connectivity" for the first time, you will be asked to provide credentials. 
-Enter your profile ID, username, password and application EUI. 
+Enter the following information:
 
-The profile ID is ...
-The application EUI is ...
+- profile ID: This depends on your ThingPark account and environment. If you are using, for example, the Dev1 ThingPark environment your profile ID will be "dev1-api".
+- username: your ThingPark user name
+- password: your password 
+- application EUI: This is a global application ID in the IEEE EUI64 address space that uniquely identifies the application provider of the device
 
 ![Register devices](/guides/users-guide/actility/credentials-new-2.png)
 
@@ -84,10 +86,14 @@ In the next window fill in the required information:
 
 - Device profile: Select the appropriate device profile from the drop-down list. 
 - Device type: Select the appropriate device type from the drop-down list. 
-- Device EUI and application key: You can find this information on the device itself.
+- Device EUI: This is the unique identifier for the device. You can find it on the device itself.
+- Application key: This is an AES-128 application key specific for the end-device that
+is assigned by the application owner to the device and is responsible to encrypt
+JOIN communication. You can find this key on the device itself.
 - Connectivity plan: Select the appropriate connectivity plan from the drop-down list.
 
 The following picture shows an example for device registration. 
+
 ![Register devices](/guides/users-guide/actility/deviceRegistration3.png)
 
 After clicking "Next" the device registration request will be submitted and the device will be created.

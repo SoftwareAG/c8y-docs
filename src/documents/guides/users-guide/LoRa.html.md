@@ -20,10 +20,10 @@ In order to create new credentials or replace existing ones, go to the Administr
 If you go to "Connectivity" for the first time, you will be asked to provide credentials. 
 Enter the following information:
 
-- profile ID: This depends on your ThingPark account and environment. If you are using, for example, the Dev1 ThingPark environment your profile ID will be "dev1-api".
-- username: your ThingPark user name
-- password: your password 
-- application EUI: This is a global application ID in the IEEE EUI64 address space that uniquely identifies the application provider of the device
+- **profile ID**: This depends on your ThingPark account and environment. If you are using, for example, the Dev1 ThingPark environment your profile ID will be "dev1-api".
+- **username**: your ThingPark user name
+- **password**: your password 
+- **application EUI**: This is a global application ID in the IEEE EUI64 address space that uniquely identifies the application provider of the device
 
 ![Register devices](/guides/users-guide/actility/credentials-new-2.png)
 
@@ -73,7 +73,6 @@ After clicking "OK", your device type is created with the values you defined.
 
 ![Value configurations of created device type](/guides/users-guide/actility/deviceDatabase1.png)
 
-
 ## <a name="register-device"></a>Registering Actility devices
 
 In order to register an Actility device, go to the Device Management application and click "Device Registration" in the Quick links. Click "Register device". The following window opens:
@@ -84,13 +83,13 @@ Click "Actility".
 
 In the next window fill in the required information: 
 
-- Device profile: Select the appropriate device profile from the drop-down list. 
-- Device type: Select the appropriate device type from the drop-down list. 
-- Device EUI: This is the unique identifier for the device. You can find it on the device itself.
-- Application key: This is an AES-128 application key specific for the end-device that
+- **Device profile**: Select the appropriate device profile from the drop-down list. 
+- **Device type**: Select the appropriate device type from the drop-down list. 
+- **Device EUI**: This is the unique identifier for the device. You can find it on the device itself.
+- **Application key**: This is an AES-128 application key specific for the end-device that
 is assigned by the application owner to the device and is responsible to encrypt
 JOIN communication. You can find this key on the device itself.
-- Connectivity plan: Select the appropriate connectivity plan from the drop-down list.
+- **Connectivity plan**: Select the appropriate connectivity plan from the drop-down list.
 
 The following picture shows an example for device registration. 
 

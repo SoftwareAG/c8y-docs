@@ -60,7 +60,7 @@ Using the above example, a SmartREST request would be as follows:
 And the corresponding response would be:
 
 	HTTP/1.1 200 OK
-	Content-Length: 6
+	Transfer-Encoding: chunked
 
 	20,0
 

@@ -146,7 +146,7 @@ You can select an entire column by clicking on the checkbox at the top of the co
 - Bulk operations: View or create bulk operations.
 - CEP management: View or edit Cumulocity Event Language rules.
 - Data broker: Send data to other tenants or receive data from other tenants.
-- Device control: View or edit commands for devices resp. send commands to devices.
+- Device control: View or edit commands for devices resp. send commands to devices. Also used for device registration.
 - Events: View or create events for devices.
 - Identity: View or edit identifiers for devices.
 - Inventory: View or edit inventory data.

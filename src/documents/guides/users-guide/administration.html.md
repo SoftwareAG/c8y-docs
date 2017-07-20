@@ -17,6 +17,7 @@ The Administration application enables account administrators to manage their us
 * Configure the [retention policies](#retention) for your data.
 * Configure the recipients and trigger of the [warning e-mail](#warningEmail) for maximum storage being reached.
 * Manage [stored files](#files) such as firmware images or log files.
+* Forward data between different tenants with [data broker](#data-broker).
 
 For more information on users and permissions, please see the ["User and permissions management"](/guides/users-guide/user-and-permissions-management) guide.
 
@@ -104,7 +105,7 @@ In order to clone an application:
 
 ### <a name="add-remove-plugin"></a>Adding and removing plugins
 
-In order to configure and extend the function provided with a smartapp, you can add plugins (as ZIP files) to your applications. To add additional plugins, go to â€œOwn applicationsâ€, move the cursor over your desired applications and click on â€œAdd Pluginâ€. You can drag the plugin into the box or just select them from your computer.
+In order to configure and extend the function provided with a smartapp, you can add plugins (as ZIP files) to your applications. To add additional plugins, go to "Own applications", move the cursor over your desired applications and click on "Add Plugin". You can drag the plugin into the box or just select them from your computer.
 
 ![Plugins](/guides/users-guide/plugins.png)
 
@@ -135,9 +136,9 @@ To remove a plugin, click on the cogwheel next to the desired plugin and click r
 ### Restoring to an older application version
 
 Users can restore old versions of an application.
-If you â€œset activeâ€ a specific version of the app, then this will be the version used by users.
+If you "set active" a specific version of the app, then this will be the version used by users.
 
->Note that the â€œArchiveâ€ tab is not available for subscribed applications, as only the owner of the application can perform this action.
+>Note that the "Archive" tab is not available for subscribed applications, as only the owner of the application can perform this action.
 
 ### Uploading archives
 
@@ -231,7 +232,7 @@ To browse the subtenants, click on the subtenants menu. The panel shows the foll
 
 - Tenant status: The small icon indicates the status of a tenant. It can show a green checkmark to indicate that the tenant is active or a red cross to indicate that the tenant is suspended and cannot be accessed.
 - ID: An identifier for this tenant. When you create a tenant, the ID is the first part of the URL. For example, if you create a tenant with the ID "acme" on cumulocity.com, the tenant's URL will be "acme.cumulocity.com". Note that while you can change the URL later on, you cannot change the ID anymore after the tenant was created.
-- Name: A name for this tenant, for example, the company name of your customer. 
+- Name: A name for this tenant, for example, the company name of your customer.
 - Domain: The URL that users will use to access this tenant.
 - Contact name: An administrative contact for the tenant.
 - Phone: The phone number of the administrative contact.
@@ -278,20 +279,38 @@ If a tenant is suspended, the tenant's data remains in the database and can be m
 
 To finally delete a tenant and remove all the data of the tenant, click the "x" button while hovering over the tenant in the list. This action cannot be reverted. For security reasons, it is only available in the management tenant.
 
+### <a name="tenants-custom-properties"></a>Editing custom properties
+
+"Custom properties" tab allows you to view and modify values of custom properties, either predefined ones (like "External reference") or those defined in ["Properties library"](#properties). Such properties are also displayed as columns in [usage statistics table](#usage-stats-custom-properties).
+
+![Custom Properties](/guides/users-guide/subtenant-custom-properties.PNG)
+
 ### <a name="usage-stats"></a> Retrieving usage statistics
 
 The usage statistics menu provides you with information about each subtenant. The statistics show:
 
-- Id: Unique id of the subtenant.
-- External reference: This field is for individual usage, for example, you can add a link to the CRM system here or an internal customer number.
+- Id: Unique id of the subtenant
 - API requests: Number of API requests, including requests from  devices and applications.
 - Device API requests: Number of API requests from devices
 - Storage (MB): The amount of data stored in your account.
+- Root Devices: The amount of devices excluding child devices.
 - Devices: Total number of devices connected to the tenant.
 - Subscribed application: This column shows number of applications that the subtenant is subscribed to.
 - Creation time: The date and time of the creation of the subtenant.
+- Parent: The name of parent tenant (available only for management tenant).
+- External reference: This field is for individual usage, for example, you can add a link to the CRM system here or an internal customer number.
 
-![Usage statistics](/guides/users-guide/usagestats.png)
+![Usage statistics](/guides/users-guide/usage-statistics-list.PNG)
+
+#### <a name="usage-stats-custom-properties"></a> Custom properties
+
+Statistics table also displays custom properties and allows you to sort and filter the list of tenants by their values.
+
+It's possible to export current view of statistics table to CSV file by clicking "Export CSV" link (it will show a dialog where you can customize CSV output, see screenshot below).
+
+<img src="/guides/users-guide/usage-statistics-export.PNG" style="width:400px;"></img>
+
+> Note that you can define custom properties in ["Properties Library"](#properties) and then set their values in tenant's ["Custom Properties"](#tenants-custom-properties) tab.
 
 ## <a name="tfa"></a>Using two-factor authentication
 
@@ -372,6 +391,7 @@ By expanding the "Settings" menu, administrators can:
 
 - Change the [password policy](#changing-password-settings).
 - Change the [TFA settings](#changing-tfa-settings).
+- Manage the [properties library](#properties).
 - Change the [default application](#default-app).
 - Change the [access control](#access-control) settings.
 - [Enable or disable the dashboards via e-mail feature](#enabling-server-side-agents)
@@ -405,6 +425,34 @@ To change the TFA settings, click on "Password" under the "Settings" menu item. 
 
 To disable two-factor authentication, simply deselect the box "Allow two-factor authentication". Click on "Save TFA settings" to apply your changes.
 
+### <a name="properties"></a>Managing the properties library
+
+In the properties library, additional custom properties can be added to tenants, alarms, events or inventory items. These properties can be customized to your own preference.
+
+> Custom properties for “Subtenants” also can be observed or exported in the “Usage statistics” menu.
+
+![Properties library](/guides/users-guide/properties_library.png)
+
+To create a new property, click on "Add property". Afterwards, a form will pop-up. Enter the name of the new property, enter the label and select the desired type of the property (String, number, boolean, etc.). Additionally, you can also check the validation rules which will be required for the new property:
+
+- "Required": If this validation rule is checked, the property will be required to be filled (During alarm creation for example). If the property type is "Boolean", this rule cannot be checked.
+- "Default Value":  Add a default value which will be automatically filled in the custom property field. Please note that, only "String" type properties can have this validation rule.
+- "Minimum": Enter a minimum integer value.
+- "Maximum": Enter a maximum integer value.
+- "Minimum length": Enter the minimum length required for the string.
+- "Maximum length": Enter the maximum length required for the string.
+- "Regular expression": Add the regular expression which will be required in order to fill the custom property field.
+
+When ready, click save.
+
+![Add new property](/guides/users-guide/addproperty.png)
+
+Once created, the custom properties can be observed in the “Custom properties” tab as shown in the screenshot below. In this case, a tenant property named “Custom” was created.
+
+![Custom properties tab](/guides/users-guide/customproptab.png)
+
+To edit a property, simply click on the name of the property. To remove a property, click on the property first and then click on “Remove”.
+
 ### <a name="default-app"></a>Changing the default application
 
 With the "Application" menu, administrators can change the default application view for all users within the tenant when no application was defined in the URL. All users also must have access to this application.
@@ -429,7 +477,7 @@ Retention rules are usually run during the night. When you edit a retention rule
 
 ![Add rule](/guides/users-guide/addrules.png)
 
-To add additional "Retention rules", click on "Add rule". Up to the "Maximum age" field, you can enter an asterisk ("*") into all fields to permit any value in that field.
+To add additional "Retention rules", click on "Add rule". Up to the "Maximum age" field, you can enter an asterisk ("\*") into all fields to permit any value in that field.
 
 - Select the type of data to clean up (alarms, measurements, events, operations, audit logs).
 - Enter a fragment type, if you want to be more specific about the data to be cleaned up. To clean up all connection loss alarms with this rule, select "alarms" and enter "c8y_UnavailabilityAlarm" into "type".
@@ -470,3 +518,84 @@ In case the quota is exceeded, an e-mail is sent to all tenant administrators to
 > - Day 2: the total storage is still at 13GB. The system determines that a 15% reduction of the retention rules is sufficient to be under the storage quota. So any measurement older than 68 days (80 days - 15%) and any other data older that 77 days (90 days - 15% results in 76.5 days, rounded to 77 days) is deleted.
 >
 > The total storage is now at 9.8GB.
+
+## <a name="data-broker"></a>Data broker
+
+Data broker lets you share data selectively with another tenant. You can share:
+
+- Devices (and more generically, managed objects),
+- Events,
+- Alarms,
+- Measurements.
+
+Navigate to "Data connectors" if you would like to send data to another tenant. Navigate to "Data subscriptions", if you want to receive data from another tenant.
+
+<img src="/guides/users-guide/data-broker-on-navigator.PNG" alt="Data broker menus" style="max-width: 25%">
+
+> Devices that are forwarded using the data broker are accounted like normal devices also in the destination tenant.
+
+### <a name="data-broker-connectors"></a> Data connectors
+
+A data connector describes the subset of the data that you would like to send to a destination tenant, as well as the URL of that destination tenant.
+
+#### <a name="data-broker-connectors-list"></a> Viewing data connectors
+
+In the "Data connectors" menu, you can create new data connectors and manage the existing data connectors. Click on "Data connectors" to see a list of all currently defined data connectors with their status.
+
+![Data broker connectors list](/guides/users-guide/data-broker-connectors-list.PNG)
+
+Each card supports the following actions:
+
+* Use the slider to enable and disable data forwarding to the destination tenant. If data is being forwarded, the slider reads "active". If data is not being forwarded, the slider reads "suspended" or "pending". "Suspended" means that you have disabled forwarding. "Pending" means that the destination tenant has disabled forwarding.
+* Click "Edit" in the menu on the top right of the card to modify the data connector's configuration. The configuration is described in more detail below.
+* Click "Duplicate" in the menu to create another data connector with the same configuration.
+* Click "Delete" in the menu to stop data forwarding and remove the data connector.
+
+#### <a name="data-broker-connector-edit"></a> Editing data connectors
+
+Click "Add data connector" to create a new data connector or use the "Edit" menu on a particular data connector to edit its configuration.
+
+![Data broker edit connector](/guides/users-guide/data-broker-edit-connector.PNG)
+
+When creating a new data connector, enter
+
+* The name of the data connector at the top using the small pencil icon.
+* **Target URL for data connector**: The URL of the tenant to which data will be forwarded. Once saved, you cannot edit this value anymore.
+* **Description**: A textual description of the configuration. Both the name and the description will be visible on the destination side after accepting the subscription.
+* **Data filters**: A set of filters that define what is copied to the destination. You need to configure at least one filter.
+
+Each data filter contains the following information:
+
+* **Group or device**: The group or device that is forwarded. Selecting a group here results in all sub-groups and sub-devces being forwarded. By default, all data is forwarded.
+* **API**: Defines the type of data being forwarded.
+* **Fragments to filter**: The fragments that need to be present in a device to be forwarded.
+* **Fragments to copy**: The fragments that are copied to the destination. If nothing is specified here, only standard properties of managed objects, alarms, events and measurements are forwarded (see below). Select "Copy all fragments" to forward the entire object.
+* **Type filter**: Forwarded data needs to have this value in its "type" property.
+
+The heading of a data filter summarizes the configuration in one line. The standard properties that are copied by default are:
+
+* **For created alarms**: "type", "text", "time", "severity", "status".
+* **For updated alarms**: "status", "text", "severity".
+* **For created events**: "type", "text", "time".
+* **For created measurements**: "type", "text", "time"
+* **For created and updated devices**: "type", "name", "c8y_IsBinary", "c8y_IsDeviceGroup", "c8y_IsDevice", "c8y_DeviceGroup", "c8y_DeviceSubgroup", "c8y_SmartRule", "c8y_applications_storage", "c8y_DynamicGroup", "c8y_DeviceQueryString".
+
+Once you have configured your filters, save the configuration. After saving, you will see a security code printed below your configuration. The security code prevents unintended forwarding of data. You need to communicate this security key separately to an administrative user of the destination tenant. You can use the icon next to the security code to copy the code to your clipboard.
+
+![Security code](/guides/users-guide/securitycode.png)
+
+### <a name="data-broker-subscriptions"></a> Data subscriptions
+
+Click on "Data subscriptions" to view the data that is being forwarded to your tenant. The screenshot below illustrates the process of setting up data forwarding on the receiving end. Each card shows one step in the process.
+
+![Data broker subscriptions list](/guides/users-guide/data-broker-subscriptions-list.PNG)
+
+The steps are:
+
+* First, click "Add data subscription" to receive data. You will see the card shown on the left of the screenshot. Enter the security code that you received from the sending end of the data.
+* The card will temporarily change to a progress indicator. When the connection is established, click the "Accept" button to start forwarding data into your tenant. The subscription is active now.
+* You can click the slider in the card to temporarily stop forwarding data into your tenant.
+
+You can now navigate to the Device Management application or the Cockpit application. There will be a new "virtual group" with a specific icon (see the screenshot below) showing the forwarded devices. The group will have the same name as your subscription. Devices are "lazily" created on the destination side whenever they send data for the first time after setting up an active subscription.
+
+![Data broker group in cockpit app](/guides/users-guide/data-broker-group-created.PNG)

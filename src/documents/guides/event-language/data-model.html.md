@@ -33,6 +33,7 @@ Types:
 |OperationUpdated|OPERATION_UPDATE|
 |AlarmCreated|ALARM_CREATE|
 |AlarmUpdated|ALARM_UPDATE|
+|ResponseReceived|REQUEST_RESULT|
 
 For simpler access you can receive the payload directly in the data type of the respective stream by accessing it via an API specific parameter:
 
@@ -171,6 +172,25 @@ Example:
       event.alarm.time,
       event.alarm.source
     from AlarmCreated event;
+    
+### Response received
+
+|Parameter|Data type|Description|
+|:--|:----------|:-------------|:----------|
+|status|Integer|Http response status|
+|body|String|Http response body|
+|creationTime|Date|The time when the response was created|
+|source|Object|Source set in SendRequest output stream|
+
+Example:
+
+    select
+      event.status,
+      event.body,
+      event.creationTime,
+      getString(event.source, 'id.value') as source
+    from ResponseReceived event;   
+
 
 ## Output streams
 
@@ -486,6 +506,32 @@ Example:
       "To acknowledge this call please press button 5" as questionText,
       5 as acknowledgeButton
     from EventCreated e
+
+### SendRequest
+
+This stream enables the possibility to send HTTP requests from Cumulocity to external systems.
+
+|Parameter|Data type|Description|Mandatory|
+|:--|:----------|:-------------|:----------|
+|url|String|Url of external system|yes|
+|method|String|Method of HTTP request|yes|
+|body|String|Body of http reqeust|no|
+|authorization|String|HTTP Authorization header|no|
+|contentType|String|HTTP Content-Type header|no|
+|headers|Map<String,String>|HTTP headers|no|
+|source|Object|Represents object which will be passed to ResponseReceived input stream|no|
+
+Example:
+
+    insert into SendRequest
+    select 
+      'post' as method,
+      'htto://some.external.service.com' as url,
+      'application/json' as contentType,
+      toJSON(m.payload) as body,
+      m.payload as source
+    from MeasurementCreated m
+
 
 ## Additional data models
 

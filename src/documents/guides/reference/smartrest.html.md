@@ -18,7 +18,7 @@ The following example shows the communication between a client and the  *SmartRE
 	POST /s HTTP/1.0
 	Authorization: Basic ...
 	X-Id: ...
-	Content-Length: 13
+	Transfer-Encoding: chunked
 
 	100,1234456
 
@@ -27,7 +27,7 @@ Each *SmartREST* request is represented by one row having a unique unsigned inte
 The *SmartREST* endpoint yields the following response. Note that the *HTTP* response code is always `200` unless the *SmartREST* endpoint is not available.
 
 	HTTP/1.1 200 OK
-	Content-Length: 29
+	Transfer-Encoding: chunked
 
 	200,1,123456,Request result
 
@@ -39,7 +39,7 @@ Note: If response from Cumulocity REST API would be empty (e.g. like after delet
 
 The *CSV (comma-separated values)* format is used for communication with the *SmartREST* endpoint. The following rules must be followed to ensure a frictionless communication.
 
-* Every row must be terminated by the `CRLF` character sequence.
+* Every row must be terminated by the `\n` character sequence.
 * Values are always separated by a comma (`,`).
 * If a value contains double-quotes (`"`), commas (`,`), leading or trailing whitespace, line-breaks or tab stops, it must be surrounded by quotes (`"`). Contained double-quotes (`"`) must be escaped by prepending another double-quote (`""`).
 
@@ -65,7 +65,7 @@ In case when it is only needed to communicate data to real-time processing, the 
 	Authorization: Basic ...
 	X-Id: ...
 	X-Cumulocity-Processing-Mode: TRANSIENT
-	Content-Length: 13
+	Transfer-Encoding: chunked
 
 	100,1234456
 
@@ -115,19 +115,19 @@ The existence of a *SmartREST* template can be checked by making an empty reques
 	POST /s HTTP/1.0
 	Authorization: Basic ...
 	X-Id: ...
-	Content-Length: 0
+	Transfer-Encoding: chunked
 
 If the template exists, the following response is yielded where the message identifier `20` indicates that the template exists in the inventory and the parameter `123456` indicates the managed object GId of the template:
 
 	HTTP/1.1 200 OK
-	Content-Length: 10
+	Transfer-Encoding: chunked
 
 	20,12345
 
 If the template does not exist, a response containing an error message is yielded:
 
 	HTTP/1.1 200 OK
-	Content-Length: 33
+	Transfer-Encoding: chunked
 
 	40,"No template for this X-ID."
 
@@ -138,7 +138,7 @@ Templates can be registered with one single request containing *SmartREST* templ
 	POST /s HTTP/1.0
 	Authorization: Basic ...
 	X-Id: ...
-	Content-Length: 275
+	Transfer-Encoding: chunked
 
 	10,100,POST,/inventory/managedObjects,application/vnd.com.nsn.cumulocity.managedObject+json,application/vnd.com.nsn.cumulocity.managedObject+json,,,"{""name"":""Test Device"",""type"":""com_example_TestDevice"",""c8y_IsDevice"":{}}"
 	11,201,,"$.c8y_IsDevice","$.id"
@@ -146,7 +146,7 @@ Templates can be registered with one single request containing *SmartREST* templ
 Should the template registration be successful, a similar response like above will be returned.
 
 	HTTP/1.1 200 OK
-	Content-Length: 10
+	Transfer-Encoding: chunked
 
 	20,12345
 

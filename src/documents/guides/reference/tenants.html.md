@@ -775,7 +775,7 @@ Example Response :
 |:---|:---|:-----|:----------|
 |day|String|1|Date of statistics.|
 |deviceCount|Number|1|Number of devices in the tenant (c8y\_IsDevice).|
-|deviceRequestCount|Number|1|Number of requests that were issued only by devices against the tenant.|
+|deviceRequestCount|Number|1|Number of requests that were issued only by devices against the tenant. For details, see below.|
 |deviceWithChildrenCount|Number|1|Number of devices with all children.|
 |requestCount|Number|1|Number of requests that were issued against the tenant.|
 |storageSize|Number|1|Database storage in use by the tenant, in bytes.|
@@ -787,6 +787,14 @@ Example Response :
  * "deviceCount", "deviceWithChildrenCount", "storageSize" and "subscribedApplications" are updated daily starting at 23:57.
  * "storageSize" is affected by your retention rules. It is also affected by the regularly running database optimization functions running in Cumulocity. If the size decreases, it does not necessarily mean that data was deleted.
  * Days are counted according to server timezone.
+
+"deviceRequestCount" - device requests are recognized as requests that do not contain "X-Cumulocity-Application-Key" header. 
+In addition, requests to /user, /tenant and /application API's are not counted.
+
+Request counting in SmartREST and MQTT:
+- SmartREST: each row in SmartREST request is transformed into a separate HTTP request. For example, if one SmartREST request contains 10 rows, then 10 separate calls are executed, meaning that request count is increased by 10. 
+Please remember that SmartREST uses SmartREST template to convert the rows and that is retrieved by X-Id passed in the request. This results in 2 additional requests per 1 SmartREST request.
+- MQTT: each row/line counts as a separate request. Creating custom template counts as a single request.
 
 ### TenantUsageStatisticsCollection [application/vnd.com.nsn.cumulocity.tenantUsageStatisticsCollection+json]
 

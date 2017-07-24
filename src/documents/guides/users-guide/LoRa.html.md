@@ -52,18 +52,32 @@ Select the predefined device type, for example "LoRaWAN Demonstrator". Click "Im
 Alternatively you may also load the device type from a file and import it. 
 
 ### <a name="create-new-device-type"></a>Creating a new device type
+
+
 In the Device database window, click the "New" button. 
 
-Select "LoRa" as the device type and name your device. Click the "Add" button and add the relevant values for your device:
+Select "LoRa" as the device type and name your device. 
 
-- name of the value and possibly its display category
-- message ID 
-- message source (either "FPORT", i. e. the message value, or "Payload", i. e. the message ID inside the payload)
-- information to decode the payload (such as starting bit, number of bits, multiplier, divisor, decimal places)
+LoRa devices can send messages of different types with different encodings per type. Depending on the device, the message type can be determined by looking either at the FPort parameter of a message (source: FPort) or at the subset of the message payload itself (source: Payload). Select the message type in the "Source" dropdown box.
 
-Select the options, if required ("signed" or "packed decimal").
+If you select "Payload", indicate where the message type information starts in the payload in the "Start bit" field and how long this information is in the "Number of bits" field.
 
-In the functionalities, define how this device type should behave, for example send a measurement or raise an alarm. 
+Click the "Add" button. ???The "message ID" will be matched with the message ID found in the "Source" field on the device type main page.
+
+Enter the relevant general values for your device: the "Name" of the value and possibly its "Display category".
+
+???Under "Value selection" you may change the information you have given on the device type main page defining where the message type information starts in the payload in the "Start bit" field and how long this information is in the "Number of bits" field, if needed.
+
+Under "Value normalisation" define how the raw value should be transformed before being stored in the platform and enter the appropriate values in the "Multiplier", "Divisor" and "Unit" fields.
+
+Select the options, if required: "Signed" (if the value is a signed number) or "Packed decimal" (if the value is BCD encoded).
+
+In the functionalities, define how this device type should behave:
+
+- **Send measurement**: create a measurement whenever the value is changed
+- **Raise alarm**: create an alarm if the value is not equal to zero
+- **Send event**: create an event whenever the value is changed
+- **Update managed object**: update a fragment in a managed object whenever the value is changed
 
 The following picture shows an example for a device type which sends a measurement. In this case also values such as the measurement type and series need to be defined. 
 

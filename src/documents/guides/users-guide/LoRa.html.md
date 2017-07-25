@@ -23,7 +23,7 @@ Enter the following information:
 - **profile ID**: This depends on your ThingPark account and environment. If you are using, for example, the Dev1 ThingPark environment your profile ID will be "dev1-api".
 - **username**: your ThingPark user name
 - **password**: your password 
-- **application EUI**: This is a global application ID in the IEEE EUI64 address space that uniquely identifies the application provider of the device
+- **application EUI**: This is a global application ID in the IEEE EUI64 address space that uniquely identifies the application provider of the device.
 
 ![Register devices](/guides/users-guide/actility/credentials-new-2.png)
 
@@ -53,12 +53,11 @@ Alternatively you may also load the device type from a file and import it.
 
 ### <a name="create-new-device-type"></a>Creating a new device type
 
-
 In the Device database window, click the "New" button. 
 
 Select "LoRa" as the device type and name your device. 
 
-LoRa devices can send messages of different types with different encodings per type. Depending on the device, the message type can be determined by looking either at the FPort parameter of a message (source: FPort) or at the subset of the message payload itself (source: Payload). Select the message type in the "Source" dropdown box.
+Select the message type in the "Source" dropdown box. LoRa devices can send messages of different types with different encodings per type. Depending on the device, the message type can be determined by looking either at the FPort parameter of a message (source: FPort) or at the subset of the message payload itself (source: Payload). 
 
 If you select "Payload", indicate where the message type information starts in the payload in the "Start bit" field and how long this information is in the "Number of bits" field.
 
@@ -66,18 +65,18 @@ Click the "Add" button. ???The "message ID" will be matched with the message ID 
 
 Enter the relevant general values for your device: the "Name" of the value and possibly its "Display category".
 
-???Under "Value selection" you may change the information you have given on the device type main page defining where the message type information starts in the payload in the "Start bit" field and how long this information is in the "Number of bits" field, if needed.
+Under "Value selection" you may define from where the information should be extracted. In order to do so, indicate where the information starts in the "Start bit" field and how long this information is in the "Number of bits" field.
 
-Under "Value normalisation" define how the raw value should be transformed before being stored in the platform and enter the appropriate values in the "Multiplier", "Divisor" and "Unit" fields.
+Under "Value normalisation" define how the raw value should be transformed before being stored in the platform and enter the appropriate values in the "Multiplier", "Divisor"/"Offset" and "Unit" fields.
 
-Select the options, if required: "Signed" (if the value is a signed number) or "Packed decimal" (if the value is BCD encoded).
+Select one of the options, if required: "Signed" (if the value is a signed number) or "Packed decimal" (if the value is BCD encoded).
 
 In the functionalities, define how this device type should behave:
 
-- **Send measurement**: create a measurement whenever the value is changed
-- **Raise alarm**: create an alarm if the value is not equal to zero
-- **Send event**: create an event whenever the value is changed
-- **Update managed object**: update a fragment in a managed object whenever the value is changed
+- **Send measurement**: creates a measurement whenever the value is changed
+- **Raise alarm**: creates an alarm if the value is not equal to zero
+- **Send event**: creates an event whenever the value is changed
+- **Update managed object**: updates a fragment in a managed object whenever the value is changed
 
 The following picture shows an example for a device type which sends a measurement. In this case also values such as the measurement type and series need to be defined. 
 

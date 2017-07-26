@@ -55,21 +55,23 @@ Alternatively you may also load the device type from a file and import it.
 
 In the Device database window, click the "New" button. 
 
-Select "LoRa" as the device type and name your device. 
+Select "LoRa" as the device type and name your device type. 
 
-Select the message type in the "Source" dropdown box. LoRa devices can send messages of different types with different encodings per type. Depending on the device, the message type can be determined by looking either at the FPort parameter of a message (source: FPort) or at the subset of the message payload itself (source: Payload). 
+Select the message type in the "Source" dropdown box. ??? rephrase??? LoRa devices can send messages of different types with different encodings per type. Depending on the device, the message type can be determined by looking either at the FPort parameter of a message (source: FPort) or at the subset of the message payload itself (source: Payload). 
 
 If you select "Payload", indicate where the message type information starts in the payload in the "Start bit" field and how long this information is in the "Number of bits" field.
 
-Click the "Add" button. ???The "message ID" will be matched with the message ID found in the "Source" field on the device type main page.
+Click the "Add" button. 
 
-Enter the relevant general values for your device: the "Name" of the value and possibly its "Display category".
+???Configure the "message ID" according to your device message specification to map to the Cumulocity data. It will be matched with the message ID found in the source specified on the device type main page (i.e. Payload or FPort). The message ID needs to be entered in decimal numbers (not hex).???
 
-Under "Value selection" you may define from where the information should be extracted. In order to do so, indicate where the information starts in the "Start bit" field and how long this information is in the "Number of bits" field.
+Enter the relevant general values for your device for the visualisation in the "Values" list: the "Name" of the value and possibly its "Display category".
 
-Under "Value normalisation" define how the raw value should be transformed before being stored in the platform and enter the appropriate values in the "Multiplier", "Divisor"/"Offset" and "Unit" fields.
+Under "Value selection" define from where the value should be extracted. In order to do so, indicate where the value information starts in the "Start bit" field and how long this information is in the "Number of bits" field.
 
-Select one of the options, if required: "Signed" (if the value is a signed number) or "Packed decimal" (if the value is BCD encoded).
+Under "Value normalisation" define how the raw value should be transformed before being stored in the platform and enter the appropriate values in the "Multiplier", "Offset" and "Unit" fields.
+
+Select the options, if required: "Signed" (if the value is a signed number) or "Packed decimal" (if the value is BCD encoded).
 
 In the functionalities, define how this device type should behave:
 
@@ -78,9 +80,15 @@ In the functionalities, define how this device type should behave:
 - **Send event**: creates an event whenever the value is changed
 - **Update managed object**: updates a fragment in a managed object whenever the value is changed
 
-The following picture shows an example for a device type which sends a measurement. In this case also values such as the measurement type and series need to be defined. 
+The following picture shows an example for a device type which sends a measurement when the value is changed. In this case also values such as the measurement type and series need to be defined. 
 
-![Value configuration in detail](/guides/users-guide/actility/deviceDatabase2.png)
+![Value configuration in detail: measurement](/guides/users-guide/actility/deviceDatabase2.png)
+
+The following picture shows an example for a device type which updates a fragment in a managed object when the value is changed. In this case also values such as the managed object fragment and the property nested inside the fragment need to be defined. 
+
+![Value configuration in detail: MO](/guides/users-guide/actility/deviceDatabase3.png)
+
+???You can also have a nested structure inside the 
 
 After clicking "OK", your device type is created with the values you defined.
 

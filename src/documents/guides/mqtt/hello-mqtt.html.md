@@ -32,7 +32,7 @@ The other configurations like "clean session" are not important for this example
 
 ![MQTTLens Established Connection](/guides/mqtt/mqttLensSuccess.png)
 
-If the icon next to your connection on the left is read, verify your configuration (especially username and password). If the icon is green, you successfully established an MQTT connection to Cumulocity.
+If the icon next to your connection on the left is red, verify your configuration (especially username and password). If the icon is green, you successfully established an MQTT connection to Cumulocity.
 
 ### Sending data
 

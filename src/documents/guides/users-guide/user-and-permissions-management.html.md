@@ -284,6 +284,8 @@ There are two alternative setups for support users on Cumulocity:
 - The service provider configures permissions for management tenant users to enable them to provide support.
 - Tenant users request support and through this, provide the permission to management tenant users to login.
 
+> The support user feature does not work when the support user has two-factor authentication enabled, but no phone number is provided. The phone number has to be provided first, in order to login as a support user.
+
 #### Management tenant permissions
 
 To enable a management tenant user to support users in other tenants, you need to provide the user with either the "Support" global permission or the "Support" inventory role (both "Read" and "Change").

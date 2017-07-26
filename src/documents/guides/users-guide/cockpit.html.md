@@ -820,6 +820,30 @@ Standard time properties of documents (like time or creationTime in alarms) are 
 
 Only csv time contains miliseconds and timezone.
 
+### Scheduling export
+
+To schedule export to csv or xlsx at some point in time navigate to "Schedule export" located in right menu in chosen export.
+
+![Exporting](/guides/users-guide/export_schedule.png)
+
+Complete frequency field "every":
+* For "every year": day of month, month, hour and minute
+* For "every month": choose day of month, hour and minute
+* For "every day": choose hour and minute
+* For "every hour": choose minute
+
+![Exporting](/guides/users-guide/export_schedule_frequency.png)
+
+Complete email information:
+* "Send to": email address of receiver. This fiels is required.
+* "Send CC to": email address of "carbon copy"
+* "Send BCC to": email address of "blind carbon copy"
+* "Reply to": email address of sender
+* "Subject": subject of email
+* "Message": required message of email. Available placeholders: {host}, {binaryId}. Default value is "File with exported data can be downloaded from {host}/inventory/binaries/{binaryId}".
+
+![Exporting](/guides/users-guide/export_schedule_email.png)
+
 ### Editing reports
 
 To **edit** reports, just click on them and save the changes.

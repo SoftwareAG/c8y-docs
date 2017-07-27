@@ -515,7 +515,7 @@ This stream enables the possibility to send HTTP requests from Cumulocity to ext
 |:--|:----------|:-------------|:----------|
 |url|String|Url of external system|yes|
 |method|String|Method of HTTP request|yes|
-|body|String|Body of http reqeust|no|
+|body|String|Body of HTTP reqeust|no|
 |authorization|String|HTTP Authorization header|no|
 |contentType|String|HTTP Content-Type header|no|
 |headers|Map<String,String>|HTTP headers|no|
@@ -531,6 +531,28 @@ Example:
       toJSON(m.payload) as body,
       m.payload as source
     from MeasurementCreated m
+
+### SendExport
+
+This stream enables the possibility to generate export.
+
+|Parameter|Data type|Description|Mandatory|
+|:--|:----------|:-------------|:----------|
+|enabledSources|List|Export configuration ids|true|
+|subject|String|Subject of email|false|
+|text|String|Text of email. Available placeholders: {host}, {binaryId}. Default message is: "File with exported data can be downloaded from {host}/inventory/binaries/{binaryId}"|false|
+|receiver|String|Receiver of email|false|
+
+Example:
+
+    insert into SendExport
+    select
+        'configurationExportId' as enabledSources,
+        'subject' as subject,
+        'text' as text,
+        'receiver@example.com' as receiver
+    from
+        pattern [every timer:at(5, *, *, *, *)]
 
 
 ## Additional data models

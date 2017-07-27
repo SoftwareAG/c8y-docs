@@ -40,6 +40,7 @@ For interacting with the Cumulocity backend you can create an event on the respe
 |SMS|*(not used)*|SendSms|This group of events represents sending of a SMS.|
 |Text-to-speech|*(not used)*|SendSpeech|This group of events represents initializing of a phone call.|
 |HTTP|ResponseReceived|SendReqeust|This group of events represents sending http requests to external services.|
+|Export|*(not used)*|SendExport|This group of events represents generating emails with exported data.
 
 Look at the data model to see how the events for each stream are structured.
 

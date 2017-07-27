@@ -8,7 +8,7 @@ layout: default
 
 Dieser Abschnitt ist eine grundlegende Einführung in die Cumulocity-Plattform. Sie beschreibt:
 
-   * [Zugriff auf Cumulocity Anwendungen](#zugriff)
+   * [Zugriff auf Cumulocity-Anwendungen](#zugriff)
    * [Einloggen](#login)
    * [Navigation in Cumulocity](#navigating)
    * [Veränderung der Nutzereinstellungen](#settings)
@@ -25,7 +25,7 @@ Um Cumulocity zu nutzen, müssen Sie einen Browser auf dem neuesten Stand instal
   
 Sie können auch aktuelle Smartphone- und Tablet-Webbrowser verwenden. Wir testen mit folgenden mobilen Webbrowsern:
 
-  * Chrome für Android (neuester) auf Galaxy smartphones und Tablets
+  * Chrome für Android (neuester) auf Galaxy Smartphones und Tablets
   * Safari auf iOS (neuester) für Apple iPhone und iPad
     
 > Der private Modus in Browsern funktioniert möglicherweise nicht. Die Verwendung von Cumulocity auf mobilen Geräten kann durch den Speicher und die auf den Geräten verfügbare Verarbeitungsleistung eingeschränkt sein. Beim Laden großer Visualisierungen kann das mobile Gerät kommunikationsunfähig werden.

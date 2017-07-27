@@ -57,13 +57,18 @@ In the Device database window, click the "New" button.
 
 Select "LoRa" as the device type and name your device type. 
 
-Select the message type in the "Source" dropdown box. ??? rephrase??? LoRa devices can send messages of different types with different encodings per type. Depending on the device, the message type can be determined by looking either at the FPort parameter of a message (source: FPort) or at the subset of the message payload itself (source: Payload). 
+Select the way the message type is encoded in the "Source" dropdown box:  
 
-If you select "Payload", indicate where the message type information starts in the payload in the "Start bit" field and how long this information is in the "Number of bits" field.
+- **FPort**: if the message type can be determined by looking at the FPort parameter of a message  
+- **Payload**: if the message type can be determined by looking at the subset of the message payload itself   
+
+If you select "Payload", indicate in the "Start bit" field where the message type information starts in the payload and how long this information is in the "Number of bits" field.
 
 Click the "Add" button. 
 
-???Configure the "message ID" according to your device message specification to map to the Cumulocity data. It will be matched with the message ID found in the source specified on the device type main page (i.e. Payload or FPort). The message ID needs to be entered in decimal numbers (not hex).???
+![Value configuration: new](/guides/users-guide/actility/deviceDatabase4.png)
+
+Configure the "message ID" according to your device message specification and map it to the Cumulocity data. It will be matched with the message ID found in the source specified on the device type main page (i.e. Payload or FPort). The message ID needs to be entered in decimal numbers (not hex).
 
 Enter the relevant general values for your device for the visualisation in the "Values" list: the "Name" of the value and possibly its "Display category".
 
@@ -88,7 +93,7 @@ The following picture shows an example for a device type which updates a fragmen
 
 ![Value configuration in detail: MO](/guides/users-guide/actility/deviceDatabase3.png)
 
-???You can also have a nested structure inside the 
+???You can also have a nested structure inside the ...???
 
 After clicking "OK", your device type is created with the values you defined.
 

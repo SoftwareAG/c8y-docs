@@ -6,7 +6,7 @@ layout: default
 
 ## Einführung
 
-Dieser Abschnitt ist eine grundlegende Einführung in die Cumulocity-Plattform. Sie beschreibt:
+Die folgenden Abschnitte beinhalten eine grundlegende Einführung in die Cumulocity-Plattform. Sie beschreiben:
 
    * [Zugriff auf Cumulocity-Anwendungen](#zugriff)
    * [Einloggen](#login)
@@ -39,21 +39,22 @@ Dadurch gelangen Sie zur Anmeldeseite Ihrer Standardanwendung, die in der folgen
 <img src="/guides/benutzerhandbuch/Einloggen.png" alt="Einloggen" style="max-width: 50%">
 
 
-> Stellen Sie sicher, dass die Adressleiste Ihres Browsers ein Sperrsymbol anzeigt. Das Sperrsymbol zeigt an, dass Sie eine sichere Verbindung verwenden und dass Sie tatsächlich mit Cumulocity verbunden sind.
-Die oben genannte URL ist nur für Abonnenten der Cumulocity Standard Edition gültig. Für Enterprise Editions von Cumulocity ist die URL für Ihr Unternehmen spezifisch.
+> Stellen Sie sicher, dass die Adressleiste Ihres Browsers ein Sperrsymbol anzeigt. Das Sperrsymbol signalisiert, dass Sie eine sichere Verbindung verwenden und dass Sie tatsächlich mit Cumulocity verbunden sind.
+> 
+> Die oben genannte URL ist nur für Abonnenten der Cumulocity Standard Edition gültig. Für Enterprise Editions von Cumulocity ist die URL für Ihr Unternehmen spezifisch.
 
 ## <a name="login"></a>Einloggen
 
-Geben Sie auf der Anmeldeseite Ihren Benutzernamen und Ihr Passwort ein, um die Anwendung zu starten. Wenn Sie das Kontrollkästchen "An mich erinnern" anklicken, erinnert sich Ihr Browser  an Ihre Anmeldeinformationen, so dass Sie sie nicht immer wieder eingeben müssen. Dies ist auch praktisch, wenn Sie häufig zwischen Cumulocity-Anwendungen navigieren, da Cumulocity erfordert, dass Sie sich jedes Mal beim Starten einer Anwendung authentifizieren. Sie können wählen, Ihre Anmeldeinformationen zu "vergessen", indem Sie sich explizit mit dem Menüpunkt "Abmelden" in der Anwendung abmelden.
+Geben Sie auf der Anmeldeseite Ihren Benutzernamen und Ihr Passwort ein, um die Anwendung zu starten. Wenn Sie das Kontrollkästchen "Passwort merken" anklicken, erinnert sich Ihr Browser  an Ihre Anmeldeinformationen, so dass Sie sie nicht immer wieder eingeben müssen. Dies ist auch praktisch, wenn Sie häufig zwischen Cumulocity-Anwendungen navigieren, da Cumulocity erfordert, dass Sie sich jedes Mal beim Starten einer Anwendung authentifizieren. Sie können wählen, Ihre Anmeldeinformationen zu "vergessen", indem Sie sich explizit mit dem Menüpunkt "Abmelden" in der Anwendung abmelden.
 
 <img src="/guides/benutzerhandbuch/Ausloggen.png" alt="Ausloggen" style="max-width: 60%">
 
 
-**Aus Sicherheitsgründen wird keine Cookie-Technologie angewandt.**
+> Aus Sicherheitsgründen wird keine Cookie-Technologie angewandt.
 
 Wenn Sie Ihr Passwort vergessen haben, klicken Sie auf den "Passwort vergessen?"-Link auf dem Anmeldebildschirm. Sie können nun Ihre E-Mail-Adresse eingeben und auf "Passwort zurücksetzen" klicken. Sie erhalten eine E-Mail mit einem Link zum Zurücksetzen des Passworts. Klicken Sie auf den Link, um ein neues Passwort einzugeben.
 
-> Passwort zurücksetzen. Link ist nur einen Tag gültig.
+> Der Link zum Zurücksetzen des Passwortes ist einen Tag gültig.
 
 <img src="/guides/benutzerhandbuch/Passwort-Reset.png" alt="Passwort-Reset" style="max-width: 50%">
 
@@ -61,13 +62,14 @@ Der automatische Passwort-Reset funktioniert nur, wenn Ihre E-Mail Adresse mit e
 
 > Wenn Sie selber der Hauptadministrator sind, ist die E-Mail-Adresse gespeichert, die bei der Erstanmeldung bei Cumulocity benutzt wurde. Wenn Sie Fragen an den Cumulocity-Support haben, benutzen Sie bitte die E-Mail, die bei der Erstanmeldung verwendet wurde.
 
-Um Ihr Passwort zu ändern, klicken Sie in der Anwendung auf das Symbol "Benutzereinstellungen". Bitte achten Sie darauf, ein starkes Passwort auszuwählen. Um Sie bei der Auswahl von passwortgeschützten Passwörtern zu unterstützen, wird eine Passwortstärkeanzeige zusammen mit einer Passwortänderung angezeigt. Ein Passwort muss aus mindestens acht Zeichen bestehen. Es sollte eine Mischung aus Zeichenklassen (Groß- und Kleinbuchstaben, Zahlen und Symbolen) verwenden. Ein sicheres Kennwort verwendet mindestens drei der oben genannten vier Zeichenklassen.
+Um Ihr Passwort zu ändern, klicken Sie in der Anwendung auf das Symbol "Benutzereinstellungen". Bitte achten Sie darauf, ein starkes Passwort auszuwählen. Um Sie bei der Auswahl eines sicheren Passwortes zu unterstützen, wird die Passwortstärke bei einer Passwortänderung  angezeigt. Ein Passwort muss aus mindestens acht Zeichen bestehen. Es sollte eine Mischung aus Zeichenklassen (Groß- und Kleinbuchstaben, Zahlen und Symbolen) verwenden. Ein sicheres Kennwort verwendet mindestens drei der oben genannten vier Zeichenklassen.
+
 
 <img src="/guides/benutzerhandbuch/Passwort-aendern.png" alt="Passwort ändern" style="max-width: 50%">
 
-> Ihr Administrator kann Ihr Konto so konfigurieren, dass es eine Kennwortrichtlinie erzwingt. Sie müssen dann ein starkes Passwort auswählen oder Ihr Passwort regelmäßig ändern.
+> Ihr Administrator kann Ihr Konto so konfigurieren, dass eine Kennwortrichtlinie eingehalten werden muss. Möglicherweise müssen Sie dann ein starkes Passwort auswählen oder Ihr Passwort regelmäßig ändern.
 
-## <a name="navigating"></a>Navigation innerhalb von Cumulocity 
+## <a name="navigating"></a>Navigation innerhalb der Cumulocity-Anwendungen 
 
 
 Sobald Sie angemeldet sind, wird Ihre Standard-Cumulocity-Anwendung geöffnet. Der Inhalt der Cumulocity-Anwendungen ist vollständig dynamisch und wird basierend auf verschiedenen Kriterien generiert:
@@ -78,26 +80,27 @@ Sobald Sie angemeldet sind, wird Ihre Standard-Cumulocity-Anwendung geöffnet. D
 * Die Konfiguration der Benutzeroberfläche, wie Gruppen und Berichte
 * Die Funktionalität der von Ihnen verwendeten Geräte
 
-## Die Benutzeroberfläche von Cumulocity und Menüstruktur
+Die allgemeine Struktur einer Cumulocity-Anwendung wird im folgenden Screenshot aufgezeigt.
 
 * Der Name der aktuell sichtbaren Anwendung wird oben links angezeigt. 
-* Mit dem Navigator können Sie zu den verschiedenen Seiten einer Anwendung gelangen. Klicken Sie auf einen Eintrag im Navigator, um die entsprechende Seite zu öffnen. Sie können Bereiche im Navigator reduzieren, indem Sie auf die Abschnittsüberschriften klicken (wie die Zeilen mit dem kleinen Dreieck vor dem Text), und sie so auch expandieren.
+* Mit dem Navigator können Sie zu den verschiedenen Seiten einer Anwendung gelangen. Klicken Sie auf einen Eintrag im Navigator, um die entsprechende Seite zu öffnen. Sie können Bereiche im Navigator reduzieren, indem Sie auf die Abschnittsüberschriften klicken (d. h. die Zeilen mit dem kleinen Dreieck vor dem Text), und sie so auch expandieren.
 * Auf einigen Seiten sind zusätzliche "Tabs" verfügbar, je nachdem, wie viele Informationen angezeigt werden müssen.
 * Der obere Bereich der Anwendung wird als Meldungsleiste verwendet, wenn ein Status (grün) oder ein Fehler (rot) angezeigt werden muss.
-* Das Feld "search" bietet eine  [Volltextsuche](#searching) an.
-* Mit dem Application Switcher können Sie von einer Anwendung zur anderen wechseln. Möglicherweise müssen Sie Ihre Anmeldeinformationen erneut eingeben, wenn Sie "An mich erinnern" nicht bei Ihrem ursprünglichen Login bei Cumulocity ausgewählt haben.
-* Das Benutzermenü zeigt Ihren Benutzernamen an. Durch Anklicken des Benutzernamens erscheint ein Popup-Menü. Das Popup-Menü erlaubt Ihnen, sich von der Anwendung abzumelden (auch wenn Sie auf "An mich erinnern" geklickt haben) und bietet Zugriff auf Benutzereinstellungen und Hilfe.
+* Das Suchfeld bietet eine  [Volltextsuche](#searching) an.
+* Mit dem Application Switcher können Sie von einer Anwendung zur anderen wechseln. Möglicherweise müssen Sie Ihre Anmeldeinformationen erneut eingeben, wenn Sie bei Ihrem ursprünglichen Login bei Cumulocity nicht "Passwort merken" ausgewählt haben.
+* Das Benutzermenü zeigt Ihren Benutzernamen an. Durch Anklicken des Benutzernamens erscheint ein Popup-Menü. Das Popup-Menü erlaubt Ihnen, sich von der Anwendung abzumelden (auch wenn Sie auf "Passwort merken" geklickt haben), und bietet Zugriff auf Benutzereinstellungen und Hilfe.
 * In einigen Bereichen bietet ein Zahnrad oben rechts Zugriff auf weitere Funktionalität über ein Dropdown-Menü.
 
 <img src="/guides/benutzerhandbuch/Benutzeroberflaeche.png" alt="Benutzeroberfläche" style="max-width: 100%">
 
-Bei kleineren Bildschirmen ändert sich das Layout der Benutzeroberfläche wie unten gezeigt. Der Navigator ist ausgeblendet, und nur einige Registerkarten werden im Bildschirmbereich angezeigt. Um auf den Navigator zuzugreifen, klicken Sie auf die drei Linien links oben. Um auf andere Registerkarten zuzugreifen, navigieren Sie nach links oder rechts. (Wie man genau scrollt, ist abhängig vom Gerätetyp.)
+Bei kleineren Bildschirmen ändert sich das Layout der Benutzeroberfläche wie unten gezeigt. Der Navigator ist ausgeblendet, und nur einige Tabs werden im Bildschirmbereich angezeigt. Um auf den Navigator zuzugreifen, klicken Sie auf die drei Linien links oben. Um auf andere Registerkarten zuzugreifen, navigieren Sie nach links oder rechts. (Wie man genau scrollt, ist abhängig vom Gerätetyp.)
 
-<img src="/guides/users-guide/appsmall.png" alt="Layout auf kleinen Geräten" style="max-width: 50%">
+<img src="/guides/benutzerhandbuch/Benutzeroberflaeche-mobil.png" alt="Benutzeroberfläche auf kleinen Geräten" style="max-width: 50%">
 
 Beachten Sie, dass Sie direkt zu jeder Stelle in einer Cumulocity-Anwendung navigieren können. Um beispielsweise die grundlegenden Informationen für ein Gerät anzuzeigen, können Sie die folgende URL eingeben:
-	[https://<account>.cumulocity.com/apps/devicemanagement/index.html#/device/<id>/info
-](Device ID). 
+
+	https://<account>.cumulocity.com/apps/devicemanagement/index.html#/device/<id>/info
+
 Mit dieser URL können Sie folgende Aktionen ausführen:
 
   * Speichern von Lesezeichen für bestimmte Geräte oder Seiten
@@ -109,7 +112,7 @@ Mit dieser URL können Sie folgende Aktionen ausführen:
 
 ## <a name="settings"></a>Nutzereinstellungen
 
-Um die Einstellungen für Ihren Benutzer zu ändern, klicken Sie oben rechts auf das Benutzersymbol und wählen "Benutzereinstellungen". Stellen Sie die Sprache der Benutzeroberfläche über das Dropdown-Menü "Sprache" ein. Ändern Sie Ihr Passwort, indem Sie auf "Passwort ändern" klicken. Klicken Sie anschließend auf "Speichern", um Ihre Änderungen zu speichern, oder auf "Abbrechen", um sie zu verwerfen.
+Um die Einstellungen für Ihren Benutzer zu ändern, klicken Sie oben rechts auf das Benutzersymbol und wählen Sie "Benutzereinstellungen". Stellen Sie die Sprache der Benutzeroberfläche über das Dropdown-Menü "Sprache" ein. Ändern Sie Ihr Passwort, indem Sie auf "Passwort ändern" klicken. Klicken Sie anschließend auf "Speichern", um Ihre Änderungen zu speichern, oder auf "Abbrechen", um sie zu verwerfen.
 
 <img src="/guides/benutzerhandbuch/Benutzer-editieren.png" alt="Benutzer editieren"  style="max-width: 60%">
 
@@ -125,7 +128,7 @@ Die Standardsprache ist Englisch.
 
 Das Cumulocity-Suchfeld bietet eine Volltextsuche des gesamten Inventars. Wenn Sie mehrere durch ein Leerzeichen getrennte Wörter eingeben, werden alle Objekte zurückgegeben, die mit einem der Wörter übereinstimmen. 
 
-Beispiel: Die Eingabe von
+Die Eingabe von, zum Beispiel,
 
 	My Demo Device
 

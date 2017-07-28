@@ -85,6 +85,16 @@ In the functionalities, define how this device type should behave:
 - **Send event**: creates an event whenever the value is changed
 - **Update managed object**: updates a fragment in a managed object whenever the value is changed
 
+After clicking "OK", the values are added to your device type. 
+
+![Value configurations of created device type](/guides/users-guide/actility/deviceDatabase1.png)
+
+You can also have a nested structure with several values within a device type (also refer to the example of a nested structure for a "Position" device type below).
+
+After clicking "Save", your device type is created with the values you defined.
+
+**Examples**
+
 The following picture shows an example for a device type which sends a measurement when the value is changed. In this case also values such as the measurement type and series need to be defined. 
 
 ![Value configuration in detail: measurement](/guides/users-guide/actility/deviceDatabase2.png)
@@ -93,11 +103,11 @@ The following picture shows an example for a device type which updates a fragmen
 
 ![Value configuration in detail: MO](/guides/users-guide/actility/deviceDatabase3.png)
 
-???You can also have a nested structure inside the ...???
+You can also have a nested structure for the value within a device type. The following picture shows an example of such a nested structure for a device type reporting the current position of a device. The device type is named "Position" and contains values for longitude, latitude and altitude. 
 
-After clicking "OK", your device type is created with the values you defined.
+The "message ID" should be the same for all the values. Enter the rest of the parameters according to the instructions above. Enter "c8y_Position" in the "Managed object fragment" field and create a new value for each: longitude, latitude and altitude.
 
-![Value configurations of created device type](/guides/users-guide/actility/deviceDatabase1.png)
+![Value configuration in detail: nested structure](/guides/users-guide/actility/deviceDatabase5.png)
 
 ## <a name="register-device"></a>Registering Actility devices
 

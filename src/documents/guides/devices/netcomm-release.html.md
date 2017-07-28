@@ -191,3 +191,11 @@ For information on using the agent, please visit the [NetComm Agent User's Guide
 * Add support for server certificate verification.
 * Add MQTT support as an alternative protocol alongside HTTP.
 * Support for VNC remote access.
+
+### 4.0.1
+[Agent Software](http://resources.cumulocity.com/ntc/smartrest-agent_4.0.1_arm.ipk),
+[CA certificate bundle](http://resources.cumulocity.com/ntc/ca-cumulocity_20170118.0_arm.ipk),
+[VNC Proxy](http://resources.cumulocity.com/ntc/vncproxy_1.0_arm.ipk). Changes:
+
+* Agent waits after device boot for NTP synchronization before proceeding. 
+* Supports now timer intervals smaller than 200 ms.

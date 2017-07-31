@@ -35,11 +35,9 @@ In order to replace your credentials, click the "Replace credentials" button.
 
 Enter your profile ID, username, password and application EUI. For an explanation of the terms "profile ID" and "application EUI", refer to section [Creating new account credentials](#create-new-credentials) above.
 
-Click "Save".
-
 <img src="/guides/users-guide/actility/providerCredentials2.png" alt="Account credentials" style="max-width: 100%">
 
-Your old credentials will now be replaced with the new ones. 
+Click "Save". Your old credentials will now be replaced with the new ones. 
 
 ## <a name="create-device-types"></a>Creating device types with the device database
 In order to create device types with the device database, go to the Device Management application and select "Device database" in "Device types" in the Navigator. You can either import an existing device type or create a new one. 

@@ -33,7 +33,9 @@ Click "Save". If everything is okay, there will be a message "Credentials succes
 
 In order to replace your credentials, click the "Replace credentials" button.
 
-Enter your profile ID, username, password and application EUI. Click "Save".
+Enter your profile ID, username, password and application EUI. For an explanation of the terms "profile ID" and "application EUI", refer to section [Creating new account credentials](#create-new-credentials) above.
+
+Click "Save".
 
 <img src="/guides/users-guide/actility/providerCredentials2.png" alt="Account credentials" style="max-width: 100%">
 
@@ -53,7 +55,7 @@ Alternatively you may also load the device type from a file and import it.
 
 ### <a name="create-new-device-type"></a>Creating a new device type
 
-In the Device database window, click the "New" button. 
+In the device database window, click the "New" button. 
 
 Select "LoRa" as the device type and name your device type. 
 
@@ -62,13 +64,13 @@ Select the way the message type is encoded in the "Source" dropdown box:
 - **FPort**: if the message type can be determined by looking at the FPort parameter of a message  
 - **Payload**: if the message type can be determined by looking at the subset of the message payload itself   
 
-If you select "Payload", indicate in the "Start bit" field where the message type information starts in the payload and how long this information is in the "Number of bits" field.
+If you select "Payload", indicate in the "Start bit" field where the message type information starts in the payload and how long this information is in the "Number of bits" field. For detailed information on how to decode the payload, refer to the documentation of your device. 
 
 Click the "Add" button. 
 
 ![Value configuration: new](/guides/users-guide/actility/deviceDatabase4.png)
 
-Configure the "message ID" according to your device message specification and map it to the Cumulocity data. It will be matched with the message ID found in the source specified on the device type main page (i.e. Payload or FPort). The message ID needs to be entered in decimal numbers (not hex).
+Configure the "Message ID" according to your device message specification and map it to the Cumulocity data. It will be matched with the message ID found in the source specified on the device type main page (i.e. Payload or FPort). The message ID needs to be entered in decimal numbers (not hex).
 
 Enter the relevant general values for your device for the visualisation in the "Values" list: the "Name" of the value and possibly its "Display category".
 
@@ -105,7 +107,7 @@ The following picture shows an example for a device type which updates a fragmen
 
 You can also have a nested structure for the value within a device type. The following picture shows an example of such a nested structure for a device type reporting the current position of a device. The device type is named "Position" and contains values for longitude, latitude and altitude. 
 
-The "message ID" should be the same for all the values. Enter the rest of the parameters according to the instructions above. Enter "c8y_Position" in the "Managed object fragment" field and create a new value for each: longitude, latitude and altitude.
+The "Message ID" should be the same for all the values. Enter the rest of the parameters according to the instructions above. Enter "c8y_Position" in the "Managed object fragment" field and create a new value for each: longitude, latitude and altitude.
 
 ![Value configuration in detail: nested structure](/guides/users-guide/actility/deviceDatabase5.png)
 
@@ -122,8 +124,8 @@ In the next window fill in the required information:
 - **Device profile**: Select the appropriate device profile from the drop-down list. 
 - **Device type**: Select the appropriate device type from the drop-down list. 
 - **Device EUI**: This is the unique identifier for the device. You can find it on the device itself.
-- **Application key**: This is an AES-128 application key specific for the end-device that
-is assigned by the application owner to the device and is responsible to encrypt
+- **Application key**: This is an AES-128 application key specific for the device that
+is assigned to the device by the application owner and is responsible to encrypt
 JOIN communication. You can find this key on the device itself.
 - **Connectivity plan**: Select the appropriate connectivity plan from the drop-down list.
 

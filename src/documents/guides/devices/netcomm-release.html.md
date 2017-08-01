@@ -50,7 +50,7 @@ The agent was tested on an NTC-6200 device with firmware version 2.0.24.3. For r
 
 ## Installing the agent
 
-* Download the agent software: http://resources.cumulocity.com/ntc/smartrest-agent_4.0.0_arm.ipk.
+* Download the agent software: http://resources.cumulocity.com/ntc/smartrest-agent_4.0.1_arm.ipk.
 * Download the CA certificate bundle: http://resources.cumulocity.com/ntc/ca-cumulocity_20170118.0_arm.ipk.
 * Download the VNC proxy if you want to use VNC remote access: http://resources.cumulocity.com/ntc/vncproxy_1.0_arm.ipk.
 * Log in to the web user interface of the NTC-6200.

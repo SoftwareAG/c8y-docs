@@ -16,9 +16,9 @@ Die Device-Management-Anwendung zeigt Ihnen Ihre angeschlossenen Geräte an und 
 * Arbeiten mit [Warnungen](#alarm-monitoring) von Geräten
 * [Fernsteuerung](#operation-monitoring) von Geräten
 * [Troubleshooting](#events-all) von Geräten
-* Verwalten von [Software und Firmware](#software-repo)
+* Verwalten von [Software und Firmware](#software-repo) auf Geräten
 * Verwalten der [Zugangsdaten](#credentials) von Geräten
-* Hinzufügen von [Simulatoren](#simulators) von Geräten
+* [Simulation](#simulators) von Geräten
 
 Diese Anwendung sieht so aus:
 
@@ -28,7 +28,7 @@ Die folgenden Abschnitte führen Sie durch die verschiedenen Menüs der Device-M
 
 ## <a name="device-registration"></a>Geräte manuell verbinden
 
-Dieser Abschnitt beschreibt die allgemeine Vorgehensweise beim manuellen Anschließen von Geräten an Ihr Cumulocity-Konto. Nur einige Schritte in der Prozedur können spezifisch für den Typ Ihres Geräts sein. Sie finden Ihren Gerätetyp im "Gerätehandbuch", der Startseite des Entwicklerbereichs unserer Website. Dort finden Sie genaue Informationen. Alternativ konsultieren Sie das Handbuch Ihres Geräts.
+Dieser Abschnitt beschreibt die allgemeine Vorgehensweise beim manuellen Verbinden von Geräten mit Ihrem Cumulocity-Konto. Nur einige Schritte in der Prozedur können spezifisch für den Typ Ihres Geräts sein. Sie finden Ihren Gerätetyp im "Gerätehandbuch", der Startseite des Entwicklerbereichs unserer Website. Dort finden Sie genaue Informationen. Alternativ konsultieren Sie das Handbuch Ihres Geräts.
 
 Um Geräte mit Ihrem Cumulocity-Konto zu verbinden, klicken Sie im Navigator auf "Geräteregistrierung" und folgen Sie diesen Schritten:
 
@@ -41,11 +41,11 @@ Jetzt können Sie das Gerät verwalten.
 
 <img src="/guides/users-guide/registrierung.png" alt="Device registration" style="max-width: 100%">
 
-## <a name="creds-upload"></a>Gruppenregistrierung
+## <a name="creds-upload"></a>Bulk-Registrierung von Geräten
 
-Für den Anschluss vieler Geräte können Sie eine CSV-Datei mit den IDs und den Anmeldedaten hochladen. Beim Hochladen der CSV-Datei erstellt Cumulocity Benutzerkonten für jedes in der Datei aufgelistete Gerät. Geräte können dann sicher an Cumulocity angeschlossen werden, ohne eine manuelle "Geräteregistrierung", wie im vorherigen Abschnitt beschrieben, durchführen zu müssen.
+Für die Verbindung vieler Geräte können Sie eine CSV-Datei mit den IDs und den Anmeldedaten hochladen. Beim Hochladen der CSV-Datei erstellt Cumulocity Benutzerkonten für jedes in der Datei aufgelistete Gerät. Geräte können sich dann sicher mit Cumulocity verbinden, ohne eine manuelle "Geräteregistrierung", wie im vorherigen Abschnitt beschrieben, durchführen zu müssen.
 
-Die CSV-Datei muss eine Kopfzeile haben, gefolgt von den tatsächlichen Daten. Die Kopfzeile muss mindestens eine Spalte mit der Bezeichnung "ID" und eine Spalte mit der Bezeichnung "Zugangsdaten" enthalten. Hier ein Beispiel für ein gültiges CSV-Format:
+Die CSV-Datei muss eine Kopfzeile haben, gefolgt von den tatsächlichen Daten. Die Kopfzeile muss mindestens eine Spalte mit der Bezeichnung "ID" und eine Spalte mit der Bezeichnung "Credentials" (Zugangsdaten) enthalten. Dies ist ein Beispiel für ein gültiges CSV-Format:
 
 	ID;Credentials;Tenant;Group;ICCID;NAME
 	006064ce800a;LF2PWJoLG1Fz;management;Sample_Düsseldorf;+491555555;Sample_Device1
@@ -55,22 +55,20 @@ Verwenden Sie den "Hochladen"-Knopf, um die CSV-Datei hochzuladen, wie im Screen
 
 <img src="/guides/users-guide/autoregisterde.png" alt="Bulk registration" style="max-width: 100%">
 
+Um die Geräte zu verbinden, müssen sie mit entsprechenden Informationen vorbereitet werden. Insbesondere muss jedes Gerät wie folgt konfiguriert werden:
 
-Um die Geräte anzuschließen, müssen die Geräte mit entsprechenden Informationen vorbereitet werden. Insbesondere muss jedes Gerät wie folgt konfiguriert werden:
-
-* Benutzername: Der Benutzername, der auf Cumulocity zugreift, muss die Form <mandant> / device_ <id> haben.
-* Mandant bezieht sich auf den Mandanten, in den die CSV-Datei importiert wird, und id bezieht sich auf den entsprechenden Wert in der CSV-Datei.
-* Passwort: Das Passwort für den Zugriff auf Cumulocity muss den "Zugangsdaten" in der CSV-Datei entsprechen.
-* Gerät in der Objektdarstellung. Felder: "Typ", "Name", "Iccid", "Idtype", "Pfad", "Shell" in der CSV-Datei.
+* Benutzername: Der Benutzername, der auf Cumulocity zugreift, muss die Form <Mandant>/device_ <id> haben. <Mandant> bezieht sich auf den Mandanten, in den die CSV-Datei importiert wird, und <id> bezieht sich auf den entsprechenden Wert in der CSV-Datei.
+* Passwort: Das Passwort für den Zugriff auf Cumulocity, nämlich der Wert in den "credentials" (Zugangsdaten) in der CSV-Datei.
+* Gerät in der Objektdarstellung. Felder: "Type" (Typ), "Name", "Iccid", "Idtype", "Path" (Pfad), "Shell" in der CSV-Datei.
 
 Wenn Sie eine Enterprise Edition von Cumulocity besitzen, können Sie auch Geräte über mehrere Mandanten registrieren, indem Sie der Tabelle eine Spalte  mit "Mandanten" hinzufügen und die CSV-Datei aus der Mandantenverwaltung importieren.
 
 Weitere Informationen zum Dateiformat und zu den akzeptierten CSV-Varianten finden Sie unter
 [Bulk device credentials](/guides/reference/device-credentials/#creds-upload).
 
-## <a name="viewing-devices"></a>Anzeige der angeschlossenen Geräte
+## <a name="viewing-devices"></a>Anzeige der verbundenen Geräte
 
-Um die angeschlossenen Geräte anzuzeigen, können Sie verschiedene Werkzeuge nutzen.
+Um die verbundenen Geräte anzuzeigen, können Sie verschiedene Werkzeuge nutzen.
 
 * Wählen Sie "Alle Geräte", um alle angeschlossenen Geräte aufzulisten (1.000 Geräte/Seite).
 * [Suchen](#searching-devices) Sie nach Geräten mit dem Textfeld "Suchen".
@@ -78,13 +76,13 @@ Um die angeschlossenen Geräte anzuzeigen, können Sie verschiedene Werkzeuge nu
 
 In jedem Fall sehen Sie eine Liste der Geräte, wie im folgenden Beispiel gezeigt. Die Liste besteht aus folgenden Spalten:
 
-* Ein Symbol für den Verbindungsstatus, wie in der "[Verbindungsüberwachung](#connection-monitoring)" beschrieben
+* Ein Symbol für den Verbindungsstatus, wie in der [Verbindungsüberwachung](#connection-monitoring) beschrieben
 * Der Name des Geräts
 * Je nach Browserbreite, Modell und Seriennummer des Gerätes
-* Der Alarmstatus des Gerätes, wie viele kritische, Major-, Minor- oder Warnstufenalarme für das Gerät derzeit nicht gelöst sind. Siehe "[Alarme](#alarm-monitoring)" für weitere Informationen über das Arbeiten mit Alarmen.
+* Der Alarmstatus des Gerätes, wie viele kritische, Major-, Minor- oder Warnstufenalarme für das Gerät derzeit nicht gelöst sind. Siehe [Alarme](#alarm-monitoring) für weitere Informationen über das Arbeiten mit Alarmen.
 * Eine Schaltfläche zum Löschen des Gerätes
 
-Das Löschen eines Geräts bedeutet, das Gerät aus der Cumulocity-Datenbank zu entfernen, einschließlich aller damit generierten Daten. Alternativ zum Löschen eines Gerätes können Sie auch alle ausgeschalteten Geräte in eine Gruppe organisieren. Dadurch wird sichergestellt, dass alle alten Berichte korrekt bleiben. Um zu verhindern, dass Alarme für die ausgeschalteten Geräte angeschaltet werden, deaktivieren Sie die [Verbindungsüberwachung](#connection-monitoring). Beim Löschen eines Geräts werden die Daten seiner Kindgeräte nicht gelöscht.
+Das Löschen eines Geräts bedeutet, das Gerät aus der Cumulocity-Datenbank zu entfernen, einschließlich aller damit generierten Daten. Alternativ zum Löschen eines Gerätes können Sie auch alle ausgeschalteten Geräte in eine Gruppe organisieren. Dadurch wird sichergestellt, dass alle alten Berichte korrekt bleiben. Um zu verhindern, dass Alarme für die ausgeschalteten Geräte eingehen, deaktivieren Sie die [Verbindungsüberwachung](#connection-monitoring). Beim Löschen eines Geräts werden die Daten seiner Kindgeräte nicht gelöscht.
 
 <img src="/guides/users-guide/devicelistde.png" alt="Device List" style="max-width: 100%">
 
@@ -98,11 +96,11 @@ Cumulocity enthält eine Volltextsuche nach Geräten. Durch Eingabe eines Suchbe
 
 ## <a name="grouping-devices"></a>Geräte gruppieren
 
-Geräte können beliebig nach Ihrem Anwendungsfall gruppiert werden. Ein Gerät kann sich in mehreren Gruppen befinden und Gruppen selbst können wieder Teil von mehreren Gruppen sein.
+Geräte können beliebig nach Ihrem Anwendungsfall gruppiert werden. Ein Gerät kann sich in mehreren Gruppen befinden, und Gruppen selbst können wieder Teil von mehreren Gruppen sein.
 
 Cumulocity unterscheidet zwischen Top-Level-Gruppen und Untergruppen. Top-Level-Gruppen werden im Navigator auf oberster Ebene im Abschnitt "Gruppen" angezeigt. Sie sind Ihr Haupteingangspunkt. Untergruppen werden verwendet, um Gruppen weiter zu unterteilen.
 
-Um eine Top-Level-Gruppe zu erstellen, klicken Sie oben rechts neben dem Suchfeld auf die Kreuztaste und wählen dann "Neue Gruppe hinzufügen". Ein kleines Fenster erscheint. Geben Sie einen Gruppennamen ein und suchen Sie nach den gewünschten Geräten, die der Gruppe hinzugefügt werden sollen. Markieren Sie die Geräte und drücken Sie die Schaltfläche "Gruppe mit X Geräten erstellen", um den Vorgang abzuschließen. ( "X" ist die Anzahl der Geräte, die Sie markiert haben).
+Um eine Top-Level-Gruppe zu erstellen, klicken Sie oben rechts neben dem Suchfeld auf die Kreuztaste und wählen Sie dann "Neue Gruppe hinzufügen". Ein kleines Fenster erscheint. Geben Sie einen Gruppennamen ein und suchen Sie nach den Geräten, die der Gruppe hinzugefügt werden sollen. Markieren Sie die Geräte und drücken Sie die Schaltfläche "Gruppe mit X Geräten erstellen", um den Vorgang abzuschließen. ( "X" ist die Anzahl der Geräte, die Sie markiert haben).
 > Eine Gruppe kann auch "0" Geräte enthalten.
 
 <img src="/guides/users-guide/gruppe2ger.png" alt="Adding top-level groups" style="max-width: 100%">
@@ -110,7 +108,7 @@ Um eine Top-Level-Gruppe zu erstellen, klicken Sie oben rechts neben dem Suchfel
 Sie können auch Geräte auf zwei andere Weisen hinzufügen: 
 
 * Wählen Sie ein Gerät aus und scrollen Sie nach unten zum Abschnitt "Gruppen" auf der Registerkarte "Info". Verwenden Sie das Dropdown-Menü mit dem Namen "Gruppen auswählen und suchen", um eine Gruppe auszuwählen, in die das Gerät eingefügt werden soll.
-* Wählen Sie eine Gruppe aus und gehen Sie auf die Registerkarte "Kindgeräte" auf der linken Seite und wählen Sie sie aus. Klicken Sie dann rechts oben in der Gruppenliste auf "Zur Gruppe hinzufügen". Suchen Sie nach den Geräten, die im Suchfeld hinzugefügt werden sollen. Markieren Sie dann die entsprechenden Geräte im Ergebnis und klicken Sie auf die Schaltfläche "Zur Gruppe hinzufügen" am unteren Rand der Ergebnisliste.
+* Wählen Sie eine Gruppe aus. Gehen Sie auf die Registerkarte "Kindgeräte" auf der linken Seite und wählen Sie sie aus. Klicken Sie dann rechts oben in der Gruppenliste auf "Zur Gruppe hinzufügen". Ein neues Menü öffnet sich. Suchen Sie nach den Geräten, die im Suchfeld hinzugefügt werden sollen. Markieren Sie dann die entsprechenden Geräte im Ergebnis und klicken Sie auf die Schaltfläche "Zur Gruppe hinzufügen" am unteren Rand der Ergebnisliste.
 
 
 <img src="/guides/users-guide/subassetaddde.png" alt="Adding top-level groups" style="max-width: 100%">
@@ -130,7 +128,7 @@ Durch Auswahl von "Alle Geräte" können dynamische Gruppen angelegt werden. Um 
 
 <img src="/guides/users-guide/smartgroup1de.png" alt="Adding top-level groups" style="max-width: 100%">
 
-Wenn die Gruppe erstellt wird, wird sie als Gruppe der obersten Ebene im Abschnitt "Gruppen" angezeigt. Sie können Filterkriterien anpassen, indem Sie einfach die Registerkarte "Kindassets" auswählen und die Filtereinstellungen ändern.
+Wenn die Gruppe erstellt wird, wird sie als Gruppe der obersten Ebene im Abschnitt "Gruppen" angezeigt. Sie können Filterkriterien anpassen, indem Sie die Registerkarte "Kindassets" auswählen und die Filtereinstellungen ändern.
 
 <img src="/guides/users-guide/smartgroup2de.png" alt="Adding top-level groups" style="max-width: 100%">
 
@@ -151,7 +149,7 @@ Am oberen Rand der Gerätedetails wird der Name des Gerätes angezeigt. Unterhal
 
 Rechts neben dem Namen wird ein Zahnrad angezeigt. Wenn Sie auf das Zahnrad klicken, wird ein Dropdown-Menü mit weiteren Aktionen angezeigt.
 
-Ist das Gerät kompatibel, steht über das Zahnrad ein Menüpunkt "Messwertabfrage starten" zur Verfügung. Mit dieser Option können Sie ein Gerät anfordern, um Messungen mit einer bestimmten Frequenz für eine bestimmte Dauer zu senden. Diese Art von Debugging vermeidet zu viel Datenverkehr, der durch das Senden von Messungen erzeugt wird.
+Ist das Gerät kompatibel, steht über das Zahnrad ein Menüpunkt "Messwertabfrage starten" zur Verfügung. Mit dieser Option können Sie ein Gerät auffordern, Messungen mit einer bestimmten Frequenz für eine bestimmte Dauer zu senden. Diese Art von Debugging vermeidet zu viel Datenverkehr, der durch das Senden von Messungen erzeugt wird.
 
 <img src="/guides/users-guide/devicedetailsde.png" alt="Device details" style="max-width: 100%">
 
@@ -182,11 +180,12 @@ Auf der Registerkarte "Info" werden allgemeine Informationen für ein Gerät ang
 * **Name** und **Typ**: Der Anzeigename des zu editierenden Gerätes sowie eine Kennung für den jeweiligen Gerätetyp
 * **Hardware**: Hardwareinformationen vom Gerät gelesen
 * **Mobil**: Wenn das Gerät ein Modem enthält, werden hier die mobilen Netzwerkinformationen angezeigt. Sie sehen auch einen "Ortungs" -Link. Wenn genügend Informationen verfügbar sind, bestimmt "Ortung" die grobe Position des Geräts mithilfe der opencellid.org-Datenbank. Dies ist nicht immer erfolgreich und hängt von dem Format ab, das das angeschlossene Mobilfunknetz verwendet, um seine Daten an das Modem zu melden.
-* **Gruppen**: Die Gruppen, zu denen dieses Gerät gehört. Hier können Sie Gruppen hinzufügen und entfernen. Weitere Informationen finden Sie unter [Gruppieren der Geräte](#grouping-devices).
-* **System**: Dieser Abschnitt zeigt die interne ID des Geräts (für den Zugriff aus den Cumulocity-APIs).
- * Der "Besitzer" des Geräts (der Cumulocity-Benutzer, der dieses Gerät erstellt hat).
- * Der Zeitstempel, als die Gerätedaten zuletzt aktualisiert wurden
- * Eine Schaltfläche zum Trennen des Geräts, vorausgesetzt Sie verfügen über Administratorzugriff auf Benutzer und das Gerät wurde über die Funktion [Geräteregistrierung](#device-registration) verbunden.
+* **Gruppen**: Die Gruppen, zu denen dieses Gerät gehört. Hier können Sie Gruppen hinzufügen und entfernen. Weitere Informationen finden Sie unter [Geräte gruppieren](#grouping-devices).
+* **System**: Dieser Abschnitt zeigt 
+ * die interne ID des Geräts (für den Zugriff aus den Cumulocity-APIs)
+ * den "Besitzer" des Geräts (der Cumulocity-Benutzer, der dieses Gerät erstellt hat).
+ * den Zeitstempel, als die Gerätedaten zuletzt aktualisiert wurden
+ * eine Schaltfläche zum Trennen des Geräts, vorausgesetzt Sie verfügen über Administratorzugriff auf Benutzer und das Gerät wurde über die Funktion [Geräteregistrierung](#device-registration) verbunden.
 * **Notizen**: Textnotizen für ein Gerät, die Sie mit Ihren Kollegen teilen können.
 
 Viele andere Felder auf dieser Registerkarte sind editierbar. Es ist nur sinnvoll, sie zu bearbeiten, wenn das Gerät diese Informationen nicht selbst bereitstellt. Wenn das Gerät diese Informationen bereitstellt, werden Ihre Änderungen durch eingehende Informationen vom Gerät überschrieben. Um Ihre Änderungen zu speichern, klicken Sie auf den "Änderungen speichern"-Knopf am unteren Rand des Bildschirms.
@@ -357,7 +356,7 @@ Die Registerkarte "Tracking" wird angezeigt, wenn das Gerät eine "c8y_Position"
 ![Tracking](/guides/users-guide/tracking.png)
 
 ### <a name="service-monitoring"></a>Serviceüberwachung
-Neben der Verbindungsüberwachung verfügt Cumulocity über eine separate Serviceüberwachung für Maschinen. Weitere Informationen finden Sie unter [Service-Überwachung](#monitoring-services).
+Neben der Verbindungsüberwachung verfügt Cumulocity über eine separate Serviceüberwachung für Maschinen. Weitere Informationen finden Sie unter [Serviceüberwachung](#monitoring-services).
 
 ### <a name="logs"></a>Protokolle
 
@@ -411,7 +410,7 @@ Cumulocity ist der Auffassung, dass ein Gerät in Betrieb ist, solange kein krit
 
 Während ein Gerät offline ist, nimmt Cumulocity standardmäßig an, dass das Gerät weiterhin im Dienst bleibt, wie es war, bevor es die Verbindung verloren hatte. Wenn es zuvor nicht in Betrieb war, geht Cumulocity davon aus, dass das Gerät während eines Verbindungsausfalls außer Betrieb ist.
 
-Es kann Ausnahmen von dieser Regel geben. Wenn Ihre Verkaufsautomaten ausschließlich auf bargeldlose Zahlung angewiesen sind und die Verbindung zum Netzwerk verlieren, bedeutet das, dass die Automaten außer Betrieb sind und aufhören zu verkaufen. In diesem Fall müssen Nichtverfügbarkeitsalarme auf "kritische" Priorität statt "Major"-Priorität gesetzt werden.[Administration application](/guides/users-guide/administration#alarm-mapping).
+Es kann Ausnahmen von dieser Regel geben. Wenn Ihre Verkaufsautomaten ausschließlich auf bargeldlose Zahlung angewiesen sind und die Verbindung zum Netzwerk verlieren, bedeutet das, dass die Automaten außer Betrieb sind und aufhören zu verkaufen. In diesem Fall müssen Nichtverfügbarkeitsalarme in der [Administrations-Anwendung](/guides/benutzerhandbuch/administration-deutsch#reprio-alarms) auf "kritische" Priorität statt "Major"-Priorität gesetzt werden.
 
 Cumulocity kann die Verfügbarkeit der Dienste auf der Ebene einzelner Geräte oder für alle Geräte anzeigen. Wenn Sie im Navigator "Service Monitoring" wählen, wird der gesamte Service für alle Geräte angezeigt. Auf dieser Seite sehen Sie auch ein Histogramm, wieviele Geräte im vergangenen Monat wann verfügbar waren (siehe obigen Screenshot).
 
@@ -500,11 +499,11 @@ Cumulocity bietet einen zentralen Platz für die Erfassung von Referenz-Firmware
 
 Um Firmware zu aktualisieren oder Softwarepakete auf einem bestimmten Gerät hinzuzufügen, müssen Sie drei Schritte durchführen:
 
-1. Firmware- und Software-Dateien hochladen: [Administrations-Anwendung](/guides/benutzerhandbuch/administration-deutsch#files). (Dieser Schritt ist optional und nicht zwingend erforderlich, da der Hersteller die Firmware auch online anbieten kann.)
+1. Firmware- und Software-Dateien mit der [Administrations-Anwendung](/guides/benutzerhandbuch/administration-deutsch#files) hochladen. (Dieser Schritt ist optional und nicht zwingend erforderlich, da der Hersteller die Firmware auch online anbieten kann.)
 
 2. Wählen und speichern Sie die Dateien im "Firmware-Repository". Um ein neues Firmware-Image zum Repository hinzuzufügen, gehen Sie zum "Firmware-Repository" und klicken Sie auf die Schaltfläche "Firmware hinzufügen". Geben Sie dann den Namen der Firmware, die Version und die URL ein, von der das Gerät die Firmware herunterladen kann. Auf ähnliche Art und Weise verwenden Sie das "Software-Repository", um Referenz-Softwarepakete hinzuzufügen.
 
-3. Installieren Sie die Firmware auf einem bestimmten Gerät. Zuerst navigieren Sie zu "Alle Geräte". Wählen Sie das gewünschte Gerät, gehen Sie dann auf "Software" auf Gerätedetails und klicken Sie auf "Firmware installieren". Die Installation von Softwarepaketen ist sehr ähnlich. Sie folgen den gleichen Schritten wie zuvor erwähnt, aber Sie wählen stattdessen "Software installieren".(Mehr hierzu [Software](/guides/benutzerhandbuch/device-management-deutsch#software).)
+3. Installieren Sie die Firmware auf einem bestimmten Gerät. Zuerst navigieren Sie zu "Alle Geräte". Wählen Sie das gewünschte Gerät, gehen Sie dann auf "Software" auf Gerätedetails und klicken Sie auf "Firmware installieren". Die Installation von Softwarepaketen ist sehr ähnlich. Sie folgen den gleichen Schritten wie zuvor erwähnt, aber Sie wählen stattdessen "Software installieren".(Mehr hierzu unter [Software](/guides/benutzerhandbuch/device-management-deutsch#software).)
 
 > Sie müssen die Administrations-Anwendung aufrufen, um Binärdateien in Cumulocity zu speichern. Siehe auch [Administration](/guides/benutzerhandbuch/administration-deutsch#files).
 
@@ -522,13 +521,13 @@ Im Menü "Geräte-Zugangsdaten" sind alle Anmeldeinformationen aufgelistet, die 
 
 In den meisten Fällen sollten Sie nichts bearbeiten müssen. Ausnahmen sind:
 
-* Sie haben ein Werksreset auf einem Gerät durchgeführt. Dabei verliert das Gerät häufig seine Zugangsdaten. Wenn das passiert, löschen Sie die Zugangsdaten für das Gerät auch in Cumulocity und fahren Sie dann mit dem normalen [Registrierungsprozess](# Geräte-Registrierung) fort, um das Gerät neu zu registrieren.
+* Sie haben ein Werksreset auf einem Gerät durchgeführt. Dabei verliert das Gerät häufig seine Zugangsdaten. Wenn das passiert, löschen Sie die Zugangsdaten für das Gerät auch in Cumulocity und fahren Sie dann mit dem normalen [Registrierungsprozess](#device-registration) fort, um das Gerät neu zu registrieren.
 * Wenn Sie ein Gerät vorübergehend ausschalten möchten, verwenden Sie die Schaltfläche "Deaktivieren" neben den Geräteanmeldeinformationen.
 * Wenn Sie einem einzelnen Gerät mehrere Berechtigungen zuweisen möchten, klicken Sie auf die Gerätezugangsdaten und wählen Sie zusätzliche oder unterschiedliche Benutzergruppen für das Gerät aus.
 
 ![Bulk provisioning](/guides/users-guide/regdeutsch.png)
 
-Die Geräte-Anmeldeinformationen können auch aus der CSV-Datei bereitgestellt werden. Dateien können über die mit einem Pfeil markierte Schaltfläche hochgeladen werden. Weitere Details zur Dateistruktur finden Sie unter [Bulk-registering devices](# creds-upload) oben.
+Die Geräte-Anmeldeinformationen können auch aus der CSV-Datei bereitgestellt werden. Dateien können über die mit einem Pfeil markierte Schaltfläche hochgeladen werden. Weitere Details zur Dateistruktur finden Sie unter [Gruppenregistrierung](#creds-upload).
 
 ## <a name="simulators"></a> Simulatoren
 
@@ -598,7 +597,7 @@ Die Messanweisung bezieht sich auf ein Fragment. Dieses ist das unten gezeigte B
 **SmartREST-Vorlagen**
 
 Andere Optionen zeigen eine Auswahl von SmartREST-Vorlagen. Die SmartREST-Vorlagen werden im Navigator unter dem Eintrag "Gerätetypen" > "SmartREST temSmart Rest Vorlagenplatten" erstellt. Diese Vorlagen sind eine Antwortvorlage, die eine Liste von Werten erzeugt, die eine Operation als Endergebnis beschreiben. Die unten aufgeführte SmartREST-Vorlage erstellt einen Warnalarm mit Text zu einem bestimmten Zeitpunkt.
-Spezifische Informationen und Muster einer Vielzahl von Vorlagen sind erhältlich im [MQTT Developer's Guide](https://www.cumulocity.com/guides/mqtt/introduction/). 
+Spezifische Informationen und Muster einer Vielzahl von Vorlagen sind erhältlich im [MQTT Developer's Guide](/guides/mqtt). 
 
 ![Rest Template](/guides/users-guide/resttemplatede.png)
 

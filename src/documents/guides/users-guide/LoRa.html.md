@@ -101,7 +101,7 @@ The following picture shows an example for a message which sends a measurement w
 
 ![Value configuration in detail: measurement](/guides/users-guide/actility/deviceDatabase2.png)
 
-The following picture shows an example for a device type which updates a fragment in a managed object when the value is changed. In this case also values such as the managed object fragment and the property nested inside the fragment need to be defined. 
+The following picture shows an example for a message which updates a fragment in a managed object when the value is changed. In this case also values such as the managed object fragment and the property nested inside the fragment need to be defined. 
 
 ![Value configuration in detail: MO](/guides/users-guide/actility/deviceDatabase3.png)
 

@@ -22,8 +22,10 @@ Enter the following information:
 
 - **profile ID**: This depends on your ThingPark account and environment. If you are using, for example, the Dev1 ThingPark environment your profile ID will be "dev1-api".
 - **username**: your ThingPark user name
-- **password**: your password 
-- **application EUI**: This is a global application ID in the IEEE EUI64 address space that uniquely identifies the application provider of the device.
+- **password**: your ThingPark password 
+- **application EUI**: This is a global application ID in the IEEE EUI64 address space that uniquely identifies the application provider of the device. There can be only one application EUI for a tenant.
+
+The profile ID, username and password are used to retrieve an access token to send further requests to the ThingPark platform. It is possible to renew the access token by replacing  the account credentials.
 
 ![Register devices](/guides/users-guide/actility/credentials-new-2.png)
 
@@ -70,7 +72,7 @@ Click the "Add" button.
 
 Configure the "Message ID" according to your device message specification and map it to the Cumulocity data. It will be matched with the message ID found in the source specified on the device type main page (i.e. Payload or FPort). The message ID needs to be entered in decimal numbers (not hex).
 
-Enter the relevant general values for your device for the visualisation in the "Values" list: the "Name" of the value and possibly its "Display category".
+Fill in the general fields for your new value in order to categorize it in the "Values" list. The associated "Name" for this value will be displayed under the "Display category" given.
 
 Under "Value selection" define from where the value should be extracted. In order to do so, indicate where the value information starts in the "Start bit" field and how long this information is in the "Number of bits" field.
 
@@ -89,13 +91,13 @@ After clicking "OK", the values are added to your device type.
 
 ![Value configurations of created device type](/guides/users-guide/actility/deviceDatabase1.png)
 
-You can also have a nested structure with several values within a device type (also refer to the example of a nested structure for a "Position" device type below).
+You can also have a nested structure with several values within a measurement, event or managed object fragment (also refer to the example of a nested structure for a "Position" device type below).
 
 After clicking "Save", your device type is created with the values you defined.
 
 **Examples**
 
-The following picture shows an example for a device type which sends a measurement when the value is changed. In this case also values such as the measurement type and series need to be defined. 
+The following picture shows an example for a message which sends a measurement when the value is changed. In this case also values such as the measurement type and series need to be defined. 
 
 ![Value configuration in detail: measurement](/guides/users-guide/actility/deviceDatabase2.png)
 
@@ -103,19 +105,19 @@ The following picture shows an example for a device type which updates a fragmen
 
 ![Value configuration in detail: MO](/guides/users-guide/actility/deviceDatabase3.png)
 
-You can also have a nested structure for the value within a device type. The following picture shows an example of such a nested structure for a device type reporting the current position of a device. The device type is named "Position" and contains values for longitude, latitude and altitude. 
+You can create a nested structure for a value within a measurement, event or managed object fragment. The following picture shows an example of such a nested structure for a device type reporting the current position of a device. The device type is named "Position" and contains values for longitude, latitude and altitude. 
 
 The "Message ID" should be the same for all the values. Enter the rest of the parameters according to the instructions above. Enter "c8y_Position" in the "Managed object fragment" field and create a new value for each: longitude, latitude and altitude.
 
 ![Value configuration in detail: nested structure](/guides/users-guide/actility/deviceDatabase5.png)
 
-## <a name="register-device"></a>Registering Actility devices
+## <a name="register-device"></a>Registering LoRa devices
 
-In order to register an Actility device, go to the Device Management application and click "Device Registration" in the Quick links. Click "Register device". The following window opens:
+In order to register a LoRa device, go to the Device Management application and click "Device Registration" in the Quick links. Click "Register device". The following window opens:
 
 ![Register devices](/guides/users-guide/actility/deviceRegistration1.png)
 
-Click "Actility". 
+Click "LoRa". 
 
 In the next window fill in the required information: 
 

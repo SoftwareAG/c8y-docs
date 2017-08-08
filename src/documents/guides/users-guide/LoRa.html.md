@@ -105,9 +105,9 @@ The following picture shows an example for a message which updates a fragment in
 
 ![Value configuration in detail: MO](/guides/users-guide/actility/deviceDatabase3.png)
 
-You can create a nested structure for a value within a measurement, event or managed object fragment. The following picture shows an example of such a nested structure for a device type reporting the current position of a device. The device type is named "Position" and contains values for longitude, latitude and altitude. 
+You can create a nested structure for a value within a measurement, event or managed object fragment. The following picture shows an example of such a nested structure for a device type reporting the current position of a GPS device. The device type is named "Position" and contains values for longitude and latitude. 
 
-The "Message ID" should be the same for all the values. Enter the rest of the parameters according to the instructions above. Enter "c8y_Position" in the "Managed object fragment" field and create a new value for each: longitude, latitude and altitude.
+The "Message ID" should be the same for all the values. Enter the rest of the parameters according to the instructions above. Enter "c8y_Position" in the "Managed object fragment" field and create a new value for each: longitude and latitude.
 
 ![Value configuration in detail: nested structure](/guides/users-guide/actility/deviceDatabase5.png)
 

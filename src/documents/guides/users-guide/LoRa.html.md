@@ -97,7 +97,7 @@ After clicking "Save", your device type is created with the values you defined.
 
 **Examples**
 
-The following picture shows an example for a message which sends a measurement when the value is changed. In this case also values such as the measurement type and series need to be defined. 
+The following picture shows an example for a message which sends an event and updates a fragment in a managed object when this value is changed. In this case also values such as the event and managed object fragments and properties nested inside the fragments need to be defined. 
 
 ![Value configuration in detail: measurement](/guides/users-guide/actility/deviceDatabase2.png)
 

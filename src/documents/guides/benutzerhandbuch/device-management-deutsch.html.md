@@ -201,9 +201,9 @@ Diese Registerkarte bietet eine Standard-Visualisierung von numerischen Daten, d
 
 ![Measurements](/guides/users-guide/measurements.png)
 
-Wenn ein Diagramm Graphen mit verschiedenen Einheiten enthält, wird eine Y-Achse pro Einheit wiedergegeben. Beispielsweise bestehen Bewegungsmessungen aus drei Parametern mit der Einheit "Meter pro Quadrat-Sekunde", so dass nur eine Achse gerendert wird. Die Modemstatistik besteht aus der Signalstärke in Dezibel Milliwatt und der Bitfehlerrate in Prozent, so dass für jedes Diagramm eine Achse dargestellt wird.
+Wenn ein Diagramm Graphen mit verschiedenen Einheiten enthält, wird eine Y-Achse pro Einheit wiedergegeben. Beispielsweise bestehen Bewegungsmessungen aus drei Parametern mit der Einheit "Meter pro Quadrat-Sekunde", so dass nur eine Achse angezeigt wird. Die Modemstatistik besteht aus der Signalstärke in Dezibel Milliwatt und der Bitfehlerrate in Prozent, so dass für jedes Diagramm eine Achse dargestellt wird.
 
-Um detaillierte Informationen zu den gemessenen Werten zu erhalten, bewegen Sie den Mauszeiger über das Diagramm. Ein Tooltip wird mit detaillierten Informationen über die Messung nahe am Cursor angezeigt. (Der Tooltip wird auf die nächste Messung "springen".)
+Um detaillierte Informationen zu den gemessenen Werten zu erhalten, bewegen Sie den Mauszeiger über das Diagramm. Ein Tooltip wird mit detaillierten Informationen über die Messung, die dem Cursor am nächsten ist, angezeigt. 
 
 **Zeitbereiche und Messungen**
 
@@ -213,7 +213,7 @@ Wenn Sie den Zeitbereich erhöhen, schaltet das Dropdown-Menü "Keine Aggregatio
 
 So erhalten Sie einen effizienten Überblick über größere Zeiträume. Ein Graph zeigt nur maximal 5.000 Datenpunkte pro Grafikmaximum an, um Ihren Desktop-Browser nicht zu überladen. Wenn Sie einen feinen Fokus auswählen, der zu mehr als 5.000 Datenpunkten führt, wird eine Warnmeldung angezeigt: "Die Daten wurden abgeschnitten. Verwenden Sie die Aggregation."
 
-Wenn Sie auf die Schaltfläche "Echtzeit" klicken, werden Echtzeit-Benutzeroberflächen-Updates der Graphen ermöglicht, sobald neue Daten in das System von den angeschlossenen Geräten fließen. Sie können die grafischen Anzeige- und Achsengrenzen beeinflussen, indem Sie so genannte "KPIs" einrichten. Mehr hierzu unter [Administration](/guides/benutzerhandbuch/administration-deutsch#kpis).
+Wenn Sie auf die Schaltfläche "Echtzeit" klicken, werden Echtzeit-Benutzeroberflächen-Updates der Graphen ermöglicht, sobald neue Daten von den angeschlossenen Geräten in das System fließen. Sie können die grafischen Anzeige- und Achsengrenzen beeinflussen, indem Sie so genannte "KPIs" einrichten. Mehr hierzu unter [Administration](/guides/benutzerhandbuch/administration-deutsch#kpis).
 
 Wichtig: Um Messkurven zu sehen, muss das Gerät Messungen in einem vorgegebenen Fragmentformat senden.
 
@@ -230,7 +230,7 @@ Tatsächliches Beispiel:
       "Speed": { "value": 1234, "unit": "km/h" }
 }
 
-"Fragment_name" und "serie_name" können durch einen anderen gültigen JSON-Eigenschafts-Namen ersetzt werden, der aber keine Leerzeichen und Sonderzeichen (wie [] und *) enthalten darf. Die Struktur muss genau wie oben angegeben sein: ein JSON-Objekt mit zwei Leveln ???. 
+"Fragment_name" und "serie_name" können durch einen anderen gültigen JSON-Eigenschafts-Namen ersetzt werden, der aber keine Leerzeichen und Sonderzeichen (wie [] und *) enthalten darf. Die Struktur muss genau wie oben angegeben sein: ein JSON-Objekt mit zwei Ebenen. 
 
 ### <a name="alarms"></a>Alarme
 
@@ -244,7 +244,7 @@ Auf dieser Registerkarte werden die Vorgänge aufgeführt, die an ein Gerät ges
 
 ### <a name="config"></a> Textkonfiguration
 
-In der Textkonfiguration können Sie die Parameter und Anfangseinstellungen Ihres Geräts konfigurieren. Sie können eine Gerätekonfiguration manuell hinzufügen oder bearbeiten.
+In der Textkonfiguration können Sie die Parameter und Grundeinstellungen Ihres Geräts konfigurieren. Sie können eine Gerätekonfiguration manuell hinzufügen oder bearbeiten.
 
 <img src="/guides/users-guide/textconfig.png" alt="Device details" style="max-width: 100%">
 
@@ -284,10 +284,9 @@ Um einen neuen Schnappschuss anzuwenden, navigieren Sie zu einem Gerät und klic
 
 ### Anwenden einer Snapshot-Konfiguration von einem Gerät auf ein anderes Gerät
  
-
-- Navigieren Sie zur Konfiguration des Geräts, das die gewünschte Konfiguration hat.
+- Navigieren Sie zur Registerkarte "Konfiguration" des Geräts, das die gewünschte Konfiguration hat.
 - Holen Sie den aktuellen Snapshot vom Gerät ab, indem Sie auf "Neuen Snapshot vom Gerät holen" klicken.
-- Navigieren Sie zum Konfigurationsregister des anderen Geräts, wählen Sie im Dropdown-Menü den neuen Snapshot aus und klicken Sie auf "Neuen Snapshot auf das Gerät legen".
+- Navigieren Sie zur Registerkarte "Konfigurations" des anderen Geräts, wählen Sie im Dropdown-Menü den neuen Snapshot aus und klicken Sie auf "Neuen Snapshot auf das Gerät legen".
  
 > Wenn Sie die Snapshot-Konfiguration von einem Gerät auf ein anderes anwenden, kann die Konfiguration Daten enthalten, die gerätespezifisch sind.
  
@@ -295,10 +294,10 @@ Um einen neuen Schnappschuss anzuwenden, navigieren Sie zu einem Gerät und klic
 
 Neue Konfigurationen können der Liste "Konfigurationsschnappschüsse" hinzugefügt werden, indem Sie auf "Konfigurationsschnappschuss hinzufügen" klicken. Anschließend werden Sie zum "Configuration repository" umgeleitet. Alle Gerätekonfigurationen befinden sich im "Configuration Repository", das sich unter dem Menüpunkt "Management" befindet. So fügen Sie einen neuen Snapshot hinzu:
 
-- Geben Sie den Namen ein.
+- Geben Sie den "Namen" ein.
 - Geben Sie die "Beschreibung" ein.
 - Schreiben Sie den "Gerätetyp", der sich auf der Registerkarte "Info" des Zielgerätes befindet.
-- Fügen Sie die "Konfigurations-Snapshot-Datei", indem Sie entweder "Upload" oder "Datei wählen" aussuchen.
+- Fügen Sie die "Konfigurations-Snapshot-Datei" hinzu, indem Sie entweder "Upload" oder "Datei wählen" anklicken.
 - Wenn Sie fertig sind, klicken Sie auf "Speichern".
 
 ![Configuration Snapshot Repository](/guides/users-guide/configsnaprepo.png)
@@ -307,11 +306,11 @@ Neue Konfigurationen können der Liste "Konfigurationsschnappschüsse" hinzugef�
 
 Auf dieser Registerkarte können Sie die Firmware eines Geräts und die auf einem Gerät installierte Software verwalten und aktualisieren. Um eine neue Firmware zu installieren, klicken Sie auf "Firmware installieren", wählen Sie im Firmware-Repository ein Firmware-Image und klicken Sie auf die Schaltfläche "Installieren".
 
-Um eine Software auf dem Gerät zu installieren, klicken Sie auf "Software installieren", wählen Sie ein Softwarepaket aus dem Software-Repository aus und klicken Sie auf die Schaltfläche "Installieren". Lassen Sie den Mauszeiger über einem bestimmten Softwarepaketverweilen und klicken Sie auf die Schaltfläche "x", um das Paket aus dem Gerät zu entfernen.
+Um eine Software auf dem Gerät zu installieren, klicken Sie auf "Software installieren", wählen Sie ein Softwarepaket aus dem Software-Repository aus und klicken Sie auf die Schaltfläche "Installieren". Lassen Sie den Mauszeiger über einem bestimmten Softwarepaket verweilen und klicken Sie auf die Schaltfläche "x", um das Paket aus dem Gerät zu entfernen.
 
 ![Software](/guides/users-guide/software.png)
 
-Die Installation von Software und Firmware beinhaltet in der Regel einen Neustart des Geräts. Um den Fortschritt einer Installation zu überwachen, gehen Sie zur Registerkarte "Control".
+Die Installation von Software und Firmware beinhaltet in der Regel einen Neustart des Geräts. Um den Fortschritt einer Installation zu überwachen, gehen Sie zur Registerkarte "Steuerung".
 
 ### <a name="events"></a>Ereignisse
 

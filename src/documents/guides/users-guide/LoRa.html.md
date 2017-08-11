@@ -10,6 +10,8 @@ LoRa Actility allows you to collect and visualize payload data from managed LoRa
 * [Configure your ThingPark account credentials](#configure-credentials) in Cumulocity
 * [Create device types](#create-device-types) with Cumulocity's device database
 * [Register devices](#register-device) and visualize Actility payload using Cumulocity
+* [Deprovision a device](#deprovision-device) in Cumulocity
+* [Configure the port](#configurable-port) to send command operations in Cumulocity
 
 ## <a name="configure-credentials"></a>Configuring ThingPark account credentials
 
@@ -49,13 +51,15 @@ In the Device database window, click the "Import" button.
 
 Select the predefined device type, for example "LoRaWAN Demonstrator". Click "Import".
 
-![Import a predefined device type](/guides/users-guide/actility/deviceDatabaseImport.png)
+<img src="/guides/users-guide/actility/deviceDatabaseImport.png" alt="Import a predefined device type" style="max-width: 60%">
 
 Alternatively you may also load the device type from a file and import it. 
 
 ### <a name="create-new-device-type"></a>Creating a new device type
 
 In the device database window, click the "New" button. 
+
+<img src="/guides/users-guide/actility/deviceDatabase-createNew.png" alt="Create new device type" style="max-width: 100%">
 
 Select "LoRa" as the device type and name your device type. 
 
@@ -66,9 +70,11 @@ Select the way the message type is encoded in the "Source" dropdown box:
 
 If you select "Payload", indicate in the "Start bit" field where the message type information starts in the payload and how long this information is in the "Number of bits" field. For detailed information on how to decode the payload, refer to the documentation of your device. 
 
-Click the "Add" button. 
+Click the "Add" button to create the value configuration. 
 
-![Value configuration: new](/guides/users-guide/actility/deviceDatabase4.png)
+<img src="/guides/users-guide/actility/deviceDatabase4.png" alt="Value configuration: new" style="max-width: 60%">
+
+The value configuration maps the value in the payload of a message type to the Cumulocity data. 
 
 Configure the "Message ID" according to your device message specification and map it to the Cumulocity data. It will be matched with the message ID found in the source specified on the device type main page (i.e. Payload or FPort). The message ID needs to be entered in decimal numbers (not hex).
 
@@ -76,7 +82,11 @@ Fill in the general fields for your new value in order to categorize it in the "
 
 Under "Value selection" define from where the value should be extracted. In order to do so, indicate where the value information starts in the "Start bit" field and how long this information is in the "Number of bits" field.
 
-Under "Value normalisation" define how the raw value should be transformed before being stored in the platform and enter the appropriate values in the "Multiplier", "Offset" and "Unit" fields.
+Under "Value normalisation" define how the raw value should be transformed before being stored in the platform and enter the appropriate values for:
+
+- **Multiplier**: This value is multiplied with the value *(???which one???)* under "Value selection" and can be decimal, negative and positive. By default it is set to 1. ???
+- **Offset**: This value defines the offset that is added or subtracted. It can be decimal, negative and positive. By default it is set to 0. ???
+- **Unit** (optional): A unit can be defined which is saved together with the value (e.g. temperature unit "C" for degree Celsius).
 
 Select the options, if required: "Signed" (if the value is a signed number) or "Packed decimal" (if the value is BCD encoded).
 
@@ -87,27 +97,31 @@ In the functionalities, define how this device type should behave:
 - **Send event**: creates an event whenever the value is changed
 - **Update managed object**: updates a fragment in a managed object whenever the value is changed
 
+You can also have a nested structure with several values within an event or managed object fragment *(???only in these two???)*. All the properties with the same inner fragments are merged together to create a nested structure. (Also refer to the [example](#nested-structure-example) of a nested structure for a "Position" device type below).
+
 After clicking "OK", the values are added to your device type. 
 
 ![Value configurations of created device type](/guides/users-guide/actility/deviceDatabase1.png)
 
-You can also have a nested structure with several values within a measurement, event or managed object fragment (also refer to the example of a nested structure for a "Position" device type below).
-
 After clicking "Save", your device type is created with the values you defined.
 
-**Examples**
+**Example without nested structure**
 
 The following picture shows an example for a message which sends an event and updates a fragment in a managed object when this value is changed. In this case also values such as the event and managed object fragments and properties nested inside the fragments need to be defined. 
 
-![Value configuration in detail: measurement](/guides/users-guide/actility/deviceDatabase2.png)
+<img src="/guides/users-guide/actility/deviceDatabase2.png" alt="Value configuration in detail: measurement" style="max-width: 50%">
 
-The following picture shows an example for a message which updates a fragment in a managed object when the value is changed. In this case also values such as the managed object fragment and the property nested inside the fragment need to be defined. 
+**<a name="nested-structure-example"></a>Example with nested structure**
 
-![Value configuration in detail: MO](/guides/users-guide/actility/deviceDatabase3.png)
+You can create a nested structure for a value within an event or managed object fragment. The following picture shows an example of such a nested structure for a device type reporting the current position of a GPS device. The device type is named "Position" and contains values for longitude and latitude. 
 
-You can create a nested structure for a value within a measurement, event or managed object fragment. The following picture shows an example of such a nested structure for a device type reporting the current position of a GPS device. The device type is named "Position" and contains values for longitude and latitude. 
+The "Message ID" should be the same for all the values. Enter the rest of the parameters according to the instructions above. Enter "c8y_Position" in the "Managed object fragment" field and create a new value for each: longitude and latitude. 
 
-The "Message ID" should be the same for all the values. Enter the rest of the parameters according to the instructions above. Enter "c8y_Position" in the "Managed object fragment" field and create a new value for each: longitude and latitude.
+<img src="/guides/users-guide/actility/deviceDatabase5-lon.png" alt="Value creation: Longitude-nested" style="max-width: 60%">
+
+<img src="/guides/users-guide/actility/deviceDatabase5-lat.png" alt="Value creation: Latitude-nested" style="max-width: 60%">
+
+This will be the result: 
 
 ![Value configuration in detail: nested structure](/guides/users-guide/actility/deviceDatabase5.png)
 
@@ -137,4 +151,30 @@ After clicking "Next" the device registration request will be submitted and the 
 
 For more information on viewing and managing your connected devices, also refer to 
 [Device management](/guides/users-guide/device-management).
+
+## <a name="deprovision-device"></a>Deprovisioning LoRa devices
+
+In addition to deleting a managed object from the device list, it is possible to deprovision a managed LoRa object in Cumulocity. This means that the connection between this managed object and Cumulocity is removed but the managed object and all its data will still be available in ThingPark. *???is this wording correct???*
+
+To deprovision a managed object, go to the Device Management application and navigate to the managed object you want to deprovision. Click the cogwheel and select "Deprovision device".
+
+<img src="/guides/users-guide/actility/deprovisionDevice.png" alt="Device deprovisioning" style="max-width: 100%">
+
+After confirming the deprovisioning, the device will be deprovisioned in Cumulocity.
+ 
+## <a name="configurable-port"></a>Configuring the port to send command operations
+
+In order to send a command operation directly to a specific port instead of the default target port (which is 1), go to the Device Management application and navigate to the device you want to send a command to. *???wording correct???*
+
+Click the "Shell" tab and enter the command in the ">_Command" field in the format "command:port". Click "Execute" or "Execute (SMS)".
+
+<img src="/guides/users-guide/actility/portConfiguration.png" alt="Port configuration" style="max-width: 100%">
+
+The command will be sent to the specified port instead of the default target port. 
+
+
+
+
+
+
 

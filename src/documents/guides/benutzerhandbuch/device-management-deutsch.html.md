@@ -318,7 +318,7 @@ Diese Registerkarte ermöglicht die Fehlersuche auf niedriger Ebene eines Gerät
 
 ### <a name="location"></a>Standort
 
-Die Registerkarte "Standort" zeigt standardmäßig den Standort an, den das Gerät auf einer Karte gemeldet hat. Bei Geräten, die keinen Standort melden, können Sie den Standort auch manuell einstellen. Platzieren Sie dazu einfach den "Stift" an der richtigen Stelle auf der angezeigten Karte.
+Die Registerkarte "Standort" zeigt standardmäßig den Standort auf einer Karte an, den das Gerät gemeldet hat. Bei Geräten, die keinen Standort melden, können Sie den Standort auch manuell einstellen. Platzieren Sie dazu einfach die "Markierungsnadel" an der richtigen Stelle auf der angezeigten Karte.
 
 Die Registerkarte zeigt an, wenn ein Gerät die Eigenschaft c8y_Position enthält. Wenn Sie ein neues c8y-Positionsereignis senden, können Sie auch das gleiche Fragment c8y_Position auf dem Gerät setzen und es wird automatisch die Position auf der Karte markieren.
 
@@ -330,11 +330,12 @@ Die Shell-Benutzeroberfläche ist in zwei Teile aufgeteilt:
 
 * Eine Liste der bereits ausgeführten Kommandos. Standardmäßig sind die letzten drei Befehle sichtbar.
 * Eine Eingabeaufforderung zur Eingabe neuer Befehle, die zur Liste hinzugefügt werden.
+
 Die Liste zeigt Status, Datum und Text eines Befehls an. Wenn Sie auf einen Listeneintrag klicken, wird das Ergebnis des Befehls angezeigt (sofern er ausgeführt wurde).
 
 ![Device shell](/guides/users-guide/shellde.png)
 
-In der Eingabeaufforderung können Sie beliebigen Befehlstext eingeben. Um den Befehlstext an das Gerät zu senden, klicken Sie auf die Schaltfläche "Ausführen". Die Schaltfläche "Ausführen" kann nur gewählt werden, wenn das Gerät verbunden ist.
+In der Eingabeaufforderung können Sie beliebigen Befehlstext eingeben. Um den Befehlstext an das Gerät zu senden, klicken Sie auf die Schaltfläche "Ausführen". Die Schaltfläche "Ausführen" kann nur gewählt werden, wenn das Gerät online ist.
 
 Um Ihnen mit der Befehlssyntax zu helfen, sind häufig verwendete Befehle für einige Geräte verfügbar, indem Sie auf die Schaltfläche "Vordefiniert erhalten" ??? klicken. Wählen Sie einen Befehl aus und klicken Sie auf "Verwenden", um den Befehl an die Eingabeaufforderung zu kopieren, oder wählen Sie "Ausführen", um den Befehl sofort auszuführen.
 
@@ -342,17 +343,21 @@ Um Ihnen mit der Befehlssyntax zu helfen, sind häufig verwendete Befehle für e
 
 ### <a name="permissions"></a>Berechtigungen
 
-Die Fähigkeit, bestimmte Geräte anzuzeigen, zu bearbeiten oder zu steuern, kann auf Benutzer und Benutzergruppen beschränkt werden. Weitere Informationen zum Verwalten von Berechtigungen finden Sie unter [Administration](/guides/benutzerhandbuch/administration-deutsch). Verwenden Sie den Anwendungs-Wechsler, um zur Administrationsanwendung zu wechseln.
+Die Berechtigung, bestimmte Geräte anzuzeigen, zu bearbeiten oder zu steuern, kann auf Benutzer und Benutzergruppen beschränkt werden. Weitere Informationen zum Verwalten von Berechtigungen finden Sie unter [Administration](/guides/benutzerhandbuch/administration-deutsch). Verwenden Sie den Anwendungs-Wechsler, um zur Administrationsanwendung zu wechseln.
 
 ### <a name="tracking"></a>Tracking
 
 Geräte können die Historie ihrer Bewegungen in Cumulocity aufzeichnen. Über die Registerkarte "Tracking" können Sie einen Zeitraum auswählen und die Bewegungen des Geräts während dieses Zeitraums visualisieren. Bewegungen werden als rote Linien auf der Karte angezeigt.
 
-Neben der Karte werden die einzelnen Aufzeichnungen mit ihrer Zeit aufgelistet ("Standort Update Ereignis"). Wenn Sie auf eine Aufnahme klicken, zeigt ein "Pin" auf der Karte den Speicherort zum Zeitpunkt der Aufnahme an.
+Neben der Karte werden die einzelnen Aufzeichnungen mit ihrer Zeit aufgelistet ("Standort-Update-Ereignis"). Wenn Sie auf eine Aufnahme klicken, zeigt eine "Markierungsnadel" auf der Karte den Speicherort zum Zeitpunkt der Aufnahme an.
 
 Die Registerkarte "Tracking" wird angezeigt, wenn das Gerät eine "c8y_Position"-Eigenschaft enthält.
 
 ![Tracking](/guides/users-guide/tracking.png)
+
+Je nach Typ eines Gerätes und dessen Integration in Cumulocity, können Sie geräteseitig auch Geo-Fencing und Bewegungserkennung konfigurieren. 
+
+Außerdem können Informationen über die Zellenidentifikation genutzt werden, um den Standort des Gerätes zu bestimmen (vorausgesetzt, diese Funktion ist aktiviert und das Gerät ist kompatibel).  Derzeit werden die Services von [Combain](https://combain.com/) und [Google](https://developers.google.com/maps/documentation/geolocation/intro) unterstützt. Sie können die Tracks auf Basis von Daten von diesen beiden Diensten anzeigen lassen bzw. GPS-Daten oder Zellenidentifikations-Daten heruasfiltern. 
 
 ### <a name="service-monitoring"></a>Serviceüberwachung
 Neben der Verbindungsüberwachung verfügt Cumulocity über eine separate Serviceüberwachung für Maschinen. Weitere Informationen finden Sie unter [Serviceüberwachung](#monitoring-services).

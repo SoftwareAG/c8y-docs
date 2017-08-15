@@ -33,7 +33,7 @@ Smartbox, based on the Telit Chipset HE910 is a ready to use solution for connec
 
 ## <a name="interface"></a>Interface
 
-Connect SMARTbox Mini to the power supply 24VDC. The start-up of the unit will take 60 seconds: 
+Connect SMARTbox IO to the power supply 24VDC. The start-up of the unit will take 60 seconds: 
 
 Wire your network: 
 

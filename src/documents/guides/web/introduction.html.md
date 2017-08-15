@@ -228,7 +228,7 @@ After these steps you should have the following folder structure:
 <<root folder>>
 ├── node_modules
 |		└── ...
-├── cumulocity.js
+├── cumulocity.json
 └── package.json
 ```
 

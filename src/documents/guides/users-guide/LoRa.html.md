@@ -5,13 +5,22 @@ layout: default
 ---
 
 ## <a name="overview"></a>Overview
-LoRa Actility allows you to collect and visualize payload data from managed LoRa devices. New LoRa devices can be easily provisioned using the Cumulocity Device Management. No further interaction in the ThingPark user interface is required. The LoRa functionalities are only available for tenants who have subscribed to the Actility-device-provider-agent application. This section describes how to:
+The Cumulocity LoRa Actility intergation allows you to collect and visualize payload data from LoRa devices. The intergation offers the following functionality:
+* Provision and deprovision LoRa devices easily using the Cumulocity Device Management. No interaction in the ThingPark user interface required. 
+* Decode upstream payload packets using a web based user interface.
+* Raw packets are available as Cumulocity events for further processing and debugging.
+* Send downstream data to the device using Cumulocity operations.
+* Make use of all existing Cumulocity features with LoRa devices, including, but not limited to: connectivity monitoring, device management, data visualisation with dashboards, real-time analytics and more.
+
+ This section describes how to:
 
 * [Configure your ThingPark account credentials](#configure-credentials) in Cumulocity
 * [Create device types](#create-device-types) with Cumulocity's device database
 * [Register devices](#register-device) and visualize Actility payload using Cumulocity
 * [Deprovision a device](#deprovision-device) in ThingPark
 * [Send command operations](#configurable-port) to a device
+
+Note: The LoRa functionalities are only available for tenants who have subscribed to the Actility-device-provider-agent application. Please contact support if you need to use this feature.
 
 ## <a name="configure-credentials"></a>Configuring ThingPark account credentials
 

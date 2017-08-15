@@ -34,7 +34,7 @@ Um Geräte mit Ihrem Cumulocity-Konto zu verbinden, klicken Sie im Navigator auf
 
 1.  Geben Sie die ID des Gerätes im Textfeld "Gerätekennung" ein und klicken Sie auf "Gerät registrieren". Um die ID zu ermitteln, konsultieren Sie die Geräte-Dokumentation. Bei mobilen Geräten ist die ID in der Regel die IMEI (International Mobile Equipment Identity), die sich häufig auf der Rückseite des Geräts befindet.
 2.  Nun wird das aufgelistete Gerät durch seine IMEI-Nummer mit dem Status "Warten auf Verbindung" sichtbar. Schalten Sie das Gerät ein und warten Sie, bis eine Verbindung hergestellt ist.
-3.  Nachdem das  Gerät  angeschlossen ist, sollte sich der Status in "Warten auf Bestätigung" ändern. Sie müssen bestätigen, dass dies tatsächlich das Gerät ist, das Sie hinzufügen möchten. Klicken Sie dazu auf die grüne Schaltfläche "Akzeptieren" rechts neben dem Eintrag Ihres Geräts.
+3.  Nachdem das Gerät angeschlossen ist, sollte sich der Status in "Warten auf Bestätigung" ändern. Sie müssen bestätigen, dass dies tatsächlich das Gerät ist, das Sie hinzufügen möchten. Klicken Sie dazu auf die grüne Schaltfläche "Akzeptieren" rechts neben dem Eintrag Ihres Geräts.
 4.  Der Status Ihres Geräts sollte nun "Verbunden" lauten. Sobald dies geschieht, wird Ihr Gerät mit Ihrem Konto verbunden.
 
 Jetzt können Sie das Gerät verwalten.
@@ -357,7 +357,7 @@ Die Registerkarte "Tracking" wird angezeigt, wenn das Gerät eine "c8y_Position"
 
 Je nach Typ eines Gerätes und dessen Integration in Cumulocity, können Sie geräteseitig auch Geo-Fencing und Bewegungserkennung konfigurieren. 
 
-Außerdem können Informationen über die Zellenidentifikation genutzt werden, um den Standort des Gerätes zu bestimmen (vorausgesetzt, diese Funktion ist aktiviert und das Gerät ist kompatibel).  Derzeit werden die Services von [Combain](https://combain.com/) und [Google](https://developers.google.com/maps/documentation/geolocation/intro) unterstützt. Sie können die Tracks auf Basis von Daten von diesen beiden Diensten anzeigen lassen bzw. GPS-Daten oder Zellenidentifikations-Daten heruasfiltern. 
+Außerdem können Informationen über die Zellenidentifikation genutzt werden, um den Standort des Gerätes zu bestimmen (vorausgesetzt, diese Funktion ist aktiviert und das Gerät ist kompatibel).  Derzeit werden die Services von [Combain](https://combain.com/) und [Google](https://developers.google.com/maps/documentation/geolocation/intro) unterstützt. Sie können die Tracks auf Basis von Daten von diesen beiden Diensten anzeigen lassen bzw. GPS-Daten oder Zellenidentifikations-Daten herausfiltern. 
 
 ### <a name="service-monitoring"></a>Serviceüberwachung
 Neben der Verbindungsüberwachung verfügt Cumulocity über eine separate Serviceüberwachung für Maschinen. Weitere Informationen finden Sie unter [Serviceüberwachung](#monitoring-services).
@@ -372,7 +372,7 @@ Um ein Protokoll von einem Gerät anzufordern, gibt es die folgenden Optionen:
 - Wählen Sie die Art des Protokolls. Die unterstützten Protokolle sind meist gerätespezifisch.
 - Geben Sie einen optionalen Text ein, um das Protokoll zu filtern. Wenn Sie beispielsweise "Benutzer" eingeben, werden nur Zeilen mit dem Wort "Benutzer" in den zurückgegebenen Protokollinformationen angezeigt.
 - Wählen Sie die maximale Anzahl der anzuzeigenden Zeilen (absteigend) aus.
-- Klicken Sie auf "Protokoll anfordern".
+- Klicken Sie auf "Protokoll anfordern". ???Logdatei???
 - 
 ![Request log](/guides/users-guide/requestlogde.png)
 
@@ -389,9 +389,9 @@ Dies ist nützlich, wenn Sie nicht funktionsfähige Hardware haben und die Hardw
 
 Cumulocity kann die Verbindung zu Ihren Geräten automatisch überwachen. Wenn die Verbindung zu einem Gerät überwacht werden soll, gehen Sie zur Registerkarte "Info" des Geräts. Aktivieren Sie auf dieser Registerkarte das Feld "Erforderliches Intervall" oben. In diesem Feld wird festgelegt, wie oft Sie vom Gerät hören möchten. Wenn Sie beispielsweise "Erforderliches Intervall" auf 60 setzen, erwarten Sie, dass das Gerät mindestens einmal in einer Stunde mit Cumulocity kommuniziert. Das Intervall wird entweder vom Gerät selbst eingestellt, basierend auf dem Wissen des Geräts, wie oft es versucht, Daten zu senden, oder es wird von Ihnen manuell gesetzt.
 
-Die verschiedenen Anschlusszustände sind auf dem Bild unten dargestellt. Der obere Pfeil repräsentiert Verkehr vom Gerät zu Cumulocity. Es kann grün, rot oder grau sein. Grün bedeutet, dass Daten innerhalb des erforderlichen Intervalls gesendet wurden. Rot bedeutet, dass keine Daten  innerhalb des erforderlichen Intervalls gesendet wurden. Grau bedeutet, dass kein erforderliches Intervall konfiguriert ist.
+Die verschiedenen Anschlusszustände sind auf dem Bild unten dargestellt. Der obere Pfeil repräsentiert Verkehr vom Gerät zu Cumulocity. Er kann grün, rot oder grau sein. Grün bedeutet, dass Daten innerhalb des erforderlichen Intervalls gesendet wurden. Rot bedeutet, dass keine Daten innerhalb des erforderlichen Intervalls gesendet wurden. Grau bedeutet, dass kein erforderliches Intervall konfiguriert ist.
 
-Der untere Pfeil zeigt den Status der Push-Verbindung an, über die Befehle von Cumulocity an das Gerät gesendet werden (eine Verbindung zu / devicecon- trol / notifications API, nicht zur Echtzeit-API). Es kann entweder grün oder grau sein. Grün bedeutet, dass die Verbindung hergestellt ist. Grau bedeutet, dass die Verbindung nicht hergestellt ist. Im Falle eines grauen Pfeils unterstützt das Gerät keine Pushverbindungen, oder es liegt ein Fehler vor.
+Der untere Pfeil zeigt den Status der Push-Verbindung an, über die Befehle von Cumulocity an das Gerät gesendet werden (eine Verbindung zum /devicecontrol/notifications API, nicht zum Echtzeit-API). Es kann entweder grün oder grau sein. Grün bedeutet, dass die Verbindung hergestellt ist. Grau bedeutet, dass die Verbindung nicht hergestellt ist. Im Falle eines grauen Pfeils unterstützt das Gerät keine Pushverbindungen, oder es liegt ein Fehler vor.
 
 "Wartungsmodus" ist ein spezieller Verbindungsstatus, der anzeigt, dass das Gerät aktuell gewartet wird und nicht überwacht werden soll. Während ein Gerät gewartet wird, werden keine Alarme für dieses Gerät ausgelöst. Sie können den Wartungsmodus aktivieren, indem Sie das erforderliche Intervall auf einen negativen Wert setzen.
 
@@ -400,45 +400,45 @@ Der untere Pfeil zeigt den Status der Push-Verbindung an, über die Befehle von 
 
 > Die Verbindungsüberwachung erfolgt nicht in Echtzeit. Beispielsweise ändert sich der Zustand der Verbindung nicht sofort, wenn Sie ein Gerät ausschalten. Abhängig von Ihrem Netzwerk kann es ungefähr 20 Minuten dauern, bis eine defekte Verbindung entdeckt wird, da das Netzwerk das Senden von Daten für eine signifikante Zeitspanne wiederholt.
 
-Wenn ein Gerät als offline erkannt wird (stoppt das Senden von Daten innerhalb des erforderlichen Intervalls und der obere Pfeil wechselt zu der roten Farbe), wird ein Nichtverfügbarkeitsalarm für das Gerät erzeugt: "Keine Kommunikation mit dem Gerät seit <Zeit>."
+Wenn ein Gerät als offline erkannt wird (es sendet innerhalb des erforderlichen Intervalls keine Daten mehr, und der obere Pfeil ändert seine Farbe auf Rot), wird ein Nichtverfügbarkeitsalarm für das Gerät erzeugt: "Keine Kommunikation mit dem Gerät seit <Zeit>."
 
 ## <a name="monitoring-services"></a>Serviceüberwachung
 
 Cumulocity unterscheidet zwischen der Verbindungsüberwachung und der Serviceüberwachung. Die Verbindungsüberwachung zeigt nur an, dass das Gerät mit Cumulocity kommuniziert, es bedeutet nicht automatisch, dass es richtig funktioniert.
 
-Die Serviceüberwachung zeigt an, ob das Gerät in Betrieb ist. Zum Beispiel ist ein Verkaufsautomat in Betrieb, wenn er bereit ist, Waren zu verkaufen. Ein Verkaufsautomat kann Waren ohne eine Verbindung zu Cumulocity mit Bargeld verkaufen. Aus der Perspektive eines Kaufmanns ist es im Dienst. Es verhlt sich ähnlich, wenn Sie die Stromversorgung eines Gateways ausschalten. Auch dann können die Geräte hinter dem Gateway weiterhin funktionieren.
+Die Serviceüberwachung zeigt an, ob das Gerät in Betrieb ist. Zum Beispiel ist ein Verkaufsautomat in Betrieb, wenn er bereit ist, Waren zu verkaufen. Ein Verkaufsautomat kann Waren ohne eine Verbindung zu Cumulocity mit Bargeld verkaufen. Aus der Perspektive eines Kaufmanns ist es also in Betrieb. Es verhält sich ähnlich, wenn Sie die Stromversorgung eines Gateways ausschalten. Auch dann können die Geräte hinter dem Gateway weiterhin funktionieren.
 
-Cumulocity ist der Auffassung, dass ein Gerät in Betrieb ist, solange kein kritischer, nicht aufgelöster Alarm für das Gerät vorhanden ist. Dies wird als Zeitanteil angezeigt, wenn ein solcher Alarm vorliegt. Wenn ein Gerät keine kritischen Alarme zu irgendeinem Zeitpunkt während eines Zeitraums hatte, war es zu 100 % in Betrieb. Wenn es einige kritische, ungelöste Alarme während der Hälfte der Zeit gab, war das Gerät zu 50 % in Betrieb.
+Cumulocity geht davon aus, dass ein Gerät in Betrieb ist, solange kein kritischer, nicht aufgelöster Alarm für das Gerät vorhanden ist. Dies wird als Zeitanteil angezeigt, für den ein solcher Alarm vorliegt. Wenn ein Gerät keine kritischen Alarme zu irgendeinem Zeitpunkt während eines Zeitraums hatte, war es zu 100 % in Betrieb. Wenn es einige kritische, ungelöste Alarme während der Hälfte der Zeit gab, war das Gerät zu 50 % in Betrieb.
 
 ![Service monitoring](/guides/users-guide/servicemonitoringde.png)
 
-Während ein Gerät offline ist, nimmt Cumulocity standardmäßig an, dass das Gerät weiterhin im Dienst bleibt, wie es war, bevor es die Verbindung verloren hatte. Wenn es zuvor nicht in Betrieb war, geht Cumulocity davon aus, dass das Gerät während eines Verbindungsausfalls außer Betrieb ist.
+Während ein Gerät offline ist, nimmt Cumulocity standardmäßig an, dass das Gerät weiterhin in Betrieb bleibt, wie es war, bevor es die Verbindung verloren hatte. Wenn es zuvor nicht in Betrieb war, geht Cumulocity davon aus, dass das Gerät während eines Verbindungsausfalls außer Betrieb ist.
 
-Es kann Ausnahmen von dieser Regel geben. Wenn Ihre Verkaufsautomaten ausschließlich auf bargeldlose Zahlung angewiesen sind und die Verbindung zum Netzwerk verlieren, bedeutet das, dass die Automaten außer Betrieb sind und aufhören zu verkaufen. In diesem Fall müssen Nichtverfügbarkeitsalarme in der [Administrations-Anwendung](/guides/benutzerhandbuch/administration-deutsch#reprio-alarms) auf "kritische" Priorität statt "Major"-Priorität gesetzt werden.
+Es kann Ausnahmen von dieser Regel geben. Wenn Ihre Verkaufsautomaten ausschließlich auf bargeldlose Zahlung angewiesen sind und die Verbindung zum Netzwerk verlieren, bedeutet das, dass die Automaten außer Betrieb sind und aufhören zu verkaufen. In diesem Fall müssen Nichtverfügbarkeitsalarme in der [Administrations-Anwendung](/guides/benutzerhandbuch/administration-deutsch#reprio-alarms) auf "kritische" Priorität statt "wichtige"-Priorität gesetzt werden.
 
 Cumulocity kann die Verfügbarkeit der Dienste auf der Ebene einzelner Geräte oder für alle Geräte anzeigen. Wenn Sie im Navigator "Service Monitoring" wählen, wird der gesamte Service für alle Geräte angezeigt. Auf dieser Seite sehen Sie auch ein Histogramm, wieviele Geräte im vergangenen Monat wann verfügbar waren (siehe obigen Screenshot).
 
 ## <a name="map"></a>Der Standort von Geräten
 
-Wenn Sie im Navigator auf "Karte" klicken, wird eine Karte aller Geräte in Ihrem Konto angezeigt. Geräte werden als "Pins" angezeigt, mit denen Sie auf den Namen des Geräts klicken können. Wenn Sie auf den Namen des Geräts klicken, gelangen Sie in die Detailansicht des Geräts. Durch Anklicken des Kontrollkästchens "Realtime" wird die Karte automatisch aktualisiert, sobald sich Geräte bewegen.
+Wenn Sie im Navigator auf "Karte" klicken, wird eine Karte aller Geräte in Ihrem Konto angezeigt. Geräte werden als "Markierungsnadeln" angezeigt, auf die Sie klicken können, um den Namen des Geräts zu erhalten. Wenn Sie auf den Namen des Geräts klicken, gelangen Sie in die Detailansicht des Geräts. Durch Anklicken des Kontrollkästchens "Realtime" wird die Karte automatisch aktualisiert, sobald sich Geräte bewegen.
 
 ## <a name="alarm-monitoring"></a>Arbeiten mit Alarmen
 
 Geräte können Alarme auslösen, um anzuzeigen, dass ein Problem vorliegt und eine Intervention erforderlich ist. Alarme können an verschiedenen Orten betrachtet werden:
 
-* Durch Klicken auf "Nur ungelöst" im Register "Alarme" sehen Sie Alarme aller Geräte, die noch nicht gelöscht wurden.
+* Durch Klicken auf "Nur ungelöst" im "Alarme"-Tab sehen Sie die Alarme aller Geräte, die noch nicht gelöst wurden.
 * Durch Klicken auf "Alarme" im Navigator wird der gesamte Alarmverlauf angezeigt.
 * Durch Klicken auf ein Gerät und Auswählen der Registerkarte "Alarme", um die Alarme des Geräts zu sehen. Standardmäßig werden nur ungelöste Alarme angezeigt, aber Sie können das "Nur ungelöste" Kontrollkästchen deaktivieren, um alle Alarme anzuzeigen.
 
 Die Alarmanzeige ist in vier Abschnitte unterteilt, die Alarme unterschiedlicher Prioritäten separat auflisten. In jedem Abschnitt wird zuerst der letzte Alarm angezeigt. Das folgende Bild zeigt die Detailanzeige eines Alarms nach dem Anklicken. Die Detailansicht enthält folgende Elemente:
 
 * **Alarm Schweregrad**: Die Schweregrade hierbei sind:
- * **Kritisch**: Sofortiges Eingreifen erforderlich.
+ * **Kritisch**: Das Gerät ist außer Betrieb, und sofortiges Eingreifen ist erforderlich.
  * **Major**: Es gibt ein Problem, welches Aufmerksamkeit erfordert.
- * **Minor**: Ein kleineres Problem ist aufgetreten
- * **Warnung**: Das ist eine Warnung.
-* **Status**: Der Status der Alarme. Das kann sein:
- * **Aktiv**: Wenn der Alarm beginnt und noch niemand daran arbeitet.
+ * **Minor**: Ein kleineres Problem ist aufgetreten.
+ * **Warnung**: Es gibt eine Warnung.
+* **Status**: Der Status des Alarms. Das kann sein:
+ * **Aktiv**: Wenn der Alarm ausgelöst wurde und noch niemand daran arbeitet.
  * **Zur Kenntnis genommen**: Wenn jemand die "Zur Kenntnis genommen"-Schaltfläche aktiviert hat.
  * **Aufgelöst**: Wenn entweder jemand auf die Schaltfläche "Löschen" geklickt hat, um einen Alarm manuell zu löschen, oder wenn das Gerät selbst feststellt, dass das Problem nicht mehr besteht.
 * **Anzahl**: Die Häufigkeit, mit der dieser Alarm vom Gerät gesendet wurde. Cumulocity dupliziert Alarme, so dass nur ein Alarm eines bestimmten Typs für ein bestimmtes Gerät aktiv sein kann. Wenn ein anderer Alarm des gleichen Typs durch das Gerät gesendet wird, wird die Anzahl erhöht.
@@ -453,16 +453,16 @@ Die Alarmanzeige ist in vier Abschnitte unterteilt, die Alarme unterschiedlicher
 
 ## <a name="operation-monitoring"></a>Arbeiten mit Fernsteuerung
 
-Vorgänge werden für ferngesteuerte Geräte verwendet. Sie können im Navigator auf das Menü "Gerätesteuerung" klicken, um alle Vorgänge anzuzeigen, die an ein Gerät gesendet wurden und noch in der Warteschlange stehen, um an ein Gerät gesendet zu werden. Ähnlich können Sie die Registerkarte "Steuerung" eines bestimmten Geräts auswählen, um die Vorgänge dieses Geräts anzuzeigen.
+Fernsteuerungsvorgänge werden für ferngesteuerte Geräte verwendet. Sie können im Navigator auf das Menü "Gerätesteuerung" klicken, um alle Vorgänge anzuzeigen, die an ein Gerät gesendet wurden und noch in der Warteschlange stehen, um an ein Gerät gesendet zu werden. Ähnlich können Sie die Registerkarte "Steuerung" eines bestimmten Geräts auswählen, um die Vorgänge dieses Geräts anzuzeigen.
 
 Vorgänge können sich in diesen Ausführungszuständen befinden:
 
-* **Ausstehend**: Der Vorgang wurde gerade erstellt und wartet darauf, dass das Gerät den Vorgang übernimmt.* 
-**In Ausführung**: Die Operation wurde vom Gerät aufgenommen und wird ausgeführt.
+* **Ausstehend**: Der Vorgang wurde gerade erstellt und wartet darauf, dass das Gerät den Vorgang übernimmt.
+* **In Ausführung**: Die Operation wurde vom Gerät übernommen und wird ausgeführt.
 * **Erfolgreich ausgeführt**: Der Vorgang wurde vom Gerät erfolgreich ausgeführt.
 * **Fehlgeschlagen**: Der Vorgang konnte nicht vom Gerät ausgeführt werden.
 
-Wenn Sie auf einen Vorgang klicken, werden die Parameter des Vorgangs angezeigt. Wenn Sie beispielsweise auf einen Konfigurationsvorgang klicken, wird die Konfiguration angezeigt, die an das Gerät gesendet wird. Das Klicken auf eine fehlgeschlagenen Vorgang zeigt den Grund des Fehlers an.
+Wenn Sie auf einen Vorgang klicken, werden die Parameter des Vorgangs angezeigt. Wenn Sie beispielsweise auf einen Konfigurationsvorgang klicken, wird die Konfiguration angezeigt, die an das Gerät gesendet wird. Das Klicken auf einen fehlgeschlagenen Vorgang zeigt den Grund des Fehlers an.
 
 Die Schaltfläche "Alle" zeigt alle Vorgänge für ein Gerät an, unabhängig davon, ob sie bereits verarbeitet wurden. Das Gerät führt diese Operationen in aufsteigender Zeitreihenfolge auf. Operationen werden streng nach dieser Reihenfolge ausgeführt.
 
@@ -474,10 +474,11 @@ Zur einfacheren Handhabung von vielen Geräten bietet Cumulocity "Bulk-Vorgänge
 
 Dazu haben Sie folgende Möglichkeiten:
 
-- Wählen Sie ein Gerät aus und navigieren Sie zum Register "Steuerung".
+- Wählen Sie ein Gerät aus und navigieren Sie zur Registerkarte "Steuerung".
 - Erstellen Sie einen Vorgang.
 - Bewegen Sie den Mauszeiger über den Vorgang, den Sie ausführen möchten.
-- Klicken Sie auf das Zahnrad. Klicken Sie auf "Ausführen für die ganze Gruppe".
+- Klicken Sie auf das Zahnrad. 
+- Klicken Sie auf "Ausführen für die ganze Gruppe".
 
 ![Execute bulk operations](/guides/users-guide/executebulkoperations.png)
 
@@ -499,7 +500,7 @@ Da Geräte größere Mengen an Ereignisdaten senden können, können Sie die hie
 
 ## <a name="software-repo"></a> Verwaltung von Firmware und Software
 
-Cumulocity bietet einen zentralen Platz für die Erfassung von Referenz-Firmware und Software für Geräte im "Firmware-Repository" und im "Software-Repository".
+Cumulocity bietet einen zentralen Platz für die Erfassung von Referenz-Firmware und -Software für Geräte im "Firmware-Repository" und im "Software-Repository".
 
 Um Firmware zu aktualisieren oder Softwarepakete auf einem bestimmten Gerät hinzuzufügen, müssen Sie drei Schritte durchführen:
 
@@ -507,21 +508,23 @@ Um Firmware zu aktualisieren oder Softwarepakete auf einem bestimmten Gerät hin
 
 2. Wählen und speichern Sie die Dateien im "Firmware-Repository". Um ein neues Firmware-Image zum Repository hinzuzufügen, gehen Sie zum "Firmware-Repository" und klicken Sie auf die Schaltfläche "Firmware hinzufügen". Geben Sie dann den Namen der Firmware, die Version und die URL ein, von der das Gerät die Firmware herunterladen kann. Auf ähnliche Art und Weise verwenden Sie das "Software-Repository", um Referenz-Softwarepakete hinzuzufügen.
 
-3. Installieren Sie die Firmware auf einem bestimmten Gerät. Zuerst navigieren Sie zu "Alle Geräte". Wählen Sie das gewünschte Gerät, gehen Sie dann auf "Software" auf Gerätedetails und klicken Sie auf "Firmware installieren". Die Installation von Softwarepaketen ist sehr ähnlich. Sie folgen den gleichen Schritten wie zuvor erwähnt, aber Sie wählen stattdessen "Software installieren".(Mehr hierzu unter [Software](/guides/benutzerhandbuch/device-management-deutsch#software).)
+3. Installieren Sie die Firmware auf einem bestimmten Gerät. Zuerst navigieren Sie zu "Alle Geräte". Wählen Sie das gewünschte Gerät, gehen Sie dann auf "Software" auf Gerätedetails, und klicken Sie auf "Firmware installieren". Die Installation von Softwarepaketen ist sehr ähnlich. Folgen Sie den gleichen Schritten wie zuvor erwähnt, aber wählenSie stattdessen "Software installieren".(Mehr hierzu unter [Software](/guides/benutzerhandbuch/device-management-deutsch#software).)
 
-> Sie müssen die Administrations-Anwendung aufrufen, um Binärdateien in Cumulocity zu speichern. Siehe auch [Administration](/guides/benutzerhandbuch/administration-deutsch#files).
+> Sie müssen die Administrations-Anwendung aufrufen, um andere Binärdateien in Cumulocity zu speichern. Siehe auch [Administration](/guides/benutzerhandbuch/administration-deutsch#files).
 
 Cumulocity bietet Ihnen die Möglichkeit, Firmware oder Softwareupdates für mehrere Geräte gleichzeitig auszuführen. Um dies zu tun:
 
 - Führen Sie das Softwareupdate in einem einzigen Gerät aus, um zu testen, dass die neue Version wirklich funktioniert.
 - Navigieren Sie zum entsprechenden Vorgang und wählen Sie "Ausführen für die gesamte Gruppe".
 - Füllen Sie das Formular aus, um den Gesamtvorgang zu planen, und klicken Sie auf die Schaltfläche "Erstellen".
-- Der Vorgangsstatus kann unter der entsprechenden Gruppe im Bulk-Vorgangs-Tab eingesehen werden.
-> Weitere Informationen zu Bulk-Vorgängen finden Sie unter [Bulk-Vorgänge](#bulk-operations) 
+
+Der Vorgangsstatus kann unter der entsprechenden Gruppe im Bulk-Vorgangs-Tab eingesehen werden.
+
+> Weitere Informationen zu Bulk-Vorgängen finden Sie unter [Bulk-Vorgänge](#bulk-operations). 
 
 ## <a name="credentials"></a>Verwaltung von Gerätezugangsdaten 
 
-Im Menü "Geräte-Zugangsdaten" sind alle Anmeldeinformationen aufgelistet, die für die angeschlossenen Geräte generiert wurden. Jedes Gerät, das registriert wurde, erscheint hier mit der Namenskonvention "device_ <id>".
+Im Menü "Geräte-Zugangsdaten" sind alle Anmeldeinformationen aufgelistet, die für die angeschlossenen Geräte generiert wurden. Jedes Gerät, das registriert wurde, erscheint hier mit der Namenskonvention "device_&lt;id&gt;".
 
 In den meisten Fällen sollten Sie nichts bearbeiten müssen. Ausnahmen sind:
 
@@ -531,7 +534,7 @@ In den meisten Fällen sollten Sie nichts bearbeiten müssen. Ausnahmen sind:
 
 ![Bulk provisioning](/guides/users-guide/regdeutsch.png)
 
-Die Geräte-Anmeldeinformationen können auch aus der CSV-Datei bereitgestellt werden. Dateien können über die mit einem Pfeil markierte Schaltfläche hochgeladen werden. Weitere Details zur Dateistruktur finden Sie unter [Gruppenregistrierung](#creds-upload).
+Die Geräte-Anmeldeinformationen können auch aus einer CSV-Datei bereitgestellt werden. Dateien können über die markierte Schaltfläche hochgeladen werden. Weitere Details zur Dateistruktur finden Sie unter [Gruppenregistrierung](#creds-upload).
 
 ## <a name="simulators"></a> Simulatoren
 
@@ -553,29 +556,29 @@ Ein Simulator verwendet eine Wiedergabeliste, um Nachrichten zu simulieren, die 
 
 Eine Anweisung kann entweder eine Nachricht senden (Messungen, Alarme, Ereignisse und Inventar) oder für eine bestimmte Zeit warten (Schlaf).
 
-Eine Nachricht wird durch Auswählen einer Vorlage (z. B. Senden einer Temperatur) und Bereitstellen der Werte für diese Vorlage (23,0 Grad) definiert. Es stehen viele vordefinierte Meldevorlagen zur Verfügung, z. B. "Messwert erstellen", "Ereignis senden", "Erstellen" und "Abbrechen" eines Alarms oder "Update Betriebszustand". Diese basieren auf statischen MQTT-Vorlagen. Darüber hinaus können benutzerdefinierte Nachrichtenvorlagen mit dem SmartREST-Template-Editor definiert werden.
+Eine Nachricht wird durch Auswählen einer Vorlage (z. B. Senden einer Temperatur) und Bereitstellen der Werte für diese Vorlage (23,0 Grad) definiert. Es stehen viele vordefinierte Meldevorlagen zur Verfügung, z. B. "Messwert erstellen", "Ereignis senden", "Erstellen" und "Abbrechen" eines Alarms. Diese basieren auf statischen MQTT-Vorlagen. Darüber hinaus können benutzerdefinierte Nachrichtenvorlagen mit dem SmartREST-Template-Editor definiert werden.
 
 ### Einrichten eines Simulators
 
-Um einen Simulator einzurichten, gehen Sie man zur Navigation im Device Management und wählen Simulatoren in dem Abschnitt Geräte aus.
+Um einen Simulator einzurichten, gehen Sie zur Navigation im Device Management und wählen Sie  "Simulatoren" unter "Geräte" aus.
 
 ![New Simulator](/guides/users-guide/newsimde.png)
 
-Simulatoren können hinzugefügt werden, indem Sie auf "Neu" klicken, um eine Karte zu öffnen. Sie können nun wählen, ob Sie einen neuen Simulator definieren oder ein Preset auswählen möchten. Aus diesem Simulator wird der Name des Simulators und bis zu 10 Instanzen ermittelt.
+Simulatoren können hinzugefügt werden, indem Sie auf "Neu" klicken, um eine Karte zu öffnen. Sie können nun wählen, ob Sie einen neuen Simulator definieren oder ein Preset auswählen möchten. Geben Sie dem Simulator einen Namen und definieren Sie die Anzahl der Instanzen (bis zu 10).
 
 <img src="/guides/users-guide/addsimde.png" alt="Add Simulator" style="max-width: 60%">
 
 ### Presets
 
-Die andere Möglichkeit ist, einen Simulator aus einem Preset zu erstellen. Derzeit stehen zwei verschiedene Presets zur Verfügung: Ein Preset "Temperaturmessung" und ein Preset "Positionsaktualisierung".
+Die andere Möglichkeit ist, einen Simulator aus einem Preset zu erstellen. Derzeit stehen zwei verschiedene Presets zur Verfügung: Ein Preset "Temperaturmesswerte" und ein Preset "Positionsereignis".
 
-<img src="/guides/users-guide/addtempsimde.png" alt="Add Add Temperature Preset" style="max-width: 60%">
+<img src="/guides/users-guide/addtempsimde.png" alt="Add Temperature Preset" style="max-width: 60%">
 
 <img src="/guides/users-guide/addpossimde.png" alt="Add Position Preset" style="max-width: 60%">
 
 ![Edit Simulator](/guides/users-guide/editcloneremsimde.png)
 
-Die Anzahl der Instanzen eines Simulators ist auf 10 begrenzt. Vorhandene Simulatoren finden Sie auf dieser Seite. Simulatoren können durch Klicken auf das Zahnrad in der rechten oberen Ecke der Karte bearbeitet, geklont oder entfernt werden. Es öffnet sich ein Dropdown-Menü mit diesen Optionen.
+Vorhandene Simulatoren finden Sie auf dieser Seite. Simulatoren können durch Klicken auf das Zahnrad in der rechten oberen Ecke der Karte bearbeitet, dupliziert oder entfernt werden. Es öffnet sich ein Dropdown-Menü mit diesen Optionen.
 
 ### Hinzufügen von Anweisungen für den Simulator
 
@@ -587,7 +590,7 @@ Die folgende Übersicht erscheint:
 
 ![Add Instructions Step 2](/guides/users-guide/addinstructions2de.png)
 
-Innerhalb dieses Presets sind bereits Musteranleitungen enthalten. Sie können 2 Schritte identifizieren: "Messung erstellen" und "Sleep".
+Innerhalb dieses Presets sind bereits Musteranleitungen enthalten. Sie können 2 Schritte identifizieren: "Benutzerdefinierten Messwert erstellen" und "Warten".
 
 ### Details der Anweisungen
 
@@ -600,24 +603,24 @@ Die Messanweisung bezieht sich auf ein Fragment. Dieses ist das unten gezeigte B
 
 **SmartREST-Vorlagen**
 
-Andere Optionen zeigen eine Auswahl von SmartREST-Vorlagen. Die SmartREST-Vorlagen werden im Navigator unter dem Eintrag "Gerätetypen" > "SmartREST temSmart Rest Vorlagenplatten" erstellt. Diese Vorlagen sind eine Antwortvorlage, die eine Liste von Werten erzeugt, die eine Operation als Endergebnis beschreiben. Die unten aufgeführte SmartREST-Vorlage erstellt einen Warnalarm mit Text zu einem bestimmten Zeitpunkt.
+Andere Optionen zeigen eine Auswahl von SmartREST-Vorlagen. Die SmartREST-Vorlagen werden im Navigator unter dem Eintrag "Gerätetypen" > "SmartREST temSmart Rest Vorlagenplatten" ??? erstellt. Diese Vorlagen sind eine Antwortvorlage, die eine Liste von Werten erzeugt, die einen Vorgang als Endergebnis beschreiben. Die unten aufgeführte SmartREST-Vorlage erstellt einen Warnalarm mit Text zu einem bestimmten Zeitpunkt.
 Spezifische Informationen und Muster einer Vielzahl von Vorlagen sind erhältlich im [MQTT Developer's Guide](/guides/mqtt). 
 
 ![Rest Template](/guides/users-guide/resttemplatede.png)
 
 ![Add Instructions Step 4](/guides/users-guide/addinstructions4de.png)
 
-Die Anweisung "Sleep" erfordert einen Wert für die Dauer in Sekunden. Das Bedienfeld auf der rechten Bildschirmhälfte ändert sich entsprechend der Art der Anweisungen, die Sie wählen.
+Die Anweisung "Warten" erfordert einen Wert für die Dauer in Sekunden. Das Bedienfeld auf der rechten Bildschirmhälfte ändert sich entsprechend der Art der Anweisungen, die Sie wählen.
 
-### Hinzufügen von Operationen zu einem Simulator
+### Hinzufügen von Kommandos zu einem Simulator
 
-Direkt unter der Registerkarte "Anweisungen" finden Sie die unterstützten Operationen. In diesem Menü können Sie bestimmte Funktionen wie Konfiguration oder Software-/Firmware-Update aktivieren oder deaktivieren.
+Direkt unter der Registerkarte "Anweisungen" finden Sie die unterstützten Kommandos. In diesem Menü können Sie bestimmte Funktionen wie Konfiguration oder Software-/Firmware-Update aktivieren oder deaktivieren.
 
 ![Operations Off](/guides/users-guide/supop1de.png)
 
 ![Operations On](/guides/users-guide/supop2de.png)
 
-Einige Operationen sind aktiviert. Sie können auch benutzerdefinierte Vorgänge mithilfe der Schaltfläche zum Hinzufügen einer benutzerdefinierten Operation festlegen.
+Einige Kommandos sind aktiviert. Mithilfe der Schaltfläche können Sie auch benutzerdefinierte Kommandos hinzufügen.
 
 ### Alarme (innerhalb der Simulatorfunktion)
 
@@ -625,4 +628,77 @@ Der letzte Tab im Simulator-Menü beinhaltet Alarme.
 
 ![Simulator Alarm](/guides/users-guide/simalarmde.png)
 
-Dies sind nicht etwa die Alarme, die durch die simulierten Geräte erzeugt werden, sondern diese Alarme beziehen sich auf den Simulator selber. Wenn der Simulator nicht richtig arbeitet, wird das hier sichtbar.
+Dies sind nicht etwa die Alarme, die durch die simulierten Geräte erzeugt werden, sondern diese Alarme beziehen sich auf den Simulator selber. Wenn der Simulator nicht richtig arbeitet, werden hier Alarme oder Warnungen angezeigt.
+
+## <a name="cloud_remote_access"></a>Cloud Remote Access
+
+### Übersicht
+
+Cumulocity Cloud Remote Access implementiert Virtual Network Computing (VNC), um mit einer grafischen Benutzeroberfläche Fernzugriff auf Bedienkonsolen und andere Geräte zu erhalten. Die Anwender der Geräte können so über einen Webbrowser mit den Geräten arbeiten, als ob sie sich direkt vor ihnen befinden. 
+
+![VNC](/guides/users-guide/VNC1a.png)
+
+Cloud Remote Access funktioniert wie in der Abbildung unten dargestellt. Ausgehend von dem ferngesteuerten Gerät: Auf dem Gerät läuft ein VNC-Server, und das Gerät ist mit einem Gateway, der mit dem Cloud Remote Access kompatibel ist, verbunden. Diese Gateway muss in der Device-Management-Anwendung als Gerät registriert sein. Weitere Informationen und Anleitungen zur Geräteregistrierung finden Sie hier: [Geräte manuell verbinden](https://www.cumulocity.com/guides/users-guide/device-management/#device-registration)
+
+![VNC2](/guides/users-guide/VNC2.png)
+
+Mit Cloud Remote Access können Sie
+
+- Statusvisualisierungen ansehen und Updates von ferngesteuerten Geräten sofort überwachen, so als befänden Sie sich direkt am Gerät
+- einfach eine Verbindung zu ferngesteuerten Geräten erstellen, da komplizierte VPN-Setups nicht nötig sind 
+
+![VNC1b](/guides/users-guide/VNC1b.png)
+
+Die Verbindung zu ferngesteuerten Geräten ist sicher verschlüsselt durch TLS-Technologie.  Außerdem sind Passwörter in Ihrem Cumulocity-Konto verschlüsselt, so dass Sie sie nicht an anderer Stelle verwalten müssen. 
+
+### Nutzung von Cloud Remote Access 
+
+Cloud Remote Access ist zugänglich über die Device-Management-Anwendung. 
+
+**Voraussetzungen:**
+
+- Ein Gateway, der mit Cloud Remote Access kompatibel ist, ist mit Ihrem Cumulocity-Konto verbunden.  
+- Ein Gerät mit einem VNC-Server ist mit dem Gateway verbunden ist und kann vom Gateway erreicht werden kann. 
+- Cloud Remote Access wurde von Ihnen abonniert. Wenn Sie den "Remote access"???-Tab nicht sehen können, wenden Sie sich an sales@cumulocity.com.
+
+In Cumulocity können Sie die Gateways über “Alle Geräte” in der Device-Management-Anwendung finden. 
+
+![router device](/guides/users-guide/routerdevice.png)
+
+Wählen Sie das Gateway aus der Liste aus. Unten können Sie den “Remote access”???-Tab sehen, falls Sie Cloud Remote Access abonniert haben. Wenn sie auf den Tab klicken, erscheint die Liste. 
+
+![Endpoints](/guides/users-guide/endpoints.png)
+
+Sie können ferngesteuerte Geräte konfigurieren, indem Sie auf “Add endpoint”??? klicken. 
+
+*Der "endpoint" ??? ist die IP-Adresse und der Port des VNC-Servers, der auf dem Gerät läuft. Diese IP-Adresse und Port müssen vom Gateway erreichbar sein.* 
+
+
+*Um einen Endpoint ??? zu konfigurieren, benötigen Sie die folgenden Berechtigungen: Remote access???Fernzugriff muss auf “Ändern” und Device Control??? muss auf “Ändern” gesetzt sein. Um Daten zu lesen, reicht eine "Lese"-Berechtigung. Für weitere Informationen über die Gewährung von Berechtigungen siehe [Administration](/guides/benutzerhandbuch/administration-deutsch/#users)*
+
+Ein Dialog wie in der Abbildung unten öffnet sich. Geben Sie die IP-Adresse, den Port und das Passwort des VNC-Servers ein. Wenn der Endpoint ??? hinzugefügt ist, wird er in der Liste angezeigt. 
+
+![Remote access endpoint](/guides/users-guide/remoteaccess.png)
+
+Um eine Verbindung zu konfigurierten Endpoints??? zu schaffen, gehen Sie zum "Remote Access"???-Tab und wählen Sie einen Endpoint??? aus. Diese Endpoints??? stellen die ferngesteuerten Geräte dar. Wenn Sie auf "Verbinden" klicken, startet die VNC-Verbindung. Dafür benötigen Sie zumindest "Lese"-Rechte für die "Remote Access"-???Funktion und "Ändern"-Rechte für die Device Control???. Weitere Informationen über Nutzer und Berechtigungen finden Sie unter [Administration](/guides/benutzerhandbuch/administration-deutsch/#users).
+
+![Connect Endpoint](/guides/users-guide/connectendp.png)
+
+Ein neuer Browser-Tab öffnet sich, und innerhalb von wenigen Mömenten sehen Sie die Frontseite bzw. die Bedienkonsole des verbundenen Gerätes. Die obere Leiste des Bildschirms zeigt "starting VNC handshake”??? an, wenn der Vorgang startet. 
+
+Über das kleine Zahnrad am Ende der Reihe öffnet sich ein Dialog, mit dem Sie Endpoints??? bearbeiten oder entfernen können.
+
+![Edit endpoints](/guides/users-guide/editendpoint.png)
+
+### Troubleshooting
+
+Vergewissern Sie sich, dass Sie die nötigen Berechtigungen für das Hinzufügen von Endoints??? haben. Sie benötigen "Ändern"-Rechte für Remote Access??? und Device Control???. Ohne  "Ändern"-Rechte in der Device Control??? können Sie keine Geräte registrieren, und ohne "Ändern"-Rechte beim Remote Access??? können Sie keine Endpoints??? hinzufügen.
+Um eine Verbindung zu einer ferngesteuerten Bedienkonsole zu erstelen, reichen "Lese"-Rechte beim Remote Access???.
+
+Die VNC-Verbindung zu einem VNC-Server über ein Gateway kann auch aufgrund von Netzwerkproblemen fehlschlagen. In diesem Fall wenden Sie sich an Ihren Netzwerkadministrator.
+
+Getestet auf den folgenden VNC-Servern:
+- Real VNC Connect 6.0.2	
+- TightVNC 1.3.9
+- TigerVNC 1.7.0
+- EfonVNC 4.2

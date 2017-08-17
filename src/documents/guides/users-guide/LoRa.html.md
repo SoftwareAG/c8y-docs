@@ -5,26 +5,31 @@ layout: default
 ---
 
 ## <a name="overview"></a>Overview
-The Cumulocity LoRa Actility intergation allows you to collect and visualize payload data from LoRa devices. The intergation offers the following functionality:
-* Provision and deprovision LoRa devices easily using the Cumulocity Device Management. No interaction in the ThingPark user interface required. 
-* Decode upstream payload packets using a web based user interface.
+The Cumulocity LoRa Actility integration allows you to collect and visualize payload data from LoRa devices. The integration offers the following functionality:
+
+* Provision and deprovision LoRa devices easily using the Cumulocity Device Management. No interaction in the ThingPark user interface is required. 
+* Decode upstream payload packets using a web-based user interface.
 * Raw packets are available as Cumulocity events for further processing and debugging.
 * Send downstream data to the device using Cumulocity operations.
-* Make use of all existing Cumulocity features with LoRa devices, including, but not limited to: connectivity monitoring, device management, data visualisation with dashboards, real-time analytics and more.
+* Make use of all existing Cumulocity features with LoRa devices, including but not limited to: connectivity monitoring, device management, data visualization with dashboards, real-time analytics and more.
 
- This section describes how to:
+The following illustration gives an overview of the Cumulocity LoRa Actility integration.
+
+![Cumulocity LoRa Actility integration](/guides/users-guide/actility/Cumulocity-LoRa-Actility-integration.png)
+
+The following sections describe how to:
 
 * [Configure your ThingPark account credentials](#configure-credentials) in Cumulocity
 * [Create device types](#create-device-types) with Cumulocity's device database
 * [Register devices](#register-device) and visualize Actility payload using Cumulocity
 * [Deprovision a device](#deprovision-device) in ThingPark
-* [Send command operations](#configurable-port) to a device
+* [Send operations](#configurable-port) to a device
 
 Note: The LoRa functionalities are only available for tenants who have subscribed to the Actility-device-provider-agent application. Please contact support if you need to use this feature.
 
 ## <a name="configure-credentials"></a>Configuring ThingPark account credentials
 
-In order to create new credentials or replace existing ones, go to the Administration application and select "Connectivity" in "Settings" in the Navigator. 
+Before using the Cumulocity LoRa Actility integration you need to configure the account details inside the ThingPark server. You can do so in Cumulocity. In order to create new credentials or replace existing ones, go to the Administration application and select "Connectivity" in "Settings" in the Navigator. 
 
 ### <a name="create-new-credentials"></a>Creating new account credentials
 
@@ -53,6 +58,10 @@ Enter your profile ID, username, password and application EUI. For an explanatio
 Click "Save". Your old credentials will now be replaced with the new ones. 
 
 ## <a name="create-device-types"></a>Creating device types with the device database
+LoRa devices have (in many cases) a proprietary payload format. To view data from these devices, the payload format must be known to Cumulocity. For this, the Cumulocity device database includes declarative descriptions of the payload.
+
+In case the declarative approach is not sufficient to describe the payload, use the real-time analytics engine to decode the payload. See XXX for more details. [??? TO DO: Add a short section]
+
 In order to create device types with the device database, go to the Device Management application and select "Device database" in "Device types" in the Navigator. You can either import an existing device type or create a new one. 
 
 ### <a name="import-device-type"></a>Importing a predefined device type
@@ -62,7 +71,7 @@ Select the predefined device type, for example "LoRaWAN Demonstrator". Click "Im
 
 <img src="/guides/users-guide/actility/deviceDatabaseImport.png" alt="Import a predefined device type" style="max-width: 60%">
 
-Alternatively you may also load the device type from a file and import it. 
+Alternatively you may also load the device type from a file and import it. The file format is Cumulocity internal. You can create the file by e.g. exporting the device decription from another tenant.
 
 ### <a name="create-new-device-type"></a>Creating a new device type
 
@@ -71,6 +80,9 @@ In the device database window, click the "New" button.
 <img src="/guides/users-guide/actility/deviceDatabase-createNew.png" alt="Create new device type" style="max-width: 100%">
 
 Select "LoRa" as the device type and name your device type. 
+
+In the next UI section you determine the message type. LoRa devices can send messages of different types with different encodings per type. Depending on the device, the type can be determined by looking either at the FPort parameter of a message (Source: FPort) or at the subset of the message payload itself (Source: Payload). If the type is inside the message payload, indicate where the type information starts in the payload (Start bit) and how long this information is (Number of bits).
+[???TO DO: add example]
 
 Select the way the message type is encoded in the "Source" dropdown box:  
 
@@ -85,7 +97,7 @@ Click the "Add" button to create the value configuration.
 
 The value configuration maps the value in the payload of a message type to the Cumulocity data. 
 
-Configure the "Message ID" according to your device message specification and map it to the Cumulocity data. It will be matched with the message ID found in the source specified on the device type main page (i.e. Payload or FPort). The message ID needs to be entered in decimal numbers (not hex).
+Configure the "Message ID" according to your device message specification and map it to the Cumulocity data. The message ID is the numeric value identifying the message type. It will be matched with the message ID found in the source specified on the device type main page (i.e. Payload or FPort). The message ID needs to be entered in decimal numbers (not hex).
 
 Fill in the general fields for your new value in order to categorize it in the "Values" list. The associated "Name" for this value will be displayed under the "Display category" given.
 
@@ -108,7 +120,7 @@ In the functionalities, define how this device type should behave:
 - **Send event**: creates an event whenever the value is changed
 - **Update managed object**: updates a fragment in a managed object whenever the value is changed
 
-You can also have a nested structure with several values within a measurement, event or managed object fragment. In case of a measurement all the properties of the same type will be merged to create a nested structure. In case of an event or a managed object all the properties with the same fragment are merged to create a nested structure. (Also refer to the [example](#nested-structure-example) of a nested structure for a "Position" device type below).
+You can also have a nested structure with several values within a measurement, event or managed object fragment. In case of a measurement all the properties of the same type will be merged to create a nested structure. In case of an event or a managed object all the properties with the same fragment are merged to create a nested structure. (Also refer to the [example](#nested-structure-example) of a nested structure for a "Position" device type below.)
 
 After clicking "OK", the values are added to your device type. 
 
@@ -119,6 +131,8 @@ After clicking "Save", your device type is created with the values you defined.
 **Example without nested structure**
 
 The following picture shows an example for a message which sends a measurement when this value (the battery level) changes. 
+
+[???TO DO: Add a graphical representation of the frame. I.e. google "packet frame format" and use a similar layout.]
 
 <img src="/guides/users-guide/actility/deviceDatabase2.png" alt="Value configuration in detail: measurement" style="max-width: 50%">
 
@@ -160,6 +174,9 @@ The following picture shows an example for device registration.
 
 After clicking "Next" the device registration request will be submitted and the device will be created.
 
+Verify that the device is really connected, i.e. that there entries under "Events". 
+[???TO DO: add instructions on how to check that the device is connected] 
+
 For more information on viewing and managing your connected devices, also refer to 
 [Device management](/guides/users-guide/device-management).
 
@@ -173,15 +190,15 @@ To deprovision a device, go to the Device Management application and navigate to
 
 After confirming the deprovisioning, the device will be deprovisioned in ThingPark.
  
-## <a name="configurable-port"></a>Sending command operations
+## <a name="configurable-port"></a>Sending operations
 
-In order to send a command operation, go to the Device Management application and navigate to the device you want to send a command to. 
+In order to send an operation, go to the Device Management application and navigate to the device you want to send an operation to. 
 
-Click the "Shell" tab and enter the command in the ">_Command" field. If you enter the command without defining a port, it will be sent to the default target port (i. e. 1). If you enter the command and define a port (format "command:port"), it will be sent to the specified target port instead of the default port. 
+Click the "Shell" tab and enter the operation in the ">_Command" field. If you enter the operation without defining a port, it will be sent to the default target port (i. e. 1). If you enter the operation and define a port (format "command:port"), it will be sent to the specified target port instead of the default port. 
 
 <img src="/guides/users-guide/actility/portConfiguration.png" alt="Port configuration" style="max-width: 100%">
 
-Click "Execute". The command will be sent to the device. 
+Click "Execute". The operation will be sent to the device. The timing depends on Actility ThingPark.
 
 
 

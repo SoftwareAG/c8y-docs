@@ -19,8 +19,9 @@ Die Device-Management-Anwendung zeigt Ihnen Ihre angeschlossenen Geräte an und 
 * Verwalten von [Software und Firmware](#software-repo) auf Geräten
 * Verwalten der [Zugangsdaten](#credentials) von Geräten
 * [Simulation](#simulators) von Geräten
+* Nutzung von [Cloud Remote Access](#cloud_remote_access) für Fernzugriff auf Bedienkonsolen und andere Geräte
 
-Diese Anwendung sieht so aus:
+Die Device-Management-Anwendung sieht so aus:
 
 <img src="/guides/benutzerhandbuch/Benutzeroberflaeche.png" alt="Benutzeroberfläche" style="max-width: 100%">
 
@@ -453,7 +454,7 @@ Die Alarmanzeige ist in vier Abschnitte unterteilt, die Alarme unterschiedlicher
 
 ## <a name="operation-monitoring"></a>Arbeiten mit Fernsteuerung
 
-Fernsteuerungsvorgänge werden für ferngesteuerte Geräte verwendet. Sie können im Navigator auf das Menü "Gerätesteuerung" klicken, um alle Vorgänge anzuzeigen, die an ein Gerät gesendet wurden und noch in der Warteschlange stehen, um an ein Gerät gesendet zu werden. Ähnlich können Sie die Registerkarte "Steuerung" eines bestimmten Geräts auswählen, um die Vorgänge dieses Geräts anzuzeigen.
+Fernsteuerungsvorgänge werden für ferngesteuerte Geräte verwendet. Sie können im Navigator auf das Menü "Kommandos" klicken, um alle Vorgänge anzuzeigen, die an ein Gerät gesendet wurden und noch in der Warteschlange stehen, um an ein Gerät gesendet zu werden. Ähnlich können Sie die Registerkarte "Steuerung" eines bestimmten Geräts auswählen, um die Vorgänge dieses Geräts anzuzeigen.
 
 Vorgänge können sich in diesen Ausführungszuständen befinden:
 
@@ -636,18 +637,18 @@ Dies sind nicht etwa die Alarme, die durch die simulierten Geräte erzeugt werde
 
 Cumulocity Cloud Remote Access implementiert Virtual Network Computing (VNC), um mit einer grafischen Benutzeroberfläche Fernzugriff auf Bedienkonsolen und andere Geräte zu erhalten. Die Anwender der Geräte können so über einen Webbrowser mit den Geräten arbeiten, als ob sie sich direkt vor ihnen befinden. 
 
-![VNC](/guides/users-guide/VNC1a.png)
+![VNC](/guides/benutzerhandbuch/devicemgmt/VNC1a-DE.png)
 
-Cloud Remote Access funktioniert wie in der Abbildung unten dargestellt. Ausgehend von dem ferngesteuerten Gerät: Auf dem Gerät läuft ein VNC-Server, und das Gerät ist mit einem Gateway, der mit dem Cloud Remote Access kompatibel ist, verbunden. Diese Gateway muss in der Device-Management-Anwendung als Gerät registriert sein. Weitere Informationen und Anleitungen zur Geräteregistrierung finden Sie hier: [Geräte manuell verbinden](https://www.cumulocity.com/guides/users-guide/device-management/#device-registration)
+Cloud Remote Access funktioniert wie in der Abbildung unten dargestellt. Ausgehend von dem ferngesteuerten Gerät: Auf dem Gerät läuft ein VNC-Server, und das Gerät ist mit einem Gateway, das mit dem Cloud Remote Access kompatibel ist, verbunden. Dieses Gateway muss in der Device-Management-Anwendung als Gerät registriert sein. Weitere Informationen und Anleitungen zur Geräteregistrierung finden Sie hier: [Geräte manuell verbinden](https://www.cumulocity.com/guides/users-guide/device-management/#device-registration)
 
-![VNC2](/guides/users-guide/VNC2.png)
+![VNC2](/guides/benutzerhandbuch/devicemgmt/VNC2-DE.png)
 
 Mit Cloud Remote Access können Sie
 
 - Statusvisualisierungen ansehen und Updates von ferngesteuerten Geräten sofort überwachen, so als befänden Sie sich direkt am Gerät
 - einfach eine Verbindung zu ferngesteuerten Geräten erstellen, da komplizierte VPN-Setups nicht nötig sind 
 
-![VNC1b](/guides/users-guide/VNC1b.png)
+![VNC1b](/guides/benutzerhandbuch/devicemgmt/VNC1b-DE.png)
 
 Die Verbindung zu ferngesteuerten Geräten ist sicher verschlüsselt durch TLS-Technologie.  Außerdem sind Passwörter in Ihrem Cumulocity-Konto verschlüsselt, so dass Sie sie nicht an anderer Stelle verwalten müssen. 
 
@@ -657,8 +658,8 @@ Cloud Remote Access ist zugänglich über die Device-Management-Anwendung.
 
 **Voraussetzungen:**
 
-- Ein Gateway, der mit Cloud Remote Access kompatibel ist, ist mit Ihrem Cumulocity-Konto verbunden.  
-- Ein Gerät mit einem VNC-Server ist mit dem Gateway verbunden ist und kann vom Gateway erreicht werden kann. 
+- Ein Gateway, das mit Cloud Remote Access kompatibel ist, ist mit Ihrem Cumulocity-Konto verbunden.  
+- Ein Gerät mit einem VNC-Server ist mit dem Gateway verbunden ist und kann vom Gateway erreicht werden. 
 - Cloud Remote Access wurde von Ihnen abonniert. Wenn Sie den "Remote access"???-Tab nicht sehen können, wenden Sie sich an sales@cumulocity.com.
 
 In Cumulocity können Sie die Gateways über “Alle Geräte” in der Device-Management-Anwendung finden. 
@@ -667,33 +668,33 @@ In Cumulocity können Sie die Gateways über “Alle Geräte” in der Device-Ma
 
 Wählen Sie das Gateway aus der Liste aus. Unten können Sie den “Remote access”???-Tab sehen, falls Sie Cloud Remote Access abonniert haben. Wenn sie auf den Tab klicken, erscheint die Liste. 
 
-![Endpoints](/guides/users-guide/endpoints.png)
+![Endpunkte](/guides/users-guide/endpoints.png)
 
-Sie können ferngesteuerte Geräte konfigurieren, indem Sie auf “Add endpoint”??? klicken. 
+Sie können ferngesteuerte Geräte konfigurieren, indem Sie auf “Endpunkt hinzufügen”??? klicken. 
 
-*Der "endpoint" ??? ist die IP-Adresse und der Port des VNC-Servers, der auf dem Gerät läuft. Diese IP-Adresse und Port müssen vom Gateway erreichbar sein.* 
+*Der "Endpunkt" ist die IP-Adresse und der Port des VNC-Servers, der auf dem Gerät läuft. Diese IP-Adresse und Port müssen vom Gateway erreichbar sein.* 
 
 
-*Um einen Endpoint ??? zu konfigurieren, benötigen Sie die folgenden Berechtigungen: Remote access???Fernzugriff muss auf “Ändern” und Device Control??? muss auf “Ändern” gesetzt sein. Um Daten zu lesen, reicht eine "Lese"-Berechtigung. Für weitere Informationen über die Gewährung von Berechtigungen siehe [Administration](/guides/benutzerhandbuch/administration-deutsch/#users)*
+*Um einen Endpunkt zu konfigurieren, benötigen Sie die folgenden Berechtigungen: Remote access??? muss auf “Ändern” und Gerätesteuerung??? muss auf “Ändern” gesetzt sein. Um Daten zu lesen, reicht eine "Lese"-Berechtigung. Für weitere Informationen über die Gewährung von Berechtigungen siehe [Administration](/guides/benutzerhandbuch/administration-deutsch/#users)*
 
-Ein Dialog wie in der Abbildung unten öffnet sich. Geben Sie die IP-Adresse, den Port und das Passwort des VNC-Servers ein. Wenn der Endpoint ??? hinzugefügt ist, wird er in der Liste angezeigt. 
+Ein Dialog wie in der Abbildung unten öffnet sich. Geben Sie die IP-Adresse, den Port und das Passwort des VNC-Servers ein. Wenn der Endpunkt hinzugefügt ist, wird er in der Liste angezeigt. 
 
-![Remote access endpoint](/guides/users-guide/remoteaccess.png)
+![Remote-Access-Endpunkt](/guides/users-guide/remoteaccess.png)
 
-Um eine Verbindung zu konfigurierten Endpoints??? zu schaffen, gehen Sie zum "Remote Access"???-Tab und wählen Sie einen Endpoint??? aus. Diese Endpoints??? stellen die ferngesteuerten Geräte dar. Wenn Sie auf "Verbinden" klicken, startet die VNC-Verbindung. Dafür benötigen Sie zumindest "Lese"-Rechte für die "Remote Access"-???Funktion und "Ändern"-Rechte für die Device Control???. Weitere Informationen über Nutzer und Berechtigungen finden Sie unter [Administration](/guides/benutzerhandbuch/administration-deutsch/#users).
+Um eine Verbindung zu konfigurierten Endpunkten zu schaffen, gehen Sie zum "Remote Access"???-Tab und wählen Sie einen Endpunkt aus. Diese Endpunkte stellen die ferngesteuerten Geräte dar. Wenn Sie auf "Verbinden" klicken, startet die VNC-Verbindung. Dafür benötigen Sie zumindest "Lese"-Rechte für die "Remote Access"-???Funktion und "Änderungs"-Rechte für die Gerätesteuerung???. Weitere Informationen über Nutzer und Berechtigungen finden Sie unter [Administration](/guides/benutzerhandbuch/administration-deutsch/#users).
 
-![Connect Endpoint](/guides/users-guide/connectendp.png)
+![Endpunkte verbinden](/guides/users-guide/connectendp.png)
 
 Ein neuer Browser-Tab öffnet sich, und innerhalb von wenigen Mömenten sehen Sie die Frontseite bzw. die Bedienkonsole des verbundenen Gerätes. Die obere Leiste des Bildschirms zeigt "starting VNC handshake”??? an, wenn der Vorgang startet. 
 
-Über das kleine Zahnrad am Ende der Reihe öffnet sich ein Dialog, mit dem Sie Endpoints??? bearbeiten oder entfernen können.
+Über das kleine Zahnrad am Ende der Reihe öffnet sich ein Dialog, mit dem Sie Endpunkte bearbeiten oder entfernen können.
 
-![Edit endpoints](/guides/users-guide/editendpoint.png)
+![Endpunkte bearbeiten](/guides/users-guide/editendpoint.png)
 
 ### Troubleshooting
 
-Vergewissern Sie sich, dass Sie die nötigen Berechtigungen für das Hinzufügen von Endoints??? haben. Sie benötigen "Ändern"-Rechte für Remote Access??? und Device Control???. Ohne  "Ändern"-Rechte in der Device Control??? können Sie keine Geräte registrieren, und ohne "Ändern"-Rechte beim Remote Access??? können Sie keine Endpoints??? hinzufügen.
-Um eine Verbindung zu einer ferngesteuerten Bedienkonsole zu erstelen, reichen "Lese"-Rechte beim Remote Access???.
+Vergewissern Sie sich, dass Sie die nötigen Berechtigungen für das Hinzufügen von Endpunkten haben. Sie benötigen "Ändern"-Rechte für Remote Access??? und Gerätesteuerung???. Ohne  "Änderungs"-Rechte in der Gerätesteuerung??? können Sie keine Geräte registrieren, und ohne "Änderungs"-Rechte beim Remote Access??? können Sie keine Endpunkte hinzufügen.
+Um eine Verbindung zu einer ferngesteuerten Bedienkonsole zu erstellen, reichen "Lese"-Rechte beim Remote Access???.
 
 Die VNC-Verbindung zu einem VNC-Server über ein Gateway kann auch aufgrund von Netzwerkproblemen fehlschlagen. In diesem Fall wenden Sie sich an Ihren Netzwerkadministrator.
 
@@ -702,3 +703,4 @@ Getestet auf den folgenden VNC-Servern:
 - TightVNC 1.3.9
 - TigerVNC 1.7.0
 - EfonVNC 4.2
+  

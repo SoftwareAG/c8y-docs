@@ -31,16 +31,16 @@ Die folgenden Abschnitte führen Sie durch die verschiedenen Menüs der Device-M
 
 Dieser Abschnitt beschreibt die allgemeine Vorgehensweise beim manuellen Verbinden von Geräten mit Ihrem Cumulocity-Konto. Nur einige Schritte in der Prozedur können spezifisch für den Typ Ihres Geräts sein. Sie finden Ihren Gerätetyp im "Gerätehandbuch", der Startseite des Entwicklerbereichs unserer Website. Dort finden Sie genaue Informationen. Alternativ konsultieren Sie das Handbuch Ihres Geräts.
 
-Um Geräte mit Ihrem Cumulocity-Konto zu verbinden, klicken Sie im Navigator auf "Geräteregistrierung" und folgen Sie diesen Schritten:
+Um Geräte mit Ihrem Cumulocity-Konto zu verbinden, klicken Sie im Navigator auf "Geräteregistrierung" und dann auf "Gerät registrieren". Wählen Sie die passende Option und folgen Sie diesen Schritten:
 
-1.  Geben Sie die ID des Gerätes im Textfeld "Gerätekennung" ein und klicken Sie auf "Gerät registrieren". Um die ID zu ermitteln, konsultieren Sie die Geräte-Dokumentation. Bei mobilen Geräten ist die ID in der Regel die IMEI (International Mobile Equipment Identity), die sich häufig auf der Rückseite des Geräts befindet.
+1.  Geben Sie die ID des Gerätes im Textfeld "Geräte-ID" ein, wählen Sie ggf. eine Gruppe, zu der dieses Gerät gehören soll, aus und klicken Sie auf "Weiter". Um die ID zu ermitteln, konsultieren Sie die Geräte-Dokumentation. Bei mobilen Geräten ist die ID in der Regel die IMEI (International Mobile Equipment Identity), die sich häufig auf der Rückseite des Geräts befindet.
 2.  Nun wird das aufgelistete Gerät durch seine IMEI-Nummer mit dem Status "Warten auf Verbindung" sichtbar. Schalten Sie das Gerät ein und warten Sie, bis eine Verbindung hergestellt ist.
 3.  Nachdem das Gerät angeschlossen ist, sollte sich der Status in "Warten auf Bestätigung" ändern. Sie müssen bestätigen, dass dies tatsächlich das Gerät ist, das Sie hinzufügen möchten. Klicken Sie dazu auf die grüne Schaltfläche "Akzeptieren" rechts neben dem Eintrag Ihres Geräts.
 4.  Der Status Ihres Geräts sollte nun "Verbunden" lauten. Sobald dies geschieht, wird Ihr Gerät mit Ihrem Konto verbunden.
 
 Jetzt können Sie das Gerät verwalten.
 
-<img src="/guides/users-guide/registrierung.png" alt="Device registration" style="max-width: 100%">
+<img src="/guides/benutzerhandbuch/devicemgmt/registrierung.png" alt="Geräteregistrierung" style="max-width: 100%">
 
 ## <a name="creds-upload"></a>Bulk-Registrierung von Geräten
 
@@ -58,7 +58,7 @@ Verwenden Sie den "Hochladen"-Knopf, um die CSV-Datei hochzuladen, wie im Screen
 
 Um die Geräte zu verbinden, müssen sie mit entsprechenden Informationen vorbereitet werden. Insbesondere muss jedes Gerät wie folgt konfiguriert werden:
 
-* Benutzername: Der Benutzername, der auf Cumulocity zugreift, muss die Form <Mandant>/device_ <id> haben. <Mandant> bezieht sich auf den Mandanten, in den die CSV-Datei importiert wird, und <id> bezieht sich auf den entsprechenden Wert in der CSV-Datei.
+* Benutzername: Der Benutzername, der auf Cumulocity zugreift, muss die Form &lt;Mandant&gt;/device_&lt;id&gt; haben. . &lt;Mandant&gt; bezieht sich auf den Mandanten, in den die CSV-Datei importiert wird, und &lt;id&gt; bezieht sich auf den entsprechenden Wert in der CSV-Datei.
 * Passwort: Das Passwort für den Zugriff auf Cumulocity, nämlich der Wert in den "credentials" (Zugangsdaten) in der CSV-Datei.
 * Gerät in der Objektdarstellung. Felder: "Type" (Typ), "Name", "Iccid", "Idtype", "Path" (Pfad), "Shell" in der CSV-Datei.
 
@@ -101,15 +101,15 @@ Geräte können beliebig nach Ihrem Anwendungsfall gruppiert werden. Ein Gerät 
 
 Cumulocity unterscheidet zwischen Top-Level-Gruppen und Untergruppen. Top-Level-Gruppen werden im Navigator auf oberster Ebene im Abschnitt "Gruppen" angezeigt. Sie sind Ihr Haupteingangspunkt. Untergruppen werden verwendet, um Gruppen weiter zu unterteilen.
 
-Um eine Top-Level-Gruppe zu erstellen, klicken Sie oben rechts neben dem Suchfeld auf die Kreuztaste und wählen Sie dann "Neue Gruppe hinzufügen". Ein kleines Fenster erscheint. Geben Sie einen Gruppennamen ein und suchen Sie nach den Geräten, die der Gruppe hinzugefügt werden sollen. Markieren Sie die Geräte und drücken Sie die Schaltfläche "Gruppe mit X Geräten erstellen", um den Vorgang abzuschließen. ( "X" ist die Anzahl der Geräte, die Sie markiert haben).
+Um eine Top-Level-Gruppe zu erstellen, klicken Sie oben rechts neben dem Suchfeld auf die Plustaste und wählen Sie dann "Neue Gruppe hinzufügen". Ein kleines Fenster erscheint. Geben Sie einen Gruppennamen ein und suchen Sie nach den Geräten, die der Gruppe hinzugefügt werden sollen. Markieren Sie die Geräte und drücken Sie die Schaltfläche "Gruppe mit X Geräten erstellen", um den Vorgang abzuschließen. ( "X" ist die Anzahl der Geräte, die Sie markiert haben).
 > Eine Gruppe kann auch "0" Geräte enthalten.
 
 <img src="/guides/users-guide/gruppe2ger.png" alt="Adding top-level groups" style="max-width: 100%">
 
 Sie können auch Geräte auf zwei andere Weisen hinzufügen: 
 
-* Wählen Sie ein Gerät aus und scrollen Sie nach unten zum Abschnitt "Gruppen" auf der Registerkarte "Info". Verwenden Sie das Dropdown-Menü mit dem Namen "Gruppen auswählen und suchen", um eine Gruppe auszuwählen, in die das Gerät eingefügt werden soll.
-* Wählen Sie eine Gruppe aus. Gehen Sie auf die Registerkarte "Kindgeräte" auf der linken Seite und wählen Sie sie aus. Klicken Sie dann rechts oben in der Gruppenliste auf "Zur Gruppe hinzufügen". Ein neues Menü öffnet sich. Suchen Sie nach den Geräten, die im Suchfeld hinzugefügt werden sollen. Markieren Sie dann die entsprechenden Geräte im Ergebnis und klicken Sie auf die Schaltfläche "Zur Gruppe hinzufügen" am unteren Rand der Ergebnisliste.
+* Wählen Sie ein Gerät aus und scrollen Sie nach unten zum Abschnitt "Gruppen" auf der Registerkarte "Info". Verwenden Sie das Dropdown-Menü mit dem Namen "Gruppen auswählen oder suchen", um eine Gruppe auszuwählen, in die das Gerät eingefügt werden soll.
+* Wählen Sie eine Gruppe aus. Gehen Sie auf die Registerkarte "Kindassets" auf der linken Seite und wählen Sie sie aus. Klicken Sie dann rechts oben in der Gruppenliste auf "Geräte zuordnen". Ein neues Menü öffnet sich. Suchen Sie nach den Geräten, die im Suchfeld hinzugefügt werden sollen. Markieren Sie dann die entsprechenden Geräte im Ergebnis und klicken Sie auf die Schaltfläche "X Geräte zugeordnet" am unteren Rand der Ergebnisliste.
 
 
 <img src="/guides/users-guide/subassetaddde.png" alt="Adding top-level groups" style="max-width: 100%">
@@ -117,7 +117,7 @@ Sie können auch Geräte auf zwei andere Weisen hinzufügen:
 
 Um eine Untergruppe zu erstellen, klicken Sie einfach auf "Gruppe hinzufügen", wenn Sie eine Gruppe ansehen.
 
-Um eine Gruppe zu bearbeiten, klicken Sie auf den Namen der Gruppe. Auf diese Weise können Sie den Namen der Gruppe bearbeiten und Benutzerberechtigungen für die Gruppe zuweisen. Weitere Informationen zu Berechtigungen finden Sie unter [Administration](/guides/benutzerhandbuch/administration-deutsch).
+Um eine Gruppe zu bearbeiten, klicken Sie auf den Namen der Gruppe und auf "Editieren". Auf diese Weise können Sie den Namen der Gruppe bearbeiten und Benutzerberechtigungen für die Gruppe zuweisen. Weitere Informationen zu Berechtigungen finden Sie unter [Administration](/guides/benutzerhandbuch/administration-deutsch).
 
 ## <a name="Using Smart Groups"></a>Dynamische Gruppen nutzen
 
@@ -374,7 +374,7 @@ Um ein Protokoll von einem Gerät anzufordern, gibt es die folgenden Optionen:
 - Geben Sie einen optionalen Text ein, um das Protokoll zu filtern. Wenn Sie beispielsweise "Benutzer" eingeben, werden nur Zeilen mit dem Wort "Benutzer" in den zurückgegebenen Protokollinformationen angezeigt.
 - Wählen Sie die maximale Anzahl der anzuzeigenden Zeilen (absteigend) aus.
 - Klicken Sie auf "Protokoll anfordern". ???Logdatei???
-- 
+
 ![Request log](/guides/users-guide/requestlogde.png)
 
 Das Anfordern eines Protokolls von einem Gerät kann einige Zeit in Anspruch nehmen. Nachdem das Protokoll vom Cumulocity-Gerät übertragen wurde, erscheint es in der Liste unterhalb der Auswahl-Widgets. Der Eintrag in der Liste enthält den Protokollzeitbereich, der abgefragt wurde. Klicken Sie auf den Eintrag in der Liste, um das Protokoll auf der Seite anzuzeigen. Bewegen Sie den Mauszeiger über den Eintrag, um auf die Download- und Löschsymbole zuzugreifen. Mit dem Download-Symbol können Sie den Log-Auszug auf Ihren lokalen PC herunterladen. Mit dem Löschsymbol können Sie die Protokolldatei löschen.

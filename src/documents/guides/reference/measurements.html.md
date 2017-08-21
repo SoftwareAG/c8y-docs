@@ -205,7 +205,7 @@ Example response:
 
 Series can be filtered by providing additional "series" param with full name of a series (measurement type and series name).
 You can specify more series to filter by adding more "series" param occurrences, e.g.: ...series=c8y_AccelerationMeasurement.acceleration&series=c8y_SpeedMeasurement.velocity...
-Because of this use case dots must not be used in neither measurement fragment nor series.
+Because of this use case, dots must not be used in neither measurement fragment nor series.
 
 Example request: retrieve only specific series.
 

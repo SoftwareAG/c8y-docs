@@ -152,13 +152,13 @@ Rechts neben dem Namen wird ein Zahnrad angezeigt. Wenn Sie auf das Zahnrad klic
 
 Ist das Gerät kompatibel, steht über das Zahnrad ein Menüpunkt "Messwertabfrage starten" zur Verfügung. Mit dieser Option können Sie ein Gerät auffordern, Messungen mit einer bestimmten Frequenz für eine bestimmte Dauer zu senden. Diese Art von Debugging vermeidet zu viel Datenverkehr, der durch das Senden von Messungen erzeugt wird.
 
-<img src="/guides/users-guide/devicedetailsde.png" alt="Device details" style="max-width: 100%">
+<img src="/guides/benutzerhandbuch/devicemgmt/devicedetails-de.png" alt="Gerätedetails" style="max-width: 100%">
 
 Die Gerätedetails sind in eine Anzahl von Registerkarten unterteilt. Die gängigsten Standard-Tabs sind:
 
 * [Info](#info)
 * [Kindgeräte](#child-devices)
-* [Messungen](#measurements)
+* [Messwerte](#measurements)
 * [Alarme](#alarms)
 * [Steuerung](#control)
 * [Textkonfiguration](#config)
@@ -191,12 +191,12 @@ Auf der Registerkarte "Info" werden allgemeine Informationen für ein Gerät ang
 
 Viele andere Felder auf dieser Registerkarte sind editierbar. Es ist nur sinnvoll, sie zu bearbeiten, wenn das Gerät diese Informationen nicht selbst bereitstellt. Wenn das Gerät diese Informationen bereitstellt, werden Ihre Änderungen durch eingehende Informationen vom Gerät überschrieben. Um Ihre Änderungen zu speichern, klicken Sie auf den "Änderungen speichern"-Knopf am unteren Rand des Bildschirms.
 
-> "Letzte Kommunikation" und "Letzte Aktualisierung" sind zwei völlig unterschiedliche Zeitstempel. "Letzte Kommunikation" zeigt an, wann ein Gerät zuletzt gesendet hat. "Letzte Aktualisierung" zeigt an, wann der Inventareintrag des Geräts zuletzt aktualisiert wurde. Dieses Update kann vom Gerät, von der Webbenutzeroberfläche oder von einer anderen Anwendung stammen.
+> "Letzte Kommunikation" und "Zuletzt aktualisiert" sind zwei völlig unterschiedliche Zeitstempel. "Letzte Kommunikation" zeigt an, wann ein Gerät zuletzt gesendet hat. "Zuletzt aktualisiert" zeigt an, wann der Inventareintrag des Geräts zuletzt aktualisiert wurde. Dieses Update kann vom Gerät, von der Webbenutzeroberfläche oder von einer anderen Anwendung stammen.
 
-### <a name="child-devices"></a>Kindgeräte
+### <a name="child-devices"></a>Kindassets
 Auf dieser Registerkarte werden weitere Geräte angezeigt, die mit dem aktuell angezeigten Gerät verbunden sind. Wenn Sie zum Beispiel ein Gateway betrachten, werden auf der Registerkarte alle mit dem Gateway verbundenen Geräte aufgelistet.
 
-### <a name="measurements"></a>Messungen
+### <a name="measurements"></a>Messwerte
 
 Diese Registerkarte bietet eine Standard-Visualisierung von numerischen Daten, die vom Gerät in Form von Diagrammen zur Verfügung gestellt werden. Diagramme werden in Arten von Messungen zusammengestellt, die mehrere Graphen oder eine "Serie" enthalten können. Zum Beispiel zeigt der Screenshot unten ein Diagramm für die Bewegungsmessung einschließlich Graphen für die Beschleunigung in den drei Dimensionen und ein Diagramm mit Modemstatistiken in Form von Signalstärke und Bitfehlerrate.
 

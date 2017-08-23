@@ -633,7 +633,7 @@ These are not the alarms related to the simulated device, these are alarms conne
 ### Overview
 
 Using the SmartRest editor, developers can easily create new SmartRest templates and update  existing ones. This applies to SmartRest 2.0 templates for MQTT as well. The SmartRest templates are a collection of request and response templates used to convert CSV data and Cumulocity Rest API calls. For example, you can use SmartRest templates to easily add devices to the platform instead of manually writing the requests each time.
-To ease the device integration, Cumulocity already supports static templates that can be used without the need for creating your own templates. These templates focus only on the most used messages for device management. For more info about the static templates, see here.
+To ease the device integration, Cumulocity already supports static templates that can be used without the need for creating your own templates. These templates focus only on the most used messages for device management. For more info about the static templates, see [here](/guides/mqtt/static-templates/).
 
 The SmartRest templates are located in the “Device types” section in the navigator. In the templates list, you can see the template ID, name and the number of messages and responses contained in the template.
 

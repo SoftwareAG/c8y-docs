@@ -109,7 +109,7 @@ Um eine Top-Level-Gruppe zu erstellen, klicken Sie oben rechts neben dem Suchfel
 Sie können auch Geräte auf zwei andere Weisen hinzufügen: 
 
 * Wählen Sie ein Gerät aus und scrollen Sie nach unten zum Abschnitt "Gruppen" auf der Registerkarte "Info". Verwenden Sie das Dropdown-Menü mit dem Namen "Gruppen auswählen oder suchen", um eine Gruppe auszuwählen, in die das Gerät eingefügt werden soll.
-* Wählen Sie eine Gruppe aus. Gehen Sie auf die Registerkarte "Kindassets" auf der linken Seite und wählen Sie sie aus. Klicken Sie dann rechts oben in der Gruppenliste auf "Geräte zuordnen". Ein neues Menü öffnet sich. Suchen Sie nach den Geräten, die im Suchfeld hinzugefügt werden sollen. Markieren Sie dann die entsprechenden Geräte im Ergebnis und klicken Sie auf die Schaltfläche "X Geräte zugeordnet" am unteren Rand der Ergebnisliste.
+* Wählen Sie eine Gruppe aus. Gehen Sie auf die Registerkarte "Kindgeräte" auf der linken Seite und wählen Sie sie aus. Klicken Sie dann rechts oben in der Gruppenliste auf "Geräte zuordnen". Ein neues Menü öffnet sich. Suchen Sie nach den Geräten, die im Suchfeld hinzugefügt werden sollen. Markieren Sie dann die entsprechenden Geräte im Ergebnis und klicken Sie auf die Schaltfläche "X Geräte zugeordnet" am unteren Rand der Ergebnisliste.
 
 
 <img src="/guides/users-guide/subassetaddde.png" alt="Adding top-level groups" style="max-width: 100%">
@@ -129,7 +129,7 @@ Durch Auswahl von "Alle Geräte" können dynamische Gruppen angelegt werden. Um 
 
 <img src="/guides/users-guide/smartgroup1de.png" alt="Adding top-level groups" style="max-width: 100%">
 
-Wenn die Gruppe erstellt wird, wird sie als Gruppe der obersten Ebene im Abschnitt "Gruppen" angezeigt. Sie können Filterkriterien anpassen, indem Sie die Registerkarte "Kindassets" auswählen und die Filtereinstellungen ändern.
+Wenn die Gruppe erstellt wird, wird sie als Gruppe der obersten Ebene im Abschnitt "Gruppen" angezeigt. Sie können Filterkriterien anpassen, indem Sie die Registerkarte "Kindgeräte" auswählen und die Filtereinstellungen ändern.
 
 <img src="/guides/users-guide/smartgroup2de.png" alt="Adding top-level groups" style="max-width: 100%">
 
@@ -161,7 +161,7 @@ Die Gerätedetails sind in eine Anzahl von Registerkarten unterteilt. Die gängi
 * [Messwerte](#measurements)
 * [Alarme](#alarms)
 * [Steuerung](#control)
-* [Textkonfiguration](#config)
+* [Konfiguration](#config)
 * [Binäre Konfiguration](#configsnap)
 * [Software](#software)
 * [Ereignisse](#events)
@@ -170,8 +170,8 @@ Die Gerätedetails sind in eine Anzahl von Registerkarten unterteilt. Die gängi
 * [Berechtigungen](#permissions)
 * [Tracking](#tracking)
 * [Serviceüberwachung](#service-monitoring)
-* [Protokolle](#logs)
-* [Identität](#identity)
+* [Logdateien](#logs)
+* [Identifikator](#identity)
 
 ### <a name="info"></a>Info
 
@@ -193,7 +193,7 @@ Viele andere Felder auf dieser Registerkarte sind editierbar. Es ist nur sinnvol
 
 > "Letzte Kommunikation" und "Zuletzt aktualisiert" sind zwei völlig unterschiedliche Zeitstempel. "Letzte Kommunikation" zeigt an, wann ein Gerät zuletzt gesendet hat. "Zuletzt aktualisiert" zeigt an, wann der Inventareintrag des Geräts zuletzt aktualisiert wurde. Dieses Update kann vom Gerät, von der Webbenutzeroberfläche oder von einer anderen Anwendung stammen.
 
-### <a name="child-devices"></a>Kindassets
+### <a name="child-devices"></a>Kindgeräte
 Auf dieser Registerkarte werden weitere Geräte angezeigt, die mit dem aktuell angezeigten Gerät verbunden sind. Wenn Sie zum Beispiel ein Gateway betrachten, werden auf der Registerkarte alle mit dem Gateway verbundenen Geräte aufgelistet.
 
 ### <a name="measurements"></a>Messwerte
@@ -241,11 +241,11 @@ Die Registerkarte "Alarme" zeigt die Alarme eines Gerätes an. Weitere Informati
 
 Auf dieser Registerkarte werden die Vorgänge aufgeführt, die an ein Gerät gesendet werden oder  wurden. Weitere Informationen finden Sie im Abschnitt [Arbeiten mit Fernsteuerung](#operation-monitoring).
  
-![Operations](/guides/users-guide/operations.png)
+![Operations](/guides/benutzerhandbuch/devicemgmt/operations-de.png)
 
-### <a name="config"></a> Textkonfiguration
+### <a name="config"></a>Konfiguration
 
-In der Textkonfiguration können Sie die Parameter und Grundeinstellungen Ihres Geräts konfigurieren. Sie können eine Gerätekonfiguration manuell hinzufügen oder bearbeiten.
+In der Konfiguration können Sie die Parameter und Grundeinstellungen Ihres Geräts konfigurieren. Sie können eine Gerätekonfiguration manuell hinzufügen oder bearbeiten.
 
 <img src="/guides/users-guide/textconfig.png" alt="Device details" style="max-width: 100%">
 
@@ -260,10 +260,9 @@ So können Sie eine Gerätekonfiguration manuell hinzufügen oder bearbeiten:
 
 ### <a name="configsnap"></a>Binäre Konfiguration  
 
+Die binäre Konfiguration erlaubt Ihnen, Konfigurationsdaten abzurufen, zu ändern oder zu speichern. Die Konfigurationsdaten enthalten die Parameter und die Grundeinstellungen Ihres Gerätes. Diese Option finden Sie unter "Konfigurationsablage" im Menüpunkt "Verwaltung".
 
-Die binäre Konfiguration erlaubt Ihnen, Konfigurationsdaten abzurufen, zu ändern oder zu speichern. Die Konfigurationsdaten enthalten die Parameter und die Grundeinstellungen Ihres Gerätes. Diese Option finden Sie hier:
-
-<center><img src="/guides/users-guide/configrepscreenshotde.png" alt="Device details" style="max-width: 100%"></center>
+<center><img src="/guides/users-guide/configrepscreenshotde.png" alt="Konfigurationsablage" style="max-width: 100%"></center>
 
 Ein gutes Anwendungsbeispiel für den Konfigurations-Snapshot ist, wenn die gleiche Konfiguration auf mehrere Geräte angewendet wird. Mit dem Konfigurations-Snapshot können Sie ein Gerät konfigurieren, den Snapshot herunterladen und auf andere Geräte übertragen.
 
@@ -271,15 +270,15 @@ Ein gutes Anwendungsbeispiel für den Konfigurations-Snapshot ist, wenn die glei
 
 ### Abrufen einer aktuellen Snapshot-Konfiguration von einem Gerät
 
-Um einen aktuellen Snapshot von einem Gerät abzurufen, navigieren Sie zum Gerät und klicken dann auf die Registerkarte "Konfiguration". Klicken Sie dann in der rechten oberen Ecke auf "Neuen Schnappschuss vom Gerät holen". Der abgerufene Snapshot befindet sich im "Konfigurations-Repository".
+Um einen aktuellen Snapshot von einem Gerät abzurufen, navigieren Sie zum Gerät und klicken dann auf die Registerkarte "Konfiguration". Klicken Sie dann in der rechten oberen Ecke auf "Neuen Schnappschuss vom Gerät holen". Der abgerufene Snapshot befindet sich in der "Konfigurationsablage".
 
-Das Konfigurations-Repository befindet sich im "Management"-Menü. 
+Die Konfigurationsablage befindet sich im "Verwaltung"-Menü. 
 
 ![Retrieve Configuration Snapshot](/guides/users-guide/retrievesnap.png)
 
 ### Die Snapshot-Konfiguration auf ein Gerät anwenden
 
-Um einen neuen Schnappschuss anzuwenden, navigieren Sie zu einem Gerät und klicken Sie dann auf "Konfiguration". Unter "Konfigurations-Snapshot" können Sie einen Konfigurations-Repository-Eintrag aus dem Dropdown-Menü auswählen. Wenn die Eingabedatei ausgewählt ist, klicken Sie auf "Neuen Snapshot auf das Gerät legen".
+Um einen neuen Snapshot anzuwenden, navigieren Sie zu einem Gerät und klicken Sie dann auf "Konfiguration". Unter "Konfigurations-Snapshot" können Sie einen Eintrag aus der Konfigurationsablage aus dem Dropdown-Menü auswählen. Wenn die Eingabedatei ausgewählt ist, klicken Sie auf "Neuen Snapshot auf das Gerät legen".
 
 ![Apply new snapshot to a device](/guides/users-guide/addsnap.png)
 
@@ -293,7 +292,7 @@ Um einen neuen Schnappschuss anzuwenden, navigieren Sie zu einem Gerät und klic
  
 ### Erstellen einer Snapshot-Konfiguration aus einer Datei
 
-Neue Konfigurationen können der Liste "Konfigurationsschnappschüsse" hinzugefügt werden, indem Sie auf "Konfigurationsschnappschuss hinzufügen" klicken. Anschließend werden Sie zum "Configuration repository" umgeleitet. Alle Gerätekonfigurationen befinden sich im "Configuration Repository", das sich unter dem Menüpunkt "Management" befindet. So fügen Sie einen neuen Snapshot hinzu:
+Neue Konfigurationen können der Liste "Konfigurationsschnappschüsse" hinzugefügt werden, indem Sie auf "Konfigurationsschnappschuss hinzufügen" klicken. Anschließend werden Sie zur "Konfigurationsablage" umgeleitet. Alle Gerätekonfigurationen befinden sich in der "Konfigurationsablage", das sich unter dem Menüpunkt "Management" befindet. So fügen Sie einen neuen Snapshot hinzu:
 
 - Geben Sie den "Namen" ein.
 - Geben Sie die "Beschreibung" ein.
@@ -305,11 +304,13 @@ Neue Konfigurationen können der Liste "Konfigurationsschnappschüsse" hinzugef�
 
 ### <a name="software"></a>Software
 
-Auf dieser Registerkarte können Sie die Firmware eines Geräts und die auf einem Gerät installierte Software verwalten und aktualisieren. Um eine neue Firmware zu installieren, klicken Sie auf "Firmware installieren", wählen Sie im Firmware-Repository ein Firmware-Image und klicken Sie auf die Schaltfläche "Installieren".
+Auf dieser Registerkarte können Sie die Firmware eines Geräts und die auf einem Gerät installierte Software verwalten und aktualisieren. 
 
-Um eine Software auf dem Gerät zu installieren, klicken Sie auf "Software installieren", wählen Sie ein Softwarepaket aus dem Software-Repository aus und klicken Sie auf die Schaltfläche "Installieren". Lassen Sie den Mauszeiger über einem bestimmten Softwarepaket verweilen und klicken Sie auf die Schaltfläche "x", um das Paket aus dem Gerät zu entfernen.
+Um eine neue Firmware zu installieren, wählen Sie im Feld "Zu installierende Firmware" ein Firmware-Image und klicken Sie auf die Schaltfläche "Installieren". 
 
-![Software](/guides/users-guide/software.png)
+Um eine Software auf dem Gerät zu installieren, wählen Sie im Feld "Zu installierende Software" ein Softwarepaket aus und klicken Sie auf die Schaltfläche "Installieren". Um ein Paket aus dem Gerät zu entfernen, lassen Sie den Mauszeiger über einem bestimmten Softwarepaket verweilen und klicken Sie auf die Schaltfläche "x".
+
+![Software](/guides/benutzerhandbuch/devicemgmt/software-de.png)
 
 Die Installation von Software und Firmware beinhaltet in der Regel einen Neustart des Geräts. Um den Fortschritt einer Installation zu überwachen, gehen Sie zur Registerkarte "Steuerung".
 
@@ -321,7 +322,7 @@ Diese Registerkarte ermöglicht die Fehlersuche auf niedriger Ebene eines Gerät
 
 Die Registerkarte "Standort" zeigt standardmäßig den Standort auf einer Karte an, den das Gerät gemeldet hat. Bei Geräten, die keinen Standort melden, können Sie den Standort auch manuell einstellen. Platzieren Sie dazu einfach die "Markierungsnadel" an der richtigen Stelle auf der angezeigten Karte.
 
-Die Registerkarte zeigt an, wenn ein Gerät die Eigenschaft c8y_Position enthält. Wenn Sie ein neues c8y-Positionsereignis senden, können Sie auch das gleiche Fragment c8y_Position auf dem Gerät setzen und es wird automatisch die Position auf der Karte markieren.
+Die Registerkarte wird angezeigt, wenn ein Gerät die Eigenschaft c8y_Position enthält. Wenn Sie ein neues c8y-Positionsereignis senden, können Sie auch das gleiche Fragment c8y_Position auf dem Gerät setzen und es wird automatisch die Position auf der Karte markieren.
 
 ### <a name="shell"></a>Shell
 
@@ -363,27 +364,27 @@ Außerdem können Informationen über die Zellenidentifikation genutzt werden, u
 ### <a name="service-monitoring"></a>Serviceüberwachung
 Neben der Verbindungsüberwachung verfügt Cumulocity über eine separate Serviceüberwachung für Maschinen. Weitere Informationen finden Sie unter [Serviceüberwachung](#monitoring-services).
 
-### <a name="logs"></a>Protokolle
+### <a name="logs"></a>Logdateien
 
-Über die Registerkarte "Protokolle" können Sie Protokollinformationen von Geräten anfordern. Protokollinformationen können nach Datumsbereichen, Art des Protokolls, Schlüsselwörtern und der maximalen Anzahl der zu übertragenden Zeilen gefiltert werden.
+Über die Registerkarte "Logdateien" können Sie Log-Informationen von Geräten anfordern. Log-Informationen können nach Datumsbereichen, Art des Logs, Schlüsselwörtern und der maximalen Anzahl der zu übertragenden Zeilen gefiltert werden.
 
-Um ein Protokoll von einem Gerät anzufordern, gibt es die folgenden Optionen:
+Um Log-Informationen von einem Gerät anzufordern, gibt es die folgenden Optionen:
 
 - Wählen Sie den Datums- und Zeitbereich aus.
-- Wählen Sie die Art des Protokolls. Die unterstützten Protokolle sind meist gerätespezifisch.
-- Geben Sie einen optionalen Text ein, um das Protokoll zu filtern. Wenn Sie beispielsweise "Benutzer" eingeben, werden nur Zeilen mit dem Wort "Benutzer" in den zurückgegebenen Protokollinformationen angezeigt.
+- Wählen Sie die Art der Log-Information. Die unterstützten Log-Informationen sind meist gerätespezifisch.
+- Geben Sie einen optionalen Text ein, um das Log zu filtern. Wenn Sie beispielsweise "Benutzer" eingeben, werden nur Zeilen mit dem Wort "Benutzer" in den zurückgegebenen Log-Informationen angezeigt.
 - Wählen Sie die maximale Anzahl der anzuzeigenden Zeilen (absteigend) aus.
-- Klicken Sie auf "Protokoll anfordern". ???Logdatei???
+- Klicken Sie auf "Logdatei anfordern". 
 
 ![Request log](/guides/users-guide/requestlogde.png)
 
-Das Anfordern eines Protokolls von einem Gerät kann einige Zeit in Anspruch nehmen. Nachdem das Protokoll vom Cumulocity-Gerät übertragen wurde, erscheint es in der Liste unterhalb der Auswahl-Widgets. Der Eintrag in der Liste enthält den Protokollzeitbereich, der abgefragt wurde. Klicken Sie auf den Eintrag in der Liste, um das Protokoll auf der Seite anzuzeigen. Bewegen Sie den Mauszeiger über den Eintrag, um auf die Download- und Löschsymbole zuzugreifen. Mit dem Download-Symbol können Sie den Log-Auszug auf Ihren lokalen PC herunterladen. Mit dem Löschsymbol können Sie die Protokolldatei löschen.
+Das Anfordern einer Logdatei von einem Gerät kann einige Zeit in Anspruch nehmen. Nachdem die Logdatei vom Cumulocity-Gerät übertragen wurde, erscheint es in der Liste unterhalb der Auswahl-Widgets. Der Eintrag in der Liste enthält den Logzeitbereich, der abgefragt wurde. Klicken Sie auf den Eintrag in der Liste, um die Log-Informationen auf der Seite anzuzeigen. Bewegen Sie den Mauszeiger über den Eintrag, um auf die Download- und Löschsymbole zuzugreifen. Mit dem Download-Symbol können Sie den Log-Auszug auf Ihren lokalen PC herunterladen. Mit dem Löschsymbol können Sie die Logdatei löschen.
 
-### <a name="identity"></a>Identität
+### <a name="identity"></a>Identifikator
 
-Cumulocity kann Geräte und Assets mit mehreren externen Identitäten assoziieren. Beispielsweise können Geräte häufig durch die IMEI ihres Modems, durch eine Mikrocontroller-Seriennummer sowie durch einen Asset-Tag identifiziert werden. Diese Registerkarte listet alle Identitäten auf, die für ein bestimmtes Gerät aufgezeichnet wurden.
+Cumulocity kann Geräte und Assets mit mehreren externen Identifikatoren assoziieren. Beispielsweise können Geräte häufig durch die IMEI ihres Modems, durch eine Mikrocontroller-Seriennummer sowie durch einen Asset-Tag identifiziert werden. Diese Registerkarte listet alle Identifikatoren auf, die für ein bestimmtes Gerät aufgezeichnet wurden.
 
-Dies ist nützlich, wenn Sie nicht funktionsfähige Hardware haben und die Hardware ersetzen müssen, ohne die aufgezeichneten Daten zu verlieren. Schließen Sie einfach die neue Hardware an Ihr Konto an und ändern Sie den Identitätseintrag der alten Hardware, um die Identität der neuen Hardware zu erhalten.
+Dies ist nützlich, wenn Sie nicht funktionsfähige Hardware haben und die Hardware ersetzen müssen, ohne die aufgezeichneten Daten zu verlieren. Schließen Sie einfach die neue Hardware an Ihr Konto an und ändern Sie den Identifikatoreintrag der alten Hardware, um den Identifikator der neuen Hardware zu erhalten.
 
 
 ## <a name="connection-monitoring"></a>Verbindungsüberwachung
@@ -501,13 +502,13 @@ Da Geräte größere Mengen an Ereignisdaten senden können, können Sie die hie
 
 ## <a name="software-repo"></a> Verwaltung von Firmware und Software
 
-Cumulocity bietet einen zentralen Platz für die Erfassung von Referenz-Firmware und -Software für Geräte im "Firmware-Repository" und im "Software-Repository".
+Cumulocity bietet einen zentralen Platz für die Erfassung von Referenz-Firmware und -Software für Geräte in der "Firmware-Ablage" und in der "Software-Ablage".
 
 Um Firmware zu aktualisieren oder Softwarepakete auf einem bestimmten Gerät hinzuzufügen, müssen Sie drei Schritte durchführen:
 
 1. Firmware- und Software-Dateien mit der [Administrations-Anwendung](/guides/benutzerhandbuch/administration-deutsch#files) hochladen. (Dieser Schritt ist optional und nicht zwingend erforderlich, da der Hersteller die Firmware auch online anbieten kann.)
 
-2. Wählen und speichern Sie die Dateien im "Firmware-Repository". Um ein neues Firmware-Image zum Repository hinzuzufügen, gehen Sie zum "Firmware-Repository" und klicken Sie auf die Schaltfläche "Firmware hinzufügen". Geben Sie dann den Namen der Firmware, die Version und die URL ein, von der das Gerät die Firmware herunterladen kann. Auf ähnliche Art und Weise verwenden Sie das "Software-Repository", um Referenz-Softwarepakete hinzuzufügen.
+2. Wählen und speichern Sie die Dateien in der "Firmware-Ablage". Um ein neues Firmware-Image zur Ablage hinzuzufügen, gehen Sie zur "Firmware-Ablage" und klicken Sie auf die Schaltfläche "Firmware hinzufügen". Geben Sie dann den Namen der Firmware, die Version und die URL ein, von der das Gerät die Firmware herunterladen kann. Auf ähnliche Art und Weise verwenden Sie das "Software-Ablage", um Referenz-Softwarepakete hinzuzufügen.
 
 3. Installieren Sie die Firmware auf einem bestimmten Gerät. Zuerst navigieren Sie zu "Alle Geräte". Wählen Sie das gewünschte Gerät, gehen Sie dann auf "Software" auf Gerätedetails, und klicken Sie auf "Firmware installieren". Die Installation von Softwarepaketen ist sehr ähnlich. Folgen Sie den gleichen Schritten wie zuvor erwähnt, aber wählenSie stattdessen "Software installieren".(Mehr hierzu unter [Software](/guides/benutzerhandbuch/device-management-deutsch#software).)
 

@@ -40,7 +40,7 @@ Um Geräte mit Ihrem Cumulocity-Konto zu verbinden, klicken Sie im Navigator auf
 
 Jetzt können Sie das Gerät verwalten.
 
-<img src="/guides/benutzerhandbuch/devicemgmt/registrierung.png" alt="Geräteregistrierung" style="max-width: 100%">
+<img src="/guides/benutzerhandbuch/registrierung.png" alt="Geräteregistrierung" style="max-width: 100%">
 
 ## <a name="creds-upload"></a>Bulk-Registrierung von Geräten
 
@@ -152,7 +152,7 @@ Rechts neben dem Namen wird ein Zahnrad angezeigt. Wenn Sie auf das Zahnrad klic
 
 Ist das Gerät kompatibel, steht über das Zahnrad ein Menüpunkt "Messwertabfrage starten" zur Verfügung. Mit dieser Option können Sie ein Gerät auffordern, Messungen mit einer bestimmten Frequenz für eine bestimmte Dauer zu senden. Diese Art von Debugging vermeidet zu viel Datenverkehr, der durch das Senden von Messungen erzeugt wird.
 
-<img src="/guides/benutzerhandbuch/devicemgmt/devicedetails-de.png" alt="Gerätedetails" style="max-width: 100%">
+<img src="/guides/benutzerhandbuch/devicedetails-de.png" alt="Gerätedetails" style="max-width: 100%">
 
 Die Gerätedetails sind in eine Anzahl von Registerkarten unterteilt. Die gängigsten Standard-Tabs sind:
 
@@ -169,7 +169,7 @@ Die Gerätedetails sind in eine Anzahl von Registerkarten unterteilt. Die gängi
 * [Shell](#shell)
 * [Berechtigungen](#permissions)
 * [Tracking](#tracking)
-* [Serviceüberwachung](#service-monitoring)
+* [Service](#service-monitoring)
 * [Logdateien](#logs)
 * [Identifikator](#identity)
 
@@ -241,7 +241,7 @@ Die Registerkarte "Alarme" zeigt die Alarme eines Gerätes an. Weitere Informati
 
 Auf dieser Registerkarte werden die Vorgänge aufgeführt, die an ein Gerät gesendet werden oder  wurden. Weitere Informationen finden Sie im Abschnitt [Arbeiten mit Fernsteuerung](#operation-monitoring).
  
-![Operations](/guides/benutzerhandbuch/devicemgmt/operations-de.png)
+![Operations](/guides/benutzerhandbuch/operations-de.png)
 
 ### <a name="config"></a>Konfiguration
 
@@ -310,7 +310,7 @@ Um eine neue Firmware zu installieren, wählen Sie im Feld "Zu installierende Fi
 
 Um eine Software auf dem Gerät zu installieren, wählen Sie im Feld "Zu installierende Software" ein Softwarepaket aus und klicken Sie auf die Schaltfläche "Installieren". Um ein Paket aus dem Gerät zu entfernen, lassen Sie den Mauszeiger über einem bestimmten Softwarepaket verweilen und klicken Sie auf die Schaltfläche "x".
 
-![Software](/guides/benutzerhandbuch/devicemgmt/software-de.png)
+![Software](/guides/benutzerhandbuch/software-de.png)
 
 Die Installation von Software und Firmware beinhaltet in der Regel einen Neustart des Geräts. Um den Fortschritt einer Installation zu überwachen, gehen Sie zur Registerkarte "Steuerung".
 
@@ -335,17 +335,17 @@ Die Shell-Benutzeroberfläche ist in zwei Teile aufgeteilt:
 
 Die Liste zeigt Status, Datum und Text eines Befehls an. Wenn Sie auf einen Listeneintrag klicken, wird das Ergebnis des Befehls angezeigt (sofern er ausgeführt wurde).
 
-![Device shell](/guides/users-guide/shellde.png)
+![Geräte-Shell](/guides/benutzerhandbuch/shell-de.png)
 
 In der Eingabeaufforderung können Sie beliebigen Befehlstext eingeben. Um den Befehlstext an das Gerät zu senden, klicken Sie auf die Schaltfläche "Ausführen". Die Schaltfläche "Ausführen" kann nur gewählt werden, wenn das Gerät online ist.
 
-Um Ihnen mit der Befehlssyntax zu helfen, sind häufig verwendete Befehle für einige Geräte verfügbar, indem Sie auf die Schaltfläche "Vordefiniert erhalten" ??? klicken. Wählen Sie einen Befehl aus und klicken Sie auf "Verwenden", um den Befehl an die Eingabeaufforderung zu kopieren, oder wählen Sie "Ausführen", um den Befehl sofort auszuführen.
+Um Ihnen mit der Befehlssyntax zu helfen, sind häufig verwendete Befehle für einige Geräte verfügbar, indem Sie auf die Schaltfläche "Beispielkommando erhalten" klicken. Wählen Sie einen Befehl aus und klicken Sie auf "Verwenden", um den Befehl in die Eingabeaufforderung zu kopieren, oder wählen Sie "Ausführen", um den Befehl sofort auszuführen.
 
-![Shell commands](/guides/users-guide/shelltemplatesde.png)
+![Shell-Kommandos](/guides/benutzerhandbuch/shelltemplates-de.png)
 
 ### <a name="permissions"></a>Berechtigungen
 
-Die Berechtigung, bestimmte Geräte anzuzeigen, zu bearbeiten oder zu steuern, kann auf Benutzer und Benutzergruppen beschränkt werden. Weitere Informationen zum Verwalten von Berechtigungen finden Sie unter [Administration](/guides/benutzerhandbuch/administration-deutsch). Verwenden Sie den Anwendungs-Wechsler, um zur Administrationsanwendung zu wechseln.
+Die Berechtigung, bestimmte Geräte anzuzeigen, zu bearbeiten oder zu steuern, kann auf Benutzer und Benutzergruppen beschränkt werden. Weitere Informationen zum Verwalten von Berechtigungen finden Sie unter [Administration](/guides/benutzerhandbuch/administration-deutsch). Verwenden Sie den Anwendungswechsler, um zur Administrationsanwendung zu wechseln.
 
 ### <a name="tracking"></a>Tracking
 
@@ -357,11 +357,11 @@ Die Registerkarte "Tracking" wird angezeigt, wenn das Gerät eine "c8y_Position"
 
 ![Tracking](/guides/users-guide/tracking.png)
 
-Je nach Typ eines Gerätes und dessen Integration in Cumulocity, können Sie geräteseitig auch Geo-Fencing und Bewegungserkennung konfigurieren. 
+Je nach Typ eines Gerätes und dessen Integration in Cumulocity können Sie geräteseitig auch Geo-Fencing und Bewegungserkennung konfigurieren. 
 
 Außerdem können Informationen über die Zellenidentifikation genutzt werden, um den Standort des Gerätes zu bestimmen (vorausgesetzt, diese Funktion ist aktiviert und das Gerät ist kompatibel).  Derzeit werden die Services von [Combain](https://combain.com/) und [Google](https://developers.google.com/maps/documentation/geolocation/intro) unterstützt. Sie können die Tracks auf Basis von Daten von diesen beiden Diensten anzeigen lassen bzw. GPS-Daten oder Zellenidentifikations-Daten herausfiltern. 
 
-### <a name="service-monitoring"></a>Serviceüberwachung
+### <a name="service-monitoring"></a>Service
 Neben der Verbindungsüberwachung verfügt Cumulocity über eine separate Serviceüberwachung für Maschinen. Weitere Informationen finden Sie unter [Serviceüberwachung](#monitoring-services).
 
 ### <a name="logs"></a>Logdateien
@@ -372,11 +372,11 @@ Um Log-Informationen von einem Gerät anzufordern, gibt es die folgenden Optione
 
 - Wählen Sie den Datums- und Zeitbereich aus.
 - Wählen Sie die Art der Log-Information. Die unterstützten Log-Informationen sind meist gerätespezifisch.
-- Geben Sie einen optionalen Text ein, um das Log zu filtern. Wenn Sie beispielsweise "Benutzer" eingeben, werden nur Zeilen mit dem Wort "Benutzer" in den zurückgegebenen Log-Informationen angezeigt.
+- Geben Sie optional einen Text ein, um die Log-Information zu filtern. Wenn Sie beispielsweise "Benutzer" eingeben, werden nur Zeilen mit dem Wort "Benutzer" in den zurückgegebenen Log-Informationen angezeigt.
 - Wählen Sie die maximale Anzahl der anzuzeigenden Zeilen (absteigend) aus.
 - Klicken Sie auf "Logdatei anfordern". 
 
-![Request log](/guides/users-guide/requestlogde.png)
+![Request log](/guides/benutzerhandbuch/requestlog-de.png)
 
 Das Anfordern einer Logdatei von einem Gerät kann einige Zeit in Anspruch nehmen. Nachdem die Logdatei vom Cumulocity-Gerät übertragen wurde, erscheint es in der Liste unterhalb der Auswahl-Widgets. Der Eintrag in der Liste enthält den Logzeitbereich, der abgefragt wurde. Klicken Sie auf den Eintrag in der Liste, um die Log-Informationen auf der Seite anzuzeigen. Bewegen Sie den Mauszeiger über den Eintrag, um auf die Download- und Löschsymbole zuzugreifen. Mit dem Download-Symbol können Sie den Log-Auszug auf Ihren lokalen PC herunterladen. Mit dem Löschsymbol können Sie die Logdatei löschen.
 
@@ -418,7 +418,7 @@ Während ein Gerät offline ist, nimmt Cumulocity standardmäßig an, dass das G
 
 Es kann Ausnahmen von dieser Regel geben. Wenn Ihre Verkaufsautomaten ausschließlich auf bargeldlose Zahlung angewiesen sind und die Verbindung zum Netzwerk verlieren, bedeutet das, dass die Automaten außer Betrieb sind und aufhören zu verkaufen. In diesem Fall müssen Nichtverfügbarkeitsalarme in der [Administrations-Anwendung](/guides/benutzerhandbuch/administration-deutsch#reprio-alarms) auf "kritische" Priorität statt "wichtige"-Priorität gesetzt werden.
 
-Cumulocity kann die Verfügbarkeit der Dienste auf der Ebene einzelner Geräte oder für alle Geräte anzeigen. Wenn Sie im Navigator "Service Monitoring" wählen, wird der gesamte Service für alle Geräte angezeigt. Auf dieser Seite sehen Sie auch ein Histogramm, wieviele Geräte im vergangenen Monat wann verfügbar waren (siehe obigen Screenshot).
+Cumulocity kann die Verfügbarkeit der Dienste auf der Ebene einzelner Geräte oder für alle Geräte anzeigen. Wenn Sie im Navigator "Service" wählen, wird der gesamte Service für alle Geräte angezeigt. Auf dieser Seite sehen Sie auch ein Histogramm, wieviele Geräte im vergangenen Monat wann verfügbar waren (siehe obigen Screenshot).
 
 ## <a name="map"></a>Der Standort von Geräten
 
@@ -638,18 +638,18 @@ Dies sind nicht etwa die Alarme, die durch die simulierten Geräte erzeugt werde
 
 Cumulocity Cloud Remote Access implementiert Virtual Network Computing (VNC), um mit einer grafischen Benutzeroberfläche Fernzugriff auf Bedienkonsolen und andere Geräte zu erhalten. Die Anwender der Geräte können so über einen Webbrowser mit den Geräten arbeiten, als ob sie sich direkt vor ihnen befinden. 
 
-![VNC](/guides/benutzerhandbuch/devicemgmt/VNC1a-DE.png)
+![VNC](/guides/benutzerhandbuch/VNC1a-DE.png)
 
 Cloud Remote Access funktioniert wie in der Abbildung unten dargestellt. Ausgehend von dem ferngesteuerten Gerät: Auf dem Gerät läuft ein VNC-Server, und das Gerät ist mit einem Gateway, das mit dem Cloud Remote Access kompatibel ist, verbunden. Dieses Gateway muss in der Device-Management-Anwendung als Gerät registriert sein. Weitere Informationen und Anleitungen zur Geräteregistrierung finden Sie hier: [Geräte manuell verbinden](https://www.cumulocity.com/guides/users-guide/device-management/#device-registration)
 
-![VNC2](/guides/benutzerhandbuch/devicemgmt/VNC2-DE.png)
+![VNC2](/guides/benutzerhandbuch/VNC2-DE.png)
 
 Mit Cloud Remote Access können Sie
 
 - Statusvisualisierungen ansehen und Updates von ferngesteuerten Geräten sofort überwachen, so als befänden Sie sich direkt am Gerät
 - einfach eine Verbindung zu ferngesteuerten Geräten erstellen, da komplizierte VPN-Setups nicht nötig sind 
 
-![VNC1b](/guides/benutzerhandbuch/devicemgmt/VNC1b-DE.png)
+![VNC1b](/guides/benutzerhandbuch/VNC1b-DE.png)
 
 Die Verbindung zu ferngesteuerten Geräten ist sicher verschlüsselt durch TLS-Technologie.  Außerdem sind Passwörter in Ihrem Cumulocity-Konto verschlüsselt, so dass Sie sie nicht an anderer Stelle verwalten müssen. 
 

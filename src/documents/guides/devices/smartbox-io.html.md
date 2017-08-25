@@ -43,7 +43,7 @@ Wire the sensors:
 
 ![Wire the sensors](/guides/devices/smartbox-io/interface-sensors.png)
 
-## <a name="connect-the-smartbox">Connect the Smartbox to your Cumulocity Account
+## <a name="connect-the-smartbox"></a>Connect the Smartbox to your Cumulocity Account
 
 ### Configure the terminal:
 

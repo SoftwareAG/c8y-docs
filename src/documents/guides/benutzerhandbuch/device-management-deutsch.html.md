@@ -80,7 +80,7 @@ In jedem Fall sehen Sie eine Liste der Geräte, wie im folgenden Beispiel gezeig
 * Ein Symbol für den Verbindungsstatus, wie in der [Verbindungsüberwachung](#connection-monitoring) beschrieben
 * Der Name des Geräts
 * Je nach Browserbreite, Modell und Seriennummer des Gerätes
-* Der Alarmstatus des Gerätes, wie viele kritische, Major-, Minor- oder Warnstufenalarme für das Gerät derzeit nicht gelöst sind. Siehe [Alarme](#alarm-monitoring) für weitere Informationen über das Arbeiten mit Alarmen.
+* Der Alarmstatus des Gerätes, wie viele kritische, wichtige, weniger wichtige oder Warnstufenalarme für das Gerät derzeit nicht gelöst sind. Siehe [Alarme](#alarm-monitoring) für weitere Informationen über das Arbeiten mit Alarmen.
 * Eine Schaltfläche zum Löschen des Gerätes
 
 Das Löschen eines Geräts bedeutet, das Gerät aus der Cumulocity-Datenbank zu entfernen, einschließlich aller damit generierten Daten. Alternativ zum Löschen eines Gerätes können Sie auch alle ausgeschalteten Geräte in eine Gruppe organisieren. Dadurch wird sichergestellt, dass alle alten Berichte korrekt bleiben. Um zu verhindern, dass Alarme für die ausgeschalteten Geräte eingehen, deaktivieren Sie die [Verbindungsüberwachung](#connection-monitoring). Beim Löschen eines Geräts werden die Daten seiner Kindgeräte nicht gelöscht.
@@ -339,7 +339,7 @@ Die Liste zeigt Status, Datum und Text eines Befehls an. Wenn Sie auf einen List
 
 In der Eingabeaufforderung können Sie beliebigen Befehlstext eingeben. Um den Befehlstext an das Gerät zu senden, klicken Sie auf die Schaltfläche "Ausführen". Die Schaltfläche "Ausführen" kann nur gewählt werden, wenn das Gerät online ist.
 
-Um Ihnen mit der Befehlssyntax zu helfen, sind häufig verwendete Befehle für einige Geräte verfügbar, indem Sie auf die Schaltfläche "Beispielkommando erhalten" klicken. Wählen Sie einen Befehl aus und klicken Sie auf "Verwenden", um den Befehl in die Eingabeaufforderung zu kopieren, oder wählen Sie "Ausführen", um den Befehl sofort auszuführen.
+Um Ihnen mit der Befehlssyntax zu helfen, sind häufig verwendete Befehle für einige Geräte verfügbar, indem Sie auf die Schaltfläche "Wählen Sie ein Beispielkommando aus" klicken. Wählen Sie einen Befehl aus und klicken Sie auf "Verwenden", um den Befehl in die Eingabeaufforderung zu kopieren, oder wählen Sie "Ausführen", um den Befehl sofort auszuführen.
 
 ![Shell-Kommandos](/guides/benutzerhandbuch/shelltemplates-de.png)
 
@@ -389,11 +389,11 @@ Dies ist nützlich, wenn Sie nicht funktionsfähige Hardware haben und die Hardw
 
 ## <a name="connection-monitoring"></a>Verbindungsüberwachung
 
-Cumulocity kann die Verbindung zu Ihren Geräten automatisch überwachen. Wenn die Verbindung zu einem Gerät überwacht werden soll, gehen Sie zur Registerkarte "Info" des Geräts. Aktivieren Sie auf dieser Registerkarte das Feld "Erforderliches Intervall" oben. In diesem Feld wird festgelegt, wie oft Sie vom Gerät hören möchten. Wenn Sie beispielsweise "Erforderliches Intervall" auf 60 setzen, erwarten Sie, dass das Gerät mindestens einmal in einer Stunde mit Cumulocity kommuniziert. Das Intervall wird entweder vom Gerät selbst eingestellt, basierend auf dem Wissen des Geräts, wie oft es versucht, Daten zu senden, oder es wird von Ihnen manuell gesetzt.
+Cumulocity kann die Verbindung zu Ihren Geräten automatisch überwachen. Wenn die Verbindung zu einem Gerät überwacht werden soll, gehen Sie zur Registerkarte "Info" des Geräts. Im Feld "Erwartetes Sendeintervall" rechts wird festgelegt, wie oft Sie vom Gerät hören. Wenn Sie beispielsweise "Erwartetes Sendeintervalll" auf 60 setzen, erwarten Sie, dass das Gerät mindestens einmal in einer Stunde mit Cumulocity kommuniziert. Das Intervall wird entweder vom Gerät selbst eingestellt, basierend auf dem Wissen des Geräts, wie oft es versucht, Daten zu senden, oder es wird von Ihnen manuell gesetzt.
 
-Die verschiedenen Anschlusszustände sind auf dem Bild unten dargestellt. Der obere Pfeil repräsentiert Verkehr vom Gerät zu Cumulocity. Er kann grün, rot oder grau sein. Grün bedeutet, dass Daten innerhalb des erforderlichen Intervalls gesendet wurden. Rot bedeutet, dass keine Daten innerhalb des erforderlichen Intervalls gesendet wurden. Grau bedeutet, dass kein erforderliches Intervall konfiguriert ist.
+Die verschiedenen Anschlusszustände sind auf dem Bild unten dargestellt. Der obere Pfeil repräsentiert Verkehr vom Gerät zu Cumulocity. Er kann grün, rot oder grau sein. Grün bedeutet, dass Daten innerhalb des erwarteten Intervalls gesendet wurden. Rot bedeutet, dass keine Daten innerhalb des erwarteten Intervalls gesendet wurden. Grau bedeutet, dass kein Intervall konfiguriert ist.
 
-Der untere Pfeil zeigt den Status der Push-Verbindung an, über die Befehle von Cumulocity an das Gerät gesendet werden (eine Verbindung zum /devicecontrol/notifications API, nicht zum Echtzeit-API). Es kann entweder grün oder grau sein. Grün bedeutet, dass die Verbindung hergestellt ist. Grau bedeutet, dass die Verbindung nicht hergestellt ist. Im Falle eines grauen Pfeils unterstützt das Gerät keine Pushverbindungen, oder es liegt ein Fehler vor.
+Der untere Pfeil zeigt den Status der Push-Verbindung an, über die Befehle von Cumulocity an das Gerät gesendet werden (eine Verbindung zum /devicecontrol/notifications API, nicht zum Echtzeit-API). Es kann entweder grün oder grau sein. Grün bedeutet, dass die Verbindung hergestellt ist. Grau bedeutet, dass die Verbindung nicht hergestellt ist. Im Falle eines grauen Pfeils unterstützt das Gerät keine Push-Verbindungen, oder es liegt ein Fehler vor.
 
 "Wartungsmodus" ist ein spezieller Verbindungsstatus, der anzeigt, dass das Gerät aktuell gewartet wird und nicht überwacht werden soll. Während ein Gerät gewartet wird, werden keine Alarme für dieses Gerät ausgelöst. Sie können den Wartungsmodus aktivieren, indem Sie das erforderliche Intervall auf einen negativen Wert setzen.
 
@@ -412,7 +412,7 @@ Die Serviceüberwachung zeigt an, ob das Gerät in Betrieb ist. Zum Beispiel ist
 
 Cumulocity geht davon aus, dass ein Gerät in Betrieb ist, solange kein kritischer, nicht aufgelöster Alarm für das Gerät vorhanden ist. Dies wird als Zeitanteil angezeigt, für den ein solcher Alarm vorliegt. Wenn ein Gerät keine kritischen Alarme zu irgendeinem Zeitpunkt während eines Zeitraums hatte, war es zu 100 % in Betrieb. Wenn es einige kritische, ungelöste Alarme während der Hälfte der Zeit gab, war das Gerät zu 50 % in Betrieb.
 
-![Service monitoring](/guides/users-guide/servicemonitoringde.png)
+![Service monitoring](/guides/benutzerhandbuch/servicemonitoring-de.png)
 
 Während ein Gerät offline ist, nimmt Cumulocity standardmäßig an, dass das Gerät weiterhin in Betrieb bleibt, wie es war, bevor es die Verbindung verloren hatte. Wenn es zuvor nicht in Betrieb war, geht Cumulocity davon aus, dass das Gerät während eines Verbindungsausfalls außer Betrieb ist.
 
@@ -422,77 +422,77 @@ Cumulocity kann die Verfügbarkeit der Dienste auf der Ebene einzelner Geräte o
 
 ## <a name="map"></a>Der Standort von Geräten
 
-Wenn Sie im Navigator auf "Karte" klicken, wird eine Karte aller Geräte in Ihrem Konto angezeigt. Geräte werden als "Markierungsnadeln" angezeigt, auf die Sie klicken können, um den Namen des Geräts zu erhalten. Wenn Sie auf den Namen des Geräts klicken, gelangen Sie in die Detailansicht des Geräts. Durch Anklicken des Kontrollkästchens "Realtime" wird die Karte automatisch aktualisiert, sobald sich Geräte bewegen.
+Wenn Sie im Navigator auf "Karte" klicken, wird eine Karte aller Geräte in Ihrem Konto angezeigt. Geräte werden als "Markierungsnadeln" angezeigt, auf die Sie klicken können, um den Namen des Geräts zu erhalten. Wenn Sie auf den Namen des Geräts klicken, gelangen Sie in die Detailansicht des Geräts. Durch Anklicken des Kontrollkästchens "Echtzeit" wird die Karte automatisch aktualisiert, sobald sich Geräte bewegen.
 
 ## <a name="alarm-monitoring"></a>Arbeiten mit Alarmen
 
 Geräte können Alarme auslösen, um anzuzeigen, dass ein Problem vorliegt und eine Intervention erforderlich ist. Alarme können an verschiedenen Orten betrachtet werden:
 
-* Durch Klicken auf "Nur ungelöst" im "Alarme"-Tab sehen Sie die Alarme aller Geräte, die noch nicht gelöst wurden.
 * Durch Klicken auf "Alarme" im Navigator wird der gesamte Alarmverlauf angezeigt.
-* Durch Klicken auf ein Gerät und Auswählen der Registerkarte "Alarme", um die Alarme des Geräts zu sehen. Standardmäßig werden nur ungelöste Alarme angezeigt, aber Sie können das "Nur ungelöste" Kontrollkästchen deaktivieren, um alle Alarme anzuzeigen.
+* Durch Deaktivieren der "Nur offene Alarme"-Schaltfläche sehen Sie hier die Alarme aller Geräte, die noch nicht gelöst wurden.
+* Durch Klicken auf ein Gerät und Auswählen der Registerkarte "Alarme" sehen Sie die Alarme dieses Geräts. Standardmäßig werden nur ungelöste Alarme angezeigt, aber Sie können das "Nur offene Alarme" Kontrollkästchen deaktivieren, um alle Alarme anzuzeigen.
 
 Die Alarmanzeige ist in vier Abschnitte unterteilt, die Alarme unterschiedlicher Prioritäten separat auflisten. In jedem Abschnitt wird zuerst der letzte Alarm angezeigt. Das folgende Bild zeigt die Detailanzeige eines Alarms nach dem Anklicken. Die Detailansicht enthält folgende Elemente:
 
-* **Alarm Schweregrad**: Die Schweregrade hierbei sind:
+* **Alarmschweregrad**: Die Schweregrade hierbei sind:
  * **Kritisch**: Das Gerät ist außer Betrieb, und sofortiges Eingreifen ist erforderlich.
- * **Major**: Es gibt ein Problem, welches Aufmerksamkeit erfordert.
- * **Minor**: Ein kleineres Problem ist aufgetreten.
+ * **Wichtig**: Es gibt ein Problem, welches Aufmerksamkeit erfordert.
+ * **Weniger wichtig**: Ein kleineres Problem ist aufgetreten.
  * **Warnung**: Es gibt eine Warnung.
 * **Status**: Der Status des Alarms. Das kann sein:
  * **Aktiv**: Wenn der Alarm ausgelöst wurde und noch niemand daran arbeitet.
  * **Zur Kenntnis genommen**: Wenn jemand die "Zur Kenntnis genommen"-Schaltfläche aktiviert hat.
- * **Aufgelöst**: Wenn entweder jemand auf die Schaltfläche "Löschen" geklickt hat, um einen Alarm manuell zu löschen, oder wenn das Gerät selbst feststellt, dass das Problem nicht mehr besteht.
+ * **Gelöst**: Wenn entweder jemand auf die Schaltfläche "Löschen" geklickt hat, um einen Alarm manuell zu löschen, oder wenn das Gerät selbst feststellt, dass das Problem nicht mehr besteht.
 * **Anzahl**: Die Häufigkeit, mit der dieser Alarm vom Gerät gesendet wurde. Cumulocity dupliziert Alarme, so dass nur ein Alarm eines bestimmten Typs für ein bestimmtes Gerät aktiv sein kann. Wenn ein anderer Alarm des gleichen Typs durch das Gerät gesendet wird, wird die Anzahl erhöht.
 * **Beschreibung**: Eine Textbeschreibung des Alarms.
 * **Gerät**: Der Name des Geräts. Durch Klicken auf den Namen gelangen Sie in die Detailansicht des Geräts.
 * **Datum erstellt**: Der Zeitstempel, als der Alarm zuerst erstellt wurde.
 * **Typ**: Die Art des Alarms. Dieser Text dient zum Duplizieren von Alarmen und zum Konfigurieren der Priorität von Alarmen in der [Administrations-Anwendung](/guides/benutzerhandbuch/administration-deutsch#reprio-alarms).
 * **Zusätzliche Information**: Ein Alarm kann beliebige zusätzliche Informationen enthalten, die vom Gerät bereitgestellt werden.
-* **Audit Protokolle**: Zusammen mit dem Alarm wird ein Protokoll der Änderungen des Alarms gespeichert. Dadurch wird ein Alarmverlauf mit verschiedenen Daten erzeugt.
+* **Änderungsprotokoll**: Zusammen mit dem Alarm wird ein Protokoll der Änderungen des Alarms gespeichert. Dadurch wird ein Alarmverlauf mit verschiedenen Daten erzeugt.
 
-![Alarm display](/guides/users-guide/alarme.png)
+![Alarm display](/guides/benutzerhandbuch/alarme-de.png)
 
-## <a name="operation-monitoring"></a>Arbeiten mit Fernsteuerung
+## <a name="operation-monitoring"></a>Arbeiten mit Kommandos
 
-Fernsteuerungsvorgänge werden für ferngesteuerte Geräte verwendet. Sie können im Navigator auf das Menü "Kommandos" klicken, um alle Vorgänge anzuzeigen, die an ein Gerät gesendet wurden und noch in der Warteschlange stehen, um an ein Gerät gesendet zu werden. Ähnlich können Sie die Registerkarte "Steuerung" eines bestimmten Geräts auswählen, um die Vorgänge dieses Geräts anzuzeigen.
+Kommandos werden zur Fernsteuerung von Geräten verwendet. Klicken Sie im Navigator auf "Kommandos", um alle Kommandos anzuzeigen, die an ein Gerät gesendet wurden und noch in der Warteschlange stehen, um an ein Gerät gesendet zu werden. Ähnlich können Sie die Registerkarte "Steuerung" eines bestimmten Geräts auswählen, um die Kommandos dieses Geräts anzuzeigen.
 
-Vorgänge können sich in diesen Ausführungszuständen befinden:
+Kommandos können sich in diesen Ausführungszuständen befinden:
 
-* **Ausstehend**: Der Vorgang wurde gerade erstellt und wartet darauf, dass das Gerät den Vorgang übernimmt.
-* **In Ausführung**: Die Operation wurde vom Gerät übernommen und wird ausgeführt.
-* **Erfolgreich ausgeführt**: Der Vorgang wurde vom Gerät erfolgreich ausgeführt.
-* **Fehlgeschlagen**: Der Vorgang konnte nicht vom Gerät ausgeführt werden.
+* **Unerledigt**: Das Kommando wurde gerade erstellt und wartet darauf, vom Gerät übernommen zu werden.
+* **Wird ausgeführt**: Das Kommando wurde vom Gerät übernommen und wird ausgeführt.
+* **Erfolgreich**: Das Kommando wurde vom Gerät erfolgreich ausgeführt.
+* **Fehlgeschlagen**: Das Kommando konnte nicht vom Gerät ausgeführt werden.
 
-Wenn Sie auf einen Vorgang klicken, werden die Parameter des Vorgangs angezeigt. Wenn Sie beispielsweise auf einen Konfigurationsvorgang klicken, wird die Konfiguration angezeigt, die an das Gerät gesendet wird. Das Klicken auf einen fehlgeschlagenen Vorgang zeigt den Grund des Fehlers an.
+Wenn Sie auf ein Kommando klicken, werden die Parameter des Kommandos angezeigt. Wenn Sie beispielsweise auf ein Konfigurationskommando klicken, wird die Konfiguration angezeigt, die an das Gerät gesendet wird. Das Klicken auf ein fehlgeschlagenes Kommando zeigt den Grund des Fehlers an.
 
-Die Schaltfläche "Alle" zeigt alle Vorgänge für ein Gerät an, unabhängig davon, ob sie bereits verarbeitet wurden. Das Gerät führt diese Operationen in aufsteigender Zeitreihenfolge auf. Operationen werden streng nach dieser Reihenfolge ausgeführt.
+Die Schaltfläche "Alle" zeigt alle Kommandos für ein Gerät an, unabhängig davon, ob sie bereits verarbeitet wurden. Das Gerät führt diese Kommandos in aufsteigender Zeitreihenfolge auf. Kommandos werden streng nach dieser Reihenfolge ausgeführt.
 
-![Operations](/guides/users-guide/operationsde.png)
+![Operations](/guides/benutzerhandbuch/operations-de.png)
 
-## <a name="bulk-operations"></a>Bulk-Vorgänge
+## <a name="bulk-operations"></a>Sammelkommandos
 
-Zur einfacheren Handhabung von vielen Geräten bietet Cumulocity "Bulk-Vorgänge". Mit "Bulk-Vorgängen" können Sie nun einfach Vorgänge für jedes Gerät in einer Gruppe ausführen.
+Zur einfacheren Handhabung von vielen Geräten bietet Cumulocity "Sammelkommandos". Mit Sammelkommandos können Sie einfach Kommandos für jedes Gerät in einer Gruppe ausführen.
 
-Dazu haben Sie folgende Möglichkeiten:
+Um ein Sammelkommando für eine Gruppe auszuführen, gehen Sie folgendermaßen vor:
 
 - Wählen Sie ein Gerät aus und navigieren Sie zur Registerkarte "Steuerung".
-- Erstellen Sie einen Vorgang.
+- Erstellen Sie ein Kommando.
 - Bewegen Sie den Mauszeiger über den Vorgang, den Sie ausführen möchten.
 - Klicken Sie auf das Zahnrad. 
 - Klicken Sie auf "Ausführen für die ganze Gruppe".
 
 ![Execute bulk operations](/guides/users-guide/executebulkoperations.png)
 
-> Weitere Informationen über Bulk-Vorgänge finden Sie unter [Arbeiten mit Fernsteuerung](#operation-monitoring).
+> Weitere Informationen über Sammelkommandos finden Sie unter [Arbeiten mit Kommandos](#operation-monitoring).
 
-Um den Status und den Fortschritt Ihrer Vorgänge anzuzeigen, klicken Sie einfach auf die gewünschte Gruppe und dann auf "Bulk-Vorgänge".
+Um den Status und den Fortschritt Ihrer Kommandos anzuzeigen, klicken Sie einfach auf die gewünschte Gruppe und dann auf "Sammelkommandos".
 
 ![Bulk operations tab](/guides/users-guide/bulkoperationsde.png)
 
-Auch Bulk-Vorgänge können bearbeitet werden. Um einen Vorgang zu bearbeiten, bewegen Sie den Mauszeiger über den Vorgang und klicken Sie dann auf die blaue Markierungsschaltfläche. Ein neues Fenster wird eingeblendet. Die Werte "Startdatum" und "Verzögerung" können geändert werden. Um die Betriebsdaten zu ändern, klicken Sie auf "Details anzeigen". Wenn Sie fertig sind, klicken Sie auf "Reschedule", um Änderungen zu übernehmen, oder klicken Sie auf "Abbrechen", um Änderungen zu verwerfen.
+Auch Sammelkommandos können bearbeitet werden. Um ein Kommando zu bearbeiten, bewegen Sie den Mauszeiger über das Kommando und klicken Sie dann auf die blaue Markierungsschaltfläche. Ein neues Fenster wird eingeblendet. Die Werte "Startdatum" und "Verzögerung" können geändert werden. Um die Betriebsdaten zu ändern, klicken Sie auf "Details anzeigen". Wenn Sie fertig sind, klicken Sie auf "Reschedule", um Änderungen zu übernehmen, oder klicken Sie auf "Abbrechen", um Änderungen zu verwerfen.
 
-Um Operationen zu löschen, klicken Sie auf die X-Taste.
+Um Kommandos zu löschen, klicken Sie auf die X-Taste.
 
 ## <a name="events-all"></a>Fehlerbehebung bei Geräten
 

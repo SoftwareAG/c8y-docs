@@ -43,7 +43,7 @@ Wire the NTC temperature sensor and the alarm contact to SMARTbox Mini and conne
 
 ![Wire the sensors](/guides/devices/smartbox-mini/interface-sensors.png)
 
-## <a name="connect-the-smartbox">Connect the Smartbox to your Cumulocity Account
+## <a name="connect-the-smartbox"></a>Connect the Smartbox to your Cumulocity Account
 
 ### Configure the terminal:
 

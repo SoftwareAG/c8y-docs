@@ -42,7 +42,7 @@ Jetzt können Sie das Gerät verwalten.
 
 <img src="/guides/benutzerhandbuch/registrierung.png" alt="Geräteregistrierung" style="max-width: 100%">
 
-## <a name="creds-upload"></a>Bulk-Registrierung von Geräten
+## <a name="creds-upload"></a>Sammelregistrierung von Geräten
 
 Für die Verbindung vieler Geräte können Sie eine CSV-Datei mit den IDs und den Anmeldedaten hochladen. Beim Hochladen der CSV-Datei erstellt Cumulocity Benutzerkonten für jedes in der Datei aufgelistete Gerät. Geräte können sich dann sicher mit Cumulocity verbinden, ohne eine manuelle "Geräteregistrierung", wie im vorherigen Abschnitt beschrieben, durchführen zu müssen.
 
@@ -121,7 +121,7 @@ Um eine Gruppe zu bearbeiten, klicken Sie auf den Namen der Gruppe und auf "Edit
 
 ## <a name="Using Smart Groups"></a>Dynamische Gruppen nutzen
 
-Dynamische Gruppen sind Gruppen basierend auf Filterkriterien. Sie haben einen vorübergehenden Charakter, da sich die Anzahl der Mitglieder ständig verändern kann. Diese Gruppen haben keine festen Mitgliederlisten, sondern stattdessen bestimmte Auswahlkriterien. Diese Art von Gruppe kann verwendet werden für Bulk-Upgrades eines Gerätyps auf eine neue Software- oder Firmware-Version.
+Dynamische Gruppen sind Gruppen basierend auf Filterkriterien. Sie haben einen vorübergehenden Charakter, da sich die Anzahl der Mitglieder ständig verändern kann. Diese Gruppen haben keine festen Mitgliederlisten, sondern stattdessen bestimmte Auswahlkriterien. Diese Art von Gruppe kann verwendet werden für Sammel-Upgrades eines Gerätyps auf eine neue Software- oder Firmware-Version.
 
 <img src="/guides/users-guide/smartfiltersde.png" alt="Adding top-level groups" style="max-width: 100%">
 
@@ -496,9 +496,9 @@ Um Kommandos zu löschen, klicken Sie auf die X-Taste.
 
 ## <a name="events-all"></a>Fehlerbehebung bei Geräten
 
-Ereignisse sind Low-Level-Nachrichten, die von Geräten gesendet werden, die normalerweise für die anwendungsspezifische Verarbeitung verwendet werden. Beispielsweise sendet ein Verkaufsgerät seine Echtzeitverkäufe in Form von Ereignissen. Wenn Sie ein Gerät auf einer genaueren Ebene untersuchen müssen, gehen Sie zur Registerkarte "Ereignisse". Wenn Sie auf einzelne Ereignisse klicken, erhalten Sie weitere Informationen zu den im Ereignis enthaltenen Daten. Ähnlich können Sie alle Ereignisse über alle Geräte sehen, indem Sie im Navigator "Events" auswählen.
+Ereignisse sind Low-Level-Nachrichten, die von Geräten gesendet werden, die normalerweise für die anwendungsspezifische Verarbeitung verwendet werden. Beispielsweise sendet ein Verkaufsgerät seine Echtzeitverkäufe in Form von Ereignissen. Wenn Sie ein Gerät auf einer genaueren Ebene untersuchen müssen, gehen Sie zur Registerkarte "Ereignisse". Wenn Sie auf einzelne Ereignisse klicken, erhalten Sie weitere Informationen zu den im Ereignis enthaltenen Daten. Ähnlich können Sie alle Ereignisse über alle Geräte sehen, indem Sie im Navigator "Ereignisse" auswählen.
 
-Da Geräte größere Mengen an Ereignisdaten senden können, können Sie die hier gezeigten Daten nach Datum filtern. Sie können auch auf das Kontrollkästchen "Echtzeit" klicken, um Ereignisse zu sehen, die von den Geräten in Echtzeit kommen.
+Da Geräte größere Mengen an Ereignisdaten senden können, können Sie die hier gezeigten Daten nach Datum filtern. Sie können auch auf das Kontrollkästchen "Automatische Aktualisierung" klicken, um jederzeit aktuelle Ereignisse zu sehen.
 
 ## <a name="software-repo"></a> Verwaltung von Firmware und Software
 
@@ -508,9 +508,9 @@ Um Firmware zu aktualisieren oder Softwarepakete auf einem bestimmten Gerät hin
 
 1. Firmware- und Software-Dateien mit der [Administrations-Anwendung](/guides/benutzerhandbuch/administration-deutsch#files) hochladen. (Dieser Schritt ist optional und nicht zwingend erforderlich, da der Hersteller die Firmware auch online anbieten kann.)
 
-2. Wählen und speichern Sie die Dateien in der "Firmware-Ablage". Um ein neues Firmware-Image zur Ablage hinzuzufügen, gehen Sie zur "Firmware-Ablage" und klicken Sie auf die Schaltfläche "Firmware hinzufügen". Geben Sie dann den Namen der Firmware, die Version und die URL ein, von der das Gerät die Firmware herunterladen kann. Auf ähnliche Art und Weise verwenden Sie das "Software-Ablage", um Referenz-Softwarepakete hinzuzufügen.
+2. Wählen und speichern Sie die Dateien in der "Firmware-Ablage". Um ein neues Firmware-Image zur Ablage hinzuzufügen, gehen Sie zur "Firmware-Ablage" und klicken Sie auf die Schaltfläche "Firmware hinzufügen". Geben Sie dann den Namen der Firmware, die Version und die URL ein, von der das Gerät die Firmware herunterladen kann. Auf ähnliche Art und Weise verwenden Sie die "Software-Ablage", um Referenz-Softwarepakete hinzuzufügen.
 
-3. Installieren Sie die Firmware auf einem bestimmten Gerät. Zuerst navigieren Sie zu "Alle Geräte". Wählen Sie das gewünschte Gerät, gehen Sie dann auf "Software" auf Gerätedetails, und klicken Sie auf "Firmware installieren". Die Installation von Softwarepaketen ist sehr ähnlich. Folgen Sie den gleichen Schritten wie zuvor erwähnt, aber wählenSie stattdessen "Software installieren".(Mehr hierzu unter [Software](/guides/benutzerhandbuch/device-management-deutsch#software).)
+3. Installieren Sie die Firmware oder Software auf einem bestimmten Gerät. Zuerst navigieren Sie zu "Alle Geräte". Wählen Sie das gewünschte Gerät und gehen Sie dann zum "Software"-Tab. Wählen Sie die zu installierende Firmware oder Software aus und klicken Sie auf "Installieren".  (Mehr hierzu unter [Software](/guides/benutzerhandbuch/device-management-deutsch#software).)
 
 > Sie müssen die Administrations-Anwendung aufrufen, um andere Binärdateien in Cumulocity zu speichern. Siehe auch [Administration](/guides/benutzerhandbuch/administration-deutsch#files).
 
@@ -520,13 +520,13 @@ Cumulocity bietet Ihnen die Möglichkeit, Firmware oder Softwareupdates für meh
 - Navigieren Sie zum entsprechenden Vorgang und wählen Sie "Ausführen für die gesamte Gruppe".
 - Füllen Sie das Formular aus, um den Gesamtvorgang zu planen, und klicken Sie auf die Schaltfläche "Erstellen".
 
-Der Vorgangsstatus kann unter der entsprechenden Gruppe im Bulk-Vorgangs-Tab eingesehen werden.
+Der Vorgangsstatus kann unter der entsprechenden Gruppe im "Sammelkommandos"-Tab eingesehen werden.
 
-> Weitere Informationen zu Bulk-Vorgängen finden Sie unter [Bulk-Vorgänge](#bulk-operations). 
+> Weitere Informationen zu Sammelkommandos finden Sie unter [Sammelkommandos](#bulk-operations). 
 
 ## <a name="credentials"></a>Verwaltung von Gerätezugangsdaten 
 
-Im Menü "Geräte-Zugangsdaten" sind alle Anmeldeinformationen aufgelistet, die für die angeschlossenen Geräte generiert wurden. Jedes Gerät, das registriert wurde, erscheint hier mit der Namenskonvention "device_&lt;id&gt;".
+Im Menü "Geräteregistrierung" sind alle Anmeldeinformationen aufgelistet, die für die angeschlossenen Geräte generiert wurden. Jedes Gerät, das registriert wurde, erscheint hier mit der Namenskonvention "device_&lt;id&gt;".
 
 In den meisten Fällen sollten Sie nichts bearbeiten müssen. Ausnahmen sind:
 
@@ -534,9 +534,9 @@ In den meisten Fällen sollten Sie nichts bearbeiten müssen. Ausnahmen sind:
 * Wenn Sie ein Gerät vorübergehend ausschalten möchten, verwenden Sie die Schaltfläche "Deaktivieren" neben den Geräteanmeldeinformationen.
 * Wenn Sie einem einzelnen Gerät mehrere Berechtigungen zuweisen möchten, klicken Sie auf die Gerätezugangsdaten und wählen Sie zusätzliche oder unterschiedliche Benutzergruppen für das Gerät aus.
 
-![Bulk provisioning](/guides/users-guide/regdeutsch.png)
+![Sammelregistrierung](/guides/users-guide/regdeutsch.png)
 
-Die Geräte-Anmeldeinformationen können auch aus einer CSV-Datei bereitgestellt werden. Dateien können über die markierte Schaltfläche hochgeladen werden. Weitere Details zur Dateistruktur finden Sie unter [Gruppenregistrierung](#creds-upload).
+Die Geräte-Anmeldeinformationen können auch aus einer CSV-Datei bereitgestellt werden. Dateien können über die markierte Schaltfläche hochgeladen werden. Weitere Details zur Dateistruktur finden Sie unter [Sammelregistrierung](#creds-upload).
 
 ## <a name="simulators"></a> Simulatoren
 
@@ -545,7 +545,7 @@ Mit dem Cumulocity-Simulator können alle Aspekte von IoT-Geräten simuliert wer
 
 * Einrichten eines simulierten Geräts oder eines Netzwerks von simulierten Geräten
 * Festlegen, welche Vorgänge das Gerät verarbeiten kann
-* Erstellen von Arbeitsanweisungen basierend auf vordefinierten Arbeitsvorlagen oder benutzerdefinierten Schablonen und Planung von Arbeitsschritten
+* Erstellen von Arbeitsanweisungen basierend auf vordefinierten Nachrichtenvorlagen oder benutzerdefinierten Vorlagen und Planung von Arbeitsschritten
 * Erstellen von bis zu zehn Geräten eines definierten Typs
 * Generieren von Meldungen für Messungen, Alarme, Ereignisse und Stammmdaten
 * Anzeige von Simulationsproblemen als Alarme 
@@ -558,29 +558,30 @@ Ein Simulator verwendet eine Wiedergabeliste, um Nachrichten zu simulieren, die 
 
 Eine Anweisung kann entweder eine Nachricht senden (Messungen, Alarme, Ereignisse und Inventar) oder für eine bestimmte Zeit warten (Schlaf).
 
-Eine Nachricht wird durch Auswählen einer Vorlage (z. B. Senden einer Temperatur) und Bereitstellen der Werte für diese Vorlage (23,0 Grad) definiert. Es stehen viele vordefinierte Meldevorlagen zur Verfügung, z. B. "Messwert erstellen", "Ereignis senden", "Erstellen" und "Abbrechen" eines Alarms. Diese basieren auf statischen MQTT-Vorlagen. Darüber hinaus können benutzerdefinierte Nachrichtenvorlagen mit dem SmartREST-Template-Editor definiert werden.
+Eine Nachricht wird durch Auswählen einer Vorlage (z. B. Senden einer Temperatur) und Bereitstellen der Werte für diese Vorlage (23,0 Grad) definiert. Es stehen viele vordefinierte Nachrichtenvorlagen zur Verfügung, z. B. "Messwert erstellen", "Ereignis senden", "Erstellen" und "Abbrechen" eines Alarms. Diese basieren auf statischen MQTT-Vorlagen. Darüber hinaus können benutzerdefinierte Nachrichtenvorlagen mit dem SmartREST-Vorlagen-Editor definiert werden.
 
 ### Einrichten eines Simulators
 
 Um einen Simulator einzurichten, gehen Sie zur Navigation im Device Management und wählen Sie  "Simulatoren" unter "Geräte" aus.
 
-![New Simulator](/guides/users-guide/newsimde.png)
+![Neuer Simulator](/guides/benutzerhandbuch/newsimde.png)
 
-Simulatoren können hinzugefügt werden, indem Sie auf "Neu" klicken, um eine Karte zu öffnen. Sie können nun wählen, ob Sie einen neuen Simulator definieren oder ein Preset auswählen möchten. Geben Sie dem Simulator einen Namen und definieren Sie die Anzahl der Instanzen (bis zu 10).
+Simulatoren können hinzugefügt werden, indem Sie auf "Neuer Simulator" klicken. Sie können nun wählen, ob Sie einen neuen Simulator definieren oder einen voreingestellten Simulator auswählen möchten. Geben Sie dem Simulator einen Namen und definieren Sie die Anzahl der Instanzen (bis zu 10).
 
-<img src="/guides/users-guide/addsimde.png" alt="Add Simulator" style="max-width: 60%">
+<img src="/guides/benutzerhandbuch/addsimde.png" alt="Add Simulator" style="max-width: 60%">
 
-### Presets
+### Voreingestellte Simulatoren
 
-Die andere Möglichkeit ist, einen Simulator aus einem Preset zu erstellen. Derzeit stehen zwei verschiedene Presets zur Verfügung: Ein Preset "Temperaturmesswerte" und ein Preset "Positionsereignis".
+Die andere Möglichkeit ist, einen Simulator aus einem bereits voreingestellten zu erstellen. Derzeit stehen zwei verschiedene voreingestellte Simulatoren zur Verfügung: "Temperaturmesswerte" und "Positionsereignis".
 
-<img src="/guides/users-guide/addtempsimde.png" alt="Add Temperature Preset" style="max-width: 60%">
+<img src="/guides/benutzerhandbuch/addtempsimde.png" alt="Add Temperature Preset" style="max-width: 60%">
 
-<img src="/guides/users-guide/addpossimde.png" alt="Add Position Preset" style="max-width: 60%">
+<img src="/guides/benutzerhandbuch/addpossimde.png" alt="Add Position Preset" style="max-width: 60%">
 
-![Edit Simulator](/guides/users-guide/editcloneremsimde.png)
+Vorhandene Simulatoren können durch Klicken auf die drei untereinanderliegenden Kästchen in der rechten oberen Ecke bearbeitet, dupliziert oder entfernt werden. Es öffnet sich ein Dropdown-Menü mit diesen Optionen.
 
-Vorhandene Simulatoren finden Sie auf dieser Seite. Simulatoren können durch Klicken auf das Zahnrad in der rechten oberen Ecke der Karte bearbeitet, dupliziert oder entfernt werden. Es öffnet sich ein Dropdown-Menü mit diesen Optionen.
+![Edit Simulator](/guides/benutzerhandbuch/editcloneremsimde.png)
+
 
 ### Hinzufügen von Anweisungen für den Simulator
 

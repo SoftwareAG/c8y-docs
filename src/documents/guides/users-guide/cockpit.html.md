@@ -820,27 +820,27 @@ Standard time properties of documents (like time or creationTime in alarms) are 
 
 Only csv time contains miliseconds and timezone.
 
-### Scheduling export
+### Scheduling exports
 
-To schedule export to csv or xlsx at some point in time navigate to "Schedule export" located in right menu in chosen export.
+To schedule the export to csv or xlsx at some point in time navigate to "Schedule export" located in the right menu in the chosen export.
 
 ![Exporting](/guides/users-guide/export_schedule.png)
 
-Complete frequency field "every":
-* For "every year": day of month, month, hour and minute
+Define the frequency for sending the report, i.e. every hour, day, week, month or year:
+* For "every year": chooce day of month, month, hour and minute
 * For "every month": choose day of month, hour and minute
 * For "every day": choose hour and minute
 * For "every hour": choose minute
 
 ![Exporting](/guides/users-guide/export_schedule_frequency.png)
 
-Complete email information:
-* "Send to": email address of receiver. This fiels is required.
+Complete the email information:
+* "Send to": email address of receiver. This field is required.
 * "Send CC to": email address of "carbon copy"
 * "Send BCC to": email address of "blind carbon copy"
 * "Reply to": email address of sender
 * "Subject": subject of email
-* "Message": required message of email. Available placeholders: {host}, {binaryId}. Default value is "File with exported data can be downloaded from {host}/inventory/binaries/{binaryId}".
+* "Message": required message of email. Available placeholders: {host}, {binaryId}. The default value is "File with exported data can be downloaded from {host}/inventory/binaries/{binaryId}".
 
 ![Exporting](/guides/users-guide/export_schedule_email.png)
 

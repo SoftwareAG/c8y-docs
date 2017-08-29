@@ -874,7 +874,8 @@ Cumulocity includes a rule engine to analyze data in real-time and to perform ac
 
 To create rules, the Cockpit Application includes a Smart Rule Builder. Using the Smart Rules builder, rules can be created from templates. These rules are called smart rules. The templates are called smart rule templates.
 
-> Please note that, smart rules are only visible, if the tenant is subscribed to the smart rule application.
+> Please note that, smart rules are only visible, if the tenant is subscribed to the smart rule application. 
+Required global roles: to manage smart rules, user has to have INVENTORY CREATE permission and either SMART RULE permissions or CEP MANAGEMENT permissions.
 
 Smart Rules are parameterized. There are two sources for parameters:
 

@@ -526,7 +526,7 @@ Der Vorgangsstatus kann unter der entsprechenden Gruppe im "Sammelkommandos"-Tab
 
 ## <a name="credentials"></a>Verwaltung von Gerätezugangsdaten 
 
-Im Menü "Geräteregistrierung" sind alle Anmeldeinformationen aufgelistet, die für die angeschlossenen Geräte generiert wurden. Jedes Gerät, das registriert wurde, erscheint hier mit der Namenskonvention "device_&lt;id&gt;".
+Unter dem Menüpunkt "Gerätezugänge" unter "Verwaltung" sind alle Anmeldeinformationen aufgelistet, die für die angeschlossenen Geräte generiert wurden. Jedes Gerät, das registriert wurde, erscheint hier mit der Namenskonvention "device_&lt;id&gt;".
 
 In den meisten Fällen sollten Sie nichts bearbeiten müssen. Ausnahmen sind:
 
@@ -539,7 +539,6 @@ In den meisten Fällen sollten Sie nichts bearbeiten müssen. Ausnahmen sind:
 Die Geräte-Anmeldeinformationen können auch aus einer CSV-Datei bereitgestellt werden. Dateien können über die markierte Schaltfläche hochgeladen werden. Weitere Details zur Dateistruktur finden Sie unter [Sammelregistrierung](#creds-upload).
 
 ## <a name="simulators"></a> Simulatoren
-
 
 Mit dem Cumulocity-Simulator können alle Aspekte von IoT-Geräten simuliert werden:
 
@@ -580,20 +579,22 @@ Die andere Möglichkeit ist, einen Simulator aus einem bereits voreingestellten 
 
 Vorhandene Simulatoren können durch Klicken auf die drei untereinanderliegenden Kästchen in der rechten oberen Ecke bearbeitet, dupliziert oder entfernt werden. Es öffnet sich ein Dropdown-Menü mit diesen Optionen.
 
-![Edit Simulator](/guides/benutzerhandbuch/editcloneremsimde.png)
+![Simulator-Optionen](/guides/benutzerhandbuch/editcloneremsimde.png)
 
 
 ### Hinzufügen von Anweisungen für den Simulator
 
-Nach dem Einrichten eines Simulators können Sie Anweisungen hinzufügen, was Ihr Simulator tun soll. Anweisungen sind einzelne Arbeitsschritte, die zu einer Wiedergabeliste hinzugefügt werden. Der Simulator wird diese Liste durcharbeiten. Um ein Beispiel zu sehen, klicken Sie auf den Temperatursimulator.
+Nach dem Einrichten eines Simulators können Sie Anweisungen (Instruktionen) hinzufügen und definieren, was Ihr Simulator tun soll. Anweisungen sind einzelne Arbeitsschritte, die zu einer Wiedergabeliste hinzugefügt werden. Der Simulator arbeitet diese Liste durch. 
 
-![Add Instructions](/guides/users-guide/addinstructionsde.png)
+Im Folgenden ist ein Beispiel für einen Positionsereignissimulator dargestellt.
+
+![Simulator-Anweisungen](/guides/benutzerhandbuch/addinstructionsde.png)
 
 Die folgende Übersicht erscheint:
 
-![Add Instructions Step 2](/guides/users-guide/addinstructions2de.png)
+![Simulator-Anweisungen Schritt 2](/guides/benutzerhandbuch/addinstructions2de.png)
 
-Innerhalb dieses Presets sind bereits Musteranleitungen enthalten. Sie können 2 Schritte identifizieren: "Benutzerdefinierten Messwert erstellen" und "Warten".
+Innerhalb dieses voreingestellten Simulators sind bereits Musteranweisungen enthalten. Sie können zwei Schritte identifizieren: "Positionsereignis erzeugen und Geräteposition aktualisieren" und "Warten".
 
 ### Details der Anweisungen
 
@@ -602,16 +603,16 @@ Innerhalb dieses Presets sind bereits Musteranleitungen enthalten. Sie können 2
 Die Messanweisung bezieht sich auf ein Fragment. Dieses ist das unten gezeigte Beispiel. Fragmente werden verwendet, um die Fähigkeiten eines verwalteten Objekts zu identifizieren. Mehr Informationen über Fragmente finden Sie hier:
 [Sensor Library ](https://www.cumulocity.com/guides/reference/sensor-library/). 
 
-![Add Instructions Step 3](/guides/users-guide/addinstructions3de.png)
+![Simulator-Anweisungen Schritt 3](/guides/benutzerhandbuch/addinstructions3de.png)
 
 **SmartREST-Vorlagen**
 
-Andere Optionen zeigen eine Auswahl von SmartREST-Vorlagen. Die SmartREST-Vorlagen werden im Navigator unter dem Eintrag "Gerätetypen" > "SmartREST temSmart Rest Vorlagenplatten" ??? erstellt. Diese Vorlagen sind eine Antwortvorlage, die eine Liste von Werten erzeugt, die einen Vorgang als Endergebnis beschreiben. Die unten aufgeführte SmartREST-Vorlage erstellt einen Warnalarm mit Text zu einem bestimmten Zeitpunkt.
+Andere Optionen zeigen eine Auswahl von SmartREST-Vorlagen. Die SmartREST-Vorlagen werden im Navigator unter dem Eintrag "SmartRest Template" unter "Gerätetypen" erstellt. Diese Vorlagen sind Antwortvorlagen, die eine Liste von Werten erzeugen, die einen Vorgang als Endergebnis beschreiben. Die unten aufgeführte SmartREST-Vorlage erstellt einen Warnalarm mit Text zu einem bestimmten Zeitpunkt.
 Spezifische Informationen und Muster einer Vielzahl von Vorlagen sind erhältlich im [MQTT Developer's Guide](/guides/mqtt). 
 
-![Rest Template](/guides/users-guide/resttemplatede.png)
+![Rest Template](/guides/benutzerhandbuch/resttemplatede.png)
 
-![Add Instructions Step 4](/guides/users-guide/addinstructions4de.png)
+![Simulator-Anweisungen Schritt 4](/guides/benutzerhandbuch/addinstructions4de.png)
 
 Die Anweisung "Warten" erfordert einen Wert für die Dauer in Sekunden. Das Bedienfeld auf der rechten Bildschirmhälfte ändert sich entsprechend der Art der Anweisungen, die Sie wählen.
 
@@ -619,17 +620,17 @@ Die Anweisung "Warten" erfordert einen Wert für die Dauer in Sekunden. Das Bedi
 
 Direkt unter der Registerkarte "Anweisungen" finden Sie die unterstützten Kommandos. In diesem Menü können Sie bestimmte Funktionen wie Konfiguration oder Software-/Firmware-Update aktivieren oder deaktivieren.
 
-![Operations Off](/guides/users-guide/supop1de.png)
+![Kommandos aus](/guides/benutzerhandbuch/supop1de.png)
 
-![Operations On](/guides/users-guide/supop2de.png)
+![Kommandos an](/guides/benutzerhandbuch/supop2de.png)
 
-Einige Kommandos sind aktiviert. Mithilfe der Schaltfläche können Sie auch benutzerdefinierte Kommandos hinzufügen.
+Einige Kommandos sind aktiviert. Mithilfe der Schaltfläche "Benutzerdefinierte Kommandos hinzufügen" können Sie auch eigene Kommandos hinzufügen.
 
 ### Alarme (innerhalb der Simulatorfunktion)
 
 Der letzte Tab im Simulator-Menü beinhaltet Alarme.
 
-![Simulator Alarm](/guides/users-guide/simalarmde.png)
+![Simulator-Alarm](/guides/benutzerhandbuch/simalarmde.png)
 
 Dies sind nicht etwa die Alarme, die durch die simulierten Geräte erzeugt werden, sondern diese Alarme beziehen sich auf den Simulator selber. Wenn der Simulator nicht richtig arbeitet, werden hier Alarme oder Warnungen angezeigt.
 
@@ -668,22 +669,22 @@ In Cumulocity können Sie die Gateways über “Alle Geräte” in der Device-Ma
 
 ![router device](/guides/users-guide/routerdevice.png)
 
-Wählen Sie das Gateway aus der Liste aus. Unten können Sie den “Remote access”???-Tab sehen, falls Sie Cloud Remote Access abonniert haben. Wenn sie auf den Tab klicken, erscheint die Liste. 
+Wählen Sie das Gateway aus der Liste aus. Unten können Sie den “Fernzugriff"-Tab sehen, falls Sie Cloud Remote Access abonniert haben. Wenn sie auf den Tab klicken, erscheint die Liste. 
 
 ![Endpunkte](/guides/users-guide/endpoints.png)
 
-Sie können ferngesteuerte Geräte konfigurieren, indem Sie auf “Endpunkt hinzufügen”??? klicken. 
+Sie können ferngesteuerte Geräte konfigurieren, indem Sie auf “Endpunkt hinzufügen” klicken. 
 
 *Der "Endpunkt" ist die IP-Adresse und der Port des VNC-Servers, der auf dem Gerät läuft. Diese IP-Adresse und Port müssen vom Gateway erreichbar sein.* 
 
 
-*Um einen Endpunkt zu konfigurieren, benötigen Sie die folgenden Berechtigungen: Remote access??? muss auf “Ändern” und Gerätesteuerung??? muss auf “Ändern” gesetzt sein. Um Daten zu lesen, reicht eine "Lese"-Berechtigung. Für weitere Informationen über die Gewährung von Berechtigungen siehe [Administration](/guides/benutzerhandbuch/administration-deutsch/#users)*
+*Um einen Endpunkt zu konfigurieren, benötigen Sie die folgenden Berechtigungen: "Fernzugriff" muss auf “Ändern” und "Steuerung" muss auf “Ändern” gesetzt sein. Um Daten zu lesen, reicht eine "Lese"-Berechtigung. Für weitere Informationen über die Gewährung von Berechtigungen siehe [Administration](/guides/benutzerhandbuch/administration-deutsch/#users)*
 
 Ein Dialog wie in der Abbildung unten öffnet sich. Geben Sie die IP-Adresse, den Port und das Passwort des VNC-Servers ein. Wenn der Endpunkt hinzugefügt ist, wird er in der Liste angezeigt. 
 
 ![Remote-Access-Endpunkt](/guides/users-guide/remoteaccess.png)
 
-Um eine Verbindung zu konfigurierten Endpunkten zu schaffen, gehen Sie zum "Remote Access"???-Tab und wählen Sie einen Endpunkt aus. Diese Endpunkte stellen die ferngesteuerten Geräte dar. Wenn Sie auf "Verbinden" klicken, startet die VNC-Verbindung. Dafür benötigen Sie zumindest "Lese"-Rechte für die "Remote Access"-???Funktion und "Änderungs"-Rechte für die Gerätesteuerung???. Weitere Informationen über Nutzer und Berechtigungen finden Sie unter [Administration](/guides/benutzerhandbuch/administration-deutsch/#users).
+Um eine Verbindung zu konfigurierten Endpunkten zu schaffen, gehen Sie zum "Remote Access"???-Tab und wählen Sie einen Endpunkt aus. Diese Endpunkte stellen die ferngesteuerten Geräte dar. Wenn Sie auf "Verbinden" klicken, startet die VNC-Verbindung. Dafür benötigen Sie zumindest "Lese"-Rechte für die Fernzugriff-Funktion und "Änderungs"-Rechte für die Gerätesteuerung. Weitere Informationen über Nutzer und Berechtigungen finden Sie unter [Administration](/guides/benutzerhandbuch/administration-deutsch/#users).
 
 ![Endpunkte verbinden](/guides/users-guide/connectendp.png)
 

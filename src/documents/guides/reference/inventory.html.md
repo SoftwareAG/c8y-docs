@@ -503,7 +503,7 @@ Request body: ManagedObjectReference
 
 Response body: ManagedObjectReference
 
-Required role: ROLE\_INVENTORY\_ADMIN or ROLE\_INVENTORY\_CREATE
+Required role: ROLE\_INVENTORY\_ADMIN or parent and child owner
 
 Example Request: Add a ManagedObjectReference
 
@@ -582,7 +582,7 @@ Request Body: N/A.
 
 Response Message Body: N/A.
 
-Required role: ROLE\_INVENTORY\_ADMIN or owner
+Required role: ROLE\_INVENTORY\_ADMIN or parent owner or child owner
 
 Note: This operations just removes the reference, it does not delete the object itself.
 

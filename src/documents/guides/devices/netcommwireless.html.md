@@ -126,7 +126,7 @@ You can record statistics of the router's system resources usage for troubleshoo
 
 By default, collection of resource statistics is disabled. They can be enabled by setting a non-zero collecting interval in the "System resources measurements" entry of the [router user interface](#configure) or using [Device Shell](#shell):
 
-	set service.cumulocity.plugin.system_resources.interval=<interval>
+	set service.cumulocity.system_resources.interval=<interval>
 
 Collected data can be accessed in the "Measurements" tab or in a dashboard.
 
@@ -134,8 +134,8 @@ Collected data can be accessed in the "Measurements" tab or in a dashboard.
 
 To locate or trace the router, connect a GPS antenna to the router and enable its GPS functionality. Then [configure](#configure) the frequency of data collection by setting the "GPS position interval" and/or the "GPS position event" to a non-zero value. "GPS position interval" defines how often the current location of the router is updated. "GPS position event" defines how often the current location is stored as location update event for tracing. Similarly, you can set these parameters from Device Shell:
 
-	set service.cumulocity.plugin.ntc6200.gps.update_interval=<update interval>
-	set service.cumulocity.plugin.ntc6200.gps.interval=<event interval>
+	set service.cumulocity.gps.update_interval=<update interval>
+	set service.cumulocity.gps.interval=<event interval>
 
 After you applied the configuration changes, wait a moment for the first GPS data to arrive, then refresh the page. A "Location" and a "Tracking" tab should now appear. See the "[Location](/guides/users-guide/device-management#location)" and "[Tracking](/guides/users-guide/device-management#tracking)" sections in the user guide for more information.
 
@@ -153,7 +153,7 @@ Consult the documentation of your router for more information about its specific
 
 To regularly poll the input voltage of a GPIO pin and send it to Cumulocity, set "[GPIO analog measurements](#configure)" to a non-zero value. Alternatively, use Device Shell:
 
-	set service.cumulocity.plugin.ntc6200.gpio.interval=<interval>
+	set service.cumulocity.gpio.interval=<interval>
 	set service.cumulocity.gpio.<port>.notify=measurement
 
 &lt;port&gt; is the numbering of the GPIO pin. For the NTC-6200, &lt;port&gt; can be 1, 2 or 3, while for NTC-140W, &lt;port&gt; can only be 1. The Visualized result is then visible in "Measurements".

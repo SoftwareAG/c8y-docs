@@ -566,7 +566,7 @@ Show location of a device or all devices in the group. The map provides the foll
 
 Parameters to configure:
 
-* Target device or group: Select which devices are shown on the map. If a group is selected, all devices are visible.
+* Target device or group: Select which devices are shown on the map. If a group is selected, all devices in that group (but not in any subgroups) are visible.
 
 Note: If none of the target device(s) has a known location, then the widget show a world map with no icons.
 
@@ -850,11 +850,31 @@ Cumulocity includes a rule engine to analyze data in real-time and to perform ac
 
 To create rules, the Cockpit Application includes a Smart Rule Builder. Using the Smart Rules builder, rules can be created from templates. These rules are called smart rules. The templates are called smart rule templates.
 
+> Please note that, smart rules are only visible, if the tenant is subscribed to the smart rule application.
+
 Smart Rules are parameterized. There are two sources for parameters:
 
 **Rule Parameter** are provided by the user when creating a smart rule from a template. Examples are email addresses and alarm texts.
 
 **Object Parameter** are stored in the group or device. These parameters can be edited also after the smart rule was created. An example includes min and max values for thresholds.
+
+Smart rules can be seen under the "Info" tab of a device or group. They can also be seen in the "Smart Rules" menu item. 
+
+![Smart Rules info tab](/guides/users-guide/smartruleinfo.png)
+
+There are two different kinds of smart rules:
+
+- Local: Smart rules created in either a group or a device. They are visible to everyone with access to the group/device.
+- Global: These smart rules are created in a global context (smart rules section, alarms, data explorer, etc...). They are only visible to users with the relevant permissions.
+
+> In the "Smart Rules" navigation item only the global smart rules are shown. 
+
+In a local context (group or device) and without the relevant permissions, only the local smart rules are shown. Otherwise, with the relevant permissions, both local and global smart rules are shown.		
+
+The permissions required in order to see the global smart rules are:
+- Smart rule "read".
+- Smart rule "admin".
+- CEP management "admin".
 
 ### Creating a Smart Rule
 
@@ -882,8 +902,6 @@ Disabled Smart Rules are not displayed in group menus or device menus to avoid c
 Smart Rules can be instantiated multiple times.
 
 ### Activating and deactivating Smart Rules
-
-Smart Rules can be seen under the info tab of a device or group, They must be active within this group and can also be active on child asset level.
 
 A single Smart Rule can be activated (switched on) and deactivated (switched off) for a single object (group or device). For example, if a device is generating too many threshold alarms, you can deactivate the rule for this single object. The rule is still active for all other objects.
 

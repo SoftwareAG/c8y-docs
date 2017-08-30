@@ -19,7 +19,7 @@ Die Device-Management-Anwendung zeigt Ihnen Ihre angeschlossenen Geräte an und 
 * Verwalten von [Software und Firmware](#software-repo) auf Geräten
 * Verwalten der [Zugangsdaten](#credentials) von Geräten
 * [Simulation](#simulators) von Geräten
-* Nutzung von [Cloud Remote Access](#cloud_remote_access) für Fernzugriff auf Bedienkonsolen und andere Geräte
+* Nutzung von [Cloud Remote Access](#cloud_remote_access) für Fernzugriff auf Geräte 
 
 Die Device-Management-Anwendung sieht so aus:
 
@@ -85,15 +85,15 @@ In jedem Fall sehen Sie eine Liste der Geräte, wie im folgenden Beispiel gezeig
 
 Das Löschen eines Geräts bedeutet, das Gerät aus der Cumulocity-Datenbank zu entfernen, einschließlich aller damit generierten Daten. Alternativ zum Löschen eines Gerätes können Sie auch alle ausgeschalteten Geräte in eine Gruppe organisieren. Dadurch wird sichergestellt, dass alle alten Berichte korrekt bleiben. Um zu verhindern, dass Alarme für die ausgeschalteten Geräte eingehen, deaktivieren Sie die [Verbindungsüberwachung](#connection-monitoring). Beim Löschen eines Geräts werden die Daten seiner Kindgeräte nicht gelöscht.
 
-<img src="/guides/users-guide/devicelistde.png" alt="Device List" style="max-width: 100%">
+<img src="/guides/benutzerhandbuch/devicelistde.png" alt="Geräteliste" style="max-width: 100%">
 
 Falls eine Liste mehr als 1.000 Einträge enthält, werden nur die ersten 1.000 Einträge angezeigt. Klicken Sie unten auf den Link "Laden", um die nächsten 1.000 Einträge zu laden.
 
 ## <a name="searching-devices"></a>Geräte suchen
 
-Cumulocity enthält eine Volltextsuche nach Geräten. Durch Eingabe eines Suchbegriffs in das Textfeld "Suche ..." finden Sie alle Geräte, die diesen Begriff enthalten. Das folgende Bild zeigt ein Beispiel für die Suche nach Geräten, die den Begriff "Ublox C027" enthalten. Sie können nach beliebigen Texteigenschaften eines Geräts suchen. Präfixe werden ebenfalls unterstützt. Zum Beispiel würde eine Suche nach "Ublox" auch die Geräte mit "Ublox C027" zurückgeben. Suffixe werden derzeit nicht unterstützt. Zum Beispiel würde die Suche nach "C027" nicht die "Ublox C027" zurückgeben.
+Cumulocity enthält eine Volltextsuche nach Geräten. Durch Eingabe eines Suchbegriffs in das Suchfeld finden Sie alle Geräte, die diesen Begriff enthalten. Das folgende Bild zeigt ein Beispiel für die Suche nach Geräten, die den Begriff "Ublox C027" enthalten. Sie können nach beliebigen Texteigenschaften eines Geräts suchen. Präfixe werden ebenfalls unterstützt. Zum Beispiel würde eine Suche nach "Ublox" auch die Geräte mit "Ublox C027" zurückgeben. Suffixe werden derzeit nicht unterstützt. Zum Beispiel würde die Suche nach "C027" nicht die "Ublox C027" zurückgeben.
 
-<img src="/guides/benutzerhandbuch/suche.png" alt="Full Text Search" style="max-width: 100%">
+<img src="/guides/benutzerhandbuch/suche.png" alt="Volltextsuche" style="max-width: 100%">
 
 ## <a name="grouping-devices"></a>Geräte gruppieren
 
@@ -101,18 +101,18 @@ Geräte können beliebig nach Ihrem Anwendungsfall gruppiert werden. Ein Gerät 
 
 Cumulocity unterscheidet zwischen Top-Level-Gruppen und Untergruppen. Top-Level-Gruppen werden im Navigator auf oberster Ebene im Abschnitt "Gruppen" angezeigt. Sie sind Ihr Haupteingangspunkt. Untergruppen werden verwendet, um Gruppen weiter zu unterteilen.
 
-Um eine Top-Level-Gruppe zu erstellen, klicken Sie oben rechts neben dem Suchfeld auf die Plustaste und wählen Sie dann "Neue Gruppe hinzufügen". Ein kleines Fenster erscheint. Geben Sie einen Gruppennamen ein und suchen Sie nach den Geräten, die der Gruppe hinzugefügt werden sollen. Markieren Sie die Geräte und drücken Sie die Schaltfläche "Gruppe mit X Geräten erstellen", um den Vorgang abzuschließen. ( "X" ist die Anzahl der Geräte, die Sie markiert haben).
+Um eine Top-Level-Gruppe zu erstellen, klicken Sie oben rechts neben dem Suchfeld auf die Plustaste und wählen Sie dann "Neue Gruppe hinzufügen". Ein kleines Fenster erscheint. Geben Sie einen Gruppennamen ein und suchen Sie nach den Geräten, die der Gruppe hinzugefügt werden sollen. Markieren Sie die Geräte und drücken Sie die Schaltfläche "Gruppe mit X Geräten erstellen", um den Vorgang abzuschließen. ( "X" ist die Anzahl der Geräte, die Sie markiert haben.)
 > Eine Gruppe kann auch "0" Geräte enthalten.
 
-<img src="/guides/users-guide/gruppe2ger.png" alt="Adding top-level groups" style="max-width: 100%">
+<img src="/guides/benutzerhandbuch/gruppe2ger.png" alt="Gruppe hinzufügen" style="max-width: 100%">
 
 Sie können auch Geräte auf zwei andere Weisen hinzufügen: 
 
 * Wählen Sie ein Gerät aus und scrollen Sie nach unten zum Abschnitt "Gruppen" auf der Registerkarte "Info". Verwenden Sie das Dropdown-Menü mit dem Namen "Gruppen auswählen oder suchen", um eine Gruppe auszuwählen, in die das Gerät eingefügt werden soll.
-* Wählen Sie eine Gruppe aus. Gehen Sie auf die Registerkarte "Kindgeräte" auf der linken Seite und wählen Sie sie aus. Klicken Sie dann rechts oben in der Gruppenliste auf "Geräte zuordnen". Ein neues Menü öffnet sich. Suchen Sie nach den Geräten, die im Suchfeld hinzugefügt werden sollen. Markieren Sie dann die entsprechenden Geräte im Ergebnis und klicken Sie auf die Schaltfläche "X Geräte zugeordnet" am unteren Rand der Ergebnisliste.
+* Wählen Sie eine Gruppe aus. Gehen Sie auf die Registerkarte "Kindassets" auf der linken Seite und wählen Sie sie aus. Klicken Sie dann rechts oben in der Gruppenliste auf "Geräte zuordnen". Ein neues Menü öffnet sich. Suchen Sie nach den Geräten, die im Suchfeld hinzugefügt werden sollen. Markieren Sie dann die entsprechenden Geräte im Ergebnis und klicken Sie auf die Schaltfläche "X Geräte zugeordnet" am unteren Rand der Ergebnisliste.
 
 
-<img src="/guides/users-guide/subassetaddde.png" alt="Adding top-level groups" style="max-width: 100%">
+<img src="/guides/users-guide/subassetaddde.png" alt="Geräte zuordnen" style="max-width: 100%">
 
 
 Um eine Untergruppe zu erstellen, klicken Sie einfach auf "Gruppe hinzufügen", wenn Sie eine Gruppe ansehen.
@@ -123,24 +123,19 @@ Um eine Gruppe zu bearbeiten, klicken Sie auf den Namen der Gruppe und auf "Edit
 
 Dynamische Gruppen sind Gruppen basierend auf Filterkriterien. Sie haben einen vorübergehenden Charakter, da sich die Anzahl der Mitglieder ständig verändern kann. Diese Gruppen haben keine festen Mitgliederlisten, sondern stattdessen bestimmte Auswahlkriterien. Diese Art von Gruppe kann verwendet werden für Sammel-Upgrades eines Gerätyps auf eine neue Software- oder Firmware-Version.
 
-<img src="/guides/users-guide/smartfiltersde.png" alt="Adding top-level groups" style="max-width: 100%">
+<img src="/guides/benutzerhandbuch/smartfiltersde.png" alt="Dynamische Gruppen" style="max-width: 100%">
 
 Durch Auswahl von "Alle Geräte" können dynamische Gruppen angelegt werden. Um eine neue Gruppe zu erstellen, verwenden Sie einfach Filter, um Geräte auszuwählen. Klicken Sie nun auf "Dynamische Gruppe erstellen" und geben Sie der Gruppe einen Namen.
 
-<img src="/guides/users-guide/smartgroup1de.png" alt="Adding top-level groups" style="max-width: 100%">
+<img src="/guides/benutzerhandbuch/smartgroup1de.png" alt="Dynamische Gruppe erstellen" style="max-width: 100%">
 
-Wenn die Gruppe erstellt wird, wird sie als Gruppe der obersten Ebene im Abschnitt "Gruppen" angezeigt. Sie können Filterkriterien anpassen, indem Sie die Registerkarte "Kindgeräte" auswählen und die Filtereinstellungen ändern.
-
-<img src="/guides/users-guide/smartgroup2de.png" alt="Adding top-level groups" style="max-width: 100%">
+Wenn die Gruppe erstellt wird, wird sie als Gruppe der obersten Ebene im Abschnitt "Gruppen" angezeigt. Sie können Filterkriterien anpassen, indem Sie die Registerkarte "Kindassets" auswählen und die Filtereinstellungen ändern.
 
 Benutzer können auch dynamische Gruppen aus den Gruppen der obersten Ebene löschen. Dieser Vorgang ist irreversibel.
 
+<img src="/guides/benutzerhandbuch/smartgroupdelete1de.png" alt="Dynamische Gruppe entfernen" style="max-width: 100%">
 
 > Dynamische Gruppen können nicht in der Cockpit-Anwendung genutzt werden.
-
-<img src="/guides/users-guide/smartgroupdelete1de.png" alt="Adding top-level groups" style="max-width: 100%">
-
-<img src="/guides/users-guide/smartgroupdelete2de.png" alt="Adding top-level groups" style="max-width: 100%">
 
 ## <a name="device-details"></a>Anzeigen der Gerätedetails
 
@@ -638,7 +633,7 @@ Dies sind nicht etwa die Alarme, die durch die simulierten Geräte erzeugt werde
 
 ### Übersicht
 
-Cumulocity Cloud Remote Access implementiert Virtual Network Computing (VNC), um mit einer grafischen Benutzeroberfläche Fernzugriff auf Bedienkonsolen und andere Geräte zu erhalten. Die Anwender der Geräte können so über einen Webbrowser mit den Geräten arbeiten, als ob sie sich direkt vor ihnen befinden. 
+Cumulocity Cloud Remote Access implementiert Virtual Network Computing (VNC), um Fernzugriff auf Bedienkonsolen und andere Geräte mit einer grafischen Benutzeroberfläche zu erhalten. Die Anwender der Geräte können so über einen Webbrowser mit den Geräten arbeiten, als ob sie sich direkt vor ihnen befinden. 
 
 ![VNC](/guides/benutzerhandbuch/VNC1a-DE.png)
 
@@ -648,7 +643,7 @@ Cloud Remote Access funktioniert wie in der Abbildung unten dargestellt. Ausgehe
 
 Mit Cloud Remote Access können Sie
 
-- Statusvisualisierungen ansehen und Updates von ferngesteuerten Geräten sofort überwachen, so als befänden Sie sich direkt am Gerät
+- Statusvisualisierungen ansehen und Updates von ferngesteuerten Geräten jederzeit überwachen, so als befänden Sie sich direkt am Gerät
 - einfach eine Verbindung zu ferngesteuerten Geräten erstellen, da komplizierte VPN-Setups nicht nötig sind 
 
 ![VNC1b](/guides/benutzerhandbuch/VNC1b-DE.png)
@@ -662,42 +657,39 @@ Cloud Remote Access ist zugänglich über die Device-Management-Anwendung.
 **Voraussetzungen:**
 
 - Ein Gateway, das mit Cloud Remote Access kompatibel ist, ist mit Ihrem Cumulocity-Konto verbunden.  
-- Ein Gerät mit einem VNC-Server ist mit dem Gateway verbunden ist und kann vom Gateway erreicht werden. 
-- Cloud Remote Access wurde von Ihnen abonniert. Wenn Sie den "Remote access"???-Tab nicht sehen können, wenden Sie sich an sales@cumulocity.com.
+- Ein Gerät mit einem VNC-Server ist mit dem Gateway verbunden und kann vom Gateway erreicht werden. 
+- Cloud Remote Access wurde von Ihnen abonniert. Wenn Sie den "Fernzugriff"-Tab nicht sehen können, wenden Sie sich an sales@cumulocity.com.
 
 In Cumulocity können Sie die Gateways über “Alle Geräte” in der Device-Management-Anwendung finden. 
 
-![router device](/guides/users-guide/routerdevice.png)
+![Router](/guides/benutzerhandbuch/routerdevice-de.png)
 
-Wählen Sie das Gateway aus der Liste aus. Unten können Sie den “Fernzugriff"-Tab sehen, falls Sie Cloud Remote Access abonniert haben. Wenn sie auf den Tab klicken, erscheint die Liste. 
+Wählen Sie das Gateway aus der Liste aus. Unten sehen Sie den “Fernzugriff"-Tab. Wenn sie auf den Tab klicken, erscheint eine Liste mit Endpunkten dieses Geräts. Sie können ferngesteuerte Geräte konfigurieren, indem Sie auf “Endpunkt hinzufügen” klicken. 
 
-![Endpunkte](/guides/users-guide/endpoints.png)
+![Endpunkte](/guides/benutzerhandbuch/endpoints-de.png)
 
-Sie können ferngesteuerte Geräte konfigurieren, indem Sie auf “Endpunkt hinzufügen” klicken. 
+Der Endpunkt ist die IP-Adresse und der Port des VNC-Servers, der auf dem Gerät läuft. Die IP-Adresse und der Port müssen vom Gateway erreichbar sein.
 
-*Der "Endpunkt" ist die IP-Adresse und der Port des VNC-Servers, der auf dem Gerät läuft. Diese IP-Adresse und Port müssen vom Gateway erreichbar sein.* 
+Um einen Endpunkt zu konfigurieren, benötigen Sie die folgenden Berechtigungen: Sowohl "Remote access" (Fernzugriff) als auch "Kommandos" müssen auf “Admin” gesetzt sein. Um Daten zu lesen, reicht eine "Lese"-Berechtigung. Für weitere Informationen über die Gewährung von Berechtigungen siehe [Berechtigungen verwalten](/guides/benutzerhandbuch/administration-deutsch/#permissions).
 
+Ein Dialogfenster öffnet sich, in dem Sie den Endpunkt konfigurieren können. Geben Sie die IP-Adresse, den Port und das Passwort des VNC-Servers ein. Wenn der Endpunkt hinzugefügt ist, wird er in der Liste der Endpunkte angezeigt. 
 
-*Um einen Endpunkt zu konfigurieren, benötigen Sie die folgenden Berechtigungen: "Fernzugriff" muss auf “Ändern” und "Steuerung" muss auf “Ändern” gesetzt sein. Um Daten zu lesen, reicht eine "Lese"-Berechtigung. Für weitere Informationen über die Gewährung von Berechtigungen siehe [Administration](/guides/benutzerhandbuch/administration-deutsch/#users)*
+![Remote-Access-Endpunkt](/guides/benutzerhandbuch/remoteaccess-de.png)
 
-Ein Dialog wie in der Abbildung unten öffnet sich. Geben Sie die IP-Adresse, den Port und das Passwort des VNC-Servers ein. Wenn der Endpunkt hinzugefügt ist, wird er in der Liste angezeigt. 
+Um eine Verbindung zu konfigurierten Endpunkten zu schaffen, gehen Sie zum "Fernzugriff"-Tab und wählen Sie einen Endpunkt aus. Diese Endpunkte stellen die ferngesteuerten Geräte dar. Wenn Sie auf "Verbinden" klicken, startet die VNC-Verbindung. 
 
-![Remote-Access-Endpunkt](/guides/users-guide/remoteaccess.png)
+![Endpunkte verbinden](/guides/benutzerhandbuch/connectendp-de.png)
 
-Um eine Verbindung zu konfigurierten Endpunkten zu schaffen, gehen Sie zum "Remote Access"???-Tab und wählen Sie einen Endpunkt aus. Diese Endpunkte stellen die ferngesteuerten Geräte dar. Wenn Sie auf "Verbinden" klicken, startet die VNC-Verbindung. Dafür benötigen Sie zumindest "Lese"-Rechte für die Fernzugriff-Funktion und "Änderungs"-Rechte für die Gerätesteuerung. Weitere Informationen über Nutzer und Berechtigungen finden Sie unter [Administration](/guides/benutzerhandbuch/administration-deutsch/#users).
-
-![Endpunkte verbinden](/guides/users-guide/connectendp.png)
-
-Ein neuer Browser-Tab öffnet sich, und innerhalb von wenigen Mömenten sehen Sie die Frontseite bzw. die Bedienkonsole des verbundenen Gerätes. Die obere Leiste des Bildschirms zeigt "starting VNC handshake”??? an, wenn der Vorgang startet. 
+Ein neuer Browser-Tab öffnet sich, und innerhalb von wenigen Momenten sehen Sie den Bildschirm bzw. die Bedienkonsole des verbundenen Gerätes. Die obere Leiste des Bildschirms zeigt "Starting VNC handshake” an, wenn der Vorgang startet. 
 
 Über das kleine Zahnrad am Ende der Reihe öffnet sich ein Dialog, mit dem Sie Endpunkte bearbeiten oder entfernen können.
 
-![Endpunkte bearbeiten](/guides/users-guide/editendpoint.png)
+![Endpunkte bearbeiten](/guides/benutzerhandbuch/editendpoint-de.png)
 
-### Troubleshooting
+### Troubleshooting von Cloud Remote Access
 
-Vergewissern Sie sich, dass Sie die nötigen Berechtigungen für das Hinzufügen von Endpunkten haben. Sie benötigen "Ändern"-Rechte für Remote Access??? und Gerätesteuerung???. Ohne  "Änderungs"-Rechte in der Gerätesteuerung??? können Sie keine Geräte registrieren, und ohne "Änderungs"-Rechte beim Remote Access??? können Sie keine Endpunkte hinzufügen.
-Um eine Verbindung zu einer ferngesteuerten Bedienkonsole zu erstellen, reichen "Lese"-Rechte beim Remote Access???.
+Vergewissern Sie sich, dass Sie die nötigen Berechtigungen für das Hinzufügen von Endpunkten haben. Sie benötigen "Admin"-Rechte für den Fernzugriff ("Remote access") und die Kommandos. Ohne Admin-Rechte bei den Kommandos können Sie keine Geräte registrieren, und ohne Admin-Rechte beim Fernzugriff können Sie keine Endpunkte hinzufügen.
+Um eine Verbindung zu einer ferngesteuerten Bedienkonsole zu erstellen, reichen "Lese"-Rechte beim "Remote access".
 
 Die VNC-Verbindung zu einem VNC-Server über ein Gateway kann auch aufgrund von Netzwerkproblemen fehlschlagen. In diesem Fall wenden Sie sich an Ihren Netzwerkadministrator.
 

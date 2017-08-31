@@ -242,7 +242,7 @@ Auf dieser Registerkarte werden die Vorgänge aufgeführt, die an ein Gerät ges
 
 In der Konfiguration können Sie die Parameter und Grundeinstellungen Ihres Geräts konfigurieren. Sie können eine Gerätekonfiguration manuell hinzufügen oder bearbeiten.
 
-<img src="/guides/users-guide/textconfig.png" alt="Device details" style="max-width: 100%">
+<img src="/guides/benutzerhandbuch/textconfig-de.png" alt="Device details" style="max-width: 100%">
 
 ### Hinzufügen oder Bearbeiten einer Gerätekonfiguration
 
@@ -257,11 +257,11 @@ So können Sie eine Gerätekonfiguration manuell hinzufügen oder bearbeiten:
 
 Die binäre Konfiguration erlaubt Ihnen, Konfigurationsdaten abzurufen, zu ändern oder zu speichern. Die Konfigurationsdaten enthalten die Parameter und die Grundeinstellungen Ihres Gerätes. Diese Option finden Sie unter "Konfigurationsablage" im Menüpunkt "Verwaltung".
 
-<center><img src="/guides/users-guide/configrepscreenshotde.png" alt="Konfigurationsablage" style="max-width: 100%"></center>
+<center><img src="/guides/benutzerhandbuch/configrepscreenshotde.png" alt="Konfigurationsablage" style="max-width: 100%"></center>
 
 Ein gutes Anwendungsbeispiel für den Konfigurations-Snapshot ist, wenn die gleiche Konfiguration auf mehrere Geräte angewendet wird. Mit dem Konfigurations-Snapshot können Sie ein Gerät konfigurieren, den Snapshot herunterladen und auf andere Geräte übertragen.
 
-![Configuration Snapshot](/guides/users-guide/configsnapde.png)
+![Configuration Snapshot](/guides/benutzerhandbuch/configsnapde.png)
 
 ### Abrufen einer aktuellen Snapshot-Konfiguration von einem Gerät
 
@@ -336,7 +336,7 @@ In der Eingabeaufforderung können Sie beliebigen Befehlstext eingeben. Um den B
 
 Um Ihnen mit der Befehlssyntax zu helfen, sind häufig verwendete Befehle für einige Geräte verfügbar, indem Sie auf die Schaltfläche "Wählen Sie ein Beispielkommando aus" klicken. Wählen Sie einen Befehl aus und klicken Sie auf "Verwenden", um den Befehl in die Eingabeaufforderung zu kopieren, oder wählen Sie "Ausführen", um den Befehl sofort auszuführen.
 
-![Shell-Kommandos](/guides/benutzerhandbuch/shelltemplates-de.png)
+<img src="/guides/benutzerhandbuch/shelltemplates-de.png" alt="Shell-Kommandos" style="max-width: 60%">
 
 ### <a name="permissions"></a>Berechtigungen
 
@@ -392,7 +392,7 @@ Der untere Pfeil zeigt den Status der Push-Verbindung an, über die Befehle von 
 
 "Wartungsmodus" ist ein spezieller Verbindungsstatus, der anzeigt, dass das Gerät aktuell gewartet wird und nicht überwacht werden soll. Während ein Gerät gewartet wird, werden keine Alarme für dieses Gerät ausgelöst. Sie können den Wartungsmodus aktivieren, indem Sie das erforderliche Intervall auf einen negativen Wert setzen.
 
-<center><img src="/guides/users-guide/verbcontr1.png" alt="Device details" style="max-width: 100%"></center>
+<center><img src="/guides/users-guide/verbcontr1.png" alt="Device details" style="max-width: 80%"></center>
 
 
 > Die Verbindungsüberwachung erfolgt nicht in Echtzeit. Beispielsweise ändert sich der Zustand der Verbindung nicht sofort, wenn Sie ein Gerät ausschalten. Abhängig von Ihrem Netzwerk kann es ungefähr 20 Minuten dauern, bis eine defekte Verbindung entdeckt wird, da das Netzwerk das Senden von Daten für eine signifikante Zeitspanne wiederholt.

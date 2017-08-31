@@ -93,7 +93,7 @@ Die allgemeine Struktur einer Cumulocity-Anwendung wird im folgenden Screenshot 
 
 <img src="/guides/benutzerhandbuch/Benutzeroberflaeche.png" alt="Benutzeroberfläche" style="max-width: 100%">
 
-Bei kleineren Bildschirmen ändert sich das Layout der Benutzeroberfläche wie unten gezeigt. Der Navigator ist ausgeblendet, und nur einige Tabs werden im Bildschirmbereich angezeigt. Um auf den Navigator zuzugreifen, klicken Sie auf die drei Linien links oben. Um auf andere Registerkarten zuzugreifen, navigieren Sie nach links oder rechts. (Wie man genau scrollt, ist abhängig vom Gerätetyp.)
+Bei kleineren Bildschirmen ändert sich das Layout der Benutzeroberfläche wie unten gezeigt. Der Navigator ist ausgeblendet, und nur ein Tab wird im Bildschirmbereich angezeigt. Um auf den Navigator zuzugreifen, klicken Sie auf das Kästchen mit Pfeil links oben. Um weitere Tabs einzublenden, klicken Sie auf den Pfeil nach unten in der Titelzeile des sichtbaren Tabs.
 
 <img src="/guides/benutzerhandbuch/Benutzeroberflaeche-mobil.png" alt="Benutzeroberfläche auf kleinen Geräten" style="max-width: 50%">
 

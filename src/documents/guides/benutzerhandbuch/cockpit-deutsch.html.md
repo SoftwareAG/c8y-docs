@@ -9,20 +9,20 @@ layout: default
 
 Die Cockpit-Anwendung bietet Ihnen Optionen, um Internet der Dinge (IoT) Assets und Geschäftsdaten zu verwalten. In diesem Handbuch zeigen wir Ihnen, wie Sie:
 
-- Anfangen das [Cumulocity Cockpit](#start) zu benutzen und mit dem [Home Dashboard](#home) zu arbeiten.
-- [Geräte verbinden](#connect) und [Assets](#asset) verwalten.
-- [Visualisierung](#visualise) von Daten mit Hilfe des Daten-Explorer.
-- Arbeiten mit [Dashboards](#dashboards)
-- Umgang mit [Widgets](#widgets) und dem [Business Rule](#business) Paket
+- das [Cumulocity-Cockpit](#start) benutzen und mit dem [Home Dashboard](#home) arbeiten
+- [Geräte verbinden](#connect) und [Assets](#asset) verwalten
+- Daten mit Hilfe des Daten-Explorers [visualisieren](#visualise)
+- mit [Dashboards](#dashboards) arbeiten
+- mit [Widgets](#widgets) und dem [Geschäftsregel](#business)-Paket umgehen
 - [Alarme](#alarms), [Berichte](#reports) und [Smart Rules](#rules) verwalten
-- Nutzung der [Datenpunktbibliothek](#library)
+- die [Datenpunktbibliothek](#library) benutzen
 
 Weitere Informationen zur Cockpit-Anwendung finden Sie in der folgenden Einführung.
 
 
 ## <a name="intro"></a>Einführung
 
-Das Cumulocity Cockpit kann in vielen Industriebereichen eingesetzt werden, einschließlich:
+Das Cumulocity-Cockpit kann in vielen Industriebereichen eingesetzt werden, einschließlich:
 
 * Zustandsüberwachung
 
@@ -40,33 +40,33 @@ Im folgenden Abschnitt wird die Cockpit-Anwendung beschrieben. Sie bietet viel F
 
 * **Dashboards**: Erstellen Sie eigene Analysen und Monitor-Seiten, indem Sie Widgets auswählen und anordnen. Wählen Sie aus verschiedenen Widgets, einschließlich Karten, Tabellen, Grafiken, Diagramme, Steuerelemente und mehr.
 
-* **Smart Rule Baukasten**: Erstellen Sie Verarbeitungs-Regeln für generierte Daten.
+* **Smart-Rule-Baukasten**: Erstellen Sie Verarbeitungs-Regeln für generierte Daten.
 
-* **Geschäfts-Regel Paket**: Verwenden Sie vordefinierte Geschäftsregeln für Geofencing, Schwellenwerte oder Alarm-Eskalationen und Benachrichtigungen als (SMS / E-Mail / Sprache).
+* **Geschäftsregel-Paket**: Verwenden Sie vordefinierte Geschäftsregeln für Geofencing, Schwellenwerte oder Alarm-Eskalationen und Benachrichtigungen (SMS/E-Mail/Sprache).
 
-* **Berichte**: Erstellen Sie Berichte mit integrierten Dashboard und verschicken Sie sie per Email.
+* **Berichte**: Erstellen Sie Berichte auf Basis des Dashboard-Layouts und verschicken Sie sie per E-Mail.
 
 * **Asset Management**: Organisieren Sie Assets in Hierarchien.
 
-* **Alarme verwalten**: Überwachen Sie die Probleme Ihres Assets anhand von Schweregraden und Arbeitsabläufen.
+* **Alarme verwalten**: Überwachen Sie die Probleme Ihrer Assets anhand von Schweregraden und Arbeitsabläufen.
 
-* **Datenpunktbibliothek**: Verwalten Sie die Standardeinstellungen ("Profile") Ihrer Geräte und übernehmen Sie diese automatisch mit Hilfe der "Datenpunktbibliothek".
+* **Datenpunktbibliothek**: Verwalten Sie die Standardeinstellungen ("Profile") Ihrer Geräte und übernehmen Sie diese automatisch mit Hilfe der Datenpunktbibliothek.
 
 ### Konzepte
 
 Die wichtigsten Konzepte der Cockpit-Anwendung sind:
 
-**Asset**: Ein Asset repräsentiert ein Objekt wie Gebäude, Maschinen oder Autos.
+**Asset**: Ein Asset repräsentiert ein Objekt, wie ein Gebäude, eine Maschine oder ein Auto.
 
-**Asset Hierarchie**: Die Assets sind hierarchisch (wie Bäume) organisiert. Die Verzweigungen des Baums repräsentieren Gruppen und die Blätter des Baums repräsentieren die einzelnden Geräte.
+**Asset-Hierarchie**: Die Assets sind hierarchisch (wie Bäume) organisiert. Die Verzweigungen des Baums repräsentieren Gruppen und die Blätter des Baums repräsentieren die einzelnden Geräte.
 
-**Gruppe**: Eine Gruppe ist eine Möglichkeit, Geräte und Assets in einer Asset-Hierarchie zu organisieren. Eine Gruppe kann ein oder mehrere Geräte, untergeordnete (Kind)Geräte oder andere Gruppen enthalten.
+**Gruppe**: Eine Gruppe ist eine Möglichkeit, Geräte und Assets in einer Asset-Hierarchie zu organisieren. Eine Gruppe kann ein oder mehrere Geräte, Kindgeräte oder andere Gruppen enthalten.
 
-**Gerät**: Ein IoT-Gerät kann entweder ein Gateway-Gerät oder ein über ein Gateway (wie Modbus oder KNX-Gerät) indirekt verbundenes Gerät oder ein Sensor sein.
+**Gerät**: Ein IoT-Gerät kann entweder ein Gateway-Gerät oder ein über ein Gateway (wie ein Modbus- oder KNX-Gerät) indirekt verbundenes Gerät oder ein Sensor sein.
 
-**Datenpunkt**: Sie repräsentieren Sensordaten, wie Temperatur-Zeitreihen. In anderen Teilen von Cumulocity werden sie Messungen genannt. Andere Begriffe sind Zeitreihen oder Variablen. Sie sind immer Sensor erzeugte Daten.
+**Datenpunkt**: Sie repräsentieren Sensordaten, wie Temperatur-Zeitreihen. In anderen Teilen von Cumulocity werden sie Messungen genannt. Andere Begriffe dafür sind Zeitreihe oder Variable. Sie sind immer von Sensoren erzeugte Daten.
 
-**Datenpunkt Eigenschaften**: Metadaten für einen Datenpunkt, die zusätzliche Eigenschaften darstellen, die vom Benutzer wie ein Label, Min / Max-Werte, Schwellenwerte oder andere hinzugefügt werden.
+**Datenpunkteigenschaften**: Metadaten für einen Datenpunkt, die zusätzliche Eigenschaften darstellen, die vom Benutzer hinzugefügt werden, wie ein Label, Min-/Max-Werte, Schwellenwerte oder andere.
 
 **Dashboard**: Eine benutzerdefinierte Seite mit einzelnen Inhalten aus verschiedenen Widgets.
 
@@ -74,20 +74,22 @@ Die wichtigsten Konzepte der Cockpit-Anwendung sind:
 
 **Smart Rules**: Cumulocity-Geschäftsregeln sind Instanzen aus einer intelligenten Regelvorlage, die den Smart Rule Builder verwendet.
 
-### Cumulocity Anwendungen
+### Cumulocity-Anwendungen
 
-Die Cockpit Anwendung basiert auf dem Cumulocity Anwendungs- framwork.
-Mehr zu den folgenden Dingen finden Sie auch hier:"[Einführung](/guides/users-guide/overview)":
+Die Cockpit-Anwendung basiert auf dem Cumulocity-Anwendungs-Framework.
+Informationen zu den folgenden Punkten finden Sie in der [Einführung](/guides/users-guide/overview):
 
 * Welche Webbrowser werden unterstützt?
 * Wie melde ich mich bei Cumulocity an?
-* Wie navigiere ich?* Wie in die Anwendung verlinken?* Wie benutzt man Cumulocity auf Touchgeräten?
-* Benutzeroberflächenkonventionen
+* Wie navigiere ich?
+* Wie verlinke ich in die Anwendung?
+* Wie benutzt man Cumulocity auf Touchgeräten?
+* Wie sind die Benutzeroberflächenkonventionen?
 
-## <a name="start"></a>Der Anfang mit Cumulocity Cockpit
-### Willkommen Seite
+## <a name="start"></a>Der Anfang mit dem Cumulocity-Cockpit
+### Willkommensseite
 
-Die Willkommensseite wird geöffnet, sobald Sie sich bei Cumulocity Cockpit anmelden.
+Die Willkommensseite wird geöffnet, sobald Sie sich beim Cumulocity-Cockpit anmelden.
 
 
 ![image alt text](/guides/users-guide/willkommen.png)
@@ -110,7 +112,7 @@ Klicken Sie hierzu oben rechts auf "Beim Starten nicht anzeigen".
 
 ### Willkommensseite als Standard wiederherstellen
 
-Um die Willkommensseite wiederherzustellen, wählen Sie im Navigator links oben "Willkommen". Deaktivieren Sie dann "Beim Start nicht anzeigen".
+Um die Willkommensseite als Startseite wiederherzustellen, wählen Sie im Navigator links oben "Willkommen". Deaktivieren Sie dann "Beim Start nicht anzeigen".
 
 ## <a name="home"></a>Home Dashboard
 
@@ -121,48 +123,49 @@ Die Cockpit-Startseite ist eine Dashboard-Seite:
 Das Dashboard zeigt Daten für den Mandanten an. 
 Das Home-Dashboard ist eine Seite, die von allen Benutzern des Mandanten gemeinsam genutzt wird. Sie besteht aus Widgets, die IoT-Daten visualisieren. Standardmäßig enthält das Home-Dashboard fünf Widgets, die einen Begrüßungstext, eine Zusammenfassung der verfügbaren Objekte, Assets mit Alarmen, neue Alarme und eine Karte aller Objekte anzeigen.
 
-Das Home-Dashboard kann ähnlich wie andere Cockpit-Dashboards bearbeitet werden: Sie können die angezeigten Widgets hinzufügen, entfernen oder ändern. Verwenden Sie das Einstellungssymbol (drei Punkte untereinander)oben rechts oder bewegen Sie den Cursor innerhalb eines Widgets und verwenden Sie das Einstellungssymbol des individuellen Widgets.
+Das Home-Dashboard kann ähnlich wie andere Cockpit-Dashboards bearbeitet werden: Sie können die angezeigten Widgets hinzufügen, entfernen oder ändern. Verwenden Sie das Einstellungssymbol (drei Punkte untereinander) oben rechts oder bewegen Sie den Cursor innerhalb eines Widgets und verwenden Sie das Einstellungssymbol des individuellen Widgets.
 
-Weitere Informationen hierzu finden Sie unter "Bearbeiten eines Dashboards" weiter unten.
+Weitere Informationen hierzu finden Sie unter [Dashboard bearbeiten](#Dashboard bearbeiten) weiter unten.
 
-Um das Dashboard auf den ursprünglichen Inhalt zurückzusetzen, verwenden Sie den Menüpunkt "Standard-Dashboard zurücksetzen" aus dem Zahnrad-Symbol.
+Um das Dashboard auf den ursprünglichen Inhalt zurückzusetzen, verwenden Sie den Menüpunkt "Dashboard wiederherstellen" aus dem Zahnrad-Symbol.
 
 ## <a name="connect"></a>Geräte verbinden
 
-Um die Cockpit-Anwendung zu verwenden, müssen Sie IoT-Geräte anschließen. Geräte werden im Device Management angeschlossen. Wechseln Sie mit dem Application Switcher rechts oben in das "Device Management" und wählen Sie dann "Registrierung".
+Um die Cockpit-Anwendung zu verwenden, müssen Sie IoT-Geräte anschließen. Geräte werden im Device Management angeschlossen. Wechseln Sie mit dem Anwendungswechsler rechts oben zum "Device Management" und wählen Sie dann "Registrierung".
 
-Hier nochmal die Details: [Device Management User Guide](/guides/users-guide/device-management).
+Weitere Informationen finden Sie unter [Device Management](/guides/users-guide/device-management).
+
 <img src="/guides/users-guide/appdeutsch.png" alt="Logout menu" style="max-width: 100%">
 
 ## <a name="asset"></a>Asset Management
 
-Ein Asset repräsentiert das Business-Objekt im Allgemeinen wie Gebäude, Maschinen, Produktionseinheiten oder Autos.
+Ein Asset repräsentiert ein Business-Objekt im Allgemeinen, wie ein Gebäude, eine Maschine, eine Produktionseinheit oder ein Auto.
 
-Assets sind in Hierarchien organisiert. Beispielsweise könnte eine Energieüberwachungsanwendung die folgende Assethierarchie aufweisen:
+Assets sind in Hierarchien organisiert. Beispielsweise könnte eine Energieüberwachungsanwendung die folgende Asset-Hierarchie aufweisen:
 
 ![image alt text](/guides/users-guide/image_2de.png)
 
-Die Assethierarchie besteht aus zwei Typen von Objekten:
+Die Asset-Hierarchie besteht aus zwei Typen von Objekten:
 
 * Gruppenobjekte: Diese Gruppen werden in der Cockpit-Anwendung erstellt und können einzelne Geräte oder andere Gruppen gruppieren.
 
-* Geräteobjekte: Hierbei handelt es sich um Geräte, die mit der Anlagenhierarchie verknüpft sind.
+* Geräteobjekte: Hierbei handelt es sich um Geräte, die mit der Asset-Hierarchie verknüpft sind.
 
-In diesem Beispiel repräsentieren Gruppenobjekte einen Gebäudebestand. Geräteobjekte repräsentieren den Raumbestand. Die Gruppennamen und die Hierarchie können vom Benutzer individuell definiert werden. Die Hierarchie kann mehrere Ebenen haben, eine Regionsebene, Stadtebene, Straßenniveau, Gebäudeebene, Stockwerk und Raumebene. Ein Gerät kann Teil von mehreren und unterschiedlichen Hierarchien sein, wie Teil der regionalen Hierarchie und Teil der Kundenhierarchie.
+In diesem Beispiel repräsentieren Gruppenobjekte einen Gebäudebestand. Geräteobjekte repräsentieren den Raumbestand. Die Gruppennamen und die Hierarchie können vom Benutzer individuell definiert werden. Die Hierarchie kann mehrere Ebenen haben, eine Regionsebene, Stadtebene, Straßenniveau, Gebäudeebene, Stockwerk und Raumebene. Ein Gerät kann Teil von mehreren und unterschiedlichen Hierarchien sein, zum Beispiel Teil der regionalen Hierarchie und Teil der Kundenhierarchie.
 
-Einzelne Geräte werden nicht in der Cockpit-Anwendung verwaltet. Sie werden in der Device Management Anwendung verwaltet. Um ein Gerät in der Anlagenhierarchie zu positionieren, müssen Sie das Gerät der jeweiligen Gruppe zuordnen. Siehe Beschreibung unten für Details.
+Einzelne Geräte werden nicht in der Cockpit-Anwendung verwaltet. Sie werden in der Device-Management-Anwendung verwaltet. Um ein Gerät in der Asset-Hierarchie zu positionieren, müssen Sie das Gerät der jeweiligen Gruppe zuordnen. Siehe Beschreibung [unten](#Gruppenzuweisung) für Details. 
 
-### Asset Hierarchie im Vergleich zur Geräte Hierarchie
+### Asset-Hierarchie im Vergleich zur Gerätehierarchie
 
-Cumulocity unterstützt zwei Arten von Hierarchien: eine Gerätehierarchie und eine Assethierarchie. Die Gerätehierarchie verfolgt, wie Geräte mit Cumulocity kommunikativ verbunden sind. Die Assethierarchie strukturiert die Assets, die über die M2M-Geräte fernüberwacht und gesteuert werden. Weitere Informationen hierzu finden Sie unter "[Cumulocity's Domain Model](/guides/concepts/domain-model)"
+Cumulocity unterstützt zwei Arten von Hierarchien: eine Gerätehierarchie und eine Asset-Hierarchie. Die Gerätehierarchie verfolgt, wie Geräte mit Cumulocity kommunikativ verbunden sind. Die Asset-Hierarchie strukturiert die Assets, die über die M2M-Geräte fernüberwacht und gesteuert werden. Weitere Informationen hierzu finden Sie unter [Cumulocity's Domain Model](/guides/concepts/domain-model).
 
-In der Cockpit-Anwendung konstruieren Sie Ihre Assethierarchie, indem Sie Gruppenobjekte erstellen und Geräte in die Hierarchie einbinden. Die Anlagenhierarchie hängt von den verwendeten IoT-Geräten ab. Es gibt viele IoT-Geräte, aber diese beiden Typen sind sehr häufig:
+In der Cockpit-Anwendung konstruieren Sie Ihre Asset-Hierarchie, indem Sie Gruppenobjekte erstellen und Geräte in die Hierarchie einbinden. Die Asset-Hierarchie hängt von den verwendeten IoT-Geräten ab. Es gibt viele IoT-Geräte, aber diese beiden Typen sind sehr häufig:
 
-* **Smart-Geräte** sind in sich geschlossene Geräte mit Sensoren, Aktoren und einem Kommunikationsmodul. Sie sind typischerweise mit einem einzigen Asset verbunden. Intelligente Geräte sind Trackers, eine Wetterstation oder allgemeine "smart" Sensoren mit integriertem Kommunikationsmodul.
+* **Smart-Geräte** sind in sich geschlossene Geräte mit Sensoren, Aktoren und einem Kommunikationsmodul. Sie sind typischerweise mit einem einzigen Asset verbunden. Intelligente Geräte sind Tracker, Wetterstationen oder allgemeine "intelligente" Sensoren mit integriertem Kommunikationsmodul.
 
-* **Gateway Geräte** stellen die Kommunikation von anderen Geräten zu Cumulocity her, umfassen jedoch keine Sensoren oder Aktoren. Typische Gateway-Geräte umfassen Zigbee-, Modbus-, M-Bus- oder KNX-Gateways.
+* **Gateway-Geräte** stellen die Kommunikation von anderen Geräten zu Cumulocity her, umfassen jedoch keine Sensoren oder Aktoren. Typische Gateway-Geräte sind Zigbee-, Modbus-, M-Bus- oder KNX-Gateways.
 
-Im folgenden Abschnitt wird die Verwendung von Cockpit mit Smart Devices und Gateway-Geräten erläutert und wie intelligente Geräte in die Assethierarchie eingebunden sind:
+Im folgenden Abschnitt wird die Verwendung des Cockpit mit Smart Devices und Gateway-Geräten erläutert und erläutert, wie intelligente Geräte in die Asset-Hierarchie eingebunden sind:
 
 
 ![image alt text](/guides/users-guide/image_3de.png)
@@ -173,26 +176,26 @@ Gateway-Geräte können die Cockpit-Anwendung so anwenden:
 
 ![image alt text](/guides/users-guide/image_4de.png)
 
-Gateway-Geräte werden in der Geräteverwaltung als Geräte der obersten Ebene dargestellt. Die angeschlossenen Geräte (wie Zigbee, Modbus oder KNX Geräte) werden als "Kindgeräte" (rechte Seite) angezeigt. Diese untergeordneten Geräte können in der Asset-Hierarchie wie oben dargestellt organisiert werden.
+Gateway-Geräte werden in der Geräteverwaltung als Geräte der obersten Ebene dargestellt. Die angeschlossenen Geräte (wie Zigbee-, Modbus- oder KNX-Geräte) werden als "Kindgeräte" (rechte Seite) angezeigt. Diese untergeordneten Geräte können in der Asset-Hierarchie wie oben dargestellt organisiert werden.
 
-Die Assethierarchie und die Gerätehierarchie sind autark: Während sich innerhalb der Device Management-Anwendungen alle Kindgeräte unterhalb des Gateway-Geräts befinden, sind dieselben Kindgeräte in zwei verschiedenen Gebäuden in der Cockpit-Anwendung organisiert.
+Die Asset-Hierarchie und die Gerätehierarchie sind autark: Während sich innerhalb der Device-Management-Anwendungen alle Kindgeräte unterhalb des Gateway-Geräts befinden, sind dieselben Kindgeräte in zwei verschiedenen Gebäuden in der Cockpit-Anwendung organisiert.
 
-**Zusammenfassung:** Geräte können in der Device Management Applikation oder in der Cockpit Applikation völlig unterschiedliche Hierarchien haben.
+**Zusammenfassung:** Geräte können in der Device-Management-Anwendung oder in der Cockpit-Anwendung völlig unterschiedliche Hierarchien haben.
 
-### Cockpit Assets im Vergleich zu Business Assets
+### Cockpit-Assets im Vergleich zu Business-Assets
 
-Die Abbildung von Objekten in der Cockpit-Assethierarchie ist eine virtuelle Hierarchie.
-Wenn Sie Lkw innerhalb der Cumulocity-Plattform verwalten, wird jeder LKW über sein individuelles Tracking-Gerät mit Cumulocity kommuniziert.
+Die Abbildung von Objekten in der Cockpit-Asset-Hierarchie ist eine virtuelle Hierarchie.
+Wenn Sie LKWs innerhalb der Cumulocity-Plattform verwalten, wird jeder LKW über sein individuelles Tracking-Gerät dargestellt, das mit Cumulocity kommuniziert.
 
-Für Gebäudemanagement ist es am häufigsten, dass eine Gruppe von Sensoren innerhalb eines Gebäudes das Gebäude als eine Gruppe darstellt, die mit der Cumulocity-Plattform kommuniziert.
+Beim Gebäudemanagement ist es am häufigsten, dass eine Gruppe von Sensoren innerhalb eines Gebäudes das Gebäude als eine Gruppe darstellt, die mit der Cumulocity-Plattform kommuniziert.
 
 ### Navigation durch die Assets
 
-Der Navigator zeigt eine Hierarchie von Assets unter "Guppen" (siehe Screenshot unten):
+Der Navigator zeigt eine Hierarchie von Assets unter "Gruppen" (siehe Screenshot unten):
 
-* Oben werden die "Top-Level" Gruppen angezeigt.
+* Oben werden die "Top-Level"-Gruppen angezeigt.
 
-* Beim Erweitern einer Gruppe werden alle ihre Kindobjekte angezeigt. Kindobjekte können weitere Gruppen oder Geräte der Gruppe zuordnen.Kindobjekte werden auch auf der Registerkarte "Sub-Assets" angezeigt.
+* Beim Erweitern einer Gruppe werden alle ihre Kindobjekte angezeigt. Kindobjekte können weitere Gruppen oder Geräte der Gruppe zuordnen. Kindobjekte werden auch auf der Registerkarte "Sub-Assets" angezeigt.
 
 ![image alt text](/guides/users-guide/image_5de.png)
 
@@ -202,22 +205,22 @@ Wenn Sie ein Objekt in der Asset-Hierarchie auswählen, zeigt der rechte Teil de
 
 Die sichtbaren Register auf der rechten Seite des Navigators unterscheiden sich je nach Auswahl im Navigator. Die folgende Tabelle zeigt, welche Registerkarten auf der Basis der Auswahl im Navigator sichtbar sind:
 
-|Name des tab|_Name Dashboard_|Info|Alarms|Sub-assets|Standort|Data explorer|
+|Name des Tab|Name Dashboard|Info|Alarme|Sub-assets|Standort|Daten-Explorer|
 |:---|:---|:-----|:-----|:----------|:----------|:----------|
 |Gruppe ausgewählt:|Ja, wenn konfiguriert|Ja|Nein|Ja|Nein|Ja, zeigt alle Datenpunkte der Kindgeräte|
 |Gerät ausgewählt:|Ja, wenn konfiguriert|Ja|Ja|Nein|Ja|Ja, zeigt alle Datenpunkte der Kindgeräte|
 
-Es können zusätzliche Registerkarten angezeigt werden, falls die Anwendung mit Plugins erweitert wurde. Siehe auch "[Introduction to plugin development](/guides/web/introduction)" .
+Es können zusätzliche Registerkarten angezeigt werden, falls die Anwendung mit Plugins erweitert wurde. Siehe auch [Introduction to plugin development](/guides/web/introduction).
 
 Wenn Sie ein Gateway-Gerät hinzufügen, werden die Kindgeräte nicht angezeigt. Um Kindgeräte anzuzeigen, müssen Sie sie dem zugehörigen Asset hinzufügen. Details, die sich auf die untergeordnete Hierarchie beziehen, sind in der Geräteverwaltungsanwendung sichtbar und bearbeitbar.
 
 Um in der Asset-Hierarchie weiter zu navigieren, verwenden Sie den Navigator oder wählen Sie ein Objekt auf der Registerkarte "Sub-Asset" aus. Um in der Asset-Hierarchie nach oben zu navigieren, verwenden Sie den Eintrag in der Pfadnavigation unter dem Namen des Assets.
 
-### Assets Durchsuchen
+### Assets durchsuchen
 
 Um nach Gruppen oder Geräten zu suchen, geben Sie den Namen der Gruppe oder des Geräts in das Suchfeld ein und klicken Sie auf "Enter". Sie können auf die Ergebnisse klicken. Die ausgewählte Gruppe bzw. das ausgewählte Gerät wird dann im Navigator links ausgewählt und auf der rechten Seite angezeigt.
 
-### Gruppen Hinzufügen
+### Gruppen hinzufügen
 
 Um eine neue Top-Level-Gruppe hinzuzufügen, klicken Sie auf "+" im oberen Bereich der Anwendung und wählen Sie "Gruppe hinzufügen ...". Daraufhin erscheint der folgende Dialog:
 
@@ -225,47 +228,47 @@ Um eine neue Top-Level-Gruppe hinzuzufügen, klicken Sie auf "+" im oberen Berei
 
 Dadurch wird eine neue Gruppe mit den ausgewählten zugewiesenen Geräten erstellt. Nach dem Klicken auf "Gruppe mit Geräten erstellen" wird die Gruppe im Navigator als oberstes Objekt angezeigt.
 
-Um eine neue Gruppe als Kinder eines vorhandenen Assets hinzuzufügen, klicken Sie auf die Schaltfläche "+ Gruppe hinzufügen" auf der Registerkarte "Sub-Assets".
+Um eine neue Gruppe als Kind eines vorhandenen Assets hinzuzufügen, klicken Sie auf die Schaltfläche "+ Gruppe hinzufügen" auf der Registerkarte "Sub-Assets".
 
 ![image alt text](/guides/users-guide/image_8de.png)
 
-### Weisen Sie Geräte Gruppen zu
+### <a name="Gruppenzuweisung"></a>Geräte Gruppen zuweisen
 
-Vor dem Hinzufügen eines Geräts zur Assethierarchie muss es mit Cumulocity verbunden sein. Verbinden Sie Geräte über das Device Management mit der Plattform. Genaues dazu finden Sie hier "[Connecting Devices](/guides/users-guide/device-management#device-registration)".
+Vor dem Hinzufügen eines Geräts zur Asset-Hierarchie muss es mit Cumulocity verbunden sein. Verbinden Sie Geräte über das Device Management mit der Plattform. Genaues dazu finden Sie hier: [Manuell Geräte verbinden](/guides/benutzerhandbuch/device-management-deutsch#device-registration).
 
-Um neu verbundene Geräte der Assethierarchie zuzuordnen, markieren Sie die Gruppe, in der das Gerät erscheinen soll, klicken Sie auf "Sub-Assets" und klicken Sie auf die Schaltfläche "+ Gerät zuordnen".
+Um neu verbundene Geräte der Asset-Hierarchie zuzuordnen, markieren Sie die Gruppe, in der das Gerät erscheinen soll, klicken Sie auf "Sub-Assets" und klicken Sie auf die Schaltfläche "+ Gerät zuordnen".
 
 Suchen Sie im folgenden Dialog nach Geräten und wählen Sie die zuzuordnenden Geräte (oder Kindgeräte) aus.
 
 ![image alt text](/guides/users-guide/image_9de.png)
 
-### Gruppen Löschen
+### Gruppen löschen
 
-Sie können eine Gruppe per Hover über die Gruppe auf der Registerkarte "Sub-Assets" löschen. Sie sehen ein rotes [X], das Sie klicken können, um die Gruppe zu löschen.
+Sie können eine Gruppe löschen, indem Sie den Mauszeiger über die Gruppe auf der Registerkarte "Sub-Assets" bewegen und dort belassen. Sie sehen ein rotes [X], das Sie klicken können, um die Gruppe zu löschen.
 
-### Gerät Trennen
+### Geräte trennen
 
-Um ein Gerät von einer Gruppe zu trennen, wählen Sie die Gruppe im Navigator aus. In der Registerkarte "Sub-Assets" werden die untergeordneten Geräte angezeigt und dort können Sie einzelnde Geräte auswählen und trennen. Klicken Sie auf die rote Schaltfläche [X].
+Um ein Gerät von einer Gruppe zu trennen, wählen Sie die Gruppe im Navigator aus. In der Registerkarte "Sub-Assets" werden die untergeordneten Geräte angezeigt. Dort können Sie einzelnde Geräte auswählen und trennen. Klicken Sie auf die rote Schaltfläche [X].
 
-Das Trennen eines Geräts bedeutet nicht, dass die Kindgeräte oder die zugehörigen Daten entfernt werden. Das Gerät wird nur aus seiner Position in der Asset-Hierarchie entfernt. Er kann danach anderen Gruppen zugeordnet werden.
+Das Trennen eines Geräts bedeutet nicht, dass die Kindgeräte oder die zugehörigen Daten entfernt werden. Das Gerät wird nur aus seiner Position in der Asset-Hierarchie entfernt. Es kann danach anderen Gruppen zugeordnet werden.
 
-### Editieren von Gruppen
+### Gruppen editieren
 
 Um den Namen der Gruppe zu bearbeiten, klicken Sie auf die Registerkarte "Info" und bearbeiten den Namen.
 
-## <a name="visualise"></a>Verwenden des Daten-Explorers, um Daten zu visualisieren
+## <a name="visualise"></a>Verwenden des Daten-Explorers zur Visualisierung von Daten 
 
 Datenpunkte (Messungen oder Sensordaten) können im Cockpit an drei Stellen visualisiert werden:
 
-* Klicken Sie im Navigator auf den "Data Explorer". Von dort haben Sie Zugriff auf alle Datenpunkte aller Assets.
+* Klicken Sie im Navigator auf den "Daten-Explorer". Von dort haben Sie Zugriff auf alle Datenpunkte aller Assets.
 
-* Navigieren Sie zu einem bestimmten Asset und klicken Sie auf den Reiter "Daten Explorer". Sie haben Zugriff auf alle Datenpunkte der Assets und Sub-Assets.
+* Navigieren Sie zu einem bestimmten Asset und klicken Sie auf den Tab "Daten-Explorer". Sie haben Zugriff auf alle Datenpunkte der Assets und Sub-Assets.
 
 * Hinzufügen von datenpunktbezogenen Widgets zu einem Dashboard, um vordefinierte Berichte anzuzeigen.
 
 Um Datenpunkte zu visualisieren, folgen Sie diesen Schritten:
 
-* Gehen Sie zu der Gruppe oder dem Gerät, und klicken Sie auf "Daten Explorer".
+* Gehen Sie zu der Gruppe oder dem Gerät, und klicken Sie auf "Daten-Explorer".
 
 * Die ersten fünf Datenpunkte des ausgewählten Geräts oder der ausgewählten Gruppe werden angezeigt.
 
@@ -277,29 +280,29 @@ Um Datenpunkte zu visualisieren, folgen Sie diesen Schritten:
 
 * Wenn Sie Ihre aktuelle Konfiguration für später speichern möchten, speichern Sie sie als Widget mit "Als Widget zum Dashboard senden ..."
 
-**Der Data Explorer und das Dashboard sind eng miteinander verbunden:**
+Der Daten-Explorer und das Dashboard sind eng miteinander verbunden:
 
-* Wenn Sie eine Data Explorer-Konfiguration als Widget an ein Dashboard senden, können Sie das Dashboard auswählen, in dem das neue Widget gespeichert wird.
+* Wenn Sie eine Daten-Explorer-Konfiguration als Widget an ein Dashboard senden, können Sie das Dashboard auswählen, in dem das neue Widget gespeichert wird.
 
-* Wenn Sie auf das Konfigurationssymbol eines "Datenpunktgraphen" -Widgets klicken, gelangen Sie zu einem Dialog, der dem Daten-Explorer ähnelt, und hier können Sie das Widget konfigurieren.
+* Wenn Sie auf das Konfigurationssymbol eines "Datenpunktgraphen"-Widgets klicken, gelangen Sie zu einem Dialog, der dem Daten-Explorer ähnelt. Hier können Sie das Widget konfigurieren.
 
 ### Öffnen des Daten-Explorers
 
-Wenn Sie auf den Reiter "Data Explorer" klicken, wird er geöffnet.
+Wenn Sie auf den Tab "Daten-Explorer" klicken, wird er geöffnet.
 
-Er wird mit vorhandenen Datenpunkten des Objekts (Gruppe oder Gerät) voreingestellt. Die ersten 5 Datenpunkte werden standardmäßig angezeigt.
+Er wird mit vorhandenen Datenpunkten des Objekts (Gruppe oder Gerät) voreingestellt. Die ersten fünf Datenpunkte werden standardmäßig angezeigt.
 
 ![image alt text](/guides/users-guide/image_10de.png)
 
 Die Visualisierung wird basierend auf Datenpunkt-Eigenschaften erzeugt.
 
-**Die Datenpunkteigenschaften (min, max, color, ..) werden wie folgt voreingestellt:**
+Die Datenpunkteigenschaften (min, max, color, ..) werden wie folgt voreingestellt:
 
 * Wenn diese Eigenschaften zuvor bearbeitet wurden, werden die ursprünglichen Werte verwendet.
 
 * Wenn die Datenpunkte eine übereinstimmende Definition in der Datenpunktbibliothek haben, werden die Werte aus der Datenpunktbibliothek verwendet.
 
-In der "Datenpunkt Bibliothek" können mehrere übereinstimmende Datenpunkteingaben vorhanden sein. In diesem Fall wird die erste automatisch vom System ausgewählt. Sie können diese Auswahl mit dem Zahnradsymbol überschreiben und " X aus Bibliothek laden" auswählen. X bezieht sich auf den Eintrag in der Datenpunktbibliothek.
+In der "Datenpunktbibliothek" können mehrere übereinstimmende Datenpunkteingaben vorhanden sein. In diesem Fall wird die erste automatisch vom System ausgewählt. Sie können diese Auswahl mit dem Zahnradsymbol überschreiben und " X aus Bibliothek laden" auswählen. X bezieht sich auf den Eintrag in der Datenpunktbibliothek.
 
 ![image alt text](/guides/users-guide/image_11de.png)
 
@@ -309,7 +312,7 @@ Zusätzliche Datenpunkte können dem Daten-Explorer hinzugefügt werden, indem S
 
 ![image alt text](/guides/users-guide/image_12de.png)
 
-Wählen Sie im oberen Bereich des Dialogs ein Gerät aus der Anlagenhierarchie aus. Nur die Assethierarchie unterhalb der im Navigator markierten Objekte ist sichtbar. Wurde im Navigator "Data Explorer" markiert, ist die komplette Anlagenhierarchie sichtbar.
+Wählen Sie im oberen Bereich des Dialogs ein Gerät aus der Anlagenhierarchie aus. Nur die Asset-Hierarchie unterhalb der im Navigator markierten Objekte ist sichtbar. Wurde im Navigator "Daten-Explorer" markiert, ist die komplette Anlagenhierarchie sichtbar.
 
 Im unteren Teil des Dialogs werden alle Datenpunkte des ausgewählten Objekts angezeigt. Markieren Sie die Datenpunkte, die Sie im Daten-Explorer anzeigen möchten. Klicken Sie auf "Hinzufügen", um alle ausgewählten Datenpunkte zur Liste der Datenpunkte hinzuzufügen.
 
@@ -333,31 +336,31 @@ Für Datenpunkte stehen folgende Eigenschaften zur Verfügung:
 
 * Label: Text, der auf der y-Achse verwendet wird.
 
-* Einheit: Einheit auf der y-Achse verwendet. Unit ist der benutzerdefinierte String, der auf der y-Achse gezeigt wird.
+* Einheit: Einheit, die auf der y-Achse verwendet wird. Einheit ist der benutzerdefinierte String, der auf der y-Achse gezeigt wird.
 
-* Min / Max: Bereich der y-Achse.
+* Min/Max: Bereich der y-Achse.
 
 * Zielwert: Der Sollwert wird derzeit nicht im Diagramm angezeigt. Der Wert wird im Widget "Datenpunktliste" verwendet.
 
-* Yellow Range Min / Max: Definiert den Bereich, in dem kleinere Alarme durch die Schwellenregel erhöht werden sollen. Diese Werte werden derzeit nicht visualisiert. Detaillierte Informationen finden Sie unter Smart Rules.
+* Yellow Range Min/Max: Definiert den Bereich, in dem kleinere Alarme durch die Schwellenregel erhöht werden sollen. Diese Werte werden derzeit nicht visualisiert. Detaillierte Informationen finden Sie unter [Smart Rules](#rules).
 
-* Red Range Min / Max: Definiert den Bereich, in dem Kritische Alarme durch Schwellenregeln erhöht werden sollen. Diese Werte werden derzeit nicht visualisiert. Detaillierte Informationen finden Sie unter Smart Rules.
+* Red Range Min/Max: Definiert den Bereich, in dem kritische Alarme durch Schwellenregeln erhöht werden sollen. Diese Werte werden derzeit nicht visualisiert. Detaillierte Informationen finden Sie unter [Smart Rules](#rules).
 
-* Diagrammtyp: Wählen Sie für aggregierte Daten aus, welcher aggregierte Wert visualisiert werden soll. Die Optionen sind: min, max, Fläche
+* Diagrammtyp: Wählen Sie für aggregierte Daten aus, welcher aggregierte Wert visualisiert werden soll. Die Optionen sind: min, max, Fläche.
 
-* Y Achse: Wählen Sie aus, auf welcher y-Achse der Datenpunkt angezeigt werden soll. Optionen sind: Auto, links, rechts.
+* Y-Achse: Wählen Sie aus, auf welcher y-Achse der Datenpunkt angezeigt werden soll. Optionen sind: Auto, links, rechts.
 
 * Asset: Der Name des Assets des Datenpunkts. Dieses Feld ist nicht editierbar. Der interne Name des Datenpunktes (Messfragment und Serie) wird angezeigt.
 
-### Browsen im Daten-Explorer
+### Navigieren im Daten-Explorer
 
 So navigieren Sie im Daten-Explorer:
 
-* Bewegen der Zeit: Bewegen Sie auf die X-Achse und ziehen Sie sie nach links oder rechts.
+* Bewegen der Zeitspanne: Gehen Sie auf die X-Achse und ziehen Sie sie nach links oder rechts.
 
-* Wählen Sie einen Zeitbereich im Diagramm aus
+* Wählen Sie einen Zeitbereich im Diagramm aus.
 
-* Doppelklicken, um den Bearbeitungszeitbereich zu beenden
+Echzeitaktualisierungen werden abgeschaltet, wenn Sie eine Zeitspanne in der Vergangenheit definieren (entweder durch Bewegen der Zeitachse oder durch Nutzung der Datenselektoren).
 
 ### Variieren der Y-Achse
 
@@ -375,13 +378,13 @@ Jeder Datenpunkt wird auf seiner eigenen y-Achse angezeigt, sofern die folgende 
 
 * Zwei Datenpunkte mit demselben Minimum und dem gleichen Maximalwert teilen sich eine gemeinsame y-Achse.
 
-In diesem Fall sind beide Datenpunkte mit einer einzigen y-Achse dargestellt. Zusätzlich zeigt die y-Achse nur die Einheit (oder mehrere Einheiten, falls sie unterschiedlich sind). Das Etikett wird nicht angezeigt.
+In diesem Fall sind beide Datenpunkte mit einer einzigen y-Achse dargestellt. Zusätzlich zeigt die y-Achse nur die Einheit (oder mehrere Einheiten, falls sie unterschiedlich sind). Das Label wird nicht angezeigt.
 
 ### Erstellen von Widgets aus dem Daten-Explorer
 
 Verwenden Sie das Menü und wählen Sie "Als Widget zu einem Dashboard senden".
 
-Dadurch wird ein modaler Dialog mit allen Dashboards des aktuellen Objekts angezeigt. Navigieren Sie zum entsprechenden Dashboard und drücken Sie "Select", um ein neues Widget im ausgewählten Dashboard zu erstellen.
+Dadurch wird ein modaler Dialog mit allen Dashboards des aktuellen Objekts angezeigt. Navigieren Sie zum entsprechenden Dashboard und drücken Sie "Auswählen", um ein neues Widget im ausgewählten Dashboard zu erstellen.
 
 ![image alt text](/guides/users-guide/image_13de.png)
 
@@ -393,24 +396,24 @@ Benutzer haben die Möglichkeit, Messdaten als csv- oder xlsx-Dateien herunterzu
   - Quelle der Messung
   - Gerätename - Name des verwendeten Geräts
   - Fragment-Serien - (z. B. c8y_SpeedMeasurement)
-  - Wert - einfach der Wert der Messung
-  - Einheit - Die für die jeweilige Messung verwendete Einheit (wie "C", "km / h", "sec" ...)
+  - Wert - Wert der Messung
+  - Einheit - Die für die jeweilige Messung verwendete Einheit (wie "C", "km/h", "sec" ...)
 
-Um die Messdaten entweder in csv oder xlsx herunterzuladen, navigieren Sie zunächst zum "Data Explorer", wählen den gewünschten Zeitbereich aus und klicken dann auf den kleinen Zahnradknopf rechts oben.
+Um die Messdaten entweder in csv oder xlsx herunterzuladen, navigieren Sie zunächst zum "Daten-Explorer", wählen Sie den gewünschten Zeitbereich aus und klicken Sie dann auf den kleinen Zahnradknopf rechts oben.
 
 ![Export measurement data](/guides/users-guide/exportmeasuredata.png)
 
-Wählen Sie, ob ein CSV oder Excel (XLSX) Download erfolgen soll.
+Wählen Sie, ob ein CSV- oder Excel(XLSX)-Download erfolgen soll.
 
-Das Fenster "Bericht erstellen" erscheint. Die Dateien werden abhängig davon geladen, wie viele Datenpunkte Sie dem "Data Explorer" hinzugefügt haben. Sobald der Ladevorgang abgeschlossen ist, klicken Sie auf die Schaltfläche "Download".
+Das Fenster "Bericht erstellen" erscheint. Die Dateien werden abhängig davon geladen, wie viele Datenpunkte Sie dem "Daten-Explorer" hinzugefügt haben. Sobald der Ladevorgang abgeschlossen ist, klicken Sie auf die Schaltfläche "Download".
 
 ## <a name="dashboards"></a>Arbeiten mit Dashboards
 
-Dashboards bieten Ihnen eine individuelle Visualisierung Ihrer Daten mit einer Reihe von Widgets. Widgets können Karten, Bilder, Graphen, Tabellen und andere grafische Darstellungen von Daten anzeigen. Cumulocity kommt mit einer Reihe von voreingestellten Widgets, siehe Abschnitt "[Widget Package](#widget-package)". Sie können auch eigene Widgets entwickeln und diese zu Ihrem Cumulocity-Konto hinzufügen. Siehe [Web developer's guide](/guides/web/).
+Dashboards bieten Ihnen eine individuelle Visualisierung Ihrer Daten mit einer Reihe von Widgets. Widgets können Karten, Bilder, Graphen, Tabellen und andere grafische Darstellungen von Daten anzeigen. Cumulocity bietet eine Reihe von voreingestellten Widgets (Details finden Sie im Abschnitt [Widget-Paket](#widget)). Sie können auch eigene Widgets entwickeln und diese zu Ihrem Cumulocity-Konto hinzufügen. Siehe [Web developer's guide](/guides/web/).
 
 ### Ein neues Dashboard erstellen
 
-Um ein Dashboard zu erstellen, navigieren Sie zu einem Objekt in der Asset-Hierarchie. Anschließend klicken Sie rechts oben auf das Zahnrad-Symbol. Wählen Sie "Dashboard erstellen". Dies öffnet einen Dialog und Sie können:
+Um ein Dashboard zu erstellen, navigieren Sie zu einem Objekt in der Asset-Hierarchie. Anschließend klicken Sie rechts oben auf das Zahnrad-Symbol. Wählen Sie "Dashboard erstellen". Dies öffnet einen Dialog.
 
 ![Dashboard cogwheel](/guides/users-guide/dashboardcogwheelde.png)
 
@@ -420,13 +423,13 @@ Um ein Dashboard zu erstellen, navigieren Sie zu einem Objekt in der Asset-Hiera
 
 * Wählen Sie das Symbol, das neben dem Namen im Menü angezeigt wird.
 
-* Wählen Sie die Sichtbarkeit: "Dashboard für alle Benutzer sichtbar", ob das Dashboard für alle sichtbar ist ("global") oder nur begrenzte Anzahl von Benutzern.
+* Wählen Sie die Sichtbarkeit: "Dashboard für alle Benutzer sichtbar", wenn das Dashboard für alle sichtbar ist ("global"), oder nur für eine begrenzte Anzahl von Benutzern.
 
-* "Dashboard-Layout": Konfigurieren Sie das Layout Ihres Dashboards. Wähle ein "Dashboard Theme", "Default Widget Header Style" und "Default Widget Margin". Danach können Sie Ihr aktuell ausgewähltes Layout im Vorschaufenster sehen.
+* "Dashboard-Layout": Konfigurieren Sie das Layout Ihres Dashboards. Wählen Sie ein "Dashboard Theme", "Default Widget Header Style" und "Default Widget Margin". Danach können Sie Ihr aktuell ausgewähltes Layout im Vorschaufenster sehen.
 
 ![Create Dashboard](/guides/users-guide/dashboard-createde.png)
 
-Klicken Sie auf "Speichern", um das Dashboard zu erstellen und zu öffnen. Solange es keine Widgets auf dem Armaturenbrett gibt, sehen Sie eine "Widget" -Schaltfläche. Verwenden Sie diese Schaltfläche, um Ihr erstes Widget dem Dashboard hinzuzufügen.
+Klicken Sie auf "Speichern", um das Dashboard zu erstellen und zu öffnen. Solange es keine Widgets auf dem Dashboard gibt, sehen Sie eine "Widget"-Schaltfläche. Verwenden Sie diese Schaltfläche, um Ihr erstes Widget dem Dashboard hinzuzufügen.
 
 ### Erstellen eines Dashboards für identische Geräte
 
@@ -440,9 +443,9 @@ Dann sollte dieses Dashboard für alle identischen Geräte erscheinen. Änderung
  
 Berechtigungen können nur einer bestimmten Benutzerrolle gewährt werden. Um dies zu tun, erstellen Sie ein neues Dashboard wie oben beschrieben oder editieren Sie ein Dashboard.
 
-> Um ein Dashboard zu editieren clicken Se auf das Zahnrad Symbol und wählen Dashboard editieren aus.
+> Um ein Dashboard zu editieren, klicken Sie auf das Zahnrad-Symbol und wählen Sie "Dashboard editieren" aus.
 
-Um Berechtigungen für bestimmte Benutzer zu erteilen, deaktivieren Sie das "Dashboard für alle Benutzer sichtbar" und deaktivieren Sie "Dashboard an alle Geräte des Typs" _type_ "anwenden.
+Um Berechtigungen für bestimmte Benutzer zu erteilen, deaktivieren Sie "Dashboard für alle Benutzer sichtbar" und deaktivieren Sie "Dashboard an alle Geräte des Typs" _type_ "anwenden".
 
 ![Add permissions](/guides/users-guide/dashboardaddrightde.png)
 
@@ -462,21 +465,21 @@ Um ein Widget zu einem Dashboard hinzuzufügen, stellen Sie sicher, dass das Das
 
 ![Add Widget](/guides/users-guide/widgetcogwheelde.png)
 
-Bei der Auswahl eines Widget-Typs werden zusätzliche Eingabefelder für diesen Widget-Typ angezeigt. Weitere Informationen zum "Widget Package] (# widget-package)" finden Sie mit diesem Link. Ähnlich wie bei den Dashboards können Sie den Widget Stil anpassen. Der aktuell ausgewählte Stil ist in der Vorschau auf der rechten Seite zu sehen.
+Bei der Auswahl eines Widget-Typs werden zusätzliche Eingabefelder für diesen Widget-Typ angezeigt. Weitere Informationen zu Widget-Paketen finden Sie [hier](#widget). Ähnlich wie bei den Dashboards können Sie den Widget-Stil anpassen. Der aktuell ausgewählte Stil ist in der Vorschau auf der rechten Seite zu sehen.
 
-### Dashboard editieren
+### <a name="Dashboard bearbeiten"></a>Dashboard bearbeiten
 
-Sie können die Dashboard-Eigenschaften bearbeiten, indem Sie auf das Zahnrad-Symbol klicken und "Dashboard editieren" auswählen. Dies wird Sie zu einen ähnlichen Dialog wie "Erstellen eines Dashboards" bringen. In diesem Dialog können den Dashboard Namen, Symbol, Position, Stil und Berechtigungen bearbeitet werden.
+Sie können die Dashboard-Eigenschaften bearbeiten, indem Sie auf das Zahnrad-Symbol klicken und "Dashboard editieren" auswählen. Dies bringt Sie zu einen ähnlichen Dialog wie "Erstellen eines Dashboards". In diesem Dialog können den Namen, das Symbol, die Position, den Stil und die Berechtigungen des Dashboards bearbeitet werden.
 
 ![Edit Dashboard](/guides/users-guide/dashboardeditde.png)
 
-Sie können die Widgets des Dashboards neu anordnen. Durch drag und drop der Kopfzeile des Widgets können Sie das Widget auf eine andere Position auf der Seite verschieben. Durch drag und drop der Pfeile in der unteren rechten Ecke eines Widgets können Sie ein Widget ändern. Durch Anklicken des Symbols in der rechten oberen Ecke des Widgets können Sie die Widget-Eigenschaften löschen oder editieren.
+Sie können die Widgets des Dashboards neu anordnen. Durch Drag & Drop der Kopfzeile des Widgets können Sie das Widget auf eine andere Position auf der Seite verschieben. Durch Drag & Drop der Pfeile in der unteren rechten Ecke eines Widgets können Sie ein Widget ändern. Durch Anklicken des Symbols in der rechten oberen Ecke des Widgets können Sie die Widget-Eigenschaften löschen oder editieren.
 
-> Wenn das Dashboard gesperrt ist, können Widgets nicht neu geordnet werden. Um ein Armaturenbrett zu sperren / zu entsperren, klicken Sie rechts oben auf das Zahnrad und dann auf "Dashboard sperren" / "Dashboard entsperren".
+> Wenn das Dashboard gesperrt ist, können Widgets nicht neu geordnet werden. Um ein Dashboard zu sperren bzw. zu entsperren, klicken Sie rechts oben auf das Zahnrad und dann auf "Dashboard sperren" bzw. "Dashboard entsperren".
 
 ![dashboard lock](/guides/users-guide/dashboardlockde.png)
 
-Auf einem Laptop erscheinen diese Symbole nur, wenn man mit der Maus über den Widget-Header fährt.
+Auf einem Laptop erscheinen diese Symbole nur, wenn Sie mit der Maus über den Widget-Header fahren.
 
 Die Bearbeitung auf Touch-Geräten wie Smartphones oder Tablets unterstützt nicht alle Funktionen. Um die Widget-Icons auf Touch-Geräten anzuzeigen, fahren Sie mit der Maus über den Widget-Header.
 
@@ -484,37 +487,36 @@ Die Bearbeitung auf Touch-Geräten wie Smartphones oder Tablets unterstützt nic
 
 Um ein Dashboard von einem Objekt in ein anderes zu kopieren, verwenden Sie das Zahnrad oben rechts und wählen Sie "Dashboard kopieren". Danach wählen Sie das Objekt aus, auf das das Dashboard angewendet werden soll, und klicken Sie auf "Dashboard einfügen", um das Dashboard einzufügen.
 
-Eine alternative Möglichkeit, ein Dashboard zu kopieren, besteht darin, das "[Dashboard per type] (# create-a-dashboard-for-all-devices-of-the-same-type)" -Ansatz zu verwenden. Mit dem "Dashboard per type" -Ansatz kopieren Sie das Dashboard von einem Objekt auf **alle** identischen Objekte.
+Eine alternative Möglichkeit, ein Dashboard zu kopieren, besteht darin, den "[Dashboard per type](# create-a-dashboard-for-all-devices-of-the-same-type)"-Ansatz zu verwenden. Mit diesem Ansatz kopieren Sie das Dashboard von einem Objekt auf **alle** identischen Objekte.
 
 ### Dashboard löschen
 
 Um ein Widget zu einem Dashboard hinzuzufügen, stellen Sie sicher, dass das Dashboard sichtbar ist. Das gleiche gilt beim Löschvorgang. Klicken Sie oben rechts auf das Zahnrad-Symbol. Wählen Sie "Dashboard löschen", um ein Dashboard zu löschen.
 
+## <a name="widget"></a>Widget-Paket
 
-## <a name="widget"></a>Widget Paket
+Das Cockpit enthält voreingestellte Widget-Typen. Jeder Widget-Typ kann verschiedene Parameter konfigurieren und verschiedene Daten anzeigen. Im folgenden Abschnitt werden alle verfügbaren Widget-Typen und die Konfigurationseigenschaften beschrieben.
 
-Das Cockpit enthält Preset-Widget-Typen. Jeder Widget-Typ kann verschiedene Parameter konfigurieren und verschiedene Daten angezeigen. Im folgenden Abschnitt werden alle verfügbaren Widget-Typen und die Konfigurationseigenschaften beschrieben.
-
-### Widget "Asset Eigenschaften"
+### Widget "Asset-Eigenschaften"
 Eine benutzerdefinierte Liste der Attribute des aktuellen Objekts wird angezeigt. Das aktuelle Objekt kann ein Gerät oder das Gruppenobjekt sein.
 
 Zu konfigurierende Parameter:
 
 * Name des Widget
 
-* Eigenschaftenliste, siehe auch "[Configuring a property list](#widget-asset-table-)".
+* Eigenschaftenliste, siehe auch [Eigenschaftenliste konfigurieren](#widget-asset-table-)
 
 ### Widget "Datenpunktgraph"
 
-Zeigen Sie einen Datenpunkt (Messungen) in einem Diagramm. Die Visualisierung ist die gleiche wie der Daten-Explorer.
+Zeigt einen Datenpunkt (Messungen) in einem Diagramm an. Die Visualisierung ist die gleiche wie im Daten-Explorer.
 
-Der einfachste Weg, um ein Datenpunktgrafik-Widget zu erstellen, besteht darin, zum Daten-Explorer zu navigieren und dann "An Dashboard schicken" zu wählen.
+Der einfachste Weg, um ein Datenpunktgraph-Widget zu erstellen, besteht darin, zum Daten-Explorer zu navigieren und dann "An Dashboard schicken" zu wählen.
 
-Die zu konfigurierenden Parameter sind die gleichen wie im Daten-Explorer. Bitte beziehen Sie sich auf "[Data Explorer](#using-the-data-explorer-to-visualise-data)" .
+Die zu konfigurierenden Parameter sind die gleichen wie im Daten-Explorer. Siehe auch [Daten-Explorer](#using-the-data-explorer-to-visualise-data).
 
 ### Widget "Datenpunkttabelle"
 
-Diese Widget-Konfiguration ist identisch mit dem Datenpunkt-Graphen, anstatt die Daten als Liniendiagramm zu visualisieren, werden die Daten als Tabelle visualisiert.
+Diese Widget-Konfiguration ist identisch mit dem Datenpunkt-Graphen. Anstatt die Daten als Liniendiagramm zu visualisieren, werden die Daten als Tabelle visualisiert.
 
 * Das Datenpunkttabellen-Widget zeigt Daten basierend auf ausgewählten Datenpunkten, Zeitintervall und Aggregation an.
 
@@ -524,17 +526,17 @@ Diese Widget-Konfiguration ist identisch mit dem Datenpunkt-Graphen, anstatt die
 
 ### Widget "Karte"
 
-Standort eines Geräts oder aller Geräte in der Gruppe anzeigen. Die Karte bietet folgende Funktionen:
+Zeigt den Standort eines Geräts oder aller Geräte in der Gruppe. Die Karte bietet folgende Funktionen:
 
-* Die Karte hat Funktionalität wie Ziehen und Vergrößern / Verkleinern.
+* Die Karte bietet Funktionen wie Ziehen und Vergrößern/Verkleinern.
 
 * Die Symbole für die Geräte sind farbcodiert. Die verwendete Farbe hängt von der folgenden Regel ab:
 
      * Mindestens ein kritischer Alarm: rot
 
-     * Mindestens ein Hauptalarm: orange
+     * Mindestens ein wichtiger Alarm: orange
 
-     * Mindestens ein wenig-wichtiger Alarm: gelb
+     * Mindestens ein weniger wichtiger Alarm: gelb
 
      * Mindestens eine Warnung: blau
 
@@ -542,11 +544,11 @@ Standort eines Geräts oder aller Geräte in der Gruppe anzeigen. Die Karte biet
 
 * Wenn Sie auf ein Gerätesymbol klicken, wird ein Popup mit den folgenden Informationen angezeigt:
 
-     * Der Gerätename: Wenn sie angeklickt wird, navigiert die Anwendung zum Gerät.
+     * Der Gerätename: Wenn er angeklickt wird, navigiert die Anwendung zum Gerät.
 
      * Datum, an dem das Gerät zuletzt seinen Standort gemeldet hat, falls verfügbar.
 
-     * Die Option zum Anzeigen / Ausblenden der Gerätespuren für den vorherigen und den aktuellen Tag.
+     * Die Option zum Anzeigen/Ausblenden der Geräte-Tracks für den vorherigen und den aktuellen Tag.
 
 Zu konfigurierende Parameter:
 
@@ -556,13 +558,13 @@ Hinweis: Wenn keines der Zielgeräte über einen bekannten Standort verfügt, ze
 
 ### Widget "HTML"
 
-Benutzerdefinierten Inhalt anzeigen. Der Inhalt kann mit HTML formatiert werden.
+Zeigt benutzerdefinierten Inhalt an. Der Inhalt kann mit HTML formatiert werden.
 
 Der zu konfigurierende Parameter:
 
 * Zielgerät oder Gruppe: Wählen Sie das Objekt aus, für das optionale HTML-Ausdrücke ausgewertet werden sollen.
 
-* HTML Inhalt:
+* HTML-Inhalt:
 
 Variablen, die im HTML-Inhalt verwendet werden können:
 
@@ -572,29 +574,30 @@ Variablen, die im HTML-Inhalt verwendet werden können:
 
 * {{DeviceGroupsCount}}: Gesamtzahl der Gruppen.
 
-* {{Device.name}}: Der Name des Geräts.
+* {{Device.name}}: Name des Geräts.
 
 * {{Device. * Property *}}: Allgemeinere Form der oben genannten. Sie können jede Eigenschaft des Geräts ansprechen.
 
-* {{Device.c8y_Hardware.model}}: Das Modell des Geräts.
+* {{Device.c8y_Hardware.model}}: Modell des Geräts.
 
 * {{Device. * Fragment *. * Property *}}: Allgemeinere Form der oben genannten. Sie können jede Eigenschaft eines beliebigen Fragments des Geräts ansprechen.
 
 Zusätzliche Information:
-* "Gerät" bezieht sich auf das Zielgerät, wie im Widget-Konfigurationsparameter ausgewählt.* 
-* Fragment.property * bezieht sich auf die Eigenschaften des jeweiligen Gerätes. Um die verfügbaren Eigenschaftsnamen zu sehen, können Sie das Widget "Asset-Eigenschaft" oder "Asset-Tabelle" verwenden und auf den Link "+ Hinzufügen" in der Widget-Konfiguration klicken. Daraufhin wird eine Tabelle mit unterstützten Eigenschaften angezeigt. Sie können die Werte aus der Spalte "Eigenschaft" kopieren und einfügen. Generierte Eigenschaften dieser Widgets sind in den HTML-Widgets nicht verfügbar.
 
-### Widget "Asset Alarme"
+* "Gerät" bezieht sich auf das Zielgerät, wie im Widget-Konfigurationsparameter ausgewählt.
+* *fragment.property* bezieht sich auf die Eigenschaften des jeweiligen Gerätes. Um die verfügbaren Eigenschaftsnamen zu sehen, können Sie das Widget "Asset-Eigenschaft" oder "Asset-Tabelle" verwenden und auf den Link "+ Hinzufügen" in der Widget-Konfiguration klicken. Daraufhin wird eine Tabelle mit unterstützten Eigenschaften angezeigt. Sie können die Werte aus der Spalte "Eigenschaft" kopieren und einfügen. Generierte Eigenschaften dieser Widgets sind in den HTML-Widgets nicht verfügbar.
 
-Zeigt alle Objekte mit einem kritischem Alarm . Es gibt keine zusätzlichen Parameter zu konfigurieren.
+### Widget "Asset-Alarme"
 
-### Widget "Asset Anzahl"
+Zeigt alle Objekte mit einem kritischem Alarm. Es gibt keine zusätzlichen Parameter zu konfigurieren.
+
+### Widget "Asset-Anzahl"
 
 Zeigt die Anzahl der Geräte online und mit Alarmen an. Es gibt keine zusätzlichen Parameter zu konfigurieren.
 
-### Widget "Alarm Liste"
+### Widget "Alarm-Liste"
 
-Zeigt eine Liste von Alarmen, Filter für Objekte, Alarmschwere und Alarmstatus an.
+Zeigt eine Liste von Alarmen, Filter für Objekte, Alarmschweregrad und Alarmstatus an.
 
 Zu konfigurierende Parameter:
 
@@ -608,11 +611,11 @@ Zu konfigurierende Parameter:
 
 ### Widget "Neueste Alarme"
 
-Zeigt alle Alarme aller Schwere nach Zeit sortiert an. Es gibt keine zusätzlichen Parameter zu konfigurieren.
+Zeigt alle Alarme jedes Schweregrads nach Zeit sortiert an. Es gibt keine zusätzlichen Parameter zu konfigurieren.
 
 ### Widget "Datenpunktliste"
 
-Zeigen Sie Datenpunkte (Messungen), eine in jeder Zeile, mit aktuellen Werten und Datenpunkt-Eigenschaften.
+Zeigt Datenpunkte (Messungen) an, eine in jeder Zeile, mit aktuellen Werten und Datenpunkt-Eigenschaften.
 
 Zu konfigurierende Parameter:
 
@@ -620,9 +623,9 @@ Zu konfigurierende Parameter:
 
 * Wählen Sie sichtbare Spalten:
 
-     * Label: Bezeichnung des Datenpunktes. Weitere Informationen finden Sie unter Data Explorer.
+     * Label: Bezeichnung des Datenpunktes. Weitere Informationen finden Sie unter [Daten-Explorer](#visualise).
 
-     * Ziel: Zielwert. Kann in der Datenexplorer- oder Datenpunktbibliothek konfiguriert werden.
+     * Ziel: Zielwert. Kann im Daten-Explorer oder in der Datenpunktbibliothek konfiguriert werden.
 
      * Aktuell: Aktueller Wert.
 
@@ -638,9 +641,9 @@ Zeigt die Details aller Kindgeräte in einer Tabelle an. Dies ist ein sehr stark
 
 Zu konfigurierende Parameter:
 
-* Zielgerät oder Gruppe: Wählen Sie für welches Objekt alle Kindgeräte angezeigt werden sollen. Dies ist typischerweise ein Gruppenobjekt.
+* Zielgerät oder Gruppe: Wählen Sie, für welches Objekt alle Kindgeräte angezeigt werden sollen. Dies ist typischerweise ein Gruppenobjekt.
 
-* Eigenschaften: Wählen Sie Eigenschaften oder Aktionen eines Objekts aus, um sie als Spalten in der Tabelle zu visualisieren. Im Konfigurationsdialog sehen Sie eine Liste der konfigurierten Spalten, jede der Spalten kann eine Eigenschaft oder eine Aktion sein.
+* Eigenschaften: Wählen Sie Eigenschaften oder Aktionen eines Objekts aus, um sie als Spalten in der Tabelle zu visualisieren. Im Konfigurationsdialog sehen Sie eine Liste der konfigurierten Spalten. Jede der Spalten kann eine Eigenschaft oder eine Aktion sein.
 
 Beispiel:
 * Im folgenden Screenshot sind fünf Spalten konfiguriert. Drei Eigenschaftenspalten "Meter", "Vendor" und "Owner", die sich auf die Eigenschaften "name", type "und" owner "beziehen. Zusätzlich gibt es zwei Aktionen, eine zum Umschalten des Wartungsmodus und eine zum Neustarten des Geräts.
@@ -658,42 +661,42 @@ Hinweis: Die Eigenschaft "Aktiver Alarmstatus" zeigt aktive Alarme als Symbole i
 
 * Fügen Sie eine neue Aktion hinzu: Klicken Sie auf "+ Aktion hinzufügen". Sie können dann die vordefinierte Aktion hinzufügen, um den Wartungsmodus umzuschalten. Oder Sie wählen "Create Operation", um eine Schaltfläche zu erstellen, die einen Shell-Befehl ausführt. Im folgenden Dialog können Sie dann die Bezeichnung für die Schaltfläche und den auszuführenden Shell-Befehl eingeben.
 ![image alt text](/guides/users-guide/image_19.png)
-Im Dialog werden die voreingestellten Shell-Befehle der ersten Shell-Befehle angezeigt. Die Liste ist leer, wenn es kein solches Gerät gibt. Weitere Informationen finden Sie unter [shell commands](http://www.cumulocity.com/guides/users-guide/device-management/#shell).<br>
-Sie können auch das JSON-Format für den Vorgang eingeben, der an das Gerät gesendet wird. Für Einzelheiten wenden Sie sich an den Gerätehersteller für unterstützte Vorgänge.
+Im Dialog werden die voreingestellten Shell-Befehle der ersten Shell-Befehle angezeigt. Die Liste ist leer, wenn es kein solches Gerät gibt. Weitere Informationen finden Sie unter [Shell-Kommandos](http://www.cumulocity.com/guides/users-guide/device-management/#shell).<br>
+Sie können auch das JSON-Format für das Kommando eingeben, das an das Gerät gesendet wird. Für Einzelheiten über unterstütze Kommandos wenden Sie sich an den Gerätehersteller.
 * Spaltenüberschrift bearbeiten: Um den Kopf der Spalte zu bearbeiten, klicken Sie auf die Spalte "Label" und bearbeiten das Label.
 
-* Anordnen von Spalten: Sie können die Spalten durch Ziehen und Ablegen mit dem Handle vor der Spalte "Label" neu anordnen.
+* Anordnen von Spalten: Sie können die Spalten durch Drag & Drop mit dem Handle vor der Spalte "Label" neu anordnen.
 
 * Entfernen von Eigenschaften: Klicken Sie auf das rote Symbol am Ende einer Zeile, um die Spalte zu entfernen.
 
-### Widget "Relais Steuerung"
+### Widget "Relais-Steuerung"
 Ermöglicht das Ein- und Ausschalten eines Geräterelais. Nur für Geräte verfügbar, die diesen Vorgang unterstützen.
 
-### Widget "Relais Array"
+### Widget "Relais-Array"
 
 Bei einem Relais-Array können Sie Relais ein- oder ausschalten. Nur für Geräte verfügbar, die diesen Vorgang unterstützen.
 
-### Widget "Nachricht Senden"
+### Widget "Nachricht senden"
 
 Sendet eine Nachricht an ein Gerät. Das Verhalten des Gerätes selbst ist geräteabhängig. Nur für Geräte verfügbar, die diesen Vorgang unterstützen.
 
 ## <a name="alarms"></a>Arbeiten mit Alarmen
 
-Das Arbeiten mit Alarmen ist identisch mit der Arbeit mit Alarmen in der Geräteverwaltung. Siehe "[Working with alarms](http://cumulocity.com//guides/users-guide/device-management/#alarm-monitoring)" im Device Management Handbuch.
+Das Arbeiten mit Alarmen ist identisch mit der Arbeit mit Alarmen in der Geräteverwaltung. Siehe [Arbeiten mit Alarmen](http://cumulocity.com//guides/benutzerhandbuch/device-management-deutsch/#alarm-monitoring) im Device-Management-Handbuch.
 
-## <a name="reports"></a>Arbeiten mit Dashboard Berichten
+## <a name="reports"></a>Arbeiten mit Dashboard-Berichten
 
-Es gibt zwei Arten von Berichten in der Cockpit-Anwendung. Dashboard-Berichte ermöglichen es Ihnen, Anwendungen, Alarme, Assets, Ereignisse und viele andere Widgets zu verfolgen. Die andere Art des Berichtes ["Exporting data with Reports"](#reporting) ist der Datenexport nach csv oder xlsx Files.
+Es gibt zwei Arten von Berichten in der Cockpit-Anwendung. Dashboard-Berichte ermöglichen es Ihnen, Anwendungen, Alarme, Assets, Ereignisse und viele andere Widgets zu verfolgen. Die zweite Art von Bericht ist der [Datenexport](#reporting) in csv- oder xlsx-Dateien.
 
 ### Durchsehen von Berichten
 
-Dashboard-Berichte sind globale Dashboard Seiten unabhängig von der Asset-Hierarchie. Der Navigator zeigt eine Schaltfläche "Berichte" an. Um alle vorhandenen Berichte anzuzeigen, erweitern Sie das Menü "Berichte" und sehen dann alle abgespeicherten Berichte.
+Dashboard-Berichte sind globale Dashboard-Seiten unabhängig von der Asset-Hierarchie. Der Navigator zeigt eine Schaltfläche "Berichte" an. Um alle vorhandenen Berichte anzuzeigen, erweitern Sie das Menü "Berichte" und sehen dann alle abgespeicherten Berichte.
 
-### Erstellen Neuer Berichte
+### Erstellen neuer Berichte
 
 Um einen neuen Bericht hinzuzufügen, wählen Sie in der Kopfzeile die Schaltfläche "+" und klicken Sie auf "Neuen Bericht erstellen".
 
-Füllen Sie die Felder "Name" und "Icon" im Dialog aus und clicken Sie "Speichern".
+Füllen Sie die Felder "Name" und "Icon" im Dialog aus und klicken Sie "Speichern".
 
 ![image alt text](/guides/users-guide/image_20.png)
 
@@ -701,7 +704,7 @@ Dann können dem erstellten Bericht Widgets hinzugefügt werden.
 
 ### Löschen von Berichten
 
-Um einen Bericht zu löschen, clicken Sie das Zahnrad-Symbol und wählen Sie "Löschen".
+Um einen Bericht zu löschen, klicken Sie das Zahnrad-Symbol und wählen Sie "Löschen".
 
 ### Berichten Widgets hinzufügen
 
@@ -711,45 +714,46 @@ Sie können dem Bericht Widgets hinzufügen, ähnlich den Dashboard-Widgets.
 
 Um einen Bericht anzuzeigen, öffnen Sie im Navigator die "Berichte" und klicken Sie auf den entsprechenden Bericht. Der Bericht wird angezeigt.
 
-## <a name="reporting"></a>Daten Exportieren mit Berichten
+## <a name="reporting"></a>Daten exportieren mit Berichten
 
-Mit der Funktion "Bericht Erstellen" können Sie csv- oder xlsx-Reports für den gesamten Mandanten anfordern. Zusätzlich können Sie * Filter * nach bestimmten Geräten, Zeitbereichen oder * Felder * auswählen. Die Berichte enthalten Informationen zu allen angegebenen "Filtern" und aktivierten "Feldern". Die maximale Anzahl von Dokumenten, die in eine einzelne xlsx-Datei exportiert werden können, beträgt 1 Million. Wenn die Anzahl der Dokumente für definierte "Filter" den Grenzwert überschreitet, erhält das Ergebnis nur 1 Million Dokumente.
+Mit der Funktion "Bericht erstellen" können Sie csv- oder xlsx-Reports für den gesamten Mandanten anfordern. Zusätzlich können Sie * Filter * nach bestimmten Geräten, Zeitbereichen oder * Felder * auswählen. Die Berichte enthalten Informationen zu allen angegebenen "Filtern" und aktivierten "Feldern". Die maximale Anzahl von Dokumenten, die in eine einzelne xlsx-Datei exportiert werden können, beträgt 1 Million. Wenn die Anzahl der Dokumente für definierte "Filter" den Grenzwert überschreitet, enthält das Ergebnis nur 1 Million Dokumente.
 
-Informationen zum Verwenden von Dashboard-Berichten finden Sie unter [Working with Dashboard Reports](#reports).
+Informationen zum Verwenden von Dashboard-Berichten finden Sie unter [Arbeiten mit Dashboard-Berichten](#reports).
 
-Um alle Berichte anzuzeigen, wählen Sie "Berichte" und klicken Sie auf "Bericht Erstellen".
+Um alle Berichte anzuzeigen, wählen Sie "Berichte" und klicken Sie auf "Bericht erstellen".
 
-Wenn ein Bericht erstellt wurde, können Sie ihn duplizieren. Dazu gehen Sie in der Berichtkonfiguration zum gewuenschten Bericht und klicken auf Duplizieren am Ende der Reihe. Es geht ein neues Fenster auf in dem alle Daten des aktuellen Berichts dupliziert werden. Sie können Änderungen anwenden, wenn Sie es wünschen. Zum Beenden drücken Sie die Schaltfläche "Speichern".
+Wenn ein Bericht erstellt wurde, können Sie ihn duplizieren. Dazu gehen Sie in der Berichtskonfiguration zum gewünschten Bericht und klicken auf "Duplizieren" am Ende der Reihe. Ein neues Fenster öffnet sich, in dem alle Daten des aktuellen Berichts dupliziert werden. Sie können Änderungen machen, wenn Sie es wünschen. Zum Beenden drücken Sie die Schaltfläche "Speichern".
 
 ### Hinzufügen von Berichten
 
-Um weitere Berichte zu erstellen, klicken Sie auf "Bericht hinzufügen"
+Um weitere Berichte zu erstellen, klicken Sie auf "Bericht hinzufügen".
 
 - Geben Sie den Namen des Berichts ein.
 - Wählen Sie aus, ob der Dateityp entweder "csv" oder "Excel" sein soll.
-- [Filter hinzufügen] (# filter), um Objekt- oder zeitspezifische Berichte anzufordern.
-- [Felder auswählen] (# Felder) des Berichts.
+- Fügen Sie [Filter](# filter) hinzu, um Objekt- oder zeitspezifische Berichte anzufordern.
+- Wählen Sie [Felder](# Felder) des Berichts aus.
 - Klicken Sie auf "Speichern", um den Vorgang abzuschließen.
 
 ![Add Reports](/guides/users-guide/addreports.png)
 
 <a name="filters"> **Filter** </a>
 
-Berichte können auf bestimmte Objekte oder einen Zeitbereich gefiltert werden. Um ein zu exportierendes Objekt auszuwählen, navigieren Sie zuerst zur Suchleiste "Objekt zum Exportieren" unter dem Bereich "Filter". Bestimmte Geräte oder Gruppen können durch Schreiben ihres Namens oder Eigenschaftswerts in die Suchleiste ausgewählt werden. Wenn Sie auf die Schaltfläche "Suchen" klicken, sucht das Cockpit nach einem passenden Eintrag in Ihrer Gerätebibliothek. Nachdem alle passenden Geräte gefunden wurden, werden sie unter der Suchleiste angezeigt. Um ein Gerät auszuwählen, klicken Sie einfach auf seinen Namen und es wird grün hervorgehoben.
+Berichte können auf bestimmte Objekte oder einen Zeitbereich gefiltert werden. Um ein zu exportierendes Objekt auszuwählen, navigieren Sie zuerst zur Suchleiste "Objekt zum Exportieren" im Bereich "Filter". Bestimmte Geräte oder Gruppen können durch Eingabe ihres Namens oder Eigenschaftswerts in die Suchleiste ausgewählt werden. Wenn Sie auf die Schaltfläche "Suchen" klicken, sucht das Cockpit nach einem passenden Eintrag in Ihrer Gerätebibliothek. Nachdem alle passenden Geräte gefunden wurden, werden sie unter der Suchleiste angezeigt. Um ein Gerät auszuwählen, klicken Sie einfach auf seinen Namen, und es wird grün hervorgehoben.
 
 ![Object filter](/guides/users-guide/objectfilter.png)
 
-Zusätzliche Filter wie "Zeitbereich" können aktiviert werden. Sie haben die Möglichkeit, Objektberichte zu "Letztes Jahr", "letzter Monat", "letzte Woche" zu filtern oder einfach einen benutzerdefinierten Zeitraum einzugeben. Um den Zeitbereich zu wählen, klicken Sie auf das Scroll-Menü und wählen Sie den gewünschten Zeitraum. Wenn Sie den Zeitbereich anpassen möchten, erscheinen zwei kleine Datumsfelder, um einen Zeitbereich auszuwählen.
+Zusätzliche Filter wie "Zeitbereich" können aktiviert werden. Sie haben die Möglichkeit, Objektberichte zu "Letztes Jahr", "Letzter Monat", "Letzte Woche" zu filtern oder einfach einen benutzerdefinierten Zeitraum einzugeben. Um den Zeitbereich zu wählen, klicken Sie auf das Scroll-Menü und wählen Sie den gewünschten Zeitraum. Wenn Sie den Zeitbereich anpassen möchten, erscheinen zwei kleine Datumsfelder, um einen Zeitbereich auszuwählen.
+
 ![Time range](/guides/users-guide/timerange.png)
 
-Um Filter zu aktivieren, müssen Sie auf das Kontrollkästchen unter "Aktiviert" klicken.
+Um Filter zu aktivieren, klicken Sie auf das Kontrollkästchen unter "Aktiviert".
 
 <a name="fields"> **Felder** </a>
 
 Um Berichte zu bearbeiten, können verschiedene Felder ausgewählt werden. Wenn Sie z. B. "Alarme" und "Ereignisse" auswählen, filtern Sie die Berichte nur auf diese beiden Felder. Insgesamt gibt es vier Felder, die Sie wählen können.
 
 - Alarme
-- Veranstaltungen
+- Ereignisse
 - Verwaltetes Objekt
 - Messungen
 
@@ -757,15 +761,15 @@ Um ein Feld zu aktivieren, klicken Sie einfach auf den Namen des Feldes.
 
 ![Fields](/guides/users-guide/enabledordisabledfields.png)
 
-Wenn ein bestimmtes Feld aktiviert ist, können vordefinierte oder neue Eigenschaften hinzugefügt werden. Wenn Sie leere Eigenschaften hinzufügen möchten, klicken Sie auf "Hinzufügen". Um Label oder Pfad einzugeben, klicken Sie auf "Spalte" oder "Pfad" in der roten Zeile. Wenn Sie beispielsweise das Feld "Alarme" aktivieren, können Sie in Spalte und Pfad den Wert "Schweregrad" eingeben, um einen Bericht nur für Alarmschwere zu erhalten.
+Wenn ein bestimmtes Feld aktiviert ist, können vordefinierte oder neue Eigenschaften hinzugefügt werden. Wenn Sie leere Eigenschaften hinzufügen möchten, klicken Sie auf "Hinzufügen". Um Label oder Pfad einzugeben, klicken Sie auf "Spalte" oder "Pfad" in der roten Zeile. Wenn Sie beispielsweise das Feld "Alarme" aktivieren, können Sie in Spalte und Pfad den Wert "Schweregrad" eingeben, um einen Bericht nur für Alarmschweregrade zu erhalten.
 
-Wenn Sie ein Feld im Feld "Felder" haben, das nicht aus der Liste "Vordefinierte Liste hinzufügen", sondern als benutzerdefinierte Eigenschaft definiert ist, ist es erforderlich, dass mindestens eine Eigenschaft für den Export für benutzerdefinierte Werte eingerichtet werden muss um auf dem Excelblatt zu erscheinen. Wenn ein Bericht beispielsweise 4 Felder definiert hat: Zeit, Gerätename, Typ und c8y_SpeedMeasurement.speed.value, dann sind die ersten 3 vordefinierte Eigenschaften und die letzte eine benutzerdefinierte Eigenschaft. Wenn keine Messung für den Export keine benutzerdefinierte Eigenschaft c8y_SpeedMeasurement.speed.value hat, wird sie nicht auf dem Excel-Blatt angezeigt.
+Wenn Sie ein Feld im Bereich "Felder" haben, das nicht aus der Liste "Vordefinierte Liste hinzufügen", sondern als benutzerdefinierte Eigenschaft definiert ist, muss mindestens eine Eigenschaft für den Export für benutzerdefinierte Werte eingerichtet werden, um auf der exportierten Excel-Liste zu erscheinen. Wenn für einen Bericht beispielsweise diese vire Felder definiert sind: Zeit, Gerätename, Typ und c8y_SpeedMeasurement.speed.value, dann sind die ersten drei vordefinierte Eigenschaften und die letzte eine benutzerdefinierte Eigenschaft. Wenn eine Messung für den Export keine benutzerdefinierte Eigenschaft c8y_SpeedMeasurement.speed.value hat, wird sie nicht in der Excel-Liste angezeigt.
 
 Wenn Ihr Feld ein gültiges.key.with.dot ist, dann verweisen Sie es als ['Fragment.key.with.dot'] in dem Pfad, z.B. ['Fragment.key.with.dot'] serie.value
 
 Um vordefinierte Eigenschaften hinzuzufügen, klicken Sie auf "Vordefinierte hinzufügen".
 
-Um vordefinierte Eigenschaften auszuwählen, klicken Sie auf das entsprechende Kontrollkästchen unter "SHOW". Nachdem die gewünschten Eigenschaften ausgewählt wurden, klicken Sie auf "Auswählen".
+Um vordefinierte Eigenschaften auszuwählen, klicken Sie auf das entsprechende Kontrollkästchen unter "Anzeigen". Nachdem die gewünschten Eigenschaften ausgewählt wurden, klicken Sie auf "Auswählen".
 
 ![Select](/guides/users-guide/select.png)
 
@@ -781,9 +785,9 @@ Das "Suchfeld" kann auch für eine einfachere Handhabung genutzt werden. Geben S
 
 ![Add datapoint](/guides/users-guide/adddatapoint.png)
 
-### Stammdaten exportieren in csv or xlsx files
+### Stammdaten exportieren in csv- oder xlsx-Dateien
 
-Um "Stammdaten" in csv- oder xlsx-Dateien zu exportieren, navigieren Sie zu "Bericht Erstellen" auf der Registerkarte "Bericht".
+Um "Stammdaten" in csv- oder xlsx-Dateien zu exportieren, navigieren Sie zu "Bericht erstellen" auf der Registerkarte "Bericht".
 
 - Wählen Sie die gewünschten Dateien aus, die Sie exportieren möchten, indem Sie auf das entsprechende Kontrollkästchen klicken.
 - Klicken Sie auf "Exportieren".
@@ -792,29 +796,30 @@ Um "Stammdaten" in csv- oder xlsx-Dateien zu exportieren, navigieren Sie zu "Ber
 
 Sie erhalten eine E-Mail mit den Links zu jeder Datei.
 
-Die Standardzeit-Eigenschaften von Dokumenten (zB Zeit oder Erstellungszeit in Alarmen) werden exportiert
-* als xlsx file im format: 03/13/2016 00:00:24
-* als csv file im format: 2016-03-13T00:01:24.000Z
+Die Standardzeit-Eigenschaften von Dokumenten (z. B. Zeit oder Erstellungszeit bei Alarmen) werden exportiert:
 
-Nur csv Zeit enthält Millisekunden und Zeitzone.
+* als xlsx-Datei im Format: 03/13/2016 00:00:24
+* als csv-Datei im Format: 2016-03-13T00:01:24.000Z
 
-### Berichte Editieren
+Nur csv-Zeit enthält Millisekunden und Zeitzone.
 
-Um Berichte **zu editieren** genügt es sie anzuklicken und die Veränderungen zu speichern.
+### Berichte editieren
 
-### Berichte Löschen
+Um Berichte zu editieren genügt es, sie anzuklicken und die Veränderungen zu speichern.
+
+### Berichte löschen
 
 Um Berichte über den Namen des Berichts zu entfernen, klicken Sie auf die Schaltfläche "X".
 
 ## <a name="library"></a>Verwenden der Datenpunktbibliothek
 
-Die Data Point-Bibliothek enthält Standardwerte für Datenpunkt-Eigenschaften. Datenpunkteigenschaften ähneln den "Absatzformaten" in Textverarbeitungsanwendungen: Sie möchten nicht jeden Absatz einzeln formatieren. Stattdessen möchten Sie einen Satz von Standardformaten definieren und diese auf Ihre Absätze in Ihrem Dokument anwenden. Die Datenpunktbibliothek bietet die gleiche Funktionalität für Datenpunkte: Sie bietet eine Reihe von Standarddatenpunktformaten, die von verschiedenen Geräten problemlos auf Ihre Datenpunkte angewendet werden können.
+Die Datenpunktbibliothek enthält Standardwerte für Datenpunkteigenschaften. Datenpunkteigenschaften ähneln den "Absatzformaten" in Textverarbeitungsanwendungen: Sie möchten nicht jeden Absatz einzeln formatieren. Stattdessen möchten Sie einen Satz von Standardformaten definieren und diese auf Ihre Absätze in Ihrem Dokument anwenden. Die Datenpunktbibliothek bietet die gleiche Funktionalität für Datenpunkte: Sie bietet eine Reihe von Standarddatenpunktformaten, die von verschiedenen Geräten problemlos auf Ihre Datenpunkte angewendet werden können.
 
 > Wie verwendet die Cockpit-Anwendung die Datenpunktbibliothek? Um die Standard-Visualisierung für einen Datenpunkt wie Farbe oder Label zu finden, durchsucht Cockpit die Datenpunktbibliothek und versucht, einen passenden Eintrag zu finden. Ein Eintrag gilt als "Passend", wenn der Wert für Fragment und Serie in der Datenpunktbibliothek mit denen der Messung übereinstimmt. Wenn ein passender Eintrag gefunden wird, werden die entsprechenden Datenpunkteigenschaften für eine Standardvisualisierung verwendet.
 > 
 > Darüber hinaus werden die Eigenschaften der Datenpunktbibliothek von Schwellenwert-Geschäftsregeln verwendet: Die in der Datenpunktbibliothek konfigurierten roten und gelben Werte werden von den Schwellwertregeln verwendet, um Alarme auszulösen.
 
-Bei Auswahl von "Data Point Library" im Navigator öffnet sich eine Liste mit vordefinierten Datenpunkten inklusive deren Eigenschaften.
+Bei Auswahl von "Datenpunktbibliothek" im Navigator öffnet sich eine Liste mit vordefinierten Datenpunkten inklusive deren Eigenschaften.
 
 ![image alt text](/guides/users-guide/image_21de.png)
 
@@ -826,36 +831,36 @@ Beim Anklicken eines Eintrags kann ein einzelner Eintrag in der Datenpunktbiblio
 
 Cumulocity enthält eine Regel-Engine, um Daten in Echtzeit zu analysieren und Aktionen basierend auf Daten auszuführen. Diese Regeln werden in einer Skriptsprache angegeben und in der Administrations-Anwendung verwaltet.
 
-Zum Erstellen von Regeln enthält die Cockpit-Anwendung einen "Smart Rule Builder". Mit dem Smart Rule Builder können Regeln aus Vorlagen erstellt werden. Diese Regeln werden als intelligente Regeln "Smart Rules" bezeichnet. Die Vorlagen werden als intelligente Regelvorlagen "Smart Rules Template" bezeichnet.
+Zum Erstellen von Regeln enthält die Cockpit-Anwendung einen "Smart Rule Builder". Mit dem Smart Rule Builder können Regeln aus Vorlagen erstellt werden. Diese Regeln werden als intelligente Regeln ("Smart Rules") bezeichnet. Die Vorlagen werden als intelligente Regelvorlagen ("Smart Rules Template") bezeichnet.
 
 
 Smart Rules werden parametriert. Es gibt zwei Quellen für Parameter:
 
 **Regelparameter** werden vom Benutzer beim Erstellen einer Smart Rule aus einer Vorlage bereitgestellt. Beispiele sind E-Mail-Adressen und Alarmtexte.
 
-**Objektparameter** werden in der Gruppe oder dem Gerät gespeichert. Diese Parameter können auch nach der Erstellung der Smart-Rule editiert werden. Ein Beispiel enthält Min- und Max-Werte für Schwellenwerte.
+**Objektparameter** werden in der Gruppe oder dem Gerät gespeichert. Diese Parameter können auch nach der Erstellung der Smart-Rule editiert werden. Ein Beispiel sind Min- und Max-Werte für Schwellenwerte.
 
-### Eine "Smart Rule" Erstellen
+### Eine "Smart Rule" erstellen
 
-Smart Rules können entweder unter "Konfiguration -> Smart Rules" oder unter dem Reiter "Info" einer Gruppe oder eines Geräts erstellt werden.
+Smart Rules können entweder unter "Konfiguration -> Smart Rules" oder unter dem Tab "Info" einer Gruppe oder eines Geräts erstellt werden.
 
 * Klicken auf "+ Smart Rule hinzufügen"
 
-* Auf eine Smart Rule Templates klicken.
+* Auf ein "Smart Rule Template" klicken.
 
-* Geben Sie in der nächsten Form die Regelparameter ein. Die Regelparameter unterscheiden sich von Regel zu Regel, Details siehe Einzelregelbeschreibungen unterhalb.
+* Geben Sie im nächsten Fenster die Regelparameter ein. Die Regelparameter unterscheiden sich von Regel zu Regel (Details siehe Einzelregelbeschreibungen unten).
 
-* Über das Suchfeld können Sie auch die aktuelle Smart Rule für Zielgeräte oder Assets aktivieren. Dieser Schritt ist aber optional.
+* Über das Suchfeld können Sie auch die aktuelle Smart Rule für Zielgeräte oder Assets aktivieren. Dieser Schritt ist optional.
 
 * Wählen Sie aus, ob die Regel aktiviert oder deaktiviert werden soll.
 
-* Auf "Erstellen" clicken.
+* Auf "Erstellen" klicken.
 
 Eine Liste der intelligenten Regeln wird unten gezeigt. Beachten Sie, dass die Anzahl der angezeigten Smart-Regeln je nach Ihrer Installation unterschiedlich sein kann.
 
 ![image alt text](/guides/users-guide/image_23de.png)
 
-Danach ist die Regel für alle Geräte und Gruppen aktiv, wenn die Regel auf freigegeben steht und nicht nur für bestimmte Objekte aktiviert wurde. Im nächsten Abschnitt erfahren Sie, wie Sie eine intelligente Regel für bestimmte Objekte deaktivieren.
+Danach ist die Regel für alle Geräte und Gruppen aktiv, wenn die Regel auf "freigegeben" steht und nicht nur für bestimmte Objekte aktiviert wurde. Im nächsten Abschnitt erfahren Sie, wie Sie eine intelligente Regel für bestimmte Objekte deaktivieren.
 
 Deaktivierte Smart Rules werden nicht in Gruppenmenüs oder Gerätemenüs angezeigt, um Verwirrung zu vermeiden. Smart Rules können mehrere Male instanziiert werden.
 
@@ -865,7 +870,7 @@ Smart Rules können Sie unter dem Info-Tab eines Geräts oder einer Gruppe sehen
 
 Für ein einzelnes Objekt (Gruppe oder Gerät) kann eine einzelne Smart Rule aktiviert (eingeschaltet) und deaktiviert (ausgeschaltet) werden. Wenn zum Beispiel ein Gerät zu viele Grenzwertalarme erzeugt, können Sie die Regel für dieses einzelne Objekt deaktivieren. Die Regel ist für alle anderen Objekte noch aktiv.
 
-Um eine Smart Rule für eine Gruppe oder ein Gerät zu deaktivieren oder zu aktivieren, wechseln Sie einfach auf die Registerkarte Info und klicken Sie auf die Schaltfläche, um die Regel zu aktivieren oder zu deaktivieren.
+Um eine Smart Rule für eine Gruppe oder ein Gerät zu deaktivieren oder zu aktivieren, wechseln Sie einfach auf die Registerkarte "Info", und klicken Sie auf die Schaltfläche, um die Regel zu aktivieren oder zu deaktivieren.
 
 ![Info tab](/guides/users-guide/infotab.png)	
 
@@ -873,19 +878,19 @@ Um eine Smart Rule für eine Gruppe oder ein Gerät zu deaktivieren oder zu akti
 
 Um eine bestimmte Smart Rule zu bearbeiten, zu klonen oder zu entfernen, klicken Sie einfach auf das rechts neben der Smart Rule befindliche Zahnrad und klicken Sie auf die gewünschte Option.
 
-Für ein einfacheres Debugging gibt es einen direkten Link von einer intelligenten Regel zu einem entsprechenden Ereignisverarbeitungsmodul. Klicken Sie auf das Zahnrad und wählen Sie dann "Bearbeiten".
+Für eine einfachere Fehlerbehebung gibt es einen direkten Link von einer intelligenten Regel zu einem entsprechenden Ereignisverarbeitungsmodul. Klicken Sie auf das Zahnrad und wählen Sie dann "Bearbeiten".
 
 ### Beispiel: Definieren von genauen Schwellenwerten
 
 Gehen Sie folgendermaßen vor, um eine Schwellenregel zu definieren:
 * Navigieren Sie im Asset-Navigator zu der gewünschten Gruppe oder dem gewünschten Gerät, um einen Schwellenwert auf anzuwenden.
-* Klicken Sie auf "Data Explorer".
+* Klicken Sie auf "Daten-Explorer".
 * Wenn der Datenpunkt standardmäßig nicht sichtbar ist, wählen Sie "Datenpunkt hinzufügen" und fügen Sie einen Datenpunkt hinzu.
-* Für den Datenpunkt, der den Schwellenwert erhöhen soll, klicken Sie am Ende der Zeile auf das Symbol "Zahnrad" und wählen Sie "Smart Rule erstellen".
+* Für den Datenpunkt, der den Schwellenwert erhöhen soll, klicken Sie am Ende der Zeile auf das Zahnrad-Symbol und wählen Sie "Smart Rule erstellen".
 
 ![image alt text](/guides/users-guide/image_26de.png)
 
-* Auswählen "Bei Messungen, die den Schwellenwert überschreiten, Alarm erstellen"
+* Wählen Sie "Bei Messungen, die den Schwellenwert überschreiten, Alarm erstellen".
 
 * Füllen Sie die Regelparameter im Formular aus:
 
@@ -897,13 +902,13 @@ Gehen Sie folgendermaßen vor, um eine Schwellenregel zu definieren:
 
 * Unter "Für Zielgruppe oder Geräte aktivieren" können Sie das Objekt auswählen, auf das diese Regel angewendet wird.
 
-* Klicken Sie auf "Erstellen"
+* Klicken Sie auf "Erstellen".
 
 Nachdem die Regel erstellt wurde, wird sie automatisch aktiviert und Alarme erscheinen, wenn sie auftreten.
 
 ### Ausführen einer Kettenregel
 
-Smart Rules können ein neues Datenelement auf der Plattform erstellen. Beispielsweise erzeugt die Schwellenregel neue Alarme. Diese neuen Daten können durch ausgewählte intelligente Regeln weiterverarbeitet werden. Zum Beispiel durch eine "Bei Alarm  E-Mail verschicken" Regel. Mit diesem Mechanismus ist es möglich, eine Kette von intelligenten Regeln zu erstellen. Wenn Sie eine Regelkette erstellen, müssen Sie eine klare Vorstellung haben, wie viele Daten erstellt werden, um Überlastungen oder übermäßige Datenmengen zu vermeiden.
+Smart Rules können ein neues Datenelement auf der Plattform erstellen. Beispielsweise erzeugt die Schwellenregel neue Alarme. Diese neuen Daten können durch ausgewählte intelligente Regeln weiterverarbeitet werden, zum Beispiel durch eine "Bei Alarm  E-Mail verschicken"-Regel. Mit diesem Mechanismus ist es möglich, eine Kette von intelligenten Regeln zu erstellen. Wenn Sie eine Regelkette erstellen, müssen Sie eine klare Vorstellung haben, wie viele Daten erstellt werden, um Überlastungen oder übermäßige Datenmengen zu vermeiden.
 
 ## <a name="business"></a>Regeln für den Geschäftsablauf
 Die folgenden Smart Rules sind in unserem System verfügbar.
@@ -914,9 +919,9 @@ Beim Überschreiten der definierten gelben und roten Bereiche werden Alarme gene
 
 Die Regel verwendet den folgenden Parameter aus dem Geräteobjekt oder der Datenpunktbibliothek:
 
-* Objektwert roter Bereich: Bereich, wenn das System kritische Alarme erstellen soll. Diese Werte können im Data Explorer für jeden Datenpunkt editiert werden.
+* Objektwert roter Bereich: Bereich, wenn das System kritische Alarme erstellen soll. Diese Werte können im Daten-Explorer für jeden Datenpunkt editiert werden.
 
-* Objektwert gelber Bereich: Bereich, wenn das System kleinere Alarme erstellen sollte. Diese Werte können im Data Explorer für jeden Datenpunkt editiert werden.
+* Objektwert gelber Bereich: Bereich, wenn das System kleinere Alarme erstellen sollte. Diese Werte können im Daten-Explorer für jeden Datenpunkt editiert werden.
 
 * Datenpunktbibliothek roter Bereich: Wenn kein roter Bereich im jeweiligen Objekt gespeichert ist, wird die Datenpunktbibliothek nach dem konfigurierten Datenpunkteintrag durchsucht und der dazugehörige rote Bereich verwendet.
 
@@ -928,21 +933,21 @@ Die Regel verwendet die folgenden Parameter:
 
 ![image alt text](/guides/users-guide/image_28de.png)
 
-* Fragment: Name des Messfragments. Die eingehende Messung muss genau den gleichen Fragmentnamen wie konfiguriert haben. Beim Erstellen einer Regel aus dem Datenexplorer sind die Fragmentdaten bereits ausgefüllt.
+* Fragment: Name des Messfragments. Die eingehende Messung muss genau den gleichen Fragmentnamen wie konfiguriert haben. Beim Erstellen einer Regel aus dem Daten-Explorer sind die Fragmentdaten bereits ausgefüllt.
 
 * Serie: Ähnlich wie Fragment, nur für die Serie.
 
 * Eintrag der Datenpunktbibliothek: Name des Eintrags in der Datenpunktbibliothek. Hier finden Sie die Standardwerte für rote und gelbe Bereiche, falls sie nicht für ein einzelnes Objekt konfiguriert sind.
 
-* Typ: Typ von Alarm, der betätigt wird.
+* Typ: Typ von Alarm, der ausgelöst wird.
 
-* Text: Text des Alarms der betätigt wird.  
+* Text: Text des Alarms, der ausgelöst wird.  
 
 Eine detaillierte Beschreibung der Schritte, die diese Smart Rule für jeden eingehenden Messwert durchführt:
 
-* Prüfen Sie, ob die Messung Daten für das Fragment und die Serie enthält (Regelparameter).
+* Prüfen, ob die Messung Daten für das Fragment und die Serie enthält (Regelparameter).
 
-* Prüfen Sie, ob die Regel für das Quellobjekt aktiviert ist.
+* Prüfen, ob die Regel für das Quellobjekt aktiviert ist.
 
 * Die Daten des roten und gelben Bereiches sammeln von entweder:
 
@@ -950,7 +955,7 @@ Eine detaillierte Beschreibung der Schritte, die diese Smart Rule für jeden ein
 
    - der Datenpunktbibliothek (Regelparameter).
    
-Sind keine rot / gelb Bereiche definiert, werden folgerichtig keine Alarme generiert.
+Sind keine roten/gelben Bereiche definiert, werden folgerichtig keine Alarme generiert.
 
 Im Quellobjekt definierte Bereichswerte haben eine höhere Priorität als die in der Datenpunktbibliothek definierten Werte. Sie können auch einfach einen einzelnen Wert (z. B. gelber Bereich max) überschreiben, indem Sie ihn im Quellobjekt setzen. Die anderen Werte werden dann von der Datenpunktbibliothek übernommen.
 
@@ -985,25 +990,25 @@ Sonst
 
 * Stellen Sie sicher, dass der Alarm erstellt wurde und nicht irgendwo dupliziert wurde.
 
-* Das Gerät ist nicht in Wartung [Wartung](/guides/reference/device-management) : In diesem Fall gibt es keinen neuen Alarm, weil diese unterdrückt werden.
+* Das Gerät ist nicht in Wartung [Wartung](/guides/reference/device-management): In diesem Fall gibt es keinen neuen Alarm, weil diese unterdrückt werden.
 
-* Wenn Sie keine Alarmzuordnungsregel haben (siehe: [Repriorisieren der Alarme](/guides/users-guide/administration#reprio-alarms)) die die Alarmschwelle ändert: In diesem Fall kann der Alarm anders ausfallen als erwartet.
+* Wenn Sie keine Alarmzuordnungsregel haben (siehe: [Repriorisieren der Alarme](/guides/users-guide/administration#reprio-alarms)), die die Alarmschwelle ändert: In diesem Fall kann der Alarm anders ausfallen als erwartet.
 
 * Prüfen Sie, ob ein Alarm bereits durch die nächsten geplanten Messungen mit dem resultierenden Wert in einem grünen Bereich gelöscht wurde.
 
-* Bitte beachten Sie, dass, wenn Sie einen Alarm löschen, dass der Alarm behoben ist. Ein neuer Alarm wird nur dann ausgelöst, wenn das Gerät seinen Zustand ändert und die Schwellen wieder überschreitet.
+* Bitte beachten Sie, dass der Alarm behoben ist, wenn Sie ihn löschen. Ein neuer Alarm wird nur dann ausgelöst, wenn das Gerät seinen Zustand ändert und die Schwellen wieder überschreitet.
 
 ## Bei Schwellwertüberschreitung Alarm erzeugen 
 
-Wenn der Messwert den ROT-Bereich betritt oder verlässt, wird ein kritischer Alarm erzeugt oder gelöscht. Die Schwere des Alarms wird bestimmt durch:
-* Wenn der Messwert in den ROTEN Bereich wechselt, ist der Schweregrad kritisch.
-* Wenn der Messwert auf im grünen Bereich war, wird der Alarm gelöscht.
+Wenn der Messwert den roten Bereich erreicht oder verlässt, wird ein kritischer Alarm erzeugt oder gelöscht. Die Schwere des Alarms wird bestimmt durch:
+* Wenn der Messwert in den roten Bereich wechselt, ist der Schweregrad kritisch.
+* Wenn der Messwert im grünen Bereich war, wird der Alarm gelöscht.
 
-Diese Regel ist ähnlich der obigen Schwellenregel. In dieser Regel wird jedoch der ROT-Schwellenwert explizit angegeben. Die andere Schwellenregel oben extrahiert die Schwellenwerte aus der Geräte- oder Datenpunktbibliothek.
+Diese Regel ist ähnlich der obigen Schwellenregel. In dieser Regel wird jedoch der rote Schwellenwert explizit angegeben. Die andere Schwellenregel oben extrahiert die Schwellenwerte aus der Geräte- oder Datenpunktbibliothek.
 
 Die Parameter dieser Regel:![image alt text](/guides/users-guide/image_37de.png)
 
-* Fragment: Name des Messfragments. Die eingehende Messung muss genau den gleichen Fragmentnamen wie konfiguriert haben. Beim Erstellen einer Regel aus dem Data Explorer ist der Fragmentname bereits ausgefüllt.
+* Fragment: Name des Messfragments. Die eingehende Messung muss genau den gleichen Fragmentnamen wie konfiguriert haben. Beim Erstellen einer Regel aus dem Daten-Explorer ist der Fragmentname bereits ausgefüllt.
 
 * Serie: Ähnlich wie Fragment, nur für Serie.
 * Minimum, Maximum: Wenn ein Wert im Bereich [minimum; Maximum] wird der konfigurierte Alarm ausgelöst.
@@ -1025,19 +1030,18 @@ Die Regel verwendet die folgenden Parameter:
 
 * Alarmarten: Die Arten der Alarme, die die Regel auslösen. Für jeden neu erzeugten Alarm mit einem dieser Typen in der Liste wird die Regel ausgelöst.
 
-* Senden an: E-Mail-Adressen für das Versenden der E-Mail an. Mehrere Adressen können durch ein Komma getrennt werden (",", kein Leerzeichen!).
+* Senden an: E-Mail-Adressen für das Versenden der E-Mail. Mehrere Adressen können durch ein Komma getrennt werden (",", kein Leerzeichen!).
 
-* CC senden an: Wie bisher nur für E-Mail "CC" Feld.
+* CC senden an: Wie bei "Senden an", nur für das E-Mail-"CC"-Feld.
 
-* Senden BCC an: Wie bisher nur für E-Mail "BCC" -Feld.
+* BCC senden an: Wie bei "Senden an", nur für das E-Mail-"BCC"-Feld.
 
-* Antwort auf: Adresse, die verwendet werden soll, um auf die Nachricht zu antworten.
+* Antwort an: Adresse, die verwendet werden soll, um auf die Nachricht zu antworten.
 
-* Betreff: Betreff der E-Mail. Sie können eine Variable des Formulars # {name} verwenden. Unterstützte Variablen werden unter "Smart Rule Variables" weiter unten aufgelistet.
+* Betreff: Betreff der E-Mail. Sie können eine Variable des Formulars # {name} verwenden. Unterstützte Variablen werden unter "Smart-Rule-Variablen" weiter unten aufgelistet.
 
-* Text: Text der E-Mail. Sie können eine Variable des Formulars # {name} verwenden. Unterstützte Variablen werden unter "Smart Rule Variables" weiter unten aufgelistet.
+* Text: Text der E-Mail. Sie können eine Variable des Formulars # {name} verwenden. Unterstützte Variablen werden unter "Smart-Rule-Variablen" weiter unten aufgelistet.
 
-* Antwort auf: Adresse, die verwendet werden soll, um auf die Nachricht zu antworten.
 
 **Troubleshooting**
 
@@ -1049,7 +1053,7 @@ Die Regel verwendet die folgenden Parameter:
 
 Wenn ein Alarm erzeugt wird, wird eine SMS gesendet.
 
-Diese Regel ist nur verfügbar, wenn Ihr Mieter über einen konfigurierten SMS-Anbieter verfügt.
+Diese Regel ist nur verfügbar, wenn Ihr Mandant über einen konfigurierten SMS-Anbieter verfügt.
 
 Die Regel verwendet die folgenden Parameter:
 
@@ -1057,9 +1061,9 @@ Die Regel verwendet die folgenden Parameter:
 
 * Alarmtypen: Die Alarmtypen, die die Regel auslösen. Für jeden neu erzeugten Alarm wird eine Regel ausgelöst.
 
-* Telefonnummer: Zielrufnummer. Es wird empfohlen, mobilen Ländercode für alle Nummern, z.B. "+49" oder "0049" für Deutschland. Mehrere Nummern können durch ein Komma getrennt werden (",", kein Leerzeichen!).
+* Telefonnummer: Zielrufnummer. Mobiler Ländercode wird für alle Nummern empfohlen, z. B. "+49" oder "0049" für Deutschland. Mehrere Nummern können durch ein Komma getrennt werden (",", kein Leerzeichen!).
 
-* Nachricht: SMS-Text mit max. 160 Zeichen. Sie können die Variable # {name} verwenden. Unterstützte Variablen werden unter "Smart Rule Variables" weiter unten aufgelistet.
+* Nachricht: SMS-Text mit max. 160 Zeichen. Sie können die Variable # {name} verwenden. Unterstützte Variablen werden unter "Smart-Rule-Variablen" weiter unten aufgelistet.
 
 **Troubleshooting** 
 
@@ -1080,14 +1084,14 @@ Die Parameter der Regel:![image alt text](/guides/users-guide/image_31de.png)
 Beschreibung:
 
 * Wenn ein konfigurierter Alarm ausgelöst wird, beginnt die Überwachung, wie lange der Alarm aktiv bleibt.
-* Wenn der Alarm nach einer bestimmten Zeit noch aktiv ist, erhöht er die Schwere einer Stufe, wie von "WENIGER WICHTIG" auf "WICHTIG".
+* Wenn der Alarm nach einer bestimmten Zeit noch aktiv ist, wird sein Schweregrad um eine Stufe erhöht, zum Beispiel von "WENIGER WICHTIG" auf "WICHTIG".
 * Wenn der Alarm "KRITISCH" ist, wird die Überwachung gestoppt, da keine weiteren Maßnahmen zur Verfügung stehen.
 
-Die Regel überprüft, ob die konfigurierte Dauer einmal pro Minute überschritten wurde. Daher kann es vorkommen, dass sich die Alarmschwelle nicht in der Sekunde ändert, während sie die Dauer überschreitet, sondern nur während der folgenden Überprüfung.
+Die Regel überprüft, ob die konfigurierte Dauer einmal pro Minute überschritten wurde. Daher kann es vorkommen, dass sich der Alarmschweregrad nicht in der Sekunde ändert, wenn sie die Dauer überschreitet, sondern nur während der folgenden Überprüfung.
 
-## Bei Geofence Alarm erzeugen
+## Bei Geofence-Überschreitung Alarm erzeugen
 
-Die Geofence-Smart-Regel kann so konfiguriert werden, dass ein Alarm beim Überfahren der Geofence (oder beides) erzeugt wird. Bestehende Alarme werden gelöscht, wenn die entgegengesetzte Bedingung wahr ist, wie wenn ein verfolgtes Fahrzeug, das den Geofence-Bereich verlassen hat, wieder in den Geofence-Bereich eintritt.
+Die Geofence-Smart-Regel kann so konfiguriert werden, dass ein Alarm beim Überschreiten des Geofence (oder beides) erzeugt wird. Bestehende Alarme werden gelöscht, wenn die entgegengesetzte Bedingung wahr ist, zum Beispiel wenn ein verfolgtes Fahrzeug, das den Geofence-Bereich verlassen hat, wieder in den Geofence-Bereich eintritt.
 
 Die Regel verwendet die folgenden Parameter:
 
@@ -1097,21 +1101,21 @@ Die Regel verwendet die folgenden Parameter:
 
 * Typ: Typ des Alarms, der ausgelöst wird.
 
-* Text: Text des Alarms, der aausgelöst wird.
+* Text: Text des Alarms, der ausgelöst wird.
 
 * Schweregrad: Schweregrad des Alarms, der ausgelöst wird.
 
-* TriggerAlarmOn: Definition, welche Geofence Interaktion den Alarm erzeugt. Werte: "verlassen", "hineinfahren" oder "beide". "Verlassen" wird automatisch als Voreinstellung gesetzt.
+* TriggerAlarmOn: Definition, welche Geofence-Interaktion den Alarm erzeugt. Werte: "verlassen", "hineinfahren" oder "beide". "Verlassen" wird automatisch als Voreinstellung gesetzt.
 
 Es wird kein Alarm ausgelöst, bis das Gerät zum ersten Mal die Geofence-Grenze überquert.
 
 **Troubleshooting** 
 
-* Bitte stellen Sie sicher, dass das Gerät innerhalb der Geofence war, einmal mindestens nach dem Erstellen / Aktivieren der Regel
+* Bitte stellen Sie sicher, dass das Gerät mindestens einmal nach dem Erstellen bzw. Aktivieren der Regel innerhalb der Geofence war.
 
 * Wenn sich das Gerät nicht im Modus [Wartung](/guides/reference/device-management) befindet: Es wird kein neuer Alarm aufgrund der Unterdrückungsrichtlinie erzeugt.
 
-* Wenn Sie keine Alarmzuordnungsregel haben (siehe: [Repriorisieren der Alarme](/guides/users-guide/administration#reprio-alarms)), die den Alarmschweregrad ändern: In diesem Fall kann der Alarm eine andere Schwere haben als erwartet .
+* Wenn Sie keine Alarmzuordnungsregel haben (siehe: [Repriorisieren der Alarme](/guides/users-guide/administration#reprio-alarms)), die den Alarmschweregrad ändern: In diesem Fall kann der Alarm eine andere Schwere haben, als erwartet.
  
 ## Berechne Energieverbrauch
 
@@ -1121,23 +1125,23 @@ Die Regel verwendet die folgenden Parameter:
 
 ![image alt text](/guides/users-guide/image_34de.png)
 
-* Fragment: Name des Messfragments. Die eingehende Messung muss genau den gleichen Fragmentnamen wie konfiguriert haben. Beim Erstellen einer Regel aus dem Datenexplorer ist das Fragment bereits ausgefüllt.
+* Fragment: Name des Messfragments. Die eingehende Messung muss genau den gleichen Fragmentnamen wie konfiguriert haben. Beim Erstellen einer Regel aus dem Daten-Explorer ist das Fragment bereits ausgefüllt.
 
 * Serie: Ähnlich wie Fragment, nur für die Serie.
 
-* Dauer: Zeitraum, in dem Verbrauchswerte berechnet werden sollen.Dies wird nur definiert, wie oft der Verbrauch nicht die Einheit der Verbrauchsmessung berechnet wird.
+* Dauer: Zeitraum, in dem Verbrauchswerte berechnet werden sollen. Hier wird nur definiert, wie oft der Verbrauch berechnet wird, nicht aber die Einheit der Verbrauchsmessung.
 
-* Consumption Fragment: Name des Messfragments, das generiert werden soll.
+* Verbrauchsmessfragment: Name des Messfragments, das generiert werden soll.
 
-* Consumption Series: Name der Messreihe, die generiert werden soll.
+* Verbrauchsmessreihe: Name der Messreihe, die generiert werden soll.
 
-Die Einheit der Verbrauchsmessung ist immer pro Stunde (zB wenn die Messungen in "kg" liegen, wird der Verbrauch in "kg / h" liegen).
+Die Einheit der Verbrauchsmessung ist immer pro Stunde (z. B. wenn die Messungen in "kg" sind, liegt der Verbrauch in "kg/h").
 Die Regel nimmt die letzten zwei Messungen für eine definierte Zeit.
 Sie berechnet dann die Differenz von Wert und Zeit und berechnet den Verbrauch pro Stunde.
 
 Beispiel:
 
-Die Regel sei so konfiguriert, dass sie alle 20 Minuten berechnet wird. Es folgen folgende Messungen:100 kg bei 11:59 und 200 kg bei 12:14.Um 12:20 wird die Regel das nächste Mal ausgelöst und es dauert die letzten beiden Messungen. Es berechnet Wert und Zeitdifferenz. Die um 12:20 erstellte Verbrauchsmessung beträgt somit 400 kg /h.
+Die Regel sei so konfiguriert, dass sie alle 20 Minuten berechnet wird. Es folgen folgende Messungen: 100 kg bei 11:59 und 200 kg bei 12:14.Um 12:20 wird die Regel das nächste Mal ausgelöst und es dauert die letzten beiden Messungen. Wert und Zeitdifferenz werden berechnet. Die um 12:20 erstellte Verbrauchsmessung beträgt somit 400 kg/h.
 Falls im letzten Zeitraum keine neue Messung angelegt wurde, wird eine Messung mit Verbrauch 0 angelegt.
 
 ## Bei fehlenden Messdaten Alarm erzeugen
@@ -1148,7 +1152,7 @@ Die Regel verwendet die folgenden Parameter:
 
 ![image alt text](/guides/users-guide/image_35de.png)
   
-* Typ: Art der Messung. Die eingehende Messung muss den gleichen Typ haben wie konfiguriert. Beim Erstellen einer Regel aus dem Datenexplorer ist der Typ bereits ausgefüllt.
+* Typ: Art der Messung. Die eingehende Messung muss den gleichen Typ haben wie konfiguriert. Beim Erstellen einer Regel aus dem Daten-Explorer ist der Typ bereits ausgefüllt.
 * Zeitintervall: Zeitintervall für die Berechnung von Verbrauchswerten.
 * Typ: Typ des ausgelösten Alarms.
 * Schweregrad: Schweregrad des Alarms.
@@ -1158,7 +1162,7 @@ Die Regel prüft, ob das konfigurierte Zeitintervall einmal pro Minute überschr
 
 ## Bei Alarm Kommando ausführen
 
-Wenn ein bestimmter Alarm aufgetreten ist, senden Sie die angegebene Operation an das Gerät.
+Wenn ein bestimmter Alarm aufgetreten ist, wird das angegebene Kommando an das Gerät gesandt.
 
 Die Regel verwendet die folgenden Parameter:
 
@@ -1166,34 +1170,34 @@ Die Regel verwendet die folgenden Parameter:
 
 * Alarmarten: Die Alarmtypen lösen die Regel aus. Für jeden neu festgelegten Alarm wird diese Regel ausgelöst.
 
-* Operation: Der Vorgang, der gesendet wird. Die Operation wird als JSON-Beschreibung bereitgestellt. Einige Standardoperationen können unter dem Operationsfeld ausgewählt werden. Um einen Standardbetrieb zu verwenden, wählen Sie einen aus und drücken Sie die Pfeiltaste rechts. Dadurch wird die JSON der ausgewählten Operation eingefügt.
+* Kommando: Das Kommando, das gesendet wird. Das Kommando wird als JSON-Beschreibung bereitgestellt. Einige Standardkommandos können unter dem "Kommando"-Feld ausgewählt werden. Um ein Standardkommando zu verwenden, wählen Sie eins aus und drücken Sie die Pfeiltaste rechts. Dadurch wird die JSON des ausgewählten Kommandos eingefügt.
 
 
-## Bei Geofence Email senden
+## Bei Geofence-Überschreitung E-Mail senden
 
-Eine E-Mail wird verschickt, wenn ein Gerät das definierte Geofence verlässt oder betritt.
+Eine E-Mail wird verschickt, wenn ein Gerät das definierte Geofence-Gebiet verlässt oder es betritt.
 
 Die Regel verwendet die folgenden Parameter:
 ![image alt text](/guides/users-guide/ongeofenceemailde.png)
 
-* Geofence: Definieren Sie ein Polygon in der Weise ähnlich der Regel "Bei Geofence Überschreiten einen Alarm auslösen".
+* Geofence: Definieren Sie ein Polygon in der Weise ähnlich der Regel "Bei Geofence-Überschreitung einen Alarm auslösen".
 
-* Senden an: E-Mail-Adressen für das Versenden der E-Mail an. Mehrere Adressen können durch ein Komma getrennt werden (",", kein Leerzeichen!).
+* Senden an: E-Mail-Adressen für das Versenden der E-Mail. Mehrere Adressen können durch ein Komma getrennt werden (",", kein Leerzeichen!).
 
-* CC senden an: Wie bisher nur für E-Mail "CC" Feld.
+* CC senden an: Wie bei "Senden an", nur für das E-Mail-"CC"-Feld.
 
-* Senden BCC an: Wie bisher nur für E-Mail "BCC" -Feld.
+* BCC senden an: Wie bei "Senden an", nur für das E-Mail-"BCC"-Feld.
 
-* Antwort auf: Adresse, die verwendet werden muss, um auf die Nachricht zu antworten.
+* Antwort an: Adresse, die verwendet wird, um auf die Nachricht zu antworten.
 
-* Betreff: Betreff der E-Mail. Sie können eine Variable des Formulars # {name} verwenden. Unterstützte Variablen werden unter "Smart Rule Variables" weiter unten aufgelistet.
+* Betreff: Betreff der E-Mail. Sie können eine Variable des Formulars # {name} verwenden. Unterstützte Variablen werden unter "Smart-Rule-Variablen" weiter unten aufgelistet.
 
-* Text: E-Mail-Text. Sie können eine Variable des Formulars # {name} verwenden. Unterstützte Variablen werden unter "Smart Rule Variables" weiter unten aufgelistet.
+* Text: E-Mail-Text. Sie können eine Variable des Formulars # {name} verwenden. Unterstützte Variablen werden unter "Smart-Rule-Variablen" weiter unten aufgelistet.
 
 **Troubleshooting**
 
 * Es wird kein Alarm ausgelöst, bis das Gerät zum ersten Mal die Geofence-Grenze überquert.
-* Den Spam Ordner überprüfen.
+* Den Spam-Ordner überprüfen.
 
 
 ## Bei Alarm Anruf starten
@@ -1203,21 +1207,21 @@ Die Regel verwendet die folgenden Parameter:
 
 ![image alt text](/guides/users-guide/onalarmsendtexttospeachde.png)
 
-* Alarmtypen: Diese Alarmtypen lösen die Regel aus. Er wird auf alle neuen Alarme angewendet.
+* Alarmtypen: Diese Alarmtypen lösen die Regel aus. Sie wird auf alle neuen Alarme angewendet.
 
-* Telefonnummer: Zielrufnummer. Es wird empfohlen, den mobilen Ländercode für alle Nummern, wie "+49" oder "0049" für Deutschland, einzuschließen.
+* Telefonnummer: Zielrufnummer. Es wird empfohlen, den mobilen Ländercode für alle Nummern, wie "+49" oder "0049" für Deutschland, zu verwenden.
 
 * Nachricht: Der von der Regel ausgelesene Text.
 
-* Wiederholungen: Die Anzahl der Wiederholungen, die Zieltelefonnummer zu erreichen, wenn der Anruf nicht erfolgreich (Telefon besetzt oder Anruf abgelehnt).
+* Wiederholungen: Die Anzahl der Wiederholungen, die Zieltelefonnummer zu erreichen, wenn der Anruf nicht erfolgreich ist (Telefon besetzt oder Anruf abgelehnt).
 
 * Intervall: Zeitintervall zwischen den Wiederholungen (in Minuten).
 
-* Acknowledgement: Flag, der angibt, dass der Empfänger des Anrufs den Anruf quittieren muss (wenn ein nicht quittierter Anruf nicht als erfolgreicher Anruf gezählt wird)
+* Acknowledgement: Flag, der angibt, dass der Empfänger des Anrufs den Anruf quittieren muss (wenn ein nicht quittierter Anruf nicht als erfolgreicher Anruf gezählt wird).
 
-* Quittierungstext: Die Quittierungsmeldung (wird nach der Hauptmeldung gelesen), zB: "Bitte bestätigen Sie diesen Aufruf mit einem Klick auf 5"
+* Quittierungstext: Die Quittierungsmeldung (wird nach der Hauptmeldung gelesen), z. B.: "Bitte bestätigen Sie diesen Anruf mit einem Klick auf 5.".
 
-* Acknowledgement Number: Die Nummer der Taste, die der Empfänger zur Bestätigung drücken muss. Wenn die Taste gedrückt wird, ist der Anruf erfolgreich und der Alarmstatus wird quittiert.
+* Bestätigungsnummer: Die Nummer der Taste, die der Empfänger zur Bestätigung drücken muss. Wenn die Taste gedrückt wird, ist der Anruf erfolgreich und der Alarmstatus wird quittiert.
 
 **Troubleshooting**
 
@@ -1225,16 +1229,16 @@ Die Regel verwendet die folgenden Parameter:
 
 * Wenn sich das Gerät nicht im Modus [Wartung](/guides/reference/device-management) befindet: Es wird kein neuer Alarm aufgrund der Unterdrückungsrichtlinie erzeugt.
 
-* Wenn Sie keine Alarmzuordnungsregel haben (siehe: [Repriorisieren der Alarme](/guides/users-guide/administration#reprio-alarms)), die den Alarmschweregrad ändern: In diesem Fall kann der Alarm eine andere Schwere haben als erwartet .
+* Wenn Sie keine Alarmzuordnungsregel haben (siehe: [Repriorisieren der Alarme](/guides/users-guide/administration#reprio-alarms)), die den Alarmschweregrad ändern: In diesem Fall kann der Alarm einen anderen Schweregrad haben, als erwartet.
 
 ## Bei Alarm eskalieren
 
-Wenn ein Alarm erzeugt wird, wird E-Mail, SMS oder / und ein Text-to_Speach Anruf initiiert.
+Wenn ein Alarm erzeugt wird, wird eine E-Mail, SMS oder/und ein Text-to-Speech Anruf initiiert.
 
 Die Regel verwendet die folgenden Parameter:
 ![image alt text](/guides/users-guide/escalatealarmde.png)
 
-* Alarmtypen: Die Alarmtypen lösen diese Regel aus. Er wird auf alle neuen Alarme angewendet.
+* Alarmtypen: Die Alarmtypen lösen diese Regel aus. Sie wird auf alle neuen Alarme angewendet.
 
 Die Regel definiert eine Kette von Aktionen in Schritten. Um Schritte hinzuzufügen, klicken Sie auf die Schaltfläche "Schritt hinzufügen". Es erscheint ein Formular mit folgenden Parametern:
 
@@ -1260,10 +1264,10 @@ Die Regel definiert eine Kette von Aktionen in Schritten. Um Schritte hinzuzufü
 
 * Wenn sich das Gerät nicht im Modus [Wartung](/guides/reference/device-management) befindet: Es wird kein neuer Alarm aufgrund der Unterdrückungsrichtlinie erzeugt.
 
-* Wenn Sie keine Alarmzuordnungsregel haben (siehe: [Repriorisieren der Alarme](/guides/users-guide/administration#reprio-alarms)), die den Alarmschweregrad ändern: In diesem Fall kann der Alarm eine andere Schwere haben als erwartet .
+* Wenn Sie keine Alarmzuordnungsregel haben (siehe: [Repriorisieren der Alarme](/guides/users-guide/administration#reprio-alarms)), die den Alarmschweregrad ändern: In diesem Fall kann der Alarm einen anderen Schweregrad haben, als erwartet.
 
 
-### Smart Rule Variablen
+### Smart-Rule-Variablen
 
 Sie können Variablen in bestimmten Regelparametern verwenden. Wenn eine Regel ausgelöst wird, werden die Variablen durch ihre Istwerte ersetzt. Mit diesem Mechanismus können Sie Gerätenamen oder Alarmtexte in verschiedene Ausgaben (E-Mail, SMS, Text-to-Voice) einfügen.
 Sie können alle Informationen über das auslösende Ereignis (wie den Alarm) und das Quellgerät davon enthalten.
@@ -1330,4 +1334,4 @@ Beispiel Variablen:
 </table>
 
 
-**Note:Falls die Variable nicht existiert oder falsch geschrieben ist, wird der generierte Inhalt angezeigt.** 
+**Falls die Variable nicht existiert oder falsch geschrieben ist, wird der generierte Inhalt angezeigt.** 

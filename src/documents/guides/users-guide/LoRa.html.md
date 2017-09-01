@@ -5,13 +5,13 @@ layout: default
 ---
 
 ## <a name="overview"></a>Overview
-The Cumulocity LoRa Actility integration allows you to collect and visualize payload data from LoRa devices. The integration offers the following functionality:
+Cumulocity can interface with LoRa devices through Actility's ThingPark Wireless. You can:
 
 * Provision and deprovision LoRa devices easily using the Cumulocity Device Management. No interaction in the ThingPark user interface is required. 
 * Decode upstream payload packets using a web-based user interface.
-* Raw packets are available as Cumulocity events for further processing and debugging.
+* Debug and postprocess raw device data through Cumulocity events.
 * Send downstream data to the device using Cumulocity operations.
-* Make use of all existing Cumulocity features with LoRa devices, including but not limited to: connectivity monitoring, device management, data visualization with dashboards, real-time analytics and more.
+* Make use of existing Cumulocity features with LoRa devices, for example: connectivity monitoring, device management, data visualization with dashboards, real-time analytics and more.
 
 The following illustration gives an overview of the Cumulocity LoRa Actility integration.
 
@@ -25,11 +25,11 @@ The following sections describe how to:
 * [Deprovision a device](#deprovision-device) in ThingPark
 * [Send operations](#configurable-port) to a device
 
-Note: The LoRa functionalities are only available for tenants who have subscribed to the Actility-device-provider-agent application. Please contact support if you need to use this feature.
+Note: Your subscription needs to include this feature. If you do not see the functionality described in this document, please contact support.
 
 ## <a name="configure-credentials"></a>Configuring ThingPark account credentials
 
-Before using the Cumulocity LoRa Actility integration you need to configure the account details inside the ThingPark server. You can do so in Cumulocity. In order to create new credentials or replace existing ones, go to the Administration application and select "Connectivity" in "Settings" in the Navigator. 
+Before using LoRa devices with Cumulocity, you need to configure your ThingPark account details in the Cumulocity Administration application. In order to create new credentials or replace existing ones, go to the Administration application and select "Connectivity" in "Settings" in the Navigator. 
 
 ### <a name="create-new-credentials"></a>Creating new account credentials
 
@@ -58,9 +58,7 @@ Enter your profile ID, username, password and application EUI. For an explanatio
 Click "Save". Your old credentials will now be replaced with the new ones. 
 
 ## <a name="create-device-types"></a>Creating device types with the device database
-LoRa devices have (in many cases) a proprietary payload format. To view data from these devices, the payload format must be known to Cumulocity. For this, the Cumulocity device database includes declarative descriptions of the payload.
-
-In case the declarative approach is not sufficient to describe the payload, use the real-time analytics engine to decode the payload. See XXX for more details. [??? TO DO: Add a short section]
+To process data from LoRa devices, Cumulocity needs to understand the payload format of the devices. 
 
 In order to create device types with the device database, go to the Device Management application and select "Device database" in "Device types" in the Navigator. You can either import an existing device type or create a new one. 
 
@@ -182,7 +180,7 @@ For more information on viewing and managing your connected devices, also refer 
 
 ## <a name="deprovision-device"></a>Deprovisioning LoRa devices
 
-In addition to deleting a device from the device list, it is possible to deprovision a LoRa device in the ThingPark platform. This means that the device will no longer be connected to the network. Its history data will still be available in Cumulocity, but the device will be deleted in ThingPark.  
+You can deprovision a LoRa device in the ThingPark platform. This means that the device will no longer be connected to the network. Its history data will still be available in Cumulocity, but the device will be deleted in ThingPark.  
 
 To deprovision a device, go to the Device Management application and navigate to the device you want to deprovision. Click the cogwheel and select "Deprovision device".
 

@@ -35,7 +35,7 @@ The screenshot below shows the list of users accessible through the "Users" menu
 - The user name that is used to access the tenant.
 - The name and email of the user, if set.
 - The global roles of the user.
-- The [strength](https://www.cumulocity.com/guides/users-guide/overview/#login) of the password set for the user.
+- The [strength](https://www.cumulocity.com/guides/users-guide/overview#login) of the password set for the user.
 
 The cogwheel at the end of the row contains a drop-down menu with additional functions, which will be explained later in this chapter.
 

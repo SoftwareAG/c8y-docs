@@ -69,6 +69,8 @@ Next,
 
 > Fields without an asterisk ("*", like "First name", "Last name") are optional. You can edit user details similar like you can add new users.
 
+> Please note that, by default manually created users always have the "Own_User_Management" permissions set to active.
+
 ### Editing, disabling and deleting  users
 
 To edit an existing user, either click on the user or on the cogwheel located at the end of the row of the desired user. The first link on the cogwheel menu will take you to the user details. All fields except “Username” and “Send password reset link as e-mail” can be modified. To change the password, click on "Change password". Click "Save" after you have finished editing.

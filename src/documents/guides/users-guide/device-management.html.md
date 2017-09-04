@@ -19,6 +19,7 @@ The Device Management application shows you your connected devices and enables y
 * [Manage](#credentials) the credentials of devices.
 * [Simulate](#simulator) devices.
 * [Create and update](#smartrest) SmartRest templates.
+* [Remotely access](#cloud_remote_access) the UI (HMI) of your asset inside Cumulocity.
 
 The Device Management Application looks like this:
 

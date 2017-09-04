@@ -13,7 +13,7 @@ Die Cockpit-Anwendung bietet Ihnen Optionen, um Internet der Dinge (IoT) Assets 
 - [Geräte verbinden](#connect) und [Assets](#asset) verwalten
 - Daten mit Hilfe des Daten-Explorers [visualisieren](#visualise)
 - mit [Dashboards](#dashboards) arbeiten
-- mit [Widgets](#widgets) und dem [Geschäftsregel](#business)-Paket umgehen
+- mit [Widgets](#widget) und dem [Geschäftsregel](#business)-Paket umgehen
 - [Alarme](#alarms), [Berichte](#reports) und [Smart Rules](#rules) verwalten
 - die [Datenpunktbibliothek](#library) benutzen
 
@@ -77,7 +77,7 @@ Die wichtigsten Konzepte der Cockpit-Anwendung sind:
 ### Cumulocity-Anwendungen
 
 Die Cockpit-Anwendung basiert auf dem Cumulocity-Anwendungs-Framework.
-Informationen zu den folgenden Punkten finden Sie in der [Einführung](/guides/users-guide/overview):
+Informationen zu den folgenden Punkten finden Sie in der [Einführung](/guides/benutzerhandbuch/uebersicht):
 
 * Welche Webbrowser werden unterstützt?
 * Wie melde ich mich bei Cumulocity an?
@@ -92,7 +92,7 @@ Informationen zu den folgenden Punkten finden Sie in der [Einführung](/guides/u
 Die Willkommensseite wird geöffnet, sobald Sie sich beim Cumulocity-Cockpit anmelden.
 
 
-![image alt text](/guides/users-guide/willkommen.png)
+![Willkommensseite](/guides/users-guide/willkommen.png)
 
 Die Willkommensseite zeigt die folgenden Abschnitte:
 
@@ -133,7 +133,7 @@ Um das Dashboard auf den ursprünglichen Inhalt zurückzusetzen, verwenden Sie d
 
 Um die Cockpit-Anwendung zu verwenden, müssen Sie IoT-Geräte anschließen. Geräte werden im Device Management angeschlossen. Wechseln Sie mit dem Anwendungswechsler rechts oben zum "Device Management" und wählen Sie dann "Registrierung".
 
-Weitere Informationen finden Sie unter [Device Management](/guides/users-guide/device-management).
+Weitere Informationen finden Sie unter [Device Management](/guides/benutzerhandbuch/device-management-deutsch).
 
 <img src="/guides/users-guide/appdeutsch.png" alt="Logout menu" style="max-width: 100%">
 
@@ -210,7 +210,7 @@ Die sichtbaren Register auf der rechten Seite des Navigators unterscheiden sich 
 |Gruppe ausgewählt:|Ja, wenn konfiguriert|Ja|Nein|Ja|Nein|Ja, zeigt alle Datenpunkte der Kindgeräte|
 |Gerät ausgewählt:|Ja, wenn konfiguriert|Ja|Ja|Nein|Ja|Ja, zeigt alle Datenpunkte der Kindgeräte|
 
-Es können zusätzliche Registerkarten angezeigt werden, falls die Anwendung mit Plugins erweitert wurde. Siehe auch [Introduction to plugin development](/guides/web/introduction).
+Es können zusätzliche Registerkarten angezeigt werden, falls die Anwendung mit Plugins erweitert wurde. Siehe auch [Web SDK for plugins](/guides/web/introduction).
 
 Wenn Sie ein Gateway-Gerät hinzufügen, werden die Kindgeräte nicht angezeigt. Um Kindgeräte anzuzeigen, müssen Sie sie dem zugehörigen Asset hinzufügen. Details, die sich auf die untergeordnete Hierarchie beziehen, sind in der Geräteverwaltungsanwendung sichtbar und bearbeitbar.
 
@@ -256,7 +256,7 @@ Das Trennen eines Geräts bedeutet nicht, dass die Kindgeräte oder die zugehör
 
 Um den Namen der Gruppe zu bearbeiten, klicken Sie auf die Registerkarte "Info" und bearbeiten den Namen.
 
-## <a name="visualise"></a>Verwenden des Daten-Explorers zur Visualisierung von Daten 
+## <a name="visualise"></a>Visualisierung von Daten mit dem Daten-Explorer 
 
 Datenpunkte (Messungen oder Sensordaten) können im Cockpit an drei Stellen visualisiert werden:
 
@@ -342,9 +342,9 @@ Für Datenpunkte stehen folgende Eigenschaften zur Verfügung:
 
 * Zielwert: Der Sollwert wird derzeit nicht im Diagramm angezeigt. Der Wert wird im Widget "Datenpunktliste" verwendet.
 
-* Yellow Range Min/Max: Definiert den Bereich, in dem kleinere Alarme durch die Schwellenregel erhöht werden sollen. Diese Werte werden derzeit nicht visualisiert. Detaillierte Informationen finden Sie unter [Smart Rules](#rules).
+* Yellow Range Min/Max: Definiert den Bereich, in dem kleinere Alarme durch die Schwellenregel erhöht werden sollen. Diese Werte werden derzeit nicht visualisiert. Detaillierte Informationen finden Sie unter [Arbeiten mit Smart Rules](#rules).
 
-* Red Range Min/Max: Definiert den Bereich, in dem kritische Alarme durch Schwellenregeln erhöht werden sollen. Diese Werte werden derzeit nicht visualisiert. Detaillierte Informationen finden Sie unter [Smart Rules](#rules).
+* Red Range Min/Max: Definiert den Bereich, in dem kritische Alarme durch Schwellenregeln erhöht werden sollen. Diese Werte werden derzeit nicht visualisiert. Detaillierte Informationen finden Sie unter [Arbeiten mit Smart Rules](#rules).
 
 * Diagrammtyp: Wählen Sie für aggregierte Daten aus, welcher aggregierte Wert visualisiert werden soll. Die Optionen sind: min, max, Fläche.
 
@@ -431,7 +431,7 @@ Um ein Dashboard zu erstellen, navigieren Sie zu einem Objekt in der Asset-Hiera
 
 Klicken Sie auf "Speichern", um das Dashboard zu erstellen und zu öffnen. Solange es keine Widgets auf dem Dashboard gibt, sehen Sie eine "Widget"-Schaltfläche. Verwenden Sie diese Schaltfläche, um Ihr erstes Widget dem Dashboard hinzuzufügen.
 
-### Erstellen eines Dashboards für identische Geräte
+### <a name="create-a-dashboard-for-all-devices-of-the-same-type"></a>Erstellen eines Dashboards für identische Geräte
 
 Sie können ein Dashboard erstellen, das für alle identischen Geräte angezeigt wird. Um dies zu tun, erstellen Sie ein neues Dashboard wie oben beschrieben. Bevor Sie auf "Speichern" klicken, wählen Sie die Option "Dashboard anwenden an alle Geräte des Typs _type_". Der Text "_type_" wird durch den Typ des aktuell ausgewählten Gerätes ersetzt.
 
@@ -487,7 +487,7 @@ Die Bearbeitung auf Touch-Geräten wie Smartphones oder Tablets unterstützt nic
 
 Um ein Dashboard von einem Objekt in ein anderes zu kopieren, verwenden Sie das Zahnrad oben rechts und wählen Sie "Dashboard kopieren". Danach wählen Sie das Objekt aus, auf das das Dashboard angewendet werden soll, und klicken Sie auf "Dashboard einfügen", um das Dashboard einzufügen.
 
-Eine alternative Möglichkeit, ein Dashboard zu kopieren, besteht darin, den "[Dashboard per type](# create-a-dashboard-for-all-devices-of-the-same-type)"-Ansatz zu verwenden. Mit diesem Ansatz kopieren Sie das Dashboard von einem Objekt auf **alle** identischen Objekte.
+Eine alternative Möglichkeit, ein Dashboard zu kopieren, besteht darin, den "[Dashboard pro Typ](#create-a-dashboard-for-all-devices-of-the-same-type)"-Ansatz zu verwenden. Mit diesem Ansatz kopieren Sie das Dashboard von einem Objekt auf **alle** identischen Objekte.
 
 ### Dashboard löschen
 
@@ -504,7 +504,7 @@ Zu konfigurierende Parameter:
 
 * Name des Widget
 
-* Eigenschaftenliste, siehe auch [Eigenschaftenliste konfigurieren](#widget-asset-table-)
+* Eigenschaftenliste, siehe auch [unten](#widget-asset-table)
 
 ### Widget "Datenpunktgraph"
 
@@ -512,7 +512,7 @@ Zeigt einen Datenpunkt (Messungen) in einem Diagramm an. Die Visualisierung ist 
 
 Der einfachste Weg, um ein Datenpunktgraph-Widget zu erstellen, besteht darin, zum Daten-Explorer zu navigieren und dann "An Dashboard schicken" zu wählen.
 
-Die zu konfigurierenden Parameter sind die gleichen wie im Daten-Explorer. Siehe auch [Daten-Explorer](#using-the-data-explorer-to-visualise-data).
+Die zu konfigurierenden Parameter sind die gleichen wie im Daten-Explorer. Siehe auch [Daten-Explorer](#visualise).
 
 ### Widget "Datenpunkttabelle"
 
@@ -635,7 +635,7 @@ Zu konfigurierende Parameter:
 
      * Asset: Name des Geräts oder der Gruppe des Datenpunkts.
 
-### Widget "Asset Tabelle"
+### <a name="widget-asset-table"></a>Widget "Asset-Tabelle"
 
 Zeigt die Details aller Kindgeräte in einer Tabelle an. Dies ist ein sehr starkes Widget, das es ermöglicht, ausgewählte Eigenschaften von Objekten in einer Tabelle anzuordnen.
 
@@ -661,7 +661,7 @@ Hinweis: Die Eigenschaft "Aktiver Alarmstatus" zeigt aktive Alarme als Symbole i
 
 * Fügen Sie eine neue Aktion hinzu: Klicken Sie auf "+ Aktion hinzufügen". Sie können dann die vordefinierte Aktion hinzufügen, um den Wartungsmodus umzuschalten. Oder Sie wählen "Create Operation", um eine Schaltfläche zu erstellen, die einen Shell-Befehl ausführt. Im folgenden Dialog können Sie dann die Bezeichnung für die Schaltfläche und den auszuführenden Shell-Befehl eingeben.
 ![image alt text](/guides/users-guide/image_19.png)
-Im Dialog werden die voreingestellten Shell-Befehle der ersten Shell-Befehle angezeigt. Die Liste ist leer, wenn es kein solches Gerät gibt. Weitere Informationen finden Sie unter [Shell-Kommandos](http://www.cumulocity.com/guides/users-guide/device-management/#shell).<br>
+Im Dialog werden die voreingestellten Shell-Kommandos der ersten Shell-Kommandos angezeigt. Die Liste ist leer, wenn es kein solches Gerät gibt. Weitere Informationen finden Sie unter [Shell](/guides/benutzerhandbuch/device-management-deutsch#shell).<br>
 Sie können auch das JSON-Format für das Kommando eingeben, das an das Gerät gesendet wird. Für Einzelheiten über unterstütze Kommandos wenden Sie sich an den Gerätehersteller.
 * Spaltenüberschrift bearbeiten: Um den Kopf der Spalte zu bearbeiten, klicken Sie auf die Spalte "Label" und bearbeiten das Label.
 
@@ -682,7 +682,7 @@ Sendet eine Nachricht an ein Gerät. Das Verhalten des Gerätes selbst ist gerä
 
 ## <a name="alarms"></a>Arbeiten mit Alarmen
 
-Das Arbeiten mit Alarmen ist identisch mit der Arbeit mit Alarmen in der Geräteverwaltung. Siehe [Arbeiten mit Alarmen](http://cumulocity.com//guides/benutzerhandbuch/device-management-deutsch/#alarm-monitoring) im Device-Management-Handbuch.
+Das Arbeiten mit Alarmen ist identisch mit der Arbeit mit Alarmen in der Geräteverwaltung. Siehe [Arbeiten mit Alarmen](/guides/benutzerhandbuch/device-management-deutsch#alarm-monitoring) im Device-Management-Handbuch.
 
 ## <a name="reports"></a>Arbeiten mit Dashboard-Berichten
 
@@ -730,8 +730,8 @@ Um weitere Berichte zu erstellen, klicken Sie auf "Bericht hinzufügen".
 
 - Geben Sie den Namen des Berichts ein.
 - Wählen Sie aus, ob der Dateityp entweder "csv" oder "Excel" sein soll.
-- Fügen Sie [Filter](# filter) hinzu, um Objekt- oder zeitspezifische Berichte anzufordern.
-- Wählen Sie [Felder](# Felder) des Berichts aus.
+- Fügen Sie [Filter](#filters) hinzu, um Objekt- oder zeitspezifische Berichte anzufordern.
+- Wählen Sie [Felder](#fields) des Berichts aus.
 - Klicken Sie auf "Speichern", um den Vorgang abzuschließen.
 
 ![Add Reports](/guides/users-guide/addreports.png)
@@ -990,9 +990,9 @@ Sonst
 
 * Stellen Sie sicher, dass der Alarm erstellt wurde und nicht irgendwo dupliziert wurde.
 
-* Das Gerät ist nicht in Wartung [Wartung](/guides/reference/device-management): In diesem Fall gibt es keinen neuen Alarm, weil diese unterdrückt werden.
+* Das Gerät befindet sich nicht im Wartungsmodus: In diesem Fall gibt es keinen neuen Alarm, weil diese unterdrückt werden.
 
-* Wenn Sie keine Alarmzuordnungsregel haben (siehe: [Repriorisieren der Alarme](/guides/users-guide/administration#reprio-alarms)), die die Alarmschwelle ändert: In diesem Fall kann der Alarm anders ausfallen als erwartet.
+* Wenn Sie keine Alarmzuordnungsregel haben (siehe: [Repriorisieren von Alarmen](/guides/benutzerhandbuch/administration-deutsch#reprio-alarms)), die die Alarmschwelle ändert: In diesem Fall kann der Alarm anders ausfallen als erwartet.
 
 * Prüfen Sie, ob ein Alarm bereits durch die nächsten geplanten Messungen mit dem resultierenden Wert in einem grünen Bereich gelöscht wurde.
 
@@ -1113,9 +1113,9 @@ Es wird kein Alarm ausgelöst, bis das Gerät zum ersten Mal die Geofence-Grenze
 
 * Bitte stellen Sie sicher, dass das Gerät mindestens einmal nach dem Erstellen bzw. Aktivieren der Regel innerhalb der Geofence war.
 
-* Wenn sich das Gerät nicht im Modus [Wartung](/guides/reference/device-management) befindet: Es wird kein neuer Alarm aufgrund der Unterdrückungsrichtlinie erzeugt.
+* Wenn sich das Gerät nicht im Wartungsmodus befindet: Es wird kein neuer Alarm aufgrund der Unterdrückungsrichtlinie erzeugt.
 
-* Wenn Sie keine Alarmzuordnungsregel haben (siehe: [Repriorisieren der Alarme](/guides/users-guide/administration#reprio-alarms)), die den Alarmschweregrad ändern: In diesem Fall kann der Alarm eine andere Schwere haben, als erwartet.
+* Wenn Sie keine Alarmzuordnungsregel haben (siehe: [Repriorisieren von Alarmen](/guides/benutzerhandbuch/administration-deutsch#reprio-alarms)), die den Alarmschweregrad ändern: In diesem Fall kann der Alarm eine andere Schwere haben, als erwartet.
  
 ## Berechne Energieverbrauch
 
@@ -1227,9 +1227,9 @@ Die Regel verwendet die folgenden Parameter:
 
 * Überprüfen Sie, dass der Alarm erstellt und nicht dupliziert wurde.
 
-* Wenn sich das Gerät nicht im Modus [Wartung](/guides/reference/device-management) befindet: Es wird kein neuer Alarm aufgrund der Unterdrückungsrichtlinie erzeugt.
+* Wenn sich das Gerät nicht im Wartungsmodus befindet: Es wird kein neuer Alarm aufgrund der Unterdrückungsrichtlinie erzeugt.
 
-* Wenn Sie keine Alarmzuordnungsregel haben (siehe: [Repriorisieren der Alarme](/guides/users-guide/administration#reprio-alarms)), die den Alarmschweregrad ändern: In diesem Fall kann der Alarm einen anderen Schweregrad haben, als erwartet.
+* Wenn Sie keine Alarmzuordnungsregel haben (siehe: [Repriorisieren von Alarmen](/guides/benutzerhandbuch/administration-deutsch#reprio-alarms)), die den Alarmschweregrad ändern: In diesem Fall kann der Alarm einen anderen Schweregrad haben, als erwartet.
 
 ## Bei Alarm eskalieren
 
@@ -1262,9 +1262,9 @@ Die Regel definiert eine Kette von Aktionen in Schritten. Um Schritte hinzuzufü
 
 * Überprüfen Sie, dass der Alarm erstellt und nicht dupliziert wurde.
 
-* Wenn sich das Gerät nicht im Modus [Wartung](/guides/reference/device-management) befindet: Es wird kein neuer Alarm aufgrund der Unterdrückungsrichtlinie erzeugt.
+* Wenn sich das Gerät nicht im Wartungsmodus befindet: Es wird kein neuer Alarm aufgrund der Unterdrückungsrichtlinie erzeugt.
 
-* Wenn Sie keine Alarmzuordnungsregel haben (siehe: [Repriorisieren der Alarme](/guides/users-guide/administration#reprio-alarms)), die den Alarmschweregrad ändern: In diesem Fall kann der Alarm einen anderen Schweregrad haben, als erwartet.
+* Wenn Sie keine Alarmzuordnungsregel haben (siehe: [Repriorisieren von Alarmen](/guides/benutzerhandbuch/administration-deutsch#reprio-alarms)), die den Alarmschweregrad ändern: In diesem Fall kann der Alarm einen anderen Schweregrad haben, als erwartet.
 
 
 ### Smart-Rule-Variablen

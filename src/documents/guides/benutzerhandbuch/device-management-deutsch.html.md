@@ -195,7 +195,7 @@ Auf dieser Registerkarte werden weitere Geräte angezeigt, die mit dem aktuell a
 
 Diese Registerkarte bietet eine Standard-Visualisierung von numerischen Daten, die vom Gerät in Form von Diagrammen zur Verfügung gestellt werden. Diagramme werden in Arten von Messungen zusammengestellt, die mehrere Graphen oder eine "Serie" enthalten können. Zum Beispiel zeigt der Screenshot unten ein Diagramm für die Bewegungsmessung einschließlich Graphen für die Beschleunigung in den drei Dimensionen und ein Diagramm mit Modemstatistiken in Form von Signalstärke und Bitfehlerrate.
 
-![Measurements](/guides/users-guide/measurements.png)
+![Measurements](/guides/benutzerhandbuch/measurements-de.png)
 
 Wenn ein Diagramm Graphen mit verschiedenen Einheiten enthält, wird eine Y-Achse pro Einheit wiedergegeben. Beispielsweise bestehen Bewegungsmessungen aus drei Parametern mit der Einheit "Meter pro Quadrat-Sekunde", so dass nur eine Achse angezeigt wird. Die Modemstatistik besteht aus der Signalstärke in Dezibel Milliwatt und der Bitfehlerrate in Prozent, so dass für jedes Diagramm eine Achse dargestellt wird.
 
@@ -257,7 +257,7 @@ So können Sie eine Gerätekonfiguration manuell hinzufügen oder bearbeiten:
 
 Die binäre Konfiguration erlaubt Ihnen, Konfigurationsdaten abzurufen, zu ändern oder zu speichern. Die Konfigurationsdaten enthalten die Parameter und die Grundeinstellungen Ihres Gerätes. Diese Option finden Sie unter "Konfigurationsablage" im Menüpunkt "Verwaltung".
 
-<center><img src="/guides/benutzerhandbuch/configrepscreenshotde.png" alt="Konfigurationsablage" style="max-width: 100%"></center>
+<center><img src="/guides/benutzerhandbuch/configrepscreenshot-de.png" alt="Konfigurationsablage" style="max-width: 100%"></center>
 
 Ein gutes Anwendungsbeispiel für den Konfigurations-Snapshot ist, wenn die gleiche Konfiguration auf mehrere Geräte angewendet wird. Mit dem Konfigurations-Snapshot können Sie ein Gerät konfigurieren, den Snapshot herunterladen und auf andere Geräte übertragen.
 
@@ -346,11 +346,11 @@ Die Berechtigung, bestimmte Geräte anzuzeigen, zu bearbeiten oder zu steuern, k
 
 Geräte können die Historie ihrer Bewegungen in Cumulocity aufzeichnen. Über die Registerkarte "Tracking" können Sie einen Zeitraum auswählen und die Bewegungen des Geräts während dieses Zeitraums visualisieren. Bewegungen werden als rote Linien auf der Karte angezeigt.
 
-Neben der Karte werden die einzelnen Aufzeichnungen mit ihrer Zeit aufgelistet ("Standort-Update-Ereignis"). Wenn Sie auf eine Aufnahme klicken, zeigt eine "Markierungsnadel" auf der Karte den Speicherort zum Zeitpunkt der Aufnahme an.
+Neben der Karte werden die einzelnen Aufzeichnungen mit ihrer Zeit aufgelistet ("Tracking-Ereignisse"). Wenn Sie auf eine Aufnahme klicken, zeigt eine Markierungsnadel auf der Karte den Speicherort zum Zeitpunkt der Aufnahme an.
 
 Die Registerkarte "Tracking" wird angezeigt, wenn das Gerät eine "c8y_Position"-Eigenschaft enthält.
 
-![Tracking](/guides/users-guide/tracking.png)
+![Tracking](/guides/benutzerhandbuch/tracking-de.png)
 
 Je nach Typ eines Gerätes und dessen Integration in Cumulocity können Sie geräteseitig auch Geo-Fencing und Bewegungserkennung konfigurieren. 
 

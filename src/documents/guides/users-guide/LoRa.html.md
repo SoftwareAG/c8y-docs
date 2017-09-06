@@ -172,8 +172,7 @@ The following picture shows an example for device registration.
 
 After clicking "Next" the device registration request will be submitted and the device will be created.
 
-Verify that the device is really connected, i.e. that there entries under "Events". 
-[???TO DO: add instructions on how to check that the device is connected] 
+You can verify that the device is really connected by checking that events are actually coming in. You can do so by clicking on a device and opening the "Events" tab. All events related to this device are listed here.  
 
 For more information on viewing and managing your connected devices, also refer to 
 [Device management](/guides/users-guide/device-management).

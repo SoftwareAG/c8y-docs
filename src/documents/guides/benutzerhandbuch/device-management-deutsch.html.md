@@ -52,9 +52,9 @@ Die CSV-Datei muss eine Kopfzeile haben, gefolgt von den tatsächlichen Daten. D
 	006064ce800a;LF2PWJoLG1Fz;management;Sample_Düsseldorf;+491555555;Sample_Device1
 	006064ce8077;OowoGKAbiNJs;management;Sample_Düsseldorf;+491555555;Sample_Device2
 
-Verwenden Sie den "Hochladen"-Knopf, um die CSV-Datei hochzuladen, wie im Screenshot unten gezeigt. Nachdem die Daten importiert wurden, erhalten Sie eine Rückmeldung über die Anzahl der vorregistrierten Geräte sowie über mögliche Fehler.
+Verwenden Sie bei der Geräteregistrierung die Option "Mehrfachregistrierung" und dann den "Datei zum Hochladen auswählen"-Knopf, um die CSV-Datei hochzuladen, wie im Screenshot unten gezeigt. Nachdem die Daten importiert wurden, erhalten Sie eine Rückmeldung über die Anzahl der vorregistrierten Geräte sowie über mögliche Fehler.
 
-<img src="/guides/users-guide/autoregisterde.png" alt="Bulk registration" style="max-width: 100%">
+<img src="/guides/benutzerhandbuch/autoregisterde.png" alt="Bulk registration" style="max-width: 100%">
 
 Um die Geräte zu verbinden, müssen sie mit entsprechenden Informationen vorbereitet werden. Insbesondere muss jedes Gerät wie folgt konfiguriert werden:
 
@@ -259,43 +259,43 @@ Die binäre Konfiguration erlaubt Ihnen, Konfigurationsdaten abzurufen, zu ände
 
 <center><img src="/guides/benutzerhandbuch/configrepscreenshot-de.png" alt="Konfigurationsablage" style="max-width: 100%"></center>
 
-Ein gutes Anwendungsbeispiel für den Konfigurations-Snapshot ist, wenn die gleiche Konfiguration auf mehrere Geräte angewendet wird. Mit dem Konfigurations-Snapshot können Sie ein Gerät konfigurieren, den Snapshot herunterladen und auf andere Geräte übertragen.
+Wenn die gleiche Konfiguration auf mehrere Geräte angewendet werden soll, bietet sich die Nutzung des Konfigurations-Snapshots an. Mit dem Konfigurations-Snapshot können Sie ein Gerät konfigurieren, den Snapshot herunterladen und auf andere Geräte übertragen.
 
 ![Configuration Snapshot](/guides/benutzerhandbuch/configsnapde.png)
 
 ### Abrufen einer aktuellen Snapshot-Konfiguration von einem Gerät
 
-Um einen aktuellen Snapshot von einem Gerät abzurufen, navigieren Sie zum Gerät und klicken dann auf die Registerkarte "Konfiguration". Klicken Sie dann in der rechten oberen Ecke auf "Neuen Schnappschuss vom Gerät holen". Der abgerufene Snapshot befindet sich in der "Konfigurationsablage".
+Um einen aktuellen Snapshot von einem Gerät abzurufen, navigieren Sie zum Gerät und klicken dann auf die Registerkarte "Konfiguration". Klicken Sie dann im Bereich 
+"Konfigurationssnapshot" in der rechten oberen Ecke auf "Neuen Snapshot vom Gerät laden". Der abgerufene Snapshot befindet sich in der "Konfigurationsablage".
 
-Die Konfigurationsablage befindet sich im "Verwaltung"-Menü. 
+Die Konfigurationsablage befindet sich im Menü "Verwaltung". 
 
-![Retrieve Configuration Snapshot](/guides/users-guide/retrievesnap.png)
+![Retrieve Configuration Snapshot](/guides/benutzerhandbuch/retrievesnap-de.png)
 
-### Die Snapshot-Konfiguration auf ein Gerät anwenden
+### Anwenden einer Snapshot-Konfiguration auf einem Gerät 
 
-Um einen neuen Snapshot anzuwenden, navigieren Sie zu einem Gerät und klicken Sie dann auf "Konfiguration". Unter "Konfigurations-Snapshot" können Sie einen Eintrag aus der Konfigurationsablage aus dem Dropdown-Menü auswählen. Wenn die Eingabedatei ausgewählt ist, klicken Sie auf "Neuen Snapshot auf das Gerät legen".
+Um einen neuen Snapshot anzuwenden, navigieren Sie zu einem Gerät und klicken Sie dann auf "Konfiguration". Unter "Konfigurationssnapshot" können Sie einen Eintrag aus der Konfigurationsablage aus dem Dropdown-Menü auswählen. Wenn die Eingabedatei ausgewählt ist, klicken Sie auf "Neuen Snapshot auf das Gerät legen".
 
-![Apply new snapshot to a device](/guides/users-guide/addsnap.png)
+![Apply new snapshot to a device](/guides/benutzerhandbuch/addsnap-de.png)
 
 ### Anwenden einer Snapshot-Konfiguration von einem Gerät auf ein anderes Gerät
  
-- Navigieren Sie zur Registerkarte "Konfiguration" des Geräts, das die gewünschte Konfiguration hat.
-- Holen Sie den aktuellen Snapshot vom Gerät ab, indem Sie auf "Neuen Snapshot vom Gerät holen" klicken.
-- Navigieren Sie zur Registerkarte "Konfigurations" des anderen Geräts, wählen Sie im Dropdown-Menü den neuen Snapshot aus und klicken Sie auf "Neuen Snapshot auf das Gerät legen".
+Um einen Snapshot von einem anderen Gerät auf einem anderen anzuwenden, navigieren Sie zur Registerkarte "Konfiguration" des Geräts, das die gewünschte Konfiguration hat. Holen Sie den aktuellen Snapshot vom Gerät, indem Sie auf "Neuen Snapshot vom Gerät laden" klicken. Navigieren Sie zur Registerkarte "Konfiguration" des anderen Geräts, wählen Sie im Dropdown-Menü im Bereich "Neuen Snapshot anwenden" den neuen Snapshot aus und klicken Sie auf "Snapshot an Gerät senden".
  
-> Wenn Sie die Snapshot-Konfiguration von einem Gerät auf ein anderes anwenden, kann die Konfiguration Daten enthalten, die gerätespezifisch sind.
+> Wenn Sie die Snapshot-Konfiguration von einem Gerät auf einem anderen anwenden, kann die Konfiguration Daten enthalten, die gerätespezifisch sind.
  
 ### Erstellen einer Snapshot-Konfiguration aus einer Datei
 
-Neue Konfigurationen können der Liste "Konfigurationsschnappschüsse" hinzugefügt werden, indem Sie auf "Konfigurationsschnappschuss hinzufügen" klicken. Anschließend werden Sie zur "Konfigurationsablage" umgeleitet. Alle Gerätekonfigurationen befinden sich in der "Konfigurationsablage", das sich unter dem Menüpunkt "Management" befindet. So fügen Sie einen neuen Snapshot hinzu:
+Neue Konfigurationen können der Konfigurationssnapshot-Liste hinzugefügt werden, indem Sie auf "Konfigurationssnapshot hinzufügen" klicken. Anschließend werden Sie zur "Konfigurationsablage" umgeleitet. Alle Gerätekonfigurationen befinden sich in der "Konfigurationsablage" unter dem Menüpunkt "Verwaltung". So fügen Sie einen neuen Snapshot hinzu:
 
+- Klicken Sie "Konfigurationssnapshot hinzufügen".
 - Geben Sie den "Namen" ein.
 - Geben Sie die "Beschreibung" ein.
-- Schreiben Sie den "Gerätetyp", der sich auf der Registerkarte "Info" des Zielgerätes befindet.
-- Fügen Sie die "Konfigurations-Snapshot-Datei" hinzu, indem Sie entweder "Upload" oder "Datei wählen" anklicken.
-- Wenn Sie fertig sind, klicken Sie auf "Speichern".
+- Geben Sie den "Gerätetyp", der sich auf der Registerkarte "Info" des Zielgerätes befindet, ein.
+- Fügen Sie die Konfigurationssnapshot-Datei hinzu, indem Sie entweder "Hochladen", "Externe URL" oder "Ausgewählte Datei" anklicken.
+- Wenn Sie fertig sind, klicken Sie auf "Konfigurationssnapshot hinzufügen".
 
-![Configuration Snapshot Repository](/guides/users-guide/configsnaprepo.png)
+![Configuration Snapshot Repository](/guides/benutzerhandbuch/configsnaprepo-de.png)
 
 ### <a name="software"></a>Software
 
@@ -473,21 +473,20 @@ Um ein Sammelkommando für eine Gruppe auszuführen, gehen Sie folgendermaßen v
 
 - Wählen Sie ein Gerät aus und navigieren Sie zur Registerkarte "Steuerung".
 - Erstellen Sie ein Kommando.
-- Bewegen Sie den Mauszeiger über den Vorgang, den Sie ausführen möchten.
-- Klicken Sie auf das Zahnrad. 
-- Klicken Sie auf "Ausführen für die ganze Gruppe".
+- Navigieren Sie zu diesem Kommando und klicken Sie auf die drei untereinanderliegenden Kästchen am Ende der Zeile und dann auf "Editiere Zeitplan". 
+- Ein neues Fenster öffnet sich, in dem Sie definieren können, wann und mit welcher Verzögerung dieses Kommando für alle Gruppenmitglieder ausgeführt wird.
 
-![Execute bulk operations](/guides/users-guide/executebulkoperations.png)
+![Sammelkommando ausführen](/guides/benutzerhandbuch/executebulkoperations-de.png)
+
+![Sammelkommando ausführen Schritt 2](/guides/benutzerhandbuch/executebulkoperations2-de.png)
 
 > Weitere Informationen über Sammelkommandos finden Sie unter [Arbeiten mit Kommandos](#operation-monitoring).
 
-Um den Status und den Fortschritt Ihrer Kommandos anzuzeigen, klicken Sie einfach auf die gewünschte Gruppe und dann auf "Sammelkommandos".
+Um den Status und den Fortschritt Ihrer Kommandos anzuzeigen, klicken Sie auf die gewünschte Gruppe und dann auf "Sammelkommandos".
 
-![Bulk operations tab](/guides/users-guide/bulkoperationsde.png)
+![Sammelkommando Status](/guides/benutzerhandbuch/bulkoperationsde.png)
 
-Auch Sammelkommandos können bearbeitet werden. Um ein Kommando zu bearbeiten, bewegen Sie den Mauszeiger über das Kommando und klicken Sie dann auf die blaue Markierungsschaltfläche. Ein neues Fenster wird eingeblendet. Die Werte "Startdatum" und "Verzögerung" können geändert werden. Um die Betriebsdaten zu ändern, klicken Sie auf "Details anzeigen". Wenn Sie fertig sind, klicken Sie auf "Reschedule", um Änderungen zu übernehmen, oder klicken Sie auf "Abbrechen", um Änderungen zu verwerfen.
-
-Um Kommandos zu löschen, klicken Sie auf die X-Taste.
+Auch Sammelkommandos können bearbeitet werden. Um ein Kommando zu bearbeiten, wählen Sie ein Gerät aus und navigieren Sie zur Registerkarte "Steuerung". Wählen Sie das Kommando aus, klicken Sie auf die drei untereinanderliegenden Kästchen am Ende der Zeile und dann auf "Editiere Zeitplan". Ein neues Fenster wird eingeblendet. Die Werte "Startdatum" und "Verzögerung" können geändert werden. Um die Kommandodetails zu ändern, klicken Sie auf "Anzeigen Kommandodetails". Wenn Sie fertig sind, klicken Sie auf "Neu planen", um Änderungen zu übernehmen, oder klicken Sie auf "Abbrechen", um Änderungen zu verwerfen.
 
 ## <a name="events-all"></a>Fehlerbehebung bei Geräten
 
@@ -529,9 +528,11 @@ In den meisten Fällen sollten Sie nichts bearbeiten müssen. Ausnahmen sind:
 * Wenn Sie ein Gerät vorübergehend ausschalten möchten, verwenden Sie die Schaltfläche "Deaktivieren" neben den Geräteanmeldeinformationen.
 * Wenn Sie einem einzelnen Gerät mehrere Berechtigungen zuweisen möchten, klicken Sie auf die Gerätezugangsdaten und wählen Sie zusätzliche oder unterschiedliche Benutzergruppen für das Gerät aus.
 
-![Sammelregistrierung](/guides/users-guide/regdeutsch.png)
+Die Geräte-Anmeldeinformationen können auch aus einer CSV-Datei bereitgestellt werden. Dateien können über die markierte Schaltfläche hochgeladen werden. 
 
-Die Geräte-Anmeldeinformationen können auch aus einer CSV-Datei bereitgestellt werden. Dateien können über die markierte Schaltfläche hochgeladen werden. Weitere Details zur Dateistruktur finden Sie unter [Sammelregistrierung](#creds-upload).
+![Sammelregistrierung](/guides/benutzerhandbuch/autoregisterde.png)
+
+Weitere Details zur Dateistruktur finden Sie unter [Sammelregistrierung](#creds-upload).
 
 ## <a name="simulators"></a> Simulatoren
 

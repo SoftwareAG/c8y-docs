@@ -100,7 +100,7 @@ For subscriptions to the operation or error topics we will deliver all messages 
 
 MQTT clients can set the clean session flag to 0 (false). This will ensure that if the client disconnects your subscription will still work and when you reconnect the client will receive the missed messages.
 
-*Note:* Cumulocity requires clean session to be set to 0 (false). At the moment we do not guarantee that disabling clean session would work reliably, hence we recommend to always enable clean session. 
+*Note:* Cumulocity requires clean session to be set to 1 (true). At the moment we do not guarantee that disabling clean session would work reliably, hence we recommend to always enable clean session. 
 
 ### MQTT Retained Flag
 

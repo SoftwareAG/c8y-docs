@@ -109,10 +109,10 @@ Um eine Top-Level-Gruppe zu erstellen, klicken Sie oben rechts neben dem Suchfel
 Sie können auch Geräte auf zwei andere Weisen hinzufügen: 
 
 * Wählen Sie ein Gerät aus und scrollen Sie nach unten zum Abschnitt "Gruppen" auf der Registerkarte "Info". Verwenden Sie das Dropdown-Menü mit dem Namen "Gruppen auswählen oder suchen", um eine Gruppe auszuwählen, in die das Gerät eingefügt werden soll.
-* Wählen Sie eine Gruppe aus. Gehen Sie auf die Registerkarte "Kindassets" auf der linken Seite und wählen Sie sie aus. Klicken Sie dann rechts oben in der Gruppenliste auf "Geräte zuordnen". Ein neues Menü öffnet sich. Suchen Sie nach den Geräten, die im Suchfeld hinzugefügt werden sollen. Markieren Sie dann die entsprechenden Geräte im Ergebnis und klicken Sie auf die Schaltfläche "X Geräte zugeordnet" am unteren Rand der Ergebnisliste.
+* Wählen Sie eine Gruppe aus. Gehen Sie auf die Registerkarte "Kindassets" und wählen Sie sie aus. Klicken Sie dann rechts oben in der Gruppenliste auf "Geräte zuordnen". Ein neues Menü öffnet sich. Suchen Sie nach den Geräten, die im Suchfeld hinzugefügt werden sollen. Markieren Sie dann die entsprechenden Geräte im Ergebnis und klicken Sie auf die Schaltfläche "X Geräte zugeordnet" am unteren Rand der Ergebnisliste.
 
 
-<img src="/guides/users-guide/subassetaddde.png" alt="Geräte zuordnen" style="max-width: 100%">
+<img src="/guides/benutzerhandbuch/subassetaddde.png" alt="Geräte zuordnen" style="max-width: 100%">
 
 
 Um eine Untergruppe zu erstellen, klicken Sie einfach auf "Gruppe hinzufügen", wenn Sie eine Gruppe ansehen.

@@ -54,7 +54,7 @@ Die CSV-Datei muss eine Kopfzeile haben, gefolgt von den tatsächlichen Daten. D
 
 Verwenden Sie bei der Geräteregistrierung die Option "Mehrfachregistrierung" und dann den "Datei zum Hochladen auswählen"-Knopf, um die CSV-Datei hochzuladen, wie im Screenshot unten gezeigt. Nachdem die Daten importiert wurden, erhalten Sie eine Rückmeldung über die Anzahl der vorregistrierten Geräte sowie über mögliche Fehler.
 
-<img src="/guides/benutzerhandbuch/autoregisterde.png" alt="Bulk registration" style="max-width: 100%">
+<img src="/guides/benutzerhandbuch/autoregisterde.png" alt="Bulk registration" style="max-width: 60%">
 
 Um die Geräte zu verbinden, müssen sie mit entsprechenden Informationen vorbereitet werden. Insbesondere muss jedes Gerät wie folgt konfiguriert werden:
 
@@ -104,7 +104,7 @@ Cumulocity unterscheidet zwischen Top-Level-Gruppen und Untergruppen. Top-Level-
 Um eine Top-Level-Gruppe zu erstellen, klicken Sie oben rechts neben dem Suchfeld auf die Plustaste und wählen Sie dann "Neue Gruppe hinzufügen". Ein kleines Fenster erscheint. Geben Sie einen Gruppennamen ein und suchen Sie nach den Geräten, die der Gruppe hinzugefügt werden sollen. Markieren Sie die Geräte und drücken Sie die Schaltfläche "Gruppe mit X Geräten erstellen", um den Vorgang abzuschließen. ( "X" ist die Anzahl der Geräte, die Sie markiert haben.)
 > Eine Gruppe kann auch "0" Geräte enthalten.
 
-<img src="/guides/benutzerhandbuch/gruppe2ger.png" alt="Gruppe hinzufügen" style="max-width: 100%">
+<img src="/guides/benutzerhandbuch/gruppe2ger.png" alt="Gruppe hinzufügen" style="max-width: 60%">
 
 Sie können auch Geräte auf zwei andere Weisen hinzufügen: 
 
@@ -112,7 +112,7 @@ Sie können auch Geräte auf zwei andere Weisen hinzufügen:
 * Wählen Sie eine Gruppe aus. Gehen Sie auf die Registerkarte "Kindassets" und wählen Sie sie aus. Klicken Sie dann rechts oben in der Gruppenliste auf "Geräte zuordnen". Ein neues Menü öffnet sich. Suchen Sie nach den Geräten, die im Suchfeld hinzugefügt werden sollen. Markieren Sie dann die entsprechenden Geräte im Ergebnis und klicken Sie auf die Schaltfläche "X Geräte zugeordnet" am unteren Rand der Ergebnisliste.
 
 
-<img src="/guides/benutzerhandbuch/subassetaddde.png" alt="Geräte zuordnen" style="max-width: 100%">
+<img src="/guides/benutzerhandbuch/subassetaddde.png" alt="Geräte zuordnen" style="max-width: 60%">
 
 
 Um eine Untergruppe zu erstellen, klicken Sie einfach auf "Gruppe hinzufügen", wenn Sie eine Gruppe ansehen.
@@ -123,7 +123,7 @@ Um eine Gruppe zu bearbeiten, klicken Sie auf den Namen der Gruppe und auf "Edit
 
 Dynamische Gruppen sind Gruppen basierend auf Filterkriterien. Sie haben einen vorübergehenden Charakter, da sich die Anzahl der Mitglieder ständig verändern kann. Diese Gruppen haben keine festen Mitgliederlisten, sondern stattdessen bestimmte Auswahlkriterien. Diese Art von Gruppe kann verwendet werden für Sammel-Upgrades eines Gerätyps auf eine neue Software- oder Firmware-Version.
 
-<img src="/guides/benutzerhandbuch/smartfiltersde.png" alt="Dynamische Gruppen" style="max-width: 100%">
+<img src="/guides/benutzerhandbuch/smartfiltersde.png" alt="Dynamische Gruppen" style="max-width: 60%">
 
 Durch Auswahl von "Alle Geräte" können dynamische Gruppen angelegt werden. Um eine neue Gruppe zu erstellen, verwenden Sie einfach Filter, um Geräte auszuwählen. Klicken Sie nun auf "Dynamische Gruppe erstellen" und geben Sie der Gruppe einen Namen.
 
@@ -270,13 +270,13 @@ Um einen aktuellen Snapshot von einem Gerät abzurufen, navigieren Sie zum Gerä
 
 Die Konfigurationsablage befindet sich im Menü "Verwaltung". 
 
-![Retrieve Configuration Snapshot](/guides/benutzerhandbuch/retrievesnap-de.png)
+<img src="/guides/benutzerhandbuch/retrievesnap-de.png" alt="Konfigurationssnapshot abrufen" style="max-width: 60%">
 
 ### Anwenden einer Snapshot-Konfiguration auf einem Gerät 
 
 Um einen neuen Snapshot anzuwenden, navigieren Sie zu einem Gerät und klicken Sie dann auf "Konfiguration". Unter "Konfigurationssnapshot" können Sie einen Eintrag aus der Konfigurationsablage aus dem Dropdown-Menü auswählen. Wenn die Eingabedatei ausgewählt ist, klicken Sie auf "Neuen Snapshot auf das Gerät legen".
 
-![Apply new snapshot to a device](/guides/benutzerhandbuch/addsnap-de.png)
+<img src="/guides/benutzerhandbuch/addsnap-de.png" alt="Konfigurationssnapshot anwenden" style="max-width: 60%">
 
 ### Anwenden einer Snapshot-Konfiguration von einem Gerät auf ein anderes Gerät
  
@@ -296,6 +296,7 @@ Neue Konfigurationen können der Konfigurationssnapshot-Liste hinzugefügt werde
 - Wenn Sie fertig sind, klicken Sie auf "Konfigurationssnapshot hinzufügen".
 
 ![Configuration Snapshot Repository](/guides/benutzerhandbuch/configsnaprepo-de.png)
+
 
 ### <a name="software"></a>Software
 
@@ -392,7 +393,7 @@ Der untere Pfeil zeigt den Status der Push-Verbindung an, über die Befehle von 
 
 "Wartungsmodus" ist ein spezieller Verbindungsstatus, der anzeigt, dass das Gerät aktuell gewartet wird und nicht überwacht werden soll. Während ein Gerät gewartet wird, werden keine Alarme für dieses Gerät ausgelöst. Sie können den Wartungsmodus aktivieren, indem Sie das erforderliche Intervall auf einen negativen Wert setzen.
 
-<center><img src="/guides/users-guide/verbcontr1.png" alt="Device details" style="max-width: 80%"></center>
+<center><img src="/guides/users-guide/verbcontr1.png" alt="Device details" style="max-width: 60%"></center>
 
 
 > Die Verbindungsüberwachung erfolgt nicht in Echtzeit. Beispielsweise ändert sich der Zustand der Verbindung nicht sofort, wenn Sie ein Gerät ausschalten. Abhängig von Ihrem Netzwerk kann es ungefähr 20 Minuten dauern, bis eine defekte Verbindung entdeckt wird, da das Netzwerk das Senden von Daten für eine signifikante Zeitspanne wiederholt.
@@ -478,7 +479,7 @@ Um ein Sammelkommando für eine Gruppe auszuführen, gehen Sie folgendermaßen v
 
 ![Sammelkommando ausführen](/guides/benutzerhandbuch/executebulkoperations-de.png)
 
-![Sammelkommando ausführen Schritt 2](/guides/benutzerhandbuch/executebulkoperations2-de.png)
+<img src="/guides/benutzerhandbuch/executebulkoperations2-de.png" alt="Sammelkommando ausführen Schritt 2" style="max-width: 60%">
 
 > Weitere Informationen über Sammelkommandos finden Sie unter [Arbeiten mit Kommandos](#operation-monitoring).
 
@@ -530,7 +531,7 @@ In den meisten Fällen sollten Sie nichts bearbeiten müssen. Ausnahmen sind:
 
 Die Geräte-Anmeldeinformationen können auch aus einer CSV-Datei bereitgestellt werden. Dateien können über die markierte Schaltfläche hochgeladen werden. 
 
-![Sammelregistrierung](/guides/benutzerhandbuch/autoregisterde.png)
+<img src="/guides/benutzerhandbuch/autoregisterde.png" alt="Sammelregistrierung" style="max-width: 60%">
 
 Weitere Details zur Dateistruktur finden Sie unter [Sammelregistrierung](#creds-upload).
 
@@ -675,7 +676,7 @@ Um einen Endpunkt zu konfigurieren, benötigen Sie die folgenden Berechtigungen:
 
 Ein Dialogfenster öffnet sich, in dem Sie den Endpunkt konfigurieren können. Geben Sie die IP-Adresse, den Port und das Passwort des VNC-Servers ein. Wenn der Endpunkt hinzugefügt ist, wird er in der Liste der Endpunkte angezeigt. 
 
-![Remote-Access-Endpunkt](/guides/benutzerhandbuch/remoteaccess-de.png)
+<img src="/guides/benutzerhandbuch/remoteaccess-de.png" alt="Remote-Access-Endpunkt" style="max-width: 60%">
 
 Um eine Verbindung zu konfigurierten Endpunkten zu schaffen, gehen Sie zum "Fernzugriff"-Tab und wählen Sie einen Endpunkt aus. Diese Endpunkte stellen die ferngesteuerten Geräte dar. Wenn Sie auf "Verbinden" klicken, startet die VNC-Verbindung. 
 

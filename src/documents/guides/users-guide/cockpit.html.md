@@ -13,7 +13,7 @@ The Cockpit application provides you with options to manage the Internet of Thin
 - [Connect](#connect) devices and manage [assets](#asset)
 - [Visualize](#visualize) data using the data explorer
 - Work with [dashboards](#dashboards)
-- Handle [widgets](#widgets) and the [business rule](#business) package
+- Handle [widgets](#widget) and the [business rule](#business) package
 - Manage [alarms](#alarms), [reports](#reports) and [smart rules](#rules)
 - Use the [data point library](#library)
 

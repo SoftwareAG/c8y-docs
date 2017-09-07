@@ -18,6 +18,7 @@ The Device Management application shows you your connected devices and enables y
 * [Manage](#software-repo) the software and the firmware on devices.
 * [Manage](#credentials) the credentials of devices.
 * [Simulate](#simulator) devices.
+* [Create and update](#smartrest) SmartRest templates.
 
 The Device Management Application looks like this:
 
@@ -605,16 +606,9 @@ The measurement instruction refers to a fragment. This refers to the example sho
 
 ![Add Instructions Step 3](/guides/users-guide/addinstructions3.png)
 
-**Smart Rest Templates**
-
-Other options show a selection of Smart Rest Templates. The Smart Rest Templates are created in the Navigator under the “Device Types” > “SmartREST temSmart Rest Templates plates” entry. These templates are a response template, creating a list of values that describe an operation as a final result. The Smart Rest Template below will create a Warning Alarm post with text at a specified time. 
-Specific information and samples of a variety of templates are available from the [MQTT Developer's Guide](https://www.cumulocity.com/guides/mqtt/introduction/). 
-
-![Rest Template](/guides/users-guide/resttemplate.png)
+The "Sleep" instruction requires one value for its duration in seconds. The panel on the right half of the screen changes according to the type of instructions you choose. 
 
 ![Add Instructions Step 4](/guides/users-guide/addinstructions4.png)
-
-The "Sleep" instruction requires one value for its duration in seconds. The panel on the right half of the screen changes according to the type of instructions you choose. 
 
 ### Adding Operations to a Simulator
 
@@ -633,6 +627,95 @@ The last tab in the simulator menu are alarms.
 ![Simulator Alarm](/guides/users-guide/simalarm.png)
 
 These are not the alarms related to the simulated device, these are alarms connected to the simulator itself. If a simulator does not work correctly, you will see alarms or a warning here.
+
+## <a name="smartrest"></a> SmartRest Templates
+
+### Overview
+
+Using the SmartRest editor, developers can easily create new SmartRest templates and update  existing ones. This applies to SmartRest 2.0 templates for MQTT as well. The SmartRest templates are a collection of request and response templates used to convert CSV data and Cumulocity Rest API calls. For example, you can use SmartRest templates to easily add devices to the platform instead of manually writing the requests each time.
+To ease the device integration, Cumulocity already supports static templates that can be used without the need for creating your own templates. These templates focus only on the most used messages for device management. For more info about the static templates, see [here](/guides/mqtt/static-templates/).
+
+The SmartRest templates are located in the “Device types” section in the navigator. In the templates list, you can see the template ID, name and the number of messages and responses contained in the template.
+
+![template view](/guides/users-guide/templateview.png)
+
+There are two ways to add a SmartRest template:
+
+- Import an already existing template.
+- Create a new template.
+
+### Importing an existing SmartRest template
+
+In order to import an already existing template first click on the “Import” button located on the top right. 
+
+![Import template](/guides/users-guide/importtemplate.png)
+
+Choose the file to upload and enter the template name and unique ID.
+
+### Adding a new SmartRest template
+
+To add a new template first click on the “New” button.
+
+![Add template](/guides/users-guide/addtemplate.png)
+
+Enter the template name and unique template ID. Both fields are mandatory and should be filled. When ready, press “Continue”. 
+
+### Adding a message
+
+The message template contains all necessary information to convert the SmartRest request into a corresponding Rest API call which is then sent to the platform.
+
+To add a new message, first navigate to the “Messages” tab in your desired SmartRest template, then click on the “Add message” field and fill the following fields:
+
+- Message ID: Unique integer that will be used as a message identifier. It must be unique among all message and response templates.
+- Name: This field is mandatory.
+- Target Rest API: Choose one of the Rest API options that will be targeted in this message. (Measurement, Alarm, Inventory,  Event or Operation)
+- Method: Select the request method. 
+- Select the “Includes response” checkbox if you wish to process the result of the request with response templates.
+- Rest API built-in fields: These fields are optional and are different depending on the target Rest API option selected. In case no value is provided, a device will be able to set it when sending an actual message.
+- Rest API custom fields: Additional fields can also be added, enter the API “Key” and choose your desired data type.
+- Preview: Here you can see the preview of your request.
+- Click “Save” when ready.
+
+![message](/guides/users-guide/message.png)
+
+> To remove a message, simply click on the message and then click on “Remove”.
+
+### Adding a response
+
+A response template contains the necessary information to extract data values from a platform Rest API call response which is then sent back to the client in a CSV data format.
+
+To add a new response, first navigate to the response tab in your desired SmartRest template, then click on “Add response” and fill the following fields:
+
+- Response ID: Enter a unique ID which will be used as a response identifier.
+- Name: Enter the name of the response.
+- Base Pattern: Enter the base pattern of the response.
+- Condition: Enter the condition value of the response.
+- Pattern: At least one pattern is required. Enter a pattern value.
+- When ready, click on “Save”.
+
+![response](/guides/users-guide/response.png)
+
+> To remove a response, simply click on the message and then click on “Remove”.
+
+### Exporting templates
+
+In order to export a template,  click on the additional options menu of the desired template and then click on “Export”.
+
+![export](/guides/users-guide/export1.png)
+
+### Exporting CSV file
+
+Navigate to the “CSV preview” tab in the desired template. In this tab you can see additional information about the “Messages” and “Responses”. Click on the “Export” CSV button. Then, a small window will pop-up.  Select your prefered options for the CSV and click on “Download”.
+
+![Export CSV](/guides/users-guide/exportcsv.png)
+
+### Editing or removing templates
+
+To edit a template, either click on the desired template or click on the extra menu and then “Edit”. 
+
+To delete a template click on the additional menu of the template and then click on “Remove”.
+
+![Remove template](/guides/users-guide/removingtemplates.png)
 
 ## <a name="cloud_remote_access"></a>Cloud Remote Access
 

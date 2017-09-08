@@ -46,10 +46,11 @@ You need to add a new custom callback and change the following parameters:
       	"lat": "{lat}",
       	"lng": "{lng}",
       	"rssi": "{rssi}",
-      	"seqNumber": "{seqNumber}"
+      	"seqNumber": "{seqNumber}",
+      	"ack": {ack}
       }
 
-Setting the type to bi-directional (BIDIR) enables Cumulocity to send commands in return.
+Setting the type to bi-directional (BIDIR) enables Cumulocity to send commands in return. If you use uplink callbacks, omit the "ack" parameter.
 
 ![Data callback configuration](/guides/devices/sigfox/sigfox_backend_data.png)
 

@@ -79,15 +79,20 @@ In the device database window, click the "New" button.
 
 Select "LoRa" as the device type and name your device type. 
 
-In the next UI section you determine the message type. LoRa devices can send messages of different types with different encodings per type. Depending on the device, the type can be determined by looking either at the FPort parameter of a message (Source: FPort) or at the subset of the message payload itself (Source: Payload). If the type is inside the message payload, indicate where the type information starts in the payload (Start bit) and how long this information is (Number of bits).
-[???TO DO: add example]
+In the next UI section you determine the message type. LoRa devices can send messages of different types with different encodings per type. Depending on the device, the type can be determined by looking either at the FPort parameter of a message (Source: FPort) or at the subset of the message payload itself (Source: Payload). 
 
 Select the way the message type is encoded in the "Source" dropdown box:  
 
 - **FPort**: if the message type can be determined by looking at the FPort parameter of a message  
 - **Payload**: if the message type can be determined by looking at the subset of the message payload itself   
 
-If you select "Payload", indicate in the "Start bit" field where the message type information starts in the payload and how long this information is in the "Number of bits" field. For detailed information on how to decode the payload, refer to the documentation of your device. 
+If you select "Payload", indicate in the "Start bit" field where the message type information starts in the payload and how long this information is in the "Number of bits" field. 
+
+In the following you can see an example where the start bit is "0" and the number of bits "8".
+
+<img src="/guides/users-guide/actility/messagetype-payload.png" alt="Message type payload" style="max-width: 100%">
+
+For detailed information on how to decode the payload, refer to the documentation of your device. 
 
 Click the "Add" button to create the value configuration. 
 
@@ -126,13 +131,15 @@ After clicking "OK", the values are added to your device type.
 
 After clicking "Save", your device type is created with the values you defined.
 
+[???TO DO: Add a graphical representation of the frame. I.e. google "packet frame format" and use a similar layout.]
+<img src="/guides/users-guide/actility/payload-example-measurement.png" alt="Example payload: measurement" style="max-width: 100%">
+
 **Example without nested structure**
 
 The following picture shows an example for a message which sends a measurement when this value (the battery level) changes. 
 
-[???TO DO: Add a graphical representation of the frame. I.e. google "packet frame format" and use a similar layout.]
-
 <img src="/guides/users-guide/actility/deviceDatabase2.png" alt="Value configuration in detail: measurement" style="max-width: 50%">
+
 
 **<a name="nested-structure-example"></a>Example with nested structure**
 
@@ -191,7 +198,10 @@ After confirming the deprovisioning, the device will be deprovisioned in ThingPa
 
 In order to send an operation, go to the Device Management application and navigate to the device you want to send an operation to. 
 
-Click the "Shell" tab and enter the operation in the ">_Command" field. If you enter the operation without defining a port, it will be sent to the default target port (i. e. 1). If you enter the operation and define a port (format "command:port"), it will be sent to the specified target port instead of the default port. 
+Click the "Shell" tab and enter the operation in the ">_Command" field. 
+(???add example operation) 
+
+If you enter the operation without defining a port, it will be sent to the default target port (i. e. 1). If you enter the operation and define a port (format "command:port"), it will be sent to the specified target port instead of the default port. 
 
 <img src="/guides/users-guide/actility/portConfiguration.png" alt="Port configuration" style="max-width: 100%">
 

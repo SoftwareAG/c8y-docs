@@ -7,7 +7,8 @@ layout: devices
 
 * [Overview](#overview)
 * [Interface](#interface) 
-* [Connect the Smartbox](#connect-the-smartbox) to your Cumulocity Account 
+* [Connect the Smartbox](#connect-the-smartbox) to your Cumulocity Account
+* An Example Mini [use case](#use-case)
 * Manage [software](#software) 
 * Use the built-in [location functionality](#location) 
 * Use the built-in [tracking functionality](#tracking) 
@@ -63,6 +64,36 @@ In the cumulocity Cloud Fieldbus app go to the menu and there find Devices &rarr
 After accepting the device you should be able to see it in the All Devices list within 30 seconds.  
 
 ![Terminal in all devcies](/guides/devices/smartbox-io/terminal-in-all-devices.png)
+
+## <a name="use-case"></a>An Example Mini use case
+
+Assume you have a data center application: A chiller provides constant cold water of 7&deg;C at the outlet. For each server rack line, a precision air conditioner is installed which maintain the rack temperature to 20&deg;C by blowing cool air through the floor grid to the racks. 
+The warm air at the outlet of each rack will be again cooled down by a heat exchanger, installed in the air conditioning units, fed from cool water coming from the chiller. Your company servicing the cooling system for your customer. You want to:
+
+* be informed about alarms of the internal refrigeration systems of the chiller and precision air conditioners
+* maintain running hours of the compressors of the chiller
+* measure the electrical consumption of the system
+* measure the temperature of each rack managed by the precision air conditioning units
+* be informed about critical temperatures
+* reset Alarms of chiller or precision air conditioning units
+    
+![use case](/guides/devices/smartbox-mini/use-case.png)
+
+To connect this data center application to Cumulocity follow these steps: 
+
+1. The Smartbox Mini, acts as a Modbus Master. Connect all slaves together in one line and put different Slave addresses in the field devices, as well as a common Baudrate and Communication frame (e.g. 8/N/1). Normally all field devices provides such setting at a local display. 
+2. For each different Field device (Chiller, Air Conditioning units, Energy meter) create the Device database entry in the Cloud Fieldbus App in Cumulocity: 
+  1. Get the Modbus data point list, given by the manufacturer of the field device. E.g. [http://bit.ly/22w5kur](http://bit.ly/22w5kur) page 26 for a chiller
+  2. Create a device Chiller and include all relevant Modbus coils and registers from the step 2.1 . In this step, define whether the data point is an event, alarm, measurement, Value, Read/Write Value. How to do it: check here Cloud Fieldbus user's guide in the section Configuring Modbus device types
+3. Now build Up your Modbus network in the Modbus Configuration Tab:
+  * Set Modbus Communication frame
+  * Add Field devices from step 2.2 and allocate the slave address in the Modbus network
+  
+![use case](/guides/devices/smartbox-mini/use-case2.png)
+
+In Cumulocity, each field device comes up as a single child device of the terminal. So in this case we would have 3 child devices. After saving the changes, the terminal will discover all child devices and its Modbus items and begin feeding the platform with measurements, alarms, events, values. Note: Without a setup network, the terminal will not send any data.
+
+The default name of the terminal is the IMEI. Click on the terminal to view the detailed information. You can change the terminal's name on the "Info" tab, which also displays basic information such as serial number of the router and SIM card data. After changing the name, remember to click "save changes" button at the bottom of the "Info" page. All data coming from the field devices are available under the section child devices.
 
 ## <a name="software"></a>Manage software
 

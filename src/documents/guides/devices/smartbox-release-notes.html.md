@@ -65,11 +65,11 @@ For information on using the agent, please visit the SMARTbox IO or SMARTbox Min
 * FOTA - Remote Software update
 * MQTT Support
 
-You can download [here](/guides/devices/smartbox-release-notes/F4_IO_2100.03.1_TypeA)
+You can download [here](https://www.pssystec.de/get-version-2-0/)
 
 ### 2.1.5
 * Fixed Buffer Management for Sensor connected on BuiltIn Temp. Sensor
 * Improved 2G/3G connectivity in case of changeover
 
-You can download [here](/guides/devices/smartbox-release-notes/F4_IO_2100.03.1_TypeA)
+You can download [here](https://www.pssystec.de/get-version-2-1-5/)
 

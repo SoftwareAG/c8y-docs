@@ -35,7 +35,7 @@ The screenshot below shows the list of users accessible through the "Users" menu
 - The user name that is used to access the tenant.
 - The name and email of the user, if set.
 - The global roles of the user.
-- The [strength](guides/users-guide/overview/#login) of the password set for the user.
+- The [strength](https://www.cumulocity.com/guides/users-guide/overview#login) of the password set for the user.
 
 The cogwheel at the end of the row contains a drop-down menu with additional functions, which will be explained later in this chapter.
 
@@ -68,6 +68,8 @@ Next,
 - Click the "Save" button to save all the previous data.
 
 > Fields without an asterisk ("*", like "First name", "Last name") are optional. You can edit user details similar like you can add new users.
+
+> Please note that, by default manually created users always have the "Own_User_Management" permissions set to active.
 
 ### Editing, disabling and deleting  users
 

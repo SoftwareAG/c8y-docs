@@ -86,9 +86,11 @@ Select the way the message type is encoded in the "Source" dropdown box:
 - **FPort**: if the message type can be determined by looking at the FPort parameter of a message  
 - **Payload**: if the message type can be determined by looking at the subset of the message payload itself   
 
-If you select "Payload", indicate in the "Start bit" field where the message type information starts in the payload and how long this information is in the "Number of bits" field. 
+In the following graphic you can see an example of a message type structure, if you select "Payload". The byte indicating the message type source is highlighted.
 
-In the following you can see an example where the start bit is "0" and the number of bits "8".
+<img src="/guides/users-guide/actility/payload-example1.png" alt="Example payload: message type source" style="max-width: 100%">
+
+Indicate in the "Start bit" field where the message type information starts in the payload and how long this information is in the "Number of bits" field, for example start bit = "0" and number of bits = "8".
 
 <img src="/guides/users-guide/actility/messagetype-payload.png" alt="Message type payload" style="max-width: 100%">
 
@@ -102,9 +104,17 @@ The value configuration maps the value in the payload of a message type to the C
 
 Configure the "Message ID" according to your device message specification and map it to the Cumulocity data. The message ID is the numeric value identifying the message type. It will be matched with the message ID found in the source specified on the device type main page (i.e. Payload or FPort). The message ID needs to be entered in decimal numbers (not hex).
 
+In this example the message ID is "1".
+
+<img src="/guides/users-guide/actility/payload-example2.png" alt="Example payload: message type source" style="max-width: 100%">
+
 Fill in the general fields for your new value in order to categorize it in the "Values" list. The associated "Name" for this value will be displayed under the "Display category" given.
 
 Under "Value selection" define from where the value should be extracted. In order to do so, indicate where the value information starts in the "Start bit" field and how long this information is in the "Number of bits" field.
+
+In this example the "Measurement sensor 1" information starts in byte 3 (i.e. start bit = "24) and is 3 bytes long (i.e. number of bits = "24").
+
+<img src="/guides/users-guide/actility/payload-example2.png" alt="Example payload: message type source" style="max-width: 100%">
 
 Under "Value normalisation" define how the raw value should be transformed before being stored in the platform and enter the appropriate values for:
 
@@ -130,9 +140,6 @@ After clicking "OK", the values are added to your device type.
 ![Value configurations of created device type](/guides/users-guide/actility/deviceDatabase1.png)
 
 After clicking "Save", your device type is created with the values you defined.
-
-[???TO DO: Add a graphical representation of the frame. I.e. google "packet frame format" and use a similar layout.]
-<img src="/guides/users-guide/actility/payload-example-measurement.png" alt="Example payload: measurement" style="max-width: 100%">
 
 **Example without nested structure**
 

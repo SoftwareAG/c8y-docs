@@ -114,7 +114,7 @@ Under "Value selection" define from where the value should be extracted. In orde
 
 In this example the "Measurement sensor 1" information starts in byte 3 (i.e. start bit = "24) and is 3 bytes long (i.e. number of bits = "24").
 
-<img src="/guides/users-guide/actility/payload-example2.png" alt="Example payload: message type source" style="max-width: 100%">
+<img src="/guides/users-guide/actility/payload-example3.png" alt="Example payload: message type source" style="max-width: 100%">
 
 Under "Value normalisation" define how the raw value should be transformed before being stored in the platform and enter the appropriate values for:
 

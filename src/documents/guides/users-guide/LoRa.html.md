@@ -199,7 +199,9 @@ After confirming the deprovisioning, the device will be deprovisioned in ThingPa
 In order to send an operation, go to the Device Management application and navigate to the device you want to send an operation to. 
 
 Click the "Shell" tab and enter the operation in the ">_Command" field. 
-(???add example operation) 
+
+In the following screenshot you can find examples of some predefined commands and their format.
+<img src="/guides/users-guide/actility/predefinedcommands.png" alt="Predefined commands" style="max-width: 100%"> 
 
 If you enter the operation without defining a port, it will be sent to the default target port (i. e. 1). If you enter the operation and define a port (format "command:port"), it will be sent to the specified target port instead of the default port. 
 

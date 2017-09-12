@@ -58,11 +58,11 @@ Verwenden Sie bei der Geräteregistrierung die Option "Mehrfachregistrierung" un
 
 Um die Geräte zu verbinden, müssen sie mit entsprechenden Informationen vorbereitet werden. Insbesondere muss jedes Gerät wie folgt konfiguriert werden:
 
-* Benutzername: Der Benutzername, der auf Cumulocity zugreift, muss die Form &lt;Mandant&gt;/device_&lt;id&gt; haben. . &lt;Mandant&gt; bezieht sich auf den Mandanten, in den die CSV-Datei importiert wird, und &lt;id&gt; bezieht sich auf den entsprechenden Wert in der CSV-Datei.
+* Benutzername: Der Benutzername, der auf Cumulocity zugreift, muss die Form &lt;Mandant&gt;/device_&lt;id&gt; haben. &lt;Mandant&gt; bezieht sich auf den Mandanten, in den die CSV-Datei importiert wird, und &lt;id&gt; bezieht sich auf den entsprechenden Wert in der CSV-Datei.
 * Passwort: Das Passwort für den Zugriff auf Cumulocity, nämlich der Wert in den "credentials" (Zugangsdaten) in der CSV-Datei.
 * Gerät in der Objektdarstellung. Felder: "Type" (Typ), "Name", "Iccid", "Idtype", "Path" (Pfad), "Shell" in der CSV-Datei.
 
-Wenn Sie eine Enterprise Edition von Cumulocity besitzen, können Sie auch Geräte über mehrere Mandanten registrieren, indem Sie der Tabelle eine Spalte  mit "Mandanten" hinzufügen und die CSV-Datei aus der Mandantenverwaltung importieren.
+Wenn Sie eine Enterprise Edition von Cumulocity besitzen, können Sie auch Geräte für mehrere Mandanten registrieren, indem Sie der Tabelle eine Spalte  mit "Mandanten" hinzufügen und die CSV-Datei aus der Mandantenverwaltung importieren.
 
 Weitere Informationen zum Dateiformat und zu den akzeptierten CSV-Varianten finden Sie unter
 [Bulk device credentials](/guides/reference/device-credentials/#creds-upload).
@@ -79,11 +79,11 @@ In jedem Fall sehen Sie eine Liste der Geräte, wie im folgenden Beispiel gezeig
 
 * Ein Symbol für den Verbindungsstatus, wie in der [Verbindungsüberwachung](#connection-monitoring) beschrieben
 * Der Name des Geräts
-* Je nach Browserbreite, Modell und Seriennummer des Gerätes
+* Je nach Browserbreite: Modell und Seriennummer des Gerätes
 * Der Alarmstatus des Gerätes, wie viele kritische, wichtige, weniger wichtige oder Warnstufenalarme für das Gerät derzeit nicht gelöst sind. Siehe [Alarme](#alarm-monitoring) für weitere Informationen über das Arbeiten mit Alarmen.
 * Eine Schaltfläche zum Löschen des Gerätes
 
-Das Löschen eines Geräts bedeutet, das Gerät aus der Cumulocity-Datenbank zu entfernen, einschließlich aller damit generierten Daten. Alternativ zum Löschen eines Gerätes können Sie auch alle ausgeschalteten Geräte in eine Gruppe organisieren. Dadurch wird sichergestellt, dass alle alten Berichte korrekt bleiben. Um zu verhindern, dass Alarme für die ausgeschalteten Geräte eingehen, deaktivieren Sie die [Verbindungsüberwachung](#connection-monitoring). Beim Löschen eines Geräts werden die Daten seiner Kindgeräte nicht gelöscht.
+Das Löschen eines Geräts bedeutet, das Gerät aus der Cumulocity-Datenbank zu entfernen, einschließlich aller damit generierten Daten. Alternativ zum Löschen eines Gerätes können Sie auch alle ausgeschalteten Geräte in einer Gruppe organisieren. Dadurch wird sichergestellt, dass alle alten Berichte korrekt bleiben. Um zu verhindern, dass Alarme für die ausgeschalteten Geräte eingehen, deaktivieren Sie die [Verbindungsüberwachung](#connection-monitoring). Beim Löschen eines Geräts werden die Daten seiner Kindgeräte nicht gelöscht.
 
 <img src="/guides/benutzerhandbuch/devicelistde.png" alt="Geräteliste" style="max-width: 100%">
 
@@ -139,17 +139,17 @@ Benutzer können auch dynamische Gruppen aus den Gruppen der obersten Ebene lös
 
 ## <a name="device-details"></a>Anzeigen der Gerätedetails
 
-Durch Anklicken eines Geräts in einer Geräteliste werden detaillierte Informationen zum Gerät angezeigt. Was tatsächlich angezeigt wird, hängt vom Gerätetyp und von der Konfiguration der Benutzeroberfläche ab. Wenn ein Gerät noch keine Messwerte gesendet hat, gibt es keine Registerkarte "Messung".
+Durch Anklicken eines Geräts in einer Geräteliste werden detaillierte Informationen zum Gerät angezeigt. Was tatsächlich angezeigt wird, hängt vom Gerätetyp und von der Konfiguration der Benutzeroberfläche ab. Wenn ein Gerät noch keine Messwerte gesendet hat, gibt es keine Registerkarte "Messwerte".
 
 Am oberen Rand der Gerätedetails wird der Name des Gerätes angezeigt. Unterhalb des Namens wird eine Pfadnavigation angezeigt. Wenn das Gerät Teil einer Asset-Hierarchie (z. B. einer Gruppe) ist, können Sie mit der Pfadnavigation problemlos nach oben navigieren. Da Geräte Teil von mehreren Hierarchien sein können, können mehrere Reihen von Pfadnavigationen gezeigt werden.
 
 Rechts neben dem Namen wird ein Zahnrad angezeigt. Wenn Sie auf das Zahnrad klicken, wird ein Dropdown-Menü mit weiteren Aktionen angezeigt.
 
-Ist das Gerät kompatibel, steht über das Zahnrad ein Menüpunkt "Messwertabfrage starten" zur Verfügung. Mit dieser Option können Sie ein Gerät auffordern, Messungen mit einer bestimmten Frequenz für eine bestimmte Dauer zu senden. Diese Art von Debugging vermeidet zu viel Datenverkehr, der durch das Senden von Messungen erzeugt wird.
+Ist das Gerät kompatibel, steht über das Zahnrad ein Menüpunkt "Messwertabfrage starten" zur Verfügung. Mit dieser Option können Sie ein Gerät auffordern, Messungen mit einer bestimmten Häufigkeit für eine bestimmte Dauer zu senden. Diese Art von Debugging vermeidet zu viel Datenverkehr, der durch das Senden von Messungen erzeugt wird.
 
 <img src="/guides/benutzerhandbuch/devicedetails-de.png" alt="Gerätedetails" style="max-width: 100%">
 
-Die Gerätedetails sind in eine Anzahl von Registerkarten unterteilt. Die gängigsten Standard-Tabs sind:
+Die Gerätedetails sind in eine Anzahl von Registerkarten (Tabs) unterteilt. Die gängigsten Standard-Tabs sind:
 
 * [Info](#info)
 * [Kindgeräte](#child-devices)
@@ -157,7 +157,6 @@ Die Gerätedetails sind in eine Anzahl von Registerkarten unterteilt. Die gängi
 * [Alarme](#alarms)
 * [Steuerung](#control)
 * [Konfiguration](#config)
-* [Binäre Konfiguration](#configsnap)
 * [Software](#software)
 * [Ereignisse](#events)
 * [Standort](#location)
@@ -174,13 +173,13 @@ Auf der Registerkarte "Info" werden allgemeine Informationen für ein Gerät ang
 
 * **Verbindungsüberwachung**: Die Konfigurierung der Verbindungsüberwachung, wie [hier](#connection-monitoring) beschrieben
 * **Name** und **Typ**: Der Anzeigename des zu editierenden Gerätes sowie eine Kennung für den jeweiligen Gerätetyp
-* **Hardware**: Hardwareinformationen vom Gerät gelesen
-* **Mobil**: Wenn das Gerät ein Modem enthält, werden hier die mobilen Netzwerkinformationen angezeigt. Sie sehen auch einen "Ortungs" -Link. Wenn genügend Informationen verfügbar sind, bestimmt "Ortung" die grobe Position des Geräts mithilfe der opencellid.org-Datenbank. Dies ist nicht immer erfolgreich und hängt von dem Format ab, das das angeschlossene Mobilfunknetz verwendet, um seine Daten an das Modem zu melden.
+* **Hardware**: Hardwareinformationen, die vom Gerät gelesen werden
+* **Mobil**: Wenn das Gerät ein Modem enthält, werden hier die mobilen Netzwerkinformationen angezeigt. Sie sehen auch einen Ortungs-Link. Wenn genügend Informationen verfügbar sind, bestimmt "Ortung" die grobe Position des Geräts mithilfe der opencellid.org-Datenbank. Dies ist nicht immer erfolgreich und hängt von dem Format ab, das das angeschlossene Mobilfunknetz verwendet, um seine Daten an das Modem zu melden.
 * **Gruppen**: Die Gruppen, zu denen dieses Gerät gehört. Hier können Sie Gruppen hinzufügen und entfernen. Weitere Informationen finden Sie unter [Geräte gruppieren](#grouping-devices).
 * **System**: Dieser Abschnitt zeigt 
  * die interne ID des Geräts (für den Zugriff aus den Cumulocity-APIs)
  * den "Besitzer" des Geräts (der Cumulocity-Benutzer, der dieses Gerät erstellt hat).
- * den Zeitstempel, als die Gerätedaten zuletzt aktualisiert wurden
+ * den Zeitstempel des Zeitpunkts, an dem die Gerätedaten zuletzt aktualisiert wurden
  * eine Schaltfläche zum Trennen des Geräts, vorausgesetzt Sie verfügen über Administratorzugriff auf Benutzer und das Gerät wurde über die Funktion [Geräteregistrierung](#device-registration) verbunden.
 * **Notizen**: Textnotizen für ein Gerät, die Sie mit Ihren Kollegen teilen können.
 
@@ -193,7 +192,7 @@ Auf dieser Registerkarte werden weitere Geräte angezeigt, die mit dem aktuell a
 
 ### <a name="measurements"></a>Messwerte
 
-Diese Registerkarte bietet eine Standard-Visualisierung von numerischen Daten, die vom Gerät in Form von Diagrammen zur Verfügung gestellt werden. Diagramme werden in Arten von Messungen zusammengestellt, die mehrere Graphen oder eine "Serie" enthalten können. Zum Beispiel zeigt der Screenshot unten ein Diagramm für die Bewegungsmessung einschließlich Graphen für die Beschleunigung in den drei Dimensionen und ein Diagramm mit Modemstatistiken in Form von Signalstärke und Bitfehlerrate.
+Diese Registerkarte bietet eine Standard-Visualisierung von numerischen Daten, die vom Gerät zur Verfügung gestellt werden, in Form von Diagrammen. Diagramme werden in Arten von Messungen zusammengestellt, die mehrere Graphen oder eine "Serie" enthalten können. Zum Beispiel zeigt der Screenshot unten ein Diagramm für die Bewegungsmessung einschließlich Graphen für die Beschleunigung in den drei Dimensionen und ein Diagramm mit Modemstatistiken in Form von Signalstärke und Bitfehlerrate.
 
 ![Measurements](/guides/benutzerhandbuch/measurements-de.png)
 
@@ -207,7 +206,7 @@ Standardmäßig zeigen Diagramme die Rohdaten der letzten Stunde an. Sie können
 
 Wenn Sie den Zeitbereich erhöhen, schaltet das Dropdown-Menü "Keine Aggregation" auf "Stündlich" oder "Täglich" um. Das Diagramm zeigt nun Bereiche statt einzelnen Rohdatenpunkten an. Für "Stündlich" zeigt das Diagramm einen Bereich des minimalen und maximalen Wertes, der in einer Stunde gemessen wird. Für "Täglich" zeigt das Diagramm den über einen Tag gemessenen Mindest- und Höchstwert an. Ebenso zeigen die Tooltips nun Wertebereiche statt einzelner Werte an.
 
-So erhalten Sie einen effizienten Überblick über größere Zeiträume. Ein Graph zeigt nur maximal 5.000 Datenpunkte pro Grafikmaximum an, um Ihren Desktop-Browser nicht zu überladen. Wenn Sie einen feinen Fokus auswählen, der zu mehr als 5.000 Datenpunkten führt, wird eine Warnmeldung angezeigt: "Die Daten wurden abgeschnitten. Verwenden Sie die Aggregation."
+So erhalten Sie einen effizienten Überblick über größere Zeiträume. Ein Graph zeigt nur maximal 5.000 Datenpunkte pro Grafik an, um Ihren Desktop-Browser nicht zu überladen. Wenn Sie einen feinen Fokus auswählen, der zu mehr als 5.000 Datenpunkten führt, wird eine Warnmeldung angezeigt: "Die Daten wurden abgeschnitten. Verwenden Sie die Aggregation."
 
 Wenn Sie auf die Schaltfläche "Echtzeit" klicken, werden Echtzeit-Benutzeroberflächen-Updates der Graphen ermöglicht, sobald neue Daten von den angeschlossenen Geräten in das System fließen. Sie können die grafischen Anzeige- und Achsengrenzen beeinflussen, indem Sie so genannte "KPIs" einrichten. Mehr hierzu unter [Administration](/guides/benutzerhandbuch/administration-deutsch#kpis).
 
@@ -234,7 +233,7 @@ Die Registerkarte "Alarme" zeigt die Alarme eines Gerätes an. Weitere Informati
 
 ### <a name="control"></a>Steuerung
 
-Auf dieser Registerkarte werden die Vorgänge aufgeführt, die an ein Gerät gesendet werden oder  wurden. Weitere Informationen finden Sie im Abschnitt [Arbeiten mit Fernsteuerung](#operation-monitoring).
+Auf dieser Registerkarte werden die Kommandos aufgeführt, die an ein Gerät gesendet werden oder  wurden. Weitere Informationen finden Sie im Abschnitt [Arbeiten mit Kommandos](#operation-monitoring).
  
 ![Operations](/guides/benutzerhandbuch/operations-de.png)
 
@@ -259,13 +258,14 @@ Die binäre Konfiguration erlaubt Ihnen, Konfigurationsdaten abzurufen, zu ände
 
 <center><img src="/guides/benutzerhandbuch/configrepscreenshot-de.png" alt="Konfigurationsablage" style="max-width: 100%"></center>
 
+
 Wenn die gleiche Konfiguration auf mehrere Geräte angewendet werden soll, bietet sich die Nutzung des Konfigurations-Snapshots an. Mit dem Konfigurations-Snapshot können Sie ein Gerät konfigurieren, den Snapshot herunterladen und auf andere Geräte übertragen.
 
 ![Configuration Snapshot](/guides/benutzerhandbuch/configsnapde.png)
 
 ### Abrufen einer aktuellen Snapshot-Konfiguration von einem Gerät
 
-Um einen aktuellen Snapshot von einem Gerät abzurufen, navigieren Sie zum Gerät und klicken dann auf die Registerkarte "Konfiguration". Klicken Sie dann im Bereich 
+Um einen aktuellen Snapshot von einem Gerät abzurufen, navigieren Sie zum Gerät und klicken dann auf die Registerkarte "Konfiguration". Klicken Sie im Bereich 
 "Konfigurationssnapshot" in der rechten oberen Ecke auf "Neuen Snapshot vom Gerät laden". Der abgerufene Snapshot befindet sich in der "Konfigurationsablage".
 
 Die Konfigurationsablage befindet sich im Menü "Verwaltung". 
@@ -274,11 +274,11 @@ Die Konfigurationsablage befindet sich im Menü "Verwaltung".
 
 ### Anwenden einer Snapshot-Konfiguration auf einem Gerät 
 
-Um einen neuen Snapshot anzuwenden, navigieren Sie zu einem Gerät und klicken Sie dann auf "Konfiguration". Unter "Konfigurationssnapshot" können Sie einen Eintrag aus der Konfigurationsablage aus dem Dropdown-Menü auswählen. Wenn die Eingabedatei ausgewählt ist, klicken Sie auf "Neuen Snapshot auf das Gerät legen".
+Um einen neuen Snapshot anzuwenden, navigieren Sie zu einem Gerät und klicken Sie dann auf "Konfiguration". Unter "Konfigurationssnapshot" können Sie einen Eintrag aus der Konfigurationsablage aus dem Dropdown-Menü auswählen. Wenn die Eingabedatei ausgewählt ist, klicken Sie auf "Snapshot an Gerät senden".
 
 <img src="/guides/benutzerhandbuch/addsnap-de.png" alt="Konfigurationssnapshot anwenden" style="max-width: 60%">
 
-### Anwenden einer Snapshot-Konfiguration von einem Gerät auf ein anderes Gerät
+### Anwenden einer Snapshot-Konfiguration von einem Gerät auf einem anderen Gerät
  
 Um einen Snapshot von einem anderen Gerät auf einem anderen anzuwenden, navigieren Sie zur Registerkarte "Konfiguration" des Geräts, das die gewünschte Konfiguration hat. Holen Sie den aktuellen Snapshot vom Gerät, indem Sie auf "Neuen Snapshot vom Gerät laden" klicken. Navigieren Sie zur Registerkarte "Konfiguration" des anderen Geräts, wählen Sie im Dropdown-Menü im Bereich "Neuen Snapshot anwenden" den neuen Snapshot aus und klicken Sie auf "Snapshot an Gerät senden".
  
@@ -322,20 +322,20 @@ Die Registerkarte wird angezeigt, wenn ein Gerät die Eigenschaft c8y_Position e
 
 ### <a name="shell"></a>Shell
 
-Die Geräte-Shell ermöglicht interaktives Arbeiten mit entfernten Geräten. Viele industrielle Geräte unterstützen eine Form der Befehlssprache, seien es AT-Befehle für Modems, CSV-Befehle für viele Tracking-Geräte oder aufwändige Scripting-Mechanismen wie Tixi TiXML. In der Shell können Sie Befehle in der jeweiligen Sprache des Gerätes senden und interaktiv die Ergebnisse der Befehle anzeigen.
+Die Geräte-Shell ermöglicht interaktives Arbeiten mit entfernten Geräten. Viele industrielle Geräte unterstützen eine Form der Befehlssprache, seien es AT-Befehle für Modems, CSV-Befehle für viele Tracking-Geräte oder aufwändige Scripting-Mechanismen wie Tixi TiXML. In der Shell können Sie Kommandos in der jeweiligen Sprache des Gerätes senden und interaktiv die Ergebnisse der Kommandos anzeigen.
 
 Die Shell-Benutzeroberfläche ist in zwei Teile aufgeteilt:
 
 * Eine Liste der bereits ausgeführten Kommandos. Standardmäßig sind die letzten drei Befehle sichtbar.
-* Eine Eingabeaufforderung zur Eingabe neuer Befehle, die zur Liste hinzugefügt werden.
+* Eine Eingabeaufforderung zur Eingabe neuer Kommandos, die zur Liste hinzugefügt werden.
 
-Die Liste zeigt Status, Datum und Text eines Befehls an. Wenn Sie auf einen Listeneintrag klicken, wird das Ergebnis des Befehls angezeigt (sofern er ausgeführt wurde).
+Die Liste zeigt Status, Datum und Text eines Kommandos an. Wenn Sie auf einen Listeneintrag klicken, wird das Ergebnis des Kommandos angezeigt (sofern er ausgeführt wurde).
 
 ![Geräte-Shell](/guides/benutzerhandbuch/shell-de.png)
 
-In der Eingabeaufforderung können Sie beliebigen Befehlstext eingeben. Um den Befehlstext an das Gerät zu senden, klicken Sie auf die Schaltfläche "Ausführen". Die Schaltfläche "Ausführen" kann nur gewählt werden, wenn das Gerät online ist.
+In der Eingabeaufforderung können Sie beliebigen Kommandotext eingeben. Um den Kommandotext an das Gerät zu senden, klicken Sie auf die Schaltfläche "Ausführen". Die Schaltfläche "Ausführen" kann nur gewählt werden, wenn das Gerät online ist.
 
-Um Ihnen mit der Befehlssyntax zu helfen, sind häufig verwendete Befehle für einige Geräte verfügbar, indem Sie auf die Schaltfläche "Wählen Sie ein Beispielkommando aus" klicken. Wählen Sie einen Befehl aus und klicken Sie auf "Verwenden", um den Befehl in die Eingabeaufforderung zu kopieren, oder wählen Sie "Ausführen", um den Befehl sofort auszuführen.
+Um Ihnen mit der Kommandosyntax zu helfen, sind häufig verwendete Kommandos für einige Geräte verfügbar, indem Sie auf die Schaltfläche "Wählen Sie ein Beispielkommando aus" klicken. Wählen Sie ein Kommando aus und klicken Sie auf "Verwenden", um das Kommando in die Eingabeaufforderung zu kopieren, oder wählen Sie "Ausführen", um das Kommando sofort auszuführen.
 
 <img src="/guides/benutzerhandbuch/shelltemplates-de.png" alt="Shell-Kommandos" style="max-width: 60%">
 
@@ -368,7 +368,7 @@ Um Log-Informationen von einem Gerät anzufordern, gibt es die folgenden Optione
 
 - Wählen Sie den Datums- und Zeitbereich aus.
 - Wählen Sie die Art der Log-Information. Die unterstützten Log-Informationen sind meist gerätespezifisch.
-- Geben Sie optional einen Text ein, um die Log-Information zu filtern. Wenn Sie beispielsweise "Benutzer" eingeben, werden nur Zeilen mit dem Wort "Benutzer" in den zurückgegebenen Log-Informationen angezeigt.
+- Geben Sie optional einen Text ein, um die Log-Information zu filtern. Wenn Sie beispielsweise "Benutzer" eingeben, werden nur Zeilen mit dem Wort "Benutzer" in den ausgegebenen Log-Informationen angezeigt.
 - Wählen Sie die maximale Anzahl der anzuzeigenden Zeilen (absteigend) aus.
 - Klicken Sie auf "Logdatei anfordern". 
 
@@ -380,7 +380,7 @@ Das Anfordern einer Logdatei von einem Gerät kann einige Zeit in Anspruch nehme
 
 Cumulocity kann Geräte und Assets mit mehreren externen Identifikatoren assoziieren. Beispielsweise können Geräte häufig durch die IMEI ihres Modems, durch eine Mikrocontroller-Seriennummer sowie durch einen Asset-Tag identifiziert werden. Diese Registerkarte listet alle Identifikatoren auf, die für ein bestimmtes Gerät aufgezeichnet wurden.
 
-Dies ist nützlich, wenn Sie nicht funktionsfähige Hardware haben und die Hardware ersetzen müssen, ohne die aufgezeichneten Daten zu verlieren. Schließen Sie einfach die neue Hardware an Ihr Konto an und ändern Sie den Identifikatoreintrag der alten Hardware, um den Identifikator der neuen Hardware zu erhalten.
+Dies ist nützlich, wenn Sie nicht funktionsfähige Hardware haben und die Hardware ersetzen müssen, ohne die aufgezeichneten Daten zu verlieren. Verbinden Sie einfach die neue Hardware mit Ihrem Konto und ändern Sie den Identifikatoreintrag der alten Hardware, um den Identifikator der neuen Hardware zu erhalten.
 
 
 ## <a name="connection-monitoring"></a>Verbindungsüberwachung
@@ -398,13 +398,13 @@ Der untere Pfeil zeigt den Status der Push-Verbindung an, über die Befehle von 
 
 > Die Verbindungsüberwachung erfolgt nicht in Echtzeit. Beispielsweise ändert sich der Zustand der Verbindung nicht sofort, wenn Sie ein Gerät ausschalten. Abhängig von Ihrem Netzwerk kann es ungefähr 20 Minuten dauern, bis eine defekte Verbindung entdeckt wird, da das Netzwerk das Senden von Daten für eine signifikante Zeitspanne wiederholt.
 
-Wenn ein Gerät als offline erkannt wird (es sendet innerhalb des erforderlichen Intervalls keine Daten mehr, und der obere Pfeil ändert seine Farbe auf Rot), wird ein Nichtverfügbarkeitsalarm für das Gerät erzeugt: "Keine Kommunikation mit dem Gerät seit <Zeit>."
+Wenn ein Gerät als offline erkannt wird (es sendet innerhalb des erforderlichen Intervalls keine Daten mehr, und der obere Pfeil ändert seine Farbe auf Rot), wird ein Nichtverfügbarkeitsalarm für das Gerät erzeugt: "Keine Kommunikation mit dem Gerät seit ...".
 
 ## <a name="monitoring-services"></a>Serviceüberwachung
 
-Cumulocity unterscheidet zwischen der Verbindungsüberwachung und der Serviceüberwachung. Die Verbindungsüberwachung zeigt nur an, dass das Gerät mit Cumulocity kommuniziert, es bedeutet nicht automatisch, dass es richtig funktioniert.
+Cumulocity unterscheidet zwischen der Verbindungsüberwachung und der Serviceüberwachung. Die Verbindungsüberwachung zeigt nur an, dass das Gerät mit Cumulocity kommuniziert. Dies bedeutet nicht automatisch, dass es richtig funktioniert.
 
-Die Serviceüberwachung zeigt an, ob das Gerät in Betrieb ist. Zum Beispiel ist ein Verkaufsautomat in Betrieb, wenn er bereit ist, Waren zu verkaufen. Ein Verkaufsautomat kann Waren ohne eine Verbindung zu Cumulocity mit Bargeld verkaufen. Aus der Perspektive eines Kaufmanns ist es also in Betrieb. Es verhält sich ähnlich, wenn Sie die Stromversorgung eines Gateways ausschalten. Auch dann können die Geräte hinter dem Gateway weiterhin funktionieren.
+Die Serviceüberwachung zeigt an, ob das Gerät in Betrieb ist. Zum Beispiel ist ein Verkaufsautomat in Betrieb, wenn er bereit ist, Waren zu verkaufen. Ein Verkaufsautomat kann Waren ohne eine Verbindung zu Cumulocity gegen Bargeld verkaufen. Aus der Perspektive eines Kaufmanns ist es also in Betrieb. Es verhält sich ähnlich, wenn Sie die Stromversorgung eines Gateways ausschalten. Auch dann können die Geräte hinter dem Gateway weiterhin funktionieren.
 
 Cumulocity geht davon aus, dass ein Gerät in Betrieb ist, solange kein kritischer, nicht aufgelöster Alarm für das Gerät vorhanden ist. Dies wird als Zeitanteil angezeigt, für den ein solcher Alarm vorliegt. Wenn ein Gerät keine kritischen Alarme zu irgendeinem Zeitpunkt während eines Zeitraums hatte, war es zu 100 % in Betrieb. Wenn es einige kritische, ungelöste Alarme während der Hälfte der Zeit gab, war das Gerät zu 50 % in Betrieb.
 
@@ -422,7 +422,7 @@ Wenn Sie im Navigator auf "Karte" klicken, wird eine Karte aller Geräte in Ihre
 
 ## <a name="alarm-monitoring"></a>Arbeiten mit Alarmen
 
-Geräte können Alarme auslösen, um anzuzeigen, dass ein Problem vorliegt und eine Intervention erforderlich ist. Alarme können an verschiedenen Orten betrachtet werden:
+Geräte können Alarme auslösen, um anzuzeigen, dass ein Problem vorliegt und eine Intervention erforderlich ist. Alarme können an verschiedenen Orten angesehen werden:
 
 * Durch Klicken auf "Alarme" im Navigator wird der gesamte Alarmverlauf angezeigt.
 * Durch Deaktivieren der "Nur offene Alarme"-Schaltfläche sehen Sie hier die Alarme aller Geräte, die noch nicht gelöst wurden.
@@ -434,15 +434,15 @@ Die Alarmanzeige ist in vier Abschnitte unterteilt, die Alarme unterschiedlicher
  * **Kritisch**: Das Gerät ist außer Betrieb, und sofortiges Eingreifen ist erforderlich.
  * **Wichtig**: Es gibt ein Problem, welches Aufmerksamkeit erfordert.
  * **Weniger wichtig**: Ein kleineres Problem ist aufgetreten.
- * **Warnung**: Es gibt eine Warnung.
-* **Status**: Der Status des Alarms. Das kann sein:
+ * **Warnung**: Es liegt eine Warnung vor.
+* **Status**: Der Status des Alarms. Dieser kann sein:
  * **Aktiv**: Wenn der Alarm ausgelöst wurde und noch niemand daran arbeitet.
  * **Zur Kenntnis genommen**: Wenn jemand die "Zur Kenntnis genommen"-Schaltfläche aktiviert hat.
  * **Gelöst**: Wenn entweder jemand auf die Schaltfläche "Löschen" geklickt hat, um einen Alarm manuell zu löschen, oder wenn das Gerät selbst feststellt, dass das Problem nicht mehr besteht.
 * **Anzahl**: Die Häufigkeit, mit der dieser Alarm vom Gerät gesendet wurde. Cumulocity dupliziert Alarme, so dass nur ein Alarm eines bestimmten Typs für ein bestimmtes Gerät aktiv sein kann. Wenn ein anderer Alarm des gleichen Typs durch das Gerät gesendet wird, wird die Anzahl erhöht.
 * **Beschreibung**: Eine Textbeschreibung des Alarms.
 * **Gerät**: Der Name des Geräts. Durch Klicken auf den Namen gelangen Sie in die Detailansicht des Geräts.
-* **Datum erstellt**: Der Zeitstempel, als der Alarm zuerst erstellt wurde.
+* **Datum erstellt**: Der Zeitstempel des Zeitpünkts, an dem der Alarm zuerst erstellt wurde.
 * **Typ**: Die Art des Alarms. Dieser Text dient zum Duplizieren von Alarmen und zum Konfigurieren der Priorität von Alarmen in der [Administrations-Anwendung](/guides/benutzerhandbuch/administration-deutsch#reprio-alarms).
 * **Zusätzliche Information**: Ein Alarm kann beliebige zusätzliche Informationen enthalten, die vom Gerät bereitgestellt werden.
 * **Änderungsprotokoll**: Zusammen mit dem Alarm wird ein Protokoll der Änderungen des Alarms gespeichert. Dadurch wird ein Alarmverlauf mit verschiedenen Daten erzeugt.
@@ -491,17 +491,17 @@ Auch Sammelkommandos können bearbeitet werden. Um ein Kommando zu bearbeiten, w
 
 ## <a name="events-all"></a>Fehlerbehebung bei Geräten
 
-Ereignisse sind Low-Level-Nachrichten, die von Geräten gesendet werden, die normalerweise für die anwendungsspezifische Verarbeitung verwendet werden. Beispielsweise sendet ein Verkaufsgerät seine Echtzeitverkäufe in Form von Ereignissen. Wenn Sie ein Gerät auf einer genaueren Ebene untersuchen müssen, gehen Sie zur Registerkarte "Ereignisse". Wenn Sie auf einzelne Ereignisse klicken, erhalten Sie weitere Informationen zu den im Ereignis enthaltenen Daten. Ähnlich können Sie alle Ereignisse über alle Geräte sehen, indem Sie im Navigator "Ereignisse" auswählen.
+Ereignisse sind Nachrichten auf niedriger Ebene, die von Geräten gesendet werden, die normalerweise für die anwendungsspezifische Verarbeitung verwendet werden. Beispielsweise sendet ein Verkaufsgerät seine Echtzeitverkäufe in Form von Ereignissen. Wenn Sie ein Gerät genauer untersuchen müssen, gehen Sie zur Registerkarte "Ereignisse". Wenn Sie auf einzelne Ereignisse klicken, erhalten Sie weitere Informationen zu den im Ereignis enthaltenen Daten. Ähnlich können Sie alle Ereignisse für alle Geräte sehen, indem Sie im Navigator "Ereignisse" auswählen.
 
 Da Geräte größere Mengen an Ereignisdaten senden können, können Sie die hier gezeigten Daten nach Datum filtern. Sie können auch auf das Kontrollkästchen "Automatische Aktualisierung" klicken, um jederzeit aktuelle Ereignisse zu sehen.
 
 ## <a name="software-repo"></a> Verwaltung von Firmware und Software
 
-Cumulocity bietet einen zentralen Platz für die Erfassung von Referenz-Firmware und -Software für Geräte in der "Firmware-Ablage" und in der "Software-Ablage".
+Cumulocity bietet einen zentralen Platz für die Erfassung von Referenz-Firmware und -Software für Geräte in der "Firmware-Ablage" und der "Software-Ablage".
 
 Um Firmware zu aktualisieren oder Softwarepakete auf einem bestimmten Gerät hinzuzufügen, müssen Sie drei Schritte durchführen:
 
-1. Firmware- und Software-Dateien mit der [Administrations-Anwendung](/guides/benutzerhandbuch/administration-deutsch#files) hochladen. (Dieser Schritt ist optional und nicht zwingend erforderlich, da der Hersteller die Firmware auch online anbieten kann.)
+1. Laden Sie Firmware- und Software-Dateien mit der [Administrations-Anwendung](/guides/benutzerhandbuch/administration-deutsch#files) hoch. (Dieser Schritt ist optional und nicht zwingend erforderlich, da der Hersteller die Firmware auch online anbieten kann.)
 
 2. Wählen und speichern Sie die Dateien in der "Firmware-Ablage". Um ein neues Firmware-Image zur Ablage hinzuzufügen, gehen Sie zur "Firmware-Ablage" und klicken Sie auf die Schaltfläche "Firmware hinzufügen". Geben Sie dann den Namen der Firmware, die Version und die URL ein, von der das Gerät die Firmware herunterladen kann. Auf ähnliche Art und Weise verwenden Sie die "Software-Ablage", um Referenz-Softwarepakete hinzuzufügen.
 
@@ -509,11 +509,11 @@ Um Firmware zu aktualisieren oder Softwarepakete auf einem bestimmten Gerät hin
 
 > Sie müssen die Administrations-Anwendung aufrufen, um andere Binärdateien in Cumulocity zu speichern. Siehe auch [Administration](/guides/benutzerhandbuch/administration-deutsch#files).
 
-Cumulocity bietet Ihnen die Möglichkeit, Firmware oder Softwareupdates für mehrere Geräte gleichzeitig auszuführen. Um dies zu tun:
+Cumulocity bietet Ihnen die Möglichkeit, Firmware- oder Software-Updates für mehrere Geräte gleichzeitig auszuführen. Um dies zu tun:
 
-- Führen Sie das Softwareupdate in einem einzigen Gerät aus, um zu testen, dass die neue Version wirklich funktioniert.
+- Führen Sie das Software-Update in einem einzigen Gerät aus, um zu testen, dass die neue Version wirklich funktioniert.
 - Navigieren Sie zum entsprechenden Vorgang und wählen Sie "Ausführen für die gesamte Gruppe".
-- Füllen Sie das Formular aus, um den Gesamtvorgang zu planen, und klicken Sie auf die Schaltfläche "Erstellen".
+- Füllen Sie die Formularfelder aus, um den Gesamtvorgang zu planen, und klicken Sie auf die Schaltfläche "Erstellen".
 
 Der Vorgangsstatus kann unter der entsprechenden Gruppe im "Sammelkommandos"-Tab eingesehen werden.
 
@@ -543,16 +543,16 @@ Mit dem Cumulocity-Simulator können alle Aspekte von IoT-Geräten simuliert wer
 * Festlegen, welche Vorgänge das Gerät verarbeiten kann
 * Erstellen von Arbeitsanweisungen basierend auf vordefinierten Nachrichtenvorlagen oder benutzerdefinierten Vorlagen und Planung von Arbeitsschritten
 * Erstellen von bis zu zehn Geräten eines definierten Typs
-* Generieren von Meldungen für Messungen, Alarme, Ereignisse und Stammmdaten
+* Generieren von Meldungen für Messungen, Alarme, Ereignisse und Stammdaten
 * Anzeige von Simulationsproblemen als Alarme 
 
 ### Was ist ein Simulator?
 
 Mit dem Simulator können Sie künstliche Geräte mit gleicher Funktionalität wie angeschlossene Hardware-Geräte erstellen.
 
-Ein Simulator verwendet eine Wiedergabeliste, um Nachrichten zu simulieren, die das Gerät an die Cumulocity-Plattform sendet. Eine Wiedergabeliste ist eine Folge von Befehlen, die der Simulator nacheinander ausführt. Wenn der letzte Befehl erreicht ist, startet der Simulator erneut mit dem ersten.
+Ein Simulator verwendet eine Wiedergabeliste, um Nachrichten zu simulieren, die das Gerät an die Cumulocity-Plattform sendet. Eine Wiedergabeliste ist eine Folge von Anweisungen, die der Simulator nacheinander ausführt. Wenn die letzte Anweisung erreicht ist, startet der Simulator erneut mit der ersten.
 
-Eine Anweisung kann entweder eine Nachricht senden (Messungen, Alarme, Ereignisse und Inventar) oder für eine bestimmte Zeit warten (Schlaf).
+Eine Anweisung kann entweder eine Nachricht senden (Messungen, Alarme, Ereignisse und Inventar) oder für eine bestimmte Zeit warten.
 
 Eine Nachricht wird durch Auswählen einer Vorlage (z. B. Senden einer Temperatur) und Bereitstellen der Werte für diese Vorlage (23,0 Grad) definiert. Es stehen viele vordefinierte Nachrichtenvorlagen zur Verfügung, z. B. "Messwert erstellen", "Ereignis senden", "Erstellen" und "Abbrechen" eines Alarms. Diese basieren auf statischen MQTT-Vorlagen. Darüber hinaus können benutzerdefinierte Nachrichtenvorlagen mit dem SmartREST-Vorlagen-Editor definiert werden.
 
@@ -581,9 +581,9 @@ Vorhandene Simulatoren können durch Klicken auf die drei untereinanderliegenden
 
 ### Hinzufügen von Anweisungen für den Simulator
 
-Nach dem Einrichten eines Simulators können Sie Anweisungen (Instruktionen) hinzufügen und definieren, was Ihr Simulator tun soll. Anweisungen sind einzelne Arbeitsschritte, die zu einer Wiedergabeliste hinzugefügt werden. Der Simulator arbeitet diese Liste durch. 
+Nach dem Einrichten eines Simulators können Sie Anweisungen hinzufügen und definieren, was Ihr Simulator tun soll. Anweisungen sind einzelne Arbeitsschritte, die zu einer Wiedergabeliste hinzugefügt werden. Der Simulator arbeitet diese Liste durch. 
 
-Im Folgenden ist ein Beispiel für einen Positionsereignissimulator dargestellt.
+Um ein Beispiel zu sehen, klicken Sie auf den Positionsereignissimulator.
 
 ![Simulator-Anweisungen](/guides/benutzerhandbuch/addinstructionsde.png)
 
@@ -597,7 +597,7 @@ Innerhalb dieses voreingestellten Simulators sind bereits Musteranweisungen enth
 
 **Fragmente:**
 
-Die Messanweisung bezieht sich auf ein Fragment. Dieses ist das unten gezeigte Beispiel. Fragmente werden verwendet, um die Fähigkeiten eines verwalteten Objekts zu identifizieren. Mehr Informationen über Fragmente finden Sie hier:
+Die Messanweisung bezieht sich auf ein Fragment (siehe Beispiel unten). Fragmente werden verwendet, um die Fähigkeiten eines verwalteten Objekts zu identifizieren. Mehr Informationen über Fragmente finden Sie hier:
 [Sensor Library ](https://www.cumulocity.com/guides/reference/sensor-library/). 
 
 ![Simulator-Anweisungen Schritt 3](/guides/benutzerhandbuch/addinstructions3de.png)
@@ -635,7 +635,7 @@ Dies sind nicht etwa die Alarme, die durch die simulierten Geräte erzeugt werde
 
 ### Übersicht
 
-Cumulocity Cloud Remote Access implementiert Virtual Network Computing (VNC), um Fernzugriff auf Bedienkonsolen und andere Geräte mit einer grafischen Benutzeroberfläche zu erhalten. Die Anwender der Geräte können so über einen Webbrowser mit den Geräten arbeiten, als ob sie sich direkt vor ihnen befinden. 
+Cumulocity Cloud Remote Access implementiert Virtual Network Computing (VNC), um Fernzugriff auf Bedienkonsolen und andere Geräte mit einer grafischen Benutzeroberfläche zu erhalten. Die Anwender der Geräte können so über einen Webbrowser mit den Geräten arbeiten, als ob sie sich direkt vor ihnen befänden. 
 
 ![VNC](/guides/benutzerhandbuch/VNC1a-DE.png)
 
@@ -688,7 +688,7 @@ Ein neuer Browser-Tab öffnet sich, und innerhalb von wenigen Momenten sehen Sie
 
 ![Endpunkte bearbeiten](/guides/benutzerhandbuch/editendpoint-de.png)
 
-### Troubleshooting von Cloud Remote Access
+### Troubleshooting beim Cloud Remote Access
 
 Vergewissern Sie sich, dass Sie die nötigen Berechtigungen für das Hinzufügen von Endpunkten haben. Sie benötigen "Admin"-Rechte für den Fernzugriff ("Remote access") und die Kommandos. Ohne Admin-Rechte bei den Kommandos können Sie keine Geräte registrieren, und ohne Admin-Rechte beim Fernzugriff können Sie keine Endpunkte hinzufügen.
 Um eine Verbindung zu einer ferngesteuerten Bedienkonsole zu erstellen, reichen "Lese"-Rechte beim "Remote access".

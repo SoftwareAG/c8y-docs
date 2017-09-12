@@ -45,7 +45,7 @@ Dadurch gelangen Sie zur Anmeldeseite Ihrer Standardanwendung, die in der folgen
 
 ## <a name="login"></a>Einloggen
 
-Geben Sie auf der Anmeldeseite Ihren Benutzernamen und Ihr Passwort ein, um die Anwendung zu starten. Wenn Sie das Kontrollkästchen "Passwort merken" anklicken, erinnert sich Ihr Browser  an Ihre Anmeldeinformationen, so dass Sie sie nicht immer wieder eingeben müssen. Dies ist auch praktisch, wenn Sie häufig zwischen Cumulocity-Anwendungen navigieren, da Cumulocity erfordert, dass Sie sich jedes Mal beim Starten einer Anwendung authentifizieren. Sie können wählen, dass Ihre Anmeldeinformationen "vergessen" werden, indem Sie sich explizit mit dem Menüpunkt "Ausloggen" in der Anwendung abmelden.
+Geben Sie auf der Anmeldeseite Ihren Benutzernamen und Ihr Passwort ein, um die Anwendung zu starten. Wenn Sie das Kontrollkästchen "Passwort merken" anklicken, erinnert sich Ihr Browser  an Ihre Anmeldeinformationen, so dass Sie sie nicht immer wieder eingeben müssen. Dies ist auch praktisch, wenn Sie häufig zwischen Cumulocity-Anwendungen wechseln, da Cumulocity erfordert, dass Sie sich jedes Mal beim Starten einer Anwendung authentifizieren. Sie können wählen, dass Ihre Anmeldeinformationen "vergessen" werden, indem Sie sich explizit mit dem Menüpunkt "Ausloggen" in der Anwendung abmelden.
 
 <img src="/guides/benutzerhandbuch/Ausloggen.png" alt="Ausloggen" style="max-width: 60%">
 
@@ -87,7 +87,7 @@ Die allgemeine Struktur einer Cumulocity-Anwendung wird im folgenden Screenshot 
 * Auf einigen Seiten sind zusätzliche "Tabs" verfügbar, je nachdem, wie viele Informationen angezeigt werden müssen.
 * Der obere Bereich der Anwendung wird als Meldungsleiste verwendet, wenn ein Status (grün) oder ein Fehler (rot) angezeigt werden muss.
 * Das Suchfeld bietet eine  [Volltextsuche](#searching) an.
-* Mit dem Application Switcher können Sie von einer Anwendung zur anderen wechseln. Möglicherweise müssen Sie Ihre Anmeldeinformationen erneut eingeben, wenn Sie bei Ihrem ursprünglichen Login bei Cumulocity nicht "Passwort merken" ausgewählt haben.
+* Mit dem Anwendungswechsler können Sie von einer Anwendung zur anderen wechseln. Möglicherweise müssen Sie Ihre Anmeldeinformationen erneut eingeben, wenn Sie bei Ihrem ursprünglichen Login bei Cumulocity nicht "Passwort merken" ausgewählt haben.
 * Das Benutzermenü zeigt Ihren Benutzernamen an. Durch Anklicken des Benutzernamens erscheint ein Popup-Menü. Das Popup-Menü erlaubt Ihnen, sich von der Anwendung abzumelden (auch wenn Sie auf "Passwort merken" geklickt haben), und bietet Zugriff auf Benutzereinstellungen und Hilfe.
 * In einigen Bereichen gibt ein Zahnrad oben rechts Zugriff auf weitere Funktionalität über ein Dropdown-Menü.
 

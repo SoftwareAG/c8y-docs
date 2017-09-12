@@ -602,16 +602,9 @@ Die Messanweisung bezieht sich auf ein Fragment (siehe Beispiel unten). Fragment
 
 ![Simulator-Anweisungen Schritt 3](/guides/benutzerhandbuch/addinstructions3de.png)
 
-**SmartREST-Vorlagen**
-
-Andere Optionen zeigen eine Auswahl von SmartREST-Vorlagen. Die SmartREST-Vorlagen werden im Navigator unter dem Eintrag "SmartRest Template" unter "Gerätetypen" erstellt. Diese Vorlagen sind Antwortvorlagen, die eine Liste von Werten erzeugen, die einen Vorgang als Endergebnis beschreiben. Die unten aufgeführte SmartREST-Vorlage erstellt einen Warnalarm mit Text zu einem bestimmten Zeitpunkt.
-Spezifische Informationen und Muster einer Vielzahl von Vorlagen sind erhältlich im [MQTT Developer's Guide](/guides/mqtt). 
-
-![Rest Template](/guides/benutzerhandbuch/resttemplatede.png)
+Die Anweisung "Warten" erfordert einen Wert für die Dauer in Sekunden. Das Bedienfeld auf der rechten Bildschirmhälfte ändert sich entsprechend der Art der Anweisungen, die Sie wählen.
 
 ![Simulator-Anweisungen Schritt 4](/guides/benutzerhandbuch/addinstructions4de.png)
-
-Die Anweisung "Warten" erfordert einen Wert für die Dauer in Sekunden. Das Bedienfeld auf der rechten Bildschirmhälfte ändert sich entsprechend der Art der Anweisungen, die Sie wählen.
 
 ### Hinzufügen von Kommandos zu einem Simulator
 

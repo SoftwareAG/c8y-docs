@@ -86,17 +86,19 @@ Select the way the message type is encoded in the "Source" dropdown box:
 - **FPort**: if the message type can be determined by looking at the FPort parameter of a message  
 - **Payload**: if the message type can be determined by looking at the subset of the message payload itself   
 
-In the following graphic you can see an example of a message type structure, if you select "Payload". The byte indicating the message type source is highlighted.
+In the following example payload structure, the first byte indicates the message type source (as highlighted).
 
 <img src="/guides/users-guide/actility/payload-example1.png" alt="Example payload: message type source" style="max-width: 100%">
 
-Indicate in the "Start bit" field where the message type information starts in the payload and how long this information is in the "Number of bits" field, for example start bit = "0" and number of bits = "8".
+In the user interface you can enter this type of message type source information as follows: Indicate in the "Start bit" field where the message type information starts in the payload and how long this information is in the "Number of bits" field, for example start bit = "0" and number of bits = "8".
 
 <img src="/guides/users-guide/actility/messagetype-payload.png" alt="Message type payload" style="max-width: 100%">
 
-For detailed information on how to decode the payload, refer to the documentation of your device. 
-
 Click the "Add" button to create the value configuration. 
+
+<img src="/guides/users-guide/actility/deviceDatabase1a.png" alt="Device type: new" style="max-width: 100%">
+
+A window similar to the following one will open. Enter the relevant information as shown in this example. 
 
 <img src="/guides/users-guide/actility/deviceDatabase4.png" alt="Value configuration: new" style="max-width: 60%">
 
@@ -112,7 +114,7 @@ Fill in the general fields for your new value in order to categorize it in the "
 
 Under "Value selection" define from where the value should be extracted. In order to do so, indicate where the value information starts in the "Start bit" field and how long this information is in the "Number of bits" field.
 
-In this example the "Measurement sensor 1" information starts in byte 3 (i.e. start bit = "24) and is 3 bytes long (i.e. number of bits = "24").
+In this example the "Channel 1 Type" information starts in byte 2 (i.e. start bit = "16") and is 1 byte long (i.e. number of bits = "8").
 
 <img src="/guides/users-guide/actility/payload-example3.png" alt="Example payload: message type source" style="max-width: 100%">
 

@@ -423,7 +423,7 @@ A"Generating Report" window will appear. The files will load depending on how ma
 
 ## <a name="dashboards"></a>Working with Dashboards
 
-Dashboards provide you with a customized visualization of your data with a set of widgets. Widgets can display maps, images, graphs, tables and other graphic representations of data. Cumulocity comes with a number of preset widgets, see section "[Widget Package](#widget-package)" for details. You can develop also your own widgets and add them to your Cumulocity account. See the [Web developer's guide](/guides/web/).
+Dashboards provide you with a customized visualization of your data with a set of widgets. Widgets can display maps, images, graphs, tables and other graphic representations of data. Cumulocity comes with a number of preset widgets, see section "[Widget Package](#widget)" for details. You can develop also your own widgets and add them to your Cumulocity account. See the [Web developer's guide](/guides/web/).
 
 ### Creating new Dashboards
 
@@ -479,7 +479,7 @@ To add a widget to a dashboard, ensure that the dashboard is visible. Afterward,
 
 ![Add Widget](/guides/users-guide/widgetcogwheel.png)
 
-When selecting a widget type, additional input fields for this widget type will pop up. More information about the "[Widget Package](#widget-package)" can be found with this link. Similar to dashboards you can "Customize the widget style". The currently selected style can be seen in the preview shown on the right side.
+When selecting a widget type, additional input fields for this widget type will pop up. More information about the "[Widget Package](#widget)" can be found with this link. Similar to dashboards you can "Customize the widget style". The currently selected style can be seen in the preview shown on the right side.
 
 ### Editing a Dashboard
 
@@ -501,7 +501,8 @@ Editing on touch devices like smartphones or tablets do not support all function
 
 To copy a dashboard from one object to another, use the cogwheel on the top right and select "Copy dashboard". Afterward, select the object where the dashboard should be applied to and click "Paste Dashboard" to insert the dashboard.
 
-An alternative way to copy a dashboard is to use the "[Dashboard per type](#creating-a-dashboard-for-all-devices-of-the-same-type)" approach.  With the "Dashboard per type" approach you copy the dashboard from one object to **all** identical objects.
+An alternative way to copy a dashboard is to use the 
+"Dashboard per type" approach.  With the "Dashboard per type" approach you copy the dashboard from one object to **all** identical objects.
 
 ### Removing a Dashboard
 
@@ -526,7 +527,7 @@ Show a data point (measurements) in a graph. The visualisation is the same as th
 
 The easiest way to create a data point graph widget is to navigate to the data explorer and then select "Send to dashboard".
 
-The parameters to configure are the same as in the data explorer. Please refer to "[Data Explorer](#using-the-data-explorer-to-visualize-data)" for further details.
+The parameters to configure are the same as in the data explorer. Please refer to "[Data Explorer](#visualize)" for further details.
 
 ### Widget "Data Point Table"
 
@@ -846,7 +847,7 @@ Complete the email information:
 
 ### Editing reports
 
-To **edit** reports, just click on them and save the changes.
+To edit reports, just click on them and save the changes.
 
 ### Removing reports
 

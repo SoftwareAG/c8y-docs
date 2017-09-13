@@ -120,7 +120,7 @@ In this example the "Channel 1 Type" information starts in byte 2 (i.e. start bi
 
 <img src="/guides/users-guide/actility/payload-example3.png" alt="Example payload: value selection" style="max-width: 100%">
 
-<img src="/guides/users-guide/actility/deviceDatabase4b.png" alt="Value selection" style="max-width: 100%">
+<img src="/guides/users-guide/actility/deviceDatabase4b.png" alt="Value selection" style="max-width: 50%">
 
 Under "Value normalisation" define how the raw value should be transformed before being stored in the platform and enter the appropriate values for:
 

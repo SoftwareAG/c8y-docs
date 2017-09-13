@@ -526,7 +526,7 @@ Example:
     insert into SendRequest
     select 
       'post' as method,
-      'htto://some.external.service.com' as url,
+      'http://some.external.service.com' as url,
       'application/json' as contentType,
       toJSON(m.payload) as body,
       m.payload as source

@@ -18,7 +18,7 @@ The Cockpit application provides you with options to manage the Internet of Thin
 - Use the [data point library](#library)
 
 For more information about the cockpit application please refer to the introduction below.
-
+i
 
 ## <a name="intro"></a>Introduction
 
@@ -127,7 +127,7 @@ The cockpit start page is a dashboard page:
 
 The dashboard shows data for the general tenant.
 
-The home dashboard is a page shared by all users of the tenant. It consists out of widgets, which visualize IoT data. By default, the home dashboard includes five widgets, which show a welcome text, a summary of available objects, assets with alarms, recent alarms and a map of all objects.
+The home dashboard is a page shared by all users of the tenant. It consists out of widgets, which visualize IoT data. By default, the home dashboard includes four widgets, which show a welcome text, a summary of available objects, assets with alarms, recent alarms and a map of all objects.
 
 The home dashboard can be edited, similar to other Cockpit dashboards: You can add, remove or change the widgets displayed. Use the settings symbol on the top right or move the cursor inside a widget and use the settings symbol of the individual widget.
 
@@ -489,7 +489,7 @@ You can edit dashboard properties by clicking on the cogwheel icon and select "E
 
 You can rearrange the widgets of the dashboard. By dragging and dropping the header of the widget, you can move the widget to another position on the page. By dragging and dropping the arrows on the bottom right corner of a widget, you can resize a widget. By clicking on the icon at the top right corner of the widget, you can delete or edit the widget properties.
 
-> If the dashboard is locked, widgets cannot be rearranged. In order to lock/unlock a dashboard, click on the cogwheel at the top right and then click on "Lock Dashboard"/"Unlock Dashboard".
+> If the dashboard is locked, widgets cannot be rearranged. In order to lock/unlock a dashboard, click on the padlock at the top right and then click on "Lock Dashboard"/"Unlock Dashboard".
 
 ![dashboard lock](/guides/users-guide/dashboardlock.png)
 

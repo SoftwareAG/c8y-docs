@@ -73,7 +73,7 @@ Alternatively you may also load the device type from a file and import it. The f
 
 ### <a name="create-new-device-type"></a>Creating a new device type
 
-In the device database window, click the "New" button. 
+In the device database window, click the "New" button. The following window will open:
 
 <img src="/guides/users-guide/actility/deviceDatabase-createNew.png" alt="Create new device type" style="max-width: 100%">
 
@@ -98,7 +98,7 @@ Click the "Add" button to create the value configuration.
 
 <img src="/guides/users-guide/actility/deviceDatabase1a.png" alt="Device type: new" style="max-width: 100%">
 
-A window similar to the following one will open. Enter the relevant information as shown in this example. 
+A window similar to the following one will open. Configure the relevant values as shown in this example. 
 
 <img src="/guides/users-guide/actility/deviceDatabase4.png" alt="Value configuration: new" style="max-width: 60%">
 
@@ -106,9 +106,11 @@ The value configuration maps the value in the payload of a message type to the C
 
 Configure the "Message ID" according to your device message specification and map it to the Cumulocity data. The message ID is the numeric value identifying the message type. It will be matched with the message ID found in the source specified on the device type main page (i.e. Payload or FPort). The message ID needs to be entered in decimal numbers (not hex).
 
-In this example the message ID is "1".
+In this example payload structure the message ID is "1".
 
 <img src="/guides/users-guide/actility/payload-example2.png" alt="Example payload: message type source" style="max-width: 100%">
+
+<img src="/guides/users-guide/actility/deviceDatabase4a.png" alt="Value configuration: message type" style="max-width: 60%">
 
 Fill in the general fields for your new value in order to categorize it in the "Values" list. The associated "Name" for this value will be displayed under the "Display category" given.
 
@@ -116,7 +118,9 @@ Under "Value selection" define from where the value should be extracted. In orde
 
 In this example the "Channel 1 Type" information starts in byte 2 (i.e. start bit = "16") and is 1 byte long (i.e. number of bits = "8").
 
-<img src="/guides/users-guide/actility/payload-example3.png" alt="Example payload: message type source" style="max-width: 100%">
+<img src="/guides/users-guide/actility/payload-example3.png" alt="Example payload: value selection" style="max-width: 100%">
+
+<img src="/guides/users-guide/actility/deviceDatabase4b.png" alt="Value selection" style="max-width: 100%">
 
 Under "Value normalisation" define how the raw value should be transformed before being stored in the platform and enter the appropriate values for:
 

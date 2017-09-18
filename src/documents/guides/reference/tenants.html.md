@@ -800,10 +800,10 @@ Example Response :
 
 ### GET a representation of a TenantUsageStatisticsCollection
 
-| Query param |    type  |
-|:------------|:---------|
-| dateFrom    | datetime |
-| dateTill    | datetime |
+|      Query param      |   type   |
+|:----------------------|:---------|
+| dateFrom (inclusive)  | datetime |
+| dateTill (inclusive)  | datetime |
 
 Response body: TenantUsageStatisticsCollection
   

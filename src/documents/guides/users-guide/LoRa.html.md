@@ -69,7 +69,7 @@ Select the predefined device type, for example "LoRaWAN Demonstrator". Click "Im
 
 <img src="/guides/users-guide/actility/deviceDatabaseImport.png" alt="Import a predefined device type" style="max-width: 60%">
 
-Alternatively you may also load the device type from a file and import it. The file format is Cumulocity internal. You can create the file by e.g. exporting the device decription from another tenant.
+Alternatively you may also load the device type from a file and import it.
 
 ### <a name="create-new-device-type"></a>Creating a new device type
 
@@ -136,10 +136,10 @@ Select the options, if required: "Signed" (if the value is a signed number) or "
 
 In the functionalities, define how this device type should behave:
 
-- **Send measurement**: creates a measurement whenever the value is changed
+- **Send measurement**: creates a measurement with the decoded value
 - **Raise alarm**: creates an alarm if the value is not equal to zero
-- **Send event**: creates an event whenever the value is changed
-- **Update managed object**: updates a fragment in a managed object whenever the value is changed
+- **Send event**: creates an event with the decoded value
+- **Update managed object**: updates a fragment in a managed object with the decoded value
 
 You can also have a nested structure with several values within a measurement, event or managed object fragment. In case of a measurement all the properties of the same type will be merged to create a nested structure. In case of an event or a managed object all the properties with the same fragment are merged to create a nested structure. (Also refer to the [example](#nested-structure-example) of a nested structure for a "Position" device type below.)
 
@@ -149,7 +149,7 @@ After clicking "OK", the values are added to your device type.
 
 After clicking "Save", your device type is created with the values you defined.
 
-**Example without nested structure**
+**Example with single property**
 
 The following picture shows an example for a message which sends a measurement when this value (the battery level) changes. 
 
@@ -211,14 +211,14 @@ After confirming the deprovisioning, the device will be deprovisioned in ThingPa
  
 ## <a name="configurable-port"></a>Sending operations
 
-In order to send an operation, go to the Device Management application and navigate to the device you want to send an operation to. 
+In order to send an operation, go to the Device Management application and navigate to the device you want to send an operation to. Click the "Shell" tab.
 
-Click the "Shell" tab and enter the operation in the ">_Command" field. 
-
-In the following screenshot you can find examples of some predefined commands and their format.
+In the following screenshot you can find some examples of a specific device type's predefined commands and their format.
 <img src="/guides/users-guide/actility/predefinedcommands.png" alt="Predefined commands" style="max-width: 100%"> 
 
-If you enter the operation without defining a port, it will be sent to the default target port (i. e. 1). If you enter the operation and define a port (format "command:port"), it will be sent to the specified target port instead of the default port. 
+Enter the shell command or view/edit the predefined command in the ">_Command" field. 
+
+If you enter the command without defining a port, it will be sent to the default target port (i. e. 1) of the device. If you enter the command and define a port (format "command:port"), it will be sent to the specified target port instead of the default port. 
 
 <img src="/guides/users-guide/actility/portConfiguration.png" alt="Port configuration" style="max-width: 100%">
 

@@ -79,7 +79,7 @@ Sensors - max. 10
 | Fast DIN | | 2 | - | - | 4 | - |
 
 To activate the specific sensorboard proceed as follows:
-1. Upload the sensor-model in device database. Download the sensorboard model Type A here
+1. Upload the sensor-model in device database. Download the sensorboard model Type A [here](/guides/devices/smartbox-io/F4_IO_2100.03.1_TypeA)
 2. Edit the model if you need it (refer to [Configuring Fieldbus device types](https://www.cumulocity.com/guides/users-guide/cloud-fieldbus/#configure)) but keep the addresses
 3. Connect the sensor board in Modbus tab on adress 1
 4. Include the fieldbus widget in the cockpit related to the device and activate all items. You can now configure the inputs as Temperature sensor or Digitalinputs- as described in the table above

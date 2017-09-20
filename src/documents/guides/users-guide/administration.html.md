@@ -11,7 +11,7 @@ The Administration application enables account administrators to manage their us
 * View [subscription information](#home) for your account.
 * View all operations done by users via the [audit logs](#audit).
 * Configure [applications](#applications).
-* Manage [tenants](#tenants).
+* Manage [tenants](#tenants) and configure your [tenant policies](#tenant-policies)	.
 * Set up real-time [event processing](#event-processing) scripts and [reprioritize alarms](#reprio-alarms).
 * Change [settings](#settings).
 * Configure the [retention policies](#retention) for your data.
@@ -311,6 +311,44 @@ It's possible to export current view of statistics table to CSV file by clicking
 <img src="/guides/users-guide/usage-statistics-export.PNG" style="width:400px;"></img>
 
 > Note that you can define custom properties in ["Properties Library"](#properties) and then set their values in tenant's ["Custom Properties"](#tenants-custom-properties) tab.
+
+## <a name="tenant-policies"></a> Configuring the tenant policies
+
+A tenant policy is a set of settings that control tenant options and tenant retention rules. Afterwards these options and rules can be used during tenant creation. When creating multiple tenants with the same options or retention rules, you can save work by creating a tenant policy and using it for each tenant. 
+
+![Tenant policy](/guides/users-guide/tenantpolicy.png)
+
+> Please note that the options and rules are copied into the tenant. Editing the policy has no effect on tenants that have already been created.
+
+![Add new policy](/guides/users-guide/addpolicy.png)
+
+> At least one retention rule must be added.
+
+To change the name of the policy, click on the field marked in the screenshot below and then click on the tick to save the changes.
+
+When ready, click on "Save".
+
+![Edit policy name](/guides/users-guide/editpolicyname.png)
+
+### Duplicating, editing and removing policies
+
+In order to duplicate a policy, click on the external menu of your desired policy and then click on "Duplicate".
+
+To edit a policy, either click on the desired policy or click on the desired action in the external options menu.
+
+If you wish to delete a policy, go to the external menu of the policy and click on "Delete".
+
+![Edit policy menu](/guides/users-guide/editpolicy.png)
+
+To remove a retention rule from a policy, simply go to the edit screen of the desired policy, hover over the retention rule and click on the "Remove" sign. 
+
+![Remove retention rule](/guides/users-guide/removeretrule.png)
+
+### Adding a new tenant policy
+
+To add a new tenant policy, click on "Add tenant policy". Then enter the policy description and add retention rules. For more info about retention rules, please see [here](http://cumulocity.com/guides/users-guide/administration/#retention).
+
+ 
 
 ## <a name="tfa"></a>Using two-factor authentication
 

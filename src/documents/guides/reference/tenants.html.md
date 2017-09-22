@@ -788,6 +788,14 @@ Example Response :
  * "storageSize" is affected by your retention rules. It is also affected by the regularly running database optimization functions running in Cumulocity. If the size decreases, it does not necessarily mean that data was deleted.
  * Days are counted according to server timezone.
 
+"deviceRequestCount" - device requests are recognized as requests that do not contain "X-Cumulocity-Application-Key" header. 
+In addition, requests to /user, /tenant and /application API's are never counted as "deviceRequestCount".
+
+Request counting in SmartREST and MQTT:
+- SmartREST: each row in SmartREST request is transformed into a separate HTTP request. For example, if one SmartREST request contains 10 rows, then 10 separate calls are executed, meaning that request count is increased by 10. 
+- MQTT: each row/line counts as a separate request. Creating custom template counts as a single request.
+
+
 ### TenantUsageStatisticsCollection [application/vnd.com.nsn.cumulocity.tenantUsageStatisticsCollection+json]
 
 |Name|Type|Occurs|Description|

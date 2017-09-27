@@ -133,8 +133,7 @@ Next, we have to define our view and controller. For the controller, create a ne
 
 	function DeviceContactController() {
 
-	});
-
+	}
 }());
 ```
 

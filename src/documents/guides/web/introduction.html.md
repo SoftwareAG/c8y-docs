@@ -332,12 +332,16 @@ The plugin manifest provides information about our plugin, such as the name, a s
 
 For more details on other properties of the manifest, see "[Manifests](#manifests)".
 
-Now that we have added a plugin to our application, we also have to add it to the imports of our application manifest. The name of the import consists of two parts seperated by a slash. The first part has to be the context path of the application the plugin is located in and the second part has to be the name of the plugin folder. In our case, our plugin is located in our application with the context path "myapplication" as specified in the application manifest and our plugin folder is named "myplugin" which results in:
+Now that we have added a plugin to our application, we also have to add it to the imports of our application manifest. The name of the import consists of two parts separated by a slash. The first part has to be the context path of the application the plugin is located in and the second part has to be the name of the plugin folder. In our case, our plugin is located in our application with the context path "myapplication" as specified in the application manifest and our plugin folder is named "myplugin" which results in:
 
 ```json
 	{
-		"name": "Hello world plugin testing",
-		"description": "Simple hello world plugin.",
+		"availability": "PRIVATE",
+		"contextPath": "myapplication",
+		"key": "myapplication-appkey",
+		"name": "myapplication",
+		"resourcesUrl": "/",
+		"type": "HOSTED",
 		"imports": [
 			"core/c8yBranding",
 			"myapplication/myplugin"

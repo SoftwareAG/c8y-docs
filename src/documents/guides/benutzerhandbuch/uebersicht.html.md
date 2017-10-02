@@ -28,7 +28,9 @@ Sie können auch aktuelle Smartphone- und Tablet-Webbrowser verwenden. Wir teste
   * Chrome für Android (neuester) auf Galaxy-Smartphones und -Tablets
   * Safari auf iOS (neuester) für Apple iPhone und iPad
     
-> Der private Modus in Browsern funktioniert möglicherweise nicht. Die Verwendung von Cumulocity auf mobilen Geräten kann durch den Speicher und die auf den Geräten verfügbare Verarbeitungsleistung eingeschränkt sein. Beim Laden großer Visualisierungen kann das mobile Gerät kommunikationsunfähig werden.
+> Der private Modus in Browsern funktioniert möglicherweise nicht. 
+> Die Verwendung von Cumulocity auf mobilen Geräten kann durch den Speicher und die auf den Geräten verfügbare Verarbeitungsleistung eingeschränkt sein. Beim Laden großer Visualisierungen kann das mobile Gerät kommunikationsunfähig werden.
+> Cumulocity kann mit Internet Explorer 11 vollständig verwendet werden. Es werden jedoch nicht alle Layouts optimal dargestellt.
 
 Verwenden Sie die folgende URL, um auf die Anwendungen für Ihr Cumulocity-Paket zuzugreifen:
 

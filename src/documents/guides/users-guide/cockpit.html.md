@@ -17,8 +17,7 @@ The Cockpit application provides you with options to manage the Internet of Thin
 - Manage [alarms](#alarms), [reports](#reports) and [smart rules](#rules)
 - Use the [data point library](#library)
 
-For more information about the cockpit application please refer to the introduction below.
-i
+For further information on the Cockpit application refer to the Introduction section below.
 
 ## <a name="intro"></a>Introduction
 
@@ -34,7 +33,7 @@ The Cumulocity Cockpit can be used in many industrial areas, including:
 
 * Sensor data monitoring
 
-In the following section, the Cockpit application is described. It offers lots of functionality:
+In the following section the Cockpit application is described. It offers lots of functionalities:
 
 * **Data Explorer**: Interactively explore, compare and visualize IoT data.
 
@@ -42,9 +41,9 @@ In the following section, the Cockpit application is described. It offers lots o
 
 * **Smart Rule Builder**: Create business rules to work on incoming data in real-time.
 
-* **Business Rule Package**: Use pre-defined business rules for geofencing, thresholds or alarm escalation and notifications (SMS/Email/Speech).
+* **Business Rule Package**: Use pre-defined business rules for geofencing, thresholds or alarm escalation and notifications (SMS/email/voice).
 
-* **Reporting**: Create reports based on the dashboards layout and distribute them by Email.
+* **Reporting**: Create reports based on the dashboards layout and distribute them by email.
 
 * **Asset Management**: Organize your connected assets in hierarchies.
 
@@ -54,32 +53,26 @@ In the following section, the Cockpit application is described. It offers lots o
 
 ### Concepts
 
-The main concepts of the Cockpit application are those:
+The main concepts of the Cockpit application are the following:
 
-**Asset**: An asset represents a business object like buildings, machines, or cars.
-
-**Asset Hierarchy**: Assets are organized in hierarchies (trees). The nodes of the tree represent groups, and the leaves of the tree represent devices.
-
-**Group**: A group is a way to organize devices and assets in an asset hierarchy. A group can contain one or multiple devices, child devices or other groups.
-
-**Device**: An IoT Device can be either a gateway device, or a device indirectly connected via a gateway (like modbus or KNX device), or a sensor.
-
-**Data Point**: They represent sensor data, like temperature time series. In other parts of Cumulocity they are called measurements. Other terms used are time series or variable. They are always sensor generated data.
-
-**Data Point Properties**: Metadata for a data point, representing additional properties added by the user like a label, min/max values, thresholds, or other.
-
-**Dashboard**: A user defined page with individual content from various widgets.
-
-**Report**: Similar to dashboards, but with analytical content based on a limited time frame or scope of work.
-
-**Smart Rules**: Cumulocity business rules are instances from a smart rule template using the Smart Rule Builder.
+|CONCEPT|DESCRIPTION|
+|:---|:---|
+|**Asset**|An asset represents a business object like buildings, machines, or cars.
+|**Asset Hierarchy**|Assets are organized in hierarchies (trees). The nodes of the tree represent groups, and the leaves of the tree represent devices.
+|**Group**|A group is a way to organize devices and assets in an asset hierarchy. A group can contain one or multiple devices, child devices or other groups.
+|**Device**|An IoT device can be a gateway device, a device indirectly connected via a gateway (like modbus or KNX device), or a sensor.
+|**Data Point**|Data points represent sensor data, like temperature time series. In other areas of Cumulocity they are called measurements. Other terms used are time series or variable. They are always sensor generated data.
+|**Data Point Properties**|Metadata for a data point, representing additional properties added by the user like a label, min/max values, thresholds, or other.
+|**Dashboard**|A user-defined page with individual content from various widgets.
+|**Report**|Similar to dashboards, but with analytical content based on a limited time frame or scope of work.
+**Smart Rules**|Cumulocity business rules are instances from a smart rule template using the Smart Rule Builder.
 
 ### Cumulocity Applications
 
 The Cockpit application is based on the Cumulocity Application framework.
-To learn about the following items, please consult "[Introduction](/guides/users-guide/overview)":
+If you want to learn more about the following general items of this framework consult the section [*Introduction*](/guides/users-guide/overview):
 
-*    What web browsers are supported?
+*    Which Web browsers are supported?
 
 *    How to login to Cumulocity?
 
@@ -95,45 +88,47 @@ To learn about the following items, please consult "[Introduction](/guides/users
 
 ### Welcome page
 
-The welcome page opens the first time you log into Cumulocity Cockpit.
+The **Welcome** page initially opens up when you log into Cumulocity Cockpit for the first time.
 
 ![image alt text](/guides/users-guide/image_0.png)
 
-The welcome page shows the following sections:
+The **Welcome** page shows the following sections:
 
 * A welcome notice with the number of devices (or assets) connected.
 
-* A list of quick links.
+* Several important quick links.
 
-* A list of available applications
+* Links to available applications.
 
-* A list of news based on the Cumulocity twitter channel. Note: This is only available for tenants hosted by www.cumulocity.com.
+* The latest news from the Cumulocity twitter channel. Note: This is only available for tenants hosted by www.cumulocity.com.
 
-* A link to different parts of the documentation.
+* Links to various parts of the documentation.
 
-### Hiding the Welcome page
+### Hiding/Restoring the Welcome page
 
-To do so, click "Don't use as start page" on the top right.
+If you do not want the **Welcome** page as your start page, deactivate it with the button "Don't use as start page" on the top right.
 
-### Restore Welcome page as default
+To restore the **Welcome** page as start page, select "Welcome" in the navigator on the top left. Then deselect "Don't use as start page".
 
-To restore the welcome page, select "Welcome" in the navigator on the top left. Then deselect "Don't use as start page".
+## <a name="home"></a>Home dashboard
 
-## <a name="home"></a>Home Dashboard
-
-The cockpit start page is a dashboard page:
+The Cockpit start page is a dashboard page:
 
 ![image alt text](/guides/users-guide/image_1.png)
 
 The dashboard shows data for the general tenant.
 
-The home dashboard is a page shared by all users of the tenant. It consists out of widgets, which visualize IoT data. By default, the home dashboard includes four widgets, which show a welcome text, a summary of available objects, assets with alarms, recent alarms and a map of all objects.
+The Home dashboard is a page shared by all users of the tenant. It consists of widgets visualizing IoT data. By default, the Home dashboard includes four widgets showing a welcome text, a summary of assets with alarms, recent alarms and a map of all objects.
 
-The home dashboard can be edited, similar to other Cockpit dashboards: You can add, remove or change the widgets displayed. Use the settings symbol on the top right or move the cursor inside a widget and use the settings symbol of the individual widget.
+The Home dashboard can be edited, similar to other Cockpit dashboards: You can add, remove or change the widgets being displayed. 
 
-For details, see "Editing a Dashboard" below.
+<<< To be checked
+Use the settings symbol on the top right or move the cursor inside a widget and use the settings symbol of the individual widget.
+
+For details, see the section *Editing a Dashboard* below.
 
 To reset the dashboard to the original content, use the menu item "Reset default dashboard" from the cogwheel symbol.
+>>>
 
 ## <a name="connect"></a>Connecting Devices
 

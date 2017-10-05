@@ -90,6 +90,13 @@ For a rpm installation
 > Note that identifier must be unique.
 
     gateway.identifier=opcua
+    
+##### To set up proxy configuration used by agent to connect to platform:
+
+    platform.proxyHost=<proxy-host>
+    platform.proxyPort=<proxy-port>
+    platform.proxyUsername=<proxy-username>
+    platform.proxyPassword=<proxy-password>
 
 ### Register to Cumulocity
 To register the agent to Cumulocity, follow the [Device registration guide](/guides/users-guide/device-management/#device-registration) using an identifier configured in the properties file. 

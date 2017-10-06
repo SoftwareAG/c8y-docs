@@ -277,12 +277,50 @@ After deploying your application, it appears in the *"Own applications"* menu of
 
 ### Test your application
 
-To run your application locally, just run ```c8y server```. You can pass an option ```-u https://piedpiper.cumulocity.com``` with the instance as parameter where you want your api calls to be proxied to.
+To run your application locally, just run ```c8y server```.
+Additionally, you can pass options:
+
+- ```-u https://tenant.cumulocity.com``` with the instance as parameter where you want your api calls to be proxied to,
+- ```-t examples``` or ```-t targets/examples/json``` to use specific target file, e.g. if you want to test your plugins inside one of the standard applications and you have defined your target file as in the example:
+ 
+```json
+{
+  "name": "Examples",
+  "comment": "Release with additional example plugins",
+  "replaceImports": {
+    "core/c8yBranding": "myapplication/myBranding" 
+  },
+  "applications": [
+    {
+      "contextPath": "administration",
+      "addImports": [
+        "myapplication/weatherAdmin"
+      ]
+    },
+    {
+      "contextPath": "devicemanagement",
+      "addImports": [
+        "myapplication/deviceEventsRealTime", 
+        "myapplication/deviceContact" 
+      ]
+    },
+    {
+      "contextPath": "cockpit",
+      "addImports": [ 
+        "myapplication/weather", 
+        "myapplication/iconmap" 
+      ]
+    }
+  ]
+}
+```
+
+Example console output:
 
 ```console
-$ c8y server
+$ c8y server -u https://tenant.cumulocity.com -t targets/examples.json
 Cumulocity UI development server running in port 9000.
-Proxying api requests to https://bazinga.staging.c8y.io
+Proxying api requests to https://tenant.cumulocity.com
 140 modules loaded.
 5 application manifest loaded.
 http://localhost:9000/apps/myapplication/ cumulocity.json

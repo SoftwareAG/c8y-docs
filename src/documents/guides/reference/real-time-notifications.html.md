@@ -38,7 +38,7 @@ When using websockets, a property 'ext' containing an authentication object must
 
 |Name|Type|Occurs|Description|
 |:---|:---|:-----|:----------|
-|id|Integer|1|Id of message, required to match response messageÂ |
+|id|Integer|1|Id of message, required to match response message |
 |channel|URI|1|Name of channel, required value "/meta/handshake".|
 |ext|Object|1|Authentication object passed to handshake. (only over websockets)|
 |version|String|1|Bayeux protocol version used by client.|
@@ -50,8 +50,8 @@ When using websockets, a property 'ext' containing an authentication object must
 
 |Name|Type|Occurs|Description|
 |:---|:---|:-----|:----------|
-|timeout|Integer|0..1|Max. time in milliseconds between sending of a connect message and response from server .Overrides server default settings for session. Default value : 3600000, maximum value 7200000|
-|interval|Integer|0..1|Period above which server will close session, if not received next connect message from client. Overrides server default settings for session. Default value : 10000|
+|timeout|Integer|0..1|Max. time in milliseconds between sending of a connect message and response from server. Overrides server default settings for session. Default value : 5400000, maximum value 7200000|
+|interval|Integer|0..1|The time, in milliseconds, that the client must wait between the end of one long poll request and the start of the next. Overrides server default settings for session. When not set server allows for max 10 sec delay between next connect request. Default value : 0|
 
 Example request:
 

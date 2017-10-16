@@ -29,7 +29,8 @@ When using websockets, a property 'ext' containing an authentication object must
       "ext": {
         "com.cumulocity.authn": {
           "token": "<base64 encoded credentials>"
-        }
+        },
+        "systemOfUnits": "<imperial|metric - optional system of units>"
       }
     }
 

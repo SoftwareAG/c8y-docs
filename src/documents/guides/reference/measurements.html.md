@@ -11,6 +11,47 @@ The measurements interface consists of three parts:
 
 > Note that for all PUT/POST requests accept header should be provided, otherwise an empty response body will be returned.
 
+## System of units
+
+Note that all GET requests support "X-Cumulocity-System-Of-Units" header which allows to set system of units used in response.
+Possible values are "imperial" or "metric".
+Every measurement fragment which contains "unit" property will be transformed to use required system of units.
+
+Example measurement:
+
+    ...
+    {
+        ....
+         "c8y_Temperature": {
+             "T": {
+                 "unit": "ºC",
+                 "value": 2.0791169082
+             }
+         }
+    }
+    ...
+
+Example request:
+
+    GET /measurement/measurements?fragmentType=c8y_Temperature&source=663951
+    Host: ...
+    Authorization: Basic ...
+    X-Cumulocity-System-Of-Units: imperial
+    
+Example response:
+
+    ...
+    {
+        ....
+         "c8y_Temperature": {
+            "T": {
+                "unit": "°F",
+                "value": 35.742410434759904
+            }
+        }
+    }
+    ...
+
 ## Measurement API
 
 ### MeasurementAPI [application/vnd.com.nsn.cumulocity.measurementApi+json

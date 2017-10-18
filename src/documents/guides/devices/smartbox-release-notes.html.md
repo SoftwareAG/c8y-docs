@@ -1,19 +1,19 @@
 ---
-title: Release notes for SMARTbox Agent
+title: SMARTbox Agent
 layout: devices
 ---
 
-## Release notes for SMARTbox Agent
+## Release notes for the SMARTbox Agent
 
-This document describes the Cumulocity agent package for the SMARTbox IO and the SMARTbox Mini. 
+This document describes the Cumulocity agent package for the SMARTbox IO and the SMARTbox Mini.
 
 
 
 ## Supported functionality
 
 * The agent supports the following functionality:
-* Available on all Cumulocity based systems 
-* Available on all T-Systems 
+* Available on all Cumulocity based systems
+* Available on all T-Systems
 * Cloud Fieldbus
 * TLS-Security
 * Full SmartRest implementation
@@ -72,4 +72,3 @@ You can download [here](https://www.pssystec.de/get-version-2-0/)
 * Improved 2G/3G connectivity in case of changeover
 
 You can download [here](https://www.pssystec.de/get-version-2-1-5/)
-

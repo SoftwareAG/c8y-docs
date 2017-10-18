@@ -465,9 +465,30 @@ To disable two-factor authentication, simply deselect the box "Allow two-factor 
 
 ### <a name="properties"></a>Managing the properties library
 
-In the properties library, additional custom properties can be added to tenants, alarms, events or inventory items. These properties can be customized to your own preference.
+In the properties library, custom properties can be added to tenants, alarms, events or inventory objects. 
 
-> Custom properties for “Subtenants” also can be observed or exported in the “Usage statistics” menu.
+With custom properties, you can extend the data model of Cumulocity built-in objects. After you have added your own custom properties as described below, these properties will be available in Cumulocity as follows:
+
+- Inventory Properties: The custom inventory properties are used to extend the inventory data model. They can be used in the “Asset table” and “Asset properties” widgets.
+- Tenant Properties: Custom tenant properties which will be available during tenant creation. The custom properties can be edited under “Subtenants” in the tab “Custom properties” of each tenant. Additionally these properties can be viewed and exported in the “Usage statistics” menu.
+- Alarm Properties: These properties can be used as custom fields which can be added to your report.
+- Event Properties: Similar to the alarm properties, event properties can be used as additional custom fields. When created, they will be available in the “Reporting” menu in “Cockpit”.
+
+#### Extending the inventory data model
+
+The  inventory properties can be used to add additional custom properties to the “Asset table” and “Asset properties” widgets. To add the properties, simply click on the “Add property” link and select your desired property. When ready, click on the “Save” button to confirm your changes.
+
+![Inventory property](/guides/users-guide/inventoryproperty.png)
+
+#### Using the Alarm and Event properties
+
+The alarm and event custom properties can be used in the “Field” section of the “Reporting” menu in “Cockpit”. They can be used as custom fields that you would like to use in your report.
+
+The properties can be found when you click on “Add predefined”.
+
+[Add predefined properties](/guides/users-guide/addpredefined.png)
+
+#### Adding properties to the "Properties library"
 
 ![Properties library](/guides/users-guide/properties_library.png)
 

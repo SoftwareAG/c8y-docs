@@ -132,36 +132,41 @@ To reset the dashboard to the original content, use the menu item "Reset default
 
 ## <a name="connect"></a>Connecting Devices
 
-To use the Cockpit application, you have to connect IoT devices. Devices are connected in the Device Management application. Change to the “Device Management” using the Application Switcher on the top right, and then select “Registration”. For details, please see [Device Management User Guide](/guides/users-guide/device-management).
+Before you can work with the Cockpit application you need to connect IoT devices. Devices are connected in the Device Management application. Change to **Device Management** using the Application Switcher on the top right. For details refer to the[*Device Management*](/guides/users-guide/device-management) section in the *User Guide*.
+
 <img src="/guides/users-guide/app.png" alt="Logout menu" style="max-width: 100%">
 ## <a name="asset"></a>Asset Management
 
-An asset represents the business object in general like buildings, machines, production units or cars.
+### Introduction
+Assets represent business objects in general like buildings, machines, production units or cars.
 
 Assets are organized in hierarchies. For example, an energy monitoring application might have the following asset hierarchy:
 
 ![image alt text](/guides/users-guide/image_2.png)
 
-The asset hierarchy is composed out of two types of objects:
+The asset hierarchy is composed of two types of objects:
 
-* Group objects: These are groups created in the Cockpit application and they can group single devices or other groups.
+* Group objects: Objects which group single devices or other groups. Are created in the Cockpit application.
 
-* Device objects: These are devices that are linked into the asset hierarchy.
+* Device objects: Devices which are linked into the asset hierarchy. Are created in the Device Management application.
 
-In this example, group objects represent a building asset. Device objects represent the room asset. The group names and hierarchy can be defined individually by the user. The hierarchy can have multiple levels, like region level, city level, street level, building level, floor level and room level. An device can be part of multiple and different hierarchies, like part of regional hierarchy and part of customer hierarchy.
+In this example, group objects represent a building asset. Device objects represent the room asset. The group names and hierarchy can be defined individually by the user. The hierarchy can have multiple levels, like region level, city level, street level, building level, floor level and room level. Any device can be part of multiple and different hierarchies, like part of regional hierarchy and part of customer hierarchy.
 
-Single devices are not managed in the Cockpit application. They are managed in the Device Management Application.
+Single devices are not managed in the Cockpit application. They are managed in the Device Management application.
 To position a device in the asset hierarchy, you have to "assign" the device to the respective group. See description below for details.
 
 ### Asset Hierarchy versus Device Hierarchy
 
-Cumulocity supports two types of hierarchies: A device hierarchy and an asset hierarchy. The device hierarchy tracks how devices are linked to Cumulocity from a communications point of view. The asset hierarchy structures the assets that are being remotely supervised and controlled through the M2M devices. For details, please refer to "[Cumulocity's Domain Model](/guides/concepts/domain-model)"
+Cumulocity supports two types of hierarchies: a device hierarchy and an
+asset hierarchy.
 
-In the Cockpit application, you construct your asset hierarchy by creating group objects and by linking devices into the hierarchy. The asset hierarchy depends on the IoT devices used. There are many IoT devices, but these two types are very common:
+The device hierarchy tracks how devices are linked to Cumulocity from a communications point of view. The asset hierarchy structures the assets that are being remotely supervised and controlled through the M2M devices. For details, refer to "[Cumulocity's Domain Model](/guides/concepts/domain-model)".
 
-* **Smart devices** are self-contained devices that include sensors, actuators and a communication module. They are typically connected to a single asset. Smart devices are trackers, weather station or general "smart" sensors with built-in communication module.
+In the Cockpit application, you construct your asset hierarchy by creating group objects and by linking devices into the hierarchy. The asset hierarchy depends on the IoT devices used. There are many types of IoT devices, but these two types are very common:
 
-* **Gateway devices** establish the communication from other devices to Cumulocity, but do not include sensors or actuators. Typical gateway devices include Zigbee, Modbus, M-Bus or KNX gateways.
+* **Smart devices** are self-contained devices that include sensors, actuators and a communication module. They are typically connected to a single asset. Smart devices are trackers, weather stations or general "smart" sensors with a built-in communication module.
+
+* **Gateway devices** establish the communication from other devices to Cumulocity but do not include sensors or actuators. Typical gateway devices include Zigbee, Modbus, M-Bus or KNX gateways.
 
 The following section explains how to use Cockpit with smart devices and gateway devices.
 

@@ -17,6 +17,21 @@ Note that all GET requests support "X-Cumulocity-System-Of-Units" header which a
 Possible values are "imperial" or "metric".
 Every measurement fragment which contains "unit" property will be transformed to use required system of units.
 
+#### Most common conversions:
+
+|Imperial|Metric|
+|:-------|:-----|
+|m (meter)|ft (foot)|
+|km (kilometers)|mi (miles)|
+|cm (centimeter)|in (inch)|
+|°C (degree Celsius)|°F (degree Fahrenheit)|
+|"K (degree Kelvin)|°R (degree Rankin)|
+|g (gram)|oz (ounce)|
+|kg (kilogram)|lb (pound)|
+
+
+#### Examples
+
 Example measurement:
 
     ...

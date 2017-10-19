@@ -40,17 +40,18 @@ The agent supports the following functionality:
 
 ## System requirements
 
-The agent was tested on an NTC-6200 device with firmware version 2.0.24.3. For remote configuration of WAN parameters, you need a SIM card with SMS function. Currently, GSMA OneAPI (e.g., on Ericsson DCP), OpenIT and Jasper Wireless are supported APIs for SMS providers. Please contact [support](https://support.cumulocity.com) for connecting to an SMS provider.
-
-> Agent versions 2.1.10 and up require at least Cumulocity 6.10 to support the new log viewer.
-
-> Agent versions 2.3 and up require Cloud Fieldbus 4. They are not compatible with earlier versions of the Cloud Fieldbus application.
+The agent was tested on an NTC-6200 device with firmware version 2.0.36.10. For remote configuration of WAN parameters, you need a SIM card with SMS function. Currently, GSMA OneAPI (e.g., on Ericsson DCP), OpenIT and Jasper Wireless are supported APIs for SMS providers. Please contact [support](https://support.cumulocity.com) for connecting to an SMS provider.
 
 > Agent version 3.2.0 and up require backend minimum version 7.20 for multip-XID support.
 
+> Agent versions 2.3 and up require Cloud Fieldbus 4. They are not compatible with earlier versions of the Cloud Fieldbus application.
+
+> Agent versions 2.1.10 and up require at least Cumulocity 6.10 to support the new log viewer.
+
+
 ## Installing the agent
 
-* Download the agent software: http://resources.cumulocity.com/ntc/smartrest-agent_4.0.1_arm.ipk.
+* Download the agent software: http://resources.cumulocity.com/ntc/smartrest-agent_4.0.2_arm.ipk.
 * Download the CA certificate bundle: http://resources.cumulocity.com/ntc/ca-cumulocity_20170118.0_arm.ipk.
 * Download the VNC proxy if you want to use VNC remote access: http://resources.cumulocity.com/ntc/vncproxy_1.0_arm.ipk.
 * Log in to the web user interface of the NTC-6200.
@@ -68,89 +69,50 @@ For information on using the agent, please visit the [NetComm Agent User's Guide
 
 ## History
 
-### 2.1.4
+### 4.0.2
+[Agent Software](http://resources.cumulocity.com/ntc/smartrest-agent_4.0.2_arm.ipk),
+[CA certificate bundle](http://resources.cumulocity.com/ntc/ca-cumulocity_20170118.0_arm.ipk),
+[VNC Proxy](http://resources.cumulocity.com/ntc/vncproxy_1.0_arm.ipk). Changes:
 
-[Download link](http://resources.cumulocity.com/ntc/smartrest-agent_2.1.4_arm.ipk). Changes:
+* Agent is started/stopped directly after activating/deactivating it in Netcomm-WebUI 
+* Agent is not started after device boot, when it was deactivated in Netcomm-WebUI
+* Created ntcagent folder is removed, when the Agent is completly de-installed
+* Temporary created files are deleted after usage
 
-* Operator name in "Info" page is now correctly displayed.
-* Clear credentials button in web UI works now correctly.
+### 4.0.1
+[Agent Software](http://resources.cumulocity.com/ntc/smartrest-agent_4.0.1_arm.ipk),
+[CA certificate bundle](http://resources.cumulocity.com/ntc/ca-cumulocity_20170118.0_arm.ipk),
+[VNC Proxy](http://resources.cumulocity.com/ntc/vncproxy_1.0_arm.ipk). Changes:
 
-### 2.1.6
+* Agent waits after device boot for NTP synchronization before proceeding. 
+* Supports now timer intervals smaller than 200 ms.
 
-[Download link](http://resources.cumulocity.com/ntc/smartrest-agent_2.1.6_arm.ipk). Changes:
+### 4.0.0
+[Agent Software](http://resources.cumulocity.com/ntc/smartrest-agent_4.0.0_arm.ipk),
+[CA certificate bundle](http://resources.cumulocity.com/ntc/ca-cumulocity_20170118.0_arm.ipk),
+[VNC Proxy](http://resources.cumulocity.com/ntc/vncproxy_1.0_arm.ipk). Changes:
 
-* Configuration snapshot support (requires Cumulocity 6.9).
-* Sending event notifications as alarms.
+* Add support for server certificate verification.
+* Add MQTT support as an alternative protocol alongside HTTP.
+* Support for VNC remote access.
 
-### 2.1.8
+### 3.2.2
+[Download link](http://resources.cumulocity.com/ntc/smartrest-agent_3.2.2_arm.ipk). Changes:
 
-[Download link](http://resources.cumulocity.com/ntc/smartrest-agent_2.1.8_arm.ipk). Changes:
+* signal: report RSRP signal strength instead of RSCP when using 4G network.
+* integrate: use RDB uboot.hw_id as name when creating device.
+* modbus: disable Modbus-RTU support when model is NTC-140W.
+* modbus/mbbase: write modbus response values to agent log for easier troubleshooting.
+* [fix]modbus: fix regression bug introduced in 3.2.0 that reading is offset by 1 when data model doesn't start from number 1.
 
-* Save MSISDN number fix
-* Memory leak fix
-* Configuration file tar bar
+### 3.2.0
+[Download link](http://resources.cumulocity.com/ntc/smartrest-agent_3.2.0_arm.ipk). Changes:
 
-
-### 2.1.10
-
-[Download link](http://resources.cumulocity.com/ntc/smartrest-agent_2.1.10_arm.ipk). Changes:
-
-* Crash fix
-* Configuration file tar bar and configuration text save fixes
-* Log viewer
-* Support for breakpad (crash tool)
-* Detect wrong plug-in name in configuration
-* Removed timeouts in software manager
-* Remove agent log file after install new version
-
-### 2.2.6
-
-[Download link](http://resources.cumulocity.com/ntc/smartrest-agent_2.2.6_arm.ipk). Changes:
-
-* GPIO alarm status is updated on device start.
-* GPIO debouncing fixes.
-* Performance and reliability improvements for operations.
-* Device Shell robustness improvements.
-* Modbus stability improvements and corrections.
-* Log rotation and log quota setting (through RDB parameter service.cumulocity.log.quota).
-* Remote log viewing of ipsec.log.
-* Log API for Lua.
-
-### 2.3.5
-[Download link](http://resources.cumulocity.com/ntc/smartrest-agent_2.3.5_arm.ipk). Changes:
-
-* Full support for fieldbus 4.
-* *fix*: Unintentionally include device credential when uploading configuration.
-* *fix*: Device shell plugin for operations that restart agent/device.
-* *fix* Unexpectedly restarting of the agent when set log level via device shell.
-* *fix*: Duplicate events and incorrect status updates
-* *fix*: Operation of set register for first holding register hangs
-
-### 2.3.6
-[Download link](http://resources.cumulocity.com/ntc/smartrest-agent_2.3.6_arm.ipk). Changes:
-
-* *fix*: not respect multiplier, divisor and decimalPlaces definition in FieldBus 4 when sending event.
-* string update: use generic IoT tokens instead of Cumulocity.
-
-### 3.0.0
-[Download link](http://resources.cumulocity.com/ntc/smartrest-agent_3.0.0_arm.ipk). Changes:
-
-* Add measurement poll support.
-* Implement modbus-RTU support for Cloud Fieldbus 4.
-* Add timestamp to description of uploaded configuration snapshot.
-* Report GPS fix on boot.
-* Add support for serial number in registration.
-* Disallow removing agent from Cumulocity Software Management.
-
-### 3.1.2
-[Download link](http://resources.cumulocity.com/ntc/smartrest-agent_3.1.2_arm.ipk). Changes:
-
-* *fix*: fragile start-up process when send fails after register templates.
-* *fix*: Fixed one-hour off issue because of DST in logviewer.
-* Raise alarm when modbus slave reading fails.
-* *fix*: in logview get *last* N lines instead of *first* N lines in the given timeframe.
-* Use decimal instead of hex for LAC for OpenCellID to work.
-* Add RDB dump support.
+* ntcagent: Use file backed buffering for sending measurement, events, etc.
+* [fix]Modbus: write partial holding register crash in 3.1.6.
+* Query pending operations at boot time.
+* [fix]Makefile: separate LDLIBS for smsagent so smsagent build correctly and without unnecessary dependencies.
+* [fix]ntcagent: remove trailing slash in server URL so URL with trailing slash also works.
 
 ### 3.1.6
 [Download link](http://resources.cumulocity.com/ntc/smartrest-agent_3.1.6_arm.ipk). Changes:
@@ -165,37 +127,85 @@ For information on using the agent, please visit the [NetComm Agent User's Guide
 * [fix]Modbus: set byte timeout to 1 sec for getting slow Modbus-RTU to work.
 * [fix]lua/gps: use correct format DDDMM.MMmmm instead of DDMM.SSsss for GPS position.
 
-### 3.2.0
-[Download link](http://resources.cumulocity.com/ntc/smartrest-agent_3.2.0_arm.ipk). Changes:
+### 3.1.2
+[Download link](http://resources.cumulocity.com/ntc/smartrest-agent_3.1.2_arm.ipk). Changes:
 
-* ntcagent: Use file backed buffering for sending measurement, events, etc.
-* [fix]Modbus: write partial holding register crash in 3.1.6.
-* Query pending operations at boot time.
-* [fix]Makefile: separate LDLIBS for smsagent so smsagent build correctly and without unnecessary dependencies.
-* [fix]ntcagent: remove trailing slash in server URL so URL with trailing slash also works.
+* *fix*: fragile start-up process when send fails after register templates.
+* *fix*: Fixed one-hour off issue because of DST in logviewer.
+* Raise alarm when modbus slave reading fails.
+* *fix*: in logview get *last* N lines instead of *first* N lines in the given timeframe.
+* Use decimal instead of hex for LAC for OpenCellID to work.
+* Add RDB dump support.
 
-### 3.2.2
-[Download link](http://resources.cumulocity.com/ntc/smartrest-agent_3.2.2_arm.ipk). Changes:
+### 3.0.0
+[Download link](http://resources.cumulocity.com/ntc/smartrest-agent_3.0.0_arm.ipk). Changes:
 
-* signal: report RSRP signal strength instead of RSCP when using 4G network.
-* integrate: use RDB uboot.hw_id as name when creating device.
-* modbus: disable Modbus-RTU support when model is NTC-140W.
-* modbus/mbbase: write modbus response values to agent log for easier troubleshooting.
-* [fix]modbus: fix regression bug introduced in 3.2.0 that reading is offset by 1 when data model doesn't start from number 1.
+* Add measurement poll support.
+* Implement modbus-RTU support for Cloud Fieldbus 4.
+* Add timestamp to description of uploaded configuration snapshot.
+* Report GPS fix on boot.
+* Add support for serial number in registration.
+* Disallow removing agent from Cumulocity Software Management.
 
-### 4.0.0
-[Agent Software](http://resources.cumulocity.com/ntc/smartrest-agent_4.0.0_arm.ipk),
-[CA certificate bundle](http://resources.cumulocity.com/ntc/ca-cumulocity_20170118.0_arm.ipk),
-[VNC Proxy](http://resources.cumulocity.com/ntc/vncproxy_1.0_arm.ipk). Changes:
+### 2.3.6
+[Download link](http://resources.cumulocity.com/ntc/smartrest-agent_2.3.6_arm.ipk). Changes:
 
-* Add support for server certificate verification.
-* Add MQTT support as an alternative protocol alongside HTTP.
-* Support for VNC remote access.
+* *fix*: not respect multiplier, divisor and decimalPlaces definition in FieldBus 4 when sending event.
+* string update: use generic IoT tokens instead of Cumulocity.
 
-### 4.0.1
-[Agent Software](http://resources.cumulocity.com/ntc/smartrest-agent_4.0.1_arm.ipk),
-[CA certificate bundle](http://resources.cumulocity.com/ntc/ca-cumulocity_20170118.0_arm.ipk),
-[VNC Proxy](http://resources.cumulocity.com/ntc/vncproxy_1.0_arm.ipk). Changes:
+### 2.3.5
+[Download link](http://resources.cumulocity.com/ntc/smartrest-agent_2.3.5_arm.ipk). Changes:
 
-* Agent waits after device boot for NTP synchronization before proceeding. 
-* Supports now timer intervals smaller than 200 ms.
+* Full support for fieldbus 4.
+* *fix*: Unintentionally include device credential when uploading configuration.
+* *fix*: Device shell plugin for operations that restart agent/device.
+* *fix* Unexpectedly restarting of the agent when set log level via device shell.
+* *fix*: Duplicate events and incorrect status updates
+* *fix*: Operation of set register for first holding register hangs
+
+### 2.2.6
+
+[Download link](http://resources.cumulocity.com/ntc/smartrest-agent_2.2.6_arm.ipk). Changes:
+
+* GPIO alarm status is updated on device start.
+* GPIO debouncing fixes.
+* Performance and reliability improvements for operations.
+* Device Shell robustness improvements.
+* Modbus stability improvements and corrections.
+* Log rotation and log quota setting (through RDB parameter service.cumulocity.log.quota).
+* Remote log viewing of ipsec.log.
+* Log API for Lua.
+
+### 2.1.10
+
+[Download link](http://resources.cumulocity.com/ntc/smartrest-agent_2.1.10_arm.ipk). Changes:
+
+* Crash fix
+* Configuration file tar bar and configuration text save fixes
+* Log viewer
+* Support for breakpad (crash tool)
+* Detect wrong plug-in name in configuration
+* Removed timeouts in software manager
+* Remove agent log file after install new version
+
+### 2.1.8
+
+[Download link](http://resources.cumulocity.com/ntc/smartrest-agent_2.1.8_arm.ipk). Changes:
+
+* Save MSISDN number fix
+* Memory leak fix
+* Configuration file tar bar
+
+### 2.1.6
+
+[Download link](http://resources.cumulocity.com/ntc/smartrest-agent_2.1.6_arm.ipk). Changes:
+
+* Configuration snapshot support (requires Cumulocity 6.9).
+* Sending event notifications as alarms.
+
+### 2.1.4
+
+[Download link](http://resources.cumulocity.com/ntc/smartrest-agent_2.1.4_arm.ipk). Changes:
+
+* Operator name in "Info" page is now correctly displayed.
+* Clear credentials button in web UI works now correctly.

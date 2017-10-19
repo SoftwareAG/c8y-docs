@@ -39,7 +39,7 @@ When using websockets, a property 'ext' containing an authentication object must
 |:-------|:----|
 |token|Base 64 encoded credentials|
 |tfa|Optional two factor authentication token|
-|systemOfUnits|Optional system of units. Possible values are imperial or metric|
+|systemOfUnits|Optional system of units. Possible values are "imperial" or "metric"|
 
 ### Request
 

@@ -22,7 +22,7 @@ The following sections will walk you through all functionalities of the Device M
 ## <a name="introduction"></a>Introduction
 The Device Management application offers a lot of functionalities for working with devices in your Cumulocity account. 
 
-<img src="/guides/users-guide/app.png" alt="Device Management" style="max-width: 100%">
+<img src="/guides/users-guide/DeviceManagement/DevMgmt_Home.png" alt="Device Management" style="max-width: 100%">
 
 Among others, you may do the following here:
 
@@ -41,29 +41,31 @@ Among others, you may do the following here:
 This section describes how to connect devices to your Cumulocity account either manually or by bulk-registration.
 
 ### How to connect a device manually
-The following process describes how to connect a single device. Depending on the type of device you want to connect not all steps of the process may be relevant. 
+The following process describes how to connect devices manually. Depending on the type of device you want to connect not all steps of the process may be relevant. 
 
 **Note**: In case of any issues, consult the [device guide](www.cumulocity.com/guides/) applicable for your device type, search for your device type in the [Developer Center](http://cumulocity.com/dev-center/) on our  website for further information, or look up the manual of your device.
 
 To connect devices to your Cumulocity account follow these steps:
 
-1. Click Registration in the Devices menu of the navigator.
-2. In the upcoming window select General Device Registration to register one or more devices individually (see next section for handling bulk registration).
-3. In the Device ID field enter a unique ID for the device. To determine the ID, consult the device documentation. In case of mobile devices the ID usually is the IMEI (International Mobile Equipment Identity) often found on the back of the device.
-4. Optionally, select a group to assign your device to after registration.
-5. Click **Next** to register your device. After successful registration the device will be listed on the screen with the status "Waiting for connection".
-6. Turn on the device and wait for the connection to be established.
-Once a device is connected its status will change to "Pending acceptance".
-6. Click **Accept** to confirm the connection. The status of the device will change to "Accepted".
+1. Click **Registration** in the Devices menu of the navigator.
+2. In the upcoming window choose **General device registration** to register one or more devices individually (see next section for handling bulk registration).
+3. In the "Device ID" field, enter a unique ID for the device. To determine the ID, consult the device documentation. In case of mobile devices the ID usually is the IMEI (International Mobile Equipment Identity) often found on the back of the device.
+4. Optionally, select a group to assign your device to after registration. Find further information on groups assigment in [Grouping Devices](#grouping-devices).
+5. Click **Add another device** to register one more device. Again, enter the device ID and optionally select a group. This way, you can add multiple devices in one step.
+6. Click **Next** to register your device(s). After successful registration the device(s) will be listed on the screen with the status "Waiting for connection".
 
-The device is now connected and can be managed.
+<img src="/guides/users-guide/DeviceManagement/DevMgmt_RegisterMultiple.png" alt="Register Multiple Devices" style="max-width: 50%">
+
+Turn on the device(s) and wait for the connection to be established.
+Once a device is connected its status will change to "Pending acceptance".
+Click **Accept** to confirm the connection. The status of the device will change to "Accepted".
 
 ### <a name="creds-upload"></a>Bulk-registering devices
 
 To connect larger amounts of devices Cumulocity offers the option to bulk-register devices, i.e. to register them all in one step. This is done by uploading a CSV file with at least the IDs and credentials of the devices.
 
-1. Click Registration in the Device menu of the navigator.
-2. In the upcoming window select Bulk Device Registration.
+1. Click **Registration** in the Device menu of the navigator.
+2. In the upcoming window choose **Bulk device registration**.
 2. Select the CSV file you want to upload by browsing for it.
 
 After uploading the CSV file Cumulocity creates a user account for each device listed in the file. This way devices can connect securely to Cumulocity without the need to register them manually as described in the previous section.
@@ -86,9 +88,9 @@ You may also download a template file from the Bulk Registration window to view 
 
 To connect the devices they need to be pre-registered with the relevant information. More specific, each device needs to be configured as follows:
 
-* User name - The user name for accessing Cumulocity must have the format &lt;tenant&gt;/device_&lt;id&gt;, where &lt;Tenant&gt; refers to the tenant from which the CSV file is imported and  &lt;id&gt; refers to the respective value in the CSV file.
-* Password - The password to access Cumulocity, equals the value "Credentials" in the CSV file.
-* Device in managed object representation - Fields "Type", "Name", "Iccid", "Idtype", "Path", "Shell" in the CSV file.
+* User name - the user name for accessing Cumulocity must have the format &lt;tenant&gt;/device_&lt;id&gt;, where &lt;Tenant&gt; refers to the tenant from which the CSV file is imported and  &lt;id&gt; refers to the respective value in the CSV file.
+* Password - the password to access Cumulocity, equals the value "Credentials" in the CSV file.
+* Device in managed object representation - fields "Type", "Name", "Iccid", "Idtype", "Path", "Shell" in the CSV file.
 
 **Info**: If you work with a Cumulocity Enterprise Edition you may also register devices across multiple tenants by adding a "tenant" column to the spreadsheet and importing the CSV file from the "management" tenant.
 
@@ -97,7 +99,7 @@ For further information on the file format and accepted CSV variants refer to
 
 ## <a name="viewing-devices"></a>Viewing Devices
 
-To view all devices connected to your account click All devices in the Devices menu in the navigator. 
+To view all devices connected to your account click **All devices** in the Devices menu in the navigator. 
 
 A comprehensive device list will be displayed.
 
@@ -136,7 +138,7 @@ Our example shows a search für "Ublox C027". You can search for any kind of tex
 
 **Info**: Other than with filtering using wildcards in a search is not supported.
 
-<img src="/guides/users-guide/DeviceManagement/DevMgmt_Search" alt="Device Management Search" style="max-width: 100%">
+<img src="/guides/users-guide/DeviceManagement/DevMgmt_Search.png" alt="Device Management Search" style="max-width: 100%">
 
 ### <a name="filtering-devices"></a>Filtering devices
 
@@ -148,17 +150,17 @@ Filtering is available on every column. Just click the Filtering icon next to th
 
 A window will come up in which you can specify your filter options.
 
-<img src="/guides/users-guide/DeviceManagement/DevMgmt_FilteringOptions.png" alt="Filter Options" style="max-width: 100%">
+<img src="/guides/users-guide/DeviceManagement/DevMgmt_FilteringOptions.png" alt="Filter Options" style="max-width: 50%">
 
 Most columns represent text fields. You can filter these columns by simply entering an arbitrary text into the textbox as in the Search field. Click **+ Or** to add another textbox if you want to filter for more than one term. 
 
 Apart from filtering for text there are several other options:
 
 * In case of date fields (i.e. Registration Date) you specify a date range to filter for. 
-* In the Status column you can filter for various criteria representing the send, push or maintenance status of the device.
-* In the Alarm column the filtering options you may select correspond to the alarm types (critical, major, minor, warning, no alarms).
+* In the "Status" column you can filter for various criteria representing the send, push or maintenance status of the device.
+* In the "Alarm" column the filtering options you may select correspond to the alarm types (critical, major, minor, warning, no alarms).
 
-In the Filter Options window, click **Ascending** or **Descending** if you want the devices to be sorted in a specific order. Finally click **Apply** to carry out the filtering. 
+In the "Filter options" window, click **Ascending** or **Descending** if you want the devices to be sorted in a specific order. Finally click **Apply** to carry out the filtering. 
 
 The devices list will now only display devices matching the filtering options.
 
@@ -194,10 +196,10 @@ You can assign devices to an existing group in two ways.
 From the device perspective:
 
 1. Select a device from the device list and open it.
-2. In the Info tab, scroll down to the Groups assignment section. In the drop-down field select the group you want to assign the device to. 
+2. In the Info tab, scroll down to the "Groups assignment" section. In the drop-down field select the group you want to assign the device to. 
 3. Click **Add to group**.
 
-<img src="/guides/users-guide/DeviceManagement/DevMgmt_GroupsAssigment.png" alt="Assign device to a group" style="max-width: 100%">
+<img src="/guides/users-guide/DeviceManagement/DevMgmt_GroupsAssigment.png" alt="Add to group" style="max-width: 50%">
 
 From the group perspective:
 
@@ -206,7 +208,7 @@ From the group perspective:
 3. Checkmark the devices you want to add from the list.
 4. Click **Assign X device(s)** to assign the selected devices. 
 
-<img src="/guides/users-guide/DeviceManagement/DevMgmt_AssignDevices.png" alt="Assign devices to a group" style="max-width: 100%">
+<img src="/guides/users-guide/DeviceManagement/DevMgmt_AssignDevices.png" alt="Assign devices to a group" style="max-width: 50%">
 
 ### How to create a sub-group
 
@@ -217,8 +219,8 @@ From the group perspective:
 ### How to edit a group
 
 1. In the navigator click a group to open it. 
-2. In the Info screen click **Edit**. This allows you to edit the name of the group and to assign user permissions for the group. 
-For further information on permissions, see the [*Administration*](/guides/users-guide/administration) *Guide*.
+2. In the Info page click **Edit**. This allows you to edit the name of the group and to assign user permissions for the group. 
+For further information on permissions, see the [*Administration Guide*](/guides/users-guide/administration).
 
 ### Using smart groups
 
@@ -228,7 +230,7 @@ Smart groups are groups dynamically constructed based on filtering criteria. The
 
 Smart groups can be created from the device list. 
 
-1. Click All devices in the navigator to open the device list.
+1. Click **All devices** in the navigator to open the device list.
 2. Filter the devices in the list to select the desired devices. Refer to [Filtering devices](#filtering-devices) for details on how to do so.
 3. Click **Create smart group** at the top-right.
 4. Enter a name for the group and click **Create**.

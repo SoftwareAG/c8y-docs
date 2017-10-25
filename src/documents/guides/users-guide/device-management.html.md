@@ -3,18 +3,20 @@ order: 20
 title: Device Management
 layout: default
 ---
-## <a name="overview"></a>Overview
+## <a name="overview"></a>Content Overview
 
 The following sections will walk you through all functionalities of the Device Management application in detail. For your convenience find an overview on the content of this document below.
 
 |SECTION|CONTENT|
 |:---|:---|
 |[Connecting Devices](#device-registration)|Describes how to register one or more devices manually and how to bulk-register devices.
-|[Viewing Devices](#viewing-devices)|Explains the device list and device details and how to sort devices by searching and filtering.
-|[Grouping Devices](#grouping-devices)|Describes why and how to group devices into top-level groups sub-groups and smart group.
-|[Monitoring Devices](#device-monitoring)|Explains how to monitor device connections and services, handle alarms from devices, operations and events.
-|Managing Device Data|Explains how to retrieve and manage firmware and software for devices and how to handle configuration snapshots. 
-|Simulate Devices|Explains how to model devices with the simulator.
+|[Viewing Devices](#viewing-devices)|Explains the device list and how to sort devices by searching and filtering.
+|[Grouping Devices](#grouping-devices)|Explains why and how to group devices into top-level groups, subgroups and smart groups.
+|[Device Details](#device-details)|Describes in detail the various kind of  information available for devices.
+|[Monitoring Devices](#connection-monitoring)|Explains how to monitor device connections and services, handle alarms from devices, operations and events.
+|[Managing Device Data](#managing-device-data)|Explains how to retrieve and manage firmware and software for devices and how to handle configuration snapshots. 
+|[Working with the Simulator](#simulator)|Explains how to model devices with the simulator.
+|[Using SmartREST Templates](#Smartrest)|Explains how to work with SmartREST templates.
 
 
 ## <a name="introduction"></a>Introduction
@@ -29,7 +31,6 @@ Among others, you may do the following here:
 * [Display](#device-details) a large amount of details for each device.
 * Monitor the [connection](#connection-monitoring) quality and the [service](#monitoring-services) status of devices. 
 * Monitor and handle [alarms](#alarm-monitoring) from devices.
-* [Locate](#map) devices.
 * [Remote control](#operation-monitoring) and [troubleshoot](#events-all) devices.
 * [Manage](#software-repo) firmware, software and credentials of devices.
 * [Simulate](#simulator) devices.
@@ -42,12 +43,12 @@ This section describes how to connect devices to your Cumulocity account either 
 ### How to connect a device manually
 The following process describes how to connect a single device. Depending on the type of device you want to connect not all steps of the process may be relevant. 
 
->**Info:** In case of any issues, consult the [Device Guide](www.cumulocity.com/guides/) applicable for your device type, search for your device type in the [Developer Center](http://cumulocity.com/dev-center/) on our [website](www.cumulocity.com) for further information, or look up the manual of your device.
+**Note**: In case of any issues, consult the [device guide](www.cumulocity.com/guides/) applicable for your device type, search for your device type in the [Developer Center](http://cumulocity.com/dev-center/) on our  website for further information, or look up the manual of your device.
 
 To connect devices to your Cumulocity account follow these steps:
 
 1. Click Registration in the Devices menu of the navigator.
-2. In the upcoming dialog select **General Device Registration** to register one or more devices individually (see next section for handling bulk registration).
+2. In the upcoming window select General Device Registration to register one or more devices individually (see next section for handling bulk registration).
 3. In the Device ID field enter a unique ID for the device. To determine the ID, consult the device documentation. In case of mobile devices the ID usually is the IMEI (International Mobile Equipment Identity) often found on the back of the device.
 4. Optionally, select a group to assign your device to after registration.
 5. Click **Next** to register your device. After successful registration the device will be listed on the screen with the status "Waiting for connection".
@@ -62,7 +63,7 @@ The device is now connected and can be managed.
 To connect larger amounts of devices Cumulocity offers the option to bulk-register devices, i.e. to register them all in one step. This is done by uploading a CSV file with at least the IDs and credentials of the devices.
 
 1. Click Registration in the Device menu of the navigator.
-2. In the upcoming dialog select **Bulk device registration**.
+2. In the upcoming window select Bulk Device Registration.
 2. Select the CSV file you want to upload by browsing for it.
 
 After uploading the CSV file Cumulocity creates a user account for each device listed in the file. This way devices can connect securely to Cumulocity without the need to register them manually as described in the previous section.
@@ -75,14 +76,11 @@ The CSV file needs to have a header row followed by the actual data. The header 
 	006064ce800a;LF2PWJoLG1Fz;management;Sample_Düsseldorf;+491555555;Sample_Device1
 	006064ce8077;OowoGKAbiNJs;management;Sample_Düsseldorf;+491555555;Sample_Device2
 
-You may also download a template file from the Bulk Registration dialog to view or copy the structure.
+You may also download a template file from the Bulk Registration window to view or copy the structure.
 
  <!--
  Needs to be tested. Seems to be outdated.
  Use the "Upload" button to upload the CSV file, as shown in the screenshot below. After the data is imported, you will get feedback on the number of devices that were pre-registered as well as on any potential errors that may have occurred. -->
-
-<img src="/guides/users-guide/autoregister.png" alt="Bulk registration" style="max-width: 100%"> 
-
 
 **Pre-registering devices**
 
@@ -92,20 +90,20 @@ To connect the devices they need to be pre-registered with the relevant informat
 * Password - The password to access Cumulocity, equals the value "Credentials" in the CSV file.
 * Device in managed object representation - Fields "Type", "Name", "Iccid", "Idtype", "Path", "Shell" in the CSV file.
 
->**Info**: If you work with a Cumulocity Enterprise Edition you may also register devices across multiple tenants by adding a "tenant" column to the spreadsheet and importing the CSV file from the "management" tenant.
+**Info**: If you work with a Cumulocity Enterprise Edition you may also register devices across multiple tenants by adding a "tenant" column to the spreadsheet and importing the CSV file from the "management" tenant.
 
 For further information on the file format and accepted CSV variants refer to 
 [Bulk device credentials](/guides/reference/device-credentials/#creds-upload).
 
 ## <a name="viewing-devices"></a>Viewing Devices
 
-To view all devices connected to your account click **All devices** in the navigator. 
+To view all devices connected to your account click All devices in the Devices menu in the navigator. 
 
 A comprehensive device list will be displayed.
 
 <img src="/guides/users-guide/DeviceManagement/DevMgmt_DevicesList.png" alt="Device List" style="max-width: 100%">
 
-### Device List
+### Device list
 
 For each device the device list provides the following information:
 
@@ -123,32 +121,34 @@ For each device the device list provides the following information:
 
 The devices list displays up to 1.000 rows. If a list contains more than 1.000 devices click **Load more** at the bottom of the list to display the next 1.000 entries.
 
-When hovering over a row in the list a **Delete** button appears at the right. Click **Delete** to delete the device permanently.
+When hovering over a row in the list a **Delete** button appears at the right. Click it to delete the device permanently.
 
 **Important:** Deleting a device means to remove the device from Cumulocity database including all its generated data. Alternatively, you can arrange all retired devices in one group (see Grouping Devices). This ensures that all reports remain correctly. To prevent alarms from being raised for the retired devices, disable [connection monitoring](#connection-monitoring). Deleting a device does not delete the data of its child devices.
 
 
-### <a name="searching-devices"></a>Searching for Devices
+### <a name="searching-devices"></a>Searching for devices
 
 Cumulocity includes a full-text search for devices. 
 
-Click the Search button ![Search](src/guides/Icons/Doc_Icons_Search.png) at the top-rigth and enter a search term into the textbox. Cumulocity returns all devices containing this term either in the device name or model.
+Click the Search button at the top-right and enter a search term into the textbox. Cumulocity returns all devices containing this term either in the device name or model.
 
 Our example shows a search für "Ublox C027". You can search for any kind of text. Prefixes are also supported. For example, a search for "Ublox" would also return the devices containing "Ublox C027". Suffixes are currently not supported. For example, searching for "C027" would not return the "Ublox C027".
 
+**Info**: Other than with filtering using wildcards in a search is not supported.
+
 <img src="/guides/users-guide/DeviceManagement/DevMgmt_Search" alt="Device Management Search" style="max-width: 100%">
 
-### <a name="searching-devices"></a>Filtering Devices
+### <a name="filtering-devices"></a>Filtering devices
 
 The device list offers a filtering functionality to filter devices in the list for specific criteria. 
 
 Filtering is available on every column. Just click the Filtering icon next to the name of the column you want to set a filter for. 
 
-![Filter options](src/guides/DeviceManagement/DevMgmt_Filtering.png)
+<img src="/guides/users-guide/DeviceManagement/DevMgmt_Filtering.png" alt="Filtering" style="max-width: 100%">
 
-A dialog will come up in which you can specify your filter options.
+A window will come up in which you can specify your filter options.
 
-![Filter options](src/guides/DeviceManagement/DevMgmt_FilterOptions.png)
+<img src="/guides/users-guide/DeviceManagement/DevMgmt_FilteringOptions.png" alt="Filter Options" style="max-width: 100%">
 
 Most columns represent text fields. You can filter these columns by simply entering an arbitrary text into the textbox as in the Search field. Click **+ Or** to add another textbox if you want to filter for more than one term. 
 
@@ -158,7 +158,7 @@ Apart from filtering for text there are several other options:
 * In the Status column you can filter for various criteria representing the send, push or maintenance status of the device.
 * In the Alarm column the filtering options you may select correspond to the alarm types (critical, major, minor, warning, no alarms).
 
-In the Filter Options dialog, click **Ascending** or **Descending** if you want the devices to be sorted in a specific order. Finally click **Apply** to carry out the filtering. 
+In the Filter Options window, click **Ascending** or **Descending** if you want the devices to be sorted in a specific order. Finally click **Apply** to carry out the filtering. 
 
 The devices list will now only display devices matching the filtering options.
 
@@ -167,76 +167,87 @@ Click **Clear filters** at the top-right if you want to clear all filters and vi
 
 ## <a name="grouping-devices"></a>Grouping Devices
 
-Devices can be arbitrarily grouped according to your use case. A device can be located in multiple groups, and groups themselves can again be part of multiple groups.
+Devices can be arbitrarily grouped according to a particular use case. A device can be located in multiple groups, and groups themselves can again be part of multiple groups.
 
-Cumulocity distinguishes between top-level groups and subgroups. Top-level groups are shown in the Group menu in the navigator at top-level. Subgroups are used to further subdivide groups.
+Cumulocity distinguishes between top-level groups and subgroups. 
 
-**How to create a new group**
+Top-level groups are shown in the Group menu in the navigator at top-level. Subgroups are used to further subdivide top-level groups.
 
-1. Click the Add button at the top-right, then select **Add new group**.
-2. In the dialog that comes up enter a unique group name to identify your group.
-3. In the Device Search enter the search criteria for the devices you might want to add to your group (e.g. "ublox"). A list of devices that match your search criteria will be displayed. 
+### How to create a new group
+
+To create a new group follow these steps:
+
+1. Click the Add button at the top-right, then select **Add new group** from the menu.
+2. In the window that comes up enter a unique group name to identify your group.
+3. In the Device Search field enter the search criteria for the devices you might want to add to your group (e.g. "ublox"). A list of devices that match your search criteria will be displayed. 
 4. Checkmark the devices you want to add from the list.
-5. Click **Create group with <NUMBER> device(s)** to finally create your new group. 
+5. Click **Create group with X device(s)** to finally create your new group. 
 
 **Note:** A group can be created with "0" devices in it.
 
 <img src="/guides/users-guide/addtopgroup.png" alt="Device Management" style="max-width: 100%">
 
-**How to assign a device to an existing group**
+### How to assign a device to an existing group
 
 You can assign devices to an existing group in two ways. 
 
 From the device perspective:
 
-1. Select a device from the devices list and open it.
-2. Scroll down to the **Groups assignment**. In the drop-down field select the group you want to assign the device to. 
+1. Select a device from the device list and open it.
+2. In the Info tab, scroll down to the Groups assignment section. In the drop-down field select the group you want to assign the device to. 
 3. Click **Add to group**.
 
 <img src="/guides/users-guide/DeviceManagement/DevMgmt_GroupsAssigment.png" alt="Assign device to a group" style="max-width: 100%">
 
 From the group perspective:
 
-1. In the navigator select a group and then select **Sub-assets** from the menu on the left. All devices that are assigned to the respective group are shown on the screen. 
-2. Click **Assign devices** in the top right corner. In the upcoming dialog search for the devices you might want to add to your group (e.g. "ublox"). A list of devices that match your search criteria will be displayed. 
+1. In the navigator select a group from the Group menu and then open the Sub-assets tab. In the Sub-assets tab, all devices that are assigned to the respective group are displayed. 
+2. Click **Assign devices** at the top-right. In the upcoming window search for the devices you might want to add to your group (e.g. "ublox"). A list of devices that match your search criteria will be displayed. 
 3. Checkmark the devices you want to add from the list.
-4. Click **Assign <NUMBER> device(s)** to assign the selected devices. 
+4. Click **Assign X device(s)** to assign the selected devices. 
 
 <img src="/guides/users-guide/DeviceManagement/DevMgmt_AssignDevices.png" alt="Assign devices to a group" style="max-width: 100%">
 
-**How to create a sub-group**
+### How to create a sub-group
 
 1. In the navigator click a group to open it. 
-2. Click **Add Group** in the top-right corner. 
-2. In the upcoming dialog enter a name for the sub-group and click **Add group**.
+2. Click **Add Group** at the top-right. 
+2. In the upcoming window enter a name for the sub-group and click **Add group**.
 
-**How to edit a group**
+### How to edit a group
 
 1. In the navigator click a group to open it. 
 2. In the Info screen click **Edit**. This allows you to edit the name of the group and to assign user permissions for the group. 
-For further information on permissions, see the [Administration](/guides/users-guide/administration) guide.
+For further information on permissions, see the [*Administration*](/guides/users-guide/administration) *Guide*.
 
-**Using Smart Groups**
+### Using smart groups
 
 Smart groups are groups dynamically constructed based on filtering criteria. They have a temporary character because the group members can change constantly. Smart groups do not have fixed member listings.They have fixed criteria instead. This type of group can be used for example for bulk upgrades of devices of a certain type to a new software or firmware version.
 
 <img src="/guides/users-guide/smartfilters.png" alt="Adding top-level groups" style="max-width: 100%">
 
-Smart groups can be created by selecting "All devices". To create a new group, simply use filters to select devices. Now click on “Create smart group” and name the group.
+Smart groups can be created from the device list. 
+
+1. Click All devices in the navigator to open the device list.
+2. Filter the devices in the list to select the desired devices. Refer to [Filtering devices](#filtering-devices) for details on how to do so.
+3. Click **Create smart group** at the top-right.
+4. Enter a name for the group and click **Create**.
 
 <img src="/guides/users-guide/smartgroup1.png" alt="Create a smart group" style="max-width: 100%">
 
-The group will appear as a top-level group in the GROUPS section of the navigator. You can adjust filter criteria by selecting the "Sub-assets" tab and modify the filter settings.
+The new group will appear as a top-level group in the Groups menu of the navigator. Smart groups can be distinguished by a small cogwheel in the folder icon. 
 
-<img src="/guides/users-guide/smartgroup2.png" alt="Adding top-level groups" style="max-width: 100%">
+<img src="/guides/users-guide/DeviceManagement/DevMgmt_SmartgroupIcon.png" alt="Smart groups" style="max-width: 100%">
 
-To delete a smart group click the Cogwheel icon at the top-right and click **Remove group**. 
+In the Sub-asset tab you can adjust your selection and modify the filter settings.
+
+To delete a smart group click the Cogwheel button at the top-right and click **Remove group** in the menu. 
 
 <img src="/guides/users-guide/smartgroupdelete1.png" alt="Adding top-level groups" style="max-width: 100%">
 
-Note that deleting a smartgroup is irreversible.
+**Important**: Deleting a smart group is irreversible.
 
-**Info**: Smart groups are not shown when using the Cockpit application.
+**Note**: Smart groups are not shown when using the Cockpit application.
 
 ## <a name="device-details"></a>Device Details
 
@@ -248,57 +259,56 @@ Click a device in the device list to open up detailed information on the device.
 
 The device details are divided into tabs. The number of tabs is dynamic and depends on the available information, i.e. tabs are only displayed if the kind of information is available for the particular device. 
 
-Initally the Info tab is shown which offers general information on a device and is available for every device. 
+Initally the Info tab is shown which offers general information on a device and is available for each device. 
 
-Each device at least shows the following tabs: Info, Alarms, Control, Events, Service Monitoring, Identity (also see the tab list).
+Each device at least shows the following tabs: Info, Alarms, Control, Events, Service monitoring, Identity (also see the tab list below).
 
-Altogether the followings tabs may be available, each described in detail in a separate section:
+The following tabs are the most common ones, each described in detail in a separate section:
 
 |Tab|Description|
 |:---|:---|
 |[Info](#info)|Provides general information on a device. Available for each device.
 |[Child Devices](#child-devices)|Lists devices being connected to the current device.
-|[Measurements](#measurements)|Devices connected to the current device.
+|[Measurements](#measurements)|Provides a default visualization of numeric data provided by the device in the form of charts.
 |[Alarms](#alarms)|Provides information on the alarms for a device. See also [Working with alarms](#alarm-monitoring). Available for each device.
 |[Configuration](#configuration)|Allows manual configuration of device parameters and settings entered in a text format. See also [Configuration Snapshot Repository](#configuration-snapshot) for binary configuration.
 |[Control](#control)|Displays operations being sent to a device. Also refer to [Working with operations](#operation-monitoring). Available for each device.
 |[Network](#network)|Displays network information for a device.
 |[Software](#software)|Manages firmware of a device and software installed on a device.
-|[Events](#events)|Displays events related to a device, helpful for low-level troubleshooting. Also refer to [Troubleshooting Devices](#events-all). Available for each device.
+|[Events](#events)|Displays events related to a device, helpful for low-level troubleshooting. Also refer to [Troubleshooting devices](#events-all). Available for each device.
 |[Location](#location)|Shows the location of a device, if available.
 |[Logs](#logs)|Allows requesting log information for a device.
-|[Modbus](#modbus)|Allows configuration of Modbus communication settings.
-|[Service Monitoring](#service-monitoring)|Allows the service monitoring of machines. See also [Monitoring Services](#monitoring-services). Available for each device.
+|[Service monitoring](#service-monitoring)|Allows the service monitoring of machines. See also [Monitoring services](#monitoring-services). Available for each device.
 |[Shell](#shell)|Enables you to interact with remote devices via a command prompt.
 |[Tracking](#tracking)|Shows the movement of a device, if available.
 |[Identity](#identity)|Displays identities recorded for a particular device. Available for each device.
-|[Permissions](#permissions)|Shows the permissions for a device. For managing permissions refer to the [*Administration*](/guides/users-guide/administration) Guide. **Note** that this tab is deprecated.
+|[Permissions](#permissions)|Shows the permissions for a device. For managing permissions refer to the [*Administration*](/guides/users-guide/administration) *Guide*. **Note** that this tab is deprecated.
 
+**Note**: Potential individual tabs, which you do not find listed here, may be described in a different context and therefore somewhere else in the Cumulocity documentation. Use the Search function to switch to the relevant sections. A deztailed description on the Modbus tab for example can be found in the respective device guide.
 
 <!-- Noch aktuell?? Below the name, a list of breadcrumbs is displayed. If the device is part of an asset hierarchy (such as a group), you can use the breadcrumbs to easily navigate up that hierarchy. Since devices can be part of multiple hierarchies, several rows of breadcrumbs may be shown.-->
 
-Depending of the type and usage of a device further actions are provided in a dropdown menu when clicking the Cogwheel at the top-right. 
+Depending of the type and usage of a device further actions are provided in a dropdown menu when clicking the Cogwheel button at the top-right. 
 
-![Cogwheel Menu](/guides/users-guide/DeviceManegement/DevMgmt_Cogwheel_Menu.png)
+<img src="/guides/users-guide/DeviceManagement/DevMgmt_CogwheelMenu.png" alt="Cogwheel Menu" style="max-width: 100%">
 
 Details on the Cogwheel menu items are provided in the related sections of this document.
-
 
 ### <a name="info"></a>Info
 
 The Info tab provides the following general information on a device (from top left to bottom):
 
-|Area|Description|
+|Section|Description|
 |:---|:---|
-|Device Profile|Provides the name and type of the device in editable fields as well as an editable NOTE field. Moreover some system information is displayed. 
-|Connection Monitoring|Displays connection-relevant information, as described in detail in [Monitoring Connections](#connection-monitoring).
+|Device profile|Provides the name and type of the device in editable fields as well as an editable Note field. Moreover some system information is displayed. 
+|Connection monitoring|Displays connection-relevant information, as described in detail in [Monitoring Connections](#connection-monitoring).
 |Hardware|Displays editable information on the device hardware (model, serial number, revision).
-|Mobile|If the device contains a modem the mobile network information will be shown here. You will also find a **Locate** link. If enough information could be obtained, clicking this link will determine the rough location of the device using the opencellid.org database. This will not always be successful and depends on the format that the connected mobile network uses to report its data to the modem.
-|Groups assignment|Displays the groups the device belongs to. Moreover you can add the device to groups here or unassign it from groups. For details on grouping devices see [Grouping devices](#grouping-devices).
+|Mobile|If the device contains a modem the mobile network information will be shown here. Moreover you will also a **Locate** link. If enough information could be obtained, clicking this link will determine the rough location of the device using the opencellid.org database. This will not always be successful and depends on the format that the connected mobile network uses to report its data to the modem.
+|Groups assignment|Displays the groups the device belongs to. Moreover you can add the device to groups here or unassign it from groups. For details on grouping devices see [Grouping Devices](#grouping-devices).
 
 To save any edits click **Save changes** at the bottom of the tab.
 
-**Note** that editing fields in this tab only makes sense if the respective information is not provided by the device itself. If the device provides this information your edits will be overwritten by incoming information from the device. 
+**Note**: Editing fields in this tab only makes sense if the respective information is not provided by the device itself. If the device provides this information your edits will be overwritten by incoming information from the device. 
 
 > "Last communication" and "Last updated" are two entirely different time stamps. "Last communication" indicates when a device has last sent data. "Last updated" indicates when the inventory entry of the device was last updated. This update may have originated from the device, from the web user interface or from another application.
 
@@ -310,7 +320,7 @@ For details provided in the child device list refer to [Viewing Devices](#viewin
 
 ### <a name="measurements"></a>Measurements
 
-The Measurements tab provides a default visualization of numeric data provided by the device in the form of charts. Charts are grouped into types of measurements, which can contain multiple graphs or "series". For example, the screenshot below shows a chart for motion measurement including graphs for acceleration in the three dimensions, and a chart with modem statistics in the form of signal strength and bit error rate.
+The Measurements tab provides a default visualization of numeric data provided by the device in the form of charts. Charts are grouped into types of measurements, which can contain multiple graphs or "series". The screenshot below for example shows a chart for motion measurement including graphs for acceleration in the three dimensions, and a chart with modem statistics in the form of signal strength and bit error rate.
 
 ![Measurements](/guides/users-guide/measurements.png)
 
@@ -366,7 +376,7 @@ To manually add or edit a device configuration follow these steps:
 
 <img src="/guides/users-guide/textconfig.png" alt="Device details" style="max-width: 100%">
 
-Alternatively you can work with the configuration snapshot repository. For details refer to [Configuration Snapshots](#configuration-snapshot).
+Alternatively you can work with configuration snapshots. For details refer to [Configuration Snapshots](#configuration-snapshot).
 
 ### <a name="control"></a>Control
 
@@ -376,22 +386,24 @@ The Control tab lists the operations being sent to a device. Refer to [Working w
 
 ### <a name="software"></a>Network
 
-In the Network tab network seetings can be configured for the device.
+In the Network tab network settings can be configured for the device.
+
+<!-- Needs to be documented-->
 
 
 ### <a name="software"></a>Software
 
 This tab allows you to manage and update the firmware of a device and the software installed on a device. 
 
-To install a new firmware, click **Install firmware**, then select a firmware image from the [firmware repository](#software-repo) and click **Install**.
+To install a new firmware, click **Install firmware**, then select a firmware image from the [Firmware repository](#software-repo) and click **Install**.
 
-Similar, to install a software on the device, click **Install software**, select a software package from the [software repository](#software-repo) and click **Install**. 
+Similar, to install a software on the device, click **Install software**, select a software package from the [Software repository](#software-repo) and click **Install**. 
 
-![Software](/guides/users-guide/DeviceManagement/DevMgmt_software.png)
+<img src="/guides/users-guide/DeviceManagement/DevMgmt_software.png" alt="Software" style="max-width: 100%">
 
 Installing software and firmware usually includes a restart of the device. To monitor the progress of an installation, visit the Control tab.
 
-To remove a software from a device, hover over a particular software package and click the **Delete** button ![Delete](/src/files//guides/Icons/Docu_Icons_Delete.png).
+To remove a software from a device, hover over a particular software package and click the Delete button.
 
 ### <a name="events"></a>Events
 
@@ -406,11 +418,11 @@ The Location tab also shows when a device contains c8y_Position property. When y
 
 ### <a name="logs"></a>Logs
 
-Using the Logs tab, you can request log information from devices. Log information can be filtered according to date ranges, log type, keywords and the maximum number of lines to transfer.
+In the Logs tab you can request log information from devices. Log information can be filtered according to date ranges, log type, keywords and the maximum number of lines to transfer.
 
-Click **Request log file** at the top-right.
+In the Log tab click **Request log file** at the top-right.
 
-In the dialog you have specify the following settings for the log information:
+In the upcoming window specify the following settings for the log information:
 
 - A date and time range.
 - The type of log. The supported logs listed are usually device-specific.
@@ -419,7 +431,7 @@ In the dialog you have specify the following settings for the log information:
 
 Click **Request log** to request the specified log information for the device.
 
-![Request log](/guides/users-guide/DeviceManagement/DevMgmt_RequestLogs.png)
+<img src="/guides/users-guide/DeviceManagement/DevMgmt_RequestLogs.png" alt="Request Logs" style="max-width: 100%">
 
 >Requesting a log from a device may take some time. 
 
@@ -427,11 +439,10 @@ After the log has been transferred from the device to Cumulocity, it will be lis
 
 Click on the entry in the list to show the log information in the screen. 
 
-When hovering over an entry the Download and ![Delete](/src/files//guides/Icons/Docu_Icons_Delete.png) Delete buttons appear. Click the Download button to download the log excerpt to your local PC. Click the Delete button to delete the log file.
+When hovering over an entry the Download and Delete buttons appear. Click the Download button to download the log excerpt to your local PC. Click the Delete button to delete the log file.
 
-<!--### <a name="service-monitoring"></a>Modbus-->
 
-### <a name="service-monitoring"></a>Service Monitoring
+### <a name="service-monitoring"></a>Service monitoring
 
 In addition to connection monitoring, Cumulocity offers a separate service monitoring for machines. See [Service monitoring](#monitoring-services) for more information.
 
@@ -448,10 +459,9 @@ The list displays status, date and text of a command. Clicking a list item revea
 
 ![Device shell](/guides/users-guide/shell.png)
 
-For your convenience Cumulocity provides several frequently used commands for some devices. Click **<_Get predefined commands** at the top-right to open a dialog containing a list of available pre-defined commands. Select the command of your choice and click **Use** to copy the command to the command prompt, or **Execute** to execute the command straight away. You may also add new commands here for re-use.
+For your convenience Cumulocity provides several frequently used commands for some devices. Click **<_Get predefined commands** at the top-right to open a window containing a list of available pre-defined commands. Select the command of your choice and click **Use** to copy the command to the command prompt, or **Execute** to execute the command straight away. You may also add new commands here for re-use.
 
-![Shell commands](/guides/users-guide/DeviceManagement/DevMgmt_Shell_Predefined)
-
+![Shell commands](/guides/users-guide/DeviceManagement/DevMgmt_ShellPredefined.png)
 
 ### <a name="tracking"></a>Tracking
 
@@ -467,7 +477,7 @@ Next to the map, the individual recordings with their time are listed ("location
 
 Depending on the type of device and the integration into Cumulocity you can configure device-side geo-fencing and motion detection.
 
->Additionally, when this feature is activated and the device is compatible, Cell ID information can be used to determine the position of the device. Currently, the services from [Combain](https://combain.com/) and [Google](https://developers.google.com/maps/documentation/geolocation/intro) are supported. The user can see the tracks based on both data, or filter out GPS based data or Cell ID based data.
+>When this feature is activated and the device is compatible, Cell ID information can be used to determine the position of the device. Currently, the services from [Combain](https://combain.com/) and [Google](https://developers.google.com/maps/documentation/geolocation/intro) are supported. The user can see the tracks based on both data, or filter out GPS based data or Cell ID based data.
 
 ### <a name="identity"></a>Identity
 
@@ -478,7 +488,7 @@ This is useful for example when you have non-functional hardware and need to rep
 
 ### <a name="permissions"></a>Permissions
 
-The permisson to view, edit or control certain devices can be limited to users and user groups. For further information on managing permissions refer to the [*Administration*](/guides/users-guide/administration) Guide. Use the Application Switcher to switch to the Administration application.
+The permisson to view, edit or control certain devices can be limited to users and user groups. For further information on managing permissions refer to the [*Administration*](/guides/users-guide/administration) *Guide*. Use the Application Switcher to switch to the Administration application.
 
 **Important**: The Permission tab ist deprecated and not used in newer versions of Cumulocity. Permisssion management is handled in the Administration application.
 
@@ -489,41 +499,66 @@ Cumulocity provides the option to view all devices in your account on a map.
 
 Click Map in the Devices menu in the navigator, to display a map showing all devices. Devices are represented as "pins". Click a pin to see the name of the respective device. Click the device name to switch to the device details. 
 
-<!--Nicht mehr vorhanden?:
-By clicking the "Realtime" checkbox, the map will refresh automatically when devices are moving.-->
-
 ## <a name="connection-monitoring"></a>Monitoring Devices
 
-### <a name="connection-monitoring"></a>Connection Monitoring
+### <a name="connection-monitoring"></a>Connection monitoring
 
-Cumulocity provides the option to monitor the connections to your devices. 
+In the Device Management application you have the option to monitor the connections to your devices. 
 
-The connection state is represented by arrows.
+This can be done at the level of individual devices (see below) or across multiple devices in a list.
 
-The top arrow represents the Send connections (traffic from the device to Cumulocity), the bottom arrow represents the Push connections (from Cumulocity to the device).
+To monitor the connections for multiple devices open any device list.
 
-The status for the Send connections  may be one of:
+The connection status is represented by arrows in the Status column in the device list.
 
-online
-offline
-unknown
-not monitored
+<img src="/guides/users-guide/DeviceManagement/DevMgmt_ConnectionStatus.png" alt="Connection Status" style="max-width: 100%">
 
-To monitor the connections of a particular device go to the Info tab of this device. In the Connection Monitoring area check the **Required Interval** field. This parameter defines how often you expect to hear from the device. For example, if you set the required interval to 60, you expect that the device communicates at least once in an hour with Cumulocity. The interval is either set by the device itself, based on the device's knowledge how often it will try to send data, or it is set manually by you.
+**Send connections**
 
-The various connection states are illustrated on the image below. The top arrow represents traffic from the device to Cumulocity. It can be green, red or grey. Green means that data was sent within the required interval. Red means that it was not sent within the required interval. Grey means that no required interval is configured.
+The top arrow represents the Send connection (traffic from the device to Cumulocity). The status for the Send connections may be one of:
 
-The bottom arrow indicates the state of the push connection that is used to send commands from Cumulocity to the device (a connection to /devicecontrol/notifications API, NOT to realtime API). It can be either green or grey. Green means that the connection is established. Grey means that the connection is not established. In case of a grey arrow, either the device does not support push connections, or there is an error.
+* Online (data was sent within the required interval)- indicated by a green arrow
+* Offline (data was not sent within the required interval) - indicated by a red arrow
+* Unknown or not monitored (no interval configured) - indicated by a grey arrow
 
-"Maintenance mode" is a special connection state indicating that the device is currently being maintained and should not be monitored. While a device is being maintained, no alarms for that device are raised. You can enable maintenance mode by setting the required interval to a negative value.
+Hovering over the arrow displays the timestamp of the last request from the device to the server. 
 
-![Connection states](/guides/users-guide/connection_monitoring.png)
+When a device is detected to be offline (stops sending data within required interval and top arrow changes to red color), an unavailability alarm is created for the device reading "No data received from device within required interval".
 
-> Connection monitoring is not real-time. For example, the state of the connection will not change immediately when you switch off a device. Depending on your network, it may take about 20 minutes until a broken connection is discovered, since the network will retry sending data for a significant amount of time.
+**Push connections**
 
-When a device is detected to be offline (stops sending data within required interval and top arrow changes to red color), an unavailability alarm is created for the device reading "No communication with the device since <time>".
+The bottom arrow represents the Push connection (from Cumulocity to the device). The status for the Push connections may be one of:
 
-### <a name="monitoring-services"></a>Service Monitoring
+* Online (connection established)- indicated by a green arrow
+* Offline (connection not established) - indicated by a red arrow
+* Not monitored - indicated by a grey arrow
+
+**Note**: The Push connection means the connection from Cumulocity to /devicecontrol/notifications API, **not** to realtime API.
+
+**Maintenance mode**
+
+Moreover the device may be in  "Maintenance" mode, indicated by the tool icon in the Status column. This is a special connection status indicating that the device is currently being maintained and cannot be monitored. While a device is being maintained, no alarms for that device are raised. 
+
+You can turn maintenance mode for a device on or off through a button under Connection Monitoring in its Info tab. 
+
+
+**Connection monitoring in the Info tab**
+
+To monitor the connections of a particular device go to the Info tab of this device. Under Connection monitoring, the connection status for the device is displayed. 
+
+<img src="/guides/users-guide/DeviceManagement/DevMgmt_ConnectionMonitoringInfoTab.png" alt="Connection Monitoring" style="max-width: 100%">
+
+In the  Required Interval field you can specify an interval. This parameter defines how often you expect to hear from the device. If, for example, you set the required interval to 60, you expect the device at least to communicate once in an hour with Cumulocity. The interval is either set by the device itself, based on the device's knowledge how often it will try to send data, or it is set manually by you.
+
+If an interval is set you will find the Maintenace button below it.
+
+With the Maintenance button you can turn the maintenance mode for the device on or off which is immediately reflected in the connection status. 
+
+<img src="/guides/users-guide/DeviceManagement/DevMgmt_ConnectionStatusMaintenance.png" alt="Maintenance Button" style="max-width: 100%">
+
+**Note**: Connection monitoring is not real-time. This means that the connection status will not change immediately when you switch off a device. Depending on your network it may take about 20 minutes until a broken connection is discovered, since the network will retry sending data for a significant amount of time.
+
+### <a name="monitoring-services"></a>Service monitoring
 
 Cumulocity distinguishes between connection monitoring and service monitoring. Connection monitoring, as described in the previous section, only indicates if the device is communicating with Cumulocity, it does not automatically indicate if it is functional or not.
 
@@ -535,12 +570,12 @@ Cumulocity considers a device to be in service while there is no critical, unres
 
 Cumulocity displays service availability at the level of individual devices and across all devices. 
 
-Click the Service Monitoring tab in the details of a particular device to check the service monitoring of this specific device.
+Click the Service monitoring tab in the details of a particular device to check the service monitoring of this specific device.
 
-Click Service Monitoring in the navigator to display the overall service across all devices. 
+Click Service monitoring in the navigator to display the overall service across all devices. 
 
 <!--On that page, you will also see a histogram of how many devices had what service availability in the past month (see the above screenshot).
-Ist das so??
+Still true??
 -->
 
 While a machine is offline, Cumulocity assumes by default 
@@ -550,7 +585,7 @@ While a machine is offline, Cumulocity assumes by default
 
 There may be exceptions from this rule. If your vending machines rely exclusively on cashless payment, losing the connection to the network means that your machine is out of service and stops selling. In this case, unavailability alarms must be set in the [Administration application](/guides/users-guide/administration#alarm-mapping) which have "critical" severity instead of "major" severity.
 
-### <a name="alarm-monitoring"></a>Working with Alarms
+### <a name="alarm-monitoring"></a>Working with alarms
 
 Devices can raise alarms to indicate that there is a problem requiring an intervention. 
 
@@ -559,16 +594,20 @@ Cumulocity displays alarms at the level of individual devices and across all dev
 * Click Alarms in the Overview menu in the navigator to check the alarms for all devices. 
 * Click the Alarm tab in the details of a particular device to check the alarms of this specific device.
 
-![Alarms](/guides/users-guide/DeviceManagement/DevMgmt_AlarmDevice.png)
+<img src="/guides/users-guide/DeviceManagement/DevMgmt_AlarmDevice.png" alt="Alarms" style="max-width: 100%">
 
 By default, only unresolved alarms are shown, but you can turn off **Show cleared alarms** at the top-right to show the entire alarm history.
 
 Alarms are classified according to their severity. Cumulocity includes four different alarm types:
 
-*  **Critical**: The device is out of service and should be fixed immediately.
-*  **Major**: The device has a problem that should be fixed.
-*  **Minor**: The device has a problem that may be fixed.
-*  **Warning**: There is a warning.
+![Critical](/guides/Icons/Docu_Icon_AlarmsCritical.png)
+
+|Icon|Severity|Description|
+|:---|:---|:--|
+|![Critical](/guides/Icons/Docu_Icon_AlarmsCritical.png)|Critical|The device is out of service and should be fixed immediately.
+|![Major](/guides/Icons/Docu_Icon_AlarmsMajor.png)|Major|The device has a problem that should be fixed.
+|![Minor](/guides/Icons/Docu_Icon_AlarmsMinor.png)|Minor|The device has a problem that may be fixed.
+|![Warning](/guides/Icons/Docu_Icon_AlarmsWarning.png)|Warning|There is a warning.
 
 The Alarm page is split into four sections corresponding to these alarm types.
 
@@ -584,7 +623,7 @@ In each row the following information for an alarm is provided:
 |Count|The number of times this alarm was sent by the device. Only one alarm of a particular type can be active for a certain device. If another alarm of the same type is sent by the device the number is increased by 1.
 |Description|An arbitrary text describing the alarm.
 |Status|The status of the alarm. An alarm can be: <br/> **Active**: When it was raised and nobody is so far working on the alarm. <br/>**Acknowledged**: When someone changed the status to **Acknowledged** to indicate that someone is working on the alarm.<br/>**Resolved**: When either someone manually set the status to Resolved or when the device detected by itself that the problem has gone.
-|Last occurence|Timestamp of the last occurence of the alarm (device time).
+|Last occurrence|Timestamp of the last occurrence of the alarm (device time).
 |Device|The name of the device. Clicking the name leads you to the detailed view of the device.
 
 Click the arrow on the right of a row to expand it and display further details on the alarm.
@@ -602,25 +641,29 @@ To change the status of an alarm open the dropdown menu on the right and select 
 * **Additional information**: An alarm can contain arbitrary additional information provided by the device.
 * **Audit log**: Along with the alarm, a log of changes to the alarm is stored. This creates an alarm history with various data. -->
 
-### <a name="operation-monitoring"></a>Working with Operations
+### <a name="operation-monitoring"></a>Working with operations
 
 Operations are used to remote control devices. 
 
 Cumulocity displays operations at the level of individual devices and across all devices:
 
 * Click the Control tab in the details of a particular device to see the operations of this specific device.
-* Click Device Control in the Overview menu in the navigator to see the operations for all devices. 
+* Click Device control in the Overview menu in the navigator to see the operations for all devices. 
 
 ![Device Control](/guides/users-guide/DeviceManagement/DevMgmt_DeviceControl.png)
 
 Operations can be in any of four states indicated by meaningful icons:
 
-* **Pending**: The operation has just been created and is waiting for the device to pick it up.
-* **Executing**: The operation has been picked up by the device and is being executed.
-* **Successful**: The operation has been successfully executed by the device.
-* **Failed**: The operation could not be executed by the device.
+|Icon|State|Description|
+|:---|:---|:--|
+|![Pending](/guides/users-guide/Icons/Docu_Icon_OperationPending.png)|Pending|The operation has just been created and is waiting for the device to pick it up.
+|![Executing](/guides/users-guide/Icons/Docu_Icon_OperationExecuting.png)|Executing|The operation has been picked up by the device and is being executed.
+|![Successful](/guides/users-guide/Icons/Docu_Icon_OperationSuccessful.png)|Successful|The operation has been successfully executed by the device.
+|![Failed](/guides/users-guide/Icons/Docu_Icon_OperationFailed.png)|Failed|The operation could not be executed by the device.
 
 By clicking one of the buttons at the top the corresponding operations will be hidden. Click it again to show the operations again.
+
+Operations are listed in descending time order. Operations are executed strictly according to this order.
 
 For each operation the following information is provided:
 
@@ -643,11 +686,11 @@ For easier handling of devices, Cumulocity offers bulk operations. With bulk ope
 
 To execute bulk operations for a group follow these steps:
 
-- Select a device and open the Control tab.
-- Create an operation.
-- Hover over the operation you want to execute.
-- Click the Cogwheel.
-- Click **Execute for entire group**.
+1. Select a device and open the Control tab.
+2. Create an operation.
+3. Hover over the operation you want to execute.
+4. Click the Cogwheel.
+5. Click **Execute for entire group**.
 
 ![Execute bulk operations](/guides/users-guide/executebulkoperations.png)
 
@@ -657,11 +700,11 @@ In order to view the status and progress of your operations simply select the de
 
 ![Bulk operations tab](/guides/users-guide/bulkoperations.png)
 
-To edit a bulk operation hover over it and click the Edit button. In the upcoming dialog you may change the "Start Date" and "Delay" values. To change operation details click **Show operation details**. Click **Reschedule** to apply your changes. 
+To edit a bulk operation hover over it and click the Edit button. In the upcoming window you may change the "Start Date" and "Delay" values. To change operation details click **Show operation details**. Click **Reschedule** to apply your changes. 
 
 To delete operations click The Delete button.
 
-### <a name="events-all"></a>Troubleshooting Devices
+### <a name="events-all"></a>Troubleshooting devices
 
 Troubleshooting devices at a more detailed level can be done with the help of events. Events are low-level messages sent by devices that are usually used for application-specific processing. For example, a vending device sends its real-time sales in the form of events. 
 
@@ -670,7 +713,7 @@ Cumulocity displays events at the level of individual devices and across all dev
 * Click the Events tab in the details of a particular device to see the events of this specific device.
 * Click Events in the Overview menu in the navigator to see the operations for all devices. 
 
-![Events](/guides/users-guide/DeviceManagement/DevMgmt-Events.png)
+![Events](/guides/users-guide/DeviceManagement/DevMgmt_Events.png)
 
 For each event the following information is provided:
 
@@ -682,30 +725,28 @@ Info|Description|
 
 Clicking a row expands it and displays further details on the event (as type and position of the device).
 
-![Event Details](/guides/users-guide/DeviceManagement/DevMgmt-EventDetails.png)
-
 Since devices may send large amounts of event data, you can filter the data to be displayed by date. 
 
 Select a start date and an end date from the fields at the top and click the Filter button to apply the filter. Click the Clear button to clear the remove the filter again.
 
-![Filtering Events](/guides/users-guide/DeviceManagement/DevMgmt-EventsFiltering.png)
+![Filtering Events](/guides/users-guide/DeviceManagement/DevMgmt_EventsFiltering.png)
 
 Click **Realtime** at the top-right to see events coming in from the devices in real-time.
 
-## <a name="software-repo"></a> Managing Device Details
+## <a name="managing-device-data"></a> Managing Device Data
 
 
 ### <a name="software-repo"></a> Managing device firmware and software
 
-In the Firmware and in the Software Repository Cumulocity offers to collect reference firmware and software for devices respectively.
+In the Firmware and in the Software repository Cumulocity offers to collect reference firmware and software for devices respectively.
 
 The description below examplarily refers to firmware but also applies to device software.
 
-Open the Firmware from the Management menu in the navigator.
+Open the Firmware repository from the Management menu in the navigator.
 
 A list of available firmware objects will be displayed.
 
-![Firmware List](/guides/users-guide/DeviceManagement/DevMgmt-FirmwareList.png)
+![Firmware List](/guides/users-guide/DeviceManagement/DevMgmt_FirmwareRepository.png)
 
 Click **Details** on a specifc object to "turn it around" and display details.
 
@@ -719,7 +760,7 @@ To add a firmware object follow these steps:
 
 1. Upload the firmware file in the [Administration application](/guides/users-guide/administration#files). This step is not necessarily required since some manufacturers offer the firmware online.
 2. On the Firmware page click **Add firmware** at the top-right. 
-3. In the upcoming dialog enter a name for the firmware and its version.
+3. In the upcoming window enter a name for the firmware and its version.
 4. Specify the file for the firmware by choosing or uploading it or enter the URL from which the device can download the firmware. 
 5. Click **Save** to save your settings.
 
@@ -727,13 +768,13 @@ Similarily you can add a new software object to the Software Repository.
 
 **How to install firmware on a device**
 
-Open the device list by clicking All Devices in the navigator and select a device from the device list.
+Open the device list by clicking All devices in the navigator and select a device from the device list.
 
 Then go to "Software" on Device Details and click on "Install firmware". 
 
 For further information on these steps refer to the description of the [Software](/guides/users-guide/device-management#software) tab.
 
-**Info:** To store other types of binaries in Cumulocity switch to the [Administration application](/guides/users-guide/administration#files).
+**Note:** To store other types of binaries in Cumulocity switch to the [Administration application](/guides/users-guide/administration#files).
 
 **How to install firmware on multiple devices**
 
@@ -745,14 +786,14 @@ Cumulocity offers the option to execute firmware or software updates for multipl
 
 The operation status can be viewed in the Bulk Operation tab of the selected group. For further information on bulk operations refer to [Bulk Operations](#bulk-operations).
 
-## <a name="credentials"></a>Managing Device Credentials
+### <a name="credentials"></a>Managing device credentials
 
-The "Device credentials" menu lists all credentials that have been generated for your connected devices. Each device that has been [registered](#device-registration) shows up here with the naming convention "device_&lt;id&gt;".
+The Device credentials tab lists all credentials that have been generated for your connected devices. Each device that has been [registered](#device-registration) shows up here with the naming convention "device_&lt;id&gt;".
 
 In most cases, you should not need to edit anything. Exceptions are:
 
-* You have carried out a factory reset on a device. In this case, the device will often loose its assigned credentials. Find the credentials and click the "x" button to delete the credentials in Cumulocity as well. Then continue with the normal [registration process](#device-registration) to re-register the device.
-* If you would like to temporarily disconnect a device use the "Deactivate" button next to the device credentials.
+* You have carried out a factory reset on a device. In this case, the device will often loose its assigned credentials. Find the credentials and click the Delete button to delete the credentials in Cumulocity as well. Then continue with the normal [registration process](#device-registration) to re-register the device.
+* If you would like to temporarily disconnect a device use the Deactivate button next to the device credentials.
 * If you would like to assign more permissions to an individual device click the device credentials and select additional or different user groups for the device.
 
 ![Bulk provisioning](/guides/users-guide/autoregister.png)
@@ -778,7 +819,7 @@ Click a configuration in the list to open it. You may modify the settings here a
 To add a new configuration from a file follow these steps:
 
 1. Click **Add configuration snapshot** at the top-right of the Configuration Repository. 
-2. In the upcomimg dialog box enter a unique name and optional description for the configuration.
+2. In the upcomimg window enter a unique name and optional description for the configuration.
 3. In the Device Type field enter a device type.The device type can be found in the Info tab of the target device.
 4. Select the configuration snapshot file by uploading or choosing a file or providing an external URL. 
 5. Cick **Add configuration snapshot** to save your settings.
@@ -795,7 +836,7 @@ Apart from adding configurations from a file you can also add configurations by 
 In order to retrieve a current configuration snapshot from a device follow these steps:
 
 1. Navigate to the device and open the Configuration tab. 
-2. In the Configuration Snapshot section click **Get new snapshot from device** at the top-right. 
+2. Under Configuration Snapshot, click **Get new snapshot from device** at the top-right. 
 
 The retrieved snapshot can be found in the Configuration Repository in the Management menu of the navigator.
 
@@ -806,7 +847,7 @@ The retrieved snapshot can be found in the Configuration Repository in the Manag
 In order to apply a configuration snapshot to a device follow these steps:
 
 1. Navigate to the device and open the Configuration tab. 
-2. In the Configuration Snapshot section select a configuration from the dropdown field.
+2. Under Configuration Snapshot, select a configuration from the dropdown field.
 3. Click **Put new snapshot to device** to apply the selected snapshot to the device.
 
 ![Apply new snapshot to a device](/guides/users-guide/addsnap.png)
@@ -816,14 +857,16 @@ In order to apply a configuration snapshot to a device follow these steps:
 In order to apply a configuration snapshot from one device to another follow these steps:
 
 1. Navigate to the device which has your desired configuration and open the Configuration tab.
-2. In the Configuration Snapshot section click **Get new snapshot from device** at the top-right.
+2. Under Configuration Snapshot, click **Get new snapshot from device** at the top-right.
 3. Navigate to the other device and open its the Configuration tab.
-4. In the Configuration Snapshot section select the new configuration from the dropdown field and click **Put new snapshot to device**.
+4. Under Configuration Snapshot, select the new configuration from the dropdown field and click **Put new snapshot to device**.
  
 **Note**: When you apply snapshot configuration from one device to another, the configuration may contain data which is device-specific.
 
 
 ## <a name="simulator"></a>Simulators
+
+<!-- Needs to be reviewed -->
 
 With the Cumulocity simulator, all aspects of IoT devices can be simulated:
 
@@ -845,16 +888,16 @@ An instruction can either send a message (measurements, alarms, events and inven
 A message is defined by choosing a message template (like sending a temperature) and providing the values for this template (23.0 degrees). Many predefined message templates are provided, i.e. for creating a measurement, sending an event, creating and cancelling an alarm. These templates are based on MQTT static templates. Additionally, custom message templates can be defined using the SmartREST template editor. 
 
 ### The Simulator page
-In the Navigator, click Simulator in the Devices menu to open the Simulator page.
+In the Navigator click Simulator in the Devices menu to open the Simulator page.
 
-All simulators that you have access to will be listed here. Click the Cogwheel at the top-right to open a dropdown menu. From here you can edit, clone or remove a simulator.
+All simulators that you have access to will be listed here. Click the Cogwheel button at the top-right to open a dropdown menu From where you can edit, clone or remove a simulator.
 
 ### How to create a simulator
 
 To set up a new simulator follow these steps:
 
 1. Click **New Simulator** at the top-right. 
-2. In the upcoming dialog select a simulator type from the dropdown list in the Presets field. Select "Empty simulator" to create a simulator from scratch.
+2. In the upcoming window select a simulator type from the dropdown list in the Presets field. Select "Empty simulator" to create a simulator from scratch.
 3. Enter a meaningful name for the simulator. 
 4. Select the number of instances for this simulator (up to ten).
 3. Click **Continue** to proceed to the next dialog.
@@ -863,17 +906,16 @@ To set up a new simulator follow these steps:
 
 ### How to add instructions to the simulator
 
-After setting up a simulator you can add instructions which define what your simulator should do. Instructions are single work steps added to a playlist. The simulator will work through this list. 
+After setting up a simulator you can add instructions which define what your simulator should do. Instructions are single tasks added to a playlist through which the simulator will work. 
 
 ![Add Instructions](/guides/users-guide/addinstructions.png)
 
-The following overview will appear:
+Within the presets sample instructions are already added. For example, the Temperature Measurement preset already has instructions in it for the steps "Create measurement" and "Sleep". 
 
 ![Add Instructions Step 2](/guides/users-guide/addinstructions2.png)
 
-Within this preset there are sample instructions already added. You can identify 2 steps: "Create measurement" and "Sleep". 
 
-### Instruction Details
+### Instruction details
 
 **Fragments:**
 
@@ -904,111 +946,130 @@ The last tab in the simulator menu are alarms.
 
 These are not the alarms related to the simulated device, these are alarms connected to the simulator itself. If a simulator does not work correctly, you will see alarms or a warning here.
 
-## <a name="smartrest"></a> SmartRest Templates
+## <a name="smartrest"></a> SmartREST Templates
 
-### Overview
+### Introduction
 
-Using the SmartRest editor, developers can easily create new SmartRest templates and update  existing ones. This applies to SmartRest 2.0 templates for MQTT as well. The SmartRest templates are a collection of request and response templates used to convert CSV data and Cumulocity Rest API calls. For example, you can use SmartRest templates to easily add devices to the platform instead of manually writing the requests each time.
-To ease the device integration, Cumulocity already supports static templates that can be used without the need for creating your own templates. These templates focus only on the most used messages for device management. For more info about the static templates, see [here](/guides/mqtt/static-templates/).
+SmartREST templates are a collection of request and response templates used to convert CSV data and Cumulocity Rest API calls. For example, you can use SmartREST templates to easily add devices to the platform instead of manually writing the requests each time.
 
-The SmartRest templates are located in the “Device types” section in the navigator. In the templates list, you can see the template ID, name and the number of messages and responses contained in the template.
+To ease the device integration, Cumulocity supports static templates that can be used without the need for creating your own templates. These templates focus only on the most commonly used messages for device management. For further information on static templates refer to the [*MQTT Developer´s Guide*](/guides/mqtt/static-templates/).
+
+Open the SmartREST template list from the Device Types menu in the navigator. 
 
 ![template view](/guides/users-guide/templateview.png)
+
+For each template, the following information is provided:
+
+* Template name, e.g. Camel
+* Template ID, e.g. 99
+* Number of send messages
+* Number of responses
 
 There are two ways to add a SmartRest template:
 
 - Import an already existing template.
 - Create a new template.
 
-### Importing an existing SmartRest template
+###How to import an existing SmartREST template
 
-In order to import an already existing template first click on the “Import” button located on the top right. 
+1. Click **Import** at the top right.
+2. In the upcoming window choose a file to upload by browsing for it.
+3. Enter a template name and a unique template ID (both mandatory fields). 
+4. Click **Import** to import the template.
 
-![Import template](/guides/users-guide/importtemplate.png)
+![Import template](/guides/users-guide/DeviceManagement/DevMgmt_TemplateImport.png)
 
-Choose the file to upload and enter the template name and unique ID.
+### How to create a new SmartREST template
 
-### Adding a new SmartRest template
+1. Click **New** at the top right.
+2. In the upcoming window enter a template name and a unique template ID (both mandatory fields). 
+4. Click **Continue** to proceed adding messages or responses.
 
-To add a new template first click on the “New” button.
+![Create template](/guides/users-guide/DeviceManagement/DevMgmt_TemplateCreate.png)
 
-![Add template](/guides/users-guide/addtemplate.png)
-
-Enter the template name and unique template ID. Both fields are mandatory and should be filled. When ready, press “Continue”. 
-
-### Adding a message
+### How to add a message
 
 The message template contains all necessary information to convert the SmartRest request into a corresponding Rest API call which is then sent to the platform.
 
-To add a new message, first navigate to the “Messages” tab in your desired SmartRest template, then click on the “Add message” field and fill the following fields:
+To add a new message navigate to the Messages tab in your desired SmartREST template and click **Add message**. Complete the following fields:
 
-- Message ID: Unique integer that will be used as a message identifier. It must be unique among all message and response templates.
-- Name: This field is mandatory.
-- Target Rest API: Choose one of the Rest API options that will be targeted in this message. (Measurement, Alarm, Inventory,  Event or Operation)
-- Method: Select the request method. 
-- Select the “Includes response” checkbox if you wish to process the result of the request with response templates.
-- Rest API built-in fields: These fields are optional and are different depending on the target Rest API option selected. In case no value is provided, a device will be able to set it when sending an actual message.
-- Rest API custom fields: Additional fields can also be added, enter the API “Key” and choose your desired data type.
-- Preview: Here you can see the preview of your request.
-- Click “Save” when ready.
+|Field|Description|
+|:---|:---|
+|Message ID|Unique integer that will be used as a message identifier. It must be unique among all message and response templates.
+|Name|Name for the message. Mandatory.
+|Target REST API|REST API for the target. Dropdown list. May be one of Measurement, Inventory, Alarm, Event, Operation.
+|Method|Request method. May be one of POST, PUT, GET, depending on the selected Target REST API.
+|Include Responses|Click this chekbox if you want to process the results of the reqeust with repsonse templates.
+|REST API built-in fields|These fields are optional and vary depending on the target REST API selected. In case no value is provided, a device will be able to set it when sending an actual message.
+|REST API custom fields|Additional fields can be added by clicking **Add field**. Enter the API key and select the desired data type.
 
-![message](/guides/users-guide/message.png)
+![Message](/guides/users-guide/DeviceManagement/DevMgmt_TemplateMessage.png)
 
-> To remove a message, simply click on the message and then click on “Remove”.
+In the Preview you can see the preview of your request message.
 
-### Adding a response
+Click **Save** to save your settings.
 
-A response template contains the necessary information to extract data values from a platform Rest API call response which is then sent back to the client in a CSV data format.
+To delete a message, open it and click **Remove** at the bottom.
 
-To add a new response, first navigate to the response tab in your desired SmartRest template, then click on “Add response” and fill the following fields:
+### How to add a response
 
-- Response ID: Enter a unique ID which will be used as a response identifier.
-- Name: Enter the name of the response.
-- Base Pattern: Enter the base pattern of the response.
-- Condition: Enter the condition value of the response.
-- Pattern: At least one pattern is required. Enter a pattern value.
-- When ready, click on “Save”.
+A response template contains the necessary information to extract data values from a platform REST API call response which is then sent back to the client in a CSV data format.
 
-![response](/guides/users-guide/response.png)
+To add a new response navigate to the Response tab in your desired SmartREST template and click on **Add response**. Complete the following fields:
 
-> To remove a response, simply click on the message and then click on “Remove”.
+![Response](/guides/users-guide/DeviceManagement/DevMgmt_TemplateResponse.png)
 
-### Exporting templates
+|Field|Description|
+|:---|:---|
+|Response ID|Unique integer that will be used as a response identifier. 
+|Name|Name for the response. Mandatory.
+|Base Pattern|Base pattern for the response.
+|Condition|Condition value of the response.
+|Pattern|At least one pattern is required. Click **Add pattern** and enter a pattern value.
 
-In order to export a template,  click on the additional options menu of the desired template and then click on “Export”.
+Click **Save** to save your settings.
 
-![export](/guides/users-guide/export1.png)
+To delete a response, open it and click **Remove** at the bottom.
 
-### Exporting CSV file
+###How to edit a SmartREST template
 
-Navigate to the “CSV preview” tab in the desired template. In this tab you can see additional information about the “Messages” and “Responses”. Click on the “Export” CSV button. Then, a small window will pop-up.  Select your prefered options for the CSV and click on “Download”.
+To edit a SmartREST template either click the desired template or click the three-dots icon and and in the menu click  **Edit**.
 
-![Export CSV](/guides/users-guide/exportcsv.png)
+###How to delete a SmartREST template
 
-### Editing or removing templates
+To delete a SmartREST template click the three-dots icon and and in the menu click  **Remove**.
 
-To edit a template, either click on the desired template or click on the extra menu and then “Edit”. 
+### How to export a SmartREST template
 
-To delete a template click on the additional menu of the template and then click on “Remove”.
+To export a SmartREST template click the three-dots icon and and in the menu click  **Export**. The template will automatically be downloaded.
 
-![Remove template](/guides/users-guide/removingtemplates.png)
+### How to export a SmartREST template as CSV file
+
+To export a SmartREST template as CSV file follow these steps:
+
+Open the template of your choice and select the CSV Preview tab. 
+In the CSV Preview tab, which provides additional information on messages and repsonses, click **Export CSV**. 
+In the upcoming window specify the preferred options for the field seperator, decimal separator and character set.
+Click **Download** to download the template as CSV file.
+
+![Export CSV](/guides/users-guide/DeviceManagement/DevMgmt_TemplateExportCSV.png)
 
 ## <a name="cloud_remote_access"></a>Cloud Remote Access
 
-### Overview
+### Introduction
 
-Cumulocity Cloud Remote Access implements Virtual Network Computing (VNC) to remotely access operating panels and other devices with a graphic user interface. The operators of the devices can thus work with the devices via a web browser, as if they were in front of them.
+Cumulocity Cloud Remote Access implements Virtual Network Computing (VNC) to remotely access operating panels and other devices via a web browser.
 
 ![VNC](/guides/users-guide/VNC1a.png)
 
-Cloud Remote Access works as in the illustration below. Starting from the remote-controlled device: The device runs a VNC server and is connected to a gateway compatible with Cloud Remote Access. This gateway must be registered as a device within the "Device Management" application in Cumulocity. More information about registering devices and instructions can be found here: [Device Registration](https://www.cumulocity.com/guides/users-guide/device-management/#device-registration)
+Cloud Remote Access works as in the illustration below. Starting from the remote-controlled device: The device runs a VNC server and is connected to a gateway compatible with Cloud Remote Access. This gateway must be registered as a device within the Device Management application in Cumulocity. More information about registering devices and instructions can be found here: [Device Registration](https://www.cumulocity.com/guides/users-guide/device-management/#device-registration).
 
 ![VNC2](/guides/users-guide/VNC2.png)
 
-With Cloud Remote Access a user can
+With Cloud Remote Access users can
 
-- View status visualizations and track updates of remote devices immediately as if the user is at the device location
-- Connect to remote devices easily, because complex VPN setups are not required. 
+* view status visualizations and track updates of remote devices immediately as if the user were at the device location
+* connect to remote devices easily as complex VPN setups are not required. 
 
 ![VNC1b](/guides/users-guide/VNC1b.png)
 
@@ -1019,9 +1080,12 @@ The connection to remote devices is securely encrypted through TLS technology. A
 Cloud Remote Access is available in the Device Management application. 
 
 **Prerequisites:**
-- A Cloud Remote Access compatible gateway connected to your Cumulocity account. 
-- A device with a VNC server that is connected to the gateway and reachable from the gateway.
-- Cloud Remote Access included into your subscription plan. If you do not see the "Remote access" tab below, please contact sales@cumulocity.com
+
+* A Cloud Remote Access compatible gateway connected to your Cumulocity account. 
+* A device with a VNC server that is connected to the gateway and reachable from the gateway.
+* Cloud Remote Access included into your subscription plan. 
+
+>If you do not see the "Remote access" tab below contact sales@cumulocity.com.
 
 In Cumulocity you can locate gateway devices with “All devices” inside the Device Management application. 
 
@@ -1052,17 +1116,19 @@ The small cogwheel at the end of the row opens a dialog to edit or remove endpoi
 
 ![Edit endpoints](/guides/users-guide/editendpoint.png)
 
-### Troubleshooting:
+### Troubleshooting
 
-Please check if you have sufficient permissions, if you want to set up new endpoints.
-To do so you need to have “Change” rights for Remote Access and Device Control.
-Without Device Control “Change”, you can not register any device and without Remote Access “Change” you can not add an endpoint for remote access.
+If you cannot set up new endpoints check if you have sufficient permissions.
+
+To set up new endpoints you need “Change” rights for Device Control to be able to register a device and “Change” rights for Remote Access to be able to add an endpoint.
+
 To establish a connection to a remote operating panel a “Read” permission for Remote Access is sufficient.
 
-The VNC connection via a Gateway to a remote VNC server can also fail because of network problems. In this case you need to contact your network administrator.
+The VNC connection via a gateway to a remote VNC server can fail because of network problems. In this case you need to contact your network administrator.
 
-Tested on the following VNC Servers:
-- Real VNC Connect 6.0.2	
-- TightVNC 1.3.9
-- TigerVNC 1.7.0
-- EfonVNC 4.2
+Tested on the following VNC servers:
+
+* Real VNC Connect 6.0.2	
+* TightVNC 1.3.9
+* TigerVNC 1.7.0
+* EfonVNC 4.2

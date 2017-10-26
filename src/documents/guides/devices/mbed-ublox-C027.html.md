@@ -58,15 +58,6 @@ To run the Cumulocity mbed agent, the following items are required:
 |2.0      | 6.Mar 2015  | [download](/guides/devices/mbed/firmware-2.0c8y.bin)  |
 |2.2      | 10.Aug 2015 | [download](/guides/devices/mbed/firmware-2.2c8y.bin)  |
 
-Version for Deutsche Telekom Device Cloud (m2m-devicecloud.com):
-
-|Version|Release Date|Download|
-|---|:-:|:-:|
-|2.0 DT | 6.Mar 2015  | [download](/guides/devices/mbed/firmware-2.0.bin)  |
-|2.2 DT | 10.Aug 2015 | [download](/guides/devices/mbed/firmware-2.2.bin)  |
-
-These downloads are the same as the above ones, except that device registration (bootstrap) is performed against m2m-devicecloud.com.
-
 ## Connect the C027
 
 * The C027 will now dial up to the Internet. You will see status updated in the LCD display. If the device cannot connect to the Internet, it will display an error message. In case of an error message "Wrong APN setting" or "Unknown APN setting, follow the instructions below in Section "Troubleshooting".

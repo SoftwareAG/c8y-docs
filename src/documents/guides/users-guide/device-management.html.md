@@ -48,9 +48,9 @@ For connecting larger amounts of devices, you can upload a CSV file with the IDs
 
 The CSV file needs to have a header row followed by the actual data. The header row needs to contain at least one column marked "ID" and one column marked "Credentials". Here is an example of a valid CSV format:
 
-	ID;Credentials;Tenant;Group;ICCID;NAME
-	006064ce800a;LF2PWJoLG1Fz;management;Sample_Düsseldorf;+491555555;Sample_Device1
-	006064ce8077;OowoGKAbiNJs;management;Sample_Düsseldorf;+491555555;Sample_Device2
+	ID;Credentials;Tenant;PATH;ICCID;NAME;TYPE
+	006064ce800a;LF2PWJoLG1Fz;management;Sample_Düsseldorf;+491555555;Sample_Device1;c8y_Device
+	006064ce8077;OowoGKAbiNJs;management;Sample_Düsseldorf;+491555555;Sample_Device2;c8y_Device
 
 Use the "Upload" button to upload the CSV file, as shown in the screenshot below. After the data is imported, you will get feedback on the number of devices that were pre-registered as well as on any potential errors that may have occurred.
 
@@ -447,7 +447,7 @@ The alarm display is split into four sections, separately listing alarms of diff
  * **Active**: When it was raised and nobody is so far working on the alarm.
  * **Acknowledged**: When someone clicked the "acknowledged" button to indicate that someone is working on the alarm.
  * **Cleared**: When either someone clicked the "clear" button to manually clear an alarm, or when the device detected by itself that the problem was removed.
-* **Count**: The number of times that this alarm was sent by the device. Cumulocity duplicates alarms so that only one alarm of a particular type can be active for a particular device. If another alarm of the same type is sent by the device, the count is increased.
+* **Count**: The number of times that this alarm was sent by the device. Cumulocity deduplicates alarms so that only one alarm of a particular type can be active/acknowledged for a particular device. If another alarm of the same type is sent by the device, the count is increased.
 * **Description**: A text description of the alarm.
 * **Device**: The name of the device. Clicking the name leads you to the detail view of the device.
 * **Date created**: The timestamp when the alarm was created first.

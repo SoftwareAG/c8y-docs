@@ -156,9 +156,9 @@ Most columns represent text fields. You can filter these columns by simply enter
 
 Apart from filtering for text there are several other options:
 
-* In case of date fields (i.e. Registration Date) you specify a date range to filter for. 
-* In the "Status" column you can filter for various criteria representing the send, push or maintenance status of the device.
-* In the "Alarm" column the filtering options you may select correspond to the alarm types (critical, major, minor, warning, no alarms).
+* In case of date fields (i.e. "Registration date") you specify a date range to filter for. 
+* In the Status column you can filter for various criteria representing the send, push or maintenance status of the device.
+* In the Alarm column the filtering options you may select correspond to the alarm types (critical, major, minor, warning, no alarms).
 
 In the "Filter options" window, click **Ascending** or **Descending** if you want the devices to be sorted in a specific order. Finally click **Apply** to carry out the filtering. 
 
@@ -181,7 +181,7 @@ To create a new group follow these steps:
 
 1. Click the Add button at the top-right, then select **Add new group** from the menu.
 2. In the window that comes up enter a unique group name to identify your group.
-3. In the Device Search field enter the search criteria for the devices you might want to add to your group (e.g. "ublox"). A list of devices that match your search criteria will be displayed. 
+3. In the "Device Search" field enter the search criteria for the devices you might want to add to your group (e.g. "ublox"). A list of devices that match your search criteria will be displayed. 
 4. Checkmark the devices you want to add from the list.
 5. Click **Create group with X device(s)** to finally create your new group. 
 
@@ -199,7 +199,7 @@ From the device perspective:
 2. In the Info tab, scroll down to the "Groups assignment" section. In the drop-down field select the group you want to assign the device to. 
 3. Click **Add to group**.
 
-<img src="/guides/users-guide/DeviceManagement/DevMgmt_GroupsAssigment.png" alt="Add to group" style="max-width: 50%">
+<img src="/guides/users-guide/DeviceManagement/DevMgmt_GroupAssigment.png" alt="Add to group" style="max-width: 50%">
 
 From the group perspective:
 

@@ -153,29 +153,6 @@ Multiple archive ZIP file versions can be stored in Cumulocity when they were cr
 
 Once uploaded, archives can be downloaded, activated or removed if necessary. The active archive (indicated by a cloud icon) is the version of the application that is currently being served to the users of your account. This version cannot be deleted.
 
-### Working with bitbucked hosted application (Deprecated)
-
-Assume that you are developing a web application, using Bitbucket as code repository. In this case, exposing the application through Cumulocity can be done as follows:
-
-* Click on "Add application".
-* Click on "HTTP(S) proxy".
-* Enter the name of the application, as shown in the application switcher.
-* Enter an application key. The application key is used to identify requests from this application and to
-make it available for subscription.
-* Enter the application path. This path will b	e part of the URL to invoke the application. For example, if
-you use "hello" as application path, the URL of the application will be "/apps/hello".
-* Enter the server URL where your application is hosted. At this URL, there needs to be an index.html file
-that provides the entry point to your application.
-* Enter a username to access your repository (optional).
-* Enter a password to access your repository (optional).
-* Click "Save".
-
-![https proxy app](/guides/users-guide/httpsproxy.png)
-
-> Note that, username and password are transmitted using HTTP Basic Authentication.
-
-> We do not recommend to use bitbucket hosted application anymore, because downtime of bitbucket results into downtime of the application.
-
 ### <a name="creating-smartapp"></a>Adding a smartapp (Deprecated)
 
 > Note that this functionality is depreciated and will be removed in future versions of the product.
@@ -314,7 +291,7 @@ It's possible to export current view of statistics table to CSV file by clicking
 
 ## <a name="tenant-policies"></a> Configuring the tenant policies
 
-A tenant policy is a set of settings that control tenant options and tenant retention rules. Afterwards these options and rules can be used during tenant creation. When creating multiple tenants with the same options or retention rules, you can save work by creating a tenant policy and using it for each tenant. 
+A tenant policy is a set of settings that control tenant options and tenant retention rules. Afterwards these options and rules can be used during tenant creation. When creating multiple tenants with the same options or retention rules, you can save work by creating a tenant policy and using it for each tenant.
 
 ![Tenant policy](/guides/users-guide/tenantpolicy.png)
 
@@ -340,7 +317,7 @@ If you wish to delete a policy, go to the external menu of the policy and click 
 
 ![Edit policy menu](/guides/users-guide/editpolicy.png)
 
-To remove a retention rule from a policy, simply go to the edit screen of the desired policy, hover over the retention rule and click on the "Remove" sign. 
+To remove a retention rule from a policy, simply go to the edit screen of the desired policy, hover over the retention rule and click on the "Remove" sign.
 
 ![Remove retention rule](/guides/users-guide/removeretrule.png)
 
@@ -348,7 +325,7 @@ To remove a retention rule from a policy, simply go to the edit screen of the de
 
 To add a new tenant policy, click on "Add tenant policy". Then enter the policy description and add retention rules. For more info about retention rules, please see [here](http://cumulocity.com/guides/users-guide/administration/#retention).
 
- 
+
 
 ## <a name="tfa"></a>Using two-factor authentication
 

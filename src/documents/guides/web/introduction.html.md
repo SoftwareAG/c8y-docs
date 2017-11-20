@@ -563,7 +563,7 @@ If you are not deploying to a management tenant, you need to include the followi
 	}
 ```
 
-To deploy a target file, you have to add the option ```-t pathToTargetFile/target.json``` when deploying your application. Assuming that we have the following folder structure:
+To deploy a target file, you have execute ```c8y deploy:target [targetFile]``` when deploying your application. Assuming that we have the following folder structure:
 
 ```console
 <<root folder>>
@@ -575,8 +575,8 @@ To deploy a target file, you have to add the option ```-t pathToTargetFile/targe
 └── package.json
 ```
 
-we would have to execute the following command:
+We would have to execute the following command:
 
 ```bash
-c8y deploy:app myapplication -t targets/target.json
+c8y deploy:target targets/target.json
 ```

@@ -130,7 +130,7 @@ Our example shows a search für "Ublox C027". You can search for any kind of tex
 
 The device list offers a filtering functionality to filter devices in the list for specific criteria. 
 
-Filtering is available on every column. Just click the Filtering icon next to the name of the column you want to set a filter for. 
+Filtering is available on every column. Just click the Filter icon next to the name of the column you want to set a filter for. 
 
 <img src="/guides/users-guide/DeviceManagement/DevMgmt_Filtering.png" alt="Filtering" style="max-width: 100%">
 
@@ -141,7 +141,6 @@ A window will come up in which you can specify your filter options.
 Most columns represent text fields. You can filter these columns by simply entering an arbitrary text into the textbox as in the Search field. Click **+ Or** to add another textbox if you want to filter for more than one term. 
 
 Apart from filtering for text there are several other options:
-
 * In case of date fields (i.e. "Registration date") you specify a date range to filter for. 
 * In the "Status" column you can filter for various criteria representing the send, push or maintenance status of the device.
 * In the "Alarm" column the filtering options you may select correspond to the alarm types (critical, major, minor, warning, no alarms).
@@ -165,7 +164,7 @@ Top-level groups are shown in the "Group" menu in the navigator at top-level. Su
 
 To create a new group follow these steps:
 
-1. Click the **Add** button at right of the top bar, then select **Add new group** from the menu.
+1. Click the **Plus** button at the right of the top bar, then select **Add new group** from the menu.
 2. In the window that comes up enter a unique group name to identify your group.
 3. In the "Device Search" field enter the search criteria for the devices you might want to add to your group (e.g. "ublox"). A list of devices that match your search criteria will be displayed. 
 4. Checkmark the devices you want to add from the list.
@@ -185,7 +184,7 @@ From the device perspective:
 2. In the "Info" tab, scroll down to the "Groups assignment" card. In the drop-down field select the group you want to assign the device to. 
 3. Click **Add to group**.
 
-<img src="/guides/users-guide/DeviceManagement/DevMgmt_GroupAssigment.png" alt="Add to group" style="max-width: 50%">
+<img src="/guides/users-guide/DeviceManagement/DevMgmt_GroupAssignment.png" alt="Add to group" style="max-width: 50%">
 
 From the group perspective:
 
@@ -229,7 +228,7 @@ The new group will appear as a top-level group in the "Groups" menu of the navig
 
 In the "Sub-asset" tab you can adjust your selection and modify the filter settings.
 
-To delete a smart group click the Cogwheel button at the top right and click **Remove group** in the menu. 
+To delete a smart group click the **Cogwheel** button at the top right and click **Remove group** in the menu. 
 
 <img src="/guides/users-guide/smartgroupdelete1.png" alt="Adding top-level groups" style="max-width: 100%">
 
@@ -259,7 +258,7 @@ The following tabs are the most common ones, each described in detail in a separ
 |[Child Devices](#child-devices)|Lists devices being connected to the current device.
 |[Measurements](#measurements)|Provides a default visualization of numeric data provided by the device in the form of charts.
 |[Alarms](#alarms)|Provides information on the alarms for a device. See also [Working with alarms](#alarm-monitoring). Available for each device.
-|[Configuration](#configuration)|Allows manual configuration of device parameters and settings entered in a text format. See also [Configuration Snapshot Repository](#configuration-snapshot) for binary configuration.
+|[Configuration](#configuration)|Allows manual configuration of device parameters and settings entered in a text format. See also [Configuration Repository](#configuration-snapshot) for binary configuration.
 |[Control](#control)|Displays operations being sent to a device. Also refer to [Working with operations](#operation-monitoring). Available for each device.
 |[Network](#network)|Displays network information for a device.
 |[Software](#software)|Manages firmware of a device and software installed on a device.
@@ -276,7 +275,7 @@ The following tabs are the most common ones, each described in detail in a separ
 
 Below the name, a list of breadcrumbs is displayed. If the device is part of an asset hierarchy (such as a group), you can use the breadcrumbs to easily navigate up that hierarchy. Since devices can be part of multiple hierarchies, several rows of breadcrumbs may be shown.
 
-Depending of the type and usage of a device further actions are provided in a dropdown menu when clicking the Cogwheel button at the top right. 
+Depending of the type and usage of a device further actions are provided in a dropdown menu when clicking the **Cogwheel** button at the top right. 
 
 <img src="/guides/users-guide/DeviceManagement/DevMgmt_CogwheelMenu.png" alt="Cogwheel menu" style="max-width: 100%">
 
@@ -601,7 +600,7 @@ Alarms are classified according to their severity. Cumulocity includes four diff
 |![Minor](/guides/Icons/Docu_Icon_AlarmsMinor.png)|Minor|The device has a problem that may be fixed.
 |![Warning](/guides/Icons/Docu_Icon_AlarmsWarning.png)|Warning|There is a warning.
 
-The Alarm tab is split into four sections corresponding to these alarm types.
+The "Alarm" tab is split into four sections corresponding to these alarm types.
 
 By clicking one of the buttons at the top the corresponding section will be hidden. Click it again to show the section again.
  
@@ -686,7 +685,7 @@ To execute bulk operations for a group follow these steps:
 
 ![Execute bulk operations](/guides/users-guide/executebulkoperations.png)
 
-> For further information on operations refer to [Working with Operations](#operation-monitoring).
+For further information on operations refer to [Working with Operations](#operation-monitoring).
 
 In order to view the status and progress of your operations simply select the desired group and click the "Bulk Operations" tab.
 
@@ -715,7 +714,7 @@ Cumulocity displays events at the level of individual devices and across all dev
 
 For each event the following information is provided:
 
-Info|Description|
+|Info|Description|
 |:---|:---|
 |Timestamp|Timestamp when the event has been executed.
 |Name|Name of the event.
@@ -728,8 +727,6 @@ Clicking a row expands it and displays further details on the event (as type and
 Since devices may send large amounts of event data, you can filter the data to be displayed by date. 
 
 Select a start date and an end date from the fields in the top menu bar and click the **Filter** button to apply the filter. Click the **Clear** button to clear the filter again.
-
-![Filtering Events](/guides/users-guide/DeviceManagement/DevMgmt_EventsFiltering.png)
 
 Click **Realtime** at the right of the top menu bar to see events coming in from the devices in real-time.
 
@@ -877,8 +874,6 @@ In order to apply a configuration snapshot from one device to another follow the
 
 ## <a name="simulator"></a>Simulators
 
-<!-- Needs to be reviewed -->
-
 With the Cumulocity simulator, all aspects of IoT devices can be simulated:
 
 * Setting up a simulated device or a network of simulated devices
@@ -903,7 +898,7 @@ In the navigator click "Simulator" in the "Devices" menu to open the "Simulator"
 
 All simulators which you can access will be listed here. Click the 3-dots icon at the top right of a simulator card to open a dropdown menu from where you can edit, clone or remove a simulator.
 
-<img src="/guides/users-guide/DeviceManagement/DevMgmt_SimulatorCard.png" alt="Simulator card" style="max-width: 100%">
+<img src="/guides/users-guide/DeviceManagement/DevMgmt_SimulatorCard.png" alt="Simulator card" style="max-width: 50%">
 
 ### How to create a simulator
 
@@ -983,14 +978,14 @@ There are two ways to add a SmartRest template:
 - Import an already existing template.
 - Create a new template.
 
-###How to import an existing SmartREST template
+### How to import an existing SmartREST template
 
 1. Click **Import** at the right of the top menu bar.
 2. In the upcoming window choose a file to upload by browsing for it.
 3. Enter a template name and a unique template ID (both mandatory fields). 
 4. Click **Import** to import the template.
 
-![Import template](/guides/users-guide/DeviceManagement/DevMgmt_TemplateImport.png)
+<img src="/guides/users-guide/DeviceManagement/DevMgmt_TemplateImport.png" alt="Import template" style="max-width: 50%">
 
 ### How to create a new SmartREST template
 
@@ -998,7 +993,7 @@ There are two ways to add a SmartRest template:
 2. In the upcoming window enter a template name and a unique template ID (both mandatory fields). 
 4. Click **Continue** to proceed adding messages or responses.
 
-![Create template](/guides/users-guide/DeviceManagement/DevMgmt_TemplateCreate.png)
+<img src="/guides/users-guide/DeviceManagement/DevMgmt_TemplateCreate.png" alt="Create template" style="max-width: 50%">
 
 ### How to add a message
 
@@ -1016,7 +1011,7 @@ To add a new message navigate to the "Messages" tab in your desired SmartREST te
 |REST API built-in fields|These fields are optional and vary depending on the target REST API selected. In case no value is provided, a device will be able to set it when sending an actual message.
 |REST API custom fields|Additional fields can be added by clicking **Add field**. Enter the API key and select the desired data type.
 
-![Message](/guides/users-guide/DeviceManagement/DevMgmt_TemplateMessage.png)
+<img src="/guides/users-guide/DeviceManagement/DevMgmt_TemplateMessage.png" alt="Message" style="max-width: 100%">
 
 In the Preview you can see the preview of your request message.
 
@@ -1030,7 +1025,7 @@ A response template contains the necessary information to extract data values fr
 
 To add a new response navigate to the "Response" tab in your desired SmartREST template and click **Add response**. Complete the following fields:
 
-![Response](/guides/users-guide/DeviceManagement/DevMgmt_TemplateResponse.png)
+<img src="/guides/users-guide/DeviceManagement/DevMgmt_TemplateResponse.png" alt="Response" style="max-width: 100%">
 
 |Field|Description|
 |:---|:---|
@@ -1044,7 +1039,7 @@ Click **Save** to save your settings.
 
 To delete a response, open it and click **Remove** at the bottom.
 
-###How to edit or delete a SmartREST template
+### How to edit or delete a SmartREST template
 
 To edit a SmartREST template either click the desired template or click the 3-dots icon and in the dropdown menu click **Edit**.
 
@@ -1061,7 +1056,7 @@ To export a SmartREST template as CSV file follow these steps:
 1. In the upcoming window specify the preferred options for the field seperator, decimal separator and character set.
 1. Click **Download** to download the template as CSV file.
 
-![Export CSV](/guides/users-guide/DeviceManagement/DevMgmt_TemplateExportCSV.png)
+<img src="/guides/users-guide/DeviceManagement/DevMgmt_TemplateExportCSV.png" alt="Export CSV" style="max-width: 50%">
 
 ## <a name="cloud_remote_access"></a>Cloud Remote Access
 

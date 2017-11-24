@@ -275,7 +275,7 @@ The following tabs are the most common ones, each described in detail in a separ
 
 Below the name, a list of breadcrumbs is displayed. If the device is part of an asset hierarchy (such as a group), you can use the breadcrumbs to easily navigate up that hierarchy. Since devices can be part of multiple hierarchies, several rows of breadcrumbs may be shown.
 
-Depending of the type and usage of a device further actions are provided in a dropdown menu when clicking the **Cogwheel** button at the top right. 
+Depending of the type and usage of a device further actions are provided in a context menu when clicking the **Cogwheel** button at the top right. 
 
 <img src="/guides/users-guide/DeviceManagement/DevMgmt_CogwheelMenu.png" alt="Cogwheel menu" style="max-width: 100%">
 
@@ -622,7 +622,7 @@ Click the arrow on the right of a row to expand it and display further details o
 * **Status**: Providing further information on the alarm status and showing the  type of the alarm. The type info is used for duplicating alarms and for configuring the priority of alarms in the [Administration application](/guides/users-guide/administration#alarm-mapping).
 * **Change Log**: Providing the server time when the alarm was created which may differ from the device time.
 
-To change the status of an alarm open the dropdown menu on the right and select the desired status.
+To change the status of an alarm open the context menu on the right and select the desired status.
 
 ![Alarm dropdown](/guides/users-guide/DeviceManagement/DevMgmt_AlarmDropdown.png)
 
@@ -681,7 +681,7 @@ To execute bulk operations for a group follow these steps:
 2. Create an operation.
 3. Hover over the operation you want to execute.
 4. Click the 3-dots icon.
-5. In the dropdown menu click **Execute for whole group**.
+5. In the context menu click **Execute for whole group**.
 
 ![Execute bulk operations](/guides/users-guide/executebulkoperations.png)
 
@@ -694,12 +694,12 @@ In order to view the status and progress of your operations simply select the de
 To edit a bulk operation follow these steps:
 
 1. Hover over the bulk operation you want to edit and click the 3-dots icon. 
-2. In the dropdown menu click **Edit operation schedule**.
+2. In the context menu click **Edit operation schedule**.
 3. In the upcoming window you may change the "Start Date" and "Delay" values.
 4. To change operation details click **Show operation details**. 
 5. Click **Reschedule** to apply your changes. 
 
-To delete a bulk operation hover over the bulk operation you want to delete and click the 3-dots icon. In the dropdown menu click **Cancel operation**.
+To delete a bulk operation hover over the bulk operation you want to delete and click the 3-dots icon. In the context menu click **Cancel operation**.
 
 ### <a name="events-all"></a>Troubleshooting devices
 
@@ -896,7 +896,7 @@ A message is defined by choosing a message template (like sending a temperature)
 ### The Simulator tab
 In the navigator click "Simulator" in the "Devices" menu to open the "Simulator" tab.
 
-All simulators which you can access will be listed here. Click the 3-dots icon at the top right of a simulator card to open a dropdown menu from where you can edit, clone or remove a simulator.
+All simulators which you can access will be listed here. Click the 3-dots icon at the top right of a simulator card to open a context menu from where you can edit, clone or remove a simulator.
 
 <img src="/guides/users-guide/DeviceManagement/DevMgmt_SimulatorCard.png" alt="Simulator card" style="max-width: 50%">
 
@@ -1041,9 +1041,9 @@ To delete a response, open it and click **Remove** at the bottom.
 
 ### How to edit or delete a SmartREST template
 
-To edit a SmartREST template either click the desired template or click the 3-dots icon and in the dropdown menu click **Edit**.
+To edit a SmartREST template either click the desired template or click the 3-dots icon and in the context menu click **Edit**.
 
-To delete a SmartREST template click the 3-dots icon and in the dropdown menu click  **Remove**.
+To delete a SmartREST template click the 3-dots icon and in the context menu click **Remove**.
 
 ### How to export a SmartREST template
 
@@ -1119,7 +1119,7 @@ To connect to configured endpoints choose an endpoint in the "Remote access" tab
 
 A new browser tab will open displaying the front screen or operating panel of the device you are connected to. The top bar of the screen will show “starting VNC handshake” when the process is starting. 
 
-To edit or remove an endpoint click the **Cogwheel** button at the right of a row and select **Edit** or **Remove** from the dropdown menu.
+To edit or remove an endpoint click the **Cogwheel** button at the right of a row and select **Edit** or **Remove** from the context menu.
 
 ![Edit endpoints](/guides/users-guide/editendpoint.png)
 

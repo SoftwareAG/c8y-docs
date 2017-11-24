@@ -57,7 +57,7 @@ On the Login screen, enter your username and password and click **Login** to ent
 
 Select the "Remember me" checkbox if you want the browser to remember your credentials, so that you do not have to enter them again when opening the application the next time. This is also convenient if you frequently switch between Cumulocity applications, as Cumulocity will request you to authenticate each time when starting an application. You can make the browser "forget" your credentials by explicitly logging out. 
 
-To logout click the **User** button at the right of the the top bar and from the dropdown menu select **Logout**.
+To logout click the **User** button at the right of the the top bar and from the context menu select **Logout**.
 
 <img src="/guides/users-guide/logout.png" alt="Logout menu" style="max-width: 60%">
 
@@ -83,7 +83,7 @@ If you yourself are the primary administrator, your email address used on first 
 
 To change your password follow these steps:
 
-1. Click the **User** button at the right of the top bar and from the dropdown menu select **User settings**. 
+1. Click the **User** button at the right of the top bar and from the context menu select **User settings**. 
 2. In the "Edit user" dialog click **Change Password**.
 3. Enter a password and confirm it.
 4. Click **Save** to apply your settings.
@@ -116,7 +116,7 @@ The general structure common to all Cumulocity applications includes the followi
 |:---|:---|
 |**Navigator**|On the left you find the navigator. At the top of the navigator the name and logo of the application is displayed indicating which application you are currently using. Below you find a list of entries leading to the various pages of the application. The entries are grouped into menus and menu items. You can collapse or expand menus in the navigator by clicking the menu name. Clicking the small arrow at the very left of the top bar will hide/or unhide the navigator. Per default it is visible.
 |**Tabs**|Some pages, i.e. the page of any particular device, are divided into several tabs, either displayed vertically or horizontally.
-|**Top bar**|**Page title**<br> At the left of the top bar the title of the active page is displayed, if any. <br> <br><img src="/guides/Icons/Icon-Search.svg" alt="Search" style= 'vertical-align:middle;'>**Search button**<br> Clicking the **Search** button opens a search field to enter text for a full-text search. For details refer to [Searching](#searching) below. Not always available.<br><br> <img src="/guides/Icons/Icon-Plus.svg" alt="Plus" style="max-width:100%"> **Plus button**<br> Most application pages show an **Plus** button at the top bar. Clicking it opens a dropdown menu providing further functionalities. The dropdown menu is created dynamically, i.e. it depends on the active page which commands are provided. <br><br>**Application Switcher**<br> The **Application Switcher** on the right allows you to quickly switch between Cumulocity applications. <br><br> <img src="/guides/Icons/Icon-User.svg" alt="User" style="max-width:100%">**User button**<br> Right from the application switcher yo will find the **User** button with your user name. Clicking it will open up a dropdown menu with commands related to your account settings. <br> <br>Other buttons/ information may be available in the top bar depending on the application and the page being displayed. 
+|**Top bar**|**Page title**<br> At the left of the top bar the title of the active page is displayed, if any. <br> <br><img src="/guides/Icons/Icon-Search.svg" alt="Search" style= 'vertical-align:middle;'>**Search button**<br> Clicking the **Search** button opens a search field to enter text for a full-text search. For details refer to [Searching](#searching) below. Not always available.<br><br> <img src="/guides/Icons/Icon-Plus.svg" alt="Plus" style="max-width:100%"> **Plus button**<br> Most application pages show an **Plus** button at the top bar. Clicking it opens a context menu providing further functionalities. The context menu is created dynamically, i.e. it depends on the active page which commands are provided. <br><br>**Application Switcher**<br> The **Application Switcher** on the right allows you to quickly switch between Cumulocity applications. <br><br> <img src="/guides/Icons/Icon-User.svg" alt="User" style="max-width:100%">**User button**<br> Right from the application switcher yo will find the **User** button with your user name. Clicking it will open up a context menu with commands related to your account settings. <br> <br>Other buttons/ information may be available in the top bar depending on the application and the page being displayed. 
 |**Top menu bar**|Depending on the active application and the active page a secondary bar is displayed below the top bar providing further functionalities like a **Reload** button for reloading the page or a **Realtime** button for the display of realtime data. 
 |**Welcome bar**|Clicking the small arrow at the very right of the top bar will unhide/hide the Welcome bar offering quick links to other applications and to relevant documentation. Per default the Welcome bar is hidden.
 |**Page**|"Page" actually refer to the main area in the application. The content provided here depends on the menu item selected in the dashboard. The structuring of the content differs from page to page. Data may for example be displayed in a list with a row for each object or you may find it being presented in a grid in which objects are represented by cards. 
@@ -147,7 +147,7 @@ Using such an URL, you can
 
 Several account settings can be changed by the user. 
 
-Click the **User** button at the top right and from the dropdown menu select **User Settings**. 
+Click the **User** button at the top right and from the context menu select **User Settings**. 
 
 <img src="/guides/users-guide/overview/Overview_UserSettings.png" alt="User settings"  style="max-width: 60%">
 

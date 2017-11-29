@@ -71,7 +71,7 @@ After choosing this trigger and selecting your Cumulocity account, you can speci
 
 In the test step in Zapier, we will provide you with an example of how Zapier will receive the data but the structure depends purely on how your statement in the CEL looks like. Therefore it might be that some of the fields in our example don't exist in your CEL statement.
 
-Please have a look at our [example](/guides/zapier#examples) for this trigger if you want to know more .
+Please have a look at our [example](/guides/zapier#examples) for this trigger if you want to know more.
 
 ### From enterprise IT services to the Internet of Things
 

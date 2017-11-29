@@ -25,7 +25,7 @@ Der Bildschirm "Home" bietet Navigationslinks zu den Hauptbereichen der Administ
 * Geräte-API-Anforderungen: Nur gezählt, wenn die API von einem Gerät aufgerufen wird (z. B. Senden einer Messung)
 * Speicher: Die Gesamtmenge der in Ihrem Konto gespeicherten Daten. Dieser Betrag kann durch [Aufbewahrungsrichtlinien] (#Retention) und durch die Menge und Größe der [gespeicherten Dateien] (#Dateien) geändert werden.
 * Speicher-Kontingent: Wenn das Speicherlimit pro Gerät gesetzt ist, ist der Benutzer auf eine [maximale Datennutzung](#storageQuota) eingeschränkt.
-* Geräte: Die Gesamtzahl der an Ihr Konto angeschlossenen Geräte. Dies ist die Summe der Geräte, die im Menü [Alle Geräte](/guides/users-guide/device-management#viewing-devices) der Geräteverwaltung und ihren direkten und indirekten Kindgeräte aufgelistet sind.
+* Geräte: Die Gesamtzahl der an Ihr Konto angeschlossenen Geräte. Dies ist die Summe der Geräte, die im Menü [Alle Geräte](/guides/benutzerhandbuch/device-management-deutsch#viewing-devices) der Geräteverwaltung und ihren direkten und indirekten Kindgeräte aufgelistet sind.
 * Benutzer: Die Summe aller in diesem Konto konfigurierten Benutzer, aktiv und inaktiv.
 
 "Dieser Monat" zeigt die Nutzungsinformationen ab dem aktuellen Monat an. "Letzter Monat" zeigt den letzten vollen Monat an.
@@ -55,7 +55,7 @@ Um weitere Benutzer hinzuzufügen, klicken Sie auf "Benutzer hinzufügen".
 - Wenn Sie die Option "Zwei-Faktor-Authentifizierung aktivieren" wählen, wird der Benutzer aufgefordert, eine Telefonnummer anzugeben, und bei der Anmeldung wird der PIN-Code (der an ein Telefon gesendet wird) für eine erfolgreiche Authentifizierung benötigt.
 - Wenn Sie "Password reset" wählen, muss der Benutzer nach dem nächsten Login ein neues Passwort wählen.
 - Wenn Sie den Link "E-Mail senden Passwort senden" wählen, wird die E-Mail-Nachricht an die angegebene E-Mail-Adresse mit einem Link gesendet, um ein Passwort festzulegen.
-- Geben Sie ein Passwort ein und bestätigen Sie das Passwort. (Weitere Informationen zur Passwortstärke finden Sie unter [Einloggen](/guides/users-guide/overview#login).)
+- Geben Sie ein Passwort ein und bestätigen Sie das Passwort. (Weitere Informationen zur Passwortstärke finden Sie unter [Einloggen](/guides/benutzerhandbuch/uebersicht#login).)
 - Benutzer hinzufügen zu [Nutzergruppen](#user-groups).
 - Zuweisen von Geräten und Anwendungen [Berechtigungen](#permissions).
 - Klicken Sie auf die Schaltfläche "Speichern", um alle vorherigen Daten zu speichern.
@@ -413,7 +413,7 @@ Um einen neuen Untermandanten hinzuzufügen, klicken Sie auf "Mandant Erstellen"
 - Geben Sie den Benutzernamen des Administrators ein, um sich anzumelden.
 - Kontaktname eingeben. Dieses Feld ist optional.
 - Geben Sie Kontakttelefon ein. Auch dieses Feld ist optional.
-- Wählen Sie aus, ob Sie die E-Mail-Adresse zum Zurücksetzen des Passworts haben möchten. Wenn Sie diese Option nicht ausgewählt haben, müssen Sie ein Passwort eingeben und das Passwort bestätigen. (Weitere Informationen zur Passwortstärke finden Sie unter "[Log in](/guides/users-guide/overview#login)".)
+- Wählen Sie aus, ob Sie die E-Mail-Adresse zum Zurücksetzen des Passworts haben möchten. Wenn Sie diese Option nicht ausgewählt haben, müssen Sie ein Passwort eingeben und das Passwort bestätigen. (Weitere Informationen zur Passwortstärke finden Sie unter "[Einloggen](/guides/benutzerhandbuch/uebersicht#login)".)
 - Klicken Sie auf die Schaltfläche "Speichern".
 
 ![Tenant-creation](/guides/users-guide/createtenantde.png)
@@ -539,7 +539,7 @@ Im Menü "Serverseitige Agenten" kann die Smart-Regel "Dashboard über E-Mail se
 
 ### <a name="openIT-credentials"></a>OpenIT Zugangsdaten Eingeben
 
-SMS werden von verschiedenen Funktionen benutzt. Es kann für sicheren Zugang benutzt werden [Zwei-Faktor Authentifikation](/guides/benutzerhandbuch/administration-deutsch#users). Eine SMS kann gesendet werden, wenn ein Alarm ausgelöst wird. Mit SMS können Befehle an Geräte gesendet werden. TDer Service von [Openit](https://sms.openit.de/main.php) wird ähnlich benutzt. In diesem Abschnitt kann der Benutzer Anmeldeinformationen eingeben, um Funktionen zu aktivieren, die SMS-Nachrichten erfordern.
+SMS werden von verschiedenen Funktionen benutzt. Es kann für sicheren Zugang benutzt werden wie [Zwei-Faktor Authentifikation](/guides/benutzerhandbuch/administration-deutsch#users). Eine SMS kann gesendet werden, wenn ein Alarm ausgelöst wird. Mit SMS können Befehle an Geräte gesendet werden. TDer Service von [Openit](https://sms.openit.de/main.php) wird ähnlich benutzt. In diesem Abschnitt kann der Benutzer Anmeldeinformationen eingeben, um Funktionen zu aktivieren, die SMS-Nachrichten erfordern.
 
 ## <a name="retention"></a>Verwalten der Datenaufbewahrung
 

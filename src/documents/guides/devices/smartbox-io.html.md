@@ -52,7 +52,7 @@ By default the terminal supports cloud fieldbus from Cumulocity. To use it you s
 * Subscribe your account to the Cloud Fieldbus app by contacting [support](https://support.cumulocity.com)
 * Configure the terminal: 
   * Power on the Terminal  
-  * Configure the Terminal's APN by sending an SMS to Terminal's SIM card with the following syntax: GPRS=APN,username,password (e.g. GPRS==public4.m2minternet.com,,) 
+  * Configure the Terminal's APN by sending an SMS to Terminal's SIM card with the following syntax: GPRS=APN,username,password (e.g. GPRS=public4.m2minternet.com,,) 
 
 ### Registering the Terminal in Cumulocity:
 
@@ -79,7 +79,7 @@ Sensors - max. 10
 | Fast DIN | | 2 | - | - | 4 | - |
 
 To activate the specific sensorboard proceed as follows:
-1. Upload the sensor-model in device database. Download the sensorboard model Type A [here](/guides/devices/smartbox-io/F4_IO_2100.03.1_TypeA)
+1. Upload the sensor-model in device database. Download the sensorboard model Type A [here from section Smartbox IO](https://www.pssystec.de/downloads/)
 2. Edit the model if you need it (refer to [Configuring Fieldbus device types](https://www.cumulocity.com/guides/users-guide/cloud-fieldbus/#configure)) but keep the addresses
 3. Connect the sensor board in Modbus tab on adress 1
 4. Include the fieldbus widget in the cockpit related to the device and activate all items. You can now configure the inputs as Temperature sensor or Digitalinputs- as described in the table above
@@ -124,7 +124,6 @@ You can send AT commands vie the SMS to the device:
 | DELETE | deletes the registration in CC and you can register on a new tenant |
 | RESET	| Restarts the device |
 | GPRS=&lt;APN&gt;,&lt;User&gt;,&lt;Password&gt; | Change APN, if no User or Password is required, the fields free |
-| COMMAND:<AT command> | You can take all supported AT commands from here in Chapter "AT commands": https://www.pssystec.de/downloads/ |
 
 ## <a name="device-shell"></a>Remotely execute text commands via device shell
 

@@ -689,7 +689,7 @@ For further information on operations refer to [Working with Operations](#operat
 
 In order to view the status and progress of your operations simply select the desired group and click the "Bulk Operations" tab.
 
-![Bulk operations tab](/guides/users-guide/bulkoperations.png)
+![Bulk operations tab](/guides/users-guide/DeviceManagement/DevMgmt_BulkOperations)
 
 To edit a bulk operation follow these steps:
 
@@ -698,6 +698,8 @@ To edit a bulk operation follow these steps:
 3. In the upcoming window you may change the "Start Date" and "Delay" values.
 4. To change operation details click **Show operation details**. 
 5. Click **Reschedule** to apply your changes. 
+
+![Edit bulk operations](/guides/users-guide/DeviceManagement/DevMgmt_BulkOperationsEdit)
 
 To delete a bulk operation hover over the bulk operation you want to delete and click the 3-dots icon. In the context menu click **Cancel operation**.
 

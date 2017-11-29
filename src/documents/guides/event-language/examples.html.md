@@ -5,7 +5,7 @@ layout: default
 toc: true
 ---
 
-## Calculating an hourly median of  measurements
+## Calculating an hourly median of measurements
 
 We are assuming the input data looks like this:
 
@@ -50,7 +50,7 @@ Module:
     where getObject(m, "c8y_TemperatureMeasurement") is not null
     output last every 1 hours;
 
-## Create alarm if the operation was not executed
+## Creating alarm if the operation was not executed
 
 Operations usually run to a fixed sequence when handled by the device.
 
@@ -287,3 +287,45 @@ We will compare the value and time difference of two adjacent measurements for a
         "c8y_HourlyWaterConsumption.consumption.unit", "l/h"
       } as fragments
     from AdjacentFillLevelMeasurements m;
+
+## Using Zementis analytic model inside Cumulocity
+
+The following CEP rule/module shows how to use the Zementis analytic model inside Cumulocity.
+
+We are assuming the input data looks like this:
+
+{
+  "c8y_SteamMeasurement": {
+    "Temperature": {
+      "value": ...,
+      "unit": "C"
+    }
+  },
+{
+  "c8y_TemperatureMeasurement": {
+    "Pressure": {
+      "value": ...,
+      "unit": "bar"
+    }
+  },
+{
+  "c8y_TemperatureMeasurement": {
+    "Steamoutput": {
+      "value": ...,
+      "unit": "%"
+    }
+  },
+  "time":"...",
+  "source": {
+    "id":"..."
+  },
+  "type": "c8y_TemperatureMeasurement"
+}    
+
+First, a predictive model is created and uploaded to Zementis via ADAPA Zementis console. Assume, the model becomes available for data scoring on https://myadapa.zementis.com:443/adapars/apply/model_name endpoint.
+
+The attached Cumulocity CEP module works as follows:
+
+* Data from a specific device is filtered. The measurement values that should be passed for analysis are selected. 
+* In order to apply the analytic model, an outbound HTTP request is performed to the above Zementis endpoint. The measurement values that need to be analyzed are passed in request URL parameters.
+* Depending on the score returned from the model, an alarm is raised.

@@ -6,7 +6,15 @@ layout: default
 
 ## Overview
 
-The Administration application enables account administrators to manage their users, applications, rules and stored files, as well as configure a number of options for their account. Here you can:
+The Administration application enables account administrators to manage their users, roles, tenants, applications, and business rules as well as configure a number of settings for their account. 
+
+The following sections will walk you through all functionalities of the Administration application in detail. For your convenience find an overview on the content of this document below.
+
+>**Important**: For information on the user and permission management in the Administration application refer to section on [User and Permission Management](/guides/users-guide/user-and-permissions-management).
+
+|SECTION|CONTENT|
+|:---|:---|
+|[Connecting Devices](#device-registration)|How to [register one or more devices manually](#device-registration-manually) and 
 
 * View [subscription information](#home) for your account.
 * View all operations done by users via the [audit logs](#audit).
@@ -19,7 +27,6 @@ The Administration application enables account administrators to manage their us
 * Manage [stored files](#files) such as firmware images or log files.
 * Forward data between different tenants with [data broker](#data-broker).
 
-For more information on users and permissions, please see the ["User and permissions management"](/guides/users-guide/user-and-permissions-management) guide.
 
 ## <a name="home"></a>The Home Screen
 
@@ -38,13 +45,25 @@ The "Home" screen provides navigation links to the main parts of the administrat
 
 ## <a name="audit"></a>Viewing audit logs
 
- By visiting the "Audit logs" menu you can view all operations that users have carried out. The following fields can be observed:
+Audit logs show the operations that users have carried out. 
+
+Click "Audit logs" in the "Account" menu to visit the audit logs list. For each audit log entry the following information is provided:
+
+|Column|Description|
+|:---|:---|
+|Server time|Server time when the operation was processed.
+|Change|Type of change, e.g. "Alarm created", Smart rule deleted"
+|Description|Type of change, e.g. "Alarm created", Smart rule deleted"
+|Device time|Device time when the change was processed. This can differ from the server time.
+
+
+
 
  - "When?": Shows the server time when the change occurred.
  - "What?": This field shows what changed. ("Smart Rule Deleted")
  - "Who?": Displays the user who did the change.
  - "Text": Small summary of the change. ("Cep module "smartRule<number>" updated") - "Type": Type of change. ("Smart rule", "Alarm", "User")
- - "Time": Shows the device time when the change occurred. It can be different from the server time.
+
 
 > Only the last 100 logs are visible, in order to view more press the "search more" button.
 

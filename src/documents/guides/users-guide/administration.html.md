@@ -47,100 +47,108 @@ The "Home" screen provides navigation links to the main parts of the administrat
 
 Audit logs show the operations that users have carried out. 
 
-Click "Audit logs" in the "Account" menu to visit the audit logs list. For each audit log entry the following information is provided:
+Click "Audit logs" in the "Account" menu to view the audit logs list. For each log entry the following information is provided:
 
 |Column|Description|
 |:---|:---|
 |Server time|Server time when the operation was processed.
-|Change|Type of change, e.g. "Alarm created", Smart rule deleted"
-|Description|Type of change, e.g. "Alarm created", Smart rule deleted"
-|Device time|Device time when the change was processed. This can differ from the server time.
+|Change|Type of operation, e.g. "Alarm created", Smart rule deleted". Below it, the user who processed it is displayed.
+|Description|Provides further information depending on the operation, e.g. the device name, alarm text, operation status.
+|Device time|Device time when the operation was processed. This can differ from the server time.
 
+Only the latest 100 logs are visible. Click **Load more** at the bottom of the list to view more log entries.
 
-
-
- - "When?": Shows the server time when the change occurred.
- - "What?": This field shows what changed. ("Smart Rule Deleted")
- - "Who?": Displays the user who did the change.
- - "Text": Small summary of the change. ("Cep module "smartRule<number>" updated") - "Type": Type of change. ("Smart rule", "Alarm", "User")
-
-
-> Only the last 100 logs are visible, in order to view more press the "search more" button.
-
-![Audit logs](/guides/users-guide/auditlogs.png)
+![Audit logs](/guides/users-guide/administration/admin_auditlogs.png)
 
 ### Filtering logs
 
-In order to easily search through logs, you have the ability to filter them. The following filters can be used:
+In order to easily search through logs, you may filter logs for
 
- - Type: There are six types of logs, "Alarm", "Event processing", "Group", "Operation", "Smart rule" and "User".
- - Date from: Simply select date from which you wish to filter the log.
- - Date to: Select date to which you wish to filter the log.
- - User: View logs of a specific user only.
+ - the type, i.e. Alarm, Operation, Smart Rule,
+ - a date range providing a "From" and/or a "To" date,
+ - the user.
 
-![Filter settings](/guides/users-guide/filtersettings.png)
+To apply filters, click the Filter icon next to the filter fields. To discard filters, click the Delete icon (only visible if filters are set).
 
-> It is not necessary to use all filters.
+## <a name="applications"></a>Managing Applications
 
-To apply filters, simply click on the "Apply filters" button.
+In addition to the applications available in the Cumulocity platform, you can also manage own applications in your account. 
 
-To discard filters or to see all audit logs, click on the "cross" button.
+These applications may be "Smartapps" or generic HTML5 applications. "Smartapps" are HTML5 applications that can be extended by adding plugins. When deploying, the plugins are deployed into a specific application. For example, a plugin might add a specific widget to the Cockpit dashboard.
 
-## <a name="applications"></a>Managing applications
+Because the application itself is modified when adding a plugin, plugins can only be added to own applications. When adding a plugin to a subscribed application, the application must be cloned first into an own application. This process is supported by the Administration Application wizard.
 
-Besides the available applications, you can also provide own applications in your account by checking the "Own applications" menu. These applications can be "Smartapps" or generic HTML5 applications. "Smartapps" are HTML5 applications that can be extended by adding plugins. When deploying, the plugins are deployed into a specific application. For example, a plugin might add a specific widget to the Cockpit dashboard.
+> **Info**: "Smartapps" insert the plugin into the application and no longer reference plugins stored in other applications.
 
-Plugins can only be added to own applications because the application itself is modified when adding the plugin. When adding a plugin to subscribed applications, the application must be cloned first into an own application. Afterward the plugin can be added. This process is supported by the Administration Application wizard.
+You manage your own application under "Own applications" accessible through the "Applications" menu. 
 
-> "Smartapps" insert the plugin into the application. This has changed from the old Smartapps referencing plugins stored in other applications.
-
-When an application has been created it will be available in the application switcher.
-
-> The "Open" button of the application appears when you hover over the application's name.
+In the "Own applications" page you will find a list of your own applications in your account.
 
 ![List of own applications](/guides/users-guide/ownapplications.png)
 
+Click the 3-dot icon at the top right of an application to open a context menu from where you can **Edit** or **Remove** an application (see Editing and removing applications). 
+
+Click **Open** to directly open the application from here. Your applications are also available through the Application Switcher.
+
+Click **Add Plugin** to add a plugin (see [Adding and removing plugins](#add-remove-plugins)).
+
+
 ### Creating an application
 
-To add an application, you can upload a "ZIP file" application.
+To add an application, click **Add application** in the "Own applications" page. In the upcoming dialog choose to create an application by
 
-- Click on "Add application".
-- Click on "Upload ZIP file".
-- Either drop the file into the box or simply browse your computer.
+* uploading a ZIP file,
+* use an external application, which links to an application running elsewhere,
+* cloning an existing application.
+
+![Add application methods](/guides/users-guide/administration/admin_AddApplications.png)
+
+If you select **Upload ZIP file**, the wizard will ask you to simply drop a file or browse for it on your computer.
+
+If you select **External application**, you next need to provide the name, application key and external URL for it. 
+
+If you want to clone an existing application follow the steps below.
+
 
 ### <a name="clone-application"></a>Cloning applications
 
-This option will copy the application. Cloning a subscribed application creates a copy of the application as an own application, with a link to the original application.
+Cloning a subscribed application creates a copy of the application as an own application, with a link to the original application.
 
-In order to clone an application:
+In order to clone an application follow these steps:
 
-- Click on "Add application"
-- Click on "Clone existing application"
-- Select the desired application that you wish to clone. Note that also subscribed applications are shown.
-- Enter the name of the application. The name will be shown as title on the top left of the application. It will also be shown in the application switcher.
-- Enter an application key. The application key is used to identify requests from this application and to make it available for subscription, see the [Concepts guide](/guides/concepts/applications).
-- Enter the application path. This path will be part of the URL to invoke the application. For example, if you use "hello" as application path, the URL of the application will be "/apps/hello".
-- Click on the "Clone" button.
+1. Click **Add application** in the "Own applications" page.
+2. In the upcoming dialog select **Clone existing application**.
+3. Select the desired application from the dropdown list. Note that also subscribed applications are shown.
+4. In the next window enter the name of the application. The name will be shown as title on the top left of the application. It will also be shown in the Application Switcher.
+5. Next, enter an application key. The application key is used to identify requests from this application and to make it available for subscription, see the [Concepts Guide](/guides/concepts/applications).
+- Next, enter the application path. This path will be part of the URL to invoke the application. For example, if you use "hello" as application path, the URL of the application will be "/apps/hello".
+- Finally click **Clone** to create the application.
 
 ### <a name="add-remove-plugin"></a>Adding and removing plugins
 
-In order to configure and extend the function provided with a smartapp, you can add plugins (as ZIP files) to your applications. To add additional plugins, go to "Own applications", move the cursor over your desired applications and click on "Add Plugin". You can drag the plugin into the box or just select them from your computer.
+In order to configure and extend the functions provided with a smartapp, you can add plugins to your applications. 
+
+To add additional plugins, click **Add Plugin** on the card of the desired application in the "Own applications" page. 
+
+The "Plugin" tab for the application will open up, showing all existing plugins and allowing to add plugins by simply dropping the respective ZIP file or browsing for it on your computer.
 
 ![Plugins](/guides/users-guide/plugins.png)
 
-To remove a plugin, click on the cogwheel next to the desired plugin and click remove. The following tables list the navigator items, menu items and their respective plugins:
+To remove a plugin, hover over it and click **Remove** at the right.
+
+The following tables list the navigator and menu items with their respective plugins:
 
 
-|Navigator Item|Plugin|
-|:-------------|:-----|
-|Welcome|Welcome screen|
-|Home|Cockpit Home|
-|Smart Rules|Smart Rules UI|
-|Groups|Groups Hierarchy|
-|Data Explorer|Data Point Explorer UI|
-|Data Point Library|Data Point Explorer UI|
-|Reporting|Reporting|
-|Reports|Dashboard (Note: There are two plugins with this name. Select the one with the description: "Reports are stand alone dashboards without a context")|
+|Navigator Item|Plugin
+|:---|:---|
+|Welcome|Welcome screen
+|Home|Cockpit Home
+|Smart Rules|Smart Rules UI
+|Groups|Groups Hierarchy
+|Data Explorer|Data Point Explorer UI
+|Data Point Library|Data Point Explorer UI
+|Reporting|Reporting
+|Reports|Dashboard (Note: that there are two plugins with this name. Select the one with the description: "Reports are stand alone dashboards without a context".)
 |Alarms|Alarm Management|
 
 |Menu Item|Plugin|
@@ -150,14 +158,19 @@ To remove a plugin, click on the cogwheel next to the desired plugin and click r
 |Permissions|Device Permission Management Plugin|
 |Data Explorer|Data Point Explorer UI|
 
-> Please note the "UI" at the end of the plugin names.
+Be aware of the "UI" at the end of the plugin names.
 
 ### Restoring to an older application version
 
-Users can restore old versions of an application.
-If you "set active" a specific version of the app, then this will be the version used by users.
+Users can restore previous versions of an application from an archive.
 
->Note that the "Archive" tab is not available for subscribed applications, as only the owner of the application can perform this action.
+Clcik **Edit** in the 3-dot icon on the desired application and switch to the "Archives" tab. 
+
+Open the context menu for the desired version and select **Set as active** to make it the active version.
+
+Click **Remove** to remove the version from the archive.
+
+>**Info**: The "Archive" tab is not available for subscribed applications, as only the owner of the application can perform this action.
 
 ### Uploading archives
 
@@ -188,15 +201,13 @@ To add a smartapp:
 
 ![Legacy smartapps](/guides/users-guide/smartapps.png)
 
-### Working with external applications
+### Editing and removing applications
 
-"External applications" are links to applications running elsewhere. Enter name of the application and application key, then provide the URL of that application and click "Save" to make the link available in the application switcher.
+To edit an application, simply click the application or click **Edit** in its context menu. 
 
-### Editing applications
+On the "Properties" tab several fields can be modified, depending on the application type.
 
-To edit an application, simply click on its name. Depending on the type of the application (e.g. Hosted, External), different fields can be modified.
-
-> Note that "ID", "Application key" and "Path" cannot be changed once configured.
+> **Info**: "ID", "Application key" and "Path" cannot be changed once configured.
 
 ### Removing applications
 

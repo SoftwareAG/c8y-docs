@@ -29,7 +29,7 @@ Note: Your subscription needs to include this feature. If you do not see the fun
 
 ## <a name="configure-credentials"></a>Configuring ThingPark account credentials
 
-Before using LoRa devices with Cumulocity, you need to configure your ThingPark account details in the Cumulocity Administration application. In order to create new credentials or replace existing ones, go to the Administration application and select "Connectivity" in "Settings" in the Navigator. 
+Before using LoRa devices with Cumulocity, you need to configure your ThingPark account details in the Cumulocity Administration application. In order to create new credentials or replace existing ones, go to the Administration application and select "Connectivity" in "Settings" in the navigator. 
 
 ### <a name="create-new-credentials"></a>Creating new account credentials
 
@@ -57,10 +57,10 @@ Enter your profile ID, username, password and application EUI. For an explanatio
 
 Click "Save". Your old credentials will now be replaced with the new ones. 
 
-## <a name="create-device-types"></a>Creating device types with the device database
+## <a name="create-device-types"></a>Creating device protocols
 To process data from LoRa devices, Cumulocity needs to understand the payload format of the devices. 
 
-In order to create device types with the device database, go to the Device Management application and select "Device database" in "Device types" in the Navigator. You can either import an existing device type or create a new one. 
+In order to create device protocols, go to the Device Management application and select "Device protocols" in the "Device types" menu in the navigator. You can either import an existing device type or create a new one. 
 
 ### <a name="import-device-type"></a>Importing a predefined device type
 In the Device database window, click the "Import" button. 

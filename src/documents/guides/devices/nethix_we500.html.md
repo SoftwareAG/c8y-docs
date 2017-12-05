@@ -129,7 +129,7 @@ For further information regarding the status of the WLAN connection, it’s poss
 
 ## <a name="variables"></a>Creating variables
 
-A variable indicates the value of one parameter of the monitoring/control system. For example, the variable called temperature indicates the value of the *temperature* measured by an analogical probe. Variables are fundamental elements of the system, since they indicate the value of the monitored parameters that are sent to [Cumulocity](www.cumulocity.com).
+A variable indicates the value of one parameter of the monitoring/control system. For example, the variable called temperature indicates the value of the *temperature* measured by an analogical probe. Variables are fundamental elements of the system, since they indicate the value of the monitored parameters that are sent to the Cumulocity platform.
 
 In order to do that, it’s necessary to create a new variable and to enable the *Portal sending* option on the variable creation page.
 

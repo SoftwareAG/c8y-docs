@@ -117,7 +117,6 @@ In this file, first you need to modify the following properties according to you
 Apart from devices and table (which will be detailed in the Advanced Configuration section), the rest of the properties of the JSON file usually should not be modified.
 
 ### Usage
-c
 The Owasys Cumulocity plugin reports any data as Cumulocity measurements.
 
 This data must be fed to the plugin by writing in a pre-defined format into the text plain file defined in file property of the pollux.cumulocity configuration file. That file, usually â€œ/tmp/cumulocity.dbâ€, works a reliable communication queue.

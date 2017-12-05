@@ -20,7 +20,7 @@ The startup phase can be as short as just checking the credentials:
 The cycle phase consists of two kinds of actions:
 
 * [Step A](#step-a-send-csv-data): Send CSV data
-* [Step B](#step-a-receive-csv-operations): Receive CSV operations
+* [Step B](#step-b-receive-csv-operations): Receive CSV operations
 
 ![MQTT phases](/guides/mqtt/mqttDeviceIntegration.png)
 

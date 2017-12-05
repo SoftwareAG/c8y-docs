@@ -81,7 +81,7 @@ Now, you can simply add tariff information to your meter:
     Tariff tariff = new Tariff();
     mo.set(tariff);
 
-This will store the tariff information along with the meter. For converting Java objects from and towards JSON/REST, Cumulocity uses Svenson. The [Svenson documentation](http://code.google.com/p/svenson/) provides more information on how to influence the JSON format that is produced respectively accepted.
+This will store the tariff information along with the meter. For converting Java objects from and towards JSON/REST, Cumulocity uses Svenson. The [Svenson documentation](http:/fforw.github.io/svenson/) provides more information on how to influence the JSON format that is produced respectively accepted.
 
 When creating own fragments in OSGi, you need to make the fragments visible to the Cumulocity client libraries. To do this, add the following line to the manifest file of the bundle containing the fragments:
 

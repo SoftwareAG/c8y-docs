@@ -105,7 +105,7 @@ Sobald die Verbindung hergestellt ist, können Sie Ihr Gerät jetzt verwalten. K
 
 ### <a name="collect"></a>Daten Sammeln
 
-Wenn der Gerätetyp des Fieldbusgerätes für die Erfassung von Messungen konfiguriert ist, werden diese im Register "Messungen" sichtbar. Sie werden dann auch im [Daten Explorer](/guides/users-guide/cockpit#using-the-data-explorer-to-visualize-data) und in den [Dashboard Widgets](/guides/users-guide/cockpit#working-with-dashboards) angezeigt.
+Wenn der Gerätetyp des Fieldbusgerätes für die Erfassung von Messungen konfiguriert ist, werden diese im Register "Messungen" sichtbar. Sie werden dann auch im [Daten Explorer](/guides/benutzerhandbuch/cockpit-deutsch#using-the-data-explorer-to-visualize-data) und in den [Dashboard Widgets](/guides/benutzerhandbuch/cockpit-deutsch#working-with-dashboards) angezeigt.
 
 Die Daten werden gemäß dem Intervall gesammelt, das in der Übertragungsrate Eigenschaft des Endgeräts spezifiziert ist. Zur Optimierung des Datenverkehrs können Daten, die exakt die gleichen sind wie zuvor, nicht erneut gesendet werden.
 
@@ -125,7 +125,7 @@ Wenn der Gerätetyp des Fieldbusgeräts so konfiguriert ist, dass er Alarme send
 
 ### <a name="status"></a>Überwachen des Gerätestatus
 
-Der Status der Geräte kann in Echtzeit mit Hilfe von Dashboard-Widgets in der Cockpit-Anwendung überwacht werden. Navigieren Sie zu der Cockpit - Anwendung, erstellen Sie ein Dashboard oder einen Bericht und fügen Sie Widgets hinzu, wie in der [Cockpit user's guide](/guides/users-guide/cockpit) beschrieben. Der Cloud Fieldbus hat zwei neue Widgets: Das "Fieldbus Device" -Widget und das "SCADA" -Widget.
+Der Status der Geräte kann in Echtzeit mit Hilfe von Dashboard-Widgets in der Cockpit-Anwendung überwacht werden. Navigieren Sie zu der Cockpit-Anwendung, erstellen Sie ein Dashboard oder einen Bericht und fügen Sie Widgets hinzu, wie im Benutzerhandbuch unter [Cockpit](/guides/benutzerhandbuch/cockpit-deutsch) beschrieben. Der Cloud Fieldbus hat zwei neue Widgets: Das "Fieldbus Device" -Widget und das "SCADA" -Widget.
 
 ### Überwachen des Gerätestatus über das Feldbus-Geräte-Widget
 

@@ -151,7 +151,7 @@ Sie müssen eine Tabelle für das Einfüllen der Daten erstellen, die von Cumulo
 
 ![Sample spreadsheet](/guides/zapier/samplespreadsheet.png)
 
-Weitere Informationen zur Verwendung von Kalkulationstabellen mit Zapier finden Sie unter  https://zapier.com/support/questions/2301/using-zapier-with-google-docs/.
+Weitere Informationen zur Verwendung von Kalkulationstabellen mit Zapier finden Sie unter [https://zapier.com/support/questions/2301/using-zapier-with-google-docs/](https://zapier.com/support/questions/2301/using-zapier-with-google-docs/).
 
 Jetzt können Sie Ihr Zap einrichten:
 

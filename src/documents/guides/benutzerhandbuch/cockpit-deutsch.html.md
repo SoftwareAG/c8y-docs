@@ -92,7 +92,7 @@ Informationen zu den folgenden Punkten finden Sie in der [Einführung](/guides/b
 Die Willkommensseite wird geöffnet, sobald Sie sich beim Cumulocity-Cockpit anmelden.
 
 
-![Willkommensseite](/guides/users-guide/willkommen.png)
+![Willkommensseite](/guides/benutzerhandbuch/willkommen.png)
 
 Die Willkommensseite zeigt die folgenden Abschnitte:
 
@@ -118,7 +118,7 @@ Um die Willkommensseite als Startseite wiederherzustellen, wählen Sie im Naviga
 
 Die Cockpit-Startseite ist eine Dashboard-Seite:
 
-![image alt text](/guides/users-guide/startseite.png)
+![image alt text](/guides/benutzerhandbuch/startseite.png)
 
 Das Dashboard zeigt Daten für den Mandanten an. 
 Das Home-Dashboard ist eine Seite, die von allen Benutzern des Mandanten gemeinsam genutzt wird. Sie besteht aus Widgets, die IoT-Daten visualisieren. Standardmäßig enthält das Home-Dashboard fünf Widgets, die einen Begrüßungstext, eine Zusammenfassung der verfügbaren Objekte, Assets mit Alarmen, neue Alarme und eine Karte aller Objekte anzeigen.

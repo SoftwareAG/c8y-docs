@@ -201,11 +201,11 @@ To add a smartapp:
 
 ![Legacy smartapps](/guides/users-guide/smartapps.png)
 
-### Editing and removing applications
+### Editing applications
 
-To edit an application, simply click the application or click **Edit** in its context menu. 
+To edit an application, simply click the application or click **Edit** in its context menu, accessible through the 3-dot icon. 
 
-On the "Properties" tab several fields can be modified, depending on the application type.
+In the "Properties" tab, several fields can be modified, depending on the application type.
 
 > **Info**: "ID", "Application key" and "Path" cannot be changed once configured.
 
@@ -214,95 +214,122 @@ On the "Properties" tab several fields can be modified, depending on the applica
 If you remove an application that overwrites a subscribed application, the currently subscribed application becomes available to all users. Additionally the users will then also benefit from future upgrades of the subscribed application.
 It is not possible to remove subscribed apps. This is only possible for the owner of the subscribed application.
 
-> To overwrite a "Subscribed application" the "Own Application" must have the same context-path as the "Subscribed application".
+> **Info**: To overwrite a "Subscribed application" the "Own Application" must have the same context-path as the "Subscribed application".
 
-To remove an application, simply hover over the application name and click on the cogwheel, then press the "Remove" button. A confirmation pop-up window will appear. Click "OK" and the application will be deleted.
+To remove an application, click **Remove** in its context menu, accessible through the 3-dot icon. Click **OK** in the confirmation dialog to remove the application.
 
 ## <a name="tenants"></a>Managing tenants
 
-If you are a service provider or subscribed to the Enterprise Edition of Cumulocity, you can manage your own subtenants. You can create subtenants, subscribe them to the applications that you have available and potentially deactivate tenants if they are not in use anymore.
+If you are a service provider or subscribed to the Enterprise Edition of Cumulocity, you may want to manage your own subtenants. This functionality allows you to create subtenants, subscribe them to the applications that you have available and potentially deactivate tenants if they are not in use anymore.
 
-> There is an important difference between providing tenants and providing users with different permissions within one tenant. Tenants are physically separated data spaces with a separate URL, own users, separate application management and no sharing of data by default. Users in a single tenant by default share the same URL and the same data space. For example, if your users are separate customers of yours and you need to strictly separate them because they may be competitors, we strongly recommend you to do so by using tenants.
+> **Important**: There is an major difference between providing several tenants and providing several users with different permissions within a single tenant. Tenants are physically separated data spaces with a separate URL, with own users, a separate application management and no sharing of data by default. Users in a single tenant by default share the same URL and the same data space. So if your users for example are separate customers of yours and you need to strictly separate them because they may be competitors, we strongly recommend you to do so by working with tenants.
 
-> If you would like to use this feature, please contact sales@cumulocity.com.
+> **Info**: If you would like to use this feature, please contact sales@cumulocity.com.
 
-To be able to use the functionality below, your user needs to have the appropriate permissions. See ["Creating and editing global roles"](/guides/users-guide/user-and-permissions-management#create-edit-roles) for information on editing permissions. Since editing tenants is a sensitive operation, permissions for editing tenants are more granular:
+To be able to use the tenant functionality, your user needs to have the appropriate permissions. See ["Creating and editing global roles"](/guides/users-guide/user-and-permissions-management#create-edit-roles) for information on editing permissions. Since editing tenants is a sensitive operation, permissions for editing tenants are more granular:
 
 - Read: Browse and view tenants.
 - Create: Create new tenants.
 - Update: Edit tenants (incl. subscriptions) and suspend or activate them.
 - Change: Create, edit and delete tenants.
 
-### Browsing sub-tenants
+### Viewing subtenants
 
-To browse the subtenants, click on the subtenants menu. The panel shows the following information:
+Click "Subtenants" in the "Tenants" menu to view a list of all subtentants available in your account.
 
-- Tenant status: The small icon indicates the status of a tenant. It can show a green checkmark to indicate that the tenant is active or a red cross to indicate that the tenant is suspended and cannot be accessed.
-- ID: An identifier for this tenant. When you create a tenant, the ID is the first part of the URL. For example, if you create a tenant with the ID "acme" on cumulocity.com, the tenant's URL will be "acme.cumulocity.com". Note that while you can change the URL later on, you cannot change the ID anymore after the tenant was created.
-- Name: A name for this tenant, for example, the company name of your customer.
-- Domain: The URL that users will use to access this tenant.
-- Contact name: An administrative contact for the tenant.
-- Phone: The phone number of the administrative contact.
+The "Tenants" page provides the following information on each subtenant:
+
+* The name of the subtenant, e.g. company name of your customer
+* The ID and domain. When you create a tenant, the ID is the first part of the URL. For example, if you create a tenant with the ID "acme" on cumulocity.com, the tenant's URL will be "acme.cumulocity.com". Note that while you can change the URL later on, you cannot change the ID anymore after the tenant was created.
+* An optional contact name and phone number
+* The date when the tenat was created.
+* The status of the tenant, either active (indicated by a green checkmark icon) or suspended (indicated by a red cross icon)
+
+If you are using the management tenant, you will see an additional column "Parent tenant". This column shows the tenant that created the listed tenant.
+
 - External reference: A free text field that you can use for arbitrary additional information on the tenant. For example, you can store a reference to your CRM system here.
 - Creation time: The time when the tenant was created.
 - Parent tenant: If you are using the management tenant, you will see an additional column "parent tenant". This column shows the tenant that created the listed tenant.
 
-![Sub-tenants](/guides/users-guide/sub-tenant.png)
+![Sub-tenants](/guides/users-guide/administration/admin_SubTenant.png)
 
-### Adding sub-tenants
+### creating sub-tenants
 
-To add a new tenant, click on "Create tenant" on the top right of the "Subtenants" panel, fill in the fields and click save. Note that:
+To add a new tenant, click **Create tenant** at the right of the top menu bar. Provide the following properties:
 
-- Tenant IDs must be unique within the system.
-- Tenant URLs also must be unique. You can only use one subdomain level. For example, you can only use "acme.cumulocity.com" on cumulocity.com. You cannot use "mycustomer.acme.cumulocity.com". This is not permitted by the TLS standard.
-- You must provide a valid administrator email address to enable users to reset their password.
-- Fields with an asterisk (" * ") are mandatory.
+|Field|Description
+|:--------|:-----
+|Domain/ URL|Tenant IDs and URLs must be unique within the system. You can only use one subdomain level. For example, you can only use "acme.cumulocity.com" on cumulocity.com. You cannot use "mycustomer.acme.cumulocity.com". This is not permitted by the TLS standard.|Name|The name of the tenant, e.g. the company's name.
+|Administrator's email|You must provide a valid email address to enable users to reset their password.
+|Administrator's username|Username for the administrator of this tenant.
+|Contact name|Optional name of the contact
+|Contact phone|Optional phone number of the contact
+|Send password reset link as email|Selected by default. If you deselect this option you need to provide a password and confirm the password (see "[Logging in](/guides/users-guide/overview#login)" for more information on password strength).
+|Tenant policy|You may select a tenant policy to be applied to the tenant from the dropdown list.
 
-When a tenant is created, it is automatically provisioned with a first, administrative user ("Administrator's username"). This user can create first users and set their permissions. The first user cannot be deleted to prevent you from locking yourself out. You can choose to have the password reset link sent as an e-mail. If you have not selected this option you will have to enter a password and confirm the password. (See "[Logging in](/guides/users-guide/overview#login)" for more information on password strength.)
+Note that fields with an asterisk * are mandatory.
+
+Click **Save** to apply your settings.
+
+When the tenant is created, it is automatically provisioned with a first, administrative user ("Administrator's username"). This administrator can create first users and set their permissions. The first user cannot be deleted to prevent you from locking yourself out. 
 
 From the management tenant, you can enable other tenants to create subtenants. To do so, check "Allow creation of subtenants".
 
 ![Tenant-creation](/guides/users-guide/createtenant.png)
 
-### Editing, suspending and deleting sub-tenants
+### Editing subtenants and subscribing to applications
 
-To edit subtenants, click on the desired subtenant. All the fields can be edited except the ID and the administrator's username. When you have finished editing, click on the "Save" button.
+To edit subtenants, click on the desired subtenant or click **Edit** in the context menu accessible through the 3-dot icon.
 
-Click on the "Applications" tab to subscribe tenants to applications or remove the applications from the tenant. By default, tenants will be subscribed to the standard Cumulocity applications. To subscribe an application to a tenant, hover over one of the "Available applications" on the right side and click the "Subscribe" button.
+In the "Properties" tab, all fields are editable except of the ID and the administrator's username. For details on the fields refer to the previous section.
 
-<img src="/guides/users-guide/subscribetenant.png" alt="Subscribe tenant" style="max-width: 50%">
+Switch to the "Applications" tab to subscribe tenants to applications or remove the applications from the tenant. By default, tenants will be subscribed to the standard Cumulocity applications. 
 
-To remove an application, hover over one of the "Subscribed applications" on the left side and click "unsubscribe".
+<img src="/guides/users-guide/administration/admin_SubtenantApplications.png" alt="Subscribe tenant" style="max-width: 100%">
 
-<img src="/guides/users-guide/unsubtenant.png" alt="Usubscribe tenant" style="max-width: 50%">
+To subscribe an application to a tenant, hover over the applications under "Available applications" on the right and click **Subscribe** on the desired application.
 
-You can temporarily suspend tenants. Suspending tenants blocks any access to this tenant, regardless whether the access is from devices, user or other applications. To suspend a tenant, hover over a tenant in the list of tenants and click the "Suspend" button. Confirm the action by clicking "Ok" and entering your password. The tenant will be shown with a red cross icon. As part of suspending the tenant, an informational email is sent to the tenant administrator if an email address is configured for that administrator.
+To remove an application, hover over the applications under "Subscribed applications" on the left and click **Unsubscribe**.
 
-> If you are a service provider, you can suppress this email.
+### Suspending subtenants
+
+You can temporarily suspend tenants. Suspending tenants blocks any access to this tenant, regardless whether the access is from devices, users or other applications. 
+
+To suspend a tenant, click **Suspend** in the context menu of the tenant, accessible through the 3-dot icon.
+
+In the upcoming dialog confirm the suspension by clicking **Ok** and entering your password. The tenant will be shown with a red cross icon. As part of suspending the tenant, an informational email is sent to the tenant administrator if an email address is configured for that administrator.
+
+> **Info**: If you are a service provider, you can suppress this email.
 
 ![Suspend tenant](/guides/users-guide/suspendtenant.png)
 
-If a tenant is suspended, the tenant's data remains in the database and can be made available any time later. To do so, click the "Activate" button.
+If a tenant is suspended, the tenant's data remains in the database and can be made available any time later. To do so, click **Activate**.
 
-To finally delete a tenant and remove all the data of the tenant, click the "x" button while hovering over the tenant in the list. This action cannot be reverted. For security reasons, it is only available in the management tenant.
+### Deleting subtenants
+
+To finally delete a tenant and remove all the data of the tenant, click **Remove** in the context menu of the tenant, accessible through the 3-dot icon.
+
+**Info**: This action cannot be reverted. For security reasons, it is only available in the management tenant.
 
 ### <a name="tenants-custom-properties"></a>Editing custom properties
 
-"Custom properties" tab allows you to view and modify values of custom properties, either predefined ones (like "External reference") or those defined in ["Properties library"](#properties). Such properties are also displayed as columns in [usage statistics table](#usage-stats-custom-properties).
+The "Custom properties" tab allows you to view and modify values of custom properties, either predefined ones (like "External reference") or those defined in the ["Properties library"](#properties). Such properties are also displayed as columns in [usage statistics table](#usage-stats-custom-properties).
 
 ![Custom Properties](/guides/users-guide/subtenant-custom-properties.PNG)
 
 ### <a name="usage-stats"></a> Retrieving usage statistics
 
-The usage statistics menu provides you with information about each subtenant. The statistics show:
+The usage statistics page provides statistical information on each subtenant. 
 
-- Id: Unique id of the subtenant
-- API requests: Number of API requests, including requests from  devices and applications.
-- Device API requests: Number of API requests from devices
-- Storage (MB): The amount of data stored in your account.
+The following information is provided for each tenant:
+
+- ID: ID of the subtenant
+- API requests: Total number of API requests, including requests from  devices and applications.
+- Device API requests: Number of API requests from devices.
+- Storage (MB): Amount of data stored in your account.
 - Root Devices: The amount of devices excluding child devices.
-- Devices: Total number of devices connected to the tenant.
-- Subscribed application: This column shows number of applications that the subtenant is subscribed to.
+- Devices: Total number of devices connected to the subtenant.
+- Subscribed applications: Number of applications that the subtenant is subscribed to.
 - Creation time: The date and time of the creation of the subtenant.
 - Parent: The name of parent tenant (available only for management tenant).
 - External reference: This field is for individual usage, for example, you can add a link to the CRM system here or an internal customer number.
@@ -311,7 +338,7 @@ The usage statistics menu provides you with information about each subtenant. Th
 
 #### <a name="usage-stats-custom-properties"></a> Custom properties
 
-Statistics table also displays custom properties and allows you to sort and filter the list of tenants by their values.
+The statistics table also displays custom properties and allows you to sort and filter the list of tenants by their values.
 
 It's possible to export current view of statistics table to CSV file by clicking "Export CSV" link (it will show a dialog where you can customize CSV output, see screenshot below).
 
@@ -321,11 +348,11 @@ It's possible to export current view of statistics table to CSV file by clicking
 
 ## <a name="tenant-policies"></a> Configuring the tenant policies
 
-A tenant policy is a set of settings that control tenant options and tenant retention rules. Afterwards these options and rules can be used during tenant creation. When creating multiple tenants with the same options or retention rules, you can save work by creating a tenant policy and using it for each tenant.
+A tenant policy is a set of settings that control tenant options and tenant retention rules. These options and rules can be used during tenant creation. When creating multiple tenants with the same options or retention rules, you can save work by creating a tenant policy and using it for each tenant.
 
 ![Tenant policy](/guides/users-guide/tenantpolicy.png)
 
-> Please note that the options and rules are copied into the tenant. Editing the policy has no effect on tenants that have already been created.
+> **Info**: The options and rules are copied into the tenant. Editing the policy has no effect on tenants that have already been created.
 
 ![Add new policy](/guides/users-guide/addpolicy.png)
 
@@ -430,117 +457,110 @@ To change an alarm mapping,
 
 To delete alarm severities, hover over the alarm type and click the "X" button. A confirmation window will pop up. Press "OK" to delete the alarm mapping.
 
-## <a name="settings"></a>Changing settings
+## <a name="settings"></a>Changing application settings
 
-By expanding the "Settings" menu, administrators can:
+From the "Settings" menu, administrators can modify or manage various settings for the account as
 
-- Change the [password policy](#changing-password-settings).
-- Change the [TFA settings](#changing-tfa-settings).
-- Manage the [properties library](#properties).
-- Change the [default application](#default-app).
-- Change the [access control](#access-control) settings.
-- [Enable or disable the dashboards via e-mail feature](#enabling-server-side-agents)
-- Enter [OpenIT credentials](#openIT-credentials)
-- Manage the [platform configuration](#platform-config) settings.
+- changing the [application settings](#default-app),
+- changing the [password policy and TFA settings](#changing-password-settings),
+- managing the [properties library](#properties),
+- [enabling or disable the dashboards via e-mail feature](#enabling-server-side-agents),
+- entering [OpenIT credentials](#openIT-credentials),
+- 
+- managing the [platform configuration](#platform-config) settings.
 
-### <a name="changing-password-settings"></a>Changing the password policy
+### <a name="default-app"></a>Changing application settings
 
-To change password settings, click on "Password". To limit the validity of user passwords, set the number of days when users have to change their passwords. If you do not want to force your users to change passwords, use "0" for unlimited validity of passwords.
+Click "Application" to change applications settings.
 
-By default, users can use any password with eight characters or more. If you select "Enforce that all password are "strong" (green)", your users must provide strong passwords as described in "[Logging in](/guides/users-guide/overview#login)".
+Under "Default application" you can select a default application from the list which will apply to all users within the tenant.
 
-> "Enforce that all password are green" and the "Password validity limit" can be mandatory and non-editable, if configured by the platform administrator.
+**Info**: All users must have access to this application.
 
-Strong (green) passwords must have M characters. By default, the system restricts users to not use passwords used in history, in other words, last N passwords provided by a user are remembered by the system and the system restricts users to not use them. The default value for N is 10.
+Under "Access control", administrators can enable cross-origin resource sharing or "CORS" on the Cumulocity API. 
 
-> "M" and "N" can be configured by the platform administrator.
+The "Allowed Domain" setting will enable your JavaScript web applications to directly communicate with REST APIs.
+Set it to "*" to allow communication from any host.
+Set it to "http://my.host.com, http://myother.host.com" to allow applications from http://my.host.com and from http://myother.host.com to communicate with the platform.
 
-Click "Save" to store the settings.
+For further information, see http://enable-cors.org.
 
-<img src="/guides/users-guide/passsettings.png" alt="Password settings" style="max-width: 50%">
+### <a name="changing-password-settings"></a>Changing the password policy and TFA settings
 
-### <a name="changing-tfa-settings"></a>Changing the TFA settings
+To change password settings, click "Password" in the "Settings" menu. 
 
-To change the TFA settings, click on "Password" under the "Settings" menu item. There are two TFA settings that can be changed:
+Under "Password expiration", you can limit the validity of user passwords by specifying the number of days after which users have to change their passwords. If you do not want to force your users to change passwords, use "0" for unlimited validity of passwords (default vlaue).
 
- - "Limit token validity"- You can set the lifetime of each session. When the session expires, the user has to enter a new verification code.
- - "Limit PIN validity"- Set the lifetime of each verification code sent via SMS. When the verification code expires, in order to login the user has to request a new verification code.
- - When ready, click "Save TFA settings".
+By default, users can use any password with eight characters or more. If you select **Enforce that all password are "strong" (green)**, your users must provide strong passwords as described in "[Logging in](/guides/users-guide/overview#login)".
 
-![TFA settings](/guides/users-guide/tfasettings.png)
+>**Info**: The password validity limit and the enforcing of strong passwords may not be editable, if configured by the platform administrator.
 
-To disable two-factor authentication, simply deselect the box "Allow two-factor authentication". Click on "Save TFA settings" to apply your changes.
+Strong (green) passwords must have "M" characters. By default, the system restricts the use of passwords already used in the past. The last "N" passwords provided by a user are remembered by the system and the system does not allow to use them. The default value for "N" is 10.
+
+> **Info**: "M" and "N" can be configured by the platform administrator.
+
+Click **Save** to apply your password settings.
+
+<img src="/guides/users-guide/administration/admin_Password.png" alt="Password settings" style="max-width: 100%">
+
+Under "TFA settings" you can change the following TFA settings:
+
+ - "Limit token validity"- here you can set the lifetime of each session in minutes. When the session expires, the user has to enter a new verification code.
+ - "Limit PIN validity"- Here you can set the lifetime of each verification code sent via SMS. When the verification code expires, in order to login the user has to request a new verification code.
+
+To allow two-factor authentication, select the checkbox **Allow two-factor authentication**". 
+
+Click **Save TFA settings** to apply your changes.
 
 ### <a name="properties"></a>Managing the properties library
 
-In the properties library, custom properties can be added to tenants, alarms, events or inventory objects. 
-
-With custom properties, you can extend the data model of Cumulocity built-in objects. After you have added your own custom properties as described below, these properties will be available in Cumulocity as follows:
-
-- Inventory Properties: The custom inventory properties are used to extend the inventory data model. They can be used in the “Asset table” and “Asset properties” widgets.
-- Tenant Properties: Custom tenant properties which will be available during tenant creation. The custom properties can be edited under “Subtenants” in the tab “Custom properties” of each tenant. Additionally these properties can be viewed and exported in the “Usage statistics” menu.
-- Alarm Properties: These properties can be used as custom fields which can be added to your report.
-- Event Properties: Similar to the alarm properties, event properties can be used as additional custom fields. When created, they will be available in the “Reporting” menu in “Cockpit”.
-
-#### Extending the inventory data model
-
-The  inventory properties can be used to add additional custom properties to the “Asset table” and “Asset properties” widgets. To add the properties, simply click on the “Add property” link and select your desired property. When ready, click on the “Save” button to confirm your changes.
-
-![Inventory property](/guides/users-guide/inventoryproperty.png)
-
-#### Using the Alarm and Event properties
-
-The alarm and event custom properties can be used in the “Field” section of the “Reporting” menu in “Cockpit”. They can be used as custom fields that you would like to use in your report.
-
-The properties can be found when you click on “Add predefined”.
-
-[Add predefined properties](/guides/users-guide/addpredefined.png)
-
-#### Adding properties to the "Properties library"
+In the properties library, accessible from the "Settings" menu, custom properties can be added to inventory objects, alarms, events and tenants. 
 
 ![Properties library](/guides/users-guide/properties_library.png)
 
-To create a new property, click on "Add property". Afterwards, a form will pop-up. Enter the name of the new property, enter the label and select the desired type of the property (String, number, boolean, etc.). Additionally, you can also check the validation rules which will be required for the new property:
+With custom properties, you can extend the data model of Cumulocity built-in objects. You may create the following custom values:
 
-- "Required": If this validation rule is checked, the property will be required to be filled (During alarm creation for example). If the property type is "Boolean", this rule cannot be checked.
-- "Default Value":  Add a default value which will be automatically filled in the custom property field. Please note that, only "String" type properties can have this validation rule.
-- "Minimum": Enter a minimum integer value.
-- "Maximum": Enter a maximum integer value.
-- "Minimum length": Enter the minimum length required for the string.
-- "Maximum length": Enter the maximum length required for the string.
-- "Regular expression": Add the regular expression which will be required in order to fill the custom property field.
+- Custom inventory properties are used to extend the inventory data model. They can be used in the “Asset table” and “Asset properties” widgets.
+- Custom tenant properties are available during tenant creation. The custom properties can be edited under “Subtenants” in the “Custom properties” tab of each tenant. Additionally these properties can be viewed and exported in the “Usage statistics”.
+- Custom alarm and event properties can be used as custom fields which can be added to your reports and will be available in the “Reporting” page in the Cockpit applications.
 
-When ready, click save.
+#### Adding properties to the properties library
+
+To add a custom property, select the tab for the desired property and click **Add property**. 
 
 ![Add new property](/guides/users-guide/addproperty.png)
 
-Once created, the custom properties can be observed in the “Custom properties” tab as shown in the screenshot below. In this case, a tenant property named “Custom” was created.
+In the upcoming form provide a unique name as identifier and a label for the property and select its data type from the drop down list. Additionally, select validation rules for the new property:
 
-![Custom properties tab](/guides/users-guide/customproptab.png)
+|Check box|Description|
+|:---|:---|
+|Required|If selected, the property needs to be provided, i.e. during alarm creation. Not available if the property type is "Boolean".
+|Default Value|Provide a default value to be automatically filled in the custom property field. Only available for properties with type "String".
+|Minimum|Enter a minimum integer value.
+|Maximum|Enter a maximum integer value.
+|Minimum length|Enter the minimum length required for the string.
+|Maximum length|Enter the maximum length required for the string.
+|Regular expression|Add a regular expression which will be required in order to fill the custom property field.
 
-To edit a property, simply click on the name of the property. To remove a property, click on the property first and then click on “Remove”.
+Click **Save** to create the new property.
 
-### <a name="default-app"></a>Changing the default application
-
-With the "Application" menu, administrators can change the default application view for all users within the tenant when no application was defined in the URL. All users also must have access to this application.
-
-### <a name="access-control"></a>Changing access control settings
-
-With the "Application" menu, administrators can enable cross-origin resource sharing or "CORS" on the Cumulocity API. For more information, see http://enable-cors.org.
+Click on the name of a property in the list, to open it and to edit or remove it.
 
 ### <a name="enabling-server-side-agents"></a>Enabling server-side agents
 
 In the "Server-side agents" menu, the "Send dashboard via e-mail" smart rule can be enabled or disabled. To enable, select the checkbox and click "Save".
 
-### <a name="openIT-credentials"></a>Enter OpenIT credentials
+### <a name="openIT-credentials"></a>Entering OpenIT credentials
 
-SMS sending is used by several features within the application. It can be used to make login more secure with [two-factors authentication](/guides/users-guide/administration#tfa). An SMS can be sent when an alarm is triggered. SMSes can be used to send instructions to devices. The service provided by [Openit](https://sms.openit.de/main.php) can be used similar. In this section, the user can enter credentials to activate features requiring SMS messages.
+By providing OPenIT credentials you enable the platform to utilize SMS services provided by [Openit](https://sms.openit.de/main.php).
 
-### <a name="platform-config"></a> Dealing with the platform configuration settings
+SMS are used throughout the application for various features like [two-factors authentication](/guides/users-guide/administration#tfa)and user notifications, i.e. on alarms.
 
-> Please note that, this feature is only available to "Management" tenants.
+### <a name="platform-config"></a> Handling platform configuration settings
 
-The "Configuration" menu page is located under the "Settings" section. It allows users to configure system-wide properties in Cumulocity. The following options can be modified in the "Configuration" settings:
+> **Info**: This feature is only available to "Management" tenants.
+
+In the "Configuration" page, accessible through the "Settings" menu, you can configure system-wide properties in Cumulocity. The following options can be modified in the "Configuration" settings:
 
 ![Configuration menu1](/guides/users-guide/configuration_tab1.png)
 

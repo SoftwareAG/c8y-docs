@@ -57,10 +57,10 @@ Enter your profile ID, username, password and application EUI. For an explanatio
 
 Click "Save". Your old credentials will now be replaced with the new ones. 
 
-## <a name="create-device-types"></a>Creating device protocols
+## <a name="create-device-types"></a>Creating device types
 To process data from LoRa devices, Cumulocity needs to understand the payload format of the devices. 
 
-In order to create device protocols, go to the Device Management application and select "Device protocols" in the "Device types" menu in the navigator. You can either import an existing device type or create a new one. 
+In order to create device types, go to the Device Management application and select "Device database" in the "Device types" menu in the navigator. You can either import an existing device type or create a new one. 
 
 ### <a name="import-device-type"></a>Importing a predefined device type
 In the Device database window, click the "Import" button. 

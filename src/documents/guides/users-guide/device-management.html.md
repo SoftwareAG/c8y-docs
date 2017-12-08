@@ -16,7 +16,7 @@ The following sections will walk you through all functionalities of the Device M
 |[Grouping Devices](#grouping-devices)|Why and how to group devices into top-level groups, subgroups and [smart groups](#smart-groups).
 |[Device Details](#device-details)|Detailed descroption of the various kind of  information available for various types of  devices.
 |[Monitoring and Controlling Devices](#connection-monitoring)|How to monitor the [connection quality](#connection-monitoring) and [service status](#monitoring-services) of devices, how to handle [alarms](#alarm-monitoring) from devices, how to [remote control](#operation-monitoring) and how to [troubleshoot](#events-all) devices.
-|[Managing Device Protocols](#managing-device-protocols)|How to process data from various device types by using [device protocols](#managing-device-protocols). 
+|[Managing Device Types](#managing-device-protocols)|How to process data from various device types by using [device protocols](#managing-device-protocols). 
 |[Managing Device Data](#managing-device-data)|How to retrieve and manage [firmware and software](#software-repo) for devices and how to handle [configuration snapshots](#configuration-snapshots). 
 |[Working with the Simulator](#simulator)|How to model devices with the [simulator](#simulator) in order to have the same level of functionality as connected hardware devices.
 |[Using SmartREST Templates](#Smartrest)|How to work with [SmartREST templates](#Smartrest), a collection of request and response templates used to convert CSV data and Cumulocity Rest API calls.
@@ -733,7 +733,7 @@ Select a start date and an end date from the fields in the top menu bar and clic
 
 Click **Realtime** at the right of the top menu bar to see events coming in from the devices in real-time.
 
-## <a name="managing-device-protocols"></a> Managing Device Protocols
+## <a name="managing-device-protocols"></a> Managing Device Types
 
 To process data from various device types Cumulocity uses device protocols.
 

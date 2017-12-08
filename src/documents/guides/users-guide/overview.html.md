@@ -121,7 +121,7 @@ The general structure common to all Cumulocity applications includes the followi
 |**Right Drawer**|Clicking the small arrow at the very right of the top bar will unhide/hide the right drawer offering quick links to other applications and to relevant documentation. Per default the Welcome bar is hidden.
 |**Page**|"Page" actually refer to the main area in the application. The content provided here depends on the menu item selected in the dashboard. The structuring of the content differs from page to page. Data may for example be displayed in a list with a row for each object or you may find it being presented in a grid in which objects are represented by cards. 
 
-![Cumulocity application](/guides/users-guide/overview/screenElements.png)
+![Cumulocity application](/guides/users-guide/Overview/ScreenElements.png)
 
 On smaller screens, the layout of an application changes, as shown below. The navigator is hidden and only some of the tabs are visible. To access the navigator, click the menu icon on the top left. To access other tabs, scroll the tabs left or right (the way to scroll the tabs may depend on your device).
 
@@ -149,7 +149,7 @@ Several account settings can be changed by the user.
 
 Click the **User** button at the top right and from the context menu select **User Settings**. 
 
-<img src="/guides/users-guide/overview/Overview_UserSettings.png" alt="User settings"  style="max-width: 60%">
+<img src="/guides/users-guide/Overview/Overview_UserSettings.png" alt="User settings"  style="max-width: 60%">
 
 In addition to changing the email address, name and phone number stored for your account you can modify the language of the user interface from here. 
 

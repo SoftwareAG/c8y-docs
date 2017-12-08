@@ -16,6 +16,7 @@ The following sections will walk you through all functionalities of the Device M
 |[Grouping Devices](#grouping-devices)|Why and how to group devices into top-level groups, subgroups and [smart groups](#smart-groups).
 |[Device Details](#device-details)|Detailed descroption of the various kind of  information available for various types of  devices.
 |[Monitoring and Controlling Devices](#connection-monitoring)|How to monitor the [connection quality](#connection-monitoring) and [service status](#monitoring-services) of devices, how to handle [alarms](#alarm-monitoring) from devices, how to [remote control](#operation-monitoring) and how to [troubleshoot](#events-all) devices.
+|[Managing Device Protocols](#managing-device-protocols)|How to process data from various device types by using [device protocols](#managing-device-protocols). 
 |[Managing Device Data](#managing-device-data)|How to retrieve and manage [firmware and software](#software-repo) for devices and how to handle [configuration snapshots](#configuration-snapshots). 
 |[Working with the Simulator](#simulator)|How to model devices with the [simulator](#simulator) in order to have the same level of functionality as connected hardware devices.
 |[Using SmartREST Templates](#Smartrest)|How to work with [SmartREST templates](#Smartrest), a collection of request and response templates used to convert CSV data and Cumulocity Rest API calls.
@@ -130,7 +131,7 @@ Our example shows a search für "Ublox C027". You can search for any kind of tex
 
 The device list offers a filtering functionality to filter devices in the list for specific criteria. 
 
-Filtering is available on every column. Just click the Filter icon next to the name of the column you want to set a filter for. 
+Filtering is available on every column. Just click the filter icon next to the name of the column you want to set a filter for. 
 
 <img src="/guides/users-guide/DeviceManagement/DevMgmt_Filtering.png" alt="Filtering" style="max-width: 100%">
 
@@ -528,7 +529,7 @@ The bottom arrow represents the Push connection (from Cumulocity to the device).
 
 **Maintenance mode**
 
-Moreover the device may be in  "Maintenance" mode, indicated by the Tool icon in the "Status" column. This is a special connection status indicating that the device is currently being maintained and cannot be monitored. While a device is being maintained, no alarms for that device are raised. 
+Moreover the device may be in  "Maintenance" mode, indicated by the tool icon in the "Status" column. This is a special connection status indicating that the device is currently being maintained and cannot be monitored. While a device is being maintained, no alarms for that device are raised. 
 
 You can turn maintenance mode for a device on or off through a button in the "Connection monitoring" card in its "Info" tab. 
 
@@ -680,7 +681,7 @@ To execute bulk operations for a group follow these steps:
 1. Select a device and open the "Control" tab.
 2. Create an operation.
 3. Hover over the operation you want to execute.
-4. Click the 3-dots icon.
+4. Click the menu icon.
 5. In the context menu click **Execute for whole group**.
 
 ![Execute bulk operations](/guides/users-guide/executebulkoperations.png)
@@ -693,7 +694,7 @@ In order to view the status and progress of your operations simply select the de
 
 To edit a bulk operation follow these steps:
 
-1. Hover over the bulk operation you want to edit and click the 3-dots icon. 
+1. Hover over the bulk operation you want to edit and click the menu icon. 
 2. In the context menu click **Edit operation schedule**.
 3. In the upcoming window you may change the "Start Date" and "Delay" values.
 4. To change operation details click **Show operation details**. 
@@ -701,7 +702,7 @@ To edit a bulk operation follow these steps:
 
 ![Edit bulk operations](/guides/users-guide/DeviceManagement/DevMgmt_BulkOperationsEdit)
 
-To delete a bulk operation hover over the bulk operation you want to delete and click the 3-dots icon. In the context menu click **Cancel operation**.
+To delete a bulk operation hover over the bulk operation you want to delete and click the menu icon. In the context menu click **Cancel operation**.
 
 ### <a name="events-all"></a>Troubleshooting devices
 
@@ -731,6 +732,32 @@ Since devices may send large amounts of event data, you can filter the data to b
 Select a start date and an end date from the fields in the top menu bar and click the **Filter** button to apply the filter. Click the **Clear** button to clear the filter again.
 
 Click **Realtime** at the right of the top menu bar to see events coming in from the devices in real-time.
+
+## <a name="managing-device-protocols"></a> Managing Device Protocols
+
+To process data from various device types Cumulocity uses device protocols.
+
+Click “Device protocols” in the “Device types” menu to access the “Device protocols” page.
+
+In the “Device protocols”  page you will find a list with all device protocols available in your account.
+
+<img src="/guides/users-guide/DeviceManagement/DevMgmt_DeviceProtocols.png" alt="Device protocols" style="max-width: 100%">
+
+The device protocols list shows the following information on each device:
+
+* the device protocol type (IMPACT, LWM2M)
+* the device protocol name 
+* the number of resources for the device (at the right)
+
+To add a new device protocol click **Add device protocol** at the top bar. For details on adding a device protocol follow the documentation of the particular device type you want to add:
+
+* [IMPACT](/guides/users-guide/impact)
+* LWM2M
+
+To edit a device protocol either click on the protocol or click the menu icon at the right of the row and in the context menu click **Edit**. 
+
+To remove a device protocol, click the menu icon at the right of the row and in the context menu click **Remove**.
+
 
 ## <a name="managing-device-data"></a> Managing Device Data
 
@@ -791,7 +818,7 @@ The "Device credentials" tab lists all credentials that have been generated for 
 
 Click the arrow in the "Global roles" column of a device to open a list with available global roles. Assign or remove permissions for an individual device by selecting/deselecting roles and click **Apply** to save your settings.
 
-Click the 3-dots-icon at the right of a device to access the following functionalities:
+Click the menu icon at the right of a device to access the following functionalities:
 
 * **Edit** - To open the device credential details (see below).
 
@@ -898,7 +925,7 @@ A message is defined by choosing a message template (like sending a temperature)
 ### The Simulator tab
 In the navigator click "Simulator" in the "Devices" menu to open the "Simulator" tab.
 
-All simulators which you can access will be listed here. Click the 3-dots icon at the top right of a simulator card to open a context menu from where you can edit, clone or remove a simulator.
+All simulators which you can access will be listed here. Click the menu icon at the top right of a simulator card to open a context menu from where you can edit, clone or remove a simulator.
 
 <img src="/guides/users-guide/DeviceManagement/DevMgmt_SimulatorCard.png" alt="Simulator card" style="max-width: 50%">
 
@@ -1043,13 +1070,13 @@ To delete a response, open it and click **Remove** at the bottom.
 
 ### How to edit or delete a SmartREST template
 
-To edit a SmartREST template either click the desired template or click the 3-dots icon and in the context menu click **Edit**.
+To edit a SmartREST template either click the desired template or click the menu icon and in the context menu click **Edit**.
 
-To delete a SmartREST template click the 3-dots icon and in the context menu click **Remove**.
+To delete a SmartREST template click the menu icon and in the context menu click **Remove**.
 
 ### How to export a SmartREST template
 
-To export a SmartREST template click the 3-dots icon and in the menu click  **Export**. The template will automatically be downloaded.
+To export a SmartREST template click the menu icon and in the menu click  **Export**. The template will automatically be downloaded.
 
 To export a SmartREST template as CSV file follow these steps:
 

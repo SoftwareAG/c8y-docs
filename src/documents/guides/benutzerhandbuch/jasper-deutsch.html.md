@@ -48,7 +48,7 @@ Neben dem Benutzer benötigen Sie auch einen sogenannten API-Lizenzschlüssel un
 Der Benutzer ist nun erstellt, hat aber noch kein Passwort. Folgen Sie den Anweisungen, die Ihnen von Control Center per E-Mail zugewiesen wurden, um ein Passwort festzulegen. Verbinden Sie nun Ihr Jasper Control Center-Konto mit Cumulocity:
 
 * Verwenden Sie einen Cumulocity-Administratorbenutzer, um sich in der Anwendung Cumulocity Administration anzumelden.
-* Klicken auf das Menu Verbindungen. Wenn das Menu nicht angezeigt werden sollte, dann [Stellen Sie sicher das der Nutzer Admin Rechte für das Options-Management hat. ](/guides/users-guide/administration#permissions). Sonst bitte den [Support](https://support.cumulocity.com) kontaktieren.
+* Klicken auf das Menu Verbindungen. Wenn das Menu nicht angezeigt werden sollte, dann [Stellen Sie sicher das der Nutzer Admin Rechte für das Options-Management hat](/guides/benutzerhandbuch/administration-deutsch#permissions). Sonst bitte den [Support](https://support.cumulocity.com) kontaktieren.
 * Den Key, URL, Nutzername und Passwort eingeben und "Speichern".
 
 ![Jasper settings](/guides/users-guide/jaspersettings.png)
@@ -124,7 +124,7 @@ Wenn Sie vermuten, dass ein Gerät nicht korrekt an Cumulocity berichtet oder es
 
 * Die SIM-Karte ist aktiviert. Wenn die SIM-Karte nicht aktiviert ist, können Sie sie im Dropdown-Menü "Aktiviert" aktivieren. Es kann eine Weile dauern, bis die SIM-Karte im Netzwerk aktiv ist. Möglicherweise ist ein Reset des Geräts erforderlich, um es wieder an das Netzwerk zu binden.
 * Das Gerät ist mit dem Netzwerk verbunden. Wenn das Gerät nicht mit dem Netzwerk verbunden ist, kann dies mehrere Gründe haben:
- * Das Gerät befindet sich an einem Standort ohne Mobilfunknetz. Wenn das Gerät die Netzwerkqualitätsparameter meldet, navigieren Sie zum Menüpunkt ["Messwerte" Tab](/guides/users-guide/device-management#measurements) des Geräts und überprüfen Sie die zuletzt gemeldeten Signalstärke- und Fehlerratenparameter. 
+ * Das Gerät befindet sich an einem Standort ohne Mobilfunknetz. Wenn das Gerät die Netzwerkqualitätsparameter meldet, navigieren Sie zur Registerkarte ["Messwerte"](/guides/benutzerhandbuch/device-management-deutsch#measurements) des Geräts und überprüfen Sie die zuletzt gemeldeten Signalstärke- und Fehlerratenparameter. 
  * Es gibt ein Netzwerk- oder Hardwareproblem (Antenne, Modem). Wählen Sie das Zahnrad-Symbol oben rechts und klicken Sie auf "SIM-Details", dann öffnen Sie das Jasper Control Center Diagnosetool. Wenn das Gerät keine Verbindung zum Netzwerk herstellt, kann es schadhaft sein.
  * Das Gerät befindet sich in einer Datensitzung. Wenn sich das Gerät nicht in einer Datensitzung befindet, kann dies wiederum mehrere Gründe haben:
   * Die APN-Einstellungen sind im Gerät falsch konfiguriert.
@@ -136,7 +136,7 @@ Wenn Sie vermuten, dass ein Gerät nicht korrekt an Cumulocity berichtet oder es
 Die Datenkonnektivität kann an verschiedenen Stellen analysiert werden:
 
 * Wenn das Gerät seine Netzwerkkonfiguration meldet, navigieren Sie zur Registerkarte "Netzwerk" und überprüfen Sie, eventuell bearbeiten, die APN-Einstellungen.
-* Wenn das Gerät Shell unterstützt, navigieren Sie zum ["Shell" tab](/guides/users-guide/device-management/#shell) und überprüfen oder bearbeiten Sie APN-Einstellungen und Roaming-Konfiguration.
+* Wenn das Gerät Shell unterstützt, navigieren Sie zur Registerkarte ["Shell"](/guides/benutzerhandbuch/device-management-deutsch/#shell) und überprüfen oder bearbeiten Sie APN-Einstellungen und Roaming-Konfiguration.
 * Überprüfen Sie den Abschnitt "Sessions" auf der Registerkarte "Connectivity", um zu sehen, ob das Gerät zuvor kommuniziert hat und wie viel Verkehr es verwendet hat.
 * Überprüfen Sie den Abschnitt "Sessions" auf der Registerkarte "Connectivity", um zu sehen, ob das Gerät zuvor kommuniziert hat und wie viel Datenvolumen es verwendet hat.
 * Klicken Sie abschließend auf das Zahnrad oben rechts und wählen Sie "SIM-Details", um zur SIM-Konfiguration im Jasper Control Center zu navigieren.
@@ -145,5 +145,5 @@ Die Datenkonnektivität kann an verschiedenen Stellen analysiert werden:
 
 Wenn das Gerät weiterhin keine Cumulocity-Meldung enthält, kann es zu einem Konfigurations- oder Softwareproblem auf dem Gerät kommen.
 
-* Das Gerät kann seine Anmeldeinformationen verloren haben, z. B. aufgrund eines Werks-Reset oder vollständiger Verlust der Leistung. In diesem Fall können Sie [Re-registrieren des Geräts](/guides/users-guide/device-management#device-registration).
+* Das Gerät kann seine Anmeldeinformationen verloren haben, z. B. aufgrund eines Werks-Reset oder vollständigen Verlusts der Leistung. In diesem Fall können Sie das Gerät [re-registrieren](/guides/benutzerhandbuch/device-management-deutsch#device-registration).
 * Es kann ein Konfigurations- oder Softwareproblem mit dem Gerät geben, das gerätespezifisch analysiert werden muss.

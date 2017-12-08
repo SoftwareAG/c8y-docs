@@ -5,7 +5,7 @@ title: Telic
 
 ## Overview
 
-[Telic GmbH](http://en.telic.de/) offers GPS-based devices for diverse industrial purposes, varying battery lifetime and ruggedness requirements. Cumulocity can record the coordinates of the devices centrally and enables you to create additional business logic on top of the data (for example, sending an email when a geofence is left).
+[Telic GmbH](http://www.telic.de/en/) offers GPS-based devices for diverse industrial purposes, varying battery lifetime and ruggedness requirements. Cumulocity can record the coordinates of the devices centrally and enables you to create additional business logic on top of the data (for example, sending an email when a geofence is left).
 
 <img src="/guides/devices/telic/sbc_avl_m.jpg" alt="SBC AVL/AVL Power" style="display: inline">
 <img src="/guides/devices/telic/sbc3_can.jpg" alt="SBC3 CAN" style="display: inline">

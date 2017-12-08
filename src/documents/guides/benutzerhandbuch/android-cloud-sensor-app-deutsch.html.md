@@ -156,4 +156,4 @@ Wenn die Taste "Senden" gedrückt wird, erscheint diese Meldung als Pop-up auf d
 
 Wenn der Vibrationsschalter eingeschaltet wird, beginnt das Smartphone zu vibrieren, bis der Schalter ausgeschaltet wird.
 
-Um mehr über Dashboard-Widgets zu erfahren, konsultieren Sie bitte:https://www.cumulocity.com/guides/users-guide/cockpit/#widget. 
+Um mehr über Dashboard-Widgets zu erfahren, konsultieren Sie bitte [https://www.cumulocity.com/guides/users-guide/cockpit/#widget](https://www.cumulocity.com/guides/users-guide/cockpit/#widget).

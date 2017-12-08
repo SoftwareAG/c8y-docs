@@ -14,15 +14,14 @@ The following sections will walk you through all functionalities of the Administ
 
 |SECTION|CONTENT|
 |:---|:---|
-|[Home Screen](#device-registration)|Providing information on your capacity usage and subscribed applications.
-|[Connecting Devices](#device-registration)|How to [register one or more devices manually](#device-registration-manually) and 
+|[Home Screen](#home)|Providing information on your [capacity usage and subscribed applications](#home).
+|[Viewing Audit Logs](#audit)|Providing information on all [operations performed by the users](#audit).
+|[Managing own applications](#applications)|How to manage and [configure own applications](#applications) in your Cumulocity account.
 |[Applying Business Rules](#retention)|How to set up real-time [event processing](#event-processing) scripts and reprioritize alarms by [alarm mappings](#reprio-alarms).
 |[Managing Data Retention](#retention)|How to manage and configure [retention rules](#retention-rules) for your data and how to [manage stored files](#files) in the file repository.
 |[Data Broker](#data-broker)|How to forward data to other tenants using [data connectors](#data-broker-connector) and how to receive data with a [data subcription](#data-broker-subscriptions) on the receiving end.
 
-* View [subscription information](#home) for your account.
-* View all operations done by users via the [audit logs](#audit).
-* Configure [applications](#applications).
+
 * Manage [tenants](#tenants) and configure your [tenant policies](#tenant-policies)	.
 * Change [settings](#settings).
 * Configure the recipients and trigger of the [warning e-mail](#warningEmail) for maximum storage being reached.
@@ -70,7 +69,7 @@ Only the latest 100 logs are visible. Click **Load more** at the bottom of the l
 
 In order to easily search through logs, you may filter logs for
 
- - the type, i.e. Alarm, Operation, Smart Rule,
+ - the type, i.e. alarm, operation, Smart Rule,
  - a date range providing a "From" and/or a "To" date,
  - the user.
 
@@ -90,11 +89,11 @@ You manage your own application under "Own applications" accessible through the 
 
 In the "Own applications" page you will find a list of your own applications in your account.
 
-![List of own applications](/guides/users-guide/ownapplications.png)
+<img src="/guides/users-guide/administration/admin_OwnApplications.png" alt="Own applications" style="max-width: 100%">
 
-Click the menu icon at the top right of an application to open a context menu from where you can **Edit** or **Remove** an application (see Editing and removing applications). 
+Click the menu icon at the top right of an application to open a context menu from where you can **Edit** or **Remove** an application. 
 
-Click **Open** to directly open the application from here. Your applications are also available through the Application Switcher.
+Click **Open** on the application card to directly open the application from here. Your applications are also available through the Application Switcher.
 
 Click **Add Plugin** to add a plugin (see [Adding and removing plugins](#add-remove-plugins)).
 
@@ -113,7 +112,7 @@ If you select **Upload ZIP file**, the wizard will ask you to simply drop a file
 
 If you select **External application**, you next need to provide the name, application key and external URL for it. 
 
-If you want to clone an existing application follow the steps below.
+If you want to clone an existing application follow the steps described next.
 
 
 ### <a name="clone-application"></a>Cloning applications
@@ -126,9 +125,9 @@ In order to clone an application follow these steps:
 2. In the upcoming dialog select **Clone existing application**.
 3. Select the desired application from the dropdown list. Note that also subscribed applications are shown.
 4. In the next window enter the name of the application. The name will be shown as title on the top left of the application. It will also be shown in the Application Switcher.
-5. Next, enter an application key. The application key is used to identify requests from this application and to make it available for subscription, see the [Concepts Guide](/guides/concepts/applications).
-- Next, enter the application path. This path will be part of the URL to invoke the application. For example, if you use "hello" as application path, the URL of the application will be "/apps/hello".
-- Finally click **Clone** to create the application.
+5. Enter an application key. The application key is used to identify requests from this application and to make it available for subscription, see the [Concepts Guide](/guides/concepts/applications).
+6. Enter the application path. This path will be part of the URL to invoke the application. For example, if you use "hello" as application path, the URL of the application will be "/apps/hello".
+7. Finally click **Clone** to create the application.
 
 ### <a name="add-remove-plugin"></a>Adding and removing plugins
 
@@ -142,7 +141,7 @@ The "Plugin" tab for the application will open up, showing all existing plugins 
 
 To remove a plugin, hover over it and click **Remove** at the right.
 
-The following tables list the navigator and menu items with their respective plugins:
+The following tables list the navigator and menu items with their respective plugins.
 
 
 |Navigator Item|Plugin
@@ -170,7 +169,7 @@ Be aware of the "UI" at the end of the plugin names.
 
 Users can restore previous versions of an application from an archive.
 
-Clcik **Edit** in the menu icon on the desired application and switch to the "Archives" tab. 
+Click **Edit** in the menu icon on the desired application and switch to the "Archives" tab. 
 
 Open the context menu for the desired version and select **Set as active** to make it the active version.
 
@@ -180,34 +179,38 @@ Click **Remove** to remove the version from the archive.
 
 ### Uploading archives
 
-Multiple archive ZIP file versions can be stored in Cumulocity when they were created by uploading ZIP files. Each version is called an archive. You can upload different versions at the same time and switch between these versions. To upload an archive:
+Multiple archive ZIP file versions can be stored in Cumulocity when they were created by uploading ZIP files. Each version is called an archive. You can upload different versions at the same time and switch between these versions. 
+
+To upload an archive follow these steps:
 
 - Select the application by clicking on its name.
-- Click on the "Archives" tab.
-- Click on "Upload archive" and navigate to the archive in your folder.
-- Click on "Upload" to upload the archive to Cumulocity.
+- Switch to the "Archives" tab.
+- Click **Upload archive** and browse for the archive on your computer or simply drop the archive file.
+- Click **Upload** to upload the archive to your Cumulocity account.
 
 ![Upload archive](/guides/users-guide/uploadarchive.png)
 
-Once uploaded, archives can be downloaded, activated or removed if necessary. The active archive (indicated by a cloud icon) is the version of the application that is currently being served to the users of your account. This version cannot be deleted.
+Once uploaded, archives can be downloaded, activated or deleted if necessary. The active archive (indicated by a Cloud icon) is the version of the application that is currently being served to the users of your account. This version cannot be deleted.
 
 ### <a name="creating-smartapp"></a>Adding a smartapp (Deprecated)
 
-> Note that this functionality is depreciated and will be removed in future versions of the product.
+> **Info**: This functionality is depreciated and will be removed in future versions of the product.
 
-To add a smartapp:
+To add a smartapp follow these steps:
 
-- Click on "Add application".
-- Click on "Create legacy smartapp".
-- Enter the name of the application. The name will be shown as title on the top left of the application. It will also be shown in the application switcher.
-- Enter the application path. This path will be part of the URL to invoke the application. For example, if you use "hello" as application path, the URL of the application will be "/apps/hello".
-- Click the "Create" button.
+1. Click **Add application** in the "Own applications" page.
+2. Click **Create legacy smartapp**.
+3. Enter the name of the application. The name will be shown as title on the top left of the application. It will also be shown in the application switcher.
+4. Enter the application path. This path will be part of the URL to invoke the application. For example, if you use "hello" as application path, the URL of the application will be "/apps/hello".
+5. Click **Create**.
 
-> Please note that these are the old "Smartapps" in which the plugins that you wish to add to your application must be selected from a list.
+Note that these are the old "Smartapps" in which the plugins that you wish to add to your application must be selected from a list.
 
 ![Legacy smartapps](/guides/users-guide/smartapps.png)
 
-### Editing applications
+### Editing and removing applications
+
+**Edit**
 
 To edit an application, simply click the application or click **Edit** in its context menu, accessible through the menu icon. 
 
@@ -215,14 +218,15 @@ In the "Properties" tab, several fields can be modified, depending on the applic
 
 > **Info**: "ID", "Application key" and "Path" cannot be changed once configured.
 
-### Removing applications
+**Remove**
 
 If you remove an application that overwrites a subscribed application, the currently subscribed application becomes available to all users. Additionally the users will then also benefit from future upgrades of the subscribed application.
-It is not possible to remove subscribed apps. This is only possible for the owner of the subscribed application.
+
+It is not possible to remove subscribed applications. This can only be done by the owner of the subscribed application.
 
 > **Info**: To overwrite a "Subscribed application" the "Own Application" must have the same context-path as the "Subscribed application".
 
-To remove an application, click **Remove** in its context menu, accessible through the menu icon. Click **OK** in the confirmation dialog to remove the application.
+To remove an application, click **Remove** in its context menu, accessible through the menu icon. 
 
 ## <a name="tenants"></a>Managing tenants
 
@@ -245,31 +249,27 @@ Click "Subtenants" in the "Tenants" menu to view a list of all subtentants avail
 
 The "Tenants" page provides the following information on each subtenant:
 
-* The name of the subtenant, e.g. company name of your customer
+* The name of the subtenant, e.g. company name of your customer.
 * The ID and domain. When you create a tenant, the ID is the first part of the URL. For example, if you create a tenant with the ID "acme" on cumulocity.com, the tenant's URL will be "acme.cumulocity.com". Note that while you can change the URL later on, you cannot change the ID anymore after the tenant was created.
-* An optional contact name and phone number
-* The date when the tenat was created.
-* The status of the tenant, either active (indicated by a green checkmark icon) or suspended (indicated by a red cross icon)
+* An optional contact name and phone number.
+* The date when the tenant was created.
+* The status of the tenant, either active (indicated by a green checkmark icon) or suspended (indicated by a red cross icon).
 
 If you are using the management tenant, you will see an additional column "Parent tenant". This column shows the tenant that created the listed tenant.
-
-- External reference: A free text field that you can use for arbitrary additional information on the tenant. For example, you can store a reference to your CRM system here.
-- Creation time: The time when the tenant was created.
-- Parent tenant: If you are using the management tenant, you will see an additional column "parent tenant". This column shows the tenant that created the listed tenant.
 
 ![Sub-tenants](/guides/users-guide/administration/admin_SubTenant.png)
 
 ### creating sub-tenants
 
-To add a new tenant, click **Create tenant** at the right of the top menu bar. Provide the following properties:
+To add a new tenant, click **Create tenant** at the right of the top menu bar. To create a tenant, provide the following properties:
 
 |Field|Description
 |:--------|:-----
 |Domain/ URL|Tenant IDs and URLs must be unique within the system. You can only use one subdomain level. For example, you can only use "acme.cumulocity.com" on cumulocity.com. You cannot use "mycustomer.acme.cumulocity.com". This is not permitted by the TLS standard.|Name|The name of the tenant, e.g. the company's name.
 |Administrator's email|You must provide a valid email address to enable users to reset their password.
 |Administrator's username|Username for the administrator of this tenant.
-|Contact name|Optional name of the contact
-|Contact phone|Optional phone number of the contact
+|Contact name|Optional name of the contact.
+|Contact phone|Optional phone number of the contact.
 |Send password reset link as email|Selected by default. If you deselect this option you need to provide a password and confirm the password (see "[Logging in](/guides/users-guide/overview#login)" for more information on password strength).
 |Tenant policy|You may select a tenant policy to be applied to the tenant from the dropdown list.
 
@@ -277,8 +277,9 @@ Note that fields with an asterisk * are mandatory.
 
 Click **Save** to apply your settings.
 
-When the tenant is created, it is automatically provisioned with a first, administrative user ("Administrator's username"). This administrator can create first users and set their permissions. The first user cannot be deleted to prevent you from locking yourself out. 
+When the tenant is created, it is automatically provisioned with a first, administrative user ("Administrator's username"). This administrator can create other users and set their permissions. The first user cannot be deleted to prevent you from locking yourself out. 
 
+**Still true?**
 From the management tenant, you can enable other tenants to create subtenants. To do so, check "Allow creation of subtenants".
 
 ![Tenant-creation](/guides/users-guide/createtenant.png)

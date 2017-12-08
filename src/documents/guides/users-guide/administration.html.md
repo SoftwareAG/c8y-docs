@@ -10,38 +10,44 @@ The Administration application enables account administrators to manage their us
 
 The following sections will walk you through all functionalities of the Administration application in detail. For your convenience find an overview on the content of this document below.
 
->**Important**: For information on the user and permission management in the Administration application refer to section on [User and Permission Management](/guides/users-guide/user-and-permissions-management).
+>**Important**: For information on the user and permission management in the Administration application refer to the separate section on [User and Permission Management](/guides/users-guide/user-and-permissions-management).
 
 |SECTION|CONTENT|
 |:---|:---|
+|[Home Screen](#device-registration)|Providing information on your capacity usage and subscribed applications.
 |[Connecting Devices](#device-registration)|How to [register one or more devices manually](#device-registration-manually) and 
+|[Applying Business Rules](#retention)|How to set up real-time [event processing](#event-processing) scripts and reprioritize alarms by [alarm mappings](#reprio-alarms).
+|[Managing Data Retention](#retention)|How to manage and configure [retention rules](#retention-rules) for your data and how to [manage stored files](#files) in the file repository.
+|[Data Broker](#data-broker)|How to forward data to other tenants using [data connectors](#data-broker-connector) and how to receive data with a [data subcription](#data-broker-subscriptions) on the receiving end.
 
 * View [subscription information](#home) for your account.
 * View all operations done by users via the [audit logs](#audit).
 * Configure [applications](#applications).
 * Manage [tenants](#tenants) and configure your [tenant policies](#tenant-policies)	.
-* Set up real-time [event processing](#event-processing) scripts and [reprioritize alarms](#reprio-alarms).
 * Change [settings](#settings).
-* Configure the [retention policies](#retention) for your data.
 * Configure the recipients and trigger of the [warning e-mail](#warningEmail) for maximum storage being reached.
-* Manage [stored files](#files) such as firmware images or log files.
-* Forward data between different tenants with [data broker](#data-broker).
 
 
-## <a name="home"></a>The Home Screen
+## <a name="home"></a>Home Screen
 
-The "Home" screen provides navigation links to the main parts of the administration application. It also shows subscription information for your account. The subscription information describes how much capacity you have used and the optional applications you are subscribed to. The capacity section shows:
+The "Home" screen provides 
 
-* API requests: It counts whenever some function in Cumulocity is invoked, regardless of whether the function is invoked from a device (for example, sending a measurement) or from an application (for example, viewing the list of devices).
-* Device API requests: Counted only when the API is called from a device (for example, sending a measurement)
+* a welcome message,
+* quick links to the main parts of the Administration application,
+* your capacity usage for the current and the for last month,
+* the optional applications you are subscribed to. 
+
+<img src="/guides/users-guide/administration/admin_HomeScreen.png" alt="Home screen" style="max-width: 100%">
+
+The capacity sections show:
+
+* API requests: The total number of API requests, counting whenever some function in Cumulocity is invoked, regardless of whether the function is invoked from a device (for example, sending a measurement) or from an application (for example, viewing the list of devices).
+* Device API requests: Counting only when the API is called from a device (for example, sending a measurement).
 * Storage: The total amount of data stored in your account. This amount can be changed by [retention policies](#retention) and by the amount and size of [stored files](#files).
 * Storage quota: If the storage limit per device is set, the user is restricted to a [maximum data usage](#storageQuota).
-* Devices: The total number of devices connected to your account. This is the sum of the devices listed in the "[All devices](/guides/users-guide/device-management#viewing-devices)" menu of the Device Management application and their direct and indirect child devices.
+* Root devices: The number of root devices connected to your account, excluding child devices.
+* Devices: The total number of devices connected to your account. This is the sum of the devices listed in the "[All devices](/guides/users-guide/device-management#viewing-devices)" page of the Device Management application and their direct and indirect child devices.
 * Users: The sum of all users configured in this account, active and inactive.
-
-"This month" shows the usage information starting with the current month. "Last month" shows the last full month.
-
-![Home](/guides/users-guide/adminscreen.png)
 
 ## <a name="audit"></a>Viewing audit logs
 
@@ -86,7 +92,7 @@ In the "Own applications" page you will find a list of your own applications in 
 
 ![List of own applications](/guides/users-guide/ownapplications.png)
 
-Click the 3-dot icon at the top right of an application to open a context menu from where you can **Edit** or **Remove** an application (see Editing and removing applications). 
+Click the menu icon at the top right of an application to open a context menu from where you can **Edit** or **Remove** an application (see Editing and removing applications). 
 
 Click **Open** to directly open the application from here. Your applications are also available through the Application Switcher.
 
@@ -164,7 +170,7 @@ Be aware of the "UI" at the end of the plugin names.
 
 Users can restore previous versions of an application from an archive.
 
-Clcik **Edit** in the 3-dot icon on the desired application and switch to the "Archives" tab. 
+Clcik **Edit** in the menu icon on the desired application and switch to the "Archives" tab. 
 
 Open the context menu for the desired version and select **Set as active** to make it the active version.
 
@@ -203,7 +209,7 @@ To add a smartapp:
 
 ### Editing applications
 
-To edit an application, simply click the application or click **Edit** in its context menu, accessible through the 3-dot icon. 
+To edit an application, simply click the application or click **Edit** in its context menu, accessible through the menu icon. 
 
 In the "Properties" tab, several fields can be modified, depending on the application type.
 
@@ -216,7 +222,7 @@ It is not possible to remove subscribed apps. This is only possible for the owne
 
 > **Info**: To overwrite a "Subscribed application" the "Own Application" must have the same context-path as the "Subscribed application".
 
-To remove an application, click **Remove** in its context menu, accessible through the 3-dot icon. Click **OK** in the confirmation dialog to remove the application.
+To remove an application, click **Remove** in its context menu, accessible through the menu icon. Click **OK** in the confirmation dialog to remove the application.
 
 ## <a name="tenants"></a>Managing tenants
 
@@ -279,7 +285,7 @@ From the management tenant, you can enable other tenants to create subtenants. T
 
 ### Editing subtenants and subscribing to applications
 
-To edit subtenants, click on the desired subtenant or click **Edit** in the context menu accessible through the 3-dot icon.
+To edit subtenants, click on the desired subtenant or click **Edit** in the context menu accessible through the menu icon.
 
 In the "Properties" tab, all fields are editable except of the ID and the administrator's username. For details on the fields refer to the previous section.
 
@@ -295,7 +301,7 @@ To remove an application, hover over the applications under "Subscribed applicat
 
 You can temporarily suspend tenants. Suspending tenants blocks any access to this tenant, regardless whether the access is from devices, users or other applications. 
 
-To suspend a tenant, click **Suspend** in the context menu of the tenant, accessible through the 3-dot icon.
+To suspend a tenant, click **Suspend** in the context menu of the tenant, accessible through the menu icon.
 
 In the upcoming dialog confirm the suspension by clicking **Ok** and entering your password. The tenant will be shown with a red cross icon. As part of suspending the tenant, an informational email is sent to the tenant administrator if an email address is configured for that administrator.
 
@@ -307,7 +313,7 @@ If a tenant is suspended, the tenant's data remains in the database and can be m
 
 ### Deleting subtenants
 
-To finally delete a tenant and remove all the data of the tenant, click **Remove** in the context menu of the tenant, accessible through the 3-dot icon.
+To finally delete a tenant and remove all the data of the tenant, click **Remove** in the context menu of the tenant, accessible through the menu icon.
 
 **Info**: This action cannot be reverted. For security reasons, it is only available in the management tenant.
 
@@ -394,68 +400,81 @@ To see whether TFA is enabled for a certain user, go to the "Users" menu and che
 
 ![TFA satus](/guides/users-guide/tfastatus.png)
 
-Enable two-factor authentication for a user:
+To enable two-factor authentication for a user
 
-- Go to the "Users" menu.
-- Click on the user name.
-- Click on the checkbox next to "Enable two-factor authentication.
-- Click "Save".
+- Navigate to the "Users" page.
+- Click on the desired user.
+- Select the checkbox next to "Enable two-factor authentication.
+- Click **Save**.
 
 ![Enable TFA](/guides/users-guide/enabletfa.png)
 
-## <a name="event-processing"></a>Managing event processing
+## <a name="event-processing"></a>Managing Business Rules
 
-Using event processing, you can specify real-time business logic that is automatically run by Cumulocity as soon as new data arrives or existing data is modified. The logic is deployed in so-called "modules". Modules consist of a set of statements that you write in [Cumulocity Event Language](/guides/concepts/realtime). Click on "Event processing" to see the current modules or to create new modules.
+### Event processing
 
-![Event processing](/guides/users-guide/eventprocessing.png)
+Using event processing, you can specify real-time business logic that is automatically run by Cumulocity as soon as new data arrives or existing data is modified. The logic is deployed in so-called "modules". Modules consist of a set of statements that you write in [Cumulocity Event Language](/guides/concepts/realtime). 
 
-> A user-friendly way to specify real-time business logic is provided in the Cockpit application through the so-called "[Smart Rules](/guides/users-guide/cockpit#rules)". Smart Rules are "under the hood" also implemented as Cumulocity Event Language statements, and you can see them when you click on "Event Processing". However, you cannot edit Smart Rules from the Event Processing user interface.
+> **Info**: A user-friendly way to specify real-time business logic is provided in the Cockpit application through the so-called "[Smart Rules](/guides/users-guide/cockpit#rules)". Smart Rules are "under the hood" also implemented as Cumulocity Event Language statements, and you can see in the "Event Processing" page. However, you cannot edit Smart Rules from here.
 
-### Creating new modules
+Click "Event processing" in the "Business rules" menu to view the current modules or to create new ones.
 
-To create a new module, click on "New module".
+<img src="/guides/users-guide/administration/admin_EventProcessing.png" alt="Event processing" style="max-width: 100%">
 
-- Enter a name for the module. You can only use alphanumeric characters without blanks.
-- If you want to run the statements in the module immediately, leave the status set to "Deployed". Otherwise, set the status to "Not deployed".
-- Start typing your CEL statements into the large text field labeled "Body". To get some inspiration, select an example from the "Examples" drop-down menu and click "Append example". The example CEL statement will be pasted into the "Body" text field at the position of the cursor.
-- Click the "Save" button.
+For each module in the list the status (deployed/not deployed), the name and the date when is was last updated is provided.
 
-![New module](/guides/users-guide/newmodule.png)
+To edit a module simply click the module or click **Edit** in the context menu accesible through the context icon.
 
-If you selected the "Deployed" status, you will see a small green "Connected" box in the user interface. Whenever your statements produce some output, you will see it below this "Connected" box. Clicking on a line of output unfolds the detailed output of the statement. Clicking "Clear all" removes the output from the screen.
+To remove a module click **Remove** in the context menu.
 
-### Managing modules
+Instead of deleting the module, you can also disable it temporarily by setting its status to "Not deployed".
 
-To modify your module, simply click on the module's name. To remove your module, hover over the module's name and click the "X" button. A confirmation window will pop up. Press "OK" and the module will be removed.
+#### Creating new modules
 
-![Remove modules](/guides/users-guide/removemodules.png)
+To create a new module, click **New module** in the top menu bar.
 
->Instead of deleting the module, you can also disable it temporarily by setting the "Status" in the edit menu to "Not deployed". Click on the "Save" button afterward.
+<img src="/guides/users-guide/administration/Admin-EventProcessingNewModule.png" alt="New module" style="max-width: 100%">
 
-## <a name="reprio-alarms"></a>Reprioritizing alarms
+Enter a name for the module at the very top. You can only use alphanumeric characters without blanks.
 
-"Alarm mapping" enables you to change the severity and text of alarms to adapt them to your business priorities. For example, a loss of the connection to a device may be critical to you, but it is, by default, a "MAJOR" alarm. To change this, add an alarm mapping to change alarms related to connection losses to "CRITICAL".
+By default, the status is set to "Deployed" which means that the statements you enter will be run immediately. Set the slider to "Not deployed" if you want to avoid this. 
 
-![Alarm mapping](/guides/users-guide/alarmmapping.png)
+Enter your CEL statemants into the "Source code" text box. For your comvenience we provide various examples. Click **Examples** and select an appropriate example from the drop down list. Click **Append example** to paste the example into the "Source code" text box at the position of the cursor.
 
-### Adding an alarm mapping
+Click **Save** to save your settings.
 
-To modify the severity of an alarm, determine the type of the alarm that you want to modify by clicking on an alarm in the [alarm list](/guides/users-guide/device-management#alarm-monitoring). Then click "Add alarm mapping" in the "Alarm mapping" menu.
+The example module creates an alarm when the temperature goes below 0 degree.
 
-- Enter the alarm type to modify.
-- Select desired new severity, or select "Drop" to not show the alarm at all.
-- Enter a new text for the alarm. This step is optional. If you do not enter any text, the original text in the alarm will be preserved.
-- Click "Save".
+<img src="/guides/users-guide/administration/Admin-EventProcessingModuleExample.png" alt="Example module" style="max-width: 100%">
 
-### Changing or deleting alarm mappings
+Still true??
 
-To change an alarm mapping,
+If you set the status to "Deployed", you will see a small green "Connected" box in the user interface. Whenever your statements produce some output, you will see it below this "Connected" box. Clicking on a line of output unfolds the detailed output of the statement. Clicking "Clear all" removes the output from the screen.
 
-- Locate the alarm in the "Alarm mapping" section and click on its name.
-- Change the severity and/or text.
-- Click "Save".
+### <a name="reprio-alarms"></a>Alarm mapping
 
-To delete alarm severities, hover over the alarm type and click the "X" button. A confirmation window will pop up. Press "OK" to delete the alarm mapping.
+Alarm mapping enables you to change the severity and text of alarms to adapt them to your business priorities. For example, a loss of the connection to a device is by default a "MAJOR" alarm but may be critical to you. To change this, add an alarm mapping to change alarms related to connection losses to "CRITICAL".
+
+Click "Alarm mapping" in the "Business Rules" menu to see a list of all alarm mappings.
+
+<img src="/guides/users-guide/administration/Admin-AlarmMapping.png" alt="Alarm mapping" style="max-width: 100%">
+
+For each alarm mapping the alarm severity and the name of the mapping is shown.
+
+To edit an alarm mapping simply click it.
+
+To delete an alarm mapping hover over it and click the **Delete** button.
+
+#### Adding an alarm mapping
+
+To add an alarm mapping, click **Add alarm mapping** in the top menu bar.
+
+<img src="/guides/users-guide/administration/Admin-AlarmMapping.png" alt="Alarm mapping" style="max-width: 100%">
+
+1. Enter the alarm type to be modified.
+2. Optionally, enter a new text for the alarm. If you do not enter any text, the original text in the alarm will be kept.
+3. Select the desired new severity, or select "Drop" to not show the alarm at all.
+4. Click **Save**.
 
 ## <a name="settings"></a>Changing application settings
 
@@ -464,9 +483,6 @@ From the "Settings" menu, administrators can modify or manage various settings f
 - changing the [application settings](#default-app),
 - changing the [password policy and TFA settings](#changing-password-settings),
 - managing the [properties library](#properties),
-- [enabling or disable the dashboards via e-mail feature](#enabling-server-side-agents),
-- entering [OpenIT credentials](#openIT-credentials),
-- 
 - managing the [platform configuration](#platform-config) settings.
 
 ### <a name="default-app"></a>Changing application settings
@@ -719,40 +735,63 @@ At the top you can select if you want to send the e-mail to the suspended tenant
 Click **Save configuration** to save your settings.
 
 
-## <a name="retention"></a>Managing data retention
+## <a name="retention"></a>Managing Data Retention
 
-"Retention rules" gives you control how long data is stored in your account. For example, you want to store measurements for 90 days, but delete alarms already after 10 days. By default, all historical data is deleted after 60 days (This can be edited in system settings).
+### <a name="retention-rules"></a>Retention rules
 
-Retention rules are usually run during the night. When you edit a retention rule, you will not see an immediate effect in the usage section on the home page of the administration application.
+"Retention rules" gives you control how long data is stored in your account. You might for example want to store measurements for 90 days, but delete alarms already after 10 days. By default, all historical data is deleted after 60 days (configurable in the system settings).
 
-![Add rule](/guides/users-guide/addrules.png)
+Retention rules are usually run during the night. When you edit a retention rule, you will not see an immediate effect in the "Usage" section on the Home screen of the Administration application.
 
-To add additional "Retention rules", click on "Add rule". Up to the "Maximum age" field, you can enter an asterisk ("\*") into all fields to permit any value in that field.
+Click "Retention rules" in the "Management" menu to view a list of retention rules configured for your account.
 
-- Select the type of data to clean up (alarms, measurements, events, operations, audit logs).
-- Enter a fragment type, if you want to be more specific about the data to be cleaned up. To clean up all connection loss alarms with this rule, select "alarms" and enter "c8y_UnavailabilityAlarm" into "type".
-- If you want to remove only data from a specific device, enter the device ID into "Source".
-- Enter the "Maximum age" in days (max. allowed value is 10 years in days).
-- Click the "Save" button.
+<img src="/guides/users-guide/administration/Admin_RetentionRule.png" alt="Retention rules" style="max-width: 50%">
+
+For each rule, the rule name, details on the data to be deleted (fragment type, type and source, see below) and the maximum age in days is provided.
+
+The asterisk ("*") indicates that data with any value will be cleaned up.
+
+
+####Creating retention rules
+
+To add additional retention rules, click **Add rule** in the top menu bar. 
 
 <img src="/guides/users-guide/addrulepage.png" alt="Add retention rule" style="max-width: 50%">
 
-> Note that alarms are only removed if they are in "CLEARED" state.
+>**Info**: Per default an asterisk ("*") is set in all fields except the "Maximum age" field, to include all values.
 
-To delete a rule, click on the "X" button and then press "OK" after the pop-up window appears.
+1. Select the type of data to clean up (alarms, measurements, events, operations, audit logs or all).
+2. Enter a fragment type, if you want to be more specific about the data to be cleaned up. To clean up all connection loss alarms with this rule, select "alarms" and enter "c8y_UnavailabilityAlarm" as property into the "Type" field.
+3. If you want to remove data only from a specific device, enter the device ID into the "Source" field.
+4. Enter the "Maximum age" in days (max. allowed value is 10 years in days).
+5. Click **Save** to create the rule.
 
-## <a name="warningEmail"></a>Managing storage quota warning e-mail
+Note that alarms are only removed if they are in "CLEARED" state.
 
-This section is only visible if a storage quota was set for the tenant. The tenant administrators can set a user group and threshold for an e-mail to be sent once a day if the storage used is higher than a percentage of the storage quota. The e-mail warning can also be disabled. The default setup is sending an e-mail to the "admin" group when the storage reaches 80% of maximum storage.
+<img src="/guides/users-guide/administration/Admin_RetentionRuleDelete.png" alt="Delete retention rule" style="max-width: 50%">
+
+To delete a rule, hover over it and click the **Delete** button at the right.
 
 
-## <a name="files"></a>Managing files
+### <a name="files"></a>Managing files in the file repository
 
-The file repository provides an overview of the files stored in your account. To see the files, click on "Files repository" in the administration menu. The files listed can come from various sources. They can be software images, configuration snapshots taken from devices, log files from devices or web applications uploaded using the "Own applications" menu. To delete a file, click the "X" button next to the file.
+The file repository provides an overview of the files stored in your account.
 
-![Files repository](/guides/users-guide/filesrepo.png)
+Click "Files repository" in the "Management" menu to see a list of files. 
 
-> If the file corresponds to an active application, it cannot be deleted. You first need to remove or upgrade the application to be able to delete it.
+The files listed can come from various sources. They can be software images, configuration snapshots taken from devices, log files from devices or web applications uploaded from the "Own applications" page. 
+
+For each file, the name of the file, its owner, the file type (i.e. image/bmp, text/csv), its size and the date when it was last updated is provided.
+
+<img src="/guides/users-guide/administration/Admin_FilesRepository.png" alt="Files Repository" style="max-width: 100%">
+
+Click **Upload file** in the top menu bar to upload a file from your computer.
+
+Click **Download** in the context menu accessible through the menu icon to download a file from your account.
+
+Click **Delete** in the context menu to delete a file from your account.
+
+>**Info**: If the file corresponds to an active application, it cannot be deleted. You first need to remove or upgrade the application to be able to delete it.
 
 ## <a name="storageQuota"></a>Storage quota
 
@@ -760,90 +799,122 @@ The storage quota is in place for a tenant when a storage quota per device is se
 
 In case the quota is exceeded, an e-mail is sent to all tenant administrators to warn them that data will be deleted the following night. After 24h, if the quota is still exceeded, all data retention limits are reduced by a fixed percentage. The storage quota per device will be reduced as a result of this rule.
 
-> Let us assume that a tenant has a storage quota of 10GB. Retention rules are 80 days for measurements, 90 days for all other data.
->
->
-> - Day 1: In the nightly check, the total storage is calculated at 13GB. An e-mail is sent to all the tenant administrators.
->
-> - Day 2: the total storage is still at 13GB. The system determines that a 15% reduction of the retention rules is sufficient to be under the storage quota. So any measurement older than 68 days (80 days - 15%) and any other data older that 77 days (90 days - 15% results in 76.5 days, rounded to 77 days) is deleted.
->
-> The total storage is now at 9.8GB.
+**Example:**
 
-## <a name="data-broker"></a>Data broker
+Let us assume that a tenant has a storage quota of 10GB. Retention rules are 80 days for measurements, 90 days for all other data.
 
-Data broker lets you share data selectively with another tenant. You can share:
+ - Day 1: In the nightly check, the total storage is calculated at 13GB. An e-mail is sent to all tenant administrators.
 
-- Devices (and more generically, managed objects),
-- Events,
-- Alarms,
-- Measurements.
+ - Day 2: the total storage is still at 13GB. The system determines that a 15% reduction of the retention rules is sufficient to be under the storage quota. So any measurement older than 68 days (80 days - 15%) and any other data older that 77 days (90 days - 15% results in 76.5 days, rounded to 77 days) is deleted.
 
-Navigate to "Data connectors" if you would like to send data to another tenant. Navigate to "Data subscriptions", if you want to receive data from another tenant.
+The total storage is now at 9.8GB.
+
+### <a name="warningEmail"></a>Managing storage quota warning e-mail
+
+This feature is only visible if a storage quota was set for the tenant. 
+
+The tenant administrators can set a user group and threshold for an e-mail to be sent once a day if the storage used is higher than a particular percentage of the storage quota. The default setup is sending an e-mail to the "admin" group when the storage reaches 80% of maximum storage.
+
+The e-mail warning can also be disabled. 
+
+## <a name="data-broker"></a>Data Broker
+
+Data broker lets you share data selectively with another tenants. You can share:
+
+- devices (and more generically, managed objects),
+- events,
+- alarms,
+- measurements.
+
+Navigate to "Data connectors" if you would like to send data to another tenant. Navigate to "Data subscriptions", if you would like to receive data from another tenant.
 
 <img src="/guides/users-guide/data-broker-on-navigator.PNG" alt="Data broker menus" style="max-width: 25%">
 
-> Devices that are forwarded using the data broker are accounted like normal devices also in the destination tenant.
+> **Info**: Devices that are forwarded using the data broker are charged like normal devices in the destination tenant.
 
 ### <a name="data-broker-connectors"></a> Data connectors
 
-A data connector describes the subset of the data that you would like to send to a destination tenant, as well as the URL of that destination tenant.
+A data connector describes the subset of the data that you would like to send to a destination tenant as well as the URL of that destination tenant.
 
 #### <a name="data-broker-connectors-list"></a> Viewing data connectors
 
-In the "Data connectors" menu, you can create new data connectors and manage the existing data connectors. Click on "Data connectors" to see a list of all currently defined data connectors with their status.
+In the "Data connectors" page, you can manage existing data connectors or create new ones. Click "Data connectors" to see a list of all currently defined data connectors with their status.
 
 ![Data broker connectors list](/guides/users-guide/data-broker-connectors-list.PNG)
 
-Each card supports the following actions:
+For each data connector the following information is provided:
 
-* Use the slider to enable and disable data forwarding to the destination tenant. If data is being forwarded, the slider reads "active". If data is not being forwarded, the slider reads "suspended" or "pending". "Suspended" means that you have disabled forwarding. "Pending" means that the destination tenant has disabled forwarding.
-* Click "Edit" in the menu on the top right of the card to modify the data connector's configuration. The configuration is described in more detail below.
-* Click "Duplicate" in the menu to create another data connector with the same configuration.
-* Click "Delete" in the menu to stop data forwarding and remove the data connector.
+* the data connector's name
+* its destination tenant
+* a description
+* the status
+* the number of filters set for the data connector
 
-#### <a name="data-broker-connector-edit"></a> Editing data connectors
+Use the slider to enable and disable data forwarding to the destination tenant. If data is being forwarded, the slider reads "active". If data is not being forwarded, the slider reads "suspended" or "pending". "Suspended" means that you have disabled forwarding. "Pending" means that the destination tenant has disabled forwarding.
 
-Click "Add data connector" to create a new data connector or use the "Edit" menu on a particular data connector to edit its configuration.
+* Click **Edit** in the context menu of the card, accessible through the menu icon, to modify the data connector's configuration. The configuration is described in more detail below.
+* Click "**Duplicate** in the context menu to create another data connector with the same configuration.
+* Click **Delete** in the context menu to stop data forwarding and remove the data connector.
+
+#### <a name="data-broker-connector-edit"></a> Creating or edit data connectors
+
+Click **Add data connector** in the top menu bar to create a new data connector or click **Edit** in the context menu of a particular data connector to edit its configuration.
 
 ![Data broker edit connector](/guides/users-guide/data-broker-edit-connector.PNG)
 
-When creating a new data connector, enter
+To create a new data connector provide the following information:
 
-* The name of the data connector at the top using the small pencil icon.
-* **Target URL for data connector**: The URL of the tenant to which data will be forwarded. Once saved, you cannot edit this value anymore.
-* **Description**: A textual description of the configuration. Both the name and the description will be visible on the destination side after accepting the subscription.
-* **Data filters**: A set of filters that define what is copied to the destination. You need to configure at least one filter.
+|Field|Description|
+|:---|:---|
+|Title|The name of the data connector.
+|Target URL for data connector|The URL of the tenant to which data will be forwarded. Once saved, you cannot edit this value anymore.
+|Description|A textual description of the configuration. Both the name and the description will be visible on the destination side after accepting the subscription.
+|Data filters|A set of filters that define what is copied to the destination. You need to configure at least one filter.
 
 Each data filter contains the following information:
 
-* **Group or device**: The group or device that is forwarded. Selecting a group here results in all sub-groups and sub-devces being forwarded. By default, all data is forwarded.
-* **API**: Defines the type of data being forwarded.
-* **Fragments to filter**: The fragments that need to be present in a device to be forwarded.
-* **Fragments to copy**: The fragments that are copied to the destination. If nothing is specified here, only standard properties of managed objects, alarms, events and measurements are forwarded (see below). Select "Copy all fragments" to forward the entire object.
-* **Type filter**: Forwarded data needs to have this value in its "type" property.
+|Field|Description|
+|:---|:---|
+|Group or device|The group or device that is forwarded. Selecting a group here results in all sub-groups and sub-devices being forwarded. By default, all data is forwarded.
+|API|The type of data being forwarded (alarms, events, measurements, manages objects).
+|Fragments to filter|The fragments that need to be present in a device to be forwarded.
+|Fragments to copy|The fragments that are copied to the destination. If nothing is specified here, only standard properties of managed objects, alarms, events and measurements are forwarded (see below). Select **Copy all fragments** to forward the entire object.
+|Type filter|Forwarded data needs to have this value in its "type" property.
 
 The heading of a data filter summarizes the configuration in one line. The standard properties that are copied by default are:
 
-* **For created alarms**: "type", "text", "time", "severity", "status".
-* **For updated alarms**: "status", "text", "severity".
-* **For created events**: "type", "text", "time".
-* **For created measurements**: "type", "text", "time"
-* **For created and updated devices**: "type", "name", "c8y_IsBinary", "c8y_IsDeviceGroup", "c8y_IsDevice", "c8y_DeviceGroup", "c8y_DeviceSubgroup", "c8y_SmartRule", "c8y_applications_storage", "c8y_DynamicGroup", "c8y_DeviceQueryString".
+* **For created alarms**: type, text, time, severity, status.
+* **For updated alarms**: status, text, severity.
+* **For created events**: type, text, time.
+* **For created measurements**: type, text, time
+* **For created and updated devices**: type, name, c8y&#95;IsBinary, c8y&#95;IsDeviceGroup, c8y&#95;IsDevice, c8y&#95;DeviceGroup, c8y&#95;DeviceSubgroup, c8y&#95;SmartRule, c8y&#95;applications&#95;storage, c8y&#95;DynamicGroup, c8y&#95;DeviceQueryString.
 
-Once you have configured your filters, save the configuration. After saving, you will see a security code printed below your configuration. The security code prevents unintended forwarding of data. You need to communicate this security key separately to an administrative user of the destination tenant. You can use the icon next to the security code to copy the code to your clipboard.
+Once you have configured your data connector, click **Save** to save the configuration. 
+
+After saving, you will see a security code displayed below your configuration. The security code prevents unintended forwarding of data. You need to communicate this security key separately to an administrative user of the destination tenant. You can use the icon next to the security code to copy the code to your clipboard.
 
 ![Security code](/guides/users-guide/securitycode.png)
 
 ### <a name="data-broker-subscriptions"></a> Data subscriptions
 
-Click on "Data subscriptions" to view the data that is being forwarded to your tenant. The screenshot below illustrates the process of setting up data forwarding on the receiving end. Each card shows one step in the process.
+In the "Data subscriptions" page, you can manage existing data subscriptions or create new ones. 
 
-![Data broker subscriptions list](/guides/users-guide/data-broker-subscriptions-list.PNG)
+Click "Data subscriptions" to see a list of all currently defined data forwarded to your tenant. 
 
-The steps are:
+<img src="/guides/users-guide/Administration/Admin_Subscriptions" alt="Data subscriptions" style="max-width: 25%">
 
-* First, click "Add data subscription" to receive data. You will see the card shown on the left of the screenshot. Enter the security code that you received from the sending end of the data.
-* The card will temporarily change to a progress indicator. When the connection is established, click the "Accept" button to start forwarding data into your tenant. The subscription is active now.
+For each subscription the name, the target tenant and the status (enabled or disabled) is provided on a card.
+
+Use the slider to temporarily stop forwarding data into your tenant.
+
+Click **Delete** in the context menu, accessible through the menu icon, to stop data forwarding and remove the data connector.
+
+**How to set up data forwarding on the receiving end**
+
+1. Click **Add data subscription** in the top menu bar to receive data. 
+1. In the new card enter the security code that you received from the sending end of the data.
+1. When the connection is established, click **Accept** to start forwarding data into your tenant. The subscription is active now.
+
 * You can click the slider in the card to temporarily stop forwarding data into your tenant.
 
 You can now navigate to the Device Management application or the Cockpit application. There will be a new "virtual group" with a specific icon (see the screenshot below) showing the forwarded devices. The group will have the same name as your subscription. Devices are "lazily" created on the destination side whenever they send data for the first time after setting up an active subscription.

@@ -145,5 +145,5 @@ Die Datenkonnektivität kann an verschiedenen Stellen analysiert werden:
 
 Wenn das Gerät weiterhin keine Cumulocity-Meldung enthält, kann es zu einem Konfigurations- oder Softwareproblem auf dem Gerät kommen.
 
-* Das Gerät kann seine Anmeldeinformationen verloren haben, z. B. aufgrund eines Werks-Reset oder vollständigen Verlusts der Leistung. In diesem Fall können Sie das Gerät[re-registrieren](/guides/benutzerhandbuch/device-management-deutsch#device-registration).
+* Das Gerät kann seine Anmeldeinformationen verloren haben, z. B. aufgrund eines Werks-Reset oder vollständigen Verlusts der Leistung. In diesem Fall können Sie das Gerät [re-registrieren](/guides/benutzerhandbuch/device-management-deutsch#device-registration).
 * Es kann ein Konfigurations- oder Softwareproblem mit dem Gerät geben, das gerätespezifisch analysiert werden muss.

@@ -105,7 +105,7 @@ Sobald die Verbindung hergestellt ist, können Sie Ihr Gerät jetzt verwalten. K
 
 ### <a name="collect"></a>Daten Sammeln
 
-Wenn der Gerätetyp des Fieldbusgerätes für die Erfassung von Messungen konfiguriert ist, werden diese im Register "Messungen" sichtbar. Sie werden dann auch im [Daten Explorer](/guides/benutzerhandbuch/cockpit-deutsch#using-the-data-explorer-to-visualize-data) und in den [Dashboard Widgets](/guides/benutzerhandbuch/cockpit-deutsch#working-with-dashboards) angezeigt.
+Wenn der Gerätetyp des Fieldbusgerätes für die Erfassung von Messungen konfiguriert ist, werden diese im Register "Messungen" sichtbar. Sie werden dann auch im [Daten Explorer](/guides/benutzerhandbuch/cockpit-deutsch#visualise) und in den [Dashboard Widgets](/guides/benutzerhandbuch/cockpit-deutsch#dashboards) angezeigt.
 
 Die Daten werden gemäß dem Intervall gesammelt, das in der Übertragungsrate Eigenschaft des Endgeräts spezifiziert ist. Zur Optimierung des Datenverkehrs können Daten, die exakt die gleichen sind wie zuvor, nicht erneut gesendet werden.
 

@@ -539,7 +539,7 @@ Im Menü "Serverseitige Agenten" kann die Smart-Regel "Dashboard über E-Mail se
 
 ### <a name="openIT-credentials"></a>OpenIT Zugangsdaten Eingeben
 
-SMS werden von verschiedenen Funktionen benutzt. Es kann für sicheren Zugang benutzt werden wie [Zwei-Faktor Authentifikation](/guides/benutzerhandbuch/administration-deutsch#users). Eine SMS kann gesendet werden, wenn ein Alarm ausgelöst wird. Mit SMS können Befehle an Geräte gesendet werden. TDer Service von [Openit](https://sms.openit.de/main.php) wird ähnlich benutzt. In diesem Abschnitt kann der Benutzer Anmeldeinformationen eingeben, um Funktionen zu aktivieren, die SMS-Nachrichten erfordern.
+SMS werden von verschiedenen Funktionen benutzt. Es kann für sicheren Zugang benutzt werden wie [Zwei-Faktor Authentifikation](/guides/benutzerhandbuch/administration-deutsch#tfa). Eine SMS kann gesendet werden, wenn ein Alarm ausgelöst wird. Mit SMS können Befehle an Geräte gesendet werden. TDer Service von [Openit](https://sms.openit.de/main.php) wird ähnlich benutzt. In diesem Abschnitt kann der Benutzer Anmeldeinformationen eingeben, um Funktionen zu aktivieren, die SMS-Nachrichten erfordern.
 
 ## <a name="retention"></a>Verwalten der Datenaufbewahrung
 

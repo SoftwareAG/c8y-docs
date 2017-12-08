@@ -81,7 +81,7 @@ Create a dashboard to customize the representation of the sensor data from the d
 An example dashboard created for an mbed device is shown below:
 ![Dashboard Screenshot](/guides/devices/mbed/dashboard.png)
 
-For further details, see the [Cumulocity User Guide](guides/users-guide/device-management).
+For further details, see the [Cumulocity User Guide](/guides/users-guide/device-management).
 
 #### Interacting with the Control Operations
 

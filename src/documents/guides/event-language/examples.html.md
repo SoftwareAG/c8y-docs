@@ -288,9 +288,9 @@ We will compare the value and time difference of two adjacent measurements for a
       } as fragments
     from AdjacentFillLevelMeasurements m;
 
-## Using Zementis analytic model in Cumulocity
+## Using Zementis analytic models in Cumulocity
 
-The CEP rule/module below shows how to use the Zementis analytic model for analyzing data like measurement values in Cumulocity.
+The CEP rule/module below shows how to use [Zementis](http://www2.softwareag.com/corporate/products/apama_webmethods/zementis/default.aspx?) analytic models inside Cumulocity.
 
 We are assuming the input data looks like this:
 
@@ -322,7 +322,8 @@ We are assuming the input data looks like this:
 	  "type": "c8y_TemperatureMeasurement"
 	}
 
-First, a predictive model is created and uploaded to Zementis via ADAPA Zementis console. Assume, the model becomes available for data scoring on https://myadapa.zementis.com:443/adapars/apply/model_name endpoint.
+First, a predictive model is created and uploaded via Zementis console. Assume, the model becomes available for data scoring on https://myadapa.zementis.com:443/adapars/apply/model_name endpoint.
+
 
 **CEP module:**
 

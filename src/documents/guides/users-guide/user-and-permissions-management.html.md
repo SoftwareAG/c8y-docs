@@ -6,20 +6,22 @@ layout: default
 
 ## <a name="overview"></a>Overview
 
-This section focuses on the user and permission management features of the Administration application. In the application, you can:
+This section focuses on the user and permission management features in the Administration application. These features include:
 
-- Manage [users](#users).
-- Assign [global roles](#global) and [inventory roles](#inventory).
-- Grant [application access](#app-access).
+- managing [users](#users),
+- assigning [global roles](#global) and [inventory roles](#inventory),
+- granting [application access](#app-access).
 
-Depending on your subscription plan, you can also:
+Depending on your subscription plan, you can additionally:
 
-- Create [user hierarchies](#hierarchy).
-- [Delegate](#delegate) user hierarchies.
+- create [user hierarchies](#hierarchy),
+- [delegate](#delegate) user hierarchies.
 
-## <a name="users"></a>Managing users
+## <a name="users"></a>Managing Users
 
-The "User" menu lets you manage the individual users within a tenant. You can:
+Select the "Users" menu item in the "Account" menu in the navigator to manage the users within your tenant.  
+
+in the "Users" page you can
 
 - Create users.
 - Assign user names and set passwords.
@@ -29,59 +31,72 @@ The "User" menu lets you manage the individual users within a tenant. You can:
 
 > Your user needs to have a role with the user management permissions "ADMIN" or "CREATE" to be able to do so.
 
-### Browsing users
-The screenshot below shows the list of users accessible through the "Users" menu. The list includes the following columns:
+### Viewing users
 
-- The user name that is used to access the tenant.
-- The name and email of the user, if set.
-- The global roles of the user.
-- The [strength](https://www.cumulocity.com/guides/users-guide/overview#login) of the password set for the user.
-
-The cogwheel at the end of the row contains a drop-down menu with additional functions, which will be explained later in this chapter.
-
-The list can be filtered by using the "Filter users" text box and the "Filter by global roles" drop-down menu. Start typing into the "Filter users" text box to show only the users that contain the text you typed. Click on the "Filter by global roles" drop-down menu to show only users having the selected roles. After you have selected roles, click the "Filter" button to actually apply the selection.
-
-To get an overview of the users in your account, choose the ”Expand all” link on the top right. To just show the top-level users, select "Collapse all". 
+To view all users in your tenant click "Users" in the "Account" menu in the navigator.
 
 ![Expanded view](/guides/users-guide/userslist.png)
 
-### Adding users
+A user list will be displayed providing the following information for each user:
 
-To add more users, choose “Add user” on the top right. This will open a dialog as shown below.
+* The user name that is used to access the tenant.
+* The name and email of the user, if set.
+* The global roles assigned to the user.
+* The [strength](https://www.cumulocity.com/guides/users-guide/overview#login) of the password set for the user.
+
+The list can be filtered by using the "Filter users" field at the left of the top menu bar. For details on the filtering functionality refer to the [](Introduction).
+
+Moreover you can filter by global roles. Select the desired roles from the dropdown list and click **Apply** to limit the user shown in the list to users with the selected roles.
+
+<!-- Still true? 
+
+To get an overview of the users in your account, choose the ”Expand all” link on the top right. To just show the top-level users, select "Collapse all". 
+-->
+
+
+### Creating new users
+
+To add a user to your tenant, click **Add user** at the right of the top menu bar. 
+
 
 ![Add new user](/guides/users-guide/newuser.png)
 
-Next,
+At the left of the "New user" window provide the following information to identify the user:
 
-- Enter a username for this user to log on. Keep in mind that this username cannot be changed anymore later in the process.
-- Choose if the user will be active.
+|Field|Description|
+|:---|:---|
+|Username|A username used to log on. Note that this username cannot be changed once the user has been created. This field is mandatory.
+|Active|Enable/disable the user account here. If the user account is disabled the user cannot login. 
+|E-mail|A valid email address. This is required to enable the user to reset the password. This field is mandatory.
+|First name|First name of the user. This name appears at the right of the top bar on the **User** button if the user is logged in.
+|Last name|Last name of the user.
+|Telephone|A valid phone number. The phone number is required if the user is configured to use two-factor authentication.
+Owner|...
+Delegated by|...
 
-> If the switch is set to "disabled", the user will not be able to log in.
+Select the login options for the user.
 
-- Enter the first and the last name of the user. (This name will be shown on the top right next to the user symbol when the user logs in.)
-- Enter the e-mail address of this user. You need to provide a valid, unique email address to enable users to reset their password.
-- Enter a phone number. The phone number is especially important if this user is supposed to use two-factor authentication.
-- If you check "User must reset the password on next login", the user will have to set a password after the next login.
-- If you check "Send password reset link as e-mail", the user will receive an email message with a link to set a password. The email will be sent to the email address configured above.
-- Enter a password and confirm it. While entering the password, the strength of the password will be displayed. See ["Logging in"](/guides/users-guide/overview/#login) for more information on password strength  You can only enter a password if "Send password reset link as e-mail" is not checked.
-- Add global roles to the user.
-- Click the "Save" button to save all the previous data.
+* On "User must reset the password on next login", the user will have to set a password after the next login. <br>Enter a password and confirm it. While entering the password, the strength of the password will be shown. See [Log into the Cumulocity platform](/guides/users-guide/overview/#login) for further information on password strength.  
+* On "Send password reset link as e-mail", the user will receive an email message with a link to set a password. The email will be sent to the email address configured above.
 
-> Fields without an asterisk ("*", like "First name", "Last name") are optional. You can edit user details similar like you can add new users.
+On the right of the page select the global roles for the user. Details on global roles are described below.
 
+Click **Save** to create the user.
+
+<!--what does that mean -->
 > Please note that, by default manually created users always have the "Own_User_Management" permissions set to active.
 
-### Editing, disabling and deleting  users
+### Editing, delegating, disabling and deleting users
 
-To edit an existing user, either click on the user or on the cogwheel located at the end of the row of the desired user. The first link on the cogwheel menu will take you to the user details. All fields except “Username” and “Send password reset link as e-mail” can be modified. To change the password, click on "Change password". Click "Save" after you have finished editing.
+Click the 3-dots icon at the right of a user's row to open a context menu which provides further functionalities.
 
-> To edit existing users you must have a role with a user management permission.
+<img src="/guides/users-guide/Administration/Admin_UserContextMenu.png" alt="Context menu" style="max-width: 100%">
 
-Below, you can see the cogwheel menu.
+Click **Edit** to edit an existing user. All fields except “Username” and “Send password reset link as e-mail” can be modified. Click **Change password** to change the password. After editing click **Save** to apply your settings.
 
-![Cogwheel menu](/guides/users-guide/cogwheelmenu.png)
+> **Info**: You need a role with user management permission to modify existing users.
 
-Additionally from the cogwheel menu, you can:
+
 
 - Copy Inventory roles from another user.
 - Enable or disable the user.

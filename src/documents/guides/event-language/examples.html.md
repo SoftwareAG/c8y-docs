@@ -5,7 +5,7 @@ layout: default
 toc: true
 ---
 
-## Calculating an hourly median of  measurements
+## Calculating an hourly median of measurements
 
 We are assuming the input data looks like this:
 
@@ -50,7 +50,7 @@ Module:
     where getObject(m, "c8y_TemperatureMeasurement") is not null
     output last every 1 hours;
 
-## Create alarm if the operation was not executed
+## Creating alarm if the operation was not executed
 
 Operations usually run to a fixed sequence when handled by the device.
 

@@ -6,7 +6,7 @@ layout: default
 
 ## Overview
 
-This section describes the aspects common to all REST-based interfaces of Cumulocity. The interfaces are based on the [Hypertext Transfer Protocol, version 1.1](http://www.w3.org/Protocols/rfc2616/rfc2616.html) using [HTTPS](http://en.wikipedia.org/wiki/HTTP_Secure).
+This section describes the aspects common to all REST-based interfaces of Cumulocity. The interfaces are based on the [Hypertext Transfer Protocol 1.1](https://tools.ietf.org/html/rfc2616) using [HTTPS](http://en.wikipedia.org/wiki/HTTP_Secure).
 
 ## HTTP usage
 
@@ -25,6 +25,14 @@ Cumulocity uses the URL in the ["Host" header](http://en.wikipedia.org/wiki/List
 	<<tenant ID>>/<<user name>>:<<password>>
 
 Typically, the tenant ID corresponds to the first part of the URL that you are using to access Cumulocity. E.g., if you use "mytenant.cumulocity.com" as URL, the tenant ID will be "mytenant".
+
+Cumulocity supports two factor authentication. If it is enabled, two factor authentication token is sent in header:
+
+    TFAToken:<<tfa-token>>
+
+If token expires, and requires renewal, backend sends response header:
+
+    TFATokenExpired:TFATokenExpired
 
 ### Application management
 

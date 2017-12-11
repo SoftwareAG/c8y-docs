@@ -152,4 +152,4 @@ If the Vibration switch gets turned on, the smartphone will start vibrating unti
 > The smartphone must remain connected to the platform to receive these commands. 
 
 To know more about dashboard widgets, please, consult
-[https://www.cumulocity.com/guides/users-guide/cockpit/#widget.](https://www.cumulocity.com/guides/users-guide/cockpit/#widget.)
+[https://www.cumulocity.com/guides/users-guide/cockpit/#widget](https://www.cumulocity.com/guides/users-guide/cockpit/#widget).

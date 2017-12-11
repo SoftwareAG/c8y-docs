@@ -42,24 +42,6 @@ The Cumulocity user interface itself is built around a framework based on Angula
 
 For more information on developing plugins, please look into the developer guide [Web SDK for Plugins](/guides/web/introduction).
 
-## Modules
-
-If your application requires new server-side processing functionality, you can add a [Cumulocity Event Language](/guides/reference/real-time-statements) module to it. This is simply a file inside your application at a particular location (META-INF/application-module.cel).
-
-	module paypalhere;
-	@Name('store_purchase_details1_on_purchase_operation')
-	insert into PurchaseDetailsTmp1
-	select
-	    findManagedObjectById(purchaseEvent.operation.deviceId.value) as vendingMachine,
-	    getString(purchaseEvent.operation, "c8y_Purchase.tabId") as tabId,
-	    getNumber(purchaseEvent.operation, "c8y_Purchase.amount") as amount,
-	    purchaseEvent.operation.id as purchaseOperationId,
-	    purchaseEvent.operation.deviceId as deviceId
-	from
-	...
-
-Please note that module deployment within the application is not supported for local zip applications, so the resource url has to point to some external resource from where the file can be downloaded. The file has to be named application-module.cel and be inside directory META-INF.
-
 ## Hosting
 
 To host your own HTML5 and JavaScript web applications through Cumulocity, visit "Own applications" in the Cumulocity administration application and click "Add new".

@@ -198,22 +198,6 @@ Example response:
 |externalUrl|String|0..1|URL to external application|POST: Mandatory (when application type is EXTERNAL)
 PUT: Optional|
 
-### POST - Refresh an application
-
-A POST request to the "refresh" resource redeploys CEL modules that may be contained within an application. Use this request if you performed updates of your CEL code inside the application. Request and response have no body.
-
-Required role: ROLE\_APPLICATION\_MANAGMENT\_ADMIN
-
-Example request:
-
-	POST /applications/application/<<applicationId>>/refresh
-	Host: ...
-	Authorization: Basic ...
-
-Example response:
-
-	204 No Content
-
 ### POST - Copy an application
 
 A POST request to the "clone" resource creates new application based on already existing one. 

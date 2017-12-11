@@ -9,11 +9,13 @@ The [Raspberry Pi](http://en.wikipedia.org/wiki/Raspberry_Pi) is a popular, low-
 
 In this section, we describe how to install a Cumulocity agent with all relevant drivers on the Raspberry Pi to be able to remotely manage the Raspberry Pi and its connected sensors and controls. This allows you to
 
-* Take advantage of all the basic agent features such as availability management, connectivity management and software management.
+* Use basic device management functionality.
 * Identify individual Raspberry Pis remotely based on their hardware serial number.
 * Update the Pi's firmware remotely through the firmware repository on GitHub.
 * Use the [PiFace Digital](http://www.element14.com/community/docs/DOC-52857/l/piface-digital-for-raspberry-pi) adapter board from the cloud.
 * Use [TinkerForge](/guides/devices/tinkerforge) sensors and controls from the cloud.
+
+> The agent is provided in open source form as-is without support or warranty. For commercial use, we recommend to use industrial hardware and/or the Cumulocity C++ SDK.
 
 ![Raspberry Pi image](http://upload.wikimedia.org/wikipedia/commons/thumb/3/3d/RaspberryPi.jpg/640px-RaspberryPi.jpg)
 
@@ -76,7 +78,7 @@ Before using your PiFace Digital make sure you have tested it following the inst
 
 ## Installing a 3G modem
 
-There are [numerous descriptions available](http://www.thefanclub.co.za/how-to/how-setup-usb-3g-modem-raspberry-pi-using-usbmodeswitch-and-wvdial) for installing a 3G modem on a Raspberry Pi. An affordable 3G modem that works with Linux and that we tested with the Raspberry Pi is the [Telekom Speedstick Basic](http://www.t-mobile.de/shop/handy/0,4855,2963-_278601-0-1-0,00.html) (Huawei E3131).
+There are [numerous descriptions available](http://www.thefanclub.co.za/how-to/how-setup-usb-3g-modem-raspberry-pi-using-usbmodeswitch-and-wvdial) for installing a 3G modem on a Raspberry Pi. An affordable 3G modem that works with Linux and that we tested with the Raspberry Pi is the Telekom Speedstick Basic (Huawei E3131).
 
 When using a 3G modem with a Raspberry Pi Model B, a powered USB hub is required. Some modems will not read connectivity statistics concurrently to being dialed up to the Internet on the Raspberry Pi. Hence, this functionality is disabled by default in the Cumulocity Linux modem driver.
 

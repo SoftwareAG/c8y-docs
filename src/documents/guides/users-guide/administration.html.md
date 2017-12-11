@@ -153,29 +153,6 @@ Multiple archive ZIP file versions can be stored in Cumulocity when they were cr
 
 Once uploaded, archives can be downloaded, activated or removed if necessary. The active archive (indicated by a cloud icon) is the version of the application that is currently being served to the users of your account. This version cannot be deleted.
 
-### Working with bitbucked hosted application (Deprecated)
-
-Assume that you are developing a web application, using Bitbucket as code repository. In this case, exposing the application through Cumulocity can be done as follows:
-
-* Click on "Add application".
-* Click on "HTTP(S) proxy".
-* Enter the name of the application, as shown in the application switcher.
-* Enter an application key. The application key is used to identify requests from this application and to
-make it available for subscription.
-* Enter the application path. This path will b	e part of the URL to invoke the application. For example, if
-you use "hello" as application path, the URL of the application will be "/apps/hello".
-* Enter the server URL where your application is hosted. At this URL, there needs to be an index.html file
-that provides the entry point to your application.
-* Enter a username to access your repository (optional).
-* Enter a password to access your repository (optional).
-* Click "Save".
-
-![https proxy app](/guides/users-guide/httpsproxy.png)
-
-> Note that, username and password are transmitted using HTTP Basic Authentication.
-
-> We do not recommend to use bitbucket hosted application anymore, because downtime of bitbucket results into downtime of the application.
-
 ### <a name="creating-smartapp"></a>Adding a smartapp (Deprecated)
 
 > Note that this functionality is depreciated and will be removed in future versions of the product.
@@ -314,7 +291,7 @@ It's possible to export current view of statistics table to CSV file by clicking
 
 ## <a name="tenant-policies"></a> Configuring the tenant policies
 
-A tenant policy is a set of settings that control tenant options and tenant retention rules. Afterwards these options and rules can be used during tenant creation. When creating multiple tenants with the same options or retention rules, you can save work by creating a tenant policy and using it for each tenant. 
+A tenant policy is a set of settings that control tenant options and tenant retention rules. Afterwards these options and rules can be used during tenant creation. When creating multiple tenants with the same options or retention rules, you can save work by creating a tenant policy and using it for each tenant.
 
 ![Tenant policy](/guides/users-guide/tenantpolicy.png)
 
@@ -340,7 +317,7 @@ If you wish to delete a policy, go to the external menu of the policy and click 
 
 ![Edit policy menu](/guides/users-guide/editpolicy.png)
 
-To remove a retention rule from a policy, simply go to the edit screen of the desired policy, hover over the retention rule and click on the "Remove" sign. 
+To remove a retention rule from a policy, simply go to the edit screen of the desired policy, hover over the retention rule and click on the "Remove" sign.
 
 ![Remove retention rule](/guides/users-guide/removeretrule.png)
 
@@ -348,7 +325,7 @@ To remove a retention rule from a policy, simply go to the edit screen of the de
 
 To add a new tenant policy, click on "Add tenant policy". Then enter the policy description and add retention rules. For more info about retention rules, please see [here](http://cumulocity.com/guides/users-guide/administration/#retention).
 
- 
+
 
 ## <a name="tfa"></a>Using two-factor authentication
 
@@ -434,6 +411,7 @@ By expanding the "Settings" menu, administrators can:
 - Change the [access control](#access-control) settings.
 - [Enable or disable the dashboards via e-mail feature](#enabling-server-side-agents)
 - Enter [OpenIT credentials](#openIT-credentials)
+- Manage the [platform configuration](#platform-config) settings.
 
 ### <a name="changing-password-settings"></a>Changing the password policy
 
@@ -465,9 +443,30 @@ To disable two-factor authentication, simply deselect the box "Allow two-factor 
 
 ### <a name="properties"></a>Managing the properties library
 
-In the properties library, additional custom properties can be added to tenants, alarms, events or inventory items. These properties can be customized to your own preference.
+In the properties library, custom properties can be added to tenants, alarms, events or inventory objects. 
 
-> Custom properties for “Subtenants” also can be observed or exported in the “Usage statistics” menu.
+With custom properties, you can extend the data model of Cumulocity built-in objects. After you have added your own custom properties as described below, these properties will be available in Cumulocity as follows:
+
+- Inventory Properties: The custom inventory properties are used to extend the inventory data model. They can be used in the “Asset table” and “Asset properties” widgets.
+- Tenant Properties: Custom tenant properties which will be available during tenant creation. The custom properties can be edited under “Subtenants” in the tab “Custom properties” of each tenant. Additionally these properties can be viewed and exported in the “Usage statistics” menu.
+- Alarm Properties: These properties can be used as custom fields which can be added to your report.
+- Event Properties: Similar to the alarm properties, event properties can be used as additional custom fields. When created, they will be available in the “Reporting” menu in “Cockpit”.
+
+#### Extending the inventory data model
+
+The  inventory properties can be used to add additional custom properties to the “Asset table” and “Asset properties” widgets. To add the properties, simply click on the “Add property” link and select your desired property. When ready, click on the “Save” button to confirm your changes.
+
+![Inventory property](/guides/users-guide/inventoryproperty.png)
+
+#### Using the Alarm and Event properties
+
+The alarm and event custom properties can be used in the “Field” section of the “Reporting” menu in “Cockpit”. They can be used as custom fields that you would like to use in your report.
+
+The properties can be found when you click on “Add predefined”.
+
+[Add predefined properties](/guides/users-guide/addpredefined.png)
+
+#### Adding properties to the "Properties library"
 
 ![Properties library](/guides/users-guide/properties_library.png)
 
@@ -506,6 +505,40 @@ In the "Server-side agents" menu, the "Send dashboard via e-mail" smart rule can
 ### <a name="openIT-credentials"></a>Enter OpenIT credentials
 
 SMS sending is used by several features within the application. It can be used to make login more secure with [two-factors authentication](/guides/users-guide/administration#tfa). An SMS can be sent when an alarm is triggered. SMSes can be used to send instructions to devices. The service provided by [Openit](https://sms.openit.de/main.php) can be used similar. In this section, the user can enter credentials to activate features requiring SMS messages.
+
+### <a name="platform-config"></a> Dealing with the platform configuration settings
+
+> Please note that, this feature is only available to "Management" tenants.
+
+The "Configuration" menu page is located under the "Settings" section. It allows users to configure system-wide properties in Cumulocity. The following options can be modified in the "Configuration" settings:
+
+![Configuration menu1](/guides/users-guide/configuration_tab1.png)
+
+- You can choose the default applications for new tenants. Note that, the application names are comma-separated.
+- Passwords policies can be changed (e.g. "Change password validity limit").
+- In the "Two-factor authentication" field, you can change the SMS template which is sent to the users.
+- You can edit/override the support link url. The support url is visible to “Management” and “Enterprise Edition” tenants.
+
+![Configuration menu1](/guides/users-guide/configuration_tab2.png)
+
+- In the "Password reset" section, you can change all password reset related e-mail templates. 
+
+![Configuration menu1](/guides/users-guide/configuration_tab3.png)
+
+- Choose whether to enable or disable the support user. You can also set a date until which the user will remain active.
+- In the "E-mail server" section you can adjust the "Host", "Port", "Username", "Password" and "Sender Address".
+
+![Configuration menu1](/guides/users-guide/configuration_tab4.png)
+
+- Set the e-mail template for data export and change the “User unauthorized error message”.
+- Change the e-mail template for exceeding the storage limit before and after data removal is performed.
+
+![Configuration menu1](/guides/users-guide/configuration_tab5.png)
+
+- Change the suspended tenant “e-mail templates” and enable/disable the “Send e-mail to suspended tenant administrator” option.
+- When ready, click on “Save configuration”.
+
+> The configuration settings are available in "Management" tenant only. Other tenants are not able to manage the settings.
 
 ## <a name="retention"></a>Managing data retention
 

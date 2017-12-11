@@ -16,7 +16,7 @@ Each service has his own subscription channel name format and URL which are desc
 -   [Device control](/guides/reference/device-control).
 -   [Alarms](/guides/reference/alarms).
 
-The real-time notifications API enables responsive communication from Cumulocity over restricted networks towards clients such as web browser and mobile devices. Clients subscribe to so-called channels to receive messages. These channels are filled by Cumulocity with the output of [real-time statements](/guides/reference/cumulocity-event-language) or newly created [operations](/guides/reference/device-control). In addition, particular system channels are used for initial handshake with clients, subscription to channels, removal from channels and connection. As communication mechanism, the [Bayeux protocol](https://docs.cometd.org/current/reference/#_concepts_bayeux_protocol) over HTTPS or WSS is used.
+The real-time notifications API enables responsive communication from Cumulocity over restricted networks towards clients such as web browser and mobile devices. Clients subscribe to so-called channels to receive messages. These channels are filled by Cumulocity with the output of [real-time statements](/guides/reference/real-time-statements) or newly created [operations](/guides/reference/device-control). In addition, particular system channels are used for initial handshake with clients, subscription to channels, removal from channels and connection. As communication mechanism, the [Bayeux protocol](https://docs.cometd.org/current/reference/#_concepts_bayeux_protocol) over HTTPS or WSS is used.
 
 > Note that when using long-polling, all PUT/POST requests Accept header should be provided, otherwise an empty response body will be returned.
 
@@ -28,17 +28,24 @@ When using websockets, a property 'ext' containing an authentication object must
     {
       "ext": {
         "com.cumulocity.authn": {
-          "token": "<base64 encoded credentials>"
-        }
+          "token": "<base64 encoded credentials>",
+          "tfa": "<tfa token>",
+        },
+        "systemOfUnits": "<system of units>"
       }
     }
 
+|Property|Value|
+|:-------|:----|
+|token|Base 64 encoded credentials|
+|tfa|Optional two factor authentication token|
+|systemOfUnits|Optional system of units. Possible values are "imperial" or "metric"|
 
 ### Request
 
 |Name|Type|Occurs|Description|
 |:---|:---|:-----|:----------|
-|id|Integer|1|Id of message, required to match response message |
+|id|Integer|1|Id of message, required to match response message�|
 |channel|URI|1|Name of channel, required value "/meta/handshake".|
 |ext|Object|1|Authentication object passed to handshake. (only over websockets)|
 |version|String|1|Bayeux protocol version used by client.|
@@ -50,8 +57,8 @@ When using websockets, a property 'ext' containing an authentication object must
 
 |Name|Type|Occurs|Description|
 |:---|:---|:-----|:----------|
-|timeout|Integer|0..1|Max. time in milliseconds between sending of a connect message and response from server .Overrides server default settings for session. Default value : 3600000, maximum value 7200000|
-|interval|Integer|0..1|Period above which server will close session, if not received next connect message from client. Overrides server default settings for session. Default value : 10000|
+|timeout|Integer|0..1|Max. time in milliseconds between sending of a connect message and response from server. Overrides server default settings for session. Default value : 5400000, maximum value 7200000|
+|interval|Integer|0..1|The time, in milliseconds, that the client must wait between the end of one long poll request and the start of the next. Overrides server default settings for session. When not set server allows for max 10 sec delay between next connect request. Default value : 0|
 
 Example request:
 

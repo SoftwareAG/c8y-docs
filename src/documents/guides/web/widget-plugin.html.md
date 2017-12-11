@@ -220,7 +220,7 @@ Now that we have added the module, config and controller to our plugin, we have 
     "myapp.iconmap"
   ],
   "js": [
-    "iconmap.module.js"
+    "iconmap.module.js",
     "iconmap.config.js",
     "iconmap.controller.js"
   ]

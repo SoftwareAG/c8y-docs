@@ -513,13 +513,15 @@ To add a widget to a dashboard, ensure the dashboard is visible. The same applie
 The Cockpit includes preset widget types. Each widget type provides different parameters to configure and different data displayed. The following section describes each available widget type and the configuration properties.
 
 ### Widget "Asset Properties"
-A user-defined list of attributes of the current object is displayed. The current object can be a device or the group object.
+A user-defined list of attributes of the current object is displayed. The current object can be a device or a group.
 
 Parameters to configure:
 
 * Title of widget
 
-* List of properties, see "[Configuring a property list](#widget-asset-table-)" below
+* List of properties, see "[Configuring a property list](#widget-asset-table-)" below.
+
+Note: in the view mode, widget displays only these properties that are not empty.
 
 ### Widget "Data Point Graph"
 

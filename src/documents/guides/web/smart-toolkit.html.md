@@ -482,7 +482,7 @@ We redirect to the login screen, if the current user's `state.hasAuth` equals `f
 
 `eg-section` is a directive that we will create in *step 7*. It renders a table to display either device, alarm or event list depending on the value of `main.currentSection`. The content between its tags will be put above the rendered table, using `ng-transclude`. We will use that capability to render components that filter lists.
 
-`c8y.user` is an object that is available, if there is a logged in Cumulocity user. It is defined on [`$rootScope`](https://docs.angularjs.org/api/ng/service/$rootScope). To learn more about the user object structure, see the [documentation](http://resources.cumulocity.com/documentation/jssdk/latest/#/core/c8y.core.service:c8yUser).
+`c8y.user` is an object that is available, if there is a logged in Cumulocity user. It is defined on [`$rootScope`](https://docs.angularjs.org/api/ng/service/$rootScope). To learn more about the user object structure, see the [documentation](http://resources.cumulocity.com/documentation/jssdk/latest/#/api/c8y.core.service:c8yUser).
 
 The rest is simple AngularJS such as `ng-switch` and `ng-repeat` about which you can get more information from the AngularJS documentations.
 
@@ -567,7 +567,7 @@ The decisive component here is the `c8y-repeat` directive. Its signature is as f
 
 We use the `controllerAs` syntax here as we did when we defined the routes. You can use `refresh` set by `c8y-repeat` to refresh the data. Note that you must obey to the [dot rule](https://www.youtube.com/watch?v=DTx23w4z6Kc) as it uses two-way data-binding.
 
-For supported filters, see the respective [service documentation](http://resources.cumulocity.com/documentation/jssdk/latest/#/core).
+For supported filters, see the respective [service documentation](http://resources.cumulocity.com/documentation/jssdk/latest/#/api/c8y.core).
 
 Now we have a fully functional web application that can list devices, alarms and events.
 

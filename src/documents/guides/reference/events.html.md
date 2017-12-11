@@ -40,7 +40,8 @@ The events interface consists of three parts:
 Response body: Event Api
 
 Required role: ROLE\_EVENT\_READ
- Example request: Retrieve information about Event API Resource
+
+Example request: Retrieve information about Event API Resource
 
     GET /event
      Host: [hostname]
@@ -91,7 +92,8 @@ Example response:
 Response body: Event Collection
 
 Required role: ROLE\_EVENT\_READ
- Example request: Retrieve information about an Event Collection
+
+Example request: Retrieve information about an Event Collection
 
     GET /event/events
      Host: [hostname]
@@ -339,9 +341,7 @@ Every event can have one binary attached.
 
 ### GET - Download a binary
 
-Required role: 
-
-    ROLE\_EVENT\_READ
+Required role: ROLE\_EVENT\_READ
 
 Example request:
 
@@ -365,9 +365,7 @@ Response when binary doesn't exists or is only partially uploaded or when event 
 
 Using POST method it is possible to upload binary file as attachment to Event. Size of attachment cannot exceed 50MB.
 
-Required role: 
-
-    ROLE_EVENT_ADMIN
+Required role: ROLE\_EVENT\_ADMIN
 
 Example request:
 
@@ -413,9 +411,7 @@ Corresponding event will have fragment:
 
 Uploading functionality is also available using multipart request.
 
-Required role: 
-
-    ROLE_EVENT_ADMIN
+Required role: ROLE\_EVENT\_ADMIN
 
 Example request:
 
@@ -456,9 +452,7 @@ Ie having document with size 10 we can create chunks: “0-3/\*”, “4-5/\*”
 
 Size of single chunk cannot exceed 5MB.
 
-Required role: 
-
-    ROLE_EVENT_ADMIN
+Required role: ROLE\_EVENT\_ADMIN
     
 Example first chunk request:
 
@@ -513,9 +507,7 @@ Example response for last chunk:
 
 ### PUT - Replace existing binary
 
-Required role: 
-
-    ROLE_EVENT_ADMIN  
+Required role: ROLE\_EVENT\_ADMIN  
     
 Example request:
 
@@ -539,9 +531,7 @@ Successful response:
 
 ### DELETE - Delete a binary
 
-Required role: 
-    
-    ROLE_EVENT_ADMIN
+Required role: ROLE\_EVENT\_ADMIN
 
 Example request:
 

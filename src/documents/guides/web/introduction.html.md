@@ -60,8 +60,7 @@ Or, as an example, let us take a look at an extract of the list of plugins the �
 
 ### Project structure
 
-Whenever you create a new application or plugin, you have to comply with the following folder structure. Otherwise the application or plugin will not work.
-The default folder structure of an application is as follows:
+Whenever you create a new application or plugin, you have to comply with the following folder structure. Otherwise the application or plugin will not work. The default folder structure of an application is as follows:
 
 ```console
 <<root folder>>
@@ -84,6 +83,8 @@ In case that you only want to create a plugin and [add it to an already existing
 		└── index.js
 		...
 ```
+
+> Please create an explicit root folder for your project. The Web SDK assumes that the parent folder of the root folder is readable by your operating system user.
 
 ### <a name="manifests"></a>Manifests
 
@@ -182,13 +183,14 @@ Instead of "latest", you can also specify a certain version number, but this ver
 
 ## <a name="sample-plugins"></a>Sample plugins
 
-After setting up everything and getting an insight into the folder structure and manifests, you can finally start building your first application and plugin. The following chapter will show you how to get the plugin running. After that you can find a guide which goes through the process of building a "Hello World!" style plugin in detail. You can download or clone the "Hello World!" plugin as well as other plugin examples from the repository [https://bitbucket.org/m2m/cumulocity-ui-plugin-examples](https://bitbucket.org/m2m/cumulocity-ui-plugin-examples).
+After setting up everything and getting an insight into the folder structure and manifests, you can finally start running your first "Hello world!" application and plugin. 
 
-### <a name="running-examples"></a>Running the examples
+* Clone or download and unpack the "Hello World!" plugin from [https://bitbucket.org/m2m/cumulocity-ui-plugin-examples](https://bitbucket.org/m2m/cumulocity-ui-plugin-examples).
+* Change into the directory that you just created.
+* Run "c8y install latest" to install the Cumulocity UI package.
+* Run "c8y deploy:app myapplication". "myapplication" is the name of the "Hello World!" application specified in the "cumulocity.json" file.
 
-After you downloaded or cloned the repository, create the application containing the example plugins in your tenant by executing the command ```c8y deploy:app [appContextPath]```. If you omit appContextPath the contextPath will be read from the "cumulocity.json" at the path where the command was executed.
-
-You will be asked for the name and base url of your tenant, as well as your username and password. To prevent filling out these prompts over and over again, you can define the following environment variables on your computer: ```C8Y_TENANT```, ```C8Y_USER```, ```C8Y_PASS``` and ```C8Y_BASE_URL```.
+You will be asked for the name and base url of your tenant, as well as your username and password. To prevent filling out these prompts over and over again, you can define the following environment variables on your computer: ```C8Y_TENANT```, ```C8Y_USER```, ```C8Y_PASS``` and ```C8Y_BASE_URL```. For example, type "export C8Y_TENANT=demos" on a Unix system to by default create your application in the tenant "demos".
 
 After deploying the application, it appears in the *"Own applications"* menu of the "Administration" application.
 
@@ -277,12 +279,50 @@ After deploying your application, it appears in the *"Own applications"* menu of
 
 ### Test your application
 
-To run your application locally, just run ```c8y server```. You can pass an option ```-u https://piedpiper.cumulocity.com``` with the instance as parameter where you want your api calls to be proxied to.
+To run your application locally, just run ```c8y server```.
+Additionally, you can pass options:
+
+- ```-u https://tenant.cumulocity.com``` with the instance as parameter where you want your api calls to be proxied to,
+- ```-t examples``` or ```-t targets/examples/json``` to use specific target file, e.g. if you want to test your plugins inside one of the standard applications and you have defined your target file as in the example:
+ 
+```json
+{
+  "name": "Examples",
+  "comment": "Release with additional example plugins",
+  "replaceImports": {
+    "core/c8yBranding": "myapplication/myBranding" 
+  },
+  "applications": [
+    {
+      "contextPath": "administration",
+      "addImports": [
+        "myapplication/weatherAdmin"
+      ]
+    },
+    {
+      "contextPath": "devicemanagement",
+      "addImports": [
+        "myapplication/deviceEventsRealTime", 
+        "myapplication/deviceContact" 
+      ]
+    },
+    {
+      "contextPath": "cockpit",
+      "addImports": [ 
+        "myapplication/weather", 
+        "myapplication/iconmap" 
+      ]
+    }
+  ]
+}
+```
+
+Example console output:
 
 ```console
-$ c8y server
+$ c8y server -u https://tenant.cumulocity.com -t targets/examples.json
 Cumulocity UI development server running in port 9000.
-Proxying api requests to https://bazinga.staging.c8y.io
+Proxying api requests to https://tenant.cumulocity.com
 140 modules loaded.
 5 application manifest loaded.
 http://localhost:9000/apps/myapplication/ cumulocity.json
@@ -525,7 +565,7 @@ If you are not deploying to a management tenant, you need to include the followi
 	}
 ```
 
-To deploy a target file, you have to add the option ```-t pathToTargetFile/target.json``` when deploying your application. Assuming that we have the following folder structure:
+To deploy a target file, you have execute ```c8y deploy:target [targetFile]``` when deploying your application. Assuming that we have the following folder structure:
 
 ```console
 <<root folder>>
@@ -537,8 +577,8 @@ To deploy a target file, you have to add the option ```-t pathToTargetFile/targe
 └── package.json
 ```
 
-we would have to execute the following command:
+We would have to execute the following command:
 
 ```bash
-c8y deploy:app myapplication -t targets/target.json
+c8y deploy:target targets/target.json
 ```

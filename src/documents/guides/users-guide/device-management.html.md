@@ -54,15 +54,9 @@ To connect larger amounts of devices Cumulocity offers the option to bulk-regist
 2. In the upcoming window choose **Bulk device registration**.
 2. Select the CSV file you want to upload by browsing for it.
 
-After uploading the CSV file Cumulocity creates a user account for each device listed in the file. This way devices can connect securely to Cumulocity without the need to register them manually as described in the previous section.
- 
-**Required format of the CSV file**
-
-The CSV file needs to have a header row followed by the actual data. The header row needs to contain at least one column "ID" and one column "Credentials". Here is an example of a valid CSV format:
-
-	ID;Credentials;Tenant;Group;ICCID;NAME
-	006064ce800a;LF2PWJoLG1Fz;management;Sample_Düsseldorf;+491555555;Sample_Device1
-	006064ce8077;OowoGKAbiNJs;management;Sample_Düsseldorf;+491555555;Sample_Device2
+	ID;Credentials;Tenant;PATH;ICCID;NAME;TYPE
+	006064ce800a;LF2PWJoLG1Fz;management;Sample_Düsseldorf;+491555555;Sample_Device1;c8y_Device
+	006064ce8077;OowoGKAbiNJs;management;Sample_Düsseldorf;+491555555;Sample_Device2;c8y_Device
 
 You may also download a template file here to view or copy the structure.
 

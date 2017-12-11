@@ -14,7 +14,7 @@ Die Administrationsanwendung ermöglicht es Administratoren, ihre Benutzer, Anwe
 * [Echtzeitregeln](#event-processing) implementieren und [Alarme umpriorisieren](#reprio-alarms).
 * [Einstellungen](#settings) ändern.
 * [Aufbewahrungsrichtlinien](#retention) fuer Daten konfigurieren
-* [Email Warnung](#warningEmail) beim Erreichen des max. Datenvolumen einrichten und die Empfänger bestimmen. 
+* [Email Warnung](#warningEmail) beim Erreichen des max. Datenvolumen einrichten und die Empfänger bestimmen.
 * Verwaltung der [gespeicherten Daten](#files) wie Firmware oder Protokolle.
 
 ## <a name="home"></a>Die Startseite
@@ -25,7 +25,7 @@ Der Bildschirm "Home" bietet Navigationslinks zu den Hauptbereichen der Administ
 * Geräte-API-Anforderungen: Nur gezählt, wenn die API von einem Gerät aufgerufen wird (z. B. Senden einer Messung)
 * Speicher: Die Gesamtmenge der in Ihrem Konto gespeicherten Daten. Dieser Betrag kann durch [Aufbewahrungsrichtlinien] (#Retention) und durch die Menge und Größe der [gespeicherten Dateien] (#Dateien) geändert werden.
 * Speicher-Kontingent: Wenn das Speicherlimit pro Gerät gesetzt ist, ist der Benutzer auf eine [maximale Datennutzung](#storageQuota) eingeschränkt.
-* Geräte: Die Gesamtzahl der an Ihr Konto angeschlossenen Geräte. Dies ist die Summe der Geräte, die im Menü [Alle Geräte](/guides/users-guide/device-management#viewing-devices) der Geräteverwaltung und ihren direkten und indirekten Kindgeräte aufgelistet sind.
+* Geräte: Die Gesamtzahl der an Ihr Konto angeschlossenen Geräte. Dies ist die Summe der Geräte, die im Menü [Alle Geräte](/guides/benutzerhandbuch/device-management-deutsch#viewing-devices) der Geräteverwaltung und ihren direkten und indirekten Kindgeräte aufgelistet sind.
 * Benutzer: Die Summe aller in diesem Konto konfigurierten Benutzer, aktiv und inaktiv.
 
 "Dieser Monat" zeigt die Nutzungsinformationen ab dem aktuellen Monat an. "Letzter Monat" zeigt den letzten vollen Monat an.
@@ -55,7 +55,7 @@ Um weitere Benutzer hinzuzufügen, klicken Sie auf "Benutzer hinzufügen".
 - Wenn Sie die Option "Zwei-Faktor-Authentifizierung aktivieren" wählen, wird der Benutzer aufgefordert, eine Telefonnummer anzugeben, und bei der Anmeldung wird der PIN-Code (der an ein Telefon gesendet wird) für eine erfolgreiche Authentifizierung benötigt.
 - Wenn Sie "Password reset" wählen, muss der Benutzer nach dem nächsten Login ein neues Passwort wählen.
 - Wenn Sie den Link "E-Mail senden Passwort senden" wählen, wird die E-Mail-Nachricht an die angegebene E-Mail-Adresse mit einem Link gesendet, um ein Passwort festzulegen.
-- Geben Sie ein Passwort ein und bestätigen Sie das Passwort. (Weitere Informationen zur Passwortstärke finden Sie unter [Einloggen](/guides/users-guide/overview#login).)
+- Geben Sie ein Passwort ein und bestätigen Sie das Passwort. (Weitere Informationen zur Passwortstärke finden Sie unter [Einloggen](/guides/benutzerhandbuch/uebersicht#login).)
 - Benutzer hinzufügen zu [Nutzergruppen](#user-groups).
 - Zuweisen von Geräten und Anwendungen [Berechtigungen](#permissions).
 - Klicken Sie auf die Schaltfläche "Speichern", um alle vorherigen Daten zu speichern.
@@ -233,7 +233,7 @@ Benutzer mit Mandantenverwaltung und "Admin" Berechtigungen können Mandanten er
 
 Mandanten-Management-Objekte sind Geräte im Mandanten-Management, die vorhandene Mandanten repräsentieren. Sobald ein neuer Mandant angelegt ist, wird im Mandanten "Management" mit dem Typ "c8y_Tenant" und einem Namen gleich der Mandanten-ID ein neues Mandantenverwaltungsobjekt angelegt. Dieses Objekt enthält auch Fragment "customProperties" mit "externalReference" und andere benutzerdefinierte Eigenschaften des zugeordneten Mandanten.
 
-Warnung: Wenn das Mandantverwaltungsobjekt versehentlich gelöscht wird, kann es durch Aktualisierung jeder Eigenschaft des zugehörigen Mandanten wiederhergestellt werden. Mandant-spezifische Berechtigungen für das Mandantenkonto gehen verloren. 
+Warnung: Wenn das Mandantverwaltungsobjekt versehentlich gelöscht wird, kann es durch Aktualisierung jeder Eigenschaft des zugehörigen Mandanten wiederhergestellt werden. Mandant-spezifische Berechtigungen für das Mandantenkonto gehen verloren.
 
 ### <a name="assigning_device_specific_permissions"></a>Zuweisen von gerätespezifischen Berechtigungen
 
@@ -277,30 +277,6 @@ Um eine Anwendung hinzuzufügen, können Sie eine Anwendung "ZIP-Datei" hochlade
 - Klicken Sie auf "Anwendung hinzufügen".
 - Klicken Sie auf "Zip-Datei hochladen".
 - Entweder legen Sie die Datei in die Box oder einfach auf Ihrem Computer.
-
-### Arbeiten mit "Bitbucket" gehosteten Anwendungen
-
-Angenommen, Sie entwickeln eine Web-Anwendung, mit Bitbucket als Code-Repository. In diesem Fall funktioniert die Veröffentlichung der Anwendung auf Cumulocity wie folgt:
-
-* Klicken Sie auf "Anwendung hinzufügen".
-* Klicken Sie auf "HTTP (S) Proxy".
-* Geben Sie den Namen der Anwendung ein, wie im Anwendungs-Switcher gezeigt.
-* Geben Sie einen Anwendungsschlüssel ein. Der Anwendungsschlüssel wird verwendet, um Anforderungen von dieser Anwendung zu identifizieren
-Zur Verfügung stellen.
-* Geben Sie den Anwendungspfad ein. Dieser Pfad wird Teil der URL, um die Anwendung aufzurufen. Zum Beispiel, wenn
-Verwenden Sie "hello" als Anwendungspfad, die URL der Anwendung ist "/ apps / hello".
-* Geben Sie die Server-URL ein, auf der Ihre Anwendung gehostet wird. Bei dieser URL muss eine Datei index.html vorhanden sein
-Die den Einstieg in Ihre Bewerbung bietet.
-* Geben Sie einen Benutzernamen ein, um auf Ihr Repository zuzugreifen (optional).
-* Geben Sie ein Passwort ein, um auf Ihr Repository zuzugreifen (optional).
-* Klicken Sie auf "Speichern".
-
-![https proxy app](/guides/users-guide/httpsproxy.png)
-
-
-> Benutzername und Passwort werden mit HTTP Basic Authentication übertragen.
-
-> Wir empfehlen nicht, bitbucket gehostete Anwendungen weiter zu verwenden, da Ausfallzeiten von "Bitbucket" als Ergebnis Ausfallzeit der dort gehosteten Anwendungen bedeuten.
 
 ### Arbeiten mit externen Anwendungen
 
@@ -437,7 +413,7 @@ Um einen neuen Untermandanten hinzuzufügen, klicken Sie auf "Mandant Erstellen"
 - Geben Sie den Benutzernamen des Administrators ein, um sich anzumelden.
 - Kontaktname eingeben. Dieses Feld ist optional.
 - Geben Sie Kontakttelefon ein. Auch dieses Feld ist optional.
-- Wählen Sie aus, ob Sie die E-Mail-Adresse zum Zurücksetzen des Passworts haben möchten. Wenn Sie diese Option nicht ausgewählt haben, müssen Sie ein Passwort eingeben und das Passwort bestätigen. (Weitere Informationen zur Passwortstärke finden Sie unter "[Log in](/guides/users-guide/overview#login)".)
+- Wählen Sie aus, ob Sie die E-Mail-Adresse zum Zurücksetzen des Passworts haben möchten. Wenn Sie diese Option nicht ausgewählt haben, müssen Sie ein Passwort eingeben und das Passwort bestätigen. (Weitere Informationen zur Passwortstärke finden Sie unter "[Einloggen](/guides/benutzerhandbuch/uebersicht#login)".)
 - Klicken Sie auf die Schaltfläche "Speichern".
 
 ![Tenant-creation](/guides/users-guide/createtenantde.png)
@@ -563,7 +539,7 @@ Im Menü "Serverseitige Agenten" kann die Smart-Regel "Dashboard über E-Mail se
 
 ### <a name="openIT-credentials"></a>OpenIT Zugangsdaten Eingeben
 
-SMS werden von verschiedenen Funktionen benutzt. Es kann für sicheren Zugang benutzt werden [Zwei-Faktor Authentifikation](/guides/benutzerhandbuch/administration-deutsch#users). Eine SMS kann gesendet werden, wenn ein Alarm ausgelöst wird. Mit SMS können Befehle an Geräte gesendet werden. TDer Service von [Openit](https://sms.openit.de/main.php) wird ähnlich benutzt. In diesem Abschnitt kann der Benutzer Anmeldeinformationen eingeben, um Funktionen zu aktivieren, die SMS-Nachrichten erfordern.
+SMS werden von verschiedenen Funktionen benutzt. Es kann für sicheren Zugang benutzt werden wie [Zwei-Faktor Authentifikation](/guides/benutzerhandbuch/administration-deutsch#tfa). Eine SMS kann gesendet werden, wenn ein Alarm ausgelöst wird. Mit SMS können Befehle an Geräte gesendet werden. TDer Service von [Openit](https://sms.openit.de/main.php) wird ähnlich benutzt. In diesem Abschnitt kann der Benutzer Anmeldeinformationen eingeben, um Funktionen zu aktivieren, die SMS-Nachrichten erfordern.
 
 ## <a name="retention"></a>Verwalten der Datenaufbewahrung
 
@@ -606,11 +582,11 @@ Das Speicherkontingent ist für einen Mandanten vorhanden, wenn ein Speicherkont
 
 Wenn das Kontingent überschritten wird, wird eine E-Mail an alle Mandantenadministratoren gesendet, um zu warnen, dass Daten in der folgenden Nacht gelöscht werden. Nach 24 Stunden, wenn das Kontingent noch überschritten wird, werden alle Datenspeichergrenzen um einen festen Prozentsatz reduziert. Das Speicherplatzkontingent pro Gerät wird durch diese Regel reduziert.
 
-> Nehmen wir zum Beispiel an, dass ein Mieter ein Speicherkontingent von 10 GB hat. 
+> Nehmen wir zum Beispiel an, dass ein Mieter ein Speicherkontingent von 10 GB hat.
 > Aufbewahrungsregeln sind 80 Tage für Messungsdateien, 90 Tage für alle anderen Daten.
-> 
+>
 > - Tag 1: In der nächtlichen Überprüfung wird das Datenvolumen auf 13GB berechnet. Eine E-Mail wird an alle Mandantenadministratoren gesendet.
-> 
-> - Tag 2: die Gesamtmenge ist noch bei 13GB. Das System stellt fest, dass eine Reduktion der Datenspeicherregeln um 15% ausreicht, um unter dem max Datenvolumen zu liegen. So wird jede Messung älter als 68 Tage (80 Tage - 15%) und alle anderen Daten, die älter als 77 Tage (90 Tage - 15% Ergebnisse in 76,5 Tagen, gerundet auf 77 Tage) sind, gelöscht. 
-> 
+>
+> - Tag 2: die Gesamtmenge ist noch bei 13GB. Das System stellt fest, dass eine Reduktion der Datenspeicherregeln um 15% ausreicht, um unter dem max Datenvolumen zu liegen. So wird jede Messung älter als 68 Tage (80 Tage - 15%) und alle anderen Daten, die älter als 77 Tage (90 Tage - 15% Ergebnisse in 76,5 Tagen, gerundet auf 77 Tage) sind, gelöscht.
+>
 > Der gesamte Speicher ist jetzt bei 9.8GB.

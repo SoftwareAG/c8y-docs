@@ -14,7 +14,7 @@ Die Administrationsanwendung ermöglicht es Administratoren, ihre Benutzer, Anwe
 * [Echtzeitregeln](#event-processing) implementieren und [Alarme umpriorisieren](#reprio-alarms).
 * [Einstellungen](#settings) ändern.
 * [Aufbewahrungsrichtlinien](#retention) fuer Daten konfigurieren
-* [Email Warnung](#warningEmail) beim Erreichen des max. Datenvolumen einrichten und die Empfänger bestimmen. 
+* [Email Warnung](#warningEmail) beim Erreichen des max. Datenvolumen einrichten und die Empfänger bestimmen.
 * Verwaltung der [gespeicherten Daten](#files) wie Firmware oder Protokolle.
 
 ## <a name="home"></a>Die Startseite
@@ -233,7 +233,7 @@ Benutzer mit Mandantenverwaltung und "Admin" Berechtigungen können Mandanten er
 
 Mandanten-Management-Objekte sind Geräte im Mandanten-Management, die vorhandene Mandanten repräsentieren. Sobald ein neuer Mandant angelegt ist, wird im Mandanten "Management" mit dem Typ "c8y_Tenant" und einem Namen gleich der Mandanten-ID ein neues Mandantenverwaltungsobjekt angelegt. Dieses Objekt enthält auch Fragment "customProperties" mit "externalReference" und andere benutzerdefinierte Eigenschaften des zugeordneten Mandanten.
 
-Warnung: Wenn das Mandantverwaltungsobjekt versehentlich gelöscht wird, kann es durch Aktualisierung jeder Eigenschaft des zugehörigen Mandanten wiederhergestellt werden. Mandant-spezifische Berechtigungen für das Mandantenkonto gehen verloren. 
+Warnung: Wenn das Mandantverwaltungsobjekt versehentlich gelöscht wird, kann es durch Aktualisierung jeder Eigenschaft des zugehörigen Mandanten wiederhergestellt werden. Mandant-spezifische Berechtigungen für das Mandantenkonto gehen verloren.
 
 ### <a name="assigning_device_specific_permissions"></a>Zuweisen von gerätespezifischen Berechtigungen
 
@@ -277,30 +277,6 @@ Um eine Anwendung hinzuzufügen, können Sie eine Anwendung "ZIP-Datei" hochlade
 - Klicken Sie auf "Anwendung hinzufügen".
 - Klicken Sie auf "Zip-Datei hochladen".
 - Entweder legen Sie die Datei in die Box oder einfach auf Ihrem Computer.
-
-### Arbeiten mit "Bitbucket" gehosteten Anwendungen
-
-Angenommen, Sie entwickeln eine Web-Anwendung, mit Bitbucket als Code-Repository. In diesem Fall funktioniert die Veröffentlichung der Anwendung auf Cumulocity wie folgt:
-
-* Klicken Sie auf "Anwendung hinzufügen".
-* Klicken Sie auf "HTTP (S) Proxy".
-* Geben Sie den Namen der Anwendung ein, wie im Anwendungs-Switcher gezeigt.
-* Geben Sie einen Anwendungsschlüssel ein. Der Anwendungsschlüssel wird verwendet, um Anforderungen von dieser Anwendung zu identifizieren
-Zur Verfügung stellen.
-* Geben Sie den Anwendungspfad ein. Dieser Pfad wird Teil der URL, um die Anwendung aufzurufen. Zum Beispiel, wenn
-Verwenden Sie "hello" als Anwendungspfad, die URL der Anwendung ist "/ apps / hello".
-* Geben Sie die Server-URL ein, auf der Ihre Anwendung gehostet wird. Bei dieser URL muss eine Datei index.html vorhanden sein
-Die den Einstieg in Ihre Bewerbung bietet.
-* Geben Sie einen Benutzernamen ein, um auf Ihr Repository zuzugreifen (optional).
-* Geben Sie ein Passwort ein, um auf Ihr Repository zuzugreifen (optional).
-* Klicken Sie auf "Speichern".
-
-![https proxy app](/guides/users-guide/httpsproxy.png)
-
-
-> Benutzername und Passwort werden mit HTTP Basic Authentication übertragen.
-
-> Wir empfehlen nicht, bitbucket gehostete Anwendungen weiter zu verwenden, da Ausfallzeiten von "Bitbucket" als Ergebnis Ausfallzeit der dort gehosteten Anwendungen bedeuten.
 
 ### Arbeiten mit externen Anwendungen
 
@@ -606,11 +582,11 @@ Das Speicherkontingent ist für einen Mandanten vorhanden, wenn ein Speicherkont
 
 Wenn das Kontingent überschritten wird, wird eine E-Mail an alle Mandantenadministratoren gesendet, um zu warnen, dass Daten in der folgenden Nacht gelöscht werden. Nach 24 Stunden, wenn das Kontingent noch überschritten wird, werden alle Datenspeichergrenzen um einen festen Prozentsatz reduziert. Das Speicherplatzkontingent pro Gerät wird durch diese Regel reduziert.
 
-> Nehmen wir zum Beispiel an, dass ein Mieter ein Speicherkontingent von 10 GB hat. 
+> Nehmen wir zum Beispiel an, dass ein Mieter ein Speicherkontingent von 10 GB hat.
 > Aufbewahrungsregeln sind 80 Tage für Messungsdateien, 90 Tage für alle anderen Daten.
-> 
+>
 > - Tag 1: In der nächtlichen Überprüfung wird das Datenvolumen auf 13GB berechnet. Eine E-Mail wird an alle Mandantenadministratoren gesendet.
-> 
-> - Tag 2: die Gesamtmenge ist noch bei 13GB. Das System stellt fest, dass eine Reduktion der Datenspeicherregeln um 15% ausreicht, um unter dem max Datenvolumen zu liegen. So wird jede Messung älter als 68 Tage (80 Tage - 15%) und alle anderen Daten, die älter als 77 Tage (90 Tage - 15% Ergebnisse in 76,5 Tagen, gerundet auf 77 Tage) sind, gelöscht. 
-> 
+>
+> - Tag 2: die Gesamtmenge ist noch bei 13GB. Das System stellt fest, dass eine Reduktion der Datenspeicherregeln um 15% ausreicht, um unter dem max Datenvolumen zu liegen. So wird jede Messung älter als 68 Tage (80 Tage - 15%) und alle anderen Daten, die älter als 77 Tage (90 Tage - 15% Ergebnisse in 76,5 Tagen, gerundet auf 77 Tage) sind, gelöscht.
+>
 > Der gesamte Speicher ist jetzt bei 9.8GB.

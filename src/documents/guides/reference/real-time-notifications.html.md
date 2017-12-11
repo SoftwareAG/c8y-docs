@@ -28,17 +28,24 @@ When using websockets, a property 'ext' containing an authentication object must
     {
       "ext": {
         "com.cumulocity.authn": {
-          "token": "<base64 encoded credentials>"
-        }
+          "token": "<base64 encoded credentials>",
+          "tfa": "<tfa token>",
+        },
+        "systemOfUnits": "<system of units>"
       }
     }
 
+|Property|Value|
+|:-------|:----|
+|token|Base 64 encoded credentials|
+|tfa|Optional two factor authentication token|
+|systemOfUnits|Optional system of units. Possible values are "imperial" or "metric"|
 
 ### Request
 
 |Name|Type|Occurs|Description|
 |:---|:---|:-----|:----------|
-|id|Integer|1|Id of message, required to match response message |
+|id|Integer|1|Id of message, required to match response messageï¿½|
 |channel|URI|1|Name of channel, required value "/meta/handshake".|
 |ext|Object|1|Authentication object passed to handshake. (only over websockets)|
 |version|String|1|Bayeux protocol version used by client.|

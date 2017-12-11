@@ -13,7 +13,7 @@ layout: devices
 * Use the built-in [location functionality](#location) 
 * Use the built-in [tracking functionality](#tracking) 
 * Use the [built-in IOs](#ios)
-* Troubleshoot devices by [SMS mode](#sms-mode)
+* Change Tenant and URL by [SMS](#sms)
 * Remotely execute text commands via [device shell](#device-shell) 
 * [Debug](#debug) the device 
 * Connect Modbus devices with [Cloud fieldbus](#cloud-fieldbus) 
@@ -150,16 +150,13 @@ In Configuration Tab of your device you can set following commands to use the bu
 
 You can easily create an alarm from the event by using the realtime rules in Cumulocity.
 
-## <a name="sms-mode"></a>Troubleshoot devices by SMS mode
+## <a name="sms"></a>Change Tenant and URL by SMS
 
-You can send AT commands vie the SMS to the device:
-
-| Command | Description |
+| Change Tenant and URL by SMS |  |
 | --- | --- |
-| DELETE | deletes the registration in CC and you can register on a new tenant |
-| RESET	| Restarts the device |
-| GPRS=&lt;APN&gt;,&lt;User&gt;,&lt;Password&gt; | Change APN, if no User or Password is required, the fields free |
-| COMMAND:<AT command> | You can take all supported AT commands from here in Chapter "AT commands": https://www.pssystec.de/downloads/ |
+| Change tenant | To change tenant: [https://pssystec.cumulocity.com](https://pssystec.cumulocity.com). Send an SMS to the SMARTbox by typing DELETE. The device will delete the stored crediantels and performs an restart. After this you will be able to register the device in an other tenant but with same Url (.ram.m2m.telekom.com). |
+| Change URL | To change URL: [https://pssystec.cumulocity.com](https://pssystec.cumulocity.com). Send an SMS to the SMARTbox by typing URL=<newurl> e.g. URL=test-ram.m2m.telekom.com. Note: By executing this command, also the crediantels will be deleted from the device. |
+| Note: | don't forget to delete the device in your registered tenant to prevent scrap in your tenant. |
 
 ## <a name="device-shell"></a>Remotely execute text commands via device shell
 

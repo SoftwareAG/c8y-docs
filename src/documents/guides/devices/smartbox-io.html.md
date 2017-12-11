@@ -12,7 +12,7 @@ layout: devices
 * Manage [software](#software) 
 * Use the built-in [location functionality](#location) 
 * Use the built-in [tracking functionality](#tracking) 
-* Troubleshoot devices by [SMS mode](#sms-mode)
+* Change Tenant and URL by [SMS](#sms)
 * Remotely execute text commands via [device shell](#device-shell) 
 * [Debug](#debug) the device 
 * Connect Modbus devices with [Cloud fieldbus](#cloud-fieldbus) 
@@ -68,15 +68,39 @@ After accepting the device you should be able to see it in the All Devices list 
 
 Sensors - max. 10
 
-| Type | Type A | Type B | Type C | Type D | Type E | Type F |  
-| --- | --- | --- | --- | --- | --- | --- | 
-| NTC | 10 | - | - | 5 | - | - |
-| PT1000 | Opt.10 | - | 2 | - | - | 2 |
-| PT100 | Opt.10 | | | | | |
-| 4..20mA (supply by Smartbox) | - | 8 | 6 | 5 | - | 8 |
-| 0..10V | Opt.6 | - | 2 | - | - | - |
-| DIN (supply by Smartbox) | Opt. 10 | - | - | - | 6 | - |
-| Fast DIN | | 2 | - | - | 4 | - |
+| IO Board V1 | | 
+| --- | --- | 
+| U1/ U2 | DIN [voltage free] / 0-20mA [supplied by Smartbox] / 0-10V | 
+| U3/ U4/ U5/ U6 | DIN [voltage free] / 0-20mA [supplied by Smartbox] | 
+| U7/ U8/ U9/ U10 | PT1000 | 
+
+| IO Board V2 | |
+| --- | --- |
+| U1...U6 | DIN [voltage free] /NTC/PT100/PT1000/ 0 - 10V &#124;OR&#124; 0..20mA | 
+| U7..U10 | DIN [voltage free] /NTC/PT100/PT1000 | 
+| Relay Switch | 1 x 230V - 2A | 
+
+| U1...U10 | |
+| --- | --- |
+| Input sensor type | NTC |
+| | PT1000 |
+| | 0-1V |
+| | 0-10V |
+| | 4-20mA (incl. power supply input) |
+| | DIN |
+| | 0-5V (incl. power supply input) |
+| | PTC |
+| | PT500 |
+| | PT100 |
+| | DIN_COUNT |
+| | DIN_FREQ |
+| Output | 0-10V |
+| | PWM @100Hz |
+| | PWM @2 KHz |
+
+| Relay Switch |   |
+| --- | --- |
+| Relay Switch | 1 x 230V - 2A |  
 
 To activate the specific sensorboard proceed as follows:
 1. Upload the sensor-model in device database. Download the sensorboard model Type A [here from section Smartbox IO](https://www.pssystec.de/downloads/)
@@ -115,15 +139,13 @@ Depending on the type of device and the integration into Cumulocity, you can als
 
 Additionally, when the feature is activated, Cell ID information can be used to determine the position of the device. Currently, the services from [Combain](https://combain.com/) and [Google](https://developers.google.com/maps/documentation/geolocation/intro) are supported. The user can see the tracks based on both data, or filter out GPS based data or Cell ID based data.
 
-## <a name="sms-mode"></a>Troubleshoot devices by SMS mode
+## <a name="sms"></a>Change Tenant and URL by SMS
 
-You can send AT commands vie the SMS to the device:
-
-| Command | Description |
+| Change Tenant and URL by SMS |  |
 | --- | --- |
-| DELETE | deletes the registration in CC and you can register on a new tenant |
-| RESET	| Restarts the device |
-| GPRS=&lt;APN&gt;,&lt;User&gt;,&lt;Password&gt; | Change APN, if no User or Password is required, the fields free |
+| Change tenant | To change tenant: [https://pssystec.cumulocity.com](https://pssystec.cumulocity.com). Send an SMS to the SMARTbox by typing DELETE. The device will delete the stored crediantels and performs an restart. After this you will be able to register the device in an other tenant but with same Url (.ram.m2m.telekom.com). |
+| Change URL | To change URL: [https://pssystec.cumulocity.com](https://pssystec.cumulocity.com). Send an SMS to the SMARTbox by typing URL=<newurl> e.g. URL=test-ram.m2m.telekom.com. Note: By executing this command, also the crediantels will be deleted from the device. |
+| Note: | don't forget to delete the device in your registered tenant to prevent scrap in your tenant. |
 
 ## <a name="device-shell"></a>Remotely execute text commands via device shell
 

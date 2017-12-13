@@ -6,7 +6,7 @@ layout: default
 
 ## Overview
 
-The Administration application enables account administrators to manage their users, roles, tenants, applications, and business rules as well as configure a number of settings for their account. 
+The Administration application enables account administrators to manage their users, roles, tenants, applications and business rules as well as to configure a number of settings for their account. 
 
 The following sections will walk you through all functionalities of the Administration application in detail. For your convenience find an overview on the content of this document below.
 
@@ -16,15 +16,13 @@ The following sections will walk you through all functionalities of the Administ
 |:---|:---|
 |[Home Screen](#home)|Providing information on your [capacity usage and subscribed applications](#home).
 |[Viewing Audit Logs](#audit)|Providing information on all [operations performed by the users](#audit).
-|[Managing own applications](#applications)|How to manage and [configure own applications](#applications) in your Cumulocity account.
+|[Managing Own Applications](#applications)|How to manage and [configure own applications](#applications) in your Cumulocity account.
+|[Managing Tenants](#applications)|How to [manage tenants](#tenants), retrieve [user statistics](#user-stats) and configure [tenant policies](#tenant-policies).
 |[Applying Business Rules](#retention)|How to set up real-time [event processing](#event-processing) scripts and reprioritize alarms by [alarm mappings](#reprio-alarms).
+|[Changing Settings](#settings)|How to change account settings like [application settings](#default-app) or [password policy and TFA settings](#changing-password-settings), how to manage the [properties library](#properties) and how to configure [settings for the Enterprise Edition](#platform-config).
 |[Managing Data Retention](#retention)|How to manage and configure [retention rules](#retention-rules) for your data and how to [manage stored files](#files) in the file repository.
 |[Data Broker](#data-broker)|How to forward data to other tenants using [data connectors](#data-broker-connector) and how to receive data with a [data subcription](#data-broker-subscriptions) on the receiving end.
-
-
-* Manage [tenants](#tenants) and configure your [tenant policies](#tenant-policies)	.
-* Change [settings](#settings).
-* Configure the recipients and trigger of the [warning e-mail](#warningEmail) for maximum storage being reached.
+|[Storage Quota](storageQuota)|How to configure the recipients and triggers of the [warning e-mail](#warningEmail) for maximum storage being reached.
 
 
 ## <a name="home"></a>Home Screen
@@ -33,7 +31,7 @@ The "Home" screen provides
 
 * a welcome message,
 * quick links to the main parts of the Administration application,
-* your capacity usage for the current and the for last month,
+* your capacity usage for the current and for the last month,
 * the optional applications you are subscribed to. 
 
 <img src="/guides/users-guide/administration/admin_HomeScreen.png" alt="Home screen" style="max-width: 100%">
@@ -61,7 +59,7 @@ Click "Audit logs" in the "Account" menu to view the audit logs list. For each l
 |Description|Provides further information depending on the operation, e.g. the device name, alarm text, operation status.
 |Device time|Device time when the operation was processed. This can differ from the server time.
 
-Only the latest 100 logs are visible. Click **Load more** at the bottom of the list to view more log entries.
+Only the last 100 logs are visible. Click **Load more** at the bottom of the list to view more log entries.
 
 ![Audit logs](/guides/users-guide/administration/admin_auditlogs.png)
 
@@ -79,11 +77,9 @@ To apply filters, click the Filter icon next to the filter fields. To discard fi
 
 In addition to the applications available in the Cumulocity platform, you can also manage own applications in your account. 
 
-These applications may be "Smartapps" or generic HTML5 applications. "Smartapps" are HTML5 applications that can be extended by adding plugins. When deploying, the plugins are deployed into a specific application. For example, a plugin might add a specific widget to the Cockpit dashboard.
+These applications may be generic HTML5 applications that can be extended by adding plugins. When deploying, the plugins are deployed into a specific application. For example, a plugin might add a specific widget to the Cockpit dashboard.
 
 Because the application itself is modified when adding a plugin, plugins can only be added to own applications. When adding a plugin to a subscribed application, the application must be cloned first into an own application. This process is supported by the Administration Application wizard.
-
-> **Info**: "Smartapps" insert the plugin into the application and no longer reference plugins stored in other applications.
 
 You manage your own application under "Own applications" accessible through the "Applications" menu. 
 
@@ -97,13 +93,12 @@ Click **Open** on the application card to directly open the application from her
 
 Click **Add Plugin** to add a plugin (see [Adding and removing plugins](#add-remove-plugins)).
 
-
 ### Creating an application
 
 To add an application, click **Add application** in the "Own applications" page. In the upcoming dialog choose to create an application by
 
 * uploading a ZIP file,
-* use an external application, which links to an application running elsewhere,
+* using an external application, which links to an application running elsewhere,
 * cloning an existing application.
 
 ![Add application methods](/guides/users-guide/administration/admin_AddApplications.png)
@@ -124,10 +119,10 @@ In order to clone an application follow these steps:
 1. Click **Add application** in the "Own applications" page.
 2. In the upcoming dialog select **Clone existing application**.
 3. Select the desired application from the dropdown list. Note that also subscribed applications are shown.
-4. In the next window enter the name of the application. The name will be shown as title on the top left of the application. It will also be shown in the Application Switcher.
+4. In the next window, enter the name of the application. The name will be shown as title on the top left of the application. It will also be shown in the Application Switcher.
 5. Enter an application key. The application key is used to identify requests from this application and to make it available for subscription, see the [Concepts Guide](/guides/concepts/applications).
 6. Enter the application path. This path will be part of the URL to invoke the application. For example, if you use "hello" as application path, the URL of the application will be "/apps/hello".
-7. Finally click **Clone** to create the application.
+7. Finally, click **Clone** to create the application.
 
 ### <a name="add-remove-plugin"></a>Adding and removing plugins
 
@@ -167,13 +162,12 @@ Be aware of the "UI" at the end of the plugin names.
 
 ### Restoring to an older application version
 
-Users can restore previous versions of an application from an archive.
+Users can restore previous versions of an application from an archive:
 
-Click **Edit** in the menu icon on the desired application and switch to the "Archives" tab. 
-
-Open the context menu for the desired version and select **Set as active** to make it the active version.
-
-Click **Remove** to remove the version from the archive.
+1. Open the application by clicking on it.
+2. Switch to the "Archives" tab. 
+3. Open the context menu for the desired version and select **Set as active** to make it the active version.
+4. Click **Remove** to remove the version from the archive.
 
 >**Info**: The "Archive" tab is not available for subscribed applications, as only the owner of the application can perform this action.
 
@@ -183,36 +177,21 @@ Multiple archive ZIP file versions can be stored in Cumulocity when they were cr
 
 To upload an archive follow these steps:
 
-- Select the application by clicking on its name.
-- Switch to the "Archives" tab.
-- Click **Upload archive** and browse for the archive on your computer or simply drop the archive file.
-- Click **Upload** to upload the archive to your Cumulocity account.
+1. Open the application by clicking on it.
+2. Switch to the "Archives" tab.
+3. Click **Upload archive** and browse for the archive on your computer or simply drop the archive file.
+4. Click **Upload** to upload the archive to your Cumulocity account.
 
 ![Upload archive](/guides/users-guide/uploadarchive.png)
 
 Once uploaded, archives can be downloaded, activated or deleted if necessary. The active archive (indicated by a Cloud icon) is the version of the application that is currently being served to the users of your account. This version cannot be deleted.
 
-### <a name="creating-smartapp"></a>Adding a smartapp (Deprecated)
-
-> **Info**: This functionality is depreciated and will be removed in future versions of the product.
-
-To add a smartapp follow these steps:
-
-1. Click **Add application** in the "Own applications" page.
-2. Click **Create legacy smartapp**.
-3. Enter the name of the application. The name will be shown as title on the top left of the application. It will also be shown in the application switcher.
-4. Enter the application path. This path will be part of the URL to invoke the application. For example, if you use "hello" as application path, the URL of the application will be "/apps/hello".
-5. Click **Create**.
-
-Note that these are the old "Smartapps" in which the plugins that you wish to add to your application must be selected from a list.
-
-![Legacy smartapps](/guides/users-guide/smartapps.png)
 
 ### Editing and removing applications
 
 **Edit**
 
-To edit an application, simply click the application or click **Edit** in its context menu, accessible through the menu icon. 
+To edit an application, simply click the application or click **Edit** in its context menu, accessible through the Menu icon. 
 
 In the "Properties" tab, several fields can be modified, depending on the application type.
 
@@ -226,7 +205,7 @@ It is not possible to remove subscribed applications. This can only be done by t
 
 > **Info**: To overwrite a "Subscribed application" the "Own Application" must have the same context-path as the "Subscribed application".
 
-To remove an application, click **Remove** in its context menu, accessible through the menu icon. 
+To remove an application, click **Remove** in its context menu, accessible through the Menu icon. 
 
 ## <a name="tenants"></a>Managing tenants
 
@@ -253,7 +232,7 @@ The "Tenants" page provides the following information on each subtenant:
 * The ID and domain. When you create a tenant, the ID is the first part of the URL. For example, if you create a tenant with the ID "acme" on cumulocity.com, the tenant's URL will be "acme.cumulocity.com". Note that while you can change the URL later on, you cannot change the ID anymore after the tenant was created.
 * An optional contact name and phone number.
 * The date when the tenant was created.
-* The status of the tenant, either active (indicated by a green checkmark icon) or suspended (indicated by a red cross icon).
+* The status of the tenant, either active (indicated by a green Checkmark icon) or suspended (indicated by a red Cross icon).
 
 If you are using the management tenant, you will see an additional column "Parent tenant". This column shows the tenant that created the listed tenant.
 
@@ -353,7 +332,7 @@ It's possible to export current view of statistics table to CSV file by clicking
 
 > Note that you can define custom properties in ["Properties Library"](#properties) and then set their values in tenant's ["Custom Properties"](#tenants-custom-properties) tab.
 
-## <a name="tenant-policies"></a> Configuring the tenant policies
+### <a name="tenant-policies"></a> Configuring the tenant policies
 
 A tenant policy is a set of settings that control tenant options and tenant retention rules. These options and rules can be used during tenant creation. When creating multiple tenants with the same options or retention rules, you can save work by creating a tenant policy and using it for each tenant.
 
@@ -477,20 +456,20 @@ To add an alarm mapping, click **Add alarm mapping** in the top menu bar.
 3. Select the desired new severity, or select "Drop" to not show the alarm at all.
 4. Click **Save**.
 
-## <a name="settings"></a>Changing application settings
+## <a name="settings"></a>Changing Settings
 
 From the "Settings" menu, administrators can modify or manage various settings for the account as
 
 - changing the [application settings](#default-app),
 - changing the [password policy and TFA settings](#changing-password-settings),
 - managing the [properties library](#properties),
-- managing the [platform configuration](#platform-config) settings.
+- configure the [settings for the Enterprise Edition](#platform-config).
 
 ### <a name="default-app"></a>Changing application settings
 
 Click "Application" to change applications settings.
 
-Under "Default application" you can select a default application from the list which will apply to all users within the tenant.
+Under "Default application", you can select a default application from the list which will apply to all users within the tenant.
 
 **Info**: All users must have access to this application.
 
@@ -520,7 +499,7 @@ Click **Save** to apply your password settings.
 
 <img src="/guides/users-guide/administration/admin_Password.png" alt="Password settings" style="max-width: 100%">
 
-Under "TFA settings" you can change the following TFA settings:
+Under "TFA settings", you can change the following TFA settings:
 
  - "Limit token validity"- here you can set the lifetime of each session in minutes. When the session expires, the user has to enter a new verification code.
  - "Limit PIN validity"- Here you can set the lifetime of each verification code sent via SMS. When the verification code expires, in order to login the user has to request a new verification code.

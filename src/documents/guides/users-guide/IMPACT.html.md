@@ -118,7 +118,7 @@ Turn on **Send event** to send an event each time a certain condition has been t
 
 **Auto observe**
 
-With “Auto observe” enabled, the resource will automatically be observed after the creation. This means that you do not need to subscribe to it manually.
+Enabling “Auto observe” for a resource meeans, that each time the device with this particular resource appears, Cumulocity will automatically receive all values. It is not necessary, to subscribe to it manually.
 
 >**Info**: At least one functionality must be set to enable “Auto observe”. 
 

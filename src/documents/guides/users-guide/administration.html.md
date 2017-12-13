@@ -229,7 +229,7 @@ Click "Subtenants" in the "Tenants" menu to view a list of all subtentants avail
 The "Tenants" page provides the following information on each subtenant:
 
 * The name of the subtenant, e.g. company name of your customer.
-* The ID and domain. When you create a tenant, the ID is the first part of the URL. For example, if you create a tenant with the ID "acme" on cumulocity.com, the tenant's URL will be "acme.cumulocity.com". Note that while you can change the URL later on, you cannot change the ID anymore after the tenant was created.
+* The ID and domain. When creating tenants, the ID gets the first part of the URL. For example, if you create a tenant with the ID "acme" on cumulocity.com, the tenant's URL will be "acme.cumulocity.com". Note that while you can change the URL later on, you cannot change the ID anymore after the tenant was created.
 * An optional contact name and phone number.
 * The date when the tenant was created.
 * The status of the tenant, either active (indicated by a green Checkmark icon) or suspended (indicated by a red Cross icon).
@@ -238,13 +238,14 @@ If you are using the management tenant, you will see an additional column "Paren
 
 ![Sub-tenants](/guides/users-guide/administration/admin_SubTenant.png)
 
-### creating sub-tenants
+### <a name="creating-tenants"></a>Creating sub-tenants
 
 To add a new tenant, click **Create tenant** at the right of the top menu bar. To create a tenant, provide the following properties:
 
 |Field|Description
 |:--------|:-----
-|Domain/ URL|Tenant IDs and URLs must be unique within the system. You can only use one subdomain level. For example, you can only use "acme.cumulocity.com" on cumulocity.com. You cannot use "mycustomer.acme.cumulocity.com". This is not permitted by the TLS standard.|Name|The name of the tenant, e.g. the company's name.
+|Domain/ URL|Enter a unique ID as the first part of the URL. For example, if you enter "acme" as ID on cumulocity.com, the tenant's URL will be "acme.cumulocity.com". You can only use one subdomain level. For example, you can only use "acme.cumulocity.com" on cumulocity.com. You cannot use "mycustomer.acme.cumulocity.com". This is not permitted by the TLS standard. 
+|Name|The name of the tenant, e.g. the company's name.
 |Administrator's email|You must provide a valid email address to enable users to reset their password.
 |Administrator's username|Username for the administrator of this tenant.
 |Contact name|Optional name of the contact.
@@ -258,18 +259,19 @@ Click **Save** to apply your settings.
 
 When the tenant is created, it is automatically provisioned with a first, administrative user ("Administrator's username"). This administrator can create other users and set their permissions. The first user cannot be deleted to prevent you from locking yourself out. 
 
-**Still true?**
 From the management tenant, you can enable other tenants to create subtenants. To do so, check "Allow creation of subtenants".
 
 ![Tenant-creation](/guides/users-guide/createtenant.png)
 
-### Editing subtenants and subscribing to applications
+### Editing subtenant properties
 
 To edit subtenants, click on the desired subtenant or click **Edit** in the context menu accessible through the menu icon.
 
-In the "Properties" tab, all fields are editable except of the ID and the administrator's username. For details on the fields refer to the previous section.
+In the "Properties" tab, all fields are editable except of the ID and the administrator's username. For details on the fields refer to [Creating sub-tenants](#creating-tenants).
 
-Switch to the "Applications" tab to subscribe tenants to applications or remove the applications from the tenant. By default, tenants will be subscribed to the standard Cumulocity applications. 
+### Subscribing to applications
+
+In the "Applications" tab you can subscribe tenants to applications or remove the applications from the tenant. By default, tenants will be subscribed to the standard Cumulocity applications. 
 
 <img src="/guides/users-guide/administration/admin_SubtenantApplications.png" alt="Subscribe tenant" style="max-width: 100%">
 
@@ -281,9 +283,9 @@ To remove an application, hover over the applications under "Subscribed applicat
 
 You can temporarily suspend tenants. Suspending tenants blocks any access to this tenant, regardless whether the access is from devices, users or other applications. 
 
-To suspend a tenant, click **Suspend** in the context menu of the tenant, accessible through the menu icon.
+To suspend a tenant, click **Suspend** in the context menu of the tenant, accessible through the Menu icon.
 
-In the upcoming dialog confirm the suspension by clicking **Ok** and entering your password. The tenant will be shown with a red cross icon. As part of suspending the tenant, an informational email is sent to the tenant administrator if an email address is configured for that administrator.
+In the upcoming dialog confirm the suspension by clicking **Ok** and entering your password. The tenant will be shown with a red Cross icon. As part of suspending the tenant, an email is sent to the tenant administrator if an email address is configured for that administrator.
 
 > **Info**: If you are a service provider, you can suppress this email.
 
@@ -305,7 +307,7 @@ The "Custom properties" tab allows you to view and modify values of custom prope
 
 ### <a name="usage-stats"></a> Retrieving usage statistics
 
-The usage statistics page provides statistical information on each subtenant. 
+The "Usage statistics" page provides statistical information on each subtenant. 
 
 The following information is provided for each tenant:
 
@@ -320,71 +322,74 @@ The following information is provided for each tenant:
 - Parent: The name of parent tenant (available only for management tenant).
 - External reference: This field is for individual usage, for example, you can add a link to the CRM system here or an internal customer number.
 
+Moreover custom properties are displayed, if configured. 
+
+Custom properties may be defined in the ["Properties Library"](#properties) and then set their values in the ["Custom properties"](#tenants-custom-properties) tab of the tenant.
+
 ![Usage statistics](/guides/users-guide/usage-statistics-list.PNG)
 
-#### <a name="usage-stats-custom-properties"></a> Custom properties
+You can filter the usage statistics list for a time period by adding the start and end date in the top menu bar and click **Filter**. You can also filter and sort the list on any column by clicking the Filter icon next to the column name and providing the filtering criteria. For details on filtering refer to Search and filtering functionality. 
 
-The statistics table also displays custom properties and allows you to sort and filter the list of tenants by their values.
-
-It's possible to export current view of statistics table to CSV file by clicking "Export CSV" link (it will show a dialog where you can customize CSV output, see screenshot below).
+Click Export CSV at the right of the top menu bar to export the current view of the statistics table to a CSV file. A dialog will come up in which you can customize the CSV output.
 
 <img src="/guides/users-guide/usage-statistics-export.PNG" style="width:400px;"></img>
 
-> Note that you can define custom properties in ["Properties Library"](#properties) and then set their values in tenant's ["Custom Properties"](#tenants-custom-properties) tab.
 
-### <a name="tenant-policies"></a> Configuring the tenant policies
+### <a name="tenant-policies"></a> Tenant policies
 
-A tenant policy is a set of settings that control tenant options and tenant retention rules. These options and rules can be used during tenant creation. When creating multiple tenants with the same options or retention rules, you can save work by creating a tenant policy and using it for each tenant.
+A tenant policy is a set of tenant options and retention rules. Tenant options and retention rules may be specified during tenant creation. 
+
+Creating a tenant policy with a specific set of options and rules saves time when creating multiple tenants with the same settings.
 
 ![Tenant policy](/guides/users-guide/tenantpolicy.png)
 
 > **Info**: The options and rules are copied into the tenant. Editing the policy has no effect on tenants that have already been created.
 
+Click "Tenant policies" in the "Tenants" menu to view all tenant policies available.
+
+<img src="/guides/users-guide/administration/admin_TenantPolicies.png" alt="Tenant policies" style="max-width: 100%">
+
+For each tenant policy the name, an optional description and the number of options and retention rules is provided, either in a list or a grid.
+
+### Adding a tenant policy
+
+Click **Add tenant policy** in the top menu bar to create a new tenant policy.
+
 ![Add new policy](/guides/users-guide/addpolicy.png)
+ 
+2. Enter a name and an optional description. 
+3. Add at least one retention rule. For details on creating retention rules refer to [Retention rules](#retention-rules).
+4. Optionally add a tenant option.
+5. Click **Save** to save your settings.
 
-> At least one retention rule must be added.
+### Editing, duplicating and deleting policies
 
-To change the name of the policy, click on the field marked in the screenshot below and then click on the tick to save the changes.
+To edit a policy, click on the desired policy or click **Edit** in the context menu, accessible through the Menu icon. 
 
-When ready, click on "Save".
+To change the name of a policy, click the name in the top bar, modify it and click the green Checkmark icon to save your changes.
 
-![Edit policy name](/guides/users-guide/editpolicyname.png)
+To delete a retention rule or a tenant option from a policy, hover over it and click the Delete icon.
 
-### Duplicating, editing and removing policies
+To duplicate a policy, click **Duplicate** in the context menu.
 
-In order to duplicate a policy, click on the external menu of your desired policy and then click on "Duplicate".
-
-To edit a policy, either click on the desired policy or click on the desired action in the external options menu.
-
-If you wish to delete a policy, go to the external menu of the policy and click on "Delete".
+To delete a policy, click **Delete** in the context menu.
 
 ![Edit policy menu](/guides/users-guide/editpolicy.png)
 
-To remove a retention rule from a policy, simply go to the edit screen of the desired policy, hover over the retention rule and click on the "Remove" sign.
-
-![Remove retention rule](/guides/users-guide/removeretrule.png)
-
-### Adding a new tenant policy
-
-To add a new tenant policy, click on "Add tenant policy". Then enter the policy description and add retention rules. For more info about retention rules, please see [here](http://cumulocity.com/guides/users-guide/administration/#retention).
-
-
-
 ## <a name="tfa"></a>Using two-factor authentication
 
-The Two-factor authentication(TFA) is an extra layer of security that requires not only a username and password, but SMS verification as well. TFA can only be set up by administrators. When TFA is enabled, it is impossible to configure it from the "User settings", it is configurable from the administration UI.
+The Two-factor authentication(TFA) is an extra layer of security that requires not only a username and password, but SMS verification as well. TFA can only be set up by administrators. When TFA is enabled, it is impossible to configure it from the "User settings", it is configurable from the administration UI only.
 
-> Note that a phone number is required when adding a user and TFA is enabled. When users without a phone number try to login using TFA, the user will be redirected to a window, to enter his/her mobile phone number. Without a phone number a login is impossible.
+> **Info**: When adding a user and TFA is enabled you need to provide a phone number for the user. When users without a phone number try to login using TFA, the users will be redirected to a window, to enter their mobile phone number. Without a phone number a login is impossible.
 
-To see whether TFA is enabled for a certain user, go to the "Users" menu and check the TFA status column.
+To see whether TFA is enabled for a certain user, go to the "Users" page and check the TFA status column.
 
 ![TFA satus](/guides/users-guide/tfastatus.png)
 
 To enable two-factor authentication for a user
 
-- Navigate to the "Users" page.
-- Click on the desired user.
-- Select the checkbox next to "Enable two-factor authentication.
+- Click on the desired user in the "Users" page.
+- Select the checkbox next to "Enable two-factor authentication".
 - Click **Save**.
 
 ![Enable TFA](/guides/users-guide/enabletfa.png)
@@ -395,19 +400,19 @@ To enable two-factor authentication for a user
 
 Using event processing, you can specify real-time business logic that is automatically run by Cumulocity as soon as new data arrives or existing data is modified. The logic is deployed in so-called "modules". Modules consist of a set of statements that you write in [Cumulocity Event Language](/guides/concepts/realtime). 
 
-> **Info**: A user-friendly way to specify real-time business logic is provided in the Cockpit application through the so-called "[Smart Rules](/guides/users-guide/cockpit#rules)". Smart Rules are "under the hood" also implemented as Cumulocity Event Language statements, and you can see in the "Event Processing" page. However, you cannot edit Smart Rules from here.
+> **Info**: A user-friendly way to specify real-time business logic is provided in the Cockpit application through the so-called "[Smart Rules](/guides/users-guide/cockpit#rules)". Smart Rules are "under the hood" also implemented as Cumulocity Event Language statements, and you can see them in the "Event Processing" page. However, you cannot edit Smart Rules from here.
 
 Click "Event processing" in the "Business rules" menu to view the current modules or to create new ones.
 
 <img src="/guides/users-guide/administration/admin_EventProcessing.png" alt="Event processing" style="max-width: 100%">
 
-For each module in the list the status (deployed/not deployed), the name and the date when is was last updated is provided.
+For each module in the list the status (deployed = indicated by a green checkmark / not deployed = indicated by an exclamation mark), the name and the date when is was last updated is provided.
 
-To edit a module simply click the module or click **Edit** in the context menu accesible through the context icon.
+To edit a module, simply click the module or click **Edit** in the context menu accesible through the Menu icon.
 
-To remove a module click **Remove** in the context menu.
+To remove a module, click **Remove** in the context menu.
 
-Instead of deleting the module, you can also disable it temporarily by setting its status to "Not deployed".
+Instead of deleting the module you can also disable it temporarily by setting its status to "Not deployed".
 
 #### Creating new modules
 
@@ -419,17 +424,15 @@ Enter a name for the module at the very top. You can only use alphanumeric chara
 
 By default, the status is set to "Deployed" which means that the statements you enter will be run immediately. Set the slider to "Not deployed" if you want to avoid this. 
 
-Enter your CEL statemants into the "Source code" text box. For your comvenience we provide various examples. Click **Examples** and select an appropriate example from the drop down list. Click **Append example** to paste the example into the "Source code" text box at the position of the cursor.
+Enter your CEL statemants into the "Source code" text box. For your comvenience we provide various examples. Click **Examples** and select an appropriate example from the dropdown list. Click **Append example** to paste the example into the "Source code" text box at the position of the cursor.
 
 Click **Save** to save your settings.
 
-The example module creates an alarm when the temperature goes below 0 degree.
+The example module creates an alarm if the temperature goes below 0 degree.
 
 <img src="/guides/users-guide/administration/Admin-EventProcessingModuleExample.png" alt="Example module" style="max-width: 100%">
 
-Still true??
-
-If you set the status to "Deployed", you will see a small green "Connected" box in the user interface. Whenever your statements produce some output, you will see it below this "Connected" box. Clicking on a line of output unfolds the detailed output of the statement. Clicking "Clear all" removes the output from the screen.
+If the status of a module is set to "Deployed", this is indicated by a green checkmark in the module list. Whenever your statements produce some output, you will see it below the Checkmark icon. Clicking a line of output unfolds the detailed output of the statement. Clicking **Clear all** removes the output from the screen.
 
 ### <a name="reprio-alarms"></a>Alarm mapping
 
@@ -441,9 +444,9 @@ Click "Alarm mapping" in the "Business Rules" menu to see a list of all alarm ma
 
 For each alarm mapping the alarm severity and the name of the mapping is shown.
 
-To edit an alarm mapping simply click it.
+To edit an alarm mapping, simply click it.
 
-To delete an alarm mapping hover over it and click the **Delete** button.
+To delete an alarm mapping, hover over it and click the **Delete** button.
 
 #### Adding an alarm mapping
 
@@ -454,7 +457,66 @@ To add an alarm mapping, click **Add alarm mapping** in the top menu bar.
 1. Enter the alarm type to be modified.
 2. Optionally, enter a new text for the alarm. If you do not enter any text, the original text in the alarm will be kept.
 3. Select the desired new severity, or select "Drop" to not show the alarm at all.
-4. Click **Save**.
+4. Click **Save** to save your settings.
+
+## <a name="retention"></a>Managing Data Retention
+
+### <a name="retention-rules"></a>Retention rules
+
+"Retention rules" gives you control on how long data is stored in your account. You might for example want to store measurements for 90 days, but delete alarms already after 10 days. By default, all historical data is deleted after 60 days (configurable in the system settings).
+
+Retention rules are usually run during the night. When you edit a retention rule, you will not see an immediate effect in the "Usage" section on the Home screen of the Administration application.
+
+Click "Retention rules" in the "Management" menu to view a list of retention rules configured for your account.
+
+<img src="/guides/users-guide/administration/Admin_RetentionRule.png" alt="Retention rules" style="max-width: 50%">
+
+For each rule, the rule name, details on the data to be deleted (fragment type, type and source, see below) and the maximum age in days is provided.
+
+The asterisk ("*") indicates that data with any value will be cleaned up.
+
+
+####Creating retention rules
+
+To add additional retention rules, click **Add rule** in the top menu bar. 
+
+<img src="/guides/users-guide/addrulepage.png" alt="Add retention rule" style="max-width: 50%">
+
+>**Info**: Per default an asterisk ("*") is set in all fields except the "Maximum age" field, to include all values.
+
+1. Select the type of data to be cleaned up (alarms, measurements, events, operations, audit logs or all).
+2. Enter a fragment type, if you want to be more specific about the data to be cleaned up. To clean up all connection loss alarms with this rule, select "alarms" and enter "c8y_UnavailabilityAlarm" as property into the "Type" field.
+3. If you want to remove data only from a specific device, enter the device ID into the "Source" field.
+4. Enter the "Maximum age" in days (max. allowed value is 10 years in days).
+5. Click **Save** to create the rule.
+
+Note that alarms are only removed if they are in "CLEARED" state.
+
+<img src="/guides/users-guide/administration/Admin_RetentionRuleDelete.png" alt="Delete retention rule" style="max-width: 50%">
+
+To delete a rule, hover over it and click the **Delete** button at the right.
+
+
+### <a name="files"></a>Managing files in the file repository
+
+The file repository provides an overview of the files stored in your account.
+
+Click "Files repository" in the "Management" menu to see a list of files. 
+
+The files listed can come from various sources. They can be software images, configuration snapshots taken from devices, log files from devices or web applications uploaded from the "Own applications" page. 
+
+For each file, the name of the file, its owner, the file type (i.e. image/bmp, text/csv), its size and the date when it was last updated is provided.
+
+<img src="/guides/users-guide/administration/Admin_FilesRepository.png" alt="Files Repository" style="max-width: 100%">
+
+Click **Upload file** in the top menu bar to upload a file from your computer.
+
+Click **Download** in the context menu accessible through the Menu icon to download a file from your account.
+
+Click **Delete** in the context menu to delete a file from your account.
+
+>**Info**: If the file corresponds to an active application, it cannot be deleted. You first need to remove or upgrade the application to be able to delete it.
+
 
 ## <a name="settings"></a>Changing Settings
 
@@ -540,7 +602,7 @@ In the upcoming form provide a unique name as identifier and a label for the pro
 
 Click **Save** to create the new property.
 
-Click on the name of a property in the list, to open it and to edit or remove it.
+Click on the name of a property in the list, to open it. To edit the property enter the desired changes and click **Save** to save the settings. Click **Remove** to delete the property.
 
 ### <a name="enabling-server-side-agents"></a>Enabling server-side agents
 
@@ -552,9 +614,9 @@ By providing OPenIT credentials you enable the platform to utilize SMS services 
 
 SMS are used throughout the application for various features like [two-factors authentication](/guides/users-guide/administration#tfa) and user notifications, i.e. on alarms.
 
-### <a name="platform-config"></a> Settings for the Enterprise Edition
+### <a name="platform-config"></a> Enterprise Edition
 
-In the "Enterprise edition" page you can specify settings only available to users of the Enterprise edition of Cumulocity.
+In the "Enterprise edition" page you can specify settings which are only available to users of the Enterprise edition of Cumulocity.
 
 #### Branding
 
@@ -637,7 +699,7 @@ In the “Domain name” tab you can activate your own custom domain name.
 
 <img src="/guides/users-guide/administration/admin_DomainName.png" alt="Domain name" style="max-width: 100%">
 
-First you have to upload the appropriate certificate by clicking on the “Upload Certificate” button. Make sure that
+First you have to upload the appropriate certificate by clicking **Upload Certificate**. Make sure that
 
 * the certificate is in a valid PKCS#12 format,
 * the certificate is not password protected,
@@ -676,7 +738,7 @@ If you wish to return to your old domain at cumulocity, you can simply deactivat
 
 > **Info**: This feature is only available to "Management" tenants.
 
-In the "Configuration" tab of the "Enterprise edition" page you can configure system-wide properties in Cumulocity. The following options can be modified in the "Configuration" settings:
+In the "Configuration" tab of the "Enterprise edition" page you can configure system-wide properties in Cumulocity. The following options can be modified in the "Configuration" settings.
 
 In the "Two-factor authentication" field, you can change the SMS template which is sent to the users.
 
@@ -700,7 +762,7 @@ In the "E-mail server" section, you can provide the "Protocol", "Host", "Port", 
 
 <img src="/guides/users-guide/administration/admin_ConfigurationServer.png" alt="Configure e-mail server" style="max-width: 100%">
 
-In the "Data export" section you can set the e-mail subject and e-mail template for data export and soecify the “User unauthorized error message”.
+In the "Data export" section you can set the e-mail subject and e-mail template for data export and specify the “User unauthorized error message”.
 
 ![Configuration menu1](/guides/users-guide/configuration_tab4.png)
 
@@ -714,64 +776,6 @@ At the top you can select if you want to send the e-mail to the suspended tenant
 
 Click **Save configuration** to save your settings.
 
-
-## <a name="retention"></a>Managing Data Retention
-
-### <a name="retention-rules"></a>Retention rules
-
-"Retention rules" gives you control how long data is stored in your account. You might for example want to store measurements for 90 days, but delete alarms already after 10 days. By default, all historical data is deleted after 60 days (configurable in the system settings).
-
-Retention rules are usually run during the night. When you edit a retention rule, you will not see an immediate effect in the "Usage" section on the Home screen of the Administration application.
-
-Click "Retention rules" in the "Management" menu to view a list of retention rules configured for your account.
-
-<img src="/guides/users-guide/administration/Admin_RetentionRule.png" alt="Retention rules" style="max-width: 50%">
-
-For each rule, the rule name, details on the data to be deleted (fragment type, type and source, see below) and the maximum age in days is provided.
-
-The asterisk ("*") indicates that data with any value will be cleaned up.
-
-
-####Creating retention rules
-
-To add additional retention rules, click **Add rule** in the top menu bar. 
-
-<img src="/guides/users-guide/addrulepage.png" alt="Add retention rule" style="max-width: 50%">
-
->**Info**: Per default an asterisk ("*") is set in all fields except the "Maximum age" field, to include all values.
-
-1. Select the type of data to clean up (alarms, measurements, events, operations, audit logs or all).
-2. Enter a fragment type, if you want to be more specific about the data to be cleaned up. To clean up all connection loss alarms with this rule, select "alarms" and enter "c8y_UnavailabilityAlarm" as property into the "Type" field.
-3. If you want to remove data only from a specific device, enter the device ID into the "Source" field.
-4. Enter the "Maximum age" in days (max. allowed value is 10 years in days).
-5. Click **Save** to create the rule.
-
-Note that alarms are only removed if they are in "CLEARED" state.
-
-<img src="/guides/users-guide/administration/Admin_RetentionRuleDelete.png" alt="Delete retention rule" style="max-width: 50%">
-
-To delete a rule, hover over it and click the **Delete** button at the right.
-
-
-### <a name="files"></a>Managing files in the file repository
-
-The file repository provides an overview of the files stored in your account.
-
-Click "Files repository" in the "Management" menu to see a list of files. 
-
-The files listed can come from various sources. They can be software images, configuration snapshots taken from devices, log files from devices or web applications uploaded from the "Own applications" page. 
-
-For each file, the name of the file, its owner, the file type (i.e. image/bmp, text/csv), its size and the date when it was last updated is provided.
-
-<img src="/guides/users-guide/administration/Admin_FilesRepository.png" alt="Files Repository" style="max-width: 100%">
-
-Click **Upload file** in the top menu bar to upload a file from your computer.
-
-Click **Download** in the context menu accessible through the menu icon to download a file from your account.
-
-Click **Delete** in the context menu to delete a file from your account.
-
->**Info**: If the file corresponds to an active application, it cannot be deleted. You first need to remove or upgrade the application to be able to delete it.
 
 ## <a name="storageQuota"></a>Storage quota
 
@@ -799,7 +803,7 @@ The e-mail warning can also be disabled.
 
 ## <a name="data-broker"></a>Data Broker
 
-Data broker lets you share data selectively with another tenants. You can share:
+Data broker lets you share data selectively with other tenants. You can share:
 
 - devices (and more generically, managed objects),
 - events,

@@ -586,14 +586,12 @@ By default, only unresolved alarms are shown. If you turn off **Show cleared ala
 
 Alarms are classified according to their severity. Cumulocity includes four different alarm types:
 
-![Critical](/guides/Icons/Docu_Icon_AlarmsCritical.png)
-
-|Icon|Severity|Description|
-|:---|:---|:--|
-|![Critical](/guides/Icons/Docu_Icon_AlarmsCritical.png)|Critical|The device is out of service and should be fixed immediately.
-|![Major](/guides/Icons/Docu_Icon_AlarmsMajor.png)|Major|The device has a problem that should be fixed.
-|![Minor](/guides/Icons/Docu_Icon_AlarmsMinor.png)|Minor|The device has a problem that may be fixed.
-|![Warning](/guides/Icons/Docu_Icon_AlarmsWarning.png)|Warning|There is a warning.
+|Severity|Description|
+|:---|:--|
+|Critical|The device is out of service and should be fixed immediately.
+|Major|The device has a problem that should be fixed.
+|Minor|The device has a problem that may be fixed.
+|Warning|There is a warning.
 
 The "Alarm" tab is split into four sections corresponding to these alarm types.
 

@@ -63,6 +63,8 @@ Only the last 100 logs are visible. Click **Load more** at the bottom of the lis
 
 ![Audit logs](/guides/users-guide/administration/admin_auditlogs.png)
 
+> **Info**: The audit log list is not automatically refreshed after a realtime update for operations. Click **Reload** at the right of the top menu bar to update the list to the latest operations.
+
 ### Filtering logs
 
 In order to easily search through logs, you may filter logs for
@@ -85,13 +87,33 @@ You manage your own application under "Own applications" accessible through the 
 
 In the "Own applications" page you will find a list of your own applications in your account.
 
-<img src="/guides/users-guide/administration/admin_OwnApplications.png" alt="Own applications" style="max-width: 100%">
+<img src="/guides/users-guide/administration/Admin_OwnApplications.png" alt="Own applications" style="max-width: 100%">
 
-Click the menu icon at the top right of an application to open a context menu from where you can **Edit** or **Remove** an application. 
+Click the Menu icon at the top right of an application to open a context menu from where you can [**Edit** or **Remove**](#editing-and-removing) an application. 
 
 Click **Open** on the application card to directly open the application from here. Your applications are also available through the Application Switcher.
 
 Click **Add Plugin** to add a plugin (see [Adding and removing plugins](#add-remove-plugins)).
+
+### <a name="editing-and-removing"></a>Editing and removing applications
+
+**Edit**
+
+To edit an application, simply click the application or click **Edit** in its context menu. 
+
+In the "Properties" tab, several fields can be modified, depending on the application type.
+
+> **Info**: "ID", "Application key" and "Path" cannot be changed once configured.
+
+**Remove**
+
+If you remove an application that overwrites a subscribed application, the currently subscribed application becomes available to all users. Additionally the users will then also benefit from future upgrades of the subscribed application.
+
+It is not possible to remove subscribed applications. This can only be done by the owner of the subscribed application.
+
+> **Info**: To overwrite a subscribed application the "own application" must have the same context-path as the "subscribed application".
+
+To remove an application, click **Remove** in its context menu. 
 
 ### Creating an application
 
@@ -101,7 +123,7 @@ To add an application, click **Add application** in the "Own applications" page.
 * using an external application, which links to an application running elsewhere,
 * cloning an existing application.
 
-![Add application methods](/guides/users-guide/administration/admin_AddApplications.png)
+![Add application methods](/guides/users-guide/administration/Admin_AddApplication.png)
 
 If you select **Upload ZIP file**, the wizard will ask you to simply drop a file or browse for it on your computer.
 
@@ -187,26 +209,6 @@ To upload an archive follow these steps:
 Once uploaded, archives can be downloaded, activated or deleted if necessary. The active archive (indicated by a Cloud icon) is the version of the application that is currently being served to the users of your account. This version cannot be deleted.
 
 
-### Editing and removing applications
-
-**Edit**
-
-To edit an application, simply click the application or click **Edit** in its context menu, accessible through the Menu icon. 
-
-In the "Properties" tab, several fields can be modified, depending on the application type.
-
-> **Info**: "ID", "Application key" and "Path" cannot be changed once configured.
-
-**Remove**
-
-If you remove an application that overwrites a subscribed application, the currently subscribed application becomes available to all users. Additionally the users will then also benefit from future upgrades of the subscribed application.
-
-It is not possible to remove subscribed applications. This can only be done by the owner of the subscribed application.
-
-> **Info**: To overwrite a "Subscribed application" the "Own Application" must have the same context-path as the "Subscribed application".
-
-To remove an application, click **Remove** in its context menu, accessible through the Menu icon. 
-
 ## <a name="tenants"></a>Managing tenants
 
 If you are a service provider or subscribed to the Enterprise Edition of Cumulocity, you may want to manage your own subtenants. This functionality allows you to create subtenants, subscribe them to the applications that you have available and potentially deactivate tenants if they are not in use anymore.
@@ -215,7 +217,7 @@ If you are a service provider or subscribed to the Enterprise Edition of Cumuloc
 
 > **Info**: If you would like to use this feature, please contact sales@cumulocity.com.
 
-To be able to use the tenant functionality, your user needs to have the appropriate permissions. See ["Creating and editing global roles"](/guides/users-guide/user-and-permissions-management#create-edit-roles) for information on editing permissions. Since editing tenants is a sensitive operation, permissions for editing tenants are more granular:
+To be able to use the tenant functionality, your user needs to have the appropriate permissions. See [Creating and editing global roles](/guides/users-guide/user-and-permissions-management#create-edit-roles) for information on editing permissions. Since editing tenants is a sensitive operation, permissions for editing tenants are more granular:
 
 - Read: Browse and view tenants.
 - Create: Create new tenants.
@@ -236,7 +238,7 @@ The "Tenants" page provides the following information on each subtenant:
 
 If you are using the management tenant, you will see an additional column "Parent tenant". This column shows the tenant that created the listed tenant.
 
-![Sub-tenants](/guides/users-guide/administration/admin_SubTenant.png)
+![Sub-tenants](/guides/users-guide/administration/Admin_Subtenants.png)
 
 ### <a name="creating-tenants"></a>Creating sub-tenants
 
@@ -265,7 +267,7 @@ From the management tenant, you can enable other tenants to create subtenants. T
 
 ### Editing subtenant properties
 
-To edit subtenants, click on the desired subtenant or click **Edit** in the context menu accessible through the menu icon.
+To edit subtenants, click on the desired subtenant or click **Edit** in the context menu accessible through the Menu icon.
 
 In the "Properties" tab, all fields are editable except of the ID and the administrator's username. For details on the fields refer to [Creating sub-tenants](#creating-tenants).
 
@@ -273,7 +275,7 @@ In the "Properties" tab, all fields are editable except of the ID and the admini
 
 In the "Applications" tab you can subscribe tenants to applications or remove the applications from the tenant. By default, tenants will be subscribed to the standard Cumulocity applications. 
 
-<img src="/guides/users-guide/administration/admin_SubtenantApplications.png" alt="Subscribe tenant" style="max-width: 100%">
+<img src="/guides/users-guide/administration/Admin_SubtenantApplications.png" alt="Subscribe tenant" style="max-width: 100%">
 
 To subscribe an application to a tenant, hover over the applications under "Available applications" on the right and click **Subscribe** on the desired application.
 
@@ -295,7 +297,7 @@ If a tenant is suspended, the tenant's data remains in the database and can be m
 
 ### Deleting subtenants
 
-To finally delete a tenant and remove all the data of the tenant, click **Remove** in the context menu of the tenant, accessible through the menu icon.
+To finally delete a tenant and remove all the data of the tenant, click **Remove** in the context menu of the tenant, accessible through the Menu icon.
 
 **Info**: This action cannot be reverted. For security reasons, it is only available in the management tenant.
 
@@ -414,11 +416,11 @@ To remove a module, click **Remove** in the context menu.
 
 Instead of deleting the module you can also disable it temporarily by setting its status to "Not deployed".
 
-#### Creating new modules
+**Creating new modules**
 
 To create a new module, click **New module** in the top menu bar.
 
-<img src="/guides/users-guide/administration/Admin-EventProcessingNewModule.png" alt="New module" style="max-width: 100%">
+<img src="/guides/users-guide/administration/Admin_EventProcessingNewModule.png" alt="New module" style="max-width: 100%">
 
 Enter a name for the module at the very top. You can only use alphanumeric characters without blanks.
 
@@ -430,7 +432,7 @@ Click **Save** to save your settings.
 
 The example module creates an alarm if the temperature goes below 0 degree.
 
-<img src="/guides/users-guide/administration/Admin-EventProcessingModuleExample.png" alt="Example module" style="max-width: 100%">
+<img src="/guides/users-guide/administration/Admin_EventProcessingModuleExample.png" alt="Example module" style="max-width: 100%">
 
 If the status of a module is set to "Deployed", this is indicated by a green checkmark in the module list. Whenever your statements produce some output, you will see it below the Checkmark icon. Clicking a line of output unfolds the detailed output of the statement. Clicking **Clear all** removes the output from the screen.
 
@@ -440,7 +442,7 @@ Alarm mapping enables you to change the severity and text of alarms to adapt the
 
 Click "Alarm mapping" in the "Business Rules" menu to see a list of all alarm mappings.
 
-<img src="/guides/users-guide/administration/Admin-AlarmMapping.png" alt="Alarm mapping" style="max-width: 100%">
+<img src="/guides/users-guide/administration/Admin_AlarmMapping.png" alt="Alarm mapping" style="max-width: 100%">
 
 For each alarm mapping the alarm severity and the name of the mapping is shown.
 
@@ -448,11 +450,11 @@ To edit an alarm mapping, simply click it.
 
 To delete an alarm mapping, hover over it and click the **Delete** button.
 
-#### Adding an alarm mapping
+**Adding an alarm mapping**
 
 To add an alarm mapping, click **Add alarm mapping** in the top menu bar.
 
-<img src="/guides/users-guide/administration/Admin-AlarmMapping.png" alt="Alarm mapping" style="max-width: 100%">
+<img src="/guides/users-guide/administration/Admin_AlarmMappingAdd.png" alt="Add alarm mapping" style="max-width: 100%">
 
 1. Enter the alarm type to be modified.
 2. Optionally, enter a new text for the alarm. If you do not enter any text, the original text in the alarm will be kept.
@@ -469,14 +471,14 @@ Retention rules are usually run during the night. When you edit a retention rule
 
 Click "Retention rules" in the "Management" menu to view a list of retention rules configured for your account.
 
-<img src="/guides/users-guide/administration/Admin_RetentionRule.png" alt="Retention rules" style="max-width: 50%">
+<img src="/guides/users-guide/administration/Admin_RetentionRules.png" alt="Retention rules" style="max-width: 50%">
 
 For each rule, the rule name, details on the data to be deleted (fragment type, type and source, see below) and the maximum age in days is provided.
 
 The asterisk ("*") indicates that data with any value will be cleaned up.
 
 
-####Creating retention rules
+**Creating retention rules**
 
 To add additional retention rules, click **Add rule** in the top menu bar. 
 
@@ -492,7 +494,7 @@ To add additional retention rules, click **Add rule** in the top menu bar.
 
 Note that alarms are only removed if they are in "CLEARED" state.
 
-<img src="/guides/users-guide/administration/Admin_RetentionRuleDelete.png" alt="Delete retention rule" style="max-width: 50%">
+<img src="/guides/users-guide/administration/Admin_RetentionRulesDelete.png" alt="Delete retention rule" style="max-width: 50%">
 
 To delete a rule, hover over it and click the **Delete** button at the right.
 
@@ -582,7 +584,7 @@ With custom properties, you can extend the data model of Cumulocity built-in obj
 - Custom tenant properties are available during tenant creation. The custom properties can be edited under “Subtenants” in the “Custom properties” tab of each tenant. Additionally these properties can be viewed and exported in the “Usage statistics”.
 - Custom alarm and event properties can be used as custom fields which can be added to your reports and will be available in the “Reporting” page in the Cockpit applications.
 
-#### Adding properties to the properties library
+**Adding properties to the properties library**
 
 To add a custom property, select the tab for the desired property and click **Add property**. 
 
@@ -614,11 +616,11 @@ By providing OPenIT credentials you enable the platform to utilize SMS services 
 
 SMS are used throughout the application for various features like [two-factors authentication](/guides/users-guide/administration#tfa) and user notifications, i.e. on alarms.
 
-### <a name="platform-config"></a> Enterprise Edition
+## <a name="platform-config"></a> Enterprise Edition
 
-In the "Enterprise edition" page you can specify settings which are only available to users of the Enterprise edition of Cumulocity.
+In the "Enterprise edition" page under the "Settings" menu, you can specify settings which are only available to users of the Enterprise edition of Cumulocity.
 
-#### Branding
+### Branding
 
 In the "Branding" tab, you can fully customize the look of your tenants to your own preferences. 
 
@@ -626,21 +628,31 @@ The branding feature allows you to edit the logos and colors used throughout the
 
 <img src="/guides/users-guide/administration/admin_Branding.png" alt="Branding tab" style="max-width: 100%">
 
+**General**
+
 In the “General” section, you can edit the “Title” which will be used in the browser tab. 
 
-In the “Main logo” section, you specify the following items:
+**Main logo**
+
+Under “Main logo”, you specify the following items:
 
 * The “Favicon” which will be displayed in the browser’s address bar. Click **Choose file** to select a file from your computer. The supported favicon format is “ico”.
 * Your branding logo which will be shown during application loading. Click **Choose file** to select a file from your computer. The supported formats are “png” and “svg”.
 * The “Brand logo height”.
 
-In the “Navigator logo” section, you can provide the “Navigator logo” and set the “Navigator logo height” located on top of the navigator panel.
+**Navigator logo**
+
+Under “Navigator logo”, you can provide the “Navigator logo” and set the “Navigator logo height” located on top of the navigator panel.
+
+**Type**
 
 In the “Type” section, you specify the font settings for your branded version. 
 
 <img src="/guides/users-guide/administration/admin_BrandingType.png" alt="Branding type" style="max-width: 100%">
 
 You can choose your base and headings font, and select an option for the navigator font (either same as base or same as headings font). You may also add a link to existing remote fonts to be used.
+
+**Colors**
 
 In the “Colors” section, you specify the colors to be used in your branding version.
 
@@ -654,7 +666,9 @@ The following parameters can be specified by providing a hex, rgb or rgba value:
 * “Link color”. The default value is the same as the main brand color.
 * “Main background color”. The default value for this item is “#FAFAFA”.
 
-In the “Top bar” section at the right you specify the parameters for the top bar.
+**Top bar**
+
+In the “Top bar” section, you specify the parameters for the top bar.
 
 <img src="/guides/users-guide/administration/admin_BrandingTopbar.png" alt="Branding topbar" style="max-width: 100%">
 
@@ -664,7 +678,9 @@ The following parameters can be specified by providing a hex, rgb or rgba value:
 * “Text color”. The default value is “49595B”.
 * “Button hover text color”. The default value is the main brand color.
 
-In the “Navigator section”, you specify the parameters for the navigator.
+**Navigator**
+
+In the “Navigator" section, you specify the parameters for the navigator.
 
 <img src="/guides/users-guide/administration/admin_BrandingTopbar.png" alt="Branding topbar" style="max-width: 100%">
 
@@ -677,6 +693,8 @@ The following parameters can be specified by providing a hex, rgb or rgba value:
 * “Separator line color”. The default value is “#FAFAFA”.
 * “Text color” of the current item in the navigator. The default value is “#FAFAFA”.
 * “Background color” of the current item in the navigator with the main brand color as default.
+
+**Misc**
 
 In the “Misc” section you may specify the “Button Border-Radius” by providing a value in pixel (px).
 
@@ -693,7 +711,7 @@ The “Main background color” is blue.
 The top bar “Background color” is green.
 The navigator “Background color” is pink. 
 
-####Domain name
+### Domain name
 
 In the “Domain name” tab you can activate your own custom domain name.  
 
@@ -734,7 +752,7 @@ If you wish to return to your old domain at cumulocity, you can simply deactivat
 
 >**Important**: Use with care. Your customers will not be able to access their subtenants anymore.
 
-####Configuration
+### Configuration
 
 > **Info**: This feature is only available to "Management" tenants.
 
@@ -820,7 +838,7 @@ Navigate to "Data connectors" if you would like to send data to another tenant. 
 
 A data connector describes the subset of the data that you would like to send to a destination tenant as well as the URL of that destination tenant.
 
-#### <a name="data-broker-connectors-list"></a> Viewing data connectors
+<a name="data-broker-connectors-list"></a> **Viewing data connectors**
 
 In the "Data connectors" page, you can manage existing data connectors or create new ones. Click "Data connectors" to see a list of all currently defined data connectors with their status.
 
@@ -836,11 +854,11 @@ For each data connector the following information is provided:
 
 Use the slider to enable and disable data forwarding to the destination tenant. If data is being forwarded, the slider reads "active". If data is not being forwarded, the slider reads "suspended" or "pending". "Suspended" means that you have disabled forwarding. "Pending" means that the destination tenant has disabled forwarding.
 
-* Click **Edit** in the context menu of the card, accessible through the menu icon, to modify the data connector's configuration. The configuration is described in more detail below.
+* Click **Edit** in the context menu of the card, accessible through the Menu icon, to modify the data connector's configuration. The configuration is described in more detail below.
 * Click "**Duplicate** in the context menu to create another data connector with the same configuration.
 * Click **Delete** in the context menu to stop data forwarding and remove the data connector.
 
-#### <a name="data-broker-connector-edit"></a> Creating or edit data connectors
+<a name="data-broker-connector-edit"></a> **Creating or editing data connectors**
 
 Click **Add data connector** in the top menu bar to create a new data connector or click **Edit** in the context menu of a particular data connector to edit its configuration.
 
@@ -885,21 +903,20 @@ In the "Data subscriptions" page, you can manage existing data subscriptions or 
 
 Click "Data subscriptions" to see a list of all currently defined data forwarded to your tenant. 
 
-<img src="/guides/users-guide/Administration/Admin_Subscriptions" alt="Data subscriptions" style="max-width: 25%">
+<img src="/guides/users-guide/Administration/Admin_Subscriptions.png" alt="Data subscriptions" style="max-width: 25%">
 
 For each subscription the name, the target tenant and the status (enabled or disabled) is provided on a card.
 
 Use the slider to temporarily stop forwarding data into your tenant.
 
-Click **Delete** in the context menu, accessible through the menu icon, to stop data forwarding and remove the data connector.
+Click **Delete** in the context menu, accessible through the Menu icon, to stop data forwarding and remove the data connector.
 
 **How to set up data forwarding on the receiving end**
 
 1. Click **Add data subscription** in the top menu bar to receive data. 
-1. In the new card enter the security code that you received from the sending end of the data.
-1. When the connection is established, click **Accept** to start forwarding data into your tenant. The subscription is active now.
-
-* You can click the slider in the card to temporarily stop forwarding data into your tenant.
+2. In the new card enter the security code that you received from the sending end of the data.
+3. When the connection is established, click **Accept** to start forwarding data into your tenant. The subscription is active now.
+4. You can click the slider in the card to temporarily stop forwarding data into your tenant.
 
 You can now navigate to the Device Management application or the Cockpit application. There will be a new "virtual group" with a specific icon (see the screenshot below) showing the forwarded devices. The group will have the same name as your subscription. Devices are "lazily" created on the destination side whenever they send data for the first time after setting up an active subscription.
 

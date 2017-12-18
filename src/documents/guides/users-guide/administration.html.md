@@ -178,6 +178,7 @@ To add a smartapp:
 To edit an application, simply click on its name. Depending on the type of the application (e.g. Hosted, External), different fields can be modified.
 
 > Note that "ID", "Application key" and "Path" cannot be changed once configured.
+> Note that you should never change the system application names(e.g. "Device Management", "Cockpit"). Otherwise, tenant initialization will fail. 
 
 ### Removing applications
 

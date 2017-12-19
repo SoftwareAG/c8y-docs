@@ -308,7 +308,7 @@ Below the name, a list of breadcrumbs is displayed. If the device is part of an 
 
 Depending of the type and usage of a device, further actions are provided in a context menu when clicking **More...** at the right of the top menu bar. 
 
-<img src="/guides/users-guide/DeviceManagement/DevMgmt_DeviceMoreMenu.png" alt="More menu" style="max-width: 50%">
+<img src="/guides/users-guide/DeviceManagement/DevMgmt_DevicesMoreMenu.png" alt="More menu" style="max-width: 50%">
 
 Details on these additional menu items are provided where required.
 

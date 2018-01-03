@@ -6,11 +6,11 @@ layout: default
 
 ## Overview
 
-The Administration application enables account administrators to manage their users, roles, tenants, applications and business rules as well as to configure a number of settings for their account. 
+The Administration application enables account administrators to manage their users, roles, tenants, applications and business rules and lets them configure a number of settings for their account. 
 
-The following sections will walk you through all functionalities of the Administration application in detail. For your convenience find an overview on the content of this document below.
+The following sections will walk you through all functionalities of the Administration application in detail. For your convenience, find an overview on the content of this document below.
 
->**Important**: For information on the user and permission management in the Administration application refer to the separate section on [User and Permission Management](/guides/users-guide/user-and-permissions-management).
+>**Important**: For information on the user and permission management in the Administration application, refer to the separate section on [User and Permission Management](/guides/users-guide/user-and-permissions-management).
 
 |SECTION|CONTENT|
 |:---|:---|
@@ -18,11 +18,11 @@ The following sections will walk you through all functionalities of the Administ
 |[Viewing Audit Logs](#audit)|Providing information on all [operations performed by the users](#audit).
 |[Managing Own Applications](#applications)|How to manage and [configure own applications](#applications) in your Cumulocity account.
 |[Managing Tenants](#applications)|How to [manage tenants](#tenants), retrieve [user statistics](#user-stats) and configure [tenant policies](#tenant-policies).
-|[Applying Business Rules](#retention)|How to set up real-time [event processing](#event-processing) scripts and reprioritize alarms by [alarm mappings](#reprio-alarms).
-|[Changing Settings](#settings)|How to change account settings like [application settings](#default-app) or [password policy and TFA settings](#changing-password-settings), how to manage the [properties library](#properties) and how to configure [settings for the Enterprise Edition](#platform-config).
+|[Applying Business Rules](#retention)|How to set up realtime [event processing](#event-processing) scripts and reprioritize alarms by [alarm mappings](#reprio-alarms).
+|[Changing Settings](#settings)|How to change account settings like [application settings](#default-app) or [password policy and TFA settings](#changing-password-settings), how to manage the [properties library](#properties), and how to configure [settings for the Enterprise Edition](#platform-config).
 |[Managing Data Retention](#retention)|How to manage and configure [retention rules](#retention-rules) for your data and how to [manage stored files](#files) in the file repository.
-|[Data Broker](#data-broker)|How to forward data to other tenants using [data connectors](#data-broker-connector) and how to receive data with a [data subcription](#data-broker-subscriptions) on the receiving end.
-|[Storage Quota](storageQuota)|How to configure the recipients and triggers of the [warning e-mail](#warningEmail) for maximum storage being reached.
+|[Data Broker](#data-broker)|How to forward data to other tenants using [data connectors](#data-broker-connector) and how to receive data with a [data subscription](#data-broker-subscriptions) on the receiving end.
+|[Storage Quota](storageQuota)|How to configure the recipients and triggers of the [warning email](#warningEmail) for maximum storage being reached.
 
 
 ## <a name="home"></a>Home Screen
@@ -50,7 +50,7 @@ The capacity sections show:
 
 Audit logs show the operations that users have carried out. 
 
-Click "Audit logs" in the "Account" menu to view the audit logs list. For each log entry the following information is provided:
+To view the audit log list, click "Audit logs" in the "Account" menu. For each log entry, the following information is provided:
 
 |Column|Description|
 |:---|:---|
@@ -63,7 +63,7 @@ Only the last 100 logs are visible. Click **Load more** at the bottom of the lis
 
 ![Audit logs](/guides/users-guide/administration/admin_auditlogs.png)
 
-> **Info**: The audit log list is not automatically refreshed after a realtime update for operations. Click **Reload** at the right of the top menu bar to update the list to the latest operations.
+>**Info**: The audit log list is not automatically refreshed after a realtime update for operations. Click **Reload** at the right of the top menu bar to update the list to the latest operations.
 
 ### Filtering logs
 
@@ -73,7 +73,7 @@ In order to easily search through logs, you may filter logs for
  - a date range providing a "From" and/or a "To" date,
  - the user.
 
-To apply filters, click the Filter icon next to the filter fields. To discard filters, click the Delete icon (only visible if filters are set).
+To apply filters, click the filter icon next to the filter fields. To discard filters, click the delete icon (only visible if filters are set).
 
 ## <a name="applications"></a>Managing Applications
 
@@ -81,17 +81,17 @@ In addition to the applications available in the Cumulocity platform, you can al
 
 These applications may be generic HTML5 applications that can be extended by adding plugins. When deploying, the plugins are deployed into a specific application. For example, a plugin might add a specific widget to the Cockpit dashboard.
 
-Because the application itself is modified when adding a plugin, plugins can only be added to own applications. When adding a plugin to a subscribed application, the application must be cloned first into an own application. This process is supported by the Administration Application wizard.
+Because the application itself is modified when adding a plugin, plugins can only be added to own applications. When adding a plugin to a subscribed application, the application must be duplicated first into an own application. This process is supported by the Administration Application wizard.
 
-You manage your own application under "Own applications" accessible through the "Applications" menu. 
+You manage your own application under "Own applications", accessible through the "Applications" menu. 
 
 In the "Own applications" page you will find a list of your own applications in your account.
 
 <img src="/guides/users-guide/administration/Admin_OwnApplications.png" alt="Own applications" style="max-width: 100%">
 
-Click the Menu icon at the top right of an application to open a context menu from where you can [**Edit** or **Remove**](#editing-and-removing) an application. 
+Click the menu icon at the top right of an application to open a context menu from where you can [**Edit** or **Remove**](#editing-and-removing) an application. 
 
-Click **Open** on the application card to directly open the application from here. Your applications are also available through the Application Switcher.
+Click **Open** on the application card to directly open the application from here. Your applications are also available through the application switcher.
 
 Click **Add Plugin** to add a plugin (see [Adding and removing plugins](#add-remove-plugins)).
 
@@ -99,21 +99,21 @@ Click **Add Plugin** to add a plugin (see [Adding and removing plugins](#add-rem
 
 **Edit**
 
-To edit an application, simply click the application or click **Edit** in its context menu. 
+To edit an application, simply click the application or click **Edit** in its context menu, accessible through the menu icon. 
 
 In the "Properties" tab, several fields can be modified, depending on the application type.
 
-> **Info**: "ID", "Application key" and "Path" cannot be changed once configured.
+>**Info**: "ID", "Application key" and "Path" cannot be changed, once configured.
 
 **Remove**
 
-If you remove an application that overwrites a subscribed application, the currently subscribed application becomes available to all users. Additionally the users will then also benefit from future upgrades of the subscribed application.
+If you remove an application that overwrites a subscribed application, the currently subscribed application becomes available to all users. Additionally, the users will then also benefit from future upgrades of the subscribed application.
 
 It is not possible to remove subscribed applications. This can only be done by the owner of the subscribed application.
 
-> **Info**: To overwrite a subscribed application the "own application" must have the same context-path as the "subscribed application".
+>**Info**: To overwrite a subscribed application, the "own application" must have the same context-path as the "subscribed application".
 
-To remove an application, click **Remove** in its context menu. 
+To remove an application, click the menu icon and from the context menu select **Remove**. 
 
 ### Creating an application
 
@@ -121,7 +121,7 @@ To add an application, click **Add application** in the "Own applications" page.
 
 * uploading a ZIP file,
 * using an external application, which links to an application running elsewhere,
-* cloning an existing application.
+* duplicating an existing application.
 
 ![Add application methods](/guides/users-guide/administration/Admin_AddApplication.png)
 
@@ -129,19 +129,19 @@ If you select **Upload ZIP file**, the wizard will ask you to simply drop a file
 
 If you select **External application**, you next need to provide the name, application key and external URL for it. 
 
-If you want to clone an existing application follow the steps described next.
+If you want to duplicate an existing application follow the steps described next.
 
 
-### <a name="clone-application"></a>Cloning applications
+### <a name="clone-application"></a>Duplicate applications
 
-Cloning a subscribed application creates a copy of the application as an own application, with a link to the original application.
+Duoplicating a subscribed application creates a copy of the application as an own application, with a link to the original application.
 
-In order to clone an application follow these steps:
+In order to duplicate an application, follow these steps:
 
 1. Click **Add application** in the "Own applications" page.
-2. In the upcoming dialog select **Clone existing application**.
+2. In the upcoming dialog, select **Clone existing application**.
 3. Select the desired application from the dropdown list. Note that also subscribed applications are shown.
-4. In the next window, enter the name of the application. The name will be shown as title on the top left of the application. It will also be shown in the Application Switcher.
+4. In the next window, enter the name of the application. The name will be shown as title on the top left of the application. It will also be shown in the application switcher.
 5. Enter an application key. The application key is used to identify requests from this application and to make it available for subscription, see the [Concepts Guide](/guides/concepts/applications).
 6. Enter the application path. This path will be part of the URL to invoke the application. For example, if you use "hello" as application path, the URL of the application will be "/apps/hello".
 7. Finally, click **Clone** to create the application.
@@ -188,7 +188,7 @@ Users can restore previous versions of an application from an archive:
 
 1. Open the application by clicking on it.
 2. Switch to the "Archives" tab. 
-3. Open the context menu for the desired version and select **Set as active** to make it the active version.
+3. Open the context menu for the desired version by clicking the menu icon and select **Set as active** to make it the active version.
 4. Click **Remove** to remove the version from the archive.
 
 >**Info**: The "Archive" tab is not available for subscribed applications, as only the owner of the application can perform this action.
@@ -197,7 +197,7 @@ Users can restore previous versions of an application from an archive:
 
 Multiple archive ZIP file versions can be stored in Cumulocity when they were created by uploading ZIP files. Each version is called an archive. You can upload different versions at the same time and switch between these versions. 
 
-To upload an archive follow these steps:
+To upload an archive, follow these steps:
 
 1. Open the application by clicking on it.
 2. Switch to the "Archives" tab.
@@ -206,16 +206,18 @@ To upload an archive follow these steps:
 
 ![Upload archive](/guides/users-guide/uploadarchive.png)
 
-Once uploaded, archives can be downloaded, activated or deleted if necessary. The active archive (indicated by a Cloud icon) is the version of the application that is currently being served to the users of your account. This version cannot be deleted.
+Once uploaded, archives can be downloaded, activated or deleted if necessary. The active archive (indicated by a cloud icon) is the version of the application that is currently being served to the users of your account. This version cannot be deleted.
 
 
 ## <a name="tenants"></a>Managing tenants
 
-If you are a service provider or subscribed to the Enterprise Edition of Cumulocity, you may want to manage your own subtenants. This functionality allows you to create subtenants, subscribe them to the applications that you have available and potentially deactivate tenants if they are not in use anymore.
+If you are a service provider or subscribed to the Enterprise Edition of Cumulocity, you may want to manage your own subtenants. 
 
-> **Important**: There is an major difference between providing several tenants and providing several users with different permissions within a single tenant. Tenants are physically separated data spaces with a separate URL, with own users, a separate application management and no sharing of data by default. Users in a single tenant by default share the same URL and the same data space. So if your users for example are separate customers of yours and you need to strictly separate them because they may be competitors, we strongly recommend you to do so by working with tenants.
+The tenants functionality allows you to create subtenants, subscribe them to the applications that you have available and potentially deactivate tenants if they are not in use anymore.
 
-> **Info**: If you would like to use this feature, please contact sales@cumulocity.com.
+> **Important**: There is an major difference between providing several tenants and providing several users with different permissions within a single tenant. Tenants are physically separated data spaces with a separate URL, with own users, a separate application management and no sharing of data by default. Users in a single tenant by default share the same URL and the same data space. So if your users, for example, are separate customers of yours and you need to strictly separate them because they may be competitors, we strongly recommend you to do so by working with tenants.
+
+>**Info**: If you would like to use this feature, please contact sales@cumulocity.com.
 
 To be able to use the tenant functionality, your user needs to have the appropriate permissions. See [Creating and editing global roles](/guides/users-guide/user-and-permissions-management#create-edit-roles) for information on editing permissions. Since editing tenants is a sensitive operation, permissions for editing tenants are more granular:
 
@@ -231,10 +233,10 @@ Click "Subtenants" in the "Tenants" menu to view a list of all subtentants avail
 The "Tenants" page provides the following information on each subtenant:
 
 * The name of the subtenant, e.g. company name of your customer.
-* The ID and domain. When creating tenants, the ID gets the first part of the URL. For example, if you create a tenant with the ID "acme" on cumulocity.com, the tenant's URL will be "acme.cumulocity.com". Note that while you can change the URL later on, you cannot change the ID anymore after the tenant was created.
+* The ID and domain. When creating tenants, the ID gets the first part of the URL. For example, if you create a tenant with the ID "acme" on cumulocity.com, the tenant's URL will be "acme.cumulocity.com". Note, that while you can change the URL later on, you cannot change the ID anymore after the tenant was created.
 * An optional contact name and phone number.
 * The date when the tenant was created.
-* The status of the tenant, either active (indicated by a green Checkmark icon) or suspended (indicated by a red Cross icon).
+* The status of the tenant, either active (indicated by a green checkmark icon) or suspended (indicated by a red cross icon).
 
 If you are using the management tenant, you will see an additional column "Parent tenant". This column shows the tenant that created the listed tenant.
 
@@ -252,10 +254,10 @@ To add a new tenant, click **Create tenant** at the right of the top menu bar. T
 |Administrator's username|Username for the administrator of this tenant.
 |Contact name|Optional name of the contact.
 |Contact phone|Optional phone number of the contact.
-|Send password reset link as email|Selected by default. If you deselect this option you need to provide a password and confirm the password (see "[Logging in](/guides/users-guide/overview#login)" for more information on password strength).
+|Send password reset link as email|Selected by default. If you deselect this option, you need to provide a password and confirm the password (see "[Logging in](/guides/users-guide/overview#login)" for more information on password strength).
 |Tenant policy|You may select a tenant policy to be applied to the tenant from the dropdown list.
 
-Note that fields with an asterisk * are mandatory.
+Note, that fields with an asterisk * are mandatory.
 
 Click **Save** to apply your settings.
 
@@ -267,9 +269,9 @@ From the management tenant, you can enable other tenants to create subtenants. T
 
 ### Editing subtenant properties
 
-To edit subtenants, click on the desired subtenant or click **Edit** in the context menu accessible through the Menu icon.
+To edit subtenants, click on the desired subtenant or click **Edit** in the context menu, accessible through the menu icon.
 
-In the "Properties" tab, all fields are editable except of the ID and the administrator's username. For details on the fields refer to [Creating sub-tenants](#creating-tenants).
+In the "Properties" tab, all fields are editable except of the ID and the administrator's username. For details on the fields, refer to [Creating sub-tenants](#creating-tenants).
 
 ### Subscribing to applications
 
@@ -285,11 +287,11 @@ To remove an application, hover over the applications under "Subscribed applicat
 
 You can temporarily suspend tenants. Suspending tenants blocks any access to this tenant, regardless whether the access is from devices, users or other applications. 
 
-To suspend a tenant, click **Suspend** in the context menu of the tenant, accessible through the Menu icon.
+To suspend a tenant, click the menu icon and from the context menu select **Suspend**.
 
-In the upcoming dialog confirm the suspension by clicking **Ok** and entering your password. The tenant will be shown with a red Cross icon. As part of suspending the tenant, an email is sent to the tenant administrator if an email address is configured for that administrator.
+In the upcoming dialog confirm the suspension by clicking **Ok** and entering your password. The tenant will be shown with a red cross icon. As part of suspending the tenant, an email is sent to the tenant administrator if an email address is configured for that administrator.
 
-> **Info**: If you are a service provider, you can suppress this email.
+>**Info**: If you are a service provider, you can suppress this email.
 
 ![Suspend tenant](/guides/users-guide/suspendtenant.png)
 
@@ -297,9 +299,9 @@ If a tenant is suspended, the tenant's data remains in the database and can be m
 
 ### Deleting subtenants
 
-To finally delete a tenant and remove all the data of the tenant, click **Remove** in the context menu of the tenant, accessible through the Menu icon.
+To finally delete a tenant and remove all the data of the tenant, click the menu icon and from the context menu select **Remove**.
 
-**Info**: This action cannot be reverted. For security reasons, it is only available in the management tenant.
+>**Info**: This action cannot be reverted. For security reasons, it is only available in the management tenant.
 
 ### <a name="tenants-custom-properties"></a>Editing custom properties
 
@@ -330,7 +332,7 @@ Custom properties may be defined in the ["Properties Library"](#properties) and 
 
 ![Usage statistics](/guides/users-guide/usage-statistics-list.PNG)
 
-You can filter the usage statistics list for a time period by adding the start and end date in the top menu bar and click **Filter**. You can also filter and sort the list on any column by clicking the Filter icon next to the column name and providing the filtering criteria. For details on filtering refer to Search and filtering functionality. 
+You can filter the usage statistics list for a time period by adding the start and end date in the top menu bar and click **Filter**. You can also filter and sort the list on any column by clicking the filter icon next to the column name and providing the filtering criteria. For details on filtering, refer to [Filtering](/guides/users-guide/overview#filtering) in the Overview section. 
 
 Click Export CSV at the right of the top menu bar to export the current view of the statistics table to a CSV file. A dialog will come up in which you can customize the CSV output.
 
@@ -345,13 +347,13 @@ Creating a tenant policy with a specific set of options and rules saves time whe
 
 ![Tenant policy](/guides/users-guide/tenantpolicy.png)
 
-> **Info**: The options and rules are copied into the tenant. Editing the policy has no effect on tenants that have already been created.
+>**Info**: The options and rules are copied into the tenant. Editing the policy has no effect on tenants that have already been created.
 
 Click "Tenant policies" in the "Tenants" menu to view all tenant policies available.
 
 <img src="/guides/users-guide/administration/admin_TenantPolicies.png" alt="Tenant policies" style="max-width: 100%">
 
-For each tenant policy the name, an optional description and the number of options and retention rules is provided, either in a list or a grid.
+For each tenant policy, the name, an optional description and the number of options and retention rules is provided, either in a list or a grid.
 
 ### Adding a tenant policy
 
@@ -360,21 +362,21 @@ Click **Add tenant policy** in the top menu bar to create a new tenant policy.
 ![Add new policy](/guides/users-guide/addpolicy.png)
  
 2. Enter a name and an optional description. 
-3. Add at least one retention rule. For details on creating retention rules refer to [Retention rules](#retention-rules).
-4. Optionally add a tenant option.
+3. Add at least one retention rule. For details on creating retention rules, refer to [Retention rules](#retention-rules).
+4. Optionally, add a tenant option.
 5. Click **Save** to save your settings.
 
 ### Editing, duplicating and deleting policies
 
-To edit a policy, click on the desired policy or click **Edit** in the context menu, accessible through the Menu icon. 
+To edit a policy, click on the desired policy or click **Edit** in the context menu, accessible through the menu icon. 
 
-To change the name of a policy, click the name in the top bar, modify it and click the green Checkmark icon to save your changes.
+To change the name of a policy, click the name in the top bar, modify it and click the green checkmark icon to save your changes.
 
-To delete a retention rule or a tenant option from a policy, hover over it and click the Delete icon.
+To delete a retention rule or a tenant option from a policy, hover over it and click the delete icon.
 
-To duplicate a policy, click **Duplicate** in the context menu.
+To duplicate a policy, click the menu icon and from the context menu select **Duplicate**.
 
-To delete a policy, click **Delete** in the context menu.
+To delete a policy, click the menu icon and from the context menu select  **Delete**.
 
 ![Edit policy menu](/guides/users-guide/editpolicy.png)
 
@@ -382,13 +384,13 @@ To delete a policy, click **Delete** in the context menu.
 
 The Two-factor authentication(TFA) is an extra layer of security that requires not only a username and password, but SMS verification as well. TFA can only be set up by administrators. When TFA is enabled, it is impossible to configure it from the "User settings", it is configurable from the administration UI only.
 
-> **Info**: When adding a user and TFA is enabled you need to provide a phone number for the user. When users without a phone number try to login using TFA, the users will be redirected to a window, to enter their mobile phone number. Without a phone number a login is impossible.
+>**Info**: When adding a user and TFA is enabled, you need to provide a phone number for the user. When users without a phone number try to login using TFA, the users will be redirected to a window, to enter their mobile phone number. Without a phone number a login is impossible.
 
 To see whether TFA is enabled for a certain user, go to the "Users" page and check the TFA status column.
 
 ![TFA satus](/guides/users-guide/tfastatus.png)
 
-To enable two-factor authentication for a user
+To enable two-factor authentication for a user, follow these steps:
 
 - Click on the desired user in the "Users" page.
 - Select the checkbox next to "Enable two-factor authentication".
@@ -400,17 +402,17 @@ To enable two-factor authentication for a user
 
 ### Event processing
 
-Using event processing, you can specify real-time business logic that is automatically run by Cumulocity as soon as new data arrives or existing data is modified. The logic is deployed in so-called "modules". Modules consist of a set of statements that you write in [Cumulocity Event Language](/guides/concepts/realtime). 
+Using event processing, you can specify realtime business logic that is automatically run by Cumulocity as soon as new data arrives or existing data is modified. The logic is deployed in so-called "modules". Modules consist of a set of statements that you write in [Cumulocity Event Language](/guides/concepts/realtime). 
 
-> **Info**: A user-friendly way to specify real-time business logic is provided in the Cockpit application through the so-called "[Smart Rules](/guides/users-guide/cockpit#rules)". Smart Rules are "under the hood" also implemented as Cumulocity Event Language statements, and you can see them in the "Event Processing" page. However, you cannot edit Smart Rules from here.
+>**Info**: A user-friendly way to specify realtime business logic is provided in the Cockpit application through the so-called "[Smart Rules](/guides/users-guide/cockpit#rules)". Smart Rules are "under the hood" also implemented as Cumulocity Event Language statements, and you can see them in the "Event Processing" page. However, you cannot edit Smart Rules from here.
 
 Click "Event processing" in the "Business rules" menu to view the current modules or to create new ones.
 
 <img src="/guides/users-guide/administration/admin_EventProcessing.png" alt="Event processing" style="max-width: 100%">
 
-For each module in the list the status (deployed = indicated by a green checkmark / not deployed = indicated by an exclamation mark), the name and the date when is was last updated is provided.
+For each module in the list, the status (deployed = indicated by a green checkmark / not deployed = indicated by an exclamation mark), the name and the date when is was last updated is provided.
 
-To edit a module, simply click the module or click **Edit** in the context menu accesible through the Menu icon.
+To edit a module, simply click the module or click **Edit** in the context menu, accessible through the menu icon.
 
 To remove a module, click **Remove** in the context menu.
 
@@ -422,19 +424,16 @@ To create a new module, click **New module** in the top menu bar.
 
 <img src="/guides/users-guide/administration/Admin_EventProcessingNewModule.png" alt="New module" style="max-width: 100%">
 
-Enter a name for the module at the very top. You can only use alphanumeric characters without blanks.
-
-By default, the status is set to "Deployed" which means that the statements you enter will be run immediately. Set the slider to "Not deployed" if you want to avoid this. 
-
-Enter your CEL statemants into the "Source code" text box. For your comvenience we provide various examples. Click **Examples** and select an appropriate example from the dropdown list. Click **Append example** to paste the example into the "Source code" text box at the position of the cursor.
-
-Click **Save** to save your settings.
+1. Enter a name for the module at the very top. You can only use alphanumeric characters without blanks.
+2. By default, the status is set to "Deployed" which means that the statements you enter will be run immediately. Set the slider to "Not deployed" if you want to avoid this. 
+3. Enter your CEL statements into the "Source code" text box. For your convenience, we provide various examples. Click **Examples** and select an appropriate example from the dropdown list. Click **Append example** to paste the example into the "Source code" text box at the position of the cursor.
+4. Click **Save** to save your settings.
 
 The example module creates an alarm if the temperature goes below 0 degree.
 
 <img src="/guides/users-guide/administration/Admin_EventProcessingModuleExample.png" alt="Example module" style="max-width: 100%">
 
-If the status of a module is set to "Deployed", this is indicated by a green checkmark in the module list. Whenever your statements produce some output, you will see it below the Checkmark icon. Clicking a line of output unfolds the detailed output of the statement. Clicking **Clear all** removes the output from the screen.
+If the status of a module is set to "Deployed", this is indicated by a green checkmark in the module list. Whenever your statements produce some output you will see it below the checkmark icon. Clicking a line of output unfolds the detailed output of the statement. Clicking **Clear all** removes the output from the screen.
 
 ### <a name="reprio-alarms"></a>Alarm mapping
 
@@ -444,7 +443,7 @@ Click "Alarm mapping" in the "Business Rules" menu to see a list of all alarm ma
 
 <img src="/guides/users-guide/administration/Admin_AlarmMapping.png" alt="Alarm mapping" style="max-width: 100%">
 
-For each alarm mapping the alarm severity and the name of the mapping is shown.
+For each alarm mapping, the alarm severity and the name of the mapping is shown.
 
 To edit an alarm mapping, simply click it.
 
@@ -484,15 +483,15 @@ To add additional retention rules, click **Add rule** in the top menu bar.
 
 <img src="/guides/users-guide/addrulepage.png" alt="Add retention rule" style="max-width: 50%">
 
->**Info**: Per default an asterisk ("*") is set in all fields except the "Maximum age" field, to include all values.
+>**Info**: Per default, an asterisk ("*") is set in all fields except the "Maximum age" field, to include all values.
 
 1. Select the type of data to be cleaned up (alarms, measurements, events, operations, audit logs or all).
-2. Enter a fragment type, if you want to be more specific about the data to be cleaned up. To clean up all connection loss alarms with this rule, select "alarms" and enter "c8y_UnavailabilityAlarm" as property into the "Type" field.
+2. Enter a fragment type if you want to be more specific about the data to be cleaned up. To clean up all connection loss alarms with this rule, select "alarms" and enter "c8y_UnavailabilityAlarm" as property into the "Type" field.
 3. If you want to remove data only from a specific device, enter the device ID into the "Source" field.
 4. Enter the "Maximum age" in days (max. allowed value is 10 years in days).
 5. Click **Save** to create the rule.
 
-Note that alarms are only removed if they are in "CLEARED" state.
+>**Info**: Alarms are only removed if they are in "CLEARED" state.
 
 <img src="/guides/users-guide/administration/Admin_RetentionRulesDelete.png" alt="Delete retention rule" style="max-width: 50%">
 
@@ -511,11 +510,11 @@ For each file, the name of the file, its owner, the file type (i.e. image/bmp, t
 
 <img src="/guides/users-guide/administration/Admin_FilesRepository.png" alt="Files Repository" style="max-width: 100%">
 
-Click **Upload file** in the top menu bar to upload a file from your computer.
+To upload a file from your computer, click **Upload file** in the top menu bar.
 
-Click **Download** in the context menu accessible through the Menu icon to download a file from your account.
+To download a file from your account, click the menu icon and from the context menu select **Download**.
 
-Click **Delete** in the context menu to delete a file from your account.
+To delete a file from your account, click **Delete** in the context menu.
 
 >**Info**: If the file corresponds to an active application, it cannot be deleted. You first need to remove or upgrade the application to be able to delete it.
 
@@ -535,7 +534,7 @@ Click "Application" to change applications settings.
 
 Under "Default application", you can select a default application from the list which will apply to all users within the tenant.
 
-**Info**: All users must have access to this application.
+>**Info**: All users must have access to this application.
 
 Under "Access control", administrators can enable cross-origin resource sharing or "CORS" on the Cumulocity API. 
 
@@ -557,7 +556,7 @@ By default, users can use any password with eight characters or more. If you sel
 
 Strong (green) passwords must have "M" characters. By default, the system restricts the use of passwords already used in the past. The last "N" passwords provided by a user are remembered by the system and the system does not allow to use them. The default value for "N" is 10.
 
-> **Info**: "M" and "N" can be configured by the platform administrator.
+>**Info**: "M" and "N" can be configured by the platform administrator.
 
 Click **Save** to apply your password settings.
 
@@ -581,8 +580,8 @@ In the properties library, accessible from the "Settings" menu, custom propertie
 With custom properties, you can extend the data model of Cumulocity built-in objects. You may create the following custom values:
 
 - Custom inventory properties are used to extend the inventory data model. They can be used in the “Asset table” and “Asset properties” widgets.
-- Custom tenant properties are available during tenant creation. The custom properties can be edited under “Subtenants” in the “Custom properties” tab of each tenant. Additionally these properties can be viewed and exported in the “Usage statistics”.
-- Custom alarm and event properties can be used as custom fields which can be added to your reports and will be available in the “Reporting” page in the Cockpit applications.
+- Custom tenant properties are available during tenant creation. The custom properties can be edited under “Subtenants” in the “Custom properties” tab of each tenant. Additionally, these properties can be viewed and exported in the “Usage statistics”.
+- Custom alarm and event properties can be used as custom fields which can be added to your reports and will be available in the “Reporting” page in the Cockpit application.
 
 **Adding properties to the properties library**
 
@@ -590,7 +589,7 @@ To add a custom property, select the tab for the desired property and click **Ad
 
 ![Add new property](/guides/users-guide/addproperty.png)
 
-In the upcoming form provide a unique name as identifier and a label for the property and select its data type from the drop down list. Additionally, select validation rules for the new property:
+In the upcoming form, provide a unique name as identifier and a label for the property and select its data type from the drop down list. Additionally, select validation rules for the new property:
 
 |Check box|Description|
 |:---|:---|
@@ -604,11 +603,7 @@ In the upcoming form provide a unique name as identifier and a label for the pro
 
 Click **Save** to create the new property.
 
-Click on the name of a property in the list, to open it. To edit the property enter the desired changes and click **Save** to save the settings. Click **Remove** to delete the property.
-
-### <a name="enabling-server-side-agents"></a>Enabling server-side agents
-
-In the "Server-side agents" menu, the "Send dashboard via e-mail" smart rule can be enabled or disabled. To enable, select the checkbox and click "Save".
+Click on the name of a property in the list to open it. To edit the property, enter the desired changes and click **Save** to save the settings. Click **Remove** to delete the property.
 
 ### <a name="openIT-credentials"></a>Entering OpenIT credentials
 
@@ -618,11 +613,11 @@ SMS are used throughout the application for various features like [two-factors a
 
 ## <a name="platform-config"></a> Enterprise Edition
 
-In the "Enterprise edition" page under the "Settings" menu, you can specify settings which are only available to users of the Enterprise edition of Cumulocity.
+In the "Enterprise edition" page under the "Settings" menu you can specify settings which are only available to users of the Enterprise edition of Cumulocity.
 
 ### Branding
 
-In the "Branding" tab, you can fully customize the look of your tenants to your own preferences. 
+In the "Branding" tab you can fully customize the look of your tenants to your own preferences. 
 
 The branding feature allows you to edit the logos and colors used throughout the platform. Once your branding settings are saved, all subtenants are automatically updated. 
 
@@ -630,23 +625,23 @@ The branding feature allows you to edit the logos and colors used throughout the
 
 **General**
 
-In the “General” section, you can edit the “Title” which will be used in the browser tab. 
+In the “General” section you can edit the “Title” which will be used in the browser tab. 
 
 **Main logo**
 
-Under “Main logo”, you specify the following items:
+Under “Main logo”, specify the following items:
 
-* The “Favicon” which will be displayed in the browser’s address bar. Click **Choose file** to select a file from your computer. The supported favicon format is “ico”.
-* Your branding logo which will be shown during application loading. Click **Choose file** to select a file from your computer. The supported formats are “png” and “svg”.
+* The “Favicon”, which will be displayed in the browser’s address bar. Click **Choose file** to select a file from your computer. The supported favicon format is “ico”.
+* Your branding logo, which will be shown during application loading. Click **Choose file** to select a file from your computer. The supported formats are “png” and “svg”.
 * The “Brand logo height”.
 
 **Navigator logo**
 
-Under “Navigator logo”, you can provide the “Navigator logo” and set the “Navigator logo height” located on top of the navigator panel.
+Under “Navigator logo” you can provide the “Navigator logo” and set the “Navigator logo height” located on top of the navigator panel.
 
 **Type**
 
-In the “Type” section, you specify the font settings for your branded version. 
+In the “Type” section you specify the font settings for your branded version. 
 
 <img src="/guides/users-guide/administration/admin_BrandingType.png" alt="Branding type" style="max-width: 100%">
 
@@ -654,7 +649,7 @@ You can choose your base and headings font, and select an option for the navigat
 
 **Colors**
 
-In the “Colors” section, you specify the colors to be used in your branding version.
+In the “Colors” section you specify the colors to be used in your branding version.
 
 <img src="/guides/users-guide/administration/admin_BrandingColor.png" alt="Branding color" style="max-width: 100%">
 
@@ -668,7 +663,7 @@ The following parameters can be specified by providing a hex, rgb or rgba value:
 
 **Top bar**
 
-In the “Top bar” section, you specify the parameters for the top bar.
+In the “Top bar” section you specify the parameters for the top bar.
 
 <img src="/guides/users-guide/administration/admin_BrandingTopbar.png" alt="Branding topbar" style="max-width: 100%">
 
@@ -680,7 +675,7 @@ The following parameters can be specified by providing a hex, rgb or rgba value:
 
 **Navigator**
 
-In the “Navigator" section, you specify the parameters for the navigator.
+In the “Navigator" section you specify the parameters for the navigator.
 
 <img src="/guides/users-guide/administration/admin_BrandingTopbar.png" alt="Branding topbar" style="max-width: 100%">
 
@@ -748,21 +743,21 @@ When your certificate expires, you must update your certificate with a new one w
 
 **Deactivating your certificate**
 
-If you wish to return to your old domain at cumulocity, you can simply deactivate you certificate. 
+If you wish to return to your old domain at Cumulocity, you can simply deactivate you certificate. 
 
 >**Important**: Use with care. Your customers will not be able to access their subtenants anymore.
 
 ### Configuration
 
-> **Info**: This feature is only available to "Management" tenants.
+>**Info**: This feature is only available to "Management" tenants.
 
-In the "Configuration" tab of the "Enterprise edition" page you can configure system-wide properties in Cumulocity. The following options can be modified in the "Configuration" settings.
+In the "Configuration" tab of the "Enterprise Edition" page you can configure system-wide properties in Cumulocity. The following options can be modified in the "Configuration" settings.
 
-In the "Two-factor authentication" field, you can change the SMS template which is sent to the users.
+In the "Two-factor authentication" field you can change the SMS template which is sent to the users.
 
-In the "Support link" field, you can enter a URL to be used as the support link URL. The support URL is visible to “Management” and “Enterprise Edition” tenants. Enter "false" to hide the link or leave the field empty to use the default link.
+In the "Support link" field you can enter a URL to be used as the support link URL. The support URL is visible to “Management” and “Enterprise Edition” tenants. Enter "false" to hide the link or leave the field empty to use the default link.
 
-In the "Password reset" section, you can change all settings related to password reset e-mail templates.
+In the "Password reset" section you can change all settings related to password reset e-mail templates.
 
 ![Configuration menu1](/guides/users-guide/configuration_tab2.png)
 
@@ -776,7 +771,7 @@ In the following two fields provide an e-mail template to be used on password ch
 
 >**Info**: Placeholders to be used are: {host}, {tenant-domain}, {token}. 
 
-In the "E-mail server" section, you can provide the "Protocol", "Host", "Port", "Username", "Password" and "Sender Address" for the e-mail server.
+In the "E-mail server" section you can provide the "Protocol", "Host", "Port", "Username", "Password" and "Sender Address" for the e-mail server.
 
 <img src="/guides/users-guide/administration/admin_ConfigurationServer.png" alt="Configure e-mail server" style="max-width: 100%">
 
@@ -832,7 +827,7 @@ Navigate to "Data connectors" if you would like to send data to another tenant. 
 
 <img src="/guides/users-guide/data-broker-on-navigator.PNG" alt="Data broker menus" style="max-width: 25%">
 
-> **Info**: Devices that are forwarded using the data broker are charged like normal devices in the destination tenant.
+>**Info**: Devices that are forwarded using the data broker are charged like normal devices in the destination tenant.
 
 ### <a name="data-broker-connectors"></a> Data connectors
 
@@ -844,7 +839,7 @@ In the "Data connectors" page, you can manage existing data connectors or create
 
 ![Data broker connectors list](/guides/users-guide/data-broker-connectors-list.PNG)
 
-For each data connector the following information is provided:
+For each data connector, the following information is provided:
 
 * the data connector's name
 * its destination tenant
@@ -854,13 +849,13 @@ For each data connector the following information is provided:
 
 Use the slider to enable and disable data forwarding to the destination tenant. If data is being forwarded, the slider reads "active". If data is not being forwarded, the slider reads "suspended" or "pending". "Suspended" means that you have disabled forwarding. "Pending" means that the destination tenant has disabled forwarding.
 
-* Click **Edit** in the context menu of the card, accessible through the Menu icon, to modify the data connector's configuration. The configuration is described in more detail below.
+* To modify the data connector's configuration, click the menu icon and from the context menu select **Edit**. The configuration is described in more detail below.
 * Click "**Duplicate** in the context menu to create another data connector with the same configuration.
 * Click **Delete** in the context menu to stop data forwarding and remove the data connector.
 
 <a name="data-broker-connector-edit"></a> **Creating or editing data connectors**
 
-Click **Add data connector** in the top menu bar to create a new data connector or click **Edit** in the context menu of a particular data connector to edit its configuration.
+Click **Add data connector** in the top menu bar to create a new data connector.
 
 ![Data broker edit connector](/guides/users-guide/data-broker-edit-connector.PNG)
 
@@ -905,16 +900,16 @@ Click "Data subscriptions" to see a list of all currently defined data forwarded
 
 <img src="/guides/users-guide/Administration/Admin_Subscriptions.png" alt="Data subscriptions" style="max-width: 25%">
 
-For each subscription the name, the target tenant and the status (enabled or disabled) is provided on a card.
+For each subscription, the name, the target tenant and the status (enabled or disabled) is provided on a card.
 
 Use the slider to temporarily stop forwarding data into your tenant.
 
-Click **Delete** in the context menu, accessible through the Menu icon, to stop data forwarding and remove the data connector.
+To stop data forwarding and remove the data connector, click the menu icon and from the context menu select **Delete**.
 
 **How to set up data forwarding on the receiving end**
 
 1. Click **Add data subscription** in the top menu bar to receive data. 
-2. In the new card enter the security code that you received from the sending end of the data.
+2. In the new card, enter the security code that you received from the sending end of the data.
 3. When the connection is established, click **Accept** to start forwarding data into your tenant. The subscription is active now.
 4. You can click the slider in the card to temporarily stop forwarding data into your tenant.
 

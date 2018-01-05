@@ -11,9 +11,9 @@ This section focuses on the user and permission management feature in the Admini
 |Section|Description|
 |:---|:---|
 |[Managing Users](#users)|How to [create users](#creating-users), edit, disable or delete them.
-|[Managing Permissions](#managing-permissions)|How to create and edit [global roles](#global) and [inventory roles](#inventory) and how to assign them to users, and how to [grant application access](#app-access).
-|[Supporting Users in Other Tenants](#support)|How to configure support users user and how to login as support user.
-|[Managing User Hierarchies](#managing-permissions)|How to create [user hierarchies](#hierarchy) and how to [delegate](#delegate) user hierarchies. The availability of this feature depends on your subscription plan.
+|[Managing Permissions](#managing-permissions)|How to create and edit [global roles](#global) and [inventory roles](#inventory), how to assign them to users, and how to [grant application access](#app-access).
+|[Supporting Users in Other Tenants](#support)|How to configure support users and how to login as support user.
+|[Managing User Hierarchies](#hierachy)|How to create [user hierarchies](#hierarchy) and how to [delegate](#delegate) user hierarchies. The availability of this feature depends on your subscription plan.
 
 
 ## <a name="users"></a>Managing Users
@@ -26,7 +26,7 @@ The user management functionality allows you to manage the users within your ten
 - Choosing basic login options
 - Enabling additional login security by using Two-Factor Authentication (TFA)
 
-> **Info:** The user needs to have a role with the user management permissions "ADMIN" or "CREATE" to be able to do so.
+> **Info:** The user needs to have a role with the user management permission "ADMIN" or "CREATE" to be able to do so.
 
 ### Viewing users
 
@@ -41,11 +41,11 @@ A user list will be displayed, providing the following information for each user
 * The global roles assigned to the user.
 * The [strength](https://www.cumulocity.com/guides/users-guide/overview#login) of the password set for the user.
 
-To filter the list, you can use the search field at the left of the top menu bar. For details on the search functionality refer to the [](Introduction).
+To filter the list, you can use the search field at the left of the top menu bar. For details on the search functionality, refer to [Searching](https://www.cumulocity.com/guides/users-guide/overview##searching) in the *Introduction*.
 
 Moreover you can filter by global roles. Select the desired roles from the dropdown list and click **Apply** to limit the users shown in the list to users with the selected roles.
 
-Initially, the "User" page only shows the top-level users. To see all users in your account at once, click **Expand all** at the right of the top bar. This will expand all top-level users and also show their sub-users. Click **Collapse all** to just show the top-level users again. For details on user hierarchies, refer to [Managing User Hierarchies](#hierarchies).
+Initially, the "User" page only shows the top-level users. To see all users in your account at once, click **Expand all** at the right of the top bar. This will expand all top-level users, showing their sub-users. Click **Collapse all** to just show the top-level users again. For details on user hierarchies, refer to [Managing User Hierarchies](#hierarchy).
 
 ### <a name="creating-users"></a>Creating users
 
@@ -63,15 +63,15 @@ At the left of the "New user" window provide the following information to identi
 |First name|First name of the user. When the user is logged in, this name appears at the right of the top bar on the **User** button. 
 |Last name|Last name of the user.
 |Telephone|A valid phone number. The phone number is required if the user is configured to use two-factor authentication.
-Owner|Another user that manages ("owns") the new user. Select a user from the dropdown list and click **Done** to confirm. Refer to [Managing User Hierarchies](#hierachy) for details on user hierarchies.
-Delegated by|Can be activated to delegate user hierarchies and permissions to the user. Refer to [Managing User Hierarchies](#hierachy) for details on delegation.
+|Owner|Another user that manages ("owns") the new user. Select a user from the dropdown list and click **Done** to confirm. Refer to [Managing User Hierarchies](#hierarchy) for details on user hierarchies.
+|Delegated by|Can be activated to delegate user hierarchies and permissions to the user. Refer to [Managing User Hierarchies](#hierarchy) for details on delegation.
 
 Select the login options for the user.
 
 * If you select "User must reset the password on next login", you need to provide a password which the user needs to reset on the next login. <br>Enter a password and confirm it. While entering the password, the strength of the password will be shown. See [Log into the Cumulocity platform](/guides/users-guide/overview/#login) for further information on password strength.  
 * If you select "Send password reset link as e-mail", the user will receive an email message with a link to set a password. The email will be sent to the email address configured above.
 
-On the right of the page, select the global roles for the user. Details on global roles are described below.
+On the right of the page, select the global roles for the user. Details on global roles are described in [Managing Permissions](#managing-permissions).
 
 Click **Save** to create the user.
 
@@ -82,7 +82,7 @@ Click **Save** to create the user.
 
 Click the menu icon at the right of a user entry to open a context menu which provides further functionalities.
 
-<img src="/guides/users-guide/Administration/Admin_UserContextMenu.png" alt="Context menu" style="max-width: 100%">
+<img src="/guides/users-guide/Admin_UserContextMenu.png" alt="Context menu" style="max-width: 100%">
 
 > **Info:** You need a role with user management permission to perform these options.
 
@@ -90,9 +90,9 @@ Click **Edit** to edit an existing user. All fields except “Username” and �
 
 To copy roles, click **Copy inventory roles from another user**. In the upcoming window, select a user from the list and click **Copy**. At the top you can select if you want to merge the roles with the existing user roles (the default) or if you want to replace the existing user roles.
 
-Click **Delegate** to delegate your user hierachies and permissions to a user or click **Undelegate** to remove a delegation. Refer to [Managing User Hierarchies](#hierachy) for details on delegation.
+Click **Delegate** to delegate your user hierachies and permissions to a user, or click **Undelegate** to remove a delegation. Refer to [Managing User Hierarchies](#hierarchy) for details on delegation.
 
-Click **Disable** to disable an active user or click **Enable** to enable a user that has been disabled.
+Click **Disable** to disable an active user, or click **Enable** to enable a user that has been disabled.
 
 Click **Delete** to delete a user.
 
@@ -102,9 +102,9 @@ Permissions define what a user is allowed to do in Cumulocity applications. To m
 
 The following types of roles can be associated with users:
 
-- Global roles - Contain permissions that apply to all data within a tenant.
-- Inventory roles - Contain permissions that apply to groups of devices.
-- Application access - Enables a user to use an application.
+- Global roles: Contain permissions that apply to all data within a tenant.
+- Inventory roles: Contain permissions that apply to groups of devices.
+- Application access: Enables a user to use an application.
 
 ### <a name="global"></a>Viewing global roles
 
@@ -158,10 +158,10 @@ The following screenshot shows the settings for the "admins" role.
 
 For each type, you can select the following permission levels:
 
-- Read: Read the specified data.
-- Create: Create new data like users and inventory data and edit users within your hierarchy.
-- Update: Modify and delete the specified data (not including "Read").
-- Admin: Allows for "Read", "Create" and "Update" actions.
+- **Read**: Read the specified data.
+- **Create**: Create new data like users and inventory data and edit users within your hierarchy.
+- **Update**: Modify and delete the specified data (not including "Read").
+- **Admin**: Allows for "Read", "Create" and "Update" actions.
 
 > **Info:** "Create" permissions are related to the concept of ownership in Cumulocity. If you have created an object, you are the owner of it and can manage it without requiring any further permissions. For example, if you have  "Create" permission for "Inventory", you can create devices and groups, and fully manage these devices and groups. You cannot manage any devices or groups that you did not create yourself, unless you also have the "Change" permission or an additional inventory role (see below). This concept helps to assign minimal permissions to devices. It also enables you to limit user management permissions to sub-users, if you subscribed to user hierarchies.
 
@@ -169,9 +169,9 @@ Select the checkbox at the top of a column to set the respective level to all pe
 
 **Permission categories**
 
-The permission categories that are available by default are:
+The following permission categories are available by default:
 
-|Type|Description|
+|Category|Description|
 |:---|:---|
 |Alarms|View or edit alarms for devices.
 |Application management|View or edit the applications available in this account.
@@ -200,7 +200,7 @@ There may be additional permissions visible depending on the features in your su
 
 You can assign global roles to users either directly in the user list, or by opening the page for a particular user and adding them there. 
 
-In the user list, click the "Global roles" column of a particular user to open a list of global roles. Select or clear the respective checkboxes and click **Apply ** to save your settings.
+In the user list, click the "Global roles" column of a particular user to open a list of global roles. Select or clear the respective checkboxes and click **Apply** to save your settings.
 
 ![Apply global role](/guides/users-guide/applyglobal.png)
 
@@ -296,13 +296,13 @@ If a user has inventory access to a group of devices, the user will also have th
 
 You can also copy inventory roles from another user. To copy roles, click **Copy inventory roles from another user**. In the upcoming window, select a user from the list and click **Copy**. At the top you can select if you want to merge the roles with the existing user roles (the default) or if you want to replace the existing user roles. Copying roles makes it easier to manage the permissions of many users as you can create a reference user and then copy the permissions from there.
 
-<img src="/guides/users-guide/opyroles.png" alt="Copy roles" style="max-width: 50%">
+<img src="/guides/users-guide/copyroles.png" alt="Copy roles" style="max-width: 50%">
 
 ### <a name="app-access"></a>Granting application access
 
 In the "Application Access" tab you assign applications to the user. 
 
-The "Application Access" tab shows a list of all available applications in your tenant. Select the applications for the user and click **Save**. For more information on application management, see [Managing applications](/guides/users-guide/administration#applications).
+The "Application Access" tab shows a list of all available applications in your tenant in alphabetical order. Select the applications for the user and click **Save**. For more information on application management, see [Managing applications](/guides/users-guide/administration#applications).
 
 ![Application access](/guides/users-guide/appaccess.png)
 
@@ -335,7 +335,7 @@ There are two alternative setups for support users in Cumulocity:
 
 To enable a management tenant user to support users in other tenants, you need to provide the user with either the "Support" global permission or the "Support" inventory role (both "Read" and "Change").
 
-Using the "Support" inventory role, you can selectively assign support to particular users. Create a group of the tenants that you want the user to support, then assign the inventory role to the user and the group as described in ["Attaching inventory roles to users"](#attach-inventory).
+Using the "Support" inventory role, you can selectively assign support to particular users. Create a group of the tenants that you want the user to support, then assign the inventory role to the user and the group as described in [Attaching inventory roles to users](#attach-inventory).
 
 **User-provided permission**
 
@@ -349,7 +349,7 @@ To log in as support user, use the following username:
 
 	<support user>$<user>
 
-"<support user>" is the user in the management tenant that executes the support. "<user>" is the supported user.
+"support user" is the user in the management tenant that executes the support. "user" is the supported user.
 
 Alternatively, use
 
@@ -377,7 +377,7 @@ A small number next to the user name shows how many direct sub-users a user has.
 
 ![User hierarchies](/guides/users-guide/userhierarchies.png)
 
-###<a name="sub-users"></a> Creating sub-users
+### <a name="sub-users"></a> Creating sub-users
 
 User hierarchies are created by assigning an "owner" to a user. The "owner" can manage the user. The user can have at most the same permissions as the owner.
 
@@ -395,15 +395,17 @@ As an example, the sample below shows a user with a business role. The user beco
 
 ### <a name="delegate"></a>Delegating user hierarchies to other users
 
-In Cumulocity you can delegate user hierarchies and permissions to another user.
+In Cumulocity, users can delegate their user hierarchies and permissions to another user. The delegated user then has the same user management permissions as the user who activated the delegation. 
 
-Activate "Delegated by" on creating a new user or on editing an existing user, to delegate your user hierarchy and permissions to this user.
+You may of course also delegate on a temporary basis, for example if you are temporarily unavailable.
 
- “Delegated by” field: Here a user “TestUser” can delegate his or her global roles to a user “newuser”. The delegated user “newuser” can then manage users with the same permissions as “TestUser”. You can also delegate on a temporary basis, for example if the user “TestUser” goes on holiday. 
-
-If the delegated user also needs to manage specific devices, the admin user must assign this device permissions (inventory roles) directly to the intended user. This can be done by using **Copy inventory roles from another user**. For details refer to [Assigning inventory roles to users](#attach-inventory).
+To delegate your permissions to a user, either open the user and click the delegate icon in the "Delegated by" field, or click the menu icon at the right of the user entry in the user list and from the context menu, select **Delegate**.
 
 ![User delegation](/guides/users-guide/delegation.png)
+
+To undelegate, remove the delegation in the "Delegate by" field, or click **Undelegate** in the context menu.
+
+If the delegated user also needs to manage specific devices, the admin user must assign this device permissions (inventory roles) directly to the intended user. This can be done by using **Copy inventory roles from another user**. For details refer to [Assigning inventory roles to users](#attach-inventory).
 
 > **Info:** Delegation works only inside user management and does not have any implication to other places. 
 

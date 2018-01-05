@@ -723,7 +723,7 @@ Before activating the custom domain name, make sure that
 * you have uploaded a valid SSL certificate for your custom domain,
 * the common name (domain name) is not used by any other tenant,
 * the certificate is currently valid (validFrom in the past and validTo in the future),
-* you have configured the DNS A entry for the domain to point to the IP address <TBD>.
+* you have configured the DNS A entry for the domain to point to the IP address.
 
 After successful activation you will be redirected to your enterprise tenant at the new domain. You will also receive an email with information about the activation.
 
@@ -738,7 +738,7 @@ When your certificate expires, you must update your certificate with a new one w
 * the certificate is not password protected,
 * the certificate is currently valid (validFrom in the past and validTo in the future),
 * the certificate has exactly the same common name (domain name) as the currently active certificate,
-* you have configured the DNS A entry for the domain to point to the IP address <TBD>.
+* you have configured the DNS A entry for the domain to point to the IP address.
 
 
 **Deactivating your certificate**

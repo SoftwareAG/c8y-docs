@@ -80,23 +80,7 @@ Sensors - max. 10
 | U7..U10 | DIN [voltage free] /NTC/PT100/PT1000 | 
 | Relay Switch | 1 x 230V - 2A | 
 
-| U1...U10 | |
-| --- | --- |
-| Input sensor type | NTC |
-| | PT1000 |
-| | 0-1V |
-| | 0-10V |
-| | 4-20mA (incl. power supply input) |
-| | DIN |
-| | 0-5V (incl. power supply input) |
-| | PTC |
-| | PT500 |
-| | PT100 |
-| | DIN_COUNT |
-| | DIN_FREQ |
-| Output | 0-10V |
-| | PWM @100Hz |
-| | PWM @2 KHz |
+
 
 | Relay Switch |   |
 | --- | --- |

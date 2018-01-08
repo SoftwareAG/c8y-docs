@@ -182,7 +182,18 @@ Example Response:
 		"customProperties" : {"referenceId":"1234567890"}
 	}
 
-Note that creating a tenant with adminName, adminPass and adminEmail, creates an admin user with these settings.
+In the following table you can see the restrictions for each field:
+
+|Field|Type|
+|:----|:---|
+|id|VARCHAR(32)|
+|company_name|VARCHAR(256)|
+|domain_name|VARCHAR(256)|
+|contact_name|VARCHAR(30)|
+|contact_phone|VARCHAR(20)|
+|administrator|VARCHAR(50)|
+
+> Note: creating a tenant with adminName, adminPass and adminEmail, creates an admin user with these settings.
 For the tenant id SQL keywords (e.g., select, cross, where) are not allowed. 
 
 ## Tenant

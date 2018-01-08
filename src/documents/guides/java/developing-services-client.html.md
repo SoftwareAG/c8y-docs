@@ -34,7 +34,9 @@ If you would like to send an email from Java, build an email object and call a r
     HttpStatus httpStatus = emailApi.sendEmail(email);
 
 The destination and the copy and blind copy fields can contain several values, like
-withTo("to1@email.com", "to2@email.com"). An email can also contain attachments defined as an object of com.cumulocity.model.email.Attachment class.
+withTo("to1@email.com", "to2@email.com"). 
+
+> Note: When requests to the email API contain any form of attachment, a "500" server error is returned.
 
 A call to an email API returns an HTTP status of a request, 200 OK in case if an email was sent successfully.
 

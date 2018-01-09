@@ -129,12 +129,12 @@ If you select **Upload ZIP file**, the wizard will ask you to simply drop a file
 
 If you select **External application**, you next need to provide the name, application key and external URL for it. 
 
-If you want to duplicate an existing application follow the steps described next.
+If you want to duplicate an existing application, follow the steps described next.
 
 
 ### <a name="clone-application"></a>Duplicate applications
 
-Duoplicating a subscribed application creates a copy of the application as an own application, with a link to the original application.
+Duplicating a subscribed application creates a copy of the application as an own application, with a link to the original application.
 
 In order to duplicate an application, follow these steps:
 

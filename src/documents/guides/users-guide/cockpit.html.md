@@ -6,7 +6,6 @@ layout: default
 
 ## Overview
 
-
 The Cockpit application provides you with options to manage the Internet of Things (IoT) assets and business data. In this guide we are going to show you how to:
 
 - Start [using Cumulocity Cockpit](#start) and work with the [home](#home) dashboard
@@ -86,55 +85,49 @@ If you want to learn more about the following general items of this framework co
 
 ## <a name="start"></a>Start using Cumulocity Cockpit
 
-### Welcome page
+### Welcome screen
 
-The **Welcome** page initially opens up when you log into Cumulocity Cockpit for the first time.
+When you log into Cumulocity, the **Welcome** page initially opens up.
 
-![image alt text](/guides/users-guide/image_0.png)
+<img src="/guides/users-guide/Cockpit/Cockpit_WelcomeScreen" name="Welcome screen" style="width:100%;"/>
 
-The **Welcome** page shows the following sections:
+The **Welcome** page contains the following items:
 
-* A welcome notice with the number of devices (or assets) connected.
+* Quick links to the most relevant functions.
+* Links to the available applications.
+* Links to relevant documentation areas and to the Support Forum.
+* The latest news from the Cumulocity twitter channel. Note that this section is only available for tenants hosted by www.cumulocity.com.
 
-* Several important quick links.
+### Hiding/restoring the Welcome screen
 
-* Links to available applications.
+If you do not want the **Welcome** page to be your start page, activate the slider **Don't use as start page** on the top right.
 
-* The latest news from the Cumulocity twitter channel. Note: This is only available for tenants hosted by www.cumulocity.com.
+To restore the **Welcome** page as start page, select "Welcome" in the navigator on the top left and deactivate the slider **Don't use as start page** again.
 
-* Links to various parts of the documentation.
+## <a name="home"></a>Home screen
 
-### Hiding/Restoring the Welcome page
-
-If you do not want the **Welcome** page as your start page, deactivate it with the button "Don't use as start page" on the top right.
-
-To restore the **Welcome** page as start page, select "Welcome" in the navigator on the top left. Then deselect "Don't use as start page".
-
-## <a name="home"></a>Home dashboard
-
-The Cockpit start page is a dashboard page:
+The Home screen of the Cockpit application is a dashboard which shows data for the general tenant.
 
 ![image alt text](/guides/users-guide/image_1.png)
 
-The dashboard shows data for the general tenant.
+The data shown on the Home dashboard is shared by all users of the tenant. By default, the Home dashboard includes a welcome message, the active critical alarms, recent alarms and a map of all objects.
 
-The Home dashboard is a page shared by all users of the tenant. It consists of widgets visualizing IoT data. By default, the Home dashboard includes four widgets showing a welcome text, a summary of assets with alarms, recent alarms and a map of all objects.
+The Home dashboard can be edited and designed individually according to your needs. You can add, remove or change widgets being displayed here. 
 
-The Home dashboard can be edited, similar to other Cockpit dashboards: You can add, remove or change the widgets being displayed. 
-
-<<< To be checked
+...
 Use the settings symbol on the top right or move the cursor inside a widget and use the settings symbol of the individual widget.
 
 For details, see the section *Editing a Dashboard* below.
 
-To reset the dashboard to the original content, use the menu item "Reset default dashboard" from the cogwheel symbol.
->>>
+To edit the dashboard, click **Edit** in the top menu bar. 
+
+To reset the dashboard to the original content, click **More...** at the right of the top menu bar and from the context menu select **Restore dashboard**.
+...
 
 ## <a name="connect"></a>Connecting Devices
 
-Before you can work with the Cockpit application you need to connect IoT devices. Devices are connected in the Device Management application. Change to **Device Management** using the Application Switcher on the top right. For details refer to the[*Device Management*](/guides/users-guide/device-management) section in the *User Guide*.
+Before you can really work with the Cockpit application, you first need to connect IoT devices. This is done in the Device Management application. Change to the Device management application using the application switcher on the top right. For details on connecting devices refer to [*Device Management*](/guides/users-guide/device-management) in the *User Guide*.
 
-<img src="/guides/users-guide/app.png" alt="Logout menu" style="max-width: 100%">
 ## <a name="asset"></a>Asset Management
 
 ### Introduction
@@ -146,13 +139,14 @@ Assets are organized in hierarchies. For example, an energy monitoring applicati
 
 The asset hierarchy is composed of two types of objects:
 
-* Group objects: Objects which group single devices or other groups. Are created in the Cockpit application.
+* **Groups**: Objects which group single devices or other groups. Groups can either be created in the Cockpit application or in the Device Management application.
 
-* Device objects: Devices which are linked into the asset hierarchy. Are created in the Device Management application.
+* **Devices**: Devices which are linked into the asset hierarchy. Are created in the Device Management application.
 
-In this example, group objects represent a building asset. Device objects represent the room asset. The group names and hierarchy can be defined individually by the user. The hierarchy can have multiple levels, like region level, city level, street level, building level, floor level and room level. Any device can be part of multiple and different hierarchies, like part of regional hierarchy and part of customer hierarchy.
+In this example, the group objects represent a building asset. The device objects represent the room asset. The group names and hierarchy can be defined individually by the user. The hierarchy can have multiple levels, like region level, city level, street level, building level, floor level and room level. Any device can be part of multiple and different hierarchies, like part of regional hierarchy and part of customer hierarchy.
 
-Single devices are not managed in the Cockpit application. They are managed in the Device Management application.
+> **Info:** Single devices are not managed in the Cockpit application. They are managed in the Device Management application.
+
 To position a device in the asset hierarchy, you have to "assign" the device to the respective group. See description below for details.
 
 ### Asset Hierarchy versus Device Hierarchy
@@ -262,7 +256,7 @@ Un-assigning a device does not remove the device, sub-devices or any associated 
 
 To edit the name of the group, click on the "Info" tab and edit the name.
 
-## <a name="visualize"></a>Using the Data Explorer to Visualize Data
+## <a name="visualize"></a>Visualizing Data Using the Data Explorer
 
 Data points (measurements or sensor data) can be visualized inside the Cockpit in three places:
 
@@ -274,7 +268,8 @@ Data points (measurements or sensor data) can be visualized inside the Cockpit i
 
 To visualize data points, follow these steps:
 
-* Go to the group or device, and click on "Data Explorer".
+1. Select a group or device in the navigator for which you want to visualize data points.
+2. Switch to the "Data Explorer" tab.
 
 * The first five data points of the selected device or group are shown.
 
@@ -423,27 +418,67 @@ A"Generating Report" window will appear. The files will load depending on how ma
 
 ## <a name="dashboards"></a>Working with Dashboards
 
-Dashboards provide you with a customized visualization of your data with a set of widgets. Widgets can display maps, images, graphs, tables and other graphic representations of data. Cumulocity comes with a number of preset widgets, see section "[Widget Package](#widget)" for details. You can develop also your own widgets and add them to your Cumulocity account. See the [Web developer's guide](/guides/web/).
+Dashboards provide you with a customized visualization of your data with a set of widgets. Widgets can display maps, images, graphs, tables and other graphic representations of data. 
 
-### Creating new Dashboards
+Cumulocity comes with a number of preset widgets, see section [Widget Package](#widget) for details. You can also develop your own widgets according to your needs and add them to your Cumulocity account. Refer to the [Web Developer's Guide](/guides/web/) for details.
 
-To create a dashboard, navigate to an object in the asset hierarchy. Afterward, click on the cogwheel icon at the top right. Select "Create dashboard". This will open a dialog and you can:
+### <a name="creating-dashboards"></aCreating a dashboard
 
-![Dashboard via cogwheel](/guides/users-guide/dashboardcogwheel.png)
+Select the group or the device in the navigator for which to create a dashboard. 
 
-* Name the the dashboard you are creating, which will be displayed as a card reader.
-
-* Specify the location of the dashboard in the navigation.
-
-* Choose the icon which is rendered next to the name in the menu.
-
-* Choose visibility: "Dashboard visible to all users", whether the dashboard is visible to everyone (“global”) or just limited number of users.
-
-* "Dashboard layout": Configure the layout of your dashboard. Select a "Dashboard Theme", "Default Widget Header Style" and "Default Widget Margin". Afterwards, you can see your currently selected layout under "Preview".
+Click the **Plus** button in the top bar and from the context menu select **New dashboard**. 
 
 ![Create Dashboard](/guides/users-guide/dashboard-create.png)
 
-Click "Save" to create and open the dashboard. While there are no widgets on the dashboard, you will see an "Add Widget" button. Use this button to add your first widget to the dashboard.
+In the "Dashboard info" section of the "Create dashboard" window, provide the following information:
+
+* A menu label to be used as the name of the dashboard
+* The location of the dashboard in the navigator, with "10000" being ordered first and "-10000" last
+* An icon which is shown next to the dashboard name in the navigator
+
+In the "Dashboard layout" section you can select a theme for the dashboard (one of Light, Dark, Transparent or Branded) and a default header style for the wigets (one of Regular, Border, Overlay, or Hidden). Moreover, you can change the default widget margin (default value is 15 px). 
+
+A preview of the selected layout settings is displayed in the "Preview" section to check your selections.
+
+Click "Save" to create and open the dashboard. 
+
+Since there will be no widgets on the dashboard yet, you will see an **Add Widget** button instead.
+
+### Editing dashboard properties
+
+To edit a dashboard, click **Edit** in the top menu bar. The dashboard editor will open up. For details on the fields, refer to [Creating dashboards](#creating-dashboards).
+
+### Adding a widget to a dashboard
+
+To add a widget to a dashboard, click **Add widget** in the top menu bar.
+
+<img src="/guides/users-guide/Cockpit/Cockpit_AddWidget" name="Add widget" style="width:100%;"/> 
+
+In the upcoming dialog select a widget type from the dropdown list. Depending on the widget type selected, additional fields and checkboxes will be displayed to be filled in or selected. For details on the widgets refer to [Widget Package](#widget). 
+
+Click **Customize widget style** to customize the content and header style for the widget individually, similar to specifying the general layout in the dashboard editor.
+
+Cklick **Save** to add the widget to the dashboard.
+
+### Modifying widgets on a dashboard
+
+Widgets may be rearranged on the dashboard. By dragging and dropping you can move the widget to another position. 
+
+By dragging the arrows on the bottom right corner of a widget, you can resize it. 
+
+To edit the properties of a widget on a dashboard, click the cogwheel icon at the top right corner of the widget and from the context menu select **Edit**.
+
+To delete a widget from a dashboard, click the cogwheel icon at the top right corner of the widget and from the context menu select **Remove**.
+
+> **Info:** Widgets can only be modified, if the dashboard is unlocked. To lock/unlock a dashboard, use the slider with the lock icon on the top menu bar.
+
+![dashboard lock](/guides/users-guide/dashboardlock.png)
+
+On a laptop, these icons only appear when you hover over the widget header.
+
+Editing on touch devices like smartphones or tablets do not support all functions. To show the widget icons on touch devices, please hover over the widget header.
+
+
 
 ### Creating a dashboard for identical devices
 
@@ -473,40 +508,25 @@ Afterward, select the desired permission for the selected group.
 
 > Permissions can be granted to several groups.
 
-### Adding a Widget to a Dashboard
 
-To add a widget to a dashboard, ensure that the dashboard is visible. Afterward, click on the cogwheel icon at the top right. Select "Add a widget to a dashboard". This will open a dialog with a selection of widgets you can add to the dashboard.
-
-![Add Widget](/guides/users-guide/widgetcogwheel.png)
-
-When selecting a widget type, additional input fields for this widget type will pop up. More information about the "[Widget Package](#widget)" can be found with this link. Similar to dashboards you can "Customize the widget style". The currently selected style can be seen in the preview shown on the right side.
-
-### Editing a Dashboard
-
-You can edit dashboard properties by clicking on the cogwheel icon and select "Edit dashboard". This will bring up a similar dialog like "Creating a dashboard". In this dialog the dashboard name, icon, position, style and permissions can be edited.
-
-![Edit Dashboard](/guides/users-guide/dashboardedit.png)
-
-You can rearrange the widgets of the dashboard. By dragging and dropping the header of the widget, you can move the widget to another position on the page. By dragging and dropping the arrows on the bottom right corner of a widget, you can resize a widget. By clicking on the icon at the top right corner of the widget, you can delete or edit the widget properties.
-
-> If the dashboard is locked, widgets cannot be rearranged. In order to lock/unlock a dashboard, click on the padlock at the top right and then click on "Lock Dashboard"/"Unlock Dashboard".
-
-![dashboard lock](/guides/users-guide/dashboardlock.png)
-
-On a laptop, these icons only appear when you hover over the widget header.
-
-Editing on touch devices like smartphones or tablets do not support all functions. To show the widget icons on touch devices, please hover over the widget header.
 
 ### Copying a dashboard
 
-To copy a dashboard from one object to another, use the cogwheel on the top right and select "Copy dashboard". Afterward, select the object where the dashboard should be applied to and click "Paste Dashboard" to insert the dashboard.
+To copy a dashboard from one object to another, click **More...** in the top menu bar and from the context menu select **Copy dashboard**. 
+
+Next, navigate to the object you want to copy the dashboard to and from the context menu select **Paste dashboard <NAME>** to insert the dashboard.
 
 An alternative way to copy a dashboard is to use the 
 "Dashboard per type" approach.  With the "Dashboard per type" approach you copy the dashboard from one object to **all** identical objects.
 
-### Removing a Dashboard
+### Removing a dashboard
 
-To add a widget to a dashboard, ensure the dashboard is visible. The same applies when removing it. Click on the cogwheel icon at the top right. Select "Remove dashboard" to remove a dashboard.
+To delete a dashboard from an object, click **More...** in the top menu bar and from the context menu select **Remove dashboard**. 
+
+### Sending dashboard via email
+
+... add description here
+
 
 ## <a name="widget"></a>Widget Package
 
@@ -702,37 +722,36 @@ Sends a message to a device. The behavior of the device itself is device depende
 
 ## <a name="alarms"></a>Working with Alarms
 
-Working with alarms is identical to working with alarms in Device Management. See "[Working with alarms](http://cumulocity.com//guides/users-guide/device-management/#alarm-monitoring)" in Device Management User Guide.
+Working with alarms in the Cockpit application is identical to working with alarms in Device Management. See [Working with alarms](http://cumulocity.com//guides/users-guide/device-management/#alarm-monitoring) in the Device Management section of the User Guide.
 
-## <a name="reports"></a>Working with Dashboard Reports
+## <a name="reports"></a>Working with Reports
 
-There are two types of a report in the cockpit application. Dashboard reports enable you to track applications, alarms, assets, events and many other widgets. The second type of report is ["Exporting data with Reports"](#reporting) where you can export specific data to either csv or xlsx files.
+There are two types of reports in the Cockpit application. Dashboard reports enable you to track applications, alarms, assets, events and many other widgets. The second type of report lets you export specific data to either csv or xlsx files, see ["Exporting data with reports"](#reporting).
 
-### Browsing reports
+Dashboard reports are global dashboard pages, regardless of the asset hierarchy. 
 
-Dashboard reports are global dashboard pages, regardless of the asset hierarchy. The navigator displays a "Reports" button. To view all existing reports, expand the Reports menu, and then see all the saved reports.
+To see all existing reports, expand the "Reports" menu in the navigator.
+
+To view a specific report, click the report in the navigator to open it.
 
 ### Creating new reports
 
-To add a new report, select the "+" button in the header and select “Create new Report”.
-
-Fill out the fields "Name" and “Icon” in the dialog and press “Save”.
+To add a new report, click the **Plus** button in the top bar and from the context menu select **Create new report**.
 
 ![image alt text](/guides/users-guide/image_20.png)
 
-Then widgets can be added to the created report.
+Enter a name for the report and optionally select an icon from the dropdown list. Click **Save** to save your settings.
 
-### Deleting reports
-
-To delete a report, press the cogwheel icon and choose "Remove" report
+Next, widgets can be added to the report.
 
 ### Adding widgets to reports
 
-You can add widgets to the report, similar to dashboard widgets.
+You can add widgets to reports in the same way as adding widgets to dashboards. For details, see ...
 
-### View reports
+### Deleting reports
 
-To view a report, open the "Reports" in the navigator and click on the related report. The report will show.
+To delete a report, open the report and click **More...** at the right of the top menu bar. From the context menu, select **Remove report**.
+
 
 ## <a name="reporting"></a>Exporting data with reports
 

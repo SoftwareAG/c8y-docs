@@ -723,7 +723,7 @@ Before activating the custom domain name, make sure that
 * you have uploaded a valid SSL certificate for your custom domain,
 * the common name (domain name) is not used by any other tenant,
 * the certificate is currently valid (validFrom in the past and validTo in the future),
-* you have configured the DNS A entry for the domain to point to the IP address.
+* you have configured the DNS A entry for the domain to point to the IP address of your DNS server.
 
 After successful activation you will be redirected to your enterprise tenant at the new domain. You will also receive an email with information about the activation.
 
@@ -738,7 +738,7 @@ When your certificate expires, you must update your certificate with a new one w
 * the certificate is not password protected,
 * the certificate is currently valid (validFrom in the past and validTo in the future),
 * the certificate has exactly the same common name (domain name) as the currently active certificate,
-* you have configured the DNS A entry for the domain to point to the IP address.
+* you have configured the DNS A entry for the domain to point to the IP address of your DNS server.
 
 
 **Deactivating your certificate**
@@ -911,7 +911,7 @@ To stop data forwarding and remove the data connector, click the menu icon and f
 1. Click **Add data subscription** in the top menu bar to receive data. 
 2. In the new card, enter the security code that you received from the sending end of the data.
 3. When the connection is established, click **Accept** to start forwarding data into your tenant. The subscription is active now.
-4. You can click the slider in the card to temporarily stop forwarding data into your tenant.
+4. You can move the slider in the card to temporarily stop forwarding data into your tenant.
 
 You can now navigate to the Device Management application or the Cockpit application. There will be a new "virtual group" with a specific icon (see the screenshot below) showing the forwarded devices. The group will have the same name as your subscription. Devices are "lazily" created on the destination side whenever they send data for the first time after setting up an active subscription.
 

@@ -6,17 +6,21 @@ layout: default
 
 ## Overview
 
-The Cockpit application provides you with options to manage the Internet of Things (IoT) assets and business data. In this guide we are going to show you how to:
+The Cockpit application provides you with options to manage and monitor  Internet of Things (IoT) assets and data from a business perspective.
 
-- Start [using Cumulocity Cockpit](#start) and work with the [home](#home) dashboard
-- [Connect](#connect) devices and manage [assets](#asset)
-- [Visualize](#visualize) data using the data explorer
-- Work with [dashboards](#dashboards)
-- Handle [widgets](#widget) and the [business rule](#business) package
-- Manage [alarms](#alarms), [reports](#reports) and [smart rules](#rules)
-- Use the [data point library](#library)
+The following sections will walk you through all functionalities of the Cockpit application in detail. For your convenience find an overview on the content of this document below.
 
-For further information on the Cockpit application refer to the Introduction section below.
+SECTION|CONTENT|
+|:---|:---|
+|[Entering the Cockpit Application](#start)|Explaining the content of the [Welcome screen](#welcome) and the initial [Home dashboard](#home). 
+|[Connect](#connect) devices and manage [assets](#asset)|How to...
+|[Visualize](#visualize) data using the data explorer|How to...
+|[Working with Dashboards](#dashboards)|How to create your own analytics and monitor pages by selecting and arranging widgets. Select from various widgets including maps, tables, graphs, charts, controls and more.
+|[Handling Widgets and Business Rules](#device-registration)|How to [widgets](#widget) . How to create [business rules](#business) to work on incoming data in real-time.
+|Manage [alarms](#alarms), [reports](#reports) and [smart rules](#rules)|How to 
+|Use the [data point library](#library)|How to 
+
+If you want to learn more about general aspects of the Cumulocity platform and its applications, refer to [*Introduction*](/guides/users-guide/overview).
 
 ## <a name="intro"></a>Introduction
 
@@ -66,28 +70,12 @@ The main concepts of the Cockpit application are the following:
 |**Report**|Similar to dashboards, but with analytical content based on a limited time frame or scope of work.
 **Smart Rules**|Cumulocity business rules are instances from a smart rule template using the Smart Rule Builder.
 
-### Cumulocity Applications
 
-The Cockpit application is based on the Cumulocity Application framework.
-If you want to learn more about the following general items of this framework consult the section [*Introduction*](/guides/users-guide/overview):
+## <a name="start"></a>Entering the Cockpit Application
 
-*    Which Web browsers are supported?
+### <a name="welcome"></a>Welcome screen
 
-*    How to login to Cumulocity?
-
-*    How to navigate around?
-
-*    How to link into the application?
-
-*    How to use Cumulocity on touch devices?
-
-*    User interface conventions
-
-## <a name="start"></a>Start using Cumulocity Cockpit
-
-### Welcome screen
-
-When you log into Cumulocity, the **Welcome** page initially opens up.
+When you log into Cumulocity, you will be taken to the Cockpit application where the **Welcome** page initially opens up.
 
 <img src="/guides/users-guide/Cockpit/Cockpit_WelcomeScreen" name="Welcome screen" style="width:100%;"/>
 
@@ -98,13 +86,13 @@ The **Welcome** page contains the following items:
 * Links to relevant documentation areas and to the Support Forum.
 * The latest news from the Cumulocity twitter channel. Note that this section is only available for tenants hosted by www.cumulocity.com.
 
-### Hiding/restoring the Welcome screen
+**Hiding/restoring the Welcome screen**
 
 If you do not want the **Welcome** page to be your start page, activate the slider **Don't use as start page** on the top right.
 
 To restore the **Welcome** page as start page, select "Welcome" in the navigator on the top left and deactivate the slider **Don't use as start page** again.
 
-## <a name="home"></a>Home screen
+### <a name="home"></a>Home dashboard
 
 The Home screen of the Cockpit application is a dashboard which shows data for the general tenant.
 
@@ -114,23 +102,14 @@ The data shown on the Home dashboard is shared by all users of the tenant. By de
 
 The Home dashboard can be edited and designed individually according to your needs. You can add, remove or change widgets being displayed here. 
 
-...
-Use the settings symbol on the top right or move the cursor inside a widget and use the settings symbol of the individual widget.
+For details on editing a dashboard, refer to [Working with Dasboards](#dashboards).
 
-For details, see the section *Editing a Dashboard* below.
+To reset the Home dashboard to its original content, click **More...** at the right of the top menu bar and from the context menu select **Restore dashboard**.
 
-To edit the dashboard, click **Edit** in the top menu bar. 
-
-To reset the dashboard to the original content, click **More...** at the right of the top menu bar and from the context menu select **Restore dashboard**.
-...
-
-## <a name="connect"></a>Connecting Devices
-
-Before you can really work with the Cockpit application, you first need to connect IoT devices. This is done in the Device Management application. Change to the Device management application using the application switcher on the top right. For details on connecting devices refer to [*Device Management*](/guides/users-guide/device-management) in the *User Guide*.
-
-## <a name="asset"></a>Asset Management
+## <a name="asset"></a>Managing Assets
 
 ### Introduction
+
 Assets represent business objects in general like buildings, machines, production units or cars.
 
 Assets are organized in hierarchies. For example, an energy monitoring application might have the following asset hierarchy:
@@ -141,15 +120,15 @@ The asset hierarchy is composed of two types of objects:
 
 * **Groups**: Objects which group single devices or other groups. Groups can either be created in the Cockpit application or in the Device Management application.
 
-* **Devices**: Devices which are linked into the asset hierarchy. Are created in the Device Management application.
+* **Devices**: Devices which are linked into the asset hierarchy. Before you can use devices in the Cockpit application, they need to be connected to Cumulocity. This is done in the Device Management application. For details on connecting devices refer to [*Device Management*](/guides/users-guide/device-management) in the *User Guide*.
 
 In this example, the group objects represent a building asset. The device objects represent the room asset. The group names and hierarchy can be defined individually by the user. The hierarchy can have multiple levels, like region level, city level, street level, building level, floor level and room level. Any device can be part of multiple and different hierarchies, like part of regional hierarchy and part of customer hierarchy.
 
-> **Info:** Single devices are not managed in the Cockpit application. They are managed in the Device Management application.
-
 To position a device in the asset hierarchy, you have to "assign" the device to the respective group. See description below for details.
 
-### Asset Hierarchy versus Device Hierarchy
+> **Info:** Single devices are not managed in the Cockpit application. They are managed in the Device Management application.
+
+### Asset hierarchy versus device hierarchy
 
 Cumulocity supports two types of hierarchies: a device hierarchy and an
 asset hierarchy.
@@ -162,39 +141,46 @@ In the Cockpit application, you construct your asset hierarchy by creating group
 
 * **Gateway devices** establish the communication from other devices to Cumulocity but do not include sensors or actuators. Typical gateway devices include Zigbee, Modbus, M-Bus or KNX gateways.
 
-The following section explains how to use Cockpit with smart devices and gateway devices.
+The following section explains how to work with smart devices and gateway devices in the Cockpit application.
 
-Below is an example how smart devices are linked into the asset hierarchy:
-
+The first example shows how smart devices are linked into the asset hierarchy:
 
 ![image alt text](/guides/users-guide/image_3.png)
 
-Smart devices are represented in the Device Management (right side) as top-level devices. In the Cockpit application, you can organize smart devices into groups, as the arrows indicate in the above diagram.
+Smart devices are represented in the Device Management application as top-level devices. In the Cockpit application, you can organize smart devices into groups, as the arrows indicate in the above diagram.
 
-Gateway devices can use the Cockpit application like this.
+The second example shows how gateway devices can be used in the Cockpit application.
 
 ![image alt text](/guides/users-guide/image_4.png)
 
-Gateway devices are represented in Device Management as top level devices. Their attached devices (like Zigbee, Modbus or KNX devices) are shown as "Child Devices" (right side). These child devices can be organized in the asset hierarchy as shown above.
+In the Device Management application, gateway devices are represented as top level devices. Their attached devices (like Zigbee, Modbus or KNX devices) are shown as child devices. These child devices can be organized in the asset hierarchy in the Cockpit application as shown above.
 
-The asset hierarchy and the device hierarchy are self sufficient: While inside the Device Management applications all child devices are below the gateway device, the same child devices are organized in two different buildings in the Cockpit application.
-**Summary:** Devices can have totally different hierarchies in the Device Management Application or in the Cockpit Application.
+As you can see from the example, devices can have completely different hierarchies in the Device Management application and in the Cockpit application:
+While inside Device Management all child devices are below the gateway device, the same child devices are organized in two different buildings in the Cockpit.
 
-### Cockpit Assets versus Business Assets
+### Cockpit assets versus business assets
 
 The mapping of objects in the Cockpit asset hierarchy is a virtual hierarchy.
+
 If you manage trucks within the Cumulocity platform, then each truck is represented via its individual tracking device communicating with Cumulocity.
 
 For building management, it is most common that a group of sensors inside a building represents the building as a group communicating with the Cumulocity platform.
 
-### Navigating Assets
+## Managing Assets
 
-The navigator shows a hierarchy of assets under "GROUPS" (See screenshot below):
+In the asset hierarchy, Cumulocity distinguishes between top-level groups and subgroups, so called sub-assets.
 
-* At the top, top level groups are shown.
+Top-level groups are shown in the "Group" menu in the navigator at top-level. Sub-assets are used to further subdivide top-level groups. Sub-assets are shown in the navigator under the top-level groups or in the "Sub-asset" tab of a particular group.
 
-* When expanding a group, all its children are shown.
-Children can include other groups or devices assigned to the group.
+
+### Navigating assets
+
+Assets are shown in the "Groups" menu in the navigator. 
+
+* At the top level the groups are displayed, indicated by a folder icon.
+
+* When expanding a group, all its children are shown. Children can include other groups or devices assigned to the group.
+
 Children are also shown in the tab "Sub-assets".
 
 ![image alt text](/guides/users-guide/image_5.png)
@@ -216,9 +202,9 @@ If you add a gateway device, the child devices are not shown. To show child devi
 
 To navigate further in the asset hierarchy, use the navigator or select an object in the "Sub-Asset" tab. To navigate up in the asset hierarchy, use the breadcrumb entry below the name of the asset.
 
-### Search Assets
+### Searching assets
 
-To search for groups or devices, enter the name of the group or device into the search entry field and click "Enter". You can click on the results . The selected group or device is then selected in the navigator on the left and details of it are shown on the right.
+To search for groups or devices, use the **Search** button in the top bar. For details on the searching functionality, refer to [Searching](#searching) in *Overview > Search and Filter Functionaltity*.
 
 ### Adding Groups
 
@@ -477,7 +463,6 @@ To delete a widget from a dashboard, click the cogwheel icon at the top right co
 On a laptop, these icons only appear when you hover over the widget header.
 
 Editing on touch devices like smartphones or tablets do not support all functions. To show the widget icons on touch devices, please hover over the widget header.
-
 
 
 ### Creating a dashboard for identical devices
@@ -755,7 +740,7 @@ To delete a report, open the report and click **More...** at the right of the to
 
 ## <a name="reporting"></a>Exporting data with reports
 
-With the "Reporting" feature, you can request csv or xlsx reports for the whole tenant. Additionally, you can choose to *Filter* according to specific devices, time ranges or *Fields*. The reports contain information about all specified "Filters" and enabled "Fields". Maximum number of documents that can be exported into a single xlsx file is 1 million. If the number of documents for defined "Filters" exceeds the limit, the resulted document gets only first 1 million of documents.
+With the reporting feature, you can request csv or xlsx reports for the whole tenant. Additionally, you can choose to *Filter* according to specific devices, time ranges or *Fields*. The reports contain information about all specified "Filters" and enabled "Fields". Maximum number of documents that can be exported into a single xlsx file is 1 million. If the number of documents for defined "Filters" exceeds the limit, the resulted document gets only first 1 million of documents.
 
 To work with dashboard reports please refer to [Working with Dashboard Reports](#reports).
 

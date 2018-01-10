@@ -105,6 +105,9 @@ In the "Properties" tab, several fields can be modified, depending on the applic
 
 >**Info**: "ID", "Application key" and "Path" cannot be changed, once configured.
 
+>**Important:** Never change the system application names (e.g. "Device Management", "Cockpit"). Otherwise, tenant initialization will fail. 
+
+
 **Remove**
 
 If you remove an application that overwrites a subscribed application, the currently subscribed application becomes available to all users. Additionally, the users will then also benefit from future upgrades of the subscribed application.

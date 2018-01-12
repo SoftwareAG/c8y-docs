@@ -10,12 +10,11 @@ The Cockpit application provides you with options to manage and monitor  Interne
 
 The following sections will walk you through all functionalities of the Cockpit application in detail. For your convenience find an overview on the content of this document below.
 
-SECTION|CONTENT|
+Section|Content|
 |:---|:---|
 |[Entering the Cockpit Application](#start)|Explaining the content of the [Welcome screen](#welcome) and the initial [Home dashboard](#home). 
 |[Connect](#connect) devices and manage [assets](#asset)|How to...
-|[Visualize](#visualize) data using the data explorer|How to...
-|[Working with Dashboards](#dashboards)|How to create your own analytics and monitor pages by selecting and arranging widgets. Select from various widgets including maps, tables, graphs, charts, controls and more.
+|[Visualize Data Using the Data Explorer](#visualize)|How to access and use the [data explorer](#visualize), [add data points](#add-data-points) to the data explorer, [customize data point properties](#customize-data-points), [modify the visualization](#change-visualization), store the [data explorer as widget](#create-widget), and [export](#export-data) the data. |[Working with Dashboards](#dashboards)|How to create your own analytics and monitor pages by selecting and arranging widgets. Select from various widgets including maps, tables, graphs, charts, controls and more.
 |[Handling Widgets and Business Rules](#device-registration)|How to [widgets](#widget) . How to create [business rules](#business) to work on incoming data in real-time.
 |Manage [alarms](#alarms), [reports](#reports) and [smart rules](#rules)|How to 
 |Use the [data point library](#library)|How to 
@@ -170,18 +169,12 @@ For building management, it is most common that a group of sensors inside a buil
 
 In the asset hierarchy, Cumulocity distinguishes between top-level groups and subgroups, so called sub-assets.
 
-Top-level groups are shown in the "Group" menu in the navigator at top-level. Sub-assets are used to further subdivide top-level groups. Sub-assets are shown in the navigator under the top-level groups or in the "Sub-asset" tab of a particular group.
+In the navigator, top-level groups are shown in the "Group" menu at top-level. Sub-assets are shown in the navigator under the top-level groups or in the "Sub-asset" tab of a particular group.
 
 
 ### Navigating assets
 
-Assets are shown in the "Groups" menu in the navigator. 
 
-* At the top level the groups are displayed, indicated by a folder icon.
-
-* When expanding a group, all its children are shown. Children can include other groups or devices assigned to the group.
-
-Children are also shown in the tab "Sub-assets".
 
 ![image alt text](/guides/users-guide/image_5.png)
 
@@ -191,10 +184,10 @@ When selecting an object in the asset hierarchy, the right part of the applicati
 
 The visible tabs on the right of the navigator differ based on the selection in the navigator. The following table shows which tabs are visible based on the selection in the navigator:
 
-|Name of tab|_Name of Dashboard_|Info|Alarms|Sub-assets|Location|Data explorer|
+|Info|Alarms|Sub-assets|Location|Data explorer|
 |:---|:---|:-----|:-----|:----------|:----------|:----------|
-|Group selected:|Yes, if configured|Yes|No|Yes|No|Yes, showing all data points of the children|
-|Device selected:|Yes, if configured|Yes|Yes|No|Yes|Yes, showing all data points of the children|
+|Group selected:|Yes|No|Yes|No|Yes, showing all data points of the children|
+|Device selected:|Yes|Yes|No|Yes|Yes, showing all data points of the children|
 
 There can be additional tabs visible in case the application has been extended with plugins. See "[Introduction to plugin development](/guides/web/introduction)" for details.
 
@@ -218,11 +211,19 @@ To add a new group as children of an existing asset, click the "+ Add Group" in 
 
 ![image alt text](/guides/users-guide/image_8.png)
 
-### Assign Devices to Groups
+### Assign devices to groups
 
-Before adding a device to the asset hierarchy, it must be connected to Cumulocity. Connect devices to the platform using the Device Management application. Please refer to "[Connecting Devices](/guides/users-guide/device-management#device-registration)" in the Device Management user guide.
+Before adding a device to the asset hierarchy, it must be connected to Cumulocity. Connecting devices to the platform is done in the Device Management application. For details on connecting devices refer to [*Device Management*](/guides/users-guide/device-management) in the *User Guide*.
 
-To assign newly connected devices into the asset hierarchy, select the group where the device should appear, click on "sub-assets" and click the “+ Assign Device” button.
+To assign a device to a group, follow these steps:
+
+1. In the navigator, select a group from the "Group" menu and then open the "Sub-assets" tab. In the "Sub-assets" tab, all devices that are assigned to the respective group are displayed. 
+2. Click **Assign devices** at the right of the top menu bar. In the upcoming window search for the devices you might want to add to your group (e.g. "ublox"). A list of devices that match your search criteria will be displayed. 
+3. Checkmark the devices you want to add from the list.
+4. Click **Assign X device(s)** to assign the selected devices. 
+
+
+To assign connected devices into the asset hierarchy, select the group where the device should appear, click on "sub-assets" and click the “+ Assign Device” button.
 
 In the following dialog, search for devices and select the devices (or sub-devices) that should be assigned.
 
@@ -244,163 +245,164 @@ To edit the name of the group, click on the "Info" tab and edit the name.
 
 ## <a name="visualize"></a>Visualizing Data Using the Data Explorer
 
-Data points (measurements or sensor data) can be visualized inside the Cockpit in three places:
+In the data explorer, data points, i.e. measurements or sensor data, can be visualized.
 
-* Clicking on the "data explorer" in the navigator. You have access to all data points of all assets from there.
+The data explorer is available for all assets or just for a particular asset.
 
-* Navigate to a specific asset and click on the tab "Data Explorer". You have access to all data points of the assets and sub-assets.
+* Click "Data explorer" in the navigator to visualize all data points of all assets.
 
-* Adding data points related widgets to a dashboard to view pre-defined reports.
+* Navigate to a particular asset and switch to the "Data explorer" tab to visualize all data points of this particular asset and its sub-assets.
 
-To visualize data points, follow these steps:
+In the data explorer, you see a list of available data points on the right. The first five data points of the selected device or group are shown by default. For details on how to add data points see [Adding data points](#add-data-points).
 
-1. Select a group or device in the navigator for which you want to visualize data points.
-2. Switch to the "Data Explorer" tab.
-
-* The first five data points of the selected device or group are shown.
-
-* Add additional data point by selecting "Add data points..."
-
-* Adjust colors, ranges, and other visualisation properties.
-
-* Browse more data by changing the time period or value ranges.
-
-* If you want to store your current configuration for later, save it as a widget using "Send as widget to dashboard" or "Send as widget to report" (see image below).
-
-<img src="/guides/users-guide/data-explorer-send-as-widget.PNG" name="data-explorer-send-widget-to-dashboard" style="width:75%;"/>
-"Send as widget to dashboard"
-
-<img src="/guides/users-guide/data-explorer-save-as-report.PNG" name="data-explorer-send-widget-to-report" style="width:75%;"/>
-"Send as widget to report"
-
-The data explorer and dashboards are closely related:
-
-* When sending a data explorer configuration as a widget to a dashboard, you can select the dashboard where the new widget will be saved.
-
-* When clicking on the configuration icon of a "Data points graph" widget, you are taken to a dialog similar to the data explorer, and here you can configure the widget.
-
-### Opening the data explorer
-
-When clicking on the tab "Data explorer", it will open.
-
-It is pre-filled with available data points of the object (group or device). The first 5 data points are shown by default.
+On the left, in the main card, you see its visualization. 
 
 ![data explorer](/guides/users-guide/data-explorer-main-view.PNG)
 
-The visualisation is generated based on data point properties.
+The visualization is generated based on data point properties.
 
-The data points properties (min, max, color, ..) are pre-filled as follows:
+The data points properties are pre-filled as follows:
 
-* If these properties have been edited before, the previous values are used.
+* If these properties have been customized previously, these values are used, see [Customizing data point properties](#Customize-data-points).
 
-* If the data points have a matching definition in the "Data Point Library", the values from the data point library are used.
+* If the data points have a matching definition in the Data Point Library, the values from the Data Point Library are used.
 
-There can be more than one matching data point entry in the "Data Point Library". In that case, the first one is selected automatically by the system. You can overwrite this selection by using the cogwheel symbol and selecting "Load X from Library". X refers to the entry in the data point library.
+There can be more than one matching data point entry in the Data Point Library. In this case, the first one is selected automatically by the system. You can overwrite this selection by clicking the menu icon of the respective data point and selecting **Load [NAME] from Library**. 
 
 ![edit data points](/guides/users-guide/data-explorer-data-points-edit.PNG)
 
-### Adding data points
+For details on modifying the visualization in general, see [Changing data point visualization](#change-visualization). For details on customizing the properties of a particular data point, see [Customizing data point properties](#Customize-data-points).
 
-Additional data points can be added to the data explorer by clicking "+ Add data point". This will bring up the following dialog:
+### <a name="change-visualization"></a>Changing data explorer visualization
 
-![add data point](/guides/users-guide/data-explorer-add-data-point.PNG)
+To change the visualization in the data explorer, you can modify several properties.
+
+**Time range**
+
+You can change the time range being shown. By default, you see the values for the last hour. 
+
+To change the time range on the X-axis,
+
+* select a different time range from the dropdown list in the top menu bar, enter a custom time range into the "From" and "To" fields in the data explorer,
+* drag the X-axis and move ot left or right to move the time period,
+* double-click into the data explorer to zoom out. 
+
+>**Info**: > Real-time updates will be switched off if you set a time range in the past.
+
+**Aggregation**
+
+You may aggregate the data being displayed to get an efficient overview over larger time periods. 
+
+By default, aggregation is set to "None". This value may be changed in the "Aggregation" field in the top menu bar. Availbale values are "Minutely", "Hourly" or "Daily", depending on the selected time range.
+
+
+**Realtime updating**
+
+By default, realtime updating is enabled which means that the data being shown is updated as new data flows into the system from the connected devices. 
+
+To turn realtime updating on or off, click **Realtime** in the top menu bar. A green light indicates, that realtime updating is enabled.
+
+
+**Data point visibility**
+
+For each datapoint, its visibility can be switched on or off by using the slider left from the data point name.
+
+### <a name="add-data-points"></a>Adding data points
+
+To add a data point to the data explorer, click  **Add data point** at the bottom of the "Data points" card. 
+
+![add data point](/guides/users-guide/Cockpit/Cockpit_AddDatapoint.PNG)
 
 In the top of the dialog, select a device from the asset hierarchy. Only the asset hierarchy below the objects selected in the navigator is visible. If "Data explorer" in the navigator was selected, the complete asset hierarchy is visible.
 
-The bottom of the dialog shows all data points of the selected object. Select the data points you want to show in the data explorer. Click "Add" to add all selected data points to the list of data points.
+The bottom of the dialog shows all data points of the selected object. Select the data points you want to show in the data explorer. Click **Add** to add all selected data points to the list of data points.
 
-### Changing data point visualization
+To save the data point to the Data Point Library, click the menu icon of the data point and from the context menu select **Save to library**. 
 
-To change the data point visualization, change the properties below the diagram.
+<img src="/guides/users-guide/Cockpit/Cockpit_DataPointContextMenu.PNG" name="data point context menu" style="width:75%;"/>
 
-The entry fields are designed to specify a precise time period to visualize:
+For details on the Data Point Library refer [Using the Datapoint Library](#library).
 
-* Left field: Start time of x-axis
+To remove a data point from the data point list, click the menu icon and select **Remove from list**.
 
-* Right field: End time of x-axis
 
-* Time aggregation level: No aggregation, daily, hourly
+### <a name="customize-data-points"></a>Customizing data point properties
 
-The following properties are available for data points:
+You can customize the visualization of a particular data point to your preferences. To do so, expand the data point entry in the data point list.
 
-* v: Select whether to visualize the data point or not.
+The following fields my be modified:
 
-* Color: Color of the graph.
+Field|Description|
+|:---|:---|
+|Label|Name of the data point, displayed on the y-axis to identify the data point. Below the label, the target is displayed, showing the name of the asset and the internal name of the data point (measurement fragment and series). This information is not editable.
+|Unit|Unit used on the y-axis. 
+|Min/Max|Range shown on the y-axis. 
+|Target|The target value is currently not shown in the diagram. The value is used in the "Data Point List" widget.|Yellow range min/max|Defines the range when MINOR alarms should be raised by threshold rule.  
+|Red range min/max|Defines the range when CRITICAL alarms should be raised by threshold rule.
+|Display|Value displayed when data is aggregated. May be "Minimum", Maximum", Minimum and maximum".
+|Chart type|The type of chart used for the visulization. May be one of "Line", "Points", "Line and points", "Bars". Default value is "line".
+|Y axis|Defines where the y-axis is shown. May be one of "Auto", "Left", "Right". Default value is "Auto". 
 
-* Label: Text used on the y-axis.
+After customizing the properties of a data point, you can save the modified settings to the Data Point Library. Click the menu icon and from the context menu select **Update [NAME] to library**.
 
-* Unit: Unit used on the y-axis. Unit is the user-defined string shown at the y-axis.
+To return to the properties stored in the Data Point Library fo a data point, select **Load [NAME] from library**.
 
-* Min / Max: Range of the y-axis.
+### Y-axis behaviour
 
-* Target value: The target value is currently not shown in the diagram. The value is used in the "Data Point List" widget.
-
-* Yellow Range Min / Max: Defines the range when minor alarms should be raised by threshold rule. These values are currently not visualized. See Smart Rules below for details.
-
-* Red Range Min / Max: Defines the range when CRITICAL alarms should be raised by threshold rules. These values are currently not visualized. See Smart Rules below for details.
-
-* Chart Type: For aggregated data, select what aggregated value should be visualized. Options are: min, max, area
-
-* Y Axis: Select on which y-axis the data point should be shown. Options are: Auto, left, right.
-
-* Target: The name of the asset of the data point. This field is not editable. The internal name of the data point (measurement fragment and series) is shown.
-
-### Browsing in the data explorer
-
-To navigate the data explorer :
-
-* Moving time period: Move to the x-axis and drag it to the left or right.
-
-* Select a time range in the diagram
-
-> Note that real-time updates will be switched off if you set a time range in the past (either by moving time axis or using date selectors).
-
-### Working with the Y-Axis
-
-In the data explorer, you can configure a column called "y-axis" with the following values:
-
-* Auto (default)
-
-* Left
-
-* Right
-
-The values define, where the y-axis for the respective data point is shown. Auto positions the first data point to the left y-axis and the remaining to the right y-axises.
+Per default, the first data point is positioned to the left y-axis and the remaining data points to the right. This behavior can be changed by modifying the respective value "Y-axis" for a particular data point (to "Left" or "Right", see above).
 
 Each data point is shown on its own y-axis, unless the following condition is met:
 
-* Two data points having the same minimum and the same maximum value share a common y-axis.
+* Two data points having the same minimum and the same maximum value.
 
-In this case, both data points are shown with a single y-axis. Additionally, the y-axis only shows the unit (or multiple units, in case they are different). The label is not shown.
+In this case, both data points share the same y-axis. This y-axis only shows the unit (or multiple units, in case they are different). The label is not shown.
 
-### Creating widgets from the data explorer
+### Adding alarms or events
 
-Use the menu and select "Send as a widget to a dashboard".
+In addition to data points you can also add alarms or events to the data explorer.
 
-This will show a modal dialog with all dashboards of the current object. Move to the relevant dashboard and press "Select" to create a new widget in the selected dashboard.
+<img src="/guides/users-guide/Cockpit/Cockpit_DataExplorerAlarms.png" name="Alarms" style="width:75%;"/> 
 
-> Note that a dashboard should be created beforehand to be listed in this dialog. You can create one by selecting "Add dashboard" option from mentioned menu.
+In the "Alarms / Events" card, click **Add alarm/ event** to add an alarm or event.
+
+<img src="/guides/users-guide/Cockpit/Cockpit_DataExplorerAlarmAdd.png" name="Add widget" style="width:75%;"/> 
+
+In the upcoming dialog, you can select an alarm or event from the list of recent alarms and events. Click **Add**, to add your selection.
+
+Expand an event, to modify its properties.
+
+Click the menu icon and in the context menu select **Remove**, to remove the entry from the list.
+
+As with data points, you can turn the visibility of an alarm/ event in the data explorer on and off by moving the slider.
+
+
+### <a name="create-widget"></a>Creating widgets from the data explorer
+
+If you want to keep your current configuration for later usage, save it as widget using **Send as widget to dashboard**.
+
+To create a widget from the data explorer, click the **More...** button in the top menu bar and select **Send as a widget to a dashboard**.
 
 ![send to dashboard](/guides/users-guide/data-explorer-send-to-dashboard.PNG)
 
-### Exporting Measurement data to csv or xlsx files
+In the upcoming dialog, select one of the dashboards available for the current object and click **Select** to add the data explorer as widget to the selected dashboard.
 
-Users have the option to download measurement data as csv or xlsx files. The exported data is divided into six columns:
+**Info**: To use this function, first a dashboard has to be created. For details on dashboards, refer to [Working with Dashboards](#dashboards).
 
- - Time - Date and time when the specific measurement was taken
+
+### <a name="export-data"></a>Exporting measurement data
+
+You may download measurement data as CSV or Excel files. The exported data shows the following information, divided into columns:
+
+ - Time when the specific measurement was taken
  - Source of the measurement
- - Device name - Name of the device you are using
- - Fragment series - (e.g. c8y_SpeedMeasurement)
- - Value - Simply the value of the measurement
- - Unit - The unit used for a particular measurement (like "C", "km/h", "sec"...)
+ - Name of the device being used
+ - Fragment series (e.g. c8y_SpeedMeasurement)
+ - Value of the measurement
+ - Unit used for a particular measurement (e.g. "C", "km/h", "sec")
 
-To download measurement data in either csv or xlsx first navigate to "Data Explorer", select your desired time range and then click on the small cogwheel button located at the top-right.
+To export measurement data, click the **More...** button in the top menu bar and select either **Download as CSV** or **Download as Excel**, according to your preferences. 
 
-![Export measurement data](/guides/users-guide/data-explorer-export-data.PNG)
-
-Choose whether to download CSV or Excel(XLSX)
-
-A"Generating Report" window will appear. The files will load depending on how many data points you have added to the "Data Explorer". Once the loading has been completed click on the "Download" button.
+The download will be generated, as shown in the upcoming dialog. This make take a while, depending on the number of data points added to the data explorer. Once the loading has been completed, click **Download**.
 
 ## <a name="dashboards"></a>Working with Dashboards
 
@@ -861,19 +863,48 @@ To remove reports hover over the report's name and click on the "X" button.
 
 ## <a name="library"></a>Using the Data Point Library
 
-The Data Point Library provides default values for data point properties. Data point properties are similar to "paragraph formats" in word processing applications: You do not want to format each paragraph individually. Instead you want to define a set of default formats and apply them to your paragraphs in your document. The Data Point Library provides the same functionality for data points: It provides a number of default data point formats that can be applied easily to your data points from different devices.
+The Data Point Library provides a collection of data points with default values for data point properties. 
 
-How does the Cockpit application use the data point library? To find the default visualisation for a data point like color or label, Cockpit searches the data point library and tries to find a matching entry. A entries is considered as "matching", if the value for fragment and series in the data point library match those of the measurement. If a matching entry is found, the corresponding data point properties are used for a default visualisation.
+Data point properties are similar to "paragraph formats" in word processing applications: You do not want to format each paragraph individually. Instead you want to define a set of default formats and apply them to your paragraphs in your document. 
 
-Additionally, the properties of data point library are used by threshold business rules: The red and yellow values configured in the data point library are used by the threshold rules to raise alarms.
+The Data Point Library provides the same functionality for data points: It provides a number of default data point "templates" that can be applied easily to your data points from different devices.
 
-When selecting "Data Point Library" in the navigator, a list of predefined data points including their properties opens.
+How does the Cockpit application use the data point library? To find the default visualization for a data point like color or label, Cockpit searches the data point library and tries to find a matching entry. An entry is considered as "matching", if the values for fragment and series in the data point library match those of the measurement. If a matching entry is found, the corresponding data point properties are used for a default visualization.
 
-![image alt text](/guides/users-guide/image_21.png)
+Additionally, the properties of the Data Point Library are used by threshold business rules: The red and yellow values configured in the Data Point Library are used by the threshold rules to raise alarms.
 
-When clicking on an entry, a single entry in the data point library can be edited:
+To open the Data Point Library, click **Data Point Library** in the "Configuration" menu of the navigator.
 
-![image alt text](/guides/users-guide/image_22.png)
+A list of available data points will be opened. For each data point, the following information is provided in the list:
+
+Color and label for the data point
+Fragment name and series
+Measurement unit
+
+### Adding a data point to the library
+
+To add a new data point to the library, click **Add data point** in the top menu bar.
+
+Provide the following information:
+
+Field|Description|
+|:---|:---|
+|Color|Select a color for the data point visualization.
+|Label|Label to identify the data point.
+|Fragment|Fragment 
+|Series|Series
+|Unit|Unit used for the measurement.
+|Target|Unit used for the measurement.
+|Yellow range|Unit used for the measurement.
+|Red range|Unit used for the measurement.
+
+Click **Save** to add the data point to the library.
+
+### Editing or removing data points
+
+To edit a data point, simply click the respective entry in the list or click the menu icon at the right of an entry and in the context menu click **Edit**.
+
+To remove a data point, click **Remove** in the context menu.
 
 ## <a name="rules"></a>Working with Smart Rules
 

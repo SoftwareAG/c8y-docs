@@ -14,10 +14,14 @@ Section|Content|
 |:---|:---|
 |[Entering the Cockpit Application](#start)|Explaining the content of the [Welcome screen](#welcome) and the initial [Home dashboard](#home). 
 |[Connect](#connect) devices and manage [assets](#asset)|How to...
-|[Visualize Data Using the Data Explorer](#visualize)|How to access and use the [data explorer](#visualize), [add data points](#add-data-points) to the data explorer, [customize data point properties](#customize-data-points), [modify the visualization](#change-visualization), store the [data explorer as widget](#create-widget), and [export](#export-data) the data. |[Working with Dashboards](#dashboards)|How to create your own analytics and monitor pages by selecting and arranging widgets. Select from various widgets including maps, tables, graphs, charts, controls and more.
-|[Handling Widgets and Business Rules](#device-registration)|How to [widgets](#widget) . How to create [business rules](#business) to work on incoming data in real-time.
-|Manage [alarms](#alarms), [reports](#reports) and [smart rules](#rules)|How to 
-|Use the [data point library](#library)|How to 
+|[Visualize Data Using the Data Explorer](#visualize)|How to access and use the [data explorer](#visualize), [add data points](#add-data-points) to the data explorer, [customize data point properties](#customize-data-points), [modify the visualization](#change-visualization), store the [data explorer as widget](#create-widget), and [export](#export-data) the data. 
+|[Working with Dashboards](#dashboards)|How to create your own analytics and monitor pages by selecting and arranging widgets. Select from various widgets including maps, tables, graphs, charts, controls and more.
+|[Using the Data Point Library](#library)|How to add, edit or remove data points in the [Data Point Library](#library).
+|[Handling Widgets](#widget)|How to create [widgets](#widget) of each type provided in the Widget collection that comes with Cumulocity.
+|[Working with Alarms](#alarms)|How to work with alarms. Since working with alarms in the Cockpit application is actually the same as working with alarms in Device Management, refer to [Working with alarms](http://cumulocity.com//guides/users-guide/device-management/#alarm-monitoring) in *Device Management*. 
+|[Managing Smart Rules](#rules)|How to [create Smart Rules](#create-rules) to analyze data in realtime and to perform actions based on data and how to and [manage Smart Rules](#rules).
+|[Managing Reports](#reports)|How to handle [Dashboard reports](#reports), how to work with [reports for exporting data](#reporting) in CSV or excel format and how to [schedule the export](#schedule-export).
+|[Handling Business Rules](#device-registration)|How to [widgets](#widget) . How to create [business rules](#business) to work on incoming data in real-time.
 
 If you want to learn more about general aspects of the Cumulocity platform and its applications, refer to [*Introduction*](/guides/users-guide/overview).
 
@@ -101,7 +105,7 @@ The data shown on the Home dashboard is shared by all users of the tenant. By de
 
 The Home dashboard can be edited and designed individually according to your needs. You can add, remove or change widgets being displayed here. 
 
-For details on editing a dashboard, refer to [Working with Dasboards](#dashboards).
+For details on editing a dashboard, refer to [Working with Dashboards](#dashboards).
 
 To reset the Home dashboard to its original content, click **More...** at the right of the top menu bar and from the context menu select **Restore dashboard**.
 
@@ -197,7 +201,7 @@ To navigate further in the asset hierarchy, use the navigator or select an objec
 
 ### Searching assets
 
-To search for groups or devices, use the **Search** button in the top bar. For details on the searching functionality, refer to [Searching](#searching) in *Overview > Search and Filter Functionaltity*.
+To search for groups or devices, use the **Search** button in the top bar. For details on the searching functionality, refer to [Searching](#searching) in *Overview > Search and Filter Functionality*.
 
 ### Adding Groups
 
@@ -284,7 +288,7 @@ You can change the time range being shown. By default, you see the values for th
 To change the time range on the X-axis,
 
 * select a different time range from the dropdown list in the top menu bar, enter a custom time range into the "From" and "To" fields in the data explorer,
-* drag the X-axis and move ot left or right to move the time period,
+* drag the X-axis and move of left or right to move the time period,
 * double-click into the data explorer to zoom out. 
 
 >**Info**: > Real-time updates will be switched off if you set a time range in the past.
@@ -293,7 +297,7 @@ To change the time range on the X-axis,
 
 You may aggregate the data being displayed to get an efficient overview over larger time periods. 
 
-By default, aggregation is set to "None". This value may be changed in the "Aggregation" field in the top menu bar. Availbale values are "Minutely", "Hourly" or "Daily", depending on the selected time range.
+By default, aggregation is set to "None". This value may be changed in the "Aggregation" field in the top menu bar. Available values are "Minutely", "Hourly" or "Daily", depending on the selected time range.
 
 
 **Realtime updating**
@@ -345,7 +349,7 @@ Field|Description|
 
 After customizing the properties of a data point, you can save the modified settings to the Data Point Library. Click the menu icon and from the context menu select **Update [NAME] to library**.
 
-To return to the properties stored in the Data Point Library fo a data point, select **Load [NAME] from library**.
+To return to the properties stored in the Data Point Library to a data point, select **Load [NAME] from library**.
 
 ### Y-axis behaviour
 
@@ -404,11 +408,56 @@ To export measurement data, click the **More...** button in the top menu bar and
 
 The download will be generated, as shown in the upcoming dialog. This make take a while, depending on the number of data points added to the data explorer. Once the loading has been completed, click **Download**.
 
+## <a name="library"></a>Using the Data Point Library
+
+The Data Point Library provides a collection of data points with default values for data point properties. 
+
+Data point properties are similar to "paragraph formats" in word processing applications: You do not want to format each paragraph individually. Instead you want to define a set of default formats and apply them to your paragraphs in your document. 
+
+The Data Point Library provides the same functionality for data points: It provides a number of default data point "templates" that can be applied easily to your data points from different devices.
+
+How does the Cockpit application use the data point library? To find the default visualization for a data point like color or label, Cockpit searches the data point library and tries to find a matching entry. An entry is considered as "matching", if the values for fragment and series in the data point library match those of the measurement. If a matching entry is found, the corresponding data point properties are used for a default visualization.
+
+Additionally, the properties of the Data Point Library are used by threshold business rules: The red and yellow values configured in the Data Point Library are used by the threshold rules to raise alarms.
+
+To open the Data Point Library, click **Data Point Library** in the "Configuration" menu of the navigator.
+
+A list of available data points will be opened. For each data point, the following information is provided in the list:
+
+Color and label for the data point
+Fragment name and series
+Measurement unit
+
+### Adding a data point to the library
+
+To add a new data point to the library, click **Add data point** in the top menu bar.
+
+Provide the following information:
+
+Field|Description|
+|:---|:---|
+|Color|Select a color for the data point visualization.
+|Label|Label to identify the data point.
+|Fragment|Fragment 
+|Series|Series
+|Unit|Unit used for the measurement.
+|Target|Unit used for the measurement.
+|Yellow range|Unit used for the measurement.
+|Red range|Unit used for the measurement.
+
+Click **Save** to add the data point to the library.
+
+### Editing or removing data points
+
+To edit a data point, simply click the respective entry in the list or click the menu icon at the right of an entry and in the context menu click **Edit**.
+
+To remove a data point, click **Remove** in the context menu.
+
 ## <a name="dashboards"></a>Working with Dashboards
 
 Dashboards provide you with a customized visualization of your data with a set of widgets. Widgets can display maps, images, graphs, tables and other graphic representations of data. 
 
-Cumulocity comes with a number of preset widgets, see section [Widget Package](#widget) for details. You can also develop your own widgets according to your needs and add them to your Cumulocity account. Refer to the [Web Developer's Guide](/guides/web/) for details.
+Cumulocity comes with a number of preset widgets, see section [Widget Collection](#widget) for details. You can also develop your own widgets according to your needs and add them to your Cumulocity account. Refer to the [Web Developer's Guide](/guides/web/) for details.
 
 ### <a name="creating-dashboards"></aCreating a dashboard
 
@@ -424,7 +473,7 @@ In the "Dashboard info" section of the "Create dashboard" window, provide the fo
 * The location of the dashboard in the navigator, with "10000" being ordered first and "-10000" last
 * An icon which is shown next to the dashboard name in the navigator
 
-In the "Dashboard layout" section you can select a theme for the dashboard (one of Light, Dark, Transparent or Branded) and a default header style for the wigets (one of Regular, Border, Overlay, or Hidden). Moreover, you can change the default widget margin (default value is 15 px). 
+In the "Dashboard layout" section you can select a theme for the dashboard (one of Light, Dark, Transparent or Branded) and a default header style for the widgets (one of Regular, Border, Overlay, or Hidden). Moreover, you can change the default widget margin (default value is 15 px). 
 
 A preview of the selected layout settings is displayed in the "Preview" section to check your selections.
 
@@ -442,11 +491,11 @@ To add a widget to a dashboard, click **Add widget** in the top menu bar.
 
 <img src="/guides/users-guide/Cockpit/Cockpit_AddWidget" name="Add widget" style="width:100%;"/> 
 
-In the upcoming dialog select a widget type from the dropdown list. Depending on the widget type selected, additional fields and checkboxes will be displayed to be filled in or selected. For details on the widgets refer to [Widget Package](#widget). 
+In the upcoming dialog select a widget type from the dropdown list. Depending on the widget type selected, additional fields and checkboxes will be displayed to be filled in or selected. For details on the widgets refer to [Widget Collection](#widget). 
 
 Click **Customize widget style** to customize the content and header style for the widget individually, similar to specifying the general layout in the dashboard editor.
 
-Cklick **Save** to add the widget to the dashboard.
+Click **Save** to add the widget to the dashboard.
 
 ### Modifying widgets on a dashboard
 
@@ -515,82 +564,193 @@ To delete a dashboard from an object, click **More...** in the top menu bar and 
 ... add description here
 
 
-## <a name="widget"></a>Widget Package
+## <a name="widget"></a>Widget Collection
 
-The Cockpit includes preset widget types. Each widget type provides different parameters to configure and different data displayed. The following section describes each available widget type and the configuration properties.
+The Cockpit includes preset widget types. Each widget type provides different parameters to configure and different data to be displayed. 
 
-### Widget "Asset Properties"
-A user-defined list of attributes of the current object is displayed. The current object can be a device or a group.
+The following section describes, in alphabetical order, each available widget type and its configuration properties.
 
-Parameters to configure:
+### Widget "Alarm list"
 
-* Title of widget
+The "Alarm list" widget shows a list of alarms, filtered by objects, alarm severity and alarm status. For details on the information provided for each alarm, refer to [Working with alarms](#alarm-monitoring) in *Device Management*.
 
-* List of properties, see "[Configuring a property list](#widget-asset-table-)" below.
+**Parameters to configure**
 
-Note: in the view mode, widget displays only these properties that are not empty.
+<img src="/guides/users-guide/Cockpit/Cockpit_CreateAlarmList" name="Create Alarm list widget" style="width:75%;"/>
 
-### Widget "Data Point Graph"
+Field|Description|
+|:---|:---|
+|Title|Widget title. By default, the widget type is simply used as title.
+|Target assets or devices|Select groups or devices, optional HTML expressions which should be evaluated.
+|Status|Only show devices with alarms of of the selected alarm status.
+|Type|Only show alarms of the specified type(s). Details can be seen when clicking once on an alarm.
+|Severities|Only show alarms of the selected alarm severity.
+|Order|Alarms may be ordered by the active status (followed by severity and time, the default) or the severity (followed by time).
 
-Show a data point (measurements) in a graph. The visualisation is the same as the data explorer.
+### Widget "All critical alarms"
 
-The easiest way to create a data point graph widget is to navigate to the data explorer and then select "Send to dashboard".
+The "All critical alarms" widget shows all objects with a critical alarm. There are no additional parameters to be configured.
 
-The parameters to configure are the same as in the data explorer. Please refer to "[Data Explorer](#visualize)" for further details.
+For details on alarms, refer to [Working with alarms](/guides/users-guide/DeviceManagement#alarm-monitoring) in *Device Management*.
 
-### Widget "Data Point Table"
+### Widget "Applications"
 
-This widget configuration is identical to the data points graph, except instead of visualizing the data as a line-chart, data is visualized as a table.
+The "Applications" widget shows a list of links to all available applications. There are no additional parameters to be configured.
 
-* The data points table widget displays data based on selected data points, time interval and aggregation.
+For details on applications, refer to [Managing Applications](/guides/users-guide/Administration#applications) in *Administration*.
 
-* Out of range values, based on configured yellow and red ranges, are highlighted in the table.
+
+### Widget "Asset notes"
+
+The "Asset notes" widget displays messages provided by the administrative user to all owners of the current widget. 
+
+<img src="/guides/users-guide/Cockpit/Cockpit_AssetNotesWidget" name="Asset notes widget" style="width:75%;"/>
+
+Only users with the permission to edit the home dashboard will be able to provide this message.
+
+
+### Widget "Asset properties"
+
+The "Asset properties" widget displays a user-defined list of attributes of the current object. The current object can be a device or a group.
+
+**Parameters to configure**
+
+Field|Description|
+|:---|:---|
+|Title|Widget title. By default, the widget type is simply used as title.
+|Target assets or devices|Select groups or devices.
+|Properties|List of properties, see [Configuring a property list](#widget-asset-table-).
+
+>**Info:** In the view mode, this widget only displays the properties which are not empty.
+
+### Widget "Asset table"
+
+The "Asset table" widget shows details of all child devices in a table. This is a very powerful widget, allowing to arrange selected properties of objects in a table.
+
+**Parameters to configure**
+
+Field|Description|
+|:---|:---|
+|Title|Widget title. By default, the widget type is simply used as title.
+|Target assets or devices|Select for which object all child devices should be shown. This is typically a group object.
+|Properties|Select properties or actions of an object to visualize them as columns in the table. 
+
+**Example**
+
+In the following screenshot, five columns are configured. Three property columns "Meter", “Vendor”, and “Owner”, which refer to the properties “name”, type” and “owner” respectively. Additionally, there are two actions, one for toggling the maintenance mode, and one for rebooting the device.
+
+![image alt text](/guides/users-guide/image_17.png)
+
+The resulting table is visualized as follows:
+![image alt text](/guides/users-guide/image_18.png)
+
+**Adding properties**
+
+To add a property, click **+Add Properties** and select one or more properties to be added. 
+
+**Info**: The property "Active alarm status" shows active alarms as icons in the table. If you select this property, you also need to configure the renderer "Active Alarm Status" in the list of columns.
+
+**Adding actions**
+
+To add an action, click **+Add Action**. Select **Toggle maintenance mode** to add the predefined action to toggle the maintenance mode. Or select **Create operation** to create a button that will execute a shell command. In the following dialog you can then enter the label for the button and the shell command to be executed.
+
+![image alt text](/guides/users-guide/image_19.png)
+
+>**Info:** The dialog shows the predefined shell commands of the first device that supports shell commands. The list is empty if there is no such device. For more details, refer to [shell commands](http://www.cumulocity.com/guides/users-guide/device-management/#shell).<br>
+You can also enter the JSON format for the operation that will be sent to the device. For details, contact the device vendor for supported operations.
+
+**Modifying the table**
+
+To edit the header of a column, click on its value in the "Label" column and edit the label.
+
+You can rearrange the columns by clicking the icon at the very left of a row and dragging and dropping the entry.
+
+To remove a property or an action, hover over the respective row and click **Delete** at the right.
+
+### Widget "Cockpit welcome"
+
+The "Cockpit welcome" lets you display a welcome message to the Welcome screen. There are no additional parameters to be configured.
+
+### Widget "Data point graph"
+
+The "Data point graph" widget shows a data point (measurement) in a graph. The visualization is the same as in the [data explorer](#visualize).
+
+<img src="/guides/users-guide/Cockpit/Cockpit_DataPointGraphWidget" name="Data Point Graph widget" style="width:75%;"/>
+
+The easiest way to create a "Data point graph" widget is to navigate to the data explorer, click the **More...** button in the top menu bar and select **Send as a widget to a dashboard**.
+
+Refer to [Visualizing Data Using the Data Explorer](#visualize) for further details on the parameters to be configured.
+
+### Widget "Data point list"
+
+The "Data point list" widget shows data points (measurements), one in each row, with current values and data point properties.
+
+**Parameters to configure**
+
+Field|Description|
+|:---|:---|
+|Title|Widget title. By default, the widget type is simply used as title.
+|Data point|Shows a list of available data points. You must enable at least one data point. Click **Add data point** to add a data point to the list. For details on how to add data points see [Adding data points](#add-data-points).
+|Column visibility|Select which columns should be visible: <br>Label: Label of the data point. See [Visualizing Data Using the Data Explorer](#visualize)for details. <br>Target: Target value. Can be configured in the [data explorer](#visualize) or [Data Point Library](#data-point-library).<br>Current: Current value. <br>Diff: Absolute difference between current value and target value. <br>Diff %: Percentage of difference between current value and target value. <br>Asset: Name of the device or group of the data point. 
+
+### Widget "Data point table"
+
+The "Data point table" widget configuration is similar to the "Data point graph" widget, but instead of visualizing the data as a line-chart, data is visualized as a table.
+
+The "Data point table" widget displays data based on selected data points, time interval and aggregation.
+
+Out of range values, based on configured yellow and red ranges, are highlighted in the table.
 
 ![Data point table](/guides/users-guide/datapointtable.png)
 
-### Widget "Map"
+### Widget "Event list"
 
-Show location of a device or all devices in the group. The map provides the following features:
+The "Event list" widget lets you monitor events for a selected device. 
 
-* The map has functionality like drag it and zoom in/out.
+<img src="/guides/users-guide/Cockpit/Cockpit_EventListWidget" name="Event list widget" style="width:75%;"/>
 
-* The icons representing the devices are color coded. The color used depends on the following rule:
+Additionally, a specific date range can be set and the events can be monitored in realtime. 
 
-    * At least one critical alarm: red
+### Widget "Fieldbus device"
 
-    * At least one major alarm: orange
+The "Fieldbus device" widget lets you see the status of a modbus device and operate it.
 
-    * At least one minor alarm: yellow
+For details on the "Fieldbus device" widget, refer to [Monitoring device status using the Fieldbus device widget](#fieldbus-device-widget) in *Cloud Fieldbus*.
 
-    * At least one warning: blue
+### Widget "Help and service"
 
-    * No alarm: green
+The "Help and service" widget displays links to help and service resources. There are no additional parameters to be configured.
 
-* When clicking on a device icon, a popup appears with the following information:
+<img src="/guides/users-guide/Cockpit/Cockpit_HelpAndServiceWidget" name="Help and service widget" style="width:75%;"/>
 
-    * The device name: When clicked, the application navigates to the device.
+### Widget "Image"
 
-    * The date at which the device last reported its location, if available.
+The "Image" widget lets you display a single image to be selected from your computer by browsing. There are no additional parameters to be configured.
 
-    * The option to show/hide the device tracks for the previous and current days.
+### Widget "Info Gauge"
 
-Parameters to configure:
+The "Info gauge" widget visualizes one data point in form of a radial gauge and multiple data points as labels. 
 
-* Target device or group: Select which devices are shown on the map. If a group is selected, all devices in that group (but not in any subgroups) are visible.
+<img src="/guides/users-guide/Cockpit/Cockpit_InfoGaugeWidget" name="Info gauge widget" style="width:75%;"/>
 
-Note: If none of the target device(s) has a known location, then the widget show a world map with no icons.
+You can select one data point for the gauge, and multiple data points shown with labels on the left side.
+
+<img src="/guides/users-guide/Cockpit/Cockpit_InfoGaugeDataPoint" name="Info gauge data points" style="width:75%;"/>
+
+You must enable at least one data point in each section to create the "Info gauge" widget.
+
 
 ### Widget "HTML"
 
-Show user-defined content. The content can be formatted using HTML.
+The "HTML" widget shows user-defined content. The content can be formatted using HTML.
 
-The parameter to configure:
+**Parameters to configure:**
 
-* Target device or group: Select the object for which optional HTML expressions are evaluated.
+* Target assets or devices: Select the objects for which optional HTML expressions are evaluated.
 
-* HTML content:
+* HTML code
 
-Variables that can be used inside the HTML content:
+The following variables can be used inside the HTML content:
 
 * {{devicesCount}}: Total number of devices.
 
@@ -598,7 +758,7 @@ Variables that can be used inside the HTML content:
 
 * {{deviceGroupsCount}}: Total number of groups.
 
-* {{device.name}}: The name of device.
+* {{device.name}}: The name of the device.
 
 * {{device.*property*}}: More general form of the above. You can address any property of the device.
 
@@ -606,114 +766,163 @@ Variables that can be used inside the HTML content:
 
 * {{device.*fragment*.*property*}}: More general form of the above. You can address any property of any fragment of the device.
 
-Additional Information:
+>**Info:** "Device" refers to the target device, as selected in the widget configuration parameter.<br>
+*fragment.property* refers to the properties of the respective device. To see the available property names, you can use the "Asset property" or “Asset table” widget and click **+Add property** in the widget configuration. This will show a table of supported properties. You can copy and paste the values from the column “Property”. Generated properties of these widgets are not available in the HTML widgets.
 
-* "Device" refers to the target device, as selected in the widget configuration parameter.
+### Widget "Linear Gauge"
 
-* *fragment.property* refers to the properties of the respective device. To see the available property names, you can use the "Asset property" or “Asset table” widget and click the “+ Add property” link in the widget configuration. This will show a table of supported properties. You can copy and paste the values from the column “Property”. Generated properties of these widgets are not available in the HTML widgets.
+The "Linear gauge" widget visualizes data points in form of a linear gauge. Min and max target values are shown on the gauge as well.
 
-### Widget "Asset alarms"
+<img src="/guides/users-guide/Cockpit/Cockpit_LinearGaugeWidget" name="Linear gauge widget" style="width:75%;"/>
 
-Show all objects with a critical alarm. There are no additional parameters to configure.
+You must enable at least one data point to create the "Linear gauge" widget.
+ 
 
-### Widget "Asset count"
+### Widget "Map"
 
-Shows the number of devices online and with alarms. There are no additional parameters to configure.
+The "Map" widget shows the location of a device or all devices of a group. 
 
-### Widget "Alarm list"
+<img src="/guides/users-guide/Cockpit/Cockpit_MapWidget" name="Map widget" style="width:75%;"/>
 
-Show a list of alarms, filter for objects, alarm severity and alarm status.
+You can drag the map and move its content, and you can zoom in and out by using the **Plus** and **Minus** buttons. 
 
-Parameters to configure:
+The icons representing the devices are color-coded. The color used follows these rules:
 
-* Target device or group: Select groups or devices, optional HTML expressions which should be evaluated.
+    * Red = At least one critical alarm
+    * Orange = At least one major alarm
+    * Yellow = At least one minor alarm
+    * Blue = At least one warning
+    * Green = No alarm
 
-* Status: Show only devices with alarms of a specified alarm status.
+Click a device icon, to open popup with the following information:
 
-* Type: Show only alarms of the specified type. Details can be seen when clicking once on an alarm.
+* The device name. When clicked, the application navigates to the device.
+* The date at which the device last reported its location, if available.
+* A slider to show/hide the device tracks for the previous and current days.
 
-* Severity: Show only alarms of the selected alarm severity.
+**Parameters to configure**
 
-### Widget "Recent alarms"
+* Target assets or devices: Select which devices are shown on the map. If a group is selected, all devices in that group (but not in any subgroups) are visible.
 
-Show all alarms of all severity sorted by time. There are no additional parameters to configure.
-
-### Widget "Data point list"
-
-Show data points (measurements), one in each row, with current values and data point properties.
-
-Parameters to configure:
-
-* List of data points: Select one or multiple data points.
-
-* Select visible columns:
-
-    * Label: Label of the data point. See Data explorer for details.
-
-    * Target: Target value. Can be configured in the data explorer or data point library.
-
-    * Current: Current value.
-
-    * Diff: Absolute difference between current value and target value.
-
-    * Diff %: Percentage of difference between current value and target value.
-
-    * Asset: Name of the device or group of the data point.
-
-### Widget "Asset table"
-
-Shows details of all child devices in a table. This is a very powerful widget, allowing to arrange selected properties of objects in a table.
-
-Parameters to configure:
-
-* Target device or group: Select for which object all child devices should be shown. This is typically a group object.
-
-* Properties: Select properties or actions of an object to visualize them as columns in the table. In the configuration dialog, you see a list of configured columns, each  of the columns can be either a property or an action.
-
-Example:
-
-* In the following screenshot, five columns are configured. Three property columns "Meter", “Vendor”, and “Owner”, which refer to the properties “name”, type” and “owner”. Additionally, there are two actions, one for toggling the maintenance mode, and one to reboot the device.
-![image alt text](/guides/users-guide/image_17.png)
-
-* The resulting table is visualized as follows:
-![image alt text](/guides/users-guide/image_18.png)
-
-
-The list of properties can be edited as follows:
-
-* Add new properties: Click on "+ Add Properties" and select one or more properties. The selected properties will then be added to the end of the columns.<br>
-Note: The property "Active Alarm Status" shows active alarms as icons in the table. If you select this property, please also configure the renderer "Active Alarm Status" in the list of columns.
-
-* Add a new action: Click on "+ Add Action". You can add the predefined action to toggle the maintenance mode. Or you select “Create Operation” to create a button that will execute a shell command. In the following dialog you can then enter the label for the button and the shell command to be executed.
-![image alt text](/guides/users-guide/image_19.png)
-Note: The dialog shows the predefined shell commands of the first device that supports shell commands. The list is empty if there is no such device. For more details please refer to [shell commands](http://www.cumulocity.com/guides/users-guide/device-management/#shell).<br>
-You can also enter the JSON format for the operation that will be sent to the device. For details, please contact the device vendor for supported operations.
-
-* Edit column header: To edit the header of the column, click on the column "Label" and edit the label.
-
-* Arrange columns: You can rearrange the columns by dragging and dropping them using the handle before the column "Label".
-
-* Remove properties: Click on the red icon at the end of a row to remove the column.
-
-### Widget "Relay control"
-
-Allows you to switch a device relay on or off. Only available for devices that support this type of operation.
-
-### Widget "Relay array"
-
-Given an array of relays, you can switch relays on or off independently. Only available for devices that support this type of operation.
+>**Info**: If none of the target device(s) has a known location, then the widget shows a world map without icons.
 
 ### Widget "Message sending"
 
-Sends a message to a device. The behavior of the device itself is device dependent. Only available for devices that support this type of operation.
+The "Message sending" widget sends a message to a device. The behavior of the device itself is device-dependent. Only available for devices that support this type of operation.
+
+### Widget "Pie chart"
+
+The "Pie chart" widget displays data points (measurements) with current values in a pie chart presentation.
+
+**Parameters to configure**
+
+Field|Description|
+|:---|:---|
+|Title|Widget title. By default, the widget type is simply used as title.
+|Pie chart options|Select from the options to show tooltips, percentages, legends in the pie chart. |Data point|Shows a list of available data points. You must enable at least one data point. Click **Add data point** to add a data point to the list. For details on how to add data points see [Adding data points](#add-data-points).
+
+
+### Widget "Quick links"
+
+The "Quick links" widget displays several quick links to relevant operations. There are no additional parameters to be configured.
+
+<img src="/guides/users-guide/Cockpit/Cockpit_QuickLinksWidget" name="Quick links widget" style="width:75%;"/>
+
+### Widget "Radial Gauge"
+
+The "Radial gauge" widget visualizes data points in form of a radial gauge. 
+
+<img src="/guides/users-guide/Cockpit/Cockpit_RadialGaugeWidget" name="Radial gauge widget" style="width:75%;"/>
+
+You must enable at least one data point to create the "Radial gauge" widget.
+
+
+### Widget "Recent alarms"
+
+The "Recent alarms" widget shows all alarms of all severity sorted by time. There are no additional parameters to be configured.
+
+<img src="/guides/users-guide/Cockpit/Cockpit_AlarmListWidget" name="Alarm list widget" style="width:75%;"/>
+
+For details on alarms, refer to [Working with alarms](/guides/users-guide/DeviceManagement#alarm-monitoring) in *Device Management*.
+
+### Widget "Relay array control"
+
+The "Relay array control" widget lets you switch relays on or off independently in an array of relays. Only available for devices that support this type of operation.
+
+### Widget "Relay control"
+
+The "Relay control" widget allows you to switch a device relay on or off. Only available for devices that support this type of operation.
+
+### Widget "Rotation"
+
+The "Rotation" widget lets you render an object model of a device.
+
+**Parameters to configure**
+
+Field|Description|
+|:---|:---|
+|Title|Widget title. By default, the widget type is simply used as title.
+|Target assets or devices|Select group or device to be displayed.
+|Object model for rendering|Select an object model type for rendering. May be one of "Box model" or "Phone model".
+|Wireframe|Turn "Wireframe" on or off (default = on). The "wireframe" mode displays the object in a skeletal representation.
+|Camera type|Select the type of camera to be used. May be one of "Orthographic camera" or "Perspective camera".
+
+In the "Rotation" widget you can rotate the object by dragging and moving it around. Zoom in and out by using the mouse.
+
+### Widget "SCADA"
+
+The "SCADA" widget provides a graphic representation of the status of a device.
+
+For details on the "SCADA" widget, refer to [Monitoring status using the SCADA widget](#scada-widget) in *Cloud Fieldbus*.
+
+### Widget "Silo"
+
+The "Silo" widget displays data points (measurements) with current values in a silo presentation.
+
+**Parameters to configure**
+
+Field|Description|
+|:---|:---|
+|Title|Widget title. By default, the widget type is simply used as title.
+|Data point|Shows a list of available data points. You must enable at least one data point. Click **Add data point** to add a data point to the list. For details on how to add data points see [Adding data points](#add-data-points).
+
+### Widget "Traffic light"
+
+The "Traffic light" widget visualizes the states of a device as traffic light.
+
+**Parameters to configure**
+
+Field|Description|
+|:---|:---|
+|Title|Widget title. By default, the widget type is simply used as title.
+|Target assets or devices|Select group or device to be displayed.
+|States mapping|
+
+### Widget "Twitter News"
+
+The "Twitter news" widget displays tweets from Twitter's embedded timeline widget.
+
+<img src="/guides/users-guide/Cockpit/Cockpit_TwitterNewsWidget" name="Twitter news widget" style="width:75%;"/>
+
+**Parameters to configure**
+
+Field|Description|
+|:---|:---|
+|Title|Widget title. By default, the widget type is simply used as title.
+|Twitter's username|User name for the Twitter account being displayed.
+|Twitter's widget ID|ID for the Twitter widget. You can obtain the ID from widgets settings.
+|Options|Select if you want to display a header, footer, borders or transparency.
 
 ## <a name="alarms"></a>Working with Alarms
 
-Working with alarms in the Cockpit application is identical to working with alarms in Device Management. See [Working with alarms](http://cumulocity.com//guides/users-guide/device-management/#alarm-monitoring) in the Device Management section of the User Guide.
+Working with alarms in the Cockpit application is identical to working with alarms in Device Management. See [Working with alarms](http://cumulocity.com//guides/users-guide/device-management/#alarm-monitoring) in *Device Management*.
 
-## <a name="reports"></a>Working with Reports
+## <a name="reports"></a>Working with Dashboard Reports
 
-There are two types of reports in the Cockpit application. Dashboard reports enable you to track applications, alarms, assets, events and many other widgets. The second type of report lets you export specific data to either csv or xlsx files, see ["Exporting data with reports"](#reporting).
+There are two types of reports in the Cockpit application. 
+
+* Dashboard reports enable you to track applications, alarms, assets, events and many other widgets. 
+* The second type of report lets you export specific data to either CSV or Excel files, described in ["Exporting data with reports"](#reporting).
 
 Dashboard reports are global dashboard pages, regardless of the asset hierarchy. 
 
@@ -733,290 +942,240 @@ Next, widgets can be added to the report.
 
 ### Adding widgets to reports
 
-You can add widgets to reports in the same way as adding widgets to dashboards. For details, see ...
+You can add widgets to reports in the same way as adding widgets to dashboards. 
+
+Click **Add widget** in the top menu bar and select a widget type from the list. For details on all widgets types available, refer to [Widget Collection](#widget).
 
 ### Deleting reports
 
 To delete a report, open the report and click **More...** at the right of the top menu bar. From the context menu, select **Remove report**.
 
 
-## <a name="reporting"></a>Exporting data with reports
+## <a name="reporting"></a>Exporting Data with Reports
 
-With the reporting feature, you can request csv or xlsx reports for the whole tenant. Additionally, you can choose to *Filter* according to specific devices, time ranges or *Fields*. The reports contain information about all specified "Filters" and enabled "Fields". Maximum number of documents that can be exported into a single xlsx file is 1 million. If the number of documents for defined "Filters" exceeds the limit, the resulted document gets only first 1 million of documents.
+With this reporting feature, you can request reports for the whole tenant in CSV or Excel format. Additionally, you can choose to filter for specific devices, time ranges or fields. The reports contain information about all specified filters and enabled fields. 
+
+>**Info:** The maximum number of documents that can be exported into a single file is 1 million. If the number of documents for defined filters exceeds this limit, only first 1 million documents will be taken.
 
 To work with dashboard reports please refer to [Working with Dashboard Reports](#reports).
 
-To show all reports, expand "Reports" and click on "Reporting".
+To show all reports, click "Reporting" in the "Reports" menu.
 
-If a report has been created, you can duplicate it. To do so, go to the report configuration for the desired report and click "Duplicate" at the end of its row. A new window will open where all the data in the current report will be duplicated. You can apply changes if you want. To exit, press the "Save" button.
+In the "Reporting" page you will find a list displaying all reports with their names and time range.
 
 ### Adding reports
 
-To create additional reports, click on "Add Report"
+To create a report, click **Add Report** in the top menu bar.
 
-- Enter "Name" of the report.
-- Choose if the file type will be either "csv" or "Excel".
-- [Add Filters](#filters) to request object or time specific reports.
-- [Select Fields](#fields) of the report.
-- Click on the "Save" button to finish.
-
-![Add Reports](/guides/users-guide/addreports.png)
+Enter a name for the report and select the file type (CSV or xlsx). 
 
 <a name="filters"> **Filters** </a>
 
-Reports can be filtered to particular objects or a time range. To choose the object to be exported, first navigate to the "Object to Export" search bar located under the "Filters" section. Specific devices or groups can be selected by writing their name or property value in the search bar. When you click the "Search" button cockpit will search for a matching entry in your device library. After all matching devices have been found they will be displayed under the search bar. To select a device simply click on its name and it will be highlighted in green.
+In the "Filter" section, you can select filters to request object- or time-specific reports.
 
-![Object filter](/guides/users-guide/objectfilter.png)
+<img src="/guides/users-guide/Cockpit/Cockpit_ReportFilters" name="Report filters" style="width:100%;"/>
 
-Additional filters such as "Time Range" can be enabled. You have the option to filter object reports to "Last year", "Last month", "Last week" or simply enter a custom date-hour range. To select time range click on the scroll down menu and choose your desired time period. If you choose to customize the time range two small date fields will appear to select a time range.
+To filter for a particular object, enter a name or property value into the search field and click the search icon. All matching devices or groups will be displayed below the "Value" field. Click a device to select it (highlighted in green). 
 
-![Time range](/guides/users-guide/timerange.png)
+The "Time range" filter can filter object reports for a specific time range. Select a time range from the dropdown field. This may be one of "Last year", "Last month", "Last week" or select "Custom" and enter a custom from/to range in the additional fields.
 
-To enable filters you will have to click on the checkbox located under "Enabled".
+Select the checkbox in front of the filter name to enable the filter.
 
 <a name="fields"> **Fields** </a>
 
-In order to process reports, different fields can be selected. For example, if you select "Alarms" and "Events" you will filter the reports only to those two fields. Overall there are four fields that you can choose from.
+Apart from object- and time-specific filtering you may filter reports for specific fields:
 
 - Alarms
 - Events
-- Managed object
+- Managed objects
 - Measurements
 
-To enable a field simply click on the name of the field.
+Use the slider to enable/disable a field.
 
-![Fields](/guides/users-guide/enabledordisabledfields.png)
+<img src="/guides/users-guide/Cockpit/Cockpit_ReportFields" name="Report fields" style="width:100%;"/>
 
-When a certain field is enabled, predefined or empty properties can be added. If you choose to add empty properties click on "Add". To enter label or path click on either "Column" or "Path" located in the red row. For example, if you enable the "Alarms" field you can type "Severity" in column and path to receive report only for alarm severities.
+When a field is enabled, predefined or empty properties can be added. 
 
-If you have one field in Fields section that is not originated from "Add predefined" list but defined as a custom property, then it is required that at least one property must be set up for exporting for the custom values, so it will appear in the exported excel sheet. As an example, if  a report has 4 Fields defined: time, device name, type and c8y_SpeedMeasurement.speed.value, then the first 3 are predefined properties, and the last one is a custom property. If any measurement for export does not have a custom property c8y_SpeedMeasurement.speed.value, then it will not appear on the excel sheet.
+Click **Add** to add empty properties. To enter a label or path, click "Column" or "Path" and edit the field. For example, if you enable the "Alarms" field you could enter "Severity" in column and path to receive reports only for alarm severities.
 
-If your field is a valid.key.with.dot then refer to it as ['fragment.key.with.dot'] in the path, e.g. ['fragment.key.with.dot'].serie.value
+Click **Add predefined**, to add predefined properties. Simply select the desired properties from the list and click **Select**. Use the search field at the top to search for a specific property.
 
-To add predefined properties click on "Add predefined".
+<img src="/guides/users-guide/Select" name="Select" style="width:75%;"/>
 
-To select predefined properties click on the respective checkbox located under "SHOW". After the desired properties have been selected click on "Select".
+...
+If you have at least one field that is not originating from the "Add predefined" list but defined as a custom property, then you need to set up at least one property for the custom values to appear in the export. As an example, if  a report has 4 fields defined: time range, device name, type and c8y_SpeedMeasurement.speed.value, then the first 3 are predefined properties, while the last one is a custom property. If any measurement for export does not have a custom property c8y_SpeedMeasurement.speed.value, then it will not appear in the export file.
 
-![Select](/guides/users-guide/select.png)
+If your field is a valid.key.with.dot then refer to it as ['fragment.key.with.dot'] in the path, e.g.: ['fragment.key.with.dot'].serie.value
 
-To search for a specific property efficiently, you can use the search field.
+In case of "Measurements" enabled, you can also choose **Add from data point**. For details on how to add data points see [Adding data points](#add-data-points).
 
-If the "Measurements" field was enabled one can also "Add from data point".
+### <a name="schedule-export"></a>Scheduling exports
 
-![Add from datapoint](/guides/users-guide/addfromdatapoint.png)
+To schedule the export to a CSV or Excel file to any point in time, click the menu icon at the end of the row and from the context menu select **Schedule export**. In the upcoming window you can customize the Smart Rule "On timer send export via email" according to your needs.
 
-To choose a data point click on the checkbox. When the selection is completed, click on "Add".
+<img src="/guides/users-guide/export_schedule_frequency.png" name="Exporting" style="width:75%;"/>
 
-The "Search field" can also be used for easier handling. Type the desired device's name or value of any property in the "Search field" and click "Submit". All matching entries are displayed.
+**1 - Rule name**
 
-![Add datapoint](/guides/users-guide/adddatapoint.png)
+The rule name is pre-filled, providing the name of the report, but may be modified.
 
-### Exporting Inventory data to csv or xlsx files
+**2 - Report & frequency**
 
-To export "Inventory data" to csv or xlsx files navigate to "Reporting" located under the "Reports" tab
+ Define the frequency for sending the report, i.e. every hour, day, week, month or year. Depending on the frequency selected, provide additional timing information. For example, if you have selected "every month", provide the day of month, hour and minute.
 
-- Select the desired files that you wish to export by clicking on the relevant checkbox
-- Click on "Export"
+**3 - Send email:**
 
-![Exporting](/guides/users-guide/exportinventorydata.png)
+Complete the email information. 
 
-You will receive an e-mail with the links to each file.
+In the "Send to" field, provide the email address of the receiver. This field is mandatory. Optionally, you can provide email addresses for sending CC or BCC and add the email address of the sender for reply.
 
-Standard time properties of documents (like time or creationTime in alarms) are exported
+Specify the subject of the email. This field is pre-filled, but may be modified.
 
-* to xlsx file in the format: 03/13/2016 00:00:24
-* to csv file in the format: 2016-03-13T00:01:24.000Z
+Enter the actual email message. Available placeholders are {host}, {binaryId}. The default value is "File with exported data can be downloaded from {host}/inventory/binaries/{binaryId}". 
 
-Only csv time contains miliseconds and timezone.
+Click **Create** to create the customized Smart Rule "On timer send export via email".
 
-### Scheduling exports
+The Smart Rule will be added to the report details.
 
-To schedule the export to csv or xlsx at some point in time navigate to "Schedule export" located in the right menu in the chosen export.
+<img src="/guides/users-guide/Cockpit/ReportSmartRule.png" name="Smart rule" style="width:100%;"/>
 
-![Exporting](/guides/users-guide/export_schedule.png)
 
-Define the frequency for sending the report, i.e. every hour, day, week, month or year:
-* For "every year": chooce day of month, month, hour and minute
-* For "every month": choose day of month, hour and minute
-* For "every day": choose hour and minute
-* For "every hour": choose minute
+### Exporting reports
 
-![Exporting](/guides/users-guide/export_schedule_frequency.png)
+To export a report to a CSV or xlsx file, select the checkbox in front of the report in the list and at the left of the top menu bar click **Export**.
 
-Complete the email information:
-* "Send to": email address of receiver. This field is required.
-* "Send CC to": email address of "carbon copy"
-* "Send BCC to": email address of "blind carbon copy"
-* "Reply to": email address of sender
-* "Subject": subject of email
-* "Message": required message of email. Available placeholders: {host}, {binaryId}. The default value is "File with exported data can be downloaded from {host}/inventory/binaries/{binaryId}".
+You will receive an e-mail containing links to each export file.
 
-![Exporting](/guides/users-guide/export_schedule_email.png)
+Standard time properties of documents (like time or creationTime in alarms) are exported to
+
+* xlsx file in the format: 03/13/2016 00:00:24
+* CSV file in the format: 2016-03-13T00:01:24.000Z
+
+Only CSV time contains milliseconds and timezone.
 
 ### Editing reports
 
-To edit reports, just click on them and save the changes.
+To edit a report, just click the respective row or click the menu icon at the end of the row and from the context menu select **Edit**.
+
+### Duplicating reports
+
+To duplicate a report, click the menu icon at the end of the row and from the context menu select **Clone**. Modify at least the name and click **Save & close** to save the report and return to the report list.
 
 ### Removing reports
 
-To remove reports hover over the report's name and click on the "X" button.
+To remove a report, click the menu icon at the end of the row and from the context menu select **Remove**.
 
-## <a name="library"></a>Using the Data Point Library
-
-The Data Point Library provides a collection of data points with default values for data point properties. 
-
-Data point properties are similar to "paragraph formats" in word processing applications: You do not want to format each paragraph individually. Instead you want to define a set of default formats and apply them to your paragraphs in your document. 
-
-The Data Point Library provides the same functionality for data points: It provides a number of default data point "templates" that can be applied easily to your data points from different devices.
-
-How does the Cockpit application use the data point library? To find the default visualization for a data point like color or label, Cockpit searches the data point library and tries to find a matching entry. An entry is considered as "matching", if the values for fragment and series in the data point library match those of the measurement. If a matching entry is found, the corresponding data point properties are used for a default visualization.
-
-Additionally, the properties of the Data Point Library are used by threshold business rules: The red and yellow values configured in the Data Point Library are used by the threshold rules to raise alarms.
-
-To open the Data Point Library, click **Data Point Library** in the "Configuration" menu of the navigator.
-
-A list of available data points will be opened. For each data point, the following information is provided in the list:
-
-Color and label for the data point
-Fragment name and series
-Measurement unit
-
-### Adding a data point to the library
-
-To add a new data point to the library, click **Add data point** in the top menu bar.
-
-Provide the following information:
-
-Field|Description|
-|:---|:---|
-|Color|Select a color for the data point visualization.
-|Label|Label to identify the data point.
-|Fragment|Fragment 
-|Series|Series
-|Unit|Unit used for the measurement.
-|Target|Unit used for the measurement.
-|Yellow range|Unit used for the measurement.
-|Red range|Unit used for the measurement.
-
-Click **Save** to add the data point to the library.
-
-### Editing or removing data points
-
-To edit a data point, simply click the respective entry in the list or click the menu icon at the right of an entry and in the context menu click **Edit**.
-
-To remove a data point, click **Remove** in the context menu.
 
 ## <a name="rules"></a>Working with Smart Rules
 
-Cumulocity includes a rule engine to analyze data in real-time and to perform actions based on data. These rules are specified in a scripting language and are managed in the Administration Application.
+Cumulocity includes a rule engine to analyze data in realtime and to perform actions based on data. These rules are specified in a scripting language and are managed in the [Administration Application](/guides/users-guide/administration).
 
-To create rules, the Cockpit Application includes a Smart Rule Builder. Using the Smart Rules builder, rules can be created from templates. These rules are called smart rules. The templates are called smart rule templates.
+To easily create rules, the Cockpit application includes a Smart Rules builder which allows you to create rules from templates (so-called smart rule templates).
 
-> Please note that, smart rules are only visible, if the tenant is subscribed to the smart rule application. 
-Required global roles: to manage smart rules, user has to have INVENTORY CREATE permission and either SMART RULE permissions or CEP MANAGEMENT permissions.
+>**Info:** Smart Rules are only visible, if the tenant is subscribed to the Smart Rule application. To manage Smart Rules, the user has to have INVENTORY CREATE permission and either SMART RULE permission or CEP MANAGEMENT permission.
 
 Smart Rules are parameterized. There are two sources for parameters:
 
-**Rule Parameter** are provided by the user when creating a smart rule from a template. Examples are email addresses and alarm texts.
+**Rule Parameters** are provided by the user when creating a Smart Rule from a template. Examples are email addresses and alarm texts.
 
-**Object Parameter** are stored in the group or device. These parameters can be edited also after the smart rule was created. An example includes min and max values for thresholds.
+**Object Parameters** are stored in the group or device. These parameters can be edited after the Smart Rule has been created. An example includes min and max values for thresholds.
 
-Smart rules can be seen under the "Info" tab of a device or group. They can also be seen in the "Smart Rules" menu item. 
+Smart Rules can be seen 
+
+* in the "Info" tab of a device or group,
+* in the "Smart Rules" page accessible from the "Configuration" menu. 
 
 ![Smart Rules info tab](/guides/users-guide/smartruleinfo.png)
 
-There are two different kinds of smart rules:
+There are two different kinds of Smart Rules:
 
-- Local: Smart rules created in either a group or a device. They are visible to everyone with access to the group/device.
-- Global: These smart rules are created in a global context (smart rules section, alarms, data explorer, etc...). They are only visible to users with the relevant permissions.
+- **Local**: Smart Rules created in either a group or a device. They are visible to everyone with access to the group/device.
+- **Global**: These Smart Rules are created in a global context ("Smart Rules" page, alarms, data explorer, etc...). They are only visible to users with the relevant permissions.
 
-> In the "Smart Rules" navigation item only the global smart rules are shown. 
+In the "Smart Rules" page, only the global smart rules are shown. 
 
-In a local context (group or device) and without the relevant permissions, only the local smart rules are shown. Otherwise, with the relevant permissions, both local and global smart rules are shown.		
+In a local context (group or device) and without the relevant permissions, only the local Smart Rules are shown. If the user has the relevant permissions, both local and global Smart Rules are shown.		
+The permissions required in order to see the global Smart Rules are:
 
-The permissions required in order to see the global smart rules are:
-- Smart rule "read".
-- Smart rule "admin".
-- CEP management "admin".
+- Smart rule READ
+- Smart rule ADMIN
+- CEP management ADMIN
 
-### Creating a Smart Rule
+### <a name="create-rules"></a>Creating Smart Rules
 
-Smart Rules can be created either under "Configuration -> Smart Rules" or under the "Info tab" of a group or a device.
+Smart Rules can be created either in the "Smart Rules" page, accessible from the "Configuration" menu in the navigator, or in the "Info" tab of a group or a device.
 
-* Click on "+ Add Smart Rule"
+To create a Smart Rule, follow these steps:
 
-* Click on one of the Smart Rule Templates.
+1. Click **Add Smart Rule** in the top menu bar. 
+2. Select a Smart Rule template from the list. 
+3. In the upcoming window, use the slider to select if the rule will be enabled or disabled. 
+4. Next, configure the rule parameters. The parameters differ from rule to rule, for details see individual rule descriptions below.
+5. In the "Target asset or devices" field, you can optionally activate the current Smart Rule for specific devices or assets. 
+6. Click **Create** to create the Smart Rule.
 
-* In the next form, enter the rule parameters. The rule parameters differ from rule to rule, for details see individual rule descriptions below.
-
-* Using the search field you can also activate the current Smart Rule for target devices or assets. Note that this step is optional.
-
-* Select whether the rule will be enabled or disabled.
-
-* Click "CREATE".
-
-A list of smart rules is shown below. Note that the number of smart rules shown might differ based on your installation.
+A list of Smart Rules is shown below. Note that this list might differ based on your installation.
 
 ![image alt text](/guides/users-guide/image_23.png)
 
-Afterwards, if the rule was set to enabled and was not activated for specific objects, the rule will be active for all devices and groups. See next section on how to deactivate a smart rule for specific objects.
+If the new rule was set to "enabled" and was not activated for specific objects, the rule will be active for all devices and groups. See next section on how to deactivate a smart rule for specific objects.
 
-Disabled Smart Rules are not displayed in group menus or device menus to avoid confusion.
+To avoid confusion, disabled Smart Rules are not displayed in group menus or device menus.
+
 Smart Rules can be instantiated multiple times.
 
-### Activating and deactivating Smart Rules
+### Activating or deactivating Smart Rules
 
-A single Smart Rule can be activated (switched on) and deactivated (switched off) for a single object (group or device). For example, if a device is generating too many threshold alarms, you can deactivate the rule for this single object. The rule is still active for all other objects.
+A Smart Rule can be activated (switched on) and deactivated (switched off) for a single object (group or device). For example, if a device is generating too many threshold alarms, you can deactivate the rule for this single object. The rule is still active for all other objects.
 
-To deactivate or activate a Smart Rule for a group or device, simply go to the Info tab and click on the button to enable or disable the rule.  
+To deactivate or activate a Smart Rule for a group or device, navigate to the "Info" tab of the group or device and enable/disable the respective rule using the slider. 
 
-![Info tab](/guides/users-guide/infotab.png)
+<img src="/guides/users-guide/Cockpit/SmartRuleInfoTab.png" name="Smart rule in Info tab" style="width:100%;"/>
 
-### Editing, cloning or removing Smart Rules
+### Editing Smart Rules
 
-To edit, clone or remove a specific Smart Rule just click on the cogwheel located to the far right of the Smart Rule and click on the desired option.
+To edit a Smart Rule, just click the respective row or click the menu icon at the end of the row and from the context menu select **Edit**.
 
-For easier debugging, there is a direct link from a smart rule to a corresponding event processing module. Click on the cogwheel and then choose "Inspect".
+### Duplicating Smart Rules
+
+To duplicate a Smart Rule, click the menu icon at the end of the row and from the context menu select **Clone**. Modify at least the name and click **Save & close** to save the Smart Rule and return to the Smart Rule list.
+
+### Removing Smart Rules
+
+To remove a Smart Rule, click the menu icon at the end of the row and from the context menu select **Remove**.
+
+### Debugging Smart Rules
+
+For easier debugging, there is a direct link from a Smart Rule to the corresponding event processing module. Click the menu icon at the end of the row and from the context menu select **Inspect** to use this link.
 
 ### Example: Defining explicit thresholds
 
 To define a threshold rule follow these steps:
 
-* In the asset navigator, navigate to the desired group or device to apply a threshold to.
+1. In the navigator, select the desired group or device to apply a threshold to.
+2. Switch to the "Data explorer" tab.
+3. If the data point that should raise the threshold is not visible by default, select **Add data point** and add a data point. For details on how to add data points see [Adding data points](#add-data-points).
+4. Click the menu icon at the end of the row of the respective data point and select **Create Smart Rule**. <br> <img src="/guides/users-guide/Cockpit/DataPointExample.png" name="Data point example" style="width:75%;"/>
 
-* Click on "Data explorer".
+5. Select the Smart Rule "On measurement explicit threshold create alarm".<br> <img src="/guides/users-guide/Cockpit/SmartRuleExample.png" name="Smart Rule example" style="width:75%;"/>
+6. Fill in the red range minimum and red range maximum value. When the values are outside these range, a threshold alarm will be raised.
+7. Under "Create Alarm" you can optionally edit the alarm type and the alarm text.
+8. Under "Target assets or devices" you can select the object this rule will be applied to.
+9. Click **Create** to create the Smart Rule.
 
-* If your data point is not visible by default, select "Add data point" and add a data point.
-
-* For the data point that should raise the threshold, click on the "cogwheel" icon in the end of the row and select “Create Smart Rule”.
-
-![image alt text](/guides/users-guide/image_26.png)
-
-* Select "On measurement exceeding threshold create alarm"
-
-* Fill in the rule parameter:
-
-![image alt text](/guides/users-guide/image_27.png)
-
-* You can fill in the red range minimum and red range maximum value. When the values are outside these values, a threshold alarm will be raised.
-
-* Under "Create Alarm" you can optionally edit the alarm type and the alarm text.
-
-* Under "Activate for target group or devices" you can select the object this rule will be applied to.
-
-* Click "CREATE"
-
-After the rule has been created, it is automatically set active and alarms should appear if they arise.
+The rule will automatically be set to active and alarms appear if they arise.
 
 ### Chain rule execution
 
-Smart Rules can create a new data item on the platform. For example, the threshold rule creates new alarms.
-Those new data can be handled further by selected smart rules. For example, by an "On alarm send e-mail" rule.
-Using this mechanism, it is possible to create a chain of smart rules. If you create a rule chain you must have an idea how much data will be created to avoid overload or excessive amount of data.
+Smart Rules can create a new data item on the platform. For example, the threshold rule creates new alarms. This new data can be handled further by selected Smart Rules, for example, by an "On alarm send e-mail" rule.
 
-## <a name="business"></a>Business Rule Package
+Using this mechanism, it is possible to create a chain of smart rules. 
 
-The following smart rule templates are available in our system.
+>**Info:** If you create a rule chain keep in mind how much data will be created to avoid overload or excessive amount of data.
+
+## <a name="business"></a>Smart Rules Collection
+
+The following global Smart Rule templates are available in Cumulocity.
 
 ### Measurement threshold alarms
 

@@ -231,7 +231,7 @@ To be able to use the tenant functionality, your user needs to have the appropri
 
 ### Viewing subtenants
 
-Click "Subtenants" in the "Tenants" menu to view a list of all subtentants available in your account.
+Click "Subtenants" in the "Tenants" menu to view a list of all subtenants available in your account.
 
 The "Tenants" page provides the following information on each subtenant:
 
@@ -391,7 +391,7 @@ The Two-factor authentication(TFA) is an extra layer of security that requires n
 
 To see whether TFA is enabled for a certain user, go to the "Users" page and check the TFA status column.
 
-![TFA satus](/guides/users-guide/tfastatus.png)
+![TFA status](/guides/users-guide/tfastatus.png)
 
 To enable two-factor authentication for a user, follow these steps:
 
@@ -551,7 +551,7 @@ For further information, see http://enable-cors.org.
 
 To change password settings, click "Password" in the "Settings" menu. 
 
-Under "Password expiration", you can limit the validity of user passwords by specifying the number of days after which users have to change their passwords. If you do not want to force your users to change passwords, use "0" for unlimited validity of passwords (default vlaue).
+Under "Password expiration", you can limit the validity of user passwords by specifying the number of days after which users have to change their passwords. If you do not want to force your users to change passwords, use "0" for unlimited validity of passwords (default value).
 
 By default, users can use any password with eight characters or more. If you select **Enforce that all password are "strong" (green)**, your users must provide strong passwords as described in "[Logging in](/guides/users-guide/overview#login)".
 
@@ -680,7 +680,7 @@ The following parameters can be specified by providing a hex, rgb or rgba value:
 
 In the “Navigator" section you specify the parameters for the navigator.
 
-<img src="/guides/users-guide/administration/admin_BrandingTopbar.png" alt="Branding topbar" style="max-width: 100%">
+<img src="/guides/users-guide/administration/admin_BrandingTopbar.png" alt="Branding top bar" style="max-width: 100%">
 
 The following parameters can be specified by providing a hex, rgb or rgba value:
 
@@ -702,12 +702,15 @@ Click **Preview** in the top menu bar to preview the new branding.
 
 Click **Generate** in the top menu bar to apply your new branding.
 
-As an example you can see in the following screenshot that:
-The “Main brand color” is purple.
-The “Secondary brand color” is white.
-The “Main background color” is blue.
-The top bar “Background color” is green.
-The navigator “Background color” is pink. 
+The following image shows and an example where
+
+* the “Main brand color” is purple,
+* the “Secondary brand color” is white,
+* the “Main background color” is blue,
+* the top bar “Background color” is green,
+* the navigator “Background color” is pink. 
+
+<img src="/guides/users-guide/administration/admin_BrandingColored.png" alt="Branding example" style="max-width: 100%">
 
 ### Domain name
 
@@ -752,13 +755,13 @@ If you wish to return to your old domain at Cumulocity, you can simply deactivat
 
 ### Configuration
 
->**Info**: This feature is only available to "Management" tenants.
-
 In the "Configuration" tab of the "Enterprise Edition" page you can configure system-wide properties in Cumulocity. The following options can be modified in the "Configuration" settings.
 
 In the "Two-factor authentication" field you can change the SMS template which is sent to the users.
 
-In the "Support link" field you can enter a URL to be used as the support link URL. The support URL is visible to “Management” and “Enterprise Edition” tenants. Enter "false" to hide the link or leave the field empty to use the default link.
+In the "Support link" field you can enter a URL to be used to link to a Support page. If you do not provide a link here, the default link to the Cumulocity Support will be used. 
+
+Enter "false" to hide the link.
 
 In the "Password reset" section you can change all settings related to password reset e-mail templates.
 
@@ -791,6 +794,8 @@ In the "Suspending tenants" section you can provide settings for emails being se
 At the top you can select if you want to send the e-mail to the suspended tenant's administrator and specify an additional e-mail receiver. Below you set the subject and template for the tenant suspended e-mail.
 
 Click **Save configuration** to save your settings.
+
+>**Info**: Additional features are available for "Management" tenants.
 
 
 ## <a name="storageQuota"></a>Storage quota

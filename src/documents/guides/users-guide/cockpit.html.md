@@ -1292,29 +1292,26 @@ The rule uses the following parameters:![image alt text](/guides/users-guide/ima
 * Please check the same steps as for the threshold rule above.
 
 
-### On alarm send E-mail
+### On alarm send e-mail
+
+**Functionality** 
 
 When an alarm is created, an email is sent.
+
+**Parameters**
 
 The rule uses the following parameters:
 
 ![image alt text](/guides/users-guide/image_29.png)
 
-* Alarm types: The types of the alarms triggering the rule. For each newly created alarm with one of these types in the list the rule is triggered.
+|Field|Description|
+|:---|:---|
+|Rule name|Pre-filled with the name of the rule template. Can be modified according to your needs.
+|On alarm matching|The types of alarms triggering the rule. For each newly created alarm with one of these types in the list the rule is triggered.
+|Send e-mail|"Send to:/Send CC to:/Send BCC to": Email addresses for sending the e-mail to. Multiple addresses can be separated by a comma (",", do not use a space!).<br>"Reply to": Address to be used to reply to the message.<br> "Subject": Subject of e-mail. You can use a variable of the form #{name}. Supported variables are listed under "Smart Rule Variables" below.<br> "Message": Text of the e-mail. You can use a variable of the form #{name}. Supported variables are listed under "Smart Rule Variables" below.
+|Target asset or devices|Groups or devices the rule shall be applied to.
 
-* Send to: Email addresses for sending the e-mail to. Multiple addresses can be separated by a comma (",", do not use a space!).
-
-* Send CC to: As previously, just for e-mail "CC" field.
-
-* Send BCC to: As previously, just for e-mail "BCC" field.
-
-* Reply to: Address that should be used to reply to the message.
-
-* Subject: Subject of e-mail. You can use a variable of the form #{name}. Supported variables are listed under "Smart Rule Variables" below.
-
-* Text: Text of the e-mail. You can use a variable of the form #{name}. Supported variables are listed under "Smart Rule Variables" below.
-
-### Troubleshooting
+**Troubleshooting**
 
 * Please check the same steps as for the threshold rule above.
 
@@ -1322,25 +1319,30 @@ The rule uses the following parameters:
 
 ### On alarm send SMS
 
-When an alarm is created, an SMS is sent.
+**Functionality** 
 
-This rule is only available if your tenant has a configured SMS provider.
+When an alarm is created, a SMS is sent.
+
+>**Info:** This rule is only available if your tenant has a configured SMS provider.
+
+**Parameters**
 
 The rule uses the following parameters:
 
 ![image alt text](/guides/users-guide/image_30.png)
 
-* Alarm types: The types of alarm which trigger the rule. For each newly created alarm one of these types the rule is triggered.
+|Section|Description|
+|:---|:---|
+|Rule name|Pre-filled with the name of the rule template. Can be modified according to your needs.
+|On alarm matching|The types of alarms triggering the rule. For each newly created alarm with one of these types in the list the rule is triggered.
+|Send SMS|"Phone number": Target phone number. It is recommended to include mobile country code for all numbers, e.g. "+49" or "0049" for Germany. Multiple numbers can be separated by a comma (",", do not use a space!).<br> "Message": Text of SMS with max. 160 characters. You can use variables of the form #{name}. Supported variables are listed under "Smart Rule Variables" below.
+|Target asset or devices|Groups or devices the rule shall be applied to.
 
-* Phone number: Target phone number. It is recommended to include mobile country code for all numbers, e.g. "+49" or "0049" for Germany. Multiple numbers can be separated by a comma (",", do not use a space!).
-
-* Message: Text of SMS with max. 160 characters. You can use variable of the form #{name}. Supported variables are listed under "Smart Rule Variables" below.
-
-### Troubleshooting
+**Troubleshooting**
 
 * Please check the same steps as for the threshold rule above.
 
-* If you use a variable there is a limit of 160 applied as a total count. If after applying the variables the text count more than 160 characters the SMS will not be sent.
+* If you use a variable there is a limit of 160 applied as a total count. If after applying the variables the text counts more than 160 characters the SMS will not be sent.
 
 ### On alarm duration increase severity
 

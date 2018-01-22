@@ -1,5 +1,5 @@
 ---
-order: 45
+order: 27
 layout: default
 title: Java microservice
 ---
@@ -103,13 +103,13 @@ Edit the "App.java" file in the folder "hello-world-microservice/src/main/java/c
 
 What does the code do:
 * @MicroserviceApplication - is a simple way to add required behavior for cumulocity microservice. Including:
-  * security
-  * subscription
-  * health indicator
-  * context
-  * platform API
+  * Security
+  * Subscription
+  * Health indicator
+  * Context
+  * Internal platform API
   * Spring Boot Application
-* @RequestMapping - open and endpoint for greeting
+* @RequestMapping - open an endpoint for greeting
 
 ### Configure microservice
 
@@ -208,7 +208,7 @@ To build the zip file use following command:
 
     $mvn clean install -Dskip.agent.package.container=false -Dskip.microservice.package=false
 
-After a successful build you will be provided with a zip file in target directory. The zip can be deployed to the platform according to
+After a successful build you will be provided with a zip file in target directory. The zip can be deployed to the platform according to deployment guide. 
 
 ## Improve the Microservice
 

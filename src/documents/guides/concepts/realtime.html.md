@@ -7,7 +7,7 @@ layout: default
 
 Cumulocity allows developers and power users to run real-time IoT business logic inside Cumulocity based on a high-level real-time processing language. This section introduces the basic concepts of real-time processing and shows how you can develop your own functional business logic at Cumulocity.
 
-More information about the interfaces for real-time processing can be found in the Reference Guide, Sections ["Cumulocity Event Language"](/guides/reference/cumulocity-event-language) and ["Real-time Statements"](/guides/reference/real-time-statements).
+More information about the interfaces for real-time processing can be found in the Reference Guide, sections [Cumulocity Event Language](/guides/reference/cumulocity-event-language) and [Real-time Statements](/guides/reference/real-time-statements).
 
 ## What is real-time processing in Cumulocity?
 

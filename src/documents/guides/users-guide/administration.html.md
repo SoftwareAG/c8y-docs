@@ -411,6 +411,7 @@ By expanding the "Settings" menu, administrators can:
 - Change the [access control](#access-control) settings.
 - [Enable or disable the dashboards via e-mail feature](#enabling-server-side-agents)
 - Enter [OpenIT credentials](#openIT-credentials)
+- Manage the [platform configuration](#platform-config) settings.
 
 ### <a name="changing-password-settings"></a>Changing the password policy
 
@@ -504,6 +505,40 @@ In the "Server-side agents" menu, the "Send dashboard via e-mail" smart rule can
 ### <a name="openIT-credentials"></a>Enter OpenIT credentials
 
 SMS sending is used by several features within the application. It can be used to make login more secure with [two-factors authentication](/guides/users-guide/administration#tfa). An SMS can be sent when an alarm is triggered. SMSes can be used to send instructions to devices. The service provided by [Openit](https://sms.openit.de/main.php) can be used similar. In this section, the user can enter credentials to activate features requiring SMS messages.
+
+### <a name="platform-config"></a> Dealing with the platform configuration settings
+
+> Please note that, this feature is only available to "Management" tenants.
+
+The "Configuration" menu page is located under the "Settings" section. It allows users to configure system-wide properties in Cumulocity. The following options can be modified in the "Configuration" settings:
+
+![Configuration menu1](/guides/users-guide/configuration_tab1.png)
+
+- You can choose the default applications for new tenants. Note that, the application names are comma-separated.
+- Passwords policies can be changed (e.g. "Change password validity limit").
+- In the "Two-factor authentication" field, you can change the SMS template which is sent to the users.
+- You can edit/override the support link url. The support url is visible to “Management” and “Enterprise Edition” tenants.
+
+![Configuration menu1](/guides/users-guide/configuration_tab2.png)
+
+- In the "Password reset" section, you can change all password reset related e-mail templates. 
+
+![Configuration menu1](/guides/users-guide/configuration_tab3.png)
+
+- Choose whether to enable or disable the support user. You can also set a date until which the user will remain active.
+- In the "E-mail server" section you can adjust the "Host", "Port", "Username", "Password" and "Sender Address".
+
+![Configuration menu1](/guides/users-guide/configuration_tab4.png)
+
+- Set the e-mail template for data export and change the “User unauthorized error message”.
+- Change the e-mail template for exceeding the storage limit before and after data removal is performed.
+
+![Configuration menu1](/guides/users-guide/configuration_tab5.png)
+
+- Change the suspended tenant “e-mail templates” and enable/disable the “Send e-mail to suspended tenant administrator” option.
+- When ready, click on “Save configuration”.
+
+> The configuration settings are available in "Management" tenant only. Other tenants are not able to manage the settings.
 
 ## <a name="retention"></a>Managing data retention
 

@@ -6,7 +6,7 @@ layout: default
 
 ## Overview
 
-This section describes the aspects common to all REST-based interfaces of Cumulocity. The interfaces are based on the [Hypertext Transfer Protocol, version 1.1](http://www.w3.org/Protocols/rfc2616/rfc2616.html) using [HTTPS](http://en.wikipedia.org/wiki/HTTP_Secure).
+This section describes the aspects common to all REST-based interfaces of Cumulocity. The interfaces are based on the [Hypertext Transfer Protocol 1.1](https://tools.ietf.org/html/rfc2616) using [HTTPS](http://en.wikipedia.org/wiki/HTTP_Secure).
 
 ## HTTP usage
 

@@ -115,7 +115,7 @@ Once connected, you can now manage your device. Click "Child devices" on a termi
 
 ### <a name="collect"></a>Collecting measurements
 
-If the device type of the Fieldbus device is configured to collect measurements, these will be visible in the "Measurements" tab. They will also be available for usage in the [Data Explorer](/guides/users-guide/cockpit#using-the-data-explorer-to-visualize-data) and in [Dashboard widgets](/guides/users-guide/cockpit#working-with-dashboards).
+If the device type of the Fieldbus device is configured to collect measurements, these will be visible in the "Measurements" tab. They will also be available for usage in the [Data Explorer](/guides/users-guide/cockpit#visualize) and in [Dashboard widgets](/guides/users-guide/cockpit#dashboards).
 
 Data is collected according to the interval specified in the "transmit rate" property of the terminal as described above. To optimize the data traffic, data that is exactly the same as collected previously may not be sent again.
 

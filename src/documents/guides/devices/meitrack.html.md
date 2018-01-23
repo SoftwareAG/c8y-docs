@@ -14,7 +14,7 @@ The following data is currently recorded:
 * Speed and distance.
 * Battery level.
 
-The Meitrack protocol support was tested with MT90 devices. It may not apply to all Meitrack models. In particular, the battery level calculation will be only correct for devices with compatible hardware. See the [Meitrack protocol documentation](http://www.meitrack.com/en/protocols/) for more information.
+The Meitrack protocol support was tested with MT90 devices. It may not apply to all Meitrack models. In particular, the battery level calculation will be only correct for devices with compatible hardware. See the [Meitrack protocol documentation](http://www.meitrack.com/en/download-center/) for more information.
 
 ## Configuring Meitrack devices for Cumulocity
 

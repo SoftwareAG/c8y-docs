@@ -14,7 +14,7 @@ In this section, we describe how to configure the CloudGate device so that you a
 - Change the configuration
 - Send measurements, events and alarms
 
-[CloudGate](http://www.option.com/product/cloudgate/) is [Option’s](http://www.option.com/) M2M Gateway. It provides competitively priced LAN to WWAN routing and GPS functionality in a single basic unit certified by all major US cellular operators (CDMA/EvDO and WCDMA/HSPA+). CloudGate is simple to configure locally or remotely from your PC, tablet or smartphone.
+CloudGate is [Option’s](http://www.option.com/) M2M Gateway. It provides competitively priced LAN to WWAN routing and GPS functionality in a single basic unit certified by all major US cellular operators (CDMA/EvDO and WCDMA/HSPA+). CloudGate is simple to configure locally or remotely from your PC, tablet or smartphone.
 
 ![CloudGate](/guides/devices/cloudgate/cloudgate-front.jpg)
 
@@ -233,7 +233,7 @@ To be able to run the node, the following parameters need to be defined:
 
 - Platform: Select a [platform](#platform) for this node.
 
-For more information on events, refer to "[Configuration](/guides/users-guide/device-management/#configuration)".
+For more information on events, refer to "[Configuration](/guides/users-guide/device-management/#config)".
 
 For more information on the node, refer to the description which can be seen on the "Info" tab on the right side when selecting the node.
 

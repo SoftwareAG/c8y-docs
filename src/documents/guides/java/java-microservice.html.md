@@ -5,11 +5,11 @@ title: Java microservice
 ---
 
 ## Overview
-This sections shows you how to create a microservice that can be run on cumulocity.com, using cumulocity-microservice sdk.
+This sections shows you how to create a microservice that can be run on cumulocity.com, using Cumulocity Microservice SDK.
 
 ## Prerequisites
 
-Create and account on cumulocity.com. For example by using free trial. At this step you will be provided with a dedicated URL address.
+Create an account on cumulocity.com. For example by using free trial. At this step you will be provided with a dedicated URL address.
 
 Verify that you have Maven 3 installed with Java (7+):
 
@@ -102,7 +102,7 @@ Edit the "App.java" file in the folder "hello-world-microservice/src/main/java/c
     }
 
 What does the code do:
-* @MicroserviceApplication - is a simple way to add required behavior for cumulocity microservice. Including:
+* @MicroserviceApplication - is a simple way to add required behavior for Cumulocity Microservice. Including:
   * Security
   * Subscription
   * Health indicator
@@ -117,11 +117,8 @@ Add an application.property file in src/main/resources directory with following 
 
     application.name=hello-world
     server.port=80
-    C8Y.baseURL=http://{yourURL}
 
-The C8Y.baseURL is automatically provided by platform when deploying on cumulocity platform. Although you can put your URL to run the microservice locally.
-
-Add a cumulocity.json file in src/main/microservice directory with following content:
+Add a cumulocity.json file in src/main/configuration directory with following content:
 
     {
     "apiVersion":"1",
@@ -136,7 +133,7 @@ Add a cumulocity.json file in src/main/microservice directory with following con
       ]
     }
 
-This file is required to deploy the microservice in cumulocity infrastructure.
+This file is required to deploy the microservice in Cumulocity infrastructure.
 
 ### Configure build
 
@@ -144,8 +141,8 @@ To create a deployable zip file you need to add following to your pom file:
 
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-        <maven.compiler.source>1.7</maven.compiler.source>
-        <maven.compiler.target>1.7</maven.compiler.target>
+        <maven.compiler.source>1.8</maven.compiler.source>
+        <maven.compiler.target>1.8</maven.compiler.target>
         <spring-boot-dependencies.version>1.5.7.RELEASE</spring-boot-dependencies.version>
         <package.directory>hello-world</package.directory>
         <package.name>hello-world</package.name>
@@ -181,21 +178,11 @@ To create a deployable zip file you need to add following to your pom file:
                         </goals>
                     </execution>
                     <execution>
-                        <id>push</id>
-                        <phase>package</phase>
-                        <goals>
-                            <goal>push</goal>
-                        </goals>
-                    </execution>
-                    <execution>
                         <id>microservice-package</id>
                         <phase>package</phase>
                         <goals>
                             <goal>microservice-package</goal>
                         </goals>
-                        <configuration>
-                            <manifestFile>${basedir}/src/main/microservice/cumulocity.json</manifestFile>
-                        </configuration>
                     </execution>
                 </executions>
             </plugin>
@@ -208,7 +195,7 @@ To build the zip file use following command:
 
     $mvn clean install -Dskip.agent.package.container=false -Dskip.microservice.package=false
 
-After a successful build you will be provided with a zip file in target directory. The zip can be deployed to the platform according to deployment guide. 
+After a successful build you will be provided with a zip file in target directory. The zip can be deployed to the platform according to deployment guide.
 
 ## Improve the Microservice
 

@@ -42,31 +42,37 @@ The other way to register application to platform is to do it manually by creati
 
 The subscription package provides means to monitor and act upon changes in tenant subscriptions to microservice. To add a custom behavior a developer can add an event listener for MicroserviceSubscriptionAddedEvent and MicroserviceSubscriptionRemovedEvent like in a following example:
 
-    microserviceSubscriptionsService.listen(MicroserviceSubscriptionAddedEvent.class, new MicroserviceChangedListener<MicroserviceSubscriptionAddedEvent>() {
-        public boolean apply(MicroserviceSubscriptionAddedEvent event) {
-            final Optional<MicroserviceCredentials> credentials = microserviceSubscriptionsService.getCredentials(event.getCredentials().getTenant());
-                return true;
-            }
-        }
-    );
+    @EventListener
+    public void onAdded(MicroserviceSubscriptionAddedEvent event{
+        log.info("subscription added for tenant: " + event.getCredentials().getTenant());
+    }
 
+## Platform Internal API
+The package consists of number of services that are build and injected into spring context. A developer can use them to perform basic operations against platform. The beans are built based on properties read from file. For microservice deployed in the platform, most of the properties are provided by the platform. Please note that requests executed using internal API (with internal in their name) do not increase request count unlike regular api API requests.
 
-## Platform API
-The package consists of number of services that are build and injected into spring context. A developer can use them to perform basic operations against platform. The beans are built based on properties read from file. For microservice deployed in the platform, most of the properties are provided by the platform, but for local development and testing developer can configure the services through the property file.
+The Internal API prvides following services:
+* Alarm - AlarmInternalApi
+* AuditRecord - AuditRecordInternalApi
+* CepModule - CepInternalApi
+* Operation - DeviceControlInternalApi
+* Event - EventInternalApi
+* ExternalID - IdentityInternalApi
+* Binary - BinariesInternalApi
+* ManagedObject - InventoryInternalApi
+* Measurement - MeasurementInternalApi
 
-The API provides operations to access following resources:
-    * Alarm - AlarmInternalApi
-    * AuditRecord - AuditRecordInternalApi
-    * CepModule - CepInternalApi
-    * Operation - DeviceControlInternalApi
-    * Event - EventInternalApi
-    * ExternalIDRepresentation - IdentityInternalApi
-    * Binary - BinariesInternalApi
-    * ManagedObject - InventoryInternalApi
-    * Measurement - MeasurementInternalApi
+The regular API prvides following services:
+* Alarm - AlarmApi
+* AuditRecord - AuditRecordApi
+* CepModule - CepApi
+* Operation - DeviceControlApi
+* Event - EventApi
+* ExternalID - IdentityApi
+* Binary - BinariesApi
+* ManagedObject - InventoryApi
+* Measurement - MeasurementApi
 
-
-Available methods are presented on Alarms service example:
+Both APIs provide basic CRUD methods that share interface. Below presented Alarms interface example:
 
     AlarmRepresentation create(final AlarmRepresentation alarm)
     Future createAsync(final AlarmRepresentation alarm)
@@ -76,6 +82,19 @@ Available methods are presented on Alarms service example:
     AlarmCollection getAlarmsByFilter(final AlarmFilter filter)
 
     AlarmRepresentation update(final AlarmRepresentation alarm)
+
+Sample usage:
+
+    @Autowired
+    @Qualifier("alarmInternalApi")
+    private AlarmApi alarms;
+
+    public AlarmRepresentation addHelloAlarm(){
+          AlarmRepresentation alarm = new AlarmRepresentation();
+          alarm.setSeverity("CRITICAL");
+          alarm.setStatus("Hello");
+          return alarms.create(alarm);
+    }
 
 # Configuration files
 
@@ -90,8 +109,8 @@ A property file, that will be used during the typical packaging process, must be
 
 Properties used by microservice are:
 
-    application.name - Aplicaiton name
-    C8Y.bootstrap.register - Indicates wheter microservice should follow self-registration process. True by default
+    application.name - Aplication name
+    C8Y.bootstrap.register - Indicates whether microservice should follow self-registration process. True by default
     C8Y.baseURL - Address of the platform. Provided by the deployment process
     C8Y.baseURL.mqtt - Address of the mqtt service. Provided by the platform
     C8Y.bootstrap.tenant - Microservice owner tenant
@@ -151,7 +170,7 @@ The package module provides maven plugin to prepare a zip file required by micro
         </executions>
     </plugin>
 
-#### Package plugin
+#### Package goal
 The package plugin is responsible for creation of a docker container and rpm file. It can be configured with following parameters:
 
     package.name - Default to project.artifactId
@@ -165,19 +184,19 @@ The package plugin is responsible for creation of a docker container and rpm fil
     skip.agent.package.rpm - To skip rpm file creation. False by default
     skip.agent.package.container - To skip docker image creation. True by default
 
-#### Push plugin
+#### Push goal
 The push plugin is responsible for pushing the docker image to a registry. The registry can be configured by:
 
     skip.agent.package.container - Prevents the push to execute.  True by default
     agent-package.container.registry - Docker registry address
 
-#### Microservice-package plugin
+#### Microservice-package goal
 Microservice-package plugin is responsible for creating zip file, that can be deployed on the platform. It can be configured by:
 
     skip.microservice.package - Skip the zip creation. True by default.
     manifestFile - Points to a manifest file location. Default value: ${basedir}/src/main/configuration/cumulocity.json
 
-#### Microservice-deploy
+#### Microservice-deploy goal
 Microservice-deploy is responsible for deploying the microservice to a server, defined in standard maven settings.xml file. The plugin can be configured by:
 
     skip.microservice.deploy - Indicates whether the deploy should be skipped or not. True by default

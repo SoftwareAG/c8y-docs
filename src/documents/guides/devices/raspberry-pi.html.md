@@ -9,11 +9,13 @@ The [Raspberry Pi](http://en.wikipedia.org/wiki/Raspberry_Pi) is a popular, low-
 
 In this section, we describe how to install a Cumulocity agent with all relevant drivers on the Raspberry Pi to be able to remotely manage the Raspberry Pi and its connected sensors and controls. This allows you to
 
-* Take advantage of all the basic agent features such as availability management, connectivity management and software management.
+* Use basic device management functionality.
 * Identify individual Raspberry Pis remotely based on their hardware serial number.
 * Update the Pi's firmware remotely through the firmware repository on GitHub.
 * Use the [PiFace Digital](http://www.element14.com/community/docs/DOC-52857/l/piface-digital-for-raspberry-pi) adapter board from the cloud.
 * Use [TinkerForge](/guides/devices/tinkerforge) sensors and controls from the cloud.
+
+> The agent is provided in open source form as-is without support or warranty. For commercial use, we recommend to use industrial hardware and/or the Cumulocity C++ SDK.
 
 ![Raspberry Pi image](http://upload.wikimedia.org/wikipedia/commons/thumb/3/3d/RaspberryPi.jpg/640px-RaspberryPi.jpg)
 

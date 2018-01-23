@@ -16,12 +16,12 @@ Section|Content|
 |[Connect](#connect) devices and manage [assets](#asset)|How to...
 |[Visualize Data Using the Data Explorer](#visualize)|How to access and use the [data explorer](#visualize), [add data points](#add-data-points) to the data explorer, [customize data point properties](#customize-data-points), [modify the visualization](#change-visualization), store the [data explorer as widget](#create-widget), and [export](#export-data) the data. 
 |[Working with Dashboards](#dashboards)|How to create your own analytics and monitor pages by selecting and arranging widgets. Select from various widgets including maps, tables, graphs, charts, controls and more.
-|[Using the Data Point Library](#library)|How to add, edit or remove data points in the [Data Point Library](#library).
-|[Handling Widgets](#widget)|How to create [widgets](#widget) of each type provided in the Widget collection that comes with Cumulocity.
+|[Widgets Collection](#widget)|How to configure [widgets](#widget) of each type provided in the Widget collection that comes with Cumulocity.
 |[Working with Alarms](#alarms)|How to work with alarms. Since working with alarms in the Cockpit application is actually the same as working with alarms in Device Management, refer to [Working with alarms](http://cumulocity.com//guides/users-guide/device-management/#alarm-monitoring) in *Device Management*. 
-|[Managing Smart Rules](#rules)|How to [create Smart Rules](#create-rules) to analyze data in realtime and to perform actions based on data and how to and [manage Smart Rules](#rules).
 |[Managing Reports](#reports)|How to handle [Dashboard reports](#reports), how to work with [reports for exporting data](#reporting) in CSV or excel format and how to [schedule the export](#schedule-export).
-|[Handling Business Rules](#device-registration)|How to [widgets](#widget) . How to create [business rules](#business) to work on incoming data in real-time.
+|[Using the Data Point Library](#library)|How to add, edit or remove data points in the [Data Point Library](#library).
+|[Working with Smart Rules](#rules)|How to [create Smart Rules](#create-rules) to analyze data in realtime and to perform actions based on data and how to and [manage Smart Rules](#rules).
+|[Smart Rules Collection](#business)|How to configure each [global Smart Rule](#business) type available in Cumulocity.
 
 If you want to learn more about general aspects of the Cumulocity platform and its applications, refer to [*Introduction*](/guides/users-guide/overview).
 
@@ -408,51 +408,6 @@ To export measurement data, click the **More...** button in the top menu bar and
 
 The download will be generated, as shown in the upcoming dialog. This make take a while, depending on the number of data points added to the data explorer. Once the loading has been completed, click **Download**.
 
-## <a name="library"></a>Using the Data Point Library
-
-The Data Point Library provides a collection of data points with default values for data point properties. 
-
-Data point properties are similar to "paragraph formats" in word processing applications: You do not want to format each paragraph individually. Instead you want to define a set of default formats and apply them to your paragraphs in your document. 
-
-The Data Point Library provides the same functionality for data points: It provides a number of default data point "templates" that can be applied easily to your data points from different devices.
-
-How does the Cockpit application use the data point library? To find the default visualization for a data point like color or label, Cockpit searches the data point library and tries to find a matching entry. An entry is considered as "matching", if the values for fragment and series in the data point library match those of the measurement. If a matching entry is found, the corresponding data point properties are used for a default visualization.
-
-Additionally, the properties of the Data Point Library are used by threshold business rules: The red and yellow values configured in the Data Point Library are used by the threshold rules to raise alarms.
-
-To open the Data Point Library, click **Data Point Library** in the "Configuration" menu of the navigator.
-
-A list of available data points will be opened. For each data point, the following information is provided in the list:
-
-Color and label for the data point
-Fragment name and series
-Measurement unit
-
-### Adding a data point to the library
-
-To add a new data point to the library, click **Add data point** in the top menu bar.
-
-Provide the following information:
-
-Field|Description|
-|:---|:---|
-|Color|Select a color for the data point visualization.
-|Label|Label to identify the data point.
-|Fragment|Fragment 
-|Series|Series
-|Unit|Unit used for the measurement.
-|Target|Unit used for the measurement.
-|Yellow range|Unit used for the measurement.
-|Red range|Unit used for the measurement.
-
-Click **Save** to add the data point to the library.
-
-### Editing or removing data points
-
-To edit a data point, simply click the respective entry in the list or click the menu icon at the right of an entry and in the context menu click **Edit**.
-
-To remove a data point, click **Remove** in the context menu.
-
 ## <a name="dashboards"></a>Working with Dashboards
 
 Dashboards provide you with a customized visualization of your data with a set of widgets. Widgets can display maps, images, graphs, tables and other graphic representations of data. 
@@ -543,8 +498,6 @@ Afterward, select the desired permission for the selected group.
 ![Select permission](/guides/users-guide/dashboardpermission.png)
 
 > Permissions can be granted to several groups.
-
-
 
 ### Copying a dashboard
 
@@ -1065,6 +1018,50 @@ To duplicate a report, click the menu icon at the end of the row and from the co
 
 To remove a report, click the menu icon at the end of the row and from the context menu select **Remove**.
 
+## <a name="library"></a>Using the Data Point Library
+
+The Data Point Library provides a collection of data points with default values for data point properties. 
+
+Data point properties are similar to "paragraph formats" in word processing applications: You do not want to format each paragraph individually. Instead you want to define a set of default formats and apply them to your paragraphs in your document. 
+
+The Data Point Library provides the same functionality for data points: It provides a number of default data point "templates" that can be applied easily to your data points from different devices.
+
+How does the Cockpit application use the data point library? To find the default visualization for a data point like color or label, Cockpit searches the data point library and tries to find a matching entry. An entry is considered as "matching", if the values for fragment and series in the data point library match those of the measurement. If a matching entry is found, the corresponding data point properties are used for a default visualization.
+
+Additionally, the properties of the Data Point Library are used by threshold business rules: The red and yellow values configured in the Data Point Library are used by the threshold rules to raise alarms.
+
+To open the Data Point Library, click **Data Point Library** in the "Configuration" menu of the navigator.
+
+A list of available data points will be opened. For each data point, the following information is provided in the list:
+
+Color and label for the data point
+Fragment name and series
+Measurement unit
+
+### Adding a data point to the library
+
+To add a new data point to the library, click **Add data point** in the top menu bar.
+
+Provide the following information:
+
+Field|Description|
+|:---|:---|
+|Color|Select a color for the data point visualization.
+|Label|Label to identify the data point.
+|Fragment|Fragment 
+|Series|Series
+|Unit|Unit used for the measurement.
+|Target|Unit used for the measurement.
+|Yellow range|Unit used for the measurement.
+|Red range|Unit used for the measurement.
+
+Click **Save** to add the data point to the library.
+
+### Editing or removing data points
+
+To edit a data point, simply click the respective entry in the list or click the menu icon at the right of an entry and in the context menu click **Edit**.
+
+To remove a data point, click **Remove** in the context menu.
 
 ## <a name="rules"></a>Working with Smart Rules
 
@@ -1175,147 +1172,9 @@ Using this mechanism, it is possible to create a chain of smart rules.
 
 ## <a name="business"></a>Smart Rules Collection
 
-The following global Smart Rule templates are available in Cumulocity.
+Cumulocity includes preset global Smart Rule types. Each global Smart Rule type provides different parameters to configure. 
 
-### Measurement threshold alarms
-
-When crossing defined yellow and red ranges, alarms are generated and cleared.
-
-The rule uses the following parameter from the device object or data point library:
-
-* Object red range: Range when the system should create CRITICAL alarms. These values can be edited in the Data Explorer for each data point.
-
-* Object yellow range: Range when the system should create MINOR alarms. These values can be edited in the Data Explorer for each data point.
-
-* Data point library red range: When there is no red range stored in the respective object, then data point library is searched for the configured data point entry and uses the related red range.
-
-* Data point library yellow range: Similar to red range.
-
-Using this mechanism, you can configure global threshold ranges in the data point library. These global values can then be overridden for specific objects on a case-by-case basis.
-
-The rule uses the following parameters:
-
-![image alt text](/guides/users-guide/image_28.png)
-
-* Fragment: Name of the measurement fragment. The incoming measurement must have exactly the same fragment name as configured. When creating a rule from the data explorer, the fragment data is already filled in.
-
-* Series: Similar to fragment, just for the series.
-
-* Data point library entry: Name of the entry in the data point library. This is used to find the default values for red and yellow ranges in case they are not configured for an individual object.
-
-* Type: Type of the alarm that will be raised.
-
-* Text: Text of the alarm that will be raised.  
-
-A detailed description of steps that this smart rule performs for each incoming measurement value:
-
-* Check, if the measurement includes data for the fragment and series (rule parameter).
-
-* Check, if the rule is activated for the source object.
-
-* The data of the red and yellow range is collected from either:
-
-- the source object (the measurement)
-
-- the data point library (control parameter).
-
-If no red / yellow ranges are defined, no alarms are generated.
-
-
-_Note_: Range values defined in the source object have a higher priority than the ones defined in the data point library. You can also just overwrite a single value (e.g. yellow range max) by setting it in the source object. The other values will then be taken by from the data point library.
-
- - If the incoming value is inside the yellow range.
-
- - If there is an active alarm of given type for the object:
-
-* Set severity to "MINOR"
-
-* Otherwise
-
-* Create new "MINOR" alarm with given parameters.
-
- - If the incoming value is inside the red range:
-
- - If there is an active alarm of given type for the object:
-
-* Set severity to "CRITICAL"
-
-* Otherwise
-
-* Create new "CRITICAL" alarm with given parameters.
-
-- If the measurement is outside of yellow and red range.
-
-- If there is an active alarm of given type for the object.
-
-* Clear the alarm.
-
-### Troubleshooting
-
-* Please verify that the alarm was created and not duplicated from somewhere.
-
-* If device is not in [maintenance](/guides/reference/device-management) mode: in this case no new alarm will be created because of suppression policy.
-
-* If you don't have an alarm mapping rule (see: [Reprioritizing alarms](/guides/users-guide/administration#reprio-alarms)) which change the alarm severity: in this case the alarm may have different severity than expected.
-
-* Check if an alarm was already cleared by the next scheduled measurements with resulting value in a green range.
-
-* Please note that if you clear an alarm, you state that the alarm is resolved. A new alarm is not raised unless the device changes its state and crosses the thresholds again.
-
-### On measurement create a threshold alarm
-
-When the measurement value enters or leaves the RED range, a CRITICAL alarm is generated or cleared.
-
-The severity of alarm is determined by:
-
-* If the measurement value moves into RED range then severity is CRITICAL
-
-* If the measurement value moves into GREEN range the alarm is cleared
-
-
-This rule is similar to the above threshold rule. However, in this rule the RED threshold value is provided explicitly. The other threshold rule above extracts the thresholds values from the device or data point library.
-
-The rule uses the following parameters:![image alt text](/guides/users-guide/image_37.png)
-
-* Fragment: Name of the measurement fragment. The incoming measurement must have exactly the same fragment name as configured. Note: When creating a rule from the data explorer, the fragment name is already filled in.
-
-* Series: Similar to fragment, just for series.
-
-* Minimum, Maximum: When a value is in the range [minimum; maximum], the configured alarm is raised.
-
-* Type: Type of the alarm that will be raised.
-
-* Text: Text of the alarm that will be raised.
-
-### Troubleshooting
-
-* Please check the same steps as for the threshold rule above.
-
-
-### On alarm send e-mail
-
-**Functionality** 
-
-When an alarm is created, an email is sent.
-
-**Parameters**
-
-The rule uses the following parameters:
-
-![image alt text](/guides/users-guide/image_29.png)
-
-|Field|Description|
-|:---|:---|
-|Rule name|Pre-filled with the name of the rule template. Can be modified according to your needs.
-|On alarm matching|The types of alarms triggering the rule. For each newly created alarm with one of these types in the list the rule is triggered.
-|Send e-mail|"Send to:/Send CC to:/Send BCC to": Email addresses for sending the e-mail to. Multiple addresses can be separated by a comma (",", do not use a space!).<br>"Reply to": Address to be used to reply to the message.<br> "Subject": Subject of e-mail. You can use a variable of the form #{name}. Supported variables are listed under "Smart Rule Variables" below.<br> "Message": Text of the e-mail. You can use a variable of the form #{name}. Supported variables are listed under "Smart Rule Variables" below.
-|Target asset or devices|Groups or devices the rule shall be applied to.
-
-**Troubleshooting**
-
-* Please check the same steps as for the threshold rule above.
-
-* Please check your spam folder.
+The following section describes each available type and its configuration properties.
 
 ### On alarm send SMS
 
@@ -1329,235 +1188,380 @@ When an alarm is created, a SMS is sent.
 
 The rule uses the following parameters:
 
-![image alt text](/guides/users-guide/image_30.png)
+<img src="/guides/users-guide/Cockpit/SmartRuleSendSMS.png" name="Smart Rule send SMS" style="width:75%;"/>
 
-|Section|Description|
-|:---|:---|
-|Rule name|Pre-filled with the name of the rule template. Can be modified according to your needs.
-|On alarm matching|The types of alarms triggering the rule. For each newly created alarm with one of these types in the list the rule is triggered.
-|Send SMS|"Phone number": Target phone number. It is recommended to include mobile country code for all numbers, e.g. "+49" or "0049" for Germany. Multiple numbers can be separated by a comma (",", do not use a space!).<br> "Message": Text of SMS with max. 160 characters. You can use variables of the form #{name}. Supported variables are listed under "Smart Rule Variables" below.
-|Target asset or devices|Groups or devices the rule shall be applied to.
+|Step|Field|Description|
+|:---|:---|:---|
+|1|Rule name|Pre-filled with the name of the rule template. Can be modified according to your needs.
+|2|On alarm matching:|The types of alarms triggering the rule. For each newly created alarm with one of these types in the list the rule is triggered.
+|3|Send SMS:|"Phone number": Target phone number. It is recommended to include mobile country code for all numbers, e.g. "+49" or "0049" for Germany. Multiple numbers can be separated by a comma (",", do not use a space!).<br> "Message": Text of SMS with max. 160 characters. You can use variables of the form #{name}. Supported variables are listed under "Smart Rule Variables" below.
+|4|Target asset or devices|Groups or devices the rule shall be applied to.
 
 **Troubleshooting**
 
-* Please check the same steps as for the threshold rule above.
+* Verify that the alarm was created and not duplicated from somewhere.
 
-* If you use a variable there is a limit of 160 applied as a total count. If after applying the variables the text counts more than 160 characters the SMS will not be sent.
+* Check if the device is in [maintenance](/guides/reference/device-management) mode. In this case no new alarm will be created because of suppression policy.
+
+* If you have configured an alarm mapping rule (see [Reprioritizing alarms](/guides/users-guide/administration#reprio-alarms)) which changes the alarm severity, the alarm may have different severity than expected.
+
+>**Important:** There is a limit of 160 characters as a total count. If you use variables and after applying the variables the text counts more than 160 characters the SMS will not be sent.
+
+### On alarm send e-mail
+
+**Functionality** 
+
+When an alarm is created, an email is sent.
+
+**Parameters**
+
+The rule uses the following parameters:
+
+<img src="/guides/users-guide/Cockpit/SmartRuleSendEmail.png" name="Smart Rule send email" style="width:75%;"/>
+
+|Step|Field|Description|
+|:---|:---|:---|
+|1|Rule name|Pre-filled with the name of the rule template. Can be modified according to your needs.
+|2|On alarm matching:|The types of alarms triggering the rule. For each newly created alarm with one of these types in the list the rule is triggered.
+|3|Send e-mail:|"Send to:/Send CC to:/Send BCC to": Email addresses for sending the e-mail to. Multiple addresses can be separated by a comma (",", do not use a space!).<br>"Reply to": Address to be used to reply to the message.<br> "Subject": Subject of e-mail. You can use a variable of the form #{name}. Supported variables are listed under "Smart Rule Variables" below.<br> "Message": Text of the e-mail. You can use a variable of the form #{name}. Supported variables are listed under "Smart Rule Variables" below.
+|4|Target asset or devices|Groups or devices the rule shall be applied to.
+
+**Troubleshooting**
+
+* Verify that the alarm was created and not duplicated from somewhere.
+
+* Check if the device is in [maintenance](/guides/reference/device-management) mode. In this case no new alarm will be created because of suppression policy.
+
+* If you have configured an alarm mapping rule (see [Reprioritizing alarms](/guides/users-guide/administration#reprio-alarms)) which changes the alarm severity, the alarm may have different severity than expected.
+
+* Check your spam folder.
+
+### On alarm escalate it
+
+**Functionality** 
+
+When an alarm is created, sends e-mail, sms, and/or initiates text-to-speech.
+
+**Parameters**
+
+The rule uses the following parameters:
+
+<img src="/guides/users-guide/Cockpit/SmartRuleOnAlarmEscalate.png" name="Smart Rule on alarm escalate" style="width:75%;"/>
+
+|Step|Field|Description|
+|:---|:---|:---|
+|1|Rule name|Pre-filled with the name of the rule template. Can be modified according to your needs.
+|2|On alarm matching:|The types of alarms triggering the rule. For each newly created alarm with one of these types in the list the rule is triggered.
+|3|Escalate as follows:|Escalation steps processed in a chain. <br> Click **Add step** to define at least one step: <br> "Type": Type of action executed in the step. Possible values are: <br> * Email (see "On alarm send e-mail" rule for parameter descriptions). <br> * SMS (see "On alarm send SMS" rule for parameter descriptions). <br> * Phone (see "On alarm initiate text-to-speech call" rule for parameter descriptions). <br> "Condition": The condition applied when the rule will be executed. Possible values are: <br> * Always: Action will always be executed. <br> * Always: If step N failed. Only phone steps may fail. The step is marked as failed once all retries have been made without a successful call. This option only appears if there already is a phone step configured that can be referred to.
+|4|Target asset or devices|Groups or devices the rule shall be applied to.
+
+
+**Troubleshooting**
+
+* Verify that the alarm was created and not duplicated from somewhere.
+
+* Check if the device is in [maintenance](/guides/reference/device-management) mode. In this case no new alarm will be created because of suppression policy.
+
+* If you have configured an alarm mapping rule (see [Reprioritizing alarms](/guides/users-guide/administration#reprio-alarms)) which changes the alarm severity, the alarm may have different severity than expected.
+
 
 ### On alarm duration increase severity
 
-If an alarm is active for a certain time, increase the severity.
+**Functionality** 
 
-The rule uses the following parameters:![image alt text](/guides/users-guide/image_31.png)
+If an alarm is active for a certain time, the severity is increased.
 
-* Alarm types: The types of alarm which will trigger the rule.
-
-* Duration: How long must there be an active alarm to trigger the rule?
-
-Description of the rule:
-
-* When a configured type of alarm is raised it starts monitoring how long the alarm stays active.
-
-* If the alarm is still active after specified duration,it will increase the severity one level, like from MINOR to MAJOR.
-
-* If the alarm is 'CRITICAL' it will stop monitoring because there is no further action available.
-
-_Note:_ The rule checks if the configured duration was exceeded once a minute. Therefore it can occur that the alarm severity won't change in the second it exceeds the duration but only during the following check.
-
-### On geofence crossing create alarm
-
-The Geofence-Smart Rule can be configured to create an alarm upon crossing the geofence (or both). Existing alarms are cleared when the opposite condition is true gain like if a tracked car which has left the geofence area is re-entering the geofence area.
+**Parameters**
 
 The rule uses the following parameters:
 
-![image alt text](/guides/users-guide/image_32.png)
+<img src="/guides/users-guide/Cockpit/SmartRuleIncreaseSeverity.png" name="Smart Rule increase severity" style="width:75%;"/>
 
-* Geofence: Define a polygon that defines the border of an area. Click on "Edit geofence", navigate to your area (like using the “Search address” field), and define a polygon by clicking once on each point of the border. ![image alt text](/guides/users-guide/image_33.png)
+|Step|Field|Description|
+|:---|:---|:---|
+|1|Rule name|Pre-filled with the name of the rule template. Can be modified according to your needs.
+|2|On alarm matching:|The types of alarms triggering the rule. For each newly created alarm with one of these types in the list the rule is triggered.
+|3|Increase alarm severity|Duration, an alarm must be active, before increasing the severity.
+|4|Target asset or devices|Groups or devices the rule shall be applied to.
 
-* Type: Type of the alarm that will be raised.
+**Description**
 
-* Text: Text of the alarm that will be raised.  
+When a configured type of alarm is raised, it starts monitoring how long the alarm stays active.
 
-* Severity: Severity of the alarm that will be raised.
+If the alarm is still active after the specified duration, the severity will be increased one level, e.g. from MINOR to MAJOR.
 
-* TriggerAlarmOn: Definition which geofence interaction creates the alarm. Values: "leaving", "entering" or "both". "leaving" is set as default value.
+If the alarm has reached 'CRITICAL', it will stop monitoring because there is no further action possible.
+
+>**Info:** The rule checks once a minute if the configured duration has been exceeded. Therefore it might happen that the alarm severity won't change in the second it exceeds the duration but only after the following check.
+
+### On geofence create alarm
+
+**Functionality** 
+
+If a geofence border is crossed, an alarm is created. 
+
+The rule can be configured for entering or leaving the geofence, or both. Existing alarms are cleared when the opposite condition is true again, e.g. if a tracked car which has left the geofence area is re-entering the geofence area.
+
+**Parameters**
+
+The rule uses the following parameters:
+
+<img src="/guides/users-guide/Cockpit/SmartRuleAlarmOnGeofence.png" name="Smart Rule alarm on geofence" style="width:75%;"/>
+
+|Step|Field|Description|
+|:---|:---|:---|
+|1|Rule name|Pre-filled with the name of the rule template. Can be modified according to your needs.
+|2|On geofence violation:|Polygon that defines the borders of an area. Click **Edit geofence** and set the area. Double-click to add points and click and drag them to adjust.
+|3|Create alarm:|Reason for triggering the alarm: "On entering", "On leaving" (the default), "On entering and leaving".<br>Type of alarm being raised. <br> Severity of alarm being raised. <br>Alarm text.
+|4|Target asset or devices|Groups or devices the rule shall be applied to.
 
 No alarm will be generated until the device crosses the geofence border for the first time.
 
-### Troubleshooting
+**Troubleshooting**
 
-* Please make sure the device was inside the geofence at least once after creating/activating the rule
+* Make sure the device was inside the geofence at least once after creating/activating the rule.
+ 
+* Check if the device is in [maintenance](/guides/reference/device-management) mode. No new alarm will be created because of suppression policy.
 
-* If the device is not in [maintenance](/guides/reference/device-management) mode: No new alarm will be created because of suppression policy.
+* If you have configured an alarm mapping rule (see [Reprioritizing alarms](/guides/users-guide/administration#reprio-alarms)) which changes the alarm severity, the alarm may have different severity than expected.
 
-* If you don't have an alarm mapping rule (see: [Reprioritizing alarms](/guides/users-guide/administration#reprio-alarms)) which change the alarm severity: in this case the alarm may have different severity than expected.
+## On geofence send e-mail
+
+**Functionality** 
+
+If a geofence border is crossed, an email is sent. 
+
+The rule can be configured for entering or leaving the geofence, or both.
+
+**Parameters**
+
+The rule uses the following parameters:
+
+<img src="/guides/users-guide/Cockpit/SmartRuleEmailOnGeofence.png" name="Smart Rule email on geofence" style="width:75%;"/>
+
+|Step|Field|Description|
+|:---|:---|:---|
+|1|Rule name|Pre-filled with the name of the rule template. Can be modified according to your needs.
+|2|On geofence violation:|Polygon that defines the borders of an area. Click **Edit geofence** and set the area. Double-click to add points and click and drag them to adjust.
+|3|Send e-mail:|"Send to:/Send CC to:/Send BCC to": Email addresses for sending the e-mail to. Multiple addresses can be separated by a comma (",", do not use a space!).<br>"Reply to": Address to be used to reply to the message.<br> "Subject": Subject of e-mail. You can use a variable of the form #{name}. Supported variables are listed under "Smart Rule Variables" below.<br> "Message": Text of the e-mail. You can use a variable of the form #{name}. Supported variables are listed under "Smart Rule Variables" below.
+|4|Target asset or devices|Groups or devices the rule shall be applied to.
+
+**Info**: In order to send out the e-mail the device had to be inside the geofence at least once after creating the rule.
+
+**Troubleshooting**
+
+* Make sure the device was inside the geofence at least once after creating/activating the rule.
+
+* Check your spam folder.
+
 
 ### Calculate energy consumption
 
-Create consumption data point based on data from an electric-, gas-, water- meter.
+**Functionality** 
+
+Creates consumption data point based on data from an electric-, gas-, water- meter.
+
+**Parameters**
 
 The rule uses the following parameters:
 
-![image alt text](/guides/users-guide/image_34.png)
+<img src="/guides/users-guide/Cockpit/SmartRuleCalculateEnergyConsumption.png" name="Smart Rule calculate energy consumption" style="width:75%;"/>
 
-* Fragment: Name of the measurement fragment. The incoming measurement must have exactly the same fragment name as configured. When creating a rule from the data explorer, the fragment is already filled in.
+|Step|Field|Description|
+|:---|:---|:---|
+|1|Rule name|Pre-filled with the name of the rule template. Can be modified according to your needs.
+|2|Monitored measurement:|"Fragment/Series": Name of the measurement fragment and series. The incoming measurement must have exactly the same fragment/series name as configured. When creating a rule from the data explorer, these fields are already filled in. <br> "Time interval": Interval in which consumption values shall be calculated. Only specifies how often the consumption is calculated not the unit of the consumption measurement.
+|3|Energy consumption measurement:|Name of the measurement fragment and series that shall be generated.
+|4|Target asset or devices|Groups or devices the rule shall be applied to.
 
-* Series: Similar to fragment, just for the series.
+The unit of the consumption measurement is always per hour (i.e. if the measurements are in "kg" the consumption will be in "kg/h").
 
-* Duration: Time period at which consumption values should be calculated.This will only define how often the consumption is calculated not the unit of the consumption measurement.
+The rule takes the last two measurements for a specified time, calculates the difference in value and time and then calculates the consumption per hour.
 
-* Consumption Fragment: Name of the measurement fragment that should be generated.
+**Example**
 
-* Consumption Series: Name of the measurement series that should be generated.
-
-The unit of the consumption measurement is always per hour (like if the measurements are in "kg" the consumption will be in "kg/h").
-The rule will take the last two measurements for a specified time.
-It will then calculate the difference in value and time and calculate the consumption per hour.
-
-Example:
-
-The rule is configured to calculate every 20 minutes. There are the following measurements incoming:
+The rule is configured to calculate every 20 minutes. The following measurements are coming in:
 100 kg at 11:59 and 200 kg at 12:14.
-At 12:20 the rule will trigger the next time and it will take the last two measurements. It will calculate value and time difference. The consumption measurement created at 12:20 will therefore be 400 kg/h.
-If there hasn't been any new measurement created in the last period a measurement with consumption 0 will be created.
+At 12:20 the rule is triggered, taking the last two measurements. It calculates value and time difference. The consumption measurement created at 12:20 will therefore be 400 kg/h.
+If no new measurement was created in the last period a measurement with consumption 0 will be created.
 
 ### On missing measurements create alarm
 
-Create an alarm if there was no new measurement data received for a specified time.
+**Functionality** 
+
+If no new measurement data has been received for a specified time, an alarm is created. 
+
+**Parameters**
 
 The rule uses the following parameters:
 
-![image alt text](/guides/users-guide/image_35.png)
+<img src="/guides/users-guide/Cockpit/SmartRuleMissingMeasurements.png" name="Smart Rule alarm on missing measurements" style="width:75%;"/>
 
-* Type: Type of measurement. The incoming measurement must have the same type as configured. _Note:_ When creating a rule from the data explorer, the type is already filled in.
+|Step|Field|Description|
+|:---|:---|:---|
+|1|Rule name|Pre-filled with the name of the rule template. Can be modified according to your needs.
+|2|Monitored measurement:|"Type": Type of measurement. The incoming measurement must have the same type as configured. When creating a rule from the data explorer, the type is already filled in.
+<br> "Time interval": Interval for calculating consumption values.
+|3|Create alarm:|Type of alarm being raised. <br> Severity of alarm being raised. <br>Alarm text.
+|4|Target asset or devices|Groups or devices the rule shall be applied to.
 
-* Time interval: Time interval, for calculating consumption values.
+>**Info:** The rule checks once a minute if the configured time interval was exceeded. Therefore it can take up to one minute to create the alarm after the time interval was exceeded. To check if the time interval was exceeded there must be at least one incoming measurement after the activation of the rule.
 
-* Type: Type of the raised alarm.
+### On alarm execute operation
 
-* Severity: Severity of the raised alarm.
+**Functionality** 
 
-* Text: Text of the raised alarm.
-
-The rule checks if the configured time interval was exceeded once a minute. Therefore it can take up to one minute to create the alarm after the time interval was exceeded. To check if the time interval was exceeded there must be at least one incoming measurement after the activation of the rule.
-
-### On alarm create operation
-
-If a certain alarm occurred, send the specified operation to the device.
-
-The rule uses the following parameters:
-
-![image alt text](/guides/users-guide/image_36.png)
-
-* Alarm types: The types of the alarm trigger the rule. For each new specified alarm, this rule is triggered.
-
-* Operation: The operation that will be sent. The operation is provided as JSON description. Some standard operations can be selected below the operations field. To use a standard operation, select one, and press the arrow button on the right. This will insert the JSON of the selected operation.
+If a certain alarm occurs, the specified operation will be send to the device.
 
 
-## On geofence crossing send e-mail
-
-Send the email if a device leaves or enters the defined geofence.
+**Parameters**
 
 The rule uses the following parameters:
 
-![image alt text](/guides/users-guide/ongeofencesendemail.png)
+<img src="/guides/users-guide/Cockpit/SmartRuleExecuteOperation.png" name="Smart Rule execute operation" style="width:75%;"/>
 
-* Geofence: Define a polygon in the way similar to the rule "On geofence crossing create alarm".
+|Step|Field|Description|
+|:---|:---|:---|
+|1|Rule name|Pre-filled with the name of the rule template. Can be modified according to your needs.
+|2|On alarm matching:|The types of alarms triggering the rule. For each newly created alarm with one of these types in the list the rule is triggered.
+|3|Execute operation:|The operation that will be sent. The operation is provided as JSON description. Some standard operations can be selected below the "Operation" field. To use a standard operation, select one, and press the arrow button on the right. This will insert the JSON of the selected operation.
+|4|Target asset or devices|Groups or devices the rule shall be applied to.
 
-* Send to: Email addresses for sending the e-mail to. Multiple addresses can be separated by a comma (",", do not use a space!).
+### On measurement threshold create alarm
 
-* Send CC to: As previously, just for e-mail "CC" field.
+**Functionality** 
 
-* Send BCC to: As previously, just for e-mail "BCC" field.
+When exceeding defined yellow and red ranges, alarms are generated and cleared.
 
-* Reply to: Address that must be used to reply to the message.
+The rule uses the following parameter from the device object or data point library:
 
-* Subject: Subject of e-mail. You can use a variable of the form #{name}. Supported variables are listed under "Smart Rule Variables" below.
+* Object red range: Range when the system should create CRITICAL alarms. These values can be edited in the data explorer for each data point.
 
-* Text: Text of e-mail. You can use a variable of the form #{name}. Supported variables are listed under "Smart Rule Variables" below.
+* Object yellow range: Range when the system should create MINOR alarms. These values can be edited in the data explorer for each data point.
 
-_Note:_ Like the "On geofence crossing create alarm" this rule triggers on crossing the border of the geofence. In order to send out the e-mail the device had to be inside the geofence at least once after creating the rule.
+* Data Point Library red/yellow range: When there is no red/yellow range stored in the respective object, then the Data Point Library is searched for the configured data point entry and the related red/yellow range is used.
 
-** Troubleshooting **
+Using this mechanism, you can configure global threshold ranges in the Data Point Library. These global values can then be overridden for specific objects on a case-by-case basis.
 
-* Please make sure the device was inside the geofence at least once after creating/activating the rule
-
-* Please check your spam folder.
-
-
-## On alarm initiate text-to-speech call
-
-When an alarm is created it initiates a text-to-speach call.
+**Parameters**
 
 The rule uses the following parameters:
 
-![image alt text](/guides/users-guide/onalarmsendtexttospeach.png)
+<img src="/guides/users-guide/Cockpit/SmartRuleExplicitThreshold.png" name="Smart Rule explicit threshold" style="width:75%;"/>
 
-* Alarm types: The types of the alarm trigger this rule. It will be applied to all new specified alarms.
+|Step|Field|Description|
+|:---|:---|:---|
+|1|Rule name|Pre-filled with the name of the rule template. Can be modified according to your needs.
+|2|On threshold:|"Fragment/Series": Name of the measurement fragment and series. The incoming measurement must have exactly the same fragment name as configured. When creating a rule from the data explorer, these fields are already filled in. <br> "Data Point Library entry": Name of the entry in the Data Point Library. This is used to find the default values for red and yellow ranges in case they are not configured for an individual object.
+|3|Create alarm:|"Type": Type of alarm being raised. <br>"Text": Alarm message.
+|4|Target asset or devices|Groups or devices the rule shall be applied to.
 
-* Phone number: Target phone number. It is recommended to include mobile country code for all numbers, like "+49" or "0049" for Germany.
+**Description**
 
-* Message: The text read out by the rule.
+For each incoming measurement value, the rule performs the following steps:
 
-* Retries: The number of retries to reach the target phone number if not successful (like the phone is busy or call gets rejected).
+* Check, if the measurement includes data for the fragment and series (rule parameter).
 
-* Interval: The time interval between the retries (in minutes).
+* Check, if the rule is activated for the source object.
 
-* Acknowledgment: Flag indicating that the receiver of the call has to acknowledge the call (if checked a not acknowledge call will not count as a successful call)
+* The data of the red and yellow range is collected from either:
 
-* Acknowledgment text: The acknowledgment message (will be read after the main message), for example: "Please acknowledge this call by clicking on 5"
+- the source object (the measurement),
 
-* Acknowledgment number: The number of the button the receiver has to push to acknowledge. If the button will be pushed, the call will be successful and the alarm status will be changed to acknowledged.
+- the Data Point Library (control parameter).
 
-### Troubleshooting
+If no red/yellow ranges are defined, no alarms are generated.
 
-* Check that the alarm was created and not duplicated.
+>**Info:** Range values defined in the source object have a higher priority than those defined in the Data Point Library. You can also just overwrite a single value (e.g. yellow range max) by setting it in the source object. The other values will then be taken from the Data Point Library.
 
-* If the device is not in [maintenance](/guides/reference/device-management) mode: No new alarm will be created because of suppression policy.
+* Incoming value inside the yellow range: <br>If there is an active alarm of given type for the object, set severity to MINOR. Otherwise create new MINOR alarm with given parameters.
 
-* If you don't have an alarm mapping rule (see: [Reprioritizing alarms](/guides/users-guide/administration#reprio-alarms)) which change the alarm severity: in this case the alarm may have different severity than expected.
+* Incoming value inside the red range: <br> If there is an active alarm of given type for the object, set severity to "CRITICAL". Otherwise, create new CRITICAL alarm with given parameters.
 
-## On alarm escalate actions
+* Measurement outside of yellow and red range: <br>If there is an active alarm of given type for the object, clear the alarm.
 
-When alarm is created send e-mail, sms, or/and initiates text-to-speech.
+**Troubleshooting**
+
+* Verify that the alarm was created and not duplicated from somewhere.
+
+* Check if the device is in [maintenance](/guides/reference/device-management) mode. In this case no new alarm will be created because of suppression policy.
+
+* If you have configured an alarm mapping rule (see [Reprioritizing alarms](/guides/users-guide/administration#reprio-alarms)) which changes the alarm severity, the alarm may have different severity than expected.
+
+* Check if an alarm was already cleared by the next scheduled measurements with resulting value in a green range.
+
+>**Info:**  If you clear an alarm, you state that the alarm is resolved. A new alarm is not raised unless the device changes its state and exceeds the thresholds again.
+
+### On measurement explicit threshold create alarm
+
+**Functionality** 
+
+When the measurement value enters or leaves the RED range, a CRITICAL alarm is generated or cleared.
+
+The severity of alarm is determined as follows:
+
+* If the measurement value moves into RED range, then the severity is CRITICAL.
+
+* If the measurement value moves into GREEN range, the alarm is cleared.
+
+>**Info:** This rule is similar to the rule "On measurement threshold create alarm". However, in this rule here the RED threshold value is provided explicitly. The threshold rule "On measurement threshold create alarm" extracts the thresholds values from the device or Data Point Library.
+
+**Parameters**
 
 The rule uses the following parameters:
 
-![image alt text](/guides/users-guide/escalatealarm1.png)
+<img src="/guides/users-guide/Cockpit/SmartRuleExplicitThreshold.png" name="Smart Rule explicit threshold" style="width:75%;"/>
 
-* Alarm types: The types of the alarm trigger this rule. It will be applied to all new specified alarms.
+|Step|Field|Description|
+|:---|:---|:---|
+|1|Rule name|Pre-filled with the name of the rule template. Can be modified according to your needs.
+|2|On threshold:|"Fragment/Series": Name of the measurement fragment and series. The incoming measurement must have exactly the same fragment name as configured. When creating a rule from the data explorer, these fields are already filled in. <br> Minimum, Maximum: When a value is in the specified range [minimum; maximum], the configured alarm is raised.
+|3|Create alarm:|"Type": Type of alarm being raised. <br>"Text": Alarm message.
+|4|Target asset or devices|Groups or devices the rule shall be applied to.
 
-The rule defines a chain of action in steps. In order to add steps click the button "Add step". A form with following parameters will appear:
+**Troubleshooting**
 
-![image alt text](/guides/users-guide/escalatealarm2.png)
+* Verify that the alarm was created and not duplicated from somewhere.
 
-* Type of action: Type of action executed in the step. Possible values are:
+* Check if the device is in [maintenance](/guides/reference/device-management) mode. In this case no new alarm will be created because of suppression policy.
 
-	* Send e-mail (see On alarm send e-mail rule for parameter descriptions)
+* If you have configured an alarm mapping rule (see [Reprioritizing alarms](/guides/users-guide/administration#reprio-alarms)) which changes the alarm severity, the alarm may have different severity than expected.
 
-	* Send sms (see On alarm send SMS rule for parameter descriptions)
+* Check if an alarm was already cleared by the next scheduled measurements with resulting value in a green range.
 
-	* Call phone (see On alarm initiate text-to-speech call rule for parameter descriptions)
+>**Info:**  If you clear an alarm, you state that the alarm is resolved. A new alarm is not raised unless the device changes its state and exceeds the thresholds again.
 
-* Condition: The condition applied when the rule will be executed. Possible values are:
+### On alarm initiate text-to-speech call
 
-	* Always: Action will be executed always.
+**Functionality** 
 
-	* Always: If step N failed: Only phone steps may fail. The step is marked as failed once all retries have been made without a successful call. This option appears if there is already a phone step configured that can be referred to.
+When an alarm is created, it initiates a text-to-speech call.
 
-** Troubleshooting **
+**Parameters**
 
-* Please check that the alarm was created and not duplicated.
+The rule uses the following parameters:
 
-* If device is not in [maintenance](/guides/reference/device-management) mode: in this case no new alarm will be created because of suppression policy.
+<img src="/guides/users-guide/Cockpit/SmartRuleInitiateCall.png" name="Smart Rule initiate call" style="width:75%;"/>
 
-* If you don't have an alarm mapping rule (see: [Reprioritizing alarms](/guides/users-guide/administration#reprio-alarms)) which change the alarm severity: In this case the alarm may have different severity than expected.
+|Step|Field|Description|
+|:---|:---|:---|
+|1|Rule name|Pre-filled with the name of the rule template. Can be modified according to your needs.
+|2|On alarm matching:|The types of alarms triggering the rule. For each newly created alarm with one of these types in the list the rule is triggered.
+|3|Text-to-speech:|"Phone number": Valid international phone number. Use country codes in the format "+49" (as an example for Germany).<br> "Message": The text read out by the rule. <br> Retries: The number of retries to reach the target phone number if not successful (default is "0", max is "20").<br> "Interval": The time interval between the retries in minutes (default is "5").<br>"Acknowledgment": If selected the receiver of the call has to acknowledge the call (a call not acknowledged will not count as successful)<br> "Acknowledgment text": The acknowledgment message which will be read after the main message, for example: "Please acknowledge this call by pressing the button 5". <br> "Acknowledgment number": The number of the button the receiver has to push to acknowledge. If the button has been pushed, the call will be successful and the alarm status will be changed to acknowledged.
+|4|Target asset or devices|Groups or devices the rule shall be applied to.
+
+**Troubleshooting**
+
+* Make sure that the alarm was created and not duplicated from somewhere.
+
+* Check if the device is in [maintenance](/guides/reference/device-management) mode. No new alarm will be created because of suppression policy.
+
+* If you have configured an alarm mapping rule (see [Reprioritizing alarms](/guides/users-guide/administration#reprio-alarms)) which changes the alarm severity, the alarm may have different severity than expected.
 
 
 ### Smart Rule Variables
 
-You can use variables in certain rule parameters. When a rule is triggered, the variables are replaced by their actual values. You can use this mechanism to insert device names or alarm text into various outputs (E-mail, SMS, Text-to-Voice).
-You can include any information of the triggering event (like the alarm) and the source device of it.
+In certain rule parameters, variables can be used. When a rule is triggered, the variables are replaced by their actual values. You can use this mechanism to insert device names or alarm text into various outputs (email, SMS, text-to-speech). You can include any information of the triggering event (like the alarm) and its source device.
 
 The following table lists example variables:
 
@@ -1621,4 +1625,4 @@ The following table lists example variables:
 </table>
 
 
-**Note: In case the variable does not exist or is misspelled, the generated content is displayed. **
+>**Info:** In case the variable does not exist or is misspelled, the generated content is displayed.

@@ -140,14 +140,20 @@ This file is required to deploy the microservice in Cumulocity infrastructure.
 To create a deployable zip file you need to add following to your pom file:
 
     <properties>
-        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-        <maven.compiler.source>1.8</maven.compiler.source>
-        <maven.compiler.target>1.8</maven.compiler.target>
+        <maven.compiler.source>1.7</maven.compiler.source>
+        <maven.compiler.target>1.7</maven.compiler.target>
         <spring-boot-dependencies.version>1.5.7.RELEASE</spring-boot-dependencies.version>
-        <package.directory>hello-world</package.directory>
-        <package.name>hello-world</package.name>
-        <main.class>c8y.example.App</main.class>
+        <main.class>c8y.example.helloworld.HelloWorldMain</main.class>
     </properties>
+
+    <dependencies>
+        <dependency>
+            <groupId>com.nsn.cumulocity.clients-java</groupId>
+            <artifactId>microservice-autoconfigure</artifactId>
+            <version>8.21.0-SNAPSHOT</version>
+        </dependency>
+    </dependencies>
+
     <build>
         <plugins>
             <plugin>
@@ -176,6 +182,12 @@ To create a deployable zip file you need to add following to your pom file:
                         <goals>
                             <goal>package</goal>
                         </goals>
+                        <configuration>
+                            <name>hello-world</name>
+                            <encoding>UTF-8</encoding>
+                            <rpmSkip>true</rpmSkip>
+                            <containerSkip>false</containerSkip>
+                        </configuration>
                     </execution>
                     <execution>
                         <id>microservice-package</id>
@@ -183,13 +195,19 @@ To create a deployable zip file you need to add following to your pom file:
                         <goals>
                             <goal>microservice-package</goal>
                         </goals>
+                        <configuration>
+                            <name>hello-world</name>
+                            <image>hello-world</image>
+                            <encoding>UTF-8</encoding>
+                            <skip>false</skip>
+                        </configuration>
                     </execution>
                 </executions>
             </plugin>
         </plugins>
     </build>
 
-### Build microservice
+## Build microservice
 
 To build the zip file use following command:
 

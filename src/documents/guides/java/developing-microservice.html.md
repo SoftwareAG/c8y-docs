@@ -261,3 +261,84 @@ Microservice-deploy is responsible for deploying the microservice to a server, d
       <serviceId>microservice</serviceId>
       <skip>false</skip>
     </configuration>
+
+## Deployment
+
+To deploy application on an environment you need
+* URL address of your tenant
+* Authorization header = "Basic {Base64({username}:{password})}"
+* Tenant - tenant Id
+* ZIP build from previous step
+
+
+1. If Application does not exist create new application on a platform:
+
+POST {URL}/application/applications
+
+HEADERS:
+
+    "Authorization": "{AUTHORIZATION}"
+    "Content-type": "application/json"
+BODY:
+
+
+    {
+			"name": "{APPLICATION_NAME}",
+			"type": "MICROSERVICE",
+			"key": "{APPLICATION_NAME}-microservice-key"
+    }
+
+Example:
+
+    $curl -X POST -s \
+      -d "{"name":"hello-microservice-1","type":"MICROSERVICE","key":"hello-microservice-1-key"}" \
+      -H "Authorization: {AUTHORIZATION}" \
+      -H "Content-type: application/json" \
+      "{URL}/application/applications"
+
+If application was created correctly, you can get application id by invoking:
+
+GET {URL}/application/applicationsByName/{APPLICATION_NAME}
+
+HEADERS:
+
+    "Authorization": "{AUTHORIZATION}"
+    "Content-type": "application/json"
+Example
+
+    curl -H "Authorization:{AUTHORIZATION}" \
+     {URL}/application/applicationsByName/hello-world
+
+2. Upload zip file
+POST {URL}/application/applications/{APPLICATION_ID}/binaries
+HEADERS:
+
+    "Authorization": "{AUTHORIZATION}"
+    "Content-Type": "multipart/form-data"
+
+Example
+
+  curl -F "data=@{PATH_TO_ZIP}" \
+  -H "Authorization: {AUTHORIZATION}" \
+  "{URL}/application/applications/{APPLICATION_ID}/binaries"
+
+3. Subscribe to microservice
+
+  POST {URL}/tenant/tenants/$TENANT/applications
+
+  HEADERS:
+
+
+    "Authorization": "{AUTHORIZATION}"
+    "Content-Type": "multipart/form-data"
+
+  BODY:
+
+    {"application":{"id": "{APPLICATION_ID}"}}
+
+  Example:
+
+    curl -X POST -d "{"application":{"id": "{APPLICATION_ID}"}}"  \
+    -H "Authorization: {AUTHORIZATION}" \
+    -H "Content-type: application/json" \
+     "{URL}/tenant/tenants/{TENANT}/applications"

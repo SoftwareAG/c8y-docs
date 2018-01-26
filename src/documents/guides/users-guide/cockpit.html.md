@@ -558,7 +558,7 @@ The "Asset table" widget shows details of all child devices in a table. This is 
 
 **Parameters to configure**
 
-Field|Description|
+|Field|Description|
 |:---|:---|
 |Title|Widget title. By default, the widget type is simply used as title.
 |Target assets or devices|Select for which object all child devices should be shown. This is typically a group object.
@@ -620,7 +620,7 @@ The "Data point list" widget shows data points (measurements), one in each row, 
 |:---|:---|
 |Title|Widget title. By default, the widget type is simply used as title.
 |Data point|Shows a list of available data points. You must enable at least one data point. Click **Add data point** to add a data point to the list. For details on how to add data points see [Adding data points](#add-data-points).
-|Column visibility|Select which columns should be visible: <br>Label: Label of the data point. See [Visualizing Data Using the Data Explorer](#visualize)for details. <br>Target: Target value. Can be configured in the [data explorer](#visualize) or [Data Point Library](#library).<br>Current: Current value. <br>Diff: Absolute difference between current value and target value. <br>Diff %: Percentage of difference between current value and target value. <br>Asset: Name of the device or group of the data point. 
+|Column visibility|Select which columns should be visible: <br>Label: Label of the data point. See [Visualizing Data Using the Data Explorer](#visualize) for details. <br>Target: Target value. Can be configured in the [data explorer](#visualize) or [Data Point Library](#library).<br>Current: Current value. <br>Diff: Absolute difference between current value and target value. <br>Diff %: Percentage of difference between current value and target value. <br>Asset: Name of the device or group of the data point. 
 
 ### Widget "Data point table"
 
@@ -660,7 +660,7 @@ The "Image" widget lets you display a single image to be selected from your comp
 
 The "Info gauge" widget visualizes one data point in form of a radial gauge and multiple data points as labels. 
 
-<img src="/guides/users-guide/Cockpit/Cockpit_InfoGauge" name="Info gauge widget" style="width:75%;"/>
+<img src="/guides/users-guide/Cockpit/Cockpit_InfoGauge.png" name="Info gauge widget" style="width:75%;"/>
 
 You can select one data point for the gauge, and multiple data points shown with labels on the left side.
 
@@ -673,7 +673,7 @@ You must enable at least one data point in each section to create the "Info gaug
 
 The "HTML" widget shows user-defined content. The content can be formatted using HTML.
 
-**Parameters to configure:**
+**Parameters to configure**
 
 * Target assets or devices: Select the objects for which optional HTML expressions are evaluated.
 
@@ -704,6 +704,8 @@ The "Linear gauge" widget visualizes data points in form of a linear gauge. Min 
 
 <img src="/guides/users-guide/Cockpit/Cockpit_LinearGauge.png" name="Linear gauge widget" style="width:75%;"/>
 
+>**Info:** If a label is not properly readable, you can help yourself by increasing the min and max value of the data point to move the label into the readable range.
+
 You must enable at least one data point to create the "Linear gauge" widget.
  
 
@@ -731,7 +733,7 @@ Click a device icon, to open popup with the following information:
 
 **Parameters to configure**
 
-* Target assets or devices: Select which devices are shown on the map. If a group is selected, all devices in that group (but not in any subgroups) are visible.
+Target assets or devices: Select which devices are shown on the map. If a group is selected, all devices in that group (but not in any subgroups) are visible.
 
 >**Info**: If none of the target device(s) has a known location, then the widget shows a world map without icons.
 
@@ -748,7 +750,8 @@ The "Pie chart" widget displays data points (measurements) with current values i
 |Field|Description|
 |:---|:---|
 |Title|Widget title. By default, the widget type is simply used as title.
-|Pie chart options|Select from the options to show tooltips, percentages, legends in the pie chart. |Data point|Shows a list of available data points. You must enable at least one data point. Click **Add data point** to add a data point to the list. For details on how to add data points see [Adding data points](#add-data-points).
+|Pie chart options|Select from the options to show tooltips, percentages, legends in the pie chart. 
+|Data point|Shows a list of available data points. You must enable at least one data point. Click **Add data point** to add a data point to the list. For details on how to add data points see [Adding data points](#add-data-points).
 
 
 ### Widget "Quick links"
@@ -825,7 +828,7 @@ The "Traffic light" widget visualizes the states of a device as traffic light.
 |:---|:---|
 |Title|Widget title. By default, the widget type is simply used as title.
 |Target assets or devices|Select group or device to be displayed.
-|States mapping|
+|States mapping|Select a property for each light. The value of the property has to be one of the following to have the respective light on: true, 1, any non-empty string, any non-null number.
 
 ### Widget "Twitter News"
 
@@ -929,12 +932,14 @@ Click **Add** to add empty properties. To enter a label or path, click "Column" 
 
 Click **Add predefined**, to add predefined properties. Simply select the desired properties from the list and click **Select**. Use the search field at the top to search for a specific property.
 
-<img src="/guides/users-guide/Select" name="Select" style="width:75%;"/>
+<img src="/guides/users-guide/Cockpit/Cockpit_ReportsSelectProperties.png" name="Select properties" style="width:75%;"/>
 
-...
-If you have at least one field that is not originating from the "Add predefined" list but defined as a custom property, then you need to set up at least one property for the custom values to appear in the export. As an example, if  a report has 4 fields defined: time range, device name, type and c8y_SpeedMeasurement.speed.value, then the first 3 are predefined properties, while the last one is a custom property. If any measurement for export does not have a custom property c8y_SpeedMeasurement.speed.value, then it will not appear in the export file.
+If you have at least one field that is not originating from the "Add predefined" list but defined as a custom property, then you need to set up at least one property for the custom values to appear in the export. 
 
-If your field is a valid.key.with.dot then refer to it as ['fragment.key.with.dot'] in the path, e.g.: ['fragment.key.with.dot'].serie.value
+Example:
+A report has 4 fields defined: time range, device name, type and c8y_SpeedMeasurement.speed.value. The first 3 are predefined properties, while the last one is a custom property. If any measurement for export does not have a custom property c8y_SpeedMeasurement.speed.value, then it will not appear in the export file.
+
+If your field is a valid.key.with.dot then refer to it as ['fragment.key.with.dot'] in the path, e.g.: ['fragment.key.with.dot'].series.value
 
 In case of "Measurements" enabled, you can also choose **Add from data point**. For details on how to add data points see [Adding data points](#add-data-points).
 
@@ -966,7 +971,7 @@ Click **Create** to create the customized Smart Rule "On timer send export via e
 
 The Smart Rule will be added to the report details.
 
-<img src="/guides/users-guide/Cockpit/ReportSmartRule.png" name="Smart rule" style="width:100%;"/>
+<img src="/guides/users-guide/Cockpit/Cockpit_ReportSmartRule.png" name="Smart rule" style="width:100%;"/>
 
 
 ### Exporting reports
@@ -1006,13 +1011,13 @@ How does the Cockpit application use the data point library? To find the default
 
 Additionally, the properties of the Data Point Library are used by threshold business rules: The red and yellow values configured in the Data Point Library are used by the threshold rules to raise alarms.
 
-To open the Data Point Library, click **Data Point Library** in the "Configuration" menu of the navigator.
+To open the Data Point Library, click "Data Point Library" in the "Configuration" menu of the navigator.
 
 A list of available data points will be opened. For each data point, the following information is provided in the list:
 
-Color and label for the data point
-Fragment name and series
-Measurement unit
+* Color and label for the data point
+* Fragment name and series
+* Measurement unit
 
 ### Adding a data point to the library
 
@@ -1022,14 +1027,16 @@ Provide the following information:
 
 |Field|Description|
 |:---|:---|
-|Color|Select a color for the data point visualization.
+|Color|Color for the data point visualization.
 |Label|Label to identify the data point.
-|Fragment|Fragment 
-|Series|Series
+|Fragment|Name of the fragment. 
+|Series|Name of the series.
 |Unit|Unit used for the measurement.
-|Target|Unit used for the measurement.
-|Yellow range|Unit used for the measurement.
-|Red range|Unit used for the measurement.
+|Target|Target value.
+|Minimum|Minimum value shown on the y-axis.
+|Maximum|Minimum value shown on the y-axis.
+|Yellow range|Min/max values for the yellow range (MINOR alarms).
+|Red range|Min/max values for the red range (CRITICAL alarms).
 
 Click **Save** to add the data point to the library.
 
@@ -1089,7 +1096,7 @@ To create a Smart Rule, follow these steps:
 
 A list of Smart Rules is shown below. Note that this list might differ based on your installation.
 
-![image alt text](/guides/users-guide/image_23.png)
+<img src="/guides/users-guide/Cockpit/Cockpit_GlobalSmartRules.png" name="Global Smart Rules" style="width:75%;"/>
 
 If the new rule was set to "enabled" and was not activated for specific objects, the rule will be active for all devices and groups. See next section on how to deactivate a smart rule for specific objects.
 
@@ -1103,7 +1110,7 @@ A Smart Rule can be activated (switched on) and deactivated (switched off) for a
 
 To deactivate or activate a Smart Rule for a group or device, navigate to the "Info" tab of the group or device and enable/disable the respective rule using the slider. 
 
-<img src="/guides/users-guide/Cockpit/SmartRuleInfoTab.png" name="Smart rule in Info tab" style="width:100%;"/>
+<img src="/guides/users-guide/Cockpit/Cockpit_SmartRuleInfoTab.png" name="Smart rule in Info tab" style="width:100%;"/>
 
 ### Editing Smart Rules
 
@@ -1128,9 +1135,9 @@ To define a threshold rule follow these steps:
 1. In the navigator, select the desired group or device to apply a threshold to.
 2. Switch to the "Data explorer" tab.
 3. If the data point that should raise the threshold is not visible by default, select **Add data point** and add a data point. For details on how to add data points see [Adding data points](#add-data-points).
-4. Click the menu icon at the end of the row of the respective data point and select **Create Smart Rule**. <br> <img src="/guides/users-guide/Cockpit/DataPointExample.png" name="Data point example" style="width:75%;"/>
-
-5. Select the Smart Rule "On measurement explicit threshold create alarm".<br> <img src="/guides/users-guide/Cockpit/SmartRuleExample.png" name="Smart Rule example" style="width:75%;"/>
+4. Click the menu icon at the end of the row of the respective data point and select **Create Smart Rule**. <br><br> <img src="/guides/users-guide/Cockpit/Cockpit_DataPointExample.png" name="Data point example" style="width:75%;"/>
+<br>
+5. Select the Smart Rule "On measurement explicit threshold create alarm". <br><br> <img src="/guides/users-guide/Cockpit/Cockpit_SmartRuleExample.png" name="Smart Rule example" style="width:50%;"/><br>
 6. Fill in the red range minimum and red range maximum value. When the values are outside these range, a threshold alarm will be raised.
 7. Under "Create Alarm" you can optionally edit the alarm type and the alarm text.
 8. Under "Target assets or devices" you can select the object this rule will be applied to.
@@ -1148,7 +1155,11 @@ Using this mechanism, it is possible to create a chain of smart rules.
 
 ## <a name="business"></a>Smart Rules Collection
 
-Cumulocity includes preset global Smart Rule types. Each global Smart Rule type provides different parameters to configure. 
+Cumulocity includes preset global Smart Rule types. 
+
+<img src="/guides/users-guide/Cockpit/Cockpit_GlobalSmartRules.png" name="Global Smart Rules" style="width:75%;"/>
+
+Each global Smart Rule type provides different parameters to configure. 
 
 The following section describes each available type and its configuration properties.
 
@@ -1164,7 +1175,7 @@ When an alarm is created, a SMS is sent.
 
 The rule uses the following parameters:
 
-<img src="/guides/users-guide/Cockpit/SmartRuleSendSMS.png" name="Smart Rule send SMS" style="width:75%;"/>
+<img src="/guides/users-guide/Cockpit/Cockpit_SmartRuleSendSMS.png" name="Smart Rule send SMS" style="width:50%;"/>
 
 |Step|Field|Description|
 |:---|:---|:---|
@@ -1193,7 +1204,7 @@ When an alarm is created, an email is sent.
 
 The rule uses the following parameters:
 
-<img src="/guides/users-guide/Cockpit/SmartRuleSendEmail.png" name="Smart Rule send email" style="width:75%;"/>
+<img src="/guides/users-guide/Cockpit/Cockpit_SmartRuleSendEmail.png" name="Smart Rule send email" style="width:50%;"/>
 
 |Step|Field|Description|
 |:---|:---|:---|
@@ -1222,7 +1233,7 @@ When an alarm is created, sends e-mail, sms, and/or initiates text-to-speech.
 
 The rule uses the following parameters:
 
-<img src="/guides/users-guide/Cockpit/SmartRuleOnAlarmEscalate.png" name="Smart Rule on alarm escalate" style="width:75%;"/>
+<img src="/guides/users-guide/Cockpit/Cockpit_SmartRuleOnAlarmEscalate.png" name="Smart Rule on alarm escalate" style="width:50%;"/>
 
 |Step|Field|Description|
 |:---|:---|:---|
@@ -1251,7 +1262,7 @@ If an alarm is active for a certain time, the severity is increased.
 
 The rule uses the following parameters:
 
-<img src="/guides/users-guide/Cockpit/SmartRuleIncreaseSeverity.png" name="Smart Rule increase severity" style="width:75%;"/>
+<img src="/guides/users-guide/Cockpit/Cockpit_SmartRuleIncreaseSeverity.png" name="Smart Rule increase severity" style="width:50%;"/>
 
 |Step|Field|Description|
 |:---|:---|:---|
@@ -1282,7 +1293,7 @@ The rule can be configured for entering or leaving the geofence, or both. Existi
 
 The rule uses the following parameters:
 
-<img src="/guides/users-guide/Cockpit/SmartRuleAlarmOnGeofence.png" name="Smart Rule alarm on geofence" style="width:75%;"/>
+<img src="/guides/users-guide/Cockpit/Cockpit_SmartRuleAlarmOnGeofence.png" name="Smart Rule alarm on geofence" style="width:50%;"/>
 
 |Step|Field|Description|
 |:---|:---|:---|
@@ -1301,7 +1312,7 @@ No alarm will be generated until the device crosses the geofence border for the 
 
 * If you have configured an alarm mapping rule (see [Reprioritizing alarms](/guides/users-guide/administration#reprio-alarms)) which changes the alarm severity, the alarm may have different severity than expected.
 
-## On geofence send e-mail
+### On geofence send e-mail
 
 **Functionality** 
 
@@ -1313,7 +1324,7 @@ The rule can be configured for entering or leaving the geofence, or both.
 
 The rule uses the following parameters:
 
-<img src="/guides/users-guide/Cockpit/SmartRuleEmailOnGeofence.png" name="Smart Rule email on geofence" style="width:75%;"/>
+<img src="/guides/users-guide/Cockpit/Cockpit_SmartRuleEmailOnGeofence.png" name="Smart Rule email on geofence" style="width:50%;"/>
 
 |Step|Field|Description|
 |:---|:---|:---|
@@ -1341,7 +1352,7 @@ Creates consumption data point based on data from an electric-, gas-, water- met
 
 The rule uses the following parameters:
 
-<img src="/guides/users-guide/Cockpit/SmartRuleCalculateEnergyConsumption.png" name="Smart Rule calculate energy consumption" style="width:75%;"/>
+<img src="/guides/users-guide/Cockpit/Cockpit_SmartRuleCalculateEnergyConsumption.png" name="Smart Rule calculate energy consumption" style="width:50%;"/>
 
 |Step|Field|Description|
 |:---|:---|:---|
@@ -1371,13 +1382,12 @@ If no new measurement data has been received for a specified time, an alarm is c
 
 The rule uses the following parameters:
 
-<img src="/guides/users-guide/Cockpit/SmartRuleMissingMeasurements.png" name="Smart Rule alarm on missing measurements" style="width:75%;"/>
+<img src="/guides/users-guide/Cockpit/Cockpit_SmartRuleMissingMeasurements.png" name="Smart Rule alarm on missing measurements" style="width:50%;"/>
 
 |Step|Field|Description|
 |:---|:---|:---|
 |1|Rule name|Pre-filled with the name of the rule template. Can be modified according to your needs.
-|2|Monitored measurement:|"Type": Type of measurement. The incoming measurement must have the same type as configured. When creating a rule from the data explorer, the type is already filled in.
-<br> "Time interval": Interval for calculating consumption values.
+|2|Monitored measurement:|"Type": Type of measurement. The incoming measurement must have the same type as configured. When creating a rule from the data explorer, the type is already filled in.<br> "Time interval": Interval for calculating consumption values.
 |3|Create alarm:|Type of alarm being raised. <br> Severity of alarm being raised. <br>Alarm text.
 |4|Target asset or devices|Groups or devices the rule shall be applied to.
 
@@ -1394,7 +1404,7 @@ If a certain alarm occurs, the specified operation will be send to the device.
 
 The rule uses the following parameters:
 
-<img src="/guides/users-guide/Cockpit/SmartRuleExecuteOperation.png" name="Smart Rule execute operation" style="width:75%;"/>
+<img src="/guides/users-guide/Cockpit/Cockpit_SmartRuleExecuteOperation.png" name="Smart Rule execute operation" style="width:50%;"/>
 
 |Step|Field|Description|
 |:---|:---|:---|
@@ -1423,7 +1433,7 @@ Using this mechanism, you can configure global threshold ranges in the Data Poin
 
 The rule uses the following parameters:
 
-<img src="/guides/users-guide/Cockpit/SmartRuleExplicitThreshold.png" name="Smart Rule explicit threshold" style="width:75%;"/>
+<img src="/guides/users-guide/Cockpit/Cockpit_SmartRuleExplicitThreshold.png" name="Smart Rule explicit threshold" style="width:50%;"/>
 
 |Step|Field|Description|
 |:---|:---|:---|
@@ -1486,7 +1496,7 @@ The severity of alarm is determined as follows:
 
 The rule uses the following parameters:
 
-<img src="/guides/users-guide/Cockpit/SmartRuleExplicitThreshold.png" name="Smart Rule explicit threshold" style="width:75%;"/>
+<img src="/guides/users-guide/Cockpit/Cockpit_SmartRuleExplicitThreshold.png" name="Smart Rule explicit threshold" style="width:50%;"/>
 
 |Step|Field|Description|
 |:---|:---|:---|
@@ -1517,7 +1527,7 @@ When an alarm is created, it initiates a text-to-speech call.
 
 The rule uses the following parameters:
 
-<img src="/guides/users-guide/Cockpit/SmartRuleInitiateCall.png" name="Smart Rule initiate call" style="width:75%;"/>
+<img src="/guides/users-guide/Cockpit/Cockpit_SmartRuleInitiateCall.png" name="Smart Rule initiate call" style="width:50%;"/>
 
 |Step|Field|Description|
 |:---|:---|:---|

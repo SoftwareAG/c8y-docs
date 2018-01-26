@@ -10,52 +10,21 @@ The Cockpit application provides you with options to manage and monitor  Interne
 
 The following sections will walk you through all functionalities of the Cockpit application in detail. For your convenience find an overview on the content of this document below.
 
-Section|Content|
+|Section|Content|
 |:---|:---|
-|[Entering the Cockpit Application](#start)|Explaining the content of the [Welcome screen](#welcome) and the initial [Home dashboard](#home). 
-|[Connect](#connect) devices and manage [assets](#asset)|How to...
-|[Visualize Data Using the Data Explorer](#visualize)|How to access and use the [data explorer](#visualize), [add data points](#add-data-points) to the data explorer, [customize data point properties](#customize-data-points), [modify the visualization](#change-visualization), store the [data explorer as widget](#create-widget), and [export](#export-data) the data. 
-|[Working with Dashboards](#dashboards)|How to create your own analytics and monitor pages by selecting and arranging widgets. Select from various widgets including maps, tables, graphs, charts, controls and more.
-|[Widgets Collection](#widget)|How to configure [widgets](#widget) of each type provided in the Widget collection that comes with Cumulocity.
-|[Working with Alarms](#alarms)|How to work with alarms. Since working with alarms in the Cockpit application is actually the same as working with alarms in Device Management, refer to [Working with alarms](http://cumulocity.com//guides/users-guide/device-management/#alarm-monitoring) in *Device Management*. 
-|[Managing Reports](#reports)|How to handle [Dashboard reports](#reports), how to work with [reports for exporting data](#reporting) in CSV or excel format and how to [schedule the export](#schedule-export).
-|[Using the Data Point Library](#library)|How to add, edit or remove data points in the [Data Point Library](#library).
-|[Working with Smart Rules](#rules)|How to [create Smart Rules](#create-rules) to analyze data in realtime and to perform actions based on data and how to and [manage Smart Rules](#rules).
-|[Smart Rules Collection](#business)|How to configure each [global Smart Rule](#business) type available in Cumulocity.
+|[Entering the Cockpit Application](#start)|Enter the Cumulocity platform through the [Welcome screen](#welcome) and explore the initial [Home dashboard](#home) of the Cockpit application. 
+|[Managing Assets](#asset)|Organize assets in [hierarchies](#hierarchies) by [creating groups ](#creating-groups)and [assigning devices](#assigning-devices).
+|[Visualize Data Using the Data Explorer](#visualize)|Interactively explore, compare and visualize IoT data. <br> Describes how to access and use the [data explorer](#visualize), [add data points](#add-data-points) to the data explorer, [customize data point properties](#customize-data-points), [modify the visualization](#change-visualization), store the [data explorer as widget](#create-widget), and [export](#export-data) the data. 
+|[Working with Dashboards](#dashboards)|[Create your own analytics and monitor pages](#creating-dashboards) by adding and arranging [widgets](#adding-widgets). [Share dashboards](#sharing-dashboards) among all devices of the same type. 
+|[Widgets Collection](#widget)|Use various types of [widgets](#widget) from the Widgets collection that comes with Cumulocity and configure them according your needs.
+|[Working with Alarms](#alarms)|Monitor problems of your assets using severities and workflows. Since working with alarms in the Cockpit application is actually the same as working with alarms in Device Management, refer to [Working with alarms](http://cumulocity.com//guides/users-guide/device-management/#alarm-monitoring) in *Device Management*. 
+|[Managing Reports](#reports)|Handle [reports](#reports) based on dashboard layouts, create [reports for exporting data](#reporting) in CSV or excel format and [schedule the export](#schedule-export). 
+|[Using the Data Point Library](#library)|Manage default settings ("profiles") of your devices and apply them automatically using the [Data Point Library](#library).
+|[Working with Smart Rules](#rules)|[Create and manage business rules](#create-rules) to work on incoming data in realtime and to perform actions based on this data.
+|[Smart Rules Collection](#business)|Use pre-defined [global Smart Rules](#business) to configure rules for geofencing, thresholds or alarm escalation and notifications (SMS/email/voice). Describes each SmartRule and its configurable parameters in detail.
 
 If you want to learn more about general aspects of the Cumulocity platform and its applications, refer to [*Introduction*](/guides/users-guide/overview).
 
-## <a name="intro"></a>Introduction
-
-The Cumulocity Cockpit can be used in many industrial areas, including:
-
-* Condition monitoring
-
-* Alarm monitoring and escalation
-
-* Building asset monitoring
-
-* Energy consumption of factories and equipment
-
-* Sensor data monitoring
-
-In the following section the Cockpit application is described. It offers lots of functionalities:
-
-* **Data Explorer**: Interactively explore, compare and visualize IoT data.
-
-* **Dashboards**: Create your own analytics and monitor pages by selecting and arranging widgets. Select from various widgets including maps, tables, graphs, charts, controls and more.
-
-* **Smart Rule Builder**: Create business rules to work on incoming data in real-time.
-
-* **Business Rule Package**: Use pre-defined business rules for geofencing, thresholds or alarm escalation and notifications (SMS/email/voice).
-
-* **Reporting**: Create reports based on the dashboards layout and distribute them by email.
-
-* **Asset Management**: Organize your connected assets in hierarchies.
-
-* **Alarm Management**: Monitor problems of your asset using severities and workflows.
-
-* **Data point library**: Manage default settings ("profiles") of your devices and apply them automatically using the "Data point library".
 
 ### Concepts
 
@@ -63,15 +32,15 @@ The main concepts of the Cockpit application are the following:
 
 |CONCEPT|DESCRIPTION|
 |:---|:---|
-|**Asset**|An asset represents a business object like buildings, machines, or cars.
-|**Asset Hierarchy**|Assets are organized in hierarchies (trees). The nodes of the tree represent groups, and the leaves of the tree represent devices.
+|**Asset**|Assets represent business objects like buildings, machines, or cars.
+|**Asset Hierarchy**|Assets are organized in hierarchies (trees). The nodes of the trees represent groups, and the leaves of the tree represent devices.
 |**Group**|A group is a way to organize devices and assets in an asset hierarchy. A group can contain one or multiple devices, child devices or other groups.
 |**Device**|An IoT device can be a gateway device, a device indirectly connected via a gateway (like modbus or KNX device), or a sensor.
-|**Data Point**|Data points represent sensor data, like temperature time series. In other areas of Cumulocity they are called measurements. Other terms used are time series or variable. They are always sensor generated data.
+|**Data Point**|Data points, also called measurements, represent sensor data, like temperature time series. They are always sensor-generated data.
 |**Data Point Properties**|Metadata for a data point, representing additional properties added by the user like a label, min/max values, thresholds, or other.
 |**Dashboard**|A user-defined page with individual content from various widgets.
 |**Report**|Similar to dashboards, but with analytical content based on a limited time frame or scope of work.
-**Smart Rules**|Cumulocity business rules are instances from a smart rule template using the Smart Rule Builder.
+|**Smart Rules**|Cumulocity business rules are instances from a Smart Rule template using the Smart Rule Builder.
 
 
 ## <a name="start"></a>Entering the Cockpit Application
@@ -80,7 +49,7 @@ The main concepts of the Cockpit application are the following:
 
 When you log into Cumulocity, you will be taken to the Cockpit application where the **Welcome** page initially opens up.
 
-<img src="/guides/users-guide/Cockpit/Cockpit_WelcomeScreen" name="Welcome screen" style="width:100%;"/>
+<img src="/guides/users-guide/Cockpit/Cockpit_WelcomeScreen.png" name="Welcome screen" style="width:100%;"/>
 
 The **Welcome** page contains the following items:
 
@@ -123,7 +92,7 @@ The asset hierarchy is composed of two types of objects:
 
 * **Groups**: Objects which group single devices or other groups. Groups can either be created in the Cockpit application or in the Device Management application.
 
-* **Devices**: Devices which are linked into the asset hierarchy. Before you can use devices in the Cockpit application, they need to be connected to Cumulocity. This is done in the Device Management application. For details on connecting devices refer to [*Device Management*](/guides/users-guide/device-management) in the *User Guide*.
+* **Devices**: Devices which are linked into the asset hierarchy. Before you can use devices in the Cockpit application, they need to be connected to Cumulocity. This is done in the Device Management application. For details on connecting devices refer to [*Device Management*](/guides/users-guide/device-management).
 
 In this example, the group objects represent a building asset. The device objects represent the room asset. The group names and hierarchy can be defined individually by the user. The hierarchy can have multiple levels, like region level, city level, street level, building level, floor level and room level. Any device can be part of multiple and different hierarchies, like part of regional hierarchy and part of customer hierarchy.
 
@@ -131,12 +100,12 @@ To position a device in the asset hierarchy, you have to "assign" the device to 
 
 > **Info:** Single devices are not managed in the Cockpit application. They are managed in the Device Management application.
 
-### Asset hierarchy versus device hierarchy
+### <a name="hierarchies"></a>Asset hierarchy versus device hierarchy
 
 Cumulocity supports two types of hierarchies: a device hierarchy and an
 asset hierarchy.
 
-The device hierarchy tracks how devices are linked to Cumulocity from a communications point of view. The asset hierarchy structures the assets that are being remotely supervised and controlled through the M2M devices. For details, refer to "[Cumulocity's Domain Model](/guides/concepts/domain-model)".
+The device hierarchy tracks how devices are linked to Cumulocity from a communications point of view. The asset hierarchy structures the assets that are being remotely supervised and controlled through the M2M devices. For details, refer to [Cumulocity's Domain Model](/guides/concepts/domain-model) in the *Concepts Guide*.
 
 In the Cockpit application, you construct your asset hierarchy by creating group objects and by linking devices into the hierarchy. The asset hierarchy depends on the IoT devices used. There are many types of IoT devices, but these two types are very common:
 
@@ -169,55 +138,57 @@ If you manage trucks within the Cumulocity platform, then each truck is represen
 
 For building management, it is most common that a group of sensors inside a building represents the building as a group communicating with the Cumulocity platform.
 
-## Managing Assets
+### Navigating assets
 
 In the asset hierarchy, Cumulocity distinguishes between top-level groups and subgroups, so called sub-assets.
 
 In the navigator, top-level groups are shown in the "Group" menu at top-level. Sub-assets are shown in the navigator under the top-level groups or in the "Sub-asset" tab of a particular group.
 
+<img src="/guides/users-guide/Cockpit/Cockpit_SubAssets.png" name="Sub-assets" style="width:100%;"/>
 
-### Navigating assets
+When selecting an object in the asset hierarchy, details on the selected object are displayed at the right.
 
+<img src="/guides/users-guide/Cockpit/Cockpit_InfoTab.png" name="Info tab" style="width:100%;"/>
 
-
-![image alt text](/guides/users-guide/image_5.png)
-
-When selecting an object in the asset hierarchy, the right part of the application shows more details about the selected object:
-
-![image alt text](/guides/users-guide/image_6.png)
-
-The visible tabs on the right of the navigator differ based on the selection in the navigator. The following table shows which tabs are visible based on the selection in the navigator:
-
-|Info|Alarms|Sub-assets|Location|Data explorer|
-|:---|:---|:-----|:-----|:----------|:----------|:----------|
-|Group selected:|Yes|No|Yes|No|Yes, showing all data points of the children|
-|Device selected:|Yes|Yes|No|Yes|Yes, showing all data points of the children|
-
-There can be additional tabs visible in case the application has been extended with plugins. See "[Introduction to plugin development](/guides/web/introduction)" for details.
-
-If you add a gateway device, the child devices are not shown. To show child devices, you must add them to the related asset. Details related to the child hierarchy are visible and editable in the Device Management Application.
+If you add a gateway device, the child devices are not shown. To show child devices, you must add them to the related asset. Details related to the child hierarchy are visible and editable in the Device Management application.
 
 To navigate further in the asset hierarchy, use the navigator or select an object in the "Sub-Asset" tab. To navigate up in the asset hierarchy, use the breadcrumb entry below the name of the asset.
 
-### Searching assets
 
-To search for groups or devices, use the **Search** button in the top bar. For details on the searching functionality, refer to [Searching](#searching) in *Overview > Search and Filter Functionality*.
+### Asset details
 
-### Adding Groups
+Several tabs are available for each object, dependent of the object type:
 
-To add a new top-level group, click on the "+" in the top of the application and select “Add Group…”. This will show the following dialog:
+|Tab|Description|Availability
+|:---|:---|:---
+|Info|Shows a list of [Smart Rules](#rules) created for the object.|Group, Device
+|Alarms|Displays alarms for the device. For details on alarms, refer to [Working with alarms](http://cumulocity.com//guides/users-guide/device-management/#alarm-monitoring) in *Device Management*.|Device
+|Sub-assets|Shows the sub-assets of a group.|Group
+|Data explorer|Shows all data points of the children. For details refer to [Visualizing Data Using the Data Explorer](#visualize).|Group, Device
+|Location|Shows the current location of a device.|Device
 
-![image alt text](/guides/users-guide/image_7.png)
+If dashboards have been created for an object, they will also be added as a tab. See [Working with Dashboards](#dashboards) for details.
 
-This will create a new group with the selected assigned devices. After clicking "Create group with devices", the group is shown in navigator as top level object.
+Moreover, additional tabs may be displayed here in case the application has been extended with plugins. See [Introduction to plugin development](/guides/web/introduction) for details.
 
-To add a new group as children of an existing asset, click the "+ Add Group" in the “Sub-assets” tab.
+### <a name="creating-groups"></a>Adding groups
 
-![image alt text](/guides/users-guide/image_8.png)
+To create a new group, follow these steps:
 
-### Assign devices to groups
+1. Click the **Plus** button at the right of the top bar, then select **New group** from the menu. <br><br>
+<img src="/guides/users-guide/Cockpit/Cockpit_CreateGroup.png" name="Create group" style="width:50%;"/><br>
+2. In the window that comes up enter a unique group name to identify your group.
+3. In the "Device Search" field, enter the search criteria for the devices you might want to add to your group (e.g. "ublox"). A list of devices that match your search criteria will be displayed. 
+4. Checkmark the devices you want to add from the list.
+5. Click **Create group with X device(s)** to finally create your new group. 
 
-Before adding a device to the asset hierarchy, it must be connected to Cumulocity. Connecting devices to the platform is done in the Device Management application. For details on connecting devices refer to [*Device Management*](/guides/users-guide/device-management) in the *User Guide*.
+>**Info:** A group can be created with "0" devices in it.
+
+To add a new group as a child of an existing asset, navigate to its "Sub-asset" tab and click **Add Group** in the top menu bar.
+
+### <a name="assigning-devices"></a>Assigning devices to groups
+
+Before adding a device to the asset hierarchy, it must be connected to Cumulocity. Connecting devices to the platform is done in the Device Management application. For details on connecting devices refer to [*Device Management*](/guides/users-guide/device-management).
 
 To assign a device to a group, follow these steps:
 
@@ -226,26 +197,36 @@ To assign a device to a group, follow these steps:
 3. Checkmark the devices you want to add from the list.
 4. Click **Assign X device(s)** to assign the selected devices. 
 
+The devices will be shown as sub-assets in the "Sub-assets" tab.
 
-To assign connected devices into the asset hierarchy, select the group where the device should appear, click on "sub-assets" and click the “+ Assign Device” button.
+### Editing groups
 
-In the following dialog, search for devices and select the devices (or sub-devices) that should be assigned.
+To edit the name of a group, navigate to its "Info" tab and click **Edit** next to its name. Edit the name and optionally leave some notes to be displayed in the "Info" tab. Click **Save changes** to apply your settings.
 
-![image alt text](/guides/users-guide/image_9.png)
+### Deleting groups
 
-### Delete Groups
+To delete a top-level group from the navigator, follow these steps:
 
-You can delete a group by hover over the group in the "Sub-assets" tab. You will see a red [X], which you can click to delete the group.
+1. Click "Groups" in the navigator. 
+2. Click the menu icon for the group you want to delete.
+3. From the context menu, select **Delete**.
 
-### Unassigning Devices
+To delete a group from the "Sub-assets" tab of another group, follow these steps:
 
-To un-assign a device from a group, select the group in the navigator. Then hover over the device in the "Sub-assets" tab and click the red [X] button.
+1. Navigate to the "Sub-assets" tab.
+2. Click the menu icon for the group you want to delete.
+3. From the context menu, select **Delete**.
 
-Un-assigning a device does not remove the device, sub-devices or any associated data. The device is only removed from its location in the asset hierarchy. It can be assigned afterward to other groups again.
+### Unassigning devices
 
-### Editing Groups
+To unassign a device from a group, follow these steps:
 
-To edit the name of the group, click on the "Info" tab and edit the name.
+1. Navigate to the "Sub-assets" tab of the group.
+2. Click the menu icon for the device you want to unassign.
+3. From the context menu, select **Unassign**.
+
+Unassigning a device does not remove the device, sub-devices or any associated data. The device is only removed from its location in the asset hierarchy. It can be assigned to this group or other groups later.
+
 
 ## <a name="visualize"></a>Visualizing Data Using the Data Explorer
 
@@ -267,7 +248,7 @@ The visualization is generated based on data point properties.
 
 The data points properties are pre-filled as follows:
 
-* If these properties have been customized previously, these values are used, see [Customizing data point properties](#Customize-data-points).
+* If these properties have been customized previously, these values are used, see [Customizing data point properties](#customize-data-points).
 
 * If the data points have a matching definition in the Data Point Library, the values from the Data Point Library are used.
 
@@ -275,7 +256,7 @@ There can be more than one matching data point entry in the Data Point Library. 
 
 ![edit data points](/guides/users-guide/data-explorer-data-points-edit.PNG)
 
-For details on modifying the visualization in general, see [Changing data point visualization](#change-visualization). For details on customizing the properties of a particular data point, see [Customizing data point properties](#Customize-data-points).
+For details on modifying the visualization in general, see [Changing data point visualization](#change-visualization). For details on customizing the properties of a particular data point, see [Customizing data point properties](#customize-data-points).
 
 ### <a name="change-visualization"></a>Changing data explorer visualization
 
@@ -315,7 +296,7 @@ For each datapoint, its visibility can be switched on or off by using the slider
 
 To add a data point to the data explorer, click  **Add data point** at the bottom of the "Data points" card. 
 
-![add data point](/guides/users-guide/Cockpit/Cockpit_AddDatapoint.PNG)
+<img src="/guides/users-guide/Cockpit/Cockpit_AddDatapoint.png" name="Add data points" style="width:50%;"/><br>
 
 In the top of the dialog, select a device from the asset hierarchy. Only the asset hierarchy below the objects selected in the navigator is visible. If "Data explorer" in the navigator was selected, the complete asset hierarchy is visible.
 
@@ -323,7 +304,7 @@ The bottom of the dialog shows all data points of the selected object. Select th
 
 To save the data point to the Data Point Library, click the menu icon of the data point and from the context menu select **Save to library**. 
 
-<img src="/guides/users-guide/Cockpit/Cockpit_DataPointContextMenu.PNG" name="data point context menu" style="width:75%;"/>
+<img src="/guides/users-guide/Cockpit/Cockpit_DataPointContextMenu.png" name="data point context menu" style="width:75%;"/>
 
 For details on the Data Point Library refer [Using the Datapoint Library](#library).
 
@@ -336,12 +317,13 @@ You can customize the visualization of a particular data point to your preferenc
 
 The following fields my be modified:
 
-Field|Description|
+|Field|Description|
 |:---|:---|
 |Label|Name of the data point, displayed on the y-axis to identify the data point. Below the label, the target is displayed, showing the name of the asset and the internal name of the data point (measurement fragment and series). This information is not editable.
 |Unit|Unit used on the y-axis. 
 |Min/Max|Range shown on the y-axis. 
-|Target|The target value is currently not shown in the diagram. The value is used in the "Data Point List" widget.|Yellow range min/max|Defines the range when MINOR alarms should be raised by threshold rule.  
+|Target|The target value is currently not shown in the diagram. The value is used in the "Data Point List" widget.
+|Yellow range min/max|Defines the range when MINOR alarms should be raised by threshold rule.  
 |Red range min/max|Defines the range when CRITICAL alarms should be raised by threshold rule.
 |Display|Value displayed when data is aggregated. May be "Minimum", Maximum", Minimum and maximum".
 |Chart type|The type of chart used for the visulization. May be one of "Line", "Points", "Line and points", "Bars". Default value is "line".
@@ -367,7 +349,7 @@ In addition to data points you can also add alarms or events to the data explore
 
 <img src="/guides/users-guide/Cockpit/Cockpit_DataExplorerAlarms.png" name="Alarms" style="width:75%;"/> 
 
-In the "Alarms / Events" card, click **Add alarm/ event** to add an alarm or event.
+In the "Alarms/ Events" card, click **Add alarm/ event** to add an alarm or event.
 
 <img src="/guides/users-guide/Cockpit/Cockpit_DataExplorerAlarmAdd.png" name="Add widget" style="width:75%;"/> 
 
@@ -382,15 +364,27 @@ As with data points, you can turn the visibility of an alarm/ event in the data 
 
 ### <a name="create-widget"></a>Creating widgets from the data explorer
 
-If you want to keep your current configuration for later usage, save it as widget using **Send as widget to dashboard**.
+If you want to keep your current configuration in the data explorer for later usage, save it as a widget.
 
-To create a widget from the data explorer, click the **More...** button in the top menu bar and select **Send as a widget to a dashboard**.
+**Send as widget to dashboard**
 
-![send to dashboard](/guides/users-guide/data-explorer-send-to-dashboard.PNG)
+To create a widget from the data explorer of a particular asset, click **More...** in the top menu bar and select **Send as a widget to dashboard** from the context menu.
+
+<img src="/guides/users-guide/Cockpit/Cockpit_SendWidgetToDashboard.png" name="Send as widget to dashboard" style="width:50%;"/> 
 
 In the upcoming dialog, select one of the dashboards available for the current object and click **Select** to add the data explorer as widget to the selected dashboard.
 
 **Info**: To use this function, first a dashboard has to be created. For details on dashboards, refer to [Working with Dashboards](#dashboards).
+
+**Send as widget to report**
+
+To create a widget from the data explorer of in the navigator, click **More...** in the top menu bar and select **Send as a widget to report** from the context menu.
+
+<img src="/guides/users-guide/Cockpit/Cockpit_SendWidgetToReport.png" name="Send as widget to report" style="width:50%;"/> 
+
+In the upcoming dialog, select one of the reports available and click **Select** to add the data explorer as widget to the selected report.
+
+**Info**: To use this function, first a report has to be created. For details on reports, refer to [Working with Dashboard reports](#reports).
 
 
 ### <a name="export-data"></a>Exporting measurement data
@@ -410,45 +404,42 @@ The download will be generated, as shown in the upcoming dialog. This make take 
 
 ## <a name="dashboards"></a>Working with Dashboards
 
-Dashboards provide you with a customized visualization of your data with a set of widgets. Widgets can display maps, images, graphs, tables and other graphic representations of data. 
+Dashboards provide you with a customized visualization of your data by using a set of widgets. Widgets can display maps, images, graphs, tables and other graphic representations of data. 
 
-Cumulocity comes with a number of preset widgets, see section [Widget Collection](#widget) for details. You can also develop your own widgets according to your needs and add them to your Cumulocity account. Refer to the [Web Developer's Guide](/guides/web/) for details.
+Cumulocity comes with a number of preset widgets, see [Widgets Collection](#widget) for details. You can also develop your own widgets and add them to your Cumulocity account. Refer to the [Web Developer's Guide](/guides/web/) for details.
 
-### <a name="creating-dashboards"></aCreating a dashboard
+### <a name="creating-dashboards"></a>Creating a dashboard
 
 Select the group or the device in the navigator for which to create a dashboard. 
 
 Click the **Plus** button in the top bar and from the context menu select **New dashboard**. 
 
-![Create Dashboard](/guides/users-guide/dashboard-create.png)
+<img src="/guides/users-guide/Cockpit/Cockpit_DashboardCreate.png" name="Create dashboard" style="width:75%;"/>
 
-In the "Dashboard info" section of the "Create dashboard" window, provide the following information:
+In the "Dashboard info" section of the dashboard editor, provide the following information:
 
 * A menu label to be used as the name of the dashboard
-* The location of the dashboard in the navigator, with "10000" being ordered first and "-10000" last
-* An icon which is shown next to the dashboard name in the navigator
+* The location of the dashboard in the menu, with "10000" being ordered first and "-10000" last
+* An icon which is shown next to the dashboard name in the menu
 
-In the "Dashboard layout" section you can select a theme for the dashboard (one of Light, Dark, Transparent or Branded) and a default header style for the widgets (one of Regular, Border, Overlay, or Hidden). Moreover, you can change the default widget margin (default value is 15 px). 
+In the "Dashboard layout" section you can select a theme for the dashboard (one of "Light", "Dark", "Transparent" or "Branded") and a default header style for the widgets (one of "Regular", "Border", "Overlay", or "Hidden"). Moreover, you can change the default widget margin (default value is 15 px). 
 
-A preview of the selected layout settings is displayed in the "Preview" section to check your selections.
+A preview of the selected layout settings is immediately displayed in the "Preview" section at the right to visualize your selections.
 
-Click "Save" to create and open the dashboard. 
+Click **Save** to create and open the dashboard. 
 
 Since there will be no widgets on the dashboard yet, you will see an **Add Widget** button instead.
 
-### Editing dashboard properties
 
-To edit a dashboard, click **Edit** in the top menu bar. The dashboard editor will open up. For details on the fields, refer to [Creating dashboards](#creating-dashboards).
-
-### Adding a widget to a dashboard
+### <a name="adding-widgets"></a>Adding a widget to a dashboard
 
 To add a widget to a dashboard, click **Add widget** in the top menu bar.
 
-<img src="/guides/users-guide/Cockpit/Cockpit_AddWidget" name="Add widget" style="width:100%;"/> 
+<img src="/guides/users-guide/Cockpit/Cockpit_AddWidget.png" name="Add widget" style="width:75%;"/> 
 
-In the upcoming dialog select a widget type from the dropdown list. Depending on the widget type selected, additional fields and checkboxes will be displayed to be filled in or selected. For details on the widgets refer to [Widget Collection](#widget). 
+In the upcoming dialog, select a widget type from the dropdown list. Depending on the widget type selected, additional fields and checkboxes will be displayed to be filled in or selected. For details on all widgets refer to [Widgets Collection](#widget). 
 
-Click **Customize widget style** to customize the content and header style for the widget individually, similar to specifying the general layout in the dashboard editor.
+Click **Customize widget style** to customize the content and header style for the widget individually, similar to specifying the general layout in the [dashboard editor](#creating-dashboards).
 
 Click **Save** to add the widget to the dashboard.
 
@@ -462,62 +453,47 @@ To edit the properties of a widget on a dashboard, click the cogwheel icon at th
 
 To delete a widget from a dashboard, click the cogwheel icon at the top right corner of the widget and from the context menu select **Remove**.
 
-> **Info:** Widgets can only be modified, if the dashboard is unlocked. To lock/unlock a dashboard, use the slider with the lock icon on the top menu bar.
+Widgets can only be modified, if the dashboard is unlocked. To lock/unlock a dashboard, use the slider with the lock icon on the top menu bar.
 
-![dashboard lock](/guides/users-guide/dashboardlock.png)
+<img src="/guides/users-guide/Cockpit/Cockpit_LockDashboard.png" name="Lock dashboard" style="width:50%;"/> 
 
-On a laptop, these icons only appear when you hover over the widget header.
-
-Editing on touch devices like smartphones or tablets do not support all functions. To show the widget icons on touch devices, please hover over the widget header.
+>**Info:** On touch devices like smartphones or tablets some functions may not be supported.
 
 
-### Creating a dashboard for identical devices
+### <a name="sharing-dashboards"></a>Sharing dashboards
 
-You can create one dashboard that will appear for all identical devices. To do so, create a new dashboard as described above. Before clicking "Save", select the option "Apply dashboard to all devices of type _type_". The text "_type_" is replaced with the type of the device that is currently selected.
+You can create one dashboard and share it with all devices of a specific type. To do so, select the option "Apply dashboard to all devices of type [TYPE]" ([TYPE] is replaced with the type of the device that is currently selected).
 
-Then this dashboard should appear for all identical devices. Changes made to this dashboard are automatically applied to all dashboards.
+In the dashboard editor, the following message will be displayed:
 
-> You can only add widgets and data to the dashboard for the device itself. It is not possible to add data from child devices because the structure of these devices might be different from device to device.
+<img src="/guides/users-guide/Cockpit/Cockpit_ShareDashboard.png" name="Shared dashboard" style="width:50%;"/> 
 
-### Adding permissions to a Dashboard
+Changes made to this dashboard are automatically applied to all dashboard instances.
 
-Permissions can be granted to a specific user role only. To do so, create a new dashboard as described above or edit a dashboard.
+> **Info:** You can only add widgets and data to the dashboard for the device itself. It is not possible to add data from child devices because the structure of these devices might be different from device to device.
 
-> To edit a dashboard, click on the cogwheel on the top-right and select "Edit Dashboard".
 
-In order to grant permissions to specific users,  deselect both "Dashboard visible to all users" and deselect "Apply dashboard to all devices of type "_type_".
+### Editing dashboard properties
 
-![Add permissions](/guides/users-guide/dashboardaddright.png)
+To edit a dashboard, click **Edit** in the top menu bar. The dashboard editor will open up. For details on the fields, refer to [Creating dashboards](#creating-dashboards).
 
-Then, click on "Add permissions" and select a group from the dropdown menu.
 
-![Select group](/guides/users-guide/dashboardforgroup.png)
-
-Afterward, select the desired permission for the selected group.
-
-![Select permission](/guides/users-guide/dashboardpermission.png)
-
-> Permissions can be granted to several groups.
-
-### Copying a dashboard
+### Copying dashboards
 
 To copy a dashboard from one object to another, click **More...** in the top menu bar and from the context menu select **Copy dashboard**. 
 
 Next, navigate to the object you want to copy the dashboard to and from the context menu select **Paste dashboard <NAME>** to insert the dashboard.
 
 An alternative way to copy a dashboard is to use the 
-"Dashboard per type" approach.  With the "Dashboard per type" approach you copy the dashboard from one object to **all** identical objects.
+"dashboard per type" approach.  With the "dashboard per type" approach you share the dashboard from one object with **all** objects of the same type.
 
-### Removing a dashboard
+
+### Removing dashboards
 
 To delete a dashboard from an object, click **More...** in the top menu bar and from the context menu select **Remove dashboard**. 
 
-### Sending dashboard via email
 
-... add description here
-
-
-## <a name="widget"></a>Widget Collection
+## <a name="widget"></a>Widgets Collection
 
 The Cockpit includes preset widget types. Each widget type provides different parameters to configure and different data to be displayed. 
 
@@ -525,13 +501,13 @@ The following section describes, in alphabetical order, each available widget ty
 
 ### Widget "Alarm list"
 
-The "Alarm list" widget shows a list of alarms, filtered by objects, alarm severity and alarm status. For details on the information provided for each alarm, refer to [Working with alarms](#alarm-monitoring) in *Device Management*.
+The "Alarm list" widget shows a list of alarms, filtered by objects, alarm severity and alarm status. For details on the information provided for each alarm, refer to [Working with alarms](http://cumulocity.com//guides/users-guide/device-management/#alarm-monitoring) in *Device Management*.
 
 **Parameters to configure**
 
-<img src="/guides/users-guide/Cockpit/Cockpit_CreateAlarmList" name="Create Alarm list widget" style="width:75%;"/>
+<img src="/guides/users-guide/Cockpit/Cockpit_CreateAlarmList.png" name="Create Alarm list widget" style="width:75%;"/>
 
-Field|Description|
+|Field|Description|
 |:---|:---|
 |Title|Widget title. By default, the widget type is simply used as title.
 |Target assets or devices|Select groups or devices, optional HTML expressions which should be evaluated.
@@ -544,20 +520,20 @@ Field|Description|
 
 The "All critical alarms" widget shows all objects with a critical alarm. There are no additional parameters to be configured.
 
-For details on alarms, refer to [Working with alarms](/guides/users-guide/DeviceManagement#alarm-monitoring) in *Device Management*.
+For details on alarms, refer to [Working with alarms](http://cumulocity.com//guides/users-guide/device-management/#alarm-monitoring) in *Device Management*.
 
 ### Widget "Applications"
 
 The "Applications" widget shows a list of links to all available applications. There are no additional parameters to be configured.
 
-For details on applications, refer to [Managing Applications](/guides/users-guide/Administration#applications) in *Administration*.
+For details on applications, refer to [Managing Applications](http://cumulocity.com//guides/users-guide/Administration#applications) in *Administration*.
 
 
 ### Widget "Asset notes"
 
 The "Asset notes" widget displays messages provided by the administrative user to all owners of the current widget. 
 
-<img src="/guides/users-guide/Cockpit/Cockpit_AssetNotesWidget" name="Asset notes widget" style="width:75%;"/>
+<img src="/guides/users-guide/Cockpit/Cockpit_AssetNotes.png" name="Asset notes widget" style="width:75%;"/>
 
 Only users with the permission to edit the home dashboard will be able to provide this message.
 
@@ -568,7 +544,7 @@ The "Asset properties" widget displays a user-defined list of attributes of the 
 
 **Parameters to configure**
 
-Field|Description|
+|Field|Description|
 |:---|:---|
 |Title|Widget title. By default, the widget type is simply used as title.
 |Target assets or devices|Select groups or devices.
@@ -628,9 +604,9 @@ The "Cockpit welcome" lets you display a welcome message to the Welcome screen. 
 
 The "Data point graph" widget shows a data point (measurement) in a graph. The visualization is the same as in the [data explorer](#visualize).
 
-<img src="/guides/users-guide/Cockpit/Cockpit_DataPointGraphWidget" name="Data Point Graph widget" style="width:75%;"/>
+<img src="/guides/users-guide/Cockpit/Cockpit_DataPointsGraphWidget.png" name="Data Point Graph widget" style="width:75%;"/>
 
-The easiest way to create a "Data point graph" widget is to navigate to the data explorer, click the **More...** button in the top menu bar and select **Send as a widget to a dashboard**.
+The easiest way to create a "Data point graph" widget is to navigate to the data explorer, click the **More...** button in the top menu bar and select **Send as widget to dashboard**.
 
 Refer to [Visualizing Data Using the Data Explorer](#visualize) for further details on the parameters to be configured.
 
@@ -640,11 +616,11 @@ The "Data point list" widget shows data points (measurements), one in each row, 
 
 **Parameters to configure**
 
-Field|Description|
+|Field|Description|
 |:---|:---|
 |Title|Widget title. By default, the widget type is simply used as title.
 |Data point|Shows a list of available data points. You must enable at least one data point. Click **Add data point** to add a data point to the list. For details on how to add data points see [Adding data points](#add-data-points).
-|Column visibility|Select which columns should be visible: <br>Label: Label of the data point. See [Visualizing Data Using the Data Explorer](#visualize)for details. <br>Target: Target value. Can be configured in the [data explorer](#visualize) or [Data Point Library](#data-point-library).<br>Current: Current value. <br>Diff: Absolute difference between current value and target value. <br>Diff %: Percentage of difference between current value and target value. <br>Asset: Name of the device or group of the data point. 
+|Column visibility|Select which columns should be visible: <br>Label: Label of the data point. See [Visualizing Data Using the Data Explorer](#visualize)for details. <br>Target: Target value. Can be configured in the [data explorer](#visualize) or [Data Point Library](#library).<br>Current: Current value. <br>Diff: Absolute difference between current value and target value. <br>Diff %: Percentage of difference between current value and target value. <br>Asset: Name of the device or group of the data point. 
 
 ### Widget "Data point table"
 
@@ -660,7 +636,7 @@ Out of range values, based on configured yellow and red ranges, are highlighted 
 
 The "Event list" widget lets you monitor events for a selected device. 
 
-<img src="/guides/users-guide/Cockpit/Cockpit_EventListWidget" name="Event list widget" style="width:75%;"/>
+<img src="/guides/users-guide/Cockpit/Cockpit_EventList.png" name="Event list widget" style="width:75%;"/>
 
 Additionally, a specific date range can be set and the events can be monitored in realtime. 
 
@@ -668,13 +644,13 @@ Additionally, a specific date range can be set and the events can be monitored i
 
 The "Fieldbus device" widget lets you see the status of a modbus device and operate it.
 
-For details on the "Fieldbus device" widget, refer to [Monitoring device status using the Fieldbus device widget](#fieldbus-device-widget) in *Cloud Fieldbus*.
+For details on the "Fieldbus device" widget, refer to [Monitoring device status using the Fieldbus device widget](http://www.cumulocity.com//guides/users-guide/device-management/cloud-fieldbus#fieldbus-device-widget) in *Cloud Fieldbus*.
 
 ### Widget "Help and service"
 
 The "Help and service" widget displays links to help and service resources. There are no additional parameters to be configured.
 
-<img src="/guides/users-guide/Cockpit/Cockpit_HelpAndServiceWidget" name="Help and service widget" style="width:75%;"/>
+<img src="/guides/users-guide/Cockpit/Cockpit_HelpAndServiceWidget.png" name="Help and service widget" style="width:75%;"/>
 
 ### Widget "Image"
 
@@ -684,11 +660,11 @@ The "Image" widget lets you display a single image to be selected from your comp
 
 The "Info gauge" widget visualizes one data point in form of a radial gauge and multiple data points as labels. 
 
-<img src="/guides/users-guide/Cockpit/Cockpit_InfoGaugeWidget" name="Info gauge widget" style="width:75%;"/>
+<img src="/guides/users-guide/Cockpit/Cockpit_InfoGauge" name="Info gauge widget" style="width:75%;"/>
 
 You can select one data point for the gauge, and multiple data points shown with labels on the left side.
 
-<img src="/guides/users-guide/Cockpit/Cockpit_InfoGaugeDataPoint" name="Info gauge data points" style="width:75%;"/>
+<img src="/guides/users-guide/Cockpit/Cockpit_InfoGaugeDataPoints.png" name="Info gauge data points" style="width:75%;"/>
 
 You must enable at least one data point in each section to create the "Info gauge" widget.
 
@@ -726,7 +702,7 @@ The following variables can be used inside the HTML content:
 
 The "Linear gauge" widget visualizes data points in form of a linear gauge. Min and max target values are shown on the gauge as well.
 
-<img src="/guides/users-guide/Cockpit/Cockpit_LinearGaugeWidget" name="Linear gauge widget" style="width:75%;"/>
+<img src="/guides/users-guide/Cockpit/Cockpit_LinearGauge.png" name="Linear gauge widget" style="width:75%;"/>
 
 You must enable at least one data point to create the "Linear gauge" widget.
  
@@ -735,7 +711,7 @@ You must enable at least one data point to create the "Linear gauge" widget.
 
 The "Map" widget shows the location of a device or all devices of a group. 
 
-<img src="/guides/users-guide/Cockpit/Cockpit_MapWidget" name="Map widget" style="width:75%;"/>
+<img src="/guides/users-guide/Cockpit/Cockpit_MapWidget.png" name="Map widget" style="width:75%;"/>
 
 You can drag the map and move its content, and you can zoom in and out by using the **Plus** and **Minus** buttons. 
 
@@ -769,7 +745,7 @@ The "Pie chart" widget displays data points (measurements) with current values i
 
 **Parameters to configure**
 
-Field|Description|
+|Field|Description|
 |:---|:---|
 |Title|Widget title. By default, the widget type is simply used as title.
 |Pie chart options|Select from the options to show tooltips, percentages, legends in the pie chart. |Data point|Shows a list of available data points. You must enable at least one data point. Click **Add data point** to add a data point to the list. For details on how to add data points see [Adding data points](#add-data-points).
@@ -779,13 +755,13 @@ Field|Description|
 
 The "Quick links" widget displays several quick links to relevant operations. There are no additional parameters to be configured.
 
-<img src="/guides/users-guide/Cockpit/Cockpit_QuickLinksWidget" name="Quick links widget" style="width:75%;"/>
+<img src="/guides/users-guide/Cockpit/Cockpit_QuickLinksWidget.png" name="Quick links widget" style="width:75%;"/>
 
 ### Widget "Radial Gauge"
 
 The "Radial gauge" widget visualizes data points in form of a radial gauge. 
 
-<img src="/guides/users-guide/Cockpit/Cockpit_RadialGaugeWidget" name="Radial gauge widget" style="width:75%;"/>
+<img src="/guides/users-guide/Cockpit/Cockpit_RadialGauge.png" name="Radial gauge widget" style="width:75%;"/>
 
 You must enable at least one data point to create the "Radial gauge" widget.
 
@@ -794,9 +770,9 @@ You must enable at least one data point to create the "Radial gauge" widget.
 
 The "Recent alarms" widget shows all alarms of all severity sorted by time. There are no additional parameters to be configured.
 
-<img src="/guides/users-guide/Cockpit/Cockpit_AlarmListWidget" name="Alarm list widget" style="width:75%;"/>
+<img src="/guides/users-guide/Cockpit/Cockpit_CreateAlarmList.png" name="Alarm list widget" style="width:75%;"/>
 
-For details on alarms, refer to [Working with alarms](/guides/users-guide/DeviceManagement#alarm-monitoring) in *Device Management*.
+For details on alarms, refer to [Working with alarms](http://cumulocity.com//guides/users-guide/device-management/#alarm-monitoring) in *Device Management*.
 
 ### Widget "Relay array control"
 
@@ -812,7 +788,7 @@ The "Rotation" widget lets you render an object model of a device.
 
 **Parameters to configure**
 
-Field|Description|
+|Field|Description|
 |:---|:---|
 |Title|Widget title. By default, the widget type is simply used as title.
 |Target assets or devices|Select group or device to be displayed.
@@ -826,7 +802,7 @@ In the "Rotation" widget you can rotate the object by dragging and moving it aro
 
 The "SCADA" widget provides a graphic representation of the status of a device.
 
-For details on the "SCADA" widget, refer to [Monitoring status using the SCADA widget](#scada-widget) in *Cloud Fieldbus*.
+For details on the "SCADA" widget, refer to [Monitoring status using the SCADA widget](http://www.cumulocity.com//guides/users-guide/device-management/cloud-fieldbus#scada-widget) in *Cloud Fieldbus*.
 
 ### Widget "Silo"
 
@@ -834,7 +810,7 @@ The "Silo" widget displays data points (measurements) with current values in a s
 
 **Parameters to configure**
 
-Field|Description|
+|Field|Description|
 |:---|:---|
 |Title|Widget title. By default, the widget type is simply used as title.
 |Data point|Shows a list of available data points. You must enable at least one data point. Click **Add data point** to add a data point to the list. For details on how to add data points see [Adding data points](#add-data-points).
@@ -845,7 +821,7 @@ The "Traffic light" widget visualizes the states of a device as traffic light.
 
 **Parameters to configure**
 
-Field|Description|
+|Field|Description|
 |:---|:---|
 |Title|Widget title. By default, the widget type is simply used as title.
 |Target assets or devices|Select group or device to be displayed.
@@ -855,11 +831,11 @@ Field|Description|
 
 The "Twitter news" widget displays tweets from Twitter's embedded timeline widget.
 
-<img src="/guides/users-guide/Cockpit/Cockpit_TwitterNewsWidget" name="Twitter news widget" style="width:75%;"/>
+<img src="/guides/users-guide/Cockpit/Cockpit_TwitterNewsWidget.png" name="Twitter news widget" style="width:50%;"/>
 
 **Parameters to configure**
 
-Field|Description|
+|Field|Description|
 |:---|:---|
 |Title|Widget title. By default, the widget type is simply used as title.
 |Twitter's username|User name for the Twitter account being displayed.
@@ -875,7 +851,7 @@ Working with alarms in the Cockpit application is identical to working with alar
 There are two types of reports in the Cockpit application. 
 
 * Dashboard reports enable you to track applications, alarms, assets, events and many other widgets. 
-* The second type of report lets you export specific data to either CSV or Excel files, described in ["Exporting data with reports"](#reporting).
+* The second type of report lets you export specific data to either CSV or Excel files, described in [Exporting data with reports](#reporting).
 
 Dashboard reports are global dashboard pages, regardless of the asset hierarchy. 
 
@@ -897,7 +873,7 @@ Next, widgets can be added to the report.
 
 You can add widgets to reports in the same way as adding widgets to dashboards. 
 
-Click **Add widget** in the top menu bar and select a widget type from the list. For details on all widgets types available, refer to [Widget Collection](#widget).
+Click **Add widget** in the top menu bar and select a widget type from the list. For details on all widgets types available, refer to [Widgets Collection](#widget).
 
 ### Deleting reports
 
@@ -922,11 +898,11 @@ To create a report, click **Add Report** in the top menu bar.
 
 Enter a name for the report and select the file type (CSV or xlsx). 
 
-<a name="filters"> **Filters** </a>
+**Filters**
 
 In the "Filter" section, you can select filters to request object- or time-specific reports.
 
-<img src="/guides/users-guide/Cockpit/Cockpit_ReportFilters" name="Report filters" style="width:100%;"/>
+<img src="/guides/users-guide/Cockpit/Cockpit_ReportFilters.png" name="Report filters" style="width:100%;"/>
 
 To filter for a particular object, enter a name or property value into the search field and click the search icon. All matching devices or groups will be displayed below the "Value" field. Click a device to select it (highlighted in green). 
 
@@ -934,7 +910,7 @@ The "Time range" filter can filter object reports for a specific time range. Sel
 
 Select the checkbox in front of the filter name to enable the filter.
 
-<a name="fields"> **Fields** </a>
+**Fields**
 
 Apart from object- and time-specific filtering you may filter reports for specific fields:
 
@@ -945,7 +921,7 @@ Apart from object- and time-specific filtering you may filter reports for specif
 
 Use the slider to enable/disable a field.
 
-<img src="/guides/users-guide/Cockpit/Cockpit_ReportFields" name="Report fields" style="width:100%;"/>
+<img src="/guides/users-guide/Cockpit/Cockpit_ReportFields.png" name="Report fields" style="width:100%;"/>
 
 When a field is enabled, predefined or empty properties can be added. 
 
@@ -1044,7 +1020,7 @@ To add a new data point to the library, click **Add data point** in the top menu
 
 Provide the following information:
 
-Field|Description|
+|Field|Description|
 |:---|:---|
 |Color|Select a color for the data point visualization.
 |Label|Label to identify the data point.

@@ -97,11 +97,11 @@ Application can be in later time updated using
           "roles": ["ROLE_CUSTOM_MICSROSERVICE"]
         }
         
-## Deploy application
+## Upload application
 
 For the microservice application to be available for Cumulocity platform users, a binary zip file must be uploaded. 
      
-     GET /application/applications/{APPLICATION_ID}/binaries
+     POST /application/applications/{APPLICATION_ID}/binaries
      Host: ...
      Authorization: Basic …
      Content-Type: multipart/form-data
@@ -130,12 +130,12 @@ Response:
     
 The credentials allow access to following endpoints:
 
-    GET /user/currentTenant
+    GET /tenant/currentTenant
     GET /user/currentUser
-    GET /currentApplication
-    GET /currentApplication/subscription
-    PUT /currentApplication
-    POST /auditRecords
+    GET /application/currentApplication
+    GET /application/currentApplication/subscription
+    PUT /application/currentApplication
+    POST /audit/auditRecords
         
 For example get current application
 

@@ -15,7 +15,7 @@ The Tenant interface is available consists of parts:
 -   The tenant option collection resource enables creating new option and viewing existing options, accessible by url */tenant/options*
 -   The tenant option resource represents individual option that can be view and modified, accessible by url */tenant/options/{optionCategory}/{optionKey}*
 -   The tenant usage statistics resources return information on the request load and database usage of tenants.
-
+-   The *current tenant* resource represents user data for currently logged service user
 > Note that for all PUT/POST requests accept header should be provided, otherwise an empty response body will be returned.
 
 ## Tenant collection
@@ -961,4 +961,35 @@ Example Response :
 	"subscribedApplications": [
             "testadmin"
         ]
+    }
+
+
+## Current Tenant
+
+### Current Tenant [application/vnd.com.nsn.cumulocity.currentTenant+json]
+|Field Name|Type|Occurs|Description|
+|:---------|:---|:-----|:----------|
+|name|String|1|Tenant
+|domainName|String|1|Domain name
+|allowCreateTenants|Boolean|1|Flag indicating can tenant create subtenants
+
+### GET Current tenant
+Request for currently logged service user's tenant. 
+
+Authorization: service user
+
+ResponseBody: CurrentTenant
+
+    GET /tenant/currentTenant
+     Host: [hostname]
+     Authorization: Basic xxxxxxxxxxxxxxxxxxx
+     ContentType: application/vnd.com.nsn.cumulocity.currentTenant+json;;ver=...
+
+Example response
+
+    {
+        "allowCreateTenants": true,
+        "customProperties": {},
+        "domainName": "...",
+        "name": "..."
     }

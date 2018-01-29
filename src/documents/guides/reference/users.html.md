@@ -19,7 +19,7 @@ The user interface consists of the following parts:
 -   The *role* resource represents individual roles that can be queried and assigned or unassigned to users or groups.
 -   The *role reference collection* resource retrieves sets of references to roles. These could be, for example, roles of a particular user or group.
 -   The *role reference* resource represents one individual reference to a role, which can be retrieved.
-
+-   The *current user* resource represents user data for currently logged service user
 > "Realm" as used in this API usually corresponds to a tenant.
 
 > Note that for all PUT/POST requests accept header should be provided, otherwise an empty response body will be returned.
@@ -1117,3 +1117,43 @@ Example response:
 |:---|:---|:-----|:----------|
 |self|URI|1|Link to this Resource|
 |role|Role|1|A role resource being referenced|
+
+## Current User
+
+###CurrentUser [application/vnd.com.nsn.cumulocity.currentUser+json]
+|Name|Type|Occurs|Description|
+|:---|:---|:-----|:----------|
+|self|URI|1|Link to this Resource|
+|userName|String|1|User name|
+|shouldResetPassword|Boolean|1|Should user change password|
+|lastPasswordChange|Date|1|Last password date changed|
+|firstName|String|1|First name|
+|lastName|String|1|Last name|
+|phone|String|1|Phone|
+|email|String|1|Email|
+|effectiveRoles|RoleRepresentation|0..n|List of effective roles|
+
+
+###Get current user
+Get information about currently logged servce user
+
+Authorization: Microservice service user credentials
+
+Response: CurrentUser
+
+    GET /user/currentUser
+     Host: [hostname]
+     Authorization: Basic xxxxxxxxxxxxxxxxxxx
+     ContentType: application/vnd.com.nsn.cumulocity.user+json;ver=...
+
+Example response
+
+    {
+        "id": "...",
+        "lastPasswordChange": "2018-01-24T11:22:27.863Z",
+        "self": "...",
+        "shouldResetPassword": false,
+        "userName": "..."
+    }
+
+

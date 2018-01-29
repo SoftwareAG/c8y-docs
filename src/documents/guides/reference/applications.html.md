@@ -11,7 +11,11 @@ The application interface consists of the following parts:
 -   The *application API* resource returns URIs and URI templates to collections of applications, so that all applications, all applications with a particular name and all applications owned by particular tenant can be queried.
 -   The *application collection* resource retrieves sets of applications and enables creating new application.
 -   The *application* resource represents application that can be queried and deleted.
-
+-   The *current application* resource provides data of authenticated microservice user's application. 
+-   The *application user collection* resource represents collection of subscription entry
+-   The *application user* resource represents single subscription entry
+-   The *current application subscription* provides endpoint for accessing current application subscriptions.
+-   The *application binaries* provides endpoint for uploading a deployable microservice application to the platform.
 > Note that for all PUT/POST requests accept header should be provided, otherwise an empty response body will be returned.
 
 ## Application API
@@ -26,6 +30,9 @@ The application interface consists of the following parts:
 |applicationsByName|ApplicationCollection URI-Template|1|Read-only collection of all applications with a particular name (placeholder {name}).|
 |applicationsByTenant|ApplicationCollection URI-Template|1|Read-only collection of all applications subscribed by particular tenant (placeholder {tenant}).|
 |applicationsByOwner|ApplicationCollection URI-Template|1|Read-only collection of all applications owned by particular tenant (placeholder {tenant}).|
+|currentApplication|CurrentApplication URI-Template|1|Read-Write resource for microservice user.|
+|currentApplicationSubscription|CurrentApplication Subscription Collection URI-Template|1|Read-only collection of all microservice subscription users for microservice user.|
+|applicationBinaries|Binary URI-Template|1| PUT-only resource to upload a microservice binary|
 
 ### GET the Application API resource
 
@@ -304,3 +311,149 @@ Example Request: Delete a application
 Example Response:
 
     HTTP/1.1  204 NO CONTENT
+
+## Current Application
+### GET - Current application [application/vnd.com.nsn.cumulocity.applicationApi+json]
+
+Response body: Application
+
+Required Authentication with microservice user
+
+Example request
+    
+    GET /application/currentApplication
+    Host: ...
+    Authorization: Basic ...
+    Content-Length: ...
+    Content-Type: application/vnd.com.nsn.cumulocity.application+json;ver=...
+    
+
+Example response:
+
+    HTTP/1.1 200 OK
+    Content-Type: application/vnd.com.nsn.cumulocity.application+json;ver=...
+    Content-Length: ...
+    {
+      "availability": "PRIVATE",
+      "id": "105",
+      "key": "...",
+      "name": "vehicleControlApplication",
+      "owner": {
+          "self": "...",
+          "tenant": {
+              "id": "taxiDrive"
+          }
+      },
+      "self": "...",
+      "type": "MICROSERVICE",
+      "externalUrl":"http://external.host.com/application"
+    }
+
+### PUT - to update Current application [application/vnd.com.nsn.cumulocity.applicationApi+json]
+
+Response body: Application
+
+Required Authentication with microservice user
+
+Example request
+    
+    PUT /application/currentApplication
+    Host: ...
+    Authorization: Basic ...
+    Content-Length: ...
+    Content-Type: application/vnd.com.nsn.cumulocity.application+json;ver=...
+    {
+          "availability": "PRIVATE",
+          "id": "105",
+          "key": "...",
+          "name": "vehicleControlApplication",
+          "owner": {
+              "self": "...",
+              "tenant": {
+                  "id": "taxiDrive"
+              }
+          },
+          "self": "...",
+          "type": "MICROSERVICE",
+          "externalUrl":"http://external.host.com/application"
+        }
+
+Example response:
+
+    HTTP/1.1 200 OK
+    Content-Type: application/vnd.com.nsn.cumulocity.application+json;ver=...
+    Content-Length: ...
+    {
+      "availability": "PRIVATE",
+      "id": "105",
+      "key": "...",
+      "name": "...",
+      "owner": {
+          "self": "...",
+          "tenant": {
+              "id": "..."
+          }
+      },
+      "self": "...",
+      "type": "MICROSERVICE"
+    }
+
+### Application Subscription Collection[application/vnd.com.nsn.cumulocity.applicationUserCollection+json]
+|Name|Type|Occurs|Description|
+|:---|:---|:-----|:----------|
+|self|URI|1|Link to this resource.|
+|users|ApplicationUser|0..n|List of subscribed users, see below.|
+|statistics|PagingStatistics|1|Information about paging statistics.|
+|prev|URI|0..1|Link to a potential previous page of applications.|
+|next|URI|0..1|Link to a potential next page of applications.|
+
+### Application User
+|Field Name|Type|Occurs|Description|
+|:---------|:---|:-----|:----------|
+|tenant|String|1|Subscription tenant
+|name|String|1|Username
+|password|String|1|Password
+
+
+### GET - Current application subscriptions
+Response body: Application Subscription Collection
+
+Required Authentication with microservice user
+
+Example request
+    
+    GET /application/currentApplication/subscriptions
+    Host: ...
+    Authorization: Basic ...
+    Content-Length: ...
+    Content-Type: application/vnd.com.nsn.cumulocity.applicationUserCollection+json; ver=...
+
+
+Example response:
+
+    HTTP/1.1 200 OK
+    Content-Type: application/vnd.com.nsn.cumulocity.applicationUserCollection+json; ver=...
+    Content-Length: ...
+    {
+        "users": [
+            {
+                "name": "service_hello-world",
+                "password": "...",
+                "tenant": "..."
+            }
+        ]
+    }
+
+### Application binaries
+## POST - Upload application binary
+
+For the microservice application to be available for Cumulocity platform users, a binary zip file must be uploaded. 
+     
+     POST /application/applications/{APPLICATION_ID}/binaries
+     Host: ...
+     Authorization: Basic …
+     Content-Type: multipart/form-data
+     
+The zip file must consist of:
+* cumulocity.json - file describing the deployment
+* image.tar - executable docker image

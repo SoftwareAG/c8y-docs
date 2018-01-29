@@ -11,6 +11,7 @@ The application interface consists of the following parts:
 -   The *application API* resource returns URIs and URI templates to collections of applications, so that all applications, all applications with a particular name and all applications owned by particular tenant can be queried.
 -   The *application collection* resource retrieves sets of applications and enables creating new application.
 -   The *application* resource represents application that can be queried and deleted.
+-   The *application bootstrap user* resource retrieves bootstrap user credentials for microservice
 -   The *current application* resource provides data of authenticated microservice user's application. 
 -   The *application user collection* resource represents collection of subscription entry
 -   The *application user* resource represents single subscription entry
@@ -30,9 +31,7 @@ The application interface consists of the following parts:
 |applicationsByName|ApplicationCollection URI-Template|1|Read-only collection of all applications with a particular name (placeholder {name}).|
 |applicationsByTenant|ApplicationCollection URI-Template|1|Read-only collection of all applications subscribed by particular tenant (placeholder {tenant}).|
 |applicationsByOwner|ApplicationCollection URI-Template|1|Read-only collection of all applications owned by particular tenant (placeholder {tenant}).|
-|currentApplication|CurrentApplication URI-Template|1|Read-Write resource for microservice user.|
-|currentApplicationSubscription|CurrentApplication Subscription Collection URI-Template|1|Read-only collection of all microservice subscription users for microservice user.|
-|applicationBinaries|Binary URI-Template|1| PUT-only resource to upload a microservice binary|
+
 
 ### GET the Application API resource
 
@@ -312,8 +311,34 @@ Example Response:
 
     HTTP/1.1  204 NO CONTENT
 
+## Bootstrap User
+### GET - Bootstrap user
+Response body: ApplicationUser
+
+Required role: ROLE_APPLICATION_MANAGEMENT_ADMIN
+
+Example request
+    
+    GET /application/bootstrapUser
+    Host: ...
+    Authorization: Basic ...
+    Content-Length: ...
+    Content-Type: application/vnd.com.nsn.cumulocity.user+json;ver=...
+    
+Example response:
+
+    HTTP/1.1 200 OK
+    Content-Type: application/vnd.com.nsn.cumulocity.user+json;ver=...
+    Content-Length: ...
+    {
+        "name": "servicebootstrap_hello-world",
+        "password": "9HqBc0miL5",
+        "tenant": "dariusz"
+    }
+
+
 ## Current Application
-### GET - Current application [application/vnd.com.nsn.cumulocity.applicationApi+json]
+### GET - Current application 
 
 Response body: Application
 
@@ -349,7 +374,7 @@ Example response:
       "externalUrl":"http://external.host.com/application"
     }
 
-### PUT - to update Current application [application/vnd.com.nsn.cumulocity.applicationApi+json]
+### PUT - to update Current application 
 
 Response body: Application
 
@@ -398,7 +423,7 @@ Example response:
       "type": "MICROSERVICE"
     }
 
-### Application Subscription Collection[application/vnd.com.nsn.cumulocity.applicationUserCollection+json]
+### ApplicationSubscriptionCollection[application/vnd.com.nsn.cumulocity.applicationUserCollection+json]
 |Name|Type|Occurs|Description|
 |:---|:---|:-----|:----------|
 |self|URI|1|Link to this resource.|
@@ -407,7 +432,7 @@ Example response:
 |prev|URI|0..1|Link to a potential previous page of applications.|
 |next|URI|0..1|Link to a potential next page of applications.|
 
-### Application User
+### ApplicationUser
 |Field Name|Type|Occurs|Description|
 |:---------|:---|:-----|:----------|
 |tenant|String|1|Subscription tenant
@@ -416,7 +441,7 @@ Example response:
 
 
 ### GET - Current application subscriptions
-Response body: Application Subscription Collection
+Response body: ApplicationSubscriptionCollection
 
 Required Authentication with microservice user
 

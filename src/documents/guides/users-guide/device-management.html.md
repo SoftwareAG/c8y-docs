@@ -113,11 +113,11 @@ When hovering over a row in the list, a **Delete** button appears at the right. 
 
 Cumulocity includes a full-text search for devices. 
 
-Click the **Search** button at the top right and enter a search term into the textbox. Cumulocity returns all devices containing this term either in the device name or model.
+Click the **Search** button at the top right and enter a search term into the textbox. Cumulocity returns all devices containing this term in any property (name, model, any fragment...)
 
-Our example shows a search für "Ublox C027". A search for "Ublox" or for "C027" would also return the devices containing "Ublox C027". 
+Our example shows a search for "Ublox C027". 
 
-**Info**: Other than with filtering using wildcards in a search is not supported.
+**Info**: Unlike filtering, the use of wildcards in a search is not supported.
 
 <img src="/guides/users-guide/DeviceManagement/DevMgmt_Search.png" alt="Device Management Search" style="max-width: 100%">
 

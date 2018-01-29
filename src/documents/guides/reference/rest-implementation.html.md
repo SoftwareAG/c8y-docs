@@ -36,7 +36,7 @@ If token expires, and requires renewal, backend sends response header:
 
 #### JWT token authentication
 
-Cumulocity support [JWT token](https://en.wikipedia.org/wiki/JSON_Web_Token) authentication. HTTP header must include:
+Cumulocity supports [JWT token](https://en.wikipedia.org/wiki/JSON_Web_Token) authentication. HTTP header must include:
 	
 	Authorization: Bearer <<Base64 encoded JWT token>>
 	
@@ -82,7 +82,7 @@ Token format:
 * "sub" is user id
 * "nbf" and "exp" is token validity from/to time range in unix time format
 
-In case if tenant/username don't match, token is expired or signature is invalid 401 error will be returned.
+If tenant/username don't match, token is expired or signature is invalid 401 error will be returned.
 
 ### Application management
 

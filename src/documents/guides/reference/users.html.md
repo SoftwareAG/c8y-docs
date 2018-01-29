@@ -144,47 +144,13 @@ If flag is absent the result will not contain device users.
 Additional flag "withSubusersCount" - if set for "true", then each of returned users will contain additional field "subusersCount", 
 number of direct subusers (users with corresponding "owner").
  
-Example request: 
+Example request: retrieve users, which username starts with "js", and belong to group 2, 3 or 4, and the owner is "admin", and is not device user. 
 
     GET /user/<<tenant>>/users?username=js&groups=2,3,4&owner=admin&withSubusersCount=true
     Host: [hostname]
     Authorization: Basic xxxxxxxxxxxxxxxxxxx
     Accept: application/vnd.com.nsn.cumulocity.userCollection+json;ver=0.9
 
-This will retrieve users, which username starts with "js", and belong to group 2, 3 or 4, and the owner is "admin".
-
-Example response:
-
-    HTTP/1.1 200 OK
-    Content-Type: application/vnd.com.nsn.cumulocity.userCollection+json;ver=0.9
-    Content-Length: nnn
-    {
-       "self":"[URL to this resource]",
-       "users":[
-            {
-              "id" : "jsmith",
-              "self" : "[URL to the resource]",
-              "userName" : "jsmith",
-              "firstName" : "John",
-              "lastName" : "Smith",
-              "phone" : "+1234567890",
-              "email" : "jsmith@abc.com",
-              "enabled" : true,
-              "owner" : "admin",
-              "groups" : {[collection of groups the user belongs to; contains group 2, 3, or 4]},
-              "roles" : {[collection of roles the user has]},
-              "devicePermissions": {}, 
-              "subusersCount": 2
-            }, ... 
-       ],
-       "statistics" : {
-           "totalPages" : 3,
-           "pageSize" : 5,
-           "currentPage : 1
-       },
-       "prev" : "[URL to previous page]",
-       "next" : "[URL to next page]"
-    }
 
 ### POST - CREATE a new User within the Collection
 

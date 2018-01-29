@@ -34,6 +34,56 @@ If token expires, and requires renewal, backend sends response header:
 
     TFATokenExpired:TFATokenExpired
 
+#### JWT token authentication
+
+Cumulocity support [JWT token](https://en.wikipedia.org/wiki/JSON_Web_Token) authentication. HTTP header must include:
+	
+	Authorization: Bearer <<Base64 encoded JWT token>>
+	
+JWT must be signed using RSA signature with SHA-256 (RS256). Minimal RSA key size is 512 bit. You can generate example key [here](http://travistidwell.com/jsencrypt/demo/).
+
+You must upload you public key to [tenant options](/guides/reference/tenants) to "token.publicKey" category.
+
+Example:
+
+    POST /tenant/options
+    Host: ...
+    Authorization: Basic ...
+    Content-Type: application/vnd.com.nsn.cumulocity.option+json;ver=...
+    Accept: application/vnd.com.nsn.cumulocity.option+json;ver=...
+    {
+        "category": "token.publicKey",
+        "key": "myPubKey",
+        "value": "..."
+    }
+
+"Key" is identifier of public key which will be referenced in JWT token header and "value" is the public key in PEM format.
+
+Now you can generate JWT token and sign it with matching private key. For example you can do it [here](https://jwt.io/#debugger-io)
+
+Token format:
+
+    {
+      "typ": "JWT",
+      "alg": "RS256",
+      "kid": "myPubKey"
+    }
+    {
+      "iss": "cumulocity",
+      "aud": "myTenant",
+      "sub": "username",
+      "nbf": 1515678716,
+      "exp": 1516629116
+    }
+    
+* "kid" is public key identifier used in tenant options
+* "iss" must be set to "cumulocity"
+* "aud" is tenant id
+* "sub" is user id
+* "nbf" and "exp" is token validity from/to time range in unix time format
+
+In case if tenant/username don't match, token is expired or signature is invalid 401 error will be returned.
+
 ### Application management
 
 Cumulocity uses a so-called "application key" to distinguish requests coming from devices and traffic from applications. If you write an application, pass the following header as part of all requests:

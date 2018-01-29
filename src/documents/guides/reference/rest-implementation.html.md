@@ -42,7 +42,7 @@ Cumulocity support [JWT token](https://en.wikipedia.org/wiki/JSON_Web_Token) aut
 	
 JWT must be signed using RSA signature with SHA-256 (RS256). Minimal RSA key size is 512 bit. You can generate example key [here](http://travistidwell.com/jsencrypt/demo/).
 
-You must upload you public key to [tenant options](/guides/reference/tenants) to "token.publicKey" category.
+You must upload your public key to [tenant options](/guides/reference/tenants) to "token.publicKey" category.
 
 Example:
 

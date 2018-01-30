@@ -138,8 +138,8 @@ Users can be filtered by following parameters:
 - username - prefix or full username
 - groups - numeric group identifiers separated by commas; result will contain only users which belong to at least one of specified groups 
 - owner - exact username
-- onlyDevices - boolean flag. If set to "true", result will contain only users created during bootstrap process (starting with "device_").
- If flag is absent (or false) the result will not contain "device_" users. 
+- onlyDevices - boolean flag. If set to "true", result will contain only users created during bootstrap process (starting with "device\_").
+ If flag is absent (or false) the result will not contain "device\_" users. 
 
 Additional flag "withSubusersCount" - if set to "true", then each of returned users will contain additional field "subusersCount" - 
 number of direct subusers (users with corresponding "owner").

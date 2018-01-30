@@ -82,7 +82,7 @@ Token format:
 * "sub" is user id
 * "nbf" and "exp" is token validity from/to time range in unix time format
 
-If tenant/username don't match, token is expired or signature is invalid 401 error will be returned.
+If tenant/username don't match or token is expired or signature is invalid then 401 error will be returned.
 
 ### Application management
 

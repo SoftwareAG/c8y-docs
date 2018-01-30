@@ -40,7 +40,7 @@ Cumulocity supports [JWT token](https://en.wikipedia.org/wiki/JSON_Web_Token) au
 	
 	Authorization: Bearer <<Base64 encoded JWT token>>
 	
-JWT must be signed using RSA signature with SHA-256 (RS256). Minimal RSA key size is 512 bit. You can generate example key [here](http://travistidwell.com/jsencrypt/demo/).
+JWT token must be signed using RSA signature with SHA-256 (RS256). Minimal RSA key size is 512 bit. You can generate example key [here](http://travistidwell.com/jsencrypt/demo/).
 
 You must upload your public key to [tenant options](/guides/reference/tenants) to "token.publicKey" category.
 

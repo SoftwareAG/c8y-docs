@@ -57,7 +57,7 @@ Example:
         "value": "..."
     }
 
-"Key" is identifier of public key which will be referenced in JWT token header and "value" is the public key in PEM format.
+The "key" is an identifier of the public key, which will be referenced in JWT token header, and the "value" is the public key in PEM format.
 
 Now you can generate JWT token and sign it with matching private key. For example you can do it [here](https://jwt.io/#debugger-io)
 

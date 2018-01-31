@@ -1,7 +1,7 @@
 ---
 order: 27
 layout: default
-title: Java microservice
+title: Hello, microservice!
 ---
 
 ## Overview
@@ -113,7 +113,7 @@ What does the code do:
 
 ### Configure microservice
 
-Add an application.property file in src/main/resources directory with following properties:
+Add an application.properties file in src/main/resources directory with following properties:
 
     application.name=hello-world
     server.port=80
@@ -143,7 +143,7 @@ To create a deployable zip file you need to add following to your pom file:
         <maven.compiler.source>1.7</maven.compiler.source>
         <maven.compiler.target>1.7</maven.compiler.target>
         <spring-boot-dependencies.version>1.5.7.RELEASE</spring-boot-dependencies.version>
-        <main.class>c8y.example.helloworld.HelloWorldMain</main.class>
+        <main.class>c8y.example.App</main.class>
     </properties>
 
     <dependencies>
@@ -247,7 +247,31 @@ Example:
       -d "{"name":"hello-microservice-1","type":"MICROSERVICE","key":"hello-microservice-1-key"}" \
       -H "Authorization: {AUTHORIZATION}" \
       -H "Content-type: application/json" \
+      -H "Accept: application/json" \
       "{URL}/application/applications"
+      
+Example response:
+
+    {
+        "availability": "PRIVATE",
+        "id": "{APPLICATION_ID}",
+        "key": "{APPLICATION_NAME}-microservice-key",
+        "manifest": {
+            "imports": [],
+            "noAppSwitcher": true
+        },
+        "name": "{APPLICATION_NAME}",
+        "owner": {
+            "self": "...",
+            "tenant": {
+                "id": "..."
+            }
+        },
+        "requiredRoles": [],
+        "roles": [],
+        "self": "..",
+        "type": "MICROSERVICE"
+    }      
 
 If application was created correctly, you can get application id by invoking:
 

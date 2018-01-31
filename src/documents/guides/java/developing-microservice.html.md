@@ -6,7 +6,7 @@ title: Developing Microservice
 ## Overview
 This document describes microservice SDK features. Including annotations, services, configuration files, logging and maven build plugin.
 
-There are two possible deployment types. Hosted deployment - default for microservices and External/Legacy deployment. The first one is automatic, and the latter requires custom installation. For typical problems the hosted deployment is the suggested one.
+There are two possible deployment types. Hosted deployment - default for microservices and External/Legacy deployment. The first one is automatic, and the latter requires custom installation. For typical use cases the hosted deployment is the suggested one.
 
 ## Annotations
 The simplest way to add required behavior to your application is to annotate main class with @MicroserviceApplication. This is a collective annotation consisting of:
@@ -60,13 +60,16 @@ The microservice subscription module is responsible for two main features:
 The default behavior for the package is self-registration which means, that after you run the application it will try to register and use generated credentials for communication with the platform. The self-registration is required to correctly deploy the microservice on the platform.
 
 The other way to register application to platform is to do it manually by creating a new application on the platform with same application name and providing following properties into microservice:
-
+ 
     application.name={application_name}
     C8Y.bootstrap.register=false
     C8Y.bootstrap.tenant={tenant}
     C8Y.bootstrap.user={user}
     C8Y.bootstrap.password={password}
 
+To create application and acquire credentials please refer to:
+[Create application](/guides/rest/microservice-development#create-application)
+[Acquire microservice credentials](/guides/rest/microservice-development#acquire-microservice-credentials)
 
 The subscription package provides means to monitor and act upon changes in tenant subscriptions to microservice. To add a custom behavior a developer can add an event listener for MicroserviceSubscriptionAddedEvent and MicroserviceSubscriptionRemovedEvent like in a following example:
 
@@ -137,7 +140,7 @@ Properties used by microservice are:
     C8Y.bootstrap.password - Password used by microservice, or by microservice registration process
     C8Y.bootstrap.delay - Subscription refresh delay
     C8Y.bootstrap.initialDelay - Initial subscription delay
-    C8Y.microservice.isolation - Microservice isolation only PER_TENANT or MULTI_TENANT values are available.
+    C8Y.microservice.isolation - Microservice isolation only PER_TENANT or MULTI_TENANT values are available. MULTI_TENANT by default
 
 # Logging
 For hosted deployment the standard output should be used.

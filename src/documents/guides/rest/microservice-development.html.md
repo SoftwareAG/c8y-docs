@@ -134,7 +134,6 @@ The credentials allow access to following endpoints:
     GET /application/currentApplication
     GET /application/currentApplication/subscription
     PUT /application/currentApplication
-    POST /audit/auditRecords
         
 For example get current application
 

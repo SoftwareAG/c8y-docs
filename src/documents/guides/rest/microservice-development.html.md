@@ -45,8 +45,7 @@ Application id can be found for created application by executing
     GET /application/applicationsByName/{APPLICATION_NAME}
         Host: ...
         Authorization: Basic ...
-        Content-Length: ...
-        Content-Type: application/vnd.com.nsn.cumulocity.application+json
+        Accept: application/vnd.com.nsn.cumulocity.application+json
     
 Success response will look similar to
 
@@ -110,7 +109,7 @@ The zip file must consist of:
 * cumulocity.json - file describing the deployment
 * image.tar - executable docker image
 
-## Acquire microservice credentials
+## Acquire microservice bootstrap user credentials
 
 Microservice related endpoints require dedicated microservice user, which can be obtained by service provider using
 
@@ -168,8 +167,8 @@ Response
     }
 
 ## Subscriptions
-
-When microservice application is registered, it is subscribable to other tenants. Subscription is same as subscribing any other application (can be done via Administration UI -> Subtenants). A tenant can be subscribed by executing following:
+Subscription in this scope means tenant subscription to a microservice application. The subscription is a step important after deployment. 
+When microservice application is registered, it is subscribable to other tenants. Subscription is same as subscribing to any other application (can be done via Administration UI -> Subtenants). A tenant can be subscribed by executing following:
 
     POST /tenant/tenants/{TENANT}/applications
     Host: ...
@@ -205,7 +204,7 @@ Successful response will look similar to:
         "self": "..."
     }
 
-The subscriptions are available to microservice user through
+The subscriptions are available to microservice user through, for authorized microservice bootstrap user. 
 
     GET /application/currentApplication/subscriptions
     Host: ...

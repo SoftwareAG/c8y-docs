@@ -976,7 +976,7 @@ Example Response :
 ### GET Current tenant
 Request for currently logged service user's tenant. 
 
-Authorization: service user
+Required role: ROLE_USER_MANAGEMENT_OWN_READ, or ROLE_SYSTEM
 
 ResponseBody: CurrentTenant
 

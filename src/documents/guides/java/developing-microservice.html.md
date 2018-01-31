@@ -6,7 +6,7 @@ title: Developing Microservice
 ## Overview
 This document describes microservice SDK features. Including annotations, services, configuration files, logging and maven build plugin.
 
-There are two possible deployment types. Hosted deployment - default for microservices and External/Legacy deployment. The first one is automatic, and the latter requires custom installation. For typical use cases the hosted deployment is the suggested one.
+There are two possible deployment types. Hosted deployment - default for microservices and External/Legacy deployment. For typical use cases the hosted deployment is the suggested one. The External/Legacy requires custom installation of platform and agent. 
 
 ## Annotations
 The simplest way to add required behavior to your application is to annotate main class with @MicroserviceApplication. This is a collective annotation consisting of:
@@ -175,7 +175,7 @@ The package module provides maven plugin to prepare a zip file required by micro
     <plugin>
         <groupId>com.nsn.cumulocity.clients-java</groupId>
         <artifactId>microservice-package-maven-plugin</artifactId>
-        <version>8.20.0-SNAPSHOT</version>
+        <version>8.21.0</version>
         <executions>
             <execution>
                 <id>package</id>
@@ -276,12 +276,11 @@ To deploy application on an environment you need
 
 1. If Application does not exist create new application on a platform:
 
-POST {URL}/application/applications
 
-HEADERS:
-
-    "Authorization": "{AUTHORIZATION}"
-    "Content-type": "application/json"
+    POST /application/applications
+    Host: ...
+    Authorization: Basic xxxxxxxxxxxxxxxxxxx
+    Content-Type: "application/json"
 BODY:
 
 
@@ -301,23 +300,22 @@ Example:
 
 If application was created correctly, you can get application id by invoking:
 
-GET {URL}/application/applicationsByName/{APPLICATION_NAME}
-
-HEADERS:
-
-    "Authorization": "{AUTHORIZATION}"
-    "Content-type": "application/json"
+    GET /application/applicationsByName/{APPLICATION_NAME}
+    Host: ...
+    Authorization: Basic xxxxxxxxxxxxxxxxxxx
+    Accept: "application/json"
 Example
 
     curl -H "Authorization:{AUTHORIZATION}" \
      {URL}/application/applicationsByName/hello-world
 
 2. Upload zip file
-POST {URL}/application/applications/{APPLICATION_ID}/binaries
-HEADERS:
-
-    "Authorization": "{AUTHORIZATION}"
-    "Content-Type": "multipart/form-data"
+    
+    
+    POST /application/applications/{APPLICATION_ID}/binaries
+    Host: ...
+    Authorization: Basic xxxxxxxxxxxxxxxxxxx
+    Content-Type: "multipart/form-data"
 
 Example
 
@@ -327,13 +325,11 @@ Example
 
 3. Subscribe to microservice
 
-  POST {URL}/tenant/tenants/$TENANT/applications
-
-  HEADERS:
-
-
-    "Authorization": "{AUTHORIZATION}"
-    "Content-Type": "multipart/form-data"
+    
+    POST /tenant/tenants/$TENANT/applications
+    Host: ...
+    Authorization: Basic xxxxxxxxxxxxxxxxxxx
+    Content-Type: "multipart/form-data"
 
   BODY:
 

@@ -5,13 +5,14 @@ title: Hello, microservice!
 ---
 
 ## Overview
-This sections shows you how to create a microservice that can be run on cumulocity.com, using Cumulocity Microservice SDK.
+
+This section shows you how to create a microservice that can be run on cumulocity.com, using Cumulocity Microservice SDK.
 
 ## Prerequisites
 
-Create an account on cumulocity.com. For example by using free trial. At this step you will be provided with a dedicated URL address.
+Create an account on cumulocity.com, for example by using a free trial. At this step you will be provided with a dedicated URL address.
 
-Verify that you have Maven 3 installed with Java (7+):
+Verify, that you have Maven 3 installed with Java (7+):
 
     $ mvn -v
     Apache Maven 3.1.1 (0728685237757ffbf44136acec0402957f723d9a; 2013-09-17 17:22:22+0200)
@@ -21,23 +22,24 @@ Verify that you have Maven 3 installed with Java (7+):
     Default locale: en_US, platform encoding: UTF-8
     OS name: "mac os x", version: "10.9.4", arch: "x86_64", family: "mac"
 
-Maven can be downloaded from http://maven.apache.org.
+>**Info:** Maven can be downloaded from http://maven.apache.org.
 
-Verify docker installation
+Verify the docker installation:
 
     $ docker -v
     Docker version 17.12.0-ce, build c97c6d6
 
-## Develop the "Hello, world!" agent
+
+## Developing the "Hello, world!" agent
 
 To develop a very simple "Hello, world!" agent for Cumulocity, you need to
 
-* Create a Maven project.
-* Add a dependency to the Cumulocity Microservice SDK library to the Maven pom.xml.
-* Create a Java application.
-* Configure microservice
-* Configure build
-* Build and run the Java application.
+* create a Maven project,
+* add a dependency to the Cumulocity Microservice SDK library to the Maven pom.xml,
+* create a Java application,
+* configure the microservice,
+* configure the build,
+* build and run the Java application.
 
 ### Create a Maven project
 
@@ -47,7 +49,7 @@ To create a plain Java project with Maven, run
 
 This will create a folder "hello-world-microservice" in the current directory with a skeleton structure for your project.
 
-### Add the  Java Microservice library
+### Add the Java Microservice library
 
 Edit the "pom.xml" in the "hello-world-microservice" folder. Add a "repositories" and a "pluginRepositories" element to point to the Cumulocity Maven repository, which stores the client libraries.
 
@@ -101,24 +103,26 @@ Edit the "App.java" file in the folder "hello-world-microservice/src/main/java/c
       }
     }
 
-What does the code do:
-* @MicroserviceApplication - is a simple way to add required behavior for Cumulocity Microservice. Including:
-  * Security
-  * Subscription
-  * Health indicator
-  * Context
-  * Internal platform API
-  * Spring Boot Application
-* @RequestMapping - open an endpoint for greeting
 
-### Configure microservice
+@MicroserviceApplication - is a simple way to add required behavior for Cumulocity Microservice, including:
 
-Add an application.properties file in src/main/resources directory with following properties:
+  * security
+  * subscription
+  * health indicator
+  * context
+  * internal platform API
+  * spring boot application
+
+@RequestMapping - opens an endpoint for greeting
+
+### Configure the microservice
+
+Add an application.properties file to the "src/main/resources" directory with the following properties:
 
     application.name=hello-world
     server.port=80
 
-Add a cumulocity.json file in src/main/configuration directory with following content:
+Add a cumulocity.json file to the "src/main/configuration" directory with the following content:
 
     {
     "apiVersion":"1",
@@ -133,11 +137,11 @@ Add a cumulocity.json file in src/main/configuration directory with following co
       ]
     }
 
-This file is required to deploy the microservice in Cumulocity infrastructure.
+This file is required to deploy the microservice in the Cumulocity infrastructure.
 
-### Configure build
+### Configure the build
 
-To create a deployable zip file you need to add following to your pom file:
+To create a deployable zip file, you need to add the following to your pom file:
 
     <properties>
         <maven.compiler.source>1.7</maven.compiler.source>
@@ -207,39 +211,42 @@ To create a deployable zip file you need to add following to your pom file:
         </plugins>
     </build>
 
-## Build microservice
+## Build the microservice
 
-To build the zip file use following command:
+To build the zip file, use the following command:
 
     $mvn clean install
 
-After a successful build you will be provided with a zip file in target directory. The zip can be deployed to the platform according to deployment guide.
+After a successful build you will be provided with a zip file in the target directory. The zip can be deployed to the platform according to deployment guide.
 
 ## Deployment
 
-To deploy application on an environment you need
+To deploy an application on an environment you need:
+
 * URL address of your tenant
 * Authorization header = "Basic {Base64({username}:{password})}"
-* Tenant - tenant Id 
-* ZIP build from previous step
+* Tenant - tenant ID
+* zip build from previous step
 
+**Step 1 - Create application**
 
-1. If Application does not exist create new application on a platform:
+If the application does not exist, create a new application on a platform:
 
-POST {URL}/application/applications
+	POST {URL}/application/applications
 
 HEADERS:
 
     "Authorization": "{AUTHORIZATION}"
     "Content-type": "application/json"
-BODY:
 
+BODY:
 
     {
 			"name": "{APPLICATION_NAME}",
 			"type": "MICROSERVICE",
 			"key": "{APPLICATION_NAME}-microservice-key"
     }
+
 
 Example:
 
@@ -273,38 +280,41 @@ Example response:
         "type": "MICROSERVICE"
     }      
 
-If application was created correctly, you can get application id by invoking:
+If the application has been created correctly, you can get the application ID by invoking:
 
-GET {URL}/application/applicationsByName/{APPLICATION_NAME}
+	GET {URL}/application/applicationsByName/{APPLICATION_NAME}
 
 HEADERS:
 
     "Authorization": "{AUTHORIZATION}"
     "Content-type": "application/json"
-Example
+
+Example:
 
     curl -H "Authorization:{AUTHORIZATION}" \
      {URL}/application/applicationsByName/hello-world
 
-2. Upload zip file
-POST {URL}/application/applications/{APPLICATION_ID}/binaries
+
+**Step 2 - Upload zip file**
+       
+	POST {URL}/application/applications/{APPLICATION_ID}/binaries
+
 HEADERS:
 
     "Authorization": "{AUTHORIZATION}"
     "Content-Type": "multipart/form-data"
 
-Example
+Example:
 
-  curl -F "data=@{PATH_TO_ZIP}" \
-  -H "Authorization: {AUTHORIZATION}" \
-  "{URL}/application/applications/{APPLICATION_ID}/binaries"
+	  curl -F "data=@{PATH_TO_ZIP}" \
+	  -H "Authorization: {AUTHORIZATION}" \
+	  "{URL}/application/applications/{APPLICATION_ID}/binaries"
 
-3. Subscribe to microservice
-
-  POST {URL}/tenant/tenants/$TENANT/applications
+**Step 3 - Subscribe to microservice**
+    
+	POST {URL}/tenant/tenants/$TENANT/applications
 
   HEADERS:
-
 
     "Authorization": "{AUTHORIZATION}"
     "Content-Type": "multipart/form-data"
@@ -318,10 +328,9 @@ Example
     curl -X POST -d "{"application":{"id": "{APPLICATION_ID}"}}"  \
     -H "Authorization: {AUTHORIZATION}" \
     -H "Content-type: application/json" \
-     "{URL}/tenant/tenants/{TENANT}/applications"
+     "{URL}/tenant/tenants/{TENANT}/applications"  
 
-
-Now you can verify your application is running by executing
+Now you can verify if your application is running by executing
 
     curl -H "Authorization: {AUTHORIZATION}" \
       {URL}/service/hello-world/hello?who=me
@@ -330,6 +339,6 @@ The expected result is:
 
     hello me!
 
-## Improve the Microservice
+## Improving the microservice
 
-Now that you have done your first step, check out the Section [Developing Java Microservice](/guides/java/developing-microservice).
+Now that you have done your first step, check out the section [Developing Java Microservice](/guides/java/developing-microservice).

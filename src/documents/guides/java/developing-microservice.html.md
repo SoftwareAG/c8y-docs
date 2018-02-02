@@ -173,7 +173,7 @@ The following locations are searched for log-back file:
 
 ## Maven plugin
 
-The package module provides maven plugin to prepare a ZIP file required by the microservice deployment, with simple configuration. The build requires an executable jar. To create one, a developer can use spring-boot-maven-plugin. 
+The package module provides maven plugin to prepare a zip file required by the microservice deployment, with simple configuration. The build requires an executable jar. To create one, a developer can use spring-boot-maven-plugin. 
 
 An example with minimum configuration is presented below:
 
@@ -265,7 +265,7 @@ Example configuration:
 
 ### Microservice-package goal
 
-The microservice-package plugin is responsible for creating a ZIP file, that can be deployed on the platform. It can be configured by:
+The microservice-package plugin is responsible for creating a zip file, that can be deployed on the platform. It can be configured by:
 
 * skip (alias skip.microservice.package) - skip the zip creation. True by default
 * manifestFile - points to a manifest file location. Default value: ${basedir}/src/main/configuration/cumulocity.json
@@ -299,7 +299,7 @@ To deploy an application on an environment you need:
 * URL address of your tenant
 * Authorization header = "Basic {Base64({username}:{password})}"
 * Tenant - tenant ID
-* ZIP build from previous step
+* zip build from previous step
 
 
 **Step 1 - Create application**
@@ -340,7 +340,7 @@ Example:
      {URL}/application/applicationsByName/hello-world
 
 
-**Step 2 - Upload ZIP file**
+**Step 2 - Upload zip file**
        
     POST /application/applications/{APPLICATION_ID}/binaries
     Host: ...

@@ -13,7 +13,7 @@ This section focuses on the user and permission management feature in the Admini
 |[Managing Users](#users)|How to [create users](#creating-users), edit, disable or delete them.
 |[Managing Permissions](#managing-permissions)|How to create and edit [global roles](#global) and [inventory roles](#inventory), how to assign them to users, and how to [grant application access](#app-access).
 |[Supporting Users in Other Tenants](#support)|How to configure support users and how to login as support user.
-|[Managing User Hierarchies](#hierachy)|How to create [user hierarchies](#hierarchy) and how to [delegate](#delegate) user hierarchies. The availability of this feature depends on your subscription plan.
+|[Managing User Hierarchies](#hierarchy)|How to create [user hierarchies](#hierarchy) and how to [delegate](#delegate) user hierarchies. The availability of this feature depends on your subscription plan.
 
 
 ## <a name="users"></a>Managing Users
@@ -90,7 +90,7 @@ Click **Edit** to edit an existing user. All fields except “Username” and �
 
 To copy roles, click **Copy inventory roles from another user**. In the upcoming window, select a user from the list and click **Copy**. At the top you can select if you want to merge the roles with the existing user roles (the default) or if you want to replace the existing user roles.
 
-Click **Delegate** to delegate your user hierachies and permissions to a user, or click **Undelegate** to remove a delegation. Refer to [Managing User Hierarchies](#hierarchy) for details on delegation.
+Click **Delegate** to delegate your user hierarchies and permissions to a user, or click **Undelegate** to remove a delegation. Refer to [Managing User Hierarchies](#hierarchy) for details on delegation.
 
 Click **Disable** to disable an active user, or click **Enable** to enable a user that has been disabled.
 

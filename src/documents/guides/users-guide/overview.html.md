@@ -12,14 +12,14 @@ For your convenience find an overview on the content of this document below.
 
 |Section|Content|
 |:---|:---|
-|[Accessing the Cumulocity platform](#accessing)|How to access Cumulocity from a web browser.
+|[Accessing the Cumulocity Platform](#accessing)|How to access Cumulocity from a web browser.
 |[Logging into Cumulocity](#login)|How to [login to the Cumulocity platform](#login) and how to [reset your password](#reset-password) and [change your password](#change-password).
-|[GUI of Cumulocity applications](#navigating)|Overview on the main screen elements and functionalities available in all Cumulocity applications.
-|[Accessing pages using URL](#URLs)|How to access particular pages in Cumulocity applications directly by using URLs.
-|[User settings](#settings)|How to change settings for your account like email address, language and password.
-|[Search and filtering functionality](#searching-and-filtering)|How to [search for objects](#searching) and how to [filter lists](#filtering) in Cumulocity applications.
+|[GUI of Cumulocity Applications](#navigating)|Overview on the main screen elements and functionalities available in all Cumulocity applications.
+|[Accessing Pages Using URL](#URLs)|How to access particular pages in Cumulocity applications directly by using URLs.
+|[User Settings](#settings)|How to change settings for your account like email address, language and password.
+|[Search and Filter Functionality](#searching-and-filtering)|How to [search for objects](#searching) and how to [filter lists](#filtering) in Cumulocity applications.
 
-## <a name="accessing"></a>Accessing the Cumulocity platform
+## <a name="accessing"></a>Accessing the Cumulocity Platform
 
 To access the Cumulocity platform, you need a modern web browser. Our products have been tested with the following desktop web browsers:
 
@@ -96,7 +96,7 @@ By default, the password must consist of at least eight characters. For a strong
 
 > **Info:** The password rules can be configured by the administrator, i.e. your administrator can configure your account to enforce a password policy. You may be required to pick a strong password for example or to change your password regularly.
 
-## <a name="navigating"></a>Navigating in Cumulocity applications
+## <a name="navigating"></a>Navigating in Cumulocity Applications
 
 Once you are logged in, your default Cumulocity application will open. 
 
@@ -129,7 +129,7 @@ On smaller screens, the layout of an application changes, as shown below. The na
 
 > **Info:** Cumulocity applications provide tooltips when you hover over a particular screen element. When you use Cumulocity applications on touch devices, tooltips are shown when you touch a screen element for a longer time.
 
-## <a name="URLs"></a>Accessing pages using URLs
+## <a name="URLs"></a>Accessing Pages Using URLs
 
 You can navigate straight to any place inside a Cumulocity application using the respective URL. For example, to show the basic information for a device, you can enter the following URL:
 
@@ -143,7 +143,7 @@ Using such an URL, you can
   * write own web applications which link directly to information contained in a Cumulocity application.
 
 
-## <a name="settings"></a>User settings
+## <a name="settings"></a>User Settings
 
 Several account settings can be changed by the user. 
 
@@ -167,7 +167,7 @@ Click **Change password** to change your current password. For details refer to 
 
 Click **Save** at the bottom of the window to apply your settings.
 
-## <a name="searching-and-filtering"></a>Search and filter functionality
+## <a name="searching-and-filtering"></a>Search and Filter Functionality
 
 ### <a name="searching"></a>Searching
 

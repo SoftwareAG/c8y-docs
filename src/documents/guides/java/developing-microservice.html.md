@@ -5,12 +5,14 @@ title: Developing Microservices
 ---
 ## Overview
 
-This document describes microservice SDK features, including annotations, services, configuration files, logging and maven build plugin.
+This document describes microservice SDK features, including annotations, services, configuration files, logging and maven build plugin. 
 
-There are two possible deployment types:
+There are two possible deployment types on the platform:
 
 * Hosted deployment - the default for microservices. For typical use cases the hosted deployment is the suggested one. 
 * External/legacy deployment - requires custom installation of the platform and agent. 
+
+For development and testing purposes one can deploy a microservice on a local docker. The process is described in this document 
 
 ## Annotations
 
@@ -293,6 +295,9 @@ Example configuration:
     </configuration>
 
 ## Deployment
+###Hosted deployment
+
+Please note that for your convenience we have prepared a utility deployment script available [here](/guides/reference/microservice-package)
 
 To deploy an application on an environment you need:
 
@@ -371,3 +376,12 @@ Example:
     -H "Authorization: {AUTHORIZATION}" \
     -H "Content-type: application/json" \
      "{URL}/tenant/tenants/{TENANT}/applications"
+
+### Local docker deployment
+
+To deploy application on a local docker, one needs to inject environment variables into container. This is done via docker run -e parameter. Full description of available parameters is available in [Environment variables](/guides/reference/microservice-runtime) chapter. 
+
+Example execution could be 
+    
+    docker run -e "C8Y_BASEURL={C8Y_BASEURL}" -e "C8Y_BASEURL_MQTT={C8Y_BASEURL_MQTT}" {IMAGE_NAME}
+

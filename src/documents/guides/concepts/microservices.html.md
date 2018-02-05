@@ -7,7 +7,7 @@ layout: default
 
 Cumulocity supports microservice development and deployment to its environment.
 
-For Java developers, Cumulocity Java Microservice SDK makes microservice prototyping, development and package creation for deployment even easier. Please check the Java developer's guide for more information.
+For Java developers, Cumulocity Java Microservice SDK makes microservice prototyping, development and package creation for deployment even easier. Please check the Java developer's guide for [Hello, Microservice!](/guides/java/java-microservice) example and [developing microservices](/guides/java/developing-microservice).
 
 The overall microservice lifecycle can be categorized in 5 steps.
 ![Microservice Lifecycle](/guides/concepts-guide/microservicelifecycle.png)
@@ -32,7 +32,7 @@ Please see [create microservice application](/guides/rest/microservice-developme
 
 This step is already included in Cumulocity Java Microservice SDK.
 
-All microservices should use their own bootstrap user in order to authorize to use microservice related endpoints such as getting its subscriptions or updating the current application. The user should be created using Rest API for [acquiring bootstrap user](/guides/rest/microservice-development/#acquire-microservice-credentials).
+All microservices should use their own bootstrap user in order to authorize to use microservice related endpoints such as getting its subscriptions or updating the current application. The user should be created using Rest API for [acquiring bootstrap user](/guides/rest/microservice-development/#acquire-microservice-bootstrap-user-credentials).
 
 ### Defining Required Roles and Roles for The Service User
 When a tenant subscribes to the microservice application, a service user is created for the tenant.
@@ -76,7 +76,7 @@ Getting microservice subscription can be done using bootstrap user.
     Host: ...
     Authorization: Basic …
 
-The Cumulocity Java Microservice SDK provides useful events by calling the endpoints. Please check Java developer's guide for more details.
+The Cumulocity Java Microservice SDK provides useful events by calling the endpoints. Please check Java developing microservices guide for [subscription events](/guides/java/developing-microservice#microservice-subscription).
 
 ### Additional Microservice Development Requirements
 * Use API to retrieve tenant users with required permissions.

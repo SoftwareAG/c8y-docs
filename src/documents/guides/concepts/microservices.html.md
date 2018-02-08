@@ -42,43 +42,40 @@ This scale option is given in microservice manifest.
 
 Cumulocity proxies the microservice requests to the microservice container. Therefore, the incoming request for the microservices goes through Cumulocity with authorization and HTTP over TLS secures the communication.
 
-The authorization can be done with the following tenant users.
+Type of users that are used for platform and managing microservices:
 
-* Tenant User: The user which is created using the Cumulocity Administration application.
+* Tenant Platform User: The user which is created using the Cumulocity Administration application. This is the user logs into the application.
 * Microservice Bootstrap User: The user which is created for each microservice for microservice bootstrap operations. This user is authorized to get the microservice subscriptions and do requests for its application. Please check [microservice development](/guides/rest/microservice-development) for more details.
 * Service User: The user created, when a tenant subscribes to the microservice application.
-The roles that are required for microservice's operations to Cumulocity platform should be given to this user.
-It is a good practice to switch context to subscribed tenant's service user instead of using the tenant user when doing any request from microservice to Cumulocity platform.
 
-These roles are separated in two categories.
+Any request to the platform must be done with platform user.
+For microservices, it is a good practice to switch context to subscribed tenant's service user instead of using the tenant's platform user when doing a request from microservice to Cumulocity platform.
+
+Type of roles that are defined for users:
 
 * Required roles: The roles that are predefined to allow access to use Cumulocity Rest APIs.
 As an example, if microservice creates measurements using service user, measurement admin role has to be added as a required role of the application.
+Required roles are added to the service users.
+* Roles: The custom roles provided to tenant platform users by microservice developer.
+These roles can be assigned or revoked to the tenant platform users or groups using Administration application.
 
-* Roles: The custom roles that is given by microservice developer. This roles can be given in order to have custom security logic.
+The roles is given in microservice manifest.
 
 ### Environment variables
 
-Each environment can have the setting for microservice runtime which is used after deployment of the microservice package.
+A microservice running in a dedicated environment can retrieve and use the injected environment variables of the dedicated environment.
 Please check [microservice container runtime reference](guides/reference/microservice-runtime) for more information.
 
 ### Packaging
 
-Cumulocity provides a tool for microservice package preperation and deployment. Please check [microservice package reference](/guides/reference/microservice-package).
+To deploy a microservice, one needs to package it in a specific structure. It requires a docker image.tar and cumulocity.json files packed into a zip file. For your convenience Cumulocity provides a script. Please check [microservice package reference](/guides/reference/microservice-package) in order to prepare and deploy the microservice package.
 
-### Subscription
-
-In order to use any microservice, a tenant subscription should be created.
-Microservice application subscriptions for the subtenants can be created using Administration application.
-![Application Subscription](/guides/concepts-guide/applicationsubscription.png)
-
-### Additional Microservice Development Requirements
-* Use external endpoints, if declared in metadata
-* Use other microservices, if user has permission
-* Stateless: Ephemeral State, both for in-process state and disk state
-* All persistent state must be stored externally, e.g. in MongoDB, e.g. using Cumulocity Inventory, Binary, Tenant Options API
-* No additional inbound ports except REST endpoint
-* Request lifetime has maximum setting.
+### Additional Microservice Development Practices
+* Use other microservices, if user has permission.
+* Microservice must be stateless: Ephemeral State, both for in-process state and disk state
+* All persistent state must be stored at Cumulocity Platform via Inventory, Binary, Tenant Options and other API
+* Do not use additional inbound ports except REST endpoint.
+* Request lifetime must have the maximum setting.
 
 ## Register
 Developer can register the microservice package using their tenant after development phase.
@@ -88,6 +85,11 @@ Please check [microservice manifest reference](/guides/reference/microservice-ma
 
 Cumulocity provides a tool for microservice package preperation and deployment. Please check [microservice package reference](/guides/reference/microservice-package).
 
+### Subscription
+
+For a microservice to be available it has to be registered and deployed on the platform and at least one subscription is required.
+Microservice application subscriptions for the subtenants can be created using Administration application.
+![Application Subscription](/guides/concepts-guide/applicationsubscription.png)
 ## Publish & Subscribe
 In this step Cumulocity publish the microservice to the marketplace and gives access to the enterprise tenant(s).
 

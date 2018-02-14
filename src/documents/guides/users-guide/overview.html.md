@@ -1,25 +1,25 @@
 ---
 order: 10
-title: Introduction
+title: Getting Started
 layout: default
 ---
 
 ## Overview
 
-This introduction describes how to access and login to the Cumulocity platform and will walk you through basic functionalities applying to all Cumulocity applications. 
+The Getting Started section describes how to access and login to the Cumulocity platform and will walk you through basic functionalities applying to all Cumulocity applications. 
 
 For your convenience find an overview on the content of this document below.
 
 |Section|Content|
 |:---|:---|
-|[Accessing the Cumulocity Platform](#accessing)|How to access Cumulocity from a web browser.
-|[Logging into Cumulocity](#login)|How to [login to the Cumulocity platform](#login) and how to [reset your password](#reset-password) and [change your password](#change-password).
-|[GUI of Cumulocity Applications](#navigating)|Overview on the main screen elements and functionalities available in all Cumulocity applications.
-|[Accessing Pages Using URL](#URLs)|How to access particular pages in Cumulocity applications directly by using URLs.
+|[Accessing and logging into the Cumulocity platform](#accessing)|How to [access Cumulocity](#accessing) from a web browser, how to [login to the Cumulocity platform](#login), how to [reset](#reset-password) and [change](#change-password) your password and how to access particular pages in Cumulocity applications directly by [using URLs](#URLs).
+|[Cumulocity applications](#settings)|Overview on the applications available in your platform i.e. [standard applications](#standard), additional [built-in applications](#built-in) and [own applications](#own).
+|[GUI of Cumulocity applications](#navigating)|Overview on the main [screen elements](#screen) and common functionalities like [searching and filtering](#searching-and-filtering) available in all Cumulocity applications.
 |[User Settings](#settings)|How to change settings for your account like email address, language and password.
-|[Search and Filter Functionality](#searching-and-filtering)|How to [search for objects](#searching) and how to [filter lists](#filtering) in Cumulocity applications.
 
-## <a name="accessing"></a>Accessing the Cumulocity Platform
+## <a name="accessing"></a>Accessing and login into the Cumulocity platform
+
+### Accessing Cumulocity
 
 To access the Cumulocity platform, you need a modern web browser. Our products have been tested with the following desktop web browsers:
 
@@ -49,7 +49,7 @@ This will direct you to the login page of your default application.
 
 >**Info:** The above URL is only valid for Cumulocity Standard Edition subscribers. For Enterprise Edition deployments of Cumulocity, the URL is specific to your organization.
 
-## <a name="login"></a>Logging into the Cumulocity platform
+### <a name="login"></a>Logging into the Cumulocity platform
 
 On the Login screen, enter your username and password and click **Login** to enter the application. 
 
@@ -62,6 +62,25 @@ To logout, click the **User** button at the right of the the top bar and from th
 <img src="/guides/users-guide/logout.png" alt="Logout menu" style="max-width: 60%">
 
 > **Info:** For security reasons, Cumulocity does not use Cookie technology.
+
+### <a name="welcome"></a>Welcome screen
+
+When you log into Cumulocity for the first time, you will be taken to the default application (usually the Cockpit application if not configured differently) where the **Welcome** page initially opens up.
+
+<img src="/guides/users-guide/Cockpit/Cockpit_WelcomeScreen.png" name="Welcome screen" style="width:100%;"/>
+
+The **Welcome** screen contains the following items:
+
+* Quick links to the most relevant functions.
+* Links to the available applications.
+* Links to relevant documentation areas and to the Support Forum.
+* The latest news from the Cumulocity twitter channel. Note that this section is only available for tenants hosted by www.cumulocity.com.
+
+**Hiding/restoring the Welcome screen**
+
+If you do not want the **Welcome** page to be your start page, activate the slider **Don't use as start page** on the top right.
+
+To restore the **Welcome** page as start page, select "Welcome" in the navigator on the top left and deactivate the slider **Don't use as start page** again.
 
 ### <a name="reset-password"></a>Resetting your password
 
@@ -96,19 +115,49 @@ By default, the password must consist of at least eight characters. For a strong
 
 > **Info:** The password rules can be configured by the administrator, i.e. your administrator can configure your account to enforce a password policy. You may be required to pick a strong password for example or to change your password regularly.
 
-## <a name="navigating"></a>Navigating in Cumulocity Applications
+### <a name="URLs"></a>Accessing Pages Using URLs
 
-Once you are logged in, your default Cumulocity application will open. 
+You can navigate straight to any place inside a Cumulocity application using the respective URL. For example, to show the basic information for a device, you can enter the following URL:
 
-The content of Cumulocity applications is entirely dynamic and is generated based on various criteria:
+	https://<account>.cumulocity.com/apps/devicemanagement/index.html#/device/<id>/info
+
+Using such an URL, you can
+
+  * save bookmarks for specific devices or pages,
+  * send emails (manually or automatically, using the real-time event engine) which include a link to devices or sensor data,
+  * use the backward and forward navigation of your browser,
+  * write own web applications which link directly to information contained in a Cumulocity application.
+
+## <a name="applications"></a>Cumulocity applications
+
+### <a name="standard"></a>Standard applications
+
+Per default, Cumulocity comes with the following three standard applications:
+
+|Application|Description|
+|:---|:---|
+|[Device Management](/guides/users-guide/device-management)|The Device Management application provides functionalities for managing and monitoring devices and enables you to control and troubleshoot devices remotely.  
+|[Cockpit](/guides/users-guide/cockpit)|The Cockpit application provides you with options to manage and monitor  Internet of Things (IoT) assets and data from a business perspective.
+|[Administration](/guides/users-guide/administration)|The Administration application enables account administrators to manage their users, roles, tenants, applications and business rules and lets them configure a number of settings for their account. 
+
+### <a name="built-in"></a>Additional built-in applications
+
+Apart from these standard applications, various additional built-in applications are provided which you may subscribe to, i.e. a Device Simulator or integrated agents for several device types.
+
+### <a name="own"></a>Own applications
+
+In addition to the applications available in the Cumulocity platform, you can also manage own applications in your account. For details, refer to [Managing applications](/guides/users-guide/administration#applications) in the Administration section.
+
+The content of the Cumulocity platform is entirely dynamic and is generated based on various criteria:
 
 * The applications that your organization has subscribed to.
 * The applications that your organization has configured or developed itself for Cumulocity.
 * The functionality that your user is permitted to see.
 * The configuration of the user interface, such as groups and reports.
-* The functionality of the devices that are used by you.
 
-### Main screen elements
+## <a name="navigating"></a>GUI functionalities and features
+
+### <a name="screen"></a>Main screen elements
 
 The general structure common to all Cumulocity applications includes the following screen elements:
 
@@ -129,21 +178,56 @@ On smaller screens, the layout of an application changes, as shown below. The na
 
 > **Info:** Cumulocity applications provide tooltips when you hover over a particular screen element. When you use Cumulocity applications on touch devices, tooltips are shown when you touch a screen element for a longer time.
 
-## <a name="URLs"></a>Accessing Pages Using URLs
+### <a name="searching-and-filtering"></a>Search and Filter Functionality
 
-You can navigate straight to any place inside a Cumulocity application using the respective URL. For example, to show the basic information for a device, you can enter the following URL:
+#### <a name="searching"></a>Searching
 
-	https://<account>.cumulocity.com/apps/devicemanagement/index.html#/device/<id>/info
+The Cumulocity search field provides a full-text search of the whole inventory. 
 
-Using such an URL, you can
+Entering multiple words separated by a blank returns all objects that match any of the words. For example, entering
 
-  * save bookmarks for specific devices or pages,
-  * send emails (manually or automatically, using the real-time event engine) which include a link to devices or sensor data,
-  * use the backward and forward navigation of your browser,
-  * write own web applications which link directly to information contained in a Cumulocity application.
+	My Demo Device
+
+will return objects containing "My", "Demo" or "Device". 
+
+If you want to search for objects matching an exact phrase enclose it in quotation marks:
+
+	"My Demo Device"
+
+You can also exclude words by putting a hyphen before the word to search the inventory for objects containing e.g. "My" or "Demo" but not "Device":
+
+	My Demo -Device
 
 
-## <a name="settings"></a>User Settings
+Case is ignored. The following search texts return the same result:
+
+	My Demo Device
+	My demo device
+
+
+>**Info:** Other than with filtering, using wildcards in a search is not supported.
+
+#### <a name="filtering"></a>Filtering
+
+Some pages offer a filtering functionality to filter objects in a list.
+
+As opposed to the search functionality, on entering filtering criteria you must not necessarily enter complete words. 
+
+In many cases you can just enter any arbitrary text into a text field, even just single characters. Entering
+
+	cl
+
+will reduce the list to all objects containing the string "cl".
+
+In other cases you may enter * as wildcard character to return all objects starting with "cl":
+
+	cl*
+
+
+The list will be reduced to the selected objects accordingly.
+
+
+## <a name="settings"></a>Changing user settings
 
 Several account settings can be changed by the user. 
 
@@ -166,51 +250,3 @@ In the "Language" field, select a language from the dropdown list.
 Click **Change password** to change your current password. For details refer to [Changing your password](#change-password).
 
 Click **Save** at the bottom of the window to apply your settings.
-
-## <a name="searching-and-filtering"></a>Search and Filter Functionality
-
-### <a name="searching"></a>Searching
-
-The Cumulocity search field provides a full-text search of the whole inventory. 
-
-Entering multiple words separated by a blank returns all objects that match any of the words. For example, entering
-
-	My Demo Device
-
-will return objects containing "My", "Demo" or "Device". 
-
-If you want to search for objects matching an exact phrase enclose it in quotation marks:
-
-	"My Demo Device"
-
-You can also exclude words by putting a hypen before the word to search the inventory for objects containing e.g. "My" or "Demo" but not "Device":
-
-	My Demo -Device
-
-
-Case is ignored. The following search texts return the same result:
-
-	My Demo Device
-	My demo device
-
-
->**Info:** Other than with filtering, using wildcards in a search is not supported.
-
-### <a name="filtering"></a>Filtering
-
-Some pages offer a filtering functionality to filter objects in a list.
-
-As opposed to the search functionality, on entering filtering criteria you must not necessarily enter complete words. 
-
-In many cases you can just enter any arbitrary text into a text field, even just single characters. Entering
-
-	cl
-
-will reduce the list to all objects containing the string "cl".
-
-In other cases you may enter * as wildcard character to return all objects starting with "cl":
-
-	cl*
-
-
-The list will be reduced to the selected objects accordingly.

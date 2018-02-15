@@ -4,7 +4,7 @@ title: Getting Started
 layout: default
 ---
 
-## Overview
+## <a name="overview"></a>Overview
 
 The Getting Started section describes how to access and login to the Cumulocity platform and will walk you through basic functionalities applying to all Cumulocity applications. 
 
@@ -13,8 +13,8 @@ For your convenience find an overview on the content of this document below.
 |Section|Content|
 |:---|:---|
 |[Accessing and logging into the Cumulocity platform](#accessing)|How to [access Cumulocity](#accessing) from a web browser, how to [login to the Cumulocity platform](#login), how to [reset](#reset-password) and [change](#change-password) your password and how to access particular pages in Cumulocity applications directly by [using URLs](#URLs).
-|[Cumulocity applications](#settings)|Overview on the applications available in your platform i.e. [standard applications](#standard), additional [built-in applications](#built-in) and [own applications](#own).
-|[GUI of Cumulocity applications](#navigating)|Overview on the main [screen elements](#screen) and common functionalities like [searching and filtering](#searching-and-filtering) available in all Cumulocity applications.
+|[Cumulocity applications](#settings)|Overview on the applications available in your platform i.e. standard applications, applications you may additionally subscribe to and own applications.
+|[GUI features and functionalities](#navigating)|Overview on the main [screen elements](#screen) and common functionalities like [searching and filtering](#searching-and-filtering) available in all Cumulocity applications.
 |[User Settings](#settings)|How to change settings for your account like email address, language and password.
 
 ## <a name="accessing"></a>Accessing and login into the Cumulocity platform
@@ -115,7 +115,7 @@ By default, the password must consist of at least eight characters. For a strong
 
 > **Info:** The password rules can be configured by the administrator, i.e. your administrator can configure your account to enforce a password policy. You may be required to pick a strong password for example or to change your password regularly.
 
-### <a name="URLs"></a>Accessing Pages Using URLs
+### <a name="URLs"></a>Accessing pages using URLs
 
 You can navigate straight to any place inside a Cumulocity application using the respective URL. For example, to show the basic information for a device, you can enter the following URL:
 
@@ -130,8 +130,6 @@ Using such an URL, you can
 
 ## <a name="applications"></a>Cumulocity applications
 
-### <a name="standard"></a>Standard applications
-
 Per default, Cumulocity comes with the following three standard applications:
 
 |Application|Description|
@@ -140,15 +138,11 @@ Per default, Cumulocity comes with the following three standard applications:
 |[Cockpit](/guides/users-guide/cockpit)|The Cockpit application provides you with options to manage and monitor  Internet of Things (IoT) assets and data from a business perspective.
 |[Administration](/guides/users-guide/administration)|The Administration application enables account administrators to manage their users, roles, tenants, applications and business rules and lets them configure a number of settings for their account. 
 
-### <a name="built-in"></a>Additional built-in applications
+Apart from these standard applications that initially come with Cumulocity, various additional applications are provided which you may subscribe to, i.e. integrated agents for several device types.
 
-Apart from these standard applications, various additional built-in applications are provided which you may subscribe to, i.e. a Device Simulator or integrated agents for several device types.
+Moreover, you can add own applications to be used in your Cumulocity account. For details, refer to [Administration > Managing applications](/guides/users-guide/administration#applications).
 
-### <a name="own"></a>Own applications
-
-In addition to the applications available in the Cumulocity platform, you can also manage own applications in your account. For details, refer to [Managing applications](/guides/users-guide/administration#applications) in the Administration section.
-
-The content of the Cumulocity platform is entirely dynamic and is generated based on various criteria:
+The content of the Cumulocity platform therefore is entirely dynamic and is generated based on various criteria:
 
 * The applications that your organization has subscribed to.
 * The applications that your organization has configured or developed itself for Cumulocity.
@@ -178,7 +172,7 @@ On smaller screens, the layout of an application changes, as shown below. The na
 
 > **Info:** Cumulocity applications provide tooltips when you hover over a particular screen element. When you use Cumulocity applications on touch devices, tooltips are shown when you touch a screen element for a longer time.
 
-### <a name="searching-and-filtering"></a>Search and Filter Functionality
+### <a name="searching-and-filtering"></a>Search and filter functionality
 
 #### <a name="searching"></a>Searching
 

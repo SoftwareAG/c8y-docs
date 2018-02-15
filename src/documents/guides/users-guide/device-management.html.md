@@ -3,7 +3,7 @@ order: 20
 title: Device Management
 layout: default
 ---
-## <a name="introduction"></a>Overview
+## <a name="overview"></a>Overview
 
 The Device Management application provides functionalities for managing and monitoring devices and enables you to control and troubleshoot devices remotely. 
 
@@ -11,16 +11,16 @@ The following sections will walk you through all functionalities of the Device M
 
 |SECTION|CONTENT|
 |:---|:---|
-|[Connecting Devices](#device-registration)|How to [register one or more devices manually](#device-registration-manually) and how to [bulk-register devices](#creds-upload) in order to connect devices to your account.
-|[Viewing Devices](#viewing-devices)|What is displayed in the [device list](#device-list) and how to sort devices by [searching for devices](#searching-devices) and [filtering devices](#filtering-devices).
-|[Grouping Devices](#grouping-devices)|Why and how to group devices into top-level groups, subgroups and [smart groups](#smart-groups).
-|[Device Details](#device-details)|Detailed description of the various kind of  information available for various types of  devices.
-|[Monitoring and Controlling Devices](#monitoring-and-controlling-devices)|How to monitor the [connection quality](#connection-monitoring) and [service status](#monitoring-services) of devices, how to handle [alarms](#alarm-monitoring) from devices, how to [remote control](#operation-monitoring) and how to [troubleshoot](#events-all) devices.
-|[Managing Device Types](#managing-device-protocols)|How to process data from various device types by using [device protocols](#managing-device-protocols). 
-|[Managing Device Data](#managing-device-data)|How to retrieve and manage [firmware and software](#software-repo) for devices and how to handle [configuration snapshots](#configuration-snapshots). 
-|[Working with the Simulator](#simulator)|How to model devices with the [simulator](#simulator) in order to have the same level of functionality as connected hardware devices.
-|[Using SmartREST Templates](#Smartrest)|How to work with [SmartREST templates](#Smartrest), a collection of request and response templates used to convert CSV data and Cumulocity Rest API calls.
-|[Cloud Remote Access](#cloud_remote_access)|How to remotely access operating panels and other devices via a web browser using Cumulocity [Cloud Remote Access](#cloud_remote_access).
+|[Connecting devices](#device-registration)|How to [register one or more devices manually](#device-registration-manually) and how to [bulk-register devices](#creds-upload) in order to connect devices to your account.
+|[Viewing devices](#viewing-devices)|What is displayed in the [device list](#device-list) and how to sort devices by [searching for devices](#searching-devices) and [filtering devices](#filtering-devices).
+|[Device details](#device-details)|Detailed description of the various kind of  information available for various types of devices.
+|[Grouping devices](#grouping-devices)|Why and how to group devices into top-level groups, subgroups and [smart groups](#smart-groups).
+|[Monitoring and controlling devices](#monitoring-and-controlling-devices)|How to monitor the [connection quality](#connection-monitoring) and [service status](#monitoring-services) of devices, how to handle [alarms](#alarm-monitoring) from devices, how to [remote control](#operation-monitoring) and how to [troubleshoot](#events-all) devices.
+|[Managing device types](#managing-device-protocols)|How to process data from various device types by using [device protocols](#managing-device-protocols). 
+|[Managing device data](#managing-device-data)|How to retrieve and manage [firmware and software](#software-repo) for devices and how to handle [configuration snapshots](#configuration-snapshots). 
+|[Working with the simulator](#simulator)|How to model devices with the [simulator](#simulator) in order to have the same level of functionality as connected hardware devices.
+|[Using SmartREST templates](#Smartrest)|How to work with [SmartREST templates](#Smartrest), a collection of request and response templates used to convert CSV data and Cumulocity Rest API calls.
+
 
 ## <a name="device-registration"></a>Connecting Devices
 
@@ -29,7 +29,7 @@ This section describes how to connect devices to your Cumulocity account either 
 ### <a name="device-registration-manually"></a>How to connect a device manually
 The following process describes how to connect devices manually. Depending on the type of device you want to connect, not all steps of the process may be relevant. 
 
-**Info**: In case of any issues, consult the [device guide](www.cumulocity.com/guides/) applicable for your device type, search for your device type in the [Developer Center](http://cumulocity.com/dev-center/) on our  website for further information, or look up the manual of your device.
+**Info**: In case of any issues, consult the [Device Guide](www.cumulocity.com/guides/) applicable for your device type, search for your device type in the [Developer Center](http://cumulocity.com/dev-center/) on our  website for further information, or look up the manual of your device.
 
 To connect devices to your Cumulocity account follow these steps:
 
@@ -77,7 +77,7 @@ To connect the devices, they need to be pre-registered with the relevant informa
 For further information on the file format and accepted CSV variants, refer to 
 [Bulk device credentials](/guides/reference/device-credentials/#creds-upload).
 
-## <a name="viewing-devices"></a>Viewing Devices
+## <a name="viewing-devices"></a>Viewing devices
 
 To view all devices connected to your account, click "All devices" in the "Devices" menu in the navigator. 
 
@@ -146,129 +146,7 @@ The devices list will now only display devices matching the filtering options.
 
 Click **Clear filters** at the right of the top menu bar if you want to clear all filters and view all devices.
 
-
-## <a name="grouping-devices"></a>Grouping Devices
-
-Devices can be arbitrarily grouped according to a particular use case. A device can be located in multiple groups, and groups themselves can again be part of multiple groups.
-
-Cumulocity distinguishes between top-level groups and subgroups. 
-
-Top-level groups are shown in the "Group" menu in the navigator at top-level. Subgroups are used to further subdivide top-level groups.
-
-### Viewing groups
-
-To display a list of all groups in the account, click "Groups" in the navigator. 
-
-<img src="/guides/users-guide/DeviceManagement/DevMgmt_GroupList.png" alt="Groups list" style="max-width: 100%">
-
-For each group, the name and the number of children is displayed.
-
-Click a group to view its details. 
-
-<img src="/guides/users-guide/DeviceManagement/DevMgmt_GroupDetails.png" alt="Group details" style="max-width: 100%">
-
-**Info Tab**
-
-In the **Info** tab, the following information is provided:
-
-|Card|Description|
-|:---|:---|
-|Notes|Provides optional notes to inform about current activities. Notes usually may only be edited by an administrator. To add or edit a note, click **Edit**, enter your note or your modifications in the text box and save your edits by clicking the green checkmark at the right of the text box. 
-|Group data|Displays editable information on the group (name, description).
-|Active, critical alarms|Shows the active critical alarms for the devices in the group.
-
-**Sub-assets**
-
-In the "Sub-assets" tab you see a list of all devices assigned to the group. For each device, the name and the number of children is displayed.
-
-<img src="/guides/users-guide/DeviceManagement/DevMgmt_GroupSubAssets.png" alt="Sub-assets" style="max-width: 100%">
-
-To assign a device to a group, click **Assign devices** at the right of the top menu bar (see [How to assign a device to an existing group](#assigning-devices)).
-
-To unassign a device, click the menu icon in a device entry and from the context menu select **Unassign**.
-
-**Bulk operations**
-
-In the "Bulk operations" tab, bulk operations created for the group can be managed. With bulk operations you can at once execute operations for each device within one group. For details, refer to [Bulk operations](#bulk-operations).
-
-
-### How to create a new group
-
-To create a new group follow these steps:
-
-1. Click the **Plus** button at the right of the top bar, then select **New group** from the menu.
-2. In the window that comes up enter a unique group name to identify your group.
-3. In the "Device Search" field, enter the search criteria for the devices you might want to add to your group (e.g. "ublox"). A list of devices that match your search criteria will be displayed. 
-4. Checkmark the devices you want to add from the list.
-5. Click **Create group with X device(s)** to finally create your new group. 
-
->**Info:** A group can be created with "0" devices in it.
-
-<img src="/guides/users-guide/addtopgroup.png" alt="Device Management" style="max-width: 100%">
-
-### <a name="assigning-devices"></a>How to assign a device to an existing group
-
-You can assign devices to an existing group in two ways. 
-
-From the device perspective:
-
-1. Select a device from the device list and open it.
-2. In the "Info" tab, scroll down to the "Groups assignment" card. In the drop-down field, select the group you want to assign the device to. 
-3. Click **Add to group**.
-
-<img src="/guides/users-guide/DeviceManagement/DevMgmt_GroupAssignment.png" alt="Add to group" style="max-width: 50%">
-
-From the group perspective:
-
-1. In the navigator, select a group from the "Group" menu and then open the "Sub-assets" tab. In the "Sub-assets" tab, all devices that are assigned to the respective group are displayed. 
-2. Click **Assign devices** at the right of the top menu bar. In the upcoming window search for the devices you might want to add to your group (e.g. "ublox"). A list of devices that match your search criteria will be displayed. 
-3. Checkmark the devices you want to add from the list.
-4. Click **Assign X device(s)** to assign the selected devices. 
-
-<img src="/guides/users-guide/DeviceManagement/DevMgmt_AssignDevices.png" alt="Assign devices to a group" style="max-width: 50%">
-
-### How to create a sub-group
-
-1. In the navigator, click a group to open it. 
-2. Click **Add Group** at the right of the top menu bar. 
-2. In the upcoming window, enter a name for the sub-group and click **Add group**.
-
-### How to edit a group
-
-1. In the navigator, click a group to open it. 
-2. In the "Info" tab, click **Edit**. This allows you to edit the name of the group and to assign user permissions for the group. 
-For further information on permissions, see the [*Administration Guide*](/guides/users-guide/administration).
-
-### <a name="smart-groups"></a>Using smart groups
-
-Smart groups are groups dynamically constructed based on filtering criteria. They have a temporary character because the group members can change constantly. Smart groups do not have fixed member listings.They have fixed criteria instead. This type of group can be used, for example, for bulk upgrades of devices of a certain type to a new software or firmware version.
-
-<img src="/guides/users-guide/smartfilters.png" alt="Adding top-level groups" style="max-width: 100%">
-
-Smart groups can be created from the device list. 
-
-1. To open the device list, click "All devices" in the navigator.
-2. Filter the devices in the list to select the desired devices. Refer to [Filtering devices](#filtering-devices) for details on filtering.
-3. Click **Create smart group** at the right of the top menu bar.
-4. Enter a name for the group and click **Create**.
-
-<img src="/guides/users-guide/smartgroup1.png" alt="Create a smart group" style="max-width: 100%">
-
-The new group will appear as a top-level group in the "Groups" menu of the navigator. Smart groups can be distinguished by a small cogwheel in the folder icon. 
-
-<img src="/guides/users-guide/DeviceManagement/DevMgmt_SmartgroupIcon.png" alt="Smart groups" style="max-width: 100%">
-
-In the "Sub-asset" tab you can adjust your selection and modify the filter settings.
-
-To delete a smart group, click the menu icon and from the context menu select **Delete**. 
-
-<img src="/guides/users-guide/smartgroupdelete1.png" alt="Adding top-level groups" style="max-width: 100%">
-
-**Important**: Deleting a smart group is irreversible.
-
->**Info**: Smart groups are not shown when using the Cockpit application.
-
-## <a name="device-details"></a>Device Details
+## <a name="device-details"></a>Device details
 
 For each device, detailed information is available. The kind of information actually provided for a device depends on the device type, device usage and the configuration of your user interface. 
 
@@ -503,8 +381,128 @@ Cumulocity can associate devices and assets with multiple external identities. F
 
 This is useful, for example, when you have non-functional hardware and need to replace the hardware without losing the data that was recorded. Just connect the new hardware to your account and modify the identity entry of the old hardware, to contain the identity of the new hardware.
 
+## <a name="grouping-devices"></a>Grouping devices
 
-## <a name="monitoring-and-comntrolling-devices"></a>Monitoring and Controlling Devices
+Devices can be arbitrarily grouped according to a particular use case. A device can be located in multiple groups, and groups themselves can again be part of multiple groups.
+
+Cumulocity distinguishes between top-level groups and subgroups. 
+
+Top-level groups are shown in the "Group" menu in the navigator at top-level. Subgroups are used to further subdivide top-level groups.
+
+### Viewing groups
+
+To display a list of all groups in the account, click "Groups" in the navigator. 
+
+<img src="/guides/users-guide/DeviceManagement/DevMgmt_GroupList.png" alt="Groups list" style="max-width: 100%">
+
+For each group, the name and the number of children is displayed.
+
+Click a group to view its details. 
+
+<img src="/guides/users-guide/DeviceManagement/DevMgmt_GroupDetails.png" alt="Group details" style="max-width: 100%">
+
+**Info Tab**
+
+In the **Info** tab, the following information is provided:
+
+|Card|Description|
+|:---|:---|
+|Notes|Provides optional notes to inform about current activities. Notes usually may only be edited by an administrator. To add or edit a note, click **Edit**, enter your note or your modifications in the text box and save your edits by clicking the green checkmark at the right of the text box. 
+|Group data|Displays editable information on the group (name, description).
+|Active, critical alarms|Shows the active critical alarms for the devices in the group.
+
+**Sub-assets**
+
+In the "Sub-assets" tab you see a list of all devices assigned to the group. For each device, the name and the number of children is displayed.
+
+<img src="/guides/users-guide/DeviceManagement/DevMgmt_GroupSubAssets.png" alt="Sub-assets" style="max-width: 100%">
+
+To assign a device to a group, click **Assign devices** at the right of the top menu bar (see [How to assign a device to an existing group](#assigning-devices)).
+
+To unassign a device, click the menu icon in a device entry and from the context menu select **Unassign**.
+
+**Bulk operations**
+
+In the "Bulk operations" tab, bulk operations created for the group can be managed. With bulk operations you can at once execute operations for each device within one group. For details, refer to [Bulk operations](#bulk-operations).
+
+
+### How to create a new group
+
+To create a new group follow these steps:
+
+1. Click the **Plus** button at the right of the top bar, then select **New group** from the menu.
+2. In the window that comes up enter a unique group name to identify your group.
+3. In the "Device Search" field, enter the search criteria for the devices you might want to add to your group (e.g. "ublox"). A list of devices that match your search criteria will be displayed. 
+4. Checkmark the devices you want to add from the list.
+5. Click **Create group with X device(s)** to finally create your new group. 
+
+>**Info:** A group can be created with "0" devices in it.
+
+<img src="/guides/users-guide/addtopgroup.png" alt="Device Management" style="max-width: 100%">
+
+### <a name="assigning-devices"></a>How to assign a device to an existing group
+
+You can assign devices to an existing group in two ways. 
+
+From the device perspective:
+
+1. Select a device from the device list and open it.
+2. In the "Info" tab, scroll down to the "Groups assignment" card. In the drop-down field, select the group you want to assign the device to. 
+3. Click **Add to group**.
+
+<img src="/guides/users-guide/DeviceManagement/DevMgmt_GroupAssignment.png" alt="Add to group" style="max-width: 50%">
+
+From the group perspective:
+
+1. In the navigator, select a group from the "Group" menu and then open the "Sub-assets" tab. In the "Sub-assets" tab, all devices that are assigned to the respective group are displayed. 
+2. Click **Assign devices** at the right of the top menu bar. In the upcoming window search for the devices you might want to add to your group (e.g. "ublox"). A list of devices that match your search criteria will be displayed. 
+3. Checkmark the devices you want to add from the list.
+4. Click **Assign X device(s)** to assign the selected devices. 
+
+<img src="/guides/users-guide/DeviceManagement/DevMgmt_AssignDevices.png" alt="Assign devices to a group" style="max-width: 50%">
+
+### How to create a sub-group
+
+1. In the navigator, click a group to open it. 
+2. Click **Add Group** at the right of the top menu bar. 
+2. In the upcoming window, enter a name for the sub-group and click **Add group**.
+
+### How to edit a group
+
+1. In the navigator, click a group to open it. 
+2. In the "Info" tab, click **Edit**. This allows you to edit the name of the group and to assign user permissions for the group. 
+For further information on permissions, see the [*Administration Guide*](/guides/users-guide/administration).
+
+### <a name="smart-groups"></a>Using smart groups
+
+Smart groups are groups dynamically constructed based on filtering criteria. They have a temporary character because the group members can change constantly. Smart groups do not have fixed member listings.They have fixed criteria instead. This type of group can be used, for example, for bulk upgrades of devices of a certain type to a new software or firmware version.
+
+<img src="/guides/users-guide/smartfilters.png" alt="Adding top-level groups" style="max-width: 100%">
+
+Smart groups can be created from the device list. 
+
+1. To open the device list, click "All devices" in the navigator.
+2. Filter the devices in the list to select the desired devices. Refer to [Filtering devices](#filtering-devices) for details on filtering.
+3. Click **Create smart group** at the right of the top menu bar.
+4. Enter a name for the group and click **Create**.
+
+<img src="/guides/users-guide/smartgroup1.png" alt="Create a smart group" style="max-width: 100%">
+
+The new group will appear as a top-level group in the "Groups" menu of the navigator. Smart groups can be distinguished by a small cogwheel in the folder icon. 
+
+<img src="/guides/users-guide/DeviceManagement/DevMgmt_SmartgroupIcon.png" alt="Smart groups" style="max-width: 100%">
+
+In the "Sub-asset" tab you can adjust your selection and modify the filter settings.
+
+To delete a smart group, click the menu icon and from the context menu select **Delete**. 
+
+<img src="/guides/users-guide/smartgroupdelete1.png" alt="Adding top-level groups" style="max-width: 100%">
+
+**Important**: Deleting a smart group is irreversible.
+
+>**Info**: Smart groups are not shown when using the Cockpit application.
+
+## <a name="monitoring-and-controlling-devices"></a>Monitoring and controlling devices
 
 ### <a name="map"></a>Locating devices
 
@@ -758,7 +756,7 @@ Since devices may send large amounts of event data, you can filter the data to b
 
 Select a start date and an end date from the fields in the top menu bar and click the **Filter** button to apply the filter. Click the **Clear** button to clear the filter again.
 
-## <a name="managing-device-protocols"></a> Managing Device Types
+## <a name="managing-device-protocols"></a> Managing device types
 
 To process data from various device types, Cumulocity uses device protocols.
 
@@ -784,7 +782,7 @@ To edit a device protocol, either click on the protocol or click the menu icon a
 To remove a device protocol, click **Remove** in its context menu.
 
 
-## <a name="managing-device-data"></a> Managing Device Data
+## <a name="managing-device-data"></a> Managing device data
 
 
 ### <a name="software-repo"></a> Managing device firmware and software
@@ -926,7 +924,7 @@ In order to apply a configuration snapshot from one device to another, follow th
 >**Info**: When you apply snapshot configuration from one device to another, the configuration may contain data which is device-specific.
 
 
-## <a name="simulator"></a>Simulators
+## <a name="simulator"></a>Working with the simulator
 
 With the Cumulocity simulator all aspects of IoT devices can be simulated:
 
@@ -1008,13 +1006,13 @@ The "Alarm" tab of a simulator displays alarms related to the simulator itself (
 ![Simulator Alarm](/guides/users-guide/simalarm.png)
 
 
-## <a name="smartrest"></a> SmartREST Templates
+## <a name="smartrest"></a> Using SmartREST templates
 
 ### Introduction
 
 SmartREST templates are a collection of request and response templates used to convert CSV data and Cumulocity Rest API calls. For example, you can use SmartREST templates to easily add devices to the platform instead of manually writing the requests each time.
 
-To ease the device integration, Cumulocity supports static templates that can be used without the need for creating your own templates. These templates focus only on the most commonly used messages for device management. For further information on static templates, refer to the [*MQTT Developer´s Guide*](/guides/mqtt/static-templates/).
+To ease the device integration, Cumulocity supports static templates that can be used without the need for creating your own templates. These templates focus only on the most commonly used messages for device management. For further information on static templates, refer to the [MQTT Developer´s Guide](/guides/mqtt/static-templates/).
 
 Open the SmartREST template list from the "Device Types" menu in the navigator. 
 
@@ -1111,87 +1109,3 @@ To export a SmartREST template as CSV file follow these steps:
 1. Click **Download** to download the template as CSV file.
 
 <img src="/guides/users-guide/DeviceManagement/DevMgmt_TemplateExportCSV.png" alt="Export CSV" style="max-width: 50%">
-
-## <a name="cloud_remote_access"></a>Cloud Remote Access
-
-### Introduction
-
-Cumulocity Cloud Remote Access implements Virtual Network Computing (VNC) to remotely access operating panels and other devices via a web browser.
-
-![VNC](/guides/users-guide/VNC1a.png)
-
-Cloud Remote Access works as in the illustration below. Starting from the remote-controlled device: The device runs a VNC server and is connected to a gateway compatible with Cloud Remote Access. This gateway must be registered as a device within the Device Management application in Cumulocity. More information about registering devices and instructions can be found here: [Device Registration](https://www.cumulocity.com/guides/users-guide/device-management/#device-registration).
-
-![VNC2](/guides/users-guide/VNC2.png)
-
-With Cloud Remote Access users can
-
-* view status visualizations and track updates of remote devices immediately as if the user were at the device location,
-* connect to remote devices easily as complex VPN setups are not required. 
-
-![VNC1b](/guides/users-guide/VNC1b.png)
-
-The connection to remote devices is securely encrypted through TLS technology. Additionally, passwords are encrypted in your Cumulocity account, so that you do not need to manage them elsewhere.
-
-### Using Cloud Remote Access
-
-Cloud Remote Access is available in the Device Management application. 
-
-To use Cloud Remote Access, the following prerequisites have to be met:
-
-* a Cloud Remote Access compatible gateway connected to your Cumulocity account;
-* a device with a VNC server that is connected to the gateway and reachable from the gateway;
-* Cloud Remote Access included into your subscription plan. 
-
->**Info**: If the prerequisites are met and you do not see the "Remote access" tab in the tab list of your gateway contact sales@cumulocity.com.
-
-Click "All devices" and select the desired gateway from the device list. 
-
-![router device](/guides/users-guide/routerdevice.png)
-
-When you open the device you will find the “Remote access” tab in the tab list of the device. 
-
-In the "Remote Access" tab you will find a list of devices for remote control, so-called "endpoints".
-
-### How to add and connect to endpoints
-
-The "endpoint" is the IP address and port of the VNC server running on the device. The IP address and port need to be reachable from the gateway. 
-
-![Endpoints](/guides/users-guide/endpoints.png)
-
-To configure remote devices, click **Add endpoint**. 
-
-In the upcoming window, enter a description for the remote access endpoint, the IP address and port, and the password of the VNC server. Click **Save** to add the endpoint to the list.
-
-![Remote access endpoint](/guides/users-guide/remoteaccess.png)
-
->**Info**: To be able to configure an endpoint, you need "Change" permission for "Remote access" and "Device control". To read data, a “Read” permission is sufficient. For more information on permissions, refer to the [*Administration Guide*](https://www.cumulocity.com/guides/users-guide/administration/#users).
-
-To connect to configured endpoints, choose an endpoint in the "Remote access" tab and click **Connect**. The VNC connection will start. 
-
-![Connect Endpoint](/guides/users-guide/connectendp.png)
-
-A new browser tab will open displaying the front screen or operating panel of the device you are connected to. The top bar of the screen will show “starting VNC handshake” when the process is starting. 
-
-To edit or remove an endpoint, click the menu icon at the right of a row and select **Edit** or **Remove** from the context menu.
-
-![Edit endpoints](/guides/users-guide/editendpoint.png)
-
-### Troubleshooting
-
-If you cannot set up new endpoints, check if you have sufficient permissions.
-
-To set up new endpoints, you need "Change" permission for "Device control" to be able to register a device and “Change” permission for "Remote access" to be able to add an endpoint. 
-
-To establish a connection to a remote operating panel, a “Read” permission for "Remote access" is sufficient.
-
-For more information on permissions, refer to the [*Administration Guide*](https://www.cumulocity.com/guides/users-guide/administration/#users).
-
-The VNC connection via a gateway to a remote VNC server can fail because of network problems. In this case you need to contact your network administrator.
-
-The functionality has been on the following VNC servers:
-
-* Real VNC Connect 6.0.2	
-* TightVNC 1.3.9
-* TigerVNC 1.7.0
-* EfonVNC 4.2

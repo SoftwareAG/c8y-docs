@@ -4,7 +4,7 @@ title: Cockpit
 layout: default
 ---
 
-## Overview
+## <a name="overview"></a>Overview
 
 The Cockpit application provides you with options to manage and monitor  Internet of Things (IoT) assets and data from a business perspective.
 
@@ -13,56 +13,17 @@ The following sections will walk you through all functionalities of the Cockpit 
 |Section|Content|
 |:---|:---|
 |[Entering the Cockpit Application](#start)|Enter the Cumulocity platform through the [Welcome screen](#welcome) and explore the initial [Home dashboard](#home) of the Cockpit application. 
-|[Managing Assets](#asset)|Organize assets in [hierarchies](#hierarchies) by [creating groups ](#creating-groups)and [assigning devices](#assigning-devices).
-|[Visualizing Data Using the Data Explorer](#visualize)|Interactively explore, compare and visualize IoT data. <br> Describes how to access and use the [data explorer](#visualize), [add data points](#add-data-points) to the data explorer, [customize data point properties](#customize-data-points), [modify the visualization](#change-visualization), store the [data explorer as widget](#create-widget), and [export](#export-data) the data. 
-|[Working with Dashboards](#dashboards)|[Create your own analytics and monitor pages](#creating-dashboards) by adding and arranging [widgets](#adding-widgets). [Share dashboards](#sharing-dashboards) among all devices of the same type. 
-|[Widgets Collection](#widget)|Use various types of [widgets](#widget) from the Widgets collection that comes with Cumulocity and configure them according your needs.
-|[Working with Alarms](#alarms)|Monitor problems of your assets using severities and workflows. Since working with alarms in the Cockpit application is actually the same as working with alarms in Device Management, refer to [Working with alarms](http://cumulocity.com//guides/users-guide/device-management/#alarm-monitoring) in *Device Management*. 
-|[Managing Reports](#reports)|Handle [reports](#reports) based on dashboard layouts, create [reports for exporting data](#reporting) in CSV or excel format and [schedule the export](#schedule-export). 
+|[Managing assets](#asset)|Organize assets in [hierarchies](#hierarchies) by [creating groups ](#creating-groups)and [assigning devices](#assigning-devices).
+|[Visualizing data using the data explorer](#visualize)|Interactively explore, compare and visualize IoT data. <br> Describes how to access and use the [data explorer](#visualize), [add data points](#add-data-points) to the data explorer, [customize data point properties](#customize-data-points), [modify the visualization](#change-visualization), store the [data explorer as widget](#create-widget), and [export](#export-data) the data. 
+|[Working with dashboards](#dashboards)|[Create your own analytics and monitor pages](#creating-dashboards) by adding and arranging [widgets](#adding-widgets). [Share dashboards](#sharing-dashboards) among all devices of the same type. 
+|[Widgets collection](#widget)|Use various types of [widgets](#widget) from the Widgets collection that comes with Cumulocity and configure them according your needs.
+|[Working with alarms](#alarms)|Monitor problems of your assets using severities and workflows. This functionality is described in [Device Management > Working with alarms](http://cumulocity.com//guides/users-guide/device-management/#alarm-monitoring) where this feature is also provided. 
+|[Managing reports](#reports)|Handle [reports](#reports) based on dashboard layouts, create [reports for exporting data](#reporting) in CSV or excel format and [schedule the export](#schedule-export). 
 |[Using the Data Point Library](#library)|Manage default settings ("profiles") of your devices and apply them automatically using the [Data Point Library](#library).
 |[Working with Smart Rules](#rules)|[Create and manage business rules](#create-rules) to work on incoming data in realtime and to perform actions based on this data.
-|[Smart Rules Collection](#business)|Use pre-defined [global Smart Rules](#business) to configure rules for geofencing, thresholds or alarm escalation and notifications (SMS/email/voice). Describes each SmartRule and its configurable parameters in detail.
+|[Smart Rules collection](#business)|Use pre-defined [global Smart Rules](#business) to configure rules for geofencing, thresholds or alarm escalation and notifications (SMS/email/voice). Describes each SmartRule and its configurable parameters in detail.
 
-If you want to learn more about general aspects of the Cumulocity platform and its applications, refer to [*Introduction*](/guides/users-guide/overview).
-
-
-### Concepts
-
-The main concepts of the Cockpit application are the following:
-
-|CONCEPT|DESCRIPTION|
-|:---|:---|
-|**Asset**|Assets represent business objects like buildings, machines, or cars.
-|**Asset Hierarchy**|Assets are organized in hierarchies (trees). The nodes of the trees represent groups, and the leaves of the tree represent devices.
-|**Group**|A group is a way to organize devices and assets in an asset hierarchy. A group can contain one or multiple devices, child devices or other groups.
-|**Device**|An IoT device can be a gateway device, a device indirectly connected via a gateway (like modbus or KNX device), or a sensor.
-|**Data Point**|Data points, also called measurements, represent sensor data, like temperature time series. They are always sensor-generated data.
-|**Data Point Properties**|Metadata for a data point, representing additional properties added by the user like a label, min/max values, thresholds, or other.
-|**Dashboard**|A user-defined page with individual content from various widgets.
-|**Report**|Similar to dashboards, but with analytical content based on a limited time frame or scope of work.
-|**Smart Rules**|Cumulocity business rules are instances from a Smart Rule template using the Smart Rule Builder.
-
-
-## <a name="start"></a>Entering the Cockpit Application
-
-### <a name="welcome"></a>Welcome screen
-
-When you log into Cumulocity, you will be taken to the Cockpit application where the **Welcome** page initially opens up.
-
-<img src="/guides/users-guide/Cockpit/Cockpit_WelcomeScreen.png" name="Welcome screen" style="width:100%;"/>
-
-The **Welcome** page contains the following items:
-
-* Quick links to the most relevant functions.
-* Links to the available applications.
-* Links to relevant documentation areas and to the Support Forum.
-* The latest news from the Cumulocity twitter channel. Note that this section is only available for tenants hosted by www.cumulocity.com.
-
-**Hiding/restoring the Welcome screen**
-
-If you do not want the **Welcome** page to be your start page, activate the slider **Don't use as start page** on the top right.
-
-To restore the **Welcome** page as start page, select "Welcome" in the navigator on the top left and deactivate the slider **Don't use as start page** again.
+If you want to learn more about general aspects of the Cumulocity platform and its applications, refer to [Getting Started](/guides/users-guide/overview).
 
 ### <a name="home"></a>Home dashboard
 
@@ -74,11 +35,11 @@ The data shown on the Home dashboard is shared by all users of the tenant. By de
 
 The Home dashboard can be edited and designed individually according to your needs. You can add, remove or change widgets being displayed here. 
 
-For details on editing a dashboard, refer to [Working with Dashboards](#dashboards).
+For details on editing a dashboard, refer to [Working with dashboards](#dashboards).
 
 To reset the Home dashboard to its original content, click **More...** at the right of the top menu bar and from the context menu select **Restore dashboard**.
 
-## <a name="asset"></a>Managing Assets
+## <a name="asset"></a>Managing assets
 
 ### Introduction
 
@@ -92,7 +53,7 @@ The asset hierarchy is composed of two types of objects:
 
 * **Groups**: Objects which group single devices or other groups. Groups can either be created in the Cockpit application or in the Device Management application.
 
-* **Devices**: Devices which are linked into the asset hierarchy. Before you can use devices in the Cockpit application, they need to be connected to Cumulocity. This is done in the Device Management application. For details on connecting devices refer to [*Device Management*](/guides/users-guide/device-management).
+* **Devices**: Devices which are linked into the asset hierarchy. Before you can use devices in the Cockpit application, they need to be connected to Cumulocity. This is done in the Device Management application. For details on connecting devices refer to [Device Management](/guides/users-guide/device-management).
 
 In this example, the group objects represent a building asset. The device objects represent the room asset. The group names and hierarchy can be defined individually by the user. The hierarchy can have multiple levels, like region level, city level, street level, building level, floor level and room level. Any device can be part of multiple and different hierarchies, like part of regional hierarchy and part of customer hierarchy.
 
@@ -164,7 +125,7 @@ Several tabs are available for each object, dependent of the object type:
 |Info|Shows a list of [Smart Rules](#rules) created for the object.|Group, Device
 |Alarms|Displays alarms for the device. For details on alarms, refer to [Working with alarms](http://cumulocity.com//guides/users-guide/device-management/#alarm-monitoring) in *Device Management*.|Device
 |Sub-assets|Shows the sub-assets of a group.|Group
-|Data explorer|Shows all data points of the children. For details refer to [Visualizing Data Using the Data Explorer](#visualize).|Group, Device
+|Data explorer|Shows all data points of the children. For details refer to [*V*isualizing Data Using the Data Explorer**](#visualize).|Group, Device
 |Location|Shows the current location of a device.|Device
 
 If dashboards have been created for an object, they will also be added as a tab. See [Working with Dashboards](#dashboards) for details.
@@ -188,7 +149,7 @@ To add a new group as a child of an existing asset, navigate to its "Sub-asset" 
 
 ### <a name="assigning-devices"></a>Assigning devices to groups
 
-Before adding a device to the asset hierarchy, it must be connected to Cumulocity. Connecting devices to the platform is done in the Device Management application. For details on connecting devices refer to [*Device Management*](/guides/users-guide/device-management).
+Before adding a device to the asset hierarchy, it must be connected to Cumulocity. Connecting devices to the platform is done in the Device Management application. For details on connecting devices refer to [Device Management](/guides/users-guide/device-management).
 
 To assign a device to a group, follow these steps:
 
@@ -228,7 +189,7 @@ To unassign a device from a group, follow these steps:
 Unassigning a device does not remove the device, sub-devices or any associated data. The device is only removed from its location in the asset hierarchy. It can be assigned to this group or other groups later.
 
 
-## <a name="visualize"></a>Visualizing Data Using the Data Explorer
+## <a name="visualize"></a>Visualizing data using the data explorer
 
 In the data explorer, data points, i.e. measurements or sensor data, can be visualized.
 
@@ -238,7 +199,7 @@ The data explorer is available for all assets or just for a particular asset.
 
 * Navigate to a particular asset and switch to the "Data explorer" tab to visualize all data points of this particular asset and its sub-assets.
 
-In the data explorer, you see a list of available data points on the right. The first five data points of the selected device or group are shown by default. For details on how to add data points see [Adding data points](#add-data-points).
+In the data explorer, you see a list of available data points on the right. The first five data points of the selected device or group are shown by default. For details on how to add data points see [*Adding data points*](#add-data-points).
 
 On the left, in the main card, you see its visualization. 
 
@@ -248,7 +209,7 @@ The visualization is generated based on data point properties.
 
 The data points properties are pre-filled as follows:
 
-* If these properties have been customized previously, these values are used, see [Customizing data point properties](#customize-data-points).
+* If these properties have been customized previously, these values are used, see [*Customizing data point properties*](#customize-data-points).
 
 * If the data points have a matching definition in the Data Point Library, the values from the Data Point Library are used.
 
@@ -256,7 +217,7 @@ There can be more than one matching data point entry in the Data Point Library. 
 
 ![edit data points](/guides/users-guide/data-explorer-data-points-edit.PNG)
 
-For details on modifying the visualization in general, see [Changing data point visualization](#change-visualization). For details on customizing the properties of a particular data point, see [Customizing data point properties](#customize-data-points).
+For details on modifying the visualization in general, see [*Changing data point visualization*](#change-visualization). For details on customizing the properties of a particular data point, see [*Customizing data point properties*](#customize-data-points).
 
 ### <a name="change-visualization"></a>Changing data explorer visualization
 
@@ -306,7 +267,7 @@ To save the data point to the Data Point Library, click the menu icon of the dat
 
 <img src="/guides/users-guide/Cockpit/Cockpit_DataPointContextMenu.png" name="data point context menu" style="width:75%;"/>
 
-For details on the Data Point Library refer [Using the Datapoint Library](#library).
+For details on the Data Point Library refer [*Using the Datapoint Library*](#library).
 
 To remove a data point from the data point list, click the menu icon and select **Remove from list**.
 
@@ -402,7 +363,7 @@ To export measurement data, click the **More...** button in the top menu bar and
 
 The download will be generated, as shown in the upcoming dialog. This make take a while, depending on the number of data points added to the data explorer. Once the loading has been completed, click **Download**.
 
-## <a name="dashboards"></a>Working with Dashboards
+## <a name="dashboards"></a>Working with dashboards
 
 Dashboards provide you with a customized visualization of your data by using a set of widgets. Widgets can display maps, images, graphs, tables and other graphic representations of data. 
 
@@ -475,7 +436,7 @@ Changes made to this dashboard are automatically applied to all dashboard instan
 
 ### Editing dashboard properties
 
-To edit a dashboard, click **Edit** in the top menu bar. The dashboard editor will open up. For details on the fields, refer to [Creating dashboards](#creating-dashboards).
+To edit a dashboard, click **Edit** in the top menu bar. The dashboard editor will open up. For details on the fields, refer to [*C*reating dashboards**](#creating-dashboards).
 
 
 ### Copying dashboards
@@ -493,7 +454,7 @@ An alternative way to copy a dashboard is to use the
 To delete a dashboard from an object, click **More...** in the top menu bar and from the context menu select **Remove dashboard**. 
 
 
-## <a name="widget"></a>Widgets Collection
+## <a name="widget"></a>Widgets collection
 
 The Cockpit includes preset widget types. Each widget type provides different parameters to configure and different data to be displayed. 
 
@@ -520,13 +481,13 @@ The "Alarm list" widget shows a list of alarms, filtered by objects, alarm sever
 
 The "All critical alarms" widget shows all objects with a critical alarm. There are no additional parameters to be configured.
 
-For details on alarms, refer to [Working with alarms](http://cumulocity.com//guides/users-guide/device-management/#alarm-monitoring) in *Device Management*.
+For details on alarms, refer to [Device Management > Working with alarms](http://cumulocity.com//guides/users-guide/device-management/#alarm-monitoring).
 
 ### Widget "Applications"
 
 The "Applications" widget shows a list of links to all available applications. There are no additional parameters to be configured.
 
-For details on applications, refer to [Managing Applications](http://cumulocity.com//guides/users-guide/Administration#applications) in *Administration*.
+For details on applications, refer to [Administration > Managing Applications](http://cumulocity.com//guides/users-guide/Administration#applications).
 
 
 ### Widget "Asset notes"
@@ -548,7 +509,7 @@ The "Asset properties" widget displays a user-defined list of attributes of the 
 |:---|:---|
 |Title|Widget title. By default, the widget type is simply used as title.
 |Target assets or devices|Select groups or devices.
-|Properties|List of properties, see [Configuring a property list](#widget-asset-table-).
+|Properties|List of properties, see [Configuring a property list](#widget-asset-table).
 
 >**Info:** In the view mode, this widget only displays the properties which are not empty.
 
@@ -608,7 +569,7 @@ The "Data point graph" widget shows a data point (measurement) in a graph. The v
 
 The easiest way to create a "Data point graph" widget is to navigate to the data explorer, click the **More...** button in the top menu bar and select **Send as widget to dashboard**.
 
-Refer to [Visualizing Data Using the Data Explorer](#visualize) for further details on the parameters to be configured.
+Refer to [Visualizing data using the data explorer](#visualize) for further details on the parameters to be configured.
 
 ### Widget "Data point list"
 
@@ -620,7 +581,7 @@ The "Data point list" widget shows data points (measurements), one in each row, 
 |:---|:---|
 |Title|Widget title. By default, the widget type is simply used as title.
 |Data point|Shows a list of available data points. You must enable at least one data point. Click **Add data point** to add a data point to the list. For details on how to add data points see [Adding data points](#add-data-points).
-|Column visibility|Select which columns should be visible: <br>Label: Label of the data point. See [Visualizing Data Using the Data Explorer](#visualize) for details. <br>Target: Target value. Can be configured in the [data explorer](#visualize) or [Data Point Library](#library).<br>Current: Current value. <br>Diff: Absolute difference between current value and target value. <br>Diff %: Percentage of difference between current value and target value. <br>Asset: Name of the device or group of the data point. 
+|Column visibility|Select which columns should be visible: <br>Label: Label of the data point. See [Visualizing data using the data explorer](#visualize) for details. <br>Target: Target value. Can be configured in the [data explorer](#visualize) or [Data Point Library](#library).<br>Current: Current value. <br>Diff: Absolute difference between current value and target value. <br>Diff %: Percentage of difference between current value and target value. <br>Asset: Name of the device or group of the data point. 
 
 ### Widget "Data point table"
 
@@ -644,7 +605,7 @@ Additionally, a specific date range can be set and the events can be monitored i
 
 The "Fieldbus device" widget lets you see the status of a modbus device and operate it.
 
-For details on the "Fieldbus device" widget, refer to [Monitoring device status using the Fieldbus device widget](http://www.cumulocity.com//guides/users-guide/device-management/cloud-fieldbus#fieldbus-device-widget) in *Cloud Fieldbus*.
+For details on the "Fieldbus device" widget, refer to [Optional Services > Cloud Fieldbus > Monitoring device status using the Fieldbus device widget](http://www.cumulocity.com//guides/users-guide/cloud-fieldbus#fieldbus-device-widget).
 
 ### Widget "Help and service"
 
@@ -775,7 +736,7 @@ The "Recent alarms" widget shows all alarms of all severity sorted by time. Ther
 
 <img src="/guides/users-guide/Cockpit/Cockpit_CreateAlarmList.png" name="Alarm list widget" style="width:75%;"/>
 
-For details on alarms, refer to [Working with alarms](http://cumulocity.com//guides/users-guide/device-management/#alarm-monitoring) in *Device Management*.
+For details on alarms, refer to [Device Management > Working with alarms](http://cumulocity.com//guides/users-guide/device-management/#alarm-monitoring).
 
 ### Widget "Relay array control"
 
@@ -805,7 +766,7 @@ In the "Rotation" widget you can rotate the object by dragging and moving it aro
 
 The "SCADA" widget provides a graphic representation of the status of a device.
 
-For details on the "SCADA" widget, refer to [Monitoring status using the SCADA widget](http://www.cumulocity.com//guides/users-guide/device-management/cloud-fieldbus#scada-widget) in *Cloud Fieldbus*.
+For details on the "SCADA" widget, refer to [Optional Services > Cloud Fieldbus > Monitoring status using the SCADA widget](http://www.cumulocity.com//guides/users-guide/cloud-fieldbus#scada-widget).
 
 ### Widget "Silo"
 
@@ -845,11 +806,9 @@ The "Twitter news" widget displays tweets from Twitter's embedded timeline widge
 |Twitter's widget ID|ID for the Twitter widget. You can obtain the ID from widgets settings.
 |Options|Select if you want to display a header, footer, borders or transparency.
 
-## <a name="alarms"></a>Working with Alarms
+## <a name="reports"></a>Managing reports
 
-Working with alarms in the Cockpit application is identical to working with alarms in Device Management. See [Working with alarms](http://cumulocity.com//guides/users-guide/device-management/#alarm-monitoring) in *Device Management*.
-
-## <a name="reports"></a>Working with Dashboard Reports
+### <a name="reports"></a>Working with dashboard reports
 
 There are two types of reports in the Cockpit application. 
 
@@ -862,7 +821,7 @@ To see all existing reports, expand the "Reports" menu in the navigator.
 
 To view a specific report, click the report in the navigator to open it.
 
-### Creating new reports
+#### Creating new reports
 
 To add a new report, click the **Plus** button in the top bar and from the context menu select **Create new report**.
 
@@ -872,30 +831,30 @@ Enter a name for the report and optionally select an icon from the dropdown list
 
 Next, widgets can be added to the report.
 
-### Adding widgets to reports
+#### Adding widgets to reports
 
 You can add widgets to reports in the same way as adding widgets to dashboards. 
 
-Click **Add widget** in the top menu bar and select a widget type from the list. For details on all widgets types available, refer to [Widgets Collection](#widget).
+Click **Add widget** in the top menu bar and select a widget type from the list. For details on all widgets types available, refer to [Widgets collection](#widget).
 
-### Deleting reports
+#### Deleting reports
 
 To delete a report, open the report and click **More...** at the right of the top menu bar. From the context menu, select **Remove report**.
 
 
-## <a name="reporting"></a>Exporting Data with Reports
+### <a name="reporting"></a>Exporting data with reports
 
 With this reporting feature, you can request reports for the whole tenant in CSV or Excel format. Additionally, you can choose to filter for specific devices, time ranges or fields. The reports contain information about all specified filters and enabled fields. 
 
 >**Info:** The maximum number of documents that can be exported into a single file is 1 million. If the number of documents for defined filters exceeds this limit, only first 1 million documents will be taken.
 
-To work with dashboard reports please refer to [Working with Dashboard Reports](#reports).
+To work with dashboard reports please refer to [Working with dashboard reports](#reports).
 
 To show all reports, click "Reporting" in the "Reports" menu.
 
 In the "Reporting" page you will find a list displaying all reports with their names and time range.
 
-### Adding reports
+#### Adding reports
 
 To create a report, click **Add Report** in the top menu bar.
 
@@ -943,7 +902,7 @@ If your field is a valid.key.with.dot then refer to it as ['fragment.key.with.do
 
 In case of "Measurements" enabled, you can also choose **Add from data point**. For details on how to add data points see [Adding data points](#add-data-points).
 
-### <a name="schedule-export"></a>Scheduling exports
+#### <a name="schedule-export"></a>Scheduling exports
 
 To schedule the export to a CSV or Excel file to any point in time, click the menu icon at the end of the row and from the context menu select **Schedule export**. In the upcoming window you can customize the Smart Rule "On timer send export via email" according to your needs.
 
@@ -974,7 +933,7 @@ The Smart Rule will be added to the report details.
 <img src="/guides/users-guide/Cockpit/Cockpit_ReportSmartRule.png" name="Smart rule" style="width:100%;"/>
 
 
-### Exporting reports
+#### Exporting reports
 
 To export a report to a CSV or xlsx file, select the checkbox in front of the report in the list and at the left of the top menu bar click **Export**.
 
@@ -987,15 +946,15 @@ Standard time properties of documents (like time or creationTime in alarms) are 
 
 Only CSV time contains milliseconds and timezone.
 
-### Editing reports
+#### Editing reports
 
 To edit a report, just click the respective row or click the menu icon at the end of the row and from the context menu select **Edit**.
 
-### Duplicating reports
+#### Duplicating reports
 
 To duplicate a report, click the menu icon at the end of the row and from the context menu select **Clone**. Modify at least the name and click **Save & close** to save the report and return to the report list.
 
-### Removing reports
+#### Removing reports
 
 To remove a report, click the menu icon at the end of the row and from the context menu select **Remove**.
 
@@ -1048,7 +1007,7 @@ To remove a data point, click **Remove** in the context menu.
 
 ## <a name="rules"></a>Working with Smart Rules
 
-Cumulocity includes a rule engine to analyze data in realtime and to perform actions based on data. These rules are specified in a scripting language and are managed in the [Administration Application](/guides/users-guide/administration).
+Cumulocity includes a rule engine to analyze data in realtime and to perform actions based on data. These rules are specified in a scripting language and are managed in the [Administration application](/guides/users-guide/administration).
 
 To easily create rules, the Cockpit application includes a Smart Rules builder which allows you to create rules from templates (so-called smart rule templates).
 
@@ -1153,7 +1112,7 @@ Using this mechanism, it is possible to create a chain of smart rules.
 
 >**Info:** If you create a rule chain keep in mind how much data will be created to avoid overload or excessive amount of data.
 
-## <a name="business"></a>Smart Rules Collection
+## <a name="business"></a>Smart Rules collection
 
 Cumulocity includes preset global Smart Rule types. 
 
@@ -1190,7 +1149,7 @@ The rule uses the following parameters:
 
 * Check if the device is in [maintenance](/guides/reference/device-management) mode. In this case no new alarm will be created because of suppression policy.
 
-* If you have configured an alarm mapping rule (see [Reprioritizing alarms](/guides/users-guide/administration#reprio-alarms)) which changes the alarm severity, the alarm may have different severity than expected.
+* If you have configured an alarm mapping rule (see [Administration > Reprioritizing alarms](/guides/users-guide/administration#reprio-alarms)) which changes the alarm severity, the alarm may have different severity than expected.
 
 >**Important:** There is a limit of 160 characters as a total count. If you use variables and after applying the variables the text counts more than 160 characters the SMS will not be sent.
 
@@ -1219,7 +1178,7 @@ The rule uses the following parameters:
 
 * Check if the device is in [maintenance](/guides/reference/device-management) mode. In this case no new alarm will be created because of suppression policy.
 
-* If you have configured an alarm mapping rule (see [Reprioritizing alarms](/guides/users-guide/administration#reprio-alarms)) which changes the alarm severity, the alarm may have different severity than expected.
+* If you have configured an alarm mapping rule (see [Administration > Reprioritizing alarms](/guides/users-guide/administration#reprio-alarms)) which changes the alarm severity, the alarm may have different severity than expected.
 
 * Check your spam folder.
 
@@ -1249,7 +1208,7 @@ The rule uses the following parameters:
 
 * Check if the device is in [maintenance](/guides/reference/device-management) mode. In this case no new alarm will be created because of suppression policy.
 
-* If you have configured an alarm mapping rule (see [Reprioritizing alarms](/guides/users-guide/administration#reprio-alarms)) which changes the alarm severity, the alarm may have different severity than expected.
+* If you have configured an alarm mapping rule (see [Administration > Reprioritizing alarms](/guides/users-guide/administration#reprio-alarms)) which changes the alarm severity, the alarm may have different severity than expected.
 
 
 ### On alarm duration increase severity
@@ -1310,7 +1269,7 @@ No alarm will be generated until the device crosses the geofence border for the 
  
 * Check if the device is in [maintenance](/guides/reference/device-management) mode. No new alarm will be created because of suppression policy.
 
-* If you have configured an alarm mapping rule (see [Reprioritizing alarms](/guides/users-guide/administration#reprio-alarms)) which changes the alarm severity, the alarm may have different severity than expected.
+* If you have configured an alarm mapping rule (see [Administration > Reprioritizing alarms](/guides/users-guide/administration#reprio-alarms)) which changes the alarm severity, the alarm may have different severity than expected.
 
 ### On geofence send e-mail
 
@@ -1472,7 +1431,7 @@ If no red/yellow ranges are defined, no alarms are generated.
 
 * Check if the device is in [maintenance](/guides/reference/device-management) mode. In this case no new alarm will be created because of suppression policy.
 
-* If you have configured an alarm mapping rule (see [Reprioritizing alarms](/guides/users-guide/administration#reprio-alarms)) which changes the alarm severity, the alarm may have different severity than expected.
+* If you have configured an alarm mapping rule (see [Administration > Reprioritizing alarms](/guides/users-guide/administration#reprio-alarms)) which changes the alarm severity, the alarm may have different severity than expected.
 
 * Check if an alarm was already cleared by the next scheduled measurements with resulting value in a green range.
 
@@ -1511,7 +1470,7 @@ The rule uses the following parameters:
 
 * Check if the device is in [maintenance](/guides/reference/device-management) mode. In this case no new alarm will be created because of suppression policy.
 
-* If you have configured an alarm mapping rule (see [Reprioritizing alarms](/guides/users-guide/administration#reprio-alarms)) which changes the alarm severity, the alarm may have different severity than expected.
+* If you have configured an alarm mapping rule (see [Administration > Reprioritizing alarms](/guides/users-guide/administration#reprio-alarms)) which changes the alarm severity, the alarm may have different severity than expected.
 
 * Check if an alarm was already cleared by the next scheduled measurements with resulting value in a green range.
 
@@ -1542,7 +1501,7 @@ The rule uses the following parameters:
 
 * Check if the device is in [maintenance](/guides/reference/device-management) mode. No new alarm will be created because of suppression policy.
 
-* If you have configured an alarm mapping rule (see [Reprioritizing alarms](/guides/users-guide/administration#reprio-alarms)) which changes the alarm severity, the alarm may have different severity than expected.
+* If you have configured an alarm mapping rule (see [Administration > Reprioritizing alarms](/guides/users-guide/administration#reprio-alarms)) which changes the alarm severity, the alarm may have different severity than expected.
 
 
 ### Smart Rule Variables

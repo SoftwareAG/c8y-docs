@@ -276,7 +276,7 @@ To edit subtenants, click on the desired subtenant or click **Edit** in the cont
 
 In the "Properties" tab, all fields are editable except of the ID and the administrator's username. For details on the fields, refer to [Creating sub-tenants](#creating-tenants).
 
-### Subscribing to applications
+### <a name="subscribing"></a>Subscribing to applications
 
 In the "Applications" tab you can subscribe tenants to applications or remove the applications from the tenant. By default, tenants will be subscribed to the standard Cumulocity applications. 
 

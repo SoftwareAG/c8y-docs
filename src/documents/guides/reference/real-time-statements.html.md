@@ -107,6 +107,8 @@ Example request:
     Content-Length: ...
     Content-Type: multipart/form-data
 
+> **Note**: "POST /cep/modules" is a multipart message.
+
 Example file:
 
     module testmodule;

@@ -15,8 +15,8 @@ The following sections will walk you through all additional functionalities avai
 |[Managing Tenants](#tenants)|How to [manage tenants](#tenants), retrieve [user statistics](#user-stats) and configure [tenant policies](#tenant-policies).
 |[Managing User Hierarchies](#hierarchy)|How to create [user hierarchies](#hierarchy) and how to [delegate](#delegate) user hierarchies.
 |[Using the Data Broker](#data-broker)|How to forward data to other tenants using [data connectors](#data-broker-connector) and how to receive data with a [data subscription](#data-broker-subscriptions) on the receiving end. The availability of this feature depends on your subscription plan.
-|[Customizing your platform](#customization)|How to customize your platform by using the [branding feature](#branding) and by activating your own [domain name](domain-name) through a SSL certificate.
-|[Configuration settings](#platform-config)|How to [configure specific settings](platform-config) related to the Enterprise Edition.
+|[Customizing your platform](#customization)|How to customize your platform by using the [branding feature](#branding) and by activating your own [#domain name](domain-name) through a SSL certificate.
+|[Configuration settings](#config-platform)|How to [configure specific settings](#config-platform) related to the Enterprise Edition.
 
 
 ## <a name="tenants"></a>Managing tenants
@@ -115,7 +115,7 @@ To finally delete a tenant and remove all the data of the tenant, click the menu
 
 ### <a name="tenants-custom-properties"></a>Editing custom properties
 
-The "Custom properties" tab allows you to view and modify values of custom properties, either predefined ones (like "External reference") or those defined in the ["Properties library"](#properties). Such properties are also displayed as columns in [usage statistics table](#usage-stats-custom-properties).
+The "Custom properties" tab allows you to view and modify values of custom properties, either predefined ones (like "External reference") or those defined in the [Properties library](#properties). Such properties are also displayed as columns in [usage statistics table](#usage-stats-custom-properties).
 
 ![Custom Properties](/guides/users-guide/subtenant-custom-properties.PNG)
 
@@ -138,7 +138,7 @@ The following information is provided for each tenant:
 
 Moreover custom properties are displayed, if configured. 
 
-Custom properties may be defined in the ["Properties Library"](#properties) and then set their values in the ["Custom properties"](#tenants-custom-properties) tab of the tenant.
+Custom properties may be defined in the [Properties Library](#properties) and then set their values in the [Custom properties](#tenants-custom-properties) tab of the tenant.
 
 ![Usage statistics](/guides/users-guide/usage-statistics-list.PNG)
 

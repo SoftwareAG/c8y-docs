@@ -13,8 +13,8 @@ All input streams share the same base structure.
 
 |Parameter|Data type|Description|
 |:--|:----------|:-------------|
-|_type|String|The type of the event. See the table below which value types can be used for different streams|
-|_mode|String|The processing mode in which the data was sent to Cumulocity. See [Processing mode](/guides/reference/rest-implementation#processing-mode)|
+|_type|String|The type of the event. See the table below which value types can be used for different streams.|
+|_mode|String|The processing mode in which the data was sent to Cumulocity. See [Processing mode](/guides/reference/rest-implementation#processing-mode).|
 |_origin|String|The origin of the event. If the data was created by a cep rule the origin will be "cep".|
 |payload|Object|The actual data contained in the event|
 
@@ -22,9 +22,9 @@ Types:
 
 |Stream|Type|
 |:--|:----------|
-|ManagedObjectCreated|MANAGED_OBJECT_CREATE|
-|ManagedObjectUpdated|MANAGED_OBJECT_UPDATE|
-|ManagedObjectDeleted|MANAGED_OBJECT_DELETE|
+|ManagedObjectCreated|MANAGED&#95;OBJECT&#95;CREATE|
+|ManagedObjectUpdated|MANAGED&#95;OBJECT&#95;UPDATE|
+|ManagedObjectDeleted|MANAGED&#95;OBJECT&#95;DELETE|
 |EventCreated|EVENT_CREATE|
 |EventDeleted|EVENT_DELETE|
 |MeasurementCreated|MEASUREMENT_CREATE|
@@ -378,7 +378,7 @@ The streams mentioned in this section do not interact with the Cumulocity databa
 |receiver|String|The mail address of the receiver|yes|
 |cc|String|The mail address of the cc|no|
 |bcc|String|The mail address of the bcc|no|
-|replyTo|String|The mail address which should receive replies to the sent mail|no|
+|replyTo|String|The mail address which should receive replies to the sent mail|yes|
 |subject|String|The subject line of the mail|yes|
 |text|String|The body of the mail|yes|
 
@@ -394,38 +394,6 @@ Example:
       "reply@cumulocity.com" as replyTo,
       "Example mail" as subject,
       "This mail was sent to test the SendEmail stream in Cumulocity" as text
-    from AlarmCreated;
-
-### SendDashboard
-
-|Parameter|Data type|Description|Mandatory|
-|:--|:----------|:-------------|:----------|
-|receiver|String|The mail address of the receiver|yes|
-|cc|String|The mail address of the cc|no|
-|bcc|String|The mail address of the bcc|no|
-|replyTo|String|The mail address which should receive replies to the sent mail|no|
-|subject|String|The subject line of the mail|yes|
-|text|String|The body of the mail|yes|
-|dashboardUrl|String|The URL of the page that will be attached to the mail|yes
-
-It is possible to have more than one mail address in the parameters receiver,cc and bcc. Therefore create a string that contains all mail addresses separated by commas . "receiver1@mail.com,receiver2@mail.com".
-
-_Note:_
-
-This feature will only work if the respective server side agent for sending dashboards is activated for your tenant. [How to activate this feature](http://www.cumulocity.com/guides/users-guide/administration/#settings)
-
-
-Example:
-
-    insert into SendDashboard
-    select
-      "receiver1@cumulocity.com,receiver2@cumulocity.com" as receiver,
-      "cc@cumulocity.com" as cc,
-      "bcc@cumulocity.com" as bcc,
-      "reply@cumulocity.com" as replyTo,
-      "Example dashboard" as subject,
-      "https://mytenant.cumulocity.com/apps/cockpit/index.html" as dashboardUrl,
-      "This mail contains an attached screenshot of the home dashboard" as text
     from AlarmCreated;
 
 

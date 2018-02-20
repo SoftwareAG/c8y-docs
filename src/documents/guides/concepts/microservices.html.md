@@ -5,9 +5,16 @@ layout: default
 ---
 ## Overview
 
-Cumulocity supports microservice development and deployment to its environment.
+Cumulocity provides ability to extend Cumulocity via Cumulocity microservices. Microservices are standalone application, following specific convention and deployed within Cumulocity infrastructure. 
 
-For Java developers, Cumulocity Java Microservice SDK makes microservice prototyping, development and package creation for deployment even easier. Please check the Java developer's guide for [Hello, Microservice!](/guides/java/java-microservice) and [developing microservices](/guides/java/developing-microservice).
+When developing a Cumulocity microservice a developer does not have to limit itself to any programming language. Although a microservice must serve as a HTTP server working on port 80 and be encapsulated in a docker image. For java developers we have provided [Microservice SDK](/guides/java/developing-microservice) and a [hello world](/guides/java/java-microservice) introduction to Cumulocity microservices.
+
+Cumulocity implements PaaS paradigm, this way a developer can focus on business logic and leave hosting, scaling and availability monitoring to Cumulocity. What is more Cumulocity provides its API that you can build on top of, as well as other microservices that you can orchestrate. To sum it up Cumulocity microservices are a great way to provide new functionalities to the Cumulocity and extend existing ones. 
+
+![microservice_infrastructure](/guides/concepts-guide/microservice_infrastructure.png)
+
+The Cumulocity microservice infrastructure is built with docker. This require a program to be packaged as a docker image in order to be runnable on the Cumulocity. Docker image is an executable package that includes everything needed to run an application, while docker container is a running image (For more information about docker please refer to official [documentation](https://docs.docker.com/get-started/)). An application must be stateless as it can be restarted by the platform, scaled up or down based on CPU usage. Although a microservice can persist data on the Cumulocity platform using its API. 
+
 
 The overall microservice lifecycle can be categorized in 5 steps.
 ![Microservice Lifecycle](/guides/concepts-guide/microservicelifecycle.png)
@@ -27,8 +34,8 @@ Please check [microservice manifest reference](/guides/reference/microservice-ma
 
 ### Microservice isolation levels
 
-* Multi tenant: Single microservice container instantiated for all subscribed tenants unless microservice is scaled.
-* Single tenant: Dedicated microservice container instantiated for each subscribed tenant.
+* Multi tenant: Single microservice docker container instantiated for all subscribed tenants unless microservice is scaled.
+* Single tenant: Dedicated microservice docker container instantiated for each subscribed tenant.
 
 The isolation level is given using manifest file.
 

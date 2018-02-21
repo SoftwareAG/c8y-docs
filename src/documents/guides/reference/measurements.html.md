@@ -73,7 +73,7 @@ Example response:
 
 Note, that all GET requests support two similar parameters fragmentType and valueFragmentType. Parameter valueFragmentType should be used instead of fragmentType because works on structured data and filtering via this parameter is lighter than filtering via fragmentType. Additionally parameter valueFragmentType can be used together with valueFragmentSeries.<br/>
 Parameters valueFragmentType and valueFragmentSeries allows to query for measurement via fragment and series e.g. If you looking for c8y_TemperatureMeasurement.T you should use query in form &valueFragmentType=c8y_TemperatureMeasurement&valueFragmentSeries=T.<br/>
-If you looking for non standard parameter of measurement e.g. without value still you must use parameter fragmentType, but for almost all cases fragmentType parameter should be replaced by valueFragmentType or pair valueFragmentType and valueFragmentSeries.
+If you looking for non standard parameter of measurement e.g. without value you must still use parameter fragmentType. If you looking for non standard parameter of measurement e.g. without value you must still use parameter fragmentType. Note that usage of valueFragmentType or pair valueFragmentType and valueFragmentSeries is more preferable then fragmentType.
 
 |Name|Type|Occurs|Description|
 |:---|:---|:-----|:----------|

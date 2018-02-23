@@ -29,7 +29,7 @@ Note that you can develop Cumulocity with any IDE and any build tool that you pr
 
 ### **Development prerequisites**
 
-To use the C# client libraries for development, you need to install .NET Core SDK for the platform used for development such as Windows, Linux or Mac (at least Version 2 of the [.NET Core SDK](https://www.microsoft.com/net/download/windows)). .NET Core Runtime and .NET Core SDK are different things. .NET Core Runtime is only used to run .NET Core application whereas .NET Core SDK includes tools and libraries to develop .NET Core applications. 
+To use the C# client libraries for development, you need to install .NET Core SDK for the platform used for development such as Windows, Linux or Mac (at least Version 2 of the [.NET Core SDK](https://www.microsoft.com/net/download/windows)). Note that .NET Core Runtime and .NET Core SDK are different things. .NET Core Runtime is only used to run .NET Core application whereas .NET Core SDK includes tools and libraries to develop .NET Core applications. 
 
 
 To verify the version of your .NET Core SDK, type

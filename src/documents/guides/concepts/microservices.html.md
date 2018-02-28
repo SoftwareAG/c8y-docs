@@ -90,6 +90,7 @@ Cumulocity provides a tool for microservice package preperation and deployment. 
 For a microservice to be available it has to be registered and deployed on the platform and at least one subscription is required.
 Microservice application subscriptions for the subtenants can be created using Administration application.
 ![Application Subscription](/guides/concepts-guide/applicationsubscription.png)
+
 ## Publish & Subscribe
 In this step Cumulocity publish the microservice to the marketplace and gives access to the enterprise tenant(s).
 

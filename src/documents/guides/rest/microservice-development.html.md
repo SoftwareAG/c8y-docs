@@ -8,15 +8,14 @@ title: Microservice development
 
 The following guide will introduce you to basic REST endpoints required for REST microservice development. 
 
-- [Create application](#create-application)
-- [Deploy application](#deploy-application)
-- [Acquire microservice credentials](#acquire-microservice-credentials)
+- [Creating applications](#create-application)
+- [Deploying applications](#deploy-application)
+- [Acquiring microservice credentials](#acquire-microservice-credentials)
 - [Subscriptions](#subscriptions)
-- [Access microservice](#access-microservice)
 
-## Create application
+## Creating applications
 
-In order to start working with microservices an instance of application must be created first. It can be done using following endpoint
+In order to start working with microservices an instance of application must be created first. It can be done using the following endpoint:
 
     POST /application/applications
     Host: ...
@@ -31,23 +30,24 @@ In order to start working with microservices an instance of application must be 
       "roles": ["ROLE_CUSTOM_MICSROSERVICE"]
     }
 
-Sucess response consists of 201 status and Location header simillar to:
+Success response consists of 201 status and location header similar to
 
     {HOST}/application/applications/{APPLICATION_ID}
     
-In the request body there are two fields requiring description
-* requiredRoles - list of Cumulocity permissions, that the microservice user would need to get data from Cumulocity, e.g. if the microservice creates managed object, then one of the requiredRoles should be ROLE_INVENTORY_CREATE
-* roles - list of microservice permissions. If microservice exposes own REST API, it can be secured with own set of permissions, e.g. sms microservice would require SMS_ADMIN permission to send sms. These permissions become available in the tenant after microservice subscription. Afterwards, user admin can grant such permission to a user that wants to send sms-es via Cumulocity platform.
+In the request body there are two fields requiring description:
+
+* requiredRoles - list of Cumulocity permissions, the microservice user needs in order to get data from Cumulocity, e.g. if the microservice creates a managed object, then one of the requiredRoles should be ROLE_INVENTORY_CREATE
+* roles - list of microservice permissions. If the microservice exposes own REST API, it can be secured with an own set of permissions, e.g. SMS microservice would require SMS_ADMIN permission to send SMS. These permissions become available in the tenant after microservice subscription. Afterwards, user admin can grant such permission to a user that wants to send SMS via the Cumulocity platform.
 
     
-Application id can be found for created application by executing
+The application ID for created applications can be found by executing
     
     GET /application/applicationsByName/{APPLICATION_NAME}
         Host: ...
         Authorization: Basic ...
         Accept: application/vnd.com.nsn.cumulocity.application+json
     
-Success response will look similar to
+The success response will look similar to
 
     {
         "applications": [
@@ -81,7 +81,7 @@ Success response will look similar to
         "self": "{HOST}/application/applications?pageSize=5&currentPage=1"
     }
 
-Application can be in later time updated using
+Application can be updated later on using
 
     PUT /application/applications/{APPLICATION_ID}
         Host: ...
@@ -96,9 +96,9 @@ Application can be in later time updated using
           "roles": ["ROLE_CUSTOM_MICSROSERVICE"]
         }
         
-## Upload application
+## Deploying applications
 
-For the microservice application to be available for Cumulocity platform users, a binary zip file must be uploaded. 
+A microservice application gets available for Cumulocity platform users by uploading a binary zip file. 
      
      POST /application/applications/{APPLICATION_ID}/binaries
      Host: ...
@@ -109,9 +109,9 @@ The zip file must consist of:
 * cumulocity.json - file describing the deployment
 * image.tar - executable docker image
 
-## Acquire microservice bootstrap user credentials
+## Acquiring microservice credentials
 
-Microservice related endpoints require dedicated microservice user, which can be obtained by service provider using
+Microservice related endpoints require a dedicated microservice user, which can be obtained by a service provider using
 
     GET /application/applications/{APPLICATION_ID}/bootstrapUser
     Host: ...
@@ -127,7 +127,7 @@ Response:
       "password": "..."
     }
     
-The credentials allow access to following endpoints:
+The credentials allow access to the following endpoints:
 
     GET /tenant/currentTenant
     GET /user/currentUser
@@ -135,13 +135,13 @@ The credentials allow access to following endpoints:
     GET /application/currentApplication/subscription
     PUT /application/currentApplication
         
-For example get current application
+For example, get current application:
 
     GET /application/currentApplication
     Authorization: Basic ...
     Content-Type: application/json
     
-Response
+Response:
     
     {
         "activeVersionId": "329",
@@ -166,8 +166,9 @@ Response
     }
 
 ## Subscriptions
-Subscription in this scope means tenant subscription to a microservice application. The subscription is a step important after deployment. 
-When microservice application is registered, it is subscribable to other tenants. Subscription is same as subscribing to any other application (can be done via Administration UI -> Subtenants). A tenant can be subscribed by executing following:
+
+Subscription in this scope means tenant subscription to a microservice application. The subscription is an important step after deployment. 
+When a microservice application is deployed, it is subscribable to other tenants. Subscribing to a microservice is the same as subscribing to any other application and can be done via in the Administration application. A tenant can be subscribed by executing the following:
 
     POST /tenant/tenants/{TENANT}/applications
     Host: ...
@@ -181,7 +182,7 @@ When microservice application is registered, it is subscribable to other tenants
       }
     }
 
-Successful response will look similar to:
+A successful response will look similar to
 
     HTTP/1.1 201 Created
     Content-Type: application/vnd.com.nsn.cumulocity.tenant+json
@@ -203,7 +204,7 @@ Successful response will look similar to:
         "self": "..."
     }
 
-The subscriptions are available to microservice user through, for authorized microservice bootstrap user. 
+The subscriptions are available to microservice user through authorized microservice bootstrap user. 
 
     GET /application/currentApplication/subscriptions
     Host: ...

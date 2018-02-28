@@ -3,91 +3,84 @@ order: 40
 title: Developing applications
 layout: default
 ---
+
 ## Overview
 
-Cumulocity is designed to accommodate arbitrary vertical IoT applications in addition to its generic functionality. Tenants can subscribe to applications to get
+Cumulocity is designed to accommodate arbitrary vertical IoT applications in addition to its generic functionality. Cumulocity applications can have two forms:
 
-* optional features extending the Cumulocity user interface,
-* entirely new user interfaces,
-* server-side business logic through microservices.
+* web-based user interface applications (“web applications”)
+* server-side business logic through microservices (“microservices”)
+
+Web applications are HTML5 single page applications, that appear in the Cumulocity app switcher and that are hosted on Cumulocity.
+
+Microservices are docker containers, hosted by Cumulocity and exposing a REST API.
+
+Applications regardless of form are identified by a so-called *application key*. The application key enables Cumulocity to associate a REST request from an application with the particular application, see the section on "Application Management" in the [Reference Guide](guides/reference/rest-implementation)).
+
+Super tenants (management tenants or enterprise edition tenants) can subscribe subtenants to Cumulocity applications deployed by them. This provides a basic application marketplace. 
 
 This section introduces the basic concepts around applications in Cumulocity.
 
-## Cumulocity applications
+## Cumulocity web applications
 
-The Cumulocity user interface itself is built around a framework based on AngularJS and Bootstrap, the currently most modern HTML5 web application frameworks. It is designed in a modular fashion around a set of plugins that can be dynamically enabled and disabled even by end users. Users can create their own configurations of the Cumulocity user interface, just showing functionality they need for their particular purpose. For this purpose, the Administration application contains a plugin editor -- which is itself a plugin.
+###Overview
 
-![Plugin editor](/guides/concepts-guide/plugineditor.png)
+A Cumulocity web application can be a
 
-For more information on developing plugins, refer to the [Web SDK for Plugins](/guides/web/introduction) in the Developer Guide.
+* a user interface application built on any web framework of your choice
+* a user interface application built using the Cumulocity user interface framework as a set of user interface plugins.
 
-Applications are identified by a so-called *application key*. The application key enables Cumulocity to associate a request with one particular application.
 
-An application can be any combination of
-
-* a complete, standalone user interface application, regardless if based on the Cumulocity UI framework (see below) or any other web components of your choice,
-* a set of user interface plugins.
-
-User interface applications appear in the application switcher on the top right of Cumulocity, so that users can navigate between the subscribed applications. They can be hosted on an external web site, in which case the application switcher just directs the user to that website. They can also be hosted through Cumulocity, in which case the application will be made available through a URL <tenant>.cumulocity.com/apps/<application>.
+All subscribed web applications of a tenant appear in the application switcher on the top right of Cumulocity, so that users can navigate between the applications. They are hosted by Cumulocity and the application will be made available through a URL <tenant>.cumulocity.com/apps/<application>.
 
 ![App switcher](/guides/concepts-guide/appswitcher.png)
 
-## Registering and subscribing to applications
+The Cumulocity user interface itself is built around a framework based on AngularJS and Bootstrap, the modern HTML5 web application frameworks. It is designed in a modular fashion around a set of plugins so that developers can create their own configurations of the Cumulocity user interfaces. For more information on developing plugins, refer to the [Web SDK for Plugins](/guides/web/introduction) in the Developer Guide.
 
-For an application to be available it has to be registered at the Cumulocity platform and at least one subscription is required.
+### Deploying web applications
+
+For an application to be available it has to be deployed at the Cumulocity platform. 
 
 For details on how to deploy an application to Cumulocity, refer to [Administration > Managing applications](/guides/users-guide/administration#applications). 
 
-A management tenant can provide access to the application to Enterprise tenants by subscription. Subscribing subtenants to applications is done using the Administration application.
+> **Info:** In case of a web application, the application is active for you as owner without subscribing to it.
 
-![Application Subscription](/guides/concepts-guide/applicationsubscription.png)
+### Web application hosting
 
-For details on subscribing applications to subtenants refer to [Administration > Managing tenants](/guides/users-guide/administration#tenants). 
-
-## Hosting
-
-To host your own HTML5 and JavaScript web applications through Cumulocity, navigate to "Own applications" in the Cumulocity Administration application and click "Add new".
+You can host your own HTML5 and JavaScript web applications through Cumulocity by using the application manager under "Own applications" in the Cumulocity Administration application.
 
 ![List of own applications](/guides/concepts-guide/ownapplications.png)
 
-There are two types of applications that can be configured:
-
--  Hosted: The applications are served from a repository such as Bitbucket or Github to a user-defined path and are visible in the application switcher.
--   External: The applications are completely external and are just shown in the application switcher.
-
-Assume that you are developing a web application using Bitbucket as a code repository. In this case, exposing the application through Cumulocity can be done as follows:
-
-1. Enter the name of the application. This is shown in the application switcher at the top left of the screen.
-1. Optionally, enter an application key. This is used to distinguish your application from other applications in case you want to publish your application to other companies.
-1. Select "Hosted" as type.
-1. Select the URL that is used to make your application available to users.
-1. Enter the URL to your repository. In case of Bitbucket, the URL has the following structure:<br>
-<pre><code>https://bitbucket.org/<bitbucket user>/<bitbucket repository>/raw/<branch>/[path inside repository]</code></pre>
-
-1. If your repository is private, enter the username and password of a Bitbucket user that is permitted to access the repository. Currently, basic authentication is the only supported authentication method (i.e. straight Bitbucket username and password, not any of the OpenID providers).
-1. Save the application.
-
-Now the application shows up in the application switcher. You can click on the link in the list of own applications to verify if the configuration was successful.
+For details refer to  [Administration > Managing applications](/guides/users-guide/administration#applications). 
 
 ![Configuring a new application](/guides/concepts-guide/ownapplicationdetail.png)
 
-## Developing microservices
+## Cumulocity microservices
 
 ### Overview
 
-Microservices are standalone applications, which follow specific conventions and are deployed within the Cumulocity infrastructure. 
+Microservices are server-side applications. Microservices can be used to develop for example the following functionality on top of Cumulocity:
 
-When developing a Cumulocity microservice, a developer is not restricted  to any programming language. However, a microservice must serve as a HTTP server working on port 80 and be encapsulated in a docker image. 
+* Integrations
+* Batch analytics
+* Decoder
+* Backend applications 
+
+Microservices are deployed as docker images to Cumulocity, and follow specific conventions. They typically provide one REST API, which is available under /service/<microservice-name>. They typically access Cumulocity using the documented REST API.
+
+When developing a Cumulocity microservice, a developer is not restricted  to any programming language. However, a microservice must serve as a HTTP server working on port 80 and must be encapsulated in a docker image. 
 
 >**Info:** For Java developers Cumulocity provides a [Microservice SDK](/guides/java/developing-microservice) and a [Hello World](/guides/java/java-microservice) example for developing microservices.
 
-Cumulocity implements a PaaS paradigm. This way developers can focus on business logic and leave hosting, scaling and availability monitoring to Cumulocity. Moreover, Cumulocity provides its API on which you can build functionalities, as well as other microservices that you can orchestrate. This way, Cumulocity microservices are a comfortable means to provide new functionalities to Cumulocity and extend existing ones. 
+The hosting of the Microservice is provided by Cumulocity. This way developers can focus on business logic and leave scaling, security, high availability and monitoring to Cumulocity. Microservices can be built on the top of the API exposed by the Cumulocity platform. This way, Cumulocity microservices are a comfortable means to provide new functionality and extend existing one. 
 
 ![microservice_infrastructure](/guides/concepts-guide/microservice_infrastructure.png)
 
-The Cumulocity microservice infrastructure is built with docker. This requires that a program is packaged as docker image in order to run on the Cumulocity platform. Docker image is an executable package that includes everything needed to run an application, while docker container is a running image. For more information on docker refer to the [Docker documentation](https://docs.docker.com/get-started/)). 
+The Cumulocity microservice is based on docker. This requires that a microservice is packaged as docker image in order to run on the Cumulocity platform. Docker image is an executable package that includes everything needed to run an application. For more information on docker refer to the [Docker documentation](https://docs.docker.com/get-started/)). 
 
-An application must be stateless as it can be restarted by the platform, scaled up or down based on CPU usage, although a microservice can persist data on the Cumulocity platform using its API. 
+During run-time, the microservice is executed in a docker container. A docker container ensures that the microservices cannot harm other microservice running in Cumulocity. To execute docker containers, Cumulocity uses kubernetes. Kubernetes provides many enterprise grade features for hosting docker containers, including auto-scaling, high availability, load balancing, rolling upgrades to limit downtime, resource quota and more. 
+
+>**Info:** Currently kubernetes is not exposed to developers or users. This allows changing of the underlying infrastructure in the future.
 
 ### Microservice manifest
 
@@ -109,16 +102,21 @@ The scale option is set using the microservice manifest.
 
 ### Security
 
-Cumulocity proxies the microservice requests to the microservice container. Therefore, the incoming request for the microservices goes through Cumulocity with authorization, and HTTP over TLS secures the communication.
+Microservices typically provide a REST API. For inbound REST requests, Cumulocity provides a light API gateway (“Proxy”). This API gateway is located between the client and the microservice container. The API gateway provides:
 
-Type of users that are used for platform and managing microservices:
+* Authorization: All calls are authenticated using Cumulocity users.
+* TLS Termination: TLS inbound calls are terminated and only HTTP is used inside the cluster.
+* Metering: The API calls are metered in the “API calls” tenant statistics.
+* Routing: The API gateway routes requests for “/service/<name>” to the microservice “<name>”
 
-* Tenant platform user: The user that is created using the Cumulocity Administration application. This user logs into the application.
-* Microservice Bootstrap user: The user that is created for each microservice for microservice bootstrap operations. This user is authorized to get the microservice subscriptions and do requests for its application. Refer to [Microservice development](/guides/rest/microservice-development) for more details.
+
+There are three different user types related to managing microservices: 
+
+* Tenant platform user: The user that logs into the application. Created using the Cumulocity Administration application. 
+* Microservice Bootstrap user: The user being created for microservice bootstrap operations. This user is authorized to get the microservice subscriptions and do requests for its application. Refer to [Microservice development](/guides/rest/microservice-development) for more details.
 * Service user: The user that is created when a tenant subscribes to the microservice application.
 
-Any request to the platform must be done with the platform user.
-For microservices, it is best practice to switch context to the subscribed tenant's service user instead of using the tenant's platform user when doing a request from microservice to Cumulocity platform.
+Any request to the platform must be done with the platform user. For microservices, it is best practice to switch context to the subscribed tenant's service user instead of using the tenant's platform user when doing a request from microservice to the Cumulocity platform.
 
 The following role types are defined for users:
 
@@ -132,42 +130,56 @@ The roles are provided in the microservice manifest.
 
 ### Environment variables
 
-A microservice running in a dedicated environment can retrieve and use the injected environment variables of the dedicated environment.
+Microservices need to understand certain details about the specific Cumulocity cluster they are running in. For example, a microservice needs to know the endpoint address of the Cumulocity REST APIs. This information is provided in environment variables. The environment variables are injected by Cumulocity when the container is started.
 
-Refer to [Microservice container runtime reference](guides/reference/microservice-runtime) for more information.
+Refer to [Microservice container runtime reference](guides/reference/microservice-runtime) for a list of provided environment variables.
 
 ### <a name="packaging"></a>Packaging
 
-To deploy a microservice, it needs to be packaged in a specific structure. It requires a docker image.tar and cumulocity.json files packed into a zip file. For your convenience, Cumulocity provides a script. 
+To deploy a microservice, it needs to be packaged as docker image. It requires a docker image.tar and cumulocity.json files packed into a zip file. For your convenience, Cumulocity provides a script. 
 
 Refer to [Microservice package reference](/guides/reference/microservice-package) in order to prepare and deploy the microservice package.
 
-### Additional microservice development practices
+### Microservice requirements
 
-* Use other microservices, if the user has permission.
-* The microservice must be stateless: Ephemeral state, both for in-process state and disk state
-* All persistent state must be stored at the Cumulocity platform via inventory, binary, tenant options and other APIs.
-* Do not use additional inbound ports except REST endpoint.
-* The request lifetime must have the maximum setting.
+The following requirements towards Cumulocity microservices must be met:
+
+* A microservice MUST be a (Amd64/Linux) docker image run.
+* The docker image MUST be packaged as “image.tar” and MUST include a manifest file (cumulocity.json).
+* A microservice MUST be stateless, i.e. it must contain only ephemeral state. Reason is that the microservice must be able to survive (random) restarts because of hardware (server failure) and operations reasons (upgrade, migration).
+* All persistent state MUST be stored at the Cumulocity platform via inventory, binary, tenant options and other APIs. Persistent volumes are not supported.
+* A microservice must provide one inbound REST API. Additional inbound ports are not supported.
+* The request lifetime MUST have the maximum. The infrastructure might terminate too long running requests. 
+* Log informations needs to be send to standard output to be captured and persisted by infrastructure.
+
 
 ### Operating microservices
 
 Cumulocity manages microservices by monitoring the microservice instance and storing the metrics. In case a microservice exceeds the memory limit, it is restarted automatically. Microservices can be scaled in case of high CPU usage.
 
-### Registering microservices
+### Deploying microservices
 
-After development, developers can register the microservice package using their tenant.
+For microservice to be available it has to be deployed at the Cumulocity platform. This is done by uploading a zip file with the microservice package. 
+
+For further information on deploying microservices to Cumulocity, refer to [Administration > Managing applications](/guides/users-guide/administration#applications). 
 
 The microservice package must contain the manifest file and docker image of the microservice.
 
-Refer to [Microservice manifest reference](/guides/reference/microservice-manifest) to create a manifest file with applicable settings.
+Refer to [Microservice manifest reference](/guides/reference/microservice-manifest) for details on how to create a manifest file with applicable settings.
 
 Refer to [Packaging](#packaging) for details on how to prepare and deploy the microservice package.
 
+>**Info:** In case of microservices, you need to subscribe to the application to use it. 
 
-## Summary
 
-Cumulocity is designed to accommodate arbitrary vertical IoT applications in addition to its generic functionality. An application can be any combination of a complete, standalone user interface application, or a set of user interface plugins.
-Applications are once registered in Cumulocity and can be subscribed to tenants in the Administration application. 
-With Cumulocity users can publish any software to other users or customers.
+## Subscribing applications
 
+The application concept of Cumulocity includes a basic application marketplace. 
+
+Tenants can subscribe to applications which have been deployed by their super tenant (management tenant or enterprise edition tenant). 
+
+Granting access to subtenants and subscribing to applications is done in the Administration application. 
+
+![Application Subscription](/guides/concepts-guide/applicationsubscription.png)
+
+For details refer to [Administration > Managing tenants](/guides/users-guide/administration#tenants). 

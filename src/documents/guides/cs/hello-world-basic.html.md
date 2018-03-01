@@ -15,21 +15,21 @@ This example is based on Cake a cross platform build automation system  that’s
 
 The intial script was used to create a demo, thanks to which it was simplified to create an example microservice project with dependency management and then deploy it on the server. The script attempts to download the package from the sources listed in the project file and next a reference is added to the appropriate project file. In addition, the script creates the appropriate file dockerfile to take into account the naming of projects Next it'll create a Docker image based on a dockerfile. The application created in this way uses the ASP.NET Web API framework to create a web API. The API runs on an isolated webserver called Kestrel and as a foreground job, which makes it work really well with Docker.
 
-## Building and deploying Hello World 
+## Building and deploying Hello World
 
 Download a script file to build a "hello world" app. Wget utility is the best option to download a file:
 
-	sudo wget http://resources.cumulocity.com/cssdk/microservicesdk-latest.tar.gz
+	sudo wget  http://resources.cumulocity.com/cssdk/releases/microservicesdk-lin-dev-9.1.0.zip
 
 The latest can be replaced by the version number e.g. microservicesdk-{X.X.X}.tar.gz
 
 Once you have downloaded the source, untar the file
 
-	sudo tar -zxvf microservicesdk-1.0.0.tar.gz
+	unzip microservicesdk-lin-dev-9.1.0.zip -d  microservicesdk-9.1.0
 
 Change the current folder, to navigate to a microservicesdk folder
 
-	cd microservicesdk-1.0.0
+	cd microservicesdk-9.1.0
 
 Run the script **create.sh **to create a sample project, give the name of the project and api application
 
@@ -75,13 +75,11 @@ In order to deploy the application run the script, but before it you must provid
 The application starts executing from the entry point public static void Main() in Program class where the host for the application is created. The following shows an example of a Program created by create.sh
 
 	namespace api
-
 	{   
 
 	using System.Net;
 
 	public class Program
-
     {
 
         public static void Main(string[] args)
@@ -104,16 +102,12 @@ The application starts executing from the entry point public static void Main() 
                     var env = Environment.GetEnvironmentVariable("ASPNETCORE_ENVIRONMENT");
                     var port = Environment.GetEnvironmentVariable("SERVER_PORT");
                     int portNumber = 8080;
-
                     if (Int32.TryParse(port, out portNumber))
                     {
-
                         options.Listen(IPAddress.Parse("0.0.0.0"), portNumber);
-
                     }
                     else
                     {
-
                         options.Listen(IPAddress.Parse("0.0.0.0"), 1);
                     }
                 })
@@ -141,11 +135,8 @@ An example application must include Startup class. As the name suggests, it is e
         public IConfiguration Configuration { get; }
 
         public Startup(IConfiguration configuration)
-
         {
-
             Configuration = configuration;
-
         }
 
         public void ConfigureServices(IServiceCollection services)
@@ -153,13 +144,9 @@ An example application must include Startup class. As the name suggests, it is e
         {
 
             services.AddCumulocityAuthentication(Configuration);
-
             services.AddPlatform(Configuration);
-
             services.AddSingleton<IApplicationService, ApplicationService>();
-
             services.AddSingleton<IHttpContextAccessor, HttpContextAccessor>();
-
             services.AddMvc().AddJsonOptions(options => options.SerializerSettings.ContractResolver = new DefaultContractResolver());
 
         }
@@ -167,13 +154,9 @@ An example application must include Startup class. As the name suggests, it is e
         public void Configure(IApplicationBuilder app, IHostingEnvironment env, ILoggerFactory loggerFactory)
 
         {
-
             app.UseAuthentication();
-
             app.UseBasicAuthentication();
-
             app.UseMvcWithDefaultRoute();
-
         }
 
     }
@@ -186,13 +169,9 @@ Startup.cs responsibilities:
 **Dockerfile **created by create.sh
 
 	FROM microsoft/dotnet:2.0-runtime
-
 	WORKDIR /app
-
 	COPY ./publish/Web ./
-
 	ENV SERVER_PORT 4700
-
 	ENTRYPOINT ["dotnet", "api.dll"]
 
 **Dockerfile** defines what goes on in the environment inside a container:
@@ -212,15 +191,15 @@ The building and deploying Hello World for Windows is similar to what was shown 
 
 Download a script file to build a "hello world" app
 
-	Invoke-WebRequest http://resources.cumulocity.com/cssdk/microservicesdk-latest.zip -OutFile microservicesdk-latest.zip
+	Invoke-WebRequest  http://resources.cumulocity.com/cssdk/releases/microservicesdk-win-dev-9.1.0.zip -OutFile microservicesdk-win-dev-9.1.0.zip
 
 Once you have downloaded the source, unzip the file.
 
-	Expand-Archive c:\Microservicesdk-latest.zip -DestinationPath c:\microservicesdk-latest
+	Expand-Archive c:\microservicesdk-win-dev-9.1.0.zip -DestinationPath c:\microservicesdk-win-dev-9.1.0.zip
 
 Change the current folder, to navigate to a microservicesdk folder
 
-	cd microservicesdk-latest
+	cd microservicesdk-win-dev-9.1.0.zip
 
 Run the script create.sh to create a sample project, give the name of the project and api application
 

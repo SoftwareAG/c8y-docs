@@ -30,10 +30,9 @@ A Cumulocity web application can be a
 * a user interface application built on any web framework of your choice
 * a user interface application built using the Cumulocity user interface framework as a set of user interface plugins.
 
-
 All subscribed web applications of a tenant appear in the application switcher on the top right of Cumulocity, so that users can navigate between the applications. They are hosted by Cumulocity and the application will be made available through a URL <tenant>.cumulocity.com/apps/<application>.
 
-![App switcher](/guides/concepts-guide/Admin_AppSwitcher.png)
+<img src="/guides/concepts-guide/Admin_AppSwitcher.png" alt="App switcher" style="max-width: 50%">
 
 The Cumulocity user interface itself is built around a framework based on AngularJS and Bootstrap, the modern HTML5 web application frameworks. It is designed in a modular fashion around a set of plugins so that developers can create their own configurations of the Cumulocity user interfaces. For more information on developing plugins, refer to the [Web SDK for Plugins](/guides/web/introduction) in the Web Developer's Guide.
 

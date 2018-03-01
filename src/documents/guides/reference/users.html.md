@@ -5,24 +5,24 @@ layout: default
 ---
 The user interface consists of the following parts:
 
--   The *user API* resource returns URIs and URI templates to collections of users, groups, and roles, so that all users, groups, roles and user or group with particular name can be queried.
--   The *user collection* resource retrieves sets of users and enables creating new users.
--   The *user* resource represents individual users that can be queried and deleted.
--   The *user reference collection* resource retrieves sets of references to users. These could be, for example, users of a particular user group. It also enables adding new users to a collection.
--   The *user reference* resource represents one individual reference to a user, which can be retrieved or deleted.
--   The *current user* resource represents the user that is logged in and can be queried and modified.
--   The *group collection* resource retrieves sets of groups and enables creating new groups.
--   The *group* resource represents individual groups that can be queried and deleted.
--   The *group reference collection* resource retrieves sets of references to groups. It could be, for example, groups of a particular user.
--   The *group reference* resource represents one individual reference to a group, which can be retrieved or deleted.
--   The *role collection* resource retrieves sets of roles.
--   The *role* resource represents individual roles that can be queried and assigned or unassigned to users or groups.
--   The *role reference collection* resource retrieves sets of references to roles. These could be, for example, roles of a particular user or group.
--   The *role reference* resource represents one individual reference to a role, which can be retrieved.
+-   *user API* resource - returns URIs and URI templates to collections of users, groups, and roles, so that all users, groups, roles and user or group with particular name can be queried.
+-   *user collection* resource - retrieves sets of users and enables creating new users.
+-   *user* resource - represents individual users that can be queried and deleted.
+-   *user reference collection* resource - retrieves sets of references to users. These could be, for example, users of a particular user group. It also enables adding new users to a collection.
+-   *user reference* resource - represents one individual reference to a user, which can be retrieved or deleted.
+-   *current user* resource - represents the user that is logged in and can be queried and modified.
+-   *group collection* resource -retrieves sets of groups and enables creating new groups.
+-   *group* resource - represents individual groups that can be queried and deleted.
+-   *group reference collection* resource - retrieves sets of references to groups. Could be, for example, groups of a particular user.
+-   *group reference* resource - represents one individual reference to a group, which can be retrieved or deleted.
+-   *role collection* resource - retrieves sets of roles.
+-   *role* resource - represents individual roles that can be queried and assigned or unassigned to users or groups.
+-   *role reference collection* resource - retrieves sets of references to roles. Could be, for example, roles of a particular user or group.
+-   *role reference* resource - represents one individual reference to a role, which can be retrieved.
 
-> "Realm" as used in this API usually corresponds to a tenant.
+> **Info:** "Realm" as used in this API usually corresponds to a tenant.
 
-> Note that for all PUT/POST requests accept header should be provided, otherwise an empty response body will be returned.
+> For all PUT/POST requests an accept header should be provided, otherwise an empty response body will be returned.
 
 ## User API
 
@@ -30,18 +30,19 @@ The user interface consists of the following parts:
 
 |Name|Type|Occurs|Description|
 |:---|:---|:-----|:----------|
-|self|URL|1|Link to this Resource|
-|userByName|URI Template/User|1|A reference to a resource of type User. The template contains a placeholders {realm} and {userName}.|
-|users|URI Template/UserCollection|1|A collection of all users belonging to a given realm. The template contains a placeholder {realm}.|
-|currentUser|URI Template/User|1|A reference to the resource of the logged in User.|
-|groupByName|URI Template/Group|1|A reference to a resource of type Group. The template contains a placeholders {realm} and {groupName}.|
-|groups|URI Template/GroupCollection|1|A collection of all users belonging to a given realm. The template contains a placeholder {realm}.|
-|roles|URI Template/RoleCollection|1|A collection of all roles.|
+|self|URL|1|Link to this resource|
+|userByName|URI Template/User|1|Reference to a resource of type User. The template contains placeholders {realm} and {userName}.|
+|users|URI Template/UserCollection|1|Collection of all users belonging to a given realm. The template contains a placeholder {realm}.|
+|currentUser|URI Template/User|1|Reference to the resource of the logged in user.|
+|groupByName|URI Template/Group|1|Reference to a resource of type Group. The template contains placeholders {realm} and {groupName}.|
+|groups|URI Template/GroupCollection|1|Collection of all users belonging to a given realm. The template contains a placeholder {realm}.|
+|roles|URI Template/RoleCollection|1|Collection of all roles.|
 
-### GET the User API Resource
+### GET the user API resource
 
 Response body: userApi
- Example request: Retrieve information about User API Resource
+
+Example request: Retrieve information about user API resource
 
     GET /user
     Host: [hostname]
@@ -69,17 +70,17 @@ Example response:
 
 |Name|Type|Occurs|Description|
 |:---|:---|:-----|:----------|
-|self|URI|1|Link to this Resource|
+|self|URI|1|Link to this resource|
 |users|User|0..n|List of users|
 |statistics|PagingStatistics|1|Information about the paging statistics|
 |prev|URI|0..1|Link to a possible previous page with additional users|
 |next|URI|0..1|Link to a possible next page with additional users|
 
-### GET a Representation of a User Collection
+### GET a representation of a user collection
 
 Response body: userCollection
  
-Example request: Retrieve information about a User Collection
+Example request: Retrieve information about a user collection
 
     GET /user/<<tenant>>/users
     Host: [hostname]
@@ -129,12 +130,13 @@ Example response:
        "next" : "[URL to next page]"
     }
 
-### POST - CREATE a new User within the Collection
+### POST - create a new user within the collection
 
 Request body: User
 
 Response body: User 
- Example request: Create a new User
+
+Example request: Create a new user
 
     POST /user/<<tenant>>/users
      Host: [hostname]
@@ -183,20 +185,20 @@ A "User" resource type contains the following fields:
 |Name|Type|Occurs|Description|Allowed in PUT/POST request|
 |:---|:---|:-----|:----------|:--------------------------|
 |id|String|1|Uniquely identifies a user|not allowed|
-|self|URI|1|Link to this Resource|not allowed|
-|userName|String|1|User name, unique for a given domain. Max: 1000 characters. Whitespaces, slashes, +$: characters not allowed|POST:mandatory PUT:not allowed|
-|password|String|1|User password. Min: 6, max: 32 characters. Only Latin1 chars allowed.|POST:mandatory PUT:optional|
-|firstName|String|1|User first name.|optional|
-|lastName|String|1|User last name.|optional|
+|self|URI|1|Link to this resource|not allowed|
+|userName|String|1|User name, unique for a given domain. Max: 1000 characters. Whitespaces, slashes, +$: characters not allowed|POST: mandatory PUT: not allowed|
+|password|String|1|User password. Min: 6, max: 32 characters. Only Latin1 chars allowed|POST: mandatory PUT: optional|
+|firstName|String|1|User first name|optional|
+|lastName|String|1|User last name|optional|
 |phone|String|1|User phone number. Format: "+[country code][number]", has to be a valid MSISDN|optional|
-|email|String|1|User email address.|optional|
+|email|String|1|User email address|optional|
 |enabled|boolean|1|User activation status (true/false)|optional|
 |customProperties|Object|1|Keeps a list of custom properties|optional|
 |groups|GroupReferenceCollection|1|List of group references|not allowed|
 |roles|RoleReferenceCollection|1|List of role references|not allowed|
 |devicePermissions|Object|1|List of device permissions|optional|
 
-**Embedded user** contains all properties except password. Password property is never returned in GET user
+**Embedded user** contains all properties except password. Password property is never returned in GET user.
 
 ### User [application/vnd.com.nsn.cumulocity.currentUser+json]
 
@@ -205,54 +207,54 @@ A "currentUser" resource type contains the following fields:
 |Name|Type|Occurs|Description|Allowed in PUT/POST request|
 |:---|:---|:-----|:----------|:--------------------------|
 |id|String|1|Uniquely identifies a user|not allowed|
-|self|URI|1|Link to this Resource|not allowed|
-|userName|String|1|User name, unique for a given domain. Max: 1000 characters|POST:mandatory PUT:not allowed|
-|password|String|1|User password. Min: 6, max: 32 characters. Only Latin1 chars allowed.|POST:mandatory PUT:optional|
-|firstName|String|1|User first name.|optional|
-|lastName|String|1|User last name.|optional|
+|self|URI|1|Link to this resource|not allowed|
+|userName|String|1|User name, unique for a given domain. Max: 1000 characters|POST: mandatory PUT: not allowed|
+|password|String|1|User password. Min: 6, max: 32 characters. Only Latin1 chars allowed|POST: mandatory PUT: optional|
+|firstName|String|1|User first name|optional|
+|lastName|String|1|User last name|optional|
 |phone|String|1|User phone number. Format: "+[country code][number]", has to be a valid MSISDN|optional|
-|email|String|1|User email address.|optional|
+|email|String|1|User email address|optional|
 |enabled|boolean|1|User activation status (true/false)|optional|
 |devicePermissions|Object|1|List of device permissions|optional|
-|effectiveRoles|Role|0..n|List of all roles a current user has assigned (explicitly or implicitly via associated groups).|not allowed|
+|effectiveRoles|Role|0..n|List of all roles assigned to a current user (explicitly or implicitly via associated groups)|not allowed|
 
-**userName** can have a maximum of 1000 characters
-**Embedded user **contains all properties except password. Password property is never returned in GET user
+**userName** can have a maximum of 1000 characters.
 
-### Device permission structure:
+**Embedded user** contains all properties except password. Password property is never returned in GET user.
+
+### Device permission structure
 
 [API:fragment_name:permission] where:
 
-1. API is one of the following values: "OPERATION", "ALARM", "AUDIT", "EVENT", "MANAGED_OBJECT", "MEASUREMENT" or "*"
-2. fragment name is any fragment name, e.g. "c8y_Restart" or "*"
-3. permission is "ADMIN", "READ" or "*"
+* API is one of the following values: "OPERATION", "ALARM", "AUDIT", "EVENT", "MANAGED_OBJECT", "MEASUREMENT" or "*"
+* fragment name is any fragment name, e.g. "c8y_Restart" or "*"
+* permission is "ADMIN", "READ" or "*"
 
-#### Required permission per HTTP-method:
+#### Required permission per HTTP-method
 
 + POST - "ADMIN" or "*"
 + PUT - "ADMIN" or "*"
 + DELETE - "ADMIN" or "*"
 + GET - "READ" or "*"
 
-"*" is a wildcard. It enables you to access every API and CRUD objects regardless of fragments that are inside it.
+"*" is a wildcard. It enables you to access every API and CRUD object regardless of fragments that are inside it.
 
-#### Querying collections:
+#### Querying collections
 
-Only objects that user is allowed to see are returned to the user. It is possible to query next page using next link from page statistics. It is important to note that in this case "currentPage" field represents the offset instead of actual page number.  
+Only objects which the user is allowed to see are returned to the user. It is possible to query next page using next link from page statistics. It is important to note that in this case the "currentPage" field represents the offset instead of the actual page number.  
 
-#### Important:
-
-If an object does not have any fragment in it, then to e.g. read that object you have to put a wildcard to fragment name part of device permission, i.e.
-"10200":["MEASUREMENT:*:READ"]
+>**Important: ** If an object does not have any fragment in it, then to for example read that object, you have to put a wildcard to the fragment name part of device permission, i.e. "10200":["MEASUREMENT:*:READ"].
 
 ### Audit log
-Any change in user's roles, device permissions and groups creates suitable audit record with type 'User' and activity 'User updated' with information which properties have been changed.
+
+Any change in user's roles, device permissions and groups creates corresponding audit records with type 'User' and activity 'User updated' with information which properties have been changed.
 
 
-### GET a representation of a User
+### GET a representation of a user
 
 Response body: User
- Example request: Retrieve information about a User
+
+Example request: Retrieve information about a user
 
     GET /user/<<tenant>>/users/<<userId>>
      Host: [hostname]
@@ -277,12 +279,13 @@ Example response:
       "devicePermissions": {}
     }
 
-User password is never returned in GET response. Authentication mechanism is provided by another interface.
+The user password is never returned in a GET response. Authentication mechanism is provided by another interface.
 
-### GET a representation of a User by his/her name
+### GET a representation of a user by his/her name
 
 Response body: User
- Example request: Retrieve information about a User
+
+Example request: Retrieve information about a user
 
     GET /user/<<tenant>>/userByName/<<userName>>
      Host: [hostname]
@@ -308,13 +311,13 @@ Example response:
       "devicePermissions": {}
     }
 
-### PUT a change to User resource
+### PUT a change to user resource
 
 Request body: User
 
 Response body: User 
 
-Example request: Change the first name of a User
+Example request: Change the first name of a user
 
     PUT /user/<<tenant>>/users/<<userId>>
      Host: [hostname]
@@ -344,14 +347,15 @@ Example response:
       "devicePermissions": {}
     }
 
-When user is updated with changed permissions or groups, suitable audit record is created with type 'User' and activity 'User updated'.
+When the user is updated with changed permissions or groups, a corresponding audit record is created with type 'User' and activity 'User updated'.
 
 ### DELETE a representation of a user
 
-Request body: N/A.
+Request body: n/a
 
-Response body: N/A.
- Example request: Delete a user
+Response body: n/a
+
+Example request: Delete a user
 
     DELETE /user/<<tenant>>/users/<<userName>>
      Host: [hostname]
@@ -361,7 +365,7 @@ Example response:
 
     HTTP/1.1  204 NO CONTENT
 
-### GET the Current User Resource
+### GET the current user resource
 
 Response body: user
 
@@ -369,7 +373,7 @@ or
 
 Response body: currentUser
 
-Example request: Retrieve information about the logged in user
+Example request: Retrieve information about the logged-in user
 
     GET /user/currentUser
      Host: [hostname]
@@ -401,12 +405,13 @@ Example response:
         "self": "[URL to the User resource]",
         "userName": "jsmith"}
 
-### PUT a change to the Current User Resource
+### PUT a change to the current user resource
 
 Request body: user
 
 Response body: user
- Example request: Change the first name of the logged in user
+
+Example request: Change the first name of the logged-in user
 
     PUT /user/currentUser
      Host: [hostname]
@@ -451,18 +456,19 @@ Example response:
 
 |Name|Type|Occurs|Description|
 |:---|:---|:-----|:----------|
-|self|URI|1|Link to this Resource|
+|self|URI|1|Link to this resource|
 |references|UserReference|0..n|List of user references|
 |statistics|PagingStatistics|1|Information about the paging statistics|
 |prev|URI|0..1|Link to a possible previous page with additional user references|
 |next|URI|0..1|Link to a possible next page with additional user references|
 
-### Add User to a group
+### Add user to a group
 
 Request body: UserReference
 
 Response body: UserReference
- Example request: Create a new UserReference
+
+Example request: Create a new UserReference
 
     POST /user/<<tenant>>/groups/<<groupId>>/users
      Host: [hostname]
@@ -504,13 +510,15 @@ Example response:
             "userName": "jsmith"
         }}
         
-When user is added to group, suitable audit record is created with type 'User' and activity 'User updated'.
+When a user is added to a group, a corresponding audit record is created with type 'User' and activity 'User updated'.
 
-### Remove User from a group
+### Remove user from a group
 
-Request body: N/A.
+Request body: n/a
 
-Response body: N/A. Example request: DELETE a UserReference
+Response body: n/a 
+
+Example request: Delete a UserReference
  			 
      DELETE /user/<<tenant>>/groups/<<groupId>>/users/<<yourUserName>>
      Host: [hostname]
@@ -520,12 +528,13 @@ Example response:
 
     HTTP/1.1  204 NO CONTENT
 
-When user is removed from group, suitable audit record is created with type 'User' and activity 'User updated'.
+When a user is removed from a group, a corresponding audit record is created with type 'User' and activity 'User updated'.
 
 ### Get all users of a group
 
 Response body: UserReferenceCollection
- Example request: Retrieve information about all users of a Group
+
+Example request: Retrieve information about all users of a group
 
     GET /user/management/groups/<<groupId>>
      Host: [hostname]
@@ -565,8 +574,8 @@ Example response:
 
 |Name|Type|Occurs|Description|
 |:---|:---|:-----|:----------|
-|self|URI|1|Link to this Resource|
-|user|User|1|A user resource being referenced|
+|self|URI|1|Link to this resource|
+|user|User|1|User resource being referenced|
 
 ## Group collection
 
@@ -574,20 +583,21 @@ Example response:
 
 |Name|Type|Occurs|Description|
 |:---|:---|:-----|:----------|
-|self|URI|1|Link to this Resource|
-|groups|Group|0..n|List of Groups|
+|self|URI|1|Link to this resource|
+|groups|Group|0..n|List of groups|
 |statistics|PagingStatistics|1|Information about the paging statistics|
 |prev|URI|0..1|Link to a possible previous page with additional groups|
 |next|URI|0..1|Link to a possible next page with additional groups|
 
 ### Audit log
-Any change in group's roles and device permissions creates suitable audit record with type 'Group' and activity 'Group updated' with information which properties have been changed.
+
+Any change in group's roles and device permissions creates corresponding audit records with type 'Group' and activity 'Group updated' with information which properties have been changed.
 
 ### List all groups
 
 Response body: GroupCollection
 
-Example request: Retrieve information about a Group Collection
+Example request: Retrieve information about a group collection
 
     GET /user/management/groups/
      Host: [hostname]
@@ -634,7 +644,8 @@ Example response:
 Request body: Group
 
 Response body: Group
- Example request: Create a new Group
+
+Example request: Create a new group
 
     POST /user/management/groups
      Host: [hostname]
@@ -674,16 +685,17 @@ Example response:
 
 |Name|Type|Occurs|Description|Allowed in PUT/POST request|
 |:---|:---|:-----|:----------|:--------------------------|
-|id|String|1|Uniquely identifies a Group|not allowed|
-|self|URI|1|Link to this Resource|not allowed|
-|name|String|1|Descriptive Name of the Group|mandatory|
+|id|String|1|Uniquely identifies a group|not allowed|
+|self|URI|1|Link to this resource|not allowed|
+|name|String|1|Descriptive name of the group|mandatory|
 |roles|RoleReferenceCollection|1|List of role references|not allowed|
 |devicePermissions|Object|1|List of device permissions|optional|
 
 ### Show group details
 
 Response body: Group
- Example request: Retrieve information about a Group
+
+Example request: Retrieve information about a group
 
     GET /user/management/groups/<<groupId>>
      Host: [hostname]
@@ -723,10 +735,11 @@ Example response:
          ]
     }
 
-### GET a representation of a Group by its name
+### GET a representation of a group by its name
 
 Response body: Group
- Example request: Retrieve information about a Group
+
+Example request: Retrieve information about a group
 
     GET /user/<<tenant>>/groupByName/<<groupName>>
      Host: [hostname]
@@ -748,10 +761,11 @@ Example response:
 
 ### Remove a group
 
-Request body: N/A.
+Request body: n/a
 
-Response body: N/A.
- Example request: DELETE a group
+Response body: n/a
+
+Example request: Delete a group
 
     DELETE /user/<<tenant>>/groups/<<groupId>>
      Host: [hostname]
@@ -761,16 +775,17 @@ Example response:
 
     HTTP/1.1  204 NO CONTENT
     
-When group is removed, suitable audit records are created with type 'User' and activity 'User updated' with information that user has been removed from group.
+When a group is removed, a corresponding audit record is created with type 'User' and activity 'User updated' with the information that the user has been removed from the group.
 
-Please, note that the *ADMINS* and *DEVICES* groups can not be deleted.
+>**Info:** ADMINS and DEVICES groups can not be deleted.
 
 ### Update a group
 
 Request body: Group
 
 Response body: Group
- Example request: Change the group name
+
+Example request: Change the group name
 
     PUT /user/<<tenant>>/groups/<<groupId>>
      Host: [hostname]
@@ -795,7 +810,7 @@ Example response:
       ...
     }
     
-When group is updated with changed roles or permissions, suitable audit record is created with type 'Group' and activity 'Group updated'.
+When a group is updated with changed roles or permissions, a corresponding audit record is created with type 'Group' and activity 'Group updated'.
 
 ## Group reference collection
 
@@ -803,7 +818,7 @@ When group is updated with changed roles or permissions, suitable audit record i
 
 |Name|Type|Occurs|Description|
 |:---|:---|:-----|:----------|
-|self|URI|1|Link to this Resource|
+|self|URI|1|Link to this resource|
 |groups|GroupReference|0..n|List of group references|
 |statistics|PagingStatistics|1|Information about the paging statistics|
 |prev|URI|0..1|Link to a possible previous page with additional group references|
@@ -812,7 +827,8 @@ When group is updated with changed roles or permissions, suitable audit record i
 ### Get all groups of a user
 
 Response body: GroupReferenceCollection
- Example request: Retrieve information about all groups of a User
+
+Example request: Retrieve information about all groups of a user
 
     GET /user/<<tenant>>/users/<<userName>>/groups
      Host: [hostname]
@@ -841,8 +857,8 @@ Example response:
 
 |Name|Type|Occurs|Description|
 |:---|:---|:-----|:----------|
-|self|URI|1|Link to this Resource|
-|group|Group|1|A group resource being referenced|
+|self|URI|1|Link to this resource|
+|group|Group|1|Group resource being referenced|
 
 ## Role collection
 
@@ -850,8 +866,8 @@ Example response:
 
 |Field Name|Type|Occurs|Description|
 |:---------|:---|:-----|:----------|
-|self|URI|1|Link to this Resource|
-|roles|Role|0..n|List of Roles|
+|self|URI|1|Link to this resource|
+|roles|Role|0..n|List of roles|
 |statistics|PagingStatistics|1|Information about the paging statistics|
 |prev|URI|0..1|Link to a possible previous page with additional roles|
 |next|URI|0..1|Link to a possible next page with additional roles|
@@ -862,13 +878,14 @@ Example response:
 
 |Name|Type|Occurs|Description|
 |:---|:---|:-----|:----------|
-|id|String|1|Uniquely identifies a Role|
-|name|String|1|Descriptive name of the role, following role naming pattern.|
+|id|String|1|Uniquely identifies a role|
+|name|String|1|Descriptive name of the role, following role naming pattern|
 
 ### Get all available roles
 
 Response body: RoleCollection
- Example request: Retrieve information about a Role Collection
+
+Example request: Retrieve information about a role collection
 
      GET /user/roles
      Host: [hostname]
@@ -903,12 +920,13 @@ Example response:
       "next" : "[URL to next page]"
     }
 
-### Assign Role to User
+### Assign Role to user
 
 Request body: RoleReference
 
 Response body: RoleReference
- Example request: Create a new RoleReference
+
+Example request: Create a new RoleReference
 
     POST /user/<<tenant>>/users/<<userName>>/roles
      Host: [hostname]
@@ -938,14 +956,15 @@ Example response:
       }
     }
     
-When role is assigned to user, suitable audit record is created with type 'User' and activity 'User updated'.
+When a role is assigned to a user, a corresponding audit record is created with type 'User' and activity 'User updated'.
 
-### Assign Role to Group
+### Assign role to group
 
 Request body: RoleReference
 
 Response body: RoleReference
- Example request: Create a new RoleReference
+
+Example request: Create a new RoleReference
 
     POST /user/<<tenant>>/groups/<<groupId>>/roles
      Host: [hostname]
@@ -975,14 +994,15 @@ Example response:
       }
     }
 
-When role is assigned to group, suitable audit record is created with type 'Group' and activity 'Group updated'.
+When a role is assigned to a group, a corresponding audit record is created with type 'Group' and activity 'Group updated'.
 
-### Unassign Role from User
+### Unassign role from user
 
-Request body: N/A.
+Request body: n/a
 
-Response body: N/A.
- Example request: DELETE a RoleReference
+Response body: n/a
+
+Example request: Delete a RoleReference
 
     DELETE /user/<<tenant>>/users/<<userName>>/roles/<<roleName>> (Example:ROLE_TENANT_MANAGEMENT_ADMIN)}}
      Host: [hostname]
@@ -992,12 +1012,13 @@ Example response:
 
     HTTP/1.1  204 NO CONTENT
 
-### Unassign Role from Group
+### Unassign role from group
 
-Request body: N/A.
+Request body: n/a
 
-Response body: N/A.
- Example request: DELETE a RoleReference
+Response body: n/a
+
+Example request: Delete a RoleReference
 
     DELETE /user/<<tenant>>/groups/<<groupId>>/roles/<<roleName>> (Example:ROLE_TENANT_MANAGEMENT_ADMIN)}}
      Authorization: Basic xxxxxxxxxxxxxxxxxxx
@@ -1006,7 +1027,7 @@ Example response:
 
     HTTP/1.1  204 NO CONTENT
 
-When role is unassigned from group, suitable audit record is created with type 'Group' and activity 'Group updated'.
+When a role is unassigned from a group, a corresponding audit record is created with type 'Group' and activity 'Group updated'.
 
 ## Role reference collection
 
@@ -1014,7 +1035,7 @@ When role is unassigned from group, suitable audit record is created with type '
 
 |Name|Type|Occurs|Description|
 |:---|:---|:-----|:----------|
-|self|URI|1|Link to this Resource|
+|self|URI|1|Link to this resource|
 |references|RoleReference|0..n|List of role references|
 |statistics|PagingStatistics|1|Information about the paging statistics|
 |prev|URI|0..1|Link to a possible previous page with additional role references|
@@ -1023,7 +1044,8 @@ When role is unassigned from group, suitable audit record is created with type '
 ### Get all roles of a user
 
 Response body: RoleReferenceCollection
- Example request: Retrieve information about a Role Reference Collection
+
+Example request: Retrieve information about a role reference collection
 
     GET /user/<<tenant>>/users/<<userName>>/roles
      Host: [hostname]
@@ -1067,7 +1089,8 @@ Example response:
 ### Get all roles of a group
 
 Response body: RoleReferenceCollection
- Example request: Retrieve information about a Role Reference Collection
+
+Example request: Retrieve information about a role reference cCollection
 
     GET /user/<<tenant>>/groups/<<groupId>>/roles
      Host: [hostname]

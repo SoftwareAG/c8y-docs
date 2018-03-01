@@ -129,6 +129,29 @@ Example response:
        "prev" : "[URL to previous page]",
        "next" : "[URL to next page]"
     }
+    
+Users in the response are sorted by username in ascending order.    
+    
+#### Search parameters for User Collection      
+
+Users can be filtered by following parameters:
+
+- username - prefix or full username
+- groups - numeric group identifiers separated by commas; result will contain only users which belong to at least one of specified groups 
+- owner - exact username
+- onlyDevices - boolean flag. If set to "true", result will contain only users created during bootstrap process (starting with "device\_").
+ If flag is absent (or false) the result will not contain "device\_" users. 
+
+Additional flag "withSubusersCount" - if set to "true", then each of returned users will contain additional field "subusersCount" - 
+number of direct subusers (users with corresponding "owner").
+ 
+Example request: retrieve users, where username starts with "js", and every user belongs to one of the groups 2, 3 or 4, and the owner is "admin", and is not a device user. 
+
+    GET /user/<<tenant>>/users?username=js&groups=2,3,4&owner=admin&withSubusersCount=true
+    Host: [hostname]
+    Authorization: Basic xxxxxxxxxxxxxxxxxxx
+    Accept: application/vnd.com.nsn.cumulocity.userCollection+json;ver=0.9
+
 
 ### POST - create a new user within the collection
 

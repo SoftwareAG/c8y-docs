@@ -41,7 +41,6 @@ Example response:
 
     HTTP/1.1 200 OK
     Content-Type: application/vnd.com.nsn.cumulocity.applicationCollection+json;ver=...
-    Content-Length: ...
     {
         "self" : "...",
         "next" : "...",
@@ -106,7 +105,6 @@ Example request:
     POST /inventory/binaries
     Host: ...
     Authorization: Basic ...
-    Content-Length: ...
     Content-Type: multipart/form-data; boundary=--myBoundary
 
     --myBoundary
@@ -132,7 +130,6 @@ Example response:
 
     HTTP/1.1 201 Created
     Content-Type: application/vnd.com.nsn.cumulocity.managedObject+json;ver=...
-    Content-Length: ...
     Location: <<URL of new managed object>>
 
     {
@@ -160,7 +157,6 @@ Example response:
 
     HTTP/1.1 200 OK
     Content-Type: <<depending on binary mime type>>
-    Content-Length: ...
     Content-Disposition: attachment; filename="myfile.ext"
 
     ...
@@ -182,7 +178,6 @@ Example request:
     PUT /inventory/binaries/<<binaryId>>
     Host: ...
     Authorization: Basic ...
-    Content-Length: ...
     Content-Type: <<depending on binary mime type>>
 
     ...
@@ -231,7 +226,6 @@ Example request:
     Accept: application/vnd.com.nsn.cumulocity.managedObject+json
     Content-Type: multipart/form-data; boundary=myBoundary
     Content-Disposition: form-data; name="file"
-    Content-Length: 742
     Authorization: Basic ...
     
     --myBoundary
@@ -318,7 +312,6 @@ Example request:
     Accept: application/vnd.com.nsn.cumulocity.managedObject+json
     Content-Type: multipart/form-data; boundary=myBoundary
     Content-Disposition: form-data; name="filepath"
-    Content-Length: 742
     Authorization: Basic ...
     
     --myBoundary

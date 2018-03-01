@@ -87,7 +87,7 @@ Own applications may be
 
 Your applications are available through the application switcher in the top bar which allows to easily switch between applications.
 
-<img src="/guides/users-guide/administration/Admin_AppSwitcher.png" alt="App switcher" style="max-width: 100%">
+<img src="/guides/users-guide/administration/Admin_AppSwitcher.png" alt="App switcher" style="max-width: 50%">
 
 You manage your applications under "Own applications", accessible through the "Applications" menu. 
 
@@ -99,7 +99,7 @@ To directly open an application from here, click **Open** on the respective appl
 
 Click **Add application** in the "Own applications" page, to add an application to your account, see [Adding applications](#adding-applications).
 
-To add a plugin, click **Add Plugin** on the card of the application you want to add it to (see [Adding and removing plugins](#add-remove-plugins)).
+To add a plugin, click **Add Plugin** on the card of the application you want to add it to (see [Adding and removing plugins](#add-remove-plugin)).
 
 Click the menu icon at the top right of an application to open a context menu from where you can [**Edit** or **Remove**](#editing-and-removing) an application. 
 
@@ -111,7 +111,7 @@ To add an application, click **Add application** in the "Own applications" page.
 * using an external application, which links to an application running elsewhere 
 * [duplicating an existing application](#clone-application).
 
-![Add application methods](/guides/users-guide/administration/Admin_AddApplication.png)
+<img src="/guides/users-guide/administration/Admin_AddApplication.png" alt="Add application methods" style="max-width: 50%">
 
 #### <a name="uploading-zip-files"></a>Uploading zip files
 
@@ -133,7 +133,7 @@ In order to add an application by uploading a zip file, follow these steps:
 
 After successfully uploading the zip file to the platform the application is being created.
 
-<img src="/guides/users-guide/administration/Admin_UploadZipFile.png" alt="Uploading zip file" style="max-width: 100%">
+<img src="/guides/users-guide/administration/Admin_UploadZipFile.png" alt="Uploading zip file" style="max-width: 50%">
 
 #### <a name="clone-application"></a>Linking to external applications
 
@@ -146,7 +146,7 @@ In order to add an application which links to an external application, follow th
 6. Enter the external URL where the application can be reached. 
 7. Finally, click **Save** to create the application.
 
-For details on the fields, see also [Application properties](application-properties) below. 
+For details on the fields, see also [Application properties](#application-properties) below. 
 
 #### <a name="clone-application"></a>Duplicating applications
 
@@ -162,7 +162,7 @@ In order to duplicate an application, follow these steps:
 6. Enter the application path as part of the URL to invoke the application. 
 7. Finally, click **Clone** to create the application.
 
-For details on the fields, see also [Application properties](application-properties) below.
+For details on the fields, see also [Application properties](#application-properties) below.
 
 ### <a name="application-properties"></a>Application properties
 

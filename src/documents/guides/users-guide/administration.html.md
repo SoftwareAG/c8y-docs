@@ -172,7 +172,7 @@ For details on the fields, see also [Application properties](#application-proper
 
 #### <a name="uploading-cep-rules"></a>Uploading custom CEP rules
 
-> **Info:** To be able to upload custom CEP rules to Cumulocity you need to be subscribed to the applications "Smartrule" and "apama-small". 
+> **Info:** To be able to upload custom CEP rules as applications to Cumulocity you need to be subscribed to the application "apama-small". Optionally, if you want to use the Smart Rules functionality, you need to be subscribed to the "SmartRule" application.
 
 In order to upload custom CEP rules, follow these steps:
 

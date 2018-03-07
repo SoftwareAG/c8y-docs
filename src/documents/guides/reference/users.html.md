@@ -1161,5 +1161,5 @@ Example response:
 
 |Name|Type|Occurs|Description|
 |:---|:---|:-----|:----------|
-|self|URI|1|Link to this Resource|
+|self|URI|1|Link to this resource|
 |role|Role|1|A role resource being referenced|

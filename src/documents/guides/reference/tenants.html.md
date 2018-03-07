@@ -786,6 +786,7 @@ Example Response :
 |:---|:---|:-----|:----------|
 |day|String|1|Date of statistics.|
 |deviceCount|Number|1|Number of devices in the tenant (c8y\_IsDevice).|
+|deviceEndpointCount|Number|1|Number of devices which do not have child devices (leaf devices).|
 |deviceRequestCount|Number|1|Number of requests that were issued only by devices against the tenant.|
 |deviceWithChildrenCount|Number|1|Number of devices with all children.|
 |requestCount|Number|1|Number of requests that were issued against the tenant.|
@@ -795,7 +796,7 @@ Example Response :
 "requestCount" and "deviceRequestCount" contains the sum of all issued requests during the querying period. "deviceCount" and "storageSize" contain the last reported value during the querying period. Please note:
 
  * "requestCount" and "deviceRequestCount" are updated every 5 minutes.
- * "deviceCount", "deviceWithChildrenCount", "storageSize" and "subscribedApplications" are updated daily starting at 23:57.
+ * "deviceCount", "deviceEndpointCount", "deviceWithChildrenCount", "storageSize" and "subscribedApplications" are updated daily starting at 23:57.
  * "storageSize" is affected by your retention rules. It is also affected by the regularly running database optimization functions running in Cumulocity. If the size decreases, it does not necessarily mean that data was deleted.
  * Days are counted according to server timezone.
 
@@ -849,6 +850,7 @@ Example Response :
         "usageStatistics": [ {
             "day": "2014-08-12T00:00:00.000+02:00",
             "deviceCount": 5,
+            "deviceEndpointCount": 5,
             "deviceRequestCount": 101966,
             "deviceWithChildrenCount": 5,
             "requestCount": 103966,
@@ -861,6 +863,7 @@ Example Response :
         {
             "day": "2014-08-07T00:00:00.000+02:00",
             "deviceCount": 30,
+            "deviceEndpointCount": 15,
             "deviceRequestCount": 114378,
             "deviceWithChildrenCount": 38,
             "requestCount": 116378,
@@ -899,7 +902,8 @@ Example Response :
     Content-Length: ...
     [
         {
-            "deviceCount": "5",
+            "deviceCount": 5,
+            "deviceEndpointCount": 5,
             "deviceRequestCount": 114338,
             "deviceWithChildrenCount": 5,
             "requestCount": 116378,
@@ -910,7 +914,8 @@ Example Response :
             ]
         },
         {
-            "deviceCount": "2",
+            "deviceCount": 2,
+            "deviceEndpointCount": 2,
             "deviceRequestCount": 114338,
             "deviceWithChildrenCount": 2,
             "requestCount": 116378,
@@ -954,6 +959,7 @@ Example Response :
         "self": "...",
         "day": "2014-08-21T00:00:00.000+02:00",
         "deviceCount": 30,
+        "deviceEndpointCount": 15,
         "deviceRequestCount": 15006838,
         "deviceWithChildrenCount": 38,
         "requestCount": 15013818,

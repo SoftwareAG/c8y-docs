@@ -105,11 +105,12 @@ Click the menu icon at the top right of an application to open a context menu fr
 
 ### <a name="adding-applications"></a>Adding applications
 
-To add an application, click **Add application** in the "Own applications" page. In the upcoming dialog choose to create an application by
+To add an application, click **Add application** in the "Own applications" page. In the upcoming dialog choose one of the following methods:
 
 * [uploading a zip file](#uploading-zip-files) - by dropping a file or browsing for it on your computer,
-* using an external application, which links to an application running elsewhere 
-* [duplicating an existing application](#clone-application).
+* [using an external application](#external-application), which links to an application running elsewhere 
+* [duplicating an existing application](#clone-application)
+* [uploading a custom CEP rule](#uploading-cep-rules) (only visible if you are subscribed to specific applications, see below).
 
 <img src="/guides/users-guide/administration/Admin_AddApplication.png" alt="Add application methods" style="max-width: 50%">
 
@@ -131,11 +132,12 @@ In order to add an application by uploading a zip file, follow these steps:
 2. In the upcoming dialog, select **Upload zip file**.
 3. Simply drop a zip file or browse for it on your computer.
 
-After successfully uploading the zip file to the platform the application is being created.
-
 <img src="/guides/users-guide/administration/Admin_UploadZipFile.png" alt="Uploading zip file" style="max-width: 50%">
 
-#### <a name="clone-application"></a>Linking to external applications
+After successfully uploading the zip file to the platform the application is being created.
+
+
+#### <a name="external-application"></a>Linking to external applications
 
 In order to add an application which links to an external application, follow these steps:
 
@@ -150,19 +152,44 @@ For details on the fields, see also [Application properties](#application-proper
 
 #### <a name="clone-application"></a>Duplicating applications
 
+Duplicating an application might be useful if you want to customize a subscribed application according to your needs. 
+
 Duplicating a subscribed application creates a copy of the application as an own application, with a link to the original application.
+
+>**Info**: If you want your "own application" to overrule a subscribed standard application, the path of the "own application" needs to be set to the path of the original subscribed application.
 
 In order to duplicate an application, follow these steps:
 
 1. Click **Add application** in the "Own applications" page.
 2. In the upcoming dialog, select **Clone existing application**.
-3. Select the desired application from the dropdown list. Note that also subscribed applications are shown.
-4. In the next window, enter the name of the application. The name will be shown as title of the application. 
-5. Enter an application key, used to identify this application.
-6. Enter the application path as part of the URL to invoke the application. 
+3. Select the desired application from the dropdown list. 
+4. In the next window, provide a name for the application. By default, the name of the original application is provided, extended by a number.
+5. Provide an application key, used to identify this application. By default, the key of the original application is provided, extended by a number.
+6. Provide the application path as part of the URL to invoke the application. By default, the path of the original application is provided, extended by a number. If you set it to the path of the original subscribed application, your own application will overrule the subscribed application. 
 7. Finally, click **Clone** to create the application.
 
 For details on the fields, see also [Application properties](#application-properties) below.
+
+#### <a name="uploading-cep-rules"></a>Uploading custom CEP rules
+
+> **Info:** To be able to upload custom CEP rules as applications to Cumulocity you need to be subscribed to the application "apama-small". Optionally, if you want to use the Smart Rules functionality, you need to be subscribed to the "SmartRule" application.
+
+In order to upload custom CEP rules, follow these steps:
+
+1. Click **Add application** in the "Own applications" page.
+2. In the upcoming dialog, select **Upload custom CEP rule**. <br>
+	<img src="/guides/users-guide/administration/Admin_ApplicationsAddCEPRules.png" alt="Upload CEP rules" style="max-width: 50%">
+
+3. The file to be uploaded must be a single mon file, containing a set of event definitions and monitors. Drop the mon file or browse for it on your computer.
+
+After successfully uploading the file to the platform an application of type "Apama CEP rule" is being created.
+
+<img src="/guides/users-guide/administration/Admin_ApplicationCEPRule.png" alt="Uploading zip file" style="max-width: 100%">
+
+For details on the fields, see also [Application properties](#application-properties) below.
+
+>**Info:** You cannot add a plugin to an application of type "Apama CEP rule". 
+
 
 ### <a name="application-properties"></a>Application properties
 
@@ -172,13 +199,13 @@ Click on an application card to view the application properties.
 
 Each application will show the following properties:
 
-|Field|Description|Hosted (Web app)|Microservice|External
-|:---|:---|:---|:---|:---
-|Name|Application name. Will be shown as title of the application in the top bar and in the application switcher. |Automatically created|Automatically created, based on the zip file name | Specified by the user 
-|ID|Unique ID to identify the application|Automatically provided|Automatically provided|Automatically provided
-|Application key|Used to identify the application and to make the application available for subscription, see the [Concepts Guide](/guides/concepts/applications). |Automatically created|Automatically created based on the zip file name|Specified by the user 
-|Type|Application type|Hosted application|Microservice|External
-|Path|Part of the URL invoking the application|Automatically created|Automatically created as .../service/&#60;microservice name&#62;|Specified by the user. For example, if you use "hello" as application path, the URL of the application will be "/apps/hello".
+|Field|Description|Hosted (Web app)|Microservice|External|CEP rule
+|:---|:---|:---|:---|:---|:---
+|Name|Application name. Will be shown as title of the application in the top bar and in the application switcher. |Automatically created|Automatically created, based on the zip file name | Specified by the user|Automatically created, based on the mon file name 
+|ID|Unique ID to identify the application|Automatically provided|Automatically provided|Automatically provided|Automatically provided
+|Application key|Used to identify the application and to make the application available for subscription, see the [Concepts Guide](/guides/concepts/applications). |Automatically created|Automatically created based on the zip file name|Specified by the user|Automatically created based on the mon file name 
+|Type|Application type|Hosted application|Microservice|External|Apama CEP rule
+|Path|Part of the URL invoking the application|Automatically created|Automatically created as .../service/&#60;microservice name&#62;|Specified by the user. For example, if you use "hello" as application path, the URL of the application will be "/apps/hello".|Not available
 
 >**Info**: ID, application key, type and path cannot be changed.
 
@@ -201,8 +228,6 @@ To remove an application, click the menu icon and from the context menu select *
 If you remove an application that overwrites a subscribed application, the currently subscribed application becomes available to all users. Additionally, the users will then also benefit from future upgrades of the subscribed application.
 
 It is not possible to remove subscribed applications. This can only be done by the owner of the subscribed application.
-
->**Info**: To overwrite a subscribed application, the "own application" must have the same context-path as the "subscribed application".
 
 
 ### <a name="add-remove-plugin"></a>Adding and removing plugins
@@ -256,7 +281,7 @@ Users can restore previous versions of an application from an archive:
 
 ### Uploading archives
 
-Multiple archive ZIP file versions can be stored in Cumulocity when they were created by uploading ZIP files. Each version is called an archive. You can upload different versions at the same time and switch between these versions. 
+Multiple archive file versions can be stored in Cumulocity when they were created by uploading either a zip file or a mon file. Each version is called an archive. You can upload different versions at the same time and switch between these versions. 
 
 To upload an archive, follow these steps:
 
@@ -267,7 +292,9 @@ To upload an archive, follow these steps:
 
 ![Upload archive](/guides/users-guide/uploadarchive.png)
 
-Once uploaded, archives can be downloaded, activated or deleted if necessary. The active archive (indicated by a cloud icon) is the version of the application that is currently being served to the users of your account. This version cannot be deleted.
+Once uploaded, the recently uploaded version is automatically the active version, i.e. the version of the application that is currently being served to the users of your account. This version cannot be deleted. 
+
+To change the active version, open the context menu in the version you want to activate and select **Set as active**.
 
 
 ## <a name="tenants"></a>Managing tenants
@@ -334,7 +361,7 @@ To edit subtenants, click on the desired subtenant or click **Edit** in the cont
 
 In the "Properties" tab, all fields are editable except of the ID and the administrator's username. For details on the fields, refer to [Creating sub-tenants](#creating-tenants).
 
-### Subscribing to applications
+### <a name="subscribing"></a>Subscribing to applications
 
 In the "Applications" tab you can subscribe tenants to applications or remove the applications from the tenant. By default, tenants will be subscribed to the standard Cumulocity applications. 
 
@@ -343,6 +370,8 @@ In the "Applications" tab you can subscribe tenants to applications or remove th
 To subscribe an application to a tenant, hover over the applications under "Available applications" on the right and click **Subscribe** on the desired application.
 
 To remove an application, hover over the applications under "Subscribed applications" on the left and click **Unsubscribe**.
+
+Info: Apart from being subscribed to a standard application, i.e. Cockpit, you can also create a duplicate of this application as own application, see [Duplicating applications](#clone-application).
 
 ### Suspending subtenants
 
@@ -982,3 +1011,4 @@ To stop data forwarding and remove the data connector, click the menu icon and f
 You can now navigate to the Device Management application or the Cockpit application. There will be a new "virtual group" with a specific icon (see the screenshot below) showing the forwarded devices. The group will have the same name as your subscription. Devices are "lazily" created on the destination side whenever they send data for the first time after setting up an active subscription.
 
 ![Data broker group in cockpit app](/guides/users-guide/data-broker-group-created.PNG)
+

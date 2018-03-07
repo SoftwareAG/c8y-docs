@@ -174,9 +174,7 @@ For details on the fields, see also [Application properties](#application-proper
 
 > **Info:** To be able to upload custom CEP rules to Cumulocity you need to be subscribed to the applications "Smartrule" and "apama-small". 
 
-For general information on Apama EPL in Cumulocity, refer to the [Analytics User Guide](/guides/event-language/introduction).
-
-In order to add an application by uploading a custom CEP rule, follow these steps:
+In order to upload custom CEP rules, follow these steps:
 
 1. Click **Add application** in the "Own applications" page.
 2. In the upcoming dialog, select **Upload custom CEP rule**. <br>
@@ -1013,3 +1011,4 @@ To stop data forwarding and remove the data connector, click the menu icon and f
 You can now navigate to the Device Management application or the Cockpit application. There will be a new "virtual group" with a specific icon (see the screenshot below) showing the forwarded devices. The group will have the same name as your subscription. Devices are "lazily" created on the destination side whenever they send data for the first time after setting up an active subscription.
 
 ![Data broker group in cockpit app](/guides/users-guide/data-broker-group-created.PNG)
+

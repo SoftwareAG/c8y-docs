@@ -25,6 +25,17 @@
           // </div>-->
 
           <div class="navbar-right navbar-form">
+          <div class="dropdown">
+            <button class="dropdown-toggle" data-toggle="dropdown">guides</button>
+            <ul class="dropdown-menu">
+              <% for section in @sections:%>
+                <li><a href="#<%= section.slug %>">
+                <h4><span class="glyphicon <%= section.icon %>"></span> <%= section.title %><span class="caret"></span></h4>
+              </a></li>
+              <% end %>
+            </ul>
+          </div>
+
             <script>
               (function() {
                 var cx = '008969372384807682938:yeh7xt785g4';

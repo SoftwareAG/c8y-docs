@@ -1,7 +1,7 @@
 ---
 order: 50
 title: User settings
-layout: default
+layout: redirect
 ---
 
 ## <a name="settings"></a>Changing user settings

@@ -1,7 +1,7 @@
 ---
 order: 30
 title: Cumulocity applications
-layout: default
+layout: redirect
 ---
 
 ## <a name="applications"></a>

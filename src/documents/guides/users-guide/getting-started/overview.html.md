@@ -1,7 +1,7 @@
 ---
 order: 10
 title: Overview
-layout: default
+layout: redirect
 ---
 
 ## <a name="overview"></a>Overview

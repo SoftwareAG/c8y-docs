@@ -1,7 +1,7 @@
 ---
 order: 40
 title: GUI functionalities and features
-layout: default
+layout: redirect
 ---
 
 

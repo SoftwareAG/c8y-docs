@@ -1,7 +1,7 @@
 ---
 order: 20
 title: Accessing and login into the Cumulocity platform
-layout: default
+layout: redirect
 ---
 
 ## <a name="accessing"></a>Accessing and login into the Cumulocity platform

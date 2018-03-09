@@ -17,7 +17,7 @@ $(document).ready(function () {
       $this.addClass(lang);
     }
   });
-  hljs.initHighlightingOnLoad();
+  //hljs.initHighlightingOnLoad();
 
   $('[data-toggle=offcanvas]').click(function () {
     $('.row-offcanvas').toggleClass('active');

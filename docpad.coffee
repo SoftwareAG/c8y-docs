@@ -5,6 +5,16 @@ docpadConfig = {
 	templateData: {
 		site:
 			title: 'Cumulocity'
+			
+			# Scripts
+			scripts: [
+				"/guides/js/bootstrap/dropdown.js",
+				"/guides/js/bootstrap/transition.js",
+				"/guides/js/clipboard.js",
+				"/guides/js/zoom.min.js",
+				"/guides/js/docs-main.js"
+			]
+			
 		sections:  [
 			{ title: 'Concepts Guide', folder: 'guides/concepts', slug: 'concepts-guide', icon: 'glyphicon-asterisk', description: 'The concept descriptions explain the architecture and technical concepts behind Cumulocity. They are intended for anyone technically interested in the machine-to-machine application platform, be it solution architects, system administrators or software developers.' },
 			{ title: 'User\'s Guide', folder: 'guides/users-guide', slug: 'users-guide', icon : 'glyphicon-user', description: ''},
@@ -18,7 +28,7 @@ docpadConfig = {
 			{ title: 'C++ Developer\'s Guide', folder: 'guides/cpp', slug: 'cpp-developer', icon: 'glyphicon-cog', description: '' },
 			{ title: 'Reference Guide', folder: 'guides/reference' , slug: 'reference-guide', icon : 'glyphicon-book', description: 'The reference guide contains the detailed technical specifications of the programming interfaces of Cumulocity as reference for software developers.'},
 		]
-    }
+		}
 	plugins:
 		redirector:
 			redirects:

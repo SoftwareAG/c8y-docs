@@ -145,7 +145,7 @@ The terminal features cell location and is available in Location tab on terminal
 </br> c8y.LocationCycle=60; define in min, how often the location should be checked. 0 means the cycled checking is disabled. If a value >0 ist set, also the tracking is enabled
 
 
-![Location](/guides/devices/smartbox-io/location.png)
+![Location](/guides/devices/smartbox-mini/location.png)
 
 ## <a name="tracking"></a>Use the built-in tracking functionality
 
@@ -196,7 +196,7 @@ All AT command supported are listed here: http://www.pssystec.de/downloads/ </br
 
 ## <a name="device-shell"></a>Operate AT commands via device shell 
 
-The device shell enables you to read and write configuration parameters to interactively work with remote devices. You can send AT commands in the respective language of the device and view the results of the commands. You can sent any At Command. Check here in Chapter “supported AT commands”: https://www.pssystec.de/downloads/. Frequently used commands are available by clicking the "Get predefined" button.
+The device shell enables you to read and write configuration parameters to interactively work with remote devices. You can send AT commands in the respective language of the device and view the results of the commands. You can sent any At Command. Check here in Chapter "supported AT commands": https://www.pssystec.de/downloads/. Frequently used commands are available by clicking the "Get predefined" button.
 
 ![Device Shell](/guides/devices/smartbox-io/device-shell.png)
 

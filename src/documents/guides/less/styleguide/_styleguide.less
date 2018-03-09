@@ -1,0 +1,70 @@
+.home-pic {
+  background-position: center;
+  background-size: cover;
+  min-height: 100vh;
+  position: fixed;
+  width: 100%;
+  background-blend-mode: multiply;
+  background-color: @brand-primary;
+}
+
+.home-content {
+  position: relative; //  padding: 10vh 0 30px 0;
+  min-height: 100vh;
+  color: white;
+  display: flex;
+  h1 {
+    font-size: 76px;
+    font-weight: 100;
+  }
+  .btn {
+    color: white;
+    border: 1px solid white;
+    &:hover {
+      .btn-primary();
+    }
+  }
+  .card-group {
+    //margin-top: auto;
+  }
+  &+footer {
+    margin-top: -30px;
+    color: white;
+    opacity: .3;
+  }
+}
+
+.home-side-bar {
+  //#gradient>.horizontal( #072127, #071e22);
+  display: flex;
+  padding: 40px;
+  align-items: center;
+  justify-content: space-around;
+  .side-bar-btn {
+    img,
+    .h3 {
+      transition: opacity .3s ease;
+      opacity: .8;
+      font-weight: lighter;
+    }
+    &:hover,
+    &:focus {
+      text-decoration: none;
+      img,
+      .h3 {
+        opacity: 1;
+      }
+      p {
+        opacity: 1;
+      }
+    }
+  }
+  p {
+    opacity: .6;
+    transition: opacity .25s ease;
+  }
+}
+
+body {
+  background-color: @gray-lighter;
+}

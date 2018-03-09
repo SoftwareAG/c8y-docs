@@ -14,6 +14,16 @@
             </a>
 
           </div>
+          // <!--<div class="navbar-left">
+          //   <ul class="nav navbar-nav">
+          //     <% for section in @sections:%>
+          //      <li><a href="#<%= section.slug %>">
+          //       <h4><span class="glyphicon <%= section.icon %>"></span> <%= section.title %><span class="caret"></span></h4>
+          //     </a></li>
+          //     <% end %>
+          //     </ul>
+          // </div>-->
+
           <div class="navbar-right navbar-form">
             <script>
               (function() {

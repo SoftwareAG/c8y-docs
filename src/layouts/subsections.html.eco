@@ -1,0 +1,10 @@
+---
+layout: default
+---
+
+<% for block in @getCollection("html").findAllLive({relativeOutDirPath: @document.collection }, [ order: 1, title: 1 ] ).toJSON():%>
+  
+  <a href="<%= block.url%>"> <%= block.title || 'no title' %></a>
+  <%- block.contentRenderedWithoutLayouts %>
+
+<% end %>

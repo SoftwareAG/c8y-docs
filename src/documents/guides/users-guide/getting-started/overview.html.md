@@ -4,8 +4,6 @@ title: Overview
 layout: redirect
 ---
 
-## <a name="overview"></a>Overview
-
 The Getting Started section describes how to access and login to the Cumulocity platform and will walk you through basic functionalities applying to all Cumulocity applications. 
 
 For your convenience find an overview on the content of this document below.

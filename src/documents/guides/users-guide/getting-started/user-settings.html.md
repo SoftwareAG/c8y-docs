@@ -4,8 +4,6 @@ title: User settings
 layout: redirect
 ---
 
-## <a name="settings"></a>Changing user settings
-
 Several account settings can be changed by the user. 
 
 Click the **User** button at the top right and from the context menu, select **User Settings**. 

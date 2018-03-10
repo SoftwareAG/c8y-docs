@@ -66,4 +66,41 @@ blockquote{
   display: block;
   overflow: hidden;
   text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.text-light{
+  letter-spacing: -0.03em;
+  font-weight: 200;
+}
+
+
+section>h3,
+section>h2 {
+  display: flex;
+  margin-bottom: 25px;
+  padding-top: 50px;
+  padding-bottom: 12.5px; //color: #656565;
+  border-bottom: 1px dotted #d9d9d9;
+  font-weight: 200;
+  >small {
+    align-self: center;
+    order: 8;
+    margin-left: auto;
+  }
+}
+section>h3 {
+  border-bottom: 0;
+}
+section>h4 {
+  display: flex;
+  margin-top: 25px;
+  margin-bottom: 10px;
+  font-weight: bold;
+  line-height: 1.6;
+  >small {
+    align-self: center;
+    order: 8;
+    margin-left: auto;
+  }
 }

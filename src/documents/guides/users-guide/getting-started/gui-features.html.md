@@ -5,7 +5,6 @@ layout: redirect
 ---
 
 
-## <a name="navigating"></a>GUI functionalities and features
 
 ### <a name="screen"></a>Main screen elements
 

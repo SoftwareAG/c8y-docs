@@ -18,16 +18,20 @@ $(document).ready(function () {
     }
   });
   //hljs.initHighlightingOnLoad();
-
-  $('[data-toggle=offcanvas]').click(function () {
-    $('.row-offcanvas').toggleClass('active');
+  $('.sg-title .dropdown-toggle .current').html($('.sg-title .dropdown-menu .active a').text() + '<span class="caret"></span>');
+  $('img').each(function(){
+    $(this).attr('data-action', 'zoom');
   });
+
+//   $('[data-toggle=offcanvas]').click(function () {
+//     $('.row-offcanvas').toggleClass('active');
+//   });
 
   var $placement = $(window).width() > 320 ? 'left' : 'bottom';
-  $('.popover-dismiss').popover({
-    trigger: 'focus',
-    placement: $placement
-  });
+//   $('.popover-dismiss').popover({
+//     trigger: 'focus',
+//     placement: $placement
+//   });
 
   $('.to-the-top').click(function(e) {
     e.preventDefault();

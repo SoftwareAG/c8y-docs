@@ -14,10 +14,31 @@ docpadConfig = {
 				"/guides/js/zoom.min.js",
 				"/guides/js/docs-main.js"
 			]
+
+		# -----------------------------
+    # Helper Functions
+		getAbsoluteUrl: (_, site) ->
+      site = site || @site.url
+
+      if (typeof _ == "string")
+          if (_[0] == "/" && _[1] != "/")
+              return site+_
+          return _
+
+      if (typeof _ == "object")
+          if (_.url)
+              return @getUrl(_.url,site)
+          if (_.map)
+              _getUrl = arguments.callee
+              return _.map((d) ->
+                  return _getUrl(d,site)
+              )
+
+      return _
 			
 		sections:  [
 			{ title: 'Concepts Guide', folder: 'guides/concepts', slug: 'concepts-guide', icon: 'glyphicon-asterisk', description: 'The concept descriptions explain the architecture and technical concepts behind Cumulocity. They are intended for anyone technically interested in the machine-to-machine application platform, be it solution architects, system administrators or software developers.' },
-			{ title: 'User\'s Guide', folder: 'guides/users-guide', slug: 'users-guide', icon : 'glyphicon-user', description: ''},
+			{ title: 'User\'s Guide', folder: 'guides/users-guide', slug: 'users-guide', icon : 'fa fa-user-circle-o', description: ''},
 			{ title: 'Handbuch', folder: 'guides/benutzerhandbuch', slug: 'benutzerhandbuch', icon : 'glyphicon-user', description: ''},
 			{ title: 'Analytics User Guide', folder: 'guides/event-language' , slug: 'event-language', icon : 'glyphicon-book', description: 'TBD'},
 			{ title: 'Device Guides', folder: 'guides/devices' , slug: 'device-guides', icon: 'glyphicon-phone', description: '' },

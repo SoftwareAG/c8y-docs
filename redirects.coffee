@@ -56,7 +56,7 @@ redirects =
 	'/guides/users-guide/zapier': '/guides/users-guide/saas-integration'
 	# "index.html" redirects
 	'/guides/concepts': '/guides/concepts/introduction'
-	'/guides/users-guide': '/guides/users-guide/overview'
+	'/guides/users-guide': '/guides/users-guide/getting-started'
 	'/guides/rest': '/guides/rest/introduction'
 	'/guides/reference': '/guides/reference/rest-implementation'
 	'/guides/web': '/guides/web/introduction'

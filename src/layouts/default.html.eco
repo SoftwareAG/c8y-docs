@@ -118,7 +118,7 @@
                   <a href="javascript:void(0);" data-toggle="collapse" data-target="#sub-<%=page.basename %>"  <%= 'aria-expanded=true' if @document.url is page.url %>  style="font-size: 6px; margin-left: -14px;margin-right: 6px;"><i class="fa fa-chevron-right " ></i></a>
      
                 <ul id="sub-<%=page.basename %>" class="nav navbar-nav subchildren collapse <%= 'in' if @document.url is page.url %>" >
-                  <% for subsubdocument in @getCollection("html").findAllLive({relativeOutDirPath: @document.collection }, [ order: 1, title: 1 ] ).toJSON(): %>
+                  <% for subsubdocument in @getCollection("html").findAllLive({relativeOutDirPath: page.collection }, [ order: 1, title: 1 ] ).toJSON(): %>
                  <li class="">
                     <a href="#<%= subsubdocument.basename %>" title="<%= subsubdocument.title %>" data-href="<%= @getUrl(subsubdocument) %>">
                       <span><%= subsubdocument.title %></span>

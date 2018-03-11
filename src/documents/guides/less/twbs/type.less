@@ -8,16 +8,16 @@
 
 h1, h2, h3, h4, h5, h6,
 .h1, .h2, .h3, .h4, .h5, .h6 {
-  font-family: @headings-font-family;
-  font-weight: @headings-font-weight;
-  line-height: @headings-line-height;
   color: @headings-color;
+  font-weight: @headings-font-weight;
+  font-family: @headings-font-family;
+  line-height: @headings-line-height;
 
   small,
   .small {
+    color: @headings-small-color;
     font-weight: normal;
     line-height: 1;
-    color: @headings-small-color;
   }
 }
 
@@ -61,8 +61,8 @@ p {
 
 .lead {
   margin-bottom: @line-height-computed;
-  font-size: floor((@font-size-base * 1.15));
   font-weight: 300;
+  font-size: floor((@font-size-base * 1.15));
   line-height: 1.4;
 
   @media (min-width: @screen-sm-min) {
@@ -87,8 +87,8 @@ cite {
 
 mark,
 .mark {
-  background-color: @state-warning-bg;
   padding: .2em;
+  background-color: @state-warning-bg;
 }
 
 // Alignment
@@ -124,6 +124,7 @@ mark,
   // Given the contrast here, this is the only class to have its color inverted
   // automatically.
   color: #fff;
+
   .bg-variant(@brand-primary);
 }
 .bg-success {
@@ -144,8 +145,8 @@ mark,
 // -------------------------
 
 .page-header {
-  padding-bottom: ((@line-height-computed / 2) - 1);
   margin: (@line-height-computed * 2) 0 @line-height-computed;
+  padding-bottom: ((@line-height-computed / 2) - 1);
   border-bottom: 1px solid @page-header-border-color;
 }
 
@@ -174,13 +175,14 @@ ol {
 
 // Inline turns list items into inline-block
 .list-inline {
-  .list-unstyled();
   margin-left: -5px;
+
+  .list-unstyled();
 
   > li {
     display: inline-block;
-    padding-left: 5px;
     padding-right: 5px;
+    padding-left: 5px;
   }
 }
 
@@ -213,9 +215,10 @@ dd {
   @media (min-width: @grid-float-breakpoint) {
     dt {
       float: left;
-      width: (@component-offset-horizontal - 20);
       clear: left;
+      width: (@component-offset-horizontal - 20);
       text-align: right;
+
       .text-overflow();
     }
     dd {
@@ -232,20 +235,23 @@ dd {
 abbr[title],
 // Add data-* attribute to help out our tooltip plugin, per https://github.com/twbs/bootstrap/issues/5257
 abbr[data-original-title] {
-  cursor: help;
   border-bottom: 1px dotted @abbr-border-color;
+  cursor: help;
 }
 .initialism {
-  font-size: 90%;
   text-transform: uppercase;
+  font-size: 90%;
 }
 
 // Blockquotes
 blockquote {
-  padding: (@line-height-computed / 2) @line-height-computed;
   margin: 0 0 @line-height-computed;
+  padding: (@line-height-computed) @line-height-computed;
+  border-radius: 3px;
+  background-color: @alert-info-bg;
+  color: @alert-info-text;
   font-size: @blockquote-font-size;
-  border-left: 5px solid @blockquote-border-color;
+  //border-left: 5px solid @blockquote-border-color;
 
   p,
   ul,
@@ -261,9 +267,9 @@ blockquote {
   small,
   .small {
     display: block;
+    color: @blockquote-small-color;
     font-size: 80%; // back to default font-size
     line-height: @line-height-base;
-    color: @blockquote-small-color;
 
     &:before {
       content: '\2014 \00A0'; // em dash, nbsp

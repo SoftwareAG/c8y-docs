@@ -23,7 +23,7 @@ $(document).ready(function () {
 
   // set zomm in every image
   $('img').each(function(){
-    $(this).attr('data-action', 'zoom');
+    $(this).addClass('img-responsive').attr('data-action', 'zoom');
   });
 
   $('.sidebar-toggle').click(function(){

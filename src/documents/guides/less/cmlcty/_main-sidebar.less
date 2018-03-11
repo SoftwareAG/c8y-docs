@@ -88,7 +88,7 @@ body>.navigator {
       .transition(transform 0.25s ease);
     }
     &:hover {
-      color: @brand-primary;
+      color: @brand-complementary;
     }
   }
   .parent.collapsed>.fa {
@@ -111,7 +111,7 @@ body>.navigator {
         z-index: -1;
         width: 0;
         height: 100%;
-        background-color: @gray;
+        background-color: @brand-complementary;
         content: '';
 
         .transition(all .2s ease);
@@ -124,13 +124,13 @@ body>.navigator {
         height: 0;
         border-width: 17px 0 17px 0;
         border-style: solid;
-        border-color: transparent transparent transparent @gray;
+        border-color: transparent transparent transparent @brand-complementary;
         content: '';
 
         .transition(all .2s ease);
       }
     &:hover {
-      color: @brand-primary;
+      color: @brand-complementary;
     }
     &.active:hover {
       color: white;
@@ -144,7 +144,7 @@ body>.navigator {
       &:after{
         left: 100%;
         border-width: 17px 0 17px 10px;
-        border-left-color: @gray;
+        border-left-color: @brand-complementary;
         -webkit-transition: all .2s ease;
         -o-transition: all .2s ease;
         transition: all .2s ease
@@ -195,17 +195,17 @@ body>.navigator {
         padding-left: 33px;
         &:not(.active):hover {
           background-color: transparent;
-          color: @brand-primary;
+          color: @brand-complementary;
           &:after {
             display: none;
           }
         }
         &.active {
           &:before {
-            background-color: @gray;
+            background-color: @brand-complementary;
           }
           &:after {
-            border-left-color: @gray;
+            border-left-color: @brand-complementary;
           }
         }
       }
@@ -223,11 +223,11 @@ body>.navigator {
             .text-truncate();
             &:hover {
               background-color: transparent;
-              color: @brand-primary;
+              color: @brand-complementary;
             }
           }
           &.active a {
-            color: @brand-primary;
+            color: @brand-complementary;
             font-weight: bold;
           }
           &:last-child {

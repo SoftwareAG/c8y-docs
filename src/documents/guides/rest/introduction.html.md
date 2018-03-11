@@ -78,6 +78,6 @@ Note that the example contains placeholders, in this case a placeholder "url" in
 
 <img src="/guides/rest/postmanenvironment.png" alt="Postman environment setup" style="max-width: 50%">
 
-> A simple way to determine the correct value for the "auth" key is to use a web tool. Example: Assume your username is "me" and your password is "secret". Go to http://ostermiller.org/calc/encode.html, type "me:secret" into the text area, then click the "Encode" button in the row "Base 64". The resulting text is "bWU6c2VjcmV0". Use "Basic bWU6c2VjcmV0" as value for "auth".
+> A simple way to determine the correct value for the "auth" key is to use a web tool. Example: Assume your tenant name is "tenant", your username is "me" and your password is "secret". Go to http://ostermiller.org/calc/encode.html, type "tenant/me:secret" into the text area, then click the "Encode" button in the row "Base 64". The resulting text is "dGVuYW50L21lOnNlY3JldA==". Use "Basic dGVuYW50L21lOnNlY3JldA==" as value for "auth".
 
 Now start exploring the API.

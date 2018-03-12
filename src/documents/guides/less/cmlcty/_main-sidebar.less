@@ -132,12 +132,14 @@ body>.navigator {
     &:hover {
       color: @brand-complementary;
     }
-    &.active:hover {
-      color: white;
-    }
-    &.active{
-      margin-right: 20px;
-      color: white;
+  }
+
+  .active .link {
+    margin-right: 20px;
+    color: white;
+    &, &:hover {
+      color: white!important;
+    
       &:before{
         width: 100%;
       }
@@ -145,11 +147,9 @@ body>.navigator {
         left: 100%;
         border-width: 17px 0 17px 10px;
         border-left-color: @brand-complementary;
-        -webkit-transition: all .2s ease;
-        -o-transition: all .2s ease;
-        transition: all .2s ease
       }
     }
+    
   }
   .navigatorContent {
     position: absolute;
@@ -196,17 +196,6 @@ body>.navigator {
         &:not(.active):hover {
           background-color: transparent;
           color: @brand-complementary;
-          &:after {
-            display: none;
-          }
-        }
-        &.active {
-          &:before {
-            background-color: @brand-complementary;
-          }
-          &:after {
-            border-left-color: @brand-complementary;
-          }
         }
       }
       .subchildren {

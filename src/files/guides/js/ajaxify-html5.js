@@ -19,10 +19,10 @@
 		// Prepare Variables
 		var
 			/* Application Specific Variables */
-			contentSelector = '#content,article:first,.article:first,.post:first',
+			contentSelector = '.main-content',
 			$content = $(contentSelector).filter(':first'),
 			contentNode = $content.get(0),
-			$menu = $('#menu,#nav,nav:first,.nav:first').filter(':first'),
+			$menu = $('.navigator  #mainnav:first').filter(':first'),
 			activeClass = 'active selected current youarehere',
 			activeSelector = '.active,.selected,.current,.youarehere',
 			menuChildrenSelector = '> li,> ul > li',
@@ -167,9 +167,10 @@
 					});
 
 					// Complete the change
-					if ( $body.ScrollTo||false ) { $body.ScrollTo(scrollOptions); } /* http://balupton.com/projects/jquery-scrollto */
+					if ( $body.ScrollTo||false ) { console.log('scrolling'); $body.ScrollTo(scrollOptions); } /* http://balupton.com/projects/jquery-scrollto */
 					$body.removeClass('loading');
 					$window.trigger(completedEventName);
+					console.log('loaded');
 	
 					// Inform Google Analytics of the change
 					if ( typeof window._gaq !== 'undefined' ) {

@@ -15,6 +15,9 @@ docpadConfig = {
 				"/guides/js/bootstrap/transition.js",
 				"/guides/js/clipboard.js",
 				"/guides/js/zoom.min.js",
+				"/guides/js/jquery-scrollto.js",
+				"/guides/js/jquery.history.js",
+				"/guides/js/ajaxify-html5.js",
 				"/guides/js/docs-main.js"
 			]
 

@@ -76,13 +76,13 @@
   </nav>
     <gcse:searchresults ></gcse:searchresults>
   <!-- -->
-  <div class="navigator" >
+  <nav class="navigator" >
     <div class="sg-title text-center">
-      <a href="/guides">
+      <a href="/guides" class="no-ajaxy">
         <i class="c8y-icon c8y-icon-c8y" style="font-size: 120px;"></i>
       </a>
       <div class="dropdown text-left">
-        <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+        <a href="#" class="dropdown-toggle no-ajaxy" data-toggle="dropdown">
           <span class="current text-truncate" style="text-transform: none;">Guides</span>
         </a>
         <ul class="dropdown-menu">
@@ -92,7 +92,7 @@
               <% if page.id is @document.id then $first = 'active' %>
             <% end %>
             <li class="<%= $first %>">
-              <a href="/<%= section.folder %>" >
+              <a href="/<%= section.folder %>" class="no-ajaxy">
                 <span class="<%= section.icon %>"></span> <%= section.title %>
               </a>
             </li>
@@ -111,8 +111,8 @@
           <% end %>
         <% if $first is 'active' : %>
           <% for page in @getCollection("html").findAllLive({relativeOutDirPath: section.folder }, [ order: 1, title: 1 ] ).toJSON():%>
-            <li class="slot">
-              <a href="<%= page.url%>" title="<%= page.title %>" class="link <%= if page.id is @document.id then 'active' %>"> <%= page.title || 'no title' %></a>
+            <li class="slot <%= if page.id is @document.id then 'active' %>">
+              <a href="<%= page.url%>" title="<%= page.title %>" class="link "> <%= page.title || 'no title' %></a>
                 <% if page.collection : %>
 
                   <a href="javascript:void(0);" data-toggle="collapse" data-target="#sub-<%=page.basename %>"  <%= 'aria-expanded=true' if @document.url is page.url %>  style="font-size: 6px; margin-left: -14px;margin-right: 6px;"><i class="fa fa-chevron-right " ></i></a>
@@ -120,7 +120,7 @@
                 <ul id="sub-<%=page.basename %>" class="nav navbar-nav subchildren collapse <%= 'in' if @document.url is page.url %>" >
                   <% for subsubdocument in @getCollection("html").findAllLive({relativeOutDirPath: page.collection }, [ order: 1, title: 1 ] ).toJSON(): %>
                  <li class="">
-                    <a href="#<%= subsubdocument.basename %>" title="<%= subsubdocument.title %>" data-href="<%= @getUrl(subsubdocument) %>">
+                    <a class="no-ajaxy" href="#<%= subsubdocument.basename %>" title="<%= subsubdocument.title %>" data-href="<%= @getUrl(subsubdocument) %>">
                       <span><%= subsubdocument.title %></span>
                     </a>
                   </li>
@@ -133,10 +133,10 @@
       <% end %>
     </ul>
 
-    <div class="powered-by ng-scope">
+    <div class="powered-by">
       <p><small>&copy; Cumulocity <%- (new Date()).getFullYear() %></small></p>
     </div>
-  </div>
+  </nav>
 
   <div class="cover"></div>
     <!-- Content -->

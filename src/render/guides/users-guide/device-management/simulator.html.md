@@ -28,7 +28,7 @@ In the navigator, click "Simulator" in the "Devices" menu to open the "Simulator
 
 All simulators which you can access will be listed here. Click the menu icon at the top right of a simulator card to open a context menu from where you can edit, clone or remove a simulator.
 
-<img src="/guides/users-guide/DeviceManagement/DevMgmt_SimulatorCard.png" alt="Simulator card" style="max-width: 50%">
+<img src="/guides/images/users-guide/DeviceManagement/DevMgmt_SimulatorCard.png" alt="Simulator card" style="max-width: 50%">
 
 ### How to create a simulator
 
@@ -40,7 +40,7 @@ To set up a new simulator follow these steps:
 4. Select the number of instances for this simulator (up to ten).
 3. Click **Continue** to proceed to the next dialog.
 
-<img src="/guides/users-guide/addsim.png" alt="Add Simulator" style="max-width: 60%">
+<img src="/guides/images/users-guide/addsim.png" alt="Add Simulator" style="max-width: 60%">
 
 ### Instructions
 

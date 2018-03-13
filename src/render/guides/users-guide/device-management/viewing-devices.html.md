@@ -8,7 +8,7 @@ To view all devices connected to your account, click "All devices" in the "Devic
 
 A detailed device list will be displayed.
 
-<img src="/guides/users-guide/DeviceManagement/DevMgmt_DevicesList.png" alt="Device List" style="max-width: 100%">
+<img src="/guides/images/users-guide/DeviceManagement/DevMgmt_DevicesList.png" alt="Device List" style="max-width: 100%">
 
 
 ### <a name="device-list"></a>Device list
@@ -44,7 +44,7 @@ Our example shows a search for "Ublox C027".
 
 **Info**: Unlike filtering, the use of wildcards in a search is not supported.
 
-<img src="/guides/users-guide/DeviceManagement/DevMgmt_Search.png" alt="Device Management Search" style="max-width: 100%">
+<img src="/guides/images/users-guide/DeviceManagement/DevMgmt_Search.png" alt="Device Management Search" style="max-width: 100%">
 
 ### <a name="filtering-devices"></a>Filtering devices
 
@@ -52,11 +52,11 @@ The device list offers a filtering functionality to filter devices in the list f
 
 Filtering is available on every column. Just click the filter icon next to the name of the column you want to set a filter for. 
 
-<img src="/guides/users-guide/DeviceManagement/DevMgmt_Filtering.png" alt="Filtering" style="max-width: 100%">
+<img src="/guides/images/users-guide/DeviceManagement/DevMgmt_Filtering.png" alt="Filtering" style="max-width: 100%">
 
 A window will come up in which you can specify your filter options.
 
-<img src="/guides/users-guide/DeviceManagement/DevMgmt_FilteringOptions.png" alt="Filter Options" style="max-width: 50%">
+<img src="/guides/images/users-guide/DeviceManagement/DevMgmt_FilteringOptions.png" alt="Filter Options" style="max-width: 50%">
 
 Most columns represent text fields. You can filter these columns by simply entering an arbitrary text into the textbox as in the Search field. Click **+ Or** to add another textbox if you want to filter for more than one term. 
 

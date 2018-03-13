@@ -24,9 +24,8 @@ h1, h2, h3, h4, h5, h6,
 h1, .h1,
 h2, .h2,
 h3, .h3 {
-  margin-top: @line-height-computed;
-  margin-bottom: (@line-height-computed / 2);
-
+  margin-top: 64px;
+  margin-bottom: 32px;
   small,
   .small {
     font-size: 65%;
@@ -35,7 +34,7 @@ h3, .h3 {
 h4, .h4,
 h5, .h5,
 h6, .h6 {
-  margin-top: (@line-height-computed / 2);
+  margin-top: @line-height-computed;
   margin-bottom: (@line-height-computed / 2);
 
   small,
@@ -245,7 +244,7 @@ abbr[data-original-title] {
 
 // Blockquotes
 blockquote {
-  margin: 0 0 @line-height-computed;
+  margin: @line-height-computed 0 (@line-height-computed*2);
   padding: (@line-height-computed) @line-height-computed;
   border-radius: 3px;
   background-color: @alert-info-bg;

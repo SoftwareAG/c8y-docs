@@ -53,9 +53,8 @@
   <nav class="navbar navbar-default navbar-fixed-top ">
     <div class="container-fluid topnav-container">
     <ul class="nav navbar-nav navbar-left hidden-xs">
-      <li><a href="http://cumulocity.com">Cumulocity IoT</a></li>
-      <li><a href="http://cumulocity.com/guides">Guides and documentation</a></li>
-      <li><a href="http://writing.cumulocity.com">Writing guide</a></li>
+      <li><a class="no-ajaxy" href="http://cumulocity.com">Cumulocity IoT</a></li>
+      <li><a class="no-ajaxy" href="http://resources.cumulocity.com/documentation/jssdk/latest/#/api">Cumulocity Angular API</a></li>
     </ul>
     <ul class="nav navbar-nav navbar-right">
       <li>   <script>

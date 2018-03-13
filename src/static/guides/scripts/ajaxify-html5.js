@@ -102,18 +102,18 @@
 			e.preventDefault();
 			var State = History.getState().url.split('#'),
 			cur_url = window.location.href.split('#');
-			console.log('cur_url: ',cur_url[0],'\nState: ', State[0]);
+			//console.log('cur_url: ',cur_url[0],'\nState: ', State[0]);
 			if(cur_url[0].slice(-1)== '/') cur_url[0]= cur_url[0].slice(0, -1);
 			if(cur_url[0] == State[0]){
-				console.log('sameplace');
+				//console.log('sameplace');
 				if(cur_url[1] != State[1]){
 					$('#'+cur_url[1]).ScrollTo(scrollOptions);
 				}
 			}else{
-				console.log('different place');
+				//console.log('different place');
 				rootHash = cur_url[1];
 				var title = $('#mainnav').find('a[href="#'+rootHash+'"]').text();
-				console.log('roothash', rootHash);
+				//console.log('roothash', rootHash);
 				History.pushState(null,title,cur_url[0]);
 				//$window.trigger('statechange');
 			}
@@ -126,7 +126,7 @@
 				State = History.getState(),
 				url = State.url,
 				relativeUrl = url.replace(rootUrl,'');
-			console.log('statechange: ', url);
+			////console.log('statechange: ', url);
 			// Set Loading
 			$body.addClass('loading');
 

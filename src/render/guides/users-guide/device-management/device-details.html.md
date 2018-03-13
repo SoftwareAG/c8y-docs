@@ -8,7 +8,7 @@ For each device, detailed information is available. The kind of information actu
 
 To view detailed information on the device, click a device in the device list. 
 
-<img src="/guides/users-guide/DeviceManagement/DevMgmt_DeviceDetails.png" alt="Device details" style="max-width: 100%">
+<img src="/guides/images/users-guide/DeviceManagement/DevMgmt_DeviceDetails.png" alt="Device details" style="max-width: 100%">
 
 The device details are divided into tabs. The number of tabs is dynamic and depends on the available information, i.e. tabs are only displayed if the kind of information is available for the particular device. 
 
@@ -42,7 +42,7 @@ Below the name, a list of breadcrumbs is displayed. If the device is part of an 
 
 Depending of the type and usage of a device, further actions are provided in a context menu when clicking **More...** at the right of the top menu bar. 
 
-<img src="/guides/users-guide/DeviceManagement/DevMgmt_DevicesMoreMenu.png" alt="More menu" style="max-width: 50%">
+<img src="/guides/images/users-guide/DeviceManagement/DevMgmt_DevicesMoreMenu.png" alt="More menu" style="max-width: 50%">
 
 Details on these additional menu items are provided where required.
 
@@ -50,7 +50,7 @@ Details on these additional menu items are provided where required.
 
 The "Info" tab summarizes management-relevant device information in a dashboard.
 
-<img src="/guides/users-guide/DeviceManagement/DevMgmt_DeviceInfoDashboard.png" alt="Info dashboard" style="max-width: 100%">
+<img src="/guides/images/users-guide/DeviceManagement/DevMgmt_DeviceInfoDashboard.png" alt="Info dashboard" style="max-width: 100%">
 
 The information is provided on the following cards:
 
@@ -126,7 +126,7 @@ To manually add or edit a device configuration, follow these steps:
 3. In the text field you can add or edit the device configuration as desired.
 4. Click **Save** to save your edits.
 
-<img src="/guides/users-guide/textconfig.png" alt="Device details" style="max-width: 100%">
+<img src="/guides/images/users-guide/textconfig.png" alt="Device details" style="max-width: 100%">
 
 Alternatively, you can work with configuration snapshots. For details, refer to [Configuration snapshots](#configuration-snapshot).
 
@@ -151,7 +151,7 @@ To install a new firmware, click **Install firmware**, then select a firmware im
 
 Similarly, to install a software on the device, click **Install software**, select a software package from the [Software repository](#software-repo) and click **Install**. 
 
-<img src="/guides/users-guide/DeviceManagement/DevMgmt_software.png" alt="Software" style="max-width: 100%">
+<img src="/guides/images/users-guide/DeviceManagement/DevMgmt_software.png" alt="Software" style="max-width: 100%">
 
 Installing software and firmware usually includes a restart of the device. To monitor the progress of an installation, visit the "Control" tab.
 
@@ -183,7 +183,7 @@ In the upcoming window, specify the following settings for the log information:
 
 Click **Request log** to request the specified log information for the device.
 
-<img src="/guides/users-guide/DeviceManagement/DevMgmt_RequestLogs.png" alt="Request Logs" style="max-width: 100%">
+<img src="/guides/images/users-guide/DeviceManagement/DevMgmt_RequestLogs.png" alt="Request Logs" style="max-width: 100%">
 
 >Requesting a log from a device may take some time. 
 
@@ -249,13 +249,13 @@ Top-level groups are shown in the "Group" menu in the navigator at top-level. Su
 
 To display a list of all groups in the account, click "Groups" in the navigator. 
 
-<img src="/guides/users-guide/DeviceManagement/DevMgmt_GroupList.png" alt="Groups list" style="max-width: 100%">
+<img src="/guides/images/users-guide/DeviceManagement/DevMgmt_GroupList.png" alt="Groups list" style="max-width: 100%">
 
 For each group, the name and the number of children is displayed.
 
 Click a group to view its details. 
 
-<img src="/guides/users-guide/DeviceManagement/DevMgmt_GroupDetails.png" alt="Group details" style="max-width: 100%">
+<img src="/guides/images/users-guide/DeviceManagement/DevMgmt_GroupDetails.png" alt="Group details" style="max-width: 100%">
 
 **Info Tab**
 
@@ -271,7 +271,7 @@ In the **Info** tab, the following information is provided:
 
 In the "Sub-assets" tab you see a list of all devices assigned to the group. For each device, the name and the number of children is displayed.
 
-<img src="/guides/users-guide/DeviceManagement/DevMgmt_GroupSubAssets.png" alt="Sub-assets" style="max-width: 100%">
+<img src="/guides/images/users-guide/DeviceManagement/DevMgmt_GroupSubAssets.png" alt="Sub-assets" style="max-width: 100%">
 
 To assign a device to a group, click **Assign devices** at the right of the top menu bar (see [How to assign a device to an existing group](#assigning-devices)).
 
@@ -294,7 +294,7 @@ To create a new group follow these steps:
 
 >**Info:** A group can be created with "0" devices in it.
 
-<img src="/guides/users-guide/addtopgroup.png" alt="Device Management" style="max-width: 100%">
+<img src="/guides/images/users-guide/addtopgroup.png" alt="Device Management" style="max-width: 100%">
 
 ### <a name="assigning-devices"></a>How to assign a device to an existing group
 
@@ -306,7 +306,7 @@ From the device perspective:
 2. In the "Info" tab, scroll down to the "Groups assignment" card. In the drop-down field, select the group you want to assign the device to. 
 3. Click **Add to group**.
 
-<img src="/guides/users-guide/DeviceManagement/DevMgmt_GroupAssignment.png" alt="Add to group" style="max-width: 50%">
+<img src="/guides/images/users-guide/DeviceManagement/DevMgmt_GroupAssignment.png" alt="Add to group" style="max-width: 50%">
 
 From the group perspective:
 
@@ -315,7 +315,7 @@ From the group perspective:
 3. Checkmark the devices you want to add from the list.
 4. Click **Assign X device(s)** to assign the selected devices. 
 
-<img src="/guides/users-guide/DeviceManagement/DevMgmt_AssignDevices.png" alt="Assign devices to a group" style="max-width: 50%">
+<img src="/guides/images/users-guide/DeviceManagement/DevMgmt_AssignDevices.png" alt="Assign devices to a group" style="max-width: 50%">
 
 ### How to create a sub-group
 
@@ -333,7 +333,7 @@ For further information on permissions, see the [*Administration Guide*](/guides
 
 Smart groups are groups dynamically constructed based on filtering criteria. They have a temporary character because the group members can change constantly. Smart groups do not have fixed member listings.They have fixed criteria instead. This type of group can be used, for example, for bulk upgrades of devices of a certain type to a new software or firmware version.
 
-<img src="/guides/users-guide/smartfilters.png" alt="Adding top-level groups" style="max-width: 100%">
+<img src="/guides/images/users-guide/smartfilters.png" alt="Adding top-level groups" style="max-width: 100%">
 
 Smart groups can be created from the device list. 
 
@@ -342,17 +342,17 @@ Smart groups can be created from the device list.
 3. Click **Create smart group** at the right of the top menu bar.
 4. Enter a name for the group and click **Create**.
 
-<img src="/guides/users-guide/smartgroup1.png" alt="Create a smart group" style="max-width: 100%">
+<img src="/guides/images/users-guide/smartgroup1.png" alt="Create a smart group" style="max-width: 100%">
 
 The new group will appear as a top-level group in the "Groups" menu of the navigator. Smart groups can be distinguished by a small cogwheel in the folder icon. 
 
-<img src="/guides/users-guide/DeviceManagement/DevMgmt_SmartgroupIcon.png" alt="Smart groups" style="max-width: 100%">
+<img src="/guides/images/users-guide/DeviceManagement/DevMgmt_SmartgroupIcon.png" alt="Smart groups" style="max-width: 100%">
 
 In the "Sub-asset" tab you can adjust your selection and modify the filter settings.
 
 To delete a smart group, click the menu icon and from the context menu select **Delete**. 
 
-<img src="/guides/users-guide/smartgroupdelete1.png" alt="Adding top-level groups" style="max-width: 100%">
+<img src="/guides/images/users-guide/smartgroupdelete1.png" alt="Adding top-level groups" style="max-width: 100%">
 
 **Important**: Deleting a smart group is irreversible.
 

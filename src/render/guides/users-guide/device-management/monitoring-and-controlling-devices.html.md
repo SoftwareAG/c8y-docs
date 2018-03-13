@@ -13,7 +13,7 @@ Click **Map** in the "Devices" menu in the navigator to display a map showing al
 
 Devices are represented as "pins". Click a pin to see the name of the respective device. Click the device name to switch to the device details. 
 
-<img src="/guides/users-guide/DeviceManagement/DevMgmt_Map.png" alt="Device Map" style="max-width: 100%">
+<img src="/guides/images/users-guide/DeviceManagement/DevMgmt_Map.png" alt="Device Map" style="max-width: 100%">
 
 ### <a name="connection-monitoring"></a>Connection monitoring
 
@@ -25,7 +25,7 @@ To monitor the connections for multiple devices, open any device list.
 
 The connection status is represented by arrows in the "Status" column in the device list.
 
-<img src="/guides/users-guide/DeviceManagement/DevMgmt_ConnectionStatus.png" alt="Connection Status" style="max-width: 100%">
+<img src="/guides/images/users-guide/DeviceManagement/DevMgmt_ConnectionStatus.png" alt="Connection Status" style="max-width: 100%">
 
 **Send connections**
 
@@ -60,7 +60,7 @@ You can turn maintenance mode on or off for a device through a slider in the "Co
 
 To monitor the connections of a particular device, go to the "Info" tab of this device. Under "Device status", the connection status for the device is displayed. 
 
-<img src="/guides/users-guide/DeviceManagement/DevMgmt_DeviceInfoStatus.png" alt="Device Status" style="max-width: 50%">
+<img src="/guides/images/users-guide/DeviceManagement/DevMgmt_DeviceInfoStatus.png" alt="Device Status" style="max-width: 50%">
 
 Below the send connection and push connection status, the time of the last communication is displayed. 
 
@@ -72,7 +72,7 @@ If an interval is set, you will find the **Maintenance** slider below it.
 
 With the **Maintenance** slider you can turn the maintenance mode for the device on or off which is immediately reflected in the connection status. 
 
-<img src="/guides/users-guide/DeviceManagement/DevMgmt_DeviceInfoStatusMaintenance.png" alt="Device status maintenance" style="max-width: 50%">
+<img src="/guides/images/users-guide/DeviceManagement/DevMgmt_DeviceInfoStatusMaintenance.png" alt="Device status maintenance" style="max-width: 50%">
 
 >**Info**: Connection monitoring is not realtime. This means that the connection status will not change immediately when you switch off a device. Depending on your network, it may take about 20 minutes until a broken connection is discovered, since the network will retry sending data for a significant amount of time.
 
@@ -111,7 +111,7 @@ Cumulocity displays alarms at the level of individual devices and across all dev
 * Click "Alarms" in the "Overview" menu in the navigator, to check the alarms for all devices. 
 * Switch to the "Alarm" tab in the details of a particular device, to check the alarms of this specific device.
 
-<img src="/guides/users-guide/DeviceManagement/DevMgmt_AlarmDevice.png" alt="Alarms" style="max-width: 100%">
+<img src="/guides/images/users-guide/DeviceManagement/DevMgmt_AlarmDevice.png" alt="Alarms" style="max-width: 100%">
 
 By default, 
 

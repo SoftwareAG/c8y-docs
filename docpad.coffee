@@ -120,7 +120,7 @@ docpadConfig = {
 			redirects:
 				redirects
 		less:
-			referencesOthers: false
+			referencesOthers: true
 
 	ignoreHiddenFiles: true
 

@@ -39,7 +39,7 @@ $(document).ready(function () {
   $('.link').click(function(){
     var $this= $(this);
     $('.navigatorContent [data-toggle="collapse"]').each(function(){
-      if(!$(this).hasClass('collapsed')){
+      if(!$(this).parent().hasClass('current') && !$(this).hasClass('collapsed')){
         $(this).trigger('click');
       }
     });
@@ -47,7 +47,6 @@ $(document).ready(function () {
       if($this.parent().find('[data-toggle="collapse"]').hasClass('collapsed')){
         $this.parent().find('[data-toggle="collapse"]').trigger('click');
       }
-      //console.log('timeout', $this.find('[data-toggle="collapse"]'));
     }, 150);
   });
 
@@ -107,13 +106,14 @@ $(window).on('statechangecomplete', function(e){
       $(this).addClass('img-responsive').attr('data-action', 'zoom');
     });
 
-    // $('.subchildren a').each(function () {
-    //   if ($(this).closest('.slot').hasClass('current')) {
-    //     $(this).addClass('no-ajaxy').attr('href', $(this).attr('data-target'));
-    //   }else{
-    //     History.pushState(null,$(this).text(),$(this).attr('data-href'));
-    //   }
-    // });
+    $('.subchildren a').each(function () {
+      if (!$(this).closest('.slot').hasClass('current')) {
+        var $t = $(this).parent().find('[data-toggle="collapse"]');
+        if($t && !$t.hasClass('collapsed')){
+          $t.trigger('click');
+        }
+      }
+    });
 
     $('[data-spy="scroll"]').each(function () {
       var $spy = $(this).scrollspy('refresh')

@@ -33,7 +33,7 @@ There are two ways to add a SmartRest template:
 3. Enter a template name and a unique template ID (both mandatory fields). 
 4. Click **Import** to import the template.
 
-<img src="/guides/users-guide/DeviceManagement/DevMgmt_TemplateImport.png" alt="Import template" style="max-width: 50%">
+<img src="/guides/images/users-guide/DeviceManagement/DevMgmt_TemplateImport.png" alt="Import template" style="max-width: 50%">
 
 ### How to create a new SmartREST template
 
@@ -41,7 +41,7 @@ There are two ways to add a SmartRest template:
 2. In the upcoming window, enter a template name and a unique template ID (both mandatory fields). 
 4. Click **Continue** to proceed adding messages or responses.
 
-<img src="/guides/users-guide/DeviceManagement/DevMgmt_TemplateCreate.png" alt="Create template" style="max-width: 50%">
+<img src="/guides/images/users-guide/DeviceManagement/DevMgmt_TemplateCreate.png" alt="Create template" style="max-width: 50%">
 
 ### How to add a message
 
@@ -59,7 +59,7 @@ To add a new message, navigate to the "Messages" tab in your desired SmartREST t
 |REST API built-in fields|These fields are optional and vary depending on the target REST API selected. In case no value is provided, a device will be able to set it when sending an actual message.
 |REST API custom fields|Additional fields can be added by clicking **Add field**. Enter the API key and select the desired data type.
 
-<img src="/guides/users-guide/DeviceManagement/DevMgmt_TemplateMessage.png" alt="Message" style="max-width: 100%">
+<img src="/guides/images/users-guide/DeviceManagement/DevMgmt_TemplateMessage.png" alt="Message" style="max-width: 100%">
 
 In the Preview you can see the preview of your request message.
 
@@ -73,7 +73,7 @@ A response template contains the necessary information to extract data values fr
 
 To add a new response, navigate to the "Response" tab in your desired SmartREST template and click **Add response**. Complete the following fields:
 
-<img src="/guides/users-guide/DeviceManagement/DevMgmt_TemplateResponse.png" alt="Response" style="max-width: 100%">
+<img src="/guides/images/users-guide/DeviceManagement/DevMgmt_TemplateResponse.png" alt="Response" style="max-width: 100%">
 
 |Field|Description|
 |:---|:---|
@@ -104,4 +104,4 @@ To export a SmartREST template as CSV file follow these steps:
 1. In the upcoming window, specify the preferred options for the field separator, decimal separator and character set.
 1. Click **Download** to download the template as CSV file.
 
-<img src="/guides/users-guide/DeviceManagement/DevMgmt_TemplateExportCSV.png" alt="Export CSV" style="max-width: 50%">
+<img src="/guides/images/users-guide/DeviceManagement/DevMgmt_TemplateExportCSV.png" alt="Export CSV" style="max-width: 50%">

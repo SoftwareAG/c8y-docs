@@ -11,7 +11,7 @@ Click “Device protocols” in the “Device types” menu to access the “Dev
 
 In the “Device protocols”  page you will find a list with all device protocols available in your account.
 
-<img src="/guides/users-guide/DeviceManagement/DevMgmt_DeviceProtocols.png" alt="Device protocols" style="max-width: 100%">
+<img src="/guides/images/users-guide/DeviceManagement/DevMgmt_DeviceProtocols.png" alt="Device protocols" style="max-width: 100%">
 
 The device protocols list shows the following information on each device:
 

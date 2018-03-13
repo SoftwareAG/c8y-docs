@@ -97,6 +97,27 @@
 		
 		// Ajaxify our Internal Links
 		$body.ajaxify();
+		var rootHash = '';
+		History.Adapter.bind(window, 'anchorchange', function(e) {
+			e.preventDefault();
+			var State = History.getState().url.split('#'),
+			cur_url = window.location.href.split('#');
+			console.log('cur_url: ',cur_url[0],'\nState: ', State[0]);
+			if(cur_url[0].slice(-1)== '/') cur_url[0]= cur_url[0].slice(0, -1);
+			if(cur_url[0] == State[0]){
+				console.log('sameplace');
+				if(cur_url[1] != State[1]){
+					$('#'+cur_url[1]).ScrollTo(scrollOptions);
+				}
+			}else{
+				console.log('different place');
+				rootHash = cur_url[1];
+				var title = $('#mainnav').find('a[href="#'+rootHash+'"]').text();
+				console.log('roothash', rootHash);
+				History.pushState(null,title,cur_url[0]);
+				//$window.trigger('statechange');
+			}
+		});
 		
 		// Hook into State Changes
 		$window.bind('statechange',function(){
@@ -105,7 +126,7 @@
 				State = History.getState(),
 				url = State.url,
 				relativeUrl = url.replace(rootUrl,'');
-
+			console.log('statechange: ', url);
 			// Set Loading
 			$body.addClass('loading');
 
@@ -146,7 +167,7 @@
 
 					// Update the content
 					$content.stop(true,true);
-					$content.html(contentHtml).ajaxify().css('opacity',800); /* you could fade in here if you'd like */
+					$content.html(contentHtml).ajaxify().animate({opacity:1},800); /* you could fade in here if you'd like */
 
 					// Update the title
 					document.title = $data.find('.document-title:first').text();
@@ -167,10 +188,17 @@
 					});
 
 					// Complete the change
-					if ( $body.ScrollTo||false ) { console.log('scrolling'); $body.ScrollTo(scrollOptions); } /* http://balupton.com/projects/jquery-scrollto */
+					if(rootHash != ''){
+						setTimeout(function(){
+							$('#'+rootHash).ScrollTo(scrollOptions);
+							rootHash = '';
+						}, 200); 
+					}else{
+						$body.ScrollTo(scrollOptions);
+					}
 					$body.removeClass('loading');
 					$window.trigger(completedEventName);
-					//$('.to-the-top').trigger('click');
+				
 	
 					// Inform Google Analytics of the change
 					if ( typeof window._gaq !== 'undefined' ) {

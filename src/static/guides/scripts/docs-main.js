@@ -51,22 +51,12 @@ $(document).ready(function () {
     }, 150);
   });
 
-  // $('.subchildren a').click(function(e){
-  //   if (!$(this).closest('.slot').hasClass('current')) {
-  //     History.pushState(null,$(this).text(),$(this).attr('data-href'));
-  //     window.location.hash = $(this).attr('href');
-  //     console.log('hash: ', window.location.hash);
-  //     setTimeout(function() {
-  //       $(window.location.hash).ScrollTo({
-  //         duration: 300,
-  //         easing:'swing'
-  //       });
-  //     }, 300);
-  //     e.preventDefault();
-  //    // window.location=$(this).attr('data-href');
-  //   }
-
-  // });
+  $('.subchildren a').click(function(e){
+    if (!$(this).closest('.slot').hasClass('current')) {
+      e.preventDefault();
+      History.pushState(null, $(this).text(),$(this).attr('data-href'));
+    }
+  });
 
   $(window).trigger('statechangecomplete');
 

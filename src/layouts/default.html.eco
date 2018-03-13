@@ -120,7 +120,7 @@
                 <ul id="sub-<%=page.basename %>" class="nav navbar-nav subchildren collapse <%= 'in' if @document.url is page.url %>" >
                   <% for subsubdocument in @getCollection("html").findAllLive({relativeOutDirPath: page.collection }, [ order: 1, title: 1 ] ).toJSON(): %>
                  <li>
-                    <a href="#<%= subsubdocument.basename %>" title="<%= subsubdocument.title %>" data-href="<%= page.url %>#<%= subsubdocument.basename %>">
+                    <a href="#<%= subsubdocument.basename %>" data-target="#<%= subsubdocument.basename %>" title="<%= subsubdocument.title %>" data-href="<%= page.url %>#<%= subsubdocument.basename %>">
                       <span><%= subsubdocument.title %></span>
                     </a>
                   </li>

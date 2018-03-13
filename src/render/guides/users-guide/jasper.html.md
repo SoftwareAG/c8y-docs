@@ -8,7 +8,7 @@ layout: default
 
 The Jasper Control Center Add-On to Cumulocity provides you with a holistic view of mobile device connectivity. This Add-On works from within the Cumulocity Device Management Application. While Cumulocity itself communicates directly with devices and shows connectivity information as reported by the device, the Jasper Control Center Add-On complements this with a view of connectivity.
 
-<img src="/guides/users-guide/jasperarchitecture.png" alt="Jasper architecture"  style="max-width: 100%">
+<img src="/guides/images/users-guide/jasperarchitecture.png" alt="Jasper architecture"  style="max-width: 100%">
 
 If you have a Jasper Control Center account with your network provider, you can link that account to your Cumulocity tenant. With this combination you can:
 
@@ -65,7 +65,7 @@ Now change to the Device Management application and navigate to a device that is
 
 To assign permissions, navigate to the administration application and select "Read" or "Admin" permissions on "Connectivity" as shown below.
 
-<img src="/guides/users-guide/connectivityperms.png" alt="Connectivity permission settings"  style="max-width: 80%">
+<img src="/guides/images/users-guide/connectivityperms.png" alt="Connectivity permission settings"  style="max-width: 80%">
 
 Jasper Control Center identifies SIM cards through their ICCID ("integrated circuit card identifier"). In most cases,  devices will report the ICCID of their SIM card automatically to Cumulocity. If the ICCID is not shown:
 

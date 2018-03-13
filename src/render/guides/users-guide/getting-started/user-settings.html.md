@@ -8,7 +8,7 @@ Several account settings can be changed by the user.
 
 Click the **User** button at the top right and from the context menu, select **User Settings**. 
 
-<img src="/guides/users-guide/Overview/Overview_UserSettings.png" alt="User settings"  style="max-width: 60%">
+<img src="/guides/images/users-guide/Overview/Overview_UserSettings.png" alt="User settings"  style="max-width: 60%">
 
 In addition to changing the email address, name and phone number stored for your account you can modify the language of the user interface from here. 
 

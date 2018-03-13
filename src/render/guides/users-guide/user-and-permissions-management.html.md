@@ -80,7 +80,7 @@ Click **Save** to create the user.
 
 Click the menu icon at the right of a user entry to open a context menu which provides further functionalities.
 
-<img src="/guides/users-guide/Admin_UserContextMenu.png" alt="Context menu" style="max-width: 100%">
+<img src="/guides/images/users-guide/Admin_UserContextMenu.png" alt="Context menu" style="max-width: 100%">
 
 > **Info:** You need a role with user management permission to perform these options.
 
@@ -110,7 +110,7 @@ Click "Roles" in the "Account" menu to display a list of configured roles.
 
 In the "Global roles" tab you can find the roles which grant permissions on a general level. There are several default global roles defined, but you can define your own according to your needs. 
 
-<img src="/guides/users-guide//Admin_GlobalRoles.png" alt="Context menu" style="max-width: 100%">
+<img src="/guides/images/users-guide//Admin_GlobalRoles.png" alt="Context menu" style="max-width: 100%">
 
 The roles "admins" and "devices" have a special status:
 
@@ -212,7 +212,7 @@ Inventory roles contain permissions that you can assign to groups of devices. Fo
 
 To view the currently configured inventory roles, click "Roles" in the "Account" menu and switch to the "Inventory roles" tab.
 
-<img src="/guides/users-guide/Admin_InventoryRoles.png" alt="Context menu" style="max-width: 100%">
+<img src="/guides/images/users-guide/Admin_InventoryRoles.png" alt="Context menu" style="max-width: 100%">
 
 In the "Inventory roles" tab you can manage user permissions for particular groups and/or its children. There are several default inventory roles defined, but you can define your own according to your needs. 
 
@@ -266,15 +266,15 @@ In the "Permission" field, select a permission level from the dropdown list:
 * Change - to modify objects (does not include "read" permission)
 * All - to read AND modify objects
 
-<img src="/guides/users-guide/showperm.png" alt="Role permissions" style="max-width: 50%">
+<img src="/guides/images/users-guide/showperm.png" alt="Role permissions" style="max-width: 50%">
 
 >**Important:** When you add a permission, you may see a small exclamation mark. The exclamation mark indicates that the permission that you have just added is not effective, because another, "higher" permission set for the user already includes the respective permission. Check if you have set, for example, "Full access" or if there is another permission in the same section with "*" as type and "All" as permission.
 
-<img src="/guides/users-guide/overriddenperm.png" alt="warning message" style="max-width: 50%">
+<img src="/guides/images/users-guide/overriddenperm.png" alt="warning message" style="max-width: 50%">
 
 As another example, assume that you are using tracking devices. You want to allow your user to see all devices, but not to change anything. In addition, the user should be able to follow tracks of devices on a map. Tracks are recorded using an event with fragment type "c8y&#95;Position" (see [Sensor library](/guides/reference/sensor-library)). To do so, assign read permission on inventory as well as on events with type "c8y&#95;Position" as shown in the image below.
 
-<img src="/guides/users-guide/permexample.png" alt="Permission example" style="max-width: 50%">
+<img src="/guides/images/users-guide/permexample.png" alt="Permission example" style="max-width: 50%">
 
 ### <a name="attach-inventory"></a>Assigning inventory roles to users
 
@@ -294,7 +294,7 @@ If a user has inventory access to a group of devices, the user will also have th
 
 You can also copy inventory roles from another user. To copy roles, click **Copy inventory roles from another user**. In the upcoming window, select a user from the list and click **Copy**. At the top you can select if you want to merge the roles with the existing user roles (the default) or if you want to replace the existing user roles. Copying roles makes it easier to manage the permissions of many users as you can create a reference user and then copy the permissions from there.
 
-<img src="/guides/users-guide/copyroles.png" alt="Copy roles" style="max-width: 50%">
+<img src="/guides/images/users-guide/copyroles.png" alt="Copy roles" style="max-width: 50%">
 
 ### <a name="app-access"></a>Granting application access
 

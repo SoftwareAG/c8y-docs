@@ -87,7 +87,7 @@ In the "Properties" tab, all fields are editable except of the ID and the admini
 
 In the "Applications" tab you can subscribe tenants to applications or remove the applications from the tenant. By default, tenants will be subscribed to the standard Cumulocity applications. 
 
-<img src="/guides/users-guide/administration/Admin_SubtenantApplications.png" alt="Subscribe tenant" style="max-width: 100%">
+<img src="/guides/images/users-guide/administration/Admin_SubtenantApplications.png" alt="Subscribe tenant" style="max-width: 100%">
 
 To subscribe an application to a tenant, hover over the applications under "Available applications" on the right and click **Subscribe** on the desired application.
 
@@ -146,7 +146,7 @@ You can filter the usage statistics list for a time period by adding the start a
 
 Click Export CSV at the right of the top menu bar to export the current view of the statistics table to a CSV file. A dialog will come up in which you can customize the CSV output.
 
-<img src="/guides/users-guide/usage-statistics-export.PNG" style="width:400px;"></img>
+<img src="/guides/images/users-guide/usage-statistics-export.PNG" style="width:400px;"></img>
 
 
 ### <a name="tenant-policies"></a> Tenant policies
@@ -161,7 +161,7 @@ Creating a tenant policy with a specific set of options and rules saves time whe
 
 Click "Tenant policies" in the "Tenants" menu to view all tenant policies available.
 
-<img src="/guides/users-guide/administration/admin_TenantPolicies.png" alt="Tenant policies" style="max-width: 100%">
+<img src="/guides/images/users-guide/administration/admin_TenantPolicies.png" alt="Tenant policies" style="max-width: 100%">
 
 For each tenant policy, the name, an optional description and the number of options and retention rules is provided, either in a list or a grid.
 
@@ -253,7 +253,7 @@ Data broker lets you share data selectively with other tenants. You can share:
 
 Navigate to "Data connectors" if you would like to send data to another tenant. Navigate to "Data subscriptions", if you would like to receive data from another tenant.
 
-<img src="/guides/users-guide/data-broker-on-navigator.PNG" alt="Data broker menus" style="max-width: 25%">
+<img src="/guides/images/users-guide/data-broker-on-navigator.PNG" alt="Data broker menus" style="max-width: 25%">
 
 >**Info**: Devices that are forwarded using the data broker are charged like normal devices in the destination tenant.
 
@@ -326,7 +326,7 @@ In the "Data subscriptions" page, you can manage existing data subscriptions or 
 
 Click "Data subscriptions" to see a list of all currently defined data forwarded to your tenant. 
 
-<img src="/guides/users-guide/Administration/Admin_Subscriptions.png" alt="Data subscriptions" style="max-width: 25%">
+<img src="/guides/images/users-guide/Administration/Admin_Subscriptions.png" alt="Data subscriptions" style="max-width: 25%">
 
 For each subscription, the name, the target tenant and the status (enabled or disabled) is provided on a card.
 
@@ -355,7 +355,7 @@ In the "Branding" tab you can fully customize the look of your tenants to your o
 
 The branding feature allows you to edit the logos and colors used throughout the platform. Once your branding settings are saved, all subtenants are automatically updated. 
 
-<img src="/guides/users-guide/administration/admin_Branding.png" alt="Branding tab" style="max-width: 100%">
+<img src="/guides/images/users-guide/administration/admin_Branding.png" alt="Branding tab" style="max-width: 100%">
 
 **General**
 
@@ -377,7 +377,7 @@ Under “Navigator logo” you can provide the “Navigator logo” and set the 
 
 In the “Type” section you specify the font settings for your branded version. 
 
-<img src="/guides/users-guide/administration/admin_BrandingType.png" alt="Branding type" style="max-width: 100%">
+<img src="/guides/images/users-guide/administration/admin_BrandingType.png" alt="Branding type" style="max-width: 100%">
 
 You can choose your base and headings font, and select an option for the navigator font (either same as base or same as headings font). You may also add a link to existing remote fonts to be used.
 
@@ -385,7 +385,7 @@ You can choose your base and headings font, and select an option for the navigat
 
 In the “Colors” section you specify the colors to be used in your branding version.
 
-<img src="/guides/users-guide/administration/admin_BrandingColor.png" alt="Branding color" style="max-width: 100%">
+<img src="/guides/images/users-guide/administration/admin_BrandingColor.png" alt="Branding color" style="max-width: 100%">
 
 The following parameters can be specified by providing a hex, rgb or rgba value:
 
@@ -399,7 +399,7 @@ The following parameters can be specified by providing a hex, rgb or rgba value:
 
 In the “Top bar” section you specify the parameters for the top bar.
 
-<img src="/guides/users-guide/administration/admin_BrandingTopbar.png" alt="Branding topbar" style="max-width: 100%">
+<img src="/guides/images/users-guide/administration/admin_BrandingTopbar.png" alt="Branding topbar" style="max-width: 100%">
 
 The following parameters can be specified by providing a hex, rgb or rgba value:
 
@@ -411,7 +411,7 @@ The following parameters can be specified by providing a hex, rgb or rgba value:
 
 In the “Navigator" section you specify the parameters for the navigator.
 
-<img src="/guides/users-guide/administration/admin_BrandingTopbar.png" alt="Branding top bar" style="max-width: 100%">
+<img src="/guides/images/users-guide/administration/admin_BrandingTopbar.png" alt="Branding top bar" style="max-width: 100%">
 
 The following parameters can be specified by providing a hex, rgb or rgba value:
 
@@ -441,13 +441,13 @@ The following image shows and an example where
 * the top bar “Background color” is green,
 * the navigator “Background color” is pink. 
 
-<img src="/guides/users-guide/administration/admin_BrandingColored.png" alt="Branding example" style="max-width: 100%">
+<img src="/guides/images/users-guide/administration/admin_BrandingColored.png" alt="Branding example" style="max-width: 100%">
 
 ### <a name="domain-name"></a>Domain name
 
 In the “Domain name” tab you can activate your own custom domain name.  
 
-<img src="/guides/users-guide/administration/admin_DomainName.png" alt="Domain name" style="max-width: 100%">
+<img src="/guides/images/users-guide/administration/admin_DomainName.png" alt="Domain name" style="max-width: 100%">
 
 First you have to upload the appropriate certificate by clicking **Upload Certificate**. Make sure that
 
@@ -510,7 +510,7 @@ In the following two fields provide an e-mail template to be used on password ch
 
 In the "E-mail server" section you can provide the "Protocol", "Host", "Port", "Username", "Password" and "Sender Address" for the e-mail server.
 
-<img src="/guides/users-guide/administration/admin_ConfigurationServer.png" alt="Configure e-mail server" style="max-width: 100%">
+<img src="/guides/images/users-guide/administration/admin_ConfigurationServer.png" alt="Configure e-mail server" style="max-width: 100%">
 
 In the "Data export" section you can set the e-mail subject and e-mail template for data export and specify the “User unauthorized error message”.
 
@@ -520,7 +520,7 @@ In the "Storage limit" section you can specify the e-mail subject and e-mail tem
 
 In the "Suspending tenants" section you can provide settings for emails being send on tenant suspension. 
 
-<img src="/guides/users-guide/administration/admin_ConfigurationSuspended.png" alt="Suspended tenants" style="max-width: 100%">
+<img src="/guides/images/users-guide/administration/admin_ConfigurationSuspended.png" alt="Suspended tenants" style="max-width: 100%">
 
 At the top you can select if you want to send the e-mail to the suspended tenant's administrator and specify an additional e-mail receiver. Below you set the subject and template for the tenant suspended e-mail.
 

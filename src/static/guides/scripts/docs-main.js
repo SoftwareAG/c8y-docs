@@ -20,6 +20,9 @@ $(document).ready(function () {
   // set title for current section
   $('.sg-title .dropdown-toggle').attr('title',$.trim($('.sg-title .dropdown-menu .active a').text())).find('.current').html($('.sg-title .dropdown-menu .active a').text() + '<span class="caret"></span>');
 
+
+
+
   // sidebar
 
   $('.sidebar-toggle').click(function(){
@@ -103,17 +106,25 @@ $(window).on('statechangecomplete', function(e){
     //console.log('event triggered', e);
   // set zomm in every image
     $('img').each(function(){
-      $(this).addClass('img-responsive').attr('data-action', 'zoom');
-    });
-
-    $('.subchildren a').each(function () {
-      if (!$(this).closest('.slot').hasClass('current')) {
-        var $t = $(this).parent().find('[data-toggle="collapse"]');
-        if($t && !$t.hasClass('collapsed')){
-          $t.trigger('click');
-        }
+      if($(this).closest('table').length < 1){
+        $(this).addClass('img-responsive').attr('data-action', 'zoom');
       }
     });
+
+    
+    setTimeout(function(){
+      $('.subchildren a').each(function () {
+        if (!$(this).closest('.slot').hasClass('current')) {
+          var $t = $(this).parent().find('[data-toggle="collapse"]');
+          if($t && !$t.hasClass('collapsed')){
+            $t.trigger('click');
+          }
+        }
+      });
+    }, 350);
+    
+    // no ajaxy in every link inside main-content
+    $('.main-content a').addClass('no-ajaxy');
 
     $('[data-spy="scroll"]').each(function () {
       var $spy = $(this).scrollspy('refresh')

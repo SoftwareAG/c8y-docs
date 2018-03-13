@@ -53,7 +53,7 @@ In order to replace your credentials, click the "Replace credentials" button.
 
 Enter your profile ID, username, password and application EUI. For an explanation of the terms "profile ID" and "application EUI", refer to section [Creating new account credentials](#create-new-credentials) above.
 
-<img src="/guides/users-guide/actility/providerCredentials2.png" alt="Account credentials" style="max-width: 100%">
+<img src="/guides/images/users-guide/actility/providerCredentials2.png" alt="Account credentials" style="max-width: 100%">
 
 Click "Save". Your old credentials will now be replaced with the new ones. 
 
@@ -67,7 +67,7 @@ In the Device database window, click the "Import" button.
 
 Select the predefined device type, for example "LoRaWAN Demonstrator". Click "Import".
 
-<img src="/guides/users-guide/actility/deviceDatabaseImport.png" alt="Import a predefined device type" style="max-width: 60%">
+<img src="/guides/images/users-guide/actility/deviceDatabaseImport.png" alt="Import a predefined device type" style="max-width: 60%">
 
 Alternatively you may also load the device type from a file and import it.
 
@@ -75,7 +75,7 @@ Alternatively you may also load the device type from a file and import it.
 
 In the device database window, click the "New" button. The following window will open:
 
-<img src="/guides/users-guide/actility/deviceDatabase-createNew.png" alt="Create new device type" style="max-width: 100%">
+<img src="/guides/images/users-guide/actility/deviceDatabase-createNew.png" alt="Create new device type" style="max-width: 100%">
 
 Select "LoRa" as the device type and name your device type. 
 
@@ -88,19 +88,19 @@ Select the way the message type is encoded in the "Source" dropdown box:
 
 In the following example payload structure, the first byte indicates the message type source (as highlighted).
 
-<img src="/guides/users-guide/actility/payload-example1.png" alt="Example payload: message type source" style="max-width: 100%">
+<img src="/guides/images/users-guide/actility/payload-example1.png" alt="Example payload: message type source" style="max-width: 100%">
 
 In the user interface you can enter this type of message type source information as follows: Indicate in the "Start bit" field where the message type information starts in the payload and how long this information is in the "Number of bits" field, for example start bit = "0" and number of bits = "8".
 
-<img src="/guides/users-guide/actility/messagetype-payload.png" alt="Message type payload" style="max-width: 100%">
+<img src="/guides/images/users-guide/actility/messagetype-payload.png" alt="Message type payload" style="max-width: 100%">
 
 Click the "Add" button to create the value configuration. 
 
-<img src="/guides/users-guide/actility/deviceDatabase1a.png" alt="Device type: new" style="max-width: 100%">
+<img src="/guides/images/users-guide/actility/deviceDatabase1a.png" alt="Device type: new" style="max-width: 100%">
 
 A window similar to the following one will open. Configure the relevant values as shown in this example. 
 
-<img src="/guides/users-guide/actility/deviceDatabase4.png" alt="Value configuration: new" style="max-width: 60%">
+<img src="/guides/images/users-guide/actility/deviceDatabase4.png" alt="Value configuration: new" style="max-width: 60%">
 
 The value configuration maps the value in the payload of a message type to the Cumulocity data. 
 
@@ -108,9 +108,9 @@ Configure the "Message ID" according to your device message specification and ma
 
 In this example payload structure the message ID is "1".
 
-<img src="/guides/users-guide/actility/payload-example2.png" alt="Example payload: message type source" style="max-width: 100%">
+<img src="/guides/images/users-guide/actility/payload-example2.png" alt="Example payload: message type source" style="max-width: 100%">
 
-<img src="/guides/users-guide/actility/deviceDatabase4a.png" alt="Value configuration: message type" style="max-width: 60%">
+<img src="/guides/images/users-guide/actility/deviceDatabase4a.png" alt="Value configuration: message type" style="max-width: 60%">
 
 Fill in the general fields for your new value in order to categorize it in the "Values" list. The associated "Name" for this value will be displayed under the "Display category" given.
 
@@ -118,9 +118,9 @@ Under "Value selection" define from where the value should be extracted. In orde
 
 In this example the "Channel 1 Type" information starts in byte 2 (i.e. start bit = "16") and is 1 byte long (i.e. number of bits = "8").
 
-<img src="/guides/users-guide/actility/payload-example3.png" alt="Example payload: value selection" style="max-width: 100%">
+<img src="/guides/images/users-guide/actility/payload-example3.png" alt="Example payload: value selection" style="max-width: 100%">
 
-<img src="/guides/users-guide/actility/deviceDatabase4b.png" alt="Value selection" style="max-width: 60%">
+<img src="/guides/images/users-guide/actility/deviceDatabase4b.png" alt="Value selection" style="max-width: 60%">
 
 The hexadecimal value is converted to a decimal number and afterwards a "value normalisation" is applied.
 
@@ -153,7 +153,7 @@ After clicking "Save", your device type is created with the values you defined.
 
 The following picture shows an example for a message which sends a measurement when this value (the battery level) changes. 
 
-<img src="/guides/users-guide/actility/deviceDatabase2.png" alt="Value configuration in detail: measurement" style="max-width: 50%">
+<img src="/guides/images/users-guide/actility/deviceDatabase2.png" alt="Value configuration in detail: measurement" style="max-width: 50%">
 
 
 **<a name="nested-structure-example"></a>Example with nested structure**
@@ -162,9 +162,9 @@ The following picture shows an example of a nested structure for a device type r
 
 The "Message ID" should be the same for all the values. Enter the rest of the parameters according to the instructions above. Enter "c8y_Position" in the "Managed object fragment" field and create a new value for each: longitude and latitude. 
 
-<img src="/guides/users-guide/actility/deviceDatabase5-lon.png" alt="Value creation: Longitude-nested" style="max-width: 60%">
+<img src="/guides/images/users-guide/actility/deviceDatabase5-lon.png" alt="Value creation: Longitude-nested" style="max-width: 60%">
 
-<img src="/guides/users-guide/actility/deviceDatabase5-lat.png" alt="Value creation: Latitude-nested" style="max-width: 60%">
+<img src="/guides/images/users-guide/actility/deviceDatabase5-lat.png" alt="Value creation: Latitude-nested" style="max-width: 60%">
 
 This will be the result: 
 
@@ -205,7 +205,7 @@ You can deprovision a LoRa device in the ThingPark platform. This means that the
 
 To deprovision a device, go to the Device Management application and navigate to the device you want to deprovision. Click the cogwheel and select "Deprovision device".
 
-<img src="/guides/users-guide/actility/deprovisionDevice.png" alt="Device deprovisioning" style="max-width: 100%">
+<img src="/guides/images/users-guide/actility/deprovisionDevice.png" alt="Device deprovisioning" style="max-width: 100%">
 
 After confirming the deprovisioning, the device will be deprovisioned in ThingPark.
  
@@ -214,13 +214,13 @@ After confirming the deprovisioning, the device will be deprovisioned in ThingPa
 In order to send an operation, go to the Device Management application and navigate to the device you want to send an operation to. Click the "Shell" tab.
 
 In the following screenshot you can find some examples of a specific device type's predefined commands and their format.
-<img src="/guides/users-guide/actility/predefinedcommands.png" alt="Predefined commands" style="max-width: 100%"> 
+<img src="/guides/images/users-guide/actility/predefinedcommands.png" alt="Predefined commands" style="max-width: 100%"> 
 
 Enter the shell command or view/edit the predefined command in the ">_Command" field. 
 
 If you enter the command without defining a port, it will be sent to the default target port (i. e. 1) of the device. If you enter the command and define a port (format "command:port"), it will be sent to the specified target port instead of the default port. 
 
-<img src="/guides/users-guide/actility/portConfiguration.png" alt="Port configuration" style="max-width: 100%">
+<img src="/guides/images/users-guide/actility/portConfiguration.png" alt="Port configuration" style="max-width: 100%">
 
 Click "Execute". The operation will be sent to the device. The timing depends on Actility ThingPark.
 

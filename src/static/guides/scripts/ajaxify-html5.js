@@ -99,6 +99,7 @@
 		$body.ajaxify();
 		var rootHash = '';
 		History.Adapter.bind(window, 'anchorchange', function(e) {
+			console.log('====>', e);
 			e.preventDefault();
 			var State = History.getState().url.split('#'),
 			cur_url = window.location.href.split('#');
@@ -107,7 +108,7 @@
 			if(cur_url[0] == State[0]){
 				//console.log('sameplace');
 				if(cur_url[1] != State[1]){
-					$('#'+cur_url[1]).ScrollTo(scrollOptions);
+					$('#'+cur_url[1]+', [name="'+cur_url[1]+'"]').ScrollTo(scrollOptions);
 				}
 			}else{
 				//console.log('different place');

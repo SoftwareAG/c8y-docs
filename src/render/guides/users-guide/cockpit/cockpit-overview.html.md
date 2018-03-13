@@ -8,7 +8,7 @@ layout: redirect
 
 The following sections will walk you through all functionalities of the Cockpit application in detail.
 
-If you want to learn more about general aspects of the Cumulocity platform and its applications, refer to [Getting Started](/guides/users-guide/overview).
+If you want to learn more about general aspects of the Cumulocity platform and its applications, refer to [Getting Started](/guides/users-guide/getting-started).
 
 ### <a name="home"></a>Home dashboard
 

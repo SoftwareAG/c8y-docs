@@ -97,9 +97,9 @@
 		
 		// Ajaxify our Internal Links
 		$body.ajaxify();
+
 		var rootHash = '';
 		History.Adapter.bind(window, 'anchorchange', function(e) {
-			console.log('====>', e);
 			e.preventDefault();
 			var State = History.getState().url.split('#'),
 			cur_url = window.location.href.split('#');
@@ -165,8 +165,23 @@
 					$menuChildren.filter(activeSelector).removeClass(activeClass);
 					$menuChildren = $menuChildren.has('a[href^="'+relativeUrl+'"],a[href^="/'+relativeUrl+'"],a[href^="'+url+'"]');
 					if ( $menuChildren.length === 1 ) { $menuChildren.addClass(activeClass); }
-
-					// Update the content
+					setTimeout(function(){
+						console.log('check');
+						$('.slot a').each(function(){
+							var $this = $(this);
+							var bt = $this.parent().find('[data-toggle="collapse"]');
+							if($this.closest('.slot').hasClass('current')){
+								if(bt.hasClass('collapsed')){
+									bt.trigger('click');
+								}
+							}else{
+								if(bt && !bt.hasClass('collapsed')){
+									bt.trigger('click');
+								}
+							}
+						});
+					}, 200);
+						// Update the content
 					$content.stop(true,true);
 					$content.html(contentHtml).ajaxify().animate({opacity:1},800); /* you could fade in here if you'd like */
 

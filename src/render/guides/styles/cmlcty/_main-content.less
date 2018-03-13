@@ -30,14 +30,18 @@
 
 // section header - renders in every page
 .section-header {
-  margin: -40px -40px 40px;
-  padding: 40px 60px;
   border-top-left-radius: 30px;
   border-top-right-radius: 30px;
   background-color: @brand-primary;
   color: white;
-
+  margin: -20px -20px 40px;
+  padding: 20px;
+  
   #gradient>.horizontal( #069214, @brand-complementary);
+  @media(min-width: @grid-float-breakpoint) {
+    margin: -40px -40px 40px;
+    padding: 40px 60px;
+  }
   img {
     margin-right: 10px;
     min-width: 70px;

@@ -41,11 +41,13 @@ $(document).ready(function () {
 
   $('.link').click(function(){
     var $this= $(this);
-    $('.navigatorContent [data-toggle="collapse"]').each(function(){
-      if(!$(this).parent().hasClass('current') && !$(this).hasClass('collapsed')){
-        $(this).trigger('click');
-      }
-    });
+    
+      $('.navigatorContent [data-toggle="collapse"]').each(function(){
+        if(!$(this).hasClass('collapsed')){
+          $(this).trigger('click');
+        }
+      });
+ 
     setTimeout(function(){
       if($this.parent().find('[data-toggle="collapse"]').hasClass('collapsed')){
         $this.parent().find('[data-toggle="collapse"]').trigger('click');

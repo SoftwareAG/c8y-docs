@@ -205,7 +205,9 @@ Example response:
 |bulkOperationId|String|1|Reference to bulkOperationId, if this operation was scheduled from Bulk Operation|No|
 |status|String|1|Operation status, can be one of SUCCESSFUL, FAILED, EXECUTING or PENDING.|POST: No PUT: Mandatory|
 |failureReason|String|0..1|Reason for the failure.|No|
-|\*|Object|1..n|Additional properties describing the operation which will be performed on the device.|POST: Mandatory PUT: No|
+|\*|Object|1..n|Additional properties describing the operation which will be performed on the device.|POST: Optional PUT: Optional|
+
+> **Note**: failureReason is optional only when the PUT status is "failed".
 
 An "ExternalID" embedded in the "deviceExternalIDs" collection contains the properties "type" and "externalId".
 

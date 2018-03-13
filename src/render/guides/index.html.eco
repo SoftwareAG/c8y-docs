@@ -1,0 +1,36 @@
+---
+title: "Home"
+layout: "homepage"
+---
+
+<div class="home-pic" style="background-image:url('/guides/images/cover2.jpg');"></div>
+<div class="home-content flex-row">
+  <div class="col-sm-6">
+    <div class="text-right">
+      <div class="text-left" style="display:inline-block;">
+        <img src="/guides/images/cumulocity-logo.svg" alt="Cumulocity" style="max-width: 230px; margin: 0 0  30px;">
+        <h1>Guides</h1>
+        <p class="lead" style="margin-bottom: 10vh;"><strong>Cumulocity IoT platform</strong><br>
+        <small><small><small>Last update: <%= @site.date.toDateString() %></small></small></small></p>
+      </div>
+    </div>
+  </div>
+
+  <div class="col-sm-4 home-side-bar">
+    
+     <% for section in @sections:%>
+        <% for page in @getCollection("html").findAllLive({relativeOutDirPath: section.folder }, [ order: 1, title: 1 ] ).toJSON():%>
+         <a href="<%= page.url%>" class=" side-bar-btn no-ajaxy" >
+            <span style="display: inline-block; vertical-align: bottom; margin-right: 10px; font-size: 24px; line-height:1;"><span class="<%= section.icon%>"></span></span>
+            <span class="h3"><%= section.title %></span>
+            <p class="text-left" style="margin: 10px 0;"><%= section.description %></p>
+        </a>
+
+          <% break %>
+        <% end %>
+
+    <% end %>
+
+
+  </div>
+</div>

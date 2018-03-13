@@ -20,8 +20,8 @@
       <script src="//oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
     <![endif]-->
 
-   <link rel="shortcut icon" href="/guides/favicon.ico"/>
-	 <link href="/guides/less/docs-styles.css" rel="stylesheet" id="cumulocity-style-css" type="text/css" media="all" />
+   <link rel="shortcut icon" href="/guides/images/favicon.ico"/>
+	 <link href="/guides/styles/docs-styles.css" rel="stylesheet" id="cumulocity-style-css" type="text/css" media="all" />
 
 </head>
 <body style="background-color: #000;">

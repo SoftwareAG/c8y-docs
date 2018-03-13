@@ -22,12 +22,10 @@ In the following sections, we describe the basics for understanding how the Apam
 
 ## Deploying EPL
 
-You can use Software AG Designer [ ![(warning)](https://iwiki.eur.ad.sag/s/en_GB/7110/0027c2fcaf4e08638b7c982f7d0fde1dc3cf2411/_/images/icons/emoticons/warning.png "(warning)") - TODO - <span class="inline-comment-marker" data-ref="e6bd14ea-2f72-425b-8d75-fe0392c1dfdf">link to Cumulocity download site for standalone Apama installer</span> ] to develop your applications. Create an Apama project in Software AG Designer and add the following adapters:
+You can use [Software AG Designer](http://www.apamacommunity.com/downloads/) to develop your applications. Create an Apama project in Software AG Designer and add the following adapters:
 
 *   Apama Connectivity for Cumulocity IoT
 *   HTTP Client - JSON with generic request/response event definitions
-
-And add the bundle 'Time Format' and the Cumulocity Utilities ![(warning)](https://iwiki.eur.ad.sag/s/en_GB/7110/0027c2fcaf4e08638b7c982f7d0fde1dc3cf2411/_/images/icons/emoticons/warning.png "(warning)") - TODO: bundle name TBC.
 
 You will need to configure the Cumulocity properties with your Cumulocity credentials. Also add the bundles:
 

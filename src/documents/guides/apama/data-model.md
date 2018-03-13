@@ -1,7 +1,3 @@
-The below is copy and pasted from Apamadoc - see [here](/download/attachments/506540838/apdoc.zip?version=1&modificationDate=1518109525393&api=v2) or [here](http://intra.apama.com/~cree/Cumulocity/Apamadoc/) for source. <span class="inline-comment-marker" data-ref="9af157d8-d052-4b4f-a43d-0d0f6f50c556">It probably makes sense to just include this as a link</span>, rather than try to replicate it all. We should provide Apamadoc with the HTTP objects, TimeFormat and AnyExtractor as well.
-
-![](/plugins/servlet/confluence/placeholder/macro?definition=e3RvY30&locale=en_GB&version=2)
-
 ## Event Alarm
 
 Alarm data. 

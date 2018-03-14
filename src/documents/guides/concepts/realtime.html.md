@@ -15,13 +15,13 @@ Cumulocity has a real-time engine receiving all data coming from devices or othe
 
 Cumulocity Event Language covers *statements* which are grouped into units of deployment, called *modules*. Modules can be deployed as part of a Cumulocity application. They can be edited with the Cumulocity administration application, see [Administration > Event processing](guides/administration#event-processing) in the User's Guide. 
 
-For further information on using Cumulocity Event Language refer to [Using Cumulocity Event Language](#CEL) below and to the [CEL Analytics User Guide](/guides/event-language/introduction).
+For further information on using Cumulocity Event Language refer to [Using Cumulocity Event Language](#CEL) below and to the [CEL Analytics Guide](/guides/event-language/introduction).
 
 In addition to using the Cumulocity Event Language, Cumulocity provides the option to use the Apama real-time processing engine to define business operations for immediate processing of incoming data. The operation logic is implemented in Apama's Event Processing Language (EPL). 
 
 Apama's Event Processing Language covers _statements_, which are organized into actions and monitors. These can be deployed one file at a time, where a file may contain multiple monitors and event definitions. Monitor files can be edited with Software AG Designer - an Eclipse-based development environment, and can be deployed as Cumulocity applications, see [Administration > Own applications](guides/administration#own-application) in the User's Guide. 
 
-For further information on using Apama's Event Processing Language refer to [Using Apama Event Processing Language](#EPL) below and to the [Apama Analytics User Guide](/guides/apama/introduction).
+For further information on using Apama's Event Processing Language refer to [Using Apama Event Processing Language](#EPL) below and to the [Apama Analytics Guide](/guides/apama/introduction).
 
 
 ![CEP architecture](/guides/concepts-guide/realtime.png)

@@ -12,7 +12,7 @@ In the following document you will get an overview on the Web SDK for Plugins wh
 * enhance the visualization of data with custom widgets.
 * implement functionalities tailored to your use case.
 
-![Architecture](/guides/plugins/overview.png)
+![Architecture](/guides/images/plugins/overview.png)
 
 The illustration above shows the structure behind the application and plugin development. The same as the core applications, your applications will be built on AngularJS and the "c8y.core" and "c8y.ui" [JavaScript API](http://resources.cumulocity.com/documentation/jssdk/latest/). Both modules offer you services to interact with the Cumulocity web application. While the module "c8y.core" provides services to access different kinds of data, such as users and managed objects, as well as basic functionalities, the module "c8y.ui" provides services to modify the user interface of your application or plugin, such as adding menu items or widgets. The modules in turn use the [REST API](/guides/rest/introduction) provided by Cumulocity. You can find examples on how to use the services in the plugin examples.
 
@@ -35,7 +35,7 @@ You can also find other, more complex examples in the following documents:
 * [Tab plugins](/guides/web/tab-plugin)
 * [Widget plugins](/guides/web/widget-plugin)
 
-Although an overview of the concepts of applications and plugins will be provided in this chapter, we recommend to take a look at the basic concept of Cumulocity applications described in [Developing applications](/guides/concepts/applications).
+Although an overview of the concepts of applications and plugins will be provided in this chapter, we recommend to take a look at the basic concept of Cumulocity applications described in [Developing applications](/guides/images/concepts/applications).
 
 ## <a name="concepts"></a>Concepts
 Before building an application or plugin, it is important to understand what exactly applications and plugins are. In this context, applications are based on the Cumulocity UI framework and make up the Cumulocity UI. By default, the Cumulocity UI consists of three core applications, namely "Device Management", "Administration" and "Cockpit". In turn, applications consist of plugins. A plugin represents any functionality you would like to add to an application. With a plugin, you can:
@@ -48,7 +48,7 @@ Before building an application or plugin, it is important to understand what exa
 
 This is illustrated below:
 
-![Extension points for plugins](/guides/concepts-guide/extensionpoints.png)
+![Extension points for plugins](/guides/images/concepts-guide/extensionpoints.png)
 
 Or, as an example, let us take a look at an extract of the list of plugins the “Cockpit” application uses. It consists of, i.a.
 * Cockpit Home: a plugin, which adds the "Home" menu to the navigator.
@@ -194,7 +194,7 @@ You will be asked for the name and base url of your tenant, as well as your user
 
 After deploying the application, it appears in the *"Own applications"* menu of the "Administration" application.
 
-![My Application](/guides/plugins/applicationeditor.png)
+![My Application](/guides/images/plugins/applicationeditor.png)
 
 To see the "Hello world!" plugin, navigate to the example you just created an select the menu "New plugin". You should be able to see the text "Hello world!". You can also try out the other example plugins. For further information on the example plugins, visit the respective documents in the documentation.
 
@@ -202,7 +202,7 @@ To see the "Hello world!" plugin, navigate to the example you just created an se
 
 The purpose of this plugin is to add a new application to the app switcher menu. This application will consist of a single menu item which will display a simple "Hello world!" page when selected by the user. At the end, the application should look as follows:
 
-![Hello world plugin](/guides/plugins/hello.png)
+![Hello world plugin](/guides/images/plugins/hello.png)
 
 In order to achieve this goal we need to do the following steps:
 
@@ -275,7 +275,7 @@ You will be asked for the name and base url of your tenant, as well as your user
 
 After deploying your application, it appears in the *"Own applications"* menu of the "Administration" application.
 
-![My Application](/guides/plugins/applicationeditor.png)
+![My Application](/guides/images/plugins/applicationeditor.png)
 
 ### Test your application
 
@@ -334,7 +334,7 @@ http://localhost:9000/apps/devicemanagement/  Packaged App
 
 Now, you can test your application by opening your browser at the URL "http://localhost:9000/apps/myapplication/". If you access your application now, you should be able to see the following:
 
-![My Application](/guides/plugins/emptyapplication.png)
+![My Application](/guides/images/plugins/emptyapplication.png)
 
 What is missing now is a plugin which adds a menu item to the navigator.
 

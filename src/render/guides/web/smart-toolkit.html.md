@@ -303,7 +303,7 @@ This is how you configure "c8y.core" to set your application key, tenant and dom
 
 ## 5. Create a login screen<a name="step-5"></a>
 
-![Login screen](/guides/smart-toolkit/login.png)
+![Login screen](/guides/images/smart-toolkit/login.png)
 
 Create a login screen by using the following code. "c8y.core" will not work without specifying a tenant, username and password, so you explicitly have to set it in "src/login_ctrl.js":
 
@@ -380,7 +380,7 @@ If you want to omit the tenant field in the login screen, you can set the tenant
 
 ## 6. Create a main screen<a name="step-6"></a>
 
-![Main screen](/guides/smart-toolkit/main.png)
+![Main screen](/guides/images/smart-toolkit/main.png)
 
 The main screen consists of a top navigator, left navigator and a content area. When we implement the device, alarm and event screens, content will be visible, but for now we will concentrate on the main screen. Add the following functionality to the "js/main_ctrl.js" file:
 
@@ -490,7 +490,7 @@ Try and visit [localhost:8080/index.html/#/](http://localhost:8080/index.html/#/
 
 ## 7. Create device/alarm/event lists<a name="step-7"></a>
 
-![Devices screen](/guides/smart-toolkit/devices.png)
+![Devices screen](/guides/images/smart-toolkit/devices.png)
 
 As all section screens, the screens for devices, alarms and events, will share a common functionality defined in "js/section_dir.js":
 
@@ -577,7 +577,7 @@ In this part, we will implement device filtering by text and alarm filtering by 
 
 #### Device search
 
-![Device search screen](/guides/smart-toolkit/fdevices.png)
+![Device search screen](/guides/images/smart-toolkit/fdevices.png)
 
 Add the following to "sections/devices.html" at the beginning, inside the tag `<div ng-controller=...`:
 

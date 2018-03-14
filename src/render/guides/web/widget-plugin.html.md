@@ -19,7 +19,7 @@ You can find this and all the other plugins described in the documentation insid
 
 With the following plugin a new widget will be available for dashboards which displays devices as icons on a map. The new widget looks like this:
 
-![Iconmap Widget](/guides/plugins/iconmapwidget.png)
+![Iconmap Widget](/guides/images/plugins/iconmapwidget.png)
 
 In order to achieve this goal you need to do the following steps:
 
@@ -247,7 +247,7 @@ After [deploying](/guides/web/introduction#create-application) the plugin to you
 
 With the following plugin a new widget will be available for dashboards which shows the current weather at the location of a device. The new widget looks like this:
 
-![Weather Widget](/guides/plugins/weatherwidget.png)
+![Weather Widget](/guides/images/plugins/weatherwidget.png)
 
 In order to achieve this goal you need to do the following steps:
 

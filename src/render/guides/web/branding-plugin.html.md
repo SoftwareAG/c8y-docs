@@ -14,7 +14,7 @@ You can find this and all the other plugins described in the documentation insid
 
 ## <a name="branding">Branding plugin
 
-![Branding example](/guides/plugins/branding.png)
+![Branding example](/guides/images/plugins/branding.png)
 
 Our main css is based on the popular css framework [Bootstrap 3](http://getbootstrap.com/). It is possible to build a branding plugin based on Cumulocity's own base branding simply by overriding less variables.
 

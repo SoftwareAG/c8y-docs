@@ -18,7 +18,7 @@ A device marked in the inventory with a *c8y\_IsDevice* fragment supports device
 
     "c8y_IsDevice": {}
 
-![Device in Device Management](/guides/reference-guide/devicemanagement.png)
+![Device in Device Management](/guides/images/reference-guide/devicemanagement.png)
 
 #### c8y\_SupportedOperations
 
@@ -27,7 +27,7 @@ A device marked in the inventory with a *c8y\_IsDevice* fragment supports device
 
     "c8y_SupportedOperations": [ "c8y_Restart" ]
 
-![Device supports restart](/guides/reference-guide/restartsupported.png)
+![Device supports restart](/guides/images/reference-guide/restartsupported.png)
 
 ## Device information
 
@@ -47,7 +47,7 @@ A device marked in the inventory with a *c8y\_IsDevice* fragment supports device
       "serialNumber": "00000000e2f5ad4d"
     }
 
-![Hardware information](/guides/reference-guide/hardware.png)
+![Hardware information](/guides/images/reference-guide/hardware.png)
 
 #### c8y\_Firmware
 
@@ -65,7 +65,7 @@ A device marked in the inventory with a *c8y\_IsDevice* fragment supports device
       "url": "31aab9856861b1a587e2094690c2f6e272712cb1"
     }
 
-![Firmware information](/guides/reference-guide/firmware.png)
+![Firmware information](/guides/images/reference-guide/firmware.png)
 
 In the example above, the device is requested to install firmware version "1.20140107-1". The device has a pre-configured software repository location, hence it only needs the relative URL "31aab9856861b1a587e2094690c2f6e272712cb1" to download the requested firmware image.
 
@@ -99,7 +99,7 @@ To enable software installation through the user interface, add "c8y\_SoftwareLi
       }
     ]
 
-![Software information](/guides/reference-guide/software.png)
+![Software information](/guides/images/reference-guide/software.png)
 
 #### c8y\_Configuration
 
@@ -113,7 +113,7 @@ To enable software installation through the user interface, add "c8y\_SoftwareLi
       "config": "#Tue Jul 02 16:10:36 UTC 2013\nc8y.log.alarmLevel=ERROR\nc8y.modem.signalPolling=10000\nc8y.log.eventLevel=INFO"
     }
 
-![Device configuration](/guides/reference-guide/configuration.png)
+![Device configuration](/guides/images/reference-guide/configuration.png)
 
 #### c8y\_SendConfiguration
 
@@ -147,7 +147,7 @@ c8y_Mobile.mnc
 c8y_Mobile.lac
 c8y_Mobile.msisdn
 
-![Modem information](/guides/reference-guide/mobile.png)
+![Modem information](/guides/images/reference-guide/mobile.png)
 
 #### c8y\_CellInfo
 
@@ -196,7 +196,7 @@ c8y_Mobile.msisdn
       "ber": { "value": 0.14, "unit": "%" }
     }
 
-![Signal strength report](/guides/reference-guide/signalstrength.png)
+![Signal strength report](/guides/images/reference-guide/signalstrength.png)
 
 ## Device availability
 
@@ -250,7 +250,7 @@ The alarm sent when a device becomes unavailable is of type "c8y\_Unavailability
 
 Updates to the availability status may occur with a delay.
 
-![Availability](/guides/reference-guide/availability.png)
+![Availability](/guides/images/reference-guide/availability.png)
 
 To flag a device as available without updating any data, a "ping" can be sent. The "ping" can be carried out by simply sending an empty update message to the device (i.e., a PUT request to the managed object with empty content).
 
@@ -263,7 +263,7 @@ The number of currently active and acknowledged alarms is stored in a fragment "
         "major": 3
     }
 
-![Alarm status](/guides/reference-guide/alarmstatus.png)
+![Alarm status](/guides/images/reference-guide/alarmstatus.png)
 
 ## Miscellaneous
 
@@ -273,7 +273,7 @@ To restart a device, an operation with a "c8y\_Restart" fragment is sent. To ena
 
     "c8y_Restart": {}
 
-![Restart button](/guides/reference-guide/restartsupported.png)
+![Restart button](/guides/images/reference-guide/restartsupported.png)
 
 #### <a name="communication_mode"></a>c8y\_CommunicationMode
 

@@ -91,18 +91,18 @@ docpadConfig = {
 			return _
 
 		sections: [
-			{ title: 'Concepts guide', folder: 'guides/concepts', slug: 'concepts-guide', icon: 'c8y-icon c8y-icon-c8y-engine', description: 'The concept descriptions explain the architecture and technical concepts behind Cumulocity. They are intended for anyone technically interested in the machine-to-machine application platform, be it solution architects, system administrators or software developers.' },
-			{ title: 'konzepte', lang: 'de', folder: 'guides/konzepte', slug: 'konzepte', icon: 'c8y-icon c8y-icon-c8y-engine', description: '' },
-			{ title: 'User guide', folder: 'guides/users-guide', slug: 'users-guide', icon : 'fa fa-user-circle-o', description: ''},
-			{ title: 'Handbuch', lang: 'de', folder: 'guides/benutzerhandbuch', slug: 'benutzerhandbuch', icon : 'fa fa-user-circle-o', description: ''},
-			{ title: 'Apama analytics guide', folder: 'guides/apama' , slug: 'apama', icon : 'c8y-icon c8y-icon-data-explorer', description: 'TBD'},
-			{ title: 'CEL analytics guide', folder: 'guides/event-language' , slug: 'event-language', icon : 'c8y-icon c8y-icon-data-explorer', description: 'TBD'},
-			{ title: 'Device guides', folder: 'guides/devices' , slug: 'device-guides', icon: 'c8y-icon c8y-icon-device-management', description: '' },
-			{ title: 'REST developer\'s guide', folder: 'guides/rest', slug: 'rest-developer', icon: 'fa fa-cog', description: '' },
-			{ title: 'MQTT developer\'s guide', folder: 'guides/mqtt', slug: 'mqtt-developer', icon: 'fa fa-cog', description: '' },
-			{ title: 'Java developer\'s guide', folder: 'guides/java', slug: 'java-developer', icon: 'c8y-icon c8y-icon-java', description: '' },
-			{ title: 'Web developer\'s guide', folder: 'guides/web', slug: 'web-developer', icon: 'c8y-icon c8y-icon-smart-rest', description: '' },
-			{ title: 'C++ developer\'s guide', folder: 'guides/cpp', slug: 'cpp-developer', icon: 'fa fa-cog', description: '' },
+			{ title: 'Concepts guide', folder: 'guides/concepts', slug: 'concepts-guide', icon: 'c8y-icon c8y-icon-c8y-engine', description: 'The architecture and technical concepts behind Cumulocity. Intended for anyone technically interested in the machine-to-machine application platform, be it solution architects, system administrators or software developers.' },
+			{ title: 'konzepte', lang: 'de', folder: 'guides/konzepte', slug: 'konzepte', icon: 'c8y-icon c8y-icon-c8y-engine', description: 'The reference guide contains the detailed technical specifications of the programming interfaces of Cumulocity as reference for software developers.' },
+			{ title: 'User guide', folder: 'guides/users-guide', slug: 'users-guide', icon : 'fa fa-user-circle-o', description: 'The reference guide contains the detailed technical specifications of the programming interfaces of Cumulocity as reference for software developers.'},
+			{ title: 'Handbuch', lang: 'de', folder: 'guides/benutzerhandbuch', slug: 'benutzerhandbuch', icon : 'fa fa-user-circle-o', description: 'The reference guide contains the detailed technical specifications of the programming interfaces of Cumulocity as reference for software developers.'},
+			{ title: 'Apama analytics guide', folder: 'guides/apama' , slug: 'apama', icon : 'c8y-icon c8y-icon-data-explorer', description: 'The reference guide contains the detailed technical specifications of the programming interfaces of Cumulocity as reference for software developers.'},
+			{ title: 'CEL analytics guide', folder: 'guides/event-language' , slug: 'event-language', icon : 'c8y-icon c8y-icon-data-explorer', description: 'The reference guide contains the detailed technical specifications of the programming interfaces of Cumulocity as reference for software developers.'},
+			{ title: 'Device guides', folder: 'guides/devices' , slug: 'device-guides', icon: 'c8y-icon c8y-icon-device-management', description: 'The reference guide contains the detailed technical specifications of the programming interfaces of Cumulocity as reference for software developers.' },
+			{ title: 'REST developer\'s guide', folder: 'guides/rest', slug: 'rest-developer', icon: 'fa fa-cog', description: 'The reference guide contains the detailed technical specifications of the programming interfaces of Cumulocity as reference for software developers.' },
+			{ title: 'MQTT developer\'s guide', folder: 'guides/mqtt', slug: 'mqtt-developer', icon: 'fa fa-cog', description: 'The reference guide contains the detailed technical specifications of the programming interfaces of Cumulocity as reference for software developers.' },
+			{ title: 'Java developer\'s guide', folder: 'guides/java', slug: 'java-developer', icon: 'c8y-icon c8y-icon-java', description: 'The reference guide contains the detailed technical specifications of the programming interfaces of Cumulocity as reference for software developers.' },
+			{ title: 'Web developer\'s guide', folder: 'guides/web', slug: 'web-developer', icon: 'c8y-icon c8y-icon-smart-rest', description: 'The reference guide contains the detailed technical specifications of the programming interfaces of Cumulocity as reference for software developers.' },
+			{ title: 'C++ developer\'s guide', folder: 'guides/cpp', slug: 'cpp-developer', icon: 'fa fa-cog', description: 'The reference guide contains the detailed technical specifications of the programming interfaces of Cumulocity as reference for software developers.' },
 			{ title: 'Reference guide', folder: 'guides/reference' , slug: 'reference-guide', icon : 'fa fa-book', description: 'The reference guide contains the detailed technical specifications of the programming interfaces of Cumulocity as reference for software developers.'}
 		]
 	

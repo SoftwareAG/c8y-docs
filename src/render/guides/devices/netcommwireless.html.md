@@ -23,13 +23,13 @@ The following sections demonstrate how to use a NetComm router with Cumulocity. 
 * [VNC](#vnc) remote access.
 * Configure [MQTT](#mqtt).
 
-The following sections assume that the router has the NetComm [agent](/guides/devices/netcomm-release) package installed. The agent is compatible with the [NTC-6200](http://www.netcommwireless.com/product/m2m/ntc-6200) and [NTC-140W](http://www.netcommwireless.com/product/4g-wifi-m2m-router). For more information on a particular feature of the router, please consult the respective manual found in the "Downloads" section of the router's home page.
+The following sections assume that the router has the NetComm [agent](/guides/images/devices/netcomm-release) package installed. The agent is compatible with the [NTC-6200](http://www.netcommwireless.com/product/m2m/ntc-6200) and [NTC-140W](http://www.netcommwireless.com/product/4g-wifi-m2m-router). For more information on a particular feature of the router, please consult the respective manual found in the "Downloads" section of the router's home page.
 
 ## <a name="configure"></a>Configuring the router
 
 The support for Cumulocity can be configured through the router's web user interface. To do so, login to the user interface as described in the router's manual. Navigate to the "System" tab and click on the "Internet of Things" menu item.
 
-![Cumulocity configuration](/guides/devices/netcomm/routerconf.png)
+![Cumulocity configuration](/guides/images/devices/netcomm/routerconf.png)
 
 Verify that the toggle switch "Cumulocity agent" is set to "ON" and the URL shown in "Server" points to the Cumulocity instance that you want to connect. For example, use
 
@@ -80,11 +80,11 @@ To register your NetComm router to Cumulocity, you need the router's serial numb
 
 	006064dda4ae
 
-![MAC address](/guides/devices/netcomm/mac.png)
+![MAC address](/guides/images/devices/netcomm/mac.png)
 
 After clicking the "accept" button, navigate to "All devices", the router should appear here after registration. The default name of a router is "&lt;model&gt; (S/N &lt;serial number&gt;)", where &lt;model&gt; is the device model name. For example, the above router would appear as "NTC-6200-02 (S/N 165711141901036)". Click on the router to view the detailed information and to access the functionality described in the remaining sections of this document. In order to distinguish a registered router from other devices in the listing, you can change the router's name on the "Info" tab, which also displays basic information such as serial number of the router and SIM card data. After changing the name, remember to click "save changes" button at the bottom of the "Info" page.
 
-![Device details](/guides/devices/netcomm/info.png)
+![Device details](/guides/images/devices/netcomm/info.png)
 
 ## <a name="network"></a>Configuring network parameters
 
@@ -96,11 +96,11 @@ For SMS configuring, the router needs to be configured to accept SMS commands. C
 
 > Note configuring WAN parameters via both IP and SMS mode requires Cumulocity 7.26. When you configure a wrong APN setting, the device will lose mobile network connection and can only be managed by limited SMS functionality.
 
-![WAN parameters](/guides/devices/netcomm/wan.png)
+![WAN parameters](/guides/images/devices/netcomm/wan.png)
 
 LAN and DHCP parameters can be directly configured from Cumulocity as well.
 
-![LAN parameters](/guides/devices/netcomm/lan.png)
+![LAN parameters](/guides/images/devices/netcomm/lan.png)
 
 ## <a name="software"></a>Managing software and firmware
 
@@ -114,7 +114,7 @@ Software packages need to be in [ipkg](http://en.wikipedia.org/wiki/Ipkg) format
 
 Firmware can be uploaded and installed on the router as well. To successfully upgrade the firmware, make sure that the target firmware includes the agent package. If the agent package is not included in the target firmware, the agent will not start after the installation. Firmware files need to follow Netcomm's naming convention ("&lt;name&gt;\_&lt;version&gt;.cdi").
 
-![Software/firmware](/guides/devices/netcomm/software.png)
+![Software/firmware](/guides/images/devices/netcomm/software.png)
 
 ## <a name="system"></a>Monitoring system resources
 
@@ -190,7 +190,7 @@ The inputs are checked every second for changes.
 
 Digital outputs can be controlled using the "Relay array" plugin, see below in the screenshot. The numbering of the GPIO pins are the same as listed on the router. For the NTC-6200 model, three GPIO pins can be set, while for the NTC-140W model, only the first pin has effect.
 
-![Relay Array](/guides/devices/netcomm/relayarray.png)
+![Relay Array](/guides/images/devices/netcomm/relayarray.png)
 
 ## <a name="rdb"></a>Configuration Management
 
@@ -200,7 +200,7 @@ You can also request a configuration snapshot from the device and later apply th
 
 Starting from agent version 3.1.1 and Cumulocity version 7.26 there is also RDB snapshot support, which is a super-set of the configurations. This is mainly for troubleshooting purpose.
 
-![RDB setup](/guides/devices/netcomm/rdb.png)
+![RDB setup](/guides/images/devices/netcomm/rdb.png)
 
 > Prior to Cumulocity 6.9, this widget was in the "Control" tab. Starting from Cumulocity 6.9, you can also take entire configuration snapshots including the non-textual parts of the device and send reference configuration snapshots back to the device.
 
@@ -211,7 +211,7 @@ To use SMS commands for devices, open the router's web interface and navigate to
 * Either disable "Only accept authenticated SMS messages", or add permitted senders to the white list. Usage of passwords is not supported.
 * Turn the other settings on.
 
-![Enable SMS mode](/guides/devices/netcomm/sms_mode.png)
+![Enable SMS mode](/guides/images/devices/netcomm/sms_mode.png)
 
 > For more information please refer to "[Control devices via SMS](/guides/reference/device-control#control_via_sms)".
 
@@ -225,13 +225,13 @@ With Device Shell, you can read and write individual configuration parameters fr
 
 Multiple get, set and execute commands can be sent using a semicolon as separator. Click the "Get Predefined" link to access frequently used parameters and commands.
 
-![Device Shell](/guides/devices/netcomm/shell.png)
+![Device Shell](/guides/images/devices/netcomm/shell.png)
 
 ## <a name="notifications"></a>Event notifications
 
 The router reports certain system events as notifications, which can be forwarded to Cumulocity as alarms. The system events help, for example, in troubleshooting mobile network issues. For more information on the different types of events and how to forward them, please consult the Netcomm documentation (for example, Section "Event notification" in the user's guide). To forward an event as alarm, set up a UDP destination sending to Port 1331 on localhost (Section "Destination configuration").
 
-![Event notifications](/guides/devices/netcomm/notifications.png)
+![Event notifications](/guides/images/devices/netcomm/notifications.png)
 
 ## <a name="modbus"></a>Cloud Fieldbus
 
@@ -273,7 +273,7 @@ From right you can set date range (date from and date to), you can select log fi
 
 Received logs are visible in a list below. You can click on it to show log file content at the bottom of the page. Last requested log is opened automatically.
 
-![Log viewer](/guides/devices/netcomm/logs.png)
+![Log viewer](/guides/images/devices/netcomm/logs.png)
 
 ## <a name="vnc"></a>VNC remote access
 
@@ -281,7 +281,7 @@ If you have a device which supports VNC remote access, it's now possible to mana
 
 As shown in the screenshot, you can add your VNC server as an endpoint with appropriate IP and port in _Remote Access_ tab in "Device Management", then simply click on button "Connect", a new browser window will pop up, showing the display content of your remote VNC server.
 
-![VNC](/guides/devices/netcomm/vnc.png)
+![VNC](/guides/images/devices/netcomm/vnc.png)
 
 ## <a name="mqtt"></a>MQTT
 

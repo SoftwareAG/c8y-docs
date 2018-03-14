@@ -27,25 +27,25 @@ First you need to access Meshlium Manager System Interface, to do that, connect 
 
 	10.10.10.1/ManagerSystem
 
-![address bar](/guides/devices/meshlium/ManagerSystem-address_bar.png)
+![address bar](/guides/images/devices/meshlium/ManagerSystem-address_bar.png)
 
 Doing so will bring you to the Meshlium Manager System, then click on the "Cloud Connector" button.
 
-![system manager](/guides/devices/meshlium/ManagerSystem.png)
+![system manager](/guides/images/devices/meshlium/ManagerSystem.png)
 
 Next click on "IoT Solutions".
 
-![cloud connector](/guides/devices/meshlium/CloudConnector.png)
+![cloud connector](/guides/images/devices/meshlium/CloudConnector.png)
 
 Then select "Cumulocity".
 
-![iot solutions](/guides/devices/meshlium/IoTSolutions.png)
+![iot solutions](/guides/images/devices/meshlium/IoTSolutions.png)
 
 This will bring you to Cumulocity cloud configurator.
 
 Now fill all the fields with your Cumulocity account settings.
 
-![cloud configurator](/guides/devices/meshlium/cumulocity_plugin_configuration.png)
+![cloud configurator](/guides/images/devices/meshlium/cumulocity_plugin_configuration.png)
 
 Click on "Save" to store your settings.
 
@@ -58,19 +58,19 @@ The Cumulocity platform will handle all of your devices creation on our cloud, a
 
 To visualize the data from your devices, log in to your Cumulocity account. On the left pane in "DEVICES", click on "All devices".
 
-![left pane](/guides/devices/meshlium/cumulocity_left_pane.png)
+![left pane](/guides/images/devices/meshlium/cumulocity_left_pane.png)
 
 Then select the Meshlium device you wish to visualize.
 
-![all devices](/guides/devices/meshlium/all_devices.png)
+![all devices](/guides/images/devices/meshlium/all_devices.png)
 
 Now select "Child devices" to see all devices connected to your Meshlium.
 
-![child devices](/guides/devices/meshlium/child_devices.png)
+![child devices](/guides/images/devices/meshlium/child_devices.png)
 
 Select the child device that you wish to see, then click on "Measurements" to see the data from this device sensors.
 
-![measurements](/guides/devices/meshlium/measurements.png)
+![measurements](/guides/images/devices/meshlium/measurements.png)
 
 To better understand how our platform works and custom configure the interface, consult our [guidelines](https://www.cumulocity.com/guides/).
 

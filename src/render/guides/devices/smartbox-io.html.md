@@ -24,17 +24,17 @@ layout: devices
 
 Smartbox, based on the Telit Chipset HE910 is a ready to use solution for connecting Modbus devices to the Cumulocity Fieldbus Cloud. It provides a Master Slave Communication on RS485 for connecting up to 10 devices as well as 10 Sensors (Current ,Temperature, Pressure). Easy configure the SetUp of building automation fielddevices like pumps, e-meters, Airhandling units in the Cumulocity Fieldbus cloud or connect different sensortypes to the box. Using the MQTT protocol the terminal comes up with a low traffic solution for decentralized applications. 
 
-![Overview](/guides/devices/smartbox-io/overview.png)
+![Overview](/guides/images/devices/smartbox-io/overview.png)
 
 | Smartbox IO Overview <td colspan=2> 
 | --- | --- | --- |
-| ![Radio](/guides/devices/smartbox-io/radio.png) <td colspan=2>  <ul><li>2G  - global</li><li>3G  - EMEA, APAC, NA, Global</li><li>LTE - EMEA, APAC, Americas</li><li>GNSS</li><li>Default: 3G EMEA / APAC</li></ul>
-| ![Connectivity](/guides/devices/smartbox-io/connectivity.png) | Fieldbus |<ul><li>Modbus RTU (RS232/RS485) ![ ](/guides/devices/smartbox-io/modbus.png)  |
+| ![Radio](/guides/images/devices/smartbox-io/radio.png) <td colspan=2>  <ul><li>2G  - global</li><li>3G  - EMEA, APAC, NA, Global</li><li>LTE - EMEA, APAC, Americas</li><li>GNSS</li><li>Default: 3G EMEA / APAC</li></ul>
+| ![Connectivity](/guides/images/devices/smartbox-io/connectivity.png) | Fieldbus |<ul><li>Modbus RTU (RS232/RS485) ![ ](/guides/images/devices/smartbox-io/modbus.png)  |
 | | Sensors | <ul><li>Digital Input (DIN)</li><li>AIN (NTC,0..20mA)</li><li>10 x Universal inputs (NTC, PT100, PT1000, 0..10V, DIN)</li><li>1 x RelayOutput</li></ul> |
-| ![Cloudagent](/guides/devices/smartbox-io/cloudagent.png) <td colspan=2>  MQTT Agent for Cumulocity IoT, T-Systems- Cloud der Dinge
+| ![Cloudagent](/guides/images/devices/smartbox-io/cloudagent.png) <td colspan=2>  MQTT Agent for Cumulocity IoT, T-Systems- Cloud der Dinge
 
 ### For further information: 
-* please refer to the datasheet [provided by PSsystec](https://www.pssystec.de/downloads/) or download [here](/guides/devices/smartbox-io/Datasheet-SMARTbox-IO.pdf)
+* please refer to the datasheet [provided by PSsystec](https://www.pssystec.de/downloads/) or download [here](/guides/images/devices/smartbox-io/Datasheet-SMARTbox-IO.pdf)
 * For installing the agent and SW releases, pls refer to Release notes folder of Device guide in Cumulocity or go to: http://cumulocity.com/guides/devices/smartbox-release-notes/ 
 * For getting the device pls contact Cumulocity Hardware support or Pssystec (kontakt@pssystec-gmbh.de) 
 * The full product overview pls download it https://www.pssystec.de/downloads/ 
@@ -48,7 +48,7 @@ Smartbox, based on the Telit Chipset HE910 is a ready to use solution for connec
 * Connect your sensors, DIN, Analogue Input between Ux and G
 * You can use external 24VDC (200mA) or the with the delivered PowerSupply
 
-![Interface](/guides/devices/smartbox-io/io-interface.png)
+![Interface](/guides/images/devices/smartbox-io/io-interface.png)
 
 Note that the SMARTbox IO supports: 
 
@@ -68,7 +68,7 @@ Note that the SMARTbox IO supports:
 
 The connection diagram of the sensors is as follows:
 
-![Interface Sensors](/guides/devices/smartbox-io/interface-sensors.png)
+![Interface Sensors](/guides/images/devices/smartbox-io/interface-sensors.png)
 
 ## <a name="connect-the-smartbox"></a>Connect the Smartbox to your Cumulocity Account
 
@@ -84,11 +84,11 @@ By default the terminal supports cloud fieldbus from Cumulocity. To use it you s
 
 In the cumulocity Devicemanagement go to the menu in Device Registration. Enter the Terminal's IMEI as an ID. The IMEI is printed on the devices itself:
 
-![IMEI](/guides/devices/smartbox-io/imei.png)
+![IMEI](/guides/images/devices/smartbox-io/imei.png)
 
 After accepting the device (this process may tale 30 seconds) you should be able to see it in the All Devices list after a short delay. 
 
-![Terminal in all devcies](/guides/devices/smartbox-io/terminal-in-all-devices.png)
+![Terminal in all devcies](/guides/images/devices/smartbox-io/terminal-in-all-devices.png)
 
 ## Use the <a name="ios"></a>built-in IOs
 
@@ -118,7 +118,7 @@ We assume that you already defined your Modbus device(s) which you want to conne
    Device3: Frontcooler for Serverline1 on Address5</br>
    Device4: Frontcooler for Serverline2 on Address6
 
-![ ](/guides/devices/smartbox-io/modbus-setup.png)   
+![ ](/guides/images/devices/smartbox-io/modbus-setup.png)   
 
 To connect 1 Modbus Device to the RTU network:
 
@@ -133,7 +133,7 @@ To connect 1 Modbus Device to the RTU network:
 9.	Enter a name for the device and select the type of the device from the drop-down box. To add new device types, see "Configuring Fieldbus device types" below. Set the Modbus address of the connected device. 
 10.	Click "Add". Cumulocity will now send a notification to the Modbus terminal that a new device is ready to be managed. This may take a few seconds. 
 
-![ ](/guides/devices/smartbox-io/rtu-network.png)
+![ ](/guides/images/devices/smartbox-io/rtu-network.png)
 
 
 ## <a name="location"></a>Use the built-in location functionality
@@ -145,7 +145,7 @@ The terminal features cell location and is available in Location tab on terminal
 </br> c8y.LocationCycle=60; define in min, how often the location should be checked. 0 means the cycled checking is disabled. If a value >0 ist set, also the tracking is enabled
 
 
-![Location](/guides/devices/smartbox-mini/location.png)
+![Location](/guides/images/devices/smartbox-mini/location.png)
 
 ## <a name="tracking"></a>Use the built-in tracking functionality
 
@@ -155,7 +155,7 @@ Next to the map, the individual recordings with their time are listed ("location
 
 Activate a regular identification of the location. In Configuration tab you can set. If the value of c8y.LocationCycle is greater 0 then tracking is enabled.
 
-![Tracking](/guides/devices/smartbox-io/tracking.png)
+![Tracking](/guides/images/devices/smartbox-io/tracking.png)
 
 Depending on the type of device and the integration into Cumulocity, you can also configure device-side geo-fencing and motion detection.
 
@@ -198,7 +198,7 @@ All AT command supported are listed here: http://www.pssystec.de/downloads/ </br
 
 The device shell enables you to read and write configuration parameters to interactively work with remote devices. You can send AT commands in the respective language of the device and view the results of the commands. You can sent any At Command. Check here in Chapter "supported AT commands": https://www.pssystec.de/downloads/. Frequently used commands are available by clicking the "Get predefined" button.
 
-![Device Shell](/guides/devices/smartbox-io/device-shell.png)
+![Device Shell](/guides/images/devices/smartbox-io/device-shell.png)
 
 
 ## <a name="debug"></a>Local Debug and operate the device
@@ -222,6 +222,6 @@ Note: Using Agent Versions <2.3.x you have to connect to USB3
 
 All devices which are connected to the SMARTbox are needed to define in Device Database. The definition includes all supported datapoints of this connected device. Even more, you can not only define the "physical datapoint" like register address, you can also define if this datapoint comes in the cloud as a measurement, event, alarm or write value. In addition some control field per datapoint are available which includes metadata like the Unit or Display Category. 
 
-![Device Database](/guides/devices/smartbox-io/device-database1.png)
+![Device Database](/guides/images/devices/smartbox-io/device-database1.png)
 
-![Device Database](/guides/devices/smartbox-io/device-database2.png)
+![Device Database](/guides/images/devices/smartbox-io/device-database2.png)

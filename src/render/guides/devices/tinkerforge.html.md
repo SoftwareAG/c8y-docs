@@ -12,9 +12,9 @@ title: "TinkerForge"
 
 ## Installation
 
-Cumulocity's Java agent supports TinkerForge out of the box. For installing and running the Java agent on the Raspberry Pi, please see the [Raspberry Pi section](/guides/devices/raspberry-pi). For installing and running the Java agent on Windows or other Unix systems, please visit the [Java agent section](/guides/java/agents).
+Cumulocity's Java agent supports TinkerForge out of the box. For installing and running the Java agent on the Raspberry Pi, please see the [Raspberry Pi section](/guides/images/devices/raspberry-pi). For installing and running the Java agent on Windows or other Unix systems, please visit the [Java agent section](/guides/java/agents).
 
-![Raspberry Pi and TinkerForge](/guides/devices/tinkerforge/tinkerforge.jpg)
+![Raspberry Pi and TinkerForge](/guides/images/devices/tinkerforge/tinkerforge.jpg)
 
 ## Using TinkerForge components with Cumulocity
 
@@ -22,7 +22,7 @@ Cumulocity's Java agent supports TinkerForge out of the box. For installing and 
 
 Open Cumulocity in a web browser, go to "All devices" and locate the device that is running the Java agent. The "Child devices" tab lists the connected TinkerForge devices. 
 
-![Child Devices](/guides/devices/tinkerforge/tinkerforgechildren.png)
+![Child Devices](/guides/images/devices/tinkerforge/tinkerforgechildren.png)
 
 By default, TinkerForge components will be named using the name of the device that they are connected to ("RaspPi BCM2708 00000000e2f5ad4d" in the screenshot), the type of component ("Temperature") and the serial number of the component ("dGW"). You can edit the name in the "Info" tab of the device.
 
@@ -30,52 +30,52 @@ By default, TinkerForge components will be named using the name of the device th
 
 Bricklets can be configured remotely using the c8y_Configuration operation. To access this functionality in the UI, navigate to the device running the agent. Under the control tab you will find the Configuration panel. It contains different client-side defined options that can be altered.
 
-![Bricklet Configuration](/guides/devices/tinkerforge/tinkerforgeconfiguration.png)
+![Bricklet Configuration](/guides/images/devices/tinkerforge/tinkerforgeconfiguration.png)
 
 ### Barometer, humidtiy, ambient light, moisture, distance, voltage, current and temperature bricklets
 
-<div><img src="/guides/devices/tinkerforge/barometer.jpg" alt="Barometer" style="display: inline">
-<img src="/guides/devices/tinkerforge/humidity.jpg" alt="Humidity" style="display: inline">
-<img src="/guides/devices/tinkerforge/ambient_light.jpg" alt="Ambient Light" style="display: inline">
-<img src="/guides/devices/tinkerforge/moisture.jpg" alt="Moisture" style="display: inline">
-<img src="/guides/devices/tinkerforge/distance_ir.jpg" alt="Distance IR" style="display: inline">
-<img src="/guides/devices/tinkerforge/voltage_current.jpg" alt="Voltage/Current" style="display: inline">
-<img src="/guides/devices/tinkerforge/current.jpg" alt="Current" style="display: inline">
-<img src="/guides/devices/tinkerforge/temperature.jpg" alt="Temperatur" style="display: inline"></div><br>
+<div><img src="/guides/images/devices/tinkerforge/barometer.jpg" alt="Barometer" style="display: inline">
+<img src="/guides/images/devices/tinkerforge/humidity.jpg" alt="Humidity" style="display: inline">
+<img src="/guides/images/devices/tinkerforge/ambient_light.jpg" alt="Ambient Light" style="display: inline">
+<img src="/guides/images/devices/tinkerforge/moisture.jpg" alt="Moisture" style="display: inline">
+<img src="/guides/images/devices/tinkerforge/distance_ir.jpg" alt="Distance IR" style="display: inline">
+<img src="/guides/images/devices/tinkerforge/voltage_current.jpg" alt="Voltage/Current" style="display: inline">
+<img src="/guides/images/devices/tinkerforge/current.jpg" alt="Current" style="display: inline">
+<img src="/guides/images/devices/tinkerforge/temperature.jpg" alt="Temperatur" style="display: inline"></div><br>
 
 Sensor data can be visualized by clicking on the "Measurements" tab of a sensor.
 
-![Sensor measurements](/guides/devices/tinkerforge/tinkerforgemeasurements.png)
+![Sensor measurements](/guides/images/devices/tinkerforge/tinkerforgemeasurements.png)
 
 The data is regularly collected by the Cumulocity agent. The frequency of the collection can be configured on the Configuration panel. For example, "c8y.light.interval=5000" means that the light sensor is queried every 5.000 milliseconds.
 
 ### PTC bricklet
 
-![PTC bricklet](/guides/devices/tinkerforge/ptc.jpg)
+![PTC bricklet](/guides/images/devices/tinkerforge/ptc.jpg)
 
 In addition to the polling interval, you can also configure the wire mode of the PTC bricklet via the "c8y.ptc.wiremode" option. For more information on wire mode [visit the TinkerForge online documentation](http://www.tinkerforge.com/en/doc/Hardware/Bricklets/PTC.html).
 
 ### LCD Display bricklet
 
-![LCD 20x4 Display Bricklet](/guides/devices/tinkerforge/lcd12_20x4.jpg)
+![LCD 20x4 Display Bricklet](/guides/images/devices/tinkerforge/lcd12_20x4.jpg)
 
 To operate the display from Cumulocity, click the "Control" tab of the display bricklet. The "Relay" buttons switch the backlight on and off. The "Send Message" field sends a text message to be shown on the display.
 
-![Display usage](/guides/devices/tinkerforge/tinkerforgedisplay.png)
+![Display usage](/guides/images/devices/tinkerforge/tinkerforgedisplay.png)
 
 The display has four buttons at the bottom. Operating these buttons will send an event to Cumulocity which is shown on the "Events" tab. You can process this event, for example, using a [CEL statement](/guides/concepts/realtime). The event is of type "c8y_ButtonPressedEvent". The number of the button is part of the text of the event.
 
-![Events](/guides/devices/tinkerforge/tinkerforgeevents.png)
+![Events](/guides/images/devices/tinkerforge/tinkerforgeevents.png)
 
 ### 4x7 Segment Display bricklet
 
-![4x7 Segment Display bricklet](/guides/devices/tinkerforge/4x7_segment_display.jpg)
+![4x7 Segment Display bricklet](/guides/images/devices/tinkerforge/4x7_segment_display.jpg)
 
 The 4x7 Segment Display's implementation is similar to that of the LCD Display bricklet. In addition you can set the display brightness in the Configuration panel through the "c8y.4x7segmentdisplay.brightness" option (Max: 7, Min: 1, Default: 4).
 
 ### Remote Switch bricklet
 
-![Remote Switch bricklet](/guides/devices/tinkerforge/remote_switch.jpg)
+![Remote Switch bricklet](/guides/images/devices/tinkerforge/remote_switch.jpg)
 
 #### Configuration
 
@@ -137,7 +137,7 @@ will turn off "device2" and turn on "device1".
 
 ### Dual Relay Bricklet
 
-![Dual Relay Bricklet](/guides/devices/tinkerforge/dual_relay.jpg)
+![Dual Relay Bricklet](/guides/images/devices/tinkerforge/dual_relay.jpg)
 
 The dual relay bricklet consists of two relays. Each relay has three terminals such that the terminal in the middle is electrically connected to the terminal left or right depending on the relay state.
 
@@ -155,7 +155,7 @@ For example, the operation above will set the state of relay one to "OPEN" and r
 
 ### IO16 bricklet
 
-![IO16 Bricklet](/guides/devices/tinkerforge/io16.jpg)
+![IO16 Bricklet](/guides/images/devices/tinkerforge/io16.jpg)
 
 #### Configuration
 
@@ -191,8 +191,8 @@ This operation will find up to four outputs starting from A0 to B7 and switch th
 
 ### Distance InfraRed and UltraSound bricklets
 
-<div><img src="/guides/devices/tinkerforge/distance_ir.jpg" alt="Distance IR" style="display: inline">
-<img src="/guides/devices/tinkerforge/distance_us.jpg" alt="Distance US" style="display: inline"></div><br>
+<div><img src="/guides/images/devices/tinkerforge/distance_ir.jpg" alt="Distance IR" style="display: inline">
+<img src="/guides/images/devices/tinkerforge/distance_us.jpg" alt="Distance US" style="display: inline"></div><br>
 
 Additionally to providing measurement data, the Distance US and IR bricklets also send events. Similar to a button press on the display, interrupting the sensor of the distance bricklets will send an event. The event can be seen on the "Events" tab of the distance bricklet and can be post-processed with [CEL](/guides/concepts/realtime). The type of the event is "c8y_EntranceEvent". Additionally the following configuration options are provided:
 
@@ -204,11 +204,11 @@ Note: The DistanceUS bricklet measures distance in percentages, where 0% would b
 
 ### GPS bricklet
 
-![GPS Bricklet](/guides/devices/tinkerforge/gps.jpg)
+![GPS Bricklet](/guides/images/devices/tinkerforge/gps.jpg)
 
 The GPS bricklet will report its current location and send location updates as the device moves. The current location is shown in Device Management on a map and the movement history can be visualized.
 
-![Location](/guides/devices/tinkerforge/tinkerforgetracing.png)
+![Location](/guides/images/devices/tinkerforge/tinkerforgetracing.png)
 
 ## Extending the TinkerForge driver
 

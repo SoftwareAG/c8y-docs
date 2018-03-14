@@ -13,7 +13,7 @@ In this section, we describe how to install a Cumulocity agent with all relevant
 * Identify individual Raspberry Pis remotely based on their hardware serial number.
 * Update the Pi's firmware remotely through the firmware repository on GitHub.
 * Use the [PiFace Digital](http://www.element14.com/community/docs/DOC-52857/l/piface-digital-for-raspberry-pi) adapter board from the cloud.
-* Use [TinkerForge](/guides/devices/tinkerforge) sensors and controls from the cloud.
+* Use [TinkerForge](/guides/images/devices/tinkerforge) sensors and controls from the cloud.
 
 > The agent is provided in open source form as-is without support or warranty. For commercial use, we recommend to use industrial hardware and/or the Cumulocity C++ SDK.
 
@@ -53,7 +53,7 @@ Log in to the Raspberry Pi and install the agent.
 
 Open Cumulocity in a web browser and go to the "Registration" page. Enter the serial number that you wrote down in the previous step and click "Register Device".
 
-![Register device](/guides/devices/deviceregistration.png)
+![Register device](/guides/images/devices/deviceregistration.png)
 
 > Note: If you are running a dedicated edition of the Cumulocity platform you will need to configure the host in /usr/share/cumulocity-rpi-agent/cfg/cumulocity.properties and restart the agent using: 
 >
@@ -61,13 +61,13 @@ Open Cumulocity in a web browser and go to the "Registration" page. Enter the se
 
 After that accept the registration.
 
-![Accept device](/guides/devices/deviceacceptance.png)
+![Accept device](/guides/images/devices/deviceacceptance.png)
 
 Click on "All devices" to manage the Raspberry Pi. It is by default visible as "RaspPi <<hardware model>> <<serial number>>". You can edit the name in the "Info" tab.
 
 ## Using Tinkerforge bricks and bricklets
 
-The agent supports Tinkerforge devices out of the box, provided the [Tinkerforge daemon for Raspberry Pi](http://www.tinkerforge.com/de/doc/Embedded/Raspberry_Pi.html) is installed. For more information about using Tinkerforge with Cumulocity, see the [Tinkerforge section](/guides/devices/tinkerforge).
+The agent supports Tinkerforge devices out of the box, provided the [Tinkerforge daemon for Raspberry Pi](http://www.tinkerforge.com/de/doc/Embedded/Raspberry_Pi.html) is installed. For more information about using Tinkerforge with Cumulocity, see the [Tinkerforge section](/guides/images/devices/tinkerforge).
 
 ## Using PiFace Digital
 

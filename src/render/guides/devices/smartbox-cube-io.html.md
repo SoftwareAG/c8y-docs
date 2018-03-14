@@ -16,7 +16,7 @@ layout: devices
 
 Smartbox, based on the Telit Chipset HE910 is a ready to use solution for connecting Modbus devices to the Cumulocity Fieldbus Cloud. It provides a Master Slave Communication on RS485 for connecting up to 10 devices as well as 10 Sensors (Current ,Temperature, Pressure). Easy configure the SetUp of building automation fielddevices like pumps, e-meters, Airhandling units in the Cumulocity Fieldbus cloud or connect different sensortypes to the box. Using the MQTT protocol the terminal comes up with a low traffic solution for decentralized applications. 
 
-![Overview](/guides/devices/smartbox-cube-io/overview.png)
+![Overview](/guides/images/devices/smartbox-cube-io/overview.png)
 
 ## SMARTbox CubeIO <a name="datasheet"></a>Datasheet
 
@@ -35,8 +35,8 @@ Smartbox, based on the Telit Chipset HE910 is a ready to use solution for connec
 
 | Connectivity/ Features <td colspan="2">
 | --- | --- | --- |
-| Layout <td colspan="2"> ![Layout](/guides/devices/smartbox-cube-io/interface.png)
-| Fieldbus Modbus </br> ![ ](/guides/devices/smartbox-dp/profibus.png) | Type | Modbus RTU Master |
+| Layout <td colspan="2"> ![Layout](/guides/images/devices/smartbox-cube-io/interface.png)
+| Fieldbus Modbus </br> ![ ](/guides/images/devices/smartbox-dp/profibus.png) | Type | Modbus RTU Master |
 | | Baudrate | 4800, 9600, 19200, 38400, 57600, 115200 |
 | | Parity | Even, ODD, NONE | 
 | | Stoppbits | 2,1 |
@@ -104,7 +104,7 @@ Smartbox, based on the Telit Chipset HE910 is a ready to use solution for connec
 | Operating humidity <td colspan=3> Max. 85%
 | Storage humidity <td colspan=3> Max. 85%
 | IP Class <td colspan=3> IP20/IP54 (opt.)
-| Approvals </br> ![ ](/guides/devices/smartbox-dp/certification.png)| <strong>America</strong> | <strong>Europe </strong> | <strong>Australia</strong> |
+| Approvals </br> ![ ](/guides/images/devices/smartbox-dp/certification.png)| <strong>America</strong> | <strong>Europe </strong> | <strong>Australia</strong> |
 | | FCC /IC, PTCRB /GCF | R&TTE / GCF / RED | RCM, Telstra |
 | Conformity Declerations <td colspan=3> EMC-Directive 2014/30/EU </br> EN 55022:2010</br> EN 55024:2010</br> IEC 61000-6-1:2005</br> IEC 61000-6-3:2011</br> R&TTE-Directive 2014/53/EU</br> EN 301 511 V9.0.2</br> EN 301 908-1 V6.2.1</br> EN 301 908-2 V6.2.1</br> RoHS-DIrective 2011/65/EU</br> EN 50581:2012
 

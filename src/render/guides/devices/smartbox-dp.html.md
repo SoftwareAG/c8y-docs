@@ -16,7 +16,7 @@ layout: devices
 Smartbox, based on the Telit Chipset xE910 is a ready to use solution for connecting to Profibus Networks to
 the Cumulocity IoT Cloud. It provides a Profibus Slave Communication on DPV0 Standard as well as 2 Sensorinputs and a Modbus RTU Master Communication. Easy configure the SetUp the S7 PLC Data Echange to the box. Using the MQTT protocol the terminal comes up with a low traffic solution
 
-![Overview](/guides/devices/smartbox-dp/overview.png)
+![Overview](/guides/images/devices/smartbox-dp/overview.png)
 
 ## SMARTbox DP <a name="datasheet"></a>Datasheet
 
@@ -35,8 +35,8 @@ the Cumulocity IoT Cloud. It provides a Profibus Slave Communication on DPV0 Sta
 
 | Connectivity/ Features <td colspan="2">
 | --- | --- | --- |
-| Layout <td colspan="2"> ![Layout](/guides/devices/smartbox-dp/interface.png)
-| Fieldbus Profibus </br> ![ ](/guides/devices/smartbox-dp/modbus.png) | Type | Profibus Slave |
+| Layout <td colspan="2"> ![Layout](/guides/images/devices/smartbox-dp/interface.png)
+| Fieldbus Profibus </br> ![ ](/guides/images/devices/smartbox-dp/modbus.png) | Type | Profibus Slave |
 | | Standard | DP-V0 |
 | | Baudrate | Automatic Baudrate Detection </br> Supported Baudrates:</br> &#124;9,6kbit &#124; 19,2kbit &#124; 45,45kbit &#124; 93,75kbit &#124; 187,5kbit &#124; 500kbit &#124; 1500kbit &#124; 3000kbit &#124; 6000kbit &#124; 12000kbit |
 | | GSD File | ID Number : 1023 HEX </br>GSD file : PSYS1023.GSD | 
@@ -44,7 +44,7 @@ the Cumulocity IoT Cloud. It provides a Profibus Slave Communication on DPV0 Sta
 | | Output Register | 16 (16bit) |
 | | Profibus Slave address | Selectable by Cloud, Default: 24 |
 | | ASIC | VPC3+S (Profichip) |
-| Fieldbus Modbus </br> ![ ](/guides/devices/smartbox-dp/profibus.png) | Type | Modbus RTU Master |
+| Fieldbus Modbus </br> ![ ](/guides/images/devices/smartbox-dp/profibus.png) | Type | Modbus RTU Master |
 | | Baudrate | 4800, 9600, 19200, 38400, 57600, 115200 |
 | | Parity | Even, ODD, NONE | 
 | | Stoppbits | 2,1 |
@@ -99,7 +99,7 @@ the Cumulocity IoT Cloud. It provides a Profibus Slave Communication on DPV0 Sta
 | Operating humidity <td colspan=3> Max. 85%
 | Storage humidity <td colspan=3> Max. 85%
 | IP Class <td colspan=3> IP20/IP54 (opt.)
-| Approvals </br> ![ ](/guides/devices/smartbox-dp/certification.png)| <strong>America</strong> | <strong>Europe </strong> | <strong>Australia</strong> |
+| Approvals </br> ![ ](/guides/images/devices/smartbox-dp/certification.png)| <strong>America</strong> | <strong>Europe </strong> | <strong>Australia</strong> |
 | | FCC /IC, PTCRB /GCF | R&TTE / GCF / RED | RCM, Telstra |
 | Conformity Declerations <td colspan=3> EMC-Directive 2014/30/EU </br> EN 55022:2010</br> EN 55024:2010</br> IEC 61000-6-1:2005</br> IEC 61000-6-3:2011</br> R&TTE-Directive 2014/53/EU</br> EN 301 511 V9.0.2</br> EN 301 908-1 V6.2.1</br> EN 301 908-2 V6.2.1</br> RoHS-DIrective 2011/65/EU</br> EN 50581:2012
 | Profibus Organisation <td colspan=3> ID Number : 1023 HEX </br> GSD file : PSYS1023.GSD

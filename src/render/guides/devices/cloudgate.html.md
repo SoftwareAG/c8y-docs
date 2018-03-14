@@ -3,7 +3,7 @@ layout: devices
 title: "CloudGate"
 ---
 
-![CloudGate](/guides/devices/cloudgate/cloudgate-logo.png)
+![CloudGate](/guides/images/devices/cloudgate/cloudgate-logo.png)
 
 ## Overview
 
@@ -16,7 +16,7 @@ In this section, we describe how to configure the CloudGate device so that you a
 
 CloudGate is [Option’s](http://www.option.com/) M2M Gateway. It provides competitively priced LAN to WWAN routing and GPS functionality in a single basic unit certified by all major US cellular operators (CDMA/EvDO and WCDMA/HSPA+). CloudGate is simple to configure locally or remotely from your PC, tablet or smartphone.
 
-![CloudGate](/guides/devices/cloudgate/cloudgate-front.jpg)
+![CloudGate](/guides/images/devices/cloudgate/cloudgate-front.jpg)
 
 ## Installation
 
@@ -31,7 +31,7 @@ For upgrading your CloudGate remotely:
 - Navigate to your device and click on the button "Change version" in the "Firmware" section.
 - Select the version you intend to install on your CloudGate device and click on "Apply changes".
 
-![CloudGate](/guides/devices/cloudgate/change_firmware.png)
+![CloudGate](/guides/images/devices/cloudgate/change_firmware.png)
 
 For upgrading your CloudGate manually:
 
@@ -43,7 +43,7 @@ For upgrading your CloudGate manually:
 - Access your CloudGate device via web browser.
 - Log into the CloudGate web interface. The default username and password are both admin.
 
-![CloudGate web interface](/guides/devices/cloudgate/device_provisioning.png)
+![CloudGate web interface](/guides/images/devices/cloudgate/device_provisioning.png)
 
 - Go to the "Provisioning" tab and in the left menu select "Upload device provisioning file".
 - Click on "Browse..." and navigate to the zip archive.
@@ -51,7 +51,7 @@ For upgrading your CloudGate manually:
 
 After the device restarted, you can confirm the firmware version by checking the web interface of the CloudGate device.
 
-![CloudGate Universe](/guides/devices/cloudgate/firmware_version.png)
+![CloudGate Universe](/guides/images/devices/cloudgate/firmware_version.png)
 
 To connect your CloudGate device with Cumulocity, the "LuvitRED" plugin needs to be installed as well. Follow the instructions above. In this case the plugin can be found in the "Application" section and not in the "Firmware" section.
 
@@ -63,7 +63,7 @@ LuvitRED is a browser-based application which allows you to write applications w
 
 To view the LuvitRED editor, go to the "Plugin" tab in the CloudGate web interface and select "LuvitRED". Click on "Advanced Editor" and the editor will appear.
 
-![LuvitRED user interface](/guides/devices/cloudgate/luvitred.png)
+![LuvitRED user interface](/guides/images/devices/cloudgate/luvitred.png)
 
 On the left side of the user interface, you can see a list of nodes which are ready to use. To see which purpose the node serves, click on a node and see the description on the right side. Drag a node into the middle area to add it to your current workflow. Before creating a workflow, you have make sure that your device is connected to the CloudGate, otherwise the workflow will not work. In a similar manner, you have to include at least one "c8y" node in your workflow in order to connect to Cumulocity. Type "c8y" into the search bar to view all the nodes which are related to Cumulocity. Adding one of the following "c8y" nodes brings the following features:
 
@@ -84,11 +84,11 @@ In general, a node can have an input and/or output depending on the functionalit
 
 In the following example, the "inject" and "debug" node will be used. Drag both nodes into the middle area and connect them by clicking on the output of the "inject" node", holding the mouse and releasing it above the input of the "debug" node.
 
-![LuvitRED user interface](/guides/devices/cloudgate/basicflow.png)
+![LuvitRED user interface](/guides/images/devices/cloudgate/basicflow.png)
 
 The "debug" node is used for displaying the input it gets on the console (the "debug" tab on the right side of the editor) while the "inject" node is used for sending a customizable value as output. In this case, the "debug" node will just display the value we will configure in the "inject" node. To configure the "inject" node, double-click it.
 
-![LuvitRED user interface](/guides/devices/cloudgate/injectdialog.png)
+![LuvitRED user interface](/guides/images/devices/cloudgate/injectdialog.png)
 
 - Payload: Defines what will be sent as output.
   - Select "string" as the type of the payload in the drop-down menu.
@@ -100,21 +100,21 @@ The "debug" node is used for displaying the input it gets on the console (the "d
 
 After deploying the changes, you should be able to see the specified value in the "debug" tab.
 
-![LuvitRED user interface](/guides/devices/cloudgate/debug.png)
+![LuvitRED user interface](/guides/images/devices/cloudgate/debug.png)
 
 ### Basic workflow with Cumulocity
 
 In the following example, we will simulate a periodic temperature measurement and send it to Cumulocity. To do so, replace the "debug" node with a "c8y measurement" node.
 
-![LuvitRED user interface](/guides/devices/cloudgate/basiccumulocityflow.png)
+![LuvitRED user interface](/guides/images/devices/cloudgate/basiccumulocityflow.png)
 
 To send random numeric values perdiodically, change the configuration of the "inject" node. First, select "random integer" as payload type and choose a range of possible values. Second, select "interval" in the "repeat" field and specify an interval.
 
-![LuvitRED user interface](/guides/devices/cloudgate/basiccumulocityflowinjectdialog.png)
+![LuvitRED user interface](/guides/images/devices/cloudgate/basiccumulocityflowinjectdialog.png)
 
 Next, the "c8y measurement" node needs to be configured.
 
-![LuvitRED user interface](/guides/devices/cloudgate/basiccumulocityflowmeasurement.png)
+![LuvitRED user interface](/guides/images/devices/cloudgate/basiccumulocityflowmeasurement.png)
 
 - Type: Type of the measurement.
   - Enter "c8y_Temperature" as type.
@@ -124,7 +124,7 @@ Next, the "c8y measurement" node needs to be configured.
 - Platform: Defines the platform the node will use.
   - Click on the "pencil" icon. Another dialog which represents the "c8y platform" node will appear.
 
-![LuvitRED user interface](/guides/devices/cloudgate/basiccumulocityflowplatform.png)
+![LuvitRED user interface](/guides/images/devices/cloudgate/basiccumulocityflowplatform.png)
 
 - Provision: Defines if the credentials will be set manually or autoprovisioned.
   - Select "Manually" in the drop-down menu.
@@ -141,7 +141,7 @@ For more information on the "[c8y measurement](#measurement)" and "[platform](#p
 
 After configurating the "c8y measurement", the workflow is ready to be deployed. You should be able to see the measurements sent by the device in the "Measurement" tab of your device in the "Device Management" application of Cumulocity. You can also see the amount of measurements which were sent in the status under the node.
 
-![LuvitRED user interface](/guides/devices/cloudgate/temperaturemeasurements.png)
+![LuvitRED user interface](/guides/images/devices/cloudgate/temperaturemeasurements.png)
 
 ## LuvitRED Cumulocity Nodes
 
@@ -165,7 +165,7 @@ The following parameters are optional:
 
 If you want to add multiple series to a measurement, you have to add a new measurement with the same type to the list.
 
-![c8y measurement](/guides/devices/cloudgate/c8ymeasurement.png)
+![c8y measurement](/guides/images/devices/cloudgate/c8ymeasurement.png)
 
 For more information on measurements, refer to "[Cumulocity's domain model](/guides/concepts/domain-model/)".
 
@@ -187,7 +187,7 @@ The following parameters are optional:
   - Q config: Select a queue configuration. Defines how many message can be stored in memory.
 - Default text: The text which will be used if there is no payload.
 
-![c8y alarm](/guides/devices/cloudgate/c8yalarm.png)
+![c8y alarm](/guides/images/devices/cloudgate/c8yalarm.png)
 
 For more information on alarms, refer to "[Working with alarms](/guides/users-guide/device-management/#alarm-monitoring)".
 
@@ -207,7 +207,7 @@ The following parameters are optional:
   - Q config: Select a queue configuration. Defines how many message can be stored in memory.
 - Default text: The text which will be used if there is no payload.
 
-![c8y event](/guides/devices/cloudgate/c8yevent.png)
+![c8y event](/guides/images/devices/cloudgate/c8yevent.png)
 
 For more information on events, refer to "[Cumulocity's domain model](/guides/concepts/domain-model/)".
 
@@ -247,7 +247,7 @@ For more information on the node, refer to the description which can be seen on 
 
 This node is not visible in the list of nodes as it is used as a configuration which can be shared by multiple nodes. The configuration node defines the type of connection and the credentials which will be used to communicate with Cumulocity.
 
-![c8y platform](/guides/devices/cloudgate/c8yplatform.png)
+![c8y platform](/guides/images/devices/cloudgate/c8yplatform.png)
 
 To be able to use the configuration, the type of provision has to be specified ("Manually" or "Automatically").
 
@@ -259,13 +259,13 @@ In case of "Automatically", the user can enter a servername and authentication s
 
 The following example workflow is a bit more complex but shows a possible use case. Imagine that you have a device which measures the temperatures and publishes the measurements via MQTT. With the help of the "MQTT" node in LuvitRED, we are able to subscribe to the channel the measurements are published on.
 
-![c8y platform](/guides/devices/cloudgate/luvitred_example_mqtt_publisher.png)
+![c8y platform](/guides/images/devices/cloudgate/luvitred_example_mqtt_publisher.png)
 
 After the measurement was received, the "json" node converts the input to JSON format. Then the "switch" node decides to which node it will forward the input to depending on a user-defined condition. In this case, if the temperature is above a certain threshold, an alarm will be sent. Otherwise, a measurement will be sent to Cumulocity.
 
 If you do not have a device which supports MQTT, you can use this workflow instead to simulate such a device.
 
-![c8y platform](/guides/devices/cloudgate/luvitred_example_mqtt_subscriber.png)
+![c8y platform](/guides/images/devices/cloudgate/luvitred_example_mqtt_subscriber.png)
 
 This workflow uses two "inject" nodes to simulate a measurement which triggers either the "c8y measurement" node or the "c8y alarm" node in the other workflow.
 

@@ -22,7 +22,7 @@ layout: devices
 
 The device is supported by Cumulocity's Linux agent. To install the agent, first login to the device.
 
-![Connect](/guides/devices/beaglebone/beagleboneconnect.png)
+![Connect](/guides/images/devices/beaglebone/beagleboneconnect.png)
 
 Second, after you have logged into the device you will have to install the javaSDK. Simply follow the instructions in [here](http://beagleboard.org/project/java/).
 
@@ -30,20 +30,20 @@ Second, after you have logged into the device you will have to install the javaS
 
 Third, download and install the latest Linux agent:
 
-![Agent](/guides/devices/beaglebone/getagent.png)
+![Agent](/guides/images/devices/beaglebone/getagent.png)
 
 Finally, start the agent
 
-![RunAgent](/guides/devices/beaglebone/runagent.png)
+![RunAgent](/guides/images/devices/beaglebone/runagent.png)
 
 ## Register to Cumulocity
 
 When the agent has been started, find the serial number of your device and go to the device registration page in the "Device Management" application, type the serial number and click on "Register Device". Green "Accept" button will appear after a few seconds, click on the button to accept the device.
 
-![RegisterDevice](/guides/devices/beaglebone/bootstrap.png)
+![RegisterDevice](/guides/images/devices/beaglebone/bootstrap.png)
 
 ## Cumulocity IoT Platform
 
 When the device has been accepted, you can remotely monitor and control your device.
 
-![DeviceInfo](/guides/devices/beaglebone/deviceinfo.png)
+![DeviceInfo](/guides/images/devices/beaglebone/deviceinfo.png)

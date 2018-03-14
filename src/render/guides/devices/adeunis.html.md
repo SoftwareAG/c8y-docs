@@ -29,22 +29,22 @@ When your device is configured correctly in Actility AS, you can register the de
 
 The full payload contained in the data callback will be created as an event. Any location updates and triggering of the button will create an event as well. 
 
-![Adeunis event](/guides/devices/adeunis/adeunis_event.png)
+![Adeunis event](/guides/images/devices/adeunis/adeunis_event.png)
 
 The signal strength, battery and temperature values will be created as measurements.
 
-![Adeunis signal strength](/guides/devices/adeunis/adeunis_signalstrength.png)
+![Adeunis signal strength](/guides/images/devices/adeunis/adeunis_signalstrength.png)
 
-![Adeunis battery](/guides/devices/adeunis/adeunis_battery.png)
+![Adeunis battery](/guides/images/devices/adeunis/adeunis_battery.png)
 
-![Adeunis temperature](/guides/devices/adeunis/adeunis_temperature.png)
+![Adeunis temperature](/guides/images/devices/adeunis/adeunis_temperature.png)
 
 When the accelerometer of the device is triggered, an alarm is generated. The alarm is cleared automatically if the device is being stationary in the next measurement period.
 
-![Adeunis location](/guides/devices/adeunis/adeunis_alarm.png)
+![Adeunis location](/guides/images/devices/adeunis/adeunis_alarm.png)
 
 The location and movement of the devices is tracked with each received GPS position.
 
-![Adeunis location](/guides/devices/adeunis/adeunis_location.png)
+![Adeunis location](/guides/images/devices/adeunis/adeunis_location.png)
 
-![Adeunis tracking](/guides/devices/adeunis/adeunis_tracking.png)
+![Adeunis tracking](/guides/images/devices/adeunis/adeunis_tracking.png)

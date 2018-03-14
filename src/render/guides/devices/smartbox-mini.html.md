@@ -23,14 +23,14 @@ layout: devices
 Smartbox, based on the Telit Chipset HE910 is a ready to use solution for connecting Modbus devices to the Cumulocity Fieldbus Cloud. It provides a Master Slave Communication on RS485 for connecting up to 10 devices. Easy configure the SetUp of building automation fielddevices like pumps, e-meters, Airhandling units in the Cumulocity Fieldbus cloud. Using the MQTT protocol the terminal comes up with a low traffic solution for decentralized applications. 
 
 
-![Overview](/guides/devices/smartbox-mini/overview.png)
+![Overview](/guides/images/devices/smartbox-mini/overview.png)
 
 | Smartbox Mini Overview <td colspan=2> 
 | --- | --- | --- |
-| ![Radio](/guides/devices/smartbox-io/radio.png) <td colspan=2>  <ul><li>2G  - global</li><li>3G  - EMEA, APAC, NA, Global</li><li>LTE - EMEA, APAC, Americas</li><li>GNSS</li></ul>
-| ![Connectivity](/guides/devices/smartbox-io/connectivity.png) | Fieldbus |<ul><li>Modbus RTU (RS232/RS485) ![ ](/guides/devices/smartbox-io/modbus.png)  |
+| ![Radio](/guides/images/devices/smartbox-io/radio.png) <td colspan=2>  <ul><li>2G  - global</li><li>3G  - EMEA, APAC, NA, Global</li><li>LTE - EMEA, APAC, Americas</li><li>GNSS</li></ul>
+| ![Connectivity](/guides/images/devices/smartbox-io/connectivity.png) | Fieldbus |<ul><li>Modbus RTU (RS232/RS485) ![ ](/guides/images/devices/smartbox-io/modbus.png)  |
 | | Sensors | <ul><li>Digital Input (DIN)</li><li>AIN (NTC,0..20mA)</li></ul> |
-| ![Cloudagent](/guides/devices/smartbox-io/cloudagent.png) <td colspan=2>  MQTT Agent for Cumulocity IoT, T-Systems- Cloud der Dinge
+| ![Cloudagent](/guides/images/devices/smartbox-io/cloudagent.png) <td colspan=2>  MQTT Agent for Cumulocity IoT, T-Systems- Cloud der Dinge
 
 
 ### For further information: 
@@ -44,7 +44,7 @@ Smartbox, based on the Telit Chipset HE910 is a ready to use solution for connec
 * Connect your sensors and Modbus Devices to the terminal block
 * You can use external 24VDC (200mA) or the with the delivered PowerSupply
 
-![interface](/guides/devices/smartbox-mini/interface.png)
+![interface](/guides/images/devices/smartbox-mini/interface.png)
 
 
 ## <a name="connect-the-smartbox"></a>Connect the Smartbox to your Cumulocity Account
@@ -62,11 +62,11 @@ By default the terminal supports cloud fieldbus from Cumulocity. To use it you s
 
 In the cumulocity Devicemanagement go to the menu in Device Registration. Enter the Terminal's IMEI as an ID. The IMEI is printed on the devices itself:
 
-![IMEI](/guides/devices/smartbox-io/imei.png)
+![IMEI](/guides/images/devices/smartbox-io/imei.png)
 
 After accepting the device (this process may tale 30 seconds) you should be able to see it in the All Devices list after a short delay.  
 
-![Terminal in all devcies](/guides/devices/smartbox-io/terminal-in-all-devices.png)
+![Terminal in all devcies](/guides/images/devices/smartbox-io/terminal-in-all-devices.png)
 
 ## Use the <a name="ios"></a>built-in IOs
 
@@ -75,7 +75,7 @@ After accepting the device (this process may tale 30 seconds) you should be able
   * 1 x AIN (NTC,0..20mA)
 </br> Note the activation of NTC or 0..20mA must be defined during production
 
-![interface](/guides/devices/smartbox-mini/interface-sensors.png)
+![interface](/guides/images/devices/smartbox-mini/interface-sensors.png)
 
 ## <a name="connect-a-modbus-device"></a> Connect a Modbus Device to the SMARTbox
 
@@ -97,7 +97,7 @@ Device2: Energy Meter on Address2</br>
 Device3: Frontcooler for Serverline1 on Address5</br>
 Device4: Frontcooler for Serverline2 on Address6
 
-![ ](/guides/devices/smartbox-mini/use-case.png)
+![ ](/guides/images/devices/smartbox-mini/use-case.png)
 
 To connect 1 Modbus Device to the RTU network:
 
@@ -112,7 +112,7 @@ To connect 1 Modbus Device to the RTU network:
 9. Enter a name for the device and select the type of the device from the drop-down box. To add new device types, see "Configuring Fieldbus device types" below. Set the Modbus address of the connected device. 
 10. Click "Add". Cumulocity will now send a notification to the Modbus terminal that a new device is ready to be managed. This may take a few seconds. 
 
-![Terminal](/guides/devices/smartbox-mini/terminal-modbus.png)
+![Terminal](/guides/images/devices/smartbox-mini/terminal-modbus.png)
 
 
 ## <a name="location"></a>Use the built-in location functionality
@@ -123,7 +123,7 @@ The terminal features cell location and is available in Location tab on terminal
 3.	Activate a regular identification of the location. In Configuration tab you can set:
 </br>c8y.LocationCycle=60; define in min, how often the location should be checked. 0 means the cycled checking is disabled. If a value >0 ist set, also the tracking is enabled
 
-![Location](/guides/devices/smartbox-mini/location.png)
+![Location](/guides/images/devices/smartbox-mini/location.png)
 
 ## <a name="tracking"></a>Use the built-in tracking functionality
 
@@ -133,7 +133,7 @@ Next to the map, the individual recordings with their time are listed ("location
 
 Activate a regular identification of the location. In Configuration tab you can set. If the value of c8y.LocationCycle is greater 0 then tracking is enabled.
 
-![Tracking](/guides/devices/smartbox-io/tracking.png)
+![Tracking](/guides/images/devices/smartbox-io/tracking.png)
 
 Depending on the type of device and the integration into Cumulocity, you can also configure device-side geo-fencing and motion detection.
 
@@ -164,7 +164,7 @@ work with remote devices. You can send AT commands in the respective language of
  in Chapter "AT commands": https://www.pssystec.de/downloads/. Frequently used
  commands are available by clicking the "Get predefined" button
 
-![Device Shell](/guides/devices/smartbox-io/device-shell.png)
+![Device Shell](/guides/images/devices/smartbox-io/device-shell.png)
 
 
 ## <a name="debug-and-operate"></a>Local Debug and operate the device
@@ -181,6 +181,6 @@ You will get details of the running machine.
 
 Depending on your Modbus Slave e.g. the chiller from the example above, you have to define all datapoints of your connected Slave device. Here you will find a detailled description of one datapoint (Holding Register and a coil) and its metadata which you can define to control Cloud Visualization. 
 
-![Device Database](/guides/devices/smartbox-io/device-database1.png)
+![Device Database](/guides/images/devices/smartbox-io/device-database1.png)
 
-![Device Database](/guides/devices/smartbox-io/device-database2.png)
+![Device Database](/guides/images/devices/smartbox-io/device-database2.png)

@@ -26,7 +26,7 @@ To connect a Meitrack device to Cumulocity, you need to configure it to send dat
 
 The screenshot below illustrates the required settings in the "Tracking" menu.
 
-![Meitrack configuration](/guides/devices/meitrackconf.png)
+![Meitrack configuration](/guides/images/devices/meitrackconf.png)
 
 ## Registering Meitrack devices with Cumulocity
 

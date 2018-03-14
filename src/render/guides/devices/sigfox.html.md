@@ -52,7 +52,7 @@ You need to add a new custom callback and change the following parameters:
 
 Setting the type to bi-directional (BIDIR) enables Cumulocity to send commands in return. If you use uplink callbacks, omit the "ack" parameter.
 
-![Data callback configuration](/guides/devices/sigfox/sigfox_backend_data.png)
+![Data callback configuration](/guides/images/devices/sigfox/sigfox_backend_data.png)
 
 ### Service acknowledge callback
 
@@ -76,7 +76,7 @@ You need to add a new custom callback and change the following parameters:
         "downlinkOverusage": "{downlinkOverusage}"
       }
 
-![Service acknowledge callback configuration](/guides/devices/sigfox/sigfox_backend_serviceack.png)
+![Service acknowledge callback configuration](/guides/images/devices/sigfox/sigfox_backend_serviceack.png)
 
 ### Service status callback
 
@@ -98,7 +98,7 @@ You need to add a new custom callback and change the following parameters:
         "seqNumber": "{seqNumber}"
       }
 
-![Service status callback configuration](/guides/devices/sigfox/sigfox_backend_servicestatus.png)
+![Service status callback configuration](/guides/images/devices/sigfox/sigfox_backend_servicestatus.png)
 
 ### Error callback
 
@@ -119,26 +119,26 @@ You need to add a new custom callback and change the following parameters:
         "severity": "{severity}"
       }
 
-![Error callback configuration](/guides/devices/sigfox/sigfox_backend_error.png)
+![Error callback configuration](/guides/images/devices/sigfox/sigfox_backend_error.png)
 
 ## Data created by SIGFOX devices
 
 The full payload contained in the data callback will be created as an event.
 
-![SIGFOX event](/guides/devices/sigfox/sigfox_event.png)
+![SIGFOX event](/guides/images/devices/sigfox/sigfox_event.png)
 
 The signal strength values from in the data callback and the battery and temperature values contained in the service status callback will be created as measurements.
 
-![SIGFOX signal strength](/guides/devices/sigfox/sigfox_signalstrength.png)
+![SIGFOX signal strength](/guides/images/devices/sigfox/sigfox_signalstrength.png)
 
-![SIGFOX battery](/guides/devices/sigfox/sigfox_battery.png)
+![SIGFOX battery](/guides/images/devices/sigfox/sigfox_battery.png)
 
-![SIGFOX temperature](/guides/devices/sigfox/sigfox_temperature.png)
+![SIGFOX temperature](/guides/images/devices/sigfox/sigfox_temperature.png)
 
 Data from the error callback and the downlinkOverusage flag will be created as alarms.
 
-![SIGFOX temperature](/guides/devices/sigfox/sigfox_alarms.png)
+![SIGFOX temperature](/guides/images/devices/sigfox/sigfox_alarms.png)
 
 Using the device shell you can send direct commands to a SIGFOX device. SIGFOX commands are 8 bytes in hexadecimal format. You need to put a 16 character (2 characters per byte) hexadecimal string to the shell.
 
-![SIGFOX temperature](/guides/devices/sigfox/sigfox_shell.png)
+![SIGFOX temperature](/guides/images/devices/sigfox/sigfox_shell.png)

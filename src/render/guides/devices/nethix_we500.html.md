@@ -34,7 +34,7 @@ It is necessary that the PC used for connecting to WE500 belongs to the same net
 
 [192.168.1.160](192.168.1.160)
 
-![Login](/guides/devices/we500/login1.png)
+![Login](/guides/images/devices/we500/login1.png)
 
 The authentication procedure of the web interface will ask for the user credentials. The default username and password are the following:
 
@@ -55,7 +55,7 @@ WE500 need an Internet connection to be able to connect to your Cumulocity accou
 ### <a name="wan"></a>WAN
 To establish a “WAN” connection through WE500 you need first to insert a SIM card as shown below:
 
-![Sim](/guides/devices/we500/sim1.png)
+![Sim](/guides/images/devices/we500/sim1.png)
 
 The SIM card contacts must face the pluggable screw terminal and the cut angle faced to the front of the device.
 
@@ -66,13 +66,13 @@ After that, connect a quad band GSM antenna with the right cable and, if require
 
 After the login procedure, navigate to the **Administration > Networking > SIM** tab.
 
-![Networking_Sim](/guides/devices/we500/networking_sim1.png)
+![Networking_Sim](/guides/images/devices/we500/networking_sim1.png)
 
 Fill the required fields with the correct parameters, according to your provider.
 
 WE500 is ready now to establish a WAN connection. In order to activate the connection, navigate to the **Administration > Networking > HSPA** tab.
 
-![Networking_hspa](/guides/devices/we500/networking_hspa1.png)
+![Networking_hspa](/guides/images/devices/we500/networking_hspa1.png)
 
 Once enabled the service with a flag on the field **Enable**, it’s required to specify whether the connection must be always on or on demand.
 
@@ -87,7 +87,7 @@ It’s possible to check the quality of the connection by using the diagnostic t
 
 LAN parameters can be configured from **Administration > Networking > LAN** tab.
 
-![Networking_LAN](/guides/devices/we500/networking_lan1.png)
+![Networking_LAN](/guides/images/devices/we500/networking_lan1.png)
 
 First of all the **MAC address** of the device will be displayed, with the option of using the LAN network on static IP address or on DHCP.
 
@@ -106,7 +106,7 @@ WLAN parameters can be configured from **Administration > Networking > WLAN** ta
 
 Please note that this option is available only if, at order confirmation, the *Wi-Fi on USB port* option has been selected.
 
-![Networking_WLAN](/guides/devices/we500/networking_wlan.png)
+![Networking_WLAN](/guides/images/devices/we500/networking_wlan.png)
 
 First of all it will be displayed the **MAC address** of the Wi-Fi device connected to WE500, and it will be given the possibility to choose between a static or dynamic IP address.
 
@@ -135,7 +135,7 @@ In order to do that, it’s necessary to create a new variable and to enable the
 
 Navigate to **Administration > Variables > Variables** tab and click *New*, in order to create a new variable.
 
-![Variable_Setup](/guides/devices/we500/variable_setup_generic_settings1.png)
+![Variable_Setup](/guides/images/devices/we500/variable_setup_generic_settings1.png)
 
 Many different types of variables are available, and for each of them parameters may differ. Only the section **Generic Variable** is valid for all types of variables. This section is structured as follows:
 
@@ -152,7 +152,7 @@ Once established an Internet connection and created at least one variable, it is
 
 To do so, navigate to **Administration > Cloud > Cumulocity** tab.
 
-![Cumulocity](/guides/devices/we500/cumulocity.png)
+![Cumulocity](/guides/images/devices/we500/cumulocity.png)
 
 On this page it’s possible to set the following parameters:
 
@@ -164,19 +164,19 @@ On this page it’s possible to set the following parameters:
 
 By clicking on the **Save** button, WE500 will register automatically in **Cumulocity** and will start sending variables that can be monitored from **Devices > All devices > Measurements**:
 
-![Cumulocity_Measurements](/guides/devices/we500/cumulocity_device_measurements.png)
+![Cumulocity_Measurements](/guides/images/devices/we500/cumulocity_device_measurements.png)
 
 ### <a name="info"></a>Device information
 WE500 registers automatically in **Cumulocity** with default data that can be later changed in **Devices > All devices > Info**:
 
-![Cumulocity_Device_Info](/guides/devices/we500/cumulocity_device_info.png)
+![Cumulocity_Device_Info](/guides/images/devices/we500/cumulocity_device_info.png)
 
 ### <a name="update"></a>Software update
 The WE500 firmware can also be updated from **Devices > All devices > Software**:
 
-![Cumulocity_Device_Software](/guides/devices/we500/cumulocity_device_software.png)
+![Cumulocity_Device_Software](/guides/images/devices/we500/cumulocity_device_software.png)
 
 ### <a name="restart"></a>Restart device
 WE500 can also be remotely rebooted from **Devices > All devices > Control > Restart** device:
 
-![Cumulocity_Device_Restart](/guides/devices/we500/cumulocity_device_restart.png)
+![Cumulocity_Device_Restart](/guides/images/devices/we500/cumulocity_device_restart.png)

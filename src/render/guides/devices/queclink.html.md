@@ -18,14 +18,14 @@ title: Queclink
 
 The location and traces of the equipped assets are shown in Cumulocity and you can create additional business logic on top of the data (for example, sending an email when a geofence is left). For the GL200, device-side motion tracking and geofencing can be configured from Cumulocity.
 
-<img src="/guides/devices/queclink/GL200.png" alt="GL200" style="display: inline">
-<img src="/guides/devices/queclink/GL300.png" alt="GL300" style="display: inline">
-<img src="/guides/devices/queclink/GL500.png" alt="GL500" style="display: inline">
-<img src="/guides/devices/queclink/GL505.png" alt="GL505" style="display: inline">
-<img src="/guides/devices/queclink/GV200.png" alt="GV200" style="display: inline">
-<img src="/guides/devices/queclink/GV300.png" alt="GV300" style="display: inline">
-<img src="/guides/devices/queclink/GV500.png" alt="GV500" style="display: inline">
-<img src="/guides/devices/queclink/GV75.png" alt="GV75" style="display: inline">
+<img src="/guides/images/devices/queclink/GL200.png" alt="GL200" style="display: inline">
+<img src="/guides/images/devices/queclink/GL300.png" alt="GL300" style="display: inline">
+<img src="/guides/images/devices/queclink/GL500.png" alt="GL500" style="display: inline">
+<img src="/guides/images/devices/queclink/GL505.png" alt="GL505" style="display: inline">
+<img src="/guides/images/devices/queclink/GV200.png" alt="GV200" style="display: inline">
+<img src="/guides/images/devices/queclink/GV300.png" alt="GV300" style="display: inline">
+<img src="/guides/images/devices/queclink/GV500.png" alt="GV500" style="display: inline">
+<img src="/guides/images/devices/queclink/GV75.png" alt="GV75" style="display: inline">
 
 ## Configuring Queclink devices for Cumulocity
 
@@ -38,7 +38,7 @@ Use the Queclink Manage Tool to set up a device for Cumulocity:
 
 The screenshot below illustrates the setting.
 
-![Queclink Manage Tool](/guides/devices/queclink/queclinkmanage.jpg)
+![Queclink Manage Tool](/guides/images/devices/queclink/queclinkmanage.jpg)
 
 ## Registering Queclink devices with Cumulocity
 
@@ -52,7 +52,7 @@ To connect the device to your Cumulocity account:
 * If this is the first tracking device you connect to your tenant you also need the register the tracker agent. Type tracker-agent-{tenant} (where {tenant} is your tenant name) into the "Device ID" field and click "Register Device". Click the "Accept" button once it shows up.
 * The device will now send location data according to the device configuration that you set. 
 
-![Device registration](/guides/devices/queclink/queclinkregister.png)
+![Device registration](/guides/images/devices/queclink/queclinkregister.png)
 
 ## Troubleshooting tracking devices
 
@@ -78,7 +78,7 @@ Supported events:
 * Tow event
 * Ignition on/off events
 
-![Queclink Events](/guides/devices/queclink/Events.png)
+![Queclink Events](/guides/images/devices/queclink/Events.png)
 
 Supported measurements:
 
@@ -87,7 +87,7 @@ Supported measurements:
 * Tracker mileage measurement
 * Speed measurement
 
-![Queclink Measurement](/guides/devices/queclink/Measurement.png)
+![Queclink Measurement](/guides/images/devices/queclink/Measurement.png)
 
 Supported alarms:
 

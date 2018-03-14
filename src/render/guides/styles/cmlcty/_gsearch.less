@@ -54,32 +54,40 @@ body {
   .gsc-input-box-hover {
     box-shadow: none!important;
   }
-  td.gsc-search-button:before {
-    content: "\f002";
-    display: inline-block;
-    font: normal normal normal 14px/1 FontAwesome;
-    font-size: inherit;
-    text-rendering: auto;
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
-    width: 34px;
-    height: 34px;
-    background-color: @brand-primary;
-    border-radius: 50%;
-    text-align: center;
-    line-height: 34px;
-    color: white;
-  }
+  // td.gsc-search-button:before {
+  //   content: "\f002";
+  //   display: inline-block;
+  //   font: normal normal normal 14px/1 FontAwesome;
+  //   font-size: inherit;
+  //   text-rendering: auto;
+  //   -webkit-font-smoothing: antialiased;
+  //   -moz-osx-font-smoothing: grayscale;
+  //   width: 34px;
+  //   height: 34px;
+  //   background-color: @brand-primary;
+  //   border-radius: 50%;
+  //   text-align: center;
+  //   line-height: 34px;
+  //   color: white;
+  // }
   td.gsc-search-button{
     position: relative;
-    input.gsc-search-button-v2 {
-      opacity: 0;
-      position: absolute;
-      top:0;
-      right:0;
-      bottom:0;
-      left:0;
-    } 
+    // input.gsc-search-button-v2 {
+    //   opacity: 0;
+    //   position: absolute;
+    //   top:0;
+    //   right:0;
+    //   bottom:0;
+    //   left:0;
+    // } 
+    .gsc-search-button-v2,
+    .gsc-search-button-v2:hover,
+    .gsc-search-button-v2:focus{
+      width: 34px;
+      padding: 0;
+      height: 34px;
+      border-radius: 50%;
+    }
   }
   .gsc-adBlock {
     display: none;

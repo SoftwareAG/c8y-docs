@@ -1,10 +1,8 @@
 ---
-order: 50
+order: 20
 title: Cloud Fieldbus
-layout: default
+layout: redirect
 ---
-
-## <a name="overview"></a>Overview
 
 Cloud Fieldbus is a Cumulocity application with the ability to collect data from fieldbus devices and remotely manage them. This section describes how to
 

@@ -1,10 +1,8 @@
 ---
-order: 60
+order: 40
 title: Jasper Control Center
-layout: default
+layout: redirect
 ---
-
-## <a name="overview"></a>Overview
 
 The Jasper Control Center Add-On to Cumulocity provides you with a holistic view of mobile device connectivity. This Add-On works from within the Cumulocity Device Management Application. While Cumulocity itself communicates directly with devices and shows connectivity information as reported by the device, the Jasper Control Center Add-On complements this with a view of connectivity.
 

@@ -1,10 +1,9 @@
 ---
-order: 100
+order: 70
 title: IMPACT Agent
-layout: default
+layout: redirect
 ---
 
-## <a name="overview"></a>Overview
 
 This document describes 
 

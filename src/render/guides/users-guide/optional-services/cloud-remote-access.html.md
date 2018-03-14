@@ -1,10 +1,9 @@
 ---
-order: 130
+order: 30
 title: Cloud Remote Access
-layout: default
+layout: redirect
 ---
 
-## <a name="cloud_remote_access"></a>Cloud Remote Access
 
 ### Introduction
 

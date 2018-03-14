@@ -1,10 +1,9 @@
 ---
-order: 90
+order: 60
 title: LoRa Actility
-layout: default
+layout: redirect
 ---
 
-## <a name="overview"></a>Overview
 Cumulocity can interface with LoRa devices through Actility's ThingPark Wireless. You can:
 
 * Provision and deprovision LoRa devices easily using the Cumulocity Device Management. No interaction in the ThingPark user interface is required. 

@@ -4,7 +4,7 @@
   overflow: hidden;
   margin: 90px 16px;
   padding: 20px;
-  border-radius: 30px;
+  border-radius: 16px;
   background-color: white;
   box-shadow: 0 4px 4px rgba(0, 0, 0, 0.01), 0 8px 8px rgba(0, 0, 0, 0.01), 0 16px 16px rgba(0, 0, 0, 0.03), 0 32px 32px rgba(0, 0, 0, 0.05), 0 32px 64px rgba(0, 0, 0, .1), 0 -3px 32px rgba(0, 0, 0, 0.1);
 
@@ -12,6 +12,13 @@
   .zoom-overlay-open & {
     position: static;
     overflow: visible;
+  }
+}
+
+@media(min-width: @screen-sm-min){
+  .main-content {
+    padding: 40px;
+    border-radius: 30px;
   }
 }
 
@@ -30,14 +37,20 @@
 
 // section header - renders in every page
 .section-header {
-  border-top-left-radius: 30px;
-  border-top-right-radius: 30px;
+  border-top-left-radius: 16px;
+  border-top-right-radius: 16px;
   background-color: @brand-primary;
   color: white;
   margin: -20px -20px 40px;
   padding: 20px;
   
   #gradient>.horizontal( #069214, @brand-complementary);
+  @media(min-width: @screen-sm-min) {
+    margin: -40px -40px 40px;
+    padding: 40px;
+    border-top-left-radius: 30px;
+    border-top-right-radius: 30px;
+  }
   @media(min-width: @grid-float-breakpoint) {
     margin: -40px -40px 40px;
     padding: 40px 60px;

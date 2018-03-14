@@ -210,27 +210,11 @@ As an example, we create a statement. It should listen to one event and create a
 
 The resulting monitor can look like this:
 
-<table class="wysiwyg-macro" data-macro-name="code" data-macro-id="43ebc4a8-75c5-4dc4-bd3d-15457e3ecb85" data-macro-schema-version="1" style="background-image: url(/plugins/servlet/confluence/placeholder/macro-heading?definition=e2NvZGV9&amp;locale=en_GB&amp;version=2); background-repeat: no-repeat;" data-macro-body-type="PLAIN_TEXT">
-
-<tbody>
-
-<tr>
-
-<td class="wysiwyg-macro-body">
-
-<pre>monitor ForwardMeasurements {
-	action onload() {
-		on all Measurement(type = "c8y_TemperatureMeasurement") as m {
-			send Alarm("", "c8y_TemperatureAlarm", m.source, m.time,
-				"Temperature measurement was created", "ACTIVE", "CRITICAL", 1, new dictionary&#60;string,any>) to Event.CHANNEL;
+	<pre>monitor ForwardMeasurements {
+		action onload() {
+			on all Measurement(type = "c8y_TemperatureMeasurement") as m {
+				send Alarm("", "c8y_TemperatureAlarm", m.source, m.time,
+					"Temperature measurement was created", "ACTIVE", "CRITICAL", 1, new dictionary&#60;string,any>) to Event.CHANNEL;
+			}
 		}
 	}
-}</pre>
-
-</td>
-
-</tr>
-
-</tbody>
-
-</table>

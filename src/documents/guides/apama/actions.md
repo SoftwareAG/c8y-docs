@@ -6,7 +6,7 @@ layout: default
 
 ## Overview
 
-With the Apama Event Processing Language, it is possible to utilize functions, called "actions". Every monitor will have at least one action - the `onload` action. This section covers the already built-in actions ready to use. <span class="inline-comment-marker" data-ref="67613062-9ea1-4d95-86f8-845b74940386">See also the Apama</span> [<span class="inline-comment-marker" data-ref="67613062-9ea1-4d95-86f8-845b74940386">EPL reference</span>](http://www.apamacommunity.com/documents/10.1.0.3/apama_10.1.0.3_webhelp/apama-webhelp/#page/apama-webhelp%252Fco-ApaEplRef_types.html%2523) <span class="inline-comment-marker" data-ref="67613062-9ea1-4d95-86f8-845b74940386">for actions on built-in types.</span>
+With the Apama Event Processing Language, it is possible to utilize functions, called "actions". Every monitor will have at least one action - the `onload` action. This section covers the already built-in actions ready to use. <span class="inline-comment-marker" data-ref="67613062-9ea1-4d95-86f8-845b74940386">See also the Apama [EPL reference](http://www.apamacommunity.com/documents/10.1.0.3/apama_10.1.0.3_webhelp/apama-webhelp/#page/apama-webhelp%252Fco-ApaEplRef_types.html%2523) for actions on built-in types.
 
 ## Querying Cumulocity data
 
@@ -82,8 +82,8 @@ To interact with your historical data, you can use one of the following request-
 
 To interact with HTTP services using REST and JSON, create an HttpTransport instance using one of the factory methods:
 
-*   HttpTransport.getOrCreate<span class="inline-comment-marker" data-ref="93ddcf8a-b6e2-43ac-beaa-87eeadb8a7a1">(</span><span class="inline-comment-marker" data-ref="93ddcf8a-b6e2-43ac-beaa-87eeadb8a7a1">string</span> <span class="inline-comment-marker" data-ref="93ddcf8a-b6e2-43ac-beaa-87eeadb8a7a1">host,</span> <span class="inline-comment-marker" data-ref="93ddcf8a-b6e2-43ac-beaa-87eeadb8a7a1">integer</span> <span class="inline-comment-marker" data-ref="93ddcf8a-b6e2-43ac-beaa-87eeadb8a7a1">port)</span> returns HttpTransport
-*   HttpTransport.getOrCreateWithConfiguration<span class="inline-comment-marker" data-ref="30ed9dca-a497-414f-9d32-24ba17c4c5a3">s(</span><span class="inline-comment-marker" data-ref="30ed9dca-a497-414f-9d32-24ba17c4c5a3">string</span> <span class="inline-comment-marker" data-ref="30ed9dca-a497-414f-9d32-24ba17c4c5a3">host,</span> <span class="inline-comment-marker" data-ref="30ed9dca-a497-414f-9d32-24ba17c4c5a3">integer</span> port, dictionary&#60;string,string> configurations) returns HttpTransport (the keys in the configurations dictionary are the constants on HttpTransport with CONFIG_ prefix)
+*   HttpTransport.getOrCreate(string host, integer port) returns HttpTransport
+*   HttpTransport.getOrCreateWithConfiguration(string host, integer port, dictionary&#60;string,string> configurations) returns HttpTransport (the keys in the configurations dictionary are the constants on HttpTransport with CONFIG_ prefix)
 
 On the HttpTransport object, call one of the create*Request methods, passing a path and payload as needed, to produce a Request object.
 
@@ -97,7 +97,7 @@ Refer to the ApamaDoc for further details.
 
 ### Access fragments
 
-Fragments are accessible <span class="inline-comment-marker" data-ref="92345b05-f936-4a56-9864-df27f38246aa">through the params dictionary</span> of most events. You can construct an AnyExtractor object to help you extract data from any objects containing multiple sub-fragments and access:
+Fragments are accessible through the params dictionary of most events. You can construct an AnyExtractor object to help you extract data from any objects containing multiple sub-fragments and access:
 
 *   <span style="color: rgb(0,0,0);">action getInteger(string path) returns integer</span>
 
@@ -113,29 +113,13 @@ Fragments are accessible <span class="inline-comment-marker" data-ref="92345b05-
 
 You can use a JSON path to navigate in the object structure. Example:
 
-<table class="wysiwyg-macro" data-macro-name="code" data-macro-id="16079bea-9550-4a1c-8861-09dc1a0b849d" data-macro-schema-version="1" style="background-image: url(/plugins/servlet/confluence/placeholder/macro-heading?definition=e2NvZGV9&amp;locale=en_GB&amp;version=2); background-repeat: no-repeat;" data-macro-body-type="PLAIN_TEXT">
-
-<tbody>
-
-<tr>
-
-<td class="wysiwyg-macro-body">
-
-<pre>string s:= AnyExtractor(measurement.params["fragment"]).getString("sub.fragment.object");</pre>
-
-</td>
-
-</tr>
-
-</tbody>
-
-</table>
+	string s:= AnyExtractor(measurement.params["fragment"]).getString("sub.fragment.object");
 
 ### Casting "any" values
 
 Alternatively, use a cast to convert an `any` to a particular type:
 
-<pre>string s:= &#60;string> measurement.extraParams["strfragment"]);</pre>
+	string s:= &#60;string> measurement.extraParams["strfragment"]);
 
 Note that a cast operation will throw if the object is of a different type.
 
@@ -145,23 +129,7 @@ The read-only variable currentTime can be used to obtain the current server time
 
 Example:
 
-<table class="wysiwyg-macro" data-macro-name="code" data-macro-id="39d93533-32b2-4beb-8d04-b50227e6ef65" data-macro-schema-version="1" style="background-image: url(/plugins/servlet/confluence/placeholder/macro-heading?definition=e2NvZGV9&amp;locale=en_GB&amp;version=2); background-repeat: no-repeat;" data-macro-body-type="PLAIN_TEXT">
-
-<tbody>
-
-<tr>
-
-<td class="wysiwyg-macro-body">
-
-<pre>send Event("c8y_HighTemperatureAlarm", evt.source, currentTime, "Alarm started at "+TimeFormat.format(currentTime, "yyyy.MM.dd G 'at' HH:mm:ss"), new dictionary&#60;string,any>) to Event.CHANNEL;</pre>
-
-</td>
-
-</tr>
-
-</tbody>
-
-</table>
+	send Event("c8y_HighTemperatureAlarm", evt.source, currentTime, "Alarm started at "+TimeFormat.format(currentTime, "yyyy.MM.dd G 'at' HH:mm:ss"), new dictionary&#60;string,any>) to Event.CHANNEL;
 
 ### inMaintenanceMode
 
@@ -169,34 +137,17 @@ the <span style="color: rgb(0,0,0);">Util.</span>inMaintenaceMode() function is 
 
 Example:
 
-<table class="wysiwyg-macro" data-macro-name="code" data-macro-id="cb02dfbc-97a9-450f-a9df-091440ad9480" data-macro-schema-version="1" style="background-image: url(/plugins/servlet/confluence/placeholder/macro-heading?definition=e2NvZGV9&amp;locale=en_GB&amp;version=2); background-repeat: no-repeat;" data-macro-body-type="PLAIN_TEXT">
-
-<tbody>
-
-<tr>
-
-<td class="wysiwyg-macro-body">
-
-<pre>monitor.subscribe(FindManagedObjectResponse.CHANNEL);
-on all Measurement() as m {
-	integer reqId := integer.getUnique();
-	send FindManagedObject(reqId, m.source, new dictionary&#60;string,string>) to FindManagedObject.CHANNEL;
-	on FindManagedObjectResponse(reqId = reqId, id = m.source) as d and not FindManagedObjectResponseAck(reqId = reqId) {
-		if not Util.inMaintenanceMode(d.managedObject) {
-			send Event("", "c8y_Alarm", m.source, currentTime, "Received measurement from active device", new dictionary&#60;string,any>) to Event.CHANNEL;
+	monitor.subscribe(FindManagedObjectResponse.CHANNEL);
+	on all Measurement() as m {
+		integer reqId := integer.getUnique();
+		send FindManagedObject(reqId, m.source, new dictionary&#60;string,string>) to FindManagedObject.CHANNEL;
+		on FindManagedObjectResponse(reqId = reqId, id = m.source) as d and not FindManagedObjectResponseAck(reqId = reqId) {
+			if not Util.inMaintenanceMode(d.managedObject) {
+				send Event("", "c8y_Alarm", m.source, currentTime, "Received measurement from active device", new dictionary&#60;string,any>) to Event.CHANNEL;
+			}
 		}
 	}
-}
 
-</pre>
-
-</td>
-
-</tr>
-
-</tbody>
-
-</table>
 
 ### replacePlaceholders
 

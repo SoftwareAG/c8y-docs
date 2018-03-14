@@ -140,9 +140,9 @@ To build and run your agent:
 
 The last line shows that a new device has been successfully created with a particular URL. Open the Cumulocity application and go to the device list. You should see a new "Hello, world!" device.
 
-![Hello world device](/guides/java/hello.png)
+![Hello world device](/guides/images/java/hello.png)
 
-**Got an error message?** Check the [troubleshooting section](/guides/java/troubleshooting).
+**Got an error message?** Check the [troubleshooting section](/guides/images/java/troubleshooting).
 
 ## Improve the agent
 

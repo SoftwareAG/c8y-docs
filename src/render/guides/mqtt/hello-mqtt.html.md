@@ -26,11 +26,11 @@ To configure the MQTT connection, you need to pass the following connection para
 * Username: You need to enter your tenant and username separated by a slash (tenant/username). You can use the same user that you use for logging into Cumulocity for this example.
 * Password: The password of the user.
 
-![Example MQTTLens Configuration](/guides/mqtt/mqttLensConfig.png)
+![Example MQTTLens Configuration](/guides/images/mqtt/mqttLensConfig.png)
 
 The other configurations like "clean session" are not important for this example. You can change them to your liking. After clicking on "save changes", you should see a screen similar to the following screenshot.
 
-![MQTTLens Established Connection](/guides/mqtt/mqttLensSuccess.png)
+![MQTTLens Established Connection](/guides/images/mqtt/mqttLensSuccess.png)
 
 If the icon next to your connection on the left is red, verify your configuration (especially username and password). If the icon is green, you successfully established an MQTT connection to Cumulocity.
 
@@ -38,7 +38,7 @@ If the icon next to your connection on the left is red, verify your configuratio
 
 All MQTT "publish messages" in this tutorial will be sent to the topic "s/us". This is the topic used for Cumulocity's pre-provided static templates.
 
-![MQTTLens Publish Message](/guides/mqtt/mqttLensPublish.png)
+![MQTTLens Publish Message](/guides/images/mqtt/mqttLensPublish.png)
 
 #### Creating the device
 
@@ -145,7 +145,7 @@ You can enter both topics after another in the subscribe field and hit subscribe
 
 Afterward, your MQTTLens should look like this:
 
-![MQTTLens Subscribed Topics](/guides/mqtt/mqttLensAfterSubscribe.png)
+![MQTTLens Subscribed Topics](/guides/images/mqtt/mqttLensAfterSubscribe.png)
 
 #### Receiving operations
 
@@ -162,7 +162,7 @@ We can now create a shell command from the UI and click "Execute".
 
 In the MQTTLens you should now have received a new message for the s/ds subscription
 
-![MQTTLens Received Operation](/guides/mqtt/mqttLensReceivedOperation.png)
+![MQTTLens Received Operation](/guides/images/mqtt/mqttLensReceivedOperation.png)
 
 The "511" is indicating what kind of operation we received (in this case c8y_Command). Behind there will be the deviceIdentifier to locate the device with the dedicated operation. This is required if you have a hierarchy with multiple children. In that case, you need to know for which of the children the operation was dedicated.
 Finally, you have the operation specific parameters which in the case of c8y_Command is only the command text.

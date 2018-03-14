@@ -16,12 +16,13 @@
   flex-flow: column nowrap;
   min-height: 100vh;
   color: white;
+  padding-top: 170px;
   h1 {
     font-weight: 100;
     font-size: 76px;
     margin: 0;
     @media(min-width: @screen-sm-min){
-      min-width: 470px;
+      //min-width: 470px;
     }
   }
   .btn {
@@ -63,11 +64,17 @@
       transition: opacity .3s ease;
       font-size: 24px;
     }
+    >span{
+      opacity: .8;
+    }
     &:hover,
     &:focus {
       text-decoration: none;
       img,
       .h3 {
+        opacity: 1;
+      }
+      >span{
         opacity: 1;
       }
       p {

@@ -15,7 +15,7 @@ This guide explains how to use Cumulocity's REST interfaces to
 -   Develop applications on top of Cumulocity.
 -   Integrate other cloud services or IT backend applications with Cumulocity.
 
-It first shows you how to use the REST interfaces in general, then discusses [device integration](/guides/rest/device-integration) and finally it describes [application development](/guides/rest/application-development). The description is closely linked to the reference guide, which describes each interface in detail. Relevant chapters in the reference guide are in particular
+It first shows you how to use the REST interfaces in general, then discusses [device integration](/guides/images/rest/device-integration) and finally it describes [application development](/guides/images/rest/application-development). The description is closely linked to the reference guide, which describes each interface in detail. Relevant chapters in the reference guide are in particular
 
 -   [REST implementation](/guides/reference/rest-implementation) is the reference for all general concepts.
 -   [Device management library](/guides/reference/device-management) specifies the data model for device management.
@@ -60,7 +60,7 @@ You will notice that just a subset of the items in the inventory is actually ret
 
 A convenient way to explore REST interface and the Cumulocity database content are graphical REST clients such as [Postman](https://www.getpostman.com/).
 
-![Example REST client](/guides/rest/postman.png)
+![Example REST client](/guides/images/rest/postman.png)
 
 Cumulocity provides numerous online API examples. If you want to make use of them, [download and install Postman](https://www.getpostman.com/). After starting Postman, you can choose to either create an account or click "Take me straight to the app". Then click the button below and choose the variant of Postman that you have just installed. You may see a browser security prompt asking you whether you actually want to run Postman (on Windows "Electron").
 
@@ -76,7 +76,7 @@ Note that the example contains placeholders, in this case a placeholder "url" in
 * Configure a key "auth" with the value of the "Authorization" header for the REST requests.
 * Click "Add", then close the dialog. Now select your newly created environment from the drop-down box on the top right, that initially reads "No environment".
 
-<img src="/guides/rest/postmanenvironment.png" alt="Postman environment setup" style="max-width: 50%">
+<img src="/guides/images/rest/postmanenvironment.png" alt="Postman environment setup" style="max-width: 50%">
 
 > A simple way to determine the correct value for the "auth" key is to use a web tool. Example: Assume your tenant name is "tenant", your username is "me" and your password is "secret". Go to http://ostermiller.org/calc/encode.html, type "tenant/me:secret" into the text area, then click the "Encode" button in the row "Base 64". The resulting text is "dGVuYW50L21lOnNlY3JldA==". Use "Basic dGVuYW50L21lOnNlY3JldA==" as value for "auth".
 

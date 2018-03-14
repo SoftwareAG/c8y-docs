@@ -17,7 +17,7 @@ The startup phase is responsible for connecting the device to Cumulocity and upd
 -   [Step 5](#step-5-discover-child-devices-and-create-or-update-them-in-the-inventory): Discover child devices and create or update them in the inventory.
 -   [Step 6](#step-6-finish-operations-and-subscribe): Finish operations that required a restart and subscribe to new operations.
 
-![Startup phase](/guides/rest/startupphase.png)
+![Startup phase](/guides/images/rest/startupphase.png)
 
 The cycle phase follows. It continuously updates the inventory, writes measurements, alarms and events and executes operations when required. It can be considered to be the "main loop" of the device which is executed until the device shuts down. The loop consists of the following steps:
 
@@ -27,7 +27,7 @@ The cycle phase follows. It continuously updates the inventory, writes measureme
 -   [Step 10](#step-10-send-events): Send events.
 -   [Step 11](#step-11-send-alarms): Send alarms.
 
-![Cycle phase](/guides/rest/cyclephase.png)
+![Cycle phase](/guides/images/rest/cyclephase.png)
 
 Reference models for the data can be found in the [Device management library](/guides/reference/device-management) and in the [Sensor library](/guides/reference/sensor-library).
 
@@ -265,7 +265,7 @@ This request will also delete all data associated with the device including its 
 
 Each operation in Cumulocity is cycled through an execution flow. When an operation is created through a Cumulocity application, its state is "PENDING", i.e., it has been queued for executing but it hasn't executed yet. When an agent picks up the operation and starts executing it, it marks the operations as "EXECUTING" in Cumulocity. The agent will then carry out the operation on the device or its children (for examples, it will restart the device, or set a relay). Then it will possibly update the inventory reflecting the new state of the device or its children (e.g., it updates the current state of the relay in the inventory). Then the agent will mark the operation in Cumulocity as either "SUCCESSFUL" or "FAILED", potentially indicating the error.
 
-![Operation status diagram](/guides/rest/operations.png)
+![Operation status diagram](/guides/images/rest/operations.png)
 
 The benefit of this execution flow is that it support devices that are offline and temporarily out of coverage. It also allows devices to support operations that require a restart -- such as a firmware upgrade. After the restart, the device needs to know what it previously did and hence needs to query all "EXECUTING" operations and see if they were successful. Also, it needs to listen what new operations may be queued for it.
 

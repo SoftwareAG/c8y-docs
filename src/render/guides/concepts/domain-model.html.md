@@ -1,14 +1,129 @@
 ---
 order: 20
 title: Cumulocity's domain model
-layout: subsections
-collection: 'guides/concepts/domain-model'
+layout: default
 ---
 
+## Overview
 
 
+***Cumulocity captures all relevant aspects of devices and assets in the Internet of Things.***
+
+![model](/guides/images/concepts-guide/model.png)
 
 
+* The *inventory* stores all master data related to devices, their configuration and their connections. It also contains all related assets (like vehicles, machines, buildings) and their structure.
+
+
+* *Measurements* contain numerical data produced by sensors (like temperature readings) or calculated data based on information from devices (service availability of a device).
+
+
+* *Events* contain other real-time information from the sensor network, such as the triggering of a door sensor. Events can also be *alarms* .The user or operator of the system has to take action to resolve the alarm (like a power outage). In addition, security-related events are shown as *audit logs*.
+
+
+* *Operations* relate to data that is sent to devices for execution or processing, such as switching a relay in a power meter or sending a credit to a vending machine.
+
+- One of the great innovations in Cumulocity is its standardized representation of common devices and sensors as well as concepts for flexibly extending and modifying this representation. By default, Cumulocity comes with detailed visualizations of  sensors, smart meters, trackers and other devices. It has many options to fit in local customizations.
+
+
+- As a result Internet of Things applications can be written independently from connected devices and underlying sensor networks, customized for specific cases in different web configurations or different devices from manufacturers.
+
+The following section is a walk-through of those concepts and will describe the ideas behind it and give you examples. [JavaScript object notation (JSON)](http://json.org/) The format these examples use is Cumulocity's REST APIs. For usability with other programming languages, please refer to the specified sections in the Reference Guide.
+
+## Inventory
+
+
+**The inventory stores devices and other assets relevant to your IoT solution. We refer to them as  *managed objects*.**
+
+
+Managed objects can be "smart objects" such as smart electricity meters, home automation gateways and GPS devices. They can be the assets you would like to monitor, such as rooms in which sensors are installed, or cars containing GPS devices. 
+
+
+The following JSON code shows a small example of a managed object in the inventory, in this case a simple switch.
+
+<pre><code class="json">{
+	"id": "47635",
+	"type": "ge_45609",
+	"c8y_Relay" : 
+	{
+		"relayState" : "OPEN"
+	},
+	...
+}</code></pre>
+
+An example for another asset stored in the inventory could be a room in which a switch is installed. (Compare the "id" property of the switch with the "managedObject" reference.)
+
+<pre><code class="json">{
+	"id": "47636",
+	"type": "resortenergymgmt_Room",
+	"name": "Sauna",
+	"childAssets": {
+		"references" : [
+			{ "managedObject": { "id": "47635", ... },
+			...
+			} 
+		]
+	},
+	"resortenergymgmt_RoomProperty": {
+		"size": 56,
+		...
+	}
+}</code></pre>
+
+**In general, each managed object consists of**
+
+* A unique identifier that references the desired object.
+* A type string that defines the object type.
+* A time stamp showing the last update.
+* Additional *fragments*.
+
+### Fragments
+
+For example, you want to describe electric meters from different vendors. Depending on the make of the meter, one may have a relay and one may be able to measure a single phase or three phases. These characteristics are identified by storing fragments for each of them:
+
+<pre><code class="json">{
+	"id": "47635",
+	"type": "elstermetering_AS220",
+	"lastUpdated": "2010-11-13T18:28:36.000Z",
+	"c8y_Position": {
+		"alt": 67,
+		"lng": 6.15173,
+		"lat": 51.211977
+	},
+	"c8y_ThreePhaseElectricitySensor": {},
+	"c8y_Relay": {
+		"state": "CLOSED"
+	}
+}</code></pre>
+
+In this example, a fragment "c8y\_ThreePhaseElectricitySensor" identifies a three phase electric meter. In addition, the device includes a relay, which can be used to turn the power supply on and off.
+
+Using this approach, the modelling devices can make a difference between modelling  elementary sensors and controls as fragments, and modelling the entire device as a combination of sensors, controls and possibly proprietary aspects of the device.
+
+The approach also enables developing generic application components. For example, as soon as a managed object has a position fragment ("c8y\_Position"), it can be placed on a map. As soon as it has a relay, it can be switched on and off using the respective device control command as described below.
+
+### Naming conventions of fragments
+**Fragments use a naming convention to avoid conflicts between different parties supplying fragment information, similar to Java or other programming languages.** 
+
+In the example above, "c8y_Position" is a combination of "c8y" (a shorthand for "Cumulocity"), an underscore and "Position". Together they form a set of standard fragments. Fragment definitions can be found here [sensor library](/guides/reference/sensor-library) and in the [device management library](/guides/reference/device-management).
+
+Note that Cumulocity follows a document-oriented approach for storing data. All characteristics of an object can be inferred from the document with the object data itself. There is no explicit separate metadata model that needs to be configured and managed. However, applications can add own metadata and store values in the inventory additionally. For example, a vending application can maintain metadata about slot configurations of the diverse vending machine types in the inventory.
+
+### Object identification
+
+***Each managed object in the inventory has an own, "global" identifier that is automatically generated by Cumulocity when the object is created.***
+
+This identifier will always stay with the object regardless of network restructures or different hardware parts.
+
+![Identity service](/guides/images/concepts-guide/identification.png)
+
+***To shield applications from these numbers of identifiers, Cumulocity includes an identity service that registers all identifiers for one asset that are used outside of Cumulocity and map these to a single global identifier that is used by applications.***
+
+This service is used by agents (to register external identifiers) and is used by business processes involving reorganisations and changes of devices (to modify maps of external identifiers to global identifiers).
+
+As an example, assume that a smart meter would be faulty and a new meter with another meter number and asset tag needs to be installed in a household. The routine business process for replacing faulty hardware can now just update the asset tag and meter ID associated with a customer in the identity service. Afterwards both previously collected and new meter readings are related to the correct customer.
+
+More information can be found in the reference guide for [identity](/guides/reference/identity).
 
 ## Object hierarchies
 ***The inventory model supports two default hierarchies of objects: A communication hierarchy ("childDevices") and an asset hierarchy ("childAssets").***
@@ -16,13 +131,13 @@ collection: 'guides/concepts/domain-model'
 
 The communication hierarchy tracks how devices are linked to the M2M platform from a communication point of view. A typical communication hierarchy is shown in the picture below: Agents connect the sensor network to Cumulocity. They often communicate through gateway devices or modems with the sensor network. The gateways, in reverse, connect to devices in the sensor network, which contain sensors and controls. 
 
-![Example communication hierarchy](/guides/concepts-guide/commshierarchy.png)
+![Example communication hierarchy](/guides/images/concepts-guide/commshierarchy.png)
 
 The asset hierarchy structures the assets that are remotely supervised and controlled through the M2M devices. 
 
 An example asset hierarchy for building management could be buildings containing rooms. Buildings would be associated with gateways connecting the building to Cumulocity, while rooms would be associated with sensors and controls. This example hierarchy is shown in the picture below.
 
-![Example asset hierarchy](/guides/concepts-guide/assethierarchy.png)
+![Example asset hierarchy](/guides/images/concepts-guide/assethierarchy.png)
 
 ### Child objects in hierarchies 
 The two hierarchies above are explicitly supported by the [inventory interface](/guides/reference/inventory) and client libraries, that provide methods for adding and removing children in hierarchies. The hierarchies themselves are constructed by client applications. The communication hierarchy is constructed by agents, the asset hierarchy is added by applications on top.
@@ -201,7 +316,7 @@ The agent will execute the operations on the devices that it manages (Step "3"),
 
 Finally, the application can query the results of the operation (Step "5"). Audit records are generated both for the original request to run the device control operation and for the acknowledgement that the operation was actually run.
 
-![Device control architecture](/guides/concepts-guide/control.png)
+![Device control architecture](/guides/images/concepts-guide/control.png)
 
 If there are communication issues while delivering an operation to a device, an alarm should be raised by the agent.
 

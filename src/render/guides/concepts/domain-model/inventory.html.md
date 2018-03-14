@@ -87,7 +87,7 @@ Note that Cumulocity follows a document-oriented approach for storing data. All 
 
 This identifier will always stay with the object regardless of network restructures or different hardware parts.
 
-![Identity service](/guides/concepts-guide/identification.png)
+![Identity service](/guides/images/concepts-guide/identification.png)
 
 ***To shield applications from these numbers of identifiers, Cumulocity includes an identity service that registers all identifiers for one asset that are used outside of Cumulocity and map these to a single global identifier that is used by applications.***
 

@@ -21,7 +21,7 @@ layout: "homepage"
      <% for section in @sections:%>
         <% for page in @getCollection("html").findAllLive({relativeOutDirPath: section.folder }, [ order: 1, title: 1 ] ).toJSON():%>
          <a href="<%= page.url%>" class=" side-bar-btn no-ajaxy" >
-            <span style="display: inline-block; vertical-align: bottom; margin-right: 10px; font-size: 24px; line-height:1;"><span class="<%= section.icon%>"></span></span>
+            <span style="display: inline-block; vertical-align: bottom; margin-right: 10px; font-size: 30px; line-height:1;"><span class="<%= section.icon%>"></span></span>
             <span class="h3"><%= section.title %></span>
             <p class="text-left" style="margin: 10px 0;"><%= section.description %></p>
         </a>

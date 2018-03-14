@@ -166,7 +166,6 @@
 					$menuChildren = $menuChildren.has('a[href^="'+relativeUrl+'"],a[href^="/'+relativeUrl+'"],a[href^="'+url+'"]');
 					if ( $menuChildren.length === 1 ) { $menuChildren.addClass(activeClass); }
 					setTimeout(function(){
-						console.log('check');
 						$('.slot a').each(function(){
 							var $this = $(this);
 							var bt = $this.parent().find('[data-toggle="collapse"]');

@@ -32,7 +32,7 @@ Cumulocity ensures that your data stays confidential and cannot be tampered with
 
 This communication architecture is illustrated below. Inside the sensor networks and from the sensor networks to agents, device- and gateway-specific protocols may be in use (such as ZigBee or Modbus). Securing these is a device-specific matter. Agents communicate with the Cumulocity platform using HTTPS to send and receive data. Similarly, IoT applications use HTTPS for communication. If an IoT application exposes own interfaces towards web browsers, it is recommended that these use HTTPS. This way, the whole path from agents to the end user is secured.
 
-<center><img src="/guides/concepts-guide/commsecurity.png" alt="Communication security" style="max-width: 100%"></center>
+<center><img src="/guides/images/concepts-guide/commsecurity.png" alt="Communication security" style="max-width: 100%"></center>
 
 As mentioned above, Cumulocity does not require any device that might expose ports or services on the Internet. This is an important feature: it not only simplifies the connection of devices to Cumulocity, but also simplifies the safety backup of these devices drastically. When deploying an IoT solution, check other services that might make a device available on the Internet or expose it, such as Web-based device managers or SMS-based configuration options.
 
@@ -55,7 +55,7 @@ Cumulocity creates a new realm for each tenant to store the users of that tenant
 
 Each new realm is automatically populated with an initial administrator user who can create further users and user groups, and who can assign permissions to these users and user groups. This enables an enterprise to manage users and their permissions on their own using the administration application.
 
-![User management screenshot](/guides/concepts-guide/usermanagement.png)
+![User management screenshot](/guides/images/concepts-guide/usermanagement.png)
 
 The ability to execute certain functionality on the system depends on two concepts: Permissions and ownership. Permissions define explicitly what functionality can be executed by a user. Cumulocity distinguishes read permissions and administration permissions. Read permissions enable users to read data. Administration permissions enable users to create, update and delete data. Read and administration permissions are separately available for the different types of data in Cumulocity. For example, there are read permissions for inventory data, measurements, operations and so forth.
 
@@ -87,11 +87,11 @@ To add a new permission to a user, select the user in the administration applica
 * Select the fragment types that the permission applies to. For example, if you select "OPERATIONS" as scope, "c8y_Restart" as type and "ADMIN" as permission, the user can only restart devices. Note that a user has to have permissions for all fragments in an object to be able to retrieve or edit an object. Use "*" to select all fragments or to set permissions on objects without fragments. Auto-completion based on the selected device is supported, but you can use any fragment in the text box (like fragments of child objects).
 * Select the permission ("READ", "ADMIN"). Use "*" to select both "READ" and "ADMIN".
 
-![Adding new user permissions](/guides/acl/acl_admin1.jpg)
+![Adding new user permissions](/guides/images/acl/acl_admin1.jpg)
 
 It is also possible to add a new permission to a device. In that case, you need to navigate to a device and select the user or group that the permission applies to. Use the toggle buttons to switch between users and groups.
 
-![Adding new device permissions](/guides/acl/acl_dm2.png)
+![Adding new device permissions](/guides/images/acl/acl_dm2.png)
 
 ### Globally accessible objects
 
@@ -122,7 +122,7 @@ Permit a user to restart device "10200":
 
 To determine the permissions of a particular user on a particular device, navigate to the device in the device management application and click on the "Permissions" tab. Then enter the name of the user into the "User" field. This will print all permissions of the user for the device.
 
-![Viewing user permissions](/guides/acl/acl_dm1.png)
+![Viewing user permissions](/guides/images/acl/acl_dm1.png)
 
 ## Security management aspects
 

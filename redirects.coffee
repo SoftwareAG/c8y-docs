@@ -65,6 +65,7 @@ redirects =
 	'/guides/java': '/guides/java/introduction'
 	'/guides/cloud-fieldbus': '/guides/users-guide/cloud-fieldbus'
 	'/guides/mqtt': '/guides/mqtt/introduction'
+	'/guides/devices': '/guides/devices/introduction'
 	#'/guides/users-guide/cloud-fieldbus': '/guides/cloud-fieldbus'
 
 module.exports = redirects

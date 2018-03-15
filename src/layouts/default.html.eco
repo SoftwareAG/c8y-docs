@@ -111,7 +111,7 @@
         <% if $first is 'current' : %>
           <% for page in @getCollection("html").findAllLive({relativeOutDirPath: section.folder }, [ order: 1, title: 1 ] ).toJSON():%>
             <li class="slot <%= if page.id is @document.id then 'current' %>">
-              <a href="<%= page.url%>" title="<%= page.title %>" class="link "> <%= page.title || 'no title' %></a>
+              <a href="<%= page.url%>" title="<%= page.title %>" class="link "><span><%= page.title || 'no title' %></span></a>
                 <% if page.collection : %>
 
                   <a href="javascript:void(0);" data-toggle="collapse" data-target="#sub-<%=page.basename %>"  class="<%= 'collapsed' if @document.url isnt page.url %>" ><i class="fa fa-chevron-right " ></i></a>

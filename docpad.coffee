@@ -33,6 +33,8 @@ docpadConfig = {
 				"/scripts/bootstrap/dropdown.js",
 				"/scripts/bootstrap/transition.js",
 				"/scripts/bootstrap/scrollspy.js",
+				"/scripts/bootstrap/tooltip.js",
+				"/scripts/bootstrap/popover.js",
 				"/scripts/bootstrap/collapse.js",
 				"/scripts/bootstrap/transition.js",
 				"/scripts/clipboard.js",

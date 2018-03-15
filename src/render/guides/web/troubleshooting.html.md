@@ -1,9 +1,8 @@
 ---
 order: 50
 title: Troubleshooting
-layout: default
+layout: standalone
 ---
-## Overview
 
 This section lists common isses and workarounds.
 

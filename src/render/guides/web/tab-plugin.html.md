@@ -1,12 +1,11 @@
 ---
 order: 30
 title: Tab Plugin
-layout: default
+layout: standalone
 ---
 
-## Overview
 
-In the following document you will get an overview on how to develop a plugin that adds a new tab to devices.
+<p class="lead">In this document you will get an overview on how to develop a plugin that adds a new tab to devices.</p>
 
 Before you start working on the tab plugins, we recommend you to take a look at the [introduction](/guides/web/introduction) which deals with the basic concepts of applications and plugins as well as an "Hello world!" style demo plugin.
 
@@ -21,7 +20,7 @@ This section shows how to create a plugin that adds a new tab "Contact" to devic
 In order to achieve this goal you need to do the following steps:
 
 * Create a plugin.
-* Declare the plugin on the imports list of the [application manifest](/guides/web/branding-plugin#application-manifest).
+* Declare the plugin on the imports list of the [application manifest](/guides/web/introduction#application-manifest).
 * Add a tab to devicess
 * Display data in the tab.
 * Persist the data to Cumulocity backend.
@@ -56,7 +55,7 @@ Inside your application folder, run the command:
 $ c8y create:plugin deviceContact
 ```
 
-Then edit the [plugin manifest](/guides/web/branding-plugin#plugin-manifest) in "plugins/deviceControl" to add the following information:
+Then edit the [plugin manifest](/guides/web/introduction#plugin-manifest) in "plugins/deviceControl" to add the following information:
 
 ```json
 {

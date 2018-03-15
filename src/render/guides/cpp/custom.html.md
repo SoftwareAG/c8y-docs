@@ -3,17 +3,6 @@ order: 25
 title: Customize
 layout: default
 ---
-<div id="table-of-contents">
-<h2>Table of Contents</h2>
-<div id="text-table-of-contents">
-<ul>
-<li><a href="#ch:custom">1. Build Customization</a></li>
-</ul>
-</div>
-</div>
-
-# Build Customization<a id="ch:custom" name="ch:custom"></a>
-
 
 In Chapter (See section ) we briefly explained how to build the library, in this chapter we will go into depth about how to customize the build options to tailor a optimal build for your particular use case.
 

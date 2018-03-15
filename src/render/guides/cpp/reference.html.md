@@ -3,17 +3,6 @@ order: 20
 title: Reference
 layout: default
 ---
-<div id="table-of-contents">
-<h2>Table of Contents</h2>
-<div id="text-table-of-contents">
-<ul>
-<li><a href="#ch:ref">1. Reference Implementation</a></li>
-</ul>
-</div>
-</div>
-
-# Reference Implementation<a id="ch:ref" name="ch:ref"></a>
-
 
 Following is a listing of existing agent software implemented based on the `C++` SDK.
 -   NetComm Agent

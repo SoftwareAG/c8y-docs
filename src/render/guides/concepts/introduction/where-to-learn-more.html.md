@@ -11,7 +11,8 @@ More conceptual information can be found in the following sections of the concep
 * Customization concepts of Cumulocity are described in [Real-time processing in](/guides/images/concepts/realtime) and [Developing  applications](/guides/images/concepts/applications).
 * Security concepts are described in [Security aspects](/guides/images/concepts/security).
 
-#Summary:
+### Summary
+
 Cumulocity is an independent Device and Application Management Internet of Things (Io T) platform. It connects and manages your devices and assets efficiently and can control them remotely.
 
 * Connect your devices and assets over any network

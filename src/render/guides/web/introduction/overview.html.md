@@ -23,7 +23,6 @@ First, this document describes the concept behind applications and plugins. Then
 	* [Cumulocity CLI tool](#cli-tool)
 	* [Cumulocity UI package](#ui-package)
 * [Sample plugins](#sample-plugins)
- 	* [Running the examples](#running-examples)
 
 Afterwards, we describe how to create a sample plugin step-by-step:
 * ["Hello World!"](#hello-world)
@@ -33,4 +32,4 @@ You can also find other, more complex examples in the following documents:
 * [Tab plugins](/guides/web/tab-plugin)
 * [Widget plugins](/guides/web/widget-plugin)
 
-Although an overview of the concepts of applications and plugins will be provided in this chapter, we recommend to take a look at the basic concept of Cumulocity applications described in [Developing applications](/guides/images/concepts/applications).
+Although an overview of the concepts of applications and plugins will be provided in this chapter, we recommend to take a look at the basic concept of Cumulocity applications described in [Developing applications](/guides/concepts/applications).

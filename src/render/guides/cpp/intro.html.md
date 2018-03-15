@@ -3,17 +3,6 @@ order: 1
 title: Introduction
 layout: default
 ---
-<div id="table-of-contents">
-<h2>Table of Contents</h2>
-<div id="text-table-of-contents">
-<ul>
-<li><a href="#ch:intro">1. Introduction</a></li>
-</ul>
-</div>
-</div>
-
-# Introduction<a id="ch:intro" name="ch:intro"></a>
-
 
 The SmartREST `C++` library is a `C++` Software Developer Kit (SDK) for facilitating device integration to *Cumulocity*'s Internet of Things (IoT) platform.
 

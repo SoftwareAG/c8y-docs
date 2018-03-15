@@ -54,10 +54,12 @@ redirects =
 	'/guides/reference/cumulocity-event-language': '/guides/event-language/introduction'
 	'/guides/zapier': '/guides/users-guide/saas-integration'
 	'/guides/users-guide/zapier': '/guides/users-guide/saas-integration'
+	
 	# "index.html" redirects
 	'/guides/concepts': '/guides/concepts/introduction'
 	'/guides/users-guide': '/guides/users-guide/getting-started'
 	'/guides/rest': '/guides/rest/introduction'
+	'/guides/cpp': '/guides/cpp/introduction'
 	'/guides/reference': '/guides/reference/rest-implementation'
 	'/guides/web': '/guides/web/introduction'
 	'/guides/java': '/guides/java/introduction'

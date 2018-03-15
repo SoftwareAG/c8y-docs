@@ -1,7 +1,7 @@
 ---
-order: 20
+order: 40
 title: Reference
-layout: default
+layout: standalone
 ---
 
 Following is a listing of existing agent software implemented based on the `C++` SDK.

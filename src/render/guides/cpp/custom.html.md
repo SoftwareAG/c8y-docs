@@ -1,7 +1,7 @@
 ---
-order: 25
+order: 50
 title: Customize
-layout: default
+layout: standalone
 ---
 
 In Chapter (See section ) we briefly explained how to build the library, in this chapter we will go into depth about how to customize the build options to tailor a optimal build for your particular use case.

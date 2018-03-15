@@ -1,10 +1,10 @@
 ---
-order: 1
+order: 10
 title: Introduction
-layout: default
+layout: standalone
 ---
 
-The SmartREST `C++` library is a `C++` Software Developer Kit (SDK) for facilitating device integration to *Cumulocity*'s Internet of Things (IoT) platform.
+<p class="lead">The SmartREST `C++` library is a `C++` Software Developer Kit (SDK) for facilitating device integration to *Cumulocity*'s Internet of Things (IoT) platform.</p>
 
 SmartREST is *Cumulocity*'s innovative communication protocol specifically designed for the IoT world. It incorporates the highly expressive strength of the REST API, whereas at the same time replace JSON with Comma Separated Values (CSV) to avoid the complexity of JSON parsing for embedded devices. Additionally, the terseness of CSV renders it highly efficient for IoT communication via mobile networks. It can save up to 80% mobile traffic compared to other HTTP APIs.
 

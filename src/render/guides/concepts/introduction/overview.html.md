@@ -5,7 +5,7 @@ layout: redirect
 ---
 
 
-### Cumulocity provides
+Cumulocity provides
 
 * Certified hardware kits and software libraries you can use to bring your remote assets into the cloud.
 * Device management, data visualization and remote control functionality through the web.

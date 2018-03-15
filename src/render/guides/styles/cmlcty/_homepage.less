@@ -12,18 +12,32 @@
 .home-content {
   position: relative; //  padding: 10vh 0 30px 0;
   display: flex;
-  align-items: center;
+  align-items: start;
   flex-flow: column nowrap;
   min-height: 100vh;
   color: white;
-  padding-top: 170px;
+  padding-top: 0;
+  justify-content: flex-end;
+  >.flex-row{
+    width: 100%;
+    padding: 40px 0;
+    @media(min-width: @screen-sm-min){
+      padding: 20px;
+    }
+    @media(min-width: @screen-md-min){
+      padding: 40px;
+    }
+  }
   h1 {
     font-weight: 100;
-    font-size: 76px;
+    font-size: 36px;
     margin: 0;
     @media(min-width: @screen-sm-min){
-      //min-width: 470px;
+      font-size: 76px;
     }
+  }
+  p.lead{
+    font-size: 18.2px;
   }
   .btn {
     border: 1px solid white;
@@ -47,11 +61,14 @@
   display: flex;
   align-items: start;
   flex-flow: row wrap;
-  justify-content: space-around;
-  padding: 40px;
+  justify-content: start;
+  padding: 20px;
+  @media(min-width: @screen-sm-min){
+    padding: 40px;
+  }
    a{
     display: block;
-    margin-bottom: 24px;
+    margin-bottom: 44px;
     width: 100%;
     color: white;
     text-decoration: none;

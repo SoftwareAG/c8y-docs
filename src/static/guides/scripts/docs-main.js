@@ -107,7 +107,7 @@ $(document).ready(function () {
 $(window).on('statechangecomplete', function(e){
     //console.log('event triggered', e);
   // set zomm in every image
-    $('img').each(function(){
+    $('img:not(.no-zoom)').each(function(){
       if($(this).closest('table').length < 1){
         $(this).addClass('img-responsive').attr('data-action', 'zoom');
       }

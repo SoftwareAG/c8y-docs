@@ -90,7 +90,7 @@
             <% for page in @getCollection("html").findAllLive({relativeOutDirPath: section.folder }, [ order: 1, title: 1 ] ).toJSON():%>
               <% if page.id is @document.id then $first = 'active' %>
             <% end %>
-            <li class="<%= $first %>">
+            <li class="<%= $first %> lang-<%= section.lang %>">
               <a href="/<%= section.folder %>" class="no-ajaxy">
                 <span class="<%= section.icon %>"></span> <%= section.title %>
               </a>

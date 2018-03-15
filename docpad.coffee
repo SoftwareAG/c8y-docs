@@ -91,7 +91,7 @@ docpadConfig = {
 			return _
 
 		sections: [
-			{ title: 'Concepts guide', folder: 'guides/concepts', slug: 'concepts-guide', icon: 'c8y-icon c8y-icon-c8y-engine', description: 'The architecture and technical concepts behind Cumulocity. Intended for anyone technically interested in the machine-to-machine application platform, be it solution architects, system administrators or software developers.' },
+			{ title: 'Concepts guide', folder: 'guides/concepts', slug: 'concepts-guide', icon: 'c8y-icon c8y-icon-c8y-engine', description: 'The architecture and technical concepts behind Cumulocity. Intended for anyone technically interested in the machine-to-machine application platform.' },
 			{ title: 'konzepte', lang: 'de', folder: 'guides/konzepte', slug: 'konzepte', icon: 'c8y-icon c8y-icon-c8y-engine', description: 'The reference guide contains the detailed technical specifications of the programming interfaces of Cumulocity as reference for software developers.' },
 			{ title: 'User guide', folder: 'guides/users-guide', slug: 'users-guide', icon : 'fa fa-user-circle-o', description: 'The reference guide contains the detailed technical specifications of the programming interfaces of Cumulocity as reference for software developers.'},
 			{ title: 'Handbuch', lang: 'de', folder: 'guides/benutzerhandbuch', slug: 'benutzerhandbuch', icon : 'fa fa-user-circle-o', description: 'The reference guide contains the detailed technical specifications of the programming interfaces of Cumulocity as reference for software developers.'},

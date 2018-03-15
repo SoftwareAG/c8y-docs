@@ -2,7 +2,8 @@
 ---
 order: 70
 title: Study: circular geofence alarms
-layout: default
+layout: subsections
+collection: 'guides/apama/study'
 ---
 
 ## Overview

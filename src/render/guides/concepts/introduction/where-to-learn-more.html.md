@@ -6,10 +6,10 @@ layout: redirect
 
 More conceptual information can be found in the following sections of the concept's guide:
 
-* The general technical concepts behind Cumulocity are described in [Cumulocity's domain model](/guides/images/concepts/domain-model).
-* Concepts related to interfacing devices and other IT systems with Cumulocity are described in [Interfacing devices](/guides/images/concepts/interfacing-devices).
-* Customization concepts of Cumulocity are described in [Real-time processing in](/guides/images/concepts/realtime) and [Developing  applications](/guides/images/concepts/applications).
-* Security concepts are described in [Security aspects](/guides/images/concepts/security).
+* The general technical concepts behind Cumulocity are described in [Cumulocity's domain model](/guides/concepts/domain-model).
+* Concepts related to interfacing devices and other IT systems with Cumulocity are described in [Interfacing devices](/guides/concepts/interfacing-devices).
+* Customization concepts of Cumulocity are described in [Real-time processing in](/guides/concepts/realtime) and [Developing  applications](/guides/concepts/applications).
+* Security concepts are described in [Security aspects](/guides/concepts/security).
 
 ### Summary
 

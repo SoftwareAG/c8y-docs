@@ -5,8 +5,6 @@ title: Events
 layout: redirect
 ---
 
-## Events
-
 Events are used to pass real-time information through Cumulocity.
 
 Events come in three types:

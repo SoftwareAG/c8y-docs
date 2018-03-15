@@ -4,8 +4,6 @@ title: Summary
 layout: redirect
 ---
 
-## Summary
-
 Cumulocity provides a reference model for managing and controlling IoT systems, covering
 
 -   central representation of IoT devices, networks and assets in the inventory,

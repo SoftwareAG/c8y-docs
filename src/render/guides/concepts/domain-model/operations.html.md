@@ -57,5 +57,5 @@ Operations should always be idempotent. Idempotent means that no matter how ofte
 
 For example, an operation to set a switch to a certain state is idempotent. No matter how often the switch is set to "on", it will be "on" afterwards. An operation to toggle a switch is not idempotent -- the result depends on whether the operation was run an odd or an even number of times.
 
-More information can be found in [device control](/guides/reference/device-control) in the Reference guide.
+More information can be found in [Device control](/guides/reference/device-control) in the Reference guide.
 

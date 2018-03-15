@@ -4,8 +4,6 @@ title: Overview
 layout: redirect
 ---
 
-## Overview
-
 This section will show security concepts and aspects of Cumulocity, structured into physical security, network security, application security and access control. Finally, it shows how Cumulocity helps in managing the security of your IoT solution. 
 This section is especially intended for IT security staff and management staff. IT security expertise is required when running Cumulocity.
 

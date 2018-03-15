@@ -31,7 +31,7 @@ There are special streams provided by the system to perform predefined operation
     from MeasurementCreated e
     where getNumber(e, "c8y_TemperatureMeasurement.T.value") > 100
 
-Technically, this statement produces a new "AlarmCreated" event each time a temperature sensor reads more than 100 degrees Celsius and puts it into the "CreateAlarm" output stream. The property names in the selected clause have to match the properties of "AlarmCreated" (see the [Cumulocity Event Language reference](/guides/reference/cumulocity-event-language)).
+Technically, this statement produces a new "AlarmCreated" event each time a temperature sensor reads more than 100 degrees Celsius and puts it into the "CreateAlarm" output stream. The property names in the selected clause have to match the properties of "AlarmCreated" (see the [Cumulocity Event Language reference](/guides/reference/realtime-statements)).
 
 ### How can I control devices from CEL?
 

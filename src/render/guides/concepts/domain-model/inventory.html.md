@@ -76,7 +76,7 @@ The approach also enables developing generic application components. For example
 
 Fragments use a naming convention to avoid conflicts between different parties supplying fragment information, similar to Java or other programming languages. 
 
-In the example above, "c8y_Position" is a combination of "c8y" (a shorthand for "Cumulocity"), an underscore and "Position". Together they form a set of standard fragments. Fragment definitions can be found in [sensor library](/guides/reference/sensor-library) and in the [device management library](/guides/reference/device-management).
+In the example above, "c8y_Position" is a combination of "c8y" (a shorthand for "Cumulocity"), an underscore and "Position". Together they form a set of standard fragments. Fragment definitions can be found in [Sensor library](/guides/reference/sensor-library) and in the [Device management library](/guides/reference/device-management) in the Reference guide.
 
 Note that Cumulocity follows a document-oriented approach for storing data. All characteristics of an object can be inferred from the document with the object data itself. There is no explicit separate metadata model that needs to be configured and managed. However, applications can add own metadata and store values in the inventory additionally. For example, a vending application can maintain metadata about slot configurations of the diverse vending machine types in the inventory.
 

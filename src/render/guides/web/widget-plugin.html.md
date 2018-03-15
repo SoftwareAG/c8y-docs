@@ -2,7 +2,7 @@
 order: 40
 title: Widget plugin
 layout: subsections
-collection: '/guides/web/widget-plugin'
+collection: 'guides/web/widget-plugin'
 ---
 
 

@@ -2,7 +2,7 @@
 order: 70
 title: Web SDK for AngularJS
 layout: subsections
-collection: '/guides/web/smart-toolkit/'
+collection: 'guides/web/smart-toolkit/'
 ---
 
 In this document you will get an overview on the *Web SDK for AngularJS* which allows you to

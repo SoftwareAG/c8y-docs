@@ -11,7 +11,7 @@ layout: "homepage"
         <div class="text-left" style="display:inline-block;">
           <img src="/guides/images/cumulocity-iot-logo.svg" alt="Cumulocity IoT" class="no-zoom" style="max-width: 230px; margin: 0 0  10px;">
           <h1>Documentation</h1>
-          <p class="lead">Guidance for the Cumulocity IoT platform<br>
+          <p class="lead">Guides for the Cumulocity IoT platform<br>
           <small><small><small style="opacity: .6">Last update: <%= @site.date.toDateString() %></small></small></small></p>
         </div>
       </div>

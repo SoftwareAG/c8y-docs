@@ -84,7 +84,7 @@
 				
 				// Continue as normal for cmd clicks etc
 				if ( event.which == 2 || event.metaKey ) { return true; }
-				
+				if( $this.hasClass( 'no-ajaxy' ) ) { return true; }
 				// Ajaxify this link
 				History.pushState(null,title,url);
 				event.preventDefault();
@@ -98,9 +98,11 @@
 		// Ajaxify our Internal Links
 		$body.ajaxify();
 
+		// hook into hash change
 		var rootHash = '';
 		History.Adapter.bind(window, 'anchorchange', function(e) {
 			e.preventDefault();
+			console.log('hash change');
 			var State = History.getState().url.split('#'),
 			cur_url = window.location.href.split('#');
 			//console.log('cur_url: ',cur_url[0],'\nState: ', State[0]);

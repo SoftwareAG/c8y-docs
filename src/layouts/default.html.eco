@@ -32,7 +32,7 @@
   </script>
 
 
-    <link rel="stylesheet" href="//yandex.st/highlightjs/8.0/styles/solarized_dark.min.css">
+    <link rel="stylesheet" href="/guides/styles/atom-one-dark.css">
     <!-- block styles -->
     <%- @getBlock("styles").toHTML() %>
     <%#- @getBlock('styles').add(@getAbsoluteUrl(@site.styles)).toHTML() %>

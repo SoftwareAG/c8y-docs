@@ -1,6 +1,6 @@
 ---
 order: 30
-title: Managed objct
+title: Managed object
 layout: redirect
 ---
 

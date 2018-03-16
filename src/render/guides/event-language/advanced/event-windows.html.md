@@ -4,8 +4,6 @@ title: Event windows
 layout: redirect
 ---
 
-## Event windows
-
 Event windows give you the possibility to batch together multiple events in a stream for further analysis.
 There are mainly two ways to create windows:
 

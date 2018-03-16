@@ -1,9 +1,7 @@
 ---
 title: Tixi
-layout: devices
+layout: standalone
 ---
-
-## Overview
 
 The [Tixi GmbH](http://www.tixi.de/) provides various gateways for energy management, smart metering, data logging and alarming. Specifically, the following device are offered:
 * [Tixi Wand.Box W600](http://www.tixi.com/456/)
@@ -17,15 +15,3 @@ Tixi devices can be integrated out-of-the-box to Cumulocity. The integration pro
 * Tixi TiXML Commands can be executed using Cumulocity Operations. 
 
 > The integration is currently in beta testing. For early access, please contact us. Further information will be available here soon.
-
-<!--
-## Prerequisites
-
-## Installation and registration
-
-## Using Tixi Devices
-
-
-## Troubleshooting
--->
-

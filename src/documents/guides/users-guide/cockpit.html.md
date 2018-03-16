@@ -17,8 +17,7 @@ The Cockpit application provides you with options to manage the Internet of Thin
 - Manage [alarms](#alarms), [reports](#reports) and [smart rules](#rules)
 - Use the [data point library](#library)
 
-For more information about the cockpit application please refer to the introduction below.
-i
+For further information on the Cockpit application refer to the Introduction section below.
 
 ## <a name="intro"></a>Introduction
 
@@ -34,7 +33,7 @@ The Cumulocity Cockpit can be used in many industrial areas, including:
 
 * Sensor data monitoring
 
-In the following section, the Cockpit application is described. It offers lots of functionality:
+In the following section the Cockpit application is described. It offers lots of functionalities:
 
 * **Data Explorer**: Interactively explore, compare and visualize IoT data.
 
@@ -42,9 +41,9 @@ In the following section, the Cockpit application is described. It offers lots o
 
 * **Smart Rule Builder**: Create business rules to work on incoming data in real-time.
 
-* **Business Rule Package**: Use pre-defined business rules for geofencing, thresholds or alarm escalation and notifications (SMS/Email/Speech).
+* **Business Rule Package**: Use pre-defined business rules for geofencing, thresholds or alarm escalation and notifications (SMS/email/voice).
 
-* **Reporting**: Create reports based on the dashboards layout and distribute them by Email.
+* **Reporting**: Create reports based on the dashboards layout and distribute them by email.
 
 * **Asset Management**: Organize your connected assets in hierarchies.
 
@@ -54,32 +53,26 @@ In the following section, the Cockpit application is described. It offers lots o
 
 ### Concepts
 
-The main concepts of the Cockpit application are those:
+The main concepts of the Cockpit application are the following:
 
-**Asset**: An asset represents a business object like buildings, machines, or cars.
-
-**Asset Hierarchy**: Assets are organized in hierarchies (trees). The nodes of the tree represent groups, and the leaves of the tree represent devices.
-
-**Group**: A group is a way to organize devices and assets in an asset hierarchy. A group can contain one or multiple devices, child devices or other groups.
-
-**Device**: An IoT Device can be either a gateway device, or a device indirectly connected via a gateway (like modbus or KNX device), or a sensor.
-
-**Data Point**: They represent sensor data, like temperature time series. In other parts of Cumulocity they are called measurements. Other terms used are time series or variable. They are always sensor generated data.
-
-**Data Point Properties**: Metadata for a data point, representing additional properties added by the user like a label, min/max values, thresholds, or other.
-
-**Dashboard**: A user defined page with individual content from various widgets.
-
-**Report**: Similar to dashboards, but with analytical content based on a limited time frame or scope of work.
-
-**Smart Rules**: Cumulocity business rules are instances from a smart rule template using the Smart Rule Builder.
+|CONCEPT|DESCRIPTION|
+|:---|:---|
+|**Asset**|An asset represents a business object like buildings, machines, or cars.
+|**Asset Hierarchy**|Assets are organized in hierarchies (trees). The nodes of the tree represent groups, and the leaves of the tree represent devices.
+|**Group**|A group is a way to organize devices and assets in an asset hierarchy. A group can contain one or multiple devices, child devices or other groups.
+|**Device**|An IoT device can be a gateway device, a device indirectly connected via a gateway (like modbus or KNX device), or a sensor.
+|**Data Point**|Data points represent sensor data, like temperature time series. In other areas of Cumulocity they are called measurements. Other terms used are time series or variable. They are always sensor generated data.
+|**Data Point Properties**|Metadata for a data point, representing additional properties added by the user like a label, min/max values, thresholds, or other.
+|**Dashboard**|A user-defined page with individual content from various widgets.
+|**Report**|Similar to dashboards, but with analytical content based on a limited time frame or scope of work.
+**Smart Rules**|Cumulocity business rules are instances from a smart rule template using the Smart Rule Builder.
 
 ### Cumulocity Applications
 
 The Cockpit application is based on the Cumulocity Application framework.
-To learn about the following items, please consult "[Introduction](/guides/users-guide/overview)":
+If you want to learn more about the following general items of this framework consult the section [*Introduction*](/guides/users-guide/overview):
 
-*    What web browsers are supported?
+*    Which Web browsers are supported?
 
 *    How to login to Cumulocity?
 
@@ -95,78 +88,85 @@ To learn about the following items, please consult "[Introduction](/guides/users
 
 ### Welcome page
 
-The welcome page opens the first time you log into Cumulocity Cockpit.
+The **Welcome** page initially opens up when you log into Cumulocity Cockpit for the first time.
 
 ![image alt text](/guides/users-guide/image_0.png)
 
-The welcome page shows the following sections:
+The **Welcome** page shows the following sections:
 
 * A welcome notice with the number of devices (or assets) connected.
 
-* A list of quick links.
+* Several important quick links.
 
-* A list of available applications
+* Links to available applications.
 
-* A list of news based on the Cumulocity twitter channel. Note: This is only available for tenants hosted by www.cumulocity.com.
+* The latest news from the Cumulocity twitter channel. Note: This is only available for tenants hosted by www.cumulocity.com.
 
-* A link to different parts of the documentation.
+* Links to various parts of the documentation.
 
-### Hiding the Welcome page
+### Hiding/Restoring the Welcome page
 
-To do so, click "Don't use as start page" on the top right.
+If you do not want the **Welcome** page as your start page, deactivate it with the button "Don't use as start page" on the top right.
 
-### Restore Welcome page as default
+To restore the **Welcome** page as start page, select "Welcome" in the navigator on the top left. Then deselect "Don't use as start page".
 
-To restore the welcome page, select "Welcome" in the navigator on the top left. Then deselect "Don't use as start page".
+## <a name="home"></a>Home dashboard
 
-## <a name="home"></a>Home Dashboard
-
-The cockpit start page is a dashboard page:
+The Cockpit start page is a dashboard page:
 
 ![image alt text](/guides/users-guide/image_1.png)
 
 The dashboard shows data for the general tenant.
 
-The home dashboard is a page shared by all users of the tenant. It consists out of widgets, which visualize IoT data. By default, the home dashboard includes four widgets, which show a welcome text, a summary of available objects, assets with alarms, recent alarms and a map of all objects.
+The Home dashboard is a page shared by all users of the tenant. It consists of widgets visualizing IoT data. By default, the Home dashboard includes four widgets showing a welcome text, a summary of assets with alarms, recent alarms and a map of all objects.
 
-The home dashboard can be edited, similar to other Cockpit dashboards: You can add, remove or change the widgets displayed. Use the settings symbol on the top right or move the cursor inside a widget and use the settings symbol of the individual widget.
+The Home dashboard can be edited, similar to other Cockpit dashboards: You can add, remove or change the widgets being displayed. 
 
-For details, see "Editing a Dashboard" below.
+<<< To be checked
+Use the settings symbol on the top right or move the cursor inside a widget and use the settings symbol of the individual widget.
+
+For details, see the section *Editing a Dashboard* below.
 
 To reset the dashboard to the original content, use the menu item "Reset default dashboard" from the cogwheel symbol.
+>>>
 
 ## <a name="connect"></a>Connecting Devices
 
-To use the Cockpit application, you have to connect IoT devices. Devices are connected in the Device Management application. Change to the “Device Management” using the Application Switcher on the top right, and then select “Registration”. For details, please see [Device Management User Guide](/guides/users-guide/device-management).
+Before you can work with the Cockpit application you need to connect IoT devices. Devices are connected in the Device Management application. Change to **Device Management** using the Application Switcher on the top right. For details refer to the[*Device Management*](/guides/users-guide/device-management) section in the *User Guide*.
+
 <img src="/guides/users-guide/app.png" alt="Logout menu" style="max-width: 100%">
 ## <a name="asset"></a>Asset Management
 
-An asset represents the business object in general like buildings, machines, production units or cars.
+### Introduction
+Assets represent business objects in general like buildings, machines, production units or cars.
 
 Assets are organized in hierarchies. For example, an energy monitoring application might have the following asset hierarchy:
 
 ![image alt text](/guides/users-guide/image_2.png)
 
-The asset hierarchy is composed out of two types of objects:
+The asset hierarchy is composed of two types of objects:
 
-* Group objects: These are groups created in the Cockpit application and they can group single devices or other groups.
+* Group objects: Objects which group single devices or other groups. Are created in the Cockpit application.
 
-* Device objects: These are devices that are linked into the asset hierarchy.
+* Device objects: Devices which are linked into the asset hierarchy. Are created in the Device Management application.
 
-In this example, group objects represent a building asset. Device objects represent the room asset. The group names and hierarchy can be defined individually by the user. The hierarchy can have multiple levels, like region level, city level, street level, building level, floor level and room level. An device can be part of multiple and different hierarchies, like part of regional hierarchy and part of customer hierarchy.
+In this example, group objects represent a building asset. Device objects represent the room asset. The group names and hierarchy can be defined individually by the user. The hierarchy can have multiple levels, like region level, city level, street level, building level, floor level and room level. Any device can be part of multiple and different hierarchies, like part of regional hierarchy and part of customer hierarchy.
 
-Single devices are not managed in the Cockpit application. They are managed in the Device Management Application.
+Single devices are not managed in the Cockpit application. They are managed in the Device Management application.
 To position a device in the asset hierarchy, you have to "assign" the device to the respective group. See description below for details.
 
 ### Asset Hierarchy versus Device Hierarchy
 
-Cumulocity supports two types of hierarchies: A device hierarchy and an asset hierarchy. The device hierarchy tracks how devices are linked to Cumulocity from a communications point of view. The asset hierarchy structures the assets that are being remotely supervised and controlled through the M2M devices. For details, please refer to "[Cumulocity's Domain Model](/guides/concepts/domain-model)"
+Cumulocity supports two types of hierarchies: a device hierarchy and an
+asset hierarchy.
 
-In the Cockpit application, you construct your asset hierarchy by creating group objects and by linking devices into the hierarchy. The asset hierarchy depends on the IoT devices used. There are many IoT devices, but these two types are very common:
+The device hierarchy tracks how devices are linked to Cumulocity from a communications point of view. The asset hierarchy structures the assets that are being remotely supervised and controlled through the M2M devices. For details, refer to "[Cumulocity's Domain Model](/guides/concepts/domain-model)".
 
-* **Smart devices** are self-contained devices that include sensors, actuators and a communication module. They are typically connected to a single asset. Smart devices are trackers, weather station or general "smart" sensors with built-in communication module.
+In the Cockpit application, you construct your asset hierarchy by creating group objects and by linking devices into the hierarchy. The asset hierarchy depends on the IoT devices used. There are many types of IoT devices, but these two types are very common:
 
-* **Gateway devices** establish the communication from other devices to Cumulocity, but do not include sensors or actuators. Typical gateway devices include Zigbee, Modbus, M-Bus or KNX gateways.
+* **Smart devices** are self-contained devices that include sensors, actuators and a communication module. They are typically connected to a single asset. Smart devices are trackers, weather stations or general "smart" sensors with a built-in communication module.
+
+* **Gateway devices** establish the communication from other devices to Cumulocity but do not include sensors or actuators. Typical gateway devices include Zigbee, Modbus, M-Bus or KNX gateways.
 
 The following section explains how to use Cockpit with smart devices and gateway devices.
 

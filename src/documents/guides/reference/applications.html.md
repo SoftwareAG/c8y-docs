@@ -9,10 +9,16 @@ The API below is not published in "/platform" but can be reached using "/applica
 The application interface consists of the following parts:
 
 -   The *application API* resource returns URIs and URI templates to collections of applications, so that all applications, all applications with a particular name and all applications owned by particular tenant can be queried.
--   The *application collection* resource retrieves sets of applications and enables creating new application.
--   The *application* resource represents application that can be queried and deleted.
+-   The *application collection* resource retrieves sets of applications and enables creating new applications.
+-   The *application* resource represents applications that can be queried and deleted.
+-   The *application bootstrap user* resource retrieves bootstrap user credentials for microservice.
+-   The *current application* resource provides data of authenticated microservice user's application. 
+-   The *application user collection* resource represents a collection of subscription entries.
+-   The *application user* resource represents a single subscription entry.
+-   The *current application subscription* provides an endpoint for accessing current application subscriptions.
+-   The *application binaries* provides an endpoint for uploading a deployable microservice application to the platform.
 
-> Note that for all PUT/POST requests accept header should be provided, otherwise an empty response body will be returned.
+> **Info**: For all PUT/POST requests an accept header should be provided, otherwise an empty response body will be returned.
 
 ## Application API
 
@@ -20,12 +26,13 @@ The application interface consists of the following parts:
 
 |Name|Type|Occurs|Description|
 |:---|:---|:-----|:----------|
-|self|URL|1|Link to this resource.|
-|applicationById|Application/URI-Template|1|A reference to resource of type Application (placeholder {id})|
+|self|URL|1|Link to this resource|
+|applicationById|Application/URI-Template|1|A reference to a resource of type Application (placeholder {id})|
 |applications|ApplicationCollection|1|Collection of all applications|
-|applicationsByName|ApplicationCollection URI-Template|1|Read-only collection of all applications with a particular name (placeholder {name}).|
-|applicationsByTenant|ApplicationCollection URI-Template|1|Read-only collection of all applications subscribed by particular tenant (placeholder {tenant}).|
-|applicationsByOwner|ApplicationCollection URI-Template|1|Read-only collection of all applications owned by particular tenant (placeholder {tenant}).|
+|applicationsByName|ApplicationCollection URI-Template|1|Read-only collection of all applications with a particular name (placeholder {name})|
+|applicationsByTenant|ApplicationCollection URI-Template|1|Read-only collection of all applications subscribed by a particular tenant (placeholder {tenant})|
+|applicationsByOwner|ApplicationCollection URI-Template|1|Read-only collection of all applications owned by a particular tenant (placeholder {tenant})|
+
 
 ### GET the Application API resource
 
@@ -59,11 +66,11 @@ Example response:
 
 |Name|Type|Occurs|Description|
 |:---|:---|:-----|:----------|
-|self|URI|1|Link to this resource.|
-|applications|Application|0..n|List of applications, see below.|
-|statistics|PagingStatistics|1|Information about paging statistics.|
-|prev|URI|0..1|Link to a potential previous page of applications.|
-|next|URI|0..1|Link to a potential next page of applications.|
+|self|URI|1|Link to this resource|
+|applications|Application|0..n|List of applications, see below|
+|statistics|PagingStatistics|1|Information about paging statistics|
+|prev|URI|0..1|Link to a potential previous page of applications|
+|next|URI|0..1|Link to a potential next page of applications|
 
 ### GET an application collection
 
@@ -129,7 +136,7 @@ Example response:
         }
     }
 
-### POST - Create a new Application
+### POST - create a new application
 
 Request body: Application
 
@@ -184,27 +191,28 @@ Example response:
 
 |Field Name|Type|Occurs|Description|PUT/POST|
 |:---------|:---|:-----|:----------|:-------|
-|self|URL|1|Link to this Resource|No|
-|id|String|1|Unique identifier for an application|No|
-|name|String|1|Name of the application|POST: Mandatory PUT: Optional|
-|key|String|1|Shared secret of the application|POST: Mandatory PUT: Optional|
+|self|URL|1|Link to this resource|No|
+|id|String|1|Unique identifier for the application|No|
+|name|String|1|Name of application|POST: Mandatory PUT: Optional|
+|key|String|1|Shared secret of application|POST: Mandatory PUT: Optional|
 |type|String|1|Type of application. Possible values are : EXTERNAL, HOSTED, MICROSERVICE|POST: Mandatory PUT: No|
-|availability|String|0..1|Access level for other tenants.  Possible values are : "MARKET", "PRIVATE"(default)|Optional|
-|owner|TenantReference| 1|Reference to tenant owning this application|No |
-|contextPath|String|0..1|contextPath of hosted application |POST: Mandatory (when application type is HOSTED) PUT: Optional|
-|resourcesUrl|String|0..1|URL to application base directory hosted on external server|POST: Mandatory (when application type is HOSTED) PUT: Optional|
+|availability|String|0..1|Access level for other tenants.  Possible values are : MARKET, PRIVATE (default)|Optional|
+|owner|TenantReference| 1|Reference to the tenant owning this application|No |
+|contextPath|String|0..1|contextPath of the hosted application |POST: Mandatory (when application type is HOSTED) PUT: Optional|
+|resourcesUrl|String|0..1|URL to application base directory hosted on an external server|POST: Mandatory (when application type is HOSTED) PUT: Optional|
 |resourcesUsername|String|0..1|authorization username to access resourcesUrl |Optional|
 |resourcesPassword|String|0..1|authorization password to access resourcesUrl |Optional|
-|externalUrl|String|0..1|URL to external application|POST: Mandatory (when application type is EXTERNAL)
-PUT: Optional|
+|externalUrl|String|0..1|URL to the external application|POST: Mandatory (when application type is EXTERNAL) PUT: Optional|
 
-### POST - Copy an application
+### POST - copy an application
 
-A POST request to the "clone" resource creates new application based on already existing one. 
-Properties are copied to newly created application.
-For name, key and context path there is added "clone" prefix in order to be unique. 
-If target application is hosted and have active version then new application will have the active version with the same content.
-Response contains representation of newly created application.
+A POST request to the "clone" resource creates a new application based on an already existing one. 
+
+The properties are copied to the newly created application. For name, key and context path a "clone" prefix is added in order to be unique. 
+
+If the target application is hosted and has an active version, the new application will have the active version with the same content.
+
+The response contains a representation of the newly created application.
 
 Required role: ROLE\_APPLICATION\_MANAGMENT\_ADMIN
 
@@ -239,11 +247,11 @@ Example response:
         "type": "HOSTED"
     }
 
-### PUT - Update an Application
+### PUT - update an application
 
 Request body: Application
 
-Response body: Application (if "ACCEPT" header specified).
+Response body: Application (if "ACCEPT" header is specified).
 
 Required role: ROLE\_APPLICATION\_MANAGMENT\_ADMIN
 
@@ -258,7 +266,7 @@ Example request:
       "availability" : "MARKET"
     }
 
-### GET an Application
+### GET an application
 
 Response body: Application
 
@@ -287,15 +295,15 @@ Example response:
 
 ### DELETE an application
 
-Request Body: N/A.
+Request Body: n/a
  
-Response Body: N/A.
+Response Body: n/a
 
 Required role: ROLE\_APPLICATION\_MANAGMENT\_ADMIN and owner
 
-Note: Application can be only removed when is availability is PRIVATE or in other case when has no subscriptions.
+>Info: The application can only be removed when its availability is PRIVATE or in other case when it has no subscriptions.
 
-Example Request: Delete a application
+Example Request: Delete an application
 
     DELETE /application/applications/<<applicationId>>
      Host: [hostname]
@@ -304,3 +312,174 @@ Example Request: Delete a application
 Example Response:
 
     HTTP/1.1  204 NO CONTENT
+
+## Bootstrap User
+### GET bootstrap user
+
+Response body: ApplicationUser
+
+Required role: ROLE_APPLICATION_MANAGEMENT_ADMIN
+
+Example request:
+    
+    GET /application/bootstrapUser
+    Host: ...
+    Authorization: Basic ....
+    Accept: application/vnd.com.nsn.cumulocity.user+json;ver=...
+    
+Example response:
+
+    HTTP/1.1 200 OK
+    Content-Type: application/vnd.com.nsn.cumulocity.user+json;ver=...
+    Content-Length: ...
+    {
+        "name": "servicebootstrap_hello-world",
+        "password": "9HqBc0miL5",
+        "tenant": "dariusz"
+    }
+
+
+## Current Application
+### GET current application 
+
+Response body: Application
+
+Required authentication with bootstrap user
+
+Example request:
+    
+    GET /application/currentApplication
+    Host: ...
+    Authorization: Basic .....
+    Accept: application/vnd.com.nsn.cumulocity.application+json;ver=...
+    
+
+Example response:
+
+    HTTP/1.1 200 OK
+    Content-Type: application/vnd.com.nsn.cumulocity.application+json;ver=...
+    Content-Length: ...
+    {
+      "availability": "PRIVATE",
+      "id": "105",
+      "key": "...",
+      "name": "vehicleControlApplication",
+      "owner": {
+          "self": "...",
+          "tenant": {
+              "id": "taxiDrive"
+          }
+      },
+      "self": "...",
+      "type": "MICROSERVICE",
+      "externalUrl":"http://external.host.com/application"
+    }
+
+### PUT - update current application 
+
+Response body: Application
+
+Required authentication with bootstrap user
+
+Example request:
+    
+    PUT /application/currentApplication
+    Host: ...
+    Authorization: Basic ...
+    Accept: application/vnd.com.nsn.cumulocity.application+json;ver=...
+    {
+          "availability": "PRIVATE",
+          "id": "105",
+          "key": "...",
+          "name": "vehicleControlApplication",
+          "owner": {
+              "self": "...",
+              "tenant": {
+                  "id": "taxiDrive"
+              }
+          },
+          "self": "...",
+          "type": "MICROSERVICE",
+          "externalUrl":"http://external.host.com/application"
+        }
+
+Example response:
+
+    HTTP/1.1 200 OK
+    Content-Type: application/vnd.com.nsn.cumulocity.application+json;ver=...
+    Content-Length: ...
+    {
+      "availability": "PRIVATE",
+      "id": "105",
+      "key": "...",
+      "name": "...",
+      "owner": {
+          "self": "...",
+          "tenant": {
+              "id": "..."
+          }
+      },
+      "self": "...",
+      "type": "MICROSERVICE"
+    }
+
+### ApplicationSubscriptionCollection[application/vnd.com.nsn.cumulocity.applicationUserCollection+json]
+|Name|Type|Occurs|Description|
+|:---|:---|:-----|:----------|
+|self|URI|1|Link to this resource|
+|users|ApplicationUser|0..n|List of subscribed users, see below|
+|statistics|PagingStatistics|1|Information about paging statistics|
+|prev|URI|0..1|Link to a potential previous page of applications|
+|next|URI|0..1|Link to a potential next page of applications|
+
+### ApplicationUser
+|Field Name|Type|Occurs|Description|
+|:---------|:---|:-----|:----------|
+|tenant|String|1|Subscription tenant
+|name|String|1|Username
+|password|String|1|Password
+
+
+### GET current application subscriptions
+
+Response body: ApplicationSubscriptionCollection
+
+Required authentication with bootstrap user
+
+Example request:
+    
+    GET /application/currentApplication/subscriptions
+    Host: ...
+    Authorization: Basic ....
+    Accept: application/vnd.com.nsn.cumulocity.applicationUserCollection+json; ver=...
+
+
+Example response:
+
+    HTTP/1.1 200 OK
+    Content-Type: application/vnd.com.nsn.cumulocity.applicationUserCollection+json; ver=...
+    Content-Length: ...
+    {
+        "users": [
+            {
+                "name": "service_hello-world",
+                "password": "...",
+                "tenant": "..."
+            }
+        ]
+    }
+
+## Application binaries
+### POST - upload application binary
+
+For the microservice application to be available for Cumulocity platform users, a binary zip file must be uploaded. 
+     
+     POST /application/applications/{APPLICATION_ID}/binaries
+     Host: ...
+     Authorization: Basic …
+     Content-Type: multipart/form-data
+     
+The zip file must consist of:
+
+* cumulocity.json - file describing the deployment
+* image.tar - executable docker image

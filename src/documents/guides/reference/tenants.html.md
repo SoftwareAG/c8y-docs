@@ -6,18 +6,18 @@ layout: default
 
 ## Tenants
 
-The Tenant interface is available consists of parts:
+The tenant interface consists of the following parts:
 
--   The tenant collection resource retrieves tenants, accessible by url */tenant/tenants*
--   The tenant resource represents individual tenant that can be view, accessible by url */tenant/tenants/{tenantId}*
--   The tenant application reference collection resource retrieves applications, accessible by url */tenant/tenants/{tenantId}/applications*
--   The tenant application reference resource represents individual application reference that can be view, accessible by url */tenant/tenants/{tenantId}/applications/{applicationId}*
--   The tenant option collection resource enables creating new option and viewing existing options, accessible by url */tenant/options*
--   The tenant option resource represents individual option that can be view and modified, accessible by url */tenant/options/{optionCategory}/{optionKey}*
--   The tenant usage statistics resources return information on the request load and database usage of tenants.
-
+-   The Tenant collection resource - retrieves tenants, accessible by url */tenant/tenants*
+-   The Tenant resource - represents an individual tenant that can be viewed, accessible by url */tenant/tenants/{tenantId}*
+-   The Tenant application reference collection resource - retrieves applications, accessible by url */tenant/tenants/{tenantId}/applications*
+-   The Tenant application reference resource - represents an individual application reference that can be viewed, accessible by url */tenant/tenants/{tenantId}/applications/{applicationId}*
+-   The Tenant option collection resource - enables creating new option and viewing existing options, accessible by url */tenant/options*
+-   The Tenant option resource - represents an individual option that can be viewed and modified, accessible by url */tenant/options/{optionCategory}/{optionKey}*
+-   The Tenant usage statistics resources - return information on the request load and database usage of tenants
+-   *current tenant* resource - represents user data for currently logged service user
+ 
 > Note that for all PUT/POST requests accept header should be provided, otherwise an empty response body will be returned.
-
 ## Tenant collection
 
 ### TenantCollection [application/vnd.com.nsn.cumulocity.tenantCollection+json]
@@ -25,7 +25,7 @@ The Tenant interface is available consists of parts:
 |Name|Type|Occurs|Description|
 |:---|:---|:-----|:----------|
 |self|URI|1|Link to this resource.|
-|tenants|Tenant|0..n|List of Tenant, see below.|
+|tenants|Tenant|0..n|List of tenants, see below.|
 |statistics|PagingStatistics|1|Information about paging statistics.|
 |prev|URI|0..1|Link to a potential previous page of tenants.|
 |next|URI|0..1|Link to a potential next page of tenants.|
@@ -182,7 +182,18 @@ Example Response:
 		"customProperties" : {"referenceId":"1234567890"}
 	}
 
-Note that creating a tenant with adminName, adminPass and adminEmail, creates an admin user with these settings.
+In the following table you can see the restrictions for each field:
+
+|Field|Type|
+|:----|:---|
+|id|VARCHAR(32)|
+|company_name|VARCHAR(256)|
+|domain_name|VARCHAR(256)|
+|contact_name|VARCHAR(30)|
+|contact_phone|VARCHAR(20)|
+|administrator|VARCHAR(50)|
+
+> Note: creating a tenant with adminName, adminPass and adminEmail, creates an admin user with these settings.
 For the tenant id SQL keywords (e.g., select, cross, where) are not allowed. 
 
 ## Tenant
@@ -950,4 +961,36 @@ Example Response :
 	"subscribedApplications": [
             "testadmin"
         ]
+    }
+
+
+## Current tenant
+
+### Current tenant [application/vnd.com.nsn.cumulocity.currentTenant+json]
+|Field Name|Type|Occurs|Description|
+|:---------|:---|:-----|:----------|
+|name|String|1|Tenant
+|domainName|String|1|Domain name
+|allowCreateTenants|Boolean|1|Flag indicating if tenant can create subtenants
+
+### GET current tenant
+
+Request for currently logged service user's tenant. 
+
+Required role: ROLE&#95;USER&#95;MANAGEMENT&#95;OWN&#95;READ, or ROLE&#95;SYSTEM
+
+ResponseBody: CurrentTenant
+
+    GET /tenant/currentTenant
+     Host: [hostname]
+     Authorization: Basic xxxxxxxxxxxxxxxxxxx
+     ContentType: application/vnd.com.nsn.cumulocity.currentTenant+json;;ver=...
+
+Example response
+
+    {
+        "allowCreateTenants": true,
+        "customProperties": {},
+        "domainName": "...",
+        "name": "..."
     }

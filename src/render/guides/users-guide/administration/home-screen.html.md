@@ -1,8 +1,9 @@
 ---
-order: 10
+order: 11
 title: Home screen
 layout: redirect
 ---
+
 
 The Home screen of the Administration application provides 
 

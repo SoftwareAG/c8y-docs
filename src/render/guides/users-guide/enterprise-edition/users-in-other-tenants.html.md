@@ -1,6 +1,6 @@
 ---
-order: 15
-title: Users in other tenants
+order: 21
+title: Supporting users in other tenants
 layout: redirect
 ---
 

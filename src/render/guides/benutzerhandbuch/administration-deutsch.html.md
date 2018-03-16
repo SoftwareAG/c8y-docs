@@ -1,8 +1,10 @@
 ---
 order: 40
 title: Administration
-layout: default
+layout: subsections
+collection: 'guides/users-guide/administration'
 ---
+
 
 ## Überblick
 

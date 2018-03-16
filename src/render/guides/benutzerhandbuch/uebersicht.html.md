@@ -1,9 +1,9 @@
 ---
 order: 10
-title: Einführung
-layout: default
+title: Getting Started
+layout: subsections
+collection: 'guides/benutzerhandbuch/uebersicht'
 ---
-
 ## Einführung
 
 Die folgenden Abschnitte beinhalten eine grundlegende Einführung in die Cumulocity-Plattform. Sie beschreiben:

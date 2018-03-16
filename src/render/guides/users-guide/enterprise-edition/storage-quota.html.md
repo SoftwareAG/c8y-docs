@@ -1,5 +1,5 @@
 ---
-order: 80
+order: 50
 title: Storage quota
 layout: redirect
 ---

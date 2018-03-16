@@ -1,5 +1,5 @@
 ---
-order: 40
+order: 61
 title: Using two-factor authentication
 layout: redirect
 ---

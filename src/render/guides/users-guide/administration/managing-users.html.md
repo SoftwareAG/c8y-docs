@@ -1,5 +1,5 @@
 ---
-order: 11
+order: 12
 title: Managing users
 layout: redirect
 ---

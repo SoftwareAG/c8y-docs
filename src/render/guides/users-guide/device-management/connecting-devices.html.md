@@ -1,5 +1,5 @@
 ---
-order: 10
+order: 11
 title: Connecting Devices
 layout: redirect
 ---

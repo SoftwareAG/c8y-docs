@@ -5,7 +5,7 @@ layout: redirect
 ---
 
 
-Using the <span style="color: rgb(3,19,21);">Cumulocity real-time event processing</span>, you can add your own logic to your IoT solution. This includes data analytics logic but it is not limited to it. To define new analytics, you will use the Apama Event Processing Language - see the [Apama documentation](http://www.apamacommunity.com/documents/10.1.0.3/apama_10.1.0.3_webhelp/apama-webhelp/) and the topic [Developing Apama Applications in EPL](http://www.apamacommunity.com/documents/10.1.0.3/apama_10.1.0.3_webhelp/apama-webhelp/#page/apama-webhelp%252Fco-DevApaAppInEpl_how_this_book_is_organized.html%2523) for full details. The language allows analyzing incoming data. You can create, update and delete your data in real-time.
+Using the <span style="color: rgb(3,19,21);">Cumulocity real-time event processing</span>, you can add your own logic to your IoT solution. This includes data analytics logic but it is not limited to it. To define new analytics, you can use the Apama Event Processing Language - see the [Apama documentation](http://www.apamacommunity.com/documents/10.1.0.3/apama_10.1.0.3_webhelp/apama-webhelp/) and the topic [Developing Apama Applications in EPL](http://www.apamacommunity.com/documents/10.1.0.3/apama_10.1.0.3_webhelp/apama-webhelp/#page/apama-webhelp%252Fco-DevApaAppInEpl_how_this_book_is_organized.html%2523) for full details. The language allows analyzing incoming data. You can create, update and delete your data in real-time.
 
 Typical real-time analytics use cases include:
 

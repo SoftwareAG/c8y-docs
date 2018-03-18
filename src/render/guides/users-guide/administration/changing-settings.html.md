@@ -5,12 +5,14 @@ layout: redirect
 ---
 
 <a name="settings"></a>
+
+
 From the "Settings" menu, administrators can modify or manage various settings for the account as
 
 - changing the [application settings](#default-app),
 - changing the [password policy and TFA settings](#changing-password-settings),
 - managing the [properties library](#properties),
-- configure the setting for the Enterprise Edition, see [Enterprise Edition](/guides/images/users-guide/enterprise-edition#platform-config).
+- configure the [settings for the Enterprise Edition](#platform-config).
 
 ### <a name="default-app"></a>Changing application settings
 
@@ -34,7 +36,7 @@ To change password settings, click "Password" in the "Settings" menu.
 
 Under "Password expiration", you can limit the validity of user passwords by specifying the number of days after which users have to change their passwords. If you do not want to force your users to change passwords, use "0" for unlimited validity of passwords (default value).
 
-By default, users can use any password with eight characters or more. If you select **Enforce that all password are "strong" (green)**, your users must provide strong passwords as described in "[Logging in](/guides/images/users-guide/overview#login)".
+By default, users can use any password with eight characters or more. If you select **Enforce that all password are "strong" (green)**, your users must provide strong passwords as described in "[Logging in](/guides/users-guide/overview#login)".
 
 >**Info**: The password validity limit and the enforcing of strong passwords may not be editable, if configured by the platform administrator.
 
@@ -44,7 +46,7 @@ Strong (green) passwords must have "M" characters. By default, the system restri
 
 Click **Save** to apply your password settings.
 
-<img src="/guides/images/users-guide/administration/admin_Password.png" alt="Password settings" style="max-width: 100%">
+<img src="/guides/users-guide/administration/admin_Password.png" alt="Password settings" style="max-width: 100%">
 
 Under "TFA settings", you can change the following TFA settings:
 
@@ -59,7 +61,7 @@ Click **Save TFA settings** to apply your changes.
 
 In the properties library, accessible from the "Settings" menu, custom properties can be added to inventory objects, alarms, events and tenants. 
 
-![Properties library](/guides/images/users-guide/properties_library.png)
+![Properties library](/guides/users-guide/properties_library.png)
 
 With custom properties, you can extend the data model of Cumulocity built-in objects. You may create the following custom values:
 
@@ -71,7 +73,7 @@ With custom properties, you can extend the data model of Cumulocity built-in obj
 
 To add a custom property, select the tab for the desired property and click **Add property**. 
 
-![Add new property](/guides/images/users-guide/addproperty.png)
+![Add new property](/guides/users-guide/addproperty.png)
 
 In the upcoming form, provide a unique name as identifier and a label for the property and select its data type from the drop down list. Additionally, select validation rules for the new property:
 
@@ -93,4 +95,5 @@ Click on the name of a property in the list to open it. To edit the property, en
 
 By providing OPenIT credentials you enable the platform to utilize SMS services provided by [Openit](https://sms.openit.de/main.php).
 
-SMS are used throughout the application for various features like [two-factors authentication](/guides/images/users-guide/administration#tfa) and user notifications, i.e. on alarms.
+SMS are used throughout the application for various features like [two-factors authentication](/guides/users-guide/administration#tfa) and user notifications, i.e. on alarms.
+

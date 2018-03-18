@@ -1,6 +1,6 @@
 ---
 order: 10
-title: Micorservice manifest
+title: Microservice manifest
 layout: redirect
 ---
 

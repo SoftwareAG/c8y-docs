@@ -1,0 +1,17 @@
+---
+order: 10
+title: Überblick
+layout: redirect
+---
+
+<a name="overview"></a>
+
+Die folgenden Abschnitte beschreiben detailliert alle Funktionalitäten der "Administration"-Anwendung. Zur besseren Orientierung folgt eine Übersicht über den Inhalt dieses Dokuments.
+
+|SECTION|CONTENT|
+|:---|:---|
+|[Anzeigen von Audit-Logs](#audit)|Enthält Informationen zu [von den Benutzern ausgeführten Kommandos](#audit).
+|[Verwalten eigener Anwendungen](#applications)|Wie [eigene Anwendungen](#applications) in Ihrem Cumulocity-Konto verwaltet und konfiguriert werden.
+|[Anwenden von Geschäftsregeln](#retention)|Wie [Echtzeitregeln](#event-processing) aufgesetzt und Alarme durch [Alarmregeln](#reprio-alarms) repriorisiert werden.
+|[Änderung von Einstellungen](#settings)|Wie Einstellungen, wie etwa [Anwendungseinstellungen](#default-app) oder [Passwort- und TFA-Einstellungen](#changing-password-settings), geändert werden und wie die [Attributsbibliothek](#properties) verwaltet wird.
+|[Managing Data Retention](#retention)|Wie [Datenhaltungsregeln](#retention-rules) für Ihre Daten konfiguriert und wie Ihre [gespeicherten Daten](#files) in der Dateiablage verwaltet werden.|[[Verwalten der Datenhaltung](#retention)|Wie [Datenhaltungsregeln](#retention-rules) für Ihre Daten konfiguriert und wie Ihre [gespeicherten Daten](#files) in der Dateiablage verwaltet werden.

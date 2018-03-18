@@ -1,30 +1,30 @@
 ---
 order: 50
-title: Storage quota
+title: Speicherbegrenzung
 layout: redirect
 ---
 
 
-## <a name="storageQuota"></a>
+<a name="storageQuota"></a>
 
-The storage quota is in place for a tenant when a storage quota per device is set by the platform administrator. The total storage available to the user is calculated using the formula `storage quota per device x number of devices`. A check is performed every night to ensure the quota is not exceeded.
+Die Speicherbegrenzung gilt für einen Mandanten, wenn der Plattformadministrator ein Speicherkontingent pro Gerät eingerichtet hat. Der insgesamt verfügbare Speicher für einen Benutzer wird mittels der Formel `Speicherkontingent pro Gerät x Anzahl der Geräte` berechnet. Jede Nacht wird überprüft, ob das Kontingent überschritten wurde.
 
-In case the quota is exceeded, an e-mail is sent to all tenant administrators to warn them that data will be deleted the following night. After 24h, if the quota is still exceeded, all data retention limits are reduced by a fixed percentage. The storage quota per device will be reduced as a result of this rule.
+Ist das Kontingent überschritten, wird eine E-Mail an alle Mandantenadministratoren gesendet mit der Information, dass in der folgenden Nacht Daten gelöscht werden. Ist das Kontingent nach 24 Stunden weiterhin überschritten, werden alle Datenhaltungsbegrenzungen um einen festen Prozentwert herabgesetzt. Daraus resultiert, dass das Kontingent pro Gerät entsprechend verringert wird.
 
-**Example:**
+**Beispiel:**
 
-Let us assume that a tenant has a storage quota of 10GB. Retention rules are 80 days for measurements, 90 days for all other data.
+Nehmen wir an, ein Mandant hat ein Speicherkontingent von 10GB. Datenhaltungsregeln gelten 80 Tage für Messwerte und 90 Tage für alle anderen Daten.
 
- - Day 1: In the nightly check, the total storage is calculated at 13GB. An e-mail is sent to all tenant administrators.
+*   Tag 1: Die nächtliche Überprüfung ergibt eine Gesamtspeichernutzung von 13MB. Eine E-Mail wird an alle Mandantenadminstratoren gesendet.
 
- - Day 2: the total storage is still at 13GB. The system determines that a 15% reduction of the retention rules is sufficient to be under the storage quota. So any measurement older than 68 days (80 days - 15%) and any other data older that 77 days (90 days - 15% results in 76.5 days, rounded to 77 days) is deleted.
+*   Tag 2: Die Gesamtspeichernutzung beträgt weiterhin 13 MB. Das System ermittelt, das eine Reduzierung der Datenhaltung um 15% ausreichend ist, um unterhalb des Speicherkontingents zu bleiben. Daher werden alle Messwerte, die älter sind als 68 Tage (80 Tage - 15%) sowie alle anderen Daten, die älter sind als 77 Tage (90 Tage - 15%) gelöscht.
 
-The total storage is now at 9.8GB.
+Die Gesamtspeichernutzung beträgt nun 9,8GB.
 
-### <a name="warningEmail"></a>Managing storage quota warning e-mail
+### <a name="warningEmail"></a>Verwalten der Warn-E-Mail bei Überschreiten des Speicherkontingents
 
-This feature is only visible if a storage quota was set for the tenant. 
+Die Funktion ist nur sichtbar, wenn ein Speicherkontingent für den Mandanten gesetzt wurde.
 
-The tenant administrators can set a user group and threshold for an e-mail to be sent once a day if the storage used is higher than a particular percentage of the storage quota. The default setup is sending an e-mail to the "admin" group when the storage reaches 80% of maximum storage.
+Mandantenadministratoren können eine Benutzergruppe festlegen, an die täglich eine E-Mail versendet wird, wenn der genutzte Speicher einen ebenfalls zu konfigurierenden Prozentsatz des Speicherkontingents überschreitet. Standardmäßig wird eine E-Mail an die Gruppe "Admin" versendet, wenn die Speichernutzung 80% des Gesamtkontingents erreicht.
 
-The e-mail warning can also be disabled. 
+Die Warn-E-Mail kann auch deaktiviert werden.

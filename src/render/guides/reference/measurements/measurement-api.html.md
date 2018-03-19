@@ -6,12 +6,15 @@ layout: redirect
 
 ### MeasurementAPI [application/vnd.com.nsn.cumulocity.measurementApi+json
 
-Note, that all GET requests support two similar parameters fragmentType and valueFragmentType. Parameter valueFragmentType should be used instead of fragmentType because works on structured data and filtering via this parameter is lighter than filtering via fragmentType. Additionally parameter valueFragmentType can be used together with valueFragmentSeries.<br/>
-Parameters valueFragmentType and valueFragmentSeries allows to query for measurement via fragment and series e.g. If you looking for c8y_TemperatureMeasurement.T you should use query in form &valueFragmentType=c8y_TemperatureMeasurement&valueFragmentSeries=T.<br/>
+Note, that all GET requests support two similar parameters fragmentType and valueFragmentType. Parameter valueFragmentType should be used instead of fragmentType because works on structured data and filtering via this parameter is lighter than filtering via fragmentType. Additionally parameter valueFragmentType can be used together with valueFragmentSeries.
+
+Parameters valueFragmentType and valueFragmentSeries allows to query for measurement via fragment and series e.g. If you looking for c8y_TemperatureMeasurement.T you should use query in form &valueFragmentType=c8y_TemperatureMeasurement&valueFragmentSeries=T.
+
 If you looking for non standard parameter of measurement e.g. without value you must still use parameter fragmentType. If you looking for non standard parameter of measurement e.g. without value you must still use parameter fragmentType. Note that usage of valueFragmentType or pair valueFragmentType and valueFragmentSeries is more preferable then fragmentType.
 
+
 |Name|Type|Occurs|Description|
-|:---|:---|:-----|:----------|
+|:---|:---|:---|:----------|
 |self|URL|1|Link to this resource.|
 |measurements|Measurement Collection|1|Collection of all measurements.|
 |measurementsForDate|MeasurementCollection URI template|1|Read-only collection of all measurements from a particular period (placeholder {dateFrom} and {dateTo}).|
@@ -45,6 +48,7 @@ If you looking for non standard parameter of measurement e.g. without value you 
 |measurementsForValueFragmentTypeAndType|MeasurementCollection URI template|1|Read-only collection of all measurements containing a particular type and a particular fragment type with value(placeholder {type} and {valueFragmentType}).|
 |measurementsForValueFragmentTypeAndValueFragmentSeries|MeasurementCollection URI template|1|Read-only collection of all measurements containing a particular fragment type and series with value (placeholder {valueFragmentType} and {valueFragmentSeries}).|
 |measurementsForValueFragmentTypeAndValueFragmentSeriesAndType|MeasurementCollection URI template|1|Read-only collection of all measurements containing a particular type and a particular fragment type and series with value(placeholder {type}, {valueFragmentType} and {valueFragmentSeries}).|
+
 
 ### GET the Measurement API resource
 

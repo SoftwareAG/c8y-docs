@@ -102,7 +102,7 @@
 		var rootHash = '';
 		History.Adapter.bind(window, 'anchorchange', function(e) {
 			e.preventDefault();
-			console.log('hash change');
+			//console.log('hash change');
 			var State = History.getState().url.split('#'),
 			cur_url = window.location.href.split('#');
 			//console.log('cur_url: ',cur_url[0],'\nState: ', State[0]);

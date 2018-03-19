@@ -102,6 +102,13 @@ $(document).ready(function () {
     }, 1500);
   });
 
+  $('#mainnav').on('activate.bs.scrollspy', function (e) {
+    if(e.type == 'activate'){
+      if(!$(e.target).closest('.slot').hasClass('current')){
+        $(e.target).removeClass('active');
+      }
+    }
+  })
 });
 
 $(window).on('statechangecomplete', function(e){
@@ -131,5 +138,14 @@ $(window).on('statechangecomplete', function(e){
     $('[data-spy="scroll"]').each(function () {
       var $spy = $(this).scrollspy('refresh')
     });
+
+    $('table').each(function(){
+      var $this = $(this);
+      if( $this.closest('.table-responsive').length < 1 ){
+        $this.wrap( "<div class='table-responsive'></div>" );
+      }
+    });
+    
+  
 });
 

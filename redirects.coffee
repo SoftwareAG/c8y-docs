@@ -52,12 +52,12 @@ redirects =
 	'/guides/devices/netcomm/netcomm-usersguide': '/guides/devices/netcommwireless'
 	'/guides/devices/netcomm/cloud-fieldbus': '/guides/users-guide/cloud-fieldbus'
 	'/guides/reference/cumulocity-event-language': '/guides/event-language/introduction'
-	'/guides/zapier': '/guides/users-guide/saas-integration'
-	'/guides/users-guide/zapier': '/guides/users-guide/saas-integration'
+	'/guides/zapier': '/guides/users-guide/optional-services/#saas-integration'
+	
 	
 	# "index.html" redirects
 	'/guides/concepts': '/guides/concepts/introduction'
-	'/guides/users-guide': '/guides/users-guide/getting-started'
+	'/guides/users-guide': '/guides/users-guide/overview'
 	'/guides/rest': '/guides/rest/introduction'
 	'/guides/cpp': '/guides/cpp/introduction'
 	'/guides/reference': '/guides/reference/rest-implementation'
@@ -67,6 +67,5 @@ redirects =
 	'/guides/mqtt': '/guides/mqtt/introduction'
 	'/guides/devices': '/guides/devices/overview'
 	'/guides/apama': '/guides/apama/introduction'
-	#'/guides/users-guide/cloud-fieldbus': '/guides/cloud-fieldbus'
 
 module.exports = redirects

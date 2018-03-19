@@ -85,6 +85,14 @@ layout: redirect
 ```
 The property `layout`must be set to `redirect` to ensure that any link for this file will be redirected to the parent page. The file name will be used as an anchor to allow page navigation and will be added as an anchor link in the section in navigator.
 
+
+
+1.4 Add media
+Media should be added to `src/static/guides/images/`. Add a new directory if none of the available is suited.
+To display the images in your pages, you'll have to add the relative path starting with `/guides/images/…`.
+
+
+
 ## Redirects
 There's a `redirects.coffee`file in the root of the project that manages all the redirects of the site, when adding a new section, don't forget to add a redirect for the section's root path, e.g. `'guides/my_new_section':'guides/my_new_section/overview'`
 

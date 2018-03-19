@@ -13,7 +13,7 @@ layout: default
 
 <p>Also, many of our device integrations are open source to help you build variants.</p>
 
- <div class="input-group"> <span class="input-group-addon" id="basic-addon1"><i class="glyphicon glyphicon-search"></i></span>
+ <div class="input-group" style="margin-bottom: 24px;"> <span class="input-group-addon" id="basic-addon1"><i class="fa fa-search"></i></span>
   <input type="search" class="form-control input-lg" id="filter-devices" placeholder="Type to search devices…">
 </div>
 
@@ -31,26 +31,25 @@ layout: default
 <script>
 $(document).ready(function(){
    // DEVICE SEARCH
+  $('.device-list .device').each(function(){
+    var $this = $(this);
+    $this.data('text', $this.text().toLowerCase());
+    //console.log('==> ', $this.data('text'));
+    $this.data('$l', $this.parent());
+  });
 
+  $('#filter-devices').on('keyup', function(k){
+    var $str = $(this).val().toLowerCase();
+    //$str.length ? $titles.hide() : $titles.show();
     $('.device-list .device').each(function(){
       var $this = $(this);
-      $this.data('text', $this.text().toLowerCase());
-      //console.log('==> ', $this.data('text'));
-      $this.data('$l', $this.parent());
-    });
-
-    $('#filter-devices').on('keyup', function(k){
-      var $str = $(this).val().toLowerCase();
-      //$str.length ? $titles.hide() : $titles.show();
-      $('.device-list .device').each(function(){
-        var $this = $(this);
-        if( $this.data('text').indexOf($str) > -1){
-          $this.show();
-        }else{
-          $this.hide();
-        }
-      })
-    });
+      if( $this.data('text').indexOf($str) > -1){
+        $this.show();
+      }else{
+        $this.hide();
+      }
+    })
+  });
 
 });
 </script>

@@ -152,7 +152,7 @@
 @line-height-small:         1.5;
 
 @border-radius-base:        4px;
-@border-radius-large:       6px;
+@border-radius-large:       3px;
 @border-radius-small:       3px;
 
 //** Global color for active items (e.g., navs or dropdowns).
@@ -192,75 +192,126 @@
 //** Border color for table and cell borders.
 @table-border-color:            #ddd;
 
+/* =====================================================
+    BUTTONS
+   ------------------------------------------------------
+  */
 
-//== Buttons
-//
 //## For each of Bootstrap's buttons, define text, background and border color.
-
-@btn-font-weight:                normal;
-
-@btn-default-color:              #333;
-@btn-default-bg:                 #fff;
-@btn-default-border:             #ccc;
-
-@btn-primary-color:              #fff;
-@btn-primary-bg:                 @brand-primary;
-@btn-primary-border:             darken(@btn-primary-bg, 5%);
-
-@btn-success-color:              #fff;
-@btn-success-bg:                 @brand-success;
-@btn-success-border:             darken(@btn-success-bg, 5%);
-
-@btn-info-color:                 #fff;
-@btn-info-bg:                    @brand-info;
-@btn-info-border:                darken(@btn-info-bg, 5%);
-
-@btn-warning-color:              #fff;
-@btn-warning-bg:                 @brand-warning;
-@btn-warning-border:             darken(@btn-warning-bg, 5%);
-
-@btn-danger-color:               #fff;
-@btn-danger-bg:                  @brand-danger;
-@btn-danger-border:              darken(@btn-danger-bg, 5%);
-
-@btn-link-disabled-color:        @gray-light;
-
-
-//== Forms
+@btn-font-weight: normal;
+@btn-font-size-base: 14px;
+@btn-font-size-large: ceil((@btn-font-size-base * 1.21));
+@btn-font-size-small: ceil((@btn-font-size-base * 0.85));
+@btn-default-color: @gray-medium-dark;
+@btn-default-bg: white;
+@btn-default-border: fade(@gray-medium-dark, 10%);
+@btn-primary-color: #fff;
+@btn-primary-bg: @brand-primary;
+@btn-primary-border: darken(@btn-primary-bg, 1%);
+@btn-success-color: #fff;
+@btn-success-bg: @brand-success;
+@btn-success-border: @brand-success; //darken(@btn-success-bg, 5%);
+@btn-info-color: #fff;
+@btn-info-bg: @brand-info;
+@btn-info-border: @brand-info; //darken(@btn-info-bg, 5%);
+@btn-warning-color: #fff;
+@btn-warning-bg: @brand-warning;
+@btn-warning-border: @brand-warning; //darken(@btn-warning-bg, 5%);
+@btn-danger-color: #fff;
+@btn-danger-bg: @brand-danger;
+@btn-danger-border: @brand-danger; //darken(@btn-danger-bg, 5%);
+@btn-link-disabled-color: @gray-light;
+// Allows for customizing button radius independently from global border radius
+@btn-border-radius-base: 2px; //@border-radius-base;
+@btn-border-radius-large: @btn-border-radius-base;
+@btn-border-radius-small: @btn-border-radius-base;
+@btn-border-radius-xs: 11px;
+@btn-group-border-radius: 17px;
+@btn-shadow: inset 0 -( round((@btn-font-size-base - 2)/3)) 0 fade(black, 10%);
+//== Close
 //
 //##
+@close-font-weight: normal;
+@close-color: #000;
+@close-text-shadow: 0 0 0 transparent;
+//== SWITCH
+//
+//##
+@switch-width: 60px;
+@switch-height: 30px;
+@switch-radius: 30px;
+@switch-sm: 20px;
+@padding-btn-xs-horizontal: 12px;
+@padding-btn-small-horizontal: 14px;
 
+
+/* =====================================================
+    FORMS
+   ------------------------------------------------------
+  */
+
+//##
+//** label
+@label-transform: uppercase;
+@label-text-color: @gray;
+@label-font-size: 10px;
 //** `<input>` background color
-@input-bg:                       #fff;
+@input-bg: #fff;
 //** `<input disabled>` background color
-@input-bg-disabled:              @gray-lighter;
-
-//** Text color for `<input>`s
-@input-color:                    @gray;
+@input-bg-disabled: @gray-lighter;
+@input-color: @gray-text;
 //** `<input>` border color
-@input-border:                   #ccc;
-//** `<input>` border radius
-@input-border-radius:            @border-radius-base;
+@input-border: #E5E7E7;
+//** Default `.form-control` border radius
+// This has no effect on `<select>`s in some browsers, due to the limited stylability of `<select>`s in CSS.
+@input-border-radius: @border-radius-base;
+//** Large `.form-control` border radius
+@input-border-radius-large: @border-radius-large;
+//** Small `.form-control` border radius
+@input-border-radius-small: @border-radius-small;
 //** Border color for inputs on focus
-@input-border-focus:             #66afe9;
-
+@input-border-focus: @input-focus-color;
+//** Border width for inputs
+@input-border-width: 2px;
 //** Placeholder text color
-@input-color-placeholder:        @gray-light;
-
+@input-color-placeholder: @input-placeholder-color;
 //** Default `.form-control` height
-@input-height-base:              (@line-height-computed + (@padding-base-vertical * 2) + 2);
+@input-height-base: (@line-height-computed + (@padding-base-vertical * 2) + 2);
 //** Large `.form-control` height
-@input-height-large:             (ceil(@font-size-large * @line-height-large) + (@padding-large-vertical * 2) + 2);
+@input-height-large: (ceil(@font-size-large * @line-height-large) + (@padding-large-vertical * 2) + 2);
 //** Small `.form-control` height
-@input-height-small:             (floor(@font-size-small * @line-height-small) + (@padding-small-vertical * 2) + 2);
-
-@legend-color:                   @gray-dark;
-@legend-border-color:            #e5e5e5;
-
+@input-height-small: (floor(@font-size-small * @line-height-small) + (@padding-small-vertical * 2) + 2);
+//** `.form-group` margin
+@legend-color: lighten(@text-muted, 10%);
 //** Background color for textual input addons
-@input-group-addon-bg:           @gray-lighter;
+@input-group-addon-bg: @input-border;
 //** Border color for textual input addons
 @input-group-addon-border-color: @input-border;
+//** Disabled cursor for form controls and buttons.
+@cursor-disabled: not-allowed;
+//== Input type="range"
+//
+//##
+@track-color: @input-border;
+@track-focus-color: lighten(@input-border-focus, @contrast);
+@thumb-color: white;
+@thumb-radius: @switch-sm;
+@thumb-height: @switch-sm;
+@thumb-width: @thumb-height;
+@thumb-border-width: 1px;
+@thumb-border-color: @gray-light;
+@track-width: 100%;
+@track-height: 6px;
+@track-border-width: 1px;
+@track-border-color: transparent;
+@track-radius: 5px;
+@contrast: 5%;
+
+
+@form-group-margin-bottom: 20px;
+@form-control-height: 34px;
+//
+//
 
 
 //== Dropdowns
@@ -297,6 +348,16 @@
 //** Deprecated `@dropdown-caret-color` as of v3.1.0
 @dropdown-caret-color:           #000;
 
+//
+/* ***************************************
+//== NAVIGATOR
+**************************************** */
+
+@navigatorWidth: 240px;
+@navigator-title-height: @margin-base * 6;
+@navigator-top-padding: @margin-base;
+@navigator-padding-bottom: @margin-base * 6;
+@navtabs-vertical-width: 170px;
 
 //-- Z-index master list
 //
@@ -932,3 +993,16 @@
 
 
 @shadow7: -1px 0 4px rgba(0, 0, 0, 0.1), 0 8px 8px rgba(0, 0, 0, 0.1), 0 16px 34px rgba(0, 0, 0, 0.05), 0 36px 52px rgba(0, 0, 0, 0.05), 0 42px 84px rgba(0, 0, 0, 0.1);
+
+
+/* ***************************************
+//== MARGINS
+**************************************** */
+
+@margin-base: 8px;
+@margin-xs: @margin-base/2;
+@margin-sm: @margin-base;
+@margin-md: @margin-base * 2;
+@margin-lg: @margin-base * 3;
+@margin-xl: @margin-base * 4;
+@margin-xxl: @margin-base * 5;

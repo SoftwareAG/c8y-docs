@@ -7,11 +7,11 @@ layout: redirect
 
 Per default, Cumulocity comes with the following three standard applications:
 
-|Application|Description|
-|:---|:---|
-|[Device Management](/guides/images/users-guide/device-management)|The Device Management application provides functionalities for managing and monitoring devices and enables you to control and troubleshoot devices remotely.  
-|[Cockpit](/guides/images/users-guide/cockpit)|The Cockpit application provides you with options to manage and monitor  Internet of Things (IoT) assets and data from a business perspective.
-|[Administration](/guides/images/users-guide/administration)|The Administration application enables account administrators to manage their users, roles, tenants, applications and business rules and lets them configure a number of settings for their account. 
+| &nbsp; |Application|Description|
+|:---:|:---|:---|
+|<i class="c8y-icon c8y-icon-device-management c8y-icon-duocolor" style="font-size: 36px;"></i>|[Device Management](/guides/images/users-guide/device-management)|The Device Management application provides functionalities for managing and monitoring devices and enables you to control and troubleshoot devices remotely.  
+|<i class="c8y-icon c8y-icon-cockpit c8y-icon-duocolor" style="font-size: 36px;"></i>|[Cockpit](/guides/images/users-guide/cockpit)|The Cockpit application provides you with options to manage and monitor  Internet of Things (IoT) assets and data from a business perspective.
+|<i class="c8y-icon c8y-icon-administration c8y-icon-duocolor" style="font-size: 36px;"></i>|[Administration](/guides/images/users-guide/administration)|The Administration application enables account administrators to manage their users, roles, tenants, applications and business rules and lets them configure a number of settings for their account. 
 
 Apart from these standard applications that initially come with Cumulocity, various additional applications are provided which you may subscribe to, i.e. integrated agents for several device types.
 

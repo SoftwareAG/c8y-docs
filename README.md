@@ -5,9 +5,9 @@
 ## Structure
 
 The Cumulocity Guides website arquitecture has the following structure:
-* Section (e.g. *cumulocity.com/guides/user-guide*)
-  * Subsection - renders as a single page (e.g. *cumulocity.com/guides/user-guide/overview*)
-    * Anchor section - anchor tag in the subsection page (e.g. *cumulocity.com/guides/user-guide/overview#user-settings*) 
+* Section (e.g. *<http://cumulocity.com/guides/user-guide>*)
+  * Subsection - renders as a single page (e.g. *<http://cumulocity.com/guides/user-guide/overview>*)
+    * Anchor section - anchor tag in the subsection page (e.g. *<http://cumulocity.com/guides/user-guide/overview#user-settings>*) 
 
 
 
@@ -44,20 +44,60 @@ To insert a new section, add it in the `docpad.coffee` configuration file under 
 All guides are stored in ```src/render/guides/```. To add a new section, create a directory here and name it with the section slug
 
 #### 1.2 Add a subsection
-Inside the newly created directory create a file with the subsection slug and extensions (e.g. *overview.html.md*)
+Inside the newly created directory create a file with the subsection slug and extensions — e.g. *overview.html.md* (make sure to always add html as an extension, if you're writing in markdown, add `.md` in the end)
+
 This file should contain metadata in the following format:
 ```markdown
 ---
 title: Section title
-layout: layout-type
 order: 10
+layout: layout-type
 ---
 ```
-Order is used to order the subsections accordingly
+Title is obvious, order is for ordering the subsections, as for layout there are two possible use cases:
+1. Short content
+2. Long content with several anchors
+
+For option 1, simply set `layout: standalone` and add content in markdown or HTML - this will add a navigator link
+
+For option 2, you'll have to set `layout: subsections` and add a `collection` property to the metadata, for example:
+```markdown
+---
+title: Section title
+order: 10
+layout: subsections
+collection: 'guides/mysection/my_subsection'
+---
+```
+
+Basically you're using this page to display all documents stored in the path defined in `collection` - this will add a navigator link with a collapsible page navigation.
+
+  
+
+#### 1.3 Add blocks of content to a page
+Now that we set our subsection's layout as subsections and collection as a path, we will have to create the directory and start adding as many blocks of content as needed. Simply add in the directory files in HTML / markdown with the following metadata:
+```markdown
+---
+title: content block title
+order: 10
+layout: redirect
+---
+```
+The property `layout`must be set to `redirect` to ensure that any link for this file will be redirected to the parent page. The file name will be used as an anchor to allow page navigation and will be added as an anchor link in the section in navigator.
+
+## Redirects
+There's a `redirects.coffee`file in the root of the project that manages all the redirects of the site, when adding a new section, don't forget to add a redirect for the section's root path, e.g. `'guides/my_new_section':'guides/my_new_section/overview'`
+
+### Broken links
+Add redirects to broken links in `redirects.coffee`.
 
 
 
 
 
-## License
-Copyright &copy; 2018+ All rights reserved.
+
+&nbsp;
+
+
+---
+&copy; Cumulocity GmbH  2018 + All rights reserved.

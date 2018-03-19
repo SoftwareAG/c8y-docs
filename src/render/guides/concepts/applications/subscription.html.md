@@ -12,4 +12,4 @@ Granting access to subtenants and subscribing to applications is done in the Adm
 
 ![Application Subscription](/guides/images/concepts-guide/applicationsubscription.png)
 
-For details refer to [Administration > Managing tenants](/guides/users-guide/administration#tenants) in the User`s Guide. 
+For details refer to [Administration > Managing tenants](/guides/users-guide/enterprise-edition#tenants) in the User`s Guide. 

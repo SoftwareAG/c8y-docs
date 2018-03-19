@@ -69,4 +69,4 @@ If the texts get longer and have more values that are dynamically set from the d
 
 In your text string, you mark the placeholders with the field name from the event and surround it by #{}. The second parameter to replacePlaceholders can be any event type.
 
-<span style="color: rgb(133,153,0);">string</span> myMailText := Util.replacePlaceholders(<span class="hljs-string" style="color: rgb(42,161,152);">"The device #{source} with the serial number #{c8y&#95;Hardware.serialNumber} created an event with the text #{text} at #{time}. The device is located at #{c8y&#95;Address.street} in #{c8y_Address.city}.", evt)</span>;
+	<span style="color: rgb(133,153,0);">string</span> myMailText := Util.replacePlaceholders(<span class="hljs-string" style="color: rgb(42,161,152);">"The device #{source} with the serial number #{c8y&#95;Hardware.serialNumber} created an event with the text #{text} at #{time}. The device is located at #{c8y&#95;Address.street} in #{c8y_Address.city}.", evt)</span>;

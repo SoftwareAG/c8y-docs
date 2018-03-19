@@ -4,6 +4,8 @@ title: Device details
 layout: redirect
 ---
 
+<a name="device-details"></a>
+
 For each device, detailed information is available. The kind of information actually provided for a device depends on the device type, device usage and the configuration of your user interface. 
 
 To view detailed information on the device, click a device in the device list. 

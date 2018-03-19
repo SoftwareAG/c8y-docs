@@ -3,6 +3,7 @@ order: 20
 title: Managing assets
 layout: redirect
 ---
+<a name="asset"></a>
 
 ### Introduction
 

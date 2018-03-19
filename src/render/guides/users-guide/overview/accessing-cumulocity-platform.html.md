@@ -4,6 +4,7 @@ title: Accessing and login into the Cumulocity platform
 layout: redirect
 ---
 
+<a name="accessing"></a>
 
 ### Accessing Cumulocity
 

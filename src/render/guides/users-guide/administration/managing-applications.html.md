@@ -4,6 +4,8 @@ title: Managing applications
 layout: redirect
 ---
 
+<a name="applications"></a>
+
 In addition to the applications available in the Cumulocity platform, you can also manage own applications in your account. 
 
 These applications may be generic HTML5 applications that can be extended by adding plugins. When deploying, the plugins are deployed into a specific application. For example, a plugin might add a specific widget to the Cockpit dashboard.

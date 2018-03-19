@@ -4,6 +4,7 @@ title: Data explorer
 layout: redirect
 ---
 
+<a name="visualize"></a>
 
 In the data explorer, data points, i.e. measurements or sensor data, can be visualized.
 

@@ -4,6 +4,7 @@ title: Connecting Devices
 layout: redirect
 ---
 
+<a name="device-registration"></a>
 
 This section describes how to connect devices to your Cumulocity account either manually or by bulk-registration.
 

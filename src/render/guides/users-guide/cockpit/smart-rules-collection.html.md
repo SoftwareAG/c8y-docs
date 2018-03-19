@@ -4,6 +4,7 @@ title: Smart rules collection
 layout: redirect
 ---
 
+<a name="business"></a>
 
 Cumulocity includes preset global Smart Rule types. 
 

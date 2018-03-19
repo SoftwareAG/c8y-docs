@@ -4,6 +4,7 @@ title: Using Cumulocity Event Language (CEL)
 layout: redirect
 ---
 
+<a name="using-cel"></a>
 ### Overview
 
 Cumulocity Event Language has a syntax similar to SQL language. In SQL a statement is run against a logically fixed database, produces a result and completes the task. In Cumulocity, a statement is continuously running against a stream of input data (input events) and is continuously calculating its output (output events).
@@ -31,7 +32,7 @@ There are special streams provided by the system to perform predefined operation
     from MeasurementCreated e
     where getNumber(e, "c8y_TemperatureMeasurement.T.value") > 100
 
-Technically, this statement produces a new "AlarmCreated" event each time a temperature sensor reads more than 100 degrees Celsius and puts it into the "CreateAlarm" output stream. The property names in the selected clause have to match the properties of "AlarmCreated" (see the [Cumulocity Event Language reference](/guides/reference/realtime-statements)).
+Technically, this statement produces a new "AlarmCreated" event each time a temperature sensor reads more than 100 degrees Celsius and puts it into the "CreateAlarm" output stream. The property names in the selected clause have to match the properties of "AlarmCreated" (see the [Cumulocity Event Language reference](/guides/reference/real-time-statements)).
 
 ### How can I control devices from CEL?
 

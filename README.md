@@ -95,7 +95,7 @@ The property `layout`must be set to `redirect` to ensure that any link to this f
 
 ### 5. Add media
 Media should be added to `src/static/guides/images/`. Add a new directory if none of the available suits your needs.
-To display the images in your pages, you'll have to add the relative path e.g `!(image title)[/guides/images/<directory name>/<file name>]`.
+To display the images in your pages, you'll have to add the relative path e.g `![image title](/guides/images/<directory name>/<file name>)`.
 
 
 

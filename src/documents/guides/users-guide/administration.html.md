@@ -34,7 +34,7 @@ The "Home" screen provides
 * your capacity usage for the current and for the last month,
 * the optional applications you are subscribed to. 
 
-<img src="/guides/users-guide/administration/admin_HomeScreen.png" alt="Home screen" style="max-width: 100%">
+<img src="/guides/users-guide/Administration/Admin_HomeScreen.png" alt="Home screen" style="max-width: 100%">
 
 The capacity sections show:
 
@@ -61,7 +61,7 @@ To view the audit log list, click "Audit logs" in the "Account" menu. For each l
 
 Only the last 100 logs are visible. Click **Load more** at the bottom of the list to view more log entries.
 
-![Audit logs](/guides/users-guide/administration/admin_auditlogs.png)
+![Audit logs](/guides/users-guide/Administration/Admin_AuditLogs.png)
 
 >**Info**: The audit log list is not automatically refreshed after a realtime update for operations. Click **Reload** at the right of the top menu bar to update the list to the latest operations.
 
@@ -87,13 +87,13 @@ Own applications may be
 
 Your applications are available through the application switcher in the top bar which allows to easily switch between applications.
 
-<img src="/guides/users-guide/administration/Admin_AppSwitcher.png" alt="App switcher" style="max-width: 50%">
+<img src="/guides/users-guide/Administration/Admin_AppSwitcher.png" alt="App switcher" style="max-width: 50%">
 
 You manage your applications under "Own applications", accessible through the "Applications" menu. 
 
 In the "Own applications" page you will find a list of the applications available in your account.
 
-<img src="/guides/users-guide/administration/Admin_OwnApplications.png" alt="Own applications" style="max-width: 100%">
+<img src="/guides/users-guide/Administration/Admin_OwnApplications.png" alt="Own applications" style="max-width: 100%">
 
 To directly open an application from here, click **Open** on the respective application card. 
 
@@ -105,13 +105,13 @@ Click the menu icon at the top right of an application to open a context menu fr
 
 ### <a name="adding-applications"></a>Adding applications
 
-To add an application, click **Add application** in the "Own applications" page. In the upcoming dialog choose to create an application by
+To add an application, click **Add application** in the "Own applications" page. In the upcoming dialog choose one of the following methods:
 
 * [uploading a zip file](#uploading-zip-files) - by dropping a file or browsing for it on your computer,
-* using an external application, which links to an application running elsewhere 
-* [duplicating an existing application](#clone-application).
+* [using an external application](#external-application), which links to an application running elsewhere 
+* [duplicating an existing application](#clone-application)
 
-<img src="/guides/users-guide/administration/Admin_AddApplication.png" alt="Add application methods" style="max-width: 50%">
+<img src="/guides/users-guide/Administration/Admin_AddApplication.png" alt="Add application methods" style="max-width: 50%">
 
 #### <a name="uploading-zip-files"></a>Uploading zip files
 
@@ -131,11 +131,12 @@ In order to add an application by uploading a zip file, follow these steps:
 2. In the upcoming dialog, select **Upload zip file**.
 3. Simply drop a zip file or browse for it on your computer.
 
-After successfully uploading the zip file to the platform the application is being created.
-
 <img src="/guides/users-guide/administration/Admin_UploadZipFile.png" alt="Uploading zip file" style="max-width: 50%">
 
-#### <a name="clone-application"></a>Linking to external applications
+After successfully uploading the zip file to the platform the application is being created.
+
+
+#### <a name="external-application"></a>Linking to external applications
 
 In order to add an application which links to an external application, follow these steps:
 
@@ -150,16 +151,20 @@ For details on the fields, see also [Application properties](#application-proper
 
 #### <a name="clone-application"></a>Duplicating applications
 
+Duplicating an application might be useful if you want to customize a subscribed application according to your needs. 
+
 Duplicating a subscribed application creates a copy of the application as an own application, with a link to the original application.
+
+>**Info**: If you want your "own application" to overrule a subscribed standard application, the path of the "own application" needs to be set to the path of the original subscribed application.
 
 In order to duplicate an application, follow these steps:
 
 1. Click **Add application** in the "Own applications" page.
 2. In the upcoming dialog, select **Clone existing application**.
-3. Select the desired application from the dropdown list. Note that also subscribed applications are shown.
-4. In the next window, enter the name of the application. The name will be shown as title of the application. 
-5. Enter an application key, used to identify this application.
-6. Enter the application path as part of the URL to invoke the application. 
+3. Select the desired application from the dropdown list. 
+4. In the next window, provide a name for the application. By default, the name of the original application is provided, extended by a number.
+5. Provide an application key, used to identify this application. By default, the key of the original application is provided, extended by a number.
+6. Provide the application path as part of the URL to invoke the application. By default, the path of the original application is provided, extended by a number. If you set it to the path of the original subscribed application, your own application will overrule the subscribed application. 
 7. Finally, click **Clone** to create the application.
 
 For details on the fields, see also [Application properties](#application-properties) below.
@@ -168,17 +173,17 @@ For details on the fields, see also [Application properties](#application-proper
 
 Click on an application card to view the application properties.
 
-<img src="/guides/users-guide/administration/Admin_OwnApplicationMicroservice.png" alt="Microservice application" style="max-width: 100%">
+<img src="/guides/users-guide/Administration/Admin_OwnApplicationMicroservice.png" alt="Microservice application" style="max-width: 100%">
 
 Each application will show the following properties:
 
-|Field|Description|Hosted (Web app)|Microservice|External
-|:---|:---|:---|:---|:---
-|Name|Application name. Will be shown as title of the application in the top bar and in the application switcher. |Automatically created|Automatically created, based on the zip file name | Specified by the user 
-|ID|Unique ID to identify the application|Automatically provided|Automatically provided|Automatically provided
-|Application key|Used to identify the application and to make the application available for subscription, see the [Concepts Guide](/guides/concepts/applications). |Automatically created|Automatically created based on the zip file name|Specified by the user 
-|Type|Application type|Hosted application|Microservice|External
-|Path|Part of the URL invoking the application|Automatically created|Automatically created as .../service/&#60;microservice name&#62;|Specified by the user. For example, if you use "hello" as application path, the URL of the application will be "/apps/hello".
+|Field|Description|Hosted (Web app)|Microservice|External|CEP rule
+|:---|:---|:---|:---|:---|:---
+|Name|Application name. Will be shown as title of the application in the top bar and in the application switcher. |Automatically created|Automatically created, based on the zip file name | Specified by the user|Automatically created, based on the mon file name 
+|ID|Unique ID to identify the application|Automatically provided|Automatically provided|Automatically provided|Automatically provided
+|Application key|Used to identify the application and to make the application available for subscription, see the [Concepts Guide](/guides/concepts/applications). |Automatically created|Automatically created based on the zip file name|Specified by the user|Automatically created based on the mon file name 
+|Type|Application type|Hosted application|Microservice|External|Apama CEP rule
+|Path|Part of the URL invoking the application|Automatically created|Automatically created as .../service/&#60;microservice name&#62;|Specified by the user. For example, if you use "hello" as application path, the URL of the application will be "/apps/hello".|Not available
 
 >**Info**: ID, application key, type and path cannot be changed.
 
@@ -201,8 +206,6 @@ To remove an application, click the menu icon and from the context menu select *
 If you remove an application that overwrites a subscribed application, the currently subscribed application becomes available to all users. Additionally, the users will then also benefit from future upgrades of the subscribed application.
 
 It is not possible to remove subscribed applications. This can only be done by the owner of the subscribed application.
-
->**Info**: To overwrite a subscribed application, the "own application" must have the same context-path as the "subscribed application".
 
 
 ### <a name="add-remove-plugin"></a>Adding and removing plugins
@@ -256,7 +259,7 @@ Users can restore previous versions of an application from an archive:
 
 ### Uploading archives
 
-Multiple archive ZIP file versions can be stored in Cumulocity when they were created by uploading ZIP files. Each version is called an archive. You can upload different versions at the same time and switch between these versions. 
+Multiple archive file versions can be stored in Cumulocity when they were created by uploading either a zip file or a mon file. Each version is called an archive. You can upload different versions at the same time and switch between these versions. 
 
 To upload an archive, follow these steps:
 
@@ -267,7 +270,9 @@ To upload an archive, follow these steps:
 
 ![Upload archive](/guides/users-guide/uploadarchive.png)
 
-Once uploaded, archives can be downloaded, activated or deleted if necessary. The active archive (indicated by a cloud icon) is the version of the application that is currently being served to the users of your account. This version cannot be deleted.
+Once uploaded, the recently uploaded version is automatically the active version, i.e. the version of the application that is currently being served to the users of your account. This version cannot be deleted. 
+
+To change the active version, open the context menu in the version you want to activate and select **Set as active**.
 
 
 ## <a name="tenants"></a>Managing tenants
@@ -301,7 +306,7 @@ The "Tenants" page provides the following information on each subtenant:
 
 If you are using the management tenant, you will see an additional column "Parent tenant". This column shows the tenant that created the listed tenant.
 
-![Sub-tenants](/guides/users-guide/administration/Admin_Subtenants.png)
+![Sub-tenants](/guides/users-guide/Administration/Admin_Subtenants.png)
 
 ### <a name="creating-tenants"></a>Creating sub-tenants
 
@@ -334,15 +339,17 @@ To edit subtenants, click on the desired subtenant or click **Edit** in the cont
 
 In the "Properties" tab, all fields are editable except of the ID and the administrator's username. For details on the fields, refer to [Creating sub-tenants](#creating-tenants).
 
-### Subscribing to applications
+### <a name="subscribing"></a>Subscribing to applications
 
 In the "Applications" tab you can subscribe tenants to applications or remove the applications from the tenant. By default, tenants will be subscribed to the standard Cumulocity applications. 
 
-<img src="/guides/users-guide/administration/Admin_SubtenantApplications.png" alt="Subscribe tenant" style="max-width: 100%">
+<img src="/guides/users-guide/Administration/Admin_SubtenantApplications.png" alt="Subscribe tenant" style="max-width: 100%">
 
 To subscribe an application to a tenant, hover over the applications under "Available applications" on the right and click **Subscribe** on the desired application.
 
 To remove an application, hover over the applications under "Subscribed applications" on the left and click **Unsubscribe**.
+
+Info: Apart from being subscribed to a standard application, i.e. Cockpit, you can also create a duplicate of this application as own application, see [Duplicating applications](#clone-application).
 
 ### Suspending subtenants
 
@@ -469,7 +476,7 @@ Using event processing, you can specify realtime business logic that is automati
 
 Click "Event processing" in the "Business rules" menu to view the current modules or to create new ones.
 
-<img src="/guides/users-guide/administration/admin_EventProcessing.png" alt="Event processing" style="max-width: 100%">
+<img src="/guides/users-guide/Administration/admin_EventProcessing.png" alt="Event processing" style="max-width: 100%">
 
 For each module in the list, the status (deployed = indicated by a green checkmark / not deployed = indicated by an exclamation mark), the name and the date when is was last updated is provided.
 
@@ -483,7 +490,7 @@ Instead of deleting the module you can also disable it temporarily by setting it
 
 To create a new module, click **New module** in the top menu bar.
 
-<img src="/guides/users-guide/administration/Admin_EventProcessingNewModule.png" alt="New module" style="max-width: 100%">
+<img src="/guides/users-guide/Administration/Admin_EventProcessingNewModule.png" alt="New module" style="max-width: 100%">
 
 1. Enter a name for the module at the very top. You can only use alphanumeric characters without blanks.
 2. By default, the status is set to "Deployed" which means that the statements you enter will be run immediately. Set the slider to "Not deployed" if you want to avoid this. 
@@ -492,7 +499,7 @@ To create a new module, click **New module** in the top menu bar.
 
 The example module creates an alarm if the temperature goes below 0 degree.
 
-<img src="/guides/users-guide/administration/Admin_EventProcessingModuleExample.png" alt="Example module" style="max-width: 100%">
+<img src="/guides/users-guide/Administration/Admin_EventProcessingModuleExample.png" alt="Example module" style="max-width: 100%">
 
 If the status of a module is set to "Deployed", this is indicated by a green checkmark in the module list. Whenever your statements produce some output you will see it below the checkmark icon. Clicking a line of output unfolds the detailed output of the statement. Clicking **Clear all** removes the output from the screen.
 
@@ -502,7 +509,7 @@ Alarm mapping enables you to change the severity and text of alarms to adapt the
 
 Click "Alarm mapping" in the "Business Rules" menu to see a list of all alarm mappings.
 
-<img src="/guides/users-guide/administration/Admin_AlarmMapping.png" alt="Alarm mapping" style="max-width: 100%">
+<img src="/guides/users-guide/Administration/Admin_AlarmMapping.png" alt="Alarm mapping" style="max-width: 100%">
 
 For each alarm mapping, the alarm severity and the name of the mapping is shown.
 
@@ -514,7 +521,7 @@ To delete an alarm mapping, hover over it and click the **Delete** button.
 
 To add an alarm mapping, click **Add alarm mapping** in the top menu bar.
 
-<img src="/guides/users-guide/administration/Admin_AlarmMappingAdd.png" alt="Add alarm mapping" style="max-width: 100%">
+<img src="/guides/users-guide/Administration/Admin_AlarmMappingAdd.png" alt="Add alarm mapping" style="max-width: 100%">
 
 1. Enter the alarm type to be modified.
 2. Optionally, enter a new text for the alarm. If you do not enter any text, the original text in the alarm will be kept.
@@ -554,7 +561,7 @@ To add additional retention rules, click **Add rule** in the top menu bar.
 
 >**Info**: Alarms are only removed if they are in "CLEARED" state.
 
-<img src="/guides/users-guide/administration/Admin_RetentionRulesDelete.png" alt="Delete retention rule" style="max-width: 50%">
+<img src="/guides/users-guide/Administration/Admin_RetentionRulesDelete.png" alt="Delete retention rule" style="max-width: 50%">
 
 To delete a rule, hover over it and click the **Delete** button at the right.
 
@@ -569,7 +576,7 @@ The files listed can come from various sources. They can be software images, con
 
 For each file, the name of the file, its owner, the file type (i.e. image/bmp, text/csv), its size and the date when it was last updated is provided.
 
-<img src="/guides/users-guide/administration/Admin_FilesRepository.png" alt="Files Repository" style="max-width: 100%">
+<img src="/guides/users-guide/Administration/Admin_FilesRepository.png" alt="Files Repository" style="max-width: 100%">
 
 To upload a file from your computer, click **Upload file** in the top menu bar.
 
@@ -621,7 +628,7 @@ Strong (green) passwords must have "M" characters. By default, the system restri
 
 Click **Save** to apply your password settings.
 
-<img src="/guides/users-guide/administration/admin_Password.png" alt="Password settings" style="max-width: 100%">
+<img src="/guides/users-guide/Administration/admin_Password.png" alt="Password settings" style="max-width: 100%">
 
 Under "TFA settings", you can change the following TFA settings:
 
@@ -682,7 +689,7 @@ In the "Branding" tab you can fully customize the look of your tenants to your o
 
 The branding feature allows you to edit the logos and colors used throughout the platform. Once your branding settings are saved, all subtenants are automatically updated. 
 
-<img src="/guides/users-guide/administration/admin_Branding.png" alt="Branding tab" style="max-width: 100%">
+<img src="/guides/users-guide/Administration/admin_Branding.png" alt="Branding tab" style="max-width: 100%">
 
 **General**
 
@@ -704,7 +711,7 @@ Under “Navigator logo” you can provide the “Navigator logo” and set the 
 
 In the “Type” section you specify the font settings for your branded version. 
 
-<img src="/guides/users-guide/administration/admin_BrandingType.png" alt="Branding type" style="max-width: 100%">
+<img src="/guides/users-guide/Administration/admin_BrandingType.png" alt="Branding type" style="max-width: 100%">
 
 You can choose your base and headings font, and select an option for the navigator font (either same as base or same as headings font). You may also add a link to existing remote fonts to be used.
 
@@ -712,7 +719,7 @@ You can choose your base and headings font, and select an option for the navigat
 
 In the “Colors” section you specify the colors to be used in your branding version.
 
-<img src="/guides/users-guide/administration/admin_BrandingColor.png" alt="Branding color" style="max-width: 100%">
+<img src="/guides/users-guide/Administration/admin_BrandingColor.png" alt="Branding color" style="max-width: 100%">
 
 The following parameters can be specified by providing a hex, rgb or rgba value:
 
@@ -726,7 +733,7 @@ The following parameters can be specified by providing a hex, rgb or rgba value:
 
 In the “Top bar” section you specify the parameters for the top bar.
 
-<img src="/guides/users-guide/administration/admin_BrandingTopbar.png" alt="Branding topbar" style="max-width: 100%">
+<img src="/guides/users-guide/Administration/admin_BrandingTopbar.png" alt="Branding topbar" style="max-width: 100%">
 
 The following parameters can be specified by providing a hex, rgb or rgba value:
 
@@ -738,7 +745,7 @@ The following parameters can be specified by providing a hex, rgb or rgba value:
 
 In the “Navigator" section you specify the parameters for the navigator.
 
-<img src="/guides/users-guide/administration/admin_BrandingTopbar.png" alt="Branding top bar" style="max-width: 100%">
+<img src="/guides/users-guide/Administration/admin_BrandingTopbar.png" alt="Branding top bar" style="max-width: 100%">
 
 The following parameters can be specified by providing a hex, rgb or rgba value:
 
@@ -768,13 +775,13 @@ The following image shows and an example where
 * the top bar “Background color” is green,
 * the navigator “Background color” is pink. 
 
-<img src="/guides/users-guide/administration/admin_BrandingColored.png" alt="Branding example" style="max-width: 100%">
+<img src="/guides/users-guide/Administration/admin_BrandingColored.png" alt="Branding example" style="max-width: 100%">
 
 ### Domain name
 
 In the “Domain name” tab you can activate your own custom domain name.  
 
-<img src="/guides/users-guide/administration/admin_DomainName.png" alt="Domain name" style="max-width: 100%">
+<img src="/guides/users-guide/Administration/admin_DomainName.png" alt="Domain name" style="max-width: 100%">
 
 First you have to upload the appropriate certificate by clicking **Upload Certificate**. Make sure that
 
@@ -837,7 +844,7 @@ In the following two fields provide an e-mail template to be used on password ch
 
 In the "E-mail server" section you can provide the "Protocol", "Host", "Port", "Username", "Password" and "Sender Address" for the e-mail server.
 
-<img src="/guides/users-guide/administration/admin_ConfigurationServer.png" alt="Configure e-mail server" style="max-width: 100%">
+<img src="/guides/users-guide/Administration/admin_ConfigurationServer.png" alt="Configure e-mail server" style="max-width: 100%">
 
 In the "Data export" section you can set the e-mail subject and e-mail template for data export and specify the “User unauthorized error message”.
 
@@ -847,7 +854,7 @@ In the "Storage limit" section you can specify the e-mail subject and e-mail tem
 
 In the "Suspending tenants" section you can provide settings for emails being send on tenant suspension. 
 
-<img src="/guides/users-guide/administration/admin_ConfigurationSuspended.png" alt="Suspended tenants" style="max-width: 100%">
+<img src="/guides/users-guide/Administration/admin_ConfigurationSuspended.png" alt="Suspended tenants" style="max-width: 100%">
 
 At the top you can select if you want to send the e-mail to the suspended tenant's administrator and specify an additional e-mail receiver. Below you set the subject and template for the tenant suspended e-mail.
 
@@ -982,3 +989,4 @@ To stop data forwarding and remove the data connector, click the menu icon and f
 You can now navigate to the Device Management application or the Cockpit application. There will be a new "virtual group" with a specific icon (see the screenshot below) showing the forwarded devices. The group will have the same name as your subscription. Devices are "lazily" created on the destination side whenever they send data for the first time after setting up an active subscription.
 
 ![Data broker group in cockpit app](/guides/users-guide/data-broker-group-created.PNG)
+

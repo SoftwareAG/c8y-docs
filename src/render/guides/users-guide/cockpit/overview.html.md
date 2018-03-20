@@ -10,15 +10,15 @@ For your convenience find an overview on the content of this document below.
 
 |Section|Content|
 |:---|:---|
-|[Managing Assets](#asset)|Organize assets in [hierarchies](#hierarchies) by [creating groups ](#creating-groups)and [assigning devices](#assigning-devices).
-|[Visualizing Data Using the Data Explorer](#visualize)|Interactively explore, compare and visualize IoT data. <br> Describes how to access and use the [data explorer](#visualize), [add data points](#add-data-points) to the data explorer, [customize data point properties](#customize-data-points), [modify the visualization](#change-visualization), store the [data explorer as widget](#create-widget), and [export](#export-data) the data. 
-|[Working with Dashboards](#dashboards)|[Create your own analytics and monitor pages](#creating-dashboards) by adding and arranging [widgets](#adding-widgets). [Share dashboards](#sharing-dashboards) among all devices of the same type. 
-|[Widgets Collection](#widget)|Use various types of [widgets](#widget) from the Widgets collection that comes with Cumulocity and configure them according your needs.
-|[Working with Alarms](#alarms)|Monitor problems of your assets using severities and workflows. Since working with alarms in the Cockpit application is actually the same as working with alarms in Device Management, refer to [Working with alarms](/guides/users-guide/device-management/#alarm-monitoring) in *Device Management*. 
-|[Managing Reports](#reports)|Handle [reports](#reports) based on dashboard layouts, create [reports for exporting data](#reporting) in CSV or excel format and [schedule the export](#schedule-export). 
+|[Managing assets](#asset)|Organize assets in [hierarchies](#hierarchies) by [creating groups ](#creating-groups)and [assigning devices](#assigning-devices).
+|[Visualizing data using the Data Explorer](#visualize)|Interactively explore, compare and visualize IoT data. <br> Describes how to access and use the [data explorer](#visualize), [add data points](#add-data-points) to the data explorer, [customize data point properties](#customize-data-points), [modify the visualization](#change-visualization), store the [data explorer as widget](#create-widget), and [export](#export-data) the data. 
+|[Working with dashboards](#dashboards)|[Create your own analytics and monitor pages](#creating-dashboards) by adding and arranging [widgets](#adding-widgets). [Share dashboards](#sharing-dashboards) among all devices of the same type. 
+|[Widgets collection](#widget)|Use various types of [widgets](#widget) from the Widgets collection that comes with Cumulocity and configure them according your needs.
+|[Working with larms](guides/users-guide/device-management/#alarm-monitoring)|Monitor problems of your assets using severities and workflows. Since working with alarms in the Cockpit application is actually the same as working with alarms in Device Management, refer to [Working with alarms](/guides/users-guide/device-management/#alarm-monitoring) in Device Management. 
+|[Managing reports](#reports)|Handle [reports](#reports) based on dashboard layouts, create [reports for exporting data](#reporting) in CSV or excel format and [schedule the export](#schedule-export). 
 |[Using the Data Point Library](#library)|Manage default settings ("profiles") of your devices and apply them automatically using the [Data Point Library](#library).
 |[Working with Smart Rules](#rules)|[Create and manage business rules](#create-rules) to work on incoming data in realtime and to perform actions based on this data.
-|[Smart Rules Collection](#business)|Use pre-defined [global Smart Rules](#business) to configure rules for geofencing, thresholds or alarm escalation and notifications (SMS/email/voice). Describes each SmartRule and its configurable parameters in detail.
+|[Smart Rules collection](#business)|Use pre-defined [global Smart Rules](#business) to configure rules for geofencing, thresholds or alarm escalation and notifications (SMS/email/voice). Describes each SmartRule and its configurable parameters in detail.
 
 
 If you want to learn more about general aspects of the Cumulocity platform and its applications, refer to [Getting Started](/guides/users-guide/overview).

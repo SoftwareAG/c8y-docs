@@ -26,7 +26,7 @@ The following tabs are the most common ones, each described in detail in a separ
 |[Child Devices](#child-devices)|Lists devices being connected to the current device.
 |[Measurements](#measurements)|Provides a default visualization of numeric data provided by the device in the form of charts.
 |[Alarms](#alarms)|Provides information on the alarms for a device. See also [Working with alarms](#alarm-monitoring). Available for each device.
-|[Configuration](#configuration)|Allows manual configuration of device parameters and settings entered in a text format. See also [Configuration Repository](#configuration-repository) for binary configuration.
+|[Configuration](#config)|Allows manual configuration of device parameters and settings entered in a text format. See also [Configuration Repository](#configuration-repository) for binary configuration.
 |[Control](#control)|Displays operations being sent to a device. Also refer to [Working with operations](#operation-monitoring). Available for each device.
 |[Network](#network)|Displays network information for a device.
 |[Software](#software)|Manages firmware of a device and software installed on a device.
@@ -63,14 +63,14 @@ The information is provided on the following cards:
 |Device and communication|Shows a data point graph displaying realtime data on particular measurements. For details, refer to [Using the Data Explorer](/guides/users-guide/cockpit#visualize) in the Cockpit documentation.
 |Device data|Displays editable information on the device (name, type, ID, owner, last updated). The fields "ID" and "Last Updated" cannot be edited. Moreover information on hardware (editable) and firmware (not editable) is displayed here if available.
 |Active, critical alarms|Shows the active critical alarms for the device.
-|Groups assignment|Displays the groups the device belongs to. Moreover you can add the device to groups here or unassign it from groups. For details on grouping devices see [Grouping Devices](#grouping-devices).
+|Groups assignment|Displays the groups the device belongs to. Moreover you can add the device to groups here or unassign it from groups. For details on grouping devices see [Grouping devices](#grouping-devices).
 |Location|Shows the location of a device on a map as reported by the device or as manually set. For details, refer to [Location](#location).
 
 ### <a name="child-devices"></a>Child devices
 
 The "Child devices" tab shows a list of devices connected to the currently displayed device. For example, if you look at a gateway, the tab lists all machines connected to the gateway.
 
-For details provided in the child device list, refer to [Viewing Devices](#viewing-devices).
+For details provided in the child device list, refer to [Viewing devices](#viewing-devices).
 
 ### <a name="measurements"></a>Measurements
 
@@ -92,7 +92,7 @@ This enables you to get an efficient overview over larger time periods. A graph 
 
 Clicking **Realtime** will enable realtime user interface updates of the graphs as new data flows into the system from the connected devices. 
 
-You can influence the graphical display and axes limits by setting up so-called "KPIs", see the [Administration Guide](/guides/users-guide/administration#kpis).
+You can influence the graphical display and axes limits by setting up so-called "KPIs", see the [Administration Guide](/guides/users-guide/administration).
 
 **Measurement format**
 
@@ -138,7 +138,7 @@ The "Control" tab lists the operations being sent to a device. Refer to [Working
 
 ![Operations](/guides/images/users-guide/operations.png)
 
-### <a name="software"></a>Network
+### <a name="network"></a>Network
 
 In the "Network" tab network settings can be configured for the device.
 

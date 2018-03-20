@@ -87,14 +87,14 @@ Several tabs are available for each object, dependent of the object type:
 |Tab|Description|Availability
 |:---|:---|:---
 |Info|Shows a list of [Smart Rules](#rules) created for the object.|Group, Device
-|Alarms|Displays alarms for the device. For details on alarms, refer to [Working with alarms](http://cumulocity.com//guides/users-guide/device-management/#alarm-monitoring) in *Device Management*.|Device
+|Alarms|Displays alarms for the device. For details on alarms, refer to [Working with alarms](/guides/users-guide/device-management/#alarm-monitoring) in *Device Management*.|Device
 |Sub-assets|Shows the sub-assets of a group.|Group
-|Data explorer|Shows all data points of the children. For details refer to [*V*isualizing Data Using the Data Explorer**](#visualize).|Group, Device
+|Data explorer|Shows all data points of the children. For details refer to [Visualizing data using the Data Explorer**](#visualize).|Group, Device
 |Location|Shows the current location of a device.|Device
 
 If dashboards have been created for an object, they will also be added as a tab. See [Working with Dashboards](#dashboards) for details.
 
-Moreover, additional tabs may be displayed here in case the application has been extended with plugins. See [Introduction to plugin development](/guides/web/introduction) for details.
+Moreover, additional tabs may be displayed here in case the application has been extended with plugins. See [Web SDK for plugins](/guides/web/introduction) for details.
 
 ### <a name="creating-groups"></a>Adding groups
 
@@ -113,7 +113,7 @@ To add a new group as a child of an existing asset, navigate to its "Sub-asset" 
 
 ### <a name="assigning-devices"></a>Assigning devices to groups
 
-Before adding a device to the asset hierarchy, it must be connected to Cumulocity. Connecting devices to the platform is done in the Device Management application. For details on connecting devices refer to [Device Management](/guides/images/users-guide/device-management).
+Before adding a device to the asset hierarchy, it must be connected to Cumulocity. Connecting devices to the platform is done in the Device Management application. For details on connecting devices refer to [Device Management](/guides/users-guide/device-management).
 
 To assign a device to a group, follow these steps:
 

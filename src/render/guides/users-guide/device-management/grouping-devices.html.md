@@ -92,7 +92,7 @@ From the group perspective:
 
 1. In the navigator, click a group to open it. 
 2. In the "Info" tab, click **Edit**. This allows you to edit the name of the group and to assign user permissions for the group. 
-For further information on permissions, see the [*Administration Guide*](/guides/images/users-guide/administration).
+For further information on permissions, see the [Administration Guide](/guides/users-guide/administration#managing-permissions).
 
 ### <a name="smart-groups"></a>Using smart groups
 

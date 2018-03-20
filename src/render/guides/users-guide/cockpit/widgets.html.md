@@ -37,7 +37,7 @@ For details on alarms, refer to [Device Management > Working with alarms](/guide
 
 The "Applications" widget shows a list of links to all available applications. There are no additional parameters to be configured.
 
-For details on applications, refer to [Administration > Managing Applications](/guides/users-guide/Administration#applications).
+For details on applications, refer to [Administration > Managing Applications](/guides/users-guide/Administration#managing-applications).
 
 
 ### Widget "Asset notes"
@@ -59,11 +59,11 @@ The "Asset properties" widget displays a user-defined list of attributes of the 
 |:---|:---|
 |Title|Widget title. By default, the widget type is simply used as title.
 |Target assets or devices|Select groups or devices.
-|Properties|List of properties, see [Configuring a property list](#widget-asset-table).
+|Properties|List of properties, see [Widget "Asset table"](#widget-asset-table).
 
 >**Info:** In the view mode, this widget only displays the properties which are not empty.
 
-### Widget "Asset table"
+### <a name="widget-asset-table"></a> Widget "Asset table"
 
 The "Asset table" widget shows details of all child devices in a table. This is a very powerful widget, allowing to arrange selected properties of objects in a table.
 

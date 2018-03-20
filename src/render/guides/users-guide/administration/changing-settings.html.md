@@ -46,7 +46,7 @@ Strong (green) passwords must have "M" characters. By default, the system restri
 
 Click **Save** to apply your password settings.
 
-<img src="/guides/users-guide/administration/admin_Password.png" alt="Password settings" style="max-width: 100%">
+<img src="/guides/image/users-guide/administration/admin_Password.png" alt="Password settings" style="max-width: 100%">
 
 Under "TFA settings", you can change the following TFA settings:
 

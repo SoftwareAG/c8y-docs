@@ -42,7 +42,7 @@ IMPACT devices do not need to be registered again in Cumulocity. Cumulocity’s 
 
 To process data from IMPACT devices, Cumulocity uses device protocols. Through device protocols you can observe your resources and perform other actions like creating alarms.
 
-Device protocols are accessible through the “Devices Types” menu in the Device Management application. For details on the general usage see [Device protocols](/guides/users-guide/device-management/device-protocols).
+Device protocols are accessible through the “Devices Types” menu in the Device Management application. For details on the general usage see [Device protocols](/guides/users-guide/device-management/managing-device-types).
 
 <img src="/guides/images/users-guide/DeviceManagement/DevMgmt_DeviceProtocols.png" alt="Device protocols" style="max-width: 100%">
 

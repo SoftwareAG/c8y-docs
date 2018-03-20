@@ -196,7 +196,7 @@ After clicking "Next" the device registration request will be submitted and the 
 You can verify that the device is really connected by checking that events are actually coming in. You can do so by clicking on a device and opening the "Events" tab. All events related to this device are listed here.  
 
 For more information on viewing and managing your connected devices, also refer to 
-[Device management](/guides/users-guide/device-management).
+[Device Management](/guides/users-guide/device-management).
 
 ## <a name="deprovision-device"></a>Deprovisioning LoRa devices
 

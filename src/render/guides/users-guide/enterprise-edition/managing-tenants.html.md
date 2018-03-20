@@ -13,7 +13,7 @@ The tenants functionality allows you to create subtenants, subscribe them to the
 
 >**Info**: If you would like to use this feature, please contact sales@cumulocity.com.
 
-To be able to use the tenant functionality, your user needs to have the appropriate permissions. See [Creating and editing global roles](/guides/users-guide/user-and-permissions-management#create-edit-roles) for information on editing permissions. Since editing tenants is a sensitive operation, permissions for editing tenants are more granular:
+To be able to use the tenant functionality, your user needs to have the appropriate permissions. See [Creating and editing global roles](/guides/users-guide/administration/managing-permissions#create-edit-roles) for information on editing permissions. Since editing tenants is a sensitive operation, permissions for editing tenants are more granular:
 
 - Read: Browse and view tenants.
 - Create: Create new tenants.
@@ -99,7 +99,7 @@ To finally delete a tenant and remove all the data of the tenant, click the menu
 
 ### <a name="tenants-custom-properties"></a>Editing custom properties
 
-The "Custom properties" tab allows you to view and modify values of custom properties, either predefined ones (like "External reference") or those defined in the [Properties library](#properties). Such properties are also displayed as columns in [usage statistics table](#usage-stats).
+The "Custom properties" tab allows you to view and modify values of custom properties, either predefined ones (like "External reference") or those defined in the [Properties library](/guides/users-guide/administration/changing-settings#properties). Such properties are also displayed as columns in [usage statistics table](#usage-stats).
 
 ![Custom Properties](/guides/images/users-guide/subtenant-custom-properties.PNG)
 
@@ -122,7 +122,7 @@ The following information is provided for each tenant:
 
 Moreover custom properties are displayed, if configured. 
 
-Custom properties may be defined in the [Properties Library](#properties) and then set their values in the [Custom properties](#tenants-custom-properties) tab of the tenant.
+Custom properties may be defined in the [Properties Library](/guides/users-guide/administration/changing-settings#properties) and then set their values in the [Custom properties](#tenants-custom-properties) tab of the tenant.
 
 ![Usage statistics](/guides/images/users-guide/usage-statistics-list.PNG)
 

@@ -156,7 +156,7 @@ Permissions are grouped into the following categories:
 |Device control|Permissions to remote control devices.
 |Full access|Complete access to the associated devices, mainly to simplify configuration.
 
-> **Info:** Service providers will see an additional permission "Support" in their "management" tenant. This permission lets users of the service provider give support to their customer's users. See [Supporting other users](#support) below.
+> **Info:** Service providers will see an additional permission "Support" in their "management" tenant. This permission lets users of the service provider give support to their customer's users. See [Supporting other users](/guides/users-guide/enterprise-edition#users-in-other-tenants) below.
 
 Add a permission to the role by clicking the plus icon next to the desired category.
 
@@ -208,7 +208,7 @@ You can also copy inventory roles from another user. To copy roles, click **Copy
 
 In the "Application Access" tab you assign applications to the user. 
 
-The "Application Access" tab shows a list of all available applications in your tenant in alphabetical order. Select the applications for the user and click **Save**. For more information on application management, see [Administration > Managing applications](/guides/images/users-guide/administration#applications).
+The "Application Access" tab shows a list of all available applications in your tenant in alphabetical order. Select the applications for the user and click **Save**. For more information on application management, see [Administration > Managing applications](/guides/users-guide/administration/managing-applications).
 
 ![Application access](/guides/images/users-guide/appaccess.png)
 

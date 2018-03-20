@@ -11,7 +11,7 @@ Cumulocity Cloud Remote Access implements Virtual Network Computing (VNC) to rem
 
 ![VNC](/guides/images/users-guide/VNC1a.png)
 
-Cloud Remote Access works as in the illustration below. Starting from the remote-controlled device: The device runs a VNC server and is connected to a gateway compatible with Cloud Remote Access. This gateway must be registered as a device within the Device Management application in Cumulocity. More information about registering devices and instructions can be found here: [Device Registration](https://www.cumulocity.com/guides/users-guide/device-management/#device-registration).
+Cloud Remote Access works as in the illustration below. Starting from the remote-controlled device: The device runs a VNC server and is connected to a gateway compatible with Cloud Remote Access. This gateway must be registered as a device within the Device Management application in Cumulocity. More information about registering devices and instructions can be found here: [Device Registration](/guides/users-guide/device-management/#device-registration).
 
 ![VNC2](/guides/images/users-guide/VNC2.png)
 
@@ -56,7 +56,7 @@ In the upcoming window, enter a description for the remote access endpoint, the 
 
 ![Remote access endpoint](/guides/images/users-guide/remoteaccess.png)
 
->**Info**: To be able to configure an endpoint, you need "Change" permission for "Remote access" and "Device control". To read data, a “Read” permission is sufficient. For more information on permissions, refer to the [*Administration Guide*](https://www.cumulocity.com/guides/users-guide/administration/#users).
+>**Info**: To be able to configure an endpoint, you need "Change" permission for "Remote access" and "Device control". To read data, a “Read” permission is sufficient. For more information on permissions, refer to the [Administration Guide](/guides/users-guide/administration/#managing-permissions).
 
 To connect to configured endpoints, choose an endpoint in the "Remote access" tab and click **Connect**. The VNC connection will start. 
 
@@ -76,7 +76,7 @@ To set up new endpoints, you need "Change" permission for "Device control" to be
 
 To establish a connection to a remote operating panel, a “Read” permission for "Remote access" is sufficient.
 
-For more information on permissions, refer to the [*Administration Guide*](https://www.cumulocity.com/guides/users-guide/administration/#users).
+For more information on permissions, refer to the [Administration Guide](/guides/users-guide/administration/#managing-permissions).
 
 The VNC connection via a gateway to a remote VNC server can fail because of network problems. In this case you need to contact your network administrator.
 

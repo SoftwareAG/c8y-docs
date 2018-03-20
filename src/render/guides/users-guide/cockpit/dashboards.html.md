@@ -77,7 +77,7 @@ Changes made to this dashboard are automatically applied to all dashboard instan
 
 ### Editing dashboard properties
 
-To edit a dashboard, click **Edit** in the top menu bar. The dashboard editor will open up. For details on the fields, refer to [*C*reating dashboards**](#creating-dashboards).
+To edit a dashboard, click **Edit** in the top menu bar. The dashboard editor will open up. For details on the fields, refer to [Creating dashboards](#creating-dashboards).
 
 
 ### Copying dashboards

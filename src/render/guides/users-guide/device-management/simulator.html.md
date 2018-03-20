@@ -21,7 +21,7 @@ A simulator uses a playlist to simulate messages that the device sends to the Cu
 
 An instruction can either send a message (measurements, alarms, events and inventory) or wait for a specified time (sleep). 
 
-A message is defined by choosing a message template (like sending a temperature) and providing the values for this template (23.0 degrees). Many predefined message templates are provided, i.e. for creating a measurement, sending an event, creating and cancelling an alarm. These templates are based on MQTT static templates. Additionally, custom message templates can be defined using the [SmartREST template editor](#smartrest). 
+A message is defined by choosing a message template (like sending a temperature) and providing the values for this template (23.0 degrees). Many predefined message templates are provided, i.e. for creating a measurement, sending an event, creating and cancelling an alarm. These templates are based on MQTT static templates. Additionally, custom message templates can be defined using the [SmartREST template editor](#smartrest-templates). 
 
 ### The Simulator tab
 In the navigator, click "Simulator" in the "Devices" menu to open the "Simulator" tab.
@@ -57,7 +57,7 @@ Within the presets, samples instructions are already added. For example, the "Te
 ![Add Instructions Step 2](/guides/images/users-guide/addinstructions2.png)
 
 The measurement instruction refers to a fragment. Fragments are used to identify capabilities of a managed object. Find more details about fragments here: 
-[Sensor Library ](https://www.cumulocity.com/guides/reference/sensor-library/) 
+[Sensor Library ](/guides/reference/sensor-library/) 
 
 ![Add Instructions Step 3](/guides/images/users-guide/addinstructions3.png)
 

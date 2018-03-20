@@ -12,7 +12,7 @@ Cloud Fieldbus is a Cumulocity application with the ability to collect data from
 
 It is supported out of the box by the following terminals:
 
-* [Pssystec Smartbox-Modbus](/guides/devices/smartbox-modbus) for Modbus/RTU.
+* [Pssystec Smartbox-Modbus](/guides/devices/smartbox-mini) for Modbus/RTU.
 * [Netcomm Wireless NTC-6200](/guides/devices/netcommwireless) for Modbus/TCP and Modbus/RTU.
 * [Cinterion Java modules](/guides/devices/cinterion) for Modbus/RTU and CAN bus.
 * [OPC-UA](/guides/devices/opcua) for OPC-UA Servers
@@ -40,7 +40,7 @@ To connect a Modbus/RTU device:
 ![Add Modbus device](/guides/images/users-guide/newmodbusrtudevice.png)
 
 * To start communication between the terminal and the Modbus device, click "Add new device".
-* Enter a name for the device and select the type of the device from the drop-down box. To add new device types, see "[Configuring Fieldbus device types](#configure)" below. Set the Modbus address of the connected device.
+* Enter a name for the device and select the type of the device from the drop-down box. To add new device types, see [Configuring Fieldbus device types](#configure) below. Set the Modbus address of the connected device.
 * Click "Add". Cumulocity will now send a notification to the Modbus terminal that a new device is ready to be managed. This may take a few seconds.
 
 After the progress indicator vanishes, a new child device has been added to the terminal and can now be managed. You can click on the name of the device in the table to navigate to the device. If you have not yet added Modbus devices to the terminal, you may have to reload your browser window to make the "Child Devices" tab visible.
@@ -73,7 +73,7 @@ To connect a CAN device:
 * Change the transmit rate according to your requirements. The transmit rate is the frequency where measurements are sent to Cumulocity.
 * Click "Save changes" if you made changes.
 * To start communication between the terminal and the CAN device, click "Add CAN device".
-* Enter a name for the device and select the type of the device from the drop-down box. To add new device types, see "[Configuring Fieldbus device types](#configure)" below.
+* Enter a name for the device and select the type of the device from the drop-down box. To add new device types, see [Configuring Fieldbus device types](#configure) below.
 * Click "Add". Cumulocity will now send a notification to the Fieldbus terminal that a new device is ready to be managed. This may take a few seconds.
 
 After the progress indicator vanishes, a new child device has been added to the terminal and can now be managed. You can click on the name of the device in the table to navigate to the device. If you have not yet added Fieldbus devices to the terminal, you may have to reload your browser window to make the "Child Devices" tab visible.
@@ -94,7 +94,7 @@ To connect an OPC UA server to Cumulocity, you need a gateway or industrial PC r
 * To start communication between the gateway and the OPC UA server, click "Add OPCUA device". An OPC UA server may host many devices as part of its object model.
 * Enter a name for the OPC UA device.
 * Enter the absolute "browse path" of the OPC UA device. The browse path of the device is configured on the OPC UA server and represents the "root" of the OPC UA device in the OPC UA server object model.
-* Select the type of the child device from the drop-down box. To add new device types, see "[Configuring Fieldbus device types](#configure)" below.
+* Select the type of the child device from the drop-down box. To add new device types, see [Configuring Fieldbus device types](#configure) below.
 * Click "Add".
 
 Cumulocity will now send a notification to the OPC UA agent that a new device is ready to be managed. This may take a few seconds. 
@@ -113,7 +113,7 @@ Once connected, you can now manage your device. Click "Child devices" on a termi
 
 ### <a name="collect"></a>Collecting measurements
 
-If the device type of the Fieldbus device is configured to collect measurements, these will be visible in the "Measurements" tab. They will also be available for usage in the [Data Explorer](/guides/images/users-guide/cockpit#visualize) and in [Dashboard widgets](/guides/images/users-guide/cockpit#dashboards).
+If the device type of the Fieldbus device is configured to collect measurements, these will be visible in the "Measurements" tab. They will also be available for usage in the [Data Explorer](/guides/users-guide/cockpit#visualize) and in [Dashboard widgets](/guides/users-guide/cockpit#dashboards).
 
 Data is collected according to the interval specified in the "transmit rate" property of the terminal as described above. To optimize the data traffic, data that is exactly the same as collected previously may not be sent again.
 
@@ -133,7 +133,7 @@ Similar to alarms, changes in Fieldbus devices can be monitored and logged as ev
 
 ### <a name="status"></a>Monitor a device status
 
-The status of devices can be monitored in real-time using dashboard widgets in the Cockpit application. Navigate to the Cockpit application, create a dashboard or report, and add widgets as described in the [Cockpit user's guide](/guides/images/users-guide/cockpit). The Cloud Fieldbus has two new widgets: The "Fieldbus Device" widget and the "SCADA" widget.
+The status of devices can be monitored in real-time using dashboard widgets in the Cockpit application. Navigate to the Cockpit application, create a dashboard or report, and add widgets as described in the [Cockpit user's guide](/guides/users-guide/cockpit). The Cloud Fieldbus has two new widgets: The "Fieldbus Device" widget and the "SCADA" widget.
 
 ### <a name="fieldbus-device-widget"></a>Monitoring device status using the Fieldbus Device widget
 

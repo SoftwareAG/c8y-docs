@@ -13,7 +13,7 @@ The tenants functionality allows you to create subtenants, subscribe them to the
 
 >**Info**: If you would like to use this feature, please contact sales@cumulocity.com.
 
-To be able to use the tenant functionality, your user needs to have the appropriate permissions. See [Creating and editing global roles](/guides/images/users-guide/user-and-permissions-management#create-edit-roles) for information on editing permissions. Since editing tenants is a sensitive operation, permissions for editing tenants are more granular:
+To be able to use the tenant functionality, your user needs to have the appropriate permissions. See [Creating and editing global roles](/guides/users-guide/user-and-permissions-management#create-edit-roles) for information on editing permissions. Since editing tenants is a sensitive operation, permissions for editing tenants are more granular:
 
 - Read: Browse and view tenants.
 - Create: Create new tenants.
@@ -48,7 +48,7 @@ To add a new tenant, click **Create tenant** at the right of the top menu bar. T
 |Administrator's username|Username for the administrator of this tenant.
 |Contact name|Optional name of the contact.
 |Contact phone|Optional phone number of the contact.
-|Send password reset link as email|Selected by default. If you deselect this option, you need to provide a password and confirm the password (see [Getting Started > Logging in](/guides/images/users-guide/overview#login) for more information on password strength).
+|Send password reset link as email|Selected by default. If you deselect this option, you need to provide a password and confirm the password (see [Getting Started > Logging in](/guides/users-guide/overview#login) for more information on password strength).
 |Tenant policy|You may select a tenant policy to be applied to the tenant from the dropdown list.
 
 Note, that fields with an asterisk * are mandatory.
@@ -99,7 +99,7 @@ To finally delete a tenant and remove all the data of the tenant, click the menu
 
 ### <a name="tenants-custom-properties"></a>Editing custom properties
 
-The "Custom properties" tab allows you to view and modify values of custom properties, either predefined ones (like "External reference") or those defined in the [Properties library](#properties). Such properties are also displayed as columns in [usage statistics table](#usage-stats-custom-properties).
+The "Custom properties" tab allows you to view and modify values of custom properties, either predefined ones (like "External reference") or those defined in the [Properties library](#properties). Such properties are also displayed as columns in [usage statistics table](#usage-stats).
 
 ![Custom Properties](/guides/images/users-guide/subtenant-custom-properties.PNG)
 
@@ -126,7 +126,7 @@ Custom properties may be defined in the [Properties Library](#properties) and th
 
 ![Usage statistics](/guides/images/users-guide/usage-statistics-list.PNG)
 
-You can filter the usage statistics list for a time period by adding the start and end date in the top menu bar and click **Filter**. You can also filter and sort the list on any column by clicking the filter icon next to the column name and providing the filtering criteria. For details on filtering, refer to [Getting Started > Features and Functionalities > Filtering](/guides/images/users-guide/overview#filtering). 
+You can filter the usage statistics list for a time period by adding the start and end date in the top menu bar and click **Filter**. You can also filter and sort the list on any column by clicking the filter icon next to the column name and providing the filtering criteria. For details on filtering, refer to [Getting Started > Features and Functionalities > Filtering](/guides/users-guide/overview#filtering). 
 
 Click Export CSV at the right of the top menu bar to export the current view of the statistics table to a CSV file. A dialog will come up in which you can customize the CSV output.
 
@@ -156,7 +156,7 @@ Click **Add tenant policy** in the top menu bar to create a new tenant policy.
 ![Add new policy](/guides/images/users-guide/addpolicy.png)
  
 2. Enter a name and an optional description. 
-3. Add at least one retention rule. For details on creating retention rules, refer to [Administration > Retention rules](/guides/images/users-guide/administration#retention-rules).
+3. Add at least one retention rule. For details on creating retention rules, refer to [Administration > Retention rules](/guides/users-guide/administration#retention-rules).
 4. Optionally, add a tenant option.
 5. Click **Save** to save your settings.
 

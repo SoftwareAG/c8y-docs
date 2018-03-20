@@ -26,7 +26,7 @@ Moreover, several buttons allow you to update the information (see also "How to 
 
 To add a firmware object, follow these steps:
 
-1. Upload the firmware file in the [Administration application](/guides/images/users-guide/administration#files). This step is not necessarily required since some manufacturers offer the firmware online.
+1. Upload the firmware file in the [Administration application](/guides/users-guide/administration#files). This step is not necessarily required since some manufacturers offer the firmware online.
 2. In the "Firmware repository" page, click **Add firmware** at the right of the top bar menu.
 3. In the upcoming window, enter a name for the firmware and its version.
 4. Specify the file for the firmware by choosing or uploading it or enter the URL from which the device can download the firmware. 

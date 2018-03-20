@@ -89,7 +89,7 @@ While a machine is offline, Cumulocity assumes by default
 * that the machine continues to stay in service during the connection outage, if this was the status before it lost connection.
 * that the machine continues to stay out of service, if this was the status before it lost connection.
 
-There may be exceptions from this rule. If your vending machines rely exclusively on cashless payment, losing the connection to the network means that your machine is out of service and stops selling. In this case, unavailability alarms must be set in the [Administration application](/guides/images/users-guide/administration#alarm-mapping) which have "critical" severity instead of "major" severity.
+There may be exceptions from this rule. If your vending machines rely exclusively on cashless payment, losing the connection to the network means that your machine is out of service and stops selling. In this case, unavailability alarms must be set in the [Administration application](/guides/users-guide/administration#alarm-mapping) which have "critical" severity instead of "major" severity.
 
 Cumulocity displays service availability at the level of individual devices and across all devices. 
 
@@ -146,7 +146,7 @@ In each row, the following information for an alarm is provided:
 
 Click the arrow on the right of a row to expand it and display further details on the alarm.
 
-* **Status**: Providing further information on the alarm status and showing the type of the alarm. The type info is used for duplicating alarms and for configuring the priority of alarms in the [Administration application](/guides/images/users-guide/administration#alarm-mapping).
+* **Status**: Providing further information on the alarm status and showing the type of the alarm. The type info is used for duplicating alarms and for configuring the priority of alarms in the [Administration application](/guides/users-guide/administration#alarm-mapping).
 * **Change Log**: Providing the server time when the alarm was created, which may differ from the device time.
 
 To change the status of an alarm, hover over it and click the button for the desired status or click the menu icon and from the context menu select the desired status.

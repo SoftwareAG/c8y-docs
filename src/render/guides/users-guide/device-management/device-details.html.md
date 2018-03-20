@@ -26,7 +26,7 @@ The following tabs are the most common ones, each described in detail in a separ
 |[Child Devices](#child-devices)|Lists devices being connected to the current device.
 |[Measurements](#measurements)|Provides a default visualization of numeric data provided by the device in the form of charts.
 |[Alarms](#alarms)|Provides information on the alarms for a device. See also [Working with alarms](#alarm-monitoring). Available for each device.
-|[Configuration](#configuration)|Allows manual configuration of device parameters and settings entered in a text format. See also [Configuration Repository](#configuration-snapshot) for binary configuration.
+|[Configuration](#configuration)|Allows manual configuration of device parameters and settings entered in a text format. See also [Configuration Repository](#configuration-repository) for binary configuration.
 |[Control](#control)|Displays operations being sent to a device. Also refer to [Working with operations](#operation-monitoring). Available for each device.
 |[Network](#network)|Displays network information for a device.
 |[Software](#software)|Manages firmware of a device and software installed on a device.
@@ -60,7 +60,7 @@ The information is provided on the following cards:
 |:---|:---|
 |Notes|Provides optional notes to inform about current activities. Notes usually may only be edited by an administrator. To add or edit a note, click **Edit**, enter your note or your modifications in the text box and save your edits by clicking the green checkmark at the right of the text box. 
 |Device status|Displays connection-relevant information, as described in detail in [Connection monitoring](#connection-monitoring). 
-|Device and communication|Shows a data point graph displaying realtime data on particular measurements. For details, refer to [Using the Data Explorer](/guides/images/users-guide/cockpit#visualize) in the Cockpit documentation.
+|Device and communication|Shows a data point graph displaying realtime data on particular measurements. For details, refer to [Using the Data Explorer](/guides/users-guide/cockpit#visualize) in the Cockpit documentation.
 |Device data|Displays editable information on the device (name, type, ID, owner, last updated). The fields "ID" and "Last Updated" cannot be edited. Moreover information on hardware (editable) and firmware (not editable) is displayed here if available.
 |Active, critical alarms|Shows the active critical alarms for the device.
 |Groups assignment|Displays the groups the device belongs to. Moreover you can add the device to groups here or unassign it from groups. For details on grouping devices see [Grouping Devices](#grouping-devices).
@@ -92,7 +92,7 @@ This enables you to get an efficient overview over larger time periods. A graph 
 
 Clicking **Realtime** will enable realtime user interface updates of the graphs as new data flows into the system from the connected devices. 
 
-You can influence the graphical display and axes limits by setting up so-called "KPIs", see the [*Administration Guide*](/guides/images/users-guide/administration#kpis).
+You can influence the graphical display and axes limits by setting up so-called "KPIs", see the [Administration Guide](/guides/users-guide/administration#kpis).
 
 **Measurement format**
 
@@ -130,7 +130,7 @@ To manually add or edit a device configuration, follow these steps:
 
 <img src="/guides/images/users-guide/textconfig.png" alt="Device details" style="max-width: 100%">
 
-Alternatively, you can work with configuration snapshots. For details, refer to [Configuration snapshots](#configuration-snapshot).
+Alternatively, you can work with configuration snapshots. For details, refer to [Configuration snapshots](#configuration-repository).
 
 ### <a name="control"></a>Control
 

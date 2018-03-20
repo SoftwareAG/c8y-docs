@@ -34,7 +34,7 @@ The "Home" screen provides
 * your capacity usage for the current and for the last month,
 * the optional applications you are subscribed to. 
 
-<img src="/guides/users-guide/administration/admin_HomeScreen.png" alt="Home screen" style="max-width: 100%">
+<img src="/guides/users-guide/Administration/Admin_HomeScreen.png" alt="Home screen" style="max-width: 100%">
 
 The capacity sections show:
 
@@ -61,7 +61,7 @@ To view the audit log list, click "Audit logs" in the "Account" menu. For each l
 
 Only the last 100 logs are visible. Click **Load more** at the bottom of the list to view more log entries.
 
-![Audit logs](/guides/users-guide/administration/admin_auditlogs.png)
+![Audit logs](/guides/users-guide/Administration/Admin_AuditLogs.png)
 
 >**Info**: The audit log list is not automatically refreshed after a realtime update for operations. Click **Reload** at the right of the top menu bar to update the list to the latest operations.
 
@@ -87,13 +87,13 @@ Own applications may be
 
 Your applications are available through the application switcher in the top bar which allows to easily switch between applications.
 
-<img src="/guides/users-guide/administration/Admin_AppSwitcher.png" alt="App switcher" style="max-width: 50%">
+<img src="/guides/users-guide/Administration/Admin_AppSwitcher.png" alt="App switcher" style="max-width: 50%">
 
 You manage your applications under "Own applications", accessible through the "Applications" menu. 
 
 In the "Own applications" page you will find a list of the applications available in your account.
 
-<img src="/guides/users-guide/administration/Admin_OwnApplications.png" alt="Own applications" style="max-width: 100%">
+<img src="/guides/users-guide/Administration/Admin_OwnApplications.png" alt="Own applications" style="max-width: 100%">
 
 To directly open an application from here, click **Open** on the respective application card. 
 
@@ -112,7 +112,7 @@ To add an application, click **Add application** in the "Own applications" page.
 * [duplicating an existing application](#clone-application)
 * [uploading a custom CEP rule](#uploading-cep-rules) (only visible if you are subscribed to specific applications, see below).
 
-<img src="/guides/users-guide/administration/Admin_AddApplication.png" alt="Add application methods" style="max-width: 50%">
+<img src="/guides/users-guide/Administration/Admin_AddApplication.png" alt="Add application methods" style="max-width: 50%">
 
 #### <a name="uploading-zip-files"></a>Uploading zip files
 
@@ -132,7 +132,7 @@ In order to add an application by uploading a zip file, follow these steps:
 2. In the upcoming dialog, select **Upload zip file**.
 3. Simply drop a zip file or browse for it on your computer.
 
-<img src="/guides/users-guide/administration/Admin_UploadZipFile.png" alt="Uploading zip file" style="max-width: 50%">
+<img src="/guides/users-guide/Administration/Admin_UploadZipFile.png" alt="Uploading zip file" style="max-width: 50%">
 
 After successfully uploading the zip file to the platform the application is being created.
 
@@ -184,7 +184,7 @@ In order to upload custom CEP rules, follow these steps:
 
 After successfully uploading the file to the platform an application of type "Apama CEP rule" is being created.
 
-<img src="/guides/users-guide/administration/Admin_ApplicationCEPRule.png" alt="Uploading zip file" style="max-width: 100%">
+<img src="/guides/users-guide/Administration/Admin_ApplicationCEPRule.png" alt="Uploading zip file" style="max-width: 100%">
 
 For details on the fields, see also [Application properties](#application-properties) below.
 
@@ -195,7 +195,7 @@ For details on the fields, see also [Application properties](#application-proper
 
 Click on an application card to view the application properties.
 
-<img src="/guides/users-guide/administration/Admin_OwnApplicationMicroservice.png" alt="Microservice application" style="max-width: 100%">
+<img src="/guides/users-guide/Administration/Admin_OwnApplicationMicroservice.png" alt="Microservice application" style="max-width: 100%">
 
 Each application will show the following properties:
 
@@ -328,7 +328,7 @@ The "Tenants" page provides the following information on each subtenant:
 
 If you are using the management tenant, you will see an additional column "Parent tenant". This column shows the tenant that created the listed tenant.
 
-![Sub-tenants](/guides/users-guide/administration/Admin_Subtenants.png)
+![Sub-tenants](/guides/users-guide/Administration/Admin_Subtenants.png)
 
 ### <a name="creating-tenants"></a>Creating sub-tenants
 
@@ -365,7 +365,7 @@ In the "Properties" tab, all fields are editable except of the ID and the admini
 
 In the "Applications" tab you can subscribe tenants to applications or remove the applications from the tenant. By default, tenants will be subscribed to the standard Cumulocity applications. 
 
-<img src="/guides/users-guide/administration/Admin_SubtenantApplications.png" alt="Subscribe tenant" style="max-width: 100%">
+<img src="/guides/users-guide/Administration/Admin_SubtenantApplications.png" alt="Subscribe tenant" style="max-width: 100%">
 
 To subscribe an application to a tenant, hover over the applications under "Available applications" on the right and click **Subscribe** on the desired application.
 
@@ -498,7 +498,7 @@ Using event processing, you can specify realtime business logic that is automati
 
 Click "Event processing" in the "Business rules" menu to view the current modules or to create new ones.
 
-<img src="/guides/users-guide/administration/admin_EventProcessing.png" alt="Event processing" style="max-width: 100%">
+<img src="/guides/users-guide/Administration/admin_EventProcessing.png" alt="Event processing" style="max-width: 100%">
 
 For each module in the list, the status (deployed = indicated by a green checkmark / not deployed = indicated by an exclamation mark), the name and the date when is was last updated is provided.
 
@@ -512,7 +512,7 @@ Instead of deleting the module you can also disable it temporarily by setting it
 
 To create a new module, click **New module** in the top menu bar.
 
-<img src="/guides/users-guide/administration/Admin_EventProcessingNewModule.png" alt="New module" style="max-width: 100%">
+<img src="/guides/users-guide/Administration/Admin_EventProcessingNewModule.png" alt="New module" style="max-width: 100%">
 
 1. Enter a name for the module at the very top. You can only use alphanumeric characters without blanks.
 2. By default, the status is set to "Deployed" which means that the statements you enter will be run immediately. Set the slider to "Not deployed" if you want to avoid this. 
@@ -521,7 +521,7 @@ To create a new module, click **New module** in the top menu bar.
 
 The example module creates an alarm if the temperature goes below 0 degree.
 
-<img src="/guides/users-guide/administration/Admin_EventProcessingModuleExample.png" alt="Example module" style="max-width: 100%">
+<img src="/guides/users-guide/Administration/Admin_EventProcessingModuleExample.png" alt="Example module" style="max-width: 100%">
 
 If the status of a module is set to "Deployed", this is indicated by a green checkmark in the module list. Whenever your statements produce some output you will see it below the checkmark icon. Clicking a line of output unfolds the detailed output of the statement. Clicking **Clear all** removes the output from the screen.
 
@@ -531,7 +531,7 @@ Alarm mapping enables you to change the severity and text of alarms to adapt the
 
 Click "Alarm mapping" in the "Business Rules" menu to see a list of all alarm mappings.
 
-<img src="/guides/users-guide/administration/Admin_AlarmMapping.png" alt="Alarm mapping" style="max-width: 100%">
+<img src="/guides/users-guide/Administration/Admin_AlarmMapping.png" alt="Alarm mapping" style="max-width: 100%">
 
 For each alarm mapping, the alarm severity and the name of the mapping is shown.
 
@@ -543,7 +543,7 @@ To delete an alarm mapping, hover over it and click the **Delete** button.
 
 To add an alarm mapping, click **Add alarm mapping** in the top menu bar.
 
-<img src="/guides/users-guide/administration/Admin_AlarmMappingAdd.png" alt="Add alarm mapping" style="max-width: 100%">
+<img src="/guides/users-guide/Administration/Admin_AlarmMappingAdd.png" alt="Add alarm mapping" style="max-width: 100%">
 
 1. Enter the alarm type to be modified.
 2. Optionally, enter a new text for the alarm. If you do not enter any text, the original text in the alarm will be kept.
@@ -583,7 +583,7 @@ To add additional retention rules, click **Add rule** in the top menu bar.
 
 >**Info**: Alarms are only removed if they are in "CLEARED" state.
 
-<img src="/guides/users-guide/administration/Admin_RetentionRulesDelete.png" alt="Delete retention rule" style="max-width: 50%">
+<img src="/guides/users-guide/Administration/Admin_RetentionRulesDelete.png" alt="Delete retention rule" style="max-width: 50%">
 
 To delete a rule, hover over it and click the **Delete** button at the right.
 
@@ -598,7 +598,7 @@ The files listed can come from various sources. They can be software images, con
 
 For each file, the name of the file, its owner, the file type (i.e. image/bmp, text/csv), its size and the date when it was last updated is provided.
 
-<img src="/guides/users-guide/administration/Admin_FilesRepository.png" alt="Files Repository" style="max-width: 100%">
+<img src="/guides/users-guide/Administration/Admin_FilesRepository.png" alt="Files Repository" style="max-width: 100%">
 
 To upload a file from your computer, click **Upload file** in the top menu bar.
 
@@ -650,7 +650,7 @@ Strong (green) passwords must have "M" characters. By default, the system restri
 
 Click **Save** to apply your password settings.
 
-<img src="/guides/users-guide/administration/admin_Password.png" alt="Password settings" style="max-width: 100%">
+<img src="/guides/users-guide/Administration/admin_Password.png" alt="Password settings" style="max-width: 100%">
 
 Under "TFA settings", you can change the following TFA settings:
 
@@ -711,7 +711,7 @@ In the "Branding" tab you can fully customize the look of your tenants to your o
 
 The branding feature allows you to edit the logos and colors used throughout the platform. Once your branding settings are saved, all subtenants are automatically updated. 
 
-<img src="/guides/users-guide/administration/admin_Branding.png" alt="Branding tab" style="max-width: 100%">
+<img src="/guides/users-guide/Administration/admin_Branding.png" alt="Branding tab" style="max-width: 100%">
 
 **General**
 
@@ -733,7 +733,7 @@ Under “Navigator logo” you can provide the “Navigator logo” and set the 
 
 In the “Type” section you specify the font settings for your branded version. 
 
-<img src="/guides/users-guide/administration/admin_BrandingType.png" alt="Branding type" style="max-width: 100%">
+<img src="/guides/users-guide/Administration/admin_BrandingType.png" alt="Branding type" style="max-width: 100%">
 
 You can choose your base and headings font, and select an option for the navigator font (either same as base or same as headings font). You may also add a link to existing remote fonts to be used.
 
@@ -741,7 +741,7 @@ You can choose your base and headings font, and select an option for the navigat
 
 In the “Colors” section you specify the colors to be used in your branding version.
 
-<img src="/guides/users-guide/administration/admin_BrandingColor.png" alt="Branding color" style="max-width: 100%">
+<img src="/guides/users-guide/Administration/admin_BrandingColor.png" alt="Branding color" style="max-width: 100%">
 
 The following parameters can be specified by providing a hex, rgb or rgba value:
 
@@ -755,7 +755,7 @@ The following parameters can be specified by providing a hex, rgb or rgba value:
 
 In the “Top bar” section you specify the parameters for the top bar.
 
-<img src="/guides/users-guide/administration/admin_BrandingTopbar.png" alt="Branding topbar" style="max-width: 100%">
+<img src="/guides/users-guide/Administration/admin_BrandingTopbar.png" alt="Branding topbar" style="max-width: 100%">
 
 The following parameters can be specified by providing a hex, rgb or rgba value:
 
@@ -767,7 +767,7 @@ The following parameters can be specified by providing a hex, rgb or rgba value:
 
 In the “Navigator" section you specify the parameters for the navigator.
 
-<img src="/guides/users-guide/administration/admin_BrandingTopbar.png" alt="Branding top bar" style="max-width: 100%">
+<img src="/guides/users-guide/Administration/admin_BrandingTopbar.png" alt="Branding top bar" style="max-width: 100%">
 
 The following parameters can be specified by providing a hex, rgb or rgba value:
 
@@ -797,13 +797,13 @@ The following image shows and an example where
 * the top bar “Background color” is green,
 * the navigator “Background color” is pink. 
 
-<img src="/guides/users-guide/administration/admin_BrandingColored.png" alt="Branding example" style="max-width: 100%">
+<img src="/guides/users-guide/Administration/admin_BrandingColored.png" alt="Branding example" style="max-width: 100%">
 
 ### Domain name
 
 In the “Domain name” tab you can activate your own custom domain name.  
 
-<img src="/guides/users-guide/administration/admin_DomainName.png" alt="Domain name" style="max-width: 100%">
+<img src="/guides/users-guide/Administration/admin_DomainName.png" alt="Domain name" style="max-width: 100%">
 
 First you have to upload the appropriate certificate by clicking **Upload Certificate**. Make sure that
 
@@ -866,7 +866,7 @@ In the following two fields provide an e-mail template to be used on password ch
 
 In the "E-mail server" section you can provide the "Protocol", "Host", "Port", "Username", "Password" and "Sender Address" for the e-mail server.
 
-<img src="/guides/users-guide/administration/admin_ConfigurationServer.png" alt="Configure e-mail server" style="max-width: 100%">
+<img src="/guides/users-guide/Administration/admin_ConfigurationServer.png" alt="Configure e-mail server" style="max-width: 100%">
 
 In the "Data export" section you can set the e-mail subject and e-mail template for data export and specify the “User unauthorized error message”.
 
@@ -876,7 +876,7 @@ In the "Storage limit" section you can specify the e-mail subject and e-mail tem
 
 In the "Suspending tenants" section you can provide settings for emails being send on tenant suspension. 
 
-<img src="/guides/users-guide/administration/admin_ConfigurationSuspended.png" alt="Suspended tenants" style="max-width: 100%">
+<img src="/guides/users-guide/Administration/admin_ConfigurationSuspended.png" alt="Suspended tenants" style="max-width: 100%">
 
 At the top you can select if you want to send the e-mail to the suspended tenant's administrator and specify an additional e-mail receiver. Below you set the subject and template for the tenant suspended e-mail.
 

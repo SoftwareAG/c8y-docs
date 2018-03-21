@@ -1,187 +1,185 @@
 ---
 order: 40
-title: Customizing your platform
+title: Anpassen der Plattform
 layout: redirect
 ---
 
-In the "Enterprise edition" page under the "Settings" menu you can specify settings for the customization of your platform.
 
-### <a name="branding"></a>Branding
+Unter "Enterprise Edition" in der "Administration"-Anwendung können Einstellungen vorgenommen werden, die Benutzern der Enterprise Edition von Cumulocity über den Umfang der Standardedition hinaus zu Verfügung stehen.
 
-In the "Branding" tab you can fully customize the look of your tenants to your own preferences. 
+### Branding
 
-The branding feature allows you to edit the logos and colors used throughout the platform. Once your branding settings are saved, all subtenants are automatically updated. 
+In der Registerkarte "Branding", können Sie das Erscheinungsbild der Benutzeroberfläche für Ihre Mandanten nach Ihren Vorlieben gestalten.
 
-<img src="/guides/images/users-guide/administration/admin_Branding.png" alt="Branding tab" style="max-width: 100%">
+Die Branding-Funktion ermöglicht es, die Logos und Farben in den Anwendungen zu bearbeiten. Nach dem Speichern der Einstellungen werden alle Untermandanten automatisch aktualisiert.
 
-**General**
+![Registerkarte Branding](/guides/images/users-guide/administration/admin_Branding.png)
 
-In the “General” section you can edit the “Title” which will be used in the browser tab. 
+**Allgemein**
 
-**Main logo**
+Unter "Allgemein" können Sie den “Titel” bearbeiten, der im Browser-Tab verwendet wird.
 
-Under “Main logo”, specify the following items:
+**Hauptlogo**
 
-* The “Favicon”, which will be displayed in the browser’s address bar. Click **Choose file** to select a file from your computer. The supported favicon format is “ico”.
-* Your branding logo, which will be shown during application loading. Click **Choose file** to select a file from your computer. The supported formats are “png” and “svg”.
-* The “Brand logo height”.
+Unter “Hauptlogo”können Sie die folgenden Elemente definieren:
 
-**Navigator logo**
+*   Das “Favicon”, das in der Adressleiste des Browsers angezeigt wird. Klicken Sie **Datei wählen**, um eine Datei auf Ihrem Computer auszuwählen. Das unterstütze Format für das Favicon ist “ico”.
+*   Ihr Markenlogo, dass während des Ladens der Anwendung angezeigt wird. Klicken Sie **Datei wählen**, um eine Datei auf Ihrem Computer auszuwählen. Die unterstützen Formate sind “png” und “svg”.
+*   Die “Höhe des Markenlogos”.
 
-Under “Navigator logo” you can provide the “Navigator logo” and set the “Navigator logo height” located on top of the navigator panel.
+**Navigatorlogo**
 
-**Type**
+Unter “Navigatorlogo” können Sie das Logo, das oben im Navigator angezeigt wird, bereitstellen und die “Höhe für das Navigatorlogo” einstellen.
 
-In the “Type” section you specify the font settings for your branded version. 
+**Typ**
 
-<img src="/guides/images/users-guide/administration/admin_BrandingType.png" alt="Branding type" style="max-width: 100%">
+Im Bereich “Typ” definieren Sie die Schriftarten für Ihre Branding-Version.
 
-You can choose your base and headings font, and select an option for the navigator font (either same as base or same as headings font). You may also add a link to existing remote fonts to be used.
+![Branding-Typ](/guides/images/users-guide/administration/admin_BrandingType.png)
 
-**Colors**
+Sie können die Basisschriftart und die Schriftart für Überschriften wählen sowie eine Option für die im Navigator verwendete Schriftart (entwerder identisch mit Basis- oder Überschriftenschriftart). Sie können außerdem einen Link auf externe Schriftarten setzen, die Sie verwenden möchten.
 
-In the “Colors” section you specify the colors to be used in your branding version.
+**Farben**
 
-<img src="/guides/images/users-guide/administration/admin_BrandingColor.png" alt="Branding color" style="max-width: 100%">
+Im Bereich “Farben” definieren Sie die Farben für Ihre Branding-Version.
 
-The following parameters can be specified by providing a hex, rgb or rgba value:
+![Branding-Farbe](/guides/images/users-guide/administration/admin_BrandingColor.png)
 
-* “Main brand color”.
-* “Secondary brand color”. The default value is “#07b91A”.
-* “Text color”. The default value is “#444”.
-* “Link color”. The default value is the same as the main brand color.
-* “Main background color”. The default value for this item is “#FAFAFA”.
+Die folgenden Parameter können definiert werden (Werte in hex, rgb oder rgba):
 
-**Top bar**
+*   “Haupt-Markenfarbe”.
+*   “Haupt-Markenfarbe”. Der Standardwert ist “#07b91A”.
+*   “Textfarbe”. Der Standardwert ist “#444”.
+*   “Link-Farbe”. Der Standardwert ist die Haupt-Markenfarbe.
+*   “Haupt-Hintergrundfarbe”. Der Standardwert für diese Element ist “#FAFAFA”.
 
-In the “Top bar” section you specify the parameters for the top bar.
+**Obere Leiste**
 
-<img src="/guides/images/users-guide/administration/admin_BrandingTopbar.png" alt="Branding topbar" style="max-width: 100%">
+Unter “Obere Leiste” definieren Sie die Parameter für die obere Leiste.
 
-The following parameters can be specified by providing a hex, rgb or rgba value:
+![Branding Ober Leiste](/guides/images/users-guide/administration/admin_BrandingTopbar.png)
 
-* “Background color”. The default value is “#FFFFF”.
-* “Text color”. The default value is “49595B”.
-* “Button hover text color”. The default value is the main brand color.
+Die folgenden Parameter können definiert werden (Werte in hex, rgb oder rgba):
+
+*   “Hintergrundfarbe”. Der Standardwert ist “#FFFFF”.
+*   “Textfarbe”. Der Standardwert ist “49595B”.
+*   “Hover-Textfarbe für Schaltflächen”. Der Standardwert ist die Haupt-Markenfarbe.
 
 **Navigator**
 
-In the “Navigator" section you specify the parameters for the navigator.
+Unter “Navigator” definieren Sie die Parameter für die obere Leiste.
 
-<img src="/guides/images/users-guide/administration/admin_BrandingTopbar.png" alt="Branding top bar" style="max-width: 100%">
+![Branding - obere Leiste](/guides/images/users-guide/administration/admin_BrandingTopbar.png)
 
-The following parameters can be specified by providing a hex, rgb or rgba value:
+Die folgenden Parameter können definiert werden (Werte in hex, rgb oder rgba):
 
-* “Background color”. The default value is “2c3637”.
-* "Logo wrapper background color". The default value is “Transparent”.
-* “Title color”. The default value is “FFFFF”.
-* “Text and buttons color”. The default value is “#FAFAFA”.
-* “Separator line color”. The default value is “#FAFAFA”.
-* “Text color” of the current item in the navigator. The default value is “#FAFAFA”.
-* “Background color” of the current item in the navigator with the main brand color as default.
+*   “Hintergrundfarbe”. Der Standardwert ist “#2c3637”.
+*   "Hintergrundfarbe der Logoumrandung". Der Standardwert ist “Transparent”.
+*   “Titelfarbe”. Der Standardwert ist “#FFFFF”.
+*   “Farbe für Texte und Schaltflächen”. Der Standardwert ist “#FAFAFA”.
+*   “Farbe für Trennlinien”. Der Standardwert ist “#FAFAFA”.
+*   “Textfarbe” des aktuellen Elements im Navigator. Der Standardwert ist “#FAFAFA”.
+*   “Hintergrundfarbe” des aktuellen Elements im Navigator mit der Haupt-Markenfarbe als Standard.
 
-**Misc**
+**Sonstiges**
 
-In the “Misc” section you may specify the “Button Border-Radius” by providing a value in pixel (px).
+Im Bereich “Sonstiges” können Sie den Rand-Radius für Schaltflächen durch Angabe eines Werts in Pixel (px) festlegen.
 
-Click **Save** to save your settings.
+Klicken Sie **Speichern**, um Ihre Eingaben zu speichern.
 
-Click **Preview** in the top menu bar to preview the new branding.
+Klicken Sie **Vorschau** in der oberen Menüleiste, um eine Vorschau des neuen Brandings anzuzeigen.
 
-Click **Generate** in the top menu bar to apply your new branding.
+Klicken Sie **Erstellen** in der oberen Menüleiste, um die neuen Einstellungen anzuwenden.
 
-The following image shows and an example where
+Die folgende Abbildung zeigt ein Beispiel mit
 
-* the “Main brand color” is purple,
-* the “Secondary brand color” is white,
-* the “Main background color” is blue,
-* the top bar “Background color” is green,
-* the navigator “Background color” is pink. 
+*   der Hauptmarkenfarbe in lila,
+*   der sekundären Markenfarbe in weiß,
+*   der Haupthintergrundfarbe in blau,
+*   der Hintergrundfarbe der oberen Leiste in grün,
+*   der Hintergrundfarbe des Navigators in pink.
 
-<img src="/guides/images/users-guide/administration/admin_BrandingColored.png" alt="Branding example" style="max-width: 100%">
+![Branding-Beispiel](/guides/images/users-guide/administration/admin_BrandingColored.png)
 
-### <a name="domain-name"></a>Domain name
+### Domain-Name
 
-In the “Domain name” tab you can activate your own custom domain name.  
+In der Registerkarte “Domain-Name können Sie Ihren eigenen Domain-Namen festlegen.
 
-<img src="/guides/images/users-guide/administration/admin_DomainName.png" alt="Domain name" style="max-width: 100%">
+![Domain-Name](/guides/images/users-guide/administration/admin_DomainName.png)
 
-First you have to upload the appropriate certificate by clicking **Upload Certificate**. Make sure that
+Zunächst müssen Sie eine entsprechendes Zertifikat hochladen, in dem Sie **Zertifikat hochladen** klicken. Stellen Sie sicher, dass
 
-* the certificate is in a valid PKCS#12 format,
-* the certificate is not password protected,
-* you are using a wildcard certificate to enable creation of subtenants.
+*   das Zertifikat ein gültiges PKCS#12-Format hat,
+*   das Zertifikt nicht passwortgeschützt ist,
+*   Sie ein Wildcard-Zertifikat verwenden, um die Erstellung von Untermandanten zu ermöglichen.
 
-Before activating the custom domain name, make sure that
+Bevor Sie den eigenen Domain-Namen aktivieren, stellen Sie sicher, dass
 
-* you have uploaded a valid SSL certificate for your custom domain,
-* the common name (domain name) is not used by any other tenant,
-* the certificate is currently valid (validFrom in the past and validTo in the future),
-* you have configured the DNS A entry for the domain to point to the IP address of your DNS server.
+*   Sie ein gültiges SSL-Zertifikat für die eigene Domain hochgeladen haben,
+*   der Domain-Name nicht von einem anderen Mandanten verwendet wird,
+*   das Zertifikat aktuell gültig ist (validFrom in der Vergangenheit und validTo in der Zukunft),
+*   Sie einen DNS A-Eintrag für die Domain erstellt haben, der auf die IP-Adresse Ihres DNS-Servers zeigt.
 
-After successful activation you will be redirected to your enterprise tenant at the new domain. You will also receive an email with information about the activation.
+Nach erfolgreicher Aktivierung werden Sie zu Ihrem Enterprise-Mandanten unter der neuen Domain umgeleitet. Sie erhalten eine Email mit Informationen über die Aktivierung.
 
->**Info**: After the activation is completed you will no longer be able to access your tenant with the cumulocity domain name. Instead, use your custom domain name.
+> **Info**: Sobald die Aktivierung abgeschlossen ist, können Sie auf Ihren Mandanten nicht mehr mit der Cumulocity-Domain zugreifen. Verwenden Sie anstatt dessen Ihren eigenen Domain-Namen.
 
+**Aktualisieren des Zertifikats**
 
-**Updating your certificate**
+Wenn Ihr Zertifikat abläuft, müssen Sie es durch ein neues Zertifikat mit einer längeren Gültigkeitsdauer aktualisieren. Wenn Sie das Zertifikat aktualisieren, stellen Sie sicher, dass
 
-When your certificate expires, you must update your certificate with a new one with an extended validation period. When updating a certificate, you need to make sure that
+*   das Zertifikat ein gültiges PKCS#12-Format hat,
+*   das Zertifikt nicht passwortgeschützt ist,
+*   das Zertifikat aktuell gültig ist (validFrom in der Vergangenheit und validTo in der Zukunft),
+*   das Zertifikat exakt denselben Domain-Namen wie das aktuell aktive Zertifikat hat.
+*   Sie einen DNS A-Eintrag für die Domain erstellt haben, der auf die IP-Adresse Ihres DNS-Servers zeigt.
 
-* the certificate is in a valid PKCS#12 format,
-* the certificate is not password protected,
-* the certificate is currently valid (validFrom in the past and validTo in the future),
-* the certificate has exactly the same common name (domain name) as the currently active certificate,
-* you have configured the DNS A entry for the domain to point to the IP address of your DNS server.
+**Deaktivieren eines Zertifikats**
 
+Wenn Sie zu Ihrer alten Domain auf Cumulocity zurückkehren möchten, können Sie Ihr Zertifikat ganz einfach wieder deaktivieren.
 
-**Deactivating your certificate**
+> **Wichtig**: Verwenden Sie dies Funktion mit Vorsicht. Ihre Kunden werden nicht mehr in der Lage sein, auf Ihre Untermandanten zuzugreifen.
 
-If you wish to return to your old domain at Cumulocity, you can simply deactivate you certificate. 
+### Konfiguration
 
->**Important**: Use with care. Your customers will not be able to access their subtenants anymore.
+In der Registerkarte "Konfiguration" auf der Seite "Enterprise Edition" können Sie systemweite Attribute konfigurieren. Die folgenden Optionen können in den Konfigurationseinstellungen bearbeitet werden.
 
-## <a name="config-platform"></a>Configuration settings
+Im Feld "Zwei-Faktor-Authentifizierung" können Sie die SMS-Vorlage, die an die Benutzer geschickt wird, ändern.
 
-In the "Configuration" tab of the "Enterprise Edition" page you can configure system-wide properties in Cumulocity. The following options can be modified in the "Configuration" settings.
+Im Feld "Support-Link" können Sie eine URL eingeben, die als Support-Link verwendet wird. Wenn Sie hier keinen Link bereitstellen, wird der Standardlink zur Cumulocity-Support-Seite verwendet.
 
-In the "Two-factor authentication" field you can change the SMS template which is sent to the users.
+Geben Sie "false" ein, um den Link zu verbergen.
 
-In the "Support link" field you can enter a URL to be used to link to a Support page. If you do not provide a link here, the default link to the Cumulocity Support will be used. 
+Im Bereich "Passwort zurücksetzen" können Sie alle Einstellungen im Zusammenhang mit E-Mail-Vorlagen zum Zurücksetzen des Passworts ändern.
 
-Enter "false" to hide the link.
+![Konfiguration](/guides/images/users-guide/configuration_tab2.png)
 
-In the "Password reset" section you can change all settings related to password reset e-mail templates.
+Ganz oben können Sie festlegen, ob Sie zulassen möchten, E-Mails an unbekannte E-Mail-Adressen zu senden.
 
-![Configuration menu1](/guides/images/users-guide/configuration_tab2.png)
+Stellen Sie im Feld "E-Mail-Vorlage für das Zurücksetzen von Passwörtern" eine Vorlage bereit, die verwendet werden soll, wenn die Adresse bekannt ist, und eine für unbekannte Adressen. Der Link zum Zurücksetzen des Passworts kann beispielsweise lauten: {host}/apps/devicemanagement/index.html?token={token}.
 
-At the top you can select if you want to allow sending e-mails to unknown email addresses.
+Geben Sie im Feld "E-Mail-Betreff" ein Betreff für alle E-Mails im Zusammenhang mit dem Zurücksetzen des Passworts ein.
 
-In the "Password reset e-mail template" fields, provide an e-mail template to be used when the address is known and one to be used when the address is unknown. The link to reset the password might for example be: {host}/apps/devicemanagement/index.html?token={token}.
+Geben Sie in den folgenden beiden Feldern jeweils eine Vorlage für die E-Mails zur Bestätigung der Passwortänderung und für die Einladung zur Aktivierung ein.
 
-In the "E-mail subject" field, provide a subject for all password reset related e-mails.
+> **Info**: Zu verwendende Platzhalter sind: {host}, {tenant-domain}, {token}.
 
-In the following two fields provide an e-mail template to be used on password change confirmation and a template for the invitation e-mail.
+Im Bereich "E-Mail-Server" können Sie "Protokoll", "Host", "Port", "Benutzername", "Passwort" und "Senderadresse" für den E-Mail-Server angeben.
 
->**Info**: Placeholders to be used are: {host}, {tenant-domain}, {token}. 
+![E-Mail-Server konfigurieren](/guides/images/users-guide/administration/admin_ConfigurationServer.png)
 
-In the "E-mail server" section you can provide the "Protocol", "Host", "Port", "Username", "Password" and "Sender Address" for the e-mail server.
+Im Bereich "Datenexport" können Sie den E-Mail-Betreff und die E-Mail-Vorlage für den Datenexport angeben sowie die “Fehlermeldung bei unauthorisierten Benutzern” definieren.
 
-<img src="/guides/images/users-guide/administration/admin_ConfigurationServer.png" alt="Configure e-mail server" style="max-width: 100%">
+![Konfiguration](/guides/images/users-guide/configuration_tab4.png)
 
-In the "Data export" section you can set the e-mail subject and e-mail template for data export and specify the “User unauthorized error message”.
+Im Bereich "Speicherbegrenzung" können Sie den E-Mail-Betreff und die E-Mail-Vorlage für E-Mails festlegen, die gesendet werden, _bevor_ Daten bei Überschreitung der Speicherbegrenzung gelöscht werden und _nachdem_Daten gelöscht wurden.
 
-![Configuration menu1](/guides/images/users-guide/configuration_tab4.png)
+Im Bereich "Sperren von Mandanten" können Sie Einstellungen für E-Mails vornehmen, die gesendet werden, wenn ein Mandant gesperrt wurde.
 
-In the "Storage limit" section you can specify the e-mail subject and e-mail template for emails being send *before* data is removed on exceeding the storage limit and *after* data removal is performed.
+![Sperren von Mandanten](/guides/images/users-guide/administration/admin_ConfigurationSuspended.png)
 
-In the "Suspending tenants" section you can provide settings for emails being send on tenant suspension. 
+Oben können Sie auswählen, ob Sie die E-Mail zum Administrator des gesperrten Mandanten senden möchten und einen weiteren E-Mail-Empfänger angeben. Unten definieren Sie den Betreff und die Vorlage für die E-Mail "Gesperrter Benutzer".
 
-<img src="/guides/images/users-guide/administration/admin_ConfigurationSuspended.png" alt="Suspended tenants" style="max-width: 100%">
+Klicken Sie **Konfiguration peichern**, um Ihre Eingaben zu speichern.
 
-At the top you can select if you want to send the e-mail to the suspended tenant's administrator and specify an additional e-mail receiver. Below you set the subject and template for the tenant suspended e-mail.
-
-Click **Save configuration** to save your settings.
-
->**Info**: Additional features are available for "Management" tenants.
-
+> **Info**: Für "Management-Mandanten sind weitere Funktionalitäten verfügbar.

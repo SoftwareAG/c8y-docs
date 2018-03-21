@@ -1,107 +1,199 @@
----
-order: 30
-title: Using the Data Broker
-layout: redirect
----
+## <a name="data-broker"></a>Data Broker
 
-<a name="data-broker"></a>
-Data broker lets you share data selectively with other tenants. You can share:
+Mit dem Data Broker können Daten gezielt mit anderen Mandanten geteilt werden. Sie können folgenden Daten teilen:
 
-- devices (and more generically, managed objects),
-- events,
-- alarms,
-- measurements.
+*   Geräte (und ganz allgemein Objekte),
+*   Ereignisse,
+*   Alarme,
+*   Messwerte.
 
-Navigate to "Data connectors" if you would like to send data to another tenant. Navigate to "Data subscriptions", if you would like to receive data from another tenant.
+Navigieren Sie zur Seite "Datenkonnektor", wenn Sie anderen Mandanten Daten senden möchten. Navigieren Sie zur Seite "Datenabonnements", wenn Sie von anderen Mandanten Daten erhalten möchten.
 
-<img src="/guides/images/users-guide/data-broker-on-navigator.PNG" alt="Data broker menus" >
+![Data Broker Menü](/guides/images/users-guide/data-broker-on-navigator.PNG)
 
->**Info**: Devices that are forwarded using the data broker are charged like normal devices in the destination tenant.
+> **Info**: Geräte, die über den Data Broker weitergeleitet werden, werden wie normale Geräte im Zielmandanten abgerechnet.
 
-### <a name="data-broker-connectors"></a> Data connectors
+### <a name="data-broker-connectors"></a>Datenkonnektoren
 
-A data connector describes the subset of the data that you would like to send to a destination tenant as well as the URL of that destination tenant.
+Ein Datenkonnektor beschreibt die Daten, die Sie zu einem Zielmandanten senden möchten sowie die URL dieses Mandanten.
 
-<a name="data-broker-connectors-list"></a> **Viewing data connectors**
+<a name="data-broker-connectors-list"></a>**Anzeigen von Datenkonnektoren**
 
-In the "Data connectors" page, you can manage existing data connectors or create new ones. Click "Data connectors" to see a list of all currently defined data connectors with their status.
+Auf der Seite "Datenkonnektor" können Sie bestehende Datenkonnektoren verwalten und neue anlegen. Klicken Sie "Datenkonnektor", um eine Liste mit allen aktuell definierten Datenkonnektoren mit ihrem jeweiligen Status anzuzeigen.
 
-![Data broker connectors list](/guides/images/users-guide/data-broker-connectors-list.PNG)
+![Data Broker Konnektorenliste](/guides/images/users-guide/data-broker-connectors-list.PNG)
 
-For each data connector, the following information is provided:
+Für jeden Datenkonnektor wird die folgenden Information bereitgestellt:
 
-* the data connector's name
-* its destination tenant
-* a description
-* the status
-* the number of filters set for the data connector
+*   der Name des Datenkonnektors
+*   der Zielmandant
+*   eine Beschreibung
+*   der Status
+*   die Anzahl der Filter, die für den Datenkonnektor gesetzt sind
 
-Use the slider to enable and disable data forwarding to the destination tenant. If data is being forwarded, the slider reads "active". If data is not being forwarded, the slider reads "suspended" or "pending". "Suspended" means that you have disabled forwarding. "Pending" means that the destination tenant has disabled forwarding.
+Verwenden Sie den Regler, um das Weiterleiten von Daten an den Zielmandanten zu aktivieren bzw. deaktivieren. Werden Daten weitergeleitet, steht der Regler auf "aktiv". Werden keine Daten weitergeleitet, steht der Regler auf "gesperrt" oder "ausstehend". "Gesperrt" bedeutet, dass Sie das Weiterleiten deaktiviert haben. "Ausstehend" bedeutet, dass der Zielmandant das Weiterleiten deaktiviert hat.
 
-* To modify the data connector's configuration, click the menu icon and from the context menu select **Edit**. The configuration is described in more detail below.
-* Click "**Duplicate** in the context menu to create another data connector with the same configuration.
-* Click **Delete** in the context menu to stop data forwarding and remove the data connector.
+*   Um die Konfiguration für einen Datenkonnektor zu bearbeiten, öffnen Sie das Kontextmenü über das Menüsymbol und wählen Sie **Bearbeiten**. Die Konfiguration wird weiter unten detailliert beschrieben.
+*   Klicken Sie **Duplizieren** im Kontextmenü um einen weiteren Datenkonnektor mit der gleichen Konfiguration zu erstellen.
+*   Klicken Sie **Löschen** im Kontextmenü, um die Datenweiterleitung zu beenden und den Datenkonnektor zu löschen.
 
-<a name="data-broker-connector-edit"></a> **Creating or editing data connectors**
+<a name="data-broker-connector-edit"></a>**Erstellen und Bearbeiten von Datenkonnektoren**
 
-Click **Add data connector** in the top menu bar to create a new data connector.
+Klicken Sie **Datenkonnektor hinzufügen**in der oberen Menüleiste, um einen neuen Datenkonnektor zu erstellen.
 
-![Data broker edit connector](/guides/images/users-guide/data-broker-edit-connector.PNG)
+![Konnektor bearbeiten](/guides/images/users-guide/data-broker-edit-connector.PNG)
 
-To create a new data connector provide the following information:
+Stellen Sie folgende Informationen bereit, um einen Datenkonnektor zu bearbeiten:
 
-|Field|Description|
-|:---|:---|
-|Title|The name of the data connector.
-|Target URL for data connector|The URL of the tenant to which data will be forwarded. Once saved, you cannot edit this value anymore.
-|Description|A textual description of the configuration. Both the name and the description will be visible on the destination side after accepting the subscription.
-|Data filters|A set of filters that define what is copied to the destination. You need to configure at least one filter.
+<table>
 
-Each data filter contains the following information:
+<thead>
 
-|Field|Description|
-|:---|:---|
-|Group or device|The group or device that is forwarded. Selecting a group here results in all sub-groups and sub-devices being forwarded. By default, all data is forwarded.
-|API|The type of data being forwarded (alarms, events, measurements, manages objects).
-|Fragments to filter|The fragments that need to be present in a device to be forwarded.
-|Fragments to copy|The fragments that are copied to the destination. If nothing is specified here, only standard properties of managed objects, alarms, events and measurements are forwarded (see below). Select **Copy all fragments** to forward the entire object.
-|Type filter|Forwarded data needs to have this value in its "type" property.
+<tr>
 
-The heading of a data filter summarizes the configuration in one line. The standard properties that are copied by default are:
+<th style="text-align: left">Feld</th>
 
-* **For created alarms**: type, text, time, severity, status.
-* **For updated alarms**: status, text, severity.
-* **For created events**: type, text, time.
-* **For created measurements**: type, text, time
-* **For created and updated devices**: type, name, c8y&#95;IsBinary, c8y&#95;IsDeviceGroup, c8y&#95;IsDevice, c8y&#95;DeviceGroup, c8y&#95;DeviceSubgroup, c8y&#95;SmartRule, c8y&#95;applications&#95;storage, c8y&#95;DynamicGroup, c8y&#95;DeviceQueryString.
+<th style="text-align: left">Beschreibung</th>
 
-Once you have configured your data connector, click **Save** to save the configuration. 
+</tr>
 
-After saving, you will see a security code displayed below your configuration. The security code prevents unintended forwarding of data. You need to communicate this security key separately to an administrative user of the destination tenant. You can use the icon next to the security code to copy the code to your clipboard.
+</thead>
 
-![Security code](/guides/images/users-guide/securitycode.png)
+<tbody>
 
-### <a name="data-broker-subscriptions"></a> Data subscriptions
+<tr>
 
-In the "Data subscriptions" page, you can manage existing data subscriptions or create new ones. 
+<td style="text-align: left">Titel</td>
 
-Click "Data subscriptions" to see a list of all currently defined data forwarded to your tenant. 
+<td style="text-align: left">Name des Datenkonnektors</td>
 
-<img src="/guides/images/users-guide/Administration/Admin_Subscriptions.png" alt="Data subscriptions" >
+</tr>
 
-For each subscription, the name, the target tenant and the status (enabled or disabled) is provided on a card.
+<tr>
 
-Use the slider to temporarily stop forwarding data into your tenant.
+<td style="text-align: left">Ziel-URL für den Datenkonnektor</td>
 
-To stop data forwarding and remove the data connector, click the menu icon and from the context menu select **Delete**.
+<td style="text-align: left">URL des Mandanten, zu dem Daten weitergeleitet werden. Dieser Wert kann nach dem Speichern nicht mehr geändert werden.</td>
 
-**How to set up data forwarding on the receiving end**
+</tr>
 
-1. Click **Add data subscription** in the top menu bar to receive data. 
-2. In the new card, enter the security code that you received from the sending end of the data.
-3. When the connection is established, click **Accept** to start forwarding data into your tenant. The subscription is active now.
-4. You can move the slider in the card to temporarily stop forwarding data into your tenant.
+<tr>
 
-You can now navigate to the Device Management application or the Cockpit application. There will be a new "virtual group" with a specific icon (see the screenshot below) showing the forwarded devices. The group will have the same name as your subscription. Devices are "lazily" created on the destination side whenever they send data for the first time after setting up an active subscription.
+<td style="text-align: left">Beschreibung</td>
 
-![Data broker group in cockpit app](/guides/images/users-guide/data-broker-group-created.PNG)
+<td style="text-align: left">Beschreibung der Konfiguration Sowohl der Name als auch die Beschreibung sind auf der Zielseite sichtbar, nachdem das Abonnement angenommen wurde.</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align: left">Datenfilter</td>
+
+<td style="text-align: left">Ein oder mehrere Filter, die definieren, was zum Ziel kopiert wird. Sie müssen mindestens einen Filter konfigurieren.</td>
+
+</tr>
+
+</tbody>
+
+</table>
+
+Jeder Datenfilter enthält die folgenden Informationen:
+
+<table>
+
+<thead>
+
+<tr>
+
+<th style="text-align: left">Feld</th>
+
+<th style="text-align: left">Beschreibung</th>
+
+</tr>
+
+</thead>
+
+<tbody>
+
+<tr>
+
+<td style="text-align: left">Gruppe oder Gerät</td>
+
+<td style="text-align: left">Die Gruppe oder das Gerät, die/das weitergeleitet wird. Wird hier eine Gruppe ausgewählt, werden alle Untergruppen und Untergeräte ebenfalls weitergeleitet. Standardmäßig werden alle Daten weitergeleitet.</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align: left">API</td>
+
+<td style="text-align: left">Der Datentyp, der weitergeleitet wird (Alarme, Ereignisse, Messwerte, Objekte).</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align: left">Zu filternde Fragmente</td>
+
+<td style="text-align: left">Fragmente,die in einem Gerät vorhanden sein müssen, damit dieses weitergeleitet wird.</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align: left">Zu kopierende Fragmente</td>
+
+<td style="text-align: left">Fragmente, die zum Ziel kopiert werden. Wenn hier nichts angegeben wird, werden nur die Standardattribute wie Objekte, Alarme, Ereignisse und Messwerte weitergeleitet (siehe unten). Wählen Sie **Alle Fragmente kopieren**, um das gesamte Objekt weiterzuleiten.</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align: left">Type-Filter</td>
+
+<td style="text-align: left">Weitergeleitete Daten müssen diesen Wert in ihrem "Type"-Attribut haben.</td>
+
+</tr>
+
+</tbody>
+
+</table>
+
+Die Kopfzeile eines Datenfilters fasst die Konfiguration in einer Zeile zusammen. Die Attribute, die standardmäßig kopiert werden, sind:
+
+*   **Für erzeugte Alarme**: type, text, time, severity, status.
+*   **Für aktualisierte Alarme**: status, text, severity.
+*   **Für erzeugte Ereignisse**: type, text, time.
+*   **Für erzeugte Messwerte**: type, text, time.
+*   **Für erstellte und aktualisierte Geräte**: type, name, c8y_IsBinary, c8y_IsDeviceGroup, c8y_IsDevice, c8y_DeviceGroup, c8y_DeviceSubgroup, c8y_SmartRule, c8y_applications_storage, c8y_DynamicGroup, c8y_DeviceQueryString.
+
+Wenn Sie den Datenkonnektor konfiguriert haben, klicken Sie **Speichern**, um die Konfiguration zu speichern.
+
+Nach dem Speichern wird ein Sicherheitscode unter der Konfiguration angezeigt. Dieser Sicherheitscode verhindert unbeabsichtigtes Weiterleiten von Daten. Sie müssen diesen Sicherheitscode getrennt einem Benutzer mit Administrationsrechten für den Zielmandanten mitteilen. Über das Symbol neben dem Sicherheitscode können Sie diesen in Ihr Clipboard kopieren.
+
+![Sicherheitscode](/guides/images/users-guide/securitycode.png)
+
+### <a name="data-broker-subscriptions"></a>Datenabonnements
+
+Auf der Seite "Datenabonnements" können Sie bestehende Datenabonnements verwalten und neue anlegen.
+
+Klicken Sie "Datenabonnements", um eine Liste mit allen aktuell zu Ihrem Mandanten weitergeleiteten Daten anzuzeigen.
+
+![Datenabonnements](/guides/images/users-guide/Administration/Admin_Subscriptions.png)
+
+Für jedes Abonnement wird der Name, der Zielmandant und der Status (aktiviert oder deaktiviert) auf einer Karte bereitgestellt.
+
+Verwenden Sie den Regler, um zeitweilig das Weiterleiten von Daten in Ihren Mandanten zu beenden.
+
+Um das Weiterleiten von Daten ganz zu beenden und den Datenkonnektor zu entfernen, klicken Sie auf das Menüsymbol und wählen Sie im Kontextmenü **Löschen**.
+
+**Wie Sie die Datenweiterleitung auf der Empfängerseite einrichten können**
+
+1.  Klicken Sie **Datenabonnement hinzufügen**in der oberen Menüleiste, um Daten zu empfangen.
+2.  Geben Sie in der neuen Karte den Sicherheitscode ein, den Sie vom Sender der Daten erhalten haben.
+3.  Wenn die Verbindung hergestellt ist, klicken Sie **Annehmen**, um das Weiterleiten in Ihren Mandanten zu starten. Das Abonnement ist nun aktiv.
+4.  Verwenden Sie den Regler in der Karte, um zeitweilig das Weiterleiten von Daten in Ihren Mandanten zu beenden.
+
+Navigieren Sie nun zur Device Management- oder Cockpit-Anwendung. Dort gibt es eine neue "virtuelle Gruppe" mit einem speziellen Symbol (siehe Abbildung unten), die die weitergeleiteten Geräte anzeigt. Diese Gruppe hat denselben Namen wie das Abonnement. Geräte werden auf der Empfängerseite verzögert erstellt, sobald sie, nach Einrichten eines aktiven Abonnements, das erste mal Daten senden.
+
+![Data Broker-Gruppe in Cockpit-Anwendung](/guides/images/users-guide/data-broker-group-created.PNG)

@@ -1,175 +1,242 @@
----
-order: 10
-title: Managing tenants
-layout: redirect
----
+## <a name="tenants"></a>Verwalten von Mandanten
 
-<a name="tenants"></a>
-If you are a service provider or subscribed to the Enterprise Edition of Cumulocity, you may want to manage your own subtenants. 
+Wenn Sie Service Provider sind oder die Enterprise Edition von Cumulocity nutzen, möchten Sie eventuell eigene Mandanten verwalten.
 
-The tenants functionality allows you to create subtenants, subscribe them to the applications that you have available and potentially deactivate tenants if they are not in use anymore.
+Die Mandantenverwaltung ermöglicht es Ihnen, eigene Untermandanten zu erstellen und zu verwalten, und ihnen Zugriff auf Ihre Anwendungen zu gewähren.
 
-> **Important**: There is an major difference between providing several tenants and providing several users with different permissions within a single tenant. Tenants are physically separated data spaces with a separate URL, with own users, a separate application management and no sharing of data by default. Users in a single tenant by default share the same URL and the same data space. So if your users, for example, are separate customers of yours and you need to strictly separate them because they may be competitors, we strongly recommend you to do so by working with tenants.
+> Wichtig: Es besteht ein entscheidender Unterschied zwischen mehreren Mandanten einerseits und mehreren Benutzern mit verschiedenen Berechtigungen innerhalb eines Mandanten andererseits. Mandanten sind physikalisch getrennte Datenbereiche mit einer eigenen URL, eigenen Benutzern einer eigenen Anwendungsverwaltung und ohne Datenteilung. Benutzer eines Mandanten teilen sich standardmäßig dieselbe URL und denselben Datenbereich. Sollte es sich bei Ihren Benutzern also etwa um verschiedene Kunden handeln, die streng getrennt gehalten werden müssen, da es sich eventuell sogar um Mitbewerber handelt, empfehlen wir dringend, mit verschiedenen Mandanten zu arbeiten.
+> 
+> **Info**: Wenn Sie diese Funktion verwenden möchten, wenden Sie sich bitte an sales@cumulocity.com.
 
->**Info**: If you would like to use this feature, please contact sales@cumulocity.com.
+Um die Mandantenfunktionalität nutzen zu können, muss Ihr Benutzer über die entsprechenden Berechtigungen verfügen. Informationen zum Bearbeiten von Berechtigungen finden sie unter [Erstellen und Bearbeiten von Rollen](/guides/users-guide/user-and-permissions-management#create-edit-roles) im Abschnitt _Benutzer- und Berechtigungsverwaltung_. Da es sich bei der Bearbeitung von Mandanten um ein sensibles Verfahren handelt, sind die entsprechenden Berechtigungen granularer:
 
-To be able to use the tenant functionality, your user needs to have the appropriate permissions. See [Creating and editing global roles](/guides/images/users-guide/user-and-permissions-management#create-edit-roles) for information on editing permissions. Since editing tenants is a sensitive operation, permissions for editing tenants are more granular:
+*   Read: Durchsuchen und Ansehen von Mandanten.
+*   Create: Erstellen neuer Mandanten.
+*   Update: Bearbeiten von Mandanten (einschließlich Abonnements) und Sperren oder Aktivieren von Mandanten.
+*   Change: Erstellen, Bearbeiten und Löschen von Mandanten
 
-- Read: Browse and view tenants.
-- Create: Create new tenants.
-- Update: Edit tenants (incl. subscriptions) and suspend or activate them.
-- Change: Create, edit and delete tenants.
+### Anzeigen von Untermandanten
 
-### Viewing subtenants
+Klicken Sie "Untermandanten" im Menü "Mandanten", um eine Liste aller Untermandanten in Ihrem Konto anzuzeigen.
 
-Click "Subtenants" in the "Tenants" menu to view a list of all subtenants available in your account.
+Die "Mandanten"-Seite zeigt die folgenden Informationen für jeden Untermandanten an:
 
-The "Tenants" page provides the following information on each subtenant:
+*   Name des Untermandanten, z.B. Name des Unternehmens Ihres Kunden.
+*   ID und Domain. Beim Erstellen des Mandanten wird die ID zum ersten Teil der URL. Wenn Sie beispielsweise einen Mandanten mit der ID "acme" auf cumulocity.com erstellen, lautet die URL des Mandanten "acme.cumulocity.com". Beachten Sie, dass Sie, nachdem der Mandant einmal erstellt wurde, zwar die URL später ändern können, nicht aber die ID.
+*   Optionaler Kontaktname und Telefonnummer.
+*   Das Erstellungsdatum für den Mandanten.
+*   Status des Mandanten, entweder aktiv (angezeigt durch ein grünes Häkchen) oder gesperrt (angezeigt durch ein rotes Kreuz).
 
-* The name of the subtenant, e.g. company name of your customer.
-* The ID and domain. When creating tenants, the ID gets the first part of the URL. For example, if you create a tenant with the ID "acme" on cumulocity.com, the tenant's URL will be "acme.cumulocity.com". Note, that while you can change the URL later on, you cannot change the ID anymore after the tenant was created.
-* An optional contact name and phone number.
-* The date when the tenant was created.
-* The status of the tenant, either active (indicated by a green checkmark icon) or suspended (indicated by a red cross icon).
+Wenn Sie den Management-Mandanten verwenden, sehen Sie eine weitere Spalte "Übergeordneter Mandant". Die Spalte zeigt den Mandanten an, der den aktuellen Mandanten erstellt hat.
 
-If you are using the management tenant, you will see an additional column "Parent tenant". This column shows the tenant that created the listed tenant.
+![Untermandanten](/guides/users-guide/administration/Admin_Subtenants.png)
 
-![Sub-tenants](/guides/images/users-guide/administration/Admin_Subtenants.png)
+### <a name="creating-tenants"></a>Erstellen von Untermandanten
 
-### <a name="creating-tenants"></a>Creating sub-tenants
+Um einen neuen Mandanten zu erstellen, klicken Sie **Mandanten erstellen** rechts oben in der Menüleiste. Geben Sie für den neuen Mandanten folgende Attribute an:
 
-To add a new tenant, click **Create tenant** at the right of the top menu bar. To create a tenant, provide the following properties:
+<table>
 
-|Field|Description
-|:--------|:-----
-|Domain/ URL|Enter a unique ID as the first part of the URL. For example, if you enter "acme" as ID on cumulocity.com, the tenant's URL will be "acme.cumulocity.com". You can only use one subdomain level. For example, you can only use "acme.cumulocity.com" on cumulocity.com. You cannot use "mycustomer.acme.cumulocity.com". This is not permitted by the TLS standard. 
-|Name|The name of the tenant, e.g. the company's name.
-|Administrator's email|You must provide a valid email address to enable users to reset their password.
-|Administrator's username|Username for the administrator of this tenant.
-|Contact name|Optional name of the contact.
-|Contact phone|Optional phone number of the contact.
-|Send password reset link as email|Selected by default. If you deselect this option, you need to provide a password and confirm the password (see [Getting Started > Logging in](/guides/images/users-guide/overview#login) for more information on password strength).
-|Tenant policy|You may select a tenant policy to be applied to the tenant from the dropdown list.
+<thead>
 
-Note, that fields with an asterisk * are mandatory.
+<tr>
 
-Click **Save** to apply your settings.
+<th style="text-align: left">Feld</th>
 
-When the tenant is created, it is automatically provisioned with a first, administrative user ("Administrator's username"). This administrator can create other users and set their permissions. The first user cannot be deleted to prevent you from locking yourself out. 
+<th style="text-align: left">Beschreibung</th>
 
-From the management tenant, you can enable other tenants to create subtenants. To do so, check "Allow creation of subtenants".
+</tr>
 
-![Tenant-creation](/guides/images/users-guide/createtenant.png)
+</thead>
 
-### Editing subtenant properties
+<tbody>
 
-To edit subtenants, click on the desired subtenant or click **Edit** in the context menu, accessible through the menu icon.
+<tr>
 
-In the "Properties" tab, all fields are editable except of the ID and the administrator's username. For details on the fields, refer to [Creating sub-tenants](#creating-tenants).
+<td style="text-align: left">Domain/ URL</td>
 
-### Subscribing to applications
+<td style="text-align: left">Geben Sie eine eindeutige ID als ersten Teil der URL ein. Wenn Sie beispielsweise "acme" als ID auf cumulocity.com eingeben, lautet die URL des Mandanten "acme.cumulocity.com". Sie können nur eine Subdomain-Ebene verwenden. Sie können zum Beispiel nur "acme.cumulocity.com"auf cumulocity.com verwenden. Sie können aber nicht "mycustomer.acme.cumulocity.com" wählen. Dies wird vom TLS-Standard nicht unterstützt.</td>
 
-In the "Applications" tab you can subscribe tenants to applications or remove the applications from the tenant. By default, tenants will be subscribed to the standard Cumulocity applications. 
+</tr>
 
-<img src="/guides/images/users-guide/administration/Admin_SubtenantApplications.png" alt="Subscribe tenant" style="max-width: 100%">
+<tr>
 
-To subscribe an application to a tenant, hover over the applications under "Available applications" on the right and click **Subscribe** on the desired application.
+<td style="text-align: left">Name</td>
 
-To remove an application, hover over the applications under "Subscribed applications" on the left and click **Unsubscribe**.
+<td style="text-align: left">Name des Mandanten, z. B. Name des Unternehmens.</td>
 
-### Suspending subtenants
+</tr>
 
-You can temporarily suspend tenants. Suspending tenants blocks any access to this tenant, regardless whether the access is from devices, users or other applications. 
+<tr>
 
-To suspend a tenant, click the menu icon and from the context menu select **Suspend**.
+<td style="text-align: left">E-Mail des Administrators</td>
 
-In the upcoming dialog confirm the suspension by clicking **Ok** and entering your password. The tenant will be shown with a red cross icon. As part of suspending the tenant, an email is sent to the tenant administrator if an email address is configured for that administrator.
+<td style="text-align: left">Sie müssen eine gültige E-Mail-Adresse angeben, damit Benutzer ihr Passwort ändern können.</td>
 
->**Info**: If you are a service provider, you can suppress this email.
+</tr>
 
-![Suspend tenant](/guides/images/users-guide/suspendtenant.png)
+<tr>
 
-If a tenant is suspended, the tenant's data remains in the database and can be made available any time later. To do so, click **Activate**.
+<td style="text-align: left">Benutzername des Administrators</td>
 
-### Deleting subtenants
+<td style="text-align: left">Benutzername des Administrators dieses Mandanten.</td>
 
-To finally delete a tenant and remove all the data of the tenant, click the menu icon and from the context menu select **Remove**.
+</tr>
 
->**Info**: This action cannot be reverted. For security reasons, it is only available in the management tenant.
+<tr>
 
-### <a name="tenants-custom-properties"></a>Editing custom properties
+<td style="text-align: left">Kontaktname</td>
 
-The "Custom properties" tab allows you to view and modify values of custom properties, either predefined ones (like "External reference") or those defined in the [Properties library](#properties). Such properties are also displayed as columns in [usage statistics table](#usage-stats-custom-properties).
+<td style="text-align: left">Optionaler Name des Ansprechpartners.</td>
 
-![Custom Properties](/guides/images/users-guide/subtenant-custom-properties.PNG)
+</tr>
 
-### <a name="usage-stats"></a> Retrieving usage statistics
+<tr>
 
-The "Usage statistics" page provides statistical information on each subtenant. 
+<td style="text-align: left">Telefonnummer</td>
 
-The following information is provided for each tenant:
+<td style="text-align: left">Optionale Telefonnummer des Ansprechpartner.</td>
 
-- ID: ID of the subtenant
-- API requests: Total number of API requests, including requests from  devices and applications.
-- Device API requests: Number of API requests from devices.
-- Storage (MB): Amount of data stored in your account.
-- Root Devices: The amount of devices excluding child devices.
-- Devices: Total number of devices connected to the subtenant.
-- Subscribed applications: Number of applications that the subtenant is subscribed to.
-- Creation time: The date and time of the creation of the subtenant.
-- Parent: The name of parent tenant (available only for management tenant).
-- External reference: This field is for individual usage, for example, you can add a link to the CRM system here or an internal customer number.
+</tr>
 
-Moreover custom properties are displayed, if configured. 
+<tr>
 
-Custom properties may be defined in the [Properties Library](#properties) and then set their values in the [Custom properties](#tenants-custom-properties) tab of the tenant.
+<td style="text-align: left">Link zum Zurücksetzen des Passworts als E-Mail senden</td>
 
-![Usage statistics](/guides/images/users-guide/usage-statistics-list.PNG)
+<td style="text-align: left">Standardmäßig ausgewählt. Wenn Sie diese Option deaktivieren, müssen Sie eine Passwort bereitstellen und dieses bestätigen (weitere Informationen zur Passwortstärke finden Sie unter "[Anmelden](/guides/users-guide/overview#login)" im Abschnitt _Einführung_).</td>
 
-You can filter the usage statistics list for a time period by adding the start and end date in the top menu bar and click **Filter**. You can also filter and sort the list on any column by clicking the filter icon next to the column name and providing the filtering criteria. For details on filtering, refer to [Getting Started > Features and Functionalities > Filtering](/guides/images/users-guide/overview#filtering). 
+</tr>
 
-Click Export CSV at the right of the top menu bar to export the current view of the statistics table to a CSV file. A dialog will come up in which you can customize the CSV output.
+<tr>
 
-<img src="/guides/images/users-guide/usage-statistics-export.PNG" style="width:400px;"></img>
+<td style="text-align: left">Mandantenregel</td>
 
+<td style="text-align: left">Sie können eine Mandantenregel aus der Dropdown-Liste auswählen, die auf den Mandanten angewendet werden soll.</td>
 
-### <a name="tenant-policies"></a> Tenant policies
+</tr>
 
-A tenant policy is a set of tenant options and retention rules. Tenant options and retention rules may be specified during tenant creation. 
+</tbody>
 
-Creating a tenant policy with a specific set of options and rules saves time when creating multiple tenants with the same settings.
+</table>
 
-![Tenant policy](/guides/images/users-guide/tenantpolicy.png)
+Felder, die mit einem Sternsymbol * gekennzeichnet sind, sind Pflichtfelder.
 
->**Info**: The options and rules are copied into the tenant. Editing the policy has no effect on tenants that have already been created.
+Klicken Sie **Speichern**, um Ihre Eingaben zu speichern.
 
-Click "Tenant policies" in the "Tenants" menu to view all tenant policies available.
+Nachdem der Mandant erstellt wurde, wird er automatisch mit einem ersten Administrator-Benutzer ("Benutzername des Administrators") eingerichtet. Dieser Administrator kann andere Benutzer erstellen und Berechtigungen vergeben. Der erste Benutzer kann nicht gelöscht werden, um ein Aussperren zu verhindern.
 
-<img src="/guides/images/users-guide/administration/admin_TenantPolicies.png" alt="Tenant policies" style="max-width: 100%">
+Vom Management-Mandanten aus können Sie anderen Mandanten erlauben, Untermandanten zu erstellen. Selektieren Sie dazu "Erstellen von Untermandanten zulassen".
 
-For each tenant policy, the name, an optional description and the number of options and retention rules is provided, either in a list or a grid.
+![Mandantenerstellung](/guides/users-guide/createtenant.png)
 
-### Adding a tenant policy
+### Bearbeitung von Untermandanten-Attributen
 
-Click **Add tenant policy** in the top menu bar to create a new tenant policy.
+Klicken Sie auf einen Untermandanten, um diesen zu bearbeiten oder klicken Sie **Bearbeiten** im Kontextmenü, auf das Sie über das Menüsymbol zugreifen können.
 
-![Add new policy](/guides/images/users-guide/addpolicy.png)
- 
-2. Enter a name and an optional description. 
-3. Add at least one retention rule. For details on creating retention rules, refer to [Administration > Retention rules](/guides/images/users-guide/administration#retention-rules).
-4. Optionally, add a tenant option.
-5. Click **Save** to save your settings.
+In der Registerkarte "Attribute" können alle Felder außer der ID und des Benutzernamens des Administrators bearbeitet werden. Details zu den einzelnen Feldern finden Sie unter [Erstellen von Untermandanten](#creating-tenants).
 
-### Editing, duplicating and deleting policies
+### <a name="subscribing"></a>Abonnieren von Anwendungen
 
-To edit a policy, click on the desired policy or click **Edit** in the context menu, accessible through the menu icon. 
+In der Registerkarte "Anwendungen" können Sie Anwendungen für Mandanten abonnieren oder entfernen. Standardmäßig werden für einen Mandanten die Standardanwendungen von Cumulocity abonniert.
 
-To change the name of a policy, click the name in the top bar, modify it and click the green checkmark icon to save your changes.
+![Anwendung abonnieren](/guides/users-guide/administration/Admin_SubtenantApplications.png)
 
-To delete a retention rule or a tenant option from a policy, hover over it and click the delete icon.
+Um eine Anwendung für einen Mandanten zu abonnieren, bewegen Sie den Mauszeiger über die Anwendungen unter "Verfügbare Anwendungen" auf der rechten Seite und klicken Sie bei der gewünschten Anwendung **Abonnieren**.
 
-To duplicate a policy, click the menu icon and from the context menu select **Duplicate**.
+Um eine Anwendung zu löschen, bewegen Sie den Mauszeiger über die Anwendungen unter "Abonnierte Anwendungen" auf der linken Seite und klicken Sie bei der gewünschten Anwendung **Abbestellen**.
 
-To delete a policy, click the menu icon and from the context menu select  **Delete**.
+### Sperren von Untermandanten
 
-![Edit policy menu](/guides/images/users-guide/editpolicy.png)
+Sie können Mandanten zeitweilig sperren. Das Sperren eines Mandanten verhindert jeglichen Zugriff auf diesen Mandanten, unabhängig davon, ob der Zugriff über eine Gerät, einen Benutzer oder eine andere Anwendung erfolgt.
+
+Um einen Mandanten zu sperren, klicken Sie auf das Menüsymbol und wählen Sie im Kontextmenü **Entfernen**.
+
+Bestätigen Sie im folgenden Dialogfenster das Sperren, indem Sie **Ok** klicken und Ihr Passwort eingeben Der Mandant wird durch ein rotes Kreuzsymbol als gesperrt gekennzeichnet. Außerdem wird eine E-Mail an den Administrator des Mandanten gesendet, wenn eine entsprechende E-Mail-Adresse konfiguriert ist.
+
+> **Info**: Als Service Provider können Sie diese E-Mail unterdrücken.
+
+![Sperren eines Mandanten](/guides/users-guide/suspendtenant.png)
+
+Ist ein Mandant gesperrt, bleiben die Daten des Mandanten in der Datenbank und stehen jederzeit wieder zur Verfügung. Klicken Sie **Aktivieren**, um die Daten wiederherzustellen.
+
+### Löschen von Untermandanten
+
+Um einen Untermandanten und alle seine Daten endgültig zu löschen, klicken Sie auf das Menüsymbol und wählen Sie im Kontextmenü **Löschen**.
+
+> **Info**: Dieser Vorgang kann nicht rückgängig gemacht werden. Aus Sicherheitsgründen ist er daher nur im Management-Mandanten möglich.
+
+### <a name="tenants-custom-properties"></a>Bearbeitung von benutzerdefinierten Attributen
+
+Die Registerkarte "Benutzerdefinierte Attribute" ermöglicht Ihnen das Anzeigen und Ändern von Werten von benutzerdefinierten Attributen, sowohl vordefinierten (wie "Externe Referenz") als auch denen, die in der ["Attributsbibliothek"](#properties) definiert sind. Solche Attribute werden auch als Spalten in der [Benutzungsstatistiktabelle](#usage-stats-custom-properties) angezeigt.
+
+![Benutzerdefinierte Attribute](/guides/users-guide/subtenant-custom-properties.PNG)
+
+### <a name="usage-stats"></a>Nutzungsstatistiken abrufen
+
+Die "Nutzungsstatistiken"-Seite zeigt statistische Informationen für jeden Untermandanten an.
+
+Die folgenden Informationen werden für jeden Untermandanten angezeigt:
+
+*   ID: ID des Untermandanten
+*   API-Anfragen: Gesamtanzahl der API-Anfragen, einschließlich Anfragen von Geräten und Anwendungen.
+*   API-Anfragen: Anzahl der API-Anfragen von Geräten.
+*   Speicher: Gespeicherte Daten in Ihrem Konto.
+*   Hauptgeräte: Anzahl der Geräte ohne Kindgeräte.
+*   Geräte: Die Gesamtanzahl der mit dem Untermandanten verbundenen Geräte.
+*   Abonnierte Anwendungen: Anzahl der vom Untermandanten abonnierten Anwendungen.
+*   Erstellungszeitpunkt: Datum und Zeit der Erstellung des Untermandanten.
+*   Übergeordneter Mandant: Name des übergeordneten Mandanten (nur vorhanden für den Management-Mandanten).
+*   Externe Referenz: Dieses Feld ist für den individuellen Gebrauch. Sie können hier beispielsweise einen Link zum CRM-System oder eine interne Kundennummer einfügen.
+
+Außerdem werden benutzerdefinierte Attribute angezeigt, falls vorhanden.
+
+Benutzerdefinierte Attribute können in der ["Attributsbibliothek"](#properties) definiert werden. Anschließend können entsprechende Werte in der Registerkarte ["Benutzerdefinierte Attribute"](#tenants-custom-properties) des Mandanten eingestellt werden.
+
+![Nutzungsstatistiken](/guides/users-guide/usage-statistics-list.PNG)
+
+Sie können die Liste der Nutzungsstatistiken nach einem bestimmten Zeitraum filtern, indem Sie einen Start- und einen Endzeitpunkt in der oberen Menüleiste eingeben und **Filter** klicken. Sie können außerdem die Liste nach jeder Spalte filtern und und sortieren, indem Sie auf das Filtersymbol neben dem Namen der entsprechenden Spalte klicken und die Filterkriterien eingeben. Weitere Informationen zur Filterfunktionalität finden Sie unter [Filtern](/guides/users-guide/overview#filtering) im Abschnitt Getting Started.
+
+Klicken Sie **Export CSV** rechts oben in der Menüleiste, um die aktuelle Ansicht der Statistikentabelle als CSV-Datei zu exportieren. Im folgenden Fenster können Sie die CSV-Ausgabe anpassen.
+
+![](/guides/users-guide/usage-statistics-export.PNG)
+
+### <a name="tenant-policies"></a>Mandantenregeln
+
+Eine Mandantenregel ist eine Menge von Mandantenoptionen und Datenhaltungsregeln. Mandantenoptionen und Datenhaltungsregeln können während der Erstellung eines Mandanten konfiguriert werden.
+
+Das Erstellen einer Mandantenregel mit bestimmten Optionen und Regeln spart Zeit bei der Erstellung verschiedener Mandanten mit den gleichen Einstellungen.
+
+![Mandantenregel](/guides/users-guide/tenantpolicy.png)
+
+> **Info**: Die Optionen und Regeln werden in den Mandanten kopiert. Änderungen an der Regel haben keine Auswirkungen auf bereits erstellte Mandanten.
+
+Klicken Sie "Mandantenregeln" im Menü "Mandanten", um alle verfügbaren Regeln anzuzeigen.
+
+![Mandantenregeln](/guides/users-guide/administration/admin_TenantPolicies.png)
+
+Für jede Mandantenregel wird der Name, eine optionale Beschreibung und die Anzahl der Optionen und Datenerhaltungsregeln angezeigt, wahlweise in Listen- oder Gitteransicht.
+
+### Hinzufügen einer Mandantenregel
+
+Klicken Sie **Mandantenregel hinzufügen**in der oberen Menüleiste, um eine neue Mandantenregel zu erstellen.
+
+![Neue Regel hinzufügen](/guides/users-guide/addpolicy.png)
+
+1.  Geben Sie einen Namen und optional eine Beschreibung ein.
+2.  Geben Sie mindestens eine Datenerhaltungsregel ein. Weitere Informationen zur Erstellung von Datenerhaltungsregeln finden Sie unter [Datenerhaltungsregeln](#retention-rules).
+3.  Geben Sie optional eine Mandantenoption ein.
+4.  Klicken Sie **Speichern**, um Ihre Eingaben zu speichern.
+
+### Bearbeiten, Duplizieren und Löschen von Regeln
+
+Klicken Sie auf eine Regel, um diesen zu bearbeiten oder klicken Sie **Bearbeiten** im Kontextmenü, auf das Sie über das Menüsymbol zugreifen können.
+
+Um den Namen einer Regel zu ändern, klicken Sie auf den Namen in der oberen Leiste, ändern Sie den Namen und klicken Sie das grüne Häckchen-Symbol, um Ihre Änderungen zu speichern.
+
+Um eine Datenerhaltungsregel oder eine Mandantenoption aus einer Regel zu entfernen, bewegen Sie den Mauszeiger darüber und klicken Sie das Löschen-Symbol.
+
+Um eine Regel zu duplizieren, klicken Sie auf das Menüsymbol und wählen Sie im Kontextmenü **Duplizieren**.
+
+Um eine Regel zu löschen, klicken Sie auf das Menüsymbol und wählen Sie im Kontextmenü **Löschen**.
+
+![Regeln bearbeiten](/guides/users-guide/editpolicy.png)

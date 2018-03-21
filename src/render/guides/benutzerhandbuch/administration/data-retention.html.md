@@ -13,7 +13,7 @@ Datenhaltungsregeln werden üblicherweise während der Nacht ausgeführt. Wenn S
 
 Klicken Sie "Datenhaltungsregeln" im Menü "Verwaltung", um eine Liste aller Datenhaltungsregeln in Ihrem Konto anzuzeigen.
 
-![Datenhaltungsregeln](/guides/users-guide/Admin_RetentionRules.png)
+![Datenhaltungsregeln](/guides/images/users-guide/Admin_RetentionRules.png)
 
 Für jede Regel wird der Name, Details zu den Daten, die gelöscht werden sollen (Fragmenttyp, Typ und Quelle, siehe unten) und die maximale Anzahl an Tagen angezeigt.
 
@@ -23,7 +23,7 @@ Das Sternsymbol ("*") zeigt an, dass alle Daten, unabhängig vom jeweiligen Wert
 
 Um eine Datenhaltungsregel hinzuzufügen, klicken Sie **Regel hinzufügen** in der oberen Menüleiste.
 
-![Datenhaltungsregel hinzufügen](/guides/benutzerhandbuch/Admin_AddRule.png)
+![Datenhaltungsregel hinzufügen](/guides/images/benutzerhandbuch/Admin_AddRule.png)
 
 > **Info:** Standardmäßig ist in allen Feldern außer im Feld "Maximales Alter" ein Sternsymbol ("*") gesetzt, um alle Werte einzuschließen.
 
@@ -47,7 +47,7 @@ Die angezeigten Dateien können aus verschiedenen Quellen stammen. Es kann sich 
 
 Für jede Datei wird der Name, sein Eigentümer, der Dateityp (z. B. image/bmp, text/csv), die Dateigröße und das Datum der letzten Aktualisierung angezeigt.
 
-![Dateiablage](/guides/benutzerhandbuch/Admin_FilesRepository.png)
+![Dateiablage](/guides/images/benutzerhandbuch/Admin_FilesRepository.png)
 
 Um eine Datei von Ihrem Computer hochzuladen, klicken Sie in der oberen Menüleiste auf **Datei hochladen**.
 

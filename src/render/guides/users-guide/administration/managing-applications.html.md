@@ -16,7 +16,7 @@ You manage your own application under "Own applications", accessible through the
 
 In the "Own applications" page you will find a list of your own applications in your account.
 
-<img src="/guides/images/users-guide/administration/Admin_OwnApplications.png" alt="Own applications" style="max-width: 100%">
+<img src="/guides/images/users-guide/Administration/Admin_OwnApplications.png" alt="Own applications" style="max-width: 100%">
 
 Click the menu icon at the top right of an application to open a context menu from where you can [**Edit** or **Remove**](#editing-and-removing) an application. 
 
@@ -55,7 +55,7 @@ To add an application, click **Add application** in the "Own applications" page.
 * using an external application, which links to an application running elsewhere,
 * duplicating an existing application.
 
-![Add application methods](/guides/images/users-guide/administration/Admin_AddApplication.png)
+![Add application methods](/guides/images/users-guide/Administration/Admin_AddApplication.png)
 
 If you select **Upload ZIP file**, the wizard will ask you to simply drop a file or browse for it on your computer.
 

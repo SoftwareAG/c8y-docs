@@ -20,7 +20,7 @@ Die Kapazitätsbereiche zeigen:
 
 *   API-Anfragen: Die Gesamtanzahl der API-Anfragen. Umfasst alle aufgerufenen Funktionen, unabhängig davon, ob die Funktion von einem Gerät (z. B. Senden von Messdaten) oder von einer Anwendung (z.B. Abrufen der Geräteliste) aufgerufen wurde.
 *   API-Anfragen: Umfasst nur die Aufrufe von Geräten, wie etwa das Senden von Messdaten.
-*   Speicher: Insgesamt gespeicherte Daten in Ihrem Konto. Die Datenmenge kann durch [Datenhaltungsregeln](#retention) und durch die Menge und Größe [gespeicherter Daten](#files) verändert werden.
+*   Speicher: Insgesamt gespeicherte Daten in Ihrem Konto. Die Datenmenge kann durch [Datenhaltungsregeln](#retention-rules) und durch die Menge und Größe [gespeicherter Daten](#files) verändert werden.
 *   Speicherbegrenzung: Wenn eine Speicherbegrenzung pro Gerät definiert wurde, ist der Benutzer auf eine [maximale Datennutzung](#storageQuota) beschränkt.
 *   Hauptgeräte: Die Anzahl der Hauptgeräte, die mit Ihrem Konto verbunden sind, ohne Kindgeräte.
 *   Geräte: Die Gesamtanzahl der mit Ihrem Konto verbundenen Geräte einschließlich Kindgeräte. Dies ist die Summe der Geräte, die unter [Alle Geräte](/guides/users-guide/device-management#viewing-devices) in der Device Management-Anwendung aufgelistet sind, sowie deren direkte und indirekte Kindgeräte.

@@ -14,13 +14,13 @@ Eigene Anwendungen werden unter "Eigene Anwendungen" im Menü "Anwendungen" verw
 
 Auf der Seite "Eigene Anwendungen" wird eine Liste aller eigenen Anwendungen in Ihrem Konto angezeigt.
 
-![Eigene Anwendungen](/guides/benutzerhandbuch/Admin_OwnApplications.png)
+![Eigene Anwendungen](/guides/images/benutzerhandbuch/Admin_OwnApplications.png)
 
 Klicken Sie auf das Menüsymbol rechts oben in einer Anwendung, um über das Kontextmenü eine Anwendung zu [**Bearbeiten** oder **Entfernen**](#editing-and-removing).
 
 Klicken Sie **Öffnen** auf der Karte einer Anwendung, um die Anwendung direkt von hier zu starten. Sie können außerdem über den Application Switcher auf Ihre Anwendungen zugreifen.
 
-Klicken Sie **Plugin hinzufügen** , um ein Plugin hinzuzufügen (sie [Hinuzfügen und Entfernen von Plugins](#add-remove-plugins)).
+Klicken Sie **Plugin hinzufügen** , um ein Plugin hinzuzufügen (sie [Hinzufügen und Entfernen von Plugins](#add-remove-plugins)).
 
 ### <a name="editing-and-removing"></a>Bearbeiten und Löschen von Anwendungen
 
@@ -52,7 +52,7 @@ Klicken Sie **Anwendung hinzufügen** auf der Seite "Eigene Anwendungen", um ein
 *   Verwenden einer externen Anwendung (was auf eine Anwendung verweist, die woanders betrieben wird),
 *   Duplizieren einer bestehenden Anwendung.
 
-![Methoden zum Hinzufügen von Anwendungen](/guides/users-guide/administration/Admin_AddApplication.png)
+![Methoden zum Hinzufügen von Anwendungen](/guides/images/benutzerhandbuch/Admin_AddApplication.png)
 
 Wenn Sie **Hochladen einer ZIP-Datei** wählen, werden Sie vom Assistenten aufgefordert, eine Datei im entsprechenden Feld abzulegen oder auf Ihrem Computer zu der Datei zu navigieren.
 
@@ -70,7 +70,7 @@ Führen Sie die folgende Schritte aus, um eine Anwendung zu duplizieren:
 2.  Wählen Sie im angezeigten Dialogfenster **Existierende Anwendung duplizieren**.
 3.  Wählen Sie die gewünschte Anwendung aus der Auswahlliste. Beachten Sie, dass auch abonnierte Anwendungen aufgelistet werden.
 4.  Geben Sie im nächsten Fenster den Namen der Anwendung ein. Der Name wird als Titel oben links auf der Anwendungsseite angezeigt. Er wird außerdem im Application Switcher verwendet.
-5.  Geben Sie einen Anwendungsschlüssel ein. Der Anwendungsschlüssel wird verwendet, um Anfragen von dieser Anwendung zu identifizieren und die Anwendung zum Abonnieren zur Verfügung zu stellen. Sieh auch [Concepts Guide](/guides/concepts/applications).
+5.  Geben Sie einen Anwendungsschlüssel ein. Der Anwendungsschlüssel wird verwendet, um Anfragen von dieser Anwendung zu identifizieren und die Anwendung zum Abonnieren zur Verfügung zu stellen. Sieh auch [Concepts Guide](/guides/concepts/developing-applications).
 6.  Geben Sie Pfad für die Anwendung ein, Dieser Pfad ist Teil der URL, um die Anwendung aufzurufen. Wenn Sie beispielsweise "hello" als Anwendungspfad eingeben, wird die URL "/apps/hello" sein.
 7.  Klicken Sie abschließend **Kopieren**, um die Anwendung zu erstellen.
 
@@ -82,7 +82,7 @@ Klicken Sie **Plugin hinzufügen** auf der Karte der gewünschten Anwendung, um 
 
 Die "Plugin"-Registerkarte für die Anwendung wird geöffnet und zeigt alle vorhandenen Plugins an. Außerdem können weitere Plugins durch Ablegen einer ZIP-Datei oder Durchsuchen Ihres Computers hinzugefügt werden.
 
-![Plugins](/guides/users-guide/plugins.png)
+![Plugins](/guides/images/benutzerhandbuch/Admin_Plugins.png)
 
 Um eine Regel zu entfernen, fahren Sie mit dem Mauszeiger darüber und klicken Sie **Entfernen**.
 
@@ -252,11 +252,11 @@ Mehrere Archivdateiversionen können in Cumulocity gespeichert werden, wenn Sie 
 Zum Hochladen eines Archiv führen Sie die folgenden Schritte aus:
 
 1.  Klicken Sie zum Öffnen auf die gewünschte Anwendung.
-2.  Wechseln Sie zur Registerkarte "Archiv".
+2.  Wechseln Sie zur Registerkarte "Archivdateien".
 3.  Klicken Sie **Archiv hochladen** und navigieren Sie zu der Datei auf Ihrem Computer oder ziehen Sie die Datei auf das entsprechende Feld.
 4.  Klicken Sie **Hochladen**, um das Archiv auf Ihr Cumulocity-Konto hochzuladen.
 
-![Archiv hochladen](/guides/users-guide/uploadarchive.png)
+![Archiv hochladen](/guides/images/users-guide/uploadarchive.png)
 
 Hochgeladene Archive können aktiviert, heruntergeladen oder gelöscht werden. Das aktive Archiv (durch ein Cloud-Symbol gekennzeichnet) ist die Version der Anwendung, die aktuell den Benutzern Ihres Kontos zur Verfügung steht. Diese Version kann nicht gelöscht werden.
 

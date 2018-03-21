@@ -1,6 +1,6 @@
 ---
 order: 70
-title: Data point library
+title: Data Point Library
 layout: redirect
 ---
 

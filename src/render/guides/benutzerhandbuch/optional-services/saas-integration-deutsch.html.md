@@ -1,7 +1,7 @@
 ---
-order: 70
-layout: default
-title: SaaS Integration
+order: 80
+layout: redirect
+title: Zapier-Integration
 ---
 
 ## Übersicht
@@ -145,7 +145,7 @@ Um das Beispiel auszuführen, benötigen Sie neben Ihrem Zapier-Konto ein Google
 
 ![Sample CEL statement](/guides/images/zapier/samplestatement.png)
 
-Die obige Anweisung wählt alle neuen Temperaturmessungen in Ihrem Konto aus und formatiert sie für das Zapier Add-on. Die Ausgabe der Anweisung wird live neben der Anweisung gedruckt. Wenn die Standard-Simulator-Konfiguration läuft, sollte sie mit den Werten beginnen. Mehr Information unter "[Echtzeit Verarbeitung](/guides/images/concepts/realtime)".
+Die obige Anweisung wählt alle neuen Temperaturmessungen in Ihrem Konto aus und formatiert sie für das Zapier Add-on. Die Ausgabe der Anweisung wird live neben der Anweisung gedruckt. Wenn die Standard-Simulator-Konfiguration läuft, sollte sie mit den Werten beginnen. Mehr Information unter [Real-time processing](/guides/concepts/realtime).
 
 Sie müssen eine Tabelle für das Einfüllen der Daten erstellen, die von Cumulocity kommen. Besuchen Sie https://docs.google.com und klicken Sie auf "Neu" und wählen Sie "Google Tabellen". Klicken Sie auf den Text "Untitled Spreadsheet" am oberen Rand des Bildschirms und geben Sie Ihre Tabelle einen Namen wie "Testkalkulationstabelle". Erstellen Sie in der Kalkulationstabelle eine Kopfzeile und eine Zeile mit Beispieldaten, wie im folgenden Screenshot dargestellt. Die Kopfzeile und die Beispieldaten werden von Zapier verwendet, um die Einrichtung Ihrer "Zap", Ihrer neuen Systemintegration, zu vereinfachen.
 

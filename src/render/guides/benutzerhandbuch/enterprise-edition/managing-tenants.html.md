@@ -1,4 +1,8 @@
-## <a name="tenants"></a>Verwalten von Mandanten
+---
+order: 10
+title: Verwalten von Mandanten
+layout: redirect
+---
 
 Wenn Sie Service Provider sind oder die Enterprise Edition von Cumulocity nutzen, möchten Sie eventuell eigene Mandanten verwalten.
 
@@ -29,95 +33,22 @@ Die "Mandanten"-Seite zeigt die folgenden Informationen für jeden Untermandante
 
 Wenn Sie den Management-Mandanten verwenden, sehen Sie eine weitere Spalte "Übergeordneter Mandant". Die Spalte zeigt den Mandanten an, der den aktuellen Mandanten erstellt hat.
 
-![Untermandanten](/guides/users-guide/administration/Admin_Subtenants.png)
+![Untermandanten](/guides/images/benutzerhandbuch/Admin_Subtenants.png)
 
 ### <a name="creating-tenants"></a>Erstellen von Untermandanten
 
 Um einen neuen Mandanten zu erstellen, klicken Sie **Mandanten erstellen** rechts oben in der Menüleiste. Geben Sie für den neuen Mandanten folgende Attribute an:
 
-<table>
-
-<thead>
-
-<tr>
-
-<th style="text-align: left">Feld</th>
-
-<th style="text-align: left">Beschreibung</th>
-
-</tr>
-
-</thead>
-
-<tbody>
-
-<tr>
-
-<td style="text-align: left">Domain/ URL</td>
-
-<td style="text-align: left">Geben Sie eine eindeutige ID als ersten Teil der URL ein. Wenn Sie beispielsweise "acme" als ID auf cumulocity.com eingeben, lautet die URL des Mandanten "acme.cumulocity.com". Sie können nur eine Subdomain-Ebene verwenden. Sie können zum Beispiel nur "acme.cumulocity.com"auf cumulocity.com verwenden. Sie können aber nicht "mycustomer.acme.cumulocity.com" wählen. Dies wird vom TLS-Standard nicht unterstützt.</td>
-
-</tr>
-
-<tr>
-
-<td style="text-align: left">Name</td>
-
-<td style="text-align: left">Name des Mandanten, z. B. Name des Unternehmens.</td>
-
-</tr>
-
-<tr>
-
-<td style="text-align: left">E-Mail des Administrators</td>
-
-<td style="text-align: left">Sie müssen eine gültige E-Mail-Adresse angeben, damit Benutzer ihr Passwort ändern können.</td>
-
-</tr>
-
-<tr>
-
-<td style="text-align: left">Benutzername des Administrators</td>
-
-<td style="text-align: left">Benutzername des Administrators dieses Mandanten.</td>
-
-</tr>
-
-<tr>
-
-<td style="text-align: left">Kontaktname</td>
-
-<td style="text-align: left">Optionaler Name des Ansprechpartners.</td>
-
-</tr>
-
-<tr>
-
-<td style="text-align: left">Telefonnummer</td>
-
-<td style="text-align: left">Optionale Telefonnummer des Ansprechpartner.</td>
-
-</tr>
-
-<tr>
-
-<td style="text-align: left">Link zum Zurücksetzen des Passworts als E-Mail senden</td>
-
-<td style="text-align: left">Standardmäßig ausgewählt. Wenn Sie diese Option deaktivieren, müssen Sie eine Passwort bereitstellen und dieses bestätigen (weitere Informationen zur Passwortstärke finden Sie unter [Anmelden](/guides/benutzerhandbuch/overview#login)" im Abschnitt Erste Schritte).</td>
-
-</tr>
-
-<tr>
-
-<td style="text-align: left">Mandantenregel</td>
-
-<td style="text-align: left">Sie können eine Mandantenregel aus der Dropdown-Liste auswählen, die auf den Mandanten angewendet werden soll.</td>
-
-</tr>
-
-</tbody>
-
-</table>
+|Feld|Beschreibung
+|:--------|:-----
+|Domain/ URL|Geben Sie eine eindeutige ID als ersten Teil der URL ein. Wenn Sie beispielsweise "acme" als ID auf cumulocity.com eingeben, lautet die URL des Mandanten "acme.cumulocity.com". Sie können nur eine Subdomain-Ebene verwenden. Sie können zum Beispiel nur "acme.cumulocity.com"auf cumulocity.com verwenden. Sie können aber nicht "mycustomer.acme.cumulocity.com" wählen. Dies wird vom TLS-Standard nicht unterstützt. 
+|Name|Name des Mandanten, z. B. Name des Unternehmens.
+|E-Mail des Administrators|Sie müssen eine gültige E-Mail-Adresse angeben, damit Benutzer ihr Passwort ändern können.
+|Benutzername des Administrators|Benutzername des Administrators dieses Mandanten.
+|Kontaktname|Optionaler Name des Ansprechpartners.
+|Telefonnummer|Optionale Telefonnummer des Ansprechpartner.
+|Link zum Zurücksetzen des Passworts als E-Mail senden|Standardmäßig ausgewählt. Wenn Sie diese Option deaktivieren, müssen Sie eine Passwort bereitstellen und dieses bestätigen (weitere Informationen zur Passwortstärke finden Sie unter [Anmelden](/guides/benutzerhandbuch/overview#login) im Abschnitt Erste Schritte).
+|Mandantenregel|Sie können eine Mandantenregel aus der Dropdown-Liste auswählen, die auf den Mandanten angewendet werden soll.
 
 Felder, die mit einem Sternsymbol * gekennzeichnet sind, sind Pflichtfelder.
 
@@ -127,7 +58,7 @@ Nachdem der Mandant erstellt wurde, wird er automatisch mit einem ersten Adminis
 
 Vom Management-Mandanten aus können Sie anderen Mandanten erlauben, Untermandanten zu erstellen. Selektieren Sie dazu "Erstellen von Untermandanten zulassen".
 
-![Mandantenerstellung](/guides/users-guide/createtenant.png)
+![Mandantenerstellung](/guides/images/benutzerhandbuch/Admin_CreateTenant.png)
 
 ### Bearbeitung von Untermandanten-Attributen
 
@@ -139,7 +70,7 @@ In der Registerkarte "Attribute" können alle Felder außer der ID und des Benut
 
 In der Registerkarte "Anwendungen" können Sie Anwendungen für Mandanten abonnieren oder entfernen. Standardmäßig werden für einen Mandanten die Standardanwendungen von Cumulocity abonniert.
 
-![Anwendung abonnieren](/guides/users-guide/administration/Admin_SubtenantApplications.png)
+![Anwendung abonnieren](/guides/images/benutzerhandbuch/Admin_SubtenantApplications.png)
 
 Um eine Anwendung für einen Mandanten zu abonnieren, bewegen Sie den Mauszeiger über die Anwendungen unter "Verfügbare Anwendungen" auf der rechten Seite und klicken Sie bei der gewünschten Anwendung **Abonnieren**.
 
@@ -155,7 +86,7 @@ Bestätigen Sie im folgenden Dialogfenster das Sperren, indem Sie **Ok** klicken
 
 > **Info**: Als Service Provider können Sie diese E-Mail unterdrücken.
 
-![Sperren eines Mandanten](/guides/users-guide/suspendtenant.png)
+![Sperren eines Mandanten](/guides/images/users-guide/suspendtenant.png)
 
 Ist ein Mandant gesperrt, bleiben die Daten des Mandanten in der Datenbank und stehen jederzeit wieder zur Verfügung. Klicken Sie **Aktivieren**, um die Daten wiederherzustellen.
 
@@ -167,9 +98,9 @@ Um einen Untermandanten und alle seine Daten endgültig zu löschen, klicken Sie
 
 ### <a name="tenants-custom-properties"></a>Bearbeitung von benutzerdefinierten Attributen
 
-Die Registerkarte "Benutzerdefinierte Attribute" ermöglicht Ihnen das Anzeigen und Ändern von Werten von benutzerdefinierten Attributen, sowohl vordefinierten (wie "Externe Referenz") als auch denen, die in der ["Attributsbibliothek"](#properties) definiert sind. Solche Attribute werden auch als Spalten in der [Benutzungsstatistiktabelle](#usage-stats-custom-properties) angezeigt.
+Die Registerkarte "Benutzerdefinierte Attribute" ermöglicht Ihnen das Anzeigen und Ändern von Werten von benutzerdefinierten Attributen, sowohl vordefinierten (wie "Externe Referenz") als auch denen, die in der [Attributsbibliothek](/guides/benutzerhandbuch/administration/changing-settings#properties) definiert sind. Solche Attribute werden auch als Spalten in der [Benutzungsstatistiktabelle](#usage-stats) angezeigt.
 
-![Benutzerdefinierte Attribute](/guides/users-guide/subtenant-custom-properties.PNG)
+![Benutzerdefinierte Attribute](/guides/images/benutzerhandbuch/Admin_Subtenant-CustomProperties.PNG)
 
 ### <a name="usage-stats"></a>Nutzungsstatistiken abrufen
 
@@ -190,15 +121,15 @@ Die folgenden Informationen werden für jeden Untermandanten angezeigt:
 
 Außerdem werden benutzerdefinierte Attribute angezeigt, falls vorhanden.
 
-Benutzerdefinierte Attribute können in der ["Attributsbibliothek"](#properties) definiert werden. Anschließend können entsprechende Werte in der Registerkarte ["Benutzerdefinierte Attribute"](#tenants-custom-properties) des Mandanten eingestellt werden.
+Benutzerdefinierte Attribute können in der [Attributsbibliothek](/guides/benutzerhandbuch/administration/changing-settings#properties) definiert werden. Anschließend können entsprechende Werte in der Registerkarte [Benutzerdefinierte Attribute](#tenants-custom-properties) des Mandanten eingestellt werden.
 
-![Nutzungsstatistiken](/guides/users-guide/usage-statistics-list.PNG)
+![Nutzungsstatistiken](/guides/images/benutzerhandbuch/Admin_TenantUsageStatistics.PNG)
 
 Sie können die Liste der Nutzungsstatistiken nach einem bestimmten Zeitraum filtern, indem Sie einen Start- und einen Endzeitpunkt in der oberen Menüleiste eingeben und **Filter** klicken. Sie können außerdem die Liste nach jeder Spalte filtern und und sortieren, indem Sie auf das Filtersymbol neben dem Namen der entsprechenden Spalte klicken und die Filterkriterien eingeben. Weitere Informationen zur Filterfunktionalität finden Sie unter [Filtern](/guides/benutzerhandbuch/overview#filtering) im Abschnitt Erste Schritte.
 
 Klicken Sie **Export CSV** rechts oben in der Menüleiste, um die aktuelle Ansicht der Statistikentabelle als CSV-Datei zu exportieren. Im folgenden Fenster können Sie die CSV-Ausgabe anpassen.
 
-![](/guides/users-guide/usage-statistics-export.PNG)
+![](/guides/images/benutzerhandbuch/Admin_UsageStatisticsExport.PNG)
 
 ### <a name="tenant-policies"></a>Mandantenregeln
 
@@ -206,24 +137,24 @@ Eine Mandantenregel ist eine Menge von Mandantenoptionen und Datenhaltungsregeln
 
 Das Erstellen einer Mandantenregel mit bestimmten Optionen und Regeln spart Zeit bei der Erstellung verschiedener Mandanten mit den gleichen Einstellungen.
 
-![Mandantenregel](/guides/users-guide/tenantpolicy.png)
+![Mandantenregel](/guides/images/users-guide/tenantpolicy.png)
 
 > **Info**: Die Optionen und Regeln werden in den Mandanten kopiert. Änderungen an der Regel haben keine Auswirkungen auf bereits erstellte Mandanten.
 
 Klicken Sie "Mandantenregeln" im Menü "Mandanten", um alle verfügbaren Regeln anzuzeigen.
 
-![Mandantenregeln](/guides/users-guide/administration/admin_TenantPolicies.png)
+![Mandantenregeln](/guides/images/users-guide/administration/admin_TenantPolicies.png)
 
 Für jede Mandantenregel wird der Name, eine optionale Beschreibung und die Anzahl der Optionen und Datenerhaltungsregeln angezeigt, wahlweise in Listen- oder Gitteransicht.
 
 ### Hinzufügen einer Mandantenregel
 
-Klicken Sie **Mandantenregel hinzufügen**in der oberen Menüleiste, um eine neue Mandantenregel zu erstellen.
+Klicken Sie **Mandantenregel hinzufügen** in der oberen Menüleiste, um eine neue Mandantenregel zu erstellen.
 
-![Neue Regel hinzufügen](/guides/users-guide/addpolicy.png)
+![Neue Regel hinzufügen](/guides/images/benutzerhandbuch/Admin_TenantsAddPolicy.png)
 
 1.  Geben Sie einen Namen und optional eine Beschreibung ein.
-2.  Geben Sie mindestens eine Datenerhaltungsregel ein. Weitere Informationen zur Erstellung von Datenerhaltungsregeln finden Sie unter [Datenerhaltungsregeln](#retention-rules).
+2.  Geben Sie mindestens eine Datenerhaltungsregel ein. Weitere Informationen zur Erstellung von Datenerhaltungsregeln finden Sie unter [Datenerhaltungsregeln](/guides/benutzerhandbuch/administration#retention-rules).
 3.  Geben Sie optional eine Mandantenoption ein.
 4.  Klicken Sie **Speichern**, um Ihre Eingaben zu speichern.
 
@@ -239,4 +170,4 @@ Um eine Regel zu duplizieren, klicken Sie auf das Menüsymbol und wählen Sie im
 
 Um eine Regel zu löschen, klicken Sie auf das Menüsymbol und wählen Sie im Kontextmenü **Löschen**.
 
-![Regeln bearbeiten](/guides/users-guide/editpolicy.png)
+![Regeln bearbeiten](/guides/images/users-guide/editpolicy.png)

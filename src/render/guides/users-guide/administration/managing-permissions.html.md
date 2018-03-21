@@ -18,7 +18,7 @@ Click "Roles" in the "Account" menu to display a list of configured roles.
 
 In the "Global roles" tab you can find the roles which grant permissions on a general level. There are several default global roles defined, but you can define your own according to your needs. 
 
-<img src="/guides/images/users-guide//Admin_GlobalRoles.png" alt="Context menu" style="max-width: 100%">
+<img src="/guides/images/users-guide/Administration/Admin_GlobalRoles.png" alt="Context menu" style="max-width: 100%">
 
 The roles "admins" and "devices" have a special status:
 
@@ -120,7 +120,7 @@ Inventory roles contain permissions that you can assign to groups of devices. Fo
 
 To view the currently configured inventory roles, click "Roles" in the "Account" menu and switch to the "Inventory roles" tab.
 
-<img src="/guides/images/users-guide/Admin_InventoryRoles.png" alt="Context menu" style="max-width: 100%">
+<img src="/guides/images/users-guide/Administration/Admin_InventoryRoles.png" alt="Context menu" style="max-width: 100%">
 
 In the "Inventory roles" tab you can manage user permissions for particular groups and/or its children. There are several default inventory roles defined, but you can define your own according to your needs. 
 

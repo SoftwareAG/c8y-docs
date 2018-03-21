@@ -1,7 +1,7 @@
 ---
-order: 80
+order: 10
 title: Android Cloud Sensor App
-layout: default
+layout: redirect
 ---
 
 ## Übersicht
@@ -72,7 +72,7 @@ Nach Anklicken der Schaltfläche "Akzeptieren" erscheint ein Smartphone in der L
 
 ![All devices](/guides/images/users-guide/androidapp09.png)
 
-Weitere Informationen zur manuellen Registrierung eines Geräts auf der Plattform finden Sie hier: [https://goo.gl/8KNVN3](https://goo.gl/8KNVN3).
+Weitere Informationen zur manuellen Registrierung eines Geräts auf der Plattform finden Sie unter [Verbinden von Geräten](/guides/benutzerhandbuch/device-management#device-registration).
 
 ## Senden von Sensordaten an Cumulocity
 
@@ -156,4 +156,4 @@ Wenn die Taste "Senden" gedrückt wird, erscheint diese Meldung als Pop-up auf d
 
 Wenn der Vibrationsschalter eingeschaltet wird, beginnt das Smartphone zu vibrieren, bis der Schalter ausgeschaltet wird.
 
-Um mehr über Dashboard-Widgets zu erfahren, konsultieren Sie bitte [https://www.cumulocity.com/guides/users-guide/cockpit/#widget](https://www.cumulocity.com/guides/users-guide/cockpit/#widget).
+Um mehr über Dashboard-Widgets zu erfahren, konsultieren Sie bitte [Cockpit > Widgets](/guides/benutzerhandbuch/cockpit/#widget).

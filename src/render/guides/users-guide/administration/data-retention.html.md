@@ -13,7 +13,7 @@ Retention rules are usually run during the night. When you edit a retention rule
 
 Click "Retention rules" in the "Management" menu to view a list of retention rules configured for your account.
 
-<img src="/guides/images/users-guide/administration/Admin_RetentionRules.png" alt="Retention rules" style="max-width: 50%">
+<img src="/guides/images/users-guide/Administration/Admin_RetentionRules.png" alt="Retention rules" style="max-width: 50%">
 
 For each rule, the rule name, details on the data to be deleted (fragment type, type and source, see below) and the maximum age in days is provided.
 
@@ -36,7 +36,7 @@ To add additional retention rules, click **Add rule** in the top menu bar.
 
 >**Info**: Alarms are only removed if they are in "CLEARED" state.
 
-<img src="/guides/images/users-guide/administration/Admin_RetentionRulesDelete.png" alt="Delete retention rule" style="max-width: 50%">
+<img src="/guides/images/users-guide/Administration/Admin_RetentionRulesDelete.png" alt="Delete retention rule" style="max-width: 50%">
 
 To delete a rule, hover over it and click the **Delete** button at the right.
 
@@ -51,7 +51,7 @@ The files listed can come from various sources. They can be software images, con
 
 For each file, the name of the file, its owner, the file type (i.e. image/bmp, text/csv), its size and the date when it was last updated is provided.
 
-<img src="/guides/images/users-guide/administration/Admin_FilesRepository.png" alt="Files Repository" style="max-width: 100%">
+<img src="/guides/images/users-guide/Administration/Admin_FilesRepository.png" alt="Files Repository" style="max-width: 100%">
 
 To upload a file from your computer, click **Upload file** in the top menu bar.
 

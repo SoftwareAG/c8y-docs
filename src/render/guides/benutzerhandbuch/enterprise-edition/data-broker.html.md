@@ -1,4 +1,8 @@
-## <a name="data-broker"></a>Data Broker
+---
+order: 30
+title: Data Broker
+layout: redirect
+---
 
 Mit dem Data Broker können Daten gezielt mit anderen Mandanten geteilt werden. Sie können folgenden Daten teilen:
 

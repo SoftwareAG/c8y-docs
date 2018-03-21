@@ -1,7 +1,7 @@
 ---
-order: 50
+order: 20
 title: Cloud Fieldbus
-layout: default
+layout: redirect
 ---
 
 ## <a name="overview"></a>Überblick
@@ -14,7 +14,7 @@ Cloud Fieldbus ist eine Cumulocity-Anwendung mit der Möglichkeit, Daten von Fie
 
 "Out of the box" wird es von den folgenden Terminals unterstützt: 
 
-* [Pssystec Smartbox-Modbus](/guides/images/devices/smartbox-modbus) für Modbus/RTU.
+* [Pssystec Smartbox-Modbus](/guides/images/devices/smartbox-modbus-mini) für Modbus/RTU.
 * [Netcomm Wireless NTC-6200](/guides/images/devices/netcommwireless) für Modbus/TCP und Modbus/RTU.
 * [Cinterion Java modules](/guides/images/devices/cinterion) für Modbus/RTU und CAN bus
 
@@ -28,7 +28,7 @@ Für die folgenden Anleitungen gehen wir davon aus, dass Sie über ein Cloud-Fie
 
 * Verbinden Sie das Modbus / RTU-Gerät über RS / 485 oder RS / 232 mit dem Terminal.
 * Geben Sie dem Gerät eine eindeutige Modbus-Adresse gemäß den Anweisungen des Modbus-Geräts (by setting a jumper on the device).
-* Überprüfen Sie die serielle Kommunikation der Geräte gemäss der Geräteanleitung (wie Baud Rate und Komunikations Protokol). Diese müssen mit allen Geräten im Bus übereinstimmen.
+* Überprüfen Sie die serielle Kommunikation der Geräte gemäss der Geräteanleitung (wie Baud Rate und Kommunikationsprotokoll). Diese müssen mit allen Geräten im Bus übereinstimmen.
 * Navigieren Sie zum Terminal in Cumulocity und klicken Sie auf die Registerkarte "Modbus".
 * Ändern Sie ggf. die im Abschnitt "Serielle Kommunikation" dargestellten Kommunikationseinstellungen entsprechend den Einstellungen am Bus.
 * Ändern Sie die Übertragungsrate und die Polling-Rate entsprechend Ihren Anforderungen. Die Polling-Rate ist die Frequenz, mit der die Modbus-Geräte abgefragt werden. Die Übertragungsrate ist die Frequenz, in der Messungen an Cumulocity gesendet werden.
@@ -105,7 +105,7 @@ Sobald die Verbindung hergestellt ist, können Sie Ihr Gerät jetzt verwalten. K
 
 ### <a name="collect"></a>Daten Sammeln
 
-Wenn der Gerätetyp des Fieldbusgerätes für die Erfassung von Messungen konfiguriert ist, werden diese im Register "Messungen" sichtbar. Sie werden dann auch im [Daten Explorer](/guides/images/benutzerhandbuch/cockpit-deutsch#visualise) und in den [Dashboard Widgets](/guides/images/benutzerhandbuch/cockpit-deutsch#dashboards) angezeigt.
+Wenn der Gerätetyp des Fieldbusgerätes für die Erfassung von Messungen konfiguriert ist, werden diese im Register "Messungen" sichtbar. Sie werden dann auch im [Daten Explorer](/guides/benutzerhandbuch/cockpit#visualise) und in den [Dashboard Widgets](/guides/benutzerhandbuch/cockpit#dashboards) angezeigt.
 
 Die Daten werden gemäß dem Intervall gesammelt, das in der Übertragungsrate Eigenschaft des Endgeräts spezifiziert ist. Zur Optimierung des Datenverkehrs können Daten, die exakt die gleichen sind wie zuvor, nicht erneut gesendet werden.
 
@@ -125,7 +125,7 @@ Wenn der Gerätetyp des Fieldbusgeräts so konfiguriert ist, dass er Alarme send
 
 ### <a name="status"></a>Überwachen des Gerätestatus
 
-Der Status der Geräte kann in Echtzeit mit Hilfe von Dashboard-Widgets in der Cockpit-Anwendung überwacht werden. Navigieren Sie zu der Cockpit-Anwendung, erstellen Sie ein Dashboard oder einen Bericht und fügen Sie Widgets hinzu, wie im Benutzerhandbuch unter [Cockpit](/guides/images/benutzerhandbuch/cockpit-deutsch) beschrieben. Der Cloud Fieldbus hat zwei neue Widgets: Das "Fieldbus Device" -Widget und das "SCADA" -Widget.
+Der Status der Geräte kann in Echtzeit mit Hilfe von Dashboard-Widgets in der Cockpit-Anwendung überwacht werden. Navigieren Sie zu der Cockpit-Anwendung, erstellen Sie ein Dashboard oder einen Bericht und fügen Sie Widgets hinzu, wie im Benutzerhandbuch unter [Cockpit](/guides/benutzerhandbuch/cockpit) beschrieben. Der Cloud Fieldbus hat zwei neue Widgets: Das "Fieldbus Device" -Widget und das "SCADA" -Widget.
 
 ### Überwachen des Gerätestatus über das Feldbus-Geräte-Widget
 

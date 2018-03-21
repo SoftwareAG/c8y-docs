@@ -13,7 +13,7 @@ Using event processing, you can specify realtime business logic that is automati
 
 Click "Event processing" in the "Business rules" menu to view the current modules or to create new ones.
 
-<img src="/guides/images/users-guide/administration/admin_EventProcessing.png" alt="Event processing" style="max-width: 100%">
+<img src="/guides/images/users-guide/Administration/Admin_EventProcessing.png" alt="Event processing" style="max-width: 100%">
 
 For each module in the list, the status (deployed = indicated by a green checkmark / not deployed = indicated by an exclamation mark), the name and the date when is was last updated is provided.
 
@@ -27,7 +27,7 @@ Instead of deleting the module you can also disable it temporarily by setting it
 
 To create a new module, click **New module** in the top menu bar.
 
-<img src="/guides/images/users-guide/administration/Admin_EventProcessingNewModule.png" alt="New module" style="max-width: 100%">
+<img src="/guides/images/users-guide/Administration/Admin_EventProcessingNewModule.png" alt="New module" style="max-width: 100%">
 
 1. Enter a name for the module at the very top. You can only use alphanumeric characters without blanks.
 2. By default, the status is set to "Deployed" which means that the statements you enter will be run immediately. Set the slider to "Not deployed" if you want to avoid this. 
@@ -36,7 +36,7 @@ To create a new module, click **New module** in the top menu bar.
 
 The example module creates an alarm if the temperature goes below 0 degree.
 
-<img src="/guides/images/users-guide/administration/Admin_EventProcessingModuleExample.png" alt="Example module" style="max-width: 100%">
+<img src="/guides/images/users-guide/Administration/Admin_EventProcessingModuleExample.png" alt="Example module" style="max-width: 100%">
 
 If the status of a module is set to "Deployed", this is indicated by a green checkmark in the module list. Whenever your statements produce some output you will see it below the checkmark icon. Clicking a line of output unfolds the detailed output of the statement. Clicking **Clear all** removes the output from the screen.
 
@@ -46,7 +46,7 @@ Alarm mapping enables you to change the severity and text of alarms to adapt the
 
 Click "Alarm mapping" in the "Business Rules" menu to see a list of all alarm mappings.
 
-<img src="/guides/images/users-guide/administration/Admin_AlarmMapping.png" alt="Alarm mapping" style="max-width: 100%">
+<img src="/guides/images/users-guide/Administration/Admin_AlarmMapping.png" alt="Alarm mapping" style="max-width: 100%">
 
 For each alarm mapping, the alarm severity and the name of the mapping is shown.
 
@@ -58,7 +58,7 @@ To delete an alarm mapping, hover over it and click the **Delete** button.
 
 To add an alarm mapping, click **Add alarm mapping** in the top menu bar.
 
-<img src="/guides/images/users-guide/administration/Admin_AlarmMappingAdd.png" alt="Add alarm mapping" style="max-width: 100%">
+<img src="/guides/images/users-guide/Administration/Admin_AlarmMappingAdd.png" alt="Add alarm mapping" style="max-width: 100%">
 
 1. Enter the alarm type to be modified.
 2. Optionally, enter a new text for the alarm. If you do not enter any text, the original text in the alarm will be kept.

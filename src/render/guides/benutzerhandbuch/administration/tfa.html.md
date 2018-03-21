@@ -9,7 +9,7 @@ Die Zwei-Faktor-Authentifizierung (TFA, two-factor authentication) ist eine weit
 
 Um nachzuprüfen, ob für einen bestimmten Benutzer TFA aktiviert ist, sehen Sie auf der "Benutzer"-Seite in der Spalte "TFA-Status" nach.
 
-![TFA-Status](/guides/users-guide/TFAStatus.png)
+![TFA-Status](/guides/images/users-guide/TFAStatus.png)
 
 Um für einen Benutzer Zwei-Faktor-Authentifizierung zu aktivieren, führen Sie folgende Schritte aus:
 
@@ -17,4 +17,4 @@ Um für einen Benutzer Zwei-Faktor-Authentifizierung zu aktivieren, führen Sie 
 *   Aktivieren Sie die Checkbox "Zwei-Faktor-Authentifizierung aktivieren".
 *   Klicken Sie **Speichern**.
 
-![TFA aktivieren](/guides/benutzerhandbuch/admin_TFAStatus.png)
+![TFA aktivieren](/guides/images/users-guide/admin_TFAStatus.png)

@@ -1,96 +1,204 @@
 ---
 order: 70
-title: Changing settings
+title: Ändern von Einstellungen
 layout: redirect
 ---
 
-<a name="settings"></a>
-From the "Settings" menu, administrators can modify or manage various settings for the account as
+Im Menü "Einstellungen" können Administratoren verschiedene Einstellungen des Kontos ändern oder verwalten, wie
 
-- changing the [application settings](#default-app),
-- changing the [password policy and TFA settings](#changing-password-settings),
-- managing the [properties library](#properties),
-- configure the setting for the Enterprise Edition, see [Enterprise Edition](/guides/images/users-guide/enterprise-edition#platform-config).
+*   [Anwendungseinstellungen](#default-app) ändern,
+*   [Passwortrichtlinien und TFA-Einstellungen](#changing-password-settings) ändern,
+*   die [Attributsbibliothek](#properties) verwalten,
+*   Einstellungen für die Enterprise Edition konfigurieren, siehe [Enterprise Edition](/guides/users-guide/enterprise-edition#platform-config).
 
-### <a name="default-app"></a>Changing application settings
+### <a name="default-app"></a>Ändern von Anwendungseinstellungen
 
-Click "Application" to change applications settings.
+Klicken Sie "Anwendung", um Anwendungseinstellungen zu bearbeiten.
 
-Under "Default application", you can select a default application from the list which will apply to all users within the tenant.
+Unter "Standardanwendung" können Sie eine Standardanwendung für alle Benutzer Ihres Mandanten festlegen.
 
->**Info**: All users must have access to this application.
+> **Info:** Alle Benutzer müssen Zugriff auf diese Anwendung haben.
 
-Under "Access control", administrators can enable cross-origin resource sharing or "CORS" on the Cumulocity API. 
+Unter "Zugriffskontrolle" können Administratoren CORS (Cross-Origin Resource Sharing) über die Cumulocity API aktivieren.
 
-The "Allowed Domain" setting will enable your JavaScript web applications to directly communicate with REST APIs.
-Set it to "*" to allow communication from any host.
-Set it to "http://my.host.com, http://myother.host.com" to allow applications from http://my.host.com and from http://myother.host.com to communicate with the platform.
+Die Einstellung "Zulässige Domain" ermöglicht es, Ihren JavaScript-Webanwendungen, direkt mit REST APIs zu kommunizieren. Geben Sie ein Sternsymbol "*" ein, um die Kommunikation mit allen Hosts zu erlauben. Geben Sie "http://my.host.com, http://myother.host.com" ein, um Anwendungen aus http://my.host.com und http://myother.host.com die Kommunikation mit der Plattform zu erlauben.
 
-For further information, see http://enable-cors.org.
+Weitere Information erhalten Sie unter http://enable-cors.org.
 
-### <a name="changing-password-settings"></a>Changing the password policy and TFA settings
+### <a name="changing-password-settings"></a>Ändern der Passwortrichtlinien und TFA-Einstellungen
 
-To change password settings, click "Password" in the "Settings" menu. 
+Um die Passwortrichtlinien zu ändern, klicken Sie "Passwort" im Menü "Einstellungen".
 
-Under "Password expiration", you can limit the validity of user passwords by specifying the number of days after which users have to change their passwords. If you do not want to force your users to change passwords, use "0" for unlimited validity of passwords (default value).
+Unter "Passwortbeschränkung" können Sie die Gültigkeit von Benutzerpasswörtern beschränken, in dem Sie die Anzahl der Tage eingeben, nach der Benutzer ihre Passwörter ändern müssen. Wenn Sie keine Passwortänderung erzwingen möchten, verwenden Sie "0" für die uneingeschränkte Gültigkeit von Passwörtern (Standardwert).
 
-By default, users can use any password with eight characters or more. If you select **Enforce that all password are "strong" (green)**, your users must provide strong passwords as described in "[Logging in](/guides/images/users-guide/overview#login)".
+Standardmäßig können Benutzer jedes Passwort verwenden, das 8 Zeichen oder mehr enthält. Wenn Sie **Nur starke (grüne) Passwörter zulassen** auswählen, müssen die Benutzer starke Passwörter verwenden, wie unter [Anmelden](/guides/benutzerhandbuch/overview#login) beschrieben.
 
->**Info**: The password validity limit and the enforcing of strong passwords may not be editable, if configured by the platform administrator.
+> **Info:** Passwortbeschränkung und das Erzwingen starker Passörter sind möglicherweise nicht editierbar, falls vom Plattformadministrator so konfiguriert.
 
-Strong (green) passwords must have "M" characters. By default, the system restricts the use of passwords already used in the past. The last "N" passwords provided by a user are remembered by the system and the system does not allow to use them. The default value for "N" is 10.
+Starke (grüne) Passwörter müssen "M" Zeichen haben. Standardmäßig sind Passwörter, die in der Vergangenheit verwendet wurden, nicht zulässig. Das System merkt sich die letzten "N" von einem Benutzer bereitgestellten Passwörter und erlaubt nicht, diese zu verwenden. Der Standardwert für "N" ist 10.
 
->**Info**: "M" and "N" can be configured by the platform administrator.
+> **Info:** "M" und "N" können vom Plattformadministrator konfiguriert werden.
 
-Click **Save** to apply your password settings.
+Klicken Sie **Speichern**, um die Passwortrichtlinien zu speichern.
 
-<img src="/guides/images/users-guide/administration/admin_Password.png" alt="Password settings" style="max-width: 100%">
+![Passwortrichtlinien](/guides/images/benutzerhandbuch/Admin_Password.png)
 
-Under "TFA settings", you can change the following TFA settings:
+Unter "TFA-Einstellungen" Können Sie die folgenden TFA-Einstellungen bearbeiten:
 
- - "Limit token validity"- here you can set the lifetime of each session in minutes. When the session expires, the user has to enter a new verification code.
- - "Limit PIN validity"- Here you can set the lifetime of each verification code sent via SMS. When the verification code expires, in order to login the user has to request a new verification code.
+*   "Token-Gültigkeit begrenzen für" - hier können Sie die Dauer jeder Sitzung in Minuten festlegen. Wenn die Sitzung abgelaufen ist, muss der Benutzer einen neuen Verifizierungscode eingeben.
+*   "Token-Gültigkeit begrenzen für" - hier können Sie die Dauer jeder Sitzung in Minuten festlegen. Wenn die Sitzung abgelaufen ist, muss der Benutzer einen neuen Verifizierungscode eingeben.
 
-To allow two-factor authentication, select the checkbox **Allow two-factor authentication**". 
+Aktivieren Sie "Zwei-Faktor-Authentifizierung zulassen", um Zwei-Faktor-Authentifizierung einzustellen.
 
-Click **Save TFA settings** to apply your changes.
+Klicken Sie **TFA-Einstellungen speichern**, um Ihre Einstellungen zu speichern.
 
-### <a name="properties"></a>Managing the properties library
+### <a name="properties"></a>Verwalten der Attributsbibliothek
 
-In the properties library, accessible from the "Settings" menu, custom properties can be added to inventory objects, alarms, events and tenants. 
+In der "Attributsbibiothek" im Menü "Einstellungen" können benutzerdefinierte Attribute zu den Stammdaten, Alarmen, Ereignissen und Mandanten hinzugefügt werden.
 
-![Properties library](/guides/images/users-guide/properties_library.png)
+![Attributsbibiothek](/guides/images/benutzerhandbuch/Admin_PropertiesLibrary.png)
 
-With custom properties, you can extend the data model of Cumulocity built-in objects. You may create the following custom values:
+Mit benutzerdefinierten Attributen können Sie das Datenmodell der in Cumulocity integrierten Objekte erweitern. Sie können die folgenden eigenen Attribute erstellen:
 
-- Custom inventory properties are used to extend the inventory data model. They can be used in the “Asset table” and “Asset properties” widgets.
-- Custom tenant properties are available during tenant creation. The custom properties can be edited under “Subtenants” in the “Custom properties” tab of each tenant. Additionally, these properties can be viewed and exported in the “Usage statistics”.
-- Custom alarm and event properties can be used as custom fields which can be added to your reports and will be available in the “Reporting” page in the Cockpit application.
+*   Eigenen Stammdatenattribute werden verwendet, um das Stammdatenmodell zu erweitern. Sie können in den Widgets “Asset-Tabelle” und “Asset-Attribute” genutzt werden.
+*   Eigene Mandantenattribute sind bei der Erstellung von Mandanten verfügbar. Die eigenen Attribute können unter "Untermandanten" in der Registerkarte "Benutzerdefinierte Attribute" bearbeitet werden. Außerdem können diese Attribute in den Nutzungsstatistiken eingesehen und exportiert werden.
+*   Benutzerdefinierte Alarm- und Ereignisattribute können Ihren Berichten als eigene Felder hinzugefügt werden und sind in der Seite "Berichtkonfigurationen" in der Cockpit-Anwendung verfügbar.
 
-**Adding properties to the properties library**
+**Hinzufügen von Attributen zur Attributsbibiothek**
 
-To add a custom property, select the tab for the desired property and click **Add property**. 
+Um ein benutzerdefiniertes Attribut hinzuzufügen, wählen Sie die Registerkarte für das gewünschte Attribut und klicken Sie **Attribut hinzufügen**.
 
-![Add new property](/guides/images/users-guide/addproperty.png)
+![Neues Attribut hinzufügen](/guides/images/benutzerhandbuch/Admin_AddProperty.png)
 
-In the upcoming form, provide a unique name as identifier and a label for the property and select its data type from the drop down list. Additionally, select validation rules for the new property:
+Geben Sie im folgenden Editor einen eindeutigen Namen als Identifikator und eine Beschriftung für das Attribut ein, und wählen Sie einen Datentypen aus der Dropdown-Liste. Wählen Sie außerdem Validierungsregeln für das neue Attribut aus:
 
-|Check box|Description|
-|:---|:---|
-|Required|If selected, the property needs to be provided, i.e. during alarm creation. Not available if the property type is "Boolean".
-|Default Value|Provide a default value to be automatically filled in the custom property field. Only available for properties with type "String".
-|Minimum|Enter a minimum integer value.
-|Maximum|Enter a maximum integer value.
-|Minimum length|Enter the minimum length required for the string.
-|Maximum length|Enter the maximum length required for the string.
-|Regular expression|Add a regular expression which will be required in order to fill the custom property field.
+<table>
 
-Click **Save** to create the new property.
+<thead>
 
-Click on the name of a property in the list to open it. To edit the property, enter the desired changes and click **Save** to save the settings. Click **Remove** to delete the property.
+<tr>
 
-### <a name="openIT-credentials"></a>Entering OpenIT credentials
+<th style="text-align: left">Checkbox</th>
 
-By providing OPenIT credentials you enable the platform to utilize SMS services provided by [Openit](https://sms.openit.de/main.php).
+<th style="text-align: left">Beschreibung</th>
 
-SMS are used throughout the application for various features like [two-factors authentication](/guides/images/users-guide/administration#tfa) and user notifications, i.e. on alarms.
+</tr>
+
+</thead>
+
+<tbody>
+
+<tr>
+
+<td style="text-align: left">Erforderlich</td>
+
+<td style="text-align: left">Wenn ausgewählt, muss das Attribut z. B. während der Alarmerstellung bereitgestellt werden. Nicht verfügbar, wenn der Attributstyp "Boolean" ist.</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align: left">Standardwert</td>
+
+<td style="text-align: left">Geben Sie einen Standardwert ein, der automatisch im benutzerdefinierten Attributsfeld gesetzt wird. Nur verfügbar für Attribute mit dem Wert "String".</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align: left">Minimum</td>
+
+<td style="text-align: left">Geben Sie einen Integerwert als Minimum ein.</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align: left">Maximum</td>
+
+<td style="text-align: left">Geben Sie einen Integerwert als Maximum ein.</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align: left">Minimale Länge</td>
+
+<td style="text-align: left">Geben Sie die minimal erforderliche Länge für die Zeichenkette ein.</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align: left">Maximale Länge</td>
+
+<td style="text-align: left">Geben Sie die maximal mögliche Länge für die Zeichenkette ein.</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align: left">Regulärer Ausdruck</td>
+
+<td style="text-align: left">Geben Sie einen regulären Ausdruck ein, der erforderlich ist, um das benutzerdefinierte Attributfeld auszufüllen.</td>
+
+</tr>
+
+</tbody>
+
+</table>
+
+Klicken Sie **Speichern**, um das neue Attribut zu erstellen.
+
+Klicken Sie auf den Namen eines Attributs in der Liste, um dieses zu öffnen. Um das Attribut zu bearbeiten, geben Sie die gewünschten Änderungen ein, und klicken Sie **Speichern**, um die neuen Einstellungen zu speichern. Klicken Sie **Entfernen**, um das Attribut zu löschen.
+
+### <a name="openIT-credentials"></a>Eingeben von OpenIT-Zugangsdaten
+
+Durch die Eingabe von OPenIT- Zugangsdaten erlauben Sie der Plattform, SMS-Dienste zu verwenden, die von [Openit](https://sms.openit.de/main.php) bereitgestellt werden.
+
+SMS werden für verschiedene Funktionen in den Anwendungen verwendet wie [Zwei-Faktor-Authentifizierung](/guides/benutzerhandbuch/administration#tfa) und Benachrichtigungen etwa bei Alarmen.
+
+### Konfiguration
+
+Unter "Konfiguration" im Menü "Einstellungen" können Sie systemweite Attribute konfigurieren. Die folgenden Optionen können in den Konfigurationseinstellungen bearbeitet werden.
+
+Im Feld "Zwei-Faktor-Authentifizierung" können Sie die SMS-Vorlage, die an die Benutzer geschickt wird, ändern.
+
+Im Feld "Support-Link" können Sie eine URL eingeben, die als Support-Link verwendet wird. Wenn Sie hier keinen Link bereitstellen, wird der Standardlink zur Cumulocity-Support-Seite verwendet.
+
+Geben Sie "false" ein, um den Link zu verbergen.
+
+Im Bereich "Passwort zurücksetzen" können Sie alle Einstellungen im Zusammenhang mit E-Mail-Vorlagen zum Zurücksetzen des Passworts ändern.
+
+![Konfiguration](/guides/images/users-guide/configuration_tab2.png)
+
+Ganz oben können Sie festlegen, ob Sie zulassen möchten, E-Mails an unbekannte E-Mail-Adressen zu senden.
+
+Stellen Sie im Feld "E-Mail-Vorlage für das Zurücksetzen von Passwörtern" eine Vorlage bereit, die verwendet werden soll, wenn die Adresse bekannt ist, und eine für unbekannte Adressen. Der Link zum Zurücksetzen des Passworts kann beispielsweise lauten: {host}/apps/devicemanagement/index.html?token={token}.
+
+Geben Sie im Feld "E-Mail-Betreff" ein Betreff für alle E-Mails im Zusammenhang mit dem Zurücksetzen des Passworts ein.
+
+Geben Sie in den folgenden beiden Feldern jeweils eine Vorlage für die E-Mails zur Bestätigung der Passwortänderung und für die Einladung zur Aktivierung ein.
+
+> **Info**: Zu verwendende Platzhalter sind: {host}, {tenant-domain}, {token}.
+
+Im Bereich "E-Mail-Server" können Sie "Protokoll", "Host", "Port", "Benutzername", "Passwort" und "Senderadresse" für den E-Mail-Server angeben.
+
+![E-Mail-Server konfigurieren](/guides/images/users-guide/Administration/Admin_ConfigurationServer.png)
+
+Im Bereich "Datenexport" können Sie den E-Mail-Betreff und die E-Mail-Vorlage für den Datenexport angeben sowie die “Fehlermeldung bei unauthorisierten Benutzern” definieren.
+
+![Konfiguration](/guides/images/users-guide/configuration_tab4.png)
+
+Im Bereich "Speicherbegrenzung" können Sie den E-Mail-Betreff und die E-Mail-Vorlage für E-Mails festlegen, die gesendet werden, _bevor_ Daten bei Überschreitung der Speicherbegrenzung gelöscht werden und _nachdem_Daten gelöscht wurden.
+
+Im Bereich "Sperren von Mandanten" können Sie Einstellungen für E-Mails vornehmen, die gesendet werden, wenn ein Mandant gesperrt wurde.
+
+![Sperren von Mandanten](/guides/images/users-guide/Administration/Admin_ConfigurationSuspended.png)
+
+Oben können Sie auswählen, ob Sie die E-Mail zum Administrator des gesperrten Mandanten senden möchten und einen weiteren E-Mail-Empfänger angeben. Unten definieren Sie den Betreff und die Vorlage für die E-Mail "Gesperrter Benutzer".
+
+Klicken Sie **Konfiguration speichern**, um Ihre Eingaben zu speichern.
+
+> **Info**: Für "Management-Mandanten sind weitere Funktionalitäten verfügbar.
+

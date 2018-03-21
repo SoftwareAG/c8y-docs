@@ -46,7 +46,7 @@ Strong (green) passwords must have "M" characters. By default, the system restri
 
 Click **Save** to apply your password settings.
 
-<img src="/guides/image/users-guide/administration/admin_Password.png" alt="Password settings" style="max-width: 100%">
+<img src="/guides/image/users-guide/Administration/Admin_Password.png" alt="Password settings" style="max-width: 100%">
 
 Under "TFA settings", you can change the following TFA settings:
 
@@ -96,4 +96,48 @@ Click on the name of a property in the list to open it. To edit the property, en
 By providing OPenIT credentials you enable the platform to utilize SMS services provided by [Openit](https://sms.openit.de/main.php).
 
 SMS are used throughout the application for various features like [two-factors authentication](/guides/users-guide/administration#tfa) and user notifications, i.e. on alarms.
+
+### <a name="config-platform"></a>Configuration settings
+
+Under "Configuration" in the "Settings" menu, you can configure system-wide properties in Cumulocity. The following options can be modified in the "Configuration" settings.
+
+In the "Two-factor authentication" field you can change the SMS template which is sent to the users.
+
+In the "Support link" field you can enter a URL to be used to link to a Support page. If you do not provide a link here, the default link to the Cumulocity Support will be used. 
+
+Enter "false" to hide the link.
+
+In the "Password reset" section you can change all settings related to password reset e-mail templates.
+
+![Configuration menu1](/guides/images/users-guide/configuration_tab2.png)
+
+At the top you can select if you want to allow sending e-mails to unknown email addresses.
+
+In the "Password reset e-mail template" fields, provide an e-mail template to be used when the address is known and one to be used when the address is unknown. The link to reset the password might for example be: {host}/apps/devicemanagement/index.html?token={token}.
+
+In the "E-mail subject" field, provide a subject for all password reset related e-mails.
+
+In the following two fields provide an e-mail template to be used on password change confirmation and a template for the invitation e-mail.
+
+>**Info**: Placeholders to be used are: {host}, {tenant-domain}, {token}. 
+
+In the "E-mail server" section you can provide the "Protocol", "Host", "Port", "Username", "Password" and "Sender Address" for the e-mail server.
+
+<img src="/guides/images/users-guide/Administration/Admin_ConfigurationServer.png" alt="Configure e-mail server" style="max-width: 100%">
+
+In the "Data export" section you can set the e-mail subject and e-mail template for data export and specify the “User unauthorized error message”.
+
+![Configuration menu1](/guides/images/users-guide/configuration_tab4.png)
+
+In the "Storage limit" section you can specify the e-mail subject and e-mail template for emails being send *before* data is removed on exceeding the storage limit and *after* data removal is performed.
+
+In the "Suspending tenants" section you can provide settings for emails being send on tenant suspension. 
+
+<img src="/guides/images/users-guide/Administration/Admin_ConfigurationSuspended.png" alt="Suspended tenants" style="max-width: 100%">
+
+At the top you can select if you want to send the e-mail to the suspended tenant's administrator and specify an additional e-mail receiver. Below you set the subject and template for the tenant suspended e-mail.
+
+Click **Save configuration** to save your settings.
+
+>**Info**: Additional features are available for "Management" tenants.
 

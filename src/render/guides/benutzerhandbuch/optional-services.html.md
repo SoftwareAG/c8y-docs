@@ -1,6 +1,6 @@
 ---
 order: 60
-title: Optional services
+title: Optionale Services
 layout: subsections
 collection: 'guides/benutzerhandbuch/optional-services'
 ---

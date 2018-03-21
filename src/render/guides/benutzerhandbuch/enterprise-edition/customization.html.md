@@ -37,7 +37,7 @@ Im Bereich “Typ” definieren Sie die Schriftarten für Ihre Branding-Version.
 
 ![Branding-Typ](/guides/images/users-guide/administration/admin_BrandingType.png)
 
-Sie können die Basisschriftart und die Schriftart für Überschriften wählen sowie eine Option für die im Navigator verwendete Schriftart (entwerder identisch mit Basis- oder Überschriftenschriftart). Sie können außerdem einen Link auf externe Schriftarten setzen, die Sie verwenden möchten.
+Sie können die Basisschriftart und die Schriftart für Überschriften wählen sowie eine Option für die im Navigator verwendete Schriftart (entweder identisch mit Basis- oder Überschriftenschriftart). Sie können außerdem einen Link auf externe Schriftarten setzen, die Sie verwenden möchten.
 
 **Farben**
 
@@ -110,7 +110,7 @@ In der Registerkarte “Domain-Name können Sie Ihren eigenen Domain-Namen festl
 Zunächst müssen Sie eine entsprechendes Zertifikat hochladen, in dem Sie **Zertifikat hochladen** klicken. Stellen Sie sicher, dass
 
 *   das Zertifikat ein gültiges PKCS#12-Format hat,
-*   das Zertifikt nicht passwortgeschützt ist,
+*   das Zertifikat nicht passwortgeschützt ist,
 *   Sie ein Wildcard-Zertifikat verwenden, um die Erstellung von Untermandanten zu ermöglichen.
 
 Bevor Sie den eigenen Domain-Namen aktivieren, stellen Sie sicher, dass
@@ -129,7 +129,7 @@ Nach erfolgreicher Aktivierung werden Sie zu Ihrem Enterprise-Mandanten unter de
 Wenn Ihr Zertifikat abläuft, müssen Sie es durch ein neues Zertifikat mit einer längeren Gültigkeitsdauer aktualisieren. Wenn Sie das Zertifikat aktualisieren, stellen Sie sicher, dass
 
 *   das Zertifikat ein gültiges PKCS#12-Format hat,
-*   das Zertifikt nicht passwortgeschützt ist,
+*   das Zertifikat nicht passwortgeschützt ist,
 *   das Zertifikat aktuell gültig ist (validFrom in der Vergangenheit und validTo in der Zukunft),
 *   das Zertifikat exakt denselben Domain-Namen wie das aktuell aktive Zertifikat hat.
 *   Sie einen DNS A-Eintrag für die Domain erstellt haben, der auf die IP-Adresse Ihres DNS-Servers zeigt.
@@ -180,6 +180,6 @@ Im Bereich "Sperren von Mandanten" können Sie Einstellungen für E-Mails vorneh
 
 Oben können Sie auswählen, ob Sie die E-Mail zum Administrator des gesperrten Mandanten senden möchten und einen weiteren E-Mail-Empfänger angeben. Unten definieren Sie den Betreff und die Vorlage für die E-Mail "Gesperrter Benutzer".
 
-Klicken Sie **Konfiguration peichern**, um Ihre Eingaben zu speichern.
+Klicken Sie **Konfiguration speichern**, um Ihre Eingaben zu speichern.
 
 > **Info**: Für "Management-Mandanten sind weitere Funktionalitäten verfügbar.

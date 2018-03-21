@@ -165,7 +165,7 @@ Die Kopfzeile eines Datenfilters fasst die Konfiguration in einer Zeile zusammen
 *   **Für aktualisierte Alarme**: status, text, severity.
 *   **Für erzeugte Ereignisse**: type, text, time.
 *   **Für erzeugte Messwerte**: type, text, time.
-*   **Für erstellte und aktualisierte Geräte**: type, name, c8y_IsBinary, c8y_IsDeviceGroup, c8y_IsDevice, c8y_DeviceGroup, c8y_DeviceSubgroup, c8y_SmartRule, c8y_applications_storage, c8y_DynamicGroup, c8y_DeviceQueryString.
+*   **Für erstellte und aktualisierte Geräte**: type, name, c8y&#95;IsBinary, c8y&#95;IsDeviceGroup, c8y&#95;IsDevice, c8y&#95;DeviceGroup, c8y&#95;DeviceSubgroup, c8y&#95;SmartRule, c8y&#95;applications&#95;storage, c8y&#95;DynamicGroup, c8y&#95;DeviceQueryString.
 
 Wenn Sie den Datenkonnektor konfiguriert haben, klicken Sie **Speichern**, um die Konfiguration zu speichern.
 

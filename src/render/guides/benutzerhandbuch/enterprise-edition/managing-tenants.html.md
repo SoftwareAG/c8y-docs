@@ -8,7 +8,7 @@ Die Mandantenverwaltung ermöglicht es Ihnen, eigene Untermandanten zu erstellen
 > 
 > **Info**: Wenn Sie diese Funktion verwenden möchten, wenden Sie sich bitte an sales@cumulocity.com.
 
-Um die Mandantenfunktionalität nutzen zu können, muss Ihr Benutzer über die entsprechenden Berechtigungen verfügen. Informationen zum Bearbeiten von Berechtigungen finden sie unter [Erstellen und Bearbeiten von Rollen](/guides/users-guide/user-and-permissions-management#create-edit-roles) im Abschnitt _Benutzer- und Berechtigungsverwaltung_. Da es sich bei der Bearbeitung von Mandanten um ein sensibles Verfahren handelt, sind die entsprechenden Berechtigungen granularer:
+Um die Mandantenfunktionalität nutzen zu können, muss Ihr Benutzer über die entsprechenden Berechtigungen verfügen. Informationen zum Bearbeiten von Berechtigungen finden sie unter [Erstellen und Bearbeiten von Rollen](/guides/benutzerhandbuch/administration#managing-permissions) im Abschnitt Verwalten von Berechtigungen. Da es sich bei der Bearbeitung von Mandanten um ein sensibles Verfahren handelt, sind die entsprechenden Berechtigungen granularer:
 
 *   Read: Durchsuchen und Ansehen von Mandanten.
 *   Create: Erstellen neuer Mandanten.
@@ -103,7 +103,7 @@ Um einen neuen Mandanten zu erstellen, klicken Sie **Mandanten erstellen** recht
 
 <td style="text-align: left">Link zum Zurücksetzen des Passworts als E-Mail senden</td>
 
-<td style="text-align: left">Standardmäßig ausgewählt. Wenn Sie diese Option deaktivieren, müssen Sie eine Passwort bereitstellen und dieses bestätigen (weitere Informationen zur Passwortstärke finden Sie unter "[Anmelden](/guides/users-guide/overview#login)" im Abschnitt _Einführung_).</td>
+<td style="text-align: left">Standardmäßig ausgewählt. Wenn Sie diese Option deaktivieren, müssen Sie eine Passwort bereitstellen und dieses bestätigen (weitere Informationen zur Passwortstärke finden Sie unter [Anmelden](/guides/benutzerhandbuch/overview#login)" im Abschnitt Erste Schritte).</td>
 
 </tr>
 
@@ -194,7 +194,7 @@ Benutzerdefinierte Attribute können in der ["Attributsbibliothek"](#properties)
 
 ![Nutzungsstatistiken](/guides/users-guide/usage-statistics-list.PNG)
 
-Sie können die Liste der Nutzungsstatistiken nach einem bestimmten Zeitraum filtern, indem Sie einen Start- und einen Endzeitpunkt in der oberen Menüleiste eingeben und **Filter** klicken. Sie können außerdem die Liste nach jeder Spalte filtern und und sortieren, indem Sie auf das Filtersymbol neben dem Namen der entsprechenden Spalte klicken und die Filterkriterien eingeben. Weitere Informationen zur Filterfunktionalität finden Sie unter [Filtern](/guides/users-guide/overview#filtering) im Abschnitt Getting Started.
+Sie können die Liste der Nutzungsstatistiken nach einem bestimmten Zeitraum filtern, indem Sie einen Start- und einen Endzeitpunkt in der oberen Menüleiste eingeben und **Filter** klicken. Sie können außerdem die Liste nach jeder Spalte filtern und und sortieren, indem Sie auf das Filtersymbol neben dem Namen der entsprechenden Spalte klicken und die Filterkriterien eingeben. Weitere Informationen zur Filterfunktionalität finden Sie unter [Filtern](/guides/benutzerhandbuch/overview#filtering) im Abschnitt Erste Schritte.
 
 Klicken Sie **Export CSV** rechts oben in der Menüleiste, um die aktuelle Ansicht der Statistikentabelle als CSV-Datei zu exportieren. Im folgenden Fenster können Sie die CSV-Ausgabe anpassen.
 

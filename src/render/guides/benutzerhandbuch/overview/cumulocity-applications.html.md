@@ -6,53 +6,15 @@ layout: redirect
 
 Cumulocity umfasst die drei folgenden Standardanwendungen:
 
-<table>
-
-<thead>
-
-<tr>
-
-<th style="text-align: left">Anwendung</th>
-
-<th style="text-align: left">Beschreibung</th>
-
-</tr>
-
-</thead>
-
-<tbody>
-
-<tr>
-
-<td style="text-align: left">[Device Management](/guides/users-guide/device-management)</td>
-
-<td style="text-align: left">Die Device Management-Anwendung bietet Funktionalitäten zur Verwaltung und Überwachung von Geräten und ermöglicht es, per Fernzugriff Geräte zu steuern und Fehler zu beheben.</td>
-
-</tr>
-
-<tr>
-
-<td style="text-align: left">[Cockpit](/guides/users-guide/cockpit)</td>
-
-<td style="text-align: left">Die Cockpit-Anwendung umfasst Optionen für die Verwaltung und Überwachung von IoT-Assets und Daten aus Geschäftssicht.</td>
-
-</tr>
-
-<tr>
-
-<td style="text-align: left">[Administration](/guides/users-guide/administration)</td>
-
-<td style="text-align: left">Die "Administration"-Anwendung ermöglicht es Administratoren, ihre Benutzer, Rollen, Mandanten, Anwendungen und Regeln zu verwalten sowie eine Reihe von Einstellungen für ihr Konto zu konfigurieren.</td>
-
-</tr>
-
-</tbody>
-
-</table>
+| &nbsp; |Application|Description|
+|:---:|:---|:---|
+|<i class="c8y-icon c8y-icon-device-management c8y-icon-duocolor" style="font-size: 36px;"></i>|[Device Management](/guides/benutzerhandbuch/device-management)|Die Device Management-Anwendung bietet Funktionalitäten zur Verwaltung und Überwachung von Geräten und ermöglicht es, per Fernzugriff Geräte zu steuern und Fehler zu beheben.  
+|<i class="c8y-icon c8y-icon-cockpit c8y-icon-duocolor" style="font-size: 36px;"></i>|[Cockpit](/guides/benutzerhandbuch/cockpit)|Die Cockpit-Anwendung umfasst Optionen für die Verwaltung und Überwachung von IoT-Assets und Daten aus Geschäftssicht.
+|<i class="c8y-icon c8y-icon-administration c8y-icon-duocolor" style="font-size: 36px;"></i>|[Administration](/guides/benutzerhandbuch/administration)|Die "Administration"-Anwendung ermöglicht es Administratoren, ihre Benutzer, Rollen, Mandanten, Anwendungen und Regeln zu verwalten sowie eine Reihe von Einstellungen für ihr Konto zu konfigurieren.
 
 Neben diesen in Cumulocity enthaltenen Standardwendungen gibt es zahlreiche weitere Anwendungen, die sie abonnieren können, wie etwa integrierte Agenten für verschiedene Gerätetypen.
 
-Darüber hinaus können Sie eigene Anwendungen zur Ihrem Cumulocity-Konto hinzufügen. Weitere Informationen finden Sie unter [Administration > Verwalten von Anwendungen](/guides/users-guide/administration#applications).
+Darüber hinaus können Sie eigene Anwendungen zur Ihrem Cumulocity-Konto hinzufügen. Weitere Informationen finden Sie unter [Administration > Verwalten von Anwendungen](/guides/benutzerhandbuch/administration#applications).
 
 Der Inhalt der Cumulocity-Plattform ist also vollständig dynamisch und wird anhand er folgenden Kriterien generiert:
 

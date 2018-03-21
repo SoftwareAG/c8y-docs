@@ -1,6 +1,6 @@
 ---
 order: 20
-title: Device management
+title: Device Management
 layout: default
 ---
 

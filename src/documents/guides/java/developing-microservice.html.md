@@ -295,7 +295,7 @@ Example configuration:
     </configuration>
 
 ## Deployment
-###Hosted deployment
+### Hosted deployment
 
 Please note that for your convenience we have prepared a utility deployment script available [here](/guides/reference/microservice-package)
 
@@ -384,4 +384,27 @@ To deploy application on a local docker, one needs to inject environment variabl
 Example execution could be 
     
     docker run -e "C8Y_BASEURL={C8Y_BASEURL}" -e "C8Y_BASEURL_MQTT={C8Y_BASEURL_MQTT}" {IMAGE_NAME}
+
+## Monitoring
+
+To see if hosted microservice is running successfully, microservice's health endpoint can be checked.
+This endpoint is enabled by default for all microservices that is developed using Java Microservice SDK.
+
+    GET {URL}/service/{APPLICATION_NAME}/health
+
+Example response:
+
+    HTTP/1.1 200 
+    {
+      "status":"UP"
+    }
+
+  or
+
+    HTTP/1.1 503
+    {
+      "status":"DOWN"
+    }
+
+
 

@@ -6,7 +6,7 @@ layout: redirect
 
 Dashboards provide you with a customized visualization of your data by using a set of widgets. Widgets can display maps, images, graphs, tables and other graphic representations of data. 
 
-Cumulocity comes with a number of preset widgets, see [Widgets Collection](#widget) for details. You can also develop your own widgets and add them to your Cumulocity account. Refer to the [Web Developer's Guide](/guides/web/) for details.
+Cumulocity comes with a number of preset widgets, see [Widgets Collection](#widgets) for details. You can also develop your own widgets and add them to your Cumulocity account. Refer to the [Web Developer's Guide](/guides/web/) for details.
 
 ### <a name="creating-dashboards"></a>Creating a dashboard
 
@@ -37,7 +37,7 @@ To add a widget to a dashboard, click **Add widget** in the top menu bar.
 
 <img src="/guides/images/users-guide/Cockpit/Cockpit_AddWidget.png" name="Add widget" style="width:75%;"/> 
 
-In the upcoming dialog, select a widget type from the dropdown list. Depending on the widget type selected, additional fields and checkboxes will be displayed to be filled in or selected. For details on all widgets refer to [Widgets Collection](#widget). 
+In the upcoming dialog, select a widget type from the dropdown list. Depending on the widget type selected, additional fields and checkboxes will be displayed to be filled in or selected. For details on all widgets refer to [Widgets Collection](#widgets). 
 
 Click **Customize widget style** to customize the content and header style for the widget individually, similar to specifying the general layout in the [dashboard editor](#creating-dashboards).
 

@@ -85,10 +85,10 @@ Several tabs are available for each object, dependent of the object type:
 
 |Tab|Description|Availability
 |:---|:---|:---
-|Info|Shows a list of [Smart Rules](#rules) created for the object.|Group, Device
+|Info|Shows a list of [Smart Rules](#smart-rules) created for the object.|Group, Device
 |Alarms|Displays alarms for the device. For details on alarms, refer to [Working with alarms](/guides/users-guide/device-management/#alarm-monitoring) in *Device Management*.|Device
 |Sub-assets|Shows the sub-assets of a group.|Group
-|Data explorer|Shows all data points of the children. For details refer to [Visualizing data using the Data Explorer**](#visualize).|Group, Device
+|Data explorer|Shows all data points of the children. For details refer to [Visualizing data using the Data Explorer](#data-explorer).|Group, Device
 |Location|Shows the current location of a device.|Device
 
 If dashboards have been created for an object, they will also be added as a tab. See [Working with Dashboards](#dashboards) for details.

@@ -15,7 +15,7 @@ Per default, Cumulocity comes with the following three standard applications:
 
 Apart from these standard applications that initially come with Cumulocity, various additional applications are provided which you may subscribe to, i.e. integrated agents for several device types.
 
-Moreover, you can add own applications to be used in your Cumulocity account. For details, refer to [Administration > Managing applications](/guides/users-guide/administration/#applications).
+Moreover, you can add own applications to be used in your Cumulocity account. For details, refer to [Administration > Managing applications](/guides/users-guide/administration/managing-applications).
 
 The content of the Cumulocity platform therefore is entirely dynamic and is generated based on various criteria:
 

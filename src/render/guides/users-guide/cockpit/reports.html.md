@@ -31,7 +31,7 @@ Next, widgets can be added to the report.
 
 You can add widgets to reports in the same way as adding widgets to dashboards. 
 
-Click **Add widget** in the top menu bar and select a widget type from the list. For details on all widgets types available, refer to [Widgets collection](#widget).
+Click **Add widget** in the top menu bar and select a widget type from the list. For details on all widgets types available, refer to [Widgets collection](#widgets).
 
 #### Deleting reports
 

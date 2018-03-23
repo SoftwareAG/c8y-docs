@@ -4,6 +4,8 @@ title: Data explorer
 layout: redirect
 ---
 
+<a name="data explorer"></a>
+
 In the data explorer, data points, i.e. measurements or sensor data, can be visualized.
 
 The data explorer is available for all assets or just for a particular asset.
@@ -80,7 +82,7 @@ To save the data point to the Data Point Library, click the menu icon of the dat
 
 <img src="/guides/images/users-guide/Cockpit/Cockpit_DataPointContextMenu.png" name="data point context menu" style="width:75%;"/>
 
-For details on the Data Point Library refer [*Using the Datapoint Library*](#library).
+For details on the Data Point Library refer to [Using the Datapoint Library](#data-point-library).
 
 To remove a data point from the data point list, click the menu icon and select **Remove from list**.
 

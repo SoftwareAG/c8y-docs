@@ -3,8 +3,7 @@ order: 20
 title: Managing assets
 layout: redirect
 ---
-<a name="asset"></a>
-
+<a name="assets"></a>
 ### Introduction
 
 Assets represent business objects in general like buildings, machines, production units or cars.

@@ -4,8 +4,6 @@ title: Smart rules
 layout: redirect
 ---
 
-<a name="rules"></a>
-
 Cumulocity includes a rule engine to analyze data in realtime and to perform actions based on data. These rules are specified in a scripting language and are managed in the [Administration application](/guides/users-guide/administration).
 
 To easily create rules, the Cockpit application includes a Smart Rules builder which allows you to create rules from templates (so-called smart rule templates).

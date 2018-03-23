@@ -49,8 +49,8 @@ At the left of the "New user" window provide the following information to identi
 |First name|First name of the user. When the user is logged in, this name appears at the right of the top bar on the **User** button. 
 |Last name|Last name of the user.
 |Telephone|A valid phone number. The phone number is required if the user is configured to use two-factor authentication.
-|Owner|Another user that manages ("owns") the new user. Select a user from the dropdown list and click **Done** to confirm. Refer to [Managing user hierarchies](/guidea/users-guide/enterprise-edition#user-hierarchies) for details on user hierarchies.
-|Delegated by|Can be activated to delegate user hierarchies and permissions to the user. Refer to [Managing user hierarchies](/guidea/users-guide/enterprise-edition#hierarchy) for details on delegation.
+|Owner|Another user that manages ("owns") the new user. Select a user from the dropdown list and click **Done** to confirm. Refer to [Managing user hierarchies](/guides/users-guide/enterprise-edition#user-hierarchies) for details on user hierarchies.
+|Delegated by|Can be activated to delegate user hierarchies and permissions to the user. Refer to [Managing user hierarchies](/guides/users-guide/enterprise-edition#hierarchy) for details on delegation.
 
 Select the login options for the user.
 

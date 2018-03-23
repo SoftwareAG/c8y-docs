@@ -48,7 +48,7 @@ Aktivieren Sie die Checkbox "Passwort merken", damit der Browser sich Ihre Zugan
 
 Um sich abzumelden, klicken Sie auf die Schaltfläche **Benutzer** rechts in der oberen Leiste und wählen Sie im Kontextmenü **Abmelden**.
 
-![Menü Logout](/guides/images/benutzerhandbuch/Overview_Logout.png)
+![Logout](/guides/images/benutzerhandbuch/Overview_Logout.png)
 
 > **Info:** Aus Sicherheitsgründen verwendet Cumulocity keine Cookies-Technologie.
 

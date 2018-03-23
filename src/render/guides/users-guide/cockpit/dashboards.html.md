@@ -4,8 +4,6 @@ title: Dashboards
 layout: redirect
 ---
 
-<a name="dashboards"></a>
-
 Dashboards provide you with a customized visualization of your data by using a set of widgets. Widgets can display maps, images, graphs, tables and other graphic representations of data. 
 
 Cumulocity comes with a number of preset widgets, see [Widgets Collection](#widget) for details. You can also develop your own widgets and add them to your Cumulocity account. Refer to the [Web Developer's Guide](/guides/web/) for details.

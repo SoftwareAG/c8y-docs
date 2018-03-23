@@ -4,8 +4,6 @@ title: Widgets collection
 layout: redirect
 ---
 
-<a name="widget"></a>
-
 The Cockpit includes preset widget types. Each widget type provides different parameters to configure and different data to be displayed. 
 
 The following section describes, in alphabetical order, each available widget type and its configuration properties.

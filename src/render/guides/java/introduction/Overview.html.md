@@ -1,7 +1,7 @@
 ---
 order: 10
 layout: redirect
-title: introduction
+title: Introduction
 ---
 
 Cumulocity comes with elaborate support for developing clients in Java. You can use Java, for example, to 

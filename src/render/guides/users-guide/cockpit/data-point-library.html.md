@@ -4,8 +4,6 @@ title: Data Point Library
 layout: redirect
 ---
 
-<a name="library"></a>
-
 The Data Point Library provides a collection of data points with default values for data point properties. 
 
 Data point properties are similar to "paragraph formats" in word processing applications: You do not want to format each paragraph individually. Instead you want to define a set of default formats and apply them to your paragraphs in your document. 

@@ -21,8 +21,8 @@ The other way to register an application to the platform is to do it manually by
 
 To create an application and acquire credentials, refer to:
 
-* [Create application](/guides/rest/microservice-development#create-application)
-* [Acquire microservice credentials](/guides/rest/microservice-development#acquire-microservice-credentials)
+* [Create application](/guides/rest/microservice-development#creating-applications)
+* [Acquire microservice credentials](/guides/rest/microservice-development#acquiring-microservice-credentials)
 
 The subscription package provides means to monitor and act upon changes in tenant subscriptions to a microservice. To add a custom behavior a developer can add an event listener for MicroserviceSubscriptionAddedEvent and MicroserviceSubscriptionRemovedEvent like in the following example:
 

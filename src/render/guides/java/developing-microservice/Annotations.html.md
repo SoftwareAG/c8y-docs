@@ -1,7 +1,7 @@
 ---
 order: 20
 layout: redirect
-title: Anotations
+title: Annotations
 ---
 
 The simplest way to add required behavior to your application is to annotate a main class with @MicroserviceApplication. 

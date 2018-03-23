@@ -4,7 +4,6 @@ title: Managing data retention
 layout: redirect
 ---
 
-<a name="retention"></a>
 ### <a name="retention-rules"></a>Retention rules
 
 "Retention rules" gives you control on how long data is stored in your account. You might for example want to store measurements for 90 days, but delete alarms already after 10 days. By default, all historical data is deleted after 60 days (configurable in the system settings).

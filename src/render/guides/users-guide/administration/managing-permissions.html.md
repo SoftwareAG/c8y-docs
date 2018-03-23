@@ -156,7 +156,7 @@ Permissions are grouped into the following categories:
 |Device control|Permissions to remote control devices.
 |Full access|Complete access to the associated devices, mainly to simplify configuration.
 
-> **Info:** Service providers will see an additional permission "Support" in their "management" tenant. This permission lets users of the service provider give support to their customer's users. See [Supporting other users](/guides/users-guide/enterprise-edition#users-in-other-tenants) below.
+> **Info:** Service providers will see an additional permission "Support" in their "management" tenant. This permission lets users of the service provider give support to their customer's users. See [Supporting users in other tenants](/guides/users-guide/enterprise-edition#users-in-other-tenants) below.
 
 Add a permission to the role by clicking the plus icon next to the desired category.
 

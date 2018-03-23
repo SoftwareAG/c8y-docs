@@ -37,7 +37,7 @@ For details on alarms, refer to [Device Management > Working with alarms](/guide
 
 The "Applications" widget shows a list of links to all available applications. There are no additional parameters to be configured.
 
-For details on applications, refer to [Administration > Managing Applications](/guides/users-guide/Administration#managing-applications).
+For details on applications, refer to [Administration > Managing Applications](/guides/users-guide/administration#managing-applications).
 
 
 ### Widget "Asset notes"
@@ -155,7 +155,7 @@ Additionally, a specific date range can be set and the events can be monitored i
 
 The "Fieldbus device" widget lets you see the status of a modbus device and operate it.
 
-For details on the "Fieldbus device" widget, refer to [Optional Services > Cloud Fieldbus > Monitoring device status using the Fieldbus device widget](/guides/users-guide/cloud-fieldbus#fieldbus-device-widget).
+For details on the "Fieldbus device" widget, refer to [Optional Services > Cloud Fieldbus > Monitoring device status using the Fieldbus device widget](/guides/users-guide/optional-services/cloud-fieldbus#fieldbus-device-widget).
 
 ### Widget "Help and service"
 

@@ -40,6 +40,6 @@ To decouple applications from the specifics of particular types and makes of dev
 
 Now, you can, for example, place the object in a map. Standard fragments are defined in the [Device management library](/guides/reference/device-management) and in the [Sensor library](/guides/reference/sensor-library).
 
-Querying the "/platform" resource will show you further possibilities for querying your data (see the [Introduction](/guides/images/rest/introduction)).
+Querying the "/platform" resource will show you further possibilities for querying your data (see the [Introduction](/guides/rest/introduction)).
 
 Note that queries do not necessarily return all query results at once, but only a "page" of the result. For more information on paging, see the Section [Query result paging](/guides/reference/rest-implementation). The optional parameter "withTotalPages" will make the query contain full page statistics at the expensive of slightly slower performance.

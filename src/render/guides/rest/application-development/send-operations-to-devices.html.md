@@ -4,7 +4,7 @@ title: Send operations to devices
 layout: redirect
 ---
 
-To trigger an operation on a device, POST the operation to the [Device Control API](/guides/reference/device-control). The following example restarts the device with the ID "2480300" (which is the Raspberry Pi that we [previously integrated](/guides/images/rest/device-integration)):
+To trigger an operation on a device, POST the operation to the [Device Control API](/guides/reference/device-control). The following example restarts the device with the ID "2480300" (which is the Raspberry Pi that we [previously integrated](/guides/rest/device-integration)):
 
     POST /devicecontrol/operations HTTP/1.1
     Content-Type: application/vnd.com.nsn.cumulocity.operation+json;

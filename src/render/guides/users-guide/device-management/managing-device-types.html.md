@@ -21,7 +21,7 @@ The device protocols list shows the following information on each device:
 
 To add a new device protocol, click **Add device protocol** at the top bar. For details on adding a device protocol, follow the documentation of the particular device type you want to add:
 
-* [IMPACT](/guides/users-guide/nokia-impact)
+* [IMPACT](/guides/users-guide/optional-services/nokia-impact)
 * LWM2M
 
 To edit a device protocol, either click on the protocol or click the menu icon at the right of the row and in the context menu click **Edit**. 

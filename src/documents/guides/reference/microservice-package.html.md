@@ -38,7 +38,7 @@ The response will be:
 
 ### Docker
 
-Cumulocity hosts linux/amd64 docker containers and not Windows containers. The docker version must be >= 1.2.6
+Cumulocity hosts linux/amd64 docker containers and not Windows containers. The docker version must be >= 1.12.6
 
     $ docker version
     Client:

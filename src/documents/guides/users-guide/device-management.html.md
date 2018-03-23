@@ -402,7 +402,7 @@ The "Control" tab lists the operations being sent to a device. Refer to [Working
 
 ![Operations](/guides/users-guide/operations.png)
 
-### <a name="software"></a>Network
+### <a name="network"></a>Network
 
 In the "Network" tab network settings can be configured for the device.
 
@@ -417,7 +417,7 @@ To install a new firmware, click **Install firmware**, then select a firmware im
 
 Similarly, to install a software on the device, click **Install software**, select a software package from the [Software repository](#software-repo) and click **Install**. 
 
-<img src="/guides/users-guide/DeviceManagement/DevMgmt_software.png" alt="Software" style="max-width: 100%">
+<img src="/guides/users-guide/DeviceManagement/DevMgmt_Software.png" alt="Software" style="max-width: 100%">
 
 Installing software and firmware usually includes a restart of the device. To monitor the progress of an installation, visit the "Control" tab.
 

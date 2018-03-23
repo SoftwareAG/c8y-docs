@@ -7,13 +7,12 @@
   border-radius: 16px;
   background-color: white;
   box-shadow: 0 4px 4px rgba(0, 0, 0, 0.01), 0 8px 8px rgba(0, 0, 0, 0.01), 0 16px 16px rgba(0, 0, 0, 0.03), 0 32px 32px rgba(0, 0, 0, 0.05), 0 32px 64px rgba(0, 0, 0, .1), 0 -3px 32px rgba(0, 0, 0, 0.1);
-
   .transition( transform .30s @ease);
   .zoom-overlay-open & {
     position: static;
     overflow: visible;
   }
-  .table-responsive{
+  .table-responsive {
     width: 100%;
     margin-bottom: 24px;
     overflow-y: hidden;
@@ -22,9 +21,14 @@
     border: 0 solid #dddddd;
     -webkit-overflow-scrolling: touch;
   }
+  @media print {
+    margin: 0 auto!important;
+    padding: 0!important;
+    max-width: 100%!important;
+  }
 }
 
-@media(min-width: @screen-sm-min){
+@media(min-width: @screen-sm-min) {
   .main-content {
     padding: 40px;
     border-radius: 30px;
@@ -42,8 +46,6 @@
   }
 }
 
-
-
 // section header - renders in every page
 .section-header {
   border-top-left-radius: 16px;
@@ -52,7 +54,6 @@
   color: white;
   margin: -20px -20px 40px;
   padding: 20px;
-  
   #gradient>.horizontal( #069214, @brand-complementary);
   @media(min-width: @screen-sm-min) {
     margin: -40px -40px 40px;
@@ -75,10 +76,8 @@
   h1 {
     margin: 10px 0;
     font-weight: 200;
-    letter-spacing: -0.03em;
-    //font-size: 48px;
+    letter-spacing: -0.03em; //font-size: 48px;
   }
-
   .lead {
     max-width: 660px;
   }
@@ -88,15 +87,13 @@
       color: white;
       text-decoration: underline;
     }
-  }
-
-  // hide empry lead
-  + .lead:empty{
+  } // hide empry lead
+  +.lead:empty {
     display: none;
   }
 }
 
-.to-the-top{
+.to-the-top {
   position: fixed;
   right: 7%;
   bottom: 20px;
@@ -118,7 +115,7 @@
   -o-transition: all all 0.4s ease ease-out;
   transition: all 0.4s ease;
   transition: all all 0.4s ease ease-out;
-   &:hover{
+  &:hover {
     border-color: transparent;
     background-color: @brand-primary;
     color: white;
@@ -126,11 +123,9 @@
   }
 }
 
-
 // copy link
-
 .bookmark {
-  &:focus{
+  &:focus {
     outline: none;
   }
   h2 &,
@@ -179,8 +174,7 @@
   }
 }
 
-
-table:not(.gsc-search-box):not(.gstl_50){
+table:not(.gsc-search-box):not(.gstl_50) {
   .table();
   .table-striped();
 }

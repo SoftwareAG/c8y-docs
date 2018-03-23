@@ -111,7 +111,7 @@ To display the images in your pages, you'll have to add the relative path e.g `!
 
 ### 6. Add devices into device guides
 
-Device guides include and overview page with thumbnails of teh devices and a filtering field. 
+Device guides include and overview page with thumbnails of the devices and a filtering field. 
 
 When adding a new device, make sure to include an image sized 350 x 350px and provide the path to it on the device page metadata, for example:
 ```

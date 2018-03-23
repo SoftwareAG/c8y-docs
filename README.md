@@ -14,6 +14,8 @@ The Cumulocity Guides website architecture has the following structure:
 
 Now let's take a look at how to build up this structure.
 
+## Adding content
+
 ### 1. Add a new section
 
 Before adding a new section, check if the content you plan to add doesn't fit in any of the available sections:
@@ -105,6 +107,22 @@ The property `layout`must be set to `redirect` to ensure that any link to this f
 
 Media should be added to `src/static/guides/images/`. Add a new directory if none of the available suits your needs.
 To display the images in your pages, you'll have to add the relative path e.g `![image title](/guides/images/<directory name>/<file name>)`.
+
+
+### 6. Add devices into device guides
+
+Device guides include and overview page with thumbnails of teh devices and a filtering field. 
+
+When adding a new device, make sure to include an image sized 350 x 350px and provide the path to it on the device page metadata, for example:
+```
+---
+title: Adeunis LoRaWAN Demonstrator 
+layout: subsections
+collection: 'guides/devices/adeunis'
+image: '/guides/images/devices/device-list/adeunis_rf-lorawan.jpg'
+---
+```
+
 
 ## Redirects
 

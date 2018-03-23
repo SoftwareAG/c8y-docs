@@ -330,7 +330,6 @@ After you find the image in the list, run docker container for the microservice 
   HEADERS:
 
     "Authorization": "{AUTHORIZATION}"
-    "Content-Type": "multipart/form-data"
 
   BODY:
 
@@ -343,9 +342,6 @@ After you find the image in the list, run docker container for the microservice 
     -H "Content-type: application/json" \
      "{URL}/tenant/tenants/{TENANT_ID}/applications"
 
-The expected result is:
-
-    hello me!
 
 ## DEPLOYMENT
 
@@ -386,6 +382,10 @@ Now you can verify if your application is running by executing
 
     curl -H "Authorization: {AUTHORIZATION}" \
       {URL}/service/hello-world/hello?who=me
+
+The expected result is:
+
+    hello me!
 
 ## Improving the microservice
 

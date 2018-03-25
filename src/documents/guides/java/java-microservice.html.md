@@ -228,12 +228,13 @@ To build the zip file, use the following command:
 
 After a successful build you will be provided with a zip file in the target directory. The zip can be deployed to the platform according to deployment guide.
 
-## Run microservice locally
+## <a name="run-locally"></a>Run microservice locally
 
-In order to test the microservice for the calls from Microservice to Cumulocity, you can run the docker container locally.
-To verify calls from Cumulocity to Microservice, the microservice must be deployed.
+In order to test the microservice for the calls from the microservice to Cumulocity, you can run the docker container locally.
 
-To run microservice locally which uses Cumulocity API you need:
+To verify calls from Cumulocity to the microservice, the microservice must be deployed.
+
+To run a microservice, which uses Cumulocity API, locally you need:
 
 * URL address of the Cumulocity host of your tenant
 * Authorization header = "Basic {Base64({username}:{password})}"
@@ -315,11 +316,11 @@ Example response:
 
 **Step 3 - Run microservice locally**
 
-The image already added to local docker repository during the build. List all the docker repository images available:
+The image is already added to the local docker repository during the build. List all the docker repository images available:
 
     $ docker images
 
-After you find the image in the list, run docker container for the microservice by giving baseurl and bootstrap user credentials:
+After you find the image in the list, run docker container for the microservice by providing baseurl and bootstrap user credentials:
 
     $ docker run -e C8Y_BASEURL={URL} -e C8Y_BOOTSTRAP_TENANT={BOOTSTRAP_TENANT} -e C8Y_BOOTSTRAP_USER={BOOTSTRAP_USERNAME} -e C8Y_BOOTSTRAP_PASSWORD={BOOTSTRAP_USER_PASSWORD} -i -t {DOCKER_REPOSITORY_IMAGE}:{TAG}
 
@@ -355,7 +356,7 @@ To deploy a microservice application on an environment you need:
 **Step 1 - Create application**
 
 If the application does not exist, create a new application on a platform.
-Please see 'Create application' step in Run microservice locally section.
+For details, refer to the 'Create application' step in [Run microservice locally](#run-locally).
 
 **Step 2 - Upload zip file**
        
@@ -374,9 +375,9 @@ Example:
 
 **Step 3 - Subscribe to microservice**
  
-Please see 'Subscribe to microservice' step in Run microservice locally section.   
+For details, refer to the 'Subscribe to microservice' step in [Run microservice locally](#run-locally).
 
-**Step 4 - Verify if microservice running**
+**Step 4 - Verify if microservice is running**
 
 Now you can verify if your application is running by executing
 

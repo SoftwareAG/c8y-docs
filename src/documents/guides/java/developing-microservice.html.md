@@ -297,7 +297,7 @@ Example configuration:
 ## Deployment
 ### Hosted deployment
 
-Please note that for your convenience we have prepared a utility deployment script available [here](/guides/reference/microservice-package)
+Note that for your convenience we have prepared a utility deployment script available [here](/guides/reference/microservice-package)
 
 To deploy an application on an environment you need:
 
@@ -387,8 +387,8 @@ Example execution could be
 
 ## Monitoring
 
-To see if hosted microservice is running successfully, microservice's health endpoint can be checked.
-This endpoint is enabled by default for all microservices that is developed using Java Microservice SDK.
+To see if a hosted microservice is running successfully, a microservice's health endpoint can be checked.
+This endpoint is enabled by default for all microservices that are developed using Java Microservice SDK.
 
     GET {URL}/service/{APPLICATION_NAME}/health
 
@@ -405,6 +405,3 @@ Example response:
     {
       "status":"DOWN"
     }
-
-
-

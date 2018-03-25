@@ -67,7 +67,7 @@ Microservices are deployed as docker images to Cumulocity, and follow specific c
 
 When developing a Cumulocity microservice, a developer is not restricted to any programming language. However, a microservice must serve as a HTTP server working on port 80 and must be encapsulated in a docker image. 
 
->**Info:** For Microservice developers Cumulocity provides Microservice SDK in [Java programming language](/guides/java/developing-microservice) and C# programming language for .Net Core. Please check [Hello World](/guides/java/java-microservice) example for developing microservices in the Java Developer's Guide.
+>**Info:** For Microservice developers Cumulocity provides Microservice SDK in [Java programming language](/guides/java/developing-microservice) and C# programming language for .Net Core. Refer to the [Hello World](/guides/java/java-microservice) example for developing microservices in the Java Developer's Guide.
 
 The hosting of the Microservice is provided by Cumulocity. This way developers can focus on business logic and leave scaling, security, high availability and monitoring to Cumulocity. Microservices can be built on the top of the API exposed by the Cumulocity platform. This way, Cumulocity microservices are a comfortable means to provide new functionality and extend existing one. 
 
@@ -181,13 +181,13 @@ Granting access to subtenants and subscribing to applications is done in the Adm
 
 ![Application Subscription](/guides/concepts-guide/applicationsubscription.png)
 
-Tenants can also have their own application marketplace, which can be viewed using Own Applications in Administration application.
+Tenants can also have their own application marketplace, which can be viewed in the "Own Applications" page in the Administration application.
 
 <img src="/guides/users-guide/Administration/Admin_OwnApplications.png" alt="Own applications" style="max-width: 100%">
 
-Owned applications and granted applications can be also subscribed to the subtenants by the tenant.
+Owned applications and granted applications can also be subscribed to the subtenants by the tenant.
 
-For details refer to [Administration > Managing tenants](/guides/users-guide/administration#tenants) in the User`s Guide.
+For details refer to [Managing tenants](/guides/users-guide/administration#tenants) in the User`s Guide.
 
 ### Service Discovery
 

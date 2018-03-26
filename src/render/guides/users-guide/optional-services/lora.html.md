@@ -26,11 +26,11 @@ The following sections describe how to:
 
 Note: Your subscription needs to include this feature. If you do not see the functionality described in this document, please contact support.
 
-## <a name="configure-credentials"></a>Configuring ThingPark account credentials
+### <a name="configure-credentials"></a>Configuring ThingPark account credentials
 
 Before using LoRa devices with Cumulocity, you need to configure your ThingPark account details in the Cumulocity Administration application. In order to create new credentials or replace existing ones, go to the Administration application and select "Connectivity" in "Settings" in the navigator. 
 
-### <a name="create-new-credentials"></a>Creating new account credentials
+#### <a name="create-new-credentials"></a>Creating new account credentials
 
 If you go to "Connectivity" for the first time, you will be asked to provide credentials. 
 Enter the following information:
@@ -46,7 +46,7 @@ The profile ID, username and password are used to retrieve an access token to se
 
 Click "Save". If everything is okay, there will be a message "Credentials successfully saved".
 
-### <a name="replace-credentials"></a>Replacing account credentials
+#### <a name="replace-credentials"></a>Replacing account credentials
 
 In order to replace your credentials, click the "Replace credentials" button.
 
@@ -56,12 +56,12 @@ Enter your profile ID, username, password and application EUI. For an explanatio
 
 Click "Save". Your old credentials will now be replaced with the new ones. 
 
-## <a name="create-device-types"></a>Creating device types
+### <a name="create-device-types"></a>Creating device types
 To process data from LoRa devices, Cumulocity needs to understand the payload format of the devices. 
 
 In order to create device types, go to the Device Management application and select "Device database" in the "Device types" menu in the navigator. You can either import an existing device type or create a new one. 
 
-### <a name="import-device-type"></a>Importing a predefined device type
+#### <a name="import-device-type"></a>Importing a predefined device type
 In the Device database window, click the "Import" button. 
 
 Select the predefined device type, for example "LoRaWAN Demonstrator". Click "Import".
@@ -70,7 +70,7 @@ Select the predefined device type, for example "LoRaWAN Demonstrator". Click "Im
 
 Alternatively you may also load the device type from a file and import it.
 
-### <a name="create-new-device-type"></a>Creating a new device type
+#### <a name="create-new-device-type"></a>Creating a new device type
 
 In the device database window, click the "New" button. The following window will open:
 
@@ -169,7 +169,7 @@ This will be the result:
 
 ![Value configuration in detail: nested structure](/guides/images/users-guide/actility/deviceDatabase5.png)
 
-## <a name="register-device"></a>Registering LoRa devices
+### <a name="register-device"></a>Registering LoRa devices
 
 In order to register a LoRa device, go to the Device Management application and click "Device Registration" in the Quick links. Click "Register device". The following window opens:
 
@@ -198,7 +198,7 @@ You can verify that the device is really connected by checking that events are a
 For more information on viewing and managing your connected devices, also refer to 
 [Device Management](/guides/users-guide/device-management).
 
-## <a name="deprovision-device"></a>Deprovisioning LoRa devices
+### <a name="deprovision-device"></a>Deprovisioning LoRa devices
 
 You can deprovision a LoRa device in the ThingPark platform. This means that the device will no longer be connected to the network. Its history data will still be available in Cumulocity, but the device will be deleted in ThingPark.  
 
@@ -208,7 +208,7 @@ To deprovision a device, go to the Device Management application and navigate to
 
 After confirming the deprovisioning, the device will be deprovisioned in ThingPark.
  
-## <a name="configurable-port"></a>Sending operations
+### <a name="configurable-port"></a>Sending operations
 
 In order to send an operation, go to the Device Management application and navigate to the device you want to send an operation to. Click the "Shell" tab.
 
@@ -222,11 +222,3 @@ If you enter the command without defining a port, it will be sent to the default
 <img src="/guides/images/users-guide/actility/portConfiguration.png" alt="Port configuration" style="max-width: 100%">
 
 Click "Execute". The operation will be sent to the device. The timing depends on Actility ThingPark.
-
-
-
-
-
-
-
-

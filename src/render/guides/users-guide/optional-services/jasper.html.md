@@ -6,7 +6,7 @@ layout: redirect
 
 The Jasper Control Center Add-On to Cumulocity provides you with a holistic view of mobile device connectivity. This Add-On works from within the Cumulocity Device Management Application. While Cumulocity itself communicates directly with devices and shows connectivity information as reported by the device, the Jasper Control Center Add-On complements this with a view of connectivity.
 
-<img src="/guides/images/users-guide/jasperarchitecture.png" alt="Jasper architecture"  style="max-width: 100%">
+<img src="/guides/images/users-guide/jasperarchitecture.png" alt="Jasper architecture">
 
 If you have a Jasper Control Center account with your network provider, you can link that account to your Cumulocity tenant. With this combination you can:
 
@@ -24,7 +24,7 @@ The following sections describe:
 * What [information](#jasperinfo) is shown.
 * How to [manage connectivity](#managing) from Device Management.
 
-## <a name="link-account"></a>Linking your Jasper Control Center account
+### <a name="link-account"></a>Linking your Jasper Control Center account
 
 Cumulocity accesses your Jasper Control Center account using a dedicated user that you need to create in the Control Center and configure it in Cumulocity. This user is used for all access from Cumulocity to Jasper Control Center, so the permissions of the user have influence on functionalities available in Cumulocity.
 
@@ -53,7 +53,7 @@ The user is now created but does not have a password yet. Follow the instruction
 
 The Add-On is now set up.
 
-## <a name="link-sims"></a>Linking SIMs and mobile devices
+### <a name="link-sims"></a>Linking SIMs and mobile devices
 
 Now change to the Device Management application and navigate to a device that is connected through a SIM card managed by Jasper Control Center. You should see a tab "Connectivity". If this tab is not shown, 
 
@@ -73,7 +73,7 @@ Jasper Control Center identifies SIM cards through their ICCID ("integrated circ
 
 > Note that it may take a few seconds until the tab appears for the first time on a device, as Cumulocity checks if the particular SIM card is managed by Jasper Control Center.
 
-## <a name="jasperinfo"></a>Browsing the "Connectivity" tab
+### <a name="jasperinfo"></a>Browsing the "Connectivity" tab
 
 Now navigate to the "Connectivity" tab. It shows several sections of information:
 
@@ -116,7 +116,7 @@ Finally, the "Audit logs" section lists all changes to the SIM card and its tari
 > This tab does not update in real-time. To show current data, click the "Reload" link at the top.
 
 
-## <a name="managing"></a>Managing connectivity
+### <a name="managing"></a>Managing connectivity
 
 If you suspect that a device is not correctly reporting to Cumulocity, or it is not receiving commands, you can verify the connectivity status of the device using the "Connectivity" tab. Check if
 

@@ -26,9 +26,18 @@ Verify, that you have Maven 3 installed with Java (7+):
 
 Verify the docker installation:
 
-    $ docker -v
-    Docker version 17.12.0-ce, build c97c6d6
+Cumulocity hosts linux/amd64 docker containers and not Windows containers. The docker version must be >= 1.12.6
 
+    $ docker version
+    Client:
+     Version:         1.12.6
+     API version:     1.24
+     OS/Arch:         linux/amd64
+
+    Server:
+     Version:         1.12.6
+     API version:     1.24
+     OS/Arch:         linux/amd64
 
 ## Developing the "Hello, world!" agent
 
@@ -219,32 +228,36 @@ To build the zip file, use the following command:
 
 After a successful build you will be provided with a zip file in the target directory. The zip can be deployed to the platform according to deployment guide.
 
-## Deployment
+## <a name="run-locally"></a>Run microservice locally
 
-To deploy an application on an environment you need:
+In order to test the microservice for the calls from the microservice to Cumulocity, you can run the docker container locally.
 
-* URL address of your tenant
+To verify calls from Cumulocity to the microservice, the microservice must be deployed.
+
+To run a microservice, which uses Cumulocity API, locally you need:
+
+* URL address of the Cumulocity host of your tenant
 * Authorization header = "Basic {Base64({username}:{password})}"
 * Tenant - tenant ID
-* zip build from previous step
 
 **Step 1 - Create application**
 
 If the application does not exist, create a new application on a platform:
 
-	POST {URL}/application/applications
+    POST {URL}/application/applications
 
 HEADERS:
 
     "Authorization": "{AUTHORIZATION}"
-    "Content-type": "application/json"
+    "Content-Type": "application/vnd.com.nsn.cumulocity.application+json"
+    "Accept: application/vnd.com.nsn.cumulocity.application+json"
 
 BODY:
 
     {
-			"name": "{APPLICATION_NAME}",
-			"type": "MICROSERVICE",
-			"key": "{APPLICATION_NAME}-microservice-key"
+            "name": "{APPLICATION_NAME}",
+            "type": "MICROSERVICE",
+            "key": "{APPLICATION_NAME}-microservice-key"
     }
 
 
@@ -253,8 +266,8 @@ Example:
     $curl -X POST -s \
       -d "{"name":"hello-microservice-1","type":"MICROSERVICE","key":"hello-microservice-1-key"}" \
       -H "Authorization: {AUTHORIZATION}" \
-      -H "Content-type: application/json" \
-      -H "Accept: application/json" \
+      -H "Content-Type: application/vnd.com.nsn.cumulocity.application+json" \
+      -H "Accept: application/vnd.com.nsn.cumulocity.application+json" \
       "{URL}/application/applications"
       
 Example response:
@@ -280,20 +293,70 @@ Example response:
         "type": "MICROSERVICE"
     }      
 
-If the application has been created correctly, you can get the application ID by invoking:
+If the application has been created correctly, you can get the application Id from response.
 
-	GET {URL}/application/applicationsByName/{APPLICATION_NAME}
+**Step 2 - Acquire microservice bootstrap user**
+
+    GET {URL}/application/applications/{APPLICATION_ID}/bootstrapUser
 
 HEADERS:
 
+    "Authorization": {AUTHORIZATION}
+    "Content-Type": application/vnd.com.nsn.cumulocity.user+json
+
+Example response:
+
+    HTTP/1.1 200 Ok
+    Content-Type: application/vnd.com.nsn.cumulocity.user+json
+    {
+      "tenant": "...",
+      "name": "...",
+      "password": "..."
+    }
+
+**Step 3 - Run microservice locally**
+
+The image is already added to the local docker repository during the build. List all the docker repository images available:
+
+    $ docker images
+
+After you find the image in the list, run docker container for the microservice by providing baseurl and bootstrap user credentials:
+
+    $ docker run -e C8Y_BASEURL={URL} -e C8Y_BOOTSTRAP_TENANT={BOOTSTRAP_TENANT} -e C8Y_BOOTSTRAP_USER={BOOTSTRAP_USERNAME} -e C8Y_BOOTSTRAP_PASSWORD={BOOTSTRAP_USER_PASSWORD} -i -t {DOCKER_REPOSITORY_IMAGE}:{TAG}
+
+**Step 4 - Subscribe to microservice**
+    
+    POST {URL}/tenant/tenants/{TENANT_ID}/applications
+
+  HEADERS:
+
     "Authorization": "{AUTHORIZATION}"
-    "Content-type": "application/json"
 
-Example:
+  BODY:
 
-    curl -H "Authorization:{AUTHORIZATION}" \
-     {URL}/application/applicationsByName/hello-world
+    {"application":{"id": "{APPLICATION_ID}"}}
 
+  Example:
+
+    curl -X POST -d "{"application":{"id": "{APPLICATION_ID}"}}"  \
+    -H "Authorization: {AUTHORIZATION}" \
+    -H "Content-type: application/json" \
+     "{URL}/tenant/tenants/{TENANT_ID}/applications"
+
+
+## DEPLOYMENT
+
+To deploy a microservice application on an environment you need:
+
+* URL address of the Cumulocity host of your tenant
+* Authorization header = "Basic {Base64({username}:{password})}"
+* Tenant - tenant ID
+* zip build from previous step for deployment
+
+**Step 1 - Create application**
+
+If the application does not exist, create a new application on a platform.
+For details, refer to the 'Create application' step in [Run microservice locally](#run-locally).
 
 **Step 2 - Upload zip file**
        
@@ -311,24 +374,10 @@ Example:
 	  "{URL}/application/applications/{APPLICATION_ID}/binaries"
 
 **Step 3 - Subscribe to microservice**
-    
-	POST {URL}/tenant/tenants/$TENANT/applications
+ 
+For details, refer to the 'Subscribe to microservice' step in [Run microservice locally](#run-locally).
 
-  HEADERS:
-
-    "Authorization": "{AUTHORIZATION}"
-    "Content-Type": "multipart/form-data"
-
-  BODY:
-
-    {"application":{"id": "{APPLICATION_ID}"}}
-
-  Example:
-
-    curl -X POST -d "{"application":{"id": "{APPLICATION_ID}"}}"  \
-    -H "Authorization: {AUTHORIZATION}" \
-    -H "Content-type: application/json" \
-     "{URL}/tenant/tenants/{TENANT}/applications"  
+**Step 4 - Verify if microservice is running**
 
 Now you can verify if your application is running by executing
 

@@ -9,7 +9,7 @@ From the "Settings" menu, administrators can modify or manage various settings f
 - changing the [application settings](#default-app),
 - changing the [password policy and TFA settings](#changing-password-settings),
 - managing the [properties library](#properties),
-- configure the [settings for the Enterprise Edition](#platform-config).
+- configure the [settings for the Enterprise Edition](#config-platform).
 
 ### <a name="default-app"></a>Changing application settings
 

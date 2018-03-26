@@ -4,6 +4,8 @@ layout: redirect
 title: Accessing the Service APIs
 ---
 
+In the following section you will learn how to send an email via the Java Client API.
+
 ### Sending an Email via Java Client API
 
 The interface for handling email services can be obtained from Java by using the platform method as follows:
@@ -74,7 +76,7 @@ Please use our Rest API to store this information as the following:
 2.Assigning required roles
 
 To use the sms messaging API group of the user should have required roles such as 'SMS_ADMIN' for sending and 'SMS_READ' for receiving messages.
-Please see '[Assigning account-wide permissions](/guides/users-guide/administration/)'
+Please see '[Assigning account-wide permissions](/guides/users-guide/administration/#managing-permissions)'
 
 3.Choosing a sms provider
   
@@ -88,7 +90,7 @@ Note that receiving messages and receiving specific messages are not supported f
 
 * Jasper Control Center
 
-Please see [Jasper Control Center](/guides/users-guide/jasper/) for information about how to set the credentials.
+Please see [Jasper Control Center](/guides/users-guide/optional-services/jasper/) for information about how to set the credentials.
 
 * Ericsson
 

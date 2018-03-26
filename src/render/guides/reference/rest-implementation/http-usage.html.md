@@ -100,7 +100,7 @@ If you use an HTTP client that can only perform GET and POST methods in HTTP, yo
 	POST ...
 	X-HTTP-METHOD: PUT
 
-### <a id="processingmode"></a> Processing mode
+### <a id="processing-mode"></a> Processing mode
 
 Every update request (PUT, POST, DELETE) executes with a so-called *processing mode*. The default processing mode is *PERSISTENT*, which means that all updates will be send both to the Cumulocity database and to real-time processing. The alternative processing mode *TRANSIENT* will only send updates to real-time processing. As part of real-time processing, the user can decide case by case through Cumulocity Event Language scripts whether updates should be stored to the database or not.
 

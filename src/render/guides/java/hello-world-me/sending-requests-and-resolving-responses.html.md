@@ -4,6 +4,8 @@ layout: redirect
 title: Sending requests and resolving responses
 ---
  
+ In the following section you can see how to create and send requests.
+ 
 ### Creating a request
 
 In SmartREST every request is a single comma seperated line that always starts with the message identifier that relates to the template. Both examples will create the same request.

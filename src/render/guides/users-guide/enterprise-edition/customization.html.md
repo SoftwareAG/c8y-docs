@@ -90,7 +90,7 @@ Click **Preview** in the top menu bar to preview the new branding.
 
 Click **Generate** in the top menu bar to apply your new branding.
 
-The following image shows and an example where
+The following image shows an example where
 
 * the “Main brand color” is purple,
 * the “Secondary brand color” is white,

@@ -76,7 +76,7 @@ In order to duplicate an application, follow these steps:
 6. Enter the application path. This path will be part of the URL to invoke the application. For example, if you use "hello" as application path, the URL of the application will be "/apps/hello".
 7. Finally, click **Clone** to create the application.
 
-### <a name="add-remove-plugin"></a>Adding and removing plugins
+### <a name="add-remove-plugins"></a>Adding and removing plugins
 
 In order to configure and extend the functions provided with a smartapp, you can add plugins to your applications. 
 

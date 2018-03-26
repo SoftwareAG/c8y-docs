@@ -150,12 +150,12 @@
 
 
 
-  <footer>
+<!--  <footer>
   <div class="container">
     <hr>
     <small>© 2010-2018 Cumulocity GmbH. All rights reserved.</small>
   </div>
-</footer>
+</footer>-->
 
 <button type="button"
   class="to-the-top navbar-toggle">

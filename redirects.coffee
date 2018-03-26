@@ -53,6 +53,7 @@ redirects =
 	'/guides/devices/netcomm/cloud-fieldbus': '/guides/users-guide/cloud-fieldbus'
 	'/guides/reference/cumulocity-event-language': '/guides/event-language/introduction'
 	'/guides/zapier': '/guides/users-guide/optional-services/#saas-integration'
+	'/guides/java/developing': '/guides/java/developing-java-clients'
 	
 	
 	# "index.html" redirects

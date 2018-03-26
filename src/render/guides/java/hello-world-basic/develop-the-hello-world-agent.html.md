@@ -122,4 +122,4 @@ The last line shows that a new device has been successfully created with a parti
 
 ![Hello world device](/guides/images/java/hello.png)
 
-**Got an error message?** Check the [troubleshooting section](/guides/images/java/troubleshooting).
+**Got an error message?** Check the [troubleshooting section](/guides/java/troubleshooting).

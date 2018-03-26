@@ -1,8 +1,8 @@
-------
-order: 20
+---
 title: Prerequisites
 layout: redirect
-------
+order: 30
+---
 
 You should be familiar with the following technologies:
 

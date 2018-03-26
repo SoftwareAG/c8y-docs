@@ -1,8 +1,8 @@
-------
-order: 10
+---
 title: Developing an application
 layout: redirect
-------
+order: 20
+---
 
 The following section will guide you through the process of building a simple AngularJS application using the Web SDK. The resulting solution is available at [https://bitbucket.org/m2m/cumulocity-examples](https://bitbucket.org/m2m/cumulocity-examples) under the folder "hello-core-api". If you wish to run it, either clone the repository or download it from bitbucket and do as follows:
 

@@ -4,7 +4,7 @@ layout: redirect
 title: Zapier Integration
 ---
 
-## Overview
+### Overview
 
 The Zapier service in Cumulocity helps you to bring real-life data from your assets into ERP, CRM and other enterprise IT services. It also enables you to remote control your assets from these services. The Zapier service effectively connects more than 350 IT services with the Internet of Things. Use this service, for example, to
 
@@ -18,11 +18,11 @@ This section describes how to implement these and many other use cases by combin
 
 All the examples in this section require a Zapier account, which you can obtain for free at https://zapier.com.
 
-## Access Cumulocity App in Zapier
+### Access Cumulocity App in Zapier
 
 If you want to get access to the App and try it out please contact us at [support](https://support.cumulocity.com).
 
-## How the service works
+### How the service works
 
 The Zapier service connects Cumulocity in two ways to enterprise IT services:
 
@@ -134,11 +134,11 @@ Each trigger and action requires to add valid Cumulocity credentials. If you cre
 
 ![Cumulocity account](/guides/images/users-guide/zapier/credentials.png)
 
-## Examples
+### Examples
 
 > For detailed information on setting up Zaps, refer to https://zapier.com/help/. Note that the Zapier plans have limitations on the volume of data that can be transferred. Sending data outside of your plan may deactivate your Zap temporarily.
 
-### Store CEL data in a Google spreadsheet
+#### Store CEL data in a Google spreadsheet
 
 In the first example, we connect Cumulocity to Google Spreadsheet and transfer live measurements from your account into the spreadsheet. You can use the measurements for ad-hoc analysis, for example, to compare the performance of different devices. The example consists of four steps.
 
@@ -175,7 +175,7 @@ Activate the Zap in Zapier and open the spreadsheet to watch data from the simul
 
 ![Result](/guides/images/users-guide/zapier/result.png)
 
-### Register a device from a spreadsheet
+#### Register a device from a spreadsheet
 
 In this example, we assume that you maintain a spreadsheet to keep track of your devices, their IMEIs, their SIM cards and their deployment location -- a "poor man's asset management". Whenever new devices have entered this spreadsheet, it should be automatically entered into Cumulocity's device registration. You can then switch on the device and pair it with your account.
  
@@ -210,7 +210,7 @@ After a while, the device ID appears in the "Device registration" dialog of Cumu
 
 Now you can play with this setup. For example, you could introduce a workflow column indicating the state of the device (ordered, in stock, rolling out, in production) and only register the device when it is being rolled out.
 
-### Use a form to enter customers into the inventory
+#### Use a form to enter customers into the inventory
 
 In this example, we update the Cumulocity inventory using a Wufoo form.
 
@@ -239,7 +239,7 @@ After processing these steps, your screen should look like the following:
 
 ![Example 3](/guides/images/users-guide/zapier/example3.png)
 
-## Extensions
+### Extensions
 
 Zapier offers a built-in action to send pure REST requests called "Webhooks". You can to use this action to send any data to our documented APIs directly.
 

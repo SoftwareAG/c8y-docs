@@ -4,11 +4,11 @@ title: Android Cloud Sensor App
 layout: redirect
 ---
 
-## Overview
+### Overview
 
 This document describes the Android Cloud Sensor App. This App sends the sensor measurements from a Texas Instruments (TI) Sensor Tag and an Android smartphone to Cumulocity to be securely processed and managed. Additionally, both devices can be remote-controlled by Cumulocity. The TI Sensor Tag is a low energy wireless device manufactured by Texas Instruments © [http://www.ti.com/](http://www.ti.com/).
 
-## Installing the Android Cloud Sensor App
+### Installing the Android Cloud Sensor App
 
 To use the Android Cloud Sensor App you need a smartphone with Android version 5.0 (Lollipop) or higher. To determine the Android version installed on your smartphone, refer to [http://www.wikihow.com/Check-What-Android-Version-You-Have](http://www.wikihow.com/Check-What-Android-Version-You-Have).
 
@@ -22,7 +22,7 @@ This will start a wizard showing the QR code for downloading the Android Cloud S
 
 Scan this QR code with any scanning application on your smartphone. You will be navigated to Google Play for the installation of the Android Cloud Sensor App.
 
-## Registering the Cloud Sensor App to your IoT Sensor tenant
+### Registering the Cloud Sensor App to your IoT Sensor tenant
 
 To register your smartphone as a new device in your tenant you have two options:
 
@@ -33,7 +33,7 @@ To register your smartphone as a new device in your tenant you have two options:
 
 The QR code registration process (option 1) uses credentials derived from the username and password of the user who is currently logged into the IoT Sensor tenant. Unique device credentials are used in the web-based registration process (option 2).
 
-### Registering using a QR code with credentials
+#### Registering using a QR code with credentials
 
 Click **Next** in the Cockpit wizard to see the QR code with credentials to register the Cloud Sensor App to your Cumulocity IoT Sensor tenant.
 
@@ -51,7 +51,7 @@ Moreover it will be added to the group “Smartphones” (which will be created 
 
 > **Important:** The registration credentials are encrypted. However, we highly recommend to use specific demo user accounts on your tenant for large public presentations. Do not use this method for production tenants or for tenants containing sensitive data.
 
-### Registering using web-based registration
+#### Registering using web-based registration
 
 To register your smartphone manually, follow these steps:
 
@@ -69,14 +69,14 @@ Moreover it will be added to the group “Smartphones” (which will be created 
 
 For further information about registering a device at the platform manually, refer to [Device Management > Connecting devices](/guides/users-guide/device-management#device-registration).
 
-## Sending sensor data to Cumulocity
+### Sending sensor data to Cumulocity
 
 Once your Cloud Sensor App is registered either by a QR code or manually, the device name will be provided which identifies your smartphone in the platform. 
 
 You need to accept several permission requests allowing for accessing data on your device (e.g. network information and GPS data) to let the smartphone transfer network and GPS data to the cloud. This requests only show up once.
 
 ![access media](/guides/images/users-guide/accessmedia.png)
-![manage calls media](/images/guides/users-guide/managecalls.png)
+![manage calls media](/guides/images/users-guide/managecalls.png)
 ![read location](/guides/images/users-guide/readlocation.png)
 
 You may edit the device name or leave it at the default value for your smartphone model.
@@ -109,7 +109,7 @@ Switch to the "Configuration" tab and specify the interval in milliseconds.
 
 ![configuration interval](/guides/images/users-guide/configurationinterval.png)
 
-## Connecting TI Sensor Tag to the Cloud Sensor App
+### Connecting TI Sensor Tag to the Cloud Sensor App
 
 The Cloud Sensor App connects to both TI Sensor Tag version 1.20 and 1.30 via Bluetooth. Use the “Scan devices” button in the Cloud Sensor App to connect a Sensor Tag.
 
@@ -135,7 +135,7 @@ In your Cumulocity tenant, the data points for the Sensor Tag will be displayed 
 
 To detach the Sensor Tag from your smartphone, press the “Remove” button on its card.
 
-## Device control
+### Device control
 
 The Cloud Sensor App can receive real-time control commands from Cumulocity. 
 

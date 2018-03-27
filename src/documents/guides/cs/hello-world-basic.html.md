@@ -1,5 +1,5 @@
 ---
-order: 10
+order: 30
 layout: default
 title: Hello, world!
 ---
@@ -9,29 +9,31 @@ title: Hello, world!
 
 This section provides an example of a C# microservice in Cumulocity. It uses Cake (C# Make), which is a cross-platform build automation system. 
 
-To start building .NET apps, you just need to download and install the [.NET SDK](https://www.microsoft.com/net/download) . Follow the instructions on the download page for the last stable release or alternatively you can also try using 2.0. 
+To start building .NET apps, you just need to download and install the [.NET SDK](https://www.microsoft.com/net/download). Follow the instructions on the download page for the last stable release or alternatively you can also try using 2.0. 
 
-This example is based on Cake a cross platform build automation system  that’s why If you use Linux, visit the [MonoDevelop website](http://www.monodevelop.com/) for download packages and more details about our cross-platform IDE. Follow the instructions on the download page for the last stable release or alternatively you can also try using 5.4 or higher version of mono [IDE](http://www.mono-project.com/download/#download-lin).  It should be noted Mono-devel is required to compile code.
+If you use Linux, visit the [MonoDevelop website](http://www.monodevelop.com/) for download packages and more details about our cross-platform IDE. Follow the instructions on the download page for the last stable release or alternatively you can also try using 5.4 or higher version of mono [IDE](http://www.mono-project.com/download/#download-lin). Note, that Mono-devel is required to compile code.
 
-The intial script was used to create a demo, thanks to which it was simplified to create an example microservice project with dependency management and then deploy it on the server. The script attempts to download the package from the sources listed in the project file and next a reference is added to the appropriate project file. In addition, the script creates the appropriate file dockerfile to take into account the naming of projects Next it'll create a Docker image based on a dockerfile. The application created in this way uses the ASP.NET Web API framework to create a web API. The API runs on an isolated webserver called Kestrel and as a foreground job, which makes it work really well with Docker.
+The initial script was used to create a demo, which makes it easier to create an example microservice project with dependency management and then deploy it on the server. The script attempts to download the package from the sources listed in the project file and next a reference is added to the appropriate project file. In addition, the script creates the appropriate Docker file to take into account the naming of projects. Next it will create a Docker image based on a Docker file. 
 
-## Building and deploying Hello World
+The application created in this way uses the ASP.NET Web API framework to create a web API. The API runs on an isolated web server called Kestrel and as a foreground job, which makes it work really well with Docker.
 
-Download a script file to build a "hello world" app. Wget utility is the best option to download a file:
+## Building and deploying Hello World on Linux
+
+Download a script file to build a "Hello World" app. Wget utility is the best option to download a file.
 
 	sudo wget  http://resources.cumulocity.com/cssdk/releases/microservicesdk-lin-dev-9.1.0.zip
 
 The latest can be replaced by the version number e.g. microservicesdk-{X.X.X}.tar.gz
 
-Once you have downloaded the source, untar the file
+Once you have downloaded the source, untar the file.
 
 	unzip microservicesdk-lin-dev-9.1.0.zip -d  microservicesdk-9.1.0
 
-Change the current folder, to navigate to a microservicesdk folder
+Change the current folder, to navigate to a microservicesdk folder.
 
 	cd microservicesdk-9.1.0
 
-Run the script **create.sh **to create a sample project, give the name of the project and api application
+Run the script **create.sh** to create a sample project, provide the name of the project and the API application.
 
 	./create.sh
 
@@ -64,15 +66,15 @@ Launch the Docker container with the command
 
 	docker run -p 8999:4700 imagename:latest
 
-Check the status of an application that is running inside the Docker container
+Check the status of an application that is running inside the Docker container.
 
 	curl http://localhost:8999/api/values
 
-In order to deploy the application run the script, but before it you must provide the correct URL and credentials in this script
+In order to deploy the application run the script. You must provide the correct URL and credentials in this script.
 
 	./deploy.sh
 	
-The application starts executing from the entry point public static void Main() in Program class where the host for the application is created. The following shows an example of a Program created by create.sh
+The application starts executing from the entry point public static void Main() in Program class where the host for the application is created. The following shows an example of a program created by create.sh.
 
 	namespace api
 	{   
@@ -116,15 +118,15 @@ The application starts executing from the entry point public static void Main() 
 
 	}
 
-Method BuildWebHost performs the following tasks
+Method BuildWebHost performs the following tasks:
 
-* Initializes a new instance of the WebHostBuilder class with pre-configured defaults,
+* initializes a new instance of the WebHostBuilder class with pre-configured defaults,
 
-* Specifies Kestrel as the server to be used by the web host,
+* specifies Kestrel as the server to be used by the web host,
 
-* Configures the LoggerFactory,
+* configures the LoggerFactory,
 
-* Specifies the Startup class with the UseStartup<TStartup> 
+* specifies the Startup class with the UseStartup&#60;TStartup&#62; 
 
 An example application must include Startup class. As the name suggests, it is executed first when the application starts.
 
@@ -160,13 +162,15 @@ An example application must include Startup class. As the name suggests, it is e
         }
 
     }
+   
+
 Startup.cs responsibilities:
 
-* Setup configuration in the Startup constructor
-* Setup dependency injection in ConfigureServices
-* Setup the middleware pipeline in Configure
+* setup configuration in the Startup constructor
+* setup dependency injection in ConfigureServices
+* setup the middleware pipeline in Configure
 
-**Dockerfile **created by create.sh
+**Dockerfile** created by create.sh
 
 	FROM microsoft/dotnet:2.0-runtime
 	WORKDIR /app
@@ -176,20 +180,20 @@ Startup.cs responsibilities:
 
 **Dockerfile** defines what goes on in the environment inside a container:
 
-* Sets the working directory 
+* sets the working directory 
 
-* Copy all from an application directory to  the working directory 
+* copy all from an application directory to the working directory 
 
-* Sets the environment variable, in this case SERVER_PORT
+* sets the environment variable, in this case SERVER_PORT
 
-* Specifies what executable to run when the container starts
+* specifies what executable to run when the container starts
 
 
-## Windows
+## Building and deploying Hello World on Windows
 
-The building and deploying Hello World for Windows is similar to what was shown on Linux
+Building and deploying "Hello World" on Windows is similar to the way it is done for Linux.
 
-Download a script file to build a "hello world" app
+Download a script file to build a "Hello World" app.
 
 	Invoke-WebRequest  http://resources.cumulocity.com/cssdk/releases/microservicesdk-win-dev-9.1.0.zip -OutFile microservicesdk-win-dev-9.1.0.zip
 
@@ -197,18 +201,18 @@ Once you have downloaded the source, unzip the file.
 
 	Expand-Archive c:\microservicesdk-win-dev-9.1.0.zip -DestinationPath c:\microservicesdk-win-dev-9.1.0.zip
 
-Change the current folder, to navigate to a microservicesdk folder
+Change the current folder and navigate to a microservicesdk folder.
 
 	cd microservicesdk-win-dev-9.1.0.zip
 
-Run the script create.sh to create a sample project, give the name of the project and api application
+Run the script create.sh to create a sample project, provide the name of the project and the API application.
 
 	./create.ps1
 
-Execute the bootstrapper script, to build the application and an image from a Docker file 
+Execute the bootstrapper script, to build the application and an image from a Docker file.
 
 	./build.ps1
 
-In order to deploy the application run the script, but before it you must provide the correct URL and credentials in this script
+In order to deploy the application run the script. You must provide the correct URL and credentials in this script.
 
 	./deploy.ps1

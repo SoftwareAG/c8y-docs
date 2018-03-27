@@ -20,3 +20,17 @@ The following environment variables are available for microservices:
     C8Y_USER - Application user name (available only for PER_TENANT isolation)
     C8Y_PASSWORD - Application user password (available only for PER_TENANT isolation)
     MEMORY_LIMIT - Memory limit, default value: 256M
+
+### Example usage
+
+Prerequisite:
+
+Microservice docker repository image is visible with the command:
+
+    $ docker images 
+
+Execute to run docker container with environment variables:
+
+    $ docker run -e C8Y_BASEURL={URL} -e C8Y_BOOTSTRAP_TENANT={BOOTSTRAP_TENANT} -e C8Y_BOOTSTRAP_USER={BOOTSTRAP_USERNAME} -e C8Y_BOOTSTRAP_PASSWORD={BOOTSTRAP_USER_PASSWORD} -i -t {DOCKER_REPOSITORY_IMAGE}:{TAG}
+
+Use backslash (\\) before special characters such as `&, !, ;, \`. 

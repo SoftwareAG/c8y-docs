@@ -13,11 +13,11 @@ Microservices are server-side applications. Microservices can be used to develop
 * Decoder
 * Backend applications 
 
-Microservices are deployed as docker images to Cumulocity, and follow specific conventions. They typically provide one REST API, which is available under /service/<microservice-name>. They typically access Cumulocity using the documented REST API.
+Microservices are deployed as docker images to Cumulocity, and follow specific conventions. They typically provide one REST API, which is available under /service/&lt;microservice-name&gt;. They typically access Cumulocity using the documented REST API.
 
-When developing a Cumulocity microservice, a developer is not restricted  to any programming language. However, a microservice must serve as a HTTP server working on port 80 and must be encapsulated in a docker image. 
+When developing a Cumulocity microservice, a developer is not restricted to any programming language. However, a microservice must serve as a HTTP server working on port 80 and must be encapsulated in a docker image.
 
->**Info:** For Java developers Cumulocity provides a [Microservice SDK](/guides/java/developing-microservice) and a [Hello World](/guides/java/java-microservice) example for developing microservices in the Java Developer`s Guide.
+>**Info:** For Microservice developers Cumulocity provides Microservice SDK in [Java programming language](/guides/java/developing-microservice) and C# programming language for .Net Core. Refer to the [Hello World](/guides/java/java-microservice) example for developing microservices in the Java Developer's Guide.
 
 The hosting of the Microservice is provided by Cumulocity. This way developers can focus on business logic and leave scaling, security, high availability and monitoring to Cumulocity. Microservices can be built on the top of the API exposed by the Cumulocity platform. This way, Cumulocity microservices are a comfortable means to provide new functionality and extend existing one. 
 
@@ -25,7 +25,7 @@ The hosting of the Microservice is provided by Cumulocity. This way developers c
 
 The Cumulocity microservice is based on docker. This requires that a microservice is packaged as docker image in order to run on the Cumulocity platform. Docker image is an executable package that includes everything needed to run an application. For more information on docker refer to the [Docker documentation](https://docs.docker.com/get-started/)). 
 
-During run-time, the microservice is executed in a docker container. A docker container ensures that the microservices cannot harm other microservice running in Cumulocity. To execute docker containers, Cumulocity uses kubernetes. Kubernetes provides many enterprise grade features for hosting docker containers, including auto-scaling, high availability, load balancing, rolling upgrades to limit downtime, resource quota and more. 
+During run-time, the microservice is executed in a docker container. A docker container ensures that the microservices cannot harm other microservices running in Cumulocity. To execute docker containers, Cumulocity uses kubernetes. Kubernetes provides many enterprise-grade features for hosting docker containers, including auto-scaling, high availability, load balancing, rolling upgrades to limit downtime, resource quota and more.
 
 >**Info:** Currently kubernetes is not exposed to developers or users. This allows changing of the underlying infrastructure in the future.
 
@@ -49,13 +49,12 @@ The scale option is set using the microservice manifest.
 
 ### Security
 
-Microservices typically provide a REST API. For inbound REST requests, Cumulocity provides a light API gateway (“Proxy”). This API gateway is located between the client and the microservice container. The API gateway provides:
+Microservices typically provide a REST API. For inbound REST requests, Cumulocity provides a light API gateway (“Proxy”) and inbound websocket requests are not supported. This API gateway is located between the client and the microservice container. The API gateway provides:
 
-* Authorization: All calls are authenticated using Cumulocity users.
+* Authorization: All calls are authenticated using Cumulocity users and Basic authorization.
 * TLS Termination: TLS inbound calls are terminated and only HTTP is used inside the cluster.
 * Metering: The API calls are metered in the “API calls” tenant statistics.
-* Routing: The API gateway routes requests for “/service/<name>” to the microservice “<name>”
-
+* Routing: The API gateway routes requests for “/service/&lt;name&gt;” to the microservice “&lt;name&gt;”. The request routed to the microservice container and tenant options are added to the request headers.
 
 There are three different user types related to managing microservices: 
 
@@ -91,11 +90,13 @@ Refer to [Microservice package reference](/guides/reference/microservice-package
 
 The following requirements towards Cumulocity microservices must be met:
 
-* A microservice MUST be a (Amd64/Linux) docker image run.
+* A microservice MUST be a (linux/amd64) docker image run.
 * The docker image MUST be packaged as “image.tar” and MUST include a manifest file (cumulocity.json).
 * A microservice MUST be stateless, i.e. it must contain only ephemeral state. Reason is that the microservice must be able to survive (random) restarts because of hardware (server failure) and operations reasons (upgrade, migration).
 * All persistent state MUST be stored at the Cumulocity platform via inventory, binary, tenant options and other APIs. Persistent volumes are not supported.
+* A microservice cannot access the database directly and must use Cumulocity API.
 * A microservice must provide one inbound REST API. Additional inbound ports are not supported.
+* A microservice can use multiple outbound ports.
 * The request lifetime MUST have the maximum. The infrastructure might terminate too long running requests. 
 * Log informations needs to be send to standard output to be captured and persisted by infrastructure.
 
@@ -106,7 +107,7 @@ Cumulocity manages microservices by monitoring the microservice instance and sto
 
 ### Deploying microservices
 
-For microservice to be available it has to be deployed at the Cumulocity platform. This is done by uploading a zip file with the microservice package. 
+For a microservice to be available it has to be deployed at the Cumulocity platform. This is done by uploading a zip file with the microservice package. A user cannot directly push to the docker registry. 
 
 For further information on deploying microservices to Cumulocity, refer to [Administration > Managing applications](/guides/users-guide/administration#applications) in the User`s Guide. 
 

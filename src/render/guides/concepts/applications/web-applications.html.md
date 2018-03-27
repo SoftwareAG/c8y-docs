@@ -11,7 +11,7 @@ A Cumulocity web application can be a
 * a user interface application built on any web framework of your choice
 * a user interface application built using the Cumulocity user interface framework as a set of user interface plugins.
 
-All subscribed web applications of a tenant appear in the application switcher on the top right of Cumulocity, so that users can navigate between the applications. They are hosted by Cumulocity and the application will be made available through a URL <tenant>.cumulocity.com/apps/<application>.
+All subscribed web applications of a tenant appear in the application switcher on the top right of Cumulocity, so that users can navigate between the applications. They are hosted by Cumulocity and the application will be made available through a URL &lt;tenant&gt;.cumulocity.com/apps/&lt;application&gt;.
 
 <img src="/guides/images/concepts-guide/Admin_AppSwitcher.png" alt="App switcher" style="max-width: 50%">
 

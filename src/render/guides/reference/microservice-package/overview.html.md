@@ -33,3 +33,19 @@ The response will be:
     	-te  | --tenant			# Tenant used
     	-a   | --application 	# Name upon which the application will be registered on the platform. Default value from --name parameter
     	-id  | --applicationId	# Application used for subscription purposes. Required only for solemn subscribe execution
+
+### Docker
+
+Cumulocity hosts linux/amd64 docker containers and not Windows containers. The docker version must be >= 1.2.6
+
+    $ docker version
+    Client:
+     Version:         1.12.6
+     API version:     1.24
+     OS/Arch:         linux/amd64
+
+    Server:
+     Version:         1.12.6
+     API version:     1.24
+     OS/Arch:         linux/amd64
+

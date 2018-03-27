@@ -93,3 +93,4 @@ To deploy application on a local docker, one needs to inject environment variabl
 Example execution could be 
     
     docker run -e "C8Y_BASEURL={C8Y_BASEURL}" -e "C8Y_BASEURL_MQTT={C8Y_BASEURL_MQTT}" {IMAGE_NAME}
+    

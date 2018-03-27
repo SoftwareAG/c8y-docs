@@ -46,7 +46,7 @@ To delegate your permissions to a user, either open the user and click the deleg
 
 To undelegate, remove the delegation in the "Delegate by" field, or click **Undelegate** in the context menu.
 
-If the delegated user also needs to manage specific devices, the admin user must assign this device permissions (inventory roles) directly to the intended user. This can be done by using **Copy inventory roles from another user**. For details refer to [Administration > Managing users and permissions > Assigning inventory roles to users](/guides/users-guide/administration#attach-inventory).
+If the delegated user also needs to manage specific devices, the admin user must assign this device permissions (inventory roles) directly to the intended user. This can be done by using **Copy inventory roles from another user**. For details refer to [Administration > Managing users and permissions > Assigning inventory roles to users](/guides/images/users-guide/user-and-permission-management#attach-inventory).
 
 > **Info:** Delegation works only inside user management and does not have any implication to other places. 
 

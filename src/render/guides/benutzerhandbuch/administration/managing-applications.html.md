@@ -16,11 +16,11 @@ Auf der Seite "Eigene Anwendungen" wird eine Liste aller eigenen Anwendungen in 
 
 ![Eigene Anwendungen](/guides/images/benutzerhandbuch/Admin_OwnApplications.png)
 
-Klicken Sie auf das Menüsymbol rechts oben in einer Anwendung, um über das Kontextmenü eine Anwendung zu [**Bearbeiten** oder **Entfernen**](#editing-and-removing).
+Klicken Sie auf das Menüsymbol rechts oben in einer Anwendung, um über das Kontextmenü eine Anwendung zu [**Bearbeiten** oder **Löschen**](#editing-and-removing).
 
 Klicken Sie **Öffnen** auf der Karte einer Anwendung, um die Anwendung direkt von hier zu starten. Sie können außerdem über den Application Switcher auf Ihre Anwendungen zugreifen.
 
-Klicken Sie **Plugin hinzufügen** , um ein Plugin hinzuzufügen (sie [Hinzufügen und Entfernen von Plugins](#add-remove-plugins)).
+Klicken Sie **Plugin hinzufügen**, um ein Plugin hinzuzufügen (siehe [Hinzufügen und Entfernen von Plugins](#add-remove-plugin)).
 
 ### <a name="editing-and-removing"></a>Bearbeiten und Löschen von Anwendungen
 
@@ -70,7 +70,7 @@ Führen Sie die folgende Schritte aus, um eine Anwendung zu duplizieren:
 2.  Wählen Sie im angezeigten Dialogfenster **Existierende Anwendung duplizieren**.
 3.  Wählen Sie die gewünschte Anwendung aus der Auswahlliste. Beachten Sie, dass auch abonnierte Anwendungen aufgelistet werden.
 4.  Geben Sie im nächsten Fenster den Namen der Anwendung ein. Der Name wird als Titel oben links auf der Anwendungsseite angezeigt. Er wird außerdem im Application Switcher verwendet.
-5.  Geben Sie einen Anwendungsschlüssel ein. Der Anwendungsschlüssel wird verwendet, um Anfragen von dieser Anwendung zu identifizieren und die Anwendung zum Abonnieren zur Verfügung zu stellen. Sieh auch [Concepts Guide](/guides/concepts/developing-applications).
+5.  Geben Sie einen Anwendungsschlüssel ein. Der Anwendungsschlüssel wird verwendet, um Anfragen von dieser Anwendung zu identifizieren und die Anwendung zum Abonnieren zur Verfügung zu stellen. Sieh auch [Concepts Guide](/guides/concepts/applications).
 6.  Geben Sie Pfad für die Anwendung ein, Dieser Pfad ist Teil der URL, um die Anwendung aufzurufen. Wenn Sie beispielsweise "hello" als Anwendungspfad eingeben, wird die URL "/apps/hello" sein.
 7.  Klicken Sie abschließend **Kopieren**, um die Anwendung zu erstellen.
 

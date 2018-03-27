@@ -42,7 +42,7 @@ Alternatively, use
 
 In this case, the support user will access the tenant with one of the administrative users.
 
-> **Important:** In many environments, access to the management tenant is specifically restricted to certain networks or hosts, or can only be used through a tunnel. When logging in using the support user functionality, you need to make sure to have access to the management tenant. If you use a tunnel to access the management tenant, you may need to use a login of the form "<tenant>/<support user>$<user>".
+> **Important:** In many environments, access to the management tenant is specifically restricted to certain networks or hosts, or can only be used through a tunnel. When logging in using the support user functionality, you need to make sure to have access to the management tenant. If you use a tunnel to access the management tenant, you may need to use a login of the form `<tenant>/<support user>$<user>`.
 
 Audit logs are created for each support user access and for the actions that support users perform. In the column "Who?" the author's name will be shown in form of:
 

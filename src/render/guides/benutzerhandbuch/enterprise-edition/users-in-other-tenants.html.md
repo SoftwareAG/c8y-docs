@@ -1,49 +1,52 @@
 ---
 order: 21
-title: Supporting users in other tenants
+title: Support für Benutzer in anderen Mandanten
 layout: redirect
 ---
 
+Supportbenutzer sind Benutzer im Management-Mandanten, die über die spezielle Berechtigung verfügen, sich als andere Benutzer des Mandanten anmelden zu können. Nehmen wir an, Sie erhalten eine Support-Anfrage von einem Benutzer "john" im Mandanten "acme.cumulocity.com". Der Benutzer kann eine bestimmte Funktion nicht verwenden und Sie vermuten, dass es sich um ein Berechtigungsproblem handelt. Ihr Benutzername im Management-Mandanten ist "jill" und Sie haben die Berechtigung, Support für "acme.cumulocity.com" zu leisten. In diesem Fall melden Sie sich auf "acme.cumulocity.com" mit dem Benutzernamen "jill&#36;john" und Ihrem Passwort für "jill" an. Nun können Sie reproduzieren, was "john" sieht.
 
-Support users are users in the management tenant with a special permission to log in as other tenant's users. As an example, suppose you get a support call from a user "john" in the tenant "acme.cumulocity.com". The user cannot run certain functionality, and you suspect that it is a permission issue. Your username in the management tenant is "jill" and you are permitted to carry out support for "acme.cumulocity.com". In this case, you can log in to "acme.cumulocity.com" using the username "jill&#36;john" and your password for "jill". Now you can reproduce what "john" is seeing. 
+### Konfigurieren von Supportbenutzern
 
-### Configuring support users
+Es gibt zwei verschiedene Einstellungen für Supportbenutzer in Cumulocity:
 
-There are two alternative setups for support users in Cumulocity: 
+*   Ein Service Provider konfiguriert bestimmte Berechtigungen für Benutzer des Management-Mandanten, die Ihnen ermöglichen, Support zu leisten.
+*   Benutzer eines Mandanten fragen Support an und erteilen so Benutzern des Management-Mandanten Zugriff.
 
-- A service provider configures specific permissions for management tenant users which enable them to provide support.
-- Tenant users request support and by this provide the permission to management tenant users to login.
+> **Info:** Die Supportbenutzer-Funktion funktioniert nicht, wenn der Supportbenutzer Zwei-Faktor-Authentifizierung aktiviert, aber keine Telefonnummer hinterlegt hat. Die Telefonnummer muss zunächst hinterlegt werden, um sich als Supportbenutzer einloggen zu können.
 
-> **Info:** The support user feature does not work when the support user has two-factor authentication enabled, but no phone number is provided. The phone number has to be provided first, in order to login as a support user.
+**Berechtigung über den Management-Mandanten**
 
-**Management tenant permission**
+Damit ein Benutzer des Management-Mandanten für Benutzer in anderen Mandanten Support leisten kann, müssen Sie dem Benutzer entweder die globale Berechtigung "Support" oder die Stammdatenrolle "Support" (jeweils "Lesen" und "Ändern") zuweisen.
 
-To enable a management tenant user to support users in other tenants, you need to provide the user with either the "Support" global permission or the "Support" inventory role (both "Read" and "Change").
+Über die Stammdatenrolle "Support" können Sie dediziert die Supportberechtigung für einzelne Benutzer zuweisen. Erstellen Sie eine Gruppen der Mandanten, denen der Benutzer Support geben soll und weisen Sie dem Benutzer und der Gruppe die Stammdatenrolle zu wie unter [Zuweisen von Stammdatenrollen](/guides/benutzerhandbuch/administration#attach-inventory) beschrieben.
 
-Using the "Support" inventory role, you can selectively assign support to particular users. Create a group of the tenants that you want the user to support, then assign the inventory role to the user and the group as described in [Attaching inventory roles to users](#attach-inventory).
+**Vom Benutzer erteilte Berechtigung**
 
-**User-provided permission**
+Benutzer können Support anfragen und einem Benutzer des Management-Mandanten erlauben, sich an ihrem Konto anzumelden. Klicken Sie auf die Schaltfläche **Benutzer** rechts in der oberen Leiste und wählen Sie im Kontextmenü **Supportanfrage stellen**. Klicken Sie zum Bestätigen **Ok**. Der Support ist für 24 Stunden aktiv.
 
-Users can allow support, i.e. a management tenant user logging in as them. To do so, click the **User** button at the right of the top bar and from the context menu select **Enable support**. Click **Ok** to confirm. Support will be active for 24 hours. 
+![Support ermöglichen](/guides/images/users-guide/enablesupport.png)
 
-![Enable support](/guides/images/users-guide/enablesupport.png)
+### Melden Sie sich als Supportbenutzer an.
 
-### Logging in as support user
+Verwenden Sie den folgenden Benutzernamen, um sich als Supportbenutzer anzumelden:
 
-To log in as support user, use the following username:
+    <Supportbenutzer>$<Benutzer>
 
-	<support user>$<user>
+"Supportbenutzer" ist der Supportbenutzer im Management-Mandanten, der den Support ausführt. "user" ist der unterstützte Benutzer.
 
-"support user" is the user in the management tenant that executes the support. "user" is the supported user.
+Alternativ können Sie
 
-Alternatively, use
+    <Supportbenutzer>$
 
-	<support user>$
+verwenden.
 
-In this case, the support user will access the tenant with one of the administrative users.
+In diesem Fall greift der Supportbenutzer über einen der Administrationsbenutzer auf den Mandanten zu.
 
-> **Important:** In many environments, access to the management tenant is specifically restricted to certain networks or hosts, or can only be used through a tunnel. When logging in using the support user functionality, you need to make sure to have access to the management tenant. If you use a tunnel to access the management tenant, you may need to use a login of the form "<tenant>/<support user>$<user>".
+> **Wichtig:** In vielen Umgebungen ist der Zugriff auf den Management-Mandanten eingeschränkt auf bestimmte Netzwerke oder Hosts oder kann nur über einen Tunnel ausgeführt werden. Wenn Sie sich mit der Supportbenutzer-Funktion anmelden, müssen Sie sicherstellen, dass Sie Zugriff auf den Management-Mandanten haben. Wenn Sie einen Tunnel verwenden, um auf den Management-Mandanten zuzugreifen, müssen Sie möglicherweise ein Login der Form `<Mandant><Supportbenutzer>$<Benutzer>` verwenden.
 
-Audit logs are created for each support user access and for the actions that support users perform. In the column "Who?" the author's name will be shown in form of:
+Audit-Logs werden für jeden Zugriff eines Supportbenutzers erstellt sowie für jede ausgeführte Aktion. In der Spalte "Wer?" wird der Name des Autors folgendermaßen angezeigt:
 
-	"support_user$user"
+    "Supportbenutzer$Benutzer"
+
+

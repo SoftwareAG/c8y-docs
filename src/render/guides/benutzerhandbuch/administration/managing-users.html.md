@@ -1,83 +1,83 @@
 ---
 order: 12
-title: Managing users
+title: Verwalten von Benutzern
 layout: redirect
 ---
+Die Funktion der Benutzerverwaltung ermöglicht es Ihnen, innerhalb Ihres Mandanten Benutzer zu verwalten. Sie bietet folgende Möglichkeiten:
 
-The user management functionality allows you to manage the users within your tenant and provides the following options:
+*   Erstellen von Benutzern
+*   Vergeben von Benutzernamen und Passwörtern
+*   Speichern von Benutzerdetails
+*   Auswählen von Anmeldeoptionen
+*   Aktivieren einer zusätzlicher Login-Sicherheitsebene durch Zwei-Faktor-Authentifizierung (TFA)
 
-- Creating users
-- Assigning user names and set passwords
-- Storing user details
-- Choosing basic login options
-- Enabling additional login security by using Two-Factor Authentication (TFA)
+> **Info:** Hierfür muss der Benutzer eine Rolle mit den Benutzerverwaltungsrechten "ADMIN" oder "CREATE" haben.
 
-> **Info:** The user needs to have a role with the user management permission "ADMIN" or "CREATE" to be able to do so.
+### Anzeigen von Benutzern
 
-### Viewing users
+Klicken Sie "Benutzer" im Menü "Konto", um eine Liste aller Benutzer in Ihrem Mandanten anzuzeigen.
 
-To view all users in your tenant, click "Users" in the "Account" menu in the navigator.
+![Erweiterte Anzeige](/guides/images/users-guide/userslist.png)
 
-![Expanded view](/guides/images/users-guide/userslist.png)
+Es wird eine Benutzerliste angezeigt, die für jeden Benutzer die folgenden Informationen bereitstellt:
 
-A user list will be displayed, providing the following information for each user:
+*   Der Benutzername, der für den Zugang zum Mandanten verwendet wird
+*   Name und E-Mail-Adresse des Benutzers, falls angegeben
+*   Die globalen Rollen, die für den Benutzer vergeben wurden
+*   Die [Stärke](/guides/benutzerhandbuch/overview#login) des Passworts, das für den Benutzer gesetzt ist
 
-* The user name that is used to access the tenant.
-* The name and email of the user, if set.
-* The global roles assigned to the user.
-* The [strength](https://www.cumulocity.com/guides/users-guide/overview#login) of the password set for the user.
+Zum Filtern der Liste können Sie das Suchfeld links in der oberen Menüleiste verwenden. Weitere Informationen zur Suchfunktionalität finden Sie unter [Suchen](/guides/benutzerhandbuch/overview#searching) im Abschnitt Erste Schritte.
 
-To filter the list, you can use the search field at the left of the top menu bar. For details on the search functionality, refer to [Searching](https://www.cumulocity.com/guides/users-guide/overview##searching) in the *Introduction*.
+Darüber hinaus können Sie nach globalen Rollen filtern. Wählen Sie die gewünschten Rollen aus der Auswahlliste, und klicken Sie **Anwenden**, um die angezeigten Benutzer auf solche mit den ausgewählten Rollen zu beschränken.
 
-Moreover you can filter by global roles. Select the desired roles from the dropdown list and click **Apply** to limit the users shown in the list to users with the selected roles.
+Standardmäßig zeigt die "Benutzer"-Seite nur die Hauptbenutzer. Klicken Sie **Alle ausklappen** rechts in der oberen Leiste, um alle Benutzer in Ihrem Konto auf einmal anzuzeigen. Dadurch werden alle Hauptbenutzereinträge ausgeklappt, so dass auch die Unterbenutzer angezeigt werden. Klicken Sie **Alle einklappen**, um wieder nur die Hauptbenutzer anzuzeigen. Detaillierte Informationen zu Benutzerhierarchien finden Sie unter [Verwalten von Benutzerhierarchien](/guides/benutzerhandbuch/enterprise-edition#user-hierarchies).
 
-Initially, the "User" page only shows the top-level users. To see all users in your account at once, click **Expand all** at the right of the top bar. This will expand all top-level users, showing their sub-users. Click **Collapse all** to just show the top-level users again. For details on user hierarchies, refer to [Managing user hierarchies](/guide/users-guide/enterprise-edition#hierarchy).
+### <a name="creating-users"></a>Anlegen von Benutzern
 
-### <a name="creating-users"></a>Creating users
+Um einen neuen Benutzer zu Ihrem Mandanten hinzuzufügen, klicken Sie **Benutzer hinzufügen** rechts oben in der Menüleiste.
 
-To add a user to your tenant, click **Add user** at the right of the top menu bar. 
+![Neuen Benutzer hinzufügen](/guides/images/users-guide/newuser.png)
 
-![Add new user](/guides/images/users-guide/newuser.png)
+Geben Sie links im Fenster "Neuer Benutzer" folgende Informationen ein, um den Benutzer zu identifizieren:
 
-At the left of the "New user" window provide the following information to identify the user:
-
-|Field|Description|
+|Feld|Beschreibung|
 |:---|:---|
-|Username|A username used to log on. Note that this username cannot be changed once the user has been created. This field is mandatory.
-|Active|Enable/disable the user account here. If the user account is disabled the user cannot login. 
-|E-mail|A valid email address. This is required to enable the user to reset the password. This field is mandatory.
-|First name|First name of the user. When the user is logged in, this name appears at the right of the top bar on the **User** button. 
-|Last name|Last name of the user.
-|Telephone|A valid phone number. The phone number is required if the user is configured to use two-factor authentication.
-|Owner|Another user that manages ("owns") the new user. Select a user from the dropdown list and click **Done** to confirm. Refer to [Managing user hierarchies](/guide/users-guide/enterprise-edition#hierarchy) for details on user hierarchies.
-|Delegated by|Can be activated to delegate user hierarchies and permissions to the user. Refer to [Managing user hierarchies](/guide/users-guide/enterprise-edition#hierarchy) for details on delegation.
+|Benutzername|Benutzername, der bei der Anmeldung verwendet wird. Beachten Sie, dass dieser Name nicht mehr geändert werden kann, wenn er einmal gespeichert wurde. Diese Eingabe ist obligatorisch.
+|Aktiv|Hier können Sie das Benutzerkonto aktivieren/ deaktivieren. Wenn das Benutzerkonto deaktiviert ist, kann der Benutzer sich nicht anmelden.
+|E-Mail|Eine gültige E-Mail-Adresse. Diese ist erforderlich, um dem Benutzer zu ermöglichen, sein Passwort zurückzusetzen. Diese Eingabe ist obligatorisch.
+|Vorname|Vorname des Benutzers Wenn der Benutzer angemeldet ist, erscheint dieser Name rechts in der oberen Leiste auf der Schaltfläche **Benutzer**.
+|Nachname|Nachname des Benutzers
+|Telefon|Eine gültige Telefonnummer. Die Telefonnummer ist erforderlich, wenn für den Benutzer die Verwendung von Zwei-Faktor-Authentifizierung konfiguriert ist.
+|Eigentümer|Ein anderer Benutzer, der diesen Benutzer "besitzt" (verwaltet). Wählen Sie einen Benutzer aus der Auswahlliste und klicken Sie **Fertig** zum Bestätigen. Detaillierte Informationen zu Benutzerhierarchien finden Sie unter [Verwalten von Benutzerhierarchien](/guides/benutzerhandbuch/enterprise-edition#user-hierarchies).
 
-Select the login options for the user.
+Wählen Sie die Anmeldeoptionen für den Benutzer aus.
 
-* If you select "User must reset the password on next login", you need to provide a password which the user needs to reset on the next login. <br>Enter a password and confirm it. While entering the password, the strength of the password will be shown. See [Log into the Cumulocity platform](/guides/images/users-guide/overview/#login) for further information on password strength.  
-* If you select "Send password reset link as e-mail", the user will receive an email message with a link to set a password. The email will be sent to the email address configured above.
+*   Wenn Sie "Der Benutzer muss sein Passwort beim nächsten Anmelden zurücksetzen" auswählen, müssen Sie ein Passwort angeben, dass der Benutzer beim nächsten Anmelden zurücksetzen muss.  
+    Geben Sie ein Passwort ein und bestätigen Sie es. Während der Passworteingabe wird die Stärke des Passworts angezeigt. Weitere Informationen zur Passwortstärke finden Sie in [Anmelden an der Cumulocity-Plattform](/guides/benutzerhandbuch/overview/#login).  
 
-On the right of the page, select the global roles for the user. Details on global roles are described in [Managing Permissions](#managing-permissions).
+*   Wenn Sie "Link für das Zurücksetzen des Passworts per E-Mail senden" auswählen, erhält der Benutzer eine E-Mail mit dem Link zum Setzen des Passworts. Die E-Mail wird zu der oben konfigurierten Adresse gesendet.
 
-Click **Save** to create the user.
+Wählen Sie auf der rechten Seite die globalen Rollen für den Benutzer. Informationen zu den globalen Rollen finden Sie unter [Verwalten von Berechtigungen](#managing-permissions).
 
-<!--what does that mean -->
-> **Info:** By default, manually created users always have the "Own_User_Management" permissions set to active.
+Klicken Sie **Speichern**, um den Benutzer anzulegen.
 
-### Modifying users
+> **Info:** Standardmäßig ist bei Benutzer, die manuell angelegt wurden, die Berechtigung "Eigene Benutzerverwaltung" aktiviert.
 
-Click the menu icon at the right of a user entry to open a context menu which provides further functionalities.
+### Bearbeiten von Benutzern
 
-<img src="/guides/images/users-guide/Admin_UserContextMenu.png" alt="Context menu" style="max-width: 100%">
+Klicken Sie das Menüsymbol rechts in einem Benutzereintrag, um ein Kontextmenü mit weiteren Funktionen zu öffnen.
 
-> **Info:** You need a role with user management permission to perform these options.
+![Kontextmenü](/guides/images/users-guide/Admin_UserContextMenu.png)
 
-Click **Edit** to edit an existing user. All fields except “Username” and “Send password reset link as e-mail” can be modified. For details an each field, refer to [Creating users](#creating-users). Click **Change password** to change the password. After editing, click **Save** to apply your settings.
+> **Info:** Für diese Optionen müssen Sie eine Rolle mit Benutzerverwaltungsberechtigung haben.
 
-To copy roles, click **Copy inventory roles from another user**. In the upcoming window, select a user from the list and click **Copy**. At the top you can select if you want to merge the roles with the existing user roles (the default) or if you want to replace the existing user roles.
+Klicken Sie **Bearbeiten**, um einen bestehenden Benutzer zu bearbeiten. Alle Felder mit Ausnahme von "Benutzername" und "Link zum Zurücksetzen des Passworts per E-Mail senden" können bearbeitet werden. Details zu den einzelnen Feldern finden Sie unter [Anlegen von Benutzern](#creating-users). Klicken Sie **Passwort ändern**, um das Passwort zu ändern. Klicken Sie nach der Bearbeitung **Speichern**, um Ihre Eingaben zu speichern.
 
-Click **Delegate** to delegate your user hierarchies and permissions to a user, or click **Undelegate** to remove a delegation. Refer to [Managing User Hierarchies](/guide/users-guide/enterprise-edition#hierarchy) for details on delegation.
+Klicken Sie **Stammdatenrollen eines anderen Benutzer kopieren**, um Rollen zu kopieren. Wählen Sie im folgenden Fenster einen Benutzer aus und klicken Sie **Kopieren**. Oben können Sie auswählen, ob Sie die Rollen mit den vorhandenen Rollen zusammenführen möchten (Standardeinstellung), oder ob Sie die vorhandenen Rollen ersetzen möchten.
 
-Click **Disable** to disable an active user, or click **Enable** to enable a user that has been disabled.
+Klicken Sie **Delegieren**, um Ihre Benutzerhierarchien und Berechtigungen an einen Benutzer zu delegieren, bzw. klicken Sie **Delegierung aufheben**, um eine Delegierung aufzuheben. Detaillierte Informationen zum Delegieren finden Sie unter [Verwalten von Benutzerhierarchien](/guides/benutzerhandbuch/enterprise-edition#user-hierarchies).
 
-Click **Delete** to delete a user.
+Klicken Sie **Deaktivieren**, um einen aktiven Benutzer zu deaktivieren, bzw. klicken Sie **Aktivieren**, um einen zuvor deaktivierten Benutzer wieder zu aktivieren.
+
+Klicken Sie **Löschen**, um einen Benutzer zu löschen.
+

@@ -98,9 +98,9 @@ Um einen Untermandanten und alle seine Daten endgültig zu löschen, klicken Sie
 
 ### <a name="tenants-custom-properties"></a>Bearbeitung von benutzerdefinierten Attributen
 
-Die Registerkarte "Benutzerdefinierte Attribute" ermöglicht Ihnen das Anzeigen und Ändern von Werten von benutzerdefinierten Attributen, sowohl vordefinierten (wie "Externe Referenz") als auch denen, die in der [Attributsbibliothek](/guides/benutzerhandbuch/administration/changing-settings#properties) definiert sind. Solche Attribute werden auch als Spalten in der [Benutzungsstatistiktabelle](#usage-stats) angezeigt.
+Die Registerkarte "Benutzerdefinierte Attribute" ermöglicht Ihnen das Anzeigen und Ändern von Werten von benutzerdefinierten Attributen, sowohl vordefinierten (wie "Externe Referenz") als auch denen, die in der [Attributsbibliothek](/guides/benutzerhandbuch/administration/#properties) definiert sind. Solche Attribute werden auch als Spalten in der [Benutzungsstatistiktabelle](#usage-stats) angezeigt.
 
-![Benutzerdefinierte Attribute](/guides/images/benutzerhandbuch/Admin_Subtenant-CustomProperties.PNG)
+![Benutzerdefinierte Attribute](/guides/images/benutzerhandbuch/Admin_SubtenantCustomProperties.PNG)
 
 ### <a name="usage-stats"></a>Nutzungsstatistiken abrufen
 
@@ -121,7 +121,7 @@ Die folgenden Informationen werden für jeden Untermandanten angezeigt:
 
 Außerdem werden benutzerdefinierte Attribute angezeigt, falls vorhanden.
 
-Benutzerdefinierte Attribute können in der [Attributsbibliothek](/guides/benutzerhandbuch/administration/changing-settings#properties) definiert werden. Anschließend können entsprechende Werte in der Registerkarte [Benutzerdefinierte Attribute](#tenants-custom-properties) des Mandanten eingestellt werden.
+Benutzerdefinierte Attribute können in der [Attributsbibliothek](/guides/benutzerhandbuch/administration/#properties) definiert werden. Anschließend können entsprechende Werte in der Registerkarte [Benutzerdefinierte Attribute](#tenants-custom-properties) des Mandanten eingestellt werden.
 
 ![Nutzungsstatistiken](/guides/images/benutzerhandbuch/Admin_TenantUsageStatistics.PNG)
 

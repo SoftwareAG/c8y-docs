@@ -14,7 +14,7 @@ Cumulocity umfasst die drei folgenden Standardanwendungen:
 
 Neben diesen in Cumulocity enthaltenen Standardwendungen gibt es zahlreiche weitere Anwendungen, die sie abonnieren können, wie etwa integrierte Agenten für verschiedene Gerätetypen.
 
-Darüber hinaus können Sie eigene Anwendungen zur Ihrem Cumulocity-Konto hinzufügen. Weitere Informationen finden Sie unter [Administration > Verwalten von Anwendungen](/guides/benutzerhandbuch/administration#applications).
+Darüber hinaus können Sie eigene Anwendungen zur Ihrem Cumulocity-Konto hinzufügen. Weitere Informationen finden Sie unter [Administration > Verwalten von Anwendungen](/guides/benutzerhandbuch/administration#managing-applications).
 
 Der Inhalt der Cumulocity-Plattform ist also vollständig dynamisch und wird anhand er folgenden Kriterien generiert:
 

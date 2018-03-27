@@ -9,7 +9,7 @@ Im Menü "Einstellungen" können Administratoren verschiedene Einstellungen des 
 *   [Anwendungseinstellungen](#default-app) ändern,
 *   [Passwortrichtlinien und TFA-Einstellungen](#changing-password-settings) ändern,
 *   die [Attributsbibliothek](#properties) verwalten,
-*   Einstellungen für die Enterprise Edition konfigurieren, siehe [Enterprise Edition](/guides/users-guide/enterprise-edition#platform-config).
+*   Einstellungen für die Enterprise Edition konfigurieren, siehe [Enterprise Edition](/guides/users-guide/enterprise-edition#customization).
 
 ### <a name="default-app"></a>Ändern von Anwendungseinstellungen
 
@@ -200,5 +200,5 @@ Oben können Sie auswählen, ob Sie die E-Mail zum Administrator des gesperrten 
 
 Klicken Sie **Konfiguration speichern**, um Ihre Eingaben zu speichern.
 
-> **Info**: Für "Management-Mandanten sind weitere Funktionalitäten verfügbar.
+> **Info**: Für "Management-Mandanten" sind weitere Funktionalitäten verfügbar.
 

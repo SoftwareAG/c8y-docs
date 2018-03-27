@@ -46,7 +46,7 @@ Alarmregeln ermöglichen es, den Schweregrad und Text von Alarmen zu ändern, um
 
 Klicken Sie "Alarmregeln" im Menü "Geschäftsregeln", um eine Liste aller Alarmregeln anzuzeigen.
 
-![Alarmregeln](/guides/images/users-guide/administration/Admin_AlarmMapping.png)
+![Alarmregeln](/guides/images/users-guide/Administration/Admin_AlarmMapping.png)
 
 Für jede Alarmregel wird der Schweregrad und der Name der Regel angezeigt.
 

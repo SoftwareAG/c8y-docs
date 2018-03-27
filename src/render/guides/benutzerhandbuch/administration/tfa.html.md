@@ -17,4 +17,4 @@ Um für einen Benutzer Zwei-Faktor-Authentifizierung zu aktivieren, führen Sie 
 *   Aktivieren Sie die Checkbox "Zwei-Faktor-Authentifizierung aktivieren".
 *   Klicken Sie **Speichern**.
 
-![TFA aktivieren](/guides/images/users-guide/admin_TFAStatus.png)
+![TFA aktivieren](/guides/images/users-guide/enabletfa.png)

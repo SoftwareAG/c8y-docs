@@ -1,225 +1,613 @@
 ---
 order: 13
-title: Managing permissions
+title: Verwalten von Berechtigungen
 layout: redirect
 ---
 
-Permissions define what a user is allowed to do in Cumulocity applications. To manage permissions more easily, they are grouped in so-called "roles". Every user can be associated with a number of roles, adding up permissions of the user.
+Berechtigungen legen fest, welche Funktionen ein Benutzer in Cumulocity-Anwendungen ausführen darf. Um das Verwalten von Berechtigungen zu vereinfachen, sind sie in sogenannte Rollen eingeteilt. Jeder Benutzer kann eine Reihe von Rollen zugewiesen bekommen, deren Berechtigungen addiert werden.
 
-The following types of roles can be associated with users:
+Die folgenden Rollen können zugewiesen werden:
 
-- Global roles: Contain permissions that apply to all data within a tenant.
-- Inventory roles: Contain permissions that apply to groups of devices.
-- Application access: Enables a user to use an application.
+*   Globale Rollen: Enthalten Berechtigungen, die auf alle Daten innerhalb eines Mandanten zutreffen.
+*   Stammdatenrollen: Enthalten Berechtigungen, die auf Gerätegruppen zutreffen.
+*   Anwendungszugriff: Berechtigt den Benutzer, eine Anwendung zu benutzen.
 
-### <a name="global"></a>Viewing global roles
+### <a name="global"></a>Anzeigen von globalen Rollen
 
-Click "Roles" in the "Account" menu to display a list of configured roles.
+Klicken Sie "Rollen" im Menü "Konto", um die Liste der konfigurierten Rollen anzuzeigen.
 
-In the "Global roles" tab you can find the roles which grant permissions on a general level. There are several default global roles defined, but you can define your own according to your needs. 
+In der Registerkarte "Globale Rollen" finden Sie die Rollen, die allgemeine Berechtigungen erteilen. Es gibt verschiedene globale Standardrollen, aber Sie können auch eigene nach Ihren Bedürfnissen erstellen.
 
-<img src="/guides/images/users-guide//Admin_GlobalRoles.png" alt="Context menu" style="max-width: 100%">
+![Kontextmenü](/guides/images/users-guide/Administration/Admin_GlobalRoles.png)
 
-The roles "admins" and "devices" have a special status:
+Die Rollen "admins" und "devices" haben einen Sonderstatus:
 
-|Role|Description|
-|:---|:---|
-|admin|All permissions are enabled. The initial administrator, the first user created in a tenant, has this role.
-|devices|Typical permission setup for devices. After registration, a device automatically has this role. Edit this role if your devices require less or more permissions, or assign other roles to your devices.
+<table>
 
-Furthermore, the following roles are configured as a starting point:
+<thead>
 
-|Role|Description|
-|:---|:---|
-|CEP Manager|Can access all smart rules and event processing rules.
-|Cockpit User|Can access the Cockpit application. In addition, you should add a role providing access to devices.
-|Device management User|Can access the Device Management application. The user will be able to use the simulator and to run bulk operations. In addition, you should add a role providing access to devices.
-|Global Manager|Can read and write all devices.
-|Global Reader|Can read all devices.
-|Global User Manager|Can manage all users.
-|Shared User Manager|Can manage sub-users. The subscription plan needs to include user hierarchies to be able to manage sub-users.
-|Tenant Manager|Can manage tenant-wide settings, such as own applications, data brokerage, data retention, options and tenant statistics.
+<tr>
 
-You may see the following legacy roles:
+<th style="text-align: left">Rolle</th>
 
-|Role|Description|
-|:---|:---|
-|business|Can access all devices and their data but has no management permission in the tenant.
-|readers|Can read all data (including users, in contrast to "Global Readers").
+<th style="text-align: left">Beschreibung</th>
 
+</tr>
 
-### <a name="create-edit-roles"></a>Creating and editing global roles
+</thead>
 
-You can edit the existing global roles and you can create new global roles to meet your particular needs. 
+<tbody>
 
-To edit a global role, simply click on its card. To create a new global role, click **Add Role** in the "Global roles" tab. 
+<tr>
 
-In the role page you will see a list of permission types on the left and a list of applications to be accessed on the right. 
+<td style="text-align: left">admin</td>
 
-The following screenshot shows the settings for the "admins" role.
+<td style="text-align: left">Alle Berechtigungen sind aktiviert. Der ursprüngliche Administrator, also der erste Benutzer, der in einem Mandanten angelegt wurde, erhält diese Rolle.</td>
 
-![Admin example](/guides/images/users-guide/adminsample.png)
+</tr>
 
-**Permission levels**
+<tr>
 
-For each type, you can select the following permission levels:
+<td style="text-align: left">devices</td>
 
-- **Read**: Read the specified data.
-- **Create**: Create new data like users and inventory data and edit users within your hierarchy.
-- **Update**: Modify and delete the specified data (not including "Read").
-- **Admin**: Allows for "Read", "Create" and "Update" actions.
+<td style="text-align: left">Typische Berechtigungseinstellung für Geräte. Nach der Registrierung bekommt ein Gerät automatisch diese Rolle. Bearbeiten Sie diese Rolle, wenn Ihre Geräte mehr oder weniger Berechtigungen benötigen, oder weisen Sie Ihren Geräten andere Rollen zu.</td>
 
-> **Info:** "Create" permissions are related to the concept of ownership in Cumulocity. If you have created an object, you are the owner of it and can manage it without requiring any further permissions. For example, if you have  "Create" permission for "Inventory", you can create devices and groups, and fully manage these devices and groups. You cannot manage any devices or groups that you did not create yourself, unless you also have the "Change" permission or an additional inventory role (see below). This concept helps to assign minimal permissions to devices. It also enables you to limit user management permissions to sub-users, if you subscribed to user hierarchies.
+</tr>
 
-Select the checkbox at the top of a column to set the respective level to all permission types.
+</tbody>
 
-**Permission categories**
+</table>
 
-The following permission categories are available by default:
+Darüber hinaus sind anfänglich die folgenden Rollen konfiguriert:
 
-|Category|Description|
-|:---|:---|
-|Alarms|View or edit alarms for devices.
-|Application management|View or edit the applications available in this account.
-|Audits|View or create audit logs for devices.
-|Bulk operations|View or create bulk operations.
-|CEP management|View or edit Cumulocity Event Language rules.
-|Data broker|Send data to other tenants or receive data from other tenants.
-|Device control|View or edit commands for devices resp. send commands to devices. Also used for device registration.
-|Events|View or create events for devices.
-|Identity|View or edit identifiers for devices.
-|Inventory|View or edit inventory data.
-|Measurements|View or create measurements for devices.
-|Option management|View or edit account options such as password policies.
-|Retention rules|View or edit retention rules.
-|Simulator|Configure simulated devices.
-|Tenant management|View, create, edit or delete subtenants.
-|Tenant statistics|View the usage data for this account, as shown on the Home screen of the Administration application.
-|User management|View or edit users, user groups and permissions.
-|Own user management|View or edit your own user.
+<table>
 
-There may be additional permissions visible depending on the features in your subscription plan. These are documented along with the respective feature.
+<thead>
 
-> **Info:** When new features with new permissions are added to Cumulocity, these are not automatically added to existing roles. If you notice that you cannot use a new feature that was recently announced, check your permissions.
+<tr>
 
-### <a name="attach-global"></a>Assigning global roles to users
+<th style="text-align: left">Rolle</th>
 
-You can assign global roles to users either directly in the user list, or by opening the page for a particular user and adding them there. 
+<th style="text-align: left">Beschreibung</th>
 
-In the user list, click the "Global roles" column of a particular user to open a list of global roles. Select or clear the respective checkboxes and click **Apply** to save your settings.
+</tr>
 
-![Apply global role](/guides/images/users-guide/applyglobal.png)
+</thead>
 
-Alternatively, click on a user in the list to open its details. Select or clear the checkboxes for the relevant global roles at the right and click **Save** at the bottom of the page to save your settings.
+<tbody>
 
-![Attach global role](/guides/images/users-guide/attachglobal.png)
+<tr>
 
-### <a name="inventory"></a>Viewing inventory roles
+<td style="text-align: left">CEP Manager</td>
 
-Inventory roles contain permissions that you can assign to groups of devices. For example, an inventory role can contain the permission to restart a device. You can assign this inventory role to a group of devices "Region North" and to a user "smith". The result is that the user "smith" can restart all devices that are in the group "Region North" or any of its subgroups.
+<td style="text-align: left">Kann auf alle Smart Rules und Echtzeitverarbeitungsregeln zugreifen.</td>
 
-To view the currently configured inventory roles, click "Roles" in the "Account" menu and switch to the "Inventory roles" tab.
+</tr>
 
-<img src="/guides/images/users-guide/Admin_InventoryRoles.png" alt="Context menu" style="max-width: 100%">
+<tr>
 
-In the "Inventory roles" tab you can manage user permissions for particular groups and/or its children. There are several default inventory roles defined, but you can define your own according to your needs. 
+<td style="text-align: left">Cockpit-Benutzer</td>
 
-The following default inventory roles are available in new tenants as a starting point:
+<td style="text-align: left">Kann auf die Cockpit-Anwendung zugreifen. Zusätzlich sollten Sie eine Rolle mit Zugriff auf die Geräte hinzufügen.</td>
 
-|Role|Description|
-|:---|:---|
-|Manager| Can read all data of a group but cannot perform operations. In addition, can manage inventory data (including dashboards) and alarms.
-|Operations: All|Can send operations to devices in a group (e.g. software updates, remote configurations).
-|Operations: Restart Device|Can restart devices in a group.
-|Reader|Can read all data of a group.
+</tr>
 
+<tr>
 
-### Creating and editing inventory roles
+<td style="text-align: left">Device Management-Benutzer</td>
 
-You can edit the existing inventory roles and you can create new inventory roles to meet your particular needs. 
+<td style="text-align: left">Kann auf die Device Management-Anwendung zugreifen. Der Benutzer kann den Simulator verwenden und Sammelkommandos ausführen. Zusätzlich sollten Sie eine Rolle mit Zugriff auf die Geräte hinzufügen.</td>
 
-To edit an inventory role, simply click on its card. To create a new inventory role, click **Add Role** in the "Inventory roles" tab. 
+</tr>
 
-At the top of the page you can edit the name of the inventory role. Click on the name, edit it and click the green checkmark to save your edits.
+<tr>
 
-![Role details](/guides/images/users-guide/roledetails.png)
+<td style="text-align: left">Globaler Manager</td>
 
-Permissions are grouped into the following categories:
+<td style="text-align: left">Hat Lese- und Schreibberechtigung für alle Geräte.</td>
 
-|Category|Description|
-|:---|:---|
-|Alarms|Permissions related to working with alarms from devices.
-|Audits|Permissions related to audit logs.
-|Events|Permissions related to working with events from devices.
-|Inventory|Permissions for viewing and editing devices.
-|Measurements|Permissions related to measurements.
-|Device control|Permissions to remote control devices.
-|Full access|Complete access to the associated devices, mainly to simplify configuration.
+</tr>
 
-> **Info:** Service providers will see an additional permission "Support" in their "management" tenant. This permission lets users of the service provider give support to their customer's users. See [Supporting other users](#support) below.
+<tr>
 
-Add a permission to the role by clicking the plus icon next to the desired category.
+<td style="text-align: left">Globaler Leser</td>
 
-In the "Type" field, specify a type to further restrict the type of data that this permission applies to. 
+<td style="text-align: left">Hat Leseberechtigung für alle Geräte.</td>
 
-For example, assume that your device sends measurements related to device management, such as "c8y&#95;SignalStrength", and actual production measurements. You want a user to only see the device management measurements. In this case, enter "c8y&#95;SignalStrength" as type.
+</tr>
 
-By default, the "Type" field contains an asterisk "*" selecting all types.
+<tr>
 
-> **Info:** For further information on possible types, check your device documentation, the Cumulocity [sensor library](/guides/reference/sensor-library) or the [device management library](/guides/reference/device-management). The type being used here is the so-called "fragment type", not the "type" property. You need to enter all fragment types send in a measurement to make the measurement visible; similar for other types of data.
+<td style="text-align: left">Globaler Benutzermanager</td>
 
-In the "Permission" field, select a permission level from the dropdown list: 
+<td style="text-align: left">Kann alle Benutzer verwalten.</td>
 
-* Read - to view objects
-* Change - to modify objects (does not include "read" permission)
-* All - to read AND modify objects
+</tr>
 
-<img src="/guides/images/users-guide/showperm.png" alt="Role permissions" style="max-width: 50%">
+<tr>
 
->**Important:** When you add a permission, you may see a small exclamation mark. The exclamation mark indicates that the permission that you have just added is not effective, because another, "higher" permission set for the user already includes the respective permission. Check if you have set, for example, "Full access" or if there is another permission in the same section with "*" as type and "All" as permission.
+<td style="text-align: left">Geteilter Benutzermanager</td>
 
-<img src="/guides/images/users-guide/overriddenperm.png" alt="warning message" style="max-width: 50%">
+<td style="text-align: left">Kann untergeordnete Benutzer verwalten. Der Abonnementplan muss Benutzerhierarchien umfassen, um untergeordnete Benutzer verwalten zu können.</td>
 
-As another example, assume that you are using tracking devices. You want to allow your user to see all devices, but not to change anything. In addition, the user should be able to follow tracks of devices on a map. Tracks are recorded using an event with fragment type "c8y&#95;Position" (see [Sensor library](/guides/reference/sensor-library)). To do so, assign read permission on inventory as well as on events with type "c8y&#95;Position" as shown in the image below.
+</tr>
 
-<img src="/guides/images/users-guide/permexample.png" alt="Permission example" style="max-width: 50%">
+<tr>
 
-### <a name="attach-inventory"></a>Assigning inventory roles to users
+<td style="text-align: left">Mandantenmanager</td>
 
-Inventory roles are assigned to a user and a group of devices. 
+<td style="text-align: left">Kann mandantenweite Einstellungen verwalten, wie etwa eigene Anwendungen, Datenübertragung, Datenhaltung und Mandantenstatistiken.</td>
 
-To assign inventory roles, click "User" in the "Account" menu, select a user in the user list and switch to its "Inventory roles" tab. 
+</tr>
 
-In the "Inventory roles" tab you will see a tree of device groups. To assign an inventory role, click on the arrow right from a device group. Select the relevant roles and click **Apply**. For details on the roles hover over the info icon next to it or refer to [Viewing inventory roles](#inventory).
+</tbody>
 
-> **Important**: If a user already has a global role containing inventory permissions, the user will be able to see or change all devices regardless of what inventory roles you set here.
+</table>
 
-![Inventory roles](/guides/images/users-guide/inventoryroles.png)
+Möglicherweise sehen Sie die folgenden alten Rollen:
 
-Inventory roles are inherited from groups to all their direct and indirect subgroups, and to the devices in these groups. If you select, for example, a role with read permissions on alarms for a group of devices, the user will be able to see alarms of all devices in this group and all its subgroups.
+<table>
 
-If a user has inventory access to a group of devices, the user will also have that access to all dashboards for that group of devices in the Cockpit application.
+<thead>
 
-You can also copy inventory roles from another user. To copy roles, click **Copy inventory roles from another user**. In the upcoming window, select a user from the list and click **Copy**. At the top you can select if you want to merge the roles with the existing user roles (the default) or if you want to replace the existing user roles. Copying roles makes it easier to manage the permissions of many users as you can create a reference user and then copy the permissions from there.
+<tr>
 
-<img src="/guides/images/users-guide/copyroles.png" alt="Copy roles" style="max-width: 50%">
+<th style="text-align: left">Rolle</th>
 
-### <a name="app-access"></a>Granting application access
+<th style="text-align: left">Beschreibung</th>
 
-In the "Application Access" tab you assign applications to the user. 
+</tr>
 
-The "Application Access" tab shows a list of all available applications in your tenant in alphabetical order. Select the applications for the user and click **Save**. For more information on application management, see [Administration > Managing applications](/guides/images/users-guide/administration#applications).
+</thead>
 
-![Application access](/guides/images/users-guide/appaccess.png)
+<tbody>
 
-> **Info:** If a user has global permission to read all applications, an information box will be shown.
+<tr>
 
-### Troubleshooting permissions
+<td style="text-align: left">business</td>
 
-If you try to perform actions without sufficient permissions, an error message will occur.
+<td style="text-align: left">Kann auf alle Geräte und deren Daten zugreifen, aber hat keine Administrationsrechte im Mandanten.</td>
 
-To help troubleshooting permissions, click the the **User** button at the right of the top bar. From the context menu, select **Access denied requests**. In the upcoming window details on the denied accesses are provided. An administrator user or the support can help in fixing the permissions.
+</tr>
 
-The example shows a user, who tried to create a simulator without the necessary permissions, hence, a warning message is shown.
+<tr>
 
-![Access error message](/guides/images/users-guide/noaccess.png)
+<td style="text-align: left">readers</td>
+
+<td style="text-align: left">Kann alle Daten lesen (einschließlich Benutzerdaten, im Gegensatz zur Rolle "Globaler Leser").</td>
+
+</tr>
+
+</tbody>
+
+</table>
+
+### <a name="create-edit-roles"></a>Erstellen und Bearbeiten von globalen Rollen
+
+Sie können bestehende globale Rollen bearbeiten oder neue globale Rollen erstellen.
+
+Klicken Sie einfach auf die entsprechende Karte, um eine globale Berechtigung zu bearbeiten. Um eine neue globale Rolle zu erstellen, klicken Sie in der Registerkarte "Globale Rollen" **Rolle hinzufügen**.
+
+In der Rollenseite sehen Sie auf der linken Seite eine Liste mit Berechtigungstypen und auf der rechten Seite eine Liste mit Anwendungen.
+
+Die folgende Abbildung zeigt die Einstellungen für die Rolle "admins".
+
+![Admins-Beispiel](/guides/images/users-guide/adminsample.png)
+
+**Berechtigungsebenen**
+
+Für jeden Typen können Sie die folgenden Berechtigungsebenen wählen:
+
+*   **Lesen**: Die jeweiligen Daten einsehen.
+*   **Erstellen**: Neue Daten wie Benutzer und Stammdaten erstellen und Benutzer innerhalb Ihrer Hierarchie bearbeiten.
+*   **Aktualisieren**: Die jeweiligen Daten ändern und löschen (beinhaltet nicht "Lesen").
+*   **Admin**: Ermöglicht "Lesen", "Erstellen" und "Aktualisieren" von Daten.
+
+> **Info:** Berechtigungen zum Erstellen sind mit dem Eigentumskonzept in Cumulocity verbunden. Wenn Sie ein Objekt erstellt haben, sind Sie der Eigentümer und können das Objekt ohne weitere Berechtigungen verwalten. Wenn Sie beispielsweise die "Erstellen"-Berechtigung für "Stammdaten" haben, können Sie Geräte und Gruppen erstellen und diese vollständig verwalten. Sie können jedoch keine Geräte und Gruppen, die Sie nicht selbst erstellt haben, verwalten, ohne dafür eine entsprechende Berechtigung oder eine zusätzliche Stammdatenrolle zu haben (siehe unten). Diese Konzept unterstützt es, Geräte minimale Berechtigungen zuzuweisen. Es ermöglicht Ihnen auch, Benutzerverwaltungsrechte auf untergeordnete Benutzer zu beschränken, wenn Sie Benutzerhierarchien abonniert haben.
+
+Aktivieren Sie das Kontrollkästchen oben in einer Spalte, wenn Sie die entsprechende Berechtigungsebene auf alle Berechtigungstypen anwenden möchten.
+
+**Berechtigungskategorien**
+
+Die folgenden Berechtigungskategorien sind standardmäßig verfügbar:
+
+<table>
+
+<thead>
+
+<tr>
+
+<th style="text-align: left">Kategorie</th>
+
+<th style="text-align: left">Beschreibung</th>
+
+</tr>
+
+</thead>
+
+<tbody>
+
+<tr>
+
+<td style="text-align: left">Alarme</td>
+
+<td style="text-align: left">Alarme für Geräte einsehen oder bearbeiten</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align: left">Anwendungsverwaltung</td>
+
+<td style="text-align: left">In diesem Konto verfügbare Anwendungen einsehen oder bearbeiten</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align: left">Audits</td>
+
+<td style="text-align: left">Audit-Logs für Geräte einsehen oder bearbeiten</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align: left">Sammelkommandos</td>
+
+<td style="text-align: left">Sammelkommandos einsehen oder bearbeiten</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align: left">CEP-Verwaltung</td>
+
+<td style="text-align: left">Cumulocity Event Language-Regeln einsehen oder bearbeiten</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align: left">Data Broker</td>
+
+<td style="text-align: left">Daten an andere Mandanten weiterleiten oder Daten von anderen Mandanten empfangen</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align: left">Gerätesteuerung</td>
+
+<td style="text-align: left">Kommandos von Geräten einsehen oder bearbeiten bzw. Kommandos an Geräte senden. Wird auch für die Geräteregistrierung verwendet.</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align: left">Ereignisse</td>
+
+<td style="text-align: left">Audit-Logs für Geräte einsehen oder bearbeiten</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align: left">Identifikatoren</td>
+
+<td style="text-align: left">Alarme für Geräte einsehen oder bearbeiten</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align: left">Stammdaten</td>
+
+<td style="text-align: left">Stammdaten einsehen oder bearbeiten</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align: left">Messwerte</td>
+
+<td style="text-align: left">Audit-Logs für Geräte einsehen oder bearbeiten</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align: left">Optionen</td>
+
+<td style="text-align: left">Kontooptionen wie Passwortregeln einsehen oder bearbeiten</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align: left">Datenhaltungsregeln</td>
+
+<td style="text-align: left">Datenhaltungsregeln einsehen oder bearbeiten</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align: left">Simulator</td>
+
+<td style="text-align: left">Simulierte Geräte konfigurieren</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align: left">Mandantenverwaltung</td>
+
+<td style="text-align: left">Untermandanten einsehen, erstellen, bearbeiten oder löschen</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align: left">Mandantenstatistiken</td>
+
+<td style="text-align: left">Nutzungsstatistiken für dieses Konto auf der Startseite der Anwendung "Administration" einsehen</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align: left">Benutzerverwaltung</td>
+
+<td style="text-align: left">Benutzer, Benutzergruppen oder Berechtigungen einsehen oder bearbeiten</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align: left">Eigener Benutzer</td>
+
+<td style="text-align: left">Eigenen Benutzer einsehen oder bearbeiten</td>
+
+</tr>
+
+</tbody>
+
+</table>
+
+Möglicherweise werden weitere Berechtigungen angezeigt, abhängig von den Funktionen in Ihrem Abonnementplan. Diese werden in Verbindung mit den jeweiligen Funktionen beschrieben.
+
+> **Info:** Wenn die Cumulocity-Plattform um neue Funktionen mit neuen Berechtigungen erweitert wird, werden diese nicht automatisch zu bereits bestehenden Rollen hinzugefügt. Sollten Sie feststellen, dass Sie eine kürzlich angekündigte Funktion nicht verwenden können, überprüfen Sie zunächst Ihre Berechtigungen.
+
+### <a name="attach-global"></a>Zuweisen von globalen Rollen
+
+Sie können Benutzern globale Rollen entweder direkt in der Benutzerliste oder auf der entsprechenden Benutzerseite zuweisen.
+
+Klicken Sie in der Benutzerliste auf die Spalte "Globale Rollen" eines bestimmten Benutzers, um eine Liste mit globalen Rollen anzuzeigen. Aktivieren oder Deaktivieren Sie die entsprechenden Kontrollkästchen und klicken Sie **Anwenden**, um Ihre Einstellungen zu speichern.
+
+![Globale Rollen anwenden](/guides/images/users-guide/applyglobal.png)
+
+Alternativ können Sie auf einen Benutzer klicken, um die entsprechende Benutzerseite zu öffnen. Aktivieren oder Deaktivieren Sie auf der rechten Seite die Kontrollkästchen für die relevanten Rollen und klicken Sie **Speichern** unten auf der Seite, um Ihre Einstellungen zu speichern.
+
+![Globale Rollen zuweisen](/guides/images/users-guide/attachglobal.png)
+
+### <a name="inventory"></a>Anzeigen von Stammdatenrollen
+
+Stammdatenrollen enthalten Berechtigungen, die Sie Gerätegruppen zuweisen können. Eine Stammdatenrolle kann beispielsweise die Berechtigung enthalten, ein Gerät neu zu starten. Sie können diese Stammdatenrolle einer Gruppe von Geräten, z. B. "Region Nord", und einem Benutzer, z. B. "Schmidt" zuweisen. Daraus resultiert, dass der Benutzer "Schmidt" alle Geräte, die in der Gruppe "Region Nord" oder einer Untergruppe enthalten sind, neu starten kann.
+
+Um die kürzlich konfigurierten Stammdatenrollen anzuzeigen, wählen Sie "Rollen" im Menu "Konto" und wechseln Sie zur Registerkarte "Stammdatenrollen".
+
+![Kontextmenü](/guides/images/users-guide/Administration/Admin_InventoryRoles.png)
+
+In der Registerkarte "Stammdatenrollen" können Sie Berechtigungen für bestimmte Gruppen und/oder deren Kinder verwalten. Es gibt verschiedene voreingestellte Stammdatenrollen, aber Sie können auch eigene Rollen nach Ihren Bedürfnissen erstellen.
+
+Die folgenden Stammdatenrollen sind in neuen Mandanten voreingestellt:
+
+<table>
+
+<thead>
+
+<tr>
+
+<th style="text-align: left">Rolle</th>
+
+<th style="text-align: left">Beschreibung</th>
+
+</tr>
+
+</thead>
+
+<tbody>
+
+<tr>
+
+<td style="text-align: left">Manager</td>
+
+<td style="text-align: left">Kann alle Daten einer Gruppe einsehen, aber keine Kommandos ausführen. Kann außerdem Stammdaten einschließlich Dashboards und Alarme verwalten.</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align: left">Kommandos: Alle</td>
+
+<td style="text-align: left">Kann Kommandos an Geräte in einer Gruppe senden (z. B. Software-Updates).</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align: left">Kommandos: Gerät neustarten</td>
+
+<td style="text-align: left">Kann Geräte in einer Gruppe neustarten</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align: left">Leser</td>
+
+<td style="text-align: left">Kann alle Daten in einer Gruppe einsehen</td>
+
+</tr>
+
+</tbody>
+
+</table>
+
+### Erstellen und Bearbeiten von globalen Rollen
+
+Sie können entsprechend Ihrer eigenen Bedürfnisse bestehende Stammdatenrollen bearbeiten oder neue Stammdatenrollen erstellen.
+
+Klicken Sie einfach auf die entsprechende Karte, um eine Stammdatenrolle zu bearbeiten. Um eine neue Stammdatenrolle zu erstellen, klicken Sie in der Registerkarte "Stammdatenrollen" **Rolle hinzufügen**.
+
+Oben auf der Seite können Sie einen Namen für die Stammdatenrolle vergeben. Klicken Sie in das Feld, geben Sie einen Namen ein und klicken Sie das grüne Häkchen zum Speichern Ihrer Eingabe.
+
+![Rollendetails](/guides/images/users-guide/roledetails.png)
+
+Die Berechtigungen sind in die folgenden Kategorien eingeteilt:
+
+<table>
+
+<thead>
+
+<tr>
+
+<th style="text-align: left">Kategorie</th>
+
+<th style="text-align: left">Beschreibung</th>
+
+</tr>
+
+</thead>
+
+<tbody>
+
+<tr>
+
+<td style="text-align: left">Alarme</td>
+
+<td style="text-align: left">Berechtigungen, die Alarme von Geräten betreffen</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align: left">Audits</td>
+
+<td style="text-align: left">Berechtigungen, die Audits betreffen</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align: left">Ereignisse</td>
+
+<td style="text-align: left">Berechtigungen zum Bearbeiten von Ereignissen von Geräten</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align: left">Stammdaten</td>
+
+<td style="text-align: left">Berechtigungen zum Einsehen und Bearbeiten von Geräten</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align: left">Messwerte</td>
+
+<td style="text-align: left">Berechtigungen, die Messwerte betreffen</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align: left">Gerätesteuerung</td>
+
+<td style="text-align: left">Berechtigungen zur entfernten Steuerung von Geräten</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align: left">Voller Zugriff</td>
+
+<td style="text-align: left">Vollständiger Zugriff auf die zugehörigen Geräte, in erster Linie zur Vereinfachung der Konfiguration.</td>
+
+</tr>
+
+</tbody>
+
+</table>
+
+> **Info:** Service Provider sehen eine weitere Berechtigung "Support" in Ihrem Management-Mandanten. Diese Berechtigung ermöglicht Benutzern des Service Providers den Benutzern ihrer Kunden Support zu geben. Siehe [Support für Benutzer anderer Mandanten](/guides/benutzerhandbuch/enterprise-edition#users-in-other-tenants).
+
+Fügen Sie einer Rolle eine Berechtigung hinzu, indem Sie das Plus-Symbol neben der gewünschten Kategorie klicken.
+
+Geben Sie im "Typ"-Feld einen Typen ein, um den Datentypen weiter einzuschränken, für den diese Berechtigung gelten soll.
+
+Nehmen wir etwa an, ihr Gerät sendet Messwerte zum Device Management, wie "c8y&#95;SignalStrength", sowie aktuelle Produktionsmesswerte. Sie möchten aber, dass der Benutzer nur die Device Management-Messwerte sieht. In diesem Fall geben Sie "c8y_SignalStrength" als Typ ein.
+
+Standardmäßig enthält das "Typ"-Feld ein Sternsymbol *, so dass alle Typen eingeschlossen sind.
+
+> **Info:** Weitere Informationen zu möglichen Typen finden Sie in Ihrer Gerätedokumentation, der [Sensor Library](/guides/reference/sensor-library) von Cumulocity oder der [Device Management Library](/guides/reference/device-management). Der Typ, der hier verwendet wird, ist der sogenannte "Fragmenttyp", nicht das "Type"-Attribut. Sie müssen alle Fragmenttypen, die in einem Messwert gesendet werden, eingeben, damit der Messwert sichtbar wird; ähnliches gilt für andere Datentypen.
+
+Wählen Sie im Feld "Berechtigung" eine Berechtigungsebene aus der Auswahlliste:
+
+*   Lesen - Objekte einzusehen
+*   Ändern - Objekte ändern (schließt nicht die Leseberechtigung ein)
+*   Alle - Objekte lesen und ändern
+
+![Rollenberechtigungen](/guides/images/users-guide/showperm.png)
+
+> **Wichtig:** Wenn Sie eine Berechtigung hinzufügen, erscheint möglicherweise ein kleines Ausrufungszeichen. Das Ausrufungszeichen weist darauf hin, dass die soeben hinzugefügte Rollen keine Auswirkung hat, da eine andere, "höhere" Berechtigung, die für den Benutzer gesetzt wurde, diese Berechtigung bereits umfasst. Überprüfen Sie in diesem Fall, ob Sie vollständigen Zugriff gewährt haben oder ob es im gleichen Abschnitt eine andere Berechtigung mit "*" als Typen und "Alle" als Berechtigung gibt.
+
+![Warnmeldung](/guides/images/users-guide/overriddenperm.png)
+
+Nehmen wir als weiteres Beispiel an, dass sie Tracking-Geräte verwenden. Sie möchten, dass Ihr Benutzer alle Geräte sehen, aber nichts ändern kann. Außerdem soll der Benutzer in der Lage sein, die Wege von Geräten auf einer Karte zu verfolgen. Wege werden über ein Ereignis mit dem Fragmenttypen "c8y&#95;Position" aufgezeichnet (siehe [Sensor Library](/guides/reference/sensor-library)). Erteilen Sie dem Benutzer Leseberechtigung auf Stammdaten und auf Ereignisse mit dem Typen "c8y_Position", wie in der Abbildung unten dargestellt.
+
+![Berechtigungsbeispiel](/guides/images/users-guide/permexample.png)
+
+### <a name="attach-inventory"></a>Zuweisen von Stammdatenrollen
+
+Stammdatenrollen werden einem Benutzer und einer Gerätegruppe zugewiesen.
+
+Klicken Sie "Benutzer" im "Konto"-Menü, wählen Sie einen Benutzer aus der Benutzerliste und wechseln Sie zur Registerkarte "Stammdatenrollen".
+
+In der Registerkarte "Stammdatenrollen" sehen Sie einen Baum mit Gerätegruppen. Klicken Sie auf den Pfeil rechts von einer Gerätegruppe, um eine Stammdatenrollen zuzuweisen. Wählen Sie die gewünschten Rollen und klicken Sie **Anwenden**. Weitere Informationen zu den Rollen erhalten Sie, wenn Sie mit dem Mauszeiger über das Info-Symbol fahren, oder unter [Anzeigen von Stammdatenrollen](#inventory).
+
+> **Wichtig**: Wenn ein Benutzer bereits eine globale Rolle hat, die Stammdatenberechtigungen umfasst, kann der Benutzer alle Geräte sehen oder ändern, unabhängig von den hier zugewiesenen Stammdatenrollen.
+
+![Stammdatenrollen:](/guides/images/users-guide/inventoryroles.png)
+
+Stammdatenrollen werden von Gruppen an alle ihre direkten und indirekten Untergruppen sowie die Geräte in der Gruppe vererbt. Wenn Sie etwa eine Rolle mit Leseberechtigung für Alarme für eine Gerätegruppe wählen, kann der Benutzer alle Alarme für alle Geräte in dieser Gruppe sowie in ihren Untergruppen sehen.
+
+Wenn ein Benutzer Stammdatenzugriff für eine Gerätegruppe hat, hat er auch Zugriff auf alle Dashboards für diese Gruppe in der Cockpit-Anwendung.
+
+Sie können auch Stammdatenrollen eines anderen Benutzers kopieren. Klicken Sie **Stammdatenrollen eines anderen Benutzers kopieren**, um Rollen zu kopieren. Wählen Sie im folgenden Fenster einen Benutzer aus und klicken Sie **Kopieren**. Oben können Sie auswählen, ob Sie die Rollen mit den vorhandenen Rollen zusammenführen möchten (Standardeinstellung), oder ob Sie die vorhandenen Rollen ersetzen möchten. Das Kopieren von Rollen erleichtert das Verwalten von Berechtigungen für viele Benutzer, da Sie einen Referenzbenutzer erstellen können, um von dort die Rollen zu kopieren.
+
+![Kopieren von Rollen](/guides/images/users-guide/copyroles.png)
+
+### <a name="app-access"></a>Zugriff auf Anwendungen
+
+In der Registerkarte "Anwendungen" können Sie Benutzern Zugriff auf Anwendungen erteilen.
+
+Die Registerkarte "Anwendungen" zeigt eine Liste aller verfügbaren Anwendungen in Ihrem Mandanten in alphabetischer Reihenfolge. Wählen Sie die Anwendungen für den Benutzer und klicken Sie **Speichern**. Weitere Informationen zur Anwendungsverwaltung finden Sie unter [Verwalten von Anwendungen](/guides/benutzerhandbuch/administration#managing-applications).
+
+![Anwendungszugang](/guides/images/users-guide/appaccess.png)
+
+> **Info:** Wenn ein Benutzer die globale Berechtigung hat, alle Anwendungen einzusehen, wird eine entsprechende Information angezeigt.
+
+### Fehlerbehebung bei Berechtigungen
+
+Wenn Sie Aktionen durchführen möchten für Sie Sie keine ausreichende Berechtigung haben, erhalten Sie eine Fehlermeldung.
+
+Klicken Sie für Hilfe bei der Fehlersuche auf die Schaltfläche **Benutzer** in der rechten oberen Leiste. Wählen Sie aus dem Kontextmenü **Verweigerte Anfragen**. Im folgenden Fenster finden Sie Details zu den verweigerten Anfragen. Ein Administrator oder der Support kann Ihnen helfen, die Berechtigungsprobleme zu beheben.
+
+Das Beispiel zeigt eine Fehlermeldung, die erscheint, nachdem ein Benutzer versucht hat, einen Simulator zu erstellen, jedoch nicht die erforderlichen Berechtigungen hat.
+
+![Fehlermeldung](/guides/images/users-guide/noaccess.png)
+

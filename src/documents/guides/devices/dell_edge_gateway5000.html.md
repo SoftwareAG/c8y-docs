@@ -29,9 +29,9 @@ Then search for the USB name with:
 The USB partition name should look like something as "/dev/sdb..", identify the partition name in the system and type the following:
 
 	sudo mount /dev/sdb1 usb
-	sudo snap install usb/cumulocity-agent_1.0.1_amd64.snap --devmode
+	sudo snap install usb/cumulocity-agent_1.0.2_amd64.snap --devmode
 	sudo umount usb
-	tail -f /var/log/cumulocity-agent.log
+	tail -f /var/snap/cumulocity-agent/common/cumulocity-agent.log
 
 The last command will display the device id, the id will be needed to register the device at Cumulocity. This is what the output should look like:
 

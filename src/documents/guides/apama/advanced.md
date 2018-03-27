@@ -58,44 +58,6 @@ This will result in the following JSON structure:
 	  }
 	}
 
-Example 2:
-
-	send ManagedObject("",
-		"MyCustomDevice",
-		"customDevice",
-		["c8y_Restart","c8y_Command"],
-		new sequence&#60;string>,
-		new sequence&#60;string>,
-		new sequence&#60;string>,
-		new sequence&#60;string>,
-		new sequence&#60;string>,
-		new dictionary&#60;string, float>,
-		{	"c8y_IsDevice": &#60;any> new dictionary&#60;any,any>,
-			"c8y_Hardware":&#60;any>{"serialNumber":"mySerialNumber", "model":"myDeviceModel"},
-			"com_cumulocity_model_Agent":&#60;any>new dictionary&#60;any,any>,
-			"c8y_RequiredAvailability":&#60;any>{"responseInterval":30.0}
-		}) to "CumulocityIoT";
-
-This will result in the following JSON structure:
-
-	{
-	  "name": "MyCustomDevice",
-	  "type": "customDevice",
-	  "c8y_IsDevice": {},
-	  "c8y_RequiredAvailability": {
-	    "responseInterval": 30
-	  },
-	  "c8y_SupportedOperations": [
-	    "c8y_Restart",
-	    "c8y_Command"
-	  ],
-	  "com_cumulocity_model_Agent": {},
-	  "c8y_Hardware": {
-	    "model": "myDeviceModel",
-	    "serialNumber": "mySerialNumber"
-	  }
-	}
-
 
 ## Listeners
 

@@ -1,15 +1,15 @@
 ---
-order: 10
+order: 20
 layout: default
 title: Developing Microservices
 ---
 
 ## Overview
 
-The SDK is based on ASP.NET Core a cross-platform, high-performance, open-source framework for building modern, cloud-based, Internet-connected applications. ASP.NET Core apps use a Startup class, which is named Startup by convention. The Startup class:
+The SDK is based on ASP.NET Core, a cross-platform, high-performance, open-source framework for building modern, cloud-based, Internet-connected applications. ASP.NET Core apps use a Startup class, which is named Startup by convention. The Startup class
 
-* Must include a Configure method to create the app's request processing pipeline.
-* Can optionally include a ConfigureServices method to configure the app's services.
+* must include a Configure method to create the app's request processing pipeline.
+* can optionally include a ConfigureServices method to configure the app's services.
 
 This document describes microservice SDK features, services, configuration files, logging and Cake (C# Make).
 
@@ -18,14 +18,14 @@ There are two possible deployment types on the platform:
 * Hosted deployment - the default for microservices. For typical use cases the hosted deployment is the suggested one.
 * External/legacy deployment - requires custom installation of the platform and agent.
 
-For development and testing purposes one can deploy a microservice on a local docker. The process is described in this document
+For development and testing purposes one can deploy a microservice on a local docker. The process is described in this document.
 
 
 ## Microservice security
 
 The Configure method is used to specify how the app responds to HTTP requests. The request pipeline is configured by adding middleware components to an IApplicationBuilder instance.
 
-The UseAuthentication method adds a single authentication middleware component which is responsible for automatic authentication and the handling of remote authentication requests. It replaces all of the individual middleware components with a single, common middleware component. ASP.NET Security will not include Basic Authentication middleware that’s we require to add custom Basic Authentication middleware.
+The UseAuthentication method adds a single authentication middleware component which is responsible for automatic authentication and the handling of remote authentication requests. It replaces all of the individual middleware components with a single, common middleware component. Since ASP.NET Security does not include Basic Authentication middleware we must add custom Basic Authentication middleware.
 
 
 	public void Configure(IApplicationBuilder app, IHostingEnvironment env)
@@ -34,7 +34,7 @@ The UseAuthentication method adds a single authentication middleware component w
 		app.UseBasicAuthentication();
 	}
 
-And next, each authentication scheme is registered in the ConfigureServices method of Startup.cs. 
+Next, each authentication scheme is registered in the ConfigureServices method of Startup.cs. 
 
 	public void ConfigureServices(IServiceCollection services)
 	{
@@ -64,7 +64,7 @@ where Configuration represents a set of key/value application configuration prop
 		Configuration = configuration;
 	}
 
-This way microservices should receive very basic configuration. Besides properties related to isolation level microservices will receive the following variables:
+This way microservices should receive very basic configuration. Besides properties related to isolation level, microservices will receive the following variables:
 
 * C8Y_BASEURL - URL which points to the core platform
 * C8Y_BASEURL_MQTT - URL which points to the core platform with MQTT protocol
@@ -114,7 +114,7 @@ In earlier versions of .Net Core, IHttpContextAccessor was automatically registe
 
 ## Building a scheduled task
 
-In order to add a new scheduled task, add it as shown in the example below. All scheduled tasks should  look similar to
+In order to add a new scheduled task, add it as shown in the example below. All scheduled tasks should look similar to
 
     public class SomeTask : IScheduledTask
     {
@@ -125,7 +125,8 @@ In order to add a new scheduled task, add it as shown in the example below. All 
             //...
         }
     }
-Where the Schedule property is a cron expression and ExecuteAsync() method is the work to execute asynchronously.
+
+where the Schedule property is a cron expression and ExecuteAsync() method is the work to execute asynchronously.
 
 Then you can easily register scheduled tasks
 
@@ -138,7 +139,7 @@ Then you can easily register scheduled tasks
 
 ## Microservice subscription
 
-This SDK has a task CurrentApplicationSubscriptionsTask, which only fetches a list of all subscriptions. The CurrentApplicationSubscriptionsTask is  the IScheduledTask implementation which runs every hour:
+This SDK has a task CurrentApplicationSubscriptionsTask, which only fetches a list of all subscriptions. The CurrentApplicationSubscriptionsTask is the IScheduledTask implementation which runs every hour:
 
             services.AddSingleton<IScheduledTask, CurrentApplicationSubscriptionsTask>();
 
@@ -150,7 +151,9 @@ This SDK has a task CurrentApplicationSubscriptionsTask, which only fetches a li
 
 It should get all subscriptions and make it available for any other part of my application to work with.
 
-As you can see, the AddScheduler takes a delegate that handles unobserved exceptions. In our scheduler code, TaskFactory.StartNew() is used to run the task’s code. If there is an unhandled exception, you won’t see this exception. If we may want to be able to do some logging. This is normally done by setting TaskScheduler.UnobservedTaskException, that is global for this case so added our own to specifically catch scheduled tasks unhandled exceptions.
+As you can see, the AddScheduler takes a delegate that handles unobserved exceptions. In our scheduler code, TaskFactory.StartNew() is used to run the task’s code. If there is an unhandled exception, you won’t see this exception. 
+
+Therefore you may want to so some logging. This is normally done by setting TaskScheduler.UnobservedTaskException, that is global for this case so added our own to specifically catch scheduled tasks unhandled exceptions.
 
 The SDK allows you to subscribe to the event application subscriptions changed.
 
@@ -183,7 +186,7 @@ You can now use the hub to subscribe to any publication of a given type, in our 
 
 ## Program class
 
-In ASP.NET Core 2.0, the Program class is used to setup the IWebHost. This is the entry point to our application. The main method is creating a Host, building and then running it. The host then listens for HTTP requests.
+In ASP.NET Core 2.0, the Program class is used to setup the IWebHost. This is the entry point to our application. The main method creates a host, builds and then runs it. The host then listens for HTTP requests.
 
 
   public class Program
@@ -225,5 +228,3 @@ In ASP.NET Core 2.0, the Program class is used to setup the IWebHost. This is th
                 .Build();
 
     }
-
-

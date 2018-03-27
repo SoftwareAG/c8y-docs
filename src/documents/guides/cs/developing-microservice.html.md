@@ -153,7 +153,7 @@ It should get all subscriptions and make it available for any other part of my a
 
 As you can see, the AddScheduler takes a delegate that handles unobserved exceptions. In our scheduler code, TaskFactory.StartNew() is used to run the task’s code. If there is an unhandled exception, you won’t see this exception. 
 
-If we may want to be able to do some logging. This is normally done by setting TaskScheduler.UnobservedTaskException, that is global for this case so added our own to specifically catch scheduled tasks unhandled exceptions.
+Therefore you may want to so some logging. This is normally done by setting TaskScheduler.UnobservedTaskException, that is global for this case so added our own to specifically catch scheduled tasks unhandled exceptions.
 
 The SDK allows you to subscribe to the event application subscriptions changed.
 

@@ -1,0 +1,453 @@
+//
+// Dropdown menus
+// --------------------------------------------------
+// Dropdown arrow/caret
+.caret {
+  display: inline-block;
+  margin-left: 2px;
+  width: 0;
+  height: 0;
+  border-top: @caret-width-base dashed;
+  border-top: @caret-width-base solid ~"\9"; // IE8
+  border-right: @caret-width-base solid transparent;
+  border-left: @caret-width-base solid transparent;
+  vertical-align: middle;
+}
+
+// The dropdown wrapper (div)
+.dropup,
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+// Prevent the focus on the dropdown toggle when closing dropdowns
+.dropdown-toggle:focus {
+  outline: 0;
+}
+
+// The dropdown menu (ul)
+.dropdown-menu {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  z-index: @zindex-dropdown;
+  display: none; // none by default, but block on "open" of the menu
+  float: left;
+  margin: -1px; //2px 0 0; // override default ul
+  padding: 0;
+  min-width: 160px;
+  border: 1px solid @dropdown-border;
+  border-color: transparent;
+  border-radius: @dropdown-border-radius;
+  border-top-left-radius: 0;
+  border-top-right-radius: 0;
+  background-color: @dropdown-bg;
+  background-clip: padding-box;
+  list-style: none;
+  text-align: left;
+  text-transform: none;
+  font-size: @font-size-base;
+
+  .boxShadowHelper(2);
+  &.pull-right {
+    right: 0;
+    left: auto;
+  }
+  .divider {
+    margin: 0!important;
+
+    .nav-divider(@dropdown-divider-bg);
+  } // Links within the dropdown menu
+  >li a {
+    display: block;
+    clear: both;
+    padding: 6px 16px;
+    border-top: 1px dotted @dropdown-border;
+    background-color: white;
+    color: @dropdown-link-color;
+    white-space: nowrap;
+    font-weight: normal;
+    line-height: @line-height-base;
+  }
+  >li button:not(.btn) {
+    color: @dropdown-link-color;
+  }
+  >li:first-child a,
+  .divider+li a {
+    border-top-color: transparent!important;
+  } // forms in dropdown-menu
+  >.dropdown-form {
+    padding: 15px;
+    min-width: 250px;
+    background-color: white;
+  }
+  .form-group.datepicker {
+    .uib-datepicker-popup {
+      min-width: 281px;
+    }
+  }
+}
+
+// Hover/Focus state
+.dropdown-menu>li>a:not(.btn) {
+  &:hover,
+  &:focus {
+    background-color: @dropdown-link-hover-bg;
+    color: @dropdown-link-hover-color;
+    text-decoration: none;
+  }
+}
+
+// Active state
+.dropdown-menu>.active>a:not(.btn) {
+  &,
+  &:hover,
+  &:focus {
+    outline: 0;
+    background-color: @dropdown-link-active-bg;
+    color: @dropdown-link-active-color;
+    text-decoration: none;
+  }
+}
+
+// Disabled state
+//
+// Gray out text and ensure the hover/focus state remains gray
+.dropdown-menu>.disabled>a:not(.btn),
+.dropdown-menu button[disabled="disabled"]:not(.btn) {
+  &,
+  &:hover,
+  &:focus {
+    color: @dropdown-link-disabled-color!important;
+  } // Nuke hover/focus effects
+  &:hover,
+  &:focus {
+    background-color: white;
+    background-image: none; // Remove CSS gradient
+    color: @dropdown-link-disabled-color!important;
+    text-decoration: none;
+    cursor: @cursor-disabled;
+
+    .reset-filter();
+  }
+}
+
+// Open state for the dropdown
+.open {
+  // Show the menu
+  >.dropdown-menu {
+    height: auto;
+
+    .transition(box-shadow .15s ease .15s);
+    .boxShadowHelper(2, border);
+    >li {
+      top: 1px;
+
+      .transition(top .2s ease);
+    }
+    &.visible-overflow {
+      overflow: visible;
+    }
+  } // Remove the outline when :focus is triggered
+  >a {
+    outline: 0;
+  }
+}
+
+// Menu positioning
+//
+// Add extra class to `.dropdown-menu` to flip the alignment of the dropdown
+// menu with the parent.
+.dropdown-menu-right {
+  right: 0;
+  left: auto; // Reset the default from `.dropdown-menu`
+}
+
+//
+// This is only for left-aligning a dropdown menu within a `.navbar-right` or
+// `.pull-right` nav component.
+.dropdown-menu-left {
+  right: auto;
+  left: 0;
+}
+
+// Dropdown section headers
+.dropdown-header {
+  display: block;
+  padding: 4px 15px 3px;
+  border-top: 1px solid fade(@navbar-default-link-color, 10%);
+  background-color: white;
+  color: @dropdown-header-color;
+  white-space: nowrap; // as with > li > a
+  font-size: @font-size-small;
+  line-height: @line-height-base;
+}
+
+// Backdrop to catch body clicks on mobile, etc.
+.dropdown-backdrop {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: (@zindex-dropdown - 10);
+}
+
+// Right aligned dropdowns
+.pull-right>.dropdown-menu {
+  right: 0;
+  left: auto;
+}
+
+// Allow for dropdowns to go bottom up (aka, dropup-menu)
+//
+// Just add .dropup after the standard .dropdown class and you're set, bro.
+.dropup,
+.navbar-fixed-bottom .dropdown {
+  // Reverse the caret
+  .caret {
+    border-top: 0;
+    border-bottom: @caret-width-base solid;
+    border-bottom: @caret-width-base solid ~"\9"; // IE8
+    content: "";
+  } // Different positioning for bottom up menu
+  .dropdown-menu {
+    top: auto;
+    bottom: 100%;
+    margin-top: 0;
+    margin-bottom: 1px;
+  }
+}
+
+// Component alignment
+//
+// Reiterate per navbar.less and the modified component alignment there.
+@media (min-width: @grid-float-breakpoint) {
+  .navbar-right {
+    .dropdown-menu {
+      .dropdown-menu-right();
+    } // Necessary for overrides of the default right aligned menu.
+    // Will remove come v4 in all likelihood.
+    .dropdown-menu-left {
+      .dropdown-menu-left();
+    }
+  }
+}
+
+// wrapper for the toolbar
+.more-wrapper {
+  .dropdown-menu>li>.btn.btn-link {
+    display: block;
+    padding: 10px 15px 9px!important;
+    width: 100%;
+    border-top: 1px dotted @panel-border-color;
+    background-color: white;
+    color: @dropdown-link-color;
+    text-align: left;
+    white-space: nowrap; // prevent links from randomly breaking onto new lines
+    font-weight: normal;
+    line-height: @line-height-base;
+  }
+}
+
+.dropup,
+.navbar-fixed-bottom .dropdown {
+  // Reverse the caret
+  .caret {
+    border-top: 0;
+    border-bottom: @caret-width-base solid;
+    content: "";
+  } // Different positioning for bottom up menu
+  .dropdown-menu {
+    top: auto;
+    bottom: 100%;
+    margin-top: 0;
+    margin-bottom: 1px;
+  }
+}
+
+// c8y dropdown
+.c8y-dropdown {
+  position: relative;
+  display: inline-block;
+  margin: 0;
+  &:not(.btn) {
+    padding: 10px;
+    border: 0;
+    border-radius: 0;
+    background-color: transparent;
+    background-image: none;
+    color: @navbar-default-link-color;
+  } // to use inside cards
+  &:hover,
+  .open & {
+    text-decoration: none;
+    >span {
+      position: relative;
+      z-index: 10;
+    }
+  }
+  .fa {
+    position: relative;
+  }
+  &:before {
+    position: absolute;
+    top: 100%;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 0;
+    background-color: white;
+    content: ''; //.box-shadow(0 0 0 rgba(0, 0, 0, .175));
+
+    .transition( none);
+  }
+  +.dropdown-menu {
+    display: block;
+    overflow: hidden;
+    margin: -3px 0 0 0;
+    height: 0;
+    border: 0;
+    background-color: transparent;
+
+    .box-shadow(none); //.box-shadow(0 6px 12px rgba(0, 0, 0, 0));
+    .transition(none);
+    >li {
+      position: relative;
+      top: -100px;
+      a:not(.btn),
+      button:not(.btn) {
+        display: block;
+        padding: 10px 15px 9px;
+        width: 100%;
+        border: 0;
+        border-top: 1px dotted @dropdown-border;
+        border-radius: 0;
+        background-color: white;
+        background-image: none;
+        text-align: left;
+        white-space: nowrap;
+        &:hover {
+          color: @brand-primary;
+          text-decoration: none;
+        }
+      }
+    }
+  }
+  .dropup & {
+    z-index: 1002;
+    +.dropdown-menu>li {
+      top: 100px;
+    }
+  }
+}
+
+.dropdown.open,
+[dropdown].open,
+.btn-group.open {
+  .c8y-dropdown {
+    &:not(.btn) {
+      color: currentColor;
+      opacity: 1;
+
+      .box-shadow(none);
+      .transition(none);
+      &:before {
+        top: 0;
+        background-color: white;
+
+        .transition( box-shadow .25s ease); //.box-shadow(-3px 8px 16px rgba(0, 0, 0, .175));
+        .boxShadowHelper(2, border);
+      }
+    }
+    +.dropdown-menu {
+      height: auto;
+
+      .transition(box-shadow .15s ease .15s);
+      .boxShadowHelper(2, border);
+      >li {
+        top: 1px;
+
+        .transition(top .2s ease);
+      }
+    }
+  }
+}
+
+.dropup.open,
+[dropup].open {
+  .c8y-dropdown {
+    &:not(.btn) {
+      color: currentColor;
+      opacity: 1;
+
+      .box-shadow(none);
+      .transition(none);
+      &:before {
+        top: 0;
+        background-color: white;
+
+        .transition( box-shadow .25s ease);
+        .boxShadowHelper(2, border); //.box-shadow(-3px 8px 16px rgba(0, 0, 0, .175));
+      }
+    }
+    +.dropdown-menu {
+      height: auto;
+
+      .transition(box-shadow .2s ease .15s);
+      .boxShadowHelper(2, border); //.box-shadow(-3px 8px 16px rgba(0, 0, 0, .175));
+      >li {
+        top: 1px;
+
+        .transition(top .2s ease);
+      }
+    }
+  }
+}
+
+body {
+  >.dropdown-menu {
+    overflow: hidden;
+    margin: -3px 0 0 0;
+    height: 0;
+    border: 0;
+    background-color: transparent; //.box-shadow(0 6px 12px rgba(0, 0, 0, 0));
+
+    .transition(none);
+    >li {
+      position: relative;
+      top: -320px;
+      a:not(.btn),
+      button:not(.btn) {
+        display: block;
+        padding: 10px 15px 9px;
+        width: 100%;
+        border: 0;
+        border-top: 1px dotted @dropdown-border;
+        border-radius: 0;
+        background-color: white;
+        background-image: none;
+        text-align: left;
+        white-space: nowrap;
+        &:hover {
+          color: @brand-primary;
+          text-decoration: none;
+        }
+      }
+    }
+  }
+  &.uib-dropdown-open {
+    >.dropdown-menu {
+      height: auto;
+
+      .transition(box-shadow .15s ease .15s);
+      .boxShadowHelper(2, border);
+      >li {
+        top: 1px;
+
+        .transition(top .2s ease);
+      }
+    }
+  }
+}

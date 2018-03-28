@@ -1,0 +1,48 @@
+.boxShadowHelper(@level: 1, @direction: none) {
+  & when (@level = 1) {
+    //cards
+    box-shadow: @shadow1;
+  }
+  & when (@level = 2) {
+    box-shadow: @shadow2;
+    & when (@direction = border) {
+      box-shadow: @shadow2-border;
+    }
+  }
+  & when (@level = 3) {
+    // right-drawer
+    box-shadow: @shadow3-left;
+    & when (@direction = right) {
+      box-shadow: @shadow3-right;
+    }
+    & when (@direction = bottom) {
+      box-shadow: @shadow3-bottom;
+    }
+    & when (@direction = top) {
+      box-shadow: @shadow3-top;
+    }
+  }
+  & when (@level = 4) {
+    box-shadow: @shadow4;
+    & when (@direction = right) {
+      // dropdown inside raised components
+      box-shadow: @shadow4-right;
+    }
+  }
+  & when (@level = 5) {
+    // card hover
+    box-shadow: @shadow5;
+  }
+  & when (@level = 6) {
+    // global alerts
+    box-shadow: @shadow6;
+    & when (@direction = right) {
+      // dropdown inside raised components
+      box-shadow: @shadow6-right;
+    }
+  }
+  & when (@level = 7) {
+    // Modals
+    box-shadow: @shadow7;
+  }
+}

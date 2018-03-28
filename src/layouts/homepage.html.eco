@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en" class="c8y-docs">
+<head>
+	<!-- Meta -->
+	  <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="Cumulocity GmbH">
+    <meta name="description" content="<%= @document.description %>">
+    <meta name='robots' content='all'/>
+    <%- @getBlock("meta").toHTML() %>
+
+    <title><%= if @document.title then "#{@site.title} | #{@document.title}" else @site.title %></title>
+
+     <script type='text/javascript' src='//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js'></script>
+
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="//oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+      <script src="//oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+   <link rel="shortcut icon" href="/guides/images/favicon.ico"/>
+	 <link href="/guides/styles/docs-styles.css" rel="stylesheet" id="cumulocity-style-css" type="text/css" media="all" />
+
+</head>
+<body style="background-color: #000;">
+
+		<%- @content %>
+
+
+			<!-- Footer -->
+	  <footer id="footer" role="contentinfo" style="position:relative;">
+	    <div class="container">
+				<p class="pull-left"><small>&copy; Cumulocity <%- (new Date()).getFullYear() %></small></p>
+				<p class="pull-right"><small>
+				Last update: <%= @site.date.toISOString() %></small>
+				</p>
+			</div>
+		</footer>
+
+
+	<!-- Scripts -->
+	<%- @getBlock('scripts').add(@getAbsoluteUrl(@site.scripts)).toHTML() %>
+</body>
+</html>

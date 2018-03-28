@@ -6,6 +6,8 @@ title: SmartREST Payload
 
 The Cumulocity MQTT implementation uses SmartREST as a payload. SmartREST is a CSV-like message protocol that uses templates on the server side to create data in Cumulocity.
 
+> **Note:** For all mqtt connections to our platform the maximum accepted payload size is 8092 bytes
+
 ### SmartREST Basics
 
 A SmartREST message is a single row where each parameter is separated by comma. The first parameter is an ID that defines the message.

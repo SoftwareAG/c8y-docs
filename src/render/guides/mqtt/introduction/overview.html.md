@@ -33,3 +33,5 @@ The MQTT developer's guide is structured as follows:
 * [Handling IDs](/guides/mqtt/handling-ids) describes how IDs are handled in the Cumulocity MQTT protocol.
 
 > This developer's guide does not describe the basics of MQTT communication. If you are unfamiliar with MQTT, we recommend consulting one of the numerous introductions on the Internet. Some references can be found on the [MQTT web site](http://mqtt.org/documentation).
+
+> **Note**: For all MQTT connections to our platform, the maximum accepted payload size is 8092 bytes(8KB).

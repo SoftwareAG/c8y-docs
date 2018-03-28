@@ -61,6 +61,7 @@ redirects =
 	'/guides/users-guide': '/guides/users-guide/overview'
 	'/guides/rest': '/guides/rest/introduction'
 	'/guides/cpp': '/guides/cpp/introduction'
+	'/guides/cs': '/guides/cs/introduction'
 	'/guides/reference': '/guides/reference/rest-implementation'
 	'/guides/web': '/guides/web/introduction'
 	'/guides/java': '/guides/java/introduction'

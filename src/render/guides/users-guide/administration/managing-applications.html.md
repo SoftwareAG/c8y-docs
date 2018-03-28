@@ -4,23 +4,138 @@ title: Managing applications
 layout: redirect
 ---
 
-In addition to the applications available in the Cumulocity platform, you can also manage own applications in your account. 
+In addition to the applications provided in your account (per default or as subscription), you can also manage own applications. 
 
-These applications may be generic HTML5 applications that can be extended by adding plugins. When deploying, the plugins are deployed into a specific application. For example, a plugin might add a specific widget to the Cockpit dashboard.
+Own applications may be 
 
-Because the application itself is modified when adding a plugin, plugins can only be added to own applications. When adding a plugin to a subscribed application, the application must be duplicated first into an own application. This process is supported by the Administration Application wizard.
+* duplicates of subscribed applications (in order to be able to customize them)
+* web-based UI applications, either deployed as standalone applications or as plugins deployed into a specific application (e.g. a widget to the Cockpit dashboard)
+* server-side business logic deployed through microservices
 
-You manage your own application under "Own applications", accessible through the "Applications" menu. 
+Your applications are available through the application switcher in the top bar which allows to easily switch between applications.
 
-In the "Own applications" page you will find a list of your own applications in your account.
+<img src="/guides/images/users-guide/Administration/Admin_AppSwitcher.png" alt="App switcher" style="max-width: 50%">
+
+You manage your applications under "Own applications", accessible through the "Applications" menu. 
+
+In the "Own applications" page you will find a list of the applications available in your account.
 
 <img src="/guides/images/users-guide/Administration/Admin_OwnApplications.png" alt="Own applications" style="max-width: 100%">
 
+To directly open an application from here, click **Open** on the respective application card. 
+
+Click **Add application** in the "Own applications" page, to add an application to your account, see [Adding applications](#adding-applications).
+
+To add a plugin, click **Add Plugin** on the card of the application you want to add it to (see [Adding and removing plugins](#add-remove-plugin)).
+
 Click the menu icon at the top right of an application to open a context menu from where you can [**Edit** or **Remove**](#editing-and-removing) an application. 
 
-Click **Open** on the application card to directly open the application from here. Your applications are also available through the application switcher.
+### <a name="adding-applications"></a>Adding applications
 
-Click **Add Plugin** to add a plugin (see [Adding and removing plugins](#add-remove-plugins)).
+To add an application, click **Add application** in the "Own applications" page. In the upcoming dialog choose one of the following methods:
+
+* [uploading a zip file](#uploading-zip-files) - by dropping a file or browsing for it on your computer,
+* [using an external application](#external-application), which links to an application running elsewhere 
+* [duplicating an existing application](#clone-application)
+* [uploading a custom CEP rule](#uploading-cep-rules) (only visible if you are subscribed to specific applications, see below).
+
+<img src="/guides/images/users-guide/Administration/Admin_AddApplication.png" alt="Add application methods" style="max-width: 50%">
+
+#### <a name="uploading-zip-files"></a>Uploading zip files
+
+You can either add a web application or a microservice through uploading a zip file. 
+
+Depending on the information in the package being uploaded the system determines the application type.
+
+* If a "type" field exists and is equal to "MICROSERVICE" then the type is "MICROSERVICE".
+* If no "type" field exists but the "apiVersion" field is defined then the type is "MICROSERIVCE".
+* Otherwise the type is "HOSTED" (referring to a web application).
+
+In case of microservices, the package must contain the manifest file and docker image of the microservice. Refer to [Microservice package reference](/guides/reference/microservice-package) in order to prepare and deploy the microservice package.
+
+In order to add an application by uploading a zip file, follow these steps:
+
+1. Click **Add application** in the "Own applications" page.
+2. In the upcoming dialog, select **Upload zip file**.
+3. Simply drop a zip file or browse for it on your computer.
+
+<img src="/guides/images/users-guide/Administration/Admin_UploadZipFile.png" alt="Uploading zip file" style="max-width: 50%">
+
+After successfully uploading the zip file to the platform the application is being created.
+
+
+#### <a name="external-application"></a>Linking to external applications
+
+In order to add an application which links to an external application, follow these steps:
+
+1. Click **Add application** in the "Own applications" page.
+2. In the upcoming dialog, select **External application**.
+3. In the next window, enter the name of the application. The name will be shown as title of the application. 
+5. Enter an application key, used to identify this application.
+6. Enter the external URL where the application can be reached. 
+7. Finally, click **Save** to create the application.
+
+For details on the fields, see also [Application properties](#application-properties) below. 
+
+#### <a name="clone-application"></a>Duplicating applications
+
+Duplicating an application might be useful if you want to customize a subscribed application according to your needs. 
+
+Duplicating a subscribed application creates a copy of the application as an own application, with a link to the original application.
+
+>**Info**: If you want your "own application" to overrule a subscribed standard application, the path of the "own application" needs to be set to the path of the original subscribed application.
+
+In order to duplicate an application, follow these steps:
+
+1. Click **Add application** in the "Own applications" page.
+2. In the upcoming dialog, select **Clone existing application**.
+3. Select the desired application from the dropdown list. 
+4. In the next window, provide a name for the application. By default, the name of the original application is provided, extended by a number.
+5. Provide an application key, used to identify this application. By default, the key of the original application is provided, extended by a number.
+6. Provide the application path as part of the URL to invoke the application. By default, the path of the original application is provided, extended by a number. If you set it to the path of the original subscribed application, your own application will overrule the subscribed application. 
+7. Finally, click **Clone** to create the application.
+
+For details on the fields, see also [Application properties](#application-properties) below.
+
+#### <a name="uploading-cep-rules"></a>Uploading custom CEP rules
+
+> **Info:** To be able to upload custom CEP rules as applications to Cumulocity you need to be subscribed to the application "apama-small". Optionally, if you want to use the Smart Rules functionality, you need to be subscribed to the "SmartRule" application.
+
+In order to upload custom CEP rules, follow these steps:
+
+1. Click **Add application** in the "Own applications" page.
+2. In the upcoming dialog, select **Upload custom CEP rule**. <br>
+	<img src="/guides/images/users-guide/Administration/Admin_ApplicationsAddCEPRules.png" alt="Upload CEP rules" style="max-width: 50%">
+
+3. The file to be uploaded must be a single mon file, containing a set of event definitions and monitors. Drop the mon file or browse for it on your computer.
+
+After successfully uploading the file to the platform an application of type "Apama CEP rule" is being created.
+
+<img src="/guides/images/users-guide/Administration/Admin_ApplicationCEPRule.png" alt="Uploading zip file" style="max-width: 100%">
+
+For details on the fields, see also [Application properties](#application-properties) below.
+
+>**Info:** You cannot add a plugin to an application of type "Apama CEP rule". 
+
+
+### <a name="application-properties"></a>Application properties
+
+Click on an application card to view the application properties.
+
+<img src="/guides/images/users-guide/Administration/Admin_OwnApplicationMicroservice.png" alt="Microservice application" style="max-width: 100%">
+
+Each application will show the following properties:
+
+|Field|Description|Hosted (Web app)|Microservice|External|CEP rule
+|:---|:---|:---|:---|:---|:---
+|Name|Application name. Will be shown as title of the application in the top bar and in the application switcher. |Automatically created|Automatically created, based on the zip file name | Specified by the user|Automatically created, based on the mon file name 
+|ID|Unique ID to identify the application|Automatically provided|Automatically provided|Automatically provided|Automatically provided
+|Application key|Used to identify the application and to make the application available for subscription, see the [Concepts Guide](/guides/concepts/applications). |Automatically created|Automatically created based on the zip file name|Specified by the user|Automatically created based on the mon file name 
+|Type|Application type|Hosted application|Microservice|External|Apama CEP rule
+|Path|Part of the URL invoking the application|Automatically created|Automatically created as .../service/&#60;microservice name&#62;|Specified by the user. For example, if you use "hello" as application path, the URL of the application will be "/apps/hello".|Not available
+
+>**Info**: ID, application key, type and path cannot be changed.
+
 
 ### <a name="editing-and-removing"></a>Editing and removing applications
 
@@ -28,57 +143,25 @@ Click **Add Plugin** to add a plugin (see [Adding and removing plugins](#add-rem
 
 To edit an application, simply click the application or click **Edit** in its context menu, accessible through the menu icon. 
 
-In the "Properties" tab, several fields can be modified, depending on the application type.
-
->**Info**: "ID", "Application key" and "Path" cannot be changed, once configured.
+In the "Properties" tab, several fields can be modified, depending on the application type (see [Application properties](#application-properties)).
 
 >**Important:** Never change the system application names (e.g. "Device Management", "Cockpit"). Otherwise, tenant initialization will fail. 
 
 
 **Remove**
 
+To remove an application, click the menu icon and from the context menu select **Remove**. 
+
 If you remove an application that overwrites a subscribed application, the currently subscribed application becomes available to all users. Additionally, the users will then also benefit from future upgrades of the subscribed application.
 
 It is not possible to remove subscribed applications. This can only be done by the owner of the subscribed application.
 
->**Info**: To overwrite a subscribed application, the "own application" must have the same context-path as the "subscribed application".
 
-To remove an application, click the menu icon and from the context menu select **Remove**. 
+### <a name="add-remove-plugin"></a>Adding and removing plugins
 
-### Creating an application
+In order to configure and extend the functions provided with an application, you can add plugins to it. 
 
-To add an application, click **Add application** in the "Own applications" page. In the upcoming dialog choose to create an application by
-
-* uploading a ZIP file,
-* using an external application, which links to an application running elsewhere,
-* duplicating an existing application.
-
-![Add application methods](/guides/images/users-guide/Administration/Admin_AddApplication.png)
-
-If you select **Upload ZIP file**, the wizard will ask you to simply drop a file or browse for it on your computer.
-
-If you select **External application**, you next need to provide the name, application key and external URL for it. 
-
-If you want to duplicate an existing application, follow the steps described next.
-
-
-### <a name="clone-application"></a>Duplicate applications
-
-Duplicating a subscribed application creates a copy of the application as an own application, with a link to the original application.
-
-In order to duplicate an application, follow these steps:
-
-1. Click **Add application** in the "Own applications" page.
-2. In the upcoming dialog, select **Clone existing application**.
-3. Select the desired application from the dropdown list. Note that also subscribed applications are shown.
-4. In the next window, enter the name of the application. The name will be shown as title on the top left of the application. It will also be shown in the application switcher.
-5. Enter an application key. The application key is used to identify requests from this application and to make it available for subscription, see the [Concepts Guide](/guides/concepts/applications).
-6. Enter the application path. This path will be part of the URL to invoke the application. For example, if you use "hello" as application path, the URL of the application will be "/apps/hello".
-7. Finally, click **Clone** to create the application.
-
-### <a name="add-remove-plugins"></a>Adding and removing plugins
-
-In order to configure and extend the functions provided with a smartapp, you can add plugins to your applications. 
+>**Info:** Because the application itself is modified when adding a plugin, plugins can only be added to own applications. When adding a plugin to a subscribed application, the application must be duplicated first into an own application. This process is supported by the Administration Application wizard.
 
 To add additional plugins, click **Add Plugin** on the card of the desired application in the "Own applications" page. 
 
@@ -125,7 +208,7 @@ Users can restore previous versions of an application from an archive:
 
 ### Uploading archives
 
-Multiple archive ZIP file versions can be stored in Cumulocity when they were created by uploading ZIP files. Each version is called an archive. You can upload different versions at the same time and switch between these versions. 
+Multiple archive file versions can be stored in Cumulocity when they were created by uploading either a zip file or a mon file. Each version is called an archive. You can upload different versions at the same time and switch between these versions. 
 
 To upload an archive, follow these steps:
 
@@ -136,4 +219,7 @@ To upload an archive, follow these steps:
 
 ![Upload archive](/guides/images/users-guide/uploadarchive.png)
 
-Once uploaded, archives can be downloaded, activated or deleted if necessary. The active archive (indicated by a cloud icon) is the version of the application that is currently being served to the users of your account. This version cannot be deleted.
+Once uploaded, the recently uploaded version is automatically the active version, i.e. the version of the application that is currently being served to the users of your account. This version cannot be deleted. 
+
+To change the active version, open the context menu in the version you want to activate and select **Set as active**.
+

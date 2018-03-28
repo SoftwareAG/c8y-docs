@@ -9,6 +9,8 @@ The following sections will walk you through all functionalities of the Administ
 |SECTION|CONTENT|
 |:---|:---|
 |[Home Screen](#home-screen)|Providing information on your [capacity usage and subscribed applications](#home-screen).
+|[Managing users](#managing-users)|How to
+|[Managing permissions](#managing-permissions)|How to
 |[Viewing audit logs](#audit-logs)|Providing information on all [operations performed by the users](#audit-logs).
 |[Managing own applications](#managing-applications)|How to manage and [configure own applications](#managing-applications) in your Cumulocity account.
 |[Applying business rules](#business-rules)|How to set up real-time [event processing](#event-processing) scripts and reprioritize alarms by [alarm mappings](#reprio-alarms).

@@ -58,7 +58,7 @@ Click **Save TFA settings** to apply your changes.
 
 In the properties library, accessible from the "Settings" menu, custom properties can be added to inventory objects, alarms, events and tenants. 
 
-![Properties library](/guides/iamges/users-guide/properties_library.png)
+![Properties library](/guides/images/users-guide/properties_library.png)
 
 With custom properties, you can extend the data model of Cumulocity built-in objects. You may create the following custom values:
 

@@ -1,7 +1,7 @@
 ---
 order: 20
 title: Device Management
-layout: default
+layout: standalone
 ---
 
 ## <a name="overview"></a>Übersicht

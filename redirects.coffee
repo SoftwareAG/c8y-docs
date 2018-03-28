@@ -59,6 +59,7 @@ redirects =
 	# "index.html" redirects
 	'/guides/concepts': '/guides/concepts/introduction'
 	'/guides/users-guide': '/guides/users-guide/overview'
+	'/guides/benutzerhandbuch': '/guides/benutzerhandbuch/overview'
 	'/guides/rest': '/guides/rest/introduction'
 	'/guides/cpp': '/guides/cpp/introduction'
 	'/guides/cs': '/guides/cs/introduction'
@@ -69,5 +70,6 @@ redirects =
 	'/guides/mqtt': '/guides/mqtt/introduction'
 	'/guides/devices': '/guides/devices/overview'
 	'/guides/apama': '/guides/apama/introduction'
+	'/guides/event-language': '/guides/event-language/introduction'
 
 module.exports = redirects

@@ -32,7 +32,7 @@ Das Zapier Add-on verbindet Cumulocity auf zwei Arten mit Enterprise IT Services
 
 Um Daten an Enterprise-IT-Services zu senden, müssen Sie eine CEL-Anweisung in Cumulocity (oder eine der vorhandenen SmartRules) und einen Zap in Zapier einrichten (siehe Abbildung unten).
 
-![Triggers](/guides/images/zapier/triggersde.png)
+![Triggers](/guides/images/users-guide/zapier/triggersde.png)
 
 
 #### Neues SmartRule-Ereignis
@@ -41,7 +41,7 @@ Mit dem New SmartRule Event-Trigger können Sie zusätzliche Aktionen hinzufüge
 Bitte stellen Sie sicher, dass Sie ein SmartRule in Cumulocity erstellt und aktiviert haben, bevor Sie diese Funktion nutzen.
 Nachdem Sie diesen Trigger ausgewählt und Ihr Cumulocity-Konto ausgewählt haben, können Sie Ihr SmartRule angeben:
 
-![Cumulocity account](/guides/images/zapier/setUpSmartRule.png)
+![Cumulocity account](/guides/images/users-guide/zapier/setUpSmartRule.png)
 
 |Input|Beschreibung|
 |:--|:-------------|
@@ -59,7 +59,7 @@ Im Testschritt in Zapier geben wir Ihnen ein Beispiel, wie Zapier die Daten erha
 Der neue CEL-Ereignis-Trigger bietet eine vereinfachte Möglichkeit beliebige Anweisungen von einem Ihrer CEL-Modul an Zapier weiterzuleiten. Bevor Sie diese Funktion nutzen, müssen Sie Ihr Modul in Cumulocity einrichten.
 Nachdem Sie den Trigger ausgewählt und Ihr Cumulocity-Konto ausgewählt haben, können Sie dem CEL-Modul angeben:
 
-![Cumulocity account](/guides/images/zapier/setUpCEL.png)
+![Cumulocity account](/guides/images/users-guide/zapier/setUpCEL.png)
 
 |Input|Beschreibung|
 |:--|:-------------|
@@ -69,7 +69,7 @@ Nachdem Sie den Trigger ausgewählt und Ihr Cumulocity-Konto ausgewählt haben, 
 
 Im Testschritt in Zapier geben wir Ihnen ein Beispiel, wie Zapier die Daten erhalten wird, aber die Struktur hängt ganz davon ab, wie Ihre Aussage im CEL aussieht. Daher kann es sein, dass einige der Felder in unserem Beispiel in Ihrer CEL-Anweisung nicht vorhanden sind.
 
-Ein [Beispiel](/guides/images/zapier#examples) für einen Trigger, um mehr zu sehen .
+Ein [Beispiel](/guides/images/users-guide/zapier#examples) für einen Trigger, um mehr zu sehen .
 
 ### Von Enterprise IT Services zum Internet der Dinge
 
@@ -79,13 +79,13 @@ Das Zapier-Add-On stellt eine Anzahl von Zapier-Aktionen bereit, um Daten an Cum
 * Inventar aktualisieren.
 * Erstellen der Operation
 
-![Actions](/guides/images/zapier/actionsde.png)
+![Actions](/guides/images/users-guide/zapier/actionsde.png)
 
 #### Neues Gerät
 
 "Neues Gerät" registriert ein neues Gerät, so dass Sie es direkt anschließen können. Geben Sie dieselbe Geräte-ID (IMEI, Seriennummer) wie üblich in der Benutzeroberfläche "Geräteregistrierung" ein.
 
-![Device Registration](/guides/images/zapier/actionDeviceRegistration.png)
+![Device Registration](/guides/images/users-guide/zapier/actionDeviceRegistration.png)
 
 #### Stammdaten Aktualisieren
 
@@ -107,7 +107,7 @@ Die Assets migrieren in die Stammdaten nach folgendem Verfahren:
 
 Wenn einer der drei Schritte erfolgreich ist, wird das abgerufene Asset aktualisiert. Wenn nichts gefunden werden konnte, wird ein neues Asset erstellt.
 
-![Inventory](/guides/images/zapier/actionInventory.png)
+![Inventory](/guides/images/users-guide/zapier/actionInventory.png)
 
 #### Vorgang erstellen
 
@@ -123,13 +123,13 @@ Wenn einer der drei Schritte erfolgreich ist, wird das abgerufene Asset aktualis
 
 Das Gerät wird mit demselben dreistufigen Mechanismus identifiziert, wie oben in der Aktion "Stammdaten Aktualisieren" dargestellt.
 
-![Operation](/guides/images/zapier/actionOperation.png)
+![Operation](/guides/images/users-guide/zapier/actionOperation.png)
 
 ### Konfigurieren des Cumulocity-Kontos in Zapier
 
 Für jeden Trigger und jede Aktion müssen Sie gültige Cumulocity-Anmeldeinformationen hinzufügen. Wenn Sie Ihre erste Zap mit Cumulocity-Verbindung erstellen, müssen Sie ein neues Konto verbinden und in das folgende Dialogfeld gelangen, in dem Sie Ihre Cumulocity-Anmeldeinformationen eingeben.
 
-![Cumulocity account](/guides/images/zapier/credentials.png)
+![Cumulocity account](/guides/images/users-guide/zapier/credentials.png)
 
 ## Beispiele
 
@@ -143,13 +143,13 @@ Um das Beispiel auszuführen, benötigen Sie neben Ihrem Zapier-Konto ein Google
 
 Öffnen Sie Cumulocity, klicken Sie auf "Event Processing" und wählen Sie "Neues Modul". Geben Sie Ihrem neuen Modul den Namen "zapier". Wählen Sie im Dropdown-Menü "Beispiele" die Option "Simulatortemperatur an Zapier senden". Klicken Sie auf die Schaltfläche "Speichern". Ihr Bildschirm sollte wie der Screenshot unten aussehen.
 
-![Sample CEL statement](/guides/images/zapier/samplestatement.png)
+![Sample CEL statement](/guides/images/users-guide/zapier/samplestatement.png)
 
 Die obige Anweisung wählt alle neuen Temperaturmessungen in Ihrem Konto aus und formatiert sie für das Zapier Add-on. Die Ausgabe der Anweisung wird live neben der Anweisung gedruckt. Wenn die Standard-Simulator-Konfiguration läuft, sollte sie mit den Werten beginnen. Mehr Information unter [Real-time processing](/guides/concepts/realtime).
 
 Sie müssen eine Tabelle für das Einfüllen der Daten erstellen, die von Cumulocity kommen. Besuchen Sie https://docs.google.com und klicken Sie auf "Neu" und wählen Sie "Google Tabellen". Klicken Sie auf den Text "Untitled Spreadsheet" am oberen Rand des Bildschirms und geben Sie Ihre Tabelle einen Namen wie "Testkalkulationstabelle". Erstellen Sie in der Kalkulationstabelle eine Kopfzeile und eine Zeile mit Beispieldaten, wie im folgenden Screenshot dargestellt. Die Kopfzeile und die Beispieldaten werden von Zapier verwendet, um die Einrichtung Ihrer "Zap", Ihrer neuen Systemintegration, zu vereinfachen.
 
-![Sample spreadsheet](/guides/images/zapier/samplespreadsheet.png)
+![Sample spreadsheet](/guides/images/users-guide/zapier/samplespreadsheet.png)
 
 Weitere Informationen zur Verwendung von Kalkulationstabellen mit Zapier finden Sie unter [https://zapier.com/support/questions/2301/using-zapier-with-google-docs/](https://zapier.com/support/questions/2301/using-zapier-with-google-docs/).
 
@@ -165,11 +165,11 @@ Jetzt können Sie Ihr Zap einrichten:
 * Wählen Sie aus den Pulldown-Menüs Ihre Tabelle und Ihr Arbeitsblatt aus
 Ihr Bildschirm sollte wie der Screenshot unten aussehen, nachdem Sie durch alle Schritte gegangen sind:
 
-![Example 1](/guides/images/zapier/example1.png)
+![Example 1](/guides/images/users-guide/zapier/example1.png)
 
 Aktivieren Sie die Zap in Zapier und öffnen Sie das Spreadsheet, um Daten aus dem Simulator zu sehen.
 
-![Result](/guides/images/zapier/result.png)
+![Result](/guides/images/users-guide/zapier/result.png)
 
 ### Ein Gerät registrieren aus einem Spreadsheet
 
@@ -177,7 +177,7 @@ In diesem Beispiel gehen wir davon aus, dass Sie eine Tabellenkalkulation pflege
 
 Als ersten Schritt, bereiten Sie eine Tabelle ähnlich wie die unten im Screenshot. Die Spalte "IMEI" liefert die Kennung des Gerätes bei der Registrierung.
 
-![Device spreadsheet](/guides/images/zapier/devicessheet.png)
+![Device spreadsheet](/guides/images/users-guide/zapier/devicessheet.png)
 
 Jetzt können Sie Ihr Zap einrichten:
 
@@ -192,15 +192,15 @@ Jetzt können Sie Ihr Zap einrichten:
 
 Ihr Bildschirm sollte wie der Screenshot unten aussehen, nachdem Sie durch alle Schritte durchgegangen sind:
 
-![Example 2](/guides/images/zapier/example2.png)
+![Example 2](/guides/images/users-guide/zapier/example2.png)
 
 Testen Sie den Zap und schalten Sie ihn ein. Geben Sie ein neues Gerät in Ihre Tabelle ein.
 
-![Enter device](/guides/images/zapier/enterdevice.png)
+![Enter device](/guides/images/users-guide/zapier/enterdevice.png)
 
 Nach einer Weile erscheint die Geräte-ID im Dialog "Geräteregistrierung" von Cumulocity.
 
-![Device registered](/guides/images/zapier/deviceregistration.png)
+![Device registered](/guides/images/users-guide/zapier/deviceregistration.png)
 
 > Es kann bis zu fünfzehn Minuten dauern, bis Zapier die Änderung im Spreadsheet aufnimmt.
 
@@ -214,7 +214,7 @@ Um das Beispiel auszuführen, benötigen Sie eine [Wufoo Konto](http://www.wufoo
 
 Öffnen Sie den Wufoo Form Builder und erstellen Sie ein Formular für Ihren Inventareintrag. Im Beispiel wollen wir Kundenkontakte im Inventar anlegen. Speichern Sie das Formular.
 
-![Wufoo form](/guides/images/zapier/wufooform.png)
+![Wufoo form](/guides/images/users-guide/zapier/wufooform.png)
 
 Jetzt können Sie Ihr Zap einrichten:
 
@@ -228,11 +228,11 @@ Jetzt können Sie Ihr Zap einrichten:
 * Füllen Sie die Datenfelder aus dem Wufoo-Formular in die Update Inventory-Eingaben (z. B. wie im Screenshot unten)
 
 In diesem Fall erstellen wir für jeden Kunden, der in Wufoo eingetragen ist, einen neuen Eintrag. Die Wufoo-Eintrags-ID kann als Asset-ID in Cumulocity verwendet werden. Als Namen verwenden wir den Vor- und Nachnamen des Kontaktes. "Daten" enthält eine Liste von Schlüssel / Wert-Paaren, die Sie für die verbleibenden Formulardaten verwenden können. Diese Schlüssel / Wert-Paare werden in einem Cumulocity-Fragment "c8y_Contact" gespeichert. Sie können "Ist es ein Gerät?" auf "true" stellen, um die eingegebenen Daten in der Geräteverwaltungsanwendung zu sehen (obwohl Ihr Kontakt nicht genau ein Gerät ist).
-![Wufoo Zap](/guides/images/zapier/wufoozap.png)
+![Wufoo Zap](/guides/images/users-guide/zapier/wufoozap.png)
 
 Ihr Bildschirm sollte wie der Screenshot unten aussehen, nachdem Sie durch alle Schritte gegangen sind:
 
-![Example 3](/guides/images/zapier/example3.png)
+![Example 3](/guides/images/users-guide/zapier/example3.png)
 
 ## Erweiterungen
 

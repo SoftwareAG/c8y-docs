@@ -9,7 +9,8 @@ Mit dem Data Broker können Daten gezielt mit anderen Mandanten geteilt werden. 
 *   Geräte (und ganz allgemein Objekte),
 *   Ereignisse,
 *   Alarme,
-*   Messwerte.
+*   Messwerte,
+*   Kommandos.
 
 Navigieren Sie zur Seite "Datenkonnektor", wenn Sie anderen Mandanten Daten senden möchten. Navigieren Sie zur Seite "Datenabonnements", wenn Sie von anderen Mandanten Daten erhalten möchten.
 
@@ -131,7 +132,7 @@ Jeder Datenfilter enthält die folgenden Informationen:
 
 <td style="text-align: left">API</td>
 
-<td style="text-align: left">Der Datentyp, der weitergeleitet wird (Alarme, Ereignisse, Messwerte, Objekte).</td>
+<td style="text-align: left">Der Datentyp, der weitergeleitet wird (Alarme, Ereignisse, Messwerte, Objekte) oder empfangen wird (Kommandos).</td>
 
 </tr>
 
@@ -163,13 +164,21 @@ Jeder Datenfilter enthält die folgenden Informationen:
 
 </table>
 
+Wenn der Datentyp Kommando in Filtern ausgewählt ist, werden die Kommandos, die im Zielmandanten erstellt wurden, an den Ursprungsmandanten weitergeleitet. Dies trifft jedoch nur auf Kommandos zu, die die folgenden Bedingungen erfüllen:
+
+* das Gerät des Kommandos selbst stammt aus weitergeleiteten Daten,
+* das Kommando entspricht anderen Filterkriterien.
+
+Kommandoaktualisierungen vom Ursprungsmandanten werden an den Zielmandanten weitergeleitet.
+
 Die Kopfzeile eines Datenfilters fasst die Konfiguration in einer Zeile zusammen. Die Attribute, die standardmäßig kopiert werden, sind:
 
 *   **Für erzeugte Alarme**: type, text, time, severity, status.
 *   **Für aktualisierte Alarme**: status, text, severity.
 *   **Für erzeugte Ereignisse**: type, text, time.
 *   **Für erzeugte Messwerte**: type, text, time.
-*   **Für erstellte und aktualisierte Geräte**: type, name, c8y&#95;IsBinary, c8y&#95;IsDeviceGroup, c8y&#95;IsDevice, c8y&#95;DeviceGroup, c8y&#95;DeviceSubgroup, c8y&#95;SmartRule, c8y&#95;applications&#95;storage, c8y&#95;DynamicGroup, c8y&#95;DeviceQueryString.
+*   **Für erstellte und aktualisierte Geräte**: type, name, c8y&#95;IsBinary, c8y&#95;IsDeviceGroup, c8y&#95;IsDevice, c8y&#95;DeviceGroup, c8y&#95;DeviceSubgroup, c8y&#95;SmartRule, c8y&#95;DynamicGroup, c8y&#95;DeviceQueryString.
+*   **Für aktualisierte Kommandos**: status
 
 Wenn Sie den Datenkonnektor konfiguriert haben, klicken Sie **Speichern**, um die Konfiguration zu speichern.
 

@@ -8,17 +8,17 @@ The application concept of Cumulocity includes a basic application marketplace.
 
 Tenants can be subscribed to applications which have been deployed by their super tenant (management tenant or enterprise edition tenant). 
 
+Granting access to subtenants and subscribing to applications is done in the Administration application. 
+
+![Application Subscription](/guides/concepts-guide/applicationsubscription.png)
+
 Tenants can also have their own application marketplace, which can be viewed in the "Own Applications" page in the Administration application.
 
 <img src="/guides/users-guide/Administration/Admin_OwnApplications.png" alt="Own applications" style="max-width: 100%">
 
-Owned applications and granted applications can be also subscribed to the subtenants by the tenant.
+Owned applications and granted applications can also be subscribed to the subtenants by the tenant.
 
-For details refer to [Administration > Managing tenants](/guides/users-guide/enterprise-edition#tenants) in the User guide.
-
-Granting access to subtenants and subscribing to applications is done in the Administration application. 
-
-![Application Subscription](/guides/images/concepts-guide/applicationsubscription.png)
+For details refer to [Managing tenants](/guides/users-guide/administration#tenants) in the User`s Guide.
 
 ### Service Discovery
 

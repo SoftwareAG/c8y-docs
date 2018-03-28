@@ -10,7 +10,8 @@ Data broker lets you share data selectively with other tenants. You can share:
 - devices (and more generically, managed objects),
 - events,
 - alarms,
-- measurements.
+- measurements,
+- operations.
 
 Navigate to "Data connectors" if you would like to send data to another tenant. Navigate to "Data subscriptions", if you would like to receive data from another tenant.
 
@@ -62,10 +63,17 @@ Each data filter contains the following information:
 |Field|Description|
 |:---|:---|
 |Group or device|The group or device that is forwarded. Selecting a group here results in all sub-groups and sub-devices being forwarded. By default, all data is forwarded.
-|API|The type of data being forwarded (alarms, events, measurements, manages objects).
+|API|The type of data being forwarded (alarms, events, measurements, manages objects) or being received (operations).
 |Fragments to filter|The fragments that need to be present in a device to be forwarded.
 |Fragments to copy|The fragments that are copied to the destination. If nothing is specified here, only standard properties of managed objects, alarms, events and measurements are forwarded (see below). Select **Copy all fragments** to forward the entire object.
 |Type filter|Forwarded data needs to have this value in its "type" property.
+
+If operation API is checked in filters, operations created in the target tenant will be forwarded to the source tenant. This applies only to operations that meet the following conditions:
+
+* operation's device itself is a result of forwarding data;
+* operation matches other filter criteria.
+
+Operations update coming from source will be forwarded to the destination tenant.
 
 The heading of a data filter summarizes the configuration in one line. The standard properties that are copied by default are:
 
@@ -73,7 +81,8 @@ The heading of a data filter summarizes the configuration in one line. The stand
 * **For updated alarms**: status, text, severity.
 * **For created events**: type, text, time.
 * **For created measurements**: type, text, time
-* **For created and updated devices**: type, name, c8y&#95;IsBinary, c8y&#95;IsDeviceGroup, c8y&#95;IsDevice, c8y&#95;DeviceGroup, c8y&#95;DeviceSubgroup, c8y&#95;SmartRule, c8y&#95;applications&#95;storage, c8y&#95;DynamicGroup, c8y&#95;DeviceQueryString.
+* **For created and updated devices**: type, name, c8y&#95;IsBinary, c8y&#95;IsDeviceGroup, c8y&#95;IsDevice, c8y&#95;DeviceGroup, c8y&#95;DeviceSubgroup, c8y&#95;SmartRule, c8y&#95;DynamicGroup, c8y&#95;DeviceQueryString.
+* **For updated operations**: status
 
 Once you have configured your data connector, click **Save** to save the configuration. 
 

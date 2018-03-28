@@ -166,7 +166,6 @@
 					$menuChildren = $menu.find(menuChildrenSelector);
 					$menuChildren.filter(activeSelector).removeClass(activeClass);
 					$menuChildren = $menuChildren.has('a[href^="'+relativeUrl+'"],a[href^="/'+relativeUrl+'"],a[href^="'+url+'"]');
-					console.log('relative url: ', relativeUrl, $menuChildren, $menuChildren.length);
 					if ( $menuChildren.length === 1 ) { $menuChildren.addClass(activeClass); }
 					setTimeout(function(){
 						$('.slot a').each(function(){

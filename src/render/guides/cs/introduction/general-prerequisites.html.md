@@ -24,7 +24,7 @@ Whether you need the .NET Core SDK or the .NET Core runtime depends on what you 
 
 * .NET Core Runtime - is required to **run** .NET Core applications.
 
-### **Runtime prerequisites**
+### Runtime prerequisites
 
 The most important requirement is an installation of [Docker 17.06](https://docs.docker.com/release-notes/docker-ce/) or later of the Docker client.
 

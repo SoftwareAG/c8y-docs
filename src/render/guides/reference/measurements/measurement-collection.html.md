@@ -76,7 +76,7 @@ Example response:
       }
     }
 
-In case of executing range queries on measurements API, like query by dateFrom and dateTo, measurements are returned in order from the last to the latest. It is possible to change the order by adding query parameter "revert=true" to the request URL.
+In case of executing range queries on measurements API, like query by dateFrom and dateTo, the oldest measurements are returned first. It is possible to change the order by adding query parameter "revert=true" to the request URL.
 In many use cases it is needed to get the latest measurement sent from the device. This can be accomplished by passing "revert" param together with "dateFrom" and "dateTo" params to sort the outcome by date, e.g. pass dateFrom from a year ago, and dateTo from the feature.
 
 ### GET - retrieve all or some series of measurements

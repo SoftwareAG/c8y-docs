@@ -32,5 +32,6 @@ The MQTT developer's guide is structured as follows:
 * [SmartREST 2.0](/guides/mqtt/smartrest-2) defines the SmartREST 2.0 payload format for MQTT with improvements in usability and traffic usage.
 * [MQTT Static Templates](/guides/mqtt/static-templates) provides a reference of pre-defined payload formats that you can use straight away.
 * [Handling IDs](/guides/mqtt/handling-ids) describes how IDs are handled in the Cumulocity MQTT protocol.
+* [JSON via MQTT](/guides/mqtt/json) defines the JSON payload format for Cumulocity MQTT protocol.
 
 > This developer's guide does not describe the basics of MQTT communication. If you are unfamiliar with MQTT, we recommend consulting one of the numerous introductions on the Internet. Some references can be found on the [MQTT web site](http://mqtt.org/documentation).

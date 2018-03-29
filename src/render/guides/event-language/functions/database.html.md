@@ -21,42 +21,42 @@ Here is the full list of available functions. Replace the ellipses ("...") with 
 |...ManagedObjectByFragmentType|List|fragmentType*:String*|
 |...ManagedObjectByType|List|type*:String*|
 |findEventById|Event|id*:String*<br/>id*:GId*|
-|...EventByFragmentType|List|fragmentType*:String*|
+|findFirstEventByFragmentType<br/>findOneEventByFragmentType|Event|fragmentType*:String*|
 |...EventByFragmentTypeAndSource|List|fragmentType*:String*, source*:String*|
 |...EventByFragmentTypeAndSourceAndTimeBetween|List|fragmentType*:String*, source*:String*, from*:Date*, to*:Date*|
 |...EventByFragmentTypeAndSourceAndTimeBetweenAndType|List|fragmentType*:String*, source*:String*, from*:Date*, to*:Date*, type*:String*|
 |...EventByFragmentTypeAndSourceAndType|List|fragmentType*:String*, source*:String*, type*:String*|
 |...EventByFragmentTypeAndTimeBetween|List|fragmentType*:String*, from*:Date*, to*:Date*|
 |...EventByFragmentTypeAndTimeBetweenAndType|List|fragmentType*:String*, from*:Date*, to*:Date*, type*:String*|
-|...EventByFragmentTypeAndType|List|fragmentType*:String*, type*:String*|
+|findFirstEventByFragmentTypeAndType<br/>findOneEventByFragmentTypeAndType|Event|fragmentType*:String*, type*:String*|
 |...EventBySource|List|source*:String*|
 |findMeasurementById|Measurement|id*:String*<br/>id*:GId*|
-|...MeasurementByFragmentType|List|fragmentType*:String*|
+|findFirstMeasurementByFragmentType<br/>findOneMeasurementByFragmentType|Measurement|fragmentType*:String*|
 |...MeasurementByFragmentTypeAndSource|List|fragmentType*:String*, source*:String*|
 |...MeasurementByFragmentTypeAndSourceAndTimeBetween|List|fragmentType*:String*, source*:String*, from*:Date*, to*:Date*|
 |...MeasurementByFragmentTypeAndSourceAndTimeBetweenAndType|List|fragmentType*:String*, source*:String*, from*:Date*, to*:Date*, type*:String*|
 |...MeasurementByFragmentTypeAndSourceAndType|List|fragmentType*:String*, source*:String*, type*:String*|
 |...MeasurementByFragmentTypeAndTimeBetween|List|fragmentType*:String*, from*:Date*, to*:Date*|
 |...MeasurementByFragmentTypeAndTimeBetweenAndType|List|fragmentType*:String*, from*:Date*, to*:Date*, type*:String*|
-|...MeasurementByFragmentTypeAndType|List|fragmentType*:String*, type*:String*|
+|findFirstMeasurementByFragmentTypeAndType<br/>findOneMeasurementByFragmentTypeAndType|Measurement|fragmentType*:String*, type*:String*|
 |...MeasurementBySource|List|source*:String*|
 |findLastMeasurementByFragmentTypeAndSourceAndTimeBetween|Measurement|fragmentType*:String*, source*:String*, from*:Date*, to*:Date*|
 |findLastMeasurementByFragmentTypeAndSourceAndTimeBetweenAndType|Measurement|fragmentType*:String*, source*:String*, from*:Date*, to*:Date*, type*:String*|
 |findLastMeasurementByFragmentTypeAndTimeBetween|Measurement|fragmentType*:String*, from*:Date*, to*:Date*|
 |findLastMeasurementByFragmentTypeAndTimeBetweenAndType|Measurement|fragmentType*:String*, from*:Date*, to*:Date*, type*:String*|
 |findOperationById|Operation|id*:String*<br/>id*:GId*|
-|...OpererationByAgent|List|agentId*:String*|
-|...OpererationByAgentAndStatus|List|agentId*:String*, status*:String*|
-|...OpererationByDevice|List|deviceId*:String*|
-|...OpererationByDeviceAndStatus|List|deviceId*:String*, status*:String*|
-|...OpererationByStatus|List|status*:String*|
-|...OpererationByCreationTimeBetween|List|from*:Date*, to*:Date*|
+|findFirstOperationByAgent<br/>findOneOperationByAgent|Operation|agentId*:String*|
+|...OperationByAgentAndStatus|List|agentId*:String*, status*:String*|
+|findFirstOperationByDevice<br/>findOneOperationByDevice|Operation|deviceId*:String*|
+|...OperationByDeviceAndStatus|List|deviceId*:String*, status*:String*|
+|...OperationByStatus|List|status*:String*|
+|...OperationByCreationTimeBetween|List|from*:Date*, to*:Date*|
 |findAlarmById|Alarm|id*:String*<br/>id*:GId*|
 |...AlarmBySource|List|sourceId*:String*|
 |...AlarmBySourceAndStatus|List|sourceId*:String*, status*:String*|
 |...AlarmBySourceAndStatusAndType|List|sourceId*:String*, status*:String*, type*:String*|
 |...AlarmBySourceAndStatusAndTimeBetween|List|sourceId*:String*, status*:String*, from*:Date*, to*:Date*|
 |...AlarmBySourceAndTimeBetween|List|sourceId*:String*, from*:Date*, to*:Date*|
-|...AlarmByStatus|List|status*:String*|
+|findFirstAlarmByStatus<br/>findOneAlarmByStatus|Alarm|status*:String*|
 |...AlarmByStatusAndTimeBetween|List|status*:String*, from*:Date*, to*:Date*|
 |...AlarmByTimeBetween|List|from*:Date*, to*:Date*|

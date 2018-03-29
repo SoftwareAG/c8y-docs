@@ -1,0 +1,14 @@
+---
+layout: default
+---
+<header class="section-header">
+  <h1 class="text-light"><%= @document.title %></h1>
+</header>
+
+<div class="lead"><%- @content %></div>
+<% for block in @getCollection("html").findAllLive({relativeOutDirPath: @document.collection }, [ order: 1, title: 1 ] ).toJSON(): %>
+  <section id="<%= block.basename %>">
+    <h2><button class="btn-link bookmark" data-clipboard-text="#<%- block.basename %>"><span class="fa fa-link"></span></button><%= block.title %></h2>
+    <%- block.contentRenderedWithoutLayouts %>
+  </section>
+<% end %>

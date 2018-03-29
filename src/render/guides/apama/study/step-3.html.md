@@ -1,0 +1,21 @@
+---
+order: 40
+title: Step 3: Checking if the device supports c8y_Geofence
+layout: redirect
+---
+
+With the device available we will now check if there is a geofence configured for the device and if it is activated (contains "c8y&#95;Geofence" in supportedOperations). To check the c8y&#95;SupportedOperations array, we can use the indexOf() function. This function will loop through all elements and return the index of that entry, or a negative number if the value is not present. For the configuration, we will just check if the device contains the fragment "c8y&#95;Geofence". If present, this will be prefixed by "attrs." in the params of the device.
+
+	Once we have an event and a device, we extract the data from the event's c8y&#95;Position and the device's c8y&#95;Geofence. These objects are mapped to dictionary&#60;any,any&#62; entries in the params. As the params hold values of type "any", we need to cast to a dictionary&#60;any,any&#62;:
+	
+	if(dev.params.hasKey("attrs.c8y_Geofence") and 
+						   dev.supportedOperations.indexOf("c8y_Geofence") >= 0) {
+							dictionary&#60;any,any&#62; evtPos := dictionary&#60;any,any&#62; > e.params["c8y_Position"];
+							float eventLat := &#60;float> evtPos["lat"];
+							float eventLng := &#60;float> evtPos["lng"];
+	
+							dictionary&#60;any,any&#62; devGeofence := &#60;dictionary&#60;any,any&#62 &#62 dev.params["attrs.c8y_Geofence"];
+						float centerLat := &#60;float> devGeofence["lat"];
+						float centerLng := &#60;float> devGeofence["lng"];
+						float maxDistance := &#60;float> devGeofence["radius"];
+

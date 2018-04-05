@@ -136,3 +136,4 @@ Add redirects to broken links in `redirects.coffee`.
 
 ---
 &copy; Cumulocity GmbH  2018 + All rights reserved.
+

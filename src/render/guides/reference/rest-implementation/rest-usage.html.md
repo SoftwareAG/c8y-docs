@@ -10,7 +10,7 @@ The semantics described in the [HTTP specification](http://www.w3.org/Protocols/
 
 -   POST creates a new resource. In the response "Location" header, the URI of the newly created resource is returned.
 -   GET retrieves a resource.
--   PUT updates an existing resource with the contents of the request. 
+-   PUT updates an existing resource with the contents of the request.
 -   DELETE removes a resource. The response will be "204 No Content".
 
 If a PUT request only contains parts of a resource, so called "fragments", only those parts are updated. To remove a fragment, use a PUT request with a null value for the fragment. PUT cannot update sub-resources that are identified by a separate URI.
@@ -24,7 +24,7 @@ URI templates contain placeholders in curly braces, which need to be filled by t
     HTTP/1.1 200 OK
     Content-Type: application/vnd.com.nsn.cumulocity.eventApi+json;...
     Content-Length: ...
-     
+
     {
       ...
       "events" : { "self" : "http://..." },
@@ -63,3 +63,15 @@ For convenience, collection resources provide a "next" and "prev" links to retri
     }
 
 Please note that the totalPages property can be expensive to compute, hence it is not returned by default for range queries. To include totalPages in the result, add the query parameter "withTotalPages=true".
+
+### <a name="paging"></a>Query result paging for users with restricted access
+
+If user has no global role for reading data from API resource but rather [inventory roles](/guides/users-guide/administration/managing-permissions#inventory) for reading only particular documents there are some differences in query result paging:
+
+-   In some circumstances response may contain less than pageSize elements though there is more data in database accessible for the user.
+
+-   In some circumstances "next" and "prev" links may appear in response though there is no more data in database accessible for the user.
+
+-   Property "currentPage" of response does not contain page number but offset of next element not yet processed by querying mechanism.
+
+The above behavior is due to the fact that querying mechanism is iterating maximally over 10 * max(pageSize, 100) documents per request and stop even if it can not be collected full page of data accessible for the user. If next page is requested querying mechanism starts iteration where it finished the previous time.

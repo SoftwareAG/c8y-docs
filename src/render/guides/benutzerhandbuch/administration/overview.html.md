@@ -8,7 +8,7 @@ layout: redirect
 
 Die folgenden Abschnitte beschreiben detailliert alle Funktionalitäten der "Administration"-Anwendung. Zur besseren Orientierung folgt eine Übersicht über den Inhalt dieses Dokuments.
 
-|SECTION|CONTENT|
+|Abschnitt|Inhalt|
 |:---|:---|
 |[Startseite](#home-screen)|Enthält Informationen über [Kapazitätsnutzung und abonnierte Anwendungen](#home-screen).
 |[Anzeigen von Audit-Logs](#audit-logs)|Enthält Informationen zu [von den Benutzern ausgeführten Kommandos](#audit-logs).

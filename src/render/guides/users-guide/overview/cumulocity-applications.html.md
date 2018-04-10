@@ -5,15 +5,24 @@ layout: redirect
 ---
 
 
-Per default, Cumulocity comes with the following three standard applications:
+Per default, Cumulocity comes with three major standard applications and several built-in applications:
 
 | &nbsp; |Application|Description|
 |:---:|:---|:---|
 |<i class="c8y-icon c8y-icon-device-management c8y-icon-duocolor" style="font-size: 36px;"></i>|[Device Management](/guides/users-guide/device-management)|The Device Management application provides functionalities for managing and monitoring devices and enables you to control and troubleshoot devices remotely.  
 |<i class="c8y-icon c8y-icon-cockpit c8y-icon-duocolor" style="font-size: 36px;"></i>|[Cockpit](/guides/users-guide/cockpit)|The Cockpit application provides you with options to manage and monitor  Internet of Things (IoT) assets and data from a business perspective.
 |<i class="c8y-icon c8y-icon-administration c8y-icon-duocolor" style="font-size: 36px;"></i>|[Administration](/guides/users-guide/administration)|The Administration application enables account administrators to manage their users, roles, tenants, applications and business rules and lets them configure a number of settings for their account. 
+|<i class="c8y-icon c8y-icon-administration c8y-icon-duocolor" style="font-size: 36px;"></i>|[Device-Simulator](/guides/users-guide/device-management#simulator)|With the Cumulocity simulator all aspects of IoT devices can be simulated.
+|<i class="c8y-icon c8y-icon-administration c8y-icon-duocolor" style="font-size: 36px;"></i>|[Smart Rules](/guides/users-guide/cockpit#smart-rules)|With the Cumulocity simulator all aspects of IoT devices can be simulated.
+
 
 Apart from these standard applications that initially come with Cumulocity, various additional applications are provided which you may subscribe to, i.e. integrated agents for several device types.
+
+|Application|Description|Documentation
+|:---:|:---|:---
+|actility-device-provider-agent|The LoRa actility agent is an ptional service that allows to interface with LoRa devices through Actility's ThingPark Wireless.|User guide > Optional services > [LoRa Actility](/guides/users-guide/optional-services#lora)
+|apama-small|Allows to define business operations for immediate processing of incoming data by using Apama's Event Processing Language (EPL).|[Apama analytics guide](/guides/apama)    
+|<i class="c8y-icon c8y-icon-cockpit c8y-icon-duocolor" style="font-size: 36px;"></i>|[Cockpit](/guides/users-guide/cockpit)|The Cockpit application provides you with options to manage and monitor  Internet of Things (IoT) assets and data from a business perspective.
 
 Moreover, you can add own applications to be used in your Cumulocity account. For details, refer to [Administration > Managing applications](/guides/users-guide/administration/managing-applications).
 

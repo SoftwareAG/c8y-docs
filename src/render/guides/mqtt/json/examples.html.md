@@ -4,7 +4,7 @@ layout: redirect
 title: Examples
 ---
 
-- Create new event
+### Create new event
   
   Publish message on topic `/event/events/create` with payload:
   ```
@@ -14,7 +14,7 @@ title: Examples
     "time": "2014-03-03T12:03:27.845Z"
   }
   ```
-- Create many events
+### Create many events
   
   Publish message on topic `/event/events/createBulk` with payload:
   ```
@@ -34,7 +34,7 @@ title: Examples
   }
   ```
   
-- Update event
+### Update event
 
   Publish message on topic `/event/events/update/<event_id>` with payload:
   ```
@@ -43,6 +43,6 @@ title: Examples
   }
   ```
   
-- Delete event
+### Delete event
 
-  Publish message on topic `/event/events/delete/<event_id>` with empty payload
+  Publish message on topic `/event/events/delete/<event_id>` with empty payload.

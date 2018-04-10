@@ -39,7 +39,7 @@ The read-only variable currentTime can be used to obtain the current server time
 
 Example:
 
-	send Event("c8y_HighTemperatureAlarm", evt.source, currentTime, "Alarm started at "+TimeFormat.format(currentTime, "yyyy.MM.dd G 'at' HH:mm:ss"), new dictionary&#60;string,any>) to Event.CHANNEL;
+	send Event("", "c8y_HighTemperatureAlarm", evt.source, currentTime, "Alarm started at "+TimeFormat.format(currentTime, "yyyy.MM.dd G 'at' HH:mm:ss"), new dictionary<string,any>) to Event.CHANNEL;
 
 ### inMaintenanceMode
 

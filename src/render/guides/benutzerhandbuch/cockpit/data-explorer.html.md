@@ -4,152 +4,174 @@ title: Visualisieren von Daten mit dem Daten-Explorer
 layout: redirect
 ---
 
-Datenpunkte (Messungen oder Sensordaten) können im Cockpit an drei Stellen visualisiert werden:
+Im Daten-Explorer können Datenpunkte (Messwerte oder Sensordaten) visualisiert werden.
 
-* Klicken Sie im Navigator auf den "Daten-Explorer". Von dort haben Sie Zugriff auf alle Datenpunkte aller Assets.
+Der Daten-Explorer ist sowohl für alle Assets als auch für einzelne Assets verfügbar.
 
-* Navigieren Sie zu einem bestimmten Asset und klicken Sie auf den Tab "Daten-Explorer". Sie haben Zugriff auf alle Datenpunkte der Assets und Sub-Assets.
+* Klicken Sie "Daten-Explorer" im Navigator, um auf alle Datenpunkte von allen Assets zuzugreifen.
 
-* Hinzufügen von datenpunktbezogenen Widgets zu einem Dashboard, um vordefinierte Berichte anzuzeigen.
+* Navigieren Sie zu einem bestimmten Asset und wechseln Sie zur Registerkarte "Daten-Explorer", um auf alle Datenpunkte dieses Assets und seiner Kind-Assets zuzugreifen.
 
-Um Datenpunkte zu visualisieren, folgen Sie diesen Schritten:
+Im Daten-Explorer finden Sie auf der rechten Seite eine Liste aller verfügbaren Datenpunkte. Standardmäßig werden die ersten fünf Datenpunkte des ausgewählten Geräts oder der ausgewählten Gruppe angezeigt. Weitere Informationen zum Hinzufügen von Datenpunkten finden Sie unter [*Hinzufügen von Datenpunkten*](#add-data-points).
 
-* Gehen Sie zu der Gruppe oder dem Gerät, und klicken Sie auf "Daten-Explorer".
+Auf der linken Seite, in der Hauptkarte, sehen Sie die entsprechende Visualisierung.
 
-* Die ersten fünf Datenpunkte des ausgewählten Geräts oder der ausgewählten Gruppe werden angezeigt.
+![Datenpunkt](/guides/images/users-guide/data-explorer-main-view.PNG)
 
-* Fügen Sie zusätzlichen Datenpunkt hinzu, indem Sie "Datenpunkte hinzufügen ..."
+Die Visualisierung wird auf Basis von Datenpunktattributen erstellt.
 
-* Passen Sie Farben, Bereiche und andere Visualisierungseigenschaften an.
+Die Datenpunktattribute werden folgendermaßen vorausgefüllt:
 
-* Durchsuchen Sie weitere Daten, indem Sie den Zeitraum oder die Wertebereiche ändern.
+* Wenn diese Attribute bereits zuvor angepasst wurden, werden die entsprechenden Werte verwendet, siehe [*Anpassen von Datenpunktattributen*](#customize-data-points).
 
-* Wenn Sie Ihre aktuelle Konfiguration für später speichern möchten, speichern Sie sie als Widget mit "Als Widget zum Dashboard senden ..."
+* Wenn die Datenpunkte eine Übereinstimmung in der Datenpunktbibliothek haben, werden die Werte von der Datenpunktbibliothek verwendet. 
 
-Der Daten-Explorer und das Dashboard sind eng miteinander verbunden:
+In der Datenpunktbibliothek kann es mehr als einen übereinstimmenden Datenpunkteintrag geben. In diesem Fall wird automatisch der erste übereinstimmende Datenpunkt ausgewählt. Sie können diese Auswahl überschreiben, in dem Sie im entsprechenden Datenpunkteintrag über das Menüsymbol das Kontextmenü öffnen und **[NAME] aus Bibliothek laden** wählen. 
 
-* Wenn Sie eine Daten-Explorer-Konfiguration als Widget an ein Dashboard senden, können Sie das Dashboard auswählen, in dem das neue Widget gespeichert wird.
+![Datenpunkt bearbeiten](/guides/images/users-guide/data-explorer-data-points-edit.PNG)
 
-* Wenn Sie auf das Konfigurationssymbol eines "Datenpunktgraphen"-Widgets klicken, gelangen Sie zu einem Dialog, der dem Daten-Explorer ähnelt. Hier können Sie das Widget konfigurieren.
+Allgemeine Informationen zum Ändern der Visualisierung finden Sie unter [*Ändern der Daten-Explorer-Visualisierung*](#change-visualization). Informationen zum Anpassen der Attribute eines bestimmten Datenpunkts finden Sie unter[*Anpassen von Datenpunktattributen*](#customize-data-points).
 
-### Öffnen des Daten-Explorers
+### <a name="change-visualization"></a>Ändern der Daten-Explorer-Visualisierung
 
-Wenn Sie auf den Tab "Daten-Explorer" klicken, wird er geöffnet.
+Zum Ändern der Visualisierung im Daten-Explorer können Sie verschiedene Parameter bearbeiten:
 
-Er wird mit vorhandenen Datenpunkten des Objekts (Gruppe oder Gerät) voreingestellt. Die ersten fünf Datenpunkte werden standardmäßig angezeigt.
+**Zeitintervall**
 
-![image alt text](/guides/images/users-guide/image_10de.png)
+Sie können das angezeigte Zeitintervall ändern. Standardmäßig sehen Sie die Werte für die letzte Stunde.
 
-Die Visualisierung wird basierend auf Datenpunkt-Eigenschaften erzeugt.
+Um das Zeitintervall auf der X-Achse zu ändern,
 
-Die Datenpunkteigenschaften (min, max, color, ..) werden wie folgt voreingestellt:
+* wählen Sie ein anderes Zeitintervall aus der Auswahlliste in der oberen Menüleiste, 
+* geben Sie ein eigenes Zeitintervall in die Felder "Von" und "Bis" im Daten-Explorer ein,
+* bewegen Sie die X-Achse mit dem Mauszeiger nach links oder rechts um das Zeitintervall zu verschieben,
+* Zoomen Sie durch Doppelklicken in den Daten-Explorer.
 
-* Wenn diese Eigenschaften zuvor bearbeitet wurden, werden die ursprünglichen Werte verwendet.
+>**Info**: Echtzeitaktualisierungen werden abgeschaltet, wenn Sie ein Zeitintervall wählen, dass in der Vergangenheit liegt.
 
-* Wenn die Datenpunkte eine übereinstimmende Definition in der Datenpunktbibliothek haben, werden die Werte aus der Datenpunktbibliothek verwendet.
+**Aggregation**
 
-In der "Datenpunktbibliothek" können mehrere übereinstimmende Datenpunkteingaben vorhanden sein. In diesem Fall wird die erste automatisch vom System ausgewählt. Sie können diese Auswahl mit dem Zahnradsymbol überschreiben und " X aus Bibliothek laden" auswählen. X bezieht sich auf den Eintrag in der Datenpunktbibliothek.
+Um einen effizienten Überblick über größere Zeitspannen zu erhalten, können Sie die angezeigten Daten aggregieren.
 
-![image alt text](/guides/images/users-guide/image_11de.png)
+Standardmäßig ist die Aggregation auf den Wert "Keine" eingestellt. Dieser Wert kann im Feld "Aggregation" in der oberen Menüleiste geändert werden. Verfügbare Werte sind "Minütlich", "Stündlich" or "Täglich", abhängig vom ausgewählten Zeitintervall.
 
-### Datenpunkte hinzufügen
+**Echtzeitaktualisierung**
 
-Zusätzliche Datenpunkte können dem Daten-Explorer hinzugefügt werden, indem Sie auf "+ Datenpunkt hinzufügen" klicken. Daraufhin erscheint der folgende Dialog:
+Standardmäßig ist die Aktualisierung in Echtzeit aktiviert, dass heißt, die angezeigten Daten werden aktualisiert, sobald neue Daten von den verbundenen Geräten empfangen werden. 
 
-![image alt text](/guides/images/users-guide/image_12de.png)
+Klicken Sie "**Echtzeit**" in der oberen Menüleiste, um die Aktualisierung in Echtzeit ein- oder abzuschalten. Ein grünes Licht zeigt an, dass Echtzeitaktualisierung aktiviert ist.
 
-Wählen Sie im oberen Bereich des Dialogs ein Gerät aus der Anlagenhierarchie aus. Nur die Asset-Hierarchie unterhalb der im Navigator markierten Objekte ist sichtbar. Wurde im Navigator "Daten-Explorer" markiert, ist die komplette Anlagenhierarchie sichtbar.
+**Datenpunktsichtbarkeit**
 
-Im unteren Teil des Dialogs werden alle Datenpunkte des ausgewählten Objekts angezeigt. Markieren Sie die Datenpunkte, die Sie im Daten-Explorer anzeigen möchten. Klicken Sie auf "Hinzufügen", um alle ausgewählten Datenpunkte zur Liste der Datenpunkte hinzuzufügen.
+Die Sichtbarkeit eines Datenpunkts kann mit dem Regler links neben dem Datenpunktnamen aktiviert bzw. deaktiviert werden.
 
-### Ändern der Datenpunktvisualisierung
+### <a name="add-data-points"></a>Hinzufügen von Datenpunkten
 
-Ändern Sie die Eigenschaften unter dem Diagramm, um die Datenpunktvisualisierung zu ändern.
+Klicken Sie **Datenpunkt hinzufügen** am Ende der Datenpunktliste, um einen Datenpunkt zum Daten-Explorer hinzuzufügen. 
 
-Die Eingabefelder sind so konzipiert, dass eine genaue Zeitdauer für die Visualisierung festgelegt wird:
+<img src="/guides/images/benutzerhandbuch/cockpit-data-explorer-add-datapoint.png" name="Datenpunkt hinzufügen" style="width:50%;"/><br>
 
-* Linkes Feld: Startzeit der x-Achse
+Wählen Sie im folgenden Fenster oben ein Gerät aus der Asset-Hierarchie. Es wird nur die Asset-Hierarchie unterhalb des im Navigator ausgewählten Objekts angezeigt. Wenn im Navigator "Daten-Explorer" ausgewählt wurde, wird die gesamte Asset-Hierarchie angezeigt.
 
-* Rechts: Endzeit der x-Achse
+Unten im Fenster werden alle Datenpunkte des ausgewählten Objekts angezeigt. Wählen Sie die Datenpunkte aus, die Sie im Daten-Explorer anzeigen möchten. Klicken Sie **Hinzufügen**, um alle ausgewählten Datenpunkte zur Datenpunktliste hinzuzufügen.
 
-* Zeitaggregationsebene: Keine Aggregation, täglich, stündlich
+Um einen Datenpunkt in die Datenpunktbibliothek zu speichern, öffnen Sie das Kontextmenü des Datenpunkts über das Menüsymbol und wählen Sie **In Bibliothek speichern**. 
 
-Für Datenpunkte stehen folgende Eigenschaften zur Verfügung:
+<img src="/guides/images/benutzerhandbuch/cockpit-data-explorer-contextmenu.png" name="Datenpunkt-Kontextmenü" style="width:75%;"/>
 
-* V: Wählen Sie aus, ob der Datenpunkt visualisiert werden soll oder nicht.
+Weitere Informationen zur Datenpunktbibliothek finden Sie unter [Datenpunktbibliothek](#data-point-library).
 
-* Farbe: Farbe des Graphen.
+Klicken Sie im Kontextmenü **Von der Liste löschen**, um einen Datenpunkt aus der Datenpunktliste zu löschen. 
 
-* Label: Text, der auf der y-Achse verwendet wird.
+### <a name="customize-data-points"></a>Anpassen von Datenpunktattributen
 
-* Einheit: Einheit, die auf der y-Achse verwendet wird. Einheit ist der benutzerdefinierte String, der auf der y-Achse gezeigt wird.
+Sie können die Visualisierung eines einzelnen Datenpunkts nach Ihren Wünschen anpassen. Erweitern Sie dazu den Datenpunkteintrag in der Datenpunktliste durch Klicken auf das Pfeilsymbol.
 
-* Min/Max: Bereich der y-Achse.
+<img src="/guides/images/benutzerhandbuch/cockpit-data-explorer-datapoint-edit.png" name="Datenpunkt-Kontextmenü" style="width:75%;"/>
 
-* Zielwert: Der Sollwert wird derzeit nicht im Diagramm angezeigt. Der Wert wird im Widget "Datenpunktliste" verwendet.
+Die folgenden Felder können bearbeitet werden:
 
-* Yellow Range Min/Max: Definiert den Bereich, in dem kleinere Alarme durch die Schwellenregel erhöht werden sollen. Diese Werte werden derzeit nicht visualisiert. Detaillierte Informationen finden Sie unter [Arbeiten mit Smart Rules](#rules).
+|Feld|Beschreibung|
+|:---|:---|
+Beschriftung|Name des Datenpunkts. Wird in der Y-Achse zur Identifizierung des Datenpunkts angezeigt. Unter der Beschriftung wird das Ziel angezeigt, mit dem Namen des Assets und dem internen Namen des Datenpunkts (Messwertfragment und -reihe). Diese Information kann nicht editiert werden.
+|Standardeinheit|Einheit, die auf der Y-Achse verwendet wird.
+|Min/Max|Bereich, der auf der Y-Achse angezeigt wird.
+|Ziel|Der Zielwert wird aktuell nicht im Diagramm angezeigt. Dieser Wert wird im Widget "Datenpunktliste" verwendet.
+|Gelber Bereich min/max|Legt den Bereich fest, in welchem WENIGER WICHTIGE Alarme über eine Schwellwertregel ausgelöst werden.
+|Roter Bereich min/max|Legt den Bereich fest, in welchem KRITISCHE Alarme über eine Schwellwertregel ausgelöst werden.
+|Anzeige|Wert, der angezeigt wird, wenn Daten aggregiert werden ("Minimum", Maximum", Minimum und maximum").
+|Diagrammtyp|Diagrammtyp, der für die Visualisierung verwendet wird: "Linien", "Punkte", "Linien und Punkte", "Balken". Der Standardwert ist "Linie".
+|Y-Achse|Legt fest, wo die Y-Achse angezeigt wird: "Auto", "Links", "Rechts". Der Standardwert ist "Auto". 
 
-* Red Range Min/Max: Definiert den Bereich, in dem kritische Alarme durch Schwellenregeln erhöht werden sollen. Diese Werte werden derzeit nicht visualisiert. Detaillierte Informationen finden Sie unter [Arbeiten mit Smart Rules](#rules).
+Nachdem Sie die Attribute eines Datenpunkts angepasst haben, können Sie die geänderten Einstellungen in der Datenpunktbibliothek speichern. Öffnen Sie das Kontextmenü über das Menüsymbol und wählen Sie **[NAME] in Bibliothek aktualisieren**.
 
-* Diagrammtyp: Wählen Sie für aggregierte Daten aus, welcher aggregierte Wert visualisiert werden soll. Die Optionen sind: min, max, Fläche.
+Um zu den Attributen, die in der Datenpunktbibliothek gespeichert sind, zurückzukehren, wählen Sie **[NAME] aus Bibliothek laden**.
 
-* Y-Achse: Wählen Sie aus, auf welcher y-Achse der Datenpunkt angezeigt werden soll. Optionen sind: Auto, links, rechts.
+### Verhalten der Y-Achse
 
-* Asset: Der Name des Assets des Datenpunkts. Dieses Feld ist nicht editierbar. Der interne Name des Datenpunktes (Messfragment und Serie) wird angezeigt.
+Standardmäßig wird der erste Datenpunkt auf der linken Y-Achse positioniert und die verbleibenden Datenpunkte rechts davon. Dieses Verhalten kann für einen bestimmten Datenpunkt durch Anpassen des entsprechenden Werts "Y-Achse" (auf "Links" oder "Rechts", siehe oben) geändert werden.
 
-### Navigieren im Daten-Explorer
+Jeder Datenpunkt wird auf einer eigenen Y-Achse angezeigt, wenn nicht Folgendes zutrifft:
 
-So navigieren Sie im Daten-Explorer:
+* Zwei Datenpunkte haben identische Minimal- und Maximalwerte.
 
-* Bewegen der Zeitspanne: Gehen Sie auf die X-Achse und ziehen Sie sie nach links oder rechts.
+In diesem Fall teilen sich die Datenpunkte eine Y-Achse. Diese Y-Achse zeigt nur die Einheit (oder mehrere Einheiten, falls diese sich unterscheiden) an. Die Beschriftung wird nicht angezeigt.
 
-* Wählen Sie einen Zeitbereich im Diagramm aus.
+### Adding alarms or events
 
-Echzeitaktualisierungen werden abgeschaltet, wenn Sie eine Zeitspanne in der Vergangenheit definieren (entweder durch Bewegen der Zeitachse oder durch Nutzung der Datenselektoren).
+In addition to data points you can also add alarms or events to the Daten-Explorer.
 
-### Variieren der Y-Achse
+<img src="/guides/images/users-guide/Cockpit/Cockpit_DataExplorerAlarms.png" name="Alarms" style="width:75%;"/> 
 
-Im Daten-Explorer können Sie eine Spalte mit der Bezeichnung "y-Achse" mit folgenden Werten konfigurieren:
+In the "Alarms/ Events" card, click **Add alarm/ event** to add an alarm or event.
 
-* Auto (Standard)
+<img src="/guides/images/users-guide/Cockpit/Cockpit_DataExplorerAlarmAdd.png" name="Add widget" style="width:75%;"/> 
 
-* Links
+In the upcoming dialog, you can select an alarm or event from the list of recent alarms and events. Click **Add**, to add your selection.
 
-* Rechts
+Expand an event, to modify its properties.
 
-Die Werte definieren, wo die y-Achse für den jeweiligen Datenpunkt angezeigt wird. "Auto" positioniert den ersten Datenpunkt auf die linke y-Achse und die restlichen auf die rechten y-Achsen.
+Click the menu icon and in the context menu select **Remove**, to remove the entry from the list.
 
-Jeder Datenpunkt wird auf seiner eigenen y-Achse angezeigt, sofern die folgende Bedingung nicht erfüllt ist:
+As with data points, you can turn the visibility of an alarm/ event in the Daten-Explorer on and off by moving the slider.
 
-* Zwei Datenpunkte mit demselben Minimum und dem gleichen Maximalwert teilen sich eine gemeinsame y-Achse.
 
-In diesem Fall sind beide Datenpunkte mit einer einzigen y-Achse dargestellt. Zusätzlich zeigt die y-Achse nur die Einheit (oder mehrere Einheiten, falls sie unterschiedlich sind). Das Label wird nicht angezeigt.
+### <a name="create-widget"></a>Creating widgets from the Daten-Explorer
 
-### Erstellen von Widgets aus dem Daten-Explorer
+If you want to keep your current configuration in the Daten-Explorer for later usage, save it as a widget.
 
-Verwenden Sie das Menü und wählen Sie "Als Widget zu einem Dashboard senden".
+**Send as widget to dashboard**
 
-Dadurch wird ein modaler Dialog mit allen Dashboards des aktuellen Objekts angezeigt. Navigieren Sie zum entsprechenden Dashboard und drücken Sie "Auswählen", um ein neues Widget im ausgewählten Dashboard zu erstellen.
+To create a widget from the Daten-Explorer of a particular asset, click **More...** in the top menu bar and select **Send as a widget to dashboard** from the context menu.
 
-![image alt text](/guides/images/users-guide/image_13de.png)
+<img src="/guides/images/users-guide/Cockpit/Cockpit_SendWidgetToDashboard.png" name="Send as widget to dashboard" style="width:50%;"/> 
 
-### Exportieren von Messdaten in csv- oder xlsx-Dateien
+In the upcoming dialog, select one of the dashboards available for the current object and click **Select** to add the Daten-Explorer as widget to the selected dashboard.
 
-Benutzer haben die Möglichkeit, Messdaten als csv- oder xlsx-Dateien herunterzuladen. Die exportierten Daten werden in sechs Spalten unterteilt:
+**Info**: To use this function, first a dashboard has to be created. For details on dashboards, refer to [Working with Dashboards](#dashboards).
 
-  - Uhrzeit - Datum und Uhrzeit der Messung
-  - Quelle der Messung
-  - Gerätename - Name des verwendeten Geräts
-  - Fragment-Serien - (z. B. c8y_SpeedMeasurement)
-  - Wert - Wert der Messung
-  - Einheit - Die für die jeweilige Messung verwendete Einheit (wie "C", "km/h", "sec" ...)
+**Send as widget to report**
 
-Um die Messdaten entweder in csv oder xlsx herunterzuladen, navigieren Sie zunächst zum "Daten-Explorer", wählen Sie den gewünschten Zeitbereich aus und klicken Sie dann auf den kleinen Zahnradknopf rechts oben.
+To create a widget from the Daten-Explorer of in the navigator, click **More...** in the top menu bar and select **Send as a widget to report** from the context menu.
 
-![Export measurement data](/guides/images/users-guide/exportmeasuredata.png)
+<img src="/guides/images/users-guide/Cockpit/Cockpit_SendWidgetToReport.png" name="Send as widget to report" style="width:50%;"/> 
 
-Wählen Sie, ob ein CSV- oder Excel(XLSX)-Download erfolgen soll.
+In the upcoming dialog, select one of the reports available and click **Select** to add the Daten-Explorer as widget to the selected report.
 
-Das Fenster "Bericht erstellen" erscheint. Die Dateien werden abhängig davon geladen, wie viele Datenpunkte Sie dem "Daten-Explorer" hinzugefügt haben. Sobald der Ladevorgang abgeschlossen ist, klicken Sie auf die Schaltfläche "Download".
+**Info**: To use this function, first a report has to be created. For details on reports, refer to [Working with Dashboard reports](#reports).
 
+
+### <a name="export-data"></a>Exporting measurement data
+
+You may download measurement data as CSV or Excel files. The exported data shows the following information, divided into columns:
+
+ - Time when the specific measurement was taken
+ - Source of the measurement
+ - Name of the device being used
+ - Fragment series (e.g. c8y_SpeedMeasurement)
+ - Value of the measurement
+ - Unit used for a particular measurement (e.g. "C", "km/h", "sec")
+
+To export measurement data, click the **More...** button in the top menu bar and select either **Download as CSV** or **Download as Excel**, according to your preferences. 
+
+The download will be generated, as shown in the upcoming dialog. This make take a while, depending on the number of data points added to the Daten-Explorer. Once the loading has been completed, click **Download**.

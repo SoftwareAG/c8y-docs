@@ -44,11 +44,12 @@ You can change the time range being shown. By default, you see the values for th
 
 To change the time range on the X-axis,
 
-* select a different time range from the dropdown list in the top menu bar, enter a custom time range into the "From" and "To" fields in the data explorer,
+* select a different time range from the dropdown list in the top menu bar, 
+* enter a custom time range into the "From" and "To" fields in the data explorer,
 * drag the X-axis and move of left or right to move the time period,
 * double-click into the data explorer to zoom out. 
 
->**Info**: > Real-time updates will be switched off if you set a time range in the past.
+>**Info**: Real-time updates will be switched off if you set a time range in the past.
 
 **Aggregation**
 

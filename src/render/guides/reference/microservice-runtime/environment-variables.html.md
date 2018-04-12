@@ -46,7 +46,7 @@ Use backslash (\\) before special characters such as `&, !, ;, \`.
 
 Proxy variables (PROXY_HTTP_HOST, PROXY_HTTP_PORT, ...) are used to set a proxy URL for different protocols. For the microservices written in Java, setting each of the variables will result in passing the corresponding parameter into JVM runtime (for detailed information see [Oracle documentation](https://docs.oracle.com/javase/8/docs/technotes/guides/net/proxies.html)).
 
-Proxy variables are passed into the microservice environment during installation. Microservice installator passes variables into the environment according to the following settings:
+Proxy variables are passed into the microservice environment during installation. Microservice installer passes variables into the environment according to the following settings:
 
  - tenant options in microservice owner tenant
  - platform application environment variables

@@ -117,61 +117,59 @@ Jeder Datenpunkt wird auf einer eigenen Y-Achse angezeigt, wenn nicht Folgendes 
 
 In diesem Fall teilen sich die Datenpunkte eine Y-Achse. Diese Y-Achse zeigt nur die Einheit (oder mehrere Einheiten, falls diese sich unterscheiden) an. Die Beschriftung wird nicht angezeigt.
 
-### Adding alarms or events
+### Hinzufügen von Alarmen oder Ereignissen
 
-In addition to data points you can also add alarms or events to the Daten-Explorer.
+Neben Datenpunkten können Sie auch Alarme oder Ereignisse zum Daten-Explorer hinzufügen.
 
-<img src="/guides/images/users-guide/Cockpit/Cockpit_DataExplorerAlarms.png" name="Alarms" style="width:75%;"/> 
+Klicken Sie **Alarm/Ereignis hinzufügen** in der Karte "Alarme/ Ereignisse", um einen Alarm oder ein Ereignis hinzuzufügen.
 
-In the "Alarms/ Events" card, click **Add alarm/ event** to add an alarm or event.
+<img src="/guides/images/benutzerhandbuch/cockpit-data-explorer-add-alarm.png" name="Add widget" style="width:75%;"/> 
 
-<img src="/guides/images/users-guide/Cockpit/Cockpit_DataExplorerAlarmAdd.png" name="Add widget" style="width:75%;"/> 
+Im folgenden Fenster können Sie einen Alarm oder ein Ereignis aus der Auswahlliste auswählen. Klicken Sie **Hinzufügen**, um Ihre Auswahl hinzuzufügen.
 
-In the upcoming dialog, you can select an alarm or event from the list of recent alarms and events. Click **Add**, to add your selection.
+Klicken Sie auf das Pfeilsymbol, um ein Ereignis zu erweitern.
 
-Expand an event, to modify its properties.
+Öffnen Sie das Kontextmenü über das Menüsymbol und wählen Sie **Löschen**, um einen Eintrag aus der Liste zu löschen.
 
-Click the menu icon and in the context menu select **Remove**, to remove the entry from the list.
-
-As with data points, you can turn the visibility of an alarm/ event in the Daten-Explorer on and off by moving the slider.
+Wie bei den Datenpunkten kann auch die Sichtbarkeit von Alarmen und Ereignissen im Daten-Exlorer durch einen Regler ein- oder abgeschaltet werden.
 
 
-### <a name="create-widget"></a>Creating widgets from the Daten-Explorer
+### <a name="create-widget"></a>Erstellen von Widgets aus dem Daten-Explorer
 
-If you want to keep your current configuration in the Daten-Explorer for later usage, save it as a widget.
+Wenn Sie die aktuelle Konfiguration des Daten-Explorers aufbewahren möchten, können Sie diese als Widget speichern.
 
-**Send as widget to dashboard**
+#### Als Widget einem Dashboard hinzufügen
 
-To create a widget from the Daten-Explorer of a particular asset, click **More...** in the top menu bar and select **Send as a widget to dashboard** from the context menu.
+Klicken Sie **Mehr...** in der oberen Menüleiste und wählen Sie **Als Widget einem Dashboard hinzufügen**, um ein Widget aus dem Daten-Explorer eines bestimmten Assets zu erstellen. 
 
-<img src="/guides/images/users-guide/Cockpit/Cockpit_SendWidgetToDashboard.png" name="Send as widget to dashboard" style="width:50%;"/> 
+<img src="/guides/images/benutzerhandbuch/cockpit-data-explorer-add-widget.png" name="Als Widget einem Dashboard hinzufügen" style="width:50%;"/> 
 
-In the upcoming dialog, select one of the dashboards available for the current object and click **Select** to add the Daten-Explorer as widget to the selected dashboard.
+Wählen Sie im folgenden Fenster eines der für das aktuelle Objekt verfügbaren Dashboards und klicken Sie **Auswählen**, um den Daten-Explorer als Widget zum ausgewählten Dashboard hinzuzufügen. 
 
-**Info**: To use this function, first a dashboard has to be created. For details on dashboards, refer to [Working with Dashboards](#dashboards).
+**Info**: Um diese Funktion nutzen zu können, muss ein Dashboard vorhanden sein. Weitere Informationen zu Dashboards finden Sie unter [Verwenden von Dashboards](#dashboards).
 
-**Send as widget to report**
+#### Als Widget einem Bericht hinzufügen
 
-To create a widget from the Daten-Explorer of in the navigator, click **More...** in the top menu bar and select **Send as a widget to report** from the context menu.
+Klicken Sie **Mehr...** in der oberen Menüleiste und wählen Sie **Als Widget einem Bericht hinzufügen**, um ein Widget aus dem Daten-Explorer des Navigators zu erstellen.
 
-<img src="/guides/images/users-guide/Cockpit/Cockpit_SendWidgetToReport.png" name="Send as widget to report" style="width:50%;"/> 
+<img src="/guides/images/benutzerhandbuch/cockpit-data-explorer-add-to-report.png" name="Send as widget to report" style="width:50%;"/> 
 
-In the upcoming dialog, select one of the reports available and click **Select** to add the Daten-Explorer as widget to the selected report.
+Wählen Sie im folgenden Fenster einen der angezeigten Berichte und klicken Sie **Auswählen**, um den Daten-Explorer als Widget zum ausgewählten Bericht hinzuzufügen. 
 
-**Info**: To use this function, first a report has to be created. For details on reports, refer to [Working with Dashboard reports](#reports).
+**Info**: Um diese Funktion nutzen zu können, muss ein Bericht vorhanden sein. Weitere Informationen zu Dashboard-Berichten finden Sie unter [Verwenden von Dashboard-Berichten](#dashboards).
 
 
-### <a name="export-data"></a>Exporting measurement data
+### <a name="export-data"></a>Exportieren von Messwerten
 
-You may download measurement data as CSV or Excel files. The exported data shows the following information, divided into columns:
+Messwerte können als CSV- oder Excel-Datei exportiert werden. Die exportierten Daten enthalten die folgenden Informationen, repräsentiert in Spalten:
 
- - Time when the specific measurement was taken
- - Source of the measurement
- - Name of the device being used
- - Fragment series (e.g. c8y_SpeedMeasurement)
- - Value of the measurement
- - Unit used for a particular measurement (e.g. "C", "km/h", "sec")
+ - Zeitpunkt, an welchem der Wert gemessen wurde
+ - Quelle des Messwerts
+ - Name des verwendeten Geräts
+ - Fragmenttyp (z. B. c8y_SpeedMeasurement)
+ - Messwert
+ - Einheit, die für einen Messwert verwendet wird (z.B. "C", "km/h", "sec")
 
-To export measurement data, click the **More...** button in the top menu bar and select either **Download as CSV** or **Download as Excel**, according to your preferences. 
+Klicken Sie **Mehr...** in der oberen Menüleiste und wählen Sie je nach Bedarf entweder **Als CSV herunterladen** oder **Als Excel herunterladen**.
 
-The download will be generated, as shown in the upcoming dialog. This make take a while, depending on the number of data points added to the Daten-Explorer. Once the loading has been completed, click **Download**.
+Die Download-Datei wird erstellt, wir im folgenden Fenster angezeigt. Dies kann eine Weile dauern, abhängig von der Anzahl der Datenpunkte im Daten-Explorer. Wenn die Download-Datei fertiggestellt ist, klicken Sie **Herunterladen**.

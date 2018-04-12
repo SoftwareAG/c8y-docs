@@ -56,8 +56,7 @@ Klicken Sie auf das Zahnrad-Symbol in der oberen rechten Ecke eines Widgets und 
 
 Sie können Dashboards nur bearbeiten, wenn diese entsperrt sind. Verwenden Sie den Regler mit dem Schloss-Symbol in der oberen Menüleiste, um ein Widget zu sperren bzw. entsperren.
 
-<img src="/guides/images/benutzerhandbuchcockpit_dashboard-lock.png" name="Lock dashboard" style="width:50%;"/> 
-
+<img src="/guides/images/benutzerhandbuch/cockpit-dashboard-lock.png" name="Dashboard sperren" style="width:50%;"/> 
 
 >**Info:** Auf Touch-Geräten wie Smartphones oder Tablets werden einige Funktionen nicht unterstützt.
 

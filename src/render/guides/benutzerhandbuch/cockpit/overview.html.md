@@ -18,7 +18,7 @@ Die folgenden Abschnitte beschreiben detailliert alle Funktionalitäten der Cock
 |[Verwenden von Smart Rules](#smart-rules)|[Erstellen und verwalten Sie Geschäftsregeln](#create-rules), um eingehende Daten in Echtzeit zu verarbeiten und entsprechende Aktionen auszuführen.
 |[Smart Rules-Sammlung](#smart-rules-collection)|Verwenden Sie [globale Smart Rules](#smart-rules-collection), um Regeln zu konfigurieren, etwa für Geofencing, Alarmeskalation oder Benachrichtigungen (SMS/E-Mail/Sprache). Beschreibt detailliert jede Smart Rule und ihre konfigurierbaren Parameter.
 
-Mehr über allgemeine Aspekte der Cumulocity-Plattform und ihren Anwendungen erfahren Sie unter [Erste Schritte](/guides/users-guide/overview).
+Mehr über allgemeine Aspekte der Cumulocity-Plattform und ihrer Anwendungen erfahren Sie unter [Erste Schritte](/guides/users-guide/overview).
 
 ### <a name="home"></a>Startseite
 
@@ -26,10 +26,10 @@ Bei der Startseite der Cockpit-Anwendung handelt es sich um ein Dashboard, das D
 
 ![image alt text](/guides/images/benutzerhandbuch/cockpit-home-dashboard.png)
 
-Die Daten, die auf der Startseite angezeigt werden, werden von allen Benutzern des Mandanten geneinsam genutzt. Standardmäßig zeigt die Startseite eine Begrüßung, die aktiven kritischen Alarme, neueste Alarme und eine Karte mit allen Geräten.
+Die Daten, die auf der Startseite angezeigt werden, werden von allen Benutzern des Mandanten gemeinsam genutzt. Standardmäßig zeigt die Startseite eine Begrüßung, die aktiven kritischen Alarme, neueste Alarme und eine Karte mit allen Geräten.
 
 Die Startseite kann nach Ihren eigenen Bedürfnissen bearbeitet und gestaltet werden. Sie können die angezeigten Widgets ändern oder entfernen oder neue Widgets hinzufügen.
 
 Details zum Bearbeiten von Dashboards finden Sie unter [Arbeiten mit Dashboards](#dashboards).
 
-Um die Startseite wieder auf die ursprünglichen Inhalte zurückzusetzen, klicken Sie **Mehr...** rechts oben in der Menüleiste und klicken Sie im Kontextmenü **Dashboard wiederherstellen**.
+Um die Startseite wieder auf die ursprünglichen Inhalte zurückzusetzen, klicken Sie **Mehr...** rechts oben in der Menüleiste und wählen Sie im Kontextmenü **Dashboard wiederherstellen**.

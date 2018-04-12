@@ -16,7 +16,7 @@ Im Daten-Explorer finden Sie auf der rechten Seite eine Liste aller verfügbaren
 
 Auf der linken Seite, in der Hauptkarte, sehen Sie die entsprechende Visualisierung.
 
-![Datenpunkt](/guides/images/users-guide/data-explorer-main-view.PNG)
+<img src="/guides/images/benutzerhandbuch/cockpit-data-explorer.png" name="Daten-Explorer" style="width:100%;"/><br>
 
 Die Visualisierung wird auf Basis von Datenpunktattributen erstellt.
 
@@ -27,8 +27,6 @@ Die Datenpunktattribute werden folgendermaßen vorausgefüllt:
 * Wenn die Datenpunkte eine Übereinstimmung in der Datenpunktbibliothek haben, werden die Werte von der Datenpunktbibliothek verwendet. 
 
 In der Datenpunktbibliothek kann es mehr als einen übereinstimmenden Datenpunkteintrag geben. In diesem Fall wird automatisch der erste übereinstimmende Datenpunkt ausgewählt. Sie können diese Auswahl überschreiben, in dem Sie im entsprechenden Datenpunkteintrag über das Menüsymbol das Kontextmenü öffnen und **[NAME] aus Bibliothek laden** wählen. 
-
-![Datenpunkt bearbeiten](/guides/images/users-guide/data-explorer-data-points-edit.PNG)
 
 Allgemeine Informationen zum Ändern der Visualisierung finden Sie unter [*Ändern der Daten-Explorer-Visualisierung*](#change-visualization). Informationen zum Anpassen der Attribute eines bestimmten Datenpunkts finden Sie unter[*Anpassen von Datenpunktattributen*](#customize-data-points).
 
@@ -93,7 +91,7 @@ Die folgenden Felder können bearbeitet werden:
 
 |Feld|Beschreibung|
 |:---|:---|
-Beschriftung|Name des Datenpunkts. Wird in der Y-Achse zur Identifizierung des Datenpunkts angezeigt. Unter der Beschriftung wird das Ziel angezeigt, mit dem Namen des Assets und dem internen Namen des Datenpunkts (Messwertfragment und -reihe). Diese Information kann nicht editiert werden.
+|Beschriftung|Name des Datenpunkts. Wird in der Y-Achse zur Identifizierung des Datenpunkts angezeigt. Unter der Beschriftung wird das Ziel angezeigt, mit dem Namen des Assets und dem internen Namen des Datenpunkts (Messwertfragment und -typ). Diese Information kann nicht editiert werden.
 |Standardeinheit|Einheit, die auf der Y-Achse verwendet wird.
 |Min/Max|Bereich, der auf der Y-Achse angezeigt wird.
 |Ziel|Der Zielwert wird aktuell nicht im Diagramm angezeigt. Dieser Wert wird im Widget "Datenpunktliste" verwendet.

@@ -20,6 +20,13 @@ The following environment variables are available for microservices:
     C8Y_USER - Application user name (available only for PER_TENANT isolation)
     C8Y_PASSWORD - Application user password (available only for PER_TENANT isolation)
     MEMORY_LIMIT - Memory limit, default value: 256M
+    PROXY_HTTP_HOST 
+    PROXY_HTTP_PORT
+    PROXY_HTTP_NON_PROXY_HOSTS
+    PROXY_HTTPS_HOST
+    PROXY_HTTPS_PORT
+    PROXY_SOCKS_HOST
+    PROXY_SOCKS_PORT
 
 ### Example usage
 
@@ -34,3 +41,77 @@ Execute to run docker container with environment variables:
     $ docker run -e C8Y_BASEURL={URL} -e C8Y_BOOTSTRAP_TENANT={BOOTSTRAP_TENANT} -e C8Y_BOOTSTRAP_USER={BOOTSTRAP_USERNAME} -e C8Y_BOOTSTRAP_PASSWORD={BOOTSTRAP_USER_PASSWORD} -i -t {DOCKER_REPOSITORY_IMAGE}:{TAG}
 
 Use backslash (\\) before special characters such as `&, !, ;, \`. 
+
+### Proxy variables
+
+Proxy variables (PROXY_HTTP_HOST, PROXY_HTTP_PORT, ...) are used to set a proxy URL for different protocols. For the microservices written in Java, setting each of the variables will result in passing the corresponding parameter into JVM runtime (for detailed information see [Oracle documentation](https://docs.oracle.com/javase/8/docs/technotes/guides/net/proxies.html)).
+
+Proxy variables are passed into the microservice environment during installation. Microservice installer passes variables into the environment according to the following settings:
+
+ - tenant options in microservice owner tenant
+ - platform application environment variables
+ 
+Tenant options have higher priority, i.e. if the parameter is set in both places, the value from the tenant option is taken.
+ 
+The table below describes the variable names:
+
+| Tenant option                | Platform env variable                            | Microservice env variable   |                               
+|------------------------------|--------------------------------------------------|-----------------------------|
+| `proxy.http.host`            | `MICROSERVICE_RUNTIME_PROXY_HTTP_HOST`           | `PROXY_HTTP_HOST`           |
+| `proxy.http.port`            | `MICROSERVICE_RUNTIME_PROXY_HTTP_PORT`           | `PROXY_HTTP_PORT`           |
+| `proxy.http.non.proxy.hosts` | `MICROSERVICE_RUNTIME_PROXY_HTTP_NON_PROXY_HOSTS`| `PROXY_HTTP_NON_PROXY_HOSTS`|
+| `proxy.https.host`           | `MICROSERVICE_RUNTIME_PROXY_HTTPS_HOST`          | `PROXY_HTTPS_HOST`          |
+| `proxy.https.port`           | `MICROSERVICE_RUNTIME_PROXY_HTTPS_PORT`          | `PROXY_HTTPS_PORT`          |
+| `proxy.socks.host`           | `MICROSERVICE_RUNTIME_PROXY_SOCKS_HOST`          | `PROXY_SOCKS_HOST`          |
+| `proxy.socks.port`           | `MICROSERVICE_RUNTIME_PROXY_SOCKS_PORT`          | `PROXY_SOCKS_PORT`          |
+
+All tenant options have the same category: `microservice.runtime`
+ 
+For each protocol (HTTP, HTTPS, socks), microservice environment variables are passed into runtime only if the HOST parameter is set. If the HOST parameter is missing, other parameters for the same protocol are not processed. 
+  
+##### Examples:
+
+1. The microservice owner tenant has the tenant options
+
+     `{category: "microservice.runtime", key: "proxy.http.host", value: "10.11.12.13"}`    
+     `{category: "microservice.runtime", key: "proxy.http.port", value: "8080"}`
+
+   and there is an environment variable in the platform application:
+
+     `MICROSERVICE_RUNTIME_PROXY_HTTP_PORT=8181`
+ 
+   Deploying and running the microservice inside the docker will result in passing the following variables into the microservice environment (notice PORT value):
+     
+     `PROXY_HTTP_HOST=10.11.12.13` 
+     `PROXY_HTTP_PORT=8080`    
+      
+2. The microservice owner tenant has the tenant option
+      
+     `{category: "microservice.runtime", key: "proxy.https.host", value: "10.11.12.13"}`
+
+   and there is an environment variable in the platform application:
+
+     `MICROSERVICE_RUNTIME_PROXY_HTTPS_PORT=8181`
+       
+   Deploying and running the microservice inside the docker will result in passing the following variables into the microservice environment:
+        
+     `PROXY_HTTP_HOST=10.11.12.13` 
+     `PROXY_HTTP_PORT=8181`        
+      
+3. The microservice owner tenant has the tenant options
+      
+     `{category: "microservice.runtime", key: "proxy.http.port", value: "8080"}` 
+     `{category: "microservice.runtime", key: "proxy.http.non.proxy.hosts", value: "localhost"}`
+
+   and proxyHost is not set (neither in tenant option, nor env variable).
+       
+   Deploying and running the Java microservice inside the docker will not pass any proxy environment variable.
+       
+            
+4. The microservice owner tenant has the tenant option
+      
+     `{category: "microservice.runtime", key: "socks.http.host", value: "10.11.12.13"}`            
+     
+   Deploying and running the microservice inside the docker will result in passing the following variable into the microservice environment (only host parameter):
+             
+     `SOCKS_HTTP_HOST=10.11.12.13`

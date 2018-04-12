@@ -196,7 +196,7 @@ An example with minimum configuration is presented below:
     <plugin>
         <groupId>com.nsn.cumulocity.clients-java</groupId>
         <artifactId>microservice-package-maven-plugin</artifactId>
-        <version>8.21.0</version>
+        <version>9.0.0</version>
         <executions>
             <execution>
                 <id>package</id>

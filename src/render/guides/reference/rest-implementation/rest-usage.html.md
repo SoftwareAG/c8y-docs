@@ -66,12 +66,12 @@ Please note that the totalPages property can be expensive to compute, hence it i
 
 ### <a name="paging"></a>Query result paging for users with restricted access
 
-If user has no global role for reading data from API resource but rather [inventory roles](/guides/users-guide/administration/managing-permissions#inventory) for reading only particular documents there are some differences in query result paging:
+If a user does not have a global role for reading data from the API resource but rather has [inventory roles](/guides/users-guide/administration/managing-permissions#inventory) for reading only particular documents there are some differences in query result paging:
 
--   In some circumstances response may contain less than pageSize elements though there is more data in database accessible for the user.
+-   In some circumstances the response may contain less than pageSize elements though there is more data in the database accessible for the user.
 
--   In some circumstances "next" and "prev" links may appear in response though there is no more data in database accessible for the user.
+-   In some circumstances "next" and "prev" links may appear in the response though there is no more data in the database accessible for the user.
 
--   Property "currentPage" of response does not contain page number but offset of next element not yet processed by querying mechanism.
+-   The property "currentPage" of the response does not contain the page number but the offset of the next element not yet processed by the querying mechanism.
 
-The above behavior is due to the fact that querying mechanism is iterating maximally over 10 * max(pageSize, 100) documents per request and stop even if it can not be collected full page of data accessible for the user. If next page is requested querying mechanism starts iteration where it finished the previous time.
+The above behavior results from the fact that the querying mechanism is iterating maximally over 10 * max(pageSize, 100) documents per request and stops though the full page of data accessible for the user could not be collected. When the next page is requested the querying mechanism starts the iteration where it finished the previous time. 

@@ -14,7 +14,7 @@ Eigene Anwendungen werden unter "Eigene Anwendungen" im Menü "Anwendungen" verw
 
 Auf der Seite "Eigene Anwendungen" wird eine Liste aller eigenen Anwendungen in Ihrem Konto angezeigt.
 
-![Eigene Anwendungen](/guides/images/benutzerhandbuch/Admin_OwnApplications.png)
+![Eigene Anwendungen](/guides/images/benutzerhandbuch/admin-own-applications.png)
 
 Klicken Sie auf das Menüsymbol rechts oben in einer Anwendung, um über das Kontextmenü eine Anwendung zu [**Bearbeiten** oder **Löschen**](#editing-and-removing).
 
@@ -52,7 +52,7 @@ Klicken Sie **Anwendung hinzufügen** auf der Seite "Eigene Anwendungen", um ein
 *   Verwenden einer externen Anwendung (was auf eine Anwendung verweist, die woanders betrieben wird),
 *   Duplizieren einer bestehenden Anwendung.
 
-![Methoden zum Hinzufügen von Anwendungen](/guides/images/benutzerhandbuch/Admin_AddApplication.png)
+<img src="/guides/images/benutzerhandbuch/admin-application-add.png" alt="Hinzufügen von Anwendungen" style="max-width: 50%">
 
 Wenn Sie **Hochladen einer ZIP-Datei** wählen, werden Sie vom Assistenten aufgefordert, eine Datei im entsprechenden Feld abzulegen oder auf Ihrem Computer zu der Datei zu navigieren.
 
@@ -82,7 +82,7 @@ Klicken Sie **Plugin hinzufügen** auf der Karte der gewünschten Anwendung, um 
 
 Die "Plugin"-Registerkarte für die Anwendung wird geöffnet und zeigt alle vorhandenen Plugins an. Außerdem können weitere Plugins durch Ablegen einer ZIP-Datei oder Durchsuchen Ihres Computers hinzugefügt werden.
 
-![Plugins](/guides/images/benutzerhandbuch/Admin_Plugins.png)
+![Plugins](/guides/images/benutzerhandbuch/admin-plugins.png)
 
 Um eine Regel zu entfernen, fahren Sie mit dem Mauszeiger darüber und klicken Sie **Entfernen**.
 
@@ -256,7 +256,7 @@ Zum Hochladen eines Archiv führen Sie die folgenden Schritte aus:
 3.  Klicken Sie **Archiv hochladen** und navigieren Sie zu der Datei auf Ihrem Computer oder ziehen Sie die Datei auf das entsprechende Feld.
 4.  Klicken Sie **Hochladen**, um das Archiv auf Ihr Cumulocity-Konto hochzuladen.
 
-![Archiv hochladen](/guides/images/users-guide/uploadarchive.png)
+<img src="/guides/images/benutzerhandbuch/admin-upload-archive.png" alt="Archiv hochladen" style="max-width: 100%">
 
 Hochgeladene Archive können aktiviert, heruntergeladen oder gelöscht werden. Das aktive Archiv (durch ein Cloud-Symbol gekennzeichnet) ist die Version der Anwendung, die aktuell den Benutzern Ihres Kontos zur Verfügung steht. Diese Version kann nicht gelöscht werden.
 

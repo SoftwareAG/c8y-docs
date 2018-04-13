@@ -18,7 +18,7 @@ Klicken Sie "Rollen" im Menü "Konto", um die Liste der konfigurierten Rollen an
 
 In der Registerkarte "Globale Rollen" finden Sie die Rollen, die allgemeine Berechtigungen erteilen. Es gibt verschiedene globale Standardrollen, aber Sie können auch eigene nach Ihren Bedürfnissen erstellen.
 
-![Kontextmenü](/guides/images/users-guide/Administration/Admin_GlobalRoles.png)
+<img src="/guides/images/benutzerhandbuch/admin-global-roles.png" alt="Globale Rollen" style="max-width: 100%">
 
 Die Rollen "admins" und "devices" haben einen Sonderstatus:
 
@@ -188,11 +188,9 @@ Sie können bestehende globale Rollen bearbeiten oder neue globale Rollen erstel
 
 Klicken Sie einfach auf die entsprechende Karte, um eine globale Berechtigung zu bearbeiten. Um eine neue globale Rolle zu erstellen, klicken Sie in der Registerkarte "Globale Rollen" **Rolle hinzufügen**.
 
-In der Rollenseite sehen Sie auf der linken Seite eine Liste mit Berechtigungstypen und auf der rechten Seite eine Liste mit Anwendungen.
+In der Rollenseite sehen Sie auf der linken Seite eine Liste mitn vordefinierten Anwendungen und auf der rechten Seite eine Liste mit Berechtigungstypen.
 
-Die folgende Abbildung zeigt die Einstellungen für die Rolle "admins".
-
-![Admins-Beispiel](/guides/images/users-guide/adminsample.png)
+<img src="/guides/images/benutzerhandbuch/admin-global-role-add.png" alt="Globale Rolle hinzufügen" style="max-width: 100%">
 
 **Berechtigungsebenen**
 
@@ -385,19 +383,20 @@ Sie können Benutzern globale Rollen entweder direkt in der Benutzerliste oder a
 
 Klicken Sie in der Benutzerliste auf die Spalte "Globale Rollen" eines bestimmten Benutzers, um eine Liste mit globalen Rollen anzuzeigen. Aktivieren oder Deaktivieren Sie die entsprechenden Kontrollkästchen und klicken Sie **Anwenden**, um Ihre Einstellungen zu speichern.
 
-![Globale Rollen anwenden](/guides/images/users-guide/applyglobal.png)
+<img src="/guides/images/benutzerhandbuch/admin-user-global-roles-list.png" alt="Globale Rollen zuweisen" style="max-width: 100%">
 
 Alternativ können Sie auf einen Benutzer klicken, um die entsprechende Benutzerseite zu öffnen. Aktivieren oder Deaktivieren Sie auf der rechten Seite die Kontrollkästchen für die relevanten Rollen und klicken Sie **Speichern** unten auf der Seite, um Ihre Einstellungen zu speichern.
 
-![Globale Rollen zuweisen](/guides/images/users-guide/attachglobal.png)
+<img src="/guides/images/benutzerhandbuch/admin-user-global-role-assign.png" alt="Globale Rollen zuweisen" style="max-width: 100%">
+
 
 ### <a name="inventory"></a>Anzeigen von Stammdatenrollen
 
 Stammdatenrollen enthalten Berechtigungen, die Sie Gerätegruppen zuweisen können. Eine Stammdatenrolle kann beispielsweise die Berechtigung enthalten, ein Gerät neu zu starten. Sie können diese Stammdatenrolle einer Gruppe von Geräten, z. B. "Region Nord", und einem Benutzer, z. B. "Schmidt" zuweisen. Daraus resultiert, dass der Benutzer "Schmidt" alle Geräte, die in der Gruppe "Region Nord" oder einer Untergruppe enthalten sind, neu starten kann.
 
-Um die kürzlich konfigurierten Stammdatenrollen anzuzeigen, wählen Sie "Rollen" im Menu "Konto" und wechseln Sie zur Registerkarte "Stammdatenrollen".
+Um die konfigurierten Stammdatenrollen anzuzeigen, wählen Sie "Rollen" im Menu "Konto" und wechseln Sie zur Registerkarte "Stammdatenrollen".
 
-![Kontextmenü](/guides/images/users-guide/Administration/Admin_InventoryRoles.png)
+<img src="/guides/images/benutzerhandbuch/admin-inventory-roles.png" alt="Stammdatenrollen" style="max-width: 100%">
 
 In der Registerkarte "Stammdatenrollen" können Sie Berechtigungen für bestimmte Gruppen und/oder deren Kinder verwalten. Es gibt verschiedene voreingestellte Stammdatenrollen, aber Sie können auch eigene Rollen nach Ihren Bedürfnissen erstellen.
 
@@ -455,15 +454,15 @@ Die folgenden Stammdatenrollen sind in neuen Mandanten voreingestellt:
 
 </table>
 
-### Erstellen und Bearbeiten von globalen Rollen
+### Erstellen und Bearbeiten von Stammdatenrollen
 
-Sie können entsprechend Ihrer eigenen Bedürfnisse bestehende Stammdatenrollen bearbeiten oder neue Stammdatenrollen erstellen.
+Sie können bestehende Stammdatenrollen entsprechend Ihrer eigenen Bedürfnisse bearbeiten oder neue Stammdatenrollen erstellen.
 
 Klicken Sie einfach auf die entsprechende Karte, um eine Stammdatenrolle zu bearbeiten. Um eine neue Stammdatenrolle zu erstellen, klicken Sie in der Registerkarte "Stammdatenrollen" **Rolle hinzufügen**.
 
 Oben auf der Seite können Sie einen Namen für die Stammdatenrolle vergeben. Klicken Sie in das Feld, geben Sie einen Namen ein und klicken Sie das grüne Häkchen zum Speichern Ihrer Eingabe.
 
-![Rollendetails](/guides/images/users-guide/roledetails.png)
+<img src="/guides/images/benutzerhandbuch/admin-inventory-role-add.png" alt="Stammdatenrolle hinzufügen" style="max-width: 100%">
 
 Die Berechtigungen sind in die folgenden Kategorien eingeteilt:
 
@@ -561,7 +560,7 @@ Wählen Sie im Feld "Berechtigung" eine Berechtigungsebene aus der Auswahlliste:
 *   Ändern - Objekte ändern (schließt nicht die Leseberechtigung ein)
 *   Alle - Objekte lesen und ändern
 
-![Rollenberechtigungen](/guides/images/users-guide/showperm.png)
+<img src="/guides/images/benutzerhandbuch/admin-inventory-role-permissions.png" alt="Rollenberechtigungen" style="max-width: 100%">
 
 > **Wichtig:** Wenn Sie eine Berechtigung hinzufügen, erscheint möglicherweise ein kleines Ausrufungszeichen. Das Ausrufungszeichen weist darauf hin, dass die soeben hinzugefügte Rollen keine Auswirkung hat, da eine andere, "höhere" Berechtigung, die für den Benutzer gesetzt wurde, diese Berechtigung bereits umfasst. Überprüfen Sie in diesem Fall, ob Sie vollständigen Zugriff gewährt haben oder ob es im gleichen Abschnitt eine andere Berechtigung mit "*" als Typen und "Alle" als Berechtigung gibt.
 
@@ -569,7 +568,7 @@ Wählen Sie im Feld "Berechtigung" eine Berechtigungsebene aus der Auswahlliste:
 
 Nehmen wir als weiteres Beispiel an, dass sie Tracking-Geräte verwenden. Sie möchten, dass Ihr Benutzer alle Geräte sehen, aber nichts ändern kann. Außerdem soll der Benutzer in der Lage sein, die Wege von Geräten auf einer Karte zu verfolgen. Wege werden über ein Ereignis mit dem Fragmenttypen "c8y&#95;Position" aufgezeichnet (siehe [Sensor Library](/guides/reference/sensor-library)). Erteilen Sie dem Benutzer Leseberechtigung auf Stammdaten und auf Ereignisse mit dem Typen "c8y_Position", wie in der Abbildung unten dargestellt.
 
-![Berechtigungsbeispiel](/guides/images/users-guide/permexample.png)
+<img src="/guides/images/benutzerhandbuch/admin-role-permission-example.png" alt="Beispielberechtigung" style="max-width: 100%">
 
 ### <a name="attach-inventory"></a>Zuweisen von Stammdatenrollen
 
@@ -581,7 +580,7 @@ In der Registerkarte "Stammdatenrollen" sehen Sie einen Baum mit Gerätegruppen.
 
 > **Wichtig**: Wenn ein Benutzer bereits eine globale Rolle hat, die Stammdatenberechtigungen umfasst, kann der Benutzer alle Geräte sehen oder ändern, unabhängig von den hier zugewiesenen Stammdatenrollen.
 
-![Stammdatenrollen:](/guides/images/users-guide/inventoryroles.png)
+<img src="/guides/images/benutzerhandbuch/admin-inventory-role-assign.png" alt="Stammdatenrollen zuweisen" style="max-width: 100%">
 
 Stammdatenrollen werden von Gruppen an alle ihre direkten und indirekten Untergruppen sowie die Geräte in der Gruppe vererbt. Wenn Sie etwa eine Rolle mit Leseberechtigung für Alarme für eine Gerätegruppe wählen, kann der Benutzer alle Alarme für alle Geräte in dieser Gruppe sowie in ihren Untergruppen sehen.
 
@@ -589,7 +588,8 @@ Wenn ein Benutzer Stammdatenzugriff für eine Gerätegruppe hat, hat er auch Zug
 
 Sie können auch Stammdatenrollen eines anderen Benutzers kopieren. Klicken Sie **Stammdatenrollen eines anderen Benutzers kopieren**, um Rollen zu kopieren. Wählen Sie im folgenden Fenster einen Benutzer aus und klicken Sie **Kopieren**. Oben können Sie auswählen, ob Sie die Rollen mit den vorhandenen Rollen zusammenführen möchten (Standardeinstellung), oder ob Sie die vorhandenen Rollen ersetzen möchten. Das Kopieren von Rollen erleichtert das Verwalten von Berechtigungen für viele Benutzer, da Sie einen Referenzbenutzer erstellen können, um von dort die Rollen zu kopieren.
 
-![Kopieren von Rollen](/guides/images/users-guide/copyroles.png)
+<img src="/guides/images/benutzerhandbuch/admin-inventory-roles-copy.png" alt="Stammdatenrollen kopieren" style="max-width: 50%">
+
 
 ### <a name="app-access"></a>Zugriff auf Anwendungen
 
@@ -597,7 +597,7 @@ In der Registerkarte "Anwendungen" können Sie Benutzern Zugriff auf Anwendungen
 
 Die Registerkarte "Anwendungen" zeigt eine Liste aller verfügbaren Anwendungen in Ihrem Mandanten in alphabetischer Reihenfolge. Wählen Sie die Anwendungen für den Benutzer und klicken Sie **Speichern**. Weitere Informationen zur Anwendungsverwaltung finden Sie unter [Verwalten von Anwendungen](/guides/benutzerhandbuch/administration#managing-applications).
 
-![Anwendungszugang](/guides/images/users-guide/appaccess.png)
+<img src="/guides/images/benutzerhandbuch/admin-user-application-access.png" alt="Anwendungszugriff" style="max-width: 100%">
 
 > **Info:** Wenn ein Benutzer die globale Berechtigung hat, alle Anwendungen einzusehen, wird eine entsprechende Information angezeigt.
 

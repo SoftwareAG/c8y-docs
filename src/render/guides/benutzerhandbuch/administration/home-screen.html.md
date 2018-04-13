@@ -14,7 +14,7 @@ Die Startseite der "Administration"-Anwendung enthält
 *   Ihre Kapazitätsnutzung im aktuellen und vergangenen Monat,
 *   die von Ihnen abonnierten optionalen Anwendungen.
 
-![Startseite](/guides/images/users-guide/Administration/Admin_Homescreen.png)
+<img src="/guides/images/benutzerhandbuch/admin-home-screen.png" alt="Startseite" style="max-width: 100%">
 
 Die Kapazitätsbereiche zeigen:
 

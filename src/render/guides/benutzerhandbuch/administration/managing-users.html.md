@@ -17,7 +17,7 @@ Die Funktion der Benutzerverwaltung ermöglicht es Ihnen, innerhalb Ihres Mandan
 
 Klicken Sie "Benutzer" im Menü "Konto", um eine Liste aller Benutzer in Ihrem Mandanten anzuzeigen.
 
-![Erweiterte Anzeige](/guides/images/users-guide/userslist.png)
+<img src="/guides/images/benutzerhandbuch/admin-user-list.png" alt="Benutzerliste" style="max-width: 100%">
 
 Es wird eine Benutzerliste angezeigt, die für jeden Benutzer die folgenden Informationen bereitstellt:
 
@@ -32,11 +32,11 @@ Darüber hinaus können Sie nach globalen Rollen filtern. Wählen Sie die gewün
 
 Standardmäßig zeigt die "Benutzer"-Seite nur die Hauptbenutzer. Klicken Sie **Alle ausklappen** rechts in der oberen Leiste, um alle Benutzer in Ihrem Konto auf einmal anzuzeigen. Dadurch werden alle Hauptbenutzereinträge ausgeklappt, so dass auch die Unterbenutzer angezeigt werden. Klicken Sie **Alle einklappen**, um wieder nur die Hauptbenutzer anzuzeigen. Detaillierte Informationen zu Benutzerhierarchien finden Sie unter [Verwalten von Benutzerhierarchien](/guides/benutzerhandbuch/enterprise-edition#user-hierarchies).
 
-### <a name="creating-users"></a>Anlegen von Benutzern
+### <a name="creating-users"></a>Hinzufügen von Benutzern
 
 Um einen neuen Benutzer zu Ihrem Mandanten hinzuzufügen, klicken Sie **Benutzer hinzufügen** rechts oben in der Menüleiste.
 
-![Neuen Benutzer hinzufügen](/guides/images/users-guide/newuser.png)
+<img src="/guides/images/benutzerhandbuch/admin-add-user.png" alt="Benutzer hinzufügen" style="max-width: 100%">
 
 Geben Sie links im Fenster "Neuer Benutzer" folgende Informationen ein, um den Benutzer zu identifizieren:
 
@@ -67,7 +67,7 @@ Klicken Sie **Speichern**, um den Benutzer anzulegen.
 
 Klicken Sie das Menüsymbol rechts in einem Benutzereintrag, um ein Kontextmenü mit weiteren Funktionen zu öffnen.
 
-![Kontextmenü](/guides/images/users-guide/Admin_UserContextMenu.png)
+<img src="/guides/images/benutzerhandbuch/admin-user-contextmenu.png" alt="Benutzer Kontextmenü" style="max-width: 50%">
 
 > **Info:** Für diese Optionen müssen Sie eine Rolle mit Benutzerverwaltungsberechtigung haben.
 

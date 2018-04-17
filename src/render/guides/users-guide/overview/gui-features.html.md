@@ -48,10 +48,15 @@ You can also exclude words by putting a hyphen before the word to search the inv
 	My Demo -Device
 
 
+Note, that using "-" inside a string works as a delimiter searching for all parts of the search string:
+
+	My-Demo-Device
+
+
 Case is ignored. The following search texts return the same result:
 
 	My Demo Device
-	My demo device
+	my demo device
 
 
 >**Info:** Other than with filtering, using wildcards in a search is not supported.

@@ -44,6 +44,8 @@ Our example shows a search for "Ublox C027".
 
 **Info**: Unlike filtering, the use of wildcards in a search is not supported.
 
+For details on the search functionality, refer to Getting Started > [GUI functionalities and features](/guides/users-guide/overview#gui-features). 
+
 <img src="/guides/images/users-guide/DeviceManagement/DevMgmt_Search.png" alt="Device Management Search" style="max-width: 100%">
 
 ### <a name="filtering-devices"></a>Filtering devices
@@ -70,4 +72,6 @@ In the "Filter options" window, click **Ascending** or **Descending** if you wan
 The devices list will now only display devices matching the filtering options.
 
 Click **Clear filters** at the right of the top menu bar if you want to clear all filters and view all devices.
+
+>**Info**: If you select to sort a text field, e.g. device name, in ascending or descending order, keep in mind that the resulting alphabetical sorting is based on ASCII/UTF: A < B < ... < Z < ... < a < b ... < z. Names starting with lower case letters will be sorted below all names with uppercase letters or vice versa.
 

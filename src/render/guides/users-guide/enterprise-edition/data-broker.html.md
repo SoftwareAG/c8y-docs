@@ -18,6 +18,10 @@ Navigate to "Data connectors" if you would like to send data to another tenant. 
 <img src="/guides/images/users-guide/data-broker-on-navigator.PNG" alt="Data broker menus" >
 
 >**Info**: Devices that are forwarded using the data broker are charged like normal devices in the destination tenant.
+>
+>Be aware of the following limitations of the data broker:<br> 
+>Cloud Remote Access cannot be used on the destination tenant. 
+>Currently, the Fieldbus widget does not work on tenants that receive the fieldbus devices through data broker, as the corresponding data models are not synchronized. 
 
 ### <a name="data-broker-connectors"></a> Data connectors
 

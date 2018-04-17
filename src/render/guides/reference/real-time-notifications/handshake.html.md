@@ -59,7 +59,7 @@ Example request:
         }
         "version": "1.0",
         "mininumVersion": "1.0beta",
-        "supportedConnectionTypes": ["websocket","long-polling","callback-polling"],
+        "supportedConnectionTypes": ["websocket","long-polling"],
         "advice":{"timeout":120000,"interval":30000}
       }
     ]

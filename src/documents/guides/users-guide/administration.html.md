@@ -22,7 +22,7 @@ The following sections will walk you through all functionalities of the Administ
 |[Changing Settings](#settings)|How to change account settings like [application settings](#default-app) or [password policy and TFA settings](#changing-password-settings), how to manage the [properties library](#properties), and how to configure [settings for the Enterprise Edition](#platform-config).
 |[Managing Data Retention](#retention)|How to manage and configure [retention rules](#retention-rules) for your data and how to [manage stored files](#files) in the file repository.
 |[Data Broker](#data-broker)|How to forward data to other tenants using [data connectors](#data-broker-connector) and how to receive data with a [data subscription](#data-broker-subscriptions) on the receiving end.
-|[Storage Quota](storageQuota)|How to configure the recipients and triggers of the [warning email](#warningEmail) for maximum storage being reached.
+|[Storage Quota](#storageQuota)|How to configure the recipients and triggers of the [warning email](#warningEmail) for maximum storage being reached.
 
 
 ## <a name="home"></a>Home Screen

@@ -33,6 +33,7 @@ The following tabs are the most common ones, each described in detail in a separ
 |[Events](#events)|Displays events related to a device, helpful for low-level troubleshooting. Also refer to [Troubleshooting devices](#events-all). Available for each device.
 |[Location](#location)|Shows the location of a device, if available.
 |[Logs](#logs)|Allows requesting log information for a device.
+|[Objects](#objects) Shows all available objects of a LwM2M device.
 |[Service monitoring](#service-monitoring)|Allows the service monitoring of machines. See also [Monitoring services](#monitoring-services). Available for each device.
 |[Shell](#shell)|Enables you to interact with remote devices via a command prompt.
 |[Tracking](#tracking)|Shows the movement of a device, if available.
@@ -195,6 +196,41 @@ Click on the entry in the list to show the log information in the screen.
 
 When hovering over an entry, the **Download** and **Delete** buttons appear. Click the **Download** button to download the log excerpt to your local PC. Click the **Delete** button to delete the log file.
 
+### <a name="objects"></a> Objects
+
+In the “Objects” tab of a LWM2M device, you can view all objects, resources and instances of the device. Additionally, you can create new operations, see all currently pending operations and view the history of all previous operations.
+
+![Objects view](/guides/images/users-guide/DeviceManagement/DevMgmt_objects-view.png)
+
+**Info**: In order to see resources in the “Objects” tab, the resources first have to be added in the “Device Protocols” page.
+
+The following operations can be observed in each instance:
+
+- Read Object: Reads all instances for the selected object and lists all available resources for each instance.
+![Read Objects](/guides/images/users-guide/DeviceManagement/DevMgmt_read-object.png)
+- Read Instance: Reads the current instance of the given object and lists all available resources.
+![Read Instance](/guides/images/users-guide/DeviceManagement/DevMgmt_read-instance.png)
+- Create Instance: Creates a new instance for the selected object.
+- Delete Instance: Deletes the selected instance.
+
+**Info:**  Some resources do not have all of the listed operations.
+
+Some objects show additional operations which can be performed. These operations become available after reading the object. For example, device “Reboot” or “Reset error code”. In order to perform these operations, click **Execute**.
+
+![Execute operation](/guides/images/users-guide/DeviceManagement/DevMgmt_execute-operation.png)
+
+More information can be acquired for each resource by hovering over the tooltip icon.
+
+![Tooltip](/guides/images/users-guide/DeviceManagement/DevMgmt_tooltip-hover.png)
+
+Additional information on recent operations can be viewed by clicking the operations button located on the right side of an instance card. The button is only visible if any operation has been performed. The number of unread operations can be seen on the top right of the button. In the example below there is only one.
+
+![Recent operations](/guides/images/users-guide/DeviceManagement/DevMgmt_recent-operations.png)
+![Recent operations 2](/guides/images/users-guide/DeviceManagement/DevMgmt_recent-operations2.png)
+
+To view the history of all operations, simply click **View history**. Note that, you will be redirected to the “Control” tab.
+
+![Control tab](/guides/images/users-guide/DeviceManagement/DevMgmt_operations.png)
 
 ### <a name="service-monitoring"></a>Service monitoring
 

@@ -74,24 +74,6 @@ To enable software installation through the user interface, add "c8y\_SoftwareLi
 
 ![Software information](/guides/images/reference-guide/software.png)
 
-#### c8y\_Configuration
-
-*c8y\_Configuration* permits a text-based configuration of the device. Most devices support a textual system configuration file that can be presented and edited using this mechanism. In the inventory, "c8y\_Configuration" represents the currently active configuration on the device. As part of an operation, "c8y\_Configuration" requests the device to make the transmitted configuration the currently active one. To enable configuration through the user interface, add "c8y\_Configuration" to the list of supported operations as described above.
-
-|Name|Type|Description|
-|:---|:---|:----------|
-|config|String|A text in a device-specific format, representing the configuration of the device.|
-
-    "c8y_Configuration": {
-      "config": "#Tue Jul 02 16:10:36 UTC 2013\nc8y.log.alarmLevel=ERROR\nc8y.modem.signalPolling=10000\nc8y.log.eventLevel=INFO"
-    }
-
-![Device configuration](/guides/images/reference-guide/configuration.png)
-
-#### c8y\_SendConfiguration
-
-To enable reloading configuration through the user interface, add "c8y\_SendConfiguration" to the list of supported operations as described above.
-
 #### c8y\_Mobile
 
 *c8y\_Mobile* holds basic connectivity-related information, such as the equipment identifier of the modem (IMEI) in the device. This identifier is globally unique and often used to identify a mobile device.

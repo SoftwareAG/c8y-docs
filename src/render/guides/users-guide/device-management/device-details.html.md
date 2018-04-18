@@ -33,7 +33,7 @@ The following tabs are the most common ones, each described in detail in a separ
 |[Events](#events)|Displays events related to a device, helpful for low-level troubleshooting. Also refer to [Troubleshooting devices](#events-all). Available for each device.
 |[Location](#location)|Shows the location of a device, if available.
 |[Logs](#logs)|Allows requesting log information for a device.
-|[Objects](#objects) Shows all available objects of a LwM2M device.
+|[Objects](#objects)|Shows all available objects of a LwM2M device.
 |[Service monitoring](#service-monitoring)|Allows the service monitoring of machines. See also [Monitoring services](#monitoring-services). Available for each device.
 |[Shell](#shell)|Enables you to interact with remote devices via a command prompt.
 |[Tracking](#tracking)|Shows the movement of a device, if available.
@@ -213,9 +213,9 @@ The following operations can be observed in each instance:
 - Create Instance: Creates a new instance for the selected object.
 - Delete Instance: Deletes the selected instance.
 
-**Info:**  Some resources do not have all of the listed operations.
+**Info:**  Some instances do not have all of the listed operations.
 
-Some objects show additional operations which can be performed. These operations become available after reading the object. For example, device “Reboot” or “Reset error code”. In order to perform these operations, click **Execute**.
+Some object cards show additional operations which can be performed. These operations become available after reading the object/instance. For example, device “Reboot” or “Reset error code”. In order to perform these operations, click **Execute**.
 
 ![Execute operation](/guides/images/users-guide/DeviceManagement/DevMgmt_execute-operation.png)
 

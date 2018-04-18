@@ -8,10 +8,10 @@ In this section, fragments related to configuration management are listed.
 
 The following fragments can be observed:
 
-- c8y_Configuration: Text configuration fragment that allows you to configure parameters and initial settings of your device. For further information, see Configuration in Device Management > Device details in the User guide.
-- c8y_ConfigurationDump: Potentially large size configuration archive. For further information, see Configuration snapshot in n Device Management > Managing device data in the User guide.
-- c8y_UploadConfigFile: Upload potentially large size configuration files. For further information, see “How to apply a configuration snapshot to a device” in Device Management > Managing device data > Configuration snapshot in the User guide.
-- c8y_DownloadConfigFile:  Download potentially large size configuration files. For further information, see “How to retrieve a configuration snapshot from a device” in Device Management > Managing device data > Configuration snapshot in the User guide.
+- c8y_Configuration: Text configuration fragment that allows you to configure parameters and initial settings of your device. For further information, see [Configuration](/guides/users-guide/device-management#configuration) in Device Management > Device details in the User guide.
+- c8y_ConfigurationDump: Potentially large size configuration archive. For further information, see [Configuration snapshot](/guides/users-guide/device-management#configuration-snapshots) in n Device Management > Managing device data in the User guide.
+- c8y_UploadConfigFile: Upload potentially large size configuration files. For further information, see “How to apply a configuration snapshot to a device” in Device Management > Managing device data > [Configuration snapshot](/guides/users-guide/device-management#configuration-snapshots) in the User guide.
+- c8y_DownloadConfigFile:  Download potentially large size configuration files. For further information, see “How to retrieve a configuration snapshot from a device” in Device Management > Managing device data > [Configuration snapshot](/guides/users-guide/device-management#configuration-snapshots) in the User guide.
 
 #### c8y\_Configuration
 

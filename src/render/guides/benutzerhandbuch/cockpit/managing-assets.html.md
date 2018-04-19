@@ -9,7 +9,7 @@ Assets repräsentieren ganz allgemein Geschäftsobjekte wie Gebäude, Maschinen,
 
 Assets sind in Hierarchien organisiert. Eine Anwendung zur Energieüberwachung kann beispielsweise die folgende Hierarchie aufweisen:
 
-![image alt text](/guides/images/users-guide/image_2de.png)
+![image alt text](/guides/images/benutzerhandbuch/cockpit-hierarchy.png)
 
 Die Asset-Hierarchie besteht aus zwei Objekttypen:
 
@@ -30,7 +30,7 @@ Asset-Hierarchie.
 
 Die Gerätehierarchie bildet die Verknüpfung von Geräten mit Cumulocity aus Kommunikationssicht ab. Die Asset-Hierarchie strukturiert die Assets, die über die M2M-Geräte fernüberwacht und gesteuert werden. Nähere Informationen finden Sie unter [Cumulocity's Domain Model](/guides/concepts/domain-model) im Concepts guide.
 
-In the Cockpit-Anwendung kontruieren Sie Ihre Asset-Hierarchie in dem Sie Gruppenobjekte erstellen und Geräte mit den Gruppen verknüpfen. 
+In the Cockpit-Anwendung konstruieren Sie Ihre Asset-Hierarchie in dem Sie Gruppenobjekte erstellen und Geräte mit den Gruppen verknüpfen. 
 Die Asset-Hierarchie hängt von den verwendeten IoT-Geräten ab. 
 
 Es gibt viele verschiedene Typen von IoT-Geräten, wobei diese zwei Typen besonders häufig sind:
@@ -43,13 +43,13 @@ Der folgende Abschnitt beschreibt, wie Sie in der Cockpit-Anwendung mit Smart-Ge
 
 Das erste Beispiel zeigt, wie Smart-Geräte mit der Asset-Hierarchie verknüpft werden:
 
-![image alt text](/guides/images/users-guide/image_3de.png)
+![image alt text](/guides/images/users-guide/cockpit-asset-hierarchy.png)
 
-Smart-Geräte werden in der Device Management-Anwendung als Top-Level-Geräte dargestellt. In der Cockpit-Anwendung können Sie intelligente Geräte in Gruppen organisieren, wie die Pfeile in der Abbildung oben zeigen. 
+Smart-Geräte werden in der Device Management-Anwendung als Top-Level-Geräte dargestellt. In der Cockpit-Anwendung können Sie Smart-Geräte in Gruppen organisieren, wie die Pfeile in der Abbildung oben zeigen. 
 
 Das zweite Beispiel zeigt, wie Gateway-Geräte in der Cockpit-Anwendung verwendet werden:
 
-![image alt text](/guides/images/users-guide/image_4de.png)
+![image alt text](/guides/images/users-guide/cockpit-gateway-devices.png)
 
 In der Device Management-Anwendung werden Gateway-Geräte als Top-Level-Geräte dargestellt. Die angeschlossenen Geräte (wie Zigbee-, Modbus- oder KNX-Geräte) werden als untergeordneten Geräte angezeigt. In der Cockpit-Anwendung können diese "Kindgeräte" wie in der Abbildung oben dargestellt in einer Asset-Hierarchie organisiert werden.
 
@@ -71,20 +71,20 @@ In der Asset-Hierarchie unterscheidet Cumulocity zwischen Top-Level-Gruppen und 
 
 Im Navigator werden Top-Level-Gruppen im Menü "Gruppen" auf oberster Ebene angezeigt. Untergeordnete Assets werden darunter angezeigt oder in der Registerkarte "Kind-Assets" einer bestimmten Gruppe.
 
-<img src="/guides/images/users-guide/Cockpit/Cockpit_SubAssets.png" name="Sub-assets" style="width:100%;"/>
+<img src="/guides/images/benutzerhandbuch/cockpit-sub-assets.png" name="Kind-Assets" style="width:100%;"/>
 
-Wenn Sie ein Objekt Im Navigator auswählen, werden auf der rechten Seite entsprechende Informationen zum ausgewählten Objekt angezeigt.
+Wenn Sie ein Objekt im Navigator auswählen, werden auf der rechten Seite entsprechende Informationen zum ausgewählten Objekt angezeigt.
 
-<img src="/guides/images/users-guide/Cockpit/Cockpit_InfoTab.png" name="Info tab" style="width:100%;"/>
+<img src="/guides/images/benutzerhandbuch/cockpit-info-tab.png" name="Info tab" style="width:100%;"/>
 
 Wenn Sie ein Gateway-Gerät hinzufügen, werden die Kindgeräte nicht angezeigt. Um Kindgeräte anzuzeigen, müssen diese zum jeweiligen Asset hinzugefügt werden. Details zur untergeordneten Hierarchie können in der Device Management-Anwendung eingesehen und editiert werden.
 
 Um in der Asset-Hierarchie weiter zu navigieren, verwenden Sie den Navigator oder wählen Sie ein Objekt in der Registerkarte "Kind-Asset" aus. Um in der Asset-Hierarchie nach oben zu navigieren, verwenden Sie den Eintrag in der Pfadnavigation unter dem Namen des Assets.
 
 
-### Asset details
+### Asset-Details
 
-Für jedes Objekt gibt es verschiedene Registerkarten, je nach Objekttyp: 
+Für jedes Objekt gibt es verschiedene Registerkarten, abhängig vom Objekttypen: 
 
 |Registerkarte|Beschreibung|Verfügbarkeit
 |:---|:---|:---
@@ -94,107 +94,71 @@ Für jedes Objekt gibt es verschiedene Registerkarten, je nach Objekttyp:
 |Daten-Explorer|Zeigt alle Datenpunkte der Kinder, siehe auch [Visualisieren von Daten mit dem Daten-Explorer](#data-explorer).|Gruppe, Gerät
 |Standort|Zeigt den aktuellen Standort des Geräts.|Gerät
 
-If dashboards have been created for an object, they will also be added as a tab. See [Working with Dashboards](#dashboards) for details.
+Wenn für ein Gerät Dashboards erstellt wurden, werden diese ebenfalls als Registerkarten angezeigt. Weitere Informationen finden Sie unter [Arbeiten mit Dashboards](#dashboards).
 
 Es können zusätzliche Registerkarten angezeigt werden, falls die Anwendung mit Plugins erweitert wurde. Siehe auch [Web SDK for plugins](/guides/images/web/introduction).
 
-### <a name="creating-groups"></a>Adding groups
+### <a name="creating-groups"></a>Hinzufügen von Gruppen
 
-To create a new group, follow these steps:
+Führen Sie folgende Schritte aus, um eine neue Gruppe zu erstellen:
 
-1. Click the **Plus** button at the right of the top bar, then select **New group** from the menu. <br><br>
-<img src="/guides/images/users-guide/Cockpit/Cockpit_CreateGroup.png" name="Create group" style="width:50%;"/><br>
-2. In the window that comes up enter a unique group name to identify your group.
-3. In the "Device Search" field, enter the search criteria for the devices you might want to add to your group (e.g. "ublox"). A list of devices that match your search criteria will be displayed. 
-4. Checkmark the devices you want to add from the list.
-5. Click **Create group with X device(s)** to finally create your new group. 
+1. Klicken Sie die **Plus**-Schaltfläche rechts in der oberen Leiste und wählen Sie die Menüoption **Neue Gruppe**. <br><br>
+<img src="/guides/images/benutzerhandbuch/cockpit-create-group.png" name="Gruppe erstellen" style="width:50%;"/><br>
+2. Geben Sie im folgenden Fenster einen eindeutigen Namen für die Gruppe ein.
+3. Geben Sie im Feld "Gerätesuche" Suchkriterien für die Geräte ein, die Sie zur Gruppe hinzufügen möchten (z. B. "ublox"). Eine Liste mit passenden Geräten wird angezeigt.  
+4. Wählen Sie die Geräte aus, die Sie hinzufügen möchten.
+5. Klicken Sie **Gruppe mit [x] Gerät(en) erstellen**, um die Gruppe zu erstellen.
 
->**Info:** A group can be created with "0" devices in it.
+>**Info:** Eine Gruppe kann auch mit "0" Geräten erstellt werden.
 
-To add a new group as a child of an existing asset, navigate to its "Sub-asset" tab and click **Add Group** in the top menu bar.
+Um eine neue Gruppe als Kind zu einer existierenden Gruppe hinzuzufügen, navigieren Sie zur entsprechenden "Kind-Asset"-Registerkarte und klicken Sie  **Gruppe hinzufügen** in der oberen Menüleiste.
 
-### <a name="assigning-devices"></a>Assigning devices to groups
+### <a name="assigning-devices"></a>Zuweisen von Geräten zu Gruppen
 
-Before adding a device to the Asset-Hierarchie, it must be connected to Cumulocity. Connecting devices to the platform is done in the Device Management application. For details on connecting devices refer to [Device Management](/guides/users-guide/device-management).
+Bevor Sie ein Gerät zu einer Asset-Hierarchie hinzufügen können, muss das Gerät mit Cumulocity verbunden werden. Das Verbinden von Geräten mit der Plattform erfolgt in der Device Management-Anwendung. Weitere Informationen zum Verbinden von Geräten finden Sie unter [Device Management](/guides/users-guide/device-management).
 
-To assign a device to a group, follow these steps:
+Führen Sie die folgenden Schritte aus, um ein Gerät einer Gruppe zuzuweisen:
 
-1. In the navigator, select a group from the "Group" menu and then open the "Sub-assets" tab. In the "Sub-assets" tab, all devices that are assigned to the respective group are displayed. 
-2. Click **Assign devices** at the right of the top menu bar. In the upcoming window search for the devices you might want to add to your group (e.g. "ublox"). A list of devices that match your search criteria will be displayed. 
-3. Checkmark the devices you want to add from the list.
-4. Click **Assign X device(s)** to assign the selected devices. 
+1. Wählen Sie die gewünschte Gruppe im Navigator und öffnen Sie die Registerkarte "Kind-Asset". In der Registerkarte "Kind-Asset" werden alle Geräte, die der entsprechenden Gruppe zugewiesen sind, angezeigt.  
+2. Klicken Sie **Gerät zuweisen** rechts in der oberen Menüleiste. Geben Sie im folgenden Fenster Suchkriterien für die Geräte ein, die Sie zur Gruppe hinzufügen möchten (z. B. "ublox"). Eine Liste mit passenden Geräten wird angezeigt.  
+3. Wählen Sie die Geräte aus, die Sie hinzufügen möchten.
+4. Klicken Sie **[x] Gerät(e) zuweisen**, um die ausgewählten Geräte zuzuweisen. 
 
-The devices will be shown as sub-assets in the "Sub-assets" tab.
+Die Geräte werden als Kind-Assets in der Registerkarte "Kind-Asset" angezeigt.
 
-### Editing groups
-
-To edit the name of a group, navigate to its "Info" tab and click **Edit** next to its name. Edit the name and optionally leave some notes to be displayed in the "Info" tab. Click **Save changes** to apply your settings.
-
-### Deleting groups
-
-To delete a top-level group from the navigator, follow these steps:
-
-1. Click "Groups" in the navigator. 
-2. Click the menu icon for the group you want to delete.
-3. From the context menu, select **Delete**.
-
-To delete a group from the "Sub-assets" tab of another group, follow these steps:
-
-1. Navigate to the "Sub-assets" tab.
-2. Click the menu icon for the group you want to delete.
-3. From the context menu, select **Delete**.
-
-### Unassigning devices
-
-To unassign a device from a group, follow these steps:
-
-1. Navigate to the "Sub-assets" tab of the group.
-2. Click the menu icon for the device you want to unassign.
-3. From the context menu, select **Unassign**.
-
-Unassigning a device does not remove the device, sub-devices or any associated data. The device is only removed from its location in the Asset-Hierarchie. It can be assigned to this group or other groups later.
+![image alt text](/guides/images/benutzerhandbuch/cockpit-assign-devices.png)
 
 
+### Bearbeiten von Gruppen
 
+Um den Namen einer Gruppe zu bearbeiten, navigieren Sie zur Registerkarte "Info" der entsprechenden Gruppe und klicken Sie "**Bearbeiten**" neben dem Namen. Geben Sie den gewünschten Namen ein sowie optional eine Anmerkung, die in der Registerkarte "Info" angezeigt wird. Klicken Sie **Änderungen speichern**, um Ihre Eingaben zu speichern.
 
-### Assets durchsuchen
+<img src="/guides/images/benutzerhandbuch/cockpit-edit-groups.png" name="Gruppe bearbeiten" style="width:50%;"/>
 
-Um nach Gruppen oder Geräten zu suchen, geben Sie den Namen der Gruppe oder des Geräts in das Suchfeld ein und klicken Sie auf "Enter". Sie können auf die Ergebnisse klicken. Die ausgewählte Gruppe bzw. das ausgewählte Gerät wird dann im Navigator links ausgewählt und auf der rechten Seite angezeigt.
+### Löschen von Gruppen
 
-### Gruppen hinzufügen
+Führen Sie folgende Schritte aus, um eine Top-Level-Gruppe aus dem Navigator zu löschen:
 
-Um eine neue Top-Level-Gruppe hinzuzufügen, klicken Sie auf "+" im oberen Bereich der Anwendung und wählen Sie "Gruppe hinzufügen ...". Daraufhin erscheint der folgende Dialog:
+1. Klicken Sie "Gruppen" im Navigator. 
+2. Klicken Sie auf das Menüsymbol der Gruppe, die Sie löschen möchten.
+3. Klicken Sie im Kontextmenü **Löschen**.
 
-![image alt text](/guides/images/users-guide/image_7de.png)
+<img src="/guides/images/benutzerhandbuch/cockpit-sub-asset-contextmenu.png" name="Gruppe bearbeiten" style="width:50%;"/>
 
-Dadurch wird eine neue Gruppe mit den ausgewählten zugewiesenen Geräten erstellt. Nach dem Klicken auf "Gruppe mit Geräten erstellen" wird die Gruppe im Navigator als oberstes Objekt angezeigt.
+Führen Sie folgende Schritte aus, um eine Gruppe aus der Registerkarte "Kind-Assets" einer anderen Gruppe zu löschen:
 
-Um eine neue Gruppe als Kind eines vorhandenen Assets hinzuzufügen, klicken Sie auf die Schaltfläche "+ Gruppe hinzufügen" auf der Registerkarte "Sub-Assets".
+1. Navigieren Sie zur Registerkarte "Kind-Asset" der entsprechenden Gruppe.
+2. Klicken Sie auf das Menüsymbol der Gruppe, die Sie löschen möchten.
+3. Klicken Sie im Kontextmenü **Löschen**.
 
-![image alt text](/guides/images/users-guide/image_8de.png)
+### Aufheben der Zuordnung von Geräten
 
-### <a name="Gruppenzuweisung"></a>Geräte Gruppen zuweisen
+Führen Sie die folgenden Schritte aus, um die Zuordnung eines Geräts zu einer Gruppe aufzuheben:
 
-Vor dem Hinzufügen eines Geräts zur Asset-Hierarchie muss es mit Cumulocity verbunden sein. Verbinden Sie Geräte über das Device Management mit der Plattform. Genaues dazu finden Sie hier: [Manuell Geräte verbinden](/guides/images/benutzerhandbuch/device-management-deutsch#device-registration).
+1. Navigieren Sie zur Registerkarte "Kind-Asset" der entsprechenden Gruppe.
+2. Klicken Sie auf das Menüsymbol des Geräts, für das Sie die Zuordnung aufheben möchten.
+3. Klicken Sie im Kontextmenü **Zuordnung aufheben**.
 
-Um neu verbundene Geräte der Asset-Hierarchie zuzuordnen, markieren Sie die Gruppe, in der das Gerät erscheinen soll, klicken Sie auf "Sub-Assets" und klicken Sie auf die Schaltfläche "+ Gerät zuordnen".
+<img src="/guides/images/benutzerhandbuch/cockpit-sub-asset-contextmenu.png" name="Gruppe bearbeiten" style="width:50%;"/>
 
-Suchen Sie im folgenden Dialog nach Geräten und wählen Sie die zuzuordnenden Geräte (oder Kindgeräte) aus.
-
-![image alt text](/guides/images/users-guide/image_9de.png)
-
-### Gruppen löschen
-
-Sie können eine Gruppe löschen, indem Sie den Mauszeiger über die Gruppe auf der Registerkarte "Sub-Assets" bewegen und dort belassen. Sie sehen ein rotes [X], das Sie klicken können, um die Gruppe zu löschen.
-
-### Geräte trennen
-
-Um ein Gerät von einer Gruppe zu trennen, wählen Sie die Gruppe im Navigator aus. In der Registerkarte "Sub-Assets" werden die untergeordneten Geräte angezeigt. Dort können Sie einzelnde Geräte auswählen und trennen. Klicken Sie auf die rote Schaltfläche [X].
-
-Das Trennen eines Geräts bedeutet nicht, dass die Kindgeräte oder die zugehörigen Daten entfernt werden. Das Gerät wird nur aus seiner Position in der Asset-Hierarchie entfernt. Es kann danach anderen Gruppen zugeordnet werden.
-
-### Gruppen editieren
-
-Um den Namen der Gruppe zu bearbeiten, klicken Sie auf die Registerkarte "Info" und bearbeiten den Namen.
-
-
+Wenn Sie die Zuordnung eines Geräts aufheben, wird das Gerät, seine Kindgeräte sowie zugehörige Daten nicht gelöscht. Das Gerät wird lediglich aus der Gruppe entfernt. Es kann jederzeit wieder zu dieser oder einer anderen Gruppe hinzugefügt werden. 

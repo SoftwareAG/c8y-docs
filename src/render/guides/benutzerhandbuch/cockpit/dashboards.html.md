@@ -1,6 +1,6 @@
 ---
 order: 40
-title: Dashboards 
+title: Arbeiten mit Dashboards 
 layout: redirect
 ---
 

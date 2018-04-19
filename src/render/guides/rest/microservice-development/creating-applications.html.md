@@ -16,7 +16,7 @@ In order to start working with microservices an instance of application must be 
       "name": "{APPLICATION_NAME}",
       "type": "MICROSERVICE",
       "requiredRoles": ["ROLE_INVENTORY_READ"],
-      "roles": ["ROLE_CUSTOM_MICSROSERVICE"]
+      "roles": ["ROLE_CUSTOM_MICROSERVICE"]
     }
 
 Success response consists of 201 status and location header similar to

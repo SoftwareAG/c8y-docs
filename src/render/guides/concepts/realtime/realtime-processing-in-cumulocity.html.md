@@ -27,12 +27,12 @@ For more information about the interfaces for real-time processing also see [Rea
 
 Below find an overview on the currently available CEP variants in Cumulocity:
 
-|Isolation Scope|Description|w or w/o custom rules|Esper CEP engine|Apama CEP engine|
+|Isolation Scope|Description|CEP Rules|Esper CEP engine|Apama CEP engine|
 |:---|:---|:---|:---|:---|
-|Multi-tenant (shared)| Provides access to a shared instance of CEP container, i.e. all subscribed tenants share the resources of the same CEP instance.|smart rules|required applications= "cep" and "smartrule", included in Cumulocity Standard Edition |n/a 
-|||smart rules and custom rules|n/a|n/a|
-|Per-tenant| Each subscribed tenant has at least one own instance of CEP container. The container is isolated from other tenants, hence high CPU load or memory issues on other containers do not have any impact on the own one.|smart rules|required application= "cep-small" (optional microservice) and "smartrule" (included in Standard Edition)|required application= "apama-small" (optional microservice) and "smartrule" (included in Standard Edition)|
-|||smart rules and custom rules|required application= above ones plus "feature-cep-custom-rules" (optional feature)|required application= above ones
+|Multi-tenant (shared)| Provides access to a shared instance of CEP container, i.e. all subscribed tenants share the resources of the same CEP instance.|smart rules|required applications= "cep" and "smartrule", both included in Cumulocity Standard Edition |n/a 
+|||+ custom rules|n/a|n/a|
+|Per-tenant| Each subscribed tenant has at least one own instance of CEP container. The container is isolated from other tenants, hence high CPU load or memory issues on other containers do not have any impact on the own one.|smart rules|required application= "cep-small" (optional) and "smartrule" (included)|required application= "apama-small" (optional) and "smartrule" (included)|
+|||+ custom rules|required application= "feature-cep-custom-rules" (optional)|required application= none; included in "apama-small"
 
 
 

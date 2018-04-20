@@ -6,7 +6,7 @@ layout: redirect
 
 Mit Benutzerhierarchien können Sie verschiedene Organisationen in Cumulocity getrennt verwalten, die dennoch dieselbe Datenbank teilen. Diese Organisationen können eingeschränkten Zugriff auf eine Untermenge der geteilten Daten haben und ihre eigenen untergeordneten Benutzer verwalten.
 
-> Info: Um diese Funktion verwenden zu können, muss Ihr Mandant die folgende Anwendung abonniert haben: "FEATURE.USER.HIERARCHY".
+> Info: Um diese Funktion verwenden zu können, muss Ihr Mandant die folgende Anwendung abonniert haben: "feature-user-hierarchies".
 
 ### Anzeigen von Benutzerhierarchien
 
@@ -22,15 +22,13 @@ Benutzerhierarchien werden erstellt, indem einem Benutzer ein "Besitzer" zugewie
 
 Wählen Sie in der "Benutzer"-Seite einen Benutzer aus, dem Sie einen Besitzer zuweisen möchten. Wählen Sie im "Besitzer"-Feld einen Benutzer aus der Auswahlliste und klicken Sie **Fertig** zum Bestätigen.
 
-![Besitzer auswählen](/guides/images/users-guide/chooseowner.png)
+![Besitzer auswählen](/guides/images/benutzerhandbuch/ee-user-hierarchies-owner.png)
 
 > **Info:** Wenn Sie einen neuen Benutzer erstellen, wird der Besitzer automatisch auf den Benutzer gesetzt, der angemeldet ist. Der Besitzer kann später geändert werden. Nur Benutzer mit der Berechtigung "USER ADMIN" können Besitzer zuweisen.
 > 
 > Wenn Sie möchten, dass ein Besitzer nur seine untergeordneten Benutzer verwalten kann, stellen Sie sicher, dass der Besitzer keine globale Rolle mit Administrationsrechten für alle Benutzer hat.
 
-Das Beispiel zeigt einen Benutzer mit der "business"-Rolle. Der Benutzer wird der Besitzer eines neuen Benutzers. Daher kann der neue Benutzer nur die Rolle "business" erhalten, da er keine höhere Berechtigung haben kann als sein Besitzer.
-
-![Besitzerbeispiel](/guides/images/users-guide/ownersample.png)
+Nehmen wir an, ein Benutzer mit der "business"-Rolle wird der Besitzer eines neuen Benutzers. Dann kann der neue Benutzer nur die Rolle "business" erhalten, da er keine höhere Berechtigung haben kann als sein Besitzer.
 
 ### <a name="delegate"></a>Delegieren von Benutzerhierarchien
 
@@ -40,7 +38,7 @@ Sie können Berechtigungen auch temporär übertragen, wenn Sie etwa zeitweilig 
 
 Um einem Benutzer Ihre Berechtigungen zu übertragen, öffnen Sie entweder den Benutzer und klicken Sie das Delegieren-Symbol im Feld "Delegiert von", oder öffnen Sie das Kontextmenü über das Menüsymbol rechts vom Benutzer und wählen Sie **Delegieren**.
 
-![Benutzerdelegierung](/guides/images/users-guide/delegation.png)
+![Benutzerdelegierung](/guides/images/benutzerhandbuch/ee-user-hierarchies-delegate.png)
 
 Entfernen Sie die Delegierung im Feld "Delegiert von" oder klicken Sie im Kontextmenü **Delegierung aufheben**, um eine Übertragung von Berechtigungen wieder aufzuheben.
 

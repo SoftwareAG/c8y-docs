@@ -33,11 +33,15 @@ Die "Mandanten"-Seite zeigt die folgenden Informationen für jeden Untermandante
 
 Wenn Sie den Management-Mandanten verwenden, sehen Sie eine weitere Spalte "Übergeordneter Mandant". Die Spalte zeigt den Mandanten an, der den aktuellen Mandanten erstellt hat.
 
-![Untermandanten](/guides/images/benutzerhandbuch/Admin_Subtenants.png)
+![Untermandanten](/guides/images/benutzerhandbuch/ee-subtenants.png)
 
-### <a name="creating-tenants"></a>Erstellen von Untermandanten
+### <a name="creating-tenants"></a>Anlegen von Untermandanten
 
-Um einen neuen Mandanten zu erstellen, klicken Sie **Mandanten erstellen** rechts oben in der Menüleiste. Geben Sie für den neuen Mandanten folgende Attribute an:
+Um einen neuen Mandanten zu erstellen, klicken Sie **Mandanten anlegen** rechts oben in der Menüleiste. 
+
+![Mandanten anlegen](/guides/images/benutzerhandbuch/ee-subtenant-create.png)
+
+Geben Sie für den neuen Mandanten folgende Attribute an:
 
 |Feld|Beschreibung
 |:--------|:-----
@@ -58,7 +62,6 @@ Nachdem der Mandant erstellt wurde, wird er automatisch mit einem ersten Adminis
 
 Vom Management-Mandanten aus können Sie anderen Mandanten erlauben, Untermandanten zu erstellen. Selektieren Sie dazu "Erstellen von Untermandanten zulassen".
 
-![Mandantenerstellung](/guides/images/benutzerhandbuch/Admin_CreateTenant.png)
 
 ### Bearbeitung von Untermandanten-Attributen
 
@@ -70,7 +73,7 @@ In der Registerkarte "Attribute" können alle Felder außer der ID und des Benut
 
 In der Registerkarte "Anwendungen" können Sie Anwendungen für Mandanten abonnieren oder entfernen. Standardmäßig werden für einen Mandanten die Standardanwendungen von Cumulocity abonniert.
 
-![Anwendung abonnieren](/guides/images/benutzerhandbuch/Admin_SubtenantApplications.png)
+![Anwendung abonnieren](/guides/images/benutzerhandbuch/ee_subtenants-applications.png)
 
 Um eine Anwendung für einen Mandanten zu abonnieren, bewegen Sie den Mauszeiger über die Anwendungen unter "Verfügbare Anwendungen" auf der rechten Seite und klicken Sie bei der gewünschten Anwendung **Abonnieren**.
 
@@ -82,11 +85,11 @@ Sie können Mandanten zeitweilig sperren. Das Sperren eines Mandanten verhindert
 
 Um einen Mandanten zu sperren, klicken Sie auf das Menüsymbol und wählen Sie im Kontextmenü **Entfernen**.
 
+![Sperren eines Mandanten](/guides/images/benutzerhandbuch/ee-subtenant-suspend.png)
+
 Bestätigen Sie im folgenden Dialogfenster das Sperren, indem Sie **Ok** klicken und Ihr Passwort eingeben Der Mandant wird durch ein rotes Kreuzsymbol als gesperrt gekennzeichnet. Außerdem wird eine E-Mail an den Administrator des Mandanten gesendet, wenn eine entsprechende E-Mail-Adresse konfiguriert ist.
 
 > **Info**: Als Service Provider können Sie diese E-Mail unterdrücken.
-
-![Sperren eines Mandanten](/guides/images/users-guide/suspendtenant.png)
 
 Ist ein Mandant gesperrt, bleiben die Daten des Mandanten in der Datenbank und stehen jederzeit wieder zur Verfügung. Klicken Sie **Aktivieren**, um die Daten wiederherzustellen.
 
@@ -137,13 +140,11 @@ Eine Mandantenregel ist eine Menge von Mandantenoptionen und Datenhaltungsregeln
 
 Das Erstellen einer Mandantenregel mit bestimmten Optionen und Regeln spart Zeit bei der Erstellung verschiedener Mandanten mit den gleichen Einstellungen.
 
-![Mandantenregel](/guides/images/users-guide/tenantpolicy.png)
-
 > **Info**: Die Optionen und Regeln werden in den Mandanten kopiert. Änderungen an der Regel haben keine Auswirkungen auf bereits erstellte Mandanten.
 
 Klicken Sie "Mandantenregeln" im Menü "Mandanten", um alle verfügbaren Regeln anzuzeigen.
 
-![Mandantenregeln](/guides/images/users-guide/administration/admin_TenantPolicies.png)
+![Mandantenregeln](/guides/images/benutzerhandbuch/ee-tenant-policies.png)
 
 Für jede Mandantenregel wird der Name, eine optionale Beschreibung und die Anzahl der Optionen und Datenerhaltungsregeln angezeigt, wahlweise in Listen- oder Gitteransicht.
 
@@ -160,14 +161,14 @@ Klicken Sie **Mandantenregel hinzufügen** in der oberen Menüleiste, um eine ne
 
 ### Bearbeiten, Duplizieren und Löschen von Regeln
 
-Klicken Sie auf eine Regel, um diesen zu bearbeiten oder klicken Sie **Bearbeiten** im Kontextmenü, auf das Sie über das Menüsymbol zugreifen können.
+Klicken Sie auf eine Regel, um diese zu bearbeiten oder öffnen Sie das Kontextmenü über das Menüsymbol und klicken Sie **Bearbeiten**.
 
 Um den Namen einer Regel zu ändern, klicken Sie auf den Namen in der oberen Leiste, ändern Sie den Namen und klicken Sie das grüne Häckchen-Symbol, um Ihre Änderungen zu speichern.
 
-Um eine Datenerhaltungsregel oder eine Mandantenoption aus einer Regel zu entfernen, bewegen Sie den Mauszeiger darüber und klicken Sie das Löschen-Symbol.
+Um eine Datenhaltungsregel oder eine Mandantenoption aus einer Regel zu entfernen, bewegen Sie den Mauszeiger darüber und klicken Sie das Löschen-Symbol.
 
 Um eine Regel zu duplizieren, klicken Sie auf das Menüsymbol und wählen Sie im Kontextmenü **Duplizieren**.
 
 Um eine Regel zu löschen, klicken Sie auf das Menüsymbol und wählen Sie im Kontextmenü **Löschen**.
 
-![Regeln bearbeiten](/guides/images/users-guide/editpolicy.png)
+![Manantenregeln Kontextmenü](/guides/images/benutzerhandbuch/ee-tenant-policy-contextmenu.png)

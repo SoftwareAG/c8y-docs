@@ -20,8 +20,8 @@ The following applications are available in Cumulocity:
 |[Data Broker](/guides/users-guide/enterprise-edition/data-broker)|Lets you share data selectively with other tenants. |feature-broker|Feature|Enterprise Edition
 |[Device Management](/guides/users-guide/device-management)| Manage and monitor devices, and control and troubleshoot devices remotely.|devicemanagement|Web application| Standard Edition
 |[Device simulator](/guides/users-guide/device-management#simulator)|Simulate all aspects of IoT devices.|device-simulator|Microservice| Standard Edition
-|[Cloud Fieldbus](/guides/users-guide/optional-services/cloud-fieldbus)|Collect data from fieldbus devices and remotely manage them in Cumulocity.|Feature-fieldbus|Feature|Optional service
-|[LWM2M agent](/guides/users-guide/optional-services#lwm2m)|Interface with LWM2M devices.|Lwm2m-agent|Microservice|Optional service
+|[Cloud Fieldbus](/guides/users-guide/optional-services/cloud-fieldbus)|Collect data from fieldbus devices and remotely manage them in Cumulocity.|feature-fieldbus4|Feature|Optional service
+|[LWM2M agent](/guides/users-guide/optional-services#lwm2m)|Interface with LWM2M devices.|lwm2m-agent|Microservice|Optional service
 |Microservice hosting|Host your own microservices on top of Cumulocity.|feature-microservice-hosting|Feature|Optional service
 |[Nokia IMPACT agent](/guides/users-guide/optional-services#nokia-impact)|With the [Nokia IMPACT agent](/guides/users-guide/optional-services#nokia-impact) you can interface with heterogeneous devices through the Nokia IMPACT Data Collector.|impact|Microservice|Optional service
 |Smart Rules| Use the Smart Rule engine and create [smart rules](/guides/users-guide/cockpit#smart-rules) to perform actions based on realtime data. Requires one of the following applications: Cep, Apama|smartrule|Microservice| Standard Edition

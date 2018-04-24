@@ -22,6 +22,20 @@ The image above also illustrates another feature of Cumulocity: The possibility 
 
 For more information about the interfaces for real-time processing also see [Real-time Statements](/guides/reference/real-time-statements) in the Reference Guide.
 
+### CEP variants in Cumulocity
+
+
+Below find an overview on the currently available CEP variants in Cumulocity:
+
+|Isolation Scope|Description|CEP Rules|Esper CEP engine|Apama CEP engine|
+|:---|:---|:---|:---|:---|
+|Multi-tenant (shared)| Provides access to a shared instance of CEP container, i.e. all subscribed tenants share the resources of the same CEP instance.|pre-defined rules|required applications= "cep" and "smartrule", both included in Cumulocity Standard Edition |n/a 
+|||+ custom rules|n/a|n/a|
+|Per-tenant| Each subscribed tenant has an own instance of CEP container with dedicated resources (i.e. memory and CPU usage). The container is isolated from other tenants, hence high CPU load or memory issues on other containers do not have any impact on the own one.|pre-defined rules|required application= "cep-small" (optional) and "smartrule" (included)|required application= "apama-small" (optional) and "smartrule" (included)|
+|||+ custom rules|required application= "feature-cep-custom-rules" (optional); if enabled tenant gains access  to "Event processing" section in the Administration application |required application= none; included in "apama-small"
+
+
+
 ### What are the benefits of using real-time processing?
 
 Cumulocity's real-time processing feature has the following benefits:

@@ -18,7 +18,7 @@ layout: redirect
 
 Response body: ApplicationCollection
 
-Required role: ROLE\_APPLICATIN\_MANAGEMENT\_READ
+Required role: ROLE\_APPLICATION\_MANAGEMENT\_READ
 
 Example request:
 

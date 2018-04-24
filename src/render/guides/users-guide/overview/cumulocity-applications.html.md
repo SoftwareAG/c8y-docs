@@ -13,7 +13,9 @@ Per default, Cumulocity comes with the following three standard applications:
 |<i class="c8y-icon c8y-icon-cockpit c8y-icon-duocolor" style="font-size: 36px;"></i>|[Cockpit](/guides/users-guide/cockpit)|The Cockpit application provides you with options to manage and monitor  Internet of Things (IoT) assets and data from a business perspective.
 |<i class="c8y-icon c8y-icon-administration c8y-icon-duocolor" style="font-size: 36px;"></i>|[Administration](/guides/users-guide/administration)|The Administration application enables account administrators to manage their users, roles, tenants, applications and business rules and lets them configure a number of settings for their account. 
 
-Apart from these standard applications that initially come with Cumulocity, various additional applications are provided which you may subscribe to, i.e. integrated agents for several device types.
+Apart from these standard applications that initially come with Cumulocity, various additional applications are provided, offering a wide variety of functionalities. The availability of this applications depends on the Edition you are using and the applications your organization is subscribed to.
+
+Find a detailed list of all applications available with Cumulocity in Applications > [Application names](/guides/reference/applications#application-names) in the Reference guide.
 
 Moreover, you can add own applications to be used in your Cumulocity account. For details, refer to [Administration > Managing applications](/guides/users-guide/administration/managing-applications).
 

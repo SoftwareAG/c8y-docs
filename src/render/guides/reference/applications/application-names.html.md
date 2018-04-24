@@ -4,7 +4,16 @@ title: Application names
 layout: redirect
 ---
 
-The following applications are available in Cumulocity:
+For each tenant, Cumulocity manages the subscribed applications. Cumulocity provides a number of applications of various types. 
+
+These are listed in the following table. The columns show the following information:
+
+* **Application**: Application name as visible in the Administration application.
+* **Functionality**: Brief description.
+* **String**: Identification of the application in the API. In case you want to subscribe a tenant to the application using an API (as described on this page), use this string in the argument (as name)
+* **Application type**: Technical type of the application. "Feature" refers to built-in applications subscriptions, i.e. these applications are not represented by an explicit artefact (microservice or web application).
+* **Availablity**: Only applications indicated as "Standard Edition" are available in all installations. Applications of type "microservice" or "web application" indicated as "Optional service" require that the related artefact is installed for the respective Cumulocity instance. The same applies to applications listed as "Enterprise Edition".
+
 
 |Application|Functionality|String|Application type|Availability
 |:---:|:---|:---|:---|:---

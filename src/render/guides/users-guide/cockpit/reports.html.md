@@ -64,7 +64,7 @@ In the "Filter" section, you can select filters to request object- or time-speci
 
 To filter for a particular object, enter a name or property value into the search field and click the search icon. All matching devices or groups will be displayed below the "Value" field. Click a device to select it (highlighted in green). 
 
-The "Time range" filter can filter object reports for a specific time range. Select a time range from the dropdown field. This may be one of "Last year", "Last month", "Last week" or select "Custom" and enter a custom from/to range in the additional fields.
+The "Time range" filter can filter reports for a specific time range. Select a time range from the dropdown field. This may be one of "Last year", "Last month", "Last week" or select "Custom" and enter a custom from/to range in the additional fields.
 
 Select the checkbox in front of the filter name to enable the filter.
 
@@ -81,6 +81,8 @@ Use the slider to enable/disable a field.
 
 <img src="/guides/images/users-guide/Cockpit/Cockpit_ReportFields.png" name="Report fields" style="width:100%;"/>
 
+>**Info**: The time range filter only applies to alarms, events and measurements but not to managed objects. If selected, managed objects will appear in the report, regardless of any specified time range. 
+
 When a field is enabled, predefined or empty properties can be added. 
 
 Click **Add** to add empty properties. To enter a label or path, click "Column" or "Path" and edit the field. For example, if you enable the "Alarms" field you could enter "Severity" in column and path to receive reports only for alarm severities.
@@ -96,8 +98,8 @@ A report has 4 fields defined: time range, device name, type and c8y_SpeedMeasur
 
 If your field is a valid.key.with.dot then refer to it as ['fragment.key.with.dot'] in the path, e.g.: ['fragment.key.with.dot'].series.value
 
-In case of "Measurements" enabled, you can also choose **Add from data point**. For details on how to add data points see [Adding data points](#add-data-points).
-
+In case of "Measurements" enabled, you can also choose **Add from data point**. For details on how to add data points see [Adding data points](#add-data-points). 
+ 
 #### <a name="schedule-export"></a>Scheduling exports
 
 To schedule the export to a CSV or Excel file to any point in time, click the menu icon at the end of the row and from the context menu select **Schedule export**. In the upcoming window you can customize the Smart Rule "On timer send export via email" according to your needs.

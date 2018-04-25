@@ -17,7 +17,7 @@ Microservices are deployed as docker images to Cumulocity, and follow specific c
 
 When developing a Cumulocity microservice, a developer is not restricted to any programming language. However, a microservice must serve as a HTTP server working on port 80 and must be encapsulated in a docker image.
 
->**Info:** For Microservice developers Cumulocity provides Microservice SDK in [Java programming language](/guides/java/developing-microservice) and C# programming language for .Net Core. Refer to the [Hello World](/guides/java/java-microservice) example for developing microservices in the Java Developer's Guide.
+>**Info:** For Microservice developers Cumulocity provides Microservice SDK in [Java programming language](/guides/java/developing-microservice) and C# programming language for .Net Core. Refer to the [Hello World](/guides/java/java-microservice) example for developing microservices in the Java Developer's guide.
 
 The hosting of the Microservice is provided by Cumulocity. This way developers can focus on business logic and leave scaling, security, high availability and monitoring to Cumulocity. Microservices can be built on the top of the API exposed by the Cumulocity platform. This way, Cumulocity microservices are a comfortable means to provide new functionality and extend existing one. 
 
@@ -32,7 +32,7 @@ During run-time, the microservice is executed in a docker container. A docker co
 ### Microservice manifest
 
 The microservice manifest provides the required settings to manage microservice instances and the Cumulocity application.
-Refer to the [Microservice manifest reference](/guides/reference/microservice-manifest) in the Reference Guide to see the full list of options.
+Refer to the [Microservice manifest reference](/guides/reference/microservice-manifest) in the Reference guide to see the full list of options.
 
 ### Microservice isolation levels
 
@@ -59,7 +59,7 @@ Microservices typically provide a REST API. For inbound REST requests, Cumulocit
 There are three different user types related to managing microservices: 
 
 * Tenant platform user: The user that logs into the application. Created using the Cumulocity Administration application. 
-* Microservice Bootstrap user: The user being created for microservice bootstrap operations. This user is authorized to get the microservice subscriptions and do requests for its application. Refer to [Microservice development](/guides/rest/microservice-development) in the Rest Developer`s Guide for more details.
+* Microservice Bootstrap user: The user being created for microservice bootstrap operations. This user is authorized to get the microservice subscriptions and do requests for its application. Refer to [Microservice development](/guides/rest/microservice-development) in the Rest Developer`s guide for more details.
 * Service user: The user that is created when a tenant subscribes to the microservice application.
 
 Any request to the platform must be done with the platform user. For microservices, it is best practice to switch context to the subscribed tenant's service user instead of using the tenant's platform user when doing a request from microservice to the Cumulocity platform.
@@ -78,13 +78,13 @@ The roles are provided in the microservice manifest.
 
 Microservices need to understand certain details about the specific Cumulocity cluster they are running in. For example, a microservice needs to know the endpoint address of the Cumulocity REST APIs. This information is provided in environment variables. The environment variables are injected by Cumulocity when the container is started.
 
-Refer to [Microservice container runtime reference](/guides/reference/microservice-runtime) in the Reference Guide for a list of provided environment variables.
+Refer to [Microservice container runtime reference](/guides/reference/microservice-runtime) in the Reference guide for a list of provided environment variables.
 
 ### <a name="packaging"></a>Packaging
 
 To deploy a microservice, it needs to be packaged as docker image. It requires a docker image.tar and cumulocity.json files packed into a zip file. For your convenience, Cumulocity provides a script. 
 
-Refer to [Microservice package reference](/guides/reference/microservice-package) in the Reference Guide in order to prepare and deploy the microservice package.
+Refer to [Microservice package reference](/guides/reference/microservice-package) in the Reference guide in order to prepare and deploy the microservice package.
 
 ### Microservice requirements
 
@@ -109,11 +109,11 @@ Cumulocity manages microservices by monitoring the microservice instance and sto
 
 For a microservice to be available it has to be deployed at the Cumulocity platform. This is done by uploading a zip file with the microservice package. A user cannot directly push to the docker registry. 
 
-For further information on deploying microservices to Cumulocity, refer to [Administration > Managing applications](/guides/users-guide/administration#applications) in the User`s Guide. 
+For further information on deploying microservices to Cumulocity, refer to [Administration > Managing applications](/guides/users-guide/administration#applications) in the User guide. 
 
 The microservice package must contain the manifest file and docker image of the microservice.
 
-Refer to [Microservice manifest reference](/guides/reference/microservice-manifest) in the Reference Guide for details on how to create a manifest file with applicable settings.
+Refer to [Microservice manifest reference](/guides/reference/microservice-manifest) in the Reference guide for details on how to create a manifest file with applicable settings.
 
 Refer to [Packaging](#packaging) above for details on how to prepare and deploy the microservice package.
 

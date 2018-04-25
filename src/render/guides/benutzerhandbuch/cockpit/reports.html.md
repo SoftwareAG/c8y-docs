@@ -49,52 +49,53 @@ Um einen Bericht zu löschen, öffnen Sie den entsprechenden Bericht, klicken Si
 
 Mit dieser Berichtsfunktion können Sie Berichte für den gesamten Mandanten im CSV- oder Excel-Format anfragen. Außerdem können Sie Filter für bestimmte Geräte, Zeiträume oder Felder setzen. Die Berichte enthalten so lediglich Informationen über die gefilterten Daten und aktivierte Felder. 
 
->**Info:** The maximum number of documents that can be exported into a single file is 1 million. If the number of documents for defined filters exceeds this limit, only first 1 million documents will be taken.
+>**Info:** Es können maximal 1 Millionen Dokumente in eine einzelne Datei exportiert werden. Wenn die Anzahl der Dokumente für die gesetzten Filter diesen Wert überschreitet, werden nur die ersten 1 Millionen Dokumente verwendet. 
 
-To work with Dashboard-Berichte please refer to [Working with dashboard reports](#reports).
+Informationen zu Dashboard-Berichten finden Sie unter [Arbeiten mit Dashboard-Berichten](#reports).
 
-To show all reports, click "Reporting" in the "Reports" menu.
+Klicken Sie "Berichtskonfigurationen" im Menü "Berichte", um alle Berichte anzuzeigen.
 
-In the "Reporting" page you will find a list displaying all reports with their names and time range.
+Die Seite "Berichtskonfigurationen" listet alle Berichte mit Namen und Zeitintervall auf.
 
-#### Adding reports
 
-To create a report, click **Add Report** in the top menu bar.
+#### Hinzufügen von Berichten
 
-Enter a name for the report and select the file type (CSV or xlsx). 
+Klicken Sie **Bericht hinzufügen** in der oberen Menüleiste, um einen neuen Bericht hinzuzufügen.
 
-**Filters**
+Geben Sie einen Namen für den Bericht an und wählen Sie das Dateiformat (CSV oder xlsx). 
 
-In the "Filter" section, you can select filters to request object- or time-specific reports.
+**Filter**
 
-<img src="/guides/images/users-guide/Cockpit/Cockpit_ReportFilters.png" name="Report filters" style="width:100%;"/>
+Im Bereich "Filter" können Sie Filter setzen, um Berichte für bestimmte Objekte oder Zeiträume anzufragen.
 
-To filter for a particular object, enter a name or property value into the search field and click the search icon. All matching devices or groups will be displayed below the "Value" field. Click a device to select it (highlighted in green). 
+<img src="/guides/images/benutzerhandbuch/cockpit-reporting-create.png" name="Filter für Berichte" style="width:100%;"/>
 
-The "Time range" filter can filter object reports for a specific time range. Select a time range from the dropdown field. This may be one of "Last year", "Last month", "Last week" or select "Custom" and enter a custom from/to range in the additional fields.
+Um nach bestimmten Objekten zu filtern, geben Sie einen Objektnamen oder einen Attributwert in das Suchfeld ein und klicken Sie auf das Lupensymbol. Es werden alle passenden Geräte oder Gruppen unter dem "Wert"-Feld angezeigt. Wählen Sie ein Gerät durch Klicken aus (grün hervorgehoben). 
 
-Select the checkbox in front of the filter name to enable the filter.
+Der Filter "Zeitintervall" filtert Objekte nach einem bestimmten Zeitintervall.  Wählen Sie ein Zeitintervall aus der Auswahlliste. Mögliche Intervalle sind "Letztes Jahr", "Letzter Monat", "Letzte Woche" oder wählen Sie "Benutzerdefiniert" und geben Sie Von/Bis-Werte in die entsprechenden Felder ein, um ein individuelles Intervall zu definieren.
 
-**Fields**
+Aktivieren Sie das Kontrollkästchen vor dem Filter, um diesen zu aktivieren.
 
-Apart from object- and time-specific filtering you may filter reports for specific fields:
+**Felder**
 
-- Alarms
-- Events
-- Managed objects
-- Measurements
+Neben dem Filtern nach bestimmten Objekten oder Zeiträumen können Berichte nach bestimmten Feldern gefiltert werden:
 
-Use the slider to enable/disable a field.
+- Alarme
+- Ereignisse
+- Objekte
+- Messwerte
 
-<img src="/guides/images/users-guide/Cockpit/Cockpit_ReportFields.png" name="Report fields" style="width:100%;"/>
+Aktivieren bzw. deaktivieren Sie diese Felder mit dem Regler.
 
-When a field is enabled, predefined or empty properties can be added. 
+Wenn ein Feld aktiviert ist, können vordefinierte oder leere Attribute hinzugefügt werden.
 
-Click **Add** to add empty properties. To enter a label or path, click "Column" or "Path" and edit the field. For example, if you enable the "Alarms" field you could enter "Severity" in column and path to receive reports only for alarm severities.
+<img src="/guides/images/benutzerhandbuch/cockpit-report-fields.png" name="Report fields" style="width:100%;"/>
 
-Click **Add predefined**, to add predefined properties. Simply select the desired properties from the list and click **Select**. Use the search field at the top to search for a specific property.
+Klicken Sie **Hinzufügen**, um ein leeres Feld hinzuzufügen. Klicken Sie "Spalte" oder "Pfad", um eine Spalte und einen Pfad einzugeben. Wenn Sie beispielsweise das "Alarm"-Feld aktivieren, können Sie etwa "Schweregrad" als Spalte und "severity" als Pfad eingeben, um nur Berichte zu Alarm-Schweregraden zu erhalten.
 
-<img src="/guides/images/users-guide/Cockpit/Cockpit_ReportsSelectProperties.png" name="Select properties" style="width:75%;"/>
+Klicken Sie **Vordefiniertes Attribut hinzufügen**, um ein vordefiniertes Attribut hinzuzufügen. Markieren Sie die gewünschten Attribute in der angezeigten Liste und klicken Sie **Auswählen**. Verwenden Sie das Suchfeld, um die Liste nach bestimmten Eigenschaften zu filtern.
+
+<img src="/guides/images/benutzerhandbuch/cockpit-reports-properties.png" name="Select properties" style="width:75%;"/>
 
 If you have at least one field that is not originating from the "Add predefined" list but defined as a custom property, then you need to set up at least one property for the custom values to appear in the export. 
 
@@ -136,128 +137,32 @@ The Smart Rule will be added to the report details.
 <img src="/guides/images/users-guide/Cockpit/Cockpit_ReportSmartRule.png" name="Smart rule" style="width:100%;"/>
 
 
-#### Exporting reports
+#### Exportieren von Berichten
 
-To export a report to a CSV or xlsx file, select the checkbox in front of the report in the list and at the left of the top menu bar click **Export**.
+Um einen Bericht in eine CSV-oder Excel-Datei zu exportieren, aktivieren Sie das Kontrollkästchen vor dem Bericht in der Liste und klicken Sie links in der oberen Menüleiste **Exportieren**.  
 
-You will receive an e-mail containing links to each export file.
+Sie erhalten eine E-Mail mit einem Link zu jeder Export-Datei. 
 
-Standard time properties of documents (like time or creationTime in alarms) are exported to
+Standard-Zeitattribute von Dokumenten (wie "time" oder "creationTime" in Alarmen) werden in folgende Formate exportiert:
 
-* xlsx file in the format: 03/13/2016 00:00:24
-* CSV file in the format: 2016-03-13T00:01:24.000Z
+* Excel-Datei: 03/13/2016 00:00:24
+* CSV-Datei: 2016-03-13T00:01:24.000Z
 
-Only CSV time contains milliseconds and timezone.
+Nur im CSV-Format sind Millisekunden und Zeitzonen enthalten.
 
-#### Editing reports
+#### Bearbeiten von Berichten
 
-To edit a report, just click the respective row or click the menu icon at the end of the row and from the context menu select **Edit**.
+Um einen Bericht zu bearbeiten, klicken Sie auf die entsprechende Zeile in der Liste oder öffnen Sie das Kontextmenü für den Bericht über das Menüsymbol und klicken Sie **Bearbeiten**.
 
-#### Duplicating reports
+#### Duplizieren von Berichten
 
-To duplicate a report, click the menu icon at the end of the row and from the context menu select **Clone**. Modify at least the name and click **Save & close** to save the report and return to the report list.
+Um einen Bericht zu duplizieren, öffnen Sie das Kontextmenü für den Bericht über das Menüsymbol und klicken Sie **Duplizieren**. Ändern Sie zumindest den Namen und klicken Sie **Speichern & schließen**, um den neuen Bericht zu speichern und zur Berichtliste zurückzukehren.
 
-#### Removing reports
+#### Löschen von Berichten
 
-To remove a report, click the menu icon at the end of the row and from the context menu select **Remove**.
-Es gibt zwei Arten von Berichten in der Cockpit-Anwendung. Dashboard-Berichte ermöglichen es Ihnen, Anwendungen, Alarme, Assets, Ereignisse und viele andere Widgets zu verfolgen. Die zweite Art von Bericht ist der [Datenexport](#reporting) in csv- oder xlsx-Dateien.
-
+Um einen Bericht zu löschen, öffnen Sie das Kontextmenü für den Bericht über das Menüsymbol und klicken Sie **Löschen**.
 
 
-## <a name="reporting"></a>Daten exportieren mit Berichten
 
-Mit der Funktion "Bericht erstellen" können Sie csv- oder xlsx-Reports für den gesamten Mandanten anfordern. Zusätzlich können Sie * Filter * nach bestimmten Geräten, Zeitbereichen oder * Felder * auswählen. Die Berichte enthalten Informationen zu allen angegebenen "Filtern" und aktivierten "Feldern". Die maximale Anzahl von Dokumenten, die in eine einzelne xlsx-Datei exportiert werden können, beträgt 1 Million. Wenn die Anzahl der Dokumente für definierte "Filter" den Grenzwert überschreitet, enthält das Ergebnis nur 1 Million Dokumente.
 
-Informationen zum Verwenden von Dashboard-Berichten finden Sie unter [Arbeiten mit Dashboard-Berichten](#reports).
-
-Um alle Berichte anzuzeigen, wählen Sie "Berichte" und klicken Sie auf "Bericht erstellen".
-
-Wenn ein Bericht erstellt wurde, können Sie ihn duplizieren. Dazu gehen Sie in der Berichtskonfiguration zum gewünschten Bericht und klicken auf "Duplizieren" am Ende der Reihe. Ein neues Fenster öffnet sich, in dem alle Daten des aktuellen Berichts dupliziert werden. Sie können Änderungen machen, wenn Sie es wünschen. Zum Beenden drücken Sie die Schaltfläche "Speichern".
-
-### Hinzufügen von Berichten
-
-Um weitere Berichte zu erstellen, klicken Sie auf "Bericht hinzufügen".
-
-- Geben Sie den Namen des Berichts ein.
-- Wählen Sie aus, ob der Dateityp entweder "csv" oder "Excel" sein soll.
-- Fügen Sie [Filter](#filters) hinzu, um Objekt- oder zeitspezifische Berichte anzufordern.
-- Wählen Sie [Felder](#fields) des Berichts aus.
-- Klicken Sie auf "Speichern", um den Vorgang abzuschließen.
-
-![Add Reports](/guides/images/users-guide/addreports.png)
-
-<a name="filters"> **Filter** </a>
-
-Berichte können auf bestimmte Objekte oder einen Zeitbereich gefiltert werden. Um ein zu exportierendes Objekt auszuwählen, navigieren Sie zuerst zur Suchleiste "Objekt zum Exportieren" im Bereich "Filter". Bestimmte Geräte oder Gruppen können durch Eingabe ihres Namens oder Eigenschaftswerts in die Suchleiste ausgewählt werden. Wenn Sie auf die Schaltfläche "Suchen" klicken, sucht das Cockpit nach einem passenden Eintrag in Ihrer Gerätebibliothek. Nachdem alle passenden Geräte gefunden wurden, werden sie unter der Suchleiste angezeigt. Um ein Gerät auszuwählen, klicken Sie einfach auf seinen Namen, und es wird grün hervorgehoben.
-
-![Object filter](/guides/images/users-guide/objectfilter.png)
-
-Zusätzliche Filter wie "Zeitbereich" können aktiviert werden. Sie haben die Möglichkeit, Objektberichte zu "Letztes Jahr", "Letzter Monat", "Letzte Woche" zu filtern oder einfach einen benutzerdefinierten Zeitraum einzugeben. Um den Zeitbereich zu wählen, klicken Sie auf das Scroll-Menü und wählen Sie den gewünschten Zeitraum. Wenn Sie den Zeitbereich anpassen möchten, erscheinen zwei kleine Datumsfelder, um einen Zeitbereich auszuwählen.
-
-![Time range](/guides/images/users-guide/timerange.png)
-
-Um Filter zu aktivieren, klicken Sie auf das Kontrollkästchen unter "Aktiviert".
-
-<a name="fields"> **Felder** </a>
-
-Um Berichte zu bearbeiten, können verschiedene Felder ausgewählt werden. Wenn Sie z. B. "Alarme" und "Ereignisse" auswählen, filtern Sie die Berichte nur auf diese beiden Felder. Insgesamt gibt es vier Felder, die Sie wählen können.
-
-- Alarme
-- Ereignisse
-- Verwaltetes Objekt
-- Messungen
-
-Um ein Feld zu aktivieren, klicken Sie einfach auf den Namen des Feldes.
-
-![Fields](/guides/images/users-guide/enabledordisabledfields.png)
-
-Wenn ein bestimmtes Feld aktiviert ist, können vordefinierte oder neue Eigenschaften hinzugefügt werden. Wenn Sie leere Eigenschaften hinzufügen möchten, klicken Sie auf "Hinzufügen". Um Label oder Pfad einzugeben, klicken Sie auf "Spalte" oder "Pfad" in der roten Zeile. Wenn Sie beispielsweise das Feld "Alarme" aktivieren, können Sie in Spalte und Pfad den Wert "Schweregrad" eingeben, um einen Bericht nur für Alarmschweregrade zu erhalten.
-
-Wenn Sie ein Feld im Bereich "Felder" haben, das nicht aus der Liste "Vordefinierte Liste hinzufügen", sondern als benutzerdefinierte Eigenschaft definiert ist, muss mindestens eine Eigenschaft für den Export für benutzerdefinierte Werte eingerichtet werden, um auf der exportierten Excel-Liste zu erscheinen. Wenn für einen Bericht beispielsweise diese vire Felder definiert sind: Zeit, Gerätename, Typ und c8y_SpeedMeasurement.speed.value, dann sind die ersten drei vordefinierte Eigenschaften und die letzte eine benutzerdefinierte Eigenschaft. Wenn eine Messung für den Export keine benutzerdefinierte Eigenschaft c8y_SpeedMeasurement.speed.value hat, wird sie nicht in der Excel-Liste angezeigt.
-
-Wenn Ihr Feld ein gültiges.key.with.dot ist, dann verweisen Sie es als ['Fragment.key.with.dot'] in dem Pfad, z.B. ['Fragment.key.with.dot'] serie.value
-
-Um vordefinierte Eigenschaften hinzuzufügen, klicken Sie auf "Vordefinierte hinzufügen".
-
-Um vordefinierte Eigenschaften auszuwählen, klicken Sie auf das entsprechende Kontrollkästchen unter "Anzeigen". Nachdem die gewünschten Eigenschaften ausgewählt wurden, klicken Sie auf "Auswählen".
-
-![Select](/guides/images/users-guide/select.png)
-
-Um eine bestimmte Eigenschaft effizient zu suchen, können Sie das Suchfeld verwenden.
-
-Wenn das Feld "Messungen" aktiviert wurde, können Sie auch "Von Datenpunkt hinzufügen" wählen.
-
-![Add from datapoint](/guides/images/users-guide/addfromdatapoint.png)
-
-Um einen Datenpunkt zu wählen, klicken Sie auf das Kontrollkästchen. Wenn die Auswahl abgeschlossen ist, klicken Sie auf "Hinzufügen".
-
-Das "Suchfeld" kann auch für eine einfachere Handhabung genutzt werden. Geben Sie im Feld "Suchfeld" den Namen oder Wert der gewünschten Geräte ein und klicken Sie auf "Senden". Alle übereinstimmenden Einträge werden angezeigt.
-
-![Add datapoint](/guides/images/users-guide/adddatapoint.png)
-
-### Stammdaten exportieren in csv- oder xlsx-Dateien
-
-Um "Stammdaten" in csv- oder xlsx-Dateien zu exportieren, navigieren Sie zu "Bericht erstellen" auf der Registerkarte "Bericht".
-
-- Wählen Sie die gewünschten Dateien aus, die Sie exportieren möchten, indem Sie auf das entsprechende Kontrollkästchen klicken.
-- Klicken Sie auf "Exportieren".
-
-![Exporting](/guides/images/users-guide/exportinventorydata.png)
-
-Sie erhalten eine E-Mail mit den Links zu jeder Datei.
-
-Die Standardzeit-Eigenschaften von Dokumenten (z. B. Zeit oder Erstellungszeit bei Alarmen) werden exportiert:
-
-* als xlsx-Datei im Format: 03/13/2016 00:00:24
-* als csv-Datei im Format: 2016-03-13T00:01:24.000Z
-
-Nur csv-Zeit enthält Millisekunden und Zeitzone.
-
-### Berichte editieren
-
-Um Berichte zu editieren genügt es, sie anzuklicken und die Veränderungen zu speichern.
-
-### Berichte löschen
-
-Um Berichte über den Namen des Berichts zu entfernen, klicken Sie auf die Schaltfläche "X".
 

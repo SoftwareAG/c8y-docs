@@ -15,7 +15,7 @@ Web applications are HTML5 single page applications, that appear in the Cumuloci
 
 Microservices are docker containers, hosted by Cumulocity and exposing a REST API.
 
-Applications regardless of form are identified by a so-called *application key*. The application key enables Cumulocity to associate a REST request from an application with the particular application, see the section on "Application Management" in the [Reference Guide](guides/reference/rest-implementation)).
+Applications regardless of form are identified by a so-called *application key*. The application key enables Cumulocity to associate a REST request from an application with the particular application, see the section on "Application Management" in the [Reference Guide](/guides/reference/applications).
 
 Super tenants (management tenants or enterprise edition tenants) can subscribe subtenants to Cumulocity applications deployed by them. This provides a basic application marketplace. 
 
@@ -129,7 +129,7 @@ The roles are provided in the microservice manifest.
 
 Microservices need to understand certain details about the specific Cumulocity cluster they are running in. For example, a microservice needs to know the endpoint address of the Cumulocity REST APIs. This information is provided in environment variables. The environment variables are injected by Cumulocity when the container is started.
 
-Refer to [Microservice container runtime reference](guides/reference/microservice-runtime) in the Reference Guide for a list of provided environment variables.
+Refer to [Microservice container runtime reference](/guides/reference/microservice-runtime) in the Reference Guide for a list of provided environment variables.
 
 ### <a name="packaging"></a>Packaging
 

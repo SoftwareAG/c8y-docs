@@ -63,10 +63,10 @@ In the properties library, accessible from the "Settings" menu, custom propertie
 With custom properties, you can extend the data model of Cumulocity built-in objects. You may create the following custom values:
 
 - Custom inventory properties are used to extend the inventory data model. They can be used in the “Asset table” and “Asset properties” widgets.
-<br> 
-**Info**: Custom inventory properties are visible to all authenticated users of the tenant, regardless of their inventory role permission.
 - Custom tenant properties are available during tenant creation. The custom properties can be edited under “Subtenants” in the “Custom properties” tab of each tenant. Additionally, these properties can be viewed and exported in the “Usage statistics”.
 - Custom alarm and event properties can be used as custom fields which can be added to your reports and will be available in the “Reporting” page in the Cockpit application.
+
+>**Info**: Custom properties are visible to all authenticated users of the tenant, regardless of their inventory role permission.
 
 **Adding properties to the properties library**
 

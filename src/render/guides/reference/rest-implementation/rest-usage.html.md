@@ -74,4 +74,6 @@ If a user does not have a global role for reading data from the API resource but
 
 -   The property "currentPage" of the response does not contain the page number but the offset of the next element not yet processed by the querying mechanism.
 
+-   The query parameter "withTotalPages=true" has no effect and value of "totalPages" property is always null.
+
 The above behavior results from the fact that the querying mechanism is iterating maximally over 10 * max(pageSize, 100) documents per request and stops though the full page of data accessible for the user could not be collected. When the next page is requested the querying mechanism starts the iteration where it finished the previous time. 

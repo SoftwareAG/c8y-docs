@@ -14,7 +14,7 @@ You can use [Software AG Designer](http://www.apamacommunity.com/downloads/) to 
 *   Cumulocity Utilities
 *   HTTP Client - JSON with generic request/response event definitions
 
-Also add the follwoing standard bundle:
+Also add the following standard bundle:
 
 *   Time Format
   

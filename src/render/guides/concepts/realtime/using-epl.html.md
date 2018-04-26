@@ -16,7 +16,7 @@ As an example, the following statement listens for new temperature sensor readin
 	 on all Measurement(type = "c8y_TemperatureMeasurement") as e {
               if e.measurements.getOrDefault("c8y_TemperatureMeasurement").getOrDefault("T").value > 100.0 {
                   send Alarm("", "c8y_TemperatureAlert", e.source, e.time, "Temperature too high",
-                      "CRITICAL", "", 1, new dictionary<string,any>) to Alarm.CHANNEL;
+                      "CRITICAL", "", 1, new dictionary<string,any>) to Event.CHANNEL;
               }
     }
 	

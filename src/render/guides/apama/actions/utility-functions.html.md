@@ -47,18 +47,25 @@ the <span style="color: rgb(0,0,0);">Util.</span>inMaintenaceMode() function is 
 
 Example:
 
-	monitor.subscribe(FindManagedObjectResponse.CHANNEL);
-	on all Measurement() as m {
-		integer reqId := integer.getUnique();
-		send FindManagedObject(reqId, m.source, new dictionary&#60;string,string>) to FindManagedObject.CHANNEL;
-		on FindManagedObjectResponse(reqId = reqId, id = m.source) as d and not FindManagedObjectResponseAck(reqId = reqId) {
-			if not Util.inMaintenanceMode(d.managedObject) {
-				send Event("", "c8y_Alarm", m.source, currentTime, "Received measurement from active device", new dictionary&#60;string,any>) to Event.CHANNEL;
+
+		monitor ExampleMonitor{
+		action onload() {
+			monitor.subscribe(FindManagedObjectResponse.CHANNEL);
+			on all Measurement() as m {
+			    integer reqId := integer.getUnique();
+			    send FindManagedObject(reqId, m.source, new dictionary<string,string>) to FindManagedObject.CHANNEL;
+			    on FindManagedObjectResponse(reqId = reqId, id = m.source) as d and not FindManagedObjectResponseAck(reqId = reqId) {
+			        if not Util.inMaintenanceMode(d.managedObject) {
+			            send Event("", "c8y_Alarm", m.source, currentTime, "Received measurement from active device", new dictionary<string,any>) to Event.CHANNEL;
+			        }
+			    }
 			}
+			
+			
 		}
+	
+	
 	}
-
-
 ### replacePlaceholders
 
 To build strings, you can use concatenation:

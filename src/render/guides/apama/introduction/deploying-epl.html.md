@@ -5,16 +5,47 @@ layout: redirect
 ---
 
 
-You can use [Software AG Designer](http://www.apamacommunity.com/downloads/) to develop your applications. Create an Apama project in Software AG Designer and add the following adapters:
+You can use [Software AG Designer](http://www.apamacommunity.com/downloads/) to develop your applications. Create an Apama project in Software AG Designer and add the following connectivity bundles:
 
-*   Apama Connectivity for Cumulocity IoT
+*   Apama Connectivity with Device Integration Platform 
+*   Apama Connectivity with Device  Integration Platform Event Definitions
+*   Automatic onApplicationInitialized 
+*   Cumulocity IoT (Cumulocity IoT connectivity plug-in)
+*   Cumulocity Utilities
 *   HTTP Client - JSON with generic request/response event definitions
 
-You will need to configure the Cumulocity properties with your Cumulocity credentials. Also add the bundles:
+Also add the follwoing standard bundle:
 
-Time Format
-Cumulocity Utilities
-Automatic onApplicationInitialized
+*  Time Format
+  
+The selection of the connectivity bundles in Software AG Designer should look as follows:
+
+<img src="/guides/images/apama/connectivity_bundles.png" alt="Logout menu" style="max-width: 100%">
+
+Similarly check the corresponding item from the standard bundles to add 'Time Format' bundle.
+
+
+You will need to provide your Cumulocity credentials in the configuration files, thus in your Apama project go to config > connectivity -> CumulocityIoT and configure the the credentials as follows in `CumulocityIoT.properties` file :
+
+```
+CUMULOCITY_USERNAME=user@example.com
+CUMULOCITY_TENANT=exampleTenant
+CUMULOCITY_PASSWORD=examplePassword
+CUMULOCITY_APPKEY=apamaAppKey
+
+```
+
+
+Analogously provide the credentials in the file `DeviceIntegrationPlatform-credentials.properties` (can be found in the `config/connectivity` folder as well) as follows:
+
+```
+DIP_USERNAME=user@example.com
+DIP_TENANT=exampleTenant
+DIP_PASSWORD= examplePassword
+DIP_APPKEY= apamaAppKey
+
+```
+Note, you need to create an application in Cumulocity to get a value for `CUMULOCITY_APPKEY`or `DIP_APPKEY`: Login to Cumulocity and go to Adminstration. Select Applications > Own Applications. Click Create Application and use `APPLICATION KEY` value in the corresponding files.
 
 Develop and test your EPL in Software AG Designer.
 

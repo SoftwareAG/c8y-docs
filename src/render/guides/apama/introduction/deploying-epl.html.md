@@ -22,7 +22,8 @@ The selection of the connectivity bundles in Software AG Designer should look as
 
 <img src="/guides/images/apama/connectivity_bundles.png" alt="Connectivity bundles" style="max-width: 100%">
 
-Similarly check the corresponding item from the standard bundles to add 'Time Format' bundle.
+Similarly, check the corresponding item from the standard bundles to add the "Time Format" bundle.
+
 
 
 You will need to provide your Cumulocity credentials in the configuration files, thus in your Apama project go to config > connectivity -> CumulocityIoT and configure the the credentials as follows in `CumulocityIoT.properties` file :

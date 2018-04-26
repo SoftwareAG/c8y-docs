@@ -26,7 +26,7 @@ Similarly, check the corresponding item from the standard bundles to add the "Ti
 
 
 
-You will need to provide your Cumulocity credentials in the configuration files, thus in your Apama project go to config > connectivity -> CumulocityIoT and configure the the credentials as follows in `CumulocityIoT.properties` file :
+You will need to provide your Cumulocity credentials in the configuration files, thus in your Apama project go to config > connectivity -> CumulocityIoT and configure the credentials as follows in `CumulocityIoT.properties` file:
 
 ```
 CUMULOCITY_USERNAME=user@example.com

@@ -4,7 +4,6 @@ title: Verwalten der Datenhaltung
 layout: redirect
 ---
 
-<a name="retention"></a>
 ### <a name="retention-rules"></a>Datenhaltungsregeln
 
 Mit Datenhaltungsregeln können Sie steuern, wie lange Daten in Ihrem Konto gespeichert bleiben. Vielleicht möchten Sie Messwerte 90 Tage speichern, Alarme aber bereits nach 10 Tagen löschen. Standardmäßig werden alle historischen Daten nach 60 Tage gelöscht (konfigurierbar in den Systemeinstellungen).
@@ -13,17 +12,17 @@ Datenhaltungsregeln werden üblicherweise während der Nacht ausgeführt. Wenn S
 
 Klicken Sie "Datenhaltungsregeln" im Menü "Verwaltung", um eine Liste aller Datenhaltungsregeln in Ihrem Konto anzuzeigen.
 
-![Datenhaltungsregeln](/guides/images/users-guide/Administration/Admin_RetentionRules.png)
+<img src="/guides/images/benutzerhandbuch/admin-retention-rules.png" alt="Datenhaltungsregeln" style="max-width: 100%">
 
 Für jede Regel wird der Name, Details zu den Daten, die gelöscht werden sollen (Fragmenttyp, Typ und Quelle, siehe unten) und die maximale Anzahl an Tagen angezeigt.
 
 Das Sternsymbol ("*") zeigt an, dass alle Daten, unabhängig vom jeweiligen Wert, entfernt werden.
 
-**Erstellen von Datenhaltungsregeln**
+**Hinzufügen von Datenhaltungsregeln**
 
 Um eine Datenhaltungsregel hinzuzufügen, klicken Sie **Regel hinzufügen** in der oberen Menüleiste.
 
-![Datenhaltungsregel hinzufügen](/guides/images/benutzerhandbuch/addrulesde.png)
+<img src="/guides/images/benutzerhandbuch/admin-retention-rule-add.png" alt="Datenhaltungsregel hinzufügen" style="max-width: 50%">
 
 > **Info:** Standardmäßig ist in allen Feldern außer im Feld "Maximales Alter" ein Sternsymbol ("*") gesetzt, um alle Werte einzuschließen.
 
@@ -47,7 +46,7 @@ Die angezeigten Dateien können aus verschiedenen Quellen stammen. Es kann sich 
 
 Für jede Datei wird der Name, sein Eigentümer, der Dateityp (z. B. image/bmp, text/csv), die Dateigröße und das Datum der letzten Aktualisierung angezeigt.
 
-![Dateiablage](/guides/images/benutzerhandbuch/Admin_FileRepository.png)
+![Dateiablage](/guides/images/benutzerhandbuch/admin-file-repository.png)
 
 Um eine Datei von Ihrem Computer hochzuladen, klicken Sie in der oberen Menüleiste auf **Datei hochladen**.
 

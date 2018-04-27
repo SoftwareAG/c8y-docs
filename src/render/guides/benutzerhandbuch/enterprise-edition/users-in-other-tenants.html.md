@@ -23,9 +23,9 @@ Damit ein Benutzer des Management-Mandanten für Benutzer in anderen Mandanten S
 
 **Vom Benutzer erteilte Berechtigung**
 
-Benutzer können Support anfragen und einem Benutzer des Management-Mandanten erlauben, sich an ihrem Konto anzumelden. Klicken Sie auf die Schaltfläche **Benutzer** rechts in der oberen Leiste und wählen Sie im Kontextmenü **Supportanfrage stellen**. Klicken Sie zum Bestätigen **Ok**. Der Support ist für 24 Stunden aktiv.
+Benutzer können Support anfragen und einem Benutzer des Management-Mandanten erlauben, sich an ihrem Konto anzumelden. Klicken Sie auf die **Benutzer**-Schaltfläche rechts in der oberen Leiste und wählen Sie im Kontextmenü **Supportanfrage stellen**. Füllen Sie im folgenden Fenster das Formular aus.
 
-![Support ermöglichen](/guides/images/users-guide/enablesupport.png)
+<img src="/guides/images/benutzerhandbuch/ee-support-request.png" alt="Support ermöglichen" style="max-width: 50%">
 
 ### Melden Sie sich als Supportbenutzer an.
 

@@ -9,7 +9,7 @@ Cumulocity enthält eine Regel-Engine, um Daten in Echtzeit zu analysieren und A
 Zum Erstellen von Regeln enthält die Cockpit-Anwendung einen "Smart Rule Builder". Mit dem Smart Rule Builder können Regeln aus Vorlagen erstellt werden. Diese Regeln werden als intelligente Regeln ("Smart Rules") bezeichnet. Die Vorlagen werden als intelligente Regelvorlagen ("Smart Rules Template") bezeichnet.
 
 
-Smart Rules werden parametriert. Es gibt zwei Quellen für Parameter:
+Smart Rules werden parametrisiert. Es gibt zwei Quellen für Parameter:
 
 **Regelparameter** werden vom Benutzer beim Erstellen einer Smart Rule aus einer Vorlage bereitgestellt. Beispiele sind E-Mail-Adressen und Alarmtexte.
 

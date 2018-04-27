@@ -12,9 +12,7 @@ Mit dem Data Broker können Daten gezielt mit anderen Mandanten geteilt werden. 
 *   Messwerte,
 *   Kommandos.
 
-Navigieren Sie zur Seite "Datenkonnektor", wenn Sie anderen Mandanten Daten senden möchten. Navigieren Sie zur Seite "Datenabonnements", wenn Sie von anderen Mandanten Daten erhalten möchten.
-
-![Data Broker Menü](/guides/images/users-guide/data-broker-on-navigator.PNG)
+Navigieren Sie zur Seite "Datenkonnektor" im Menü "Data Broker", wenn Sie anderen Mandanten Daten senden möchten. Navigieren Sie zur Seite "Datenabonnements", wenn Sie von anderen Mandanten Daten erhalten möchten.
 
 > **Info**: Geräte, die über den Data Broker weitergeleitet werden, werden wie normale Geräte im Zielmandanten abgerechnet.
 
@@ -26,7 +24,7 @@ Ein Datenkonnektor beschreibt die Daten, die Sie zu einem Zielmandanten senden m
 
 Auf der Seite "Datenkonnektor" können Sie bestehende Datenkonnektoren verwalten und neue anlegen. Klicken Sie "Datenkonnektor", um eine Liste mit allen aktuell definierten Datenkonnektoren mit ihrem jeweiligen Status anzuzeigen.
 
-![Data Broker Konnektorenliste](/guides/images/users-guide/data-broker-connectors-list.PNG)
+![Datenkonnektor](/guides/images/benutzerhandbuch/ee-data-connector.PNG)
 
 Für jeden Datenkonnektor wird die folgenden Information bereitgestellt:
 
@@ -46,7 +44,7 @@ Verwenden Sie den Regler, um das Weiterleiten von Daten an den Zielmandanten zu 
 
 Klicken Sie **Datenkonnektor hinzufügen**in der oberen Menüleiste, um einen neuen Datenkonnektor zu erstellen.
 
-![Konnektor bearbeiten](/guides/images/users-guide/data-broker-edit-connector.PNG)
+![Konnektor bearbeiten](/guides/images/benutzerhandbuch/ee-data-connector-add.PNG)
 
 Stellen Sie folgende Informationen bereit, um einen Datenkonnektor zu bearbeiten:
 
@@ -140,7 +138,7 @@ Jeder Datenfilter enthält die folgenden Informationen:
 
 <td style="text-align: left">Zu filternde Fragmente</td>
 
-<td style="text-align: left">Fragmente,die in einem Gerät vorhanden sein müssen, damit dieses weitergeleitet wird.</td>
+<td style="text-align: left">Fragmente, die in einem Gerät vorhanden sein müssen, damit dieses weitergeleitet wird.</td>
 
 </tr>
 
@@ -192,7 +190,7 @@ Auf der Seite "Datenabonnements" können Sie bestehende Datenabonnements verwalt
 
 Klicken Sie "Datenabonnements", um eine Liste mit allen aktuell zu Ihrem Mandanten weitergeleiteten Daten anzuzeigen.
 
-![Datenabonnements](/guides/images/users-guide/Administration/Admin_Subscriptions.png)
+![Datenabonnements](/guides/images/benutzerhandbuch/ee-data-subscription.png)
 
 Für jedes Abonnement wird der Name, der Zielmandant und der Status (aktiviert oder deaktiviert) auf einer Karte bereitgestellt.
 
@@ -209,4 +207,4 @@ Um das Weiterleiten von Daten ganz zu beenden und den Datenkonnektor zu entferne
 
 Navigieren Sie nun zur Device Management- oder Cockpit-Anwendung. Dort gibt es eine neue "virtuelle Gruppe" mit einem speziellen Symbol (siehe Abbildung unten), die die weitergeleiteten Geräte anzeigt. Diese Gruppe hat denselben Namen wie das Abonnement. Geräte werden auf der Empfängerseite verzögert erstellt, sobald sie, nach Einrichten eines aktiven Abonnements, das erste mal Daten senden.
 
-![Data Broker-Gruppe in Cockpit-Anwendung](/guides/images/users-guide/data-broker-group-created.PNG)
+![Data Broker-Gruppe in Cockpit-Anwendung](/guides/images/benutzerhandbuch/ee-data-broker-group.PNG)

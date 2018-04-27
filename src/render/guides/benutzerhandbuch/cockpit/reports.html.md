@@ -97,44 +97,44 @@ Klicken Sie **Vordefiniertes Attribut hinzufügen**, um ein vordefiniertes Attri
 
 <img src="/guides/images/benutzerhandbuch/cockpit-reports-properties.png" name="Select properties" style="width:75%;"/>
 
-If you have at least one field that is not originating from the "Add predefined" list but defined as a custom property, then you need to set up at least one property for the custom values to appear in the export. 
+Wenn Sie mindestens ein Feld haben, dass als eigenes Attribut definiert wurde und nicht aus der Liste der vordefinierten Attribute stammt, dann muss für ein Objekt mindestens dieses Attribut gesetzt sein, damit die entsprechenden Werte im Export erscheinen. 
 
-Example:
-A report has 4 fields defined: time range, device name, type and c8y_SpeedMeasurement.speed.value. The first 3 are predefined properties, while the last one is a custom property. If any measurement for export does not have a custom property c8y_SpeedMeasurement.speed.value, then it will not appear in the export file.
+Beispiel:
+Ein Bericht hat 4 definierte Felder: Zeitintervall, Gerätename, Typ und "c8y_SpeedMeasurement.speed.value". Die ersten 3 sind vordefinierte Attribute, während es sich bei dem letzten um ein benutzerdefiniertes Attribut handelt. Wenn ein zu exportierender Messwert kein Attribut "c8y_SpeedMeasurement.speed.value" hat, wird er nicht im Bericht erscheinen.
 
-If your field is a valid.key.with.dot then refer to it as ['fragment.key.with.dot'] in the path, e.g.: ['fragment.key.with.dot'].series.value
+Wenn Ihr Attribut ein "valid.key.with.dot" ist, dann verweisen Sie im Pfad darauf als ['fragment.key.with.dot'], z. B.: ['fragment.key.with.dot'].series.value
 
-In case of "Measurements" enabled, you can also choose **Add from data point**. For details on how to add data points see [Adding data points](#add-data-points).
+Wenn Sie "Messwerte" aktiviert haben, sehen Sie die zusätzliche Option **Datenpunkt auswählen**. Nähere Informationen zum Hinzufügen von Datenpunkten finden Sie in [Hinzufügen von Datenpunkten](#add-data-points).
 
-#### <a name="schedule-export"></a>Scheduling exports
+#### <a name="schedule-export"></a>Terminieren von Exports
 
-To schedule the export to a CSV or Excel file to any point in time, click the menu icon at the end of the row and from the context menu select **Schedule export**. In the upcoming window you can customize the Smart Rule "On timer send export via email" according to your needs.
+Um einen Export in eine Datei für einen bestimmten Zeitpunkt zu planen, öffnen Sie das Kontextmenü für den entsprechenden Bericht und klicken Sie **Export planen**. Im folgenden Fenster können Sie die Smart Rule "On timer send export via email" entsprechend einrichten.
 
-<img src="/guides/images/users-guide/export_schedule_frequency.png" name="Exporting" style="width:75%;"/>
+<img src="/guides/images/benutzerhandbuch/cockpit-report-schedule-export.png" name="Exporting" style="width:75%;"/>
 
-**1 - Rule name**
+**1 - Name der Regel**
 
-The rule name is pre-filled, providing the name of the report, but may be modified.
+Der Name der Regel ist mit dem Namen des Berichts vorausgefüllt, kann aber geändert werden.
 
-**2 - Report & frequency**
+**2 - Bericht & Häufigkeit**
 
- Define the frequency for sending the report, i.e. every hour, day, week, month or year. Depending on the frequency selected, provide additional timing information. For example, if you have selected "every month", provide the day of month, hour and minute.
+Bestimmen Sie die Frequenz für das Senden des Berichts, z. B. stündlich, täglich, wöchentlich der monatlich. Je nach ausgewählter Frequenz können Sie weitere Optionen für den Zeitpunkt angeben. Haben Sie etwa "Monat" gewählt, können Sie den Tag des Monats und die Uhrzeit festlegen.
 
-**3 - Send email:**
+**3 - E-Mail senden:**
 
-Complete the email information. 
+Vervollständigen Sie die E-Mail-Informationen. 
 
-In the "Send to" field, provide the email address of the receiver. This field is mandatory. Optionally, you can provide email addresses for sending CC or BCC and add the email address of the sender for reply.
+Geben Sie im Feld "Senden an" die E-Mail-Adresse des Empfängers ein. Diese Angabe ist obligatorisch. Optional können Sie unter "CC" und "BCC" weitere E-Mail-Adressen eingeben oder die E-Mail-Adresse des Senders für eine mögliche Antwort eingeben.
 
-Specify the subject of the email. This field is pre-filled, but may be modified.
+Geben Sie den Betreff der E-Mail ein. Diese Feld ist vorausgefüllt, kann aber bearbeitet werden.
 
-Enter the actual email message. Available placeholders are {host}, {binaryId}. The default value is "File with exported data can be downloaded from {host}/inventory/binaries/{binaryId}". 
+Geben Sie die eigentliche E-Mail-Nachricht ein. Verfügbare Platzhalter sind {host}, {binaryId}. Der Standardeintrag lautet "Die exportierte Datei kann unter {host}/inventory/binaries/{binaryId} heruntergeladen werden". 
 
-Click **Create** to create the customized Smart Rule "On timer send export via email".
+Klicken Sie **Erstellen**, um die benutzerdefinierte Smart Rule "Bei Timer-Ablauf Export per E-Mail senden".
 
-The Smart Rule will be added to the report details.
+Die Smart Rule wird zu den Berichtsdetails hinzugefügt.
 
-<img src="/guides/images/users-guide/Cockpit/Cockpit_ReportSmartRule.png" name="Smart rule" style="width:100%;"/>
+<img src="/guides/images/benutzerhandbuch/cockpit-report-smartrule.png" name="Smart rule" style="width:75;"/>
 
 
 #### Exportieren von Berichten
@@ -161,8 +161,3 @@ Um einen Bericht zu duplizieren, öffnen Sie das Kontextmenü für den Bericht �
 #### Löschen von Berichten
 
 Um einen Bericht zu löschen, öffnen Sie das Kontextmenü für den Bericht über das Menüsymbol und klicken Sie **Löschen**.
-
-
-
-
-

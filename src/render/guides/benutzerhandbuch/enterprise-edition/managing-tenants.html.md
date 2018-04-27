@@ -73,7 +73,7 @@ In der Registerkarte "Attribute" können alle Felder außer der ID und des Benut
 
 In der Registerkarte "Anwendungen" können Sie Anwendungen für Mandanten abonnieren oder entfernen. Standardmäßig werden für einen Mandanten die Standardanwendungen von Cumulocity abonniert.
 
-![Anwendung abonnieren](/guides/images/benutzerhandbuch/ee_subtenants-applications.png)
+![Anwendung abonnieren](/guides/images/benutzerhandbuch/ee-subtenants-applications.png)
 
 Um eine Anwendung für einen Mandanten zu abonnieren, bewegen Sie den Mauszeiger über die Anwendungen unter "Verfügbare Anwendungen" auf der rechten Seite und klicken Sie bei der gewünschten Anwendung **Abonnieren**.
 
@@ -132,7 +132,7 @@ Sie können die Liste der Nutzungsstatistiken nach einem bestimmten Zeitraum fil
 
 Klicken Sie **Export CSV** rechts oben in der Menüleiste, um die aktuelle Ansicht der Statistikentabelle als CSV-Datei zu exportieren. Im folgenden Fenster können Sie die CSV-Ausgabe anpassen.
 
-![](/guides/images/benutzerhandbuch/Admin_UsageStatisticsExport.PNG)
+<img src="/guides/images/benutzerhandbuch/Admin_UsageStatisticsExport.PNG" alt="Export statistics" style="max-width: 50%">
 
 ### <a name="tenant-policies"></a>Mandantenregeln
 

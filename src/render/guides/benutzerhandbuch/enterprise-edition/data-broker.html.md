@@ -138,7 +138,7 @@ Jeder Datenfilter enthält die folgenden Informationen:
 
 <td style="text-align: left">Zu filternde Fragmente</td>
 
-<td style="text-align: left">Fragmente,die in einem Gerät vorhanden sein müssen, damit dieses weitergeleitet wird.</td>
+<td style="text-align: left">Fragmente, die in einem Gerät vorhanden sein müssen, damit dieses weitergeleitet wird.</td>
 
 </tr>
 

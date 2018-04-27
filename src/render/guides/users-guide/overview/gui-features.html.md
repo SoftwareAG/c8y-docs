@@ -80,3 +80,10 @@ In other cases you may enter * as wildcard character to return all objects start
 
 The list will be reduced to the selected objects accordingly.
 
+### Realtime behavior of the navigator
+
+In the navigator, changes are not updated in realtime, i.e. new, removed or renamed devices or groups will not be updated immediately. 
+
+You will only see such changes in the navigator of the application, in which you have made the changes. For example, if you unassign a device from a group in the Device Management application you will immediately see it removed from the group in the navigator of your current application, but if you have another window open with e.g. the Cockpit application you won't see the changes. 
+
+You will only see the changes after a refresh or another request (expanding a group in the navigator for example).

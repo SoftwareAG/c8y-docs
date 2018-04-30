@@ -57,6 +57,7 @@ Example:
 |Available outputs|
 |:----------------|
 |CreateEvent|
+|EventUpdated|
 |DeleteEvent|
 
 |Parameter|Data type|Description|Mandatory|

@@ -23,6 +23,7 @@ Types:
 |ManagedObjectUpdated|MANAGED&#95;OBJECT&#95;UPDATE|
 |ManagedObjectDeleted|MANAGED&#95;OBJECT&#95;DELETE|
 |EventCreated|EVENT_CREATE|
+|EventUpdated|EVENT_UPDATED|
 |EventDeleted|EVENT_DELETE|
 |MeasurementCreated|MEASUREMENT_CREATE|
 |MeasurementDeleted|MEASUREMENT_DELETE|

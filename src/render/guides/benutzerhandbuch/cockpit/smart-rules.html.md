@@ -4,84 +4,114 @@ title: Smart Rules
 layout: redirect
 ---
 
-Cumulocity enthält eine Regel-Engine, um Daten in Echtzeit zu analysieren und Aktionen basierend auf Daten auszuführen. Diese Regeln werden in einer Skriptsprache angegeben und in der Administrations-Anwendung verwaltet.
 
-Zum Erstellen von Regeln enthält die Cockpit-Anwendung einen "Smart Rule Builder". Mit dem Smart Rule Builder können Regeln aus Vorlagen erstellt werden. Diese Regeln werden als intelligente Regeln ("Smart Rules") bezeichnet. Die Vorlagen werden als intelligente Regelvorlagen ("Smart Rules Template") bezeichnet.
+Cumulocity enthält eine Regel-Engine, um Daten in Echtzeit zu analysieren und Aktionen basierend auf Daten auszuführen. Diese Regeln werden in einer Skriptsprache erstellt und in der Anwendung ["Administration"](/guides/users-guide/administration) verwaltet.
 
+Zum einfachen Erstellen von Regeln enthält die Cockpit-Anwendung einen "Smart Rule Builder". Mit dem Smart Rule Builder können Regeln aus Vorlagen erstellt werden. 
+
+>**Info:** Smart Rules sind nur sichtbar, wenn der Mandant die Smart Rule-Anwendung abonniert hat. Um Smart Rules verwalten zu können, benötigt der Benutzer die Berechtigung zum Erstellen von Stammdaten sowie entweder die Berechtigung SMART RULE oder CEP MANAGEMENT.
 
 Smart Rules werden parametrisiert. Es gibt zwei Quellen für Parameter:
 
 **Regelparameter** werden vom Benutzer beim Erstellen einer Smart Rule aus einer Vorlage bereitgestellt. Beispiele sind E-Mail-Adressen und Alarmtexte.
 
-**Objektparameter** werden in der Gruppe oder dem Gerät gespeichert. Diese Parameter können auch nach der Erstellung der Smart-Rule editiert werden. Ein Beispiel sind Min- und Max-Werte für Schwellenwerte.
+**Objektparameter** werden in der Gruppe oder dem Gerät gespeichert. Diese Parameter können auch nach der Erstellung der Smart Rule bearbeitet werden. Ein Beispiel sind Min- und Max-Werte für Schwellwerte.
 
-### Eine "Smart Rule" erstellen
+Smart Rules werden angezeigt
 
-Smart Rules können entweder unter "Konfiguration -> Smart Rules" oder unter dem Tab "Info" einer Gruppe oder eines Geräts erstellt werden.
+* in der Registerkarte "Info" eines Geräts oder einer Gruppe,
+* in der Seite "Smart Rules" im Menü "Konfiguration". 
 
-* Klicken auf "+ Smart Rule hinzufügen"
+![Smart Rules Registerkarte "Info"](/guides/images/benutzerhandbuch/cockpit-smartrule-info-tab.png)
 
-* Auf ein "Smart Rule Template" klicken.
+Es gibt zwei Arten von Smart Rules:
 
-* Geben Sie im nächsten Fenster die Regelparameter ein. Die Regelparameter unterscheiden sich von Regel zu Regel (Details siehe Einzelregelbeschreibungen unten).
+- **Lokal**: Smart Rules, die für ein Gerät oder eine Gruppe erstellt wurden. Diese sind für alle Benutzer sichtbar, die Zugriff auf das Gerät bzw. die Gruppe haben.
+- **Global**: Diese Smart Rules wurden in einem globalen Kontext erstellt ("Smart Rules"-Seite, Alarme, Daten-Explorer, etc.). 
 
-* Über das Suchfeld können Sie auch die aktuelle Smart Rule für Zielgeräte oder Assets aktivieren. Dieser Schritt ist optional.
+In der Seite "Smart Rules" werden nur die globalen Smart Rules angezeigt. 
 
-* Wählen Sie aus, ob die Regel aktiviert oder deaktiviert werden soll.
+In einem lokalen Kontext (Gerät oder Gruppe) und ohne die erforderlichen Berechtigungen werden nur die lokalen Smart Rules angezeigt. Hat ein Benutzer die entsprechenden Berechtigungen, werden lokale und globale Smart Rules angezeigt.
 
-* Auf "Erstellen" klicken.
+Die folgenden Berechtigungen sind erforderlich, um globale Smart Rules zu sehen:
 
-Eine Liste der intelligenten Regeln wird unten gezeigt. Beachten Sie, dass die Anzahl der angezeigten Smart-Regeln je nach Ihrer Installation unterschiedlich sein kann.
+- Smartrule READ
+- Smartrule ADMIN
+- CEP management ADMIN
 
-![image alt text](/guides/images/users-guide/image_23de.png)
+### <a name="create-rules"></a>Erstellen von Smart Rules
 
-Danach ist die Regel für alle Geräte und Gruppen aktiv, wenn die Regel auf "freigegeben" steht und nicht nur für bestimmte Objekte aktiviert wurde. Im nächsten Abschnitt erfahren Sie, wie Sie eine intelligente Regel für bestimmte Objekte deaktivieren.
+Smart Rules können entweder auf der Seite "Smart Rules" im Menü "Konfiguration" oder in der Registerkarte "Info" eines Geräts oder einer Gruppe erstellt werden.
 
-Deaktivierte Smart Rules werden nicht in Gruppenmenüs oder Gerätemenüs angezeigt, um Verwirrung zu vermeiden. Smart Rules können mehrere Male instanziiert werden.
+Führen Sie folgende Schritte zum Erstellen einer Smart Rule aus:
+
+1. Klicken Sie **Smart Rule hinzufügen** in der oberen Menüleiste. 
+2. Wählen Sie eine Smart Rule-Vorlage aus. 
+3. Verwenden Sie im folgenden Fenster den Regler, um einzustellen, ob die Regel aktiviert oder deaktiviert ist. 
+4. Konfigurieren Sie die Regelparameter. Die Parameter variieren von Regel zu Regel. Details zu den jeweiligen Parametern finden Sie unter [Smart Rule-Sammlung](/guides/benutzerhandbuch/cockpit#smart-rule-collection). 
+5. Im Feld "Ziel-Assets oder Geräte" können Sie Assets oder Geräte festlegen, für die die Regel gelten soll.  
+6. Klicken Sie **Erstellen** um die Smart Rule zu erstellen.
+
+Eine Liste von Smart Rules wird unten beispielhaft gezeigt. Die Liste der Smart Rules kann je nach Installation variieren.
+
+<img src="/guides/images/users-guide/Cockpit/Cockpit_GlobalSmartRules.png" name="Globale Smart Rules" style="width:75%;"/>
+
+Wenn die Regel aktiviert und nicht für bestimmte Geräte angelegt wurde, ist die Regel nun für alle Geräte und Gruppen aktiv. 
+
+Im nächsten Abschnitt erfahren Sie, wie Sie eine Smart Rule für bestimmte Objekte deaktivieren.
+
+Um Irritationen vorzubeugen, werden deaktivierte Smart Rules nicht in Gruppenmenüs oder Gerätemenüs angezeigt. 
+
+Smart Rules können mehrfach instanziiert werden.
+
 
 ### Aktivieren und Deaktivieren von Smart Rules
 
-Smart Rules können Sie unter dem Info-Tab eines Geräts oder einer Gruppe sehen. Sie müssen innerhalb dieser Gruppe aktiv sein und auch auf untergeordneter Ebene aktiv sein.
+Smart Rules können für einzelne Objekte (Geräte oder Gruppen) eingeschaltet (aktiviert) oder abgeschaltet (deaktiviert) werden. Wenn beispielsweise ein Gerät zu viele Schwellwertalarme erzeugt, können Sie die Regel für dieses einzelne Objekt deaktivieren. Die Regel bleibt für alle anderen Objekte aktiv.
 
-Für ein einzelnes Objekt (Gruppe oder Gerät) kann eine einzelne Smart Rule aktiviert (eingeschaltet) und deaktiviert (ausgeschaltet) werden. Wenn zum Beispiel ein Gerät zu viele Grenzwertalarme erzeugt, können Sie die Regel für dieses einzelne Objekt deaktivieren. Die Regel ist für alle anderen Objekte noch aktiv.
+Um eine Smart Rule für eine Gruppe oder ein Gerät ein- oder abzuschalten, navigieren Sie zur Registerkarte "Info" für das Objekt und aktivieren/deaktivieren Sie die Regel über den Regler.
 
-Um eine Smart Rule für eine Gruppe oder ein Gerät zu deaktivieren oder zu aktivieren, wechseln Sie einfach auf die Registerkarte "Info", und klicken Sie auf die Schaltfläche, um die Regel zu aktivieren oder zu deaktivieren.
+<img src="/guides/images/benutzerhandbuch/cockpit-smart-rule-activate.png" name="Smart Rule aktivieren/deaktivieren" style="width:100%;"/>
 
-![Info tab](/guides/images/users-guide/infotab.png)	
+### Bearbeiten von Smart Rules
 
-### Bearbeiten, Klonen oder Entfernen von Smart Rules
+Um eine Smart Rule zu bearbeiten, öffnen Sie das Kontextmenü der Regel über das Menüsymbol und klicken Sie **Bearbeiten**.
 
-Um eine bestimmte Smart Rule zu bearbeiten, zu klonen oder zu entfernen, klicken Sie einfach auf das rechts neben der Smart Rule befindliche Zahnrad und klicken Sie auf die gewünschte Option.
+### Duplizieren von Smart Rules
 
-Für eine einfachere Fehlerbehebung gibt es einen direkten Link von einer intelligenten Regel zu einem entsprechenden Ereignisverarbeitungsmodul. Klicken Sie auf das Zahnrad und wählen Sie dann "Bearbeiten".
+Um eine Smart Rule zu duplizieren, öffnen Sie das Kontextmenü der Regel über das Menüsymbol und klicken Sie **Duplizieren**. Bearbeiten Sie zumindest den Namen und klicken Sie **Änderungen speichern** um Ihre Angaben zu speichern.
+
+### Löschen von Smart Rules
+
+Um eine Smart Rule zu löschen, öffnen Sie das Kontextmenü der Regel über das Menüsymbol und klicken Sie **Löschen**.
+
+### Fehlerbehebung bei Smart Rules
+
+Um die Fehlersuche zu vereinfachen gibt es einen direkten Link von einer Smart Rule zum entsprechenden Echtzeitverarbeitungsmodul. Öffnen Sie das Kontextmenü der Regel über das Menüsymbol und klicken Sie **Quelltext ansehen**, um diese Option zu nutzen.
 
 ### Beispiel: Definieren von genauen Schwellenwerten
 
-Gehen Sie folgendermaßen vor, um eine Schwellenregel zu definieren:
-* Navigieren Sie im Asset-Navigator zu der gewünschten Gruppe oder dem gewünschten Gerät, um einen Schwellenwert auf anzuwenden.
-* Klicken Sie auf "Daten-Explorer".
-* Wenn der Datenpunkt standardmäßig nicht sichtbar ist, wählen Sie "Datenpunkt hinzufügen" und fügen Sie einen Datenpunkt hinzu.
-* Für den Datenpunkt, der den Schwellenwert erhöhen soll, klicken Sie am Ende der Zeile auf das Zahnrad-Symbol und wählen Sie "Smart Rule erstellen".
+Führen Sie folgende Schritte aus, um eine Schwellenregel zu definieren:
 
-![image alt text](/guides/images/users-guide/image_26de.png)
+1. Navigieren Sie im Menü "Gruppen" zu dem Objekt (Gruppe oder Gerät), auf welches Sie den Schwellenwert anwenden möchten.
+2. Wechseln Sie zur Registerkarte "Daten-Explorer".
+3. Wenn der Datenpunkt, der den Schwellwert festlegen soll, standardmäßig nicht sichtbar ist, wählen Sie **Datenpunkt hinzufügen** und fügen Sie einen Datenpunkt hinzu. Informationen zum Hinzufügen von Datenpunkten finden Sie unter  Daten-Explorer >[Hinzufügen von Datenpunkten](#add-data-points).
+4. Öffnen Sie über das Menüsymbol das Kontextmenü für den entsprechenden Datenpunkt und klicken Sie **Smart Rule erstellen**. <br><br> <img src="/guides/images/benutzerhandbuch/cockpit_smart-rule-datapoint.png" name="Datenpunkt-Beispiel" style="width:75%;"/>
+<br>
+5. Wählen Sie die Smart Rule "Bei Schwellwertüberschreitung Alarm erzeugen". <br><br> <img src="/guides/images/benutzerhandbuch/cockpit-smart-rule-example.png" name="Smart Rule-Beispiel" style="width:50%;"/><br>
+6. Geben Sie den minimalen und den maximalen Wert für den roten Bereich ein. Sind die Werte außerhalb dieses Bereichs, wird ein Alarm erzeugt.
+7. Unter "Alarm erzeugen" können Sie optional den Alarmtyp und Alarmtext definieren.
+8. Unter "Ziel-Assets oder Geräte" können Sie die Objekte auswählen, auf die diese Regel angewendet werden soll.
+9. Klicken Sie **Erstellen** um die Smart Rule zu erstellen.
 
-* Wählen Sie "Bei Messungen, die den Schwellenwert überschreiten, Alarm erstellen".
+Die Regel wird automatisch aktiviert und Alarme werden angezeigt, wenn diese ausgelöst werden.
 
-* Füllen Sie die Regelparameter im Formular aus:
 
-![image alt text](/guides/images/users-guide/image_37de.png)
+### Ausführen einer Regelkette
 
-* Sie können den minimalen und den maximalen Wert für den roten Bereich eingeben. Wenn die Werte außerhalb dieser Werte liegen, wird ein Grenzwertalarm ausgelöst.
+Smart Rules können ein neues Datenelement auf der Plattform erstellen. Die Schwellenregel erzeugt beispielsweise neue Alarme. Diese neuen Daten können durch ausgewählte Smart Rules weiterverarbeitet werden, zum Beispiel durch eine Regel "Bei Alarm  E-Mail senden". 
 
-* Unter "Alarm erstellen" können Sie optional den Alarmtyp und den Alarmtext bearbeiten.
+Mit diesem Mechanismus kann eine Kette von Smart Rules erstellt werden.
 
-* Unter "Für Zielgruppe oder Geräte aktivieren" können Sie das Objekt auswählen, auf das diese Regel angewendet wird.
-
-* Klicken Sie auf "Erstellen".
-
-Nachdem die Regel erstellt wurde, wird sie automatisch aktiviert und Alarme erscheinen, wenn sie auftreten.
-
-### Ausführen einer Kettenregel
-
-Smart Rules können ein neues Datenelement auf der Plattform erstellen. Beispielsweise erzeugt die Schwellenregel neue Alarme. Diese neuen Daten können durch ausgewählte intelligente Regeln weiterverarbeitet werden, zum Beispiel durch eine "Bei Alarm  E-Mail verschicken"-Regel. Mit diesem Mechanismus ist es möglich, eine Kette von intelligenten Regeln zu erstellen. Wenn Sie eine Regelkette erstellen, müssen Sie eine klare Vorstellung haben, wie viele Daten erstellt werden, um Überlastungen oder übermäßige Datenmengen zu vermeiden.
+>**Info:** Berücksichtigen Sie beim Erstellen einer Regelkette, wie viele Daten diese erzeugt, um Überlastungen oder übermäßige Datenmengen zu vermeiden. 
 

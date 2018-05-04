@@ -19,8 +19,8 @@ Click the **Plus** button in the top bar and from the context menu select **New 
 In the "Dashboard info" section of the dashboard editor, provide the following information:
 
 * A menu label to be used as the name of the dashboard
-* The location of the dashboard in the menu, with "10000" being ordered first and "-10000" last
-* An icon which is shown next to the dashboard name in the menu
+* The location of the dashboard in the navigator, with "10000" being ordered first and "-10000" last
+* An icon which is shown next to the dashboard name in the navigator
 
 In the "Dashboard layout" section you can select a theme for the dashboard (one of "Light", "Dark", "Transparent" or "Branded") and a default header style for the widgets (one of "Regular", "Border", "Overlay", or "Hidden"). Moreover, you can change the default widget margin (default value is 15 px). 
 
@@ -82,7 +82,7 @@ To edit a dashboard, click **Edit** in the top menu bar. The dashboard editor wi
 
 To copy a dashboard from one object to another, click **More...** in the top menu bar and from the context menu select **Copy dashboard**. 
 
-Next, navigate to the object you want to copy the dashboard to and from the context menu select **Paste dashboard <NAME>** to insert the dashboard.
+Next, navigate to the object you want to copy the dashboard to and from the context menu select **Paste dashboard [NAME]** to insert the dashboard.
 
 An alternative way to copy a dashboard is to use the 
 "dashboard per type" approach.  With the "dashboard per type" approach you share the dashboard from one object with **all** objects of the same type.

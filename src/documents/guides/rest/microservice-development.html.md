@@ -13,7 +13,7 @@ The following guide will introduce you to basic REST endpoints required for REST
 - [Acquiring microservice credentials](#acquire-microservice-credentials)
 - [Subscriptions](#subscriptions)
 
-## Creating applications
+## <a name="create-application"></a>Creating applications
 
 In order to start working with microservices an instance of application must be created first. It can be done using the following endpoint:
 
@@ -96,7 +96,7 @@ Application can be updated later on using
           "roles": ["ROLE_CUSTOM_MICSROSERVICE"]
         }
         
-## Deploying applications
+## <a name="deploy-application"></a>Deploying applications
 
 A microservice application gets available for Cumulocity platform users by uploading a binary zip file. 
      
@@ -109,7 +109,7 @@ The zip file must consist of:
 * cumulocity.json - file describing the deployment
 * image.tar - executable docker image
 
-## Acquiring microservice credentials
+## <a name="acquire-microservice-credentials"></a>Acquiring microservice credentials
 
 Microservice related endpoints require a dedicated microservice user, which can be obtained by a service provider using
 
@@ -165,7 +165,7 @@ Response:
         "type": "MICROSERVICE"
     }
 
-## Subscriptions
+## <a name="subscriptions"></a>Subscriptions
 
 Subscription in this scope means tenant subscription to a microservice application. The subscription is an important step after deployment. 
 When a microservice application is deployed, it is subscribable to other tenants. Subscribing to a microservice is the same as subscribing to any other application and can be done via in the Administration application. A tenant can be subscribed by executing the following:

@@ -179,7 +179,7 @@ This part explain, how application will be handle query in parameter 'query'.
     * examples: name eq 'Dev_002', name eq 'Dev*', name eq '*_001', name eq '*'
     * string must be surround single quote
     * string can contains wildcard '*' and this wildcard match form 0 to N characters
-    * matching is insensitive in case
+    * matching is sensitive in case
 * number
 * date
     * examples: creationTime gt '2015-10-24T09:00:53.351+01:00'

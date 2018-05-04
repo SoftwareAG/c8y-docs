@@ -19,10 +19,10 @@ The following sections will walk you through all functionalities of the Administ
 |[Managing Applications](#applications)|How to manage and [configure own applications](#applications) in your Cumulocity account.
 |[Managing Tenants](#applications)|How to [manage tenants](#tenants), retrieve [user statistics](#user-stats) and configure [tenant policies](#tenant-policies).
 |[Applying Business Rules](#retention)|How to set up realtime [event processing](#event-processing) scripts and reprioritize alarms by [alarm mappings](#reprio-alarms).
-|[Changing Settings](#settings)|How to change account settings like [application settings](#default-app) or [password policy and TFA settings](#changing-password-settings) and how to manage the [properties library](#properties).
+|[Changing Settings](#settings)|How to change account settings like [application settings](#default-app) or [password policy and TFA settings](#changing-password-settings), how to manage the [properties library](#properties), and how to configure [settings for the Enterprise Edition](#platform-config).
 |[Managing Data Retention](#retention)|How to manage and configure [retention rules](#retention-rules) for your data and how to [manage stored files](#files) in the file repository.
 |[Data Broker](#data-broker)|How to forward data to other tenants using [data connectors](#data-broker-connector) and how to receive data with a [data subscription](#data-broker-subscriptions) on the receiving end.
-|[Storage Quota](storageQuota)|How to configure the recipients and triggers of the [warning email](#warningEmail) for maximum storage being reached.
+|[Storage Quota](#storageQuota)|How to configure the recipients and triggers of the [warning email](#warningEmail) for maximum storage being reached.
 
 
 ## <a name="home"></a>Home Screen
@@ -110,6 +110,7 @@ To add an application, click **Add application** in the "Own applications" page.
 * [uploading a zip file](#uploading-zip-files) - by dropping a file or browsing for it on your computer,
 * [using an external application](#external-application), which links to an application running elsewhere 
 * [duplicating an existing application](#clone-application)
+* [uploading a custom CEP rule](#uploading-cep-rules) (only visible if you are subscribed to specific applications, see below).
 
 <img src="/guides/users-guide/Administration/Admin_AddApplication.png" alt="Add application methods" style="max-width: 50%">
 
@@ -168,6 +169,27 @@ In order to duplicate an application, follow these steps:
 7. Finally, click **Clone** to create the application.
 
 For details on the fields, see also [Application properties](#application-properties) below.
+
+#### <a name="uploading-cep-rules"></a>Uploading custom CEP rules
+
+> **Info:** To be able to upload custom CEP rules as applications to Cumulocity you need to be subscribed to the application "apama-small". Optionally, if you want to use the Smart Rules functionality, you need to be subscribed to the "SmartRule" application.
+
+In order to upload custom CEP rules, follow these steps:
+
+1. Click **Add application** in the "Own applications" page.
+2. In the upcoming dialog, select **Upload custom CEP rule**. <br>
+	<img src="/guides/users-guide/Administration/Admin_ApplicationsAddCEPRules.png" alt="Upload CEP rules" style="max-width: 50%">
+
+3. The file to be uploaded must be a single mon file, containing a set of event definitions and monitors. Drop the mon file or browse for it on your computer.
+
+After successfully uploading the file to the platform an application of type "Apama CEP rule" is being created.
+
+<img src="/guides/users-guide/Administration/Admin_ApplicationCEPRule.png" alt="Uploading zip file" style="max-width: 100%">
+
+For details on the fields, see also [Application properties](#application-properties) below.
+
+>**Info:** You cannot add a plugin to an application of type "Apama CEP rule". 
+
 
 ### <a name="application-properties"></a>Application properties
 
@@ -419,7 +441,7 @@ Creating a tenant policy with a specific set of options and rules saves time whe
 
 Click "Tenant policies" in the "Tenants" menu to view all tenant policies available.
 
-<img src="/guides/users-guide/administration/admin_TenantPolicies.png" alt="Tenant policies" style="max-width: 100%">
+<img src="/guides/users-guide/Administration/Admin_TenantPolicies.png" alt="Tenant policies" style="max-width: 100%">
 
 For each tenant policy, the name, an optional description and the number of options and retention rules is provided, either in a list or a grid.
 
@@ -476,7 +498,7 @@ Using event processing, you can specify realtime business logic that is automati
 
 Click "Event processing" in the "Business rules" menu to view the current modules or to create new ones.
 
-<img src="/guides/users-guide/Administration/admin_EventProcessing.png" alt="Event processing" style="max-width: 100%">
+<img src="/guides/users-guide/Administration/Admin_EventProcessing.png" alt="Event processing" style="max-width: 100%">
 
 For each module in the list, the status (deployed = indicated by a green checkmark / not deployed = indicated by an exclamation mark), the name and the date when is was last updated is provided.
 
@@ -538,7 +560,7 @@ Retention rules are usually run during the night. When you edit a retention rule
 
 Click "Retention rules" in the "Management" menu to view a list of retention rules configured for your account.
 
-<img src="/guides/users-guide/administration/Admin_RetentionRules.png" alt="Retention rules" style="max-width: 50%">
+<img src="/guides/users-guide/Administration/Admin_RetentionRules.png" alt="Retention rules" style="max-width: 50%">
 
 For each rule, the rule name, details on the data to be deleted (fragment type, type and source, see below) and the maximum age in days is provided.
 
@@ -593,7 +615,8 @@ From the "Settings" menu, administrators can modify or manage various settings f
 
 - changing the [application settings](#default-app),
 - changing the [password policy and TFA settings](#changing-password-settings),
-- managing the [properties library](#properties).
+- managing the [properties library](#properties),
+- configure the [settings for the Enterprise Edition](#platform-config).
 
 ### <a name="default-app"></a>Changing application settings
 
@@ -627,7 +650,7 @@ Strong (green) passwords must have "M" characters. By default, the system restri
 
 Click **Save** to apply your password settings.
 
-<img src="/guides/users-guide/Administration/admin_Password.png" alt="Password settings" style="max-width: 100%">
+<img src="/guides/users-guide/Administration/Admin_Password.png" alt="Password settings" style="max-width: 100%">
 
 Under "TFA settings", you can change the following TFA settings:
 
@@ -680,7 +703,7 @@ SMS are used throughout the application for various features like [two-factors a
 
 ### Configuration
 
-In the "Configuration" page, accessible from the "Settings" menu, you can configure system-wide properties in Cumulocity. The following options can be modified in the "Configuration" settings.
+Under "Configuration" in the "Settings" menu, you can configure system-wide properties in Cumulocity. The following options can be modified in the configuration settings.
 
 In the "Two-factor authentication" field you can change the SMS template which is sent to the users.
 
@@ -722,6 +745,145 @@ Click **Save configuration** to save your settings.
 
 >**Info**: Additional features are available for "Management" tenants.
 
+
+## <a name="platform-config"></a> Enterprise Edition
+
+In the "Enterprise edition" page under the "Settings" menu you can specify settings which are only available to users of the Enterprise edition of Cumulocity.
+
+### Branding
+
+In the "Branding" tab you can fully customize the look of your tenants to your own preferences. 
+
+The branding feature allows you to edit the logos and colors used throughout the platform. Once your branding settings are saved, all subtenants are automatically updated. 
+
+<img src="/guides/users-guide/Administration/Admin_Branding.png" alt="Branding tab" style="max-width: 100%">
+
+**General**
+
+In the “General” section you can edit the “Title” which will be used in the browser tab. 
+
+**Main logo**
+
+Under “Main logo”, specify the following items:
+
+* The “Favicon”, which will be displayed in the browser’s address bar. Click **Choose file** to select a file from your computer. The supported favicon format is “ico”.
+* Your branding logo, which will be shown during application loading. Click **Choose file** to select a file from your computer. The supported formats are “png” and “svg”.
+* The “Brand logo height”.
+
+**Navigator logo**
+
+Under “Navigator logo” you can provide the “Navigator logo” and set the “Navigator logo height” located on top of the navigator panel.
+
+**Type**
+
+In the “Type” section you specify the font settings for your branded version. 
+
+<img src="/guides/users-guide/Administration/Admin_BrandingType.png" alt="Branding type" style="max-width: 100%">
+
+You can choose your base and headings font, and select an option for the navigator font (either same as base or same as headings font). You may also add a link to existing remote fonts to be used.
+
+**Colors**
+
+In the “Colors” section you specify the colors to be used in your branding version.
+
+<img src="/guides/users-guide/Administration/Admin_BrandingColor.png" alt="Branding color" style="max-width: 100%">
+
+The following parameters can be specified by providing a hex, rgb or rgba value:
+
+* “Main brand color”.
+* “Secondary brand color”. The default value is “#07b91A”.
+* “Text color”. The default value is “#444”.
+* “Link color”. The default value is the same as the main brand color.
+* “Main background color”. The default value for this item is “#FAFAFA”.
+
+**Top bar**
+
+In the “Top bar” section you specify the parameters for the top bar.
+
+<img src="/guides/users-guide/Administration/Admin_BrandingTopbar.png" alt="Branding topbar" style="max-width: 100%">
+
+The following parameters can be specified by providing a hex, rgb or rgba value:
+
+* “Background color”. The default value is “#FFFFF”.
+* “Text color”. The default value is “49595B”.
+* “Button hover text color”. The default value is the main brand color.
+
+**Navigator**
+
+In the “Navigator" section you specify the parameters for the navigator.
+
+<img src="/guides/users-guide/Administration/Admin_BrandingTopbar.png" alt="Branding top bar" style="max-width: 100%">
+
+The following parameters can be specified by providing a hex, rgb or rgba value:
+
+* “Background color”. The default value is “2c3637”.
+* "Logo wrapper background color". The default value is “Transparent”.
+* “Title color”. The default value is “FFFFF”.
+* “Text and buttons color”. The default value is “#FAFAFA”.
+* “Separator line color”. The default value is “#FAFAFA”.
+* “Text color” of the current item in the navigator. The default value is “#FAFAFA”.
+* “Background color” of the current item in the navigator with the main brand color as default.
+
+**Misc**
+
+In the “Misc” section you may specify the “Button Border-Radius” by providing a value in pixel (px).
+
+Click **Save** to save your settings.
+
+Click **Preview** in the top menu bar to preview the new branding.
+
+Click **Generate** in the top menu bar to apply your new branding.
+
+The following image shows and an example where
+
+* the “Main brand color” is purple,
+* the “Secondary brand color” is white,
+* the “Main background color” is blue,
+* the top bar “Background color” is green,
+* the navigator “Background color” is pink. 
+
+<img src="/guides/users-guide/Administration/Admin_BrandingColored.png" alt="Branding example" style="max-width: 100%">
+
+### Domain name
+
+In the “Domain name” tab you can activate your own custom domain name.  
+
+<img src="/guides/users-guide/Administration/Admin_DomainName.png" alt="Domain name" style="max-width: 100%">
+
+First you have to upload the appropriate certificate by clicking **Upload Certificate**. Make sure that
+
+* the certificate is in a valid PKCS#12 format,
+* the certificate is not password protected,
+* you are using a wildcard certificate to enable creation of subtenants.
+
+Before activating the custom domain name, make sure that
+
+* you have uploaded a valid SSL certificate for your custom domain,
+* the common name (domain name) is not used by any other tenant,
+* the certificate is currently valid (validFrom in the past and validTo in the future),
+* you have configured the DNS A entry for the domain to point to the IP address of your DNS server.
+
+After successful activation you will be redirected to your enterprise tenant at the new domain. You will also receive an email with information about the activation.
+
+>**Info**: After the activation is completed you will no longer be able to access your tenant with the cumulocity domain name. Instead, use your custom domain name.
+
+
+**Updating your certificate**
+
+When your certificate expires, you must update your certificate with a new one with an extended validation period. When updating a certificate, you need to make sure that
+
+* the certificate is in a valid PKCS#12 format,
+* the certificate is not password protected,
+* the certificate is currently valid (validFrom in the past and validTo in the future),
+* the certificate has exactly the same common name (domain name) as the currently active certificate,
+* you have configured the DNS A entry for the domain to point to the IP address of your DNS server.
+
+
+**Deactivating your certificate**
+
+If you wish to return to your old domain at Cumulocity, you can simply deactivate you certificate. 
+
+>**Important**: Use with care. Your customers will not be able to access their subtenants anymore.
 
 ## <a name="storageQuota"></a>Storage quota
 

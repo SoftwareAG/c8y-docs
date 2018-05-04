@@ -36,7 +36,7 @@ To connect devices to your Cumulocity account follow these steps:
 1. Click "Registration" in the "Devices" menu of the navigator and click **Register device**.
 2. In the upcoming window, choose **General device registration** to register one or more devices individually (see next section for handling bulk registration).
 3. In the "Device ID" field, enter a unique ID for the device. To determine the ID, consult the device documentation. In case of mobile devices the ID usually is the IMEI (International Mobile Equipment Identity) often found on the back of the device.
-4. Optionally, select a group to assign your device to after registration. Find further information on groups assigment in [Grouping Devices](#grouping-devices).
+4. Optionally, select a group to assign your device to after registration. Find further information on groups assignment in [Grouping Devices](#grouping-devices).
 5. Click **Add another device** to register one more devices. Again, enter the device ID and optionally select a group. This way, you can add multiple devices in one step.
 6. Click **Next** to register your device(s). After successful registration the device(s) will be listed on the screen with the status "Waiting for connection".
 
@@ -113,11 +113,11 @@ When hovering over a row in the list, a **Delete** button appears at the right. 
 
 Cumulocity includes a full-text search for devices. 
 
-Click the **Search** button at the top right and enter a search term into the textbox. Cumulocity returns all devices containing this term either in the device name or model.
+Click the **Search** button at the top right and enter a search term into the textbox. Cumulocity returns all devices containing this term in any property (name, model, any fragment...)
 
-Our example shows a search für "Ublox C027". A search for "Ublox" or for "C027" would also return the devices containing "Ublox C027". 
+Our example shows a search for "Ublox C027". 
 
-**Info**: Other than with filtering using wildcards in a search is not supported.
+**Info**: Unlike filtering, the use of wildcards in a search is not supported.
 
 <img src="/guides/users-guide/DeviceManagement/DevMgmt_Search.png" alt="Device Management Search" style="max-width: 100%">
 
@@ -196,7 +196,7 @@ In the "Bulk operations" tab, bulk operations created for the group can be manag
 
 To create a new group follow these steps:
 
-1. Click the **Plus** button at the right of the top bar, then select **Add new group** from the menu.
+1. Click the **Plus** button at the right of the top bar, then select **New group** from the menu.
 2. In the window that comes up enter a unique group name to identify your group.
 3. In the "Device Search" field, enter the search criteria for the devices you might want to add to your group (e.g. "ublox"). A list of devices that match your search criteria will be displayed. 
 4. Checkmark the devices you want to add from the list.
@@ -278,7 +278,7 @@ To view detailed information on the device, click a device in the device list.
 
 The device details are divided into tabs. The number of tabs is dynamic and depends on the available information, i.e. tabs are only displayed if the kind of information is available for the particular device. 
 
-Initally the "Info" tab is shown, which offers general information on a device and is available for each device. 
+Initially the "Info" tab is shown, which offers general information on a device and is available for each device. 
 
 Each device at least shows the following tabs: Info, Alarms, Control, Events, Service monitoring, Identity (also see the tab list below).
 
@@ -402,7 +402,7 @@ The "Control" tab lists the operations being sent to a device. Refer to [Working
 
 ![Operations](/guides/users-guide/operations.png)
 
-### <a name="software"></a>Network
+### <a name="network"></a>Network
 
 In the "Network" tab network settings can be configured for the device.
 
@@ -417,7 +417,7 @@ To install a new firmware, click **Install firmware**, then select a firmware im
 
 Similarly, to install a software on the device, click **Install software**, select a software package from the [Software repository](#software-repo) and click **Install**. 
 
-<img src="/guides/users-guide/DeviceManagement/DevMgmt_software.png" alt="Software" style="max-width: 100%">
+<img src="/guides/users-guide/DeviceManagement/DevMgmt_Software.png" alt="Software" style="max-width: 100%">
 
 Installing software and firmware usually includes a restart of the device. To monitor the progress of an installation, visit the "Control" tab.
 
@@ -600,7 +600,7 @@ To display the overall service across all devices, click "Service monitoring" in
  
 ![Service monitoring](/guides/users-guide/servicemonitoring.png)
 
-The "Service Monitoring" page shows the availablity percentage of devices for the last day, last week and last month. 
+The "Service Monitoring" page shows the availability percentage of devices for the last day, last week and last month. 
 
 
 ### <a name="alarm-monitoring"></a>Working with alarms
@@ -791,7 +791,7 @@ To remove a device protocol, click **Remove** in its context menu.
 
 In the Firmware and in the Software repository Cumulocity offers to collect reference firmware and software for devices respectively.
 
-The description below examplarily refers to firmware but also applies to device software.
+The description below exemplarily refers to firmware but also applies to device software.
 
 Open the "Firmware repository" from the "Management" menu in the navigator.
 
@@ -815,7 +815,7 @@ To add a firmware object, follow these steps:
 4. Specify the file for the firmware by choosing or uploading it or enter the URL from which the device can download the firmware. 
 5. Click **Save** to save your settings.
 
-Similarily, you can add a new software object to the Software repository.
+Similarly, you can add a new software object to the Software repository.
 
 **How to install firmware on a device**
 
@@ -881,10 +881,10 @@ Click a configuration in the list to open it. You may modify the settings here a
 To add a new configuration from a file, follow these steps:
 
 1. Click **Add configuration snapshot** at the right of the top menu bar. 
-2. In the upcomimg window, enter a unique name and optional description for the configuration.
+2. In the upcoming window, enter a unique name and optional description for the configuration.
 3. In the "Device Type" field, enter a device type. The device type can be found in the "Info" tab of the target device.
 4. Select the configuration snapshot file by uploading or choosing a file or providing an external URL. 
-5. Cick **Add configuration snapshot** to save your settings.
+5. Click **Add configuration snapshot** to save your settings.
 
 The snapshot will be added to the Configuration repository.
 
@@ -895,7 +895,7 @@ The snapshot will be added to the Configuration repository.
 
 In addition to adding configurations from a file you can also add configurations by retrieving them from a device.
 
-In order to retrieve a current configuration snapshot from a devic, follow these steps:
+In order to retrieve a current configuration snapshot from a device, follow these steps:
 
 1. Navigate to the desired device and open its "Configuration" tab. 
 2. Under "Configuration snapshot", click **Get new snapshot from device** at the top right. 
@@ -1061,7 +1061,7 @@ To add a new message, navigate to the "Messages" tab in your desired SmartREST t
 |Name|Name for the message. Mandatory.
 |Target REST API|REST API for the target. Dropdown list. May be one of Measurement, Inventory, Alarm, Event, Operation.
 |Method|Request method. May be one of POST, PUT, GET, depending on the selected Target REST API.
-|Include Responses|Click this checkbox if you want to process the results of the request with repsonse templates.
+|Include Responses|Click this checkbox if you want to process the results of the request with response templates.
 |REST API built-in fields|These fields are optional and vary depending on the target REST API selected. In case no value is provided, a device will be able to set it when sending an actual message.
 |REST API custom fields|Additional fields can be added by clicking **Add field**. Enter the API key and select the desired data type.
 
@@ -1106,8 +1106,8 @@ To export a SmartREST template, click the menu icon and in the menu click  **Exp
 To export a SmartREST template as CSV file follow these steps:
 
 1. Open the template of your choice and select the "CSV Preview" tab. 
-2. In the "CSV Preview" tab which provides additional information on messages and repsonses, click **Export CSV**. 
-1. In the upcoming window, specify the preferred options for the field seperator, decimal separator and character set.
+2. In the "CSV Preview" tab which provides additional information on messages and responses, click **Export CSV**. 
+1. In the upcoming window, specify the preferred options for the field separator, decimal separator and character set.
 1. Click **Download** to download the template as CSV file.
 
 <img src="/guides/users-guide/DeviceManagement/DevMgmt_TemplateExportCSV.png" alt="Export CSV" style="max-width: 50%">

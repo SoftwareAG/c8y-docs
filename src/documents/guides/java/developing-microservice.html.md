@@ -196,7 +196,7 @@ An example with minimum configuration is presented below:
     <plugin>
         <groupId>com.nsn.cumulocity.clients-java</groupId>
         <artifactId>microservice-package-maven-plugin</artifactId>
-        <version>9.0.0</version>
+        <version>8.21.0</version>
         <executions>
             <execution>
                 <id>package</id>
@@ -295,9 +295,9 @@ Example configuration:
     </configuration>
 
 ## Deployment
-###Hosted deployment
+### Hosted deployment
 
-Please note that for your convenience we have prepared a utility deployment script available [here](/guides/reference/microservice-package)
+Note that for your convenience we have prepared a utility deployment script available [here](/guides/reference/microservice-package)
 
 To deploy an application on an environment you need:
 
@@ -385,3 +385,23 @@ Example execution could be
     
     docker run -e "C8Y_BASEURL={C8Y_BASEURL}" -e "C8Y_BASEURL_MQTT={C8Y_BASEURL_MQTT}" {IMAGE_NAME}
 
+## Monitoring
+
+To see if a hosted microservice is running successfully, a microservice's health endpoint can be checked.
+This endpoint is enabled by default for all microservices that are developed using Java Microservice SDK.
+
+    GET {URL}/service/{APPLICATION_NAME}/health
+
+Example response:
+
+    HTTP/1.1 200 
+    {
+      "status":"UP"
+    }
+
+  or
+
+    HTTP/1.1 503
+    {
+      "status":"DOWN"
+    }

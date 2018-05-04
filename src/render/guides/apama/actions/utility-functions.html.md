@@ -29,7 +29,7 @@ You can use a JSON path to navigate in the object structure. Example:
 
 Alternatively, use a cast to convert an `any` to a particular type:
 
-	string s:= &#60;string> measurement.extraParams["strfragment"]);
+	string s:= <string> measurement.extraParams["strfragment"]);
 
 Note that a cast operation will throw if the object is of a different type.
 
@@ -68,12 +68,10 @@ Example:
 	}
 ### replacePlaceholders
 
-To build strings, you can use concatenation:
+To build strings, you can use concatenation as follows:
 
     string s:= "An event with the text " + evt.text + " has been created.";
+    
+If the texts get longer and have more values that are dynamically set from the data, you can use the Util.replacePlaceholders() function. In your text string, you mark the placeholders with the field name from the event and surround it by #{}. The second parameter to replacePlaceholders can be any event type.
 
-If the texts get longer and have more values that are dynamically set from the data, you can use the replacePlaceholders() function. Another advantage of this function is that you can not only use the current object but also access all information of the device that created the alarm, measurement, event.
-
-In your text string, you mark the placeholders with the field name from the event and surround it by #{}. The second parameter to replacePlaceholders can be any event type.
-
-	<span style="color: rgb(133,153,0);">string</span> myMailText := Util.replacePlaceholders(<span class="hljs-string" style="color: rgb(42,161,152);">"The device #{source} with the serial number #{c8y&#95;Hardware.serialNumber} created an event with the text #{text} at #{time}. The device is located at #{c8y&#95;Address.street} in #{c8y_Address.city}.", evt)</span>;
+	myMailText := Util.replacePlaceholders("The device #{source} with the serial number #{c8y_Hardware.serialNumber} created an event with the text #{text} at #{time}. The device is located at #{c8y_Address.street} in #{c8y_Address.city}.", evt);

@@ -4,14 +4,12 @@ title: Event Alarm
 layout: redirect
 ---
 
-Alarm data. 
 
-<span style="color: rgb(0,0,0);">Sent by the transport when a device or other application creates an alarm, or updates an alarm. Requires SubscribeMeasurements or configuration property subscribeToAllMeasurements. Sent to the cumulocity.measurements channel.</span> 
 
+Sent by the transport when a device or other application creates an alarm, or updates an alarm. 
 ### Examples
 
-	Alarm("22","c8y_UnavailabilityAlarm","12669915",1464365565.661,"No communication with device since 2016-05-27T18:11:23.886+02:00","ACKNOWLEDGED","MAJOR",1,{})   
-	 Alarm("11","com_cumulocity_events_BatteryWarning","1122",1464365565.661,"Low battery level","ACTIVE", "MINOR", 1, {"history":{}}) 
+	Alarm("","c8y_UnavailabilityAlarm","10801",1464365565.661,"No communication with device since 2016-05-27T18:11:23.886+02:00","ACTIVE","MAJOR",1,new dictionary<string,any>)  
  
 
 ### Constant Summary

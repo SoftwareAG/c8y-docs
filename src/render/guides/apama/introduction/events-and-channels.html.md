@@ -8,7 +8,7 @@ In the Apama Event Processing Language, interactions with the rest of the Cumulo
 
 ### Predefined event types
 
-There are some predefined event types to interact with several Cumulocity APIs. Events are sent to Apama applications automatically when a new measurement, alarm or event is created. For interacting with the Cumulocity backend, you can create an event and send it to the relevant channel. Cumulocity will automatically execute either the database query or create the API calls necessary for sending mails, SMS, or similar. To create a new alarm in the database, you can create a new "Event" event.
+There are some predefined event types to interact with several Cumulocity APIs. Events are sent to Apama applications automatically when a new measurement, alarm or event is created. For interacting with the Cumulocity backend, you can create an event and send it to the relevant channel. Cumulocity will automatically execute either the database query or create the API calls necessary for sending mails, SMS, or similar.
 
 <table class="wrapped confluenceTable"><colgroup><col><col><col><col></colgroup>
 

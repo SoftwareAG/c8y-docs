@@ -34,6 +34,9 @@ There can be more than one matching data point entry in the Data Point Library. 
 
 For details on modifying the visualization in general, see [*Changing data point visualization*](#change-visualization). For details on customizing the properties of a particular data point, see [*Customizing data point properties*](#customize-data-points).
 
+>**Info**: Data points are visible to all authenticated users of the tenant, regardless of their inventory role permission.
+
+
 ### <a name="change-visualization"></a>Changing data explorer visualization
 
 To change the visualization in the data explorer, you can modify several properties.

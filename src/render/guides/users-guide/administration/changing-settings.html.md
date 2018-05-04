@@ -66,6 +66,8 @@ With custom properties, you can extend the data model of Cumulocity built-in obj
 - Custom tenant properties are available during tenant creation. The custom properties can be edited under “Subtenants” in the “Custom properties” tab of each tenant. Additionally, these properties can be viewed and exported in the “Usage statistics”.
 - Custom alarm and event properties can be used as custom fields which can be added to your reports and will be available in the “Reporting” page in the Cockpit application.
 
+>**Info**: Custom properties are visible to all authenticated users of the tenant, regardless of their inventory role permission.
+
 **Adding properties to the properties library**
 
 To add a custom property, select the tab for the desired property and click **Add property**. 

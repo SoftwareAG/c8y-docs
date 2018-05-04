@@ -4,54 +4,70 @@ title: Datenpunktbibliothek
 layout: redirect
 ---
 
-Die Datenpunktbibliothek enthält eine Sammlung von Datenpunkten mit Standardwerten für Datenpunktattribute. Datenpunktattribute ähneln den "Absatzformaten" in Textverarbeitungsanwendungen: Sie möchten nicht jeden Absatz einzeln formatieren. Stattdessen möchten Sie einen Satz von Standardformaten definieren und diese auf Ihre Absätze in Ihrem Dokument anwenden. 
+Die Datenpunktbibliothek enthält eine Sammlung von Datenpunkten, die Standardwerte für Datenpunktattribute bereitstellen. 
 
-Die Datenpunktbibliothek bietet die gleiche Funktionalität für Datenpunkte: Sie bietet eine Reihe von standardisierten Datenpunkt-"Vorlagen", die problemlos auf Ihre Datenpunkte von verschiedenen Geräten angewendet werden können.
+Datenpunktattribute ähneln den "Absatzformaten" in Textverarbeitungsanwendungen: Sie möchten nicht jeden Absatz einzeln formatieren. Stattdessen möchten Sie einen Satz von Standardformaten definieren und diese auf Ihre Absätze in Ihrem Dokument anwenden. 
 
-Wie verwendet die Cockpit-Anwendung die Datenpunktbibliothek? Um die Standard-Visualisierung für einen Datenpunkt wie Farbe oder Beschriftung zu finden, durchsucht die Cockpit-Anwendung die Datenpunktbibliothek und versucht, einen passenden Eintrag zu finden. Ein Eintrag gilt als "passend", wenn die Werte für Fragment und Serie in der Datenpunktbibliothek mit denen der Messung übereinstimmen. Wenn ein passender Eintrag gefunden wird, werden die entsprechenden Datenpunktattribute für eine Standardvisualisierung verwendet.
+Die Datenpunktbibliothek bietet die gleiche Funktionalität für Datenpunkte: Sie bietet eine Reihe von standardisierten Datenpunkt-"Vorlagen", die von verschiedenen Geräten problemlos auf Ihre Datenpunkte angewendet werden können. 
 
-Darüber hinaus werden die Attribute der Datenpunktbibliothek von Geschäftsregeln verwendet: Die in der Datenpunktbibliothek konfigurierten roten und gelben Werte werden von Schwellwertregeln verwendet, um Alarme auszulösen.
+Um die Standard-Visualisierung für einen Datenpunkt, wie Farbe oder Beschriftung, zu finden, durchsucht die Cockpit-Anwendung die Datenpunktbibliothek und versucht, einen passenden Eintrag zu finden. Ein Eintrag gilt als "passend", wenn die Werte für Fragment und Series in der Datenpunktbibliothek mit denen der Messung übereinstimmen. Wenn ein passender Eintrag gefunden wird, werden die entsprechenden Datenpunktattribute für eine Standardvisualisierung verwendet.
 
-Klicken Sie "Datenpunktbibliothek" im Menü "Konfiguration im Navigator, um die Datenpunktbibliothek zu öffnen. 
+Darüber hinaus werden die Attribute der Datenpunktbibliothek von Schwellwert-Geschäftsregeln verwendet: Die in der Datenpunktbibliothek konfigurierten roten und gelben Werte werden von den Schwellwertregeln verwendet, um Alarme auszulösen.
 
-Es wird eine Liste der verfügbaren Datenpunkte angezeigt. Jeder Datenpunkt enthält die folgenden Informationen:
+Klicken Sie "Datenpunktbibliothek" im Menü "Konfiguration" im Navigator, um die Datenpunktbibliothek zu öffnen. Eine Liste mit vordefinierten Datenpunkten wird angezeigt. Dabei weist jeder Datenpunkt die folgenden Informationen auf:
 
 * Farbe und Beschriftung des Datenpunkts
-* Name und Serie des Fragments
-* Einheit des Messwerts
+* Fragmentname und -typ
+* Messwerteinheit
 
-![image alt text](/guides/images/benutzerhandbuch/cockpit-datapointlibrary.png)
+![image alt text](/guides/images/users-guide/image_21de.png)
+
+Beim Anklicken eines Eintrags kann ein einzelner Eintrag in der Datenpunktbibliothek editiert werden:
+
+![image alt text](/guides/images/users-guide/image_22.png)
 
 
-### Hinzufügen eines Datenpunkts
+To open the Datenpunktbibliothek, click "Datenpunktbibliothek" in the "Configuration" menu of the navigator.
 
-Klicken Sie "**Datenpunkt hinzufügen**" in der oberen Menüleiste, um einen Datenpunkt zur Bibliothek hinzuzufügen. 
+A list of available data points will be opened. For each data point, the following information is provided in the list:
 
-<img src="/guides/images/benutzerhandbuch/cockpit-add-datapoint.png" name="Datenpunkt hinzufügen" style="width:50%;"/>
 
-Geben Sie die folgenden Informationen ein:
 
-|Feld|Beschreibung|
+### Adding a data point to the library
+
+To add a new data point to the library, click **Add data point** in the top menu bar.
+
+Provide the following information:
+
+|Field|Description|
 |:---|:---|
-|Farbe|Farbe für die Datenpunktvisualisierung
-|Beschriftung|Beschriftung für die Datenpunktvisualisierung
-|Fragment|Name des Fragments
-|Serie|Name der Serie
-|Einheit|Einheit des Messwerts
-|Ziel|Zielwert
-|Minimum|Minimaler Wert, der auf der Y-Achse angezeigt wird
-|Maximum|Maximaler Wert, der auf der Y-Achse angezeigt wird
-|Gelber Bereich|Min/max-Werte für den gelben Bereich (WENIGER WICHTIGE Alarme)
-|Roter Bereich|Min/max-Werte für den roten Bereich (KRITISCHE Alarme)
+|Color|Color for the data point visualization.
+|Label|Label to identify the data point.
+|Fragment|Name of the fragment. 
+|Series|Name of the series.
+|Unit|Unit used for the measurement.
+|Target|Target value.
+|Minimum|Minimum value shown on the y-axis.
+|Maximum|Minimum value shown on the y-axis.
+|Yellow range|Min/max values for the yellow range (MINOR alarms).
+|Red range|Min/max values for the red range (CRITICAL alarms).
 
-Beispiel:
+Click **Save** to add the data point to the library.
 
-<img src="/guides/images/benutzerhandbuch/cockpit-datapoint-example.png" name="Datenpunkt Beispiel" style="width:50%;"/>
+### Editing or removing data points
 
-Klicken Sie **Speichern**, um den Datenpunkt zur Bibliothek hinzuzufügen.
+To edit a data point, simply click the respective entry in the list or click the menu icon at the right of an entry and in the context menu click **Edit**.
 
-### Bearbeiten oder Löschen von Datenpunkten
+To remove a data point, click **Remove** in the context menu.
 
-Klicken Sie auf den entsprechenden Datenpunkteintrag in der Liste oder öffnen Sie das Kontextmenü über das Menüsymbol und klicken Sie "**Bearbeiten**".
 
-Klicken Sie **Entfernen** im Kontextmenü, um einen Datenpunkt zu löschen.
+
+
+Bei Auswahl von "Datenpunktbibliothek" im Navigator öffnet sich eine Liste mit vordefinierten Datenpunkten inklusive deren Eigenschaften.
+
+![image alt text](/guides/images/users-guide/image_21de.png)
+
+Beim Anklicken eines Eintrags kann ein einzelner Eintrag in der Datenpunktbibliothek editiert werden:
+
+![image alt text](/guides/images/users-guide/image_22.png)
+

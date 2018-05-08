@@ -58,7 +58,8 @@ An example with minimum configuration is presented below:
 
 ### Package goal
 
-The package plugin is responsible for creation of a docker container and rpm file. It can be configured with the following parameters:
+The package plugin is responsible for creation of a docker container, rpm file and for creating a zip file, that can be deployed on the platform. 
+It can be configured with the following parameters:
 
 * name (alias package.name) - defaults to project.artifactId
 *  description (alias package.description) - defaults to project.description
@@ -70,6 +71,7 @@ The package plugin is responsible for creation of a docker container and rpm fil
 *  skip (alias skip.agent.package) - to skip the whole packaging part
 *  rpmSkip (alias skip.agent.package.rpm) - to skip rpm file creation. False by default
 *  containerSkip (alias skip.agent.package.container) - to skip docker image creation. True by default
+* manifestFile - points to a manifest file location. Default value: ${basedir}/src/main/configuration/cumulocity.json
 
 Example configuration:
 
@@ -78,6 +80,7 @@ Example configuration:
       <encoding>UTF-8</encoding>
       <rpmSkip>true</rpmSkip>
       <containerSkip>false</containerSkip>
+      <manifestFile>${basedir}/src/main/microservice/cumulocity.json</manifestFile>
     </configuration>
 
 ### Push goal
@@ -94,31 +97,59 @@ Example configuration:
 	      <containerSkip>false</containerSkip>
 	    </configuration>
 
-### Microservice-package goal
+### Upload goal
 
-The microservice-package plugin is responsible for creating a zip file, that can be deployed on the platform. It can be configured by:
+Microservice upload goal is responsible for deploying the microservice to a server. 
+We have three options to configure server url and credentials:
 
-* skip (alias skip.microservice.package) - skip the zip creation. True by default
-* manifestFile - points to a manifest file location. Default value: ${basedir}/src/main/configuration/cumulocity.json
- 
+* settings.xml - maven global configuration placed at ~/.m2/settings.xml
+* pom.xml - maven project configuration file
+* command line
 
-Example configuration:
+The command line configuration has the highes priority and settings xml configuration the lowest.
 
-    <configuration>
-      <skip>false</registry>
-      <manifestFile>${basedir}/src/main/microservice/cumulocity.json</manifestFile>
-    </configuration>
+To upload microservice to the server we need to configure following properties
 
-### Microservice-deploy goal
+* url - Mandatory url that will be used for deployment. Empty by default.
+* username - Mandatory tenant name and user name used for authorization. Empty by default.
+* password - Mandatory password used for authorization. Empty by default.
+* name - Optional name of uploaded application. By default the same as "package.name" property or "artifactId" if "package.name" is not provided.
 
-Microservice-deploy is responsible for deploying the microservice to a server, defined in standard maven settings.xml file. The plugin can be configured by:
+#### settings.xml
 
-* skip (alias skip.microservice.deploy) - indicates whether the deploy should be skipped or not. True by default
-* serviceId (alias serviceId) - service ID that will be used for the deployment. Default value: "microservice".
+To configure the goal in setting xml file we need to add server configuration as follows:
 
-Example configuration:
+    <server>
+        <id>microservice</id>
+        <username>management/admin</username>
+        <password>Py****</password>
+        <configuration>
+            <url>http://cumulocity.default.svc.cluster.local</url>
+        </configuration>
+    </server>
+    
+#### pom.xml
 
-    <configuration>
-      <serviceId>microservice</serviceId>
-      <skip>false</skip>
-    </configuration>
+To configure plugin in pom xml file we need to add server configuration as follows:
+
+    <plugin>
+        <groupId>com.nsn.cumulocity.clients-java</groupId>
+        <artifactId>microservice-package-maven-plugin</artifactId>
+        <configuration>
+            <credentials>
+                <url>http://cumulocity.default.svc.cluster.local</url>
+                <username>management/admin</username>
+                <password>Py****</password>
+            </credentials>
+            
+            <application>
+                <name>cep</name>
+            </application>
+        </configuration>
+    </plugin>
+
+#### command line
+
+To pass configuration only to the particular build
+
+    mvn microservice:upload -Dupload.application.name=cep -Dupload.url=http://cumulocity.default.svc.cluster.local -Dupload.username=management/admin -Dupload.password=Py****

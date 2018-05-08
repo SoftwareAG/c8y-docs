@@ -8,12 +8,14 @@ To develop a simple "Hello, World!" microservice in python, you need to
  
  * create a python web application
  * create the dockerfile
- * add microservice manifest
+ * add the microservice manifest
  * build and run the application
 
-### Create a python web application
+### Creating a Python web application
 
-In this example we will use Python 3 with a Flask microframework, which enables simple exposing endpoints and embedded HTTP server. Start from creating the "application.py" script with the content
+In this example, we will use Python 3 with a Flask microframework, which enables simple exposing of endpoints and embedded HTTP server. 
+
+Start from creating the "application.py" script with the content
  
     #!flask/bin/python
     from flask import Flask, jsonify
@@ -41,12 +43,12 @@ In this example we will use Python 3 with a Flask microframework, which enables 
     if __name__ == '__main__':
         app.run(host='0.0.0.0', port=80, debug=True)
         
-The application is configured to run on port 80 (which is required for the microservice), and exposes 2 endpoints: "/health" and "/hello".
-Endpoint "/hello" reads few standard variables provided into environment by platform during microservice installation and returns their values as JSON.
+The application is configured to run on port 80 (which is required for the microservice), and exposes two endpoints: "/health" and "/hello".
+The endpoint "/hello" reads some standard variables provided to the environment by the platform during the microservice installation and returns their values as JSON.
 
-### Create Dockerfile
+### Creating the Dockerfile
 
-To enable building docker image with our application, you need to create the "Dockerfile". For this example it should be in the same directory as "application.py" script.
+To be able to build a docker image with our application, you need to create the "Dockerfile". For this example it should be in the same directory as the "application.py" script.
 
     FROM python:alpine3.6
     
@@ -56,17 +58,17 @@ To enable building docker image with our application, you need to create the "Do
     ENTRYPOINT ["python"]
     CMD ["application.py"]
     
-This build uses Alpine linux with python SDK inside. This is a very thin distribution, and resulting docker image is small (about 100 MB). The line
+This build uses Alpine linux with Python SDK inside. This is a very thin distribution, and the resulting docker image is small (about 100 MB). The line
 
     RUN pip install -r requirements
     
-installs required python libraries using "pip" installer. Those required libraries should be put into "requirements" file in the same directory. In our example we use only Flask as non-standard library, so "requirements" file has only 1 line
+installs the required Python libraries using "pip" installer. These required libraries should be put into the "requirements" file in the same directory. In our example we use only Flask as non-standard library, so the "requirements" file has only 1 line
     
     Flask==0.10.1
     
-### Add manifest 
+### Adding the manifest 
     
-The last thing, which is required for our application is the microservice manifest file "cumulocity.json"    
+Finally, the microservice manifest file "cumulocity.json" is required for our application.
 
     {
       "apiVersion":"1",
@@ -81,30 +83,32 @@ The last thing, which is required for our application is the microservice manife
       ]
     }
     
-### Build the application
+### Building the application
      
-To build the docker image and save it in "image.tar" run     
+To build the docker image and save it in "image.tar", run     
 
     $ docker build -t hello-python-microservice .
     $ docker save hello-python-microservice > "image.tar"
 
-then pack "image.tar" with the manifest "cumulocity.json" into .zip archive
+Then pack "image.tar" with the manifest "cumulocity.json" into a .zip archive
     
     $ zip hello-microservice cumulocity.json image.tar
     
-The resulting "hello-microservice.zip" file contains ready to upload microservice. 
+The resulting "hello-microservice.zip" file contains the ready to upload microservice. 
 
 ### Running the example
 
-Uploading "hello-microservice.zip" into platform can be done via UI. In "Administration" application go to 
+Uploading the "hello-microservice.zip" into the platform can be done via the UI. In the Administration application go to 
 
 Applications -> Own applications -> Add application -> Upload ZIP file
 
 and choose "Subscribe". 
 
+For details on uploading a microservice ZIP file refer to Administration> Managing applications > Adding applications > [Uploading ZIP files](uploading-zip-files) in the User guide. 
+
 #### Using "microservice" script
 
-You can also build, upload and subscribe the application using ["microservice" utility script](/guides/reference/microservice-package). In this case the files must follow the directory sctructure required by the script. In our example it would be
+You can also build, upload and subscribe the application using the ["microservice" utility script](/guides/reference/microservice-package). In this case the files must follow the directory structure required by the script. In our example it would be
 
     /docker/Dockerfile
     /docker/application.py
@@ -115,7 +119,7 @@ You can also build, upload and subscribe the application using ["microservice" u
 
 #### Example usage
 
-After application is uploaded, and subscribed by any tenant it will run in the container. Request
+After the application is uploaded and subscribed by any tenant it will run in the container. A request
 
     GET {{URL}}/service/hello-microservice/hello 
     Authorization: Basic ...

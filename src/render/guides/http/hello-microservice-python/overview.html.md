@@ -4,13 +4,13 @@ title: Overview
 layout: redirect
 ---
 
-Our platform microservice hosting is build at the top of docker containers. This makes it technology agnostic and allows developers to create applications in any technology stack.
+In the Cumulocity platform, microservice hosting is build on top of docker containers. This makes it technology-agnostic and allows developers to create applications in any technology stack.
 
-In this tutorial, you will learn how to create and run sample microservice written in Python. Provided example covers:
+In this tutorial, you will learn how to create and run a sample microservice written in Python. The provided example covers:
  
-* sample Python application using Flask framework to expose REST endpoints
-* manifest file with minimal content to run an application 
-* configuration of the dockerfile which enables to create ready to run docker image with bundled application (inside light Alpine linux distribution)
-* instructions for building and packaging .zip file containing full application (ready to upload into platform)
-* instructions for uploading and subscribe packaged microservice 
+* a sample Python application using the Flask framework to expose REST endpoints
+* a manifest file with minimal content to run an application 
+* the configuration of the dockerfile which enables to create a ready to run docker image with bundled application (inside light Alpine linux distribution)
+* instructions for building and packaging a .zip file containing the full application (ready to upload into platform)
+* instructions for uploading and subscribing to the packaged microservice 
 

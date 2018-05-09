@@ -19,7 +19,7 @@ The following sections will walk you through all functionalities of the Administ
 |[Managing Applications](#applications)|How to manage and [configure own applications](#applications) in your Cumulocity account.
 |[Managing Tenants](#applications)|How to [manage tenants](#tenants), retrieve [user statistics](#user-stats) and configure [tenant policies](#tenant-policies).
 |[Applying Business Rules](#retention)|How to set up realtime [event processing](#event-processing) scripts and reprioritize alarms by [alarm mappings](#reprio-alarms).
-|[Changing Settings](#settings)|How to change account settings like [application settings](#default-app) or [password policy and TFA settings](#changing-password-settings), how to manage the [properties library](#properties), and how to configure [settings for the Enterprise Edition](#platform-config).
+|[Changing Settings](#settings)|How to change account settings like [application settings](#default-app) or [password policy and TFA settings](#changing-password-settings), how to manage the [properties library](#properties), and how to change various [configuration settings](#platform-config).
 |[Managing Data Retention](#retention)|How to manage and configure [retention rules](#retention-rules) for your data and how to [manage stored files](#files) in the file repository.
 |[Data Broker](#data-broker)|How to forward data to other tenants using [data connectors](#data-broker-connector) and how to receive data with a [data subscription](#data-broker-subscriptions) on the receiving end.
 |[Storage Quota](#storageQuota)|How to configure the recipients and triggers of the [warning email](#warningEmail) for maximum storage being reached.
@@ -701,7 +701,7 @@ By providing OPenIT credentials you enable the platform to utilize SMS services 
 
 SMS are used throughout the application for various features like [two-factors authentication](/guides/users-guide/administration#tfa) and user notifications, i.e. on alarms.
 
-### <a name="config-platform"></a>Configuration
+### <a name="platform-config"></a>Configuration
 
 Under "Configuration" in the "Settings" menu, you can configure system-wide properties in Cumulocity. The following options can be modified in the configuration settings.
 

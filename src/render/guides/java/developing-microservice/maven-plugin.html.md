@@ -106,7 +106,8 @@ We have three options to configure server url and credentials:
 * pom.xml - maven project configuration file
 * command line
 
-The command line configuration has the highes priority and settings xml configuration the lowest.
+All three ways can be used together, ie goal partially can be configured in settings.xml and partially in pom.xml. 
+In case of conflicts the command line configuration has the highest priority and settings xml configuration the lowest.
 
 To upload microservice to the server we need to configure following properties
 
@@ -121,30 +122,31 @@ To configure the goal in setting xml file we need to add server configuration as
 
     <server>
         <id>microservice</id>
-        <username>management/admin</username>
-        <password>Py****</password>
+        <username>demos/username</username>
+        <password>******</password>
         <configuration>
-            <url>http://cumulocity.default.svc.cluster.local</url>
+            <url>https://demos.cumulocity.com</url>
         </configuration>
     </server>
     
 #### pom.xml
 
-To configure plugin in pom xml file we need to add server configuration as follows:
+To configure plugin in pom xml file we need to add server configuration as follows. 
 
     <plugin>
         <groupId>com.nsn.cumulocity.clients-java</groupId>
         <artifactId>microservice-package-maven-plugin</artifactId>
         <configuration>
-            <credentials>
-                <url>http://cumulocity.default.svc.cluster.local</url>
-                <username>management/admin</username>
-                <password>Py****</password>
-            </credentials>
-            
             <application>
                 <name>cep</name>
             </application>
+            
+            <!-- please note that the credentials are optional if they are already configured in settings.xml -->
+            <credentials>
+                <url>https://demos.cumulocity.com</url>
+                <username>demos/username</username>
+                <password>******</password>
+            </credentials>
         </configuration>
     </plugin>
 
@@ -152,4 +154,5 @@ To configure plugin in pom xml file we need to add server configuration as follo
 
 To pass configuration only to the particular build
 
-    mvn microservice:upload -Dupload.application.name=cep -Dupload.url=http://cumulocity.default.svc.cluster.local -Dupload.username=management/admin -Dupload.password=Py****
+    mvn microservice:upload -Dupload.application.name=cep -Dupload.url=https://demos.cumulocity.com -Dupload.username=demos/username -Dupload.password=******
+

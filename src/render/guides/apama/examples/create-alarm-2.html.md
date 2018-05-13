@@ -6,10 +6,10 @@ layout: redirect
 
 Devices often keep alarm statuses in registers and cannot interpret the meaning of alarms. In this example, we assume that a device just sends the entire register as a binary value in a measurement. A rule must identify the bits and create the respective alarm.
 
-We create three dictionaries to map alarm text, type, and severity for each of the bits, and an action to look up the value. We use -1 to indicate a default value, and replace &#60;position> with the string form of the position.
+We create three dictionaries to map alarm text, type, and severity for each of the bits, and an action to look up the value. We use -1 to indicate a default value, and replace <position> with the string form of the position.
 
 	monitor CreateAlarmFromBinary {
-		dictionary&#60;integer, string> positionToAlarmType := {
+		dictionary<integer, string> positionToAlarmType := {
 			0: "c8y_HighTemperatureAlarm",
 			1: "c8y_ProcessingAlarm",
 			2: "c8y_DoorOpenAlarm",
@@ -17,14 +17,14 @@ We create three dictionaries to map alarm text, type, and severity for each of t
 			-1:"c8y_FaultRegister&#60;position>Alaram"
 		};
 	
-	dictionary&#60;integer, string> positionToAlarmSeverity := {
+	dictionary<integer, string> positionToAlarmSeverity := {
 		0: "MAJOR",
 		1: "WARNING",
 		2: "MINOR",
 		3: "CRITICAL",
 		-1:"MAJOR"
 	};
-	dictionary&#60;integer, string> positionToAlarmText := {
+	dictionary<integer, string> positionToAlarmText := {
 		0: "The machine temperature reached a critical status",
 		1: "There was an error trying to process data",
 		2: "Door was opened",
@@ -39,8 +39,8 @@ We create three dictionaries to map alarm text, type, and severity for each of t
 
 To analyze the binary measurement value, we will interpret it as a string value and loop through each character. The getActiveBits() function will do that and return a list of the bit positions at where the measurement had a "1". We can then use a `for` loop to iterate through that:
 
-	action getBitPositions(string binaryAsText) returns sequence&#60;integer> {
-			sequence&#60;integer> bitsSet:=new sequence&#60;integer>;
+	action getBitPositions(string binaryAsText) returns sequence<integer> {
+			sequence<integer> bitsSet:=new sequence&#60;integer>;
 			integer i:=0;
 			while(i < binaryAsText.length()) {
 				string character := binaryAsText.substring(i, i+1);

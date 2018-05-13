@@ -15,6 +15,6 @@ To clear the alarm, we just need to switch the condition at the bottom and addit
 						   and not FindAlarmResponseAck(reqId=reqId) {
 							send Event(alarmResponse.id, "Alarm", firstPos.source, currentTime,
 							           "Device moved back into circular geofence",
-							           {"id":&#60;any> alarmResponse.id, "status":"CLEARED"}) to Event.CHANNEL;
+							           {"id"<any> alarmResponse.id, "status":"CLEARED"}) to Event.CHANNEL;
 						}
 					}

@@ -8,7 +8,7 @@ layout: redirect
 You can define variables in your modules.
 
     string myEmailText := "Hello World";
-    sequence&#60;string> supportedOperationsList := ["c8y_Restart", "c8y_Relay"];
+    sequence<string> supportedOperationsList := ["c8y_Restart", "c8y_Relay"];
 
 If you define a monitor-scope variable (that is, inside a monitor but not within any actions on that monitor), then that can be used in a listener if you use a colon (:) instead of "as" for the event coassignment in the listener. Thus the below sends the latest event every 10 seconds:
 

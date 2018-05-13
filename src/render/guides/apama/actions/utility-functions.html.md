@@ -5,9 +5,10 @@ layout: redirect
 ---
 
 
+
 ### Access fragments
 
-Fragments are accessible through the params dictionary of most events. You can construct an AnyExtractor object to help you extract data from any objects containing multiple sub-fragments and access:
+You can access fragments via the params dictionary of most events. AnyExtractor object can be constructed to help you extract data from any objects containing multiple sub-fragments and access:
 
 *   <span style="color: rgb(0,0,0);">action getInteger(string path) returns integer</span>
 
@@ -17,13 +18,17 @@ Fragments are accessible through the params dictionary of most events. You can c
 
 *   <span style="color: rgb(0,0,0);">action getBoolean(string path) returns boolean</span>
 
-*   <span style="color: rgb(0,0,0);">action getSequence(string path) returns sequence&#60;any></span>
+*   <span style="color: rgb(0,0,0);">action getSequence(string path) returns sequence<any></span>
 
-*   <span style="color: rgb(0,0,0);">action getDictionary(string path) returns dictionary&#60;any,any></span>
+*   <span style="color: rgb(0,0,0);">action getDictionary(string path) returns dictionary<any,any></span>
 
 You can use a JSON path to navigate in the object structure. Example:
 
-	string s:= AnyExtractor(measurement.params["fragment"]).getString("sub.fragment.object");
+	Stringt s:= AnyExtractor(measurement.Params["fragment"]).getString("sub.fragment.object");
+	
+>Example "fragment" : "c8y_TemperatureMeasurement".
+
+>Example "sub.fragment.object" : "c8y_TemperatureMeasurement.T.Unit".
 
 ### Casting "any" values
 

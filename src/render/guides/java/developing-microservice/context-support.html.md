@@ -4,7 +4,9 @@ layout: redirect
 title: Context support
 ---
 
-@UserScope and @TenantScope at type level annotation indicate that a bean created from class will be created in the scope defined. The user scope implies using user credentials to authorize against the platform. The tenant scope implies using microservice credentials.
+Following section is a convenience module for [user management](/guides/concepts/applications/microservices)
+
+@UserScope and @TenantScope at type level annotation indicate that a bean created from class will be created in the scope defined. The user scope implies using tenant platform user credentials for platform calls. The tenant scope implies using service user credentials.
 
 Example of injecting a bean into the tenant scope is available in the Platform Api module as follows:
 

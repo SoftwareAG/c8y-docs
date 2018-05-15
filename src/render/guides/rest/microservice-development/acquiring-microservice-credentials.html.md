@@ -4,7 +4,9 @@ title: Acquiring microservice credentials
 layout: redirect
 ---
 
-Microservice related endpoints require a dedicated microservice user, which can be obtained by a service provider using
+Following section is a wrap up for [user management section](/guides/concepts/applications/microservices)
+
+Microservice related endpoints require a microservice bootstrap user, which can be obtained by a service provider using
 
     GET /application/applications/{APPLICATION_ID}/bootstrapUser
     Host: ...

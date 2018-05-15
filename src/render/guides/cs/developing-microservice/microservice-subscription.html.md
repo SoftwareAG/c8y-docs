@@ -4,6 +4,8 @@ title: Microservice subscription
 layout: redirect
 ---
 
+Following section references [user management](/guides/concepts/applications/microservices)
+
 This SDK has a task CurrentApplicationSubscriptionsTask, which only fetches a list of all subscriptions. The CurrentApplicationSubscriptionsTask is the IScheduledTask implementation which runs every hour:
 
             services.AddSingleton<IScheduledTask, CurrentApplicationSubscriptionsTask>();

@@ -149,7 +149,7 @@ Die Regel verwendet die folgenden Parameter:
 |3|Alarm erzeugen:|Grund für das Auslösen eines Alarms: "Bei Betreten", "Bei Verlassen" (der Standardwert), "Bei Betreten und Verlassen".<br>Typ des auszulösenden Alarms.<br> Schweregrad des auszulösenden Alarms. <br>Alarm-Text.
 |4|Ziel-Assets oder Geräte|Gruppen oder Geräte, auf die die Regel angewendet werden soll.
 
-Es wird kein Alarm ausgelöst, bis das Gerät den Geofence-Bereich zum ersten mal überschreitet.
+**Info**: Damit ein Alarm ausgelöst wird, muss das Gerät mindestens einmal nach Erstellen der Regel innerhalb des Geofence-Bereichs gewesen sein.
 
 **Fehlerbehebung**
 
@@ -180,7 +180,7 @@ Die Regel verwendet die folgenden Parameter:
 |3|E-Mail senden:|"Senden an:/CC an:/BCC an": E-Mail-Adressen der Empfänger. Mehrere Adressen können durch ein Komma getrennt werden (",", ohne Leerzeichen!).<br>"Antwort an": Adresse, die für eine Antwort verwendet werden kann.<br> "Betreff": Betreff der E-Mail. Es können Variablen im Format #{name} verwendet werden. Die unterstützten Variablen werden weiter unten unter "Smart Rules-Variablen" aufgelistet. <br> "Nachricht": Text der E-Mail. Es können Variablen im Format #{name} verwendet werden. Die unterstützten Variablen werden weiter unten unter "Smart Rules-Variablen" aufgelistet. 
 |4|Ziel-Assets oder Geräte|Gruppen oder Geräte, auf die die Regel angewendet werden soll.
 
-**Info**: Damit die E-Mail versendet wird, muss das Gerät mindestens einmal nach Erstellen der Regel innerhalb des Geofence-Bereichs gewesen sein.
+**Info**: Damit ein Alarm ausgelöst wird, muss das Gerät mindestens einmal nach Erstellen der Regel innerhalb des Geofence-Bereichs gewesen sein.
 
 **Fehlerbehebung**
 
@@ -204,18 +204,18 @@ Die Regel verwendet die folgenden Parameter:
 |Schritt|Feld|Beschreibung|
 |:---|:---|:---|
 |1|Name der Regel|Vorausgefüllt mit dem Namen der Regelvorlage. Kann individuell geändert werden.
-|2|Verwendeter Messwert:|"Fragment/Series": Fragment/Series des Messwerts. Der eingehende Messwert muss exakt die gleichen Fragment/Series-Werte haben. Wenn eine Regel im Daten-Explorer erstellt wird, sind diese Felder bereits ausgefüllt.  <br> "Zeitintervall": Intervall, in welchem Verbrauchswerte berechnet werden. Spezifiziert, wie oft der Verbrauch berechnet wird, z. B. 1 x pro Stunde. 
+|2|Verwendeter Messwert:|"Fragment/Series": Fragment/Series des Messwerts. Der eingehende Messwert muss exakt die gleichen Fragment/Series-Werte haben. Wenn eine Regel im Daten-Explorer erstellt wird, sind diese Felder bereits ausgefüllt.  <br> "Zeitintervall": Intervall, in welchem Verbrauchswerte berechnet werden. Spezifiziert, wie oft der Verbrauch pro Stunde berechnet wird.
 |3|Energieverbrauch:|Fragment/Series des zu erstellenden Messwerts.  
 |4|Ziel-Assets oder Geräte|Gruppen oder Geräte, auf die die Regel angewendet werden soll.
 
-The unit of the consumption measurement is always per hour (i.e. if the measurements are in "kg" the consumption will be in "kg/h").
+>**Info**: Die Einheit des Verbrauchsmesswerts ist immer pro Stunde. Hat der Messwert die Einheit "kg" wird der Verbrauch in "kg/h" ausgegeben.
 
-The rule takes the last two measurements for a specified time, calculates the difference in value and time and then calculates the consumption per hour.
+Die Regel verwendet die letzten beiden Messungen in einem bestimmten Zeitraum, berechnet die Differenz von Wert und Zeit und berechnet dann den Verbrauch per Stunde. 
 
 **Beispiel**
 Die Regel wurde so konfiguriert, dass alle 20 Minuten eine Berechnung stattfindet. Die folgenden Messdaten gehen ein: 
 100 kg um 11:59h und 200 kg um 12:14h.
-um 12:20h wird die Regel ausgelöst und es werden die letzten beiden Messungen zugrunde gelegt. Es wird der Wert- und Zeit-Unterschied berechnet. Der Verbrauchsmesswert von 12:20h beträgt also 400 kg/h.
+um 12:20h wird die Regel ausgelöst und es werden die letzten beiden Messungen zugrunde gelegt. Es wird die Wert- und Zeit-Differenz berechnet. Der Verbrauchsmesswert von 12:20h beträgt also 400 kg/h.
 Wenn keine weiteren Messdaten im letzten Intervall erzeugt wurden, wird ein Messwert mit dem Wert 0 erstellt. 
 
 ### Bei fehlenden Messdaten Alarm erzeugen
@@ -262,7 +262,15 @@ Die Regel verwendet die folgenden Parameter:
 
 **Funktionalität**  
 
-Wenn definierte gelbe oder rote Bereiche überschritten werden, werden Alarme erzeugt. 
+Wenn der Messwert einen definierten roten oder gelben Bereich betritt oder verlässt, wird ein Alarm erzeugt bzw. gelöscht.  
+
+Der Schweregrad des Alarms wird folgendermaßen bestimmt:
+
+* Wenn der Messwert sich in den roten Bereich bewegt, wird der Schweregrad auf KRITISCH gesetzt.
+
+* Wenn der Messwert sich in den gelben Bereich bewegt, wird der Schweregrad auf WENIGER WICHTIG gesetzt.
+
+* Wenn der Messwert sich in den grünen Bereich bewegt, wird der Alarm gelöscht.
 
 Diese Regel verwendet die folgenden Parameter vom Gerät oder aus der Datenpunktbibliothek: 
 
@@ -328,15 +336,15 @@ Sind keine roten/gelben Bereiche definiert, werden keine Alarme ausgelöst.
 
 **Funktionalität**  
 
-When the measurement value enters or leaves the RED range, a CRITICAL alarm is generated or cleared.
+Wenn der Messwert den roten Bereich betritt oder verlässt, wird ein KRITISCHER Alarm erzeugt bzw. gelöscht. 
 
-The severity of alarm is determined as follows:
+Der Schweregrad des Alarms wird folgendermaßen bestimmt:
 
-* If the measurement value moves into RED range, then the severity is CRITICAL.
+* Wenn der Messwert sich in den roten Bereich bewegt, wird der Schweregrad auf KRITISCH gesetzt.
 
-* If the measurement value moves into GREEN range, the alarm is cleared.
+* Wenn der Messwert sich in den grünen Bereich bewegt, wird der Alarm gelöscht.
 
->**Info:** This rule is similar to the rule "On measurement threshold create alarm". However, in this rule here the RED threshold value is provided explicitly. The threshold rule "On measurement threshold create alarm" extracts the thresholds values from the device or Data Point Library.
+>**Info:** Die Regel ist ähnlich wie die Regel "Bei Schwellwertüberschreitung Alarm erzeugen". Allerdings wird in dieser Regel hier der rote Schwellwert explizit bereitgestellt, während in der Regel "Bei Schwellwertüberschreitung Alarm erzeugen" der Schwellwert vom Gerät oder aus der Datenpunktbibliothek  genommen wird.
 
 **Parameter**
 
@@ -364,32 +372,32 @@ Die Regel verwendet die folgenden Parameter:
 >**Info:**  Wenn Sie einen Alarm löschen, bestätigen Sie damit, dass der Alarm aufgehoben ist. Ein neuer Alarm wird nur erzeugt, wenn das Gerät den Zustand wechselt und den Schwellwert wieder überschreitet. 
 
 
-### On alarm initiate text-to-speech call
+### Bei Alarm Anruf starten
 
 **Funktionalität**  
 
-When an alarm is created, it initiates a text-to-speech call.
+Wenn ein Alarm erzeugt wird, wird ein Sprachanruf gestartet.
 
-**Parameters**
+**Parameter**
 
 Die Regel verwendet die folgenden Parameter:
 
-<img src="/guides/images/users-guide/Cockpit/Cockpit_SmartRuleInitiateCall.png" name="Smart Rule initiate call" style="width:50%;"/>
+<img src="/guides/images/benutzerhandbuch/cockpit/cockpit-smart-rule-initiate-call.png" name="Smart Rule Anruf starten" style="width:50%;"/>
 
-|Step|Field|Description|
+|Schritt|Feld|Beschreibung|
 |:---|:---|:---|
-|1|Rule name|Pre-filled with the name of the rule template. Can be modified according to your needs.
-|2|On alarm matching:|The types of alarms triggering the rule. For each newly created alarm with one of these types in the list the rule is triggered.
-|3|Text-to-speech:|"Phone number": Valid international phone number. Use country codes in the format "+49" (as an example for Germany).<br> "Message": The text read out by the rule. <br> Retries: The number of retries to reach the target phone number if not successful (default is "0", max is "20").<br> "Interval": The time interval between the retries in minutes (default is "5").<br>"Acknowledgment": If selected the receiver of the call has to acknowledge the call (a call not acknowledged will not count as successful)<br> "Acknowledgment text": The acknowledgment message which will be read after the main message, for example: "Please acknowledge this call by pressing the button 5". <br> "Acknowledgment number": The number of the button the receiver has to push to acknowledge. If the button has been pushed, the call will be successful and the alarm status will be changed to acknowledged.
-|4|Target asset or devices|Groups or devices the rule shall be applied to.
+|1|Name der Regel|Vorausgefüllt mit dem Namen der Regelvorlage. Kann individuell geändert werden.
+|2|Bei Alarm vom Typ:|Die Alarmtypen, die die Regel auslösen. Für jeden neu erzeugten Alarm eines dieser Typen wird eine Regel ausgelöst.
+|3|Sprachausgabe:|"Telefonnummer": Gültige internationale Telefonnummer. Verwenden Sie die Ländervorwahl im Format "+49" (als Beispiel für Deutschland).<br> "Nachricht": Der Text, der durch die Regel ausgegeben wird. <br> Wiederholungen: Die Anzahl der Wiederholungsversuche, um die Zielnummer zu erreichen (Standard ist "0", Maximum ist "20").<br> "Intervall": Zeitintervall zwischen den Wiederholungen in Minuten (Standard ist "5").<br>"Bestätigung": Wenn diese Option ausgewählt ist, muss der Empfänger den Anruf bestätigen (ein nicht bestätigter Anruf gilt als nicht erfolgreich)<br> "Bestätigungstext": Bestätigungsnachricht, die nach der Hauptnachricht ausgegeben wird, zum Beispiel: "Bestätigen Sie den Anruf durch Drücken der "5"". <br> "Bestätigungsnummer": Die Nummer der Taste, die der Empfänger zum Bestätigen drücken muss. Wurde die Nummer gedrückt, gilt der Anruf als erfolgreich und der Alarmstatus wechselt auf bestätigt.  
+|4|Ziel-Assets oder Geräte|Gruppen oder Geräte, auf die die Regel angewendet werden soll.
 
 **Fehlerbehebung**
 
-* Make sure that the alarm was created and not duplicated from somewhere.
+* Stellen Sie sicher, dass der Alarm erzeugt und nicht dupliziert wurde.
 
-* Check if the device is in [maintenance](/guides/reference/device-management) mode. No new alarm will be created because of suppression policy.
+* Prüfen Sie, ob sich das Gerät im [Wartungsmodus](/guides/reference/device-management) befindet. In diesem Fall wird das Erzeugen eines Alarms unterdrückt.  
 
-* If you have configured an alarm mapping rule (see [Administration > Reprioritizing alarms](/guides/users-guide/administration#reprio-alarms)) which changes the alarm severity, the alarm may have different severity than expected.
+* Wenn Sie eine Alarmregel erstellt haben (siehe [Administration > Priorisieren von Alarmen](/guides/benutzerhandbuch/administration#reprio-alarms)), die den Schweregrad des Alarms ändert, zeigt der Alarm einen anderen Schweregrad als möglicherweise erwartet.
 
 
 ### Smart Rule-Variablen

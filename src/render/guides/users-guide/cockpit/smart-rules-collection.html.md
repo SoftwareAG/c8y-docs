@@ -153,7 +153,7 @@ The rule uses the following parameters:
 |3|Create alarm:|Reason for triggering the alarm: "On entering", "On leaving" (the default), "On entering and leaving".<br>Type of alarm being raised. <br> Severity of alarm being raised. <br>Alarm text.
 |4|Target asset or devices|Groups or devices the rule shall be applied to.
 
-No alarm will be generated until the device crosses the geofence border for the first time.
+**Info**: In order to raise an alarm the device had to be inside the geofence at least once after creating the rule.
 
 **Troubleshooting**
 
@@ -184,7 +184,7 @@ The rule uses the following parameters:
 |3|Send e-mail:|"Send to:/Send CC to:/Send BCC to": Email addresses for sending the e-mail to. Multiple addresses can be separated by a comma (",", do not use a space!).<br>"Reply to": Address to be used to reply to the message.<br> "Subject": Subject of e-mail. You can use a variable of the form #{name}. Supported variables are listed under "Smart Rule Variables" below.<br> "Message": Text of the e-mail. You can use a variable of the form #{name}. Supported variables are listed under "Smart Rule Variables" below.
 |4|Target asset or devices|Groups or devices the rule shall be applied to.
 
-**Info**: In order to send out the e-mail the device had to be inside the geofence at least once after creating the rule.
+**Info**: In order to raise an alarm the device had to be inside the geofence at least once after creating the rule.
 
 **Troubleshooting**
 
@@ -208,7 +208,7 @@ The rule uses the following parameters:
 |Step|Field|Description|
 |:---|:---|:---|
 |1|Rule name|Pre-filled with the name of the rule template. Can be modified according to your needs.
-|2|Monitored measurement:|"Fragment/Series": Name of the measurement fragment and series. The incoming measurement must have exactly the same fragment/series name as configured. When creating a rule from the data explorer, these fields are already filled in. <br> "Time interval": Interval in which consumption values shall be calculated. Only specifies how often the consumption is calculated not the unit of the consumption measurement.
+|2|Monitored measurement:|"Fragment/Series": Name of the measurement fragment and series. The incoming measurement must have exactly the same fragment/series name as configured. When creating a rule from the data explorer, these fields are already filled in. <br> "Time interval": Interval in which consumption values shall be calculated. Specifies how often per hour the consumption is calculated.
 |3|Energy consumption measurement:|Name of the measurement fragment and series that shall be generated.
 |4|Target asset or devices|Groups or devices the rule shall be applied to.
 
@@ -268,7 +268,15 @@ The rule uses the following parameters:
 
 **Functionality** 
 
-When exceeding defined yellow and red ranges, alarms are generated and cleared.
+When the measurement value enters or leaves the RED/YELLOW range, an alarm is created or respectively cleared.
+
+The severity of alarm is determined as follows:
+
+* If the measurement value moves into RED range, then the severity is CRITICAL.
+
+* If the measurement value moves into YELLOW range, then the severity is MINOR.
+
+* If the measurement value moves into GREEN range, the alarm is cleared.
 
 The rule uses the following parameter from the device object or data point library:
 

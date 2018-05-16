@@ -6,7 +6,9 @@ layout: default
 
 ## Overview
 
-With the Apama Event Processing Language, it is possible to utilize functions, called "actions". Every monitor will have at least one action - the `onload` action. This section covers the already built-in actions ready to use. <span class="inline-comment-marker" data-ref="67613062-9ea1-4d95-86f8-845b74940386">See also the Apama [EPL reference](http://www.apamacommunity.com/documents/10.1.0.3/apama_10.1.0.3_webhelp/apama-webhelp/#page/apama-webhelp%252Fco-ApaEplRef_types.html%2523) for actions on built-in types.
+With the Apama Event Processing Language, it is possible to utilize functions, called "actions". Every monitor will have at least one action - the `onload` action. This section covers the already built-in actions ready to use. <span class="inline-comment-marker" data-ref="67613062-9ea1-4d95-86f8-845b74940386">
+
+See also the Apama [EPL reference](http://www.apamacommunity.com/documents/10.1.0.3/apama_10.1.0.3_webhelp/apama-webhelp/#page/apama-webhelp%252Fco-ApaEplRef_types.html%2523) for actions on built-in types.
 
 ## Querying Cumulocity data
 
@@ -85,7 +87,7 @@ To interact with HTTP services using REST and JSON, create an HttpTransport inst
 *   HttpTransport.getOrCreate(string host, integer port) returns HttpTransport
 *   HttpTransport.getOrCreateWithConfiguration(string host, integer port, dictionary&#60;string,string> configurations) returns HttpTransport (the keys in the configurations dictionary are the constants on HttpTransport with CONFIG_ prefix)
 
-On the HttpTransport object, call one of the create*Request methods, passing a path and payload as needed, to produce a Request object.
+On the HttpTransport object, call one of the create methods, passing a path and payload as needed, to produce a Request object.
 
 On the Request object, you may set cookies, headers or query parameters as needed, and can then invoke the request with the execute(action&#60;Response> callback) . Supply the name of an action in your monitor for the callback, and it will be invoked with the Response when the request has completed (or timed out).
 
@@ -97,7 +99,7 @@ Refer to the ApamaDoc for further details.
 
 ### Access fragments
 
-Fragments are accessible through the params dictionary of most events. You can construct an AnyExtractor object to help you extract data from any objects containing multiple sub-fragments and access:
+You can access fragments via the params dictionary of most events. AnyExtractor object can be constructed to help you extract data from any objects containing multiple sub-fragments and access:
 
 *   <span style="color: rgb(0,0,0);">action getInteger(string path) returns integer</span>
 
@@ -107,19 +109,23 @@ Fragments are accessible through the params dictionary of most events. You can c
 
 *   <span style="color: rgb(0,0,0);">action getBoolean(string path) returns boolean</span>
 
-*   <span style="color: rgb(0,0,0);">action getSequence(string path) returns sequence&#60;any></span>
+*   <span style="color: rgb(0,0,0);">action getSequence(string path) returns sequence<any></span>
 
-*   <span style="color: rgb(0,0,0);">action getDictionary(string path) returns dictionary&#60;any,any></span>
+*   <span style="color: rgb(0,0,0);">action getDictionary(string path) returns dictionary<any,any></span>
 
 You can use a JSON path to navigate in the object structure. Example:
 
-	string s:= AnyExtractor(measurement.params["fragment"]).getString("sub.fragment.object");
+	String s:= AnyExtractor(measurement.Params["fragment"]).getString("sub.fragment.object");
+	
+>Example "fragment" : "c8y_TemperatureMeasurement".
+
+>Example "sub.fragment.object" : "c8y_TemperatureMeasurement.T.Unit".
 
 ### Casting "any" values
 
 Alternatively, use a cast to convert an `any` to a particular type:
 
-	string s:= &#60;string> measurement.extraParams["strfragment"]);
+	string s:= <string> measurement.extraParams["strfragment"]);
 
 Note that a cast operation will throw if the object is of a different type.
 
@@ -137,26 +143,31 @@ the <span style="color: rgb(0,0,0);">Util.</span>inMaintenaceMode() function is 
 
 Example:
 
-	monitor.subscribe(FindManagedObjectResponse.CHANNEL);
-	on all Measurement() as m {
-		integer reqId := integer.getUnique();
-		send FindManagedObject(reqId, m.source, new dictionary&#60;string,string>) to FindManagedObject.CHANNEL;
-		on FindManagedObjectResponse(reqId = reqId, id = m.source) as d and not FindManagedObjectResponseAck(reqId = reqId) {
-			if not Util.inMaintenanceMode(d.managedObject) {
-				send Event("", "c8y_Alarm", m.source, currentTime, "Received measurement from active device", new dictionary&#60;string,any>) to Event.CHANNEL;
+
+		monitor ExampleMonitor{
+		action onload() {
+			monitor.subscribe(FindManagedObjectResponse.CHANNEL);
+			on all Measurement() as m {
+			    integer reqId := integer.getUnique();
+			    send FindManagedObject(reqId, m.source, new dictionary<string,string>) to FindManagedObject.CHANNEL;
+			    on FindManagedObjectResponse(reqId = reqId, id = m.source) as d and not FindManagedObjectResponseAck(reqId = reqId) {
+			        if not Util.inMaintenanceMode(d.managedObject) {
+			            send Event("", "c8y_Alarm", m.source, currentTime, "Received measurement from active device", new dictionary<string,any>) to Event.CHANNEL;
+			        }
+			    }
 			}
+			
+			
 		}
+	
+	
 	}
-
-
 ### replacePlaceholders
 
-To build strings, you can use concatenation:
+To build strings, you can use concatenation as follows:
 
     string s:= "An event with the text " + evt.text + " has been created.";
+    
+If the texts get longer and have more values that are dynamically set from the data, you can use the Util.replacePlaceholders() function. In your text string, you mark the placeholders with the field name from the event and surround it by #{}. The second parameter to replacePlaceholders can be any event type.
 
-If the texts get longer and have more values that are dynamically set from the data, you can use the replacePlaceholders() function. Another advantage of this function is that you can not only use the current object but also access all information of the device that created the alarm, measurement, event.
-
-In your text string, you mark the placeholders with the field name from the event and surround it by #{}. The second parameter to replacePlaceholders can be any event type.
-
-<span style="color: rgb(133,153,0);">string</span> myMailText := Util.replacePlaceholders(<span class="hljs-string" style="color: rgb(42,161,152);">"The device #{source} with the serial number #{c8y&#95;Hardware.serialNumber} created an event with the text #{text} at #{time}. The device is located at #{c8y&#95;Address.street} in #{c8y_Address.city}.", evt)</span>;
+	myMailText := Util.replacePlaceholders("The device #{source} with the serial number #{c8y_Hardware.serialNumber} created an event with the text #{text} at #{time}. The device is located at #{c8y_Address.street} in #{c8y_Address.city}.", evt);

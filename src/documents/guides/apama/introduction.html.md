@@ -36,7 +36,7 @@ Also add the following standard bundle:
   
 The selection of the connectivity bundles in Software AG Designer should look as follows:
 
-<img src="/guides/images/apama/connectivity_bundles.png" alt="Connectivity bundles" style="max-width: 100%">
+<img src="/guides/apama/connectivity_bundles.png" alt="Connectivity bundles" style="max-width: 100%">
 
 Similarly, check the corresponding item from the standard bundles to add the "Time Format" bundle.
 

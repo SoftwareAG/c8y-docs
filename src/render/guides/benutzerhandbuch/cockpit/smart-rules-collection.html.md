@@ -30,7 +30,7 @@ Die Regel verwendet die folgenden Parameter:
 |1|Name der Regel|Vorausgefüllt mit dem Namen der Regelvorlage. Kann individuell geändert werden.
 |2|Bei Alarm vom Typ:|Die Alarmtypen, die die Regel auslösen. Für jeden neu erzeugten Alarm eines dieser Typen wird eine Regel ausgelöst.
 |3|SMS senden:|"Telefonnummer": Telefonnummer des Empfängers. Es empfiehlt sich, die Ländervorwahl hinzuzufügen, z. B. "+49" or "0049" für Deutschland. Mehrere Telefonnummern können durch ein Komma getrennt werden (",", ohne Leerzeichen!).<br> "Nachricht": SMS-Text mit max. 160 Zeichen. Es können Variablen im Format #{name} verwendet werden. Die unterstützten Variablen werden weiter unten unter "Smart Rules-Variablen" aufgelistet. 
-|4|Ziel-Assets oder Geräte|Gruppen oder Geräte, auf die die Regel angewendet werden soll.
+|4|Ziel-Assets oder -geräte|Gruppen oder Geräte, auf die die Regel angewendet werden soll.
 
 **Fehlerbehebung**
 
@@ -59,7 +59,7 @@ Die Regel verwendet die folgenden Parameter:
 |1|Name der Regel|Vorausgefüllt mit dem Namen der Regelvorlage. Kann individuell geändert werden.
 |2|Bei Alarm vom Typ:|Die Alarmtypen, die die Regel auslösen. Für jeden neu erzeugten Alarm eines dieser Typen wird eine Regel ausgelöst.
 |3|E-Mail senden:|"Senden an:/CC an:/BCC an": E-Mail-Adressen der Empfänger. Mehrere Adressen können durch ein Komma getrennt werden (",", ohne Leerzeichen!).<br>"Antwort an": Adresse, die für eine Antwort verwendet werden kann.<br> "Betreff": Betreff der E-Mail. Es können Variablen im Format #{name} verwendet werden. Die unterstützten Variablen werden weiter unten unter "Smart Rules-Variablen" aufgelistet. <br> "Nachricht": Text der E-Mail. Es können Variablen im Format #{name} verwendet werden. Die unterstützten Variablen werden weiter unten unter "Smart Rules-Variablen" aufgelistet. 
-|4|Ziel-Assets oder Geräte|Gruppen oder Geräte, auf die die Regel angewendet werden soll.
+|4|Ziel-Assets oder -geräte|Gruppen oder Geräte, auf die die Regel angewendet werden soll.
 
 **Fehlerbehebung**
 
@@ -89,7 +89,7 @@ Die Regel verwendet die folgenden Parameter:
 |1|Name der Regel|Vorausgefüllt mit dem Namen der Regelvorlage. Kann individuell geändert werden.
 |2|Bei Alarm vom Typ:|Die Alarmtypen, die die Regel auslösen. Für jeden neu erzeugten Alarm eines dieser Typen wird eine Regel ausgelöst.
 |3|Wie folgt eskalieren:|Eskalationsschritte, die nacheinander ausgeführt werden. <br> Klicken Sie **Schritt hinzufügen** um mindestens einen Schritt zu definieren: <br> "Typ": Typ des ausgeführten Schritts. Mögliche Werte sind: <br>  * E-Mail (siehe Regel "Bei Alarm E-Mail senden" für die Beschreibung der Parameter). <br> * SMS (siehe Regel "Bei Alarm SMS senden" für die Beschreibung der Parameter). <br> * Telefon (siehe Regel "Bei Alarm Sprachanruf starten" für die Beschreibung der Parameter). <br> "Bedingung": Die Bedingung, die angewendet wird, wenn die Regel ausgeführt wird. Mögliche Werte sind: <br> * Immer: Aktion wird immer ausgeführt. <br> * Immer, wenn Schritt N fehlgeschlagen ist: Nur Schritte des Typs Telefon können fehlschlagen. Der Schritt wird als fehlgeschlagen gekennzeichnet, wenn alle Wiederholungen erfolglos ausgeführt wurden. Diese Option ist nur verfügbar, wenn bereits ein Schritt des Typs Telefon konfiguriert wurde, auf den Bezug genommen werden kann. 
-|4|Ziel-Assets oder Geräte|Gruppen oder Geräte, auf die die Regel angewendet werden soll.
+|4|Ziel-Assets oder -geräte|Gruppen oder Geräte, auf die die Regel angewendet werden soll.
 
 **Fehlerbehebung**
 
@@ -116,7 +116,7 @@ Die Regel verwendet die folgenden Parameter:
 |1|Name der Regel|Vorausgefüllt mit dem Namen der Regelvorlage. Kann individuell geändert werden.
 |2|Bei Alarm vom Typ:|Die Alarmtypen, die die Regel auslösen. Für jeden neu erzeugten Alarm eines dieser Typen wird eine Regel ausgelöst.
 |3|Alarmschweregrad erhöhen:|Dauer, die ein Alarm aktiv sein muss, bevor der Schweregrad erhöht wird.
-|4|Ziel-Assets oder Geräte|Gruppen oder Geräte, auf die die Regel angewendet werden soll.
+|4|Ziel-Assets oder -geräte|Gruppen oder Geräte, auf die die Regel angewendet werden soll.
 
 **Beschreibung**
 
@@ -145,9 +145,9 @@ Die Regel verwendet die folgenden Parameter:
 |Schritt|Feld|Beschreibung|
 |:---|:---|:---|
 |1|Name der Regel|Vorausgefüllt mit dem Namen der Regelvorlage. Kann individuell geändert werden.
-|2|Bei Geofence-Verletzung:|Polygon, das die Grenzen des Bereich kennzeichnet. Klicken Sie **Geofence bearbeiten** und legen Sie den Bereich fest. Fügen Sie Punkte durch Doppelklicken hinzu und passen Sie diese durch Klicken und Ziehen an.
+|2|Bei Geofence-Übertretung:|Polygon, das die Grenzen des Bereich kennzeichnet. Klicken Sie **Geofence bearbeiten** und legen Sie den Bereich fest. Fügen Sie Punkte durch Doppelklicken hinzu und passen Sie diese durch Klicken und Ziehen an.
 |3|Alarm erzeugen:|Grund für das Auslösen eines Alarms: "Bei Betreten", "Bei Verlassen" (der Standardwert), "Bei Betreten und Verlassen".<br>Typ des auszulösenden Alarms.<br> Schweregrad des auszulösenden Alarms. <br>Alarm-Text.
-|4|Ziel-Assets oder Geräte|Gruppen oder Geräte, auf die die Regel angewendet werden soll.
+|4|Ziel-Assets oder -geräte|Gruppen oder Geräte, auf die die Regel angewendet werden soll.
 
 **Info**: Damit ein Alarm ausgelöst wird, muss das Gerät mindestens einmal nach Erstellen der Regel innerhalb des Geofence-Bereichs gewesen sein.
 
@@ -176,9 +176,9 @@ Die Regel verwendet die folgenden Parameter:
 |Schritt|Feld|Beschreibung|
 |:---|:---|:---|
 |1|Name der Regel|Vorausgefüllt mit dem Namen der Regelvorlage. Kann individuell geändert werden.
-|2|Bei Geofence-Verletzung:|Polygon, das die Grenzen des Bereich kennzeichnet. Klicken Sie **Geofence bearbeiten** und legen Sie den Bereich fest. Fügen Sie Punkte durch Doppelklicken hinzu und passen Sie diese durch Klicken und Ziehen an.
+|2|Bei Geofence-Übertretung:|Polygon, das die Grenzen des Bereich kennzeichnet. Klicken Sie **Geofence bearbeiten** und legen Sie den Bereich fest. Fügen Sie Punkte durch Doppelklicken hinzu und passen Sie diese durch Klicken und Ziehen an.
 |3|E-Mail senden:|"Senden an:/CC an:/BCC an": E-Mail-Adressen der Empfänger. Mehrere Adressen können durch ein Komma getrennt werden (",", ohne Leerzeichen!).<br>"Antwort an": Adresse, die für eine Antwort verwendet werden kann.<br> "Betreff": Betreff der E-Mail. Es können Variablen im Format #{name} verwendet werden. Die unterstützten Variablen werden weiter unten unter "Smart Rules-Variablen" aufgelistet. <br> "Nachricht": Text der E-Mail. Es können Variablen im Format #{name} verwendet werden. Die unterstützten Variablen werden weiter unten unter "Smart Rules-Variablen" aufgelistet. 
-|4|Ziel-Assets oder Geräte|Gruppen oder Geräte, auf die die Regel angewendet werden soll.
+|4|Ziel-Assets oder -geräte|Gruppen oder Geräte, auf die die Regel angewendet werden soll.
 
 **Info**: Damit ein Alarm ausgelöst wird, muss das Gerät mindestens einmal nach Erstellen der Regel innerhalb des Geofence-Bereichs gewesen sein.
 
@@ -206,7 +206,7 @@ Die Regel verwendet die folgenden Parameter:
 |1|Name der Regel|Vorausgefüllt mit dem Namen der Regelvorlage. Kann individuell geändert werden.
 |2|Verwendeter Messwert:|"Fragment/Series": Fragment/Series des Messwerts. Der eingehende Messwert muss exakt die gleichen Fragment/Series-Werte haben. Wenn eine Regel im Daten-Explorer erstellt wird, sind diese Felder bereits ausgefüllt.  <br> "Zeitintervall": Intervall, in welchem Verbrauchswerte berechnet werden. Spezifiziert, wie oft der Verbrauch pro Stunde berechnet wird.
 |3|Energieverbrauch:|Fragment/Series des zu erstellenden Messwerts.  
-|4|Ziel-Assets oder Geräte|Gruppen oder Geräte, auf die die Regel angewendet werden soll.
+|4|Ziel-Assets oder -geräte|Gruppen oder Geräte, auf die die Regel angewendet werden soll.
 
 >**Info**: Die Einheit des Verbrauchsmesswerts ist immer pro Stunde. Hat der Messwert die Einheit "kg" wird der Verbrauch in "kg/h" ausgegeben.
 
@@ -235,7 +235,7 @@ Die Regel verwendet die folgenden Parameter:
 |1|Name der Regel|Vorausgefüllt mit dem Namen der Regelvorlage. Kann individuell geändert werden.
 |2|Verwendeter Messwert:|"Typ": Typ des Messwerts. Der eingehende Messwert muss den gleichen Typen haben. Wenn eine Regel im Daten-Explorer erstellt wird, sind diese Felder bereits ausgefüllt.  <br> "Zeitintervall": Intervall, in welchem Verbrauchswerte berechnet werden. 
 |3|Alarm erzeugen:|Typ des auszulösenden Alarms.<br> Schweregrad des auszulösenden Alarms. <br>Alarm-Text.  
-|4|Ziel-Assets oder Geräte|Gruppen oder Geräte, auf die die Regel angewendet werden soll.
+|4|Ziel-Assets oder -geräte|Gruppen oder Geräte, auf die die Regel angewendet werden soll.
 
 >**Info:** Die Regel prüft einmal pro Minute, ob das konfigurierte Zeitintervall überschritten wurde. Daher kann es, nachdem das Zeitintervall überschritten wurde, bis zu einer Minute dauern, bis der Alarm erzeugt wird. Um das Überschreiten des Intervalls zu überprüfen, muss mindestens ein Messwert eingegangen sein, nachdem die Regel erstellt/aktiviert wurde. 
 
@@ -256,9 +256,9 @@ Die Regel verwendet die folgenden Parameter:
 |1|Name der Regel|Vorausgefüllt mit dem Namen der Regelvorlage. Kann individuell geändert werden.
 |2|Bei Alarm vom Typ:|Die Alarmtypen, die die Regel auslösen. Für jeden neu erzeugten Alarm eines dieser Typen wird eine Regel ausgelöst.
 |3|Kommando ausführen:|Das Kommando, das gesendet wird. Das Kommando wird als JSON-Beschreibung bereitgestellt. Unter dem "Kommando"-Feld können einige Standardkommandos ausgewählt werden. Um ein Standardkommando zu verwenden, wählen sie das entsprechende Kommando und klicken Sie die Pfeil-Schaltfläche auf der rechten Seite. Die JSON-Beschreibung des ausgewählten Kommandos wird eingefügt.
-|4|Ziel-Assets oder Geräte|Gruppen oder Geräte, auf die die Regel angewendet werden soll.
+|4|Ziel-Assets oder -geräte|Gruppen oder Geräte, auf die die Regel angewendet werden soll.
 
-### Bei Schwellwertüberschreitung Alarm erzeugen
+### Bei Schwellwert Alarm erzeugen
 
 **Funktionalität**  
 
@@ -291,9 +291,9 @@ Die Regel verwendet die folgenden Parameter:
 |Schritt|Feld|Beschreibung|
 |:---|:---|:---|
 |1|Name der Regel|Vorausgefüllt mit dem Namen der Regelvorlage. Kann individuell geändert werden.
-|2|Bei Schwellwertüberschreitung:|"Fragment/Series": Fragment/Series des Messwerts. Der eingehende Messwert muss exakt die gleichen Fragment/Series-Werte haben. Wenn eine Regel im Daten-Explorer erstellt wird, sind diese Felder bereits ausgefüllt. <br> "Eintrag in der Datenpunktbibliothek": Name des Eintrags in der Datenpunktbibliothek. Wird verwendet, um die Standardwerte für den roten und gelben Bereich zu ermitteln, wenn diese nicht individuell konfiguriert wurden. 
+|2|Bei Schwellwertbereich:|"Fragment/Series": Fragment/Series des Messwerts. Der eingehende Messwert muss exakt die gleichen Fragment/Series-Werte haben. Wenn eine Regel im Daten-Explorer erstellt wird, sind diese Felder bereits ausgefüllt. <br> "Eintrag in der Datenpunktbibliothek": Name des Eintrags in der Datenpunktbibliothek. Wird verwendet, um die Standardwerte für den roten und gelben Bereich zu ermitteln, wenn diese nicht individuell konfiguriert wurden. 
 |3|Alarm erzeugen:|Typ des auszulösenden Alarms.<br> Schweregrad des auszulösenden Alarms. <br>Alarm-Text.  
-|4|Ziel-Assets oder Geräte|Gruppen oder Geräte, auf die die Regel angewendet werden soll.
+|4|Ziel-Assets oder -geräte|Gruppen oder Geräte, auf die die Regel angewendet werden soll.
 
 **Beschreibung**
 
@@ -332,7 +332,7 @@ Sind keine roten/gelben Bereiche definiert, werden keine Alarme ausgelöst.
 >**Info:**  Wenn Sie einen Alarm löschen, bestätigen Sie damit, dass der Alarm aufgehoben ist. Ein neuer Alarm wird nur erzeugt, wenn das Gerät den Zustand wechselt und den Schwellwert wieder überschreitet. 
 
 
-### Bei Messbereichsüberschreitung Alarm erzeugen
+### Bei explizitem Schwellwert Alarm erzeugen
 
 **Funktionalität**  
 
@@ -344,7 +344,7 @@ Der Schweregrad des Alarms wird folgendermaßen bestimmt:
 
 * Wenn der Messwert sich in den grünen Bereich bewegt, wird der Alarm gelöscht.
 
->**Info:** Die Regel ist ähnlich wie die Regel "Bei Schwellwertüberschreitung Alarm erzeugen". Allerdings wird in dieser Regel hier der rote Schwellwert explizit bereitgestellt, während in der Regel "Bei Schwellwertüberschreitung Alarm erzeugen" der Schwellwert vom Gerät oder aus der Datenpunktbibliothek  genommen wird.
+>**Info:** Die Regel ist ähnlich wie die Regel "Bei Schwellwertüberschreitung Alarm erzeugen". Allerdings wird in dieser Regel hier der rote Schwellwert explizit bereitgestellt, während in der Regel "Bei Schwellwert Alarm erzeugen" der Schwellwert vom Gerät oder aus der Datenpunktbibliothek  genommen wird.
 
 **Parameter**
 
@@ -355,9 +355,9 @@ Die Regel verwendet die folgenden Parameter:
 |Schritt|Feld|Beschreibung|
 |:---|:---|:---|
 |1|Name der Regel|Vorausgefüllt mit dem Namen der Regelvorlage. Kann individuell geändert werden.
-|2|Bei Schwellwertüberschreitung:|"Fragment/Series": Fragment/Series des Messwerts. Der eingehende Messwert muss exakt die gleichen Fragment/Series-Werte haben. Wenn eine Regel im Daten-Explorer erstellt wird, sind diese Felder bereits ausgefüllt. <br> Minimum, Maximum: Wenn sich ein Wert im angegebenen Bereich [minimum; maximum] befindet, wird der konfigurierte Alarm ausgelöst.
+|2|Bei Schwellwertbereich:|"Fragment/Series": Fragment/Series des Messwerts. Der eingehende Messwert muss exakt die gleichen Fragment/Series-Werte haben. Wenn eine Regel im Daten-Explorer erstellt wird, sind diese Felder bereits ausgefüllt. <br> Minimum, Maximum: Wenn sich ein Wert im angegebenen Bereich [minimum; maximum] befindet, wird der konfigurierte Alarm ausgelöst.
 |3|Alarm erzeugen:|Typ des auszulösenden Alarms.<br> Schweregrad des auszulösenden Alarms. <br>Alarm-Text.  
-|4|Ziel-Assets oder Geräte|Gruppen oder Geräte, auf die die Regel angewendet werden soll.
+|4|Ziel-Assets oder -geräte|Gruppen oder Geräte, auf die die Regel angewendet werden soll.
 
 **Fehlerbehebung**
 
@@ -389,7 +389,7 @@ Die Regel verwendet die folgenden Parameter:
 |1|Name der Regel|Vorausgefüllt mit dem Namen der Regelvorlage. Kann individuell geändert werden.
 |2|Bei Alarm vom Typ:|Die Alarmtypen, die die Regel auslösen. Für jeden neu erzeugten Alarm eines dieser Typen wird eine Regel ausgelöst.
 |3|Sprachausgabe:|"Telefonnummer": Gültige internationale Telefonnummer. Verwenden Sie die Ländervorwahl im Format "+49" (als Beispiel für Deutschland).<br> "Nachricht": Der Text, der durch die Regel ausgegeben wird. <br> Wiederholungen: Die Anzahl der Wiederholungsversuche, um die Zielnummer zu erreichen (Standard ist "0", Maximum ist "20").<br> "Intervall": Zeitintervall zwischen den Wiederholungen in Minuten (Standard ist "5").<br>"Bestätigung": Wenn diese Option ausgewählt ist, muss der Empfänger den Anruf bestätigen (ein nicht bestätigter Anruf gilt als nicht erfolgreich)<br> "Bestätigungstext": Bestätigungsnachricht, die nach der Hauptnachricht ausgegeben wird, zum Beispiel: "Bestätigen Sie den Anruf durch Drücken der "5"". <br> "Bestätigungsnummer": Die Nummer der Taste, die der Empfänger zum Bestätigen drücken muss. Wurde die Nummer gedrückt, gilt der Anruf als erfolgreich und der Alarmstatus wechselt auf bestätigt.  
-|4|Ziel-Assets oder Geräte|Gruppen oder Geräte, auf die die Regel angewendet werden soll.
+|4|Ziel-Assets oder -geräte|Gruppen oder Geräte, auf die die Regel angewendet werden soll.
 
 **Fehlerbehebung**
 

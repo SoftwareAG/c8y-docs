@@ -12,7 +12,7 @@ Wie verwendet die Cockpit-Anwendung die Datenpunktbibliothek? Um die Standard-Vi
 
 Darüber hinaus werden die Attribute der Datenpunktbibliothek von Geschäftsregeln verwendet: Die in der Datenpunktbibliothek konfigurierten roten und gelben Werte werden von Schwellwertregeln verwendet, um Alarme auszulösen.
 
-Klicken Sie "Datenpunktbibliothek" im Menü "Konfiguration im Navigator, um die Datenpunktbibliothek zu öffnen. 
+Klicken Sie "Datenpunktbibliothek" im Menü "Konfiguration" im Navigator, um die Datenpunktbibliothek zu öffnen. 
 
 Es wird eine Liste der verfügbaren Datenpunkte angezeigt. Jeder Datenpunkt enthält die folgenden Informationen:
 
@@ -36,7 +36,7 @@ Geben Sie die folgenden Informationen ein:
 |Farbe|Farbe für die Datenpunktvisualisierung
 |Beschriftung|Beschriftung für die Datenpunktvisualisierung
 |Fragment|Name des Fragments
-|Serie|Name der Serie
+|Series|Name der Series
 |Einheit|Einheit des Messwerts
 |Ziel|Zielwert
 |Minimum|Minimaler Wert, der auf der Y-Achse angezeigt wird

@@ -89,17 +89,17 @@ Um eine Smart Rule zu löschen, öffnen Sie das Kontextmenü der Regel über das
 
 Um die Fehlersuche zu vereinfachen gibt es einen direkten Link von einer Smart Rule zum entsprechenden Echtzeitverarbeitungsmodul. Öffnen Sie das Kontextmenü der Regel über das Menüsymbol und klicken Sie **Quelltext ansehen**, um diese Option zu nutzen.
 
-### Beispiel: Definieren von genauen Schwellenwerten
+### Beispiel: Definieren von exakten Schwellwerten
 
-Führen Sie folgende Schritte aus, um eine Schwellenregel zu definieren:
+Führen Sie folgende Schritte aus, um eine Schwellwertregel zu definieren:
 
-1. Navigieren Sie im Menü "Gruppen" zu dem Objekt (Gruppe oder Gerät), auf welches Sie den Schwellenwert anwenden möchten.
+1. Navigieren Sie im Menü "Gruppen" zu dem Objekt (Gruppe oder Gerät), auf welches Sie den Schwellwert anwenden möchten.
 2. Wechseln Sie zur Registerkarte "Daten-Explorer".
 3. Wenn der Datenpunkt, der den Schwellwert festlegen soll, standardmäßig nicht sichtbar ist, wählen Sie **Datenpunkt hinzufügen** und fügen Sie einen Datenpunkt hinzu. Informationen zum Hinzufügen von Datenpunkten finden Sie unter  Daten-Explorer >[Hinzufügen von Datenpunkten](#add-data-points).
 4. Öffnen Sie über das Menüsymbol das Kontextmenü für den entsprechenden Datenpunkt und klicken Sie **Smart Rule erstellen**. <br><br> <img src="/guides/images/benutzerhandbuch/cockpit_smart-rule-datapoint.png" name="Datenpunkt-Beispiel" style="width:75%;"/>
 <br>
 5. Wählen Sie die Smart Rule "Bei Schwellwertüberschreitung Alarm erzeugen". <br><br> <img src="/guides/images/benutzerhandbuch/cockpit-smart-rule-example.png" name="Smart Rule-Beispiel" style="width:50%;"/><br>
-6. Geben Sie den minimalen und den maximalen Wert für den roten Bereich ein. Sind die Werte außerhalb dieses Bereichs, wird ein Alarm erzeugt.
+6. Geben Sie den minimalen und den maximalen Wert für den roten Bereich ein. Wenn der Messwert den roten Bereich betritt oder verlässt, wird ein KRITISCHER Alarm erzeugt bzw. gelöscht. Weitere Informationen finden Sie in der Beschreibung der Regel "Bei Messbereichsüberschreitung Alarm erzeugen" in der [Smart Rules-Sammlung](/guides/benutzerhandbuch/cockpit#smart-rules-collection).
 7. Unter "Alarm erzeugen" können Sie optional den Alarmtyp und Alarmtext definieren.
 8. Unter "Ziel-Assets oder Geräte" können Sie die Objekte auswählen, auf die diese Regel angewendet werden soll.
 9. Klicken Sie **Erstellen** um die Smart Rule zu erstellen.

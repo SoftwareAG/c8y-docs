@@ -34,7 +34,7 @@ We create three dictionaries to map alarm text, type, and severity for each of t
 
 	action getText(integer bitPosition, dictionary<integer, string> lookup) returns string {
 		string template := lookup.getOr(bitPosition, lookup[-1]);
-		return template.replaceAll(<position>", bitPosition.toString());
+		return template.replaceAll("<position>", bitPosition.toString());
 	}
 
 To analyze the binary measurement value, we will interpret it as a string value and loop through each character. The getActiveBits() function will do that and return a list of the bit positions at where the measurement had a "1". We can then use a `for` loop to iterate through that:

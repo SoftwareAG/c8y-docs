@@ -149,7 +149,7 @@ There are some predefined event types to interact with several Cumulocity APIs. 
 
 </table>
 
-Look at the data model to see how the events for each stream are structured.
+Look at the [data model](http://www.apamacommunity.com/documents/10.2.0.1/apama_10.2.0.1_webhelp/ApamaDoc/com/apama/cumulocity/package-summary.html) to see how the events for each stream are structured.
 
 ### Sending events to a channel
 

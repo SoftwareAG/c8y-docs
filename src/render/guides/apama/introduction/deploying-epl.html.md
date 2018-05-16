@@ -34,7 +34,7 @@ CUMULOCITY_APPKEY=apamaAppKey
 
 ```
 
-**Info:** You need to create an application in Cumulocity to get a value for CUMULOCITY_APPKEY. Login to Cumulocity and switch to the Administration application. Select "Applications" > "Own Applications". Click Create Application and use APPLICATION KEY value in the corresponding files.
+**Info:** You need to create an application in Cumulocity to get a value for CUMULOCITY_APPKEY.  For details, refer to [Administration > Managing applications](/guides/users-guide/administration#applications).
 
 Develop and test your EPL in Software AG Designer.
 

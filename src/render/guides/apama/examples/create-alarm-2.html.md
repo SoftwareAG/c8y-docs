@@ -14,7 +14,7 @@ We create three dictionaries to map alarm text, type, and severity for each of t
 			1: "c8y_ProcessingAlarm",
 			2: "c8y_DoorOpenAlarm",
 			3: "c8y_SystemFailureAlarm",
-			-1:"c8y_FaultRegister&#60;position>Alaram"
+			-1:"c8y_FaultRegister<position>Alaram"
 		};
 	
 	dictionary<integer, string> positionToAlarmSeverity := {
@@ -29,18 +29,18 @@ We create three dictionaries to map alarm text, type, and severity for each of t
 		1: "There was an error trying to process data",
 		2: "Door was opened",
 		3: "There was a critical system failure",
-		-1:"An undefined alarm was reported on position &#60;position> in the binary fault register"
+		-1:"An undefined alarm was reported on position <position> in the binary fault register"
 	};
 
 	action getText(integer bitPosition, dictionary<integer, string> lookup) returns string {
 		string template := lookup.getOr(bitPosition, lookup[-1]);
-		return template.replaceAll("&#60;position>", bitPosition.toString());
+		return template.replaceAll(<position>", bitPosition.toString());
 	}
 
 To analyze the binary measurement value, we will interpret it as a string value and loop through each character. The getActiveBits() function will do that and return a list of the bit positions at where the measurement had a "1". We can then use a `for` loop to iterate through that:
 
 	action getBitPositions(string binaryAsText) returns sequence<integer> {
-			sequence<integer> bitsSet:=new sequence&#60;integer>;
+			sequence<integer> bitsSet:=new sequence<integer>;
 			integer i:=0;
 			while(i < binaryAsText.length()) {
 				string character := binaryAsText.substring(i, i+1);

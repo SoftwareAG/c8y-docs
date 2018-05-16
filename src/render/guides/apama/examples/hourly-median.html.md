@@ -17,9 +17,9 @@ To create the median, we need the following parts in the module:
 *   A time window over one hour, grouped by device (assetId)
 *   A select that returns the average calculation every hour, the assetId and the unit (as we must use an aggregate over the window contents, we select the last unit - we assume all measurements are of the same unit). Note the AverageByDevice event definition to hold these.
 *   Everything created as a new measurement
-
-		using com.apama.aggregates.last;
 		
+		using com.apama.aggregates.avg;
+		using com.apama.aggregates.last;
 		
 		monitor HourlyAvgMeasurementDeviceContext {
 			event AverageByDevice {

@@ -7,7 +7,7 @@ layout: default
 
 ## Overview
 
-Using the <span style="color: rgb(3,19,21);">Cumulocity real-time event processing</span>, you can add your own logic to your IoT solution. This includes data analytics logic but it is not limited to it. To define new analytics, you will use the Apama Event Processing Language - see the [Apama documentation](http://www.apamacommunity.com/documents/10.1.0.3/apama_10.1.0.3_webhelp/apama-webhelp/) and the topic [Developing Apama Applications in EPL](http://www.apamacommunity.com/documents/10.1.0.3/apama_10.1.0.3_webhelp/apama-webhelp/#page/apama-webhelp%252Fco-DevApaAppInEpl_how_this_book_is_organized.html%2523) for full details. The language allows analyzing incoming data. You can create, update and delete your data in real-time.
+Using the <span style="color: rgb(3,19,21);">Cumulocity real-time event processing</span>, you can add your own logic to your IoT solution. This includes data analytics logic but it is not limited to it. To define new analytics, you can use the Apama Event Processing Language - see the topic Developing Apama Applications in EPL in the [Apama documentation](http://www.apamacommunity.com/documents/10.1.0.3/apama_10.1.0.3_webhelp/apama-webhelp/) for full details. The language allows analyzing incoming data. You can create, update and delete your data in real-time.
 
 Typical real-time analytics use cases include:
 
@@ -22,16 +22,36 @@ In the following sections, we describe the basics for understanding how the Apam
 
 ## Deploying EPL
 
-You can use [Software AG Designer](http://www.apamacommunity.com/downloads/) to develop your applications. Create an Apama project in Software AG Designer and add the following adapters:
+You can use [Software AG Designer](http://www.apamacommunity.com/downloads/) to develop your applications. Create an Apama project in Software AG Designer and add the following connectivity bundles:
 
-*   Apama Connectivity for Cumulocity IoT
+ 
+*   Automatic onApplicationInitialized 
+*   Cumulocity IoT (Cumulocity IoT connectivity plug-in)
+*   Cumulocity Utilities
 *   HTTP Client - JSON with generic request/response event definitions
 
-You will need to configure the Cumulocity properties with your Cumulocity credentials. Also add the bundles:
+Also add the following standard bundle:
 
-Time Format
-Cumulocity Utilities
-Automatic onApplicationInitialized
+*   Time Format
+  
+The selection of the connectivity bundles in Software AG Designer should look as follows:
+
+<img src="/guides/apama/connectivity_bundles.png" alt="Connectivity bundles" style="max-width: 100%">
+
+Similarly, check the corresponding item from the standard bundles to add the "Time Format" bundle.
+
+
+You will need to provide your Cumulocity credentials in the configuration files, thus in your Apama project go to config > connectivity -> CumulocityIoT and configure the credentials as follows in `CumulocityIoT.properties` file:
+
+```
+CUMULOCITY_USERNAME=user@example.com
+CUMULOCITY_TENANT=exampleTenant
+CUMULOCITY_PASSWORD=examplePassword
+CUMULOCITY_APPKEY=apamaAppKey
+
+```
+
+**Info:** You need to create an application in Cumulocity to get a value for CUMULOCITY_APPKEY.  For details, refer to [Administration > Managing applications](/guides/users-guide/administration#applications).
 
 Develop and test your EPL in Software AG Designer.
 
@@ -45,7 +65,7 @@ In the Apama Event Processing Language, interactions with the rest of the Cumulo
 
 ### Predefined event types
 
-There are some predefined event types to interact with several Cumulocity APIs. Events are sent to Apama applications automatically when a new measurement, alarm or event is created. For interacting with the Cumulocity backend, you can create an event and send it to the relevant channel. Cumulocity will automatically execute either the database query or create the API calls necessary for sending mails, SMS, or similar. To create a new alarm in the database, you can create a new "Event" event.
+There are some predefined event types to interact with several Cumulocity APIs. Events are sent to Apama applications automatically when a new measurement, alarm or event is created. For interacting with the Cumulocity backend, you can create an event and send it to the relevant channel. Cumulocity will automatically execute either the database query or create the API calls necessary for sending mails, SMS, or similar.
 
 <table class="wrapped confluenceTable"><colgroup><col><col><col><col></colgroup>
 
@@ -186,7 +206,7 @@ There are some predefined event types to interact with several Cumulocity APIs. 
 
 </table>
 
-Look at the data model to see how the events for each stream are structured.
+Look at the [data model](http://www.apamacommunity.com/documents/10.2.0.1/apama_10.2.0.1_webhelp/ApamaDoc/com/apama/cumulocity/package-summary.html) to see how the events for each stream are structured.
 
 ### Sending events to a channel
 
@@ -202,19 +222,26 @@ Adding filters can be done by specifying one or more fields between the parenthe
 
 ## Example
 
-As an example, we create a statement. It should listen to one event and create a different event type whenever the specified filter applies. As example we want to create an alarm for each temperature measurement that is created.
+As an example, we create a statement. The statement listens to one event and creates a different event type whenever the specified filter applies. For instance‚ we want to create an alarm for each temperature measurement that is created.
 
-1.  Listen to the measurement type - filtering on the measurementType having the value "c8y_TemperatureMeasurement".
-2.  Create the event using the constructor specifying all of the fields.
-3.  Send the event to the correct channel - Event.CHANNEL.
+**Info:** In order to create the statement, first you have to create an "EPL Monitor" in your Apama project.
+
+1. Subscribe to Measurement.CHANNEL 
+2. Listen to the measurement type - filtering on the type having the value "c8y_TemperatureMeasurement".
+3.  Create the event using the constructor specifying all of the fields.
+4.  Send the event to the correct channel - Alarm.CHANNEL.
 
 The resulting monitor can look like this:
 
-	<pre>monitor ForwardMeasurements {
+	using com.apama.cumulocity.Alarm;
+	using com.apama.cumulocity.Measurement;
+	
+	monitor ForwardMeasurements {
 		action onload() {
+	    	monitor.subscribe(Measurement.CHANNEL);
 			on all Measurement(type = "c8y_TemperatureMeasurement") as m {
 				send Alarm("", "c8y_TemperatureAlarm", m.source, m.time,
-					"Temperature measurement was created", "ACTIVE", "CRITICAL", 1, new dictionary&#60;string,any>) to Event.CHANNEL;
+				           "Temperature measurement was created", "ACTIVE", "CRITICAL", 1, new dictionary<string,any>) to Alarm.CHANNEL;
 			}
 		}
 	}

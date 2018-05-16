@@ -6,11 +6,11 @@ layout: default
 
 ## Custom fragments
 
-Cumulocity APIs give you the possibility to structure your data freely. In the Apama Event Processing Language this is done by adding entries to params, which is of the type dictionary&#60;string,any>. Events all have a params field, which is translated to fragments or optional fields. Thus, when receiving events, look up entries in the params field. When sending events, this can be done by definining event types, or you can use dictionary&#60;string,any> type; when receiving events, the EPL type will be dictionary&#60;any,any>. Note that EPL is strongly typed, so if you are creating an event with no fragments, a 'new dictionary&#60;string,any>' expression is required. If you are providing entries inline with a dictionary literal, then EPL will determine the type based on the type of the first key and value pair - thus, for dictionary&#60;string, any>, cast the first value to an 'any' type with a &#60;any> cast operator:
+Cumulocity APIs give you the possibility to structure your data freely. In the Apama Event Processing Language this is done by adding entries to params, which is of the type dictionary<string,any>. Events all have a params field, which is translated to fragments or optional fields. Thus, when receiving events, look up entries in the params field. When sending events, this can be done by definining event types, or you can use dictionary<string,any> type; when receiving events, the EPL type will be dictionary<any,any>. Note that EPL is strongly typed, so if you are creating an event with no fragments, a 'new dictionary<string,any>' expression is required. If you are providing entries inline with a dictionary literal, then EPL will determine the type based on the type of the first key and value pair - thus, for dictionary<string, any>, cast the first value to an 'any' type with <any> cast operator:
 
-	send Event(..., new dictionary&#60;string,any>) to Event.CHANNEL;
+	send Event(..., new dictionary<string,any>) to Event.CHANNEL;
 	
-	send Event(..., {"fragment":&#60;any>"value"}) to Event.CHANNEL;
+	send Event(..., {"fragment":<any>"value"}) to Event.CHANNEL;
 
 The MeasurementValue type is provided for the measurements in the Measurement type. MeasurementValue has value and unit, fields, and extraParams for other fragments.
 
@@ -18,13 +18,13 @@ Example 1:
 
 	send Measurement("", "c8y_TemperatureMeasurement", "12345", currentTime, {
 		"c8y_TemperatureMeasurement":{
-			"T1":MeasurementValue(1.0, "C", new dictionary&#60;string,any>),
-			"T2":MeasurementValue(2.0, "C", new dictionary&#60;string,any>),
-			"T3":MeasurementValue(3.0, "C", new dictionary&#60;string,any>),
-			"T4":MeasurementValue(4.0, "C", new dictionary&#60;string,any>),
-			"T5":MeasurementValue(5.0, "C", new dictionary&#60;string,any>)
+			"T1":com.apama.cumulocity.MeasurementValue(1.0, "C", new dictionary<string,any>),
+			"T2":com.apama.cumulocity.MeasurementValue(2.0, "C", new dictionary<string,any>),
+			"T3":com.apama.cumulocity.MeasurementValue(3.0, "C", new dictionary<string,any>),
+			"T4":com.apama.cumulocity.MeasurementValue(4.0, "C", new dictionary<string,any>),
+			"T5":com.apama.cumulocity.MeasurementValue(5.0, "C", new dictionary<string,any>)
 		}},
-		new dictionary&#60;string,any>) to Measurement.CREATE_CHANNEL;
+		new dictionary<string,any>) to Measurement.CREATE_CHANNEL;
 
 This will result in the following JSON structure:
 
@@ -58,7 +58,6 @@ This will result in the following JSON structure:
 	  }
 	}
 
-
 ## Listeners
 
 Triggering a statement by an arriving event is not the only possibility. The following sections cover other ways to combine listeners. Refer to the Apama documentation for full details - see the [Defining Event Listeners](http://www.apamacommunity.com/documents/10.1.0.3/apama_10.1.0.3_webhelp/apama-webhelp/#page/apama-webhelp%252Fco-DevApaAppInEpl_defining_event_listeners.html%2523) topic.
@@ -71,7 +70,7 @@ Filters enable you to trigger by combinations or sequences of other triggers. If
 
 it is also possible to add filters in the pattern.
 
-`on all Event(type = "c8y_EntranceEvent") as e { }`
+	on all Event(type = "c8y_EntranceEvent") as e { }`
 
 You can listen for more than one event:
 
@@ -121,7 +120,7 @@ Streams give you the possibility to operate on windows of events. Streams use th
 
 1.  Windows for a certain time - use the "within" keyword.
 
-    `from m in all Measurement(type = "c8y_TemperatureMeasurement") within 3600.0 select avg(m.measurements["c8y_TemperatureMeasurement"]["T"].value) as avgValue { }`
+    	from m in all Measurement(type = "c8y_TemperatureMeasurement") within 3600.0 select avg(m.measurements["c8y_TemperatureMeasurement"]["T"].value) as avgValue { }`
 
 2.  Windows with a certain amount of events - use the "retain" keyword.  
 
@@ -158,7 +157,7 @@ As well as the predefined event types, you can define your own event types. Thes
 		route MyEvent(m1, m2);
 	}
 
->**Info:** Cumulocity deploys each module into its own namespace, so event definitions from one module cannot be used in other modules. This prevents dependencies between modules._
+>**Info:** Cumulocity deploys each module into its own namespace, so event definitions from one module cannot be used in other modules. This prevents dependencies between modules.
 
 ## Creating own actions
 
@@ -189,13 +188,12 @@ Calculating the distance between two geo-coordinates:
 		return R * c;
 	}
 
-
 ## Variables
 
 You can define variables in your modules.
 
     string myEmailText := "Hello World";
-    sequence&#60;string> supportedOperationsList := ["c8y_Restart", "c8y_Relay"];
+    sequence<string> supportedOperationsList := ["c8y_Restart", "c8y_Relay"];
 
 If you define a monitor-scope variable (that is, inside a monitor but not within any actions on that monitor), then that can be used in a listener if you use a colon (:) instead of "as" for the event coassignment in the listener. Thus the below sends the latest event every 10 seconds:
 
@@ -242,7 +240,7 @@ This pattern is often used with the unmatched keyword to identify events that ar
 			}
 		}
 	
-		dictionary&#60;string, Measurement> latestMeasurementByType; // measurements for this device
+		dictionary<string, Measurement> latestMeasurementByType; // measurements for this device
 	
 		action perDevice(Measurement m) {
 			processMeasurement(m);
@@ -253,4 +251,4 @@ This pattern is often used with the unmatched keyword to identify events that ar
 		action processMeasurement(Measurement m) {
 			latestMeasurementByType[m.type] := m;
 		}
-}
+	}

@@ -7,7 +7,9 @@ layout: default
 
 ## Overview
 
-This module will give an in-depth example how you can create more complex rules. It will use multiple of the features explained before in the other sections of this guide. If you are just starting with the Apama Event Processing Language please take a look at [<span class="inline-comment-marker" data-ref="039df6be-3966-4270-80ad-14af1e16088a">these examples</span>](http://cumulocity.com/guides/apama/examples)<span class="inline-comment-marker" data-ref="039df6be-3966-4270-80ad-14af1e16088a">.</span>
+This section will give an in-depth example how you can create more complex rules. It will use multiple of the features explained before in the other sections of this guide. 
+
+If you are just starting with the Apama Event Processing Language please take a look at [<span class="inline-comment-marker" data-ref="039df6be-3966-4270-80ad-14af1e16088a">these examples</span>](http://cumulocity.com/guides/apama/examples)<span class="inline-comment-marker" data-ref="039df6be-3966-4270-80ad-14af1e16088a">.</span>
 
 ## Prerequisites
 
@@ -76,34 +78,32 @@ The main input for this module will be events. To discard non-matching events as
 
 In the next step, we need the configuration of the geofence for the calculation and grab it.
 
-		 monitor.subscribe(FindManagedObjectResponse.CHANNEL);
+	monitor.subscribe(FindManagedObjectResponse.CHANNEL);
 	...
-	                integer reqId := integer.getUnique();
-	                	send FindManagedObject(reqId, e.source, new dictionary<string,string>) to
-	                        FindManagedObject.CHANNEL;
-	                on FindManagedObjectResponse(reqId = reqId) as resp
-	                   and not FindManagedObjectResponseAck(reqId) {
-	 
-	                        ManagedObject dev := resp.managedObject;
-	
+					integer reqId := integer.getUnique();
+						send FindManagedObject(reqId, e.source, new dictionary<string,string>) to
+							FindManagedObject.CHANNEL;
+							on FindManagedObjectResponse(reqId = reqId) as resp 
+					   			and not FindManagedObjectResponseAck(reqId) {
+					   
+					   ManagedObject dev := resp.managedObject;
 
 ## Step 3: Checking if the device supports c8y_Geofence
 
 With the device available we will now check if there is a geofence configured for the device and if it is activated (contains "c8y&#95;Geofence" in supportedOperations). To check the c8y&#95;SupportedOperations array, we can use the indexOf() function. This function will loop through all elements and return the index of that entry, or a negative number if the value is not present. For the configuration, we will just check if the device contains the fragment "c8y&#95;Geofence". If present, this will be prefixed by "attrs." in the params of the device.
 
-	Once we have an event and a device, we extract the data from the event's c8y&#95;Position and the device's c8y&#95;Geofence. These objects are mapped to dictionary&#60;any,any&#62; entries in the params. As the params hold values of type "any", we need to cast to a dictionary&#60;any,any&#62;:
-	
-	if(dev.params.hasKey("attrs.c8y_Geofence") and 
-						   dev.supportedOperations.indexOf("c8y_Geofence") >= 0) {
-							dictionary&#60;any,any&#62; evtPos := dictionary&#60;any,any&#62; > e.params["c8y_Position"];
-							float eventLat := &#60;float> evtPos["lat"];
-							float eventLng := &#60;float> evtPos["lng"];
-	
-							dictionary&#60;any,any&#62; devGeofence := &#60;dictionary&#60;any,any&#62 &#62 dev.params["attrs.c8y_Geofence"];
-						float centerLat := &#60;float> devGeofence["lat"];
-						float centerLng := &#60;float> devGeofence["lng"];
-						float maxDistance := &#60;float> devGeofence["radius"];
+Once we have an event and a device, we extract the data from the event's c8y&#95;Position and the device's c8y&#95;Geofence. These objects are mapped to dictionary<any,any> entries in the params. As the params hold values of type "any", we need to cast to a dictionary<;any,any>:
 
+		if(dev.params.hasKey("attrs.c8y_Geofence") and
+	   dev.supportedOperations.indexOf("c8y_Geofence") >= 0) {
+	    dictionary<any,any> evtPos := <dictionary<any, any> > e.params["c8y_Position"];
+	    float eventLat := <float> evtPos["lat"];
+	    float eventLng := <float> evtPos["lng"];
+	 
+    dictionary<any,any> devGeofence := <dictionary<any,any> > dev.params["attrs.c8y_Geofence"];
+    float centerLat := <float> devGeofence["lat"];
+    float centerLng := <float> devGeofence["lng"];
+    float maxDistance := <float> devGeofence["radius"];
 
 
 ## Step 4: Creating the trigger
@@ -144,7 +144,7 @@ This pair of LocationEventWithDistance events now holds all data for checking if
 
 To create the alarm, we now need two events where the first one has a distance smaller than the radius and the second one has a distance bigger than the radius. This would mean that the device just left the geofence.
 
-	if firstPos.distance <= firstPos.maxDistance and
+		if firstPos.distance <= firstPos.maxDistance and
 	   secondPos.distance > secondPos.maxDistance {
 	        send Alarm("", "c8y_GeofenceAlarm", firstPos.source, currentTime,
 	                   "Device moved out of circular geofence",
@@ -165,10 +165,9 @@ To clear the alarm, we just need to switch the condition at the bottom and addit
 						   and not FindAlarmResponseAck(reqId=reqId) {
 							send Event(alarmResponse.id, "Alarm", firstPos.source, currentTime,
 							           "Device moved back into circular geofence",
-							           {"id":&#60;any> alarmResponse.id, "status":"CLEARED"}) to Event.CHANNEL;
+							           {"id"<any> alarmResponse.id, "status":"CLEARED"}) to Event.CHANNEL;
 						}
 					}
-
 
 ## Putting everything together
 
@@ -206,14 +205,14 @@ We can now combine all the parts into one module. The order of the listeners doe
                     ManagedObject dev := resp.managedObject;
                                         if(dev.params.hasKey("attrs.c8y_Geofence") and 
                                            dev.supportedOperations.indexOf("c8y_Geofence") >= 0) {
-                                                dictionary&#60;any,any&#62; evtPos := dictionary&#60;any,any&#62; > e.params["c8y_Position"];
-                                                float eventLat := &#60;float> evtPos["lat"];
-                                                float eventLng := &#60;float> evtPos["lng"];
+                                                dictionary<any,any> evtPos := dictionary&#60;any,any&#62; > e.params["c8y_Position"];
+                                                float eventLat := <float> evtPos["lat"];
+                                                float eventLng := <float> evtPos["lng"];
 
-                                                dictionary&#60;any,any&#62; devGeofence := &#60;dictionary&#60;any,any&#62; &#62; dev.params["attrs.c8y_Geofence"];
-                                                float centerLat := &#60;float> devGeofence["lat"];
-                                                float centerLng := &#60;float> devGeofence["lng"];
-                                                float maxDistance := &#60;float> devGeofence["radius"];
+                                                dictionary<any,any>; devGeofence := <dictionary<any,any> > dev.params["attrs.c8y_Geofence"];
+                                                float centerLat := <float> devGeofence["lat"];
+                                                float centerLng := <float> devGeofence["lng"];
+                                                float maxDistance := <float> devGeofence["radius"];
 
                                                 float d := distance(centerLat, centerLng, eventLat, eventLng);
                                                 route LocationEventWithDistance(e.source, d, e, maxDistance);
@@ -256,4 +255,3 @@ We can now combine all the parts into one module. The order of the listeners doe
                 return R * c;
         }
 	}
-

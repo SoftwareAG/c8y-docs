@@ -6,7 +6,7 @@ layout: redirect
 
 With the device available we will now check if there is a geofence configured for the device and if it is activated (contains "c8y&#95;Geofence" in supportedOperations). To check the c8y&#95;SupportedOperations array, we can use the indexOf() function. This function will loop through all elements and return the index of that entry, or a negative number if the value is not present. For the configuration, we will just check if the device contains the fragment "c8y&#95;Geofence". If present, this will be prefixed by "attrs." in the params of the device.
 
-Once we have an event and a device, we extract the data from the event's c8y&#95;Position and the device's c8y&#95;Geofence. These objects are mapped to dictionary&#60;any,any&#62; entries in the params. As the params hold values of type "any", we need to cast to a dictionary&#60;any,any&#62;:
+Once we have an event and a device, we extract the data from the event's c8y&#95;Position and the device's c8y&#95;Geofence. These objects are mapped to dictionary<any,any> entries in the params. As the params hold values of type "any", we need to cast to a dictionary<;any,any>:
 
 		if(dev.params.hasKey("attrs.c8y_Geofence") and
 	   dev.supportedOperations.indexOf("c8y_Geofence") >= 0) {

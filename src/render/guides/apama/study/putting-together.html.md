@@ -38,14 +38,14 @@ We can now combine all the parts into one module. The order of the listeners doe
                     ManagedObject dev := resp.managedObject;
                                         if(dev.params.hasKey("attrs.c8y_Geofence") and 
                                            dev.supportedOperations.indexOf("c8y_Geofence") >= 0) {
-                                                dictionary&#60;any,any&#62; evtPos := dictionary&#60;any,any&#62; > e.params["c8y_Position"];
-                                                float eventLat := &#60;float> evtPos["lat"];
-                                                float eventLng := &#60;float> evtPos["lng"];
+                                                dictionary<any,any> evtPos := dictionary&#60;any,any&#62; > e.params["c8y_Position"];
+                                                float eventLat := <float> evtPos["lat"];
+                                                float eventLng := <float> evtPos["lng"];
 
-                                                dictionary&#60;any,any&#62; devGeofence := &#60;dictionary&#60;any,any&#62; &#62; dev.params["attrs.c8y_Geofence"];
-                                                float centerLat := &#60;float> devGeofence["lat"];
-                                                float centerLng := &#60;float> devGeofence["lng"];
-                                                float maxDistance := &#60;float> devGeofence["radius"];
+                                                dictionary<any,any>; devGeofence := <dictionary<any,any> > dev.params["attrs.c8y_Geofence"];
+                                                float centerLat := <float> devGeofence["lat"];
+                                                float centerLng := <float> devGeofence["lng"];
+                                                float maxDistance := <float> devGeofence["radius"];
 
                                                 float d := distance(centerLat, centerLng, eventLat, eventLng);
                                                 route LocationEventWithDistance(e.source, d, e, maxDistance);

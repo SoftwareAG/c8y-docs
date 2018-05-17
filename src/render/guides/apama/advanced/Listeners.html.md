@@ -14,7 +14,7 @@ Filters enable you to trigger by combinations or sequences of other triggers. If
 
 it is also possible to add filters in the pattern.
 
-`on all Event(type = "c8y_EntranceEvent") as e { }`
+	on all Event(type = "c8y_EntranceEvent") as e { }`
 
 You can listen for more than one event:
 
@@ -64,7 +64,7 @@ Streams give you the possibility to operate on windows of events. Streams use th
 
 1.  Windows for a certain time - use the "within" keyword.
 
-    `from m in all Measurement(type = "c8y_TemperatureMeasurement") within 3600.0 select avg(m.measurements["c8y_TemperatureMeasurement"]["T"].value) as avgValue { }`
+    	from m in all Measurement(type = "c8y_TemperatureMeasurement") within 3600.0 select avg(m.measurements["c8y_TemperatureMeasurement"]["T"].value) as avgValue { }`
 
 2.  Windows with a certain amount of events - use the "retain" keyword.  
 

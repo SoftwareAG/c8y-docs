@@ -20,7 +20,7 @@ This pattern is often used with the unmatched keyword to identify events that ar
 			}
 		}
 	
-		dictionary&#60;string, Measurement> latestMeasurementByType; // measurements for this device
+		dictionary<string, Measurement> latestMeasurementByType; // measurements for this device
 	
 		action perDevice(Measurement m) {
 			processMeasurement(m);

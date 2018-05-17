@@ -9,7 +9,7 @@ In the next step, we need the configuration of the geofence for the calculation 
 	monitor.subscribe(FindManagedObjectResponse.CHANNEL);
 	...
 					integer reqId := integer.getUnique();
-						send FindManagedObject(reqId, e.source, new dictionary&#60;string,string&#62;) to
+						send FindManagedObject(reqId, e.source, new dictionary<string,string>) to
 							FindManagedObject.CHANNEL;
 							on FindManagedObjectResponse(reqId = reqId) as resp 
 					   			and not FindManagedObjectResponseAck(reqId) {

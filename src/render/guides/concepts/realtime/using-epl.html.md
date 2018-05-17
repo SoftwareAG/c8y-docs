@@ -13,11 +13,12 @@ Apama EPL is documented in the [Apama documentation](http://www.apamacommunity.c
 
 As an example, the following statement listens for new temperature sensor readings ranging above a particular temperature:
 
-	on all Measurement(type = "c8y_TemperatureMeasurement") as e {
-		if e.measurements.getOrDefault("c8y_TemperatureMeasurement").getOrDefault("T").value > 100.0 {
-			send Alarm("", "c8y_TemperatureAlert", e.source, e.time, "Temperature too high",
-				"CRITICAL", "", 1, new dictionary<string,any>) to Event.CHANNEL;
-		}
+	 on all Measurement(type = "c8y_TemperatureMeasurement") as e {
+              if e.measurements.getOrDefault("c8y_TemperatureMeasurement").getOrDefault("T").value > 100.0 {
+                  send Alarm("", "c8y_TemperatureAlert", e.source, e.time, "Temperature too high",
+                      "CRITICAL", "", 1, new dictionary<string,any>) to Event.CHANNEL;
+              }
+    }
 	
 
 Here, _Measurement_ is a pre-defined event containing the measurements. In this example, "e" is the "Measurement" event, the listener is filtering for measurements which are "c8y&#95;TemperatureMeasurement" and the property is "c8y_TemperatureMeasurement.T". "value" is in degrees Celsius of a temperature sensor (see the [sensor library](https://www.cumulocity.com/guides/reference/sensor-library)).
@@ -53,12 +54,13 @@ Listeners such as the above should be placed in a monitor in the `onload` statem
 	using com.apama.cumulocity.Util;
 	
 	monitor ListenForHighTemperatures {
-		action onload() {
-			on all Measurement(measurementType = "c8y_TemperatureMeasurement") as e {
-				if e.measurements.getOr("c8y_TemperatureMeasurement.T").value > 100.0d {
-					// handle the measurement
-			}
-		}
+	    action onload() {
+	        on all Measurement(type = "c8y_TemperatureMeasurement") as e {
+	            if e.measurements.getOrDefault("c8yTemperatureMeasurement").getOrDefault("T").value > 100.0 {
+	                // handle the measurement
+	        }
+	    }
+	}
 	}
 
 ### How can I create derived data from EPL?

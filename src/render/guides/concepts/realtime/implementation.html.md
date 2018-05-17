@@ -8,25 +8,18 @@ There are two processing modes for API requests in Cumulocity: *persistent* and 
 
 The "temporary" mode will only send the data to the real-time engine and immediately return asynchronously. This mode is for efficiently monitoring particular data in realtime.
 
-### CEL example
+### Examples
 
 Assume that location updates from cars should be monitored every second while the car is driving, but only be stored once in a minute into the database for reporting purposes. This is done using the following statement:
+
+**CEL**
 
     insert into CreatedEvent
     select * from EventCreated e
     where getObject(e, "c8y_LocationUpdate") is not null
     output first every 60 seconds
 
-Another option is to output only every 60th update like this:
-
-    insert into CreatedEvent
-    select * from EventCreated e
-    where getObject(e, "c8y_LocationUpdate") is not null
-    output first every 60 events
-
-### Apama EPL example
-
-Assume that location updates from cars should be monitored every second while the car is driving, but only be stored once in a minute into the database for reporting purposes. This is done using the following statement:
+**Apama EPL**
 
 	monitor SendEveryMinute {
 		dictionary<string, Event> latestUpdates;
@@ -46,8 +39,18 @@ Assume that location updates from cars should be monitored every second while th
 		}
 	}
 
-Another option is to output only every 60th update like this:
+Another option is to output only every 60th update.
 
+**CEL**
+
+    insert into CreatedEvent
+    select * from EventCreated e
+    where getObject(e, "c8y_LocationUpdate") is not null
+    output first every 60 events
+
+
+**Apama EPL** 
+	
 	monitor SendEverySixtyEvents {
 		event UpdateAndCount {
 			Event latest;

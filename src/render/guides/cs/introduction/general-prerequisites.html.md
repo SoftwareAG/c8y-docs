@@ -32,7 +32,7 @@ Recommended as production image is microsoft/dotnet:<version>-runtime: This imag
 
 Assumed, only Linux containers are supported. However, for the development itself it is possible to use Windows containers.
 
-The SDK is based on the package   Cumulocity.SDK.Microservices has dependency on:
+The SDK is based on the package Cumulocity.SDK.Microservices has dependency on:
 
 * Cumulocity.AspNetCore.Authentication.Basic - a package wrapper around [Bazinga.AspNetCore.Authentication.Basic](https://github.com/bruno-garcia/Bazinga.AspNetCore.Authentication.Basic) Ensures adding basic authentication to Asp.Net Core in the right way because ASP.NET Core 2.0 introduced breaking changes to Authentication and Identity. From this version of the  web framework Microsoft doesn't ship a Basic Authentication package with ASP.NET Core Security.
 

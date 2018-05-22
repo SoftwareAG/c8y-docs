@@ -4,7 +4,7 @@ title: Acquiring microservice credentials
 layout: redirect
 ---
 
-Following section is a wrap up for [user management section](/guides/concepts/applications/microservices)
+The following section is a wrap up for user management as described in Managing application > [Cumulocity microservices](/guides/concepts/applications/microservices) in the Concepts guide.
 
 Microservice related endpoints require a microservice bootstrap user, which can be obtained by a service provider using
 

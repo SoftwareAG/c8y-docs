@@ -18,7 +18,7 @@ layout: redirect
 |severity|String|1|The severity of the alarm: CRITICAL, MAJOR, MINOR or WARNING. Must be upper-case.|POST: Mandatory PUT: Optional|
 |count|Long|1|The number of times this alarm has been sent.|No|
 |firstOccurenceTime|String|1|The first time that this alarm occurred (i.e., where "count" was 1).|No|
-|history|AuditRecordCollection|1|History of modifications tracing property changes.|No|
+|history|AuditRecordCollection|1|Legacy. Should not be used.|No|
 |\*|Object|0..n|Additional properties of the event.||
 
 ### GET an Alarm
@@ -50,15 +50,12 @@ Example response:
       "severity" : "MAJOR",
       "source" : { "id" : "12345", "self" : "..." },
       "com_mycorp_MyProp" : { ... }
-      "history" : {
-        "self" : "...",
-        "auditRecords" : [ ... ],
-      }
+      "history" : { }
     }
 
 ### Update an Alarm
 
-Changes to alarms will generate a new audit record which will be added to the "history" collection. The audit record will include the username and application that triggered the update, if applicable. 
+Changes to alarms will generate a new audit record. The audit record will include the username and application that triggered the update, if applicable. To get the list of audits for alarm, use the following request: GET /audit/auditRecords?source=<alarmId>
 
 Please notice that if update actually doesn't change anything (i.e. request body contains data that is identical to already present in database), there will be no audit record added and no notifications will be sent.
 
@@ -93,41 +90,5 @@ Example response:
       "status" : "ACKNOWLEDGED",
       "severity" : "MINOR",
       "source" : { "id" : "12345", "self" : "..." },
-      "history" : {
-        "self" : "link to audit history",
-        "auditRecords" : [
-          {
-            "id" : "123",
-            "self" : "...",
-            "type" : "com_cumulcity_model_alarm_AlarmRaised",
-            "creationTime" : "2011-09-06T12:03:32.103Z",
-            "time" : "2011-09-06T12:03:27.845Z",
-            "text" : "Alarm raised",
-            "user" : "Spock",
-            "application" : "Omniscape",
-            "activity" : "Alarm raised",
-            "severity" : "MINOR",
-            "source" : { ... }
-          },
-          {
-            "id" : "1234",
-            "self" : "...",
-            "type" : "com_cumulcity_model_alarm_AlarmChanged",
-            "creationTime" : "2011-09-07T12:04:29.031Z",
-            "changes": [{
-              "attribute": "severity",
-              "newValue": {},
-              "previousValue": {},
-              "type": "com.cumulocity.model.event.CumulocitySeverities"
-            }],
-            "time" : "2011-09-07T12:04:27.845Z",
-            "text" : "Alarm changed",
-            "user" : "Spock",
-            "application" : "Omniscape",
-            "activity" : "Alarm changed.",
-            "severity" : "Minor",
-            "source" : { ... }
-          }
-        ]
-      }
+      "history" : { }
     }

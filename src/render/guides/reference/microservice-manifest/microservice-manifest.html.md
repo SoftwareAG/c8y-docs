@@ -4,6 +4,10 @@ title: Microservice manifest
 layout: redirect
 ---
 
+The manifest provides information about a microservice deployment. The definition is typically provided as cumulocity.json file in the binary uploaded to the Cumulocity platform.
+
+## Manifest
+
 |Name|Type|Description|Required|
 |:---|:---|:----------|:----------|
 |apiVersion|String |Document type format discriminator, for future changes in format|Yes
@@ -19,6 +23,7 @@ layout: redirect
 |roles|String[]|Default: [] ( empty list )<br/>Roles provided by this microservice|No
 |livenessProbe| Probe | Defines strategy used to verify if microservice is alive or requires restart | No |
 |readinessProbe| Probe | Defines strategy used to verify if microservice is ready to accept traffic |No
+|extensions| Extension[]|Default: [] ( empty list )<br/> Defines a set of extensions that should be enabled for microservice |No
 
 ### Provider
 
@@ -42,7 +47,7 @@ layout: redirect
 |key|String |Key of option|Yes
 |default|String|Default value|No
 |editable|Boolean|Default: false <br/>Defines if option maybe changed by subscribed tenant on runtime|No
-|valueSchema|Schema|Default: {type: â€˜stringâ€™}<br/>Defines schema of value and follows the json schema defined here | No
+|valueSchema|Schema|Default: {type: ‘string’}<br/>Defines schema of value and follows the json schema defined here | No
 
 ### Probe
 |Name|Type|Description|Required|
@@ -50,11 +55,11 @@ layout: redirect
 |exec | ExecAction | Commands to be executed on a container to probe the service | No
 |tcpSocket | TCPSocketAction | TCP socket connection attempt as a probe | No
 |httpGet | HTTPGetAction | HTTP request to be executed as a probe | No
-|initialDelaySeconds |Number| Tells the platform for how long it should wait before performing the first probe <br/>Default: 0 | No
+|initialDelaySeconds |Number| Tells the platform for how long it should wait before performing the first probe <br/>Default: 200 | No
 |periodSeconds|Number| How often the probe should be executed<br/>Default: 10 | No
 |successThreshold|Number| Minimum consecutive successes for the probe to be considered successful after having failed<br/> Default: 1 | No
 |timeoutSeconds|Number| Number of seconds after which the probe times out<br/> Default: 1 | No
-|failureThresholdNumber|Number| Number of failed probes after which action should be taken <br/>Default: 3 | No
+|failureThreshold|Number| Number of failed probes after which action should be taken <br/>Default: 3 | No
 
 ### ExecAction
 |Name|Type|Description|Required|
@@ -82,8 +87,15 @@ layout: redirect
 |name | String | Header name | Yes
 |value | String | Header value | Yes
 
+### Extension
+|Name|Type|Description|Required|
+|:---|:---|:----------|:----------|
+|type | String | Type id of extension | Yes
+|* | any | Configuration parameters | No
+
+
 ### Example Manifest
-    
+
     {
         "apiVersion": "v1",
         "name": "first-microservice",
@@ -95,9 +107,47 @@ layout: redirect
         },
         "isolation": "MULTI_TENANT",
         "scale": "auto",
-        "price": 19.99,
         "resources": {
-            "cpu": "2",
-            "memory": "2GB"
-        }
+            "cpu": "1",
+            "memory": "1GB"
+        },
+        "livenessProbe":{
+          "httpGet":{
+            "path": "/health"
+          },
+          "initialDelaySeconds": 60,
+          "periodSeconds": 10
+        },
+        "readinessProbe":{
+          "httpGet":{
+            "path": "/health",
+            "port": 80
+
+          },
+          "initialDelaySeconds": 20,
+          "periodSeconds": 10
+        },
+        "extensions":[
+          {
+            "type":"prometheus.io"
+          }
+        ]
+    }
+## Supported Extensions
+List of extensions supported by Cumulocity Microservice Manifest
+
+### Prometheus Monitoring
+Enables support for gathering of metrics exposed via prometheus endpoint.
+Endpoint should not require authentication.
+
+|Name|Type|Description|Required|
+|:---|:---|:----------|:----------|
+|path | String | Path to prometheus endpoint. <br/> Default: /prometheus | No
+|port | String | HTTP port where prometheus endpoint is available. <br/> Default: 80 | No
+
+#### Example Extension
+    {
+      "type": "prometheus.io",
+      "path": "/monitoring/prometheus"
+      "port": "4444"
     }

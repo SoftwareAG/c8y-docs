@@ -18,7 +18,8 @@ Create an html file, for example "hello_mqtt_js.html" with the following content
         <meta http-equiv="Content-Type" content="text/html;charset=utf-8"></meta>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/paho-mqtt/1.0.1/mqttws31.js" type="text/javascript"></script>
         <script type="text/javascript">
-            var undeliveredMessages = []
+            var undeliveredMessages = []           
+            var temperature = 25
     
             var client = new Paho.MQTT.Client("<<serverUrl>>", "<<clientId>>");
             client.onMessageArrived = onMessageArrived;
@@ -50,11 +51,16 @@ Create an html file, for example "hello_mqtt_js.html" with the following content
                 publish("s/us", "100,JS MQTT,c8y_MQTTDevice", function() {
                     //set hardware information
                     publish("s/us", "110,S123456789,MQTT test model,Rev0.1", function() {
-                        //listen for operation
-                        client.subscribe("s/ds");
+                        publish('s/us', '114,c8y_Restart', function() { 
+                            log('Enable restart operation support') 
+                            //listen for operation
+                            client.subscribe("s/ds");
+                        })
+                       
                         //send temperature measurement
                         setInterval(function() {
-                            publish("s/us", "211,25");
+                            publish("s/us", '211,'+temperature);
+                            temperature += 0.5 - Math.random()
                         }, 3000);
                     });
                 });

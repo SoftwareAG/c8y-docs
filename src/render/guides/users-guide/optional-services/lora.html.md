@@ -38,11 +38,11 @@ Enter the following information:
 - **profile ID**: This depends on your ThingPark account and environment. If you are using, for example, the Dev1 ThingPark environment your profile ID will be "dev1-api".
 - **username**: your ThingPark user name
 - **password**: your ThingPark password 
-- **application EUI**: This is a global application ID in the IEEE EUI64 address space that uniquely identifies the application provider of the device. There can be only one application EUI for a tenant.
+- **application EUI**: This is a global application ID in the IEEE EUI64 address space that uniquely identifies the application provider of the device and it is 16 character (8 byte) long hexadecimal number. There can be only one application EUI for a tenant.
 
-The profile ID, username and password are used to retrieve an access token to send further requests to the ThingPark platform. It is possible to renew the access token by replacing  the account credentials.
+The profile ID, username and password are used to retrieve an access token to send further requests to the ThingPark platform. It is possible to renew the access token by replacing the account credentials.
 
-![Register devices](/guides/images/users-guide/actility/credentials-new-2.png)
+![Setting device credentials](/guides/images/users-guide/actility/credentials-new-2.png)
 
 Click "Save". If everything is okay, there will be a message "Credentials successfully saved".
 
@@ -177,13 +177,16 @@ In order to register a LoRa device, go to the Device Management application and 
 
 Click "LoRa". 
 
+Cumulocity fully supports the LoRa device provisioning with Over-the-Air Activation (OTAA) which is the preferred and most secure way to connect with the LoRa network.
+If Activation by Personalization (ABP) is required to be used, please see the [LoRa device registration with ABP](#device-registration-with-abp-activation) section.
+
 In the next window fill in the required information: 
 
 - **Device profile**: Select the appropriate device profile from the drop-down list. 
 - **Device type**: Select the appropriate device type from the drop-down list. 
-- **Device EUI**: This is the unique identifier for the device. You can find it on the device itself.
+- **Device EUI**: This is the unique identifier for the device and it is 16 character (8 byte) long hexadecimal number. You can find it on the device itself.
 - **Application key**: This is an AES-128 application key specific for the device that
-is assigned to the device by the application owner and is responsible to encrypt
+is assigned to the device by the application owner and is responsible to encrypt. Application key is 32 character (16 byte) long hexadecimal number.
 JOIN communication. You can find this key on the device itself.
 - **Connectivity plan**: Select the appropriate connectivity plan from the drop-down list.
 
@@ -197,6 +200,21 @@ You can verify that the device is really connected by checking that events are a
 
 For more information on viewing and managing your connected devices, also refer to 
 [Device Management](/guides/users-guide/device-management).
+
+#### <a name="device-registration-process"></a>LoRa device registration process
+
+<img src="/guides/images/users-guide/actility/lora_device_registration_process.png" style="max-width: 60%">
+
+#### <a name="device-registration-with-abp-activation"></a>LoRa device registration with Activation by Personalization (ABP)
+
+Activating the device by personalization is not suggested and not fully supported in Cumulocity LoRa device registration.
+However, if you would like to create device with this activation type in Cumulocity and use the LoRa feature such as sending operations to device, deprovisioning device and setting LoRa device type with custom device protocol configuration, you should first provision device in ThingPark platform and you have to create "AS Routing Profile" for Cumulocity using destination http://actility-server.cumulocity.com as a "Third Party AS (HTTP)" and assign it to your devices manually. Afterwards, you can register this device using LoRa device registration. For this case, application key field in the LoRa device registration is invalid.
+
+#### <a name="legacy-LoRa-devices"></a>Limitations for LoRa devices which were not created using LoRa device registration
+
+The general device registration for LoRa devices is no longer supported.
+The existing LoRa devices that were already created in Cumulocity with general device registration process has limitations. For those devices, it is not possible to send operations to device, deprovision device and set LoRa device type with custom device protocol configuration.
+It is suggested to delete and re-register those devices using LoRa device registration to fully use LoRa feature.
 
 ### <a name="deprovision-device"></a>Deprovisioning LoRa devices
 

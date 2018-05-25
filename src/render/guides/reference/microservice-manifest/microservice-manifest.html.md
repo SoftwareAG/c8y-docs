@@ -4,7 +4,6 @@ title: Microservice manifest
 layout: redirect
 ---
 
-The manifest provides information about a microservice deployment. The definition is typically provided as cumulocity.json file in the binary uploaded to the Cumulocity platform.
 
 ## Manifest
 

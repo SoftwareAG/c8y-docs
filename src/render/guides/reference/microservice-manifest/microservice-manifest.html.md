@@ -47,7 +47,7 @@ The manifest provides information about a microservice deployment. The definitio
 |key|String |Key of option|Yes
 |default|String|Default value|No
 |editable|Boolean|Default: false <br/>Defines if option maybe changed by subscribed tenant on runtime|No
-|valueSchema|Schema|Default: {type: ‘string’}<br/>Defines schema of value and follows the json schema defined here | No
+|valueSchema|Schema|Default: {type: ‘string‘}<br/>Defines schema of value and follows the json schema defined here | No
 
 ### Probe
 |Name|Type|Description|Required|

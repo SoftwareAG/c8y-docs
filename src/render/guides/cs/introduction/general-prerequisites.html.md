@@ -24,6 +24,17 @@ Whether you need the .NET Core SDK or the .NET Core runtime depends on what you 
 
 * .NET Core Runtime - is required to **run** .NET Core applications.
 
+#### Windows system requirements
+* Powershell (at least Version 6 or Core)
+* .NET Core SDK (at least Version 2.0)
+* Docker for Windows (at least Version  17.06)
+
+#### Unix system requirements
+
+* .NET Core SDK (at least Version 2 .0)
+* Docker (at least Version  17.06)
+* Mono (at least Version  5.4.0)
+
 ### Runtime prerequisites
 
 The most important requirement is an installation of [Docker 17.06](https://docs.docker.com/release-notes/docker-ce/) or later of the Docker client.
@@ -32,7 +43,7 @@ Recommended as production image is microsoft/dotnet:<version>-runtime: This imag
 
 Assumed, only Linux containers are supported. However, for the development itself it is possible to use Windows containers.
 
-The SDK is based on the package Cumulocity.SDK.Microservices has dependency on:
+The SDK is based on the package   Cumulocity.SDK.Microservices has dependency on:
 
 * Cumulocity.AspNetCore.Authentication.Basic - a package wrapper around [Bazinga.AspNetCore.Authentication.Basic](https://github.com/bruno-garcia/Bazinga.AspNetCore.Authentication.Basic) Ensures adding basic authentication to Asp.Net Core in the right way because ASP.NET Core 2.0 introduced breaking changes to Authentication and Identity. From this version of the  web framework Microsoft doesn't ship a Basic Authentication package with ASP.NET Core Security.
 

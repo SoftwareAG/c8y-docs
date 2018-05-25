@@ -57,7 +57,26 @@ Check the status of an application that is running inside the Docker container.
 
 In order to deploy the application run the script. You must provide the correct URL and credentials in this script.
 
-	./deploy.sh
+	./deploy.sh -t {tenant} -u {username} -p {password}  -an hello-world -f settings.ini
+    
+Ways to call the script
+*  Just call deploy.sh
+	* The script looks for a settings.ini in the same directory. If found, uses the credentials and tenant URL from that file
+	* If settings.ini is not found, an error is shown
+* Calling deploy.sh -f settings_alternative.ini
+	* Loads the credentials and tenant URL from settings_alternativ.ini
+	* If settings_alternative.ini is not found, an error is shown
+* Merge the given arguments and ini configuration.
+	* deploy.sh  -an hello-world -f settings_alternative.ini
+
+The ini sample
+~~~
+[deploy]
+username=tenant/user
+password=pass
+tenant=url
+appname=sample_application
+~~~
 	
 The application starts executing from the entry point public static void Main() in Program class where the host for the application is created. The following shows an example of a program created by create.sh.
 

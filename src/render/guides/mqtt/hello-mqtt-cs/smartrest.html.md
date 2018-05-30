@@ -138,7 +138,7 @@ You should make use of the condition field to control when response templates sh
                         "c8y_Mobile.cellId" });
 ```
 
-#### GET templates
+### GET templates
 
 The GET templates for the inventory do not need any mandatory or custom values. Instead they use two different fields.
 

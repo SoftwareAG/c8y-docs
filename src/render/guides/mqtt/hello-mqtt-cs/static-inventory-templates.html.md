@@ -3,7 +3,7 @@ order: 40
 layout: redirect
 title: Static templates
 ---
-
+## Static inventory templates
 ### Device creation (100)
 
 Will create a new device for the serial number in the inventory if not yet existing. An externalId for the device with type c8y_Serial and the device identifier of the MQTT clientId as value will be created.
@@ -138,7 +138,7 @@ Parameters:
 
 ### Set configuration (113)
 
-Will update the position properties of the device.
+Will set the configuration of the device
 
 Parameters:
 
@@ -205,13 +205,12 @@ Parameters:
 ### Set software list (116)
 
 Will set the list of software installed on the device
-List of elements - software. 
 
-Each software contains:
+Parameters:
 
 |Position|Parameter|Mandatory|
 |:-------|:-------|:-------|
-|1...|List of 3 values per software|NO|
+|1...|List of software|NO|
 |1.1|name|NO|
 |1.2|version|NO|
 |1.3|url|NO|

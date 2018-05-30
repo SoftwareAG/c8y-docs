@@ -94,7 +94,7 @@ To define a threshold rule follow these steps:
 4. Click the menu icon at the end of the row of the respective data point and select **Create Smart Rule**. <br><br> <img src="/guides/images/users-guide/Cockpit/Cockpit_DataPointExample.png" name="Data point example" style="width:75%;"/>
 <br>
 5. Select the Smart Rule "On measurement explicit threshold create alarm". <br><br> <img src="/guides/images/users-guide/Cockpit/Cockpit_SmartRuleExample.png" name="Smart Rule example" style="width:50%;"/><br>
-6. Fill in the red range minimum and red range maximum value. When the values are outside these range, a threshold alarm will be raised.
+6. Fill in the red range minimum and red range maximum value. When the measurement value enters or leaves the RED range, an alarm is created or respectively cleared. For details, see the description of the rule "On measurement explicit threshold create alarm" in the [Smart rules collection](/guides/users-guide/cockpit#smart-rules-collection).
 7. Under "Create Alarm" you can optionally edit the alarm type and the alarm text.
 8. Under "Target assets or devices" you can select the object this rule will be applied to.
 9. Click **Create** to create the Smart Rule.

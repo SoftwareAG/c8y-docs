@@ -12,7 +12,7 @@ Der Daten-Explorer ist sowohl für alle Assets als auch für einzelne Assets ver
 
 * Navigieren Sie zu einem bestimmten Asset und wechseln Sie zur Registerkarte "Daten-Explorer", um auf alle Datenpunkte dieses Assets und seiner Kind-Assets zuzugreifen.
 
-Im Daten-Explorer finden Sie auf der rechten Seite eine Liste aller verfügbaren Datenpunkte. Standardmäßig werden die ersten fünf Datenpunkte des ausgewählten Geräts oder der ausgewählten Gruppe angezeigt. Weitere Informationen zum Hinzufügen von Datenpunkten finden Sie unter [*Hinzufügen von Datenpunkten*](#add-data-points).
+Im Daten-Explorer finden Sie auf der rechten Seite eine Liste aller verfügbaren Datenpunkte. Standardmäßig werden die ersten fünf Datenpunkte des ausgewählten Geräts oder der ausgewählten Gruppe angezeigt. Weitere Informationen zum Hinzufügen von Datenpunkten finden Sie unter [Hinzufügen von Datenpunkten](#add-data-points).
 
 Auf der linken Seite, in der Hauptkarte, sehen Sie die entsprechende Visualisierung.
 
@@ -22,13 +22,13 @@ Die Visualisierung wird auf Basis von Datenpunktattributen erstellt.
 
 Die Datenpunktattribute werden folgendermaßen vorausgefüllt:
 
-* Wenn diese Attribute bereits zuvor angepasst wurden, werden die entsprechenden Werte verwendet, siehe [*Anpassen von Datenpunktattributen*](#customize-data-points).
+* Wenn diese Attribute bereits zuvor angepasst wurden, werden die entsprechenden Werte verwendet, siehe [Anpassen von Datenpunktattributen](#customize-data-points).
 
 * Wenn die Datenpunkte eine Übereinstimmung in der Datenpunktbibliothek haben, werden die Werte von der Datenpunktbibliothek verwendet. 
 
 In der Datenpunktbibliothek kann es mehr als einen übereinstimmenden Datenpunkteintrag geben. In diesem Fall wird automatisch der erste übereinstimmende Datenpunkt ausgewählt. Sie können diese Auswahl überschreiben, in dem Sie im entsprechenden Datenpunkteintrag über das Menüsymbol das Kontextmenü öffnen und **[NAME] aus Bibliothek laden** wählen. 
 
-Allgemeine Informationen zum Ändern der Visualisierung finden Sie unter [*Ändern der Daten-Explorer-Visualisierung*](#change-visualization). Informationen zum Anpassen der Attribute eines bestimmten Datenpunkts finden Sie unter[*Anpassen von Datenpunktattributen*](#customize-data-points).
+Allgemeine Informationen zum Ändern der Visualisierung finden Sie unter [Ändern der Daten-Explorer-Visualisierung](#change-visualization). Informationen zum Anpassen der Attribute eines bestimmten Datenpunkts finden Sie unter[Anpassen von Datenpunktattributen](#customize-data-points).
 
 ### <a name="change-visualization"></a>Ändern der Daten-Explorer-Visualisierung
 

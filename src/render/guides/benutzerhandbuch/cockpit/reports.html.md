@@ -4,12 +4,6 @@ title: Verwalten von Berichten
 layout: redirect
 ---
 
----
-order: 60
-title: Managing reports
-layout: redirect
----
-
 In der Cockpit-Anwendung gibt es zwei Arten von Berichten. 
 
 * [Dashboard-Berichte](#reports) ermöglichen das Nachverfolgen von Anwendungen, Alarmen, Assets, Ereignissen und anderen Widgets. 
@@ -89,7 +83,7 @@ Aktivieren bzw. deaktivieren Sie diese Felder mit dem Regler.
 
 Wenn ein Feld aktiviert ist, können vordefinierte oder leere Attribute hinzugefügt werden.
 
-<img src="/guides/images/benutzerhandbuch/cockpit-report-fields.png" name="Report fields" style="width:100%;"/>
+<img src="/guides/images/benutzerhandbuch/cockpit-reports-fields.png" name="Report fields" style="width:100%;"/>
 
 Klicken Sie **Hinzufügen**, um ein leeres Feld hinzuzufügen. Klicken Sie "Spalte" oder "Pfad", um eine Spalte und einen Pfad einzugeben. Wenn Sie beispielsweise das "Alarm"-Feld aktivieren, können Sie etwa "Schweregrad" als Spalte und "severity" als Pfad eingeben, um nur Berichte zu Alarm-Schweregraden zu erhalten.
 
@@ -110,7 +104,7 @@ Wenn Sie "Messwerte" aktiviert haben, sehen Sie die zusätzliche Option **Datenp
 
 Um einen Export in eine Datei für einen bestimmten Zeitpunkt zu planen, öffnen Sie das Kontextmenü für den entsprechenden Bericht und klicken Sie **Export planen**. Im folgenden Fenster können Sie die Smart Rule "On timer send export via email" entsprechend einrichten.
 
-<img src="/guides/images/benutzerhandbuch/cockpit-report-schedule-export.png" name="Exporting" style="width:75%;"/>
+<img src="/guides/images/benutzerhandbuch/cockpit-report-schedule-export.png" name="Exporting" style="width:50%;"/>
 
 **1 - Name der Regel**
 

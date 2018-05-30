@@ -4,188 +4,372 @@ title: Widgets-Sammlung
 layout: redirect
 ---
 
-Das Cockpit enthält voreingestellte Widget-Typen. Jeder Widget-Typ kann verschiedene Parameter konfigurieren und verschiedene Daten anzeigen. Im folgenden Abschnitt werden alle verfügbaren Widget-Typen und die Konfigurationseigenschaften beschrieben.
+Das Cockpit enthält voreingestellte Widget-Typen. Jeder Widget-Typ ermöglicht es, verschiedene Parameter zu konfigurieren und verschiedene Daten anzuzeigen. Im folgenden Abschnitt werden, in alphabetischer Reihenfolge, alle verfügbaren Widget-Typen und ihre Konfigurationsparameter beschrieben.
 
-### Widget "Asset-Eigenschaften"
-Eine benutzerdefinierte Liste der Attribute des aktuellen Objekts wird angezeigt. Das aktuelle Objekt kann ein Gerät oder das Gruppenobjekt sein.
+### Widget "Aktuelle Alarme"
 
-Zu konfigurierende Parameter:
+Das Widget "Aktuelle Alarme" zeigt alle Alarme aller Schweregrade, sortiert nach Zeit. Es können keinen zusätzlichen Parameter konfiguriert werden.
 
-* Name des Widget
+<img src="/guides/images/users-guide/Cockpit/Cockpit_CreateAlarmList.png" name="Alarm list widget" style="width:75%;"/>
 
-* Eigenschaftenliste, siehe auch [unten](#widget-asset-table)
+Nähere Informationen zu Alarmen finden Sie unter [Verwenden von Alarmen](/guides/benutzerhandbuch/device-management/#alarm-monitoring) im Abschnitt Device Management.
 
-### Widget "Datenpunktgraph"
+### Widget "Alarmliste"
 
-Zeigt einen Datenpunkt (Messungen) in einem Diagramm an. Die Visualisierung ist die gleiche wie im Daten-Explorer.
+Das Widget "Alarmliste" zeigt eine Liste von Alarmen, gefiltert nach Objekten, Alarmschweregrad und Alarmstatus. 
 
-Der einfachste Weg, um ein Datenpunktgraph-Widget zu erstellen, besteht darin, zum Daten-Explorer zu navigieren und dann "An Dashboard schicken" zu wählen.
+Nähere Informationen zu Alarmen finden Sie unter [Verwenden von Alarmen](/guides/benutzerhandbuch/device-management/#alarm-monitoring) im Abschnitt Device Management.
 
-Die zu konfigurierenden Parameter sind die gleichen wie im Daten-Explorer. Siehe auch [Daten-Explorer](#visualise).
+**Konfigurierbare Parameter**
 
-### Widget "Datenpunkttabelle"
+<img src="/guides/images/users-guide/Cockpit/Cockpit_CreateAlarmList.png" name="Create Alarm list widget" style="width:75%;"/>
 
-Diese Widget-Konfiguration ist identisch mit dem Datenpunkt-Graphen. Anstatt die Daten als Liniendiagramm zu visualisieren, werden die Daten als Tabelle visualisiert.
+|Feld|Beschreibung|
+|:---|:---|
+|Titel|Widget-Titel. Standardmäßig wird der Widget-Typ als Titel verwendet.
+|Ziel-Assets oder -geräte|Gruppen oder Geräte, optional HTML-Ausdrücke, die ausgewertet werden.
+|Status|Alarmstatus, der angezeigt wird.
+|Typ|Alarmtyp, der angezeigt wird. Klicken Sie auf einen Alarm, um Details anzuzeigen.
+|Schweregrad|Alarmschweregrad, die angezeigt werden.
+|Reihenfolge|Alarme können nach dem aktiven Status (gefolgt von Schweregrad und Zeit, Standardeinstellung) oder dem Schweregrad (gefolgt von der Zeit) sortiert werden.
 
-* Das Datenpunkttabellen-Widget zeigt Daten basierend auf ausgewählten Datenpunkten, Zeitintervall und Aggregation an.
+### Widget "Alle kritischen Alarme"
 
-* Werte außerhalb des Bereichs, die auf den konfigurierten gelben und roten Bereichen basieren, werden in der Tabelle hervorgehoben.
+Das Widget "Alle kritischen Alarme" zeigt alle Objekte mit einem kritischen Alarm. Es können keinen zusätzlichen Parameter konfiguriert werden.  
 
-![Data point table](/guides/images/users-guide/datapointtable.png)
+Nähere Informationen zu Alarmen finden Sie unter [Verwenden von Alarmen](/guides/benutzerhandbuch/device-management/#alarm-monitoring) im Abschnitt Device Management.
 
-### Widget "Karte"
 
-Zeigt den Standort eines Geräts oder aller Geräte in der Gruppe. Die Karte bietet folgende Funktionen:
+### Widget "Ampel"
 
-* Die Karte bietet Funktionen wie Ziehen und Vergrößern/Verkleinern.
+Das "Ampel"-Widget visualisiert den Status eines Geräts im Form einer Ampel.
 
-* Die Symbole für die Geräte sind farbcodiert. Die verwendete Farbe hängt von der folgenden Regel ab:
+**Konfigurierbare Parameter**
 
-     * Mindestens ein kritischer Alarm: rot
+|Feld|Beschreibung|
+|:---|:---|
+|Titel|Widget-Titel. Standardmäßig wird der Widget-Typ als Titel verwendet.
+|Zeil-Asset oder -gerät|Objekt (Gruppe oder Gerät), das dargestellt wird.
+|Statusregeln|Wählen Sie ein Attribut für jede Lampe. Wenn das Attribut einen der folgenden Werte hat, geht die entsprechende Lampe an: wahr, 1, jede nicht-leere  Zeichenkette, jede Zahl außer 0.
 
-     * Mindestens ein wichtiger Alarm: orange
 
-     * Mindestens ein weniger wichtiger Alarm: gelb
+### Widget "Anwendungen"
 
-     * Mindestens eine Warnung: blau
+Das Widget "Anwendungen" zeigt alle Liste mit Links zu allen verfügbaren Anwendungen. Es können keinen zusätzlichen Parameter konfiguriert werden. 
 
-     * Kein Alarm: grün
+Nähere Informationen zu Anwendungen finden Sie unter [Administration > Verwalten von Anwendungen](/guides/benutzerhandbuch/administration#managing-applications).
 
-* Wenn Sie auf ein Gerätesymbol klicken, wird ein Popup mit den folgenden Informationen angezeigt:
 
-     * Der Gerätename: Wenn er angeklickt wird, navigiert die Anwendung zum Gerät.
+### Widget "Asset-Attribute"
 
-     * Datum, an dem das Gerät zuletzt seinen Standort gemeldet hat, falls verfügbar.
+Das Widget "Asset-Attribute" zeigt eine benutzerdefinierte Liste von Attributen des aktuellen Objekts. Das aktuelle Objekt kann ein Gerät oder eine Gruppe sein.
 
-     * Die Option zum Anzeigen/Ausblenden der Geräte-Tracks für den vorherigen und den aktuellen Tag.
+**Konfigurierbare Parameter**
 
-Zu konfigurierende Parameter:
+|Feld|Beschreibung|
+|:---|:---|
+|Titel|Widget-Titel. Standardmäßig wird der Widget-Typ als Titel verwendet.
+|Ziel-Assets oder -geräte|Gruppen oder Geräte, die ausgewertet werden.
+|Attribute|Liste von Attributen, siehe [Widget "Asset-Tabelle"](#widget-asset-table).
 
-* Zielgerät oder Gruppe: Wählen Sie aus, welche Geräte auf der Karte angezeigt werden sollen. Wenn eine Gruppe ausgewählt ist, sind alle in der Gruppe enthaltenen Geräte sichtbar.
+>**Info:** Im Ansichtsmodus zeigt diese Widget nur Attribute an, die nicht leer sind.
 
-Hinweis: Wenn keines der Zielgeräte über einen bekannten Standort verfügt, zeigt das Widget eine Weltkarte ohne Symbole an.
 
-### Widget "HTML"
+### Widget "Asset-Nachrichten"
 
-Zeigt benutzerdefinierten Inhalt an. Der Inhalt kann mit HTML formatiert werden.
+Das Widget "Asset-Nachrichten" zeigt Benachrichtigungen, die allen Besitzern des aktuellen Objekts vom Administrator bereitgestellt werden. 
 
-Der zu konfigurierende Parameter:
+<img src="/guides/images/users-guide/Cockpit/Cockpit_AssetNotes.png" name="Asset notes widget" style="width:75%;"/>
 
-* Zielgerät oder Gruppe: Wählen Sie das Objekt aus, für das optionale HTML-Ausdrücke ausgewertet werden sollen.
+Nur Benutzer, die die Berechtigung haben, das Start-Dashboard zu bearbeiten, können solche Benachrichtigungen bereitstellen.
 
-* HTML-Inhalt:
 
-Variablen, die im HTML-Inhalt verwendet werden können:
+### <a name="widget-asset-table"></a> Widget "Asset-Tabelle"
 
-* {{DevicesCount}}: Gesamtzahl der Geräte.
+Das Widget "Asset-Tabelle" zeigt eine Tabelle mit Details zu den Kindgeräten an. Dies ist ein sehr mächtiges Widget, dass es ermöglicht, ausgewählte Attribute von Objekten in einer Tabelle zu arrangieren. 
 
-* {{UsersCount}}: Gesamtzahl der Benutzer.
+**Konfigurierbare Parameter**
 
-* {{DeviceGroupsCount}}: Gesamtzahl der Gruppen.
+|Feld|Beschreibung|
+|:---|:---|
+|Titel|Widget-Titel. Standardmäßig wird der Widget-Typ als Titel verwendet.
+|Ziel-Assets und -geräte|Objekte, für die die Kindgeräte angezeigt werden. Dies ist üblicherweise ein Gruppenobjekt.
+|Attribute|Attribute oder Aktionen eines Objekts, die als Spalten in der Tabelle visualisiert werden. 
 
-* {{Device.name}}: Name des Geräts.
+**Beispiel**
 
-* {{Device. * Property *}}: Allgemeinere Form der oben genannten. Sie können jede Eigenschaft des Geräts ansprechen.
-
-* {{Device.c8y_Hardware.model}}: Modell des Geräts.
-
-* {{Device. * Fragment *. * Property *}}: Allgemeinere Form der oben genannten. Sie können jede Eigenschaft eines beliebigen Fragments des Geräts ansprechen.
-
-Zusätzliche Information:
-
-* "Gerät" bezieht sich auf das Zielgerät, wie im Widget-Konfigurationsparameter ausgewählt.
-* *fragment.property* bezieht sich auf die Eigenschaften des jeweiligen Gerätes. Um die verfügbaren Eigenschaftsnamen zu sehen, können Sie das Widget "Asset-Eigenschaft" oder "Asset-Tabelle" verwenden und auf den Link "+ Hinzufügen" in der Widget-Konfiguration klicken. Daraufhin wird eine Tabelle mit unterstützten Eigenschaften angezeigt. Sie können die Werte aus der Spalte "Eigenschaft" kopieren und einfügen. Generierte Eigenschaften dieser Widgets sind in den HTML-Widgets nicht verfügbar.
-
-### Widget "Asset-Alarme"
-
-Zeigt alle Objekte mit einem kritischem Alarm. Es gibt keine zusätzlichen Parameter zu konfigurieren.
-
-### Widget "Asset-Anzahl"
-
-Zeigt die Anzahl der Geräte online und mit Alarmen an. Es gibt keine zusätzlichen Parameter zu konfigurieren.
-
-### Widget "Alarm-Liste"
-
-Zeigt eine Liste von Alarmen, Filter für Objekte, Alarmschweregrad und Alarmstatus an.
-
-Zu konfigurierende Parameter:
-
-* Zielgerät oder Gruppe: Wählen Sie Gruppen oder Geräte, optionale HTML-Ausdrücke, die ausgewertet werden sollen.
-
-* Status: Nur Geräte mit Alarmen eines bestimmten Alarmstatus anzeigen.
-
-* Typ: Nur Alarme des angegebenen Typs anzeigen. Details können angezeigt werden, wenn Sie einmal auf einen Alarm klicken.
-
-* Schweregrad: Nur Alarme der ausgewählten Schweregrad anzeigen.
-
-### Widget "Neueste Alarme"
-
-Zeigt alle Alarme jedes Schweregrads nach Zeit sortiert an. Es gibt keine zusätzlichen Parameter zu konfigurieren.
-
-### Widget "Datenpunktliste"
-
-Zeigt Datenpunkte (Messungen) an, eine in jeder Zeile, mit aktuellen Werten und Datenpunkt-Eigenschaften.
-
-Zu konfigurierende Parameter:
-
-* Liste der Datenpunkte: Wählen Sie einen oder mehrere Datenpunkte aus.
-
-* Wählen Sie sichtbare Spalten:
-
-     * Label: Bezeichnung des Datenpunktes. Weitere Informationen finden Sie unter [Daten-Explorer](#visualise).
-
-     * Ziel: Zielwert. Kann im Daten-Explorer oder in der Datenpunktbibliothek konfiguriert werden.
-
-     * Aktuell: Aktueller Wert.
-
-     * Diff: Absolute Differenz zwischen aktuellem Wert und Zielwert.
-
-     * Diff%: Prozentsatz der Differenz zwischen aktuellem Wert und Zielwert.
-
-     * Asset: Name des Geräts oder der Gruppe des Datenpunkts.
-
-### <a name="widget-asset-table"></a>Widget "Asset-Tabelle"
-
-Zeigt die Details aller Kindgeräte in einer Tabelle an. Dies ist ein sehr starkes Widget, das es ermöglicht, ausgewählte Eigenschaften von Objekten in einer Tabelle anzuordnen.
-
-Zu konfigurierende Parameter:
-
-* Zielgerät oder Gruppe: Wählen Sie, für welches Objekt alle Kindgeräte angezeigt werden sollen. Dies ist typischerweise ein Gruppenobjekt.
-
-* Eigenschaften: Wählen Sie Eigenschaften oder Aktionen eines Objekts aus, um sie als Spalten in der Tabelle zu visualisieren. Im Konfigurationsdialog sehen Sie eine Liste der konfigurierten Spalten. Jede der Spalten kann eine Eigenschaft oder eine Aktion sein.
-
-Beispiel:
-* Im folgenden Screenshot sind fünf Spalten konfiguriert. Drei Eigenschaftenspalten "Meter", "Vendor" und "Owner", die sich auf die Eigenschaften "name", type "und" owner "beziehen. Zusätzlich gibt es zwei Aktionen, eine zum Umschalten des Wartungsmodus und eine zum Neustarten des Geräts.
+Im folgenden Screenshot sind 5 Spalten konfiguriert. Die Spalten "Meter", “Vendor”, und “Owner” beziehen sich auf die Attribute “name”, type” und “owner”. Außerdem gibt es zwei Aktionen, eine für das Umschalten des Wartungsmodus und eine für das Neustarten des Systems. 
 
 ![image alt text](/guides/images/users-guide/image_17.png)
 
-* Die resultierende Tabelle wird wie folgt visualisiert:
-
+Die daraus resultierende Tabelle wird folgendermaßen visualisiert:
 ![image alt text](/guides/images/users-guide/image_18.png)
 
-Die Liste der Eigenschaften kann wie folgt editiert werden:
+**Hinzufügen von Attributen**
 
-* Neue Eigenschaften hinzufügen: Klicken Sie auf "+ Eigenschaften hinzufügen" und wählen Sie eine oder mehrere Eigenschaften aus. Die ausgewählten Eigenschaften werden dann am Ende der Spalten hinzugefügt.<br>
-Hinweis: Die Eigenschaft "Aktiver Alarmstatus" zeigt aktive Alarme als Symbole in der Tabelle an. Wenn Sie diese Eigenschaft auswählen, konfigurieren Sie auch den Renderer "Active Alarm Status" in der Spaltenliste.
+Um ein Attribut hinzuzufügen, klicken Sie **+Attribut hinzufügen** und wählen Sie ein oder mehrere Attribute aus. 
 
-* Fügen Sie eine neue Aktion hinzu: Klicken Sie auf "+ Aktion hinzufügen". Sie können dann die vordefinierte Aktion hinzufügen, um den Wartungsmodus umzuschalten. Oder Sie wählen "Create Operation", um eine Schaltfläche zu erstellen, die einen Shell-Befehl ausführt. Im folgenden Dialog können Sie dann die Bezeichnung für die Schaltfläche und den auszuführenden Shell-Befehl eingeben.
+**Info**: Das Attribut "Anzahl aktiver Alarme" zeigt aktive Alarme als Symbole in der Tabelle. Wenn Sie dieses Attribut auswählen, müssen Sie den Renderer "Anzahl aktiver Alarme" in der Spaltenliste konfigurieren.
+
+**Hinzufügen von Aktionen**
+
+Um eine Aktion hinzuzufügen, klicken Sie **+Aktion hinzufügen**. Wählen Sie **Wartungsmodus umschalten** um die entsprechende vordefinierte Aktion hinzuzufügen. Oder wählen Sie **Kommando erstellen**, um eine Schaltfläche zu erstellen, die ein Shell-Kommando ausführt. Im folgenden Dialog können Sie eine Beschriftung für die Schaltfläche und das auszuführende Shell-Kommando eingeben. 
+
 ![image alt text](/guides/images/users-guide/image_19.png)
-Im Dialog werden die voreingestellten Shell-Kommandos der ersten Shell-Kommandos angezeigt. Die Liste ist leer, wenn es kein solches Gerät gibt. Weitere Informationen finden Sie unter [Shell](/guides/images/benutzerhandbuch/device-management-deutsch#shell).<br>
-Sie können auch das JSON-Format für das Kommando eingeben, das an das Gerät gesendet wird. Für Einzelheiten über unterstütze Kommandos wenden Sie sich an den Gerätehersteller.
-* Spaltenüberschrift bearbeiten: Um den Kopf der Spalte zu bearbeiten, klicken Sie auf die Spalte "Label" und bearbeiten das Label.
 
-* Anordnen von Spalten: Sie können die Spalten durch Drag & Drop mit dem Handle vor der Spalte "Label" neu anordnen.
+>**Info:** Der Dialog zeigt die vordefinierten Shell-Kommandos des ersten Geräts, das Shell-Kommandos unterstützt. Gibt es kein solches Gerät, ist die Liste leer. Weitere Informationen finden Sie unter [Shell-Kommandos](/guides/benutzerhandbuch/device-management/#shell) im Abschnitt Device Management.<br>
+Sie können auch das JSON-Format für das Kommando eingeben, das zum Gerät gesendet wird. Fragen Sie den Gerätehersteller nach unterstützten Kommandos, um weitere Details zu erfahren. 
 
-* Entfernen von Eigenschaften: Klicken Sie auf das rote Symbol am Ende einer Zeile, um die Spalte zu entfernen.
+**Ändern der Tabelle**
 
-### Widget "Relais-Steuerung"
-Ermöglicht das Ein- und Ausschalten eines Geräterelais. Nur für Geräte verfügbar, die diesen Vorgang unterstützen.
+Um die Kopfzeile einer Spalte zu bearbeiten, klicken Sie auf den Wert in der Spalte "Beschriftung" und bearbeiten Sie die Beschriftung. 
 
-### Widget "Relais-Array"
+Sie können die Spalten umsortieren, in dem Sie auf das Symbol ganz links in einer Zeile klicken und den Eintrag durch Ziehen und Ablegen verschieben. 
 
-Bei einem Relais-Array können Sie Relais ein- oder ausschalten. Nur für Geräte verfügbar, die diesen Vorgang unterstützen.
+Um ein Attribut oder eine Aktion zu löschen, fahren Sie mit dem Mauszeiger über die entsprechende Zeile und klicken Sie **Löschen** auf der rechten Seite.
 
-### Widget "Nachricht senden"
+### Widget "Bild"
 
-Sendet eine Nachricht an ein Gerät. Das Verhalten des Gerätes selbst ist geräteabhängig. Nur für Geräte verfügbar, die diesen Vorgang unterstützen.
+Das "Bild"-Widget ermöglicht es, ein einzelnes Bild anzuzeigen, das Sie von Ihrem Computer hochladen können. Es können keinen zusätzlichen Parameter konfiguriert werden.
 
+
+### Widget "Datenpunktgraph"
+
+Das Widget "Datenpunktgraph" zeigt einen Datenpunkt (Messwert) in einem Graphen. Die Visualisierung ist identisch mit der im [Daten-Explorer](#data-explorer).
+
+<img src="/guides/images/users-guide/Cockpit/Cockpit_DataPointsGraphWidget.png" name="Data Point Graph widget" style="width:75%;"/>
+
+Am einfachsten erstellen Sie ein "Datenpunktgraph"-Widget, in dem Sie zum Daten-Explorer navigieren, **Mehr...** in der oberen Menüleiste klicken und **Als Widget zum Dashboard senden** wählen.
+
+Weitere Informationen zu den konfigurierbaren Parametern finden Sie unter [Visualisieren von Daten mit dem Daten-Explorer](#data-explorer).
+
+
+### Widget "Datenpunktliste"
+
+Das Widget "Datenpunktliste" zeigt Datenpunkte (Messwerte) in einer Liste, einen pro Zeile, mit aktuellen Werten und Datenpunktattributen.
+
+**Konfigurierbare Parameter**
+
+|Feld|Beschreibung|
+|:---|:---|
+|Titel|Widget-Titel. Standardmäßig wird der Widget-Typ als Titel verwendet.
+|Datenpunkte|Zeigt eine Liste verfügbarer Datenpunkte. Sie müssen mindestens einen Datenpunkt aktivieren. Klicken Sie **Datenpunkt hinzufügen**, um einen Datenpunkt zur Liste hinzuzufügen. Weitere Informationen finden Sie unter [Hinzufügen von Datenpunkten](#add-data-points).
+|Sichtbare Tabellenspalten|Spalten, die angezeigt werden: <br>Beschriftung: Beschriftung des Datenpunkts. Details finden Sie unter [Visualisieren von Daten im Daten-Explorer](#data-explorer). <br>Ziel: Zielwert. Kann im [Daten-Explorer](##data-explorer) oder in der [Datenpunktbibliothek](#data-point-library) konfiguriert werden.<br>Aktuell: Aktueller Wert. <br>Differenz: Absolute Differenz zwischen aktuellem Wert und Zielwert. <br>Differenz %: Prozentwert der Differenz zwischen aktuellem Wert und Zielwert. <br>Asset: Name des Geräts oder der Gruppe des Datenpunkts. 
+
+
+### Widget "Datenpunkttabelle"
+
+Die Konfiguration des Widgets "Datenpunkttabelle" ist ähnlich wie die des Widgets "Datenpunktgraph". Die Daten werden jedoch nicht als Linien, sondern als Tabelle dargestellt.
+
+Das Widget "Datenpunkttabelle" zeigt Daten basierend auf ausgewählten Datenpunkten, einem Zeitintervall und Aggregation. 
+
+Werte außerhalb eines bestimmten Bereichs, basierend auf konfigurierten gelben und roten Bereichen, werden in der Tabelle hervorgehoben.
+
+![Data point table](/guides/images/users-guide/datapointtable.png)
+
+
+### Widget "Ereignisliste"
+
+Das Widget "Ereignisliste" ermöglicht es, Ereignisse für ein ausgewähltes Gerät zu überwachen. 
+
+<img src="/guides/images/users-guide/Cockpit/Cockpit_EventList.png" name="Event list widget" style="width:75%;"/>
+
+Außerdem kann ein Zeitintervall festgelegt und Ereignisse können in Echtzeit überwacht werden. 
+
+
+### Widget "Fieldbus-Gerät"
+
+Das Widget "Fieldbus-Gerät" ermöglicht es, den Status eines Modbus-Geräts anzuzeigen und dieses zu betreiben. 
+
+Weitere Informationen zum Widget "Fieldbus-Gerät" finden Sie unter [Optionale Services > Cloud Fieldbus > Monitoring device status using the Fieldbus device widget](/guides/users-guide/optional-services/cloud-fieldbus#fieldbus-device-widget).
+
+
+### Widget "Gerätenachricht"
+
+Das Widget "Gerätenachricht" sendet eine Nachricht an das Gerät. Das Verhalten des Geräts ist dabei geräteabhängig. Nur verfügbar für Geräte, die diese Art von Kommando unterstützen. 
+
+
+### Widget "Hilfe und Service"
+
+Das Widget "Hilfe und Service" zeigt Links zu Hilfe- und Serviceangeboten. Es können keinen zusätzlichen Parameter konfiguriert werden.
+
+<img src="/guides/images/users-guide/Cockpit/Cockpit_HelpAndServiceWidget.png" name="Help and service widget" style="width:75%;"/>
+
+
+### Widget "HTML"
+
+Das "HTML"-Widget zeigt benutzerdefinierten Inhalt. Die Inhalt kann mit HTML formatiert werden.
+
+**Konfigurierbare Parameter**
+
+* Ziel-Assets und -geräte: Wählen Sie die Objekte aus, für die optionale HTML-Ausdrücke ausgewertet werden sollen.
+
+* HTML-Code
+
+Die folgenden Variablen können im HTML-Code verwendet werden:
+
+* {{devicesCount}}: Gesamtanzahl der Geräte.
+
+* {{usersCount}}: Gesamtanzahl der Benutzer.
+
+* {{deviceGroupsCount}}: Gesamtanzahl der Gruppen.
+
+* {{device.name}}: Name des Geräts.
+
+* {{device.*property*}}: Allgemeinere Form des oben genannten. Sie können jedes Attribut des Geräts ansprechen. 
+
+* {{device.c8y_Hardware.model}}: Modell des Geräts.
+
+* {{device.*fragment*.*property*}}: Allgemeinere Form des oben genannten. Sie können jedes Attribut oder Fragment des Geräts ansprechen. 
+
+>**Info:** "Gerät" bezieht sich auf das Zielgerät, das in der Widget-Konfiguration ausgewählt wurde. <br>
+*fragment.property* bezieht sich auf die Attribute des entsprechenden Geräts. Um die verfügbaren Attributnamen anzuzeigen, können Sie die Widgets "Asset-Attribute" or “Asset-Tabelle” verwenden. Klicken Sie **+Attribut hinzufügen** in der Widget-Konfiguration, um eine Tabelle der unterstützten Attribute anzuzeigen. Sie können die Werte aus der Spalte "Attribute" kopieren und einfügen. Attribute, die von diesen Widgets erstellt wurden, stehen in den HTML-Widgets nicht zur Verfügung.
+
+
+### Widget "Infoanzeige"
+
+Das Widget "Infoanzeige" visualisiert einen Datenpunkt in Form eines Tachos und mehrere Datenpunkte als Beschriftung.  
+
+<img src="/guides/images/users-guide/Cockpit/Cockpit_InfoGauge.png" name="Info gauge widget" style="width:75%;"/>
+
+Sie können einen Datenpunkt für das Tacho auswählen sowie mehrere Datenpunkte, die als Beschriftung auf der linken Seite angezeigt werden.  
+
+<img src="/guides/images/users-guide/Cockpit/Cockpit_InfoGaugeDataPoints.png" name="Info gauge data points" style="width:75%;"/>
+
+Sie müssen mindestens einen Datenpunkt in jedem Bereich aktivieren, um das Widget "Infoanzeige" zu erstellen.
+ 
+
+### Widget "Karte"
+
+Das Widget "Karte" zeigt den Standort eines Geräts oder aller Geräte einer Gruppe an. 
+
+<img src="/guides/images/users-guide/Cockpit/Cockpit_MapWidget.png" name="Map widget" style="width:75%;"/>
+
+Sie können den Inhalt der Karte mit dem Mauszeiger verschieben sowie mit den Schaltflächen **Plus** und **Minus** rein- bzw. rauszoomen.
+
+Die Symbole, die die Geräte repräsentieren, sind farbkodiert. Die Farben werden nach folgenden Regeln verwendet:
+
+    * Rot = Mindestens ein "kritischer" Alarm
+    * Orange = Mindestens ein "wichtiger" Alarm
+    * Gelb = Mindestens ein "weniger wichtiger" Alarm
+    * Blau = Mindestens eine "Warnung"
+    * Grün = Keine Alarme
+
+Klicken Sie auf ein Gerätesymbol, um folgende Details in einem Popup-Fenster anzuzeigen: 
+
+* Name des Geräts. Klicken Sie darauf, um zu diesem Gerät zu navigieren.
+* Datum, an welchem das Gerät zuletzt seinen Standort gesendet hat, wenn verfügbar.
+* Regler, um die Geräte-Tracks für die vergangenen und zukünftigen Tage anzuzeigen bzw. zu verbergen.
+
+**Konfigurierbare Parameter**
+
+Ziel-Assets oder -geräte: Geräte, die auf der Karte angezeigt werden. Im Falle einer Gruppe werden alle Geräte in diese Gruppe (aber nicht in Untergruppen) angezeigt.
+
+>**Info**: Wenn keines der Zielgeräte einen bekannten Standort hat, zeigt das Widget eine Weltkarte ohne Symbole. 
+
+
+### Widget "Kuchendiagramm"
+
+Das Widget "Kuchendiagramm" zeigt Datenpunkte (Messwerte) mit aktuellen Werten in einem Kuchendiagramm.
+
+**Konfigurierbare Parameter**
+
+|Feld|Beschreibung|
+|:---|:---|
+|Titel|Widget-Titel. Standardmäßig wird der Widget-Typ als Titel verwendet.
+|Kuchendiagramm-Optionen|Auswahloptionen zum Anzeigen von Tooltips, Prozentwerten und Legenden im Kuchendiagramm. 
+|Datenpunkte|Zeigt eine Liste verfügbarer Datenpunkte. Sie müssen mindestens einen Datenpunkt aktivieren. Klicken Sie **Datenpunkt hinzufügen**, um einen Datenpunkt zur Liste hinzuzufügen. Weitere Informationen finden Sie unter [Hinzufügen von Datenpunkten](#add-data-points).
+
+
+### Widget "Linearer Zeiger"
+
+Das Widget "Linearer Zeiger" visualisiert Datenpunkte in Form eines linearen Messgeräts. Minimale und and maximale Zielwerte werden ebenfalls angezeigt.
+
+<img src="/guides/images/users-guide/Cockpit/Cockpit_LinearGauge.png" name="Linear gauge widget" style="width:75%;"/>
+
+>**Info:** Wenn eine Beschriftung nicht vollständig angezeigt werden kann, können Sie sich damit behelfen, den minimalen und maximalen Wert zu erhöhen und so die Beschriftung in den lesbaren Bereich zu verschieben. 
+
+Sie müssen mindestens einen Datenpunkt aktivieren, um das Widget "Linearer Zeiger" zu erstellen.
+
+
+### Widget "Quick-Links"
+
+Das Widget "Quick links" zeigt verschiedene Links für den schnellen Zugriff auf relevante Kommandos an. Es können keinen zusätzlichen Parameter konfiguriert werden.
+
+<img src="/guides/images/users-guide/Cockpit/Cockpit_QuickLinksWidget.png" name="Quick links widget" style="width:75%;"/>
+
+
+### Widget "Relaisfeldsteuerung"
+
+Das Widget "Relaisfeldsteuerung" ermöglicht es, Relais in einem Relaisfeld unabhängig voneinander an- oder auszuschalten. Nur verfügbar für Geräte, die diese Art von Kommando unterstützen. 
+
+
+### Widget "Relaissteuerung"
+
+Das Widget "Relaissteuerung" ermöglicht es, ein Geräterelais an- oder auszuschalten. Nur verfügbar für Geräte, die diese Art von Kommando unterstützen. 
+
+
+### Widget "Rotationsmodell"
+
+Das Widget "Rotationsmodell" ermöglicht es, ein Objektmodell eines Geräts zu rendern.
+ 
+**Konfigurierbare Parameter**
+
+|Feld|Beschreibung|
+|:---|:---|
+|Titel|Widget-Titel. Standardmäßig wird der Widget-Typ als Titel verwendet.
+|Ziel-Asset oder -geräte|Objekt (Gruppe oder Gerät), das dargestellt wird.
+|Modelltyp|Modelltyp für das Rendering, entweder "Box" oder "Telefon".
+|Gitternetz|Der "Gitternetz"-Modus stellt das Objekt in einer netzartigen Representation dar. Die Option "Gitternetz" kann an- oder abgeschaltet werden (Standardeinstellung = an). 
+|Kameratyp|Kameratyp, der verwendet wird, entweder "Orthographische Kamera" oder "Perspektivische Kamera".
+
+Im Widget "Rotationsmodell" kann das Objekt durch Ziehen und Bewegen gedreht werden. Außerdem kann mit der Maus rein- und rausgezoomt werden.
+
+
+### Widget "SCADA"
+
+Das "SCADA"-Widget bietet eine graphische Darstellung eines Gerätestatus. 
+
+Nähere Informationen zum "SCADA"-Widget finden Sie unter [Optionale Services > Cloud Fieldbus > Monitoring status using the SCADA widget](/guides/users-guide/cloud-fieldbus#scada-widget).
+
+
+### Widget "Silo"
+
+Das "Silo"-Widget zeigt Datenpunkte (Messwerte) mit aktuellen Werten in einer Silo-Darstellung an. 
+
+**Konfigurierbare Parameter**
+
+|Feld|Beschreibung|
+|:---|:---|
+|Titel|Widget-Titel. Standardmäßig wird der Widget-Typ als Titel verwendet.
+|Datenpunkte|Zeigt eine Liste verfügbarer Datenpunkte. Sie müssen mindestens einen Datenpunkt aktivieren. Klicken Sie **Datenpunkt hinzufügen**, um einen Datenpunkt zur Liste hinzuzufügen. Weitere Informationen finden Sie unter [Hinzufügen von Datenpunkten](#add-data-points).
+
+
+### Widget "Tacho"
+
+Das "Tacho"-Widget visualisiert Datenpunkte in Form eines Tachos. 
+
+<img src="/guides/images/users-guide/Cockpit/Cockpit_RadialGauge.png" name="Radial gauge widget" style="width:75%;"/>
+
+Sie müssen mindestens einen Datenpunkt aktivieren, um das "Tacho"-Widget zu erstellen.
+
+
+### Widget "Twitter-Nachrichten"
+
+Das Widget "Twitter-Nachrichten" zeigt Tweets von dem in Twitter integrierten Timeline-Widget an.
+
+<img src="/guides/images/users-guide/Cockpit/Cockpit_TwitterNewsWidget.png" name="Twitter news widget" style="width:50%;"/>
+
+**Konfigurierbare Parameter**
+
+|Feld|Beschreibung|
+|:---|:---|
+|Titel|Widget-Titel. Standardmäßig wird der Widget-Typ als Titel verwendet.
+|Twitter-Benutzername|Benutzername für das darzustellende Twitter-Konto.
+|Twitter-Widget-ID|ID für das Twitter-Widget. Die ID kann in den Widget-Einstellungen nachgesehen werden. 
+|Optionen|Wahlweise kann die Darstellung einer Kopfzeile, Fußzeile, eines Rahmens oder eine transparente Darstellung aktiviert bzw. deaktiviert werden.
+
+
+### Widget "Willkommen zum Cockpit"
+
+Das Widget "Willkommen zum Cockpit" ermöglicht es, eine Begrüßungsnachricht auf dem Willkommensbildschirm anzuzeigen. Es können keinen zusätzlichen Parameter konfiguriert werden.

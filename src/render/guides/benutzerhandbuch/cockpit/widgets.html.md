@@ -22,7 +22,7 @@ Nähere Informationen zu Alarmen finden Sie unter [Verwenden von Alarmen](/guide
 
 **Konfigurierbare Parameter**
 
-<img src="/guides/images/benutzerhandbuch/cockpit/Cockpit_CreateAlarmList.png" name="Create Alarm list widget" style="width:75%;"/>
+<img src="/guides/images/users-guide/Cockpit/Cockpit_CreateAlarmList.png" name="Create Alarm list widget" style="width:75%;"/>
 
 |Feld|Beschreibung|
 |:---|:---|
@@ -117,7 +117,7 @@ Um eine Aktion hinzuzufügen, klicken Sie **+Aktion hinzufügen**. Wählen Sie *
 
 ![image alt text](/guides/images/users-guide/image_19.png)
 
->**Info:** Der Dialog zeigt die vordefinierten Shell-Kommandos des ersten Geräts, das Shell-Kommandos unterstützt. Gibt es kein solches Gerät, ist die Liste leer. Weitere Informationen finden Sie unter [Shell-Kommandos](/guides/users-guide/device-management/#shell) im Abschnitt Device Management.<br>
+>**Info:** Der Dialog zeigt die vordefinierten Shell-Kommandos des ersten Geräts, das Shell-Kommandos unterstützt. Gibt es kein solches Gerät, ist die Liste leer. Weitere Informationen finden Sie unter [Shell-Kommandos](/guides/benutzerhandbuch/device-management/#shell) im Abschnitt Device Management.<br>
 Sie können auch das JSON-Format für das Kommando eingeben, das zum Gerät gesendet wird. Fragen Sie den Gerätehersteller nach unterstützten Kommandos, um weitere Details zu erfahren. 
 
 **Ändern der Tabelle**
@@ -135,13 +135,13 @@ Das "Bild"-Widget ermöglicht es, ein einzelnes Bild anzuzeigen, das Sie von Ihr
 
 ### Widget "Datenpunktgraph"
 
-Das Widget "Datenpunktgraph" zeigt einen Datenpunkt (Messwert) in einem Graphen. Die Visualisierung ist identisch mit der im [Daten-Explorer](#visualize).
+Das Widget "Datenpunktgraph" zeigt einen Datenpunkt (Messwert) in einem Graphen. Die Visualisierung ist identisch mit der im [Daten-Explorer](#data-explorer).
 
 <img src="/guides/images/users-guide/Cockpit/Cockpit_DataPointsGraphWidget.png" name="Data Point Graph widget" style="width:75%;"/>
 
 Am einfachsten erstellen Sie ein "Datenpunktgraph"-Widget, in dem Sie zum Daten-Explorer navigieren, **Mehr...** in der oberen Menüleiste klicken und **Als Widget zum Dashboard senden** wählen.
 
-Weitere Informationen zu den konfigurierbaren Parametern finden Sie unter [Visualisieren von Daten mit dem Daten-Explorer](#visualize).
+Weitere Informationen zu den konfigurierbaren Parametern finden Sie unter [Visualisieren von Daten mit dem Daten-Explorer](#data-explorer).
 
 
 ### Widget "Datenpunktliste"
@@ -154,7 +154,7 @@ Das Widget "Datenpunktliste" zeigt Datenpunkte (Messwerte) in einer Liste, einen
 |:---|:---|
 |Titel|Widget-Titel. Standardmäßig wird der Widget-Typ als Titel verwendet.
 |Datenpunkte|Zeigt eine Liste verfügbarer Datenpunkte. Sie müssen mindestens einen Datenpunkt aktivieren. Klicken Sie **Datenpunkt hinzufügen**, um einen Datenpunkt zur Liste hinzuzufügen. Weitere Informationen finden Sie unter [Hinzufügen von Datenpunkten](#add-data-points).
-|Sichtbare Tabellenspalten|Spalten, die angezeigt werden: <br>Beschriftung: Beschriftung des Datenpunkts. Details finden Sie unter [Visualisieren von Daten im Daten-Explorer](#visualize). <br>Ziel: Zielwert. Kann im [Daten-Explorer](#visualize) oder in der [Datenpunktbibliothek](#library) konfiguriert werden.<br>Aktuell: Aktueller Wert. <br>Differenz: Absolute Differenz zwischen aktuellem Wert und Zielwert. <br>Differenz %: Prozentwert der Differenz zwischen aktuellem Wert und Zielwert. <br>Asset: Name des Geräts oder der Gruppe des Datenpunkts. 
+|Sichtbare Tabellenspalten|Spalten, die angezeigt werden: <br>Beschriftung: Beschriftung des Datenpunkts. Details finden Sie unter [Visualisieren von Daten im Daten-Explorer](#data-explorer). <br>Ziel: Zielwert. Kann im [Daten-Explorer](##data-explorer) oder in der [Datenpunktbibliothek](#data-point-library) konfiguriert werden.<br>Aktuell: Aktueller Wert. <br>Differenz: Absolute Differenz zwischen aktuellem Wert und Zielwert. <br>Differenz %: Prozentwert der Differenz zwischen aktuellem Wert und Zielwert. <br>Asset: Name des Geräts oder der Gruppe des Datenpunkts. 
 
 
 ### Widget "Datenpunkttabelle"

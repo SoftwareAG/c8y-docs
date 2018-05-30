@@ -420,7 +420,7 @@ Cumulocity kann die Verfügbarkeit der Dienste auf der Ebene einzelner Geräte o
 
 Wenn Sie im Navigator auf "Karte" klicken, wird eine Karte aller Geräte in Ihrem Konto angezeigt. Geräte werden als "Markierungsnadeln" angezeigt, auf die Sie klicken können, um den Namen des Geräts zu erhalten. Wenn Sie auf den Namen des Geräts klicken, gelangen Sie in die Detailansicht des Geräts. Durch Anklicken des Kontrollkästchens "Echtzeit" wird die Karte automatisch aktualisiert, sobald sich Geräte bewegen.
 
-## <a name="alarm-monitoring"></a>Arbeiten mit Alarmen
+## <a name="alarm-monitoring"></a>Verwenden von Alarmen
 
 Geräte können Alarme auslösen, um anzuzeigen, dass ein Problem vorliegt und eine Intervention erforderlich ist. Alarme können an verschiedenen Orten angesehen werden:
 

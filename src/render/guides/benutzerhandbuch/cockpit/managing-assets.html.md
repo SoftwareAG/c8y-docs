@@ -15,11 +15,11 @@ Die Asset-Hierarchie besteht aus zwei Objekttypen:
 
 * **Gruppen**: Objekte, die einzelne Geräte oder andere Gruppen gruppieren. Gruppen können sowohl in der Cockpit-Anwendung als auch in der Device-Management-Anwendung erstellt werden.
 
-* **Geräte**: Geräte, die mit der Asset-Hierarchie verknüpft werden. Bevor Sie Geräte in der Cockpit-Anwendung verwenden können, müssen diese mit Cumulocity verbunden werden. Dies erfolgt in der Device Management-Anwendung. Nähere Informationen zum Verbinden von Geräten finde Sie im Abschnitt [Device Management](/guides/users-guide/device-management).
+* **Geräte**: Geräte, die mit der Asset-Hierarchie verknüpft werden. Bevor Sie Geräte in der Cockpit-Anwendung verwenden können, müssen diese mit Cumulocity verbunden werden. Dies erfolgt in der Device Management-Anwendung. Nähere Informationen zum Verbinden von Geräten finde Sie im Abschnitt [Device Management](/guides/benutzerhandbuch/device-management).
 
 In Beispiel oben repräsentieren die Gruppenobjekte einen Gebäudebestand und die Geräteobjekte die Räume. Die Namen und Hierarchien können individuell vom Benutzer festgelegt werden. Hierarchien können mehrere Ebenen haben wie etwa Ebenen für Region, Stadt, Straße, Gebäude, Etage oder Raum. Jedes Gerät kann mit mehreren und verschiedenen Hierarchien verknüpft sein, und etwa Teil einer regionalen Hierarchie sowie einer Kundenhierarchie sein. 
 
-Um ein Gerät mit der Asset-Hierarchie zu verknüpfen, muss das Gerät einer Gruppe zugewiesen werden (siehe [Assigning devices to groups](#assigning-devices). 
+Um ein Gerät mit der Asset-Hierarchie zu verknüpfen, muss das Gerät einer Gruppe zugewiesen werden (siehe [Zuweisen von Geräten zu Gruppen](#assigning-devices). 
 
 > **Info:** Einzelne Geräte werden nicht in der Cockpit-Anwendung, sondern in der Device Management-Anwendung verwaltet.
 
@@ -43,13 +43,13 @@ Der folgende Abschnitt beschreibt, wie Sie in der Cockpit-Anwendung mit Smart-Ge
 
 Das erste Beispiel zeigt, wie Smart-Geräte mit der Asset-Hierarchie verknüpft werden:
 
-![image alt text](/guides/images/users-guide/cockpit-asset-hierarchy.png)
+![image alt text](/guides/images/benutzerhandbuch/cockpit-asset-hierarchy.png)
 
 Smart-Geräte werden in der Device Management-Anwendung als Top-Level-Geräte dargestellt. In der Cockpit-Anwendung können Sie Smart-Geräte in Gruppen organisieren, wie die Pfeile in der Abbildung oben zeigen. 
 
 Das zweite Beispiel zeigt, wie Gateway-Geräte in der Cockpit-Anwendung verwendet werden:
 
-![image alt text](/guides/images/users-guide/cockpit-gateway-devices.png)
+![image alt text](/guides/images/benutzerhandbuch/cockpit-gateway-devices.png)
 
 In der Device Management-Anwendung werden Gateway-Geräte als Top-Level-Geräte dargestellt. Die angeschlossenen Geräte (wie Zigbee-, Modbus- oder KNX-Geräte) werden als untergeordneten Geräte angezeigt. In der Cockpit-Anwendung können diese "Kindgeräte" wie in der Abbildung oben dargestellt in einer Asset-Hierarchie organisiert werden.
 
@@ -89,16 +89,16 @@ Für jedes Objekt gibt es verschiedene Registerkarten, abhängig vom Objekttypen
 |Registerkarte|Beschreibung|Verfügbarkeit
 |:---|:---|:---
 |Info|Zeigt eine Liste von [Smart Rules](#smart-rules), die für dieses Objekt erstellt wurden.|Gruppe, Gerät
-|Alarme|Zeigt Alarme für das Gerät. Nähere Informationen zu Alarmen finden Sie unter [Arbeiten mit Alarmen](/guides/users-guide/device-management/#alarm-monitoring) im Abschnitt Device Management.|Gerät
+|Alarme|Zeigt Alarme für das Gerät. Nähere Informationen zu Alarmen finden Sie unter [Verwenden von Alarmen](/guides/benutzerhandbuch/device-management/#alarm-monitoring) im Abschnitt Device Management.|Gerät
 |Kind-Assets|Zeigt die Kind-Assets einer Gruppe.|Gruppe
 |Daten-Explorer|Zeigt alle Datenpunkte der Kinder, siehe auch [Visualisieren von Daten mit dem Daten-Explorer](#data-explorer).|Gruppe, Gerät
 |Standort|Zeigt den aktuellen Standort des Geräts.|Gerät
 
-Wenn für ein Gerät Dashboards erstellt wurden, werden diese ebenfalls als Registerkarten angezeigt. Weitere Informationen finden Sie unter [Arbeiten mit Dashboards](#dashboards).
+Wenn für ein Gerät Dashboards erstellt wurden, werden diese ebenfalls als Registerkarten angezeigt. Weitere Informationen finden Sie unter [Verwenden von Dashboards](#dashboards).
 
-Es können zusätzliche Registerkarten angezeigt werden, falls die Anwendung mit Plugins erweitert wurde. Siehe auch [Web SDK for plugins](/guides/images/web/introduction).
+Es können zusätzliche Registerkarten angezeigt werden, falls die Anwendung mit Plugins erweitert wurde. Siehe auch [Web SDK for plugins](/guides/web/introduction).
 
-### <a name="creating-groups"></a>Hinzufügen von Gruppen
+### <a name="creating-groups"></a>Erstellen von Gruppen
 
 Führen Sie folgende Schritte aus, um eine neue Gruppe zu erstellen:
 
@@ -126,14 +126,14 @@ Führen Sie die folgenden Schritte aus, um ein Gerät einer Gruppe zuzuweisen:
 
 Die Geräte werden als Kind-Assets in der Registerkarte "Kind-Asset" angezeigt.
 
-![image alt text](/guides/images/benutzerhandbuch/cockpit-assign-devices.png)
-
+<img src="/guides/images/benutzerhandbuch/cockpit-assign-devices.png" name="Gerät zuweisen" style="width:50%;"/>
 
 ### Bearbeiten von Gruppen
 
 Um den Namen einer Gruppe zu bearbeiten, navigieren Sie zur Registerkarte "Info" der entsprechenden Gruppe und klicken Sie "**Bearbeiten**" neben dem Namen. Geben Sie den gewünschten Namen ein sowie optional eine Anmerkung, die in der Registerkarte "Info" angezeigt wird. Klicken Sie **Änderungen speichern**, um Ihre Eingaben zu speichern.
 
 <img src="/guides/images/benutzerhandbuch/cockpit-edit-groups.png" name="Gruppe bearbeiten" style="width:50%;"/>
+
 
 ### Löschen von Gruppen
 

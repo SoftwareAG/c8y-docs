@@ -23,8 +23,9 @@ The following sections describe how to:
 * [Register devices](#register-device) and visualize Actility payload using Cumulocity
 * [Deprovision a device](#deprovision-device) in ThingPark
 * [Send operations](#configurable-port) to a device
+* [ThingPark Api availability monitoring](#thingpark-monitoring) in Cumulocity
 
-Note: Your subscription needs to include this feature. If you do not see the functionality described in this document, please contact support.
+> Note that your subscription needs to include this feature. If you do not see the functionality described in this document, please contact support.
 
 ### <a name="configure-credentials"></a>Configuring ThingPark account credentials
 
@@ -32,14 +33,16 @@ Before using LoRa devices with Cumulocity, you need to configure your ThingPark 
 
 #### <a name="create-new-credentials"></a>Creating new account credentials
 
-If you go to "Connectivity" for the first time, you will be asked to provide credentials. 
+If you go to "Connectivity" for the first time, you will be asked to provide credentials and application EUI which is used for LoRa device provisioning. 
+
 Enter the following information:
 
-- **profile ID**: This depends on your ThingPark account and environment. If you are using, for example, the Dev1 ThingPark environment your profile ID will be "dev1-api".
+- **profile ID**: This depends on your ThingPark account and environment. If you are using, for example, the Dev1 ThingPark environment your profile ID will be "dev1-api". Multiple tenants can have the same profile id.
 - **username**: your ThingPark user name
 - **password**: your ThingPark password 
-- **application EUI**: This is a global application ID in the IEEE EUI64 address space that uniquely identifies the application provider of the device and it is 16 character (8 byte) long hexadecimal number. There can be only one application EUI for a tenant.
+- **application EUI**: This is a global application ID in the IEEE EUI64 address space that uniquely identifies the application provider of the device and it is 16 character (8 byte) long hexadecimal number. There can be only one application EUI for a tenant but multiple tenant can have the same application EUI.
 
+Please do not use the same ThingPark login (username and password) for other tenants. 
 The profile ID, username and password are used to retrieve an access token to send further requests to the ThingPark platform. It is possible to renew the access token by replacing the account credentials.
 
 ![Setting device credentials](/guides/images/users-guide/actility/credentials-new-2.png)
@@ -57,7 +60,13 @@ Enter your profile ID, username, password and application EUI. For an explanatio
 Click "Save". Your old credentials will now be replaced with the new ones. 
 
 ### <a name="create-device-types"></a>Creating device types
-To process data from LoRa devices, Cumulocity needs to understand the payload format of the devices. 
+
+To process data from LoRa devices, Cumulocity needs to understand the payload format of the devices.
+Mapping a payload data to Cumulocity data can be done by the user by creating a LoRa device type.
+During the [device registration](#register-device), you can associate this device type and afterwards the received uplink callbacks for this device with a hexadecimal payload will be mapped to the ones you have configured in your device type.
+If a change is done to a device type after it is associated to a device, the reflection of the change can take up to 10 minutes because of the refresh mechanism of the Actility Server Side Agent.
+
+> Note that device protocol mapping only supports decoding for fixed byte positions based on the message type. 
 
 In order to create device types, go to the Device Management application and select "Device database" in the "Device types" menu in the navigator. You can either import an existing device type or create a new one. 
 
@@ -228,6 +237,7 @@ After confirming the deprovisioning, the device will be deprovisioned in ThingPa
  
 ### <a name="configurable-port"></a>Sending operations
 
+If LoRa device supports receiving hexadecimal commands, you can send those using shell operations. Notice that those commands are not serial monitor commands. 
 In order to send an operation, go to the Device Management application and navigate to the device you want to send an operation to. Click the "Shell" tab.
 
 In the following screenshot you can find some examples of a specific device type's predefined commands and their format.
@@ -240,3 +250,8 @@ If you enter the command without defining a port, it will be sent to the default
 <img src="/guides/images/users-guide/actility/portConfiguration.png" alt="Port configuration" style="max-width: 100%">
 
 Click "Execute". The operation will be sent to the device. The timing depends on Actility ThingPark.
+
+### <a name="thingpark-monitoring"></a>ThingPark Api availability monitoring
+The ThingPark Api is monitored and if the ThingPark Api is not reachable, an alarm is created to notify all the subscribed tenants that are using this feature. The alarm is cleared right after the ThingPark Api is reachable again. 
+
+<img src="/guides/images/users-guide/actility/thingpark-api-monitor-alarm.png" alt="ThingPark Api monitoring alarm" style="max-width: 100%">

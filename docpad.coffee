@@ -106,8 +106,8 @@ docpadConfig = {
 			{ title: 'Java developer\'s guide', folder: 'guides/java', slug: 'java-developer', icon: 'c8y-icon c8y-icon-java', description: 'How to use Java to interface Cumulocity with open Java-enabled devices, closed devices or your enterprise IT systems.' },
 			{ title: 'Web developer\'s guide', folder: 'guides/web', slug: 'web-developer', icon: 'c8y-icon c8y-icon-smart-rest', description: 'How to use the Web SDK to extend applications with your own plugins, add your own applications or implement further functionalities tailored to your use case.' },
 			{ title: 'C++ developer\'s guide', folder: 'guides/cpp', slug: 'cpp-developer', icon: 'c8y-icon c8y-icon-tools', description: 'How to use the C++ SDK to integrate devices with the Cumulocity IoT platform.' },
-			{ title: 'C# developer\'s guide', folder: 'guides/cs', slug: 'cs-developer', icon: 'c8y-icon c8y-icon-tools', description: 'How to use C# to develop and deploy applications on top of Cumulocity.' }
-{ title: ‘HTTP developer\'s guide', folder: 'guides/http’, slug: ‘http-developer', icon: 'c8y-icon c8y-icon-tools', description: 'How to use HTTP to develop applications on top of Cumulocity.' }
+			{ title: 'C# developer\'s guide', folder: 'guides/cs', slug: 'cs-developer', icon: 'c8y-icon c8y-icon-tools', description: 'How to use C# to develop and deploy applications on top of Cumulocity.' },
+			{ title: 'HTTP developer\'s guide', folder: 'guides/http', slug: 'http-developer', icon: 'c8y-icon c8y-icon-tools', description: 'How to use HTTP to develop applications on top of Cumulocity.' }
 
 		]
 	

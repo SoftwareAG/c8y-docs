@@ -138,7 +138,7 @@ Parameters:
 
 ### Set configuration (113)
 
-Will set the configuration of the device
+Will set the configuration of the device.
 
 Parameters:
 
@@ -204,7 +204,7 @@ Parameters:
 
 ### Set software list (116)
 
-Will set the list of software installed on the device
+Will set the list of software installed on the device.
 
 Parameters:
 

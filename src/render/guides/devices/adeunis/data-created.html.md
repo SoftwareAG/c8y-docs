@@ -4,12 +4,12 @@ title: Data created
 layout: redirect
 ---
 
-Device protocol mapping with LoRa device type creation only supports decoding for fixed byte positions and Adeunis LoRa Demonstrator's uplink payload does not fulfill this requirement. Cumulocity provides Esper event processing module to successfully decode the Adeunis LoRa Demonstrator uplink data. Please download the module for Adeunis LoRa demonstrator from [here](http://resources.cumulocity.com/examples/lora/adeunis-demonstrator-payload-decoder.epl) and use Event Processing tool to deploy it.
+Device protocol mapping with LoRa device type creation only supports decoding for fixed byte positions. Adeunis LoRa Demonstrator's uplink payload does not fulfill this requirement. Cumulocity provides an Esper event processing module to successfully decode the Adeunis LoRa Demonstrator uplink data. Download the module for Adeunis LoRa Demonstrator from [here](http://resources.cumulocity.com/examples/lora/adeunis-demonstrator-payload-decoder.epl) and use event processing tool to deploy it.
 
-To deploy the epl module, please go to Administration Application and then go to Event Processing to create a new module.
+To deploy the EPL module, go to Event Processing in the Administration application and create a new module.
 Place the content of the file and deploy.
 
-**The following data are recorded:**
+**The following data is recorded:**
 
 * Raw Adeunis data as event
 * Signal strength measurement including RSSI (Received signal strength indication), SNR (Signal noise ratio) and average SNR

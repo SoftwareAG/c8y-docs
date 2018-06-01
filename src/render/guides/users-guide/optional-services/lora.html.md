@@ -40,9 +40,9 @@ Enter the following information:
 - **profile ID**: This depends on your ThingPark account and environment. If you are using, for example, the Dev1 ThingPark environment your profile ID will be "dev1-api". Multiple tenants can have the same profile id.
 - **username**: your ThingPark user name
 - **password**: your ThingPark password 
-- **application EUI**: This is a global application ID in the IEEE EUI64 address space that uniquely identifies the application provider of the device and it is 16 character (8 byte) long hexadecimal number. There can be only one application EUI for a tenant but multiple tenant can have the same application EUI.
+- **application EUI**: This is a global application ID in the IEEE EUI64 address space that uniquely identifies the application provider of the device. It is a 16 character (8 byte) long hexadecimal number. There can be only one application EUI for a tenant but multiple tenant can have the same application EUI.
 
-Please do not use the same ThingPark login (username and password) for other tenants. 
+Do not use the same ThingPark login (username and password) for other tenants. 
 The profile ID, username and password are used to retrieve an access token to send further requests to the ThingPark platform. It is possible to renew the access token by replacing the account credentials.
 
 ![Setting device credentials](/guides/images/users-guide/actility/credentials-new-2.png)
@@ -62,9 +62,9 @@ Click "Save". Your old credentials will now be replaced with the new ones.
 ### <a name="create-device-types"></a>Creating device types
 
 To process data from LoRa devices, Cumulocity needs to understand the payload format of the devices.
-Mapping a payload data to Cumulocity data can be done by the user by creating a LoRa device type.
+Mapping a payload data to Cumulocity data can be done by creating a LoRa device type.
 During the [device registration](#register-device), you can associate this device type and afterwards the received uplink callbacks for this device with a hexadecimal payload will be mapped to the ones you have configured in your device type.
-If a change is done to a device type after it is associated to a device, the reflection of the change can take up to 10 minutes because of the refresh mechanism of the Actility Server Side Agent.
+If a device type has been changed after being associated to a device, the reflection of the change can take up to 10 minutes because of the refresh mechanism of the Actility Server Side Agent.
 
 > Note that device protocol mapping only supports decoding for fixed byte positions based on the message type. 
 
@@ -193,9 +193,9 @@ In the next window fill in the required information:
 
 - **Device profile**: Select the appropriate device profile from the drop-down list. 
 - **Device type**: Select the appropriate device type from the drop-down list. 
-- **Device EUI**: This is the unique identifier for the device and it is 16 character (8 byte) long hexadecimal number. You can find it on the device itself.
+- **Device EUI**: This is the unique identifier for the device. It is a 16 character (8 byte) long hexadecimal number. You can find it on the device itself.
 - **Application key**: This is an AES-128 application key specific for the device that
-is assigned to the device by the application owner and is responsible to encrypt. Application key is 32 character (16 byte) long hexadecimal number.
+is assigned to the device by the application owner and is responsible to encrypt. The application key is a 32 character (16 byte) long hexadecimal number.
 JOIN communication. You can find this key on the device itself.
 - **Connectivity plan**: Select the appropriate connectivity plan from the drop-down list.
 
@@ -217,13 +217,13 @@ For more information on viewing and managing your connected devices, also refer 
 #### <a name="device-registration-with-abp-activation"></a>LoRa device registration with Activation by Personalization (ABP)
 
 Activating the device by personalization is not suggested and not fully supported in Cumulocity LoRa device registration.
-However, if you would like to create device with this activation type in Cumulocity and use the LoRa feature such as sending operations to device, deprovisioning device and setting LoRa device type with custom device protocol configuration, you should first provision device in ThingPark platform and you have to create "AS Routing Profile" for Cumulocity using destination http://actility-server.cumulocity.com as a "Third Party AS (HTTP)" and assign it to your devices manually. Afterwards, you can register this device using LoRa device registration. For this case, application key field in the LoRa device registration is invalid.
+However, if you would like to create a device with this activation type in Cumulocity and use the LoRa features such as sending operations to a device, deprovisioning a device and setting LoRa device type with custom device protocol configuration, you must first provision the device in the ThingPark platform. Moreover you have to create "AS Routing Profile" for Cumulocity using destination http://actility-server.cumulocity.com as a "Third Party AS (HTTP)" and assign it to your devices manually. Afterwards, you can register this device using LoRa device registration. In this case, the application key field in the LoRa device registration is invalid.
 
 #### <a name="legacy-LoRa-devices"></a>Limitations for LoRa devices which were not created using LoRa device registration
 
 The general device registration for LoRa devices is no longer supported.
-The existing LoRa devices that were already created in Cumulocity with general device registration process has limitations. For those devices, it is not possible to send operations to device, deprovision device and set LoRa device type with custom device protocol configuration.
-It is suggested to delete and re-register those devices using LoRa device registration to fully use LoRa feature.
+The existing LoRa devices that were already created in Cumulocity with the general device registration process have limitations. For those devices, it is not possible to send operations to device, deprovision device and set LoRa device type with custom device protocol configuration.
+It is recommended to delete and re-register these devices using LoRa device registration to fully use the LoRa feature.
 
 ### <a name="deprovision-device"></a>Deprovisioning LoRa devices
 

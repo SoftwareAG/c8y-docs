@@ -237,7 +237,7 @@ After confirming the deprovisioning, the device will be deprovisioned in ThingPa
  
 ### <a name="configurable-port"></a>Sending operations
 
-If LoRa device supports receiving hexadecimal commands, you can send those using shell operations. Notice that those commands are not serial monitor commands. 
+If a LoRa device supports receiving hexadecimal commands, you can send them using shell operations. Notice that these commands are not serial monitor commands.
 In order to send an operation, go to the Device Management application and navigate to the device you want to send an operation to. Click the "Shell" tab.
 
 In the following screenshot you can find some examples of a specific device type's predefined commands and their format.

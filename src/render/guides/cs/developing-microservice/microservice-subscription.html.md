@@ -4,7 +4,7 @@ title: Microservice subscription
 layout: redirect
 ---
 
-The following section refers to the user management description in Managing application > [Cumulocity microservices](/guides/concepts/applications/microservices) in the Concepts guide.
+The following section refers to the user management as described in Managing application > [Cumulocity microservices](/guides/concepts/applications/microservices) in the Concepts guide.
 
 This SDK has a task CurrentApplicationSubscriptionsTask, which only fetches a list of all subscriptions. The CurrentApplicationSubscriptionsTask is the IScheduledTask implementation which runs every hour:
 

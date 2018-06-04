@@ -3,7 +3,7 @@ order: 30
 layout: redirect
 title: Context support
 ---
-The following section describes context support, as utility tool for the user management description in Managing application > [Cumulocity microservices](/guides/concepts/applications/microservices) in the Concepts guide.
+The following section describes context support as utility tool for the user management described in Managing application > [Cumulocity microservices](/guides/concepts/applications/microservices) in the Concepts guide.
 
 @UserScope and @TenantScope at type level annotation indicate that a bean created from class will be created in the scope defined. The user scope implies using tenant platform user credentials for platform calls. The tenant scope implies using service user credentials.
 

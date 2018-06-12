@@ -1,10 +1,10 @@
 ---
 order: 20
-title: Setting up the environment
+title: Installation process
 layout: redirect
 ---
 
-### Setting up VirtualBox
+### Setting up the VirtualBox
 
 Download the VirtualBox package for your operating system from [https://www.virtualbox.org/wiki/Downloads](https://www.virtualbox.org/wiki/Downloads) and install it.
 

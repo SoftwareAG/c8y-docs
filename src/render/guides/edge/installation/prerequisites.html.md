@@ -1,45 +1,58 @@
 ---
-order: 10
+order: 20
 title: Prerequisites
 layout: redirect
 ---
 
-### Conventions in this document
+### Installation requirements
 
-The following conventions are used in this document:
+To install Cumulocity Edge, the following items need to be available:
 
-Lines starting with ´#´ represent commands to be executed by the root user. Example:
+* Virtualbox <br>
+Version: 5.2.8<br>
+To be be downloaded from [https://www.virtualbox.org/wiki/Download_Old_Builds_5_2](https://www.virtualbox.org/wiki/Download_Old_Builds_5_2)
 	
-	# ls -l
+* Edge OVA image <br>
+To be downloaded from SAG Empower portal
 
-Lines starting with ´&#36;´ represent commands to be executed by a non-root user. Example:
-	
-	$ ls /etc
+* Cumulocity licence file <br>
+Please send an email to support@cumulocity.com to request the license file.
+In the email, you must include the following details:
+	* Your company name, under which the license has been bought.
+	* The domain name (DNS), under which Cumulocity Edge will be reachable.
 
-Items marked in brackets &lt;x&gt; need to be replaced by a custom value when executing commands or editing files. Example:
+* SSL key and SSL certificate <br>
+Use your internal or an external CA to create these
 
-	user=&lt;username&gt;
+* Apama licence <br>
+Optional
 
-should be edited like
+* DNS entry <br>
+Optional
 
-	user=johndoe
+### Network connectivity
 
+The following network ports must be reachable from the local network:
 
-### Software requirements
+* HTTPS
+* MQTT over TLS
+* SSH, only for configuring the appliance
 
-The following software versions are currently used with Cumulocity Edge:
+If Edge should communicate with the cloud, the following ports of www.cumulocity.com (or another instance) need to be available:
 
-|Edge component|Version|
-|:---|:---|
-|Cumulocity Core |8.19-10|
-|Apama|10.1.0.4|
+* HTTPS
+* MQTT over TLS
 
+There is no internet connection required during installation. Internet connection during runtime is optional, and only used if this is configured in the Data Broker. 
 
 ### Hardware requirements
 
-The following hardware requirements need to be met to use Cumulocity Edge:
+The virtual machine has the following hardware requirements:
 
-* 200 GB of free disk space
-* 8 GB RAM
-* 4 CPU cores
+100 GB of free disk space
+Intel x86 CPU
+Recommended: 8 GB RAM, minimum: 4 GB RAM
+Recommended: 4 logical CPU cores, minimum: 2 logical CPU cores
+One NIC
 
+>**Info**: This does not cover host OS hardware requirements.

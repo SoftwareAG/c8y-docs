@@ -1,6 +1,6 @@
 ---
 order: 10
-title: Preface
+title: Overview
 layout: redirect
 ---
 
@@ -22,23 +22,3 @@ Items marked in brackets &lt;x&gt; need to be replaced by a custom value when ex
 should be edited like
 
 	user=johndoe
-
-
-### Software requirements
-
-The following software versions are currently used with Cumulocity Edge:
-
-|Edge component|Version|
-|:---|:---|
-|Cumulocity Core |8.19-10|
-|Apama|10.1.0.4|
-
-
-### Hardware requirements
-
-The following hardware requirements need to be met to use Cumulocity Edge:
-
-* 200 GB of free disk space
-* 8 GB RAM
-* 4 CPU cores
-

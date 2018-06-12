@@ -1,6 +1,6 @@
 ---
 order: 20
-title: Prerequisites
+title: Requirements
 layout: redirect
 ---
 

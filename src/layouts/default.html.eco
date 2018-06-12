@@ -19,87 +19,149 @@
       <script src="//oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
     <![endif]-->
 
-   <link rel="shortcut icon" href="/guides/favicon.ico"/>
+   <link rel="shortcut icon" href="/guides/images/favicon.ico"/>
 
   <script>
         var isInIFrame = window.location !== window.parent.location;
         if(isInIFrame){
 
-          document.write('<link href="/guides/css/docs-iframe-styles.css" rel="stylesheet" id="cumulocity-style-css" type="text/css" media="all" />');
+          document.write('<link href="/guides/styles/docs-iframe-styles.css" rel="stylesheet" id="cumulocity-style-css" type="text/css" media="all" />');
         }else{
-          document.write('<link href="/guides/less/docs-styles.css" rel="stylesheet" id="cumulocity-style-css" type="text/css" media="all" />');
+          document.write('<link href="/guides/styles/docs-styles.css" rel="stylesheet" id="cumulocity-style-css" type="text/css" media="all" />');
         }
   </script>
 
 
-    <link rel="stylesheet" href="//yandex.st/highlightjs/8.0/styles/solarized_dark.min.css">
+    <link rel="stylesheet" href="/guides/styles/atom-one-dark.css">
+    <!-- block styles -->
     <%- @getBlock("styles").toHTML() %>
+    <%#- @getBlock('styles').add(@getAbsoluteUrl(@site.styles)).toHTML() %>
     <!-- Start of cumulocity Zendesk Widget script -->
     <script>/*<![CDATA[*/window.zEmbed||function(e,t){var n,o,d,i,s,a=[],r=document.createElement("iframe");window.zEmbed=function(){a.push(arguments)},window.zE=window.zE||window.zEmbed,r.src="javascript:false",r.title="",r.role="presentation",(r.frameElement||r).style.cssText="display: none",d=document.getElementsByTagName("script"),d=d[d.length-1],d.parentNode.insertBefore(r,d),i=r.contentWindow,s=i.document;try{o=s}catch(c){n=document.domain,r.src='javascript:var d=document.open();d.domain="'+n+'";void(0);',o=s}o.open()._l=function(){var o=this.createElement("script");n&&(this.domain=n),o.id="js-iframe-async",o.src=e,this.t=+new Date,this.zendeskHost=t,this.zEQueue=a,this.body.appendChild(o)},o.write('<body onload="document._l();">'),o.close()}("https://assets.zendesk.com/embeddable_framework/main.js","cumulocity.zendesk.com");/*]]>*/</script>
     <!-- End of cumulocity Zendesk Widget script -->
 </head>
-<body>
-  <%- @partial("header") %>
-<div class="container">
-  <div class="row row-offcanvas row-offcanvas-left">
+<body class="sidebar-layout" data-spy="scroll" data-target="#mainnav">
+  <%#- @partial("header") %>
 
-    <div class="col-xs-6 col-sm-3 sidebar-offcanvas hidden-print" id="sidebar" role="navigation">
 
-      <div class="left-nav">
-
-        <div id="docs-nav">
+  <button type="button" class="sidebar-toggle">
+    <span class="icon-bar"></span>
+    <span class="icon-bar"></span>
+    <span class="icon-bar"></span>
+    <span>MENU</span>
+  </button>
+  <nav class="navbar navbar-default navbar-fixed-top ">
+    <div class="container-fluid topnav-container">
+    <ul class="nav navbar-nav navbar-left hidden-xs">
+      <li><a class="no-ajaxy" href="http://cumulocity.com">Cumulocity IoT</a></li>
+      <li><a class="no-ajaxy" href="http://resources.cumulocity.com/documentation/jssdk/latest/#/api">Cumulocity Angular API</a></li>
+    </ul>
+    <ul class="nav navbar-nav navbar-right">
+      <li>   <script>
+              (function() {
+                var cx = '008969372384807682938:yeh7xt785g4';
+                var gcse = document.createElement('script');
+                gcse.type = 'text/javascript';
+                gcse.async = true;
+                gcse.src = 'https://cse.google.com/cse.js?cx=' + cx;
+                var s = document.getElementsByTagName('script')[0];
+                s.parentNode.insertBefore(gcse, s);
+              })();
+            </script>
+        <gcse:searchbox></gcse:searchbox>
+      </li>
+    </ul>
+    </div>
+  </nav>
+    <gcse:searchresults ></gcse:searchresults>
+  <!-- -->
+  <nav class="navigator" >
+    <div class="sg-title text-center">
+      <a href="/guides" class="no-ajaxy">
+        <i class="c8y-icon c8y-icon-c8y" style="font-size: 120px;"></i>
+      </a>
+      <div class="dropdown text-left">
+        <a href="#" class="dropdown-toggle no-ajaxy" data-toggle="dropdown">
+          <span class="current text-truncate" style="text-transform: none;">Guides</span>
+        </a>
+        <ul class="dropdown-menu">
           <% for section in @sections:%>
-              <% $first = 'collapsed' %>
-              <% for page in @getCollection("html").findAllLive({relativeOutDirPath: section.folder }, [ order: 1, title: 1 ] ).toJSON():%>
-                <% if page.id is @document.id then $in = 'in' %>
-                <% if page.id is @document.id then $first = '' %>
-              <% end %>
-
-            <div class="panel">
-              <a data-toggle="collapse" data-parent="#docs-nav" class="top_docs <%= $first %>" href="#<%= section.slug %>">
-                <h4><span class="glyphicon <%= section.icon %>"></span> <%= section.title %><span class="caret"></span></h4>
+            <% $first = '' %>
+            <% for page in @getCollection("html").findAllLive({relativeOutDirPath: section.folder }, [ order: 1, title: 1 ] ).toJSON():%>
+              <% if page.id is @document.id then $first = 'active' %>
+            <% end %>
+            <li class="<%= $first %> lang-<%= section.lang %>">
+              <a href="/<%= section.folder %>" class="no-ajaxy">
+                <span class="<%= section.icon %>"></span> <%= section.title %>
               </a>
-
-              <div id="<%= section.slug %>" class="collapse <%= $in %>">
-                <% $in = '' %>
-                <ul class="list-group">
-                  <% for page in @getCollection("html").findAllLive({relativeOutDirPath: section.folder }, [ order: 1, title: 1 ] ).toJSON():%>
-                    <li class="<%= if page.id is @document.id then 'active' %> list-group-item">
-                      <a href="<%= page.url%>"> <%= page.title || 'no title' %></a>
-                    </li>
-                  <% end %>
-                </ul>
-              </div>
-            </div>
+            </li>
           <% end %>
-        </div>
-
+        </ul>
       </div>
     </div>
 
-    <div class="col-xs-12 col-sm-9">
-          <button type="button" class="navbar-toggle docs-nav-toggle" data-toggle="offcanvas">
-          <span class="icon-bar"></span>
-          <span class="icon-bar"></span>
-          <span class="icon-bar"></span>
-        </button>
-      <h1 class="section-title"><%= @document.title %></h1>
-      <div class="content">
-         <%- @partial('toc.html.eco', {tocItems: @document.tableOfContents}) %>
-         <%- @content %>
-      </div>
-    </div>
+    
+ 
+    <ul id="mainnav" class="navigatorContent children">
+        <% for section in @sections:%>
+          <% $first = '' %>
+          <% for page in @getCollection("html").findAllLive({relativeOutDirPath: section.folder }, [ order: 1, title: 1 ] ).toJSON():%>
+            <% if page.id is @document.id then $first = 'current' %>
+          <% end %>
+        <% if $first is 'current' : %>
+          <% for page in @getCollection("html").findAllLive({relativeOutDirPath: section.folder }, [ order: 1, title: 1 ] ).toJSON():%>
+            <li class="slot <%= if page.id is @document.id then 'current' %>">
+              <a href="<%= page.url%>" title="<%= page.title %>" class="link "><span><%= page.title || 'no title' %></span></a>
+                <% if page.collection : %>
 
+                  <a href="javascript:void(0);" data-toggle="collapse" data-target="#sub-<%=page.basename %>"  class="<%= 'collapsed' if @document.url isnt page.url %>" ><i class="fa fa-chevron-right " ></i></a>
+     
+                <ul id="sub-<%=page.basename %>" class="nav navbar-nav subchildren collapse <%= 'in' if @document.url is page.url %>" >
+                  <% for subsubdocument in @getCollection("html").findAllLive({relativeOutDirPath: page.collection }, [ order: 1, title: 1 ] ).toJSON(): %>
+                 <li>
+                    <a href="#<%= subsubdocument.basename %>" data-target="#<%= subsubdocument.basename %>" title="<%= subsubdocument.title %>" data-href="<%= page.url %>#<%= subsubdocument.basename %>">
+                      <span><%= subsubdocument.title %></span>
+                    </a>
+                  </li>
+                  <% end %>
+                  </ul>
+                <% end %>
+            </li>
+          <% end %>
+        <% end %>
+      <% end %>
+    </ul>
+
+    <div class="powered-by">
+      <p><small>&copy; Cumulocity <%- (new Date()).getFullYear() %></small></p>
+    </div>
+  </nav>
+
+  <div class="cover"></div>
+    <!-- Content -->
+  <div class="main-content">
+    
+    <article class="content">
+        <%- @partial('toc.html.eco', {tocItems: @document.tableOfContents}) %>
+        <%- @content %>
+    </article>
   </div>
 
-</div>
-<footer>
+
+
+
+<!--  <footer>
   <div class="container">
     <hr>
-    <small>© 2010-2017 Cumulocity GmbH. All rights reserved.</small>
+    <small>© 2010-2018 Cumulocity GmbH. All rights reserved.</small>
   </div>
-</footer>
+</footer>-->
 
+<button type="button"
+  class="to-the-top navbar-toggle">
+  <span class="sr-only">Top</span>
+  <span class="glyphicon glyphicon-chevron-up"></span>
+</button>
 
 <script type="text/javascript">
   var _gaq = _gaq || [];
@@ -114,8 +176,9 @@
   })();
 
 </script>
-  <%- @partial("scripts") %>
-<%- @getBlock("scripts").toHTML() %>
+  <%#- @partial("scripts") %>
+  
+  <%- @getBlock('scripts').add(@getAbsoluteUrl(@site.scripts)).toHTML() %>
 
 </body>
 </html>

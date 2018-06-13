@@ -91,7 +91,7 @@ Execute the following command:
 
 	# systemctl start mongo
 
-This will start the mongodb server when required. 
+This will start the mongod server when required. 
 
 ##### Stop MongoDB process
 
@@ -99,7 +99,7 @@ Execute the following command:
 
 	# systemctl stop mongo
 
-This will stop the mongodb server when required. 
+This will stop the mongod server when required. 
 
 ##### Restart MongoDB process
 
@@ -107,7 +107,7 @@ Execute the following command:
 
 	# systemctl restart mongo
 
-This will restart the mongodb server when required. 
+This will restart the mongod server when required. 
 
 #### cumulocity-agent
 

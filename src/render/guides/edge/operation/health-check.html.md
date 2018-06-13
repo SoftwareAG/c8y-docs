@@ -71,126 +71,148 @@ This will list all interfaces and their current configuration.
 
 Example:
 
-$ ip a
+	$ ip a
 
-1: lo: <LOOPBACK,UP,LOWER_UP> mtu 65536 qdisc noqueue state UNKNOWN group default qlen 1000
+	1: lo: <LOOPBACK,UP,LOWER_UP> mtu 65536 qdisc noqueue state UNKNOWN group default qlen 1000
     link/loopback 00:00:00:00:00:00 brd 00:00:00:00:00:00
     inet 127.0.0.1/8 scope host lo
        valid_lft forever preferred_lft forever
     inet6 ::1/128 scope host 
        valid_lft forever preferred_lft forever
        
-2: enp0s3: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 1500 qdisc pfifo_fast state UP group default qlen 1000
+	2: enp0s3: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 1500 qdisc pfifo_fast state UP group default qlen 1000
     link/ether 08:00:27:88:e7:de brd ff:ff:ff:ff:ff:ff
     inet 10.0.2.15/24 brd 10.0.2.255 scope global noprefixroute dynamic enp0s3
        valid_lft 85338sec preferred_lft 85338sec
     inet6 fe80::a00:27ff:fe88:e7de/64 scope link noprefixroute 
        valid_lft forever preferred_lft forever
        
-3: enp0s8: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 1500 qdisc pfifo_fast state UP group default qlen 1000
+	3: enp0s8: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 1500 qdisc pfifo_fast state UP group default qlen 1000
     link/ether 08:00:27:81:fe:9d brd ff:ff:ff:ff:ff:ff
     inet 192.168.56.120/24 brd 192.168.56.255 scope global noprefixroute enp0s8
        valid_lft forever preferred_lft forever
     inet6 fe80::5b3a:bc65:40b5:f9ea/64 scope link noprefixroute 
        valid_lft forever preferred_lft forever
 
-You need to make sure that the node has an external interface (ethX) and the loopback interface configured (lo). The loopback interface needs to have the fixed IP 127.0.0.1 with subnet mask 255.0.0.0 and the external interface an IP address must reside in the correct subnet with the correct subnet mask (in this examples 255.255.252.0)
+You need to make sure that the node has an external interface (ethX) and the loopback interface configured (lo). The loopback interface needs to have the fixed IP 127.0.0.1 with subnet mask 255.0.0.0 and the IP address of the external interface must reside in the correct subnet with the correct subnet mask (in this examples 255.255.252.0).
 
 The following command lists the local routing information.
 
-# netstat -rn
+	# netstat -rn
 
 Example:
 
-$ netstat -rn
-Kernel IP routing table
-Destination     Gateway         Genmask         Flags   MSS Window  irtt Iface
-0.0.0.0         10.0.2.2        0.0.0.0         UG        0 0          0 enp0s3
-10.0.2.0        0.0.0.0         255.255.255.0   U         0 0          0 enp0s3
-192.168.56.0    0.0.0.0         255.255.255.0   U         0 0          0 enp0s8
+	$ netstat -rn
+	Kernel IP routing table
+	Destination     Gateway         Genmask         Flags   MSS Window  irtt Iface
+	0.0.0.0         10.0.2.2        0.0.0.0         UG        0 0          0 enp0s3
+	10.0.2.0        0.0.0.0         255.255.255.0   U         0 0          0 enp0s3
+	192.168.56.0    0.0.0.0         255.255.255.0   U         0 0          0 enp0s8
 
 Make sure you have the destination 0.0.0.0 in the list which then also has the gateway flag (G) set.
-8.2.2. Check access to the internet
+
+#### Check access to the internet
+
 Try to reach a well-known address in the internet with the following command:
-$ ping -s 1500 8.8.8.8
-PING 8.8.8.8 (8.8.8.8) 1500(1528) bytes of data.
-64 bytes from 8.8.8.8: icmp_seq=1 ttl=56 time=2.61 ms
-64 bytes from 8.8.8.8: icmp_seq=2 ttl=56 time=2.80 ms
-64 bytes from 8.8.8.8: icmp_seq=3 ttl=56 time=2.82 ms
-64 bytes from 8.8.8.8: icmp_seq=4 ttl=56 time=2.75 ms
-64 bytes from 8.8.8.8: icmp_seq=5 ttl=56 time=2.79 ms
+
+	$ ping -s 1500 8.8.8.8
+	PING 8.8.8.8 (8.8.8.8) 1500(1528) bytes of data.
+	64 bytes from 8.8.8.8: icmp_seq=1 ttl=56 time=2.61 ms
+	64 bytes from 8.8.8.8: icmp_seq=2 ttl=56 time=2.80 ms
+	64 bytes from 8.8.8.8: icmp_seq=3 ttl=56 time=2.82 ms
+	64 bytes from 8.8.8.8: icmp_seq=4 ttl=56 time=2.75 ms
+	64 bytes from 8.8.8.8: icmp_seq=5 ttl=56 time=2.79 ms
 
 As when checking the internal reachability you need to make sure that you can see replies from the address you tried to reach. Use Ctrl-C to end the ping command. 
-8.3. Processing
-This chapter does list the required services and processes on the Edge server.
 
-8.3.1. MongoDB 
-8.3.1.1. Check on Edge server
+### Processing
+
+This section lists the required services and processes on the Edge server.
+
+#### MongoDB 
+
+##### Check on Edge server
+
 As the root user execute the following command for checking the availability of the mongod processes:
-# systemctl status mongo*
+
+	# systemctl status mongo*
+
 This should return output like the following:
 
-# systemctl status mongo*
-● mongodmongod7.service - SYSV: Mongo is a scalable, document-oriented database.
- Loaded: loaded (/etc/systemd/system/mongodmongod7.service; enabled; vendor preset: disabled)
- Active: active (running) since Mon 2018-05-14 12:53:38 CEST; 22min ago
-   Docs: man:mongod(1)
-Process: 960 ExecStart=/etc/init.d/mongodmongod7 start (code=exited, status=0/SUCCESS)
- CGroup: /system.slice/mongodmongod7.service
-         └─1227 /usr/bin/mongod -f /etc/mongo/mongomongod7.conf
+	# 	systemctl status mongo*
+	● mongodmongod7.service - SYSV: Mongo is a scalable, document-oriented database.
+	 Loaded: loaded (/etc/systemd/system/mongodmongod7.service; enabled; vendor preset: disabled)
+	 Active: active (running) since Mon 2018-05-14 12:53:38 CEST; 22min ago
+	   Docs: man:mongod(1)
+	Process: 960 ExecStart=/etc/init.d/mongodmongod7 start (code=exited, status=0/SUCCESS)
+	 CGroup: /system.slice/mongodmongod7.service
+	         └─1227 /usr/bin/mongod -f /etc/mongo/mongomongod7.conf
+
 The pids will be different on each machine and the amount of pids depends on the amount of mongod processes on the Edge server. 
-In a standalone environment you will only see one (1) pid (example above)
-8.3.1.2. MongoDB tools for performance debugging
+
+In a standalone environment you will only see one (1) pid (example above).
+
+##### MongoDB tools for performance debugging
 
 MongoDB by default has the following tools available for monitoring the performance
 
-mongostat: Similar to jstat mongostat displays the internal memory status and other information for a mongod process like the following
+mongostat: Similar to jstat, mongostat displays the internal memory status and other information for a mongod process.
 
-$ mongostat --host localhost:<Mongo port> --username "<user>" \
-                     --password "<password>" --authenticationDatabase "admin"
+	$ mongostat --host localhost:<Mongo port> --username "<user>" \
+	                     --password "<password>" --authenticationDatabase "admin"
+	
+	insert query update delete getmore command % dirty % used flushes vsize   res qr|qw ar|aw netIn netOut conn  set repl                      time
+	    25   272      8     *0      35    60|0     1.9   80.0       0 16.0G 13.8G   0|0   0|0  124k   277k  104 rs01  PRI 2017-05-24T13:11:16+02:00
+	     7    61     *0     *0      10    18|0     1.9   80.0       0 16.0G 13.8G   0|0   1|0 28.4k   105k  104 rs01  PRI 2017-05-24T13:11:17+02:00
+	     3    71      3     *0      10    15|0     1.9   80.0       0 16.0G 13.8G   0|0   0|0 36.8k   231k  104 rs01  PRI 2017-05-24T13:11:18+02:00
+	     8    87      3     *0      14    24|0     1.9   80.0       0 16.0G 13.8G   0|0   0|0 44.4k   581k  104 rs01  PRI 2017-05-24T13:11:19+02:00
+	     4    86      3     *0       6    16|0     1.9   80.0       0 16.0G 13.8G   0|0   0|0 34.2k  1.68m  104 rs01  PRI 2017-05-24T13:11:20+02:00
 
-insert query update delete getmore command % dirty % used flushes vsize   res qr|qw ar|aw netIn netOut conn  set repl                      time
-    25   272      8     *0      35    60|0     1.9   80.0       0 16.0G 13.8G   0|0   0|0  124k   277k  104 rs01  PRI 2017-05-24T13:11:16+02:00
-     7    61     *0     *0      10    18|0     1.9   80.0       0 16.0G 13.8G   0|0   1|0 28.4k   105k  104 rs01  PRI 2017-05-24T13:11:17+02:00
-     3    71      3     *0      10    15|0     1.9   80.0       0 16.0G 13.8G   0|0   0|0 36.8k   231k  104 rs01  PRI 2017-05-24T13:11:18+02:00
-     8    87      3     *0      14    24|0     1.9   80.0       0 16.0G 13.8G   0|0   0|0 44.4k   581k  104 rs01  PRI 2017-05-24T13:11:19+02:00
-     4    86      3     *0       6    16|0     1.9   80.0       0 16.0G 13.8G   0|0   0|0 34.2k  1.68m  104 rs01  PRI 2017-05-24T13:11:20+02:00
+mongotop: Shows the access for the different database fragments for each replicatset.
 
-mongotop: Shows the access for the different database fragments for each replicatset
-
-$ mongotop --host localhost:<Mongo port> --username "<user>" \
-                     --password "<password>" --authenticationDatabase "admin"
-2017-05-24T13:14:58.001+0200    connected to: localhost:27011
-
-                           ns    total    read    write    2017-05-24T13:14:59+02:00
-               local.oplog.rs      2ms     2ms      0ms                             
-         nordex.configuration      1ms     1ms      0ms                             
-           a0919729321.alarms      0ms     0ms      0ms                             
-           a0919729321.audits      0ms     0ms      0ms                             
-           a0919729321.cmdata      0ms     0ms      0ms                             
-    a0919729321.cmdata.chunks      0ms     0ms      0ms                             
-     a0919729321.cmdata.files      0ms     0ms      0ms                             
-    a0919729321.configuration      0ms     0ms      0ms                             
-           a0919729321.events      0ms     0ms      0ms                             
-a0919729321.events_attachment      0ms     0ms      0ms                         
+	$ mongotop --host localhost:<Mongo port> --username "<user>" \
+	                     --password "<password>" --authenticationDatabase "admin"
+	2017-05-24T13:14:58.001+0200    connected to: localhost:27011
+	
+	                           ns    total    read    write    2017-05-24T13:14:59+02:00
+	               local.oplog.rs      2ms     2ms      0ms                             
+	         nordex.configuration      1ms     1ms      0ms                             
+	           a0919729321.alarms      0ms     0ms      0ms                             
+	           a0919729321.audits      0ms     0ms      0ms                             
+	           a0919729321.cmdata      0ms     0ms      0ms                             
+	    a0919729321.cmdata.chunks      0ms     0ms      0ms                             
+	     a0919729321.cmdata.files      0ms     0ms      0ms                             
+	    a0919729321.configuration      0ms     0ms      0ms                             
+	           a0919729321.events      0ms     0ms      0ms                             
+	a0919729321.events_attachment      0ms     0ms      0ms                         
 
 Both tools allow the identification of bottlenecks within the database engine. 
-8.3.1.3. Check on Mongo Process
+
+##### Check on Mongo process
+
 On the Edge server execute the following command:
-# ps ax | grep -v grep | grep mongo
+
+	# ps ax | grep -v grep | grep mongo
 
 It should deliver output similar to this:
-1227 ?        Sl     0:01 /usr/bin/mongod -f /etc/mongo/mongomongod7.conf
 
-If it does not show a like above the mongos server is not running. 
+	1227 ?        Sl     0:01 /usr/bin/mongod -f /etc/mongo/mongomongod7.conf
 
-8.3.2. Karaf
-8.3.2.1. Check thread status
+If it does not show a similar output the mongos server is not running. 
+
+#### Karaf
+
+##### Check thread status
+
 As the root user, execute the following command to check if the Karaf process is still running:
-# ps ax | grep java | grep karaf
+
+	# ps ax | grep java | grep karaf
+
 This should show an output like this:
+
 [root@cumulocity01 cumulocity]# ps ax | grep java | grep karaf
 1205 ?        Sl     1:45 /usr/java/default/bin/java -XX:+UseConcMarkSweepGC -Djava.rmi.server.hostname=127.0.0.1 -Djava.rmi.server.useLocalHostname=true -Dcom.sun.management.jmxremote -Dcom.sun.management.jmxremote.port=8199 -Dcom.sun.management.jmxremote.authenticate=false -Dcom.sun.management.jmxremote.ssl=false -server -Xms1127M -Xmx4096M -XX:NewRatio=3 -Dcom.sun.management.jmxremote -XX:+UseCompressedOops -XX:+UseParNewGC -XX:+UseConcMarkSweepGC -XX:+ScavengeBeforeFullGC -XX:+CMSParallelRemarkEnabled -XX:+CMSScavengeBeforeRemark -XX:+DisableExplicitGC -Djava.awt.headless=true -Djava.endorsed.dirs=/usr/java/default/jre/lib/endorsed:/usr/java/default/lib/endorsed:/usr/share/cumulocity-core-karaf/lib/endorsed -Djava.ext.dirs=/usr/java/default/jre/lib/ext:/usr/java/default/lib/ext:/usr/share/cumulocity-core-karaf/lib/ext -Dkaraf.instances=/usr/share/cumulocity-core-karaf/instances -Dkaraf.home=/usr/share/cumulocity-core-karaf -Dkaraf.base=/usr/share/cumulocity-core-karaf -Dkaraf.data=/usr/share/cumulocity-core-karaf/data -Dkaraf.etc=/usr/share/cumulocity-core-karaf/etc -Djava.io.tmpdir=/usr/share/cumulocity-core-karaf/data/tmp -Djava.util.logging.config.file=/usr/share/cumulocity-core-karaf/etc/java.util.logging.properties -Dkaraf.startLocalConsole=false -Dkaraf.startRemoteShell=true -classpath /usr/share/cumulocity-core-karaf/lib/karaf-jaas-boot.jar:/usr/share/cumulocity-core-karaf/lib/karaf.jar:/usr/share/cumulocity-core karaf/lib/karaf-org.osgi.core.jar org.apache.karaf.main.Main
+
 The output should give back a single process. You will need the process ID for later steps so please note it down.
 
 To get a health check of the JVM and related parameters you can run the following command:

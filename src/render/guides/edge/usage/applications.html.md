@@ -1,6 +1,6 @@
 ---
 order: 10
-title: Applications
+title: IoT platform
 layout: redirect
 ---
 
@@ -17,6 +17,7 @@ Since Cumulocity Edge is based on the same software as the cloud-based Cumulocit
 The following restrictions apply:
 
 Device Management: The Device simulator is not provided in Cumulocity Edge.
+
 Cockpit -> Cloud Fieldbus: CAN Bus and Modbus RTU are not applicable.
 
 Refer to the relevant sections of the User guide for detailed explanation of these applications (see links above). 

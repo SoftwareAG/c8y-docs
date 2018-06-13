@@ -35,6 +35,6 @@ These are listed in the following table. The columns show the following informat
 |[Nokia IMPACT agent](/guides/users-guide/optional-services#nokia-impact)|With the [Nokia IMPACT agent](/guides/users-guide/optional-services#nokia-impact) you can interface with heterogeneous devices through the Nokia IMPACT Data Collector.|impact|Microservice|Optional service
 |Smart Rules| Use the Smart Rule engine and create [smart rules](/guides/users-guide/cockpit#smart-rules) to perform actions based on realtime data. Requires one of the following applications: Cep, Apama|smartrule|Microservice| Standard Edition
 |[SSL management](/guides/users-guide/enterprise-edition/customization)|Activate your own custom domain name by using a SSL certificate.|ssl-management|Microservice|Enterprise Edition
-|[Tenant SLA Monitoring](/guides/users-guide/optional-services/tenant-sla-monitoring)|Lets service providers monitor the availability and response time of tenants and sub-tenants.|tenant-sla-monitoring|Microservice|Enterprise Edition
+|[Tenant SLA Monitoring](/guides/users-guide/optional-services/tenant-sla-monitoring)|Lets service providers monitor the availability and response time of tenants and sub-tenants.|tenant-sla-monitoring|Microservice|Optional service
 |[User hierarchies](/guides/users-guide/enterprise-edition/user-hierarchies)|Reflect independent organizational entities in Cumulocity that share the same database.|feature-user-hierarchy|Feature|Enterprise Edition
 

@@ -49,10 +49,10 @@ There is no internet connection required during installation. Internet connectio
 
 The virtual machine has the following hardware requirements:
 
-100 GB of free disk space
-Intel x86 CPU
-Recommended: 8 GB RAM, minimum: 4 GB RAM
-Recommended: 4 logical CPU cores, minimum: 2 logical CPU cores
-One NIC
+* 100 GB of free disk space
+* Intel x86 CPU
+* Recommended: 8 GB RAM, minimum: 4 GB RAM
+* Recommended: 4 logical CPU cores, minimum: 2 logical CPU cores
+* One NIC
 
 >**Info**: This does not cover host OS hardware requirements.

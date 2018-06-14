@@ -8,7 +8,7 @@ layout: redirect
 
 Download the VirtualBox package for your operating system from [https://www.virtualbox.org/wiki/Downloads](https://www.virtualbox.org/wiki/Downloads) and install it.
 
-**Info**: In the Virtualbox, the configuration is in the “Global Tools” tab in the upper right corner.
+>**Info**: In the Virtualbox, the configuration is in the “Global Tools” tab in the upper right corner.
 
 Click **Create** to set a host only network interface for VM. 
 
@@ -20,9 +20,7 @@ In the "NAT Network" tab, click the plus icon to add a new network.
 
 In the "Name" field, enter a name for the new network, e.g. "NatNetwork". 
 
-> still relevant?
-
-Click the settings icon on the right and make sure that “Enable network” is enabled, which is the default. This network interface is used for outbound Internet/Intranet access.
+Click the settings icon on the right and make sure that “Enable network” is activated, which is the default. This network interface is used for outbound Internet/Intranet access.
 
 <img src="/guides/images/edge/edge-vm-nat-network-details.png" name="NAT network details" style="width:75%;"/>
 
@@ -32,8 +30,8 @@ Switch to the “Host-only Networks” tab and click the plus icon to add a new 
 
 Click the settings icon on the right and make sure that IP and mask is set to the following values:
 
-IP: 192.168.56.1
-Mask: 255.255.255.0
+* IP: 192.168.56.1
+* Mask: 255.255.255.0
 
 <img src="/guides/images/edge/edge-vm-host-only-details.png" name="NAT network details" style="width:75%;"/>
 
@@ -64,24 +62,9 @@ Start the virtual machine by clicking the **Start** button on the top left.
 
 Use the following login credentials for SSH login into the Edge instance:
  
-Username: admin
-Password: manage
+* Username: admin
+* Password: manage
 
 Use the following command to log into Edge server via SSH:
 
-$ 
-  Password: manage
-
-
-### Importing the certificate in the browser
-
-For a secure communication (HTTPS) with the server you need to import a security certificate in your browser.
-
-> **Info**: The following step refer to importing a security certificate for the Chrome browser. The procedure is similar for any other browser.
-
-1. Click "Chrome" > "Preferences" to open the settings section. 
-2. Click "Manage Certificates" in the "Privacy & Security" section (under "Advanced").
-3. Import the provided .crt file from the folder "cert" in the file "cert-tools.zip".
-4. Activate all three check boxes under "Trust settings" and click **OK**.
-
-The certificate is imported. To view it, select it in the browser and click **View**.
+	$ Password: manage

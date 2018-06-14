@@ -1,6 +1,6 @@
 ---
-order: 40
-title: Connecting to the cloud
+order: 30
+title: Realtime analytics using Apama
 layout: redirect
 ---
 

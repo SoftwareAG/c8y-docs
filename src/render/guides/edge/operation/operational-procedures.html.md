@@ -1,5 +1,5 @@
 ---
-order: 10
+order: 40
 title: Operational procedures
 layout: redirect
 ---
@@ -16,7 +16,7 @@ Execute the following command:
 
 	# systemctl start cumulocity-core-karaf
 
-This will start the Karaf OSGi container when required. 
+This will start the Karaf OSGi container if required. 
 
 ##### Stop Karaf processes
 
@@ -24,7 +24,7 @@ Execute the following command:
 
 	# systemctl stop cumulocity-core-karaf
 
-This will stop the Karaf OSGi container when required. 
+This will stop the Karaf OSGi container if required. 
 
 #### opcua-agent-server
 
@@ -36,7 +36,7 @@ Execute the following command:
 
 	# systemctl start opcua-agent-server
 
-This will start the opcua-agent-server when required. 
+This will start the opcua-agent-server if required. 
 
 ##### Stop opcua-agent-server
 
@@ -44,7 +44,7 @@ Execute the following command:
 
 	# systemctl stop opcua-agent-server
 
-This will stop the opcua-agent-server when required. 
+This will stop the opcua-agent-server if required. 
 
 ##### Restart opcua-agent-server
 
@@ -52,7 +52,7 @@ Execute the following command:
 
 	# systemctl restart opcua-agent-server
 
-This will restart the opcua-agent-server when required. 
+This will restart the opcua-agent-server if required. 
 
 #### smartrule-agent-server-apama
 
@@ -64,7 +64,7 @@ Execute the following command:
 
 	# systemctl start smartrule-agent-server-apama
 
-This will start the smartrule-agent-server-apama when required. 
+This will start the smartrule-agent-server-apama if required. 
 
 ##### Stop smartrule-agent-server-apama
 
@@ -72,7 +72,7 @@ Execute the following command:
 
 	# systemctl stop smartrule-agent-server-apama
 
-This will stop the smartrule-agent-server-apama when required. 
+This will stop the smartrule-agent-server-apama if required. 
 
 ##### Restart smartrule-agent-server-apama
 
@@ -80,60 +80,32 @@ Execute the following command:
 
 	# systemctl restart smartrule-agent-server-apama
 
-This will restart the smartrule-agent-server-apama when required. 
+This will restart the smartrule-agent-server-apama if required. 
 
-#### MongoDB
 
-On the Edge server, execute the following commands as root user.
-
-##### Start MongoDB process
-Execute the following command:
-
-	# systemctl start mongo
-
-This will start the mongod server when required. 
-
-##### Stop MongoDB process
-
-Execute the following command:
-
-	# systemctl stop mongo
-
-This will stop the mongod server when required. 
-
-##### Restart MongoDB process
-
-Execute the following command:
-
-	# systemctl restart mongo
-
-This will restart the mongod server when required. 
-
-#### cumulocity-agent
+#### Apama
 
 On the Edge server, execute the following commands as admin user. 
 
-##### Start cumulocity-agent
+##### Start apama
 
 Execute the following command:
 
-	# systemctl start cumulocity-agent
+	# service apama start
 
-This will start the cumulocity-agent when required. 
+This will start the apama service if required. 
 
-##### Stop cumulocity-agent
+##### Stop apama
+Execute the following command:
+
+	# service apama stop
+
+This will stop the apama service if required. 
+
+##### Restart smartrule-agent-server-apama
 
 Execute the following command:
 
-	# systemctl stop cumulocity-agent
+	# service apama restart
 
-This will stop the cumulocity-agent when required. 
-
-##### Restart cumulocity-agent
-
-Execute the following command:
-
-	# systemctl restart cumulocity-agent
-
-This will restart the cumulocity-agent when required. 
-
+This will restart the apama service if required.

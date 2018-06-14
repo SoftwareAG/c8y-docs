@@ -1,7 +1,7 @@
 
 ---
 order: 30
-title: Using Cumulocity Edge
+title: Working with Cumulocity Edge
 layout: subsections
 collection: 'guides/edge/usage'
 ---

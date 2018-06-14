@@ -6,7 +6,7 @@ layout: redirect
 
 ### Preparation
 
-Copy the Edge licence, SSL key, SSL certificate and, if available, Apama license into the Edge VM folder (directory "home/admin"). 
+Copy the Edge licence, SSL key, SSL certificate - and if available Apama license - into the Edge VM folder (directory "home/admin"). 
 
 The files have the following extensions:
 
@@ -16,9 +16,9 @@ The files have the following extensions:
 * Apama licence file: “.xml”
 
 
-### Configuring Edge Server
+### Configuring the Edge server
 
-Once Edge VM is started, you need to run the script “post_installation.sh” to configure Edge Server. The post-installation script is available in the folder “/opt/c8y/utilities”.
+Once Edge VM is started, you need to run the script “post_installation.sh” to configure the Edge server. The post-installation script is available in the folder “/opt/c8y/utilities”.
 
 1. Browse to the folder "/opt/c8y/utilities". 
 

@@ -1,0 +1,20 @@
+---
+order: 10
+title: Overall concepts
+layout: redirect
+---
+
+### Networking overlay
+
+The following image shows the networking overlay of Edge server. Two network adapters are attached to the VM with different functionality, as described in the image. 
+
+<img src="/guides/images/edge/edge-networking.jpg" name="Networking" style="width:75%;"/>
+
+
+### Component overlay
+
+The following image covers the components Edge is built with. 
+
+<img src="/guides/images/edge/edge-components.jpg" name="Components" style="width:750%;"/>
+ 
+

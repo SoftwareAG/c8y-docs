@@ -20,3 +20,10 @@ Topic:
 ```
 t/ul/<X-ID>;
 ``` 
+
+[Cumulocity SmartREST protocol](/guides/reference/smartrest) also supports *QUIESCENT* processing mode for avoiding real-time notifications by publishing on MQTT q/ topic instead of s/ topic. Currently, the QUIESCENT processing mode is only applicable for measurements and events only.
+
+Topic:
+```
+q/ul/<X-ID>;
+```

@@ -16,7 +16,12 @@ To publish messages in *TRANSIENT* mode:
 t/<api>/<resource>/<action>/<id>
 ```
 
-Refer to [Processing Mode](/guides/reference/rest-implementation#processingmode) for more information about transient data processing.
+To publish messages in *QUIESCENT* mode:
+```
+q/<api>/<resource>/<action>/<id>
+``` 
+
+Refer to [Processing Mode](/guides/reference/rest-implementation#processingmode) for more information about transient & quiescent data processing.
 
 ### Topic actions
 

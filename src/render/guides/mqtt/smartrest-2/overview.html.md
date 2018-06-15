@@ -21,7 +21,12 @@ To publish messages in *TRANSIENT* mode:
 t/uc/<X-ID>
 ```
 
-Please, refer to [Processing Mode](/guides/reference/smartrest#processing-mode) section in SmartREST for more information about transient data processing.
+To publish messages in *QUIESCENT* mode:
+```
+q/uc/<X-ID>
+```
+
+Please, refer to [Processing Mode](/guides/reference/smartrest#processing-mode) section in SmartREST for more information about transient & quiescent data processing.
 
 To subscribe for responses:
 ```

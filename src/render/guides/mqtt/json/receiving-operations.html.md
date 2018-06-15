@@ -4,9 +4,9 @@ layout: redirect
 title: Receiving operations
 ---
 
-A notification client can subscribe to `devicecontrol/notifications` topic to receive notifications of newly created operations.Initially upon subscription all operations which are not yet forwarded will be published.
+A notification client can subscribe to `devicecontrol/notifications` topic to receive notifications of newly created operations. Initially upon subscription all operations which are not yet forwarded will be published.
 
-Additionally,it contains [External ID](/guides/reference/identity/#external-id) so the client can identify for which child the operation is executed.
+Additionally,it contains an [External ID](/guides/reference/identity/#external-id) so the client can identify for which child the operation is executed.
 
 Example notification:
 ```

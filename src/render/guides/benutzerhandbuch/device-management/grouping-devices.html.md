@@ -1,94 +1,93 @@
 ---
 order: 30
-title: Grouping devices
+title: Gruppieren von Geräten
 layout: redirect
 ---
 
-Devices can be arbitrarily grouped according to a particular use case. A device can be located in multiple groups, and groups themselves can again be part of multiple groups.
+Sie können Geräte beliebig nach Ihren Bedürfnissen gruppieren. Ein Gerät kann sich in mehreren Gruppen befinden und Gruppen selbst können wiederum Teil von mehreren anderen Gruppen sein. 
 
-Cumulocity distinguishes between top-level groups and subgroups. 
+Cumulocity unterscheidet zwischen Top-Level-Gruppen und untergeordneten Gruppen. 
 
-Top-level groups are shown in the "Group" menu in the navigator at top-level. Subgroups are used to further subdivide top-level groups.
 
-### Viewing groups
+### Anzeigen von Gruppen
 
-To display a list of all groups in the account, click "Groups" in the navigator. 
+Um eine Liste aller Gruppe in Ihrem Konto anzuzeigen, klicken Sie "Gruppen" im Navigator. 
 
-<img src="/guides/images/users-guide/DeviceManagement/DevMgmt_GroupList.png" alt="Groups list" style="max-width: 100%">
+<img src="/guides/images/benutzerhandbuch/devmgmt_groups.png" alt="Gruppen" style="max-width: 100%">
 
-For each group, the name and the number of children is displayed.
+Für jede Gruppe wir der Name und die Anzahl der Kindern angezeigt.
 
-Click a group to view its details. 
+Klicken Sie auf eine Gruppe, um Details dieser Gruppe anzuzeigen. 
 
-<img src="/guides/images/users-guide/DeviceManagement/DevMgmt_GroupDetails.png" alt="Group details" style="max-width: 100%">
+<img src="/guides/images/benutzerhandbuch/devmgmt-group-details.png" alt="Gruppendetails" style="max-width: 100%">
 
-**Info Tab**
+**Registerkarte Info**
 
-In the **Info** tab, the following information is provided:
+In der Registerkarte "Info" werden folgende Informationen angezeigt:
 
-|Card|Description|
+|Karte|Beschreibung|
 |:---|:---|
-|Notes|Provides optional notes to inform about current activities. Notes usually may only be edited by an administrator. To add or edit a note, click **Edit**, enter your note or your modifications in the text box and save your edits by clicking the green checkmark at the right of the text box. 
-|Group data|Displays editable information on the group (name, description).
-|Active, critical alarms|Shows the active critical alarms for the devices in the group.
+|Anmerkungen|Optionale Anmerkungen, die beispielsweise über aktuelle Aktivitäten informieren. Diese können üblicherweise nur von einem Administrator editiert werden. Um Anmerkungen hinzuzufügen oder zu editieren, klicken Sie **Bearbeiten**, geben Sie Ihre Änderungen im Textfeld ein und speichern Sie Ihre Eingaben, in dem Sie auf das grüne Häkchen rechts vom Textfeld klicken. 
+|Gruppendaten|Editierbare Informationen zur Gruppe (Name, Beschreibung).
+|Aktive kritische Alarme|Aktive kritische Alarme für die Geräte in der Gruppe.
 
-**Sub-assets**
+**Kind-Assets**
 
-In the "Sub-assets" tab you see a list of all devices assigned to the group. For each device, the name and the number of children is displayed.
+In der Registerkarte "Kind-Assets" werden alle Geräte angezeigt, die der Gruppe zugewiesen wurden. Für jedes Kind-Asset wird der Name und im Fall einer Gruppe die Anzahl der Kinder angezeigt. 
 
-<img src="/guides/images/users-guide/DeviceManagement/DevMgmt_GroupSubAssets.png" alt="Sub-assets" style="max-width: 100%">
+<img src="/guides/images/benutzerhandbuch/devmgmt-child-assets.png" alt="Kind-Assets" style="max-width: 100%">
 
-To assign a device to a group, click **Assign devices** at the right of the top menu bar (see [How to assign a device to an existing group](#assigning-devices)).
+Um eine Gerät einer Gruppe zuzuweisen, klicken Sie **Geräte zuweisen** rechts in der oberen Menüleiste (siehe [Zuweisen eines Geräts zu einer bestehenden Gruppe](#assigning-devices)).
 
-To unassign a device, click the menu icon in a device entry and from the context menu select **Unassign**.
+Um eine Zuweisung aufzuheben, öffnen Sie in dem entsprechenden Eintrag das Kontextmenü über das Menüsymbol und wählen Sie **Zuordnung aufheben**.
 
-**Bulk operations**
+**Sammelkommandos**
 
-In the "Bulk operations" tab, bulk operations created for the group can be managed. With bulk operations you can at once execute operations for each device within one group. For details, refer to [Bulk operations](#bulk-operations).
+In der Registerkarte "Sammelkommandos" können Sammelkommandos, die für die Gruppe erstellt wurden, verwaltet werden. Mit Sammelkommandos können Sie in einem Schritt Kommandos für jedes Gerät in der Gruppe ausführen. Weitere Informationen finden Sie unter [Sammelkommandos](#bulk-operations) in "Überwachen und Steuern von Geräten".
 
 
-### How to create a new group
+### Erstellen einer neuen Gruppe
 
-To create a new group follow these steps:
+Um eine neue Gruppe zu erstellen, führen Sie folgende Schritte aus:
 
-1. Click the **Plus** button at the right of the top bar, then select **New group** from the menu.
-2. In the window that comes up enter a unique group name to identify your group.
-3. In the "Device Search" field, enter the search criteria for the devices you might want to add to your group (e.g. "ublox"). A list of devices that match your search criteria will be displayed. 
-4. Checkmark the devices you want to add from the list.
-5. Click **Create group with X device(s)** to finally create your new group. 
+1. Klicken Sie die **Plus**-Schaltfläche rechts in der oberen Leiste und wählen Sie im Kontextmenü **Neue Gruppe**.
+2. Geben Sie im folgenden Fenster einen eindeutigen Namen für die Gruppe an.  
+3. Im Suchfeld können Sie Suchkriterien für die Geräte eingeben, die Sie zu der Gruppe hinzufügen möchten (z.B. "ublox"). Es wird eine Liste der passenden Geräte angezeigt.
+4. Wählen Sie durch Aktivieren des jeweiligen Kontrollkästchens die Geräte aus, die Sie zur Gruppe hinzufügen möchten.
+5. Klicken Sie **Gruppe mit X Gerät(en) erstellen**, um die neue Gruppe zu erstellen. 
 
->**Info:** A group can be created with "0" devices in it.
+>**Info:** Eine Gruppe kann auch mit "0" Geräten erstellt werden.
 
-<img src="/guides/images/users-guide/addtopgroup.png" alt="Device Management" style="max-width: 100%">
+<img src="/guides/images/benutzerhandbuch/devmgmt-new-group.png" alt="Gruppe erstellen" style="max-width: 100%">
 
-### <a name="assigning-devices"></a>How to assign a device to an existing group
+### <a name="assigning-devices"></a>Zuweisen eines Geräts zu einer bestehenden Gruppe
 
-You can assign devices to an existing group in two ways. 
+Geräte können auf zwei Arten zu einer bestehenden Gruppe hinzugefügt werden. 
 
-From the device perspective:
+Aus der Geräteperspektive:
 
-1. Select a device from the device list and open it.
-2. In the "Info" tab, scroll down to the "Groups assignment" card. In the drop-down field, select the group you want to assign the device to. 
-3. Click **Add to group**.
+1. Wählen Sie ein Gerät aus der Geräteliste und öffnen Sie es. 
+2. Scrollen Sie in der Registerkarte "Info" zur Karte "Gruppenzuordnung". Wählen Sie im Auswahlfeld die Gruppe aus, der Sie das Gerät zuweisen möchten.
+3. Klicken Sie **Zuweisen**.
 
-<img src="/guides/images/users-guide/DeviceManagement/DevMgmt_GroupAssignment.png" alt="Add to group" style="max-width: 50%">
+<img src="/guides/images/benutzerhandbuch/devmgmt-assign-device.png" alt=" Gruppe zuweisen" style="max-width: 50%">
 
-From the group perspective:
+Aus der Gruppenperspektive:
 
-1. In the navigator, select a group from the "Group" menu and then open the "Sub-assets" tab. In the "Sub-assets" tab, all devices that are assigned to the respective group are displayed. 
-2. Click **Assign devices** at the right of the top menu bar. In the upcoming window search for the devices you might want to add to your group (e.g. "ublox"). A list of devices that match your search criteria will be displayed. 
-3. Checkmark the devices you want to add from the list.
-4. Click **Assign X device(s)** to assign the selected devices. 
+1. Wählen Sie im Navigator eine Gruppe aus dem Menü "Gruppe" und wechseln Sie zur Registerkarte "Kind-Assets". Alle Geräte, die dieser Gruppe zugeordnet sind, werden angezeigt.  
+2. Klicken Sie **Geräte zuweisen** rechts in der oberen Menüleiste. Im folgenden Fenster können Sie Suchkriterien für die Geräte eingeben, die Sie zu der Gruppe hinzufügen möchten (z.B. "ublox"). Es wird eine Liste der passenden Geräte angezeigt.
+3. Wählen Sie durch Aktivieren des jeweiligen Kontrollkästchens die Geräte aus, die Sie zur Gruppe hinzufügen möchten.
+5. Klicken Sie **Gruppe mit X Gerät(en) erstellen**, um die Geräte zur Gruppe hinzuzufügen. 
 
-<img src="/guides/images/users-guide/DeviceManagement/DevMgmt_AssignDevices.png" alt="Assign devices to a group" style="max-width: 50%">
+<img src="/guides/images/benutzerhandbuch/devmgmt-assign-devices-from-group.png" alt=" Geräte zuweisen" style="max-width: 50%">
 
-### How to create a sub-group
+### Erstellen einen untergeordneten Gruppe
 
-1. In the navigator, click a group to open it. 
-2. Click **Add Group** at the right of the top menu bar. 
-2. In the upcoming window, enter a name for the sub-group and click **Add group**.
+1. Wählen Sie im Navigator eine Gruppe aus. 
+2. Klicken Sie **Gruppe hinzufügen** rechts in der oberen Menüleiste. 
+2. Geben Sie im folgenden Fenster einen Namen für die untergeordnete Gruppe an und klicken Sie **Gruppe hinzufügen**.
 
-### How to edit a group
+### Bearbeiten einer Gruppe
 
 1. In the navigator, click a group to open it. 
 2. In the "Info" tab, click **Edit**. This allows you to edit the name of the group and to assign user permissions for the group. 

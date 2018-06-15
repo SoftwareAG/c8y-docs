@@ -4,49 +4,7 @@ layout: redirect
 title: Accessing the Service APIs
 ---
 
-In the following section you will learn how to send an email via the Java Client API.
-
-### Sending an Email via Java Client API
-
-The interface for handling email services can be obtained from Java by using the platform method as follows:
-
-    EmailApi emailApi = platform.getEmailApi();
-
-If you would like to send an email from Java, build an email object and call a respective method of an email API:
-
-    Email email = EmailBuilder.aEmail().
-                               withTo("primarydestination@somemail.com").
-                               withCc("copydestination@somemail.com").
-                               withReplyTo("wheretoreply@somemail.com").
-                               withSubject("New incoming message").
-                               withText("Hello World!").
-                               build();
-    HttpStatus httpStatus = emailApi.sendEmail(email);
-
-The destination and the copy and blind copy fields can contain several values, like
-withTo("to1@email.com", "to2@email.com"). 
-
-> Note: When requests to the email API contain any form of attachment, a "500" server error is returned.
-
-A call to an email API returns an HTTP status of a request, 200 OK in case if an email was sent successfully.
-
-Disclaimer: Email API is only available with upcoming Microservice feature.
-
-#### Email management endpoint
-
-The new endpoint is a POST to /email/emails expecting an email as json. For example:
-    
-    POST /email/emails
-    Host: ...
-    Authorization: Basic ...
-    Content-Type: application/json
-    {
-      "to": ["first@somemail.com", "second@somemail.com"],
-      "cc": ["copydestination@somemail.com"],
-      "replyTo": "wheretoreply@somemail.com",
-      "subject": "New incoming message",
-      "text": "Hello world!"
-    }
+In the following section you will learn how to send and receive SMS messages via the Java Client API.
 
 ### Accessing SMS Messaging API
 

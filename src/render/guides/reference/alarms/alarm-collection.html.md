@@ -150,7 +150,7 @@ Example response:
 
 ### PUT - bulk update of alarm collection 
 
-The PUT method allows for update alarms collections, currently only status of alarm can be changed. 
+The PUT method allows for updating alarms collections. Currently only the status of alarms can be changed.
   
 Request body: 
 
@@ -162,7 +162,7 @@ Required role: ROLE\_ALARM\_ADMIN
 
 Response status: 
     
- * 200 - if the process has finished, all alarms have been updated 
+ * 200 - if the process has completed, all alarms have been updated 
  * 202 - if process continues in background
  
 Example request: clear all active alarms

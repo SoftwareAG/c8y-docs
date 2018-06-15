@@ -49,6 +49,6 @@ Example response:
 		"alarmsForSourceAndTime" : "<<AlarmCollection URL>>?source={source}&dateFrom={dateFrom}&dateTo={dateTo}",
 		"alarmsForSourceAndStatusAndTime" : "<<AlarmCollection URL>>?source={source}&status={status}&dateFrom={dateFrom}&dateTo={dateTo}",
 		"alarmsForSourceWithAssetsAndWithDevices": "<<AlarmCollection URL>>?source={source}&withAssets={withAssets}&withDevices={withDevices}"
-		"alarmsForResolved": "<<AlarmCollection URL>>??resolved={resolved}",
-		"alarmsForSeverity": "<<AlarmCollection URL>>??severity={severity}",
+		"alarmsForResolved": "<<AlarmCollection URL>>?resolved={resolved}",
+		"alarmsForSeverity": "<<AlarmCollection URL>>?severity={severity}",
 	}

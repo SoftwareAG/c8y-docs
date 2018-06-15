@@ -58,27 +58,13 @@ Using this handle, you can send and retrieve the sms messages from Java by calli
 
 #### Prerequisites
 
-1.Sms Gateway Microservice and setting tenant options
-
-The information about sms-gateway microservice's URL should be given in the tenant options.
-Please use our Rest API to store this information as the following:
-
-    POST /tenant/options
-    Host: ...
-    Authorization: Basic ...
-
-    {
-      "category": "sms",
-      "key": "microservice.url",
-      "value": "<IP/Domain>:8688/sms-gateway"
-    }
-
-2.Assigning required roles
+##### Assigning required roles 
 
 To use the sms messaging API group of the user should have required roles such as 'SMS_ADMIN' for sending and 'SMS_READ' for receiving messages.
+
 Please see '[Assigning account-wide permissions](/guides/users-guide/administration/#managing-permissions)'
 
-3.Choosing a sms provider
+##### Choosing a sms provider
   
 * OpenIT
 
@@ -250,7 +236,7 @@ Sender name:
 
 Note that receiving messages and receiving specific message are not supported for this provider.
 
-#### Sending a message:
+#### Sending a message
 
 To send a sms message using the API, prepare the message with the "send message request builder" and call the "send message" function of the API with the message.
 
@@ -262,7 +248,7 @@ To send a sms message using the API, prepare the message with the "send message 
 
     smsMessagingApi.sendMessage(smsMessage);
 
-#### Receiving all messages:
+#### Receiving all messages
 
 Not every sms provider supports receiving messages. 
 
@@ -270,7 +256,7 @@ To receive all sms messages you can use API as follows:
 
     smsMessagingApi.getAllMessages(Address.phoneNumber("<phone number>"));
 
-#### Receiving a specific message:
+#### Receiving a specific message
 
 Not every sms provider supports receiving messages. 
 
@@ -278,13 +264,13 @@ To receive a specific sms message you can use API as follows:
 
     smsMessagingApi.getMessage(Address.phoneNumber("<phone number>"), "<message id>");
 
-#### Sms management endpoints
+#### SMS management endpoints
 
 To accomplish the same behaviour, Rest API can be used.
 
 Sending message:
 
-    POST /service/sms/smsmessaging/outbound/tel:<sender phone number>/requests
+    POST /service/messaging/smsmessaging/outbound/tel:<sender phone number>/requests
     Host: ...
     Authorization: Basic ...
     Content-Type: application/json
@@ -305,7 +291,7 @@ Sending message:
 
 Receiving all messages:
 
-    GET /service/sms/smsmessaging/inbound/registrations/tel:<receiver phone number>/messages
+    GET /service/messaging/smsmessaging/inbound/registrations/tel:<receiver phone number>/messages
     Host: ...
     Authorization: Basic ...
 
@@ -326,7 +312,7 @@ Receiving all messages:
     
 Receiving a specific message:
 
-    GET /service/sms/smsmessaging/inbound/registrations/tel:<receiver phone number>/messages/<message id>
+    GET /service/messaging/smsmessaging/inbound/registrations/tel:<receiver phone number>/messages/<message id>
     Host: ...
     Authorization: Basic ...
 

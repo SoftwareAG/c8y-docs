@@ -66,4 +66,4 @@ Please, note that with *TRANSIENT* mode in the header the body data is not persi
 
 During real-time processing, the Cumulocity Event Language scripts can be used to define if updates should be stored in the database or not.
 
-The *QUIESCENT* processing mode should be specified if data sent to the *SmartREST* endpoint must be both stored in Cumulocity database and be transferred to real-time processing but real-time notifications must be disabled. Currently, the QUIESCENT processing mode is only applicable for measurements and events only.
+The *QUIESCENT* processing mode should be specified if data sent to the *SmartREST* endpoint must be both stored in the Cumulocity database and be transferred to real-time processing but real-time notifications must be disabled. Currently, the QUIESCENT processing mode is applicable for measurements and events only.

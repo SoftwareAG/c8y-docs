@@ -147,3 +147,46 @@ Example request:
 Example response:
 
     HTTP/1.1  204 NO CONTENT
+
+### PUT - bulk update of alarm collection 
+
+The PUT method allows for updating alarms collections. Currently only the status of alarms can be changed.
+  
+Request body: 
+
+      { status: <new_status> }
+  
+Response body: N/A
+
+Required role: ROLE\_ALARM\_ADMIN
+
+Response status: 
+    
+ * 200 - if the process has completed, all alarms have been updated 
+ * 202 - if process continues in background
+ 
+Example request: clear all active alarms
+ 
+     PUT: /alarm/alarms?status=ACTIVE
+     Host: ...
+     Authorization: Basic ...      
+     {
+        "status": "CLEARED"
+     }
+      
+Example response:
+ 
+     HTTP/1.1  202 Accepted    
+
+The endpoint uses query parameters. At least one query parameter is required for processing to avoid accidentally updating all existing alarms.
+  
+Acceptable query parameters are:
+
+* status           
+* source
+* resolved
+* severity
+* dateFrom
+* dateTo
+
+Since this operations can take a lot of time, request returns after maximum 0.5 sec of processing, and updating is continued as a background process in the platform.     

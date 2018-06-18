@@ -29,7 +29,7 @@ Example notification:
   "description": "Execute shell command",
   "externalSource": {
     "externalId": "3",
-    "type": "com_cumulocity_model_idtype_SerialNumber"
+    "type": "c8y_Serial"
   }
 }
 ```

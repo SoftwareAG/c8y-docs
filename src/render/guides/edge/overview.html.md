@@ -35,6 +35,3 @@ Items marked in brackets &lt;x&gt; need to be replaced by a custom value when ex
 should be edited like
 
 	user=johndoe
-
-
-The default user for EDGE is “admin”. This is the only user customer will be logging in as. Root privileges for the machine are restricted to customer. 

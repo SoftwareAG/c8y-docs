@@ -57,19 +57,17 @@ You will be prompted to select one of the following options:
 
 		$ Enter Domain SSL Certificate file path
 
-1. Provide the absolute path for the SSL certificate file, but provide complete path for “.key” file.
+1. Provide the complete path for the “.key” file.
 
-$ Enter Domain SSL Certificate Private Key file path 
-Follow step 5.d.i, but provide complete path for “.key” file.
+		$ Enter Domain SSL Certificate Private Key file path 
 
-$ Enter Cumulocity License file path
-Follow step 5.d.i, but provide complete path for “.license” file.
+1. Provide the complete path for the “.license” file.
 
-$ Enter Apama License file path (Optional. Press Enter to continue)
-Follow step 5.d.i, but provide complete path for “.xml” file.
+		$ Enter Cumulocity License file path
 
+1. Provide the complete path for the “.xml” file.
 
-
+		$ Enter Apama License file path (Optional. Press Enter to continue)
 
 
 #### Updating SSL certificates or Cumulocity licence (Option 2)
@@ -78,14 +76,18 @@ Follow step 5.d.i, but provide complete path for “.xml” file.
 
 		$ Enter Domain SSL Certificate file path
 
+1. Provide the complete path for the “.key” file.
 
-$ Enter Domain SSL Certificate Private Key file path 
-Follow step 5.d.i, but provide complete path for “.key” file.
+		$ Enter Domain SSL Certificate Private Key file path 
 
-$ Enter Cumulocity License file path
-Follow step 5.d.i, but provide complete path for “.license” file.
+1. Provide the complete path for the “.license” file.
 
-$ Enter Apama License file path (Optional. Press Enter to continue)
-Follow step 5.d.i, but provide complete path for “.xml” file.
+		$ Enter Cumulocity License file path
 
-Once execution is completed successfully, you will find execution completed message on screen. If there is any failure message, check Edge operations manual.
+1. Provide the complete path for the “.xml” file.
+
+		$ Enter Apama License file path (Optional. Press Enter to continue)
+
+
+
+Once the execution has been completed successfully, a respective message will be displayed. In case of any failure messages, refer to [Operations](guides/edge/operations).

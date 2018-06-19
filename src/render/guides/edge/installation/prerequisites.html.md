@@ -10,10 +10,10 @@ To install Cumulocity Edge, the following items need to be available:
 
 * Virtualbox <br>
 Version: 5.2.8<br>
-To be be downloaded from [https://www.virtualbox.org/wiki/Download_Old_Builds_5_2](https://www.virtualbox.org/wiki/Download_Old_Builds_5_2)
+To be be downloaded from [https://www.virtualbox.org/wiki/Download&#95;Old&#95;Builds&#95;5&#95;2](https://www.virtualbox.org/wiki/Download_Old_Builds_5_2)
 	
 * Edge OVA image <br>
-To be downloaded from SAG Empower portal
+To be downloaded from the [SAG Empower portal](https://empower.softwareag.com) 
 
 * Cumulocity licence file <br>
 Please send an email to support@cumulocity.com to request the license file.
@@ -25,10 +25,11 @@ In the email, you must include the following details:
 Use your internal or an external CA to create these
 
 * Apama licence <br>
-Optional
+The Apama licence will be part of the purchase. For existing customers, please send an email to [support@softwareag.com](support@softwareag.com) to request the licence.
 
 * DNS entry <br>
-Optional
+The DNS (Domain Name System) is used to resolve human readable host names like
+`www.cumulocity.com` to machine readable IP addresses like `192.198.1.10`.
 
 ### Network connectivity
 
@@ -45,6 +46,38 @@ If Edge should communicate with the cloud, the following ports of www.cumulocity
 
 There is no internet connection required during installation. Internet connection during runtime is optional, and only used if this is configured in the Data Broker. 
 
+#### Incoming traffic
+
+The following ports need to be enabled by default in order to accept traffic from users and devices on the internet:
+
+|Source IP|Source Port|Destination IP|Destination Port|Service
+|:---|:---|:---|:---|:---
+|any|any|external load balancer IP|TCP/80|HTTP
+|any|any|external load balancer IP|TTCP/443|HTTPS
+|any|any|external load balancer IP|TCP/1883|MQTT
+|any|any|external load balancer IP|TCP/8883|MQTT/TLS
+
+Depending on additional integrations more ports must be opened. 
+
+Moreover, there is the management port 8111. It is strongly recommended to hide this port behind the firewall and allow the traffic only from selected IPs or/and via VPN. 
+
+In addition, the firewall must support long lasting sessions. The TCP session timeout should be set to 14.400 seconds.
+
+#### Outgoing Traffic
+
+The core nodes and the CEP node must be able to connect to the internet. Ports required to outside are:
+
+|Service|Port|
+|:---|:---|
+|HTTP|80|
+|HTTPS|443|
+|SMTP|25|
+
+Depending on the installed integrations (email, SMS, etc.) different ports might have to be opened in order to make these services available to the Cumulocity platform. The descriptions of these ports are delivered with the corresponding integrations.
+
+Depending on the DNS and NTP setup it might be the case that DNS (UDP/53) and NTP (UDP/123) connections to the internet must be possible from all hosts.
+
+
 ### Hardware requirements
 
 The virtual machine has the following hardware requirements:
@@ -56,3 +89,15 @@ The virtual machine has the following hardware requirements:
 * One NIC
 
 >**Info**: This does not cover host OS hardware requirements.
+
+
+### Edge versions
+
+Cumulocity Edge 1.0 uses the following versions:
+
+|Edge component|version|
+|:---|:---|
+|Cumulocity Core|9.0.10|
+|Apama|10.1.0.5|
+
+

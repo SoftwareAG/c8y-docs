@@ -60,9 +60,6 @@ Start the virtual machine by clicking the **Start** button on the top left.
 
 ### VM login details
 
-The default user for EDGE is “admin”. This is the only user customer will be logging in as. Root privileges for the machine are restricted to customer. 
-
-
 Use the following login credentials for SSH login into the Edge instance:
  
 * Username: admin
@@ -71,3 +68,5 @@ Use the following login credentials for SSH login into the Edge instance:
 Use the following command to log into Edge server via SSH:
 
 	$ Password: manage
+	
+>**Info**: The default user for Edge is “admin”. The admin user has root privileges for the machine.  

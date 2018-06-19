@@ -38,7 +38,7 @@
 
 				// Apply
 				if ( tween.prop === 'scrollLeft' ) {
-					tween.options.bodyScrollLeft = Math.round(tween.now);
+					//tween.options.bodyScrollLeft = Math.round(tween.now);
 				}
 				else if ( tween.prop === 'scrollTop' ) {
 					tween.options.bodyScrollTop = Math.round(tween.now);
@@ -148,7 +148,7 @@
 			if ( config.onlyIfOutside ) {
 				// Determine current scroll positions
 				containerScrollTopEnd = containerScrollTop + $container.height();
-				containerScrollLeftEnd = containerScrollLeft + $container.width();
+				containerScrollLeftEnd = 0;//containerScrollLeft + $container.width();
 
 				// Check if we are in the range of the visible area of the container
 				if ( containerScrollTop < targetOffsetTopAdjusted && targetOffsetTopAdjusted < containerScrollTopEnd ) {
@@ -164,7 +164,7 @@
 				scrollOptions.scrollTop = targetOffsetTopAdjusted;
 			}
 			if ( targetOffsetLeftAdjusted !== containerScrollLeft ) {
-				scrollOptions.scrollLeft = targetOffsetLeftAdjusted;
+				scrollOptions.scrollLeft = 0;//targetOffsetLeftAdjusted;
 			}
 
 			// Check to see if the scroll is necessary

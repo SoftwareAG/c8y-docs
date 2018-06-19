@@ -37,4 +37,3 @@ These are listed in the following table. The columns show the following informat
 |[SSL management](/guides/users-guide/enterprise-edition/customization)|Activate your own custom domain name by using a SSL certificate.|ssl-management|Microservice|Enterprise Edition
 |[Tenant SLA Monitoring](/guides/users-guide/optional-services/tenant-sla-monitoring)|Lets service providers monitor the availability and response time of tenants and sub-tenants.|tenant-sla-monitoring|Microservice|Optional service
 |[User hierarchies](/guides/users-guide/enterprise-edition/user-hierarchies)|Reflect independent organizational entities in Cumulocity that share the same database.|feature-user-hierarchy|Feature|Enterprise Edition
-

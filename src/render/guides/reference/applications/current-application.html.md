@@ -87,7 +87,10 @@ Example response:
       "type": "MICROSERVICE"
     }
 
-### ApplicationSubscriptionCollection[application/vnd.com.nsn.cumulocity.applicationUserCollection+json]
+### ApplicationSubscriptionCollection
+
+ApplicationSubscriptionCollection[application/vnd.com.nsn.cumulocity.applicationUserCollection+json]
+
 |Name|Type|Occurs|Description|
 |:---|:---|:-----|:----------|
 |self|URI|1|Link to this resource|

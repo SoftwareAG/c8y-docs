@@ -1,31 +1,31 @@
 ---
 order: 20
-title: Viewing devices
+title: Anzeigen von Geräten
 layout: redirect
 ---
 
-To view all devices connected to your account, click "All devices" in the "Devices" menu in the navigator. 
+Klicken Sie "Alle Geräte" im Menü "Geräte" im Navigator, um alle mit Ihrem Konto verbundenen Geräte anzuzeigen.
 
-A detailed device list will be displayed.
+Eine detaillierte Geräteliste wird angezeigt.
 
 <img src="/guides/images/users-guide/DeviceManagement/DevMgmt_DevicesList.png" alt="Device List" style="max-width: 100%">
 
 
-### <a name="device-list"></a>Device list
+### <a name="device-list"></a>Geräteliste
 
-For each device, the device list shows the following information provided in columns:
+Die Liste enthält eine Zeile für jedes Gerät mit den folgenden Informationen, angezeigt in Spalten:
 
-|Column|Description|
+|Spalte|Beschreibung|
 |:---|:---|
-|Status|An icon representing the connection status. For details, see [Connection monitoring](#connection-monitoring).
-|Name|Unique name of the device.
-|Model|Model type of the device. Not always displayed, depends on browser width.
-|Serial Number|Serial number of the device. Not always displayed, depends on browser width.
-|Group|Group the device is assigned to, if any.
-|Registration Date|Date when the device was registered to your account.
+|Status|Symbol für den Verbindungsstatus. Weitere Informationen finden Sie unter [Überwachen von Verbindungen](#connection-monitoring) in "Überwachen und Steuern von Geräten".
+|Name|Eindeutiger Name für das Gerät.
+|Modell|Modelltyp des Geräts. Wird nicht immer angezeigt; abhängig von der Browser-Breite.
+|Seriennummer|Seriennummer des Geräts. Wird nicht immer angezeigt; abhängig von der Browser-Breite.
+|Gruppe|Gruppe, der das Gerät zugeordnet ist, falls .
+|Registrierungsdatum|Date when the device was registered to your account.
 |System ID|System ID of the device.
 |IMEI|IMEI of the device.
-|Alarms|The alarm status of the device, showing number and type of alarms currently unresolved for the device. See [Working with alarms](#alarm-monitoring) for further information on working with alarms.
+|Alarme|The alarm status of the device, showing number and type of alarms currently unresolved for the device. See [Working with alarms](#alarm-monitoring) for further information on working with alarms.
 
 The devices list displays up to 100 rows. If a list contains more than 100 devices, click **Load more** at the bottom of the list to display the next 100 entries.
 

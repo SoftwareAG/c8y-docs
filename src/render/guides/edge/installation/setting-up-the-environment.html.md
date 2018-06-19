@@ -17,7 +17,7 @@ Download the VirtualBox package for your operating system from [https://www.virt
 3. Navigate to **File** > **Preferences** > **Network** to check the network settings. <br>
 <img src="/guides/images/edge/edge-vm-nat-network.png" name="Configure network" style="width:75%;"/>
 
-4. In the "NAT Network" tab, click the plus icon to add a new network.
+4. In the "NAT Networks" tab, click the plus icon to add a new network.
 
 5. Click the settings icon on the right and make sure that “Enable network” is activated, which is the default. This network interface is used for outbound Internet/Intranet access. <br>
 <img src="/guides/images/edge/edge-vm-nat-network-details.png" name="NAT network details" style="width:75%;"/>
@@ -27,11 +27,7 @@ Download the VirtualBox package for your operating system from [https://www.virt
 7. Switch to the “Host-only Networks” tab (or depending on your VirtualBox version click the “Host-only Networks” button) and click the plus icon to add a new host-only network. “VirtualBox Host-Only Ethernet Adapter” will be created.<br>
 <img src="/guides/images/edge/edge-vm-host-only-networks.png" name="NAT network details" style="width:75%;"/>
 
-8. Click the settings icon on the right and make sure that IP and mask is set to the following values:
-
-* IP: 192.168.56.1
-* Mask: 255.255.255.0
-
+8. Click the settings icon on the right and make sure that IP and mask is set to the following values: IP = 192.168.56.1, Mask = 255.255.255.0 <br>
 <img src="/guides/images/edge/edge-vm-host-only-details.png" name="NAT network details" style="width:75%;"/>
 
 9. Click the "DHCP Server" tab and make sure that the DHCP server is not enabled.
@@ -48,14 +44,13 @@ Follow the steps below, to setup port forwarding.
 
 2. Click **Settings** in the top left. Under settings, click **Network**, open the network you previously created and then click **Port forwarding**.
 
-2. In the “Port Forwarding Rules” window, click the plus (+) icon. Add the following details for HTTP.<br>
-
-* Name: HTTP
-* Protocol: TCP
-* Host IP: The Operating System IP address on which Edge VM is running. 
-* Host port: "80" 
-* Guest IP: The Edge VM IP address which is always "192.168.56.120".
-* Guest port: "80"
+2. In the “Port Forwarding Rules” window, click the plus (+) icon. Add the following details for HTTP:<br>
+Name: HTTP <br>
+Protocol: TCP<br>
+Host IP: The Operating System IP address on which Edge VM is running. <br>
+Host port: "80" <br>
+Guest IP: The Edge VM IP address which is always "192.168.56.120".<br>
+Guest port: "80"<br>
 
 4. Follow the same steps and add details for other incoming and outgoing traffic, see [Prerequisites -> Network connectivity](#prerequisites).
 Once all port details have been added, it should look similar to the following screenshot:

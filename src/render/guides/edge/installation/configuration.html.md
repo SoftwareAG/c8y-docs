@@ -57,15 +57,15 @@ You will be prompted to select one of the following options:
 
 		$ Enter Domain SSL Certificate file path
 
-1. Provide the complete path for the “.key” file.
+1. Provide the absolute path for the “.key” file, e.g. "/home/admin/<filename>.key".
 
 		$ Enter Domain SSL Certificate Private Key file path 
 
-1. Provide the complete path for the “.license” file.
+1. Provide the absolute path for the “.license” file e.g. "/home/admin/<filename>.license".
 
 		$ Enter Cumulocity License file path
 
-1. Provide the complete path for the “.xml” file.
+1. Provide the absolute path for the “.xml” file, e.g. "/home/admin/<filename>.xml".
 
 		$ Enter Apama License file path (Optional. Press Enter to continue)
 
@@ -76,18 +76,17 @@ You will be prompted to select one of the following options:
 
 		$ Enter Domain SSL Certificate file path
 
-1. Provide the complete path for the “.key” file.
+1. Provide the absolute path for the “.key” file, e.g. "/home/admin/<filename>.key".
 
 		$ Enter Domain SSL Certificate Private Key file path 
 
-1. Provide the complete path for the “.license” file.
+1. Provide the absolute path for the “.license” file e.g. "/home/admin/<filename>.license".
 
 		$ Enter Cumulocity License file path
 
-1. Provide the complete path for the “.xml” file.
+1. Provide the absolute path for the “.xml” file, e.g. "/home/admin/<filename>.xml".
 
 		$ Enter Apama License file path (Optional. Press Enter to continue)
 
 
-
-Once the execution has been completed successfully, a respective message will be displayed. In case of any failure messages, refer to [Operations](guides/edge/operations).
+Once the execution has been completed successfully, a respective message will be displayed. In case of any failure messages, refer to [Operating Cumulocity Edge](guides/edge/operation).

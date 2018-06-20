@@ -10,7 +10,7 @@ To install Cumulocity Edge, the following items need to be available:
 
 * Virtualbox <br>
 Version: 5.2.8<br>
-To be be downloaded from [https://www.virtualbox.org/wiki/Download&#95;Old&#95;Builds&#95;5&#95;2](https://www.virtualbox.org/wiki/Download_Old_Builds_5_2)
+To be downloaded from [https://www.virtualbox.org/wiki/Download&#95;Old&#95;Builds&#95;5&#95;2](https://www.virtualbox.org/wiki/Download_Old_Builds_5_2)
 	
 * Edge OVA image <br>
 To be downloaded from the [SAG Empower portal](https://empower.softwareag.com) 

@@ -11,8 +11,10 @@ Download the VirtualBox package for your operating system from [https://www.virt
 >**Info**: Depending on the operating system and VirtualBox version you are using, the following steps and especially the screenshots might slightly differ.
 
 1. In the VirtualBox, click **Global Tools** in the top right.
+<img src="/guides/images/edge/edge-vb-01.png" name="Configure network" style="width:75%;"/>
 
 2. Click **Create** to set a host only network interface for VM.
+<img src="/guides/images/edge/edge-vb-02.png" name="Configure network" style="width:75%;"/>
 
 3. Navigate to **File** > **Preferences** > **Network** to check the network settings. <br>
 <img src="/guides/images/edge/edge-vm-nat-network.png" name="Configure network" style="width:75%;"/>
@@ -41,19 +43,23 @@ The VirtualBox now is installed and the network is set.
 Follow the steps below, to setup port forwarding.
 
 1. In the Virtual Box, click **Machine Tools** in the top right.
+<img src="/guides/images/edge/edge-port-forwarding1.png" name="Port forwarding Step 1" style="width:75%;"/>
 
 2. Click **Settings** in the top left. Under settings, click **Network**, open the network you previously created and then click **Port forwarding**.
+<img src="/guides/images/edge/edge-port-forwarding2.png" name="Port forwarding Step 2" style="width:75%;"/>
 
-2. In the “Port Forwarding Rules” window, click the plus (+) icon. Add the following details for HTTP:<br>
-Name: HTTP <br>
-Protocol: TCP<br>
-Host IP: The Operating System IP address on which Edge VM is running. <br>
-Host port: "80" <br>
-Guest IP: The Edge VM IP address which is always "192.168.56.120".<br>
-Guest port: "80"<br>
+3. In the “Port Forwarding Rules” window, click the plus (+) icon. Add the following details for HTTP:<br>
+**Name**: HTTP <br>
+**Protocol**: TCP<br>
+**Host IP**: The Operating System IP address on which Edge VM is running. <br>
+**Host port**: 80 <br>
+**Guest IP**: The Edge VM IP address which is always 192.168.56.120.<br>
+**Guest port**: 80<br>
+<img src="/guides/images/edge/edge-port-forwarding3.png" name="Port forwarding Step 3" style="width:75%;"/>
 
 4. Follow the same steps and add details for other incoming and outgoing traffic, see [Prerequisites -> Network connectivity](#prerequisites).
-Once all port details have been added, it should look similar to the following screenshot:
+Once all port details have been added, it should look similar to the following screenshot:<br>
+<img src="/guides/images/edge/edge-port-forwarding4.png" name="Port forwarding result" style="width:75%;"/>
  
 5. Click **OK** in the "Port Forwarding Rules" window and then in the "Settings" window to complete port forwarding on Edge VM.
 

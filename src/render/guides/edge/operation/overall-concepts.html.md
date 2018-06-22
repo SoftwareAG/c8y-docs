@@ -15,6 +15,6 @@ The following image shows the networking overlay of Edge server. Two network ada
 
 The following image covers the components Edge is built with. 
 
-<img src="/guides/images/edge/edge-components.jpg" name="Components" style="width:750%;"/>
+<img src="/guides/images/edge/edge-components.jpg" name="Components" style="width:75%;"/>
  
 

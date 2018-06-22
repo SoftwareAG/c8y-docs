@@ -33,7 +33,6 @@ Download the VirtualBox package for your operating system from [https://www.virt
 <img src="/guides/images/edge/edge-vm-host-only-details.png" name="NAT network details" style="width:75%;"/>
 
 9. Click the "DHCP Server" tab and make sure that the DHCP server is not enabled.
-
 <img src="/guides/images/edge/edge-vm-dhcp.png" name="NAT network details" style="width:75%;"/>
 
 The VirtualBox now is installed and the network is set.

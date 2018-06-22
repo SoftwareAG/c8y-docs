@@ -35,7 +35,7 @@ After successfully logging in, the Cumulocity platform will open:
 
 When you log into Cumulocity for the first time, you will be taken to the Cockpit application where the **Welcome** page initially opens up.
 
-For details on the Welcome page, refer to Getting Started > [Accessing and login into the Cumulocity platform](guides/users-guide/overview#accessing-cumulocity-platform) in the User guide.
+For details on the Welcome page, refer to Getting Started > [Accessing and login into the Cumulocity platform](/guides/users-guide/overview#accessing-cumulocity-platform) in the User guide.
 
 
 

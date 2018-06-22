@@ -23,14 +23,13 @@ Once Edge VM is started, you need to run the script “post_installation.sh” t
 1. Browse to the folder "/opt/c8y/utilities". 
 
 		$ cd /opt/c8y/utilities
-	
-1. Run the following command and provide the password when prompted.
+
+2. Run the following command and provide the password when prompted.
 
 		$ su admin 
 		$ Password: <Enter password for admin user>
 
-	
-1. Run the script "post_installation.sh".
+3. Run the script "post_installation.sh".
 
 		$ sudo ./post_installation.sh 
 
@@ -89,4 +88,4 @@ You will be prompted to select one of the following options:
 		$ Enter Apama License file path (Optional. Press Enter to continue)
 
 
-Once the execution has been completed successfully, a respective message will be displayed. In case of any failure messages, refer to [Operating Cumulocity Edge](guides/edge/operation).
+Once the execution has been completed successfully, a respective message will be displayed. In case of any failure messages, refer to [Operating Cumulocity Edge](/guides/edge/operation).

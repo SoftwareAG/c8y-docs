@@ -12,19 +12,19 @@ To configure the MQTT connection, you need to pass the following connection para
 * Username: You need to enter your tenant and username separated by a slash (tenant/username). You can use the same user that you use for logging into Cumulocity for this example.
 * Password: The password of the user.
 
-![Example MQTTLens Configuration](/guides/images/mqtt/mqttLensConfig.png)
+![Example MQTTBox Configuration](/guides/mqtt/mqttBoxConfig.png)
 
 The other configurations like "clean session" are not important for this example. You can change them to your liking. After clicking on "save changes", you should see a screen similar to the following screenshot.
 
-![MQTTLens Established Connection](/guides/images/mqtt/mqttLensSuccess.png)
+![MQTTBox Established Connection](/guides/mqtt/mqttBoxSuccess.png)
 
-If the icon next to your connection on the left is red, verify your configuration (especially username and password). If the icon is green, you successfully established an MQTT connection to Cumulocity.
+If the on the top bar there is a blue button with "Not Connected" label, verify your configuration (especially username and password). If the button is green, you successfully established an MQTT connection to Cumulocity.
 
 ### Sending data
 
 All MQTT "publish messages" in this tutorial will be sent to the topic "s/us". This is the topic used for Cumulocity's pre-provided static templates.
 
-![MQTTLens Publish Message](/guides/images/mqtt/mqttLensPublish.png)
+![MQTTBox Publish Message](/guides/mqtt/mqttBoxPublish.png)
 
 #### Creating the device
 
@@ -129,9 +129,9 @@ To achieve that we first need to subscribe to the responsible topic. We will do 
 
 You can enter both topics after another in the subscribe field and hit subscribe. The QoS selection does not matter for this example.
 
-Afterward, your MQTTLens should look like this:
+Afterward, your MQTTBox should look like this:
 
-![MQTTLens Subscribed Topics](/guides/images/mqtt/mqttLensAfterSubscribe.png)
+![MQTTBox Subscribed Topics](/guides/mqtt/mqttBoxAfterSubscribe.png)
 
 #### Receiving operations
 
@@ -146,9 +146,9 @@ We will add support for the configuration and shell.
 After reloading the UI the two new tabs should appear ("Configuration" and "Shell").
 We can now create a shell command from the UI and click "Execute".
 
-In the MQTTLens you should now have received a new message for the s/ds subscription
+In the MQTTBox you should now have received a new message for the s/ds subscription
 
-![MQTTLens Received Operation](/guides/images/mqtt/mqttLensReceivedOperation.png)
+![MQTTBox Received Operation](/guides/mqtt/mqttBoxReceivedOperation.png)
 
 The "511" is indicating what kind of operation we received (in this case c8y_Command). Behind there will be the deviceIdentifier to locate the device with the dedicated operation. This is required if you have a hierarchy with multiple children. In that case, you need to know for which of the children the operation was dedicated.
 Finally, you have the operation specific parameters which in the case of c8y_Command is only the command text.

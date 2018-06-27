@@ -105,7 +105,7 @@ In the user interface you can enter this type of message type source information
 
 Click **Add** to create the value configuration. 
 	
-<img src="/guides/images/users-guide/actility/add-button.png" alt="Device type: new" style="max-width: 100%">
+<img src="/guides/images/users-guide/sigfox/add-button.png" alt="Device type: new" style="max-width: 100%">
 
 A window similar to the following one will open. Configure the relevant values as shown in this example. 
 

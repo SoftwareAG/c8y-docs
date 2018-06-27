@@ -19,10 +19,10 @@ The following illustration grants you a quick overview of the Cumulocity Sigfox 
 The following sections describe how to:
 
 - [Manage the connectivity settings](#connectivity) in Cumulocity.
-- [Create device types](#create-device-types) with Cumulocity's device database.
-- [Register devices](#register-device) and visualize the Sigfox payload using Cumulocity.
-- [Update devices](#old-regisetration) registered with the general device registration.
-- [Send operations](#perations) to devices.
+- [Create device types](#create-device-types-sigfox) with Cumulocity's device database.
+- [Register devices](#register-device-sigfox) and visualize the Sigfox payload using Cumulocity.
+- [Update devices](#old-registration) registered with the general device registration.
+- [Send operations](#operations) to devices.
 
 **Info:** In order to enable this feature, please contact support.
 
@@ -73,7 +73,7 @@ Click **Save credentials** to save your settings. If everything is correct, a me
 
 If you wish to overwrite your previous credentials, simply click **Replace credentials** and add your new credentials.
 
-### <a name="create-device-types"></a>Creating device types
+### <a name="create-device-types-sigfox"></a>Creating device types
 
 To process data from Sigfox devices, Cumulocity needs to understand the payload format of the devices.
 Mapping payload data to Cumulocity data can be done by creating a Sigfox device type.
@@ -189,7 +189,7 @@ This will be the result:
 
 ![Value configuration in detail: nested structure](/guides/images/users-guide/sigfox/gpsdevice.png)
 
-### <a name="register-device"></a>Registering Sigfox devices
+### <a name="register-device-sigfox"></a>Registering Sigfox devices
 
 In order to register a Sigfox device, go to the “Registration” page in the “Device Management” application and click “Register Devices”. 
 
@@ -217,7 +217,7 @@ You can verify that the device is really connected by checking that events are a
 
 For more information on viewing and managing your connected devices, also refer to [Device Management](http://cumulocity.com/guides/users-guide/device-management).
 
-### <a name="old-registration">Updating devices registered with the general device registration
+### <a name="old-registration"></a>Updating devices registered with the general device registration
 
 If devices have been registered via the general device registration the following URLs have to be manually changed in the Sigfox cloud:
 

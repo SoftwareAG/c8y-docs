@@ -16,6 +16,16 @@ The following illustration grants you a quick overview of the Cumulocity Sigfox 
 
 ![Cumulocity Sigfox integration](/guides/images/users-guide/sigfox/cumulocity-sigfox-integration.png)
 
+The following sections describe how to:
+
+- [Manage the connectivity settings](#connectivity) in Cumulocity.
+- [Create device types](#create-device-types) with Cumulocity's device database.
+- [Register devices](#register-device) and visualize the Sigfox payload using Cumulocity.
+- [Update devices](#old-regisetration) registered with the general device registration.
+- [Send operations](#perations) to devices.
+
+**Info:** In order to enable this feature, please contact support.
+
 ### <a name="connectivity"></a>Managing the connectivity settings
 
 Before you register a device, you need to configure Sigfox Cloud credentials in the “Connectivity” page in the Administration application. You have to set up these Sigfox Cloud credentials in Sigfox. 
@@ -207,8 +217,20 @@ You can verify that the device is really connected by checking that events are a
 
 For more information on viewing and managing your connected devices, also refer to [Device Management](http://cumulocity.com/guides/users-guide/device-management).
 
+### <a name="old-registration">Updating devices registered with the general device registration
+
+If devices have been registered via the general device registration the following URLs have to be manually changed in the Sigfox cloud:
+
+- "https://sigfox-agent.cumulocity.com/sigfoxDataCallback" to " https://<tenantId>.cumulocity.com/service/sigfox-agent/sigfoxDataCallback"
+- "https://sigfox-agent.cumulocity.com/sigfoxServiceAcknowledgeCallback" to "https://<tenantId>.cumulocity.com/service/sigfox-agent/sigfoxServiceAcknowledgeCallback"
+- "https://sigfox-agent.cumulocity.com/sigfoxServiceStatusCallback" to "https://<tenantId>.cumulocity.com/service/sigfox-agent/sigfoxServiceStatusCallback
+- "https://sigfox-agent.cumulocity.com/sigfoxErrorCallback" to "https://<tenantId>.cumulocity.com/service/sigfox-agent/sigfoxErrorCallback"
+
+**Info**: General device registration for Sigfox devices is no longer supported.
+
 ### <a name="operations"></a>Sending operations
 
 If the device supports sending hexadecimal commands, you can send commands from “Shell”. Go to the Device Management application and navigate to the device you want to send an operation to. Switch to the "Shell" tab.
 
 **Info:** Operations do not go to “Executing” state immediately. They go to “Executing” state when the device is expecting the downlink message. Afterwards, the pending operation which is created first goes to executing state.
+

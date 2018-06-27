@@ -48,14 +48,14 @@ There is no internet connection required during installation. Internet connectio
 
 #### Incoming traffic
 
-The following ports need to be enabled by default in order to accept traffic from users and devices on the internet:
+The following ports need to be enabled by default in order to accept traffic from users and devices on the internet (also refer to [Setting up port forwarding](guides/edge/installation/setting-up-the-environment#port-forwarding) in Setting up the environment):
 
 |Source IP|Source Port|Destination IP|Destination Port|Service
 |:---|:---|:---|:---|:---
-|any|any|external load balancer IP|TCP/80|HTTP
-|any|any|external load balancer IP|TTCP/443|HTTPS
-|any|any|external load balancer IP|TCP/1883|MQTT
-|any|any|external load balancer IP|TCP/8883|MQTT/TLS
+|any|any|Edge VM IP|TCP/80|HTTP
+|any|any|Edge VM IP|TTCP/443|HTTPS
+|any|any|Edge VM IP|TCP/1883|MQTT
+|any|any|Edge VM IP|TCP/8883|MQTT/TLS
 
 Depending on additional integrations more ports must be opened. 
 
@@ -71,7 +71,6 @@ The core nodes and the CEP node must be able to connect to the internet. Ports r
 |:---|:---|
 |HTTP|80|
 |HTTPS|443|
-|SMTP|25|
 
 Depending on the installed integrations (email, SMS, etc.) different ports might have to be opened in order to make these services available to the Cumulocity platform. The descriptions of these ports are delivered with the corresponding integrations.
 

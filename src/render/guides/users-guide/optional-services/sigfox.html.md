@@ -25,7 +25,7 @@ Before you create API access to Cumulocity, you need to have an “Associated us
 - Customer [W]
 - Device Manager [W]
 
-**Note:** Without the following profiles, the required Sigfox Api access can not be set up.
+**Info:** Without the following profiles, the required Sigfox Api access can not be set up.
 
 Step 1 is only relevant, if you do not have an associated user yet. If you do, skip to Step 2.
 
@@ -47,7 +47,7 @@ After creating an “Associated User” with the proper group and profiles navig
 
 #### Step 3 
 
-After the API Access entry has been created, you can connect your Sigfox Cloud account to Cumulocity via the “Connectivity” page in the Administration application. Navigate to the “Connectivity” page and then go to the “Sigfox provider settings” tab. 
+After the API access entry has been created, you can connect your Sigfox Cloud account to Cumulocity via the “Connectivity” page in the Administration application. Navigate to the “Connectivity” page and then go to the “Sigfox provider settings” tab. 
 
 The following information has to be provided:
 
@@ -66,45 +66,45 @@ If you wish to overwrite your previous credentials, simply click **Replace crede
 ### <a name="create-device-types"></a>Creating device types
 
 To process data from Sigfox devices, Cumulocity needs to understand the payload format of the devices.
-Mapping a payload data to Cumulocity data can be done by creating a Sigfox device type.
-During the [device registration](#register-device), you can associate this device type and afterwards the received uplink callbacks for this device with a hexadecimal payload will be mapped to the ones you have configured in your device type.
-If a device type has been changed after being associated to a device, the reflection of the change can take up to 10 minutes because of the refresh mechanism of the Sigfox Cloud Server Side Agent.
+Mapping payload data to Cumulocity data can be done by creating a Sigfox device type.
 
-**Note** that device protocol mapping only supports decoding for fixed byte positions based on the message type. 
+During the [device registration](#register-device), you can associate this device type and afterwards the received uplink callbacks for this device with a hexadecimal payload will be mapped to the ones you have configured in your device type.
+If a device type has been changed after being associated to a device, the reflection of the change can take up to 10 minutes because of the refresh mechanism of the Sigfox microservice.
+
+**Info:** Device protocol mapping only supports decoding for fixed byte positions based on the message type. 
 
 In order to create device types, go to the Device Management application and select "Device database" in the "Device types" menu in the navigator. You can either import an existing device type or create a new one. 
 
 #### <a name="import-device-type"></a>Importing a device type
 
-In the Device database window, click the "Import" button. 
+In the Device database window, click on the "Import". 
 
-Upload the device type from a file and click on "import".
+Upload the device type from a file and click **Import**.
 
 #### <a name="create-new-device-type"></a>Creating a new device type
 
-In the device database window, click the "New" button. The following window will open:
+In the device database window, click **New**. The following window will open:
 
 <img src="/guides/images/users-guide/sigfox/sigfox-new-type.png" alt="Create new device type" style="max-width: 100%">
 
-Select "Sigfox" as the device type and name your device type. 
+Select "Sigfox" as the device type and provide a name for your device type. 
 
-In the next UI section you determine the message type. Sigfox devices can send messages of different types with different encodings per type. Depending on the device, the type can be determined by looking either at the FPort parameter of a message (Source: FPort) or at the subset of the message payload itself (Source: Payload). 
+In the following window you determine the message type. Sigfox devices can send messages of different types with different encodings per type. Depending on the device, the type can be determined by looking either at the FPort parameter of a message (Source: FPort) or at the subset of the message payload itself (Source: Payload). 
 
-Select the way the message type is encoded in the "Source" dropdown box:  
+Select the way the message type is encoded in the "Source" list:  
 
-- **FPort**: if the message type can be determined by looking at the FPort parameter of a message  
 - **Payload**: if the message type can be determined by looking at the subset of the message payload itself   
 
 In the following example payload structure, the first byte indicates the message type source (as highlighted).
 
 <img src="/guides/images/users-guide/actility/payload-example1.png" alt="Example payload: message type source" style="max-width: 100%">
 
-In the user interface you can enter this type of message type source information as follows: Indicate in the "Start bit" field where the message type information starts in the payload and how long this information is in the "Number of bits" field, for example start bit = "0" and number of bits = "8".
+In the user interface you can enter this type of message type source information as follows: In the "Start bit" field, indicate where the message type information starts in the payload and in the"Number of bits" field indicate how long this information is, for example start bit = "0" and number of bits = "8".
 
 <img src="/guides/images/users-guide/sigfox/payload.png" alt="Message type payload" style="max-width: 100%">
 
-Click the "Add" button to create the value configuration. 
-
+Click **Add** to create the value configuration. 
+	
 <img src="/guides/images/users-guide/actility/add-button.png" alt="Device type: new" style="max-width: 100%">
 
 A window similar to the following one will open. Configure the relevant values as shown in this example. 
@@ -115,7 +115,7 @@ The value configuration maps the value in the payload of a message type to the C
 
 Configure the "Message ID" according to your device message specification and map it to the Cumulocity data. The message ID is the numeric value identifying the message type. It will be matched with the message ID found in the source specified on the device type main page (i.e. Payload or FPort). The message ID needs to be entered in decimal numbers (not hex).
 
-In this example payload structure the message ID is "1".
+In this sample payload structure the message ID is "1".
 
 <img src="/guides/images/users-guide/actility/payload-example2.png" alt="Example payload: message type source" style="max-width: 100%">
 
@@ -131,12 +131,12 @@ In this example the "Channel 1 Type" information starts in byte 2 (i.e. start bi
 
 <img src="/guides/images/users-guide/actility/deviceDatabase4b.png" alt="Value selection" style="max-width: 60%">
 
-The hexadecimal value is converted to a decimal number and afterwards a "value normalisation" is applied.
+The hexadecimal value is converted to a decimal number and afterwards a "value normalization" is applied.
 
-Under "Value normalisation" define how the raw value should be transformed before being stored in the platform and enter the appropriate values for:
+Under "Value normalization" define how the raw value should be transformed before being stored in the platform and enter the appropriate values for:
 
-- **Multiplier**: This value is multiplied with the value extracted from the "Value selection". It can be decimal, negative and positive. By default it is set to 1. 
-- **Offset**: This value defines the offset that is added or subtracted. It can be decimal, negative and positive. By default it is set to 0.
+- **Multiplier**: This value is multiplied with the value extracted from the "Value selection". It can be decimal, negative or positive. By default it is set to 1. 
+- **Offset**: This value defines the offset that is added or subtracted. It can be decimal, negative or positive. By default it is set to 0.
 - **Unit** (optional): A unit can be defined which is saved together with the value (e.g. temperature unit "C" for degree Celsius).
 
 For detailed information on how to decode the payload, refer to the documentation of the device. 
@@ -167,7 +167,7 @@ The following picture shows an example for a message which sends a measurement w
 
 **<a name="nested-structure-example"></a>Example with nested structure**
 
-The following picture shows an example of a nested structure for a device type reporting the current position of a GPS device. The device type is named "Position" and contains values for longitude and latitude. 
+The following picture shows an example of a nested structure for a device type, reporting the current position of a GPS device. The device type is named "Position" and contains values for longitude and latitude. 
 
 The "Message ID" should be the same for all the values. Enter the rest of the parameters according to the instructions above. Enter "c8y_Position" in the "Managed object fragment" field and create a new value for each: longitude and latitude. 
 
@@ -191,8 +191,8 @@ In the upcoming window, click **Sigfox**.
 
 In the next window, fill in the required information:
 
-**ID:** Unique device ID.
-**PAC:** Porting authorization code for your device.
+**ID:** Unique device ID. The value should be a hexadecimal number.
+**PAC:** Porting authorization code for your device. The value should be a hexadecimal number.
 **Contract:** Choose your desired contract.
 **Device Type:** Select your desired device type from the drop-down list.
 **Product Certificate Key:** This key can be located in “https://partners.sigfox.com/”. Navigate to your device and copy the certificate key.
@@ -209,6 +209,6 @@ For more information on viewing and managing your connected devices, also refer 
 
 ### <a name="operations"></a>Sending operations
 
-If the device supports sending hexadecimal commands, you can send commands from“Shell”. Go to the Device Management application and navigate to the device you want to send an operation to. Click on the "Shell" tab.
+If the device supports sending hexadecimal commands, you can send commands from “Shell”. Go to the Device Management application and navigate to the device you want to send an operation to. Switch to the "Shell" tab.
 
-**Note:** Operations do not go to “Executing” state immediately. They go to “Executing” state when the device is expecting the downlink message. Afterwards, the pending operation which is created first goes to executing state.
+**Info:** Operations do not go to “Executing” state immediately. They go to “Executing” state when the device is expecting the downlink message. Afterwards, the pending operation which is created first goes to executing state.

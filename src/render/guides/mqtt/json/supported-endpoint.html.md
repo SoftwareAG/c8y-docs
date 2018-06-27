@@ -13,6 +13,8 @@ The following endpoints and actions are supported:
 |[event/events](/guides/reference/events)|x|x|x|x|
 |[alarm/alarms](/guides/reference/alarms)|x|x|x| |
 |[measurement/measurements](/guides/reference/measurements)|x|x| |x|
+|[inventory/managedObjects](/guides/reference/inventory)|x| |x| |
+|[inventory/managedObjects/&lt;DeviceID>/childDevices](/guides/reference/inventory)|x| | |&nbsp;|
 
 If the operation is not supported a proper error message will be send to the `error` topic.
 

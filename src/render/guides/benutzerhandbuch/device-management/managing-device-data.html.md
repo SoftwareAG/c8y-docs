@@ -1,78 +1,82 @@
 ---
 order: 60
-title: Managing device data
+title: Verwalten von Gerätedaten
 layout: redirect
 ---
 
-### <a name="software-repo"></a> Managing device firmware and software
+### <a name="software-repo"></a> Verwalten von Firmware und Software
 
-In the Firmware and in the Software repository Cumulocity offers to collect reference firmware and software for devices respectively.
+Mit dem Firmware-Repository und dem Software-Repository bietet Cumulocity die Möglichkeit, Referenz-Firmware bzw. -Software für Geräte zu verwalten.
 
-The description below exemplarily refers to firmware but also applies to device software.
+Die folgende Beschreibung bezieht sich exemplarisch auf Firmware, gilt aber analog auch für Geräte-Software.
 
-Open the "Firmware repository" from the "Management" menu in the navigator.
+Öffnen Sie das "Firmware-Repository" im Menü "Verwaltung" im Navigator.
 
-The available firmware objects will be displayed, presented as cards in a grid.
+Die verfügbaren Firmware-Objekte werden angezeigt, dargestellt als Karten in einem Raster.
 
-![Firmware List](/guides/images/users-guide/DeviceManagement/DevMgmt_FirmwareRepository.png)
+<img src="/guides/images/benutzerhandbuch/devmgmt-firmware.png" alt="Firmware-Repository" style="max-width: 100%">
 
-Click **Details** on a specific object to "turn around" its card and display details.
+Klicken Sie **Details** auf einer Karte, um diese "umzudrehen" und Details zum Firmware-Objekt anzuzeigen.
 
-In addition to the object name and version, you will here find the name of the file containing the firmware. 
+Zusätzlich zum Objektnamen und der Version finden Sie hier den Namen der Datei, die die Firmware enthält. 
 
-Moreover, several buttons allow you to update the information (see also "How to add a firmware object" below).
+Darüber hinaus gibt es verschiedene Schaltflächen, die das Aktualisieren der Informationen ermöglichen (siehe unten Hinzufügen eines Firmware-Objekts).
 
-**How to add a firmware object**
+**Hinzufügen eines Firmware-Objekts**
 
-To add a firmware object, follow these steps:
+Um ein Firmware-Objekt hinzuzufügen, führen Sie folgende Schritte aus:
 
-1. Upload the firmware file in the [Administration application](/guides/users-guide/administration#files). This step is not necessarily required since some manufacturers offer the firmware online.
-2. In the "Firmware repository" page, click **Add firmware** at the right of the top bar menu.
-3. In the upcoming window, enter a name for the firmware and its version.
-4. Specify the file for the firmware by choosing or uploading it or enter the URL from which the device can download the firmware. 
-5. Click **Save** to save your settings.
+1. Laden Sie die Firmware-Datei in der ["Administration"-Anwendung](/guides/users-guide/administration#files) hoch. Dieser Schritt ist nicht immer erforderlich, da manche Hersteller die Firmware online anbieten. 
+2. Klicken Sie in der Seite "Firmware-Repository" rechts in der oberen Menüleiste **Firmware hinzufügen**. 
+3. Geben Sie im folgenden Fenster einen Namen und die Version der Firmware ein.
+4. Geben Sie die Datei an, die die Firmware enthält, indem Sie entweder zur Datei navigieren bzw.  diese hochladen oder die URL angeben, unter welcher das Gerät die Firmware herunterladen kann. 
+5. Klicken Sie **Speichern**, um Ihre Eingaben zu speichern.
 
-Similarly, you can add a new software object to the Software repository.
+Analog können Sie eine neue Software zum Software-Repository hinzufügen. 
 
-**How to install firmware on a device**
+**Installieren von Firmware auf einem Gerät**
 
-Open the device list by clicking "All devices" in the navigator and select a device from the device list.
+Klicken Sie im Navigator auf "Alle Geräte", um die Geräteliste anzuzeigen und wählen Sie ein Gerät aus. 
 
-Open the "Software" tab for the device and click **Install firmware**. 
+Wechseln Sie zur Registerkarte "Software" für das Gerät und klicken Sie **Firmware installieren**. 
 
-For further information on these steps, refer to the description of the ["Software"](#software) tab.
+Weitere Informationen finden Sie in der Beschreibung der Registerkarte ["Software"](#software).
 
->**Info:** To store other types of binaries in Cumulocity, switch to the [Administration application](/guides/images/users-guide/administration#files).
+>**Info:** Um andere Binärcode-Typen in Cumulocity zu speichern, wechseln Sie zur ["Administration"-Anwendung](/guides/images/users-guide/administration#files).
 
-**How to install firmware on multiple devices**
+**Installieren von Firmware auf mehreren Geräten**
 
-Cumulocity offers the option to execute firmware or software updates for multiple devices at once. To do so, follow these steps:
+Cumulocity bietet die Möglichkeit, Updates von Firmware oder Software für mehrere Geräte gleichzeitig durchzuführen. Führen Sie dazu die folgenden Schritte aus:
 
-1. Execute the software update in a single device to test that the new version really works.
-2. Navigate to operation and select **Execute for the whole group**.
-3. Fill the form to schedule the bulk operation and click **Create**.
+1. Führen Sie das Update zunächst für ein Gerät aus, um sicherzustellen, dass das Update funktioniert.
+2. Navigate to operation und wählen Sie **Für alle Gruppenelemente ausführen**.
+3. Geben Sie einen Zeitpunkt an, an welchem das Sammelkommando ausgeführt werden soll und klicken Sie **Erstellen**.
 
-The operation status can be viewed in the "Bulk Operation" tab of the selected group. For further information, refer to [Bulk Operations](#bulk-operations).
+Der Kommandostatus wird in der Registerkarte "Sammelkommandos" der ausgewählten Gruppe angezeigt. Weitere Informationen finden Sie unter [Sammelkommandos](#bulk-operations).
 
-### <a name="credentials"></a>Managing device credentials
+### <a name="credentials"></a>Verwalten von Gerätezugangsdaten
 
-The "Device credentials" tab lists all credentials that have been generated for your connected devices. Each device that has been [registered](#device-registration) shows up here with the naming convention "device_&lt;id&gt;".
+Die Seite "Gerätezugangsdaten" listet alle Zugangsdaten auf, die für Ihre verbundenen Geräte erstellt wurden. Jedes Gerät, das [registriert](#device-registration) wurde, wird hier mit der Namenskonvention "device_&lt;id&gt;" angezeigt.
 
-Click the arrow in the "Global roles" column of a device to open a list with available global roles. Assign or remove permissions for an individual device by selecting/deselecting roles, and click **Apply** to save your settings.
+<img src="/guides/images/benutzerhandbuch/devmgmt-device-credentials.png" alt="Gerätezugangsdaten" style="max-width: 100%">
 
-Click the menu icon at the right of a device to access the following functionalities:
+Klicken Sie auf den Pfeil in der Spalte "Globale Rollen", um eine Liste mit globalen Rollen anzuzeigen. Weisen Sie Berechtigungen für ein Gerät zu oder entfernen Sie Berechtigungen, indem Sie die entsprechenden Kontrollkästchen aktivieren oder deaktivieren. Klicken Sie **Anwenden**, um Ihre Einstellungen zu speichern.
 
-* **Edit** - To open the device credential details (see below).
+Klicken Sie auf das Menüsymbol rechts von einem Gerät, um über ein Kontextmenü auf folgenden Funktionen zuzugreifen:
 
-* **Disable** - To temporarily disconnect a device.
+* **Bearbeiten** - Um die Details der Gerätezugangsdaten anzuzeigen (siehe unten).
 
-* **Delete** - To delete the credentials of a device. This might be required if you have carried out a factory reset on a device. In this case, the device will often loose its assigned credentials. Delete it and continue with the normal [registration process](#device-registration) to re-register the device.
+* **Abschalten** - Um zeitweise die Verbindung zu einem Gerät zu unterbrechen.
 
-In the details page of any particular device credentials you can
+* **Löschen** - Um die Zugangsdaten für ein Gerät zu löschen. Dies kann erforderlich sein, wenn Sie ein Gerät auf die Werkseinstellungen zurückgesetzt haben. In diesem Fall verliert das Gerät häufig seine zugewiesenen Zugangsdaten. Löschen Sie diese und fahren Sie mit dem normalen [Registrierungsprozess](#device-registration) fort, um das Gerät erneut zu registrieren.
 
-* disable/enable a device with the "Active" slider,
-* change the password for a device,
-* assign or remove permissions for an individual device by selecting/deselecting roles in the "Global roles" list. 
+In der Detail-Seite der Gerätezugangsdaten, die angezeigt wird, wenn Sie im Kontextmenü eines Geräts **Bearbeiten** klicken, können Sie 
+
+* ein Gerät per Schieberegler ein-, bzw. abschalten,
+* das Passwort für ein Gerät ändern,
+* Berechtigungen zuweisen oder entfernen durch aktivieren bzw. deaktivieren der Kontrollkästchen in der Liste "Globale Rollen". 
+
+<img src="/guides/images/benutzerhandbuch/devmgmt-device-credentials-details.png" alt="Details Gerätezugangsdaten" style="max-width: 100%">
 
 <!--
 ![Bulk provisioning](/guides/images/users-guide/autoregister.png)

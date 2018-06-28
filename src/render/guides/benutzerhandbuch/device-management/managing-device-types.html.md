@@ -1,29 +1,28 @@
 ---
 order: 50
-title: Managing device types
+title: Verwalten von Gerätetypen
 layout: redirect
 ---
 
+Cumulocity verwendet Geräteprotokolle, um Daten von verschiedenen Gerätetypen zu verarbeiten. 
 
-To process data from various device types, Cumulocity uses device protocols.
+Klicken Sie “Geräteprotokolle” im Menü “Gerätetypen” im Navigator.
 
-Click “Device protocols” in the “Device types” menu to access the “Device protocols” page.
+Die Seite “Geräteprotokolle” zeigt eine Liste aller in Ihrem Konto verfügbaren Geräteprotokolle an.
 
-In the “Device protocols”  page you will find a list with all device protocols available in your account.
+<img src="/guides/images/benutzerhandbuch/devmgmt-device-protocols.png" alt="Geräteprotokolle" style="max-width: 100%">
 
-<img src="/guides/images/users-guide/DeviceManagement/DevMgmt_DeviceProtocols.png" alt="Device protocols" style="max-width: 100%">
+Die Geräteprotokoll-Liste zeigt die folgenden Information zu jedem Eintrag an:
 
-The device protocols list shows the following information on each device:
+* den Geräteprotokolltypen (IMPACT, LWM2M)
+* den Geräteprotokollnamen 
+* die Anzahl der Ressourcen für das Gerät (auf der rechten Seite)
 
-* the device protocol type (IMPACT, LWM2M)
-* the device protocol name 
-* the number of resources for the device (at the right)
-
-To add a new device protocol, click **Add device protocol** at the top bar. For details on adding a device protocol, follow the documentation of the particular device type you want to add:
+Um ein neues Geräteprotokoll hinzuzufügen, klicken Sie **Geräteprotokoll hinzufügen** in der oberen Leiste. Detaillierte Informationen zum Hinzufügen eines Protokolls finden Sie in der Beschreibung des jeweiligen Gerätetyps, den Sie hinzufügen möchten:
 
 * [IMPACT](/guides/users-guide/optional-services/nokia-impact)
 * LWM2M
 
-To edit a device protocol, either click on the protocol or click the menu icon at the right of the row and in the context menu click **Edit**. 
+Klicken Sie auf einen Eintrag, um diesen zu bearbeiten, oder öffnen Sie das Kontextmenü über das Menüsymbol und klicken Sie **Bearbeiten**. 
 
-To remove a device protocol, click **Remove** in its context menu.
+Um ein Geräteprotokoll zu löschen, klicken Sie **Löschen** im Kontextmenü.

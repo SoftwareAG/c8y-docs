@@ -1,155 +1,152 @@
 ---
 order: 40
-title: Monitoring and controlling devices
+title: Überwachen und Steuern von Geräten
 layout: redirect
 ---
 
 
-### <a name="map"></a>Locating devices
+### <a name="map"></a>Lokalisieren von Geräten
 
-Cumulocity provides the option to view all devices in your account on a map.
+Cumulocity bietet die Möglichkeit, den Standort aller Geräte in Ihrem Konto auf eine Karte anzuzeigen. 
 
-Click **Map** in the "Devices" menu in the navigator to display a map showing all devices in realtime. 
+Klicken Sie **Karte** im "Geräte"-Menü im Navigator, um eine Karte zu öffnen, die alle Geräte in Echtzeit anzeigt. 
 
-Devices are represented as "pins". Click a pin to see the name of the respective device. Click the device name to switch to the device details. 
+Die Geräte sind als "Pins" dargestellt. Klicken Sie auf einen Pin, um den Namen des entsprechenden Geräts anzuzeigen. Klicken Sie auf den Gerätenamen, um zur Ansicht der Gerätedetails zu wechseln.  
 
-<img src="/guides/images/users-guide/DeviceManagement/DevMgmt_Map.png" alt="Device Map" style="max-width: 100%">
+<img src="/guides/images/benutzerhandbuch/devmgmt-map.png" alt="Gerätekarte" style="max-width: 100%">
 
-### <a name="connection-monitoring"></a>Connection monitoring
+### <a name="connection-monitoring"></a>Verbindungsüberwachung
 
-In the Device Management application you have the option to monitor the connections to your devices. 
+In der Device Management-Anwendung können Sie die Verbindungen zu Ihren Geräten überwachen. 
 
-This can be done at the level of individual devices (see below) or across multiple devices in a list.
+Dies kann auf der Ebene einzelner Geräte erfolgen (siehe unten) oder für mehrere Geräte in einer Liste.
 
-To monitor the connections for multiple devices, open any device list.
+Um Verbindungen für mehrere Geräte zu überwachen, öffnen Sie eine beliebige Geräteliste. 
 
-The connection status is represented by arrows in the "Status" column in the device list.
+Der Verbindungsstatus wird durch Pfeile in der Spalte "Status" in der Geräteliste angezeigt. 
 
-<img src="/guides/images/users-guide/DeviceManagement/DevMgmt_ConnectionStatus.png" alt="Connection Status" style="max-width: 100%">
+<img src="/guides/images/benutzerhandbuch/devmgmt-connection-status.png" alt="Verbindungsstatus" style="max-width: 100%">
 
-**Send connections**
+#### Sendeverbindungen
 
-The top arrow represents the Send connection (traffic from the device to Cumulocity). The status for the Send connections may be one of:
+Die oberen Pfeile symbolisieren die Sendeverbindungen (Verkehr vom Gerät zu Cumulocity). Der Status der Sendeverbindungen kann einer der folgenden sein:
 
-* Online (data was sent within the required interval)- indicated by a green arrow
-* Offline (data was not sent within the required interval) - indicated by a red arrow
-* Unknown or not monitored (no interval configured) - indicated by a grey arrow
+* Grüner Pfeil - Online (Daten wurden im erwarteten Intervall gesendet)
+* Roter Pfeil - Offline (Daten wurden nicht im erwarteten Intervall gesendet)
+* Grauer Pfeil - Unbekannt oder nicht überwacht (kein Intervall konfiguriert)
 
-Hovering over the arrow displays the timestamp of the last request from the device to the server. 
+Wenn Sie den Mauszeiger über einen Pfeil bewegen, wird der Zeitstempel der letzten Anfrage vom Gerät an den Server angezeigt. 
 
-When a device is detected to be offline (stops sending data within required interval and top arrow changes to red color), an unavailability alarm is created for the device reading "No data received from device within required interval".
+Wenn ein Gerät als Offline erkannt wird, (sendet keine Daten im erwarteten Intervall und der obere Pfeil wechselt auf rot), wird ein  "UnavailabilityAlarm" für das Gerät erzeugt mit der Nachricht "Im erwarteten Intervall wurden keine Daten vom Gerät empfangen.".
 
-**Push connections**
+#### Push-Verbindungen
 
-The bottom arrow represents the Push connection (from Cumulocity to the device). The status for the Push connections may be one of:
+Der untere Pfeil symbolisiert die Push-Verbindungen (von Cumulocity zum Gerät). Der Status der Push-Verbindungen kann einer der folgenden sein:
 
-* Online (connection established)- indicated by a green arrow
-* Offline (connection not established) - indicated by a red arrow
-* Not monitored - indicated by a grey arrow
+* Grüner Pfeil - Online (Verbindung hergestellt)
+* Roter Pfeil - Offline (Verbindung nicht hergestellt)
+* Grauer Pfeil - Nicht überwacht
 
->**Info**: The Push connection means the connection from Cumulocity to /devicecontrol/notifications API, **not** to realtime API.
+>**Info**: Bei den Push-Verbindungen handelt es sich um die Verbindungen von Cumulocity zur "/devicecontrol/notifications" API, **nicht** zur Echtzeit-API.
 
-**Maintenance mode**
+#### Wartungsmodus
 
-Moreover, the device may be in  "Maintenance" mode, indicated by the tool icon in the "Status" column. This is a special connection status indicating that the device is currently being maintained and cannot be monitored. While a device is being maintained, no alarms for that device are raised. 
+Außerdem kann sich ein Gerät im Wartungsmodus befinden. Dies wird durch ein Werkzeug-Symbol in der Spalte "Status" gekennzeichnet. Dieser spezielle Verbindungsstatus zeigt an, dass das Gerät gerade gewartet wird und nicht überwacht werden kann. Während ein Gerät gewartet wird, werden keine Alarme für dieses Gerät ausgelöst. 
 
-You can turn maintenance mode on or off for a device through a slider in the "Connection monitoring" card in its "Info" tab. 
-
-
-**Connection monitoring in the "Info" tab**
-
-To monitor the connections of a particular device, go to the "Info" tab of this device. Under "Device status", the connection status for the device is displayed. 
-
-<img src="/guides/images/users-guide/DeviceManagement/DevMgmt_DeviceInfoStatus.png" alt="Device Status" style="max-width: 50%">
-
-Below the send connection and push connection status, the time of the last communication is displayed. 
-
-> **Info**: "Last communication" and "Last updated" are two entirely different time stamps. "Last communication" indicates when a device has last sent data. "Last updated" indicates when the inventory entry of the device was last updated. This update may have originated from the device, from the web user interface or from another application.
-
-In the  "Required Interval" field you can specify an interval. This parameter defines how often you expect to hear from the device. If, for example, you set the required interval to 60, you expect the device at least to communicate once in an hour with Cumulocity. The interval is either set by the device itself, based on the device's knowledge how often it will try to send data, or it is set manually by you.
-
-If an interval is set, you will find the **Maintenance** slider below it.
-
-With the **Maintenance** slider you can turn the maintenance mode for the device on or off which is immediately reflected in the connection status. 
-
-<img src="/guides/images/users-guide/DeviceManagement/DevMgmt_DeviceInfoStatusMaintenance.png" alt="Device status maintenance" style="max-width: 50%">
-
->**Info**: Connection monitoring is not realtime. This means that the connection status will not change immediately when you switch off a device. Depending on your network, it may take about 20 minutes until a broken connection is discovered, since the network will retry sending data for a significant amount of time.
-
-### <a name="monitoring-services"></a>Service monitoring
-
-Cumulocity distinguishes between connection monitoring and service monitoring. Connection monitoring, as described in the previous section, only indicates if the device is communicating with Cumulocity, it does not automatically indicate if it is functional or not.
-
-Service monitoring indicates if a device is in service. For example, a vending machine is in service if it is ready to sell goods. A vending machine can sell goods using cash money without a connection to Cumulocity. From the perspective of a merchant, it is in service. Similar, if you switch off the power on a gateway, the devices behind the gateway can still continue to work.
-
-Cumulocity considers a device to be in service while there is no critical, unresolved alarm present for the machine. This is displayed as a share of time such an alarm was present. If a machine didn't have any critical alarms whatsoever during a time period, it was 100% in service. If half of the time there was some critical, unresolved alarm, the machine was 50% in service.
-
-While a machine is offline, Cumulocity assumes by default 
-
-* that the machine continues to stay in service during the connection outage, if this was the status before it lost connection.
-* that the machine continues to stay out of service, if this was the status before it lost connection.
-
-There may be exceptions from this rule. If your vending machines rely exclusively on cashless payment, losing the connection to the network means that your machine is out of service and stops selling. In this case, unavailability alarms must be set in the [Administration application](/guides/users-guide/administration#reprio-alarms) which have "critical" severity instead of "major" severity.
-
-Cumulocity displays service availability at the level of individual devices and across all devices. 
-
-To check the service monitoring of this specific device, click the "Service monitoring" tab in the details of a particular device.
-
-To display the overall service across all devices, click "Service monitoring" in the navigator.
- 
-![Service monitoring](/guides/images/users-guide/servicemonitoring.png)
-
-The "Service Monitoring" page shows the availability percentage of devices for the last day, last week and last month. 
+In der Karte "Verbindungsüberwachung" in der Registerkarte "Info" eines Geräts können Sie den Wartungsmodus für dieses Gerät durch einen Schieberegler ein- oder ausschalten.
 
 
-### <a name="alarm-monitoring"></a>Working with alarms
+#### Verbindungsüberwachung in der Registerkarte "Info"
 
-Devices can raise alarms to indicate that there is a problem requiring an intervention. 
+Navigieren Sie zur Registerkarte "Info", um die Verbindungen eines bestimmten Geräts zu überwachen. Unter "Gerätestatus" wird der Verbindungsstatus für das Gerät angezeigt. 
 
-Cumulocity displays alarms at the level of individual devices and across all devices:
+<img src="/guides/images/benutzerhandbuch/devmgmt-connection-status-device.png" alt="Gerätestatus" style="max-width: 50%">
 
-* Click "Alarms" in the "Overview" menu in the navigator, to check the alarms for all devices. 
-* Switch to the "Alarm" tab in the details of a particular device, to check the alarms of this specific device.
+Unter dem Status für die Sende- und Push-Verbindungen wird der Zeitpunkt der letzten Kommunikation angezeigt. 
 
-<img src="/guides/images/users-guide/DeviceManagement/DevMgmt_AlarmDevice.png" alt="Alarms" style="max-width: 100%">
+> **Info**: "Letzte Kommunikation" und "Letzte Aktualisierung" sind zwei vollkommen verschiedene Zeitstempel. "Letzte Kommunikation" zeigt an, wann ein Gerät das letzte mal Daten gesendet hat. "Letzte Aktualisierung" zeigt an, wann der Stammdateneintrag des Geräts das letzte mal aktualisiert wurde. Diese Aktualisierung kann durch das Gerät selbst, über die Web-Benutzerschnittstelle oder durch eine andere Anwendung erfolgt sein. 
+> 
+Im Feld  "Erwartetes Intervall" können Sie ein Intervall angeben. Dieser Parameter legt fest, wie häufig Sie erwarten, von dem Gerät zu hören. Wenn Sie dieses Intervall etwa auf 60 setzen, erwarten Sie, dass das Gerät mindestens einmal pro Stunden mit Cumulocity kommuniziert. Das Intervall wird entweder vom Gerät selbst festgelegt, basierend auf den Kenntnissen des Geräts darüber, wie oft es versuchen wird, Daten zu senden, oder es wird manuell von Ihnen festgelegt. 
 
-By default, 
+Wenn ein Intervall angegeben ist, befindet sich darunter der Schieberegler **Wartung**.
 
-* only unresolved alarms are shown. If you turn on **Show cleared alarms** at the right of the top menu bar, you will see the entire alarm history.
-* alarms are shown as coming in from the devices in realtime. Click **Realtime** in the top menu bar to disable realtime updates.
+Mit dem Schieberegler **Wartung** können Sie den Wartungsmodus für das Gerät ein- oder ausschalten. Dies wird unmittelbar im Verbindungsstatus angezeigt.   
 
-Alarms are classified according to their severity. Cumulocity includes four different alarm types:
+<img src="/guides/images/benutzerhandbuch/devmgmt-maintenancemode.png" alt="Wartungsmodus" style="max-width: 50%">
 
-|Severity|Description|
+>**Info**: Die Verbindungsüberwachung findet nicht in Echtzeit statt. Dies führt dazu, dass der Verbindungsstatus sich nicht direkt ändert, sobald ein Gerät ausgeschaltet wird. Abhängig vom Netzwerk kann es bis zu 20 Minuten dauern, bis eine unterbrochene Verbindung erkannt wird, da das Netzwerk eine bestimmte Zeit lang versuchen wird, Daten zu senden.
+
+### <a name="monitoring-services"></a>Serviceüberwachung
+
+Cumulocity unterscheidet zwischen Verbindungsüberwachung und Serviceüberwachung. Verbindungsüberwachung, wie im vergangenen Abschnitt beschrieben, zeigt nur an, ob ein Gerät mit Cumulocity kommuniziert, was nicht automatisch auch bedeutet, dass das Gerät betriebsbereit ist.
+
+Serviceüberwachung dagegen zeigt an, ob ein Gerät in Betrieb ist. Ein Verkaufsautomat ist beispielsweise in Betrieb, wenn er bereit ist, Waren zu verkaufen. Ein Verkaufsautomat kann ohne eine Verbindung zu Cumulocity gegen Bargeld Waren verkaufen. Aus kaufmännischer Sicht ist der Automat also betriebsbereit. Ähnlich können Geräte hinter einem Gateway weiterarbeiten, auch wenn das Gateway ausgeschaltet wurde. 
+
+Cumulocity betrachtet ein Gerät als betriebsbereit, wenn es für das Gerät keine kritischen, ungelösten Alarme gibt. Dies wird entsprechend des Zeitanteils, den Alarme aktiv waren, dargestellt. Hat ein Gerät innerhalb eines bestimmten Zeitraums keinerlei kritische Alarme, war es 100% betriebsbereit. Gab es während der Hälfte der Zeit kritische, ungelöste Alarme, war es 50% betriebsbereit. 
+
+Ist ein Gerät offline, nimmt Cumulocity standardmäßig an, 
+
+* dass das Gerät während des Verbindungsabbruchs weiterhin in Betrieb bleibt, wenn dies zuvor der Fall war.
+* dass das Gerät während des Verbindungsabbruchs weiterhin nicht in Betrieb ist, wenn dies zuvor der Fall war.
+
+Es gibt möglicherweise Ausnahmen zu dieser Regel. Wenn Ihr Verkaufsautomat beispielsweise nur mit bargeldloser Bezahlung funktioniert, bedeutet ein Verbindungsabbruch, dass der Automat nichts mehr verkaufen kann und damit nicht mehr betriebsbereit ist. In diesem Fall müssen Nichtverfügbarkeits-Alarme in der ["Administration"-Anwendung](/guides/users-guide/administration#reprio-alarms) eingestellt werden, die einen "kritischen" anstatt eines "wichtigen" Schweregrads haben.
+
+Cumulocity zeigt die Serviceverfügbarkeit für einzelne Geräte sowie für alle Geräte an. 
+
+* Um die Serviceüberwachung für ein bestimmtes Gerät anzuzeigen, wechseln Sie zur Registerkarte "Serviceüberwachung" in den Gerätedetails dieses Geräts.
+* Um den gesamten Service aller Geräte anzuzeigen, klicken Sie "Serviceüberwachung" im Navigator.
+
+<img src="/guides/images/benutzerhandbuch/devmgmt-service-monitoring.png" alt="Wartungsmodus" style="max-width: 75%">
+
+Die Seite "Serviceüberwachung" zeigt die prozentuale Verfügbarkeit aller Geräte währende des letzten Tags, der letzten Woche und des letzten Monats an. 
+
+### <a name="alarm-monitoring"></a>Arbeiten mit Alarmen
+
+Geräte können Alarme auslösen, um anzuzeigen, dass ein Problem besteht, das einer Handlung bedarf. 
+
+Cumulocity zeigt Alarme für einzelne Geräte sowie für alle Geräte an. 
+
+* Um die Alarme für alle Geräte anzuzeigen, klicken Sie "Alarme" im Menü "Übersichten" im Navigator.  
+* Um die Alarme für ein bestimmtes Gerät anzuzeigen, wechseln Sie zur Registerkarte "Alarme" in den Gerätedetails dieses Geräts.
+
+<img src="/guides/images/benutzerhandbuch/devmgmt-alarm-device.png" alt="Gerätealarme" style="max-width: 100%">
+
+Standardmäßig
+* werden nur ungelöste Alarme gezeigt. Wenn Sie rechts in der oberen Menüleiste  **Aufgehobene Alarme anzeigen** aktivieren, sehen Sie die gesamte Alarmhistorie.
+* werden Alarme in Echtzeit angezeigt, sobald sie vom Gerät gemeldet werden. Klicken Sie  **Echtzeit** in der oberen Menüleiste, um Echtzeitaktualisierungen zu deaktivieren. 
+
+Alarme werden nach Schweregraden klassifiziert. Cumulocity enthält vier verschiedene Alarmtypen:
+
+|Schweregrad|Beschreibung|
 |:---|:--|
-|Critical|The device is out of service and should be fixed immediately.
-|Major|The device has a problem that should be fixed.
-|Minor|The device has a problem that may be fixed.
-|Warning|There is a warning.
+|Kritisch|Das Gerät ist nicht betriebsbereit. Dieser Zustand sollte umgehend behoben werden.
+|Wichtig|Das Gerät hat ein Problem, das behoben werden sollte.
+|Weniger wichtig|Das Gerät hat ein Problem, das behoben werden könnte.
+|Warnung|Es gibt eine Warnung.
 
-The "Alarm" tab is split into four sections corresponding to these alarm types.
+Die Registerkarte "Alarme" ist entsprechend dieser Alarmtypen in vier Bereiche unterteilt.
 
-By clicking one of the buttons at the top, the corresponding section will be hidden. Click it again to show the section again.
+Klicken Sie in der oberen Leiste auf eine der Schaltflächen für die Alarmtypen, um den entsprechenden Bereich auszublenden. Nochmaliges Klicken zeigt den Bereich wieder an. 
  
-Within each section, the alarms are sorted by their occurrence, displaying the most recent alarm first.
+In jedem Bereich sind die Alarme nach ihrem Auftreten sortiert, wobei der aktuellste zuerst angezeigt wird. 
 
-In each row, the following information for an alarm is provided:
+In jeder Zeile werden die folgenden Informationen für einen Alarm angezeigt:
 
-|Info|Description|
+|Info|Beschreibung|
 |:---|:---|
-|Severity|One of critical, major, minor, warning (see above).
-|Count|The number of times this alarm was sent by the device. Only one alarm of a particular type can be active for a certain device. If another alarm of the same type is sent by the device, the number is increased by 1.
-|Description|An arbitrary text describing the alarm.
-|Status|The status of the alarm. An alarm can be: <br/> **Active**: When it was raised and nobody is so far working on the alarm. <br/>**Acknowledged**: When someone changed the status to **Acknowledged** to indicate that someone is working on the alarm.<br/>**Resolved**: When either someone manually set the status to Resolved or when the device detected by itself that the problem has gone.
-|Last occurrence|Timestamp of the last occurrence of the alarm (device time).
-|Device|The name of the device. Clicking the name leads you to the detailed view of the device.
+|Schweregrad|Entweder kritisch, wichtig, weniger wichtig oder Warnung (siehe oben).
+|Anzahl|Wie oft der Alarm von dem Gerät gesendet wurde. Es kann jeweils nur ein Alarm pro Typ für ein Gerät aktiv sein. Wenn ein weiterer Alarm des gleichen Typs auftritt, wird die Zahl um 1 erhöht.
+|Beschreibung|Optionaler Text zur Beschreibung des Alarms.
+|Status|Status des Alarms: <br/> **Aktiv**: Wenn der Alarm ausgelöst wurde und keiner bisher den Alarm bearbeitet. <br/>**Bestätigt**: Wenn jemand den Status auf **Bestätigt** gesetzt hat, um anzuzeigen, dass dieser Alarm bereits bearbeitet wird.<br/>**Gelöscht**: Wenn entweder jemand den Status manuell auf **Gelöscht** gesetzt hat oder wenn das Gerät selbst festgestellt hat, dass das Problem behoben ist. 
+|Letztes Auftreten|Zeitstempel für das letzte Auftreten des Alarms (Gerätezeit).
+|Gerät|Name des Geräts. Durch Klicken des Namen gelangen Sie zur Detailansicht des Geräts.
 
-Click the arrow on the right of a row to expand it and display further details on the alarm.
+Klicken Sie auf den Pfeil rechts in einem Eintrag, um die Zeile auszuklappen und weitere Details zum Alarm anzuzeigen.
 
-* **Status**: Providing further information on the alarm status and showing the type of the alarm. The type info is used for duplicating alarms and for configuring the priority of alarms in the [Administration application](/guides/users-guide/administration#reprio-alarms).
-* **Change Log**: Providing the server time when the alarm was created, which may differ from the device time.
+* **Status**: Enthält weitere Informationen zum Alarmstatus und zeigt den Alarmtypen an. Die Typ-Information wird verwendet, um die Priorität von Alarmen zu konfigurieren, siehe [Priorisieren von Alarmen](/guides/users-guide/administration#reprio-alarms) in der "Administration"-Anwendung.
+* **Änderungsprotokoll**: Gibt die Serverzeit an, zu der der Alarm erstellt wurde. Diese kann von der Gerätezeit abweichen. 
 
-To change the status of an alarm, hover over it and click the button for the desired status or click the menu icon and from the context menu select the desired status.
+Um den Status eines Alarms zu ändern, bewegen Sie den Mauszeiger rechts über die Zeile und klicken Sie die entsprechende Schaltfläche oder öffnen Sie das Kontextmenü über das Menüsymbol und wählen Sie den gewünschten Status.  
 
 ![Alarm dropdown](/guides/images/users-guide/DeviceManagement/DevMgmt_AlarmDropdown.png)
 
@@ -157,7 +154,7 @@ To change the status of an alarm, hover over it and click the button for the des
 * **Additional information**: An alarm can contain arbitrary additional information provided by the device.
 * **Audit log**: Along with the alarm, a log of changes to the alarm is stored. This creates an alarm history with various data. -->
 
-### <a name="operation-monitoring"></a>Working with operations
+### <a name="operation-monitoring"></a>Arbeiten mit Befehlen
 
 Operations are used to remote control devices. 
 
@@ -228,16 +225,16 @@ To edit a bulk operation, follow these steps:
 
 To delete a bulk operation, hover over the bulk operation you want to delete and click the menu icon. In the context menu, click **Cancel operation**.
 
-### <a name="events-all"></a>Troubleshooting devices
+### <a name="events-all"></a>Fehlerbehebung von Geräten
 
-Troubleshooting devices at a more detailed level can be done with the help of events. Events are low-level messages sent by devices that are usually used for application-specific processing. For example, a vending device sends its realtime sales in the form of events. 
+Eine Fehlerbehebung auf einer etwas detaillierteren Ebene kann bei Geräten mit Hilfe von Ereignissen durchgeführt werden. Ereignisse sind von Geräten gesendete Low-Level-Nachrichten, die üblicherweise für die anwendungsspezifischen Verarbeitung verwendet werden. So sendet zum Beispiel ein Verkaufsautomat seine Echtzeitverkäufe in Form von Ereignissen. 
 
-Cumulocity displays events at the level of individual devices and across all devices: 
+Cumulocity zeigt Ereignisse für einzelne Geräte sowie für alle Geräte an: 
 
-* To see the events of this specific device, click the "Events" tab.
-* To see the operations for all devices, click "Events" in the "Overview" menu in the navigator.
-*  
-![Events](/guides/images/users-guide/DeviceManagement/DevMgmt_Events.png)
+* Um die Ereignisse für ein bestimmtes Gerät anzuzeigen, wechseln Sie zur Registerkarte "Ereignisse" in den Gerätedetails dieses Geräts.
+*  Um die Ereignisse für alle Geräte anzuzeigen, klicken Sie "Ereignisse" im Menü "Übersichten" im Navigator. 
+
+<img src="/guides/images/benutzerhandbuch/devmgmt-events.png" alt="Ereignisse" style="max-width: 100%">
 
 Per default, events are shown as coming in from the devices in realtime. To disable realtime updates, click **Realtime** at the right of the top menu bar.
 

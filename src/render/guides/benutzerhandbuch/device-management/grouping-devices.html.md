@@ -89,35 +89,32 @@ Aus der Gruppenperspektive:
 
 ### Bearbeiten einer Gruppe
 
-1. In the navigator, click a group to open it. 
-2. In the "Info" tab, click **Edit**. This allows you to edit the name of the group and to assign user permissions for the group. 
-For further information on permissions, see the [Administration Guide](/guides/users-guide/administration#managing-permissions).
+1. Klicken Sie im Menü "Gruppe" im Navigator auf eine Gruppe, um diese zu öffnen. 
+2. Klicken Sie **Bearbeiten** in der Registerkarte "Info". Sie können den Namen der Gruppe bearbeiten sowie Benutzerberechtigungen für die Gruppe zuweisen. Weitere Informationen zu den Berechtigungen finden Sie unter Administration > [Verwalten von Berechtigungen](/guides/users-guide/administration#managing-permissions).
 
-### <a name="smart-groups"></a>Using smart groups
+### <a name="smart-groups"></a>Verwenden von dynamischen Gruppen
 
-Smart groups are groups dynamically constructed based on filtering criteria. They have a temporary character because the group members can change constantly. Smart groups do not have fixed member listings.They have fixed criteria instead. This type of group can be used, for example, for bulk upgrades of devices of a certain type to a new software or firmware version.
+Dynamische Gruppen werden basierend auf Filterkriterien erstellt. Sie sind insofern temporär, als die Gruppenelemente sich ständig ändern können. Dynamische Gruppen haben keine feststehenden Elemente, sondern feststehende Kriterien. Dieser Gruppentyp kann beispielsweise eingesetzt werden, um Bulk-Upgrades von Geräten eines bestimmten Typs auf eine neue Software- oder Firmware-Version durchzuführen. 
 
-<img src="/guides/images/users-guide/smartfilters.png" alt="Adding top-level groups" style="max-width: 100%">
+Dynamische Gruppen werden in der Geräteliste erstellt. 
 
-Smart groups can be created from the device list. 
+1. Klicken Sie "Alle Geräte" im Navigator, um die Geräteliste anzuzeigen.
+2. Filtern Sie die Geräte in der Liste nach den gewünschten Kriterien. Nähere Information zum Filtern finden Sie unter [Filtern von Geräten](#filtering-devices).
+3. Klicken Sie **Dynamische Gruppe erstellen** rechts in der oberen Menüleiste.
+4. Geben Sie einen Namen für die Gruppe ein und klicken Sie **Erstellen**.
 
-1. To open the device list, click "All devices" in the navigator.
-2. Filter the devices in the list to select the desired devices. Refer to [Filtering devices](#filtering-devices) for details on filtering.
-3. Click **Create smart group** at the right of the top menu bar.
-4. Enter a name for the group and click **Create**.
+<img src="/guides/images/benutzerhandbuch/devmgmt-smartgroup-create.png" alt="Dynamische Gruppe erstellen" style="max-width: 100%">
 
-<img src="/guides/images/users-guide/smartgroup1.png" alt="Create a smart group" style="max-width: 100%">
-
-The new group will appear as a top-level group in the "Groups" menu of the navigator. Smart groups can be distinguished by a small cogwheel in the folder icon. 
+Die neue Gruppe erscheint als Top-Level-Gruppe im Menü "Gruppe" im Navigator. Dynamische Gruppen werden durch ein kleines Zahnrad im Ordnersymbol gekennzeichnet.  
 
 <img src="/guides/images/users-guide/DeviceManagement/DevMgmt_SmartgroupIcon.png" alt="Smart groups" style="max-width: 100%">
 
-In the "Sub-asset" tab you can adjust your selection and modify the filter settings.
+In der Registerkarte "Kind-Assets" können Sie Ihre Auswahl anpassen und die Filtereinstellungen ändern.
 
-To delete a smart group, click the menu icon and from the context menu select **Delete**. 
+Um eine dynamische Gruppe zu löschen, klicken Sie "Gruppen" im Navigator, klicken Sie in der Gruppenliste das Menüsymbol des entsprechenden Eintrags und klicken Sie **Löschen** im Kontextmenü. 
 
-<img src="/guides/images/users-guide/smartgroupdelete1.png" alt="Adding top-level groups" style="max-width: 100%">
+<img src="/guides/images/benutzerhandbuch/devmgmt-smartgroup-delete.png" alt="Dynamische Gruppe löschen" style="max-width: 100%">
 
-**Important**: Deleting a smart group is irreversible.
+**Wichtig**: Das Löschen einer dynamischen Gruppe ist irreversibel. 
 
->**Info**: Smart groups are not shown when using the Cockpit application.
+>**Info**: In der Cockpit-Anwendung werden dynamische Gruppen nicht angezeigt.

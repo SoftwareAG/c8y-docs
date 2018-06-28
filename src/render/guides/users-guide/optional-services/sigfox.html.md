@@ -35,7 +35,7 @@ Before you create API access to Cumulocity, you need to have an “Associated us
 - Customer [W]
 - Device Manager [W]
 
-**Info:** Without the following profiles, the required Sigfox Api access can not be set up.
+**Info:** Without the following profiles, the required Sigfox API access can not be set up.
 
 Step 1 is only relevant, if you do not have an associated user yet. If you do, skip to Step 2.
 
@@ -87,9 +87,9 @@ In order to create device types, go to the Device Management application and sel
 
 #### <a name="import-device-type"></a>Importing a device type
 
-In the Device database window, click on the "Import". 
+In the Device database window, click **Import**. 
 
-Upload the device type from a file and click **Import**.
+Upload the device type from a file and click **Import** again.
 
 #### <a name="create-new-device-type"></a>Creating a new device type
 
@@ -105,7 +105,7 @@ Select the way the message type is encoded in the "Source" list:
 
 - **Payload**: if the message type can be determined by looking at the subset of the message payload itself   
 
-In the following example payload structure, the first byte indicates the message type source (as highlighted).
+In the following sample payload structure, the first byte indicates the message type source (as highlighted).
 
 <img src="/guides/images/users-guide/actility/payload-example1.png" alt="Example payload: message type source" style="max-width: 100%">
 
@@ -133,7 +133,7 @@ In this sample payload structure the message ID is "1".
 
 Fill in the general fields for your new value in order to categorize it in the "Values" list. The associated "Name" for this value will be displayed under the "Display category" given.
 
-Under "Value selection" define from where the value should be extracted. In order to do so, indicate where the value information starts in the "Start bit" field and how long this information is in the "Number of bits" field.
+Under "Value selection" define from where the value should be extracted. In the “"Start bit" field, indicate where the value information starts and in the "Number of bits" field, indicate the length of the information.
 
 In this example the "Channel 1 Type" information starts in byte 2 (i.e. start bit = "16") and is 1 byte long (i.e. number of bits = "8").
 
@@ -170,14 +170,14 @@ After clicking "Save", your device type is created with the values you defined.
 
 **Example with single property**
 
-The following picture shows an example for a message which sends a measurement when this value (the battery level) changes. 
+The following image shows an example for a message which sends a measurement when this value (the battery level) changes. 
 
 <img src="/guides/images/users-guide/actility/deviceDatabase2.png" alt="Value configuration in detail: measurement" style="max-width: 50%">
 
 
 **<a name="nested-structure-example"></a>Example with nested structure**
 
-The following picture shows an example of a nested structure for a device type, reporting the current position of a GPS device. The device type is named "Position" and contains values for longitude and latitude. 
+The following image shows an example of a nested structure for a device type, reporting the current position of a GPS device. The device type is named "Position" and contains values for longitude and latitude. 
 
 The "Message ID" should be the same for all the values. Enter the rest of the parameters according to the instructions above. Enter "c8y_Position" in the "Managed object fragment" field and create a new value for each: longitude and latitude. 
 
@@ -197,12 +197,12 @@ In order to register a Sigfox device, go to the “Registration” page in the �
 
 In the upcoming window, click **Sigfox**. 
 
-**Note:** If Sigfox is not one of the available options, your subscription needs to include Sigfox.
+**Info:** If Sigfox is not one of the available options, your subscription needs to include Sigfox.
 
 In the next window, fill in the required information:
 
-**ID:** Unique device ID. The value should be a hexadecimal number.
-**PAC:** Porting authorization code for your device. The value should be a hexadecimal number.
+**ID:** Unique device ID. The value must be a hexadecimal number.
+**PAC:** Porting authorization code for your device. The value must be a hexadecimal number.
 **Contract:** Choose your desired contract.
 **Device Type:** Select your desired device type from the drop-down list.
 **Product Certificate Key:** This key can be located in “https://partners.sigfox.com/”. Navigate to your device and copy the certificate key.

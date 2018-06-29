@@ -6,12 +6,15 @@ layout: redirect
 
 ### MeasurementAPI [application/vnd.com.nsn.cumulocity.measurementApi+json
 
-Note, that all GET requests support two similar parameters fragmentType and valueFragmentType. Parameter valueFragmentType should be used instead of fragmentType because works on structured data and filtering via this parameter is lighter than filtering via fragmentType. Additionally parameter valueFragmentType can be used together with valueFragmentSeries.
+All GET requests support two similar parameters - fragmentType and valueFragmentType. 
 
-Parameters valueFragmentType and valueFragmentSeries allows to query for measurement via fragment and series e.g. If you looking for c8y_TemperatureMeasurement.T you should use query in form &valueFragmentType=c8y_TemperatureMeasurement&valueFragmentSeries=T.
+The parameter valueFragmentType should be preferred over the parameter fragmentType, because working with structured data and filtering via this parameter is lighter than filtering via fragmentType. 
 
-If you looking for non standard parameter of measurement e.g. without value you must still use parameter fragmentType. If you looking for non standard parameter of measurement e.g. without value you must still use parameter fragmentType. Note that usage of valueFragmentType or pair valueFragmentType and valueFragmentSeries is more preferable then fragmentType.
+Additionally, the parameter valueFragmentType can be used together with the parameter valueFragmentSeries.
 
+The parameters valueFragmentType and valueFragmentSeries allow to query for measurements via fragment and series. If, for example, you want to get c8y_TemperatureMeasurement.T, you should use a query of the form `&valueFragmentType=c8y_TemperatureMeasurement&valueFragmentSeries=T.`
+
+If you look for a non-standard parameter of a measurement, e.g. without a value, you must however still use the parameter fragmentType. 
 
 |Name|Type|Occurs|Description|
 |:---|:---|:---|:----------|

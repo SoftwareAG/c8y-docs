@@ -34,7 +34,7 @@ Note that receiving messages and receiving specific messages are not supported f
 
 * Jasper Control Center
 
-Please see [Jasper Control Center](/guides/users-guide/optional-services/jasper/) for information about how to set the credentials.
+Please see [Jasper Control Center](/guides/users-guide/optional-services/jasper) for information about how to set the credentials.
 
 * Ericsson
 

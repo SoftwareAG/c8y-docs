@@ -1,6 +1,6 @@
 ---
 order: 10
-title: Overview
+title: About this guide
 layout: standalone
 ---
 

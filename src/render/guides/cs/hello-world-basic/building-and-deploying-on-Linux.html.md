@@ -30,7 +30,7 @@ Run the script **create.sh** to create a sample project, provide the name of the
 
 	<<api>>
 
-For a working cake you need the build.sh or build.ps1 file to bootstrap cake and the build.cake file. Build.sh and build.ps1 are bootstrapper scripts that ensure you have Cake and other required dependencies installed. The bootstrapper scripts are also responsible for invoking Cake. Build.cake is the actual build script. 
+For a working cake you need the build.sh or build.ps1 file to bootstrap cake and the build.cake file. Build.sh and build.ps1 are bootstrapper scripts that ensure you have Cake and other required dependencies installed. The bootstrapper scripts are also responsible for invoking Cake. Build.cake is the actual build script.
 
 Build.cake contains tasks represent a unit of work in Cake, and you may use them to perform specific work in a specific order:
 
@@ -73,7 +73,7 @@ Ways to call the script
 * Merge the given arguments and ini configuration. Parameters from the file are overwritten by explicitly defined parameters.
 	* deploy.sh  -an hello-world -f settings_alternative.ini
 ~~~
-	./deploy.sh -t {tenant} -u {username} -p {password}  -an hello-world -f settings.ini
+	./deploy.sh -s {siteurl} -u {username} -p {password}  -an hello-world -f settings.ini
 ~~~
 
 The ini sample
@@ -81,6 +81,6 @@ The ini sample
 [deploy]
 username=tenant/user
 password=pass
-tenant=url
+url=someurl
 appname=sample_application
 ~~~

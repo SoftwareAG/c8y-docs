@@ -43,7 +43,7 @@ In order to deploy the application run the deploy script. You must provide the c
 * Merge the given arguments and ini configuration. Parameters from the file are overwritten by explicitly defined parameters.
 	* deploy.ps1  -an hello-world -f settings_alternative.ini
 ~~~
-	./deploy.sh -t {tenant} -u {username} -p {password}  -an hello-world -f settings.ini
+	./deploy.sh -s {siteurl} -u {username} -p {password}  -an hello-world -f settings.ini
 ~~~
 
 
@@ -52,7 +52,7 @@ The ini sample
 [deploy]
 username=tenant/user
 password=pass
-tenant=url
+url=someurl
 appname=sample_application
 ~~~
 

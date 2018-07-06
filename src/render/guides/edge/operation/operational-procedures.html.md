@@ -14,7 +14,7 @@ On the Edge server, execute the following commands as admin user.
 
 Execute the following command:
 
-	# systemctl start cumulocity-core-karaf
+	# sudo systemctl start cumulocity-core-karaf
 
 This will start the Karaf OSGi container if required. 
 
@@ -22,7 +22,7 @@ This will start the Karaf OSGi container if required.
 
 Execute the following command:
 
-	# systemctl stop cumulocity-core-karaf
+	# sudo systemctl stop cumulocity-core-karaf
 
 This will stop the Karaf OSGi container if required. 
 
@@ -34,7 +34,7 @@ On the Edge server, execute the following commands as admin user.
 
 Execute the following command:
 
-	# systemctl start opcua-agent-server
+	# sudo systemctl start opcua-agent-server
 
 This will start the opcua-agent-server if required. 
 
@@ -42,7 +42,7 @@ This will start the opcua-agent-server if required.
 
 Execute the following command:
 
-	# systemctl stop opcua-agent-server
+	# sudo systemctl stop opcua-agent-server
 
 This will stop the opcua-agent-server if required. 
 
@@ -50,7 +50,7 @@ This will stop the opcua-agent-server if required.
 
 Execute the following command:
 
-	# systemctl restart opcua-agent-server
+	# sudo systemctl restart opcua-agent-server
 
 This will restart the opcua-agent-server if required. 
 
@@ -62,7 +62,7 @@ On the Edge server, execute the following commands as admin user.
 
 Execute the following command:
 
-	# systemctl start smartrule-agent-server-apama
+	# sudo systemctl start smartrule-agent-server-apama
 
 This will start the smartrule-agent-server-apama if required. 
 
@@ -70,7 +70,7 @@ This will start the smartrule-agent-server-apama if required.
 
 Execute the following command:
 
-	# systemctl stop smartrule-agent-server-apama
+	# sudo systemctl stop smartrule-agent-server-apama
 
 This will stop the smartrule-agent-server-apama if required. 
 
@@ -78,7 +78,7 @@ This will stop the smartrule-agent-server-apama if required.
 
 Execute the following command:
 
-	# systemctl restart smartrule-agent-server-apama
+	# sudo systemctl restart smartrule-agent-server-apama
 
 This will restart the smartrule-agent-server-apama if required. 
 

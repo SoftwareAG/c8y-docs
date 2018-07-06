@@ -1,7 +1,0 @@
----
-order: 40
-title: Connecting to the cloud
-layout: redirect
----
-
-<!--Content to be added-->

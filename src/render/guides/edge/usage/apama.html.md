@@ -37,7 +37,7 @@ For further information refer to the [Apama guide](/guides/apama) or see the top
 
 In the Cockpit application, select the device sending measurements in the "Groups" menu in the navigator and switch to its “Alarms” tab (since the custom rule written was such that it creates alarms).
 
-<img src="/guides/images/edge/edge-apama-alarms.png" name="Alarms" style="width:75%;"/> 
+<img src="/guides/images/edge/edge-apama-alarms.png" name="Alarms" style="width:50%;"/> 
 
 In the Device Management application, click “All devices” in the navigator. Select the device from the device list and switch to the “Events” tab, to see the events sent by Apama as per the custom CEP rule. 
 
@@ -51,7 +51,7 @@ To validate the Apama deployment of custom rules, source the “apama_env” fil
 
 Execute the “engine_inspect –m” command to verify that the apama monitor is injected and running successfully in the apama correlator (look at the last monitor).
 
-<<img src="/guides/images/edge/edge-apama-validate2.png" name="Validate" style="width:75%;"/>  
+<img src="/guides/images/edge/edge-apama-validate2.png" name="Validate" style="width:50%;"/>  
 
 Execute the “engine_receive –c <channel>” command to specify the channel on which to listen for events from the correlator.
 

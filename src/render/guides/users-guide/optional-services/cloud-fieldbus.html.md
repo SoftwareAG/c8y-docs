@@ -4,7 +4,7 @@ title: Cloud Fieldbus
 layout: redirect
 ---
 
-Cloud Fieldbus is a Cumulocity application with the ability to collect data from fieldbus devices and remotely manage them. This section describes how to
+ Cloud Fieldbus is a Cumulocity application with the ability to collect data from fieldbus devices and remotely manage them. This section describes how to
 
 * [Connect](#connect) fieldbus devices.
 * [Manage](#manage) the connected fieldbus devices.

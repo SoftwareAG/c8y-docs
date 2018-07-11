@@ -29,7 +29,8 @@ The Apama licence will be part of the purchase. For existing customers, please s
 
 * DNS entry <br>
 The DNS (Domain Name System) is used to resolve human readable host names like
-`www.cumulocity.com` to machine readable IP addresses like `192.198.1.10`.
+`www.cumulocity.com` to machine readable IP addresses like `192.198.1.10`.<br>
+If you want to connect to Edge VM within your LAN, the DNS entry has to be added for the domain_url (URL under which Edge can be reached) with the IP address of the host.
 
 ### Network connectivity
 
@@ -48,7 +49,7 @@ There is no internet connection required during installation. Internet connectio
 
 #### Incoming traffic
 
-The following ports need to be enabled by default in order to accept traffic from users and devices on the internet (also refer to [Setting up port forwarding](guides/edge/installation/setting-up-the-environment#port-forwarding) in Setting up the environment):
+The following ports need to be enabled by default in order to accept traffic from users and devices on the internet (also refer to [Setting up port forwarding](/guides/edge/installation/setting-up-the-environment#port-forwarding) in Setting up the environment):
 
 |Source IP|Source Port|Destination IP|Destination Port|Service
 |:---|:---|:---|:---|:---

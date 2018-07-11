@@ -6,7 +6,7 @@ layout: redirect
 
 ### Preparation
 
-Copy the Edge licence, SSL key, SSL certificate - and if available Apama license - into the Edge VM folder (directory "home/admin"). 
+Copy the Edge licence, SSL key, SSL certificate - and if available Apama license - into the Edge VM folder (directory "/home/admin"). 
 
 The files have the following extensions:
 

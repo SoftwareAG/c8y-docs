@@ -26,7 +26,6 @@ For further information refer to the [Apama guide](/guides/apama) or see the top
 
 2. In the Administration application, open the “Own Applications” page from the navigator. Click “**Add application** and in the upcoming window click **Upload custom Apama rule**. <br>
 <img src="/guides/images/edge/edge-apama-upload-file.png" name="Upload file" style="width:50%;"/> 
->**Info**: To be able to do so, ensure that the “Apama-small” microservice is subscribed to your tenant.
 
 3. Upload the Apama monitor file (.mon) previously created. After successful upload your rule will be deployed as a custom Apama application.
 

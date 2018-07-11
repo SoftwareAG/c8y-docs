@@ -93,7 +93,7 @@ The virtual machine has the following hardware requirements:
 
 ### Edge versions
 
-Cumulocity Edge 9.0 uses the following versions:
+Cumulocity Edge uses the following versions:
 
 |Edge component|version|
 |:---|:---|

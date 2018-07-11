@@ -20,7 +20,7 @@ To connect LwM2M devices, you need to upload a CSV file with registration data. 
 In the first CSV example you can see the following fields:
 
 |Field|Description|
-|:----|:----------|
+|:-----|:----------|
 |ID|Unique ID of the device. For example, the ID could be an IMEI, serial number, etc.|
 |IDTYPE|The type of the device.|
 |CREDENTIALS|The content of this field is not used by LwM2M.|
@@ -54,8 +54,8 @@ In this CSV example, the security mode value is “PSK”, hence additional fiel
 |registrationLifetime|Integer|The registrationLifetime that is sent to the device during bootstrap. Overrides global agent configuration.|Optional|
 |defaultMinimumPeriod|Integer|The defaultMinimumPeriod to configure during Bootstrap. See LWM2M Spec for explanation.|Optional|
 |defaultMaximumPeriod|Integer|The default max perioid  to configure during Bootstrap. See LWM2M Spec for explanation.|Optional|
-bindingMode|String|The LWM2M binding Mode to report to the device. Supported are “UQ” (default, queuing) and “U” (Unqueued). Please note that Cumulocity will always queue operations.|Optional|
-notificationIfDisabled (true/false)|Boolean|See LWM2M spec. Default: Not configured.|Optional, defaults to Leshan default behavior|
+|bindingMode|String|The LWM2M binding Mode to report to the device. Supported are “UQ” (default, queuing) and “U” (Unqueued). Please note that Cumulocity will always queue operations.|Optional|
+|notificationIfDisabled (true/false)|Boolean|See LWM2M spec. Default: Not configured.|Optional, defaults to Leshan default behavior|
 |disableTimeout (true/false)|Boolean|See LWM2M spec. Default: Not configured.|Optional, defaults to Leshan default behavior|
 |external-c8y_BootstrapPskId|String|The ID being used to find a device during bootstrap.|Optional|
 
@@ -77,7 +77,7 @@ To add a new LWM2M device protocol follow these steps:
 2. Click **Add device protocol** in the top menu bar.
 3. In the upcoming dialog select **LWM2M** as device protocol type.
 
-<img src="/guides/users-guide/LWM2M/protocol_type.png" alt="Protocol type" style="max-width: 50%">
+<img src="/guides/images/users-guide/LWM2M/protocol_type.png" alt="Protocol type" style="max-width: 50%">
 
 4. Next, upload an appropriate DDF or XML file. DDF or XML files describe the data provided by your device. They are typically provided by the manufacturer or by standards bodies such as IPSO. There are also 3 "special" device protocols (DDF files) for standard OMA objects: 6 (location tracking), 5 (firmware update) and 3 (device information). If these files are not uploaded, then neither location tracking nor firmware updates will work. By default, the LWM2M agent adds mappings to these objects and knows how to "handle" their information without any additional configuration. The XML schema used by LWM2M can be found here.
 

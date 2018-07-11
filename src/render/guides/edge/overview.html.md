@@ -4,7 +4,7 @@ title: About this guide
 layout: standalone
 ---
 
->This documentation is related to Cumulocity Edge 9.0 which is currently a beta version.
+>**Important**: This documentation is related to Cumulocity Edge 9.0. Software and documentation both are currently in beta status.
  
 
 ### Documentation

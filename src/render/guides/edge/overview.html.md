@@ -4,7 +4,7 @@ title: About this guide
 layout: standalone
 ---
 
->**Important**: Cumulocity software and documentation both are currently in beta status.
+>**Important**: Cumulocity Edge software and documentation both are currently in beta status.
  
 
 ### Documentation

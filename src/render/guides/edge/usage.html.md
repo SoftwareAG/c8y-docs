@@ -6,5 +6,5 @@ layout: subsections
 collection: 'guides/edge/usage'
 ---
 
->**Important**: Cumulocity software and documentation both are currently in beta status.
+>**Important**: Cumulocity Edge software and documentation both are currently in beta status.
 

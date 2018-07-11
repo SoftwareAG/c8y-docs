@@ -102,7 +102,9 @@ The following image shows an example where
 
 ### <a name="domain-name"></a>Domain name
 
-In the “Domain name” tab you can activate your own custom domain name.  
+In the “Domain name” tab you can activate your own custom domain name. 
+
+>**Info**: To activate you domain, you need a valid license. Please contact our Sales team at sales@cumulocity.com to install a license for your domain.  
 
 <img src="/guides/images/users-guide/Administration/Admin_DomainName.png" alt="Domain name" style="max-width: 100%">
 
@@ -117,7 +119,7 @@ Before activating the custom domain name, make sure that
 * you have uploaded a valid SSL certificate for your custom domain,
 * the common name (domain name) is not used by any other tenant,
 * the certificate is currently valid (validFrom in the past and validTo in the future),
-* you have configured the DNS A entry for the domain to point to the IP address of your DNS server.
+* you have added a CNAME entry to your DNS server. Make sure to remove all A entries for the wildcard domain. If your DNS service does not provide CNAME entries for wildcard certificates, please contact our support.
 
 After successful activation you will be redirected to your enterprise tenant at the new domain. You will also receive an email with information about the activation.
 
@@ -132,7 +134,7 @@ When your certificate expires, you must update your certificate with a new one w
 * the certificate is not password protected,
 * the certificate is currently valid (validFrom in the past and validTo in the future),
 * the certificate has exactly the same common name (domain name) as the currently active certificate,
-* you have configured the DNS A entry for the domain to point to the IP address of your DNS server.
+* you have added a CNAME entry to your DNS server. Make sure to remove all A entries for the wildcard domain. If your DNS service does not provide CNAME entries for wildcard certificates, please contact our support.
 
 
 **Deactivating your certificate**

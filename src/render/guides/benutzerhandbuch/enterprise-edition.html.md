@@ -1,5 +1,5 @@
 ---
-order: 50
+order: 40
 title: Enterprise Edition
 layout: subsections
 collection: 'guides/benutzerhandbuch/enterprise-edition'

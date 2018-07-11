@@ -4,49 +4,7 @@ layout: redirect
 title: Accessing the Service APIs
 ---
 
-In the following section you will learn how to send an email via the Java Client API.
-
-### Sending an Email via Java Client API
-
-The interface for handling email services can be obtained from Java by using the platform method as follows:
-
-    EmailApi emailApi = platform.getEmailApi();
-
-If you would like to send an email from Java, build an email object and call a respective method of an email API:
-
-    Email email = EmailBuilder.aEmail().
-                               withTo("primarydestination@somemail.com").
-                               withCc("copydestination@somemail.com").
-                               withReplyTo("wheretoreply@somemail.com").
-                               withSubject("New incoming message").
-                               withText("Hello World!").
-                               build();
-    HttpStatus httpStatus = emailApi.sendEmail(email);
-
-The destination and the copy and blind copy fields can contain several values, like
-withTo("to1@email.com", "to2@email.com"). 
-
-> Note: When requests to the email API contain any form of attachment, a "500" server error is returned.
-
-A call to an email API returns an HTTP status of a request, 200 OK in case if an email was sent successfully.
-
-Disclaimer: Email API is only available with upcoming Microservice feature.
-
-#### Email management endpoint
-
-The new endpoint is a POST to /email/emails expecting an email as json. For example:
-    
-    POST /email/emails
-    Host: ...
-    Authorization: Basic ...
-    Content-Type: application/json
-    {
-      "to": ["first@somemail.com", "second@somemail.com"],
-      "cc": ["copydestination@somemail.com"],
-      "replyTo": "wheretoreply@somemail.com",
-      "subject": "New incoming message",
-      "text": "Hello world!"
-    }
+In the following section you will learn how to send and receive SMS messages via the Java Client API.
 
 ### Accessing SMS Messaging API
 
@@ -58,27 +16,13 @@ Using this handle, you can send and retrieve the sms messages from Java by calli
 
 #### Prerequisites
 
-1.Sms Gateway Microservice and setting tenant options
-
-The information about sms-gateway microservice's URL should be given in the tenant options.
-Please use our Rest API to store this information as the following:
-
-    POST /tenant/options
-    Host: ...
-    Authorization: Basic ...
-
-    {
-      "category": "sms",
-      "key": "microservice.url",
-      "value": "<IP/Domain>:8688/sms-gateway"
-    }
-
-2.Assigning required roles
+##### Assigning required roles 
 
 To use the sms messaging API group of the user should have required roles such as 'SMS_ADMIN' for sending and 'SMS_READ' for receiving messages.
+
 Please see '[Assigning account-wide permissions](/guides/users-guide/administration/#managing-permissions)'
 
-3.Choosing a sms provider
+##### Choosing a sms provider
   
 * OpenIT
 
@@ -90,7 +34,7 @@ Note that receiving messages and receiving specific messages are not supported f
 
 * Jasper Control Center
 
-Please see [Jasper Control Center](/guides/users-guide/optional-services/jasper/) for information about how to set the credentials.
+Please see [Jasper Control Center](/guides/users-guide/optional-services/jasper) for information about how to set the credentials.
 
 * Ericsson
 
@@ -250,7 +194,7 @@ Sender name:
 
 Note that receiving messages and receiving specific message are not supported for this provider.
 
-#### Sending a message:
+#### Sending a message
 
 To send a sms message using the API, prepare the message with the "send message request builder" and call the "send message" function of the API with the message.
 
@@ -262,7 +206,7 @@ To send a sms message using the API, prepare the message with the "send message 
 
     smsMessagingApi.sendMessage(smsMessage);
 
-#### Receiving all messages:
+#### Receiving all messages
 
 Not every sms provider supports receiving messages. 
 
@@ -270,7 +214,7 @@ To receive all sms messages you can use API as follows:
 
     smsMessagingApi.getAllMessages(Address.phoneNumber("<phone number>"));
 
-#### Receiving a specific message:
+#### Receiving a specific message
 
 Not every sms provider supports receiving messages. 
 
@@ -278,13 +222,13 @@ To receive a specific sms message you can use API as follows:
 
     smsMessagingApi.getMessage(Address.phoneNumber("<phone number>"), "<message id>");
 
-#### Sms management endpoints
+#### SMS management endpoints
 
 To accomplish the same behaviour, Rest API can be used.
 
 Sending message:
 
-    POST /service/sms/smsmessaging/outbound/tel:<sender phone number>/requests
+    POST /service/messaging/smsmessaging/outbound/tel:<sender phone number>/requests
     Host: ...
     Authorization: Basic ...
     Content-Type: application/json
@@ -305,7 +249,7 @@ Sending message:
 
 Receiving all messages:
 
-    GET /service/sms/smsmessaging/inbound/registrations/tel:<receiver phone number>/messages
+    GET /service/messaging/smsmessaging/inbound/registrations/tel:<receiver phone number>/messages
     Host: ...
     Authorization: Basic ...
 
@@ -326,7 +270,7 @@ Receiving all messages:
     
 Receiving a specific message:
 
-    GET /service/sms/smsmessaging/inbound/registrations/tel:<receiver phone number>/messages/<message id>
+    GET /service/messaging/smsmessaging/inbound/registrations/tel:<receiver phone number>/messages/<message id>
     Host: ...
     Authorization: Basic ...
 

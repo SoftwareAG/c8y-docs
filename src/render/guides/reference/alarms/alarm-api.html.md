@@ -17,6 +17,9 @@ layout: redirect
 |alarmsForStatusAndTime|AlarmCollection URI template|1|Read-only collection of all alarms for a particular status and time range (placeholder {status}, {dateFrom} and {dateTo}).|
 |alarmsForSourceAndTime|AlarmCollection URI template|1|Read-only collection of all alarms for a particular source and time range (placeholder {source}, {dateFrom} and {dateTo};).|
 |alarmsForSourceAndStatusAndTime|AlarmCollection URI template|1|Read-only collection of all alarms for a particular source, status and time range (placeholder {source}, {status}, {dateFrom} and {dateTo};).|
+|alarmsForSourceWithAssetsAndWithDevices|AlarmCollection URI template|1|Read-only collection of all alarms for a particular source with its children (placeholder {source}, {withAssets} and {withDevices}).|
+|alarmsForSeverity|AlarmCollection URI template|1|Read-only collection of all alarms for a particular severity (placeholder {severity}).|
+|alarmsForResolved|AlarmCollection URI template|1|Read-only collection of all alarms which are resolved (placeholder {resolved}).|
 
 ### GET the AlarmAPI resource
 
@@ -44,5 +47,8 @@ Example response:
 		"alarmsForTime" : "<<AlarmCollection URL>>?dateFrom={dateFrom}&dateTo={dateTo}",
 		"alarmsForStatusAndTime" : "<<AlarmCollection URL>>?status={status}&dateFrom={dateFrom}&dateTo={dateTo}",
 		"alarmsForSourceAndTime" : "<<AlarmCollection URL>>?source={source}&dateFrom={dateFrom}&dateTo={dateTo}",
-		"alarmsForSourceAndStatusAndTime" : "<<AlarmCollection URL>>?source={source}&status={status}&dateFrom={dateFrom}&dateTo={dateTo}"
+		"alarmsForSourceAndStatusAndTime" : "<<AlarmCollection URL>>?source={source}&status={status}&dateFrom={dateFrom}&dateTo={dateTo}",
+		"alarmsForSourceWithAssetsAndWithDevices": "<<AlarmCollection URL>>?source={source}&withAssets={withAssets}&withDevices={withDevices}"
+		"alarmsForResolved": "<<AlarmCollection URL>>?resolved={resolved}",
+		"alarmsForSeverity": "<<AlarmCollection URL>>?severity={severity}",
 	}

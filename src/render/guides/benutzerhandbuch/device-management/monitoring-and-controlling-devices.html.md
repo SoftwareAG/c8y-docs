@@ -154,20 +154,20 @@ Um den Status eines Alarms zu ändern, bewegen Sie den Mauszeiger rechts über d
 * **Additional information**: An alarm can contain arbitrary additional information provided by the device.
 * **Audit log**: Along with the alarm, a log of changes to the alarm is stored. This creates an alarm history with various data. -->
 
-### <a name="operation-monitoring"></a>Arbeiten mit Befehlen
+### <a name="operation-monitoring"></a>Arbeiten mit Kommandos
 
-Operations are used to remote control devices. 
+Kommandos werden verwendet, um Geräte aus der Ferne zu steuern. 
 
-Cumulocity displays operations at the level of individual devices and across all devices:
+Cumulocity zeigt Kommandos für einzelne Geräte sowie für alle Geräte an:
 
-* Click "Device control" in the "Overview" menu in the navigator to see the operations for all devices. 
-* * Switch to the "Control" tab in the details of a particular device to see the operations of this specific device.
+* Um die Kommandos für alle Geräte anzuzeigen, klicken Sie "Gerätesteuerung" im Menü "Overviews" im Navigator.  
+* Um die Alarme für ein bestimmtes Gerät anzuzeigen, wechseln Sie zur Registerkarte "Steuerung" in den Gerätedetails dieses Geräts.
 
 ![Device Control](/guides/images/users-guide/DeviceManagement/DevMgmt_DeviceControl.png)
 
-Operations can be in any of four states, indicated by meaningful icons:
+Kommandos können in einem der folgenden Zustände sein, angezeigt durch entsprechende Symbole:
 
-|State|Description|
+|Zustand|Beschreibung|
 |:---|:--|
 |Pending|The operation has just been created and is waiting for the device to pick it up.
 |Executing|The operation has been picked up by the device and is being executed.

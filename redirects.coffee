@@ -71,5 +71,7 @@ redirects =
 	'/guides/devices': '/guides/devices/overview'
 	'/guides/apama': '/guides/apama/introduction'
 	'/guides/event-language': '/guides/event-language/introduction'
+	'/guides/http': '/guides/http/introduction'
+	'/guides/edge': '/guides/edge/overview'
 
 module.exports = redirects

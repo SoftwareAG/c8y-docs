@@ -13,5 +13,5 @@ collection: 'guides/edge/overview'
 > Therefore:
 > 
 > * Do NOT use this release in production.
-> * The documented upgrade procedure (see [Operating Cumulocity Edge](/guides/edge/operation) is only guaranteed to work with the final release, not with the beta release.
+> * The documented upgrade procedure (see [Operating Cumulocity Edge](/guides/edge/operation)) is only guaranteed to work with the final release, not with the beta release.
 >  

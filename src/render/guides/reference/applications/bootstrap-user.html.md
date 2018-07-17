@@ -8,11 +8,11 @@ layout: redirect
 
 Response body: ApplicationUser
 
-Required role: ROLE_APPLICATION_MANAGEMENT_ADMIN
+Required role: ROLE&#95;APPLICATION&#95;MANAGEMENT_ADMIN
 
 Example request:
     
-    GET /application/bootstrapUser
+    GET /application/applications/{microservice-applicationId}/bootstrapUser
     Host: ...
     Authorization: Basic ....
     Accept: application/vnd.com.nsn.cumulocity.user+json;ver=...

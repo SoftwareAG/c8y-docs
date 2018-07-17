@@ -197,7 +197,7 @@ In order to register a Sigfox device, go to the “Registration” page in the �
 
 In the upcoming window, click **Sigfox**. 
 
-**Info:** If Sigfox is not one of the available options, your tenant is not subscribed to the Sigfox microservice.
+**Info:** If Sigfox is not one of the available options, your tenant is not subscribed to the relevant applications, see info at the top.
 
 In the next window, fill in the required information:
 

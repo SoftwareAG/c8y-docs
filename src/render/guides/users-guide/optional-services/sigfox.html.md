@@ -24,7 +24,7 @@ The following sections describe how to:
 - [Update devices](#old-registration) registered with the general device registration.
 - [Send operations](#operations) to devices.
 
-**Info:** In order to enable this feature, please contact support.
+**Info:** To be able to use the Sigfox agent, your tenant needs to be subscribed to the following applications: sigfox-agent, feature-fieldbus4. In case of any issues, please contact support.
 
 ### <a name="connectivity"></a>Managing the connectivity settings
 
@@ -197,7 +197,7 @@ In order to register a Sigfox device, go to the “Registration” page in the �
 
 In the upcoming window, click **Sigfox**. 
 
-**Info:** If Sigfox is not one of the available options, your subscription needs to include Sigfox.
+**Info:** If Sigfox is not one of the available options, your tenant is not subscribed to the Sigfox microservice.
 
 In the next window, fill in the required information:
 

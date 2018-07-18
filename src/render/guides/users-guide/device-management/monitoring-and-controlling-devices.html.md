@@ -140,7 +140,7 @@ In each row, the following information for an alarm is provided:
 |Severity|One of critical, major, minor, warning (see above).
 |Count|The number of times this alarm was sent by the device. Only one alarm of a particular type can be active for a certain device. If another alarm of the same type is sent by the device, the number is increased by 1.
 |Description|An arbitrary text describing the alarm.
-|Status|The status of the alarm. An alarm can be: <br/> **Active**: When it was raised and nobody is so far working on the alarm. <br/>**Acknowledged**: When someone changed the status to **Acknowledged** to indicate that someone is working on the alarm.<br/>**Resolved**: When either someone manually set the status to Resolved or when the device detected by itself that the problem has gone.
+|Status|The status of the alarm. An alarm can be: <br/> **Active**: When it was raised and nobody is so far working on the alarm. <br/>**Acknowledged**: When someone changed the status to **Acknowledged** to indicate that someone is working on the alarm.<br/>**Cleared**: When either someone manually set the status to "Clear" or when the device detected by itself that the problem has gone.
 |Last occurrence|Timestamp of the last occurrence of the alarm (device time).
 |Device|The name of the device. Clicking the name leads you to the detailed view of the device.
 
@@ -152,6 +152,8 @@ Click the arrow on the right of a row to expand it and display further details o
 To change the status of an alarm, hover over it and click the button for the desired status or click the menu icon and from the context menu select the desired status.
 
 ![Alarm dropdown](/guides/images/users-guide/DeviceManagement/DevMgmt_AlarmDropdown.png)
+
+It is also possible to change the status of all alarms to "clear" at once. Click **Clear all** in the top menu bar, to clear all alarms of the selected severities.
 
 <!-- Seems to be no longer relevant
 * **Additional information**: An alarm can contain arbitrary additional information provided by the device.

@@ -8,7 +8,7 @@ layout: redirect
 
 Response body: ApplicationUser
 
-Required role: ROLE&#95;APPLICATION&#95;MANAGEMENT_ADMIN
+Required role: ROLE_APPLICATION_MANAGEMENT_ADMIN
 
 Example request:
     

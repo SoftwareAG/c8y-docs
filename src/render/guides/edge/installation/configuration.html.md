@@ -6,7 +6,7 @@ layout: redirect
 
 ### Preparation
 
-Copy the Edge licence, SSL key, SSL certificate - and if available Apama license - into the Edge VM folder (directory "/home/admin"). 
+Copy the Edge licence, SSL key, SSL certificate and Apama licence (if obtained) into the Edge VM using FTP. You can copy it to the Edge VM folder "/home/admin". 
 
 The files have the following extensions:
 
@@ -52,21 +52,21 @@ You will be prompted to select one of the following options:
 
 		$ Enter Domain name 
 
-1. Provide the absolute path for the SSL certificate file, e.g. "/home/admin/<filename>.cert" or "/home/admin/<filename>.crt". 
+1. Provide the absolute path for the SSL certificate file, e.g. "/home/admin/myown-selfsigned.crt".
 
 		$ Enter Domain SSL Certificate file path
 
-1. Provide the absolute path for the “.key” file, e.g. "/home/admin/<filename>.key".
+1. Provide the absolute path for the “.key” file, e.g. e.g. "/home/admin/myown-selfsigned.key".
 
 		$ Enter Domain SSL Certificate Private Key file path 
 
-1. Provide the absolute path for the “.license” file e.g. "/home/admin/<filename>.license".
+1. Provide the absolute path for the “.licence” file e.g. e.g. "/home/admin/ myown.iot.com.licence".
 
-		$ Enter Cumulocity License file path
+		$ Enter Cumulocity Licence file path
 
 1. Provide the absolute path for the “.xml” file, e.g. "/home/admin/<filename>.xml".
 
-		$ Enter Apama License file path (Optional. Press Enter to continue)
+		$ Enter Apama Licence file path (Optional. Press Enter to continue)
 
 
 #### Updating SSL certificates or Cumulocity licence (Option 2)
@@ -79,13 +79,13 @@ You will be prompted to select one of the following options:
 
 		$ Enter Domain SSL Certificate Private Key file path 
 
-1. Provide the absolute path for the “.license” file e.g. "/home/admin/<filename>.license".
+1. Provide the absolute path for the “.licence” file e.g. "/home/admin/<filename>.licence".
 
-		$ Enter Cumulocity License file path
+		$ Enter Cumulocity Licence file path
 
 1. Provide the absolute path for the “.xml” file, e.g. "/home/admin/<filename>.xml".
 
-		$ Enter Apama License file path (Optional. Press Enter to continue)
+		$ Enter Apama Licence file path (Optional. Press Enter to continue)
 
 
-Once the execution has been completed successfully, a respective message will be displayed. In case of any failure messages, refer to [Operating Cumulocity Edge](/guides/edge/operation).
+Once the execution has been completed successfully, a respective message will be displayed. In case of any failure messages, refer to [Operating Cumulocity IoT Edge](/guides/edge/operation).

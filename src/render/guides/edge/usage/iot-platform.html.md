@@ -4,11 +4,11 @@ title: IoT platform
 layout: redirect
 ---
 
-Cumulocity Edge comes with three built-in applications - Device Management, Cockpit and Application. 
+Cumulocity IoT Edge comes with three built-in applications - Device Management, Cockpit and Application. 
 
-Since Cumulocity Edge is based on the same software as the cloud-based Cumulocity IoT Core version, the above applications are the same in both versions, with minor restrictions. 
+Since Cumulocity IoT Edge is based on the same software as the cloud-based Cumulocity IoT Core version, the above applications are the same in both versions, with minor restrictions. 
 
-Below find an overview on the functionalities of these applications in Cumulocity Edge. 
+Below find an overview on the functionalities of these applications in Cumulocity IoT Edge. 
 
 Foe general information on functionalities and features of the GUI refer to [GUI functionalities and features](/guides/users-guide/overview/gui-features).
 
@@ -18,7 +18,7 @@ For information on how to change the user settings of your account refer to [Use
 
 The [Device Management application](/guides/users-guide/device-management) provides functionalities for managing and monitoring devices and enables you to control and troubleshoot devices remotely.
 
-The following functionalities are available in Cumulocity Edge and described in detail in these sections:
+The following functionalities are available in Cumulocity IoT Edge and described in detail in these sections:
 
 |SECTION|CONTENT|
 |:---|:---|
@@ -35,7 +35,7 @@ The following functionalities are available in Cumulocity Edge and described in 
 
 The [Cockpit application](/guides/users-guide/cockpit) provides you with options to manage and monitor  Internet of Things (IoT) assets and data from a business perspective.
 
-The following functionalities are available in Cumulocity Edge and described in detail in these sections:
+The following functionalities are available in Cumulocity IoT Edge and described in detail in these sections:
 
 |Section|Content|
 |:---|:---|
@@ -53,7 +53,7 @@ The following functionalities are available in Cumulocity Edge and described in 
 
 The [Administration application](/guides/users-guide/administration) enables account administrators to manage their users, roles, tenants and applications and lets them configure a number of settings for their account. 
 
-The following functionalities are available in Cumulocity Edge and described in detail in these sections:
+The following functionalities are available in Cumulocity IoT Edge and described in detail in these sections:
 
 |SECTION|CONTENT|
 |:---|:---|

@@ -6,7 +6,9 @@ layout: redirect
 
 ### Preparation
 
-Copy the Edge licence, SSL key, SSL certificate and Apama licence (if obtained) into the Edge VM using FTP. You can copy it to the Edge VM folder "/home/admin". 
+Copy the Edge licence, SSL key, SSL certificate and Apama licence (if obtained) into the Edge VM. Use WINSCP, SCP, FTP or any other file transfer tool to transfer the files from your windows host to Edge VM (Linux OS).
+
+You can copy the files to the Edge VM folder "/home/admin". 
 
 The files have the following extensions:
 

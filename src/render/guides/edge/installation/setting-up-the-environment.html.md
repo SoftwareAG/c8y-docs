@@ -90,8 +90,8 @@ Use the following login credentials for SSH login into the Edge instance:
 
 Use the following command to log into Edge server via SSH:
 
-Edge VM IP: 192.168.56.120
-
+	ssh admin@192.168.56.120
+	
 	$ Password: manage
 	
 >**Info**: The default user for Edge is “admin”. The admin user has root privileges for the machine.  

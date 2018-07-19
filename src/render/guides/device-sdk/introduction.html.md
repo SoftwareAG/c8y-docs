@@ -1,7 +1,7 @@
 ---
 order: 10
 title: Overview
-layout: redirect
+layout: standalone
 ---
 
 

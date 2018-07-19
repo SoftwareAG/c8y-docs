@@ -115,7 +115,7 @@ What does the code in "publish" do?
 
 Note that the subscription is established after the device creation, otherwise if there is no device for a given ``clientId`` the server will not accept it. 
 
-### Build and run
+### Building and running the application
 
 To build:
 

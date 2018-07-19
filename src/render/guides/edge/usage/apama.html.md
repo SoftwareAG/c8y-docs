@@ -6,7 +6,7 @@ layout: redirect
 
 ### Introduction
 
-You can add your own real-time analytics to Cumulocity Edge using the Apama Event Processing Language. 
+You can add your own real-time analytics to Cumulocity IoT Edge using the Apama Event Processing Language. 
 
 Apama is a complete CEP platform. It contains a complex event processing engine and a comprehensive set of tools to develop, integrate, and deploy event-driven applications.
 

@@ -8,7 +8,7 @@ In order to reach the virtual machine via the domain URL provided during configu
 
 On Linux machines, add the following entry to `/etc/hosts`:
 
-	192.168.56.101 or <domain url>
+	192.168.56.120 <domain_url> 
 
 On Windows machines,  add the same entry to `C:\Windows\System32\Drivers\etc\hosts`.
 
@@ -32,11 +32,11 @@ Use the following credentials:
 	Username: <tenant admin username> (as provided during post-installation)
 	Password: <tenant admin password> (as provided during post-installation)
 
->**Info**: Cumulocity Edge needs several minutes to start. Then all services should be up and running and you can login to the application.
+>**Info**: Cumulocity IoT Edge needs several minutes to start. Then all services should be up and running and you can login to the application.
 
 After successfully logging in, the Cumulocity platform will open:
 
-<img src="/guides/images/users-guide/cockpit/Cockpit_WelcomeScreen.png" name="Welcome screen" style="width:100%;"/>
+<img src="/guides/images/users-guide/Cockpit/Cockpit_WelcomeScreen.png" name="Welcome screen" style="width:100%;"/>
 
 When you log into Cumulocity for the first time, you will be taken to the Cockpit application where the **Welcome** page initially opens up.
 

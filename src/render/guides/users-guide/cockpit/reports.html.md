@@ -4,7 +4,7 @@ title: Managing reports and exports
 layout: redirect
 ---
 
-### <a name="reports"></a>Managing reports and exports
+### <a name="reports"></a>Managing reports
 
 Dashboard reports enable you to track applications, alarms, assets, events and many other widgets. 
 
@@ -39,7 +39,7 @@ To delete a report, open the report and click **More...** at the right of the to
 
 The export functionality lets you export specific data to either CSV or Excel files.
 
-With this feature, you can request data for the whole tenant. Additionally, you can choose to filter for specific devices, time ranges or fields. The export data contain information about all specified filters and enabled fields. 
+With this feature, you can request data for the whole tenant. Additionally, you can choose to filter for specific devices, time ranges or fields. The export data contains information about all specified filters and enabled fields. 
 
 >**Info:** The maximum number of documents that can be exported into a single file is 1 million. If the number of documents for defined filters exceeds this limit, only first 1 million documents will be taken.
 

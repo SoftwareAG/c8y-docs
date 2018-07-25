@@ -6,7 +6,7 @@ layout: redirect
 
 ### Installation requirements
 
-To install Cumulocity Edge, the following items need to be available:
+To install Cumulocity IoT Edge, the following items need to be available:
 
 * Virtualbox <br>
 Version: 5.2.8<br>
@@ -16,13 +16,13 @@ To be downloaded from [https://www.virtualbox.org/wiki/Download&#95;Old&#95;Buil
 To be downloaded from the [SAG Empower portal](https://empower.softwareag.com) 
 
 * Cumulocity licence file <br>
-Please send an email to support@cumulocity.com to request the license file.
+Please send an email to support@cumulocity.com to request the licence file.
 In the email, you must include the following details:
-	* Your company name, under which the license has been bought.
-	* The domain name (DNS), under which Cumulocity Edge will be reachable.
+	* Your company name, under which the licence has been bought.
+	* The domain name (DNS), under which Cumulocity IoT Edge will be reachable.
 
 * SSL key and SSL certificate <br>
-Use your internal or an external CA to create these
+Use your internal or an external CA (Certification Authority) to create these
 
 * Apama licence <br>
 The Apama licence will be part of the purchase. For existing customers, please send an email to [support@softwareag.com](support@softwareag.com) to request the licence.
@@ -93,7 +93,7 @@ The virtual machine has the following hardware requirements:
 
 ### Edge versions
 
-Cumulocity Edge uses the following versions:
+Cumulocity IoT Edge uses the following versions:
 
 |Edge component|version|
 |:---|:---|

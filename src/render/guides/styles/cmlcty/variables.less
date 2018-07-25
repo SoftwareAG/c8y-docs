@@ -7,25 +7,25 @@
 
 
 // Colors
-@brand-primary: #27B3CE;
-@brand-primary-light: lighten(@brand-primary, 20%);
-@brand-complementary: #07b91A;
-@brand-success: #5cb85c;
-@brand-info: #5bc0de;
-@brand-danger: #D9534F;
-@dark-danger: #D90000;
-@brand-warning: #FDC000;
-@dark-warning: #FF8000;
+@brand-primary: #1776bf;
+@brand-primary-light: #5FAEEC;
+@brand-complementary: #14629F;
+@brand-success: #008800;
+@brand-info: #96CAF3;
+@brand-danger: #E0000E;
+@dark-danger: #E0000E;
+@brand-warning: #FF801F;
+@dark-warning: #E66400;
 @gray-base: #000;
 @gray-text: #333;
-@gray-darker: #2c3637;
-@gray-dark: #3b4748;
-@gray-medium-dark: #49595B;
-@gray-medium: #6D7A7C;
-@gray: #8A9596;
-@gray-light: #ccd1d1;
-@gray-lighter: #f8f8f8;
-@gray-white: #fcfcfc;
+@gray-darker: #08293f;
+@gray-dark: #394852;
+@gray-medium-dark: #58656D;
+@gray-medium: #58656D;
+@gray: #677680;
+@gray-light: #CCD2D6;
+@gray-lighter: #F6f7f8;
+@gray-white: #fbfbfc;
 @body-background-color: #f8f8f8;
 @text-muted: @gray;
 //** Global color for active items (e.g., navs or dropdowns).
@@ -91,7 +91,7 @@
 //
 //## Font, line-height, and color for body text, headings, and more.
 
-@font-family-sans-serif:  "DIN", Helvetica, Arial, sans-serif;
+@font-family-sans-serif:  "Roboto", Helvetica, Arial, sans-serif;
 @font-family-serif:       Georgia, "Times New Roman", Times, serif;
 //** Default monospace fonts for `<code>`, `<kbd>`, and `<pre>`.
 @font-family-monospace:   Menlo, Monaco, Consolas, "Courier New", monospace;
@@ -594,19 +594,19 @@
 //
 //## Define colors for form feedback states and, by default, alerts.
 
-@state-success-text:             #3c763d;
+@state-success-text:             @brand-success;
 @state-success-bg:               #dff0d8;
 @state-success-border:           darken(spin(@state-success-bg, -10), 5%);
 
-@state-info-text:                #31708f;
-@state-info-bg:                  #d9edf7;
+@state-info-text:                #0F4C7B;
+@state-info-bg:                  lighten(@brand-info, 20%);
 @state-info-border:              darken(spin(@state-info-bg, -10), 7%);
 
-@state-warning-text:             #8a6d3b;
+@state-warning-text:             @dark-warning;
 @state-warning-bg:               #fcf8e3;
 @state-warning-border:           darken(spin(@state-warning-bg, -10), 5%);
 
-@state-danger-text:              #a94442;
+@state-danger-text:              @brand-danger;
 @state-danger-bg:                #f2dede;
 @state-danger-border:            darken(spin(@state-danger-bg, -10), 5%);
 
@@ -620,7 +620,7 @@
 //** Tooltip text color
 @tooltip-color:               #fff;
 //** Tooltip background color
-@tooltip-bg:                  #000;
+@tooltip-bg:                  @gray-darker;
 @tooltip-opacity:             .9;
 
 //** Tooltip arrow width

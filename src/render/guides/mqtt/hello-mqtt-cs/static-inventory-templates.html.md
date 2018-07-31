@@ -15,6 +15,13 @@ Will create a new device for the serial number in the inventory if not yet exist
 |3|errorHandlerAsync|YES||
 |4|processingMode|NO||
 
+| Name | Type | Description |
+| :-------------: | :-------------: | :------ |
+| `device name` | string | **Optional**. MQTT Device &lt;serialNumber&gt;|
+| `device type` | string | **Optional**. c8y_MQTTDevice|
+| `errorHandlerAsync` | string | **Required**. Error Handler|
+| `processingMode` | string | **Optional**. Processing Mode|
+
 **Example**
 
     await cl.StaticInventoryTemplates

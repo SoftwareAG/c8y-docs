@@ -84,7 +84,7 @@ public void ConfigureServices(IServiceCollection services)
 }
 ```
 
-An example that combines built-in checking and custom
+An example that combines built-in checking and custom checking
 ```
     public class Startup
     {

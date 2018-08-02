@@ -8,14 +8,6 @@ title: Static templates
 
 Will create a new device for the serial number in the inventory if not yet existing. An externalId for the device with type c8y_Serial and the device identifier of the MQTT clientId as value will be created.
 
-~~|Position|Parameter|Mandatory|Default|
-|:-------|:-------|:-------|:-------|
-|1|device name|NO|MQTT Device &lt;serialNumber&gt;|
-|2|device type|NO|c8y_MQTTDevice|
-|3|errorHandlerAsync|YES||
-|4|processingMode|NO||~~
-
-
 |Field|Data type|Description|
 | :-------------: | :-------------: | :------ |
 | `deviceName` | string | **Optional**. Name of the device. &lt;serialNumber&gt;|
@@ -34,13 +26,6 @@ Will create a new device for the serial number in the inventory if not yet exist
 
 Will create a new child device for the current device. The newly created object will be added as child device. Additionally, an externalId for the child will be created with type "c8y_Serial" and the value a combination of the serial of the root device and the unique child ID.
 
-~~||Position|Parameter|Mandatory|Default|
-|:-------|:-------|:-------|:-------|
-|1|unique child ID|YES||
-|2|device name|NO|MQTT Device &lt;serialNumber&gt;|
-|3|device type|NO|c8y_MQTTChildDevice|
-|4|errorHandlerAsync|YES||
-|5|processingMode|NO||~~|
 
 |Field|Data type|Description|
 | :-------------: | :-------------: | :------ |
@@ -84,14 +69,6 @@ Will update the hardware properties of the device.
 
 Parameters:
 
-~~|Position|Parameter|Mandatory|
-|:-------|:-------|:-------|
-|1|serialNumber|NO|
-|2|model|NO|
-|3|revision|NO|
-|4|errorHandlerAsync|YES|
-|5|processingMode|NO|~~
-
 |Field|Data type|Description|
 | :-------------: | :-------------: | :------ |
 | `serialNumber` | string | **Optional**. The serial number.|
@@ -113,18 +90,6 @@ Parameters:
 Will update the mobile properties of the device.
 
 Parameters:
-
-~~|Position|Parameter|Mandatory|
-|:-------|:-------|:-------|
-|1|imei|NO|
-|2|iccid|NO|
-|3|imsi|NO|
-|4|mcc|NO|
-|5|mnc|NO|
-|6|lac|NO|
-|7|cellId|NO|
-|8|errorHandlerAsync|YES|
-|9|processingMode|NO|~~
 
 |Field|Data type|Description|
 | :-------------: | :-------------: | :------ |
@@ -157,24 +122,12 @@ Will update the position properties of the device.
 
 Parameters:
 
-~~|Position|Parameter|Mandatory|
-|:-------|:-------|:-------|
-|1|latitude|NO|
-|2|longitude|NO
-|3|altitude|NO|
-|4|accuracy|NO|
-|5|errorHandlerAsync|YES|
-|6|processingMode|NO|~~
-
 |Field|Data type|Description|
 | :-------------: | :-------------: | :------ |
-| `latitude` | string | **Optional**. The imei.|
-| `longitude` | string | **Optional**. The iccid.|
-| `altitude` | string | **Optional**. The imsi.|
-| `mcc` | string | **Optional**. The MCC.|
-| `mnc` | string | **Optional**. The MNC.|
-| `lac` | string | **Optional**. The lac.|
-| `cellId` | string | **Optional**. The revision.|
+| `latitude` | string | **Optional**. The latitude.|
+| `longitude` | string | **Optional**. The longitude.|
+| `altitude` | string | **Optional**. The altitude.|
+| `accuracy` | string | **Optional**. The accuracy.|
 | `errorHandlerAsync` | string | **Required**. Error Handler|
 | `processingMode` | string | **Optional**. Processing Mode|
 
@@ -193,12 +146,6 @@ Parameters:
 Will set the configuration of the device.
 
 Parameters:
-
-~~|Position|Parameter|Mandatory|
-|:-------|:-------|:-------|
-|1|configuration|NO|
-|2|errorHandlerAsync|YES|
-|3|processingMode|NO|~~
 
 |Field|Data type|Description|
 | :-------------: | :-------------: | :------ |
@@ -219,13 +166,6 @@ Parameters:
 Will set the supported operations of the device.
 
 Parameters:
-
-~~|Position|Parameter|Mandatory|
-|:-------|:-------|:-------|
-|1...|List of supported operations|
-|2|errorHandlerAsync|YES|
-|3|processingMode|NO|~~
-
 
 |Field|Data type|Description|
 | :-------------: | :-------------: | :------ |
@@ -251,14 +191,6 @@ Will set the firmware installed on the device.
 
 Parameters:
 
-~~|Position|Parameter|Mandatory|
-|:-------|:-------|:-------|
-|1|name|NO|
-|2|version|NO|
-|3|url|NO|
-|4|errorHandlerAsync|YES|
-|5|processingMode|NO|~~
-
 |Field|Data type|Description|
 | :-------------: | :-------------: | :------ |
 | `name` | string | **Optional**. The name.|
@@ -280,16 +212,6 @@ Parameters:
 Will set the list of software installed on the device.
 
 Parameters:
-
-~~|Position|Parameter|Mandatory|
-|:-------|:-------|:-------|
-|1...|List of software|NO|
-|1.1|name|NO|
-|1.2|version|NO|
-|1.3|url|NO|
-|2|errorHandlerAsync|YES|
-|3|processingMode|NO|~~
-
 
 |Field|Data type|Description|
 | :-------------: | :-------------: | :------ |
@@ -320,12 +242,6 @@ Will set the required interval for availability monitoring. It will only set the
 
 Parameters:
 
-~~|Position|Parameter|Mandatory|
-|:-------|:-------|:-------|
-|1|Required interval|NO|
-|2|errorHandlerAsync|YES|
-|3|processingMode|NO|~~
-
 |Field|Data type|Description|
 | :-------------: | :-------------: | :------ |
 | `requiredInterval` | int| **Optional**. Required interval.|
@@ -344,17 +260,6 @@ Parameters:
 Will create a measurement with given fragment and series.
 
 Parameters:
-
-~~|Position|Parameter|Mandatory|Default|
-|:-------|:-------|:-------|:-------|
-|1|fragment|YES||
-|2|series|YES||
-|3|value|YES||
-|4|unit|NO||
-|5|time|NO|Current server time|
-|6|errorHandlerAsync|YES||
-|7|processingMode|NO||~~
-
 
 |Field|Data type|Description|
 | :-------------: | :-------------: | :------ |
@@ -382,14 +287,6 @@ Will create a measurement of type c8y_SignalStrength.
 
 Parameters:
 
-~~|Position|Parameter|Mandatory|Default|
-|:-------|:-------|:-------|:-------|
-|1|rssi value|YES, if 2 not  set||
-|2|ber value|YES, if 1 not set||
-|3|time|NO|Current server time|
-|4|errorHandlerAsync|YES||
-|5|processingMode|NO||~~
-
 |Field|Data type|Description|
 | :-------------: | :-------------: | :------ |
 | `rssiValue` | string | **Required if 2 not set**. The rssi value.|
@@ -412,13 +309,6 @@ Will create a measurement of type c8y_TemperatureMeasurement.
 
 Parameters:
 
-~~|Position|Parameter|Mandatory|Default|
-|:-------|:-------|:-------|:-------|
-|1|temperature value|YES||
-|2|time|NO|Current server time|
-|3|errorHandlerAsync|YES||
-|4|processingMode|NO||~~
-
 |Field|Data type|Description|
 | :-------------: | :-------------: | :------ |
 | `temperatureValue` | string | **Required.** The temperature value.|
@@ -438,14 +328,6 @@ Parameters:
 Will create a measurement of type c8y_Battery.
 
 Parameters:
-
-~~|Position|Parameter|Mandatory|Default|
-|:-------|:-------|:-------|:-------|
-|1|battery value|YES||
-|2|time|NO|Current server time|
-|3|errorHandlerAsync|YES||
-|4|processingMode|NO||~~
-
 
 |Field|Data type|Description|
 | :-------------: | :-------------: | :------ |
@@ -469,15 +351,6 @@ Will create a CRITICAL alarm.
 
 Parameters:
 
-~~|Position|Parameter|Mandatory|Default|
-|:-------|:-------|:-------|:-------|
-|1|type|YES||
-|2|text|NO|Alarm of type &lt;alarmType&gt; raised|
-|3|time|NO|Current server time|
-|3|errorHandlerAsync|YES||
-|4|processingMode|NO||~~
-
-
 |Field|Data type|Description|
 | :-------------: | :-------------: | :------ |
 | `type` | string | **Required.** The type.|
@@ -499,14 +372,6 @@ Parameters:
 Will create a MAJOR alarm.
 
 Parameters:
-
-~~|Position|Parameter|Mandatory|Default|
-|:-------|:-------|:-------|:-------|
-|1|type|YES||
-|2|text|NO|Alarm of type &lt;alarmType&gt; raised|
-|3|time|NO|Current server time|
-|4|errorHandlerAsync|YES||
-|5|processingMode|NO||~~
 
 |Field|Data type|Description|
 | :-------------: | :-------------: | :------ |
@@ -531,14 +396,6 @@ Will create a MINOR alarm.
 
 Parameters:
 
-~~|Position|Parameter|Mandatory|Default|
-|:-------|:-------|:-------|:-------|
-|1|type|YES||
-|2|text|NO|Alarm of type &lt;alarmType&gt; raised|
-|3|time|NO|Current server time|
-|4|errorHandlerAsync|YES||
-|5|processingMode|NO||~~
-
 |Field|Data type|Description|
 | :-------------: | :-------------: | :------ |
 | `type` | string | **Required.** The type.|
@@ -559,14 +416,6 @@ Parameters:
 Will create a WARNING alarm.
 
 Parameters:
-
-~~|Position|Parameter|Mandatory|Default|
-|:-------|:-------|:-------|:-------|
-|1|type|YES||
-|2|text|NO|Alarm of type &lt;alarmType&gt; raised|
-|3|time|NO|Current server time|
-|4|errorHandlerAsync|YES||
-|5|processingMode|NO||~~
 
 |Field|Data type|Description|
 | :-------------: | :-------------: | :------ |
@@ -589,13 +438,6 @@ Will change the severity of an existing alarm.
 
 Parameters:
 
-~~|Position|Parameter|Mandatory|
-|:-------|:-------|:-------|
-|1|type|YES|
-|2|severity|YES|
-|3|errorHandlerAsync|YES|
-|4|processingMode|NO|~~
-
 |Field|Data type|Description|
 | :-------------: | :-------------: | :------ |
 | `type` | string | **Required.** The type.|
@@ -614,12 +456,6 @@ Parameters:
 Will clear an existing alarm.
 
 Parameters:
-
-~~|Position|Parameter|Mandatory|
-|:-------|:-------|:-------|
-|1|type|YES|
-|2|errorHandlerAsync|YES|
-|3|processingMode|NO|~~
 
 |Field|Data type|Description|
 | :-------------: | :-------------: | :------ |
@@ -640,14 +476,6 @@ Parameters:
 Will create an event of given type and text.
 
 Parameters:
-
-~~|Position|Parameter|Mandatory|Default|
-|:-------|:-------|:-------|:-------|
-|1|type|YES||
-|2|text|YES||
-|3|time|NO|Current server time|
-|4|errorHandlerAsync|YES||
-|5|processingMode|NO||~~
 
 |Field|Data type|Description|
 | :-------------: | :-------------: | :------ |
@@ -670,16 +498,6 @@ Parameters:
 Will create a typical location update event containing c8y_Position.
 
 Parameters:
-
-~~|Position|Parameter|Mandatory|Default|
-|:-------|:-------|:-------|:-------|
-|1|latitude|NO||
-|2|longitude|NO||
-|3|altitude|NO||
-|4|accuracy|NO||
-|5|time|NO|Current server time|
-|6|errorHandlerAsync|YES||
-|7|processingMode|NO||~~
 
 |Field|Data type|Description|
 | :-------------: | :-------------: | :------ |
@@ -708,16 +526,6 @@ Parameters:
 Will create a typical location update event containing c8y_Position. Additionally the device will be updated with the same c8y_Position fragment.
 
 Parameters:
-
-~~|Position|Parameter|Mandatory|Default|
-|:-------|:-------|:-------|:-------|
-|1|latitude|NO||
-|2|longitude|NO||
-|3|altitude|NO||
-|4|accuracy|NO||
-|5|time|NO|Current server time|
-|6|errorHandlerAsync|YES||
-|7|processingMode|NO||~~
 
 |Field|Data type|Description|
 | :-------------: | :-------------: | :------ |
@@ -749,11 +557,6 @@ Will trigger the sending of all PENDING operations for the agent.
 
 Parameters:
 
-~~|Position|Parameter|Mandatory|
-|:-------|:-------|:-------|
-|1|errorHandlerAsync|YES|
-|2|processingMode|NO|~~
-
 |Field|Data type|Description|
 | :-------------: | :-------------: | :------ |
 | `errorHandlerAsync` | string | **Required**. Error Handler|
@@ -769,12 +572,6 @@ Parameters:
 Will set the oldest PENDING operation with given fragment to EXECUTING.
 
 Parameters:
-
-~~|Position|Parameter|Mandatory|
-|:-------|:-------|:-------|
-|1|fragment|YES|
-|2|errorHandlerAsync|YES|
-|3|processingMode|NO|~~
 
 |Field|Data type|Description|
 | :-------------: | :-------------: | :------ |
@@ -793,13 +590,6 @@ Parameters:
 Will set the oldest EXECUTING operation with given fragment to FAILED.
 
 Parameters:
-
-~~|Position|Parameter|Mandatory|
-|:-------|:-------|:-------|
-|1|fragment|YES|
-|2|failureReason|NO|
-|3|errorHandlerAsync|YES|
-|4|processingMode|NO|~~
 
 |Field|Data type|Description|
 | :-------------: | :-------------: | :------ |
@@ -820,13 +610,6 @@ Parameters:
 Will set the oldest EXECUTING operation with given fragment to SUCCESSFUL. It enables the device to send additional parameters that trigger additional steps based on the type of operation send as fragment.
 
 Parameters:
-
-~~|Position|Parameter|Mandatory|
-|:-------|:-------|:-------|
-|1|fragment|YES|
-|2...|parameters|NO|
-|3|errorHandlerAsync|YES|
-|4|processingMode|NO|~~
 
 |Field|Data type|Description|
 | :-------------: | :-------------: | :------ |
@@ -854,7 +637,7 @@ ChildrenOfDeviceEventArgs is the  class containing event data
 | :-------------: | :-------------: | :------ |
 | `ChildrenOfDevice` | IList &lt;string&gt; | List all children of the device.|
 
-
+**Example**
 
 
     cl.ChildrenOfDeviceEvt += Cl_ChildrenOfDeviceEvt;
@@ -1090,6 +873,8 @@ CommunicationModeEventArgs is the  class containing event data.
 | `TemplateCollectionName` | string | The communication mode.|
 | `IsExist` | bool | The communication exists.|
 | `IdCollection` | string | The ID collection.|
+
+**Example**
 
     cl.IsExistTemplateCollectionEvt += (s, e) =>
     {

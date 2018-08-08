@@ -6,6 +6,8 @@ layout: redirect
 
 In the "Enterprise edition" page under the "Settings" menu you can specify settings for the customization of your platform.
 
+**Info**: For information on the settings in the "Customization" tab refer to [Changing Settings > Configuration settings](/guides/users-guide/administration/#config-platform) in the Administration section.
+
 ### <a name="branding"></a>Branding
 
 In the "Branding" tab you can fully customize the look of your tenants to your own preferences. 

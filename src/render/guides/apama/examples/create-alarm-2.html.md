@@ -77,7 +77,8 @@ Creating a measurement like this
         "c8y_BinaryFaultRegister": { "errors": { "value": 10110 } },
       "time":"...",
       "source": { "id":"..." },
-      "type": "c8y_BinaryFaultRegister" }
+      "type": "c8y_BinaryFaultRegister" 
+    }
 
 will trigger the last statement three times.
 

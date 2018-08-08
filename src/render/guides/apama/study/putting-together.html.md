@@ -6,7 +6,7 @@ layout: redirect
 
 We can now combine all the parts into one module. The order of the listeners does not matter.
 
-	using com.apama.cumulocity.Device;
+	using com.apama.cumulocity.ManagedObject;
 	using com.apama.cumulocity.Event;
 	using com.apama.cumulocity.Alarm;
 	using com.apama.cumulocity.FindAlarm;
@@ -31,18 +31,18 @@ We can now combine all the parts into one module. The order of the listeners doe
                 on all Event() as e {
                         if e.params.hasKey("c8y_Position") {
                                 integer reqId := integer.getUnique();
-                                send FindManagedObject(reqId, e.source, new dictionary&#60;string,string&#62;) to
+                                send FindManagedObject(reqId, e.source, new dictionary<string,string>) to
                                         FindManagedObject.CHANNEL;
                                  on FindManagedObjectResponse(reqId = reqId) as resp
                    and not FindManagedObjectResponseAck(reqId) {
                     ManagedObject dev := resp.managedObject;
-                                        if(dev.params.hasKey("attrs.c8y_Geofence") and 
+                                        if(dev.params.hasKey("c8y_Geofence") and 
                                            dev.supportedOperations.indexOf("c8y_Geofence") >= 0) {
-                                                dictionary<any,any> evtPos := dictionary&#60;any,any&#62; > e.params["c8y_Position"];
+                                                dictionary<any,any> evtPos := dictionary<any,any>; > e.params["c8y_Position"];
                                                 float eventLat := <float> evtPos["lat"];
                                                 float eventLng := <float> evtPos["lng"];
 
-                                                dictionary<any,any>; devGeofence := <dictionary<any,any> > dev.params["attrs.c8y_Geofence"];
+                                                dictionary<any,any>; devGeofence := <dictionary<any,any> > dev.params["c8y_Geofence"];
                                                 float centerLat := <float> devGeofence["lat"];
                                                 float centerLng := <float> devGeofence["lng"];
                                                 float maxDistance := <float> devGeofence["radius"];
@@ -67,9 +67,9 @@ We can now combine all the parts into one module. The order of the listeners doe
                                                        "status":"ACTIVE","type":"c8y_GeofenceAlarm"}) to FindAlarm.CHANNEL;
                                         on FindAlarmResponse(reqId = reqId) as alarmResponse
                                            and not FindAlarmResponseAck(reqId=reqId) {
-                                                send Event(alarm.Response.id, "Alarm", firstPos.source, currentTime,
+                                                send Event(alarmResponse.id, "Alarm", firstPos.source, currentTime,
                                                            "Device moved back into circular geofence",
-                                                           {"id":&#60;any> alarmResponse.id, "status":"CLEARED"}) to Event.CHANNEL;
+                                                           {"id":<any> alarmResponse.id, "status":"CLEARED"}) to Event.CHANNEL;
                                         }
                                 }
                         }

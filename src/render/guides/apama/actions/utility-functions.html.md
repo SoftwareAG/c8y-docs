@@ -24,7 +24,7 @@ You can access fragments via the params dictionary of most events. AnyExtractor 
 
 You can use a JSON path to navigate in the object structure. Example:
 
-	String s:= AnyExtractor(measurement.Params["fragment"]).getString("sub.fragment.object");
+	string s:= AnyExtractor(measurement.Params["fragment"]).getString("sub.fragment.object");
 	
 >Example "fragment" : "c8y_TemperatureMeasurement".
 
@@ -34,7 +34,7 @@ You can use a JSON path to navigate in the object structure. Example:
 
 Alternatively, use a cast to convert an `any` to a particular type:
 
-	string s:= <string> measurement.extraParams["strfragment"]);
+	string s:= <string> measurement.params["strfragment"];
 
 Note that a cast operation will throw if the object is of a different type.
 

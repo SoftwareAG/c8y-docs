@@ -16,11 +16,11 @@ Example 1:
 
 	send Measurement("", "c8y_TemperatureMeasurement", "12345", currentTime, {
 		"c8y_TemperatureMeasurement":{
-			"T1":com.apama.cumulocity.MeasurementValue(1.0, "C", new dictionary<string,any>),
-			"T2":com.apama.cumulocity.MeasurementValue(2.0, "C", new dictionary<string,any>),
-			"T3":com.apama.cumulocity.MeasurementValue(3.0, "C", new dictionary<string,any>),
-			"T4":com.apama.cumulocity.MeasurementValue(4.0, "C", new dictionary<string,any>),
-			"T5":com.apama.cumulocity.MeasurementValue(5.0, "C", new dictionary<string,any>)
+			"T1":MeasurementValue(1.0, "C", new dictionary<string,any>),
+			"T2":MeasurementValue(2.0, "C", new dictionary<string,any>),
+			"T3":MeasurementValue(3.0, "C", new dictionary<string,any>),
+			"T4":MeasurementValue(4.0, "C", new dictionary<string,any>),
+			"T5":MeasurementValue(5.0, "C", new dictionary<string,any>)
 		}},
 		new dictionary<string,any>) to Measurement.CREATE_CHANNEL;
 

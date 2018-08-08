@@ -111,7 +111,7 @@ Cumulocity displays alarms at the level of individual devices and across all dev
 * Click "Alarms" in the "Overview" menu in the navigator, to check the alarms for all devices. 
 * Switch to the "Alarm" tab in the details of a particular device, to check the alarms of this specific device.
 
-<img src="/guides/images/users-guide/DeviceManagement/DevMgmt_AlarmDevice.png" alt="Alarms" style="max-width: 100%">
+<img src="/guides/images/users-guide/DeviceManagement/devmgmt-alarm-device.png" alt="Alarms" style="max-width: 100%">
 
 By default, 
 
@@ -151,7 +151,7 @@ Click the arrow on the right of a row to expand it and display further details o
 
 To change the status of an alarm, hover over it and click the button for the desired status or click the menu icon and from the context menu select the desired status.
 
-![Alarm dropdown](/guides/images/users-guide/DeviceManagement/DevMgmt_AlarmDropdown.png)
+![Alarm change status](/guides/images/users-guide/DeviceManagement/devmgmt-alarm-change-status.png)
 
 It is also possible to change the status of all alarms to "clear" at once. Click **Clear all** in the top menu bar, to clear all alarms of the selected severities.
 

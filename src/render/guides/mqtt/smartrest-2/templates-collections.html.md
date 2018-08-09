@@ -314,3 +314,41 @@ Client receives (assuming the ClientId is "myMqttTestDevice"):
 ```
 
 The template 444 is not returned as the condition does not match the operation.
+
+Querying data from the device object containing key with multiple objects
+
+Device object:
+```
+{
+  "id": "12345",
+  "name": "test",
+  "type": "c8y_MQTTdevice",
+  "c8y_IsDevice": {},
+  "myList": [
+      {
+          "pid": 12345,
+          "type": "test"
+      },
+      {
+          "pid": 123456,
+          "type": "test2"
+      }
+  ]
+}
+```
+
+Template creation:
+```
+10,999,GET,INVENTORY,,true
+11,888,,,"$.myList[*].type"
+```
+
+Client publishes:
+```
+999,12345
+```
+
+Client receives:
+```
+888,test,test2
+```

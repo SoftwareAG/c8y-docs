@@ -4,7 +4,7 @@ title: Ändern von Einstellungen
 layout: redirect
 ---
 
-Im Menü "Einstellungen" können Administratoren verschiedene Einstellungen des Kontos ändern oder verwalten, wie
+Im Menü **Einstellungen** können Administratoren verschiedene Einstellungen des Kontos ändern oder verwalten, wie
 
 *   [Anwendungseinstellungen](#default-app) ändern,
 *   [Passwortrichtlinien und TFA-Einstellungen](#changing-password-settings) ändern,
@@ -13,23 +13,23 @@ Im Menü "Einstellungen" können Administratoren verschiedene Einstellungen des 
 
 ### <a name="default-app"></a>Ändern von Anwendungseinstellungen
 
-Klicken Sie "Anwendung", um Anwendungseinstellungen zu bearbeiten.
+Klicken Sie **Anwendung**, um Anwendungseinstellungen zu bearbeiten.
 
-Unter "Standardanwendung" können Sie eine Standardanwendung für alle Benutzer Ihres Mandanten festlegen.
+Unter **Standardanwendung** können Sie eine Standardanwendung für alle Benutzer Ihres Mandanten festlegen.
 
 > **Info:** Alle Benutzer müssen Zugriff auf diese Anwendung haben.
 
-Unter "Zugriffskontrolle" können Administratoren CORS (Cross-Origin Resource Sharing) über die Cumulocity API aktivieren.
+Unter **Zugriffskontrolle** können Administratoren CORS (Cross-Origin Resource Sharing) über die Cumulocity API aktivieren.
 
-Die Einstellung "Zulässige Domain" ermöglicht es, Ihren JavaScript-Webanwendungen, direkt mit REST APIs zu kommunizieren. Geben Sie ein Sternsymbol "*" ein, um die Kommunikation mit allen Hosts zu erlauben. Geben Sie "http://my.host.com, http://myother.host.com" ein, um Anwendungen aus http://my.host.com und http://myother.host.com die Kommunikation mit der Plattform zu erlauben.
+Die Einstellung **Zulässige Domain** ermöglicht es Ihren JavaScript-Webanwendungen, direkt mit REST APIs zu kommunizieren. Geben Sie ein Sternsymbol "*" ein, um die Kommunikation mit allen Hosts zu erlauben. Geben Sie "http://my.host.com, http://myother.host.com" ein, um Anwendungen aus http://my.host.com und http://myother.host.com die Kommunikation mit der Plattform zu erlauben.
 
 Weitere Information erhalten Sie unter http://enable-cors.org.
 
 ### <a name="changing-password-settings"></a>Ändern der Passwortrichtlinien und TFA-Einstellungen
 
-Um die Passwortrichtlinien zu ändern, klicken Sie "Passwort" im Menü "Einstellungen".
+Um die Passwortrichtlinien zu ändern, klicken Sie **Passwort** im Menü **Einstellungen**.
 
-Unter "Passwortbeschränkung" können Sie die Gültigkeit von Benutzerpasswörtern beschränken, in dem Sie die Anzahl der Tage eingeben, nach der Benutzer ihre Passwörter ändern müssen. Wenn Sie keine Passwortänderung erzwingen möchten, verwenden Sie "0" für die uneingeschränkte Gültigkeit von Passwörtern (Standardwert).
+Unter **Passwortbeschränkung** können Sie die Gültigkeit von Benutzerpasswörtern beschränken, in dem Sie die Anzahl der Tage eingeben, nach der Benutzer ihre Passwörter ändern müssen. Wenn Sie keine Passwortänderung erzwingen möchten, verwenden Sie "0" für die uneingeschränkte Gültigkeit von Passwörtern (Standardwert).
 
 Standardmäßig können Benutzer jedes Passwort verwenden, das 8 Zeichen oder mehr enthält. Wenn Sie **Nur starke (grüne) Passwörter zulassen** auswählen, müssen die Benutzer starke Passwörter verwenden, wie unter [Anmelden](/guides/benutzerhandbuch/overview#login) beschrieben.
 
@@ -43,12 +43,12 @@ Klicken Sie **Speichern**, um die Passwortrichtlinien zu speichern.
 
 ![Passwortrichtlinien](/guides/images/benutzerhandbuch/Admin_Password.png)
 
-Unter "TFA-Einstellungen" Können Sie die folgenden TFA-Einstellungen bearbeiten:
+Unter **TFA-Einstellungen** können Sie die folgenden TFA-Einstellungen bearbeiten:
 
-*   "Token-Gültigkeit begrenzen für" - hier können Sie die Dauer jeder Sitzung in Minuten festlegen. Wenn die Sitzung abgelaufen ist, muss der Benutzer einen neuen Verifizierungscode eingeben.
+*   **Token-Gültigkeit begrenzen für** - hier können Sie die Dauer jeder Sitzung in Minuten festlegen. Wenn die Sitzung abgelaufen ist, muss der Benutzer einen neuen Verifizierungscode eingeben.
 *   "Token-Gültigkeit begrenzen für" - hier können Sie die Dauer jeder Sitzung in Minuten festlegen. Wenn die Sitzung abgelaufen ist, muss der Benutzer einen neuen Verifizierungscode eingeben.
 
-Aktivieren Sie "Zwei-Faktor-Authentifizierung zulassen", um Zwei-Faktor-Authentifizierung einzustellen.
+Aktivieren Sie **Zwei-Faktor-Authentifizierung zulassen**, um Zwei-Faktor-Authentifizierung einzustellen.
 
 Klicken Sie **TFA-Einstellungen speichern**, um Ihre Einstellungen zu speichern.
 

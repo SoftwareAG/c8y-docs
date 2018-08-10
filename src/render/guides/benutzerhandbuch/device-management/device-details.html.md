@@ -123,7 +123,7 @@ Die Registerkarte **Alarme** enthält Informationen zu den Alarmen für ein Ger�
 
 Die Registerkarte **Konfiguratio**n ermöglicht das manuelle Konfigurieren der Parameter und Grundeinstellungen Ihres Geräts in einem Textformat.
 
-im Textfeld können Sie die gewünschten Einstellungen im Textformat eingeben. Klicken Sie **Speichern**, um Ihre Eingaben zu bestätigen. 
+im Textfeld können Sie die gewünschten Einstellungen im Textformat eingeben. Klicken Sie **Speichern**, um Ihre Einstellungen zu speichern. 
 
 <img src="/guides/images/users-guide/textconfig.png" alt="Device details" style="max-width: 100%">
 

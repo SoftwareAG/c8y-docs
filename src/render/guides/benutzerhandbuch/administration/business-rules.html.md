@@ -31,8 +31,8 @@ Um ein neues Modul zu erstellen, klicken Sie **Neues Modul** in der oberen Menü
 
 1.  Geben Sie oben einen Namen für das neue Modul ein. Es sind nur alphanumerische Zeichen ohne Leerzeichen zulässig.
 2.  Standardmäßig ist der Status "Bereitgestellt" voreingestellt, so dass die Anweisungen, die Sie erstellen, unmittelbar ausgeführt werden. Um dies zu verhindern, schieben Sie den Regler auf "Nicht bereitgestellt".
-3.  Geben Sie Ihre CEL-Anweisungen in das Textfeld "Quellcode" ein. Als Hilfe finden Sie einige Beispiele. Klicken Sie **Beispiele** und wählen Sie ein passendes Beispiel aus der Dropdown-Liste. Klicken Sie **Übernehmen**, um das Beispiel an der Position des Mauszeigers in das Textfeld zu kopieren.
-4.  Klicken Sie **Speichern**, um Ihre Eingaben zu speichern.
+3.  Geben Sie Ihre CEL-Anweisungen in das Textfeld **Quellcode** ein. Als Hilfe finden Sie einige Beispiele. Klicken Sie **Beispiele** und wählen Sie ein passendes Beispiel aus der Auswahlliste. Klicken Sie **Übernehmen**, um das Beispiel an der Position des Mauszeigers in das Textfeld zu kopieren.
+4.  Klicken Sie **Speichern**, um Ihre Einstellungen zu speichern.
 
 Das Beispielmodul erzeugt einen Alarm, wenn die Temperatur unter 0 Grad sinkt.
 
@@ -44,7 +44,7 @@ Wenn der Status eines Moduls auf "Bereitgestellt" steht, wird dies durch eine gr
 
 Alarmregeln ermöglichen es, den Schweregrad und Text von Alarmen zu ändern, um diese den Prioritäten Ihres Unternehmens anzupassen. Der Abbruch einer Verbindung wird beispielsweise standardmäßig als WICHTIG eingestuft, kann aber in Ihrem Fall KRITISCH sein. Daher können Sie eine Alarmregel definieren, die Alarme im Zusammenhang mit Verbindungsabbrüchen als KRITISCH einstuft.
 
-Klicken Sie "Alarmregeln" im Menü "Geschäftsregeln", um eine Liste aller Alarmregeln anzuzeigen.
+Klicken Sie **Alarmregeln** im Menü **Geschäftsregeln**, um eine Liste aller Alarmregeln anzuzeigen.
 
 <img src="/guides/images/benutzerhandbuch/admin-alarm-mapping.png" alt="Alarmregeln" style="max-width: 100%">
 
@@ -52,7 +52,7 @@ Für jede Alarmregel wird der Schweregrad und der Name der Regel angezeigt.
 
 Klicken Sie auf einen Eintrag, um diesen zu bearbeiten.
 
-Zum Löschen einer Alarmregel fahren Sie mit dem Mauszeiger darüber und klicken Sie auf die Schaltfläche **Löschen**.
+Zum Löschen einer Alarmregel bewegen Sie den Mauszeiger darüber und klicken Sie auf die Schaltfläche **Löschen**.
 
 **Hinzufügen einer Alarmregel**
 
@@ -63,5 +63,5 @@ Um eine Alarmregel hinzuzufügen, klicken Sie **Alarmregel hinzufügen** in der 
 1.  Geben Sie den Alarmtypen ein, den Sie ändern möchten.
 2.  Geben Sie optional einen neuen Text für den Alarm ein. Wenn Sie keinen Text eingeben, wird der Ursprungstext beibehalten.
 3.  Wählen Sie den gewünschten neuen Schweregrad aus, oder wählen Sie "Ignorieren", um den Alarm ganz zu unterdrücken.
-4.  Klicken Sie **Speichern**, um Ihre Eingaben zu speichern.
+4.  Klicken Sie **Speichern**, um Ihre Einstellungen zu speichern.
 

@@ -30,7 +30,7 @@ Um ein Firmware-Objekt hinzuzufügen, führen Sie folgende Schritte aus:
 2. Klicken Sie in der Seite **Firmware-Repository** rechts in der oberen Menüleiste **Firmware hinzufügen**. 
 3. Geben Sie im folgenden Fenster einen Namen und die Version der Firmware ein.
 4. Geben Sie die Datei an, die die Firmware enthält, indem Sie entweder zur Datei navigieren bzw.  diese hochladen oder die URL angeben, unter welcher das Gerät die Firmware herunterladen kann. 
-5. Klicken Sie **Speichern**, um Ihre Eingaben zu speichern.
+5. Klicken Sie **Speichern**, um Ihre Einstellungen zu speichern.
 
 Analog können Sie eine neue Software zum Software-Repository hinzufügen. 
 

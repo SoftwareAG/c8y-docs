@@ -4,7 +4,7 @@ title: Anzeigen von Geräten
 layout: redirect
 ---
 
-Klicken Sie "Alle Geräte" im Menü "Geräte" im Navigator, um alle mit Ihrem Konto verbundenen Geräte anzuzeigen.
+Klicken Sie **Alle Geräte** im Menü **Geräte** im Navigator, um alle mit Ihrem Konto verbundenen Geräte anzuzeigen.
 
 Eine detaillierte Geräteliste wird angezeigt.
 
@@ -13,7 +13,7 @@ Eine detaillierte Geräteliste wird angezeigt.
 
 ### <a name="device-list"></a>Geräteliste
 
-Die Liste enthält eine Zeile für jedes Gerät mit den folgenden Informationen, angezeigt in Spalten:
+Die Liste enthält eine Zeile für jedes Gerät mit den folgenden Informationen, dargestellt in Spalten:
 
 |Spalte|Beschreibung|
 |:---|:---|

@@ -14,7 +14,7 @@ Filters enable you to trigger by combinations or sequences of other triggers. If
 
 it is also possible to add filters in the pattern.
 
-	on all Event(type = "c8y_EntranceEvent") as e { }`
+	on all Event(type = "c8y_EntranceEvent") as e { }
 
 You can listen for more than one event:
 
@@ -46,11 +46,9 @@ Or you can have a listener fire at certain times of the day, with similar functi
 
     on all at(*, *, *, *, *) {} // trigger every minute
 
-    on all 
-
-    on at(*/10, *, *, *, *) {} // trigger every 10 minutes
-    on at(0, 1, *, *, [1,3,5]) {} // trigger at 1am every monday, wednesday and friday
-    on at(0, */2, (1-7), *, *) {} // trigger every 2 hours on every day in the first week of every month
+	on at(*/10, *, *, *, *) {} // trigger every 10 minutes
+	on at(0, 1, *, *, [1,3,5]) {} // trigger at 1am every monday, wednesday and friday
+	on at(0, */2, (1-7), *, *) {} // trigger every 2 hours on every day in the first week of every month
 
 You can also combine timer patterns with other patterns. For example, you can check if there was an event within a certain time after another event:
 
@@ -64,7 +62,7 @@ Streams give you the possibility to operate on windows of events. Streams use th
 
 1.  Windows for a certain time - use the "within" keyword.
 
-    	from m in all Measurement(type = "c8y_TemperatureMeasurement") within 3600.0 select avg(m.measurements["c8y_TemperatureMeasurement"]["T"].value) as avgValue { }`
+    	from m in all Measurement(type = "c8y_TemperatureMeasurement") within 3600.0 select avg(m.measurements["c8y_TemperatureMeasurement"]["T"].value) as avgValue { }
 
 2.  Windows with a certain amount of events - use the "retain" keyword.  
 

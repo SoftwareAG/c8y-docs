@@ -37,13 +37,14 @@ Initially, the "User" page only shows the top-level users. To see all users in y
 
 To add a user to your tenant, click **Add user** at the right of the top menu bar. 
 
-![Add new user](/guides/images/users-guide/newuser.png)
+![Add new user](/guides/images/users-guide/Administration/admin-user-add.png)
 
 At the left of the "New user" window provide the following information to identify the user:
 
 |Field|Description|
 |:---|:---|
-|Username|A username used to log on. Note that this username cannot be changed once the user has been created. This field is mandatory.
+|Username|Serves as a user ID to identify the user at the system. Note that the username cannot be changed once the user has been created. This field is mandatory.
+|Login alias|In addition to the user name, an optional alias can be provided to be used to log on. Other then the username, this alias may be changed if required.
 |Active|Enable/disable the user account here. If the user account is disabled the user cannot login. 
 |E-mail|A valid email address. This is required to enable the user to reset the password. This field is mandatory.
 |First name|First name of the user. When the user is logged in, this name appears at the right of the top bar on the **User** button. 

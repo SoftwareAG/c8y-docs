@@ -10,7 +10,8 @@ We are assuming the input data looks like this:
       "c8y_TemperatureMeasurement": { "T": { "value": ..., "unit": "C" } },
       "time":"...",
       "source": { "id":"..." },
-      "type": "c8y_TemperatureMeasurement" }
+      "type": "c8y_TemperatureMeasurement" 
+     }
 
 To create the median, we need the following parts in the module:
 

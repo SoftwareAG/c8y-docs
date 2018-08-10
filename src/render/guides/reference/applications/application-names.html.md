@@ -19,7 +19,7 @@ These are listed in the following table. The columns show the following informat
 |:---:|:---|:---|:---|:---
 |[Administration](/guides/users-guide/administration)|Lets account administrators manage users, roles, tenants and applications.|administration|Web application| Standard Edition
 |[Apama](/guides/apama)|Define business operations for immediate processing of incoming data by using Apama's Event Processing Language (EPL). This is a per-tenant deployment.|apama-small|Microservice|Optional service
-|[Branding](/guides/users-guide/enterprise-edition/branding)|Customize the look of your tenants to your own preferences.|c8y-branding|Microservice|Enterprise Edition
+|[Branding](/guides/users-guide/enterprise-edition/branding)|Customize the look of your tenants to your own preferences.|branding|Microservice|Enterprise Edition
 |[Cep](/guides/event-language)|Define business operations based on realtime data by using the Esper CEP engine. This CEP variant uses a shared instance for multiple tenants. See "Cep-small" for a per-tenant approach. |cep|Microservice| Standard Edition
 |[CEP custom rules](/guides/event-language)|Upload your own CEP rules created with Esper in a per-tenant deployment. You need to be subscribed to the application "Cep-small" to be able to use this feature.|feature-cep-custom-rules|Feature|Optional service
 |[Cep-small](/guides/event-language)|CEP variant. Lets you work with CEP rules based on Esper in a per-tenant deployment (as opposed to "Cep" which uses a shared instance). You need to be subscribed to "CEP custom rules" to upload your own Esper CEP rules. |cep-small|Microservice|Optional service
@@ -33,7 +33,8 @@ These are listed in the following table. The columns show the following informat
 |[LWM2M agent](/guides/users-guide/optional-services#lwm2m)|Interface with LWM2M devices.|lwm2m-agent|Microservice|Optional service
 |Microservice hosting|Host your own microservices on top of Cumulocity.|feature-microservice-hosting|Feature|Optional service
 |[Nokia IMPACT agent](/guides/users-guide/optional-services#nokia-impact)|With the [Nokia IMPACT agent](/guides/users-guide/optional-services#nokia-impact) you can interface with heterogeneous devices through the Nokia IMPACT Data Collector.|impact|Microservice|Optional service
-|Smart Rules| Use the Smart Rule engine and create [smart rules](/guides/users-guide/cockpit#smart-rules) to perform actions based on realtime data. Requires one of the following applications: Cep, Apama|smartrule|Microservice| Standard Edition
-|[SSL management](/guides/users-guide/enterprise-edition/customization)|Activate your own custom domain name by using a SSL certificate.|ssl-management|Microservice|Enterprise Edition
+|[Sigfox](/guides/users-guide/optional-services#sigfox)| With the [Sigfox agent](/guides/users-guide/optional-services#sigfox) you can interface with Sigfox devices through the Sigfox cloud. Requires the following application: "feature-fieldbus4"|sigfox-agent|Microservice| Optional service
+|Smart Rules| Use the Smart Rule engine and create [smart rules](/guides/users-guide/cockpit#smart-rules) to perform actions based on realtime data. Requires one of the following applications: "Cep", "Apama"|smartrule|Microservice| Standard Edition
+|[SSL management](/guides/users-guide/enterprise-edition/customization)|Activate your own custom domain name by using a SSL certificate.|sslmanagement|Microservice|Enterprise Edition
 |[Tenant SLA Monitoring](/guides/users-guide/optional-services/tenant-sla-monitoring)|Lets service providers monitor the availability and response time of tenants and sub-tenants.|tenant-sla-monitoring|Microservice|Optional service
 |[User hierarchies](/guides/users-guide/enterprise-edition/user-hierarchies)|Reflect independent organizational entities in Cumulocity that share the same database.|feature-user-hierarchy|Feature|Enterprise Edition

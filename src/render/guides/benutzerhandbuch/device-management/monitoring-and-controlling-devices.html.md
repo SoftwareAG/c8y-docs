@@ -9,7 +9,7 @@ layout: redirect
 
 Cumulocity bietet die Möglichkeit, den Standort aller Geräte in Ihrem Konto auf eine Karte anzuzeigen. 
 
-Klicken Sie **Karte** im "Geräte"-Menü im Navigator, um eine Karte zu öffnen, die alle Geräte in Echtzeit anzeigt. 
+Klicken Sie **Karte** im Menü **Geräte** im Navigator, um eine Karte zu öffnen, die alle Geräte in Echtzeit anzeigt. 
 
 Die Geräte sind als "Pins" dargestellt. Klicken Sie auf einen Pin, um den Namen des entsprechenden Geräts anzuzeigen. Klicken Sie auf den Gerätenamen, um zur Ansicht der Gerätedetails zu wechseln.  
 
@@ -17,13 +17,13 @@ Die Geräte sind als "Pins" dargestellt. Klicken Sie auf einen Pin, um den Namen
 
 ### <a name="connection-monitoring"></a>Verbindungsüberwachung
 
-In der Device Management-Anwendung können Sie die Verbindungen zu Ihren Geräten überwachen. 
+Im Device Management können Sie die Verbindungen zu Ihren Geräten überwachen. 
 
 Dies kann auf der Ebene einzelner Geräte erfolgen (siehe unten) oder für mehrere Geräte in einer Liste.
 
 Um Verbindungen für mehrere Geräte zu überwachen, öffnen Sie eine beliebige Geräteliste. 
 
-Der Verbindungsstatus wird durch Pfeile in der Spalte "Status" in der Geräteliste angezeigt. 
+Der Verbindungsstatus wird durch Pfeile in der Spalte **Status** in der Geräteliste angezeigt. 
 
 <img src="/guides/images/benutzerhandbuch/devmgmt-connection-status.png" alt="Verbindungsstatus" style="max-width: 100%">
 
@@ -31,34 +31,34 @@ Der Verbindungsstatus wird durch Pfeile in der Spalte "Status" in der Gerätelis
 
 Die oberen Pfeile symbolisieren die Sendeverbindungen (Verkehr vom Gerät zu Cumulocity). Der Status der Sendeverbindungen kann einer der folgenden sein:
 
-* Grüner Pfeil - Online (Daten wurden im erwarteten Intervall gesendet)
-* Roter Pfeil - Offline (Daten wurden nicht im erwarteten Intervall gesendet)
-* Grauer Pfeil - Unbekannt oder nicht überwacht (kein Intervall konfiguriert)
+* Grüner Pfeil - online (Daten wurden im erwarteten Intervall gesendet)
+* Roter Pfeil - offline (Daten wurden nicht im erwarteten Intervall gesendet)
+* Grauer Pfeil - unbekannt oder nicht überwacht (kein Intervall konfiguriert)
 
 Wenn Sie den Mauszeiger über einen Pfeil bewegen, wird der Zeitstempel der letzten Anfrage vom Gerät an den Server angezeigt. 
 
-Wenn ein Gerät als Offline erkannt wird, (sendet keine Daten im erwarteten Intervall und der obere Pfeil wechselt auf rot), wird ein  "UnavailabilityAlarm" für das Gerät erzeugt mit der Nachricht "Im erwarteten Intervall wurden keine Daten vom Gerät empfangen.".
+Wenn ein Gerät als offline erkannt wird, (sendet keine Daten im erwarteten Intervall und der obere Pfeil wechselt auf rot), wird ein  "UnavailabilityAlarm" für das Gerät erzeugt mit der Nachricht "Im erwarteten Intervall wurden keine Daten vom Gerät empfangen.".
 
 #### Push-Verbindungen
 
 Der untere Pfeil symbolisiert die Push-Verbindungen (von Cumulocity zum Gerät). Der Status der Push-Verbindungen kann einer der folgenden sein:
 
-* Grüner Pfeil - Online (Verbindung hergestellt)
-* Roter Pfeil - Offline (Verbindung nicht hergestellt)
-* Grauer Pfeil - Nicht überwacht
+* Grüner Pfeil - online (Verbindung hergestellt)
+* Roter Pfeil - offline (Verbindung nicht hergestellt)
+* Grauer Pfeil - nicht überwacht
 
 >**Info**: Bei den Push-Verbindungen handelt es sich um die Verbindungen von Cumulocity zur "/devicecontrol/notifications" API, **nicht** zur Echtzeit-API.
 
 #### Wartungsmodus
 
-Außerdem kann sich ein Gerät im Wartungsmodus befinden. Dies wird durch ein Werkzeug-Symbol in der Spalte "Status" gekennzeichnet. Dieser spezielle Verbindungsstatus zeigt an, dass das Gerät gerade gewartet wird und nicht überwacht werden kann. Während ein Gerät gewartet wird, werden keine Alarme für dieses Gerät ausgelöst. 
+Außerdem kann sich ein Gerät im Wartungsmodus befinden. Dies wird durch ein Werkzeug-Symbol in der Spalte **Status** gekennzeichnet. Dieser spezielle Verbindungsstatus zeigt an, dass das Gerät gerade gewartet wird und nicht überwacht werden kann. Während ein Gerät gewartet wird, werden keine Alarme für dieses Gerät ausgelöst. 
 
-In der Karte "Verbindungsüberwachung" in der Registerkarte "Info" eines Geräts können Sie den Wartungsmodus für dieses Gerät durch einen Schieberegler ein- oder ausschalten.
+In der Karte **Verbindungsüberwachung** in der Registerkarte **Info** eines Geräts können Sie den Wartungsmodus für dieses Gerät durch einen Schieberegler ein- oder ausschalten.
 
 
-#### Verbindungsüberwachung in der Registerkarte "Info"
+#### Verbindungsüberwachung in der Registerkarte Info
 
-Navigieren Sie zur Registerkarte "Info", um die Verbindungen eines bestimmten Geräts zu überwachen. Unter "Gerätestatus" wird der Verbindungsstatus für das Gerät angezeigt. 
+Navigieren Sie zur Registerkarte **Info**, um die Verbindungen eines bestimmten Geräts zu überwachen. Unter **Gerätestatus** wird der Verbindungsstatus für das Gerät angezeigt. 
 
 <img src="/guides/images/benutzerhandbuch/devmgmt-connection-status-device.png" alt="Gerätestatus" style="max-width: 50%">
 
@@ -66,7 +66,7 @@ Unter dem Status für die Sende- und Push-Verbindungen wird der Zeitpunkt der le
 
 > **Info**: "Letzte Kommunikation" und "Letzte Aktualisierung" sind zwei vollkommen verschiedene Zeitstempel. "Letzte Kommunikation" zeigt an, wann ein Gerät das letzte mal Daten gesendet hat. "Letzte Aktualisierung" zeigt an, wann der Stammdateneintrag des Geräts das letzte mal aktualisiert wurde. Diese Aktualisierung kann durch das Gerät selbst, über die Web-Benutzerschnittstelle oder durch eine andere Anwendung erfolgt sein. 
 > 
-Im Feld  "Erwartetes Intervall" können Sie ein Intervall angeben. Dieser Parameter legt fest, wie häufig Sie erwarten, von dem Gerät zu hören. Wenn Sie dieses Intervall etwa auf 60 setzen, erwarten Sie, dass das Gerät mindestens einmal pro Stunden mit Cumulocity kommuniziert. Das Intervall wird entweder vom Gerät selbst festgelegt, basierend auf den Kenntnissen des Geräts darüber, wie oft es versuchen wird, Daten zu senden, oder es wird manuell von Ihnen festgelegt. 
+Im Feld **Erwartetes Intervall** können Sie ein Intervall angeben. Dieser Parameter legt fest, wie häufig Sie erwarten, von dem Gerät zu hören. Wenn Sie dieses Intervall etwa auf 60 setzen, erwarten Sie, dass das Gerät mindestens einmal pro Stunden mit Cumulocity kommuniziert. Das Intervall wird entweder vom Gerät selbst festgelegt, basierend auf den Kenntnissen des Geräts darüber, wie oft es versuchen wird, Daten zu senden, oder es wird manuell von Ihnen festgelegt. 
 
 Wenn ein Intervall angegeben ist, befindet sich darunter der Schieberegler **Wartung**.
 
@@ -82,7 +82,7 @@ Cumulocity unterscheidet zwischen Verbindungsüberwachung und Serviceüberwachun
 
 Serviceüberwachung dagegen zeigt an, ob ein Gerät in Betrieb ist. Ein Verkaufsautomat ist beispielsweise in Betrieb, wenn er bereit ist, Waren zu verkaufen. Ein Verkaufsautomat kann ohne eine Verbindung zu Cumulocity gegen Bargeld Waren verkaufen. Aus kaufmännischer Sicht ist der Automat also betriebsbereit. Ähnlich können Geräte hinter einem Gateway weiterarbeiten, auch wenn das Gateway ausgeschaltet wurde. 
 
-Cumulocity betrachtet ein Gerät als betriebsbereit, wenn es für das Gerät keine kritischen, ungelösten Alarme gibt. Dies wird entsprechend des Zeitanteils, den Alarme aktiv waren, dargestellt. Hat ein Gerät innerhalb eines bestimmten Zeitraums keinerlei kritische Alarme, war es 100% betriebsbereit. Gab es während der Hälfte der Zeit kritische, ungelöste Alarme, war es 50% betriebsbereit. 
+Cumulocity betrachtet ein Gerät als betriebsbereit, wenn es für das Gerät keine kritischen aktiven Alarme gibt. Dies wird entsprechend des Zeitanteils, den Alarme aktiv waren, dargestellt. Hat ein Gerät innerhalb eines bestimmten Zeitraums keinerlei kritische Alarme, war es 100% betriebsbereit. Gab es während der Hälfte der Zeit kritische aktive Alarme, war es 50% betriebsbereit. 
 
 Ist ein Gerät offline, nimmt Cumulocity standardmäßig an, 
 
@@ -93,12 +93,12 @@ Es gibt möglicherweise Ausnahmen zu dieser Regel. Wenn Ihr Verkaufsautomat beis
 
 Cumulocity zeigt die Serviceverfügbarkeit für einzelne Geräte sowie für alle Geräte an. 
 
-* Um die Serviceüberwachung für ein bestimmtes Gerät anzuzeigen, wechseln Sie zur Registerkarte "Serviceüberwachung" in den Gerätedetails dieses Geräts.
-* Um den gesamten Service aller Geräte anzuzeigen, klicken Sie "Serviceüberwachung" im Navigator.
+* Um die Serviceüberwachung für ein bestimmtes Gerät anzuzeigen, wechseln Sie zur Registerkarte **Serviceüberwachung** in den Gerätedetails dieses Geräts.
+* Um den gesamten Service aller Geräte anzuzeigen, klicken Sie **Serviceüberwachung** im Navigator.
 
 <img src="/guides/images/benutzerhandbuch/devmgmt-service-monitoring.png" alt="Wartungsmodus" style="max-width: 75%">
 
-Die Seite "Serviceüberwachung" zeigt die prozentuale Verfügbarkeit aller Geräte währende des letzten Tags, der letzten Woche und des letzten Monats an. 
+Die Seite **Serviceüberwachung** zeigt die prozentuale Verfügbarkeit aller Geräte währende des letzten Tags, der letzten Woche und des letzten Monats an. 
 
 ### <a name="alarm-monitoring"></a>Arbeiten mit Alarmen
 
@@ -106,8 +106,8 @@ Geräte können Alarme auslösen, um anzuzeigen, dass ein Problem besteht, das e
 
 Cumulocity zeigt Alarme für einzelne Geräte sowie für alle Geräte an. 
 
-* Um die Alarme für alle Geräte anzuzeigen, klicken Sie "Alarme" im Menü "Übersichten" im Navigator.  
-* Um die Alarme für ein bestimmtes Gerät anzuzeigen, wechseln Sie zur Registerkarte "Alarme" in den Gerätedetails dieses Geräts.
+* Um die Alarme für alle Geräte anzuzeigen, klicken Sie **Alarme** im Menü **Übersichten** im Navigator.  
+* Um die Alarme für ein bestimmtes Gerät anzuzeigen, wechseln Sie zur Registerkarte **Alarme** in den Gerätedetails dieses Geräts.
 
 <img src="/guides/images/benutzerhandbuch/devmgmt-alarm-device.png" alt="Gerätealarme" style="max-width: 100%">
 
@@ -124,7 +124,7 @@ Alarme werden nach Schweregraden klassifiziert. Cumulocity enthält vier verschi
 |Weniger wichtig|Das Gerät hat ein Problem, das behoben werden könnte.
 |Warnung|Es gibt eine Warnung.
 
-Die Registerkarte "Alarme" ist entsprechend dieser Alarmtypen in vier Bereiche unterteilt.
+Die Registerkarte **Alarme** ist entsprechend dieser Alarmtypen in vier Bereiche unterteilt.
 
 Klicken Sie in der oberen Leiste auf eine der Schaltflächen für die Alarmtypen, um den entsprechenden Bereich auszublenden. Nochmaliges Klicken zeigt den Bereich wieder an. 
  
@@ -137,7 +137,7 @@ In jeder Zeile werden die folgenden Informationen für einen Alarm angezeigt:
 |Schweregrad|Entweder kritisch, wichtig, weniger wichtig oder Warnung (siehe oben).
 |Anzahl|Wie oft der Alarm von dem Gerät gesendet wurde. Es kann jeweils nur ein Alarm pro Typ für ein Gerät aktiv sein. Wenn ein weiterer Alarm des gleichen Typs auftritt, wird die Zahl um 1 erhöht.
 |Beschreibung|Optionaler Text zur Beschreibung des Alarms.
-|Status|Status des Alarms: <br/> **Aktiv**: Wenn der Alarm ausgelöst wurde und keiner bisher den Alarm bearbeitet. <br/>**Bestätigt**: Wenn jemand den Status auf **Bestätigt** gesetzt hat, um anzuzeigen, dass dieser Alarm bereits bearbeitet wird.<br/>**Gelöscht**: Wenn entweder jemand den Status manuell auf **Gelöscht** gesetzt hat oder wenn das Gerät selbst festgestellt hat, dass das Problem behoben ist. 
+|Status|Status des Alarms: <br/> **Aktiv**: Wenn der Alarm ausgelöst wurde und keiner bisher den Alarm bearbeitet. <br/>**Bestätigt**: Wenn jemand den Status auf **Bestätigt** gesetzt hat, um anzuzeigen, dass dieser Alarm bereits bearbeitet wird.<br/>**Aufgehoben**: Wenn entweder jemand den Status manuell auf **Aufgehoben** gesetzt hat oder wenn das Gerät selbst festgestellt hat, dass das Problem behoben ist. 
 |Letztes Auftreten|Zeitstempel für das letzte Auftreten des Alarms (Gerätezeit).
 |Gerät|Name des Geräts. Durch Klicken des Namen gelangen Sie zur Detailansicht des Geräts.
 
@@ -160,42 +160,42 @@ Kommandos werden verwendet, um Geräte aus der Ferne zu steuern.
 
 Cumulocity zeigt Kommandos für einzelne Geräte sowie für alle Geräte an:
 
-* Um die Kommandos für alle Geräte anzuzeigen, klicken Sie "Gerätesteuerung" im Menü "Overviews" im Navigator.  
-* Um die Alarme für ein bestimmtes Gerät anzuzeigen, wechseln Sie zur Registerkarte "Steuerung" in den Gerätedetails dieses Geräts.
+* Um die Kommandos für alle Geräte anzuzeigen, klicken Sie **Gerätesteuerung** im Menü **Übersichten** im Navigator.  
+* Um die Alarme für ein bestimmtes Gerät anzuzeigen, wechseln Sie zur Registerkarte **Steuerung** in den Gerätedetails dieses Geräts.
 
 ![Device Control](/guides/images/users-guide/DeviceManagement/DevMgmt_DeviceControl.png)
 
-Kommandos können in einem der folgenden Zustände sein, angezeigt durch entsprechende Symbole:
+Kommandos können sich in einem der folgenden Zustände befinden, angezeigt durch entsprechende Symbole:
 
 |Zustand|Beschreibung|
 |:---|:--|
-|Pending|The operation has just been created and is waiting for the device to pick it up.
-|Executing|The operation has been picked up by the device and is being executed.
-|Successful|The operation has been successfully executed by the device.
-|Failed|The operation could not be executed by the device.
+|Ausstehend|Das Kommando wurde gerade erstellt und wartet darauf, vom Gerät empfangen zu werden.
+|Wird ausgeführt|Das Kommando wurde vom Gerät empfangen und wird ausgeführt.
+|Erfolgreich|Das Kommando wurde erfolgreich vom Gerät ausgeführt.
+|Abgebrochen|Das Kommando konnte nicht vom Gerät ausgeführt werden.
 
-By clicking one of the state buttons at the top, the corresponding operations will be hidden. Click it again to show the operations again.
+Durch Klicken der Status-Schaltflächen oben auf der Seite werden die entsprechenden Kommandos ausgeblendet. Erneutes Klicken der entsprechenden Schaltfläche zeigt die Kommandos wieder an. 
 
-Click **Realtime** at the right of the top menu bar to see operations coming in from the devices in realtime.
+Klicken Sie **Echtzeit** rechts in der oberen Menüleiste, um die vom Gerät empfangenen Kommandos in Echtzeit anzuzeigen. 
 
-Operations are listed in descending time order. Operations are executed strictly according to this order.
+Kommandos werden in absteigender Zeitfolge aufgelistet und streng nach dieser Reihenfolge ausgeführt.
 
-For each operation, the following information is provided:
+Für jedes Kommando werden die folgenden Informationen bereitgestellt:
 
-|Info|Description|
+|Info|Beschreibung|
 |:---|:---|
-|Status|One of pending, executing, successful, failed (see above).
-|Name|Name of the operation.
-|Device|The name of the device. Clicking the name leads you to the detailed view of the device.
+|Status|Ausstehend, wird ausgeführt, erfolgreich, abgebrochen (siehe oben). 
+|Name|Name des Kommandos.
+|Gerät|Name des Geräts. Klicken Sie auf den Namen, um zur Ansicht der Gerätedetails zu gelangen. 
 
-Clicking a row expands it and displays further details on the operation.
+Durch Klicken einer Zeile wird diese aufgeklappt und weitere Details zum Kommando angezeigt. 
 
-* **Details**: Providing information on the operation name and status. In case of status = FAILED the reason for the failure is provided. 
-* **History of Changes**: Providing information on the past changes of the operation.
+* **Details**: Nähere Beschreibung und Status des Kommandos. Lautet der Status = ABGEBROCHEN, wird die Ursache für das Fehlschlagen angegeben.  
+* **Änderungshistorie**: Informationen zu den letzten Änderungen des Kommandos.
 
-![Operation Details](/guides/images/users-guide/DeviceManagement/DevMgmt_OperationDetails.png)
+![Kommandodetails](/guides/images/benutzerhandbuch/devmgmt-Operation-details.png)
 
-<a name="bulk-operations"></a>**Bulk Operations**
+<a name="bulk-operations"></a>**Sammelkommandos**
 
 For easier handling of devices, Cumulocity offers bulk operations. With bulk operations you can at once execute operations for each device within one group.
 

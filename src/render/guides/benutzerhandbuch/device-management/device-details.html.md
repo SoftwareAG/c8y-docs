@@ -1,103 +1,104 @@
 ---
 order: 31
-title: Device details
+title: Gerätedetails
 layout: redirect
 ---
 
 <a name="device-details"></a>
 
-For each device, detailed information is available. The kind of information actually provided for a device depends on the device type, device usage and the configuration of your user interface. 
+Zu jedem Gerät werden im Device Management detaillierte Informationen angezeigt. Welche Informationen jeweils angezeigt werden, ist abhängig vom Gerätetypen, der Gerätenutzung und der Konfiguration der Plattform. 
 
-To view detailed information on the device, click a device in the device list. 
+Klicken Sie auf ein Gerät in der Geräteliste, um die Gerätedetails anzuzeigen.
 
-<img src="/guides/images/users-guide/DeviceManagement/DevMgmt_DeviceDetails.png" alt="Device details" style="max-width: 100%">
+<img src="/guides/images/benutzerhandbuch/devmgmt-device-details.png" alt="Device details" style="max-width: 100%">
 
-The device details are divided into tabs. The number of tabs is dynamic and depends on the available information, i.e. tabs are only displayed if the kind of information is available for the particular device. 
+Die Gerätedetails sind in verschiedene Registerkarten aufgeteilt. Die Anzahl der Registerkarten ist dynamisch und abhängig von den jeweils verfügbaren Informationen, d.h. Registerkarten werden nur angezeigt, wenn entsprechende Informationen für das jeweilige Gerät vorhanden sind.
 
-Initially the "Info" tab is shown, which offers general information on a device and is available for each device. 
+Eingangs wird die Registerkarte **Info** angezeigt, die allgemeine Informationen zu einem Gerät enthält und bei allen Geräte vorhanden ist. 
 
-Each device at least shows the following tabs: Info, Alarms, Control, Events, Service monitoring, Identity (also see the tab list below).
+Jedes Gerät enthält mindestens die folgenden Registerkarten: Info, Alarme, Steuerung, Ereignisse, Serviceüberwachung, Identifikator (siehe auch die folgende Liste der Registerkarten).
 
-The following tabs are the most common ones, each described in detail in a separate section:
+Die folgenden Registerkarten sind die am häufigsten vorhandenen und werden in den folgenden Abschnitten detailliert beschrieben: 
 
-|Tab|Description|
+|Registerkarte|Beschreibung|
 |:---|:---|
-|[Info](#info)|Provides general information on a device. Available for each device.
-|[Child Devices](#child-devices)|Lists devices being connected to the current device.
-|[Measurements](#measurements)|Provides a default visualization of numeric data provided by the device in the form of charts.
-|[Alarms](#alarms)|Provides information on the alarms for a device. See also [Working with alarms](#alarm-monitoring). Available for each device.
-|[Configuration](#config)|Allows manual configuration of device parameters and settings entered in a text format. See also [Configuration Repository](#configuration-repository) for binary configuration.
-|[Control](#control)|Displays operations being sent to a device. Also refer to [Working with operations](#operation-monitoring). Available for each device.
-|[Network](#network)|Displays network information for a device.
-|[Software](#software)|Manages firmware of a device and software installed on a device.
-|[Events](#events)|Displays events related to a device, helpful for low-level troubleshooting. Also refer to [Troubleshooting devices](#events-all). Available for each device.
-|[Location](#location)|Shows the location of a device, if available.
-|[Logs](#logs)|Allows requesting log information for a device.
-|[Objects](#objects)|Shows all available objects of a LwM2M device.
-|[Service monitoring](#service-monitoring)|Allows the service monitoring of machines. See also [Monitoring services](#monitoring-services). Available for each device.
-|[Shell](#shell)|Enables you to interact with remote devices via a command prompt.
-|[Tracking](#tracking)|Shows the movement of a device, if available.
-|[Identity](#identity)|Displays identities recorded for a particular device. Available for each device.
+|[Info](#info)|Enthält allgemeine Informationen zum Gerät. Für jedes Gerät vorhanden.
+|[Kindgeräte](#child-devices)|Listet die Geräte auf, die mit dem aktuellen Gerät verbunden sind. 
+|[Messwerte](#measurements)|Zeigt eine Standardvisualisierung der vom Gerät bereitgestellten numerischen Daten in Form von Diagrammen.
+|[Alarme](#alarms)|Enthält Informationen zu den Alarmen des Geräts. Siehe auch [Arbeiten mit Alarmen](#alarm-monitoring). Für jedes Gerät vorhanden.
+|[Konfiguration](#config)|Ermöglicht die manuelle Konfiguration von Geräteparametern und Einstellungen als Eingaben in einem Textformat. Siehe auch [Konfigurations-Repository](#configuration-repository) für Informationen zu binärer Konfiguration.
+|[Steuerung](#control)|Zeigt Kommandos an, die zum Gerät gesendet werden. Siehe auch [Verwenden von Kommandos](#operation-monitoring). Für jedes Gerät vorhanden.
+|[Netzwerk](#network)|Zeigt Netzwerkinformationen für das Gerät an.
+|[Software](#software)|Verwaltet die Firmware des Geräts und die Software, die auf dem Gerät installiert ist.
+|[Ereignisse](#events)|Zeigt die mit dem Gerät verbundenen Ereignisse, hilfreich für die Fehlersuche. Siehe auch [Fehlerbehebung von Geräten](#events-all). Für jedes Gerät vorhanden.
+|[Standort](#location)|Zeigt den Standort eines Geräts an, falls verfügbar.
+|[Logdateien](#logs)|Ermöglicht das Abfragen von Loginformationen für das Gerät.
+|[Serviceüberwachung](#service-monitoring)|Ermöglicht die Serviceüberwachung von Maschinen. Siehe auch [Serviceüberwachung](#monitoring-services). Für jedes Gerät vorhanden.
+|[Shell](#shell)|Ermöglicht es, über eine Kommandozeile mit entfernten Geräten zu interagieren. 
+|[Tracking](#tracking)|Zeigt die Bewegungen des Geräts, falls verfügbar.
+|[Identifikator](#identity)|Zeigt die für das Gerät gespeicherten Identifikatoren. Für jedes Gerät vorhanden.
 
->**Info**: Potential individual tabs, which you do not find listed here, may be described in a different context and therefore somewhere else in the Cumulocity documentation. Use the Search function to switch to the relevant sections. A detailed description on the "Modbus" tab, for example, can be found in the respective device guide.
+>**Info**: Mögliche weitere spezielle Registerkarten, die nicht hier aufgeführt sind, werden in dem entsprechenden Kontext an anderer Stelle in der Cumulocity-Dokumentation beschrieben. Die Registerkarte **Modbus** beispielsweise ist in der Modbus-Beschreibung unter [Optionale Services > Cloud Fieldbus](/guides/users-guide/optional-services/#cloud-fieldbus) zu finden. 
 
-Below the name, a list of breadcrumbs is displayed. If the device is part of an asset hierarchy (such as a group), you can use the breadcrumbs to easily navigate up that hierarchy. Since devices can be part of multiple hierarchies, several rows of breadcrumbs may be shown.
+Ist das Gerät Teil einer Asset-Hierarchie (wie einer Gruppe), wird unter dem Gerätenamen eine Liste von Breadcrumbs angezeigt, um einfach in der Hierarchie navigieren zu können. Da Geräte zu mehreren Hierarchien gehören können, werden möglicherweise mehrere Breadcrumb-Zeilen angezeigt. 
 
-Depending of the type and usage of a device, further actions are provided in a context menu when clicking **More...** at the right of the top menu bar. 
+Abhängig vom Gerätetypen und seiner Nutzung sind weitere Aktionen möglich, die in einem Kontextmenü angezeigt werden, wenn Sie **Mehr...** rechts in der oberen Menüleiste klicken. 
 
-<img src="/guides/images/users-guide/DeviceManagement/DevMgmt_DevicesMoreMenu.png" alt="More menu" style="max-width: 50%">
+<img src="/guides/images/benutzerhandbuch/devmgmt-devices-more-menu.png" alt="More menu" style="max-width: 50%">
 
-Details on these additional menu items are provided where required.
+Details zu den einzelnen Menüpunkten sind dort beschrieben, wo diese relevant sind.
 
 ### <a name="info"></a>Info
 
-The "Info" tab summarizes management-relevant device information in a dashboard.
+Die Registerkarte **Info** fasst die Geräteinformationen in einem Dashboard zusammen, die aus Managementsicht relevant sind.
 
-<img src="/guides/images/users-guide/DeviceManagement/DevMgmt_DeviceInfoDashboard.png" alt="Info dashboard" style="max-width: 100%">
+<img src="/guides/images/benutzerhandbuch/devmgmt-device-info.png" alt="Info dashboard" style="max-width: 100%">
 
-The information is provided on the following cards:
+Die Information wird auf den folgenden Karten bereitgstellt:
 
-|Card|Description|
+|Karte|Beschreibung|
 |:---|:---|
-|Notes|Provides optional notes to inform about current activities. Notes usually may only be edited by an administrator. To add or edit a note, click **Edit**, enter your note or your modifications in the text box and save your edits by clicking the green checkmark at the right of the text box. 
-|Device status|Displays connection-relevant information, as described in detail in [Connection monitoring](#connection-monitoring). 
-|Device and communication|Shows a data point graph displaying realtime data on particular measurements. For details, refer to [Using the Data Explorer](/guides/users-guide/cockpit#data-explorer) in the Cockpit documentation.
-|Device data|Displays editable information on the device (name, type, ID, owner, last updated). The fields "ID" and "Last Updated" cannot be edited. Moreover information on hardware (editable) and firmware (not editable) is displayed here if available.
-|Active, critical alarms|Shows the active critical alarms for the device.
-|Groups assignment|Displays the groups the device belongs to. Moreover you can add the device to groups here or unassign it from groups. For details on grouping devices see [Grouping devices](#grouping-devices).
-|Location|Shows the location of a device on a map as reported by the device or as manually set. For details, refer to [Location](#location).
+|Anmerkungen|Enthält optionale Anmerkungen, die über aktuelle Aktivitäten informieren. Anmerkungen können normalerweise nur vom Administrator bearbeitet werden. Um eine Anmerkungen hinzuzufügen oder zu bearbeiten, klicken Sie **Bearbeiten**, geben Sie eine neue Anmerkung oder Änderungen im Textfeld ein und bestätigen Sie Ihre Eingaben, indem Sie das grüne Häkchen rechts vom Textfeld klicken. 
+|Gerätestatus|Enthält verbindungsrelevante Informationen, die im Detail unter [Verbindungsüberwachung](#connection-monitoring) beschrieben sind. 
+|Gerät und Kommunikation|Enthält einen Datenpunktgraphen, der Echtzeitdaten von bestimmten Messwerten anzeigt. Detaillierte Informationen finden Sie unter [Verwenden des Datenexplorers](/guides/users-guide/cockpit#data-explorer) in der Cockpit-Dokumentation.
+|Gerätedaten|Enthält editierbare Informationen zum Gerät ( Name, Typ, ID, Besitzer, zuletzt aktualisiert). Die Felder **ID** und **Zuletzt aktualisiert** können nicht bearbeitet werden. Außerdem werden hier Informationen zur Hardware (editierbar) und Firmware (nicht editierbar) angezeigt, falls verfügbar.
+|Aktive kritische Alarme|Zeigt die aktiven kritischen Alarme für das Gerät an. 
+|Gruppenzuordnung|Zeigt die Gruppen an, zu denen das Gerät gehört. Außerdem kann das Gerät hier weiteren Gruppen zugeordnet werden oder eine Zuordnung aufgehoben werden. Detaillierte Informationen zum Gruppieren von Geräten finden Sie unter [Gruppieren von Geräten](#grouping-devices).
+|Standort|Zeigt den Standort eines Geräts auf einer Karte an, wie vom Gerät gesendet oder manuell eingetragen. Sie auch [Standort](#location).
 
-### <a name="child-devices"></a>Child devices
+### <a name="child-devices"></a>Kindgeräte
 
-The "Child devices" tab shows a list of devices connected to the currently displayed device. For example, if you look at a gateway, the tab lists all machines connected to the gateway.
+Die Registerkarte **Kindgeräte** zeigt eine Liste von Geräten, die mit dem aktuellen Gerät verbunden sind. Wenn es sich bei dem aktuellen Gerät beispielsweise um ein Gateway handelt, werden alle Maschinen, die mit dem Gateway verbunden sind, aufgelistet. 
 
-For details provided in the child device list, refer to [Viewing devices](#viewing-devices).
+Weitere Informationen zu den angezeigten Details finden Sie unter [Anzeigen von Geräten](#viewing-devices).
 
-### <a name="measurements"></a>Measurements
+### <a name="measurements"></a>Messwerte
 
-The "Measurements" tab provides a default visualization of numeric data provided by the device in the form of charts. Charts are grouped into types of measurements, which can contain multiple graphs or "series". The screenshot below, for example, shows a chart for motion measurement including graphs for acceleration in the three dimensions, and a chart with modem statistics in the form of signal strength and bit error rate.
+Die Registerkarte **Messwerte** zeigt eine Standardvisualisierung der vom Gerät bereitgestellten numerischen Daten in Form von Diagrammen. 
+
+Die Diagramme sind in Messwert-Typen aufgeteilt, die jeweils mehrere Graphen und "Series" enthalten können. Die Abbildung unten zeigt beispielsweise ein Diagramm mit Bewegungsmesswerten, einschließlich Graphen für Beschleunigung in drei Dimensionen sowie ein Diagramm mit Modemstatistiken im Form von Signalstärken und Bit-Fehlerraten.  
 
 ![Measurements](/guides/images/users-guide/measurements.png)
 
-If a chart contains graphs with different units, one Y-axis is rendered per unit. In the example above, motion measurements consist of three parameters with unit "meter per square second", so only one axis is rendered. Modem statistics consist of signal strength in decibel milliwatts and bit error rate in percent, so one axis is rendered for each graph.
+Wenn ein Diagramm Graphen mit verschiedenen Einheiten enthält, wir pro Einheit eine Y-Achse dargestellt. In der Beispielabbildung bestehen die Bewegungsmesswerte aus drei Parametern mit der Einheit "Meter je Sekundequadrat", daher wird nur eine Achse dargestellt. Die Modemstatistiken bestehen aus einer Signalstärke in Dezibel Milliwatt und der Bit-Fehlerrate in Prozent, daher wird eine Achse pro Graph dargestellt.
 
-To see detailed information about the measured values, hover over the chart. A tooltip will be displayed with detailed information on the measurement next to your cursor (the tooltip will "snap" to the closest measurement).
+Bewegen Sie den Mauszeiger über den Graphen, um detaillierte Informationen zu den Messwerten anzuzeigen. Neben dem Mauszeiger wird ein Tooltip mit Details zum jeweiligen Messwert angezeigt (der Tooltip rastet bei dem am nächste liegenden Messwert ein).
 
-**Time range and aggregation**
+**Zeitintervall und Aggregation**
 
-By default, charts show the raw data of the last hour. To change the time range on the X-axis, open the "Last hour" dropdown menu at the top right and select a time range.
+Standardmäßig zeigen Diagramme die Ausgangsdaten der letzte Stunde. Um das Zeitintervall der X-Achse zu ändern, öffnen Sie das entsprechende Auswahlmenü rechts oben und wählen Sie ein anderes Zeitintervall.
 
-If you increase the time range, the value in the "Aggregation" field will automatically switch to "hourly" or "daily". The chart now shows ranges instead of individual raw data points. For "hourly", the chart will show a range of the minimum and maximum value measured in one hour. For "daily", the chart will show the minimum and maximum value measured over one day. Likewise, the tooltips will now show ranges of values instead of individual values.
+Wenn Sie das Zeitintervall vergrößern, wechselt der Wert im Feld **Aggregation** automatisch auf "stündlich" oder "täglich". Das Diagramm zeigt nun Bereiche anstelle von einzelnen Datenpunkten. Für "stündlich" zeigt das Diagramm den Bereich des minimalen und maximalen Werts gemessen in der letzten Stunde. Für "täglich" zeigt das Diagramm den Bereich des minimalen und maximalen Werts gemessen über einen Tag. Entsprechend zeigen die Tooltips nun Wertebereiche anstelle von Einzelwerten.
 
-This enables you to get an efficient overview over larger time periods. A graph will only show 5.000 data points per graph maximum to avoid overloading your desktop browser. If you select a fine focus resulting in more than 5.000 data points, a warning message will be shown: "Truncated data. Change aggregation or select shorter date range."
+Dies ermöglicht einen effizienten Überblick über größere Zeitintervalle. Es werden maximal 5.000 Datenpunkte pro Graph angezeigt, um eine Überlastung Ihres Desktop-Browsers zu vermeiden. Wenn Sie einen genaueren Fokus wählen, der mehr als 5.000 Datenpunkte ergibt, wird eine entsprechende Warnung angezeigt: "Abgeschnittene Daten. Ändern Sie die Aggregation oder wählen sie einen kürzeren Zeitraum."
 
-Clicking **Realtime** will enable realtime user interface updates of the graphs as new data flows into the system from the connected devices. 
+Klicken Sie **Echtzeit**, um Echtzeitaktualisierungen der Graphen zu erhalten, sobald neue Daten von den Geräten empfangen werden. 
 
-You can influence the graphical display and axes limits by setting up so-called "KPIs", see the [Administration Guide](/guides/users-guide/administration).
+Sie können die graphische Darstellung und Achsenbegrenzung durch sogenannte "KPIs" modifizieren, siehe [Administration](/guides/users-guide/administration).
 
-**Measurement format**
+**Messwerteformate**
 
-In order to see measurement graphs, the device has to send measurements in a specified fragment format.
+Um Messwertgraphen anzuzeigen, muss das Gerät Messwerte in einem bestimmten Fragmentformat senden.
 
 "fragment<span>&#95;</span>name" : {
 	"serie<span>&#95;</span>name" : {
@@ -106,97 +107,93 @@ In order to see measurement graphs, the device has to send measurements in a spe
 	}
 }
 
-Example: 
+Beispiel: 
 
 "c8y_SpeedMeasurement": {
       "Speed": { "value": 1234, "unit": "km/h" }
 }
 
-Fragment<span>&#95;</span>name and serie<span>&#95;</span>name can be replaced by different valid json property names, but no whitespaces and special characters like [ ],* are allowed. The structure has to be exactly as above, two-level deep json object.
+"fragment<span>&#95;</span>name" and "serie<span>&#95;</span>name" können durch verschiedene gültige JSON-Property-Namen ersetzt werden, aber es sind keine Leerzeichen oder Sonderzeichen wie [ ],* zulässig. Die Struktur muss genau wie oben ein JSON-Objekt mit zwei Ebenen sein.
 
-### <a name="alarms"></a>Alarms
+### <a name="alarms"></a>Alarme
 
-The "Alarms" tab provides information on the alarms of a device. Refer to  [Working with alarms](#alarm-monitoring) for further information on alarms.
+Die Registerkarte **Alarme** enthält Informationen zu den Alarmen für ein Gerät. Weitere Informationen finden Sie unter [Arbeiten mit Alarmen](#alarm-monitoring).
 
-### <a name="config"></a> Configuration
+### <a name="config"></a> Konfiguration
 
-The text configuration, available in the "Configuration" tab of a device, allows you to configure the parameters and initial settings of your device in a text format.
+Die Registerkarte **Konfiguratio**n ermöglicht das manuelle Konfigurieren der Parameter und Grundeinstellungen Ihres Geräts in einem Textformat.
 
-To manually add or edit a device configuration, follow these steps:
-
-1. Open the details for your desired device.
-2. Click the "Configuration" tab.
-3. In the text field you can add or edit the device configuration as desired.
-4. Click **Save** to save your edits.
+im Textfeld können Sie die gewünschten Einstellungen im Textformat eingeben. Klicken Sie **Speichern**, um Ihre Eingaben zu bestätigen. 
 
 <img src="/guides/images/users-guide/textconfig.png" alt="Device details" style="max-width: 100%">
 
-Alternatively, you can work with configuration snapshots. For details, refer to [Configuration snapshots](#configuration-repository).
+Alternativ können Sie sogenannte Konfigurationssnapshots verwenden, siehe [Konfigurationssnapshots](#configuration-repository).
 
-### <a name="control"></a>Control
+### <a name="control"></a>Steuerung
 
-The "Control" tab lists the operations being sent to a device. Refer to [Working with operations](#operation-monitoring) for further information on operations.
+Die Registerkarte **Steuerung** enthält eine Liste der and das Gerät gesendeten Kommandos. Weitere Informationen zu Kommandos finden Sie unter [Verwenden von Kommandos](#operation-monitoring).
+
+<img src="/guides/images/benutzerhandbuch/devmgmt-device-operations.png" alt="Kommandos" style="max-width: 100%">
 
 ![Operations](/guides/images/users-guide/operations.png)
 
-### <a name="network"></a>Network
+### <a name="network"></a>Netzwerk
 
-In the "Network" tab network settings can be configured for the device.
+In der Registerkarte **Netzwerk** können Netzwerkeinstellungen für das Gerät konfiguriert werden. 
 
 <!-- Needs to be documented-->
 
 
 ### <a name="software"></a>Software
 
-The "Software" tab allows you to manage and update the firmware of a device and the software installed on a device. 
+Die Registerkarte **Software** ermöglicht es, die Firmware eines Geräts sowie die auf dem Gerät installierte Software zu verwalten und zu aktualisieren. 
 
-To install a new firmware, click **Install firmware**, then select a firmware image from the [Firmware repository](#software-repo) and click **Install**.
+Um eine neue Firmware zu installieren, klicken Sie **Firmware installieren**, wählen Sie ein Firmware-Image aus dem [Firmware-Repository](#software-repo) und klicken Sie **Installieren**.
 
-Similarly, to install a software on the device, click **Install software**, select a software package from the [Software repository](#software-repo) and click **Install**. 
+Um eine Software auf einem Gerät zu installieren, klicken Sie entsprechend **Software installieren**, wählen Sie ein Software-Paket aus dem [Software-Repository](#software-repo) und klicken Sie **Installieren**. 
 
-<img src="/guides/images/users-guide/DeviceManagement/DevMgmt_software.png" alt="Software" style="max-width: 100%">
+<img src="/guides/images/benutzerhandbuch/devmgmt-device-software.png" alt="Software" style="max-width: 100%">
 
-Installing software and firmware usually includes a restart of the device. To monitor the progress of an installation, visit the "Control" tab.
+Das Installieren von Software oder Firmware beinhaltet normalerweise einen Geräteneustart. Um den Fortschritt einer Installation zu überwachen, wechseln Sie zur Registerkarte **Steuerung**.
 
-To remove a software from a device, hover over a particular software package and click the **Delete** button.
+Um eine Software von einem Gerät zu löschen, fahren Sie mit dem Mauszeiger über den entsprechenden Eintrag und klicken Sie **Löschen**.
 
-### <a name="events"></a>Events
+### <a name="events"></a>Ereignisse
 
-The "Events" tab displays events related to a device. This enables low-level troubleshooting of a device. Refer to [Troubleshooting devices](#events-all) for further information.
+Die Registerkarte **Ereignisse** zeigt die mit dem Gerät verbundenen Ereignisse an. Dies ermöglicht unter anderem eine Fehlersuche. Weitere Informationen finden Sie unter [Fehlerbehebung von Geräten](#events-all).
 
-### <a name="location"></a>Location
+### <a name="location"></a>Standort
 
-The "Location" tab by default shows the location of a device on a map and as coordinates, as reported by the device. For devices that do not report a location you may manually set the location. Simply place the "pin" in the correct place of the displayed map.
+Die Registerkarte **Standort** zeigt standardmäßig den Standort eines Geräts auf einer Karte und als Koordinaten, wie vom Gerät gesendet, an. Für Geräte, die keinen Standort senden, können Sie manuell einen Standort eingeben. Platzieren Sie einfach den "Pin" an die entsprechende Stelle in der Karte.
 
-The "Location" tab also shows when a device contains c8y_Position property. When you send a new c8y-position event, you can set the same c8y-Position fragment on the device and it will automatically mark its position on the map.
+Die Registerkarte **Standort** zeigt außerdem, wenn eine Gerät das Attribut "c8y_Position" enthält. Wenn Sie ein neues c8y_Position-Ereignis senden, können Sie das gleiche c8y	_Position-Fragment auf dem Gerät setzen, so dass das Gerät automatisch seine Position in der Karte markiert.
 
+### <a name="logs"></a>Logdateien
 
-### <a name="logs"></a>Logs
+Die Registerkarte **Logdateien** ermöglicht es, Loginformationen von Geräten abzufragen. Loginformationen können nach Zeitintervallen, Logtypen, Schlüsselwörtern und der maximalen Anzahl zu transferierender Zeilen gefiltert werden. 
 
-In the "Logs" tab you can request log information from devices. Log information can be filtered according to date ranges, log type, keywords and the maximum number of lines to transfer.
+Klicken Sie **Logdatei anfordern** rechts in der oberen Menüleiste der Registerkarte **Logdateien**.
 
-In the "Logs" tab, click **Request log file** at the right of the top menu bar.
+Im folgenden Fenster können Sie die folgende Einstellungen für die Loginformationen spezifizieren: 
 
-In the upcoming window, specify the following settings for the log information:
+- Ein Datums- und Zeitintervall.
+- Den Logtypen. Die unterstützten Logs sind üblicherweise geräteabhängig. 
+- Einen optionalen Text als Filter. Wenn Sie etwa "Users" eingeben, werden nur Zeilen ausgegeben, die den Begriff  "Users" enthalten.
+- Die maximale Anzahl der ausgegebenen Zeilen (von hinten gezählt). Der Standardwert ist 1000.
 
-- A date and time range.
-- The type of log. The supported logs listed are usually device-specific.
-- An optional text to filter the log. For example, if you enter "Users", only lines including the term "Users" will appear in the returned log information.
-- The maximum number of lines to be returned (counted from the end). The default value is 1000.
+Klicken Sie **Logdatei anfordern**, um die spezifizierten Daten für das Gerät zu anzufordern.
 
-Click **Request log** to request the specified log information for the device.
+<img src="/guides/images/benutzerhandbuch/devmgmt-request-logs.png" alt="Logdatei anfordern" style="max-width: 100%">
 
-<img src="/guides/images/users-guide/DeviceManagement/DevMgmt_RequestLogs.png" alt="Request Logs" style="max-width: 100%">
+Das Anfordern einer Logdatei kann je nach Datenvolumen einige Zeit dauern. 
 
->Requesting a log from a device may take some time. 
+Sobald die Loginformationen vom Gerät auf die Cumulocity-Plattform übertragen wurden, werden Sie auf dem Bildschirm gelistet. Der Eintrag in der Liste enthält das jeweils angeforderte Zeitintervall.  
 
-After the log has been transferred from the device to Cumulocity, it will be listed on the screen. The entry in the list includes the requested log time range. 
+Klicken Sie auf den Eintrag in der Liste, um die Loginformationen anzuzeigen. 
 
-Click on the entry in the list to show the log information in the screen. 
+Wenn Sie mit dem Mauszeiger über einen Eintrag fahren, erscheinen die Schaltflächen **Herunterladen** and **Löschen** zum Herunterladen und Löschen der Logdatei.
 
-When hovering over an entry, the **Download** and **Delete** buttons appear. Click the **Download** button to download the log excerpt to your local PC. Click the **Delete** button to delete the log file.
-
-### <a name="objects"></a> Objects
+<!--### <a name="objects"></a> Objects
 
 In the “Objects” tab of a LWM2M device, you can view all objects, resources and instances of the device. Additionally, you can create new operations, see all currently pending operations and view the history of all previous operations.
 
@@ -230,48 +227,51 @@ Additional information on recent operations can be viewed by clicking the operat
 
 To view the history of all operations, simply click **View history**. Note that, you will be redirected to the “Control” tab.
 
-![Control tab](/guides/images/users-guide/DeviceManagement/DevMgmt_operations.png)
+![Control tab](/guides/images/users-guide/DeviceManagement/DevMgmt_operations.png)-->
 
-### <a name="service-monitoring"></a>Service monitoring
+### <a name="service-monitoring"></a>Serviceüberwachung
 
-In addition to connection monitoring, Cumulocity offers a separate service monitoring for machines. See [Service monitoring](#monitoring-services) for more information.
+Zusätzlich zur Verbindungsüberwachung bietet Cumulocity eine Serviceüberwachung von Maschinen, siehe [Serviceüberwachung](#monitoring-services).
 
 ### <a name="shell"></a>Shell
 
-The device shell enables you to interactively work with remote devices. Many industrial devices support some form of command language, be it AT commands for modems, CSV-style commands for many tracking devices or elaborate scripting mechanisms such as Tixi TiXML. In the shell, you can send commands in the respective language of the device and interactively view the results of the commands.
+Die Registerkarte **Shell** ermöglicht es, interaktiv mit entfernten Geräten zu arbeiten. Viele industrielle Geräte unterstützen Kommandosprachen wie etwa AT-Kommandos für Modems, CSV-artige Kommandos für viele Tracking-Systeme oder aufwendigere Scripting-Mechanismen wie Tixi TiXML. In der Shell können Kommandos in der entsprechenden Sprache an das Gerät gesendet und die Ergebnisse angezeigt werden.
 
-The "Shell" tab presents a command prompt to enter commands. 
+Die Registerkarte **Shell** enthält eine Kommandozeile zur Eingabe der Kommandos.
 
-In the command prompt you can enter arbitrary command text. To send the command text to the device, click **Execute**. This button only is activated if the device is online.
+In der Kommandozeile kann beliebiger Kommandotext eingegeben werden. Klicken Sie **Ausführen**, um das Kommando an das Gerät zu senden. Diese Schaltfläche ist nur aktiviert, wenn das Gerät online ist. 
 
-Click **View history** at the right of the top menu bar to display a list of the previously executed commands. By default, the last three commands are visible.
-The list displays status, date and text of a command. Clicking a list item reveals the result of the command (provided it has been executed).
+Klicken Sie **Historie ansehen** rechts in der oberen Menüleiste, um eine Liste der zuvor ausgeführten Kommandos anzuzeigen. Standardmäßig werden die letzten drei Kommandos angezeigt. 
 
-![Device shell](/guides/images/users-guide/shell.png)
+Die Liste zeigt den Status, das Datum und den Text eines Kommandos an. Durch Klicken einer Zeile wird das Ergebnis angezeigt, vorausgesetzt, das Kommando wurde ausgeführt. 
 
-For your convenience, Cumulocity provides several frequently used commands for some devices. Click **<_Get predefined commands** at the right of the top menu bar to open a window containing a list of available pre-defined commands. Select the command of your choice and click **Use**, to copy the command to the command prompt, or **Execute**, to execute the command straight away. You may also add new commands here for re-use.
+![Device shell](/guides/images/benutzerhandbuch/devmgmt-device-shell.png)
 
-![Shell commands](/guides/images/users-guide/DeviceManagement/DevMgmt_ShellPredefined.png)
+Cumulocity stellt für manche Gerätetypen einige häufig verwendete Kommandos bereit. Klicken Sie **<_Beispielkommando auswählen** rechts in der oberen Menüleiste, um eine Liste der verfügbaren vordefinierten Kommandos anzuzeigen. Wählen Sie das gewünschte Kommando aus und klicken Sie **Verwenden**, um das ausgewählte Kommando in der Kommandozeile einzufügen oder klicken Sie **Ausführen**, um das Kommando unmittelbar auszuführen. Sie können auch selbst neue Kommandos zur Wiederverwendung hinzufügen. 
+
+![Shell-Kommandos](/guides/images/benutzerhandbuch/devmgmt-shell-commands.png)
 
 ### <a name="tracking"></a>Tracking
 
-Devices can record the history of their movements in Cumulocity. This movements may be viewed in the "Tracking" tab.
+In Cumulocity können Geräte die Historie ihrer Bewegungen festhalten. Diese Bewegungen können in der Registerkarte **Tracking** angezeigt werden. 
 
-**Note** that the "Tracking" tab only shows up when a device contains c8y_Position property.
+**Info**: Die Registerkarte **Tracking** wird nur angezeigt, wenn ein Gerät das Attribut "c8y_Position" enthält.
 
-In the dropdown list at the top right you can select a time period (or specify one by selecting Custom from the list) and visualize the movements of the device during this period. Movements are shown as red lines in the map.
+In der Auswahlliste oben rechts können Sie ein Zeitintervall auswählen (oder eines eingeben, indem Sie "Benutzerdefiniert" auswählen). Die Bewegungen des Geräts während des ausgewählten Zeitintervalls werden als rote Linien in der Karte visualisiert. 
 
 ![Tracking](/guides/images/users-guide/tracking.png)
 
-Next to the map, the individual recordings with their time are listed ("location update events"). When you click a recording, a "pin" on the map will show the location at the time of the recording.
+Neben der Karte werden die einzelnen Einträge mit Zeitangabe aufgelistet ("Standortaktualisierungsereignisse"). Wenn Sie auf einen Eintrag klicken, zeigt ein "Pin" auf der Karte den Standort zu diesem Zeitpunkt an. 
 
-Depending on the type of device and the integration into Cumulocity, you can configure device-side geo-fencing and motion detection.
+Abhängig vom Gerätetypen und der Integration in Cumulocity, können Sie geräteseitiges Geofencing und Bewegungserfassung konfigurieren.
 
->**Info**: When this feature is activated and the device is compatible, Cell ID information can be used to determine the position of the device. Currently, the services from [Combain](https://combain.com/) and [Google](https://developers.google.com/maps/documentation/geolocation/intro) are supported. The user can see the tracks based on both data, or filter out GPS based data or Cell ID based data.
+>**Info**: Wenn diese Funktion aktiviert und das Gerät kompatibel ist, kann die Zellen-ID-Information genutzt werden, um die Position des Geräts zu bestimmen. Aktuell werden die Services von [Combain](https://combain.com/) und [Google](https://developers.google.com/maps/documentation/geolocation/intro) unterstützt. Der Benutzer kann die Ortungen basierend auf beiden Datentypen ansehen oder nach GPS-basierten Daten oder Zellen-ID-basierte Daten filtern. 
 
-### <a name="identity"></a>Identity
 
-Cumulocity can associate devices and assets with multiple external identities. For example, devices can often be identified by the IMEI of their modem, by a microcontroller serial number or by an asset tag. The "Identity" tab lists all the identities recorded for a particular device.
+### <a name="identity"></a>Identifikator
 
-This is useful, for example, when you have non-functional hardware and need to replace the hardware without losing the data that was recorded. Just connect the new hardware to your account and modify the identity entry of the old hardware, to contain the identity of the new hardware.
+Cumulocity kann Geräte und Assets mit mehreren externen Identifikatoren verknüpfen. Geräte werden beispielsweise oft durch die IMEI ihres Modems, eine Microcontroller-Seriennummer oder ein Asset-Tag identifiziert. Die Registerkarte **Identifikator** listet alle gespeicherten Identifikatoren für ein Gerät auf.
+
+Dies ist etwa hilfreich, wenn Hardware nicht mehr funktioniert und ausgetauscht werden muss, ohne bereits aufgezeichnete Daten zu verlieren. Verbinden Sie die neue Hardware mit Ihrem Konto und modifizieren Sie den Identifikatoren-Eintrag der alten Hardware, so dass er die Identität der neuen Hardware enthält. 
+
 

@@ -6,9 +6,9 @@ layout: redirect
 
 Cumulocity verwendet Geräteprotokolle, um Daten von verschiedenen Gerätetypen zu verarbeiten. 
 
-Klicken Sie “Geräteprotokolle” im Menü “Gerätetypen” im Navigator.
+Klicken Sie **Geräteprotokolle** im Menü **Gerätetypen** im Navigator.
 
-Die Seite “Geräteprotokolle” zeigt eine Liste aller in Ihrem Konto verfügbaren Geräteprotokolle an.
+Die Seite G**eräteprotokolle** zeigt eine Liste aller in Ihrem Konto verfügbaren Geräteprotokolle an.
 
 <img src="/guides/images/benutzerhandbuch/devmgmt-device-protocols.png" alt="Geräteprotokolle" style="max-width: 100%">
 

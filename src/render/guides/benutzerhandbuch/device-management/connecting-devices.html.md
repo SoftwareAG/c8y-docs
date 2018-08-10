@@ -14,9 +14,9 @@ Der folgende Prozess beschreibt das manuelle Verbinden eines Geräts. Je nach Ge
 
 Um Geräte mit Ihrem Cumulocity-Konto zu verbinden, führen Sie folgende Schritte aus:
 
-1. Öffnen Sie die Seite "Geräteregistrierung" im Menü "Geräte" und wählen Sie **Gerät registrieren**.
+1. Öffnen Sie die Seite **Geräteregistrierung** im Menü **Geräte** und wählen Sie **Gerät registrieren**.
 2. Wählen Sie im folgenden Fenster **Manuelle Geräteregistrierung**, um ein oder mehrere Geräte einzeln zu registrieren, im Gegensatz zur Bulk-Registrierung, die im nächsten Abschnitt beschrieben wird.
-3. Geben Sie im Feld "Geräte-ID" die eindeutige ID des Geräts ein. Diese finden Sie in der Gerätedokumentation. Bei mobilen Geräten handelt es sich dabei meistens um die IMEI (International Mobile Equipment Identity), die häufig auf der Rückseite des Geräts zu finden ist. 
+3. Geben Sie im Feld **Geräte-ID** die eindeutige ID des Geräts ein. Diese finden Sie in der Gerätedokumentation. Bei mobilen Geräten handelt es sich dabei meistens um die IMEI (International Mobile Equipment Identity), die häufig auf der Rückseite des Geräts zu finden ist. 
 4. Wählen Sie optional eine Gruppe aus, der Sie das Gerät nach der Registrierung zuweisen möchten. Weiter Informationen zum Zuweisen zu Gruppen finden Sie unter [Gruppieren von Geräten](#grouping-devices).
 5. Klicken Sie **Weiteres Gerät hinzufügen**, um ein weiteres Gerät zu registrieren. Geben Sie auch hier die Geräte-ID ein und weisen Sie optional das Gerät einer Gruppe zu. Auf diese Weise können Sie mehrere Geräte in einem Schritt registrieren.
 6. Klicken Sie **Weiter**, um Ihr(e) Gerät(e) zu registrieren. Nach erfolgreicher Registrierung werden Geräte mit dem Status "Warten auf Verbindung" auf der Seite angezeigt.
@@ -33,7 +33,7 @@ Wenn ein Gerät verbunden ist, wechselt der Status auf "Bitte akzeptieren". Klic
 
 Um eine größere Anzahl von Geräten zu registrieren, bietet Cumulocity die Möglichkeit der Bulk-Registrierung, mit der viele Geräte gleichzeitig in einem Schritt registriert werden können. Das geschieht über das Hochladen einer CSV-Datei, die neben den IDs mindestens die Zugangsdaten der zu registrierenden Geräte enthalten muss. 
 
-1. Öffnen Sie die Seite "Geräteregistrierung" im Menü "Geräte" und wählen Sie **Gerät registrieren**.
+1. Öffnen Sie die Seite **Geräteregistrierung** im Menü **Geräte** und wählen Sie **Gerät registrieren**.
 2. Wählen Sie im folgenden Fenster **Bulk-Geräteregistrierung**.
 3. Wählen Sie die hochzuladende CSV-Datei auf Ihrem Computer aus. Die CSV-Datei muss folgende Struktur haben:
 

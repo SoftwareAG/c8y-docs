@@ -195,64 +195,62 @@ Durch Klicken einer Zeile wird diese aufgeklappt und weitere Details zum Kommand
 
 ![Kommandodetails](/guides/images/benutzerhandbuch/devmgmt-Operation-details.png)
 
-<a name="bulk-operations"></a>**Sammelkommandos**
+<a name="bulk-operations"></a>**Stapelkommandos**
 
-For easier handling of devices, Cumulocity offers bulk operations. With bulk operations you can at once execute operations for each device within one group.
+Für die leichtere Bearbeitung von Geräten bietet Cumulocity Stapelkommandos. Mit Stapelkommandos können Sie ein Kommando in einem Schritt für jedes Gerät in einer Gruppe ausführen.
 
-To execute bulk operations for a group, follow these steps:
+Um ein Stapelkommando für eine Gruppe auszuführen, führen Sie folgende Schritte aus:
 
-1. Select a device and open the "Control" tab.
-2. Create an operation.
-3. Hover over the operation you want to execute.
-4. Click the menu icon.
-5. In the context menu click **Execute for whole group**.
+1. Wählen Sie ein Gerät und öffnen Sie die Registerkarte **Steuerung**.
+3. Wählen Sie ein Kommando aus der Liste und klicken Sie das Menüsymbol rechts in der Zeile.
+5. Klicken Sie im Kontextmenü **Für gesamte Gruppe ausführen**.
 
 ![Execute bulk operations](/guides/images/users-guide/executebulkoperations.png)
 
-In order to view the status and progress of your operations, simply select the desired group and click the "Bulk Operations" tab.
+Um den Status und Fortschritt der Kommandos zu verfolgen, wählen Sie die entsprechende Gruppe im Navigator und wechseln Sie zur Registerkarte **Stapelkommandos**.  
 
-![Bulk operations tab](/guides/images/users-guide/DeviceManagement/DevMgmt_BulkOperations.png)
+![Registerkarte Stapelkommandos](/guides/images/benutzerhandbuch/devmgmt-group-bulk-operation.png)
 
-To edit a bulk operation, follow these steps:
+Um ein Stapelkommando zu bearbeiten, führen Sie folgende Schritte aus:
 
-1. Hover over the bulk operation you want to edit and click the menu icon. 
-2. In the context menu click **Edit operation schedule**.
-3. In the upcoming window you may change the "Start Date" and "Delay" values.
-4. To change operation details, click **Show operation details**. 
-5. Click **Reschedule** to apply your changes. 
+1. Wählen Sie ein Kommando aus der Liste und klicken Sie das Menüsymbol rechts in der Zeile.
+2. Klicken Sie im Kontextmenü **Zeitplan bearbeiten**.
+3. Im folgenden Fenster können Sie die Werte für **Startzeit** und **Verzögerung** ändern.
+4. Um Kommandodetails zu ändern, klicken Sie **Anzeigen Kommandodetails**. 
+5. Klicken Sie **Neu planen**, um Ihre Einstellungen zu speichern. 
 
-![Edit bulk operations](/guides/images/users-guide/DeviceManagement/DevMgmt_BulkOperationsEdit.png)
+![Stapelkommando bearbeiten](/guides/images/benutzerhandbuch/devmgmt-bulk-operation-edit.png)
 
-To delete a bulk operation, hover over the bulk operation you want to delete and click the menu icon. In the context menu, click **Cancel operation**.
+Um ein Stapelkommando abzubrechen, klicken Sie das Menüsymbol rechts in der entsprechenden Zeile und klicken Sie **Vorgang abbrechen**.
 
 ### <a name="events-all"></a>Fehlerbehebung von Geräten
 
-Eine Fehlerbehebung auf einer etwas detaillierteren Ebene kann bei Geräten mit Hilfe von Ereignissen durchgeführt werden. Ereignisse sind von Geräten gesendete Low-Level-Nachrichten, die üblicherweise für die anwendungsspezifischen Verarbeitung verwendet werden. So sendet zum Beispiel ein Verkaufsautomat seine Echtzeitverkäufe in Form von Ereignissen. 
+Eine Fehlerbehebung auf detaillierterer Ebene kann bei Geräten mit Hilfe von Ereignissen durchgeführt werden. Ereignisse sind von Geräten gesendete Low-Level-Nachrichten, die üblicherweise für die anwendungsspezifische Verarbeitung verwendet werden. So sendet zum Beispiel ein Verkaufsautomat seine Echtzeitverkäufe in Form von Ereignissen. 
 
 Cumulocity zeigt Ereignisse für einzelne Geräte sowie für alle Geräte an: 
 
-* Um die Ereignisse für ein bestimmtes Gerät anzuzeigen, wechseln Sie zur Registerkarte "Ereignisse" in den Gerätedetails dieses Geräts.
-*  Um die Ereignisse für alle Geräte anzuzeigen, klicken Sie "Ereignisse" im Menü "Übersichten" im Navigator. 
+* Um die Ereignisse für ein bestimmtes Gerät anzuzeigen, wechseln Sie zur Registerkarte **Ereignisse** in den Gerätedetails dieses Geräts.
+*  Um die Ereignisse für alle Geräte anzuzeigen, klicken Sie **Ereignisse** im Menü **Übersichten** im Navigator. 
 
 <img src="/guides/images/benutzerhandbuch/devmgmt-events.png" alt="Ereignisse" style="max-width: 100%">
 
-Per default, events are shown as coming in from the devices in realtime. To disable realtime updates, click **Realtime** at the right of the top menu bar.
+Standardmäßig werden die Ereignisse in Echtzeit angezeigt, sobald sie vom Gerät empfangen werden. Um die Echtzeitaktualisierung zu deaktivieren, klicken Sie **Echtzeit** rechts in der oberen Menüleiste.
 
-For each event, the following information is provided:
+Für jedes Ereignis werden die folgenden Informationen bereitgestellt:
 
-|Info|Description|
+|Info|Beschreibung|
 |:---|:---|
-|Timestamp|Timestamp when the event has been executed.
-|Name|Name of the event.
-|Device|The name of the device sending the event. Clicking the name leads you to the detailed view of the device.
+|Zeitstempel|Zeitstempel, wann das Ereignis ausgeführt wurde.
+|Name|Name des Ereignisses.
+|Gerät|Name des Geräts, das das Ereignis sendet. Durch Klicken des Gerätenamens gelangen Sie zur Detailansicht des Geräts. 
 
-In the event list the latest entry is displayed on top.
+In der Ereignisliste wird der letzte Eintrag ganz oben angezeigt.
 
-Clicking a row expands it and displays further details on the event (as type and position of the device).
+Durch Klicken einer Zeile wird diese aufgeklappt und weitere Details zum Ereignis angezeigt (wie der Typ und die Position des Geräts). 
 
-Since devices may send large amounts of event data, you can filter the data to be displayed by date. 
+Da Geräte möglicherweise große Datenmengen senden, können Sie die angezeigten Daten nach Datum filtern.
 
-Select a start date and an end date from the fields in the top menu bar and click the **Filter** button to apply the filter. Click the **Clear** button to clear the filter again.
+Wählen Sie in den Feldern in der oberen Menüleiste ein Startdatum und ein Enddatum und klicken Sie **Filtern**, um den Filter anzuwenden. Klicken Sie **Löschen**, um den Filter wieder zurückzusetzen.
 
 
 

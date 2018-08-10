@@ -23,7 +23,7 @@ Um eine neue Konfiguration aus einer Datei hinzuzufügen, führen Sie folgende S
 1. Klicken Sie **Konfigurationssnapshot hinzufügen** rechts in der oberen Menüleiste. 
 2. Geben Sie im folgenden Fenster einen eindeutigen Namen und eine optionale Beschreibung für die Konfiguration ein. 
 3. Geben Sie im Feld **Gerätetyp** einen Gerätetypen ein. Den Gerätetypen finden Sie in der Registerkarte **Info** des Zielgeräts. 
-4. Wählen Sie die Datei mit dem Konfigurationssnapshot, in dem Sie eine Datei von Ihrem Computer hochladen, eine externe URL bereitstellen oder eine vorhandene Datei auswählen. 
+4. Wählen Sie die Datei mit dem Konfigurationssnapshot, indem Sie eine Datei von Ihrem Computer hochladen, eine externe URL bereitstellen oder eine vorhandene Datei auswählen. 
 5. Klicken Sie **Konfigurationssnapshot hinzufügen**, um Ihre Einstellungen zu speichern. 
 
 Der Snapshot wird dem Konfigurations-Repository hinzugefügt.
@@ -33,7 +33,7 @@ Der Snapshot wird dem Konfigurations-Repository hinzugefügt.
 
 ### Laden eines Snapshots von einem Gerät
 
-Neben dem Hinzufügen einer Konfiguration aus einer Datei können Sie auch eine Konfiguration hinzufügen, in dem Sie diese von einem Gerät abrufen.
+Neben dem Hinzufügen einer Konfiguration aus einer Datei können Sie auch eine Konfiguration hinzufügen, indem Sie diese von einem Gerät abrufen.
 
 Um eine Konfiguration von einem Gerät zu laden, führen Sie folgende Schritte aus:
 

@@ -54,7 +54,7 @@ Um die Geräte zu verbinden, müssen diese mit den relevanten Informationen vor-
 * Passwort - das Passwort für den Zugang zu Cumulocity, entspricht dem Wert "Credentials" in der CSV-Datei.
 * Gerätedaten - Felder "Type", "Name", "Iccid", "Idtype", "Path", "Shell" in der CSV-Datei.
 
-**Info**: Wenn Sie mit der Enterprise Edition von Cumulocity arbeiten, können Sie auch Geräte über mehrere Mandanten registrieren, in dem Sie eine Spalte "Mandant" hinzufügen und die CSV-Datei vom Management-Mandanten aus importieren. 
+**Info**: Wenn Sie mit der Enterprise Edition von Cumulocity arbeiten, können Sie auch Geräte über mehrere Mandanten registrieren, indem Sie eine Spalte "Mandant" hinzufügen und die CSV-Datei vom Management-Mandanten aus importieren. 
 
 Weitere Informationen zum Dateiformat und möglichen CSV-Varianten finden Sie unter  
 [Bulk device credentials](/guides/reference/device-credentials/#creds-upload) im Reference Guide.

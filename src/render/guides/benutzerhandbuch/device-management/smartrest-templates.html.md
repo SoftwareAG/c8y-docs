@@ -1,107 +1,111 @@
 ---
 order: 80
-title: SmartREST templates
+title: SmartREST-Templates
 layout: redirect
 ---
 
-### Introduction
+### Einführung
 
-SmartREST templates are a collection of request and response templates used to convert CSV data and Cumulocity Rest API calls. For example, you can use SmartREST templates to easily add devices to the platform instead of manually writing the requests each time.
+Bei den SmartREST-Templates handelt es sich um eine Sammlung von Anfrage- und Antwort-Templates, die verwendet werden, um CSV-Daten und Cumulocity Rest API-Aufrufe zu konvertieren.  Sie können SmartREST-Templates etwa verwenden, um einfach Geräte zur Plattform hinzuzufügen anstatt jedesmal manuell eine Anfrage zu schreiben. 
 
-To ease the device integration, Cumulocity supports static templates that can be used without the need for creating your own templates. These templates focus only on the most commonly used messages for device management. For further information on static templates, refer to the [MQTT Developer´s Guide](/guides/mqtt/static-templates/).
+Um die Geräteintegration zu vereinfachen, stellt Cumulocity auch statische Templates bereit, so dass Sie keine eigenen Templates erstellen müssen. Diese Templates konzentrieren sich jedoch nur auf häufig verwendete Nachrichten für die Geräteverwaltung. Weitere Informationen zu statischen Templates finden Sie im [MQTT developer´s guide](/guides/mqtt/static-templates/).
 
-Open the SmartREST template list from the "Device Types" menu in the navigator. 
+Klicken Sie **SmartREST-Template** im Navigator, um die Liste der SmartREST-Templates zu öffnen. 
 
-![template view](/guides/images/users-guide/templateview.png)
+![SmartREST-Templates](/guides/images/benutzerhandbuch/devmgmt-smartrest-templates.png)
 
-For each template, the following information is provided:
+Für jedes Template werden folgende Informationen bereitgestellt:
 
-* Template name, e.g. Camel
-* Template ID, e.g. 99
-* Number of send messages
-* Number of responses
+* Template-Name, z. B. Camel
+* Template-ID, z.B. 99
+* Anzahl gesendeter Nachrichten
+* Anzahl der Antworten
 
-There are two ways to add a SmartRest template:
+SmartREST-Templates können auf zweierlei Weise hinzugefügt werden: 
 
-- Import an already existing template.
-- Create a new template.
+- Importieren eines bereits vorhandenen Templates
+- Erstellen eines neues Templates
+- 
+### Importieren eines vorhandenen Templates
 
-### How to import an existing SmartREST template
+1. Klicken Sie **Import** rechts in der oberen Menüleiste.
+2. Wählen Sie im folgenden Fenster eine Datei zum Hochladen von Ihrem Computer. 
+3. Geben Sie einen Namen und eine eindeutige ID für das Template ein (beide Eingaben sind erforderlich). 
+4. Klicken Sie **Importieren**, um das Template zu importieren.
 
-1. Click **Import** at the right of the top menu bar.
-2. In the upcoming window, choose a file to upload by browsing for it.
-3. Enter a template name and a unique template ID (both mandatory fields). 
-4. Click **Import** to import the template.
+<img src="/guides/images/benutzerhandbuch/devmgmt-template-import.png" alt="Template importieren" style="max-width: 50%">
 
-<img src="/guides/images/users-guide/DeviceManagement/DevMgmt_TemplateImport.png" alt="Import template" style="max-width: 50%">
+### Erstellen eines neuen SmartREST-Templates
 
-### How to create a new SmartREST template
+1. Klicken Sie **Neues Template** rechts in der oberen Menüleiste.
+2. Geben Sie einen Namen und eine eindeutige ID für das Template ein (beide Eingaben sind erforderlich). 
+4. Klicken Sie **Weiter**, um Nachrichten oder Antworten hinzuzufügen.
 
-1. Click **New** at the right of the top menu bar.
-2. In the upcoming window, enter a template name and a unique template ID (both mandatory fields). 
-4. Click **Continue** to proceed adding messages or responses.
+<img src="/guides/images/benutzerhandbuch/devmgmt-template-create.png" alt="Create template" style="max-width: 50%">
 
-<img src="/guides/images/users-guide/DeviceManagement/DevMgmt_TemplateCreate.png" alt="Create template" style="max-width: 50%">
+### Hinzufügen einer Nachricht
 
-### How to add a message
+Das Nachrichten-Template enthält alle erforderlichen Informationen, um eine  SmartREST-Anfrage in einen entsprechendenRest API-Aufruf zu konvertieren, der dann zur Plattform gesendet wird. 
 
-The message template contains all necessary information to convert the SmartRest request into a corresponding Rest API call which is then sent to the platform.
+Um eine neue Nachricht zu einem Template hinzuzufügen, navigieren Sie zur Registerkarte **Nachrichten** im entsprechenden Template und klicken Sie **Nachricht hinzufügen**. 
 
-To add a new message, navigate to the "Messages" tab in your desired SmartREST template and click **Add message**. Complete the following fields:
+<img src="/guides/images/benutzerhandbuch/devmgmt-template-message.png" alt="Nachricht" style="max-width: 75%">
 
-|Field|Description|
+Füllen Sie die folgenden Felder aus:
+
+|Feld|Beschreibung|
 |:---|:---|
-|Message ID|Unique integer that will be used as a message identifier. It must be unique among all message and response templates.
-|Name|Name for the message. Mandatory.
-|Target REST API|REST API for the target. Dropdown list. May be one of Measurement, Inventory, Alarm, Event, Operation.
-|Method|Request method. May be one of POST, PUT, GET, depending on the selected Target REST API.
-|Include Responses|Click this checkbox if you want to process the results of the request with response templates.
-|REST API built-in fields|These fields are optional and vary depending on the target REST API selected. In case no value is provided, a device will be able to set it when sending an actual message.
-|REST API custom fields|Additional fields can be added by clicking **Add field**. Enter the API key and select the desired data type.
+|Message-ID|Integer-Wert, der zur Identifizierung der Nachricht verwendet wird. Dieser Wert muss eindeutig für alle Nachricht- und Antwort-Templates sein. Erforderlich.
+|Ziel-REST API|REST API für das Ziel. Auswahlliste. Verfügbare Werte: ALARM, EREIGNIS, KOMMANDO, MESSWERT, STAMMDATEN.
+|Methode|Anfragemethode. Verfügbare Werte POST, PUT, GET, abhängig von der ausgewählten Ziel-REST API.
+|Erwartet Antwortnachricht|Aktivieren Sie dieses Kontrollkästchen, wenn Sie die Ergebnisse der Anfrage mit Antwort-Templates verarbeiten möchten. 
+|Integrierte REST API-Felder|Diese Felder sind optional und variieren je nach ausgewählter Ziel-REST API. Wenn kein Wert bereitgestellt wird, kann das Gerät diesen setzen, sobald die eigentliche Nachricht gesendet wird.  
+|Benutzerdefinierte REST API-Felder|Durch Klicken von **Feld hinzufügen**, können zusätzliche eigene Felder hinzugefügt werden. Geben Sie den API-Schlüssel ein und wählen Sie den gewünschten Datentypen. 
 
-<img src="/guides/images/users-guide/DeviceManagement/DevMgmt_TemplateMessage.png" alt="Message" style="max-width: 100%">
+Unter **Vorschau** können Sie eine Vorschau Ihrer Anfragenachricht sehen. 
 
-In the Preview you can see the preview of your request message.
+Klicken Sie **Speichern**, um Ihre Einstellungen zu speichern.
 
-Click **Save** to save your settings.
+Um eine Nachricht zu löschen, öffnen Sie diese und klicken Sie **Löschen**.
 
-To delete a message, open it and click **Remove** at the bottom.
+### Hinzufügen einer Antwort
 
-### How to add a response
+Ein Antwort-Template enthält alle erforderlichen Informationen, um Datenwerte aus einer Antwort der Plattform auf eine REST API-Anfrage zu extrahieren, die dann an den Client im CSV-Datenformat gesendet werden.
 
-A response template contains the necessary information to extract data values from a platform REST API call response, which is then sent back to the client in a CSV data format.
-
-To add a new response, navigate to the "Response" tab in your desired SmartREST template and click **Add response**. Complete the following fields:
+Um eine neue Antwort hinzuzufügen, navigieren Sie zur Registerkarte **Antworten** im entsprechenden Template und klicken Sie **Antwort hinzufügen**. 
 
 <img src="/guides/images/users-guide/DeviceManagement/DevMgmt_TemplateResponse.png" alt="Response" style="max-width: 100%">
 
-|Field|Description|
+Füllen Sie die folgenden Felder aus:
+
+|Feld|Beschreibung|
 |:---|:---|
-|Response ID|Unique integer that will be used as a response identifier. 
-|Name|Name for the response. Mandatory.
-|Base Pattern|Base pattern for the response.
-|Condition|Condition value of the response.
-|Pattern|At least one pattern is required. Click **Add pattern** and enter a pattern value.
+|Antwort-ID|Eindeutiger Integer-Wert zur Identifizierung der Antwort. 
+|Name|Name für die Antwort. Erforderlich.
+|Basis-Pattern|Basis-Pattern für die Antwort.
+|Bedingung|Bedingungswert der Antwort.
+|Pattern|Mindestens ein Pattern ist erforderlich. Klicken Sie **Pattern hinzufügen** und geben Sie einen Pattern-Wert an.
 
-Click **Save** to save your settings.
+Klicken Sie **Speichern**, um Ihre Einstellungen zu speichern.
 
-To delete a response, open it and click **Remove** at the bottom.
+Um eine Antwort zu löschen, öffnen Sie diese und klicken Sie **Löschen**.
 
-### How to edit or delete a SmartREST template
 
-To edit a SmartREST template, either click the desired template or click the menu icon and in the context menu click **Edit**.
+### Bearbeiten oder Löschen eines SmartREST-Templates
 
-To delete a SmartREST template, click **Remove** in its context menu.
+Um ein SmartREST-Template zu bearbeiten, klicken Sie auf die entsprechende Template-Karte oder klicken Sie das Menüsymbol und wählen Sie **Bearbeiten** im Kontextmenü.
 
-### How to export a SmartREST template
+Um ein SmartREST-Template zu löschen, klicken Sie **Löschen** im Kontextmenü.
 
-To export a SmartREST template, click the menu icon and in the menu click  **Export**. The template will automatically be downloaded.
+### Exportieren eines SmartREST-Templates
 
-To export a SmartREST template as CSV file follow these steps:
+Um ein SmartREST-Template zu exportieren, klicken Sie das Menüsymbol und wählen Sie **Exportieren** im Kontextmenü. Das Template wird automatisch heruntergeladen.
 
-1. Open the template of your choice and select the "CSV Preview" tab. 
-2. In the "CSV Preview" tab which provides additional information on messages and responses, click **Export CSV**. 
-1. In the upcoming window, specify the preferred options for the field separator, decimal separator and character set.
-1. Click **Download** to download the template as CSV file.
+Um ein SmartREST-Template als CSV-Datei herunterzuladen, führen Sie folgende Schritte aus:
+
+1. Öffnen Sie das gewünschte Template und wechseln Sie zur Registerkarte **CSV-Vorschau**.
+2. Klicken Sie in der Registerkarte **CSV-Vorschau**, die zusätzliche Informationen zu Nachrichten und Antworten enthält, **In die Zwischenablage kopieren**. 
+1. Wählen Sie im folgenden Fenster die bevorzugten Optionen für Feldtrennzeichen, Dezimaltrennzeichen und Zeichensatz. 
+2. Klicken Sie **Herunterladen**, um das Template als CSV-Datei herunterzuladen.
 
 <img src="/guides/images/users-guide/DeviceManagement/DevMgmt_TemplateExportCSV.png" alt="Export CSV" style="max-width: 50%">

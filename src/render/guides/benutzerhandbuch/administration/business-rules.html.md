@@ -11,7 +11,7 @@ Mittels Echtzeitverarbeitung können Geschäftsregeln definiert werden, die auto
 
 > **Info:** Eine benutzerfreundliche Methode, Echtzeitregeln zu definieren, wird in der Cockpit-Anwendung mit den sogenannten [Smart Rules](/guides/benutzerhandbuch/cockpit#rules) bereitgestellt. Smart Rules sind ebenfalls Anweisungen, die mit der Cumulocity Event Language erstellt wurden, und in der Liste der Echtzeitregeln angezeigt werden. Sie können jedoch hier nicht bearbeitet werden.
 
-Klicken Sie "Echtzeitverarbeitung" im Menü "Geschäftsregeln", um die vorhandenen Module anzuzeigen oder neue Module zu erstellen.
+Klicken Sie **Echtzeitverarbeitung** im Menü **Geschäftsregeln**, um die vorhandenen Module anzuzeigen oder neue Module zu erstellen.
 
 ![Echtzeitverarbeitung](/guides/images/benutzerhandbuch/admin_event-processing.png)
 

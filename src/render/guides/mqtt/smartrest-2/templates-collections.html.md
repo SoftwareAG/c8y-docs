@@ -4,7 +4,7 @@ layout: redirect
 title: Template collections
 ---
 
-A template collection is a set of request and response templates that specify a device communication protocol. Each collection is be referenced by a unique ID (called X-Id).
+A template collection is a set of request and response templates that specify a device communication protocol. Each collection is referenced by a unique ID (called X-Id).
 
 ### Creating templates via MQTT
 

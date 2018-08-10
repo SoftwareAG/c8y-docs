@@ -67,7 +67,7 @@ Will update the Mobile properties of the device.
 
 |Position|Parameter|Mandatory|
 |:-------|:-------|:-------|
-|1imei|NO|
+|1|imei|NO|
 |2|iccid|NO|
 |3|imsi|NO|
 |4|mcc|NO|

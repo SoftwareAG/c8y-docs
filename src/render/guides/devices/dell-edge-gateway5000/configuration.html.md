@@ -7,7 +7,7 @@ order: 20
 Download the [Cumulocity Snap Agent](http://resources.cumulocity.com/examples/cumulocity-agent_1.0.2_amd64.snap) and copy it to a USB stick.
 Insert the USB into the Edge Gateway and type the following commands in the terminal:
 
-	mkdir usd
+	mkdir usb
 
 Then search for the USB name with:
 

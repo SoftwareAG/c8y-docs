@@ -11,12 +11,13 @@ We are assuming the input data looks like this:
       "time":"...",
       "source": { "id":"..." },
       "type": "c8y_TemperatureMeasurement" 
+      
      }
 
 To create the median, we need the following parts in the module:
 
-*   A time window over one hour, grouped by device (assetId)
-*   A select that returns the average calculation every hour, the assetId and the unit (as we must use an aggregate over the window contents, we select the last unit - we assume all measurements are of the same unit). Note the AverageByDevice event definition to hold these.
+*   A time window over one hour, grouped by device (source)
+*   A select that returns the average calculation every hour, the source and the unit (as we must use an aggregate over the window contents, we select the last unit - we assume all measurements are of the same unit). Note the AverageByDevice event definition to hold these.
 *   Everything created as a new measurement
 		
 		using com.apama.aggregates.avg;

@@ -78,11 +78,12 @@ Creating a measurement like this
       "time":"...",
       "source": { "id":"..." },
       "type": "c8y_BinaryFaultRegister" 
+      
     }
 
 will trigger the last statement three times.
 
-*   measurement at bit position 1 - c8y_ProcessingAlarm, WARNING, "There was an errror trying to process data"
+*   measurement at bit position 1 - c8y_ProcessingAlarm, WARNING, "There was an error trying to process data"
 *   measurement and bit position 2 - c8y_DoorOpenAlarm, MINOR, "Door was opened"
 *   measurement and bit position 4 - c8y_FaultRegister4Alarm, MAJOR, "An undefined alarm was reported on position 4 in the binary fault register"
 

@@ -71,9 +71,7 @@ Listeners such as the above should be placed in a monitor in the `onload` statem
 	
 	if e.measurements.getOrDefault("c8y_TemperatureMeasurement").getOrDefault("T").value > 100.0 {
 	
-	send Event("", "c8y_TemperatureAlert", e.source, e.time, "Temperature too high", {"severity":<any> "CRITICAL"}
-	
-	) to Event.CHANNEL;
+	send Event("", "c8y_TemperatureAlert", e.source, e.time, "Temperature too high", {"severity":<any> "CRITICAL"} ) to Event.CHANNEL;
 	
 	}
 	
@@ -85,7 +83,7 @@ Technically, this statement produces a new "Event" event each time a temperature
 
 Remote control with EPL is done by sending DeviceOperation events. Remote operations are targeted to a specific device. The following example illustrates switching a relay based on temperature readings:
 
-	send Operation("", e.source, "PENDING", {"c8y_Relay":<any> {"relayState":"CLOSED"} }) to DeviceOperation.CHANNEL;
+	send Operation("", e.source, "PENDING", {"c8y_Relay":<any> {"relayState":"CLOSED"} }) to Operation.CHANNEL;
 	
 * *e.source* is a placeholder for the ID of the heating that should be triggered.
 

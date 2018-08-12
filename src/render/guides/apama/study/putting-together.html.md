@@ -38,11 +38,11 @@ We can now combine all the parts into one module. The order of the listeners doe
                     ManagedObject dev := resp.managedObject;
                                         if(dev.params.hasKey("c8y_Geofence") and 
                                            dev.supportedOperations.indexOf("c8y_Geofence") >= 0) {
-                                                dictionary<any,any> evtPos := dictionary<any,any>; > e.params["c8y_Position"];
+                                                dictionary<any,any> evtPos := dictionary<any,any> > e.params["c8y_Position"];
                                                 float eventLat := <float> evtPos["lat"];
                                                 float eventLng := <float> evtPos["lng"];
 
-                                                dictionary<any,any>; devGeofence := <dictionary<any,any> > dev.params["c8y_Geofence"];
+                                                dictionary<any,any> devGeofence := <dictionary<any,any> > dev.params["c8y_Geofence"];
                                                 float centerLat := <float> devGeofence["lat"];
                                                 float centerLng := <float> devGeofence["lng"];
                                                 float maxDistance := <float> devGeofence["radius"];

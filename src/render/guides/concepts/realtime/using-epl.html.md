@@ -16,7 +16,7 @@ As an example, the following statement listens for new temperature sensor readin
 	 on all Measurement(type = "c8y_TemperatureMeasurement") as e {
               if e.measurements.getOrDefault("c8y_TemperatureMeasurement").getOrDefault("T").value > 100.0 {
                   send Alarm("", "c8y_TemperatureAlert", e.source, e.time, "Temperature too high",
-                      "CRITICAL", "", 1, new dictionary<string,any>) to Event.CHANNEL;
+                      "CRITICAL", "", 1, new dictionary<string,any>) to Alarm.CHANNEL;
               }
     }
     
@@ -83,8 +83,16 @@ Technically, this statement produces a new "Event" event each time a temperature
 
 Remote control with EPL is done by sending DeviceOperation events. Remote operations are targeted to a specific device. The following example illustrates switching a relay based on temperature readings:
 
-	send Operation("", e.source, "PENDING", {"c8y_Relay":<any> {"relayState":"CLOSED"} }) to Operation.CHANNEL;
-	
+	on all Measurement(type = "c8y_TemperatureMeasurement") as e {
+		if
+	e.measurements.getOrDefault("c8y_TemperatureMeasurement").getOrDefault("T").value >
+	100.0 {
+		send Operation("", e.source, "PENDING", {"c8y_Relay":<any>
+	{"relayState":"CLOSED"} }) to Operation.CHANNEL;
+		}	
+	} 
+
+		
 * *e.source* is a placeholder for the ID of the heating that should be triggered.
 
 * The params field (the last field) defines the nested content of the operation a "c8y_Relay" that has relayState set to "CLOSED"; note the top-level fields must be dictionary<string, any>, thus the use of the <any> cast operations.
@@ -106,6 +114,7 @@ It may be required to query information from the Cumulocity database as part of 
 		}
 	
 	action onload() {
+		monitor.subscribe(Measurement.CHANNEL);
 		on all Event() as e {
 			integer reqId := integer.getUnique();
 			monitor.subscribe(FindManagedObjectResponse.CHANNEL);

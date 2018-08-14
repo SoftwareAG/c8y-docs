@@ -6,16 +6,16 @@ layout: redirect
 
 ### Preparation
 
-Copy the Edge licence, SSL key, SSL certificate and Apama licence (if obtained) into the Edge VM. Use WINSCP, SCP, FTP or any other file transfer tool to transfer the files from your windows host to Edge VM (Linux OS).
+Copy the Edge license, SSL key, SSL certificate and Apama license (if obtained) into the Edge VM. Use WINSCP, SCP, FTP or any other file transfer tool to transfer the files from your windows host to Edge VM (Linux OS).
 
 You can copy the files to the Edge VM folder "/home/admin". 
 
 The files have the following extensions:
 
-* Cumulocity licence file: ".licence"
+* Cumulocity license file: ".licence"
 * SSL Key file: ".key"
 * SSL Certificate: ".crt" or ".cert" 
-* Apama licence file: “.xml”
+* Apama license file: “.xml”
 
 
 ### Configuring the Edge server
@@ -38,7 +38,7 @@ Once Edge VM is started, you need to run the script “post_installation.sh” t
 You will be prompted to select one of the following options:
 
 * Enter 1 to start post installation execution.
-* Enter 2 to update SSL certificates or Cumulocity licence.
+* Enter 2 to update SSL certificates or Cumulocity license.
 	
 #### Post installation execution (option 1)
 	
@@ -64,14 +64,14 @@ You will be prompted to select one of the following options:
 
 1. Provide the absolute path for the “.licence” file e.g. e.g. "/home/admin/ myown.iot.com.licence".
 
-		$ Enter Cumulocity Licence file path
+		$ Enter Cumulocity License file path
 
 1. Provide the absolute path for the “.xml” file, e.g. "/home/admin/<filename>.xml".
 
-		$ Enter Apama Licence file path (Optional. Press Enter to continue)
+		$ Enter Apama License file path (Optional. Press Enter to continue)
 
 
-#### Updating SSL certificates or Cumulocity licence (Option 2)
+#### Updating SSL certificates or Cumulocity license (Option 2)
 
 1. Provide the absolute path for the SSL certificate file, e.g. "/home/admin/<filename>.cert" or "/home/admin/<filename>.crt". 
 
@@ -83,11 +83,11 @@ You will be prompted to select one of the following options:
 
 1. Provide the absolute path for the “.licence” file e.g. "/home/admin/<filename>.licence".
 
-		$ Enter Cumulocity Licence file path
+		$ Enter Cumulocity License file path
 
 1. Provide the absolute path for the “.xml” file, e.g. "/home/admin/<filename>.xml".
 
-		$ Enter Apama Licence file path (Optional. Press Enter to continue)
+		$ Enter Apama License file path (Optional. Press Enter to continue)
 
 
 Once the execution has been completed successfully, a respective message will be displayed. In case of any failure messages, refer to [Operating Cumulocity IoT Edge](/guides/edge/operation).

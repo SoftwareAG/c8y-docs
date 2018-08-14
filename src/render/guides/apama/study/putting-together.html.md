@@ -28,6 +28,7 @@ We can now combine all the parts into one module. The order of the listeners doe
         action onload() {
                 monitor.subscribe(FindManagedObjectResponse.CHANNEL);
                 monitor.subscribe(FindAlarmResponse.CHANNEL);
+                monitor.subscribe(Measurement.CHANNEL);
                 on all Event() as e {
                         if e.params.hasKey("c8y_Position") {
                                 integer reqId := integer.getUnique();
@@ -38,7 +39,7 @@ We can now combine all the parts into one module. The order of the listeners doe
                     ManagedObject dev := resp.managedObject;
                                         if(dev.params.hasKey("c8y_Geofence") and 
                                            dev.supportedOperations.indexOf("c8y_Geofence") >= 0) {
-                                                dictionary<any,any> evtPos := dictionary<any,any> > e.params["c8y_Position"];
+                                                dictionary<any,any> evtPos := <dictionary<any,any> > e.params["c8y_Position"];
                                                 float eventLat := <float> evtPos["lat"];
                                                 float eventLng := <float> evtPos["lng"];
 
@@ -59,23 +60,24 @@ We can now combine all the parts into one module. The order of the listeners doe
                                    secondPos.distance > secondPos.maxDistance {
                                         send Alarm("", "c8y_GeofenceAlarm", firstPos.source, currentTime,
                                "Device moved out of circular geofence",
-                               "ACTIVE", "MAJOR", 1, new dictionary<string,any>) to Event.CHANNEL;
+                               "ACTIVE", "MAJOR", 1, new dictionary<string,any>) to Alarm.CHANNEL;
                 }
                                 if firstPos.distance > firstPos.maxDistance and secondPos.distance <= secondPos.maxDistance {
                                         integer reqId:= integer.getUnique();
                                         send FindAlarm(reqId, {"source":firstPos.source,
                                                        "status":"ACTIVE","type":"c8y_GeofenceAlarm"}) to FindAlarm.CHANNEL;
                                         on FindAlarmResponse(reqId = reqId) as alarmResponse
-                                           and not FindAlarmResponseAck(reqId=reqId) {
-                                                send Event(alarmResponse.id, "Alarm", firstPos.source, currentTime,
-                                                           "Device moved back into circular geofence",
-                                                           {"id":<any> alarmResponse.id, "status":"CLEARED"}) to Event.CHANNEL;
-                                        }
-                                }
-                        }
-                }
-        }
-
+	                                           and not 	FindAlarmResponseAck(reqId=reqId) {
+	                                                send Alarm(alarmResponse.id,
+	"c8y_GeofenceAlarm", firstPos.source, currentTime, "Device moved back into
+	circular geofence", "CLEARED", "MAJOR", 1, new dictionary<string, any>) to
+	Alarm.CHANNEL;
+		                                        }
+	                                }
+	                        }
+	                }
+	        }
+	
         action distance(float lat1, float lon1, float lat2, float lon2) returns float {
                 float R := 6371000.0;
                 float toRad := float.PI / 180.0;

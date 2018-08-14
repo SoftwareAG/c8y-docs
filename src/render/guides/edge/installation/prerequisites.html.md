@@ -15,17 +15,17 @@ To be downloaded from [https://www.virtualbox.org/wiki/Download&#95;Old&#95;Buil
 * Edge OVA image <br>
 To be downloaded from the [SAG Empower portal](https://empower.softwareag.com) 
 
-* Cumulocity licence file <br>
-Please send an email to support@cumulocity.com to request the licence file.
+* Cumulocity license file <br>
+Please send an email to support@cumulocity.com to request the license file.
 In the email, you must include the following details:
-	* Your company name, under which the licence has been bought.
+	* Your company name, under which the license has been bought.
 	* The domain name (DNS), under which Cumulocity IoT Edge will be reachable.
 
 * SSL key and SSL certificate <br>
 Use your internal or an external CA (Certification Authority) to create these
 
-* Apama licence <br>
-The Apama licence key is provided as part of your purchase. To request the licence keys for your Apama purchase, please contact the logistics team for your region:
+* Apama license <br>
+The Apama license key is provided as part of your purchase. To request the license keys for your Apama purchase, please contact the logistics team for your region:
 
 	* North and South America: [LogisSrvus@softwareagusa.com](LogisSrvus@softwareagusa.com)
 	* All Other Regions: [LogisticsServiceCenterGER@softwareag.com](LogisticsServiceCenterGER@softwareag.com)

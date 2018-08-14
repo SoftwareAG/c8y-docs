@@ -25,7 +25,10 @@ In the email, you must include the following details:
 Use your internal or an external CA (Certification Authority) to create these
 
 * Apama licence <br>
-The Apama licence will be part of the purchase. For existing customers, please send an email to [support@softwareag.com](support@softwareag.com) to request the licence.
+The Apama licence key is provided as part of your purchase. To request the licence keys for your Apama purchase, please contact the logistics team for your region:
+
+	* North and South America: [LogisSrvus@softwareagusa.com](LogisSrvus@softwareagusa.com)
+	* All Other Regions: [LogisticsServiceCenterGER@softwareag.com](LogisticsServiceCenterGER@softwareag.com)
 
 * DNS entry <br>
 The DNS (Domain Name System) is used to resolve human readable host names like

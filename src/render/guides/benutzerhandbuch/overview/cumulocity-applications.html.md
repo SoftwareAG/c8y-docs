@@ -16,7 +16,7 @@ Neben diesen in Cumulocity enthaltenen Standardwendungen gibt es zahlreiche weit
 
 Darüber hinaus können Sie eigene Anwendungen zur Ihrem Cumulocity-Konto hinzufügen. Weitere Informationen finden Sie unter [Administration > Verwalten von Anwendungen](/guides/benutzerhandbuch/administration#managing-applications).
 
-Der Inhalt der Cumulocity-Plattform ist also vollständig dynamisch und wird anhand er folgenden Kriterien generiert:
+Der Inhalt der Cumulocity-Plattform ist also vollständig dynamisch und wird anhand der folgenden Kriterien generiert:
 
 *   Anwendungen, die Ihr Unternehmen abonniert hat
 *   Anwendungen, die Ihr Unternehmen selbst für Cumulocity entwickelt oder konfiguriert hat

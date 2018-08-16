@@ -6,7 +6,11 @@ layout: redirect
 
 ### Authentication
 
-All requests need to include the HTTP ["Authorization" header](http://en.wikipedia.org/wiki/List_of_HTTP_header_fields). The format is:
+All requests need to be authenticated. There are two ways to do that. First is  
+to include the HTTP ["Authorization" header](http://en.wikipedia.org/wiki/List_of_HTTP_header_fields). The second is [OAuth2 authentication code grant](https://oauth.net/2/grant-types/authorization-code). Both are described below
+
+
+For the Authorization header method the format is:
 
 	Authorization: Basic <<Base64 encoded credentials>>
 
@@ -77,6 +81,51 @@ Token format:
 * "nbf" and "exp" is token validity from/to time range in unix time format
 
 If tenant/username don't match or token is expired or signature is invalid then 401 error will be returned.
+
+#### OAuth authentication code grant 
+The login with OAuth requires a correct configuration on the [Cumulocity side](src/render/guides/users-guide/administration/single-sign-on.html.md). With the configuration, additional button is available on login page. After pressing the button, a user is redirected to authenticate with configured authorization server. On successful login a user is redirected to the Cumulocity. 
+The authentication details are exchanged using cookies. There are two parts to it, first is authentication cookie that is handled automatically by the Cumulocity platform. The second is XSRF-TOKEN cookie. When a client receives the cookie, it should take the value and put in X-XSRF-TOKEN request header in all subsequent requests.  
+
+To flow of authenticating with OAuth authentication code grant is as follows:
+![Authentication flow](src/static/guides/images/reference-guide/oauth-simple-flow.png)
+
+First request executed by browser is:
+
+    POST /tenant/loginOptions
+    Host: ...
+    Content-Type: application/vnd.com.nsn.cumulocity.loginOptionCollection+json;ver=...
+    Accept: application/vnd.com.nsn.cumulocity.loginOptionCollection+json;ver=...
+    
+And response:
+
+    {
+        "loginOptions": [
+            {
+                "buttonName": "Login with oauth",
+                "grantType": "AUTHORIZATION_CODE",
+                "initRequest": "https://TENANT.cumulocity.com/tenant/oauth?response_type=code&tenant_id=TENANT",
+                "self": "http://TENANT.cumulocity.com/tenant/loginOptions/oauth2",
+                "type": "oauth2"
+            },
+            {
+                "self": "http://dev-d.cumulocity.com/tenant/loginOptions/basic",
+                "type": "basic"
+            }
+        ],
+        "self": "http://dev-d.cumulocity.com/tenant/loginOptions/"
+    }
+
+Here we have two login options one with basic and other with oauth2. If a user decides to login with oauth, browser must invoke request provided in initRequest parameter. 
+
+The initRequest initiates the redirect, where user is prompted for credentials. After successful login, a user is redirected back to browser, where it must capture the code request parameter. Then the request to exchange code for token is as follows:
+
+    POST /tenant/oauth?grant_type=authorization_code&code=<<code>>
+    Host: ...
+
+Successful response will have no body but following response headers:
+    
+    Set-Cookie: authorization=<<token>>;
+    Set-Cookie: XSRF-TOKEN=<<xsrfToken>>;
 
 ### Application management
 

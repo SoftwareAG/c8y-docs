@@ -8,6 +8,9 @@ Cumulocity provides single sign on functionality, that allows a user to login wi
 
 The feature is built on top of cookies technology so please be aware we are using it. 
 
+Please be aware that this feature is enabled since version 9.12, and for correct behavior any microservice needs to use microservice sdk with version 9.12 or later. 
+
+
 ### Configuration
 To enable the feature administrator has to configure connection with the authorization server. There is a panel under administration -> Settings -> Single sign on. As OAuth protocol is based on execution of http requests and redirects, a generic request configuration was provided. The first part of the screen consists of request configuration, where an administrator can configure http request address, request parameters, headers and body in case of token and refresh requests. The authorize method is executed as a GET, and others as POST requests. 
 

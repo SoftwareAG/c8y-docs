@@ -1,6 +1,6 @@
 ---
 order: 70
-title: Developing microservices using HTTP
+title: Python example
 layout: subsections
 collection: 'guides/microservice-sdk/http'
 ---

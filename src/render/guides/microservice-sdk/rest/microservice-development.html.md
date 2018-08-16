@@ -6,7 +6,7 @@ layout: redirect
 
 The following guide will introduce you to basic REST endpoints required for REST microservice development. 
 
-### Creating applications
+### <a name="creating-application"></a> Creating applications
 
 In order to start working with microservices an instance of application must be created first. It can be done using the following endpoint:
 
@@ -104,9 +104,9 @@ The ZIP file must consist of:
 * image.tar - executable Docker image 
 
 
-### Acquiring microservice credentials
+###<a name="acquiring-microservice-credentials"></a>Acquiring microservice credentials
 
-The following section is a wrap up for user management as described under "Cumulocity microservices" in [Developing applications](/guides/concepts/applications/microservices) in the Concepts guide.
+The following section is a wrap up for user management as described under [General aspects of microservices in Cumulocity](/guides/microservice-sdk/concept).
 
 Microservice related endpoints require a microservice bootstrap user, which can be obtained by a service provider using
 

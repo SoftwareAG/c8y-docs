@@ -1,5 +1,5 @@
 ---
-order: 20
+order: 30
 layout: redirect
 title: Hello, microservice!
 ---
@@ -84,7 +84,7 @@ Add `dependency` elements for the Java Microservice SDK library (`microservice-a
 		<version>8.21.0</version>
 	</dependency>
 
-Edit the `version` elements to use the latest version of the client library. The version can be determined by checking the [Announcements section](https://cumulocity.zendesk.com/hc/en-us/sections/200381323-Announcements) of the Cumulocity Help Center. The full file after editing can be found [here](/guides/java/pom.xml).
+Edit the `version` elements to use the latest version of the client library. The version can be determined by checking the [Announcements section](https://cumulocity.zendesk.com/hc/en-us/sections/200381323-Announcements) of the Cumulocity Help Center. The full file after editing can be found [here](/guides/microservice-sdk/java/pom.xml).
 
 #### Creating a Java application
 
@@ -228,7 +228,7 @@ To build the ZIP file, use the following command:
 
 After a successful build you will be provided with a ZIP file in the target directory. The ZIP can be deployed to the platform as described in the Deployment section.
 
-### Running microservice locally
+### <a name="run-locally"></a> Running microservice locally
 
 In order to test the microservice for the calls from the microservice to Cumulocity, you can run the docker container locally.
 
@@ -391,4 +391,4 @@ The expected result is:
 
 ### Improving the microservice
 
-Now that you have done your first step, check out the section [Developing Java Microservice](/guides/java/developing-microservice).
+Now that you have done your first step, check out the section [Developing Java Microservice](/guides/microservice-sdk/java/developing-microservice).

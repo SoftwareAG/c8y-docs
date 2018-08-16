@@ -1,5 +1,5 @@
 ---
-order: 50
+order: 60
 layout: redirect
 title: Troubleshooting
 ---

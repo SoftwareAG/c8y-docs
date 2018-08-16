@@ -12,7 +12,7 @@ Microservices typically provide a REST API. For inbound REST requests, Cumulocit
 * Routing: The API gateway routes requests for “/service/&lt;name&gt;” to the microservice “&lt;name&gt;”. The request routed to the microservice container and tenant options are added to the request headers.
 
 * Tenant platform user: The user that logs into the application. Created using the Cumulocity Administration application. 
-* Microservice Bootstrap user: The user being created for microservice bootstrap operations, it is connected to application itself. This user is authorized to get the microservice subscriptions and do requests for its application. Refer to [Microservice development](/guides/rest/microservice-development) in the Rest Developer`s guide for more details.
+* Microservice Bootstrap user: The user being created for microservice bootstrap operations, it is connected to application itself. This user is authorized to get the microservice subscriptions and do requests for its application. Refer to [Microservice development](/guides/microservice-sdk/rest/microservice-development) for more details.
 * Service user: Reflects tenant subscription to a microservice.
 
 Any request to the platform must be done with the platform user. For microservices, it is best practice to switch context to the subscribed tenant's service user instead of using the tenant's platform user when doing a request from microservice to the Cumulocity platform. The reason is that a service user always has roles defined in requiredRoles parameter, thus always has the same permissions. On the other hand it is common for tenant platform users to have different permissions, thus a microservice can misbehave. 

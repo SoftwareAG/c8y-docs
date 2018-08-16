@@ -1,5 +1,5 @@
 ---
-order: 30
+order: 40
 layout: redirect
 title: Developing Microservices
 ---
@@ -31,7 +31,7 @@ This is a collective annotation consisting of:
 
 ### Context support
 
-The following section describes context support as utility tool for the user management described in [Cumulocity microservices > Managing application ](/guides/concepts/applications/#microservices) in the Concepts guide.
+The following section describes context support as utility tool for the user management described in [General aspects of microservices in Cumulocity](/guides/microservice-sdk/concept).
 
 @UserScope and @TenantScope at type level annotation indicate that a bean created from class will be created in the scope defined. The user scope implies using tenant platform user credentials for platform calls. The tenant scope implies using service user credentials.
 
@@ -86,8 +86,8 @@ The other way to register an application to the platform is to do it manually by
 
 To create an application and acquire credentials, refer to:
 
-* [Create application](/guides/rest/microservice-development#creating-applications)
-* [Acquire microservice credentials](/guides/rest/microservice-development#acquiring-microservice-credentials)
+* [Create application](/guides/microservice-sdk/rest/microservice-development#creating-applications)
+* [Acquire microservice credentials](/guides/microservice-sdk/rest/microservice-development#acquiring-microservice-credentials)
 
 The subscription package provides means to monitor and act upon changes in tenant subscriptions to a microservice. To add a custom behavior a developer can add an event listener for MicroserviceSubscriptionAddedEvent and MicroserviceSubscriptionRemovedEvent like in the following example:
 

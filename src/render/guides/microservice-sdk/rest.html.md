@@ -1,7 +1,7 @@
 ---
 order: 60
 layout: subsections
-title: Developing microservices using the REST interface
+title: Using the REST interface
 collection: 'guides/microservice-sdk/rest'
 ---
 

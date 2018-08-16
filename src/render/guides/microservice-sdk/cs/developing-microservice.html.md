@@ -45,7 +45,7 @@ Next, each authentication scheme is registered in the ConfigureServices method o
 
 The root interface for connecting to Cumulocity from C# is called "Platform". It provides access to all other interfaces of the platform, such as the inventory. In its simplest form, it is instantiated as follows.
 
-To enable service providers to run microservices together with the platform, it is required to execute the registration procedure. During this process each microservice recieves a dedicated bootstrap user to ensure that the microservice can be identified by the platform and can only access allowed resources.
+To enable service providers to run microservices together with the platform, it is required to execute the registration procedure. During this process each microservice receives a dedicated bootstrap user to ensure that the microservice can be identified by the platform and can only access allowed resources.
 
 The platform is registered with the dependency injection container. Services that are registered with the dependency injection (DI) container are available to the controllers.
 
@@ -64,7 +64,7 @@ where Configuration represents a set of key/value application configuration prop
 		Configuration = configuration;
 	}
 
-This way microservices should recieve very basic configuration. Besides properties related to the isolation level, microservices will receive the following variables:
+This way microservices should receive very basic configuration. Besides properties related to the isolation level, microservices will receive the following variables:
 
 * C8Y_BASEURL - URL which points to the core platform
 * C8Y_BASEURL_MQTT - URL which points to the core platform with MQTT protocol
@@ -142,7 +142,7 @@ Then you can easily register scheduled tasks
     
 ### Microservice subscription
 
-The following section refers to the user management as described in [Managing applications > Cumulocity microservices](/guides/concepts/applications/microservices) in the Concepts guide.
+The following section refers to the user management as described under [General concept of microservices in Cumulocity](/guides/microservice-sdk/concept).
 
 This SDK has a task CurrentApplicationSubscriptionsTask, which only fetches a list of all subscriptions. The CurrentApplicationSubscriptionsTask is the IScheduledTask implementation which runs every hour:
 

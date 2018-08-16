@@ -135,7 +135,7 @@ The resulting "hello-microservice.zip" file contains the ready to upload microse
 
 Uploading the "hello-microservice.zip" into the platform can be done via the UI. In the Administration application navigate to **Applications** > **Own applications** > **Add application** > **Upload ZIP file** and select **Subscribe**. 
 
-For details on uploading a microservice ZIP file refer to Administration> Managing applications > Adding applications > [Administration > Managing applications > Adding applications > Uploading ZIP files](uploading-zip-files) in the User guide. 
+For details on uploading a microservice ZIP file refer to [Administration > Managing applications > Adding applications > Uploading ZIP files](guides/users-guide/administration/managing-applications#uploading-zip-files) in the User guide. 
 
 #### Using "microservice" script
 

@@ -1,11 +1,9 @@
 ---
 order: 60
 layout: subsections
-title: Microservice SDK for Java
-collection: 'guides/microservice-sdk/java'
+title: Developing microservices using the REST interface
+collection: 'guides/microservice-sdk/rest'
 ---
 
-This section describes how to develop and deploy microservices on top of Cumulocity using the Microservice SDK for Java.
+This section describes specific aspects of developing microservices using the REST interface.
 
-JavaDoc for the 
-<a href="http://resources.cumulocity.com/documentation/microservicesdk/current/" target="_blank">Java Microservice SDK</a> can be found on our resources site.

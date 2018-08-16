@@ -1,35 +1,21 @@
 ---
-order: 30
-title: Cumulocity microservices
+order: 20
+title: The concept of microservices in Cumulocity
 layout: redirect
 ---
 
 ### Overview
 
-Microservices are server-side applications. Microservices can be used to develop for example the following functionality on top of Cumulocity:
+With microservices, you can extend the Cumulocity IoT platform with customer-specific functionality. For example, you can develop integrations to 3rd-party software or provide server-side business logic. 
 
-* Integrations
-* Batch analytics
-* Decoder
-* Backend applications 
+Technically, microservices are docker containers, hosted by Cumulocity, which 
+follow specific conventions. They typically access Cumulocity using a REST API available under /service/&lt;microservice-name&gt;.
 
-Microservices are deployed as docker images to Cumulocity, and follow specific conventions. They typically provide one REST API, which is available under /service/&lt;microservice-name&gt;. They typically access Cumulocity using the documented REST API.
+When developing a Cumulocity microservice, a developer is not restricted to any programming language. However, a microservice must serve as a HTTP server working on port 80 and must be encapsulated in a docker image. Refer to the relevant chapters in this guide for further information on using specific programming languages for the development of microservices.
 
-When developing a Cumulocity microservice, a developer is not restricted to any programming language. However, a microservice must serve as a HTTP server working on port 80 and must be encapsulated in a docker image.
+### Docker image and container
 
-The hosting of the Microservice is provided by Cumulocity. This way developers can focus on business logic and leave scaling, security, high availability and monitoring to Cumulocity. Microservices can be built on the top of the API exposed by the Cumulocity platform. This way, Cumulocity microservices are a comfortable means to provide new functionality and extend existing one. 
-
-![microservice_infrastructure](/guides/images/concepts-guide/microservice_infrastructure.png)
-
-For detailed information on developing and deploying microservices on top of Cumulocity refer to the [Microservice SDK guide](/guides/microservice-sdk) which information on the general concept of microservices in Cumulocity as well as specific descriptions for various programming languages. 
-
->**Info:** For Microservice developers Cumulocity provides Microservice SDK in [Java programming language](/guides/java/developing-microservice) and C# programming language for .Net Core. Refer to the relevant sections in the [Microservice SDK guide](/guides/microservice-sdk).
-
-
-
-**From here on move to Microservice SDK guide!**
-
-The Cumulocity microservice is based on docker. This requires that a microservice is packaged as docker image in order to run on the Cumulocity platform. Docker image is an executable package that includes everything needed to run an application. For more information on docker refer to the [Docker documentation](https://docs.docker.com/get-started/)). 
+The Cumulocity microservice is based on docker. This requires that a microservice is packaged as docker image in order to run on the Cumulocity platform. The docker image is an executable package that includes everything needed to run an application. For more information on docker refer to the [Docker documentation](https://docs.docker.com/get-started/)). 
 
 During run-time, the microservice is executed in a docker container. A docker container ensures that the microservices cannot harm other microservices running in Cumulocity. To execute docker containers, Cumulocity uses kubernetes. Kubernetes provides many enterprise-grade features for hosting docker containers, including auto-scaling, high availability, load balancing, rolling upgrades to limit downtime, resource quota and more.
 
@@ -42,8 +28,10 @@ Refer to the [Microservice manifest reference](/guides/reference/microservice-ma
 
 ### Microservice isolation levels
 
-* Multi-tenant: Single microservice docker container instantiated for all subscribed tenants unless microservice is scaled.
-* Single tenant: Dedicated microservice docker container instantiated for each subscribed tenant.
+The following isolation levels are available for microservices:
+
+* **Multi-tenant**: Single microservice docker container instantiated for all subscribed tenants unless microservice is scaled.
+* **Single tenant**: Dedicated microservice docker container instantiated for each subscribed tenant.
 
 The isolation level is set using the microservice manifest.
 

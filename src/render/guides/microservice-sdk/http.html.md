@@ -1,5 +1,5 @@
 ---
-order: 40
+order: 70
 title: Developing microservices using HTTP
 layout: subsections
 collection: 'guides/microservice-sdk/http'

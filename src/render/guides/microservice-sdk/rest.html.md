@@ -1,5 +1,5 @@
 ---
-order: 20
+order: 60
 layout: subsections
 title: Microservice SDK for Java
 collection: 'guides/microservice-sdk/java'

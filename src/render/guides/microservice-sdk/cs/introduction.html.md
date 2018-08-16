@@ -6,8 +6,6 @@ layout: redirect
 
 ### Overview
 
-With microservices, you can extend the Cumulocity IoT platform with customer-specific functionality. For example, you can develop integrations to 3rd-party software or provide server-side business logic. Technically, microservices are docker containers, hosted by Cumulocity. For a general introduction to microservices, see [Developing applications](/guides/concepts/applications) in the Concepts guide. 
-
 Using Microservice SDK for C#, you can develop microservices in C#. This section explains:
 
 * [General prerequisites](#general-prerequisites): What do you need to develop and run C# microservices?

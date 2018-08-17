@@ -8,18 +8,18 @@ layout: redirect
 
 |Name|Type|Occurs|Description|
 |:---|:---|:-----|:----------|
-|self|URL|1|Link to this resource.|
-|loginOptions|LoginOption|0..n|Collection of all login options.|
+|self|URL|1|Link to this resource|
+|loginOptions|LoginOption|0..n|Collection of all login options|
 
 |Name|Type|Occurs|Description|
 |:---|:---|:-----|:----------|
-|self|URL|1|Link to this resource.|
-|type|String|1|Text containing type, basic or oauth2|
-|buttonName|String|0..1|Text that must appear on login button|
+|self|URL|1|Link to this resource|
+|type|String|1|Text containing type, one of "basic" or "oauth2"|
+|buttonName|String|0..1|Text that appears on the Login button|
 |grantType|String|0..1|Text describing oauth2 flow used, for now AUTHORIZATION_CODE only|
-|initRequest|String|0..1|Addres to initiate oauth login process|
+|initRequest|String|0..1|Address to initiate oauth login process|
 
-### GET a representation of the Login options
+### GET a representation of the login options
 
 Response body: application/vnd.com.nsn.cumulocity.loginOptionCollection+json
 Required role: no authorization required

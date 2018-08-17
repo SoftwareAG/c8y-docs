@@ -6,9 +6,9 @@ layout: redirect
 
 ### Login flow 
 
-After a successful redirect to platform after login with remote authorization server, a code parameter is passed as request parameter and should be used in exchange for access token. Token will be saved as a cookie in the browser. 
+After a successful redirect to the platform after login with remote authorization server, a code parameter is passed as request parameter and should be used in exchange for the access token. The token will be saved as a cookie in the browser. 
 
-### POST to login with oauth
+### POST to login with OAuth
 
 Required role: no authorization required
 

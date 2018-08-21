@@ -49,7 +49,7 @@ The following Cumulocity information is collected:
 
 |Information|Description|
 |:---------------------|:---|
-|Health endpoint result|Cumulocity and its microservices provide health endpoints, from which the user can get the system status. Currently supported components are OPCUA, Smartrule-Apama, Apama, Cumulocity (platform-service, tenant).
+|Health endpoint result|Cumulocity and its microservices provide health endpoints, from which the user can get the system status. 
 |Mongo command execution result|MongoDB supports commands execution, which can give the status of the MongoDB server. Currently 'ping', 'dbstats' and 'serverStatus' commands are executed on each of the MongoDB nodes (currently it is management and edge). The MongoDB commands give vital information about the MongoDB server like the db version, process-id, uptime information etc.
 |Mongo top output|The output of mongo top command is captured here
 |Thread dumps|Thread dumps of all the running java processes and mongo processes are captured. For java processes the 'jstack' command is executed to get the thread dumps. For non-java processes like MongoDB, the 'pstack' command is used. Furthermore the 'pstack' command is applied on java processes as well.

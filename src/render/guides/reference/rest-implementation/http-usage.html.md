@@ -6,11 +6,16 @@ layout: redirect
 
 ### Authentication
 
-All requests need to include the HTTP ["Authorization" header](http://en.wikipedia.org/wiki/List_of_HTTP_header_fields). The format is:
+All requests need to be authenticated. There are two ways to do that. First is  
+to include the HTTP ["Authorization" header](http://en.wikipedia.org/wiki/List_of_HTTP_header_fields). The second is [OAuth2 authentication code grant](https://oauth.net/2/grant-types/authorization-code). Both are described below.
+
+For the Authorization header method the format is:
 
 	Authorization: Basic <<Base64 encoded credentials>>
 
-An example can be found in the [Wikipedia entry](http://en.wikipedia.org/wiki/Basic_access_authentication). For OAuth authentication, the format is:
+An example can be found in the [Wikipedia entry](http://en.wikipedia.org/wiki/Basic_access_authentication). 
+
+For OAuth authentication the format is:
 
 	Authorization: Bearer <<Base64 encoded access token>>
 
@@ -18,25 +23,25 @@ Cumulocity uses the URL in the ["Host" header](http://en.wikipedia.org/wiki/List
 
 	<<tenant ID>>/<<user name>>:<<password>>
 
-Typically, the tenant ID corresponds to the first part of the URL that you are using to access Cumulocity. E.g., if you use "mytenant.cumulocity.com" as URL, the tenant ID will be "mytenant".
+Typically, the tenant ID corresponds to the first part of the URL that you are using to access Cumulocity, e.g. if you use "mytenant.cumulocity.com" as URL, the tenant ID will be "mytenant".
 
-Cumulocity supports two factor authentication. If it is enabled, two factor authentication token is sent in header:
+Cumulocity supports two factor authentication. If it is enabled, the two factor authentication token is sent in header:
 
     TFAToken:<<tfa-token>>
 
-If token expires, and requires renewal, backend sends response header:
+If the token expires and requires renewal, the backend sends a response header:
 
     TFATokenExpired:TFATokenExpired
 
 #### JWT token authentication
 
-Cumulocity supports [JWT token](https://en.wikipedia.org/wiki/JSON_Web_Token) authentication. HTTP header must include:
+Cumulocity supports [JWT token](https://en.wikipedia.org/wiki/JSON_Web_Token) authentication. The HTTP header must include:
 	
 	Authorization: Bearer <<Base64 encoded JWT token>>
 	
-JWT token must be signed using RSA signature with SHA-256 (RS256). Minimal RSA key size is 512 bit. You can generate example key [here](http://travistidwell.com/jsencrypt/demo/).
+The JWT token must be signed using RSA signature with SHA-256 (RS256). The minimal RSA key size is 512 bit. You can generate an example key [here](http://travistidwell.com/jsencrypt/demo/).
 
-You must upload your public key to [tenant options](/guides/reference/tenants) to "token.publicKey" category.
+You must upload your public key to the [tenant options](/guides/reference/tenants) to the "token.publicKey" category.
 
 Example:
 
@@ -51,9 +56,9 @@ Example:
         "value": "..."
     }
 
-The "key" is an identifier of the public key, which will be referenced in JWT token header, and the "value" is the public key in PEM format.
+The "key" is an identifier of the public key, which will be referenced in the JWT token header, and the "value" is the public key in PEM format.
 
-Now you can generate JWT token and sign it with matching private key. For example you can do it [here](https://jwt.io/#debugger-io)
+Now you can generate the JWT token and sign it with th ematching private key. For example you can do it [here](https://jwt.io/#debugger-io).
 
 Token format:
 
@@ -70,13 +75,61 @@ Token format:
       "exp": 1516629116
     }
     
-* "kid" is public key identifier used in tenant options
+* "kid" is the public key identifier used in tenant options
 * "iss" must be set to "cumulocity"
-* "aud" is tenant id
-* "sub" is user id
+* "aud" is the tenant ID
+* "sub" is the user ID
 * "nbf" and "exp" is token validity from/to time range in unix time format
 
-If tenant/username don't match or token is expired or signature is invalid then 401 error will be returned.
+If tenant/username don't match or the token is expired or the signature is invalid then a 401 error will be returned.
+
+#### OAuth authentication code grant 
+
+The login with OAuth requires a correct configuration on the [Cumulocity side](src/render/guides/users-guide/administration/single-sign-on.html.md). With the configuration, an additional button is available on the Login page. After clicking the button, the user is redirected to authenticate with the configured authorization server. On successful login, the user is redirected to Cumulocity. 
+
+Authentication details are exchanged using cookies. There are two parts to it, the first is the authentication cookie that is handled automatically by the Cumulocity platform. The second is the XSRF-TOKEN cookie. When a client receives the cookie, it should take the value and put it in the X-XSRF-TOKEN request header in all subsequent requests.  
+
+The flow of authenticating with OAuth authentication code grant is as follows:
+![Authentication flow](src/static/guides/images/reference-guide/oauth-simple-flow.png)
+
+The first request executed by the browser is:
+
+    POST /tenant/loginOptions
+    Host: ...
+    Content-Type: application/vnd.com.nsn.cumulocity.loginOptionCollection+json;ver=...
+    Accept: application/vnd.com.nsn.cumulocity.loginOptionCollection+json;ver=...
+    
+Response:
+
+    {
+        "loginOptions": [
+            {
+                "buttonName": "Login with oauth",
+                "grantType": "AUTHORIZATION_CODE",
+                "initRequest": "https://TENANT.cumulocity.com/tenant/oauth?response_type=code&tenant_id=TENANT",
+                "self": "http://TENANT.cumulocity.com/tenant/loginOptions/oauth2",
+                "type": "oauth2"
+            },
+            {
+                "self": "http://dev-d.cumulocity.com/tenant/loginOptions/basic",
+                "type": "basic"
+            }
+        ],
+        "self": "http://dev-d.cumulocity.com/tenant/loginOptions/"
+    }
+
+Here we have two login options, one with basic and the other with OAuth2. If a user decides to login with OAuth, the browser must invoke the request provided in the initRequest parameter. 
+
+The initRequest initiates the redirect, in which the user is prompted for credentials. After successful login, the user is redirected back to the browser, where it must capture the code request parameter. Then the request to exchange the code for the token is as follows:
+
+    POST /tenant/oauth?grant_type=authorization_code&code=<<code>>
+    Host: ...
+
+A successful response will have no body but the following response headers:
+    
+    Set-Cookie: authorization=<<token>>;
+    Set-Cookie: XSRF-TOKEN=<<xsrfToken>>;
+
 
 ### Application management
 

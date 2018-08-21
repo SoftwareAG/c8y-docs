@@ -10,7 +10,7 @@ Follow the steps below to upgrade the system.
 <img src="/guides/images/edge/edge-poweroff.jpg" name="Poweroff Edge" style="width:75%;"/> 
 
 2. Navigate to the VirtualBox VMs folder (e.g. C:\Users\edge\VirtualBox VMs) and move the entire VM folder (e.g. EDGE-server) to a safe location.
-<img src="/guides/images/edge/edge-update-move.png" name="Move folder" style="width:75%;"/> 
+<img src="/guides/images/edge/edge-update-move.jpg" name="Move folder" style="width:75%;"/> 
 
 3. In the VirtualBox Manager, right-click on the VM and then click **Remove**. In the upcoming window, select **Remove Only** so that the VM will not be deleted. 
 <img src="/guides/images/edge/edge-update-remove.jpg" name="Remove VM" style="width:75%;"/> 

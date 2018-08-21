@@ -6,7 +6,7 @@ layout: redirect
 
 <a name="overview"></a>
 
-Die folgenden Abschnitte beschreiben detailliert alle Funktionalitäten der "Administration"-Anwendung. Zur besseren Orientierung folgt eine Übersicht über den Inhalt dieses Dokuments.
+Die folgenden Abschnitte beschreiben detailliert alle Funktionalitäten der Anwendung "Administration". Zur besseren Orientierung folgt eine Übersicht über den Inhalt dieses Dokuments.
 
 |Abschnitt|Inhalt|
 |:---|:---|

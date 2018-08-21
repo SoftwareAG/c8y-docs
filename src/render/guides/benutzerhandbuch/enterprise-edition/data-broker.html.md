@@ -12,7 +12,7 @@ Mit dem Data Broker können Daten gezielt mit anderen Mandanten geteilt werden. 
 *   Messwerte,
 *   Kommandos.
 
-Navigieren Sie zur Seite "Datenkonnektor" im Menü "Data Broker", wenn Sie anderen Mandanten Daten senden möchten. Navigieren Sie zur Seite "Datenabonnements", wenn Sie von anderen Mandanten Daten erhalten möchten.
+Navigieren Sie zur Seite **Datenkonnektor** im Menü **Data Broker**, wenn Sie anderen Mandanten Daten senden möchten. Navigieren Sie zur Seite **Datenabonnements**, wenn Sie von anderen Mandanten Daten erhalten möchten.
 
 > **Info**: Geräte, die über den Data Broker weitergeleitet werden, werden wie normale Geräte im Zielmandanten abgerechnet.
 
@@ -22,7 +22,7 @@ Ein Datenkonnektor beschreibt die Daten, die Sie zu einem Zielmandanten senden m
 
 <a name="data-broker-connectors-list"></a>**Anzeigen von Datenkonnektoren**
 
-Auf der Seite "Datenkonnektor" können Sie bestehende Datenkonnektoren verwalten und neue anlegen. Klicken Sie "Datenkonnektor", um eine Liste mit allen aktuell definierten Datenkonnektoren mit ihrem jeweiligen Status anzuzeigen.
+Auf der Seite **Datenkonnektor** können Sie bestehende Datenkonnektoren verwalten und neue anlegen. Klicken Sie **Datenkonnektor**, um eine Liste mit allen aktuell definierten Datenkonnektoren mit ihrem jeweiligen Status anzuzeigen.
 
 ![Datenkonnektor](/guides/images/benutzerhandbuch/ee-data-connector.PNG)
 
@@ -42,7 +42,7 @@ Verwenden Sie den Regler, um das Weiterleiten von Daten an den Zielmandanten zu 
 
 <a name="data-broker-connector-edit"></a>**Erstellen und Bearbeiten von Datenkonnektoren**
 
-Klicken Sie **Datenkonnektor hinzufügen**in der oberen Menüleiste, um einen neuen Datenkonnektor zu erstellen.
+Klicken Sie **Datenkonnektor hinzufügen** in der oberen Menüleiste, um einen neuen Datenkonnektor zu erstellen.
 
 ![Konnektor bearbeiten](/guides/images/benutzerhandbuch/ee-data-connector-add.PNG)
 
@@ -186,9 +186,9 @@ Nach dem Speichern wird ein Sicherheitscode unter der Konfiguration angezeigt. D
 
 ### <a name="data-broker-subscriptions"></a>Datenabonnements
 
-Auf der Seite "Datenabonnements" können Sie bestehende Datenabonnements verwalten und neue anlegen.
+Auf der Seite **Datenabonnements** können Sie bestehende Datenabonnements verwalten und neue anlegen.
 
-Klicken Sie "Datenabonnements", um eine Liste mit allen aktuell zu Ihrem Mandanten weitergeleiteten Daten anzuzeigen.
+Klicken Sie **Datenabonnements**, um eine Liste mit allen aktuell zu Ihrem Mandanten weitergeleiteten Daten anzuzeigen.
 
 ![Datenabonnements](/guides/images/benutzerhandbuch/ee-data-subscription.png)
 

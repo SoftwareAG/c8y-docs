@@ -322,11 +322,17 @@ If you edit a device type that is currently in use, you may need to
 
 There are two ways to create a new device type. Either manually from scratch via the “New” operation or via import of an EDS file for the corresponding device.
 
-Navigate to the “Device database” page and click New. The following window will open:
+**Manually creating a new device type from scratch**
+
+Navigate to the “Device database” page and click **New**. The following window will open:
+
+![New device type](/guides/images/users-guide/newtype.png)
 
 Select “CANopen” as fieldbus type and enter a name for your device type. Specific to CANopen is the “CANopen device type” field which requires a hex number.
 
-In the “Variables” section, you determine the CANopen variables. Variables inside the “Object Dictionary”(OD) of the CANopen device can be accessed later by adding the variables to the device type definition. Via the Add button at the right of the “Variables” section, new variables can be configured. 
+In the “Variables” section, you determine the CANopen variables. Variables inside the “Object Dictionary”(OD) of the CANopen device can be accessed later by adding the variables to the device type definition. Via the **Add** button at the right of the “Variables” section, new variables can be configured.
+
+![New variable](/guides/images/users-guide/newvariable.png)
 
 The following fields can be observed:
 
@@ -345,7 +351,11 @@ The following fields can be observed:
 
 After adding variables to the new device type, they are listed in the “Variables” section of the device type. All variables are grouped by the given display category, i.e. variables with same category are grouped together.
 
-After completing your configuration,, click Save to save your settings. The device type can be used now to add CANopen devices to the platform. The device type can be updated after creation.
+![category view](/guides/images/users-guide/category.png)
+
+After completing your configuration,, click **Save** to save your settings. The device type can be used now to add CANopen devices to the platform. The device type can be updated after creation.
+
+**Importing a device type**
 
 To import a new device type, see the [Exporting and importing device types](#import) section.
 

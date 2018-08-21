@@ -13,7 +13,7 @@ Every measurement fragment which contains "unit" property will be transformed to
 |Metric|Imperial|
 |:-------|:-----|
 |m (meter)|ft (foot)|
-|km (kilometers)|mi (miles)|
+|km (kilometer)|mi (mile)|
 |cm (centimeter)|in (inch)|
 |°C (degree Celsius)|°F (degree Fahrenheit)|
 |"K (Kelvin)|°R (degree Rankine)|

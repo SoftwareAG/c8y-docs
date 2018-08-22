@@ -8,7 +8,7 @@ Klicken Sie **Alle Geräte** im Menü **Geräte** im Navigator, um alle mit Ihre
 
 Eine detaillierte Geräteliste wird angezeigt.
 
-<img src="/guides/images/benutzerhandbuch/devmgmt-device-list.png" alt="Geräteliste" style="max-width: 100%">
+<img src="/guides/images/benutzerhandbuch/devmgmt-devices-list.png" alt="Geräteliste" style="max-width: 100%">
 
 
 ### <a name="device-list"></a>Geräteliste

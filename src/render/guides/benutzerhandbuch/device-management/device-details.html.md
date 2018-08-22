@@ -135,8 +135,6 @@ Die Registerkarte **Steuerung** enthält eine Liste der and das Gerät gesendete
 
 <img src="/guides/images/benutzerhandbuch/devmgmt-device-operations.png" alt="Kommandos" style="max-width: 100%">
 
-![Operations](/guides/images/users-guide/operations.png)
-
 ### <a name="network"></a>Netzwerk
 
 In der Registerkarte **Netzwerk** können Netzwerkeinstellungen für das Gerät konfiguriert werden. 
@@ -249,7 +247,7 @@ Die Liste zeigt den Status, das Datum und den Text eines Kommandos an. Durch Kli
 
 Cumulocity stellt für manche Gerätetypen einige häufig verwendete Kommandos bereit. Klicken Sie **<_Beispielkommando auswählen** rechts in der oberen Menüleiste, um eine Liste der verfügbaren vordefinierten Kommandos anzuzeigen. Wählen Sie das gewünschte Kommando aus und klicken Sie **Verwenden**, um das ausgewählte Kommando in der Kommandozeile einzufügen oder klicken Sie **Ausführen**, um das Kommando unmittelbar auszuführen. Sie können auch selbst neue Kommandos zur Wiederverwendung hinzufügen. 
 
-![Shell-Kommandos](/guides/images/benutzerhandbuch/devmgmt-shell-commands.png)
+![Shell-Kommandos](/guides/images/benutzerhandbuch/devmgmt-shell-sample-commands.png)
 
 ### <a name="tracking"></a>Tracking
 

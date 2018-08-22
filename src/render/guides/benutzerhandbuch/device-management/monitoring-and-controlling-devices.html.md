@@ -109,7 +109,7 @@ Cumulocity zeigt Alarme für einzelne Geräte sowie für alle Geräte an.
 * Um die Alarme für alle Geräte anzuzeigen, klicken Sie **Alarme** im Menü **Übersichten** im Navigator.  
 * Um die Alarme für ein bestimmtes Gerät anzuzeigen, wechseln Sie zur Registerkarte **Alarme** in den Gerätedetails dieses Geräts.
 
-<img src="/guides/images/benutzerhandbuch/devmgmt-alarm-device.png" alt="Gerätealarme" style="max-width: 100%">
+<img src="/guides/images/benutzerhandbuch/devmgmt-alarms-device.png" alt="Gerätealarme" style="max-width: 100%">
 
 Standardmäßig
 * werden nur ungelöste Alarme gezeigt. Wenn Sie rechts in der oberen Menüleiste  **Aufgehobene Alarme anzeigen** aktivieren, sehen Sie die gesamte Alarmhistorie.

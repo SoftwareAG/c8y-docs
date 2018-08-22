@@ -13,7 +13,7 @@ Cumulocity unterscheidet zwischen Top-Level-Gruppen und untergeordneten Gruppen.
 
 Um eine Liste aller Gruppe in Ihrem Konto anzuzeigen, klicken Sie **Gruppen** im Navigator. 
 
-<img src="/guides/images/benutzerhandbuch/devmgmt_groups.png" alt="Gruppen" style="max-width: 100%">
+<img src="/guides/images/benutzerhandbuch/devmgmt-groups.png" alt="Gruppen" style="max-width: 100%">
 
 Für jede Gruppe wir der Name und die Anzahl der Kindern angezeigt.
 
@@ -58,7 +58,7 @@ Um eine neue Gruppe zu erstellen, führen Sie folgende Schritte aus:
 
 >**Info:** Eine Gruppe kann auch mit "0" Geräten erstellt werden.
 
-<img src="/guides/images/benutzerhandbuch/devmgmt-new-group.png" alt="Gruppe erstellen" style="max-width: 100%">
+<img src="/guides/images/benutzerhandbuch/devmgmt-new-group.png" alt="Gruppe erstellen" style="max-width: 50%">
 
 ### <a name="assigning-devices"></a>Zuweisen eines Geräts zu einer bestehenden Gruppe
 
@@ -103,7 +103,7 @@ Dynamische Gruppen werden in der Geräteliste erstellt.
 3. Klicken Sie **Dynamische Gruppe erstellen** rechts in der oberen Menüleiste.
 4. Geben Sie einen Namen für die Gruppe ein und klicken Sie **Erstellen**.
 
-<img src="/guides/images/benutzerhandbuch/devmgmt-smartgroup-create.png" alt="Dynamische Gruppe erstellen" style="max-width: 100%">
+<img src="/guides/images/benutzerhandbuch/devmgmt-smartgroup-create.png" alt="Dynamische Gruppe erstellen" style="max-width: 50%">
 
 Die neue Gruppe erscheint als Top-Level-Gruppe im Menü **Gruppe** im Navigator. Dynamische Gruppen werden durch ein kleines Zahnrad im Ordnersymbol gekennzeichnet.  
 

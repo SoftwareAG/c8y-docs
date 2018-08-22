@@ -1,21 +1,21 @@
 ---
 order: 10
-title: Overview
+title: Übersicht
 layout: redirect
 ---
 
-The following sections will walk you through all functionalities of the Device Management application in detail. For your convenience find an overview on the content of this document below.
+Die folgenden Abschnitte beschreiben detailliert alle Funktionalitäten der Device Management-Anwendung. Zur besseren Orientierung folgt eine Übersicht über den Inhalt dieses Dokuments.
 
-|SECTION|CONTENT|
+|Abschnitt|Inhalt|
 |:---|:---|
-|[Connecting devices](#device-registration)|How to [register one or more devices manually](#device-registration-manually) and how to [bulk-register devices](#creds-upload) in order to connect devices to your account.
-|[Viewing devices](#viewing-devices)|What is displayed in the [device list](#device-list) and how to sort devices by [searching for devices](#searching-devices) and [filtering devices](#filtering-devices).
-|[Grouping devices](#grouping-devices)|Why and how to group devices into top-level groups, subgroups and [smart groups](#smart-groups).
-|[Device details](#device-details)|Detailed description of the various kind of  information available for various types of  devices.
-|[Monitoring and controlling devices](#monitoring-and-controlling-devices)|How to monitor the [connection quality](#connection-monitoring) and [service status](#monitoring-services) of devices, how to handle [alarms](#alarm-monitoring) from devices, how to [remote control](#operation-monitoring) and how to [troubleshoot](#events-all) devices.
-|[Managing device types](#managing-device-types)|How to process data from various device types by using [device protocols](#managing-device-types). 
-|[Managing device data](#managing-device-data)|How to retrieve and manage [firmware and software](#software-repo) for devices and how to handle [configuration snapshots](#configuration-repository). 
-|[Working with the simulator](#simulator)|How to model devices with the [simulator](#simulator) in order to have the same level of functionality as connected hardware devices.
-|[Using SmartREST templates](#smartrest-templates)|How to work with [SmartREST  templates](#Smartrest-templates), a collection of request and response templates used to convert CSV data and Cumulocity Rest API calls.
+|[Verbinden von Geräten](#device-registration)|Wie Sie [eines oder mehrere Geräte manuell registrieren](#device-registration-manually) und wie Sie [viele Geräte gleichzeitig registrieren](#creds-upload), um diese mit Ihrem Konto zu verbinden.
+|[Anzeigen von Geräten](#viewing-devices)|Beschreibt, was in der [Geräteliste](#device-list) angezeigt wird und wie Geräte durch [Suchen nach Geräten](#searching-devices) oder [Filtern von Geräten](#filtering-devices) sortiert werden können.
+|[Gruppieren von Geräten](#grouping-devices)|Wie und warum Geräte in Top-Level-Gruppen, untergeordneten Gruppen und [dynamischen Gruppe](#smart-groups) angeordnet werden.
+|[Gerätedetails](#device-details)|Beschreibt detailliert die verschiedenen Informationen, die für verschiedene Gerätetypen bereitgestellt werden.
+|[Überwachen und Steuern von Geräten](#monitoring-and-controlling-devices)|Wie man die [Verbindungsqualität](#connection-monitoring) und den [Service-Status](#monitoring-services) von Geräten überwacht, wie man mit [Alarmen](#alarm-monitoring) von Geräten arbeitet, wie man [Geräte fernsteuert](#operation-monitoring) und [Fehler behebt](#events-all).
+|[Verwalten von Gerätetypen](#managing-device-types)|Wie man Daten von verschiedenen Gerätetypen mit Hilfe von [Geräteprotokollen](#managing-device-types) verarbeitet. 
+|[Verwalten von Gerätedaten](#managing-device-data)|Wie man [Firmware and Software](#software-repo) für Geräte verwaltet sowie [Konfigurationssnapshots](#configuration-repository). 
+|[Arbeiten mit Simulatoren](#simulator)|Wie man Geräte mit der [Simulatorfunktion](#simulator) abbildet, um die Funktionalität von verbundenen Hardware-Geräten zu simulieren.
+|[Verwenden von SmartREST-Templates](#smartrest-templates)|Wie man [SmartREST-  Templates](#Smartrest-templates) verwendet, eine Sammlung von Anfrage- und Antwort-Templates, die zum Konvertieren von CSV-Daten und Cumulocity Rest API-Aufrufen verwendet werden.
 
 

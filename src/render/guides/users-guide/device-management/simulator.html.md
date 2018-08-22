@@ -1,84 +1,83 @@
 ---
 order: 80
-title: Simulators
+title: Simulatoren
 layout: redirect
 ---
 
-With the Cumulocity simulator all aspects of IoT devices can be simulated:
+Mit dem Simulator in Cumulocity können alle Aspekte von IoT-Geräten simuliert werden:
 
-* Setting up a simulated device or a network of simulated devices
-* Specify which operations the device can process
-* Create work instructions based on predefined message templates or user defined templates and schedule work steps
-* Create up to ten devices of a defined type
-* Generate messages for measurements, alarms, events and inventory
-* View simulation problems as alarms
+* Einrichten eines simulierten Geräts oder eines Netzwerks von simulierten Geräten
+* Bestimmen der Kommandos, die das Gerät verarbeiten kann
+* Erstellen von Anweisungen basierend auf voreingestellten oder benutzerdefinierten Templates und Planen von Schritten
+* Erstellen von bis zu 10 Geräten eines bestimmten Typs
+* Erstellen von Nachrichten für Messwerte, Alarme, Ereignisse und Stammdaten 
+* Anzeigen von Simulationsproblemen als Alarme
 
-### What is a simulator?
+### Was ist ein Simulator?
 
-With the simulator you can create artificial devices that have the same level of functionality as connected hardware devices.
+Mit dem Simulator können Sie "künstliche" Geräte erstellen, die den gleichen Grad an Funktionalität aufweisen, wie verbundene Hardwaregeräte.
 
-A simulator uses a playlist to simulate messages that the device sends to the Cumulocity platform. A playlist is a series of instructions that the simulator executes one after the other. When the last instruction is reached, the simulator starts again with the first one.
+Ein Simulator verwendet eine Playliste, um Nachrichten zu simulieren, die das Gerät an die Cumulocity-Plattform sendet. Eine Playliste ist eine Reihe von Anweisungen, die der Simulator nacheinander ausführt. Wenn die letzte Anweisung erreicht ist, beginnt der Simulator wieder von vorne.
 
-An instruction can either send a message (measurements, alarms, events and inventory) or wait for a specified time (sleep). 
+Eine Anweisung kann entweder eine Nachricht senden (Messwerte, Alarme, Ereignisse und Stammdaten) oder eine bestimmte Zeit warten. 
 
-A message is defined by choosing a message template (like sending a temperature) and providing the values for this template (23.0 degrees). Many predefined message templates are provided, i.e. for creating a measurement, sending an event, creating and cancelling an alarm. These templates are based on MQTT static templates. Additionally, custom message templates can be defined using the [SmartREST template editor](#smartrest-templates). 
+Eine Nachricht wird durch Auswählen eines Nachricht-Templates (z. B. Senden einer Temperatur) und Bereitstellen des entsprechenden Werts (z. B. 23,0 Grad) definiert. Es gibt viele vordefinierte Nachricht-Templates, etwa für das Senden eines Messwerts oder das Erstellen oder Aufheben eines Alarms. Diese Templates basieren auf statischen MQTT-Templates. Darüber hinaus können mit dem [SmartREST-Template-Editor](#smartrest-templates) eigene Nachricht-Templates erstellt werden. 
 
-### The Simulator tab
-In the navigator, click "Simulator" in the "Devices" menu to open the "Simulator" tab.
+### Die Registerkarte Simulator
 
-All simulators which you can access will be listed here. Click the menu icon at the top right of a simulator card to open a context menu from where you can edit, clone or remove a simulator.
+Klicken Sie **Simulator** im Menü **Geräte**, um die Seite **Simulator** zu öffnen. 
+
+Allen Simulatoren, auf die Sie zugreifen können, werden hier angezeigt. Klicken Sie auf das Menüsymbol rechts oben in einer Simulatorkarte, um den Simulator zu bearbeiten, zu duplizieren oder zu löschen.
 
 <img src="/guides/images/users-guide/DeviceManagement/DevMgmt_SimulatorCard.png" alt="Simulator card" style="max-width: 50%">
 
-### How to create a simulator
+### Hinzufügen eines Simulators 
 
-To set up a new simulator follow these steps:
+Um einen neuen Simulator zu erstellen, führen Sie folgende Schritte aus:
 
-1. Click **New Simulator** at the right of the top menu bar. 
-2. In the upcoming window select a simulator type from the dropdown list in the "Presets" field. Select "Empty simulator" to create a simulator from scratch or select one of the sample simulators.
-3. Enter a meaningful name for the simulator. 
-4. Select the number of instances for this simulator (up to ten).
-3. Click **Continue** to proceed to the next dialog.
+1. Klicken Sie **Neuer Simulator** recht in der oberen Menüleiste. 
+2. Wählen Sie im folgenden Fenster aus der Auswahlliste im Feld **Voreinstellungen** einen Simulatortyp. Wählen Sie "Leerer Simulator", um einen eigenen Simulator zu erstellen. 
+3. Geben Sie einen Namen für den Simulator ein. 
+4. Wählen Sie die Anzahl der Instanzen für diesen Simulator (bis zu zehn).
+3. Klicken Sie **Weiter**, um zum nächsten Dialog zu wechseln.
 
-<img src="/guides/images/users-guide/addsim.png" alt="Add Simulator" style="max-width: 60%">
+<img src="/guides/images/benutzerhandbuch/addsimde.png" alt="Simulator hinzufügen" style="max-width: 60%">
 
-### Instructions
+### Anweisungen
 
-After setting up a simulator you can add instructions which define what your simulator is supposed to do. Instructions are single tasks added to a playlist through which the simulator will work. 
+Nachdem Sie einen Simulator erstellt haben, können Sie Anweisungen hinzufügen, die festlegen, was Ihr Simulator tun soll. Anweisungen sind einzelne Aufgaben, die einer Playliste hinzugefügt werden, die der Simulator nacheinander ausführt. 
 
-Instructions can be viewed and edited on the "Instructions" tab of the simulator.
+Anweisungen können auf der Registerkarte **Anweisungen** eines Simulators angezeigt und bearbeitet werden.
 
-![Add Instructions](/guides/images/users-guide/addinstructions.png)
+**Beispiele**
 
-**Examples**
-
-Within the presets, samples instructions are already added. For example, the "Temperature measurement" preset already has instructions in it for the steps "Create measurement" and "Sleep". 
+In den voreingestellten Simulatoren sind bereits Beispielanweisungen vorhanden. Der Simulator "Temperaturmesswert" beispielsweise enthält bereits die Schritte "Messwert erstellen" und "Warten". 
 
 ![Add Instructions Step 2](/guides/images/users-guide/addinstructions2.png)
 
-The measurement instruction refers to a fragment. Fragments are used to identify capabilities of a managed object. Find more details about fragments here: 
-[Sensor Library ](/guides/reference/sensor-library/) 
+Die Messwertanweisungen beziehen sich auf ein Fragment. Fragmente werden verwendet, um die Kapazitäten von Objekten zu bestimmen. Nähere Informationen zu Fragmenten finden Sie in der [Sensor Library ](/guides/reference/sensor-library/) im Reference Guide.
 
-![Add Instructions Step 3](/guides/images/users-guide/addinstructions3.png)
+![Add Instructions Step 3](/guides/images/benutzerhandbuch/addinstructions3de.png)
 
-The "Sleep" instruction requires one value for its duration in seconds. 
+Die Anweisung "Warten" erfordert einen einzelnen Wert für die Dauer des Wartens in Sekunden. 
 
-The panel on the right changes according to the type of instruction selected on the left.
+![Add Instructions Step 4](/guides/images/benutzerhandbuch/addinstructions4de.png)
 
-![Add Instructions Step 4](/guides/images/users-guide/addinstructions4.png)
+Der Bereich auf der rechten Seite ändert sich entsprechend des ausgewählten Anweisungstyps.
 
-### Supported operations
 
-In the "Supported operations" tab of a simulator you can turn on or off specific operations like configurations or software/firmware updates.
+### Unterstützte Kommandos
 
-![Operations Off](/guides/images/users-guide/supop1.png)
+in der Registerkarte **Unterstützte Kommandos** eines Simulators können bestimmte Kommandos wie Konfigurationen oder Software-/Firmware-Updates ein- oder abgeschaltet werden.
 
-![Operations On](/guides/images/users-guide/supop2.png)
+![Operations Off](/guides/images/benutzerhandbuch/supop1de.png)
 
-Click **Add custom operation** to specify a customized operation and add it to the list.
+![Operations On](/guides/images/benutzerhandbuch/supop2de.png)
 
-### Alarms (simulator)
+Klicken Sie **Benutzerdefiniertes Kommando hinzufügen**, um eigene Kommandos zur Liste hinzuzufügen.
 
-The "Alarm" tab of a simulator displays alarms related to the simulator itself (not to the simulated device), i.e. if the simulator itself does not work correctly, you will find alarms here. Refer to [Working with alarms](#alarms) for information on alarms. 
+### Alarme für den Simulator
 
-![Simulator Alarm](/guides/images/users-guide/simalarm.png)
+Die Registerkarte **Alarme** eines Simulators zeigt Alarme an, die den Simulator selbst betreffen (nicht das simulierte Gerät), d.h. Alarme für den Fall, dass der Simulator nicht korrekt arbeitet. Weitere Informationen zu Alarmen finden Sie unter [Arbeiten mit Alarmen](#alarms). 
+
+![Simulator Alarm](/guides/images/benutzerhandbuch/simalarmde.png)

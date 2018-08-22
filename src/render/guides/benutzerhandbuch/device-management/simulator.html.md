@@ -1,6 +1,6 @@
 ---
 order: 80
-title: Simulatoren
+title: Arbeiten mit Simulatoren
 layout: redirect
 ---
 

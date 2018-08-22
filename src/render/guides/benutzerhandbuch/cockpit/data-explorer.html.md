@@ -8,9 +8,9 @@ Im Daten-Explorer können Datenpunkte (Messwerte oder Sensordaten) visualisiert 
 
 Der Daten-Explorer ist sowohl für alle Assets als auch für einzelne Assets verfügbar.
 
-* Klicken Sie "Daten-Explorer" im Navigator, um auf alle Datenpunkte von allen Assets zuzugreifen.
+* Klicken Sie **Daten-Explorer** im Navigator, um auf alle Datenpunkte von allen Assets zuzugreifen.
 
-* Navigieren Sie zu einem bestimmten Asset und wechseln Sie zur Registerkarte "Daten-Explorer", um auf alle Datenpunkte dieses Assets und seiner Kind-Assets zuzugreifen.
+* Navigieren Sie zu einem bestimmten Asset und wechseln Sie zur Registerkarte **Daten-Explorer**, um auf alle Datenpunkte dieses Assets und seiner Kind-Assets zuzugreifen.
 
 Im Daten-Explorer finden Sie auf der rechten Seite eine Liste aller verfügbaren Datenpunkte. Standardmäßig werden die ersten fünf Datenpunkte des ausgewählten Geräts oder der ausgewählten Gruppe angezeigt. Weitere Informationen zum Hinzufügen von Datenpunkten finden Sie unter [Hinzufügen von Datenpunkten](#add-data-points).
 
@@ -26,7 +26,7 @@ Die Datenpunktattribute werden folgendermaßen vorausgefüllt:
 
 * Wenn die Datenpunkte eine Übereinstimmung in der Datenpunktbibliothek haben, werden die Werte von der Datenpunktbibliothek verwendet. 
 
-In der Datenpunktbibliothek kann es mehr als einen übereinstimmenden Datenpunkteintrag geben. In diesem Fall wird automatisch der erste übereinstimmende Datenpunkt ausgewählt. Sie können diese Auswahl überschreiben, in dem Sie im entsprechenden Datenpunkteintrag über das Menüsymbol das Kontextmenü öffnen und **[NAME] aus Bibliothek laden** wählen. 
+In der Datenpunktbibliothek kann es mehr als einen übereinstimmenden Datenpunkteintrag geben. In diesem Fall wird automatisch der erste übereinstimmende Datenpunkt ausgewählt. Sie können diese Auswahl überschreiben, indem Sie im entsprechenden Datenpunkteintrag über das Menüsymbol das Kontextmenü öffnen und **[NAME] aus Bibliothek laden** wählen. 
 
 Allgemeine Informationen zum Ändern der Visualisierung finden Sie unter [Ändern der Daten-Explorer-Visualisierung](#change-visualization). Informationen zum Anpassen der Attribute eines bestimmten Datenpunkts finden Sie unter[Anpassen von Datenpunktattributen](#customize-data-points).
 
@@ -51,7 +51,7 @@ Um das Zeitintervall auf der X-Achse zu ändern,
 
 Um einen effizienten Überblick über größere Zeitspannen zu erhalten, können Sie die angezeigten Daten aggregieren.
 
-Standardmäßig ist die Aggregation auf den Wert "Keine" eingestellt. Dieser Wert kann im Feld "Aggregation" in der oberen Menüleiste geändert werden. Verfügbare Werte sind "Minütlich", "Stündlich" or "Täglich", abhängig vom ausgewählten Zeitintervall.
+Standardmäßig ist die Aggregation auf den Wert "Keine" eingestellt. Dieser Wert kann im Feld **Aggregation** in der oberen Menüleiste geändert werden. Verfügbare Werte sind "Minütlich", "Stündlich" or "Täglich", abhängig vom ausgewählten Zeitintervall.
 
 **Echtzeitaktualisierung**
 
@@ -107,7 +107,7 @@ Um zu den Attributen, die in der Datenpunktbibliothek gespeichert sind, zurückz
 
 ### Verhalten der Y-Achse
 
-Standardmäßig wird der erste Datenpunkt auf der linken Y-Achse positioniert und die verbleibenden Datenpunkte rechts davon. Dieses Verhalten kann für einen bestimmten Datenpunkt durch Anpassen des entsprechenden Werts "Y-Achse" (auf "Links" oder "Rechts", siehe oben) geändert werden.
+Standardmäßig wird der erste Datenpunkt auf der linken Y-Achse positioniert und die verbleibenden Datenpunkte rechts davon. Dieses Verhalten kann für einen bestimmten Datenpunkt durch Anpassen des entsprechenden Werts **Y-Achse** (auf "Links" oder "Rechts", siehe oben) geändert werden.
 
 Jeder Datenpunkt wird auf einer eigenen Y-Achse angezeigt, wenn nicht Folgendes zutrifft:
 
@@ -119,7 +119,7 @@ In diesem Fall teilen sich die Datenpunkte eine Y-Achse. Diese Y-Achse zeigt nur
 
 Neben Datenpunkten können Sie auch Alarme oder Ereignisse zum Daten-Explorer hinzufügen.
 
-Klicken Sie **Alarm/Ereignis hinzufügen** in der Karte "Alarme/ Ereignisse", um einen Alarm oder ein Ereignis hinzuzufügen.
+Klicken Sie **Alarm/Ereignis hinzufügen** in der Karte **Alarme/ Ereignisse**, um einen Alarm oder ein Ereignis hinzuzufügen.
 
 <img src="/guides/images/benutzerhandbuch/cockpit-data-explorer-add-alarm.png" name="Add widget" style="width:75%;"/> 
 

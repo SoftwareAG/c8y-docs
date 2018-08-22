@@ -8,7 +8,7 @@ Klicken Sie **Alle Geräte** im Menü **Geräte** im Navigator, um alle mit Ihre
 
 Eine detaillierte Geräteliste wird angezeigt.
 
-<img src="/guides/images/users-guide/DeviceManagement/DevMgmt_DevicesList.png" alt="Device List" style="max-width: 100%">
+<img src="/guides/images/benutzerhandbuch/devmgmt-device-list.png" alt="Geräteliste" style="max-width: 100%">
 
 
 ### <a name="device-list"></a>Geräteliste
@@ -21,57 +21,58 @@ Die Liste enthält eine Zeile für jedes Gerät mit den folgenden Informationen,
 |Name|Eindeutiger Name für das Gerät.
 |Modell|Modelltyp des Geräts. Wird nicht immer angezeigt; abhängig von der Browser-Breite.
 |Seriennummer|Seriennummer des Geräts. Wird nicht immer angezeigt; abhängig von der Browser-Breite.
-|Gruppe|Gruppe, der das Gerät zugeordnet ist, falls .
-|Registrierungsdatum|Date when the device was registered to your account.
-|System ID|System ID of the device.
-|IMEI|IMEI of the device.
-|Alarme|The alarm status of the device, showing number and type of alarms currently unresolved for the device. See [Working with alarms](#alarm-monitoring) for further information on working with alarms.
+|Gruppe|Gruppe, der das Gerät gegebenenfalls zugeordnet ist.
+|Registrierungsdatum|Datum, an dem das Gerät in Ihrem Konto registriert wurde. 
+|System ID|System-ID des Geräts.
+|IMEI|IMEI des Geräts.
+|Alarme|Der Alarmstatus des Geräts. Zeigt Anzahl und Typ der zur Zeit für dieses Gerät aktiven Alarme an. Weitere Informationen zu Alarmen finden Sie unter [Arbeiten mit Alarmen](#alarm-monitoring).
 
-The devices list displays up to 100 rows. If a list contains more than 100 devices, click **Load more** at the bottom of the list to display the next 100 entries.
+Die Geräteliste zeigt bis zu 100 Einträge an. Wenn die Geräteliste mehr als 100 Geräte enthält, klicken Sie **Mehr laden** am Ende der Liste, um weitere Einträge anzuzeigen.
 
-When hovering over a row in the list, a **Delete** button appears at the right. Click it to delete the device permanently.
+Wenn Sie den Mauszeiger über einen Eintrag in der Liste bewegen, erscheint auf der rechten Seite der Zeile die Schaltfläche **Löschen**. Klicken Sie diese, um ein Gerät endgültig zu löschen.
 
-**Important:** Deleting a device means to remove the device from Cumulocity database including all its generated data. Alternatively, you can arrange all retired devices in one group (see [Grouping Devices](#grouping-devices)). This ensures that all reports remain correct. To prevent alarms from being raised for the retired devices, disable [connection monitoring](#connection-monitoring). Deleting a device does not delete the data of its child devices.
+**Wichtig:** Wenn Sie ein Gerät löschen, wird dieses aus der Cumulocity-Datenbank gelöscht, einschließlich aller erzeugter Daten. Alternativ können Sie alle nicht mehr benötigten Geräte in einer Gruppe zusammenfassen (siehe [Gruppieren von Geräten](#grouping-devices)). So stellen Sie sicher, dass alle Berichte korrekt erhalten bleiben. Damit für stillgelegten Geräte keine Alarme mehr ausgelöst werden, deaktivieren Sie die [Verbindungsüberwachung](#connection-monitoring) für das entsprechende Gerät. Löschen Sie ein Gerät, werden dadurch nicht die Daten der Kindgeräte gelöscht.
 
+### <a name="searching-devices"></a>Suchen nach Geräten
 
-### <a name="searching-devices"></a>Searching for devices
+Cumulocity umfasst eine Volltextsuche nach Geräten. 
 
-Cumulocity includes a full-text search for devices. 
+Klicken Sie auf das Lupensymbol rechts oben und geben Sie einen Suchbegriff in das Textfeld ein. Cumulocity gibt alle Geräte zurück, die diesen Begriff in einem Attribut enthalten (Name, Modell, Fragmente ...).
 
-Click the **Search** button at the top right and enter a search term into the textbox. Cumulocity returns all devices containing this term in any property (name, model, any fragment...)
+Unser Beispiel zeigt eine Suche nach "Ublox C027". 
 
-Our example shows a search for "Ublox C027". 
+<img src="/guides/images/benutzerhandbuch/devmgmt-devices-search.png" alt="Gerätesuche" style="max-width: 100%">
 
-**Info**: Unlike filtering, the use of wildcards in a search is not supported.
+**Info**: Im Gegensatz zur Filterfunktion, ist die Verwendung von Platzhaltern in einer Suche nicht möglich. 
 
-For details on the search functionality, refer to Getting Started > [GUI functionalities and features](/guides/users-guide/overview#gui-features). 
+Weitere Informationen zur Suchfunktionalität finden Sie unter [Erste Schritte > Eigenschaften und Funktionen der Benutzeroberfläche](/guides/users-guide/overview#gui-features). 
 
-<img src="/guides/images/users-guide/DeviceManagement/DevMgmt_Search.png" alt="Device Management Search" style="max-width: 100%">
+### <a name="filtering-devices"></a>Filtern von Geräten
 
-### <a name="filtering-devices"></a>Filtering devices
+Die Geräteliste bietet eine Filterfunktion, um Geräte in der Liste nach bestimmten Kriterien zu Filtern.
 
-The device list offers a filtering functionality to filter devices in the list for specific criteria. 
-
-Filtering is available on every column. Just click the filter icon next to the name of the column you want to set a filter for. 
-
+Die Filterfunktion steht für jede Spalte zur Verfügung. Klicken Sie auf das Filtersymbol neben dem Namen der Spalte, nach der Sie filtern möchten. 
+ 
 <img src="/guides/images/users-guide/DeviceManagement/DevMgmt_Filtering.png" alt="Filtering" style="max-width: 100%">
 
-A window will come up in which you can specify your filter options.
+Im folgenden Fenster können Sie entsprechende Filterkriterien setzen.
 
-<img src="/guides/images/users-guide/DeviceManagement/DevMgmt_FilteringOptions.png" alt="Filter Options" style="max-width: 50%">
+<img src="/guides/images/benutzerhandbuch/devmgmt-device-filter-options.png" alt="Filteroptionen" style="max-width: 50%">
 
-Most columns represent text fields. You can filter these columns by simply entering an arbitrary text into the textbox as in the Search field. Click **+ Or** to add another textbox if you want to filter for more than one term. 
+Die meisten Spalten enthalten Text. Hier können Sie filtern, indem Sie einen beliebigen Text in das Textfeld eingeben wie im Suchfeld. Klicken Sie **+ Oder** ,um ein weiteres Textfeld hinzuzufügen, falls Sie nach mehr als einem Begriff filtern möchten. 
 
-Apart from filtering for text there are several other options:
-* In case of date fields (i.e. "Registration date"), you specify a date range to filter for. 
-* In the "Status" column you can filter for various criteria representing the send, push or maintenance status of the device.
-* In the "Alarm" column the filtering options you may select correspond to the alarm types (critical, major, minor, warning, no alarms).
+Weitere Informationen finden Sie auch unter [Erste Schritte > Eigenschaften und Funktionen der Benutzeroberfläche](/guides/users-guide/overview#gui-features). 
 
-In the "Filter options" window, click **Ascending** or **Descending** if you want the devices to be sorted in a specific order. Finally, click **Apply** to carry out the filtering. 
+Abgesehen vom Filtern nach Text gibt es folgende weitere Optionen:
 
-The devices list will now only display devices matching the filtering options.
+* Bei Datumsfeldern (z. B. **Registrierungsdatum**) geben Sie ein Zeitintervall als Filter ein.  
+* In der Spalte **Status** können Sie nach verschiedenen Kriterien filtern, die jeweils den Sende-, Push- oder Wartungsstatus des Geräts repräsentieren. 
+* In der Spalte **Alarm** entsprechen die Filterkriterien den Alarmtypen  (kritisch, wichtig, weniger wichtig, Warnung, keine Alarme).
 
-Click **Clear filters** at the right of the top menu bar if you want to clear all filters and view all devices.
+Klicken Sie **Aufsteigend** oder **Absteigend** unten im Fenster **Filteroptionen**, wenn Sie die Geräte in einer bestimmten Reihenfolge sortieren möchten. Klicken Sie **Anwenden**, um die Filterbedingungen anzuwenden.
 
->**Info**: If you select to sort a text field, e.g. device name, in ascending or descending order, keep in mind that the resulting alphabetical sorting is based on ASCII/UTF: A < B < ... < Z < ... < a < b ... < z. Names starting with lower case letters will be sorted below all names with uppercase letters or vice versa.
+Die Geräteliste zeigt nun nur noch die Geräte an, auf die die Filterbedingungen zutreffen.
 
+Klicken Sie **Filter zurücksetzen** in der oberen Menüleiste, wenn Sie alle Filter zurücksetzen und wieder alle Geräte anzeigen möchten.
+
+>**Info**: Wenn Sie die Liste anhand eines Textfelds, z.B. **Gerätename**, in aufsteigender oder absteigender Reihenfolge sortieren lassen, beachten Sie, dass die daraus resultierende alphabetische Sortierung auf ASCII/UTF basiert: A < B < ... < Z < ... < a < b ... < z. Namen, die mit Kleinbuchstaben beginnen, werden unter allen Namen mit Großbuchstaben aufgelistet bzw. umgekehrt.

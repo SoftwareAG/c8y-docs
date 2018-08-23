@@ -328,7 +328,7 @@ Navigate to the “Device database” page and click **New**. The following wind
 
 ![New device type](/guides/images/users-guide/newtype.png)
 
-Select “CANopen” as fieldbus type and enter a name for your device type. Specific to CANopen is the “CANopen device type” field which requires a hex number.
+Select “CANopen” as fieldbus type and enter a name for your device type. Specific to CANopen is the “CANopen device type” field which accepts a hex number.
 
 In the “Variables” section, you determine the CANopen variables. Variables inside the “Object Dictionary”(OD) of the CANopen device can be accessed later by adding the variables to the device type definition. Via the **Add** button at the right of the “Variables” section, new variables can be configured.
 
@@ -337,51 +337,49 @@ In the “Variables” section, you determine the CANopen variables. Variables i
 The following fields can be observed:
 
 - **Name:** The name of the variable.
-- **Display Category:** This field is used to group variables into sections in the visualization. 
+- **Display category:** This field is used to group variables into sections in the visualization. 
 - **Index:** Index of the variable in the OD of the device. 
-- **Sub-Index:** Sub-Index of the variable in the OD of the device.
-- **Data Type:** The type of the variable (e.g. boolean, unsigned).
-- **Access Type:** E.g. read only, write only, etc.
+- **Sub-index:** Sub-Index of the variable in the OD of the device.
+- **Data type:** The type of the variable (e.g. boolean, unsigned).
+- **Access type:** E.g. read only, write only, etc.
 - **Unit:** Logical unit of the variable.
-- **Show Status:** Defines how the variable is shown in the inventory. 
-- **Update Status:** Defines how the variable is updated in Cumulocity.
-- **Send Measurement:** Create a measurement when the value of the variable is changed.
-- **Raise Alarm:** Create an alarm if a given mask matches with the value of the variable. ((value & mask) == mask). Therefore, it is possible to raise alarms on single bits of e.g. an Unsigned8 variable, like the Error-Register.
-- **Raise Event:** Create an event, whenever the value of the variable is changed. 
+- **Show status:** Defines how the variable is shown in the inventory. 
+- **Update status:** Defines how the variable is updated in Cumulocity.
+- **Send measurement:** Create a measurement when the value of the variable is changed.
+- **Raise alarm:** Create an alarm if a given mask matches with the value of the variable. ((value & mask) == mask). Therefore, it is possible to raise alarms on single bits of e.g. an Unsigned8 variable, like the Error-Register.
+- **Raise event:** Create an event, whenever the value of the variable is changed. 
 
 After adding variables to the new device type, they are listed in the “Variables” section of the device type. All variables are grouped by the given display category, i.e. variables with same category are grouped together.
 
 ![category view](/guides/images/users-guide/category.png)
 
-After completing your configuration,, click **Save** to save your settings. The device type can be used now to add CANopen devices to the platform. The device type can be updated after creation.
+After completing your configuration, click **Save** to save your settings. The device type can be used now to add CANopen devices to the platform. The device type can be updated after creation.
 
 **Importing a device type**
 
 To import a new device type, see the [Exporting and importing device types](#import) section.
 
-> After importing the EDS file, all defined variables in the EDS file are are listed in the “Variables” section of the device type. The user, can then enrich the imported variable configurations by
-opening the configuration dialog for each variable (e.g. the missing display category can be set
-or mappings can be defined).
+> After importing the EDS file, all variables defined in the file are listed in the “Variables” section of the device type. The user can then enrich the imported variable configurations by opening the configuration dialog for each variable (e.g. the missing display category can be set or mappings can be defined).
 
 **Configuring CANopen device data**
 
-To configure CANopen device data navigate to the desired device and click on the "CANopen" tab.
+To configure CANopen device data navigate to the desired device and click the "CANopen" tab.
 
-In the "CANopen Communication" section, the following parameters can be configured here:
+In the "CANopen Communication" section, the following parameters can be configured:
 
-- **Baud Rate:** This field must match with the used baud rate in the CANopen network.
-- **Polling Rate:** The rate at which the agent sends requests to the CANopen devices
+- **Baud rate:** This field must match with the used baud rate in the CANopen network.
+- **Polling rate:** The rate at which the agent sends requests to the CANopen devices.
 to determine changes in variables.
-- **Transmit Rate:** The transfer rate, i.e., the rate at which the terminal sends regular
+- **Transmit rate:** The transfer rate, i.e. the rate at which the terminal sends regular
 measurements to Cumulocity.
 
 In the "CANopen" section, up to 127 CANopen devices can be added to the gateway as child devices by giving the following parameters:
 
 - **Name:** The name of the device used for visualization.
-- **Device-Type:** The device type of the CANopen device. The user can select from a list of all CANopen device types which are stored in the device database.
-- **Node-Id:** The CANopen Node-Id of the device. It is used for addressing the device inside the CANopen network.
+- **Device type:** The device type of the CANopen device. The user can select from a list of all CANopen device types which are stored in the device database.
+- **Node ID:** The CANopen Node-Id of the device. It is used for addressing the device inside the CANopen network.
 
-> The device type and Node-Id needs to match with the real CANopen device, otherwise setting up the communication is not possible or wrong values will be transmitted.
+> The device type and Node-Id need to match with the real CANopen device, otherwise setting up the communication is not possible or wrong values will be transmitted.
  
 ### <a name="import"></a>Exporting and importing device types
 

@@ -27,7 +27,7 @@ For detailed information on developing and deploying microservices on top of Cum
 
 
 
-**From here on move to Microservice SDK guide!**
+#**From here on move to Microservice SDK guide!**
 
 The Cumulocity microservice is based on docker. This requires that a microservice is packaged as docker image in order to run on the Cumulocity platform. Docker image is an executable package that includes everything needed to run an application. For more information on docker refer to the [Docker documentation](https://docs.docker.com/get-started/)). 
 

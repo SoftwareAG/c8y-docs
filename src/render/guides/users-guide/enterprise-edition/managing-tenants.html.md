@@ -13,7 +13,7 @@ The tenants functionality allows you to create subtenants, subscribe them to the
 
 >**Info**: If you would like to use this feature, please contact sales@cumulocity.com.
 
-To be able to use the tenant functionality, your user needs to have the appropriate permissions. See [Creating and editing global roles](/guides/users-guide/administration/managing-permissions#create-edit-roles) for information on editing permissions. Since editing tenants is a sensitive operation, permissions for editing tenants are more granular:
+To be able to use the tenant functionality, your user needs to have the appropriate permissions. See [Creating and editing global roles](/guides/users-guide/administration#create-edit-roles) for information on editing permissions. Since editing tenants is a sensitive operation, permissions for editing tenants are more granular:
 
 - Read: Browse and view tenants.
 - Create: Create new tenants.
@@ -34,7 +34,7 @@ The "Tenants" page provides the following information on each subtenant:
 
 If you are using the management tenant, you will see an additional column "Parent tenant". This column shows the tenant that created the listed tenant.
 
-![Sub-tenants](/guides/images/users-guide/administration/Admin_Subtenants.png)
+![Sub-tenants](/guides/images/users-guide/Administration/Admin_Subtenants.png)
 
 ### <a name="creating-tenants"></a>Creating sub-tenants
 
@@ -71,7 +71,7 @@ In the "Properties" tab, all fields are editable except of the ID and the admini
 
 In the "Applications" tab you can subscribe tenants to applications or remove the applications from the tenant. By default, tenants will be subscribed to the standard Cumulocity applications. 
 
-<img src="/guides/images/users-guide/administration/Admin_SubtenantApplications.png" alt="Subscribe tenant" style="max-width: 100%">
+<img src="/guides/images/users-guide/Administration/Admin_SubtenantApplications.png" alt="Subscribe tenant" style="max-width: 100%">
 
 To subscribe an application to a tenant, hover over the applications under "Available applications" on the right and click **Subscribe** on the desired application.
 
@@ -101,7 +101,11 @@ To finally delete a tenant and remove all the data of the tenant, click the menu
 
 The "Custom properties" tab allows you to view and modify values of custom properties, either predefined ones (like "External reference") or those defined in the [Properties library](/guides/users-guide/administration/changing-settings#properties). Such properties are also displayed as columns in [usage statistics table](#usage-stats).
 
-![Custom Properties](/guides/images/users-guide/subtenant-custom-properties.PNG)
+![Custom Properties](/guides/images/users-guide/subtenant-custom-properties.png)
+
+**Limiting subtenant device number**
+
+The platform administrator can limit the count of concurrently registered root devices or simply all devices(including children devices). The platform administrator can also see the peak count of concurrently registered devices, root devices and the peak value of used storage in the "Usage statistics" page.
 
 ### <a name="usage-stats"></a> Retrieving usage statistics
 

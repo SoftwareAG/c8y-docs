@@ -42,11 +42,11 @@ Edit the "pom.xml" in the "hello-world-microservice" folder. Add a "repositories
 
 Add "dependency" elements for the Java Microservice SDK library ("microservice-autoconfigure") to the "dependencies" section.
 
-	<dependency>
-		<groupId>com.nsn.cumulocity.clients-java</groupId>
-		<artifactId>microservice-autoconfigure</artifactId>
-		<version>8.21.0</version>
-	</dependency>
+    <dependency>
+        <groupId>com.nsn.cumulocity.clients-java</groupId>
+        <artifactId>microservice-autoconfigure</artifactId>
+        <version>${c8y.version}</version>
+    </dependency>
 
 Edit the "version" elements to use the latest version of the client library. The version can be determined by checking the ["Announcements" section](https://cumulocity.zendesk.com/hc/en-us/sections/200381323-Announcements) of the Cumulocity Help Center. The full file after editing can be found [here](/guides/java/pom.xml).
 
@@ -119,16 +119,28 @@ To create a deployable zip file, you need to add the following to your pom file:
         <maven.compiler.source>1.7</maven.compiler.source>
         <maven.compiler.target>1.7</maven.compiler.target>
         <spring-boot-dependencies.version>1.5.7.RELEASE</spring-boot-dependencies.version>
-        <main.class>c8y.example.App</main.class>
+        <c8y.version>9.8.0</c8y.version>
     </properties>
 
     <dependencies>
         <dependency>
             <groupId>com.nsn.cumulocity.clients-java</groupId>
             <artifactId>microservice-autoconfigure</artifactId>
-            <version>8.21.0-SNAPSHOT</version>
         </dependency>
     </dependencies>
+
+    <dependencyManagement>
+        <dependencies>
+            <!-- microservice api -->
+            <dependency>
+                <groupId>com.nsn.cumulocity.clients-java</groupId>
+                <artifactId>microservice-dependencies</artifactId>
+                <version>${c8y.version}</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
+        </dependencies>
+    </dependencyManagement>
 
     <build>
         <plugins>
@@ -143,14 +155,11 @@ To create a deployable zip file, you need to add the following to your pom file:
                         </goals>
                     </execution>
                 </executions>
-                <configuration>
-                    <mainClass>${main.class}</mainClass>
-                </configuration>
             </plugin>
             <plugin>
                 <groupId>com.nsn.cumulocity.clients-java</groupId>
                 <artifactId>microservice-package-maven-plugin</artifactId>
-                <version>8.21.0</version>
+                <version>${c8y.version}</version>
                 <executions>
                     <execution>
                         <id>package</id>
@@ -160,22 +169,10 @@ To create a deployable zip file, you need to add the following to your pom file:
                         </goals>
                         <configuration>
                             <name>hello-world</name>
+                            <image>hello-world</image>
                             <encoding>UTF-8</encoding>
                             <rpmSkip>true</rpmSkip>
                             <containerSkip>false</containerSkip>
-                        </configuration>
-                    </execution>
-                    <execution>
-                        <id>microservice-package</id>
-                        <phase>package</phase>
-                        <goals>
-                            <goal>microservice-package</goal>
-                        </goals>
-                        <configuration>
-                            <name>hello-world</name>
-                            <image>hello-world</image>
-                            <encoding>UTF-8</encoding>
-                            <skip>false</skip>
                         </configuration>
                     </execution>
                 </executions>

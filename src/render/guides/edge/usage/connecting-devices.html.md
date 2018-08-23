@@ -10,7 +10,7 @@ Additionally, Cumulocity offers the Cloud Fieldbus application as an optional se
    
 ### Connecting a Modbus device
 
-To connect Modbus device in Edge, follow the steps below.
+To connect a Modbus device in Edge, follow the steps below.
 
 #### Preparation
    
@@ -24,13 +24,14 @@ Once the agent is started navigate to the log file or execute the following comm
 
 Copy the cumulocity-agent device ID which you can find in `/var/log/cumulocity-agent.log`, e.g. "C0F64C7B90A14C4BB22AB526928F09A9”. This ID will be used for the device registration process. 
 
-<img src="/guides/images/edge/edge-modbus-01.png" name="Log file" style="width:100%;"/>
+<img src="/guides/images/edge/edge-modbus-register-01.png" name="Log file" style="width:100%;"/>
+
 
 #### Registering the device
 
 Next, register a device in the Device management application using the device ID copied from the log file. 
 
-<img src="/guides/images/edge/edge-modbus-02.png" name="Register device" style="width:50%;"/> 
+<img src="/guides/images/edge/edge-modbus-register-02.png" name="Register device" style="width:50%;"/> 
 
 Follow the description in Device Management > [Connecting devices](/guides/users-guide/device-management/connecting-devices) in the User guide to register a device.
 
@@ -50,9 +51,10 @@ Check if the OPC/UA agent is running in Edge (running on port  6670):
 
 	$ sudo systemctl status opcua-agent-server
 
-<img src="/guides/images/edge/edge-device-check-agent.png" name="Check agent" style="width:100%;"/> 
+<img src="/guides/images/edge/edge-device-check-agent.png" name="Check agent" style="width:100%;"/>
 
 Check if the platform.url in `/etc/opcua/opcua-agent-gateway.properties` is pointing to the correct URL, which is `http://localhost`.
+
 
 #### Registering the device
 

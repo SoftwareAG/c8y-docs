@@ -14,7 +14,8 @@ On the Edge server, execute the following commands as admin user.
 
 Execute the following command:
 
-	# sudo systemctl start cumulocity-core-karaf
+	# sudo service cumulocity-core-karaf start
+	
 
 This will start the Karaf OSGi container if required. 
 
@@ -22,7 +23,7 @@ This will start the Karaf OSGi container if required.
 
 Execute the following command:
 
-	# sudo systemctl stop cumulocity-core-karaf
+	# sudo service cumulocity-core-karaf stop
 
 This will stop the Karaf OSGi container if required. 
 
@@ -91,14 +92,14 @@ On the Edge server, execute the following commands as admin user.
 
 Execute the following command:
 
-	# service apama start
+	# sudo service apama start
 
 This will start the apama service if required. 
 
 ##### Stop apama
 Execute the following command:
 
-	# service apama stop
+	# sudo service apama stop
 
 This will stop the apama service if required. 
 
@@ -106,6 +107,6 @@ This will stop the apama service if required.
 
 Execute the following command:
 
-	# service apama restart
+	# sudo service apama restart
 
 This will restart the apama service if required.

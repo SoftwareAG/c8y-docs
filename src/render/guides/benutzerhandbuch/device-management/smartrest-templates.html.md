@@ -74,7 +74,7 @@ Ein Antwort-Template enthält alle erforderlichen Informationen, um Datenwerte a
 
 Um eine neue Antwort hinzuzufügen, navigieren Sie zur Registerkarte **Antworten** im entsprechenden Template und klicken Sie **Antwort hinzufügen**. 
 
-<img src="/guides/images/users-guide/DeviceManagement/DevMgmt_TemplateResponse.png" alt="Response" style="max-width: 50%">
+<img src="/guides/images/benutzerhandbuch/devmgmt-template-response.png" alt="Response" style="max-width: 75%">
 
 Füllen Sie die folgenden Felder aus:
 
@@ -107,5 +107,3 @@ Um ein SmartREST-Template als CSV-Datei herunterzuladen, führen Sie folgende Sc
 2. Klicken Sie in der Registerkarte **CSV-Vorschau**, die zusätzliche Informationen zu Nachrichten und Antworten enthält, **In die Zwischenablage kopieren**. 
 1. Wählen Sie im folgenden Fenster die bevorzugten Optionen für Feldtrennzeichen, Dezimaltrennzeichen und Zeichensatz. 
 2. Klicken Sie **Herunterladen**, um das Template als CSV-Datei herunterzuladen.
-
-<img src="/guides/images/users-guide/DeviceManagement/DevMgmt_TemplateExportCSV.png" alt="Export CSV" style="max-width: 50%">

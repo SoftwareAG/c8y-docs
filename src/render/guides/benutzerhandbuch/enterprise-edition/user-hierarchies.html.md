@@ -10,7 +10,7 @@ Mit Benutzerhierarchien können Sie verschiedene Organisationen in Cumulocity ge
 
 ### Anzeigen von Benutzerhierarchien
 
-In der "Benutzer"-Seite werden Benutzerhierarchien durch einen Pfeil links vom Benutzer-Symbol angezeigt. Klicken Sie auf diesen Pfeil, um die Benutzerhierarchie auszuklappen. Sie können auch alle Benutzerhierarchien gleichzeitig anzeigen oder verbergen, indem Sie **Alle ausklappen** bzw. **Alle einklappen** oben rechts klicken.
+In der Seite **Benutzer** werden Benutzerhierarchien durch einen Pfeil links vom Benutzer-Symbol angezeigt. Klicken Sie auf diesen Pfeil, um die Benutzerhierarchie auszuklappen. Sie können auch alle Benutzerhierarchien gleichzeitig anzeigen oder verbergen, indem Sie **Alle ausklappen** bzw. **Alle einklappen** oben rechts klicken.
 
 Eine kleine Zahl neben dem Benutzernamen zeigt an, wieviele direkte untergeordnete Benutzer ein Benutzer hat. Untergeordnete Benutzer sind Benutzer, die von ihrem übergeordneten Benutzer verwaltet werden können und die maximal die Berechtigungen des übergeordneten Benutzers haben können. Im Beispiel unten hat der Benutzer "TestUser" zwei direkte untergeordnete Benutzer.
 
@@ -20,7 +20,7 @@ Eine kleine Zahl neben dem Benutzernamen zeigt an, wieviele direkte untergeordne
 
 Benutzerhierarchien werden erstellt, indem einem Benutzer ein "Besitzer" zugewiesen wird. Dieser "Besitzer" kann den Benutzer verwalten. Der Benutzer kann maximal die Berechtigungen des Besitzers haben.
 
-Wählen Sie in der "Benutzer"-Seite einen Benutzer aus, dem Sie einen Besitzer zuweisen möchten. Wählen Sie im "Besitzer"-Feld einen Benutzer aus der Auswahlliste und klicken Sie **Fertig** zum Bestätigen.
+Wählen Sie in der Seite **Benutzer** einen Benutzer aus, dem Sie einen Besitzer zuweisen möchten. Wählen Sie im Feld **Besitzer** einen Benutzer aus der Auswahlliste und klicken Sie **Fertig** zum Bestätigen.
 
 ![Besitzer auswählen](/guides/images/benutzerhandbuch/ee-user-hierarchies-owner.png)
 
@@ -36,11 +36,11 @@ In Cumulocity können Sie Benutzerhierarchien und Berechtigungen auf andere Benu
 
 Sie können Berechtigungen auch temporär übertragen, wenn Sie etwa zeitweilig nicht verfügbar sind.
 
-Um einem Benutzer Ihre Berechtigungen zu übertragen, öffnen Sie entweder den Benutzer und klicken Sie das Delegieren-Symbol im Feld "Delegiert von", oder öffnen Sie das Kontextmenü über das Menüsymbol rechts vom Benutzer und wählen Sie **Delegieren**.
+Um einem Benutzer Ihre Berechtigungen zu übertragen, öffnen Sie entweder den Benutzer und klicken Sie das Delegieren-Symbol im Feld **Delegiert von**, oder öffnen Sie das Kontextmenü über das Menüsymbol rechts vom Benutzer und wählen Sie **Delegieren**.
 
 ![Benutzerdelegierung](/guides/images/benutzerhandbuch/ee-user-hierarchies-delegate.png)
 
-Entfernen Sie die Delegierung im Feld "Delegiert von" oder klicken Sie im Kontextmenü **Delegierung aufheben**, um eine Übertragung von Berechtigungen wieder aufzuheben.
+Entfernen Sie die Delegierung im Feld **Delegiert von** oder klicken Sie im Kontextmenü **Delegierung aufheben**, um eine Übertragung von Berechtigungen wieder aufzuheben.
 
 Wenn der Benutzer, dem Sie die Berechtigungen übertragen haben, auch bestimmte Geräte verwalten können soll, muss der Admin-Benutzer diesem Benutzer die Berechtigung für die entsprechenden Geräte (Stammdatenrollen) direkt zuweisen. Dies kann über den Befehl **Stammdatenrollen eines anderen Benutzers kopieren** erfolgen. Weitere Informationen finden Sie unter [Zuweisen von Stammdatenrollen](/guides/benutzerhandbuch/administration#attach-inventory).
 

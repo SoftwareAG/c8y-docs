@@ -21,9 +21,9 @@ Um die Mandantenfunktionalität nutzen zu können, muss Ihr Benutzer über die e
 
 ### Anzeigen von Untermandanten
 
-Klicken Sie "Untermandanten" im Menü "Mandanten", um eine Liste aller Untermandanten in Ihrem Konto anzuzeigen.
+Klicken Sie **Untermandanten** im Menü **Mandanten**, um eine Liste aller Untermandanten in Ihrem Konto anzuzeigen.
 
-Die "Mandanten"-Seite zeigt die folgenden Informationen für jeden Untermandanten an:
+Die Seite **Mandanten** zeigt die folgenden Informationen für jeden Untermandanten an:
 
 *   Name des Untermandanten, z.B. Name des Unternehmens Ihres Kunden.
 *   ID und Domain. Beim Erstellen des Mandanten wird die ID zum ersten Teil der URL. Wenn Sie beispielsweise einen Mandanten mit der ID "acme" auf cumulocity.com erstellen, lautet die URL des Mandanten "acme.cumulocity.com". Beachten Sie, dass Sie, nachdem der Mandant einmal erstellt wurde, zwar die URL später ändern können, nicht aber die ID.
@@ -31,7 +31,7 @@ Die "Mandanten"-Seite zeigt die folgenden Informationen für jeden Untermandante
 *   Das Erstellungsdatum für den Mandanten.
 *   Status des Mandanten, entweder aktiv (angezeigt durch ein grünes Häkchen) oder gesperrt (angezeigt durch ein rotes Kreuz).
 
-Wenn Sie den Management-Mandanten verwenden, sehen Sie eine weitere Spalte "Übergeordneter Mandant". Die Spalte zeigt den Mandanten an, der den aktuellen Mandanten erstellt hat.
+Wenn Sie den Management-Mandanten verwenden, sehen Sie eine weitere Spalte **Übergeordneter Mandant**. Die Spalte zeigt den Mandanten an, der den aktuellen Mandanten erstellt hat.
 
 ![Untermandanten](/guides/images/benutzerhandbuch/ee-subtenants.png)
 
@@ -67,11 +67,11 @@ Vom Management-Mandanten aus können Sie anderen Mandanten erlauben, Untermandan
 
 Klicken Sie auf einen Untermandanten, um diesen zu bearbeiten oder klicken Sie **Bearbeiten** im Kontextmenü, auf das Sie über das Menüsymbol zugreifen können.
 
-In der Registerkarte "Attribute" können alle Felder außer der ID und des Benutzernamens des Administrators bearbeitet werden. Details zu den einzelnen Feldern finden Sie unter [Erstellen von Untermandanten](#creating-tenants).
+In der Registerkarte **Attribute** können alle Felder außer der ID und des Benutzernamens des Administrators bearbeitet werden. Details zu den einzelnen Feldern finden Sie unter [Erstellen von Untermandanten](#creating-tenants).
 
 ### <a name="subscribing"></a>Abonnieren von Anwendungen
 
-In der Registerkarte "Anwendungen" können Sie Anwendungen für Mandanten abonnieren oder entfernen. Standardmäßig werden für einen Mandanten die Standardanwendungen von Cumulocity abonniert.
+In der Registerkarte **Anwendungen** können Sie Anwendungen für Mandanten abonnieren oder entfernen. Standardmäßig werden für einen Mandanten die Standardanwendungen von Cumulocity abonniert.
 
 ![Anwendung abonnieren](/guides/images/benutzerhandbuch/ee-subtenants-applications.png)
 
@@ -87,7 +87,7 @@ Um einen Mandanten zu sperren, klicken Sie auf das Menüsymbol und wählen Sie i
 
 ![Sperren eines Mandanten](/guides/images/benutzerhandbuch/ee-subtenant-suspend.png)
 
-Bestätigen Sie im folgenden Dialogfenster das Sperren, indem Sie **Ok** klicken und Ihr Passwort eingeben Der Mandant wird durch ein rotes Kreuzsymbol als gesperrt gekennzeichnet. Außerdem wird eine E-Mail an den Administrator des Mandanten gesendet, wenn eine entsprechende E-Mail-Adresse konfiguriert ist.
+Bestätigen Sie im folgenden Dialogfenster das Sperren, indem Sie **OK** klicken und Ihr Passwort eingeben Der Mandant wird durch ein rotes Kreuzsymbol als gesperrt gekennzeichnet. Außerdem wird eine E-Mail an den Administrator des Mandanten gesendet, wenn eine entsprechende E-Mail-Adresse konfiguriert ist.
 
 > **Info**: Als Service Provider können Sie diese E-Mail unterdrücken.
 
@@ -101,13 +101,13 @@ Um einen Untermandanten und alle seine Daten endgültig zu löschen, klicken Sie
 
 ### <a name="tenants-custom-properties"></a>Bearbeitung von benutzerdefinierten Attributen
 
-Die Registerkarte "Benutzerdefinierte Attribute" ermöglicht Ihnen das Anzeigen und Ändern von Werten von benutzerdefinierten Attributen, sowohl vordefinierten (wie "Externe Referenz") als auch denen, die in der [Attributsbibliothek](/guides/benutzerhandbuch/administration/#properties) definiert sind. Solche Attribute werden auch als Spalten in der [Benutzungsstatistiktabelle](#usage-stats) angezeigt.
+Die Registerkarte **Benutzerdefinierte Attribute** ermöglicht Ihnen das Anzeigen und Ändern von Werten von benutzerdefinierten Attributen, sowohl vordefinierten (wie "Externe Referenz") als auch denen, die in der [Attributsbibliothek](/guides/benutzerhandbuch/administration/#properties) definiert sind. Solche Attribute werden auch als Spalten in der [Benutzungsstatistiktabelle](#usage-stats) angezeigt.
 
 ![Benutzerdefinierte Attribute](/guides/images/benutzerhandbuch/Admin_SubtenantCustomProperties.PNG)
 
 ### <a name="usage-stats"></a>Nutzungsstatistiken abrufen
 
-Die "Nutzungsstatistiken"-Seite zeigt statistische Informationen für jeden Untermandanten an.
+Die Seite **Nutzungsstatistiken** zeigt statistische Informationen für jeden Untermandanten an.
 
 Die folgenden Informationen werden für jeden Untermandanten angezeigt:
 
@@ -142,7 +142,7 @@ Das Erstellen einer Mandantenregel mit bestimmten Optionen und Regeln spart Zeit
 
 > **Info**: Die Optionen und Regeln werden in den Mandanten kopiert. Änderungen an der Regel haben keine Auswirkungen auf bereits erstellte Mandanten.
 
-Klicken Sie "Mandantenregeln" im Menü "Mandanten", um alle verfügbaren Regeln anzuzeigen.
+Klicken Sie **Mandantenregeln** im Menü **Mandanten**, um alle verfügbaren Regeln anzuzeigen.
 
 ![Mandantenregeln](/guides/images/benutzerhandbuch/ee-tenant-policies.png)
 

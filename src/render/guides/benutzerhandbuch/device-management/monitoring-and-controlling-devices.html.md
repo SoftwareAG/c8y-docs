@@ -163,7 +163,7 @@ Cumulocity zeigt Kommandos für einzelne Geräte sowie für alle Geräte an:
 * Um die Kommandos für alle Geräte anzuzeigen, klicken Sie **Gerätesteuerung** im Menü **Übersichten** im Navigator.  
 * Um die Alarme für ein bestimmtes Gerät anzuzeigen, wechseln Sie zur Registerkarte **Steuerung** in den Gerätedetails dieses Geräts.
 
-![Device Control](/guides/images/users-guide/DeviceManagement/DevMgmt_DeviceControl.png)
+![Device Control](/guides/images/benutzerhandbuch/devmgmt-operations.png)
 
 Kommandos können sich in einem der folgenden Zustände befinden, angezeigt durch entsprechende Symbole:
 

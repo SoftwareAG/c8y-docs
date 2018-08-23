@@ -346,7 +346,7 @@ The following fields can be observed:
 - **Show status:** Defines how the variable is shown in the inventory. 
 - **Update status:** Defines how the variable is updated in Cumulocity.
 - **Send measurement:** Create a measurement when the value of the variable is changed.
-- **Raise alarm:** Create an alarm if a given mask matches with the value of the variable. ((value & mask) == mask). Therefore, it is possible to raise alarms on single bits of e.g. an Unsigned8 variable, like the Error-Register.
+- **Raise alarm:** Create an alarm if a given mask matches with the value of the variable ((value & mask) == mask). Therefore, it is possible to raise alarms on single bits of e.g. an Unsigned8 variable, like the Error-Register.
 - **Raise event:** Create an event, whenever the value of the variable is changed. 
 
 After adding variables to the new device type, they are listed in the “Variables” section of the device type. All variables are grouped by the given display category, i.e. variables with same category are grouped together.
@@ -377,9 +377,9 @@ In the "CANopen" section, up to 127 CANopen devices can be added to the gateway 
 
 - **Name:** The name of the device used for visualization.
 - **Device type:** The device type of the CANopen device. The user can select from a list of all CANopen device types which are stored in the device database.
-- **Node ID:** The CANopen Node-Id of the device. It is used for addressing the device inside the CANopen network.
+- **Node ID:** The CANopen node ID of the device. It is used for addressing the device inside the CANopen network.
 
-> The device type and Node-Id need to match with the real CANopen device, otherwise setting up the communication is not possible or wrong values will be transmitted.
+> The device type and node ID need to match with the real CANopen device, otherwise setting up the communication is not possible or wrong values will be transmitted.
  
 ### <a name="import"></a>Exporting and importing device types
 

@@ -171,8 +171,6 @@ To create a deployable zip file, you need to add the following to your pom file:
                             <name>hello-world</name>
                             <image>hello-world</image>
                             <encoding>UTF-8</encoding>
-                            <rpmSkip>true</rpmSkip>
-                            <containerSkip>false</containerSkip>
                         </configuration>
                     </execution>
                 </executions>

@@ -6,7 +6,7 @@ layout: redirect
 
 Audit-Logs zeigen die von Benutzern ausgeführten Kommandos.
 
-Um die Audit-Logs-Liste anzuzeigen, klicken Sie "Audit Logs" im Menü "Konto". Für jeden Logeintrag werden die folgenden Informationen bereitgestellt:
+Um die Audit-Logs-Liste anzuzeigen, klicken Sie **Audit Logs** im Menü **Konto**. Für jeden Logeintrag werden die folgenden Informationen bereitgestellt:
 
 <table>
 

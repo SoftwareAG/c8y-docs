@@ -7,7 +7,7 @@ layout: redirect
 
 <a name="home"></a>
 
-Die Startseite der "Administration"-Anwendung enthält
+Die Startseite der Anwendung "Administration" enthält
 
 *   eine Begrüßung,
 *   Quick Links zu wesentlichen Funktionen der Anwendung,

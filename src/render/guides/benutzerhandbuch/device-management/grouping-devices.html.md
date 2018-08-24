@@ -41,9 +41,9 @@ Um eine Gerät einer Gruppe zuzuweisen, klicken Sie **Geräte zuweisen** rechts 
 
 Um eine Zuweisung aufzuheben, öffnen Sie in dem entsprechenden Eintrag das Kontextmenü über das Menüsymbol und wählen Sie **Zuordnung aufheben**.
 
-**Sammelkommandos**
+**Stapelkommandos**
 
-In der Registerkarte **Sammelkommandos** können Sammelkommandos, die für die Gruppe erstellt wurden, verwaltet werden. Mit Sammelkommandos können Sie in einem Schritt Kommandos für jedes Gerät in der Gruppe ausführen. Weitere Informationen finden Sie unter [Sammelkommandos](#bulk-operations) in "Überwachen und Steuern von Geräten".
+In der Registerkarte **Stapelkommandos** können Stapelkommandos, die für die Gruppe erstellt wurden, verwaltet werden. Mit Stapelkommandos können Sie in einem Schritt Kommandos für jedes Gerät in der Gruppe ausführen. Weitere Informationen finden Sie unter [Stapelkommandos](#bulk-operations) in "Überwachen und Steuern von Geräten".
 
 
 ### Erstellen einer neuen Gruppe
@@ -90,7 +90,7 @@ Aus der Gruppenperspektive:
 ### Bearbeiten einer Gruppe
 
 1. Klicken Sie im Menü **Gruppe** im Navigator auf eine Gruppe, um diese zu öffnen. 
-2. Klicken Sie **Bearbeiten** in der Registerkarte **Info**. Sie können den Namen der Gruppe bearbeiten sowie Benutzerberechtigungen für die Gruppe zuweisen. Weitere Informationen zu den Berechtigungen finden Sie unter Administration > [Verwalten von Berechtigungen](/guides/users-guide/administration#managing-permissions).
+2. Klicken Sie **Bearbeiten** in der Registerkarte **Info**. Sie können den Namen der Gruppe bearbeiten sowie Benutzerberechtigungen für die Gruppe zuweisen. Weitere Informationen zu den Berechtigungen finden Sie unter Administration > [Verwalten von Berechtigungen](/guides/benutzerhandbuch/administration#managing-permissions).
 
 ### <a name="smart-groups"></a>Verwenden von dynamischen Gruppen
 

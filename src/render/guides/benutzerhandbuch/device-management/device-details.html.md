@@ -60,7 +60,7 @@ Die Information wird auf den folgenden Karten bereitgstellt:
 |:---|:---|
 |Anmerkungen|Enthält optionale Anmerkungen, die über aktuelle Aktivitäten informieren. Anmerkungen können normalerweise nur vom Administrator bearbeitet werden. Um eine Anmerkungen hinzuzufügen oder zu bearbeiten, klicken Sie **Bearbeiten**, geben Sie eine neue Anmerkung oder Änderungen im Textfeld ein und bestätigen Sie Ihre Eingaben, indem Sie das grüne Häkchen rechts vom Textfeld klicken. 
 |Gerätestatus|Enthält verbindungsrelevante Informationen, die im Detail unter [Verbindungsüberwachung](#connection-monitoring) beschrieben sind. 
-|Gerät und Kommunikation|Enthält einen Datenpunktgraphen, der Echtzeitdaten von bestimmten Messwerten anzeigt. Detaillierte Informationen finden Sie unter [Verwenden des Datenexplorers](/guides/users-guide/cockpit#data-explorer) in der Cockpit-Dokumentation.
+|Gerät und Kommunikation|Enthält einen Datenpunktgraphen, der Echtzeitdaten von bestimmten Messwerten anzeigt. Detaillierte Informationen finden Sie unter [Verwenden des Datenexplorers](/guides/benutzerhandbuch/cockpit#data-explorer) in der Cockpit-Dokumentation.
 |Gerätedaten|Enthält editierbare Informationen zum Gerät ( Name, Typ, ID, Besitzer, zuletzt aktualisiert). Die Felder **ID** und **Zuletzt aktualisiert** können nicht bearbeitet werden. Außerdem werden hier Informationen zur Hardware (editierbar) und Firmware (nicht editierbar) angezeigt, falls verfügbar.
 |Aktive kritische Alarme|Zeigt die aktiven kritischen Alarme für das Gerät an. 
 |Gruppenzuordnung|Zeigt die Gruppen an, zu denen das Gerät gehört. Außerdem kann das Gerät hier weiteren Gruppen zugeordnet werden oder eine Zuordnung aufgehoben werden. Detaillierte Informationen zum Gruppieren von Geräten finden Sie unter [Gruppieren von Geräten](#grouping-devices).
@@ -94,7 +94,7 @@ Dies ermöglicht einen effizienten Überblick über größere Zeitintervalle. Es
 
 Klicken Sie **Echtzeit**, um Echtzeitaktualisierungen der Graphen zu erhalten, sobald neue Daten von den Geräten empfangen werden. 
 
-Sie können die graphische Darstellung und Achsenbegrenzung durch sogenannte "KPIs" modifizieren, siehe [Administration](/guides/users-guide/administration).
+Sie können die graphische Darstellung und Achsenbegrenzung durch sogenannte "KPIs" modifizieren, siehe [Administration](/guides/benutzerhandbuch/administration).
 
 **Messwerteformate**
 

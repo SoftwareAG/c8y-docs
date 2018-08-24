@@ -1,6 +1,6 @@
 ---
 order: 80
-title: SmartREST-Templates
+title: Verwenden von SmartREST-Templates
 layout: redirect
 ---
 

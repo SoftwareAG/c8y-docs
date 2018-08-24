@@ -27,7 +27,11 @@ Schalten Sie das Gerät bzw. die Geräte ein und warten Sie, bis die Verbindung 
 
 Wenn ein Gerät verbunden ist, wechselt der Status auf "Bitte akzeptieren". Klicken Sie **Akzeptieren**, um die Verbindung zu bestätigen. Der Status des Geräts wechselt auf "Akzeptiert".
 
-**Info**: Bei Problemen sehen Sie im [Device Guide](/guides/devices) für Ihren Gerätetypen nach, suchen Sie nach Ihrem Gerätetypen im [Developer Center](http://cumulocity.com/dev-center/) auf unserer Website oder konsultieren Sie das Handbuch Ihres Geräts.
+>**Info**: Bei Problemen finden Sie möglicherweise weitere Information
+
+>* im jeweiligen [Device Guide](/guides/devices) für Ihren Gerätetypen,
+* im [Developer Center](http://cumulocity.com/dev-center/) auf unserer Website
+* oder im Handbuch Ihres Geräts.
 
 ### <a name="creds-upload"></a>Bulk-Registrierung von Geräten
 
@@ -56,5 +60,4 @@ Um die Geräte zu verbinden, müssen diese mit den relevanten Informationen vor-
 
 **Info**: Wenn Sie mit der Enterprise Edition von Cumulocity arbeiten, können Sie auch Geräte über mehrere Mandanten registrieren, indem Sie eine Spalte "Mandant" hinzufügen und die CSV-Datei vom Management-Mandanten aus importieren. 
 
-Weitere Informationen zum Dateiformat und möglichen CSV-Varianten finden Sie unter  
-[Bulk device credentials](/guides/reference/device-credentials/#creds-upload) im Reference Guide.
+Weitere Informationen zum Dateiformat und möglichen CSV-Varianten finden Sie unter [Bulk device credentials](/guides/reference/device-credentials/#creds-upload) im Reference Guide.

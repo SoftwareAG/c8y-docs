@@ -40,9 +40,9 @@ Um eine Konfiguration von einem Gerät zu laden, führen Sie folgende Schritte a
 1. Navigieren Sie zu dem entsprechenden Gerät und wechseln Sie zur Registerkarte  **Konfiguration**. 
 2. Klicken Sie **Neuen Snapshot vom Gerät laden** rechts oben unter **Konfigurationssnapshot**.
 
-Der geladene Snapshot wird zum Konfigurations-Repository hinzugefügt. 
+Der geladene Snapshot wird zum Konfigurations-Repository hinzugefügt.
 
-![Konfigurationssnapshot laden](/guides/images/benutzerhandbuch/devmgmt-snapshot-retrieve.png)
+<img src="/guides/images/benutzerhandbuch/devmgmt-snapshot-retrieve.png" alt="Konfigurationssnapshot laden" style="max-width: 75%"> 
 
 ### Anwenden eines Konfigurationssnapshots auf ein Gerät
 

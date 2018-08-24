@@ -16,6 +16,6 @@ Die folgenden Abschnitte beschreiben detailliert alle Funktionalitäten der Devi
 |[Verwalten von Gerätetypen](#managing-device-types)|Wie man Daten von verschiedenen Gerätetypen mit Hilfe von [Geräteprotokollen](#managing-device-types) verarbeitet. 
 |[Verwalten von Gerätedaten](#managing-device-data)|Wie man [Firmware and Software](#software-repo) für Geräte verwaltet sowie [Konfigurationssnapshots](#configuration-repository). 
 |[Arbeiten mit Simulatoren](#simulator)|Wie man Geräte mit der [Simulatorfunktion](#simulator) abbildet, um die Funktionalität von verbundenen Hardware-Geräten zu simulieren.
-|[Verwenden von SmartREST-Templates](#smartrest-templates)|Wie man [SmartREST-  Templates](#Smartrest-templates) verwendet, eine Sammlung von Anfrage- und Antwort-Templates, die zum Konvertieren von CSV-Daten und Cumulocity Rest API-Aufrufen verwendet werden.
+|[Verwenden von SmartREST-Templates](#smartrest-templates)|Wie man [SmartREST-  Templates](#smartrest-templates) verwendet, eine Sammlung von Anfrage- und Antwort-Templates, die zum Konvertieren von CSV-Daten und Cumulocity Rest API-Aufrufen verwendet werden.
 
 

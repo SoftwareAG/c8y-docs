@@ -78,6 +78,6 @@ Klicken Sie **Benutzerdefiniertes Kommando hinzufügen**, um eigene Kommandos zu
 
 ### Alarme für den Simulator
 
-Die Registerkarte **Alarme** eines Simulators zeigt Alarme an, die den Simulator selbst betreffen (nicht das simulierte Gerät), d.h. Alarme für den Fall, dass der Simulator nicht korrekt arbeitet. Weitere Informationen zu Alarmen finden Sie unter [Arbeiten mit Alarmen](#alarms). 
+Die Registerkarte **Alarme** eines Simulators zeigt Alarme an, die den Simulator selbst betreffen (nicht das simulierte Gerät), d.h. Alarme für den Fall, dass der Simulator nicht korrekt arbeitet. Weitere Informationen zu Alarmen finden Sie unter [Arbeiten mit Alarmen](#alarm-monitoring). 
 
 ![Simulator Alarm](/guides/images/benutzerhandbuch/simalarmde.png)

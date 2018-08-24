@@ -84,7 +84,7 @@ The bottom of the dialog shows all data points of the selected object. Select th
 
 To save the data point to the Data Point Library, click the menu icon of the data point and from the context menu select **Save to library**. 
 
-<img src="/guides/images/users-guide/Cockpit/cockpitdatapoint-menu.png" name="data point context menu" style="width:75%;"/>
+<img src="/guides/images/users-guide/Cockpit/cockpit-datapoint-menu.png" name="data point context menu" style="width:75%;"/>
 
 For details on the Data Point Library refer to [Using the Datapoint Library](#data-point-library).
 

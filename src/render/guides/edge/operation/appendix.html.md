@@ -1,5 +1,5 @@
 ---
-order: 70
+order: 80
 title: Tips and tricks
 layout: redirect
 ---

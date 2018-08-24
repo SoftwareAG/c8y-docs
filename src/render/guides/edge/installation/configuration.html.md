@@ -62,7 +62,7 @@ You will be prompted to select one of the following options:
 
 		$ Enter Domain SSL Certificate Private Key file path 
 
-1. Provide the absolute path for the “.licence” file e.g. e.g. "/home/admin/ myown.iot.com.licence".
+1. Provide the absolute path for the “.licence” file e.g. e.g. "/home/admin/myown.iot.com.licence".
 
 		$ Enter Cumulocity License file path
 

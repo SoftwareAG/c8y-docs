@@ -16,13 +16,13 @@ Klicken Sie auf die **Plus**-Schaltfläche in der oberen Leiste und wählen Sie 
 
 <img src="/guides/images/benutzerhandbuch/cockpit-dashboard-create.png" name="Create dashboard" style="width:75%;"/>
 
-Gaben Sie im Abschnitt "Dashboard-Info" des Dashboard-Editors folgende Informationen ein:
+Gaben Sie im Abschnitt **Dashboard-Info** des Dashboard-Editors folgende Informationen ein:
 
 * Einen Namen für das Dashboard, der auch im Navigator angezeigt wird.
 * Die Position des Dashboards im Navigator. "10000" erscheint an oberster und "-10000" an unterster Position.
 * Ein Symbol, das neben dem Dashboard im Navigator erscheint. 
 
-Im Abschnitt "Dashboard-Layout" können Sie ein Design für das Dashboard wählen ("Hell", "Dunkel", "Transparent" oder "Branding") und einen Standardstil für die Kopfzeile der Widgets ("Standard", "Rand", "Overlay", oder "Verborgen"). Außerdem können Sie die Einstellung für den Rand der Widgets festlegen (Standwert ist 15 px). 
+Im Abschnitt **Dashboard-Layout** können Sie ein Design für das Dashboard wählen ("Hell", "Dunkel", "Transparent" oder "Branding") und einen Standardstil für die Kopfzeile der Widgets ("Standard", "Rand", "Overlay", oder "Verborgen"). Außerdem können Sie die Einstellung für den Rand der Widgets festlegen (Standwert ist 15 px). 
 
 Eine Vorschau der ausgewählten Layout-Einstellungen wird unmittelbar auf der rechten Seite angezeigt, um Ihre Einstellungen zu visualisieren.
 
@@ -65,7 +65,7 @@ Sie können Dashboards nur bearbeiten, wenn diese entsperrt sind. Verwenden Sie 
 
 Sie können ein Dashboard für ein Gerät erstellen und auf alle Geräte des gleichen Typs anwenden. 
 
-Wählen Sie dazu die Option "Dashboard auf alle Geräte des Typs [TYP] anwenden" im Dashboard-Editor. [TYP] zeigt den Typ des Geräts an, das gerade ausgewählt ist.
+Wählen Sie dazu die Option **Dashboard auf alle Geräte des Typs [TYP] anwenden** im Dashboard-Editor. [TYP] zeigt den Typ des Geräts an, das gerade ausgewählt ist.
 
 In Dashboard-Editor wird die folgende Nachricht angezeigt:
 
@@ -87,7 +87,7 @@ Klicken Sie **Mehr...** in der oberen Menüleiste und wählen Sie im Kontextmen�
 
 Navigieren Sie zu dem Objekt, in welches Sie das Dashboard kopieren möchten und wählen Sie im Kontextmenü **Dashboard [NAME] einfügen**, um das Dashboard einzufügen.
 
-Alternativ können Sie zum Kopieren von Dashboards auch die Methode "Dashboard pro Typ" verwenden. Mit dieser Methode wenden Sie ein Dashboard eines Objekts auf **alle** Objekte des gleichen Typs an. 
+Alternativ können Sie zum Kopieren von Dashboards auch die Methode **Dashboard pro Typ** verwenden. Mit dieser Methode wenden Sie ein Dashboard eines Objekts auf **alle** Objekte des gleichen Typs an. 
 
 
 ### Löschen von Dashboards

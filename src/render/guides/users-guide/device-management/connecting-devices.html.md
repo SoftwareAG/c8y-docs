@@ -9,6 +9,7 @@ layout: redirect
 This section describes how to connect devices to your Cumulocity account either manually or by bulk-registration.
 
 ### <a name="device-registration-manually"></a>How to connect a device manually
+
 The following process describes how to connect devices manually. Depending on the type of device you want to connect, not all steps of the process may be relevant. 
 
 **Info**: In case of any issues, consult the [Device Guide](/guides/devices) applicable for your device type, search for your device type in the [Developer Center](http://cumulocity.com/dev-center/) on our  website for further information, or look up the manual of your device.

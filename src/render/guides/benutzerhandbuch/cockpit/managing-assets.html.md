@@ -30,7 +30,7 @@ Asset-Hierarchie.
 
 Die Gerätehierarchie bildet die Verknüpfung von Geräten mit Cumulocity aus Kommunikationssicht ab. Die Asset-Hierarchie strukturiert die Assets, die über die M2M-Geräte fernüberwacht und gesteuert werden. Nähere Informationen finden Sie unter [Cumulocity's Domain Model](/guides/concepts/domain-model) im Concepts guide.
 
-In the Cockpit-Anwendung konstruieren Sie Ihre Asset-Hierarchie in dem Sie Gruppenobjekte erstellen und Geräte mit den Gruppen verknüpfen. 
+In der Cockpit-Anwendung konstruieren Sie Ihre Asset-Hierarchie, indem Sie Gruppenobjekte erstellen und Geräte mit den Gruppen verknüpfen. 
 Die Asset-Hierarchie hängt von den verwendeten IoT-Geräten ab. 
 
 Es gibt viele verschiedene Typen von IoT-Geräten, wobei diese zwei Typen besonders häufig sind:
@@ -69,7 +69,7 @@ Beim Gebäudemanagement ist es häufig so, dass eine Gruppe von Sensoren in eine
 
 In der Asset-Hierarchie unterscheidet Cumulocity zwischen Top-Level-Gruppen und untergeordneten Assets (Kind-Assets).
 
-Im Navigator werden Top-Level-Gruppen im Menü "Gruppen" auf oberster Ebene angezeigt. Untergeordnete Assets werden darunter angezeigt oder in der Registerkarte "Kind-Assets" einer bestimmten Gruppe.
+Im Navigator werden Top-Level-Gruppen im Menü **Gruppen** auf oberster Ebene angezeigt. Untergeordnete Assets werden darunter angezeigt oder in der Registerkarte **Kind-Assets** einer bestimmten Gruppe.
 
 <img src="/guides/images/benutzerhandbuch/cockpit-sub-assets.png" name="Kind-Assets" style="width:100%;"/>
 
@@ -79,7 +79,7 @@ Wenn Sie ein Objekt im Navigator auswählen, werden auf der rechten Seite entspr
 
 Wenn Sie ein Gateway-Gerät hinzufügen, werden die Kindgeräte nicht angezeigt. Um Kindgeräte anzuzeigen, müssen diese zum jeweiligen Asset hinzugefügt werden. Details zur untergeordneten Hierarchie können in der Device Management-Anwendung eingesehen und editiert werden.
 
-Um in der Asset-Hierarchie weiter zu navigieren, verwenden Sie den Navigator oder wählen Sie ein Objekt in der Registerkarte "Kind-Asset" aus. Um in der Asset-Hierarchie nach oben zu navigieren, verwenden Sie den Eintrag in der Pfadnavigation unter dem Namen des Assets.
+Um in der Asset-Hierarchie weiter zu navigieren, verwenden Sie den Navigator oder wählen Sie ein Objekt in der Registerkarte **Kind-Assets** aus. Um in der Asset-Hierarchie nach oben zu navigieren, verwenden Sie den Eintrag in der Pfadnavigation unter dem Namen des Assets.
 
 
 ### Asset-Details
@@ -105,13 +105,13 @@ Führen Sie folgende Schritte aus, um eine neue Gruppe zu erstellen:
 1. Klicken Sie die **Plus**-Schaltfläche rechts in der oberen Leiste und wählen Sie die Menüoption **Neue Gruppe**. <br><br>
 <img src="/guides/images/benutzerhandbuch/cockpit-create-group.png" name="Gruppe erstellen" style="width:50%;"/><br>
 2. Geben Sie im folgenden Fenster einen eindeutigen Namen für die Gruppe ein.
-3. Geben Sie im Feld "Gerätesuche" Suchkriterien für die Geräte ein, die Sie zur Gruppe hinzufügen möchten (z. B. "ublox"). Eine Liste mit passenden Geräten wird angezeigt.  
+3. Geben Sie im Feld **Gerätesuche** Suchkriterien für die Geräte ein, die Sie zur Gruppe hinzufügen möchten (z. B. "ublox"). Eine Liste mit passenden Geräten wird angezeigt.  
 4. Wählen Sie die Geräte aus, die Sie hinzufügen möchten.
 5. Klicken Sie **Gruppe mit [x] Gerät(en) erstellen**, um die Gruppe zu erstellen.
 
 >**Info:** Eine Gruppe kann auch mit "0" Geräten erstellt werden.
 
-Um eine neue Gruppe als Kind zu einer existierenden Gruppe hinzuzufügen, navigieren Sie zur entsprechenden "Kind-Asset"-Registerkarte und klicken Sie  **Gruppe hinzufügen** in der oberen Menüleiste.
+Um eine neue Gruppe als Kind zu einer existierenden Gruppe hinzuzufügen, navigieren Sie zur entsprechenden Registerkarte **Kind-Assets** und klicken Sie  **Gruppe hinzufügen** in der oberen Menüleiste.
 
 ### <a name="assigning-devices"></a>Zuweisen von Geräten zu Gruppen
 
@@ -119,18 +119,18 @@ Bevor Sie ein Gerät zu einer Asset-Hierarchie hinzufügen können, muss das Ger
 
 Führen Sie die folgenden Schritte aus, um ein Gerät einer Gruppe zuzuweisen:
 
-1. Wählen Sie die gewünschte Gruppe im Navigator und öffnen Sie die Registerkarte "Kind-Asset". In der Registerkarte "Kind-Asset" werden alle Geräte, die der entsprechenden Gruppe zugewiesen sind, angezeigt.  
+1. Wählen Sie die gewünschte Gruppe im Navigator und öffnen Sie die Registerkarte **Kind-Assets**. In der Registerkarte **Kind-Assets** werden alle Geräte, die der entsprechenden Gruppe zugewiesen sind, angezeigt.  
 2. Klicken Sie **Gerät zuweisen** rechts in der oberen Menüleiste. Geben Sie im folgenden Fenster Suchkriterien für die Geräte ein, die Sie zur Gruppe hinzufügen möchten (z. B. "ublox"). Eine Liste mit passenden Geräten wird angezeigt.  
 3. Wählen Sie die Geräte aus, die Sie hinzufügen möchten.
 4. Klicken Sie **[x] Gerät(e) zuweisen**, um die ausgewählten Geräte zuzuweisen. 
 
-Die Geräte werden als Kind-Assets in der Registerkarte "Kind-Asset" angezeigt.
+Die Geräte werden als Kind-Assets in der Registerkarte **Kind-Assets** angezeigt.
 
 <img src="/guides/images/benutzerhandbuch/cockpit-assign-devices.png" name="Gerät zuweisen" style="width:50%;"/>
 
 ### Bearbeiten von Gruppen
 
-Um den Namen einer Gruppe zu bearbeiten, navigieren Sie zur Registerkarte "Info" der entsprechenden Gruppe und klicken Sie "**Bearbeiten**" neben dem Namen. Geben Sie den gewünschten Namen ein sowie optional eine Anmerkung, die in der Registerkarte "Info" angezeigt wird. Klicken Sie **Änderungen speichern**, um Ihre Eingaben zu speichern.
+Um den Namen einer Gruppe zu bearbeiten, navigieren Sie zur Registerkarte **Info** der entsprechenden Gruppe und klicken Sie "**Bearbeiten**" neben dem Namen. Geben Sie den gewünschten Namen ein sowie optional eine Anmerkung, die in der Registerkarte **Info** angezeigt wird. Klicken Sie **Änderungen speichern**, um Ihre Einstellungen zu speichern.
 
 <img src="/guides/images/benutzerhandbuch/cockpit-edit-groups.png" name="Gruppe bearbeiten" style="width:50%;"/>
 
@@ -139,15 +139,15 @@ Um den Namen einer Gruppe zu bearbeiten, navigieren Sie zur Registerkarte "Info"
 
 Führen Sie folgende Schritte aus, um eine Top-Level-Gruppe aus dem Navigator zu löschen:
 
-1. Klicken Sie "Gruppen" im Navigator. 
+1. Klicken Sie **Gruppen** im Navigator. 
 2. Klicken Sie auf das Menüsymbol der Gruppe, die Sie löschen möchten.
 3. Klicken Sie im Kontextmenü **Löschen**.
 
 <img src="/guides/images/benutzerhandbuch/cockpit-sub-asset-contextmenu.png" name="Gruppe bearbeiten" style="width:50%;"/>
 
-Führen Sie folgende Schritte aus, um eine Gruppe aus der Registerkarte "Kind-Assets" einer anderen Gruppe zu löschen:
+Führen Sie folgende Schritte aus, um eine Gruppe aus der Registerkarte **Kind-Assets** einer anderen Gruppe zu löschen:
 
-1. Navigieren Sie zur Registerkarte "Kind-Asset" der entsprechenden Gruppe.
+1. Navigieren Sie zur Registerkarte **Kind-Assets** der entsprechenden Gruppe.
 2. Klicken Sie auf das Menüsymbol der Gruppe, die Sie löschen möchten.
 3. Klicken Sie im Kontextmenü **Löschen**.
 
@@ -155,7 +155,7 @@ Führen Sie folgende Schritte aus, um eine Gruppe aus der Registerkarte "Kind-As
 
 Führen Sie die folgenden Schritte aus, um die Zuordnung eines Geräts zu einer Gruppe aufzuheben:
 
-1. Navigieren Sie zur Registerkarte "Kind-Asset" der entsprechenden Gruppe.
+1. Navigieren Sie zur Registerkarte **Kind-Assets** der entsprechenden Gruppe.
 2. Klicken Sie auf das Menüsymbol des Geräts, für das Sie die Zuordnung aufheben möchten.
 3. Klicken Sie im Kontextmenü **Zuordnung aufheben**.
 

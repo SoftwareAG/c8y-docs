@@ -5,11 +5,11 @@ layout: redirect
 ---
 
 
-Unter "Enterprise Edition" in der "Administration"-Anwendung können Einstellungen vorgenommen werden, die Benutzern der Enterprise Edition von Cumulocity über den Umfang der Standardedition hinaus zu Verfügung stehen.
+Unter **Enterprise Edition** in der Anwendung "Administration" können Einstellungen vorgenommen werden, die Benutzern der Enterprise Edition von Cumulocity über den Umfang der Standardedition hinaus zu Verfügung stehen.
 
 ### Branding
 
-In der Registerkarte "Branding", können Sie das Erscheinungsbild der Benutzeroberfläche für Ihre Mandanten nach Ihren Vorlieben gestalten.
+In der Registerkarte **Branding**, können Sie das Erscheinungsbild der Benutzeroberfläche für Ihre Mandanten nach Ihren Vorlieben gestalten.
 
 Die Branding-Funktion ermöglicht es, die Logos und Farben in den Anwendungen zu bearbeiten. Nach dem Speichern der Einstellungen werden alle Untermandanten automatisch aktualisiert.
 
@@ -17,23 +17,23 @@ Die Branding-Funktion ermöglicht es, die Logos und Farben in den Anwendungen zu
 
 **Allgemein**
 
-Unter "Allgemein" können Sie den “Titel” bearbeiten, der im Browser-Tab verwendet wird.
+Unter **Allgemein** können Sie den Titel bearbeiten, der im Browser-Tab verwendet wird.
 
 **Hauptlogo**
 
-Unter “Hauptlogo”können Sie die folgenden Elemente definieren:
+Unter **Hauptlogo** können Sie die folgenden Elemente definieren:
 
 *   Das “Favicon”, das in der Adressleiste des Browsers angezeigt wird. Klicken Sie **Datei wählen**, um eine Datei auf Ihrem Computer auszuwählen. Das unterstütze Format für das Favicon ist “ico”.
 *   Ihr Markenlogo, dass während des Ladens der Anwendung angezeigt wird. Klicken Sie **Datei wählen**, um eine Datei auf Ihrem Computer auszuwählen. Die unterstützen Formate sind “png” und “svg”.
-*   Die “Höhe des Markenlogos”.
+*   Die Höhe des Markenlogos.
 
 **Navigatorlogo**
 
-Unter “Navigatorlogo” können Sie das Logo, das oben im Navigator angezeigt wird, bereitstellen und die “Höhe für das Navigatorlogo” einstellen.
+Unter **Navigatorlogo** können Sie das Logo, das oben im Navigator angezeigt wird, bereitstellen und die Höhe für das Navigatorlogo einstellen.
 
 **Typ**
 
-Im Bereich “Typ” definieren Sie die Schriftarten für Ihre Branding-Version.
+Im Bereich **Typ** definieren Sie die Schriftarten für Ihre Branding-Version.
 
 ![Branding-Typ](/guides/images/users-guide/administration/admin_BrandingType.png)
 
@@ -41,49 +41,49 @@ Sie können die Basisschriftart und die Schriftart für Überschriften wählen s
 
 **Farben**
 
-Im Bereich “Farben” definieren Sie die Farben für Ihre Branding-Version.
+Im Bereich **Farben** definieren Sie die Farben für Ihre Branding-Version.
 
 ![Branding-Farbe](/guides/images/users-guide/administration/admin_BrandingColor.png)
 
 Die folgenden Parameter können definiert werden (Werte in hex, rgb oder rgba):
 
-*   “Haupt-Markenfarbe”.
-*   “Haupt-Markenfarbe”. Der Standardwert ist “#07b91A”.
-*   “Textfarbe”. Der Standardwert ist “#444”.
-*   “Link-Farbe”. Der Standardwert ist die Haupt-Markenfarbe.
-*   “Haupt-Hintergrundfarbe”. Der Standardwert für diese Element ist “#FAFAFA”.
+*   Haupt-Markenfarbe.
+*   Neben-Markenfarbe. Der Standardwert ist “#07b91A”.
+*   Textfarbe. Der Standardwert ist “#444”.
+*   Link-Farbe. Der Standardwert ist die Haupt-Markenfarbe.
+*   Haupt-Hintergrundfarbe. Der Standardwert für diese Element ist “#FAFAFA”.
 
 **Obere Leiste**
 
-Unter “Obere Leiste” definieren Sie die Parameter für die obere Leiste.
+Unter **Obere Leiste** definieren Sie die Parameter für die obere Leiste.
 
 ![Branding Ober Leiste](/guides/images/users-guide/administration/admin_BrandingTopbar.png)
 
 Die folgenden Parameter können definiert werden (Werte in hex, rgb oder rgba):
 
-*   “Hintergrundfarbe”. Der Standardwert ist “#FFFFF”.
-*   “Textfarbe”. Der Standardwert ist “49595B”.
-*   “Hover-Textfarbe für Schaltflächen”. Der Standardwert ist die Haupt-Markenfarbe.
+*   Hintergrundfarbe. Der Standardwert ist “#FFFFF”.
+*   Textfarbe. Der Standardwert ist “49595B”.
+*   Hover-Textfarbe für Schaltflächen. Der Standardwert ist die Haupt-Markenfarbe.
 
 **Navigator**
 
-Unter “Navigator” definieren Sie die Parameter für die obere Leiste.
+Unter **Navigator** definieren Sie die Parameter für die obere Leiste.
 
 ![Branding - obere Leiste](/guides/images/users-guide/administration/admin_BrandingTopbar.png)
 
 Die folgenden Parameter können definiert werden (Werte in hex, rgb oder rgba):
 
-*   “Hintergrundfarbe”. Der Standardwert ist “#2c3637”.
-*   "Hintergrundfarbe der Logoumrandung". Der Standardwert ist “Transparent”.
-*   “Titelfarbe”. Der Standardwert ist “#FFFFF”.
-*   “Farbe für Texte und Schaltflächen”. Der Standardwert ist “#FAFAFA”.
-*   “Farbe für Trennlinien”. Der Standardwert ist “#FAFAFA”.
-*   “Textfarbe” des aktuellen Elements im Navigator. Der Standardwert ist “#FAFAFA”.
-*   “Hintergrundfarbe” des aktuellen Elements im Navigator mit der Haupt-Markenfarbe als Standard.
+*   Hintergrundfarbe. Der Standardwert ist “#2c3637”.
+*   Hintergrundfarbe der Logoumrandung. Der Standardwert ist “Transparent”.
+*   Titelfarbe. Der Standardwert ist “#FFFFF”.
+*   Farbe für Texte und Schaltflächen. Der Standardwert ist “#FAFAFA”.
+*   Farbe für Trennlinien. Der Standardwert ist “#FAFAFA”.
+*   Textfarbe des aktuellen Elements im Navigator. Der Standardwert ist “#FAFAFA”.
+*   Hintergrundfarbe des aktuellen Elements im Navigator mit der Haupt-Markenfarbe als Standard.
 
 **Sonstiges**
 
-Im Bereich “Sonstiges” können Sie den Rand-Radius für Schaltflächen durch Angabe eines Werts in Pixel (px) festlegen.
+Im Bereich S**onstiges** können Sie den Rand-Radius für Schaltflächen durch Angabe eines Werts in Pixel (px) festlegen.
 
 Klicken Sie **Speichern**, um Ihre Eingaben zu speichern.
 
@@ -103,7 +103,7 @@ Die folgende Abbildung zeigt ein Beispiel mit
 
 ### Domain-Name
 
-In der Registerkarte “Domain-Name können Sie Ihren eigenen Domain-Namen festlegen.
+In der Registerkarte **Domain-Name** können Sie Ihren eigenen Domain-Namen festlegen.
 
 ![Domain-Name](/guides/images/users-guide/administration/admin_DomainName.png)
 

@@ -24,6 +24,7 @@ Assume that location updates from cars should be monitored every second while th
 	monitor SendEveryMinute {
 		dictionary<string, Event> latestUpdates;
 		action onload() {
+		monitor.subscribe(Measurement.CHANNEL);
 			on all Event() as e {
 				if e.params.hasKey("c8y_LocationUpdate") {
 					latestUpdates[e.source] := e;
@@ -58,6 +59,7 @@ Another option is to output only every 60th update.
 		}
 		dictionary<string, UpdateAndCount > latestUpdates;
 		action onload() {
+		monitor.subscribe(Measurement.CHANNEL);
 			on all Event() as e {
 				if e.params.hasKey("c8y_LocationUpdate") {
 					UpdateAndCount updateCount := latestUpdates.getOrAddDefault(e.source);

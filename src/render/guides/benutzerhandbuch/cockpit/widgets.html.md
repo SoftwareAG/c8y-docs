@@ -122,11 +122,11 @@ Sie können auch das JSON-Format für das Kommando eingeben, das zum Gerät gese
 
 **Ändern der Tabelle**
 
-Um die Kopfzeile einer Spalte zu bearbeiten, klicken Sie auf den Wert in der Spalte "Beschriftung" und bearbeiten Sie die Beschriftung. 
+Um die Kopfzeile einer Spalte zu bearbeiten, klicken Sie auf den Wert in der Spalte **Beschriftung** und bearbeiten Sie die Beschriftung. 
 
-Sie können die Spalten umsortieren, in dem Sie auf das Symbol ganz links in einer Zeile klicken und den Eintrag durch Ziehen und Ablegen verschieben. 
+Sie können die Spalten umsortieren, indem Sie auf das Symbol ganz links in einer Zeile klicken und den Eintrag durch Ziehen und Ablegen verschieben. 
 
-Um ein Attribut oder eine Aktion zu löschen, fahren Sie mit dem Mauszeiger über die entsprechende Zeile und klicken Sie **Löschen** auf der rechten Seite.
+Um ein Attribut oder eine Aktion zu löschen, bewegen Sie den Mauszeiger über die entsprechende Zeile und klicken Sie **Löschen** auf der rechten Seite.
 
 ### Widget "Bild"
 
@@ -139,7 +139,7 @@ Das Widget "Datenpunktgraph" zeigt einen Datenpunkt (Messwert) in einem Graphen.
 
 <img src="/guides/images/users-guide/Cockpit/Cockpit_DataPointsGraphWidget.png" name="Data Point Graph widget" style="width:75%;"/>
 
-Am einfachsten erstellen Sie ein "Datenpunktgraph"-Widget, in dem Sie zum Daten-Explorer navigieren, **Mehr...** in der oberen Menüleiste klicken und **Als Widget zum Dashboard senden** wählen.
+Am einfachsten erstellen Sie ein "Datenpunktgraph"-Widget, indem Sie zum Daten-Explorer navigieren, **Mehr...** in der oberen Menüleiste klicken und **Als Widget zum Dashboard senden** wählen.
 
 Weitere Informationen zu den konfigurierbaren Parametern finden Sie unter [Visualisieren von Daten mit dem Daten-Explorer](#data-explorer).
 
@@ -154,7 +154,7 @@ Das Widget "Datenpunktliste" zeigt Datenpunkte (Messwerte) in einer Liste, einen
 |:---|:---|
 |Titel|Widget-Titel. Standardmäßig wird der Widget-Typ als Titel verwendet.
 |Datenpunkte|Zeigt eine Liste verfügbarer Datenpunkte. Sie müssen mindestens einen Datenpunkt aktivieren. Klicken Sie **Datenpunkt hinzufügen**, um einen Datenpunkt zur Liste hinzuzufügen. Weitere Informationen finden Sie unter [Hinzufügen von Datenpunkten](#add-data-points).
-|Sichtbare Tabellenspalten|Spalten, die angezeigt werden: <br>Beschriftung: Beschriftung des Datenpunkts. Details finden Sie unter [Visualisieren von Daten im Daten-Explorer](#data-explorer). <br>Ziel: Zielwert. Kann im [Daten-Explorer](##data-explorer) oder in der [Datenpunktbibliothek](#data-point-library) konfiguriert werden.<br>Aktuell: Aktueller Wert. <br>Differenz: Absolute Differenz zwischen aktuellem Wert und Zielwert. <br>Differenz %: Prozentwert der Differenz zwischen aktuellem Wert und Zielwert. <br>Asset: Name des Geräts oder der Gruppe des Datenpunkts. 
+|Sichtbare Tabellenspalten|Spalten, die angezeigt werden: <br>**Beschriftung**: Beschriftung des Datenpunkts. Details finden Sie unter [Visualisieren von Daten im Daten-Explorer](#data-explorer). <br>**Ziel**: Zielwert. Kann im [Daten-Explorer](##data-explorer) oder in der [Datenpunktbibliothek](#data-point-library) konfiguriert werden.<br>**Aktuell**: Aktueller Wert. <br>**Differenz**: Absolute Differenz zwischen aktuellem Wert und Zielwert. <br>**Differenz %**: Prozentwert der Differenz zwischen aktuellem Wert und Zielwert. <br>**Asset**: Name des Geräts oder der Gruppe des Datenpunkts. 
 
 
 ### Widget "Datenpunkttabelle"
@@ -223,7 +223,7 @@ Die folgenden Variablen können im HTML-Code verwendet werden:
 * {{device.*fragment*.*property*}}: Allgemeinere Form des oben genannten. Sie können jedes Attribut oder Fragment des Geräts ansprechen. 
 
 >**Info:** "Gerät" bezieht sich auf das Zielgerät, das in der Widget-Konfiguration ausgewählt wurde. <br>
-*fragment.property* bezieht sich auf die Attribute des entsprechenden Geräts. Um die verfügbaren Attributnamen anzuzeigen, können Sie die Widgets "Asset-Attribute" or “Asset-Tabelle” verwenden. Klicken Sie **+Attribut hinzufügen** in der Widget-Konfiguration, um eine Tabelle der unterstützten Attribute anzuzeigen. Sie können die Werte aus der Spalte "Attribute" kopieren und einfügen. Attribute, die von diesen Widgets erstellt wurden, stehen in den HTML-Widgets nicht zur Verfügung.
+*fragment.property* bezieht sich auf die Attribute des entsprechenden Geräts. Um die verfügbaren Attributnamen anzuzeigen, können Sie die Widgets "Asset-Attribute" or “Asset-Tabelle” verwenden. Klicken Sie **+Attribut hinzufügen** in der Widget-Konfiguration, um eine Tabelle der unterstützten Attribute anzuzeigen. Sie können die Werte aus der Spalte **Attribute** kopieren und einfügen. Attribute, die von diesen Widgets erstellt wurden, stehen in den HTML-Widgets nicht zur Verfügung.
 
 
 ### Widget "Infoanzeige"
@@ -255,7 +255,7 @@ Die Symbole, die die Geräte repräsentieren, sind farbkodiert. Die Farben werde
     * Blau = Mindestens eine "Warnung"
     * Grün = Keine Alarme
 
-Klicken Sie auf ein Gerätesymbol, um folgende Details in einem Popup-Fenster anzuzeigen: 
+Klicken Sie auf ein Gerätesymbol, um folgende Details in einem Fenster anzuzeigen: 
 
 * Name des Geräts. Klicken Sie darauf, um zu diesem Gerät zu navigieren.
 * Datum, an welchem das Gerät zuletzt seinen Standort gesendet hat, wenn verfügbar.
@@ -320,7 +320,7 @@ Das Widget "Rotationsmodell" ermöglicht es, ein Objektmodell eines Geräts zu r
 |Titel|Widget-Titel. Standardmäßig wird der Widget-Typ als Titel verwendet.
 |Ziel-Asset oder -geräte|Objekt (Gruppe oder Gerät), das dargestellt wird.
 |Modelltyp|Modelltyp für das Rendering, entweder "Box" oder "Telefon".
-|Gitternetz|Der "Gitternetz"-Modus stellt das Objekt in einer netzartigen Representation dar. Die Option "Gitternetz" kann an- oder abgeschaltet werden (Standardeinstellung = an). 
+|Gitternetz|Der "Gitternetz"-Modus stellt das Objekt in einer netzartigen Representation dar. Die Option **Gitternetz** kann an- oder abgeschaltet werden (Standardeinstellung = an). 
 |Kameratyp|Kameratyp, der verwendet wird, entweder "Orthographische Kamera" oder "Perspektivische Kamera".
 
 Im Widget "Rotationsmodell" kann das Objekt durch Ziehen und Bewegen gedreht werden. Außerdem kann mit der Maus rein- und rausgezoomt werden.

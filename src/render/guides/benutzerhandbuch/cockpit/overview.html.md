@@ -1,6 +1,6 @@
 ---
 order: 10
-title: Überblick
+title: Übersicht
 layout: redirect
 ---
 

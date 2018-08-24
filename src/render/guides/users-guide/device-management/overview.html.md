@@ -15,7 +15,7 @@ The following sections will walk you through all functionalities of the Device M
 |[Monitoring and controlling devices](#monitoring-and-controlling-devices)|How to monitor the [connection quality](#connection-monitoring) and [service status](#monitoring-services) of devices, how to handle [alarms](#alarm-monitoring) from devices, how to [remote control](#operation-monitoring) and how to [troubleshoot](#events-all) devices.
 |[Managing device types](#managing-device-types)|How to process data from various device types by using [device protocols](#managing-device-types). 
 |[Managing device data](#managing-device-data)|How to retrieve and manage [firmware and software](#software-repo) for devices and how to handle [configuration snapshots](#configuration-repository). 
-|[Working with the simulator](#simulator)|How to model devices with the [simulator](#simulator) in order to have the same level of functionality as connected hardware devices.
+|[Working with simulators](#simulator)|How to model devices with the [simulator](#simulator) in order to have the same level of functionality as connected hardware devices.
 |[Using SmartREST templates](#smartrest-templates)|How to work with [SmartREST  templates](#Smartrest-templates), a collection of request and response templates used to convert CSV data and Cumulocity Rest API calls.
 
 

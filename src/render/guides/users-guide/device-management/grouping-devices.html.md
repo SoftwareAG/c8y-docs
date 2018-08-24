@@ -73,6 +73,10 @@ From the device perspective:
 
 <img src="/guides/images/users-guide/DeviceManagement/DevMgmt_GroupAssignment.png" alt="Add to group" style="max-width: 50%">
 
+If you search for a group by its name which does not exist yet, a **New** button will appear so that you can create a new group with this name from here and assign the device to that group. 
+
+<img src="/guides/images/users-guide/DeviceManagement/devmgmt-group-assignment-new.png" alt="new group" style="max-width: 50%">
+
 From the group perspective:
 
 1. In the navigator, select a group from the "Group" menu and then open the "Sub-assets" tab. In the "Sub-assets" tab, all devices that are assigned to the respective group are displayed. 

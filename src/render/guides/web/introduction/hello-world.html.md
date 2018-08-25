@@ -62,7 +62,7 @@ For more details on other properties of the manifest, see "[Manifests](#manifest
 
 ### <a name="create-application"></a>Create the application in your tenant
 
-After successfully logging in into a Cumulocity UI application, the application key is fetched automatically. Thus, to develop an application we need to make sure that the application is created in our tenant. To create the application in our tenant we simply deploy it using ```c8y deploy:app [appContextPath]```. If you omit appContextPath the contextPath will be read from the "cumulocity.json" at the path where the command was executed.
+After successfully logging in into a Cumulocity UI application, the application key is fetched automatically. Thus, to develop an application we need to make sure that the application is created in our tenant. To create the application in our tenant we simply deploy it using ```c8y deploy:app <appContextPath>```.
 
 ```bash
 $ c8y deploy:app myapplication
@@ -317,10 +317,9 @@ $ c8y build:plugin <pluginName> [outputFolder]
 
 #### deploy:app
 Builds all the plugins, assembles the application and uploads it to the defined tenant. If the app doesn't yet exist on the remote instance it will be automatically created.
-If you omit appContextPath the contextPath will be read from the "cumulocity.json" at the path where the command was executed.
 
 ```bash
-$ c8y deploy:app [appContextPath]
+$ c8y deploy:app <appContextPath>
 ```
 
 The build process for plugins includes the following steps:

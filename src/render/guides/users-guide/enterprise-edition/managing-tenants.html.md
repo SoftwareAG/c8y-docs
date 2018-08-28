@@ -105,7 +105,7 @@ The "Custom properties" tab allows you to view and modify values of custom prope
 
 **Limiting subtenant device number**
 
-The platform administrator can limit the count of concurrently registered root devices or simply all devices(including children devices). The platform administrator can also see the peak count of concurrently registered devices, root devices and the peak value of used storage in the "Usage statistics" page.
+The platform administrator can limit the count of concurrently registered root devices or simply all devices (including children devices). The platform administrator can also see the peak count of concurrently registered devices, root devices and the peak value of used storage in the "Usage statistics" page.
 
 ### <a name="usage-stats"></a> Retrieving usage statistics
 

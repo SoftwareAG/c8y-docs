@@ -19,9 +19,14 @@ t/<api>/<resource>/<action>/<id>
 To publish messages in *QUIESCENT* mode:
 ```
 q/<api>/<resource>/<action>/<id>
+```
+
+To publish messages in *CEP* mode:
+```
+c/<api>/<resource>/<action>/<id>
 ``` 
 
-Refer to [Processing Mode](/guides/reference/rest-implementation#processingmode) for more information about transient & quiescent data processing.
+Refer to [Processing Mode](/guides/reference/rest-implementation#processingmode) for more information about transient, quiescent & CEP data processing. 
 
 ### Topic actions
 

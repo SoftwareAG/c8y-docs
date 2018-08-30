@@ -31,7 +31,7 @@ To publish messages in *CEP* mode:
 c/uc/<X-ID>
 ```
 
-Please, refer to [Processing Mode](/guides/reference/smartrest#processing-mode) section in SmartREST for more information about transient, quiescent & CEP data processing.
+Please, [SmartREST -> Processing Mode](/guides/reference/smartrest#processing-mode) in the Reference guide for more information about transient, quiescent & CEP data processing.
 
 To subscribe for responses:
 ```

@@ -106,7 +106,7 @@ The following fields my be modified:
 |Yellow range min/max|Defines the range when MINOR alarms should be raised by threshold rule.  
 |Red range min/max|Defines the range when CRITICAL alarms should be raised by threshold rule.
 |Display|Value displayed when data is aggregated. May be "Minimum", Maximum", Minimum and maximum".
-|Chart type|The type of chart used for the visulization. May be one of "Line", "Points", "Line and points", "Bars". Default value is "line".
+|Chart type|The type of chart used for the visualization. May be one of "Line", "Points", "Line and points", "Bars", "Step before" (alternating between vertical and horizontal segments, as in a step function) or "Step after" (alternating between horizontal and vertical segments). Default value is "line".
 |Y axis|Defines where the y-axis is shown. May be one of "Auto", "Left", "Right". Default value is "Auto". 
 
 After customizing the properties of a data point, you can save the modified settings to the Data Point Library. Click the menu icon and from the context menu select **Update [NAME] to library**.

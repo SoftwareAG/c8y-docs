@@ -47,8 +47,6 @@ To logout, click the **User** button at the right of the the top bar and from th
 
 <img src="/guides/images/users-guide/logout.png" alt="Logout menu" style="max-width: 60%">
 
-> **Info:** For security reasons, Cumulocity does not use Cookie technology.
-
 ### <a name="welcome"></a>Welcome screen
 
 When you log into Cumulocity for the first time, you will be taken to the default application (usually the Cockpit application if not configured differently) where the **Welcome** page initially opens up.

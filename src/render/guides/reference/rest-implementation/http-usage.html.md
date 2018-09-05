@@ -90,7 +90,8 @@ The login with OAuth requires a correct configuration on the [Cumulocity side](s
 Authentication details are exchanged using cookies. There are two parts to it, the first is the authentication cookie that is handled automatically by the Cumulocity platform. The second is the XSRF-TOKEN cookie. When a client receives the cookie, it should take the value and put it in the X-XSRF-TOKEN request header in all subsequent requests.  
 
 The flow of authenticating with OAuth authentication code grant is as follows:
-![Authentication flow](src/static/guides/images/reference-guide/oauth-simple-flow.png)
+
+![Authentication flow](/guides/images/reference-guide/oauth-simple-flow.png)
 
 The first request executed by the browser is:
 

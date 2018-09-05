@@ -16,7 +16,7 @@ From the **Settings** menu, administrators can modify or manage various settings
 
 Cumulocity provides single sign-on functionality, that allows a user to login with a single 3rd-party authorization server using the OAuth2 protocol, for example Azure Active Directory. Currently authorization code grant is supported only with access tokens in form of JWT. 
 
-	**Info**: The feature is built on top of cookies technology so be aware we are using it. 
+	**Info**: This feature is built on top of cookies technology. To be able to use it, you must have cookies enabled in the settings of your browser.  
 
 This feature is enabled since Cumulocity version 9.12. For correct behavior any microservice needs to use the microservice SDK with version 9.12 or later. 
 

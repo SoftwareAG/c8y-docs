@@ -22,6 +22,9 @@ In the **Register devices** dialog, you may choose one of the following options:
 If you are subscribed to the required applications you will see a third option
 **Custom device registration** for registering devices of specific types, e.g. LoRa or Sigfox, see the documentation for these optional services for details. 
 
+<img src="/guides/images/users-guide/DeviceManagement/devmgmt-register-devices-custom.png" alt="Register devices" style="max-width: 50%">
+
+
 ### <a name="device-registration-manually"></a>Connecting devices manually
 
 The following process describes how to connect devices manually. Depending on the type of device you want to connect, not all steps of the process may be relevant. 

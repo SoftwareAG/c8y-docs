@@ -22,7 +22,41 @@ For further information refer to the [Apama guide](/guides/apama) or see the top
 ### Uploading a custom Apama CEP rule
 
 1. First create a custom Apama mon file, as shown in our example for measurements.
-<img src="/guides/images/edge/edge-apama-mon-file.png" name="mon file" style="width:100%;"/> 
+
+		using com.apama.cumulocity.Measurement;
+		using com.apama.cumulocity.Event;
+		using com.apama.cumulocity.Alarm;
+		
+		monitor SampleMonitor {
+		
+	    action onload {		
+			monitor.subscribe(Measurement.CHANNEL);
+	        on all Measurement() as measurement {
+			
+	            Event newEvent := new Event;
+				newEvent.source := measurement.source;
+	            newEvent.type := "Event in Edge 9.0.x";
+	            newEvent.time := currentTime;
+	            newEvent.text := "test custom smart rule using apama CEP - in Edge 9.0.x";
+	            newEvent.params["First_String"] := "Execute the plan discussed";
+				newEvent.params["Second_String"] := "Some kmat Random key-value param";
+	            send newEvent to "CumulocityIoT";
+				
+				if measurement.measurements.getOrDefault("c8y_SpeedMeasurement").getOrDefault("speed").value > 600.0 {
+					send Alarm("", "My_Alarm_MAJOR_Version_1", measurement.source, currentTime, 
+								" Test in Edge 9.0.x MAJOR Alarm", "ACTIVE", "MAJOR", 
+								1, new dictionary<string, any>) to Alarm.CHANNEL;
+				} else {
+					send Alarm("", "My_KMAT_Alarm_Minor_Version_1", measurement.source, currentTime, 
+								"Test in Edge 9.0.x Alarm MINOR", "ACTIVE", "MINOR", 
+								1, new dictionary<string, any>) to Alarm.CHANNEL;
+				}
+	
+	        }
+	    }
+			
+		}
+	
 
 2. In the Administration application, open the “Own Applications” page from the navigator. Click “**Add application** and in the upcoming window click **Upload custom Apama rule**. <br>
 <img src="/guides/images/edge/edge-apama-upload-file.png" name="Upload file" style="width:50%;"/> 

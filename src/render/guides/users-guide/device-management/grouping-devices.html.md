@@ -68,12 +68,19 @@ You can assign devices to an existing group in two ways.
 From the device perspective:
 
 1. Select a device from the device list and open it.
-2. In the "Info" tab, scroll down to the "Groups assignment" card. In the drop-down field, select the group you want to assign the device to. 
-3. Click **Add to group**.
+2. In the "Info" tab, scroll down to the "Groups assignment" card. Click on the drop-down field and enter the name of the group in which you wish to add the device. In the drop-down field, only matching groups will be highlighted and groups which do not contain the provided text in their names will be hidden.
+3. Select the group in which you want to assign the device. 
+4. Click **Assign**.
 
 <img src="/guides/images/users-guide/DeviceManagement/DevMgmt_GroupAssignment.png" alt="Add to group" style="max-width: 50%">
 
-If you search for a group by its name which does not exist yet, a **New** button will appear so that you can create a new group with this name from here and assign the device to that group. 
+If you search for a group by its name which does not exist yet, a **New** button will appear so that you can create a new group with this name from here and assign the device to that group.
+
+In order to create a new group, the user must have the following permissions:
+
+- ROLE_INVENTORY\_CREATE
+- ROLE_INVENTORY\_ADMIN
+
 
 <img src="/guides/images/users-guide/DeviceManagement/devmgmt-group-assignment-new.png" alt="new group" style="max-width: 50%">
 

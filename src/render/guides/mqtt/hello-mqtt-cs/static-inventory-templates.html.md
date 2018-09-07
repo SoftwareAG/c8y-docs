@@ -12,8 +12,8 @@ Will create a new device for the serial number in the inventory if not yet exist
 | :-------------: | :-------------: | :------ |
 | `deviceName` | string | **Optional**. Name of the device. &lt;serialNumber&gt;|
 | `deviceType` | string | **Optional**. Type of the device.|
-| `errorHandlerAsync` | string | **Required**. Error Handler|
-| `processingMode` | string | **Optional**. Processing Mode|
+| `errorHandlerAsync` | string | **Required**. Error handler|
+| `processingMode` | string | **Optional**. Processing mode|
 
 **Example**
 
@@ -32,8 +32,8 @@ Will create a new child device for the current device. The newly created object 
 | `uniqueChildID` | string | **Required**. The unique child identifier.|
 | `deviceName` | string | **Optional**. Name of the device. &lt;serialNumber&gt;|
 | `deviceType` | string | **Optional**. Type of the device.|
-| `errorHandlerAsync` | string | **Required**. Error Handler|
-| `processingMode` | string | **Optional**. Processing Mode|
+| `errorHandlerAsync` | string | **Required**. Error handler|
+| `processingMode` | string | **Optional**. Processing mode|
 
 **Example**
 
@@ -46,8 +46,8 @@ Will trigger the sending of child devices of the device.
 
 |Field|Data type|Description|
 | :-------------: | :-------------: | :------ |
-| `errorHandlerAsync` | string | **Required**. Error Handler|
-| `processingMode` | string | **Optional**. Processing Mode|
+| `errorHandlerAsync` | string | **Required**. Error handler|
+| `processingMode` | string | **Optional**. Processing mode|
 
 **Example**
 
@@ -71,11 +71,11 @@ Parameters:
 
 |Field|Data type|Description|
 | :-------------: | :-------------: | :------ |
-| `serialNumber` | string | **Optional**. The serial number.|
+| `serialNumber` | string | **Optional**. The serial number of the device.|
 | `model` | string | **Optional**. The model.|
 | `revision` | string | **Optional**. The revision.|
-| `errorHandlerAsync` | string | **Required**. Error Handler|
-| `processingMode` | string | **Optional**. Processing Mode|
+| `errorHandlerAsync` | string | **Required**. Error handler|
+| `processingMode` | string | **Optional**. Processing mode|
 
 **Example**
 
@@ -93,15 +93,15 @@ Parameters:
 
 |Field|Data type|Description|
 | :-------------: | :-------------: | :------ |
-| `imei` | string | **Optional**. The imei.|
-| `iccid` | string | **Optional**. The iccid.|
-| `imsi` | string | **Optional**. The imsi.|
+| `imei` | string | **Optional**. The IMEI.|
+| `iccid` | string | **Optional**. The ICCID.|
+| `imsi` | string | **Optional**. The IMSI.|
 | `mcc` | string | **Optional**. The MCC.|
 | `mnc` | string | **Optional**. The MNC.|
-| `lac` | string | **Optional**. The lac.|
-| `cellId` | string | **Optional**. The revision.|
-| `errorHandlerAsync` | string | **Required**. Error Handler|
-| `processingMode` | string | **Optional**. Processing Mode|
+| `lac` | string | **Optional**. The LAC.|
+| `cellId` | string | **Optional**. The Cell ID.|
+| `errorHandlerAsync` | string | **Required**. Error handler|
+| `processingMode` | string | **Optional**. Processing mode|
 
 **Example**
 
@@ -128,8 +128,8 @@ Parameters:
 | `longitude` | string | **Optional**. The longitude.|
 | `altitude` | string | **Optional**. The altitude.|
 | `accuracy` | string | **Optional**. The accuracy.|
-| `errorHandlerAsync` | string | **Required**. Error Handler|
-| `processingMode` | string | **Optional**. Processing Mode|
+| `errorHandlerAsync` | string | **Required**. Error handler|
+| `processingMode` | string | **Optional**. Processing mode|
 
 **Example**
 
@@ -149,9 +149,9 @@ Parameters:
 
 |Field|Data type|Description|
 | :-------------: | :-------------: | :------ |
-| `configuration` | string | **Optional**. The imei.|
-| `errorHandlerAsync` | string | **Required**. Error Handler|
-| `processingMode` | string | **Optional**. Processing Mode|
+| `configuration` | string | **Optional**. The IMEI.|
+| `errorHandlerAsync` | string | **Required**. Error handler|
+| `processingMode` | string | **Optional**. Processing mode|
 
 
 **Example**
@@ -170,8 +170,8 @@ Parameters:
 |Field|Data type|Description|
 | :-------------: | :-------------: | :------ |
 | `supportedOperations` | IList&lt;string&gt; | **Required**. List of supported operations.|
-| `errorHandlerAsync` | string | **Required**. Error Handler|
-| `processingMode` | string | **Optional**. Processing Mode|
+| `errorHandlerAsync` | string | **Required**. Error handler|
+| `processingMode` | string | **Optional**. Processing mode|
 
 **Example**
 
@@ -196,8 +196,8 @@ Parameters:
 | `name` | string | **Optional**. The name.|
 | `version` | string | **Optional**. The version.|
 | `url` | string | **Optional**. The URL.|
-| `errorHandlerAsync` | string | **Required**. Error Handler|
-| `processingMode` | string | **Optional**. Processing Mode|
+| `errorHandlerAsync` | string | **Required**. Error handler|
+| `processingMode` | string | **Optional**. Processing mode|
 
 **Example**
 
@@ -216,15 +216,15 @@ Parameters:
 |Field|Data type|Description|
 | :-------------: | :-------------: | :------ |
 | `installedSoftware` | IList&lt;Software&gt; | **Optional**. List of supported operations.|
-| `errorHandlerAsync` | string | **Required**. Error Handler|
-| `processingMode` | string | **Optional**. Processing Mode|
+| `errorHandlerAsync` | string | **Required**. Error handler|
+| `processingMode` | string | **Optional**. Processing mode|
 
 Software members:
 
 |Field|Data type|Description|
 | :-------------: | :-------------: | :------ |
 | `Name` | string | **Required**. The name.|
-| `Url` | string | **Required**. The url.|
+| `Url` | string | **Required**. The URL.|
 | `Version` | string | **Required**. The version.|
 
 **Example**
@@ -245,8 +245,8 @@ Parameters:
 |Field|Data type|Description|
 | :-------------: | :-------------: | :------ |
 | `requiredInterval` | int| **Optional**. Required interval.|
-| `errorHandlerAsync` | string | **Required**. Error Handler|
-| `processingMode` | string | **Optional**. Processing Mode|
+| `errorHandlerAsync` | string | **Required**. Error handler|
+| `processingMode` | string | **Optional**. Processing mode|
 
 **Example**
 
@@ -268,8 +268,8 @@ Parameters:
 | `value` | string | **Required**. The value.|
 | `unit` | string | **Optional**. The unit.|
 | `time` | string | **Optional**. The time.|
-| `errorHandlerAsync` | string | **Required**. Error Handler|
-| `processingMode` | string | **Optional**. Processing Mode|
+| `errorHandlerAsync` | string | **Required**. Error handler|
+| `processingMode` | string | **Optional**. Processing mode|
 
 **Example**
 
@@ -289,11 +289,11 @@ Parameters:
 
 |Field|Data type|Description|
 | :-------------: | :-------------: | :------ |
-| `rssiValue` | string | **Required if 2 not set**. The rssi value.|
-| `berValue` | string | **Required if 1 not set**. The ber value.|
+| `rssiValue` | string | **Required if 2 not set**. The RSSI value.|
+| `berValue` | string | **Required if 1 not set**. The BER value.|
 | `time` | string | **Optional**. The time. **Default:** Current server time|
-| `errorHandlerAsync` | string | **Required**. Error Handler|
-| `processingMode` | string | **Optional**. Processing Mode|
+| `errorHandlerAsync` | string | **Required**. Error handler|
+| `processingMode` | string | **Optional**. Processing mode|
 
 **Example**
 
@@ -313,8 +313,8 @@ Parameters:
 | :-------------: | :-------------: | :------ |
 | `temperatureValue` | string | **Required.** The temperature value.|
 | `time` | string | **Optional**. The time. **Default:** Current server time|
-| `errorHandlerAsync` | string | **Required**. Error Handler|
-| `processingMode` | string | **Optional**. Processing Mode|
+| `errorHandlerAsync` | string | **Required**. Error handler|
+| `processingMode` | string | **Optional**. Processing mode|
 
 **Example**
 
@@ -333,7 +333,7 @@ Parameters:
 | :-------------: | :-------------: | :------ |
 | `temperatureValue` | string | **Required.** The battery value.|
 | `time` | string | **Optional**. The time. **Default:** Current server time|
-| `errorHandlerAsync` | string | **Required**. Error Handler|
+| `errorHandlerAsync` | string | **Required**. Error handler|
 | `processingMode` | string | **Optional**. Processing Mode|
 
 **Example**
@@ -356,8 +356,8 @@ Parameters:
 | `type` | string | **Required.** The type.|
 | `text` | string | **Optional.** The text. Alarm of type &lt;alarmType&gt; raised.|
 | `time` | string | **Optional**. The time. **Default:** Current server time|
-| `errorHandlerAsync` | string | **Required**. Error Handler|
-| `processingMode` | string | **Optional**. Processing Mode|
+| `errorHandlerAsync` | string | **Required**. Error handler|
+| `processingMode` | string | **Optional**. Processing mode|
 
 **Example**
 
@@ -378,8 +378,8 @@ Parameters:
 | `type` | string | **Required.** The type.|
 | `text` | string | **Optional.** The text. Alarm of type &lt;alarmType&gt; raised.|
 | `time` | string | **Optional**. The time. **Default:** Current server time|
-| `errorHandlerAsync` | string | **Required**. Error Handler|
-| `processingMode` | string | **Optional**. Processing Mode|
+| `errorHandlerAsync` | string | **Required**. Error handler|
+| `processingMode` | string | **Optional**. Processing mode|
 
 **Example**
 
@@ -401,8 +401,8 @@ Parameters:
 | `type` | string | **Required.** The type.|
 | `text` | string | **Optional.** The text. Alarm of type &lt;alarmType&gt; raised.|
 | `time` | string | **Optional**. The time. **Default:** Current server time|
-| `errorHandlerAsync` | string | **Required**. Error Handler|
-| `processingMode` | string | **Optional**. Processing Mode|
+| `errorHandlerAsync` | string | **Required**. Error handler|
+| `processingMode` | string | **Optional**. Processing mode|
 
 **Example**
 
@@ -422,8 +422,8 @@ Parameters:
 | `type` | string | **Required.** The type.|
 | `text` | string | **Optional.** The text. Alarm of type &lt;alarmType&gt; raised.|
 | `time` | string | **Optional**. The time. **Default:** Current server time|
-| `errorHandlerAsync` | string | **Required**. Error Handler|
-| `processingMode` | string | **Optional**. Processing Mode|
+| `errorHandlerAsync` | string | **Required**. Error handler|
+| `processingMode` | string | **Optional**. Processing mode|
 
 **Example**
 
@@ -442,8 +442,8 @@ Parameters:
 | :-------------: | :-------------: | :------ |
 | `type` | string | **Required.** The type.|
 | `severity` | string | **Required.** The severity.|
-| `errorHandlerAsync` | string | **Required**. Error Handler|
-| `processingMode` | string | **Optional**. Processing Mode|
+| `errorHandlerAsync` | string | **Required**. Error handler|
+| `processingMode` | string | **Optional**. Processing mode|
 
 **Example**
 
@@ -460,8 +460,8 @@ Parameters:
 |Field|Data type|Description|
 | :-------------: | :-------------: | :------ |
 | `type` | string | **Required.** The type.|
-| `errorHandlerAsync` | string | **Required**. Error Handler|
-| `processingMode` | string | **Optional**. Processing Mode|
+| `errorHandlerAsync` | string | **Required**. Error handler|
+| `processingMode` | string | **Optional**. Processing mode|
 
 **Example**
 
@@ -482,8 +482,8 @@ Parameters:
 | `type` | string | **Required.** The type.|
 | `text` | string | **Required.** The text.|
 | `time` | string | **Optional**. The time. **Default:** Current server time|
-| `errorHandlerAsync` | string | **Required**. Error Handler|
-| `processingMode` | string | **Optional**. Processing Mode|
+| `errorHandlerAsync` | string | **Required**. Error handler|
+| `processingMode` | string | **Optional**. Processing mode|
 
 **Example**
 
@@ -506,8 +506,8 @@ Parameters:
 | `altitude` | string | **Optional.** The altitude.|
 | `accuracy` | string | **Optional.** The accuracy.|
 | `time` | string | **Optional**. The time. **Default:** Current server time|
-| `errorHandlerAsync` | string | **Required**. Error Handler|
-| `processingMode` | string | **Optional**. Processing Mode|
+| `errorHandlerAsync` | string | **Required**. Error handler|
+| `processingMode` | string | **Optional**. Processing mode|
 
 **Example**
 
@@ -534,8 +534,8 @@ Parameters:
 | `altitude` | string | **Optional.** The altitude.|
 | `accuracy` | string | **Optional.** The accuracy.|
 | `time` | string | **Optional**. The time. **Default:** Current server time|
-| `errorHandlerAsync` | string | **Required**. Error Handler|
-| `processingMode` | string | **Optional**. Processing Mode|
+| `errorHandlerAsync` | string | **Required**. Error handler|
+| `processingMode` | string | **Optional**. Processing mode|
 
 **Example**
 
@@ -559,9 +559,9 @@ Parameters:
 
 |Field|Data type|Description|
 | :-------------: | :-------------: | :------ |
-| `errorHandlerAsync` | string | **Required**. Error Handler|
-| `processingMode` | string | **Optional**. Processing Mode|
-
+| `errorHandlerAsync` | string | **Required**. Error handler|
+| `processingMode` | string | **Optional**. Processing mode|
+Processing ModeProcessing ModeProcessing ModeProcessing ModeProcessing Mode
 **Example**
 
      await cl.StaticOperationTemplates
@@ -576,8 +576,8 @@ Parameters:
 |Field|Data type|Description|
 | :-------------: | :-------------: | :------ |
 | `fragment` | string | **Required**. The fragment.|
-| `errorHandlerAsync` | string | **Required**. Error Handler|
-| `processingMode` | string | **Optional**. Processing Mode|
+| `errorHandlerAsync` | string | **Required**. Error handler|
+| `processingMode` | string | **Optional**. Processing mode|
 
 **Example**
 
@@ -596,7 +596,7 @@ Parameters:
 | `fragment` | string | **Required**. The fragment.|
 | `failureReason` | string | **Optional**. The failure reason.|
 | `errorHandlerAsync` | string | **Required**. The error handler asynchronous.|
-| `processingMode` | string | **Optional**. Processing Mode|
+| `processingMode` | string | **Optional**. Processing mode|
 
 **Example**
 
@@ -616,7 +616,7 @@ Parameters:
 | `fragment` | string | **Required**. The fragment.|
 | `parameters` | string | **Optional**. The parameters.|
 | `errorHandlerAsync` | string | **Required**. The error handler asynchronous.|
-| `processingMode` | string | **Optional**. Processing Mode|
+| `processingMode` | string | **Optional**. Processing mode|
 
 **Example**
 
@@ -631,7 +631,7 @@ Parameters:
 
 Lists all children of the device
 
-ChildrenOfDeviceEventArgs is the  class containing event data
+ChildrenOfDeviceEventArgs is the class containing event data
 
 |Field|Data type|Description|
 | :-------------: | :-------------: | :------ |
@@ -671,7 +671,7 @@ Tells the device to restart.
 Tells the device to run the command send in the operation.
 
 
-CommandEventArgs is the  class containing event data
+CommandEventArgs is the class containing event data.
 
 |Field|Data type|Description|
 | :-------------: | :-------------: | :------ |
@@ -685,13 +685,13 @@ CommandEventArgs is the  class containing event data
 
 ### Configuration (513)
 
-Tells the device to set the configuration send in the operation.
+Tells the device to set the configuration sent in the operation.
 
-ConfigurationEventArgs is the  class containing event data
+ConfigurationEventArgs is the class containing event data.
 
 |Field|Data type|Description|
 | :-------------: | :-------------: | :------ |
-| `Configuration` | string | the configuration send in the operation.|
+| `Configuration` | string | the configuration sent in the operation.|
 
 
 **Example**
@@ -704,7 +704,7 @@ ConfigurationEventArgs is the  class containing event data
 
 Tells the device to install the firmware from the url.
 
-FirmwareEventArgs is the  class containing event data.
+FirmwareEventArgs is the containing event data.
 
 |Field|Data type|Description|
 | :-------------: | :-------------: | :------ |
@@ -725,7 +725,7 @@ FirmwareEventArgs is the  class containing event data.
 
 Tells the device to install the software send in the operation.
 
-SoftwareListEventArgs is the  class containing event data.
+SoftwareListEventArgs is the class containing event data.
 
 |Field|Data type|Description|
 | :-------------: | :-------------: | :------ |
@@ -746,7 +746,7 @@ SoftwareListEventArgs is the  class containing event data.
 
 Tells the device to send the measurements specified by the request name.
 
-MeasurementRequestOperationEventArgs is the  class containing event data.
+MeasurementRequestOperationEventArgs is the class containing event data.
 
 |Field|Data type|Description|
 | :-------------: | :-------------: | :------ |
@@ -762,7 +762,7 @@ MeasurementRequestOperationEventArgs is the  class containing event data.
 
 Tells the device to either open or close the relay.
 
-RelayEventArgs is the  class containing event data.
+RelayEventArgs is the class containing event data.
 
 |Field|Data type|Description|
 | :-------------: | :-------------: | :------ |
@@ -780,7 +780,7 @@ RelayEventArgs is the  class containing event data.
 
 Tells the device to either open or close the relays in the array.
 
-RelayArrayEventArgs is the  class containing event data.
+RelayArrayEventArgs is the class containing event data.
 
 |Field|Data type|Description|
 | :-------------: | :-------------: | :------ |
@@ -823,7 +823,7 @@ DownloadConfigurationFileEventArgs is the class containing event data.
 
 Tells the device to upload a log file for the given parameters.
 
-LogfileRequestEventArgs is the  class containing event data.
+LogfileRequestEventArgs is the class containing event data.
 
 |Field|Data type|Description|
 | :-------------: | :-------------: | :------ |
@@ -847,7 +847,7 @@ LogfileRequestEventArgs is the  class containing event data.
 
 Tells the device to change the communication mode.
 
-CommunicationModeEventArgs is the  class containing event data.
+CommunicationModeEventArgs is the class containing event data.
 
 |Field|Data type|Description|
 | :-------------: | :-------------: | :------ |
@@ -866,7 +866,7 @@ CommunicationModeEventArgs is the  class containing event data.
 
 Will verify if a template collection exists.
 
-CommunicationModeEventArgs is the  class containing event data.
+CommunicationModeEventArgs is the class containing event data.
 
 | Name | Type | Description |
 | :-------------: | :-------------: | :------ |

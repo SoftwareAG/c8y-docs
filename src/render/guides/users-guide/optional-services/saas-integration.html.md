@@ -18,6 +18,7 @@ This section describes how to implement these and many other use cases by combin
 
 All the examples in this section require a Zapier account, which you can obtain for free at https://zapier.com.
 
+
 ### Access Cumulocity App in Zapier
 
 If you want to get access to the App and try it out please contact us at [support](https://support.cumulocity.com).
@@ -40,6 +41,8 @@ To send data to enterprise IT services, you need to set up a CEL statement in Cu
 
 The New SmartRule Event trigger enables you to add additional actions when your Smart Rule is executed (e.g. a threshold rule creates a threshold alarm).
 Make sure that you have created and activated a Smart Rule in Cumulocity before using this feature.
+
+**Info**: Note that when using Zapier in Cumulocity the processing of global Smart Rules is limited to Smart Rules from the **Global Smart Rules** page in the navigator.
 
 After choosing this trigger and selecting your Cumulocity account, you can specify your SmartRule.
 

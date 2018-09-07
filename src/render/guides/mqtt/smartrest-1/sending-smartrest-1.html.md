@@ -27,3 +27,10 @@ Topic:
 ```
 q/ul/<X-ID>;
 ```
+
+[Cumulocity SmartREST protocol](/guides/reference/smartrest) also supports *CEP* processing mode for ensuring data is only sent to real-time event processing engine with real-time notifications disabled by publishing on MQTT c/ topic instead of s/ topic. Currently, the CEP processing mode is applicable for measurements and events only.
+
+Topic:
+```
+c/ul/<X-ID>;
+```

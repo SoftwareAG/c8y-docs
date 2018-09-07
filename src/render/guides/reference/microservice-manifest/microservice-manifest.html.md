@@ -108,7 +108,7 @@ layout: redirect
         "scale": "auto",
         "resources": {
             "cpu": "1",
-            "memory": "1GB"
+            "memory": "1G"
         },
         "livenessProbe":{
           "httpGet":{

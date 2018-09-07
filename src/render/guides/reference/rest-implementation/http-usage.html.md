@@ -90,7 +90,8 @@ The login with OAuth requires a correct configuration on the [Cumulocity side](s
 Authentication details are exchanged using cookies. There are two parts to it, the first is the authentication cookie that is handled automatically by the Cumulocity platform. The second is the XSRF-TOKEN cookie. When a client receives the cookie, it should take the value and put it in the X-XSRF-TOKEN request header in all subsequent requests.  
 
 The flow of authenticating with OAuth authentication code grant is as follows:
-![Authentication flow](src/static/guides/images/reference-guide/oauth-simple-flow.png)
+
+![Authentication flow](/guides/images/reference-guide/oauth-simple-flow.png)
 
 The first request executed by the browser is:
 
@@ -155,9 +156,9 @@ If you use an HTTP client that can only perform GET and POST methods in HTTP, yo
 
 ### <a id="processing-mode"></a> Processing mode
 
-Every update request (PUT, POST, DELETE) executes with a so-called *processing mode*. The default processing mode is *PERSISTENT*, which means that all updates will be send both to the Cumulocity database and to real-time processing. The *TRANSIENT* processing mode will only send updates to real-time processing. As part of real-time processing, the user can decide case by case through Cumulocity Event Language scripts whether updates should be stored to the database or not. The *QUIESCENT* processing mode will behave like PERSISTENT processing mode with an exception that no real-time notifications will be sent. Currently, the QUIESCENT processing mode is applicable for measurements and events only.    
+Every update request (PUT, POST, DELETE) executes with a so-called *processing mode*. The default processing mode is *PERSISTENT*, which means that all updates will be send both to the Cumulocity database and to real-time processing. The *TRANSIENT* processing mode will only send updates to real-time processing. As part of real-time processing, the user can decide case by case through Cumulocity Event Language scripts whether updates should be stored to the database or not. The *QUIESCENT* processing mode will behave like PERSISTENT processing mode with an exception that no real-time notifications will be sent. Currently, the QUIESCENT processing mode is applicable for measurements and events only. The *CEP* processing mode will behave like TRANSIENT processing mode with an exception that no real-time notifications will be sent. Currently, the CEP processing mode is applicable for measurements and events only.    
 
-To explicitly control the processing mode of an update request, an "X-Cumulocity-Processing-Mode" header can be used with a value of either "PERSISTENT", "TRANSIENT" or "QUIESCENT":
+To explicitly control the processing mode of an update request, an "X-Cumulocity-Processing-Mode" header can be used with a value of either "PERSISTENT", "TRANSIENT", "QUIESCENT" or "CEP":
 
     X-Cumulocity-Processing-Mode: TRANSIENT
 

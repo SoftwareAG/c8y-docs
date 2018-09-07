@@ -138,7 +138,9 @@ Under "Value normalisation" define how the raw value should be transformed befor
 - **Offset**: This value defines the offset that is added or subtracted. It can be decimal, negative and positive. By default it is set to 0.
 - **Unit** (optional): A unit can be defined which is saved together with the value (e.g. temperature unit "C" for degree Celsius).
 
-For detailed information on how to decode the payload, refer to the documentation of the device. 
+For detailed information on how to decode the payload, refer to the documentation of the device.
+
+> Note: "Little endian" support to decode the payload has been added.
 
 Select the options, if required: "Signed" (if the value is a signed number) or "Packed decimal" (if the value is BCD encoded).
 

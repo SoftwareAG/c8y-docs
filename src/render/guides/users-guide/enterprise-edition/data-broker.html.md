@@ -13,7 +13,7 @@ Data broker lets you share data selectively with other tenants. You can share:
 - measurements,
 - operations.
 
-Navigate to "Data connectors" if you would like to send data to another tenant. Navigate to "Data subscriptions", if you would like to receive data from another tenant.
+Navigate to **Data connectors** if you would like to send data to another tenant. Navigate to **Data subscriptions**, if you would like to receive data from another tenant.
 
 <img src="/guides/images/users-guide/data-broker-on-navigator.PNG" alt="Data broker menus" >
 
@@ -29,7 +29,7 @@ A data connector describes the subset of the data that you would like to send to
 
 <a name="data-broker-connectors-list"></a> **Viewing data connectors**
 
-In the "Data connectors" page, you can manage existing data connectors or create new ones. Click "Data connectors" to see a list of all currently defined data connectors with their status.
+In the **Data connectors** page, you can manage existing data connectors or create new ones. Click **Data connectors** to see a list of all currently defined data connectors with their status.
 
 ![Data broker connectors list](/guides/images/users-guide/data-broker-connectors-list.PNG)
 
@@ -98,9 +98,9 @@ After saving, you will see a security code displayed below your configuration. T
 
 ### <a name="data-broker-subscriptions"></a> Data subscriptions
 
-In the "Data subscriptions" page, you can manage existing data subscriptions or create new ones. 
+In the **Data subscriptions** page, you can manage existing data subscriptions or create new ones. 
 
-Click "Data subscriptions" to see a list of all currently defined data forwarded to your tenant. 
+Click **Data subscriptions** to see a list of all currently defined data forwarded to your tenant. 
 
 <img src="/guides/images/users-guide/Administration/Admin_Subscriptions.png" alt="Data subscriptions" >
 

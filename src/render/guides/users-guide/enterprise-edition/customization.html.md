@@ -4,13 +4,13 @@ title: Customizing your platform
 layout: redirect
 ---
 
-In the "Enterprise edition" page under the "Settings" menu you can specify settings for the customization of your platform.
+In an Enterprise Edition installation under the **Settings** menu you can specify settings for the customization of your platform.
 
-**Info**: For information on the settings in the "Customization" tab refer to [Changing Settings > Configuration settings](/guides/users-guide/administration/#config-platform) in the Administration section.
+**Info**: For information on the settings in the **Customization** tab refer to [Changing Settings > Configuration settings](/guides/users-guide/administration/#config-platform) in the Administration section.
 
 ### <a name="branding"></a>Branding
 
-In the "Branding" tab you can fully customize the look of your tenants to your own preferences. 
+In the **Branding** tab you can fully customize the look of your tenants to your own preferences. 
 
 The branding feature allows you to edit the logos and colors used throughout the platform. Once your branding settings are saved, all subtenants are automatically updated. 
 
@@ -18,23 +18,23 @@ The branding feature allows you to edit the logos and colors used throughout the
 
 **General**
 
-In the “General” section you can edit the “Title” which will be used in the browser tab. 
+In the **General** section you can edit the title which will be used in the browser tab. 
 
 **Main logo**
 
-Under “Main logo”, specify the following items:
+Under **Main logo**, specify the following items:
 
-* The “Favicon”, which will be displayed in the browser’s address bar. Click **Choose file** to select a file from your computer. The supported favicon format is “ico”.
+* The favicon, which will be displayed in the browser’s address bar. Click **Choose file** to select a file from your computer. The supported favicon format is “ico”.
 * Your branding logo, which will be shown during application loading. Click **Choose file** to select a file from your computer. The supported formats are “png” and “svg”.
-* The “Brand logo height”.
+* The brand logo height.
 
 **Navigator logo**
 
-Under “Navigator logo” you can provide the “Navigator logo” and set the “Navigator logo height” located on top of the navigator panel.
+Under **Navigator logo** you can provide the navigator logo and set the navigator logo height located on top of the navigator panel.
 
 **Type**
 
-In the “Type” section you specify the font settings for your branded version. 
+In the **Type** section you specify the font settings for your branded version. 
 
 <img src="/guides/images/users-guide/Administration/Admin_BrandingType.png" alt="Branding type" style="max-width: 100%">
 
@@ -42,49 +42,49 @@ You can choose your base and headings font, and select an option for the navigat
 
 **Colors**
 
-In the “Colors” section you specify the colors to be used in your branding version.
+In the **Colors** section you specify the colors to be used in your branding version.
 
 <img src="/guides/images/users-guide/Administration/Admin_BrandingColor.png" alt="Branding color" style="max-width: 100%">
 
 The following parameters can be specified by providing a hex, rgb or rgba value:
 
-* “Main brand color”.
-* “Secondary brand color”. The default value is “#07b91A”.
-* “Text color”. The default value is “#444”.
-* “Link color”. The default value is the same as the main brand color.
-* “Main background color”. The default value for this item is “#FAFAFA”.
+* Main brand color.
+* Secondary brand color. The default value is “#07b91A”.
+* Text color. The default value is “#444”.
+* Link color. The default value is the same as the main brand color.
+* Main background color. The default value for this item is “#FAFAFA”.
 
 **Top bar**
 
-In the “Top bar” section you specify the parameters for the top bar.
+In the **Top bar** section you specify the parameters for the top bar.
 
 <img src="/guides/images/users-guide/Administration/Admin_BrandingTopbar.png" alt="Branding topbar" style="max-width: 100%">
 
 The following parameters can be specified by providing a hex, rgb or rgba value:
 
-* “Background color”. The default value is “#FFFFF”.
-* “Text color”. The default value is “49595B”.
-* “Button hover text color”. The default value is the main brand color.
+* Background color. The default value is “#FFFFF”.
+* Text color. The default value is “49595B”.
+* Button hover text color. The default value is the main brand color.
 
 **Navigator**
 
-In the “Navigator" section you specify the parameters for the navigator.
+In the **Navigator** section you specify the parameters for the navigator.
 
 <img src="/guides/images/users-guide/Administration/Admin_BrandingTopbar.png" alt="Branding top bar" style="max-width: 100%">
 
 The following parameters can be specified by providing a hex, rgb or rgba value:
 
-* “Background color”. The default value is “2c3637”.
-* "Logo wrapper background color". The default value is “Transparent”.
-* “Title color”. The default value is “FFFFF”.
-* “Text and buttons color”. The default value is “#FAFAFA”.
-* “Separator line color”. The default value is “#FAFAFA”.
-* “Text color” of the current item in the navigator. The default value is “#FAFAFA”.
-* “Background color” of the current item in the navigator with the main brand color as default.
+* Background color. The default value is “2c3637”.
+* Logo wrapper background color. The default value is “Transparent”.
+* Title color. The default value is “FFFFF”.
+* Text and buttons color. The default value is “#FAFAFA”.
+* Separator line color. The default value is “#FAFAFA”.
+* Text color of the current item in the navigator. The default value is “#FAFAFA”.
+* Background color of the current item in the navigator with the main brand color as default.
 
 **Misc**
 
-In the “Misc” section you may specify the “Button Border-Radius” by providing a value in pixel (px).
+In the **Misc** section you may specify the “Button Border-Radius” by providing a value in pixel (px).
 
 Click **Save** to save your settings.
 
@@ -94,17 +94,17 @@ Click **Generate** in the top menu bar to apply your new branding.
 
 The following image shows an example where
 
-* the “Main brand color” is purple,
-* the “Secondary brand color” is white,
-* the “Main background color” is blue,
-* the top bar “Background color” is green,
-* the navigator “Background color” is pink. 
+* the main brand color is purple,
+* the secondary brand color is white,
+* the main background color is blue,
+* the top bar background color is green,
+* the navigator background color is pink. 
 
 <img src="/guides/images/users-guide/Administration/Admin_BrandingColored.png" alt="Branding example" style="max-width: 100%">
 
 ### <a name="domain-name"></a>Domain name
 
-In the “Domain name” tab you can activate your own custom domain name. 
+In the **Domain name** tab you can activate your own custom domain name. 
 
 >**Info**: To activate you domain, you need a valid license. Please contact our Sales team at sales@cumulocity.com to install a license for your domain.  
 

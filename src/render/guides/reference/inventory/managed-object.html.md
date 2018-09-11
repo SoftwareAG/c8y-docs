@@ -15,9 +15,12 @@ layout: redirect
 |\*|Object|0..n|Additional properties associated with the specific ManagedObject.|Optional|
 |lastUpdated|TimeStamp|1|The time when the object was last updated.|No|
 |childDevices|ManagedObject ReferenceCollection|0..1|A collection of references to child devices.|No|
+|childAdditions|ManagedObject ReferenceCollection|0..1|A collection of references to child additions.|No|
 |childAssets|ManagedObject ReferenceCollection|0..1|A collection of references to child assets.|No|
 |deviceParents|ManagedObject ReferenceCollection|0..1|A collection of references to device parent objects.|No|
 |assetParents|ManagedObject ReferenceCollection|0..1|A collection of references to asset parent objects.|No|
+
+> It is recommended for property names not to start with "child" or "parent". This way you will be able to handle other types of references.
 
 A managed object reference in the "child" and "parents" collections contains only "id", "name" and "self" properties.
 

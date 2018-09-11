@@ -12,7 +12,7 @@ With user hierarchies you can reflect independent organizational entities in Cum
 
 ### Viewing user hierarchies
 
-In the “User” page, user hierarchies are indicated by an arrow left from the user icon. Clicking on the arrow unfolds the user hierarchy. You can also fold and unfold the entire user hierarchy using the **Expand all** and **Collapse all** links on the top right.
+In the **User** page, user hierarchies are indicated by an arrow left from the user icon. Clicking on the arrow unfolds the user hierarchy. You can also fold and unfold the entire user hierarchy using the **Expand all** and **Collapse all** links on the top right.
 
 A small number next to the user name shows how many direct sub-users a user has. Sub-users are users that can be managed by their respective parent user and that have at most the permissions of that parent user. In the example below, the user "TestUser" has two direct sub-users. 
 
@@ -22,11 +22,11 @@ A small number next to the user name shows how many direct sub-users a user has.
 
 User hierarchies are created by assigning an "owner" to a user. The "owner" can manage the user. The user can have at most the same permissions as the owner.
 
-To assign an owner to a user, select the user in the "Users" page. In the "Owner" field, select a user from the dropdown list and click **Done** to confirm.
+To assign an owner to a user, select the user in the **Users** page. In the **Owner** field, select a user from the dropdown list and click **Done** to confirm.
 
 ![Select owner](/guides/images/users-guide/chooseowner.png) 
 
->**Info:** When creating a new user, the owner is automatically set to the user who is logged in. The owner can be changed later. Only users with "USER ADMIN" permission can assign an owner to a user. 
+>**Info:** When creating a new user, the owner is automatically set to the user who is logged in. The owner can be changed later. Only users with USER ADMIN permission can assign an owner to a user. 
 
 > If you want an owner to manage only their sub-users, make sure that the owner does not have a global role with user management permissions for all users.
 
@@ -40,11 +40,11 @@ In Cumulocity, users can delegate their user hierarchies and permissions to anot
 
 You may of course also delegate on a temporary basis, for example if you are temporarily unavailable.
 
-To delegate your permissions to a user, either open the user and click the delegate icon in the "Delegated by" field, or click the menu icon at the right of the user entry in the user list and from the context menu, select **Delegate**.
+To delegate your permissions to a user, either open the user and click the delegate icon in the **Delegated by** field, or click the menu icon at the right of the user entry in the user list and from the context menu, select **Delegate**.
 
 ![User delegation](/guides/images/users-guide/delegation.png)
 
-To undelegate, remove the delegation in the "Delegate by" field, or click **Undelegate** in the context menu.
+To undelegate, remove the delegation in the **Delegate by** field, or click **Undelegate** in the context menu.
 
 If the delegated user also needs to manage specific devices, the admin user must assign this device permissions (inventory roles) directly to the intended user. This can be done by using **Copy inventory roles from another user**. For details refer to [Administration > Managing users and permissions > Assigning inventory roles to users](/guides/images/users-guide/user-and-permission-management#attach-inventory).
 

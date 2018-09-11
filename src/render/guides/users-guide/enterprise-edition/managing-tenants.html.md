@@ -22,9 +22,9 @@ To be able to use the tenant functionality, your user needs to have the appropri
 
 ### Viewing subtenants
 
-Click "Subtenants" in the "Tenants" menu to view a list of all subtenants available in your account.
+Click **Subtenants** in the **Tenants** menu to view a list of all subtenants available in your account.
 
-The "Tenants" page provides the following information on each subtenant:
+The **Tenants** page provides the following information on each subtenant:
 
 * The name of the subtenant, e.g. company name of your customer.
 * The ID and domain. When creating tenants, the ID gets the first part of the URL. For example, if you create a tenant with the ID "acme" on cumulocity.com, the tenant's URL will be "acme.cumulocity.com". Note, that while you can change the URL later on, you cannot change the ID anymore after the tenant was created.
@@ -57,7 +57,7 @@ Click **Save** to apply your settings.
 
 When the tenant is created, it is automatically provisioned with a first, administrative user ("Administrator's username"). This administrator can create other users and set their permissions. The first user cannot be deleted to prevent you from locking yourself out. 
 
-From the management tenant, you can enable other tenants to create subtenants. To do so, check "Allow creation of subtenants".
+From the management tenant, you can enable other tenants to create subtenants. To do so, check **Allow creation of subtenants**.
 
 ![Tenant-creation](/guides/images/users-guide/createtenant.png)
 
@@ -65,17 +65,17 @@ From the management tenant, you can enable other tenants to create subtenants. T
 
 To edit subtenants, click on the desired subtenant or click **Edit** in the context menu, accessible through the menu icon.
 
-In the "Properties" tab, all fields are editable except of the ID and the administrator's username. For details on the fields, refer to [Creating sub-tenants](#creating-tenants).
+In the **Properties** tab, all fields are editable except of the ID and the administrator's username. For details on the fields, refer to [Creating sub-tenants](#creating-tenants).
 
-### <a name="subcribe"></a>Subscribing to applications
+### <a name="subscribe"></a>Subscribing to applications
 
-In the "Applications" tab you can subscribe tenants to applications or remove the applications from the tenant. By default, tenants will be subscribed to the standard Cumulocity applications. 
+In the **Applications** tab you can subscribe tenants to applications or remove the applications from the tenant. By default, tenants will be subscribed to the standard Cumulocity applications. 
 
 <img src="/guides/images/users-guide/Administration/Admin_SubtenantApplications.png" alt="Subscribe tenant" style="max-width: 100%">
 
-To subscribe an application to a tenant, hover over the applications under "Available applications" on the right and click **Subscribe** on the desired application.
+To subscribe an application to a tenant, hover over the applications under **Available applications** on the right and click **Subscribe** on the desired application.
 
-To remove an application, hover over the applications under "Subscribed applications" on the left and click **Unsubscribe**.
+To remove an application, hover over the applications under **Subscribed applications** on the left and click **Unsubscribe**.
 
 ### Suspending subtenants
 
@@ -83,7 +83,7 @@ You can temporarily suspend tenants. Suspending tenants blocks any access to thi
 
 To suspend a tenant, click the menu icon and from the context menu select **Suspend**.
 
-In the upcoming dialog confirm the suspension by clicking **Ok** and entering your password. The tenant will be shown with a red cross icon. As part of suspending the tenant, an email is sent to the tenant administrator if an email address is configured for that administrator.
+In the upcoming dialog confirm the suspension by clicking **OK** and entering your password. The tenant will be shown with a red cross icon. As part of suspending the tenant, an email is sent to the tenant administrator if an email address is configured for that administrator.
 
 >**Info**: If you are a service provider, you can suppress this email.
 
@@ -99,29 +99,41 @@ To finally delete a tenant and remove all the data of the tenant, click the menu
 
 ### <a name="tenants-custom-properties"></a>Editing custom properties
 
-The "Custom properties" tab allows you to view and modify values of custom properties, either predefined ones (like "External reference") or those defined in the [Properties library](/guides/users-guide/administration/changing-settings#properties). Such properties are also displayed as columns in [usage statistics table](#usage-stats).
+The **Custom properties** tab allows you to view and modify values of custom properties, either predefined ones (like "External reference") or those defined in the [Properties library](/guides/users-guide/administration/changing-settings#properties). Such properties are also displayed as columns in [usage statistics table](#usage-stats).
 
 ![Custom Properties](/guides/images/users-guide/subtenant-custom-properties.png)
 
 **Limiting subtenant device number**
 
-The platform administrator can limit the count of concurrently registered root devices or simply all devices (including children devices). The platform administrator can also see the peak count of concurrently registered devices, root devices and the peak value of used storage in the "Usage statistics" page.
+The platform administrator can limit the count of concurrently registered root devices or simply all devices (including children devices). The platform administrator can also see the peak count of concurrently registered devices, root devices and the peak value of used storage in the **Usage statistics** page.
 
 ### <a name="usage-stats"></a> Retrieving usage statistics
 
-The "Usage statistics" page provides statistical information on each subtenant. 
+The **Usage statistics** page provides statistical information on each subtenant. 
 
 The following information is provided for each tenant:
 
 - ID: ID of the subtenant
-- API requests: Total number of API requests, including requests from  devices and applications.
-- Device API requests: Number of API requests from devices.
-- Storage (MB): Amount of data stored in your account.
-- Root Devices: The amount of devices excluding child devices.
-- Devices: Total number of devices connected to the subtenant.
-- Subscribed applications: Number of applications that the subtenant is subscribed to.
-- Creation time: The date and time of the creation of the subtenant.
-- Parent: The name of parent tenant (available only for management tenant).
+- API requests: Total number of API requests, including requests from  devices and applications
+- Device API requests: Number of API requests from devices
+- Storage (MB): Amount of data stored in your account
+- Peak storage (MB): Peak value of storage
+- Root Devices: Number of root devices, excluding child devices
+- Peak root devices: Peak number of root devices, excluding child devices
+- Devices: Total number of devices connected to the subtenant, including child devices
+- Peak devices: Peak number of devices, including child devices
+- Endpoint devices: Leaf machines, without gateways and edges
+- Subscribed applications: Number of applications that the subtenant is subscribed to
+- Creation time: Date and time of the creation of the subtenant
+- Alarms created: Number of alarms created
+- Alarms updated: Number of updates on alarms
+- Inventories created: Number of managed objects created
+- Inventories updated: Number of updates on managed objects
+- Events created: Number of events created
+- Events updated: Number of updates on events
+- Measurements created: Number of measurements created
+- Total inbound transfer: Sum of all inbound transfers (alarms created, alarms updated, events created, events updated, inventories created, inventories updated, measurements created)
+- Parent tenant: Name of the parent tenant (available only for management tenant)
 - External reference: This field is for individual usage, for example, you can add a link to the CRM system here or an internal customer number.
 
 Moreover custom properties are displayed, if configured. 
@@ -147,7 +159,7 @@ Creating a tenant policy with a specific set of options and rules saves time whe
 
 >**Info**: The options and rules are copied into the tenant. Editing the policy has no effect on tenants that have already been created.
 
-Click "Tenant policies" in the "Tenants" menu to view all tenant policies available.
+Click **Tenant policies** in the **Tenants** menu to view all tenant policies available.
 
 <img src="/guides/images/users-guide/administration/admin_TenantPolicies.png" alt="Tenant policies" style="max-width: 100%">
 

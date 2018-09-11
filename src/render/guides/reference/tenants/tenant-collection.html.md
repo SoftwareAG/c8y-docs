@@ -177,5 +177,11 @@ In the following table you can see the restrictions for each field:
 |contact_phone|VARCHAR(20)|
 |administrator|VARCHAR(50)|
 
+Naming convention for tenant id is:
+- only lowercase letters, digits, hyphen and underscore is allowed
+- MUST start with a letter
+- hyphen and underscore are only allowed in the middle
+- MUST have a minimum length of two characters
+
 > Note: creating a tenant with adminName, adminPass and adminEmail, creates an admin user with these settings.
 For the tenant id SQL keywords (e.g., select, cross, where) are not allowed. 

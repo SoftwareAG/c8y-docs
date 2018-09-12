@@ -10,7 +10,7 @@ Dashboard reports enable you to track applications, alarms, assets, events and m
 
 Dashboard reports are global dashboard pages, regardless of the asset hierarchy. 
 
-To see all existing reports, expand the "Reports" menu in the navigator.
+To see all existing reports, expand the **Reports** menu in the navigator.
 
 To view a specific report, click the report in the navigator to open it.
 
@@ -43,9 +43,9 @@ With this feature, you can request data for the whole tenant. Additionally, you 
 
 >**Info:** The maximum number of documents that can be exported into a single file is 1 million. If the number of documents for defined filters exceeds this limit, only first 1 million documents will be taken.
 
-To show all exports, click "Export" in the "Reports" menu.
+To show all exports, click **Export** in the **Reports** menu.
 
-In the "Export" page you will find a list displaying all exports with their names and time range.
+In the **Export** page you will find a list displaying all exports with their names and time range.
 
 #### Adding exports
 
@@ -55,13 +55,13 @@ Enter a name for the export and select the file type (CSV or xlsx).
 
 **Filters**
 
-In the "Filter" section, you can select filters to request object- or time-specific data.
+In the **Filter** section, you can select filters to request object- or time-specific data.
 
 <img src="/guides/images/users-guide/Cockpit/Cockpit_ReportFilters.png" name="Export filters" style="width:100%;"/>
 
-To filter for a particular object, enter a name or property value into the search field and click the search icon. All matching devices or groups will be displayed below the "Value" field. Click a device to select it (highlighted in green). 
+To filter for a particular object, enter a name or property value into the search field and click the search icon. All matching devices or groups will be displayed below the **Value** field. Click a device to select it (highlighted in green). 
 
-The "Time range" filter can filter data for a specific time range. Select a time range from the dropdown field. This may be one of "Last year", "Last month", "Last week" or select "Custom" and enter a custom from/to range in the additional fields.
+The **Time range** filter can filter data for a specific time range. Select a time range from the dropdown field. This may be one of "Last year", "Last month", "Last week" or select "Custom" and enter a custom from/to range in the additional fields.
 
 Select the checkbox in front of the filter name to enable the filter.
 
@@ -82,7 +82,7 @@ Use the slider to enable/disable a field.
 
 When a field is enabled, predefined or empty properties can be added. 
 
-Click **Add** to add empty properties. To enter a label or path, click "Column" or "Path" and edit the field. For example, if you enable the "Alarms" field you could enter "Severity" in column and path to receive data for alarm severities.
+Click **Add** to add empty properties. To enter a label or path, click **Column** or **Path** and edit the field. For example, if you enable the **Alarms** field you could enter "Severity" in column and path to receive data for alarm severities.
 
 Click **Add predefined**, to add predefined properties. Simply select the desired properties from the list and click **Select**. Use the search field at the top to search for a specific property.
 
@@ -115,7 +115,7 @@ Define the frequency for sending the export, i.e. every hour, day, week, month o
 
 Complete the email information. 
 
-In the "Send to" field, provide the email address of the receiver. This field is mandatory. Optionally, you can provide email addresses for sending CC or BCC and add the email address of the sender for reply.
+In the **Send to** field, provide the email address of the receiver. This field is mandatory. Optionally, you can provide email addresses for sending CC or BCC and add the email address of the sender for reply.
 
 Specify the subject of the email. This field is pre-filled, but may be modified.
 

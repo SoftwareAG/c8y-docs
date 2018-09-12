@@ -41,7 +41,7 @@ On the Login screen, enter your username and password and click **Login** to ent
 
 <img src="/guides/images/users-guide/login.png" alt="Login prompt" style="max-width: 50%">
 
-Select the "Remember me" checkbox if you want the browser to remember your credentials, so that you do not have to enter them again when opening the application the next time. This is also convenient if you frequently switch between Cumulocity applications, as Cumulocity will request you to authenticate each time when starting an application. You can make the browser "forget" your credentials by explicitly logging out. 
+Select the **Remember me** checkbox if you want the browser to remember your credentials, so that you do not have to enter them again when opening the application the next time. This is also convenient if you frequently switch between Cumulocity applications, as Cumulocity will request you to authenticate each time when starting an application. You can make the browser "forget" your credentials by explicitly logging out. 
 
 To logout, click the **User** button at the right of the the top bar and from the context menu select **Logout**.
 
@@ -64,7 +64,7 @@ The **Welcome** screen contains the following items:
 
 If you do not want the **Welcome** page to be your start page, activate the slider **Don't use as start page** on the top right.
 
-To restore the **Welcome** page as start page, select "Welcome" in the navigator on the top left and deactivate the slider **Don't use as start page** again.
+To restore the **Welcome** page as start page, select **Welcome** in the navigator on the top left and deactivate the slider **Don't use as start page** again.
 
 ### <a name="reset-password"></a>Resetting your password
 
@@ -87,7 +87,7 @@ If you yourself are the primary administrator, your email address used on first 
 To change your password follow these steps:
 
 1. Click the **User** button at the right of the top bar and from the context menu select **User settings**. 
-2. In the "Edit user" window, click **Change Password**.
+2. In the **Edit user** window, click **Change Password**.
 3. Enter a password and confirm it.
 4. Click **Save** to apply your settings.
 

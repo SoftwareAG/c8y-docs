@@ -14,7 +14,7 @@ How does the Cockpit application use the data point library? To find the default
 
 Additionally, the properties of the Data Point Library are used by threshold business rules: The red and yellow values configured in the Data Point Library are used by the threshold rules to raise alarms.
 
-To open the Data Point Library, click "Data Point Library" in the "Configuration" menu of the navigator.
+To open the Data Point Library, click **Data Point Library** in the **Configuration** menu of the navigator.
 
 A list of available data points will be opened. For each data point, the following information is provided in the list:
 

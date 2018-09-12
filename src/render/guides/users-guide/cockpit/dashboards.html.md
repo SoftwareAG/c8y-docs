@@ -16,13 +16,13 @@ Click the **Plus** button in the top bar and from the context menu select **New 
 
 <img src="/guides/images/users-guide/Cockpit/Cockpit_DashboardCreate.png" name="Create dashboard" style="width:75%;"/>
 
-In the "Dashboard info" section of the dashboard editor, provide the following information:
+In the **Dashboard info** section of the dashboard editor, provide the following information:
 
 * A menu label to be used as the name of the dashboard
 * The location of the dashboard in the navigator, with "10000" being ordered first and "-10000" last
 * An icon which is shown next to the dashboard name in the navigator
 
-In the "Dashboard layout" section you can select a theme for the dashboard (one of "Light", "Dark", "Transparent" or "Branded") and a default header style for the widgets (one of "Regular", "Border", "Overlay", or "Hidden"). Moreover, you can change the default widget margin (default value is 15 px). 
+In the **Dashboard layout** section you can select a theme for the dashboard (one of "Light", "Dark", "Transparent" or "Branded") and a default header style for the widgets (one of "Regular", "Border", "Overlay", or "Hidden"). Moreover, you can change the default widget margin (default value is 15 px). 
 
 A preview of the selected layout settings is immediately displayed in the "Preview" section at the right to visualize your selections.
 

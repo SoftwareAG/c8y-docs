@@ -109,7 +109,7 @@ To remove a property or an action, hover over the respective row and click **Del
 
 ### Widget "Cockpit welcome"
 
-The "Cockpit welcome" lets you display a welcome message to the Welcome screen. There are no additional parameters to be configured.
+The "Cockpit welcome" widget lets you display a welcome message to the Welcome screen. There are no additional parameters to be configured.
 
 ### Widget "Data point graph"
 

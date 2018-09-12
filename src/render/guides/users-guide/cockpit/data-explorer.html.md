@@ -10,9 +10,9 @@ In the data explorer, data points, i.e. measurements or sensor data, can be visu
 
 The data explorer is available for all assets or just for a particular asset.
 
-* Click "Data explorer" in the navigator to visualize all data points of all assets.
+* Click **Data explorer** in the navigator to visualize all data points of all assets.
 
-* Navigate to a particular asset and switch to the "Data explorer" tab to visualize all data points of this particular asset and its sub-assets.
+* Navigate to a particular asset and switch to the **Data explorer** tab to visualize all data points of this particular asset and its sub-assets.
 
 In the data explorer, you see a list of available data points on the right. The first five data points of the selected device or group are shown by default. For details on how to add data points see [*Adding data points*](#add-data-points).
 
@@ -48,7 +48,7 @@ You can change the time range being shown. By default, you see the values for th
 To change the time range on the X-axis,
 
 * select a different time range from the dropdown list in the top menu bar, 
-* enter a custom time range into the "From" and "To" fields in the data explorer,
+* enter a custom time range into the **From** and **To** fields in the data explorer,
 * drag the X-axis and move of left or right to move the time period,
 * double-click into the data explorer to zoom out. 
 
@@ -58,7 +58,7 @@ To change the time range on the X-axis,
 
 You may aggregate the data being displayed to get an efficient overview over larger time periods. 
 
-By default, aggregation is set to "None". This value may be changed in the "Aggregation" field in the top menu bar. Available values are "Minutely", "Hourly" or "Daily", depending on the selected time range.
+By default, aggregation is set to "None". This value may be changed in the **Aggregation** field in the top menu bar. Available values are "Minutely", "Hourly" or "Daily", depending on the selected time range.
 
 
 **Realtime updating**
@@ -74,11 +74,11 @@ For each datapoint, its visibility can be switched on or off by using the slider
 
 ### <a name="add-data-points"></a>Adding data points
 
-To add a data point to the data explorer, click  **Add data point** at the bottom of the "Data points" card. 
+To add a data point to the data explorer, click  **Add data point** at the bottom of the **Data points** card. 
 
 <img src="/guides/images/users-guide/Cockpit/Cockpit_AddDatapoint.png" name="Add data points" style="width:50%;"/><br>
 
-In the top of the dialog, select a device from the asset hierarchy. Only the asset hierarchy below the objects selected in the navigator is visible. If "Data explorer" in the navigator was selected, the complete asset hierarchy is visible.
+In the top of the dialog, select a device from the asset hierarchy. Only the asset hierarchy below the objects selected in the navigator is visible. If **Data explorer** in the navigator was selected, the complete asset hierarchy is visible.
 
 The bottom of the dialog shows all data points of the selected object. Select the data points you want to show in the data explorer. Click **Add** to add all selected data points to the list of data points.
 
@@ -129,7 +129,7 @@ In addition to data points you can also add alarms or events to the data explore
 
 <img src="/guides/images/users-guide/Cockpit/Cockpit_DataExplorerAlarms.png" name="Alarms" style="width:75%;"/> 
 
-In the "Alarms/ Events" card, click **Add alarm/ event** to add an alarm or event.
+In the **Alarms/ Events** card, click **Add alarm/ event** to add an alarm or event.
 
 <img src="/guides/images/users-guide/Cockpit/Cockpit_DataExplorerAlarmAdd.png" name="Add widget" style="width:75%;"/> 
 

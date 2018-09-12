@@ -18,8 +18,8 @@ Smart Rules are parameterized. There are two sources for parameters:
 
 Smart Rules can be seen 
 
-* in the "Info" tab of a device or group,
-* in the "Smart Rules" page accessible from the "Configuration" menu. 
+* in the **Info** tab of a device or group,
+* in the **Smart Rules** page accessible from the **Configuration** menu. 
 
 ![Smart Rules info tab](/guides/images/users-guide/smartruleinfo.png)
 
@@ -28,7 +28,7 @@ There are two different kinds of Smart Rules:
 - **Local**: Smart Rules created in either a group or a device. They are visible to everyone with access to the group/device.
 - **Global**: These Smart Rules are created in a global context ("Smart Rules" page, alarms, data explorer, etc...). They are only visible to users with the relevant permissions.
 
-In the "Smart Rules" page, only the global smart rules are shown. 
+In the **Smart Rules** page, only the global smart rules are shown. 
 
 In a local context (group or device) and without the relevant permissions, only the local Smart Rules are shown. If the user has the relevant permissions, both local and global Smart Rules are shown.		
 The permissions required in order to see the global Smart Rules are:
@@ -39,7 +39,7 @@ The permissions required in order to see the global Smart Rules are:
 
 ### <a name="create-rules"></a>Creating Smart Rules
 
-Smart Rules can be created either in the "Smart Rules" page, accessible from the "Configuration" menu in the navigator, or in the "Info" tab of a group or a device.
+Smart Rules can be created either in the **Smart Rules** page, accessible from the **Configuration** menu in the navigator, or in the **Info** tab of a group or a device.
 
 To create a Smart Rule, follow these steps:
 
@@ -47,7 +47,7 @@ To create a Smart Rule, follow these steps:
 2. Select a Smart Rule template from the list. 
 3. In the upcoming window, use the slider to select if the rule will be enabled or disabled. 
 4. Next, configure the rule parameters. The parameters differ from rule to rule, for details see individual rule descriptions below.
-5. In the "Target asset or devices" field, you can optionally activate the current Smart Rule for specific devices or assets. 
+5. In the **Target asset or devices** field, you can optionally activate the current Smart Rule for specific devices or assets. 
 6. Click **Create** to create the Smart Rule.
 
 A list of Smart Rules is shown below. Note that this list might differ based on your installation.
@@ -64,7 +64,7 @@ Smart Rules can be instantiated multiple times.
 
 A Smart Rule can be activated (switched on) and deactivated (switched off) for a single object (group or device). For example, if a device is generating too many threshold alarms, you can deactivate the rule for this single object. The rule is still active for all other objects.
 
-To deactivate or activate a Smart Rule for a group or device, navigate to the "Info" tab of the group or device and enable/disable the respective rule using the slider. 
+To deactivate or activate a Smart Rule for a group or device, navigate to the **Info** tab of the group or device and enable/disable the respective rule using the slider. 
 
 <img src="/guides/images/users-guide/Cockpit/Cockpit_SmartRuleInfoTab.png" name="Smart rule in Info tab" style="width:100%;"/>
 
@@ -89,14 +89,14 @@ For easier debugging, there is a direct link from a Smart Rule to the correspond
 To define a threshold rule follow these steps:
 
 1. In the navigator, select the desired group or device to apply a threshold to.
-2. Switch to the "Data explorer" tab.
+2. Switch to the **Data explorer** tab.
 3. If the data point that should raise the threshold is not visible by default, select **Add data point** and add a data point. For details on how to add data points see [Adding data points](#add-data-points).
 4. Click the menu icon at the end of the row of the respective data point and select **Create Smart Rule**. <br><br> <img src="/guides/images/users-guide/Cockpit/Cockpit_DataPointExample.png" name="Data point example" style="width:75%;"/>
 <br>
 5. Select the Smart Rule "On measurement explicit threshold create alarm". <br><br> <img src="/guides/images/users-guide/Cockpit/Cockpit_SmartRuleExample.png" name="Smart Rule example" style="width:50%;"/><br>
 6. Fill in the red range minimum and red range maximum value. When the measurement value enters or leaves the RED range, an alarm is created or respectively cleared. For details, see the description of the rule "On measurement explicit threshold create alarm" in the [Smart rules collection](/guides/users-guide/cockpit#smart-rules-collection).
-7. Under "Create Alarm" you can optionally edit the alarm type and the alarm text.
-8. Under "Target assets or devices" you can select the object this rule will be applied to.
+7. Under **Create Alarm** you can optionally edit the alarm type and the alarm text.
+8. Under **Target assets or devices** you can select the object this rule will be applied to.
 9. Click **Create** to create the Smart Rule.
 
 The rule will automatically be set to active and alarms appear if they arise.

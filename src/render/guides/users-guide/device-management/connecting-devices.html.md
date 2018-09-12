@@ -76,7 +76,7 @@ The devices may have one of the following status:
 
 ### <a name="creds-upload"></a>Bulk-registering devices
 
-To connect larger amounts of devices, Cumulocity offers the option to bulk-register devices, i.e. to register them all in one step. This is done by uploading a CSV file.
+To connect larger amounts of devices, Cumulocity offers the option to bulk-register devices, i.e. to register larger amounts of devices by uploading a CSV file.
 
 1. Click **Registration** in the **Devices** menu of the navigator and click **Register device**.
 2. In the upcoming window choose **Bulk device registration**.
@@ -85,15 +85,30 @@ To connect larger amounts of devices, Cumulocity offers the option to bulk-regis
 
 3. Click **Select file to upload** and select the CSV file you want to upload by browsing for it on your computer.
 
-There are two kind of CSV files supported.
+<br>
+There are two kind of CSV files supported resulting in two kind of registration processes.
 
-1. CSV files with at least the IDs as device identifier and the credentials of the devices 
+1. **Upload device information and register**
+
+	CSV files must contain at least the IDs as device identifier and the credentials of the devices. 
 
 		ID;Credentials;PATH;ICCID;NAME;TYPE
 		006064ce800a;LF2PWJoLG1Fz;Sample_Düsseldorf;+491555555;Sample_Device1;c8y_Device
 		006064ce8077;OowoGKAbiNJs;Sample_Düsseldorf;+491555555;Sample_Device2;c8y_Device
+	
+	The file can also contain other columns like ICCID, NAME, TYPE as shown in the example above. 
+	
+	To connect the devices, they are pre-registered with the relevant information. More specific, each device will be configured as follows:
 
-2. CSV file containing two columns: ID;PATH, where ID is the device identifier, e.g. serial number, and PATH is a slash-separated list of group names (path to the group where the device should be assigned to after registration).
+	* User name - the user name for accessing Cumulocity must have the format &lt;tenant&gt;/device_&lt;id&gt;, where &lt;Tenant&gt; refers to the tenant from which the CSV file is imported and  &lt;id&gt; refers to the respective value in the CSV file.
+	* Password - the password to access Cumulocity, equals the value "Credentials" in the CSV file.
+	* Device in managed object representation - fields "Type", "Name", "Iccid", "Idtype", "Path", "Shell" in the CSV file.
+
+	After the data is imported, you will get feedback on the number of devices that were pre-registered as well as on any potential errors that may have occurred.
+
+2. **Upload device IDs**
+
+	The CSV file contains two columns: ID;PATH, where ID is the device identifier, e.g. serial number, and PATH is a slash-separated list of group names (path to the group where the device should be assigned to after registration).
 
 
 		ID;PATH
@@ -101,27 +116,11 @@ There are two kind of CSV files supported.
 		Device2;Group A/Group B
 
 
-You may also download one of the template files provided here to view or copy the structure.
+	After the file is uploaded, any required new groups will be created and new registrations will be created with status WAITING FOR CONNECTION and the normal registration process needs to be continued (see above).
 
-After the file is uploaded, any required new groups will be created and new registrations will be created with status WAITING FOR CONNECTION.
-
->**Info**: If you work with a Cumulocity Enterprise Edition you may also register devices across multiple tenants by adding a "tenant" column to the spreadsheet and importing the CSV file from the "management" tenant.
-
+For your convenience we provide template files for both formats which you can download to view or copy the structure.
 
 For further information on the file format and accepted CSV variants, also refer to 
 [Bulk device credentials](/guides/reference/device-credentials/#creds-upload).
 
-
- <!--
- Needs to be tested. Seems to be outdated.
- Use the "Upload" button to upload the CSV file, as shown in the screenshot below. After the data is imported, you will get feedback on the number of devices that were pre-registered as well as on any potential errors that may have occurred. -->
-
-**Pre-registering devices**
-
-To connect the devices, they need to be pre-registered with the relevant information. More specific, each device needs to be configured as follows:
-
-* User name - the user name for accessing Cumulocity must have the format &lt;tenant&gt;/device_&lt;id&gt;, where &lt;Tenant&gt; refers to the tenant from which the CSV file is imported and  &lt;id&gt; refers to the respective value in the CSV file.
-* Password - the password to access Cumulocity, equals the value "Credentials" in the CSV file.
-* Device in managed object representation - fields "Type", "Name", "Iccid", "Idtype", "Path", "Shell" in the CSV file.
-
-
+>**Info**: If you work with a Cumulocity Enterprise Edition you may also register devices across multiple tenants by adding a "tenant" column to the spreadsheet and importing the CSV file from the "management" tenant.

@@ -39,7 +39,7 @@ Example measurement:
 
 Example request:
 
-    GET /measurement/measurements?fragmentType=c8y_Temperature&source=663951
+    GET /measurement/measurements?valueFragmentType=c8y_Temperature&valueFragmentSeries=T&source=663951
     Host: ...
     Authorization: Basic ...
     X-Cumulocity-System-Of-Units: imperial

@@ -6,7 +6,7 @@ layout: redirect
 
 Audit logs show the operations that users have carried out. 
 
-To view the audit log list, click "Audit logs" in the "Account" menu. For each log entry, the following information is provided:
+To view the audit log list, click **Audit logs** in the **Account** menu. For each log entry, the following information is provided:
 
 |Column|Description|
 |:---|:---|

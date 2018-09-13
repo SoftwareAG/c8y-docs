@@ -16,15 +16,15 @@ Your applications are available through the application switcher in the top bar 
 
 <img src="/guides/images/users-guide/Administration/Admin_AppSwitcher.png" alt="App switcher" style="max-width: 50%">
 
-You manage your applications under "Own applications", accessible through the "Applications" menu. 
+You manage your applications under **Own applications**, accessible through the **Applications** menu. 
 
-In the "Own applications" page you will find a list of the applications available in your account.
+In the **Own applications** page you will find a list of the applications available in your account.
 
 <img src="/guides/images/users-guide/Administration/Admin_OwnApplications.png" alt="Own applications" style="max-width: 100%">
 
 To directly open an application from here, click **Open** on the respective application card. 
 
-Click **Add application** in the "Own applications" page, to add an application to your account, see [Adding applications](#adding-applications).
+Click **Add application** in the **Own applications** page, to add an application to your account, see [Adding applications](#adding-applications).
 
 To add a plugin, click **Add Plugin** on the card of the application you want to add it to (see [Adding and removing plugins](#add-remove-plugin)).
 
@@ -32,7 +32,7 @@ Click the menu icon at the top right of an application to open a context menu fr
 
 ### <a name="adding-applications"></a>Adding applications
 
-To add an application, click **Add application** in the "Own applications" page. In the upcoming dialog choose one of the following methods:
+To add an application, click **Add application** in the **Own applications** page. In the upcoming dialog choose one of the following methods:
 
 * [uploading a zip file](#uploading-zip-files) - by dropping a file or browsing for it on your computer,
 * [using an external application](#external-application), which links to an application running elsewhere 
@@ -47,15 +47,15 @@ You can either add a web application or a microservice through uploading a zip f
 
 Depending on the information in the package being uploaded the system determines the application type.
 
-* If a "type" field exists and is equal to "MICROSERVICE" then the type is "MICROSERVICE".
-* If no "type" field exists but the "apiVersion" field is defined then the type is "MICROSERIVCE".
-* Otherwise the type is "HOSTED" (referring to a web application).
+* If a "type" field exists and is equal to MICROSERVICE then the type is MICROSERVICE.
+* If no "type" field exists but the "apiVersion" field is defined then the type is MICROSERIVCE.
+* Otherwise the type is HOSTED (referring to a web application).
 
 In case of microservices, the package must contain the manifest file and docker image of the microservice. Refer to [Microservice package reference](/guides/reference/microservice-package) in order to prepare and deploy the microservice package.
 
 In order to add an application by uploading a zip file, follow these steps:
 
-1. Click **Add application** in the "Own applications" page.
+1. Click **Add application** in the **Own applications** page.
 2. In the upcoming dialog, select **Upload zip file**.
 3. Simply drop a zip file or browse for it on your computer.
 
@@ -68,7 +68,7 @@ After successfully uploading the zip file to the platform the application is bei
 
 In order to add an application which links to an external application, follow these steps:
 
-1. Click **Add application** in the "Own applications" page.
+1. Click **Add application** in the **Own applications** page.
 2. In the upcoming dialog, select **External application**.
 3. In the next window, enter the name of the application. The name will be shown as title of the application. 
 5. Enter an application key, used to identify this application.
@@ -87,13 +87,13 @@ Duplicating a subscribed application creates a copy of the application as an own
 
 In order to duplicate an application, follow these steps:
 
-1. Click **Add application** in the "Own applications" page.
-2. In the upcoming dialog, select **Clone existing application**.
+1. Click **Add application** in the **Own applications** page.
+2. In the upcoming dialog, select **Duplicate existing application**.
 3. Select the desired application from the dropdown list. 
 4. In the next window, provide a name for the application. By default, the name of the original application is provided, extended by a number.
 5. Provide an application key, used to identify this application. By default, the key of the original application is provided, extended by a number.
 6. Provide the application path as part of the URL to invoke the application. By default, the path of the original application is provided, extended by a number. If you set it to the path of the original subscribed application, your own application will overrule the subscribed application. 
-7. Finally, click **Clone** to create the application.
+7. Finally, click **Duplicate** to create the application.
 
 For details on the fields, see also [Application properties](#application-properties) below.
 
@@ -103,7 +103,7 @@ For details on the fields, see also [Application properties](#application-proper
 
 In order to upload custom CEP rules, follow these steps:
 
-1. Click **Add application** in the "Own applications" page.
+1. Click **Add application** in the **Own applications** page.
 2. In the upcoming dialog, select **Upload custom CEP rule**. <br>
 	<img src="/guides/images/users-guide/Administration/Admin_ApplicationsAddCEPRules.png" alt="Upload CEP rules" style="max-width: 50%">
 
@@ -143,7 +143,7 @@ Each application will show the following properties:
 
 To edit an application, simply click the application or click **Edit** in its context menu, accessible through the menu icon. 
 
-In the "Properties" tab, several fields can be modified, depending on the application type (see [Application properties](#application-properties)).
+In the **Properties** tab, several fields can be modified, depending on the application type (see [Application properties](#application-properties)).
 
 >**Important:** Never change the system application names (e.g. "Device Management", "Cockpit"). Otherwise, tenant initialization will fail. 
 
@@ -200,11 +200,11 @@ Be aware of the "UI" at the end of the plugin names.
 Users can restore previous versions of an application from an archive:
 
 1. Open the application by clicking on it.
-2. Switch to the "Archives" tab. 
+2. Switch to the **Archives** tab. 
 3. Open the context menu for the desired version by clicking the menu icon and select **Set as active** to make it the active version.
 4. Click **Remove** to remove the version from the archive.
 
->**Info**: The "Archive" tab is not available for subscribed applications, as only the owner of the application can perform this action.
+>**Info**: The **Archive** tab is not available for subscribed applications, as only the owner of the application can perform this action.
 
 ### Uploading archives
 

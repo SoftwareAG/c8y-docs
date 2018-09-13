@@ -34,7 +34,7 @@ The following tabs are the most common ones, each described in detail in a separ
 |[Location](#location)|Shows the location of a device, if available.
 |[Logs](#logs)|Allows requesting log information for a device.
 |[Objects](#objects)|Shows all available objects of a LwM2M device.
-|[LWM2M bootstrap parameteres](#lwm2m-bootstrap)|Shows the bootstrap parameters of a LWM2M device and allows changes to some of the parameters.
+|[LWM2M bootstrap parameters](#lwm2m-bootstrap)|Shows the bootstrap parameters of a LWM2M device and allows changes to some of the parameters.
 |[Service monitoring](#service-monitoring)|Allows the service monitoring of machines. See also [Monitoring services](#monitoring-services). Available for each device.
 |[Shell](#shell)|Enables you to interact with remote devices via a command prompt.
 |[Tracking](#tracking)|Shows the movement of a device, if available.
@@ -233,9 +233,9 @@ To view the history of all operations, simply click **View history**. Note that,
 
 ![Control tab](/guides/images/users-guide/DeviceManagement/DevMgmt_operations.png)
 
-**Audit Config**
+**Audit Configuration**
 
-In the audit configuration page you can audit the current device by comparing to a selected reference device. It is also possible to sync properties to the values of the referenced device.
+In the "Audit configuration" page you can audit the current device by comparing to a selected reference device. It is also possible to sync properties to the values of the referenced device.
 
 In order to sync properties, navigate to the **Audit configuration** page.
 
@@ -243,19 +243,19 @@ In order to sync properties, navigate to the **Audit configuration** page.
 
 Then, select the desired reference device from the dropdown list. Check the properties that you wish to sync and press **Sync selected properties**.
 
-> **Info**: The numbers in the green circle represent the number of properties in the instance which have the same value in both devices. Meanwhile, numbers in the red circle represent the number of properties which have different values compared to the values of the referenced device. If an instance is expanded, you can select only specific properties which can be synced.
+> **Info**: The number in the green circle represent the number of properties in the instance which have the same value in both devices. Meanwhile, numbers in the red circle represent the number of properties which have different values compared to the values of the referenced device. If an instance is expanded, you can select only specific properties which can be synced.
 
 ![Sync properties](/guides/images/users-guide/DeviceManagement/DevMgmt_sync_properties.png)
 
 ### <a name="lwm2m-bootstrap"></a> LWM2M bootstrap parameters
 
-In this tab, bootstrap parameters of the current device can be observed and changed. To make a change simply enter a desired value in a field of your choice and click **Save.**
+In the LWM2M bootstrap parameters tab, bootstrap parameters of the current device can be observed and changed. To make a change simply enter a desired value in a field of your choice and click **Save.**
 
 ![Bootstrap customization](/guides/imgaes/users-guide/DeviceManagement/DevMgmt_bootstrap_customization.png)
 
 > **Important:** Currently only the "NO_SEC" and "PSK" security modes are supported.
 
-For more info on the fields in this tab, refer to [Optional services > LighweightM2M](/guides/users-guide/optional-services/#lwm2m).
+For further information on the fields in the LWM2M bootstrap parameters tab, refer to [Optional services > LighweightM2M](/guides/users-guide/optional-services/#lwm2m).
 
 ### <a name="service-monitoring"></a>Service monitoring
 

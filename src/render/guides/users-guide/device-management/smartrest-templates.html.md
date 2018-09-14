@@ -8,9 +8,9 @@ layout: redirect
 
 SmartREST templates are a collection of request and response templates used to convert CSV data and Cumulocity Rest API calls. For example, you can use SmartREST templates to easily add devices to the platform instead of manually writing the requests each time.
 
-To ease the device integration, Cumulocity supports static templates that can be used without the need for creating your own templates. These templates focus only on the most commonly used messages for device management. For further information on static templates, refer to the [MQTT Developer´s Guide](/guides/mqtt/static-templates/).
+To ease the device integration, Cumulocity supports static templates that can be used without the need for creating your own templates. These templates focus only on the most commonly used messages for device management. For further information on static templates, refer to the [MQTT Developer guide](/guides/mqtt/static-templates/).
 
-Open the SmartREST template list from the "Device Types" menu in the navigator. 
+Open the SmartREST template list from the **Device Types** menu in the navigator. 
 
 ![template view](/guides/images/users-guide/templateview.png)
 
@@ -47,7 +47,7 @@ There are two ways to add a SmartRest template:
 
 The message template contains all necessary information to convert the SmartRest request into a corresponding Rest API call which is then sent to the platform.
 
-To add a new message, navigate to the "Messages" tab in your desired SmartREST template and click **Add message**. Complete the following fields:
+To add a new message, navigate to the **Messages** tab in your desired SmartREST template and click **Add message**. Complete the following fields:
 
 |Field|Description|
 |:---|:---|
@@ -55,7 +55,7 @@ To add a new message, navigate to the "Messages" tab in your desired SmartREST t
 |Name|Name for the message. Mandatory.
 |Target REST API|REST API for the target. Dropdown list. May be one of Measurement, Inventory, Alarm, Event, Operation.
 |Method|Request method. May be one of POST, PUT, GET, depending on the selected Target REST API.
-|Include Responses|Click this checkbox if you want to process the results of the request with response templates.
+|Include Responses|Select this checkbox if you want to process the results of the request with response templates.
 |REST API built-in fields|These fields are optional and vary depending on the target REST API selected. In case no value is provided, a device will be able to set it when sending an actual message.
 |REST API custom fields|Additional fields can be added by clicking **Add field**. Enter the API key and select the desired data type.
 
@@ -71,7 +71,7 @@ To delete a message, open it and click **Remove** at the bottom.
 
 A response template contains the necessary information to extract data values from a platform REST API call response, which is then sent back to the client in a CSV data format.
 
-To add a new response, navigate to the "Response" tab in your desired SmartREST template and click **Add response**. Complete the following fields:
+To add a new response, navigate to the **Response** tab in your desired SmartREST template and click **Add response**. Complete the following fields:
 
 <img src="/guides/images/users-guide/DeviceManagement/DevMgmt_TemplateResponse.png" alt="Response" style="max-width: 100%">
 
@@ -99,8 +99,8 @@ To export a SmartREST template, click the menu icon and in the menu click  **Exp
 
 To export a SmartREST template as CSV file follow these steps:
 
-1. Open the template of your choice and select the "CSV Preview" tab. 
-2. In the "CSV Preview" tab which provides additional information on messages and responses, click **Export CSV**. 
+1. Open the template of your choice and select the **CSV preview** tab. 
+2. In the **CSV preview** tab which provides additional information on messages and responses, click **Export CSV**. 
 1. In the upcoming window, specify the preferred options for the field separator, decimal separator and character set.
 1. Click **Download** to download the template as CSV file.
 

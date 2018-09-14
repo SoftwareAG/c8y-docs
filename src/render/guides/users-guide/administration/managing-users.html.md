@@ -12,11 +12,11 @@ The user management functionality allows you to manage the users within your ten
 - Choosing basic login options
 - Enabling additional login security by using Two-Factor Authentication (TFA)
 
-> **Info:** The user needs to have a role with the user management permission "ADMIN" or "CREATE" to be able to do so.
+> **Info:** The user needs to have a role with the user management permission ADMIN or CREATE to be able to do so.
 
 ### Viewing users
 
-To view all users in your tenant, click "Users" in the "Account" menu in the navigator.
+To view all users in your tenant, click **Users** in the **Account** menu in the navigator.
 
 ![Expanded view](/guides/images/users-guide/userslist.png)
 
@@ -31,7 +31,7 @@ To filter the list, you can use the search field at the left of the top menu bar
 
 Moreover you can filter by global roles. Select the desired roles from the dropdown list and click **Apply** to limit the users shown in the list to users with the selected roles.
 
-Initially, the "User" page only shows the top-level users. To see all users in your account at once, click **Expand all** at the right of the top bar. This will expand all top-level users, showing their sub-users. Click **Collapse all** to just show the top-level users again. For details on user hierarchies, refer to [Managing user hierarchies](/guides/users-guide/enterprise-edition/user-hierarchies).
+Initially, the **User** page only shows the top-level users. To see all users in your account at once, click **Expand all** at the right of the top bar. This will expand all top-level users, showing their sub-users. Click **Collapse all** to just show the top-level users again. For details on user hierarchies, refer to [Managing user hierarchies](/guides/users-guide/enterprise-edition/user-hierarchies).
 
 ### <a name="creating-users"></a>Creating users
 
@@ -39,7 +39,7 @@ To add a user to your tenant, click **Add user** at the right of the top menu ba
 
 ![Add new user](/guides/images/users-guide/Administration/admin-user-add.png)
 
-At the left of the "New user" window provide the following information to identify the user:
+At the left of the **New user** window provide the following information to identify the user:
 
 |Field|Description|
 |:---|:---|
@@ -55,8 +55,8 @@ At the left of the "New user" window provide the following information to identi
 
 Select the login options for the user.
 
-* If you select "User must reset the password on next login", you need to provide a password which the user needs to reset on the next login. <br>Enter a password and confirm it. While entering the password, the strength of the password will be shown. See [Logging into the Cumulocity platform](/guides/users-guide/overview/#login) for further information on password strength.  
-* If you select "Send password reset link as e-mail", the user will receive an email message with a link to set a password. The email will be sent to the email address configured above.
+* If you select **User must reset the password on next login**, you need to provide a password which the user needs to reset on the next login. <br>Enter a password and confirm it. While entering the password, the strength of the password will be shown. See [Logging into the Cumulocity platform](/guides/users-guide/overview/#login) for further information on password strength.  
+* If you select **Send password reset link as e-mail**, the user will receive an email message with a link to set a password. The email will be sent to the email address configured above.
 
 On the right of the page, select the global roles for the user. Details on global roles are described in [Managing Permissions](/guides/users-guide/administration/managing-permissions).
 
@@ -73,7 +73,7 @@ Click the menu icon at the right of a user entry to open a context menu which pr
 
 > **Info:** You need a role with user management permission to perform these options.
 
-Click **Edit** to edit an existing user. All fields except “Username” and “Send password reset link as e-mail” can be modified. For details an each field, refer to [Creating users](#creating-users). Click **Change password** to change the password. After editing, click **Save** to apply your settings.
+Click **Edit** to edit an existing user. All fields except **Username** and **Send password reset link as e-mail** can be modified. For details an each field, refer to [Creating users](#creating-users). Click **Change password** to change the password. After editing, click **Save** to apply your settings.
 
 To copy roles, click **Copy inventory roles from another user**. In the upcoming window, select a user from the list and click **Copy**. At the top you can select if you want to merge the roles with the existing user roles (the default) or if you want to replace the existing user roles.
 

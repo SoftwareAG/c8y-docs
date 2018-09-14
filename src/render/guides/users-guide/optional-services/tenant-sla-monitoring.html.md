@@ -37,7 +37,7 @@ The management tenant needs to be subscribed to the application “Tenant-sla-mo
 
 <img src="/guides/images/users-guide/TenantMonitoringApplication.png" alt="Tenant Monitoring application" style="max-width: 100%">
 
-For details on application subscription, refer to Administration > Managing Tenants > [Subscribing to applications](/guides/users-guide/enterprise-edition#subscribe) in the User guide.
+For details on application subscription, refer to [Administration > Managing Tenants > Subscribing to applications](/guides/users-guide/enterprise-edition#subscribe) in the User guide.
 
 ### How the service works
 
@@ -49,7 +49,7 @@ Moreover, for each subscribed tenant (i.e. management tenant), a source in the D
 
 ### Viewing measurements
 
-To view the measurements showing the monitoring results, open the management tenant´s source (device) in “All devices” in the Device Management application and switch to the “Measurements” tab.
+To view the measurements showing the monitoring results, open the management tenant´s source (device) in **All devices** in the Device Management application and switch to the **Measurements** tab.
 
 <img src="/guides/images/users-guide/TenantMonitoringMeasurements.png" alt="Tenant Monitoring measurements" style="max-width: 100%">
 
@@ -65,7 +65,7 @@ These average values are calculated by summing up the timespan of all timeout an
 
 <img src="/guides/images/users-guide/TenantMonitoringDayAverage.png" alt="Tenant Monitoring Day Average" style="max-width: 100%">
 
-For further details on measurements refer to Device Management > Device details -> [Measurements](/guides/users-guide/device-management#measurements) in the User`s Guide.
+For further details on measurements refer to [Device Management > Device details > Measurements](/guides/users-guide/device-management#measurements) in the User guide.
 
 ### Creating alarms
 

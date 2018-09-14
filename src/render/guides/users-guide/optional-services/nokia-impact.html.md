@@ -42,7 +42,7 @@ IMPACT devices do not need to be registered again in Cumulocity. Cumulocity’s 
 
 To process data from IMPACT devices, Cumulocity uses device protocols. Through device protocols you can observe your resources and perform other actions like creating alarms.
 
-Device protocols are accessible through the “Devices Types” menu in the Device Management application. For details on the general usage see [Device protocols](/guides/users-guide/device-management/managing-device-types).
+Device protocols are accessible through the **Devices types** menu in the Device Management application. For details on the general usage see [Device protocols](/guides/users-guide/device-management/managing-device-types).
 
 <img src="/guides/images/users-guide/DeviceManagement/DevMgmt_DeviceProtocols.png" alt="Device protocols" style="max-width: 100%">
 
@@ -50,7 +50,7 @@ Device protocols are accessible through the “Devices Types” menu in the Devi
 
 To add a new IMPACT device protocol follow these steps:
 
-1. In the Device Management application, move to the “Device protocol” page, accessible through the “Device types” menu in the navigator.
+1. In the Device Management application, navigate to the **Device protocol** page, accessible from the **Device types** menu in the navigator.
 2. Click **Add device protocol** in the top menu bar. 
 3. In the upcoming window select **IMPACT** as device protocol type.<br><br>
 <img src="/guides/images/users-guide/DeviceManagement/DevMgmt_DeviceProtocolAdd.png" alt="Add protocol" style="max-width: 50%"><br>
@@ -62,7 +62,7 @@ The device protocol will open in a new page.
 
 <img src="/guides/images/users-guide/DeviceManagement/DevMgmt_DeviceProtocolPage.png" alt="Protocol page" style="max-width: 100%">
 
-In the device protocol page you will see the description at the top left and the ID, the creation date and date of the last update at the top right.
+In the **Device protocol** page you will see the description at the top left and the ID, the creation date and date of the last update at the top right.
 
 Below a list of resources configured for the device will be listed (which is empty when creating a new protocol), showing the ID, name and potentially configured functionalities for each resource.
 
@@ -89,40 +89,40 @@ Optionally, you may turn on several functionalities for the resource:
 
 <img src="/guides/images/users-guide/DeviceManagement/DevMgmt_DeviceProtocolResourceFunctionalities.png" alt="Functionalities" style="max-width: 100%">
 
-**Send measurement** 
+**Send measurements** 
 
-Turn on **Send measurement** to specify a measurement. 
+Turn on **Send measurements** to specify a measurement. 
 
-* In the "Type" field, enter the type of the measurement, for example “c8y_AccelerationMeasurement”.
-* Series are any fragments in measurements that contain a “value” property. In the "Series" field you can enter for example “c8y_AccelerationMeasurement.acceleration”.
-* The “Unit” field specifies the unit of the given measurement, for example “m/s” for velocity.
+* In the **Type** field, enter the type of the measurement, for example “c8y_AccelerationMeasurement”.
+* Series are any fragments in measurements that contain a “value” property. In the **Series** field you can enter for example “c8y_AccelerationMeasurement.acceleration”.
+* The **Unit** field specifies the unit of the given measurement, for example “m/s” for velocity.
  
 
 **Create alarm**
 
 Turn on **Create alarm** if you want to create an alarm out of the resource. Specify the following parameters (all mandatory):
 
-* In the "Severity" field, select a severity for the alarm. May be one of CRITICAL, MAJOR, MINOR, WARNING.
-* The "Type" field is a text field which is used for duplicating alarms and for configuring the priority of alarms in the Administration application.
-* In the "Status" field, select an alarm status. may be one of ACTIVE, ACKNOWLEDGED, CLEARED.
-* In the "Text" field, provide a textual description for the alarm.
+* In the **Severity** field, select a severity for the alarm. May be one of CRITICAL, MAJOR, MINOR, WARNING.
+* The **Type** field is a text field which is used for duplicating alarms and for configuring the priority of alarms in the Administration application.
+* In the **Status** field, select an alarm status. may be one of ACTIVE, ACKNOWLEDGED, CLEARED.
+* In the **Text** field, provide a textual description for the alarm.
 
 **Send event**
 
 Turn on **Send event** to send an event each time a certain condition has been triggered. Specify the following parameters:
 
-* In the "Type" field, enter the type of the event, for example "com&#95;cumulocity&#95;model_DoorSensorEvent".
-* In the "Text" field, enter the text which will be sent, for example "Door sensor was triggered".
+* In the **Type** field, enter the type of the event, for example "com&#95;cumulocity&#95;model_DoorSensorEvent".
+* In the **Text** field, enter the text which will be sent, for example "Door sensor was triggered".
 
 
 **Auto observe**
 
-Enabling “Auto observe” for a resource meeans, that each time the device with this particular resource appears, Cumulocity will automatically receive all values. It is not necessary, to subscribe to it manually.
+Enabling **Auto observe** for a resource means, that each time the device with this particular resource appears, Cumulocity will automatically receive all values. It is not necessary, to subscribe to it manually.
 
->**Info**: At least one functionality must be set to enable “Auto observe”. 
+>**Info**: At least one functionality must be set to enable **Auto observe**. 
 
 Finally, click **Save** to create the resource. The resource will be added to the resource list.
 
-In the resources list you can see if functionalities have been turned on for a resource. Active functionalities are indicated by the related icons. In the example below, “Send measurements” and “Auto observe” are turned on.
+In the resources list you can see if functionalities have been turned on for a resource. Active functionalities are indicated by the related icons. In the example below, **Send measurements** and **Auto observe** are turned on.
 
 <img src="/guides/images/users-guide/DeviceManagement/DevMgmt_DeviceProtocolFunctionalitiesOn.png" alt="Functionalities" style="max-width: 100%">

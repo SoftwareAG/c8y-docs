@@ -39,7 +39,7 @@ Click **Next** in the Cockpit wizard to see the QR code with credentials to regi
 
 ![Register phone QR](/guides/images/users-guide/registerphonenew.png)
 
-Your smartphone will be added to the devices list in the Device Management application, available from "All devices" in the "Devices" menu in the navigator.
+Your smartphone will be added to the devices list in the Device Management application, available from **All devices** in the **Devices** menu in the navigator.
 
 ![All devices](/guides/images/users-guide/alldevices.png)
 
@@ -55,13 +55,13 @@ Moreover it will be added to the group “Smartphones” (which will be created 
 
 To register your smartphone manually, follow these steps:
 
-1. Press the “Web-based Registration” button on the Cloud Sensor App Welcome screen. <br>![Action bar](/guides/images/users-guide/webbased.png)
+1. Press the **Web-based Registration** button on the Cloud Sensor App Welcome screen. <br>![Action bar](/guides/images/users-guide/webbased.png)
 2. Select the instance on which your IoT Sensor Demo tenant is hosted, e.g. cumulocity.com. <br>![Select Instance](/guides/images/users-guide/selectinstancenew.png)
-3. Press the “Register device” button to start registration. A device ID will be displayed which needs to be entered during device registration on the Cumulocity IoT Sensor tenant. <br>![Get device Id](/guides/images/users-guide/getdeviceidnew.png)
-4. In your Cumulocity tenant in the Device Management application, click "Registration" in the "Devices" menu and enter the device ID. <br>![Register device](/guides/images/users-guide/registerdeviceid.png)
+3. Press the **Register device** button to start registration. A device ID will be displayed which needs to be entered during device registration on the Cumulocity IoT Sensor tenant. <br>![Get device Id](/guides/images/users-guide/getdeviceidnew.png)
+4. In your Cumulocity tenant in the Device Management application, click **Registration** in the **Devices** menu and enter the device ID. <br>![Register device](/guides/images/users-guide/registerdeviceid.png)
 5. Click **Accept**.<br>![Accept device](/guides/images/users-guide/acceptdevice.png)
 
-Your smartphone will be added to the devices list in the Device Management application, available from "All devices" in the "Devices" menu in the navigator.
+Your smartphone will be added to the devices list in the Device Management application, available from **All devices** in the **Devices** menu in the navigator.
 
 ![All devices](/guides/images/users-guide/alldevices.png)
 
@@ -85,7 +85,7 @@ You may edit the device name or leave it at the default value for your smartphon
 
 A new device record with the model name and the device name used in the platform will appear on the screen of the Cloud Sensor App. 
 
-The measurements from the sensors of your smartphone will automatically start being sent to your Cumulocity tenant. You can view the data from sensors by pressing the "View sensors" button.
+The measurements from the sensors of your smartphone will automatically start being sent to your Cumulocity tenant. You can view the data from sensors by pressing the **View sensors** button.
 
 ![phone sensors](/guides/images/users-guide/phonesensors.png)
 ![gps sensor](/guides/images/users-guide/gpssensor.png)
@@ -101,11 +101,11 @@ A 3D rotation widget on this dashboard will depict the data from a gyroscope sen
 
 To save battery power, the Cloud Sensor App sends measurements to Cumulocity only when the data change is significant, or every 20 minutes by default. This interval can be changed in the Device Management application.
 
-Switch to the Device Management application and select your smartphone from the device list, available through "All devices" in the "Devices" menu in the navigator.
+Switch to the Device Management application and select your smartphone from the device list, available through **All devices** in the **Devices** menu in the navigator.
 
 ![select from list](/guides/images/users-guide/selectfromlist.png)
 
-Switch to the "Configuration" tab and specify the interval in milliseconds.
+Switch to the **Configuration** tab and specify the interval in milliseconds.
 
 ![configuration interval](/guides/images/users-guide/configurationinterval.png)
 
@@ -119,11 +119,11 @@ All Sensor Tags which are discoverable are displayed. To make a Sensor Tag disco
 
 ![Connect Sensor Tag](/guides/images/users-guide/bluetoothscreen.png)
 
-Press “Connect” next to the Sensor Tag of your choice. The Bluetooth connection between the Sensor Tag and your smartphone will be established. Once the Sensor Tag is paired with your smartphone, you will see it as a record on the Cloud Sensor App’s screen:
+Press **Connect** next to the Sensor Tag of your choice. The Bluetooth connection between the Sensor Tag and your smartphone will be established. Once the Sensor Tag is paired with your smartphone, you will see it as a record on the Cloud Sensor App’s screen:
 
 ![Sensor Tag Card](/guides/images/users-guide/ticard.png)
 
-Observing information and sensor data from the TI Sensor Tag is possible by pressing the “View sensors” button on its card.
+Observing information and sensor data from the TI Sensor Tag is possible by pressing the **View sensors** button on its card.
 
 ![Sensor Tag Info](/guides/images/users-guide/sensortaginfo.png)
 ![Sensor Tag Key Not Pressed](/guides/images/users-guide/tikeynopressed.png)
@@ -133,7 +133,7 @@ In your Cumulocity tenant, the data points for the Sensor Tag will be displayed 
 
 ![Sensor tag data points](/guides/images/users-guide/sensortagdatapoints.png)
 
-To detach the Sensor Tag from your smartphone, press the “Remove” button on its card.
+To detach the Sensor Tag from your smartphone, press the **Remove** button on its card.
 
 ### Device control
 

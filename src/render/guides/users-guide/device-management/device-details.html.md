@@ -14,7 +14,7 @@ To view detailed information on the device, click a device in the device list.
 
 The device details are divided into tabs. The number of tabs is dynamic and depends on the available information, i.e. tabs are only displayed if the kind of information is available for the particular device. 
 
-Initially the "Info" tab is shown, which offers general information on a device and is available for each device. 
+Initially the **Info** tab is shown, which offers general information on a device and is available for each device. 
 
 Each device at least shows the following tabs: Info, Alarms, Control, Events, Service monitoring, Identity (also see the tab list below).
 
@@ -39,7 +39,7 @@ The following tabs are the most common ones, each described in detail in a separ
 |[Tracking](#tracking)|Shows the movement of a device, if available.
 |[Identity](#identity)|Displays identities recorded for a particular device. Available for each device.
 
->**Info**: Potential individual tabs, which you do not find listed here, may be described in a different context and therefore somewhere else in the Cumulocity documentation. Use the Search function to switch to the relevant sections. A detailed description on the "Modbus" tab, for example, can be found in the respective device guide.
+>**Info**: Potential individual tabs, which you do not find listed here, may be described in a different context and therefore somewhere else in the Cumulocity documentation. Use the Search function to switch to the relevant sections. A detailed description on the **Modbus** tab, for example, can be found in the respective Device guide.
 
 Below the name, a list of breadcrumbs is displayed. If the device is part of an asset hierarchy (such as a group), you can use the breadcrumbs to easily navigate up that hierarchy. Since devices can be part of multiple hierarchies, several rows of breadcrumbs may be shown.
 
@@ -51,7 +51,7 @@ Details on these additional menu items are provided where required.
 
 ### <a name="info"></a>Info
 
-The "Info" tab summarizes management-relevant device information in a dashboard.
+The **Info** tab summarizes management-relevant device information in a dashboard.
 
 <img src="/guides/images/users-guide/DeviceManagement/DevMgmt_DeviceInfoDashboard.png" alt="Info dashboard" style="max-width: 100%">
 
@@ -62,20 +62,20 @@ The information is provided on the following cards:
 |Notes|Provides optional notes to inform about current activities. Notes usually may only be edited by an administrator. To add or edit a note, click **Edit**, enter your note or your modifications in the text box and save your edits by clicking the green checkmark at the right of the text box. 
 |Device status|Displays connection-relevant information, as described in detail in [Connection monitoring](#connection-monitoring). 
 |Device and communication|Shows a data point graph displaying realtime data on particular measurements. For details, refer to [Using the Data Explorer](/guides/users-guide/cockpit#data-explorer) in the Cockpit documentation.
-|Device data|Displays editable information on the device (name, type, ID, owner, last updated). The fields "ID" and "Last Updated" cannot be edited. Moreover information on hardware (editable) and firmware (not editable) is displayed here if available.
+|Device data|Displays editable information on the device (name, type, ID, owner, last updated). The fields **ID** and **Last updated** cannot be edited. Moreover information on hardware (editable) and firmware (not editable) is displayed here if available.
 |Active, critical alarms|Shows the active critical alarms for the device.
 |Groups assignment|Displays the groups the device belongs to. Moreover you can add the device to groups here or unassign it from groups. For details on grouping devices see [Grouping devices](#grouping-devices).
 |Location|Shows the location of a device on a map as reported by the device or as manually set. For details, refer to [Location](#location).
 
 ### <a name="child-devices"></a>Child devices
 
-The "Child devices" tab shows a list of devices connected to the currently displayed device. For example, if you look at a gateway, the tab lists all machines connected to the gateway.
+The **Child devices** tab shows a list of devices connected to the currently displayed device. For example, if you look at a gateway, the tab lists all machines connected to the gateway.
 
 For details provided in the child device list, refer to [Viewing devices](#viewing-devices).
 
 ### <a name="measurements"></a>Measurements
 
-The "Measurements" tab provides a default visualization of numeric data provided by the device in the form of charts. Charts are grouped into types of measurements, which can contain multiple graphs or "series". The screenshot below, for example, shows a chart for motion measurement including graphs for acceleration in the three dimensions, and a chart with modem statistics in the form of signal strength and bit error rate.
+The **Measurements** tab provides a default visualization of numeric data provided by the device in the form of charts. Charts are grouped into types of measurements, which can contain multiple graphs or "series". The screenshot below, for example, shows a chart for motion measurement including graphs for acceleration in the three dimensions, and a chart with modem statistics in the form of signal strength and bit error rate.
 
 ![Measurements](/guides/images/users-guide/measurements.png)
 
@@ -87,7 +87,7 @@ To see detailed information about the measured values, hover over the chart. A t
 
 By default, charts show the raw data of the last hour. To change the time range on the X-axis, open the "Last hour" dropdown menu at the top right and select a time range.
 
-If you increase the time range, the value in the "Aggregation" field will automatically switch to "hourly" or "daily". The chart now shows ranges instead of individual raw data points. For "hourly", the chart will show a range of the minimum and maximum value measured in one hour. For "daily", the chart will show the minimum and maximum value measured over one day. Likewise, the tooltips will now show ranges of values instead of individual values.
+If you increase the time range, the value in the **Aggregation** field will automatically switch to "hourly" or "daily". The chart now shows ranges instead of individual raw data points. For "hourly", the chart will show a range of the minimum and maximum value measured in one hour. For "daily", the chart will show the minimum and maximum value measured over one day. Likewise, the tooltips will now show ranges of values instead of individual values.
 
 This enables you to get an efficient overview over larger time periods. A graph will only show 5.000 data points per graph maximum to avoid overloading your desktop browser. If you select a fine focus resulting in more than 5.000 data points, a warning message will be shown: "Truncated data. Change aggregation or select shorter date range."
 
@@ -116,16 +116,16 @@ Fragment<span>&#95;</span>name and serie<span>&#95;</span>name can be replaced b
 
 ### <a name="alarms"></a>Alarms
 
-The "Alarms" tab provides information on the alarms of a device. Refer to  [Working with alarms](#alarm-monitoring) for further information on alarms.
+The **Alarms** tab provides information on the alarms of a device. Refer to  [Working with alarms](#alarm-monitoring) for further information on alarms.
 
 ### <a name="config"></a> Configuration
 
-The text configuration, available in the "Configuration" tab of a device, allows you to configure the parameters and initial settings of your device in a text format.
+The text configuration, available in the **Configuration** tab of a device, allows you to configure the parameters and initial settings of your device in a text format.
 
 To manually add or edit a device configuration, follow these steps:
 
 1. Open the details for your desired device.
-2. Click the "Configuration" tab.
+2. Click the **Configuration** tab.
 3. In the text field you can add or edit the device configuration as desired.
 4. Click **Save** to save your edits.
 
@@ -135,20 +135,20 @@ Alternatively, you can work with configuration snapshots. For details, refer to 
 
 ### <a name="control"></a>Control
 
-The "Control" tab lists the operations being sent to a device. Refer to [Working with operations](#operation-monitoring) for further information on operations.
+The **Control** tab lists the operations being sent to a device. Refer to [Working with operations](#operation-monitoring) for further information on operations.
 
 ![Operations](/guides/images/users-guide/operations.png)
 
 ### <a name="network"></a>Network
 
-In the "Network" tab network settings can be configured for the device.
+In the **Network** tab network settings can be configured for the device.
 
 <!-- Needs to be documented-->
 
 
 ### <a name="software"></a>Software
 
-The "Software" tab allows you to manage and update the firmware of a device and the software installed on a device. 
+The **Software** tab allows you to manage and update the firmware of a device and the software installed on a device. 
 
 To install a new firmware, click **Install firmware**, then select a firmware image from the [Firmware repository](#software-repo) and click **Install**.
 
@@ -156,26 +156,26 @@ Similarly, to install a software on the device, click **Install software**, sele
 
 <img src="/guides/images/users-guide/DeviceManagement/DevMgmt_software.png" alt="Software" style="max-width: 100%">
 
-Installing software and firmware usually includes a restart of the device. To monitor the progress of an installation, visit the "Control" tab.
+Installing software and firmware usually includes a restart of the device. To monitor the progress of an installation, visit the **Control** tab.
 
 To remove a software from a device, hover over a particular software package and click the **Delete** button.
 
 ### <a name="events"></a>Events
 
-The "Events" tab displays events related to a device. This enables low-level troubleshooting of a device. Refer to [Troubleshooting devices](#events-all) for further information.
+The **Events** tab displays events related to a device. This enables low-level troubleshooting of a device. Refer to [Troubleshooting devices](#events-all) for further information.
 
 ### <a name="location"></a>Location
 
-The "Location" tab by default shows the location of a device on a map and as coordinates, as reported by the device. For devices that do not report a location you may manually set the location. Simply place the "pin" in the correct place of the displayed map.
+The **Location** tab by default shows the location of a device on a map and as coordinates, as reported by the device. For devices that do not report a location you may manually set the location. Simply place the "pin" in the correct place of the displayed map.
 
-The "Location" tab also shows when a device contains c8y_Position property. When you send a new c8y-position event, you can set the same c8y-Position fragment on the device and it will automatically mark its position on the map.
+The **Location** tab also shows when a device contains c8y_Position property. When you send a new c8y-position event, you can set the same c8y-Position fragment on the device and it will automatically mark its position on the map.
 
 
 ### <a name="logs"></a>Logs
 
-In the "Logs" tab you can request log information from devices. Log information can be filtered according to date ranges, log type, keywords and the maximum number of lines to transfer.
+In the **Logs** tab you can request log information from devices. Log information can be filtered according to date ranges, log type, keywords and the maximum number of lines to transfer.
 
-In the "Logs" tab, click **Request log file** at the right of the top menu bar.
+In the **Logs** tab, click **Request log file** at the right of the top menu bar.
 
 In the upcoming window, specify the following settings for the log information:
 
@@ -198,11 +198,11 @@ When hovering over an entry, the **Download** and **Delete** buttons appear. Cli
 
 ### <a name="objects"></a> Objects
 
-In the “Objects” tab of a LWM2M device, you can view all objects, resources and instances of the device. Additionally, you can create new operations, see all currently pending operations and view the history of all previous operations.
+In the **Objects** tab of a LWM2M device, you can view all objects, resources and instances of the device. Additionally, you can create new operations, see all currently pending operations and view the history of all previous operations.
 
 ![Objects view](/guides/images/users-guide/DeviceManagement/DevMgmt_objects-view.png)
 
-**Info**: In order to see resources in the “Objects” tab, the resources first have to be added in the “Device Protocols” page.
+**Info**: In order to see resources in the **Objects** tab, the resources first have to be added in the **Device Protocols** page.
 
 The following operations can be observed in each instance:
 
@@ -228,7 +228,7 @@ Additional information on recent operations can be viewed by clicking the operat
 ![Recent operations](/guides/images/users-guide/DeviceManagement/DevMgmt_recent-operations.png)
 ![Recent operations 2](/guides/images/users-guide/DeviceManagement/DevMgmt_recent-operations2.png)
 
-To view the history of all operations, simply click **View history**. Note that, you will be redirected to the “Control” tab.
+To view the history of all operations, simply click **View history**. Note that, you will be redirected to the **Control** tab.
 
 ![Control tab](/guides/images/users-guide/DeviceManagement/DevMgmt_operations.png)
 
@@ -240,7 +240,7 @@ In addition to connection monitoring, Cumulocity offers a separate service monit
 
 The device shell enables you to interactively work with remote devices. Many industrial devices support some form of command language, be it AT commands for modems, CSV-style commands for many tracking devices or elaborate scripting mechanisms such as Tixi TiXML. In the shell, you can send commands in the respective language of the device and interactively view the results of the commands.
 
-The "Shell" tab presents a command prompt to enter commands. 
+The **Shell** tab presents a command prompt to enter commands. 
 
 In the command prompt you can enter arbitrary command text. To send the command text to the device, click **Execute**. This button only is activated if the device is online.
 
@@ -255,9 +255,9 @@ For your convenience, Cumulocity provides several frequently used commands for s
 
 ### <a name="tracking"></a>Tracking
 
-Devices can record the history of their movements in Cumulocity. This movements may be viewed in the "Tracking" tab.
+Devices can record the history of their movements in Cumulocity. This movements may be viewed in the **Tracking** tab.
 
-**Note** that the "Tracking" tab only shows up when a device contains c8y_Position property.
+**Note** that the **Tracking** tab only shows up when a device contains c8y_Position property.
 
 In the dropdown list at the top right you can select a time period (or specify one by selecting Custom from the list) and visualize the movements of the device during this period. Movements are shown as red lines in the map.
 
@@ -271,7 +271,7 @@ Depending on the type of device and the integration into Cumulocity, you can con
 
 ### <a name="identity"></a>Identity
 
-Cumulocity can associate devices and assets with multiple external identities. For example, devices can often be identified by the IMEI of their modem, by a microcontroller serial number or by an asset tag. The "Identity" tab lists all the identities recorded for a particular device.
+Cumulocity can associate devices and assets with multiple external identities. For example, devices can often be identified by the IMEI of their modem, by a micro-controller serial number or by an asset tag. The **Identity** tab lists all the identities recorded for a particular device.
 
 This is useful, for example, when you have non-functional hardware and need to replace the hardware without losing the data that was recorded. Just connect the new hardware to your account and modify the identity entry of the old hardware, to contain the identity of the new hardware.
 

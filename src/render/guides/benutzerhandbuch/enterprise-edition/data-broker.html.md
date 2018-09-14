@@ -16,6 +16,10 @@ Navigieren Sie zur Seite **Datenkonnektor** im Menü **Data Broker**, wenn Sie a
 
 > **Info**: Geräte, die über den Data Broker weitergeleitet werden, werden wie normale Geräte im Zielmandanten abgerechnet.
 
+>Beachten Sie folgende Einschränkungen im Zusammenhang mit dem Data Broker:<br> 
+>Cloud Remote Access kann im Ursprungsmandanten nicht verwendet werden.  
+>Derzeit funktioniert das Fieldbus-Widget nicht in Mandanten, die Fieldbus-Geräte durch den Data Broker erhalten, da die entsprechenden Datenmodelle nicht synchronisiert werden. 
+
 ### <a name="data-broker-connectors"></a>Datenkonnektoren
 
 Ein Datenkonnektor beschreibt die Daten, die Sie zu einem Zielmandanten senden möchten sowie die URL dieses Mandanten.
@@ -24,7 +28,7 @@ Ein Datenkonnektor beschreibt die Daten, die Sie zu einem Zielmandanten senden m
 
 Auf der Seite **Datenkonnektor** können Sie bestehende Datenkonnektoren verwalten und neue anlegen. Klicken Sie **Datenkonnektor**, um eine Liste mit allen aktuell definierten Datenkonnektoren mit ihrem jeweiligen Status anzuzeigen.
 
-![Datenkonnektor](/guides/images/benutzerhandbuch/ee-data-connector.PNG)
+![Datenkonnektor](/guides/images/benutzerhandbuch/ee-data-connector.png)
 
 Für jeden Datenkonnektor wird die folgenden Information bereitgestellt:
 
@@ -44,7 +48,7 @@ Verwenden Sie den Regler, um das Weiterleiten von Daten an den Zielmandanten zu 
 
 Klicken Sie **Datenkonnektor hinzufügen** in der oberen Menüleiste, um einen neuen Datenkonnektor zu erstellen.
 
-![Konnektor bearbeiten](/guides/images/benutzerhandbuch/ee-data-connector-add.PNG)
+![Konnektor bearbeiten](/guides/images/benutzerhandbuch/ee-data-connector-add.png)
 
 Stellen Sie folgende Informationen bereit, um einen Datenkonnektor zu bearbeiten:
 
@@ -84,7 +88,7 @@ Stellen Sie folgende Informationen bereit, um einen Datenkonnektor zu bearbeiten
 
 <td style="text-align: left">Beschreibung</td>
 
-<td style="text-align: left">Beschreibung der Konfiguration Sowohl der Name als auch die Beschreibung sind auf der Zielseite sichtbar, nachdem das Abonnement angenommen wurde.</td>
+<td style="text-align: left">Beschreibung der Konfiguration. Sowohl der Name als auch die Beschreibung sind auf der Zielseite sichtbar, nachdem das Abonnement angenommen wurde.</td>
 
 </tr>
 

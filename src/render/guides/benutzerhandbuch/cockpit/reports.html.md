@@ -7,7 +7,7 @@ layout: redirect
 In der Cockpit-Anwendung gibt es zwei Arten von Berichten. 
 
 * [Dashboard-Berichte](#reports) ermöglichen das Nachverfolgen von Anwendungen, Alarmen, Assets, Ereignissen und anderen Widgets. 
-* Der zweite Typ ermöglicht es, bestimmte Daten in eine Datei zu exportieren, siehe [Exportieren von Daten](#reporting).
+* Exporte ermöglicht es, bestimmte Daten in eine Datei zu exportieren, siehe [Exportieren von Daten](#reporting).
 
 
 ### <a name="reports"></a>Arbeiten mit Dashboard-Berichten
@@ -45,12 +45,12 @@ Mit dieser Funktion können Sie Berichte für den gesamten Mandanten im CSV- ode
 
 >**Info:** Es können maximal 1 Millionen Dokumente in eine einzelne Datei exportiert werden. Wenn die Anzahl der Dokumente für die gesetzten Filter diesen Wert überschreitet, werden nur die ersten 1 Millionen Dokumente verwendet. 
 
-Klicken Sie "Datenexport" im Menü "Berichte", um alle Exports anzuzeigen.
+Klicken Sie **Exporte** im Menü **Berichte**, um alle Exporte anzuzeigen.
 
-Die Seite "Datenexport" listet alle Exports mit Namen und Zeitintervall auf.
+Die Seite **Exporte** listet alle Exporte mit Namen und Zeitintervall auf.
 
 
-#### Hinzufügen von Exports
+#### Hinzufügen von Exporten
 
 Klicken Sie **Export hinzufügen** in der oberen Menüleiste, um einen neuen Datenexport hinzuzufügen.
 
@@ -98,7 +98,7 @@ Wenn Ihr Attribut ein "valid.key.with.dot" ist, dann verweisen Sie im Pfad darau
 
 Wenn Sie **Messwerte** aktiviert haben, sehen Sie die zusätzliche Option **Datenpunkt auswählen**. Nähere Informationen zum Hinzufügen von Datenpunkten finden Sie in [Hinzufügen von Datenpunkten](#add-data-points).
 
-#### <a name="schedule-export"></a>Terminieren von Exports
+#### <a name="schedule-export"></a>Terminieren von Exporten
 
 Um einen Export in eine Datei für einen bestimmten Zeitpunkt zu planen, öffnen Sie das Kontextmenü für den entsprechenden Export und klicken Sie **Export planen**. Im folgenden Fenster können Sie die Smart Rule "Bei Timer-Ablauf Export per E-Mail senden" entsprechend einrichten.
 
@@ -106,11 +106,11 @@ Um einen Export in eine Datei für einen bestimmten Zeitpunkt zu planen, öffnen
 
 **1 - Name der Regel**
 
-Der Name der Regel ist mit dem Namen des Berichts vorausgefüllt, kann aber geändert werden.
+Der Name der Regel ist mit dem Namen des Exports vorausgefüllt, kann aber geändert werden.
 
 **2 - Bericht & Häufigkeit**
 
-Bestimmen Sie die Frequenz für das Senden des Berichts, z. B. stündlich, täglich, wöchentlich der monatlich. Je nach ausgewählter Frequenz können Sie weitere Optionen für den Zeitpunkt angeben. Haben Sie etwa "Monat" gewählt, können Sie den Tag des Monats und die Uhrzeit festlegen.
+Bestimmen Sie die Frequenz für das Senden des Exports, z. B. stündlich, täglich, wöchentlich der monatlich. Je nach ausgewählter Frequenz können Sie weitere Optionen für den Zeitpunkt angeben. Haben Sie etwa "Monat" gewählt, können Sie den Tag des Monats und die Uhrzeit festlegen.
 
 **3 - E-Mail senden:**
 
@@ -124,7 +124,7 @@ Geben Sie die eigentliche E-Mail-Nachricht ein. Verfügbare Platzhalter sind {ho
 
 Klicken Sie **Erstellen**, um die benutzerdefinierte Smart Rule "Bei Timer-Ablauf Export per E-Mail senden" zu erstellen.
 
-Die Smart Rule wird zu den Berichtsdetails hinzugefügt.
+Die Smart Rule wird zu den Exportdetails hinzugefügt.
 
 <img src="/guides/images/benutzerhandbuch/cockpit-report-smartrule.png" name="Smart rule" style="width:75;"/>
 
@@ -142,14 +142,14 @@ Standard-Zeitattribute von Dokumenten (wie "time" oder "creationTime" in Alarmen
 
 Nur im CSV-Format sind Millisekunden und Zeitzonen enthalten.
 
-#### Bearbeiten von Exports
+#### Bearbeiten von Exporten
 
 Um einen Export zu bearbeiten, klicken Sie auf die entsprechende Zeile in der Liste oder öffnen Sie das Kontextmenü für den Export über das Menüsymbol und klicken Sie **Bearbeiten**.
 
-#### Duplizieren von Exports
+#### Duplizieren von Exporten
 
 Um einen Export zu duplizieren, öffnen Sie das Kontextmenü für den Export über das Menüsymbol und klicken Sie **Duplizieren**. Ändern Sie zumindest den Namen und klicken Sie **Speichern & schließen**, um den neuen Bericht zu speichern und zur Exportliste zurückzukehren.
 
-#### Löschen von Exports
+#### Löschen von Exporten
 
 Um einen Export zu löschen, öffnen Sie das Kontextmenü für den Export über das Menüsymbol und klicken Sie **Löschen**.

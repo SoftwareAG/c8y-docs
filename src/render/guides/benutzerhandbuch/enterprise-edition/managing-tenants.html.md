@@ -103,7 +103,7 @@ Um einen Untermandanten und alle seine Daten endgültig zu löschen, klicken Sie
 
 Die Registerkarte **Benutzerdefinierte Attribute** ermöglicht Ihnen das Anzeigen und Ändern von Werten von benutzerdefinierten Attributen, sowohl vordefinierten (wie "Externe Referenz") als auch denen, die in der [Attributsbibliothek](/guides/benutzerhandbuch/administration/#properties) definiert sind. Solche Attribute werden auch als Spalten in der [Benutzungsstatistiktabelle](#usage-stats) angezeigt.
 
-![Benutzerdefinierte Attribute](/guides/images/benutzerhandbuch/Admin_SubtenantCustomProperties.PNG)
+![Benutzerdefinierte Attribute](/guides/images/benutzerhandbuch/Admin_SubtenantCustomProperties.png)
 
 ### <a name="usage-stats"></a>Nutzungsstatistiken abrufen
 
@@ -126,13 +126,13 @@ Außerdem werden benutzerdefinierte Attribute angezeigt, falls vorhanden.
 
 Benutzerdefinierte Attribute können in der [Attributsbibliothek](/guides/benutzerhandbuch/administration/#properties) definiert werden. Anschließend können entsprechende Werte in der Registerkarte [Benutzerdefinierte Attribute](#tenants-custom-properties) des Mandanten eingestellt werden.
 
-![Nutzungsstatistiken](/guides/images/benutzerhandbuch/Admin_TenantUsageStatistics.PNG)
+![Nutzungsstatistiken](/guides/images/benutzerhandbuch/Admin_TenantUsageStatistics.png)
 
 Sie können die Liste der Nutzungsstatistiken nach einem bestimmten Zeitraum filtern, indem Sie einen Start- und einen Endzeitpunkt in der oberen Menüleiste eingeben und **Filter** klicken. Sie können außerdem die Liste nach jeder Spalte filtern und und sortieren, indem Sie auf das Filtersymbol neben dem Namen der entsprechenden Spalte klicken und die Filterkriterien eingeben. Weitere Informationen zur Filterfunktionalität finden Sie unter [Filtern](/guides/benutzerhandbuch/overview#filtering) im Abschnitt Erste Schritte.
 
 Klicken Sie **Export CSV** rechts oben in der Menüleiste, um die aktuelle Ansicht der Statistikentabelle als CSV-Datei zu exportieren. Im folgenden Fenster können Sie die CSV-Ausgabe anpassen.
 
-<img src="/guides/images/benutzerhandbuch/Admin_UsageStatisticsExport.PNG" alt="Export statistics" style="max-width: 50%">
+<img src="/guides/images/benutzerhandbuch/Admin_UsageStatisticsExport.png" alt="Export statistics" style="max-width: 50%">
 
 ### <a name="tenant-policies"></a>Mandantenregeln
 

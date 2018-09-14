@@ -4,11 +4,15 @@ title: Verwalten von Anwendungen
 layout: redirect
 ---
 
-Zusätzlich zu den in der Cumulocity-Plattform vorhandenen Anwendungen können Sie in Ihrem Konto eigene Anwendungen verwalten.
+Zusätzlich zu den Anwendungen, die in Ihrem Konto vorhanden sind (standardmäßig oder als Abonnement), können Sie in Ihrem Konto eigene Anwendungen verwalten.
 
-Die Anwendungen können generische HTML5-Anwendungen sein, die durch Plugins erweitert werden können. Die Plugins werden in einer spezifischen Anwendung bereitgestellt. Ein Plugin kann beispielsweise ein bestimmtes Widget zum Cockpit-Dashboard hinzufügen.
+Eigene Anwendungen können sein: 
 
-Plugins können nur zu eigenen Anwendungen hinzugefügt werden, da die Anwendung selbst beim Hinzufügen eines Plugins modifiziert wird. Wenn Sie ein Plugin zu einer abonnierten Anwendung hinzufügen möchten, muss die Anwendung zunächst in eine eigene Anwendung dupliziert werden. Dieser Vorgang wird durch den Administrationsassistenten unterstützt.
+* Duplikate von abonnierten Anwendungen (um diese den eigenen Bedürfnissen anzupassen)
+* webbasierte UI-Anwendungen, die entweder als eigenständige Anwendungen oder als Plugins innerhalb einer Anwendung (z. B. als Widget in der Cockpit-Anwendung) implementiert sind
+* serverseitige Geschäftslogik, die als Microservice implementiert ist 
+
+Über den Application Switcher rechts in der oberen Leiste können Sie auf die Anwendungen in Ihrem Konto zugreifen und einfach zwischen Anwendungen wechseln. 
 
 Eigene Anwendungen werden unter **Eigene Anwendungen** im Menü **Anwendungen** verwaltet.
 
@@ -16,11 +20,136 @@ Auf der Seite **Eigene Anwendungen** wird eine Liste aller eigenen Anwendungen i
 
 ![Eigene Anwendungen](/guides/images/benutzerhandbuch/admin-own-applications.png)
 
-Klicken Sie auf das Menüsymbol rechts oben in einer Anwendung, um über das Kontextmenü eine Anwendung zu [**Bearbeiten** oder **Löschen**](#editing-and-removing).
+Klicken Sie **Öffnen** auf der Karte einer Anwendung, um die Anwendung direkt von hier zu starten. 
 
-Klicken Sie **Öffnen** auf der Karte einer Anwendung, um die Anwendung direkt von hier zu starten. Sie können außerdem über den Application Switcher auf Ihre Anwendungen zugreifen.
+Klicken Sie **Anwendung hinzufügen** auf der Seite **Eigene Anwendungen**, um eine Anwendung zu Ihrem Konto hinzuzufügen, siehe [Anwendungen hinzufügen](#adding-applications).
 
 Klicken Sie **Plugin hinzufügen**, um ein Plugin hinzuzufügen (siehe [Hinzufügen und Entfernen von Plugins](#add-remove-plugin)).
+
+Klicken Sie auf das Menüsymbol rechts oben in einer Anwendung, um über das Kontextmenü eine Anwendung zu [**Bearbeiten** oder **Löschen**](#editing-and-removing).
+
+### Erstellen einer Anwendung
+
+Klicken Sie **Anwendung hinzufügen** auf der Seite **Eigene Anwendungen**, um eine Anwendung hinzuzufügen. Wählen Sie im angezeigten Dialogfenster eine der folgenden Methoden:
+
+* [Web-Anwendung hochladen](#uploading-zip-files), um eine entsprechende ZIP-Datei bereitszustellen
+* [Microservice hochladen](#uploading-cep-rules) (wird nur angezeigt, wenn Sie bestimmte Anwendungen abonniert haben, siehe unten).
+* [Externe Anwendung](#external-application), um auf eine Anwendung zu verweisen, die woanders betrieben wird 
+* [Existierende Anwendung duplizieren](#clone-application)
+* 
+<img src="/guides/images/benutzerhandbuch/admin-application-add.png" alt="Hinzufügen von Anwendungen" style="max-width: 50%">
+
+#### <a name="uploading-zip-files"></a>Hochladen von Web-Anwendungen 
+
+Um eine Web-Anwendung hochzuladen, führen Sie folgende Schritte aus:
+
+In case of microservices, the package must contain the manifest file and docker image of the microservice. Refer to [Microservice package reference](/guides/reference/microservice-package) in order to prepare and deploy the microservice package.
+
+1. Klicken Sie **Anwendung hinzufügen** auf der Seite **Eigene Anwendungen**.
+2. Wählen Sie im folgenden Dialog **Web-Anwendung hochladen**.
+3. Ziehen Sie eine entsprechende ZIP-Datei in das dafür vorgesehene Feld oder navigieren Sie auf Ihrem Computer zu der Datei.
+
+<img src="/guides/images/benutzerhandbuch/admin-upload-zip-file.png" alt="Web-Anwendung hochladen" style="max-width: 50%">
+
+Nachdem die Datei auf die Plattform hochgeladen wurde, wird die Anwendung erstellt. 
+
+#### <a name="uploading-cep-rules"></a>Uploading custom CEP rules
+
+> **Info:** To be able to upload custom CEP rules as applications to Cumulocity you need to be subscribed to the application "apama-small". Optionally, if you want to use the Smart Rules functionality, you need to be subscribed to the "SmartRule" application.
+
+In order to upload custom CEP rules, follow these steps:
+
+1. Click **Add application** in the **Own applications** page.
+2. In the upcoming dialog, select **Upload custom CEP rule**. <br>
+	<img src="/guides/images/users-guide/Administration/Admin_ApplicationsAddCEPRules.png" alt="Upload CEP rules" style="max-width: 50%">
+
+3. The file to be uploaded must be a single mon file, containing a set of event definitions and monitors. Drop the mon file or browse for it on your computer.
+
+After successfully uploading the file to the platform an application of type "Apama CEP rule" is being created.
+
+<img src="/guides/images/users-guide/Administration/Admin_ApplicationCEPRule.png" alt="Uploading zip file" style="max-width: 100%">
+
+For details on the fields, see also [Application properties](#application-properties) below.
+
+>**Info:** You cannot add a plugin to an application of type "Apama CEP rule". 
+
+#### <a name="external-application"></a>Verweisen auf eine externe Anwendung
+
+Um eine Anwendung hinzuzufügen, die auf eine externe Anwendung verweist, führen Sie folgende Schritte aus:
+
+1. Klicken Sie **Anwendung hinzufügen** auf der Seite **Eigene Anwendungen**.
+2. Wählen Sie im folgenden Dialog **Externe Anwendung**.
+3. Geben Sie im nächsten Fenster einen Namen für die Anwendung ein. Der Name wird als Titel oben links auf der Anwendungsseite angezeigt. Er wird außerdem im Application Switcher verwendet.  
+5. Geben Sie einen Anwendungsschlüssel ein, um diese Anwendung zu identifizieren.
+6. Geben Sie die externe URL ein, unter welcher auf die Anwendung zugegriffen werden kann. 
+7. Klicken Sie **Speichern**, um die Anwendung zu erstellen.
+
+Weitere Informationen zu den Feldern finden Sie auch unter [Anwendungsattribute](#application-properties). 
+
+#### <a name="clone-application"></a>Duplizieren einer existierenden Anwendung
+
+Das Duplizieren einer Anwendung ist erforderlich, wenn Sie eine abonnierte Anwendung nach Ihren eigenen Bedürfnissen anpassen möchten. 
+
+Das Duplizieren einer abonnierten Anwendung erzeugt ein entsprechendes Duplikat als eigene Anwendung mit einem Link auf die Originalanwendung.
+
+>**Info**: Wenn Sie möchten, dass Ihre "eigene Anwendung" eine abonnierte Standardanwendung überschreibt, setzen Sie den Pfad der "eigenen Anwendung" auf den Pfad der ursprünglich abonnierten Anwendung.
+
+Führen Sie die folgende Schritte aus, um eine Anwendung zu duplizieren:
+
+1.  Klicken Sie **Anwendung hinzufügen** auf der Seite **Eigene Anwendungen**.
+2.  Wählen Sie im folgenden Dialog **Existierende Anwendung duplizieren**.
+3.  Wählen Sie die gewünschte Anwendung aus der Auswahlliste. 
+4.  Geben Sie im nächsten Fenster den Namen der Anwendung ein. Standardmäßig wird der Name der Originalanwendung, erweitert durch eine Zahl, vorgeschlagen. Der Name wird als Titel oben links auf der Anwendungsseite angezeigt. Er wird außerdem im Application Switcher verwendet.
+5.  Geben Sie einen Anwendungsschlüssel ein, um die Anwendung zu identifizieren. Standardmäßig wird der Anwendungsschlüssel der Originalanwendung, erweitert durch eine Zahl, vorgeschlagen. 
+6.  Geben Sie einen Pfad für die Anwendung ein, Dieser Pfad ist Teil der URL, um die Anwendung aufzurufen. Standardmäßig wird der Pfad der Originalanwendung, erweitert durch eine Zahl, vorgeschlagen. Wenn Sie hier den Pfad der Originalanwendung verwenden, wird Ihre eigene Anwendung die Originalanwendung überschreiben.
+7.  Klicken Sie abschließend **Duplizieren**, um die Anwendung zu erstellen.
+
+Weitere Informationen zu den Feldern finden Sie auch unter [Anwendungsattribute](#application-properties). 
+
+
+#### <a name="uploading-cep-rules"></a>Uploading custom CEP rules
+
+> **Info:** To be able to upload custom CEP rules as applications to Cumulocity you need to be subscribed to the application "apama-small". Optionally, if you want to use the Smart Rules functionality, you need to be subscribed to the "SmartRule" application.
+
+In order to upload custom CEP rules, follow these steps:
+
+1. Click **Add application** in the **Own applications** page.
+2. In the upcoming dialog, select **Upload custom CEP rule**. <br>
+	<img src="/guides/images/users-guide/Administration/Admin_ApplicationsAddCEPRules.png" alt="Upload CEP rules" style="max-width: 50%">
+
+3. The file to be uploaded must be a single mon file, containing a set of event definitions and monitors. Drop the mon file or browse for it on your computer.
+
+After successfully uploading the file to the platform an application of type "Apama CEP rule" is being created.
+
+<img src="/guides/images/users-guide/Administration/Admin_ApplicationCEPRule.png" alt="Uploading zip file" style="max-width: 100%">
+
+For details on the fields, see also [Application properties](#application-properties) below.
+
+>**Info:** You cannot add a plugin to an application of type "Apama CEP rule". 
+
+
+### <a name="application-properties"></a>Application properties
+
+Click on an application card to view the application properties.
+
+<img src="/guides/images/users-guide/Administration/Admin_OwnApplicationMicroservice.png" alt="Microservice application" style="max-width: 100%">
+
+Each application will show the following properties:
+
+|Field|Description|Hosted (Web app)|Microservice|External|CEP rule
+|:---|:---|:---|:---|:---|:---
+|Name|Application name. Will be shown as title of the application in the top bar and in the application switcher. |Automatically created|Automatically created, based on the zip file name | Specified by the user|Automatically created, based on the mon file name 
+|ID|Unique ID to identify the application|Automatically provided|Automatically provided|Automatically provided|Automatically provided
+|Application key|Used to identify the application and to make the application available for subscription, see the [Concepts Guide](/guides/concepts/applications). |Automatically created|Automatically created based on the zip file name|Specified by the user|Automatically created based on the mon file name 
+|Type|Application type|Hosted application|Microservice|External|Apama CEP rule
+|Path|Part of the URL invoking the application|Automatically created|Automatically created as .../service/&#60;microservice name&#62;|Specified by the user. For example, if you use "hello" as application path, the URL of the application will be "/apps/hello".|Not available
+
+>**Info**: ID, application key, type and path cannot be changed.
+
+
+
+
+
 
 ### <a name="editing-and-removing"></a>Bearbeiten und Löschen von Anwendungen
 
@@ -29,54 +158,23 @@ Klicken Sie **Plugin hinzufügen**, um ein Plugin hinzuzufügen (siehe [Hinzufü
 Klicken Sie auf eine Anwendung, um diese zu bearbeiten oder klicken Sie auf das Menüsymbol und wählen Sie **Bearbeiten** im Kontextmenü.
 
 In der Registerkarte **Attribute** können einige Felder bearbeitet werden, abhängig vom Typ der Anwendung.
-
-> **Info**: "ID", "Anwendungsschlüssel" und "Pfad" können nicht geändert werden.
-> 
+ 
 > **Wichtig:** Ändern Sie niemals die Namen der Standardanwendungen (z. B. Device Management, Cockpit), sonst schlägt die Initialisierung des Mandanten fehl.
 
 **Entfernen**
+
+Um eine Anwendung zu löschen, klicken Sie auf das Menüsymbol und wählen Sie im Kontextmenü **Entfernen**.
 
 Wenn Sie eine Anwendung löschen, die eine abonnierte Anwendung überschreibt, wird die derzeit abonnierte Anwendung für alle Benutzer verfügbar. Die Benutzer profitieren so außerdem von zukünftigen Upgrades der abonnierten Anwendung.
 
 Abonnierte Anwendungen können nicht gelöscht werden. Dies kann nur durch den Eigentümer der Anwendung erfolgen.
 
-> **Info**: Um eine abonnierte Anwendung zu überschreiben, muss die "eigene Anwendung" denselben Kontextpfad haben wie die "abonnierte Anwendung".
-
-Um eine Anwendung zu löschen, klicken Sie auf das Menüsymbol und wählen Sie im Kontextmenü **Entfernen**.
-
-### Erstellen einer Anwendung
-
-Klicken Sie **Anwendung hinzufügen** auf der Seite **Eigene Anwendungen**, um eine Anwendung hinzuzufügen. Wählen Sie im angezeigten Dialogfenster, ob Sie eine Anwendung erstellen möchten durch
-
-*   Hochladen einer ZIP-Datei,
-*   Verwenden einer externen Anwendung (was auf eine Anwendung verweist, die woanders betrieben wird),
-*   Duplizieren einer bestehenden Anwendung.
-
-<img src="/guides/images/benutzerhandbuch/admin-application-add.png" alt="Hinzufügen von Anwendungen" style="max-width: 50%">
-
-Wenn Sie **Hochladen einer ZIP-Datei** wählen, werden Sie vom Assistenten aufgefordert, eine Datei im entsprechenden Feld abzulegen oder auf Ihrem Computer zu der Datei zu navigieren.
-
-Wenn Sie **Externe Anwendung** wählen, werden Sie als nächstes aufgefordert, den Namen, Schlüssel und die externe URL für die Anwendung einzugeben.
-
-Wenn Sie eine Anwendung duplizieren möchten, folgen Sie den im nächsten Abschnitt beschriebenen Schritten.
-
-### <a name="clone-application"></a>Duplizieren von Anwendungen
-
-Das Duplizieren einer abonnierten Anwendung erzeugt ein entsprechendes Duplikat als eigene Anwendung mit einem Link auf die Originalanwendung.
-
-Führen Sie die folgende Schritte aus, um eine Anwendung zu duplizieren:
-
-1.  Klicken Sie **Anwendung hinzufügen** auf der Seite **Eigene Anwendungen**.
-2.  Wählen Sie im angezeigten Dialogfenster **Existierende Anwendung duplizieren**.
-3.  Wählen Sie die gewünschte Anwendung aus der Auswahlliste. Beachten Sie, dass auch abonnierte Anwendungen aufgelistet werden.
-4.  Geben Sie im nächsten Fenster den Namen der Anwendung ein. Der Name wird als Titel oben links auf der Anwendungsseite angezeigt. Er wird außerdem im Application Switcher verwendet.
-5.  Geben Sie einen Anwendungsschlüssel ein. Der Anwendungsschlüssel wird verwendet, um Anfragen von dieser Anwendung zu identifizieren und die Anwendung zum Abonnieren zur Verfügung zu stellen. Sieh auch [Concepts Guide](/guides/concepts/applications).
-6.  Geben Sie einen Pfad für die Anwendung ein, Dieser Pfad ist Teil der URL, um die Anwendung aufzurufen. Wenn Sie beispielsweise "hello" als Anwendungspfad eingeben, wird die URL "/apps/hello" sein.
-7.  Klicken Sie abschließend **Kopieren**, um die Anwendung zu erstellen.
 
 ### <a name="add-remove-plugin"></a>Hinzufügen und Entfernen von Plugins
 
 Um die Funktionen einer Anwendung zu konfigurieren oder zu erweitern, können Plugins hinzugefügt werden.
+
+>**Info**: Plugins können nur zu eigenen Anwendungen hinzugefügt werden, da die Anwendung selbst beim Hinzufügen eines Plugins modifiziert wird. Wenn Sie ein Plugin zu einer abonnierten Anwendung hinzufügen möchten, muss die Anwendung zunächst in eine eigene Anwendung dupliziert werden. Dieser Vorgang wird durch den Administrationsassistenten unterstützt.
 
 Klicken Sie **Plugin hinzufügen** auf der Karte der gewünschten Anwendung, um ein Plugin hinzuzufügen.
 
@@ -86,7 +184,7 @@ Die Registerkarte **Plugin** für die Anwendung wird geöffnet und zeigt alle vo
 
 Um eine Regel zu entfernen, bewegen Sie den Mauszeiger darüber und klicken Sie **Entfernen**.
 
-Die folgenden beiden Tabellen zeigen die Navigator- und Menüelemente mit Ihren jeweiligen Plugins.
+Die folgenden beiden Tabellen zeigen die Navigator- und Menüelemente mit ihren jeweiligen Plugins.
 
 <table>
 
@@ -243,11 +341,11 @@ Benutzer können ältere Versionen einer Anwendung aus einem Archiv wiederherste
 3.  Öffnen Sie das Kontextmenü der gewünschten Version über das Menüsymbol und klicken Sie **Aktivieren**, um diese Version zur aktiven Version zu machen.
 4.  Klicken Sie **Entfernen** um eine Version aus dem Archiv zu löschen.
 
-> **Info**: Die Registerkarte **Archiv** steht für abonnierte Anwendung nicht zur Verfügung, da nur der Eigentümer der Anwendung älterer Versionen wiederherstellen kann.
+> **Info**: Die Registerkarte **Archiv** steht für abonnierte Anwendungen nicht zur Verfügung, da nur der Eigentümer der Anwendung ältere Versionen wiederherstellen kann.
 
 ### Hochladen von Archiven
 
-Mehrere Archivdateiversionen können in Cumulocity gespeichert werden, wenn Sie durch das Hochladen von ZIP-Dateien erstellt wurden. Jede Version wird als Archiv bezeichnet. Es können verschiedene Versionen gleichzeitig hochgeladen werden und Sie können zwischen den Versionen wechseln.
+Mehrere Archivdateiversionen können in Cumulocity gespeichert werden, wenn Sie durch das Hochladen von ZIP- oder mon-Dateien erstellt wurden. Jede Version wird als Archiv bezeichnet. Es können verschiedene Versionen gleichzeitig hochgeladen werden und Sie können zwischen den Versionen wechseln.
 
 Zum Hochladen eines Archiv führen Sie die folgenden Schritte aus:
 
@@ -259,4 +357,6 @@ Zum Hochladen eines Archiv führen Sie die folgenden Schritte aus:
 <img src="/guides/images/benutzerhandbuch/admin-upload-archive.png" alt="Archiv hochladen" style="max-width: 100%">
 
 Hochgeladene Archive können aktiviert, heruntergeladen oder gelöscht werden. Das aktive Archiv (durch ein Cloud-Symbol gekennzeichnet) ist die Version der Anwendung, die aktuell den Benutzern Ihres Kontos zur Verfügung steht. Diese Version kann nicht gelöscht werden.
+
+Um die aktive Version zu wechseln, öffnen Sie das Kontextmenü der Version, die Sie aktivieren möchten, und klicken Sie **Aktivieren**.
 

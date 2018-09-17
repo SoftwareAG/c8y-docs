@@ -44,7 +44,7 @@ In this CSV example, the security mode value is “PSK”, hence additional fiel
 |endpoint id|String|The name of the LWM2M endpoint.|Yes|
 |bootstrap psk_id|String|For security mode PSK: The ID used by the device for bootstrapping in PSK mode.|Yes for PSK|
 |bootstrap psk_key|String|For security mode PSK: The key used by the device for bootstrapping in PSK mode.|Yes for PSK|
-|lwm2m server url|String|The URL of the LWM2M server to be sent to the devices during bootstrap. If you are using the Cumulocity service the hostname of the LWM2M server is "lwm2m.cumulocity.com". The bootstrap server port is "5683" and the LWM2M port is "5783". Note that, these values can be different for other services.|Yes, for LWM2M bootstrap|
+|lwm2m server url|String|The URL of the LWM2M server to be sent to the devices during bootstrap. If you are using the Cumulocity service the hostname of the LWM2M server is "lwm2m.cumulocity.com". The bootstrap server port is "5683" and the LWM2M port is "5783". Note, that these values can be different for other services.|Yes, for LWM2M bootstrap|
 |securityMode|String, “NO_SEC” or “PSK|The LWM2M security mode to be used. Possible values are PSK and NO_SEC.|Yes|
 |serverPublicKey|String|The public key of the server.|Optional|
 |generateBootstrapServerConfig|Boolean|Toggles if Cumulocity generates a server config for the LWM2M bootstrap server and writes that back during bootstrap. Default is false.|Optional|

@@ -29,7 +29,7 @@ In the first CSV example you can see the following fields:
 |SHELL|To enable “Shell”, the value of this field must be “1”. If you want to disable “Shell” the value must be “0”. For more info about the shell commands, see [Shell commands](#shell_commands).|
 |com_cumulocity&#95;model&#95;Agent|This field needs to have the value "1".|
 |endpoint id|Indicates the LWM2M client’s “Endpoint ID” in order to allow the LwM2M bootstrap to provision the bootstrap information for the LWM2M client.|
-|lwm2m server url|The URL the server is using for bootstrap. The LWM2M bootstrap server is used to provision the LWM2M client with the information required to contact the LWM2M servers.|
+|lwm2m server url|The URL the server is using for bootstrap. The LWM2M bootstrap server is used to provision the LWM2M client with the information required to contact the LWM2M servers. If you are using the Cumulocity service the hostname of the LWM2M server is "lwm2m.cumulocity.com". The bootstrap server port is "5683" and the LWM2M port is "5783". Note, that these values can be different for other services.|
 |securityMode|In this example the value of the security mode is “NO&#95;SEC” which means that there is no security. It is highly recommended to always protect the LWM2M protocol. However, there are scenarios in which the LWM2M protocol is deployed in environments where the lower layer security mechanisms are provided. Currently Cumulocity supports only “NO_SEC” and “PSK”. With “PSK”, the client and server have a common secret symmetric cryptography. In the next example you will see how the CSV file should look when the security mode value is “PSK”.|
 
 ![CSV example 2.1](/guides/images/users-guide/LWM2M/example_2_1.png)
@@ -44,7 +44,7 @@ In this CSV example, the security mode value is “PSK”, hence additional fiel
 |endpoint id|String|The name of the LWM2M endpoint.|Yes|
 |bootstrap psk_id|String|For security mode PSK: The ID used by the device for bootstrapping in PSK mode.|Yes for PSK|
 |bootstrap psk_key|String|For security mode PSK: The key used by the device for bootstrapping in PSK mode.|Yes for PSK|
-|lwm2m server uri|String|The URL of the LWM2M server to be sent to the devices during bootstrap.|Yes, for LWM2M bootstrap|
+|lwm2m server url|String|The URL of the LWM2M server to be sent to the devices during bootstrap. If you are using the Cumulocity service the hostname of the LWM2M server is "lwm2m.cumulocity.com". The bootstrap server port is "5683" and the LWM2M port is "5783". Note that, these values can be different for other services.|Yes, for LWM2M bootstrap|
 |securityMode|String, “NO_SEC” or “PSK|The LWM2M security mode to be used. Possible values are PSK and NO_SEC.|Yes|
 |serverPublicKey|String|The public key of the server.|Optional|
 |generateBootstrapServerConfig|Boolean|Toggles if Cumulocity generates a server config for the LWM2M bootstrap server and writes that back during bootstrap. Default is false.|Optional|
@@ -54,12 +54,14 @@ In this CSV example, the security mode value is “PSK”, hence additional fiel
 |registrationLifetime|Integer|The registration lifetime that is sent to the device during bootstrap. Overrides global agent configuration.|Optional|
 |defaultMinimumPeriod|Integer|The default minimum period to configure during bootstrap. See LWM2M Spec for explanation.|Optional|
 |defaultMaximumPeriod|Integer|The default max period  to configure during bootstrap. See LWM2M Spec for explanation.|Optional|
-|bindingMode|String|The LWM2M binding mode to be reported to the device. Supported are “UQ” (default, queuing) and “U” (unqueued). Note that Cumulocity will always queue operations.|Optional|
+|bindingMode|String|The LWM2M binding mode to be reported to the device. Supported are “UQ” (default, queuing) and “U” (unqueued). Note, that Cumulocity will always queue operations.|Optional|
 |notificationIfDisabled (true/false)|Boolean|See LWM2M spec. Default: Not configured.|Optional, defaults to Leshan default behavior|
 |disableTimeout (true/false)|Boolean|See LWM2M spec. Default: Not configured.|Optional, defaults to Leshan default behavior|
 |external-c8y_BootstrapPskId|String|The ID being used to find a device during bootstrap.|Optional|
 
 > **Info**: Firmware updates are also supported. For more information, see [Device Management > Managing device data](https://www.cumulocity.com/guides/users-guide/device-management/#software-repo) in the User guide.
+
+After creation, the bootstrap parameters can be viewed and changed in the "LWM2M bootstrap parameters" tab in the "Device details" page. For further information, refer to [LWM2M bootstrap parameters](/guides/users-guide/device-management#lwm2m-bootstrap).
 
 ### <a name="device_protocols"></a>LWM2M device protocols
 

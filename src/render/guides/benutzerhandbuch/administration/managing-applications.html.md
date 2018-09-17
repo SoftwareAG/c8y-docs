@@ -12,7 +12,7 @@ Eigene Anwendungen können sein:
 * webbasierte UI-Anwendungen, die entweder als eigenständige Anwendungen oder als Plugins innerhalb einer Anwendung (z. B. als Widget in der Cockpit-Anwendung) implementiert sind
 * serverseitige Geschäftslogik, die als Microservice implementiert ist 
 
-Wenn Sie die entsprechende Anwendung abonniert haben ("apama-small"), können Sie außerdem eigene Apama CEP-Regeln als Anwendung hochladen. 
+Wenn Sie die entsprechende Anwendung abonniert haben ("apama-small"), können Sie außerdem [eigene Apama CEP-Regeln als Anwendung hochladen](#uploading-cep-rules). 
 
 Über den Application Switcher rechts in der oberen Leiste können Sie auf die Anwendungen in Ihrem Konto zugreifen und bequem zwischen Anwendungen wechseln. 
 
@@ -55,7 +55,7 @@ Um eine Web-Anwendung hochzuladen, führen Sie folgende Schritte aus:
 
 Nachdem die Datei auf die Plattform hochgeladen wurde, wird die Anwendung erstellt. 
 
-#### <a name="uploading-cep-rules"></a>Hochladen von Microservices
+#### <a name="uploading-microservices"></a>Hochladen von Microservices
 
 Um einen Microservice hochzuladen, führen Sie folgende Schritte aus:
 
@@ -66,6 +66,8 @@ Um einen Microservice hochzuladen, führen Sie folgende Schritte aus:
 	<img src="/guides/images/benutzerhandbuch/admin-upload-zip-file.png" alt="Web-Anwendung hochladen" style="max-width: 50%">
 
 Nachdem die Datei auf die Plattform hochgeladen wurde, wird die Anwendung erstellt. 
+
+>**Info**: Um Microservices zur Plattform hinzuzufügen, muss die gepackte Datei die Manifest-Datei und das Docker Image für den Microservice enthalten. Nähere Informationen zum Vorbereiten und Deployen des Microservice-Pakets finden Sie unter [Microservice package reference](/guides/reference/microservice-package) im Reference guide.
 
 #### <a name="external-application"></a>Verweisen auf eine externe Anwendung
 
@@ -106,7 +108,7 @@ Führen Sie die folgende Schritte aus, um eine Anwendung zu duplizieren:
 
 Weitere Informationen zu den Feldern finden Sie auch unter [Anwendungsattribute](#application-properties).  
 
-#### <a name="uploading-cep-rules"></a>Hochladen eigener Apama CEP-Regeln
+#### <a name="uploading-cep-rules"></a>Hochladen eigener Apama-Regeln
 
 > **Info:** Um eigene Apama CEP-Regeln als Anwendung hochladen zu können, müssen Sie die Anwendung "apama-small" abonniert haben. 
 

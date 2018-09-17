@@ -12,11 +12,13 @@ Eigene Anwendungen können sein:
 * webbasierte UI-Anwendungen, die entweder als eigenständige Anwendungen oder als Plugins innerhalb einer Anwendung (z. B. als Widget in der Cockpit-Anwendung) implementiert sind
 * serverseitige Geschäftslogik, die als Microservice implementiert ist 
 
-Über den Application Switcher rechts in der oberen Leiste können Sie auf die Anwendungen in Ihrem Konto zugreifen und einfach zwischen Anwendungen wechseln. 
+Wenn Sie die entsprechende Anwendung abonniert haben ("apama-small"), können Sie außerdem eigene Apama CEP-Regeln als Anwendung hochladen. 
+
+Über den Application Switcher rechts in der oberen Leiste können Sie auf die Anwendungen in Ihrem Konto zugreifen und bequem zwischen Anwendungen wechseln. 
 
 Eigene Anwendungen werden unter **Eigene Anwendungen** im Menü **Anwendungen** verwaltet.
 
-Auf der Seite **Eigene Anwendungen** wird eine Liste aller eigenen Anwendungen in Ihrem Konto angezeigt.
+Auf der Seite **Eigene Anwendungen** wird eine Liste aller eigenen Anwendungen in Ihrem Konto angezeigt. Weitere Informationen zu den Feldern finden Sie unter [Anwendungsattribute](#application-properties).
 
 ![Eigene Anwendungen](/guides/images/benutzerhandbuch/admin-own-applications.png)
 
@@ -26,52 +28,44 @@ Klicken Sie **Anwendung hinzufügen** auf der Seite **Eigene Anwendungen**, um e
 
 Klicken Sie **Plugin hinzufügen**, um ein Plugin hinzuzufügen (siehe [Hinzufügen und Entfernen von Plugins](#add-remove-plugin)).
 
-Klicken Sie auf das Menüsymbol rechts oben in einer Anwendung, um über das Kontextmenü eine Anwendung zu [**Bearbeiten** oder **Löschen**](#editing-and-removing).
+Klicken Sie auf das Menüsymbol rechts oben in einer Anwendung, um über das Kontextmenü eine Anwendung zu [**Bearbeiten** oder zu **Löschen**](#editing-and-removing).
 
 ### Erstellen einer Anwendung
 
 Klicken Sie **Anwendung hinzufügen** auf der Seite **Eigene Anwendungen**, um eine Anwendung hinzuzufügen. Wählen Sie im angezeigten Dialogfenster eine der folgenden Methoden:
 
-* [Web-Anwendung hochladen](#uploading-zip-files), um eine entsprechende ZIP-Datei bereitszustellen
-* [Microservice hochladen](#uploading-cep-rules) (wird nur angezeigt, wenn Sie bestimmte Anwendungen abonniert haben, siehe unten).
+* [Web-Anwendung hochladen](#uploading-zip-files), um eine Web-Anwendung mittels einer ZIP-Datei bereitzustellen
+* [Microservice hochladen](#uploading-microservices), um einen Microservice mittels einer ZIP-Datei bereitzustellen
 * [Externe Anwendung](#external-application), um auf eine Anwendung zu verweisen, die woanders betrieben wird 
-* [Existierende Anwendung duplizieren](#clone-application)
-* 
+* [Existierende Anwendung duplizieren](#clone-application), um eine bestehende Anwendung zu duplizieren
+
 <img src="/guides/images/benutzerhandbuch/admin-application-add.png" alt="Hinzufügen von Anwendungen" style="max-width: 50%">
+
+Wenn Sie die entsprechende Anwendung abonniert haben ("apama-small"), sehen Sie außerdem die Option **Eigene Apama-Regel hochladen**, um [eigene Apama CEP-Regeln](uploading-cep-rules) als Anwendung hochzuladen. 
 
 #### <a name="uploading-zip-files"></a>Hochladen von Web-Anwendungen 
 
 Um eine Web-Anwendung hochzuladen, führen Sie folgende Schritte aus:
 
-In case of microservices, the package must contain the manifest file and docker image of the microservice. Refer to [Microservice package reference](/guides/reference/microservice-package) in order to prepare and deploy the microservice package.
-
 1. Klicken Sie **Anwendung hinzufügen** auf der Seite **Eigene Anwendungen**.
 2. Wählen Sie im folgenden Dialog **Web-Anwendung hochladen**.
 3. Ziehen Sie eine entsprechende ZIP-Datei in das dafür vorgesehene Feld oder navigieren Sie auf Ihrem Computer zu der Datei.
 
-<img src="/guides/images/benutzerhandbuch/admin-upload-zip-file.png" alt="Web-Anwendung hochladen" style="max-width: 50%">
+	<img src="/guides/images/benutzerhandbuch/admin-upload-zip-file.png" alt="Web-Anwendung hochladen" style="max-width: 50%">
 
 Nachdem die Datei auf die Plattform hochgeladen wurde, wird die Anwendung erstellt. 
 
-#### <a name="uploading-cep-rules"></a>Uploading custom CEP rules
+#### <a name="uploading-cep-rules"></a>Hochladen von Microservices
 
-> **Info:** To be able to upload custom CEP rules as applications to Cumulocity you need to be subscribed to the application "apama-small". Optionally, if you want to use the Smart Rules functionality, you need to be subscribed to the "SmartRule" application.
+Um einen Microservice hochzuladen, führen Sie folgende Schritte aus:
 
-In order to upload custom CEP rules, follow these steps:
+1. Klicken Sie **Anwendung hinzufügen** auf der Seite **Eigene Anwendungen**.
+2. Wählen Sie im folgenden Dialog **Microservice hochladen**.
+3. Ziehen Sie eine entsprechende ZIP-Datei in das dafür vorgesehene Feld oder navigieren Sie auf Ihrem Computer zu der Datei.
 
-1. Click **Add application** in the **Own applications** page.
-2. In the upcoming dialog, select **Upload custom CEP rule**. <br>
-	<img src="/guides/images/users-guide/Administration/Admin_ApplicationsAddCEPRules.png" alt="Upload CEP rules" style="max-width: 50%">
+	<img src="/guides/images/benutzerhandbuch/admin-upload-zip-file.png" alt="Web-Anwendung hochladen" style="max-width: 50%">
 
-3. The file to be uploaded must be a single mon file, containing a set of event definitions and monitors. Drop the mon file or browse for it on your computer.
-
-After successfully uploading the file to the platform an application of type "Apama CEP rule" is being created.
-
-<img src="/guides/images/users-guide/Administration/Admin_ApplicationCEPRule.png" alt="Uploading zip file" style="max-width: 100%">
-
-For details on the fields, see also [Application properties](#application-properties) below.
-
->**Info:** You cannot add a plugin to an application of type "Apama CEP rule". 
+Nachdem die Datei auf die Plattform hochgeladen wurde, wird die Anwendung erstellt. 
 
 #### <a name="external-application"></a>Verweisen auf eine externe Anwendung
 
@@ -79,6 +73,9 @@ Um eine Anwendung hinzuzufügen, die auf eine externe Anwendung verweist, führe
 
 1. Klicken Sie **Anwendung hinzufügen** auf der Seite **Eigene Anwendungen**.
 2. Wählen Sie im folgenden Dialog **Externe Anwendung**.
+<br><br>
+<img src="/guides/images/benutzerhandbuch/admin-own-applications-external.png" alt="Externe Anwendung" style="max-width: 50%">
+<br><br>
 3. Geben Sie im nächsten Fenster einen Namen für die Anwendung ein. Der Name wird als Titel oben links auf der Anwendungsseite angezeigt. Er wird außerdem im Application Switcher verwendet.  
 5. Geben Sie einen Anwendungsschlüssel ein, um diese Anwendung zu identifizieren.
 6. Geben Sie die externe URL ein, unter welcher auf die Anwendung zugegriffen werden kann. 
@@ -99,56 +96,50 @@ Führen Sie die folgende Schritte aus, um eine Anwendung zu duplizieren:
 1.  Klicken Sie **Anwendung hinzufügen** auf der Seite **Eigene Anwendungen**.
 2.  Wählen Sie im folgenden Dialog **Existierende Anwendung duplizieren**.
 3.  Wählen Sie die gewünschte Anwendung aus der Auswahlliste. 
+<br><br>
+<img src="/guides/images/benutzerhandbuch/admin-own-applications-duplicate.png" alt="Anwendung duplizieren" style="max-width: 50%">
+<br><br>
 4.  Geben Sie im nächsten Fenster den Namen der Anwendung ein. Standardmäßig wird der Name der Originalanwendung, erweitert durch eine Zahl, vorgeschlagen. Der Name wird als Titel oben links auf der Anwendungsseite angezeigt. Er wird außerdem im Application Switcher verwendet.
 5.  Geben Sie einen Anwendungsschlüssel ein, um die Anwendung zu identifizieren. Standardmäßig wird der Anwendungsschlüssel der Originalanwendung, erweitert durch eine Zahl, vorgeschlagen. 
 6.  Geben Sie einen Pfad für die Anwendung ein, Dieser Pfad ist Teil der URL, um die Anwendung aufzurufen. Standardmäßig wird der Pfad der Originalanwendung, erweitert durch eine Zahl, vorgeschlagen. Wenn Sie hier den Pfad der Originalanwendung verwenden, wird Ihre eigene Anwendung die Originalanwendung überschreiben.
 7.  Klicken Sie abschließend **Duplizieren**, um die Anwendung zu erstellen.
 
-Weitere Informationen zu den Feldern finden Sie auch unter [Anwendungsattribute](#application-properties). 
+Weitere Informationen zu den Feldern finden Sie auch unter [Anwendungsattribute](#application-properties).  
 
+#### <a name="uploading-cep-rules"></a>Hochladen eigener Apama CEP-Regeln
 
-#### <a name="uploading-cep-rules"></a>Uploading custom CEP rules
+> **Info:** Um eigene Apama CEP-Regeln als Anwendung hochladen zu können, müssen Sie die Anwendung "apama-small" abonniert haben. 
 
-> **Info:** To be able to upload custom CEP rules as applications to Cumulocity you need to be subscribed to the application "apama-small". Optionally, if you want to use the Smart Rules functionality, you need to be subscribed to the "SmartRule" application.
+ Um eine eigene Apama CEP-Regel hochzuladen, führen Sie folgende Schritte aus:
 
-In order to upload custom CEP rules, follow these steps:
+1. Klicken Sie **Anwendung hinzufügen** auf der Seite **Eigene Anwendungen**.
+2. Wählen Sie im folgenden Dialog **Eigene Apama-Regel hochladen**.
+3. Ziehen Sie eine entsprechende Datei in das dafür vorgesehene Feld oder navigieren Sie auf Ihrem Computer zu der Datei. Dabei muss es sich um eine einzelne mon-Datei mit einer Reihe von Ereignisdefinitionen und Monitoren handeln. 
 
-1. Click **Add application** in the **Own applications** page.
-2. In the upcoming dialog, select **Upload custom CEP rule**. <br>
-	<img src="/guides/images/users-guide/Administration/Admin_ApplicationsAddCEPRules.png" alt="Upload CEP rules" style="max-width: 50%">
-
-3. The file to be uploaded must be a single mon file, containing a set of event definitions and monitors. Drop the mon file or browse for it on your computer.
-
-After successfully uploading the file to the platform an application of type "Apama CEP rule" is being created.
+Nachdem die Datei auf die Plattform hochgeladen wurde, wird eine Anwendung des Typs "Apama CEP-Regel" erstellt. 
 
 <img src="/guides/images/users-guide/Administration/Admin_ApplicationCEPRule.png" alt="Uploading zip file" style="max-width: 100%">
 
-For details on the fields, see also [Application properties](#application-properties) below.
-
->**Info:** You cannot add a plugin to an application of type "Apama CEP rule". 
+>**Info:** Sie können zu einer Anwendung des Typs "Apama CEP-Regel" keine Plugins hinzufügen. 
 
 
-### <a name="application-properties"></a>Application properties
+### <a name="application-properties"></a>Anwendungsattribute
 
-Click on an application card to view the application properties.
+Klicken Sie auf eine Anwendungskarte, um die Attribute der Anwendung anzuzeigen.
 
-<img src="/guides/images/users-guide/Administration/Admin_OwnApplicationMicroservice.png" alt="Microservice application" style="max-width: 100%">
+<img src="/guides/images/benutzerhandbuch/admin-own-application-attributes.png" alt="Anwendungsattribute" style="max-width: 100%">
 
-Each application will show the following properties:
+Für jede Anwendung werden die folgenden Attribute angezeigt:
 
-|Field|Description|Hosted (Web app)|Microservice|External|CEP rule
-|:---|:---|:---|:---|:---|:---
-|Name|Application name. Will be shown as title of the application in the top bar and in the application switcher. |Automatically created|Automatically created, based on the zip file name | Specified by the user|Automatically created, based on the mon file name 
-|ID|Unique ID to identify the application|Automatically provided|Automatically provided|Automatically provided|Automatically provided
-|Application key|Used to identify the application and to make the application available for subscription, see the [Concepts Guide](/guides/concepts/applications). |Automatically created|Automatically created based on the zip file name|Specified by the user|Automatically created based on the mon file name 
-|Type|Application type|Hosted application|Microservice|External|Apama CEP rule
-|Path|Part of the URL invoking the application|Automatically created|Automatically created as .../service/&#60;microservice name&#62;|Specified by the user. For example, if you use "hello" as application path, the URL of the application will be "/apps/hello".|Not available
+|Feld|Beschreibung|Web-Anwendung|Microservice|Externe Anwendung|Apama CEP-Regel
+|:----------------|:---|:---|:---|:---|:---
+|Name|Anwendungsname. Wird als Titel oben links auf der Anwendungsseite angezeigt und im Application Switcher verwendet. |Automatisch generiert, basierend auf dem Namen der ZIP-Datei|Automatisch generiert, basierend auf dem Namen der ZIP-Datei|Vom Benutzer vergeben|Automatisch generiert, basierend auf dem Namen der mon-Datei 
+|ID|Eindeutige ID zur Identifikation der Anwendung |Automatisch generiert|Automatisch generiert|Automatisch generiert|Automatisch generiert
+|Anwendungsschlüssel|Wird zur Identifikation der Anwendung verwendet. Wird außerdem verwendet, um die Anwendung als Abonnement zur Verfügung zu stellen, siehe auch [Concepts Guide](/guides/concepts/applications). |Automatisch generiert, basierend auf dem Namen der ZIP-Datei|Automatisch generiert, basierend auf dem Namen der ZIP-Datei|Vom Benutzer vergeben|Automatisch generiert, basierend auf dem Namen der mon-Datei
+|Typ|Anwendungstyp|Gehostete Anwendung|Microservice|Externe Anwendung|Apama CEP-Regel
+|Pfad|Teil der URL, die die Anwendung aufruft|Automatisch generiert|Automatisch generiert als .../service/&#60;microservice name&#62;|Vom Benutzer bereitgestellt. Wenn Sie beispielsweise "hallo" als Anwendungspfad verwenden, lautet die URL der Anwendung "/apps/hallo".|Nicht verfügbar
 
->**Info**: ID, application key, type and path cannot be changed.
-
-
-
-
+>**Info**: ID, Anwendungsschlüssel, Typ und Pfad können nicht geändert werden.
 
 
 ### <a name="editing-and-removing"></a>Bearbeiten und Löschen von Anwendungen

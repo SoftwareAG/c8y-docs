@@ -4,7 +4,7 @@ title: Viewing devices
 layout: redirect
 ---
 
-To view all devices connected to your account, click "All devices" in the "Devices" menu in the navigator. 
+To view all devices connected to your account, click **All devices** in the **Devices** menu in the navigator. 
 
 A detailed device list will be displayed.
 
@@ -60,14 +60,14 @@ A window will come up in which you can specify your filter options.
 
 <img src="/guides/images/users-guide/DeviceManagement/DevMgmt_FilteringOptions.png" alt="Filter Options" style="max-width: 50%">
 
-Most columns represent text fields. You can filter these columns by simply entering an arbitrary text into the textbox as in the Search field. Click **+ Or** to add another textbox if you want to filter for more than one term. 
+Most columns represent text fields. You can filter these columns by simply entering an arbitrary text into the textbox as in the search field. Click **+ Or** to add another textbox if you want to filter for more than one term. 
 
 Apart from filtering for text there are several other options:
-* In case of date fields (i.e. "Registration date"), you specify a date range to filter for. 
-* In the "Status" column you can filter for various criteria representing the send, push or maintenance status of the device.
-* In the "Alarm" column the filtering options you may select correspond to the alarm types (critical, major, minor, warning, no alarms).
+* In case of date fields (e.g. **Registration date**), you specify a date range to filter for. 
+* In the **Status** column you can filter for various criteria representing the send, push or maintenance status of the device.
+* In the **Alarm** column the filtering options you may select correspond to the alarm types (critical, major, minor, warning, no alarms).
 
-In the "Filter options" window, click **Ascending** or **Descending** if you want the devices to be sorted in a specific order. Finally, click **Apply** to carry out the filtering. 
+In the **Filter options** window, click **Ascending** or **Descending** if you want the devices to be sorted in a specific order. Finally, click **Apply** to carry out the filtering. 
 
 The devices list will now only display devices matching the filtering options.
 

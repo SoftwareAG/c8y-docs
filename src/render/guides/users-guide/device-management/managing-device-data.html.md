@@ -10,7 +10,7 @@ In the Firmware and in the Software repository Cumulocity offers to collect refe
 
 The description below exemplarily refers to firmware but also applies to device software.
 
-Open the "Firmware repository" from the "Management" menu in the navigator.
+Open the **Firmware repository** from the **Management** menu in the navigator.
 
 The available firmware objects will be displayed, presented as cards in a grid.
 
@@ -27,7 +27,7 @@ Moreover, several buttons allow you to update the information (see also "How to 
 To add a firmware object, follow these steps:
 
 1. Upload the firmware file in the [Administration application](/guides/users-guide/administration#files). This step is not necessarily required since some manufacturers offer the firmware online.
-2. In the "Firmware repository" page, click **Add firmware** at the right of the top bar menu.
+2. In the **Firmware repository** page, click **Add firmware** at the right of the top bar menu.
 3. In the upcoming window, enter a name for the firmware and its version.
 4. Specify the file for the firmware by choosing or uploading it or enter the URL from which the device can download the firmware. 
 5. Click **Save** to save your settings.
@@ -36,11 +36,11 @@ Similarly, you can add a new software object to the Software repository.
 
 **How to install firmware on a device**
 
-Open the device list by clicking "All devices" in the navigator and select a device from the device list.
+Open the device list by clicking **All devices** in the navigator and select a device from the device list.
 
-Open the "Software" tab for the device and click **Install firmware**. 
+Open the **Software** tab for the device and click **Install firmware**. 
 
-For further information on these steps, refer to the description of the ["Software"](#software) tab.
+For further information on these steps, refer to the description of the [Software](#software) tab.
 
 >**Info:** To store other types of binaries in Cumulocity, switch to the [Administration application](/guides/images/users-guide/administration#files).
 
@@ -52,13 +52,13 @@ Cumulocity offers the option to execute firmware or software updates for multipl
 2. Navigate to operation and select **Execute for the whole group**.
 3. Fill the form to schedule the bulk operation and click **Create**.
 
-The operation status can be viewed in the "Bulk Operation" tab of the selected group. For further information, refer to [Bulk Operations](#bulk-operations).
+The operation status can be viewed in the **Bulk Operation** tab of the selected group. For further information, refer to [Bulk Operations](#bulk-operations).
 
 ### <a name="credentials"></a>Managing device credentials
 
-The "Device credentials" tab lists all credentials that have been generated for your connected devices. Each device that has been [registered](#device-registration) shows up here with the naming convention "device_&lt;id&gt;".
+The **Device credentials** tab lists all credentials that have been generated for your connected devices. Each device that has been [registered](#device-registration) shows up here with the naming convention "device_&lt;id&gt;".
 
-Click the arrow in the "Global roles" column of a device to open a list with available global roles. Assign or remove permissions for an individual device by selecting/deselecting roles, and click **Apply** to save your settings.
+Click the arrow in the **Global roles** column of a device to open a list with available global roles. Assign or remove permissions for an individual device by selecting/deselecting roles, and click **Apply** to save your settings.
 
 Click the menu icon at the right of a device to access the following functionalities:
 
@@ -70,9 +70,9 @@ Click the menu icon at the right of a device to access the following functionali
 
 In the details page of any particular device credentials you can
 
-* disable/enable a device with the "Active" slider,
+* disable/enable a device with the **Active** slider,
 * change the password for a device,
-* assign or remove permissions for an individual device by selecting/deselecting roles in the "Global roles" list. 
+* assign or remove permissions for an individual device by selecting/deselecting roles in the **Global roles** list. 
 
 <!--
 ![Bulk provisioning](/guides/images/users-guide/autoregister.png)

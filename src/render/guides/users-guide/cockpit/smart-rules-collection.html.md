@@ -90,7 +90,7 @@ The rule uses the following parameters:
 |:---|:---|:---|
 |1|Rule name|Pre-filled with the name of the rule template. Can be modified according to your needs.
 |2|On alarm matching:|The types of alarms triggering the rule. For each newly created alarm with one of these types in the list the rule is triggered.
-|3|Escalate as follows:|Escalation steps processed in a chain. <br> Click **Add step** to define at least one step: <br> "Type": Type of action executed in the step. Possible values are: <br> * Email (see "On alarm send e-mail" rule for parameter descriptions). <br> * SMS (see "On alarm send SMS" rule for parameter descriptions). <br> * Phone (see "On alarm initiate text-to-speech call" rule for parameter descriptions). <br> "Condition": The condition applied when the rule will be executed. Possible values are: <br> * Always: Action will always be executed. <br> * Always: If step N failed. Only phone steps may fail. The step is marked as failed once all retries have been made without a successful call. This option only appears if there already is a phone step configured that can be referred to.
+|3|Escalate as follows:|Escalation steps processed in a chain. <br> Click **Add step** to define at least one step: <br> **Type**: Type of action executed in the step. Possible values are: <br> * Email (see "On alarm send e-mail" rule for parameter descriptions). <br> * SMS (see "On alarm send SMS" rule for parameter descriptions). <br> * Phone (see "On alarm initiate text-to-speech call" rule for parameter descriptions). <br> **Condition**: The condition applied when the rule will be executed. Possible values are: <br> * Always: Action will always be executed. <br> * Always: If step N failed. Only phone steps may fail. The step is marked as failed once all retries have been made without a successful call. This option only appears if there already is a phone step configured that can be referred to.
 |4|Target asset or devices|Groups or devices the rule shall be applied to.
 
 
@@ -128,7 +128,7 @@ When a configured type of alarm is raised, it starts monitoring how long the ala
 
 If the alarm is still active after the specified duration, the severity will be increased one level, e.g. from MINOR to MAJOR.
 
-If the alarm has reached 'CRITICAL', it will stop monitoring because there is no further action possible.
+If the alarm has reached CRITICAL, it will stop monitoring because there is no further action possible.
 
 >**Info:** The rule checks once a minute if the configured duration has been exceeded. Therefore it might happen that the alarm severity won't change in the second it exceeds the duration but only after the following check.
 
@@ -181,7 +181,7 @@ The rule uses the following parameters:
 |:---|:---|:---|
 |1|Rule name|Pre-filled with the name of the rule template. Can be modified according to your needs.
 |2|On geofence violation:|Polygon that defines the borders of an area. Click **Edit geofence** and set the area. Double-click to add points and click and drag them to adjust.
-|3|Send e-mail:|"Send to:/Send CC to:/Send BCC to": Email addresses for sending the e-mail to. Multiple addresses can be separated by a comma (",", do not use a space!).<br>"Reply to": Address to be used to reply to the message.<br> "Subject": Subject of e-mail. You can use a variable of the form #{name}. Supported variables are listed under "Smart Rule Variables" below.<br> "Message": Text of the e-mail. You can use a variable of the form #{name}. Supported variables are listed under "Smart Rule Variables" below.
+|3|Send e-mail:|**Send to:/Send CC to:/Send BCC to**: Email addresses for sending the e-mail to. Multiple addresses can be separated by a comma (",", do not use a space!).<br>**Reply to**: Address to be used to reply to the message.<br> **Subject**: Subject of e-mail. You can use a variable of the form #{name}. Supported variables are listed under "Smart Rule Variables" below.<br> **Message**: Text of the e-mail. You can use a variable of the form #{name}. Supported variables are listed under "Smart Rule Variables" below.
 |4|Target asset or devices|Groups or devices the rule shall be applied to.
 
 **Info**: In order to raise an alarm the device had to be inside the geofence at least once after creating the rule.
@@ -208,7 +208,7 @@ The rule uses the following parameters:
 |Step|Field|Description|
 |:---|:---|:---|
 |1|Rule name|Pre-filled with the name of the rule template. Can be modified according to your needs.
-|2|Monitored measurement:|"Fragment/Series": Name of the measurement fragment and series. The incoming measurement must have exactly the same fragment/series name as configured. When creating a rule from the data explorer, these fields are already filled in. <br> "Time interval": Interval in which consumption values shall be calculated. Specifies how often per hour the consumption is calculated.
+|2|Monitored measurement:|**Fragment/Series**: Name of the measurement fragment and series. The incoming measurement must have exactly the same fragment/series name as configured. When creating a rule from the data explorer, these fields are already filled in. <br> **Time interval**: Interval in which consumption values shall be calculated. Specifies how often per hour the consumption is calculated.
 |3|Energy consumption measurement:|Name of the measurement fragment and series that shall be generated.
 |4|Target asset or devices|Groups or devices the rule shall be applied to.
 
@@ -238,7 +238,7 @@ The rule uses the following parameters:
 |Step|Field|Description|
 |:---|:---|:---|
 |1|Rule name|Pre-filled with the name of the rule template. Can be modified according to your needs.
-|2|Monitored measurement:|"Type": Type of measurement. The incoming measurement must have the same type as configured. When creating a rule from the data explorer, the type is already filled in.<br> "Time interval": Interval for calculating consumption values.
+|2|Monitored measurement:|**Type**: Type of measurement. The incoming measurement must have the same type as configured. When creating a rule from the data explorer, the type is already filled in.<br> **Time interval**: Interval for calculating consumption values.
 |3|Create alarm:|Type of alarm being raised. <br> Severity of alarm being raised. <br>Alarm text.
 |4|Target asset or devices|Groups or devices the rule shall be applied to.
 
@@ -261,7 +261,7 @@ The rule uses the following parameters:
 |:---|:---|:---|
 |1|Rule name|Pre-filled with the name of the rule template. Can be modified according to your needs.
 |2|On alarm matching:|The types of alarms triggering the rule. For each newly created alarm with one of these types in the list the rule is triggered.
-|3|Execute operation:|The operation that will be sent. The operation is provided as JSON description. Some standard operations can be selected below the "Operation" field. To use a standard operation, select one, and press the arrow button on the right. This will insert the JSON of the selected operation.
+|3|Execute operation:|The operation that will be sent. The operation is provided as JSON description. Some standard operations can be selected below the **Operation** field. To use a standard operation, select one, and press the arrow button on the right. This will insert the JSON of the selected operation.
 |4|Target asset or devices|Groups or devices the rule shall be applied to.
 
 ### On measurement threshold create alarm
@@ -297,8 +297,8 @@ The rule uses the following parameters:
 |Step|Field|Description|
 |:---|:---|:---|
 |1|Rule name|Pre-filled with the name of the rule template. Can be modified according to your needs.
-|2|On threshold:|"Fragment/Series": Name of the measurement fragment and series. The incoming measurement must have exactly the same fragment name as configured. When creating a rule from the data explorer, these fields are already filled in. <br> "Data Point Library entry": Name of the entry in the Data Point Library. This is used to find the default values for red and yellow ranges in case they are not configured for an individual object.
-|3|Create alarm:|"Type": Type of alarm being raised. <br>"Text": Alarm message.
+|2|On threshold:|**Fragment/Series**: Name of the measurement fragment and series. The incoming measurement must have exactly the same fragment name as configured. When creating a rule from the data explorer, these fields are already filled in. <br> **Data Point Library entry**: Name of the entry in the Data Point Library. This is used to find the default values for red and yellow ranges in case they are not configured for an individual object.
+|3|Create alarm:|**Type**: Type of alarm being raised. <br>**Text**: Alarm message.
 |4|Target asset or devices|Groups or devices the rule shall be applied to.
 
 **Description**
@@ -321,7 +321,7 @@ If no red/yellow ranges are defined, no alarms are generated.
 
 * Incoming value inside the yellow range: <br>If there is an active alarm of given type for the object, set severity to MINOR. Otherwise create new MINOR alarm with given parameters.
 
-* Incoming value inside the red range: <br> If there is an active alarm of given type for the object, set severity to "CRITICAL". Otherwise, create new CRITICAL alarm with given parameters.
+* Incoming value inside the red range: <br> If there is an active alarm of given type for the object, set severity to CRITICAL. Otherwise, create new CRITICAL alarm with given parameters.
 
 * Measurement outside of yellow and red range: <br>If there is an active alarm of given type for the object, clear the alarm.
 
@@ -360,8 +360,8 @@ The rule uses the following parameters:
 |Step|Field|Description|
 |:---|:---|:---|
 |1|Rule name|Pre-filled with the name of the rule template. Can be modified according to your needs.
-|2|On threshold:|"Fragment/Series": Name of the measurement fragment and series. The incoming measurement must have exactly the same fragment name as configured. When creating a rule from the data explorer, these fields are already filled in. <br> Minimum, Maximum: When a value is in the specified range [minimum; maximum], the configured alarm is raised.
-|3|Create alarm:|"Type": Type of alarm being raised. <br>"Text": Alarm message.
+|2|On threshold:|**Fragment/Series**: Name of the measurement fragment and series. The incoming measurement must have exactly the same fragment name as configured. When creating a rule from the data explorer, these fields are already filled in. <br> **Minimum, Maximum**: When a value is in the specified range [minimum; maximum], the configured alarm is raised.
+|3|Create alarm:|**Type**: Type of alarm being raised. <br>**Text**: Alarm message.
 |4|Target asset or devices|Groups or devices the rule shall be applied to.
 
 **Troubleshooting**
@@ -392,7 +392,7 @@ The rule uses the following parameters:
 |:---|:---|:---|
 |1|Rule name|Pre-filled with the name of the rule template. Can be modified according to your needs.
 |2|On alarm matching:|The types of alarms triggering the rule. For each newly created alarm with one of these types in the list the rule is triggered.
-|3|Text-to-speech:|"Phone number": Valid international phone number. Use country codes in the format "+49" (as an example for Germany).<br> "Message": The text read out by the rule. <br> Retries: The number of retries to reach the target phone number if not successful (default is "0", max is "20").<br> "Interval": The time interval between the retries in minutes (default is "5").<br>"Acknowledgment": If selected the receiver of the call has to acknowledge the call (a call not acknowledged will not count as successful)<br> "Acknowledgment text": The acknowledgment message which will be read after the main message, for example: "Please acknowledge this call by pressing the button 5". <br> "Acknowledgment number": The number of the button the receiver has to push to acknowledge. If the button has been pushed, the call will be successful and the alarm status will be changed to acknowledged.
+|3|Text-to-speech:|**Phone number**: Valid international phone number. Use country codes in the format "+49" (as an example for Germany).<br> **Message**: The text read out by the rule. <br> Retries: The number of retries to reach the target phone number if not successful (default is "0", max is "20").<br> **Interval**: The time interval between the retries in minutes (default is "5").<br>**Acknowledgment**: If selected the receiver of the call has to acknowledge the call (a call not acknowledged will not count as successful)<br> **Acknowledgment text**: The acknowledgment message which will be read after the main message, for example: "Please acknowledge this call by pressing the button 5". <br> **Acknowledgment number**: The number of the button the receiver has to push to acknowledge. If the button has been pushed, the call will be successful and the alarm status will be changed to acknowledged.
 |4|Target asset or devices|Groups or devices the rule shall be applied to.
 
 **Troubleshooting**

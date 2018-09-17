@@ -24,7 +24,8 @@ An instruction can either send a message (measurements, alarms, events and inven
 A message is defined by choosing a message template (like sending a temperature) and providing the values for this template (23.0 degrees). Many predefined message templates are provided, i.e. for creating a measurement, sending an event, creating and cancelling an alarm. These templates are based on MQTT static templates. Additionally, custom message templates can be defined using the [SmartREST template editor](#smartrest-templates). 
 
 ### The Simulator tab
-In the navigator, click "Simulator" in the "Devices" menu to open the "Simulator" tab.
+
+In the navigator, click **Simulator** in the **Devices** menu to open the **Simulator** page.
 
 All simulators which you can access will be listed here. Click the menu icon at the top right of a simulator card to open a context menu from where you can edit, clone or remove a simulator.
 
@@ -35,7 +36,7 @@ All simulators which you can access will be listed here. Click the menu icon at 
 To set up a new simulator follow these steps:
 
 1. Click **New Simulator** at the right of the top menu bar. 
-2. In the upcoming window select a simulator type from the dropdown list in the "Presets" field. Select "Empty simulator" to create a simulator from scratch or select one of the sample simulators.
+2. In the upcoming window select a simulator type from the dropdown list in the **Presets** field. Select "Empty simulator" to create a simulator from scratch or select one of the sample simulators.
 3. Enter a meaningful name for the simulator. 
 4. Select the number of instances for this simulator (up to ten).
 3. Click **Continue** to proceed to the next dialog.
@@ -69,7 +70,7 @@ The panel on the right changes according to the type of instruction selected on 
 
 ### Supported operations
 
-In the "Supported operations" tab of a simulator you can turn on or off specific operations like configurations or software/firmware updates.
+In the **Supported operations** tab of a simulator you can turn on or off specific operations like configurations or software/firmware updates.
 
 ![Operations Off](/guides/images/users-guide/supop1.png)
 
@@ -79,6 +80,6 @@ Click **Add custom operation** to specify a customized operation and add it to t
 
 ### Alarms (simulator)
 
-The "Alarm" tab of a simulator displays alarms related to the simulator itself (not to the simulated device), i.e. if the simulator itself does not work correctly, you will find alarms here. Refer to [Working with alarms](#alarms) for information on alarms. 
+The **Alarm** tab of a simulator displays alarms related to the simulator itself (not to the simulated device), i.e. if the simulator itself does not work correctly, you will find alarms here. Refer to [Working with alarms](#alarms) for information on alarms. 
 
 ![Simulator Alarm](/guides/images/users-guide/simalarm.png)

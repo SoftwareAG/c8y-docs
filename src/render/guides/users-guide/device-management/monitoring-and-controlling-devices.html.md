@@ -9,7 +9,7 @@ layout: redirect
 
 Cumulocity provides the option to view all devices in your account on a map.
 
-Click **Map** in the "Devices" menu in the navigator to display a map showing all devices in realtime. 
+Click **Map** in the **Devices** menu in the navigator to display a map showing all devices in realtime. 
 
 Devices are represented as "pins". Click a pin to see the name of the respective device. Click the device name to switch to the device details. 
 
@@ -23,7 +23,7 @@ This can be done at the level of individual devices (see below) or across multip
 
 To monitor the connections for multiple devices, open any device list.
 
-The connection status is represented by arrows in the "Status" column in the device list.
+The connection status is represented by arrows in the **Status** column in the device list.
 
 <img src="/guides/images/users-guide/DeviceManagement/DevMgmt_ConnectionStatus.png" alt="Connection Status" style="max-width: 100%">
 
@@ -51,14 +51,14 @@ The bottom arrow represents the Push connection (from Cumulocity to the device).
 
 **Maintenance mode**
 
-Moreover, the device may be in  "Maintenance" mode, indicated by the tool icon in the "Status" column. This is a special connection status indicating that the device is currently being maintained and cannot be monitored. While a device is being maintained, no alarms for that device are raised. 
+Moreover, the device may be in "Maintenance" mode, indicated by the tool icon in the **Status** column. This is a special connection status indicating that the device is currently being maintained and cannot be monitored. While a device is being maintained, no alarms for that device are raised. 
 
-You can turn maintenance mode on or off for a device through a slider in the "Connection monitoring" card in its "Info" tab. 
+You can turn maintenance mode on or off for a device through a slider in the **Connection monitoring** card in its **Info** tab. 
 
 
 **Connection monitoring in the "Info" tab**
 
-To monitor the connections of a particular device, go to the "Info" tab of this device. Under "Device status", the connection status for the device is displayed. 
+To monitor the connections of a particular device, go to the **Info** tab of this device. Under **Device status**, the connection status for the device is displayed. 
 
 <img src="/guides/images/users-guide/DeviceManagement/DevMgmt_DeviceInfoStatus.png" alt="Device Status" style="max-width: 50%">
 
@@ -66,7 +66,7 @@ Below the send connection and push connection status, the time of the last commu
 
 > **Info**: "Last communication" and "Last updated" are two entirely different time stamps. "Last communication" indicates when a device has last sent data. "Last updated" indicates when the inventory entry of the device was last updated. This update may have originated from the device, from the web user interface or from another application.
 
-In the  "Required Interval" field you can specify an interval. This parameter defines how often you expect to hear from the device. If, for example, you set the required interval to 60, you expect the device at least to communicate once in an hour with Cumulocity. The interval is either set by the device itself, based on the device's knowledge how often it will try to send data, or it is set manually by you.
+In the  **Required interval** field you can specify an interval. This parameter defines how often you expect to hear from the device. If, for example, you set the required interval to 60, you expect the device at least to communicate once in an hour with Cumulocity. The interval is either set by the device itself, based on the device's knowledge how often it will try to send data, or it is set manually by you.
 
 If an interval is set, you will find the **Maintenance** slider below it.
 
@@ -89,17 +89,17 @@ While a machine is offline, Cumulocity assumes by default
 * that the machine continues to stay in service during the connection outage, if this was the status before it lost connection.
 * that the machine continues to stay out of service, if this was the status before it lost connection.
 
-There may be exceptions from this rule. If your vending machines rely exclusively on cashless payment, losing the connection to the network means that your machine is out of service and stops selling. In this case, unavailability alarms must be set in the [Administration application](/guides/users-guide/administration#reprio-alarms) which have "critical" severity instead of "major" severity.
+There may be exceptions from this rule. If your vending machines rely exclusively on cashless payment, losing the connection to the network means that your machine is out of service and stops selling. In this case, unavailability alarms must be set in the [Administration application](/guides/users-guide/administration#reprio-alarms) which have CRITICAL severity instead of MAJOR severity.
 
 Cumulocity displays service availability at the level of individual devices and across all devices. 
 
-To check the service monitoring of this specific device, click the "Service monitoring" tab in the details of a particular device.
+To check the service monitoring of this specific device, click the **Service monitoring** tab in the details of a particular device.
 
-To display the overall service across all devices, click "Service monitoring" in the navigator.
+To display the overall service across all devices, click **Service monitoring** in the navigator.
  
 ![Service monitoring](/guides/images/users-guide/servicemonitoring.png)
 
-The "Service Monitoring" page shows the availability percentage of devices for the last day, last week and last month. 
+The **Service monitoring** page shows the availability percentage of devices for the last day, last week and last month. 
 
 
 ### <a name="alarm-monitoring"></a>Working with alarms
@@ -108,8 +108,8 @@ Devices can raise alarms to indicate that there is a problem requiring an interv
 
 Cumulocity displays alarms at the level of individual devices and across all devices:
 
-* Click "Alarms" in the "Overview" menu in the navigator, to check the alarms for all devices. 
-* Switch to the "Alarm" tab in the details of a particular device, to check the alarms of this specific device.
+* Click **Alarms** in the **Overview** menu in the navigator, to check the alarms for all devices. 
+* Switch to the **Alarm** tab in the details of a particular device, to check the alarms of this specific device.
 
 <img src="/guides/images/users-guide/DeviceManagement/devmgmt-alarm-device.png" alt="Alarms" style="max-width: 100%">
 
@@ -127,7 +127,7 @@ Alarms are classified according to their severity. Cumulocity includes four diff
 |Minor|The device has a problem that may be fixed.
 |Warning|There is a warning.
 
-The "Alarm" tab is split into four sections corresponding to these alarm types.
+The **Alarm** tab is split into four sections corresponding to these alarm types.
 
 By clicking one of the buttons at the top, the corresponding section will be hidden. Click it again to show the section again.
  
@@ -165,8 +165,8 @@ Operations are used to remote control devices.
 
 Cumulocity displays operations at the level of individual devices and across all devices:
 
-* Click "Device control" in the "Overview" menu in the navigator to see the operations for all devices. 
-* * Switch to the "Control" tab in the details of a particular device to see the operations of this specific device.
+* Click **Device control** in the **Overview** menu in the navigator to see the operations for all devices. 
+* * Switch to the **Control** tab in the details of a particular device to see the operations of this specific device.
 
 ![Device Control](/guides/images/users-guide/DeviceManagement/DevMgmt_DeviceControl.png)
 
@@ -206,7 +206,7 @@ For easier handling of devices, Cumulocity offers bulk operations. With bulk ope
 
 To execute bulk operations for a group, follow these steps:
 
-1. Select a device and open the "Control" tab.
+1. Select a device and open the **Control** tab.
 2. Create an operation.
 3. Hover over the operation you want to execute.
 4. Click the menu icon.
@@ -214,7 +214,7 @@ To execute bulk operations for a group, follow these steps:
 
 ![Execute bulk operations](/guides/images/users-guide/executebulkoperations.png)
 
-In order to view the status and progress of your operations, simply select the desired group and click the "Bulk Operations" tab.
+In order to view the status and progress of your operations, simply select the desired group and click the **Bulk operations** tab.
 
 ![Bulk operations tab](/guides/images/users-guide/DeviceManagement/DevMgmt_BulkOperations.png)
 
@@ -222,7 +222,7 @@ To edit a bulk operation, follow these steps:
 
 1. Hover over the bulk operation you want to edit and click the menu icon. 
 2. In the context menu click **Edit operation schedule**.
-3. In the upcoming window you may change the "Start Date" and "Delay" values.
+3. In the upcoming window you may change the **Start date** and **Delay** values.
 4. To change operation details, click **Show operation details**. 
 5. Click **Reschedule** to apply your changes. 
 
@@ -236,8 +236,8 @@ Troubleshooting devices at a more detailed level can be done with the help of ev
 
 Cumulocity displays events at the level of individual devices and across all devices: 
 
-* To see the events of this specific device, click the "Events" tab.
-* To see the operations for all devices, click "Events" in the "Overview" menu in the navigator.
+* To see the events of this specific device, click the **Events** tab.
+* To see the operations for all devices, click **Events** in the **Overview** menu in the navigator.
 *  
 ![Events](/guides/images/users-guide/DeviceManagement/DevMgmt_Events.png)
 

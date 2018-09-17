@@ -14,7 +14,7 @@ Click the **User** button at the top right and from the context menu, select **U
 
 In addition to changing the email address, name and phone number stored for your account you can modify the language of the user interface from here. 
 
-In the "Language" field, select a language from the dropdown list.
+In the **Language** field, select a language from the dropdown list.
 
 >**Info:** The user interface language will be selected along the following criteria, in the order listed below:
 

@@ -12,6 +12,8 @@ Own applications may be
 * web-based UI applications, either deployed as standalone applications or as plugins deployed into a specific application (e.g. a widget to the Cockpit dashboard)
 * server-side business logic deployed through microservices
 
+If you are subscribed to the required application ("apama-small"), you additionally can [upload custom Apama CEP rules](#uploading-cep-rules) as application. 
+
 Your applications are available through the application switcher in the top bar which allows to easily switch between applications.
 
 <img src="/guides/images/users-guide/Administration/Admin_AppSwitcher.png" alt="App switcher" style="max-width: 50%">
@@ -21,6 +23,8 @@ You manage your applications under **Own applications**, accessible through the 
 In the **Own applications** page you will find a list of the applications available in your account.
 
 <img src="/guides/images/users-guide/Administration/Admin_OwnApplications.png" alt="Own applications" style="max-width: 100%">
+
+To display further information on the application, simply click its card. For details on the fields, refer to [Application properties](#application-properties) below. 
 
 To directly open an application from here, click **Open** on the respective application card. 
 
@@ -34,26 +38,18 @@ Click the menu icon at the top right of an application to open a context menu fr
 
 To add an application, click **Add application** in the **Own applications** page. In the upcoming dialog choose one of the following methods:
 
-* [uploading a zip file](#uploading-zip-files) - by dropping a file or browsing for it on your computer,
-* [using an external application](#external-application), which links to an application running elsewhere 
-* [duplicating an existing application](#clone-application)
-* [uploading a custom CEP rule](#uploading-cep-rules) (only visible if you are subscribed to specific applications, see below).
+* [uploading a web application](#uploading-zip-files) - by dropping a ZIP file or browsing for it on your computer
+* [uploading a microservice](#uploading-microservices) - by dropping a ZIP file or browsing for it on your computer
+* [using an external application](#external-application) - by linking to an application running elsewhere 
+* [duplicating an existing application](#clone-application) - by creating a copy of an existing application
 
-<img src="/guides/images/users-guide/Administration/Admin_AddApplication.png" alt="Add application methods" style="max-width: 50%">
+If you are subscribed to the required application ("apama-small"), you will also see the option **Upload custom Apama rule** to [upload own Apama CEP rules](#uploading-cep-rules) as application. 
 
-#### <a name="uploading-zip-files"></a>Uploading zip files
+<img src="/guides/images/users-guide/Administration/admin-add-application.png" alt="Add application methods" style="max-width: 50%">
 
-You can either add a web application or a microservice through uploading a zip file. 
+#### <a name="uploading-zip-files"></a>Uploading web applications
 
-Depending on the information in the package being uploaded the system determines the application type.
-
-* If a "type" field exists and is equal to MICROSERVICE then the type is MICROSERVICE.
-* If no "type" field exists but the "apiVersion" field is defined then the type is MICROSERIVCE.
-* Otherwise the type is HOSTED (referring to a web application).
-
-In case of microservices, the package must contain the manifest file and docker image of the microservice. Refer to [Microservice package reference](/guides/reference/microservice-package) in order to prepare and deploy the microservice package.
-
-In order to add an application by uploading a zip file, follow these steps:
+In order to upload a web application, follow these steps:
 
 1. Click **Add application** in the **Own applications** page.
 2. In the upcoming dialog, select **Upload zip file**.
@@ -63,6 +59,20 @@ In order to add an application by uploading a zip file, follow these steps:
 
 After successfully uploading the zip file to the platform the application is being created.
 
+#### <a name="uploading-microservices"></a>Uploading microservices
+
+In order to upload a microservice, follow these steps:
+
+1. Click **Add application** in the **Own applications** page.
+2. In the upcoming dialog, select **Upload zip file**.
+3. Simply drop a zip file or browse for it on your computer.
+
+<img src="/guides/images/users-guide/Administration/Admin_UploadZipFile.png" alt="Uploading zip file" style="max-width: 50%">
+
+After successfully uploading the zip file to the platform the application is being created.
+
+>**Info**: In case of microservices, the package must contain the manifest file and docker image of the microservice. Refer to [Microservice package reference](/guides/reference/microservice-package) in the Reference guide in order to prepare and deploy the microservice package.
+
 
 #### <a name="external-application"></a>Linking to external applications
 
@@ -70,6 +80,9 @@ In order to add an application which links to an external application, follow th
 
 1. Click **Add application** in the **Own applications** page.
 2. In the upcoming dialog, select **External application**.
+<br><br>
+<img src="/guides/images/users-guide/Administration/admin-own-applications-external.png" alt="External application" style="max-width: 50%">
+<br><br>
 3. In the next window, enter the name of the application. The name will be shown as title of the application. 
 5. Enter an application key, used to identify this application.
 6. Enter the external URL where the application can be reached. 
@@ -90,6 +103,9 @@ In order to duplicate an application, follow these steps:
 1. Click **Add application** in the **Own applications** page.
 2. In the upcoming dialog, select **Duplicate existing application**.
 3. Select the desired application from the dropdown list. 
+<br><br>
+<img src="/guides/images/users-guide/Administration/admin-own-applications-duplicate.png" alt="Duplicate application" style="max-width: 50%">
+<br><br>
 4. In the next window, provide a name for the application. By default, the name of the original application is provided, extended by a number.
 5. Provide an application key, used to identify this application. By default, the key of the original application is provided, extended by a number.
 6. Provide the application path as part of the URL to invoke the application. By default, the path of the original application is provided, extended by a number. If you set it to the path of the original subscribed application, your own application will overrule the subscribed application. 
@@ -97,14 +113,14 @@ In order to duplicate an application, follow these steps:
 
 For details on the fields, see also [Application properties](#application-properties) below.
 
-#### <a name="uploading-cep-rules"></a>Uploading custom CEP rules
+#### <a name="uploading-cep-rules"></a>Uploading custom Apama rules
 
-> **Info:** To be able to upload custom CEP rules as applications to Cumulocity you need to be subscribed to the application "apama-small". Optionally, if you want to use the Smart Rules functionality, you need to be subscribed to the "SmartRule" application.
+> **Info:** To be able to upload custom Apama CEP rules as applications to Cumulocity you need to be subscribed to the application "apama-small". 
 
-In order to upload custom CEP rules, follow these steps:
+In order to upload custom Apama CEP rules, follow these steps:
 
 1. Click **Add application** in the **Own applications** page.
-2. In the upcoming dialog, select **Upload custom CEP rule**. <br>
+2. In the upcoming dialog, select **Upload custom Apama rule**. <br>
 	<img src="/guides/images/users-guide/Administration/Admin_ApplicationsAddCEPRules.png" alt="Upload CEP rules" style="max-width: 50%">
 
 3. The file to be uploaded must be a single mon file, containing a set of event definitions and monitors. Drop the mon file or browse for it on your computer.

@@ -561,7 +561,7 @@ Parameters:
 | :-------------: | :-------------: | :------ |
 | `errorHandlerAsync` | string | **Required**. Error handler|
 | `processingMode` | string | **Optional**. Processing mode|
-Processing ModeProcessing ModeProcessing ModeProcessing ModeProcessing Mode
+
 **Example**
 
      await cl.StaticOperationTemplates

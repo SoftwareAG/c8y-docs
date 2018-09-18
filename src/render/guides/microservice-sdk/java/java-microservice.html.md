@@ -164,9 +164,9 @@ To create a deployable ZIP file, you need to add the following to your .pom file
             <artifactId>microservice-autoconfigure</artifactId>
         </dependency>
     </dependencies>
-    
+
     <dependencyManagement>
-       	<dependencies>
+        <dependencies>
             <!-- microservice api -->
             <dependency>
                 <groupId>com.nsn.cumulocity.clients-java</groupId>
@@ -212,8 +212,7 @@ To create a deployable ZIP file, you need to add the following to your .pom file
                 </executions>
             </plugin>
         </plugins>
-    </build>
-    
+    </build>    
 
 ### Building the microservice
 

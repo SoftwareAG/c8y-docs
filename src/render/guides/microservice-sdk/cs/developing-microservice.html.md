@@ -192,9 +192,68 @@ You can now use the hub to subscribe to any publication of a given type, in our 
 
 In ASP.NET Core 2.0, the Program class is used to setup the IWebHost. This is the entry point to our application. The main method creates a host, builds and then runs it. The host then listens for HTTP requests.
 
-	  public class Program
-	    {
-	
+There are multiple ways to configure the application.
+
+#### Simplified configuration
+
+By using the extension to IWebHost - **UseMicroserviceApplication** the configuration with Startup can be simplified.
+
+UseMicroserviceApplication has an optional parameter by default "true". This parameter indicates whether to create a healthpoint.
+
+	public class Program
+	{
+		public static void Main(string[] args)
+		{
+			BuildWebHost(args).Run();
+		}
+
+		public static IWebHost BuildWebHost(string[] args) =>
+			WebHost.CreateDefaultBuilder(args)
+				.UseKestrel(options =>
+				{
+					var port = Environment.GetEnvironmentVariable("SERVER_PORT");
+					options.Listen(IPAddress.Parse("0.0.0.0"), Int32.TryParse(port, out var portNumber) ? portNumber : 8080);
+				})
+				.ConfigureLogging((hostingContext, logging) =>
+				{
+					logging.AddConfiguration(hostingContext.Configuration.GetSection("Logging"));
+					logging.AddConsole().SetMinimumLevel(LogLevel.Information);
+				})
+				.UseMicroserviceApplication()
+				.UseStartup<Startup>()
+				.Build();
+    }
+
+
+The minimum form of the Startup class may look like the following code:
+
+    public class Startup
+    {
+        public Startup(IConfiguration configuration)
+        {
+            Configuration = configuration;
+        }
+
+        public IConfiguration Configuration { get; }
+
+        public void ConfigureServices(IServiceCollection services)
+        {
+            services.AddMvc();
+        }
+
+        public void Configure(IApplicationBuilder app, IHostingEnvironment env)
+        {
+	        app.UseMvcWithDefaultRoute();
+		}
+    }
+
+#### Advanced configuration
+
+In this case, the entire configuration must be carried out manually:
+
+        public class Program
+        {
+
         public static void Main(string[] args)
         {
             BuildWebHost(args).Run();
@@ -202,47 +261,213 @@ In ASP.NET Core 2.0, the Program class is used to setup the IWebHost. This is th
 
         public static IWebHost BuildWebHost(string[] args) =>
 
-                WebHost.CreateDefaultBuilder(args)
-                .UseKestrel()
-                .ConfigureLogging((hostingContext, logging) =>
-                {
-                    logging.SetMinimumLevel(LogLevel.Warning);
-                    logging.AddConsole();
-                    logging.AddDebug();
-                })
+            WebHost.CreateDefaultBuilder(args)
+            .UseKestrel()
+            .ConfigureLogging((hostingContext, logging) =>
+            {
+                logging.SetMinimumLevel(LogLevel.Warning);
+                logging.AddConsole();
+                logging.AddDebug();
+            })
+            .UseStartup<Startup>()
+            .UseKestrel(options =>
+            {
+                var env = Environment.GetEnvironmentVariable("ASPNETCORE_ENVIRONMENT");
+                var port = Environment.GetEnvironmentVariable("SERVER_PORT");
+                int portNumber = 8080;
 
+                if (Int32.TryParse(port, out portNumber)){
+                    options.Listen(IPAddress.Parse("0.0.0.0"), portNumber);
+                }
+                else{
+                    options.Listen(IPAddress.Parse("0.0.0.0"), 1);
+                }
+            })
+            .Build();
+        }
+
+The Startup class may look like the following code:
+
+	public class Startup
+	{
+		ILogger _logger;
+
+		public Startup(IConfiguration configuration, ILoggerFactory loggerFactory)
+		{
+			Configuration = configuration;
+			_logger = loggerFactory.CreateLogger<Startup>();
+		}
+
+		public IConfiguration Configuration { get; }
+
+		public void ConfigureServices(IServiceCollection services)
+		{
+			_logger.LogDebug($"Total Services Initially: {services.Count}");
+
+			services.AddMemoryCache();
+			services.AddPlatform(Configuration);
+			ConfigureServicesLayer(services);
+			services.AddSingleton<IHttpContextAccessor, HttpContextAccessor>();
+
+			// Add scheduled tasks & scheduler
+			services.AddSingleton<IScheduledTask, TimerTask>();
+			services.AddScheduler((sender, args) =>
+			{
+				Debug.Write(args.Exception.Message);
+				args.SetObserved();
+			});
+
+			//MVC
+			services.AddMvc().AddJsonOptions(options => options.SerializerSettings.ContractResolver = new DefaultContractResolver());
+			//services.Replace(ServiceDescriptor.Singleton(typeof(ILogger<>), typeof(TimedLogger<>)));
+		}
+		public virtual void ConfigureServicesLayer(IServiceCollection services)
+		{
+			services.AddCumulocityAuthentication(Configuration);
+			services.AddSingleton<IApplicationService, ApplicationService>();
+		}
+
+		public void Configure(IApplicationBuilder app, IHostingEnvironment env, ILoggerFactory loggerFactory)
+		{
+			app.UseAuthentication();
+			app.UseBasicAuthentication();
+			app.UseMvcWithDefaultRoute();
+		}
+	}
+
+### Health check
+
+Health monitoring can allow near-real-time information about the state of your containers and microservices. Health monitoring is critical to multiple aspects of operating microservices and is especially important when orchestrators perform partial application upgrades in phases.
+
+For a service or web application to expose the health check endpoint, it has to enable the **UseHealthChecks([url_for_health_checks])** extension method. This method goes at the WebHostBuilder level in the main method of the Program class of your ASP.NET Core service or web application, right after UseKestrel as shown in the code below.
+
+    public class Program
+    {
+        public static void Main(string[] args)
+        {
+            BuildWebHost(args).Run();
+        }
+
+        public static IWebHost BuildWebHost(string[] args) =>
+            WebHost.CreateDefaultBuilder(args)
+                .ConfigureLogging((hostingContext, logging) =>{})
                 .UseStartup<Startup>()
-                .UseKestrel(options =>
-                {
-
-                    var env = Environment.GetEnvironmentVariable("ASPNETCORE_ENVIRONMENT");
-                    var port = Environment.GetEnvironmentVariable("SERVER_PORT");
-                    int portNumber = 8080;
-
-                    if (Int32.TryParse(port, out portNumber))
-                    {
-                        options.Listen(IPAddress.Parse("0.0.0.0"), portNumber);
-                    }
-                    else
-                    {
-                        options.Listen(IPAddress.Parse("0.0.0.0"), 1);
-                    }
-                })
+                .UseKestrel(options =>{})
+                .UseHealthChecks("/health")
                 .Build();
+    }
+
+The process works like this: each microservice exposes the endpoint e.g. /health. That endpoint is created by the library ASP.NET Core middleware. When that endpoint is invoked, it runs all the health checks that are configured in the AddHealthChecks method in the Startup class.
+
+The UseHealthChecks method expects a port or a path. That port or path is the endpoint to use to check the health state of the service. For instance, the catalog microservice uses the path /health.
+
+The basic flow is that you register your health checks in your IoC container. You register these health checks via a fluent HealthCheckBuilder API in your Startup‘s ConfigureServices method.  This HealthCheckBuilder will build a HealthCheckService and register it as an IHealthCheckService in your IoC container.
+
+#### Built-in platform health checks
+
+The microservice is healthy if the platform is accessible via HTTP from the application. To check it, it is possible to use an action that is built-in.
+
+```
+.AddPlatformCheck();
+```
+
+After that, you add the health check actions that you want to perform in that microservice. These actions are basically dependencies on other microservices (HttpUrlCheck) or databases (currently SqlCheck* for SQL Server databases). You add the action within the Startup class of each ASP.NET microservice or ASP.NET web application.
+
+#### Custom health check
+
+It is also possible to make your own custom health check. However, to do that, derive from IHealthCheck and implement the interface.  Below is an example of one that checks to make sure the C drive has at least 1 GB of free space.
+
+```
+public class CheckCDriveHasMoreThan1GbFreeHealthCheck : IHealthCheck
+{
+    public ValueTask<IHealthCheckResult> CheckAsync(CancellationToken cancellationToken = default(CancellationToken))
+    {
+        long freeSpaceInGb = GetTotalFreeSpaceInGb(@"C:\");
+        CheckStatus status = freeSpaceInGb > 1 ? CheckStatus.Healthy : CheckStatus.Unhealthy;
+
+        return new ValueTask<IHealthCheckResult>(HealthCheckResult.FromStatus(status, $"Free Space [GB]: {freeSpaceinGb}"));
 
     }
 
+    private long GetTotalFreeSpaceInGb(string driveName)
+    {
+        foreach (DriveInfo drive in DriveInfo.GetDrives())
+        {
+            if (drive.IsReady && drive.Name == driveName)
+            {
+                return drive.TotalFreeSpace / 1024 / 1024 / 1024;
+            }
+        }
+        throw new ArgumentException($"Invalid Drive Name {driveName}");
+    }
+}
+```
+
+Then in your ConfigureServices method, register the custom health check with adequate the lifetime of the service that makes sense for the health check and then add it to the AddHealthChecks registration that has been done before.
+
+```
+public void ConfigureServices(IServiceCollection services)
+{
+    services.AddSingleton<CDriveHasMoreThan1GbFreeHealthCheck>();
+
+    services.AddHealthChecks(checks =>
+    {
+        checks.AddCheck<CheckCDriveHasMoreThan1GbFreeHealthCheck>("C Drive has more than 1 GB Free");
+    });
+
+    services.AddMvc();
+}
+```
+
+The following example combines built-in checking and custom checking:
+
+```
+    public class Startup
+    {
+        ILogger _logger;
+        public Startup(IConfiguration configuration, ILoggerFactory loggerFactory)
+        {
+            Configuration = configuration;
+            ...
+        }
+
+        public IConfiguration Configuration { get; }
+
+
+        public void ConfigureServices(IServiceCollection services)
+        {
+            ...
+            // Add framework services
+            services.AddHealthChecks(checks =>
+            {
+                checks.AddPlatformCheck();
+                checks.AddCheck("long-running", async cancellationToken =>
+                {
+                    await Task.Delay(1000, cancellationToken);
+                    return HealthCheckResult.Healthy("I ran too long");
+                });
+            });
+
+            ...
+        }
+
+        public void Configure(IApplicationBuilder app, IHostingEnvironment env, ILoggerFactory loggerFactory)
+        {
+            ...
+            app.UseMvcWithDefaultRoute();
+        }
+    }
+```
 
 ### Cake
 
-Cake is a cross-platform build automation system, built on top of Roslyn and the Mono Compiler, which uses C# as the scripting language to do things like compiling code, copy files/folders, running unit tests, compress files and build NuGet packages.
+Cake is a cross platform build automation system, built on top of Roslyn and the Mono Compiler, which uses C# as the scripting language to do things like compiling code, copy files/folders, running unit tests, compress files and build NuGet packages.
 
-The cake script called build.cake has the predefined tasks. Tasks represent a unit of work in Cake, and you use them to perform specific work in a specific order.
+The cake script called build.cake has has the predefined tasks. Tasks represent a unit of work in Cake, and you use them to perform specific work in a specific order.
 
 *	Clean - Cleans the specified directory, deletes files.
 *	Build – Restores the dependencies and tools of projects and the task builds all projects, but before that it does the cleaning task. 
-*	Publish – The task compiles the application, reads through its dependencies specified in the project file, and publishes the resulting set of files to a directory. The result will be placed in the output folder.
-*	Docker-Build - Will save an image and an application manifest to images/multi/image.zip. Inside the root folder of your application, the so-called "application manifest" is stored in a file "cumulocity.json". The ZIP archive contains image.tar and "cumulocity.json". 
-*	Single-DockerImage - Will save an image and an application manifest to images/single /image.zip. Inside the root folder of your application, the so-called "application manifest" is stored in a file "cumulocity.json". The ZIP archive contains image.tar and "cumulocity.json".
+*	Publish – The task compiles the application, reads through its dependencies specified in the project file, and publishes the resulting set of files to a directory. The result will be placed in the output folder
+*	Docker-Build - Will save an image and an application manifest  to images/multi/image.zip. Inside the root folder of your application, the so-called "application manifest" is stored in a file cumulocity.json. The zip archive contains image.tar and cumulocity.json. 
+*	Single-DockerImage - Will save an image and an application manifest  to images/single /image.zip. Inside the root folder of your application, the so-called "application manifest" is stored in a file cumulocity.json. The zip archive contains image.tar and cumulocity.json.
 *	Docker-Run - Creates a new container using default settings.
-

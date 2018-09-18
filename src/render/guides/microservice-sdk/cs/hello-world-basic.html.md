@@ -21,17 +21,19 @@ The application created in this way uses the ASP.NET Web API framework to create
 
 Building and deploying "Hello World" on Windows is similar to the way it is done for Linux. For Windows, powershell is installed by default and that's why we use it.
 
-Download a script file to build a "Hello World" application.
+Download a script file to build a "Hello World" application. Manage the version of scripts and replace X.X.X to the right version number.
 
-	Invoke-WebRequest  http://resources.cumulocity.com/cssdk/releases/microservicesdk-win-dev-9.1.0.zip -OutFile microservicesdk-win-dev-9.1.0.zip
+	Invoke-WebRequest  http://resources.cumulocity.com/cssdk/releases/microservicesdk-win-dev-latest.zip -OutFile microservicesdk-win-dev-X.X.X.zip
+
+The latest can be replaced by the version number e.g. microservicesdk-lin-dev-{X.X.X}.zip.
 
 Once you have downloaded the source, unzip the file.
 
-	Expand-Archive c:\microservicesdk-win-dev-9.1.0.zip -DestinationPath c:\microservicesdk-win-dev-9.1.0.zip
+	Expand-Archive c:\microservicesdk-win-dev-latest.zip -DestinationPath c:\microservicesdk-win-dev-latest.zip
 
 Change the current folder and navigate to a microservicesdk folder.
 
-	cd microservicesdk-win-dev-9.1.0.zip
+	cd microservicesdk-win-dev-X.X.X.zip
 
 Run the script "create.sh" to create a sample project, provide the name of the project and the API application.
 
@@ -192,17 +194,17 @@ Startup.cs responsibilities:
 
 Download a script file to build a "Hello World" app. Wget utility is the best option to download a file.
 
-	sudo wget  http://resources.cumulocity.com/cssdk/releases/microservicesdk-lin-dev-9.1.0.zip
+	sudo wget  http://resources.cumulocity.com/cssdk/releases/microservicesdk-lin-dev-latest.zip
 
-The latest can be replaced by the version number e.g. microservicesdk-{X.X.X}.tar.gz
+The latest can be replaced by the version number e.g. microservicesdk-lin-dev-{X.X.X}.zip.
 
-Once you have downloaded the source, untar the file.
+Once you have downloaded the source, unzip the file.
 
-	unzip microservicesdk-lin-dev-9.1.0.zip -d  microservicesdk-9.1.0
+	unzip microservicesdk-lin-dev-latest.zip -d  microservicesdk-latest
 
 Change the current folder, to navigate to a microservicesdk folder.
 
-	cd microservicesdk-9.1.0
+	cd microservicesdk-latest
 
 Run the script "create.sh" to create a sample project, provide the name of the project and the API application.
 

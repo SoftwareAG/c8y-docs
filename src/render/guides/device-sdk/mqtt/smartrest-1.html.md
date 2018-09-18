@@ -31,6 +31,7 @@ Topic:
 s/ul/<X-ID>;
 ```
 
+
 #### Processing mode
 
 Since [Cumulocity SmartREST protocol](/guides/reference/smartrest) supports *TRANSIENT* processing mode for avoiding storage of sent data in the database, publishing on MQTT t/ topic instead of s/ topic will only pass the data to real-time processing.
@@ -46,6 +47,14 @@ Topic:
 ```
 q/ul/<X-ID>;
 ```
+
+[Cumulocity SmartREST protocol](/guides/reference/smartrest) also supports *CEP* processing mode for ensuring data is only sent to the real-time event processing engine with real-time notifications disabled by publishing on MQTT c/ topic instead of s/ topic. Currently, the CEP processing mode is applicable for measurements and events only.
+
+Topic:
+```
+c/ul/<X-ID>;
+```
+
 
 ### Receiving SmartREST 1.0
 

@@ -129,7 +129,8 @@ Will create a new device for the serial number in the inventory if not yet exist
 |1|device name|NO|MQTT Device &lt;serialNumber&gt;|
 |2|device type|NO|c8y_MQTTDevice|
 |3|errorHandlerAsync|YES||
-|4|processingMode|NO||
+|4|processingMode|NO|| 
+
 
 **Example**
 

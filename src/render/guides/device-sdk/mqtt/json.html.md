@@ -15,21 +15,33 @@ The SmartREST way should still be the preferred way if it is important to reduce
 The topic structure in JSON MQTT is quite similar to the REST endpoints. The main difference is in the additional action part which is included in the topic. 
 
 To publish messages:
+
 ```
 <api>/<resource>/<action>/<id>
 ```
 
+
 To publish messages in *TRANSIENT* mode:
+
 ```
 t/<api>/<resource>/<action>/<id>
 ```
 
+
 To publish messages in *QUIESCENT* mode:
+
 ```
 q/<api>/<resource>/<action>/<id>
 ``` 
 
-Refer to [Processing Mode](/guides/reference/rest-implementation#processingmode) for more information about transient & quiescent data processing.
+
+To publish messages in *CEP* mode:
+
+```
+c/<api>/<resource>/<action>/<id>
+``` 
+
+Refer to [Processing Mode](/guides/reference/rest-implementation#processingmode) for more information about transient, quiescent and CEP data processing.
 
 #### Topic actions
 

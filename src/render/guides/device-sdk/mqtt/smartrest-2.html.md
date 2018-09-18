@@ -30,7 +30,14 @@ To publish messages in *QUIESCENT* mode:
 +q/uc/<X-ID>
 ```
 
-Refer to SmartREST > [Processing Mode](/guides/reference/smartrest#processing-mode) in the Reference guide for more information about transient and quiescent data processing.
+To publish messages in *CEP* mode:
+
+```
+c/uc/<X-ID>
+```
+
+Refer to [SmartREST > Processing Mode](/guides/reference/smartrest#processing-mode) in the Reference guide for more information about transient, quiescent & CEP data processing.
+
 
 To subscribe for responses:
 
@@ -278,9 +285,9 @@ A single custom property requires you to add the following three values to your 
 |ALARMSTATUS|A status of an alarm. Used to update the status field of alarms|
 |OPERATIONSTATUS|A status of an operation. Used to update the status field of operations|
 
-**Examples**
+####Examples
 
-Template for clearing an alarm with an additional custom property:
+**Template for clearing an alarm with an additional custom property**
 
 ```
 // Creation:
@@ -289,7 +296,7 @@ Template for clearing an alarm with an additional custom property:
 999,Device resolved alarm on its own
 ```
 
-Template for creating a custom measurement:
+**Template for creating a custom measurement**
 
 ```
 // Creation:
@@ -298,7 +305,7 @@ Template for creating a custom measurement:
 999,30.6
 ```
 
-Template for updating a property in the device:
+**Template for updating a property in the device**
 
 ```
 // Creation:
@@ -325,11 +332,12 @@ SmartREST 2.0 will always return a response template if the condition is true (o
 
 You should make use of the condition field to control when response templates should be returned.
 
-**Examples**
+#### Examples
 
-Querying data from the device object
+**Querying data from the device object**
 
 Device object:
+
 ```
 {
   "id": "12345",
@@ -340,24 +348,29 @@ Device object:
 ```
 
 Template creation:
+
 ```
 10,999,GET,INVENTORY,,true
 11,888,,c8y_IsDevice,type,c8y_Test,c8y_Configuration
 ```
 
 Client publishes:
+
 ```
 999,12345
 ```
 
 Client receives:
+
 ```
 888,myMqttDevice,,"val1=1\nval2=2"
 ```
 
-Parsing custom operations
+<br>
+**Parsing custom operations**
 
 Operation object:
+
 ```
 {
   "id": "12345",
@@ -374,6 +387,7 @@ Operation object:
 ```
 
 Template creation:
+
 ```
 11,111,c8y_CustomConfiguration,deviceId,val1,val2,customValues[*]
 11,222,,deviceId,c8y_CustomConfiguration.val1,c8y_CustomConfiguration.val2
@@ -382,6 +396,7 @@ Template creation:
 ```
 
 Client receives (assuming the ClientId is "myMqttTestDevice"):
+
 ```
 111,myMqttTestDevice,1,2,a,b,c
 222,myMqttTestDevice,1,2
@@ -389,3 +404,48 @@ Client receives (assuming the ClientId is "myMqttTestDevice"):
 ```
 
 The template 444 is not returned as the condition does not match the operation.
+
+<br>
+**Querying data from the device object containing key with multiple objects**
+
+Device object:
+```
+{
+  "id": "12345",
+  "name": "test",
+  "type": "c8y_MQTTdevice",
+  "c8y_IsDevice": {},
+  "myList": [
+      {
+          "pid": 12345,
+          "type": "test"
+      },
+      {
+          "pid": 123456,
+          "type": "test2"
+      }
+  ]
+}
+```
+
+Template creation:
+
+```
+10,999,GET,INVENTORY,,true
+11,888,,,"$.myList[*].type"
+```
+
+Client publishes:
+
+```
+999,12345
+```
+
+Client receives:
+
+```
+888,test,test2
+```
+
+
+

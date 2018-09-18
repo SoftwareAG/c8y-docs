@@ -16,7 +16,7 @@ The MQTT implementation of Cumulocity provides the following benefits:
 * Standard IoT payload formats: Pre-defined payload formats to support IoT sensor readings, alarm management, remote control and device hierarchies.
 * Custom payload formats: Additional payload formats can be added. 
 * Minimum traffic overhead.
-* Processing modes: Control whether data is persisted in Cumulocity database, transiently passed to real-time processing or data is processed using quiescent mode which ensures that real-time notifications are disabled.
+* Processing modes: Control whether data is persisted in Cumulocity database, transiently passed to real-time processing, processed using quiescent mode which ensures that real-time notifications are disabled or is processed using CEP mode that ensures data is transiently sent to real-time processing engine only with real-time notifications disabled.
 * Full bi-directional communication.
 * MQTT over WebSockets support.
 * TLS support.

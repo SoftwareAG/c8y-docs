@@ -32,8 +32,7 @@ layout: redirect
 |measurementsForValueFragmentType|MeasurementCollection URI template|1|Read-only collection of all measurements containing a particular fragment type with value (placeholder {valueFragmentType}).|
 |measurementsForValueFragmentTypeAndType|MeasurementCollection URI template|1|Read-only collection of all measurements containing a particular type and a particular fragment type with value(placeholder {type} and {valueFragmentType}).|
 |measurementsForValueFragmentType AndValueFragmentSeries|MeasurementCollection URI template|1|Read-only collection of all measurements containing a particular fragment type and series with value (placeholder {valueFragmentType} and {valueFragmentSeries}).|
-|measurementsForValueFragmentType
-AndValueFragmentSeriesAndType|MeasurementCollection URI template|1|Read-only collection of all measurements containing a particular type and a particular fragment type and series with value(placeholder {type}, {valueFragmentType} and {valueFragmentSeries}).|
+|measurementsForValueFragmentTypeAndValueFragmentSeriesAndType|MeasurementCollection URI template|1|Read-only collection of all measurements containing a particular type and a particular fragment type and series with value(placeholder {type}, {valueFragmentType} and {valueFragmentSeries}).|
 
 > The query parameter "fragmentType" is deprecated. It is still available in the API, but clients are recommended to replace the parameter with "valueFragmentType" and "valueFragmentSeries". This leads to much better query performance. Note that you can only query fragments holding standard measurements with these parameters. Other formats cannot not be queried.
 

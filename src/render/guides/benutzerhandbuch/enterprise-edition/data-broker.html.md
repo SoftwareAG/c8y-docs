@@ -166,12 +166,14 @@ Jeder Datenfilter enthält die folgenden Informationen:
 
 </table>
 
+> **Info:** Wenn das Feld  **Gruppe oder Gerät** ausgefüllt ist, wird die gesamte nachfolgende Struktur der Stammdaten an den Zielmandanten weitergeleitet, sobald der Konnektor aktiv ist. Wenn das Feld  **Gruppe oder Gerät** leer ist oder "Alle" enthält, wird die nachfolgende Struktur nicht weitergeleitet. in diesem Fall arbeitet der Filter im "Lazy Mode", dass heißt, das Gerät oder Asset wird erst mit dem ersten Ereignis/Messwert/Alarm weitergeleitet. 
+
 Wenn der Datentyp Kommando in Filtern ausgewählt ist, werden die Kommandos, die im Zielmandanten erstellt wurden, an den Ursprungsmandanten weitergeleitet. Dies trifft jedoch nur auf Kommandos zu, die die folgenden Bedingungen erfüllen:
 
 * das Gerät des Kommandos selbst stammt aus weitergeleiteten Daten,
 * das Kommando entspricht anderen Filterkriterien.
 
-Kommandoaktualisierungen vom Ursprungsmandanten werden an den Zielmandanten weitergeleitet.
+Aktualisierungen des Kommandostatus vom Ursprungsmandanten werden an den Zielmandanten weitergeleitet.
 
 Die Kopfzeile eines Datenfilters fasst die Konfiguration in einer Zeile zusammen. Die Attribute, die standardmäßig kopiert werden, sind:
 

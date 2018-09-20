@@ -85,7 +85,7 @@ If tenant/username don't match or the token is expired or the signature is inval
 
 #### OAuth authentication code grant 
 
-The login with OAuth requires a correct configuration on the [Cumulocity side](src/render/guides/users-guide/administration/single-sign-on.html.md). With the configuration, an additional button is available on the Login page. After clicking the button, the user is redirected to authenticate with the configured authorization server. On successful login, the user is redirected to Cumulocity. 
+The login with OAuth requires a correct configuration on the [Cumulocity side](/guides/users-guide/administration#single-sign-on). With the configuration, an additional button is available on the Login page. After clicking the button, the user is redirected to authenticate with the configured authorization server. On successful login, the user is redirected to Cumulocity. 
 
 Authentication details are exchanged using cookies. There are two parts to it, the first is the authentication cookie that is handled automatically by the Cumulocity platform. The second is the XSRF-TOKEN cookie. When a client receives the cookie, it should take the value and put it in the X-XSRF-TOKEN request header in all subsequent requests.  
 

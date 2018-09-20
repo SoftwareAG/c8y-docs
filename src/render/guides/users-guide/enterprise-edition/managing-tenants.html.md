@@ -99,13 +99,13 @@ To finally delete a tenant and remove all the data of the tenant, click the menu
 
 ### <a name="tenants-custom-properties"></a>Editing custom properties
 
-The **Custom properties** tab allows you to view and modify values of custom properties, either predefined ones (like "External reference") or those defined in the [Properties library](/guides/users-guide/administration/changing-settings#properties). Such properties are also displayed as columns in [usage statistics table](#usage-stats).
+The **Custom properties** tab allows you to view and modify values of custom properties, either predefined ones (like "External reference") or those defined in the [Properties library](/guides/users-guide/administration#properties). Such properties are also displayed as columns in the [usage statistics table](#usage-stats).
 
 ![Custom Properties](/guides/images/users-guide/subtenant-custom-properties.png)
 
 **Limiting subtenant device number**
 
-The platform administrator can limit the count of concurrently registered root devices or simply all devices (including children devices). The platform administrator can also see the peak count of concurrently registered devices, root devices and the peak value of used storage in the **Usage statistics** page.
+The platform administrator can limit the count of concurrently registered root devices or simply all devices (including children devices). The platform administrator can also see the peak number of concurrently registered devices, root devices and the peak value of used storage in the **Usage statistics** page.
 
 ### <a name="usage-stats"></a> Retrieving usage statistics
 
@@ -138,7 +138,7 @@ The following information is provided for each tenant:
 
 Moreover custom properties are displayed, if configured. 
 
-Custom properties may be defined in the [Properties Library](/guides/users-guide/administration/changing-settings#properties) and then set their values in the [Custom properties](#tenants-custom-properties) tab of the tenant.
+Custom properties may be defined in the [Properties Library](/guides/users-guide/administration#properties) and then set their values in the [Custom properties](#tenants-custom-properties) tab of the tenant.
 
 ![Usage statistics](/guides/images/users-guide/usage-statistics-list.PNG)
 

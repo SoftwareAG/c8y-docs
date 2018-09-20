@@ -20,7 +20,7 @@ If the ping is successful the DNS resolution is working properly.
 
 Using `<domain_url>`, Edge can be connected from the host operating system (operating system which is hosting Edge VM instance). If you want to connect Edge VM within your LAN, which is outside of the host operating system, you need to do following:
 
-* Port forwarding must be enabled as mentioned in [Setting up the environment](/guides/edge/installation/setting-up-the-environment).
+* Port forwarding must be enabled as mentioned in [Setting up the environment](/guides/edge/installation#setting-up-the-environment).
 * The DNS entry needs to be added in your LAN’s DNS server/Name server. The DNS entry must have the domain&#95;url (provided in post_installation step) and the IP address of the host operating system. Note that this is not the Edge VM IP.
 
 Once the machine is in running state, open a web browser and enter the address:

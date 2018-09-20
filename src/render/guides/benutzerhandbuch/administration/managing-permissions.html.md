@@ -196,10 +196,10 @@ In der Rollenseite sehen Sie auf der linken Seite eine Liste mit vordefinierten 
 
 Für jeden Typen können Sie die folgenden Berechtigungsebenen wählen:
 
-*   **Lesen**: Die jeweiligen Daten einsehen.
-*   **Erstellen**: Neue Daten wie Benutzer und Stammdaten erstellen und Benutzer innerhalb Ihrer Hierarchie bearbeiten.
-*   **Aktualisieren**: Die jeweiligen Daten ändern und löschen (beinhaltet nicht "Lesen").
-*   **Admin**: Ermöglicht "Lesen", "Erstellen" und "Aktualisieren" von Daten.
+*   **Lesen**: Einsehen der jeweiligen Daten.
+*   **Erstellen**: Erstellen neuer Daten wie Benutzer und Stammdaten sowie Bearbeiten von Benutzern innerhalb Ihrer Hierarchie.
+*   **Aktualisieren**: Aktualisieren und Löschen der jeweiligen Daten (beinhaltet nicht "Lesen").
+*   **Admin**: Erstellen, Aktualisieren und Löschen der jeweiligen Daten.
 
 > **Info:** Berechtigungen zum Erstellen sind mit dem Eigentumskonzept in Cumulocity verbunden. Wenn Sie ein Objekt erstellt haben, sind Sie der Eigentümer und können das Objekt ohne weitere Berechtigungen verwalten. Wenn Sie beispielsweise die "Erstellen"-Berechtigung für Stammdaten haben, können Sie Geräte und Gruppen erstellen und diese vollständig verwalten. Sie können jedoch keine Geräte und Gruppen, die Sie nicht selbst erstellt haben, verwalten, ohne dafür eine entsprechende Berechtigung oder eine zusätzliche Stammdatenrolle zu haben (siehe unten). Diese Konzept unterstützt es, Geräte minimale Berechtigungen zuzuweisen. Es ermöglicht Ihnen auch, Benutzerverwaltungsrechte auf untergeordnete Benutzer zu beschränken, wenn Sie Benutzerhierarchien abonniert haben.
 

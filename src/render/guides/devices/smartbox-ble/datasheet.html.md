@@ -20,12 +20,12 @@ order: 20
 
 | Connectivity/ Features | | |
 | --- | --- | --- |
-| Layout <td colspan="2"> ![Layout](/guides/devices/smartbox-ble/interface.png)
+| Layout <td colspan="2"> ![Layout](/guides/images/devices/smartbox-ble/interface.png)
 | BLE | Qualification | v5.0 (Bluetooth low energy) |	
 | | Type | GATT Client |
 | | Connectivity | 1-8 Nordic Thingy52 BLE sensors </br> (Automatic Custom service identification of generic BLE sensors – not released yet) |
 | | Chip | NINA-B111-02B (ublox) |
-| Fieldbus Modbus </br> ![ ](/guides/devices/smartbox-dp/profibus.png) | Type | Modbus RTU Master |
+| Fieldbus Modbus </br> ![ ](/guides/images/devices/smartbox-dp/profibus.png) | Type | Modbus RTU Master |
 | | Baudrate | 4800, 9600, 19200, 38400, 57600, 115200 |
 | | Parity | Even, ODD, NONE | 
 | | Stoppbits | 2,1 |
@@ -85,7 +85,7 @@ order: 20
 | Operating humidity | Max. 85% |
 | Storage humidity | Max. 85% |
 | IP Class | IP20/IP54 (opt.) |
-| Approvals </br> ![ ](/guides/devices/smartbox-ble/certification.png)| Radio: R&TTE / GCF / RED</br>BLE: Europe (ETSI RED) |
+| Approvals </br> ![ ](/guides/images/devices/smartbox-ble/certification.png)| Radio: R&TTE / GCF / RED</br>BLE: Europe (ETSI RED) |
 | Conformity Declerations | <strong>EMC-Directive 2014/30/EU </strong></br> EN 55022:2010</br> EN 55024:2010</br> IEC 61000-6-1:2005</br> IEC 61000-6-3:2011</br> <strong>R&TTE-Directive 2014/53/EU</strong></br> EN 301 511 V9.0.2</br> EN 301 908-1 V6.2.1</br> EN 301 908-2 V6.2.1</br> <strong>RoHS-DIrective 2011/65/EU</strong></br> EN 50581:2012 |
 
 

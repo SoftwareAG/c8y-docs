@@ -208,7 +208,7 @@ You can also copy inventory roles from another user. To copy roles, click **Copy
 
 In the **Application Access** tab you assign applications to the user. 
 
-The **Application Access** tab shows a list of all available applications in your tenant in alphabetical order. Select the applications for the user and click **Save**. For more information on application management, see [Administration > Managing applications](/guides/users-guide/administration/managing-applications).
+The **Application Access** tab shows a list of all available applications in your tenant in alphabetical order. Select the applications for the user and click **Save**. For more information on application management, see [Administration > Managing applications](/guides/users-guide/administration#managing-applications).
 
 ![Application access](/guides/images/users-guide/appaccess.png)
 

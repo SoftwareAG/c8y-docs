@@ -66,7 +66,7 @@ Please note that the totalPages property can be expensive to compute, hence it i
 
 ### <a name="paging"></a>Query result paging for users with restricted access
 
-If a user does not have a global role for reading data from the API resource but rather has [inventory roles](/guides/users-guide/administration/managing-permissions#inventory) for reading only particular documents there are some differences in query result paging:
+If a user does not have a global role for reading data from the API resource but rather has [inventory roles](/guides/users-guide/administration#inventory) for reading only particular documents there are some differences in query result paging:
 
 -   In some circumstances the response may contain less than pageSize elements though there is more data in the database accessible for the user.
 

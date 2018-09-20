@@ -22,7 +22,7 @@ Navigate to "Data subscriptions" in your cloud account to receive the data from 
 
 In the same way, you can push operations from a Cumulocity Cloud account to Edge devices.
  
-For details on sending and receiving data in Cumulocity refer to [Using the Data Broker](#guides/users-guide/enterprise-edition/data-broker) in the User guide.
+For details on sending and receiving data in Cumulocity refer to [Using the Data Broker](/guides/users-guide/enterprise-edition#data-broker) in the User guide.
 
 
 

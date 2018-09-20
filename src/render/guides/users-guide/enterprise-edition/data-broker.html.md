@@ -72,7 +72,7 @@ Each data filter contains the following information:
 |Fragments to copy|The fragments that are copied to the destination. If nothing is specified here, only standard properties of managed objects, alarms, events and measurements are forwarded (see below). Select **Copy all fragments** to forward the entire object.
 |Type filter|Forwarded data needs to have this value in its "type" property.
 
-> **Info:** if "Group or device" input is fulfilled entire descendant structure of the inventory is forwarded to destination as soon as connector stays active. if "Group or device" input is empty or "all" descendant structure of the inventory is not forwarded; in this case filter works in "lazy" mode: forward device or asset along with its first event/measurement/alarm.
+> **Info:** If the **Group or device** field is filled in the entire descendant structure of the inventory is forwarded to the destination as soon as the connector stays active. if the **Group or device** field is empty or set to  "all" the descendant structure of the inventory is not forwarded; in this case the filter works in "lazy" mode, i.e. forwards the device or asset along with its first event/measurement/alarm.
 
 If operation API is checked in filters, operations created in the target tenant will be forwarded to the source tenant. This applies only to operations that meet the following conditions:
 

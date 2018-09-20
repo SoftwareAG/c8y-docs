@@ -101,9 +101,13 @@ Um einen Untermandanten und alle seine Daten endgültig zu löschen, klicken Sie
 
 ### <a name="tenants-custom-properties"></a>Bearbeitung von benutzerdefinierten Attributen
 
-Die Registerkarte **Benutzerdefinierte Attribute** ermöglicht Ihnen das Anzeigen und Ändern von Werten von benutzerdefinierten Attributen, sowohl vordefinierten (wie "Externe Referenz") als auch denen, die in der [Attributsbibliothek](/guides/benutzerhandbuch/administration/#properties) definiert sind. Solche Attribute werden auch als Spalten in der [Benutzungsstatistiktabelle](#usage-stats) angezeigt.
+Die Registerkarte **Benutzerdefinierte Attribute** ermöglicht Ihnen das Anzeigen und Ändern von Werten von benutzerdefinierten Attributen, sowohl vordefinierten (wie "Externe Referenz") als auch denen, die in der [Attributsbibliothek](/guides/benutzerhandbuch/administration#properties) definiert sind. Solche Attribute werden auch als Spalten in der [Benutzungsstatistiktabelle](#usage-stats) angezeigt.
 
 ![Benutzerdefinierte Attribute](/guides/images/benutzerhandbuch/Admin_SubtenantCustomProperties.png)
+
+**Begrenzen der Geräteanzahl für Untermandanten**
+
+Der Plattformadministrator kann die Anzahl der gleichzeitig registrierten Hauptgeräte oder der registrierten Geräte insgesamt (einschließlich Kindgeräte) begrenzen. Der Plattformadministrator kann außerdem auf der Seite **Nutzungsstatistiken** die Höchstanzahl registrierter Hauptgeräte und Geräte insgesamt sowie den Höchstwert des genutzten Datenspeichers einsehen. 
 
 ### <a name="usage-stats"></a>Nutzungsstatistiken abrufen
 
@@ -124,7 +128,7 @@ Die folgenden Informationen werden für jeden Untermandanten angezeigt:
 
 Außerdem werden benutzerdefinierte Attribute angezeigt, falls vorhanden.
 
-Benutzerdefinierte Attribute können in der [Attributsbibliothek](/guides/benutzerhandbuch/administration/#properties) definiert werden. Anschließend können entsprechende Werte in der Registerkarte [Benutzerdefinierte Attribute](#tenants-custom-properties) des Mandanten eingestellt werden.
+Benutzerdefinierte Attribute können in der [Attributsbibliothek](/guides/benutzerhandbuch/administration#properties) definiert werden. Anschließend können entsprechende Werte in der Registerkarte [Benutzerdefinierte Attribute](#tenants-custom-properties) des Mandanten eingestellt werden.
 
 ![Nutzungsstatistiken](/guides/images/benutzerhandbuch/Admin_TenantUsageStatistics.png)
 

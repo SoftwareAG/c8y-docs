@@ -137,7 +137,7 @@ In jeder Zeile werden die folgenden Informationen für einen Alarm angezeigt:
 |Schweregrad|Entweder kritisch, wichtig, weniger wichtig oder Warnung (siehe oben).
 |Anzahl|Wie oft der Alarm von dem Gerät gesendet wurde. Es kann jeweils nur ein Alarm pro Typ für ein Gerät aktiv sein. Wenn ein weiterer Alarm des gleichen Typs auftritt, wird die Zahl um 1 erhöht.
 |Beschreibung|Optionaler Text zur Beschreibung des Alarms.
-|Status|Status des Alarms: <br/> **Aktiv**: Wenn der Alarm ausgelöst wurde und keiner bisher den Alarm bearbeitet. <br/>**Bestätigt**: Wenn jemand den Status auf **Bestätigt** gesetzt hat, um anzuzeigen, dass dieser Alarm bereits bearbeitet wird.<br/>**Aufgehoben**: Wenn entweder jemand den Status manuell auf **Aufgehoben** gesetzt hat oder wenn das Gerät selbst festgestellt hat, dass das Problem behoben ist. 
+|Status|Status des Alarms: <br/> **Aktiv**: Wenn der Alarm ausgelöst wurde und keiner bisher den Alarm bearbeitet. <br/>**Bestätigt**: Wenn jemand den Status auf "Bestätigt" gesetzt hat, um anzuzeigen, dass dieser Alarm bereits bearbeitet wird.<br/>**Aufgehoben**: Wenn entweder jemand den Status manuell auf "Aufgehoben" gesetzt hat oder wenn das Gerät selbst festgestellt hat, dass das Problem behoben ist. 
 |Letztes Auftreten|Zeitstempel für das letzte Auftreten des Alarms (Gerätezeit).
 |Gerät|Name des Geräts. Durch Klicken des Namen gelangen Sie zur Detailansicht des Geräts.
 
@@ -149,6 +149,8 @@ Klicken Sie auf den Pfeil rechts in einem Eintrag, um die Zeile auszuklappen und
 Um den Status eines Alarms zu ändern, bewegen Sie den Mauszeiger rechts über die Zeile und klicken Sie die entsprechende Schaltfläche oder öffnen Sie das Kontextmenü über das Menüsymbol und wählen Sie den gewünschten Status.  
 
 ![Alarm dropdown](/guides/images/users-guide/DeviceManagement/DevMgmt_AlarmDropdown.png)
+
+Es besteht außerdem die Möglichkeit, den Status aller Alarme auf einmal auf "Aufgehoben" zu setzen. Klicken Sie **Alle aufheben** in der oberen Menüzeile, um alle Alarme des ausgewählten Schweregrads auf einmal aufzuheben. 
 
 <!-- Seems to be no longer relevant
 * **Additional information**: An alarm can contain arbitrary additional information provided by the device.

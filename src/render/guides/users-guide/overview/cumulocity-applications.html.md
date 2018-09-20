@@ -17,7 +17,7 @@ Apart from these standard applications that initially come with Cumulocity, vari
 
 Find a detailed list of all applications available with Cumulocity in Applications > [Application names](/guides/reference/applications#application-names) in the Reference guide.
 
-Moreover, you can add own applications to be used in your Cumulocity account. For details, refer to [Administration > Managing applications](/guides/users-guide/administration/managing-applications).
+Moreover, you can add own applications to be used in your Cumulocity account. For details, refer to [Administration > Managing applications](/guides/users-guide/administration#managing-applications).
 
 The content of the Cumulocity platform therefore is entirely dynamic and is generated based on various criteria:
 

@@ -67,7 +67,7 @@ For each type, you can select the following permission levels:
 - **Read**: Read the specified data.
 - **Create**: Create new data like users and inventory data and edit users within your hierarchy.
 - **Update**: Modify and delete the specified data (not including "Read").
-- **Admin**: Allows for "Delete", "Create" and "Update" actions.
+- **Admin**: Create, update or delete the specified data.
 
 > **Info:** "Create" permissions are related to the concept of ownership in Cumulocity. If you have created an object, you are the owner of it and can manage it without requiring any further permissions. For example, if you have  "Create" permission for "Inventory", you can create devices and groups, and fully manage these devices and groups. You cannot manage any devices or groups that you did not create yourself, unless you also have the "Change" permission or an additional inventory role (see below). This concept helps to assign minimal permissions to devices. It also enables you to limit user management permissions to sub-users, if you subscribed to user hierarchies.
 

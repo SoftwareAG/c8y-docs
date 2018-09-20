@@ -43,7 +43,7 @@ Geben Sie links im Fenster **Neuer Benutzer** folgende Informationen ein, um den
 |Feld|Beschreibung|
 |:---|:---|
 |Benutzername|Benutzername, um den Benutzer am System zu identifizieren. Beachten Sie, dass dieser Name nicht mehr geändert werden kann, wenn er einmal gespeichert wurde. Diese Eingabe ist obligatorisch.
-|Login-Alias|Benutzername, um den Benutzer am System zu identifizieren. Beachten Sie, dass dieser Name nicht mehr geändert werden kann, wenn er einmal gespeichert wurde. Diese Eingabe ist obligatorisch.
+|Login alias|Zusätzlich zum Benutzernamen kann optional ein Login-Alias vergeben werden, der für die Anmeldung verwendet werden kann. Anders als der Benutzername kann der Alias bei Bedarf geändert werden.
 |Aktiv|Hier können Sie das Benutzerkonto aktivieren/ deaktivieren. Wenn das Benutzerkonto deaktiviert ist, kann der Benutzer sich nicht anmelden.
 |E-Mail|Eine gültige E-Mail-Adresse. Diese ist erforderlich, um dem Benutzer zu ermöglichen, sein Passwort zurückzusetzen. Diese Eingabe ist obligatorisch.
 |Vorname|Vorname des Benutzers. Wenn der Benutzer angemeldet ist, erscheint dieser Name rechts in der oberen Leiste auf der Schaltfläche **Benutzer**.

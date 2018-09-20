@@ -10,9 +10,9 @@ Since Cumulocity IoT Edge is based on the same software as the cloud-based Cumul
 
 Below find an overview on the functionalities of these applications in Cumulocity IoT Edge. 
 
-For general information on functionalities and features of the GUI refer to [GUI functionalities and features](/guides/users-guide/overview/gui-features).
+For general information on functionalities and features of the GUI refer to [GUI functionalities and features](/guides/users-guide/overview#gui-features).
 
-For information on how to change the user settings of your account refer to [User settings](/guides/users-guide/overview/user-settings).
+For information on how to change the user settings of your account refer to [User settings](/guides/users-guide/overview#user-settings).
 
 ### Device Management
 

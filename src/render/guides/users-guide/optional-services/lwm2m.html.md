@@ -59,12 +59,12 @@ In this CSV example, the security mode value is “PSK”, hence additional fiel
 |disableTimeout (true/false)|Boolean|See LWM2M spec. Default: Not configured.|Optional, defaults to Leshan default behavior|
 |external-c8y_BootstrapPskId|String|The ID being used to find a device during bootstrap.|Optional|
 
-> **Info**: Firmware updates are also supported. For more information, see [Device Management > Managing device data](https://www.cumulocity.com/guides/users-guide/device-management/#software-repo) in the User guide.
+> **Info**: Firmware updates are also supported. For more information, see [Device Management > Managing device data](/guides/users-guide/device-management/#software-repo) in the User guide.
 
 ### <a name="device_protocols"></a>LWM2M device protocols
 
 To process data from LWM2M devices, Cumulocity uses device protocols.
-Device protocols are accessible through the “Devices Types” menu in the Device Management application. For details on the general usage, see [Device Management > Managing device types](https://www.cumulocity.com/guides/users-guide/device-management/#managing-device-types).
+Device protocols are accessible through the “Devices Types” menu in the Device Management application. For details on the general usage, see [Device Management > Managing device types](/guides/users-guide/device-management/#managing-device-types).
 
 ### <a name="creating_device_protocols"></a>Creating LWM2M device protocols
 

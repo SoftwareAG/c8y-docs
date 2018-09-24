@@ -1,17 +1,52 @@
 ---
-order: 30
+order: 10
+title: Hello Microservice Python
 layout: redirect
-title: Developing the "Hello python" microservice 
 ---
 
-To develop a simple "Hello, World!" microservice in python, you need to
+### Overview
+
+In the Cumulocity platform, microservice hosting is build on top of Docker containers. This makes it technology-agnostic and allows developers to create applications in any technology stack.
+
+In this tutorial, you will learn how to create and run a sample microservice written in Python. The provided example covers
+ 
+* a sample Python application using the Flask framework to expose REST endpoints
+* a manifest file with minimal content to run an application 
+* the configuration of the dockerfile which enables to create a ready to run docker image with bundled application (inside light Alpine linux distribution)
+* instructions for building and packaging a ZIP file containing the full application (ready to upload into platform)
+* instructions for uploading and subscribing to the packaged microservice 
+
+
+### Prerequisites
+
+Create an account on cumulocity.com, for example by using a free trial. At this step you will be provided with a dedicated URL address.
+
+Verify the docker installation:
+
+Cumulocity hosts linux/amd64 docker containers and not Windows containers. The docker version must be >= 1.12.6
+
+    $ docker version
+    Client:
+     Version:         1.12.6
+     API version:     1.24
+     OS/Arch:         linux/amd64
+
+    Server:
+     Version:         1.12.6
+     API version:     1.24
+     OS/Arch:         linux/amd64
+
+
+### Developing the "Hello World" microservice 
+
+To develop a simple "Hello, World!" microservice in Python, you need to
  
  * create a python web application
  * create the dockerfile
  * add the microservice manifest
  * build and run the application
 
-### Creating a Python web application
+#### Creating a Python web application
 
 In this example, we will use Python 3 with a Flask microframework, which enables simple exposing of endpoints and embedded HTTP server. 
 
@@ -46,9 +81,9 @@ Start from creating the "application.py" script with the content
 The application is configured to run on port 80 (which is required for the microservice), and exposes two endpoints: "/health" and "/hello".
 The endpoint "/hello" reads some standard variables provided to the environment by the platform during the microservice installation and returns their values as JSON.
 
-### Creating the Dockerfile
+#### Creating the dockerfile
 
-To be able to build a docker image with our application, you need to create the "Dockerfile". For this example it should be in the same directory as the "application.py" script.
+To be able to build a Docker image with our application, you need to create the "Dockerfile". For this example it should be in the same directory as the "application.py" script.
 
     FROM python:alpine3.6
     
@@ -58,7 +93,7 @@ To be able to build a docker image with our application, you need to create the 
     ENTRYPOINT ["python"]
     CMD ["application.py"]
     
-This build uses Alpine linux with Python SDK inside. This is a very thin distribution, and the resulting docker image is small (about 100 MB). The line
+This build uses Alpine linux with Python SDK inside. This is a very thin distribution, and the resulting Docker image is small (about 100 MB). The line
 
     RUN pip install -r requirements
     
@@ -66,7 +101,7 @@ installs the required Python libraries using "pip" installer. These required lib
     
     Flask==0.10.1
     
-### Adding the manifest 
+#### Adding the manifest 
     
 Finally, the microservice manifest file "cumulocity.json" is required for our application.
 
@@ -83,28 +118,24 @@ Finally, the microservice manifest file "cumulocity.json" is required for our ap
       ]
     }
     
-### Building the application
+#### Building the application
      
-To build the docker image and save it in "image.tar", run     
+To build the Docker image and save it in "image.tar", run     
 
     $ docker build -t hello-python-microservice .
     $ docker save hello-python-microservice > "image.tar"
 
-Then pack "image.tar" with the manifest "cumulocity.json" into a .zip archive
+Then pack "image.tar" with the manifest "cumulocity.json" into a ZIP archive.
     
     $ zip hello-microservice cumulocity.json image.tar
     
 The resulting "hello-microservice.zip" file contains the ready to upload microservice. 
 
-### Running the example
+#### Running the example
 
-Uploading the "hello-microservice.zip" into the platform can be done via the UI. In the Administration application go to 
+Uploading the "hello-microservice.zip" into the platform can be done via the UI. In the Administration application navigate to **Applications** > **Own applications** > **Add application** > **Upload ZIP file** and select **Subscribe**. 
 
-Applications -> Own applications -> Add application -> Upload ZIP file
-
-and choose "Subscribe". 
-
-For details on uploading a microservice ZIP file refer to Administration> Managing applications > Adding applications > [Uploading ZIP files](uploading-zip-files) in the User guide. 
+For details on uploading a microservice ZIP file refer to [Administration > Managing applications > Adding applications](/guides/users-guide/administration/managing-applications#adding-applications) in the User guide. 
 
 #### Using "microservice" script
 
@@ -134,3 +165,4 @@ with proper credentials (user from any subscribed tenant), results with a respon
        "tenant": "mytenant",
        "user": "servicebootstrap_hello-microservice"
     }
+

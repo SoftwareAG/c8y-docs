@@ -102,15 +102,14 @@ docpadConfig = {
 			{ title: 'Apama analytics guide', folder: 'guides/apama' , slug: 'apama', icon : 'c8y-icon c8y-icon-data-explorer', description: 'Basics for understanding how the Apama Event Processing Language (EPL) works and how to create your own analytics or other business logic in Cumulocity with Apama EPL.'},
 			{ title: 'Device guides', folder: 'guides/devices' , slug: 'device-guides', icon: 'c8y-icon c8y-icon-device-management', description: 'Collection of a large amount of device types with guaranteed plug-and-play compatibility and full functional support in the Cumulocity IoT platform.' },
 			{ title: 'Reference guide', folder: 'guides/reference' , slug: 'reference-guide', icon : 'fa fa-book', description: 'Detailed technical specifications of the programming interfaces of Cumulocity as a reference for software developers.'},
+			{ title: 'Microservice SDK guide', folder: 'guides/microservice-sdk' , slug: 'microservice-sdk', icon : 'fa fa-book', description: 'How to develop and deploy microservices on top of Cumulocity using the Microservice SDK.'},
 			{ title: 'REST developer\'s guide', folder: 'guides/rest', slug: 'rest-developer', icon: 'c8y-icon c8y-icon-tools', description: 'How to use REST interfaces to integrate devices with Cumulocity and how to develop applications on top of Cumulocity.' },
 			{ title: 'MQTT developer\'s guide', folder: 'guides/mqtt', slug: 'mqtt-developer', icon: 'c8y-icon c8y-icon-tools', description: 'How to use the MQTT  to integrate devices with the Cumulocity IoT platform.' },
 			{ title: 'Java developer\'s guide', folder: 'guides/java', slug: 'java-developer', icon: 'c8y-icon c8y-icon-java', description: 'How to use Java to interface Cumulocity with open Java-enabled devices, closed devices or your enterprise IT systems.' },
 			{ title: 'Web developer\'s guide', folder: 'guides/web', slug: 'web-developer', icon: 'c8y-icon c8y-icon-smart-rest', description: 'How to use the Web SDK to extend applications with your own plugins, add your own applications or implement further functionalities tailored to your use case.' },
-			{ title: 'C++ developer\'s guide', folder: 'guides/cpp', slug: 'cpp-developer', icon: 'c8y-icon c8y-icon-tools', description: 'How to use the C++ SDK to integrate devices with the Cumulocity IoT platform.' },
-			{ title: 'C# developer\'s guide', folder: 'guides/cs', slug: 'cs-developer', icon: 'c8y-icon c8y-icon-tools', description: 'How to use C# to develop and deploy applications on top of Cumulocity.' },
-			{ title: 'HTTP developer\'s guide', folder: 'guides/http', slug: 'http-developer', icon: 'c8y-icon c8y-icon-tools', description: 'How to use HTTP to develop applications on top of Cumulocity.' }
-
-		]
+			{ title: 'C++ developer\'s guide', folder: 'guides/cpp', slug: 'cpp-developer', icon: 'c8y-icon c8y-icon-tools', description: 'How to use the C++ SDK to integrate devices with the Cumulocity IoT platform.' }
+					
+			]
 	
 
 	# =================================

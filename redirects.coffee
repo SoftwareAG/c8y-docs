@@ -73,5 +73,6 @@ redirects =
 	'/guides/event-language': '/guides/event-language/introduction'
 	'/guides/http': '/guides/http/hello-microservice-python'
 	'/guides/edge': '/guides/edge/overview'
+	'/guides/microservice-sdk': '/guides/microservice-sdk/introduction'
 
 module.exports = redirects

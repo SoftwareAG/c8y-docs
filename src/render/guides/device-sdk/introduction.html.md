@@ -4,13 +4,13 @@ title: Overview
 layout: standalone
 ---
 
-To interface IoT data sources such as devices and external IT systems, Cumulocity provides agents. Agents are software components that enable a centralized perspective on all aspects and central operation of the IoT network.
+Cumulocity offers a wide range of functionality for interfacing IoT devices and other IoT-related data sources with the Cumulocity IoT platform.
 
-The following Device SDK guide describes [the general concept](/guides/device-sdk/concept) and functionality of interfacing IoT data sources with the Cumulocity Iot platform. 
+This Device SDK guide provides detailed information on 
 
-Moreover it provides detailed information on device intergration using
+* [device integration using MQTT](/guides/device-sdk/mqtt)
+* [device integration using REST](/guides/device-sdk/rest)
+* [device integration using Java](/guides/device-sdk/java) 
+* [device integration using C++](/guides/device-sdk/cpp)
 
-* [MQTT](/guides/device-sdk/mqtt)
-* [REST](/guides/device-sdk/rest)
-* [Java](/guides/device-sdk/java) 
-* [C++](/guides/device-sdk/cpp)
+For information on the general concept of agents being used for interfacing IoT data sources with Cumulocity, refer to [Interfacing devices](/guides/concept/interfacing-devices) in the Concepts guide.

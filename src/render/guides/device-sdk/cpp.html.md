@@ -1,5 +1,5 @@
 ---
-order: 30
+order: 40
 title: Device SDK for C++
 layout: subsections
 collection: 'guides/device-sdk/cpp'

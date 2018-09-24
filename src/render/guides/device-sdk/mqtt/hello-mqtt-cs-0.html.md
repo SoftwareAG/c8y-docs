@@ -116,7 +116,6 @@ What does the code in "main" do?
 
 Now that you have done your first step, check out the section [Hello MQTT](/guides/mqtt/hello-mqtt) to learn more about Cumulocity MQTT and improve your application.
 
-
 ### Static templates
 
 #### Static inventory templates
@@ -124,13 +123,12 @@ Now that you have done your first step, check out the section [Hello MQTT](/guid
 
 Will create a new device for the serial number in the inventory if not yet existing. An externalId for the device with type c8y_Serial and the device identifier of the MQTT clientId as value will be created.
 
-|Position|Parameter|Mandatory|Default|
-|:-------|:-------|:-------|:-------|
-|1|device name|NO|MQTT Device &lt;serialNumber&gt;|
-|2|device type|NO|c8y_MQTTDevice|
-|3|errorHandlerAsync|YES||
-|4|processingMode|NO|| 
-
+|Field|Data type|Description|
+| :-------------: | :-------------: | :------ |
+| `deviceName` | string | **Optional**. Name of the device. &lt;serialNumber&gt;|
+| `deviceType` | string | **Optional**. Type of the device.|
+| `errorHandlerAsync` | string | **Required**. Error handler|
+| `processingMode` | string | **Optional**. Processing mode|
 
 **Example**
 
@@ -143,13 +141,14 @@ Will create a new device for the serial number in the inventory if not yet exist
 
 Will create a new child device for the current device. The newly created object will be added as child device. Additionally, an externalId for the child will be created with type "c8y_Serial" and the value a combination of the serial of the root device and the unique child ID.
 
-|Position|Parameter|Mandatory|Default|
-|:-------|:-------|:-------|:-------|
-|1|unique child ID|YES||
-|2|device name|NO|MQTT Device &lt;serialNumber&gt;|
-|3|device type|NO|c8y_MQTTChildDevice|
-|4|errorHandlerAsync|YES||
-|5|processingMode|NO||
+
+|Field|Data type|Description|
+| :-------------: | :-------------: | :------ |
+| `uniqueChildID` | string | **Required**. The unique child identifier.|
+| `deviceName` | string | **Optional**. Name of the device. &lt;serialNumber&gt;|
+| `deviceType` | string | **Optional**. Type of the device.|
+| `errorHandlerAsync` | string | **Required**. Error handler|
+| `processingMode` | string | **Optional**. Processing mode|
 
 **Example**
 
@@ -159,6 +158,11 @@ Will create a new child device for the current device. The newly created object 
 ##### Get child devices (105)
 
 Will trigger the sending of child devices of the device.
+
+|Field|Data type|Description|
+| :-------------: | :-------------: | :------ |
+| `errorHandlerAsync` | string | **Required**. Error handler|
+| `processingMode` | string | **Optional**. Processing mode|
 
 **Example**
 
@@ -180,13 +184,13 @@ Will update the hardware properties of the device.
 
 Parameters:
 
-|Position|Parameter|Mandatory|
-|:-------|:-------|:-------|
-|1|serialNumber|NO|
-|2|model|NO|
-|3|revision|NO|
-|4|errorHandlerAsync|YES|
-|5|processingMode|NO|
+|Field|Data type|Description|
+| :-------------: | :-------------: | :------ |
+| `serialNumber` | string | **Optional**. The serial number of the device.|
+| `model` | string | **Optional**. The model.|
+| `revision` | string | **Optional**. The revision.|
+| `errorHandlerAsync` | string | **Required**. Error handler|
+| `processingMode` | string | **Optional**. Processing mode|
 
 **Example**
 
@@ -196,24 +200,23 @@ Parameters:
                                 "1.0",
                                 (e) => { return Task.FromResult(false); });
 
-### Configure mobile (111)
+##### Configure mobile (111)
 
 Will update the mobile properties of the device.
 
 Parameters:
 
-|Position|Parameter|Mandatory|
-|:-------|:-------|:-------|
-|1|imei|NO|
-|2|iccid|NO|
-|3|imsi|NO|
-|4|mcc|NO|
-|5|mnc|NO|
-|6|lac|NO|
-|7|cellId|NO|
-|8|errorHandlerAsync|YES|
-|9|processingMode|NO|
-
+|Field|Data type|Description|
+| :-------------: | :-------------: | :------ |
+| `imei` | string | **Optional**. The IMEI.|
+| `iccid` | string | **Optional**. The ICCID.|
+| `imsi` | string | **Optional**. The IMSI.|
+| `mcc` | string | **Optional**. The MCC.|
+| `mnc` | string | **Optional**. The MNC.|
+| `lac` | string | **Optional**. The LAC.|
+| `cellId` | string | **Optional**. The Cell ID.|
+| `errorHandlerAsync` | string | **Required**. Error handler|
+| `processingMode` | string | **Optional**. Processing mode|
 
 **Example**
 
@@ -234,14 +237,14 @@ Will update the position properties of the device.
 
 Parameters:
 
-|Position|Parameter|Mandatory|
-|:-------|:-------|:-------|
-|1|latitude|NO|
-|2|longitude|NO
-|3|altitude|NO|
-|4|accuracy|NO|
-|5|errorHandlerAsync|YES|
-|6|processingMode|NO|
+|Field|Data type|Description|
+| :-------------: | :-------------: | :------ |
+| `latitude` | string | **Optional**. The latitude.|
+| `longitude` | string | **Optional**. The longitude.|
+| `altitude` | string | **Optional**. The altitude.|
+| `accuracy` | string | **Optional**. The accuracy.|
+| `errorHandlerAsync` | string | **Required**. Error handler|
+| `processingMode` | string | **Optional**. Processing mode|
 
 **Example**
 
@@ -259,11 +262,11 @@ Will set the configuration of the device.
 
 Parameters:
 
-|Position|Parameter|Mandatory|
-|:-------|:-------|:-------|
-|1|configuration|NO|
-|2|errorHandlerAsync|YES|
-|3|processingMode|NO|
+|Field|Data type|Description|
+| :-------------: | :-------------: | :------ |
+| `configuration` | string | **Optional**. The IMEI.|
+| `errorHandlerAsync` | string | **Required**. Error handler|
+| `processingMode` | string | **Optional**. Processing mode|
 
 
 **Example**
@@ -273,17 +276,17 @@ Parameters:
                            "val1 = 1\nval2 = 2",
                            (e) => { return Task.FromResult(false); });
 
-### Set supported operations (114)
+##### Set supported operations (114)
 
 Will set the supported operations of the device.
 
 Parameters:
 
-|Position|Parameter|Mandatory|
-|:-------|:-------|:-------|
-|1...|List of supported operations|
-|2|errorHandlerAsync|YES|
-|3|processingMode|NO|
+|Field|Data type|Description|
+| :-------------: | :-------------: | :------ |
+| `supportedOperations` | IList&lt;string&gt; | **Required**. List of supported operations.|
+| `errorHandlerAsync` | string | **Required**. Error handler|
+| `processingMode` | string | **Optional**. Processing mode|
 
 **Example**
 
@@ -303,13 +306,13 @@ Will set the firmware installed on the device.
 
 Parameters:
 
-|Position|Parameter|Mandatory|
-|:-------|:-------|:-------|
-|1|name|NO|
-|2|version|NO|
-|3|url|NO|
-|4|errorHandlerAsync|YES|
-|5|processingMode|NO|
+|Field|Data type|Description|
+| :-------------: | :-------------: | :------ |
+| `name` | string | **Optional**. The name.|
+| `version` | string | **Optional**. The version.|
+| `url` | string | **Optional**. The URL.|
+| `errorHandlerAsync` | string | **Required**. Error handler|
+| `processingMode` | string | **Optional**. Processing mode|
 
 **Example**
 
@@ -325,14 +328,19 @@ Will set the list of software installed on the device.
 
 Parameters:
 
-|Position|Parameter|Mandatory|
-|:-------|:-------|:-------|
-|1...|List of software|NO|
-|1.1|name|NO|
-|1.2|version|NO|
-|1.3|url|NO|
-|2|errorHandlerAsync|YES|
-|3|processingMode|NO|
+|Field|Data type|Description|
+| :-------------: | :-------------: | :------ |
+| `installedSoftware` | IList&lt;Software&gt; | **Optional**. List of supported operations.|
+| `errorHandlerAsync` | string | **Required**. Error handler|
+| `processingMode` | string | **Optional**. Processing mode|
+
+Software members:
+
+|Field|Data type|Description|
+| :-------------: | :-------------: | :------ |
+| `Name` | string | **Required**. The name.|
+| `Url` | string | **Required**. The URL.|
+| `Version` | string | **Required**. The version.|
 
 **Example**
 
@@ -349,13 +357,11 @@ Will set the required interval for availability monitoring. It will only set the
 
 Parameters:
 
-|Position|Parameter|Mandatory|
-|:-------|:-------|:-------|
-|1|Required interval|NO|
-|2|errorHandlerAsync|YES|
-|3|processingMode|NO|
-|4|errorHandlerAsync|YES|
-|5|processingMode|NO|
+|Field|Data type|Description|
+| :-------------: | :-------------: | :------ |
+| `requiredInterval` | int| **Optional**. Required interval.|
+| `errorHandlerAsync` | string | **Required**. Error handler|
+| `processingMode` | string | **Optional**. Processing mode|
 
 **Example**
 
@@ -370,15 +376,15 @@ Will create a measurement with given fragment and series.
 
 Parameters:
 
-|Position|Parameter|Mandatory|Default|
-|:-------|:-------|:-------|:-------|
-|1|fragment|YES||
-|2|series|YES||
-|3|value|YES||
-|4|unit|NO||
-|5|time|NO|Current server time|
-|6|errorHandlerAsync|YES||
-|7|processingMode|NO||
+|Field|Data type|Description|
+| :-------------: | :-------------: | :------ |
+| `fragment` | string | **Required**. The fragment.|
+| `series` | string | **Required**. The series.|
+| `value` | string | **Required**. The value.|
+| `unit` | string | **Optional**. The unit.|
+| `time` | string | **Optional**. The time.|
+| `errorHandlerAsync` | string | **Required**. Error handler|
+| `processingMode` | string | **Optional**. Processing mode|
 
 **Example**
 
@@ -396,13 +402,13 @@ Will create a measurement of type c8y_SignalStrength.
 
 Parameters:
 
-|Position|Parameter|Mandatory|Default|
-|:-------|:-------|:-------|:-------|
-|1|rssi value|YES, if 2 not  set||
-|2|ber value|YES, if 1 not set||
-|3|time|NO|Current server time|
-|4|errorHandlerAsync|YES||
-|5|processingMode|NO||
+|Field|Data type|Description|
+| :-------------: | :-------------: | :------ |
+| `rssiValue` | string | **Required if 2 not set**. The RSSI value.|
+| `berValue` | string | **Required if 1 not set**. The BER value.|
+| `time` | string | **Optional**. The time. **Default:** Current server time|
+| `errorHandlerAsync` | string | **Required**. Error handler|
+| `processingMode` | string | **Optional**. Processing mode|
 
 **Example**
 
@@ -418,13 +424,12 @@ Will create a measurement of type c8y_TemperatureMeasurement.
 
 Parameters:
 
-|Position|Parameter|Mandatory|Default|
-|:-------|:-------|:-------|:-------|
-|1|temperature value|YES||
-|2|time|NO|Current server time|
-|3|errorHandlerAsync|YES||
-|4|processingMode|NO||
-
+|Field|Data type|Description|
+| :-------------: | :-------------: | :------ |
+| `temperatureValue` | string | **Required.** The temperature value.|
+| `time` | string | **Optional**. The time. **Default:** Current server time|
+| `errorHandlerAsync` | string | **Required**. Error handler|
+| `processingMode` | string | **Optional**. Processing mode|
 
 **Example**
 
@@ -439,12 +444,12 @@ Will create a measurement of type c8y_Battery.
 
 Parameters:
 
-|Position|Parameter|Mandatory|Default|
-|:-------|:-------|:-------|:-------|
-|1|battery value|YES||
-|2|time|NO|Current server time|
-|3|errorHandlerAsync|YES||
-|4|processingMode|NO||
+|Field|Data type|Description|
+| :-------------: | :-------------: | :------ |
+| `temperatureValue` | string | **Required.** The battery value.|
+| `time` | string | **Optional**. The time. **Default:** Current server time|
+| `errorHandlerAsync` | string | **Required**. Error handler|
+| `processingMode` | string | **Optional**. Processing Mode|
 
 **Example**
 
@@ -461,17 +466,17 @@ Will create a CRITICAL alarm.
 
 Parameters:
 
-|Position|Parameter|Mandatory|Default|
-|:-------|:-------|:-------|:-------|
-|1|type|YES||
-|2|text|NO|Alarm of type &lt;alarmType&gt; raised|
-|3|time|NO|Current server time|
-|3|errorHandlerAsync|YES||
-|4|processingMode|NO||
+|Field|Data type|Description|
+| :-------------: | :-------------: | :------ |
+| `type` | string | **Required.** The type.|
+| `text` | string | **Optional.** The text. Alarm of type &lt;alarmType&gt; raised.|
+| `time` | string | **Optional**. The time. **Default:** Current server time|
+| `errorHandlerAsync` | string | **Required**. Error handler|
+| `processingMode` | string | **Optional**. Processing mode|
 
 **Example**
 
-    await cl.taticAlarmTemplates
+    await cl.staticAlarmTemplates
             .CreateCriticalAlarmAsync("c8y_TemperatureAlarm",
                                       "Alarm of type c8y_TemperatureAlarm raised",
                                       string.Empty,
@@ -483,13 +488,13 @@ Will create a MAJOR alarm.
 
 Parameters:
 
-|Position|Parameter|Mandatory|Default|
-|:-------|:-------|:-------|:-------|
-|1|type|YES||
-|2|text|NO|Alarm of type &lt;alarmType&gt; raised|
-|3|time|NO|Current server time|
-|4|errorHandlerAsync|YES||
-|5|processingMode|NO||
+|Field|Data type|Description|
+| :-------------: | :-------------: | :------ |
+| `type` | string | **Required.** The type.|
+| `text` | string | **Optional.** The text. Alarm of type &lt;alarmType&gt; raised.|
+| `time` | string | **Optional**. The time. **Default:** Current server time|
+| `errorHandlerAsync` | string | **Required**. Error handler|
+| `processingMode` | string | **Optional**. Processing mode|
 
 **Example**
 
@@ -506,19 +511,19 @@ Will create a MINOR alarm.
 
 Parameters:
 
-|Position|Parameter|Mandatory|Default|
-|:-------|:-------|:-------|:-------|
-|1|type|YES||
-|2|text|NO|Alarm of type &lt;alarmType&gt; raised|
-|3|time|NO|Current server time|
-|4|errorHandlerAsync|YES||
-|5|processingMode|NO||
+|Field|Data type|Description|
+| :-------------: | :-------------: | :------ |
+| `type` | string | **Required.** The type.|
+| `text` | string | **Optional.** The text. Alarm of type &lt;alarmType&gt; raised.|
+| `time` | string | **Optional**. The time. **Default:** Current server time|
+| `errorHandlerAsync` | string | **Required**. Error handler|
+| `processingMode` | string | **Optional**. Processing mode|
 
 **Example**
 
-    await cl.StaticAlarmTemplates.CreateMinorAlarmAsync("c8y_WaterAlarm", 
+    await cl.StaticAlarmTemplates.CreateMinorAlarmAsync("c8y_WaterAlarm",
     														"Alarm of type c8y_WaterAlarm raised",
-                                                            string.Empty, 
+                                                            string.Empty,
                                                             (e) => { return Task.FromResult(false); });
 
 ##### Create WARNING alarm (304)
@@ -527,13 +532,13 @@ Will create a WARNING alarm.
 
 Parameters:
 
-|Position|Parameter|Mandatory|Default|
-|:-------|:-------|:-------|:-------|
-|1|type|YES||
-|2|text|NO|Alarm of type &lt;alarmType&gt; raised|
-|3|time|NO|Current server time|
-|4|errorHandlerAsync|YES||
-|5|processingMode|NO||
+|Field|Data type|Description|
+| :-------------: | :-------------: | :------ |
+| `type` | string | **Required.** The type.|
+| `text` | string | **Optional.** The text. Alarm of type &lt;alarmType&gt; raised.|
+| `time` | string | **Optional**. The time. **Default:** Current server time|
+| `errorHandlerAsync` | string | **Required**. Error handler|
+| `processingMode` | string | **Optional**. Processing mode|
 
 **Example**
 
@@ -548,12 +553,12 @@ Will change the severity of an existing alarm.
 
 Parameters:
 
-|Position|Parameter|Mandatory|
-|:-------|:-------|:-------|
-|1|type|YES|
-|2|severity|YES|
-|3|errorHandlerAsync|YES|
-|4|processingMode|NO|
+|Field|Data type|Description|
+| :-------------: | :-------------: | :------ |
+| `type` | string | **Required.** The type.|
+| `severity` | string | **Required.** The severity.|
+| `errorHandlerAsync` | string | **Required**. Error handler|
+| `processingMode` | string | **Optional**. Processing mode|
 
 **Example**
 
@@ -567,11 +572,11 @@ Will clear an existing alarm.
 
 Parameters:
 
-|Position|Parameter|Mandatory|
-|:-------|:-------|:-------|
-|1|type|YES|
-|2|errorHandlerAsync|YES|
-|3|processingMode|NO|
+|Field|Data type|Description|
+| :-------------: | :-------------: | :------ |
+| `type` | string | **Required.** The type.|
+| `errorHandlerAsync` | string | **Required**. Error handler|
+| `processingMode` | string | **Optional**. Processing mode|
 
 **Example**
 
@@ -587,13 +592,13 @@ Will create an event of given type and text.
 
 Parameters:
 
-|Position|Parameter|Mandatory|Default|
-|:-------|:-------|:-------|:-------|
-|1|type|YES||
-|2|text|YES||
-|3|time|NO|Current server time|
-|4|errorHandlerAsync|YES||
-|5|processingMode|NO||
+|Field|Data type|Description|
+| :-------------: | :-------------: | :------ |
+| `type` | string | **Required.** The type.|
+| `text` | string | **Required.** The text.|
+| `time` | string | **Optional**. The time. **Default:** Current server time|
+| `errorHandlerAsync` | string | **Required**. Error handler|
+| `processingMode` | string | **Optional**. Processing mode|
 
 **Example**
 
@@ -609,15 +614,15 @@ Will create a typical location update event containing c8y_Position.
 
 Parameters:
 
-|Position|Parameter|Mandatory|Default|
-|:-------|:-------|:-------|:-------|
-|1|latitude|NO||
-|2|longitude|NO||
-|3|altitude|NO||
-|4|accuracy|NO||
-|5|time|NO|Current server time|
-|6|errorHandlerAsync|YES||
-|7|processingMode|NO||
+|Field|Data type|Description|
+| :-------------: | :-------------: | :------ |
+| `latitude` | string | **Optional.** The latitude.|
+| `longitude` | string | **Optional.** The longitude.|
+| `altitude` | string | **Optional.** The altitude.|
+| `accuracy` | string | **Optional.** The accuracy.|
+| `time` | string | **Optional**. The time. **Default:** Current server time|
+| `errorHandlerAsync` | string | **Required**. Error handler|
+| `processingMode` | string | **Optional**. Processing mode|
 
 **Example**
 
@@ -637,15 +642,15 @@ Will create a typical location update event containing c8y_Position. Additionall
 
 Parameters:
 
-|Position|Parameter|Mandatory|Default|
-|:-------|:-------|:-------|:-------|
-|1|latitude|NO||
-|2|longitude|NO||
-|3|altitude|NO||
-|4|accuracy|NO||
-|5|time|NO|Current server time|
-|6|errorHandlerAsync|YES||
-|7|processingMode|NO||
+|Field|Data type|Description|
+| :-------------: | :-------------: | :------ |
+| `latitude` | string | **Optional.** The latitude.|
+| `longitude` | string | **Optional.** The longitude.|
+| `altitude` | string | **Optional.** The altitude.|
+| `accuracy` | string | **Optional.** The accuracy.|
+| `time` | string | **Optional**. The time. **Default:** Current server time|
+| `errorHandlerAsync` | string | **Required**. Error handler|
+| `processingMode` | string | **Optional**. Processing mode|
 
 **Example**
 
@@ -667,10 +672,10 @@ Will trigger the sending of all PENDING operations for the agent.
 
 Parameters:
 
-|Position|Parameter|Mandatory|
-|:-------|:-------|:-------|
-|1|errorHandlerAsync|YES|
-|2|processingMode|NO|
+|Field|Data type|Description|
+| :-------------: | :-------------: | :------ |
+| `errorHandlerAsync` | string | **Required**. Error handler|
+| `processingMode` | string | **Optional**. Processing mode|
 
 **Example**
 
@@ -683,11 +688,11 @@ Will set the oldest PENDING operation with given fragment to EXECUTING.
 
 Parameters:
 
-|Position|Parameter|Mandatory|
-|:-------|:-------|:-------|
-|1|fragment|YES|
-|2|errorHandlerAsync|YES|
-|3|processingMode|NO|
+|Field|Data type|Description|
+| :-------------: | :-------------: | :------ |
+| `fragment` | string | **Required**. The fragment.|
+| `errorHandlerAsync` | string | **Required**. Error handler|
+| `processingMode` | string | **Optional**. Processing mode|
 
 **Example**
 
@@ -701,12 +706,12 @@ Will set the oldest EXECUTING operation with given fragment to FAILED.
 
 Parameters:
 
-|Position|Parameter|Mandatory|
-|:-------|:-------|:-------|
-|1|fragment|YES|
-|2|failureReason|NO|
-|3|errorHandlerAsync|YES|
-|4|processingMode|NO|
+|Field|Data type|Description|
+| :-------------: | :-------------: | :------ |
+| `fragment` | string | **Required**. The fragment.|
+| `failureReason` | string | **Optional**. The failure reason.|
+| `errorHandlerAsync` | string | **Required**. The error handler asynchronous.|
+| `processingMode` | string | **Optional**. Processing mode|
 
 **Example**
 
@@ -721,12 +726,12 @@ Will set the oldest EXECUTING operation with given fragment to SUCCESSFUL. It en
 
 Parameters:
 
-|Position|Parameter|Mandatory|
-|:-------|:-------|:-------|
-|1|fragment|YES|
-|2...|parameters|NO|
-|3|errorHandlerAsync|YES|
-|4|processingMode|NO|
+|Field|Data type|Description|
+| :-------------: | :-------------: | :------ |
+| `fragment` | string | **Required**. The fragment.|
+| `parameters` | string | **Optional**. The parameters.|
+| `errorHandlerAsync` | string | **Required**. The error handler asynchronous.|
+| `processingMode` | string | **Optional**. Processing mode|
 
 **Example**
 
@@ -740,6 +745,14 @@ Parameters:
 ##### Get children of device (106)
 
 Lists all children of the device
+
+ChildrenOfDeviceEventArgs is the class containing event data
+
+|Field|Data type|Description|
+| :-------------: | :-------------: | :------ |
+| `ChildrenOfDevice` | IList &lt;string&gt; | List all children of the device.|
+
+**Example**
 
 
     cl.ChildrenOfDeviceEvt += Cl_ChildrenOfDeviceEvt;
@@ -772,6 +785,13 @@ Tells the device to restart.
 
 Tells the device to run the command send in the operation.
 
+
+CommandEventArgs is the class containing event data.
+
+|Field|Data type|Description|
+| :-------------: | :-------------: | :------ |
+| `CommandText` | string | The command name.|
+
 **Example**
 
     cl.CommandEvt += (s, e) => {
@@ -780,7 +800,14 @@ Tells the device to run the command send in the operation.
 
 ##### Configuration (513)
 
-Tells the device to set the configuration send in the operation.
+Tells the device to set the configuration sent in the operation.
+
+ConfigurationEventArgs is the class containing event data.
+
+|Field|Data type|Description|
+| :-------------: | :-------------: | :------ |
+| `Configuration` | string | the configuration sent in the operation.|
+
 
 **Example**
 
@@ -791,6 +818,14 @@ Tells the device to set the configuration send in the operation.
 ##### Firmware (515)
 
 Tells the device to install the firmware from the url.
+
+FirmwareEventArgs is the containing event data.
+
+|Field|Data type|Description|
+| :-------------: | :-------------: | :------ |
+| `FirmwareName` | string | The software name|
+| `FirmwareVersion` | string | The firmware version.|
+| `Url` | string | The url.|
 
 **Example**
 
@@ -804,6 +839,12 @@ Tells the device to install the firmware from the url.
 ##### Software list (516)
 
 Tells the device to install the software send in the operation.
+
+SoftwareListEventArgs is the class containing event data.
+
+|Field|Data type|Description|
+| :-------------: | :-------------: | :------ |
+| `SoftwareList` | IList&lt;Software&gt; | The list of software to install.|
 
 **Example**
 
@@ -820,6 +861,12 @@ Tells the device to install the software send in the operation.
 
 Tells the device to send the measurements specified by the request name.
 
+MeasurementRequestOperationEventArgs is the class containing event data.
+
+|Field|Data type|Description|
+| :-------------: | :-------------: | :------ |
+| `RequestName` | string | The measurement to send.|
+
 **Example**
 
     cl.MeasurementRequestOperationEvt += (s, e) => {
@@ -829,6 +876,12 @@ Tells the device to send the measurements specified by the request name.
 ##### Relay (518)
 
 Tells the device to either open or close the relay.
+
+RelayEventArgs is the class containing event data.
+
+|Field|Data type|Description|
+| :-------------: | :-------------: | :------ |
+| `RelayState` | string | The relay state.|
 
 **Example**
 
@@ -841,6 +894,12 @@ Tells the device to either open or close the relay.
 ##### RelayArray (519)
 
 Tells the device to either open or close the relays in the array.
+
+RelayArrayEventArgs is the class containing event data.
+
+|Field|Data type|Description|
+| :-------------: | :-------------: | :------ |
+| `RelayState` | IList&lt;string&gt; | The list of the relay state.|
 
 **Example**
 
@@ -863,6 +922,12 @@ Tells the device to upload its current configuration.
 
 Tells the device to download a configuration file from the url.
 
+DownloadConfigurationFileEventArgs is the class containing event data.
+
+|Field|Data type|Description|
+| :-------------: | :-------------: | :------ |
+| `Url` | string | The url to download a configuration file. |
+
 **Example**
 
     cl.DownloadConfigurationFileEvt += (s, e) => {
@@ -872,6 +937,16 @@ Tells the device to download a configuration file from the url.
 ##### Logfile request (522)
 
 Tells the device to upload a log file for the given parameters.
+
+LogfileRequestEventArgs is the class containing event data.
+
+|Field|Data type|Description|
+| :-------------: | :-------------: | :------ |
+| `LogFileName` | string | The file name.|
+| `StartDate` |string | From date.|
+| `EndDate` | string | To date.|
+| `SearchText` | string | The search text.|
+| `MaximumLines` | string | The maximum lines.|
 
 **Example**
 
@@ -883,9 +958,15 @@ Tells the device to upload a log file for the given parameters.
         Console.WriteLine(e.MaximumLines);
     };
 
-#### Communication mode (523)
+##### Communication mode (523)
 
 Tells the device to change the communication mode.
+
+CommunicationModeEventArgs is the class containing event data.
+
+|Field|Data type|Description|
+| :-------------: | :-------------: | :------ |
+| `Mode` | string | The communication mode.|
 
 **Example**
 
@@ -893,112 +974,6 @@ Tells the device to change the communication mode.
         Console.WriteLine(e.Mode);
     };
 
-
-#### SmartREST
-
-##### Check Template Collection Exists
-
-Will verify if a template collection exists.
-
-    cl.IsExistTemplateCollectionEvt += (s, e) =>
-    {
-        var item = e.IsExist;
-    };
-
-     await cl.CustomSmartRest.CheckTemplateCollectionExists("test", (e) => { return Task.FromResult(false); });
-
-##### Create Template Data
-
-Will create the template data asynchronous.
-
-Parameters:
-
-
-|Field|Data type|Mandatory|Description|
-|:-------|:-------|:-------|:-------|
-|collectionName|String|YES|Name of the collection|
-|requests|List&lt;Request&gt;|YES|	Depending on the type suitable Cumulocity API to be used<br>INVENTORY<br>MEASUREMENT<br>ALARM<br>EVENT<br>OPERATION|
-|responses|List&lt;Response&gt;|NO|The responses. Whether the request should trigger response templates. For GET templates by default true otherwise by default false|
-|processingMode|List&lt;String&gt;|NO|The processing mode|
-
-##### Types of requests templates
-
-* InventoryGetRequest
-* InventoryRequest
-* MeasurementRequest
-* OperationRequest
-* AlarmRequest
-* AlarmUpdateRequest
-* EventRequest
-
-###### InventoryGetRequest
-
-
-|Field|Data type|Mandatory|Description|
-|:-------|:-------|:-------|:-------|
-|messageId|String|YES|Unique ID|
-|response|bool?|No|Whether the request should trigger response templates. For GET templates by default true otherwise by default false|
-|externalIdType|String|YES|Sets a fixed externalIdType if the template calls by externalId|
-|byId|String|YES|Whether the GET should be executed by Cumulocity ID (=true) or externalId (=false)|
-
-
-###### InventoryRequest
-
-|Field|Data type|Mandatory|Description|
-|:-------|:-------|:-------|:-------|
-|messageId|String|YES|Unique ID|
-|response|bool?|No|Whether the request should trigger response templates. For GET templates by default true otherwise by default false|
-|externalIdType|String|NO|Sets a fixed externalIdType if the template calls by externalId|
-|customValues|IList&lt;CustomValue&gt;|No|Custom values that should be added to the object|
-|Method|HttpMethods|YES|<br> GET<br> PUT<br> POST|
-
-###### MeasurementRequest
-
-
-|Field|Data type|Mandatory|Description|
-|:-------|:-------|:-------|:-------|
-|messageId|String|YES|Unique ID|
-|response|bool?|No|Whether the request should trigger response templates. For GET templates by default true otherwise by default false|
-|type|String|YES|The type of the measurement to create|
-|time|String|YES|A time stamp in the ISO 8601 format|
-|customValues|IList&lt;CustomValue&gt;|No|Custom values that should be added to the object|
-|method|HttpMethods|YES|<br> GET<br> PUT<br> POST|
-
-
-###### OperationRequest
-
-|Field|Data type|Mandatory|Description|
-|:-------|:-------|:-------|:-------|
-|messageId|String|YES|Unique ID|
-|response|bool?|NO|Whether the request should trigger response templates. For GET templates by default true otherwise by default false|
-|type|String|YES|The type of the operation to create|
-|operationFragment|OperationFragment|YES| e.g c8y_MyOperation|
-|customValues|IList&lt;CustomValue&gt;|No|Custom values that should be added to the object|
-
-
-###### AlarmRequest
-
-|Field|Data type|Mandatory|Description|
-|:-------|:-------|:-------|:-------|
-|messageId|String|YES|Unique ID|
-|response|bool?|No|Whether the request should trigger response templates. For GET templates by default true otherwise by default false|
-|type|String|YES|The type of the alarm to create|
-|text|String|YES||
-|status|String|YES|	A status of an alarm. Used to update the status field of alarms|
-|severity|String|YES|	A severity of an alarm. Used to update the severity field of alarms e.g. Major|
-|time|String|YES|A time stamp in the ISO 8601 format|
-|customValues|IList&lt;CustomValue&gt;|No|Custom values that should be added to the object|
-|Method|HttpMethods|YES|<br> GET<br> PUT<br> POST|
-
-###### AlarmUpdateRequest
-
-|Field|Data type|Mandatory|Description|
-|:-------|:-------|:-------|:-------|
-|messageId|String|YES|Unique ID|
-|response|bool?|No|Whether the request should trigger response templates. For GET templates by default true otherwise by default false|
-|type|String|YES| The type of the alarm to find the alarm to update|
-|alarmFragment|AlarmFragment|YES|It contains key and status.|
-|customValues|IList&lt;CustomValue&gt;|No|Custom values that should be added to the object|
 
 ### SmartRest
 

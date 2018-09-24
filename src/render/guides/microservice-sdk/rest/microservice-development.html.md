@@ -104,7 +104,7 @@ The ZIP file must consist of:
 * image.tar - executable Docker image 
 
 
-###<a name="acquiring-microservice-credentials"></a>Acquiring microservice credentials
+### <a name="acquiring-microservice-credentials"></a>Acquiring microservice credentials
 
 The following section is a wrap up for user management as described under [General aspects of microservices in Cumulocity](/guides/microservice-sdk/concept).
 

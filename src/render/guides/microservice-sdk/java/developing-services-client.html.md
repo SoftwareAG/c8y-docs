@@ -33,7 +33,7 @@ Using this handle, you can send and retrieve the SMS messages from Java by calli
 
 To use the SMS messaging API the user should have the required roles such as 'SMS_ADMIN' for sending and 'SMS_READ' for receiving messages.
 
-Refer to [Administration > Managing permissions](/guides/users-guide/administration/#managing-permissions) in the User guide.
+Refer to [Administration > Managing permissions](/guides/users-guide/administration#managing-permissions) in the User guide.
 
 ##### Choosing a SMS provider
   
@@ -48,7 +48,7 @@ Note that receiving messages and receiving specific messages are not supported f
 
 **Jasper Control Center**
 
-Refer to [Jasper Control Center](/guides/users-guide/optional-services/jasper) for information about how to set the credentials.
+Refer to [Jasper Control Center](/guides/users-guide/optional-services#jasper) for information about how to set the credentials.
 
 **Ericsson**
 

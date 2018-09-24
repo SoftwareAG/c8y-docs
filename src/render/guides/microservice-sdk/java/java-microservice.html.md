@@ -1,7 +1,7 @@
 ---
 order: 30
 layout: redirect
-title: Hello, microservice!
+title: Hello microservice!
 ---
 
 This section shows you how to create a microservice that can be run on cumulocity.com, using Cumulocity Microservice SDK.
@@ -385,4 +385,4 @@ The expected result is:
 
 ### Improving the microservice
 
-Now that you have done your first step, check out the section [Developing Java Microservice](/guides/microservice-sdk/java/developing-microservice).
+Now that you have done your first step, check out the section [Developing Java Microservice](/guides/microservice-sdk/java#developing-microservice).

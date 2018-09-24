@@ -6,7 +6,7 @@ layout: redirect
 
 In this tutorial, you will learn how to use MQTT client in C with Cumulocity using pre-defined messages (called "static templates").
 
-## Prerequisites
+### Prerequisites
 
 In order to follow this tutorial, check the following prerequisites:
 
@@ -22,14 +22,14 @@ In order to follow this tutorial, check the following prerequisites:
 * Download, compile and install the MQTT C Paho Client. You will find more details about Paho on the [Paho website](http://www.eclipse.org/paho/clients/c/).
 
 
-## Developing the "Hello, MQTT world!" client
+### Developing the "Hello, MQTT world!" client
 
 To develop a very simple "Hello, world!" MQTT client for Cumulocity, you need to
 
 * create the application,
 * build and run the application.
 
-### Creating the application
+#### Creating the application
 
 Create a source file, for example "hello_mqtt.c" with the following content:
 
@@ -115,7 +115,7 @@ What does the code in "publish" do?
 
 Note that the subscription is established after the device creation, otherwise if there is no device for a given ``clientId`` the server will not accept it. 
 
-### Building and running the application
+#### Building and running the application
 
 To build:
 
@@ -130,6 +130,6 @@ To run:
 After starting the application you should see a new device in the Device Management application in the device list.
 Additionally, if there will be a new operation created for this device, (for example ``c8y_Restart``) information about it will be printed to the console. 
 
-## Improving the agent
+### Improving the agent
 
-Now that you have done your first step, check out the section [Hello MQTT](/guides/device-sdk/mqtt/hello-mqtt) to learn more about Cumulocity MQTT and improve your application.
+Now that you have done your first step, check out the section [Hello MQTT](/guides/device-sdk/mqtt#hello-mqtt) to learn more about Cumulocity MQTT and improve your application.

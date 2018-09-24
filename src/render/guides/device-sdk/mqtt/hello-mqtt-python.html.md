@@ -6,7 +6,7 @@ layout: redirect
 
 In this tutorial, you will learn how to use the Python MQTT client with Cumulocity using pre-defined messages (called "static templates").
 
-## Prerequisites
+### Prerequisites
 
 In order to follow this tutorial, check the following prerequisites:
 
@@ -23,14 +23,14 @@ In order to follow this tutorial, check the following prerequisites:
 	  	pip install paho-mqtt
 	  	
 	  	
-## Developing the "Hello, MQTT world!" client
+### Developing the "Hello, MQTT world!" client
 
 To develop a very simple "Hello, world!" MQTT client for Cumulocity, you need to
 
 * create a python script,
 * Run the script.
 
-### Creating a python script
+#### Creating a python script
 
 Create a script file, for example "hello_mqtt.py" with the following content:
 
@@ -110,7 +110,7 @@ What does the ``publish`` message do?
 
 Note that the subscription is established after the device creation, otherwise if there is no device for a given ``clientId`` the server will not accept it.
 
-### Running the script
+#### Running the script
 
 To run the script just call:
 
@@ -125,6 +125,6 @@ In the console you should see following output:
     ...
     
     
-## Improving the agent
+### Improving the agent
 
-Now that you have done your first step, check out the section [Hello MQTT](/guides/device-sdk/mqtt/hello-mqtt) to learn more about Cumulocity MQTT and improve your application.
+Now that you have done your first step, check out the section [Hello MQTT](/guides/device-sdk/mqtt#hello-mqtt) to learn more about Cumulocity MQTT and improve your application.

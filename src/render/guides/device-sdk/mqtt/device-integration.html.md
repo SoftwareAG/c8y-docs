@@ -4,7 +4,7 @@ title: Device integration
 layout: redirect
 ---
 
-## Overview
+### Overview
 
 The basic life cycle for integrating devices into Cumulocity is discussed in [Interfacing devices](/guides/concepts/interfacing-devices).
 
@@ -27,9 +27,9 @@ The cycle phase consists of two kinds of actions:
 ![MQTT phases](/guides/images/mqtt/mqttDeviceIntegration.png)
 
 
-## Startup phase
+### Startup phase
 
-### Step 0: Request device credentials
+#### Step 0: Request device credentials
 
 In Cumulocity, every MQTT connection needs to be authenticated. You can use the device credentials topics in the MQTT implementation to generate new credentials for a device.
 
@@ -39,7 +39,7 @@ The process works as follows:
 
 * Cumulocity assumes each device to have some form of unique ID. A good device identifier may be the MAC address of the network adapter, the IMEI of a mobile device or a hardware serial number.
 * When you take a new device into use, you enter this unique ID into "Device registration" in the Device Management application in Cumulocity and start the device.
-* The device will use this ID as part of the [MQTT ClientId](/guides/device-sdk/mqtt/implementation#mqtt-clientid) and static user credentials that can be enquired from support@cumulocity.com.
+* The device will use this ID as part of the [MQTT ClientId](/guides/device-sdk/mqtt#mqtt-clientid) and static user credentials that can be enquired from support@cumulocity.com.
 * The device subscribes to the topic `s/dcr`.
 * The device starts publishing empty messages on the topic `s/ucr` to notify the server that it is ready to retrieve credentials.
 * You can accept the connection from the device in "Device registration", in which case Cumulocity sends generated credentials to the device.
@@ -52,11 +52,11 @@ The device will receive a message in the following format:
 
 After receiving the credentials the device can close the MQTT connection and create a new one with the received credentials.
 
-### Step 1: Verify device
+#### Step 1: Verify device
 
 As MQTT supports an automatic device creation if the client sends data and there is no device present, this step is only required if you want to create the device manually.
 
-The device creation can be achieved by the [static template 100](/guides/mqtt/static-templates). This template can be blindly used on every boot of the device as it will only create the device if it is not already present.
+The device creation can be achieved by the [static template 100](/guides/devices-sdk/mqtt#static-templates). This template can be blindly used on every boot of the device as it will only create the device if it is not already present.
 
 The device will automatically be linked to the ID the client uses with its MQTT ClientId.
 
@@ -64,31 +64,31 @@ The device will automatically be linked to the ID the client uses with its MQTT 
 100,Device Name,Device Type
 ```
 
-### Step 2: Verify children
+#### Step 2: Verify children
 
 Like the root device also children of it are covered by the automatic device creation.
 
-For handling this step manually you can send the [static template 101](/guides/mqtt/static-templates) for creating a child device. The template will only create the child if it does not already exist.
+For handling this step manually you can send the [static template 101](/guides/device-sdk/mqtt#static-templates) for creating a child device. The template will only create the child if it does not already exist.
 
 ```
 101,Unique Child ID,Child Name,Child Type
 ```
 
-### Step 3: Subscribe topics
+#### Step 3: Subscribe topics
 
 If the device supports operations it should subscribe to all required topics (static templates and SmartREST 2.0).
 
-## Cycle phase
+### Cycle phase
 
-### Step A: Send CSV data
+#### Step A: Send CSV data
 
 While the device holds an active MQTT connection it can publish either on the topics for static templates or on the topics for a SmartREST template to send data to the server.
 
 Based on the MQTT ClientId the physical device is directly connected to the device object in Cumulocity. Therefore any data you send is automatically connected to the device.
 
-To send data to a child device, publish the data to the topics described in [Device hierarchies](/guides/device-sdk/mqtt/implementation#device-hierarchies).
+To send data to a child device, publish the data to the topics described in [Device hierarchies](/guides/device-sdk/mqtt#device-hierarchies).
 
-### Step B: Receive CSV operations
+#### Step B: Receive CSV operations
 
 By subscribing to a topic the device automatically tells Cumulocity that it wants to receive operations. Any operation created will be automatically parsed using either the static templates or the templates the device defined.
 

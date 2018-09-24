@@ -3,7 +3,7 @@ order: 30
 title: C++ Device integration
 layout: redirect
 ---
-## Getting started
+### Getting started
 
 Before we really get started, we will need a *Cumulocity* account. Go to <https://cumulocity.com/>, you can apply for a free trial account by click the "TRY CUMULOCITY FREE" button on the top-right corner. After signing-up and login to your tenant, you would find the device registration page in *Device Management*. Next, we will demonstrate how to register a device to *Cumulocity* using the library.
 
@@ -61,7 +61,7 @@ If you re-run the program the second time, the program will print *Hello, Cumulo
 </div>
 
 
-## Integrating to Cumulocity
+### Integrating to Cumulocity
 
 Device integration is a little more complex. The whole process is depicted in Fig 12, please refer to the [device integration](http://cumulocity.com/guides/rest/device-integration/) guide for detailed explanation. Steps *1*, *2* and *3* are specific to SmartREST protocol as SmartREST requires predefined templates, see [SmartREST guide](http://cumulocity.com/guides/rest/smartrest/) and [SmartREST reference](http://cumulocity.com/guides/reference/smartrest/) for more information. Step *4* checks if the device is already stored in *Cumulocity*'s database and only create it when it's not found. Steps *6* and *7* get the *Cumulocity* ID of the device from *Cumulocity*'s database. Step *8* sets the *Cumulocity* ID as an alias for the device ID so that the device can find its *Cumulocity* ID next time by querying with its device ID.
 
@@ -172,7 +172,7 @@ Please refer to Section (See section 1.1) about how to compile and run the code.
     }
 
 
-## Sending measurements
+### Sending measurements
 
 Now we have successfully integrated a demo device to *Cumulocity*, we can finally do something more interesting. Let's try sending CPU measurement every 10 seconds.
 
@@ -227,7 +227,7 @@ If you add a `SrTimer` to the `SrAgent`, you must ensure its existence throughou
 </div>
 
 
-## Handling operations
+### Handling operations
 
 Besides sending requests, e.g., measurements to *Cumulocity*, the other important functionality is handle messages, either responses from *GET* queries or real-time operations from *Cumulocity*. Listing 8 demonstrates how to handle the *c8y<sub>Restart</sub>* operation. Again, first we will need to register necessary SmartREST templates. Then we define a message handler for handling restart operation.
 
@@ -279,7 +279,7 @@ Now run the program, then go to your *Cumulocity* tenant, execute an restart ope
 ![img](/guides/images/cpp/img/restart.png "Execute a restart operation in *Cumulocity*.")
 
 
-## Storing SmartREST templates in a file
+### Storing SmartREST templates in a file
 
 Over time, your template collection would grow large, and you would like to store them in a text file instead of hard coding them in your source code. The benefits are tow-fold: you don't need to recompile the code every time only because the templates change, and there is no need to escape special characters which is error-prone.
 
@@ -329,7 +329,7 @@ See listing 10 for an example of template file.
     11,502,,$.c8y_Restart,$.id,$.deviceId
 
 
-## Lua plugin
+### Lua plugin
 
 Instead of using `c++` for your development, the library also supports rapid development in `Lua`. For `Lua` plugin support, you must build the library with explicitly enabling `Lua` support, as it's disabled by default, see Chapter (See section ) about how to enable `Lua` plugin support.
 
@@ -388,7 +388,7 @@ You may encounter an error saying "Package lua was not found in the pkg-config s
 </div>
 
 
-## Using MQTT instead of HTTP
+### Using MQTT instead of HTTP
 
 MQTT is a publish and subscribe based light-weight messaging protocol, renders it very suitable for IoT communication. It solves two major issues inherit to HTTP: 1) HTTP header predominantly overweights SmartREST payload since SmartREST messages are generally very short. 2) MQTT has built-in support for real-time notification via subscribe and publish mechanism, hence, there is no need for a separate connection for device push.
 

@@ -130,4 +130,4 @@ Additionally if there is a new operation created for this device (for example ``
 
 ### Improving the agent
 
-Now that you have done your first step, check out the section [Hello MQTT](/guides/mqtt/hello-mqtt) to learn more about Cumulocity MQTT and improve your application.
+Now that you have done your first step, check out the section [Hello MQTT](/guides/device-sdk/mqtt#hello-mqtt) to learn more about Cumulocity MQTT and improve your application.

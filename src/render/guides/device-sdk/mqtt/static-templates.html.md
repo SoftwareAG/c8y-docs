@@ -4,7 +4,7 @@ layout: redirect
 order: 110
 ---
 
-## Overview
+### Overview
 
 To ease device integration Cumulocity already supports a number of static templates that can be used by any client without the need for creating own templates.
 
@@ -15,7 +15,7 @@ To use the templates listed below you need to publish the messages to the topic 
 To receive operations with the static templates you need to subscribe to the topic "s/ds".
 
 
-## Automatic device creation
+### Automatic device creation
 
 The topic for static templates supports an automatic creation of devices. Whenever there is no child associated with your MQTT ClientID and you send data, Cumulocity will automatically create a device for the MQTT ClientID. If you want to create the device on your own your first message must be the device creation.
 In this case Cumulocity will create the device from the template.
@@ -24,7 +24,7 @@ The automatic creation of devices is also supported for 1st level child devices.
 For child devices on a deeper level you must use the template for creating a child device by sending it to the topic of the child device under which you want to place the new child.
 
 
-## Handling none mandatory parameters
+### Handling none mandatory parameters
 
 If a parameter is not declared as mandatory the client can send an empty string in that place.
 
@@ -41,13 +41,13 @@ Tailing commas are not required. The two lines below result in the same message.
 ```
 
 
-## Publish templates
+### Publish templates
 
 The following templates can be used to publish data on the topics "s/us" as well as "t/us". For more information about t/ topic for transient data processing, refer to SmartRest > [Processing Mode](/guides/reference/smartrest#processing-mode) in the Reference guide.
 
-### Inventory templates (1xx)
+#### Inventory templates (1xx)
 
-#### Device creation (100)
+##### Device creation (100)
 
 Will create a new device for the serial number in the inventory if not yet existing. An externalId for the device with type âc8y_Serialâ and the device identifier of the MQTT clientId as value will be created
 
@@ -62,7 +62,7 @@ Will create a new device for the serial number in the inventory if not yet exist
 100,myDevice,myType
 ```
 
-#### Child device creation (101)
+##### Child device creation (101)
 
 Will create a new child device for the current device. The newly created object will be added as child device. Additionally an externaId for the child will be created with type “c8y_Serial” and the value a combination of the serial of the root device and the unique child ID.
 
@@ -78,7 +78,7 @@ Will create a new child device for the current device. The newly created object 
 101,uniqueChildId,myChildDevice,myChildType
 ```
 
-#### Get child devices (105)
+##### Get child devices (105)
 
 Will trigger the sending of child devices of the device.
 
@@ -88,7 +88,7 @@ Will trigger the sending of child devices of the device.
 105
 ```
 
-#### Configure Hardware (110)
+##### Configure Hardware (110)
 
 Will update the hardware properties of the device.
 
@@ -104,7 +104,7 @@ Will update the hardware properties of the device.
 110,1234567890,myModel,1.2.3
 ```
 
-#### Configure Mobile (111)
+##### Configure Mobile (111)
 
 Will update the mobile properties of the device.
 
@@ -124,7 +124,7 @@ Will update the mobile properties of the device.
 111,1234567890,,54353
 ```
 
-#### Configure Position (112)
+##### Configure Position (112)
 
 Will update the position properties of the device.
 
@@ -141,7 +141,7 @@ Will update the position properties of the device.
 112,50.323423,6.423423
 ```
 
-#### Set Configuration (113)
+##### Set Configuration (113)
 
 Will update the position properties of the device.
 
@@ -155,7 +155,7 @@ Example
 113,"val1=1\nval2=2"
 ```
 
-#### Set supported operations (114)
+##### Set supported operations (114)
 
 Will set the supported operations of the device.
 
@@ -169,7 +169,7 @@ Will set the supported operations of the device.
 114,c8y_Restart,c8y_Configuration,c8y_SoftwareList
 ```
 
-#### Set firmware (115)
+##### Set firmware (115)
 
 Will set the firmware installed on the device.
 
@@ -185,7 +185,7 @@ Will set the firmware installed on the device.
 115,firmwareName,firmwareVersion,firmwareUrl
 ```
 
-#### Set software list (116)
+##### Set software list (116)
 
 Will set the list of software installed on the device.
 
@@ -202,7 +202,7 @@ Will set the list of software installed on the device.
 116,software1,version1,url1,software2,,url2,software3,version3
 ```
 
-#### Set required availability (117)
+##### Set required availability (117)
 
 Will set the required interval for availability monitoring. It will only set the value if does not exist. Values entered e.g. through UI are not overwritten.
 
@@ -216,9 +216,9 @@ Will set the required interval for availability monitoring. It will only set the
 117,60
 ```
 
-### Measurement templates (2xx)
+#### Measurement templates (2xx)
 
-#### Create custom measurement (200)
+##### Create custom measurement (200)
 
 Will create a measurement with given fragment and series.
 
@@ -236,7 +236,7 @@ Will create a measurement with given fragment and series.
 200,c8y_Temperature,T,25
 ```
 
-#### Create signal strength measurement (210)
+##### Create signal strength measurement (210)
 
 Will create a measurement of type c8y_SignalStrength.
 
@@ -252,7 +252,7 @@ Will create a measurement of type c8y_SignalStrength.
 210,-90,23,2016-06-22T17:03:14.000+02:00
 ```
 
-#### Create temperature measurement (211)
+##### Create temperature measurement (211)
 
 Will create a measurement of type c8y_TemperatureMeasurement.
 
@@ -267,7 +267,7 @@ Will create a measurement of type c8y_TemperatureMeasurement.
 211,25,2016-06-22T17:03:14.000+02:00
 ```
 
-#### Create battery measurement (212)
+##### Create battery measurement (212)
 
 Will create a measurement of type c8y_Battery.
 
@@ -282,9 +282,9 @@ Will create a measurement of type c8y_Battery.
 212,95,2016-06-22T17:03:14.000+02:00
 ```
 
-### Alarm templates (3xx)
+#### Alarm templates (3xx)
 
-#### Create CRITICAL alarm (301)
+##### Create CRITICAL alarm (301)
 
 Will create a CRITICAL alarm.
 
@@ -300,7 +300,7 @@ Will create a CRITICAL alarm.
 301,c8y_TemperatureAlarm
 ```
 
-#### Create MAJOR alarm (302)
+##### Create MAJOR alarm (302)
 
 Will create a MAJOR alarm.
 
@@ -316,7 +316,7 @@ Will create a MAJOR alarm.
 302,c8y_TemperatureAlarm,âThis is an alarmâ
 ```
 
-#### Create MINOR alarm (303)
+##### Create MINOR alarm (303)
 
 Will create a MINOR alarm.
 
@@ -332,7 +332,7 @@ Will create a MINOR alarm.
 303,c8y_TemperatureAlarm
 ```
 
-#### Create WARNING alarm (304)
+##### Create WARNING alarm (304)
 
 Will create a WARNING alarm.
 
@@ -348,7 +348,7 @@ Will create a WARNING alarm.
 304,c8y_TemperatureAlarm,,2013-06-22T17:03:14.000+02:00
 ```
 
-#### Update severity of existing alarm (305)
+##### Update severity of existing alarm (305)
 
 Will change the severity of an existing alarm.
 
@@ -363,7 +363,7 @@ Will change the severity of an existing alarm.
 305,c8y_TemperatureAlarm,CRITICAL
 ```
 
-#### Clear existing alarm (306)
+##### Clear existing alarm (306)
 
 Will clear an existing alarm.
 
@@ -377,9 +377,9 @@ Will clear an existing alarm.
 306,c8y_TemperatureAlarm
 ```
 
-### Event templates (4xx)
+#### Event templates (4xx)
 
-#### Create basic event (400)
+##### Create basic event (400)
 
 Will create an event of given type and text.
 
@@ -395,7 +395,7 @@ Will create an event of given type and text.
 400,c8y_MyEvent,"Something was triggered"
 ```
 
-#### Create location update event (401)
+##### Create location update event (401)
 
 Will create typical location update event containing c8y_Position.
 
@@ -413,7 +413,7 @@ Will create typical location update event containing c8y_Position.
 401,51.151977,6.95173,67
 ```
 
-#### Create location update event with device update (402)
+##### Create location update event with device update (402)
 
 Will create typical location update event containing c8y_Position. Additionally the device will be updated with the same c8y_Position fragment.
 
@@ -431,9 +431,9 @@ Will create typical location update event containing c8y_Position. Additionally 
 402,51.151977,6.95173,67
 ```
 
-### Operation templates (5xx)
+#### Operation templates (5xx)
 
-#### Get PENDING operations (500)
+##### Get PENDING operations (500)
 
 Will trigger the sending of all PENDING operations for the agent.
 
@@ -442,7 +442,7 @@ Example:
 500
 ```
 
-#### Set operation to EXECUTING (501)
+##### Set operation to EXECUTING (501)
 
 Will set the oldest PENDING operation with given fragment to EXECUTING.
 
@@ -456,7 +456,7 @@ Will set the oldest PENDING operation with given fragment to EXECUTING.
 501,c8y_Restart
 ```
 
-#### Set operation to FAILED (502)
+##### Set operation to FAILED (502)
 
 Will set the oldest EXECUTING operation with given fragment to FAILED.
 
@@ -471,7 +471,7 @@ Will set the oldest EXECUTING operation with given fragment to FAILED.
 502,c8y_Restart,"Could not restart"
 ```
 
-#### Set operation to SUCCESSFUL (503)
+##### Set operation to SUCCESSFUL (503)
 
 Will set the oldest EXECUTING operation with given fragment to SUCCESSFUL.
 It enables the device to send additional parameters that trigger additional steps based on the type of operation send as fragment (see section [Updating operations](#updating-operations)).
@@ -488,13 +488,13 @@ It enables the device to send additional parameters that trigger additional step
 ```
 
 
-## Subscribe templates
+### Subscribe templates
 
 The client can receive the following templates when subscribing to "s/ds".
 
-### Inventory templates (1xx)
+#### Inventory templates (1xx)
 
-#### Get children of device (106)
+##### Get children of device (106)
 
 Lists all children of the device.
 
@@ -508,11 +508,11 @@ Lists all children of the device.
 106,child1,child2,child3
 ```
 
-### Operation templates (5xx)
+#### Operation templates (5xx)
 
 All operation responses have the same base structure leading with the message ID followed by the ID of either the root device or a child which should handle the operation.
 
-#### Restart (510)
+##### Restart (510)
 
 Tells the device to restart.
 
@@ -522,7 +522,7 @@ Tells the device to restart.
 510,DeviceSerial
 ```
 
-#### Command (511)
+##### Command (511)
 
 Tells the device to run the command send in the operation.
 
@@ -536,7 +536,7 @@ Tells the device to run the command send in the operation.
 511,DeviceSerial,execute this
 ```
 
-#### Configuration (513)
+##### Configuration (513)
 
 Tells the device to set the configuration send in the operation.
 
@@ -550,7 +550,7 @@ Tells the device to set the configuration send in the operation.
 513,DeviceSerial,"val1=1\nval2=2"
 ```
 
-#### Firmware (515)
+##### Firmware (515)
 
 Tells the device to install the firmware from the url.
 
@@ -566,7 +566,7 @@ Tells the device to install the firmware from the url.
 515,DeviceSerial,myFimrware,1.0,http://www.my.url
 ```
 
-#### Software list (516)
+##### Software list (516)
 
 Tells the device to install the software send in the operation.
 
@@ -583,7 +583,7 @@ Tells the device to install the software send in the operation.
 516,DeviceSerial,softwareA,1.0,url1,softwareB,2.0,url2
 ```
 
-#### Measurement request operation (517)
+##### Measurement request operation (517)
 
 Tells the device to send the measurements specified by the request name.
 
@@ -597,7 +597,7 @@ Tells the device to send the measurements specified by the request name.
 517,DeviceSerial,LOGA
 ```
 
-#### Relay (518)
+##### Relay (518)
 
 Tells the device to either open or close the relay.
 
@@ -611,7 +611,7 @@ Tells the device to either open or close the relay.
 518,DeviceSerial,OPEN
 ```
 
-#### RelayArray (519)
+##### RelayArray (519)
 
 Tells the device to either open or close the relays in the array.
 
@@ -625,7 +625,7 @@ Tells the device to either open or close the relays in the array.
 519,DeviceSerial,OPEN,CLOSE,CLOSE,OPEN
 ```
 
-#### Upload configuration file (520)
+##### Upload configuration file (520)
 
 Tells the device to upload its current configuration.
 
@@ -635,7 +635,7 @@ Tells the device to upload its current configuration.
 520,DeviceSerial
 ```
 
-#### Download configuration file (521)
+##### Download configuration file (521)
 
 Tells the device to download a configuration file from the url.
 
@@ -649,7 +649,7 @@ Tells the device to download a configuration file from the url.
 521,DeviceSerial,http://www.my.url
 ```
 
-#### Logfile request (522)
+##### Logfile request (522)
 
 Tells the device to upload a log file for the given parameters.
 
@@ -667,7 +667,7 @@ Tells the device to upload a log file for the given parameters.
 522,DeviceSerial,logfileA,2013-06-22T17:03:14.000+02:00,2013-06-22T18:03:14.000+02:00,ERROR,1000
 ```
 
-#### Communication mode (523)
+##### Communication mode (523)
 
 Tells the device to change the communication mode.
 
@@ -681,7 +681,7 @@ Tells the device to change the communication mode.
 523,DeviceSerial,SMS
 ```
 
-## Updating operations
+### Updating operations
 
 When using the template to set an operation to state SUCCESSFUL it supports sending additional parameters to trigger additional calls on the server.
 The table below shows the operations that support this feature and what will be done with the parameters.

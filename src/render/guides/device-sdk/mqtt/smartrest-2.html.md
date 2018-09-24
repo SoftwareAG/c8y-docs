@@ -4,6 +4,8 @@ title: SmartREST 2.0
 layout: redirect
 ---
 
+### Overview
+
 This section describes the SmartREST 2.0 payload format that can be used with the Cumulocity MQTT implementation.
 
 SmartREST 2.0 was designed to make use of the MQTT protocol and therefore can reduce the payload even more than the SmartREST 1.0 via HTTP.
@@ -48,7 +50,7 @@ s/dc/<X-ID>
 The topics for creating templates are described in [Creating templates via MQTT](#creating-templates-via-mqtt).
 
 
-## Changes from SmartREST 1.0
+### Changes from SmartREST 1.0
 
 In its base SmartREST 2.0 is like the previous version a CSV-like payload format that is backed by previously created templates to finally create the targeted JSON structure.
 
@@ -62,7 +64,7 @@ Several changes in the functionality have been made:
 * Declaring a default X-Id for the connection
 
 
-## Supported templates
+### Supported templates
 
 SmartREST 2.0 lets you create templates for the following matching HTTP methods:
 
@@ -76,11 +78,11 @@ SmartREST 2.0 lets you create templates for the following matching HTTP methods:
 
 Additionally, you can create templates to return certain values from responses and operations.
 
-## Template collection
+### Template collections
 
 A template collection is a set of request and response templates that specify a device communication protocol. Each collection is referenced by a unique ID (called X-Id).
 
-### <a name="creating-templates-via-mqtt"></a>Creating templates via MQTT
+#### <a name="creating-templates-via-mqtt"></a>Creating templates via MQTT
 
 Like in SmartREST 1.0 you need to pass all templates in a collection in one message. After the creation of a template collection it can no longer be modified through MQTT.
 
@@ -112,7 +114,7 @@ Empty publish to s/ut/myNotExistingTemplateCollection
 41,myNotExistingTemplateCollection
 ```
 
-### Request templates
+#### Request templates
 
 A request template contains the following basic fields:
 
@@ -145,7 +147,7 @@ This template declares one additional custom property for the measurement. It le
 
 The following sections will get into more detail of how to create and use different templates.
 
-#### GET templates
+##### GET templates
 
 The GET templates for the inventory do not need any mandatory or custom values. Instead they use two different fields.
 
@@ -185,7 +187,7 @@ By external ID without fixed type in the template
 999,c8y_Serial,myDeviceImei
 ```
 
-#### POST templates
+##### POST templates
 
 The POST templates require a different set of mandatory values based on the API:
 
@@ -227,7 +229,7 @@ Important: All POST Inventory templates start with the value of the externalId a
 101,,c8y_MySerial
 ```
 
-#### PUT templates
+##### PUT templates
 
 The PUT templates for inventory follow the same logic like the GET templates with the addition that you can also use custom values for PUT.
 
@@ -261,7 +263,7 @@ It will first check the EXECUTING operations and if there is no EXECUTING operat
 999,24
 ```
 
-#### Adding custom properties
+##### Adding custom properties
 
 All POST and PUT values enable you to add custom properties to the results of the templates.
 
@@ -285,7 +287,7 @@ A single custom property requires you to add the following three values to your 
 |ALARMSTATUS|A status of an alarm. Used to update the status field of alarms|
 |OPERATIONSTATUS|A status of an operation. Used to update the status field of operations|
 
-####Examples
+##### Examples
 
 **Template for clearing an alarm with an additional custom property**
 
@@ -314,7 +316,7 @@ A single custom property requires you to add the following three values to your 
 999,myDeviceImei,updatedValue
 ```
 
-### Response templates
+#### Response templates
 
 The SmartREST 2.0 response templates use the same structure as in SmartREST 1.0.
 
@@ -332,7 +334,7 @@ SmartREST 2.0 will always return a response template if the condition is true (o
 
 You should make use of the condition field to control when response templates should be returned.
 
-#### Examples
+##### Examples
 
 **Querying data from the device object**
 
@@ -448,4 +450,19 @@ Client receives:
 ```
 
 
+### Using a default collection
 
+Having the X-ID as part of the topic gives you the freedom to easily use multiple template collections but adds additional bytes for every message.
+If the device anyways uses mostly (or completely) a single collection it makes sense to specify this collection as you default collection.
+With a default collection specified the client can use special topics which don't require the X-ID and instead the server will use the X-ID previously specified.
+
+You can specify one X-ID within your MQTT ClientID (see [MQTT implementation](/guides/device-sdk/mqtt#mqtt-clientid)).
+Your MQTT ClientID could look like this:
+
+```
+d:myDeviceSerial:myDefaultTemplateXID
+```
+
+>**Info**: If you use a default X-ID in the ClientId you need to include the "d:" at the beginning to specify that the client is a device.
+
+It is not required that the default template exists at the time of establishing the MQTT connection (it will be verified once the client uses it).

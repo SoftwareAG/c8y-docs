@@ -6,7 +6,7 @@ layout: redirect
 
 In this tutorial, you will learn how to use the Java MQTT client with Cumulocity using pre-defined messages (called "static templates").
 
-## Prerequisites
+### Prerequisites
 
 In order to follow this tutorial, check the following prerequisites:
 
@@ -23,7 +23,7 @@ In order to follow this tutorial, check the following prerequisites:
 
 Maven can be downloaded from the [Maven website](http://maven.apache.org).
 
-## Developing the "Hello, MQTT world!" client
+### Developing the "Hello, MQTT world!" client
 
 To develop a very simple "Hello, world!" MQTT client for Cumulocity, you need to
 
@@ -32,7 +32,7 @@ To develop a very simple "Hello, world!" MQTT client for Cumulocity, you need to
 * create a Java application,
 * build and run the Java application.
 
-### Creating a Maven project
+#### Creating a Maven project
 
 To create a plain Java project with Maven, run
 
@@ -40,7 +40,7 @@ To create a plain Java project with Maven, run
 
 This will create a folder "hello-mqtt-java" in the current directory with a skeleton structure for your project.
 
-### Adding the MQTT Java client library
+#### Adding the MQTT Java client library
 
 Edit the "pom.xml" in the "hello-mqtt-java" folder. Add a dependency to the MQTT Paho Java Client.
 
@@ -50,7 +50,7 @@ Edit the "pom.xml" in the "hello-mqtt-java" folder. Add a dependency to the MQTT
         <version>1.1.0</version>
     </dependency>
     
-### Creating a Java application
+#### Creating a Java application
 
 Edit the "App.java" file in the folder "hello-mqtt-java/src/main/java/c8y/example" with the following content:
 
@@ -124,7 +124,7 @@ What does the code in "main" do?
 
 Note that the subscription is established after the device creation, otherwise if there is no device for a given ``clientId`` the server will not accept it.
 
-### Building and running the application
+#### Building and running the application
 
 To build:
 
@@ -161,6 +161,6 @@ To run:
 After starting the application you should see a new device in the Device Management application in the device list.
 Additionally if there will be a new operation created for this device, (for example ``c8y_Restart``) information about it will be printed to the console.
 
-## Improving the agent
+### Improving the agent
 
-Now that you have done your first step, check out the Section [Hello MQTT](/guides/device-sdk/mqtt/hello-mqtt) to learn more about Cumulocity MQTT and improve your application.
+Now that you have done your first step, check out the Section [Hello MQTT](/guides/device-sdk/mqtt#hello-mqtt) to learn more about Cumulocity MQTT and improve your application.

@@ -6,7 +6,7 @@ layout: redirect
 
 In this tutorial, you will learn how to use MQTT with Cumulocity using pre-defined messages (called "static templates").
 
-## Prerequisites
+### Prerequisites
 
 In order to follow this tutorial, check the following prerequisites:
 
@@ -16,9 +16,9 @@ In order to follow this tutorial, check the following prerequisites:
 >**Info**: The screenshots in the tutorial use MQTTBox. Other tools may look slightly different.
 
 
-## Talking MQTT
+### Talking MQTT
 
-### Configuring the MQTT connection
+#### Configuring the MQTT connection
 
 To configure the MQTT connection, you need to pass the following connection parameters (see the screenshot below).
 
@@ -35,13 +35,13 @@ The other configurations like "clean session" are not important for this example
 
 If there is a blue button on the top bar with a label "Not Connected", verify your configuration (especially username and password). If the button is green, you successfully established an MQTT connection to Cumulocity.
 
-### Sending data
+#### Sending data
 
 All MQTT "publish messages" in this tutorial will be sent to the topic "s/us". This is the topic used for Cumulocity's pre-provided static templates.
 
 ![MQTTBox Publish Message](/guides/images/mqtt/mqttBoxPublish.png)
 
-#### Creating the device
+##### Creating the device
 
 The first message sent will create our device. Although the static templates support automatic device creation, in this example we will create the device manually. The template "100" will create a new device. It can be used with two optional parameters (deviceName, deviceType).
 
@@ -66,7 +66,7 @@ The required interval can be set with the template "117" and just takes a single
 
 After a reload of the "Info" page of your device in Device Management, you should see the information we just added.
 
-#### Creating measurements
+##### Creating measurements
 
 Now the device has some master data and we can start sending some measurements.
 There are a couple of measurements that can be created directly by using a static template:
@@ -95,7 +95,7 @@ Besides the measurements above we can also use the template "200" to create a mo
 
 After a reload in the Device Management application you should see 4 graphs with the newly added measurements in the "Measurements" tab of your device.
 
-#### Creating alarms
+##### Creating alarms
 
 In the next step, we want to create some alarms for this device. There are 4 templates to create alarms for the 4 alarm severities:
 * 301: CRITICAL
@@ -123,7 +123,7 @@ To achieve this we use the template "306" which refers to the type of the alarm 
 Afterward, the critical alarm should be cleared.
 Note that you did not have to handle any alarm IDs with the MQTT implementation. Cumulocity will take over this part so that the device communication can be as easy as possible.
 
-#### Creating events
+##### Creating events
 
 Next, we want to create some location events for the device. You can use the link [http://www.latlong.net/](http://www.latlong.net/) to get the latitude and longitude for your city if you want.
 
@@ -142,7 +142,7 @@ In the Device Management application, you can see one event in the event list bu
 Now you should see both the "Location" and the "Tracking" tab in the device with the "Location" tab having the same latitude longitude as the last location event.
 
 
-### Receiving data
+#### Receiving data
 
 So far we have only used MQTT to send data from the client to the server. Now we want to send data from the server to the client.
 
@@ -157,7 +157,7 @@ Afterward, your MQTTBox should look like this:
 
 ![MQTTBox Subscribed Topics](/guides/images/mqtt/mqttBoxAfterSubscribe.png)
 
-#### Receiving operations
+##### Receiving operations
 
 At the current state the UI does not show any tabs for operations. Up to this point it was unknown what exactly the device supports. But the list of supported operations can be modified with the template "114". A list of supported operations can be added here.
  
@@ -191,7 +191,7 @@ Besides the operation type, this operation can also take additional parameters b
 503,c8y_Command,Everything went fine
 ```
 
-#### Learning from errors
+##### Learning from errors
 
 The topic s/e can help you debugging in case something went wrong.
 

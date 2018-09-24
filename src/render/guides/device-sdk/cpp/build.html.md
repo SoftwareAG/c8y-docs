@@ -5,7 +5,7 @@ layout: redirect
 ---
 
 
-## Prerequisites
+### Prerequisites
 
 <table id="tab:prereq" border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
 <caption class="t-above"><span class="table-number">Table 1:</span> Prerequisites for building the library.</caption>
@@ -57,7 +57,7 @@ layout: redirect
 
 
 
-## Compiling the library
+### Compiling the library
 
 First, download a copy of the library from the git repository and change to the directory.
 

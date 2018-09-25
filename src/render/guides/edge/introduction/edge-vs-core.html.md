@@ -14,7 +14,7 @@ The following differences apply:
 |:---|:---|:--
 |Multi-tenancy|No; single tenant, no access to management tenant|Yes
 |Cluster|No; single server|Yes
-|High availability|Limited HA, server failure leads to downtime|Full HA: No downtime on server failure, optionally even for data center failure
+|High availability|Traditional HA, server failure leads to temporary downtime|Full HA: No downtime on server failure, optionally even for data center failure
 |Vertical scalability|Yes, limited to appr. 100 tps per CPU core|Yes, but not used
 |Horizontal scalability|No|Yes, nearly unlimited scalability
 |Upgrades with no downtime|No|Yes

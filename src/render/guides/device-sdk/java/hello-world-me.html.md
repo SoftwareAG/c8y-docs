@@ -51,7 +51,7 @@ To start developing your agent, you need to:
 * Copy the folder "java-me-smartrest-client/src/main/java/com" into the "src" folder of your project.
 * Right-click your project and select "Refresh".
 
-Beside this technical requirements you should check our [SmartREST documentation](/guides/rest/smartrest) and the [SmartREST reference](/guides/reference/smartrest) to understand the protocol.
+Beside this technical requirements you should check our [SmartREST documentation](/guides/microservice-sdk/rest#smartrest) and the [SmartREST reference](/guides/reference/smartrest) to understand the protocol.
 
 #### Writing the agent code
 
@@ -81,7 +81,7 @@ Connections to Cumulocity can be created through implementations of the SmartCon
 
 #### Device bootstrap
 
-If you don't have credentials for your device you can generate new device credentials. Refer to [Device Integration](/guides/rest/device-integration#step-0-request-device-credentials) on how to acquire the necessary credentials for this process and any further information.
+If you don't have credentials for your device you can generate new device credentials. Refer to [Device integration](/guides/device-sdk/rest#step-0-request-device-credentials) on how to acquire the necessary credentials for this process and any further information.
 
 	SmartConnection connection = new SmartHttpConnection("http://mypartof.cumulocity.com","deviceBootstrapTenant","deviceBootstrapUser","deviceBootstrapPassword","myXid");
 	String authenticationHeader = connection.bootstrap("myUniqueDeviceId");

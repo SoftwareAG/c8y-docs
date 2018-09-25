@@ -41,7 +41,7 @@ To publish messages in *CEP* mode:
 c/<api>/<resource>/<action>/<id>
 ``` 
 
-Refer to [Processing Mode](/guides/reference/rest-implementation#processingmode) for more information about transient, quiescent and CEP data processing.
+Refer to [Processing mode](/guides/reference/rest-implementation#processingmode) for more information about transient, quiescent and CEP data processing.
 
 #### Topic actions
 
@@ -141,7 +141,7 @@ Example payload:
 
 A notification client can subscribe to the `devicecontrol/notifications` topic to receive notifications of newly created operations. Initially upon subscription all operations which are not yet forwarded will be published.
 
-Additionally, it contains an [External ID](/guides/reference/identity/#external-id) so the client can identify for which child the operation is executed.
+Additionally, it contains an [External ID](/guides/reference/identity#external-id) so the client can identify for which child the operation is executed.
 
 Example notification:
 

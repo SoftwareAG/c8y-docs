@@ -1,6 +1,6 @@
 ---
 order: 30
-title: Device SDK for Rest
+title: Device integration using REST
 layout: subsections
 collection: 'guides/device-sdk/rest'
 ---

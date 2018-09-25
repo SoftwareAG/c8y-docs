@@ -130,7 +130,7 @@ Extending the agent with drivers for new hardware and new devices requires the f
 * Create a jar file with the class and an additional text file "META-INF/services/c8y.lx.driver.Driver". The text file needs to contain the fully-qualified class name of the Java class.
 * Deploy the jar file either by copying it to the "lib" folder of the agent or by deploying it through Cumulocity's software management.
 
-The [BitBucket repository](https://bitbucket.org/m2m/cumulocity-examples) contains numerous examples of drivers. Usage of the Java client library is described in [Developing Java clients](/guides/java/developing).
+The [BitBucket repository](https://bitbucket.org/m2m/cumulocity-examples) contains numerous examples of drivers. Usage of the Java client library is described in [Developing Java clients](/guides/device-sdk/java#developing-java-clients).
 
 
 ### Server-side agents

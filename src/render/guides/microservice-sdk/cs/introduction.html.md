@@ -1,10 +1,8 @@
 ---
 order: 10
-title: Introduction to C#
+title: Overview
 layout: redirect
 ---
-
-### Overview
 
 Using Microservice SDK for C#, you can develop microservices in C#. This section explains:
 

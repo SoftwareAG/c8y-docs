@@ -1,10 +1,9 @@
 ---
 order: 10
 layout: redirect
-title: Introduction to Java
+title: Overview
 ---
 
-### Overview
 
 This section describes how to develop and deploy microservices on top of Cumulocity using the Microservice SDK for Java.
 

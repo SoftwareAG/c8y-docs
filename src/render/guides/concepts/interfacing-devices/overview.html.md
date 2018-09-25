@@ -12,5 +12,5 @@ To interface these systems with Cumulocity, a driver software called *agent* is 
 Related topics can be found in the following sections:
 
 -   [Cumulocity´s domain model](/guides/concepts/domain-model) in the Concepts guide, for understanding the data structures exchanged between agents and the Cumulocity core.
--   [Device integration](/guides/rest/device-integration) in the Rest Developer`s guide, for understanding in detail how to develop agent software.
+-   [Device SDK guide](/guides/device-sdk) for understanding in detail how to develop agent software using the REST or MQTT protocols.
 -   [Rest implementation](/guides/reference/rest-implementation) in the Reference guide, for a detailed specification of the interfaces between agents and the Cumulocity core.

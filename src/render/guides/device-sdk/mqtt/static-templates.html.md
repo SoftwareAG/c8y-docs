@@ -10,7 +10,7 @@ To ease device integration Cumulocity already supports a number of static templa
 
 These templates focus on the most commonly used messages for device management purposes.
 
-To use the templates listed below you need to publish the messages to the topic "s/us" ("t/us" for transient processing of published content, "q/us" for quiescent processing of published content or "c/us" for CEP processing of published content, see [SmartREST > Processing Mode](/guides/reference/smartrest#processing-mode) in the Reference guide for further information.
+To use the templates listed below you need to publish the messages to the topic "s/us" ("t/us" for transient processing of published content, "q/us" for quiescent processing of published content or "c/us" for CEP processing of published content, see [SmartREST > Processing mode](/guides/reference/smartrest#processing-mode) in the Reference guide for further information.
 
 To receive operations with the static templates you need to subscribe to the topic "s/ds".
 
@@ -43,7 +43,7 @@ Tailing commas are not required. The two lines below result in the same message.
 
 ### Publish templates
 
-The following templates can be used to publish data on the topics "s/us" as well as "t/us". For more information about t/ topic for transient data processing, refer to SmartRest > [Processing Mode](/guides/reference/smartrest#processing-mode) in the Reference guide.
+The following templates can be used to publish data on the topics "s/us" as well as "t/us". For more information about t/ topic for transient data processing, refer to [SmartRest > Processing mode](/guides/reference/smartrest#processing-mode) in the Reference guide.
 
 #### Inventory templates (1xx)
 

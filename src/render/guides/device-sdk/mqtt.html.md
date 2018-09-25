@@ -1,6 +1,6 @@
 ---
 order: 20
-title: Device SDK for MQTT
+title: Device integration using MQTT
 layout: subsections
 collection: 'guides/device-sdk/mqtt'
 ---

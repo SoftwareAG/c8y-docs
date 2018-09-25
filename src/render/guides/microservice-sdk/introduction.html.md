@@ -7,7 +7,6 @@ layout: standalone
 The following Microservice SDK guide provides detailed information on 
 
 * [the general concept](/guides/microservice-sdk/concept) and functionality of using microservices on top of Cumulocity
-* a description of how to get credentials
 * how to develop and deploy microservices [using C#](/guides/microservice-sdk/cs)
 * how to develop and deploy microservices [using Java](/guides/microservice-sdk/java)
 * how to use [Cumulocity's REST interfaces](/guides/microservice-sdk/rest) to develop microservices

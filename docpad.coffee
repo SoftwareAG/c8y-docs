@@ -122,6 +122,13 @@ docpadConfig = {
 	watchOptions: preferredMethods: ['watchFile','watch']
 
 	plugins:
+
+		sitemap:
+			cachetime: 600000
+			changefreq: 'weekly'
+			priority: 0.5
+			filePath: 'sitemap.xml'
+			
 		redirector:
 			redirects:
 				redirects

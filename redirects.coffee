@@ -74,5 +74,6 @@ redirects =
 	'/guides/http': '/guides/http/hello-microservice-python'
 	'/guides/edge': '/guides/edge/overview'
 	'/guides/microservice-sdk': '/guides/microservice-sdk/introduction'
+	'/guides/device-sdk': '/guides/device-sdk/introduction'
 
 module.exports = redirects

@@ -1,5 +1,5 @@
 ---
-order: 30
+order: 38
 title: Tab Plugin
 layout: subsections
 collection: 'guides/web/tab-plugin'

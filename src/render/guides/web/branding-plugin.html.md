@@ -1,5 +1,5 @@
 ---
-order: 20
+order: 35
 title: Branding Plugin
 layout: standalone
 ---

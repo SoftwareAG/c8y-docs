@@ -106,7 +106,7 @@ docpadConfig = {
 			{ title: 'Device SDK guide', folder: 'guides/device-sdk' , slug: 'device-sdk', icon : 'c8y-icon c8y-icon-tools', description: 'How to integrate IoT data sources with the Cumulocity IoT platform.'},
 			{ title: 'REST developer\'s guide', folder: 'guides/rest', slug: 'rest-developer', icon: 'c8y-icon c8y-icon-tools', description: 'How to use REST interfaces to integrate devices with Cumulocity and how to develop applications on top of Cumulocity.' },
 			{ title: 'Java developer\'s guide', folder: 'guides/java', slug: 'java-developer', icon: 'c8y-icon c8y-icon-java', description: 'How to use Java to interface Cumulocity with open Java-enabled devices, closed devices or your enterprise IT systems.' },
-			{ title: 'Web developer\'s guide', folder: 'guides/web', slug: 'web-developer', icon: 'c8y-icon c8y-icon-smart-rest', description: 'How to use the Web SDK to extend applications with your own plugins, add your own applications or implement further functionalities tailored to your use case.' }
+			{ title: 'Web SDK guide', folder: 'guides/web', slug: 'web-developer', icon: 'c8y-icon c8y-icon-smart-rest', description: 'How to use the Web SDK to extend applications with your own plugins, add your own applications or implement further functionalities tailored to your use case.' }
 					
 			]
 	

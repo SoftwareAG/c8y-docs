@@ -22,6 +22,12 @@ The files have the following extensions:
 
 Once Edge VM is started, you need to run the script “post_installation.sh” to configure the Edge server. The post-installation script is available in the folder “/opt/c8y/utilities”.
 
+Post installation should only be run after the platform initialization is successful which can be checked by running below REST API: 
+
+<img src="/guides/images/edge/edge-check-platform.png" name="Check platform initialization" style="width:75%;"/> 
+
+Usually the platform comes up within 2 minutes. 
+
 1. Browse to the folder "/opt/c8y/utilities". 
 
 		$ cd /opt/c8y/utilities
@@ -37,8 +43,11 @@ Once Edge VM is started, you need to run the script “post_installation.sh” t
 
 You will be prompted to select one of the following options:
 
-* Enter 1 to start post installation execution.
-* Enter 2 to update SSL certificates or Cumulocity license.
+* Enter 1 to start post installation execution. This is the default selection.
+* Enter 2 to update SSL certificates or Cumulocity license. This option will just be selected in case you only want to update certificate and/or the Cumulocity license.
+
+**Info**: Option 2 will only work if the installation has been setup using option 1 previously. Option 2 should not be used for fresh setup.
+
 	
 #### Post installation execution (option 1)
 	

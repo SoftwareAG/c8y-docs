@@ -59,6 +59,8 @@ Changes to alarms will generate a new audit record. The audit record will includ
 
 Please notice that if update actually doesn't change anything (i.e. request body contains data that is identical to already present in database), there will be no audit record added and no notifications will be sent.
 
+Only text, status, severity and custom properties can be modified. Non-modifiable fields will be ignored when provided in request.
+
 Request body: Alarm
 
 Response body: Alarm 

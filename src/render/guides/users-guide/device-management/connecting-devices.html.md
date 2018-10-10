@@ -42,9 +42,9 @@ To connect devices manually to your Cumulocity account follow these steps:
 5. Click **Add another device** to register one more devices. Again, enter the device ID and optionally select a group. This way, you can add multiple devices in one step.
 6. Click **Next** to register your device(s). 
 
-**Info**: In the Enterprise edition, you may also directly select a tenant to which the device will be added from here. 
+**Info**: In the Enterprise edition, the management tenant may also directly select a tenant to which the device will be added from here. Note that since the management tenant does not have access to the subtenant's inventory you can either register devices to a tenant OR to a group, not both. 
 
-<img src="/guides/images/users-guide/DeviceManagement/devmgmt-device-registration-tenant.png" alt="General device registration" style="max-width: 50%">
+<img src="/guides/images/users-guide/DeviceManagement/devmgmt-device-registration-tenant.png" alt="General device registration" style="max-width: 50%"> 
 
 After successful registration the device(s) will be listed in the [**Device registration** page](#dev-registration) with the status **Waiting for connection**.
 

@@ -16,11 +16,11 @@ Monit can provide a quick status report of all configured services and processes
 
 The command will provide an output similar to this:
 
-<img src="/guides/images/edge/edge-monitoring-01.png" name="Status report" style="width:100%;"/> 
+<img src="/guides/images/edge/edge-monitoring-01.png" name="Status report" style="width:75%;"/> 
 
 There might be cases where Monit has stopped monitoring some resources because of timeout on constant failures or dependency issues. 
 
-<img src="/guides/images/edge/edge-monitoring-02.png" name="Status report" style="width:100%;"/> 
+<img src="/guides/images/edge/edge-monitoring-02.png" name="Status report" style="width:75%;"/> 
 
 A specific component, e.g. apama-correlator_proc, can be restarted using the following command: 
 

@@ -115,28 +115,29 @@ This will restart the apama service if required.
 
 Currently, there are two ways of configuring the log rotation for components.
 
-* Under /usr/share/cumulocity-core-karaf/etc/ in org.ops4j.pax.logging.cfg file.
+**Under /usr/share/cumulocity-core-karaf/etc/ in org.ops4j.pax.logging.cfg file**
 
-	This configuration is done via configuring the RollingFileAppender provided by Log4J. 
+This configuration is done via configuring the RollingFileAppender provided by Log4J. 
 
-	The components for which log rotation is configured are as follows:
+The components for which log rotation is configured are as follows:
 
-	|Component|Log file location|Log file rotation|Max file size|Max backup index|
-	|:---|:---|:---|:---|:---|
-	Karaf|${karaf.data}/log/error.log|Daily|50 MB|14|
-	MQTT|${karaf.data}/log/mqtt.log|Daily|50 MB|14|
-	Access|${karaf.data}/log/access.log|Daily|50 MB|14|
-	DataBroker|${karaf.data}/log/databroker.log|Daily|50 MB|14|
+|Component|Log file location|Log file rotation|Max file size|Max backup index|
+|:---|:---|:---|:---|:---|
+|Karaf|${karaf.data}/log/error.log|Daily|50 MB|14|
+|MQTT|${karaf.data}/log/mqtt.log|Daily|50 MB|14|
+|Access|${karaf.data}/log/access.log|Daily|50 MB|14|
+|DataBroker|${karaf.data}/log/databroker.log|Daily|50 MB|14|
  
-* Under /etc/ configured via logrotate.conf and config files under /etc/logrotate.d
+<br>
+**Under /etc/ configured via logrotate.conf and config files under /etc/logrotate.d**
  
- The components for which log rotation is configured are as follows:
+The components for which log rotation is configured are as follows:
  
- |Component|Log file location|Log file rotation|Max file size|Max backup index|
-	|:---|:---|:---|:---|:---|
-	MongoDB|/var/log/mongodb/*.log|Daily|50 MB|14|
-	NginX|/var/log/nginx/*.log|Daily|50 MB|14|
-	Apama|/opt/softwareag/cumulocity-apama-rules/deploy/logs/*.log|Daily|50 MB|14|
+|Component|Log file location|Log file rotation|Max file size|Max backup index|
+|:---|:---|:---|:---|:---|
+|MongoDB|/var/log/mongodb/*.log|Daily|50 MB|14|
+|NginX|/var/log/nginx/*.log|Daily|50 MB|14|
+|Apama|/opt/softwareag/cumulocity-apama-rules/deploy/logs/*.log|Daily|50 MB|14|
 
 Configuration can be altered by using daily/weekly/monthly and specifying the corresponding rotate count.
 

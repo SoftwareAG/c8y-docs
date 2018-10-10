@@ -41,7 +41,7 @@ Once the machine is in running state, open a web browser and enter the address:
 
 	https://<domain url>
 
-<img src="/guides/images/users-guide/login.png" name="Login screen" style="width:75%;"/>
+<img src="/guides/images/users-guide/login.png" name="Login screen" style="width:50%;"/>
 
 In the Login screen, log in with the following credentials:
 

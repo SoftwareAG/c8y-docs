@@ -28,6 +28,7 @@ Post installation should only be run after the platform initialization is succes
 
 Usually the platform comes up within 2 minutes. 
 
+<br>
 1. Browse to the folder "/opt/c8y/utilities". 
 
 		$ cd /opt/c8y/utilities

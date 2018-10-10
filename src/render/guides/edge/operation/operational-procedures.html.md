@@ -114,6 +114,7 @@ This will restart the apama service if required.
 ### Log rotation 
 
 Currently, there are two ways of configuring the log rotation for components.
+<br>
 
 **Under /usr/share/cumulocity-core-karaf/etc/ in org.ops4j.pax.logging.cfg file**
 

@@ -24,10 +24,11 @@ The following sections describe how to:
 * [Deprovision a device](#deprovision-device) in ThingPark
 * [Send operations](#configurable-port) to a device
 * [ThingPark Api availability monitoring](#thingpark-monitoring) in Cumulocity
+* [Troubleshooting](#lora-troubleshooting) for warning messages
 
 > Note that your subscription needs to include this feature. If you do not see the functionality described in this document, please contact support.
 
-### <a name="configure-credentials"></a>Configuring ThingPark account credentials
+### <a name="configure-credentials"></a>Configuring ThingPark account credentials and application EUI
 
 Before using LoRa devices with Cumulocity, you need to configure your ThingPark account details in the Cumulocity Administration application. In order to create new credentials or replace existing ones, go to the Administration application and select "Connectivity" in "Settings" in the navigator. 
 
@@ -45,7 +46,7 @@ Enter the following information:
 Do not use the same ThingPark login (username and password) for other tenants. 
 The profile ID, username and password are used to retrieve an access token to send further requests to the ThingPark platform. It is possible to renew the access token by replacing the account credentials.
 
-![Setting device credentials](/guides/images/users-guide/actility/credentials-new-2.png)
+![Setting provider credentials](/guides/images/users-guide/actility/credentials-new-2.png)
 
 Click "Save". If everything is okay, there will be a message "Credentials successfully saved".
 
@@ -57,7 +58,7 @@ Enter your profile ID, username, password and application EUI. For an explanatio
 
 <img src="/guides/images/users-guide/actility/providerCredentials2.png" alt="Account credentials" style="max-width: 100%">
 
-Click "Save". Your old credentials will now be replaced with the new ones. 
+Click "Save". Your old credentials will now be replaced with the new ones.
 
 ### <a name="create-device-types"></a>Creating device types
 
@@ -209,12 +210,18 @@ After clicking "Next" the device registration request will be submitted and the 
 
 You can verify that the device is really connected by checking that events are actually coming in. You can do so by clicking on a device and opening the "Events" tab. All events related to this device are listed here.  
 
+The provision status is shown on the Device data in the device info dashboard.
+
+<img src="/guides/images/users-guide/actility/lora-device-data.png" alt="Device data" style="max-width: 100%">
+
 For more information on viewing and managing your connected devices, also refer to 
 [Device Management](/guides/users-guide/device-management).
 
 #### <a name="device-registration-process"></a>LoRa device registration process
 
 <img src="/guides/images/users-guide/actility/lora_device_registration_process.png" style="max-width: 60%">
+
+A device is created based on the above workflow. First the existence of the device is checked. If there is no device exists with the same device EUI in the ThingPark account, the device is firstly provisioned on ThingPark platform and afterwards created on the Cumulocity with a link to the device in the ThingPark platform. If device exists in ThingPark account, there is a validation applied to compare those devices based on application EUI (for OTAA activation) and device profile. If the validation is successful, device is created only in Cumulocity with a link to the device in the ThingPark platform. In the validation failure, there is a failure message shown which can be found in [troubleshooting section for device registration](#lora-device-registration-troubleshooting) and the device is not created on the Cumulocity.
 
 #### <a name="device-registration-with-abp-activation"></a>LoRa device registration with Activation by Personalization (ABP)
 
@@ -236,6 +243,8 @@ To deprovision a device, go to the Device Management application and navigate to
 <img src="/guides/images/users-guide/actility/deprovisionDevice.png" alt="Device deprovisioning" style="max-width: 100%">
 
 After confirming the deprovisioning, the device will be deprovisioned in ThingPark.
+
+To provision the device again, the device should be deleted and re-registered using LoRa device registration. 
  
 ### <a name="configurable-port"></a>Sending operations
 
@@ -253,7 +262,52 @@ If you enter the command without defining a port, it will be sent to the default
 
 Click "Execute". The operation will be sent to the device. The timing depends on Actility ThingPark.
 
+The status of the operation is set to SUCCESSFUL when the operation is successfully sent to the ThingPark platform. The status of the operation is set to FAILED when there is a problem occured with the validation of the command or after the operation is sent to the Thingpark platform.
+
 ### <a name="thingpark-monitoring"></a>ThingPark Api availability monitoring
 The ThingPark Api is monitored and if the ThingPark Api is not reachable, an alarm is created to notify all the subscribed tenants that are using this feature. The alarm is cleared right after the ThingPark Api is reachable again. 
 
 <img src="/guides/images/users-guide/actility/thingpark-api-monitor-alarm.png" alt="ThingPark Api monitoring alarm" style="max-width: 100%">
+
+### <a name="lora-troubleshooting"></a> Troubleshooting
+
+#### <a name="lora-connectivity-troubleshooting"></a> Connectivity
+
+In the case of given profile ID, username or password is invalid, the failure message will be shown.
+
+<img src="/guides/images/users-guide/actility/lora-connectivity-invalid-credentials.png" alt="Account credentials" style="max-width: 100%">
+
+To resolve this, please give correct credentials and try again.
+
+#### <a name="lora-device-registration-troubleshooting"></a> Device registration
+
+The warning in the following picture occurs when there is already a provisioned device in ThingPark with the same device EUI used for device registration and the validation which compares those devices based on application EUI (for OTAA activation) and device profile has failed.
+
+<img src="/guides/images/users-guide/actility/lora-device-registration-forbidden-device.png" alt="Device registration failure for comparison validation" style="max-width: 100%">
+
+To resolve this issue, give the correct application EUI from [Connectivity](#configure-credentials) application and device profile and try again.
+
+The warning in the following picture occurs when there is no credentials set up for ThingPark account.
+
+<img src="/guides/images/users-guide/actility/lora-device-registration-no-credentials.png" alt="Device registration failure without credentials" style="max-width: 100%">
+
+To resolve this see the [configure ThingPark credentials](#configure-credentials) section.
+
+The warning in the following picture occurs when the tenant's access token to Thingpark becomes invalid.
+Invalidation of the token might happen when the same ThingPark credentials are used for another tenant.
+
+<img src="/guides/images/users-guide/actility/lora-device-registration-invalidated-token.png" alt="Device registration failure with invalidated token" style="max-width: 100%">
+
+This problem can be solved by reconfiguration of the ThingPark credentials and this action will renew the access token. See the [configure ThingPark credentials](#configure-credentials) section for reconfiguration of the credentials.
+ 
+The warning in the following picture occurs when there is no LoRa device type exists to use for device registration.
+
+<img src="/guides/images/users-guide/actility/lora-device-registration-no-device-type.png" alt="No device type given for LoRa" style="max-width: 100%">
+
+To resolve this configure at least one device type using [device database](#create-device-types).
+
+The warning in the following picture occurs when the connectivity plan in ThingPark has reached the limit for the device count.
+
+<img src="/guides/images/users-guide/actility/lora-device-registration-no-free-slots.png" alt="No free slots by device registration" style="max-width: 100%">
+
+To resolve this either contact to ThingPark for the device quota limits for your connectivity plans or remove unused devices from ThingPark and retry registering the device in Cumulocity.

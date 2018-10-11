@@ -23,7 +23,7 @@ As an example:
 
     Platform platform = new PlatformImpl("https://demos.cumulocity.com", new CumulocityCredentials("myuser", "mypassword"));
 
-If you use the Java client for developing an application, you need to register an application key (through [Own applications](/guides/users-guide/administration/managing-applications) in the Cumulocity Administration application, or through the [Application API](/guides/reference/applications)).
+If you use the Java client for developing an application, you need to register an application key (through [Own applications](/guides/users-guide/administration#managing-applications) in the Cumulocity Administration application, or through the [Application API](/guides/reference/applications)).
 
 	new CumulocityCredentials("<<tenant>>", "<<user>>", "<<password>>", "<<application key>>")
 

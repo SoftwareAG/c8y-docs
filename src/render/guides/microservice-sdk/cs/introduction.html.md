@@ -8,11 +8,11 @@ Using Microservice SDK for C#, you can develop microservices in C#. This section
 
 * [General prerequisites](#general-prerequisites): What do you need to develop and run C# microservices?
 
-* [Hello World](/guides/microservice-sdk/cs/hello-world-basic): Run you first C# microservice
+* [Hello World](/guides/microservice-sdk/cs#hello-world-basic): Run you first C# microservice
 
-* [Developing C# microservices](/guides/microservice-sdk/cs/developing-microservice)
+* [Developing C# microservices](/guides/microservice-sdk/cs#developing-microservice)
 
-The most simple starting point is the [C# Hello World example](/guides/microservice-sdk/cs/hello-world-basic).
+The most simple starting point is the [C# Hello World example](/guides/microservice-sdk/cs#hello-world-basic).
 
 >**Info**: You can develop Cumulocity with any IDE and any build tool that you prefer, but the examples focus on  Cake (C# Make) and Visual Studio. 
 

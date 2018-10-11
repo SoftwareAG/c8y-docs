@@ -92,7 +92,7 @@
   <nav class="navigator" >
     <div class="sg-title text-center">
       <a href="/guides" class="no-ajaxy">
-        <i class="c8y-icon c8y-icon-c8y" style="font-size: 120px;"></i>
+        <i class="c8y-icon c8y-icon-c8y" style="font-size: 80px;"></i>
       </a>
       <div class="dropdown text-left">
         <a href="#" class="dropdown-toggle no-ajaxy" data-toggle="dropdown">

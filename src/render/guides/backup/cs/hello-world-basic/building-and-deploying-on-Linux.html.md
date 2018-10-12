@@ -6,17 +6,17 @@ layout: redirect
 
 Download a script file to build a "Hello World" app. Wget utility is the best option to download a file.
 
-	sudo wget  http://resources.cumulocity.com/cssdk/releases/microservicesdk-lin-dev-9.1.0.zip
+	sudo wget  http://resources.cumulocity.com/cssdk/releases/microservicesdk-lin-dev-latest.zip
 
-The latest can be replaced by the version number e.g. microservicesdk-{X.X.X}.tar.gz
+The latest can be replaced by the version number e.g. microservicesdk-lin-dev-{X.X.X}.zip
 
 Once you have downloaded the source, untar the file.
 
-	unzip microservicesdk-lin-dev-9.1.0.zip -d  microservicesdk-9.1.0
+	unzip microservicesdk-lin-dev-latest.zip -d  microservicesdk-latest
 
 Change the current folder, to navigate to a microservicesdk folder.
 
-	cd microservicesdk-9.1.0
+	cd microservicesdk-latest
 
 Run the script **create.sh** to create a sample project, provide the name of the project and the API application.
 

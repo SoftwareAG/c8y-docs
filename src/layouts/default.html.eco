@@ -91,8 +91,8 @@
   <!-- -->
   <nav class="navigator" >
     <div class="sg-title text-center">
-      <a href="/guides" class="no-ajaxy">
-        <i class="c8y-icon c8y-icon-c8y" style="font-size: 120px;"></i>
+      <a href="/dev-center" class="no-ajaxy">
+        <img src="/guides/images/cumulocity-logo-color.svg" alt="Cumulocity IoT" class="img-responsive no-zoom" style="margin: 15px 0;">
       </a>
       <div class="dropdown text-left">
         <a href="#" class="dropdown-toggle no-ajaxy" data-toggle="dropdown">

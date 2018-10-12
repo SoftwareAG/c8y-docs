@@ -84,7 +84,7 @@ Add `dependency` elements for the Java Microservice SDK library (`microservice-a
 		<version>${c8y.version}</version>
 	</dependency>
 
-Edit the `version` elements to use the latest version of the client library. The version can be determined by checking the [Announcements section](https://cumulocity.zendesk.com/hc/en-us/sections/200381323-Announcements) of the Cumulocity Help Center. The full file after editing can be found [here](/guides/microservice-sdk/java/pom.xml).
+Edit the `version` elements to use the latest version of the client library. The version can be determined by checking the [Announcements section](https://cumulocity.zendesk.com/hc/en-us/sections/200381323-Announcements) of the Cumulocity Help Center. The full file after editing can be found [here](/guides/microservice-sdk/java#developing-microservice).
 
 #### Creating a Java application
 

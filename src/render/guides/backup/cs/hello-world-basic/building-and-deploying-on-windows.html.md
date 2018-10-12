@@ -6,17 +6,19 @@ layout: redirect
 
 Building and deploying "Hello World" on Windows is similar to the way it is done for Linux.  For windows powershell is installed by default and that's why we use it.
 
-Download a script file to build a "Hello World" app.
+Download a script file to build a "Hello World" app. Manage version of scripts and replace X.X.X to the right version number.
 
-	Invoke-WebRequest  http://resources.cumulocity.com/cssdk/releases/microservicesdk-win-dev-9.1.0.zip -OutFile microservicesdk-win-dev-9.1.0.zip
+	Invoke-WebRequest  http://resources.cumulocity.com/cssdk/releases/microservicesdk-win-dev-latest.zip -OutFile microservicesdk-win-dev-X.X.X.zip
+
+The latest can be replaced by the version number e.g. microservicesdk-lin-dev-{X.X.X}.zip
 
 Once you have downloaded the source, unzip the file.
 
-	Expand-Archive c:\microservicesdk-win-dev-9.1.0.zip -DestinationPath c:\microservicesdk-win-dev-9.1.0.zip
+	Expand-Archive c:\microservicesdk-win-dev-latest.zip -DestinationPath c:\microservicesdk-win-dev-latest.zip
 
 Change the current folder and navigate to a microservicesdk folder.
 
-	cd microservicesdk-win-dev-9.1.0.zip
+	cd microservicesdk-win-dev-X.X.X.ip
 
 Run the script create.sh to create a sample project, provide the name of the project and the API application.
 

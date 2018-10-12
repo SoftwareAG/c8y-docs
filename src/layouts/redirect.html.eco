@@ -20,7 +20,11 @@
       var $url = window.location;
       var $parts = $url.pathname.split('/');
       var $id = $parts.pop();
+      if($id == ''){
+        $id = $parts.pop();
+      }
       var url = $parts.join('/')+'#'+$id;
+      console.log('Redirecting: ', url);
         if(typeof IE_fix != "undefined") // IE8 and lower fix to pass the http referer
         {
             document.write("redirecting..."); // Don't remove this line or appendChild() will fail because it is called before document.onload to make the redirect as fast as possible. Nobody will see this text, it is only a tech fix.
@@ -29,7 +33,9 @@
             document.body.appendChild(referLink);
             referLink.click();
         }
-        else { window.location.replace(url); } // All other browsers
+        else { 
+          window.location.replace(url); 
+          } // All other browsers
     </script>
     <!-- Credit goes to http://insider.zone/ -->
     <!-- REDIRECTING ENDS -->

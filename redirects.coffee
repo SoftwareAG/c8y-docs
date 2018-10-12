@@ -75,5 +75,6 @@ redirects =
 	'/guides/edge': '/guides/edge/overview'
 	'/guides/microservice-sdk': '/guides/microservice-sdk/introduction'
 	'/guides/device-sdk': '/guides/device-sdk/introduction'
+	'/guides': '/dev-center'
 
 module.exports = redirects

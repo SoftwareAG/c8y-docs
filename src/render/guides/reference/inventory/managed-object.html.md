@@ -155,4 +155,4 @@ Example Response:
 
     HTTP/1.1  204 NO CONTENT
 
-If optional query parameter "cascade=true" is used all child devices and child assets will be deleted recursively. By default delete operation is propagated to the subgroups only if deleted object is a group.
+If managed object is device or group and optional query parameter "cascade=true" is used all child devices and child assets will be deleted recursively. By default delete operation is propagated to the subgroups only if deleted object is a group.

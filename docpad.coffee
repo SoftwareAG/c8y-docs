@@ -132,7 +132,6 @@ docpadConfig = {
       changefreq: 'weekly'
       priority: 0.5
       filePath: 'sitemap.xml'
-			collectionName: 'guides'
 
 	ignoreHiddenFiles: true
 

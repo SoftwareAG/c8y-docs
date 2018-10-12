@@ -12,7 +12,7 @@ body>.navigator {
   background-color: @gray-lighter;
   box-shadow: none;
   color: #fafafa;
-  font-family: "DIN", Helvetica, Arial, sans-serif;
+  //font-family: "DIN", Helvetica, Arial, sans-serif;
   -webkit-transition: left .4s ease-in-out;
   -o-transition: left .4s ease-in-out;
   transition: left .4s ease-in-out;
@@ -156,6 +156,7 @@ body>.navigator {
   .current {
     a[data-toggle="collapse"] {
       color: @brand-primary!important;
+    
       &:hover {
         color: @brand-primary!important;
       }
@@ -163,6 +164,7 @@ body>.navigator {
     .link {
       box-shadow: none;
       color: @brand-primary;
+      font-weight: bold;
       &,
       &:hover {
         color: @brand-primary;
@@ -224,6 +226,7 @@ body>.navigator {
         &:not(.active):hover {
           background-color: transparent;
           color: @brand-primary;
+          
         }
       }
       .subchildren {

@@ -131,7 +131,7 @@ docpadConfig = {
       cachetime: 600000
       changefreq: 'weekly'
       priority: 0.5
-      filePath: 'sitemap.xml'
+      filePath: 'guides/sitemap.xml'
 
 	ignoreHiddenFiles: true
 

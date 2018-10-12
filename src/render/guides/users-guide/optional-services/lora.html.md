@@ -312,7 +312,7 @@ Invalidation of the token might happen when the same ThingPark credentials are u
 
 This issue can be solved by reconfiguring the ThingPark credentials to renew the access token. Refer to [configure ThingPark credentials](#configure-credentials) for reconfiguration of the credentials.
  
-##### No device type configured
+##### No device types configured
 
 This warning message shows up when no LoRa device type exists to be used for device registration.
 

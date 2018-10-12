@@ -9,7 +9,7 @@ docpadConfig = {
 		# Specify some site properties
 		site:
 			# The production url of our website
-			url: "http://cumulocity.com/guides"
+			url: "http://cumulocity.com"
 
 
 			# The default title of our website
@@ -30,19 +30,19 @@ docpadConfig = {
 
       # Scripts
 			scripts: [
-				"/scripts/bootstrap/dropdown.js",
-				"/scripts/bootstrap/transition.js",
-				"/scripts/bootstrap/scrollspy.js",
-				"/scripts/bootstrap/tooltip.js",
-				"/scripts/bootstrap/popover.js",
-				"/scripts/bootstrap/collapse.js",
-				"/scripts/bootstrap/transition.js",
-				"/scripts/clipboard.js",
-				"/scripts/zoom.min.js",
-				"/scripts/jquery-scrollto.js",
-				"/scripts/jquery.history.js",
-				"/scripts/ajaxify-html5.js",
-				"/scripts/docs-main.js"
+				"/guides/scripts/bootstrap/dropdown.js",
+				"/guides/scripts/bootstrap/transition.js",
+				"/guides/scripts/bootstrap/scrollspy.js",
+				"/guides/scripts/bootstrap/tooltip.js",
+				"/guides/scripts/bootstrap/popover.js",
+				"/guides/scripts/bootstrap/collapse.js",
+				"/guides/scripts/bootstrap/transition.js",
+				"/guides/scripts/clipboard.js",
+				"/guides/scripts/zoom.min.js",
+				"/guides/scripts/jquery-scrollto.js",
+				"/guides/scripts/jquery.history.js",
+				"/guides/scripts/ajaxify-html5.js",
+				"/guides/scripts/docs-main.js"
 			]
 
 
@@ -117,7 +117,7 @@ docpadConfig = {
 		development:
 			templateData:
 				site:
-					url: 'http://localhost:9778/guides'
+					url: 'http://localhost:9778'
 
 	watchOptions: preferredMethods: ['watchFile','watch']
 
@@ -127,6 +127,12 @@ docpadConfig = {
 				redirects
 		less:
 			referencesOthers: true
+		sitemap:
+      cachetime: 600000
+      changefreq: 'weekly'
+      priority: 0.5
+      filePath: 'sitemap.xml'
+			collectionName: 'guides'
 
 	ignoreHiddenFiles: true
 

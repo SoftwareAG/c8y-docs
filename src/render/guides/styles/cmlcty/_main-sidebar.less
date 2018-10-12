@@ -9,7 +9,7 @@ body>.navigator {
   padding-bottom: 48px;
   width: 240px;
   background: @brand-primary;
-  background-color: @gray-lighter;
+  background-color: @body-background-color;
   box-shadow: none;
   color: #fafafa;
   //font-family: "DIN", Helvetica, Arial, sans-serif;
@@ -114,9 +114,9 @@ body>.navigator {
     align-items: center;
     flex-flow: row nowrap;
     padding: 6px 8px 6px 16px;
-    color: #919c9c;
+    color: @gray-text;
     text-decoration: none;
-    font-size: 13px;
+    font-size: 14px;
     line-height: 22px;
     margin-right: 20px;
     box-shadow: inset 0 -1px 0 rgba(0, 0, 0, 0.03);
@@ -186,7 +186,7 @@ body>.navigator {
   }
   .navigatorContent {
     position: absolute;
-    top: 146px;
+    top: 120px;
     right: 0;
     bottom: 24px;
     left: 0;

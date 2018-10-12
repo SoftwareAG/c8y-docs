@@ -21,7 +21,7 @@ Once the password is reset successfully, the new password must be used for the t
 
 The tenant admin user could be locked if incorrect credentials are passed during login into UI, REST API or MQTT. 
 
-<img src="/guides/images/edge/edge-tenant-lock.jpg" name="Locked user" style="width:50%;"/>
+<img src="/guides/images/edge/edge-tenant-lock.png" name="Locked user" style="width:50%;"/>
 
 To unlock the tenant admin user, perform the following steps:
 

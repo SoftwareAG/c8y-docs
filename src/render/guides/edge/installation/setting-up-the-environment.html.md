@@ -7,8 +7,8 @@ layout: redirect
 
 For your convenience, we provide two hypervisor examples for setting up Cumulocity Edge:
 
-* [Example setup for VirtualBox](/guides/edge/setting-up-virtual-box)
-* [Example setup for VMWare](/guides/edge/setting-up-esxi)
+* [Example setup for VirtualBox](/guides/edge/installation#setting-up-virtual-box)
+* [Example setup for ESXi VMWare](/guides/edge/installation#setting-up-esxi)
 
 
 ### VM login details

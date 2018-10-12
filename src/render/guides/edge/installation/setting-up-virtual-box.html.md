@@ -48,7 +48,7 @@ The machine has predefined settings for disk, CPU and memory.
 
 Once the machine has been imported it will show up in the Manager application.
 
-<img src="/guides/images/edge/edge-vm-import.png" name="Import VM" style="width:75%;"/>
+<img src="/guides/images/edge/edge-vm-import.PNG" name="Import VM" style="width:75%;"/>
 
 Start the virtual machine by clicking the **Start** button on the top left.
 

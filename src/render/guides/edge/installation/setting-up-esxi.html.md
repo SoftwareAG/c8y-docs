@@ -1,6 +1,6 @@
 ---
 order: 50
-title: Example setup for VMWare
+title: Example setup for ESXi VMWare
 layout: redirect
 ---
 

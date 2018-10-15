@@ -43,9 +43,9 @@ Application options can be defined with ```--app.<option>=<value>```. These will
 
 ### Webpack options
 
-Webpack options can be defined with ```--webpack.<option>=<value>```. These will be directly passed to the webpack configuration.
+Webpack options can be defined with ```--env.<option>=<value>```. These will be directly passed to the webpack configuration.
 
 ```
-    --webpack.mode="production"
+    --env.mode="production"
 ```
 

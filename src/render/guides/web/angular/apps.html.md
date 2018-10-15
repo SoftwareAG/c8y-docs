@@ -1,11 +1,11 @@
 ---
-title: @c8y/apps
+title: Applications
 layout: redirect
 order: 60
 ---
 
 
-The `@c8y/apps` package provides example applications for the Web SDK.
+The application package (`@c8y/apps`) provides example applications for the Web SDK.
 
 ### Prerequisites
 

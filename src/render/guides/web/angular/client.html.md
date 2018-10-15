@@ -1,5 +1,5 @@
 ---
-title: @c8y/client
+title: Client library
 layout: redirect
 order: 50
 ---
@@ -26,8 +26,8 @@ In the following sections, the default signature of these functions is described
 
 | Method | Description | Parameters | Return | 
 | --- | --- | --- | --- |
-`detail(entityOrId)` | Request detail data of a specific entity. |  `entityOrId: string | number | IIdentified`: An object which contains an id or an id as number or string. | `Promise<IResult<TData>>`: The list as Promise wrapped in an IResult. IResultList contains data and response. | 
-`list(filter)` | Request a list of data with an optional filter. | `filter:object`: (optional) A filter for [paging](/guides/reference/rest-implementation/#-a-name-paging-a-query-result-paging) or [filtering](/guides/reference/inventory/#query-language) of the list. | `Promise<IResultList<TData>>`: The list as Promise wrapped in an IResultList. IResultList contains data, response and paging.
+|`detail(entityOrId)` | Request detail data of a specific entity. |  `entityOrId: string | number | IIdentified`: An object which contains an id or an id as number or string. | `Promise<IResult<TData>>`: The list as Promise wrapped in an IResult. IResultList contains data and response. | 
+|`list(filter)` | Request a list of data with an optional filter. | `filter:object`: (optional) A filter for [paging](/guides/reference/rest-implementation/#-a-name-paging-a-query-result-paging) or [filtering](/guides/reference/inventory/#query-language) of the list. | `Promise<IResultList<TData>>`: The list as Promise wrapped in an IResultList. IResultList contains data, response and paging.
 
 * Example for receiving details of one managedObject of the inventory via `detail`:
 * 

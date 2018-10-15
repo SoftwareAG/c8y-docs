@@ -10,4 +10,4 @@ The latest generation of our Web SDK is [Web SDK for Angular](/guides/web/angula
 
 Information on older versions (Web SDK for Angular JS and Web SDK for plugins) is still provided but these versions will soon be outdated.
 
-If you have previously been working with these versions you might be interested in some short [background information](/guides/web/background) on the evolution of the UI stack to better understand how and why it now is designed the way it is.
+If you have previously been working with these versions you might be interested in some short [background information](/guides/web/background) on the evolution of the UI stack to better understand how and why it is now designed the way it is.

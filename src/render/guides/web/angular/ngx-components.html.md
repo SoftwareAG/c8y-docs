@@ -1,5 +1,5 @@
 ---
-title: @c8y/ngx-components
+title: ngx-components
 layout: redirect
 order: 40
 ---
@@ -23,7 +23,7 @@ Next, you can add the ngx-components modules to your app module (e.g. app.module
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { RouterModule } from '@angular/router';
-import { CoreModule, OutletComponent, CommonModule} from '@c8y/ngx-components';
+import { CoreModule, BootstrapComponent, CommonModule} from '@c8y/ngx-components';
 
 @NgModule({
   imports: [

@@ -1,6 +1,6 @@
 ---
 order: 20
-title: Background on evolution
+title: Brief background
 layout: standalone
 ---
 

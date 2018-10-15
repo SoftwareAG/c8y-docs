@@ -1,5 +1,5 @@
 ---
-order: 50
+order: 70
 title: Troubleshooting
 layout: subsections
 collection: 'guides/web/troubleshooting'

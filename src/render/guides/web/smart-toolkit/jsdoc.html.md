@@ -1,6 +1,6 @@
 ---
-order: 60
-layout: standalone
+order: 150
+layout: redirect
 title: JSDoc
 ---
 

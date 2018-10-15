@@ -5,7 +5,7 @@ layout: standalone
 ---
 
 As the web ecossystem evolves, as a platform we have to evolve with it, while still trying very hard to avoid disrupting our developer community making sure the upgrade paths are smooth as possible and that their extensions keep working properly with very little changes.
-This process involves tradeoffs, so we believe that providing some background information on how the stack and the build process has evolved over time to better understand why some parts work way they work today.
+This process involves tradeoffs, so we believe that providing some background information on how the stack and the build process has evolved over time to better you'll help you better understand why some parts work way they work today.
 
 From day one, the UI always had a modular architecture. However, the exact modules and how they work together has changed over time, as a result of our experience on what worked well and what created problems.
 

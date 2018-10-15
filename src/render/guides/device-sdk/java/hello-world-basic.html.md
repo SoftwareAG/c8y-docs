@@ -70,7 +70,7 @@ Add `dependency` elements for the Java client library ("java-client") and for th
 		<version>8.13.0</version>
 	</dependency>
 
-Edit the `version` elements to use the latest version of the client library. The version can be determined by checking the ["Announcements" section](https://cumulocity.zendesk.com/hc/en-us/sections/200381323-Announcements) of the Cumulocity Help Center. The full file after editing can be found [here](/guides/java/pom.xml).
+Edit the `version` elements to use the latest version of the client library. The version can be determined by checking the ["Announcements" section](https://cumulocity.zendesk.com/hc/en-us/sections/200381323-Announcements) of the Cumulocity Help Center. The full file after editing can be found [here](/guides/device-sdk/java#agents).
 
 #### Creating a Java application
 

@@ -14,7 +14,7 @@ With the branding feature you can easily change
 
 ### Prerequisites
 
-If you do not use the [@c8y/cli](#cli) make sure that you install the base styles from npm with: 
+If you do not use the [@c8y/cli](/guides/web/angular#cli) make sure that you install the base styles from npm with: 
 
 ```
 npm install @c8y/style
@@ -66,7 +66,7 @@ What about changing the main logo that is located at the top of the login dialog
  @brand-logo-height: 48%;
  ```
 
-You can check the branding changes with the help of the [@c8y/cli](#cli). 
+You can check the branding changes with the help of the [@c8y/cli](/guides/web/angular#cli). 
 
  ```
  c8ycli server --app.brandingEntry="<path-to-your-branding.less>"

@@ -20,10 +20,10 @@ The goal of these splittings is to provide the right package for every use case,
 
 Following is a list which explains the use cases of each package. 
 
- - [@c8y/client](https://www.npmjs.com/package/@c8y/client): Use this client to access our API. The client is isomorphic, that means it could be used in node.js and in the browser.
- - [@c8y/ngx-components](https://www.npmjs.com/package/@c8y/ngx-components): A components collection and data access layer for Angular applications. This package can be used to build Angular applications.
- - [@c8y/styles](https://www.npmjs.com/package/@c8y/styles): The styles for the look & feel of an application. Extend this package to apply a custom branding to your application.
- - [@c8y/apps](https://www.npmjs.com/package/@c8y/apps): Example and bootstrapping applications to easily let you start with the Web SDK.
+ - [@c8y/client](/guides/web/angular#client): Use this client to access our API. The client is isomorphic, that means it could be used in node.js and in the browser.
+ - [@c8y/ngx-components](/guides/web/angular#ngx-components): A components collection and data access layer for Angular applications. This package can be used to build Angular applications.
+ - [@c8y/styles](/guides/web/angular#styles): The styles for the look & feel of an application. Extend this package to apply a custom branding to your application.
+ - [@c8y/apps](/guides/web/angular#apps): Example and bootstrapping applications to easily let you start with the Web SDK.
 
 Next, we will showcase how to get started with our Web SDK CLI.
 
@@ -58,7 +58,7 @@ If you point your browser to http://localhost:4200 you will get a login screen w
 }
 ```
 
-After logging in you should see a barely empty starter application. If you want to start with a more complex example read the documentation about [@c8y/apps](https://www.npmjs.com/package/@c8y/apps). If you want to build and deploy your application read more about the necessary commands of the [@c8y/cli tool](https://www.npmjs.com/package/@c8y/cli).
+After logging in you should see a barely empty starter application. If you want to start with a more complex example read the documentation about [@c8y/apps](/guides/web/angular#apps). If you want to build and deploy your application read more about the necessary commands of the [developer command line tool](/guides/web/angular#cli).
 
 > **Info**: Currently Web SDK only supports building new applications. If you want to extend an existing application like Cockpit or Dashboard, read the legacy documentation.
 

@@ -7,11 +7,11 @@ order: 40
 ngx-components is a components collection and data access layer for Angular applications. It allows to access our platform from within an Angular application as well as to provide the core components. To achieve this the ngx-components consists of two basic imports:
 
  - core (`@c8y/ngx-components`) which contains all core components like title, navigator or tabs.
- - api (`@c8y/ngx-components/api`) which enables dependency injection of the [@c8y/client](https://www.npmjs.com/package/@c8y/client) services.
+ - api (`@c8y/ngx-components/api`) which enables dependency injection of the [@c8y/client](/guides/web/angular#client) services.
 
 ### Prerequisites
 
-If you do not use the [@c8y/cli](https://www.npmjs.com/package/@c8y/cli) to bootstrap a new application you first need to install the package:
+If you do not use the [@c8y/cli](/guides/web/angular#cli) to bootstrap a new application you first need to install the package:
 
 ```
 $ npm install @c8y/ngx-components
@@ -160,7 +160,7 @@ The last three columns refer to the architectural concepts described above (CP =
 
 ### Data access to the platform
 
-The `CommonModule` exports the `DataModule`, an abstraction of the [@c8y/client](https://www.npmjs.com/package/@c8y/client) which allows to use the services of the client with the dependency injection system of Angular. So in any module in which the `CommonModule` or `DataModule` is imported you can use simple injection to access data of the platform:
+The `CommonModule` exports the `DataModule`, an abstraction of the [@c8y/client](/guides/web/angular#client) which allows to use the services of the client with the dependency injection system of Angular. So in any module in which the `CommonModule` or `DataModule` is imported you can use simple injection to access data of the platform:
 
 ```typescript
 import { Component } from '@angular/core';
@@ -177,8 +177,8 @@ export class AlarmComponent {
 }
 ```
 
-1. Import the service from the [@c8y/client](https://www.npmjs.com/package/@c8y/client) package.
+1. Import the service from the [@c8y/client](/guides/web/angular#client) package.
 2. Dependency inject that service.
 3. Use that service to request data from the platform.
 
-> For detailed information on all available services and on how to filter and select data refer to [@c8y/client](https://www.npmjs.com/package/@c8y/client).
+> For detailed information on all available services and on how to filter and select data refer to [@c8y/client](/guides/web/angular#client).

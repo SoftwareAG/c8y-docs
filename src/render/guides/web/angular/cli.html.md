@@ -1,5 +1,5 @@
 ---
-title: Developer command line tools
+title: Developer command line tool
 layout: redirect
 order: 20
 ---

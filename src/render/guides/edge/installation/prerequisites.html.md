@@ -8,7 +8,7 @@ layout: redirect
 
 To install Cumulocity IoT Edge, the following is required:
 
-Item|Details|
+|Item|Details|
 |:---|:---|
 |**Virtualbox**|Version: 5.2.8. To be downloaded from [https://www.virtualbox.org/wiki/Download&#95;Old&#95;Builds&#95;5&#95;2](https://www.virtualbox.org/wiki/Download_Old_Builds_5_2)
 |**Edge OVA image**|To be downloaded from the [SAG Empower portal](https://empower.softwareag.com) |

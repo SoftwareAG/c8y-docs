@@ -86,7 +86,7 @@ To connect larger amounts of devices, Cumulocity offers the option to bulk-regis
 3. Click **Select file to upload** and select the CSV file you want to upload by browsing for it on your computer.
 
 <br>
-Depending on the format of the uploaded CSV file, one of the following registration processes will be performed:"
+Depending on the format of the uploaded CSV file, one of the following registration types will be processed:"
 
 
 1. **Simple registration**

@@ -4,8 +4,8 @@ title: Brief background
 layout: standalone
 ---
 
-As the web ecossystem evolves, as a platform we have to evolve with it, while still trying very hard to avoid disrupting our developer community making sure the upgrade paths are smooth as possible and that their extensions keep working properly with very little changes.
-This process involves tradeoffs, so we believe that providing some background information on how the stack and the build process has evolved over time to better you'll help you better understand why some parts work way they work today.
+As the web ecosystem evolves, as a platform we have to evolve with it, while still trying very hard to avoid disrupting our developer community, making sure the upgrade paths are as smooth as possible and that their extensions keep working properly with very little changes.
+This process involves tradeoffs, so we believe that providing some background information on how the stack and the build process has evolved over time to better will help you to better understand why some parts work the way you see today.
 
 From day one, the UI always had a modular architecture. However, the exact modules and how they work together has changed over time, as a result of our experience on what worked well and what created problems.
 
@@ -41,7 +41,7 @@ At this time we had:
 
 Core was an application that did not import any plugin, it just exported plugins.
 
-The loading of the modules was entirely dynamic. We served a very basic index.html that was the same for all applications, logged in the user with just a small javascript layer and only after authentication we fetched the application information and loaded the appropriate plugins from the respective applications and finally bootstrap the angularJS app. So after login we had something like this:
+The loading of the modules was entirely dynamic. We served a very basic index.html that was the same for all applications, logged in the user with just a small javascript layer and only after authentication we fetched the application information and loaded the appropriate plugins from the respective applications and finally bootstrapped the angularJS app. So after login we had something like this:
 
 ```html
   <!-- Added with js -->

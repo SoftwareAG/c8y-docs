@@ -32,7 +32,7 @@ The rest API could be reached at ```applications/<id>/plugins``` but it has now 
 
 At this time we had:
 
-|App context|Repo
+|App context|Repository
 |-------|------
 |core | m2m/cumulocity-ui
 |administration | m2m/cumulocity-ui-administration
@@ -115,7 +115,7 @@ Although plugins are not just data any longer, we still allow to change the appl
 
 #### Build and deployment
 
-We start supporting .zip uploads for the app, so we no longer commit builds to repo.
+We start supporting .zip uploads for the app, so we no longer commit builds to repository.
 
 By this time, we also realise that time working with tooling was mostly fighting with grunt to make it do what we wanted. Gulp was already popular as simply using npm scripts for the build. At this time we build cumulocity-tools that has been serving us ever since.
 
@@ -123,7 +123,7 @@ Build would now mean compiling a single zip package containing all the plugins, 
 
 Deploying would require a build, were the app and target definitions where read, the build plugins where copied and the index.html generated. We would call this assembling the apps, it would just use the same assets from the global build.
 
-3rd party developers would now need to get hold of our plugins to develop and build their apps. So we start deploying a node package to a public url and it would be installed via npm. These packages would contain the same built versions that is used in the builtin apps with minified code and bundled dependencies.
+3rd party developers would now need to get hold of our plugins to develop and build their apps. So we started deploying a node package to a public url and it would be installed via npm. These packages would contain the same build versions that are used in the builtin apps with minified code and bundled dependencies.
 
 ### Next Generation
 
@@ -153,7 +153,7 @@ So far branding was always considered part of the app, a module like any other. 
 We still support manifest files as entry points, so it's possible to use these or normal package.json files.
 As mentioned above we tried to make the transition as smooth as possible.
 
-Looking into the repo [cumulocity-ui-plugin-examples](https://bitbucket.org/m2m/cumulocity-ui-plugin-examples/branch/next?dest=develop#diff) the diff with the changes is very clearly very concise:
+Looking into the repository [cumulocity-ui-plugin-examples](https://bitbucket.org/m2m/cumulocity-ui-plugin-examples/branch/next?dest=develop#diff) the diff with the changes is quite concise:
 
 - Add dependencies
 - Add (css) to every http @import declaration inside a less file.

@@ -7,7 +7,7 @@ layout: redirect
 
 You can use [Software AG Designer](http://www.apamacommunity.com/downloads/) to develop your applications. Create an Apama project in Software AG Designer and add the following connectivity bundles:
  
-*   Cumulocity Client (of the appropriate version)
+*   Cumulocity Client (of the appropriate platform version)
 *   Utilities for Cumulocity (of the same version as the Cumulocity Client)
 *   HTTP Client - JSON with generic request/response event definitions
 
@@ -31,7 +31,7 @@ Develop and test your EPL in Software AG Designer.
 
 ### Deploying Apama applications as a single .mon file
 
-When you are ready to deploy to Cumulocity, upload the .mon file containing your application through the **Own applications** page in the Administration application. For details, refer to [Administration > Managing applications](/guides/users-guide/administration#applications). 
+When you are ready to deploy to Cumulocity, upload the .mon file containing your application through the **Own applications** page in the Administration application. For details, refer to [Administration > Managing applications](/guides/users-guide/administration#managing-applications). 
 
 > **Info:** To be able to upload custom EPL rules as applications to Cumulocity you need to be subscribed to the application "apama-small". 
 
@@ -67,7 +67,7 @@ There is no need for anything special in the microservice manifest; no roles or 
 
 You can pack, deploy and subscribe from this directory, resulting in your Apama application being turned into a running microservice. The behaviour of the application when being run outside of Cumulocity (from Designer or your test environment) will be near-identical to its behaviour inside Cumulocity. As Apama will be using identical Cumulocity configuration in both environments, make sure that the credentials and application key that you are using in your local environment are long-lived.
 
-When you are ready to deploy to Cumulocity, upload the application as a microservice through the **Own applications** page in the Administration application. For details, refer to [Administration > Managing applications](/guides/users-guide/administration#applications). 
+When you are ready to deploy to Cumulocity, upload the application as a microservice through the **Own applications** page in the Administration application. For details, refer to [Administration > Managing applications](/guides/users-guide/administration#managing-applications). 
 
 
 

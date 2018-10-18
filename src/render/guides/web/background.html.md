@@ -5,7 +5,7 @@ layout: standalone
 ---
 
 As the web ecosystem evolves, as a platform we have to evolve with it, while still trying very hard to avoid disrupting our developer community, making sure the upgrade paths are as smooth as possible and that their extensions keep working properly with very little changes.
-This process involves tradeoffs, so we believe that providing some background information on how the stack and the build process has evolved over time to better will help you to better understand why some parts work the way you see today.
+This process involves tradeoffs, so we believe that providing some background information on how the stack and the build process has evolved over time will help you to better understand why some parts work the way you see today.
 
 From day one, the UI always had a modular architecture. However, the exact modules and how they work together has changed over time, as a result of our experience on what worked well and what created problems.
 
@@ -28,7 +28,7 @@ This way each application had two functions:
 
 The information on applications and plugins was stored in the database through an API. Each plugin had to be created in the context of each application. Although we already had the manifest files we used that information and called the APIs storing the data.
 
-The rest API could be reached at ```applications/<id>/plugins``` but it has now been deprecated.
+The REST API could be reached at ```applications/<id>/plugins``` but it has now been deprecated.
 
 At this time we had:
 

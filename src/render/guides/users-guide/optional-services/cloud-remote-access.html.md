@@ -53,7 +53,7 @@ The "endpoint" is the IP address and port of the VNC, SSH or Telnet server runni
 
 To configure remote devices, click **Add endpoint**. Follow the descriptions below for configuring the various kind of endpoints.
 
->**Info**: To be able to configure an endpoint, you need "Change" permission for "Remote access" and "Device control". To read data, a “Read” permission is sufficient. For more information on permissions, refer to [Administration > Managing permissions](/guides/users-guide/administration/#managing-permissions) in the User guide.
+>**Info**: To be able to configure an endpoint, you need "Admin" permission for "Remote access" and "Device control". To read data, a “Read” permission is sufficient. For more information on permissions, refer to [Administration > Managing permissions](/guides/users-guide/administration/#managing-permissions) in the User guide.
 
 #### Adding remote access endpoints via VNC
 
@@ -74,10 +74,14 @@ Enter the name of the endpoint. Select the Telnet protocol from the dropdown men
 To configure a remote access endpoint via SSH, enter the name of the endpoint, select the "SSH" protocol from the dropdown list, and enter the IP address and the port. There are two Sign-in methods to be selected:
 
 - Username and password: If this method is selected, it is mandatory to enter username and password.
-![SSH username and password sign in](/guides/images/users-guide/sshusernameandpass.png)
+
+	![SSH username and password sign in](/guides/images/users-guide/sshusernameandpass.png)
 
 - Public/private keys: Automatically generate public and private keys or simply paste pre-generated keys. The keys can also be uploaded from a file. 
-![SSH public/priave keys sign in](/guides/images/users-guide/publicprivatekeys.png)
+
+	![SSH public/private keys sign in](/guides/images/users-guide/publicprivatekeys.png)
+
+**Info**: The public key needs to be installed on the device as authorized_key.
 
 Optionally, you can also add a host key to ensure connection to the correct device. This key can also be uploaded from a file.
 
@@ -125,7 +129,7 @@ The audit logs can be found in the **Control** tab of the device.
 
 If you cannot set up new endpoints, check if you have sufficient permissions.
 
-To set up new endpoints, you need "Change" permission for "Device control" to be able to register a device and “Change” permission for "Remote access" to be able to add an endpoint. 
+To set up new endpoints, you need "Admin" permission for "Device control" to be able to register a device and “Admin” permission for "Remote access" to be able to add an endpoint. 
 
 To establish a connection to a remote operating panel, a “Read” permission for "Remote access" is sufficient.
 

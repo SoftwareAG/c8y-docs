@@ -1,6 +1,6 @@
 ---
 order: 50
-title: Hello MQTT C#
+title: Device SDK for C#
 layout: subsections
 collection: 'guides/device-sdk/hello-mqtt-cs-0'
 ---

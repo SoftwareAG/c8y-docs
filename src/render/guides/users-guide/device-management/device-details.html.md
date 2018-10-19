@@ -33,8 +33,6 @@ The following tabs are the most common ones, each described in detail in a separ
 |[Events](#events)|Displays events related to a device, helpful for low-level troubleshooting. Also refer to [Troubleshooting devices](#events-all). Available for each device.
 |[Location](#location)|Shows the location of a device, if available.
 |[Logs](#logs)|Allows requesting log information for a device.
-|[Objects](#objects)|Shows all available objects of a LwM2M device.
-|[LWM2M bootstrap parameters](#lwm2m-bootstrap)|Shows the bootstrap parameters of a LWM2M device and allows changes to some of the parameters.
 |[Service monitoring](#service-monitoring)|Allows the service monitoring of machines. See also [Monitoring services](#monitoring-services). Available for each device.
 |[Shell](#shell)|Enables you to interact with remote devices via a command prompt.
 |[Tracking](#tracking)|Shows the movement of a device, if available.
@@ -196,70 +194,6 @@ After the log has been transferred from the device to Cumulocity, it will be lis
 Click on the entry in the list to show the log information in the screen. 
 
 When hovering over an entry, the **Download** and **Delete** buttons appear. Click the **Download** button to download the log excerpt to your local PC. Click the **Delete** button to delete the log file.
-
-### <a name="objects"></a> Objects
-
-In the **Objects** tab of a LWM2M device, you can view all objects, resources and instances of the device. Additionally, you can create new operations, see all currently pending operations and view the history of all previous operations.
-
-![Objects view](/guides/images/users-guide/DeviceManagement/DevMgmt_objects-view.png)
-
-**Info**: In order to see resources in the **Objects** tab, the resources first have to be added in the **Device Protocols** page.
-
-The following operations may be available in each instance:
-
-- Read Object: Reads all instances for the selected object and lists all available resources for each instance.
-<br><br>
-![Read Objects](/guides/images/users-guide/DeviceManagement/DevMgmt_read-object.png)
-<br><br>
-- Read Instance: Reads the current instance of the given object and lists all available resources.
-<br><br>
-![Read Instance](/guides/images/users-guide/DeviceManagement/DevMgmt_read-instance.png)
-<br><br>
-- Create Instance: Creates a new instance for the selected object.
-- Delete Instance: Deletes the selected instance.
-
-**Info:**  Some instances do not have all of the listed operations.
-
-Some object cards show additional operations which can be performed. These operations become available after reading the object/instance, for example, device **Reboot** or **Reset error code**. In order to perform these operations, click **Execute**.
-
-![Execute operation](/guides/images/users-guide/DeviceManagement/DevMgmt_execute-operation.png)
-
-More information can be acquired for each resource by hovering over the tooltip icon.
-
-![Tooltip](/guides/images/users-guide/DeviceManagement/DevMgmt_tooltip-hover.png)
-
-Additional information on recent operations can be viewed by clicking the operations button located on the right side of an instance card. The button is only visible if any operation has been performed. The number of unread operations can be seen on the top right of the button. In the example below there is only one.
-
-![Recent operations](/guides/images/users-guide/DeviceManagement/DevMgmt_recent-operations.png)
-![Recent operations 2](/guides/images/users-guide/DeviceManagement/DevMgmt_recent-operations2.png)
-
-To view the history of all operations, simply click **View history**. Note, that you will be redirected to the **Control** tab.
-
-![Control tab](/guides/images/users-guide/DeviceManagement/DevMgmt_operations.png)
-
-**Audit Configuration**
-
-In the **Audit configuration** page you can audit the current device by comparing it to a selected reference device. It is also possible to sync properties to the values of the referenced device.
-
-Click **Audit configuration** in the right of the top menu bar to navigate to the **Audit configuration** page.
-
-![Audit configuration](/guides/images/users-guide/DeviceManagement/DevMgmt_audit_config.png)
-
-To sync properties, select the desired reference device from the dropdown list. Check the properties that you wish to sync and click **Sync selected properties**.
-
-> **Info**: The numbers in the green circles represent the number of properties in the instance which have the same value in both devices. Respectively, the numbers in the red circles represent the number of properties which have different values compared to the values of the referenced device. If an instance is expanded, you can select only specific properties which can be synced.
-
-![Sync properties](/guides/images/users-guide/DeviceManagement/DevMgmt_sync_properties.png)
-
-### <a name="lwm2m-bootstrap"></a> LWM2M bootstrap parameters
-
-In the **LWM2M bootstrap parameters** tab, bootstrap parameters of the current device can be viewed and changed. To modify a parameter, enter the desired value in a field of your choice and click **Save.**
-
-![Bootstrap customization](/guides/images/users-guide/DeviceManagement/DevMgmt_bootstrap_customization.png)
-
-> **Important:** Currently only the "NO_SEC" and "PSK" security modes are supported.
-
-For further information on the fields in the **LWM2M bootstrap parameters** tab, refer to [Optional services > LighweightM2M](/guides/users-guide/optional-services/#lwm2m).
 
 ### <a name="service-monitoring"></a>Service monitoring
 

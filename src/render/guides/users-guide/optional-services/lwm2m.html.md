@@ -61,20 +61,20 @@ In this CSV example, the security mode value is “PSK”, hence additional fiel
 
 > **Info**: Firmware updates are also supported. For more information, see [Device Management > Managing device data](/guides/users-guide/device-management/#software-repo) in the User guide.
 
-After creation, the bootstrap parameters can be viewed and changed in the "LWM2M bootstrap parameters" tab in the "Device details" page. For further information, refer to [LWM2M bootstrap parameters](/guides/users-guide/device-management#lwm2m-bootstrap).
+After creation, the bootstrap parameters can be viewed and changed in the **LWM2M bootstrap parameters** tab in the **Device details** page, see [LWM2M bootstrap parameters](#lwm2m-bootstrap).
 
 ### <a name="device_protocols"></a>LWM2M device protocols
 
 To process data from LWM2M devices, Cumulocity uses device protocols.
-Device protocols are accessible through the “Devices Types” menu in the Device Management application. For details on the general usage, see [Device Management > Managing device types](/guides/users-guide/device-management/#managing-device-types).
+Device protocols are accessible through the **Devices Types** menu in the Device Management application. For details on the general usage, see [Device Management > Managing device types](/guides/users-guide/device-management/#managing-device-types).
 
-### <a name="creating_device_protocols"></a>Creating LWM2M device protocols
+#### <a name="creating_device_protocols"></a>Creating LWM2M device protocols
 
 Once you have registered a device with the proper CSV file, you can manage LWM2M device protocols. Each piece of information available by the LWM2M client is a resource. The resources are further logically organized into objects. The LWM2M client can have any number of resources, each of which belongs to an object. In the device protocols you can observe your resources. Furthermore, you can choose whether to create measurements, events or alarms out of those resources. 
 
 To add a new LWM2M device protocol follow these steps: 
 
-1. In the Device Management application, move to the “Device protocol” page.
+1. In the Device Management application, move to the **Device protocol** page.
 2. Click **Add device protocol** in the top menu bar.
 3. In the upcoming dialog select **LWM2M** as device protocol type. <br><br>
 <img src="/guides/images/users-guide/LWM2M/protocol_type.png" alt="Protocol type" style="max-width: 50%">
@@ -83,7 +83,7 @@ To add a new LWM2M device protocol follow these steps:
 If the DDF files for the default mappings are uploaded in the management tenant, all subscribed user tenants will inherit this behavior. <br><br>
 <img src="/guides/images/users-guide/LWM2M/uploadDDF.png" alt="Upload DDF" style="max-width: 75%">
 
-5. In the next dialog, you can see the “Name” and “Description” of the protocol. Click **Continue** to create the new device protocol. <br><br>
+5. In the next dialog, you can see the name and description of the protocol. Click **Continue** to create the new device protocol. <br><br>
 <img src="/guides/images/users-guide/LWM2M/name_descr_protocol.png" alt="Protocol name" style="max-width: 75%">
 
 The device protocol will open in a new page.
@@ -144,9 +144,78 @@ If **Auto-Observe** is turned on for a resource, the LWM2M server observes a spe
 
 ![Resource](/guides/images/users-guide/LWM2M/resources.png)
 
+### LWM2M device details
+
+>**Info**: In the Device management application, you can view all details of a device. The following details are specific to LWM2M devices. For information on general details refer to [Device details](/guides/users-guide/device-management#device-details) in the Device management section.
+
+#### <a name="objects"></a> Objects
+
+In the **Objects** tab of a LWM2M device, you can view all objects, resources and instances of the device. Additionally, you can create new operations, see all currently pending operations and view the history of all previous operations.
+
+![Objects view](/guides/images/users-guide/DeviceManagement/DevMgmt_objects-view.png)
+
+**Info**: In order to see resources in the **Objects** tab, the resources first have to be added in the **Device Protocols** page.
+
+The following operations may be available in each instance:
+
+- Read Object: Reads all instances for the selected object and lists all available resources for each instance.
+<br><br>
+![Read Objects](/guides/images/users-guide/DeviceManagement/DevMgmt_read-object.png)
+<br><br>
+- Read Instance: Reads the current instance of the given object and lists all available resources.
+<br><br>
+![Read Instance](/guides/images/users-guide/DeviceManagement/DevMgmt_read-instance.png)
+<br><br>
+- Create Instance: Creates a new instance for the selected object.
+- Delete Instance: Deletes the selected instance.
+
+**Info:**  Some instances do not have all of the listed operations.
+
+Some object cards show additional operations which can be performed. These operations become available after reading the object/instance, for example, device **Reboot** or **Reset error code**. In order to perform these operations, click **Execute**.
+
+![Execute operation](/guides/images/users-guide/DeviceManagement/DevMgmt_execute-operation.png)
+
+More information can be acquired for each resource by hovering over the tooltip icon.
+
+![Tooltip](/guides/images/users-guide/DeviceManagement/DevMgmt_tooltip-hover.png)
+
+Additional information on recent operations can be viewed by clicking the operations button located on the right side of an instance card. The button is only visible if any operation has been performed. The number of unread operations can be seen on the top right of the button. In the example below there is only one.
+
+![Recent operations](/guides/images/users-guide/DeviceManagement/DevMgmt_recent-operations.png)
+![Recent operations 2](/guides/images/users-guide/DeviceManagement/DevMgmt_recent-operations2.png)
+
+To view the history of all operations, simply click **View history**. Note, that you will be redirected to the **Control** tab.
+
+![Control tab](/guides/images/users-guide/DeviceManagement/DevMgmt_operations.png)
+
+**Audit Configuration**
+
+In the **Audit configuration** page you can audit the current device by comparing it to a selected reference device. It is also possible to sync properties to the values of the referenced device.
+
+Click **Audit configuration** in the right of the top menu bar to navigate to the **Audit configuration** page.
+
+![Audit configuration](/guides/images/users-guide/DeviceManagement/DevMgmt_audit_config.png)
+
+To sync properties, select the desired reference device from the dropdown list. Check the properties that you wish to sync and click **Sync selected properties**.
+
+> **Info**: The numbers in the green circles represent the number of properties in the instance which have the same value in both devices. Respectively, the numbers in the red circles represent the number of properties which have different values compared to the values of the referenced device. If an instance is expanded, you can select only specific properties which can be synced.
+
+![Sync properties](/guides/images/users-guide/DeviceManagement/DevMgmt_sync_properties.png)
+
+#### <a name="lwm2m-bootstrap"></a> LWM2M bootstrap parameters
+
+In the **LWM2M bootstrap parameters** tab, bootstrap parameters of the current device can be viewed and changed. To modify a parameter, enter the desired value in a field of your choice and click **Save.**
+
+![Bootstrap customization](/guides/images/users-guide/DeviceManagement/DevMgmt_bootstrap_customization.png)
+
+> **Important:** Currently only the "NO_SEC" and "PSK" security modes are supported.
+
+For further information on the fields in the **LWM2M bootstrap parameters** tab, see [Registering LWM2M devices](#register).
+
+
 ### <a name="shell_commands"></a> Handling LWM2M shell commands 
 
-In the “Shell” tab of a device, LWM2M shell commands can be performed. Each command has a different functionality. Find all available placeholders (e.g. “objectID”, “instanceID”) and commands with their respective descriptions below:
+In the **Shell** tab of a device, LWM2M shell commands can be performed. Each command has a different functionality. Find all available placeholders (e.g. “objectID”, “instanceID”) and commands with their respective descriptions below:
 
 |Placeholder|Description|
 |:----------|:----------|

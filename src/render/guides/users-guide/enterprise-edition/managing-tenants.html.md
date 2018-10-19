@@ -27,7 +27,7 @@ Click **Subtenants** in the **Tenants** menu to view a list of all subtenants av
 The **Tenants** page provides the following information on each subtenant:
 
 * The name of the subtenant, e.g. company name of your customer.
-* The ID and domain. When creating tenants, the ID gets the first part of the URL. For example, if you create a tenant with the ID "acme" on cumulocity.com, the tenant's URL will be "acme.cumulocity.com". Note, that while you can change the URL later on, you cannot change the ID anymore after the tenant was created.
+* The ID and domain. Note: The domain can be changed later on. The ID cannot be changed anymore once the tenant was created.
 * An optional contact name and phone number.
 * The date when the tenant was created.
 * The status of the tenant, either active (indicated by a green checkmark icon) or suspended (indicated by a red cross icon).

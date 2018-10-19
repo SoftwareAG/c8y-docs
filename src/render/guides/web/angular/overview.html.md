@@ -87,7 +87,7 @@ To hook the new component into the application you need to declare the new compo
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { RouterModule } from '@angular/router';
-import { CoreModule, OutletComponent, CommonModule} from '@c8y/ngx-components';
+import { CoreModule, BootstrapComponent, CommonModule} from '@c8y/ngx-components';
 import { HelloComponent } from './hello.component'; // don't forget to import the new component
 
 @NgModule({
@@ -99,7 +99,7 @@ import { HelloComponent } from './hello.component'; // don't forget to import th
     CommonModule
   ],
   declarations: [HelloComponent], // add deceleration here
-  bootstrap: [OutletComponent]
+  bootstrap: [BootstrapComponent]
 })
 export class AppModule {}
 ```

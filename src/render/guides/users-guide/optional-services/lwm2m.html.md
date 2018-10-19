@@ -144,9 +144,9 @@ If **Auto-Observe** is turned on for a resource, the LWM2M server observes a spe
 
 ![Resource](/guides/images/users-guide/LWM2M/resources.png)
 
-### LWM2M-specific device details
+### LWM2M device details
 
-In the Device management application, you can view all details of a device. The following details are specific to LWM2M devices. For information on general details refer to [Device details](/guides/users-guide/device-management#device-details) in the Device management section.
+>**Info**: In the Device management application, you can view all details of a device. The following details are specific to LWM2M devices. For information on general details refer to [Device details](/guides/users-guide/device-management#device-details) in the Device management section.
 
 #### <a name="objects"></a> Objects
 
@@ -210,7 +210,7 @@ In the **LWM2M bootstrap parameters** tab, bootstrap parameters of the current d
 
 > **Important:** Currently only the "NO_SEC" and "PSK" security modes are supported.
 
-For further information on the fields in the **LWM2M bootstrap parameters** tab, refer to [Optional services > LighweightM2M](/guides/users-guide/optional-services/#lwm2m).
+For further information on the fields in the **LWM2M bootstrap parameters** tab, see [Registering LWM2M devices](#register).
 
 
 ### <a name="shell_commands"></a> Handling LWM2M shell commands 

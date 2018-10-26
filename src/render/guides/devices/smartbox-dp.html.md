@@ -2,5 +2,5 @@
 title: SMARTBox DP
 layout: subsections
 collection: 'guides/devices/smartbox-dp'
-image: '/guides/images/devices/device-list/smartbox-io.jpg'
+image: '/guides/images/devices/device-list/smartbox-dp.jpg'
 ---

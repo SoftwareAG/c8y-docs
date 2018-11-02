@@ -103,7 +103,7 @@ Just like you link assets to other child assets, you can link assets also to dev
     
 ### Synchronizing assets with external systems
 
-Often, Cumulocity will not be the only IT system dealing with a company's asset. The technical procedure for synchronizing assets stored in external IT systems is exactly the same as the [procedure used for registering devices](/guides/rest/device-integration#device_registration_and_inventory_synchronization):
+Often, Cumulocity will not be the only IT system dealing with a company's asset. The technical procedure for synchronizing assets stored in external IT systems is exactly the same as the [procedure used for registering devices](/guides/device-sdk/rest#device-integration):
 
 -   Use the Identity API to link the asset ID of the external IT system to the asset ID of Cumulocity.
 -   Use the Inventory API to create or update the assets in Cumulocity's inventory based on the external system's data.
@@ -183,7 +183,7 @@ Similar to the inventory, you can also query for particular sensor readings. For
 
 ### Sending operations to devices
 
-To trigger an operation on a device, POST the operation to the [Device Control API](/guides/reference/device-control). The following example restarts the device with the ID "2480300" (which is the Raspberry Pi that we [previously integrated](/guides/rest/device-integration)):
+To trigger an operation on a device, POST the operation to the [Device Control API](/guides/reference/device-control). The following example restarts the device with the ID "2480300" (which is the Raspberry Pi that we [previously integrated](/guides/device-sdk/rest#device-integration)):
 
     POST /devicecontrol/operations HTTP/1.1
     Content-Type: application/vnd.com.nsn.cumulocity.operation+json;

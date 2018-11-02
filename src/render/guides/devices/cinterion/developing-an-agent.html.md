@@ -4,7 +4,7 @@ layout: redirect
 order: 20
 ---
 
-Start by setting up the [JavaME "Hello, world!"](/guides/java/hello-world-me) in the Eclipse instance that has the CMTK support installed. To run the "Hello, world!", you need to dial up the module to the Internet. Use the following steps:
+Start by setting up the [JavaME "Hello, world!"](/guides/device-sdk/java#hello-world-me) in the Eclipse instance that has the CMTK support installed. To run the "Hello, world!", you need to dial up the module to the Internet. Use the following steps:
 
 * Add the Cinterion utility library to the project as described in Section 10.2.4 of the Java User's Guide. 
  * Select "Build Path", "Add External Archives". Locate the "cwmlib_1.0.jar" in your CMTK and click "OK".

@@ -14,7 +14,7 @@ layout: redirect
 |contextPath|String|Default:<br> Microservice name  Microservice contextPath used to define extension points|No
 |version |String |Application version|Yes
 |provider|Provider|Application provider information. Simple name allowed for predefined providers e.g. c8y. Detailed object for external provider.|Yes
-|isolation|Enum|Values: MULTI&#95;TENANT, PER&#95;TENANT<br/>Default: MULTI&#95;TENANT<br/><br/>Deployment isolation. When PER&#95;TENANT separate instance for each tenant otherwise separate instance for all subscribed tenants. Should be overridable on subscription and should affect billing.|No
+|isolation|Enum|Values: MULTI&#95;TENANT, PER&#95;TENANT<br/>Default: MULTI&#95;TENANT<br/><br/>Deployment isolation. In case of PER&#95;TENANT there is a separate instance for each tenant otherwise there is one single instance for all subscribed tenants. Should be overridable on subscription and should affect billing.|No
 |scale|Enum|Values: AUTO, NONE<br/>Default: NONE <br/> <br/> Enables scaling policy. For NONE, the platform guarantees that there is maximally one instance of the service per isolation level.|No
 |resources|Resources|Configuration for default resource limit. Can be overridden by tenant during subscription.<br/><br/>Guaranteed resources are CPU=0.25, Memory 256MB<br/>Default limits are CPU = 0.5 , Memory = 512MB|No
 |settings|Option[]|Default: [] ( empty list )<br/>Set of tenant options available to define configuration of microservice|No

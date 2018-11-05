@@ -3,9 +3,12 @@ title: Datasheet
 layout: redirect
 order: 20
 ---
+* [Radio](#radio)
+* [Connectivity/ Features](#connectivity)
+* [Cloud Connector](#cloud-connector)
+* [General](#general)
 
-
-### <a name="radio"></a>Radio
+## <a name="radio"></a>Radio
 
 | Radio | | 
 | --- | --- |
@@ -16,45 +19,49 @@ order: 20
 | GPS | Supported by 2G and 3G Variances |
 | Production | The selected Region,Technology and GPS can be defined during Production. The default assembly is 3G with supported regions  EMEA / APAC |  
 
-### <a name="connectivity"></a>Connectivity/ Features
+## <a name="connectivity"></a>Connectivity/ Features
 
 | Connectivity/ Features | | |
 | --- | --- | --- |
-| Layout <td colspan="2"> ![Layout](/guides/images/devices/smartbox-ble/interface.png)
-| BLE | Qualification | v5.0 (Bluetooth low energy) |	
-| | Type | GATT Client |
-| | Connectivity | 1-8 Nordic Thingy52 BLE sensors </br> (Automatic Custom service identification of generic BLE sensors – not released yet) |
-| | Chip | NINA-B111-02B (ublox) |
-| Fieldbus Modbus </br> ![ ](/guides/images/devices/smartbox-ble/modbus.png) | Type | Modbus RTU Master |
+| Layout <td colspan="2"> ![Layout](/guides/images/devices/smartbox-dp/interface.png)
+| CAN (Raw) </br> ![ ](/guides/images/devices/smartbox-can/can.png) | Type | CAN (Raw) &#124; physical CAN |
+| | Standard | CAN 2.0A &#124; CAN 2.0B </br> (CAN FD not supported) |
+| | Independent CAN-Ports | 2 (only 1 supported by firmware) |
+| | Isolation | galvanic isolation up to 2500V RMS, each port insulated separately |
+| | Termination | yes, each port independent by DIP switch |
+| | Baudrates | 50kbit &#124; 100kbit &#124; 125kbit &#124; 250kbit &#124; 500kbit &#124; 1Mbit |
+| | Extended CAN format | supported |
+| | CAN Objects | max. 100 different object-identifier possible |
+| | Length of data | 0...8 Bytes | 
+| | Send options | send on change (on change of cloud data) </br> send every time interval (0...65535ms) |
+| | Receive filters | automatic configuration of hardware filters | 
+| | LED Link | CAN-Status </br></br>Off: CAN not active</br>Flickering: CAN RX/TX</br>On: CAN not active (CAN objects not defined) |
+| | LED Act | Device-Status</br></br> Off: Device is off</br>Blinking: Firmware is running (waiting for cloud data)</br>Flickering: Firmware is running (process data transfer) |
+| Fieldbus Modbus </br> ![ ](/guides/images/devices/smartbox-can/modbus.png) | Type | Modbus RTU Master |
 | | Baudrate | 4800, 9600, 19200, 38400, 57600, 115200 |
 | | Parity | Even, ODD, NONE | 
 | | Stoppbits | 2,1 |
 | | Functioncodes | <li>Funct.1 (Read Single Coils)</li><li>Funct.2 (Read Input Status)</li><li>Funct.3 (Read Holding Registers)</li><li>Funct.4 (Read Input Registers)</li><li>Funct.5 (Write Coil)</li><li>Funct.6 (Write Holding Register)</li> |
 | | Datapoints | Max. 10 Modbus Slaves, with 100 datapoints per device or 1000 datapoints with 1 device |
-| Sensors | Number | 12 |
-| | U1/U2/U3/U4/U5/U6/U7 | DIN NO [High Side] </br> 24VDC |
-| | U8 | 0..20mA | 
-| | U9/U10 | DO – Digital Output 24VDC |
-| | Output | 24VDC Digital Output. Note: Either the Output or the 2nd Fieldbusinterface can be selected during production | 
-| | DIN/O | DIN [voltage free] (defined by Hardwarejumper) | 
-| | AIN/O | NTC (selectable by Hardwarejumper, either NTC or 0..20mA) |
-| | AIN/P+ | 0…20mA (selectable by Hardwarejumper, either NTC or 0..20mA) |
+| Sensors <td colspan="2"> 2 Sensor Inputs 
+| | DIN/O | DIN [voltage free] |
+| | AIN | NTC &#124; 0..20mA  (selectable by Hardware) |
 | LEDs | GSM | Flashing- connected to mobile network |
 | | RUN | 2xflashing/pause: StartUp Phase </br> 3xflashing/pause: Connected to Server, Data exchange |
 | | Act | Flashing: Sensor Board Power |
 | | Link | Flashing: Sensor Board is ready to process data |
 | USB <td colspan="2"> For programming, Logging and Trace the device
 
-### <a name="cloud-connector"></a>Cloud Connector
+## <a name="cloud-connector"></a>Cloud Connector
 
 | Cloud Connector | | |
 | --- | --- | --- |
-| Availability <td colspan=2> All Cumulocity Based systems, Cloud der Dinge, Deutsche Telekom
+| Availability <td colspan=2> All Cumulocity Based systems, Cloud der Dinge Deutsche Telekom
 | Realtime Clock <td colspan=2> Updating Realtime automatical from #NTP timeserver
 | Application <td colspan=2> CloudFieldbus (CFB Integrated in Devicemanagement)</br>For SetUp connected field devices
 | Online Operations <td colspan=2> Remote Restart</br> Fieldbus Configuration Cloud-Device</br> Change Transmitinterval from device to Cloud</br> Change Communication. Baudrate, Databits, Parity, Stopbits</br> Operate the connected Field device:  Registervalues (R/W)</br> Operate the connected Field device:  Change CoilValues (R/W)</br> Operate the device with AT Commands in the shell
 | Communication <td colspan=2> MQTT
-| Security <td colspan=2> TLS
+| Security <td colspan=2> TLS-Security 1.0 / TLS 1.2 (ab Version 2.4.x)
 | Notifications <td colspan=2> Realtime and Pending Operations
 | Shell <td colspan=2> Operate the device with AT Commands in the shell
 | Location <td colspan=2> Identification by cellular network or GPS Signal (selected- see Radio)
@@ -67,14 +74,14 @@ order: 20
 | | Events | On Change |
 | | Measurements | Default 900 |
 | | Signal strength | Is sent every 20 Min as a measurement |
-| | Offline Buffering | Alarms, Events, Measurements &asymp; 72h |
+| | Offline Buffering | Alarms, Events, Measurments &asymp; 72h |
 | SMS <td colspan=2> For Troubleshooting you can operate the device by SMS:</br>Reboot</br>Change tenant</br>FOTA/OTA
 
-### <a name="general"></a>General
+## <a name="general"></a>General
 
-| General | | 
+| General | |
 | --- | --- | 
-| Dimensions | 100 x 70 x 45 mm | 
+| Dimensions | 100 x 70 x 45 mm |
 | Weight | 89g |
 | GSM Antenna | SMA Connector |
 | Power Supply | Nominal voltage range: 12-24 VDC, 10% </br> Maximum continuous (average) supply power: 2.5 W </br> Maximum continuous (average) supply current: 200 mA at 12V, 100 mA at 24V |
@@ -85,5 +92,7 @@ order: 20
 | Operating humidity | Max. 85% |
 | Storage humidity | Max. 85% |
 | IP Class | IP20/IP54 (opt.) |
-| Approvals | ![ ](/guides/images/devices/smartbox-ble/certification.png) |
-| Conformity Declerations |  <strong>2014/53/EU (Radio Equipment Directive - RED)</strong></br></br><strong>Radio</strong></br>EN301511 v12.5.1 for GSM 900 and 1800 MHz</br>EN301908 v11.1.1 for UMTS band 1 and 8</br>EN300328 v2.1.1 for Bluetooth Low EnergyRoHS-DIrective 2011/65/EU</br></br><strong>EMC</strong></br>EN 301489-1 v2.1.1 general part</br>EN 301489-52 v0.0.7 for GSM and UMTS</br>EN 301489-17 v3.1.1 for for Bluetooth Low Energy</br></br><strong>Safety</strong></br>EN60950-01 |
+| Approvals | ![ ](/guides/images/devices/smartbox-dp/certification.png) |
+| Conformity Declerations | 2014/53/EU (Radio Equipment Directive - RED)</br></br>Radio</br>EN301511 v12.5.1 for GSM 900 and 1800 MHz</br>EN301908 v11.1.1 for UMTS band 1 and 8</br></br>EMC</br>EN 301489-1 v2.1.1 general part</br>EN 301489-52 v0.0.7 for GSM and UMTS</br></br>Safety</br>EN60950-01 |
+
+

@@ -51,7 +51,7 @@ After all packages are installed you can start the application by running:
 $ npm start
 ```
 
-If you point your browser to http://localhost:4200 you will get a login screen which proxies to the demo tenant as default backend. If you cannot log in, it might be pointing to the wrong backend. To change the proxy to your tenant URL change the `start` script in the script section of the newly created package.json:
+If you point your browser to http://localhost:9000 you will get a login screen which proxies to the demo tenant as default backend. If you cannot log in, it might be pointing to the wrong backend. To change the proxy to your tenant URL change the `start` script in the script section of the newly created package.json:
 ```json
 {
   "start": "c8y-vnext server -u http://your-tenant.my-provider.com"

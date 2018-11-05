@@ -138,24 +138,191 @@ Following is a list of components that are currently available in the `CoreModul
 
 The last three columns refer to the architectural concepts described above (CP = Content Projection, MP = Multi Provider, SVC = Service), an `x` means that the respective concept is supported by the component. Most of the components support all concepts, but some are marked with `(x)` indicating the preferred solution for that component. If non is marked the component can only be used with attributes.
 
-|#| Tag | Module name<br>Service name | Description | Attributes | CP | MP | SVC
-|---|---|---|---|---|---|---|---|---|
-|1| `<c8y-bootstrap>` | BootstrapModule | Composes all outlets to bootstrap an application. | none | 
-|2| `<c8y-action>` | ActionModule<br>ActionService | Adds global action to a page (upper right plus icon). | `disabled:boolean=false`<br>`label:string`<br>`priority:number=0`<br>`icon:string` | x | (x) | x
-|3| `<c8y-action-bar-item>` | ActionBarModule<br>ActionBarService | Adds a local action to the page (new bar below the header bar). | `placement:('left'|'right'|'more')='left'`<br>`priority:number=0`| (x) | x | x
-|4| `<c8y-alert>` | AlertModule<br>AlertService | Allows to show a message (alert, danger, warning) to the user. | `type:string`<br>`onDetail:()=>void`<br>`onClose:()=>void` | x | | (x)
-|5| `<c8y-breadcrumb>` | BreadcrumbModule<br>BreadcrumbService | Can display multiple breadcrumb items on a page. | `items:BreadcrumbItem[];` | x | (x) | x
-|6| `<c8y-breadcrumb-item>` | BreadcrumbModule<br>BreadcrumbService | One crumb of the breadcrumb.| `icon:string`<br>`translate:boolean`<br>`label:string`<br>`path:string` | x | (x) | x
-|7| `<c8y-drop-area>` | DropAreaModule | A possibility to upload files per drag & drop. | `title='Upload file'`<br>`message='Drop file here'`<br>`icon='plus-square'`<br>`loadingMessage='Uploading...'`<br>`alwaysShow=false`<br>`clickToOpen=true`<br>`loading=false`<br>`dropped:EventEmitter<DroppedFile[]>` | (x) 
-|8| `<c8y-title>` | HeaderModule<br>HeaderService | Allows to add a title to the page. | none | (x) | | x
-|9| `<c8y-app-icon>` | HeaderModule<br>HeaderService | Generates an application icon with the given name for the given contextPath. | `contextPath:string`<br>`name:string= ''` |
-|10| `<c8y-header-bar>` | HeaderModule<br>HeaderService | The main header which contains title, actions, search and user-dropdown. By default, it is included in the `BootstrapComponent` and only needs to be used if not bootstrapped with that component. | none
-|11| `<c8y-login>` | LoginModule<br>LoginService | The login shown on each application start.  By default, it is included in the `BootstrapComponent` and only needs to be used if not bootstrapped with that component. | none|
-|12| `<c8y-modal>` | ModalModule<br>ModalService | A modal with a backdrop. |  `onDismiss:EventEmitter<boolean>`<br>`onClose:EventEmitter<boolean>`<br>`disabled=false`<br>`close:()=>void`<br>`dismiss:()=>void`<br>`title:string` | (x) |  | x
-|13| `<c8y-navigator-item>` | NavigatorModule<br>NavigatorService | The left navigator menu allows to switch between routes. |   `label:string`<br>`icon:string`<br>`path:string`<br>`priority=0` | x | (x) | x
-|14| `<c8y-search>` | SearchModule<br>SearchService | Allows to add a custom search which will show up in the header bar. | `name:string`<br>`icon:string='search'`<br>`priority:number=0`<br>`search:EventEmitter<Search>`<br>`term:string=''`<br> | x | (x) | x
-|15| `<c8y-select>` | SelectModule | A multi-select dropdown with the possibility to filter for values. | `placeholder:string='Select item'`<br>`selectedLabel:string|selectedLabelFunction`<br>`applyLabel:string='Apply'`<br>`items:Item[]`<br>`selected:Item[]|selectedFunction`<br>`onChange:EventEmitter<Item[]>`
-|16| `<c8y-tab>` | TabsModule<br>TabsService | Allows to show tabs on a page. | `path:string`<br>`label:string=''`<br>`icon:string`<br>`priority:number` | x | (x) | x
+
+<div class="table-responsive"><table>
+<col width="30">
+<col width="150">
+<col width="180">
+<col width="400">
+<col width="400">
+
+<thead>
+<tr>
+<th style="text-align:left">#</th>
+<th style="text-align:left">Tag</th>
+<th style="text-align:left">Module name<br>Service name</th>
+<th style="text-align:left">Description</th>
+<th style="text-align:left">Attributes</th>
+<th style="text-align:left">CP</th>
+<th style="text-align:left">MP</th>
+<th style="text-align:left">SVC</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">1</td>
+<td style="text-align:left">`<c8y-bootstrap>`</td>
+<td style="text-align:left"> BootstrapModule </td>
+<td style="text-align:left"> Adds global action to a page (upper right plus icon). </td>
+<td style="text-align:left"> none </td>
+<td style="text-align:left"> </td>
+<td style="text-align:left"> </td>
+<td style="text-align:left"> </td>
+</tr>
+<tr>
+<td style="text-align:left">2</td>
+<td style="text-align:left">`<c8y-action>`</td>
+<td style="text-align:left"> ActionModule<br>ActionService </td>
+<td style="text-align:left"> Composes all outlets to bootstrap an application. </td>
+<td style="text-align:left"> `disabled:boolean=false`<br>`label:string`<br>`priority:number=0`<br>`icon:string`  </td>
+<td style="text-align:left">x</td>
+<td style="text-align:left">(x)</td>
+<td style="text-align:left">x</td>
+</tr>
+</tr>
+<tr>
+<td style="text-align:left">3</td>
+<td style="text-align:left">`<c8y-action-bar-item>`</td>
+<td style="text-align:left"> ActionBarModule<br>ActionBarService </td>
+<td style="text-align:left"> Adds a local action to the page (new bar below the header bar). </td>
+<td style="text-align:left"> `placement:('left'|'right'|'more')='left'`<br>`priority:number=0`</td>
+<td style="text-align:left">(x)</td>
+<td style="text-align:left">x</td>
+<td style="text-align:left">x</td>
+</tr>
+<tr>
+<td style="text-align:left">4</td>
+<td style="text-align:left">`<c8y-alert>`</td>
+<td style="text-align:left"> AlertModule<br>AlertService </td>
+<td style="text-align:left"> Allows to show a message (alert, danger, warning) to the user. </td>
+<td style="text-align:left"> `type:string`<br>`onDetail:()=>void`<br>`onClose:()=>void` </td>
+<td style="text-align:left">x</td>
+<td style="text-align:left"> </td>
+<td style="text-align:left">(x)</td>
+</tr>
+<tr>
+<td style="text-align:left">5</td>
+<td style="text-align:left">`<c8y-breadcrumb>`</td>
+<td style="text-align:left"> BreadcrumbModule<br>BreadcrumbService </td>
+<td style="text-align:left"> Can display multiple breadcrumb items on a page. </td>
+<td style="text-align:left"> `items:BreadcrumbItem[];` </td>
+<td style="text-align:left">x</td>
+<td style="text-align:left">(x) </td>
+<td style="text-align:left">x</td>
+</tr>
+<tr>
+<td style="text-align:left">6</td>
+<td style="text-align:left">`<c8y-breadcrumb-item>`</td>
+<td style="text-align:left"> BreadcrumbModule<br>BreadcrumbService </td>
+<td style="text-align:left"> One crumb of the breadcrumb. </td>
+<td style="text-align:left"> `icon:string`<br>`translate:boolean`<br>`label:string`<br>`path:string`</td>
+<td style="text-align:left">x</td>
+<td style="text-align:left">(x) </td>
+<td style="text-align:left">x</td>
+</tr>
+<tr>
+<td style="text-align:left">7</td>
+<td style="text-align:left">`<c8y-drop-area>`</td>
+<td style="text-align:left"> DropAreaModule </td>
+<td style="text-align:left"> A possibility to upload files per drag & drop. </td>
+<td style="text-align:left"> `icon:string`<br>`title='Upload file'`<br>`message='Drop file here'`<br>`icon='plus-square'`<br>`loadingMessage='Uploading...'`<br>`alwaysShow=false`<br>`clickToOpen=true`<br>`loading=false`<br>`dropped:EventEmitter<DroppedFile[]>`</td>
+<td style="text-align:left">(x)</td>
+<td style="text-align:left"> </td>
+<td style="text-align:left"> </td>
+</tr>
+<tr>
+<td style="text-align:left">8</td>
+<td style="text-align:left">`<c8y-title>`</td>
+<td style="text-align:left"> HeaderModule<br>HeaderService </td>
+<td style="text-align:left"> Allows to add a title to the page. </td>
+<td style="text-align:left"> none</td>
+<td style="text-align:left">(x)</td>
+<td style="text-align:left"> </td>
+<td style="text-align:left">x</td>
+</tr>
+<tr>
+<td style="text-align:left">9</td>
+<td style="text-align:left">`<c8y-app-icon>`</td>
+<td style="text-align:left"> HeaderModule<br>HeaderService </td>
+<td style="text-align:left"> Generates an application icon with the given name for the given contextPath. </td>
+<td style="text-align:left">`contextPath:string`<br>`name:string= ''` </td>
+</tr>
+<td style="text-align:left"> </td>
+<td style="text-align:left"> </td>
+<td style="text-align:left"> </td>
+<tr>
+<td style="text-align:left">10</td>
+<td style="text-align:left">`<c8y-header-bar>`</td>
+<td style="text-align:left"> HeaderModule<br>HeaderService </td>
+<td style="text-align:left"> The main header which contains title, actions, search and user-dropdown. By default, it is included in the `BootstrapComponent` and only needs to be used if not bootstrapped with that component. </td>
+<td style="text-align:left">none </td>
+<td style="text-align:left"> </td>
+<td style="text-align:left"> </td>
+<td style="text-align:left"> </td>
+</tr>
+<tr>
+<td style="text-align:left">11</td>
+<td style="text-align:left"> `<c8y-login>`</td>
+<td style="text-align:left"> LoginModule<br>LoginService </td>
+<td style="text-align:left"> The login shown on each application start.  By default, it is included in the `BootstrapComponent` and only needs to be used if not bootstrapped with that component. </td>
+<td style="text-align:left">none </td>
+<td style="text-align:left"> </td>
+<td style="text-align:left"> </td>
+<td style="text-align:left"> </td>
+</tr>
+<tr>
+<td style="text-align:left">12</td>
+<td style="text-align:left">`<c8y-modal>`</td>
+<td style="text-align:left"> ModalModule<br>ModalService </td>
+<td style="text-align:left"> A modal with a backdrop. </td>
+<td style="text-align:left"> `onDismiss:EventEmitter<boolean>`<br>`onClose:EventEmitter<boolean>`<br>`disabled=false`<br>`close:()=>void`<br>`dismiss:()=>void`<br>`title:string`</td>
+<td style="text-align:left">(x)</td>
+<td style="text-align:left"></td>
+<td style="text-align:left">x</td>
+</tr>
+<tr>
+<td style="text-align:left">13</td>
+<td style="text-align:left">`<c8y-navigator-item>`</td>
+<td style="text-align:left"> NavigatorModule<br>NavigatorService </td>
+<td style="text-align:left"> The left navigator menu allows to switch between routes. </td>
+<td style="text-align:left"> `label:string`<br>`icon:string`<br>`path:string`<br>`priority=0`</td>
+<td style="text-align:left">x</td>
+<td style="text-align:left">(x)</td>
+<td style="text-align:left">x</td>
+</tr>
+<tr>
+<td style="text-align:left">14</td>
+<td style="text-align:left">`<c8y-search>`</td>
+<td style="text-align:left"> SearchModule<br>SearchService </td>
+<td style="text-align:left"> Allows to add a custom search which will show up in the header bar. </td>
+<td style="text-align:left"> `label:string`<br>`name:string`<br>`icon:string='search'`<br>`priority:number=0`<br>`search:EventEmitter<Search>`<br>`term:string=''`<br></td>
+<td style="text-align:left">x</td>
+<td style="text-align:left">(x)</td>
+<td style="text-align:left">x</td>
+</tr>
+<tr>
+<td style="text-align:left">15</td>
+<td style="text-align:left">`<c8y-select>`</td>
+<td style="text-align:left"> SelectModule </td>
+<td style="text-align:left"> A multi-select dropdown with the possibility to filter for values. </td>
+<td style="text-align:left"> `placeholder:string='Select item'`<br>`selectedLabel:string|selectedLabelFunction`<br>`applyLabel:string='Apply'`<br>`items:Item[]`<br>`selected:Item[]|selectedFunction`<br>`onChange:EventEmitter<Item[]>`</td>
+<td style="text-align:left"> </td>
+<td style="text-align:left"> </td>
+<td style="text-align:left"> </td>
+</tr>
+<tr>
+<td style="text-align:left">16</td>
+<td style="text-align:left">`<c8y-tab>`</td>
+<td style="text-align:left"> TabsModule<br>TabsService </td>
+<td style="text-align:left"> Allows to show tabs on a page. </td>
+<td style="text-align:left"> `path:string`<br>`label:string=''`<br>`icon:string`<br>`priority:number` </td>
+<td style="text-align:left">x</td>
+<td style="text-align:left">(x)</td>
+<td style="text-align:left">x</td>
+</tr>
+</tbody>
+</table></div>
+
 
 
 ### Data access to the platform

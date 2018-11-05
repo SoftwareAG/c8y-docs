@@ -31,11 +31,11 @@ Request counting in SmartREST and MQTT:
 - SmartREST: each row in SmartREST request is transformed into a separate HTTP request. For example, if one SmartREST request contains 10 rows, then 10 separate calls are executed, meaning that request count is increased by 10. 
 - MQTT: each row/line counts as a separate request. Creating custom template counts as a single request.
 
-### Total inbound data transfers
+### Total inbound data transfer
 
-Inbound Data Transfer refers to the total number of inbound requests performed to transfer data into the Cumulocity IoT Platform. This includes sensor readings, alarms, events, commands and alike that are transferred between devices and the Cumulocity IoT platform using the REST and/or MQTT interfaces. Such an inbound request could also originate from a custom microservice, website or any other client. 
+Inbound data transfer refers to the total number of inbound requests performed to transfer data into the Cumulocity IoT platform. This includes sensor readings, alarms, events, commands and alike that are transferred between devices and the Cumulocity IoT platform using the REST and/or MQTT interfaces. Such an inbound request could also originate from a custom microservice, website or any other client. 
 
-In the table below, you can see all of the counters that enhance the Cumulocity tenant statistics and measure the inbound data transfers:
+The table below lists all counters that enhance the Cumulocity tenant statistics and measure the inbound data transfers:
 
 <div class="table-responsive"><table>
 <col width="200">
@@ -96,19 +96,19 @@ See the table below for more information on how the counters above are increased
 |Type of transfer|MQTT counter information|REST counter information|
 |:---------------|:-----------------------|:-----------------------|
 |Creation of an **alarm** in one request|One alarm creation is counted.|One alarm creation is counted via REST.|
-|Update of an **alarm** (e.g. status change)|One alarm update is counted.|One alarm update is counted via REST|
-|Creation of **multiple alarms** in one request.|Each alarm creation in a single MQTT request will be counted.|Not supported by C8Y. (REST does not support creating multiple alarms in one call)|
-|Update of **multiple alarms** (e.g. status change) in one request|Each alarm creation in a single MQTT request will be counted.|Not supported by C8Y. (REST does not support updating multiple alarms in one call)|
+|Update of an **alarm** (e.g. status change)|One alarm update is counted.|One alarm update is counted via REST.|
+|Creation of **multiple alarms** in one request|Each alarm creation in a single MQTT request will be counted.|Not supported by C8Y (REST does not support creating multiple alarms in one call).|
+|Update of **multiple alarms** (e.g. status change) in one request|Each alarm creation in a single MQTT request will be counted.|Not supported by C8Y (REST does not support updating multiple alarms in one call).|
 |Creation of an **event** in one request|One event creation is counted.|One event creation is counted.|
 |Update of an **event** (e.g. text change)|One event update is counted.|One event update is counted.|
-|Creation of **multiple events** in one request|Each event creation in a single MQTT request will be counted.|Not supported by C8Y. (REST does not support creating multiple events in one call)|
-|Update of **multiple events** (e.g. text change) in one request|Each event update in a single MQTT request will be counted.|Not supported by C8Y. (REST does not support updating multiple events in one call)|
+|Creation of **multiple events** in one request|Each event creation in a single MQTT request will be counted.|Not supported by C8Y (REST does not support creating multiple events in one call).|
+|Update of **multiple events** (e.g. text change) in one request|Each event update in a single MQTT request will be counted.|Not supported by C8Y (REST does not support updating multiple events in one call).|
 |Creation of a **measurement** in one request|One measurement creation is counted. |One measurement creation is counted.|
 |Creation of **multiple measurements** in one request|Each measurement creation in a single MQTT request will be counted. Example: If MQTT is used to report 5 measurements, the measurementCreated counter will be incremented by five.|REST allows multiple measurements to be created by sending multiple measurements in one call. In this case, each measurement sent via REST is counted individually. The call itself is not counted. For example, if somebody sends 5 measurements via REST in one call, the corresponding counter will be increased by 5. Measurements with multiple series are counted as a singular measurement.|
 |Creation of a **managed object** in one request|One managed object creation is counted.|One managed object creation is counted.|
 |Update of one **managed object** (e.g. status change)|One managed object update is counted.|One managed object update is counted.|
-|Update of **multiple managed objects** in one request|Each managed object update in a single MQTT request will be counted.|Not supported by C8Y. (REST does not support updating multiple managed objects in one call)|
-|Creation/Update of **multiple alarms**/measurements/events/inventory mixed in a single call.|Each MQTT line is processed separately. If it is a creation/update of an event/alarm/measurement/inventory, the corresponding counter is increased by one.|Not supported by the REST API.|
+|Update of **multiple managed objects** in one request|Each managed object update in a single MQTT request will be counted.|Not supported by C8Y (REST does not support updating multiple managed objects in one call).|
+|Creation/update of **multiple alarms/measurements/events/inventories** mixed in a single call.|Each MQTT line is processed separately. If it is a creation/update of an event/alarm/measurement/inventory, the corresponding counter is increased by one.|Not supported by the REST API.|
 
 ### TenantUsageStatisticsCollection [application/vnd.com.nsn.cumulocity.tenantUsageStatisticsCollection+json]
 

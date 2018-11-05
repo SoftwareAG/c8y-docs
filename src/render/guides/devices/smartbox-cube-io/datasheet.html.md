@@ -15,8 +15,8 @@ order: 20
 
 | Radio | | 
 | --- | --- |
-| 4G LTE | <ul><li>LTE Cat 4 (incl. 3G/2G)</li><li>LTE Cat 1 (incl. 3G/2G)</li><li>LTE Cat M1</li><li>NB-IoT (Cat NB1)</li></ul>|
-| 3G | <ul><li>UMTS &#124; HSPA+ (incl. 2G)</li><li>UMTS &#124; HSPA (incl. 2G)</li></ul>|
+| 4G LTE | <ul><li>LTE Cat 4 (incl. 3G/2G)</li><li>LTE Cat 1 (incl. 3G/2G)</li><li>LTE Cat M1</li><li>NB-IoT (Cat NB1)</li></ul> |
+| 3G | <ul><li>UMTS &#124; HSPA+ (incl. 2G)</li><li>UMTS &#124; HSPA (incl. 2G)</li></ul> |
 | 2G | GSM &#124; GPRS |
 | Regions | EMEA / APAC / Latinamerica / NorthAmerica / Australia / Global (3G / 2G) |
 | GPS | Supported by 2G and 3G Variances |
@@ -24,10 +24,10 @@ order: 20
 
 ### <a name="connectivity"></a>Connectivity/ Features
 
-| Connectivity/ Features <td colspan="2">
+| Connectivity/ Features | | |
 | --- | --- | --- |
-| Layout <td colspan="2"> ![Layout](/guides/images/devices/smartbox-cube-io/interface.png)
-| Fieldbus Modbus </br> ![ ](/guides/images/devices/smartbox-dp/profibus.png) | Type | Modbus RTU Master |
+| Layout <td colspan="2"> ![Layout](/guides/images/devices/smartbox-cube-io/interface.png)	
+| Fieldbus Modbus </br> ![ ](/guides/images/devices/smartbox-cube-io/modbus.png) | Type | Modbus RTU Master |
 | | Baudrate | 4800, 9600, 19200, 38400, 57600, 115200 |
 | | Parity | Even, ODD, NONE | 
 | | Stoppbits | 2,1 |
@@ -47,17 +47,17 @@ order: 20
 | | Act | Flashing: Sensor Board Power |
 | | Link | Flashing: Sensor Board is ready to process data |
 | USB <td colspan="2"> For programming, Logging and Trace the device
-
+	
 ### <a name="cloud-connector"></a>Cloud Connector
 
-| Cloud Connector <td colspan=2>
+| Cloud Connector | | |
 | --- | --- | --- |
 | Availability <td colspan=2> All Cumulocity Based systems, Cloud der Dinge Deutsche Telekom
 | Realtime Clock <td colspan=2> Updating Realtime automatical from #NTP timeserver
 | Application <td colspan=2> CloudFieldbus (CFB Integrated in Devicemanagement)</br>For SetUp connected field devices
 | Online Operations <td colspan=2> Remote Restart</br> Fieldbus Configuration Cloud-Device</br> Change Transmitinterval from device to Cloud</br> Change Communication. Baudrate, Databits, Parity, Stopbits</br> Operate the connected Field device:  Registervalues (R/W)</br> Operate the connected Field device:  Change CoilValues (R/W)</br> Operate the device with AT Commands in the shell
 | Communication <td colspan=2> MQTT
-| Security <td colspan=2> TLS
+| Security <td colspan=2> TLS-Security 1.0 / TLS 1.2 (ab Version 2.4.x)
 | Notifications <td colspan=2> Realtime and Pending Operations
 | Shell <td colspan=2> Operate the device with AT Commands in the shell
 | Location <td colspan=2> Identification by cellular network or GPS Signal (selected- see Radio)
@@ -83,19 +83,18 @@ order: 20
 
 ### <a name="general"></a>General
 
-| General <td colspan=3>
-| --- | --- | --- | --- |
-| Dimensions <td colspan=3> 70 x 70 x 45 mm
-| Weight <td colspan=3> 89g
-| GSM Antenna <td colspan=3> SMA Connector
-| Power Supply <td colspan=3> Nominal voltage range: 12-24 VDC, 10% </br> Maximum continuous (average) supply power: 2.5 W </br> Maximum continuous (average) supply current: 200 mA at 12V, 100 mA at 24V
-| Mounting <td colspan=3> Via DIN Rail Adapter or Adapter for Wall Mounting
-| SIM Card Format <td colspan=3> 2FF
-| Operating temperature <td colspan=3> -20..60&#176;C
-| Storage temperature <td colspan=3> -40..85&#176;C
-| Operating humidity <td colspan=3> Max. 85%
-| Storage humidity <td colspan=3> Max. 85%
-| IP Class <td colspan=3> IP20/IP54 (opt.)
-| Approvals </br> ![ ](/guides/images/devices/smartbox-dp/certification.png)| <strong>America</strong> | <strong>Europe </strong> | <strong>Australia</strong> |
-| | FCC /IC, PTCRB /GCF | R&TTE / GCF / RED | RCM, Telstra |
-| Conformity Declerations <td colspan=3> EMC-Directive 2014/30/EU </br> EN 55022:2010</br> EN 55024:2010</br> IEC 61000-6-1:2005</br> IEC 61000-6-3:2011</br> R&TTE-Directive 2014/53/EU</br> EN 301 511 V9.0.2</br> EN 301 908-1 V6.2.1</br> EN 301 908-2 V6.2.1</br> RoHS-DIrective 2011/65/EU</br> EN 50581:2012
+| General | |
+| --- | --- | 
+| Dimensions | 70 x 70 x 45 mm |
+| Weight | 89g |
+| GSM Antenna | SMA Connector |
+| Power Supply | Nominal voltage range: 12-24 VDC, 10% </br> Maximum continuous (average) supply power: 2.5 W </br> Maximum continuous (average) supply current: 200 mA at 12V, 100 mA at 24V |
+| Mounting | Via DIN Rail Adapter or Adapter for Wall Mounting |
+| SIM Card Format | 2FF |
+| Operating temperature | -20..60&#176;C |
+| Storage temperature | -40..85&#176;C |
+| Operating humidity | Max. 85% |
+| Storage humidity | Max. 85% |
+| IP Class | IP20/IP54 (opt.) |
+| Approvals | ![ ](/guides/images/devices/smartbox-cube-io/certification.png) |
+| Conformity Declerations | 2014/53/EU (Radio Equipment Directive - RED)</br></br><strong>Radio</strong></br>EN301511 v12.5.1 for GSM 900 and 1800 MHz</br>EN301908 v11.1.1 for UMTS band 1 and 8</br><strong>EMC</strong></br>EN 301489-1 v2.1.1 general part</br>EN 301489-52 v0.0.7 for GSM and UMTS</br><strong>Safety</strong></br>EN60950-01|</br> |

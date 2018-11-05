@@ -17,3 +17,5 @@ Typical real-time analytics use cases include:
 *   Compression: Store location updates of all cars only once every five minutes (but still send real-time data for the car that I am looking at to the user interface).
 
 In the following sections, we describe the basics for understanding how the Apama Event Processing Language (EPL) works and how you can create your own analytics or other server-side business logic and automation.
+
+>**Info**: This documentation assumes basic familiarity with Apama application development. Refer to the [Apama documentation](https://documentation.softwareag.com/onlinehelp/Rohan/Apama/v10-3/apama10-3/apama-webhelp/#page/apama-webhelp%2Fto-help_index.html%23) for further details.

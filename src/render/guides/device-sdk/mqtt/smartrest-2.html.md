@@ -454,7 +454,7 @@ Client receives:
 
 Having the X-ID as part of the topic gives you the freedom to easily use multiple template collections but adds additional bytes for every message.
 If the device anyways uses mostly (or completely) a single collection it makes sense to specify this collection as you default collection.
-With a default collection specified the client can use special topics which don't require the X-ID and instead the server will use the X-ID previously specified.
+With a default collection specified the client can use special topics which don't require the X-ID and instead the server will use the X-ID previously specified. The topics are "s/ud" for publishing and "s/dd" for subscribing.
 
 You can specify one X-ID within your MQTT ClientID (see [MQTT implementation](/guides/device-sdk/mqtt#mqtt-clientid)).
 Your MQTT ClientID could look like this:

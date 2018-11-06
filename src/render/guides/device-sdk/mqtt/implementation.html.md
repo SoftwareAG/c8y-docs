@@ -127,6 +127,8 @@ In MQTT, the "last will" is a message that is specified at connection time and t
 
 as last will message and "s/us" as last will topic raises an event whenever the device loses the connection.
 
+> The execution of the "last will" updates the device availability. 
+
 ### Debugging
 
 To support developers during development you can subscribe to the topic `s/e`.

@@ -18,7 +18,7 @@ These are listed in the following table. The columns show the following informat
 |Application|Functionality|String|Application type|Availability
 |:---:|:---|:---|:---|:---
 |[Administration](/guides/users-guide/administration)|Lets account administrators manage users, roles, tenants and applications.|administration|Web application| Standard Edition
-|[Apama](/guides/apama)|Define business operations for immediate processing of incoming data by using Apama's Event Processing Language (EPL). This is a per-tenant deployment.|apama-small|Microservice|Optional service
+|[Apama](/guides/apama)|Define business operations for immediate processing of incoming data by using Apama's Event Processing Language (EPL). This is a per-tenant deployment.|apama-small=<br> 1 core; 4 GB RAM<br>apama-medium=<br> 2 cores; 8 GB RAM<br>apama-large=<br>4 cores; 16 GB RAM|Microservice|Optional service
 |[Branding](/guides/users-guide/enterprise-edition/#branding)|Customize the look of your tenants to your own preferences.|branding|Microservice|Enterprise Edition
 |[Cep](/guides/event-language)|Define business operations based on realtime data by using the Esper CEP engine. This CEP variant uses a shared instance for multiple tenants. See "Cep-small" for a per-tenant approach. |cep|Microservice| Standard Edition
 |[CEP custom rules](/guides/event-language)|Upload your own CEP rules created with Esper in a per-tenant deployment. You need to be subscribed to the application "Cep-small" to be able to use this feature.|feature-cep-custom-rules|Feature|Optional service

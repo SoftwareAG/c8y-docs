@@ -15,7 +15,7 @@ Gateway: 192.168.1.1
 DNS: 8.8.8.8
 It is necessary that the PC used for connecting to WE500 belongs to the same network 192.168.1.x. For connecting to WE500, use a standard web browser and enter the following address in the URL bar:
 
-[192.168.1.160](192.168.1.160)
+	192.168.1.160
 
 ![Login](/guides/images/devices/we500/login1.png)
 

@@ -21,7 +21,7 @@ This section shows how to create a plugin that adds a new tab "Contact" to devic
 In order to achieve this goal you need to do the following steps:
 
 * Create a plugin.
-* Declare the plugin on the imports list of the [application manifest](/guides/web/wwb-sdk-for-plugins#application-manifest).
+* Declare the plugin on the imports list of the [application manifest](/guides/web/web-sdk-for-plugins#application-manifest).
 * Add a tab to devices.
 * Display data in the tab.
 * Persist the data to Cumulocity backend.

@@ -14,7 +14,7 @@ To install Cumulocity IoT Edge, the following is required:
 |**Edge OVA image**|To be downloaded from the [SAG Empower portal](https://empower.softwareag.com) |
 |**Cumulocity license file**|Send an email to support@cumulocity.com to request the license file. In the email, you must include <br> - your company name, under which the license has been bought <br> - the domain name (DNS), under which Cumulocity IoT Edge will be reachable|
 |**SSL key and SSL certificate**|Use your internal or an external CA (Certification Authority) to create these.|
-|**Apama license**|The Apama license key is provided as part of your purchase. To request the license keys for your Apama purchase, please contact the logistics team for your region:<br> - North and South America: [LogisSrvus@softwareagusa.com](LogisSrvus@softwareagusa.com) <br> - All Other Regions: [LogisticsServiceCenterGER@softwareag.com](LogisticsServiceCenterGER@softwareag.com)|
+|**Apama license**|The Apama license key is provided as part of your purchase. To request the license keys for your Apama purchase, please contact the logistics team for your region:<br> - North and South America: LogisSrvus@softwareagusa.com <br> - All Other Regions: LogisticsServiceCenterGER@softwareag.com|
 |**DNS entry**|The DNS (Domain Name System) is used to resolve human readable host names like www.cumulocity.com to machine readable IP addresses like 192.198.1.10. <br> If you want to connect to Edge VM within your LAN, the DNS entry has to be added for the domain_url (URL under which Edge can be reached) with the IP address of the host.|
 
 

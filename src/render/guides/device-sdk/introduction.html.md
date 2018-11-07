@@ -13,4 +13,4 @@ This Device SDK guide provides detailed information on
 * [device integration using Java](/guides/device-sdk/java) 
 * [device integration using C++](/guides/device-sdk/cpp)
 
-For information on the general concept of agents being used for interfacing IoT data sources with Cumulocity, refer to [Interfacing devices](/guides/concept/interfacing-devices) in the Concepts guide.
+For information on the general concept of agents being used for interfacing IoT data sources with Cumulocity, refer to [Interfacing devices](/guides/concepts/interfacing-devices) in the Concepts guide.

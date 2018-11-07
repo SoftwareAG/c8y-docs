@@ -101,7 +101,7 @@ To finally delete a tenant and remove all the data of the tenant, click the menu
 
 The **Custom properties** tab allows you to view and modify values of custom properties, either predefined ones (like "External reference") or those defined in the [Properties library](/guides/users-guide/administration#properties). Such properties are also displayed as columns in the [usage statistics table](#usage-stats).
 
-![Custom Properties](/guides/images/users-guide/subtenant-custom-properties.png)
+![Custom Properties](/guides/images/users-guide/subtenant-custom-properties.PNG)
 
 **Limiting subtenant device number**
 
@@ -161,7 +161,7 @@ Creating a tenant policy with a specific set of options and rules saves time whe
 
 Click **Tenant policies** in the **Tenants** menu to view all tenant policies available.
 
-<img src="/guides/images/users-guide/administration/admin_TenantPolicies.png" alt="Tenant policies" style="max-width: 100%">
+<img src="/guides/images/users-guide/Administration/Admin_TenantPolicies.png" alt="Tenant policies" style="max-width: 100%">
 
 For each tenant policy, the name, an optional description and the number of options and retention rules is provided, either in a list or a grid.
 

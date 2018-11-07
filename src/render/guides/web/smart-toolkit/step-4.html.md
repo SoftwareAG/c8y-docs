@@ -44,7 +44,7 @@ function configRoutes(
 }
 ```
 
-AngularJS uses syntax similar to [AMD](http://requirejs.org/docs/whyamd.html#amd) to declare dependencies. For more information, see [AngularJS DI Guide](https://docs.angularjs.org/guide/di). `$routeProvider` lets you choose which HTML file to load and which controller to execute depending on the route. For example, if your browser goes to [localhost:8080/index.html/#/login](localhost:8080/index.html/#/login), the file "login.html" will be loaded and the controller `LoginCtrl` will be executed. `.when('/:section')` allows the `:section` part of the URL to be anything, and you can access that value from the controller. The `controllerAs` value is important as it will be the variable name that is going to be used in HTML files to access values from the controller (e.g. `login.username`).
+AngularJS uses syntax similar to [AMD](http://requirejs.org/docs/whyamd.html#amd) to declare dependencies. For more information, see [AngularJS DI Guide](https://docs.angularjs.org/guide/di). `$routeProvider` lets you choose which HTML file to load and which controller to execute depending on the route. For example, if your browser goes to `localhost:8080/index.html/#/login`, the file "login.html" will be loaded and the controller `LoginCtrl` will be executed. `.when('/:section')` allows the `:section` part of the URL to be anything, and you can access that value from the controller. The `controllerAs` value is important as it will be the variable name that is going to be used in HTML files to access values from the controller (e.g. `login.username`).
 
 ```js
 app.config([

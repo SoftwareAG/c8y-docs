@@ -41,7 +41,7 @@ Klicken Sie **Anwendung hinzufügen** auf der Seite **Eigene Anwendungen**, um e
 
 <img src="/guides/images/benutzerhandbuch/admin-application-add.png" alt="Hinzufügen von Anwendungen" style="max-width: 50%">
 
-Wenn Sie die entsprechende Anwendung abonniert haben ("apama-small"), sehen Sie außerdem die Option **Eigene Apama-Regel hochladen**, um [eigene Apama CEP-Regeln](uploading-cep-rules) als Anwendung hochzuladen. 
+Wenn Sie die entsprechende Anwendung abonniert haben ("apama-small"), sehen Sie außerdem die Option **Eigene Apama-Regel hochladen**, um [eigene Apama CEP-Regeln](#uploading-cep-rules) als Anwendung hochzuladen. 
 
 #### <a name="uploading-zip-files"></a>Hochladen von Web-Anwendungen 
 

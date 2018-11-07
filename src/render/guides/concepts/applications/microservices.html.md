@@ -23,4 +23,4 @@ The hosting of the Microservice is provided by Cumulocity. This way developers c
 
 For detailed information on developing and deploying microservices on top of Cumulocity refer to the [Microservice SDK guide](/guides/microservice-sdk) which provides information on the general concept of microservices in Cumulocity as well as specific guidance and examples for various programming languages. 
 
->**Info:** For Microservice developers Cumulocity provides Microservice SDK in [Java programming language](/guides/microservice-sdk/java) and [C# programming language](/guides/microservice-sdk/cpp) for .Net Core. Refer to the relevant sections in the [Microservice SDK guide](/guides/microservice-sdk).
+>**Info:** For Microservice developers Cumulocity provides Microservice SDK in [Java programming language](/guides/microservice-sdk/java) and [C# programming language](/guides/microservice-sdk/cs) for .Net Core. Refer to the relevant sections in the [Microservice SDK guide](/guides/microservice-sdk).

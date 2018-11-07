@@ -42,7 +42,7 @@ Open the **Software** tab for the device and click **Install firmware**.
 
 For further information on these steps, refer to the description of the [Software](#software) tab.
 
->**Info:** To store other types of binaries in Cumulocity, switch to the [Administration application](/guides/images/users-guide/administration#files).
+>**Info:** To store other types of binaries in Cumulocity, switch to the [Administration application](/guides/users-guide/administration#files).
 
 **How to install firmware on multiple devices**
 

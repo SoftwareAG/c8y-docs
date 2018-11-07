@@ -3,7 +3,7 @@ title: Interacting with Cumulocity
 layout: redirect
 order: 50
 ---
-Once established an Internet connection and created at least one variable, it is possible to let WE500 interact with the [Cumulocity](www.cumulocity.com) platform using the account credentials.
+Once established an Internet connection and created at least one variable, it is possible to let WE500 interact with the Cumulocity platform using the account credentials.
 
 To do so, navigate to **Administration > Cloud > Cumulocity** tab.
 

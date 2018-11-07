@@ -116,14 +116,25 @@ Die Seite **Nutzungsstatistiken** zeigt statistische Informationen für jeden Un
 Die folgenden Informationen werden für jeden Untermandanten angezeigt:
 
 *   ID: ID des Untermandanten
-*   API-Anfragen: Gesamtanzahl der API-Anfragen, einschließlich Anfragen von Geräten und Anwendungen.
-*   API-Anfragen: Anzahl der API-Anfragen von Geräten.
-*   Speicher: Gespeicherte Daten in Ihrem Konto.
-*   Hauptgeräte: Anzahl der Geräte ohne Kindgeräte.
-*   Geräte: Die Gesamtanzahl der mit dem Untermandanten verbundenen Geräte.
-*   Abonnierte Anwendungen: Anzahl der vom Untermandanten abonnierten Anwendungen.
-*   Erstellungszeitpunkt: Datum und Zeit der Erstellung des Untermandanten.
-*   Übergeordneter Mandant: Name des übergeordneten Mandanten (nur vorhanden für den Management-Mandanten).
+*   API-Anfragen: Gesamtanzahl der API-Anfragen, einschließlich Anfragen von Geräten und Anwendungen
+*   Geräte-API-Anfragen: Anzahl der API-Anfragen von Geräten
+*   Speicher (MB): Gespeicherte Daten in Ihrem Konto
+*   Hauptgeräte: Anzahl der Geräte ohne Kindgeräte
+*   Höchstwert Hauptgeräte: Höchstanzahl Hauptgeräte, ohne Kindgeräte
+*   Geräte: Die Gesamtanzahl der mit dem Untermandanten verbundenen Geräte
+*   Höchstwert Geräte: Höchstanzahl Geräte, einschließlich Kindgeräte
+*   Endpunktgeräte: Blattgeräte (ohne Gateways und Kinder)
+*   Abonnierte Anwendungen: Anzahl der vom Untermandanten abonnierten Anwendungen
+*   Erstellungszeitpunkt: Datum und Zeit der Erstellung des Untermandanten
+*   Erzeugte Alarme: Anzahl der erzeugten Alarme
+*   Aktualisierte Alarme: Anzahl der aktualisierten Alarme
+*   Erstellte Stammdaten: Anzahl der erstellten Managed Objects
+*   Aktualisierte Stammdaten: Anzahl der aktualisierten Managed Objects
+*   Erstellte Ereignisse: Anzahl der erstellten Ereignisse
+*   Aktualisierte Ereignisse: Anzahl der aktualisierten Ereignisse
+*   Erstellte Messwerte: Anzahl der erstellten Messwerte
+*   Gesamt Inbound-Transfer: Summe aller Inbound-Transfers (erzeugte Alarme, aktualisierte Alarme, erstellte Ereignisse, aktualisierte Ereignisse, erstellte Stammdaten, aktualisierte Stammdaten, erstellte Messwerte). Inbound-Transfer bezeichnet alle Inbound-Anfragen, die ausgeführt werden, um Daten zur Cumulocity IoT-Plattform zu übertragen. Dazu zählen unter anderem Sensormesswerte, Alarme, Ereignisse und Kommandos, die zwischen Geräten und der Cumulocity IoT-Plattform mittels REST- und/oder MQTT-Schnittstellen übertragen werden. Solche Inbound-Anfragen können auch von eigenen Microservices, Webseiten oder anderen Clients stammen.  
+*   Übergeordneter Mandant: Name des übergeordneten Mandanten (nur verfügbar für den Management-Mandanten)
 *   Externe Referenz: Dieses Feld ist für den individuellen Gebrauch. Sie können hier beispielsweise einen Link zum CRM-System oder eine interne Kundennummer einfügen.
 
 Außerdem werden benutzerdefinierte Attribute angezeigt, falls vorhanden.

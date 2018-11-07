@@ -24,6 +24,6 @@ In the **Language** field, select a language from the dropdown list.
 
 >The default language is English.
 
-Click **Change password** to change your current password. For details refer to [Changing your password](guides/users-guide/overview/#change-password).
+Click **Change password** to change your current password. For details refer to [Changing your password](/guides/users-guide/overview/#change-password).
 
 Click **Save** at the bottom of the window to apply your settings.

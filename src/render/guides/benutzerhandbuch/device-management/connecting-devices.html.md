@@ -29,8 +29,8 @@ Der folgende Prozess beschreibt das manuelle Verbinden eines Geräts. Je nach Ge
 Um Geräte mit Ihrem Cumulocity-Konto zu verbinden, führen Sie folgende Schritte aus:
 
 1. Öffnen Sie die Seite **Geräteregistrierung** im Menü **Geräte** und klicken Sie **Gerät registrieren**.
-2. Wählen Sie im im Dialog **Geräte registrieren** die Option **Manuelle Geräteregistrierung**.
-<img src="/guides/images/benutzerhandbuch/devmgmt-device-registration-general.png" alt="Manuelle Geräteregistrierung" style="max-width: 50%">
+2. Wählen Sie im im Dialog **Geräte registrieren** die Option **Manuelle Geräteregistrierung**.<br><br>
+<img src="/guides/images/benutzerhandbuch/devmgmt-device-registration-general.png" alt="Manuelle Geräteregistrierung" style="max-width: 50%"><br><br>
 3. Geben Sie im Feld **Geräte-ID** die eindeutige Kennung des Geräts ein. Diese finden Sie in der Gerätedokumentation. Bei mobilen Geräten handelt es sich dabei meistens um die IMEI (International Mobile Equipment Identity), die häufig auf der Rückseite des Geräts zu finden ist. 
 4. Wählen Sie optional eine Gruppe aus, der Sie das Gerät nach der Registrierung zuweisen möchten. Weiter Informationen zum Zuweisen zu Gruppen finden Sie unter [Gruppieren von Geräten](#grouping-devices).
 5. Klicken Sie **Weiteres Gerät hinzufügen**, um ein weiteres Gerät zu registrieren. Geben Sie auch hier die Geräte-ID ein und weisen Sie optional das Gerät einer Gruppe zu. Auf diese Weise können Sie mehrere Geräte in einem Schritt registrieren.
@@ -45,7 +45,7 @@ Schalten Sie das Gerät bzw. die Geräte ein und warten Sie, bis die Verbindung 
 Wenn ein Gerät verbunden ist, wechselt der Status auf **Bitte akzeptieren**. Klicken Sie **Akzeptieren**, um die Verbindung zu bestätigen. Der Status des Geräts wechselt auf **Akzeptiert**.
 
 >**Info**: Bei Problemen finden Sie möglicherweise weitere Information
-
+>
 >* im jeweiligen [Device Guide](/guides/devices) für Ihren Gerätetypen,
 * im [Developer Center](http://cumulocity.com/dev-center/) auf unserer Website
 * oder im Handbuch Ihres Geräts.
@@ -74,41 +74,39 @@ Geräte können einen der folgenden Status haben:
 Um eine größere Anzahl von Geräten zu registrieren, bietet Cumulocity die Möglichkeit der Bulk-Registrierung, mit der viele Geräte gleichzeitig in einem Schritt registriert werden können. Das geschieht über das Hochladen einer CSV-Datei.
 
 1. Öffnen Sie die Seite **Geräteregistrierung** im Menü **Geräte** und wählen Sie **Gerät registrieren**.
-2. Wählen Sie im Im Dialog **Geräte registrieren** die Option **Bulk-Geräteregistrierung**.
-<img src="/guides/images/users-guide/DeviceManagement/devmgmt-bulk-registration.png" alt="Bulk-Registrierung" style="max-width: 100%">
+2. Wählen Sie im Im Dialog **Geräte registrieren** die Option **Bulk-Geräteregistrierung**.<br><br>
+<img src="/guides/images/benutzerhandbuch/devmgmt-bulk-registration.png" alt="Bulk-Registrierung" style="max-width: 50%"><br><br>
 3. Klicken Sie **Datei zum Hochladen auswählen** und wählen Sie die hochzuladende CSV-Datei auf Ihrem Computer aus. 
 
 Abhängig vom Format der hochgeladenen CSV-Datei wird eine der beiden folgenden Registrierungsarten ausgeführt:
 
-1. **Einfache Registrierung**
+**Einfache Registrierung**
 
-	Die CSV-Datei enthält zwei Spalten: ID;PATH, wobei ID der Kennung des Geräts entspricht, z. B. der Seriennummer, und PATH eine durch Schrägstrich separierte Liste von Gruppennamen ist (Pfad zu den Gruppen, zu denen das Gerät nach der Registrierung hinzugefügt werden soll).
-
+Die CSV-Datei enthält zwei Spalten: ID;PATH, wobei ID der Kennung des Geräts entspricht, z. B. der Seriennummer, und PATH eine durch Schrägstrich separierte Liste von Gruppennamen ist (Pfad zu den Gruppen, zu denen das Gerät nach der Registrierung hinzugefügt werden soll).
 
 		ID;PATH
 		Device1;Group A
 		Device2;Group A/Group B
 
+Nachdem die Datei hochgeladen wurde, werden alle erforderlichen neuen Gruppen sowie alle neuen Registrierungen mit dem Status **Warten auf Verbindung** erstellt . Anschließend muss der übliche Registrierungsprozess (AKZEPTIEREN) durchlaufen werden (siehe oben).
 
-	Nachdem die Datei hochgeladen wurde, werden alle erforderlichen neuen Gruppen sowie alle neuen Registrierungen mit dem Status **Warten auf Verbindung** erstellt . Anschließend muss der übliche Registrierungsprozess (AKZEPTIEREN) durchlaufen werden (siehe oben).
+**Vollständige Registrierung**
 
-1. **Vollständige Registrierung**
-
-	Die CSV-Datei muss mindestens die IDs der Geräte als Kennung sowie die Zugangsdaten zu den Geräten enthalten.  
+Die CSV-Datei muss mindestens die IDs der Geräte als Kennung sowie die Zugangsdaten zu den Geräten enthalten.  
 
 		ID;Credentials;PATH;ICCID;NAME;TYPE
 		006064ce800a;LF2PWJoLG1Fz;Sample_Düsseldorf;+491555555;Sample_Device1;c8y_Device
 		006064ce8077;OowoGKAbiNJs;Sample_Düsseldorf;+491555555;Sample_Device2;c8y_Device
 	
-	Darüberhinaus kann die Datei weitere Spalten, etwa ICCID, NAME, TYPE wie im Beispiel oben, enthalten. 
+Darüberhinaus kann die Datei weitere Spalten, etwa ICCID, NAME, TYPE wie im Beispiel oben, enthalten. 
 	
-	Um die Geräte zu verbinden, müssen diese mit den relevanten Informationen vorregistriert sein. Genauer gesagt muss jedes Gerät folgendermaßen konfiguriert sein: 
+Um die Geräte zu verbinden, müssen diese mit den relevanten Informationen vorregistriert sein. Genauer gesagt muss jedes Gerät folgendermaßen konfiguriert sein: 
 
-	* Benutzername - der Benutzername für das Cumulocity-Konto im Format &lt;tenant&gt;/device_&lt;id&gt;, wobei &lt;tenant&gt; sich auf den Mandanten bezieht, von welchem die CSV-Datei importiert wird und &lt;id&gt; sich auf den entsprechenden Wert in der CSV-Datei bezieht.
-	* Passwort - das Passwort für den Zugang zu Cumulocity, entspricht dem Wert "Credentials" in der CSV-Datei.
-	* Gerätedaten - Felder TYPE, NAME, ICCID, IDTYPE, PATH, SHELL in der CSV-Datei.
+* Benutzername - der Benutzername für das Cumulocity-Konto im Format &lt;tenant&gt;/device_&lt;id&gt;, wobei &lt;tenant&gt; sich auf den Mandanten bezieht, von welchem die CSV-Datei importiert wird und &lt;id&gt; sich auf den entsprechenden Wert in der CSV-Datei bezieht.
+* Passwort - das Passwort für den Zugang zu Cumulocity, entspricht dem Wert "Credentials" in der CSV-Datei.
+* Gerätedaten - Felder TYPE, NAME, ICCID, IDTYPE, PATH, SHELL in der CSV-Datei.
 	
-	Nachdem die Daten importiert wurden, erhalten Sie Informationen zu der Anzahl der Geräte, die vorregistriert wurden, sowie zu möglichen aufgetretenen Fehlern.
+Nachdem die Daten importiert wurden, erhalten Sie Informationen zu der Anzahl der Geräte, die vorregistriert wurden, sowie zu möglichen aufgetretenen Fehlern.
 	
 Für beide CSV-Dateiformate werden entsprechende Vorlagen zum Herunterladen bereitgestellt, aus denen Sie die Struktur ersehen oder kopieren können. 
 

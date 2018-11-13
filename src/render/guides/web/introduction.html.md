@@ -6,8 +6,8 @@ layout: standalone
 
 This Web SDK guide provides information on the Web SDK which enables you to develop web applications on top of our platform, communicate through our API and apply UI components to your custom application.
 
-The latest generation of our Web SDK is [Web SDK for Angular](/guides/web/angular) has now been released in beta. If you are new to developing web applications being deployed on top of Cumulocity we recommend that you take a closer look at it while making architecture decisions.
+The latest generation of our Web SDK - [Web SDK for Angular](/guides/web/angular) - has now been released in beta. If you are new to developing web applications being deployed on top of Cumulocity we recommend that you take a closer look at it while making architecture decisions.
 
-Information on older versions (Web SDK for Angular JS and Web SDK for plugins) is still provided but these versions will soon be outdated.
+Information on [Web SDK for plugins](/guides/web/web-sdk-for-plugins) is still provided but this version will not be invested into in the future.
 
-If you have previously been working with these versions you might be interested in some short [background information](/guides/web/background) on the evolution of the UI stack to better understand how and why it is now designed the way it is.
+If you have previously been working with older versions you might be interested in some short [background information](/guides/web/background) on the evolution of the UI stack to better understand how and why it is now designed the way it is.

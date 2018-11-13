@@ -6,20 +6,16 @@ layout: redirect
 
 There are two processing modes for API requests in Cumulocity: *persistent* and *temporary*. The "persistent" mode is the default: It will store data in the Cumulocity database as well as send the data to the real-time engine. After both is done, Cumulocity returns the result of the request.
 
-The "temporary" mode will only send the data to the real-time engine and immediately return asynchronously. This mode is for efficiently monitoring particular data in realtime.
+Data marked as "temporary" is not stored into Cumulocity's database but just handled by the real-time engine. This saves on storage and processing cost for example when tracking devices in real-time without requiring data to be stored.
+
+The "temporary" mode will only send the data to the real-time engine and immediately return asynchronously and not store it in Cumulocity's database. This mode saves storage and processing costs and is useful for example when tracking devices in real-time without requiring data to be stored.
+
+![CEP architecture](/guides/images/concepts-guide/realtime.png)
+
 
 ### Examples
 
-Assume that location updates from cars should be monitored every second while the car is driving, but only be stored once in a minute into the database for reporting purposes. This is done using the following statement:
-
-**CEL**
-
-    insert into CreatedEvent
-    select * from EventCreated e
-    where getObject(e, "c8y_LocationUpdate") is not null
-    output first every 60 seconds
-
-**Apama EPL**
+Assume that location updates from cars should be monitored every second while the car is driving, but only be stored once in a minute into the database for reporting purposes. This is done using the following Apama statement:
 
 	monitor SendEveryMinute {
 		dictionary<string, Event> latestUpdates;
@@ -41,16 +37,6 @@ Assume that location updates from cars should be monitored every second while th
 	}
 
 Another option is to output only every 60th update.
-
-**CEL**
-
-    insert into CreatedEvent
-    select * from EventCreated e
-    where getObject(e, "c8y_LocationUpdate") is not null
-    output first every 60 events
-
-
-**Apama EPL** 
 	
 	monitor SendEverySixtyEvents {
 		event UpdateAndCount {

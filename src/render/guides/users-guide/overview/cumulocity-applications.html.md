@@ -7,11 +7,34 @@ layout: redirect
 
 Per default, Cumulocity comes with the following three standard applications:
 
-| &nbsp; |Application|Description|
-|:---:|:---|:---|
-|<i class="c8y-icon c8y-icon-device-management c8y-icon-duocolor" style="font-size: 36px;"></i>|[Device Management](/guides/users-guide/device-management)|The Device Management application provides functionalities for managing and monitoring devices and enables you to control and troubleshoot devices remotely.  
-|<i class="c8y-icon c8y-icon-cockpit c8y-icon-duocolor" style="font-size: 36px;"></i>|[Cockpit](/guides/users-guide/cockpit)|The Cockpit application provides you with options to manage and monitor  Internet of Things (IoT) assets and data from a business perspective.
-|<i class="c8y-icon c8y-icon-administration c8y-icon-duocolor" style="font-size: 36px;"></i>|[Administration](/guides/users-guide/administration)|The Administration application enables account administrators to manage their users, roles, tenants, applications and business rules and lets them configure a number of settings for their account. 
+<table>
+<col width = 100>
+<col width = 150>
+<thead>
+<tr>
+<th style="text-align:center">&nbsp;</th>
+<th style="text-align:left">Application</th>
+<th style="text-align:left">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center"><i class="c8y-icon c8y-icon-device-management c8y-icon-duocolor" style="font-size: 36px;"></i></td>
+<td style="text-align:left"><a href="/guides/users-guide/device-management" class="no-ajaxy">Device Management</a></td>
+<td style="text-align:left">The Device Management application provides functionalities for managing and monitoring devices and enables you to control and troubleshoot devices remotely.  </td>
+</tr>
+<tr>
+<td style="text-align:center"><i class="c8y-icon c8y-icon-cockpit c8y-icon-duocolor" style="font-size: 36px;"></i></td>
+<td style="text-align:left"><a href="/guides/users-guide/cockpit" class="no-ajaxy">Cockpit</a></td>
+<td style="text-align:left">The Cockpit application provides you with options to manage and monitor  Internet of Things (IoT) assets and data from a business perspective.</td>
+</tr>
+<tr>
+<td style="text-align:center"><i class="c8y-icon c8y-icon-administration c8y-icon-duocolor" style="font-size: 36px;"></i></td>
+<td style="text-align:left"><a href="/guides/users-guide/administration" class="no-ajaxy">Administration</a></td>
+<td style="text-align:left">The Administration application enables account administrators to manage their users, roles, tenants, applications and business rules and lets them configure a number of settings for their account. </td>
+</tr>
+</tbody>
+</table>
 
 Apart from these standard applications that initially come with Cumulocity, various additional applications are provided, offering a wide variety of functionalities. The availability of this applications depends on the Edition you are using and the applications your organization is subscribed to.
 

@@ -58,7 +58,7 @@ layout: redirect
 <td style="text-align:left">TimeStamp</td>
 <td style="text-align:left">1</td>
 <td style="text-align:left">The time when the object has been created.</td>
-<td style="text-align:left">PUT only</td>
+<td style="text-align:left">POST only</td>
 </tr>
 <tr>
 <td style="text-align:left">lastUpdated</td>

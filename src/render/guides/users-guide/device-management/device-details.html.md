@@ -3,9 +3,6 @@ order: 31
 title: Device details
 layout: redirect
 ---
-
-<a name="device-details"></a>
-
 For each device, detailed information is available. The kind of information actually provided for a device depends on the device type, device usage and the configuration of your user interface. 
 
 To view detailed information on the device, click a device in the device list. 
@@ -56,15 +53,48 @@ The **Info** tab summarizes management-relevant device information in a dashboar
 
 The information is provided on the following cards:
 
-|Card|Description|
-|:---|:---|
-|Notes|Provides optional notes to inform about current activities. Notes usually may only be edited by an administrator. To add or edit a note, click **Edit**, enter your note or your modifications in the text box and save your edits by clicking the green checkmark at the right of the text box. 
-|Device status|Displays connection-relevant information, as described in detail in [Connection monitoring](#connection-monitoring). 
-|Device and communication|Shows a data point graph displaying realtime data on particular measurements. For details, refer to [Using the Data Explorer](/guides/users-guide/cockpit#data-explorer) in the Cockpit documentation.
-|Device data|Displays editable information on the device (name, type, ID, owner, last updated). The fields **ID** and **Last updated** cannot be edited. Moreover information on hardware (editable) and firmware (not editable) is displayed here if available.
-|Active, critical alarms|Shows the active critical alarms for the device.
-|Groups assignment|Displays the groups the device belongs to. Moreover you can add the device to groups here or unassign it from groups. For details on grouping devices see [Grouping devices](#grouping-devices).
-|Location|Shows the location of a device on a map as reported by the device or as manually set. For details, refer to [Location](#location).
+<table>
+<col width = 150>
+<thead>
+<tr>
+<th style="text-align:left">Card</th>
+<th style="text-align:left">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">Notes</td>
+<td style="text-align:left">Provides optional notes to inform about current activities. Notes usually may only be edited by an administrator. To add or edit a note, click <strong>Edit</strong>, enter your note or your modifications in the text box and save your edits by clicking the green checkmark at the right of the text box. </td>
+</tr>
+<tr>
+<td style="text-align:left">Device status</td>
+<td style="text-align:left">Displays connection-relevant information, as described in detail in <a href="#connection-monitoring" class="no-ajaxy">Connection monitoring</a>. </td>
+</tr>
+<tr>
+<td style="text-align:left">Device and communication</td>
+<td style="text-align:left">Shows a data point graph displaying realtime data on particular measurements. For details on data point graphs, refer to <a href="/guides/users-guide/cockpit#data-explorer" class="no-ajaxy">Using the Data Explorer</a> in the Cockpit documentation. <br>The following measurements may be shown here: <br> 
+<strong>Data points</strong>: c8y_Battery.level, c8y_SignalStrength.rssi, c8y_MemoryMeasurement.Used, c8y_CPUMeasurement.Workload, c8y_NetworkStatistics.Upload, c8y_SignalStrength.RCSP, c8y_SignalStrength.ber, c8y_SignalStrength.ECN0, c8y_NetworkStatistics.Download, c8y_MemoryMeasurement.Total <br>
+<strong>Alarms</strong>: c8y_UnavailabilityAlarm<br>
+<strong>Events</strong>: c8y_LocationUpdate</td>
+</tr>
+<tr>
+<td style="text-align:left">Device data</td>
+<td style="text-align:left">Displays editable information on the device (name, type, ID, owner, last updated). The fields <strong>ID</strong> and <strong>Last updated</strong> cannot be edited. Moreover information on hardware (editable) and firmware (not editable) is displayed here if available.</td>
+</tr>
+<tr>
+<td style="text-align:left">Active, critical alarms</td>
+<td style="text-align:left">Shows the active critical alarms for the device.</td>
+</tr>
+<tr>
+<td style="text-align:left">Groups assignment</td>
+<td style="text-align:left">Displays the groups the device belongs to. Moreover you can add the device to groups here or unassign it from groups. For details on grouping devices see <a href="#grouping-devices" class="no-ajaxy">Grouping devices</a>.</td>
+</tr>
+<tr>
+<td style="text-align:left">Location</td>
+<td style="text-align:left">Shows the location of a device on a map as reported by the device or as manually set. For details, refer to <a href="#location" class="no-ajaxy">Location</a>.</td>
+</tr>
+</tbody>
+</table>
 
 ### <a name="child-devices"></a>Child devices
 

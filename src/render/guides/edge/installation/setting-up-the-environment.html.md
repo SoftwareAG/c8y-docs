@@ -13,6 +13,8 @@ For your convenience, we provide two hypervisor examples for setting up Cumuloci
 
 ### VM login details
 
+SSH login into Edge is allowed through the “admin” user. All operational activities described in this guide need to be carried out through the admin user.
+
 Use the following login credentials for SSH login into the Edge instance:
  
 * Username: admin
@@ -24,4 +26,8 @@ Use the following command to log into Edge server via SSH:
 	
 	$ Password: manage
 	
->**Info**: The default user for Edge is “admin”. The admin user has root privileges for the machine.  
+
+>**Info**: 
+Root access is not supported in the Edge VM instance. Changes made as root user might cause failure of the described operational procedures. 
+Moreover, the Edge VM is tested and validated with the configuration shipped (i.e. OS version/patch level, other components compatibility etc). Root access would alter Cumulocity IoT Edge to an unknown and not tested configuration and handling support tickets would no longer work. 
+

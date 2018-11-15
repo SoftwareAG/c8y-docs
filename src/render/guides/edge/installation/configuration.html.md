@@ -56,15 +56,17 @@ You will be prompted to select one of the following options:
 
 		$ Enter Tenant Admin Username
 
-1. Provide a new password for the “tenant admin username”. This password is later used to login to the system using the web browser. 
+2. Provide a new password for the “tenant admin username”. This password is later used to login to the system using the web browser. 
 
 		$ Enter Tenant Admin Password 
 
-1. Provide a domain name, e.g. "myown.iot.com". The domain name must match the domain name of the SSL Certificate.
+3. Provide a domain name, e.g. "myown.iot.com". The domain name must match the domain name of the SSL certificate.
 
 		$ Enter Domain name 
 
-1. Provide the absolute path for the SSL certificate file, e.g. "/home/admin/myown-selfsigned.crt".
+	>**Important**: The Domain URL cannot be changed once being configured. Make 	sure to use the name finally desired.
+
+4. Provide the absolute path for the SSL certificate file, e.g. "/home/admin/myown-selfsigned.crt".
 
 		$ Enter Domain SSL Certificate file path
 
@@ -75,7 +77,9 @@ You will be prompted to select one of the following options:
 1. Provide the absolute path for the “.licence” file e.g. e.g. "/home/admin/myown.iot.com.licence".
 
 		$ Enter Cumulocity License file path
-
+	
+	>**Important**: Do not rename the licence file received from Cumulocity support. Renaming the licence file causes failure of post installation. 
+	
 1. Provide the absolute path for the “.xml” file, e.g. "/home/admin/<filename>.xml".
 
 		$ Enter Apama License file path (Optional. Press Enter to continue)

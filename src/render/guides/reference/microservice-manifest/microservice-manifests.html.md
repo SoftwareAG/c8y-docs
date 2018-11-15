@@ -105,7 +105,7 @@ layout: redirect
             "support": "support@new-company.com"
         },
         "isolation": "MULTI_TENANT",
-        "scale": "auto",
+        "scale": "AUTO",
         "resources": {
             "cpu": "1",
             "memory": "1G"

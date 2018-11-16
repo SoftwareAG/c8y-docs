@@ -157,24 +157,24 @@ Example response:
 
 Example request: Retrieve supported measurements of a managed object
 
-	GET /inventory/managedObjects/<<deviceId>>/supportedMeasurements
-	Host: ...
-	Authorization: Basic ...
+    GET /inventory/managedObjects/<<deviceId>>/supportedMeasurements
+    Host: ...
+    Authorization: Basic ...
 
 Example response:
 
-	HTTP/1.1 200 OK
-	{
-		"c8y_SupportedMeasurements": ["c8y_AnalogMeasurement", "c8y_MotionMeasurement", "c8y_SignalStrength", "c8y_TemperatureMeasurement"]
-	}
+    HTTP/1.1 200 OK
+    {
+        "c8y_SupportedMeasurements": ["c8y_AnalogMeasurement", "c8y_MotionMeasurement", "c8y_SignalStrength", "c8y_TemperatureMeasurement"]
+    }
 
 Important: In order to have fragment names included in supported measurements list, fragment has to have specific structure:
 
 "fragment_name" : {
-	"serie_name" : {
-		"value" : ...
-		"unit" : ...
-	}
+    "serie_name" : {
+        "value" : ...
+        "unit" : ...
+    }
 }
 
 Real example:
@@ -184,6 +184,23 @@ Real example:
 }
 
 Fragment_name and serie_name can be replaced by different valid json property name, but that name cannot contain whitespaces and special characters like [],*. The structure has to be exactly as above, two-level deep json object.
+
+### GET supported series of a managed object
+
+Example request: Retrieve supported series of a managed object
+
+    GET /inventory/managedObjects/<<deviceId>>/supportedSeries
+    Host: ...
+    Authorization: Basic ...
+
+Example response:
+
+    HTTP/1.1 200 OK
+    {
+        {"c8y_SupportedSeries":["c8y_TemperatureMeasurement.T","c8y_SpeedMeasurement.speed","c8y_SignalStrength.rssi"]}
+    }
+    
+Important: In order to have fragment names included in supported series list, fragment has to have specific structure. See above explanation regarding supported measurements.
 
 ### PUT - Update a managed object
 

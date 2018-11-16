@@ -8,9 +8,13 @@ Cumulocity provides you with an utility tool for easy microservice packaging, de
 
     wget http://resources.cumulocity.com/examples/microservice
       
+After that run
+
+	chmod +x microservice
+
 To show all possibilities, type 
 
-    $ microservice help 
+    /microservice help
     
 The response will be:
     
@@ -33,6 +37,10 @@ The response will be:
     	-te  | --tenant			# Tenant used
     	-a   | --application 	# Name upon which the application will be registered on the platform. Default value from --name parameter
     	-id  | --applicationId	# Application used for subscription purposes. Required only for solemn subscribe execution
+
+In addition, it is required to have the "jq" package installed. To install, run:
+
+	sudo yum install jq
 
 ### Docker
 

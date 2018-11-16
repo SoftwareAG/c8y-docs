@@ -14,6 +14,6 @@ The script can be run in a parent folder holding such structure, or by passing t
 
 The sample execution
 
-    $microservice pack -n hello-world
+    microservice pack -n hello-world
     
 will create a zip file with the name "hello-world", and an intermediate image.tar - exported docker image. 

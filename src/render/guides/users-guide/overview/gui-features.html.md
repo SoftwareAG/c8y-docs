@@ -62,7 +62,7 @@ The application switcher allows you to quickly switch between applications. Clic
 
 The application switcher shows all Cumulocity applications you currently have access to. This can be subscribed applications, either built-in or custom ones, and [own applications](/guides/user-guide/administration#own-applications). Just click the icon for the desired application to open it as active application.
 
-If you are using SAG One Cloud, the application switcher also shows other SAG One Cloud applications at the first level, followed by the Cumulocity applications:
+If you are using SAG Cloud, the application switcher also shows other SAG Cloud applications at the first level, followed by the Cumulocity applications:
 
 <img src="/guides/images/users-guide/app-switcher-sag-cloud.png" alt="Application switcher 2-level" style="max-width: 50%">
 

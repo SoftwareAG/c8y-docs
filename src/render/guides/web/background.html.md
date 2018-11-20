@@ -133,7 +133,7 @@ The whole process was focused on enabling the complete stack of modern web dev a
 
 One big change is that so far, modules (or plugins) where always represented during development and after build, so they could easily be composed by adding or removing a script. As we are now bundling everything, the modules can only be put together during development so the possibility to edit an app from the UI disappears for now.
 
-At this point, plugins are trully just modules. We will keep the name around to refer to subpackages that contain some kind of isolated functionality.
+At this point, plugins are truely just modules. We will keep the name around to refer to subpackages that contain some kind of isolated functionality.
 
 #### Publishing to npm
 

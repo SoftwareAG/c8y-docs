@@ -115,7 +115,7 @@ Depending on the format of the uploaded CSV file, one of the following registrat
 
 * User name - the user name for accessing Cumulocity must have the format &lt;tenant&gt;/device_&lt;id&gt;, where &lt;tenant&gt; refers to the tenant from which the CSV file is imported and &lt;id&gt; refers to the respective value in the CSV file.
 * Password - the password to access Cumulocity, equals the value "Credentials" in the CSV file.
-* Device in managed object representation - fields "Type", "Name", "Iccid", "Idtype", "Path", "Shell" in the CSV file.
+* Device in managed object representation - fields TYPE, NAME, ICCID, IDTYPE, PATH, SHELL in the CSV file.
 
 After the data is imported, you will get feedback on the number of devices that were pre-registered as well as on any potential errors that may have occurred.
 	

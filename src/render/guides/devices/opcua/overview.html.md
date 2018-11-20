@@ -19,4 +19,8 @@ The OPC UA agent finally communicates with Cumulocity using the REST API.
 ### Prerequisites
 The OPC-UA agent is written in java and runs on an industrial PC and the basic required Java Runtime Environment 7 or newer.
 
-> Note that Java must be in your path variable
+>**Info:** The Java must be in your path variable
+
+The OPC UA agent has to connect to the Cumulocity server with a certificate. Any certificate would work, including a self signed certificate.
+
+> **Info:** The server needs to have a certificate even when it is not used.

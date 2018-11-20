@@ -6,19 +6,104 @@ layout: redirect
 
 ### Managed Object [application/vnd.com.nsn.cumulocity.managedObject+json]
 
-|Name|Type|Occurs|Description|PUT/POST|
-|:---|:---|:-----|:----------|:-------|
-|id|String|1|Unique identifier of the object, automatically allocated when the object is created (see above).|No|
-|self|URL|1|Link to this resource.|No|
-|type|String|0..1|The most specific type of the managed object as fully qualified Java-style type name, dots replaced by underscores.|Optional|
-|name|String|0..1|Human-readable name that is used for representing the object in user interfaces.|Optional|
-|\*|Object|0..n|Additional properties associated with the specific ManagedObject.|Optional|
-|lastUpdated|TimeStamp|1|The time when the object was last updated.|No|
-|childDevices|ManagedObject ReferenceCollection|0..1|A collection of references to child devices.|No|
-|childAdditions|ManagedObject ReferenceCollection|0..1|A collection of references to child additions.|No|
-|childAssets|ManagedObject ReferenceCollection|0..1|A collection of references to child assets.|No|
-|deviceParents|ManagedObject ReferenceCollection|0..1|A collection of references to device parent objects.|No|
-|assetParents|ManagedObject ReferenceCollection|0..1|A collection of references to asset parent objects.|No|
+<table>
+<col width = 150>
+<thead>
+<tr>
+<th style="text-align:left">Name</th>
+<th style="text-align:left">Type</th>
+<th style="text-align:left">Occurs</th>
+<th style="text-align:left">Description</th>
+<th style="text-align:left">PUT/POST</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">id</td>
+<td style="text-align:left">String</td>
+<td style="text-align:left">1</td>
+<td style="text-align:left">Unique identifier of the object, automatically allocated when the object is created (see above).</td>
+<td style="text-align:left">No</td>
+</tr>
+<tr>
+<td style="text-align:left">self</td>
+<td style="text-align:left">URL</td>
+<td style="text-align:left">1</td>
+<td style="text-align:left">Link to this resource.</td>
+<td style="text-align:left">No</td>
+</tr>
+<tr>
+<td style="text-align:left">type</td>
+<td style="text-align:left">String</td>
+<td style="text-align:left">0..1</td>
+<td style="text-align:left">The most specific type of the managed object as fully qualified Java-style type name, dots replaced by underscores.</td>
+<td style="text-align:left">Optional</td>
+</tr>
+<tr>
+<td style="text-align:left">name</td>
+<td style="text-align:left">String</td>
+<td style="text-align:left">0..1</td>
+<td style="text-align:left">Human-readable name that is used for representing the object in user interfaces.</td>
+<td style="text-align:left">Optional</td>
+</tr>
+<tr>
+<td style="text-align:left">*</td>
+<td style="text-align:left">Object</td>
+<td style="text-align:left">0..n</td>
+<td style="text-align:left">Additional properties associated with the specific ManagedObject.</td>
+<td style="text-align:left">Optional</td>
+</tr>
+<tr>
+<td style="text-align:left">creationDate</td>
+<td style="text-align:left">TimeStamp</td>
+<td style="text-align:left">1</td>
+<td style="text-align:left">The time when the object has been created.</td>
+<td style="text-align:left">POST only</td>
+</tr>
+<tr>
+<td style="text-align:left">lastUpdated</td>
+<td style="text-align:left">TimeStamp</td>
+<td style="text-align:left">1</td>
+<td style="text-align:left">The time when the object was last updated.</td>
+<td style="text-align:left">No</td>
+</tr>
+<tr>
+<td style="text-align:left">childDevices</td>
+<td style="text-align:left">ManagedObject ReferenceCollection</td>
+<td style="text-align:left">0..1</td>
+<td style="text-align:left">A collection of references to child devices.</td>
+<td style="text-align:left">No</td>
+</tr>
+<tr>
+<td style="text-align:left">childAdditions</td>
+<td style="text-align:left">ManagedObject ReferenceCollection</td>
+<td style="text-align:left">0..1</td>
+<td style="text-align:left">A collection of references to child additions.</td>
+<td style="text-align:left">No</td>
+</tr>
+<tr>
+<td style="text-align:left">childAssets</td>
+<td style="text-align:left">ManagedObject ReferenceCollection</td>
+<td style="text-align:left">0..1</td>
+<td style="text-align:left">A collection of references to child assets.</td>
+<td style="text-align:left">No</td>
+</tr>
+<tr>
+<td style="text-align:left">deviceParents</td>
+<td style="text-align:left">ManagedObject ReferenceCollection</td>
+<td style="text-align:left">0..1</td>
+<td style="text-align:left">A collection of references to device parent objects.</td>
+<td style="text-align:left">No</td>
+</tr>
+<tr>
+<td style="text-align:left">assetParents</td>
+<td style="text-align:left">ManagedObject ReferenceCollection</td>
+<td style="text-align:left">0..1</td>
+<td style="text-align:left">A collection of references to asset parent objects.</td>
+<td style="text-align:left">No</td>
+</tr>
+</tbody>
+</table>
 
 > It is recommended for property names not to start with "child" or "parent". This way you will be able to handle other types of references.
 
@@ -72,39 +157,56 @@ Example response:
 
 Example request: Retrieve supported measurements of a managed object
 
-	GET /inventory/managedObjects/<<deviceId>>/supportedMeasurements
-	Host: ...
-	Authorization: Basic ...
+    GET /inventory/managedObjects/<<deviceId>>/supportedMeasurements
+    Host: ...
+    Authorization: Basic ...
 
 Example response:
 
-	HTTP/1.1 200 OK
-	{
-		"c8y_SupportedMeasurements": ["c8y_AnalogMeasurement", "c8y_MotionMeasurement", "c8y_SignalStrength", "c8y_TemperatureMeasurement"]
-	}
+    HTTP/1.1 200 OK
+    {
+        "c8y_SupportedMeasurements": ["c8y_AnalogMeasurement", "c8y_MotionMeasurement", "c8y_SignalStrength", "c8y_TemperatureMeasurement"]
+    }
 
-Important: In order to have fragment names included in supported measurements list, fragment has to have specific structure:
+Important: In order to have fragment names included in the supported measurements list, the fragment has to have a specific structure:
 
-"fragment_name" : {
-	"serie_name" : {
-		"value" : ...
-		"unit" : ...
+	"fragment_name" : {
+	    "serie_name" : {
+	        "value" : ...
+	        "unit" : ...
+	    }
 	}
-}
 
 Real example:
 
-"c8y_SpeedMeasurement": {
-      "Speed": { "value": 1234, "unit": "km/h" }
-}
+	"c8y_SpeedMeasurement": {
+	      "Speed": { "value": 1234, "unit": "km/h" }
+	}
 
-Fragment_name and serie_name can be replaced by different valid json property name, but that name cannot contain whitespaces and special characters like [],*. The structure has to be exactly as above, two-level deep json object.
+Fragment_name and serie_name can be replaced by a different valid json property name, but that name may not contain whitespaces and special characters like [], *. The structure has to be exactly as above, a two-level deep json object.
+
+### GET supported series of a managed object
+
+Example request: Retrieve supported series of a managed object
+
+    GET /inventory/managedObjects/<<deviceId>>/supportedSeries
+    Host: ...
+    Authorization: Basic ...
+
+Example response:
+
+    HTTP/1.1 200 OK
+    {
+        {"c8y_SupportedSeries":["c8y_TemperatureMeasurement.T","c8y_SpeedMeasurement.speed","c8y_SignalStrength.rssi"]}
+    }
+    
+Important: In order to have fragment names included in the supported series list, the fragment has to have a specific structure. See the explanation above regarding supported measurements.
 
 ### PUT - Update a managed object
 
 Request body: ManagedObject
 
-Response body: ManagedObject (when accept header is not provided, empty response body is returned)
+Response body: ManagedObject (when the accept header is not provided, an empty response body is returned)
 
 Required role: ROLE\_INVENTORY\_ADMIN or owner
 
@@ -135,7 +237,7 @@ Example response:
       ...
     }
 
-When managed object of type 'c8y_SmartRule' is updated, audit record is created with type 'SmartRule' and activity 'Smart rule updated', 'Smart rule enabled' or 'Smart rule disabled'.
+When a managed object of type 'c8y_SmartRule' is updated, an audit record is created with type 'SmartRule' and activity 'Smart rule updated', 'Smart rule enabled' or 'Smart rule disabled'.
 
 ### DELETE a managed object
 
@@ -155,4 +257,4 @@ Example Response:
 
     HTTP/1.1  204 NO CONTENT
 
-If managed object is device or group and optional query parameter "cascade=true" is used all child devices and child assets will be deleted recursively. By default delete operation is propagated to the subgroups only if deleted object is a group.
+If the managed object is a device or a group and the optional query parameter "cascade=true" is used all child devices and child assets will be deleted recursively. By default, the delete operation is propagated to the subgroups only if the deleted object is a group.

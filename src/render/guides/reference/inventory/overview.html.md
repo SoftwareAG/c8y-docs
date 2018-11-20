@@ -3,6 +3,7 @@ order: 5
 title: Overview
 layout: redirect
 ---
+
 The inventory interface consists of the following parts:
 
 -   The *inventory API* resource returns URIs and URI templates to collections of managed objects, so that all objects, all objects of a particular type and all objects with particular capabilities can be queried.

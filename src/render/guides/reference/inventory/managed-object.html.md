@@ -157,39 +157,56 @@ Example response:
 
 Example request: Retrieve supported measurements of a managed object
 
-	GET /inventory/managedObjects/<<deviceId>>/supportedMeasurements
-	Host: ...
-	Authorization: Basic ...
+    GET /inventory/managedObjects/<<deviceId>>/supportedMeasurements
+    Host: ...
+    Authorization: Basic ...
 
 Example response:
 
-	HTTP/1.1 200 OK
-	{
-		"c8y_SupportedMeasurements": ["c8y_AnalogMeasurement", "c8y_MotionMeasurement", "c8y_SignalStrength", "c8y_TemperatureMeasurement"]
-	}
+    HTTP/1.1 200 OK
+    {
+        "c8y_SupportedMeasurements": ["c8y_AnalogMeasurement", "c8y_MotionMeasurement", "c8y_SignalStrength", "c8y_TemperatureMeasurement"]
+    }
 
-Important: In order to have fragment names included in supported measurements list, fragment has to have specific structure:
+Important: In order to have fragment names included in the supported measurements list, the fragment has to have a specific structure:
 
-"fragment_name" : {
-	"serie_name" : {
-		"value" : ...
-		"unit" : ...
+	"fragment_name" : {
+	    "serie_name" : {
+	        "value" : ...
+	        "unit" : ...
+	    }
 	}
-}
 
 Real example:
 
-"c8y_SpeedMeasurement": {
-      "Speed": { "value": 1234, "unit": "km/h" }
-}
+	"c8y_SpeedMeasurement": {
+	      "Speed": { "value": 1234, "unit": "km/h" }
+	}
 
-Fragment_name and serie_name can be replaced by different valid json property name, but that name cannot contain whitespaces and special characters like [],*. The structure has to be exactly as above, two-level deep json object.
+Fragment_name and serie_name can be replaced by a different valid json property name, but that name may not contain whitespaces and special characters like [], *. The structure has to be exactly as above, a two-level deep json object.
+
+### GET supported series of a managed object
+
+Example request: Retrieve supported series of a managed object
+
+    GET /inventory/managedObjects/<<deviceId>>/supportedSeries
+    Host: ...
+    Authorization: Basic ...
+
+Example response:
+
+    HTTP/1.1 200 OK
+    {
+        {"c8y_SupportedSeries":["c8y_TemperatureMeasurement.T","c8y_SpeedMeasurement.speed","c8y_SignalStrength.rssi"]}
+    }
+    
+Important: In order to have fragment names included in the supported series list, the fragment has to have a specific structure. See the explanation above regarding supported measurements.
 
 ### PUT - Update a managed object
 
 Request body: ManagedObject
 
-Response body: ManagedObject (when accept header is not provided, empty response body is returned)
+Response body: ManagedObject (when the accept header is not provided, an empty response body is returned)
 
 Required role: ROLE\_INVENTORY\_ADMIN or owner
 
@@ -220,7 +237,7 @@ Example response:
       ...
     }
 
-When managed object of type 'c8y_SmartRule' is updated, audit record is created with type 'SmartRule' and activity 'Smart rule updated', 'Smart rule enabled' or 'Smart rule disabled'.
+When a managed object of type 'c8y_SmartRule' is updated, an audit record is created with type 'SmartRule' and activity 'Smart rule updated', 'Smart rule enabled' or 'Smart rule disabled'.
 
 ### DELETE a managed object
 
@@ -240,4 +257,4 @@ Example Response:
 
     HTTP/1.1  204 NO CONTENT
 
-If managed object is device or group and optional query parameter "cascade=true" is used all child devices and child assets will be deleted recursively. By default delete operation is propagated to the subgroups only if deleted object is a group.
+If the managed object is a device or a group and the optional query parameter "cascade=true" is used all child devices and child assets will be deleted recursively. By default, the delete operation is propagated to the subgroups only if the deleted object is a group.

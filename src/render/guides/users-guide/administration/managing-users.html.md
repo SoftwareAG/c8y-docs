@@ -14,6 +14,9 @@ The user management functionality allows you to manage the users within your ten
 
 > **Info:** The user needs to have a role with the user management permission ADMIN or CREATE to be able to do so.
 
+>**Info**: If your tenant is configured for using SSO (Single Sign-On) in SAG Cloud, new users should be created under **My Cloud** in SAG Cloud to be able to use the SSO feature. For users created in **My Cloud**, password reset in Cumulocity is disabled.
+
+
 ### Viewing users
 
 To view all users in your tenant, click **Users** in the **Account** menu in the navigator.

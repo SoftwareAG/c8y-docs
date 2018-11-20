@@ -1,6 +1,6 @@
 ---
 order: 10
-title: Overall concepts
+title: Architecture
 layout: redirect
 ---
 

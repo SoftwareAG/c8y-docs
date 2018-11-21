@@ -26,3 +26,11 @@ In Cumulocity, there are two deployment scenarios for using CEP rules:
 * PER_TENANT: Each subscribed tenant has at least one own instance of CEP container. The container is isolated from other tenants, hence high CPU load or memory issues on other containers do not have any impact on the own one. This feature is available with the application "Cep-small" which is an optional service. Also, you need to be subscribed to the application" Feature-cep-custom-rules" to be able to upload your own CEP rules.
 
 For details on application subscription refer to Administration > Managing tenants > [Subscribing to applications](/guides/users-guide/enterprise-edition#subscribe) in the User guide.
+
+### Troubleshooting
+
+**Real-time event processing is currently overloaded and may stop processing your events. Please contact support.**
+
+If the error above appears, then this means that the CEP queue is full. This often happens when the communication between CEP and the server is broken.
+
+An alarm is raised when the CEP queue is overflown. When this happens, the oldest events are lost, so the incoming new events are triggering the deletion of each queue head events. The alarms and logs are triggered once per minute in order to reduce spam.

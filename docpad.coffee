@@ -103,7 +103,8 @@ docpadConfig = {
 			{ title: 'Web SDK guide', folder: 'guides/web', slug: 'web-developer', icon: 'c8y-icon c8y-icon-smart-rest', description: 'How to use the Web SDK to extend applications with your own plugins, add your own applications or implement further functionalities tailored to your use case.' },
 			{ title: 'CEL analytics guide', folder: 'guides/event-language' , slug: 'event-language', icon : 'c8y-icon c8y-icon-data-explorer', description: 'Introduces the Cumulocity Event Language (CEL) for real-time event processing, enabling you to add your own analytics or other business logic to your IoT solutions.'},
 			{ title: 'Apama analytics guide', folder: 'guides/apama' , slug: 'apama', icon : 'c8y-icon c8y-icon-data-explorer', description: 'Basics for understanding how the Apama Event Processing Language (EPL) works and how to create your own analytics or other business logic in Cumulocity with Apama EPL.'},
-			{ title: 'Reference guide', folder: 'guides/reference' , slug: 'reference-guide', icon : 'fa fa-book', description: 'Detailed technical specifications of the programming interfaces of Cumulocity as a reference for software developers.'}
+			{ title: 'Reference guide', folder: 'guides/reference' , slug: 'reference-guide', icon : 'fa fa-book', description: 'Detailed technical specifications of the programming interfaces of Cumulocity as a reference for software developers.'},
+			{ title: 'Release notes', folder: 'guides/release-notes' , slug: 'release-notes', icon : 'fa fa-book', description: 'Release notes'}
 			]
 	
 

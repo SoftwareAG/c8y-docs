@@ -65,7 +65,7 @@ You will be prompted to select one of the following options:
 
 		$ Enter Domain name 
 
-	>**Important**: The Domain URL cannot be changed once being configured. Make 	sure to use the name finally desired.
+	>**Important**: The Domain URL cannot be changed once being configured. Make sure to use the name finally desired.
 
 4. Provide the absolute path for the SSL certificate file, e.g. "/home/admin/myown-selfsigned.crt".
 

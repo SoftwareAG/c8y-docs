@@ -121,14 +121,18 @@ Before activating the custom domain name, make sure that
 * you have uploaded a valid SSL certificate for your custom domain,
 * the common name (domain name) is not used by any other tenant,
 * the certificate is currently valid (validFrom in the past and validTo in the future),
-* you have added a CNAME entry to your DNS server. Make sure to remove all A entries for the wildcard domain. If your DNS service does not provide CNAME entries for wildcard certificates, please contact our support.
+* you have added a CNAME record to your DNS server of the following format:<br>
+ Hostname = `*.<your custom domain name>`, i.e. `*.iot.mycompany.com` <br>
+ Type = CNAME <br>
+ Target = the target URL of the platform you want to point to, i.e. `cumulocity.platform.io`<br>
+Make sure to remove all A entries for the wildcard domain. If your DNS service does not provide CNAME entries for wildcard certificates, please contact our support.
 
 After successful activation you will be redirected to your enterprise tenant at the new domain. You will also receive an email with information about the activation.
 
 >**Info**: After the activation is completed you will no longer be able to access your tenant with the cumulocity domain name. Instead, use your custom domain name.
 
 
-**Updating your certificate**
+#### Updating your certificate
 
 When your certificate expires, you must update your certificate with a new one with an extended validation period. When updating a certificate, you need to make sure that
 
@@ -136,11 +140,42 @@ When your certificate expires, you must update your certificate with a new one w
 * the certificate is not password protected,
 * the certificate is currently valid (validFrom in the past and validTo in the future),
 * the certificate has exactly the same common name (domain name) as the currently active certificate,
-* you have added a CNAME entry to your DNS server. Make sure to remove all A entries for the wildcard domain. If your DNS service does not provide CNAME entries for wildcard certificates, please contact our support.
+* you have added a CNAME record to your DNS server. For details on the CNAME record see above.
 
 
-**Deactivating your certificate**
+#### Deactivating your certificate
 
 If you wish to return to your old domain at Cumulocity, you can simply deactivate you certificate. 
 
 >**Important**: Use with care. Your customers will not be able to access their subtenants anymore.
+
+#### Troubleshooting
+
+In case you cannot reach Cumulocity using your custom domain, we recommend to perform the following checks to verify your DNS setup.
+
+**Check if the DNS entry is correct**
+
+Execute the following command:
+
+	host management.<your domain name>
+	
+The following result should be returned:
+
+	management.<your domain name> is an alias for <instance domain name>
+	<instance domain name> has address <ip address>
+	
+
+**Check if the API is responding** 
+
+Execute the following command:
+
+	curl -v -u '<tenant ID>/<your user>:<your password>' --head http://management.<your domain name>/inventory/managedObjects
+	
+The following result should be returned:
+
+	...
+	HTTP/1.1 200 OK
+	...	
+
+
+>**Info**: Take into consideration that after changing the DNS entry it might take up to 24 hours until the new entry has been propagating.

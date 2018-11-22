@@ -4,8 +4,12 @@ title: Troubleshooting
 layout: redirect
 ---
 
-**Real-time event processing is currently overloaded and may stop processing your events. Please contact support.**
+**Error message**
 
-If the error above appears, then this means that the MQTT queue is full. This often happens when the communication between the MQTT agent and the server is broken.
+	Real-time event processing is currently overloaded and may stop processing your events. Please contact support.
 
-An alarm is raised when the MQTT queue is overflown. When this happens, the oldest events are lost, so the incoming new events are triggering the deletion of each queue head events. The alarms and logs are triggered once per minute in order to reduce spam.
+**Description**
+
+The MQTT queue for the respective tenant is full. This might for example happen when more events are created then currently can be handled.
+
+In this case, an alarm will be raised. To avoid losing incoming new events, the oldest events will be deleted, i.e. an incoming new event triggers the deletion of the queue head event. To reduce spam, the alarms and logs are triggered once per minute.

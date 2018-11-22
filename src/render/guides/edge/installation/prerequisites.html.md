@@ -10,8 +10,8 @@ To install Cumulocity IoT Edge, the following is required:
 
 |Item|Details|
 |:---|:---|
-|**Virtualbox**|Version: 5.2.8. To be downloaded from [https://www.virtualbox.org/wiki/Download&#95;Old&#95;Builds&#95;5&#95;2](https://www.virtualbox.org/wiki/Download_Old_Builds_5_2)
-|**Edge OVA image**|To be downloaded from the [SAG Empower portal](https://empower.softwareag.com) |
+|**Hypervisor**|- Virtualbox version 5.2.8, to be downloaded from [https://www.virtualbox.org](https://www.virtualbox.org/wiki/Download_Old_Builds_5_2)<br> - VMWare ESXi 6.5 or later
+|**Edge VM image**|To be downloaded from the [SAG Empower portal](https://empower.softwareag.com), based on the target hypervisor, i.e. ova for VirtualBox / ovf for ESXi|
 |**Cumulocity license file**|Send an email to support@cumulocity.com to request the license file. In the email, you must include <br> - your company name, under which the license has been bought <br> - the domain name (DNS), under which Cumulocity IoT Edge will be reachable|
 |**SSL key and SSL certificate**|Use your internal or an external CA (Certification Authority) to create these.|
 |**Apama license**|The Apama license key is provided as part of your purchase. To request the license keys for your Apama purchase, please contact the logistics team for your region:<br> - North and South America: LogisSrvus@softwareagusa.com <br> - All Other Regions: LogisticsServiceCenterGER@softwareag.com|
@@ -35,7 +35,7 @@ There is no internet connection required during installation. Internet connectio
 
 #### Incoming traffic
 
-The following ports need to be enabled by default in order to accept traffic from users and devices on the internet (also refer to Setting up port forwarding in [Setting up the environment](/guides/edge/installation#setting-up-the-environment)):
+The following ports need to be enabled by default in order to accept traffic from users and devices on the internet (also refer to "Setting up port forwarding" in [Setting up the environment](/guides/edge/installation#setting-up-the-environment)):
 
 |Source IP|Source Port|Destination IP|Destination Port|Service
 |:---|:---|:---|:---|:---

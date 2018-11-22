@@ -1,5 +1,5 @@
 ---
-order: 25
+order: 40
 title: Upgrading the system
 layout: redirect
 ---
@@ -17,8 +17,7 @@ Follow the steps below to upgrade the system.
 
 4. In the VirtualBox Manager, click **File** and then **Import Appliance**. Select the new OVA file (upgraded one supplied by Cumulocity) and click **Open** to import it. 
 <img src="/guides/images/edge/edge-update-import.jpg" name="Import VM" style="width:75%;"/> 
-
-The new Edge version should now be visible in the VirtualBox Manager in powered-off state. 
+<br><br>The new Edge version should now be visible in the VirtualBox Manager in powered-off state. 
 
 5. Right-click on the VM and select **Settings**. In the upcoming window, select **Storage**. Two disks should be visible called "disk001.vmdk" and "disk002.vmdk". 
 
@@ -31,7 +30,7 @@ The new Edge version should now be visible in the VirtualBox Manager in powered-
 <br>
 
 8. In the explorer, navigate to the Edge VM folder. Select the secondary disk, i.e. disk002.vmdk, and click **OK**.<br>
-<img src="/guides/images/edge/edge-update-choose-disk.jpg" name="Choose disk" style="width:75%;"/> 
+<img src="/guides/images/edge/edge-update-choose-disk.JPG" name="Choose disk" style="width:75%;"/> 
 <br>
 
 9. Power on the VM by clicking the **Start** button. 

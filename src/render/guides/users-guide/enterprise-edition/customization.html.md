@@ -122,9 +122,9 @@ Before activating the custom domain name, make sure that
 * the common name (domain name) is not used by any other tenant,
 * the certificate is currently valid (validFrom in the past and validTo in the future),
 * you have added a CNAME record to your DNS server of the following format:<br>
- Hostname = `*.<your domain name>`, i.e. `*.iot.mycompany.com` <br>
+ Hostname = `*.<your domain name>`, e.g. `*.iot.mycompany.com` <br>
  Type = CNAME <br>
- Target = the target URL of the platform you want to point to, i.e. `cumulocity.platform.io`<br>
+ Target = the target URL of the platform you want to point to, e.g. `cumulocity.platform.io`<br>
 Make sure to remove all A entries for the wildcard domain. If your DNS service does not provide CNAME entries for wildcard certificates, please contact our support.
 
 After successful activation you will be redirected to your enterprise tenant at the new domain. You will also receive an email with information about the activation.

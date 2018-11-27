@@ -4,14 +4,23 @@ title: Overview
 layout: standalone
 ---
 
-Release notes document relevant changes included in a Cumulocity release since the previous release.
+These release notes document all relevant changes that have been implemented in a Cumulocity release since the previous release.
 
-We distinguish between major releases, including new features, improvements and fixes, and simple maintenance releases with fixes only.
+We distinguish between standard releases and maintenance releases.
 
-Major releases, also called Standard releases, are represented by for example 9.9, 9.10, 9.11.
+**Standard release**
 
-Every 4th Standard release is a so-called Private Edition with general availability (GA), e.g. 9.12 or 9.16, which will be maintained through regular maintenance (or bug fix) releases, e.g. 9.12.6, 9.12.7, 9.12.8.  
+A standard release provides new features and functionality as well as improvements and fixes to a previous release.
 
->**Info**: From 2019 Private Editions will only be published every quarter.
+Standard releases have the format "<major>.<minor>", e.g. 9.12, 9.13, 9.14. 
 
-Each release receives a version label "<major>.<minor>.<maintenance>[.hotfix]. 
+A standard release with general availability (GA) is a so-called Private Edition (PE) release. Currently, every fourth standard release is also a PE release. 
+
+>**Info**: From 2019, Private Editions will only be published on a quarterly base.
+
+**Maintenance release**
+
+A maintenance release provides improvements and fixes to a previous release. Maintenance releases do not contain new functionality. In general, Cumulocity maintains the current and the previous PE release. 
+
+Maintenance releases have the format "<major>.<minor>.<maintenance>", e.g. 9.12.1, 9.12.2, 9.12.3. 
+

@@ -41,7 +41,7 @@ The manifest provides information about a microservice deployment. The definitio
 <tr>
 <td style="text-align:left">version</td>
 <td style="text-align:left">String</td>
-<td style="text-align:left">Application version</td>
+<td style="text-align:left">Application version. Must be correct <a href="https://semver.org" target="_blank">SemVer</a> value but "+" sign is disallowed</td>
 <td style="text-align:left">Yes</td>
 </tr>
 <tr>

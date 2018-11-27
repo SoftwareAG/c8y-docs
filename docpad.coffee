@@ -93,6 +93,7 @@ docpadConfig = {
 			return _
 
 		sections: [
+			{ title: 'Release notes', folder: 'guides/release-notes' , slug: 'release-notes', icon : 'fa fa-book', description: 'Release notes'},
 			{ title: 'Concepts guide', folder: 'guides/concepts', slug: 'concepts-guide', icon: 'c8y-icon c8y-icon-c8y-engine', description: 'The architecture and technical concepts behind Cumulocity. Intended for anyone technically interested in the machine-to-machine application platform.' },
 			{ title: 'User guide', folder: 'guides/users-guide', slug: 'users-guide', icon : 'fa fa-user-circle-o', description: 'Core, in-depth explanation on using the Administration, Cockpit and Device Management applications and various optional Cumulocity services through the GUI.'},
 			{ title: 'Handbuch', folder: 'guides/benutzerhandbuch', slug: 'benutzerhandbuch', icon : 'fa fa-user-circle-o', description: 'Detaillierte Beschreibung der Nutzung der Standardanwendungen Administration, Cockpit und Device Management sowie weiterer in Cumulocity verfügbarer Services über die Benutzeroberfläche.'},
@@ -103,9 +104,7 @@ docpadConfig = {
 			{ title: 'Web SDK guide', folder: 'guides/web', slug: 'web-developer', icon: 'c8y-icon c8y-icon-smart-rest', description: 'How to use the Web SDK to extend applications with your own plugins, add your own applications or implement further functionalities tailored to your use case.' },
 			{ title: 'CEL analytics guide', folder: 'guides/event-language' , slug: 'event-language', icon : 'c8y-icon c8y-icon-data-explorer', description: 'Introduces the Cumulocity Event Language (CEL) for real-time event processing, enabling you to add your own analytics or other business logic to your IoT solutions.'},
 			{ title: 'Apama analytics guide', folder: 'guides/apama' , slug: 'apama', icon : 'c8y-icon c8y-icon-data-explorer', description: 'Basics for understanding how the Apama Event Processing Language (EPL) works and how to create your own analytics or other business logic in Cumulocity with Apama EPL.'},
-			{ title: 'Reference guide', folder: 'guides/reference' , slug: 'reference-guide', icon : 'fa fa-book', description: 'Detailed technical specifications of the programming interfaces of Cumulocity as a reference for software developers.'},
-			{ title: 'Release notes', folder: 'guides/release-notes' , slug: 'release-notes', icon : 'fa fa-book', description: 'Release notes'}
-			]
+			{ title: 'Reference guide', folder: 'guides/reference' , slug: 'reference-guide', icon : 'fa fa-book', description: 'Detailed technical specifications of the programming interfaces of Cumulocity as a reference for software developers.'}			]
 	
 
 	# =================================

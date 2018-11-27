@@ -10,8 +10,8 @@ The following documentation is available for Cumulocity IoT Edge:
 |:---|:---|
 |[Introduction](/guides/edge/introduction)|Providing information on conceptual aspects of Cumulocity IoT Edge. 
 |[Setting up Cumulocity IoT Edge](/guides/edge/installation)|How to install the system on a virtual machine, including [setting up the environment for Cumulocity IoT Edge](/guides/edge/installation#setting-up-the-environment) and [configuring the Edge server](/guides/edge/installation#configuration). 
-|[Working with Cumulocity IoT Edge](/guides/edge/usage)|How to [use the IoT platform](/guides/edge/usage#iot-platform), how to [connect a modbus device](/guides/edge/usage#connecting-devices) using Cloud Fieldbus and how to [connect Edge to the cloud](/guides/edge/usage#connecting-cloud) using Data Broker. 
-|[Operating Cumulocity IoT Edge](/guides/edge/operation)|How to operate the system, including [operational procedures](/guides/edge/operation#operational-procedures), [health checks](/guides/edge/operation#health-check), [backup and restore](/guides/edge/operation#backup-restore), and [log files](/guides/edge/operation#log-files).
+|[Working with Cumulocity IoT Edge](/guides/edge/usage)|How to [use the IoT platform](/guides/edge/usage#iot-platform), how to [connect a modbus device](/guides/edge/usage#connecting-devices) using Cloud Fieldbus and how to [connect Edge to the cloud](/guides/edge/usage#connecting-cloud) using the data broker. 
+|[Operating Cumulocity IoT Edge](/guides/edge/operation)|How to operate the system, including [troubleshooting](/guides/edge/operation#troubleshooting), [upgrading the system](/guides/edge/operation#update), [backup and restore](/guides/edge/operation#backup-restore), and various [administrative tasks](/guides/edge/operation#administration).
 
 
 #### Conventions in this document

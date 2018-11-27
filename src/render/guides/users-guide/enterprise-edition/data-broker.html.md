@@ -1,6 +1,6 @@
 ---
 order: 30
-title: Using the Data Broker
+title: Using the data broker
 layout: redirect
 ---
 

@@ -43,7 +43,8 @@ When you open the device you will find the **Remote access** tab in the tab list
 
 In the **Remote Access** tab you will find a list of devices for remote control, so-called "endpoints".
 
->**Info**: If the prerequisites are met and you do not see the **Remote access** tab in the tab list of your gateway contact sales@cumulocity.com.
+>**Info**: If the prerequisites are met and you do not see the **Remote access** tab in the tab list of your gateway, please contact sales@cumulocity.com.<br>
+>**Info**: If you are a gateway manufacturer and would like to support Cloud Remote Access on your gateway, please contact support@cumulocity.com.
 
 ### Adding new endpoints
 

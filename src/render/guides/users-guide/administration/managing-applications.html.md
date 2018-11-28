@@ -30,8 +30,6 @@ To directly open an application from here, click **Open** on the respective appl
 
 Click **Add application** in the **Own applications** page, to add an application to your account, see [Adding applications](#adding-applications).
 
-To add a plugin, click **Add Plugin** on the card of the application you want to add it to (see [Adding and removing plugins](#add-remove-plugin)).
-
 Click the menu icon at the top right of an application to open a context menu from where you can [**Edit** or **Remove**](#editing-and-removing) an application. 
 
 ### <a name="adding-applications"></a>Adding applications
@@ -174,6 +172,8 @@ It is not possible to remove subscribed applications. This can only be done by t
 
 
 ### <a name="add-remove-plugin"></a>Adding and removing plugins
+
+>**Important**: This plugin functionality is deprecated and only available in versions earlier then 9.16.
 
 In order to configure and extend the functions provided with an application, you can add plugins to it. 
 

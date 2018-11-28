@@ -23,7 +23,6 @@ Navigate to **Data connectors** if you would like to send data to another tenant
 >Cloud Remote Access cannot be used on the destination tenant. <br>
 >Currently, the Fieldbus widget does not work on tenants that receive the fieldbus devices through data broker, as the corresponding data models are not synchronized.<br> 
 >While we provide backwards compatibility, we can not ensure that data broker can send data to Cumulocity tenants which run on later Cumulocity versions than the source.<br>
->
 
 ### <a name="data-broker-connectors"></a> Data connectors
 

@@ -127,7 +127,7 @@ You can now navigate to the Device Management application or the Cockpit applica
 
 **Error message**
 
-	Real-time event processing is currently overloaded and may stop processing your events. Please contact support.
+	Data broker processing is currently overloaded and may stop processing your events. Please contact support.
 
 **Description**
 

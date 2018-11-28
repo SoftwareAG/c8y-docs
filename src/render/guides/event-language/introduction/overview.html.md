@@ -37,4 +37,4 @@ For details on application subscription refer to Administration > Managing tenan
 
 The CEP queue for the respective tenant is full. This might for example happen when more events are created then currently can be handled.
 
-In this case, an alarm will be raised. To avoid losing incoming new events, the oldest events will be deleted, i.e. an incoming new event triggers the deletion of the queue head event. To reduce spam, the alarms and logs are triggered once per minute.
+In this case, an alarm will be raised. To avoid losing incoming new events, the oldest events will be deleted, i.e. an incoming new event triggers the deletion of the queue head event.

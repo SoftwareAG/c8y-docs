@@ -35,14 +35,25 @@ In Cumulocity, every MQTT connection needs to be authenticated. You can use the 
 
 Once the device retrieved the credentials it needs to store them locally for further connections.
 
+To establish connection you need to configure the following connection parameters:
+
+- Host: <Your_cumulocity_url>
+- User: <Tenant>/<Username>
+- Password: Your cumulocity password
+
+For more info, refer to the [Hello MQTT](https://www.cumulocity.com/guides/device-sdk/mqtt/#hello-mqtt) section.
+
 The process works as follows:
 
 * Cumulocity assumes each device to have some form of unique ID. A good device identifier may be the MAC address of the network adapter, the IMEI of a mobile device or a hardware serial number.
 * When you take a new device into use, you enter this unique ID into "Device registration" in the Device Management application in Cumulocity and start the device.
 * The device will use this ID as part of the [MQTT ClientId](/guides/device-sdk/mqtt#mqtt-clientid) and static user credentials that can be enquired from support@cumulocity.com.
 * The device subscribes to the topic `s/dcr`.
-* The device starts publishing empty messages on the topic `s/ucr` to notify the server that it is ready to retrieve credentials.
+* You need to publish an empty message  on the `s/ucr` channel in order to allow cumulocity to accept the registration.
+* Another empty message must be published to `s/ucr` to receive credentials through `s/dcr`.
 * You can accept the connection from the device in "Device registration", in which case Cumulocity sends generated credentials to the device.
+
+> **Info:** The process will fail if Cumulocity is not waiting for connection from the desired device.
 
 The device will receive a message in the following format:
 
@@ -59,6 +70,8 @@ As MQTT supports an automatic device creation if the client sends data and there
 The device creation can be achieved by the [static template 100](/guides/device-sdk/mqtt#static-templates). This template can be blindly used on every boot of the device as it will only create the device if it is not already present.
 
 The device will automatically be linked to the ID the client uses with its MQTT ClientId.
+
+>**Info:**The topic used for Cumulocity's pre-provided static templates is "s/us".
 
 ```
 100,Device Name,Device Type

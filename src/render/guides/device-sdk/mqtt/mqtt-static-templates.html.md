@@ -143,7 +143,7 @@ Will update the position properties of the device.
 
 ##### Set Configuration (113)
 
-Will update the position properties of the device.
+Will update the configuration properties of the device.
 
 |Position|Parameter|Mandatory|
 |:-------|:-------|:-------|

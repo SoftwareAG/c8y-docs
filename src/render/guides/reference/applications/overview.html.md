@@ -15,6 +15,6 @@ The application interface consists of the following parts:
 -   The *application user collection* resource represents a collection of subscription entries.
 -   The *application user* resource represents a single subscription entry.
 -   The *current application subscription* provides an endpoint for accessing current application subscriptions.
--   The *application binaries* provides an endpoint for uploading a deployable microservice, web or custom Apama rule application to the platform.
+-   The *application binaries* provides an endpoint for uploading a deployable microservice, web application or custom Apama rule to the platform.
 
 > **Info**: For all PUT/POST requests an accept header should be provided, otherwise an empty response body will be returned.

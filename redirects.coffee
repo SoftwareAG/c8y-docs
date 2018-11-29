@@ -74,7 +74,6 @@ redirects =
 	'/guides/users-guide/cloud-fieldbus': '/guides/users-guide/optional-services#cloud-fieldbus'
 	'/guides/benutzerhandbuch/administration-deutsch': '/guides/benutzerhandbuch/administration/'
 	'/guides/benutzerhandbuch/cockpit-deutsch': '/guides/benutzerhandbuch/cockpit/'
-	'/guides/benutzerhandbuch/device-management-deutsch': '/guides/benutzerhandbuch/device-management/'
 	'/guides/users-guide/user-and-permissions-management/: '/guides/users-guide/administration/'
 	'/guides/users-guide/saas-integration': '/guides/users-guide/optional-services#saas-integration'
 

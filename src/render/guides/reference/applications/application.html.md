@@ -12,7 +12,7 @@ layout: redirect
 |id|String|1|Unique identifier for the application|No|
 |name|String|1|Name of application|POST: Mandatory PUT: Optional|
 |key|String|1|Shared secret of application|POST: Mandatory PUT: Optional|
-|type|String|1|Type of application. Possible values are : EXTERNAL, HOSTED, MICROSERVICE|POST: Mandatory PUT: No|
+|type|String|1|Type of application. Possible values are : EXTERNAL, HOSTED, MICROSERVICE, APAMA_CEP_RULE|POST: Mandatory PUT: No|
 |availability|String|0..1|Access level for other tenants.  Possible values are : MARKET, PRIVATE (default)|Optional|
 |owner|TenantReference| 1|Reference to the tenant owning this application|No |
 |contextPath|String|0..1|contextPath of the hosted application |POST: Mandatory (when application type is HOSTED) PUT: Optional|

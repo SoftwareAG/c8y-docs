@@ -627,7 +627,7 @@ Tells the device to either open or close the relays in the array.
 
 ##### Upload configuration file (520)
 
-Tells the device to upload its current configuration.
+The current configuration is uploaded from Cumulocity to the device.
 
 **Example**
 

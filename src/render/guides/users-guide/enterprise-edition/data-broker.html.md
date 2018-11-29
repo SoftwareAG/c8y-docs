@@ -22,7 +22,7 @@ Navigate to **Data connectors** if you would like to send data to another tenant
 >Be aware of the following limitations of the data broker:<br> 
 >Cloud Remote Access cannot be used on the destination tenant. <br>
 >Currently, the Fieldbus widget does not work on tenants that receive the fieldbus devices through data broker, as the corresponding data models are not synchronized.<br> 
->While we provide backwards compatibility, we can not ensure that data broker can send data to Cumulocity tenants which run on later Cumulocity versions than the source.
+>While we provide backwards compatibility, we can not ensure that data broker can send data to Cumulocity tenants which run on later Cumulocity versions than the source.<br>
 
 ### <a name="data-broker-connectors"></a> Data connectors
 
@@ -121,3 +121,15 @@ To stop data forwarding and remove the data connector, click the menu icon and f
 You can now navigate to the Device Management application or the Cockpit application. There will be a new "virtual group" with a specific icon (see the screenshot below) showing the forwarded devices. The group will have the same name as your subscription. Devices are "lazily" created on the destination side whenever they send data for the first time after setting up an active subscription.
 
 ![Data broker group in cockpit app](/guides/images/users-guide/data-broker-group-created.PNG)
+
+### <a name="data-broker-troubleshooting"></a> Troubleshooting
+
+**Error message**
+
+	Data broker processing is currently overloaded and may stop processing your events. Please contact support.
+
+**Description**
+
+The data broker queue for the respective tenant is full. This might for example happen when more events are created then currently can be handled.
+
+In this case, an alarm will be raised. To avoid losing incoming new events, the oldest events will be deleted, i.e. an incoming new event triggers the deletion of the queue head event. To reduce spam, the alarms and logs are triggered once per minute.

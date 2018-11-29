@@ -26,8 +26,6 @@ Klicken Sie **Öffnen** auf der Karte einer Anwendung, um die Anwendung direkt v
 
 Klicken Sie **Anwendung hinzufügen** auf der Seite **Eigene Anwendungen**, um eine Anwendung zu Ihrem Konto hinzuzufügen, siehe [Anwendungen hinzufügen](#adding-applications).
 
-Klicken Sie **Plugin hinzufügen**, um ein Plugin hinzuzufügen (siehe [Hinzufügen und Entfernen von Plugins](#add-remove-plugin)).
-
 Klicken Sie auf das Menüsymbol rechts oben in einer Anwendung, um über das Kontextmenü eine Anwendung zu [**Bearbeiten** oder zu **Löschen**](#editing-and-removing).
 
 ### Erstellen einer Anwendung
@@ -164,6 +162,8 @@ Abonnierte Anwendungen können nicht gelöscht werden. Dies kann nur durch den E
 
 
 ### <a name="add-remove-plugin"></a>Hinzufügen und Entfernen von Plugins
+
+>**Wichtig**: Diese Plugin-Funktionalität ist veraltet und nur verfügbar in Versionen vor 9.16. 
 
 Um die Funktionen einer Anwendung zu konfigurieren oder zu erweitern, können Plugins hinzugefügt werden.
 

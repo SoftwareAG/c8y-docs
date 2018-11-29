@@ -61,7 +61,12 @@ redirects =
 	'/guides/java/introduction': '/guides/microservice-sdk/java'
 	'/guides/rest': '/guides/microservice-sdk/rest'
 	'/guides/java': '/guides/microservice-sdk/java'
-
+	'/guides/web/jsdoc': '/guides/web/web-sdk-for-plugins/jsdoc'
+	'/guides/web/branding-plugin': '/guides/web/web-sdk-for-plugins/branding-plugin'
+	'/guides/web/tab-plugin': '/guides/web/web-sdk-for-plugins/tab-plugin'
+	'/guides/web/widget-plugin': '/guides/web/web-sdk-for-plugins/widget-plugin'
+	'/guides/web/smart-toolkit': '/guides/web/overview'
+	
 
 	
 	# "index.html" redirects

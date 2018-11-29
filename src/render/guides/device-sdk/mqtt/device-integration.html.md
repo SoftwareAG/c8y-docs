@@ -37,11 +37,11 @@ Once the device retrieved the credentials it needs to store them locally for fur
 
 To establish connection you need to configure the following connection parameters:
 
-- Host: <Your_cumulocity_url>
-- User: <Tenant>/<Username>
+- Host: <your_cumulocity_url>
+- User: <tenant>/<username>
 - Password: Your cumulocity password
 
-For more info, refer to the [Hello MQTT](https://www.cumulocity.com/guides/device-sdk/mqtt/#hello-mqtt) section.
+For more information, refer to the [Hello MQTT](https://www.cumulocity.com/guides/device-sdk/mqtt/#hello-mqtt) section.
 
 The process works as follows:
 
@@ -49,14 +49,9 @@ The process works as follows:
 * When you take a new device into use, you enter this unique ID into "Device registration" in the Device Management application in Cumulocity and start the device.
 * The device will use this ID as part of the [MQTT ClientId](/guides/device-sdk/mqtt#mqtt-clientid) and static user credentials that can be enquired from support@cumulocity.com.
 * The device subscribes to the topic `s/dcr`.
-* You need to publish an empty message  on the `s/ucr` channel in order to allow cumulocity to accept the registration.
-* Another empty message must be published to `s/ucr` to receive credentials through `s/dcr`.
-* You can accept the connection from the device in "Device registration", in which case Cumulocity sends generated credentials to the device.
-
-> **Info:** The process will fail if Cumulocity is not waiting for connection from the desired device.
-
-The device will receive a message in the following format:
-
+* The device starts publishing continuous empty messages on the topic `s/ucr` to notify the server that it is ready to retrieve credentials.
+* Next you should accept the connection from the device in "Device registration".
+* When the device sends the next empty message it should receive credentials in the following format:
 ```
 70,<tenant>,<username>,<password>
 ```

@@ -56,14 +56,14 @@ redirects =
 	'/guides/cs': '/guides/microservice-sdk/cs'
 	'/guides/cpp': '/guides/device-sdk/cpp'
 	'/guides/http': '/guides/microservice-sdk/http'
-	'/guides/mqtt': '/guides/device-sdk/mqtt'
+	'/guides/mqtt': '/guides/microservice-sdk/mqtt'
 	'/guides/rest/introduction': '/guides/microservice-sdk/rest'
 	'/guides/java/introduction': '/guides/microservice-sdk/java'
 	'/guides/rest': '/guides/microservice-sdk/rest'
 	'/guides/java': '/guides/microservice-sdk/java'
 
 
-	
+
 	# "index.html" redirects
 	'/guides/concepts': '/guides/concepts/introduction'
 	'/guides/users-guide': '/guides/users-guide/overview'

@@ -66,18 +66,7 @@ redirects =
 	'/guides/web/tab-plugin': '/guides/web/web-sdk-for-plugins/tab-plugin'
 	'/guides/web/widget-plugin': '/guides/web/web-sdk-for-plugins/widget-plugin'
 	'/guides/web/smart-toolkit': '/guides/web/overview'
-	'/guides/users-guide/tenant-sla-monitoring': '/guides/users-guide/optional-services#tenant-sla-monitoring'
-	'/guides/users-guide/lora': '/guides/users-guide/optional-services#lora'
-	'/guides/users-guide/jasper': '/guides/users-guide/optional-services#jasper'
-	'/guides/users-guide/android-cloud-sensor-app': '/guides/users-guide/optional-services#android-cloud-sensor-app'
-	'/guides/users-guide/impact': '/guides/users-guide/optional-services#nokia-impact'
-	'/guides/users-guide/cloud-fieldbus': '/guides/users-guide/optional-services#cloud-fieldbus'
-	'/guides/benutzerhandbuch/administration-deutsch': '/guides/benutzerhandbuch/administration/'
-	'/guides/benutzerhandbuch/cockpit-deutsch': '/guides/benutzerhandbuch/cockpit/'
-	'/guides/benutzerhandbuch/device-management-deutsch': '/guides/benutzerhandbuch/device-management/'
-	'/guides/users-guide/user-and-permissions-management/: '/guides/users-guide/administration/'
-	'/guides/users-guide/saas-integration': '/guides/users-guide/optional-services#saas-integration'
-
+	
 
 	
 	# "index.html" redirects

@@ -16,7 +16,7 @@ redirects =
 	'/guides/concepts-guide/hosting': '/guides/concepts/applications'
 	'/guides/concepts-guide/hosting.html': '/guides/concepts/applications'
 	'/guides/users-guide/tenant-sla-monitoring': '/guides/users-guide/optional-services#tenant-sla-monitoring'
-	'/guides/users-guide/lora': '/guides/users-guide/optional-services#lora'
+	'/guides/users-guide/LoRa': '/guides/users-guide/optional-services#lora'
 	'/guides/users-guide/user-and-permissions-management/': '/guides/users-guide/administration'
 	'/guides/users-guide/jasper': '/guides/users-guide/optional-services#jasper'
 	'/guides/users-guide/android-cloud-sensor-app': '/guides/users-guide/optional-services#android-cloud-sensor-app'
@@ -24,7 +24,6 @@ redirects =
 	'/guides/users-guide/saas-integration': '/guides/users-guide/optional-services#saas-integration'
 	'/guides/users-guide/cloud-fieldbus': '/guides/users-guide/optional-services#cloud-fieldbus'
 	'/guides/users-guide/cloud-remote-access': '/guides/users-guide/optional-services#cloud-remote-access'
-	'/guides/users-guide/sigfox': '/guides/users-guide/optional-services#sigfox'
 	'/guides/users-guide/zapier': '/guides/users-guide/optional-services#saas-integration'
 	'/guides/benutzerhandbuch/administration-deutsch': '/guides/benutzerhandbuch/administration'
 	'/guides/benutzerhandbuch/cockpit-deutsch': '/guides/benutzerhandbuch/cockpit'
@@ -40,6 +39,8 @@ redirects =
 	'/guides/devices/netcomm/netcomm-usersguide': '/guides/devices/netcommwireless'
 	'/guides/devices/ublox-2': '/guides/devices/mbed-ublox-C027'
 	'/guides/devices/netcomm/cloud-fieldbus': '/guides/users-guide/optional-services#cloud-fieldbus'
+	'/guides/devices/sigfox': '/guides/users-guide/optional-services#sigfox'
+
 	
 
 	# Legacy redirects developer documentation

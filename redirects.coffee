@@ -30,6 +30,8 @@ redirects =
 	'/guides/users-guide/cockpit-deutsch': '/guides/users-guide/cockpit'
 	'/guides/users-guide/device-management-deutsch': '/guides/users-guide/device-management'
 	'/guides/users-guide/uebersicht': '/guides/users-guide/overview'
+	'/guides/edge/appendix': '/guides/edge/administration-configuration'
+	'/guides/edge/password': '/guides/edge/administration-configuration'
 	'/guides/devices/netcomm/netcomm-release': '/guides/devices/netcomm-release'
 	'/guides/devices/netcomm/netcomm-usersguide': '/guides/devices/netcommwireless'
 	'/guides/devices/netcomm/cloud-fieldbus': '/guides/users-guide/cloud-fieldbus'

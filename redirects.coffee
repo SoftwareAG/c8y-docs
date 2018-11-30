@@ -15,7 +15,21 @@ redirects =
 	'/guides/concepts-guide/developing-m2m-applications.html': '/guides/concepts/applications'
 	'/guides/concepts-guide/hosting': '/guides/concepts/applications'
 	'/guides/concepts-guide/hosting.html': '/guides/concepts/applications'
-	'/guides/rest.html': '/guides/device-sdk/rest'
+	'/guides/users-guide/tenant-sla-monitoring': '/guides/users-guide/optional-services#tenant-sla-monitoring'
+	'/guides/users-guide/lora': '/guides/users-guide/optional-services#lora'
+	'/guides/users-guide/user-and-permissions-management/': '/guides/users-guide/administration'
+	'/guides/users-guide/jasper': '/guides/users-guide/optional-services#jasper'
+	'/guides/users-guide/android-cloud-sensor-app': '/guides/users-guide/optional-services#android-cloud-sensor-app'
+	'/guides/users-guide/impact': '/guides/users-guide/optional-services#nokia-impact'
+	'/guides/users-guide/saas-integration': '/guides/users-guide/optional-services#saas-integration'
+	'/guides/users-guide/cloud-fieldbus': '/guides/users-guide/optional-services#cloud-fieldbus'
+	'/guides/users-guide/cloud-remote-access': '/guides/users-guide/optional-services#cloud-remote-access'
+	'/guides/users-guide/sigfox': '/guides/users-guide/optional-services#sigfox'
+	'/guides/users-guide/zapier': '/guides/users-guide/optional-services#saas-integration'
+	'/guides/users-guide/administration-deutsch': '/guides/users-guide/administration'
+	'/guides/users-guide/cockpit-deutsch': '/guides/users-guide/cockpit'
+	'/guides/users-guide/device-management-deutsch': '/guides/users-guide/device-management'
+	'/guides/users-guide/uebersicht': '/guides/users-guide/overview'
 	'/guides/developers-guide': '/guides/device-sdk/java'
 	'/guides/developers-guide/installing-the-sdk': '/guides/device-sdk/java'
 	'/guides/developers-guide/installing-the-sdk.html': '/guides/device-sdk/java'
@@ -48,12 +62,19 @@ redirects =
 	'/guides/reference-guide/real-time-statements.html': '/guides/reference/real-time-statements'
 	'/guides/reference-guide/cumulocity-event-language.html': '/guides/reference/cumulocity-event-language'
 	'/guides/reference-guide/real-time-notifications.html': '/guides/reference/real-time-notifications'
+	'/guides/reference/cumulocity-event-language': '/guides/event-language/introduction'
+
 	'/guides/devices/netcomm/netcomm-release': '/guides/devices/netcomm-release'
 	'/guides/devices/netcomm/netcomm-usersguide': '/guides/devices/netcommwireless'
 	'/guides/devices/netcomm/cloud-fieldbus': '/guides/users-guide/cloud-fieldbus'
-	'/guides/reference/cumulocity-event-language': '/guides/event-language/introduction'
-	'/guides/zapier': '/guides/users-guide/optional-services/#saas-integration'
+
+
 	'/guides/cs': '/guides/microservice-sdk/cs'
+'/guides/cs': '/guides/microservice-sdk/cs'
+'/guides/cs': '/guides/microservice-sdk/cs'
+'/guides/cs': '/guides/microservice-sdk/cs'
+'/guides/cs': '/guides/microservice-sdk/cs'
+
 	'/guides/cpp': '/guides/device-sdk/cpp'
 	'/guides/http': '/guides/microservice-sdk/http'
 	'/guides/mqtt': '/guides/microservice-sdk/mqtt'
@@ -66,17 +87,10 @@ redirects =
 	'/guides/web/tab-plugin': '/guides/web/web-sdk-for-plugins/tab-plugin'
 	'/guides/web/widget-plugin': '/guides/web/web-sdk-for-plugins/widget-plugin'
 	'/guides/web/smart-toolkit': '/guides/web/overview'
-	'/guides/users-guide/tenant-sla-monitoring': '/guides/users-guide/optional-services#tenant-sla-monitoring'
-	'/guides/users-guide/lora': '/guides/users-guide/optional-services#lora'
-	'/guides/users-guide/user-and-permissions-management/': '/guides/users-guide/administration'
-	'/guides/users-guide/jasper': '/guides/users-guide/optional-services#jasper'
-	'/guides/users-guide/android-cloud-sensor-app': '/guides/users-guide/optional-services#android-cloud-sensor-app'
-	'/guides/users-guide/impact': '/guides/users-guide/optional-services#nokia-impact'
-	'/guides/users-guide/saas-integration': '/guides/users-guide/optional-services#saas-integration'
-	'/guides/users-guide/cloud-fieldbus': '/guides/users-guide/optional-services#cloud-fieldbus'
-	'/guides/users-guide/administration-deutsch': '/guides/users-guide/administration'
-	'/guides/users-guide/cockpit-deutsch': '/guides/users-guide/cockpit'
-	'/guides/users-guide/device-management-deutsch': '/guides/users-guide/device-management'
+	'/guides/rest.html': '/guides/device-sdk/rest'
+
+
+	
 
 	
 

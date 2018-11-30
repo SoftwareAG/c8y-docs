@@ -50,7 +50,7 @@ The process works as follows:
 * The device will use this ID as part of the [MQTT ClientId](/guides/device-sdk/mqtt#mqtt-clientid) and static user credentials that can be enquired from support@cumulocity.com.
 * The device subscribes to the topic `s/dcr`.
 * The device starts publishing continuous empty messages on the topic `s/ucr` to notify the server that it is ready to retrieve credentials.
-* Next you should accept the connection from the device in "Device registration".
+* Next, you should accept the connection from the device in the **Device Registration** page.
 * When the device sends the next empty message it should receive credentials in the following format:
 ```
 70,<tenant>,<username>,<password>

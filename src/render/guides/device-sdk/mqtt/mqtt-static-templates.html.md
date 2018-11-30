@@ -143,7 +143,7 @@ Will update the position properties of the device.
 
 ##### Set Configuration (113)
 
-Will update the position properties of the device.
+Will update the configuration properties of the device.
 
 |Position|Parameter|Mandatory|
 |:-------|:-------|:-------|
@@ -627,7 +627,7 @@ Tells the device to either open or close the relays in the array.
 
 ##### Upload configuration file (520)
 
-Tells the device to upload its current configuration.
+The current configuration is uploaded from Cumulocity to the device.
 
 **Example**
 

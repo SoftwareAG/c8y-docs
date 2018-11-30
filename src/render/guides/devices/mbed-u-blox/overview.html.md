@@ -2,10 +2,6 @@
 title: Overview
 layout: redirect
 order: 10
-------
-title: Overview
-layout: redirect
-order: 10
 ---
 
 The [u-blox C027](https://mbed.org/platforms/u-blox-C027/ "u-blox C027") is a starter kit that allows quick prototyping of a variety of applications for the Internet of Things. The device comes with a cellular module as well as a GPS/GNSS receiver, which enable straightforward development of applications with location-aware communication capability.

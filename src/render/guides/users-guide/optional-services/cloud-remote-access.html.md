@@ -25,6 +25,8 @@ With Cloud Remote Access users can
 
 The connection to remote devices is securely encrypted through TLS technology. Additionally, passwords are encrypted in your Cumulocity account, so that you do not need to manage them elsewhere.
 
+>**Important**: If you want to use Telnet, be aware that Telnet is considered to be an insecure protocol lacking built-in security measures. For network communication in a production environment we highly recommend to use the SSH protocol instead.
+
 ### Using Cloud Remote Access
 
 Cloud Remote Access is available in the Device Management application. 

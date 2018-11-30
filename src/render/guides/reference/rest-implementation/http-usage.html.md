@@ -204,6 +204,7 @@ In error cases, Cumulocity returns standard HTTP response codes as described in 
 |405|Method not allowed|The employed HTTP method cannot be used on this resource (e.g., using "POST" on a read-only resource).|
 |409|Update Conflict|Conflict on resource update, entity was changed in the meantime.|
 |409|Duplicate|The entity already exists in the data source.|
+|413|Execution timeout, operation will be abandoned|Query had been running too long and was timed out.|
 |422|Invalid Data|General error with entity data format.|
 |422|Non Unique Result|Resource constraints error. Non-unique result from the query.|
 |422|Unprocessable entity|Resource cannot be processed.|

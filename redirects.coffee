@@ -1,5 +1,5 @@
 redirects =
-	# Legacy redirects
+	# Legacy redirects user documentation
 	'/guides/concepts-guide': '/guides/concepts/introduction'
 	'/guides/concepts-guide/introduction-to-cumulocity': '/guides/concepts/introduction'
 	'/guides/concepts-guide/introduction-to-cumulocity.html': '/guides/concepts/introduction'
@@ -30,6 +30,12 @@ redirects =
 	'/guides/users-guide/cockpit-deutsch': '/guides/users-guide/cockpit'
 	'/guides/users-guide/device-management-deutsch': '/guides/users-guide/device-management'
 	'/guides/users-guide/uebersicht': '/guides/users-guide/overview'
+	'/guides/devices/netcomm/netcomm-release': '/guides/devices/netcomm-release'
+	'/guides/devices/netcomm/netcomm-usersguide': '/guides/devices/netcommwireless'
+	'/guides/devices/netcomm/cloud-fieldbus': '/guides/users-guide/cloud-fieldbus'
+	
+
+	# Legacy redirects developer documentation
 	'/guides/developers-guide': '/guides/device-sdk/java'
 	'/guides/developers-guide/installing-the-sdk': '/guides/device-sdk/java'
 	'/guides/developers-guide/installing-the-sdk.html': '/guides/device-sdk/java'
@@ -63,36 +69,56 @@ redirects =
 	'/guides/reference-guide/cumulocity-event-language.html': '/guides/reference/cumulocity-event-language'
 	'/guides/reference-guide/real-time-notifications.html': '/guides/reference/real-time-notifications'
 	'/guides/reference/cumulocity-event-language': '/guides/event-language/introduction'
-
-	'/guides/devices/netcomm/netcomm-release': '/guides/devices/netcomm-release'
-	'/guides/devices/netcomm/netcomm-usersguide': '/guides/devices/netcommwireless'
-	'/guides/devices/netcomm/cloud-fieldbus': '/guides/users-guide/cloud-fieldbus'
-
-
+	'/guides/mqtt/hello-mqtt-cs-0': '/guides/device-sdk/hello-mqtt-cs-0'
 	'/guides/cs': '/guides/microservice-sdk/cs'
-'/guides/cs': '/guides/microservice-sdk/cs'
-'/guides/cs': '/guides/microservice-sdk/cs'
-'/guides/cs': '/guides/microservice-sdk/cs'
-'/guides/cs': '/guides/microservice-sdk/cs'
-
+	'/guides/cs/introduction': '/guides/microservice-sdk/cs#introduction'
+	'/guides/cs/developing-microservice': '/guides/microservice-sdk/cs#developing-microservice'
+	'/guides/cs/hello-world-basic': '/guides/microservice-sdk/cs#hello-world-basic'
 	'/guides/cpp': '/guides/device-sdk/cpp'
-	'/guides/http': '/guides/microservice-sdk/http'
-	'/guides/mqtt': '/guides/microservice-sdk/mqtt'
-	'/guides/rest/introduction': '/guides/microservice-sdk/rest'
-	'/guides/java/introduction': '/guides/microservice-sdk/java'
-	'/guides/rest': '/guides/microservice-sdk/rest'
+	'/guides/cpp/build': '/guides/device-sdk/cpp#build'
+	'/guides/cpp/custom': '/guides/device-sdk/cpp#custom'
+	'/guides/cpp/introduction': '/guides/device-sdk/cpp#introduction'
+	'/guides/cpp/reference': '/guides/device-sdk/cpp#reference'
+	'/guides/cpp/use': '/guides/device-sdk/cpp#use'
 	'/guides/java': '/guides/microservice-sdk/java'
+	'/guides/java/introduction': '/guides/microservice-sdk/java#introduction'
+	'/guides/java/developing-microservice': '/guides/microservice-sdk/java#developing-microservice'
+	'/guides/java/developing-services-client': '/guides/microservice-sdk/java#developing-services-client'
+	'/guides/java/troubleshooting': '/guides/microservice-sdk/java#troubleshooting'
+	'/guides/java/java-microservice': '/guides/microservice-sdk/java#java-microservice'
+	'/guides/java/agents': '/guides/device-sdk/java#agents'
+	'/guides/java/developing-java-clients': '/guides/device-sdk/java#developing-java-clients'
+	'/guides/java/hello-world-basic': '/guides/device-sdk/java#hello-world-basic'
+	'/guides/java/hello-world-me': '/guides/device-sdk/java#hello-world-me'
+	'/guides/rest': '/guides/device-sdk/rest'
+	'/guides/rest/introduction': '/guides/device-sdk/rest#overview'
+	'/guides/rest/device-integration': '/guides/device-sdk/rest#device-integration'
+	'/guides/rest/hello-rest': '/guides/device-sdk/rest#hello-rest'
+	'/guides/rest/smartrest': '/guides/microservice-sdk/rest#smartrest'
+	'/guides/rest/microservice-development': '/guides/microservice-sdk/rest#microservice-development'
+	'/guides/rest/application-development': '/guides/microservice-sdk/rest#application-development'
+	'/guides/mqtt/device-integration': '/guides/device-sdk/mqtt#device-integration'
+	'/guides/mqtt/handling-ids': '/guides/device-sdk/mqtt#handling-ids'
+	'/guides/mqtt/hello-mqtt': '/guides/device-sdk/mqtt#hello-mqtt'
+	'/guides/mqtt/hello-mqtt-java': '/guides/device-sdk/mqtt#hello-mqtt-java'
+	'/guides/mqtt/hello-mqtt-javascript': '/guides/device-sdk/mqtt#hello-mqtt-javascript'
+	'/guides/mqtt/hello-mqtt-c': '/guides/device-sdk/mqtt#hello-mqtt-c'
+	'/guides/mqtt/hello-mqtt-python': '/guides/device-sdk/mqtt#hello-mqtt-python'
+	'/guides/mqtt/implementation': '/guides/device-sdk/mqtt#implementation'
+	'/guides/mqtt/json': '/guides/device-sdk/mqtt#json'
+	'/guides/mqtt/mqtt-static-templates': '/guides/device-sdk/mqtt#mqtt-static-templates'
+	'/guides/mqtt/smartrest-1': '/guides/device-sdk/mqtt#smartrest-1'
+	'/guides/mqtt/smartrest-2': '/guides/device-sdk/mqtt#smartrest-2'
+	'/guides/mqtt/introduction': '/guides/device-sdk/mqtt#overview'
+	'/guides/http': '/guides/microservice-sdk/http'
+	'/guides/http/hello-mircoservice-python': '/guides/microservice-sdk/http#hello-mircoservice-python'
 	'/guides/web/jsdoc': '/guides/web/web-sdk-for-plugins/jsdoc'
 	'/guides/web/branding-plugin': '/guides/web/web-sdk-for-plugins/branding-plugin'
 	'/guides/web/tab-plugin': '/guides/web/web-sdk-for-plugins/tab-plugin'
 	'/guides/web/widget-plugin': '/guides/web/web-sdk-for-plugins/widget-plugin'
 	'/guides/web/smart-toolkit': '/guides/web/overview'
-	'/guides/rest.html': '/guides/device-sdk/rest'
 
 
-	
-
-	
 
 	# "index.html" redirects
 	'/guides/concepts': '/guides/concepts/introduction'

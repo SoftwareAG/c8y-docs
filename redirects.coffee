@@ -25,6 +25,7 @@ redirects =
 	'/guides/users-guide/cloud-fieldbus': '/guides/users-guide/optional-services#cloud-fieldbus'
 	'/guides/users-guide/cloud-remote-access': '/guides/users-guide/optional-services#cloud-remote-access'
 	'/guides/users-guide/zapier': '/guides/users-guide/optional-services#saas-integration'
+	'/guides/users-guide/data-broker': '/guides/users-guide/enterprise-edition#data-broker'
 	'/guides/benutzerhandbuch/administration-deutsch': '/guides/benutzerhandbuch/administration'
 	'/guides/benutzerhandbuch/cockpit-deutsch': '/guides/benutzerhandbuch/cockpit'
 	'/guides/benutzerhandbuch/device-management-deutsch': '/guides/benutzerhandbuch/device-management'
@@ -40,6 +41,10 @@ redirects =
 	'/guides/devices/ublox-2': '/guides/devices/mbed-ublox-C027'
 	'/guides/devices/netcomm/cloud-fieldbus': '/guides/users-guide/optional-services#cloud-fieldbus'
 	'/guides/devices/sigfox': '/guides/users-guide/optional-services#sigfox'
+	'/guides/devices/smartbox': '/guides/devices/smartbox-mini'
+	'/guides/devices/smartbox-modus': '/guides/devices/smartbox-mini'
+	'/guides/devices/RedLion-StratusConnect-MC-Gateway': '/guides/devices/RedLion-RAM-series'
+	'/guides/devices/hwg': '/guides/devices'
 
 	
 

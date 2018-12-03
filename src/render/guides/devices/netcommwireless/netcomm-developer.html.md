@@ -1,7 +1,7 @@
     ---
-order: 30
+order: 130
 title: Netcomm Agent Developer's Guide
-layout: default
+layout: redirect
 ---
 
 # Index:

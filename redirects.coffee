@@ -36,8 +36,9 @@ redirects =
 	'/guides/benutzerhandbuch/android-cloud-remote-access-deutsch': '/guides/users-guide/optional-services#cloud-remote-access'
 	'/guides/edge/appendix': '/guides/edge/administration-configuration'
 	'/guides/edge/password': '/guides/edge/administration-configuration'
-	'/guides/devices/netcomm/netcomm-release': '/guides/devices/netcomm-release'
+	'/guides/devices/netcomm/netcomm-release': '/guides/devices/netcommwireless#netcomm-release'
 	'/guides/devices/netcomm/netcomm-usersguide': '/guides/devices/netcommwireless'
+	'/guides/devices/netcomm/netcomm-developer': '/guides/devices/netcommwireless#netcomm-developer'
 	'/guides/devices/ublox-2': '/guides/devices/mbed-ublox-C027'
 	'/guides/devices/netcomm/cloud-fieldbus': '/guides/users-guide/optional-services#cloud-fieldbus'
 	'/guides/devices/sigfox': '/guides/users-guide/optional-services#sigfox'
@@ -45,7 +46,6 @@ redirects =
 	'/guides/devices/smartbox-modus': '/guides/devices/smartbox-mini'
 	'/guides/devices/RedLion-StratusConnect-MC-Gateway': '/guides/devices/RedLion-RAM-series'
 	'/guides/devices/hwg': '/guides/devices'
-
 	
 
 	# Legacy redirects developer documentation

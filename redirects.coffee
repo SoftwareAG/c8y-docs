@@ -150,4 +150,5 @@ redirects =
 	'/guides': '/dev-center'
 	'/guides/release-notes': '/guides/release-notes/overview'
 
+
 module.exports = redirects

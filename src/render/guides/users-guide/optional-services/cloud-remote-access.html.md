@@ -140,11 +140,11 @@ The audit logs can be found in the **Control** tab of the device.
 
 The following versions of the VNC protocol are currently supported:
 
-|Version|VNC servers|Supported|Authentication
+|Version|VNC servers tested|Supported|Authentication
 |:---|:---|:---|:---
 |RFB 003.003||Yes|Yes
 |RFB 003.007||Yes|Yes
-|RFB 003.008|Real VNC 5.3.2, Tiger VNC 1.6.0, Vino|Yes|Yes
+|RFB 003.008|Real VNC 5.3.2, Tiger VNC 1.6.0, TightVNC 1.3.9, EfonVNC 4.2, Vino|Yes|Yes
 |RFB 004.00x||No; planned|No
 |RFB 005.00x|Real VNC 6.2|No; planned|No
 
@@ -193,10 +193,3 @@ To establish a connection to a remote operating panel, a “Read” permission f
 For more information on permissions, refer to [Administration > Managing permissions](/guides/users-guide/administration/#managing-permissions) in the User guide.
 
 The VNC connection via a gateway to a remote VNC server can fail because of network problems. In this case you need to contact your network administrator.
-
-The functionality has been tested on the following VNC servers:
-
-* Real VNC Connect 6.0.2	
-* TightVNC 1.3.9
-* TigerVNC 1.7.0
-* EfonVNC 4.2

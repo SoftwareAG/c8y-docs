@@ -6,13 +6,13 @@ layout: redirect
 
 ### Overview
 
-This section provides an example of a C# microservice in Cumulocity. It uses Cake (C# Make), which is a cross-platform build automation system. 
+This section provides an example of a C# microservice in Cumulocity. It uses Cake (C# Make), which is a cross-platform build automation system.
 
-To start building .NET apps, you just need to download and install the [.NET SDK](https://www.microsoft.com/net/download). Follow the instructions on the download page for the last stable release or alternatively you can also try using 2.0. 
+To start building .NET apps, you just need to download and install the [.NET SDK](https://www.microsoft.com/net/download). Follow the instructions on the download page for the last stable release or alternatively you can also try using 2.0.
 
 If you use Linux, visit the [MonoDevelop website](http://www.monodevelop.com/) for download packages and more details about our cross-platform IDE. Follow the instructions on the download page for the last stable release or alternatively you can also try using 5.4 or higher version of mono [IDE](http://www.mono-project.com/download/#download-lin). Note, that Mono-devel is required to compile code.
 
-The initial script was used to create a demo, which makes it easier to create an example microservice project with dependency management and then deploy it on the server. The script attempts to download the package from the sources listed in the project file and next a reference is added to the appropriate project file. In addition, the script creates the appropriate Docker file to take into account the naming of projects. Next it will create a Docker image based on a Docker file. 
+The initial script was used to create a demo, which makes it easier to create an example microservice project with dependency management and then deploy it on the server. The script attempts to download the package from the sources listed in the project file and next a reference is added to the appropriate project file. In addition, the script creates the appropriate Docker file to take into account the naming of projects. Next it will create a Docker image based on a Docker file.
 
 The application created in this way uses the ASP.NET Web API framework to create a web API. The API runs on an isolated web server called Kestrel and as a foreground job, which makes it work really well with Docker.
 
@@ -29,13 +29,13 @@ The latest can be replaced by the version number e.g. microservicesdk-lin-dev-{X
 
 Once you have downloaded the source, unzip the file.
 
-	Expand-Archive c:\microservicesdk-win-dev-latest.zip -DestinationPath c:\microservicesdk-win-dev-latest.zip
+	Expand-Archive c:\microservicesdk-win-dev-X.X.X.zip -DestinationPath c:\microservicesdk-win-dev-X.X.X
 
 Change the current folder and navigate to a microservicesdk folder.
 
-	cd microservicesdk-win-dev-X.X.X.zip
+	cd microservicesdk-win-dev-X.X.X
 
-Run the script "create.sh" to create a sample project, provide the name of the project and the API application.
+Run the script "create.ps1" to create a sample project, provide the name of the project and the API application.
 
 	./create.ps1
 
@@ -43,11 +43,11 @@ Execute the bootstrapper script to build the application and an image from a Doc
 
 	./build.ps1
 
-In order to deploy the application run the deploy script. You must provide the correct URL and credentials in this script. 
+In order to deploy the application run the deploy script. You must provide the correct URL and credentials in this script.
 
 **How to call the script**
 
-*  Call "deploy.sh"
+*  Call "deploy.ps1"
 	* The script looks for a settings.ini in the same directory. If found, it uses the credentials and tenant URL from that file.
 	* If settings.ini is not found, an error is shown.
 	
@@ -90,7 +90,6 @@ The application starts executing from the entry point `public static void Main()
         {
             BuildWebHost(args).Run();
         }
-
         public static IWebHost BuildWebHost(string[] args) =>
 
                 WebHost.CreateDefaultBuilder(args)
@@ -133,9 +132,7 @@ Method BuildWebHost performs the following tasks:
 An example application must include Startup class. As the name suggests, it is executed first when the application starts.
 
     public class Startup
-
     {
-
         public IConfiguration Configuration { get; }
 
         public Startup(IConfiguration configuration)
@@ -144,9 +141,7 @@ An example application must include Startup class. As the name suggests, it is e
         }
 
         public void ConfigureServices(IServiceCollection services)
-
         {
-
             services.AddCumulocityAuthentication(Configuration);
             services.AddPlatform(Configuration);
             services.AddSingleton<IApplicationService, ApplicationService>();
@@ -156,7 +151,6 @@ An example application must include Startup class. As the name suggests, it is e
         }
 
         public void Configure(IApplicationBuilder app, IHostingEnvironment env, ILoggerFactory loggerFactory)
-
         {
             app.UseAuthentication();
             app.UseBasicAuthentication();
@@ -171,7 +165,7 @@ Startup.cs responsibilities:
 * Setup dependency injection in ConfigureServices
 * Setup the middleware pipeline in Configure
 
-**Dockerfile** created by "create.sh":
+**Dockerfile** created by "create.ps1":
 
 	FROM microsoft/dotnet:2.0-runtime
 	WORKDIR /app

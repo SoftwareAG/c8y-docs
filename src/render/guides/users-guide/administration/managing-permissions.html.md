@@ -83,7 +83,7 @@ The following permission categories are available by default:
 |Application management|View or edit the applications available in this account.
 |Audits|View or create audit logs for devices.
 |Bulk operations|View or create bulk operations.
-|CEP management|View or edit Cumulocity Event Language rules.
+|CEP management|View or edit CEP rules.
 |Data broker|Send data to other tenants or receive data from other tenants.
 |Device control|View or edit commands for devices resp. send commands to devices. Also used for device registration.
 |Events|View or create events for devices.

@@ -261,7 +261,7 @@ Die folgenden Berechtigungskategorien sind standardmäßig verfügbar:
 
 <td style="text-align: left">CEP-Verwaltung</td>
 
-<td style="text-align: left">Cumulocity Event Language-Regeln einsehen oder bearbeiten</td>
+<td style="text-align: left">CEP-Regeln einsehen oder bearbeiten</td>
 
 </tr>
 

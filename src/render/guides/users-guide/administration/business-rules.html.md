@@ -7,9 +7,9 @@ layout: redirect
 <a name="event-processing"></a>
 ### Event processing
 
-Using event processing, you can specify realtime business logic that is automatically run by Cumulocity as soon as new data arrives or existing data is modified. The logic is deployed in so-called "modules". Modules consist of a set of statements that you write in [Cumulocity Event Language](/guides/concepts/realtime). 
+Using event processing, you can specify realtime business logic that is automatically run by Cumulocity as soon as new data arrives or existing data is modified. The logic is deployed in so-called "modules" which consist of a set of CEP statements. 
 
->**Info**: A user-friendly way to specify realtime business logic is provided in the Cockpit application through the so-called "[Smart Rules](/guides/users-guide/cockpit#smart-rules)". Smart Rules are "under the hood" also implemented as Cumulocity Event Language statements, and you can see them in the **Event Processing** page. However, you cannot edit Smart Rules from here.
+>**Info**: A user-friendly way to specify realtime business logic is provided in the Cockpit application through the so-called "[Smart Rules](/guides/users-guide/cockpit#smart-rules)". Smart Rules are "under the hood" also implemented as CEP statements, and you can see them in the **Event Processing** page. However, you cannot edit Smart Rules from here.
 >
 Click **Event processing** in the **Business rules** menu to view the current modules or to create new ones.
 
@@ -31,7 +31,7 @@ To create a new module, click **New module** in the top menu bar.
 
 1. Enter a name for the module at the very top. You can only use alphanumeric characters without blanks.
 2. By default, the status is set to "Deployed" which means that the statements you enter will be run immediately. Set the slider to "Not deployed" if you want to avoid this. 
-3. Enter your CEL statements into the **Source code** text box. For your convenience, we provide various examples. Click **Examples** and select an appropriate example from the dropdown list. Click **Append example** to paste the example into the **Source code** text box at the position of the cursor.
+3. Enter your CEP statements into the **Source code** text box. For your convenience, we provide various examples. Click **Examples** and select an appropriate example from the dropdown list. Click **Append example** to paste the example into the **Source code** text box at the position of the cursor.
 4. Click **Save** to save your settings.
 
 The example module creates an alarm if the temperature goes below 0 degree.

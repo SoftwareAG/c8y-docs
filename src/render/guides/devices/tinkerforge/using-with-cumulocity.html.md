@@ -48,7 +48,7 @@ To operate the display from Cumulocity, click the "Control" tab of the display b
 
 ![Display usage](/guides/images/devices/tinkerforge/tinkerforgedisplay.png)
 
-The display has four buttons at the bottom. Operating these buttons will send an event to Cumulocity which is shown on the "Events" tab. You can process this event, for example, using a [CEL statement](/guides/concepts/realtime). The event is of type "c8y_ButtonPressedEvent". The number of the button is part of the text of the event.
+The display has four buttons at the bottom. Operating these buttons will send an event to Cumulocity which is shown on the "Events" tab. You can process this event, for example, using a [CEP statement](/guides/concepts/realtime). The event is of type "c8y_ButtonPressedEvent". The number of the button is part of the text of the event.
 
 ![Events](/guides/images/devices/tinkerforge/tinkerforgeevents.png)
 
@@ -179,7 +179,7 @@ This operation will find up to four outputs starting from A0 to B7 and switch th
 <div><img src="/guides/images/devices/tinkerforge/distance_ir.jpg" alt="Distance IR" style="display: inline">
 <img src="/guides/images/devices/tinkerforge/distance_us.jpg" alt="Distance US" style="display: inline"></div><br>
 
-Additionally to providing measurement data, the Distance US and IR bricklets also send events. Similar to a button press on the display, interrupting the sensor of the distance bricklets will send an event. The event can be seen on the "Events" tab of the distance bricklet and can be post-processed with [CEL](/guides/concepts/realtime). The type of the event is "c8y_EntranceEvent". Additionally the following configuration options are provided:
+Additionally to providing measurement data, the Distance US and IR bricklets also send events. Similar to a button press on the display, interrupting the sensor of the distance bricklets will send an event. The event can be seen on the "Events" tab of the distance bricklet and can be post-processed with [CEP](/guides/concepts/realtime). The type of the event is "c8y_EntranceEvent". Additionally the following configuration options are provided:
 
 * c8y.distanceir.eventSlackTime, c8y.distanceus.eventSlackTime - sets the minimum time between events. Time is in ms. Default is 10000ms.
 * c8y.distanceir.eventTreshold - sets the minimum distance in mm that would trigger an event.  Default is 400mm;

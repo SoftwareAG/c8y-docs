@@ -22,9 +22,6 @@ In the following sections, we describe the basics for understanding how the Apam
 
 For more information about the interfaces for real-time processing also see [Real-time Statements](/guides/reference/real-time-statements) in the Reference guide.
 
->**Important**: All new Cumulocity installations use the Apama CEP engine. Using Esper is still supported for older installations but will no longer be provided for new installations and not be invested into in the future. For information on using the deprecated Esper CEP engine refer to the [CEL Analytics guide](/guides/event-language/introduction).
-
-
 ### CEP applications
 
 The CEP installation is based on a per-tenant isolation scope, i.e. each subscribed tenant has an own instance of CEP container with dedicated resources (i.e. memory and CPU usage). The container is isolated from other tenants, hence high CPU load or memory issues on other containers do not have any impact on the own one.

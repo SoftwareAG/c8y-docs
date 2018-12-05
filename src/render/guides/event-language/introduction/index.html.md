@@ -4,7 +4,7 @@ title: About this guide
 layout: redirect
 ---
 
-**Important**: The functionality described in this CEL analytics guide is deprecated. All new Cumulocity installations use the Apama CEP engine. Using Esper is still supported for older installations but is no longer available for new installations and not be invested into in the future. 
+**Important**: The functionality described in this CEL analytics guide is deprecated. All new Cumulocity installations will use the Apama CEP engine. Using the Esper CEP engine is still supported for older installations but will no longer be provided for new installations and not be invested into in the future. 
 
 For further information on using Apama's Event Processing Language in Cumulocity refer to the [Analytics guide](/guides/apama/introduction).
 

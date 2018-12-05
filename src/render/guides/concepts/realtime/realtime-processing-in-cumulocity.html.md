@@ -8,7 +8,7 @@ On top of Cumulocity IoT you can use the Apama streaming analytics engine to def
 
 Apama's Event Processing Language covers _statements_, which are organized into actions and monitors. These can be deployed one file at a time, where a file may contain multiple monitors and event definitions. Monitor files can be edited with Software AG Designer - an Eclipse-based development environment, and can be deployed as Cumulocity applications, see [Administration > Own applications](/guides/users-guide/administration/#managing-applications) in the User guide.
 
-For further information on using Apama's Event Processing Language in Cumulocity IoT refer to [Using Apama Event Processing Language](/guides/concepts/realtime#using-epl) below and to the [Apama analytics guide](/guides/apama/introduction).
+For further information on using Apama's Event Processing Language in Cumulocity IoT refer to [Using Apama Event Processing Language](/guides/concepts/realtime#using-epl) below and to the [Analytics guide](/guides/apama/introduction).
 
 For more information about the interfaces for real-time processing also see [Real-time Statements](/guides/reference/real-time-statements) in the Reference guide.
 

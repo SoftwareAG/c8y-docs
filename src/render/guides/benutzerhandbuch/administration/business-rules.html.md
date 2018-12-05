@@ -7,9 +7,9 @@ layout: redirect
 <a name="event-processing"></a>
 ### Echtzeitverarbeitung
 
-Mittels Echtzeitverarbeitung können Geschäftsregeln definiert werden, die automatisch in Echtzeit ausgeführt werden, sobald neue Daten eingehen oder bestehende Daten geändert werden. Die Logik wird in sogenannten Modulen implementiert. Module bestehen aus einer Menge von Anweisungen, die Sie in der [Cumulocity Event Language](/guides/concepts/realtime) schreiben.
+Mittels Echtzeitverarbeitung können Geschäftsregeln definiert werden, die automatisch in Echtzeit ausgeführt werden, sobald neue Daten eingehen oder bestehende Daten geändert werden. Die Logik wird in sogenannten Modulen implementiert, die aus einer Menge von CEP-Anweisungen bestehen.
 
-> **Info:** Eine benutzerfreundliche Methode, Echtzeitregeln zu definieren, wird in der Cockpit-Anwendung mit den sogenannten [Smart Rules](/guides/benutzerhandbuch/cockpit#rules) bereitgestellt. Smart Rules sind ebenfalls Anweisungen, die mit der Cumulocity Event Language erstellt wurden, und in der Liste der Echtzeitregeln angezeigt werden. Sie können jedoch hier nicht bearbeitet werden.
+> **Info:** Eine benutzerfreundliche Methode, Echtzeitregeln zu definieren, wird in der Cockpit-Anwendung mit den sogenannten [Smart Rules](/guides/benutzerhandbuch/cockpit#rules) bereitgestellt. Smart Rules sind ebenfalls CEP-Anweisungen, die in der Liste der Echtzeitregeln angezeigt werden, hier jedoch nicht bearbeitet werden können.
 
 Klicken Sie **Echtzeitverarbeitung** im Menü **Geschäftsregeln**, um die vorhandenen Module anzuzeigen oder neue Module zu erstellen.
 
@@ -31,7 +31,7 @@ Um ein neues Modul zu erstellen, klicken Sie **Neues Modul** in der oberen Menü
 
 1.  Geben Sie oben einen Namen für das neue Modul ein. Es sind nur alphanumerische Zeichen ohne Leerzeichen zulässig.
 2.  Standardmäßig ist der Status "Bereitgestellt" voreingestellt, so dass die Anweisungen, die Sie erstellen, unmittelbar ausgeführt werden. Um dies zu verhindern, schieben Sie den Regler auf "Nicht bereitgestellt".
-3.  Geben Sie Ihre CEL-Anweisungen in das Textfeld **Quellcode** ein. Als Hilfe finden Sie einige Beispiele. Klicken Sie **Beispiele** und wählen Sie ein passendes Beispiel aus der Auswahlliste. Klicken Sie **Übernehmen**, um das Beispiel an der Position des Mauszeigers in das Textfeld zu kopieren.
+3.  Geben Sie Ihre CEP-Anweisungen in das Textfeld **Quellcode** ein. Als Hilfe finden Sie einige Beispiele. Klicken Sie **Beispiele** und wählen Sie ein passendes Beispiel aus der Auswahlliste. Klicken Sie **Übernehmen**, um das Beispiel an der Position des Mauszeigers in das Textfeld zu kopieren.
 4.  Klicken Sie **Speichern**, um Ihre Einstellungen zu speichern.
 
 Das Beispielmodul erzeugt einen Alarm, wenn die Temperatur unter 0 Grad sinkt.

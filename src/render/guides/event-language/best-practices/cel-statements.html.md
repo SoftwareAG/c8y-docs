@@ -1,6 +1,6 @@
 ---
 order: 10
-title: CEL Statements and Esper scripts
+title: CEP statements and Esper scripts
 layout: redirect
 ---
 

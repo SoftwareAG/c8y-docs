@@ -1,6 +1,6 @@
 ---
 order: 40
-title: Advanced functionalities
+title: Advanced features
 layout: subsections
 collection: 'guides/apama/advanced'
 ---

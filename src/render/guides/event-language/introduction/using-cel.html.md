@@ -1,11 +1,8 @@
 ---
-order: 20
+order: 15
 title: Using Cumulocity Event Language (CEL)
 layout: redirect
 ---
-
-<a name="using-cel"></a>
-### Overview
 
 Cumulocity Event Language has a syntax similar to SQL language. In SQL a statement is run against a logically fixed database, produces a result and completes the task. In Cumulocity, a statement is continuously running against a stream of input data (input events) and is continuously calculating its output (output events).
 

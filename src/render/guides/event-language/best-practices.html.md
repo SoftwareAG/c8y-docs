@@ -1,6 +1,6 @@
 ---
 order: 40
-title: Best Practises and Troubleshooting
+title: Best practises and troubleshooting
 layout: subsections
 collection: 'guides/event-language/best-practices'
 ---

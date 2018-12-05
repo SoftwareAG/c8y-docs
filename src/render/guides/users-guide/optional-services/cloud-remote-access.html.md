@@ -144,8 +144,6 @@ The following versions of the VNC protocol are currently supported:
 * RFB 003.007
 * RFB 003.008
 
-Support for RFB 004.00x and RFB 005.00x is planned for future development.
-
 The functionality has been tested on the following VNC servers:
 
 * Real VNC 5.3.2
@@ -198,4 +196,4 @@ To establish a connection to a remote operating panel, a “Read” permission f
 
 For more information on permissions, refer to [Administration > Managing permissions](/guides/users-guide/administration/#managing-permissions) in the User guide.
 
-The VNC connection via a gateway to a remote VNC server can fail because of network problems. In this case you need to contact your network administrator.
+The connection via a gateway to a remote VNC, SSH or Telnet server can fail because of network problems. In this case you need to contact your network administrator.

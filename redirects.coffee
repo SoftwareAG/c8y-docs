@@ -148,7 +148,7 @@ redirects =
 	'/guides/web': '/guides/web/introduction'
 	'/guides/cloud-fieldbus': '/guides/users-guide/optional-services#cloud-fieldbus'
 	'/guides/devices': '/guides/devices/overview'
-	'/guides/apama': '/guides/apama/overview'
+	'/guides/apama': '/guides/apama/overview-analytics'
 	'/guides/edge': '/guides/edge/overview'
 	'/guides/microservice-sdk': '/guides/microservice-sdk/introduction'
 	'/guides/device-sdk': '/guides/device-sdk/introduction'

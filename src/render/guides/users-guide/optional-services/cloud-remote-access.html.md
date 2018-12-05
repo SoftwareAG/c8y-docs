@@ -140,13 +140,19 @@ The audit logs can be found in the **Control** tab of the device.
 
 The following versions of the VNC protocol are currently supported:
 
-|Version|VNC servers tested|Supported|Authentication
-|:---|:---|:---|:---
-|RFB 003.003||Yes|Yes
-|RFB 003.007||Yes|Yes
-|RFB 003.008|Real VNC 5.3.2, Tiger VNC 1.6.0, TightVNC 1.3.9, EfonVNC 4.2, Vino|Yes|Yes
-|RFB 004.00x||No; planned|No
-|RFB 005.00x|Real VNC 6.2|No; planned|No
+* RFB 003.003
+* RFB 003.007
+* RFB 003.008
+
+Support for RFB 004.00x and RFB 005.00x is planned for future development.
+
+The functionality has been tested on the following VNC servers:
+
+* Real VNC 5.3.2
+* Tiger VNC 1.6.0/1.7.0
+* TightVNC 1.3.9
+* EfonVNC 4.2
+* Vino
 
 The following operating systems/browsers are currently supported:
 

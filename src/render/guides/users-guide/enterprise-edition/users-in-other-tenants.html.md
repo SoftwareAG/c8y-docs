@@ -4,8 +4,15 @@ title: Supporting users in other tenants
 layout: redirect
 ---
 
+With the support user feature support users, i.e. users of the management tenant, can log into accounts of other tenant's users to provide help in case of any issues.
 
-Support users are users in the management tenant with a special permission to log in as other tenant's users. As an example, suppose you get a support call from a user "john" in the tenant "acme.cumulocity.com". The user cannot run certain functionality, and you suspect that it is a permission issue. Your username in the management tenant is "jill" and you are permitted to carry out support for "acme.cumulocity.com". In this case, you can log in to "acme.cumulocity.com" using the username "jill&#36;john" and your password for "jill". Now you can reproduce what "john" is seeing. 
+To so so, support user access must be enabled on platform level, subtenant level  or user level, see [Configuring support user access](#configuring-support-access) below. 
+
+As an example, suppose you get a support call from a user "john" in the tenant `acme.cumulocity.com`. The user cannot run certain functionality, and you suspect that it is a permission issue. Your username in the management tenant is "jill" and you are permitted to carry out support for `acme.cumulocity.com`. In this case, you can log in to `acme.cumulocity.com` using the username "jill&#36;john" and your password for "jill". Now you can reproduce what "john" is seeing. 
+
+### <a name="configuring-support-access"></a>Configuring support user access
+
+
 
 ### Configuring support users
 
@@ -47,3 +54,8 @@ In this case, the support user will access the tenant with one of the administra
 Audit logs are created for each support user access and for the actions that support users perform. In the column "Who?" the author's name will be shown in form of:
 
 	"support_user$user"
+	
+	
+### Example
+
+As an example, suppose you get a support call from a user "john" in the tenant `acme.cumulocity.com`. The user cannot run certain functionality, and you suspect that it is a permission issue. Your username in the management tenant is "jill" and you are permitted to carry out support for `acme.cumulocity.com`. In this case, you can log in to `acme.cumulocity.com` using the username "jill&#36;john" and your password for "jill". Now you can reproduce what "john" is seeing. 

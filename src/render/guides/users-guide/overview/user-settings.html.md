@@ -1,14 +1,30 @@
 ---
 order: 50
-title: User settings
+title: User menu
 layout: redirect
 ---
 
-<a name="settings"></a>
+Clicking the **User** button at the top right will open a menu which provides access to various actions or information.
+
+<img src="/guides/images/users-guide/Overview/user-account-menu.png" alt="User account menu"  style="max-width: 60%">
+
+The **User** menu contains the following items:
+
+|Menu item|Description|
+|:---|:---|
+|User settings|Provides access to the [user settings](/guides/user-guide/overview#user-settings), see below. 
+|Access denied requests|Shows a list of data requests which could not be accessed due to missing permissions, if any. 
+|Logout|Logs you out from your Cumulocity account. 
+|Enable (Disable) support user|Allows support users to access your account. This option is only available if support user access is not set globally for subtenant users in the management tenant. For details, refer to [Supporting users in other tenants](/guides/users-guide/enterprise-edition#users-in-other-tenants). After the support user access has been activated, the menu item switches to **Disable support user**. If your support request has been resolved but the duration for the support user access is not expired (24 hours per default) you can actively disable an active support user request here.
+|Visit support page|Opens the URL that has been provided as Support page. If no custom URL is provided, opens the Cumulocity support page.
+|Version information|Shows release information on the Cumulocity version you are using, i.e. 9.16.2, for both Backend and UI. 
+
+
+### <a name="user-settings"></a>User settings
 
 Several account settings can be changed by the user. 
 
-Click the **User** button at the top right and from the context menu, select **User Settings**. 
+Click the **User** button at the top right and from the menu, select **User Settings**. 
 
 <img src="/guides/images/users-guide/Overview/Overview_UserSettings.png" alt="User settings"  style="max-width: 60%">
 

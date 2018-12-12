@@ -6,7 +6,7 @@ layout: redirect
 
 With the support user access feature, support users, i.e. users of the management tenant with specific permissions, can log into accounts of other subtenant's users to provide help in case of any issues.
 
-To so so, support user access must be enabled. This can globally be done on platform level or on user level, see [Configuring support user access](#configuring-support-access) below. 
+To so so, support user access must be enabled. This can globally be done on platform level or on user level as described below. 
 
 
 ### <a name="configuring-support-access"></a>Configuring support user access
@@ -21,17 +21,17 @@ If support user access is enabled, support users can log into any subtenant as a
 
 **Subtenant/user level** 
 
-If support user access is disabled on platform level, it may still be enabled by a subtenant user. This is done by clicking **Enable support access** in the **User** menu, see [User menu](/guides/users-guide/overview#user-settings). 
+If support user access is disabled on platform level, it may still be enabled by a subtenant user. This is done by clicking **Enable support user** in the **User** menu, see [User options and settings](/guides/users-guide/overview#user-settings). 
 
 The support access is then not restricted to the user who activated it but applies to all users of the subtenant. This is necessary for retracing of role/right issues.
 
-After a user has activated support access, the menu item changes to **Disable support access**, so that the user can disable a pending support request which has been resolved actively before it expires.
+After a user has activated support access, the menu item changes to **Disable support user**, so that the user can disable a pending support request which has been resolved actively before it expires.
 
 The duration of the active support request is configurable on platform level (default is 24 hours), see [Customizing the platform](/guides/users-guide/enterprise-edition#configuration).
 
 Each new support request will prolong the support duration for the specified number of hours. After the last support request in a subtenant has expired or has been actively disabled by the user, the support user access for the subtenant will immediately be disabled (if not enabled globally). 
 
-Details on the status of support user requests and support user access for a tenant can be found in the **Properties** tab of the tenant, see [Managing tenants](/guides/users-guide/enterprise-edition/managing-tenants.)
+Details on the status of support user requests and support user access for a tenant can be found in the **Properties** tab of the tenant, see [Managing tenants](/guides/users-guide/enterprise-edition#managing-tenants).
 
 ### Configuring support users
 

@@ -44,9 +44,9 @@ The following information is displayed here:
 
 |Field|Description
 |:--------|:-----
-|Status|May be either *Enabled* or *Disabled*. <br>*Enabled* indicates that one or more subtenant users have activated support user access. <br>*Disabled* indicates on of the following: <br> - Support user access has been deactivated in the **Configuration** page, see [Customizing your platform](/guides/users-guide/enterprise-edition#configuration), <br> - Support user access has been activated in the **Configuration** page but has been deactivating for the subtenant, <br> - No subtenant user has currently any active support user access (i.e. as each support user request has either expired or has been deactivated).
-|Active requests count|The number of requests currently active in the subtenant. Only shown if the status is *Enabled* and if no expiry date is set. Shown as a number in a small red dot.
-|Expiry date|Specifies the date on which support user access for the tenant will expire, as specified in the **Configuration** page.
+|Status|May be either *Enabled* or *Disabled*. <br>*Enabled* indicates that: <br> - support user access has ben activated on platform level (see [Customizing your platform](/guides/users-guide/enterprise-edition#configuration)), <br> - one or more subtenant users have activated support user access. <br>*Disabled* indicates that: <br> - support user access has been deactivated on platform level, <br> - support user access has been activated on platform level but deactivated for the subtenant, <br> - no subtenant user has currently any active support user access (i.e. as each support user request has either expired or has actively been deactivated).
+|Active requests count|The number of requests currently active in the subtenant. Only displayed if support user access is not enabled globally on platform level. Shown as a number in a small red dot.
+|Expiry date|Specifies the date on which support user access for the tenant will expire, as specified in the **Configuration** page (see [Customizing your platform](/guides/users-guide/enterprise-edition#configuration)).
 
 ### <a name="creating-tenants"></a>Creating sub-tenants
 

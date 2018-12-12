@@ -8,13 +8,13 @@ In an Enterprise Edition installation under the **Settings** menu you can specif
 
 ### <a name="configuration"></a>Configuration
 
-**Info**: For information on the general settings in the **Customization** tab refer to [Changing Settings > Configuration settings](/guides/users-guide/administration/#config-platform) in the Administration section. Here, only the features that are exclusively available for management tenants will be explained.
+**Info**: For information on the general settings in the **Customization** tab refer to [Changing Settings > Configuration settings](/guides/users-guide/administration/#config-platform) in the Administration section. Here, only the features will be explained which are exclusively available for the management tenant.
 
 #### Support user
 
-In the **Support user** section, you configure the parameters for the support user activation for tenant users.
+In the **Support user** section, you configure the parameters for the support user activation for subtenant users.
 
-With the support user feature, tenant users can enable support users (i.e. users  in the management tenant) to access their account. Refer to [Supporting users in other tenants](/guides/users-guide/enterprise-edition#users-in-other-tenants) for further information.
+With the support user feature, support users (i.e. users with specific permissions in the management tenant) can access subtenant users in case of any issues. Refer to [Supporting user access](/guides/users-guide/enterprise-edition#users-in-other-tenants) for further information.
 
 <img src="/guides/images/users-guide/Administration/admin-support-user-config.png" alt="Configuration" style="max-width: 100%">
 
@@ -22,11 +22,16 @@ In the field **Enable support user**, specify if support user requests are enabl
 
 * true: Support user requests are enabled
 * false: Support user requests are disabled
-* date until support user should remain enabled
+
+If support user access is enabled, support users can log into any subtenant as any user, unless overridden on subtenant level. Subtenant users cannot enable/disable access themselves. If support user access is disabled, support users can log in only to subtenants for which at least one user has explicitly enabled such access.
+
+Moreover you can specify an explicit date in date format, until when support user activation should remain enabled. If no date is specified the value is set to "No Limit".
 
 In the **Validity limit** field, you can optionally specify the support duration, i.e. for how many hours support user access will be prolonged after each support user request from a subtenant user. Enter a number specifying the number of hours. The default value is 24 hours.
 
-Details on support user requests and support user access for a tenant can be found in the **Properties** tab of the tenant, see [Managing tenants](/guides/users-guide/enterprise-edition/managing-tenants.)
+The expiry date-time will be updated based on the duration specified in the **Validity limit** field, e.g. if the current expiry date-time is 01/09/2018 15:00 and duration has been kept at 24 hours, the enabling support user will update the expiry date to 01/10/2018 15:00.
+
+Details on the status of support user requests and support user access for a tenant can be found in the **Properties** tab of the tenant, see [Managing tenants](/guides/users-guide/enterprise-edition/managing-tenants.)
 
 
 ### <a name="branding"></a>Branding

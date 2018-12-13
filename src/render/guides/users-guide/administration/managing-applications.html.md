@@ -4,7 +4,13 @@ title: Managing applications
 layout: redirect
 ---
 
-In addition to the applications provided in your account (per default or as subscription), you can also manage own applications. 
+In the Cumulocity platform we distinguish between two kinds of applications:
+
+* Subscribed applications -  all applications subscribed to the tenant (either provided by the platform or a service provider) but not owned
+* Own applications - all applications owned by the tenant
+
+
+### <a name="own-applications"></a>Own applications
 
 Own applications may be 
 
@@ -32,7 +38,7 @@ Click **Add application** in the **Own applications** page, to add an applicatio
 
 Click the menu icon at the top right of an application to open a context menu from where you can [**Edit** or **Remove**](#editing-and-removing) an application. 
 
-### <a name="adding-applications"></a>Adding applications
+#### <a name="adding-applications"></a>Adding applications
 
 To add an application, click **Add application** in the **Own applications** page. In the upcoming dialog choose one of the following methods:
 
@@ -45,7 +51,7 @@ If you are subscribed to the required application ("apama-small"), you will also
 
 <img src="/guides/images/users-guide/Administration/admin-add-application.png" alt="Add application methods" style="max-width: 50%">
 
-#### <a name="uploading-zip-files"></a>Uploading web applications
+##### <a name="uploading-zip-files"></a>Uploading web applications
 
 In order to upload a web application, follow these steps:
 
@@ -57,7 +63,7 @@ In order to upload a web application, follow these steps:
 
 After successfully uploading the zip file to the platform the application is being created.
 
-#### <a name="uploading-microservices"></a>Uploading microservices
+##### <a name="uploading-microservices"></a>Uploading microservices
 
 In order to upload a microservice, follow these steps:
 
@@ -72,7 +78,7 @@ After successfully uploading the zip file to the platform the application is bei
 >**Info**: In case of microservices, the package must contain the manifest file and docker image of the microservice. Refer to [Microservice package reference](/guides/reference/microservice-package) in the Reference guide in order to prepare and deploy the microservice package.
 
 
-#### <a name="external-application"></a>Linking to external applications
+##### <a name="external-application"></a>Linking to external applications
 
 In order to add an application which links to an external application, follow these steps:
 
@@ -88,7 +94,7 @@ In order to add an application which links to an external application, follow th
 
 For details on the fields, see also [Application properties](#application-properties) below. 
 
-#### <a name="clone-application"></a>Duplicating applications
+##### <a name="clone-application"></a>Duplicating applications
 
 Duplicating an application might be useful if you want to customize a subscribed application according to your needs. 
 
@@ -132,7 +138,7 @@ For details on the fields, see also [Application properties](#application-proper
 >**Info:** You cannot add a plugin to an application of type "Apama CEP rule". 
 
 
-### <a name="application-properties"></a>Application properties
+#### <a name="application-properties"></a>Application properties
 
 Click on an application card to view the application properties.
 
@@ -151,7 +157,7 @@ Each application will show the following properties:
 >**Info**: ID, application key, type and path cannot be changed.
 
 
-### <a name="editing-and-removing"></a>Editing and removing applications
+#### <a name="editing-and-removing"></a>Editing and removing applications
 
 **Edit**
 
@@ -222,7 +228,7 @@ Users can restore previous versions of an application from an archive:
 
 >**Info**: The **Archive** tab is not available for subscribed applications, as only the owner of the application can perform this action.
 
-### Uploading archives
+#### Uploading archives
 
 Multiple archive file versions can be stored in Cumulocity when they were created by uploading either a zip file or a mon file. Each version is called an archive. You can upload different versions at the same time and switch between these versions. 
 

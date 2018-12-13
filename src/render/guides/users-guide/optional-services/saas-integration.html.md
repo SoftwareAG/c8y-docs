@@ -32,7 +32,7 @@ The Zapier service connects Cumulocity in two ways to enterprise IT services:
 
 ### From the Internet of Things to enterprise IT services
 
-To send data to enterprise IT services, you need to set up a CEL statement in Cumulocity (or use one of your existing Smart Rules) and a Zap in Zapier, as shown below.
+To send data to enterprise IT services, you need to set up a CEP statement in Cumulocity (or use one of your existing Smart Rules) and a Zap in Zapier, as shown below.
 
 ![Triggers](/guides/images/users-guide/zapier/triggers.png)
 
@@ -59,21 +59,21 @@ All inputs are provided as a dropdown list.
 In the test step in Zapier, we will provide you with an example of how Zapier will receive the data.
 
 
-#### New CEL Event
+#### New CEL event
 
-The New CEL Event trigger provides a more generic way to forward any statement of any of your CEL modules to Zapier. Before using this feature you need to deploy your module in Cumulocity.
+The New CEL Event trigger provides a more generic way to forward any statement of any of your CEP modules to Zapier. Before using this feature you need to deploy your module in Cumulocity.
 
-After choosing this trigger and selecting your Cumulocity account, you can specify your CEL module.
+After choosing this trigger and selecting your Cumulocity account, you can specify your CEP module.
 
 ![Cumulocity account](/guides/images/users-guide/zapier/setUpCEL.png)
 
 |Input|Description|
 |:--|:-------------|
-|Module name|The name of your CEL module in Cumulocity.|
-|Statement name|The statement in the CEL module you want to trigger on.|
+|Module name|The name of your CEP module in Cumulocity.|
+|Statement name|The statement in the CEP module you want to trigger on.|
 |Is Channel?|Whether you want to listen to a statement or a channel.|
 
-In the test step in Zapier, we will provide you with an example of how Zapier will receive the data. However, the structure purely depends on how your statement in the CEL looks like. Therefore some of the fields in our example might not exist in your CEL statement.
+In the test step in Zapier, we will provide you with an example of how Zapier will receive the data. However, the structure purely depends on how your statement in the CEP looks like. Therefore some of the fields in our example might not exist in your CEP statement.
 
 For further information, refer to our [example](#examples) for this trigger.
 
@@ -141,7 +141,7 @@ Each trigger and action requires to add valid Cumulocity credentials. If you cre
 
 > For detailed information on setting up Zaps, refer to [https://zapier.com/help/](https://zapier.com/help/). Note that the Zapier plans have limitations on the volume of data that can be transferred. Sending data outside of your plan may deactivate your Zap temporarily.
 
-#### Store CEL data in a Google spreadsheet
+#### Store CEP data in a Google spreadsheet
 
 In the first example, we connect Cumulocity to Google Spreadsheet and transfer live measurements from your account into the spreadsheet. You can use the measurements for ad-hoc analysis, for example, to compare the performance of different devices. The example consists of four steps.
 
@@ -149,7 +149,7 @@ To run the example, you need a Google account besides your Zapier account. If yo
 
 Open the Cumulocity Administration application, click **Event Processing** in the **Business rules** menu in the navigator and select **New Module**. Enter "zapier" as the name for the new module. In the **Examples** drop-down field, select "Send simulator temperature to Zapier". Click **Save**. Your screen should look like the screenshot below.
 
-![Sample CEL statement](/guides/images/users-guide/zapier/samplestatement.png)
+![Sample CEP statement](/guides/images/users-guide/zapier/samplestatement.png)
 
 The above statement selects all new temperature measurements in your account and formats them for the Zapier service. The output of the statement is printed in realtime next to the statement. If you have the default simulator configuration running, it should start showing values. For more information on the statements, refer to [Real-time processing](/guides/concepts/realtime) in the Concepts Guide.
 

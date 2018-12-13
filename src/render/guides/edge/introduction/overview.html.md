@@ -12,7 +12,7 @@ Reasons for using an onsite installation of Cumulocity IoT Edge include the foll
 
 * **Autonomy**: Even if there is no cloud connection, tasks like data collection and data analysis can still be performed.
 * **Data reduction**: Data is analyzed and aggregated close to assets, and thus less data needs to be send to the cloud.
-* **Reactivity**: Both Cumulocity IoT Edge and Cumulocity IoT Core include real-time streaming analytics engines. However, placing the rule execution in Cumulocity Edge reduces latency, because the round-trip to cloud is omitted. 
+* **Reactivity**: Both Cumulocity IoT Edge and Cumulocity IoT Core include real-time streaming analytics engines. However, placing the rule execution in Cumulocity IoT Edge reduces latency, because the round-trip to cloud is omitted. 
 
 Features of Cumulocity IoT Edge include:
 

@@ -6,5 +6,5 @@ layout: subsections
 collection: 'guides/edge/introduction'
 ---
 
-This document describes conceptual aspects of Cumulocity Edge, the local version of Cumulocity.
+This document describes conceptual aspects of Cumulocity IoT Edge, the local version of Cumulocity.
 

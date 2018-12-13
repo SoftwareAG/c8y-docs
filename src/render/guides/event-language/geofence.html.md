@@ -1,6 +1,6 @@
 ---
 order: 60
-title: Study: circular geofence alarms
+title: Study: Circular geofence alarms
 layout: subsections
 collection: 'guides/event-language/geofence'
 ---

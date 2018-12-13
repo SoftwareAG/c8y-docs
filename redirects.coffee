@@ -15,6 +15,7 @@ redirects =
 	'/guides/concepts-guide/developing-m2m-applications.html': '/guides/concepts/applications'
 	'/guides/concepts-guide/hosting': '/guides/concepts/applications'
 	'/guides/concepts-guide/hosting.html': '/guides/concepts/applications'
+	'/guides/concepts/acl': '/guides/concepts/introduction'
 	'/guides/konzepte/einfuehrung': '/guides/concepts/introduction'
 	'/guides/konzepte/anwendungen': '/guides/concepts/applications'
 	'/guides/konzepte/domain-modell': '/guides/concepts/domain-model'

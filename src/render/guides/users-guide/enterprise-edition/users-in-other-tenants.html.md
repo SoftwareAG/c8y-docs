@@ -21,11 +21,11 @@ If support user access is enabled, support users can log into any subtenant as a
 
 **Subtenant/user level** 
 
-If support user access is disabled on platform level, it may still be enabled by a subtenant user. This is done by clicking **Enable support user** in the **User** menu, see [User options and settings](/guides/users-guide/overview#user-settings). 
+If support user access is disabled on platform level, it may still be enabled by a subtenant user. This is done by clicking **Enable support** in the **User** menu, see [User options and settings](/guides/users-guide/overview#user-settings). 
 
 The support access is then not restricted to the user who activated it but applies to all users of the subtenant. This is necessary for retracing of role/right issues.
 
-After a user has activated support access, the menu item changes to **Disable support user**, so that the user can disable a pending support request which has been resolved actively before it expires.
+After a user has activated support access, the menu item changes to **Disable support**, so that the user can disable a pending support request which has been resolved actively before it expires.
 
 The duration of the active support request is configurable on platform level (default is 24 hours), see [Customizing the platform](/guides/users-guide/enterprise-edition#configuration).
 

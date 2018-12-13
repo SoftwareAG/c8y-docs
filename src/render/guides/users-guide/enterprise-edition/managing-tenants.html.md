@@ -34,20 +34,6 @@ The **Tenants** page provides the following information on each subtenant:
 
 In the management tenant, you will see an additional column "Parent tenant". This column shows the tenant that created the listed tenant.
 
-#### Support user access
-
-Moreover, you will find information on the support user requests/access for the subtenants in the management tenant.
-
-<img src="/guides/images/users-guide/Administration/admin-tenants-list.png" alt="Support user access information" style="max-width: 100%">
-
-The following information is displayed here:
-
-|Field|Description
-|:--------|:-----
-|Status|May be either *Enabled* or *Disabled*. <br>*Enabled* indicates that: <br> - support user access has ben activated on platform level (see [Customizing your platform](/guides/users-guide/enterprise-edition#configuration)) shown as "Support user access enabled" in the tenant list, <br> - one or more subtenant users have activated support user access, shown as "Support user requests" in the tenant list. <br>*Disabled* indicates that: <br> - support user access has been deactivated on platform level, <br> - support user access has been activated on platform level but deactivated for the subtenant, <br> - no subtenant user has currently any active support user access (i.e. as each support user request has either expired or has actively been deactivated).
-|Active requests|The number of requests currently active in the subtenant. Only displayed if support user access is not enabled globally on platform level. Shown as a number in a small red dot.
-|Expiry date|Specifies the date on which support user access for the tenant will expire, as specified in the **Configuration** page (see [Customizing your platform](/guides/users-guide/enterprise-edition#configuration)). If no date has been specified, the expiry date is set to "No limit".
-
 ### <a name="creating-tenants"></a>Creating sub-tenants
 
 To add a new tenant, click **Create tenant** at the right of the top menu bar. To create a tenant, provide the following properties:
@@ -79,7 +65,7 @@ To edit subtenants properties, click on the desired subtenant or click **Edit** 
 
 In the **Properties** tab, all fields are editable except of the ID and the administrator's username. For details on the fields, refer to [Creating sub-tenants](#creating-tenants).
 
-![Sub-tenants](/guides/images/users-guide/Administration/Admin_Subtenants.png)
+![Sub-tenants](/guides/images/users-guide/Administration/admin-subtenant-properties.png)
 
 #### Support user access
 
@@ -93,7 +79,7 @@ The following information is displayed here:
 |:--------|:-----
 |Status|May be either *Enabled* or *Disabled*. <br>*Enabled* indicates that: <br> - support user access has ben activated on platform level (see [Customizing your platform](/guides/users-guide/enterprise-edition#configuration)), <br> - one or more subtenant users have activated support user access. <br>*Disabled* indicates that: <br> - support user access has been deactivated on platform level, <br> - support user access has been activated on platform level but deactivated for the subtenant, <br> - no subtenant user has currently any active support user access (i.e. as each support user request has either expired or has actively been deactivated).
 |Active requests count|The number of requests currently active in the subtenant. Only displayed if support user access is not enabled globally on platform level. Shown as a number in a small red dot.
-|Expiry date|Specifies the date on which support user access for the tenant will expire, as specified in the **Configuration** page (see [Customizing your platform](/guides/users-guide/enterprise-edition#configuration)). If no date has been specified, the expiry date is set to "No limit".
+|Expiry date|Specifies the date on which support user access for the tenant will expire. If no date has been specified, the expiry date is set to "No limit".
 
 
 ### <a name="subscribe"></a>Subscribing to applications

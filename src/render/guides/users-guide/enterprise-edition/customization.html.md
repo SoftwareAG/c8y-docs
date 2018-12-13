@@ -18,14 +18,11 @@ With the support user feature, support users (i.e. users with specific permissio
 
 <img src="/guides/images/users-guide/Administration/admin-support-user-config.png" alt="Configuration" style="max-width: 100%">
 
-In the field **Enable support user**, specify if support user requests are enabled for subtenant users. Possible values you can enter here are:
+In the field **Enable support user**, specify if support user access is enabled for subtenant users. Possible values you can enter here are:
 
-* true: Support user requests are enabled
-* false: Support user requests are disabled
-
-If support user access is enabled, support users can log into any subtenant as any user, unless overridden on subtenant level. Subtenant users cannot enable/disable access themselves. If support user access is disabled, support users can log in only to subtenants for which at least one user has explicitly enabled such access.
-
-Moreover you can specify an explicit date in date format, until when support user activation should remain enabled. If no date is specified the value is set to "No Limit".
+* *true*: Support user access is enabled. If support user access is enabled, support users can log into any subtenant as any user, unless overridden on subtenant level. Subtenant users cannot enable/disable access themselves. 
+* *false*: Support user access is disabled.If support user access is disabled, support users can log in only to subtenants for which at least one user has explicitly enabled such access.
+* An explicit date in date-time format, until when support user activation should remain enabled. If no date is specified the value is set to "No Limit".
 
 In the **Validity limit** field, you can optionally specify the support duration, i.e. for how many hours support user access will be prolonged after each support user request from a subtenant user. Enter a number specifying the number of hours. The default value is 24 hours.
 

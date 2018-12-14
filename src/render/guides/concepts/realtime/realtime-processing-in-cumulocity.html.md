@@ -12,7 +12,7 @@ For further information on using Apama's Event Processing Language in Cumulocity
 
 For more information about the interfaces for real-time processing also see [Real-time Statements](/guides/reference/real-time-statements) in the Reference guide.
 
->**Important**: All new Cumulocity installations will use the Apama CEP engine. Using the Esper CEP engine is still supported for older installations but will no longer be provided for new installations and not be invested into in the future. For information on using the deprecated CEL functionality based on Esper refer to the [CEL Analytics guide](/guides/event-language/introduction).
+>**Important**: All new Cumulocity subscriptions will use the Apama CEP engine. Using the Esper CEP engine is still supported for older installations but will no longer be provided for new subscriptions and not be invested into in the future. For information on using the discontinued CEL functionality based on Esper refer to the [CEL analytics guide](/guides/event-language/introduction).
 
 ### What are the benefits of using real-time processing?
 

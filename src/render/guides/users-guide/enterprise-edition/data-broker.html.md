@@ -21,6 +21,7 @@ Navigate to **Data connectors** if you would like to send data to another tenant
 >
 >Be aware of the following limitations of the data broker:<br> 
 >Cloud Remote Access cannot be used on the destination tenant. <br>
+>The management tenant cannot be used as data broker source tenant.<br>
 >Currently, the Fieldbus widget does not work on tenants that receive the fieldbus devices through data broker, as the corresponding data models are not synchronized.<br> 
 >While we provide backwards compatibility, we can not ensure that data broker can send data to Cumulocity tenants which run on later Cumulocity versions than the source.<br>
 

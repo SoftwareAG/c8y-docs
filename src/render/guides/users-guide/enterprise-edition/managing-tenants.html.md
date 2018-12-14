@@ -67,16 +67,6 @@ To edit subtenants, click on the desired subtenant or click **Edit** in the cont
 
 In the **Properties** tab, all fields are editable except of the ID and the administrator's username. For details on the fields, refer to [Creating sub-tenants](#creating-tenants).
 
-### <a name="subscribe"></a>Subscribing to applications
-
-In the **Applications** tab you can subscribe tenants to applications or remove the applications from the tenant. By default, tenants will be subscribed to the standard Cumulocity applications. 
-
-<img src="/guides/images/users-guide/Administration/Admin_SubtenantApplications.png" alt="Subscribe tenant" style="max-width: 100%">
-
-To subscribe an application to a tenant, hover over the applications under **Available applications** on the right and click **Subscribe** on the desired application.
-
-To remove an application, hover over the applications under **Subscribed applications** on the left and click **Unsubscribe**.
-
 ### Suspending subtenants
 
 You can temporarily suspend tenants. Suspending tenants blocks any access to this tenant, regardless whether the access is from devices, users or other applications. 
@@ -96,6 +86,43 @@ If a tenant is suspended, the tenant's data remains in the database and can be m
 To finally delete a tenant and remove all the data of the tenant, click the menu icon and from the context menu select **Remove**.
 
 >**Info**: This action cannot be reverted. For security reasons, it is only available in the management tenant.
+>
+
+### <a name="subscribe"></a>Subscribing and monitoring applications
+
+In the **Applications** tab you view all subscribed applications, subscribe tenants to applications or remove the applications from the tenant. By default, tenants will be subscribed to the standard Cumulocity applications. 
+
+<img src="/guides/images/users-guide/Administration/Admin_SubtenantApplications.png" alt="Subscribe tenant" style="max-width: 100%">
+
+To subscribe an application to a tenant, hover over the applications under **Available applications** on the right and click **Subscribe** on the desired application.
+
+To remove an application, hover over the applications under **Subscribed applications** on the left and click **Unsubscribe**.
+
+#### Monitoring microservices
+
+For all applications implemented as microservices the status of the microservice is indicated next to its name by symbols:
+
+<img src="/guides/images/users-guide/Administration/admin-application-status.png" alt="Application details" style="max-width: 100%">
+
+The microservice may be in one of the following states:
+
+* <img src="/guides/images/icons/ok.png" alt="Up" style="max-width: 100%"> Microservice is up and running
+* <img src="/guides/images/icons/ok.png" alt="Up" style="max-width: 100%"> Microservice is unhealthy
+* <img src="/guides/images/icons/ok.png" alt="Up" style="max-width: 100%"> Microservice is down
+
+You may view details on their status by expanding the respective entry. 
+
+<img src="/guides/images/users-guide/Administration/admin-application-details.png" alt="Application details" style="max-width: 100%">
+
+The following information is provided:
+
+* Active: The number of active microservice instances
+* Unhealthy: The number of inactive microservice instances
+* Desired: The number of desired  microservice instances
+* Name: Microservice instance (pod) name
+* Restarts: The number of microservice instance restarts
+
+Further details are provided on the **Status** tab of the respective application under **Own applications**, see [Administration > Managing applications](/guides/users-guide/administration#managing-applications).
 
 ### <a name="tenants-custom-properties"></a>Editing custom properties
 
@@ -165,7 +192,7 @@ Click **Tenant policies** in the **Tenants** menu to view all tenant policies av
 
 For each tenant policy, the name, an optional description and the number of options and retention rules is provided, either in a list or a grid.
 
-### Adding a tenant policy
+#### Adding a tenant policy
 
 Click **Add tenant policy** in the top menu bar to create a new tenant policy.
 
@@ -176,7 +203,7 @@ Click **Add tenant policy** in the top menu bar to create a new tenant policy.
 4. Optionally, add a tenant option.
 5. Click **Save** to save your settings.
 
-### Editing, duplicating and deleting policies
+#### Editing, duplicating and deleting policies
 
 To edit a policy, click on the desired policy or click **Edit** in the context menu, accessible through the menu icon. 
 

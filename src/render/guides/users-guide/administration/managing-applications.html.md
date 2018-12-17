@@ -11,7 +11,7 @@ In the Cumulocity platform we distinguish between two kinds of applications:
 
 Both applications are available through the **Applications** menu in the navigator:
 
-<img src="/guides/images/users-guide/Administration/admin-menu.png" alt="Applications menu" style="max-width: 50%">
+<img src="/guides/images/users-guide/Administration/admin-menu.png" alt="Applications menu" style="max-width: 25%">
 
 Subscribed applications may not be added, modified or removed by the user, while users can [add custom applications](#add-applications) in various ways as own applications. 
 
@@ -19,17 +19,67 @@ Subscribed applications may not be added, modified or removed by the user, while
 
 Click on an application card to view the application properties.
 
-<img src="/guides/images/users-guide/Administration/Admin_OwnApplicationMicroservice.png" alt="Microservice application" style="max-width: 100%">
+<img src="/guides/images/users-guide/Administration/admin-application-properties.png" alt="Application properties" style="max-width: 100%">
 
 Each application will show the following properties, depending on the application type:
 
-|Field|Description|Hosted (Web app)|Microservice|External|CEP rule
-|:---|:---|:---|:---|:---|:---
-|ID|Unique ID to identify the application|Automatically provided|Automatically provided|Automatically provided|Automatically provided
-|Name|Application name. Will be shown as title of the application in the top bar and in the application switcher. |Automatically created|Automatically created, based on the zip file name | Specified by the user|Automatically created, based on the mon file name 
-|Application key|Used to identify the application and to make the application available for subscription, see the [Concepts Guide](/guides/concepts/applications). |Automatically created|Automatically created based on the zip file name|Specified by the user|Automatically created based on the mon file name 
-|Type|Application type|Hosted application|Microservice|External|Apama CEP rule
-|Path|Part of the URL invoking the application|Automatically created|Automatically created as .../service/&#60;microservice name&#62;|Specified by the user. For example, if you use "hello" as application path, the URL of the application will be "/apps/hello".|Not available
+<table>
+<col width= 100>
+<col width= 250>
+<col width= 150>
+<thead>
+<tr>
+<th style="text-align:left">Field</th>
+<th style="text-align:left">Description</th>
+<th style="text-align:left">Hosted (Web app)</th>
+<th style="text-align:left">Microservice</th>
+<th style="text-align:left">External</th>
+<th style="text-align:left">CEP rule</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">ID</td>
+<td style="text-align:left">Unique ID to identify the application</td>
+<td style="text-align:left">Automatically provided</td>
+<td style="text-align:left">Automatically provided</td>
+<td style="text-align:left">Automatically provided</td>
+<td style="text-align:left">Automatically provided</td>
+</tr>
+<tr>
+<td style="text-align:left">Name</td>
+<td style="text-align:left">Application name. Will be shown as title of the application in the top bar and in the application switcher.</td>
+<td style="text-align:left">Automatically created</td>
+<td style="text-align:left">Automatically created, based on the zip file name</td>
+<td style="text-align:left">Specified by the user</td>
+<td style="text-align:left">Automatically created, based on the mon file name </td>
+</tr>
+<tr>
+<td style="text-align:left">Application key</td>
+<td style="text-align:left">Used to identify the application and to make the application available for subscription, see the <a href="/guides/concepts/applications" class="no-ajaxy">Concepts Guide</a>.</td>
+<td style="text-align:left">Automatically created</td>
+<td style="text-align:left">Automatically created based on the zip file name</td>
+<td style="text-align:left">Specified by the user</td>
+<td style="text-align:left">Automatically created based on the mon file name </td>
+</tr>
+<tr>
+<td style="text-align:left">Type</td>
+<td style="text-align:left">Application type</td>
+<td style="text-align:left">Hosted application</td>
+<td style="text-align:left">Microservice</td>
+<td style="text-align:left">External</td>
+<td style="text-align:left">Apama CEP rule</td>
+</tr>
+<tr>
+<td style="text-align:left">Path</td>
+<td style="text-align:left">Part of the URL invoking the application</td>
+<td style="text-align:left">Automatically created</td>
+<td style="text-align:left">Automatically created as .../service/&lt;microservice name&gt;</td>
+<td style="text-align:left">Specified by the user. For example, if you use "hello" as application path, the URL of the application will be "/apps/hello".</td>
+<td style="text-align:left">Not available</td>
+</tr>
+</tbody>
+</table>
 
 >**Info**: ID and type cannot be changed.
 
@@ -52,6 +102,8 @@ The following information is provided on the **Status** tab:
 
 The status information is available for subscribed informations as well as for own applications.  
 
+To view the status you need the following permissions: ROLE_APPLICATION_MANAGEMENT_READ & ROLE_INVENTORY_READ
+
 #### Log files
 
 Moreover, you may view logs to get more details on the status of microservices.
@@ -70,7 +122,7 @@ If there have not been any logs in the selected time range, a message is shown a
 
 <img src="/guides/images/users-guide/Administration/admin-microservice-no-logs.png" alt="Microservice log" style="max-width: 100%">
 
-
+To view the logs you need the permission EVENT_READ.
 
 ### <a name="own-applications"></a>Own applications
 

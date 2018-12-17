@@ -5,13 +5,14 @@ layout: redirect
 ---
 
 A real-time notifications client initiates connection negotiation by sending a message to the "/meta/handshake" channel. In response, the client receives a *clientId* which identifies a conversation and must be passed in every non-handshake request.
-When using websockets, a property 'ext' containing an authentication object must also be sent.
+When using websockets, a property 'ext' containing an authentication object must also be sent. In case of Basic authentication the "token" is used with base64 encoded credentials.  In case of OAuth authentication the request must have the cookie with authorization name, holding the access token. Further more the xsrf token must be forwarded as pert of handshake message 
 
     {
       "ext": {
         "com.cumulocity.authn": {
           "token": "<base64 encoded credentials>",
           "tfa": "<tfa token>",
+          "xsrfToken": "<xsrf token>",
         },
         "systemOfUnits": "<system of units>"
       }
@@ -21,6 +22,7 @@ When using websockets, a property 'ext' containing an authentication object must
 |:-------|:----|
 |token|Base 64 encoded credentials|
 |tfa|Optional two factor authentication token|
+|xsrfToken|Required for OAuth authentication|
 |systemOfUnits|Optional system of units. Possible values are "imperial" or "metric"|
 
 ### Request

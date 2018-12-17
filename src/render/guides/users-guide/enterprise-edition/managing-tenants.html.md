@@ -92,7 +92,7 @@ To finally delete a tenant and remove all the data of the tenant, click the menu
 
 In the **Applications** tab you can view all subscribed applications, subscribe tenants to applications or remove the applications from the tenant. By default, tenants will be subscribed to the standard Cumulocity applications. 
 
-<img src="/guides/images/users-guide/Administration/Admin_SubtenantApplications.png" alt="Subscribe tenant" style="max-width: 100%">
+<img src="/guides/images/users-guide/Administration/admin-subtenant-applications.png" alt="Subscribe tenant" style="max-width: 100%">
 
 To subscribe an application to a tenant, hover over the applications under **Available applications** on the right and click **Subscribe** on the desired application.
 
@@ -102,17 +102,17 @@ To remove an application, hover over the applications under **Subscribed applica
 
 For all applications hosted as microservices by Cumulocity the status of the microservice is indicated next to its name by symbols:
 
-<img src="/guides/images/users-guide/Administration/admin-application-status.png" alt="Application details" style="max-width: 100%">
+<img src="/guides/images/users-guide/Administration/admin-applications-status.png" alt="Application details" style="max-width: 75%">
 
 The microservice may be in one of the following states:
 
-* <img src="/guides/images/icons/ok.png" alt="Up" style="max-width: 100%"> Microservice is up and running
-* <img src="/guides/images/icons/ok.png" alt="Up" style="max-width: 100%"> Microservice is unhealthy
-* <img src="/guides/images/icons/ok.png" alt="Up" style="max-width: 100%"> Microservice is down
+* <img src="/guides/icons/ok.png" alt="Up" style="max-width: 100%"> Microservice is up and running
+* <img src="/guides/icons/warning.png" alt="Up" style="max-width: 100%"> Microservice is unhealthy
+* <img src="/guides/icons/danger.png" alt="Up" style="max-width: 100%"> Microservice is down
 
 You may view details on their status by expanding the respective entry. 
 
-<img src="/guides/images/users-guide/Administration/admin-application-details.png" alt="Application details" style="max-width: 100%">
+<img src="/guides/images/users-guide/Administration/admin-application-details.png" alt="Application details" style="max-width: 75%">
 
 The following information is provided:
 

@@ -5,7 +5,8 @@ layout: redirect
 ---
 
 A real-time notifications client initiates connection negotiation by sending a message to the "/meta/handshake" channel. In response, the client receives a *clientId* which identifies a conversation and must be passed in every non-handshake request.
-When using websockets, a property 'ext' containing an authentication object must also be sent. In case of Basic authentication the "token" is used with base64 encoded credentials.  In case of OAuth authentication the request must have the cookie with authorization name, holding the access token. Further more the xsrf token must be forwarded as pert of handshake message 
+
+When using websockets, a property 'ext' containing an authentication object must also be sent. In case of basic authentication the "token" is used with base64 encoded credentials.  In case of OAuth authentication the request must have the cookie with the authorization name, holding the access token. Further more the XSRF token must be forwarded as part of the handshake message. 
 
     {
       "ext": {

@@ -20,15 +20,18 @@ Cumulocity provides single sign-on functionality, that allows a user to login wi
 
 This feature is enabled since Cumulocity version 9.12. For correct behavior any microservice needs to use the microservice SDK with version 9.12 or later. 
 
+Before switching to the single sign-on option it is mandatory that:
 
-Before switching to single sign on option it is mandatory that:
-1. The authorization server you use supports OAuth2 authentication code grant
-2. The access token is issued as JWT and you know what goes into the token content. 
-3. The JWT must consist of unique user identifier
-4. The Cumulocity platform is in version 9.12, but preferably higher 
-5. All microservices are build with Microservice java SDK 9.12.6 but preferably higher
-6. For Microservices custom built, please refer to [documentation](guides/microservice-sdk/concept/#security)
-7. For on premises installation the domain based tenant resolution is configured properly. 
+* the authorization server you use supports OAuth2 authentication code grant,
+* the access token is issued as JWT and you know what goes into the token content, 
+* the JWT must consist of a unique user identifier,
+* the Cumulocity platform is in version 9.12 but preferably higher, 
+* all microservices are build with Microservice Java SDK 9.12.6 but preferably higher.
+
+
+For Microservices custom built, refer to [General aspects > Security](guides/microservice-sdk/concept/#security) in the Microservice SDK guide.
+
+For on premises installation the domain-based tenant resolution is configured properly. 
 
 
 #### Configuration settings
@@ -37,7 +40,7 @@ To enable the feature, the administrator has to configure a connection with the 
 
 Click **Single sign-on** in the **Settings** menu in the navigator. 
 
-At the top left corner there is a template chooser. The chosen option has an effect on the panel look. The default template is Custom and it allows for a very detailed configuration with virtually any authorization server using OAuth2 Authentication code grant. Other templates provide simplified views for well known and supported authorization servers. In the next steps there will be first definition of how to use Custom template followed by a view dedicate for Azure Active directory 
+At the top left, you can choose a template. The chosen option has an effect on the look of the panel. The default template is "Custom" which allows for a very detailed configuration with virtually any authorization server using OAuth2 authentication code grant. Other templates provide simplified views for well known and supported authorization servers. In the next steps there will first be a definition of how to use the "Custom" template followed by a view dedicated to Azure Active directory. 
 
 ##### Custom template
 
@@ -53,33 +56,36 @@ The **Basic** section of the **Single sign-on** page consists of the following c
 
 |Field|Description|
 |:---|:---|
-|Redirect uri|Redirect parameter. Can be used in request definitions as a ${clientId} place holder 
+|Redirect URI|Redirect parameter. Can be used in request definitions as a ${clientId} place holder 
 |Client ID|OAuth connection client ID. Can be used in request definitions as a ${clientId} place holder
 |Button name|Name displayed on the button on the **Login** page
 |Issuer|OAuth token issuer
 |Provider name|Name of the provider
-|Visible on login page|Indicates whether the login option is enabled or not. 
+|Visible on Login page|Indicates whether the login option is enabled or not. 
 |Audience|Expected aud parameter of JWT
-|Group|(Depracated in favor of dynamic access mapping since 9.20)The initial group assigned to the user on first login
-|Applications|(Depracated in favor of dynamic access mapping since 9.20)The initial applications assigned to the user on first login
+|Group|(Depricated in favor of dynamic access mapping since 9.20)The initial group assigned to the user on first login
+|Applications|(Depricated in favor of dynamic access mapping since 9.20)The initial applications assigned to the user on first login
 
-Each time a user logs in the content of access token is verified and is a base for user access to the Cumulocity platform. Following section provides mapping between JWT claims and access to the platform. 
+Each time a user logs in, the content of the access token is verified and is a base for user access to the Cumulocity platform. The following section provides the mapping between JWT claims and access to the platform. 
 
  ![OAuth configuration](/guides/images/users-guide/Administration/admin-sso-7.png)
  
- In the example above, if a user tries to login and decoded JWT claims look like:
- ```json
-{
-...
-"user": "john.wick",
-...
-}
-```
-The user will be granted access to global role: business and application cockpit. New rules can be added with the Add access mapping button, and removed with minus button. A statement can consist of multiple check like in the image below, by pressing 'and' button to existing statement 
+ In the example above, if a user tries to login a decoded JWT claims look like:
+ 
+	json
+	{
+	...
+	"user": "john.wick",
+	...
+	}
+
+
+The user will be granted access to the global roles BUSINESS and APPLICATION COCKPIT. New rules can be added by clicking **Add access mapping** at the bottom. Click the Minus button to remove a rule. A statement can consist of multiple checks like in the image below. Yo can add a check to an existing statement by clicking **and**. 
 
  ![OAuth configuration](/guides/images/users-guide/Administration/admin-sso-8.png)
 
-In this case the following claim will match the condition"
+In this case the following claim will match the condition:
+
   ```json
  {
  ...
@@ -92,7 +98,8 @@ In this case the following claim will match the condition"
  ...
  }
  ```
-As you can see there is an option to verify if a value exists in a list via "in" operator. Values can be also embedded in other objects, in this case a dot in key implies looking into embedded object. 
+
+As you can see, there is an option to verify if a value exists in a list via the "in" operator. Values can also be embedded in other objects. In this case a dot in the key implies looking into an embedded object. 
 
 When a user logs in with an access token, the username can be derived from a JWT claim. The claim name can be configured in the **User ID configuration** window. 
 
@@ -122,21 +129,21 @@ While configuring your Azure AD, redirect_uri is your full domain address. For t
 
 ##### Cumulocity configuration
 
-When the Azure AD template is selected the configuration panel will look similar to
+When the "Azure AD" template is selected the configuration panel will look similar to the following:
 
  ![OAuth configuration](/guides/images/users-guide/Administration/admin-sso-aad-basic.png)
 
 |Field|Description|
 |:---|:---|
 |Azure AD Address| Address of your Azure AD tenant 
-|Tenant| Azure AD Tenant name
+|Tenant| Azure AD tenant name
 |Application ID| Application ID
 |Redirect URI| Address of your Cumulocity tenant followed by /tenant/oauth
 |Client secret| Azure AD client secret if applicable 
 |Button name| Button name
-|Token issuer| Token issuer value in form of http address
+|Token issuer| Token issuer value in form of a HTTP address
 
-The second part of the panel is the same to Custom template, where access mapping, user id field selection and signature verification address is provided 
+The second part of the panel is the same as for the "Custom" template, where access mapping, user ID field selection and signature verification address are provided. 
 
  ![OAuth configuration](/guides/images/users-guide/Administration/admin-sso-aad-2.png)
  

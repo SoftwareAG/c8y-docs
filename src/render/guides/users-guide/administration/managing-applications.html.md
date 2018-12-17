@@ -13,7 +13,7 @@ Both applications are available through the **Applications** menu in the navigat
 
 <img src="/guides/images/users-guide/Administration/admin-menu.png" alt="Applications menu" style="max-width: 50%">
 
-Subscribed applications may not be added, modified or removed by the user, while users can [add their own custom applications](#add-applications) in various ways as own applications. 
+Subscribed applications may not be added, modified or removed by the user, while users can [add custom applications](#add-applications) in various ways as own applications. 
 
 ### <a name="application-properties"></a>Application properties
 
@@ -35,20 +35,22 @@ Each application will show the following properties, depending on the applicatio
 
 ### Monitoring microservices
 
+You can monitor microservices hosted by Cumulocity in two ways.
+
 #### Status information
 
-In case of applications of the type microservice, you can check the status of the microservice on the **Status** tab of the respective application. 
+The status of the microservice can be checked on the **Status** tab of the respective application. 
 
 <img src="/guides/images/users-guide/Administration/admin-microservice-status.png" alt="Microservice status" style="max-width: 100%">
 
 The following information is provided on the **Status** tab:
 
 * Instances: Number of active, unhealthy and desired microservice instances for the current tenant
-* Subscribed tenants: Number of active, unhealthy and desired microservice instances for all tenants subscribed to the microservice
-* Alarms: Alarms for given application
-* Events: Events for given application
+* Subscribed tenants: Number of active, unhealthy and desired microservice instances for all subtenants subscribed to the microservice
+* Alarms: Alarms for given application, provided in realtime
+* Events: Events for given application, provided in realtime
 
-The status information is available for own applications as well as for subscribed applications.  
+The status information is available for subscribed informations as well as for own applications.  
 
 #### Log files
 

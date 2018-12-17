@@ -90,7 +90,7 @@ To finally delete a tenant and remove all the data of the tenant, click the menu
 
 ### <a name="subscribe"></a>Subscribing and monitoring applications
 
-In the **Applications** tab you view all subscribed applications, subscribe tenants to applications or remove the applications from the tenant. By default, tenants will be subscribed to the standard Cumulocity applications. 
+In the **Applications** tab you can view all subscribed applications, subscribe tenants to applications or remove the applications from the tenant. By default, tenants will be subscribed to the standard Cumulocity applications. 
 
 <img src="/guides/images/users-guide/Administration/Admin_SubtenantApplications.png" alt="Subscribe tenant" style="max-width: 100%">
 
@@ -100,7 +100,7 @@ To remove an application, hover over the applications under **Subscribed applica
 
 #### Monitoring microservices
 
-For all applications implemented as microservices the status of the microservice is indicated next to its name by symbols:
+For all applications hosted as microservices by Cumulocity the status of the microservice is indicated next to its name by symbols:
 
 <img src="/guides/images/users-guide/Administration/admin-application-status.png" alt="Application details" style="max-width: 100%">
 
@@ -119,10 +119,10 @@ The following information is provided:
 * Active: The number of active microservice instances
 * Unhealthy: The number of inactive microservice instances
 * Desired: The number of desired  microservice instances
-* Name: Microservice instance (pod) name
+* Name: Microservice instance name
 * Restarts: The number of microservice instance restarts
 
-Further details are provided on the **Status** tab of the respective application under **Own applications**, see [Administration > Managing applications](/guides/users-guide/administration#managing-applications).
+Further details are provided on the **Status** tab of the respective application, see [Administration > Managing applications](/guides/users-guide/administration#managing-applications).
 
 ### <a name="tenants-custom-properties"></a>Editing custom properties
 

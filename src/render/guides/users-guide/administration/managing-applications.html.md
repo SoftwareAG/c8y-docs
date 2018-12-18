@@ -100,7 +100,7 @@ The following information is provided on the **Status** tab:
 * Alarms: Alarms for given application, provided in realtime
 * Events: Events for given application, provided in realtime
 
-The status information is available for subscribed informations as well as for own applications.  
+The status information is available for subscribed applications as well as for own applications. Information on subscribed subtenants is only visible for the application owner. 
 
 To view the status you need the following permissions: ROLE_APPLICATION_MANAGEMENT_READ & ROLE_INVENTORY_READ
 

@@ -9,7 +9,7 @@ docpadConfig = {
 		# Specify some site properties
 		site:
 			# The production url of our website
-			url: "http://cumulocity.com"
+			url: "https://cumulocity.com"
 
 
 			# The default title of our website
@@ -127,7 +127,7 @@ docpadConfig = {
       cachetime: 600000
       changefreq: 'weekly'
       priority: 0.5
-      filePath: 'sitemap.xml'
+      filePath: 'guides/sitemap.xml'
 
 	ignoreHiddenFiles: true
 

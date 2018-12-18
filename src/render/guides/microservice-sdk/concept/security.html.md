@@ -6,7 +6,7 @@ layout: redirect
 
 Microservices typically provide a REST API. For inbound REST requests, Cumulocity provides a light API gateway (“Proxy”) and inbound websocket requests are not supported. This API gateway is located between the client and the microservice container. The API gateway provides:
 
-* Authorization: All calls are authenticated using Cumulocity users and Basic authorization.
+* Authorization: All calls are authenticated using Cumulocity users basic or OAuth authorization.
 * TLS Termination: TLS inbound calls are terminated and only HTTP is used inside the cluster.
 * Metering: The API calls are metered in the “API calls” tenant statistics.
 * Routing: The API gateway routes requests for “/service/&lt;name&gt;” to the microservice “&lt;name&gt;”. The request routed to the microservice container and tenant options are added to the request headers.
@@ -14,6 +14,8 @@ Microservices typically provide a REST API. For inbound REST requests, Cumulocit
 * Tenant platform user: The user that logs into the application. Created using the Cumulocity Administration application. 
 * Microservice Bootstrap user: The user being created for microservice bootstrap operations, it is connected to application itself. This user is authorized to get the microservice subscriptions and do requests for its application. Refer to [Microservice development](/guides/microservice-sdk/rest#microservice-development) for more details.
 * Service user: Reflects tenant subscription to a microservice.
+
+A request to a microservice can be authorized using basic or OAuth. In case of basic authentication the flow is fairly simple, as credentials can be read and utilized for further authentication to the platform. Authentication with OAuth is based on cookies technology, so the access token has to be read from the request Cookie header. There are two important parts of OAuth authorization, an access token stored in the 'authorization' cookie and an X-XSRF-TOKEN header for XSRF attack prevention. Both must be forwarded with the request to the platform. Additionally, it is important to understand that the access token has a limited lifetime. Currently support for OAuth is provided only for Microservice SDK for Java since 9.12.6, however we recommend to use the newest version. 
 
 Any request to the platform must be done with the platform user. For microservices, it is best practice to switch context to the subscribed tenant's service user instead of using the tenant's platform user when doing a request from microservice to the Cumulocity platform. The reason is that a service user always has roles defined in requiredRoles parameter, thus always has the same permissions. On the other hand it is common for tenant platform users to have different permissions, thus a microservice can misbehave. 
 

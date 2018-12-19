@@ -143,7 +143,6 @@ redirects =
 	'/guides/web/smart-toolkit': '/guides/web/overview'
 
 
-
 	# "index.html" redirects
 	'/guides/concepts': '/guides/concepts/introduction'
 	'/guides/users-guide': '/guides/users-guide/overview'

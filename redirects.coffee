@@ -53,7 +53,7 @@ redirects =
 	'/guides/devices/smartbox-modus': '/guides/devices/smartbox-mini'
 	'/guides/devices/RedLion-StratusConnect-MC-Gateway': '/guides/devices/RedLion-RAM-series'
 	'/guides/devices/hwg': '/guides/devices'
-	
+
 
 	# Legacy redirects developer documentation
 	'/guides/developers-guide': '/guides/device-sdk/java'
@@ -156,5 +156,6 @@ redirects =
 	'/guides': '/dev-center'
 	'/guides/release-notes': '/guides/release-notes/overview'
 
+# Test jenkins line
 
 module.exports = redirects

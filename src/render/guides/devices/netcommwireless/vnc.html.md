@@ -4,8 +4,10 @@ layout: redirect
 order: 110
 ---
 
-If you have a device which supports VNC remote access, it's now possible to manage your VNC device via Cumulocity starting from Agent v4.0.0.
+If you have a device which supports VNC, Telnet or SHH remote access, it's now possible to manage your device via Cumulocity starting from Agent v4.2.0.
 
-As shown in the screenshot, you can add your VNC server as an endpoint with appropriate IP and port in _Remote Access_ tab in "Device Management", then simply click on button "Connect", a new browser window will pop up, showing the display content of your remote VNC server.
+As shown in the screenshot, you can add your VNC, Telnet or SSH servers as an endpoint with appropriate IP and port in the **Remote Access** tab of a particular device in the Device Management application. If you click **Connect**, the display content of your remote server will be shown in a new browser window.
 
-![VNC](/guides/images/devices/netcomm/vnc.png)
+> **Info:** The "vncproxy" package is required and must be installed.
+
+![VNC](/guides/images/devices/netcomm/vnctelnetssh.png)

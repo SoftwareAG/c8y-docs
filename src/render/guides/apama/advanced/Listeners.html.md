@@ -18,13 +18,13 @@ it is also possible to add filters in the pattern.
 
 You can listen for more than one event:
 
-	on Event() as e and Measurement() as m { .. }
+	on Event() as e and Alarm() as m { .. }
 
 This will trigger on receiving an Event and an Alarm event - the first of each will be captured.
 
 You can also trigger by sequences.
 
-    on all (Event() as e -> Measurement() as m) { .. }
+    on all (Event() as e -> Alarm() as m) { .. }
 
 This will trigger for every pair Event followed by Alarm. On receiving an Event, it will stop listening for further events and start listening for alarms instead. Once an Alarm is received, it will start listening for events again.
 
@@ -52,7 +52,7 @@ Or you can have a listener fire at certain times of the day, with similar functi
 
 You can also combine timer patterns with other patterns. For example, you can check if there was an event within a certain time after another event:
 
-    on Event() -> wait(600.0)  and not Measurement() { .. }
+    on Event() -> wait(600.0)  and not Alarm() { .. }
 
 This will trigger if there is an Event and within 10 minutes there is no Alarm. Note the use of "not" which terminates the listener if the event occurs.
 

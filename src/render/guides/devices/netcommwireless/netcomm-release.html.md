@@ -6,7 +6,7 @@ layout: redirect
 
 ## Release notes for NetComm Agent 4.0
 
-This document describes the Cumulocity agent package for the [NetComm Wireless NTC-6200](http://www.netcommwireless.com/product/m2m/ntc-6200) and the [NetComm Wireless NTC-140W](http://support.netcommwireless.com/product/4g/ntc-140w) router.
+This document describes the Cumulocity agent package for the [NetComm Wireless NTC-6200](https://www.netcommwireless.com/product/3g-m2m-router-series) and the [NetComm Wireless NTC-140W](http://support.netcommwireless.com/product/4g/ntc-140w) router.
 
 ## Supported functionality
 

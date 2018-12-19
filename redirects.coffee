@@ -17,6 +17,7 @@ redirects =
 	'/guides/concepts-guide/hosting.html': '/guides/concepts/applications'
 	'/guides/concepts/acl': '/guides/concepts/introduction'
 	'/guides/konzepte/einfuehrung': '/guides/concepts/introduction'
+	'/guides/konzepte/introduction': '/guides/concepts/introduction'
 	'/guides/konzepte/anwendungen': '/guides/concepts/applications'
 	'/guides/konzepte/domain-modell': '/guides/concepts/domain-model'
 	'/guides/konzepte/echtzeit': '/guides/concepts/realtime'
@@ -53,6 +54,8 @@ redirects =
 	'/guides/devices/smartbox-modus': '/guides/devices/smartbox-mini'
 	'/guides/devices/RedLion-StratusConnect-MC-Gateway': '/guides/devices/RedLion-RAM-series'
 	'/guides/devices/hwg': '/guides/devices'
+	'/guides/users-guide/optional-services#saas-integration': '/guides/saas-integration'
+
 
 
 	# Legacy redirects developer documentation
@@ -138,7 +141,6 @@ redirects =
 	'/guides/web/tab-plugin': '/guides/web/web-sdk-for-plugins/tab-plugin'
 	'/guides/web/widget-plugin': '/guides/web/web-sdk-for-plugins/widget-plugin'
 	'/guides/web/smart-toolkit': '/guides/web/overview'
-
 
 
 	# "index.html" redirects

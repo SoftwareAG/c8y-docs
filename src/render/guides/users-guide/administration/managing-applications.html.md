@@ -4,7 +4,127 @@ title: Managing applications
 layout: redirect
 ---
 
-In addition to the applications provided in your account (per default or as subscription), you can also manage own applications. 
+In the Cumulocity platform we distinguish between two kinds of applications:
+
+* Subscribed applications -  all applications subscribed to the tenant (either provided by the platform or a service provider) but not owned
+* [Own applications](#own-applications) - all applications owned by the tenant
+
+Both applications are available through the **Applications** menu in the navigator:
+
+<img src="/guides/images/users-guide/Administration/admin-menu.png" alt="Applications menu" style="max-width: 25%">
+
+Subscribed applications may not be added, modified or removed by the user, while users can [add custom applications](#add-applications) in various ways as own applications. 
+
+### <a name="application-properties"></a>Application properties
+
+Click on an application card to view the application properties.
+
+<img src="/guides/images/users-guide/Administration/admin-application-properties.png" alt="Application properties" style="max-width: 100%">
+
+Each application will show the following properties, depending on the application type:
+
+<table>
+<col width= 100>
+<col width= 250>
+<col width= 150>
+<thead>
+<tr>
+<th style="text-align:left">Field</th>
+<th style="text-align:left">Description</th>
+<th style="text-align:left">Hosted (Web app)</th>
+<th style="text-align:left">Microservice</th>
+<th style="text-align:left">External</th>
+<th style="text-align:left">CEP rule</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">ID</td>
+<td style="text-align:left">Unique ID to identify the application</td>
+<td style="text-align:left">Automatically provided</td>
+<td style="text-align:left">Automatically provided</td>
+<td style="text-align:left">Automatically provided</td>
+<td style="text-align:left">Automatically provided</td>
+</tr>
+<tr>
+<td style="text-align:left">Name</td>
+<td style="text-align:left">Application name. Will be shown as title of the application in the top bar and in the application switcher.</td>
+<td style="text-align:left">Automatically created</td>
+<td style="text-align:left">Automatically created, based on the zip file name</td>
+<td style="text-align:left">Specified by the user</td>
+<td style="text-align:left">Automatically created, based on the mon file name </td>
+</tr>
+<tr>
+<td style="text-align:left">Application key</td>
+<td style="text-align:left">Used to identify the application and to make the application available for subscription, see the <a href="/guides/concepts/applications" class="no-ajaxy">Concepts Guide</a>.</td>
+<td style="text-align:left">Automatically created</td>
+<td style="text-align:left">Automatically created based on the zip file name</td>
+<td style="text-align:left">Specified by the user</td>
+<td style="text-align:left">Automatically created based on the mon file name </td>
+</tr>
+<tr>
+<td style="text-align:left">Type</td>
+<td style="text-align:left">Application type</td>
+<td style="text-align:left">Hosted application</td>
+<td style="text-align:left">Microservice</td>
+<td style="text-align:left">External</td>
+<td style="text-align:left">Apama CEP rule</td>
+</tr>
+<tr>
+<td style="text-align:left">Path</td>
+<td style="text-align:left">Part of the URL invoking the application</td>
+<td style="text-align:left">Automatically created</td>
+<td style="text-align:left">Automatically created as .../service/&lt;microservice name&gt;</td>
+<td style="text-align:left">Specified by the user. For example, if you use "hello" as application path, the URL of the application will be "/apps/hello".</td>
+<td style="text-align:left">Not available</td>
+</tr>
+</tbody>
+</table>
+
+>**Info**: ID and type cannot be changed.
+
+### Monitoring microservices
+
+You can monitor microservices hosted by Cumulocity in two ways.
+
+#### Status information
+
+The status of the microservice can be checked on the **Status** tab of the respective application. 
+
+<img src="/guides/images/users-guide/Administration/admin-microservice-status.png" alt="Microservice status" style="max-width: 100%">
+
+The following information is provided on the **Status** tab:
+
+* Instances: Number of active, unhealthy and desired microservice instances for the current tenant
+* Subscribed tenants: Number of active, unhealthy and desired microservice instances for all subtenants subscribed to the microservice
+* Alarms: Alarms for given application, provided in realtime
+* Events: Events for given application, provided in realtime
+
+The status information is available for subscribed applications as well as for own applications. Information on subscribed subtenants is only visible for the application owner. 
+
+To view the status you need the following permissions: ROLE_APPLICATION_MANAGEMENT_READ & ROLE_INVENTORY_READ
+
+#### Log files
+
+Moreover, you may view logs to get more details on the status of microservices.
+
+To view logs open the **Log** tab of the respective microservice.
+
+<img src="/guides/images/users-guide/Administration/admin-microservice-log.png" alt="Microservice log" style="max-width: 100%">
+
+At the top of the page, the instance of the microservice, for which you want to view the logs, can be selected. Moreover you can adjust the font size and the theme at the right.
+
+Initially, the **Log** tab shows the logs of the microservice instance for the last 10 minutes. The exact time range for which the logs are displayed is shown below the logs.
+
+Click **Next** or **Previous** to increase or reduce the time range in 10 minutes steps.
+
+If there have not been any logs in the selected time range, a message is shown accordingly:
+
+<img src="/guides/images/users-guide/Administration/admin-microservice-no-logs.png" alt="Microservice log" style="max-width: 100%">
+
+To view the logs you need the permission EVENT_READ.
+
+### <a name="own-applications"></a>Own applications
 
 Own applications may be 
 
@@ -32,7 +152,7 @@ Click **Add application** in the **Own applications** page, to add an applicatio
 
 Click the menu icon at the top right of an application to open a context menu from where you can [**Edit** or **Remove**](#editing-and-removing) an application. 
 
-### <a name="adding-applications"></a>Adding applications
+#### <a name="adding-applications"></a>Adding own applications
 
 To add an application, click **Add application** in the **Own applications** page. In the upcoming dialog choose one of the following methods:
 
@@ -45,7 +165,7 @@ If you are subscribed to the required application ("apama-small"), you will also
 
 <img src="/guides/images/users-guide/Administration/admin-add-application.png" alt="Add application methods" style="max-width: 50%">
 
-#### <a name="uploading-zip-files"></a>Uploading web applications
+##### <a name="uploading-zip-files"></a>Uploading web applications
 
 In order to upload a web application, follow these steps:
 
@@ -57,7 +177,7 @@ In order to upload a web application, follow these steps:
 
 After successfully uploading the zip file to the platform the application is being created.
 
-#### <a name="uploading-microservices"></a>Uploading microservices
+##### <a name="uploading-microservices"></a>Uploading microservices
 
 In order to upload a microservice, follow these steps:
 
@@ -72,7 +192,7 @@ After successfully uploading the zip file to the platform the application is bei
 >**Info**: In case of microservices, the package must contain the manifest file and docker image of the microservice. Refer to [Microservice package reference](/guides/reference/microservice-package) in the Reference guide in order to prepare and deploy the microservice package.
 
 
-#### <a name="external-application"></a>Linking to external applications
+##### <a name="external-application"></a>Linking to external applications
 
 In order to add an application which links to an external application, follow these steps:
 
@@ -88,7 +208,7 @@ In order to add an application which links to an external application, follow th
 
 For details on the fields, see also [Application properties](#application-properties) below. 
 
-#### <a name="clone-application"></a>Duplicating applications
+##### <a name="clone-application"></a>Duplicating applications
 
 Duplicating an application might be useful if you want to customize a subscribed application according to your needs. 
 
@@ -111,7 +231,7 @@ In order to duplicate an application, follow these steps:
 
 For details on the fields, see also [Application properties](#application-properties) below.
 
-#### <a name="uploading-cep-rules"></a>Uploading custom Apama rules
+##### <a name="uploading-cep-rules"></a>Uploading custom Apama rules
 
 > **Info:** To be able to upload custom Apama CEP rules as applications to Cumulocity you need to be subscribed to the application "apama-small". 
 
@@ -131,27 +251,7 @@ For details on the fields, see also [Application properties](#application-proper
 
 >**Info:** You cannot add a plugin to an application of type "Apama CEP rule". 
 
-
-### <a name="application-properties"></a>Application properties
-
-Click on an application card to view the application properties.
-
-<img src="/guides/images/users-guide/Administration/Admin_OwnApplicationMicroservice.png" alt="Microservice application" style="max-width: 100%">
-
-Each application will show the following properties:
-
-|Field|Description|Hosted (Web app)|Microservice|External|CEP rule
-|:---|:---|:---|:---|:---|:---
-|Name|Application name. Will be shown as title of the application in the top bar and in the application switcher. |Automatically created|Automatically created, based on the zip file name | Specified by the user|Automatically created, based on the mon file name 
-|ID|Unique ID to identify the application|Automatically provided|Automatically provided|Automatically provided|Automatically provided
-|Application key|Used to identify the application and to make the application available for subscription, see the [Concepts Guide](/guides/concepts/applications). |Automatically created|Automatically created based on the zip file name|Specified by the user|Automatically created based on the mon file name 
-|Type|Application type|Hosted application|Microservice|External|Apama CEP rule
-|Path|Part of the URL invoking the application|Automatically created|Automatically created as .../service/&#60;microservice name&#62;|Specified by the user. For example, if you use "hello" as application path, the URL of the application will be "/apps/hello".|Not available
-
->**Info**: ID, application key, type and path cannot be changed.
-
-
-### <a name="editing-and-removing"></a>Editing and removing applications
+#### <a name="editing-and-removing"></a>Editing and removing own applications
 
 **Edit**
 
@@ -171,7 +271,7 @@ If you remove an application that overwrites a subscribed application, the curre
 It is not possible to remove subscribed applications. This can only be done by the owner of the subscribed application.
 
 
-### <a name="add-remove-plugin"></a>Adding and removing plugins
+#### <a name="add-remove-plugin"></a>Adding and removing plugins
 
 >**Important**: This plugin functionality is deprecated and only available in versions earlier then 9.16.
 
@@ -211,7 +311,7 @@ The following tables list the navigator and menu items with their respective plu
 
 Be aware of the "UI" at the end of the plugin names.
 
-### Restoring to an older application version
+#### Restoring to an older application version
 
 Users can restore previous versions of an application from an archive:
 
@@ -222,7 +322,7 @@ Users can restore previous versions of an application from an archive:
 
 >**Info**: The **Archive** tab is not available for subscribed applications, as only the owner of the application can perform this action.
 
-### Uploading archives
+##### Uploading archives
 
 Multiple archive file versions can be stored in Cumulocity when they were created by uploading either a zip file or a mon file. Each version is called an archive. You can upload different versions at the same time and switch between these versions. 
 
@@ -238,4 +338,15 @@ To upload an archive, follow these steps:
 Once uploaded, the recently uploaded version is automatically the active version, i.e. the version of the application that is currently being served to the users of your account. This version cannot be deleted. 
 
 To change the active version, open the context menu in the version you want to activate and select **Set as active**.
+
+
+
+
+
+
+
+
+
+
+
 

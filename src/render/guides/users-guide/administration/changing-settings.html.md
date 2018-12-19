@@ -20,6 +20,19 @@ Cumulocity provides single sign-on functionality, that allows a user to login wi
 
 This feature is enabled since Cumulocity version 9.12. For correct behavior any microservice needs to use the microservice SDK with version 9.12 or later. 
 
+Before switching to the single sign-on option it is mandatory that:
+
+* the authorization server you use supports OAuth2 authentication code grant,
+* the access token is issued as JWT and you know what goes into the token content, 
+* the JWT must consist of a unique user identifier,
+* the Cumulocity platform is in version 9.12 but preferably higher, 
+* all microservices are build with Microservice Java SDK 9.12.6 but preferably higher.
+
+
+For Microservices custom built, refer to [General aspects > Security](guides/microservice-sdk/concept/#security) in the Microservice SDK guide.
+
+For on premises installation the domain-based tenant resolution is configured properly. 
+
 
 #### Configuration settings
 
@@ -27,45 +40,84 @@ To enable the feature, the administrator has to configure a connection with the 
 
 Click **Single sign-on** in the **Settings** menu in the navigator. 
 
+At the top left, you can choose a template. The chosen option has an effect on the look of the panel. The default template is "Custom" which allows for a very detailed configuration with virtually any authorization server using OAuth2 authentication code grant. Other templates provide simplified views for well known and supported authorization servers. In the next steps there will first be a definition of how to use the "Custom" template followed by a view dedicated to Azure Active directory. 
+
+##### Custom template
+
 ![Request configuration](/guides/images/users-guide/Administration/admin-sso-1.png)
 
 As the OAuth protocol is based on the execution of HTTP requests and redirects, a generic request configuration is provided. 
 
 The first part of the **Single sign-on** page consists of the request configuration. Here you can configure the HTTP request address, request parameters, headers and body in case of token and refresh requests. The authorize method is executed as a GET, and others as POST requests. 
 
-The **Configuration** section of the **Single sign-on** page consists of the following configuration settings:
+The **Basic** section of the **Single sign-on** page consists of the following configuration settings:
 
 ![OAuth configuration](/guides/images/users-guide/Administration/admin-sso-2.png)
 
 |Field|Description|
 |:---|:---|
-|Group|The initial group assigned to the user on first login
-|Applications|The initial applications assigned to the user on first login
-|Audience|Expected aud parameter of JWT
-|Button name|Name displayed on the button on the **Login** page
+|Redirect URI|Redirect parameter. Can be used in request definitions as a ${clientId} place holder 
 |Client ID|OAuth connection client ID. Can be used in request definitions as a ${clientId} place holder
-|Redirect to platform|Redirect parameter. Can be used in request definitions as a ${clientId} place holder 
+|Button name|Name displayed on the button on the **Login** page
 |Issuer|OAuth token issuer
 |Provider name|Name of the provider
-|Visible on login page|Indicates whether the login option is enabled or not. 
+|Visible on Login page|Indicates whether the login option is enabled or not. 
+|Audience|Expected aud parameter of JWT
+|Group|(Depricated in favor of dynamic access mapping since 9.20)The initial group assigned to the user on first login
+|Applications|(Depricated in favor of dynamic access mapping since 9.20)The initial applications assigned to the user on first login
+
+Each time a user logs in, the content of the access token is verified and is a base for user access to the Cumulocity platform. The following section provides the mapping between JWT claims and access to the platform. 
+
+ ![OAuth configuration](/guides/images/users-guide/Administration/admin-sso-7.png)
+ 
+ In the example above, if a user tries to login a decoded JWT claims look like:
+ 
+	json
+	{
+	...
+	"user": "john.wick",
+	...
+	}
+
+
+The user will be granted access to the global roles BUSINESS and APPLICATION COCKPIT. New rules can be added by clicking **Add access mapping** at the bottom. Click the Minus button to remove a rule. A statement can consist of multiple checks like in the image below. Yo can add a check to an existing statement by clicking **and**. 
+
+ ![OAuth configuration](/guides/images/users-guide/Administration/admin-sso-8.png)
+
+In this case the following claim will match the condition:
+
+  ```json
+ {
+ ...
+ "user": {
+    "type": "human"
+ },
+ "role": [
+    "ADMIN"
+ ],
+ ...
+ }
+ ```
+
+As you can see, there is an option to verify if a value exists in a list via the "in" operator. Values can also be embedded in other objects. In this case a dot in the key implies looking into an embedded object. 
 
 When a user logs in with an access token, the username can be derived from a JWT claim. The claim name can be configured in the **User ID configuration** window. 
 
  ![OAuth configuration](/guides/images/users-guide/Administration/admin-sso-3.png)
 
-Each access token is signed by a signing certificate. Currently there are two options to configure the signing certificates.
+Each access token is signed by a signing certificate. Currently there are three options to configure the signing certificates.
  
 1. By specifying the Azure AD certificate discovery address. 
 
  ![OAuth configuration](/guides/images/users-guide/Administration/admin-sso-4.png)
+
+2. By specifying the ADFS manifest address (for ADFS 3.0). 
+
+ ![OAuth configuration](/guides/images/users-guide/Administration/admin-sso-9.png)
  
-2. By providing the public key of a certificate manually to Cumulocity. A certificate definition requires an algorithm information, public key value and validity period. 
+3. By providing the public key of a certificate manually to Cumulocity. A certificate definition requires an algorithm information, public key value and validity period. 
 
  ![OAuth configuration](/guides/images/users-guide/Administration/admin-sso-5.png)
-
-#### Access 
-
-When a user logs into Cumulocity for the first time, a user instance is created with default access, i.e. groups and applications specified in the **Configuration** section. The administrator can further assign specific access to a user manually. 
 
 #### Integration with Azure AD
 
@@ -77,103 +129,24 @@ While configuring your Azure AD, redirect_uri is your full domain address. For t
 
 ##### Cumulocity configuration
 
-In the **Single sign-on** page, the **Authorization request** section should look similar to:
- 
- ![Azure AD authorize request](/guides/images/users-guide/Administration/admin-sso-aad-authorize.png)
- 
-The URL parameter consists of:
- 
- * Base URL, in this case https://login.microsoftonline.de 
- * TENANT, should be substituted with your Microsoft tenant ID 
- * Static "oauth2/authorize" part
- 
-There is no need for headers, and there should be two request parameters:
+When the "Azure AD" template is selected the configuration panel will look similar to the following:
 
-* redirect_uri = ${redirectUri} -replaced in runtime by REDIRECT TO PLATFORM 
-* client_id = ${clientId} replaced in runtime by CLIENT ID
+ ![OAuth configuration](/guides/images/users-guide/Administration/admin-sso-aad-basic.png)
 
-The **Token request** section should look similar to:
- 
- ![Azure AD token request](/guides/images/users-guide/Administration/admin-sso-aad-token.png)
- 
-The URL parameter consists of:
+|Field|Description|
+|:---|:---|
+|Azure AD Address| Address of your Azure AD tenant 
+|Tenant| Azure AD tenant name
+|Application ID| Application ID
+|Redirect URI| Address of your Cumulocity tenant followed by /tenant/oauth
+|Client secret| Azure AD client secret if applicable 
+|Button name| Button name
+|Token issuer| Token issuer value in form of a HTTP address
 
-  * Base URL, in this case https://login.microsoftonline.de 
-  * TENANT, should be substituted with your Microsoft tenant ID 
-  * Static "oauth2/token" part
- 
-the body parameter can be taken from the Azure AD OAuth specification, an example is:
+The second part of the panel is the same as for the "Custom" template, where access mapping, user ID field selection and signature verification address are provided. 
 
-	 "grant_type=authorization_code&client_id=${clientId}&code=${code}&redirect_uri=${redirectUri}&client_secret=SECRET=&resource=${clientId}"
+ ![OAuth configuration](/guides/images/users-guide/Administration/admin-sso-aad-2.png)
  
- and consists of:
- 
- * grant&#95;type=authorization_code
- * client_id=${clientId} - replaced in runtime by CLIENT ID
- * code=${code} - parameter automatically read after successful redirect to the platform
- * redirect_uri=${redirectUri} - replaced in runtime by REDIRECT TO PLATFORM
- * client_secret=SECRET - a password specified in Azure AD -> App registration -> application -> Settings -> Keys -> Passwords  
- * resource=${clientId} - replaced in runtime by CLIENT ID
- 
-There is no need to set headers or request parameters.
- 
-The **Refresh token request** section should look similar to:
- 
- ![Azure AD refresh request](/guides/images/users-guide/Administration/admin-sso-aad-refresh.png)
- 
-The URL parameter consists of:
-
-  * Base URL, in this case https://login.microsoftonline.de 
-  * TENANT, should be substituted with your Microsoft tenant ID 
-  * Static "oauth2/token" part
- 
-The body parameter can be taken from the Azure AD OAuth specification, an example is:
-
-	 "grant_type=refresh_token&refresh_token=${refreshToken}&client_id=${clientId}&resource=${clientId}&client_secret=SECRET"
- 
- and consists of:
- 
- * grant&#95;type=refresh_token
- * refresh_token=${refreshToken} - replaced in runtime by known refresh token
- * client_id=${clientId} - replaced in runtime by CLIENT ID
- * client_secret=SECRET - a password specified in Azure AD -> App registration -> Application -> Settings -> Keys -> Passwords
- * resource=${clientId} - replaced in runtime by CLIENT ID
- 
-There is no need to set headers or request parameters.
- 
-The **Configuration** section should look similar to:
- 
- ![Azure AD configuration](/guides/images/users-guide/Administration/admin-sso-aad-configuration.png)
-
-* **Groups** and **Applications** - should be specified according to the tenant's requirements, but group "business" and Cockpit application are advised as a good start
-* **Audience **- this is the application ID parameter from Azure AD, it can be found in Azure AD -> App registration -> Application
-* **Button name** - is the name of the button on the Login page
-* **Client ID** - For Azure AD is equal to audience, it can be found in Azure AD -> App registration -> Application 
-* **Redirect to platform** - Cumulocity address, in our example http://aad.cumulocity.com,
-* **Issuer** - the token issuer, value taken from Azure AD -> App registration -> endpoints -> MICROSOFT AZURE AD GRAPH API ENDPOINT 
-* **Provider name** - Azure AD
-* **Visible on login page** - enabled
-
-User ID Configuration: 
-
- ![Azure AD user id](/guides/images/users-guide/Administration/admin-sso-aad-user-id.png)
-
-* **Use constant value** - clear this field
-* **JWT**  - upn - which is the user principle name
-
-Signature verification:
-
- ![Azure AD signature verification](/guides/images/users-guide/Administration/admin-sso-aad-signature-verification.png)
-   
-For Azure AD, Cumulocity provides support for automatic certificate rollover. 
-
-In the **Certificate Type** section, choose Azure AD, and set the public key discovery URL to a value consisting of:
-
- * Base URL, in this case https://login.microsoftonline.de
- * TENANT, should be substituted with your Microsoft tenant ID, 
- * Static "discovery/keys" part
-   
-
 ### <a name="default-app"></a>Changing application settings
 
 Click **Application** in the **Settings** menu to change applications settings.

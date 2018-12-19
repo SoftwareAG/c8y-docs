@@ -1,6 +1,6 @@
 ---
-order: 90
-layout: redirect
+order: 
+layout: standalone
 title: Zapier Integration
 ---
 

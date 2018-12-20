@@ -1,5 +1,5 @@
 ---
-order: 20
+order: 10
 title: Cloud Fieldbus
 layout: redirect
 ---

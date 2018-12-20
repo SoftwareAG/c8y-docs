@@ -24,16 +24,11 @@ Cumulocity uses a simple and secure reference protocol based on REST (i.e., HTTP
 
 To summarize the benefits of the agent concept: Agents enable IoT applications to securely interface with any type of remote IoT device and without imposing any mandatory system requirement on the device itself. They drastically simplify developing IoT applications by shielding the applications from the variety of IoT devices and protocols.
 
-### What agent architecture is supported?
 
-Agents can be deployed in various ways, as illustrated in the picture below. We distinguish two main variants: *Server-side agents* and *device-side agents*.
+Server-side agents are run in a cloud, hosted on Cumulocity as Microservices or managed by yourself in your own cloud. Devices connect to server-side agents using their device-specific protocol. This option is mainly chosen when one or more of the following complies:
 
-![Agent architectures](/guides/images/concepts-guide/agentarchitectures.png)
+* The device is "closed", i.e. it is not programmable and supports only one particular, pre-defined protocol to communicate with the outside world.
+* The protocol on the device is secure and internet-enabled, i.e. the device connects to the cloud and not vice-versa.
 
-Server-side agents are run in a cloud, hosted by Cumulocity or managed by yourself. Devices connect to server-side agents using their device-specific protocol. This option is mainly chosen when one or more of the following complies:
+Device-side agents run on a device in the sensor network. These devices can be routers, mobile phones or modems. The agents perform in any kind of run-time environment the device supports, ranging from the very battery- and memory-consuming embedded microcontrollers to minicomputers running Embedded Linux. The agents will directly query connected sensors and manipulate connected controls. This usually results in a simpler architecture than server-side agents.
 
-* The device is "closed", i.e., it is not programmable and supports only one particular, pre-defined protocol to communicate with the outside world.
-* The protocol on the device is secure and internet-enabled.
-* There is a VPN infrastructure between the device and Cumulocity.
-
-Device-side agents run on a device in the sensor network. These devices can be routers, mobile phones or modems. The agents perform in any kind of run-time environment the device supports, ranging from the very battery- and memory-consuming embedded microcontrollers to minicomputers running Embedded Linux. The agents will directly query connected sensors and manipulate connected controls. This usually results in a simpler architecture than server-side agents. 

@@ -30,10 +30,10 @@ Agents can be deployed in various ways, as illustrated in the picture below. We 
 
 ![Agent architectures](/guides/images/concepts-guide/agentarchitectures.png)
 
-Server-side agents are run in a cloud, hosted by Cumulocity or managed by yourself. Devices connect to server-side agents using their device-specific protocol. This option is mainly chosen when one or more of the following complies:
+**Server-side agents** are run in a cloud, hosted on Cumulocity as Microservices or managed by yourself in your own cloud. Devices connect to server-side agents using their device-specific protocol. This option is mainly chosen when one or more of the following complies:
 
-* The device is "closed", i.e., it is not programmable and supports only one particular, pre-defined protocol to communicate with the outside world.
-* The protocol on the device is secure and internet-enabled.
-* There is a VPN infrastructure between the device and Cumulocity.
+* The device is "closed", i.e. it is not programmable and supports only one particular, pre-defined protocol to communicate with the outside world.
+* The protocol on the device is secure and internet-enabled, i.e. the device connects to the cloud and not vice-versa.
 
-Device-side agents run on a device in the sensor network. These devices can be routers, mobile phones or modems. The agents perform in any kind of run-time environment the device supports, ranging from the very battery- and memory-consuming embedded microcontrollers to minicomputers running Embedded Linux. The agents will directly query connected sensors and manipulate connected controls. This usually results in a simpler architecture than server-side agents. 
+**Device-side agents** run on a device in the sensor network. These devices can be routers, mobile phones or modems. The agents perform in any kind of run-time environment the device supports, ranging from the very battery- and memory-consuming embedded microcontrollers to minicomputers running Embedded Linux. The agents will directly query connected sensors and manipulate connected controls. This usually results in a simpler architecture than server-side agents.
+

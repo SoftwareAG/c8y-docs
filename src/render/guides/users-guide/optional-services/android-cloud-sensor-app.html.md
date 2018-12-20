@@ -1,26 +1,26 @@
 ---
-order: 10
-title: Android Cloud Sensor App
+order: 30
+title: Cloud Sensor App
 layout: redirect
 ---
 
 ### Overview
 
-This document describes the Android Cloud Sensor App. This App sends the sensor measurements from a Texas Instruments (TI) Sensor Tag and an Android smartphone to Cumulocity to be securely processed and managed. Additionally, both devices can be remote-controlled by Cumulocity. The TI Sensor Tag is a low energy wireless device manufactured by Texas Instruments © [http://www.ti.com/](http://www.ti.com/).
+This document describes the Cumulocity Cloud Sensor App. This App sends the sensor measurements from a Texas Instruments (TI) Sensor Tag and an Android smartphone to Cumulocity to be securely processed and managed. Additionally, both devices can be remote-controlled by Cumulocity. The TI Sensor Tag is a low energy wireless device manufactured by Texas Instruments © [http://www.ti.com/](http://www.ti.com/).
 
-### Installing the Android Cloud Sensor App
+### Installing the Cloud Sensor App
 
-To use the Android Cloud Sensor App you need a smartphone with Android version 5.0 (Lollipop) or higher. To determine the Android version installed on your smartphone, refer to [http://www.wikihow.com/Check-What-Android-Version-You-Have](http://www.wikihow.com/Check-What-Android-Version-You-Have).
+To use the Cloud Sensor App for Android you need a smartphone with Android version 5.0 (Lollipop) or higher. To determine the Android version installed on your smartphone, refer to [http://www.wikihow.com/Check-What-Android-Version-You-Have](http://www.wikihow.com/Check-What-Android-Version-You-Have).
 
-To install the Android Cloud Sensor App from Google Play, open the Cockpit application in your Cumulocity IoT Sensor tenant and click **Add smartphone** from the quick links on the Welcome screen.
+To install the Cloud Sensor App from Google Play, open the Cockpit application in your Cumulocity IoT Sensor tenant and click **Add smartphone** from the quick links on the Welcome screen.
 
 ![Quick Links](/guides/images/users-guide/quicklinks.png)
 
-This will start a wizard showing the QR code for downloading the Android Cloud Sensor App.
+This will start a wizard showing the QR code for downloading the Cloud Sensor App.
 
 ![Install App](/guides/images/users-guide/installapp.png)
 
-Scan this QR code with any scanning application on your smartphone. You will be navigated to Google Play for the installation of the Android Cloud Sensor App.
+Scan this QR code with any scanning application on your smartphone. You will be navigated to Google Play for the installation of the Cloud Sensor App.
 
 ### Registering the Cloud Sensor App to your IoT Sensor tenant
 

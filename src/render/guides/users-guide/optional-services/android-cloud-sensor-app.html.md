@@ -1,41 +1,50 @@
 ---
-order: 30
+order: 10
 title: Cloud Sensor App
 layout: redirect
 ---
 
 ### Overview
 
-This document describes the Cumulocity Cloud Sensor App. This App sends the sensor measurements from a Texas Instruments (TI) Sensor Tag and an Android smartphone to Cumulocity to be securely processed and managed. Additionally, both devices can be remote-controlled by Cumulocity. The TI Sensor Tag is a low energy wireless device manufactured by Texas Instruments © [http://www.ti.com/](http://www.ti.com/).
+The Cumulocity Cloud Sensor App sends sensor measurements from an Android smartphone, an iOS smartphone or a Texas Instruments (TI) Sensor Tag to Cumulocity to be securely processed and managed. Additionally, all devices can be remote-controlled by Cumulocity. 
+
+>**Info**: The TI Sensor Tag is a low energy wireless device manufactured by Texas Instruments © [http://www.ti.com/](http://www.ti.com/).
+
+To use the Cloud Sensor App for Android you need a smartphone with Android version 5.0 or higher. 
+
+To use the Cloud Sensor App for iOS you need a smartphone with iOS version 11.0 (or higher). 
+
+
+**Info**: The screenshots are exemplarily taken from an Android smartphone. Unless mentioned otherwise the screens look similar in the Cloud Sensor App for iOS. 
 
 ### Installing the Cloud Sensor App
 
-To use the Cloud Sensor App for Android you need a smartphone with Android version 5.0 (Lollipop) or higher. To determine the Android version installed on your smartphone, refer to [http://www.wikihow.com/Check-What-Android-Version-You-Have](http://www.wikihow.com/Check-What-Android-Version-You-Have).
+To install the Cloud Sensor App on your smartphone, open the Cockpit application in your Cumulocity IoT tenant and click **Add smartphone** from the quick links on the **Welcome** screen.
 
-To install the Cloud Sensor App from Google Play, open the Cockpit application in your Cumulocity IoT Sensor tenant and click **Add smartphone** from the quick links on the Welcome screen.
-
-![Quick Links](/guides/images/users-guide/quicklinks.png)
+![Quick Links](/guides/images/users-guide/csa-welcome.screen.png)
 
 This will start a wizard showing the QR code for downloading the Cloud Sensor App.
 
-![Install App](/guides/images/users-guide/installapp.png)
+![Install App](/guides/images/users-guide/csa-qr-code.png)
 
-Scan this QR code with any scanning application on your smartphone. You will be navigated to Google Play for the installation of the Cloud Sensor App.
+Scan this QR code with any scanning application on your smartphone. 
 
-### Registering the Cloud Sensor App to your IoT Sensor tenant
+Depending on the smartphone type you are using, you will be navigated to the Google Play Store for the installation of the Cloud Sensor App for Android or to the App Store for the installation of the Cloud Sensor App for iOS.
 
-To register your smartphone as a new device in your tenant you have two options:
+### Registering the Cloud Sensor App to your tenant
+
+Their are two ways to register your smartphone as a new device in your tenant:
 
 - Option 1: Scan a QR code with encrypted registration credentials (fastest way)
-- Option 2: Use Web-based registration
+- Option 2: Use web-based registration
 
-> **Info:** Just in case you need to re-register your smartphone, and you change from option 1 to option 2 (or vice versa), you must delete the smartphone object in Device Management.
+> **Info:** Just in case you want to re-register your smartphone, and you change from option 1 to option 2 (or vice versa), you first must delete the smartphone object in Device Management.
 
-The QR code registration process (option 1) uses credentials derived from the username and password of the user who is currently logged into the IoT Sensor tenant. Unique device credentials are used in the web-based registration process (option 2).
+The QR code registration process (option 1) uses credentials derived from the username and password of the user who is currently logged into the IoT tenant. Unique device credentials are used in the web-based registration process (option 2).
 
 #### Registering using a QR code with credentials
 
-Click **Next** in the Cockpit wizard to see the QR code with credentials to register the Cloud Sensor App to your Cumulocity IoT Sensor tenant.
+Click **Next** in the Cockpit wizard to display the QR code with credentials to register your smartphone to your Cumulocity IoT tenant.
 
 ![Register phone QR](/guides/images/users-guide/registerphonenew.png)
 
@@ -43,7 +52,7 @@ Your smartphone will be added to the devices list in the Device Management appli
 
 ![All devices](/guides/images/users-guide/alldevices.png)
 
-Moreover it will be added to the group “Smartphones” (which will be created if not available yet). You can easily navigate to the group in the Cockpit application by clicking **Go to phones**. 
+Moreover it will be added to the group “Phones” (which will be created if not available yet). You will find the group in the **Group** menu in the navigator. 
 
 > **Info:** Until you scan the registration credentials QR code, the button will remain in the pending state showing the message “Waiting...”. Scanning the QR code will complete the registration process.
 
@@ -55,35 +64,29 @@ Moreover it will be added to the group “Smartphones” (which will be created 
 
 To register your smartphone manually, follow these steps:
 
-1. Press the **Web-based Registration** button on the Cloud Sensor App Welcome screen. <br>![Action bar](/guides/images/users-guide/webbased.png)
+1. Press the **Web-based Registration** link on the Cloud Sensor App Welcome screen on your smartphone. <br>![Action bar](/guides/images/users-guide/webbased.png)
 2. Select the instance on which your IoT Sensor Demo tenant is hosted, e.g. cumulocity.com. <br>![Select Instance](/guides/images/users-guide/selectinstancenew.png)
-3. Press the **Register device** button to start registration. A device ID will be displayed which needs to be entered during device registration on the Cumulocity IoT Sensor tenant. <br>![Get device Id](/guides/images/users-guide/getdeviceidnew.png)
-4. In your Cumulocity tenant in the Device Management application, click **Registration** in the **Devices** menu and enter the device ID. <br>![Register device](/guides/images/users-guide/registerdeviceid.png)
-5. Click **Accept**.<br>![Accept device](/guides/images/users-guide/acceptdevice.png)
+3. Press the **Register device** button to start registration. A device ID will be displayed which needs to be entered during device registration in the Cumulocity tenant. <br>![Get device Id](/guides/images/users-guide/getdeviceidnew.png)
+4. In your Cumulocity tenant in the Device Management application, click **Registration** in the **Devices** menu, click **Register device** and in the upcoming window select **General device registration**. <br>![Register device](/guides/images/users-guide/csa-register-devices.png)
+5. Enter the devide ID provided by the app on your smartphone.<br>![Register device](/guides/images/users-guide/csa-enter-id.png)
+6. A message will show up that your device has been successfully registered. Click **Complete** to proceed. <br>![Register device](/guides/images/users-guide/csa-registration-complete.png)
+6. Click **Accept** to finally complete the registration process.<br>![Accept device](/guides/images/users-guide/csa-accept-device.png)
 
-Your smartphone will be added to the devices list in the Device Management application, available from **All devices** in the **Devices** menu in the navigator.
+Your smartphone will be registered and added to the devices list in the Device Management application, available from **All devices** in the **Devices** menu in the navigator.
 
-![All devices](/guides/images/users-guide/alldevices.png)
+![All devices](/guides/images/users-guide/csa-device-list.png)
 
-Moreover it will be added to the group “Smartphones” (which will be created if not available yet). You can easily navigate to the group in the Cockpit application by clicking **Go to phones**. 
+Moreover it will be added to the group “Phones” (which will be created if not available yet). You will find the group in the **Group** menu in the navigator.
 
-For further information about registering a device at the platform manually, refer to [Device Management > Connecting devices](/guides/users-guide/device-management#device-registration).
+For further information about registering a device on the platform manually, refer to [Device Management > Connecting devices](/guides/users-guide/device-management#device-registration).
 
 ### Sending sensor data to Cumulocity
 
-Once your Cloud Sensor App is registered either by a QR code or manually, the device name will be provided which identifies your smartphone in the platform. 
+In case of an Android smartphone, you need to accept several permission requests allowing for accessing data (photos, media and files) on your device, make and manage phone calls and access the location (including network information and GPS data) to let the smartphone transfer network and GPS data to the cloud. This requests only show up once.
 
-You need to accept several permission requests allowing for accessing data on your device (e.g. network information and GPS data) to let the smartphone transfer network and GPS data to the cloud. This requests only show up once.
-
-![access media](/guides/images/users-guide/accessmedia.png)
-![manage calls media](/guides/images/users-guide/managecalls.png)
-![read location](/guides/images/users-guide/readlocation.png)
-
-You may edit the device name or leave it at the default value for your smartphone model.
+Once your smartphone is registered, the device name, which identifies your smartphone in the platform, is displayed on the screen of the Cloud Sensor App. You may edit this name here.
 
 ![edit name](/guides/images/users-guide/editname.png)
-
-A new device record with the model name and the device name used in the platform will appear on the screen of the Cloud Sensor App. 
 
 The measurements from the sensors of your smartphone will automatically start being sent to your Cumulocity tenant. You can view the data from sensors by pressing the **View sensors** button.
 
@@ -103,11 +106,11 @@ To save battery power, the Cloud Sensor App sends measurements to Cumulocity onl
 
 Switch to the Device Management application and select your smartphone from the device list, available through **All devices** in the **Devices** menu in the navigator.
 
-![select from list](/guides/images/users-guide/selectfromlist.png)
+![Device list](/guides/images/users-guide/csa-device-list.png)
 
 Switch to the **Configuration** tab and specify the interval in milliseconds.
 
-![configuration interval](/guides/images/users-guide/configurationinterval.png)
+![configuration interval](/guides/images/users-guide/csa-configure-interval.png)
 
 ### Connecting TI Sensor Tag to the Cloud Sensor App
 

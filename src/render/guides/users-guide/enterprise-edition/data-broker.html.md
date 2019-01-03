@@ -68,7 +68,7 @@ Each data filter contains the following information:
 
 |Field|Description|
 |:---|:---|
-|Group or device|The group or device that is forwarded. Selecting a group here results in all sub-groups and sub-devices being forwarded. By default, all data is forwarded.
+|Group or device|The group or device that is forwarded. Selecting a group here results in all sub-groups and sub-devices being forwarded. Leaving default "All objects" option selected will synchronize all types of objects, including internal and technical ones (not exclusively groups and devices), which may cause issues on the target tenant.
 |API|The type of data being forwarded (alarms, events, measurements, manages objects) or being received (operations).
 |Fragments to filter|The fragments that need to be present in a device to be forwarded.
 |Fragments to copy|The fragments that are copied to the destination. If nothing is specified here, only standard properties of managed objects, alarms, events and measurements are forwarded (see below). Select **Copy all fragments** to forward the entire object.

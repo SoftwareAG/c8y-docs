@@ -69,16 +69,6 @@ Klicken Sie auf einen Untermandanten, um diesen zu bearbeiten oder klicken Sie *
 
 In der Registerkarte **Attribute** können alle Felder außer der ID und des Benutzernamens des Administrators bearbeitet werden. Details zu den einzelnen Feldern finden Sie unter [Erstellen von Untermandanten](#creating-tenants).
 
-### <a name="subscribing"></a>Abonnieren von Anwendungen
-
-In der Registerkarte **Anwendungen** können Sie Anwendungen für Mandanten abonnieren oder entfernen. Standardmäßig werden für einen Mandanten die Standardanwendungen von Cumulocity abonniert.
-
-![Anwendung abonnieren](/guides/images/benutzerhandbuch/ee-subtenants-applications.png)
-
-Um eine Anwendung für einen Mandanten zu abonnieren, bewegen Sie den Mauszeiger über die Anwendungen unter "Verfügbare Anwendungen" auf der rechten Seite und klicken Sie bei der gewünschten Anwendung **Abonnieren**.
-
-Um eine Anwendung zu löschen, bewegen Sie den Mauszeiger über die Anwendungen unter "Abonnierte Anwendungen" auf der linken Seite und klicken Sie bei der gewünschten Anwendung **Abbestellen**.
-
 ### Sperren von Untermandanten
 
 Sie können Mandanten zeitweilig sperren. Das Sperren eines Mandanten verhindert jeglichen Zugriff auf diesen Mandanten, unabhängig davon, ob der Zugriff über eine Gerät, einen Benutzer oder eine andere Anwendung erfolgt.
@@ -98,6 +88,43 @@ Ist ein Mandant gesperrt, bleiben die Daten des Mandanten in der Datenbank und s
 Um einen Untermandanten und alle seine Daten endgültig zu löschen, klicken Sie auf das Menüsymbol und wählen Sie im Kontextmenü **Löschen**.
 
 > **Info**: Dieser Vorgang kann nicht rückgängig gemacht werden. Aus Sicherheitsgründen ist er daher nur im Management-Mandanten möglich.
+
+
+### <a name="subscribe"></a>Abonnieren und Überwachen von Anwendungen
+
+In der Registerkarte **Anwendungen** können Sie alle für einen Mandanten abonnierten Anwendungen ansehen sowie Anwendungen für einen Mandanten abonnieren oder entfernen. Standardmäßig werden für einen Mandanten die Standardanwendungen von Cumulocity abonniert.
+
+![Anwendung abonnieren](/guides/images/benutzerhandbuch/ee-subtenants-applications.png)
+
+Um eine Anwendung für einen Mandanten zu abonnieren, bewegen Sie den Mauszeiger über die Anwendungen unter **Verfügbare Anwendungen** auf der rechten Seite und klicken Sie bei der gewünschten Anwendung **Abonnieren**.
+
+Um eine Anwendung zu löschen, bewegen Sie den Mauszeiger über die Anwendungen unter **Abonnierte Anwendungen** auf der linken Seite und klicken Sie bei der gewünschten Anwendung **Abbestellen**.
+
+#### Überwachen von Microservices
+
+Für alle Anwendungen, die als Microservices von Cumulocity gehostet werden, wird neben dem Namen der Microservice-Status als Symbol angezeigt:
+
+<img src="/guides/images/benutzerhandbuch/admin-applications-status.png" alt="Anwendungsstatus" style="max-width: 75%">
+
+Der Microservice kann sich in einem der folgenden Status befinden:
+
+* <img src="/guides/icons/ok.png" alt="Up" style="max-width: 100%"> Microservice ist in Betrieb
+* <img src="/guides/icons/warning.png" alt="Up" style="max-width: 100%"> Microservice ist gestört
+* <img src="/guides/icons/danger.png" alt="Up" style="max-width: 100%"> Microservice ist außer Betrieb
+
+Details zum Status können durch Ausklappen des jeweiligen Eintrags angezeigt werden. 
+
+<img src="/guides/images/users-guide/Administration/admin-application-details.png" alt="Anwendungsdetails" style="max-width: 75%">
+
+Folgende Informationen werden angezeigt:
+
+* Aktiv: Anzahl der aktiven Microservice-Instanzen
+* Gestört: Anzahl der inaktiven Microservice-Instanzen
+* Erwartet: Anzahl der erwarteten Microservice-Instanzen
+* Name: Name der Microservice-Instanz
+* Neustarts: Anzahl der Neustarts von Microservice-Instanzen
+
+Weitere Details finden Sie in der Registerkarte **Status** der entsprechenden Anwendung, siehe [Administration > Verwalten von Anwendungen](/guides/users-guide/administration#managing-applications).
 
 ### <a name="tenants-custom-properties"></a>Bearbeitung von benutzerdefinierten Attributen
 

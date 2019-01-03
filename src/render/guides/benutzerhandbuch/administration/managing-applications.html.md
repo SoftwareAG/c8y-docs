@@ -4,7 +4,125 @@ title: Verwalten von Anwendungen
 layout: redirect
 ---
 
-Zusätzlich zu den Anwendungen, die in Ihrem Konto vorhanden sind (standardmäßig oder als Abonnement), können Sie in Ihrem Konto eigene Anwendungen verwalten.
+In der Cumulocity-Plattform gibt es zwei Arten von Anwendungen:
+
+* Abonnierte Anwendungen -  alle Anwendungen, die für den Mandanten abonniert sind (entweder durch die Plattform oder einen Service Provider), aber die er nicht besitzt  
+* [Eigene Anwendungen](#own-applications) - alle Anwendungen, die der Mandant besitzt
+
+Beide Anwendungsarten finden sich im Menü **Anwendungen** im Navigator:
+
+<img src="/guides/images/benutzerhandbuch/admin-menu.png" alt="Anwendungen" style="max-width: 25%">
+
+Abonnierte Anwendungen können vom Benutzer nicht hinzugefügt, geändert oder entfernt werden, wohingegen benutzerdefinierte Anwendungen auf verschiedene Weise [als eigene Anwendungen hinzugefügt](#add-applications) werden können.  
+
+### <a name="application-properties"></a>Anwendungsattribute
+
+Klicken Sie auf eine Anwendungskarte, um die Attribute der Anwendung anzuzeigen.
+
+<img src="/guides/images/benutzerhandbuch/admin-own-application-attributes.png" alt="Anwendungsattribute" style="max-width: 100%">
+
+Für jede Anwendung werden die folgenden Attribute angezeigt:
+
+<table>
+<col width= 100>
+<col width= 250>
+<col width= 150>
+<thead>
+<tr>
+<th style="text-align:left">Feld</th>
+<th style="text-align:left">Beschreibung</th>
+<th style="text-align:left">Web-Anwendung</th>
+<th style="text-align:left">Microservice</th>
+<th style="text-align:left">Externe Anwendung</th>
+<th style="text-align:left">CEP-Regel</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">ID</td>
+<td style="text-align:left">Eindeutige ID zur Identifikation der Anwendung</td>
+<td style="text-align:left">Automatisch generiert</td>
+<td style="text-align:left">Automatisch generiert</td>
+<td style="text-align:left">Automatisch generiert</td>
+<td style="text-align:left">Automatisch generiert</td>
+</tr>
+<tr>
+<td style="text-align:left">Name</td>
+<td style="text-align:left">Anwendungsname. Wird als Titel oben links auf der Anwendungsseite angezeigt und im Application Switcher verwendet.</td>
+<td style="text-align:left">Automatisch generiert, basierend auf dem Namen der ZIP-Datei</td>
+<td style="text-align:left">Automatisch generiert, basierend auf dem Namen der ZIP-Datei</td>
+<td style="text-align:left">Vom Benutzer vergeben</td>
+<td style="text-align:left">Automatisch generiert, basierend auf dem Namen der mon-Datei </td>
+</tr>
+<tr>
+<td style="text-align:left">Anwendungsschlüssel</td>
+<td style="text-align:left">Wird zur Identifikation der Anwendung verwendet. Wird außerdem verwendet, um die Anwendung als Abonnement zur Verfügung zu stellen, siehe auch <a href="/guides/concepts/applications" class="no-ajaxy">Concepts Guide</a>.</td>
+<td style="text-align:left">Automatisch generiert, basierend auf dem Namen der ZIP-Datei</td>
+<td style="text-align:left">Automatisch generiert, basierend auf dem Namen der ZIP-Datei</td>
+<td style="text-align:left">Vom Benutzer vergeben</td>
+<td style="text-align:left">Automatisch generiert, basierend auf dem Namen der mon-Datei</td>
+</tr>
+<tr>
+<td style="text-align:left">Typ</td>
+<td style="text-align:left">Anwendungstyp</td>
+<td style="text-align:left">Gehostete Anwendung</td>
+<td style="text-align:left">Microservice</td>
+<td style="text-align:left">Externe Anwendung</td>
+<td style="text-align:left">Apama CEP-Regel</td>
+</tr>
+<tr>
+<td style="text-align:left">Pfad</td>
+<td style="text-align:left">Teil der URL, die die Anwendung aufruft</td>
+<td style="text-align:left">Automatisch generiert</td>
+<td style="text-align:left">Automatisch generiert als .../service/&lt;microservice name&gt;</td>
+<td style="text-align:left">Vom Benutzer bereitgestellt. Wenn Sie beispielsweise "hallo" als Anwendungspfad verwenden, lautet die URL der Anwendung "/apps/hallo".</td>
+<td style="text-align:left">Nicht verfügbar</td>
+</tr>
+</tbody>
+</table>
+
+>**Info**: ID, Anwendungsschlüssel, Typ und Pfad können nicht geändert werden.
+
+### Überwachen von Microservices
+
+Es gibt zwei Möglichkeiten, Microservices in der Cumulocity-Plattform zu überwachen.
+
+#### Statusinformation
+
+Der Status eines Microservices kann in der Registerkarte **Status** der entsprechenden Anwendung überprüft werden. 
+
+<img src="/guides/images/benutzerhandbuch/admin-microservice-status.png" alt="Microservice-Status" style="max-width: 100%">
+
+Folgende Information werden in der Registerkarte **Status** angezeigt:
+
+* Instanzen: Anzahl der aktiven, gestörten und erwarteten Microservice-Instanzen für den aktuellen Mandanten
+* Abonnierte Mandanten: Anzahl der aktiven, gestörten und erwarteten Microservice-Instanzen für alle Untermandanten, für die der Microservice abonniert ist 
+* Alarme: Alarme für die aktuelle Anwendung, angezeigt in Echtzeit
+* Ereignisse: Ereignisse für die aktuelle Anwendung, angezeigt in Echtzeit
+
+Die Statusinformation ist sowohl für abonnierte als auch für eigene Anwendungen verfügbar. Die Informationen zu den abonnierten Mandanten sind jedoch nur für den Besitzer der Anwendung sichtbar.  
+
+Um den Status sehen zu können, benötigen Sie folgende Berechtigungen:  ROLE_APPLICATION_MANAGEMENT_READ und ROLE_INVENTORY_READ
+
+#### Logdateien
+
+Für detaillierte Informationen über den Status von Microservices stehen außerdem Logdaten zur Verfügung.
+
+Öffnen Sie die Registerkarte **Logdaten** des jeweiligen Microservice, um Logdaten anzuzeigen.
+
+<img src="/guides/images/benutzerhandbuch/admin-microservice-log.png" alt="Microservice-Logdaten" style="max-width: 100%">
+
+Links oben auf der Seite können Sie die Microservice-Instanz auswählen, für die Sie  Logdaten anzeigen möchten. Darüberhinaus können Sie rechts Ihre bevorzugte Schriftgröße und das Themendesign wählen. 
+
+Initial werden die Logdaten der ausgewählten Microservice-Instanz für die letzten 10 Minuten angezeigt. Das abgebildete Zeitintervall wird unter den Daten angezeigt.
+
+Klicken Sie die Pfeiltasten "Vor" oder "Zurück", um das Zeitintervall um jeweils 10 Minuten zu verlängern bzw. zu verkürzen. 
+
+Wenn es im ausgewählten Zeitintervall keine Logdaten gibt, wird eine entsprechende Meldung angezeigt.
+
+Um Logdaten lesen zu können, benötigen Sie die Berechtigung EVENT_READ.
+
+### <a name="own-applications"></a>Eigene Anwendungen
 
 Eigene Anwendungen können sein: 
 
@@ -28,7 +146,7 @@ Klicken Sie **Anwendung hinzufügen** auf der Seite **Eigene Anwendungen**, um e
 
 Klicken Sie auf das Menüsymbol rechts oben in einer Anwendung, um über das Kontextmenü eine Anwendung zu [**Bearbeiten** oder zu **Löschen**](#editing-and-removing).
 
-### Erstellen einer Anwendung
+#### Erstellen einer Anwendung
 
 Klicken Sie **Anwendung hinzufügen** auf der Seite **Eigene Anwendungen**, um eine Anwendung hinzuzufügen. Wählen Sie im angezeigten Dialogfenster eine der folgenden Methoden:
 
@@ -41,7 +159,7 @@ Klicken Sie **Anwendung hinzufügen** auf der Seite **Eigene Anwendungen**, um e
 
 Wenn Sie die entsprechende Anwendung abonniert haben ("apama-small"), sehen Sie außerdem die Option **Eigene Apama-Regel hochladen**, um [eigene Apama CEP-Regeln](#uploading-cep-rules) als Anwendung hochzuladen. 
 
-#### <a name="uploading-zip-files"></a>Hochladen von Web-Anwendungen 
+##### <a name="uploading-zip-files"></a>Hochladen von Web-Anwendungen 
 
 Um eine Web-Anwendung hochzuladen, führen Sie folgende Schritte aus:
 
@@ -53,7 +171,7 @@ Um eine Web-Anwendung hochzuladen, führen Sie folgende Schritte aus:
 
 Nachdem die Datei auf die Plattform hochgeladen wurde, wird die Anwendung erstellt. 
 
-#### <a name="uploading-microservices"></a>Hochladen von Microservices
+##### <a name="uploading-microservices"></a>Hochladen von Microservices
 
 Um einen Microservice hochzuladen, führen Sie folgende Schritte aus:
 
@@ -67,7 +185,7 @@ Nachdem die Datei auf die Plattform hochgeladen wurde, wird die Anwendung erstel
 
 >**Info**: Um Microservices zur Plattform hinzuzufügen, muss die gepackte Datei die Manifest-Datei und das Docker Image für den Microservice enthalten. Nähere Informationen zum Vorbereiten und Deployen des Microservice-Pakets finden Sie unter [Microservice package reference](/guides/reference/microservice-package) im Reference guide.
 
-#### <a name="external-application"></a>Verweisen auf eine externe Anwendung
+##### <a name="external-application"></a>Verweisen auf eine externe Anwendung
 
 Um eine Anwendung hinzuzufügen, die auf eine externe Anwendung verweist, führen Sie folgende Schritte aus:
 
@@ -83,7 +201,7 @@ Um eine Anwendung hinzuzufügen, die auf eine externe Anwendung verweist, führe
 
 Weitere Informationen zu den Feldern finden Sie auch unter [Anwendungsattribute](#application-properties). 
 
-#### <a name="clone-application"></a>Duplizieren einer existierenden Anwendung
+##### <a name="clone-application"></a>Duplizieren einer existierenden Anwendung
 
 Das Duplizieren einer Anwendung ist erforderlich, wenn Sie eine abonnierte Anwendung nach Ihren eigenen Bedürfnissen anpassen möchten. 
 
@@ -106,7 +224,7 @@ Führen Sie die folgende Schritte aus, um eine Anwendung zu duplizieren:
 
 Weitere Informationen zu den Feldern finden Sie auch unter [Anwendungsattribute](#application-properties).  
 
-#### <a name="uploading-cep-rules"></a>Hochladen eigener Apama-Regeln
+##### <a name="uploading-cep-rules"></a>Hochladen eigener Apama-Regeln
 
 > **Info:** Um eigene Apama CEP-Regeln als Anwendung hochladen zu können, müssen Sie die Anwendung "apama-small" abonniert haben. 
 
@@ -123,26 +241,7 @@ Nachdem die Datei auf die Plattform hochgeladen wurde, wird eine Anwendung des T
 >**Info:** Sie können zu einer Anwendung des Typs "Apama CEP-Regel" keine Plugins hinzufügen. 
 
 
-### <a name="application-properties"></a>Anwendungsattribute
-
-Klicken Sie auf eine Anwendungskarte, um die Attribute der Anwendung anzuzeigen.
-
-<img src="/guides/images/benutzerhandbuch/admin-own-application-attributes.png" alt="Anwendungsattribute" style="max-width: 100%">
-
-Für jede Anwendung werden die folgenden Attribute angezeigt:
-
-|Feld|Beschreibung|Web-Anwendung|Microservice|Externe Anwendung|Apama CEP-Regel
-|:----------------|:---|:---|:---|:---|:---
-|Name|Anwendungsname. Wird als Titel oben links auf der Anwendungsseite angezeigt und im Application Switcher verwendet. |Automatisch generiert, basierend auf dem Namen der ZIP-Datei|Automatisch generiert, basierend auf dem Namen der ZIP-Datei|Vom Benutzer vergeben|Automatisch generiert, basierend auf dem Namen der mon-Datei 
-|ID|Eindeutige ID zur Identifikation der Anwendung |Automatisch generiert|Automatisch generiert|Automatisch generiert|Automatisch generiert
-|Anwendungsschlüssel|Wird zur Identifikation der Anwendung verwendet. Wird außerdem verwendet, um die Anwendung als Abonnement zur Verfügung zu stellen, siehe auch [Concepts Guide](/guides/concepts/applications). |Automatisch generiert, basierend auf dem Namen der ZIP-Datei|Automatisch generiert, basierend auf dem Namen der ZIP-Datei|Vom Benutzer vergeben|Automatisch generiert, basierend auf dem Namen der mon-Datei
-|Typ|Anwendungstyp|Gehostete Anwendung|Microservice|Externe Anwendung|Apama CEP-Regel
-|Pfad|Teil der URL, die die Anwendung aufruft|Automatisch generiert|Automatisch generiert als .../service/&#60;microservice name&#62;|Vom Benutzer bereitgestellt. Wenn Sie beispielsweise "hallo" als Anwendungspfad verwenden, lautet die URL der Anwendung "/apps/hallo".|Nicht verfügbar
-
->**Info**: ID, Anwendungsschlüssel, Typ und Pfad können nicht geändert werden.
-
-
-### <a name="editing-and-removing"></a>Bearbeiten und Löschen von Anwendungen
+#### <a name="editing-and-removing"></a>Bearbeiten und Löschen eigener Anwendungen
 
 **Bearbeiten**
 
@@ -161,9 +260,9 @@ Wenn Sie eine Anwendung löschen, die eine abonnierte Anwendung überschreibt, w
 Abonnierte Anwendungen können nicht gelöscht werden. Dies kann nur durch den Eigentümer der Anwendung erfolgen.
 
 
-### <a name="add-remove-plugin"></a>Hinzufügen und Entfernen von Plugins
+#### <a name="add-remove-plugin"></a>Hinzufügen und Entfernen von Plugins
 
->**Wichtig**: Diese Plugin-Funktionalität ist veraltet und nur verfügbar in Versionen vor 9.16. 
+>**Wichtig**: Diese Plugin-Funktionalität ist veraltet und nur in Versionen vor 9.16 verfügbar. 
 
 Um die Funktionen einer Anwendung zu konfigurieren oder zu erweitern, können Plugins hinzugefügt werden.
 
@@ -325,7 +424,7 @@ Die folgenden beiden Tabellen zeigen die Navigator- und Menüelemente mit ihren 
 
 Beachten Sie das "UI" am Ende des Plugin-Namens.
 
-### Wiederherstellen einer älterer Anwendungsversion
+#### Wiederherstellen einer älterer Anwendungsversion
 
 Benutzer können ältere Versionen einer Anwendung aus einem Archiv wiederherstellen:
 
@@ -336,7 +435,7 @@ Benutzer können ältere Versionen einer Anwendung aus einem Archiv wiederherste
 
 > **Info**: Die Registerkarte **Archiv** steht für abonnierte Anwendungen nicht zur Verfügung, da nur der Eigentümer der Anwendung ältere Versionen wiederherstellen kann.
 
-### Hochladen von Archiven
+#### Hochladen von Archiven
 
 Mehrere Archivdateiversionen können in Cumulocity gespeichert werden, wenn Sie durch das Hochladen von ZIP- oder mon-Dateien erstellt wurden. Jede Version wird als Archiv bezeichnet. Es können verschiedene Versionen gleichzeitig hochgeladen werden und Sie können zwischen den Versionen wechseln.
 

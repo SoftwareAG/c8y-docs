@@ -7,7 +7,7 @@ layout: redirect
 
 Unter **Enterprise Edition** in der Anwendung "Administration" können Einstellungen vorgenommen werden, die Benutzern der Enterprise Edition von Cumulocity über den Umfang der Standardedition hinaus zu Verfügung stehen.
 
-**Info**: Informationen zu den Einstellungen in der Registerkarte  **Konfiguration** finden Sie in [Ändern von Einstellungen > Konfigurationseinstellungen](/guides/users-guide/administration/#config-platform) unter Administration.
+**Info**: Informationen zu den Einstellungen in der Registerkarte  **Konfiguration** finden Sie in [Ändern von Einstellungen > Konfigurationseinstellungen](/guides/benutzerhandbuch/administration/#config-platform) unter Administration.
 
 
 
@@ -124,7 +124,7 @@ Bevor Sie den eigenen Domain-Namen aktivieren, stellen Sie sicher, dass
 *   Sie ein gültiges SSL-Zertifikat für die eigene Domain hochgeladen haben,
 *   der Domain-Name nicht von einem anderen Mandanten verwendet wird,
 *   das Zertifikat aktuell gültig ist (validFrom in der Vergangenheit und validTo in der Zukunft),
-* Sie einen Wildcard-CNAME-Eintrag (beginnend mit "*.") in folgendem Format zu Ihrem DNS-Server hinzugefügt haben:<br>
+* Sie einen Wildcard-CNAME-Eintrag (beginnend mit `"*."`) in folgendem Format zu Ihrem DNS-Server hinzugefügt haben:<br>
  Host-Name = `*.<ihr domain name>`, z. B. `*.iot.mycompany.com` <br>
  Typ = CNAME <br>
  Ziel = Die Ziel-URL der Plattform, auf die Sie zeigen möchten, z. B. `manage.cumulocity.com`<br>
@@ -149,8 +149,8 @@ Wenn Ihr Zertifikat abläuft, müssen Sie es durch ein neues Zertifikat mit eine
 Wenn Sie zu Ihrer alten Domain auf Cumulocity zurückkehren möchten, können Sie Ihr Zertifikat ganz einfach wieder deaktivieren.
 
 > **Wichtig**: Verwenden Sie dies Funktion mit Vorsicht. Ihre Kunden werden nicht mehr in der Lage sein, auf Ihre Untermandanten zuzugreifen.
-> 
-> #### Troubleshooting
+
+#### Troubleshooting
 
 Für den Fall, dass Sie Cumulocity mit Ihrer eigenen Domain nicht erreichen können, empfehlen wir, zunächst die folgenden Überprüfungen durchzuführen, um Ihre DNS-Einstellungen zu verifizieren.
 

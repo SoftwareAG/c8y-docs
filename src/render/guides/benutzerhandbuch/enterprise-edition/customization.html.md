@@ -7,6 +7,10 @@ layout: redirect
 
 Unter **Enterprise Edition** in der Anwendung "Administration" können Einstellungen vorgenommen werden, die Benutzern der Enterprise Edition von Cumulocity über den Umfang der Standardedition hinaus zu Verfügung stehen.
 
+**Info**: Informationen zu den Einstellungen in der Registerkarte  **Konfiguration** finden Sie in [Ändern von Einstellungen > Konfigurationseinstellungen](/guides/users-guide/administration/#config-platform) unter Administration.
+
+
+
 ### Branding
 
 In der Registerkarte **Branding**, können Sie das Erscheinungsbild der Benutzeroberfläche für Ihre Mandanten nach Ihren Vorlieben gestalten.
@@ -105,6 +109,8 @@ Die folgende Abbildung zeigt ein Beispiel mit
 
 In der Registerkarte **Domain-Name** können Sie Ihren eigenen Domain-Namen festlegen.
 
+>**Info**: Sie benötigen eine gültige Lizenz, um Ihre Domain zu aktivieren. Bitte kontaktieren Sie unser Sales-Team unter sales@cumulocity.com, um eine Lizenz für Ihre Domain zu installieren.
+
 ![Domain-Name](/guides/images/users-guide/Administration/admin_DomainName.png)
 
 Zunächst müssen Sie eine entsprechendes Zertifikat hochladen, in dem Sie **Zertifikat hochladen** klicken. Stellen Sie sicher, dass
@@ -118,7 +124,11 @@ Bevor Sie den eigenen Domain-Namen aktivieren, stellen Sie sicher, dass
 *   Sie ein gültiges SSL-Zertifikat für die eigene Domain hochgeladen haben,
 *   der Domain-Name nicht von einem anderen Mandanten verwendet wird,
 *   das Zertifikat aktuell gültig ist (validFrom in der Vergangenheit und validTo in der Zukunft),
-*   Sie einen DNS A-Eintrag für die Domain erstellt haben, der auf die IP-Adresse Ihres DNS-Servers zeigt.
+* Sie einen Wildcard-CNAME-Eintrag (beginnend mit "*.") in folgendem Format zu Ihrem DNS-Server hinzugefügt haben:<br>
+ Host-Name = `*.<ihr domain name>`, z. B. `*.iot.mycompany.com` <br>
+ Typ = CNAME <br>
+ Ziel = Die Ziel-URL der Plattform, auf die Sie zeigen möchten, z. B. `manage.cumulocity.com`<br>
+Vergewissern Sie sich, dass Sie alle A-Einträge für die Wildcard-Domain entfernt haben. Falls Ihr DNS-Service keine CNAME-Einträge für Wildcard-Zertifikate bereitstellt, kontaktieren Sie bitte unser Support-Team.
 
 Nach erfolgreicher Aktivierung werden Sie zu Ihrem Enterprise-Mandanten unter der neuen Domain umgeleitet. Sie erhalten eine Email mit Informationen über die Aktivierung.
 
@@ -132,10 +142,41 @@ Wenn Ihr Zertifikat abläuft, müssen Sie es durch ein neues Zertifikat mit eine
 *   das Zertifikat nicht passwortgeschützt ist,
 *   das Zertifikat aktuell gültig ist (validFrom in der Vergangenheit und validTo in der Zukunft),
 *   das Zertifikat exakt denselben Domain-Namen wie das aktuell aktive Zertifikat hat.
-*   Sie einen DNS A-Eintrag für die Domain erstellt haben, der auf die IP-Adresse Ihres DNS-Servers zeigt.
+*   Sie einen CNAME-Eintrag zu Ihrem DNS-Server hinzugefügt haben. Details zum CNAME-Eintrag finden Sie weiter oben.
 
 **Deaktivieren eines Zertifikats**
 
 Wenn Sie zu Ihrer alten Domain auf Cumulocity zurückkehren möchten, können Sie Ihr Zertifikat ganz einfach wieder deaktivieren.
 
 > **Wichtig**: Verwenden Sie dies Funktion mit Vorsicht. Ihre Kunden werden nicht mehr in der Lage sein, auf Ihre Untermandanten zuzugreifen.
+> 
+> #### Troubleshooting
+
+Für den Fall, dass Sie Cumulocity mit Ihrer eigenen Domain nicht erreichen können, empfehlen wir, zunächst die folgenden Überprüfungen durchzuführen, um Ihre DNS-Einstellungen zu verifizieren.
+
+**Prüfen, ob der DNS-Entrag korrekt ist**
+
+Führen Sie folgendes Kommando aus:
+
+	host management.<ihr domain name>
+	
+Es sollte das folgende Ergebnis angezeigt werden:
+
+	management.<ihr domain name> ist ein Alias für <instanz domain name>
+	<instanz domain name> hat die Adresse <IP-Adresse>
+	
+
+**Prüfen, ob die API antwortet** 
+
+Führen Sie folgendes Kommando aus:
+
+	curl -v -u '<Mandanten-ID>/<ihr benutzer>:<ihr password>' --head http://management.<ihr domain name>/inventory/managedObjects
+	
+Es sollte das folgende Ergebnis angezeigt werden:
+
+	...
+	HTTP/1.1 200 OK
+	...	
+
+
+>**Info**: Berücksichtigen Sie, dass es nach dem Ändern des DNS-Eintrags bis zu 24 Stunden dauern kann, bis der neue Eintrag propagiert wurde. 

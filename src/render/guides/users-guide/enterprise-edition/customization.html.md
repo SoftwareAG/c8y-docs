@@ -6,7 +6,7 @@ layout: redirect
 
 In an Enterprise Edition installation under the **Settings** menu you can specify settings for the customization of your platform.
 
-**Info**: For information on the settings in the **Customization** tab refer to [Changing Settings > Configuration settings](/guides/users-guide/administration/#config-platform) in the Administration section.
+**Info**: For information on the settings in the **Configuration** tab refer to [Changing Settings > Configuration settings](/guides/users-guide/administration/#config-platform) in the Administration section.
 
 ### <a name="branding"></a>Branding
 

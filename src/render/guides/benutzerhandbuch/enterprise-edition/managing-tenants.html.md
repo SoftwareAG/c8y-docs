@@ -136,7 +136,7 @@ Die Registerkarte **Benutzerdefinierte Attribute** ermöglicht Ihnen das Anzeige
 
 Der Plattformadministrator kann die Anzahl der gleichzeitig registrierten Hauptgeräte oder der registrierten Geräte insgesamt (einschließlich Kindgeräte) begrenzen. Der Plattformadministrator kann außerdem auf der Seite **Nutzungsstatistiken** die Höchstanzahl registrierter Hauptgeräte und Geräte insgesamt sowie den Höchstwert des genutzten Datenspeichers einsehen. 
 
-### <a name="usage-stats"></a>Nutzungsstatistiken abrufen
+### <a name="usage-stats"></a>Anzeigen von Nutzungsstatistiken
 
 Die Seite **Nutzungsstatistiken** zeigt statistische Informationen für jeden Untermandanten an.
 
@@ -190,7 +190,7 @@ Klicken Sie **Mandantenregeln** im Menü **Mandanten**, um alle verfügbaren Reg
 
 Für jede Mandantenregel wird der Name, eine optionale Beschreibung und die Anzahl der Optionen und Datenerhaltungsregeln angezeigt, wahlweise in Listen- oder Gitteransicht.
 
-### Hinzufügen einer Mandantenregel
+#### Hinzufügen einer Mandantenregel
 
 Klicken Sie **Mandantenregel hinzufügen** in der oberen Menüleiste, um eine neue Mandantenregel zu erstellen.
 
@@ -201,7 +201,7 @@ Klicken Sie **Mandantenregel hinzufügen** in der oberen Menüleiste, um eine ne
 3.  Geben Sie optional eine Mandantenoption ein.
 4.  Klicken Sie **Speichern**, um Ihre Eingaben zu speichern.
 
-### Bearbeiten, Duplizieren und Löschen von Regeln
+#### Bearbeiten, Duplizieren und Löschen von Regeln
 
 Klicken Sie auf eine Regel, um diese zu bearbeiten oder öffnen Sie das Kontextmenü über das Menüsymbol und klicken Sie **Bearbeiten**.
 

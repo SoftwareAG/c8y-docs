@@ -146,7 +146,7 @@ Klicken Sie **Anwendung hinzufügen** auf der Seite **Eigene Anwendungen**, um e
 
 Klicken Sie auf das Menüsymbol rechts oben in einer Anwendung, um über das Kontextmenü eine Anwendung zu [**Bearbeiten** oder zu **Löschen**](#editing-and-removing).
 
-#### Erstellen einer Anwendung
+#### Hinzufügen einer eigenen Anwendung
 
 Klicken Sie **Anwendung hinzufügen** auf der Seite **Eigene Anwendungen**, um eine Anwendung hinzuzufügen. Wählen Sie im angezeigten Dialogfenster eine der folgenden Methoden:
 

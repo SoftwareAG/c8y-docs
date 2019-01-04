@@ -118,7 +118,7 @@ The following information is provided:
 
 * Active: The number of active microservice instances
 * Unhealthy: The number of inactive microservice instances
-* Desired: The number of desired  microservice instances
+* Desired: The number of desired microservice instances
 * Name: Microservice instance name
 * Restarts: The number of microservice instance restarts
 

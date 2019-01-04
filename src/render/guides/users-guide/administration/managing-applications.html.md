@@ -116,7 +116,7 @@ At the top of the page, the instance of the microservice, for which you want to 
 
 Initially, the **Log** tab shows the logs of the microservice instance for the last 10 minutes. The exact time range for which the logs are displayed is shown below the logs.
 
-Click **Next** or **Previous** to increase or reduce the time range in 10 minutes steps.
+Click the arrow buttons "Next" or "Previous" to increase or respectively reduce the time range in 10 minutes steps.
 
 If there have not been any logs in the selected time range, a message is shown accordingly:
 
@@ -322,7 +322,7 @@ Users can restore previous versions of an application from an archive:
 
 >**Info**: The **Archive** tab is not available for subscribed applications, as only the owner of the application can perform this action.
 
-##### Uploading archives
+#### Uploading archives
 
 Multiple archive file versions can be stored in Cumulocity when they were created by uploading either a zip file or a mon file. Each version is called an archive. You can upload different versions at the same time and switch between these versions. 
 

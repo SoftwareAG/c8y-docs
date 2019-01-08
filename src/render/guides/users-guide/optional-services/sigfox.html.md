@@ -32,7 +32,7 @@ Before you register a device, you need to configure Sigfox Cloud credentials in 
 
 Before you create API access to Cumulocity, you need to have an “Associated user” which is added to the Cumulocity group in Sigfox Cloud and has the following profiles:
 
-- Customer [W]
+- Customer [R]
 - Device Manager [W]
 
 **Info:** Without the following profiles, the required Sigfox API access can not be set up.
@@ -41,7 +41,7 @@ Step 1 is only relevant, if you do not have an associated user yet. If you do, s
 
 #### Step 1
 
-First enter into your Sigfox Cloud account and create a new user. Add the user to the “Cumulocity” group and select the “Customer [W]” and “Device Manager [W]” profiles.
+First enter into your Sigfox Cloud account and create a new user. Add the user to the “Cumulocity” group and select the “Customer [R]” and “Device Manager [W]” profiles.
 
 ![New user](/guides/images/users-guide/sigfox/newuser.png)
 
@@ -63,7 +63,9 @@ The following information has to be provided:
 
 - **Login:** The login token is located in the API access entry in the Sigfox Cloud.
 - **Password:** The password token is located in the API access entry in the Sigfox Cloud next to “Password”.
-- **Parent Group ID:** This ID is written in your URL when you are logged into your Sigfox account and you have selected the “Cumulocity” group. For example, “https://backend.Sigfox.com/group/**9823ruj29j9d2j9828hd8**/info”.
+- **Parent Group ID:** This ID is written in your URL when you are logged into your Sigfox account and you have selected the “Cumulocity” group. For example, “https://backend.sigfox.com/group/**9823ruj29j9d2j9828hd8**/info”.
+
+> **Info:**The group name in the screenshot below is only an example. It is not necessary to be Cumulocity.
 
 ![API access page](/guides/images/users-guide/sigfox/parentgroupid.png)
 

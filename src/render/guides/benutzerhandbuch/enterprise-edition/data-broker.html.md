@@ -4,7 +4,7 @@ title: Data Broker
 layout: redirect
 ---
 
-Mit dem Data Broker können Daten gezielt mit anderen Mandanten geteilt werden. Sie können folgenden Daten teilen:
+Mit Data Broker können Daten gezielt mit anderen Mandanten geteilt werden. Sie können folgenden Daten teilen:
 
 *   Geräte (und ganz allgemein Objekte),
 *   Ereignisse,
@@ -14,11 +14,13 @@ Mit dem Data Broker können Daten gezielt mit anderen Mandanten geteilt werden. 
 
 Navigieren Sie zur Seite **Datenkonnektor** im Menü **Data Broker**, wenn Sie anderen Mandanten Daten senden möchten. Navigieren Sie zur Seite **Datenabonnements**, wenn Sie von anderen Mandanten Daten erhalten möchten.
 
-> **Info**: Geräte, die über den Data Broker weitergeleitet werden, werden wie normale Geräte im Zielmandanten abgerechnet.
+> **Info**: Geräte, die über Data Broker weitergeleitet werden, werden wie normale Geräte im Zielmandanten abgerechnet.
 
->Beachten Sie folgende Einschränkungen im Zusammenhang mit dem Data Broker:<br> 
->Cloud Remote Access kann im Ursprungsmandanten nicht verwendet werden.  
->Derzeit funktioniert das Fieldbus-Widget nicht in Mandanten, die Fieldbus-Geräte durch den Data Broker erhalten, da die entsprechenden Datenmodelle nicht synchronisiert werden. 
+>Beachten Sie folgende Einschränkungen im Zusammenhang mit Data Broker:<br> 
+
+>* Cloud Remote Access kann im Ursprungsmandanten nicht verwendet werden.  
+* Derzeit funktioniert das Fieldbus-Widget nicht in Mandanten, die Fieldbus-Geräte durch Data Broker erhalten, da die entsprechenden Datenmodelle nicht synchronisiert werden. 
+* Während wir Rückwärtskompatibilität gewährleisten, können wir nicht garantieren, dass Data Broker Daten an Cumulocity-Mandanten senden kann, die auf späteren Cumulocity-Versionen laufen als der Ursprungsmandant.
 
 ### <a name="data-broker-connectors"></a>Datenkonnektoren
 
@@ -206,7 +208,7 @@ Um das Weiterleiten von Daten ganz zu beenden und den Datenkonnektor zu entferne
 
 **Wie Sie die Datenweiterleitung auf der Empfängerseite einrichten können**
 
-1.  Klicken Sie **Datenabonnement hinzufügen**in der oberen Menüleiste, um Daten zu empfangen.
+1.  Klicken Sie **Datenabonnement hinzufügen** in der oberen Menüleiste, um Daten zu empfangen.
 2.  Geben Sie in der neuen Karte den Sicherheitscode ein, den Sie vom Sender der Daten erhalten haben.
 3.  Wenn die Verbindung hergestellt ist, klicken Sie **Annehmen**, um das Weiterleiten in Ihren Mandanten zu starten. Das Abonnement ist nun aktiv.
 4.  Verwenden Sie den Regler in der Karte, um zeitweilig das Weiterleiten von Daten in Ihren Mandanten zu beenden.
@@ -214,3 +216,15 @@ Um das Weiterleiten von Daten ganz zu beenden und den Datenkonnektor zu entferne
 Navigieren Sie nun zur Device Management- oder Cockpit-Anwendung. Dort gibt es eine neue "virtuelle Gruppe" mit einem speziellen Symbol (siehe Abbildung unten), die die weitergeleiteten Geräte anzeigt. Diese Gruppe hat denselben Namen wie das Abonnement. Geräte werden auf der Empfängerseite verzögert erstellt, sobald sie, nach Einrichten eines aktiven Abonnements, das erste mal Daten senden.
 
 ![Data Broker-Gruppe in Cockpit-Anwendung](/guides/images/benutzerhandbuch/ee-data-broker-group.PNG)
+
+### <a name="data-broker-troubleshooting"></a> Fehlerbehebung
+
+**Fehlermeldung**
+
+	Data broker processing is currently overloaded and may stop processing your events. Please contact support.
+
+**Beschreibung**
+
+Die Data Broker-Queue für den entsprechenden Mandanten ist voll. Dies kann beispielsweise geschehen, wenn mehr Ereignisse erstellt werden als aktuell bearbeitet werden können.  
+
+In diesem Fall wird ein Alarm erzeugt. Um keine neu eingehenden Ereignisse zu verlieren, werden die ältesten Ereignisse gelöscht. Um Spam zu vermeiden, werden Alarme und Logs nur einmal pro Minute ausgelöst. 

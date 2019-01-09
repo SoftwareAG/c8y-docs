@@ -141,6 +141,8 @@ redirects =
 	'/guides/web/tab-plugin': '/guides/web/web-sdk-for-plugins/tab-plugin'
 	'/guides/web/widget-plugin': '/guides/web/web-sdk-for-plugins/widget-plugin'
 	'/guides/web/smart-toolkit': '/guides/web/overview'
+	'/guides/reference/binaries/application-plugin-binaries': '/guides/reference/binaries'
+
 
 
 

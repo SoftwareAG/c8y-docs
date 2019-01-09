@@ -146,6 +146,7 @@ When the "Azure AD" template is selected the configuration panel will look simil
 The second part of the panel is the same as for the "Custom" template, where access mapping, user ID field selection and signature verification address are provided. 
 
  ![OAuth configuration](/guides/images/users-guide/Administration/admin-sso-aad-2.png)
+
  
 ### <a name="default-app"></a>Changing application settings
 

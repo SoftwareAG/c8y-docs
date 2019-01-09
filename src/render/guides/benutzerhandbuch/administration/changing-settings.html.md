@@ -6,10 +6,146 @@ layout: redirect
 
 Im Menü **Einstellungen** können Administratoren verschiedene Einstellungen des Kontos ändern oder verwalten, wie
 
+*   [Single Sign-On](#single-sign-on) konfigurieren,
 *   [Anwendungseinstellungen](#default-app) ändern,
 *   [Passwortrichtlinien und TFA-Einstellungen](#changing-password-settings) ändern,
 *   die [Attributsbibliothek](#properties) verwalten,
 *   Einstellungen für die Enterprise Edition konfigurieren, siehe [Enterprise Edition](/guides/users-guide/enterprise-edition#customization).
+
+### <a name="single-sign-on"></a>Konfigurieren von Single-Sign-On
+
+Cumulocity bietet Single-Sign-On-Funktionalität, die es dem Anwender ermöglicht, sich mit einem einzigen 3rd-Party-Autorisierungsserver über ein OAuth2-Protokoll, beispielsweise Azure Active Directory, anzumelden. Aktuell wird die Vergabe von Autorisierungscodes nur mit Access Tokens im JWT-Format unterstützt.
+
+**Info**: Die Single-Sign-On-Funktionalität verwendet Cookies-Technologien und kann nur verwendet werden, wenn Cookies in den Einstellungen Ihres Browsers zugelassen sind.   
+
+Die Single-Sign-On-Funktionalität wurde mit der Cumulocity-Version 9.12 aktiviert. Microservices müssen das Microservice SDK der Version 9.12 oder höher verwenden, um korrektes Funktionieren zu gewährleisten.
+
+Bevor Sie zur Single-Sign-On-Option wechseln, stellen Sie sicher, dass:
+
+* der Autorisierungsserver, den Sie verwenden, die Vergabe von OAuth2-Autorisierungscodes unterstützt,
+* das Access Token als JWT ausgegeben wird und Sie wissen, was der Token Content enthalten muss, 
+* das JWT aus einer einzigartigen Benutzeridentifikation (Unique User Identifier) besteht,
+* Cumulocity-Plattform Version 9.12 oder vorzugsweise höher verwendet wird, 
+* alle Microservices mit dem Microservice Java SDK 9.12.6, oder vorzugsweise höher, erstellt wurden.
+
+Informationen zu benutzerspezifischen Microservices finden Sie unter [General aspects > Security](guides/microservice-sdk/concept/#security) im Microservice SDK Guide.
+
+Bei lokalen Installationen ist die Domain-basierte Mandantenabbildung bereits korrekt konfiguriert.
+
+#### Konfigurationseinstellungen
+
+Um die Single-Sign-On-Funktionalität zu aktivieren, muss der Administrator eine Verbindung zum Autorisierungsserver konfigurieren. Die erfolgt in der "Administration"-Anwendung. 
+
+Klicken Sie **Single-Sign-On** im Menü **Einstellungen** im Navigator. 
+
+Links oben können Sie eine Vorlage für das Layout der Seite auswählen. Die Standardvorlage "Benutzerdefiniert" ermöglicht eine sehr detaillierte Konfiguration mit nahezu jedem Autorisierungsserver, der die Vergabe von OAuth2-Autorisierungscodes unterstützt. Andere Vorlagen bieten vereinfachte Ansichten bekannter und unterstützter Autorisierungsserver. Im Folgenden wird erklärt, wie Sie die benutzerdefinierte Vorlage verwenden, sowie eine Vorlage für das Azure Active Directory vorgestellt. 
+
+##### Benutzerdefinierte Vorlage
+
+![Request configuration](/guides/images/benutzerhandbuch/admin-sso-1.png)
+
+Da das OAuth-Protokoll auf der Ausführung von HTTP-Anfragen und -Redirects basiert, wird eine generische Anfragekonfiguration bereitgestellt. 
+
+Der erste Teil der **Single-Sign-On**-Seite besteht aus der Anfragekonfiguration. Hier werden die Anfrage-Adresse, Anfrageparameter, Kopfzeile sowie Body von Token- und Refresh-Anfragen konfiguriert. Die Autorisierungsmethode wird als GET-Anfrage, alle anderen als POST-Anfrage ausgeführt.
+
+Im Bereich **Grundeinstellungen** der **Single-Sign-On**-Seite besteht aus den folgenden Konfigurationseinstellungen:
+
+![OAuth configuration](/guides/images/benutzerhandbuch/admin-sso-2.png)
+
+|Feld|Beschreibung|
+|:---|:---|
+|Redirect-URI|Redirect-Parameter. Kann in Anfragedefinitionen als ${clientId}-Platzhalter verwendet werden.
+|Client-ID|Client-ID der OAuth-Verbindung. Kann in Anfragedefinitionen als ${clientId}-Platzhalter verwendet werden.
+|Schaltflächenname|Name auf der Schaltfläche auf der Anmeldeseite
+|Issuer|OAuth-Token-Issuer
+|Anbietername|Name des Anbieters
+|Sichtbar auf der Anmeldeseite|Legt fest, ob die Anmeldeoption sichtbar sein soll 
+|Audience|Erwarteter "aud"-Parameter des JWT
+|Gruppe|Gruppe, der der Benutzer beim ersten Anmelden zugeordnet wird (ab Version 9.20 ersetzt durch dynamische Rechtezuordnung)
+|Anwendungen|Anwendungen, die dem Benutzer beim ersten Anmelden zugewiesen werden (ab Version 9.20 ersetzt durch dynamische Rechtezuordnung)
+
+Jedesmal, wenn ein Benutzer sich anmeldet, wird der Inhalt des Access Tokens verifiziert und dient als Basis für den Benutzerzugang zur Cumulocity-Plattform. Der folgende Abschnitt beschreibt die Zuordnung zwischen JWT-Claims und dem Zugang zur Plattform. 
+
+ ![OAuth configuration](/guides/images/benutzerhandbuch/admin-sso-7.png)
+ 
+ Wenn ein Benutzer versucht sich anzumelden, sieht der dekodierte JWT-Claim für das oben abgebildete Beispiel folgendermaßen aus:
+
+ 
+	json
+	{
+	...
+	"user": "john.wick",
+	...
+	}
+
+
+Dem Benutzer werden die globalen Rollen BUSINESS und APPLICATION COCKPIT zugewiesen. Klicken Sie **Rechtezuordnung hinzufügen**, um weitere Berechtigungen zu vergeben. Klicken Sie das Minus-Symbol, um eine Regel zu entfernen. Eine Anweisung kann mehrere Überprüfungen enthalten, wie im Beispiel unten. Klicken Sie **und**, um eine Überprüfung zu einer vorhandenen Anweisung hinzuzufügen. 
+
+ ![OAuth configuration](/guides/images/benutzerhandbuch/admin-sso-8.png)
+
+In diesem Fall sieht der JWT-Claim folgendermaßen aus:
+
+  ```json
+ {
+ ...
+ "user": {
+    "type": "human"
+ },
+ "role": [
+    "ADMIN"
+ ],
+ ...
+ }
+ ```
+
+Wie Sie sehen, besteht durch den "in"-Operator die Möglichkeit, zu verifizieren, ob ein Wert in einer Liste vorhanden ist. Werte können außerdem in andere Objekte eingebettet sein. Ein Punkt (".") im Schlüssel indiziert, dass es sich um ein eingebettetes Objekt handelt.  
+
+Wenn der Benutzer sich mit einem Access Token anmeldet, kann der Benutzername aus einem JWT-Claim abgeleitet werden. Der Name des Claims kann unter **Benutzer-ID** konfiguriert werden. 
+
+ ![OAuth configuration](/guides/images/benutzerhandbuch/admin-sso-3.png)
+
+Jedes Access Token wird durch ein Signing-Zertifikat signiert. Aktuell gibt es drei Möglichkeiten, die Signing-Zertifikate zu konfigurieren. 
+ 
+1.Durch Spezifizieren der URL für den öffentlichen Schlüssel des Azure AD-Zertifikats. 
+
+ ![OAuth configuration](/guides/images/benutzerhandbuch/admin-sso-4.png)
+
+2. Durch Spezifizieren der ADFS-Manifest-Adresse (für ADFS 3.0). 
+
+ ![OAuth configuration](/guides/images/benutzerhandbuch/admin-sso-9.png)
+ 
+3. Durch manuelles Bereitstellen des öffentlichen Schlüssels eines Zertifikats. Eine Zertifikatsdefinition benötigt eine Algorithmus-Information, einen Wert für den öffentlichen Schlüssel und ein Gültigkeitsintervall. 
+4. 
+ ![OAuth configuration](/guides/images/benutzerhandbuch/admin-sso-5.png)
+
+#### Integration mit Azure AD
+
+##### Azure AD-Konfiguration
+
+Die Integration wurde erfolgreich mit Azure AD getestet. Die Konfigurationsschritte finden Sie unter [https://docs.microsoft.com/en-us/azure/active-directory/develop/v1-protocols-oauth-code](https://docs.microsoft.com/en-us/azure/active-directory/develop/v1-protocols-oauth-code). 
+
+Während der Konfiguration der Azure AD entspricht die Redirect-URI Ihrer vollständigen Domain-Adresse. In diesem Dokument verwenden wir beispielhaft `http://aad.cumulocity.com`. In Azure AD sind keine weitere Schritte erforderlich. 
+
+##### Cumulocity-Konfiguration
+
+When the "Azure AD" template is selected the configuration panel will look similar to the following:
+
+ ![OAuth configuration](/guides/images/users-guide/Administration/admin-sso-aad-basic.png)
+
+|Field|Description|
+|:---|:---|
+|Azure AD Address| Address of your Azure AD tenant 
+|Tenant| Azure AD tenant name
+|Application ID| Application ID
+|Redirect URI| Address of your Cumulocity tenant followed by /tenant/oauth
+|Client secret| Azure AD client secret if applicable 
+|Button name| Button name
+|Token issuer| Token issuer value in form of a HTTP address
+
+The second part of the panel is the same as for the "Custom" template, where access mapping, user ID field selection and signature verification address are provided. 
+
+ ![OAuth configuration](/guides/images/users-guide/Administration/admin-sso-aad-2.png)
+
 
 ### <a name="default-app"></a>Ändern von Anwendungseinstellungen
 

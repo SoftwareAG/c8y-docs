@@ -16,9 +16,9 @@ Im Menü **Einstellungen** können Administratoren verschiedene Einstellungen de
 
 Cumulocity bietet Single-Sign-On-Funktionalität, die es dem Anwender ermöglicht, sich mit einem einzigen 3rd-Party-Autorisierungsserver über ein OAuth2-Protokoll, beispielsweise Azure Active Directory, anzumelden. Aktuell wird die Vergabe von Autorisierungscodes nur mit Access Tokens im JWT-Format unterstützt.
 
-**Info**: Die Single-Sign-On-Funktionalität verwendet Cookies-Technologien und kann nur verwendet werden, wenn Cookies in den Einstellungen Ihres Browsers zugelassen sind.   
+**Info**: Die Single-Sign-On-Funktionalität verwendet Cookies-Technologien und kann nur genutzt werden, wenn Cookies in den Einstellungen Ihres Browsers zugelassen sind.   
 
-Die Single-Sign-On-Funktionalität wurde mit der Cumulocity-Version 9.12 aktiviert. Microservices müssen das Microservice SDK der Version 9.12 oder höher verwenden, um korrektes Funktionieren zu gewährleisten.
+Die Single-Sign-On-Funktionalität wurde mit der Cumulocity-Version 9.12 aktiviert. Microservices müssen mit dem Microservice SDK der Version 9.12 oder höher erstellt sein, um korrektes Funktionieren zu gewährleisten.
 
 Bevor Sie zur Single-Sign-On-Option wechseln, stellen Sie sicher, dass:
 
@@ -48,7 +48,7 @@ Da das OAuth-Protokoll auf der Ausführung von HTTP-Anfragen und -Redirects basi
 
 Der erste Teil der **Single-Sign-On**-Seite besteht aus der Anfragekonfiguration. Hier werden die Anfrage-Adresse, Anfrageparameter, Kopfzeile sowie Body von Token- und Refresh-Anfragen konfiguriert. Die Autorisierungsmethode wird als GET-Anfrage, alle anderen als POST-Anfrage ausgeführt.
 
-Im Bereich **Grundeinstellungen** der **Single-Sign-On**-Seite besteht aus den folgenden Konfigurationseinstellungen:
+Der Bereich **Grundeinstellungen** der **Single-Sign-On**-Seite besteht aus den folgenden Konfigurationseinstellungen:
 
 ![OAuth configuration](/guides/images/benutzerhandbuch/admin-sso-2.png)
 
@@ -61,8 +61,8 @@ Im Bereich **Grundeinstellungen** der **Single-Sign-On**-Seite besteht aus den f
 |Anbietername|Name des Anbieters
 |Sichtbar auf der Anmeldeseite|Legt fest, ob die Anmeldeoption sichtbar sein soll 
 |Audience|Erwarteter "aud"-Parameter des JWT
-|Gruppe|Gruppe, der der Benutzer beim ersten Anmelden zugeordnet wird (ab Version 9.20 ersetzt durch dynamische Rechtezuordnung)
-|Anwendungen|Anwendungen, die dem Benutzer beim ersten Anmelden zugewiesen werden (ab Version 9.20 ersetzt durch dynamische Rechtezuordnung)
+|Gruppe|Gruppe, der der Benutzer beim ersten Anmelden zugeordnet wird (ab Version 9.20 ersetzt durch dynamische Rechtezuordnung, siehe unten)
+|Anwendungen|Anwendungen, die dem Benutzer beim ersten Anmelden zugewiesen werden (ab Version 9.20 ersetzt durch dynamische Rechtezuordnung, siehe unten)
 
 Jedesmal, wenn ein Benutzer sich anmeldet, wird der Inhalt des Access Tokens verifiziert und dient als Basis für den Benutzerzugang zur Cumulocity-Plattform. Der folgende Abschnitt beschreibt die Zuordnung zwischen JWT-Claims und dem Zugang zur Plattform. 
 
@@ -106,17 +106,11 @@ Wenn der Benutzer sich mit einem Access Token anmeldet, kann der Benutzername au
 
 Jedes Access Token wird durch ein Signing-Zertifikat signiert. Aktuell gibt es drei Möglichkeiten, die Signing-Zertifikate zu konfigurieren. 
  
-1.Durch Spezifizieren der URL für den öffentlichen Schlüssel des Azure AD-Zertifikats. 
-
- ![OAuth configuration](/guides/images/benutzerhandbuch/admin-sso-4.png)
-
-2. Durch Spezifizieren der ADFS-Manifest-Adresse (für ADFS 3.0). 
-
- ![OAuth configuration](/guides/images/benutzerhandbuch/admin-sso-9.png)
+1. Durch Spezifizieren der URL für den öffentlichen Schlüssel des Azure AD-Zertifikats. <br>![OAuth configuration](/guides/images/benutzerhandbuch/admin-sso-4.png)
  
-3. Durch manuelles Bereitstellen des öffentlichen Schlüssels eines Zertifikats. Eine Zertifikatsdefinition benötigt eine Algorithmus-Information, einen Wert für den öffentlichen Schlüssel und ein Gültigkeitsintervall. 
-4. 
- ![OAuth configuration](/guides/images/benutzerhandbuch/admin-sso-5.png)
+2. Durch Spezifizieren der ADFS-Manifest-Adresse (für ADFS 3.0). <br>![OAuth configuration](/guides/images/benutzerhandbuch/admin-sso-9.png)
+  
+3. Durch manuelles Bereitstellen des öffentlichen Schlüssels eines Zertifikats. Eine Zertifikatsdefinition benötigt eine Algorithmus-Information, einen Wert für den öffentlichen Schlüssel und ein Gültigkeitsintervall. <br>![OAuth configuration](/guides/images/benutzerhandbuch/admin-sso-5.png)
 
 #### Integration mit Azure AD
 
@@ -128,24 +122,21 @@ Während der Konfiguration der Azure AD entspricht die Redirect-URI Ihrer vollst
 
 ##### Cumulocity-Konfiguration
 
-When the "Azure AD" template is selected the configuration panel will look similar to the following:
+Wenn die Vorlage "Azure AD" ausgewählt ist, sehen die Grundeinstellungen in etwa folgendermaßen aus:
 
- ![OAuth configuration](/guides/images/users-guide/Administration/admin-sso-aad-basic.png)
+ ![OAuth configuration](/guides/images/benutzerhandbuch/admin-sso-aad-basic.png)
 
-|Field|Description|
+|Feld|Beschreibung|
 |:---|:---|
-|Azure AD Address| Address of your Azure AD tenant 
-|Tenant| Azure AD tenant name
-|Application ID| Application ID
-|Redirect URI| Address of your Cumulocity tenant followed by /tenant/oauth
-|Client secret| Azure AD client secret if applicable 
-|Button name| Button name
-|Token issuer| Token issuer value in form of a HTTP address
+|Azure AD-Adresse| Adresse Ihres Azure AD-Mandanten 
+|Mandant| Name des Azure AD-Mandanten
+|Anwendungs-ID| Anwendungs-ID
+|Redirect-URI| Adresse Ihres Cumulocity-Mandanten, gefolgt von /tenant/oauth
+|Client-Secret| Azure AD-Client-Secret, falls vorhanden 
+|Schaltflächenname| Name der Schaltfläche
+|Token-Issuer| Token-Issuer-Wert im Format einer HTTP-Adresse
 
-The second part of the panel is the same as for the "Custom" template, where access mapping, user ID field selection and signature verification address are provided. 
-
- ![OAuth configuration](/guides/images/users-guide/Administration/admin-sso-aad-2.png)
-
+Der zweite Teil der Seite sieht genauso aus wie im Fall der benutzerdefinierten Vorlage und ermöglicht die Konfiguration der Rechtezuordnung, Benutzer-ID und Signaturverifizierung. 
 
 ### <a name="default-app"></a>Ändern von Anwendungseinstellungen
 

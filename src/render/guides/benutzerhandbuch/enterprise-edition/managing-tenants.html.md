@@ -69,16 +69,6 @@ Klicken Sie auf einen Untermandanten, um diesen zu bearbeiten oder klicken Sie *
 
 In der Registerkarte **Attribute** können alle Felder außer der ID und des Benutzernamens des Administrators bearbeitet werden. Details zu den einzelnen Feldern finden Sie unter [Erstellen von Untermandanten](#creating-tenants).
 
-### <a name="subscribing"></a>Abonnieren von Anwendungen
-
-In der Registerkarte **Anwendungen** können Sie Anwendungen für Mandanten abonnieren oder entfernen. Standardmäßig werden für einen Mandanten die Standardanwendungen von Cumulocity abonniert.
-
-![Anwendung abonnieren](/guides/images/benutzerhandbuch/ee-subtenants-applications.png)
-
-Um eine Anwendung für einen Mandanten zu abonnieren, bewegen Sie den Mauszeiger über die Anwendungen unter "Verfügbare Anwendungen" auf der rechten Seite und klicken Sie bei der gewünschten Anwendung **Abonnieren**.
-
-Um eine Anwendung zu löschen, bewegen Sie den Mauszeiger über die Anwendungen unter "Abonnierte Anwendungen" auf der linken Seite und klicken Sie bei der gewünschten Anwendung **Abbestellen**.
-
 ### Sperren von Untermandanten
 
 Sie können Mandanten zeitweilig sperren. Das Sperren eines Mandanten verhindert jeglichen Zugriff auf diesen Mandanten, unabhängig davon, ob der Zugriff über eine Gerät, einen Benutzer oder eine andere Anwendung erfolgt.
@@ -99,6 +89,43 @@ Um einen Untermandanten und alle seine Daten endgültig zu löschen, klicken Sie
 
 > **Info**: Dieser Vorgang kann nicht rückgängig gemacht werden. Aus Sicherheitsgründen ist er daher nur im Management-Mandanten möglich.
 
+
+### <a name="subscribe"></a>Abonnieren und Überwachen von Anwendungen
+
+In der Registerkarte **Anwendungen** können Sie alle für einen Mandanten abonnierten Anwendungen ansehen sowie Anwendungen für einen Mandanten abonnieren oder entfernen. Standardmäßig werden für einen Mandanten die Standardanwendungen von Cumulocity abonniert.
+
+![Anwendung abonnieren](/guides/images/benutzerhandbuch/ee-subtenants-applications.png)
+
+Um eine Anwendung für einen Mandanten zu abonnieren, bewegen Sie den Mauszeiger über die Anwendungen unter **Verfügbare Anwendungen** auf der rechten Seite und klicken Sie bei der gewünschten Anwendung **Abonnieren**.
+
+Um eine Anwendung zu löschen, bewegen Sie den Mauszeiger über die Anwendungen unter **Abonnierte Anwendungen** auf der linken Seite und klicken Sie bei der gewünschten Anwendung **Abbestellen**.
+
+#### Überwachen von Microservices
+
+Für alle Anwendungen, die als Microservices von Cumulocity gehostet werden, wird neben dem Namen der Microservice-Status als Symbol angezeigt:
+
+<img src="/guides/images/benutzerhandbuch/admin-applications-status.png" alt="Anwendungsstatus" style="max-width: 75%">
+
+Der Microservice kann sich in einem der folgenden Status befinden:
+
+* <img src="/guides/icons/ok.png" alt="Up" style="max-width: 100%"> Microservice ist in Betrieb
+* <img src="/guides/icons/warning.png" alt="Up" style="max-width: 100%"> Microservice ist gestört
+* <img src="/guides/icons/danger.png" alt="Up" style="max-width: 100%"> Microservice ist außer Betrieb
+
+Details zum Status können durch Ausklappen des jeweiligen Eintrags angezeigt werden. 
+
+<img src="/guides/images/users-guide/Administration/admin-application-details.png" alt="Anwendungsdetails" style="max-width: 75%">
+
+Folgende Informationen werden angezeigt:
+
+* Aktiv: Anzahl der aktiven Microservice-Instanzen
+* Gestört: Anzahl der inaktiven Microservice-Instanzen
+* Erwartet: Anzahl der erwarteten Microservice-Instanzen
+* Name: Name der Microservice-Instanz
+* Neustarts: Anzahl der Neustarts von Microservice-Instanzen
+
+Weitere Details finden Sie in der Registerkarte **Status** der entsprechenden Anwendung, siehe [Administration > Verwalten von Anwendungen](/guides/users-guide/administration#managing-applications).
+
 ### <a name="tenants-custom-properties"></a>Bearbeitung von benutzerdefinierten Attributen
 
 Die Registerkarte **Benutzerdefinierte Attribute** ermöglicht Ihnen das Anzeigen und Ändern von Werten von benutzerdefinierten Attributen, sowohl vordefinierten (wie "Externe Referenz") als auch denen, die in der [Attributsbibliothek](/guides/benutzerhandbuch/administration#properties) definiert sind. Solche Attribute werden auch als Spalten in der [Benutzungsstatistiktabelle](#usage-stats) angezeigt.
@@ -109,7 +136,7 @@ Die Registerkarte **Benutzerdefinierte Attribute** ermöglicht Ihnen das Anzeige
 
 Der Plattformadministrator kann die Anzahl der gleichzeitig registrierten Hauptgeräte oder der registrierten Geräte insgesamt (einschließlich Kindgeräte) begrenzen. Der Plattformadministrator kann außerdem auf der Seite **Nutzungsstatistiken** die Höchstanzahl registrierter Hauptgeräte und Geräte insgesamt sowie den Höchstwert des genutzten Datenspeichers einsehen. 
 
-### <a name="usage-stats"></a>Nutzungsstatistiken abrufen
+### <a name="usage-stats"></a>Anzeigen von Nutzungsstatistiken
 
 Die Seite **Nutzungsstatistiken** zeigt statistische Informationen für jeden Untermandanten an.
 
@@ -163,7 +190,7 @@ Klicken Sie **Mandantenregeln** im Menü **Mandanten**, um alle verfügbaren Reg
 
 Für jede Mandantenregel wird der Name, eine optionale Beschreibung und die Anzahl der Optionen und Datenerhaltungsregeln angezeigt, wahlweise in Listen- oder Gitteransicht.
 
-### Hinzufügen einer Mandantenregel
+#### Hinzufügen einer Mandantenregel
 
 Klicken Sie **Mandantenregel hinzufügen** in der oberen Menüleiste, um eine neue Mandantenregel zu erstellen.
 
@@ -174,7 +201,7 @@ Klicken Sie **Mandantenregel hinzufügen** in der oberen Menüleiste, um eine ne
 3.  Geben Sie optional eine Mandantenoption ein.
 4.  Klicken Sie **Speichern**, um Ihre Eingaben zu speichern.
 
-### Bearbeiten, Duplizieren und Löschen von Regeln
+#### Bearbeiten, Duplizieren und Löschen von Regeln
 
 Klicken Sie auf eine Regel, um diese zu bearbeiten oder öffnen Sie das Kontextmenü über das Menüsymbol und klicken Sie **Bearbeiten**.
 

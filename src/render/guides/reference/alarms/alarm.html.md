@@ -17,7 +17,7 @@ layout: redirect
 |status|String|0..1|The status of the alarm: ACTIVE, ACKNOWLEDGED or CLEARED. If status was not appeared, new alarm will have status ACTIVE. Must be upper-case.|POST: Optional PUT: Optional|
 |severity|String|1|The severity of the alarm: CRITICAL, MAJOR, MINOR or WARNING. Must be upper-case.|POST: Mandatory PUT: Optional|
 |count|Long|1|The number of times this alarm has been sent.|No|
-|firstOccurenceTime|String|1|The first time that this alarm occurred (i.e., where "count" was 1).|No|
+|firstOccurrenceTime|String|1|The first time that this alarm occurred (i.e., where "count" was 1).|No|
 |history|AuditRecordCollection|1|Legacy. Should not be used.|No|
 |\*|Object|0..n|Additional properties of the event.||
 
@@ -63,7 +63,7 @@ Only text, status, severity and custom properties can be modified. Non-modifiabl
 
 Request body: Alarm
 
-Response body: AlarmÂ 
+Response body: Alarm 
 
 Required : ROLE\_ALARM\_ADMIN or owner of source object
 

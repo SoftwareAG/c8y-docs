@@ -19,11 +19,12 @@ Navigate to **Data connectors** if you would like to send data to another tenant
 
 >**Info**: Devices that are forwarded using the data broker are charged like normal devices in the destination tenant.
 >
->Be aware of the following limitations of the data broker:<br> 
+>Be aware of the following limitations of the data broker:
+> 
 > * Cloud Remote Access cannot be used on the destination tenant. 
 > * The management tenant cannot be used as data broker source tenant.
 > * Currently, the Fieldbus widget does not work on tenants that receive the fieldbus devices through data broker, as the corresponding data models are not synchronized.
-> * Data broker does not guarantee same order of messages on destination tenants as it was on source tenant. 
+> * Data broker does not guarantee the same order of messages on destination tenants as it was on the source tenant. 
 > * While we provide backwards compatibility, we can not ensure that data broker can send data to Cumulocity tenants which run on later Cumulocity versions than the source.
 
 ### <a name="data-broker-connectors"></a> Data connectors
@@ -136,4 +137,4 @@ On the source tenant, Data Broker queues data that cannot be forwarded immediate
 
 The data broker queue for the respective tenant is full. This might for example happen when more events are created than currently can be handled.
 
-In this case, above alarm is raised. To reduce count of seen alarms, the alarms are triggered not often than once per minute. 
+In this case, the above alarm is raised. To reduce the number of alarms, alarms are not triggered more often than once per minute. 

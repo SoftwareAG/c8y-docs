@@ -67,6 +67,8 @@ An operation example of downloading a configuration file:
         "url":"<download url>"
     }
 
+> **Info:** The "c8y_DownloadConfigFile" operation delivers a "c8y_ConfigurationDump" object. This object must be configured on the Cumulocity device in order to make the UI display the snapshot information. 
+
 #### c8y\_SendConfiguration
 
 To enable reloading configuration through the user interface, add "c8y\_SendConfiguration" to the list of supported operations as described above.

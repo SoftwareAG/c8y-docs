@@ -196,7 +196,7 @@ Again, the returned result may come in several pages due to its potential size.
 The Java client libraries fully support the real-time APIs of Cumulocity. For example, to get immediately notified when someone sends an operation to your agent, use the following code:
 
 	Subscriber<GId, OperationRepresentation> subscriber = deviceControl.getNotificationsSubscriber();
-	subscriber.subscribe(agentId, new SubscriptionListener<GId, OperationRepresentation> {
+	Subscription<> subscription = subscriber.subscribe(agentId, new SubscriptionListener<GId, OperationRepresentation> {
 		public void onError(Subscription<GId> sub, Throwable e) {
 			logger.error("OperationDispatcher error!", e);
 		}
@@ -206,7 +206,15 @@ The Java client libraries fully support the real-time APIs of Cumulocity. For ex
 		}
 	});
 
-"agentId" is the ID of your agent in the inventory.
+> **Info:** "agentId" is the ID of your agent in the inventory.
+
+To unsubscribe from a subscription, use the following code:
+
+	subscription.unsubscribe()
+
+If you wish to disconnect, the following code must be used:
+
+	subscriber.disconnect()
 
 
 ### Reliability features

@@ -127,7 +127,7 @@ You can now navigate to the Device Management application or the Cockpit applica
 
 ### <a name="data-broker-troubleshooting"></a> Troubleshooting
 
-On the source tenant, Data Broker queues data that cannot be forwarded immediately to the destination tenant. The amount of data that can be queued is limited. If Cumulocity cannot queue any more data, the oldest queued data is dropped. In this case, an alarm is raised in the tenant.
+On the source tenant, data broker queues data that cannot be forwarded immediately to the destination tenant. The amount of data that can be queued is limited. If Cumulocity cannot queue any further data, the oldest queued data is dropped. In this case, an alarm is raised in the tenant.
 
 **Error message**
 

@@ -126,7 +126,7 @@ You can now navigate to the Device Management application or the Cockpit applica
 
 ### <a name="data-broker-troubleshooting"></a> Troubleshooting
 
-Data Broker internally uses in memory queues for processing events on source tenants. Separate queues are created for each tenant actively using Data Broker (having at least one connector). Important thing is that each queue size is *bounded*, the maximum size is same for each tenant.
+On the source tenant, Data Broker queues data that cannot be forwarded immediately to the destination tenant. The amount of data that can be queued is limited. If Cumulocity cannot queue any more data, the oldest queued data is dropped. In this case, an alarm is raised in the tenant.
 
 **Error message**
 
@@ -136,4 +136,4 @@ Data Broker internally uses in memory queues for processing events on source ten
 
 The data broker queue for the respective tenant is full. This might for example happen when more events are created than currently can be handled.
 
-In this case, an alarm will be raised. To avoid losing incoming new events, the oldest events will be deleted, i.e. an incoming new event triggers the deletion of the queue head event. To reduce spam, the alarms and logs are triggered once per minute.
+In this case, above alarm is raised. To reduce count of seen alarms, the alarms are triggered not often than once per minute. 

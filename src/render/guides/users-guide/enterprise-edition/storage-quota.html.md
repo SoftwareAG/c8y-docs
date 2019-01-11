@@ -20,6 +20,8 @@ Let us assume that a tenant has a storage quota of 10GB. Retention rules are 80 
 
 The total storage is now at 9.8GB.
 
+>**Info**: The storage quota feature needs to be defined on the tenant and cannot be enabled/disabled by configuration.
+
 ### <a name="warningEmail"></a>Managing storage quota warning e-mail
 
 This feature is only visible if a storage quota was set for the tenant. 

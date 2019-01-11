@@ -76,7 +76,7 @@ Die Regel verwendet die folgenden Parameter:
 
 **Funktionalität** 
 
-Wenn ein Alarm erzeugt wird, wird eine E-Mail oder SMS gesendet und/oder eine Sprachausgabe generiert.
+Wenn ein Alarm erzeugt wird, wird eine E-Mail oder SMS gesendet.
 
 **Parameter**
 
@@ -88,7 +88,7 @@ Die Regel verwendet die folgenden Parameter:
 |:---|:---|:---|
 |1|Name der Regel|Vorausgefüllt mit dem Namen der Regelvorlage. Kann individuell geändert werden.
 |2|Bei Alarm vom Typ:|Die Alarmtypen, die die Regel auslösen. Für jeden neu erzeugten Alarm eines dieser Typen wird eine Regel ausgelöst.
-|3|Wie folgt eskalieren:|Eskalationsschritte, die nacheinander ausgeführt werden. <br> Klicken Sie **Schritt hinzufügen** um mindestens einen Schritt zu definieren: <br> **Typ**: Typ des ausgeführten Schritts. Mögliche Werte sind: <br>  * E-Mail (siehe Regel "Bei Alarm E-Mail senden" für die Beschreibung der Parameter). <br> * SMS (siehe Regel "Bei Alarm SMS senden" für die Beschreibung der Parameter). <br> * Telefon (siehe Regel "Bei Alarm Sprachanruf starten" für die Beschreibung der Parameter). <br> **Bedingung**: Die Bedingung, die angewendet wird, wenn die Regel ausgeführt wird. Mögliche Werte sind: <br> * Immer: Aktion wird immer ausgeführt. <br> * Immer, wenn Schritt N fehlgeschlagen ist: Nur Schritte des Typs Telefon können fehlschlagen. Der Schritt wird als fehlgeschlagen gekennzeichnet, wenn alle Wiederholungen erfolglos ausgeführt wurden. Diese Option ist nur verfügbar, wenn bereits ein Schritt des Typs Telefon konfiguriert wurde, auf den Bezug genommen werden kann. 
+|3|Wie folgt eskalieren:|Eskalationsschritte, die nacheinander ausgeführt werden. <br> Klicken Sie **Schritt hinzufügen** um mindestens einen Schritt zu definieren: <br> **Typ**: Typ des ausgeführten Schritts. Mögliche Werte sind: <br>  * E-Mail (siehe Regel "Bei Alarm E-Mail senden" für die Beschreibung der Parameter). <br> * SMS (siehe Regel "Bei Alarm SMS senden" für die Beschreibung der Parameter). <br> **Bedingung**: Die Bedingung, die angewendet wird, wenn die Regel ausgeführt wird. Mögliche Werte sind: <br> * Immer: Aktion wird immer ausgeführt. <br> * Immer, wenn Schritt N fehlgeschlagen ist: Nur Schritte des Typs Telefon können fehlschlagen. Der Schritt wird als fehlgeschlagen gekennzeichnet, wenn alle Wiederholungen erfolglos ausgeführt wurden. Diese Option ist nur verfügbar, wenn bereits ein Schritt des Typs Telefon konfiguriert wurde, auf den Bezug genommen werden kann. 
 |4|Ziel-Assets oder -geräte|Gruppen oder Geräte, auf die die Regel angewendet werden soll.
 
 **Fehlerbehebung**
@@ -371,38 +371,9 @@ Die Regel verwendet die folgenden Parameter:
 
 >**Info:**  Wenn Sie einen Alarm löschen, bestätigen Sie damit, dass der Alarm aufgehoben ist. Ein neuer Alarm wird nur erzeugt, wenn das Gerät den Zustand wechselt und den Schwellwert wieder überschreitet. 
 
-
-### Bei Alarm Anruf starten
-
-**Funktionalität**  
-
-Wenn ein Alarm erzeugt wird, wird ein Sprachanruf gestartet.
-
-**Parameter**
-
-Die Regel verwendet die folgenden Parameter:
-
-<img src="/guides/images/benutzerhandbuch/cockpit-smart-rule-initiate-call.png" name="Smart Rule Anruf starten" style="width:50%;"/>
-
-|Schritt|Feld|Beschreibung|
-|:---|:---|:---|
-|1|Name der Regel|Vorausgefüllt mit dem Namen der Regelvorlage. Kann individuell geändert werden.
-|2|Bei Alarm vom Typ:|Die Alarmtypen, die die Regel auslösen. Für jeden neu erzeugten Alarm eines dieser Typen wird eine Regel ausgelöst.
-|3|Sprachausgabe:|**Telefonnummer**: Gültige internationale Telefonnummer. Verwenden Sie die Ländervorwahl im Format "+49" (als Beispiel für Deutschland).<br> **Nachricht**: Der Text, der durch die Regel ausgegeben wird. <br> **Wiederholungen**: Die Anzahl der Wiederholungsversuche, um die Zielnummer zu erreichen (Standard ist "0", Maximum ist "20").<br> **Intervall**: Zeitintervall zwischen den Wiederholungen in Minuten (Standard ist "5").<br>**Bestätigung**: Wenn diese Option ausgewählt ist, muss der Empfänger den Anruf bestätigen (ein nicht bestätigter Anruf gilt als nicht erfolgreich)<br> **Bestätigungstext**: Bestätigungsnachricht, die nach der Hauptnachricht ausgegeben wird, zum Beispiel: "Bestätigen Sie den Anruf durch Drücken der "5"". <br> **Bestätigungsnummer**: Die Nummer der Taste, die der Empfänger zum Bestätigen drücken muss. Wurde die Nummer gedrückt, gilt der Anruf als erfolgreich und der Alarmstatus wechselt auf bestätigt.  
-|4|Ziel-Assets oder -geräte|Gruppen oder Geräte, auf die die Regel angewendet werden soll.
-
-**Fehlerbehebung**
-
-* Stellen Sie sicher, dass der Alarm erzeugt und nicht dupliziert wurde.
-
-* Prüfen Sie, ob sich das Gerät im [Wartungsmodus](/guides/reference/device-management) befindet. In diesem Fall wird das Erzeugen eines Alarms unterdrückt.  
-
-* Wenn Sie eine Alarmregel erstellt haben (siehe [Administration > Priorisieren von Alarmen](/guides/benutzerhandbuch/administration#reprio-alarms)), die den Schweregrad des Alarms ändert, zeigt der Alarm einen anderen Schweregrad als möglicherweise erwartet.
-
-
 ### Smart Rule-Variablen
 
-In einigen Regelparametern können Variablen verwendet werden. Wird eine Regel ausgelöst, werden die Variablen durch die entsprechenden Werte ersetzt. Sie können diesen Mechanismus verwenden, um etwa Gerätenamen oder Alarmtexte in mehreren Ausgaben einzufügen (E-Mail, SMS, Sprachausgabe). Sie können jede Information des auslösenden Ereignisses (wie der Alarm) und des Quellgeräts einbinden.
+In einigen Regelparametern können Variablen verwendet werden. Wird eine Regel ausgelöst, werden die Variablen durch die entsprechenden Werte ersetzt. Sie können diesen Mechanismus verwenden, um etwa Gerätenamen oder Alarmtexte in mehreren Ausgaben einzufügen (E-Mail, SMS). Sie können jede Information des auslösenden Ereignisses (wie der Alarm) und des Quellgeräts einbinden.
 
 Die folgende Tabelle enthält eine Liste von Beispielvariablen:
 

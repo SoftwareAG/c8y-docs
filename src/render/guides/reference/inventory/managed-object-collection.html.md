@@ -124,7 +124,7 @@ This part explain, how application will be handle query in parameter 'query'.
 
 ##### Supported query values:
 * string
-    * examples: name eq 'Dev_002', name eq 'Dev*', name eq '*_001', name eq '*'
+    * examples: name eq `'Dev_002'`, name eq `'Dev*'`, name eq `'*_001'`, name eq `'*'`
     * string must be surround single quote
     * string can contains wildcard '*' and this wildcard match form 0 to N characters
     * matching is sensitive in case
@@ -187,7 +187,7 @@ and query will return:
     ...query=num eq 1 - {"_id": 1, ...}
     ...query=name eq 'Dev_002' - {"_id": 2, ...}
     ...query=name eq '*00*' - return all 4 rows
-    ...query=name eq '*dev_001*' - {"_id": 1, ...}
+    ...query=name eq '*Dev_001*' - {"_id": 1, ...}
     ...query=c8y_Availability.statusId eq 2 - {"_id": 3, ...}, {"_id": 4, ...}
     ...query=num gt 2 - {"_id": 3, ...}, {"_id": 4, ...}
     ...query=num le 2 - {"_id": 1, ...}, {"_id": 2, ...}

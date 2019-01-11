@@ -19,11 +19,13 @@ Navigate to **Data connectors** if you would like to send data to another tenant
 
 >**Info**: Devices that are forwarded using the data broker are charged like normal devices in the destination tenant.
 >
->Be aware of the following limitations of the data broker:<br> 
->Cloud Remote Access cannot be used on the destination tenant. <br>
->The management tenant cannot be used as data broker source tenant.<br>
->Currently, the Fieldbus widget does not work on tenants that receive the fieldbus devices through data broker, as the corresponding data models are not synchronized.<br> 
->While we provide backwards compatibility, we can not ensure that data broker can send data to Cumulocity tenants which run on later Cumulocity versions than the source.<br>
+>Be aware of the following limitations of the data broker:
+> 
+> * Cloud Remote Access cannot be used on the destination tenant. 
+> * The management tenant cannot be used as data broker source tenant.
+> * Currently, the Fieldbus widget does not work on tenants that receive the fieldbus devices through data broker, as the corresponding data models are not synchronized.
+> * Data broker does not guarantee the same order of messages on destination tenants as it was on the source tenant. 
+> * While we provide backwards compatibility, we can not ensure that data broker can send data to Cumulocity tenants which run on later Cumulocity versions than the source.
 
 ### <a name="data-broker-connectors"></a> Data connectors
 
@@ -125,12 +127,14 @@ You can now navigate to the Device Management application or the Cockpit applica
 
 ### <a name="data-broker-troubleshooting"></a> Troubleshooting
 
+On the source tenant, data broker queues data that cannot be forwarded immediately to the destination tenant. The amount of data that can be queued is limited. If Cumulocity cannot queue any further data, the oldest queued data is dropped. In this case, an alarm is raised in the tenant.
+
 **Error message**
 
 	Data broker processing is currently overloaded and may stop processing your events. Please contact support.
 
 **Description**
 
-The data broker queue for the respective tenant is full. This might for example happen when more events are created then currently can be handled.
+The data broker queue for the respective tenant is full. This might for example happen when more events are created than currently can be handled.
 
-In this case, an alarm will be raised. To avoid losing incoming new events, the oldest events will be deleted, i.e. an incoming new event triggers the deletion of the queue head event. To reduce spam, the alarms and logs are triggered once per minute.
+In this case, the above alarm is raised. To reduce the number of alarms, alarms are not triggered more often than once per minute. 

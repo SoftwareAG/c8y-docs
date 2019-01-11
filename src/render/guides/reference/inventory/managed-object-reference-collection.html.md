@@ -187,7 +187,7 @@ and query will return:
     ...query=num eq 1 - {"_id": 1, ...}
     ...query=name eq 'Dev_002' - {"_id": 2, ...}
     ...query=name eq '*00*' - return all 4 rows
-    ...query=name eq '*dev_001*' - {"_id": 1, ...}
+    ...query=name eq '*Dev_001*' - {"_id": 1, ...}
     ...query=c8y_Availability.statusId eq 2 - {"_id": 3, ...}, {"_id": 4, ...}
     ...query=num gt 2 - {"_id": 3, ...}, {"_id": 4, ...}
     ...query=num le 2 - {"_id": 1, ...}, {"_id": 2, ...}

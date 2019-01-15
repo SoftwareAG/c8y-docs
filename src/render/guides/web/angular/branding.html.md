@@ -272,6 +272,4 @@ Above we described the possible options for creating your custom branding in det
 // @table-bg-hover:              fade(black, 1.5%);
 // @header-app-name:             @header-text-color;
 // @image-path:                  'img/';
-
-
 ```

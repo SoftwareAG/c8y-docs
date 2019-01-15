@@ -31,4 +31,8 @@ The following table provides an overview on the currently supported applications
 | ---- | --- |
 |`application`| An empty application to quickly bootstrap new applications. It is the default application and used if you don't specify an `[example-name]`.|
 |`tutorial`| An application that already assembles most of the concepts of the [@c8y/ngx-components](/guides/web/angular#ngx-components). Use this to get real code examples. |
+|`cockpit`| The [Cockpit](/guides/users-guide/cockpit/) default application. Use this to extend the existing Cockpit application. |
+|`devicemanagement`| The [Devicemanagement](/guides/users-guide/devicemanagement/) default application. Use this to extend the existing Devicemanagement application. |
+|`administration`| The [Administration](/guides/users-guide/administration/) default application. Use this to extend the existing Administration application. |
+
  

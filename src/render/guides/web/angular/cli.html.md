@@ -13,8 +13,8 @@ c8ycli [options] [command]
 ### Options
 
 ```
-    -u, --url <url>                 url of the remote instance
-    -V, --version                   Provides version number
+    -u, --url <url>                 The url of the remote instance
+    --version                       Provides version number
     -h, --help                      Provides usage information
 ```
 
@@ -23,11 +23,17 @@ c8ycli [options] [command]
 All the commands except of ```new``` take an array of [glob patterns](https://en.wikipedia.org/wiki/Glob_(programming)). These will be solved to folders or entry point manifests.
 
 ```
-    new [name] [template]                   Creates a folder to start a brand new application
+    new [name] [template]                   Creates a folder to start a new application or extend an existing one
     serve [options] [appPaths...]           Runs local development server
     build [options] [appPaths...]           Builds the specified apps
     deploy [options] [appPaths...]          Deploys apps from the specified paths
     locale-extract [options] [srcPaths...]  Extracts all strings for translation and outputs the .po files to defined folder
+```
+
+### The `new` command
+The `c8ycli new [name] [template]` helps to start an empty application or to extend one of our existing applications (Cockpit, Devicemanagement or Administration). To extend an existing application use as `[name]` and `[template]` the name of the existing application like this:
+```
+$ c8ycli new cockpit cockpit
 ```
 
 ### Application options
@@ -47,5 +53,7 @@ Webpack options can be defined with ```--env.<option>=<value>```. These will be 
 
 ```
     --env.mode="production"
+    --env.hmr
 ```
+
 

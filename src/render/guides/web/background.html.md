@@ -5,17 +5,13 @@ layout: standalone
 ---
 
 As the web ecosystem evolves, as a platform we evolve with it, while still avoiding disrupting our developer community, making sure the upgrade paths are as smooth as possible and that their extensions keep working properly with very little changes.
-This process involves migration effort, so we believe that providing some background information on how the stack and the build process has evolved over time will help developers to better understand why some parts work the way you see today and why migration effort is neede.
+This process involves migration effort, so we believe that providing some background information on how the stack and the build process has evolved over time will help developers to better understand why some parts work the way you see today and why migration effort is needed.
 
 ### Terminology: Plugins vs. modules
 
-From day one, the UI always had a modular architecture. However, the exact modules and how they work together has changed over time. The term "plugin" has been used in the UI since the beginning, and in the first generation it made more sense than it does now. We tried to remove the term and replace it with the term "module", but the name keeps being used. We have realized that we might as well just embrace it, especially to ease the communication with developers when it comes to migration. But plugins are nothing else than modules.
+From day one the UI has always had a modular architecture. The units of functionality is grouped in “plugins” that can be composed to build applications. In practice plugins are simply modules.
 
-Very simply said:
-
-    Plugins are modules
-
-That modules are a very important key feature in the newest generation of the Web SDK. It allows to import any file or library with native JavaScript `import` statements and be bundled to one file at build time. To understand that concept better and what enhancements it brings to the developers, it  is important to understand how the module architecture worked in the previous generations of the Cumulocity Web SDK.
+Modules are a very important key feature in the newest generation of the Web SDK. It allows to import any file or library with native JavaScript `import` statements and be bundled to one file at build time. To understand that concept better and what enhancements it brings to the developers, it  is important to understand how the module architecture worked in the previous generations of the Cumulocity Web SDK.
 
 ### 1st Generation: Runtime loading of plugins
 
@@ -88,7 +84,7 @@ The whole process was focused on enabling the complete stack of modern web dev a
 
 One big change is that so far, modules (or plugins) where always represented during development and after build, so they could easily be composed by adding or removing a script. As we are now bundling everything, the modules can only be put together during development so the possibility to edit an app from the UI disappears for now, but at the same time developers win the possibility to use the standardized ES2016 module architecture. That simplifies the development process because it follows standard approaches and doesn't need any kind of complex module architecture. At this point, plugins are truely just modules. We will keep the name around to refer to subpackages that contain some kind of isolated functionality. 
 
-At the same time we take the chance and started to modularize our stack. The goal was to allow to develop with any framework a developer prefer, while our focus is still on Angular. The result are multiple packages published to npm which can be used standalone. For example a developer could use the API abstraction layer implemented in the @c8y/client to develop a React app. The stack is not anymore exclusive bound to Angular.
+This was the clear opportunity to modularize the stack. While the focus is still on Angular we try to provide tools to avoid framework lock-in. The result is multiple packages published to npm which can be used standalone. For example a developer could use the API abstraction layer implemented in the @c8y/client to develop a React app. The stack is not anymore exclusive bound to Angular.
 
 #### Publishing to npm
 

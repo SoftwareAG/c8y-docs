@@ -39,7 +39,7 @@ export class AppModule {}
 
 ```
 
-1. Make sure to `useHash` navigation as the Platform does not support [pushState](https://angular.io/guide/router#hashlocationstrategy)
+1. Make sure to set `useHash` navigation to true as the platform does not support [pushState](https://angular.io/guide/router#hashlocationstrategy)
 2. Import the `CoreModule` to allow the use of the `c8y-` prefixed components.
 3. Bootstrap your application with the `BootstrapComponent` which will use the `<c8y-bootstrap>` component to initialize the root application. Alternatively, you can bootstrap a component of your choice and include that tag into its template or only reuse the given components.
 
@@ -131,7 +131,7 @@ The Multi Provider extension allows a declarative approach to extend the applica
    ```
 
 4. **Legacy plugins**<br>
-    If you are extending a default application (Cockpit, Device management or Administration) you get a file called `ng1.ts`. These are so called Plugins which haven't been migrated to Angular yet and still using angular.js. You can add or remove these Plugins to customize the application appearance like it was done before in a target file by the `addImports: []` or `removeImports: []` property. The following shows an example which removes the default import in the angular.js target file:
+    If you are extending a default application (Cockpit, Device Management or Administration) you get a file called `ng1.ts`. These are so called plugins which haven't been migrated to Angular yet and are still using angular.js. You can add or remove these plugins to customize the application appearance like it has been done previously in a target file by the `addImports: []` or `removeImports: []` property. The following shows an example which removes the default import in the angular.js target file:
 
     ```
     {
@@ -161,9 +161,9 @@ The Multi Provider extension allows a declarative approach to extend the applica
     // [...] more imports removed for readability
     import 'my-plugin/cumulocity';                                      // 2
     ```
-    As you can see we simply removed the import of the original welcome screen plugin (1.) and replaced it by the custom implementation (2.). Note that all angular.js plugins need to have the `/cumulocity` addition to tell webpack that a legacy Plugin is imported.
+    As you can see we simply removed the import of the original welcome screen plugin (1.) and replaced it by the custom implementation (2.). Note that all angular.js plugins need to have the `/cumulocity` addition to tell webpack that a legacy plugin is imported.
 
-    To use legacy plugins in your custom non default application you need to set the `upgrade` flag in the package.json file and use the same import approach like described before:
+    To use legacy plugins in your custom non-default application you need to set the `upgrade` flag in the package.json file and use the same import approach like described before:
     ```
     "c8y": {
       "application": {
@@ -174,7 +174,7 @@ The Multi Provider extension allows a declarative approach to extend the applica
       }
     }
     ```
-    Also the module defintion of your app must be changed to support that plugins:
+    Also the module definition of your application must be changed to support these plugins:
     ```javascript
     import { NgModule } from '@angular/core';
     import { BrowserModule } from '@angular/platform-browser';

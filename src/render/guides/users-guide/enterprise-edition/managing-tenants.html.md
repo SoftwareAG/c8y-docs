@@ -195,6 +195,7 @@ For billing purposes, in addition to CPU usage and memory usage the cause for th
 
 The information on the microservice usage is presented in the **Tenant Statistics** page in the Administration application.
 
+![Tenant statistics](/guides/images/users-guide/ee-tenants-usage-statistics.PNG)
      
 
 ### <a name="tenants-custom-properties"></a>Editing custom properties

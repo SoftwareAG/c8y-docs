@@ -19,7 +19,7 @@ npm install @c8y/client
 Use `client.<endpoint>.list()` to request listed data from the Cumulocity REST API and 
 `client.<endpoint>.detail(<id>)` to request detail information. These methods always return a promise. To get an observable use `list$` or `detail$`. 
 
-In the following sections, the default signature of these functions is described. For detailed information, refer to the [complete documentation](http://resources.cumulocity.com/documentation/jssdk/c8y_client/latest/)).
+> In the following sections, the default signature of these functions is described. For detailed information, refer to the [complete documentation](http://resources.cumulocity.com/documentation/websdk/client/latest/)).
 
 
 ### Get detail and list data with promises (pull)
@@ -30,7 +30,7 @@ In the following sections, the default signature of these functions is described
 |`list(filter)` | Request a list of data with an optional filter. | `filter:object`: (optional) A filter for [paging](/guides/reference/rest-implementation/#-a-name-paging-a-query-result-paging) or [filtering](/guides/reference/inventory/#query-language) of the list. | `Promise<IResultList<TData>>`: The list as Promise wrapped in an IResultList. IResultList contains data, response and paging.
 
 * Example for receiving details of one managedObject of the inventory via `detail`:
-* 
+
    ```js
     const managedObjId: number = 1;
 
@@ -40,7 +40,7 @@ In the following sections, the default signature of these functions is described
    ```
 
 * Example for receiving a list of one managedObject of the inventory via `list`:
-* 
+
    ```js
     const filter: object = {
       pageSize: 100,
@@ -60,10 +60,10 @@ The `detail$` and `list$` functions allow to subscribe to realtime channels that
 | Method | Description | Parameters | Return | 
 | --- | --- | --- | --- |
 | `detail$(entityOrId, options)` | Returns an observable for detail data of one entity | `entityOrId: string | number | IIdentified`: An object which contains an id or an id as number or string.<br>`options: IObservableOptions`: (optional) An configuration object to define the observable. | `Observable<TData>>`: The list as subscribable observable. |
-| `list$(filter, options)` | Returns an observable for a list of entities. | `filter: object`: (optional) A filter for [paging](https:/guides/reference/rest-implementation/#-a-name-paging-a-query-result-paging) or [filtering](/guides/reference/inventory/#query-language) of the list (optional).<br>`options: IObservableOptions`: (optional) An configuration object to define the observable. | `ObservableList<TData>>`: The list as subscribable observable.
+| `list$(filter, options)` | Returns an observable for a list of entities. | `filter: object`: (optional) A filter for [paging](/guides/reference/rest-implementation/#-a-name-paging-a-query-result-paging) or [filtering](/guides/reference/inventory/#query-language) of the list (optional).<br>`options: IObservableOptions`: (optional) An configuration object to define the observable. | `ObservableList<TData>>`: The list as subscribable observable.
 
 * Example for receiving details of one managedObject of the inventory via `detail$`:
- 
+
    ```js
   const managedObjId: number = 1;
 
@@ -76,9 +76,9 @@ The `detail$` and `list$` functions allow to subscribe to realtime channels that
   const list$ = client.inventory.list$();
   list$.subscribe((data) => console.log(data));
    ```
-
-Observables can be configured by adding an `IObservableOptions` object with these default properties:
    
+  Observables can be configured by adding an `IObservableOptions` object with these default properties:
+
   ```js
   {
     hot: true,                                    // true = shares one network request

@@ -9,6 +9,8 @@ ngx-components is a components collection and data access layer for Angular appl
  - core (`@c8y/ngx-components`) which contains all core components like title, navigator or tabs.
  - api (`@c8y/ngx-components/api`) which enables dependency injection of the [@c8y/client](/guides/web/angular#client) services.
 
+ > The full documentation of all modules and components can be found [here](http://resources.cumulocity.com/documentation/websdk/ngx-component/latest/)
+
 ### Prerequisites
 
 If you do not use the [@c8y/cli](/guides/web/angular#cli) to bootstrap a new application you first need to install the package:
@@ -23,14 +25,13 @@ Next, you can add the ngx-components modules to your app module (e.g. app.module
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { RouterModule } from '@angular/router';
-import { CoreModule, BootstrapComponent, CommonModule} from '@c8y/ngx-components';
+import { CoreModule, BootstrapComponent} from '@c8y/ngx-components';
 
 @NgModule({
   imports: [
     BrowserModule,
-    RouterModule.forRoot([], { enableTracing: false, useHash: true }),
-    CoreModule,   // 1
-    CommonModule  // 2
+    RouterModule.forRoot([], { enableTracing: false, useHash: true }), // 1
+    CoreModule   // 2
   ],
   bootstrap: [BootstrapComponent] // 3
 })
@@ -38,13 +39,13 @@ export class AppModule {}
 
 ```
 
-1. Import the `CoreModule` to allow the use of the `c8y-` prefixed components.
-2. Import the `CommonModule` to allow the use of data access and translations.
+1. Make sure to set `useHash` navigation to true as the platform does not support [pushState](https://angular.io/guide/router#hashlocationstrategy)
+2. Import the `CoreModule` to allow the use of the `c8y-` prefixed components.
 3. Bootstrap your application with the `BootstrapComponent` which will use the `<c8y-bootstrap>` component to initialize the root application. Alternatively, you can bootstrap a component of your choice and include that tag into its template or only reuse the given components.
 
 ### Extension points
 
-To extend and compose an application, ngx-components provide three core architecture concepts called *Extensions points*:
+To extend and compose an application, ngx-components provide four core architecture concepts called *Extensions points*:
 
 1. **Content Projection** (CP):<br>This concept allows to project content from one component to another. For example, you can configure the title of a page by setting a `<c8y-title>` in any other component. The content of the `<c8y-title>` tag is then projected to an outlet component, which is placed in the header bar. The benefit of this concept is that you can place anything into the projected content, for example you can project another custom component into the title.<br>
    A good example to use this concept is the `c8y-action-bar-item` which uses a `routerLink` directive from Angular to route to a different context: 
@@ -112,7 +113,6 @@ The Multi Provider extension allows a declarative approach to extend the applica
    * `HOOK_BREADCRUMB`: Can be used to show breadcrumbs in the header bar.
    * `HOOK_SEARCH`: Allows to define the search to be shown or not.
 
-
 3. **Services**<br>
    A service is defined for most components of ngx-components. They can be used via the dependency injection concept of Angular, that means that these services can be injected in the constructor of a component and then add or remove certain UI elements. The following example shows how to use that concept with an alert: 
    
@@ -130,200 +130,80 @@ The Multi Provider extension allows a declarative approach to extend the applica
    }
    ```
 
+4. **Legacy plugins**<br>
+    If you are extending a default application (Cockpit, Device Management or Administration) you get a file called `ng1.ts`. These are so called plugins which haven't been migrated to Angular yet and are still using angular.js. You can add or remove these plugins to customize the application appearance like it has been done previously in a target file by the `addImports: []` or `removeImports: []` property. The following shows an example which removes the default import in the angular.js target file:
+
+    ```
+    {
+      "name": "example",
+      "applications": [
+        {
+          "contextPath": "cockpit",
+          "addImports": [
+            "my-plugin/welcomeScreen",
+          ],
+          "removeImports": [
+            "core/welcomeScreen"
+          ]
+        }
+      ]
+    }
+    ```
+    You get the same result in the new Angular framework by modifying the `ng1.ts` file of the cockpit app:
+
+    ```javascript
+    import '@c8y/ng1-modules/core';
+    // [...] more imports removed for readability
+    import '@c8y/ng1-modules/alarmAssets/cumulocity';
+    // import '@c8y/ng1-modules/welcomeScreen/cumulocity';              // 1
+    import '@c8y/ng1-modules/deviceControlMessage/cumulocity';
+    import '@c8y/ng1-modules/deviceControlRelay/cumulocity';
+    // [...] more imports removed for readability
+    import 'my-plugin/cumulocity';                                      // 2
+    ```
+    As you can see we simply removed the import of the original welcome screen plugin (1.) and replaced it by the custom implementation (2.). Note that all angular.js plugins need to have the `/cumulocity` addition to tell webpack that a legacy plugin is imported.
+
+    To use legacy plugins in your custom non-default application you need to set the `upgrade` flag in the package.json file and use the same import approach like described before:
+    ```
+    "c8y": {
+      "application": {
+        "name": "myapp",
+        "contextPath": "myapp",
+        "key": "myapp-application-key",
+        "upgrade": true
+      }
+    }
+    ```
+    Also the module definition of your application must be changed to support these plugins:
+    ```javascript
+    import { NgModule } from '@angular/core';
+    import { BrowserModule } from '@angular/platform-browser';
+    import { RouterModule } from '@angular/router';
+    import { UpgradeModule as NgUpgradeModule } from '@angular/upgrade/static';
+    import { CoreModule } from '@c8y/ngx-components';
+    import { UpgradeModule, HybridAppModule } from '@c8y/ngx-components/upgrade';
+    import { AssetsNavigatorModule } from '@c8y/ngx-components/assets-navigator';
+
+    @NgModule({
+      imports: [
+        BrowserModule,
+        RouterModule.forRoot([], { enableTracing: false, useHash: true }),
+        CoreModule,
+        AssetsNavigatorModule,
+        NgUpgradeModule,
+        // Upgrade module must be the last
+        UpgradeModule
+      ]
+    })
+    export class AppModule extends HybridAppModule {
+      constructor(protected upgrade: NgUpgradeModule) {
+        super();
+      }
+    }
+    ```
+    That will let your app start in a hybrid mode, which allows to use angular.js and Angular plugins/modules.
+
 To determine which extension points are supported and which concept should be used for certain scenarios the following section gives an overview on all supported components and explains in which case they should be used.
-   
-### List of supported components
-
-Following is a list of components that are currently available in the `CoreModule`. 
-
-The last three columns refer to the architectural concepts described above (CP = Content Projection, MP = Multi Provider, SVC = Service), an `x` means that the respective concept is supported by the component. Most of the components support all concepts, but some are marked with `(x)` indicating the preferred solution for that component. If non is marked the component can only be used with attributes.
-
-
-<div class="table-responsive"><table>
-<col width="30">
-<col width="150">
-<col width="180">
-<col width="400">
-<col width="400">
-
-<thead>
-<tr>
-<th style="text-align:left">#</th>
-<th style="text-align:left">Tag</th>
-<th style="text-align:left">Module name<br>Service name</th>
-<th style="text-align:left">Description</th>
-<th style="text-align:left">Attributes</th>
-<th style="text-align:left">CP</th>
-<th style="text-align:left">MP</th>
-<th style="text-align:left">SVC</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align:left">1</td>
-<td style="text-align:left">`<c8y-bootstrap>`</td>
-<td style="text-align:left"> BootstrapModule </td>
-<td style="text-align:left"> Adds global action to a page (upper right plus icon). </td>
-<td style="text-align:left"> none </td>
-<td style="text-align:left"> </td>
-<td style="text-align:left"> </td>
-<td style="text-align:left"> </td>
-</tr>
-<tr>
-<td style="text-align:left">2</td>
-<td style="text-align:left">`<c8y-action>`</td>
-<td style="text-align:left"> ActionModule<br>ActionService </td>
-<td style="text-align:left"> Composes all outlets to bootstrap an application. </td>
-<td style="text-align:left"> `disabled:boolean=false`<br>`label:string`<br>`priority:number=0`<br>`icon:string`  </td>
-<td style="text-align:left">x</td>
-<td style="text-align:left">(x)</td>
-<td style="text-align:left">x</td>
-</tr>
-</tr>
-<tr>
-<td style="text-align:left">3</td>
-<td style="text-align:left">`<c8y-action-bar-item>`</td>
-<td style="text-align:left"> ActionBarModule<br>ActionBarService </td>
-<td style="text-align:left"> Adds a local action to the page (new bar below the header bar). </td>
-<td style="text-align:left"> `placement:('left'|'right'|'more')='left'`<br>`priority:number=0`</td>
-<td style="text-align:left">(x)</td>
-<td style="text-align:left">x</td>
-<td style="text-align:left">x</td>
-</tr>
-<tr>
-<td style="text-align:left">4</td>
-<td style="text-align:left">`<c8y-alert>`</td>
-<td style="text-align:left"> AlertModule<br>AlertService </td>
-<td style="text-align:left"> Allows to show a message (alert, danger, warning) to the user. </td>
-<td style="text-align:left"> `type:string`<br>`onDetail:()=>void`<br>`onClose:()=>void` </td>
-<td style="text-align:left">x</td>
-<td style="text-align:left"> </td>
-<td style="text-align:left">(x)</td>
-</tr>
-<tr>
-<td style="text-align:left">5</td>
-<td style="text-align:left">`<c8y-breadcrumb>`</td>
-<td style="text-align:left"> BreadcrumbModule<br>BreadcrumbService </td>
-<td style="text-align:left"> Can display multiple breadcrumb items on a page. </td>
-<td style="text-align:left"> `items:BreadcrumbItem[];` </td>
-<td style="text-align:left">x</td>
-<td style="text-align:left">(x) </td>
-<td style="text-align:left">x</td>
-</tr>
-<tr>
-<td style="text-align:left">6</td>
-<td style="text-align:left">`<c8y-breadcrumb-item>`</td>
-<td style="text-align:left"> BreadcrumbModule<br>BreadcrumbService </td>
-<td style="text-align:left"> One crumb of the breadcrumb. </td>
-<td style="text-align:left"> `icon:string`<br>`translate:boolean`<br>`label:string`<br>`path:string`</td>
-<td style="text-align:left">x</td>
-<td style="text-align:left">(x) </td>
-<td style="text-align:left">x</td>
-</tr>
-<tr>
-<td style="text-align:left">7</td>
-<td style="text-align:left">`<c8y-drop-area>`</td>
-<td style="text-align:left"> DropAreaModule </td>
-<td style="text-align:left"> A possibility to upload files per drag & drop. </td>
-<td style="text-align:left"> `icon:string`<br>`title='Upload file'`<br>`message='Drop file here'`<br>`icon='plus-square'`<br>`loadingMessage='Uploading...'`<br>`alwaysShow=false`<br>`clickToOpen=true`<br>`loading=false`<br>`dropped:EventEmitter<DroppedFile[]>`</td>
-<td style="text-align:left">(x)</td>
-<td style="text-align:left"> </td>
-<td style="text-align:left"> </td>
-</tr>
-<tr>
-<td style="text-align:left">8</td>
-<td style="text-align:left">`<c8y-title>`</td>
-<td style="text-align:left"> HeaderModule<br>HeaderService </td>
-<td style="text-align:left"> Allows to add a title to the page. </td>
-<td style="text-align:left"> none</td>
-<td style="text-align:left">(x)</td>
-<td style="text-align:left"> </td>
-<td style="text-align:left">x</td>
-</tr>
-<tr>
-<td style="text-align:left">9</td>
-<td style="text-align:left">`<c8y-app-icon>`</td>
-<td style="text-align:left"> HeaderModule<br>HeaderService </td>
-<td style="text-align:left"> Generates an application icon with the given name for the given contextPath. </td>
-<td style="text-align:left">`contextPath:string`<br>`name:string= ''` </td>
-</tr>
-<td style="text-align:left"> </td>
-<td style="text-align:left"> </td>
-<td style="text-align:left"> </td>
-<tr>
-<td style="text-align:left">10</td>
-<td style="text-align:left">`<c8y-header-bar>`</td>
-<td style="text-align:left"> HeaderModule<br>HeaderService </td>
-<td style="text-align:left"> The main header which contains title, actions, search and user-dropdown. By default, it is included in the `BootstrapComponent` and only needs to be used if not bootstrapped with that component. </td>
-<td style="text-align:left">none </td>
-<td style="text-align:left"> </td>
-<td style="text-align:left"> </td>
-<td style="text-align:left"> </td>
-</tr>
-<tr>
-<td style="text-align:left">11</td>
-<td style="text-align:left"> `<c8y-login>`</td>
-<td style="text-align:left"> LoginModule<br>LoginService </td>
-<td style="text-align:left"> The login shown on each application start.  By default, it is included in the `BootstrapComponent` and only needs to be used if not bootstrapped with that component. </td>
-<td style="text-align:left">none </td>
-<td style="text-align:left"> </td>
-<td style="text-align:left"> </td>
-<td style="text-align:left"> </td>
-</tr>
-<tr>
-<td style="text-align:left">12</td>
-<td style="text-align:left">`<c8y-modal>`</td>
-<td style="text-align:left"> ModalModule<br>ModalService </td>
-<td style="text-align:left"> A modal with a backdrop. </td>
-<td style="text-align:left"> `onDismiss:EventEmitter<boolean>`<br>`onClose:EventEmitter<boolean>`<br>`disabled=false`<br>`close:()=>void`<br>`dismiss:()=>void`<br>`title:string`</td>
-<td style="text-align:left">(x)</td>
-<td style="text-align:left"></td>
-<td style="text-align:left">x</td>
-</tr>
-<tr>
-<td style="text-align:left">13</td>
-<td style="text-align:left">`<c8y-navigator-item>`</td>
-<td style="text-align:left"> NavigatorModule<br>NavigatorService </td>
-<td style="text-align:left"> The left navigator menu allows to switch between routes. </td>
-<td style="text-align:left"> `label:string`<br>`icon:string`<br>`path:string`<br>`priority=0`</td>
-<td style="text-align:left">x</td>
-<td style="text-align:left">(x)</td>
-<td style="text-align:left">x</td>
-</tr>
-<tr>
-<td style="text-align:left">14</td>
-<td style="text-align:left">`<c8y-search>`</td>
-<td style="text-align:left"> SearchModule<br>SearchService </td>
-<td style="text-align:left"> Allows to add a custom search which will show up in the header bar. </td>
-<td style="text-align:left"> `label:string`<br>`name:string`<br>`icon:string='search'`<br>`priority:number=0`<br>`search:EventEmitter<Search>`<br>`term:string=''`<br></td>
-<td style="text-align:left">x</td>
-<td style="text-align:left">(x)</td>
-<td style="text-align:left">x</td>
-</tr>
-<tr>
-<td style="text-align:left">15</td>
-<td style="text-align:left">`<c8y-select>`</td>
-<td style="text-align:left"> SelectModule </td>
-<td style="text-align:left"> A multi-select dropdown with the possibility to filter for values. </td>
-<td style="text-align:left"> `placeholder:string='Select item'`<br>`selectedLabel:string|selectedLabelFunction`<br>`applyLabel:string='Apply'`<br>`items:Item[]`<br>`selected:Item[]|selectedFunction`<br>`onChange:EventEmitter<Item[]>`</td>
-<td style="text-align:left"> </td>
-<td style="text-align:left"> </td>
-<td style="text-align:left"> </td>
-</tr>
-<tr>
-<td style="text-align:left">16</td>
-<td style="text-align:left">`<c8y-tab>`</td>
-<td style="text-align:left"> TabsModule<br>TabsService </td>
-<td style="text-align:left"> Allows to show tabs on a page. </td>
-<td style="text-align:left"> `path:string`<br>`label:string=''`<br>`icon:string`<br>`priority:number` </td>
-<td style="text-align:left">x</td>
-<td style="text-align:left">(x)</td>
-<td style="text-align:left">x</td>
-</tr>
-</tbody>
-</table></div>
-
-
 
 ### Data access to the platform
 

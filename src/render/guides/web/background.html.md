@@ -11,7 +11,7 @@ This process involves migration effort, so we believe that providing some backgr
 
 From day one the UI has always had a modular architecture. The units of functionality is grouped in “plugins” that can be composed to build applications. In practice plugins are simply modules.
 
-Modules are a very important key feature in the newest generation of the Web SDK. It allows to import any file or library with native JavaScript `import` statements and be bundled to one file at build time. To understand that concept better and what enhancements it brings to the developers, it  is important to understand how the module architecture worked in the previous generations of the Cumulocity Web SDK.
+Modules are a very important key feature in the newest generation of the Web SDK. It allows to import any file or library with native JavaScript `import` statements and be bundled to one file at build time. To better understand this concept and the enhancements it provides to the developers, it is important to understand how the module architecture worked in the previous generations of the Cumulocity Web SDK.
 
 ### 1st Generation: Runtime loading of plugins
 
@@ -80,7 +80,7 @@ Although plugins are not just data any longer, we still allow to change the appl
 
 ### Today's Generation: Native modules
 
-The whole process was focused on enabling the complete stack of modern web dev and try to remove as much specificity from the process as possible. To allow that, we decided to update the existing angular.js framework to the next generation called simply Angular. To still enable the use of legacy browsers and allow the import from third party library's via npm we need to bundle the modules. As bundler we choose to use webpack, as it play's nicely with Angular.
+The whole process was focused on enabling the complete stack of modern web dev and removing as much specificity from the process as possible. To allow that, we decided to update the existing angular.js framework to the next generation called simply Angular. To still enable the use of legacy browsers and allow the import from third party library's via npm we need to bundle the modules. As bundler we choose to use webpack, as it play's nicely with Angular.
 
 One big change is that so far, modules (or plugins) where always represented during development and after build, so they could easily be composed by adding or removing a script. As we are now bundling everything, the modules can only be put together during development so the possibility to edit an app from the UI disappears for now, but at the same time developers win the possibility to use the standardized ES2016 module architecture. That simplifies the development process because it follows standard approaches and doesn't need any kind of complex module architecture. At this point, plugins are truely just modules. We will keep the name around to refer to subpackages that contain some kind of isolated functionality. 
 

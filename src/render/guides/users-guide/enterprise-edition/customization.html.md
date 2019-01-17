@@ -10,11 +10,15 @@ In an Enterprise Edition installation under the **Settings** menu you can specif
 
 ### <a name="branding"></a>Branding
 
-In the **Branding** tab you can fully customize the look of your tenants to your own preferences. 
+With the Branding feature, you can fully customize the look of your tenant to your own preferences. 
 
-The branding feature allows you to edit the logos and colors used throughout the platform. Once your branding settings are saved, all subtenants are automatically updated. 
+In the **Branding** tab, you can configure the logos and colors used throughout the platform. 
 
-<img src="/guides/images/users-guide/Administration/Admin_Branding.png" alt="Branding tab" style="max-width: 100%">
+<img src="/guides/images/users-guide/Administration/admin-branding.png" alt="Branding tab" style="max-width: 100%">
+
+The **Branding** tab shows the configuration settings on the left side while on the right you can see your selections immediately applied in a preview.
+
+#### Configuration settings
 
 **General**
 
@@ -36,7 +40,7 @@ Under **Navigator logo** you can provide the navigator logo and set the navigato
 
 In the **Type** section you specify the font settings for your branded version. 
 
-<img src="/guides/images/users-guide/Administration/Admin_BrandingType.png" alt="Branding type" style="max-width: 100%">
+<img src="/guides/images/users-guide/Administration/admin-branding-type.png" alt="Branding type" style="max-width: 100%">
 
 You can choose your base and headings font, and select an option for the navigator font (either same as base or same as headings font). You may also add a link to existing remote fonts to be used.
 
@@ -44,7 +48,7 @@ You can choose your base and headings font, and select an option for the navigat
 
 In the **Colors** section you specify the colors to be used in your branding version.
 
-<img src="/guides/images/users-guide/Administration/Admin_BrandingColor.png" alt="Branding color" style="max-width: 100%">
+<img src="/guides/images/users-guide/Administration/admin-branding-color.png" alt="Branding color" style="max-width: 100%">
 
 The following parameters can be specified by providing a hex, rgb or rgba value:
 
@@ -58,7 +62,7 @@ The following parameters can be specified by providing a hex, rgb or rgba value:
 
 In the **Top bar** section you specify the parameters for the top bar.
 
-<img src="/guides/images/users-guide/Administration/Admin_BrandingTopbar.png" alt="Branding topbar" style="max-width: 100%">
+<img src="/guides/images/users-guide/Administration/admin-branding-topbar.png" alt="Branding topbar" style="max-width: 100%">
 
 The following parameters can be specified by providing a hex, rgb or rgba value:
 
@@ -70,7 +74,7 @@ The following parameters can be specified by providing a hex, rgb or rgba value:
 
 In the **Navigator** section you specify the parameters for the navigator.
 
-<img src="/guides/images/users-guide/Administration/Admin_BrandingTopbar.png" alt="Branding top bar" style="max-width: 100%">
+<img src="/guides/images/users-guide/Administration/admin-branding-navigator.png" alt="Branding top bar" style="max-width: 100%">
 
 The following parameters can be specified by providing a hex, rgb or rgba value:
 

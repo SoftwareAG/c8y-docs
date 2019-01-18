@@ -133,7 +133,7 @@ The microservice billing feature gathers information on microservice usage per s
 
 Cumulocity offers two billing modes:
 
-* **Subscription-based billing**: Charges a constant price when a tenant is subscribed to a microservice
+* **Subscription-based billing**: Charges a constant price when a tenant is subscribed to a microservice while resource usage is assigned to the owner
  
 * **Resource-based billing**: Exposes the number of resources used by a microservice to calculate billing
 

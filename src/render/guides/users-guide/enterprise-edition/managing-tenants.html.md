@@ -124,6 +124,80 @@ The following information is provided:
 
 Further details are provided on the **Status** tab of the respective application, see [Administration > Managing applications](/guides/users-guide/administration#managing-applications).
 
+### <a name="microservice-billing"></a>Microservice billing
+
+The microservice billing feature gathers information on microservice usage per subtenant for each microservice. This enables enterprise tenants and service providers to charge tenant not only based on subscriptions but also based on resources usage.
+
+
+#### Billing modes
+
+Cumulocity offers two billing modes:
+
+* **Subscription-based billing**: Charges a constant price when a tenant is subscribed to a microservice while resource usage is assigned to the owner
+ 
+* **Resource-based billing**: Exposes the number of resources used by a microservice to calculate billing
+
+The billing modes are specified per microservice in the [microservice manifest](/guides/reference/microservice-manifest) and are set in the field "billingMode".
+
+RESOURCES: Sets the billing mode to resources-based. This is the default mode and will be applied to all microservices that are not explicitly switched to subscription-based billing mode. 
+
+SUBSCRIPTION: Sets the billing mode to subscription-based. 
+
+#### Isolation level
+
+Two isolation levels are distinguished for microservices: per-tenant isolation and multi-tenant isolation.
+
+In case of subscription-based billing, the entire resources usage is always assigned to the microservice owner, independent of the isolation level,  while the subscribed tenant will be billed for the subscription. 
+
+In case of resources-based billing, charging depends on the isolation level:
+
+* Per-tenant - the subscriber tenant is charged for used resources
+* Multi-tenant - the owner of the microservice is charged for used resources 
+
+In case of multi-tenant isolation level, the parent tenant as the owner of a microservice (e.g. the management tenant of an enterprise tenant or service provider) is charged for both subscribed applications (subscription-based billing) and used resources (resource-based billing) of the subtenants. 
+
+#### Resources usage assignment for billing mode and isolation level
+
+|Billing mode|Microservice Isolation|Resources usage assigned to
+|:--------|:-----|:-----
+|Subscription-based|Per-tenant|Owner
+|Subsrciption-based|Multi-tenant|Owner
+|Resources-based|Per-tenant|Subscriber
+|Resources-based|Multi-tenant|Owner
+
+#### Collected values
+
+The following values are collected on a daily base for each tenant:
+
+* CPU usage, specified in CPU milliseconds (1000m = 1 CPU)
+* Memory usage, specified in MB
+
+Microservice resources are counted based at limits defined in the microservice manifest per day. At the end of each day, the information about resource usage is collected into the tenant statistics. It is also considered that a microservice might not be subscribed for a whole day. 
+
+**Example**: If a tenant was subscribed to a microservice for 12h and the microservice has 2 CPU and 2 GB of memory it should be counted as 1000 CPU milliseconds and 1024 MB of memory.
+
+For billing purposes, in addition to CPU usage and memory usage the cause for the billing is collected (e.g. owner, subscription for tenant):
+
+		      {
+	        "name":"cep",
+	        "cpu":6000,
+	        "memory":"20000",
+	        "cause":"Owner"
+	      },
+	      {
+	        "name":"cep-small",
+	        "cpu":1000,
+	        "memory":"2000",
+	        "cause":"Subscription for tenant"
+	      }
+	 
+#### Usage statistics
+
+The information on the microservice usage is presented in the **Tenant Statistics** page in the Administration application.
+
+![Tenant statistics](/guides/images/users-guide/ee-tenants-usage-statistics.PNG)
+     
+
 ### <a name="tenants-custom-properties"></a>Editing custom properties
 
 The **Custom properties** tab allows you to view and modify values of custom properties, either predefined ones (like "External reference") or those defined in the [Properties library](/guides/users-guide/administration#properties). Such properties are also displayed as columns in the [usage statistics table](#usage-stats).

@@ -51,6 +51,13 @@ The manifest provides information about a microservice deployment. The definitio
 <td style="text-align:left">Yes</td>
 </tr>
 <tr>
+<tr>
+<td style="text-align:left">billingMode</td>
+<td style="text-align:left">Enum</td>
+<td style="text-align:left">Values: RESOURCES, SUBSCRIPTION<br>Default: RESOURCES<br><br> [Billing mode for the microservice](/guides/users-guide/enterprise-edition#managing-tenants). In case of RESOURCES the number of resources used is exposed for billing calculation per usage. In case of SUBSCRIPTION all resources usage is counted for the microservice owner and subtenant is charged for subscription. </td>
+<td style="text-align:left">No</td>
+</tr>
+<tr>
 <td style="text-align:left">isolation</td>
 <td style="text-align:left">Enum</td>
 <td style="text-align:left">Values: MULTI_TENANT, PER_TENANT<br>Default: MULTI_TENANT<br><br>Deployment isolation. In case of PER_TENANT there is a separate instance for each tenant otherwise there is one single instance for all subscribed tenants. Should be overridable on subscription and should affect billing.</td>

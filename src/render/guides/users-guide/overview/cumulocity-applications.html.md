@@ -38,9 +38,9 @@ Per default, Cumulocity comes with the following three standard applications:
 
 Apart from these standard applications that initially come with Cumulocity, various additional applications are provided, offering a wide variety of functionalities. The availability of this applications depends on the Edition you are using and the applications your organization is subscribed to.
 
-Find a detailed list of all applications available with Cumulocity in Applications > [Application names](/guides/reference/applications#application-names) in the Reference guide.
+Find a detailed list of all applications available with Cumulocity in  [Applications > Application names](/guides/reference/applications#application-names) in the Reference guide.
 
-Moreover, you can add own applications to be used in your Cumulocity account. For details, refer to [Administration > Managing applications](/guides/users-guide/administration#managing-applications).
+Om top of this, you can add own applications to be used in your Cumulocity account. For details, refer to [Administration > Managing applications](/guides/users-guide/administration#managing-applications).
 
 The content of the Cumulocity platform therefore is entirely dynamic and is generated based on various criteria:
 

@@ -4,20 +4,67 @@ title: Cloud Remote Access
 layout: redirect
 ---
 
+The Cumulocity Cloud Remote Access microservice allows you to remotely access operating panels and other devices via a web browser.
 
-### Introduction
+### When to use Cloud Remote Access
 
-The Cumulocity Cloud Remote Access feature allows you to remotely access operating panels and other devices via a web browser.
+To provide the best level of control, remote devices should be represented as devices in the Device Management of Cumulocity, with the corresponding reporting, remote control and real-time functionality. 
+
+In some cases however, it is not possible or not economic to implement every aspect of a machine or remote device in a Cumulocity agent. For example, it might be a legacy device that does not have APIs for accessing certain parts of the functionality, or it may have many very low-level configuration parameters that would be very involved to map to Cumulocity.
+
+In this case, you can use Cloud Remote Access to securely manage remote devices. The benefit is that you manage the device in the same way as if you had it physically close to you.
+
+>**Important**: Be aware that using Cloud Remote Access includes administrative intervention: 
+>
+>* Often, devices have no detailed permission management, so you give a user very fundamental access to the device.
+* You may remotely operate machinery. Users may only use this feature following the machine safety standards. 
+
+### Supported protocols and gateways
+
+The following protocols are supported:
+
+* Remote Desktop (VNC)
+	* Shares the desktop of the remote device
+	* Mouse and keyboard for interaction
+* Secure Shell (SSH)
+	* Console for command line access
+	* Keyboard for interaction
+* Terminal (Telnet)
+	* Protocol used for old device types
+	* Console for command line access
+	* Keyboard for interaction
+
+The following gateways are supported:
+
+* Netcomm NTC 6200
+	* Gateway router device
+	* Latest Firmware (4.2.1)
+* VNCProxy plugin
+	* Linux agent
+	* Can be used on any linux-based gateway device
+	* Latest version required
+* Third-party devices
+	* Many third-party devices are supported, for details see [Devices guide](/guides/devices)
+
+### How Cloud Remote Access works
+
+Cloud Remote Access is a secure way to directly access remote devices through a web browser.
 
 ![VNC](/guides/images/users-guide/VNC1a.png)
 
-Cloud Remote Access works as in the illustration below. The remote-controlled device runs a VNC, SSH or Telnet server and is connected to a gateway compatible with Cloud Remote Access. This gateway must be registered as a device within the Device Management application in Cumulocity. More information about registering devices and instructions can be found in [Device Management > Device Registration](/guides/users-guide/device-management/#device-registration) in the User guide.
+The following protocols are supported:
+
+* Remote Desktop (VNC)
+* Secure Shell (SSH)
+* Terminal (Telnet)
+
+Cloud Remote Access works as in the illustration below. The remotely controlled device runs a VNC, SSH or Telnet server and is connected to a gateway compatible with Cloud Remote Access. This gateway must be registered as a device within the Device Management application in Cumulocity. More information about registering devices and instructions can be found in [Device Management > Device Registration](/guides/users-guide/device-management/#device-registration) in the User guide.
 
 ![VNC2](/guides/images/users-guide/VNC2.png)
 
 With Cloud Remote Access users can
 
-* view status visualizations and track updates of remote devices immediately as if the user were at the device location,
+* view status visualizations and track updates of remote devices directly in the same way as if you were at the device location,
 * connect to remote devices easily as complex VPN setups are not required, 
 * establish connection via Telnet or SSH to the gateway itself or to any device in the local area network. 
 
@@ -33,18 +80,18 @@ Cloud Remote Access is available in the Device Management application.
 To use Cloud Remote Access, the following prerequisites have to be met:
 
 * a Cloud Remote Access compatible gateway connected to your Cumulocity account;
-* a device with a VNC, SH or Telnet server that is connected to the gateway and reachable from the gateway;
+* a remote device with a VNC, SSH or Telnet server that is connected to the gateway and reachable from the gateway;
 * Cloud Remote Access microservice included into your subscription plan. 
 
 Click **All devices** and select the desired gateway from the device list. 
 
 ![Device list](/guides/images/users-guide/cra-device-list.png)
 
-When you open the device you will find the **Remote access** tab in the tab list of the device. 
+When you open the gateway you will find the **Remote access** tab in its tab list. 
 
 ![Remote access tab](/guides/images/users-guide/cra-remote-access-tab.png)
 
-In the **Remote Access** tab, you can configure devices for remote control, so-called "endpoints", and connect to a device.
+In the **Remote Access** tab, you can configure devices for remote control, so-called "endpoints", and connect to remote devices.
 
 Connections can be established to the gateway itself (localhost) or to any device in the local area network reachable by the device. 
 
@@ -53,27 +100,27 @@ Connections can be established to the gateway itself (localhost) or to any devic
 
 ### Configuring endpoints
 
-The "endpoint" is the IP address and port of the VNC, SSH or Telnet server running on the device. The IP address and port need to be reachable from the gateway. 	
+The "endpoint" is the IP address and port of the VNC, SSH or Telnet server running on the remote device. The IP address and port need to be reachable from the gateway. 	
 
-![Endpoints](/guides/images/users-guide/endpoints.png)
+![Endpoints](/guides/images/users-guide/cra-endpoints.png)
 
-To configure new remote devices, click **Add endpoint**. Follow the descriptions below for configuring the various kind of endpoints.
+To configure new remote devices, click **Add endpoint**. Follow the descriptions below for configuring the various types of endpoints.
 
->**Info**: To be able to configure an endpoint, you need "Admin" permission for "Remote access" and "Device control". To read data, a “Read” permission is sufficient. For more information on permissions, refer to [Administration > Managing permissions](/guides/users-guide/administration/#managing-permissions) in the User guide.
+>**Info**: To be able to configure an endpoint, you need ADMIN permission for "Remote access" and "Device control". To read data, a READ permission is sufficient. For more information on permissions, refer to [Administration > Managing permissions](/guides/users-guide/administration/#managing-permissions) in the User guide.
 
-#### Adding remote access endpoints via VNC
+#### Adding remote access endpoints via VNC 
 
 To configure a remote access endpoint via VNC, enter a description for the remote access endpoint, the IP address and port, and the password of the VNC server. Click **Save** to add the endpoint to the list.
 
-![Remote access endpoint](/guides/images/users-guide/remoteaccess.png)
+![Remote access endpoint](/guides/images/users-guide/cra-endpoint-vnc.png)
 
-Once the connection is established, a new browser tab will open displaying the front screen or operating panel of the device you are connected to. The top bar of the screen will show “starting VNC handshake” when the process is starting. 
+Once the connection is established, a new browser tab will open displaying the front screen or operating panel of the remote device you are connected to. The top bar of the screen will show “starting VNC handshake” when the process is starting. 
 
 #### Adding remote access endpoints via Telnet
 
 Enter the name of the endpoint. Select the Telnet protocol from the dropdown menu. Enter the IP address and the port. When ready, click **Save**.
 
-![Remote access Telnet endpoint](/guides/images/users-guide/telnetendpoint.png)
+![Remote access Telnet endpoint](/guides/images/users-guide/cra-endpoint-telnet.png)
 
 >**Important**: Be aware, that Telnet is considered to be an insecure protocol lacking built-in security measures. For network communication in a production environment we highly recommend to use the SSH protocol instead.
 
@@ -84,13 +131,13 @@ To configure a remote access endpoint via SSH, enter the name of the endpoint, s
 
 - Username and password: If this method is selected, it is mandatory to enter username and password.
 
-	![SSH username and password sign in](/guides/images/users-guide/sshusernameandpass.png)
+	![SSH username and password sign in](/guides/images/users-guide/cra-endpoint-ssh-username.png)
 
 - Public/private keys: Automatically generate public and private keys or simply paste pre-generated keys. The keys can also be uploaded from a file. 
 
-	![SSH public/private keys sign in](/guides/images/users-guide/publicprivatekeys.png)
+	![SSH public/private keys sign in](/guides/images/users-guide/cra-endpoint-ssh-publicprivatekeys.png)
 
-**Info**: The public key needs to be installed on the device as authorized_key.
+**Info**: The public key needs to be installed on the remote device as authorized_key.
 
 Optionally, you can also add a host key to ensure connection to the correct device. This key can also be uploaded from a file.
 
@@ -114,23 +161,23 @@ The following algorithms are supported when adding new keys:
 
 To edit or remove an endpoint, click the menu icon at the right of a row and select **Edit** or **Remove** from the context menu.
 
-![Edit endpoints](/guides/images/users-guide/editendpoint.png)
+![Edit endpoints](/guides/images/users-guide/cra-endpoint-menu.png)
 
 ### Connecting to endpoints
 
-To connect to configured endpoints, choose an endpoint in the **Remote access** tab and click **Connect**. The connection to the configured device is established and the VNC, SSH or Telnet screen is shared in the client area. 
+To connect to configured endpoints, choose an endpoint in the **Remote access** tab and click **Connect**. The connection to the configured remote device is established and the VNC, SSH or Telnet screen is shared in the client area. 
 
-![Connect Endpoint](/guides/images/users-guide/connectendp.png)
+![Connect Endpoint](/guides/images/users-guide/cra-endpoint-connect.png)
 
 To terminate the connection, click **Disconnect**.
 
-### Displaying the audit logs
+### Audit logs
 
-Audit logs are displayed for each device. 
+Audit logs are available for each gateway device. 
 
 For each connection the Cloud Remote Access microservice creates an operation in scope of the current user. The operation then will be updated by the device to reflect the current status. Finally the operation will be in state SUCCESSFUL or FAILED.
 
-The audit logs can be found in the **Control** tab of the device.
+The audit logs can be found in the **Control** tab of the gateway device.
 
 ![Display Audit logs](/guides/images/users-guide/cra-control-tab.png)
 
@@ -181,19 +228,33 @@ The following limitations apply to Cloud Remote Access for Telnet:
 For Cloud Remote Access for SSH the same limitations as mentioned for Telnet apply (see above). Also the following additional limitations are known:
 
 * International characters are not to be supported yet.
-* Only limited number of control characters are working. For example interrupt (ctrl+c) is not working yet.
+* Only limited number of control characters are working. For example interrupt (CTRL+c) is not working yet.
 * Mouse movements are not supported.
 * Only SSHv2 protocol is supported.
 
 
 ### Troubleshooting
 
-If you cannot set up new endpoints, check if you have sufficient permissions.
+**Endpoints cannot be set up**
 
-To set up new endpoints, you need "Admin" permission for "Device control" to be able to register a device and “Admin” permission for "Remote access" to be able to add an endpoint. 
+ If you cannot set up new endpoints, check if you have sufficient permissions.
 
-To establish a connection to a remote operating panel, a “Read” permission for "Remote access" is sufficient.
+To set up new endpoints, you need ADMIN permission for "Device control" to be able to register a device and ADMIN permission for "Remote access" to be able to add an endpoint. 
+
+To establish a connection to a remote operating panel, a READ permission for "Remote access" is sufficient.
 
 For more information on permissions, refer to [Administration > Managing permissions](/guides/users-guide/administration/#managing-permissions) in the User guide.
 
+**Connection fails**
+
 The connection via a gateway to a remote VNC, SSH or Telnet server can fail because of network problems. In this case you need to contact your network administrator.
+
+**Unsupported protocol version**
+
+In case of Real VNC, if you get an error message stating that you are using an unsupported protocol version (e.g. 005.00x), try the following workaround:
+
+1. Open VNC.
+2. Navigate to **Options**.
+3. Select the **Export** tab.
+4. Search for "ProtocolVersion".
+5. Enter "3.8" as protocol version.

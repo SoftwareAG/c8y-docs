@@ -165,9 +165,13 @@ To edit or remove an endpoint, click the menu icon at the right of a row and sel
 
 ### Connecting to endpoints
 
-To connect to configured endpoints, choose an endpoint in the **Remote access** tab and click **Connect**. The connection to the configured remote device is established and the VNC, SSH or Telnet screen is shared in the client area. 
+To connect to configured endpoints, choose an endpoint in the **Remote access** tab and click **Connect**. 
 
 ![Connect Endpoint](/guides/images/users-guide/cra-endpoint-connect.png)
+
+The connection to the configured remote device is established and the VNC, SSH or Telnet screen is shared in the client area. 
+
+![Connect Endpoint](/guides/images/users-guide/cra-telnet.png)
 
 To terminate the connection, click **Disconnect**.
 

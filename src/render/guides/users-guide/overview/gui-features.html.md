@@ -10,6 +10,8 @@ layout: default
 
 The general structure common to all Cumulocity applications includes the following screen elements:
 
+![Cumulocity application](/guides/images/users-guide/overview-screen-elements.png)
+
 <table>
 <col width="150">
 <thead>
@@ -46,11 +48,9 @@ The general structure common to all Cumulocity applications includes the followi
 </tbody>
 </table>
 
-![Cumulocity application](/guides/images/users-guide/Overview/ScreenElements.png)
+On smaller screens, the layout is slightly different. The navigator is hidden and can be accessed by clicking the arrow icon on the top left. Only the active tab is displayed. To switch tabs, click the arrow on the tab header and select a tab from the list.
 
-On smaller screens, the layout of an application changes, as shown below. The navigator is hidden and only some of the tabs are visible. To access the navigator, click the menu icon on the top left. To access other tabs, scroll the tabs left or right (the way to scroll the tabs may depend on your device).
-
-<img src="/guides/images/users-guide/appsmall.png" alt="Layout on small devices" style="max-width: 50%">
+<img src="/guides/images/users-guide/overview-small-screen.png" alt="Layout on small devices" style="max-width: 100%">
 
 > **Info:** Cumulocity applications provide tooltips when you hover over a particular screen element. When you use Cumulocity applications on touch devices, tooltips are shown when you touch a screen element for a longer time.
 
@@ -58,13 +58,13 @@ On smaller screens, the layout of an application changes, as shown below. The na
 
 The application switcher allows you to quickly switch between applications. Click the **Application Switcher** button at the top right corner to display a list of icons representing applications. 
 
-<img src="/guides/images/users-guide/application-switcher.png" alt="Application switcher" style="max-width: 50%">
+<img src="/guides/images/users-guide/overview-application-switcher.png" alt="Application switcher" style="max-width: 100%">
 
 The application switcher shows all Cumulocity applications you currently have access to. This can be subscribed applications, either built-in or custom ones, and [own applications](/guides/user-guide/administration#own-applications). Just click the icon for the desired application to open it as active application.
 
 If you are using SAG Cloud, the application switcher also shows other SAG Cloud applications at the first level, followed by the Cumulocity applications:
 
-<img src="/guides/images/users-guide/app-switcher-sag-cloud.png" alt="Application switcher 2-level" style="max-width: 50%">
+<img src="/guides/images/users-guide/overview-app-switcher-sag-cloud.png" alt="Application switcher 2-level" style="max-width: 100%">
 
 
 ### <a name="searching-and-filtering"></a>Search and filter functionality

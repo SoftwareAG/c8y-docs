@@ -102,7 +102,7 @@ Connections can be established to the gateway itself (localhost) or to any devic
 
 The "endpoint" is the IP address and port of the VNC, SSH or Telnet server running on the remote device. The IP address and port need to be reachable from the gateway. 	
 
-![Endpoints](/guides/images/users-guide/cra-endpoints.png)
+![Endpoints](/guides/images/users-guide/cra-endpoint-add.png)
 
 To configure new remote devices, click **Add endpoint**. Follow the descriptions below for configuring the various types of endpoints.
 
@@ -171,7 +171,7 @@ To connect to configured endpoints, choose an endpoint in the **Remote access** 
 
 The connection to the configured remote device is established and the VNC, SSH or Telnet screen is shared in the client area. 
 
-![Connect Endpoint](/guides/images/users-guide/cra-telnet.png)
+![Telnet connection](/guides/images/users-guide/cra-connect-telnet.png)
 
 To terminate the connection, click **Disconnect**.
 

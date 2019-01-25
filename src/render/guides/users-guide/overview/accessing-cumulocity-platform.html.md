@@ -1,6 +1,6 @@
 ---
 order: 20
-title: Accessing and login into the Cumulocity platform
+title: Accessing and logging into the Cumulocity platform
 layout: redirect
 ---
 
@@ -39,65 +39,46 @@ This will direct you to the login page of your default application.
 
 On the Login screen, enter your username and password and click **Login** to enter the application. 
 
-<img src="/guides/images/users-guide/login.png" alt="Login prompt" style="max-width: 50%">
+<img src="/guides/images/users-guide/overview-login.png" alt="Login prompt" style="max-width: 50%">
 
 Select the **Remember me** checkbox if you want the browser to remember your credentials, so that you do not have to enter them again when opening the application the next time. This is also convenient if you frequently switch between Cumulocity applications, as Cumulocity will request you to authenticate each time when starting an application. You can make the browser "forget" your credentials by explicitly logging out. 
 
-To logout, click the **User** button at the right of the the top bar and from the context menu select **Logout**.
+To explicitly logout, click the **User** button at the right of the the top bar and from the context menu select **Logout**.
 
-<img src="/guides/images/users-guide/logout.png" alt="Logout menu" style="max-width: 60%">
+<img src="/guides/images/users-guide/overview-logout.png" alt="Logout menu" style="max-width: 100%">
 
 ### <a name="welcome"></a>Welcome screen
 
-When you log into Cumulocity for the first time, you will be taken to the default application (usually the Cockpit application if not configured differently) where the **Welcome** page initially opens up.
+When you log into Cumulocity for the first time, you will be taken to the default application (usually the Cockpit application if not configured differently) where the **Welcome** screen initially opens up.
 
-<img src="/guides/images/users-guide/Cockpit/Cockpit_WelcomeScreen.png" name="Welcome screen" style="width:100%;"/>
+<img src="/guides/images/users-guide/overview-welcome-screen.png" name="Welcome screen" style="width:100%;"/>
 
 The **Welcome** screen contains the following items:
 
-* Quick links to the most relevant functions.
-* Links to the available applications.
-* Links to relevant documentation areas and to the Support Forum.
-* The latest news from the Cumulocity twitter channel. Note that this section is only available for tenants hosted by www.cumulocity.com.
+* Quick links to the most relevant functions
+* Links to the available applications
+* Links to relevant documentation areas and to the Support Forum
+* The latest news from the Cumulocity twitter channel. Note that this section is only available for tenants hosted by www.cumulocity.com
 
 **Hiding/restoring the Welcome screen**
 
-If you do not want the **Welcome** page to be your start page, activate the slider **Don't use as start page** on the top right.
+If you do not want the **Welcome** screen to be your start page, activate the slider **Don't use as start page** on the top right.
 
-To restore the **Welcome** page as start page, select **Welcome** in the navigator on the top left and deactivate the slider **Don't use as start page** again.
+To restore the **Welcome** screen as start page, select **Welcome** in the navigator on the top left and deactivate the slider **Don't use as start page** again.
 
 ### <a name="reset-password"></a>Resetting your password
 
 If you forgot your password follow these steps:
 
-1. Click the **Forgot password?** link on the login screen. 
+1. Click the **Forgot password?** link on the Login screen. 
 2. In the upcoming dialog, enter your email address and click **Reset password**. 
 3. Check your email account for an email from the Cumulocity support providing a password reset link. 
 4. Click the link in the email and provide your new password.
 
 > **Info:** The password reset link is only valid for one day.
 
-<img src="/guides/images/users-guide/resetpassword.png" alt="Reset password" style="max-width: 50%">
-
 >**Info:** The automated password reset will only work if your email address is stored with your Cumulocity user. If you get a warning that the password cannot be reset, you are either using a different email address than the one stored with your Cumulocity user, or your Cumulocity user has no email address stored. In either case, contact a Cumulocity administrator in your organization. Administrators can reset your password.
 If you yourself are the primary administrator, your email address used on first registering is automatically stored with your user. If you have questions, please contact the Cumulocity support.
-
-### <a name="change-password"></a>Changing your password
-
-To change your password follow these steps:
-
-1. Click the **User** button at the right of the top bar and from the context menu select **User settings**. 
-2. In the **Edit user** window, click **Change Password**.
-3. Enter a password and confirm it.
-4. Click **Save** to apply your settings.
-
-Make sure to select a strong password. To support you in doing so a password strength indicator is displayed along with a password change. 
-
-<img src="/guides/images/users-guide/passwordstrength.png" alt="Reset password" style="max-width: 50%">
-
-By default, the password must consist of at least eight characters. For a strong password you must include at least three of the following character types: uppercase letters, lowercase letters, numbers and symbols. 
-
-> **Info:** The password rules can be configured by the administrator, i.e. your administrator can configure your account to enforce a password policy. You may be required to pick a strong password for example or to change your password regularly.
 
 ### <a name="URLs"></a>Accessing pages using URLs
 

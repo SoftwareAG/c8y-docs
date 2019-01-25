@@ -1,5 +1,5 @@
 ---
-order: 70
+order: 75
 title: Sigfox
 layout: redirect
 ---

@@ -39,8 +39,8 @@ The following gateways are supported:
 * Netcomm NTC 6200
 	* Gateway router device
 	* Latest Firmware (4.2.1)
-* VNCProxy plugin
-	* Linux agent
+	* VNCProxy plugin
+* Linux agent
 	* Can be used on any linux-based gateway device
 	* Latest version required
 * Third-party devices

@@ -130,7 +130,7 @@ A “pre-defined” topic ID is a topic ID whose mapping to a topic name is know
 
 |Topic ID|Cumulocity topic|Description|
 |:--|:---|:----------|:---------------|
-|1|s/us|Cumulocity static template publish topic. This topic should be only used for Device creation (100).|
+|1|s/us|Cumulocity static template publish topic. This topic should only be used for Device creation (100).|
 |2|s/us/myChildDeviceIdentifier|Cumulocity static template publish topic. This topic should be used for all other purposes like publishing data and creation of child devices.|
 
 

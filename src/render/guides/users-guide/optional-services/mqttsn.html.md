@@ -99,7 +99,7 @@ After executing this command, the client starts listening for messages from the 
 
 ![Subscription](/guides/images/users-guide/mqttsn/subscription.png)
 
-To understand what “511,SN_DEVICE,Hello from Server” means, refer to [MQTT-SN static template](#sn-mqtt-static).
+To understand what “511,SN_DEVICE,Hello from Server” means, refer to [MQTT-SN static template](#sn-mqtt-static). Note that operations are dropped if the client is not subscribed to the topic.
 
 ### <a name="mqtt-sn-implementation"></a>MQTT-SN implementation
 
@@ -130,8 +130,8 @@ A “pre-defined” topic ID is a topic ID whose mapping to a topic name is know
 
 |Topic ID|Cumulocity topic|Description|
 |:--|:---|:----------|:---------------|
-|1|s/us|Cumulocity static template publish topic|
-|2|s/us/myChildDeviceIdentifier|Cumulocity static template publish topic. This topic should be used to create data for a child instead of adding the root device and the unique ID of the child to another section in the topic.|
+|1|s/us|Cumulocity static template publish topic. This topic should be only used for Device creation (100).|
+|2|s/us/myChildDeviceIdentifier|Cumulocity static template publish topic. This topic should be used for all other purposes like publishing data and creation of child devices.|
 
 
 ##### <a name="sn-topic-name-registration"></a>Topic name registration

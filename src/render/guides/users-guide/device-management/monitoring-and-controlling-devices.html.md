@@ -163,7 +163,9 @@ It is also possible to change the status of all alarms to "clear" at once. Click
 
 Operations are used to remote control devices. 
 
-Cumulocity displays operations at the level of individual devices and across all devices:
+>**Important**:When using Cumulocity IoT to remotely operate machinery, make sure that all remote operations follow the safety standards and do not cause any harm.
+
+Cumulocity shows operations at the level of individual devices and across all devices:
 
 * Click **Device control** in the **Overview** menu in the navigator to see the operations for all devices. 
 * * Switch to the **Control** tab in the details of a particular device to see the operations of this specific device.

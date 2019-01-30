@@ -32,7 +32,7 @@ For testing purposes, every tenant is subscribed to the demo application key "uL
 
 ### Accessing the inventory
 
-The following code snippet shows how to obtain a handle to the inventory from Java:
+The following code snippet shows how to obtain a handle to the inventory from C#:
 
             IInventoryApi inventory = platform.InventoryApi;
 
@@ -61,9 +61,9 @@ To create a new managed object, simply construct a local representation of the o
 			mo = inventory.Create(mo);
 			Console.WriteLine(mo.Id);
 
-The result of invoking "create" is a version of the new managed object with a populated unique identifier. 
+The result of invoking "create" is a version of the new managed object with a populated unique identifier.
 
-Now assume that you would like to store additional, own properties along with the device. This can simply be done by creating a new "fragment" in the form of a Java bean. For example, assume that you would like to store tariff information along with your meter. There is a day and a night time tariff, and we need to store the hours during which the night time tariff is active:
+Now assume that you would like to store additional, own properties along with the device. This can simply be done by creating a new "fragment" in the form of a C# bean. For example, assume that you would like to store tariff information along with your meter. There is a day and a night time tariff, and we need to store the hours during which the night time tariff is active:
 
 	public class Tariff
 	{
@@ -98,18 +98,12 @@ Now, you can simply add tariff information to your meter:
     Tariff tariff = new Tariff();
     mo.Set(tariff);
 
-This will store the tariff information along with the meter. For converting Java objects from and towards JSON/REST, Cumulocity uses Svenson. The [Svenson documentation](https:/fforw.github.io/svenson/) provides more information on how to influence the JSON format that is produced respectively accepted.
-
-When creating own fragments in OSGi, you need to make the fragments visible to the Cumulocity client libraries. To do this, add the following line to the manifest file of the bundle containing the fragments:
-
-    Eclipse-RegisterBuddy: com.nsn.cumulocity.model.core-model
-
-It is a good practice to maintain your domain model in a separate project in the SDK. That way, you can share the domain model between your agent and your application.
+This will store the tariff information along with the meter. For converting C# objects from and towards JSON/REST, Cumulocity uses Json.NET. The [Json.NET](https://www.newtonsoft.com/json/help) provides more information on how to influence the JSON format that is produced respectively accepted.
 
 
 ### Accessing the identity service
 
-A device typically has a technical identifier that an agent needs to know to be able to contact the device. Examples are meter numbers, IP addresses and REST URLs. To associate such identifiers with the unique identifier of Cumulocity, agents can use the identity service. Again, to create the association, create an object of type "ExternalIDRepresentation" and send it to the platform. 
+A device typically has a technical identifier that an agent needs to know to be able to contact the device. Examples are meter numbers, IP addresses and REST URLs. To associate such identifiers with the unique identifier of Cumulocity, agents can use the identity service. Again, to create the association, create an object of type "ExternalIDRepresentation" and send it to the platform.
 
 The code snippet below shows how to register a REST URL for a device. It assumes that "mo" is the managed object from the above example and "deviceUrl" is a string with the REST URL of the device.
 
@@ -153,68 +147,77 @@ Events and measurements can be accessed in a very similar manner as described ab
         SignalStrength signal = measurement.Get<SignalStrength>();
         Console.WriteLine(measurement.Source.Id + " " + measurement.DateTime + " " + signal.RssiValue + " " + signal.BerValue);
     }
-	
 
-	
 ### Controlling devices
 
-Finally, the "DeviceControlResource" enables you to manipulate devices remotely. It has two sides: You can create operations in applications to be sent to devices, and you can query operations from agents. 
+Finally, the "DeviceControlResource" enables you to manipulate devices remotely. It has two sides: You can create operations in applications to be sent to devices, and you can query operations from agents.
 
-In order to control a device it must be in the "childDevices" hierarchy of an agent managed object. The agent managed object represents your agent in the inventory. It is identified by a fragment com\_cumulocity\_model\_Agent. This is how Cumulocity identifies where to send operations to control a particular device. 
+In order to control a device it must be in the "childDevices" hierarchy of an agent managed object. The agent managed object represents your agent in the inventory. It is identified by a fragment com\_cumulocity\_model\_Agent. This is how Cumulocity identifies where to send operations to control a particular device.
 
 This code demonstrates the setup:
 
     ManagedObjectRepresentation agent = new ManagedObjectRepresentation();
-    agent.set(new com.cumulocity.model.Agent()); // agents must include this fragment
+    agent.Set(new Agent()); // agents must include this fragment
     // ... create agent in inventory
     ManagedObjectRepresentation device = ...;
     // ... create device in inventory
-     
+
     ManagedObjectReferenceRepresentation child2Ref = new ManagedObjectReferenceRepresentation();
-    child2Ref.setManagedObject(device);
-    inventory.getManagedObject(agent.getId()). addChildDevice(child2Ref);
+    child2Ref.ManagedObject= device;
+    inventory.GetManagedObject(agent.Id).AddChildDevice(child2Ref);
 
 For example, assume that you would like to switch off a relay in a meter from an application. Similar to the previous examples, you create the operation to be executed locally, and then send it to the platform:
 
-    DeviceControlApi control = platform.getDeviceControlApi();
-    OperationRepresentation operation = new OperationRepresentation();
-    operation.setDeviceId(mo.getId());
-    relay.setRelayState(RelayState.OPEN);
-    operation.set(relay);
-    control.create(operation);
+
+    IDeviceControlApi control = platform.DeviceControlApi;
+    OperationRepresentation operation = new OperationRepresentation
+    {
+        DeviceId = mo.Id
+    };
+    relay.SetRelayState(Relay.RelayState.OPEN);
+    operation.Set(relay);
+    control.Create(operation);
 
 Now, if you would like to query the pending operations from an agent, the following code would need to be executed:
 
-	OperationFilter operationFilter = new OperationFilter();
-	operationFilter.byAgent(mo.getId().getValue());
-	operationFilter.byStatus(OperationStatus.PENDING);
-	OperationCollection oc = control.getOperationsByFilter(operationFilter);
+    OperationFilter operationFilter = new OperationFilter();
+    operationFilter.ByAgent(mo.Id.Value);
+    operationFilter.ByStatus(OperationStatus.PENDING);
+    IOperationCollection oc = deviceControlApi.GetOperationsByFilter(operationFilter);
 
 Again, the returned result may come in several pages due to its potential size.
 
-	OperationCollectionRepresentation opCollectionRepresentation;
-	for (opCollectionRepresentation = oc.get(); opCollectionRepresentation != null; opCollectionRepresentation = oc.getNextPage(opCollectionRepresentation)) {
-		for (OperationRepresentation op : opCollectionRepresentation.getOperations()) {
-			System.out.println(op.getStatus());
-		}
-	}
+			foreach (OperationRepresentation op in oc.GetFirstPage().AllPages())
+			{
+				Console.WriteLine(op.Status);
+			}
 
-	
 
 ### Realtime features
 
-The Java client libraries fully support the real-time APIs of Cumulocity. For example, to get immediately notified when someone sends an operation to your agent, use the following code:
+The C# client libraries fully support the real-time APIs of Cumulocity. For example, to get immediately notified when someone sends an operation to your agent, use the following code:
 
-	Subscriber<GId, OperationRepresentation> subscriber = deviceControl.getNotificationsSubscriber();
-	Subscription<> subscription = subscriber.subscribe(agentId, new SubscriptionListener<GId, OperationRepresentation> {
-		public void onError(Subscription<GId> sub, Throwable e) {
-			logger.error("OperationDispatcher error!", e);
-		}
-		
-		public void onNotification(Subscription<GId> sub, OperationRepresentation operation) {
-			// Execute the operation
-		}
-	});
+			subscriber = new OperationNotificationSubscriber(platform);
+			subscriber.Subscribe(agentId, new Handler(operationProcessor));
+
+            public class Handler : ISubscriptionListener<GId, OperationRepresentation>
+            {
+                private SimpleOperationProcessor operationProcessor;
+
+                public Handler(SimpleOperationProcessor processor)
+                {
+                    this.operationProcessor = processor;
+                }
+
+                public void OnError(ISubscription<GId> subscription, Exception ex)
+                {
+                }
+
+                public void OnNotification(ISubscription<GId> subscription, OperationRepresentation notification)
+                {
+                    operationProcessor.Process(notification);
+                }
+            }
 
 > **Info:** "agentId" is the ID of your agent in the inventory.
 
@@ -229,21 +232,30 @@ If you wish to disconnect, the following code must be used:
 
 ### Reliability features
 
-In particular on mobile devices, Internet connectivity might be unreliable. To support such environments, the Java client libraries support local buffering. This means that you can pass data to the client libraries regardless of an Internet connection being available or not. If a connection is available, the data will be send immediately. If not, the data will be buffered until the connection is back again. For this, "async" variants of the API calls are offered. For example, to send an alarm, use
+In particular on mobile devices, Internet connectivity might be unreliable. To support such environments, the C# client libraries support local buffering. This means that you can pass data to the client libraries regardless of an Internet connection being available or not. If a connection is available, the data will be send immediately. If not, the data will be buffered until the connection is back again. For this, "async" variants of the API calls are offered. For example, to send an alarm, use
 
-	AlarmApi alarmApi = platform.getAlarmApi();
-	Future future = alarmApi.createAsync(anAlarm);
+    IAlarmApi alarmApi = platform.AlarmApi;
+    Task<AlarmRepresentation> task = alarmApi.CreateAsync(anAlarm);
 
-The "createAsync" method returns immediately. The "Future" object can be used to determine the result of the request whenever it was actually carried out.
+The "createAsync" method returns immediately. The "Task" object can be used to determine the result of the request whenever it was actually carried out.
 
 
 ### Logging Configuration
 
-Logging in the Java client SDK is handled through [slf4j](http://www.slf4j.org/) with a [logback](http://logback.qos.ch) backend. For a detailed description on how to use and configure logging, see the [logback documentation](http://logback.qos.ch/documentation.html).
+Logging in the C# client SDK is handled through [LibLog](https://github.com/damianh/LibLog/). For a detailed description on how to use and configure logging, see the [logback documentation](https://github.com/damianh/LibLog/wiki).
 
 Since version 0.11, the default logging level of the SDK is set to "Error" for all components, which means that logging messages are suppressed unless their level is "Error". If everything runs smoothly, there should be no log messages generated by the SDK. By default, log messages are sent to the console only.
 
-The default logging configuration can be changed by providing a new configuration file. Two methods for providing the configuration file are discussed here: via an absolute filename passed using a system property; and via an OSGi fragment. Note that both of these methods **override** the default behaviour, rather than extending it.
+The liblog, with liblog you actually embed a blob of code into the library. This code then picks up which logging abstraction is in use by the application and writes to it via some clever reflection code.  It has transparent built-in support for the following logging providers:
+
+* NLog
+* Log4Net
+* EntLib Logging
+* Serilog
+* Loupe
+* Custom Provider
+
+As soon as you add the configuration for your preferred provider and set up the necessary appender, logging should just work. If you wish to implement your custom provider (not sure why), you just need to ensure that your provider implements the ILogProvider interface or inherits from the LogProviderBase
 
 #### Configuration via System Property
 
@@ -253,38 +265,41 @@ The absolute path to a logging configuration file can be passed using the follow
 
 In Eclipse, this property should be added to the "Arguments-\>VM Arguments" of the "Run Configuration" window.
 
-#### Configuration via OSGi Fragment Bundle
 
-A more flexible approach is to provide the logger configuration via an OSGi bundle that can be deployed along with the client. From within Eclipse, the fragment can be generated as follows:
-
-1.  Create a new project of type "Fragment Project" called "LogConfig"
-    -   Target to run with: an OSGi framework
-    -   Host plugin ID: **ch.qos.logback.classic**
-
-2.  Add a file called "logback.xml" to the root of the new project. This file will contain the logging configuration.
-3.  Edit the MANIFEST.MF file and add the following:
-    -   On the "Build" page add the "logback.xml" file to the "Binary Build"
-
-4.  On the "Bundles" page of the "Run Configuration" dialog of the Java client project:
-    -   Select the "LogConfig" bundle
-    -   Deselect the "com.nsn.cumulocity.platform-services.sdk.logging-config" bundle
 
 #### Simple Logging Configuration
 
-The following example shows how to enable debug-level logging for a single component, called "com.cumulocity.javaclient", whilst keeping error-level logging for all other components. The following code snippet shows how to create the logger, and to log a message:
+The following example shows how to enable debug-level logging for a single component, called "MyClass", whilst keeping error-level logging for all other components. The following code snippet shows how to create the logger, and to log a message:
 
-    Logger logger = LoggerFactory.getLogger("com.cumulocity.javaclient");logger.debug("A debug message");
+	public class MyClass
+	{
+		private static readonly ILog Logger = LogProvider.For<MyClass>();
 
-The configuration file looks like this:
+		public void DoSomething()
+		{
+			Logger.Debug("Method 'DoSomething' in progress");
+		}
+	}
 
-	<configuration>
-		<appender name="STDOUT" class="ch.qos.logback.core.ConsoleAppender">
-			<encoder><pattern>%d{HH:mm:ss.SSS} [%thread] %-5level %logger{36} - %msg%n</pattern></encoder>
-		</appender>
-		<logger name="com.cumulocity.javaclient" level="debug"/>
-		<root level="error"><appender-ref ref="STDOUT" /></root>
-	</configuration>
+That’s it, no the library is ready to automatically pick-up logger used by the consuming application. For example, if Serilog is the selected library, assigning Serilog’s Logger.Log will automatically connect all the moving parts together:
+
+			Log.Logger = new LoggerConfiguration()
+                .MinimumLevel.Verbose()
+                .WriteTo.LiterateConsole()
+                .CreateLogger();
+
+            Log.Logger.Verbose("Starting...");
+
+            var myClass = new MyClass();
+            myClass.DoSomething();
+
+            Log.Logger.Verbose("Finishing...");
+            Console.ReadKey();
 
 When the code is run, the console should contain a message similar to the following:
 
-    21:52:02.790 [Start Level Event Dispatcher] DEBUG com.cumulocity.javaclient - A debug message
+The result is
+
+[21:09:18 APP] Starting...
+[21:09:18 APP] Method 'DoSomething' in progress
+[21:09:18 APP] Finishing...

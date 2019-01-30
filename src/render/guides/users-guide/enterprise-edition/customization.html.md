@@ -24,7 +24,9 @@ For a more detailed preview of your settings, click **Open preview** in the top 
 
 When you are done or want to store your settings, click **Save** at the bottom of the **Configuration** section to save your branding settings to your tenant.
 
-Saving the settings will not yet apply the settings to the subtenants. To do so, click **Apply** in the top menu bar.
+Saving the settings will not yet apply them to the current tenant and respective subtenants. To do so, click **Apply** in the top menu bar.
+
+Click **Reset** in the top menu bar to reset the branding of the current tenant and its subtenants to the default settings. The custom settings will still be saved but are no longer applied. 
 
 #### <a name="configuration-parameters"></a>Configuration parameters
 

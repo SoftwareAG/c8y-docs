@@ -82,16 +82,6 @@ The following information is displayed here:
 |Expiry date|Specifies the date on which support user access for the tenant will expire. If no date has been specified, the expiry date is set to "No limit".
 
 
-### <a name="subscribe"></a>Subscribing to applications
-
-In the **Applications** tab you can subscribe tenants to applications or remove the applications from the tenant. By default, tenants will be subscribed to the standard Cumulocity applications. 
-
-<img src="/guides/images/users-guide/Administration/Admin_SubtenantApplications.png" alt="Subscribe tenant" style="max-width: 100%">
-
-To subscribe an application to a tenant, hover over the applications under **Available applications** on the right and click **Subscribe** on the desired application.
-
-To remove an application, hover over the applications under **Subscribed applications** on the left and click **Unsubscribe**.
-
 ### Suspending subtenants
 
 You can temporarily suspend tenants. Suspending tenants blocks any access to this tenant, regardless whether the access is from devices, users or other applications. 
@@ -111,6 +101,117 @@ If a tenant is suspended, the tenant's data remains in the database and can be m
 To finally delete a tenant and remove all the data of the tenant, click the menu icon and from the context menu select **Remove**.
 
 >**Info**: This action cannot be reverted. For security reasons, it is only available in the management tenant.
+>
+
+### <a name="subscribe"></a>Subscribing and monitoring applications
+
+In the **Applications** tab you can view all subscribed applications, subscribe tenants to applications or remove the applications from the tenant. By default, tenants will be subscribed to the standard Cumulocity applications. 
+
+<img src="/guides/images/users-guide/Administration/admin-subtenant-applications.png" alt="Subscribe tenant" style="max-width: 100%">
+
+To subscribe an application to a tenant, hover over the applications under **Available applications** on the right and click **Subscribe** on the desired application.
+
+To remove an application, hover over the applications under **Subscribed applications** on the left and click **Unsubscribe**.
+
+#### Monitoring microservices
+
+For all applications hosted as microservices by Cumulocity the status of the microservice is indicated next to its name by symbols:
+
+<img src="/guides/images/users-guide/Administration/admin-applications-status.png" alt="Application details" style="max-width: 75%">
+
+The microservice may be in one of the following states:
+
+* <img src="/guides/icons/ok.png" alt="Up" style="max-width: 100%"> Microservice is up and running
+* <img src="/guides/icons/warning.png" alt="Up" style="max-width: 100%"> Microservice is unhealthy
+* <img src="/guides/icons/danger.png" alt="Up" style="max-width: 100%"> Microservice is down
+
+You may view details on their status by expanding the respective entry. 
+
+<img src="/guides/images/users-guide/Administration/admin-application-details.png" alt="Application details" style="max-width: 75%">
+
+The following information is provided:
+
+* Active: The number of active microservice instances
+* Unhealthy: The number of inactive microservice instances
+* Desired: The number of desired microservice instances
+* Name: Microservice instance name
+* Restarts: The number of microservice instance restarts
+
+Further details are provided on the **Status** tab of the respective application, see [Administration > Managing applications](/guides/users-guide/administration#managing-applications).
+
+### <a name="microservice-billing"></a>Microservice billing
+
+The microservice billing feature gathers information on microservice usage per subtenant for each microservice. This enables enterprise tenants and service providers to charge tenant not only based on subscriptions but also based on resources usage.
+
+
+#### Billing modes
+
+Cumulocity offers two billing modes:
+
+* **Subscription-based billing**: Charges a constant price when a tenant is subscribed to a microservice while resource usage is assigned to the owner
+ 
+* **Resource-based billing**: Exposes the number of resources used by a microservice to calculate billing
+
+The billing modes are specified per microservice in the [microservice manifest](/guides/reference/microservice-manifest) and are set in the field "billingMode".
+
+RESOURCES: Sets the billing mode to resources-based. This is the default mode and will be applied to all microservices that are not explicitly switched to subscription-based billing mode. 
+
+SUBSCRIPTION: Sets the billing mode to subscription-based. 
+
+#### Isolation level
+
+Two isolation levels are distinguished for microservices: per-tenant isolation and multi-tenant isolation.
+
+In case of subscription-based billing, the entire resources usage is always assigned to the microservice owner, independent of the isolation level,  while the subscribed tenant will be billed for the subscription. 
+
+In case of resources-based billing, charging depends on the isolation level:
+
+* Per-tenant - the subscriber tenant is charged for used resources
+* Multi-tenant - the owner of the microservice is charged for used resources 
+
+In case of multi-tenant isolation level, the parent tenant as the owner of a microservice (e.g. the management tenant of an enterprise tenant or service provider) is charged for both subscribed applications (subscription-based billing) and used resources (resource-based billing) of the subtenants. 
+
+#### Resources usage assignment for billing mode and isolation level
+
+|Billing mode|Microservice Isolation|Resources usage assigned to
+|:--------|:-----|:-----
+|Subscription-based|Per-tenant|Owner
+|Subsrciption-based|Multi-tenant|Owner
+|Resources-based|Per-tenant|Subscriber
+|Resources-based|Multi-tenant|Owner
+
+#### Collected values
+
+The following values are collected on a daily base for each tenant:
+
+* CPU usage, specified in CPU milliseconds (1000m = 1 CPU)
+* Memory usage, specified in MB
+
+Microservice resources are counted based at limits defined in the microservice manifest per day. At the end of each day, the information about resource usage is collected into the tenant statistics. It is also considered that a microservice might not be subscribed for a whole day. 
+
+**Example**: If a tenant was subscribed to a microservice for 12h and the microservice has 2 CPU and 2 GB of memory it should be counted as 1000 CPU milliseconds and 1024 MB of memory.
+
+For billing purposes, in addition to CPU usage and memory usage the cause for the billing is collected (e.g. owner, subscription for tenant):
+
+		      {
+	        "name":"cep",
+	        "cpu":6000,
+	        "memory":"20000",
+	        "cause":"Owner"
+	      },
+	      {
+	        "name":"cep-small",
+	        "cpu":1000,
+	        "memory":"2000",
+	        "cause":"Subscription for tenant"
+	      }
+	 
+#### Usage statistics
+
+The information on the microservice usage is presented in the **Tenant Statistics** page in the Administration application.
+
+![Tenant statistics](/guides/images/users-guide/ee-tenants-usage-statistics.PNG)
+     
 
 ### <a name="tenants-custom-properties"></a>Editing custom properties
 
@@ -180,7 +281,7 @@ Click **Tenant policies** in the **Tenants** menu to view all tenant policies av
 
 For each tenant policy, the name, an optional description and the number of options and retention rules is provided, either in a list or a grid.
 
-### Adding a tenant policy
+#### Adding a tenant policy
 
 Click **Add tenant policy** in the top menu bar to create a new tenant policy.
 
@@ -191,7 +292,7 @@ Click **Add tenant policy** in the top menu bar to create a new tenant policy.
 4. Optionally, add a tenant option.
 5. Click **Save** to save your settings.
 
-### Editing, duplicating and deleting policies
+#### Editing, duplicating and deleting policies
 
 To edit a policy, click on the desired policy or click **Edit** in the context menu, accessible through the menu icon. 
 

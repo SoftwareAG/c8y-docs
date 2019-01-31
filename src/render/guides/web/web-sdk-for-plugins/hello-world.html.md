@@ -88,13 +88,13 @@ Additionally, you can pass options:
 
 - ```-u https://tenant.cumulocity.com``` with the instance as parameter where you want your api calls to be proxied to,
 - ```-t examples``` or ```-t targets/examples/json``` to use specific target file, e.g. if you want to test your plugins inside one of the standard applications and you have defined your target file as in the example:
- 
+
 ```json
 {
   "name": "Examples",
   "comment": "Release with additional example plugins",
   "replaceImports": {
-    "core/c8yBranding": "myapplication/myBranding" 
+    "core/c8yBranding": "myapplication/myBranding"
   },
   "applications": [
     {
@@ -106,15 +106,15 @@ Additionally, you can pass options:
     {
       "contextPath": "devicemanagement",
       "addImports": [
-        "myapplication/deviceEventsRealTime", 
-        "myapplication/deviceContact" 
+        "myapplication/deviceEventsRealTime",
+        "myapplication/deviceContact"
       ]
     },
     {
       "contextPath": "cockpit",
-      "addImports": [ 
-        "myapplication/weather", 
-        "myapplication/iconmap" 
+      "addImports": [
+        "myapplication/weather",
+        "myapplication/iconmap"
       ]
     }
   ]
@@ -209,7 +209,7 @@ Inside the "hello.module.js" file, we initialize the module for our plugin:
 }());
 ```
 
-In our "hello.config.js" file, we have to configure our plugin so that it adds a menu item to the navigator and redirects to our view when clicking on this menu item. For that purpose, we can use the services "c8yNavigatorProvider" and "c8yViewsProvider" provided by the [Cumulocity JavaScript API](http://resources.cumulocity.com/documentation/jssdk/latest/). Simply inject the services into your config and call the following functions:
+In our "hello.config.js" file, we have to configure our plugin so that it adds a menu item to the navigator and redirects to our view when clicking on this menu item. For that purpose, we can use the services "c8yNavigatorProvider" and "c8yViewsProvider" provided by the [Cumulocity JavaScript API](http://resources.cumulocity.com/documentation/websdk/ng1-modules/). Simply inject the services into your config and call the following functions:
 
 ```js
 (function () {

@@ -9,7 +9,7 @@ ngx-components is a components collection and data access layer for Angular appl
  - core (`@c8y/ngx-components`) which contains all core components like title, navigator or tabs.
  - api (`@c8y/ngx-components/api`) which enables dependency injection of the [@c8y/client](/guides/web/angular#client) services.
 
- > The full documentation of all modules and components can be found [here](http://resources.cumulocity.com/documentation/websdk/ngx-component/)
+ > The full documentation of all modules and components can be found [here](http://resources.cumulocity.com/documentation/websdk/ngx-components/)
 
 ### Prerequisites
 

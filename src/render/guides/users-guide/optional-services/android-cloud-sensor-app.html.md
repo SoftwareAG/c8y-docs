@@ -38,7 +38,7 @@ To install the Cloud Sensor App on your iOS smartphone, navigate to the App Stor
 
 ### Registering the Cloud Sensor App to your tenant
 
-#### On an Android smartphone
+#### From an Android smartphone
 
 Their are two ways to register your Android smartphone as a new device in your tenant:
 
@@ -49,7 +49,7 @@ The QR code registration process (option 1) uses credentials derived from the us
 
 > **Info:** Just in case you want to re-register your smartphone, and you change from option 1 to option 2 (or vice versa), you first must delete the smartphone object in Device Management.
 
-#### Registering using a QR code with credentials
+##### Registering using a QR code with credentials
 
 Click **Next** in the Cockpit wizard to display the QR code with credentials to register your smartphone to your Cumulocity IoT tenant.
 
@@ -59,53 +59,89 @@ Your smartphone will be added to the devices list in the Device Management appli
 
 ![All devices](/guides/images/users-guide/alldevices.png)
 
-Moreover it will be added to the group “Phones” (which will be created if not available yet). You will find the group in the **Group** menu in the navigator. 
+Moreover it will be added to the group “Phones” (which will be created if not available yet). You will find the group in the **Group** menu in the navigator. This feature is only available in case of QR code registration.
 
 > **Info:** Until you scan the registration credentials QR code, the button will remain in the pending state showing the message “Waiting...”. Scanning the QR code will complete the registration process.
 
 > **Important:** The registration credentials are encrypted. However, we highly recommend to use specific demo user accounts on your tenant for large public presentations. Do not use this method for production tenants or for tenants containing sensitive data.
 
-#### Registering using web-based registration
+##### Registering using web-based registration
 
 To register your smartphone manually, follow these steps.
 
 1. Press the **Web-based Registration** link on the Cloud Sensor App Welcome screen on your smartphone. <br>![Action bar](/guides/images/users-guide/csa-webbased.png)
 2. Select the instance on which your IoT Sensor Demo tenant is hosted, e.g. cumulocity.com. <br>![Select Instance](/guides/images/users-guide/csa-select-instance.png)
-3. Press the **Register device** button to start the registration. A device ID will be displayed which needs to be entered during device registration in the Cumulocity tenant. <br>![Get device ID](/guides/images/users-guide/csa-get-device-id.png)
+3. Press **Register device** to start the registration. A device ID will be displayed which needs to be entered during device registration in the Cumulocity tenant. <br>![Get device ID](/guides/images/users-guide/csa-get-device-id.png)
 
 Next, go to your Cumulocity tenant.
 
 1. In the Device Management application, click **Registration** from the **Devices** menu, click **Register device** and in the upcoming window select **General device registration**. <br>![Register device](/guides/images/users-guide/csa-register-devices.png)<br>
 2. Enter the devide ID provided by the app on your smartphone.<br>![Register device](/guides/images/users-guide/csa-enter-id.png)<br>
 3. A message will show up that your device has been successfully registered. Click **Complete** to proceed. <br>![Register device](/guides/images/users-guide/csa-registration-complete.png)<br>
-46. Finally, click **Accept** to complete the registration process.<br>![Accept device](/guides/images/users-guide/csa-accept-device.png)<br>
+4. Finally, click **Accept** to complete the registration process.<br>![Accept device](/guides/images/users-guide/csa-accept-device.png)<br>
 
 Your smartphone will be registered and added to the devices list in the Device Management application, which can be accessed by navigating to **All devices** in the **Devices** menu in the navigator.
 
 ![All devices](/guides/images/users-guide/csa-device-list.png)
 
-Moreover it will be added to the group “Phones” (which will be created if not available yet). You will find the group in the **Group** menu in the navigator.
-
 For further information about registering a device on the platform manually, refer to [Connecting devices](/guides/users-guide/device-management#device-registration) in the Device Management section.
 
-In case of an Android smartphone, you need to accept several permission requests allowing for accessing data (photos, media and files) on your device, make and manage phone calls and access the location (including network information and GPS data) to let the smartphone transfer network and GPS data to the cloud. This requests only show up once.
+Next, you need to accept several permission requests allowing for accessing data (photos, media and files) on your device, make and manage phone calls and access the location (including network information and GPS data) to let the smartphone transfer network and GPS data to the cloud. This requests only show up once.
 
 Once your smartphone is registered, the device name, which identifies your smartphone in the platform, is displayed on the screen of the Cloud Sensor App. You may edit this name here.
 
 ![edit name](/guides/images/users-guide/csa-editname.png)
 
 
-#### On an iOS smartphone
+#### From an iOS smartphone
+
+To register your iOS smartphone as a new device to the Cumulocity platform, process the following steps.
+
+>**Info**: In case of an iOS smartphone, no QR-code-based registration is provided.
+
+1. On the start screen of the **Cumulocity IoT Sensor App**, press **Connect to Cumulocity**, to connect your device to Cumulocity. <br>![Start screen](/guides/images/users-guide/csa-ios-start-screen.png)<br>
+1. If you connect to Cumulocity for the first time, you need to register your device next.  
+1. In the **Account details** page of the **Cumulocity IoT Sensor App**, provide the relevant details for the Cumulocity account you want to register the device to, i.e. username and password, tenant and the instance on which your IoT Sensor Demo tenant is hosted, e.g. cumulocity.com. <br>![Account details](/guides/images/users-guide/csa-ios-account-details.png)<br>
+1. Press **Connect** to connect to the Cumulocity platform.
+
+In the Cumulocity platform, a message will show up that your device has been successfully registered. Click **Complete** to proceed. <br>![Register device](/guides/images/users-guide/csa-registration-complete.png)<br>
+4. Finally, click **Accept** to complete the registration process.<br>![Accept device](/guides/images/users-guide/csa-accept-device.png)<br>
+
+Your smartphone will be registered and added to the devices list in the Device Management application, which can be accessed by navigating to **All devices** in the **Devices** menu in the navigator.
+
+![All devices](/guides/images/users-guide/csa-device-list.png)
+
+For further information about registering a device on the platform manually, refer to [Connecting devices](/guides/users-guide/device-management#device-registration) in the Device Management section.
+
+Pressing the "**i**" symbol in the upper right corner of the start screen of the **Cumulocity IoT Sensor App** will open the "About" information of the application.
+
+![About](/guides/images/users-guide/csa-ios-about.png)
+
+### Viewing sensor data
+
+You can view the data from sensors on your smartphone by pressing **View sensors**.
+
+**On an Android smartphone**
+
+![View sensors](/guides/images/users-guide/csa-view-sensors.png)
+
+The sensor data, e.g. the GPS or acceleration data data, will be shown on the smartphone.
+
+![gps sensor](/guides/images/users-guide/csa-gps-sensor.png)
+
+![acceleration sensor](/guides/images/users-guide/csa-acceleration-sensor.png)
+
+**On an iOS smartphone**
+
+![View sensors](/guides/images/users-guide/csa-view-sensors.png)
+
+Note that on on IoS smartphone you can view sensor data without being connected to Cumulocity. Only on connecting your phone to Cumulocity the sensor data is being sent.
 
 ### Sending sensor data to Cumulocity
 
-The measurements from the sensors of your smartphone will automatically start being sent to your Cumulocity tenant. You can view the data from sensors by pressing the **View sensors** button.
+The measurements from the sensors of your smartphone will automatically start being sent to your Cumulocity tenant when your smartphone is connected to the platform.
 
-![phone sensors](/guides/images/users-guide/phonesensors.png)
-![gps sensor](/guides/images/users-guide/gpssensor.png)
-![acceleration sensor](/guides/images/users-guide/accelerationsensor.png)
-
-The data points will also be displayed in the graphs on the **Info** tab of your smartphone device in the Device Management application.
+The data points will be displayed in the graphs on the **Info** tab of your smartphone device in the Device Management application.
 
 ![map in cockpit](/guides/images/users-guide/csa-info.png)
 
@@ -119,7 +155,7 @@ Switch to the **Configuration** tab of your device and specify the interval in m
 
 ### Connecting TI Sensor Tag to the Cloud Sensor App
 
-The Cloud Sensor App connects to both TI Sensor Tag version 1.20 and 1.30 via Bluetooth. Use the **Scan devices** button in the Cloud Sensor App to connect a Sensor Tag.
+The Cloud Sensor App connects to both TI Sensor Tag version 1.20 and 1.30 via bluetooth. Use the **Scan devices** button in the Cloud Sensor App to connect a Sensor Tag.
 
 ![Scan devices button](/guides/images/users-guide/csa-scan-devices.png)
 
@@ -131,7 +167,7 @@ Press **Connect** next to the Sensor Tag of your choice. The Bluetooth connectio
 
 ![Sensor Tag Card](/guides/images/users-guide/csa-ticard.png)
 
-Observing information and sensor data from the TI Sensor Tag is possible by pressing the **View sensors** button on its card.
+Observing information and sensor data from the TI Sensor Tag is possible by pressing **View sensors** on its card.
 
 ![Sensor Tag Info](/guides/images/users-guide/csa-sensortag-info.png)
 
@@ -139,7 +175,7 @@ In your Cumulocity tenant, the data points for the Sensor Tag will be displayed 
 
 ![Sensor tag data points](/guides/images/users-guide/sensortagdatapoints.png)
 
-To detach the Sensor Tag from your smartphone, press the **Remove** button on its card.
+To detach the Sensor Tag from your smartphone, press **Remove** on its card.
 
 ### Device control
 

@@ -63,7 +63,7 @@ To create a new managed object, simply construct a local representation of the o
 
 The result of invoking "create" is a version of the new managed object with a populated unique identifier.
 
-Now assume that you would like to store additional, own properties along with the device. This can simply be done by creating a new "fragment" in the form of a C# bean. For example, assume that you would like to store tariff information along with your meter. There is a day and a night time tariff, and we need to store the hours during which the night time tariff is active:
+Now assume that you would like to store additional, own properties along with the device. This can simply be done by creating a new "fragment" in the form of a C# class. For example, assume that you would like to store tariff information along with your meter. There is a day and a night time tariff, and we need to store the hours during which the night time tariff is active:
 
 	public class Tariff
 	{
@@ -255,16 +255,7 @@ The liblog, with liblog you actually embed a blob of code into the library. This
 * Loupe
 * Custom Provider
 
-As soon as you add the configuration for your preferred provider and set up the necessary appender, logging should just work. If you wish to implement your custom provider (not sure why), you just need to ensure that your provider implements the ILogProvider interface or inherits from the LogProviderBase
-
-#### Configuration via System Property
-
-The absolute path to a logging configuration file can be passed using the following system property:
-
-    -Dlogback.configurationFile=/path/to/config.xml
-
-In Eclipse, this property should be added to the "Arguments-\>VM Arguments" of the "Run Configuration" window.
-
+As soon as you add the configuration for your preferred provider and set up the necessary appender, logging should just work. If you wish to implement your custom provider, you just need to ensure that your provider implements the ILogProvider interface or inherits from the LogProviderBase
 
 
 #### Simple Logging Configuration

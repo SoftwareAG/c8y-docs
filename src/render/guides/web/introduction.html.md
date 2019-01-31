@@ -12,6 +12,6 @@ We strongly recommend using Web SDK for Angular when developing new web applicat
 
 Web SDK for Angular JS is deprecated. Therefore, its documentation is no longer provided here.  As all Cumulocity APIs are backward compatible, Angular JS applications will still continue to work. 
 
-Correspondingly, [Web SDK for plugins](/guides/web/web-sdk-for-plugins), which is still based on Angular JS, is also deprecated but still supported.
+[Web SDK for plugins](/guides/web/web-sdk-for-plugins) is still based on Angular JS. We are currently working on an Angular-based solution which will replace the existing Web SDK for plugins in the future.
 
 If you have previously been working with older versions you might be interested in some short [background information](/guides/web/background) on the evolution of the UI stack to better understand how and why it is now designed the way it is.

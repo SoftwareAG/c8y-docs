@@ -1,21 +1,26 @@
 ---
 order: 40
-title: Jasper Control Center
+title: Connectivity
 layout: redirect
 ---
+The Connectivity Add-On to Cumulocity provides you with a holistic view of mobile device data. This Add-On works from within the Cumulocity Device Management Application, it complements basic device information with the additional connectivity details.
 
-The Jasper Control Center Add-On to Cumulocity provides you with a holistic view of mobile device connectivity. This Add-On works from within the Cumulocity Device Management Application. While Cumulocity itself communicates directly with devices and shows connectivity information as reported by the device, the Jasper Control Center Add-On complements this with a view of connectivity.
+Connectivity Add-On support three different sim information providers: Jasper, Comarch and Ericsson. As the providers differ from one another not all the features are available for each of them. Following features are supported by each of the provider:
+
+|Feature|Jasper|Ericsson|Comarch|
+|:------|:-----|:-------|:------|
+|Check the status of the SIM card in the device|x|x|x|
+|Check the online status of the device as reported by the network|x|x|x|
+|Change SIM card status, for example activate or deactivate it|x|x|x|
+|Disconnect SIM card from current session| | |x|
+|Communicate with the device through text messages, for example, to set APN parameters|x| |x|
+|View summary usage of data traffic, text messages and voice calls|x|x|x|
+|View detail usage of data traffic, text messages and voice calls|x|x| |
+|View the history of data sessions and any changes to the SIM card or traffic|x| |&nbsp;|
+
+As you can see Jasper is currently the most feature rich provider. All the below guide will be based on this provider, but the same configuration and usage applies also for others. If there are any differences, they will be marked explicitly.
 
 <img src="/guides/images/users-guide/jasperarchitecture.png" alt="Jasper architecture">
-
-If you have a Jasper Control Center account with your network provider, you can link that account to your Cumulocity tenant. With this combination you can:
-
-* Check the status of the SIM card in the device and activate or deactivate it.
-* Check the online status of the device as reported by the network.
-* View usage of data traffic, text messages and voice calls.
-* View the history of data sessions and any changes to the SIM card or tariffs.
-* Invoke the Control Center diagnostics tools.
-* Communicate with the device through text messages, for example, to set APN parameters.
 
 The following sections describe:
 
@@ -28,7 +33,7 @@ The following sections describe:
 
 Cumulocity accesses your Jasper Control Center account using a dedicated user that you need to create in the Control Center and configure it in Cumulocity. This user is used for all access from Cumulocity to Jasper Control Center, so the permissions of the user have influence on functionalities available in Cumulocity.
 
-Besides the user, you also need a so-called API license key and API server URL. To determine your API license key and API server URL:
+Besides the user, you also need a so-called API license key (only required by Jasper) and API server URL. To determine your API license key and API server URL:
 
 * Use a Control Center administrator user to log in to your Control Center account and click "API integration" on the Control Center home page. 
 * Your API license key and the API server URL are displayed on the top left.
@@ -65,7 +70,7 @@ To assign permissions, navigate to the administration application and select "Re
 
 <img src="/guides/images/users-guide/connectivityperms.png" alt="Connectivity permission settings"  style="max-width: 80%">
 
-Jasper Control Center identifies SIM cards through their ICCID ("integrated circuit card identifier"). In most cases,  devices will report the ICCID of their SIM card automatically to Cumulocity. If the ICCID is not shown:
+Jasper and Comarch identifies SIM cards through their ICCID ("integrated circuit card identifier") however Ericsson is using MSISDN ("mobile station international subscriber directory number"). In most cases, devices will report the ICCID and MSISDN of their SIM card automatically to Cumulocity. If the ICCID is not shown:
 
 * Determine the ICCID of the SIM card. It is printed on the SIM card and is visible in Control Center.
 * Enter the ICCID in the "Info" tab, then click "Save".

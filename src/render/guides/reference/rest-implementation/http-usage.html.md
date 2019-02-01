@@ -131,6 +131,7 @@ A successful response will have no body but the following response headers:
     Set-Cookie: authorization=<<token>>;
     Set-Cookie: XSRF-TOKEN=<<xsrfToken>>;
 
+Authorization cookie is valid for 2 weeks.
 
 ### Application management
 

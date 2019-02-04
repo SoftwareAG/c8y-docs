@@ -1,11 +1,11 @@
 ---
-order: 75
-title: SIM agent
+order: 31
+title: Connectivity agent
 layout: redirect
 ---
-The SIM agent, which works from within the Cumulocity Device Management application, provides basic information on mobile devices and additional connectivity details.
+The Connectivity agent, which works from within the Cumulocity Device Management application, provides basic information on mobile devices and additional connectivity details.
 
-Cumulocity supports three different SIM information providers: Jasper, Comarch and Ericsson. As the providers differ from each other, not all features are available for each provider. 
+Cumulocity supports three different SIM providers: Jasper, Comarch and Ericsson. As the providers differ from each other, not all features are available for each provider. 
 
 The following features are supported by the providers:
 
@@ -70,7 +70,7 @@ Process the following step to configure the connectivity in Cumulocity:
 
 ![Jasper settings](/guides/images/users-guide/SIM-connectivity-item.png)
 
-The SIM agent is now set up.
+The Connectivity agent is now set up.
 
 ### <a name="link-sims"></a>Linking SIMs and mobile devices
 

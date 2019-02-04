@@ -22,25 +22,28 @@ The following features are supported by the providers:
 
 As you can see, Jasper currently is the most feature-rich provider. 
 
-The following description is based on Jasper, but the same configuration and usage also applies to the other providers. If there are any differences, they will be stated explicitly.
+The following description is primarily based on Jasper, but the same configuration and usage also applies to the other providers. If there are any differences, they will be stated explicitly.
 
 <img src="/guides/images/users-guide/jasperarchitecture.png" alt="Jasper architecture">
 
-The following sections describe exemplarily:
+The following sections describe:
 
-* How to [link your Jasper Control Center account](#link-account) to your Cumulocity tenant.
-* How to [link SIMs](#link-sims) and mobile devices.
-* Which information is shown in the [Connectivity tab](#jasperinfo).
-* How to [manage connectivity](#managing) from Device Management.
+* How to [set up your Jasper Control Center account](#link-account) (examplarily)
+* How to configure the [connectivity](#connectivity) to the SIM provider in your Cumulocity tenant
+* How to [link SIMs](#link-sims) and mobile devices
+* Which information is shown in the [Connectivity tab](#jasperinfo)
+* How to [manage connectivity](#managing) from Device Management
 
-### <a name="link-account"></a>Linking your Jasper Control Center account
+### <a name="link-account"></a>Setting up your Jasper Control Center account
 
-Cumulocity accesses your Jasper Control Center account using a dedicated user that you need to create in the Control Center and configure in Cumulocity. This user is used for all access from Cumulocity to Jasper Control Center, so the permissions of the user have influence on functionalities available in Cumulocity.
+The following steps describe how to create a dedicated user in the Jasper Control Center. This user is used for all access from Cumulocity to Jasper Control Center, so the permissions of the user have influence on functionalities available in Cumulocity.
+
+>**Info**: In a similar way, we recommend to set up a dedicated user for Ericsson or Comarch to get the credentials required to connect to Cumulocity. Ask your administrator for further details.
 
 Besides the user, you also need a so-called API license key (only required for Jasper) and API server URL. To determine your API license key and API server URL, use a Control Center administrator user to log in to your Control Center account and click **API integration** on the Control Center home page. 
 Your API license key and the API server URL are displayed on the top left.
 
-**We recommend creating a dedicated user in Jasper Control Center:**
+To create a user in Jasper Control Center perform the following steps:
 
 1. As an admin user, navigate to **Admin** and **Users**.
 1. Click **Create New**.
@@ -50,14 +53,20 @@ Your API license key and the API server URL are displayed on the top left.
 
 ![Jasper user management](/guides/images/users-guide/jasperadmin.png)
 
-The user is now created but does not have a password yet. Follow the instructions emailed to you by Control Center to set a password. Now link your Jasper Control Center account to Cumulocity:
+The user is now created but does not have a password yet. Follow the instructions emailed to you by Control Center to set a password. 
+
+
+### <a name="connectivity"></a>Configuring the connectivity for the SIM provider in Cumulocity
+
+Process the following step to configure the connectivity in Cumulocity:
 
 1. Use a Cumulocity administrator user to log into the Cumulocity platform.
 1. Switch to the Administration application.
 1. Click **Connectivity** in the **Settings** menu of the navigator. If the menu item is not displayed, make sure that your user has [ADMIN permission for Connectivity](/guides/users-guide/administration#managing-permissions). If the menu item is still not available, contact [support](https://support.cumulocity.com) to make the Connectivity agent available in your tenant.
 2. Switch to the **SIM provider settings** tab.
-3. Select a provider (in this case "Jasper") from the drop-down list.
-1. Enter URL, key, username and password, then click **Save**.
+3. Select a provider from the drop-down list.
+1. Enter the credentials (URL, key (in case of Jasper), username and password) for the respective SIM provider account. If you do not have any credentials, ask your administrator.
+2. Click **Save** to save your settings.
 
 ![Jasper settings](/guides/images/users-guide/SIM-connectivity-item.png)
 

@@ -17,7 +17,7 @@ In this case, you can use Cloud Remote Access to securely manage remote devices.
 >**Important**: Be aware that using Cloud Remote Access includes administrative intervention: 
 >
 >* Often, devices have no detailed permission management, so you give a user very fundamental access to the device.
-* You may remotely operate machinery. Users may only use this feature following the machine safety standards. 
+* When using Cumulocity IoT to remotely operate machinery, make sure that all remote operations follow the safety standards. 
 
 ### Supported protocols and gateways
 

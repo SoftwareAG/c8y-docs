@@ -1,11 +1,37 @@
 ---
 order: 21
-title: Supporting users in other tenants
+title: Support user access
 layout: redirect
 ---
 
+With the support user access feature, support users, i.e. users of the management tenant with specific permissions, can log into accounts of other subtenant's users to provide help in case of any issues.
 
-Support users are users in the management tenant with a special permission to log in as other tenant's users. As an example, suppose you get a support call from a user "john" in the tenant "acme.cumulocity.com". The user cannot run certain functionality, and you suspect that it is a permission issue. Your username in the management tenant is "jill" and you are permitted to carry out support for "acme.cumulocity.com". In this case, you can log in to "acme.cumulocity.com" using the username "jill&#36;john" and your password for "jill". Now you can reproduce what "john" is seeing. 
+To so so, support user access must be enabled. This can globally be done on platform level or on user level as described below. 
+
+
+### <a name="configuring-support-access"></a>Configuring support user access
+
+Support user access may be enabled on different levels.
+
+**Platform level**
+
+The management tenant can enable support user access for all subtenants on platform level. This is done in the **Configuration** page, see [Customizing the platform](/guides/users-guide/enterprise-edition#configuration). 
+
+If support user access is enabled, support users can log into any subtenant as any user, unless overridden on subtenant level. Subtenant users cannot enable/disable access themselves. If support user access is disabled support users can log in only to subtenants for which at least one user has explicitly enabled such access, as described next.
+
+**Subtenant/user level** 
+
+If support user access is disabled on platform level, it may still be enabled by a subtenant user. This is done by clicking **Enable support** in the **User** menu, see [User options and settings](/guides/users-guide/overview#user-settings). 
+
+The support access is then not restricted to the user who activated it but applies to all users of the subtenant. This is necessary for retracing of role/right issues.
+
+After a user has activated support access, the menu item changes to **Disable support**, so that the user can disable a pending support request which has been resolved actively before it expires.
+
+The duration of the active support request is configurable on platform level (default is 24 hours), see [Customizing the platform](/guides/users-guide/enterprise-edition#configuration).
+
+Each new support request will prolong the support duration for the specified number of hours. After the last support request in a subtenant has expired or has been actively disabled by the user, the support user access for the subtenant will immediately be disabled (if not enabled globally). 
+
+Details on the status of support user requests and support user access for a tenant can be found in the **Properties** tab of the tenant, see [Managing tenants](/guides/users-guide/enterprise-edition#managing-tenants).
 
 ### Configuring support users
 
@@ -24,9 +50,8 @@ Using the "Support" inventory role, you can selectively assign support to partic
 
 **User-provided permission**
 
-Users can allow support, i.e. a management tenant user logging in as them. To do so, click the **User** button at the right of the top bar and from the context menu select **Enable support**. Click **Ok** to confirm. Support will be active for 24 hours. 
+Users can allow support, i.e. a management tenant user logging in as them. To do so, click the **User** button at the right of the top bar and from the context menu select **Enable support access**. For details, refer to [User menu](/guides/users-guide/overview#user-settings).
 
-![Enable support](/guides/images/users-guide/enablesupport.png)
 
 ### Logging in as support user
 
@@ -47,3 +72,8 @@ In this case, the support user will access the tenant with one of the administra
 Audit logs are created for each support user access and for the actions that support users perform. In the column "Who?" the author's name will be shown in form of:
 
 	"support_user$user"
+	
+	
+### Example
+
+As an example, suppose you get a support call from a user "john" in the tenant `acme.cumulocity.com`. The user cannot run certain functionality, and you suspect that it is a permission issue. Your username in the management tenant is "jill" and you are permitted to carry out support for `acme.cumulocity.com`. In this case, you can log in to `acme.cumulocity.com` using the username "jill&#36;john" and your password for "jill". Now you can reproduce what "john" is seeing. 

@@ -28,13 +28,11 @@ The **Tenants** page provides the following information on each subtenant:
 
 * The name of the subtenant, e.g. company name of your customer.
 * The ID and domain. Note: The domain can be changed later on. The ID cannot be changed anymore once the tenant was created.
-* An optional contact name and phone number.
+* Optionally, a contact name and phone number.
 * The date when the tenant was created.
 * The status of the tenant, either active (indicated by a green checkmark icon) or suspended (indicated by a red cross icon).
 
-If you are using the management tenant, you will see an additional column "Parent tenant". This column shows the tenant that created the listed tenant.
-
-![Sub-tenants](/guides/images/users-guide/Administration/Admin_Subtenants.png)
+In the management tenant, you will see an additional column "Parent tenant". This column shows the tenant that created the listed tenant.
 
 ### <a name="creating-tenants"></a>Creating sub-tenants
 
@@ -61,11 +59,28 @@ From the management tenant, you can enable other tenants to create subtenants. T
 
 ![Tenant-creation](/guides/images/users-guide/createtenant.png)
 
-### Editing subtenant properties
+### Viewing or editing subtenant properties
 
-To edit subtenants, click on the desired subtenant or click **Edit** in the context menu, accessible through the menu icon.
+To edit subtenants properties, click on the desired subtenant or click **Edit** in the context menu, accessible through the menu icon.
 
 In the **Properties** tab, all fields are editable except of the ID and the administrator's username. For details on the fields, refer to [Creating sub-tenants](#creating-tenants).
+
+![Sub-tenants](/guides/images/users-guide/Administration/admin-subtenant-properties.png)
+
+#### Support user access
+
+In the management tenant, you will moreover find information here on the support user requests/access for the subtenants.
+
+<img src="/guides/images/users-guide/Administration/admin-support-user-properties.png" alt="Support user access information" style="max-width: 100%">
+
+The following information is displayed here:
+
+|Field|Description
+|:--------|:-----
+|Status|May be either *Enabled* or *Disabled*. <br>*Enabled* indicates that: <br> - support user access has ben activated on platform level (see [Customizing your platform](/guides/users-guide/enterprise-edition#configuration)), <br> - one or more subtenant users have activated support user access. <br>*Disabled* indicates that: <br> - support user access has been deactivated on platform level, <br> - support user access has been activated on platform level but deactivated for the subtenant, <br> - no subtenant user has currently any active support user access (i.e. as each support user request has either expired or has actively been deactivated).
+|Active requests count|The number of requests currently active in the subtenant. Only displayed if support user access is not enabled globally on platform level. Shown as a number in a small red dot.
+|Expiry date|Specifies the date on which support user access for the tenant will expire. If no date has been specified, the expiry date is set to "No limit".
+
 
 ### Suspending subtenants
 

@@ -78,7 +78,7 @@ The rule uses the following parameters:
 
 **Functionality** 
 
-When an alarm is created, sends e-mail, sms, and/or initiates text-to-speech.
+When an alarm is created, sends e-mail or SMS.
 
 **Parameters**
 
@@ -90,7 +90,7 @@ The rule uses the following parameters:
 |:---|:---|:---|
 |1|Rule name|Pre-filled with the name of the rule template. Can be modified according to your needs.
 |2|On alarm matching:|The types of alarms triggering the rule. For each newly created alarm with one of these types in the list the rule is triggered.
-|3|Escalate as follows:|Escalation steps processed in a chain. <br> Click **Add step** to define at least one step: <br> **Type**: Type of action executed in the step. Possible values are: <br> * Email (see "On alarm send e-mail" rule for parameter descriptions). <br> * SMS (see "On alarm send SMS" rule for parameter descriptions). <br> * Phone (see "On alarm initiate text-to-speech call" rule for parameter descriptions). <br> **Condition**: The condition applied when the rule will be executed. Possible values are: <br> * Always: Action will always be executed. <br> * Always: If step N failed. Only phone steps may fail. The step is marked as failed once all retries have been made without a successful call. This option only appears if there already is a phone step configured that can be referred to.
+|3|Escalate as follows:|Escalation steps processed in a chain. <br> Click **Add step** to define at least one step: <br> **Type**: Type of action executed in the step. Possible values are: <br> * Email (see "On alarm send e-mail" rule for parameter descriptions). <br> * SMS (see "On alarm send SMS" rule for parameter descriptions). <br> **Condition**: The condition applied when the rule will be executed. Possible values are: <br> * Always: Action will always be executed. <br> * Always: If step N failed. Only phone steps may fail. The step is marked as failed once all retries have been made without a successful call. This option only appears if there already is a phone step configured that can be referred to.
 |4|Target asset or devices|Groups or devices the rule shall be applied to.
 
 
@@ -376,37 +376,9 @@ The rule uses the following parameters:
 
 >**Info:**  If you clear an alarm, you state that the alarm is resolved. A new alarm is not raised unless the device changes its state and exceeds the thresholds again.
 
-### On alarm initiate text-to-speech call
-
-**Functionality** 
-
-When an alarm is created, it initiates a text-to-speech call.
-
-**Parameters**
-
-The rule uses the following parameters:
-
-<img src="/guides/images/users-guide/Cockpit/Cockpit_SmartRuleInitiateCall.png" name="Smart Rule initiate call" style="width:50%;"/>
-
-|Step|Field|Description|
-|:---|:---|:---|
-|1|Rule name|Pre-filled with the name of the rule template. Can be modified according to your needs.
-|2|On alarm matching:|The types of alarms triggering the rule. For each newly created alarm with one of these types in the list the rule is triggered.
-|3|Text-to-speech:|**Phone number**: Valid international phone number. Use country codes in the format "+49" (as an example for Germany).<br> **Message**: The text read out by the rule. <br> Retries: The number of retries to reach the target phone number if not successful (default is "0", max is "20").<br> **Interval**: The time interval between the retries in minutes (default is "5").<br>**Acknowledgment**: If selected the receiver of the call has to acknowledge the call (a call not acknowledged will not count as successful)<br> **Acknowledgment text**: The acknowledgment message which will be read after the main message, for example: "Please acknowledge this call by pressing the button 5". <br> **Acknowledgment number**: The number of the button the receiver has to push to acknowledge. If the button has been pushed, the call will be successful and the alarm status will be changed to acknowledged.
-|4|Target asset or devices|Groups or devices the rule shall be applied to.
-
-**Troubleshooting**
-
-* Make sure that the alarm was created and not duplicated from somewhere.
-
-* Check if the device is in [maintenance](/guides/reference/device-management) mode. No new alarm will be created because of suppression policy.
-
-* If you have configured an alarm mapping rule (see [Administration > Reprioritizing alarms](/guides/users-guide/administration#reprio-alarms)) which changes the alarm severity, the alarm may have different severity than expected.
-
-
 ### Smart Rule Variables
 
-In certain rule parameters, variables can be used. When a rule is triggered, the variables are replaced by their actual values. You can use this mechanism to insert device names or alarm text into various outputs (email, SMS, text-to-speech). You can include any information of the triggering event (like the alarm) and its source device.
+In certain rule parameters, variables can be used. When a rule is triggered, the variables are replaced by their actual values. You can use this mechanism to insert device names or alarm text into various outputs (email, SMS). You can include any information of the triggering event (like the alarm) and its source device.
 
 The following table lists example variables:
 

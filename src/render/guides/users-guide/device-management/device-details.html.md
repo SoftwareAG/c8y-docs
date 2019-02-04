@@ -237,10 +237,11 @@ The **Shell** tab presents a command prompt to enter commands.
 
 In the command prompt you can enter arbitrary command text. To send the command text to the device, click **Execute**. This button only is activated if the device is online.
 
-Click **View history** at the right of the top menu bar to display a list of the previously executed commands. By default, the last three commands are visible.
-The list displays status, date and text of a command. Clicking a list item reveals the result of the command (provided it has been executed).
-
 ![Device shell](/guides/images/users-guide/shell.png)
+
+>**Important**:When using Cumulocity IoT to remotely operate machinery, make sure that all remote operations follow the safety standards and do not cause any harm.
+
+Click **View history** at the right of the top menu bar to switch to the **Control** tab which displays a list of the previously executed commands. For details, refer to [Monitoring and controlling devices > Working with operations](#operation-monitoring).
 
 For your convenience, Cumulocity provides several frequently used commands for some devices. Click **<_Get predefined commands** at the right of the top menu bar to open a window containing a list of available pre-defined commands. Select the command of your choice and click **Use**, to copy the command to the command prompt, or **Execute**, to execute the command straight away. You may also add new commands here for re-use.
 

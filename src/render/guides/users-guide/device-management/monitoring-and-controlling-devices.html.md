@@ -161,14 +161,29 @@ It is also possible to change the status of all alarms to "clear" at once. Click
 
 ### <a name="operation-monitoring"></a>Working with operations
 
-Operations are used to remote control devices. 
+Operations are used to remotely control devices. 
 
-Cumulocity displays operations at the level of individual devices and across all devices:
+You can view operations at the level of individual devices and across all devices:
 
 * Click **Device control** in the **Overview** menu in the navigator to see the operations for all devices. 
 * * Switch to the **Control** tab in the details of a particular device to see the operations of this specific device.
 
 ![Device Control](/guides/images/users-guide/DeviceManagement/DevMgmt_DeviceControl.png)
+
+For each operation, the following information is provided:
+
+|Info|Description|
+|:---|:---|
+|Status|One of pending, executing, successful, failed (see below).
+|Name|Name of the operation.
+|Device|The name of the device. Clicking the name leads you to the detailed view of the device.
+
+Clicking a row expands it and displays further details on the operation.
+
+* **Details**: Providing information on the operation name and status. In case of status = FAILED the reason for the failure is provided. 
+* **History of Changes**: Providing information on the past changes of the operation.
+
+![Operation Details](/guides/images/users-guide/DeviceManagement/DevMgmt_OperationDetails.png)
 
 Operations can be in any of four states, indicated by meaningful icons:
 
@@ -183,24 +198,15 @@ By clicking one of the state buttons at the top, the corresponding operations wi
 
 Click **Realtime** at the right of the top menu bar to see operations coming in from the devices in realtime.
 
-Operations are listed in descending time order. Operations are executed strictly according to this order.
+>**Info**: Operations are listed in descending time order. Operations are executed strictly according to this order.
 
-For each operation, the following information is provided:
+#### Creating and executing operations
 
-|Info|Description|
-|:---|:---|
-|Status|One of pending, executing, successful, failed (see above).
-|Name|Name of the operation.
-|Device|The name of the device. Clicking the name leads you to the detailed view of the device.
+Operations for a specific device are created and executing in the **Shell** tab of the device, see [Device details > Shell](/guides/users-guide/device-management#shell).
 
-Clicking a row expands it and displays further details on the operation.
+>**Important**:When using Cumulocity IoT to remotely operate machinery, make sure that all remote operations follow the safety standards and do not cause any harm.
 
-* **Details**: Providing information on the operation name and status. In case of status = FAILED the reason for the failure is provided. 
-* **History of Changes**: Providing information on the past changes of the operation.
-
-![Operation Details](/guides/images/users-guide/DeviceManagement/DevMgmt_OperationDetails.png)
-
-<a name="bulk-operations"></a>**Bulk Operations**
+##### <a name="bulk-operations"></a>Bulk operations
 
 For easier handling of devices, Cumulocity offers bulk operations. With bulk operations you can at once execute operations for each device within one group.
 

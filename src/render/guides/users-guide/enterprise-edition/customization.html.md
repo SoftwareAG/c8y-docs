@@ -6,19 +6,59 @@ layout: redirect
 
 In an Enterprise Edition installation under the **Settings** menu you can specify settings for the customization of your platform.
 
-**Info**: For information on the settings in the **Configuration** tab refer to [Changing Settings > Configuration settings](/guides/users-guide/administration/#config-platform) in the Administration section.
+### <a name="configuration"></a>Configuration
+
+**Info**: For information on the general settings in the **Customization** tab refer to [Changing Settings > Configuration settings](/guides/users-guide/administration/#config-platform) in the Administration section. Here, only the features will be explained which are exclusively available for the management tenant.
+
+#### Support user
+
+In the **Support user** section, you configure the parameters for the support user activation for subtenant users.
+
+With the support user feature, support users (i.e. users with specific permissions in the management tenant) can access subtenant users in case of any issues. Refer to [Supporting user access](/guides/users-guide/enterprise-edition#users-in-other-tenants) for further information.
+
+<img src="/guides/images/users-guide/Administration/admin-support-user-config.png" alt="Configuration" style="max-width: 100%">
+
+In the field **Enable support user**, specify if support user access is enabled for subtenant users. Possible values you can enter here are:
+
+* *true*: Support user access is enabled. If support user access is enabled, support users can log into any subtenant as any user, unless overridden on subtenant level. Subtenant users cannot enable/disable access themselves. 
+* *false*: Support user access is disabled.If support user access is disabled, support users can log in only to subtenants for which at least one user has explicitly enabled such access.
+* An explicit date in date-time format, until when support user activation should remain enabled. If no date is specified the value is set to "No Limit".
+
+In the **Validity limit** field, you can optionally specify the support duration, i.e. for how many hours support user access will be prolonged after each support user request from a subtenant user. Enter a number specifying the number of hours. The default value is 24 hours.
+
+The expiry date-time will be updated based on the duration specified in the **Validity limit** field, e.g. if the current expiry date-time is 01/09/2018 15:00 and duration has been kept at 24 hours, the enabling support user will update the expiry date to 01/10/2018 15:00.
+
+Details on the status of support user requests and support user access for a tenant can be found in the **Properties** tab of the tenant, see [Managing tenants](/guides/users-guide/enterprise-edition#managing-tenants).
 
 ### <a name="branding"></a>Branding
 
-In the **Branding** tab you can fully customize the look of your tenants to your own preferences. 
+With the Branding feature, you can fully customize the look of your tenant to your own preferences. 
 
-The branding feature allows you to edit the logos and colors used throughout the platform. Once your branding settings are saved, all subtenants are automatically updated. 
+In the **Branding** tab, you can configure various parameters like logos, colors  and font types used throughout the platform. 
 
-<img src="/guides/images/users-guide/Administration/Admin_Branding.png" alt="Branding tab" style="max-width: 100%">
+The [parameters](#configuration-parameters) are configured on the left side of the tab while on the right you can immediately see your selections applied to a preview extract.
+
+<img src="/guides/images/users-guide/Administration/admin-branding.png" alt="Branding tab" style="max-width: 100%">
+
+For a more detailed preview of your settings, click **Open preview** in the top menu bar to check the look and feel of your branding settings in the overall platform. You may interact and even switch applications in the preview. Every change that you make in the **Branding** tab will immediately be applied to the **Preview** page.
+
+<img src="/guides/images/users-guide/Administration/admin-branding-preview.png" alt="Branding tab" style="max-width: 100%">
+
+When you are done or want to store your settings, click **Save** at the bottom of the **Configuration** section to save your branding settings to your tenant.
+
+Saving the settings will not yet apply them to the current tenant and respective subtenants. To do so, click **Apply** in the top menu bar.
+
+Click **Reset** in the top menu bar to reset the branding of the current tenant and its subtenants to the default settings. The custom settings will still be saved but are no longer applied. 
+
+#### <a name="configuration-parameters"></a>Configuration parameters
+
+In the Configuration section, the following branding parameters can be configured.
 
 **General**
 
-In the **General** section you can edit the title which will be used in the browser tab. 
+Under **General**, you can edit the title which will be used in the browser tab. 
+
+<img src="/guides/images/users-guide/Administration/admin-branding-general.png" alt="Branding general" style="max-width: 50%">
 
 **Main logo**
 
@@ -32,11 +72,14 @@ Under **Main logo**, specify the following items:
 
 Under **Navigator logo** you can provide the navigator logo and set the navigator logo height located on top of the navigator panel.
 
+<img src="/guides/images/users-guide/Administration/admin-branding-general.png" alt="Branding general" style="max-width: 50%">
+
+
 **Type**
 
 In the **Type** section you specify the font settings for your branded version. 
 
-<img src="/guides/images/users-guide/Administration/Admin_BrandingType.png" alt="Branding type" style="max-width: 100%">
+<img src="/guides/images/users-guide/Administration/admin-branding-type.png" alt="Branding type" style="max-width: 50%">
 
 You can choose your base and headings font, and select an option for the navigator font (either same as base or same as headings font). You may also add a link to existing remote fonts to be used.
 
@@ -44,12 +87,14 @@ You can choose your base and headings font, and select an option for the navigat
 
 In the **Colors** section you specify the colors to be used in your branding version.
 
-<img src="/guides/images/users-guide/Administration/Admin_BrandingColor.png" alt="Branding color" style="max-width: 100%">
+<img src="/guides/images/users-guide/Administration/admin-branding-color.png" alt="Branding color" style="max-width: 50%">
 
 The following parameters can be specified by providing a hex, rgb or rgba value:
 
 * Main brand color.
 * Secondary brand color. The default value is “#07b91A”.
+* Dark brand color.
+* Light brand color.
 * Text color. The default value is “#444”.
 * Link color. The default value is the same as the main brand color.
 * Main background color. The default value for this item is “#FAFAFA”.
@@ -58,7 +103,7 @@ The following parameters can be specified by providing a hex, rgb or rgba value:
 
 In the **Top bar** section you specify the parameters for the top bar.
 
-<img src="/guides/images/users-guide/Administration/Admin_BrandingTopbar.png" alt="Branding topbar" style="max-width: 100%">
+<img src="/guides/images/users-guide/Administration/admin-branding-topbar.png" alt="Branding topbar" style="max-width: 50%">
 
 The following parameters can be specified by providing a hex, rgb or rgba value:
 
@@ -70,7 +115,7 @@ The following parameters can be specified by providing a hex, rgb or rgba value:
 
 In the **Navigator** section you specify the parameters for the navigator.
 
-<img src="/guides/images/users-guide/Administration/Admin_BrandingTopbar.png" alt="Branding top bar" style="max-width: 100%">
+<img src="/guides/images/users-guide/Administration/admin-branding-navigator.png" alt="Branding top bar" style="max-width: 50%">
 
 The following parameters can be specified by providing a hex, rgb or rgba value:
 
@@ -85,22 +130,6 @@ The following parameters can be specified by providing a hex, rgb or rgba value:
 **Misc**
 
 In the **Misc** section you may specify the “Button Border-Radius” by providing a value in pixel (px).
-
-Click **Save** to save your settings.
-
-Click **Preview** in the top menu bar to preview the new branding.
-
-Click **Generate** in the top menu bar to apply your new branding.
-
-The following image shows an example where
-
-* the main brand color is purple,
-* the secondary brand color is white,
-* the main background color is blue,
-* the top bar background color is green,
-* the navigator background color is pink. 
-
-<img src="/guides/images/users-guide/Administration/Admin_BrandingColored.png" alt="Branding example" style="max-width: 100%">
 
 ### <a name="domain-name"></a>Domain name
 

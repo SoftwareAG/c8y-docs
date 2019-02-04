@@ -9,7 +9,7 @@ ngx-components is a components collection and data access layer for Angular appl
  - core (`@c8y/ngx-components`) which contains all core components like title, navigator or tabs.
  - api (`@c8y/ngx-components/api`) which enables dependency injection of the [@c8y/client](/guides/web/angular#client) services.
 
- > The full documentation of all modules and components can be found [here](http://resources.cumulocity.com/documentation/websdk/ngx-component/latest/)
+ > The full documentation of all modules and components can be found [here](http://resources.cumulocity.com/documentation/websdk/ngx-components/)
 
 ### Prerequisites
 
@@ -48,8 +48,8 @@ export class AppModule {}
 To extend and compose an application, ngx-components provide four core architecture concepts called *Extensions points*:
 
 1. **Content Projection** (CP):<br>This concept allows to project content from one component to another. For example, you can configure the title of a page by setting a `<c8y-title>` in any other component. The content of the `<c8y-title>` tag is then projected to an outlet component, which is placed in the header bar. The benefit of this concept is that you can place anything into the projected content, for example you can project another custom component into the title.<br>
-   A good example to use this concept is the `c8y-action-bar-item` which uses a `routerLink` directive from Angular to route to a different context: 
-  
+   A good example to use this concept is the `c8y-action-bar-item` which uses a `routerLink` directive from Angular to route to a different context:
+
    ```html
    <c8y-action-bar-item [placement]="'right'">
      <a class="btn btn-link" routerLink="add">
@@ -61,17 +61,17 @@ To extend and compose an application, ngx-components provide four core architect
 
 2. **Multi Provider** (MP):<br>
 The Multi Provider extension allows a declarative approach to extend the application. Instead of defining it in the template, you extend an already defined factory via a `HOOK`. This hook gets executed if the application state changes. The return values are then injected into the page. You can use the normal dependency injection system of Angular and as a result you can usually return an Observable, Promise or Array of a certain type. As an example we can define the tabs of certain routes by hooking into the `HOOK_TABS` provider:
-   
+
    ```typescript
    import { Injectable } from '@angular/core';
    import { Router } from '@angular/router';
    import { Tab, TabFactory, _ } from '@c8y/ngx-components';
-   
+
    @Injectable()
    export class ExampleTabFactory implements TabFactory { // 1
-   
+
      constructor(public router: Router) { }
-   
+
      get() {
        const tabs: Tab[] = [];
        if (this.router.url.match(/world/g)) {            // 2
@@ -106,7 +106,7 @@ The Multi Provider extension allows a declarative approach to extend the applica
     export class AppModule { }
    ```
    Usually you use Content Projection within a route and Multi Provider if the context is shared across multiple routes or needs more complex logic to resolve the content. Examples: a title is just valid for one route -> use Content Projection. A tab should only be shown on specific routes under certain conditions -> use Multi Provider. The following hooks are currently supported:
-   
+
    * `HOOK_TABS`: Allows to show tabs on certain conditions.
    * `HOOK_NAVIGATOR_NODES`: Enables navigator nodes to be shown.
    * `HOOK_ACTION`: Enables to define the global actions which should be shown or enabled on certain conditions.
@@ -114,8 +114,8 @@ The Multi Provider extension allows a declarative approach to extend the applica
    * `HOOK_SEARCH`: Allows to define the search to be shown or not.
 
 3. **Services**<br>
-   A service is defined for most components of ngx-components. They can be used via the dependency injection concept of Angular, that means that these services can be injected in the constructor of a component and then add or remove certain UI elements. The following example shows how to use that concept with an alert: 
-   
+   A service is defined for most components of ngx-components. They can be used via the dependency injection concept of Angular, that means that these services can be injected in the constructor of a component and then add or remove certain UI elements. The following example shows how to use that concept with an alert:
+
    ```typescript
    constructor(private alert: AlertService) {
      try {

@@ -16,17 +16,17 @@ npm install @c8y/client
 
 ### Usage
 
-Use `client.<endpoint>.list()` to request listed data from the Cumulocity REST API and 
-`client.<endpoint>.detail(<id>)` to request detail information. These methods always return a promise. To get an observable use `list$` or `detail$`. 
+Use `client.<endpoint>.list()` to request listed data from the Cumulocity REST API and
+`client.<endpoint>.detail(<id>)` to request detail information. These methods always return a promise. To get an observable use `list$` or `detail$`.
 
-> In the following sections, the default signature of these functions is described. For detailed information, refer to the [complete documentation](http://resources.cumulocity.com/documentation/websdk/client/latest/)).
+> In the following sections, the default signature of these functions is described. For detailed information, refer to the [complete documentation](http://resources.cumulocity.com/documentation/websdk/client/)).
 
 
 ### Get detail and list data with promises (pull)
 
-| Method | Description | Parameters | Return | 
+| Method | Description | Parameters | Return |
 | --- | --- | --- | --- |
-|`detail(entityOrId)` | Request detail data of a specific entity. |  `entityOrId: string | number | IIdentified`: An object which contains an id or an id as number or string. | `Promise<IResult<TData>>`: The list as Promise wrapped in an IResult. IResultList contains data and response. | 
+|`detail(entityOrId)` | Request detail data of a specific entity. |  `entityOrId: string | number | IIdentified`: An object which contains an id or an id as number or string. | `Promise<IResult<TData>>`: The list as Promise wrapped in an IResult. IResultList contains data and response. |
 |`list(filter)` | Request a list of data with an optional filter. | `filter:object`: (optional) A filter for [paging](/guides/reference/rest-implementation/#-a-name-paging-a-query-result-paging) or [filtering](/guides/reference/inventory/#query-language) of the list. | `Promise<IResultList<TData>>`: The list as Promise wrapped in an IResultList. IResultList contains data, response and paging.
 
 * Example for receiving details of one managedObject of the inventory via `detail`:
@@ -57,7 +57,7 @@ Use `client.<endpoint>.list()` to request listed data from the Cumulocity REST A
 
 The `detail$` and `list$` functions allow to subscribe to realtime channels that omit data on each change:
 
-| Method | Description | Parameters | Return | 
+| Method | Description | Parameters | Return |
 | --- | --- | --- | --- |
 | `detail$(entityOrId, options)` | Returns an observable for detail data of one entity | `entityOrId: string | number | IIdentified`: An object which contains an id or an id as number or string.<br>`options: IObservableOptions`: (optional) An configuration object to define the observable. | `Observable<TData>>`: The list as subscribable observable. |
 | `list$(filter, options)` | Returns an observable for a list of entities. | `filter: object`: (optional) A filter for [paging](/guides/reference/rest-implementation/#-a-name-paging-a-query-result-paging) or [filtering](/guides/reference/inventory/#query-language) of the list (optional).<br>`options: IObservableOptions`: (optional) An configuration object to define the observable. | `ObservableList<TData>>`: The list as subscribable observable.
@@ -76,7 +76,7 @@ The `detail$` and `list$` functions allow to subscribe to realtime channels that
   const list$ = client.inventory.list$();
   list$.subscribe((data) => console.log(data));
    ```
-   
+
   Observables can be configured by adding an `IObservableOptions` object with these default properties:
 
   ```js
@@ -90,7 +90,7 @@ The `detail$` and `list$` functions allow to subscribe to realtime channels that
     pagingDelay: 0                                // Delay the next page load by x ms
     realtimeFilter: undefined                     // A optional additional filter
   }
-   ``` 
+   ```
 ---
 
 ### Examples

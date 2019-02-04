@@ -1,5 +1,5 @@
 ---
-order: 40
+order: 75
 title: SIM agent
 layout: redirect
 ---
@@ -59,7 +59,7 @@ The user is now created but does not have a password yet. Follow the instruction
 3. Select a provider (in this case "Jasper") from the drop-down list.
 1. Enter URL, key, username and password, then click **Save**.
 
-![Jasper settings](/guides/images/users-guide/SIM-connectivity-item.png.png)
+![Jasper settings](/guides/images/users-guide/SIM-connectivity-item.png)
 
 The SIM agent is now set up.
 

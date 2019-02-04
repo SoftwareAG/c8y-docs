@@ -1,11 +1,11 @@
 ---
 order: 40
-title: Connectivity
+title: SIM agent
 layout: redirect
 ---
-The connectivity agent, which works from within the Cumulocity Device Management application, provides basic information on mobile devices and additional connectivity details.
+The SIM agent, which works from within the Cumulocity Device Management application, provides basic information on mobile devices and additional connectivity details.
 
-Cumulocity supports three different SIM information providers: Jasper, Comarch and Ericsson. As the providers differ from each other not all features are available for each provider. 
+Cumulocity supports three different SIM information providers: Jasper, Comarch and Ericsson. As the providers differ from each other, not all features are available for each provider. 
 
 The following features are supported by the providers:
 
@@ -42,31 +42,34 @@ Your API license key and the API server URL are displayed on the top left.
 
 **We recommend creating a dedicated user in Jasper Control Center:**
 
-* As an admin user, navigate to **Admin** and **Users**.
-* Click **Create New**.
-* Enter the user name and further details of the user. 
-* If you want to be able to activate and deactivate SIM cards from Cumulocity, or to send SMS from Cumulocity, use the role ACCOUNTUSER. Otherwise, use the role ACCOUNTREADONLY.
-* Click **OK** to create the user, then enter your admin password and click **OK** again. 
+1. As an admin user, navigate to **Admin** and **Users**.
+1. Click **Create New**.
+1. Enter the user name and further details of the user. 
+1. If you want to be able to activate and deactivate SIM cards from Cumulocity, or to send SMS from Cumulocity, use the role ACCOUNTUSER. Otherwise, use the role ACCOUNTREADONLY.
+1. Click **OK** to create the user, then enter your admin password and click **OK** again. 
 
 ![Jasper user management](/guides/images/users-guide/jasperadmin.png)
 
 The user is now created but does not have a password yet. Follow the instructions emailed to you by Control Center to set a password. Now link your Jasper Control Center account to Cumulocity:
 
-* Use a Cumulocity administrator user to log in to the Cumulocity Administration application.
-* Click on the "Connectivity" menu. If the menu does not show, please [make sure that your user has the "admin" permission for option management](/guides/users-guide/administration#managing-permissions). If the menu still does not show, contact [support](https://support.cumulocity.com) to make the Jasper Control Center add-on available in your tenant.
-* Enter key, URL, username and password, then click "Save".
+1. Use a Cumulocity administrator user to log into the Cumulocity platform.
+1. Switch to the Administration application.
+1. Click **Connectivity** in the **Settings** menu of the navigator. If the menu item is not displayed, make sure that your user has [ADMIN permission for Connectivity](/guides/users-guide/administration#managing-permissions). If the menu item is still not available, contact [support](https://support.cumulocity.com) to make the Connectivity agent available in your tenant.
+2. Switch to the **SIM provider settings** tab.
+3. Select a provider (in this case "Jasper") from the drop-down list.
+1. Enter URL, key, username and password, then click **Save**.
 
-![Jasper settings](/guides/images/users-guide/jaspersettings.png)
+![Jasper settings](/guides/images/users-guide/SIM-connectivity-item.png.png)
 
-The Add-On is now set up.
+The SIM agent is now set up.
 
 ### <a name="link-sims"></a>Linking SIMs and mobile devices
 
-Switch to the Device Management application and navigate to a device that is connected through a SIM card managed by the asper Control Center. The device should have a **Connectivity** tab. If this tab is not shown, 
+Switch to the Device Management application and navigate to a device that is connected through a SIM card managed by the SIM provider of your choice. The device should have a **Connectivity** tab. If this tab is not shown, 
 
 * your user does not have permissions for Connectivity,
 * the device is not linked to a SIM card, 
-* the device is linked to a SIM card, but the card is not managed by the Jasper Control Center account.
+* the device is linked to a SIM card, but the card is not managed by the respective SIM provider account.
 
 To assign permissions, navigate to the Administration application and make sure that your user has a role assigned with READ or ADMIN permission for Connectivity.
 
@@ -80,7 +83,7 @@ If the ICCID is not shown automatically check the following:
 * Enter the ICCID in the **Info** tab, then click **Save**.
 * Click **Reload** in the tab menu bar to make the **Connectivity** tab appear.
 
-> Note that it may take a few seconds until the tab appears for the first time on a device, as Cumulocity checks if the particular SIM card is managed by Jasper Control Center.
+> Note that it may take a few seconds until the tab appears for the first time on a device, as Cumulocity checks if the particular SIM card is managed by the SIM provider.
 
 ### <a name="jasperinfo"></a>Connectivity tab
 
@@ -103,7 +106,7 @@ The first row shows if the device is currently running a data session. If it is,
 
 The second row shows further status information: The ICCID of the SIM card, the activation state of the SIM card and, if set, the fixed IP address assigned to the SIM card. Provided you have ADMIN permission for Connectivity, you can change the activation state by using the drop-down menu.
 
-At the bottom you will find usage information for the current month, i.e., from the first of the month till today. Hovering over the tooltip shows the covered time period, including the usage during the past month.
+At the bottom you will find usage information for the current month, i.e. from the first of the month till today. Hovering over the tooltip shows the covered time period, including the usage during the past month.
 
 The **SMS** section shows the text messages sent to the device and received from the device, including information on
 
@@ -111,7 +114,7 @@ The **SMS** section shows the text messages sent to the device and received from
 * where it was sent from and where it was sent to
 * the delivery status of the message:
  * For messages to the device: "Pending", if it was not yet received by the device, or "Delivered", if it was received by the device.
- * For messages from the device: "Received", if it was received by Control Center, or "Cancelled", if it was not yet received by Control Center.
+ * For messages from the device: "Received", if it was received by the SIM provider, or "Cancelled", if it was not yet received by the SIM provider.
 * What the direction of the message is: MT ("Mobile terminated"), if it went to the device, or MO ("Mobile originated") if it came from the device.
 
 Provided you have ADMIN permission for Connectivity, you can also send text messages to the device by entering the text and clicking **Send SMS**.
@@ -120,7 +123,7 @@ Provided you have ADMIN permission for Connectivity, you can also send text mess
 
 The **Sessions** section shows the log of data sessions carried out by the device. It lists when the session started, how long it took and how much data traffic was consumed.
 
-![Sessions section](/guides/images/users-guide/jaspersessions.png)
+![Sessions section](/guides/images/users-guide/SIM-connectivity-sessions.png)
 
 The **Audit logs** section lists all changes to the SIM card and its tariff. It shows the type of change, old and new values when the change was carried out by whom, and if it was successful.
 
@@ -131,14 +134,14 @@ The **Connectivity** tab does not update in real-time. To show current data, cli
 
 ### <a name="managing"></a>Checking connectivity
 
-If you suspect that a device is not correctly reporting to Cumulocity, or it is not receiving commands, you can verify the connectivity status of the device via the **Connectivity** tab. 
+If you suspect that a device is not correctly reporting to Cumulocity, or it is not receiving commands, you can verify the connectivity status of the device.
 
-Check if
+In the **Connectivity** tab, check if
 
-* the SIM is activated. If the SIM card is not activated, you can activate it selecting "Activated" from the status drop-down menu. It may take a while until the SIM card is activated in the network. There may be a reset of the device needed to make it dial up to the network again.
+* the SIM is activated. If the SIM card is not activated, you can activate it selecting "Activated" from the status drop-down menu. <br> ![Activate SIM card](/guides/images/users-guide/SIM-connectivity-status-activate.png) <br> It may take a while until the SIM card is activated in the network. There may be a reset of the device needed to make it dial up to the network again.
 * The device is connected to the network. If the device is not connected to the network, this may have several reasons:
  * The device is in a location without mobile network coverage. If the device reports network quality parameters, you can navigate to the [**Measurements** tab](/guides/users-guide/device-management#measurements) of the device and verify the last reported signal strength and error rate parameters. 
- * There is a network or hardware problem (antenna, modem). Select the cogwheel icon on the top right and click "SIM details", then open the Jasper Control Center diagnostics tool. If the device is not attempting to connect to the network, it may be broken.
+ * There is a network or hardware problem (antenna, modem). For the Jasper Control Center, for example, click the cogwheel icon on the top right and select **SIM details**, then open the Jasper Control Center diagnostics tool. If the device is not attempting to connect to the network, it may be broken.
 * The device is in a data session. If the device is not in a data session, this may, again, have several reasons:
  * The APN settings are incorrectly configured in the device.
  * The SIM card is over traffic limit.
@@ -156,7 +159,7 @@ Data connectivity can be analyzed in various places:
 
 > The **SIM details** menu item requires you to have a login for Jasper Control Center. This login is independently provided by your administrator. 
 
-Finally, if the device is still not reporting to Cumulocity, there may be a configuration or software problem on the device.
+If the device is still not reporting to Cumulocity, there may be a configuration or software problem on the device.
 
 * The device may have lost its credentials, for example, due to a factory reset or full loss of power. In this case, you can [re-register the device](/guides/users-guide/device-management#device-registration).
 * There may be a configuration or software problem with the device, which has to be analyzed in a device-specific way.

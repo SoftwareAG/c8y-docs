@@ -141,8 +141,7 @@ In the **Domain name** tab you can activate your own custom domain name.
 
 First you have to upload the appropriate certificate by clicking **Upload Certificate**. Make sure that
 
-* the certificate is in a valid PKCS#12 format,
-* the certificate contains a full authorization chain,
+* the certificate is in a valid PKCS#12 format, containing a full authorization chain
 * the certificate is not password protected,
 * you are using a wildcard certificate to enable creation of subtenants.
 

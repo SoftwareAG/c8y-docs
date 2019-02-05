@@ -74,7 +74,7 @@ To analyze the binary measurement value, we will interpret it as a string value 
 Creating a measurement like this
 
     {
-        "c8y_BinaryFaultRegister": { "errors": { "value": 10110 } },
+      "c8y_BinaryFaultRegister": { "errors": { "value": 10110 } },
       "time":"...",
       "source": { "id":"..." },
       "type": "c8y_BinaryFaultRegister" 

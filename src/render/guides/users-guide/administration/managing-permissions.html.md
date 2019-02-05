@@ -176,7 +176,7 @@ In the **Permission** field, select a permission level from the dropdown list:
 * CHANGE - to modify objects (does not include READ permission)
 * ALL - to read AND modify objects
 
-<img src="/guides/images/users-guide/Administration/admin-inventory-roles-permission" alt="Role permissions" style="max-width: 100%">
+<img src="/guides/images/users-guide/Administration/admin-inventory-roles-permission.png" alt="Role permissions" style="max-width: 100%">
 
 >**Important:** When you add a permission, you may see a small exclamation mark. The exclamation mark indicates that the permission that you have just added is not effective, because another, "higher" permission set for the user already includes the respective permission. Check if you have set, for example, "Full access" or if there is another permission in the same section with "*" as type and ALL as permission.
 
@@ -196,7 +196,7 @@ In the **Inventory roles** tab you will see a tree of device groups. To assign a
 
 > **Important**: If a user already has a global role containing inventory permissions, the user will be able to see or change all devices regardless of what inventory roles you set here.
 
-![Inventory roles](/guides/images/users-guide/admin-inventory-roles-apply.png)
+![Inventory roles](/guides/images/users-guide//Administration/admin-inventory-roles-apply.png)
 
 Inventory roles are inherited from groups to all their direct and indirect subgroups, and to the devices in these groups. If you select, for example, a role with read permissions on alarms for a group of devices, the user will be able to see alarms of all devices in this group and all its subgroups.
 

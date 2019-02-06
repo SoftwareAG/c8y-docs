@@ -55,6 +55,7 @@ redirects =
 	'/guides/devices/RedLion-StratusConnect-MC-Gateway': '/guides/devices/RedLion-RAM-series'
 	'/guides/devices/hwg': '/guides/devices'
 	'/guides/users-guide/optional-services#saas-integration': '/guides/saas-integration'
+	'/guides/users-guide/optional-services#jasper': '/guides/users-guide/optional-services#connectivity'
 
 	
 

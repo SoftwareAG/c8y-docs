@@ -1,6 +1,6 @@
 ---
 order: 31
-title: Connectivity agent
+title: Connectivity
 layout: redirect
 ---
 The Connectivity agent, which works from within the Cumulocity Device Management application, provides basic information on mobile devices and additional connectivity details.

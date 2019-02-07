@@ -34,7 +34,7 @@ A data connector describes the subset of the data that you would like to send to
 
 In the **Data connectors** page, you can manage existing data connectors or create new ones. Click **Data connectors** to see a list of all currently defined data connectors with their status.
 
-![Data broker connectors list](/guides/images/users-guide/data-broker-connectors-list.png)
+![Data broker connectors list](/guides/images/users-guide/data-broker-connector-list.png)
 
 For each data connector, the following information is provided:
 
@@ -70,13 +70,37 @@ Click **Add filter** to configure a new filter.
 
 Each data filter contains the following information:
 
-|Field|Description|
-|:---|:---|
-|Group or device|The group or device that is forwarded. Selecting a group here results in all sub-groups and sub-devices being forwarded. Leaving the default option "All objects" selected will synchronize all types of objects, including internal and technical ones (not exclusively groups and devices), which may cause issues on the target tenant.
-|API|The type of data being forwarded (alarms, events, measurements, manages objects) or being received (operations).
-|Fragments to filter|The fragments that need to be present in a device to be forwarded.
-|Fragments to copy|The fragments that are copied to the destination. If nothing is specified here, only standard properties of managed objects, alarms, events and measurements are forwarded (see below). Select **Copy all fragments** to forward the entire object.
-|Type filter|Forwarded data needs to have this value in its "type" property.
+<table>
+<col width = 150>
+<thead>
+<tr>
+<th style="text-align:left">Field</th>
+<th style="text-align:left">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">Group or device</td>
+<td style="text-align:left">The group or device that is forwarded. Selecting a group here results in all sub-groups and sub-devices being forwarded. Leaving the default option "All objects" selected will synchronize all types of objects, including internal and technical ones (not exclusively groups and devices), which may cause issues on the target tenant.</td>
+</tr>
+<tr>
+<td style="text-align:left">API</td>
+<td style="text-align:left">The type of data being forwarded (alarms, events, measurements, manages objects) or being received (operations).</td>
+</tr>
+<tr>
+<td style="text-align:left">Fragments to filter</td>
+<td style="text-align:left">The fragments that need to be present in a device to be forwarded.</td>
+</tr>
+<tr>
+<td style="text-align:left">Fragments to copy</td>
+<td style="text-align:left">The fragments that are copied to the destination. If nothing is specified here, only standard properties of managed objects, alarms, events and measurements are forwarded (see below). Select <strong>Copy all fragments</strong> to forward the entire object.</td>
+</tr>
+<tr>
+<td style="text-align:left">Type filter</td>
+<td style="text-align:left">Forwarded data needs to have this value in its "type" property.</td>
+</tr>
+</tbody>
+</table>
 
 > **Info:** If the **Group or device** field is filled in, the entire descendant structure of the inventory is forwarded to the destination as soon as the connector stays active. if the **Group or device** field is empty or set to  "all" the descendant structure of the inventory is not forwarded; in this case the filter works in "lazy" mode, i.e. forwards the device or asset along with its first event/measurement/alarm.
 
@@ -114,7 +138,7 @@ In the **Data subscriptions** page, you can manage existing data subscriptions o
 
 Click **Data subscriptions** to see a list of all currently defined data forwarded to your tenant. 
 
-<img src="/guides/images/users-guide/Administration/Admin_Subscriptions.png" alt="Data subscriptions" >
+<img src="/guides/images/users-guide/Administration/Admin_Subscriptions.png" alt="Data subscriptions">
 
 For each subscription, the name, the target tenant and the status (enabled or disabled) is provided on a card.
 

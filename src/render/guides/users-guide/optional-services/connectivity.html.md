@@ -5,9 +5,9 @@ layout: redirect
 ---
 The Connectivity agent, which works from within the Cumulocity Device Management application, provides basic information on mobile devices and additional connectivity details.
 
-Cumulocity supports three different SIM providers: Jasper, Comarch and Ericsson. As the providers differ from each other, not all features are available for each provider. 
+Cumulocity integrates with the SIM connectivity management platform Jasper. For the SIM connectivity management platforms Comarch and Ericsson, Cumulocity provides an experimental implementation. For more details, please contact our support team.
 
-The following features are supported by the providers:
+The following features are supported by these providers:
 
 |Feature|Jasper|Ericsson|Comarch|
 |:------|:-----|:-------|:------|
@@ -38,7 +38,7 @@ The following sections describe:
 
 The following steps describe how to create a dedicated user in the Jasper Control Center. This user is used for all access from Cumulocity to Jasper Control Center, so the permissions of the user have influence on functionalities available in Cumulocity.
 
->**Info**: In a similar way, we recommend to set up a dedicated user for Ericsson or Comarch to get the credentials required to connect to Cumulocity. Ask your administrator for further details.
+>**Info**: In a similar way, we recommend to set up a dedicated user for Ericsson or Comarch to get the credentials required to connect to Cumulocity. Ask your administrator or our support team for further information.
 
 Besides the user, you also need a so-called API license key (only required for Jasper) and API server URL. To determine your API license key and API server URL, use a Control Center administrator user to log in to your Control Center account and click **API integration** on the Control Center home page. 
 Your API license key and the API server URL are displayed on the top left.

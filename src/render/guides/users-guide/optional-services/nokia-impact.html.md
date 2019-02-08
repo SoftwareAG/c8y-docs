@@ -1,6 +1,6 @@
 ---
 order: 35
-title: IMPACT Agent
+title: IMPACT
 layout: redirect
 ---
 

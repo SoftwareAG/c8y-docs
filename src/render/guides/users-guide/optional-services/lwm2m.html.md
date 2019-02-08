@@ -6,7 +6,7 @@ layout: redirect
 
 Lightweight M2M (LWM2M) is a traffic and resource-optimized protocol to remotely manage IoT devices. The protocol is standardized by the Open Mobile Alliance. For more information, see [http://openmobilealliance.org/iot/lightweight-m2m-lwm2m](http://openmobilealliance.org/iot/lightweight-m2m-lwm2m).
 
-You can connect any device supporting LWM2M to Cumulocity without programming. Instead, you configure how LWM2M devices are mapped to Cumulocity using device protocols. 
+You can connect any device supporting LWM2M to Cumulocity without programming. Instead, you configure how LWM2M devices are mapped to Cumulocity using device protocols.
 
 ![Device protocols](/guides/images/users-guide/LWM2M/deviceprotocols.png)
 
@@ -70,9 +70,9 @@ Device protocols are accessible through the **Devices Types** menu in the Device
 
 #### <a name="creating_device_protocols"></a>Creating LWM2M device protocols
 
-Once you have registered a device with the proper CSV file, you can manage LWM2M device protocols. Each piece of information available by the LWM2M client is a resource. The resources are further logically organized into objects. The LWM2M client can have any number of resources, each of which belongs to an object. In the device protocols you can observe your resources. Furthermore, you can choose whether to create measurements, events or alarms out of those resources. 
+Once you have registered a device with the proper CSV file, you can manage LWM2M device protocols. Each piece of information available by the LWM2M client is a resource. The resources are further logically organized into objects. The LWM2M client can have any number of resources, each of which belongs to an object. In the device protocols you can observe your resources. Furthermore, you can choose whether to create measurements, events or alarms out of those resources.
 
-To add a new LWM2M device protocol follow these steps: 
+To add a new LWM2M device protocol follow these steps:
 
 1. In the Device Management application, move to the **Device protocol** page.
 2. Click **Add device protocol** in the top menu bar.
@@ -94,7 +94,7 @@ In the device protocol page, you will see the description at the top left and th
 
 Below, a list of resources configured for the device will be listed (which is empty when creating a new protocol), showing the ID, name and potentially configured functionalities for each resource.
 
-> **Info**: LWM2M protocol resources cannot be edited. 
+> **Info**: LWM2M protocol resources cannot be edited.
 
 Example: In the following screenshot you can see an example device protocol. This object should be used with a temperature sensor to report a temperature measurement. It also provides resources for minimum/maximum measured values and the minimum/maximum range that can be measured by the temperature sensor. An example measurement unit is “degrees Celsius”.
 
@@ -102,7 +102,7 @@ Example: In the following screenshot you can see an example device protocol. Thi
 
 #### <a name="resources"></a>Adding additional functionalities to a resource
 
-The functionalities that you may enable are the following: 
+The functionalities that you may enable are the following:
 
 ![Resource functionalities](/guides/images/users-guide/LWM2M/functionalities.png)
 
@@ -130,11 +130,13 @@ Turn on **Send event** to send an event each time you receive a resource value. 
 - Enter the type of the event. For example, "com_cumulocity_model_DoorSensorEvent".
 - Enter the text which will be sent. For example, "Door sensor was triggered".
 
-**Custom Actions **
+**Custom Actions**
 
-Adding a custom action to a mapping invokes custom specific mapping actions, for example custom decoders for opaque data. The dialog allows you to select a custom action from a dropdown box.
+Turn on **Custom Actions** to map LWM2M data into Cumulocity using custom data processing actions. For specialized integration use cases, it is required to perform customized data processing on LWM2M data. One example are LWM2M resources of the OPAQUE data type that contain proprietary, binary data, CBOR, XML or alike.
 
 ![Custom actions](/guides/images/users-guide/LWM2M/customactions.png)
+
+Cumulocity LWM2M allows the set of custom actions to be extended using decoder microservices. A decoder microservice is an ordinary Cumulocity microservice that implements a simple decoder interface. The LWM2M agent calls this microservice for decoding data in a customer-specific way. We are providing an according example how to write such a decoder microservice in our public [Bitbucket repository](https://bitbucket.org/m2m/cumulocity-examples). 
 
 **Auto observe**
 
@@ -213,7 +215,7 @@ In the **LWM2M bootstrap parameters** tab, bootstrap parameters of the current d
 For further information on the fields in the **LWM2M bootstrap parameters** tab, see [Registering LWM2M devices](#register).
 
 
-### <a name="shell_commands"></a> Handling LWM2M shell commands 
+### <a name="shell_commands"></a> Handling LWM2M shell commands
 
 In the **Shell** tab of a device, LWM2M shell commands can be performed. Each command has a different functionality. Find all available placeholders (e.g. “objectID”, “instanceID”) and commands with their respective descriptions below:
 
@@ -241,9 +243,9 @@ In the next table you will see all available commands and a brief description of
 
 ### <a name="validation_rules"></a> Adding validation rules to resources
 
-Validation rules are used to verify that the data a user enters in a resource meets the constraints you specify before the user can save the resource. 
+Validation rules are used to verify that the data a user enters in a resource meets the constraints you specify before the user can save the resource.
 
-Validation rules can only be added to resources which have “write” permissions. Resources which can have validation rules are marked by the following icon: 
+Validation rules can only be added to resources which have “write” permissions. Resources which can have validation rules are marked by the following icon:
 
 ![Validation rule icon](/guides/images/users-guide/LWM2M/validation_rule_icon.png)
 
@@ -280,16 +282,11 @@ Click **Save** to save your settings.
 
 #### Complex rulesets
 
-In order to enable more complex conditions,  multiple validation rules can be defined for a resource: 
+In order to enable more complex conditions,  multiple validation rules can be defined for a resource:
 
 - Multiple rules can be defined in a validation rule group. A user input is only valid if each of the rules in the validation rule group is satisfied (logical AND).
 - It is possible to declare multiple validation rule groups. If multiple validation rule groups are declared, user input is valid if any of the validation rule groups is satisfied (logical OR).
 
-The screenshot above provides an example for the use of validation rule groups: User input is valid if the given string does not match “test” (equals not). It is also valid if it ends with “asd” and it matches the contents of the LWM2M resource /3/0/15. 
+The screenshot above provides an example for the use of validation rule groups: User input is valid if the given string does not match “test” (equals not). It is also valid if it ends with “asd” and it matches the contents of the LWM2M resource /3/0/15.
 
 Complex rulesets are based on Boolean Disjunctive Normal Form, which allows arbitrary complex rules to be defined.
-
-
-
-
-	

@@ -88,7 +88,14 @@ These are listed in the following table. The columns show the following informat
 <td style="text-align:center"><a href="/guides/users-guide/optional-services/#cloud-remote-access" class="no-ajaxy">Cloud Remote Access</a></td>
 <td style="text-align:left">Implements Virtual Network Computing (VNC) to remotely access operating panels and other devices via a web browser.</td>
 <td style="text-align:left">cloud-remote-access</td>
-<td style="text-align:left">Mircoservice</td>
+<td style="text-align:left">Microservice</td>
+<td style="text-align:left">Optional service</td>
+</tr>
+<tr>
+<td style="text-align:center"><a href="/guides/users-guide/optional-services/#connectivity" class="no-ajaxy">Connectivity</a></td>
+<td style="text-align:left">Interface with mobile devices through various SIM providers like Jasper, Ericsson and Comarch.</td>
+<td style="text-align:left">connectivity-agent-server</td>
+<td style="text-align:left">Microservice</td>
 <td style="text-align:left">Optional service</td>
 </tr>
 <tr>
@@ -135,14 +142,14 @@ These are listed in the following table. The columns show the following informat
 </tr>
 <tr>
 <td style="text-align:center"><a href="/guides/users-guide/optional-services#nokia-impact" class="no-ajaxy">Nokia IMPACT agent</a></td>
-<td style="text-align:left">With the <a href="/guides/users-guide/optional-services#nokia-impact" class="no-ajaxy">Nokia IMPACT agent</a> you can interface with heterogeneous devices through the Nokia IMPACT Data Collector.</td>
+<td style="text-align:left">Interface with heterogeneous devices through the Nokia IMPACT Data Collector.</td>
 <td style="text-align:left">impact</td>
 <td style="text-align:left">Microservice</td>
 <td style="text-align:left">Optional service</td>
 </tr>
 <tr>
 <td style="text-align:center"><a href="/guides/users-guide/optional-services#sigfox" class="no-ajaxy">Sigfox</a></td>
-<td style="text-align:left">With the <a href="/guides/users-guide/optional-services#sigfox" class="no-ajaxy">Sigfox agent</a> you can interface with Sigfox devices through the Sigfox cloud. Requires the following application: "feature-fieldbus4"</td>
+<td style="text-align:left">Interface with Sigfox devices through the Sigfox cloud. Requires the following application: "feature-fieldbus4"</td>
 <td style="text-align:left">sigfox-agent</td>
 <td style="text-align:left">Microservice</td>
 <td style="text-align:left">Optional service</td>

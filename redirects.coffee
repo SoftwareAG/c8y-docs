@@ -34,6 +34,7 @@ redirects =
 	'/guides/users-guide/cloud-remote-access': '/guides/users-guide/optional-services#cloud-remote-access'
 	'/guides/users-guide/zapier': '/guides/users-guide/optional-services#saas-integration'
 	'/guides/users-guide/data-broker': '/guides/users-guide/enterprise-edition#data-broker'
+	'/guides/users-guide/IMPACT/': '/guides/users-guide/optional-services#nokia-impact'
 	'/guides/benutzerhandbuch/administration-deutsch': '/guides/benutzerhandbuch/administration'
 	'/guides/benutzerhandbuch/cockpit-deutsch': '/guides/benutzerhandbuch/cockpit'
 	'/guides/benutzerhandbuch/device-management-deutsch': '/guides/benutzerhandbuch/device-management'
@@ -141,7 +142,8 @@ redirects =
 	'/guides/web/branding-plugin': '/guides/web/web-sdk-for-plugins/branding-plugin'
 	'/guides/web/tab-plugin': '/guides/web/web-sdk-for-plugins/tab-plugin'
 	'/guides/web/widget-plugin': '/guides/web/web-sdk-for-plugins/widget-plugin'
-	'/guides/web/smart-toolkit': '/guides/web/overview'
+	'/guides/web/smart-toolkit': '/guides/web/introduction'
+	'/guides/web/reference': '/guides/web/introduction'
 	'/guides/reference/binaries/application-plugin-binaries': '/guides/reference/binaries'
 
 

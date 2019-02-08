@@ -57,7 +57,7 @@ redirects =
 	'/guides/users-guide/optional-services#saas-integration': '/guides/saas-integration'
 	'/guides/users-guide/optional-services#jasper': '/guides/users-guide/optional-services#connectivity'
 
-	
+
 
 	# Legacy redirects developer documentation
 	'/guides/developers-guide': '/guides/device-sdk/java'
@@ -146,7 +146,6 @@ redirects =
 
 
 
-
 	# "index.html" redirects
 	'/guides/concepts': '/guides/concepts/introduction'
 	'/guides/users-guide': '/guides/users-guide/overview'
@@ -162,5 +161,6 @@ redirects =
 	'/guides': '/dev-center'
 	'/guides/release-notes': '/guides/release-notes/overview'
 
+# Test jenkins line
 
 module.exports = redirects

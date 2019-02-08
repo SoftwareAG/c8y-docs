@@ -31,4 +31,4 @@ This pattern is often used with the unmatched keyword to identify events that ar
 		action processMeasurement(Measurement m) {
 			latestMeasurementByType[m.type] := m;
 		}
-}
+	}

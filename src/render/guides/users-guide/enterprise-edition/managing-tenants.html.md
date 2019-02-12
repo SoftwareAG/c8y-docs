@@ -223,6 +223,18 @@ The **Custom properties** tab allows you to view and modify values of custom pro
 
 The platform administrator can limit the count of concurrently registered root devices or simply all devices (including children devices). The platform administrator can also see the peak number of concurrently registered devices, root devices and the peak value of used storage in the **Usage statistics** page.
 
+**Limiting subtenant request rate**
+
+Platform administrators can limit the request rate of each subtenant via the following custom properties:
+
+- Limit HTTP requests - Limit of HTTP requests for tenant per second
+- Limit HTTP queue - Limit of HTTP request queue for tenant
+- Limit stream requests - Limit of MQTT requests for tenant per second
+- Limit stream queue - Limit of MQTT request queue for tenant
+
+When there is no limit on tenant and system level, the limit feature is considered as disabled and the tenant gains unlimited access. To switch off request rate limiting after it was enabled, set the value to "-1".
+
+
 ### <a name="usage-stats"></a> Retrieving usage statistics
 
 The **Usage statistics** page provides statistical information on each subtenant. 

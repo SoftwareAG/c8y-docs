@@ -8,12 +8,12 @@ In this tutorial, you will learn how to use MQTT with Cumulocity using pre-defin
 
 ### Prerequisites
 
-In order to follow this tutorial, check the following prerequisites:
+In order to follow this tutorial, check the following prerequisites: 
 
 * You have a valid tenant, a user and a password in order to access Cumulocity.
 * You have installed [MQTTBox](https://chrome.google.com/webstore/detail/mqttbox/kaajoficamnjijhkeomgfljpicifbkaf) or a similar MQTT tool.
 
->**Info**: The screenshots in the tutorial use MQTTBox. Other tools may look slightly different.
+> **Info**: The screenshots in the tutorial use MQTTBox. Other tools may look slightly different.
 
 
 ### Talking MQTT
@@ -45,7 +45,7 @@ All MQTT "publish messages" in this tutorial will be sent to the topic "s/us". T
 
 The first message sent will create our device. Although the static templates support automatic device creation, in this example we will create the device manually. The template "100" will create a new device. It can be used with two optional parameters (deviceName, deviceType).
 
-```
+```plaintext
 100,My first MQTT device,c8y_MQTTdevice
 ```
 
@@ -59,7 +59,7 @@ The hardware can be set with the template "110". It can take 3 parameters (seria
 
 The required interval can be set with the template "117" and just takes a single parameter (the interval in minutes).
 
-```
+```plaintext
 110,,MQTT test model,1.2.3
 117,10
 ```
@@ -81,7 +81,7 @@ Passing timestamps in the Cumulocity MQTT implementation is always optional. If 
 
 We will make use of this feature in this example. Also, if you don't set the last parameters you do not need to enter the remaining commas.
 
-```
+```plaintext
 210,-87
 211,24
 212,95
@@ -89,7 +89,7 @@ We will make use of this feature in this example. Also, if you don't set the las
 
 Besides the measurements above we can also use the template "200" to create a more custom measurement. It will take the measurement fragment, series, value, unit and time as its parameters.
 
-```
+```plaintext
 200,myCustomTemperatureMeasurement,fahrenheit,75.2,F
 ```
 
@@ -105,7 +105,7 @@ In the next step, we want to create some alarms for this device. There are 4 tem
 
 Each of them note a type (which is mandatory), a text and a time (both optional).
 
-```
+```plaintext
 301,gpio_critical,There is a GPIO alarm
 304,simple_warning
 ```
@@ -116,7 +116,7 @@ Note that we did not set any text for the warning therefore it was created with 
 With the next step, we want to clear the critical alarm again.
 To achieve this we use the template "306" which refers to the type of the alarm that should be cleared.
 
-```
+```plaintext
 306,gpio_critical
 ```
 
@@ -129,13 +129,13 @@ Next, we want to create some location events for the device. You can use the lin
 
 The template "401" lets you create location events and takes latitude, longitude, altitude, accuracy and the time as parameters, but for now we will just use the first two.
 
-```
+```plaintext
 401,51.227741,6.773456
 ```
 
 In the Device Management application, you can see one event in the event list but the location has not been updated. This is because on REST these are different requests. Instead of the template "401" you can use the template "402" in MQTT. It works exactly the same as "401" but additionally it also updates the position of the device itself.
 
-```
+```plaintext
 402,51.227741,6.773456
 ```
 
@@ -163,7 +163,7 @@ At the current state the UI does not show any tabs for operations. Up to this po
  
 We will add support for the configuration and shell.
 
-```
+```plaintext
 114,c8y_Command,c8y_Configuration
 ```
 
@@ -179,7 +179,7 @@ The "511" is indicating what kind of operation we received (in this case c8y_Com
 
 After receiving the operation we can start EXECUTING it to initiate the client's handling the operation. Similar to changing the status of an alarm you can add the type of operation to the template.
 
-```
+```plaintext
 501,c8y_Command
 ```
 
@@ -187,7 +187,7 @@ After finishing the handling the operation can be set to successful with the tem
 
 Besides the operation type, this operation can also take additional parameters based on what kind of operation it was. For the c8y_Command we can return a result.
 
-```
+```plaintext
 503,c8y_Command,Everything went fine
 ```
 
@@ -197,12 +197,13 @@ The topic s/e can help you debugging in case something went wrong.
 
 If we for example try to send
 
-```
+```plaintext
 999,I made this up
 ```
 
 we can see a message on the topic because the template "999" is unknown.
 
-```
+```plaintext
 40,999,No static template for this message id
 ```
+ 

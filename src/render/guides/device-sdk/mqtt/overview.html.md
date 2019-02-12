@@ -5,7 +5,7 @@ title: Overview
 ---
 
 
-> Note: MQTT support is currently in beta. We encourage device integrators to provide feedback through [Stackoverflow](http://stackoverflow.com/questions/tagged/cumulocity) or the [support web site](https://support.cumulocity.com).
+> **Info**: MQTT support is currently in beta. We encourage device integrators to provide feedback through [Stackoverflow](http://stackoverflow.com/questions/tagged/cumulocity) or the [support web site](https://support.cumulocity.com).
 
 The MQTT implementation of Cumulocity provides the following benefits:
 
@@ -24,12 +24,7 @@ The MQTT implementation of Cumulocity provides the following benefits:
 
 The MQTT section is structured as follows:
 
-* [Hello MQTT](/guides/device-sdk/mqtt#hello-mqtt) provides an easy introduction to the Cumulocity MQTT protocol using a popular MQTT client.
-* [Hello MQTT C](/guides/device-sdk/mqtt#hello-mqtt-c) provides an introduction on how to use the MQTT client in C with Cumulocity using pre-defined messages (called "static templates").
-* [Hello MQTT C#](/guides/device-sdk/mqtt#hello-mqtt-cs-0) provides an introduction on how to use the C# MQTT client with Cumulocity using pre-defined messages (called "static templates").
-* [Hello MQTT Java](/guides/device-sdk/mqtt#hello-mqtt-java) provides an introduction on how to use the Java MQTT client with Cumulocity using pre-defined messages (called "static templates").
-* [Hello MQTT Javascript](/guides/device-sdk/mqtt#hello-mqtt-javascript) provides an introduction on how to use the Javascript MQTT client with Cumulocity using pre-defined messages (called "static templates").
-* [Hello MQTT Python](/guides/device-sdk/mqtt#hello-mqtt-python) provides an introduction on how to use the Python MQTT client with Cumulocity using pre-defined messages (called "static templates").
+* [Hello MQTT](/guides/device-sdk/mqtt#hello-mqtt) provides an easy introduction to the Cumulocity MQTT protocol using a popular MQTT client. It also contains an introduction on how to use the MQTT client with Cumulocity employing pre-defined messages (called "static templates") using [C](/guides/device-sdk/mqtt#hello-mqtt-c),  [C#](/guides/device-sdk/mqtt#hello-mqtt-cs-0), [Java](/guides/device-sdk/mqtt#hello-mqtt-java), [JavaScript](/guides/device-sdk/mqtt#hello-mqtt-javascript) and [Python](/guides/device-sdk/mqtt#hello-mqtt-python).
 * [MQTT implementation](/guides/device-sdk/mqtt#implementation) gives a detailed reference of protocol-level aspects in the Cumulocity implementation of MQTT.
 * [Device integration](/guides/device-sdk/mqtt#device-integration) walks you through the process of interfacing devices with Cumulocity through MQTT.
 * [SmartREST 1.0](/guides/device-sdk/mqtt#smartrest-1) defines the SmartREST 1.0 payload format for MQTT for easy portability of existing SmartREST devices.
@@ -40,3 +35,4 @@ The MQTT section is structured as follows:
 This section does not describe the basics of MQTT communication. If you are unfamiliar with MQTT, we recommend consulting one of the numerous introductions in the Internet. Some references can be found on the [MQTT web site](http://mqtt.org/documentation).
 
 > **Info**: For all MQTT connections to our platform, the maximum accepted payload size is 8092 bytes(8KB).
+ 

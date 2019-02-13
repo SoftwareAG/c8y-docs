@@ -63,8 +63,8 @@ The **Basic** section of the **Single sign-on** page consists of the following c
 |Provider name|Name of the provider
 |Visible on Login page|Indicates whether the login option is enabled or not. 
 |Audience|Expected aud parameter of JWT
-|Group|(Depricated in favor of dynamic access mapping since 9.20)The initial group assigned to the user on first login
-|Applications|(Depricated in favor of dynamic access mapping since 9.20)The initial applications assigned to the user on first login
+|Group|(Deprecated in favor of dynamic access mapping since 9.20)The initial group assigned to the user on first login
+|Applications|(Deprecated in favor of dynamic access mapping since 9.20)The initial applications assigned to the user on first login
 
 Each time a user logs in, the content of the access token is verified and is a base for user access to the Cumulocity platform. The following section provides the mapping between JWT claims and access to the platform. 
 

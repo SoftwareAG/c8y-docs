@@ -24,7 +24,7 @@ Navigate to **Data connectors** if you would like to send data to another tenant
 > * The management tenant cannot be used as data broker source tenant.
 > * Currently, the Fieldbus widget does not work on tenants that receive the fieldbus devices through data broker, as the corresponding data models are not synchronized.
 > * Data broker does not guarantee the same order of messages on destination tenants as it was on the source tenant. 
-> * While we provide backwards compatibility, we can not ensure that data broker can send data to Cumulocity tenants which run on later Cumulocity versions than the source.
+> * While we provide backwards compatibility, we cannot ensure that data broker can send data to Cumulocity tenants which run on earlier Cumulocity versions than the source.
 
 ### <a name="data-broker-connectors"></a> Data connectors
 

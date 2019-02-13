@@ -10,16 +10,16 @@ In this tutorial, you will learn how to use the Java MQTT client with Cumulocity
 
 In order to follow this tutorial, check the following prerequisites:
 
-* You have a valid tenant, a user, and a password in order to access Cumulocity.
-* Verify that you have Maven 3 installed with Java 7:
+* You have a valid tenant, a user and a password in order to access Cumulocity.
+* Verify that you have Maven 3 and Java 7 installed. This example is also compatible with Java 8.
 
-  	mvn -v
-  	Apache Maven 3.3.9 (bb52d8502b132ec0a5a3f4c09453c07478323dc5; 2015-11-10T17:41:47+01:00)
-  	Maven home: /home/schm/development/devtools/apache-maven-3.3.9
-  	Java version: 1.7.0_80, vendor: Oracle Corporation
-  	Java home: /usr/lib/jvm/java-7-oracle/jre
-  	Default locale: pl_PL, platform encoding: UTF-8
-  	OS name: "linux", version: "4.4.0-66-generic", arch: "amd64", family: "unix"
+```shell
+$ mvn -v
+Maven home: /Library/Maven/apache-maven-3.6.0
+Java version: 1.8.0_201, vendor: Oracle Corporation, runtime: /Library/Java/JavaVirtualMachines/jdk1.8.0_201.jdk/Contents/Home/jre
+Default locale: en_GB, platform encoding: UTF-8
+OS name: "mac os x", version: "10.14.2", arch: "x86_64", family: "mac"
+```
 
 Maven can be downloaded from the [Maven website](http://maven.apache.org).
 
@@ -28,138 +28,158 @@ Maven can be downloaded from the [Maven website](http://maven.apache.org).
 To develop a very simple "Hello, world!" MQTT client for Cumulocity, you need to
 
 * create a Maven project,
-* add a dependency to the MQTT Java client library to the Maven pom.xml (in this example we will use [Paho Java Client](https://eclipse.org/paho/clients/java/)),
+* add a dependency to the MQTT Java client library to the pom.xml (in this example we will use [Paho Java Client](https://eclipse.org/paho/clients/java/)),
 * create a Java application,
 * build and run the Java application.
 
 #### Creating a Maven project
 
-To create a plain Java project with Maven, run
-
-    mvn archetype:generate -DgroupId=c8y.example -DartifactId=hello-mqtt-java -DarchetypeArtifactId=maven-archetype-quickstart -DinteractiveMode=false
+To create a plain Java project with Maven, execute the following command:
+```shell
+$ mvn archetype:generate -DgroupId=c8y.example -DartifactId=hello-mqtt-java -DarchetypeArtifactId=maven-archetype-quickstart -DinteractiveMode=false
+```
 
 This will create a folder "hello-mqtt-java" in the current directory with a skeleton structure for your project.
 
 #### Adding the MQTT Java client library
 
-Edit the "pom.xml" in the "hello-mqtt-java" folder. Add a dependency to the MQTT Paho Java Client.
+Edit the "pom.xml" in the "hello-mqtt-java" folder. Add a dependency to the MQTT Paho Java Client. 
 
-    <dependency>
-        <groupId>org.eclipse.paho</groupId>
-        <artifactId>org.eclipse.paho.client.mqttv3</artifactId>
-        <version>1.1.0</version>
-    </dependency>
-    
+```xml
+<dependency>
+    <groupId>org.eclipse.paho</groupId>
+    <artifactId>org.eclipse.paho.client.mqttv3</artifactId>
+    <version>1.2.0</version>
+</dependency>
+```
 #### Creating a Java application
 
 Edit the "App.java" file in the folder "hello-mqtt-java/src/main/java/c8y/example" with the following content:
 
-    package c8y.example;
-    
-    import org.eclipse.paho.client.mqttv3.*;
-    import java.util.concurrent.*;
+```java
+package c8y.example;
 
-    public class App {
+import org.eclipse.paho.client.mqttv3.*;
+import java.util.concurrent.*;
 
-        public static void main(String[] args) throws Exception {
-            final String clientId = "<<clientId>>";
-            final String serverURI = "<<serverUrl>>";
-    
-            //configure MQTT connection
-            final MqttConnectOptions options = new MqttConnectOptions();
-            options.setUserName("<<tenant>>/<<username>>");
-            options.setPassword("<<password>>".toCharArray());
-            final MqttClient client = new MqttClient(serverURI, clientId, null);
-            
-            //connect to the Cumulocity
-            client.connect(options);
-    
-            //create device
-            client.publish("s/us", "100,My MQTT device,c8y_MQTTDevice".getBytes(), 2, false);
-            
-            //set hardware information
-            client.publish("s/us", "110,S123456789,MQTT test model,Rev0.1".getBytes(), 2, false);
-            
-            //listen for operation
-            client.subscribe("s/ds", new IMqttMessageListener() {
-                public void messageArrived(final String topic, final MqttMessage message) throws Exception {
-                    final String payload = new String(message.getPayload());
-                    System.out.println("Received operation " + payload);
-                    if (payload.startsWith("510")) {
-                        System.out.println("Simulating device restart...");
-                        client.publish("s/us", "501,c8y_Restart".getBytes(), 2, false);
-                        System.out.println("...restarting...");
-                        Thread.sleep(TimeUnit.SECONDS.toMillis(1));
-                        client.publish("s/us", "503,c8y_Restart".getBytes(), 2, false);
-                        System.out.println("...done...");
-                    }
+public class App {
+
+    public static void main(String[] args) throws Exception {
+
+        // client, user and device details
+        final String serverURI   = "tcp://mqtt.cumulocity.com";
+        final String clientId    = "my_mqtt_java_client";
+        final String device_name = "My new MQTT device";
+        final String tenant      = "<<tenant>>";
+        final String username    = "<<username>>";
+        final String password    = "<<password>>";
+        
+        // MQTT connection options
+        final MqttConnectOptions options = new MqttConnectOptions();
+        options.setUserName(tenant + "/" + username);
+        options.setPassword(password.toCharArray());
+        
+        // connect the client to Cumulocity
+        final MqttClient client = new MqttClient(serverURI, clientId, null);
+        client.connect(options);
+
+        // register a new device
+        client.publish("s/us", ("100," + device_name + ",c8y_MQTTDevice").getBytes(), 2, false);
+        
+        // set device's hardware information
+        client.publish("s/us", "110,S123456789,MQTT test model,Rev0.1".getBytes(), 2, false);
+        
+        System.out.println("The device \"" + device_name + "\" has been registered successfully!");
+
+        // listen for operations
+        client.subscribe("s/ds", new IMqttMessageListener() {
+            public void messageArrived (final String topic, final MqttMessage message) throws Exception {
+                final String payload = new String(message.getPayload());
+                
+                System.out.println("Received operation " + payload);
+                if (payload.startsWith("510")) {
+                    System.out.println("Simulating device restart...");
+                    client.publish("s/us", "501,c8y_Restart".getBytes(), 2, false);
+                    System.out.println("...restarting...");
+                    Thread.sleep(TimeUnit.SECONDS.toMillis(1));
+                    client.publish("s/us", "503,c8y_Restart".getBytes(), 2, false);
+                    System.out.println("...done...");
                 }
-            });
-    
-            Executors.newSingleThreadScheduledExecutor().scheduleWithFixedDelay(new Runnable() {
-                public void run() {
-                    try {
-                        //send temperature measurement
-                        client.publish("s/us", new MqttMessage("211,25".getBytes()));
-                    } catch (MqttException e) {
-                        e.printStackTrace();
-                    }
+            }
+        });
+
+        // generate a random temperature (10º-20º) measurement and send it every 7 seconds
+        Executors.newSingleThreadScheduledExecutor().scheduleWithFixedDelay(new Runnable() {
+            public void run () {
+                try {
+                    int temp = (int) (Math.random() * 10 + 10);
+                    
+                    System.out.println("Sending temperature measurement (" + temp + "º) ...");
+                    client.publish("s/us", new MqttMessage(("211," + temp).getBytes()));
+                } catch (MqttException e) {
+                    e.printStackTrace();
                 }
-            }, 1, 3, TimeUnit.SECONDS);
-        }
+            }
+        }, 1, 7, TimeUnit.SECONDS);
     }
-    
-Replace "&lt;&lt;clientId&gt;&gt;", "&lt;&lt;serverUrl&gt;&gt;", "&lt;&lt;tenant&gt;&gt;", "&lt;&lt;username&gt;&gt;", and "&lt;&lt;password&gt;&gt;" with your data.
+}
+```
 
-Cumulocity MQTT protocol supports both unsecured TCP and secured SSL connections (e.g. ``tcp://mqtt.cumulocity.com:1883`` or ``ssl://mqtt.cumulocity.com:8883``), so as the "&lt;&lt;serverUrl&gt;&gt;" you can pick the one which fits for you.
+Replace `serverURI`, `clientId` and `device_name` as needed. Do not forget to specify the user credentials setting values for `tenant`, `username` and `password`.
 
-What does the code in "main" do?
+Cumulocity MQTT protocol supports both unsecured TCP and secured SSL connections (i.e. `tcp://mqtt.cumulocity.com:1883` or `ssl://mqtt.cumulocity.com:8883`), so you can pick the one which fits for you and use it in `serverURI`.
+
+What does the code in `main` do?
 
 -   Configure the MQTT connection.
 -   Connect with Cumulocity via a MQTT protocol.
--   Create a new device with a ``My MQTT device`` name and a ``c8y_MQTTDevice`` type.
--   Update the device hardware information by putting a ``S123456789`` serial, a ``MQTT test model`` model and a ``Rev0.1`` revision.
--   Subscribe to the static operation templates for the device, print all received operations to the console and in case of a ``c8y_Restart`` operation simulate device restart.
--   Create a new thread which sends temperature measurement every 3 seconds.
+-   Create a new device with a name (**device_name**) and a type (**c8y_MQTTDevice**).
+-   Update the device hardware information by putting a **S123456789** serial, a **MQTT test model** model and a **Rev0.1** revision.
+-   Subscribe to the static operation templates for the device and print all received operations to the console. In case of a **c8y_Restart** operation, simulate a device restart.
+-   Create a new thread which sends temperature measurement every 7 seconds.
 
-Note that the subscription is established after the device creation, otherwise if there is no device for a given ``clientId`` the server will not accept it.
+Note that the subscription is established after the device creation, otherwise if there is no device for a given ``clientId``, the server will not accept it.
 
 #### Building and running the application
 
-To build:
+Use the following commands to build the application:
 
-    cd hello-mqtt-java
-    mvn clean install
-    ...
-    [INFO] 
-    [INFO] --- maven-jar-plugin:2.4:jar (default-jar) @ hello-mqtt-java ---
-    [INFO] Building jar: /home/schm/Pulpit/hello-mqtt-java/target/hello-mqtt-java-1.0-SNAPSHOT.jar
-    [INFO] 
-    [INFO] --- maven-install-plugin:2.4:install (default-install) @ hello-mqtt-java ---
-    [INFO] Installing /home/schm/Pulpit/hello-mqtt-java/target/hello-mqtt-java-1.0-SNAPSHOT.jar to /home/schm/.m2/repository/c8y/example/hello-mqtt-java/1.0-SNAPSHOT/hello-mqtt-java-1.0-SNAPSHOT.jar
-    [INFO] Installing /home/schm/Pulpit/hello-mqtt-java/pom.xml to /home/schm/.m2/repository/c8y/example/hello-mqtt-java/1.0-SNAPSHOT/hello-mqtt-java-1.0-SNAPSHOT.pom
-    [INFO] ------------------------------------------------------------------------
-    [INFO] BUILD SUCCESS
-    [INFO] ------------------------------------------------------------------------
-    [INFO] Total time: 2.642 s
-    [INFO] Finished at: 2017-03-14T09:16:25+01:00
-    [INFO] Final Memory: 14M/301M
-    [INFO] ------------------------------------------------------------------------
+```shell
+$ cd hello-mqtt-java
+$ mvn clean install
+...
+[INFO] 
+[INFO] --- maven-jar-plugin:2.4:jar (default-jar) @ hello-mqtt-java ---
+[INFO] Building jar: /home/schm/Pulpit/hello-mqtt-java/target/hello-mqtt-java-1.0-SNAPSHOT.jar
+[INFO] 
+[INFO] --- maven-install-plugin:2.4:install (default-install) @ hello-mqtt-java ---
+[INFO] Installing /home/schm/Pulpit/hello-mqtt-java/target/hello-mqtt-java-1.0-SNAPSHOT.jar to /home/schm/.m2/repository/c8y/example/hello-mqtt-java/1.0-SNAPSHOT/hello-mqtt-java-1.0-SNAPSHOT.jar
+[INFO] Installing /home/schm/Pulpit/hello-mqtt-java/pom.xml to /home/schm/.m2/repository/c8y/example/hello-mqtt-java/1.0-SNAPSHOT/hello-mqtt-java-1.0-SNAPSHOT.pom
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD SUCCESS
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time: 2.642 s
+[INFO] Finished at: 2017-03-14T09:16:25+01:00
+[INFO] Final Memory: 14M/301M
+[INFO] ------------------------------------------------------------------------
+```
     
-To run:
+and this command to run it:
 
-    mvn exec:java -Dexec.mainClass="c8y.example.App"
-    ...
-    [INFO]                                                                         
-    [INFO] ------------------------------------------------------------------------
-    [INFO] Building hello-mqtt-java 1.0-SNAPSHOT
-    [INFO] ------------------------------------------------------------------------
-    [INFO] 
-    [INFO] --- exec-maven-plugin:1.6.0:java (default-cli) @ hello-mqtt-java ---
-    Received operation 510,123456789
+```shell
+$ mvn exec:java -Dexec.mainClass="c8y.example.App"
+...
+[INFO]                                                                         
+[INFO] ------------------------------------------------------------------------
+[INFO] Building hello-mqtt-java 1.0-SNAPSHOT
+[INFO] ------------------------------------------------------------------------
+[INFO] 
+[INFO] --- exec-maven-plugin:1.6.0:java (default-cli) @ hello-mqtt-java ---
+Received operation 510,123456789
+```
 
-After starting the application you should see a new device in the Device Management application in the device list.
-Additionally if there will be a new operation created for this device, (for example ``c8y_Restart``) information about it will be printed to the console.
+After starting the application you should see a new registered device in the Device Management application listed in All devices. In the Measurements tab, you will see the  Temperature measurements being sent by your client.
+Additionally, if there will be a new operation created for this device (e.g. "c8y_Restart"), information about it will be printed to the console.
 
 ### Improving the agent
 

@@ -12,13 +12,15 @@ Dashboard reports are global dashboard pages, regardless of the asset hierarchy.
 
 To see all existing reports, expand the **Reports** menu in the navigator.
 
+![Reports menu](/guides/images/users-guide/Cockpit/cockpit-reports-navigator.png)
+
 To view a specific report, click the report in the navigator to open it.
 
 #### Creating new reports
 
-To add a new report, click the **Plus** button in the top bar and from the context menu select **Create new report**.
+To add a new report, click the **Plus** button in the top bar and from the context menu select **New report**.
 
-![image alt text](/guides/images/users-guide/image_20.png)
+![Create new report](/guides/images/users-guide/Cockpit/cockpit-report-create)
 
 Enter a name for the report and optionally select an icon from the dropdown list. Click **Save** to save your settings.
 
@@ -26,13 +28,19 @@ Next, widgets can be added to the report.
 
 #### Adding widgets to reports
 
-You can add widgets to reports in the same way as adding widgets to dashboards. 
+You can add widgets to reports in the same way as adding widgets to dashboards.
 
-Click **Add widget** in the top menu bar and select a widget type from the list. For details on all widgets types available, refer to [Widgets collection](#widgets).
+Open the report you want to edit from the navigator. 
+
+Click **Add widget** in the top menu bar and select a widget type from the list. 
+
+For details on all widgets types available, refer to [Widgets collection](#widgets).
 
 #### Deleting reports
 
 To delete a report, open the report and click **More...** at the right of the top menu bar. From the context menu, select **Remove report**.
+
+![Delete report](/guides/images/users-guide/Cockpit/cockpit-remove)
 
 
 ### <a name="export"></a>Exporting data
@@ -46,6 +54,9 @@ With this feature, you can request data for the whole tenant. Additionally, you 
 To show all exports, click **Export** in the **Reports** menu.
 
 In the **Export** page you will find a list displaying all exports with their names and time range.
+
+![Exports](/guides/images/users-guide/Cockpit/cockpit-exports)
+
 
 #### Adding exports
 

@@ -67,7 +67,7 @@ public class App {
     public static void main(String[] args) throws Exception {
 
         // client, user and device details
-        final String serverURI   = "tcp://mqtt.cumulocity.com";
+        final String serverUrl   = "tcp://mqtt.cumulocity.com";
         final String clientId    = "my_mqtt_java_client";
         final String device_name = "My new MQTT device";
         final String tenant      = "<<tenant>>";
@@ -80,7 +80,7 @@ public class App {
         options.setPassword(password.toCharArray());
         
         // connect the client to Cumulocity
-        final MqttClient client = new MqttClient(serverURI, clientId, null);
+        final MqttClient client = new MqttClient(serverUrl, clientId, null);
         client.connect(options);
 
         // register a new device
@@ -125,9 +125,9 @@ public class App {
 }
 ```
 
-Replace `serverURI`, `clientId` and `device_name` as needed. Do not forget to specify the user credentials setting values for `tenant`, `username` and `password`.
+Replace `serverUrl`, `clientId` and `device_name` as needed. Do not forget to specify the user credentials setting values for `tenant`, `username` and `password`.
 
-Cumulocity MQTT protocol supports both unsecured TCP and secured SSL connections (i.e. `tcp://mqtt.cumulocity.com:1883` or `ssl://mqtt.cumulocity.com:8883`), so you can pick the one which fits for you and use it in `serverURI`.
+Cumulocity MQTT protocol supports both unsecured TCP and secured SSL connections (i.e. `tcp://mqtt.cumulocity.com:1883` or `ssl://mqtt.cumulocity.com:8883`), so you can pick the one which fits for you and use it in `serverUrl`.
 
 What does the code in `main` do?
 

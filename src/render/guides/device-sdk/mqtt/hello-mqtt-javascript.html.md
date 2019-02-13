@@ -12,121 +12,145 @@ In order to follow this tutorial, check the following prerequisites:
 
 * You have a valid tenant, a user, and a password in order to access Cumulocity.
 
-
 ### Developing the "Hello, MQTT world!" client
 
 To develop a very simple "Hello, world!" MQTT client for Cumulocity, you need to
 
+* create an HTML file and include the MQTT JavaScript client (in this example we will use [Paho JavaScript Client](https://www.eclipse.org/paho/clients/js/)),
 * create a JavaScript application,
 * run the application.
-    
+
 #### Creating a JavaScript application
 
 Create an HTML file, for example "hello_mqtt_js.html" with the following content:
+```xml
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Hello MQTT World</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/paho-mqtt/1.0.1/mqttws31.min.js"></script>
+    <script src="main.js" defer></script>
+</head>
+<body>
+    <div id="logger"></div>
+</body>
+</html>
+```
 
-    <html>
-    <head>
-        <meta http-equiv="Content-Type" content="text/html;charset=utf-8"></meta>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/paho-mqtt/1.0.1/mqttws31.js" type="text/javascript"></script>
-        <script type="text/javascript">
-            var undeliveredMessages = []           
-            var temperature = 25
-    
-            var client = new Paho.MQTT.Client("<<serverUrl>>", "<<clientId>>");
-            client.onMessageArrived = onMessageArrived;
-            client.onMessageDelivered = onMessageDelivered;
-    
-            function onMessageArrived(message) {
-                log('Received operation "' + message.payloadString + '"');
-                if (message.payloadString.indexOf("510") == 0) {
-                    log("Simulating device restart...");
-                    publish("s/us", "501,c8y_Restart");
-                    log("...restarting...");
-                    setTimeout(function() {
-                        publish("s/us", "503,c8y_Restart");
-                    }, 1000);
-                    log("...done...");
-                }
-            }
-    
-            function onMessageDelivered(message) {
-                log('Message "' + message.payloadString + '" delivered');
-                var undeliveredMessage = undeliveredMessages.pop();
-                if (undeliveredMessage.onMessageDeliveredCallback) {
-                    undeliveredMessage.onMessageDeliveredCallback();
-                }
-            }
-    
-            function createDevice() {
-                //create device
-                publish("s/us", "100,JS MQTT,c8y_MQTTDevice", function() {
-                    //set hardware information
-                    publish("s/us", "110,S123456789,MQTT test model,Rev0.1", function() {
-                        publish('s/us', '114,c8y_Restart', function() { 
-                            log('Enable restart operation support') 
-                            //listen for operation
-                            client.subscribe("s/ds");
-                        })
-                       
-                        //send temperature measurement
-                        setInterval(function() {
-                            publish("s/us", '211,'+temperature);
-                            temperature += 0.5 - Math.random()
-                        }, 3000);
-                    });
-                });
-            }
-    
-            function publish(topic, message, onMessageDeliveredCallback) {
-                message = new Paho.MQTT.Message(message);
-                message.destinationName = topic;
-                message.qos = 2;
-                undeliveredMessages.push({
-                    message: message,
-                    onMessageDeliveredCallback: onMessageDeliveredCallback
-                });
-                client.send(message);
-            }
-    
-            function init() {
-                client.connect({
-                    userName: "<<tenant>>/<<username>>",
-                    password: "<<password>>",
-                    onSuccess: createDevice
-                });
-            }
-    
-            function log(message) {
-                document.getElementById('logger').insertAdjacentHTML('beforeend', '<div>' + message + '</div>');
-            }
-        </script>
-    </head>
-    <body onload="init();"><div id="logger"></div></body>
-    </html>
-    
-Replace &lt;&lt;clientId&gt;&gt;, &lt;&lt;serverUrl&gt;&gt;, &lt;&lt;tenant&gt;&gt;, &lt;&lt;username&gt;&gt;, and &lt;&lt;password&gt;&gt; with your valid data.
+Create a JavaScript file "main.js" with the following content:
 
-The Cumulocity MQTT protocol supports both unsecured TCP and also secured SSL connections (e.g. ``ws://mqtt.cumulocity.com/mqtt`` or ``wss://mqtt.cumulocity.com/mqtt``), so as &lt;&lt;serverUrl&gt;&gt; select the one which fits for you.
+```javascript
+// client, user and device details
+var serverUrl   = "ws://mqtt.cumulocity.com/mqtt";     /* wss://mqtt.cumulocity.com/mqtt for a secure connection */
+var clientId    = "my_mqtt_js_client";
+var device_name = "My JS MQTT device";
+var tenant      = "<<tenant>>";
+var username    = "<<username>>";
+var password    = "<<password>>";
+
+var undeliveredMessages = [];
+var temperature = 25;
+
+// configure the client to Cumulocity
+var client = new Paho.MQTT.Client(serverUrl, clientId);
+
+// display all incoming messages
+client.onMessageArrived = function (message) {
+    log('Received operation "' + message.payloadString + '"');
+    if (message.payloadString.indexOf("510") == 0) {
+        log("Simulating device restart...");
+        publish("s/us", "501,c8y_Restart");
+        log("...restarting...");
+        setTimeout(function() {
+            publish("s/us", "503,c8y_Restart");
+        }, 1000);
+        log("...done...");
+    }
+};
+
+// display all delivered messages
+client.onMessageDelivered = function onMessageDelivered (message) {
+    log('Message "' + message.payloadString + '" delivered');
+    var undeliveredMessage = undeliveredMessages.pop();
+    if (undeliveredMessage.onMessageDeliveredCallback) {
+        undeliveredMessage.onMessageDeliveredCallback();
+    }
+};
+
+function createDevice () {
+    // register a new device
+    publish("s/us", "100," + device_name + ",c8y_MQTTDevice", function() {
+        // set hardware information
+        publish("s/us", "110,S123456789,MQTT test model,Rev0.1", function() {
+            publish('s/us', '114,c8y_Restart', function() { 
+                log('Enable restart operation support');
+                //listen for operation
+                client.subscribe("s/ds");
+            })
+
+            // send temperature measurement
+            setInterval(function() {
+                publish("s/us", '211,'+temperature);
+                temperature += 0.5 - Math.random();
+            }, 3000);
+        });
+    });
+}
+
+// send a message 
+function publish (topic, message, onMessageDeliveredCallback) {
+    message = new Paho.MQTT.Message(message);
+    message.destinationName = topic;
+    message.qos = 2;
+    undeliveredMessages.push({
+        message: message,
+        onMessageDeliveredCallback: onMessageDeliveredCallback
+    });
+    client.send(message);
+}
+
+// connect the client to Cumulocity
+function init () {
+    client.connect({
+        userName: tenant + "/" + username,
+        password: password,
+        onSuccess: createDevice
+    });
+}
+
+// display all messages on the page
+function log (message) {
+    document.getElementById('logger').insertAdjacentHTML('beforeend', '<div>' + message + '</div>');
+}
+
+init();
+```
+    
+Replace `serverUrl`, `clientId` and `device_name` as needed. Do not forget to specify the user credentials setting values for `tenant`, `username` and `password`.
+
+The Cumulocity MQTT protocol supports both unsecured TCP and also secured SSL connections (i.e. `ws://mqtt.cumulocity.com/mqtt` or `wss://mqtt.cumulocity.com/mqtt`), so you can pick the one which fits for you and use it in `serverUrl`.
 
 What does the code do?
 
 -   Configure the MQTT connection.
--   Register ``onMessageArrived`` a callback function which will print all incoming messages and in case of ``c8y_Restart`` operation it will simulate a device restart.
--   Register ``onMessageDelivered`` a callback function which will be called after a publish message has been delivered.
--   After the page is fully loaded, call ``init`` function which connects with Cumulocity via a MQTT protocol.
--   When the connection is established call a ``createDevice`` function.
--   Create a new device with a ``JS MQTT`` name and a ``c8y_MQTTDevice`` type.
--   Update the device hardware information by putting  a ``S123456789`` serial, a ``MQTT test model`` model and a ``Rev0.1`` revision.
--   Subscribe to the static operation templates for the device - this will result in ``onMessageArrived`` method call every time a new operation is created.
--   Send temperature measurement every 3 seconds.
+-   Register ``onMessageArrived`` callback function which will display all incoming messages. In case of a **c8y_Restart** operation, simulate a device restart.
+-   Register ``onMessageDelivered`` callback function which will be called after a publish message has been delivered.
+-   After the page is fully loaded, the function `init` is called and it connects with Cumulocity via a MQTT protocol.
+-   When the connection is established, call a ``createDevice`` function.
+-   Create a new device with a name (**device_name**) and a type (**c8y_MQTTDevice**).
+-   Update the device hardware information by putting a **S123456789** serial, a **MQTT test model** model and a **Rev0.1** revision.
+-   Subscribe to the static operation templates for the device –this will result in ``onMessageArrived`` method call every time a new operation is created.
+-   Send a temperature measurement every 3 seconds.
 
-Note that subscription is established after the device creation, otherwise if there is no device for a given ``clientId`` the server will not accept it.
+Note that the subscription is established after the device creation, otherwise if there is no device for a given ``clientId``, the server will not accept it.
 
 #### Running the application
 
-Open "hello_mqtt_js.html" in a browser. You should see the new device in the Cumulocity application in the device list.
-
-Additionally if there is a new operation created for this device (for example ``c8y_Restart``), related information will be printed in the browser page.
+Open "hello_mqtt_js.html" in a browser. you should see a new registered device in the Device Management application listed in All devices. In the Measurements tab, you will see the  Temperature measurements being sent by your client.
+Additionally, if there will be a new operation created for this device (e.g. "c8y_Restart"), related information will be displayed in the browser page.
 
 ### Improving the agent
 

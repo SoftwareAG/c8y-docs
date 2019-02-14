@@ -24,7 +24,7 @@ The MQTT implementation of Cumulocity provides the following benefits:
 
 The MQTT section is structured as follows:
 
-* [Hello MQTT](/guides/device-sdk/mqtt#hello-mqtt) provides an easy introduction to the Cumulocity MQTT protocol using a popular MQTT client. It also contains an introduction on how to use the MQTT client with Cumulocity employing pre-defined messages (called "static templates") using [C](/guides/device-sdk/mqtt#hello-mqtt-c),  [C#](/guides/device-sdk/mqtt#hello-mqtt-cs-0), [Java](/guides/device-sdk/mqtt#hello-mqtt-java), [JavaScript](/guides/device-sdk/mqtt#hello-mqtt-javascript) and [Python](/guides/device-sdk/mqtt#hello-mqtt-python).
+* [Hello MQTT](/guides/device-sdk/mqtt#hello-mqtt) provides an easy introduction to the Cumulocity MQTT protocol using a popular MQTT client. It also contains examples on how to use the MQTT client with Cumulocity employing pre-defined messages (called "static templates") using [C](/guides/device-sdk/mqtt#hello-mqtt-c), [Java](/guides/device-sdk/mqtt#hello-mqtt-java), [JavaScript](/guides/device-sdk/mqtt#hello-mqtt-javascript) and [Python](/guides/device-sdk/mqtt#hello-mqtt-python).
 * [MQTT implementation](/guides/device-sdk/mqtt#implementation) gives a detailed reference of protocol-level aspects in the Cumulocity implementation of MQTT.
 * [Device integration](/guides/device-sdk/mqtt#device-integration) walks you through the process of interfacing devices with Cumulocity through MQTT.
 * [SmartREST 1.0](/guides/device-sdk/mqtt#smartrest-1) defines the SmartREST 1.0 payload format for MQTT for easy portability of existing SmartREST devices.

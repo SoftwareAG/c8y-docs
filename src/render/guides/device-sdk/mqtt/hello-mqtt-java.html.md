@@ -88,6 +88,9 @@ public class App {
         
         // set device's hardware information
         client.publish("s/us", "110,S123456789,MQTT test model,Rev0.1".getBytes(), 2, false);
+
+        // add restart operation
+        client.publish("s/us", "114,c8y_Restart".getBytes(), 2, false);
         
         System.out.println("The device \"" + device_name + "\" has been registered successfully!");
 

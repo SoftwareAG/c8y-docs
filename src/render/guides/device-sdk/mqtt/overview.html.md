@@ -24,13 +24,14 @@ The MQTT implementation of Cumulocity provides the following benefits:
 
 The MQTT section is structured as follows:
 
-* [Hello MQTT](/guides/device-sdk/mqtt#hello-mqtt) provides an easy introduction to the Cumulocity MQTT protocol using a popular MQTT client. It also contains examples on how to use the MQTT client with Cumulocity employing pre-defined messages (called "static templates") using [C](/guides/device-sdk/mqtt#hello-mqtt-c), [Java](/guides/device-sdk/mqtt#hello-mqtt-java), [JavaScript](/guides/device-sdk/mqtt#hello-mqtt-javascript) and [Python](/guides/device-sdk/mqtt#hello-mqtt-python).
-* [MQTT implementation](/guides/device-sdk/mqtt#implementation) gives a detailed reference of protocol-level aspects in the Cumulocity implementation of MQTT.
+* [MQTT implementation](/guides/device-sdk/mqtt#implementation) gives a detailed reference of protocol-level aspects in the Cumulocity implementation of MQTT. 
 * [Device integration](/guides/device-sdk/mqtt#device-integration) walks you through the process of interfacing devices with Cumulocity through MQTT.
 * [SmartREST 1.0](/guides/device-sdk/mqtt#smartrest-1) defines the SmartREST 1.0 payload format for MQTT for easy portability of existing SmartREST devices.
 * [SmartREST 2.0](/guides/device-sdk/mqtt#smartrest-2) defines the SmartREST 2.0 payload format for MQTT with improvements in usability and traffic usage.
 * [MQTT static templates](/guides/device-sdk/mqtt#static-templates) provides a reference of pre-defined payload formats that you can use straight away.
 * [Handling IDs](/guides/device-sdk/mqtt#handling-ids) describes how IDs are handled in the Cumulocity MQTT protocol.
+* [JSON via MQTT](/guides/device-sdk/mqtt/#json) describes the payload format that can be used with the Cumulocity MQTT implementation.
+
 
 This section does not describe the basics of MQTT communication. If you are unfamiliar with MQTT, we recommend consulting one of the numerous introductions in the Internet. Some references can be found on the [MQTT web site](http://mqtt.org/documentation).
 

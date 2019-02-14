@@ -12,14 +12,13 @@ Cumulocity supports MQTT both via TCP and WebSockets. As URL you use "mqtt.cumul
 
 Available ports:
 
-||TCP|WebSockets|
-|:---|:----|:----|
-|SSL|8883|443|
-|no SSL|1883|80|
+| &nbsp; | TCP | WebSockets |
+|:-----|:----|:----|
+|SSL   |8883 |443|
+|no SSL|1883 |80|
 
-<br>
 
->**Info**: To use WebSockets you need to connect to the path "/mqtt" and follow the [MQTT standard](http://docs.oasis-open.org/mqtt/mqtt/v3.1.1/os/mqtt-v3.1.1-os.html#_Toc398718127) for WebSocket communication.
+> **Info**: To use WebSockets you need to connect to the path "/mqtt" and follow the [MQTT standard](http://docs.oasis-open.org/mqtt/mqtt/v3.1.1/os/mqtt-v3.1.1-os.html#_Toc398718127) for WebSocket communication.
 
 ### SmartREST Payload
 
@@ -46,23 +45,23 @@ The same escaping rules apply to messages that will be send from the server to t
 
 Publish example:
 
-```
+```plaintext
 100,"This value, needs escaping",This value does not need escaping
 ```
 
 Subscribe example:
 
-```
+```asciidoc
 511,myDeviceSerial,"execute this\nand this\nand \"this\""
 ```
 
 ### Device hierarchies
 
-MQTT sessions are linked to a single device but this device can have a freely configurable device hierarchy below it.
+MQTT sessions are linked to a single device, but this device can have a freely configurable device hierarchy below it.
 
-All children require a unique ID defined when creating the device. We recommend using a combination of the unique ID of the root device and an unique ID within the hierarchy.
+All children require a unique ID defined when creating the device. We recommend using a combination of the unique ID of the root device and a unique ID within the hierarchy.
 
-To create data for a child instead of the root device the unique ID of the child is added as another section in the topic (e.g. "s/us/myChildDeviceIdentifier").
+To create data for a child instead of the root device, the unique ID of the child is added as another section in the topic (e.g. "s/us/myChildDeviceIdentifier").
 
 The client will automatically receive operations for every child in the hierarchy by subscribing to the respective topic. It is not required to subscribe for each child.
 
@@ -72,7 +71,7 @@ Every operation received will contain the template ID followed by the ID of the 
 
 #### MQTT authentication
 
-MQTT supports setting a username and a password. To connect to Cumulocity the MQTT username needs to include both tenant and username in the format "tenant/username".
+MQTT supports setting a username and a password. To connect to Cumulocity, the MQTT username needs to include both tenant and username in the format "tenant/username".
 
 #### MQTT ClientId
 

@@ -20,6 +20,7 @@ Python 2.7.12
 Python can be downloaded from [www.python.org](https://www.python.org/).
 
 * Install the Paho client:
+
 ```shell
 $ pip install paho-mqtt
 ```
@@ -101,7 +102,7 @@ print "Device registered successfully!"
 
 client.subscribe("s/ds")
 sendMeasurements()
-```   
+```
 
 Replace `serverUrl`, `clientId` and `device_name` as needed. Do not forget to specify the user credentials setting values for `tenant`, `username` and `password`.
 

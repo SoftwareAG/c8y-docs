@@ -24,7 +24,7 @@ Available ports:
 
 The Cumulocity MQTT implementation uses SmartREST as a payload. SmartREST is a CSV-like message protocol that uses templates on the server side to create data in Cumulocity.
 
-> **Info:** For all MQTT connections to our platform the maximum accepted payload size is 8092 bytes.
+> **Info:** For all MQTT connections to the platform, the maximum accepted payload size is 8092 bytes.
 
 #### SmartREST basics
 
@@ -39,9 +39,7 @@ The following characters within a parameter need to be enclosed in double quotes
 * Carriage return (\r)
 * Double quotes (")
 
-Additionally, each double quote within the parameter needs to be escaped with a backslash (\).
-
-The same escaping rules apply to messages that will be send from the server to the client.
+Additionally, each double quote within the parameter needs to be escaped with a backslash (\). The same escaping rules apply to messages that will be sent from the server to the client.
 
 Publish example:
 
@@ -51,7 +49,7 @@ Publish example:
 
 Subscribe example:
 
-```asciidoc
+```plaintext
 511,myDeviceSerial,"execute this\nand this\nand \"this\""
 ```
 
@@ -82,14 +80,14 @@ The MQTT ClientId is a field to uniquely identify each connected client. The Cum
 |Field|Mandatory|Description|
 |:-------|:--------|:--------|
 |connectionType|NO|Indication of connection type default: d (device)|
-|deviceIdentifier|YES|A unique identifier for your device e.g. IMEI, Serial number, ...|
+|deviceIdentifier|YES|A unique identifier for your device, e.g. IMEI, Serial number, ...|
 |defaultTemplateIdentifier|NO|Check the SmartREST section for more information about template identifiers|
 
 For the simplest version of a client the MQTT clientId can just be the deviceIdentfier. It will automatically be interpreted as device connection.
 
 Example ClientIds:
 
-```
+```plaintext
 mySerialNumber
 d:mySerialNumber
 d:mySerialNumber:myDefaultTemplate
@@ -109,7 +107,7 @@ For subscriptions to the operation or error topics, we will deliver all messages
 
 #### MQTT clean session
 
-MQTT clients can set the clean session flag to "0" (false). This will ensure that in case the client disconnects your subscription will still work and when you reconnect the client will receive the missed messages.
+MQTT clients can set the clean session flag to "0" (false). This will ensure that in case the client disconnects, your subscription will still work and when you reconnect the client will receive the missed messages.
 
 >**Info:** Cumulocity requires clean session to be set to "1" (true). Currently we cannot guarantee that disabling clean session will work reliably, hence we recommend to always enable clean session. 
 
@@ -120,17 +118,13 @@ Messages published by Cumulocity like operations and errors do not contain the r
 
 #### MQTT last will
 
-In MQTT, the "last will" is a message that is specified at connection time and that is executed when the client loses the connection. For example, using
+In MQTT, the "last will" is a message that is specified at connection time and that is executed when the client loses the connection. For example, using `400,c8y_ConnectionEvent,"Device connection was lost."` as last will message and "s/us" as last will topic, raises an event whenever the device loses the connection.
 
-    400,c8y_ConnectionEvent,"Device connection was lost."
-
-as last will message and "s/us" as last will topic raises an event whenever the device loses the connection.
-
-> The execution of the "last will" updates the device availability. 
+> **Info:** The execution of the "last will" updates the device availability. 
 
 ### Debugging
 
-To support developers during development you can subscribe to the topic `s/e`.
+To support developers during development, it is possible to subscribe to the topic `s/e`.
 On this topic the device can retrieve debug and error messages that occur during a publish from the device.
 
->**Info**: This topic is purely designed to support the development of clients. It is not recommended to always subscribe to this channel as the messages are verbose and can significantly increase the data usage. Also you should not use this topic to trigger actions of the device based on what you receive on the topic. It is not a response channel.
+>**Info**: This topic is purely designed to support the development of clients. It is not recommended to always subscribe to this channel as the messages are verbose and can significantly increase the data usage. Also, you should not use this topic to trigger actions of the device based on what you receive on the topic. It is not a response channel.

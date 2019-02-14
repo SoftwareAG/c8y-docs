@@ -20,7 +20,7 @@ To view a specific report, click the report in the navigator to open it.
 
 To add a new report, click the **Plus** button in the top bar and from the context menu select **New report**.
 
-![Create new report](/guides/images/users-guide/Cockpit/cockpit-report-create)
+![Create new report](/guides/images/users-guide/Cockpit/cockpit-report-create.png)
 
 Enter a name for the report and optionally select an icon from the dropdown list. Click **Save** to save your settings.
 
@@ -40,7 +40,7 @@ For details on all widgets types available, refer to [Widgets collection](#widge
 
 To delete a report, open the report and click **More...** at the right of the top menu bar. From the context menu, select **Remove report**.
 
-![Delete report](/guides/images/users-guide/Cockpit/cockpit-remove)
+![Delete report](/guides/images/users-guide/Cockpit/cockpit-report-remove.png)
 
 
 ### <a name="export"></a>Exporting data
@@ -49,32 +49,34 @@ The export functionality lets you export specific data to either CSV or Excel fi
 
 With this feature, you can request data for the whole tenant. Additionally, you can choose to filter for specific devices, time ranges or fields. The export data contains information about all specified filters and enabled fields. 
 
->**Info:** The maximum number of documents that can be exported into a single file is 1 million. If the number of documents for defined filters exceeds this limit, only first 1 million documents will be taken.
+>**Info:** The maximum number of documents that can be exported into a single file is 1 million. If the number of documents for defined filters exceeds this limit, only the first 1 million documents will be taken.
 
 To show all exports, click **Export** in the **Reports** menu.
 
 In the **Export** page you will find a list displaying all exports with their names and time range.
 
-![Exports](/guides/images/users-guide/Cockpit/cockpit-exports)
+![Exports](/guides/images/users-guide/Cockpit/cockpit-exports.png)
 
 
 #### Adding exports
 
 To create an export, click **Add export** in the top menu bar.
 
-Enter a name for the export and select the file type (CSV or xlsx). 
+Enter a name for the export and select the file type (CSV or xlsx) for the report output. 
+
+![Create export](/guides/images/users-guide/Cockpit/cockpit-export-create.png)
 
 **Filters**
 
 In the **Filter** section, you can select filters to request object- or time-specific data.
 
-<img src="/guides/images/users-guide/Cockpit/Cockpit_ReportFilters.png" name="Export filters" style="width:100%;"/>
+![Export filters](/guides/images/users-guide/Cockpit/cockpit-export-filter.png)
 
 To filter for a particular object, enter a name or property value into the search field and click the search icon. All matching devices or groups will be displayed below the **Value** field. Click a device to select it (highlighted in green). 
 
 The **Time range** filter can filter data for a specific time range. Select a time range from the dropdown field. This may be one of "Last year", "Last month", "Last week" or select "Custom" and enter a custom from/to range in the additional fields.
 
-Select the checkbox in front of the filter name to enable the filter.
+Select the **Object to export** and **Time range** checkboxes to enable the respective filters.
 
 **Fields**
 
@@ -87,7 +89,7 @@ Apart from object- and time-specific filtering you may filter data for specific 
 
 Use the slider to enable/disable a field.
 
-<img src="/guides/images/users-guide/Cockpit/Cockpit_ReportFields.png" name="Filter fields" style="width:100%;"/>
+![Filter fields](/guides/images/users-guide/Cockpit/cockpit-export-fields.png)
 
 >**Info**: The time range filter only applies to alarms, events and measurements but not to managed objects. If selected, managed objects will appear in the export, regardless of any specified time range. 
 
@@ -97,22 +99,26 @@ Click **Add** to add empty properties. To enter a label or path, click **Column*
 
 Click **Add predefined**, to add predefined properties. Simply select the desired properties from the list and click **Select**. Use the search field at the top to search for a specific property.
 
-<img src="/guides/images/users-guide/Cockpit/Cockpit_ReportsSelectProperties.png" name="Select properties" style="width:75%;"/>
+![Select properties](/guides/images/users-guide/Cockpit/cockpit-export-properties.png)
 
 If you have at least one field that is not originating from the "Add predefined" list but defined as a custom property, then you need to set up at least one property for the custom values to appear in the export. 
 
 Example:
-An export has 4 fields defined: time range, device name, type and c8y_SpeedMeasurement.speed.value. The first 3 are predefined properties, while the last one is a custom property. If any measurement for export does not have a custom property c8y_SpeedMeasurement.speed.value, then it will not appear in the export file.
+An export has 4 fields defined: time range, device name, type and c8y&#95;SpeedMeasurement.speed.value. The first 3 are predefined properties, while the last one is a custom property. If any measurement for export does not have a custom property c8y_SpeedMeasurement.speed.value, then it will not appear in the export file.
 
 If your field is a valid.key.with.dot then refer to it as ['fragment.key.with.dot'] in the path, e.g.: ['fragment.key.with.dot'].series.value
 
-In case of "Measurements" enabled, you can also choose **Add from data point**. For details on how to add data points see [Adding data points](#add-data-points). 
+In case of measurements enabled, you can also choose **Add from data point**. For details on how to add data points see [Adding data points](#add-data-points). 
  
 #### <a name="schedule-export"></a>Scheduling exports
 
-To schedule the export to a CSV or Excel file to any point in time, click the menu icon at the end of the row and from the context menu select **Schedule export**. In the upcoming window you can customize the Smart Rule "On timer send export via email" according to your needs.
+To schedule the export to a CSV or Excel file to any point in time, click the menu icon at the end of the row and from the context menu select **Schedule export**. 
 
-<img src="/guides/images/users-guide/export_schedule_frequency.png" name="Schedule export" style="width:75%;"/>
+![Export context menu](/guides/images/users-guide/Cockpit/cockpit-export-menu.png)
+
+In the upcoming window you can customize the Smart Rule "On timer send export via email" according to your needs.
+
+![Schedule export](/guides/images/users-guide/Cockpit/cockpit-export-on-timer-rule.png)
 
 **1 - Rule name**
 
@@ -136,7 +142,7 @@ Click **Create** to create the customized Smart Rule "On timer send export via e
 
 The Smart Rule will be added to the export details.
 
-<img src="/guides/images/users-guide/Cockpit/Cockpit_ReportSmartRule.png" name="Smart rule" style="width:100%;"/>
+![Smart Rule](/guides/images/users-guide/Cockpit/cockpit-export-schedule.png)
 
 
 #### Exporting data
@@ -155,6 +161,9 @@ Only CSV time contains milliseconds and timezone.
 #### Editing exports
 
 To edit an export, just click the respective row or click the menu icon at the end of the row and from the context menu select **Edit**.
+
+<img src="/guides/images/users-guide/Cockpit/cockpit-export-menu-small.png" name="Export context menu"/>
+
 
 #### Duplicating exports
 

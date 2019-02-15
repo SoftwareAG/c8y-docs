@@ -6,21 +6,22 @@ layout: redirect
 
 <a name="widget"></a>
 
-The Cockpit includes preset widget types. Each widget type provides different parameters to configure and different data to be displayed. 
+The Cockpit application includes preset widget types. Each widget type provides different parameters to configure and different data to be displayed. 
 
 The following section describes, in alphabetical order, each available widget type and its configuration properties.
 
 ### Widget "Alarm list"
 
-The "Alarm list" widget shows a list of alarms, filtered by objects, alarm severity and alarm status. For details on the information provided for each alarm, refer to [Working with alarms](/guides/users-guide/device-management/#alarm-monitoring) in Device Management.
+The "Alarm list" widget shows a list of alarms, filtered by objects, alarm severity and alarm status. For details on the information provided for each alarm, refer to [Working with alarms](/guides/users-guide/device-management/#alarm-monitoring) in the Device Management section.
+
+<img src="/guides/images/users-guide/Cockpit/cockpit-widget-alarm-list.png" name="Create Alarm list widget" style="width:100%;"/>
+
 
 **Parameters to configure**
 
-<img src="/guides/images/users-guide/Cockpit/Cockpit_CreateAlarmList.png" name="Create Alarm list widget" style="width:75%;"/>
-
 |Field|Description|
 |:---|:---|
-|Title|Widget title. By default, the widget type is simply used as title.
+|Title|Widget title. By default, the widget type is used as title.
 |Target assets or devices|Select groups or devices, optional HTML expressions which should be evaluated.
 |Status|Only show devices with alarms of of the selected alarm status.
 |Type|Only show alarms of the specified type(s). Details can be seen when clicking once on an alarm.
@@ -29,13 +30,17 @@ The "Alarm list" widget shows a list of alarms, filtered by objects, alarm sever
 
 ### Widget "All critical alarms"
 
-The "All critical alarms" widget shows all objects with a critical alarm. There are no additional parameters to be configured.
+The "All critical alarms" widget shows all objects with a critical alarm. Apart from the title, there are no additional parameters to be configured.
+
+<img src="/guides/images/users-guide/Cockpit/cockpit-widget-critical-alarms.png" name="Create Alarm list widget" style="width:100%;"/>
 
 For details on alarms, refer to [Device Management > Working with alarms](/guides/users-guide/device-management/#alarm-monitoring).
 
 ### Widget "Applications"
 
-The "Applications" widget shows a list of links to all available applications. There are no additional parameters to be configured.
+The "Applications" widget shows a list of links to all available applications. Apart from the title, there are no additional parameters to be configured.
+
+<img src="/guides/images/users-guide/Cockpit/cockpit-widget-applications.png" name="Create Alarm list widget" style="width:100%;"/>
 
 For details on applications, refer to [Administration > Managing Applications](/guides/users-guide/administration#managing-applications).
 
@@ -53,11 +58,14 @@ Only users with the permission to edit the home dashboard will be able to provid
 
 The "Asset properties" widget displays a user-defined list of attributes of the current object. The current object can be a device or a group.
 
+<img src="/guides/images/users-guide/Cockpit/cockpit-widget-asset-properties.png" name="Create Alarm list widget" style="width:100%;"/>
+
+
 **Parameters to configure**
 
 |Field|Description|
 |:---|:---|
-|Title|Widget title. By default, the widget type is simply used as title.
+|Title|Widget title. By default, the widget type is used as title.
 |Target assets or devices|Select groups or devices.
 |Properties|List of properties, see [Widget "Asset table"](#widget-asset-table).
 

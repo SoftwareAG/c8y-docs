@@ -126,6 +126,7 @@ redirects =
 	'/guides/mqtt/handling-ids': '/guides/device-sdk/mqtt#handling-ids'
 	'/guides/mqtt/hello-mqtt': '/guides/device-sdk/mqtt#hello-mqtt'
 	'/guides/mqtt/hello-mqtt-java-0': '/guides/device-sdk/mqtt#hello-mqtt-java'
+	'/guides/mqtt/hello-mqtt-java': '/guides/device-sdk/mqtt#hello-mqtt-java'
 	'/guides/mqtt/hello-mqtt-javascript': '/guides/device-sdk/mqtt#hello-mqtt-javascript'
 	'/guides/mqtt/hello-mqtt-c': '/guides/device-sdk/mqtt#hello-mqtt-c'
 	'/guides/mqtt/hello-mqtt-python': '/guides/device-sdk/mqtt#hello-mqtt-python'

@@ -458,7 +458,7 @@ Update the application manifest to add this new plugin to the import list.
 }
 ```
 
-To be able to use Weather plugin we need to add two more things to the the application manifest.
+To be able to use Weather plugin we need to add two more things to the application manifest.
 
 Firstly imports list needs to be updated with the following imports.
 

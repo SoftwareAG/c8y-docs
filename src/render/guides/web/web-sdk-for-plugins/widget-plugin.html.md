@@ -391,7 +391,7 @@ Now that we have added the config and controller to our plugin, we have to speci
     "myapp.weatherAdmin"
   ],
   "js": [
-    "weatheradmin.config.js"
+    "weatheradmin.config.js",
     "weatheradmin.controller.js"
   ]
 }
@@ -460,14 +460,15 @@ Update the application manifest to add this new plugin to the import list.
 
 To be able to use Weather plugin we need to add two more things to the the application manifest.
 
-Imports list should be updated with two more imports: 
+Firstly imports list needs to be updated with the following imports.
 
 ```json
 {
+  ...
 	"imports": [
 		...
 		"core/dashboard2",
-    "core/dashboardUI"
+        "core/dashboardUI"
 	]
 }
 ```

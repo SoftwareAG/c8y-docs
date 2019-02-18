@@ -14,15 +14,15 @@ You can share the following data:
 * measurements
 * operations
 
-Navigate to "Data connectors" if you would like to send data to the Cloud account. 
+Navigate to **Data connectors** if you would like to send data to the Cloud account. 
 
-Navigate to "Data subscriptions" in your cloud account to receive the data from Edge.
+Navigate to **Data subscriptions** in your cloud account to receive the data from Edge.
 
-<img src="/guides/images/users-guide/data-broker-on-navigator.PNG" alt="Data broker menus">
+<img src="/guides/images/users-guide/data-broker-navigator.png" alt="Data broker menus">
 
 In the same way, you can push operations from a Cumulocity Cloud account to Edge devices.
  
-For details on sending and receiving data in Cumulocity refer to [Using the Data Broker](/guides/users-guide/enterprise-edition#data-broker) in the User guide.
+For details on sending and receiving data in Cumulocity refer to Enterprise Edition > [Using the Data Broker](/guides/users-guide/enterprise-edition#data-broker) in the User guide.
 
 
 

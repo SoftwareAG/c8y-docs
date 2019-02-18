@@ -4,15 +4,15 @@ title: Accessing the Cumulocity platform
 layout: redirect
 ---
 
-### Configuring the access via domain URL
+### Configuring the access via domain name
 
-The Cumulocity platform is accessible with the domain URL provided as part of the post installation script. 
+The Cumulocity platform is accessible with the domain name provided as part of the post installation script. 
 
-There are two ways to configure the accessibility with domain URLs:
+There are two ways to configure the accessibility with domain names:
 
-* Add an entry of domain URL and IP mapping in DNS servers. <br>
+* Add an entry of domain name and IP mapping in DNS servers. <br>
 OR
-* [Add the alias](#add-alias) in order to reach the virtual machine via the domain URL provided during configuration. This needs to done on each client host on which Edge is accessed.
+* [Add the alias](#add-alias) in order to reach the virtual machine via the domain name provided during configuration. This needs to done on each client host on which Edge is accessed.
 
 >**Info**: The first option is always preferable so that Edge is reachable in LAN.
 
@@ -20,28 +20,28 @@ OR
 
 On Linux machines, add the following entry to `/etc/hosts`:
 
-	192.168.56.120 <domain_url> 
+	192.168.56.120 <domain_name> 
 
 On Windows machines,  add the same entry to `C:\Windows\System32\Drivers\etc\hosts`.
 
-Ping the `<domain_url>` to verify it. 
+Ping the `<domain_name>` to verify it. 
 
-	$ ping <domain_url>
+	$ ping <domain_name>
 
 If the ping is successful the DNS resolution is working properly.
 
-Using `<domain_url>`, Edge can be connected from the host operating system (operating system which is hosting Edge VM instance). If you want to connect Edge VM within your LAN, which is outside of the host operating system, you need to do following:
+Using `<domain_name>`, Edge can be connected from the host operating system (operating system which is hosting Edge VM instance). If you want to connect Edge VM within your LAN, which is outside of the host operating system, you need to do following:
 
 * Port forwarding must be enabled as mentioned in [Setting up the environment](/guides/edge/installation#setting-up-the-environment).
-* The DNS entry needs to be added in your LAN’s DNS server/Name server. The DNS entry must have the domain&#95;url (provided in post_installation step) and the IP address of the host operating system. Note that this is not the Edge VM IP.
+* The DNS entry needs to be added in your LAN’s DNS server/Name server. The DNS entry must have the domain name (provided in post_installation step) and the IP address of the host operating system. Note that this is not the Edge VM IP.
 
 ### Entering Cumulocity
 
 Once the machine is in running state, open a web browser and enter the address:
 
-	https://<domain url>
+	https://<domain_name>
 
-<img src="/guides/images/users-guide/login.png" name="Login screen" style="width:50%;"/>
+<img src="/guides/images/users-guide/overview-login.png" name="Login screen"/>
 
 In the Login screen, log in with the following credentials:
 
@@ -52,7 +52,7 @@ Password: <tenant admin password> (as provided during post-installation)
 
 After successfully logging in, the Cumulocity platform will open:
 
-<img src="/guides/images/users-guide/Cockpit/Cockpit_WelcomeScreen.png" name="Welcome screen" style="width:100%;"/>
+<img src="/guides/images/users-guide/overview-welcome-screen.png" name="Welcome screen"/>
 
 When you log into Cumulocity for the first time, you will be taken to the Cockpit application where the **Welcome** page initially opens up.
 

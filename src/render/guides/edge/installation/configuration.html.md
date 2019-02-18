@@ -29,78 +29,221 @@ Post installation should only be run after the platform initialization is succes
 
 Usually the platform comes up within 2 minutes. 
 
-<br>
+
 1. Browse to the folder "/opt/c8y/utilities". 
 
+	```shell
 		$ cd /opt/c8y/utilities
+	```
 
 2. Run the following command and provide the password when prompted.
 
+	```shell
 		$ su admin 
 		$ Password: <Enter password for admin user>
+	```
 
 3. Run the script "post_installation.sh".
 
-		$ sudo ./post_installation.sh 
+	```shell
+		$ sudo ./post_installation.sh
+	```
+
 
 You will be prompted to select one of the following options:
 
-* Enter 1 to start post installation execution. This is the default selection.
-* Enter 2 to update SSL certificates or Cumulocity license. This option will just be selected in case you only want to update certificate and/or the Cumulocity license.
+1. Run post-installation
+1. Update license and SSL certificates
+1. Run post-upgrade
+1. Configure network
+1. Exit
 
-**Info**: Option 2 will only work if the installation has been setup using option 1 previously. Option 2 should not be used for fresh setup.
+>**Info**: Option 2 and 3 will only work after you have successfully completed the post-installation setup (Option 1). 
+Option 3 and Option 4 cannot be invoked from a remote connection like SSH. You will have to run these directly from the terminal within the VM.
 
-	
-#### Post installation execution (option 1)
-	
+#### Option 1 - Run post-installation
+
+First, select the type of input you want to use.
+
+```shell
+* Enter [F] to take input from file or [C] to take input from console:
+```
+
+You have the choice to enter the post-installation parameters manually via the console or via a file. 
+
+**Console input**
+
 1. Provide a new username for the tenant admin. This username is later used to login to the system using the web browser.
 
-		$ Enter Tenant Admin Username
+	```shell
+	* Enter tenant aAmin username
+	```
 
 2. Provide a new password for the “tenant admin username”. This password is later used to login to the system using the web browser. 
 
-		$ Enter Tenant Admin Password 
+	```shell
+	* Enter tenant admin password 
+	```
 
 3. Provide a domain name, e.g. "myown.iot.com". The domain name must match the domain name of the SSL certificate.
 
-		$ Enter Domain name 
+	```shell
+	* Enter domain name
+	``` 
 
-	>**Important**: The Domain URL cannot be changed once being configured. Make sure to use the name finally desired.
+	>**Important**: The domain name cannot be changed once being configured. Make sure to use the name finally desired.
 
-4. Provide the absolute path for the SSL certificate file, e.g. "/home/admin/myown-selfsigned.crt".
+4. Provide the absolute path of the SSL certificate file. The file extension should either be ".crt" or ".cert", e.g. "/home/admin/myown-selfsigned.crt".
 
-		$ Enter Domain SSL Certificate file path
+	```shell
+	* Enter domain ({your-domain-name}) SSL certificate file path (*.crt|*.cert):
+	```
 
-1. Provide the absolute path for the “.key” file, e.g. e.g. "/home/admin/myown-selfsigned.key".
+1. Provide the absolute path of the SSL certificate key file. The file extension must be ".key.", e.g. "/home/admin/myown-selfsigned.key".
 
-		$ Enter Domain SSL Certificate Private Key file path 
+	```shell
+	* Enter domain ({your-domain-name}) SSL certificate key file path (*.key):
+	```
 
-1. Provide the absolute path for the “.licence” file e.g. e.g. "/home/admin/myown.iot.com.licence".
+1. Provide the absolute path of the license file. The file extension must be ".licence", e.g. "/home/admin/myown.iot.com.licence".
 
-		$ Enter Cumulocity License file path 
+	```shell
+	* Enter domain ({your-domain-name}) Cumulocity licence file path (*.licence):
+	```
 	
-1. Provide the absolute path for the “.xml” file, e.g. "/home/admin/<filename>.xml".
+1. Provide the absolute path of the Software AG Apama license file. The file extension must be ".xml",  e.g. "/home/admin/ApamaServerLicense101.xml". <br>This is an optional licence file, you can press [Enter] to continue.
 
-		$ Enter Apama License file path (Optional. Press Enter to continue)
+	```shell
+	* Enter SoftwareAG Apama licence file path (optional):
+	```
 
+		
+Once the input parameters are entered correctly, the parameters will be saved under 
+**/opt/c8y/utilities/post-installer/config.dat** for future reference.
+You can use this file for providing the input parameters to the post-installer.
 
-#### Updating SSL certificates or Cumulocity license (Option 2)
+**File Input**
 
-1. Provide the absolute path for the SSL certificate file, e.g. "/home/admin/<filename>.cert" or "/home/admin/<filename>.crt". 
+Provide the absolute path of the configuration file. The installation parameters will be loaded from the file. In case of incorrect parameters, the utility will fall back to console mode and will prompt the user to enter the parameters as described above.
 
-		$ Enter Domain SSL Certificate file path
+```shell
+* Enter existing file path containing post-installation parameters:
+```
 
-1. Provide the absolute path for the “.key” file, e.g. "/home/admin/<filename>.key".
+Confirm to continue with the post-installation process.
 
-		$ Enter Domain SSL Certificate Private Key file path 
+The post-installation process consists of multiple steps which are executed sequentially. Once the process has been completed successfully, a corresponding message will be displayed. In case of any failure in any of the steps, the post-installation process will halt and a failure message will be displayed in the console.
 
-1. Provide the absolute path for the “.licence” file e.g. "/home/admin/<filename>.licence".
+#### Option 2 - Update license and SSL certificates
 
-		$ Enter Cumulocity License file path
+First, select the type of input you want to use.
 
-1. Provide the absolute path for the “.xml” file, e.g. "/home/admin/<filename>.xml".
+```shell
+* Enter [F] to take input from file or [C] to take input from console:
+```
 
-		$ Enter Apama License file path (Optional. Press Enter to continue)
+You have the choice to enter the update parameters manually via the console or via a file. 
 
+**Console input**
 
-Once the execution has been completed successfully, a respective message will be displayed. In case of any failure messages, refer to [Operating Cumulocity IoT Edge](/guides/edge/operation).
+1. Provide the absolute path of the SSL certificate file. The file extension should either be ".crt" or ".cert", e.g. "/home/admin/myown-selfsigned.crt".
+
+	```shell
+	* Enter domain ({previously-entered-domain-name}) SSL certificate file path (*.crt|*.cert):
+	```
+
+2. Provide the absolute path of the SSL certificate key file. The file extension must be ".key.", e.g. "/home/admin/myown-selfsigned.key".
+
+	```shell
+	* Enter domain ({previously-entered-domain-name}) SSL certificate key file path (*.key):
+	```
+
+3. Provide the absolute path of the license file. The file extension must be ".licence", e.g. "/home/admin/myown.iot.com.licence".
+
+	```shell
+	* Enter domain ({previously-entered-domain-name}) Cumulocity licence file path (*.licence):
+	```
+	
+4. Provide the absolute path of the Software AG Apama license file. The file extension must be ".xml",  e.g. "/home/admin/ApamaServerLicense101.xml". <br>This is an optional licence file, you can press [Enter] to continue.
+
+	```shell
+	* Enter SoftwareAG Apama licence file path (optional):
+	```
+
+Once the input parameters are entered correctly, the parameters will be saved under 
+**/opt/c8y/utilities/post-installer/config.dat** for future reference.
+You can use this file for providing the input parameters to the post-installer.
+
+**File input**
+
+Provide the absolute path of the configuration file. The installation parameters will be loaded from the file. In case of incorrect parameters, the utility will fall back to console mode and will prompt the user to enter the parameters as described above.
+
+```shell
+* Enter existing file path containing update parameters:
+```
+
+Confirm to continue with the update process.
+
+The update process consists of multiple steps which are executed sequentially. Once the process has been completed successfully, a corresponding message will be displayed. In case of any failure in any of the steps, the update process will halt and a failure message will be displayed in the console.
+
+#### Option 3 - Run post-upgrade
+
+>**Important**: This task needs to be invoked from within the VM and cannot be invoked via a remote connection.
+
+Confirm to continue with the post-upgrade process.
+
+The post-upgrade process consists of multiple steps which are executed sequentially. Once the process has been completed successfully, a corresponding message will be displayed. In case of any failure in any of the steps, the post-upgrade process will halt and a failure message will be displayed in the console.
+
+If users have configured the network in the ‘source’ version the new configuration will be implemented in the newer version when this task is executed.
+
+#### Option 4 - Configure network
+
+>**Important**: This task needs to be invoked from within the VM and cannot be invoked via a remote connection.
+
+First, select the type of input you want to use.
+
+```shell
+* Enter [F] to take input from file or [C] to take input from console:
+```
+
+You have the choice to  enter the network parameters manually via the console or via a file. 
+
+**Console input**
+
+1. Provide the new IP address for the ethernet interface, e.g. 192.168.56.120
+	
+	```shell
+	* IP address for ethernet interface:
+	```
+	
+1. Provide the netmask IP for your network, e.g. 255.255.255.0
+	
+	```shell
+	* Netmask:
+	```
+
+1. Provide the gateway IP for your network, e.g. 192.168.56.1
+	
+	```shell
+	* Gateway IP:
+	```
+
+1. Provide the DNS Server IP for your network, e.g. 192.168.56.1
+	
+	```shell
+	* DNS Server IP:
+	```
+
+**File input**
+ 
+Provide the absolute path of the configuration file. The network parameters will be loaded from the file. In case of incorrect parameters, the utility will fall back to console mode and will prompt the user to enter the parameters as described above.
+
+```shell
+* Enter existing file path containing network parameters:
+```
+
+Confirm to continue with the post-installation process.
+
+The network configuration process consists of multiple steps which are executed sequentially. Once the process has been completed successfully, a corresponding message will be displayed. In case of any failure in any of the steps, the network configuration process will halt and a failure message will be displayed in the console.
+
+	

@@ -204,6 +204,8 @@
 						contentNode.appendChild(scriptNode);
 					});
 
+					$body.removeClass('loading');
+					$window.trigger(completedEventName);
 					// Complete the change
 					if(rootHash != ''){
 						setTimeout(function(){
@@ -213,8 +215,6 @@
 					}else{
 						$body.ScrollTo(scrollOptions);
 					}
-					$body.removeClass('loading');
-					$window.trigger(completedEventName);
 				
 	
 					// Inform Google Analytics of the change

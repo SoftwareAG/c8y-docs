@@ -9,65 +9,61 @@ Microservices typically provide a REST API. For inbound REST requests, Cumulocit
 * Authorization: All calls are authenticated using Cumulocity users basic or OAuth authorization.
 * TLS Termination: TLS inbound calls are terminated and only HTTP is used inside the cluster.
 * Metering: The API calls are metered in the “API calls” tenant statistics.
-* Routing: The API gateway routes requests for “/service/&lt;name&gt;” to the microservice “&lt;name&gt;”. The request routed to the microservice container and tenant options are added to the request headers.
-
-* Tenant platform user: The user that logs into the application. Created using the Cumulocity Administration application. 
-* Microservice Bootstrap user: The user being created for microservice bootstrap operations, it is connected to application itself. This user is authorized to get the microservice subscriptions and do requests for its application. Refer to [Microservice development](/guides/microservice-sdk/rest#microservice-development) for more details.
+* Routing: The API gateway routes requests for `/service/<name>` to the microservice `<name>`. The request routed to the microservice container and tenant options are added to the request headers.
+* Tenant platform user: The user that logs into the application. Created using the Cumulocity Administration application.
+* Microservice Bootstrap user: The user being created for microservice bootstrap operations and it is connected to application itself. This user is authorized to get the microservice subscriptions and make requests for its application. Refer to [Microservice development](/guides/microservice-sdk/rest#microservice-development) for more details.
 * Service user: Reflects tenant subscription to a microservice.
 
-A request to a microservice can be authorized using basic or OAuth. In case of basic authentication the flow is fairly simple, as credentials can be read and utilized for further authentication to the platform. Authentication with OAuth is based on cookies technology, so the access token has to be read from the request Cookie header. There are two important parts of OAuth authorization, an access token stored in the 'authorization' cookie and an X-XSRF-TOKEN header for XSRF attack prevention. Both must be forwarded with the request to the platform. Additionally, it is important to understand that the access token has a limited lifetime. Currently support for OAuth is provided only for Microservice SDK for Java since 9.12.6, however we recommend to use the newest version. 
+A request to a microservice can be authorized using basic or OAuth. In case of basic authentication the flow is fairly simple, as credentials can be read and utilized for further authentication to the platform. Authentication with OAuth is based on cookies technology, so the access token has to be read from the request Cookie header. There are two important parts of OAuth authorization: an access token stored in the 'authorization' cookie and an X-XSRF-TOKEN header for XSRF attack prevention. Both must be forwarded with the request to the platform. Additionally, it is important to understand that the access token has a limited lifetime. Currently, support for OAuth is provided only for the Java Microservice SDK since 9.12.6. However, we recommend to use the newest version.
 
-Any request to the platform must be done with the platform user. For microservices, it is best practice to switch context to the subscribed tenant's service user instead of using the tenant's platform user when doing a request from microservice to the Cumulocity platform. The reason is that a service user always has roles defined in requiredRoles parameter, thus always has the same permissions. On the other hand it is common for tenant platform users to have different permissions, thus a microservice can misbehave. 
+Any request to the platform must be done with the platform user. For microservices, it is a best practice to switch context to the subscribed tenant's service user instead of using the tenant's platform user when doing a request from microservice to the Cumulocity platform. The reason is that a service user always has roles defined in **requiredRoles** parameter, thus always has the same permissions. On the other hand, it is common for tenant platform users to have different permissions, thus a microservice can misbehave.
 
-A microservice runtime provides bootstrap user and service user credentials in form of environment variables. These can be also acquired via platform API. Note that depending on the isolation level the environment variables differ.
+A microservice runtime provides bootstrap user and service user credentials in form of environment variables. These can be also acquired via platform API. Note that depending on the isolation level, the environment variables differ.
 
 Per tenant scope:  
-C8Y_BOOTSTRAP_TENANT - application owner tenant id  
-C8Y_BOOTSTRAP_USER - username of bootstrap user   
-C8Y_BOOTSTRAP_PASSWORD - password of bootstrap user  
-C8Y_TENANT - subscribed tenant id  
-C8Y_USER - username of service user of a subscribed tenant   
-C8Y_PASSWORD - password of service user of a subscribed tenant 
+**C8Y_BOOTSTRAP_TENANT** - application owner tenant id  
+**C8Y_BOOTSTRAP_USER** - username of bootstrap user   
+**C8Y_BOOTSTRAP_PASSWORD** - password of bootstrap user  
+**C8Y_TENANT** - subscribed tenant id  
+**C8Y_USER** - username of service user of a subscribed tenant   
+**C8Y_PASSWORD** - password of service user of a subscribed tenant 
 
 Multi tenant scope:  
-C8Y_BOOTSTRAP_TENANT - application owner tenant id  
-C8Y_BOOTSTRAP_USER - username of bootstrap user   
-C8Y_BOOTSTRAP_PASSWORD - password of bootstrap user   
+**C8Y_BOOTSTRAP_TENANT** - application owner tenant id  
+**C8Y_BOOTSTRAP_USER** - username of bootstrap user   
+**C8Y_BOOTSTRAP_PASSWORD** - password of bootstrap user   
 
-In multi tenant scope there is a single microservice deployment reused by multiple tenants. This is why service user credentials are not provided as hardcoded environment properties. However a microservice running in multi tenant isolation can retrieve all subscriptions via 
+In multi tenant scope, there is a single microservice deployment reused by multiple tenants. That is why service user credentials are not provided as hardcoded environment properties. However, a microservice running in multi-tenant isolation can retrieve all subscriptions via a GET request and using bootstrap credentials as follows: 
+```http
+GET /application/currentApplication/subscriptions 
+Host: ...
+Authorization: Basic ...
+```
 
-    GET /application/currentApplication/subscriptions 
-    Host: ...
-    Authorization: Basic ...
+Bootstrap user credentials can be retrieved with a GET request authorized with an application owner credentials:
+```http
+GET /application/applications/{APPLICATION_ID}/bootstrapUser
+Host: ...
+Authorization: Basic ...
+```
 
-using bootstrap credentials. 
-
-Bootstrap user credentials can be also retrieved using 
-    
-    GET /application/applications/{APPLICATION_ID}/bootstrapUser
-    Host: ...
-    Authorization: Basic ...
-
- authorized with an application owner credentials. 
-
-Example of a typical user switching in multi tenant isolation is presented below, where in a hypothetical scenario there is a need to send an alarm to each tenant subscribed to a microservice. 
+An example of a typical user switching in multi-tenant isolation is presented below, where –in a hypothetical scenario– there is a need to send an alarm to each tenant subscribed to a microservice. 
 
 ![microservice_user_switch_example](/guides/images/concepts-guide/microserviceusersexample.png)
 
 Steps:
-1. User wants to use microservice capabilities to raise alarms to all subscribed tenants calls and calls platform /service/{microservice}/createAlarms. 
-2. Platform verifies user credentials and redirects request to a microservice. 
-3. Microservice reads bootstrap credentials (from environment variables) and uses them to retrieve service user credentials for all subscribed tenants.
-4. Microservice iterates over service user credentials and uses them to create alarms to each tenant. 
-5. Microservice returns result to platform, and platform to invoking user.    
+1. The User wants to employ microservice capabilities to raise alarms to all subscribed tenants calls. The user makes a request to the platform's endpoint `/service/{microservice}/createAlarms`. 
+2. The Platform verifies the user credentials and redirects the request to a microservice.
+3. The Microservice reads the bootstrap credentials (from environment variables) and uses them to retrieve the service user credentials for all subscribed tenants.
+4. The Microservice iterates over the service user credentials and uses them to create alarms to each tenant.
+5. The Microservice returns the result to the platform, and the platform to the invoking user.
 
 The following role types are defined for users:
 
 * Required roles: The roles that are predefined to allow access to Cumulocity Rest APIs.
-As an example, if a microservice creates measurements using the service user, measurement admin role must be added as a required role of the application.
+For instance, if a microservice creates measurements using the service user, measurement admin role must be added as a required role of the application.
 Required roles are added to the service users.
 * Roles: The custom roles provided to tenant platform users by the microservice developer.
 These roles can be assigned or revoked to the tenant platform users or groups using the Administration application.
 
-The roles are provided in the microservice manifest.
-
+The roles are provided in the [Microservice manifest](/guides/reference/microservice-manifest).

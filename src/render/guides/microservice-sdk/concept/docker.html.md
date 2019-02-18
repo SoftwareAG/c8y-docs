@@ -4,8 +4,8 @@ title: Docker image and container
 layout: redirect
 ---
 
-The Cumulocity microservice is based on docker. This requires that a microservice is packaged as docker image in order to run on the Cumulocity platform. The docker image is an executable package that includes everything needed to run an application. For more information on docker refer to the [Docker documentation](https://docs.docker.com/get-started/)). 
+Cumulocity microservices are based on Docker. Hence, a microservice have to be packaged as a docker image in order to run on the Cumulocity platform. A docker image is an executable package which includes everything needed to run an application. Refer to the [Docker documentation](https://docs.docker.com/get-started/)) for more information about Docker.  
 
-During run-time, the microservice is executed in a docker container. A docker container ensures that the microservices cannot harm other microservices running in Cumulocity. To execute docker containers, Cumulocity uses kubernetes. Kubernetes provides many enterprise-grade features for hosting docker containers, including auto-scaling, high availability, load balancing, rolling upgrades to limit downtime, resource quota and more.
+A microservice is executed in a docker container during runtime. The docker container ensures that a microservice cannot harm other microservices running in Cumulocity. Moreover, Kubernetes is used to orchestrate docker containers and it provides many enterprise-grade features for hosting docker containers including auto-scaling, high availability, load balancing, rolling upgrades to limit downtime, resource quota and more.
 
->**Info:** Currently kubernetes is not exposed to developers or users. This allows changing of the underlying infrastructure in the future.
+>**Info:** Currently Kubernetes is not exposed to developers or users. This allows changing of the underlying infrastructure in the future.

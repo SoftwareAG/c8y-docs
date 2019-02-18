@@ -8,7 +8,7 @@ layout: redirect
 
 Copy the Edge license, SSL key, SSL certificate and Apama license (if obtained) into the Edge VM. Use WINSCP, SCP, FTP or any other file transfer tool to transfer the files from your windows host to Edge VM (Linux OS).
 
-You can copy the files to the Edge VM folder "/home/admin". 
+You can copy the files to the Edge VM folder */home/admin*. 
 
 The files have the following extensions:
 
@@ -21,16 +21,16 @@ The files have the following extensions:
 
 ### Configuring the Edge server
 
-Once Edge VM is started, you need to run the script “post_installation.sh” to configure the Edge server. The post-installation script is available in the folder “/opt/c8y/utilities”.
+Once Edge VM is started, you need to run the script *post_installation.sh* to configure the Edge server. The post-installation script is available in the folder */opt/c8y/utilities*.
 
 Post installation should only be run after the platform initialization is successful which can be checked by running below REST API: 
 
-<img src="/guides/images/edge/edge-check-platform.png" name="Check platform initialization" style="width:75%;"/> 
+<img src="/guides/images/edge/edge-check-platform.png" name="Check platform initialization"/> 
 
 Usually the platform comes up within 2 minutes. 
 
 
-1. Browse to the folder "/opt/c8y/utilities". 
+1. Browse to the folder */opt/c8y/utilities*. 
 
 	```shell
 		$ cd /opt/c8y/utilities
@@ -43,7 +43,7 @@ Usually the platform comes up within 2 minutes.
 		$ Password: <Enter password for admin user>
 	```
 
-3. Run the script "post_installation.sh".
+3. Run the script *post_installation.sh*.
 
 	```shell
 		$ sudo ./post_installation.sh
@@ -93,25 +93,25 @@ You have the choice to enter the post-installation parameters manually via the c
 
 	>**Important**: The domain name cannot be changed once being configured. Make sure to use the name finally desired.
 
-4. Provide the absolute path of the SSL certificate file. The file extension should either be ".crt" or ".cert", e.g. "/home/admin/myown-selfsigned.crt".
+4. Provide the absolute path of the SSL certificate file. The file extension should either be ".crt" or ".cert", e.g. */home/admin/myown-selfsigned.crt*.
 
 	```shell
 	* Enter domain ({your-domain-name}) SSL certificate file path (*.crt|*.cert):
 	```
 
-1. Provide the absolute path of the SSL certificate key file. The file extension must be ".key.", e.g. "/home/admin/myown-selfsigned.key".
+1. Provide the absolute path of the SSL certificate key file. The file extension must be ".key.", e.g. */home/admin/myown-selfsigned.key*.
 
 	```shell
 	* Enter domain ({your-domain-name}) SSL certificate key file path (*.key):
 	```
 
-1. Provide the absolute path of the license file. The file extension must be ".licence", e.g. "/home/admin/myown.iot.com.licence".
+1. Provide the absolute path of the license file. The file extension must be ".licence", e.g. */home/admin/myown.iot.com.licence*.
 
 	```shell
 	* Enter domain ({your-domain-name}) Cumulocity licence file path (*.licence):
 	```
 	
-1. Provide the absolute path of the Software AG Apama license file. The file extension must be ".xml",  e.g. "/home/admin/ApamaServerLicense101.xml". <br>This is an optional licence file, you can press [Enter] to continue.
+1. Provide the absolute path of the Software AG Apama license file. The file extension must be ".xml",  e.g. */home/admin/ApamaServerLicense101.xml*. <br>This is an optional licence file, you can press [Enter] to continue.
 
 	```shell
 	* Enter SoftwareAG Apama licence file path (optional):
@@ -119,7 +119,7 @@ You have the choice to enter the post-installation parameters manually via the c
 
 		
 Once the input parameters are entered correctly, the parameters will be saved under 
-**/opt/c8y/utilities/post-installer/config.dat** for future reference.
+*/opt/c8y/utilities/post-installer/config.dat* for future reference.
 You can use this file for providing the input parameters to the post-installer.
 
 **File Input**
@@ -146,32 +146,32 @@ You have the choice to enter the update parameters manually via the console or v
 
 **Console input**
 
-1. Provide the absolute path of the SSL certificate file. The file extension should either be ".crt" or ".cert", e.g. "/home/admin/myown-selfsigned.crt".
+1. Provide the absolute path of the SSL certificate file. The file extension should either be ".crt" or ".cert", e.g. */home/admin/myown-selfsigned.crt*.
 
 	```shell
 	* Enter domain ({previously-entered-domain-name}) SSL certificate file path (*.crt|*.cert):
 	```
 
-2. Provide the absolute path of the SSL certificate key file. The file extension must be ".key.", e.g. "/home/admin/myown-selfsigned.key".
+2. Provide the absolute path of the SSL certificate key file. The file extension must be ".key.", e.g. */home/admin/myown-selfsigned.key*.
 
 	```shell
 	* Enter domain ({previously-entered-domain-name}) SSL certificate key file path (*.key):
 	```
 
-3. Provide the absolute path of the license file. The file extension must be ".licence", e.g. "/home/admin/myown.iot.com.licence".
+3. Provide the absolute path of the license file. The file extension must be ".licence", e.g. */home/admin/myown.iot.com.licence*.
 
 	```shell
 	* Enter domain ({previously-entered-domain-name}) Cumulocity licence file path (*.licence):
 	```
 	
-4. Provide the absolute path of the Software AG Apama license file. The file extension must be ".xml",  e.g. "/home/admin/ApamaServerLicense101.xml". <br>This is an optional licence file, you can press [Enter] to continue.
+4. Provide the absolute path of the Software AG Apama license file. The file extension must be ".xml",  e.g. */home/admin/ApamaServerLicense101.xml*. <br>This is an optional licence file, you can press [Enter] to continue.
 
 	```shell
 	* Enter SoftwareAG Apama licence file path (optional):
 	```
 
 Once the input parameters are entered correctly, the parameters will be saved under 
-**/opt/c8y/utilities/post-installer/config.dat** for future reference.
+*/opt/c8y/utilities/post-installer/config.dat* for future reference.
 You can use this file for providing the input parameters to the post-installer.
 
 **File input**

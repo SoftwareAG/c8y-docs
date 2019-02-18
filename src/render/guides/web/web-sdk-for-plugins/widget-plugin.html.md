@@ -458,6 +458,33 @@ Update the application manifest to add this new plugin to the import list.
 }
 ```
 
+To be able to use Weather plugin we need to add two more things to the the application manifest.
+
+Imports list should be updated with two more imports: 
+
+```json
+{
+	"imports": [
+		...
+		"core/dashboard2",
+    "core/dashboardUI"
+	]
+}
+```
+
+This change will allow us to create a dashboard where a Weather plugin will be added.
+
+The second necessary change is the addition of another field in the application manifest named Content Security Policy.
+
+```json
+{
+  ...
+   "contentSecurityPolicy": "connect-src 'self' *.darksky.net"
+  ...
+}
+```
+Adding Content Security Policy will prevent blocking requests to Dark Sky API by the browser.
+
 #### Add an item to the widget menu list
 
 Next, we have to create a config file, which adds a menu item to the widget menu list. For that purpose, we can use the service "c8yComponentsProvider" provided by the [Cumulocity JavaScript API](http://resources.cumulocity.com/documentation/websdk/ng1-modules). Inject the service into your config and call the following function:

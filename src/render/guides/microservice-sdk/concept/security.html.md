@@ -16,22 +16,22 @@ Microservices typically provide a REST API. For inbound REST requests, Cumulocit
 
 A request to a microservice can be authorized using basic or OAuth. In case of basic authentication the flow is fairly simple, as credentials can be read and utilized for further authentication to the platform. Authentication with OAuth is based on cookies technology, so the access token has to be read from the request Cookie header. There are two important parts of OAuth authorization: an access token stored in the 'authorization' cookie and an X-XSRF-TOKEN header for XSRF attack prevention. Both must be forwarded with the request to the platform. Additionally, it is important to understand that the access token has a limited lifetime. Currently, support for OAuth is provided only for the Java Microservice SDK since 9.12.6. However, we recommend to use the newest version.
 
-Any request to the platform must be done with the platform user. For microservices, it is a best practice to switch context to the subscribed tenant's service user instead of using the tenant's platform user when doing a request from microservice to the Cumulocity platform. The reason is that a service user always has roles defined in **requiredRoles** parameter, thus always has the same permissions. On the other hand, it is common for tenant platform users to have different permissions, thus a microservice can misbehave.
+Any request to the platform must be done with the platform user. For microservices, it is a best practice to switch context to the subscribed tenant's service user instead of using the tenant's platform user when doing a request from microservice to the Cumulocity platform. The reason is that a service user always has roles defined in `requiredRoles` parameter, thus always has the same permissions. On the other hand, it is common for tenant platform users to have different permissions, thus a microservice can misbehave.
 
 A microservice runtime provides bootstrap user and service user credentials in form of environment variables. These can be also acquired via platform API. Note that depending on the isolation level, the environment variables differ.
 
 Per tenant scope:  
-**C8Y_BOOTSTRAP_TENANT** - application owner tenant id  
-**C8Y_BOOTSTRAP_USER** - username of bootstrap user   
-**C8Y_BOOTSTRAP_PASSWORD** - password of bootstrap user  
-**C8Y_TENANT** - subscribed tenant id  
-**C8Y_USER** - username of service user of a subscribed tenant   
-**C8Y_PASSWORD** - password of service user of a subscribed tenant 
+`C8Y_BOOTSTRAP_TENANT` - application owner tenant id  
+`C8Y_BOOTSTRAP_USER` - username of bootstrap user   
+`C8Y_BOOTSTRAP_PASSWORD` - password of bootstrap user  
+`C8Y_TENANT` - subscribed tenant id  
+`C8Y_USER` - username of service user of a subscribed tenant   
+`C8Y_PASSWORD` - password of service user of a subscribed tenant 
 
 Multi tenant scope:  
-**C8Y_BOOTSTRAP_TENANT** - application owner tenant id  
-**C8Y_BOOTSTRAP_USER** - username of bootstrap user   
-**C8Y_BOOTSTRAP_PASSWORD** - password of bootstrap user   
+`C8Y_BOOTSTRAP_TENANT` - application owner tenant id  
+`C8Y_BOOTSTRAP_USER` - username of bootstrap user   
+`C8Y_BOOTSTRAP_PASSWORD` - password of bootstrap user   
 
 In multi tenant scope, there is a single microservice deployment reused by multiple tenants. That is why service user credentials are not provided as hardcoded environment properties. However, a microservice running in multi-tenant isolation can retrieve all subscriptions via a GET request and using bootstrap credentials as follows: 
 ```http

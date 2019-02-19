@@ -4,7 +4,7 @@ title: Security
 layout: redirect
 ---
 
-Microservices typically provide a REST API. For inbound REST requests, Cumulocity provides a light API gateway (“Proxy”) and inbound websocket requests are not supported. This API gateway is located between the client and the microservice container. The API gateway provides:
+Microservices typically provide a REST API. For inbound REST requests, Cumulocity provides a light API gateway (“Proxy”) and inbound WebSocket requests are not supported. This API gateway is located between the client and the microservice container. The API gateway provides:
 
 * Authorization: All calls are authenticated using Cumulocity users basic or OAuth authorization.
 * TLS Termination: TLS inbound calls are terminated and only HTTP is used inside the cluster.
@@ -18,7 +18,7 @@ A request to a microservice can be authorized using basic or OAuth. In case of b
 
 Any request to the platform must be done with the platform user. For microservices, it is a best practice to switch context to the subscribed tenant's service user instead of using the tenant's platform user when doing a request from microservice to the Cumulocity platform. The reason is that a service user always has roles defined in `requiredRoles` parameter, thus always has the same permissions. On the other hand, it is common for tenant platform users to have different permissions, thus a microservice can misbehave.
 
-A microservice runtime provides bootstrap user and service user credentials in form of environment variables. These can be also acquired via platform API. Note that depending on the isolation level, the environment variables differ.
+A microservice runtime provides bootstrap user and service user credentials in form of environment variables, and they can be also acquired via platform API. Note that depending on the isolation level, the environment variables differ.
 
 Per tenant scope:  
 `C8Y_BOOTSTRAP_TENANT` - application owner tenant id  
@@ -26,33 +26,33 @@ Per tenant scope:
 `C8Y_BOOTSTRAP_PASSWORD` - password of bootstrap user  
 `C8Y_TENANT` - subscribed tenant id  
 `C8Y_USER` - username of service user of a subscribed tenant   
-`C8Y_PASSWORD` - password of service user of a subscribed tenant 
+`C8Y_PASSWORD` - password of service user of a subscribed tenant
 
 Multi tenant scope:  
 `C8Y_BOOTSTRAP_TENANT` - application owner tenant id  
 `C8Y_BOOTSTRAP_USER` - username of bootstrap user   
 `C8Y_BOOTSTRAP_PASSWORD` - password of bootstrap user   
 
-In multi tenant scope, there is a single microservice deployment reused by multiple tenants. That is why service user credentials are not provided as hardcoded environment properties. However, a microservice running in multi-tenant isolation can retrieve all subscriptions via a GET request and using bootstrap credentials as follows: 
+In multi tenant scope, there is a single microservice deployment reused by multiple tenants. That is why service user credentials are not provided as hardcoded environment properties. However, a microservice running in multi-tenant isolation can retrieve all subscriptions via a GET request and using bootstrap credentials as follows:
 ```http
-GET /application/currentApplication/subscriptions 
+GET /application/currentApplication/subscriptions
 Host: ...
 Authorization: Basic ...
 ```
 
-Bootstrap user credentials can be retrieved with a GET request authorized with an application owner credentials:
+Bootstrap user credentials can be retrieved with a GET request authorized with application owner credentials:
 ```http
 GET /application/applications/{APPLICATION_ID}/bootstrapUser
 Host: ...
 Authorization: Basic ...
 ```
 
-An example of a typical user switching in multi-tenant isolation is presented below, where –in a hypothetical scenario– there is a need to send an alarm to each tenant subscribed to a microservice. 
+An example of a typical user switching in multi-tenant isolation is presented below, where –in a hypothetical scenario– there is a need to send an alarm to each tenant subscribed to a microservice.
 
 ![microservice_user_switch_example](/guides/images/concepts-guide/microserviceusersexample.png)
 
 Steps:
-1. The User wants to employ microservice capabilities to raise alarms to all subscribed tenants calls. The user makes a request to the platform's endpoint `/service/{microservice}/createAlarms`. 
+1. The User wants to employ microservice capabilities to raise alarms to all subscribed tenants calls. The user makes a request to the platform's endpoint `/service/{microservice}/createAlarms`.
 2. The Platform verifies the user credentials and redirects the request to a microservice.
 3. The Microservice reads the bootstrap credentials (from environment variables) and uses them to retrieve the service user credentials for all subscribed tenants.
 4. The Microservice iterates over the service user credentials and uses them to create alarms to each tenant.

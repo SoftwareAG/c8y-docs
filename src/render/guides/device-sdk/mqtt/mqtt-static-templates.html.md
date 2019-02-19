@@ -8,16 +8,16 @@ order: 110
 
 To ease device integration Cumulocity already supports a number of static templates that can be used by any client without the need to create your own templates. These templates focus on the most commonly used messages for device management purposes.
 
-To use the templates listed below, you need to publish the messages to the topic `s/us` (`t/us` for transient processing of published content, `q/us` for quiescent processing of published content or `c/us` for CEP processing of published content. Refer to [SmartREST > Processing mode](/guides/reference/smartrest#processing-mode) in the Reference guide for further information.
+To use the templates listed below, you need to publish the messages to the topic <kbd>s/us</kbd> (<kbd>t/us</kbd> for transient processing of published content, <kbd>q/us</kbd> for quiescent processing of published content or <kbd>c/us</kbd> for CEP processing of published content. Refer to [SmartREST > Processing mode](/guides/reference/smartrest#processing-mode) in the Reference guide for further information.
 
-You need to subscribe to the topic `s/ds` to receive operations with the static templates.
+You need to subscribe to the topic <kbd>s/ds</kbd> to receive operations with the static templates.
 
 
 ### Automatic device creation
 
 The topic for static templates supports an automatic creation of devices. Whenever there is no child associated with your MQTT ClientID and you send data, Cumulocity will automatically create a device for the MQTT ClientID. If you want to create the device on your own, your first message must be the device creation. In this case Cumulocity will create the device from the template.
 
-The automatic creation of devices is also supported for 1st level child devices. For child devices on a deeper level, you must use the template for creating a child device by sending it to the topic of the child device under whichthe one you want to place the new child.
+The automatic creation of devices is also supported for 1st level child devices. For child devices on a deeper level, you must use the template for creating a child device by sending it to the topic of the child device under the one you want to place the new child.
 
 
 ### Handling none mandatory parameters
@@ -38,13 +38,13 @@ Tailing commas is not required. The two lines below result in the same message.
 
 ### Publish templates
 
-The following templates can be used to publish data on the topics `s/us` as well as `t/us`. Refer to [SmartRest > Processing mode](/guides/reference/smartrest#processing-mode) in the Reference guide for more information about the `t/` topic for transient data processing.
+The following templates can be used to publish data on the topics <kbd>s/us</kbd> as well as <kbd>t/us</kbd>. Refer to [SmartRest > Processing mode](/guides/reference/smartrest#processing-mode) in the Reference guide for more information about the <kbd>t/</kbd> topic for transient data processing.
 
 #### Inventory templates (1xx)
 
 ##### Device creation (100)
 
-Create a new device for the serial number in the inventory if not yet existing. An externalId for the device with type **c8y_Serial** and the device identifier of the MQTT clientId as value will be created
+Create a new device for the serial number in the inventory if not yet existing. An externalId for the device with type **c8y_Serial** and the device identifier of the MQTT clientId as value will be created.
 
 |Position|Parameter|Mandatory|Default|
 |:-------|:-------|:-------|:-------|
@@ -63,7 +63,7 @@ Create a new child device for the current device. The newly created object will 
 
 |Position|Parameter|Mandatory|Default|
 |:-------|:-------|:-------|:-------|
-|1|unique child ID|YES||
+|1|unique child ID|YES| &nbsp; |
 |2|device name|NO|MQTT Device &lt;serialNumber&gt;|
 |3|device type|NO|c8y_MQTTChildDevice|
 
@@ -487,7 +487,7 @@ It enables the device to send additional parameters that trigger additional step
 
 ### Subscribe templates
 
-The client can receive the following templates when subscribing to `s/ds`.
+The client can receive the following templates when subscribing to <kbd>s/ds</kbd>.
 
 #### Inventory templates (1xx)
 

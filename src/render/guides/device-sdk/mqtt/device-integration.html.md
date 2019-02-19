@@ -37,9 +37,9 @@ Once the device retrieved the credentials, it needs to store them locally for fu
 
 To establish a connection you need to configure the following parameters:
 
-- Host: `<your_cumulocity_url>`
-- User: `<tenant>/<username>`
-- Password: `<your_cumulocity_password>`
+- Host: &lt;your_cumulocity_url>
+- User: &lt;tenant>/&lt;username>
+- Password: &lt;your_cumulocity_password>
 
 For more information, refer to the [Hello MQTT](https://www.cumulocity.com/guides/device-sdk/mqtt/#hello-mqtt) section.
 
@@ -48,8 +48,8 @@ The process works as follows:
 * Cumulocity assumes that each device has some form of unique ID. For instance, a good device identifier can be the MAC address of the network adapter, the IMEI of a mobile device or a hardware serial number.
 * When you take a new device into use, you enter this unique ID into **Device registration** in the **Device Management** application in Cumulocity, and start the device.
 * The device will use this ID as part of the [MQTT ClientId](/guides/device-sdk/mqtt#mqtt-clientid) and static user credentials that can be enquired from support@cumulocity.com.
-* The device subscribes to the topic `s/dcr`.
-* The device starts publishing continuous empty messages on the topic `s/ucr` to notify the server that it is ready to retrieve credentials.
+* The device subscribes to the topic <kbd>s/dcr</kbd>.
+* The device starts publishing continuous empty messages on the topic <kbd>s/ucr</kbd> to notify the server that it is ready to retrieve credentials.
 * Next, you should accept the connection from the device in the **Device Registration** page.
 * When the device sends the next empty message it should receive credentials in the following format:
 
@@ -67,11 +67,10 @@ The device creation can be achieved by employing the [static template 100](/guid
 
 The device will be linked automatically to the ID the client uses with its MQTT ClientId.
 
->**Info:**The topic used for Cumulocity's pre-provided static templates is "s/us".
-
 ```plaintext
 100,Device Name,Device Type
 ```
+>**Info:** The topic used for Cumulocity's pre-provided static templates is <kbd>s/us</kbd>.
 
 #### Step 2: Verify children
 
@@ -100,4 +99,3 @@ To send data to a child device, publish the data to the topics described in [Dev
 #### Step B: Receive CSV operations
 
 By subscribing to a topic, the device automatically tells Cumulocity that it wants to receive operations. Any operation created will be automatically parsed using either the static templates or the templates the device defines.
-

@@ -22,7 +22,7 @@ To develop a very simple "Hello, world!" MQTT client for Cumulocity, you need to
 
 #### Creating a JavaScript application
 
-Create an HTML file, for example "hello_mqtt_js.html" with the following content:
+Create an HTML file, for example *hello_mqtt_js.html* with the following content:
 ```xml
 <!DOCTYPE html>
 <html>
@@ -40,7 +40,7 @@ Create an HTML file, for example "hello_mqtt_js.html" with the following content
 </html>
 ```
 
-Create a JavaScript file "main.js" with the following content:
+Create a JavaScript file _main.js_ with the following content:
 
 ```javascript
 // client, user and device details
@@ -85,7 +85,7 @@ function createDevice () {
     publish("s/us", "100," + device_name + ",c8y_MQTTDevice", function() {
         // set hardware information
         publish("s/us", "110,S123456789,MQTT test model,Rev0.1", function() {
-            publish('s/us', '114,c8y_Restart', function() { 
+            publish('s/us', '114,c8y_Restart', function() {
                 log('Enable restart operation support');
                 //listen for operation
                 client.subscribe("s/ds");
@@ -100,7 +100,7 @@ function createDevice () {
     });
 }
 
-// send a message 
+// send a message
 function publish (topic, message, onMessageDeliveredCallback) {
     message = new Paho.MQTT.Message(message);
     message.destinationName = topic;
@@ -128,7 +128,7 @@ function log (message) {
 
 init();
 ```
-    
+
 Replace `serverUrl`, `clientId` and `device_name` as needed. Do not forget to specify the user credentials setting values for `tenant`, `username` and `password`.
 
 The Cumulocity MQTT protocol supports both unsecured TCP and also secured SSL connections (i.e. `ws://mqtt.cumulocity.com/mqtt` or `wss://mqtt.cumulocity.com/mqtt`), so you can pick the one which fits for you and use it in `serverUrl`.
@@ -140,8 +140,8 @@ What does the code do?
 -   Register ``onMessageDelivered`` callback function which will be called after a publish message has been delivered.
 -   After the page is fully loaded, the function `init` is called and it connects with Cumulocity via a MQTT protocol.
 -   When the connection is established, call a ``createDevice`` function.
--   Create a new device with a name (**device_name**) and a type (**c8y_MQTTDevice**).
--   Update the device hardware information by putting a **S123456789** serial, a **MQTT test model** model and a **Rev0.1** revision.
+-   Create a new device with a name (`device_name`) and a type (`c8y_MQTTDevice`).
+-   Update the device hardware information by putting a "S123456789" serial, a "MQTT test model" model and a "Rev0.1" revision.
 -   Subscribe to the static operation templates for the device –this will result in ``onMessageArrived`` method call every time a new operation is created.
 -   Send a temperature measurement every 3 seconds.
 
@@ -149,8 +149,8 @@ Note that the subscription is established after the device creation, otherwise i
 
 #### Running the application
 
-Open "hello_mqtt_js.html" in a browser. You should see a new registered device in the Device Management application listed in All devices. In the Measurements tab, you will see the  Temperature measurements being sent by your client.
-Additionally, if there will be a new operation created for this device (e.g. "c8y_Restart"), related information will be displayed in the browser page.
+Open the *hello_mqtt_js.html* file in a browser. You should see a new registered device in the **Device Management** application listed in **All devices**. In the **Measurements** tab, you will see the  Temperature measurements being sent by your client.
+Additionally, if there will be a new operation created for this device (e.g. **c8y_Restart**), related information will be displayed in the browser page.
 
 ### Improving the agent
 

@@ -22,34 +22,29 @@ The MQTT ClientId needs to match the externalId with type **c8y_Serial** of your
 
 ### Sending SmartREST 1.0
 
-To send data to the server you can publish the same content as you would POST to the SmartREST endpoint `/s`.
+To send data to the server you can publish the same content as you would POST to the SmartREST endpoint <kbd>/s</kbd>.
 
-The X-Id header is part of the topic the client needs to publish on.
-
-Topic:
+The X-ID header is part of the topic the client needs to publish on.
 ```http
 s/ul/<X-ID>
 ```
 
 #### Processing mode
 
-Since [Cumulocity SmartREST protocol](/guides/reference/smartrest) supports *TRANSIENT* processing mode for avoiding storage of sent data in the database, publishing on MQTT `t/` topic instead of `s/` topic will only pass the data to real-time processing.
+Since [Cumulocity SmartREST protocol](/guides/reference/smartrest) supports TRANSIENT processing mode for avoiding storage of sent data in the database, publishing on MQTT <kbd>t/</kbd> topic instead of <kbd>s/</kbd> topic will only pass the data to real-time processing.
 
-Topic:
 ```http
 t/ul/<X-ID>
-``` 
+```
 
-[Cumulocity SmartREST protocol](/guides/reference/smartrest) also supports *QUIESCENT* processing mode for avoiding real-time notifications by publishing on MQTT `q/` topic instead of `s/` topic. Currently, the QUIESCENT processing mode is applicable for measurements and events only.
+[Cumulocity SmartREST protocol](/guides/reference/smartrest) also supports QUIESCENT processing mode for avoiding real-time notifications by publishing on MQTT <kbd>q/</kbd> topic instead of <kbd>s/</kbd> topic. Currently, the QUIESCENT processing mode is applicable for measurements and events only.
 
-Topic:
 ```http
 q/ul/<X-ID>
 ```
 
-[Cumulocity SmartREST protocol](/guides/reference/smartrest) also supports *CEP* processing mode to ensure that data is only sent to the real-time event processing engine with real-time notifications, disabled by publishing on MQTT `c/` topic instead of `s/` topic. Currently, the CEP processing mode is applicable for measurements and events only.
+[Cumulocity SmartREST protocol](/guides/reference/smartrest) also supports CEP processing mode to ensure that data is only sent to the real-time event processing engine with real-time notifications, disabled by publishing on MQTT <kbd>c/</kbd> topic instead of <kbd>s/</kbd> topic. Currently, the CEP processing mode is applicable for measurements and events only.
 
-Topic:
 ```http
 c/ul/<X-ID>
 ```
@@ -58,7 +53,6 @@ c/ul/<X-ID>
 
 If a template triggers a response template, the returning message will be published by the server on the following topic.
 
-Topic:
 ```http
 s/dl/<X-ID>
 ```
@@ -67,9 +61,8 @@ This topic can be subscribed by the client.
 
 ### Receiving operations
 
-SmartREST 1.0 via HTTP offers the `/devicecontrol/notifications` endpoint to listen to realtime operations. You can receive the same content on the following MQTT topic.
+SmartREST 1.0 via HTTP offers the <kbd>/devicecontrol/notifications</kbd> endpoint to listen to realtime operations. You can receive the same content on the following MQTT topic.
 
-Topic:
 ```http
 s/ol/<X-ID>
 ```
@@ -78,4 +71,4 @@ s/ol/<X-ID>
 
 MQTT currently does not support request/response. Therefore, if you send a request on the publish topic and receive a response on the subscribe topic, the client cannot securely match that they belong together.
 
-You can counter this limitation by designing the templates in a way that you never need to know what request triggered the response and the client automatically knows it by the messageId.
+You can counter this limitation by designing the templates in a way that you never need to know what request triggered the response, and the client automatically knows it by the **messageId**.

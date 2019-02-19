@@ -18,19 +18,19 @@ To publish messages:
 s/uc/<X-ID>
 ```
 
-To publish messages in *TRANSIENT* mode:
+To publish messages in TRANSIENT mode:
 
 ```http
 t/uc/<X-ID>
 ```
 
-To publish messages in *QUIESCENT* mode:
+To publish messages in QUIESCENT mode:
 
 ```http
-+q/uc/<X-ID>
+q/uc/<X-ID>
 ```
 
-To publish messages in *CEP* mode:
+To publish messages in CEP mode:
 
 ```http
 c/uc/<X-ID>
@@ -58,7 +58,7 @@ Several changes in the functionality have been made:
 * Creating request templates now uses JSON path (like response templates)
 * Support for lists in responses
 * Responses also return if only part of the patterns were found
-* Declaring a default X-Id for the connection
+* Declaring a default X-ID for the connection
 
 
 ### Supported templates
@@ -66,7 +66,7 @@ Several changes in the functionality have been made:
 SmartREST 2.0 lets you create templates for the following matching HTTP methods:
 
 |   API   |GET|POST|PUT|
-|:--------|:--------|:--------|:--------|
+|:--------|:--------:|:--------:|:--------:|
 |Inventory|    x    |    x    |    x    |
 |Alarm    | &nbsp;  |    x    |    x    |
 |Event    | &nbsp;  |    x    |  &nbsp; |
@@ -97,15 +97,15 @@ s/dt
 
 When subscribed, the client can send an empty message to the creation topic which will trigger a new message about the creation status of this X-ID.
 
-**Example**
+**Examples**
 
-Empty publish to `s/ut/myExistingTemplateCollection`
+Empty publish to <kbd>s/ut/myExistingTemplateCollection</kbd>
 
 ```plaintext
 20,myExistingTemplateCollection,<ID of collection>
 ```
 
-Empty publish to s/ut/myNotExistingTemplateCollection
+Empty publish to <kbd>s/ut/myNotExistingTemplateCollection</kbd>
 
 ```plaintext
 41,myNotExistingTemplateCollection
@@ -129,7 +129,7 @@ It can set fixed values in the template that will then be replaced by the server
 
 **Example**
 
-We create a template to create a measurement like this (measurements have two mandatory values - type and time):
+We create a template to create a measurement like this (measurements have two mandatory values: type and time)
 ```bash
 # 10,msgId,api,method,response,type,time,custom1.path,custom1.type,custom1.value
 10,999,POST,MEASUREMENT,,c8y_MyMeasurment,,c8y_MyMeasurement.M.value,NUMBER,
@@ -332,9 +332,9 @@ SmartREST 2.0 will always return a response template if the condition is true (o
 
 You should make use of the condition field to control when response templates should be returned.
 
-##### Examples
+In the examples below, you can see how to query data and parse custom operations.
 
-**Querying data from the device object**
+##### Querying data from the device object
 
 Device object:
 
@@ -366,8 +366,7 @@ Client receives:
 888,myMqttDevice,,"val1=1\nval2=2"
 ```
 
-
-**Parsing custom operations**
+##### Parsing custom operations
 
 Operation object:
 
@@ -405,8 +404,7 @@ Client receives (assuming the ClientId is "myMqttTestDevice"):
 
 The template 444 is not returned as the condition does not match the operation.
 
-
-**Querying data from the device object containing key with multiple objects**
+##### Querying data from the device object containing key with multiple objects
 
 Device object:
 ```json
@@ -452,7 +450,7 @@ Client receives:
 
 Having the X-ID as part of the topic gives you the freedom to easily use multiple template collections, but adds additional bytes for every message.
 If anyway the device uses mostly (or completely) a single collection, it makes sense to specify this collection as your default collection.
-With a default collection specified, the client can use special topics which do not require the X-ID, and instead the server will use the X-ID previously specified. The topics are `"s/ud"` for publishing and `"s/dd"` for subscribing.
+With a default collection specified, the client can use special topics which do not require the X-ID, and instead the server will use the X-ID previously specified. The topics are <kbd>s/ud</kbd> for publishing and <kbd>s/dd</kbd> for subscribing.
 
 You can specify one X-ID within your MQTT ClientID (see [MQTT implementation](/guides/device-sdk/mqtt#mqtt-clientid)).
 Your MQTT ClientID could look like this:
@@ -461,6 +459,6 @@ Your MQTT ClientID could look like this:
 d:myDeviceSerial:myDefaultTemplateXID
 ```
 
->**Info**: If you use a default X-ID, you need to include in the **ClientId** the "d:" at the beginning to specify that the client is a device.
+>**Info**: If you use a default X-ID, you need to include in the **ClientId** the `d:` at the beginning to specify that the client is a device.
 
 It is not required that the default template exists at the time of establishing the MQTT connection (it will be verified once the client uses it).

@@ -34,7 +34,7 @@ To develop a very simple "Hello, world!" MQTT client for Cumulocity, you need to
 
 #### Creating the application
 
-Create a source file, for example "hello_mqtt.c" with the following content:
+Create a source file, for example *hello_mqtt.c* with the following content:
 
 ```cpp
 #include "stdlib.h"
@@ -96,29 +96,29 @@ int main(int argc, char* argv[]) {
     return rc;
 }
 ```
-    
+
 Replace `<<clientId>>`, `<<serverUrl>>`, `<<tenant>>`, `<<username>>` and `<<password>>` with your data.
 
-The Cumulocity MQTT protocol supports both unsecured TCP and secured SSL connections (e.g. ``tcp://mqtt.cumulocity.com:1883`` or ``ssl://mqtt.cumulocity.com:8883``), so as the "&lt;&lt;serverUrl&gt;&gt;" you can pick the one which fits for you.
+The Cumulocity MQTT protocol supports both unsecured TCP and secured SSL connections (e.g. ``tcp://mqtt.cumulocity.com:1883`` or ``ssl://mqtt.cumulocity.com:8883``), so as the `<<serverUrl>>` you can pick the one which fits for you.
 When using SSL remember to configure ``MQTTClient_SSLOptions`` and set it in the ``MQTTClient_connectOptions``.
 
-What does the code in "main" do?
+What does the code in `main` do?
 
 -   Configure an MQTT connection.
 -   Register a ``on_message`` callback function which will print incoming messages.
 -   Connect with Cumulocity via an MQTT protocol.
--   Create a new device with a``C MQTT`` name and a``c8y_MQTTDevice`` type.
+-   Create a new device with ``C MQTT`` name and ``c8y_MQTTDevice`` type.
 -   Update the device hardware information by putting a ``S123456789`` serial, a ``MQTT test model`` model and a ``Rev0.1`` revision.
 -   Subscribe to the static operation templates for the device - this will result in a ``on_message`` method call every time a new operation is created.
 -   Send temperature measurement every 3 seconds.
 
-What does the code in "publish" do?
+What does the code in `publish` do?
 
 -   Create a new MQTT message and set a payload.
 -   Publish message via MQTT protocol.
 -   Wait maximum 1 second for a message delivered ACK from the server.
 
-Note that the subscription is established after the device creation, otherwise if there is no device for a given ``clientId`` the server will not accept it. 
+Note that the subscription is established after the device creation, otherwise if there is no device for a given ``clientId`` the server will not accept it.
 
 #### Building and running the application
 
@@ -126,7 +126,7 @@ To build:
 ```shell
 $ gcc hello_mqtt.c -o hello_mqtt -lpaho-mqtt3c
 ```
-    
+
 To run:
 ```shell
 $ ./hello_mqtt
@@ -134,8 +134,8 @@ Message '100,C MQTT,c8y_MQTTDevice' with delivery token 1 delivered
 ...
 ```
 
-After starting the application you should see a new device in the Device Management application in the device list.
-Additionally, if there will be a new operation created for this device, (for example ``c8y_Restart``) information about it will be printed to the console. 
+After starting the application, you should see a new device in the **Device Management** application in the device list.
+Additionally, if there will be a new operation created for this device, (for example ``c8y_Restart``) information about it will be printed to the console.
 
 ### Improving the agent
 

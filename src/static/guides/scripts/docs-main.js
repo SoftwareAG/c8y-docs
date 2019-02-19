@@ -56,9 +56,11 @@ $(document).ready(function () {
   });
 
   $('.subchildren a').click(function(e){
+    e.preventDefault();
     if (!$(this).closest('.slot').hasClass('current')) {
-      e.preventDefault();
       History.pushState(null, $(this).text(),$(this).attr('data-href'));
+    }else{
+      window.location.hash = $(this).attr('data-target');
     }
   });
 

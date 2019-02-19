@@ -84,7 +84,7 @@
 				
 				// Continue as normal for cmd clicks etc
 				if ( event.which == 2 || event.metaKey ) { return true; }
-				if( $this.hasClass( 'no-ajaxy' ) ) { return true; }
+				if( $this.hasClass( 'no-ajaxy' )  ) { return true; }
 				// Ajaxify this link
 				History.pushState(null,title,url);
 				event.preventDefault();
@@ -106,7 +106,9 @@
 			var State = History.getState().url.split('#'),
 			cur_url = window.location.href.split('#');
 			//console.log('cur_url: ',cur_url[0],'\nState: ', State[0]);
-			if(cur_url[0].slice(-1)== '/') cur_url[0]= cur_url[0].slice(0, -1);
+			if(cur_url[0].slice(-1)== '/'){
+				cur_url[0]= cur_url[0].slice(0, -1);
+			}
 			if(cur_url[0] == State[0]){
 				//console.log('sameplace');
 				if(cur_url[1] != State[1]){
@@ -115,7 +117,7 @@
 			}else{
 				//console.log('different place');
 				rootHash = cur_url[1];
-				var title = $('#mainnav').find('a[href="#'+rootHash+'"]').text();
+				var title = $('#mainnav').find('a[data-target="#'+rootHash+'"]').text();
 				//console.log('roothash', rootHash);
 				History.pushState(null,title,cur_url[0]);
 				//$window.trigger('statechange');
@@ -184,7 +186,7 @@
 					}, 200);
 						// Update the content
 					$content.stop(true,true);
-					$content.html(contentHtml).ajaxify().animate({opacity:1},800); /* you could fade in here if you'd like */
+					$content.html(contentHtml).ajaxify().animate({opacity:1},800); /*  fade in here */
 
 					// Update the title
 					document.title = $data.find('.document-title:first').text();

@@ -26,7 +26,7 @@ On Linux machines, add the following entry to */etc/hosts*:
 
 On Windows machines,  add the same entry to *C:\Windows\System32\Drivers\etc\hosts*.
 
-Ping the `<domain_name>` to verify it. 
+Ping the &#60;domain_name> to verify it. 
 
 ```shell
 $ ping <domain_name>
@@ -34,7 +34,7 @@ $ ping <domain_name>
 
 If the ping is successful the DNS resolution is working properly.
 
-Using `<domain_name>`, Edge can be connected from the host operating system (operating system which is hosting Edge VM instance). If you want to connect Edge VM within your LAN, which is outside of the host operating system, you need to do following:
+Using &#60;domain_name>, Edge can be connected from the host operating system (operating system which is hosting Edge VM instance). If you want to connect Edge VM within your LAN, which is outside of the host operating system, you need to do following:
 
 * Port forwarding must be enabled as mentioned in [Setting up the environment](/guides/edge/installation#setting-up-the-environment).
 * The DNS entry needs to be added in your LAN’s DNS server/Name server. The DNS entry must have the domain name (provided in post_installation step) and the IP address of the host operating system. Note that this is not the Edge VM IP.

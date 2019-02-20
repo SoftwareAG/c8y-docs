@@ -479,7 +479,6 @@ Secondly, we need to allow our application to send requests to Dark Sky API. In 
   (...)
 }
 ```
-Adding Content Security Policy will prevent blocking requests to Dark Sky API by the browser.
 
 #### Add an item to the widget menu list
 

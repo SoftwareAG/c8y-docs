@@ -12,5 +12,5 @@ This communication architecture is illustrated below. Inside the sensor networks
 
 <center><img src="/guides/images/concepts-guide/commsecurity.png" alt="Communication security" style="max-width: 100%"></center>
 
-As mentioned above, Cumulocity does not require any device that might expose ports or services on the Internet. This is an important feature: it not only simplifies the connection of devices to Cumulocity, but also simplifies the safety backup of these devices drastically. When deploying an IoT solution, check other services that might make a device available on the Internet or expose it, such as Web-based device managers or SMS-based configuration options.
+As mentioned above, Cumulocity does not require any device that might expose ports or services on the Internet. This is an important feature: it not only simplifies the connection of devices to Cumulocity, but also simplifies the safety backup of these devices drastically. When deploying an IoT solution, check other services that might make a device available on the Internet or expose it, such as web-based device managers or SMS-based configuration options.
 

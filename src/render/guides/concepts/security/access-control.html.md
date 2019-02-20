@@ -19,7 +19,7 @@ Cumulocity creates a new realm for each tenant to store the users of that tenant
 
 Each new realm is automatically populated with an initial administrator user who can create further users and user groups, and who can assign permissions to these users and user groups. This enables an enterprise to manage users and their permissions on their own using the Administration application.
 
-![User management](/guides/images/concepts-guide/concepts-user-management.png)
+![User management](/guides/images/concepts-guide/user-management.png)
 
 The ability to execute certain functionality on the system depends on two concepts: Permissions and ownership. Permissions define explicitly what functionality can be executed by a user. Cumulocity distinguishes read permissions and administration permissions. Read permissions enable users to read data. Administration permissions enable users to create, update and delete data. Read and administration permissions are separately available for the different types of data in Cumulocity. For example, there are read permissions for inventory data, measurements, operations and so forth.
 
@@ -50,7 +50,7 @@ A detailed description on available default roles and on creating global and inv
 
 To assign roles to users, click **User** in the **Account** menu and select a user from the user list. In the **Global roles** tab, global roles can be assigned to the selected user. In the **Inventory roles** tab, you can assign roles for the user for particular device groups. 
 
-![Inventory roles](/guides/images/users-guide//Administration/admin-inventory-roles-apply.png)
+![Inventory roles](/guides/images/users-guide//Administration/admin-inventory-role-apply.png)
 
 For details on assigning global and inventory roles see [Managing permissions](/guides/users-guide/administration#managing-permissions) in the Administration section of the User guide.
 
@@ -70,25 +70,18 @@ Permissions are extended along two dimensions:
 
 Permit a user to read the temperature measurement of device "10200":
 
-	```java
-	10200, MEASUREMENT, c8y_TemperatureMeasurement, READ 
-	```
+```java
+10200, MEASUREMENT, c8y_TemperatureMeasurement, READ 
+```
 
 Permit a user to read any measurement of device "10200":
 
-	```java
-	10200, MEASUREMENT, *, READ
-	```
+```java
+10200, MEASUREMENT, *, READ
+```
 
 Permit a user to restart device "10200":
 
-	```java
-	10200, OPERATION, c8yRestart, ADMIN
-	```
-
-### Troubleshooting permissions
-
-To determine the permissions of a particular user on a particular device, navigate to the device in the device management application and click on the "Permissions" tab. Then enter the name of the user into the "User" field. This will print all permissions of the user for the device.
-
-![Viewing user permissions](/guides/images/acl/acl_dm1.png)
-
+```java
+10200, OPERATION, c8yRestart, ADMIN
+```

@@ -12,4 +12,4 @@ Our strategic hosting partners follow up to date concepts and concepts of data s
 
 In IoT solutions, physical security also includes unauthorized access to IoT devices, for example, to redirect or manipulate data from devices, read credentials from devices or change a device's configuration. We recommend to review the physical security of the devices that you plan to use for your IoT solution and, for example, make **configuration ports unavailable** to unauthorized people or include tamper sensors as an additional security control within your own system.
 
-As the operator of the Cumulocity platform we do not control internal systems of our tenants. As a tenant you must follow a powerful and carefully condidered security concept for your own system.
+As the operator of the Cumulocity platform we do not control internal systems of our tenants. As a tenant you must follow a powerful and carefully considered security concept for your own system.

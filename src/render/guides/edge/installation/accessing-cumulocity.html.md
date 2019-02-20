@@ -47,6 +47,8 @@ Once the machine is in running state, open a web browser and enter the address:
 https://<domain_name>
 ```
 
+The Cumulocity Login screen opens up.
+
 <img src="/guides/images/users-guide/overview-login.png" name="Login screen"/>
 
 In the Login screen, log in with the following credentials:

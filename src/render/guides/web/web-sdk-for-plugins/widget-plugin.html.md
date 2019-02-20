@@ -54,13 +54,13 @@ Then create a file "iconmap.module.js" at the plugin's root folder to have the f
 
 Update the application manifest to add this new plugin to the import list.
 
-```console
+```json
 {
-	...
-	"imports": [
-		...
-		"myapplication/iconmap"
-	]
+  (...)
+  "imports": [
+    (...)
+    "myapplication/iconmap"
+  ]
 }
 ```
 
@@ -264,13 +264,13 @@ In this case, we recommend you to download the "weatherService" plugin from the 
 
 Do not forget to include the plugin in your application manifest:
 
-```console
+```json
 {
-	...
-	"imports": [
-		...
-		"myapplication/weatherService"
-	]
+  (...)
+  "imports": [
+    (...)
+    "myapplication/weatherService"
+  ]
 }
 ```
 
@@ -299,13 +299,13 @@ We will import the "weatherService" plugin, since it provides us the possibility
 
 Update the application manifest to add this new plugin to the import list.
 
-```console
+```json
 {
-	...
+  (...)
 	"imports": [
-		...
-		"myapplication/weatherAdmin"
-	]
+    (...)
+    "myapplication/weatherAdmin"
+  ]
 }
 ```
 
@@ -448,40 +448,35 @@ We will import the "weatherService" plugin, since it provides us the possibility
 
 Update the application manifest to add this new plugin to the import list.
 
-```console
+```json
 {
-	...
-	"imports": [
-		...
-		"myapplication/weather"
-	]
+  "imports": [
+    (...)
+    "myapplication/weather"
+  ]
 }
 ```
+To be able to use the Weather plugin two things need to be added to the application manifest.
 
-To be able to use Weather plugin we need to add two more things to the application manifest.
-
-Firstly imports list needs to be updated with the following imports.
+Firstly, we need to enable users to use dashboards in our application so that they can create the Weather widget instances. This is possible by importing two core plugins:
 
 ```json
 {
-  ...
-	"imports": [
-		...
-		"core/dashboard2",
-        "core/dashboardUI"
-	]
+  "imports": [
+    (...)
+    "core/dashboard2",
+    "core/dashboardUI"
+  ]
 }
 ```
 
-This change will allow us to create a dashboard where a Weather plugin will be added.
-
-The second necessary change is the addition of another field in the application manifest named Content Security Policy.
+Secondly, we need to allow our application to send requests to Dark Sky API. In order to achieve that, let's add a new property to the application manifest called `contentSecurityPolicy` with the following value:
 
 ```json
 {
-  ...
-   "contentSecurityPolicy": "connect-src 'self' *.darksky.net"
-  ...
+  (...)
+  "contentSecurityPolicy": "connect-src 'self' *.darksky.net"
+  (...)
 }
 ```
 Adding Content Security Policy will prevent blocking requests to Dark Sky API by the browser.

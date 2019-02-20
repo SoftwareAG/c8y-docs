@@ -18,15 +18,19 @@ OR
 
 #### <a name="add-alias"></a>Adding the alias
 
-On Linux machines, add the following entry to `/etc/hosts`:
+On Linux machines, add the following entry to */etc/hosts*:
 
-	192.168.56.120 <domain_name> 
+```plaintext
+192.168.56.120 <domain_name>
+```
 
-On Windows machines,  add the same entry to `C:\Windows\System32\Drivers\etc\hosts`.
+On Windows machines,  add the same entry to *C:\Windows\System32\Drivers\etc\hosts*.
 
 Ping the `<domain_name>` to verify it. 
 
-	$ ping <domain_name>
+```shell
+$ ping <domain_name>
+```
 
 If the ping is successful the DNS resolution is working properly.
 
@@ -39,14 +43,18 @@ Using `<domain_name>`, Edge can be connected from the host operating system (ope
 
 Once the machine is in running state, open a web browser and enter the address:
 
-	https://<domain_name>
+```plaintext
+https://<domain_name>
+```
 
 <img src="/guides/images/users-guide/overview-login.png" name="Login screen"/>
 
 In the Login screen, log in with the following credentials:
 
+```plaintext
 Username: <tenant admin username> (as provided during post-installation)
 Password: <tenant admin password> (as provided during post-installation)
+```
 
 >**Info**: Cumulocity IoT Edge needs several minutes to start. Then all services should be up and running and you can login to the application.
 

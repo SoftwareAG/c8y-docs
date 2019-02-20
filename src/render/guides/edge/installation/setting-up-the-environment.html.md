@@ -22,9 +22,11 @@ Use the following login credentials for SSH login into the Edge instance:
 
 Use the following command to log into Edge server via SSH:
 
-	ssh admin@192.168.56.120
+```shell	
+ssh admin@192.168.56.120
 	
-	$ Password: manage
+$ Password: manage
+```
 	
 
 >**Info**: 

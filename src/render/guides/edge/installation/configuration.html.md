@@ -71,12 +71,12 @@ First, select the type of input you want to use.
 
 You have the choice to enter the post-installation parameters manually via the console or via a file. 
 
-**Console input**
+##### Console input
 
 1. Provide a new username for the tenant admin. This username is later used to login to the system using the web browser.
 
 	```shell
-	* Enter tenant aAmin username
+	* Enter tenant admin username
 	```
 
 2. Provide a new password for the “tenant admin username”. This password is later used to login to the system using the web browser. 
@@ -100,7 +100,6 @@ You have the choice to enter the post-installation parameters manually via the c
 	```
 
 1. Provide the absolute path of the SSL certificate key file. The file extension must be ".key.", e.g. */home/admin/myown-selfsigned.key*.
-
 	```shell
 	* Enter domain ({your-domain-name}) SSL certificate key file path (*.key):
 	```
@@ -111,7 +110,7 @@ You have the choice to enter the post-installation parameters manually via the c
 	* Enter domain ({your-domain-name}) Cumulocity licence file path (*.licence):
 	```
 	
-1. Provide the absolute path of the Software AG Apama license file. The file extension must be ".xml",  e.g. */home/admin/ApamaServerLicense101.xml*. <br>This is an optional licence file, you can press [Enter] to continue.
+1. Provide the absolute path of the Software AG Apama license file. The file extension must be ".xml",  e.g. */home/admin/ApamaServerLicense101.xml*. <br> <br>This is an optional licence file, you can press [Enter] to continue.
 
 	```shell
 	* Enter SoftwareAG Apama licence file path (optional):
@@ -122,7 +121,7 @@ Once the input parameters are entered correctly, the parameters will be saved un
 */opt/c8y/utilities/post-installer/config.dat* for future reference.
 You can use this file for providing the input parameters to the post-installer.
 
-**File Input**
+##### File Input
 
 Provide the absolute path of the configuration file. The installation parameters will be loaded from the file. In case of incorrect parameters, the utility will fall back to console mode and will prompt the user to enter the parameters as described above.
 
@@ -144,7 +143,7 @@ First, select the type of input you want to use.
 
 You have the choice to enter the update parameters manually via the console or via a file. 
 
-**Console input**
+##### Console input
 
 1. Provide the absolute path of the SSL certificate file. The file extension should either be ".crt" or ".cert", e.g. */home/admin/myown-selfsigned.crt*.
 
@@ -164,7 +163,7 @@ You have the choice to enter the update parameters manually via the console or v
 	* Enter domain ({previously-entered-domain-name}) Cumulocity licence file path (*.licence):
 	```
 	
-4. Provide the absolute path of the Software AG Apama license file. The file extension must be ".xml",  e.g. */home/admin/ApamaServerLicense101.xml*. <br>This is an optional licence file, you can press [Enter] to continue.
+4. Provide the absolute path of the Software AG Apama license file. The file extension must be ".xml",  e.g. */home/admin/ApamaServerLicense101.xml*.<br> <br>This is an optional licence file, you can press [Enter] to continue.
 
 	```shell
 	* Enter SoftwareAG Apama licence file path (optional):
@@ -174,7 +173,7 @@ Once the input parameters are entered correctly, the parameters will be saved un
 */opt/c8y/utilities/post-installer/config.dat* for future reference.
 You can use this file for providing the input parameters to the post-installer.
 
-**File input**
+##### File input
 
 Provide the absolute path of the configuration file. The installation parameters will be loaded from the file. In case of incorrect parameters, the utility will fall back to console mode and will prompt the user to enter the parameters as described above.
 
@@ -208,7 +207,7 @@ First, select the type of input you want to use.
 
 You have the choice to  enter the network parameters manually via the console or via a file. 
 
-**Console input**
+##### Console input
 
 1. Provide the new IP address for the ethernet interface, e.g. 192.168.56.120
 	
@@ -234,7 +233,7 @@ You have the choice to  enter the network parameters manually via the console or
 	* DNS Server IP:
 	```
 
-**File input**
+##### File input
  
 Provide the absolute path of the configuration file. The network parameters will be loaded from the file. In case of incorrect parameters, the utility will fall back to console mode and will prompt the user to enter the parameters as described above.
 

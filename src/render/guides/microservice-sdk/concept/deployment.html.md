@@ -1,19 +1,13 @@
 ---
-order: 120
+order: 110
 title: Deploying microservices
 layout: redirect
 ---
 
-For a microservice to be available it has to be deployed at the Cumulocity platform. This is done by uploading a zip file with the microservice package. A user cannot directly push to the docker registry. 
+A microservice becomes available once it has been successfully deployed on the Cumulocity platform. This is done by uploading a zip file with the microservice package as it is specified in [Packaging](#packaging) above. A user cannot directly push an image to the docker registry.
 
-For further information on deploying microservices to Cumulocity, refer to [Administration > Managing applications](/guides/users-guide/administration#managing-applications) in the User guide. 
+Refer to [Microservice manifest](/guides/reference/microservice-manifest) in the Reference guide for details on how to create a manifest file with applicable settings.
 
-The microservice package must contain the manifest file and docker image of the microservice.
+For further information on deploying microservices to Cumulocity, refer to [Managing applications](/guides/users-guide/administration#managing-applications) in the User guide.
 
-Refer to [Microservice manifest reference](/guides/reference/microservice-manifest) in the Reference guide for details on how to create a manifest file with applicable settings.
-
-Refer to [Packaging](/guides/microservice-sdk/concept#packaging) for details on how to prepare and deploy the microservice package.
-
->**Info:** In case of microservices, you need to subscribe to the application to use it. 
-
-
+>**Info:** In case of microservices, you need to subscribe to the application to use it.

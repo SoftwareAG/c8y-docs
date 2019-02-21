@@ -76,19 +76,19 @@ You have the choice to enter the post-installation parameters manually via the c
 1. Provide a new username for the tenant admin. This username is later used to login to the system using the web browser.
 
 	```shell
-	* Enter tenant admin username
+	* Enter tenant admin username:
 	```
 
 2. Provide a new password for the “tenant admin username”. This password is later used to login to the system using the web browser. 
 
 	```shell
-	* Enter tenant admin password 
+	* Enter tenant admin password:
 	```
 
 3. Provide a domain name, e.g. "myown.iot.com". The domain name must match the domain name of the SSL certificate.
 
 	```shell
-	* Enter tenant domain name
+	* Enter tenant domain name:
 	``` 
 
 	>**Important**: The domain name cannot be changed once being configured. Make sure to use the name finally desired.

@@ -20,7 +20,7 @@ Available ports:
 
 > **Info**: To use WebSockets you need to connect to the path <kbd>/mqtt</kbd> and follow the [MQTT standard](http://docs.oasis-open.org/mqtt/mqtt/v3.1.1/os/mqtt-v3.1.1-os.html#_Toc398718127) for WebSocket communication.
 
-### SmartREST Payload
+### SmartREST payload
 
 The Cumulocity MQTT implementation uses SmartREST as a payload. SmartREST is a CSV-like message protocol that uses templates on the server side to create data in Cumulocity.
 
@@ -80,7 +80,7 @@ The MQTT ClientId is a field to uniquely identify each connected client. The Cum
 |Field|Mandatory|Description|
 |:-------|:--------|:--------|
 |connectionType|NO|Indication of connection type default: d (device)|
-|deviceIdentifier|YES|A unique identifier for your device, e.g. IMEI, Serial number, ...|
+|deviceIdentifier|YES|A unique identifier for your device, e.g. IMEI, Serial number|
 |defaultTemplateIdentifier|NO|Check the SmartREST section for more information about template identifiers|
 
 For the simplest version of a client, the MQTT clientId can just be the deviceIdentfier. It will automatically be interpreted as device connection.
@@ -107,9 +107,9 @@ For subscriptions to the operation or error topics, we will deliver all messages
 
 #### MQTT clean session
 
-MQTT clients can set the clean session flag to 0 (false). This will ensure that in case the client disconnects, your subscription will still work and when you reconnect the client will receive the missed messages.
+MQTT clients can set the clean session flag to "0" (false). This will ensure that in case the client disconnects, your subscription will still work and when you reconnect the client will receive the missed messages.
 
->**Info:** Cumulocity requires clean session to be set to 1 (true). Currently we cannot guarantee that disabling clean session will work reliably, hence we recommend to always enable clean session.
+>**Info:** Cumulocity requires clean session to be set to "1" (true). Currently we cannot guarantee that disabling clean session will work reliably, hence we recommend to always enable clean session.
 
 #### MQTT retained flag
 
@@ -124,7 +124,6 @@ In MQTT, the "last will" is a message that is specified at connection time and t
 
 ### Debugging
 
-To support developers during development, it is possible to subscribe to the topic <kbd>s/e</kbd>.
-On this topic the device can retrieve debug and error messages that occur during a publish from the device.
+To support developers during development, it is possible to subscribe to the topic <kbd>s/e</kbd>. On this topic the device can retrieve debug and error messages that occur during a publish from the device.
 
 >**Info**: This topic is purely designed to support the development of clients. It is not recommended to always subscribe to this channel as the messages are verbose and can significantly increase the data usage. Also, you should not use this topic to trigger actions of the device based on what you receive on the topic. It is not a response channel.

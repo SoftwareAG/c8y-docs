@@ -18,13 +18,13 @@ To publish messages:
 s/uc/<X-ID>
 ```
 
-To publish messages in TRANSIENT mode:
+To publish messages in transient mode:
 
 ```http
 t/uc/<X-ID>
 ```
 
-To publish messages in QUIESCENT mode:
+To publish messages in quiescent mode:
 
 ```http
 q/uc/<X-ID>
@@ -36,7 +36,7 @@ To publish messages in CEP mode:
 c/uc/<X-ID>
 ```
 
-Refer to [SmartREST > Processing mode](/guides/reference/smartrest#processing-mode) in the Reference guide for more information about transient, quiescent & CEP data processing.
+Refer to SmartREST > [Processing mode](/guides/reference/smartrest#processing-mode) in the Reference guide for more information about transient, quiescent & CEP data processing.
 
 To subscribe for responses:
 
@@ -77,7 +77,7 @@ Additionally, you can create templates to return certain values from responses a
 
 ### Template collections
 
-A template collection is a set of request and response templates that specifies a device communication protocol. Each collection is referenced by a unique ID (called X-Id).
+A template collection is a set of request and response templates that specifies a device communication protocol. Each collection is referenced by a unique ID (called X-ID).
 
 #### <a name="creating-templates-via-mqtt"></a>Creating templates via MQTT
 
@@ -117,12 +117,12 @@ A request template contains the following basic fields:
 
 |Field &nbsp; &nbsp;|Data type &nbsp; &nbsp;|Possible values &nbsp; &nbsp;|Mandatory|Description|
 |:-------|:-------|:-------|:-------|:-------|
-|messageId|String| &nbsp;|YES|Unique ID to reference the template within the collection|
-|method|String|GET<br>PUT<br>POST|YES|Whether to get, update or create data|
-|api|String|INVENTORY<br>MEASUREMENT<br>ALARM<br>EVENT<br>OPERATION|YES|Cumulocity API to be used|
-|response|Boolean|true<br>false|NO|Whether the request should trigger response templates. For GET templates by default true otherwise by default false|
-|mandatoryValues|List&lt;String&gt;| &nbsp;|YES|Values for the mandatory fields on the API. The values depend on the API and method the template uses|
-|customValues|List&lt;CustomValue&gt;| &nbsp;|NO|Custom values that should be added to the object|
+|messageId|String| &nbsp;|Y|Unique ID to reference the template within the collection|
+|method|String|GET<br>PUT<br>POST|Y|Whether to get, update or create data|
+|api|String|INVENTORY<br>MEASUREMENT<br>ALARM<br>EVENT<br>OPERATION|Y|Cumulocity API to be used|
+|response|Boolean|true<br>false|N|Whether the request should trigger response templates. For GET templates by default true otherwise by default false|
+|mandatoryValues|List&lt;String&gt;| &nbsp;|Y|Values for the mandatory fields on the API. The values depend on the API and method the template uses|
+|customValues|List&lt;CustomValue&gt;| &nbsp;|N|Custom values that should be added to the object|
 
 A request template lists all the fragments in the object structure (mandatory and custom) that should be added when creating or updating the data.
 It can set fixed values in the template that will then be replaced by the server. If it does not set the value in the template, the value needs to be included in the publish message (this includes mandatoryValues).
@@ -130,10 +130,12 @@ It can set fixed values in the template that will then be replaced by the server
 **Example**
 
 We create a template to create a measurement like this (measurements have two mandatory values: type and time)
+
 ```bash
 # 10,msgId,api,method,response,type,time,custom1.path,custom1.type,custom1.value
 10,999,POST,MEASUREMENT,,c8y_MyMeasurment,,c8y_MyMeasurement.M.value,NUMBER,
 ```
+
 This template defines one additional custom property for the measurement. It leaves two fields empty in the template declaration (time and the custom property), so to use the template the client needs to send these two values:
 
 ```bash
@@ -148,12 +150,12 @@ The following sections will get into more detail of how to create and use differ
 
 GET templates for the inventory do not need any mandatory or custom values. Instead, they use two different fields.
 
-With SmartREST 2.0 you have the option to either get an object from inventory by its ID or by an externalId directly. Therefore, instead of the fields **mandatoryValues** and **customValues**, the following two fields are used:
+With SmartREST 2.0 you have the option to either get an object from inventory by its ID or by an external ID directly. Therefore, instead of the fields **mandatoryValues** and **customValues**, the following two fields are used:
 
 |Field|Data type|Possible values|Mandatory|Description|
 |:-------|:-------|:-------|:-------|:-------|
-|byId|boolean|true<br>false|YES|Whether the GET should be executed by Cumulocity ID (=true) or externalId (=false)|
-|externalIdType|String| &nbsp;|NO|Sets a fixed externalIdType if the template calls by externalId|
+|byId|Boolean|true<br>false|Y|Whether the GET should be executed by Cumulocity ID (=true) or externalId (=false)|
+|externalIdType|String| &nbsp;|N|Sets a fixed externalIdType if the template calls by externalId|
 
 This enables you to query inventory in three different ways:
 
@@ -239,8 +241,7 @@ PUT templates for inventory follow the same logic as the GET templates, and with
 999,myDeviceImei,myValue
 ```
 
-The PUT template for alarms uses the type of the alarm to find the alarm to update.
-It will first check the ACTIVE alarms and, if there is no ACTIVE alarm, it will check the ACKNOWLEDGED alarms.
+The PUT template for alarms uses the type of the alarm to find the alarm to update. It will first check the ACTIVE alarms and, if there is no ACTIVE alarm, it will check the ACKNOWLEDGED alarms.
 
 ```bash
 # Creation:
@@ -250,8 +251,7 @@ It will first check the ACTIVE alarms and, if there is no ACTIVE alarm, it will 
 999,FAILED
 ```
 
-PUT templates for operations use the fragment of the operation to find the operation.
-It will first check the EXECUTING operations and, if there is no EXECUTING operation, it will check the PENDING operations.
+PUT templates for operations use the fragment of the operation to find the operation. It will first check the EXECUTING operations and, if there is no EXECUTING operation, it will check the PENDING operations.
 
 ```bash
 # Creation:
@@ -267,13 +267,13 @@ All POST and PUT values enable you to add custom properties to the results of th
 
 A single custom property requires you to add the following three values to your template creation:
 
-|field|description|
+|Field|Description|
 |:-------|:-------|
 |path|A JsonPath for the value that should be set|
 |type|An optional data type of the value. Default: STRING|
 |value|The value to be set. Leaving this field empty requires the client to send the value when using the template|
 
-|type|description|
+|Type|Description|
 |:-------|:-------|
 |STRING|The default type. No additional verification of the value|
 |DATE|A time stamp in the ISO 8601 format. Using date and not sending a time stamp results in the use of server time|
@@ -287,7 +287,7 @@ A single custom property requires you to add the following three values to your 
 
 ##### Examples
 
-**Template for clearing an alarm with an additional custom property**
+Template for clearing an alarm with an additional custom property
 
 ```bash
 # Creation:
@@ -296,7 +296,7 @@ A single custom property requires you to add the following three values to your 
 999,Device resolved alarm on its own
 ```
 
-**Template for creating a custom measurement**
+Template for creating a custom measurement
 
 ```bash
 # Creation:
@@ -305,7 +305,7 @@ A single custom property requires you to add the following three values to your 
 999,30.6
 ```
 
-**Template for updating a property in the device**
+Template for updating a property in the device
 
 ```bash
 # Creation:
@@ -320,13 +320,12 @@ The SmartREST 2.0 response templates use the same structure as in SmartREST 1.0.
 
 |Field|Data type|Mandatory|Description|
 |:-------|:-------|:-------|:-------|
-|messageId|String|YES|Unique ID to reference the template within the collection|
-|base|String|NO|A JsonPath prefix that all patterns will use|
-|condition|String|NO|A JsonPath that needs to exist in the object to use the  pattern|
-|pattern|List&lt;String&gt;|YES|A list of JsonPath that will be extracted from the object and returned to the device|
+|messageId|String|Y|Unique ID to reference the template within the collection|
+|base|String|N|A JsonPath prefix that all patterns will use|
+|condition|String|N|A JsonPath that needs to exist in the object to use the  pattern|
+|pattern|List&lt;String&gt;|Y|A list of JsonPath that will be extracted from the object and returned to the device|
 
-Response will be used for every operation and for any request template that defines the response field with true.
-In each case, the server will try every registered response template, so there might be multiple response lines for a single operation or request.
+Response will be used for every operation and for any request template that defines the response field with true. In each case, the server will try every registered response template, so there might be multiple response lines for a single operation or request.
 
 SmartREST 2.0 will always return a response template if the condition is true (or no condition was defined). Patterns that did not resolve will be returned as empty string.
 
@@ -407,6 +406,7 @@ The template 444 is not returned as the condition does not match the operation.
 ##### Querying data from the device object containing key with multiple objects
 
 Device object:
+
 ```json
 {
   "id": "12345",
@@ -450,10 +450,12 @@ Client receives:
 
 Having the X-ID as part of the topic gives you the freedom to easily use multiple template collections, but adds additional bytes for every message.
 If anyway the device uses mostly (or completely) a single collection, it makes sense to specify this collection as your default collection.
+
 With a default collection specified, the client can use special topics which do not require the X-ID, and instead the server will use the X-ID previously specified. The topics are <kbd>s/ud</kbd> for publishing and <kbd>s/dd</kbd> for subscribing.
 
-You can specify one X-ID within your MQTT ClientID (see [MQTT implementation](/guides/device-sdk/mqtt#mqtt-clientid)).
-Your MQTT ClientID could look like this:
+You can specify one X-ID within your MQTT ClientId (see [MQTT implementation](/guides/device-sdk/mqtt#mqtt-clientid)).
+
+Your MQTT ClientId could look like this:
 
 ```plaintext
 d:myDeviceSerial:myDefaultTemplateXID

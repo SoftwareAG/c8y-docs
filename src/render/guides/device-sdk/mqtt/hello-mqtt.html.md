@@ -64,7 +64,7 @@ The required interval can be set with the template `117` and just takes a single
 117,10
 ```
 
-After a reload of the **Info** page of your device in **Device Management**, you should see the information we just added.
+After a reload of the **Info** page of your device in the Device Management application, you should see the information we just added.
 
 ##### Creating measurements
 
@@ -93,11 +93,12 @@ Besides the measurements above, we can also use the template `200` to create a m
 200,myCustomTemperatureMeasurement,fahrenheit,75.2,F
 ```
 
-After a reload in the **Device Management** application, you should see 4 graphs with the newly added measurements in the **Measurements** tab of your device.
+After a reload in the Device Management application, you should see 4 graphs with the newly added measurements in the **Measurements** tab of your device.
 
 ##### Creating alarms
 
 Now we will create some alarms for this device. There are templates to create alarms for the 4 alarm severities:
+
 * 301: CRITICAL
 * 302: MAJOR
 * 303: MINOR
@@ -111,21 +112,22 @@ Each of them note a type (which is mandatory), a text and a time (both optional)
 ```
 
 The alarm list of your device should now contain one critical alarm and one warning.
+
 Note that we did not set any text for the warning, so it was created with a default alarm text.
 
-Now we will clear the critical alarm again.
-To achieve this, we use the template `306` which refers to the type of the alarm that should be cleared.
+Now we will clear the critical alarm again. To achieve this, we use the template `306` which refers to the type of the alarm that should be cleared.
 
 ```plaintext
 306,gpio_critical
 ```
 
 The critical alarm should be cleared afterwards.
+
 Note that you did not have to handle any alarm IDs with the MQTT implementation. Cumulocity will take over this part so that the device communication can be as easy as possible.
 
 ##### Creating events
 
-Next, we will create some location events for the device. If you wish, you may use [LatLong Website](http://www.latlong.net/) to get the latitude and longitude of your city.
+Next, we will create some location events for the device. If you wish, you may use the [LatLong website](http://www.latlong.net/) to get the latitude and longitude of your city.
 
 The template `401` lets you create location events and takes latitude, longitude, altitude, accuracy and the time as parameters, but for now we will just use the first two.
 
@@ -133,7 +135,7 @@ The template `401` lets you create location events and takes latitude, longitude
 401,51.227741,6.773456
 ```
 
-In the **Device Management** application, you can see one event in the event list but the location has not been updated. This is because on REST these are different requests. Instead of the template **401**, you can use the template `402` in MQTT. It works exactly the same as `401` but additionally it also updates the position of the device itself.
+In the Device Management application, you can see one event in the event list but the location has not been updated. This is because on REST these are different requests. Instead of the template `401`, you can use the template `402` in MQTT. It works exactly the same as `401` but additionally it also updates the position of the device itself.
 
 ```plaintext
 402,51.227741,6.773456
@@ -145,6 +147,7 @@ Now you should see both the **Location** and the **Tracking** tab in the device 
 #### Receiving data
 
 So far we have only used MQTT to send data from the client to the server. Now we will send data from the server to the client.
+
 To achieve this, we first need to subscribe to the responsible topic. We will do two subscriptions:
 
 * s/ds : This will subscribe to the static operation templates for the device
@@ -176,7 +179,7 @@ In the MQTTBox, you should now have received a new message for the <kbd>s/ds</kb
 
 The `511` is indicating what kind of operation we received (in this case `c8y_Command`). This will be followed by the **deviceIdentifier** to locate the device with the dedicated operation. This is required if you have a hierarchy with multiple children. In such case, you need to know for which of the children the operation was dedicated. Finally, you have the operation specific parameters, which in the case of `c8y_Command` is only the command text.
 
-After receiving the operation, we can start EXECUTING it to initiate the client's handling the operation. Similar to changing the status of an alarm, you can add the type of operation to the template.
+After receiving the operation, we can start executing it to initiate the client's handling the operation. Similar to changing the status of an alarm, you can add the type of operation to the template.
 
 ```plaintext
 501,c8y_Command

@@ -22,7 +22,7 @@ This is free software; see the source for copying conditions.  There is NO
 warranty; not even for MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
 ```
 
-* Download, compile and install the MQTT C Paho Client. You will find more details about Paho on the [Paho website](http://www.eclipse.org/paho/clients/c/).
+* Download, compile and install the MQTT C Paho client. You will find more details about Paho on the [Paho website](http://www.eclipse.org/paho/clients/c/).
 
 
 ### Developing the "Hello, MQTT world!" client
@@ -109,7 +109,7 @@ What does the code in `main` do?
 -   Connect with Cumulocity via an MQTT protocol.
 -   Create a new device with ``C MQTT`` name and ``c8y_MQTTDevice`` type.
 -   Update the device hardware information by putting a ``S123456789`` serial, a ``MQTT test model`` model and a ``Rev0.1`` revision.
--   Subscribe to the static operation templates for the device - this will result in a ``on_message`` method call every time a new operation is created.
+-   Subscribe to the static operation templates for the device - this will result in an ``on_message`` method call every time a new operation is created.
 -   Send temperature measurement every 3 seconds.
 
 What does the code in `publish` do?
@@ -122,20 +122,23 @@ Note that the subscription is established after the device creation, otherwise i
 
 #### Building and running the application
 
-To build:
+To build the application, enter
+
 ```shell
 $ gcc hello_mqtt.c -o hello_mqtt -lpaho-mqtt3c
 ```
 
-To run:
+To run the application, enter
+
 ```shell
 $ ./hello_mqtt
 Message '100,C MQTT,c8y_MQTTDevice' with delivery token 1 delivered
 ...
 ```
 
-After starting the application, you should see a new device in the **Device Management** application in the device list.
-Additionally, if there will be a new operation created for this device, (for example ``c8y_Restart``) information about it will be printed to the console.
+After starting the application, you should see a new device in the Device Management application, listed in **All devices**.
+
+Additionally, if there will be a new operation created for this device (for example ``c8y_Restart``), information about it will be printed to the console.
 
 ### Improving the agent
 

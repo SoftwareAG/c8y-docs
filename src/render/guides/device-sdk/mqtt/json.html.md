@@ -6,7 +6,7 @@ layout: redirect
 
 This section describes the JSON payload format that can be used with the Cumulocity MQTT implementation.
 
-Compared to SmartREST 2.0 –which only works with fixed templates– JSON's support for MQTT was designed to combine the payload flexibility of our REST API with the low protocol overhead of MQTT.
+Compared to SmartREST 2.0 – which only works with fixed templates – JSON's support for MQTT was designed to combine the payload flexibility of our REST API with the low protocol overhead of MQTT.
 
 The SmartREST way should still be the preferred way if it is important to reduce your payload to the minimum (mobile traffic, low capability device).
 
@@ -21,14 +21,14 @@ To publish messages:
 ```
 
 
-To publish messages in TRANSIENT mode:
+To publish messages in transient mode:
 
 ```http
 t/<api>/<resource>/<action>/<id>
 ```
 
 
-To publish messages in QUIESCENT mode:
+To publish messages in quiescent mode:
 
 ```http
 q/<api>/<resource>/<action>/<id>
@@ -71,7 +71,7 @@ The following endpoints and actions are supported:
 
 If the operation is not supported, a proper error message will be sent to the <kbd>error</kbd> topic.
 
-For all of the above endpoints, you can use the same payload like in the REST API. The only difference is in the *source* field - in REST this field is mandatory while for JSON MQTT there is no need to set the device ID here.
+For all of the above endpoints, you can use the same payload like in the REST API. The only difference is in the "source" field - in REST this field is mandatory while for JSON MQTT there is no need to set the device ID here.
 The source device ID will automatically be resolved based on the MQTT client ID. This value will always be used no matter if something is already defined there.
 
 ### Examples
@@ -79,6 +79,7 @@ The source device ID will automatically be resolved based on the MQTT client ID.
 #### Create new event
 
 Publish a message on topic <kbd>/event/events/create</kbd> with payload:
+
 ```json
 {
   "type": "TestEvent",
@@ -90,6 +91,7 @@ Publish a message on topic <kbd>/event/events/create</kbd> with payload:
 #### Create many events
 
 Publish a message on topic <kbd>/event/events/createBulk</kbd> with payload:
+
 ```json
 {
   "events": [
@@ -110,6 +112,7 @@ Publish a message on topic <kbd>/event/events/createBulk</kbd> with payload:
 #### Update event
 
 Publish a message on topic <kbd>/event/events/update/<event_id></kbd> with payload:
+
 ```json
 {
   "text": "new text"

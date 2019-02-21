@@ -35,6 +35,7 @@ To develop a very simple "Hello, world!" MQTT client for Cumulocity, you need to
 #### Creating a Maven project
 
 To create a plain Java project with Maven, execute the following command:
+
 ```shell
 $ mvn archetype:generate -DgroupId=c8y.example -DartifactId=hello-mqtt-java -DarchetypeArtifactId=maven-archetype-quickstart -DinteractiveMode=false
 ```
@@ -181,7 +182,8 @@ $ mvn exec:java -Dexec.mainClass="c8y.example.App"
 Received operation 510,123456789
 ```
 
-After starting the application, you should see a new registered device in the **Device Management** application listed in **All devices**. In the **Measurements** tab, you will see the Temperature measurements being sent by your client.
+After starting the application, you should see a new registered device in the Device Management application, listed in **All devices**. In the **Measurements** tab, you will see the temperature measurements being sent by your client.
+
 Additionally, if there will be a new operation created for this device (e.g. **c8y_Restart**), information about it will be printed to the console.
 
 ### Improving the agent

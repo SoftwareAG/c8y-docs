@@ -131,11 +131,13 @@ Note that the subscription is established after the device creation, otherwise i
 #### Running the script
 
 To run the script just use the command:
+
 ```shell
 $ python hello_mqtt.py
 ```
 
-After starting the application you should see a new registered device in the **Device Management** application listed in **All devices**. In the **Measurements** tab, you will see the Temperature measurements being sent by your client.
+After starting the application you should see a new registered device in the Device Management application, listed in **All devices**. In the **Measurements** tab, you will see the temperature measurements being sent by your client.
+
 Additionally, if there will be a new operation created for this device (e.g. **c8y_Restart**), information about it will be printed to the console.
 
 

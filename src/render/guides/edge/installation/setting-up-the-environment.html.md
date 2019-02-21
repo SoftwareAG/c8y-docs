@@ -23,11 +23,13 @@ Use the following login credentials for SSH login into the Edge instance:
 Use the following command to log into Edge server via SSH:
 
 ```shell	
-ssh admin@192.168.56.120
+ssh admin@<IP address>
 	
 $ Password: manage
 ```
 	
+Use the IP address provided during [network configuration](/guides/edge/installation#configuration). The default value for the Virtual Box is 192.168.56.120.
+
 
 >**Info**: 
 Root access is not supported in the Edge VM instance. Changes made as root user might cause failure of the described operational procedures. 

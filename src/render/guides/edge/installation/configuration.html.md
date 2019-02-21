@@ -232,6 +232,8 @@ You have the choice to  enter the network parameters manually via the console or
 	```shell
 	* Enter DNS Server IP:
 	```
+	
+	>**Info**: If the DNS Server IP is unknown, you can enter the previously entered 	gateway IP here.
 
 ##### File input
  
@@ -241,7 +243,7 @@ Provide the absolute path of the configuration file. The network parameters will
 * Enter existing file path containing network parameters:
 ```
 
-Confirm to continue with the post-installation process.
+Confirm to continue with the network configuration process.
 
 The network configuration process consists of multiple steps which are executed sequentially. After a step has been executed, its status will be shown on the console. In case of any failure in any of the steps, the network configuration process will halt and a failure message will be displayed on the console.
 

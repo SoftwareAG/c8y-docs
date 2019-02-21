@@ -87,13 +87,13 @@ The following permission categories are available by default:
 |Data broker|Send data to other tenants or receive data from other tenants.
 |Device control|View or edit commands for devices resp. send commands to devices. Also used for device registration.
 |Events|View or create events for devices.
+|Global Smart Rules|Configure global Smart Rules.
 |Identity|View or edit identifiers for devices.
 |Inventory|View or edit inventory data.
 |Measurements|View or create measurements for devices.
 |Option management|View or edit account options such as password policies.
 |Retention rules|View or edit retention rules.
 |Simulator|Configure simulated devices.
-|Smart Rules|Configure Smart Rules.
 |Sms|Configure SMS.
 |Tenant management|View, create, edit or delete subtenants.
 |Tenant statistics|View the usage data for this account, as shown on the Home screen of the Administration application.

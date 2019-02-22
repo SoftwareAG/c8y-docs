@@ -8,7 +8,7 @@ To view all devices connected to your account, click **All devices** in the **De
 
 A detailed device list will be displayed.
 
-<img src="/guides/images/users-guide/DeviceManagement/DevMgmt_DevicesList.png" alt="Device List" style="max-width: 100%">
+![Device list](/guides/images/users-guide/DeviceManagement/devmgmt-devices-alldevices.png)
 
 
 ### <a name="device-list"></a>Device list
@@ -46,7 +46,7 @@ Our example shows a search for "Ublox C027".
 
 For details on the search functionality, refer to Getting Started > [GUI functionalities and features](/guides/users-guide/overview#gui-features). 
 
-<img src="/guides/images/users-guide/DeviceManagement/DevMgmt_Search.png" alt="Device Management Search" style="max-width: 100%">
+![Search for devices](/guides/images/users-guide/DeviceManagement/devmgmt-search.png)
 
 ### <a name="filtering-devices"></a>Filtering devices
 
@@ -54,7 +54,7 @@ The device list offers a filtering functionality to filter devices in the list f
 
 Filtering is available on every column. Just click the filter icon next to the name of the column you want to set a filter for. 
 
-<img src="/guides/images/users-guide/DeviceManagement/DevMgmt_Filtering.png" alt="Filtering" style="max-width: 100%">
+![Device filtering](/guides/images/users-guide/DeviceManagement/devmgmt-devices-filter.png)
 
 A window will come up in which you can specify your filter options.
 

@@ -14,13 +14,13 @@ Top-level groups are shown in the **Group** menu in the navigator at top-level. 
 
 To display a list of all groups in the account, click **Groups** in the navigator. 
 
-<img src="/guides/images/users-guide/DeviceManagement/DevMgmt_GroupList.png" alt="Groups list" style="max-width: 100%">
+![Groups list](/guides/images/users-guide/DeviceManagement/devmgmt-groups.png)
 
 For each group, the name and the number of children is displayed.
 
 Click a group to view its details. 
 
-<img src="/guides/images/users-guide/DeviceManagement/DevMgmt_GroupDetails.png" alt="Group details" style="max-width: 100%">
+![Group info](/guides/images/users-guide/DeviceManagement/devmgmt-groups-info.png)
 
 **Info Tab**
 
@@ -36,7 +36,7 @@ In the **Info** tab, the following information is provided:
 
 In the **Sub-assets** tab you see a list of all devices assigned to the group. For each device, the name and the number of children is displayed.
 
-<img src="/guides/images/users-guide/DeviceManagement/DevMgmt_GroupSubAssets.png" alt="Sub-assets" style="max-width: 100%">
+![Sub-assets](/guides/images/users-guide/DeviceManagement/devmgmt-groups-subassets.png)
 
 To assign a device to a group, click **Assign devices** at the right of the top menu bar (see [How to assign a device to an existing group](#assigning-devices)).
 
@@ -59,7 +59,11 @@ To create a new group follow these steps:
 
 >**Info:** A group can be created with "0" devices in it.
 
-<img src="/guides/images/users-guide/addtopgroup.png" alt="Device Management" style="max-width: 100%">
+![Create a group](/guides/images/users-guide/DeviceManagement/devmgmt-groups-create.png)
+
+An empty group can also be added by clicking on the **Add group**.
+
+![Add empty group](/guides/images/users-guide/DeviceManagement/devmgmt-groups-add.png)
 
 ### <a name="assigning-devices"></a>How to assign a device to an existing group
 
@@ -90,7 +94,7 @@ From the group perspective:
 3. Checkmark the devices you want to add from the list.
 4. Click **Assign X device(s)** to assign the selected devices. 
 
-<img src="/guides/images/users-guide/DeviceManagement/DevMgmt_AssignDevices.png" alt="Assign devices to a group" style="max-width: 50%">
+![Assign devices](/guides/images/users-guide/DeviceManagement/devmgmt-groups-assign.png)
 
 ### How to create a sub-group
 
@@ -108,7 +112,7 @@ For further information on permissions, see the [Administration Guide](/guides/u
 
 Smart groups are groups dynamically constructed based on filtering criteria. They have a temporary character because the group members can change constantly. Smart groups do not have fixed member listings.They have fixed criteria instead. This type of group can be used, for example, for bulk upgrades of devices of a certain type to a new software or firmware version.
 
-<img src="/guides/images/users-guide/smartfilters.png" alt="Adding top-level groups" style="max-width: 100%">
+![Smart groups filter](/guides/images/users-guide/DeviceManagement/devmgmt-groups-smartgroups-filter.png)
 
 Smart groups can be created from the device list. 
 
@@ -117,17 +121,17 @@ Smart groups can be created from the device list.
 3. Click **Create smart group** at the right of the top menu bar.
 4. Enter a name for the group and click **Create**.
 
-<img src="/guides/images/users-guide/smartgroup1.png" alt="Create a smart group" style="max-width: 100%">
+![Create smart groups](/guides/images/users-guide/DeviceManagement/devmgmt-groups-smartgroups-create.png)
 
 The new group will appear as a top-level group in the **Groups** menu of the navigator. Smart groups can be distinguished by a small cogwheel in the folder icon. 
 
-<img src="/guides/images/users-guide/DeviceManagement/DevMgmt_SmartgroupIcon.png" alt="Smart groups" style="max-width: 100%">
+![Smart groups icon](/guides/images/users-guide/DeviceManagement/devmgmt-groups-smartgroups-icon.png)
 
 In the **Sub-asset** tab you can adjust your selection and modify the filter settings.
 
 To delete a smart group, click the menu icon and from the context menu select **Delete**. 
 
-<img src="/guides/images/users-guide/smartgroupdelete1.png" alt="Adding top-level groups" style="max-width: 100%">
+![Delete smart groups](/guides/images/users-guide/DeviceManagement/devmgmt-groups-delete.png)
 
 **Important**: Deleting a smart group is irreversible.
 

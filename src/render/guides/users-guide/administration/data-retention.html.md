@@ -8,18 +8,18 @@ layout: redirect
 
 Retention rules gives you control on how long data is stored in your account. You might for example want to store measurements for 90 days, but delete alarms already after 10 days. By default, all historical data is deleted after 60 days (configurable in the system settings).
 
-Retention rules are usually run during the night. When you edit a retention rule, you will not see an immediate effect in the "Usage" section on the Home screen of the Administration application.
+Retention rules are usually run during the night. When you edit a retention rule, you will not see an immediate effect in the **Usage** section on the Home screen of the Administration application.
 
 Click **Retention rules** in the **Management** menu to view a list of retention rules configured for your account.
 
-<img src="/guides/images/users-guide/Administration/Admin_RetentionRules.png" alt="Retention rules" style="max-width: 50%">
+<img src="/guides/images/users-guide/Administration/admin-retention-rules.png" alt="Retention rules">
 
 For each rule, the rule name, details on the data to be deleted (fragment type, type and source, see below) and the maximum age in days is provided.
 
 The asterisk ("*") indicates that data with any value will be cleaned up.
 
 
-**Creating retention rules**
+#### Adding retention rules
 
 To add additional retention rules, click **Add rule** in the top menu bar. 
 

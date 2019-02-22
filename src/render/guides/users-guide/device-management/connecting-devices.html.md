@@ -12,7 +12,7 @@ To connect devices to your Cumulocity account follow these steps:
 
 Click **Registration** in the **Devices** menu of the navigator and click **Register device**.
 
-<img src="/guides/images/users-guide/DeviceManagement/devmgmt-register-devices.png" alt="Register devices" style="max-width: 100%">
+<img src="/guides/images/users-guide/DeviceManagement/devmgmt-register-devices.png" alt="Register devices">
 
 In the **Register devices** dialog, you may choose one of the following options:
 	
@@ -22,7 +22,7 @@ In the **Register devices** dialog, you may choose one of the following options:
 If you are subscribed to the required applications you will see a third option
 **Custom device registration** for registering devices of specific types, e.g. LoRa or Sigfox, see the documentation for these optional services for details. 
 
-<img src="/guides/images/users-guide/DeviceManagement/devmgmt-register-devices-custom.png" alt="Register devices" style="max-width: 100%">
+<img src="/guides/images/users-guide/DeviceManagement/devmgmt-register-devices-custom.png" alt="Register devices">
 
 
 ### <a name="device-registration-manually"></a>Connecting devices manually
@@ -44,7 +44,7 @@ To connect devices manually to your Cumulocity account follow these steps:
 
 **Info**: In the Enterprise edition, the management tenant may also directly select a tenant to which the device will be added from here. Note that since the management tenant does not have access to the subtenant's inventory you can either register devices to a tenant OR to a group, not both. 
 
-<img src="/guides/images/users-guide/DeviceManagement/devmgmt-device-registration-tenant.png" alt="General device registration" style="max-width: 100%"> 
+<img src="/guides/images/users-guide/DeviceManagement/devmgmt-device-registration-tenant.png" alt="General device registration"> 
 
 After successful registration the device(s) will be listed in the [**Device registration** page](#dev-registration) with the status **Waiting for connection**.
 
@@ -58,7 +58,7 @@ Click **Accept** to confirm the connection. The status of the device will change
 
 In the **Device registration** page all devices which currently are in the registration process are displayed either in a list or in a grid.
 
-<img src="/guides/images/users-guide/DeviceManagement/devmgmt-device-registration.png" alt="Device registration page" style="max-width: 100%">
+<img src="/guides/images/users-guide/DeviceManagement/devmgmt-device-registration.png" alt="Device registration page">
 
 The following information is shown for each device:
 

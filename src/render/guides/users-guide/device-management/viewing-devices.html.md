@@ -58,7 +58,7 @@ Filtering is available on every column. Just click the filter icon next to the n
 
 A window will come up in which you can specify your filter options.
 
-<img src="/guides/images/users-guide/DeviceManagement/DevMgmt_FilteringOptions.png" alt="Filter Options" style="max-width: 50%">
+<img src="/guides/images/users-guide/DeviceManagement/DevMgmt_FilteringOptions.png" alt="Filter Options">
 
 Most columns represent text fields. You can filter these columns by simply entering an arbitrary text into the textbox as in the search field. Click **+ Or** to add another textbox if you want to filter for more than one term. 
 

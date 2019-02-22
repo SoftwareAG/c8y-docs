@@ -6,7 +6,7 @@ layout: redirect
 
 Dashboards provide you with a customized visualization of your data by using a set of widgets. Widgets can display maps, images, graphs, tables and other graphic representations of data. 
 
-Cumulocity comes with a number of preset widgets, see [Widgets Collection](#widgets) for details. You can also develop your own widgets and add them to your Cumulocity account. Refer to the [Web Developer's Guide](/guides/web/) for details.
+Cumulocity comes with a number of preset widgets, see [Widgets Collection](#widgets) for details. You can also develop your own widgets and add them to your Cumulocity account. Refer to the [Web SDK Guide](/guides/web/) for details.
 
 ### <a name="creating-dashboards"></a>Creating a dashboard
 
@@ -14,7 +14,11 @@ Select the group or the device in the navigator for which to create a dashboard.
 
 Click the **Plus** button in the top bar and from the context menu select **New dashboard**. 
 
-<img src="/guides/images/users-guide/Cockpit/Cockpit_DashboardCreate.png" name="Create dashboard" style="width:75%;"/>
+<img src="/guides/images/users-guide/Cockpit/cockpit-dashboard-menu.png" name="New dashboard"/>
+
+The dashboard editor opens.
+
+<img src="/guides/images/users-guide/Cockpit/cockpit-dashboard-create.png" name="Create dashboard"/>
 
 In the **Dashboard info** section of the dashboard editor, provide the following information:
 
@@ -30,16 +34,18 @@ Click **Save** to create and open the dashboard.
 
 Since there will be no widgets on the dashboard yet, you will see an **Add Widget** button instead.
 
+<img src="/guides/images/users-guide/Cockpit/cockpit-dashboard-empty.png" name="Empty dashboard"/> 
+
 
 ### <a name="adding-widgets"></a>Adding a widget to a dashboard
 
-To add a widget to a dashboard, click **Add widget** in the top menu bar.
+To add a widget to a dashboard, click the **Add widget** button (in case of an empty dashboard) or click **Add widget** in the top menu bar.
 
-<img src="/guides/images/users-guide/Cockpit/Cockpit_AddWidget.png" name="Add widget" style="width:75%;"/> 
+<img src="/guides/images/users-guide/Cockpit/cockpit-dashboard-widget-add.png" name="Add widget"/> 
 
 In the upcoming dialog, select a widget type from the dropdown list. Depending on the widget type selected, additional fields and checkboxes will be displayed to be filled in or selected. For details on all widgets refer to [Widgets Collection](#widgets). 
 
-Click **Customize widget style** to customize the content and header style for the widget individually, similar to specifying the general layout in the [dashboard editor](#creating-dashboards).
+Click **Customize widget style** to customize the content and header style for the widget individually, in the same way as specifying the general layout of the [dashboard editor](#creating-dashboards).
 
 Click **Save** to add the widget to the dashboard.
 
@@ -47,26 +53,32 @@ Click **Save** to add the widget to the dashboard.
 
 Widgets may be rearranged on the dashboard. By dragging and dropping you can move the widget to another position. 
 
+<img src="/guides/images/users-guide/Cockpit/cockpit-dashboard-widgets.png" name="Arrange widgets"/> 
+
 By dragging the arrows on the bottom right corner of a widget, you can resize it. 
 
 To edit the properties of a widget on a dashboard, click the cogwheel icon at the top right corner of the widget and from the context menu select **Edit**.
+
+<img src="/guides/images/users-guide/Cockpit/cockpit-dashboard-widget-menu.png" name="Edit widget"/> 
 
 To delete a widget from a dashboard, click the cogwheel icon at the top right corner of the widget and from the context menu select **Remove**.
 
 Widgets can only be modified, if the dashboard is unlocked. To lock/unlock a dashboard, use the slider with the lock icon on the top menu bar.
 
-<img src="/guides/images/users-guide/Cockpit/Cockpit_LockDashboard.png" name="Lock dashboard" style="width:50%;"/> 
+<img src="/guides/images/users-guide/Cockpit/cockpit-dashboard-lock.png" name="Lock dashboard"/> 
 
 >**Info:** On touch devices like smartphones or tablets some functions may not be supported.
 
 
 ### <a name="sharing-dashboards"></a>Sharing dashboards
 
-You can create one dashboard and share it with all devices of a specific type. To do so, select the option "Apply dashboard to all devices of type [TYPE]" ([TYPE] is replaced with the type of the device that is currently selected).
+You can create a dashboard for a specific device and share it with all devices of the same type. This is only possible though, if the type property is set for the device.
 
-In the dashboard editor, the following message will be displayed:
+To do so, select the option **Apply dashboard to all devices of type [TYPE]** ([TYPE] is replaced with the type of the device that is currently selected).
 
-<img src="/guides/images/users-guide/Cockpit/Cockpit_ShareDashboard.png" name="Shared dashboard" style="width:50%;"/> 
+A corresponding message will be displayed in the editor.
+
+<img src="/guides/images/users-guide/Cockpit/cockpit-dashboard-share.png" name="Shared dashboard"/> 
 
 Changes made to this dashboard are automatically applied to all dashboard instances.
 
@@ -75,12 +87,18 @@ Changes made to this dashboard are automatically applied to all dashboard instan
 
 ### Editing dashboard properties
 
-To edit a dashboard, click **Edit** in the top menu bar. The dashboard editor will open up. For details on the fields, refer to [Creating dashboards](#creating-dashboards).
+To edit a dashboard, click **Edit** in the top menu bar. 
+
+<img src="/guides/images/users-guide/Cockpit/cockpit-dashboard-edit.png" name="Edit dashboard"/> 
+
+The dashboard editor will open up. For details on the fields, refer to [Creating dashboards](#creating-dashboards).
 
 
 ### Copying dashboards
 
 To copy a dashboard from one object to another, click **More...** in the top menu bar and from the context menu select **Copy dashboard**. 
+
+<img src="/guides/images/users-guide/Cockpit/cockpit-dashboard-copy.png" name="Copy dashboard"/> 
 
 Next, navigate to the object you want to copy the dashboard to and from the context menu select **Paste dashboard [NAME]** to insert the dashboard.
 

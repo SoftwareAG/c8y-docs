@@ -28,7 +28,7 @@ We place the source in the event so we can easily match it in a listener.
 
 We now set up a listener triggered by event LocationEventWithDistance, listening for the next LocationEventWithDistance - for the same source:
 
-	on all LocationEventWithDistance() as firstPos {
+			on all LocationEventWithDistance() as firstPos {
 				on LocationEventWithDistance(source = firstPos.source) as secondPos {
 					// now have two events with distances
 				}

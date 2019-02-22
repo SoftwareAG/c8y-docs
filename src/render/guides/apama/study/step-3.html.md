@@ -9,13 +9,14 @@ With the device available we will now check if there is a geofence configured fo
 Once we have an event and a device, we extract the data from the event's c8y&#95;Position and the device's c8y&#95;Geofence. These objects are mapped to dictionary<any,any> entries in the params. As the params hold values of type "any", we need to cast to a dictionary<;any,any>:
 
 		if(dev.params.hasKey("c8y_Geofence") and
-	   dev.supportedOperations.indexOf("c8y_Geofence") >= 0) {
-	    dictionary<any,any> evtPos := <dictionary<any, any> > e.params["c8y_Position"];
-	    float eventLat := <float> evtPos["lat"];
-	    float eventLng := <float> evtPos["lng"];
-	 
-    dictionary<any,any> devGeofence := <dictionary<any,any> > dev.params["c8y_Geofence"];
-    float centerLat := <float> devGeofence["lat"];
-    float centerLng := <float> devGeofence["lng"];
-    float maxDistance := <float> devGeofence["radius"];
+		   dev.supportedOperations.indexOf("c8y_Geofence") >= 0) {
+			dictionary<any,any> evtPos := <dictionary<any, any> > e.params["c8y_Position"];
+			float eventLat := <float> evtPos["lat"];
+			float eventLng := <float> evtPos["lng"];
+		}
+		
+		dictionary<any,any> devGeofence := <dictionary<any,any> > dev.params["c8y_Geofence"];
+		float centerLat := <float> devGeofence["lat"];
+		float centerLng := <float> devGeofence["lng"];
+		float maxDistance := <float> devGeofence["radius"];
 

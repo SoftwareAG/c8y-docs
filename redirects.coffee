@@ -34,6 +34,7 @@ redirects =
 	'/guides/users-guide/cloud-remote-access': '/guides/users-guide/optional-services#cloud-remote-access'
 	'/guides/users-guide/zapier': '/guides/users-guide/optional-services#saas-integration'
 	'/guides/users-guide/data-broker': '/guides/users-guide/enterprise-edition#data-broker'
+	'/guides/users-guide/IMPACT/': '/guides/users-guide/optional-services#nokia-impact'
 	'/guides/benutzerhandbuch/administration-deutsch': '/guides/benutzerhandbuch/administration'
 	'/guides/benutzerhandbuch/cockpit-deutsch': '/guides/benutzerhandbuch/cockpit'
 	'/guides/benutzerhandbuch/device-management-deutsch': '/guides/benutzerhandbuch/device-management'
@@ -57,7 +58,7 @@ redirects =
 	'/guides/users-guide/optional-services#saas-integration': '/guides/saas-integration'
 	'/guides/users-guide/optional-services#jasper': '/guides/users-guide/optional-services#connectivity'
 
-	
+
 
 	# Legacy redirects developer documentation
 	'/guides/developers-guide': '/guides/device-sdk/java'
@@ -125,6 +126,7 @@ redirects =
 	'/guides/mqtt/handling-ids': '/guides/device-sdk/mqtt#handling-ids'
 	'/guides/mqtt/hello-mqtt': '/guides/device-sdk/mqtt#hello-mqtt'
 	'/guides/mqtt/hello-mqtt-java-0': '/guides/device-sdk/mqtt#hello-mqtt-java'
+	'/guides/mqtt/hello-mqtt-java': '/guides/device-sdk/mqtt#hello-mqtt-java'
 	'/guides/mqtt/hello-mqtt-javascript': '/guides/device-sdk/mqtt#hello-mqtt-javascript'
 	'/guides/mqtt/hello-mqtt-c': '/guides/device-sdk/mqtt#hello-mqtt-c'
 	'/guides/mqtt/hello-mqtt-python': '/guides/device-sdk/mqtt#hello-mqtt-python'
@@ -141,9 +143,9 @@ redirects =
 	'/guides/web/branding-plugin': '/guides/web/web-sdk-for-plugins/branding-plugin'
 	'/guides/web/tab-plugin': '/guides/web/web-sdk-for-plugins/tab-plugin'
 	'/guides/web/widget-plugin': '/guides/web/web-sdk-for-plugins/widget-plugin'
-	'/guides/web/smart-toolkit': '/guides/web/overview'
+	'/guides/web/smart-toolkit': '/guides/web/introduction'
+	'/guides/web/reference': '/guides/web/introduction'
 	'/guides/reference/binaries/application-plugin-binaries': '/guides/reference/binaries'
-
 
 
 
@@ -162,5 +164,6 @@ redirects =
 	'/guides': '/dev-center'
 	'/guides/release-notes': '/guides/release-notes/overview'
 
+# Test jenkins line
 
 module.exports = redirects

@@ -4,13 +4,22 @@ title: Access control
 layout: redirect
 ---
 
-Cumulocity uses a standard authentication and authorization process based on realms, users, user groups, and authorities. A *realm* is a database of users and user groups, who follow the same authentication and authorization policy. A *user* is a person or an external system entitled to access protected resources inside Cumulocity. Access is controlled through permissions. For simplifying administration, users can be grouped into *user groups* sharing similar permissions. A user can be a member of several user groups so that the user has the combined permissions of the groups.
+Cumulocity uses a standard authentication and authorization process based on realms, users, user groups, and authorities. A *realm* is a database of users and user groups, who follow the same authentication and authorization policy. A *user* is a person or an external system entitled to access protected resources inside Cumulocity. 
+
+Access is controlled through permissions. Permissions define what a user is allowed to do in Cumulocity applications. To manage permissions more easily, they are grouped in so-called "roles". Every user can be associated with a number of roles, adding up permissions of the user. 
+
+The following types of roles can be associated with users:
+
+Global roles: Contain permissions that apply to all data within a tenant.
+Inventory roles: Contain permissions that apply to groups of devices.
+
+For details on permissions, see [Managing permissions](/guides/users-guide/administration#managing-permissions) in the Administration section of the User guide.
 
 Cumulocity creates a new realm for each tenant to store the users of that tenant. Realms provide an own namespace for usernames, allowing users to keep the names that they are familiar with from their own enterprise IT or other IT systems. There is no conflict between user names: A user "smith" of one particular tenant is different from a user "smith" of another tenant. This username is valid for all Cumulocity applications that a tenant subscribes to.
 
-Each new realm is automatically populated with an initial administrator user who can create further users and user groups, and who can assign permissions to these users and user groups. This enables an enterprise to manage users and their permissions on their own using the administration application.
+Each new realm is automatically populated with an initial administrator user who can create further users and user groups, and who can assign permissions to these users and user groups. This enables an enterprise to manage users and their permissions on their own using the Administration application.
 
-![User management screenshot](/guides/images/concepts-guide/usermanagement.png)
+![User management](/guides/images/concepts-guide/user-management.png)
 
 The ability to execute certain functionality on the system depends on two concepts: Permissions and ownership. Permissions define explicitly what functionality can be executed by a user. Cumulocity distinguishes read permissions and administration permissions. Read permissions enable users to read data. Administration permissions enable users to create, update and delete data. Read and administration permissions are separately available for the different types of data in Cumulocity. For example, there are read permissions for inventory data, measurements, operations and so forth.
 
@@ -31,22 +40,20 @@ Cumulocity allows you to set global permissions that are applicable to all manag
 * To a single user or a group of users.
 * To individual fragments.
 
-### Editing permissions
+### Managing roles and assigning permissions
 
-Permissions can be edited both by navigating to a particular managed object in the device management application as well as by navigating to a user or group in the administration application.
+Global roles and inventory roles are created and managed in the **Permission** page of the Administration application.
 
-To add a new permission to a user, select the user in the administration application. In the "User Permission" section, 
+![Permission page](/guides/images/users-guide/Administration/admin-global-roles.png)
 
-* Type the name or ID of the device that a permission should be granted for. Auto-completion is supported.
-* Select the scope of permission, if the permission applies to the inventory ("MANAGED_OBJECT"), operations ("OPERATIONS") and select "*" to make the permission apply to all features.
-* Select the fragment types that the permission applies to. For example, if you select "OPERATIONS" as scope, "c8y_Restart" as type and "ADMIN" as permission, the user can only restart devices. Note that a user has to have permissions for all fragments in an object to be able to retrieve or edit an object. Use "*" to select all fragments or to set permissions on objects without fragments. Auto-completion based on the selected device is supported, but you can use any fragment in the text box (like fragments of child objects).
-* Select the permission ("READ", "ADMIN"). Use "*" to select both "READ" and "ADMIN".
+A detailed description on available default roles and on creating global and inventory roles can be found in [Managing permissions](/guides/users-guide/administration#managing-permissions) in the Administration section of the User guide.
 
-![Adding new user permissions](/guides/images/acl/acl_admin1.jpg)
+To assign roles to users, click **User** in the **Account** menu and select a user from the user list. In the **Global roles** tab, global roles can be assigned to the selected user. In the **Inventory roles** tab, you can assign roles for the user for particular device groups. 
 
-It is also possible to add a new permission to a device. In that case, you need to navigate to a device and select the user or group that the permission applies to. Use the toggle buttons to switch between users and groups.
+![Inventory roles](/guides/images/users-guide//Administration/admin-inventory-role-apply.png)
 
-![Adding new device permissions](/guides/images/acl/acl_dm2.png)
+For details on assigning global and inventory roles see [Managing permissions](/guides/users-guide/administration#managing-permissions) in the Administration section of the User guide.
+
 
 ### Globally accessible objects
 
@@ -63,19 +70,18 @@ Permissions are extended along two dimensions:
 
 Permit a user to read the temperature measurement of device "10200":
 
-	10200, MEASUREMENT, c8y_TemperatureMeasurement, READ
+```java
+10200, MEASUREMENT, c8y_TemperatureMeasurement, READ 
+```
 
 Permit a user to read any measurement of device "10200":
 
-	10200, MEASUREMENT, *, READ
+```java
+10200, MEASUREMENT, *, READ
+```
 
 Permit a user to restart device "10200":
 
-	10200, OPERATION, c8yRestart, ADMIN
-
-### Troubleshooting permissions
-
-To determine the permissions of a particular user on a particular device, navigate to the device in the device management application and click on the "Permissions" tab. Then enter the name of the user into the "User" field. This will print all permissions of the user for the device.
-
-![Viewing user permissions](/guides/images/acl/acl_dm1.png)
-
+```java
+10200, OPERATION, c8yRestart, ADMIN
+```

@@ -18,7 +18,7 @@ Click **Roles** in the **Account** menu to display a list of configured roles.
 
 In the **Global roles** tab you can find the roles which grant permissions on a general level. There are several default global roles defined, but you can define your own according to your needs. 
 
-<img src="/guides/images/users-guide/Administration/admin-global-roles.png" alt="Context menu" style="max-width: 100%">
+<img src="/guides/images/users-guide/Administration/admin-global-roles.png" alt="Context menu">
 
 The roles "admins" and "devices" have a special status:
 
@@ -87,13 +87,13 @@ The following permission categories are available by default:
 |Data broker|Send data to other tenants or receive data from other tenants.
 |Device control|View or edit commands for devices resp. send commands to devices. Also used for device registration.
 |Events|View or create events for devices.
+|Global Smart Rules|Configure global Smart Rules.
 |Identity|View or edit identifiers for devices.
 |Inventory|View or edit inventory data.
 |Measurements|View or create measurements for devices.
 |Option management|View or edit account options such as password policies.
 |Retention rules|View or edit retention rules.
 |Simulator|Configure simulated devices.
-|Smart Rules|Configure Smart Rules.
 |Sms|Configure SMS.
 |Tenant management|View, create, edit or delete subtenants.
 |Tenant statistics|View the usage data for this account, as shown on the Home screen of the Administration application.
@@ -122,7 +122,7 @@ Inventory roles contain permissions that you can assign to groups of devices. Fo
 
 To view the currently configured inventory roles, click **Roles** in the **Account **menu and switch to the **Inventory roles** tab.
 
-<img src="/guides/images/users-guide/Administration/admin-roles-inventory.png" alt="Context menu" style="max-width: 100%">
+<img src="/guides/images/users-guide/Administration/admin-roles-inventory.png" alt="Context menu">
 
 In the **Inventory roles** tab you can manage user permissions for particular groups and/or its children. There are several default inventory roles defined, but you can define your own according to your needs. 
 
@@ -176,15 +176,15 @@ In the **Permission** field, select a permission level from the dropdown list:
 * CHANGE - to modify objects (does not include READ permission)
 * ALL - to read AND modify objects
 
-<img src="/guides/images/users-guide/Administration/admin-inventory-roles-permission.png" alt="Role permissions" style="max-width: 100%">
+<img src="/guides/images/users-guide/Administration/admin-inventory-roles-permission.png" alt="Role permissions">
 
 >**Important:** When you add a permission, you may see a small exclamation mark. The exclamation mark indicates that the permission that you have just added is not effective, because another, "higher" permission set for the user already includes the respective permission. Check if you have set, for example, "Full access" or if there is another permission in the same section with "*" as type and ALL as permission.
 
-<img src="/guides/images/users-guide/Administration/admin-inventory-role-warning.png" alt="warning message" style="max-width: 100%">
+<img src="/guides/images/users-guide/Administration/admin-inventory-role-warning.png" alt="warning message">
 
 As another example, assume that you are using tracking devices. You want to allow your user to see all devices, but not to change anything. In addition, the user should be able to follow tracks of devices on a map. Tracks are recorded using an event with fragment type "c8y&#95;Position" (see [Sensor library](/guides/reference/sensor-library)). To do so, assign READ permission on inventory as well as on events with type "c8y&#95;Position" as shown in the image below.
 
-<img src="/guides/images/users-guide/Administration/admin-inventory-role-example.png" alt="Permission example" style="max-width: 100%">
+<img src="/guides/images/users-guide/Administration/admin-inventory-role-example.png" alt="Permission example">
 
 ### <a name="attach-inventory"></a>Assigning inventory roles to users
 
@@ -196,7 +196,7 @@ In the **Inventory roles** tab you will see a tree of device groups. To assign a
 
 > **Important**: If a user already has a global role containing inventory permissions, the user will be able to see or change all devices regardless of what inventory roles you set here.
 
-![Inventory roles](/guides/images/users-guide//Administration/admin-inventory-roles-apply.png)
+![Inventory roles](/guides/images/users-guide//Administration/admin-inventory-role-apply.png)
 
 Inventory roles are inherited from groups to all their direct and indirect subgroups, and to the devices in these groups. If you select, for example, a role with read permissions on alarms for a group of devices, the user will be able to see alarms of all devices in this group and all its subgroups.
 
@@ -204,7 +204,7 @@ If a user has inventory access to a group of devices, the user will also have th
 
 You can also copy inventory roles from another user. To copy roles, click **Copy inventory roles from another user**. In the upcoming window, select a user from the list and click **Copy**. At the top you can select if you want to merge the roles with the existing user roles (the default) or if you want to replace the existing user roles. Copying roles makes it easier to manage the permissions of many users as you can create a reference user and then copy the permissions from there.
 
-<img src="/guides/images/users-guide/Administration/admin-inventory-role-copy.png" alt="Copy roles" style="max-width: 100%">
+<img src="/guides/images/users-guide/Administration/admin-inventory-role-copy.png" alt="Copy roles">
 
 ### <a name="app-access"></a>Granting application access
 

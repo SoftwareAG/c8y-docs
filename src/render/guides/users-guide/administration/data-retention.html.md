@@ -23,9 +23,9 @@ The asterisk ("*") indicates that data with any value will be cleaned up.
 
 To add additional retention rules, click **Add rule** in the top menu bar. 
 
-<img src="/guides/images/users-guide/addrulepage.png" alt="Add retention rule" style="max-width: 50%">
+<img src="/guides/images/users-guide/Administration/admin-retention-rules-create.png" alt="Add retention rule">
 
->**Info**: Per default, an asterisk ("*") is set in all fields except the "Maximum age" field, to include all values.
+>**Info**: Per default, an asterisk ("*") is set in all fields except the **Maximum age** field, to include all values.
 
 1. Select the type of data to be cleaned up (alarms, measurements, events, operations, audit logs or all).
 2. Enter a fragment type if you want to be more specific about the data to be cleaned up. To clean up all connection loss alarms with this rule, select "alarms" and enter "c8y_UnavailabilityAlarm" as property into the **Type** field.
@@ -35,9 +35,9 @@ To add additional retention rules, click **Add rule** in the top menu bar.
 
 >**Info**: Alarms are only removed if they are in CLEARED state.
 
-<img src="/guides/images/users-guide/Administration/Admin_RetentionRulesDelete.png" alt="Delete retention rule" style="max-width: 50%">
+To delete a rule, hover over it and click the delete icon at the right.
 
-To delete a rule, hover over it and click the **Delete** button at the right.
+<img src="/guides/images/users-guide/Administration/admin-retention-rules-delete.png" alt="Delete retention rule">
 
 
 ### <a name="files"></a>Managing files in the file repository
@@ -50,7 +50,7 @@ The files listed can come from various sources. They can be software images, con
 
 For each file, the name of the file, its owner, the file type (i.e. image/bmp, text/csv), its size and the date when it was last updated is provided.
 
-<img src="/guides/images/users-guide/Administration/Admin_FilesRepository.png" alt="Files Repository" style="max-width: 100%">
+<img src="/guides/images/users-guide/Administration/admin-files-repository.png" alt="Files Repository" style="max-width: 100%">
 
 To upload a file from your computer, click **Upload file** in the top menu bar.
 

@@ -6,3 +6,4 @@ out/
 syntax: glob
 codekit-config.json
 npm-debug.log
+.vscode/

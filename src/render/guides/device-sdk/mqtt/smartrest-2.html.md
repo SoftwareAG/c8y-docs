@@ -211,10 +211,10 @@ This results in the following minimal template creations:
 102
 ```
 
-Creating data on the inventory optionally includes the creation of an **externalId** for that object.
-This is controlled by the mandatory value **externalIdType**.
+Creating data on the inventory optionally includes the creation of an externalId for that object.
+This is controlled by the mandatory value externalIdType.
 
-> **Important**: POST Inventory templates start with the value of the **externalId** after the **msgId**. Leaving this column empty will result in not creating an external ID.
+> **Important**: POST Inventory templates start with the value of the externalId after the msgId. Leaving this column empty will result in not creating an external ID.
 
 ```bash
 # Creation:

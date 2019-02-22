@@ -85,7 +85,7 @@ You have the choice to enter the post-installation parameters manually via the c
 	* Enter tenant admin password:
 	```
 
-3. Provide a domain name, e.g. "myown.iot.com". The domain name must match the domain name of the SSL certificate.
+3. Provide a fully qualified domain name, e.g. "myown.iot.com". The domain name must match the domain name of the SSL certificate.
 
 	```shell
 	* Enter tenant domain name:

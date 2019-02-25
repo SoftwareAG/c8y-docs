@@ -10,13 +10,25 @@ In an Enterprise Edition installation under the **Settings** menu you can specif
 
 **Info**: For information on the general settings in the **Customization** tab refer to [Changing Settings > Configuration settings](/guides/users-guide/administration/#config-platform) in the Administration section. Here, only the features will be explained which are exclusively available for the management tenant.
 
+#### Applications
+
+In the **Applications** section, you can specify the default applications for new tenants as a comma-separated list. 
+
+![Applications settings](/guides/images/users-guide/Administration/admin-settings-configuration-applications.png)
+
+#### Passwords
+
+In the **Passwords** section, you can specify password settings like default strength, length or validity for the users in your tenant.
+
+![Passwords settings](/guides/images/users-guide/Administration/admin-settings-configuration-passwords.png)
+
 #### Support user
 
 In the **Support user** section, you configure the parameters for the support user activation for subtenant users.
 
 With the support user feature, support users (i.e. users with specific permissions in the management tenant) can access subtenant users in case of any issues. Refer to [Supporting user access](/guides/users-guide/enterprise-edition#users-in-other-tenants) for further information.
 
-<img src="/guides/images/users-guide/Administration/admin-support-user-config.png" alt="Configuration" style="max-width: 100%">
+<img src="/guides/images/users-guide/Administration/admin-settings-configuration-support-user.png" alt="Support user configuration">
 
 In the field **Enable support user**, specify if support user access is enabled for subtenant users. Possible values you can enter here are:
 

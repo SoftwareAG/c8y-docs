@@ -8,6 +8,6 @@ A microservice becomes available once it has been successfully deployed on the C
 
 Refer to [Microservice manifest](/guides/reference/microservice-manifest) in the Reference guide for details on how to create a manifest file with applicable settings.
 
-For further information on deploying microservices to Cumulocity, refer to [Managing applications](/guides/users-guide/administration#managing-applications) in the User guide.
+For further information on deploying microservices to Cumulocity, refer to Administration > [Managing applications](/guides/users-guide/administration#managing-applications) in the User guide.
 
 >**Info:** In case of microservices, you need to subscribe to the application to use it.

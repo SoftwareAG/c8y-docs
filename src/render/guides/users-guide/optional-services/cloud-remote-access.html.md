@@ -81,6 +81,7 @@ To use Cloud Remote Access, the following prerequisites have to be met:
 
 * a Cloud Remote Access compatible gateway connected to your Cumulocity account;
 * a remote device with a VNC, SSH or Telnet server that is connected to the gateway and reachable from the gateway;
+* "Remote access" permission granted to the tenant user;
 * Cloud Remote Access microservice included into your subscription plan. 
 
 Click **All devices** and select the desired gateway from the device list. 

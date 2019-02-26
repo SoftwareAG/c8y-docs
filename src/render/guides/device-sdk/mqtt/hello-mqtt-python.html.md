@@ -113,11 +113,11 @@ The above example uses a TCP connection. If you would like to use an SSL connect
 What does the script do?
 
 -   Configure a MQTT connection.
--   Register an ``on_message`` callback function which will print incoming messages. In case of a **c8y_Restart** operation, it will simulate a device restart.
+-   Register an ``on_message`` callback function which will print incoming messages. In case of a c8y_Restart operation, it will simulate a device restart.
 -   Register an ``on_publish`` callback function which will be called after a publish message has been delivered.
 -   Connect with Cumulocity via the MQTT protocol.
 -   Create a new device with a name (`device_name`) and a type (`c8y_MQTTDevice`).
--   Update the device hardware information by putting a "S123456789" serial, a "MQTT test model" model and a "Rev0.1" revision.
+-   Update the device hardware information by putting a `"S123456789"` serial, a `"MQTT test model"` model and a `"Rev0.1"` revision.
 -   Subscribe to the static operation templates for the device –this will result in an ``on_message`` method call every time a new operation is created.
 -   Call the ``sendMeasurements`` method which sends a temperature measurement every 7 seconds.
 
@@ -138,7 +138,7 @@ $ python hello_mqtt.py
 
 After starting the application you should see a new registered device in the Device Management application, listed in **All devices**. In the **Measurements** tab, you will see the temperature measurements being sent by your client.
 
-Additionally, if there will be a new operation created for this device (e.g. **c8y_Restart**), information about it will be printed to the console.
+Additionally, if there will be a new operation created for this device (e.g. c8y_Restart), information about it will be printed to the console.
 
 
 ### Improving the agent

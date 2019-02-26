@@ -1,10 +1,10 @@
 ---
 order: 50
-title: Hello MQTT JavaScript
+title: Hello MQTT Web-based
 layout: redirect
 ---
 
-In this tutorial, you will learn how to use the JavaScript MQTT client with Cumulocity using pre-defined messages (called "static templates").
+In this tutorial, you will learn how to use the Web-based MQTT client with Cumulocity using pre-defined messages (called "static templates").
 
 ### Prerequisites
 
@@ -137,12 +137,12 @@ The Cumulocity MQTT protocol supports both unsecured TCP and also secured SSL co
 What does the code do?
 
 -   Configure the MQTT connection.
--   Register ``onMessageArrived`` callback function which will display all incoming messages. In case of a **c8y_Restart** operation, simulate a device restart.
+-   Register ``onMessageArrived`` callback function which will display all incoming messages. In case of a c8y_Restart operation, simulate a device restart.
 -   Register ``onMessageDelivered`` callback function which will be called after a publish message has been delivered.
 -   After the page is fully loaded, the function `init` is called and it connects with Cumulocity via a MQTT protocol.
 -   When the connection is established, call a ``createDevice`` function.
 -   Create a new device with a name (`device_name`) and a type (`c8y_MQTTDevice`).
--   Update the device hardware information by putting a "S123456789" serial, a "MQTT test model" model and a "Rev0.1" revision.
+-   Update the device hardware information by putting a `"S123456789"` serial, a `"MQTT test model"` model and a `"Rev0.1"` revision.
 -   Subscribe to the static operation templates for the device – this will result in ``onMessageArrived`` method call every time a new operation is created.
 -   Send a temperature measurement every 3 seconds.
 
@@ -150,9 +150,9 @@ Note that the subscription is established after the device creation, otherwise i
 
 #### Running the application
 
-Open the *hello_mqtt_js.html* file in a browser. You should see a new registered device in the Device Management application, listed in **All devices**. In the **Measurements** tab, you will see the  temperature measurements being sent by your client.
+Open the *hello_mqtt_js.html* file in a browser. You should see a new registered device in the Device Management application, listed in **All devices**. In the **Measurements** tab, you will see the temperature measurements being sent by your client.
 
-Additionally, if there will be a new operation created for this device (e.g. **c8y_Restart**), related information will be displayed in the browser page.
+Additionally, if there will be a new operation created for this device (e.g. c8y_Restart), related information will be displayed in the browser page.
 
 ### Improving the agent
 

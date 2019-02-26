@@ -4,46 +4,46 @@ layout: redirect
 title: Hello microservice!
 ---
 
-This section shows you how to create a microservice that can be run on cumulocity.com, using Cumulocity Microservice SDK.
+In this section you will learn how to create a microservice that can be run on the [Cumulocity Platform](https;//cumulocity.com) using the Microservice SDK for Java.
 
 ### Prerequisites
 
-Create an account on cumulocity.com, for example by using a free trial. At this step you will be provided with a dedicated URL address.
+Create an account on the [Cumulocity Platform](https;//cumulocity.com), for example by using a free trial. At this step you will be provided with a dedicated URL address.
 
-Verify, that you have Maven 3 installed with Java (7+):
+Use the following command to verify that you have Maven 3 installed with Java 7. This Hello World example has been tested also with Java 8.
 
-    $ mvn -v
-    Apache Maven 3.1.1 (0728685237757ffbf44136acec0402957f723d9a; 2013-09-17 17:22:22+0200)
-    Maven home: /usr/local/Cellar/maven/3.1.1/libexec
-    Java version: 1.7.0_45, vendor: Oracle Corporation
-    Java home: /Library/Java/JavaVirtualMachines/jdk1.7.0_45.jdk/Contents/Home/jre
-    Default locale: en_US, platform encoding: UTF-8
-    OS name: "mac os x", version: "10.9.4", arch: "x86_64", family: "mac"
+```shell
+$ mvn -v
+Apache Maven 3.1.1 (0728685237757ffbf44136acec0402957f723d9a; 2013-09-17 17:22:22+0200)
+Maven home: /usr/local/Cellar/maven/3.1.1/libexec
+Java version: 1.7.0_45, vendor: Oracle Corporation
+Java home: /Library/Java/JavaVirtualMachines/jdk1.7.0_45.jdk/Contents/Home/jre
+```
 
->**Info:** Maven can be downloaded from [http://maven.apache.org](http://maven.apache.org).
+Maven can be downloaded from the [Maven website](http://maven.apache.org). You will also need a Docker installation and it can be downloaded from the [Docker website](https://www.docker.com/get-started).
 
-Verify the docker installation:
+Cumulocity hosts linux/amd64 docker containers and not Windows containers. The docker version must be 1.12.6 or above. Use the following command to verify your docker installation
 
-Cumulocity hosts linux/amd64 docker containers and not Windows containers. The docker version must be >= 1.12.6
+```shell
+$ docker version
+Client: Docker Engine - Community
+ Version:           18.09.2
+ API version:       1.39
+ OS/Arch:           darwin/amd64
 
-    $ docker version
-    Client:
-     Version:         1.12.6
-     API version:     1.24
-     OS/Arch:         linux/amd64
-
-    Server:
-     Version:         1.12.6
-     API version:     1.24
-     OS/Arch:         linux/amd64
-
+Server: Docker Engine - Community
+ Engine:
+  Version:          18.09.2
+  API version:      1.39 (minimum version 1.12)
+  OS/Arch:          linux/amd64
+```
 
 ### Developing the "Hello, world!" agent
 
 To develop a very simple "Hello, world!" agent for Cumulocity, you need to
 
 * create a Maven project,
-* add a dependency to the Cumulocity Microservice SDK library to the Maven pom.xml,
+* add a dependency to the Cumulocity Microservice SDK library to the _pom.xml_ file,
 * create a Java application,
 * configure the microservice,
 * configure the build,
@@ -51,65 +51,72 @@ To develop a very simple "Hello, world!" agent for Cumulocity, you need to
 
 #### Creating a Maven project
 
-To create a plain Java project with Maven, run
+Execute the following command to create a plain Java project with Maven
 
-	$ mvn archetype:generate -DgroupId=c8y.example -DartifactId=hello-world-microservice -DarchetypeArtifactId=maven-archetype-quickstart -DinteractiveMode=false
+```shell
+$ mvn archetype:generate -DgroupId=c8y.example -DartifactId=hello-world-microservice -DarchetypeArtifactId=maven-archetype-quickstart -DinteractiveMode=false
+```
 
-This will create a folder "hello-world-microservice" in the current directory with a skeleton structure for your project.
+This will create a folder *hello-world-microservice* in the current directory with a skeleton structure for your project.
 
 #### Adding the Java Microservice library
 
-Edit the "pom.xml" in the "hello-world-microservice" folder. Add a `repositories` and a `pluginRepositories` element to point to the Cumulocity Maven repository, which stores the client libraries.
+Edit the _pom.xml_ file in the _hello-world-microservice_ folder adding repository and plugin elements to point to the Cumulocity Maven repository which stores the client libraries.
 
-    <repositories>
-        <repository>
-            <id>cumulocity</id>
-            <layout>default</layout>
-            <url>http://download.cumulocity.com/maven/repository</url>
-        </repository>
-    </repositories>
-    <pluginRepositories>
-        <pluginRepository>
-            <id>public</id>
-            <url>http://download.cumulocity.com/maven/repository</url>
-        </pluginRepository>
-    </pluginRepositories>
+```xml
+<repositories>
+    <repository>
+        <id>cumulocity</id>
+        <layout>default</layout>
+        <url>http://download.cumulocity.com/maven/repository</url>
+    </repository>
+</repositories>
+<pluginRepositories>
+    <pluginRepository>
+        <id>public</id>
+        <url>http://download.cumulocity.com/maven/repository</url>
+    </pluginRepository>
+</pluginRepositories>
+```
 
+Also add a dependency element for the Java Microservice SDK library to the `<dependencies>` node.
 
-Add `dependency` elements for the Java Microservice SDK library (`microservice-autoconfigure`) to the `dependencies` section.
+```xml
+<dependency>
+	<groupId>com.nsn.cumulocity.clients-java</groupId>
+	<artifactId>microservice-autoconfigure</artifactId>
+	<version>${c8y.version}</version>
+</dependency>
+```
 
-	<dependency>
-		<groupId>com.nsn.cumulocity.clients-java</groupId>
-		<artifactId>microservice-autoconfigure</artifactId>
-		<version>${c8y.version}</version>
-	</dependency>
-
-Edit the `version` elements to use the latest version of the client library. The version can be determined by checking the [Announcements section](https://cumulocity.zendesk.com/hc/en-us/sections/200381323-Announcements) of the Cumulocity Help Center. The full file after editing can be found [here](/guides/microservice-sdk/java#developing-microservice).
+Edit the `<version>` element to use the latest version of the client library. The version can be obtained by reviewing the [Announcements section](https://cumulocity.zendesk.com/hc/en-us/sections/200381323-Announcements) of the Cumulocity Help Center. This particular example was implemented using version 9.16.2.
 
 #### Creating a Java application
 
-Edit the "App.java" file in the folder "hello-world-microservice/src/main/java/c8y/example" with the following content:
+Edit the _App.java_ file in the folder *hello-world-microservice/src/main/java/c8y/example* with the following content:
 
-    package c8y.example;
+```java
+package c8y.example;
 
-    import com.cumulocity.microservice.autoconfigure.MicroserviceApplication;
-    import org.springframework.boot.SpringApplication;
-    import org.springframework.web.bind.annotation.RequestMapping;
-    import org.springframework.web.bind.annotation.RequestParam;
-    import org.springframework.web.bind.annotation.RestController;
+import com.cumulocity.microservice.autoconfigure.MicroserviceApplication;
+import org.springframework.boot.SpringApplication;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.RestController;
 
-    @MicroserviceApplication
-    @RestController
-    public class App{
-      public static void main(String[] args) {
-          SpringApplication.run(App.class, args);
-      }
-
-      @RequestMapping("hello")
-      public String greeting(@RequestParam(value = "who", defaultValue = "world") String who) {
-          return "hello " + who + "!";
-      }
+@MicroserviceApplication
+@RestController
+public class App {
+    public static void main (String[] args) {
+        SpringApplication.run(App.class, args);
     }
+
+    @RequestMapping("hello")
+    public String greeting (@RequestParam(value = "who", defaultValue = "world") String who) {
+        return "hello " + who + "!";
+    }
+}
+```
 
 
 @MicroserviceApplication - is a simple way to add required behavior for Cumulocity Microservice, including:
@@ -263,7 +270,7 @@ Example:
       -H "Content-Type: application/vnd.com.nsn.cumulocity.application+json" \
       -H "Accept: application/vnd.com.nsn.cumulocity.application+json" \
       "{URL}/application/applications"
-      
+
 Example response:
 
     {
@@ -319,7 +326,7 @@ After you find the image in the list, run the docker container for the microserv
     $ docker run -e C8Y_BASEURL={URL} -e C8Y_BOOTSTRAP_TENANT={BOOTSTRAP_TENANT} -e C8Y_BOOTSTRAP_USER={BOOTSTRAP_USERNAME} -e C8Y_BOOTSTRAP_PASSWORD={BOOTSTRAP_USER_PASSWORD} -e C8Y_MICROSERVICE_ISOLATION=MULTI_TENANT -i -t {DOCKER_REPOSITORY_IMAGE}:{TAG}
 
 **Step 4 - Subscribe to microservice**
-    
+
     POST {URL}/tenant/tenants/{TENANT_ID}/applications
 
   HEADERS:
@@ -353,7 +360,7 @@ If the application does not exist, create a new application on a platform.
 For details, refer to the "Create application" step in [Run microservice locally](#run-locally).
 
 **Step 2 - Upload ZIP file**
-       
+
 	POST {URL}/application/applications/{APPLICATION_ID}/binaries
 
 HEADERS:
@@ -368,7 +375,7 @@ Example:
 	  "{URL}/application/applications/{APPLICATION_ID}/binaries"
 
 **Step 3 - Subscribe to microservice**
- 
+
 For details, refer to the "Subscribe to microservice" step in [Run microservice locally](#run-locally).
 
 **Step 4 - Verify if microservice is running**

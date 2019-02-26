@@ -8,7 +8,7 @@ In an Enterprise Edition installation under the **Settings** menu you can specif
 
 ### <a name="configuration"></a>Configuration
 
-**Info**: For information on the general settings in the **Customization** tab refer to [Changing Settings > Configuration settings](/guides/users-guide/administration/#config-platform) in the Administration section. Here, only the features will be explained which are exclusively available for the management tenant.
+**Info**: For information on the general settings in the **Customization** tab refer to [Changing Settings > Configuration settings](/guides/users-guide/administration/#config-platform) in the Administration section. Here, only the features will be explained which are exclusively available for management tenants.
 
 #### Applications
 

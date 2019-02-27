@@ -75,29 +75,36 @@ The Cumulocity search field provides a full-text search of the whole inventory.
 
 Entering multiple words separated by a blank returns all objects that match any of the words. For example, entering
 
-	My Demo Device
+```plaintext
+My Demo Device
+```
 
 will return objects containing "My", "Demo" or "Device". 
 
 If you want to search for objects matching an exact phrase enclose it in quotation marks:
 
-	"My Demo Device"
+```plaintext	
+"My Demo Device"
+```
 
 You can also exclude words by putting a hyphen before the word to search the inventory for objects containing e.g. "My" or "Demo" but not "Device":
 
-	My Demo -Device
-
+```plaintext	
+My Demo -Device
+```
 
 Note, that using "-" inside a string works as a delimiter searching for all parts of the search string:
 
-	My-Demo-Device
-
+```plaintext
+My-Demo-Device
+```
 
 Case is ignored. The following search texts return the same result:
 
-	My Demo Device
-	my demo device
-
+```plaintext
+My Demo Device
+my demo device
+```
 
 >**Info:** Other than with filtering, using wildcards in a search is not supported.
 
@@ -109,14 +116,17 @@ As opposed to the search functionality, on entering filtering criteria you must 
 
 In many cases you can just enter any arbitrary text into a text field, even just single characters. Entering
 
-	cl
+```plaintext
+cl
+```
 
 will reduce the list to all objects containing the string "cl".
 
 In other cases you may enter * as wildcard character to return all objects starting with "cl":
 
-	cl*
-
+```plaintext
+cl*
+```
 
 The list will be reduced to the selected objects accordingly.
 

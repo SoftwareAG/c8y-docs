@@ -27,7 +27,9 @@ Using the private mode on browsers may not work.
 
 To access the applications for your Cumulocity tenant, use the following URL:
 
-	https://<account>.cumulocity.com/
+```http
+https://<account>.cumulocity.com/
+```
 
 This will direct you to the login page of your default application.
 
@@ -39,7 +41,7 @@ This will direct you to the login page of your default application.
 
 On the Login screen, enter your username and password and click **Login** to enter the application. 
 
-<img src="/guides/images/users-guide/overview-login.png" alt="Login prompt" style="max-width: 50%">
+<img src="/guides/images/users-guide/overview-login.png" alt="Login prompt">
 
 Select the **Remember me** checkbox if you want the browser to remember your credentials, so that you do not have to enter them again when opening the application the next time. This is also convenient if you frequently switch between Cumulocity applications, as Cumulocity will request you to authenticate each time when starting an application. You can make the browser "forget" your credentials by explicitly logging out. 
 
@@ -51,7 +53,7 @@ To explicitly logout, click the **User** button at the right of the the top bar 
 
 When you log into Cumulocity for the first time, you will be taken to the default application (usually the Cockpit application if not configured differently) where the **Welcome** screen initially opens up.
 
-<img src="/guides/images/users-guide/overview-welcome-screen.png" name="Welcome screen" style="width:100%;"/>
+<img src="/guides/images/users-guide/overview-welcome-screen.png" name="Welcome screen"/>
 
 The **Welcome** screen contains the following items:
 
@@ -84,7 +86,9 @@ If you yourself are the primary administrator, your email address used on first 
 
 You can navigate straight to any place inside a Cumulocity application using the respective URL. For example, to show the basic information for a device, you can enter the following URL:
 
-	https://<account>.cumulocity.com/apps/devicemanagement/index.html#/device/<id>/info
+```http
+https://<account>.cumulocity.com/apps/devicemanagement/index.html#/device/<id>/info
+```
 
 Using such an URL, you can
 

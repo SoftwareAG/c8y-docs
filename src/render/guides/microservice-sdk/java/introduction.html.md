@@ -7,11 +7,11 @@ title: Overview
 
 This section describes how to develop and deploy microservices on top of Cumulocity using the Microservice SDK for Java. It also contains a [Hello World example](#java-microservice) that you may implement to get the basics of developing microservices using Java. Afterwards, you may also continue with the section [Developing Java clients](#developing-services-client).
 
->**Info**: You can develop microservices for Cumulocity with any IDE and any build tool that you prefer, but this section focuses on Maven and Eclipse.
+>**Info**: You can develop microservices for Cumulocity with any IDE and build tool that you prefer, but this section focuses on Maven and Eclipse.
 
 These are some useful references to get started with the basic technologies underlying the SDK:
 
-- The client libraries use the Cumulocity REST interfaces as underlying communication protocol as described in the section on [REST](/guides/microservice-sdk/rest).
+- The client libraries use the Cumulocity REST interfaces as underlying communication protocol as described in the section  [REST](/guides/microservice-sdk/rest).
 - All examples and libraries are open source and can be reviewed at the [M2M Repositories](https://bitbucket.org/m2m).
 - The JavaDoc for the
 <a href="http://resources.cumulocity.com/documentation/microservicesdk/current/" target="_blank">Java Microservice SDK</a> can be found on our resources site.

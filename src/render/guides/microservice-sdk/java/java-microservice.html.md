@@ -51,7 +51,7 @@ To develop a very simple "Hello, world!" agent for Cumulocity, you need to
 
 #### Creating a Maven project
 
-Execute the following command to create a plain Java project with Maven
+Execute the following Maven command to create a plain Java project
 
 ```shell
 $ mvn archetype:generate -DgroupId=c8y.example -DartifactId=hello-world-microservice -DarchetypeArtifactId=maven-archetype-quickstart -DinteractiveMode=false
@@ -61,7 +61,20 @@ This will create a folder *hello-world-microservice* in the current directory wi
 
 #### Adding the Java Microservice library
 
-Edit the _pom.xml_ file in the _hello-world-microservice_ folder adding repository and plugin elements to point to the Cumulocity Maven repository which stores the client libraries.
+Inside the _hello-world-microservice_ folder you will find the _pom.xml_ file. Start editing this file by adding a properties element as follows
+
+```xml
+<properties>
+    <maven.compiler.source>1.7</maven.compiler.source>
+    <maven.compiler.target>1.7</maven.compiler.target>
+    <spring-boot-dependencies.version>1.5.7.RELEASE</spring-boot-dependencies.version>
+    <c8y.version>9.16.2</c8y.version>
+</properties>
+```
+
+Edit the `<c8y.version>` element to use the latest version of the client library. The version can be obtained by reviewing the [Announcements section](https://cumulocity.zendesk.com/hc/en-us/sections/200381323-Announcements) of the Cumulocity Help Center. This particular example was implemented using version 9.16.2.
+
+Now add repository and plugin elements to point to the Cumulocity Maven repository which stores the client libraries.
 
 ```xml
 <repositories>
@@ -79,7 +92,7 @@ Edit the _pom.xml_ file in the _hello-world-microservice_ folder adding reposito
 </pluginRepositories>
 ```
 
-Also add a dependency element for the Java Microservice SDK library to the `<dependencies>` node.
+Also add a dependency element for the Java Microservice SDK library inside the `<dependencies>` node.
 
 ```xml
 <dependency>
@@ -89,11 +102,9 @@ Also add a dependency element for the Java Microservice SDK library to the `<dep
 </dependency>
 ```
 
-Edit the `<version>` element to use the latest version of the client library. The version can be obtained by reviewing the [Announcements section](https://cumulocity.zendesk.com/hc/en-us/sections/200381323-Announcements) of the Cumulocity Help Center. This particular example was implemented using version 9.16.2.
-
 #### Creating a Java application
 
-Edit the _App.java_ file in the folder *hello-world-microservice/src/main/java/c8y/example* with the following content:
+Edit the _App.java_ file located in the folder *hello-world-microservice/src/main/java/c8y/example* with the following content:
 
 ```java
 package c8y.example;
@@ -112,122 +123,115 @@ public class App {
     }
 
     @RequestMapping("hello")
-    public String greeting (@RequestParam(value = "who", defaultValue = "world") String who) {
-        return "hello " + who + "!";
+    public String greeting (@RequestParam(value = "who", defaultValue = "World") String who) {
+        return "Hello " + who + "!";
     }
 }
 ```
 
+The code uses fours annotations where three are part of the Spring Framework and one of the Cumulocity Microservice SDK. The `@RestController` annotation marks the class as a controller where every method returns a domain object instead of a view. The `@RequestMapping` annotation ensures that HTTP requests to <kbd>hello</kbd> are mapped to the greeting() method. `@RequestParam` binds the value of the query string parameter <kbd>who</kbd> into the `who` parameter of the greeting() method. Refer to the [Spring Guides](https://spring.io/guides) for more details about building RESTful Web Services using the Spring Framework.
 
-@MicroserviceApplication - is a simple way to add required behavior for Cumulocity Microservice, including:
+Employing the `@MicroserviceApplication` annotation is a simple way to add required behavior for Cumulocity Microservice including:
 
-  * security
-  * subscription
-  * health indicator
-  * context
-  * internal platform API
-  * spring boot application
-
-@RequestMapping - opens an endpoint for greeting.
+* security
+* subscription
+* health indicator
+* context
+* internal platform API
+* spring boot application
 
 #### Configuring the microservice
 
-Add an "application.properties" file to the "src/main/resources" directory with the following properties:
+Add an _application.properties_ file to the _src/main/resources_ directory with the following properties:
 
-    application.name=hello-world
-    server.port=80
+```properties
+application.name=hello-world
+server.port=80
+```
 
-Add a "cumulocity.json" file to the "src/main/configuration" directory with the following content:
+Add a _cumulocity.json_ file to the _src/main/configuration_ directory with the following content:
 
-    {
-    "apiVersion":"1",
-    "version":"@project.version@",
-    "provider": {
-      "name":"Cumulocity GmbH"
-      },
-      "isolation":"MULTI_TENANT",
-      "requiredRoles": [
-      ],
-      "roles":[
-      ]
-    }
+```json
+{
+  "apiVersion": "1",
+  "version": "@project.version@",
+  "provider": {
+    "name": "Cumulocity GmbH"
+  },
+    "isolation": "MULTI_TENANT",
+    "requiredRoles": [
+    ],
+    "roles": [
+    ]
+}
+```
 
-This file is required to deploy the microservice in the Cumulocity infrastructure.
+This is the [Manifest](/guides/microservice-sdk/concept/#manifest) file and it is required to deploy the microservice in the Cumulocity platform.
 
 #### Configuring the build
 
-To create a deployable ZIP file, you need to add the following to your .pom file:
+To create a deployable ZIP file, you need to add the following code to your _pom.xml_ file:
 
-    <properties>
-        <maven.compiler.source>1.7</maven.compiler.source>
-        <maven.compiler.target>1.7</maven.compiler.target>
-        <spring-boot-dependencies.version>1.5.7.RELEASE</spring-boot-dependencies.version>
-        <c8y.version>9.8.0</c8y.version>
-    </properties>
-
+```xml
+<dependencyManagement>
     <dependencies>
+        <!-- microservice api -->
         <dependency>
             <groupId>com.nsn.cumulocity.clients-java</groupId>
-            <artifactId>microservice-autoconfigure</artifactId>
+            <artifactId>microservice-dependencies</artifactId>
+            <version>${c8y.version}</version>
+            <type>pom</type>
+            <scope>import</scope>
         </dependency>
     </dependencies>
+</dependencyManagement>
 
-    <dependencyManagement>
-        <dependencies>
-            <!-- microservice api -->
-            <dependency>
-                <groupId>com.nsn.cumulocity.clients-java</groupId>
-                <artifactId>microservice-dependencies</artifactId>
-                <version>${c8y.version}</version>
-                <type>pom</type>
-                <scope>import</scope>
-            </dependency>
-        </dependencies>
-    </dependencyManagement>
-
-    <build>
-        <plugins>
-            <plugin>
-                <groupId>org.springframework.boot</groupId>
-                <artifactId>spring-boot-maven-plugin</artifactId>
-                <version>${spring-boot-dependencies.version}</version>
-                <executions>
-                    <execution>
-                        <goals>
-                            <goal>repackage</goal>
-                        </goals>
-                    </execution>
-                </executions>
-            </plugin>
-            <plugin>
-                <groupId>com.nsn.cumulocity.clients-java</groupId>
-                <artifactId>microservice-package-maven-plugin</artifactId>
-                <version>${c8y.version}</version>
-                <executions>
-                    <execution>
-                        <id>package</id>
-                        <phase>package</phase>
-                        <goals>
-                            <goal>package</goal>
-                        </goals>
-                        <configuration>
-                            <name>hello-world</name>
-                            <image>hello-world</image>
-                            <encoding>UTF-8</encoding>
-                        </configuration>
-                    </execution>
-                </executions>
-            </plugin>
-        </plugins>
-    </build>    
+<build>
+    <plugins>
+        <plugin>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-maven-plugin</artifactId>
+            <version>${spring-boot-dependencies.version}</version>
+            <executions>
+                <execution>
+                    <goals>
+                        <goal>repackage</goal>
+                    </goals>
+                </execution>
+            </executions>
+        </plugin>
+        <plugin>
+            <groupId>com.nsn.cumulocity.clients-java</groupId>
+            <artifactId>microservice-package-maven-plugin</artifactId>
+            <version>${c8y.version}</version>
+            <executions>
+                <execution>
+                    <id>package</id>
+                    <phase>package</phase>
+                    <goals>
+                        <goal>package</goal>
+                    </goals>
+                    <configuration>
+                        <name>hello-world</name>
+                        <image>hello-world</image>
+                        <encoding>UTF-8</encoding>
+                    </configuration>
+                </execution>
+            </executions>
+        </plugin>
+    </plugins>
+</build>    
+```
 
 ### Building the microservice
 
-To build the ZIP file, use the following command:
+Execute the following command to build the ZIP file:
 
-    $mvn clean install
+```shel
+$ mvn clean install
+```
 
-After a successful build you will be provided with a ZIP file in the target directory. The ZIP can be deployed to the platform as described in the Deployment section.
+After a successful build, you will be provided with a ZIP file in the _target_ directory. The ZIP can be deployed to the platform as described in the Deployment section.
 
 ### <a name="run-locally"></a> Running microservice locally
 

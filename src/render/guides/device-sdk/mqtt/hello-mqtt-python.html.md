@@ -31,7 +31,7 @@ $ pip install paho-mqtt
 To develop a very simple "Hello, world!" MQTT client for Cumulocity, you need to
 
 * create a python script,
-* Run the script.
+* run the script.
 
 #### Creating a python script
 

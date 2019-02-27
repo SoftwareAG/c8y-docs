@@ -10,7 +10,7 @@ In this tutorial, you will learn how to use the Node.js MQTT client with Cumuloc
 
 In order to follow this tutorial, check the following prerequisites:
 
-* You have Node.js and the package manager (npm) installed,
+* You have Node.js and the package manager (npm) installed.
 * You have a valid tenant, a user, and a password in order to access Cumulocity.
 
 ### Developing the "Hello, MQTT world!" client
@@ -23,7 +23,7 @@ To develop a very simple "Hello, world!" MQTT client for Cumulocity, you need to
 
 #### Creating a Node.js application
 
-Create the _package.json_ file to list down the dependencies and other basic information about your application
+Create the _package.json_ file to list down the dependencies and other basic information about your application.
 
 ```json
 {
@@ -36,9 +36,10 @@ Create the _package.json_ file to list down the dependencies and other basic inf
 }
 ```
 
-Create the start script (_app.js_) specified in the _package.json_ file with the following content
+Create the start script (_app.js_) specified in the _package.json_ file with the following content:
 
 ```javascript
+// MQTT dependency https://github.com/mqttjs/MQTT.js
 const mqtt = require("mqtt");
 
 // client, user and device details
@@ -62,17 +63,17 @@ const client = mqtt.connect(serverUrl, {
 client.on("connect", function () {
     // ...register a new device with restart operation
     client.publish("s/us", "100," + device_name + ",c8y_MQTTDevice", function() {
-        client.publish('s/us', '114,c8y_Restart', function() {
-            console.log('Device registered with restart operation support');
+        client.publish("s/us", "114,c8y_Restart", function() {
+            console.log("Device registered with restart operation support");
         });
 
         // listen for operations
         client.subscribe("s/ds");
 
-        // send temperature measurement every 3 seconds
+        // send a temperature measurement every 3 seconds
         setInterval(function() {
             console.log("Sending temperature measurement: " + temperature + "º");
-            client.publish("s/us", '211,' + temperature);
+            client.publish("s/us", "211," + temperature);
             temperature += 0.5 - Math.random();
         }, 3000);
     });
@@ -98,7 +99,7 @@ client.on("message", function (topic, message) {
 
 Replace `serverUrl`, `clientId` and `device_name` as needed. Do not forget to specify the user credentials setting values for `tenant`, `username` and `password`.
 
-Cumulocity MQTT protocol supports both unsecured TCP and secured SSL connections. No matter which connection type you choose, your `serverUrl` should stay the same (like `mqtt.cumulocity.com`).
+The Cumulocity MQTT protocol supports both unsecured TCP and secured SSL connections. No matter which connection type you choose, your `serverUrl` should stay the same (like `mqtt.cumulocity.com`).
 
 What does the code do?
 
@@ -114,13 +115,13 @@ Note that the subscription is established after the device creation, otherwise i
 
 #### Running the application
 
-Before running the application, the MQTT middleware must be installed. To achieve this, execute the following command
+Before running the application, the MQTT middleware must be installed. To achieve this, execute the following command:
 
 ```shell
 $ npm install
 ```
 
-Installation has to be done only once. Afterwards, you only need to execute the following command
+Installation has to be done only once. Afterwards, you only need to execute the following command:
 
 ```shell
 $ npm start

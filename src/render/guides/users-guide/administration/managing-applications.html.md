@@ -11,7 +11,7 @@ In the Cumulocity platform we distinguish between two kinds of applications:
 
 Both applications are available through the **Applications** menu in the navigator:
 
-<img src="/guides/images/users-guide/Administration/admin-menu.png" alt="Applications menu" style="max-width: 25%">
+<img src="/guides/images/users-guide/Administration/admin-menu.png" alt="Applications menu">
 
 Subscribed applications may not be added, modified or removed by the user, while users can [add custom applications](#add-applications) in various ways as own applications. 
 
@@ -120,7 +120,7 @@ Click the arrow buttons "Next" or "Previous" to increase or respectively reduce 
 
 If there have not been any logs in the selected time range, a message is shown accordingly:
 
-<img src="/guides/images/users-guide/Administration/admin-microservice-no-logs.png" alt="Microservice log" style="max-width: 100%">
+<img src="/guides/images/users-guide/Administration/admin-microservice-no-logs.png" alt="Microservice log">
 
 To view the logs you need the permission EVENT_READ.
 
@@ -136,13 +136,13 @@ If you are subscribed to the required application ("apama-small"), you additiona
 
 Your applications are available through the application switcher in the top bar which allows to easily switch between applications.
 
-<img src="/guides/images/users-guide/Administration/Admin_AppSwitcher.png" alt="App switcher" style="max-width: 50%">
+<img src="/guides/images/users-guide/Administration/admin-app-switcher.png" alt="App switcher">
 
 You manage your applications under **Own applications**, accessible through the **Applications** menu. 
 
 In the **Own applications** page you will find a list of the applications available in your account.
 
-<img src="/guides/images/users-guide/Administration/Admin_OwnApplications.png" alt="Own applications" style="max-width: 100%">
+<img src="/guides/images/users-guide/Administration/admin-applications-own.png" alt="Own applications">
 
 To display further information on the application, simply click its card. For details on the fields, refer to [Application properties](#application-properties) below. 
 
@@ -154,7 +154,11 @@ Click the menu icon at the top right of an application to open a context menu fr
 
 #### <a name="adding-applications"></a>Adding own applications
 
-To add an application, click **Add application** in the **Own applications** page. In the upcoming dialog choose one of the following methods:
+To add an application, click **Add application** in the **Own applications** page. 
+
+<img src="/guides/images/users-guide/Administration/admin-application-add.png" alt="Add application methods">
+
+In the upcoming dialog choose one of the following methods:
 
 * [uploading a web application](#uploading-zip-files) - by dropping a ZIP file or browsing for it on your computer
 * [uploading a microservice](#uploading-microservices) - by dropping a ZIP file or browsing for it on your computer
@@ -163,29 +167,25 @@ To add an application, click **Add application** in the **Own applications** pag
 
 If you are subscribed to the required application ("apama-small"), you will also see the option **Upload custom Apama rule** to [upload own Apama CEP rules](#uploading-cep-rules) as application. 
 
-<img src="/guides/images/users-guide/Administration/admin-add-application.png" alt="Add application methods" style="max-width: 50%">
+<img src="/guides/images/users-guide/Administration/admin-application-upload-cep-rule.png" alt="Add application CEP rule">
 
 ##### <a name="uploading-zip-files"></a>Uploading web applications
 
 In order to upload a web application, follow these steps:
 
 1. Click **Add application** in the **Own applications** page.
-2. In the upcoming dialog, select **Upload zip file**.
-3. Simply drop a zip file or browse for it on your computer.
-
-<img src="/guides/images/users-guide/Administration/Admin_UploadZipFile.png" alt="Uploading zip file" style="max-width: 50%">
+2. In the upcoming dialog, drop a zip file or browse for it on your computer.
 
 After successfully uploading the zip file to the platform the application is being created.
+
+<img src="/guides/images/users-guide/Administration/admin-application-upload-web-app.png" alt="Uploading zip file">
 
 ##### <a name="uploading-microservices"></a>Uploading microservices
 
 In order to upload a microservice, follow these steps:
 
 1. Click **Add application** in the **Own applications** page.
-2. In the upcoming dialog, select **Upload zip file**.
-3. Simply drop a zip file or browse for it on your computer.
-
-<img src="/guides/images/users-guide/Administration/Admin_UploadZipFile.png" alt="Uploading zip file" style="max-width: 50%">
+2. In the upcoming dialog, drop a zip file or browse for it on your computer.
 
 After successfully uploading the zip file to the platform the application is being created.
 
@@ -199,7 +199,7 @@ In order to add an application which links to an external application, follow th
 1. Click **Add application** in the **Own applications** page.
 2. In the upcoming dialog, select **External application**.
 <br><br>
-<img src="/guides/images/users-guide/Administration/admin-own-applications-external.png" alt="External application" style="max-width: 50%">
+<img src="/guides/images/users-guide/Administration/admin-application-external.png" alt="External application">
 <br><br>
 3. In the next window, enter the name of the application. The name will be shown as title of the application. 
 5. Enter an application key, used to identify this application.
@@ -222,9 +222,12 @@ In order to duplicate an application, follow these steps:
 2. In the upcoming dialog, select **Duplicate existing application**.
 3. Select the desired application from the dropdown list. 
 <br><br>
-<img src="/guides/images/users-guide/Administration/admin-own-applications-duplicate.png" alt="Duplicate application" style="max-width: 50%">
+<img src="/guides/images/users-guide/Administration/admin-application-duplicate.png" alt="Duplicate application">
 <br><br>
 4. In the next window, provide a name for the application. By default, the name of the original application is provided, extended by a number.
+<br><br>
+<img src="/guides/images/users-guide/Administration/admin-application-duplicate-2.png" alt="Duplicate application">
+<br><br>
 5. Provide an application key, used to identify this application. By default, the key of the original application is provided, extended by a number.
 6. Provide the application path as part of the URL to invoke the application. By default, the path of the original application is provided, extended by a number. If you set it to the path of the original subscribed application, your own application will overrule the subscribed application. 
 7. Finally, click **Duplicate** to create the application.
@@ -239,13 +242,11 @@ In order to upload custom Apama CEP rules, follow these steps:
 
 1. Click **Add application** in the **Own applications** page.
 2. In the upcoming dialog, select **Upload custom Apama rule**. <br>
-	<img src="/guides/images/users-guide/Administration/Admin_ApplicationsAddCEPRules.png" alt="Upload CEP rules" style="max-width: 50%">
-
 3. The file to be uploaded must be a single mon file, containing a set of event definitions and monitors. Drop the mon file or browse for it on your computer.
 
 After successfully uploading the file to the platform an application of type "Apama CEP rule" is being created.
 
-<img src="/guides/images/users-guide/Administration/Admin_ApplicationCEPRule.png" alt="Uploading zip file" style="max-width: 100%">
+<img src="/guides/images/users-guide/Administration/admin-application-cep-rule.png" alt="Application type CEP rule">
 
 For details on the fields, see also [Application properties](#application-properties) below.
 
@@ -279,9 +280,9 @@ In order to configure and extend the functions provided with an application, you
 
 >**Info:** Because the application itself is modified when adding a plugin, plugins can only be added to own applications. When adding a plugin to a subscribed application, the application must be duplicated first into an own application. This process is supported by the Administration Application wizard.
 
-To add additional plugins, click **Add Plugin** on the card of the desired application in the "Own applications" page. 
+To add additional plugins, click **Add Plugin** on the card of the desired application in the **Own applications** page. 
 
-The "Plugin" tab for the application will open up, showing all existing plugins and allowing to add plugins by simply dropping the respective ZIP file or browsing for it on your computer.
+The **Plugin** tab for the application will open up, showing all existing plugins and allowing to add plugins by simply dropping the respective ZIP file or browsing for it on your computer.
 
 ![Plugins](/guides/images/users-guide/plugins.png)
 
@@ -290,10 +291,10 @@ To remove a plugin, hover over it and click **Remove** at the right.
 The following tables list the navigator and menu items with their respective plugins.
 
 
-|Navigator Item|Plugin
+|Navigator item|Plugin
 |:---|:---|
 |Welcome|Welcome screen
-|Home|Cockpit Home
+|Home|Cockpit home screen
 |Smart Rules|Smart Rules UI
 |Groups|Groups Hierarchy
 |Data Explorer|Data Point Explorer UI
@@ -311,17 +312,6 @@ The following tables list the navigator and menu items with their respective plu
 
 Be aware of the "UI" at the end of the plugin names.
 
-#### Restoring to an older application version
-
-Users can restore previous versions of an application from an archive:
-
-1. Open the application by clicking on it.
-2. Switch to the **Archives** tab. 
-3. Open the context menu for the desired version by clicking the menu icon and select **Set as active** to make it the active version.
-4. Click **Remove** to remove the version from the archive.
-
->**Info**: The **Archive** tab is not available for subscribed applications, as only the owner of the application can perform this action.
-
 #### Uploading archives
 
 Multiple archive file versions can be stored in Cumulocity when they were created by uploading either a zip file or a mon file. Each version is called an archive. You can upload different versions at the same time and switch between these versions. 
@@ -329,17 +319,26 @@ Multiple archive file versions can be stored in Cumulocity when they were create
 To upload an archive, follow these steps:
 
 1. Open the application by clicking on it.
-2. Switch to the "Archives" tab.
+2. Switch to the **Archives** tab.
 3. Click **Upload archive** and browse for the archive on your computer or simply drop the archive file.
 4. Click **Upload** to upload the archive to your Cumulocity account.
 
-![Upload archive](/guides/images/users-guide/uploadarchive.png)
+<img src="/guides/images/users-guide/Administration/admin-application-archive.png" alt="Application archive">
 
 Once uploaded, the recently uploaded version is automatically the active version, i.e. the version of the application that is currently being served to the users of your account. This version cannot be deleted. 
 
-To change the active version, open the context menu in the version you want to activate and select **Set as active**.
+>**Info**: The **Archive** tab is not available for subscribed applications, as only the owner of the application can perform this action.
 
+##### Restoring to an older application version
 
+Users can restore previous versions of an application from an archive:
+
+1. Open the application by clicking on it.
+2. Switch to the **Archives** tab.
+3. Open the context menu for the desired version by clicking the menu icon and select **Set as active** to make it the active version.
+4. Click **Remove** to remove the version from the archive.
+
+<img src="/guides/images/users-guide/Administration/admin-application-set-as-archive.png" alt="Application set as archive">
 
 
 

@@ -4,7 +4,7 @@ layout: redirect
 title: Hello microservice!
 ---
 
-In this section you will learn how to create a microservice that can be run on the [Cumulocity Platform](https;//cumulocity.com) using the Microservice SDK for Java.
+In this section you will learn how to create your first microservice that can be run on the [Cumulocity Platform](https;//cumulocity.com) using the Microservice SDK for Java.
 
 ### Prerequisites
 
@@ -22,7 +22,7 @@ Java home: /Library/Java/JavaVirtualMachines/jdk1.7.0_45.jdk/Contents/Home/jre
 
 Maven can be downloaded from the [Maven website](http://maven.apache.org). You will also need a Docker installation and it can be downloaded from the [Docker website](https://www.docker.com/get-started).
 
-Cumulocity hosts linux/amd64 docker containers and not Windows containers. The docker version must be 1.12.6 or above. Use the following command to verify your docker installation
+Cumulocity hosts linux/amd64 Docker containers and not Windows containers. The Docker version must be 1.12.6 or above. Use the following command to verify your Docker installation:
 
 ```shell
 $ docker version
@@ -51,7 +51,7 @@ To develop a very simple "Hello, world!" agent for Cumulocity, you need to
 
 #### Creating a Maven project
 
-Execute the following Maven command to create a plain Java project
+Execute the following Maven command to create a plain Java project:
 
 ```shell
 $ mvn archetype:generate -DgroupId=c8y.example -DartifactId=hello-world-microservice -DarchetypeArtifactId=maven-archetype-quickstart -DinteractiveMode=false
@@ -61,7 +61,7 @@ This will create a folder *hello-world-microservice* in the current directory wi
 
 #### Adding the Java Microservice library
 
-Inside the _hello-world-microservice_ folder you will find the _pom.xml_ file. Start editing this file by adding a properties element as follows
+Inside the _hello-world-microservice_ folder you will find the _pom.xml_ file. Start editing this file by adding a properties element as follows:
 
 ```xml
 <properties>
@@ -133,19 +133,19 @@ The code uses fours annotations where three are part of the Spring Framework and
 
 Employing the `@MicroserviceApplication` annotation is a simple way to add required behavior for Cumulocity Microservice including:
 
-* security
-* subscription
-* health indicator
-* context
-* internal platform API
-* spring boot application
+* Security
+* Subscription
+* Health indicator
+* Context
+* Internal platform API
+* Spring Boot application
 
 #### Configuring the microservice
 
 Add an _application.properties_ file to the _src/main/resources_ directory with the following properties:
 
 ```properties
-application.name=hello-world
+application.name=hello-world-agent
 server.port=80
 ```
 
@@ -212,8 +212,9 @@ To create a deployable ZIP file, you need to add the following code to your _pom
                         <goal>package</goal>
                     </goals>
                     <configuration>
-                        <name>hello-world</name>
-                        <image>hello-world</image>
+                        <!-- name for the Docker image -->
+                        <name>my-first-microservice</name>
+                        <image>my-first-microservice</image>
                         <encoding>UTF-8</encoding>
                     </configuration>
                 </execution>
@@ -225,107 +226,109 @@ To create a deployable ZIP file, you need to add the following code to your _pom
 
 ### Building the microservice
 
-Execute the following command to build the ZIP file:
+In a terminal, navigate to the folder where your _pom.xml_ is located and execute the following Maven command. Note that after a successful build you will find a ZIP file inside the _target_ directory.
 
-```shel
+```shell
 $ mvn clean install
 ```
 
-After a successful build, you will be provided with a ZIP file in the _target_ directory. The ZIP can be deployed to the platform as described in the Deployment section.
+### <a name="run-locally"></a> Running the microservice locally
 
-### <a name="run-locally"></a> Running microservice locally
+You can run the Docker container locally in order to test the REST calls from the microservice to Cumulocity.
 
-In order to test the microservice for the calls from the microservice to Cumulocity, you can run the docker container locally.
+The microservice must be deployed to verify the REST calls from Cumulocity to the microservice.
 
-To verify calls from Cumulocity to the microservice, the microservice must be deployed.
+To run a microservice which uses the Cumulocity API locally you need:
 
-To run a microservice which uses Cumulocity API locally you need the following:
+* A valid tenant, a user and a password in order to access Cumulocity.
+* An authorization header as "Basic {Base64({username}:{password})}"
 
-* URL address of the Cumulocity host of your tenant
-* Authorization header = "Basic {Base64({username}:{password})}"
-* Tenant - tenant ID
+#### Step 1 - Create the application
 
-**Step 1 - Create application**
+If the application does not exist, create a new application on the Cumulocity platform employing a POST request.
 
-If the application does not exist, create a new application on a platform:
-
-    POST {URL}/application/applications
+```avrasm
+POST {URL}/application/applications
 
 HEADERS:
-
-    "Authorization": "{AUTHORIZATION}"
-    "Content-Type": "application/vnd.com.nsn.cumulocity.application+json"
-    "Accept: application/vnd.com.nsn.cumulocity.application+json"
+  "Authorization": "{AUTHORIZATION}"
+  "Content-Type": "application/vnd.com.nsn.cumulocity.application+json"
+  "Accept: application/vnd.com.nsn.cumulocity.application+json"
 
 BODY:
+{
+  "name": "{APPLICATION_NAME}",
+  "type": "MICROSERVICE",
+  "key": "{APPLICATION_NAME}-microservice-key"
+}
+```
 
-    {
-            "name": "{APPLICATION_NAME}",
-            "type": "MICROSERVICE",
-            "key": "{APPLICATION_NAME}-microservice-key"
+You have to replace the values `{URL}` with the URL of your Cumulocity tenant, `{AUTHORIZATION}` with a Base64 encoded string and `{APPLICATION_NAME}` with the desired name for your microservice application and its `key` name.
+
+> **Important**: When naming your microservice application use only lower-case letters, digits and dashes. The maximum length for the name is 23 characters.
+
+The `curl` command can be used to create the application with a POST request:
+
+```shell
+$ curl -X POST -s \
+  -d '{"name":"my-first-microservice","type":"MICROSERVICE","key":"my-hello-world-microservice-key"}' \
+  -H "Authorization: {AUTHORIZATION}" \
+  -H "Content-Type: application/vnd.com.nsn.cumulocity.application+json" \
+  -H "Accept: application/vnd.com.nsn.cumulocity.application+json" \
+  "{URL}/application/applications"
+```
+
+In case of errors, e.g. invalid names, you will get the details printed in the console. When the application is created successfully, you will get a response in JSON format as the following example:
+
+```json
+{
+  "id": "{APPLICATION_ID}",
+  "key": "my-hello-world-microservice-key",
+  "name": "my-first-microservice",
+  "type": "MICROSERVICE",
+  "availability": "PRIVATE",
+
+  "self": "{URL}/application/applications/{APPLICATION_ID}",
+
+  "owner": {
+    "self": "{...}",
+    "tenant": {
+      "id": "{TENANT}"
     }
+  },
+  "requiredRoles": [],
+  "manifest": {
+    "noAppSwitcher": true
+  },
+  "roles": [],
+  "contextPath": "my-first-microservice"
+}
+```
+
+Load the Administration application on your tenant and navigate to **Applications** > **Own applications**. There you will see the new created microservice.
+
+![Hello World of Microservices](/guides/images/microservices-sdk/hello-world.png)
 
 
-Example:
+#### Step 2 - Acquire the microservice bootstrap user
 
-    $curl -X POST -s \
-      -d "{"name":"hello-microservice-1","type":"MICROSERVICE","key":"hello-microservice-1-key"}" \
-      -H "Authorization: {AUTHORIZATION}" \
-      -H "Content-Type: application/vnd.com.nsn.cumulocity.application+json" \
-      -H "Accept: application/vnd.com.nsn.cumulocity.application+json" \
-      "{URL}/application/applications"
+You will need the bootstrap user credentials in order to run the microservice locally. Get the details of your bootstrap user with a GET request as follows:
 
-Example response:
-
-    {
-        "availability": "PRIVATE",
-        "id": "{APPLICATION_ID}",
-        "key": "{APPLICATION_NAME}-microservice-key",
-        "manifest": {
-            "imports": [],
-            "noAppSwitcher": true
-        },
-        "name": "{APPLICATION_NAME}",
-        "owner": {
-            "self": "...",
-            "tenant": {
-                "id": "..."
-            }
-        },
-        "requiredRoles": [],
-        "roles": [],
-        "self": "..",
-        "type": "MICROSERVICE"
-    }      
-
-If the application has been created correctly, you can get the application ID from the response.
-
-**Step 2 - Acquire microservice bootstrap user**
-
-    GET {URL}/application/applications/{APPLICATION_ID}/bootstrapUser
+```avrasm
+GET {URL}/application/applications/{APPLICATION_ID}/bootstrapUser
 
 HEADERS:
+  "Authorization": {AUTHORIZATION}
+  "Content-Type": application/vnd.com.nsn.cumulocity.user+json
+```
 
-    "Authorization": {AUTHORIZATION}
-    "Content-Type": application/vnd.com.nsn.cumulocity.user+json
+#### Step 3 - Run the microservice locally
 
-Example response:
-
-    HTTP/1.1 200 Ok
-    Content-Type: application/vnd.com.nsn.cumulocity.user+json
-    {
-      "tenant": "...",
-      "name": "...",
-      "password": "..."
-    }
-
-**Step 3 - Run microservice locally**
-
-The image is already added to the local docker repository during the build. List all the docker repository images available:
+The image is already added to the local Docker repository during the build. List all the Docker repository images available:
 
     $ docker images
 
-After you find the image in the list, run the docker container for the microservice by providing the baseurl and the bootstrap user credentials:
+After you find the image in the list, run the Docker container for the microservice by providing the baseurl and the bootstrap user credentials:
 
     $ docker run -e C8Y_BASEURL={URL} -e C8Y_BOOTSTRAP_TENANT={BOOTSTRAP_TENANT} -e C8Y_BOOTSTRAP_USER={BOOTSTRAP_USERNAME} -e C8Y_BOOTSTRAP_PASSWORD={BOOTSTRAP_USER_PASSWORD} -e C8Y_MICROSERVICE_ISOLATION=MULTI_TENANT -i -t {DOCKER_REPOSITORY_IMAGE}:{TAG}
 

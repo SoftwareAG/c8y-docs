@@ -1,18 +1,18 @@
 {{ define "main" }}
 {{- partial "root-nav.html" . -}}
 
+{{ $bundle := printf "/%s-%s" .File.BaseFileName "bundle"  }}
+{{ $headless := .Site.GetPage $bundle }}
 <div class="main-content">
   <article>
     <header class="section-header">
       <h1 class="text-light">{{.Title}}</h1>
     </header>
-   <div class="lead">
+   <div class="{{if $headless }} lead{{ end}}">
      {{.Content}}
    </div>
   </article>
 
-  {{ $bundle := printf "/%s-%s" .File.BaseFileName "bundle"  }}
-  {{ $headless := .Site.GetPage $bundle }}
   {{ if $headless }}
   {{ $reusablePages := sort ($headless.Resources.ByType "page") ".Params.weight" }}
   {{ range $reusablePages}}

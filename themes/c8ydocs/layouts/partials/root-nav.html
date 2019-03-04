@@ -50,17 +50,20 @@
     {{ range $i, $slot := where .Site.Pages "Section" .Section }}
     {{ if .IsPage }}
     <div>
+        {{ $parentUrl := .Permalink }}
+        {{ $bundle := printf "/%s-%s" .File.BaseFileName "bundle"  }}
+        {{ $headless := .Site.GetPage $bundle }}
+        {{ if $headless }}
       <a href="javascript:void(0);"
         data-toggle="collapse"
         data-target="#page-nav{{$i}}"
         class="collapse-btn {{if ne $current.Permalink .Permalink }} collapsed {{ end}}">
         <i class="fa fa-chevron-right "></i>
       </a>
+      {{ end }}
       <a class="{{if eq $current.Permalink .Permalink }} active {{ end}}"
         href="{{.Permalink}}">{{.Title}}</a>
-      {{ $parentUrl := .Permalink }}
-      {{ $bundle := printf "/%s-%s" .File.BaseFileName "bundle"  }}
-      {{ $headless := .Site.GetPage $bundle }}
+     
       {{ if $headless }}
       {{ $reusablePages := sort ($headless.Resources.ByType "page") ".Params.weight" }}
       <div id="page-nav{{$i}}"

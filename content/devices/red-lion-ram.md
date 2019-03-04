@@ -1,0 +1,5 @@
+---
+title: Red Lion RAM series
+layout: bundle
+image: '/guides/images/devices/device-list/red_lion.jpg'
+---

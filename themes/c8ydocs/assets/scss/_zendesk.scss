@@ -1,0 +1,11 @@
+#launcher{
+  position: fixed;
+  top: -3px!important;
+  right: 22px!important;
+  left: auto!important;
+  transform: scale(0.72)!important;
+  margin: 10px 0!important;
+  @media(min-width: $grid-breakpoint){
+    right: 22px!important;
+  }
+}

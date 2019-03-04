@@ -1,7 +1,7 @@
 ---
-order: 50
+weight: 50
 title: Security aspects
-layout: subsections
+layout: bundle
 collection: 'guides/concepts/security'
 ---
 

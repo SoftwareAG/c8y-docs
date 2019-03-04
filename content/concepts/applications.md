@@ -1,7 +1,7 @@
 ---
-order: 40
+weight: 40
 title: Developing applications
-layout: subsections
+layout: bundle
 collection: 'guides/concepts/applications'
 ---
 

@@ -2,7 +2,9 @@
 weight: 40
 title: Developing applications
 layout: bundle
-collection: 'guides/concepts/applications'
+aliases:
+  - /guides/concepts-guide/developing-m2m-applications
+  - /guides/concepts-guide/developing-m2m-applications.html
 ---
 
 Cumulocity is designed to accommodate arbitrary vertical IoT applications in addition to its generic functionality.

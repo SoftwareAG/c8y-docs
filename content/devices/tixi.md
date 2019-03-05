@@ -2,6 +2,7 @@
 title: Tixi
 layout: bundle
 image: '/guides/images/devices/device-list/tixi.jpg'
+brand: Tixi
 ---
 
 The [Tixi GmbH](http://www.tixi.de/) provides various gateways for energy management, smart metering, data logging and alarming. Specifically, the following device are offered:

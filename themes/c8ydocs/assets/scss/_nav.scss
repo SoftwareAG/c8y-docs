@@ -5,6 +5,7 @@
   z-index: 40;
   left: -$main-nav-width;
   transition: left .35s $ease;
+  background-color: $body-bg-color;
   .open &{
     left:0;
   }
@@ -62,9 +63,10 @@
 
 
 .nav-sections{
-  max-height: calc(100vh - 140px);
+  max-height: calc(100vh - 118px);
   overflow-y: auto;
   position: relative;
+  padding-bottom: 1rem;
   &::-webkit-scrollbar {
     width: 4px;
     /* for vertical scrollbars */
@@ -119,6 +121,16 @@
     
   }
 
+  .list-group.nav{
+    padding-bottom: .3rem;
+    .active{
+      color: $blue-65;
+    }
+  }
+
+  .slot-active{
+    background-color: white;
+  }
   .active{
     color: $blue-primary;
     font-weight: bold;
@@ -126,3 +138,18 @@
  
 }
 
+.cover{
+  position: fixed;
+  top: 0;
+  right:0;
+  bottom:0;
+  left: 0;
+  z-index: 39;
+  pointer-events: none;
+  transition: background .30s $ease;
+  
+  .open &{
+    background-color: rgba(black, .8);
+    pointer-events: all;
+  }
+}

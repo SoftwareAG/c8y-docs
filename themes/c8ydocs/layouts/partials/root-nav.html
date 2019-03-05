@@ -49,7 +49,7 @@
     class="nav-sections">
     {{ range $i, $slot := where .Site.Pages "Section" .Section }}
     {{ if .IsPage }}
-    <div>
+    <div class="{{if eq $current.Permalink .Permalink }} slot-active {{ end}}">
         {{ $parentUrl := .Permalink }}
         {{ $bundle := printf "/%s-%s" .File.BaseFileName "bundle"  }}
         {{ $headless := .Site.GetPage $bundle }}
@@ -86,3 +86,4 @@
     {{ end }}
   </nav>
 </nav>
+<div class="cover"></div>

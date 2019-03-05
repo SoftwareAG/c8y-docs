@@ -1,33 +1,29 @@
 {{ define "main" }}
 {{- partial "root-nav.html" . -}}
 
-{{ $bundle := printf "/%s-%s" .File.BaseFileName "bundle"  }}
-{{ $headless := .Site.GetPage $bundle }}
 <div class="main-content">
   <article>
-    <header class="section-header">
+    <header class="section-header d-flex align-center">
       <h1 class="text-light">{{.Title}}</h1>
+      <div class="flex-end">
+        <div class="input-group"> <span class="input-group-addon" id="basic-addon1"><i class="fa fa-search"></i></span>
+          <input type="search" class="form-control input-lg" id="filter-devices" placeholder="Type to filter devices…">
+        </div>
+      </div>
     </header>
-   <div class="{{if $headless }} lead{{ end}}">
+   <div class="list-intro">
      {{.Content}}
    </div>
-   <div class="input-group" style="margin-bottom: 24px;"> <span class="input-group-addon" id="basic-addon1"><i class="fa fa-search"></i></span>
-    <input type="search" class="form-control input-lg" id="filter-devices" placeholder="Type to search devices…">
-  </div>
-
   
-  {{ if $headless }}
-  <div class="row">
-  {{ $reusablePages := sort ($headless.Resources.ByType "page") ".Params.weight" }}
-  {{ range $reusablePages}}
-    <div class="col-sm-4 col-md-3 device ">
-      <a href="<%=.url%>" class="device-slot">
-        <img src="<%= document.image || '' %>" class="img-responsive center-block no-zoom">
-        <p class="device-title"><%= document.title %></p>
+  <div class="d-flex device-list">
+
+    {{range where (where .Site.Pages ".Section" "==" .Section) ".Params.image" "!="  nil }}
+      <a href="{{.Permalink}}" class="device-slot" title="{{.Title}}">
+        <img src="{{.Params.image}}" class="img-responsive center-block no-zoom">
+        <div class="device-title">{{.Title}}</div>
+        <h6 class="device-brand">{{.Params.brand}}</h6>
       </a>
-    </div>
-  {{ end }}
-  {{ end }}
+    {{end}}
   </div>
 </article>
 </div>

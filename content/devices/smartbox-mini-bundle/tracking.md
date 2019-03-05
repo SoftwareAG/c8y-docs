@@ -18,6 +18,6 @@ Additionally, when the feature is activated, Cell ID information can be used to 
 ## <a name="manage-agent"></a> Manage the Agent
 
 The installed software on the SMARTbox can be remotely managed using the standard software and management feature from Cumulocity, as described in the Device management user's guide. You can get the latest Software version in the Release notes folder of Device guide in Cumulocity or go to: https://www.pssystec.de/downloads/
-</br>If you want to install the agent manually, follow the instructions here: http://cumulocity.com/guides/devices/smartbox-release-notes/
+</br>If you want to install the agent manually, follow the instructions here: http://cumulocity.com/guides/images/devices/smartbox-release-notes/
 
 Since version 2.0 or higher all version are up compatible.

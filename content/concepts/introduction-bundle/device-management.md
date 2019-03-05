@@ -1,7 +1,6 @@
 ---
-weight: 40
 title: Device management
-layout: redirect
+weight: 40
 ---
 
 Cumulocity provides extensive device management for fully certified devices. This includes

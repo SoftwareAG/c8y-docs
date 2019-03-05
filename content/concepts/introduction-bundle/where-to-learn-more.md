@@ -1,7 +1,6 @@
 ---
-weight: 70
 title: Where to learn more
-layout: redirect
+weight: 70
 ---
 
 More conceptual information can be found in the following sections of the concept's guide:

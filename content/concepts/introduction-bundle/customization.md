@@ -1,7 +1,6 @@
 ---
-weight: 60
 title: Customization
-layout: redirect
+weight: 60
 ---
 
 The functionality described above already provides a wide range of device management, visualization and control options. Furthermore it produces custom visualization, new control widgets and custom business logic. Cumulocity has extensive customization options, for example:

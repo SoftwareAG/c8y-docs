@@ -1,7 +1,6 @@
 ---
-weight: 30
 title: Mobile networking support
-layout: redirect
+weight: 30
 ---
 
 Cumulocity supports any type of Internet connectivity in a secure manner. It gracefully deals with intermittent, bandwidth-restricted and uni-directional connections (such as communication through NAT). Where desired, Cumulocity can control remote devices in a real-time manner.

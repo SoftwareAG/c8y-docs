@@ -1,7 +1,7 @@
 ---
 weight: 80
 title: Summary
-layout: redirect
+
 ---
 
 Cumulocity is an independent Device and Application Management Internet of Things (Io T) platform. It connects and manages your devices and assets efficiently and can control them remotely.

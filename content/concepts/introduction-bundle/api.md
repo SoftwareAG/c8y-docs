@@ -1,7 +1,6 @@
 ---
-weight: 70
 title: APIs
-layout: redirect
+weight: 70
 ---
 
 Cumulocity exposes its complete functionality through programming interfaces (APIs). This means that all of Cumulocity's functionality is available for you to use in different contexts outside of what Cumulocity directly provides -- in your own applications, in your own devices.

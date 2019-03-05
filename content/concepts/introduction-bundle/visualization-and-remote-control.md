@@ -1,7 +1,6 @@
 ---
-weight: 50
 title: Visualization and remote control
-layout: redirect
+weight: 50
 ---
 
 Cumulocity visualizes your sensor data centrally and graphically through its modern web user interface. It also exposes common remote controls to users with the relevant permissions.

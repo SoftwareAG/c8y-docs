@@ -1,7 +1,6 @@
 ---
-weight: 20
 title: Hardware kits and software libraries
-layout: redirect
+weight: 20
 ---
 
 

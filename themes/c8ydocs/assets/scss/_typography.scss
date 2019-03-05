@@ -171,8 +171,10 @@ blockquote {
 .text-truncate{
   display: block;
   text-overflow: ellipsis;
-  overflow: hidden;  
+  overflow: hidden;
+  white-space: nowrap;  
 }
+
 .text-nowrap{
   white-space: nowrap;
 }

@@ -2,6 +2,7 @@
 weight: 10
 title: Overview
 layout: bundle
+slug: introduction
 ---
 
 Cumulocity offers a wide range of functionality for interfacing IoT devices and other IoT-related data sources with the Cumulocity IoT platform.

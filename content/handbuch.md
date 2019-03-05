@@ -1,6 +1,6 @@
 ---
 title: Handbuch
-bundle: handbuch
+bundle: benutzerhandbuch
 icon: "c8y-icon c8y-icon-user"
 type: root
 layout: root

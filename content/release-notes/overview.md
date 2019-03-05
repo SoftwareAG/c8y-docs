@@ -2,8 +2,6 @@
 weight: 10
 title: Overview
 layout: bundle
-aliases:
-  - /release-notes/overviewb/
 ---
 
 These release notes document all relevant changes that have been implemented in a Cumulocity release since the previous release.

@@ -2,6 +2,7 @@
 weight: 10
 title: Microservices SDK
 layout: bundle
+slug: introduction
 ---
 
 Microservices are server-side applications which may be used to extend the Cumulocity IoT platform with customer-specific functionality. 

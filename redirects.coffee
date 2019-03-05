@@ -1,8 +1,8 @@
 redirects =
 	# Legacy redirects user documentation
-	'/guides/concepts-guide': '/guides/concepts/introduction'
-	'/guides/concepts-guide/introduction-to-cumulocity': '/guides/concepts/introduction'
-	'/guides/concepts-guide/introduction-to-cumulocity.html': '/guides/concepts/introduction'
+	#'/guides/concepts-guide': '/guides/concepts/introduction'
+	#'/guides/concepts-guide/introduction-to-cumulocity': '/guides/concepts/introduction'
+	#'/guides/concepts-guide/introduction-to-cumulocity.html': '/guides/concepts/introduction'
 	'/guides/concepts-guide/modeling-and-managing-m2m-assets': '/guides/concepts/domain-model'
 	'/guides/concepts-guide/modeling-and-managing-m2m-assets.html': '/guides/concepts/domain-model'
 	'/guides/concepts-guide/interfacing-with-m2m-data-sources': '/guides/concepts/interfacing-devices'

@@ -28,6 +28,7 @@ This is a collective annotation consisting of:
 * @EnableMicroserviceSecurity - provides standard security mechanism, verifying user and roles against the platform
 * @EnableMicroserviceSubscription - is responsible for subscribing microservices to the platform, updating metadata and listen to tenant subscription change events
 * @EnableMicroservicePlatformInternalApi - injects the platform API services into spring context for a microservice to use
+* @EnableTenantOptionSettings - provides microservice configuration within tenant options and allows to override default properties from files
 
 ### Context support
 
@@ -166,6 +167,42 @@ Properties used by a microservice are:
     C8Y.microservice.isolation - Microservice isolation. Only PER_TENANT or MULTI_TENANT values are available. MULTI_TENANT by default
     
     
+### Settings
+
+The microservice settings module provides two features:
+
+* Configure microservice defining tenant options
+* Override existing properties -- tenant options can override default values from properties files
+
+Microservice loads tenant options for category specified by microservice context path. When context path is not provided in microservice manifest, application name is used.
+Options can be configured for application owner or subscriber, but only when option is defined as editable, so subscriber can override owner's option value.
+Settings are lazy cached for 10 minutes, so when they were accessed previously, user must wait remaining time to see change is applied.
+When settings are access without tenant context specified, application owner will be used to fetch data.  
+
+Tenant option settings can be accessed in two ways:  
+
+Using Environment:
+
+    @Autowired
+    private Environment enviroment;  
+     
+    public int getAccessTimeout() {
+        return environment.getProperty("access.timeout", Integer.class, 30);
+    }
+
+Using Settings Service:
+
+    @Autowired
+    private MicroserviceSettingsService settingsService;
+    
+    public String getAccessTimeout() {
+        return settingsService.get("access.timeout");
+    }
+    
+Settings can be encrypted using "*credentials.*" prefix for tenant option key. They will available already decrypted in microservice environment.
+Default properties defined in files can be overridden by defining tenant option for microservice with same key as property has. 
+> **Note:** you cannot override property injected by spring `@Value("${property.name}")`
+
 ### Logging
 
 For hosted deployment the standard output should be used.

@@ -5,7 +5,7 @@ layout: bundle
 slug: introduction
 ---
 
-Cumulocity offers a wide range of functionality for interfacing IoT devices and other IoT-related data sources with the Cumulocity IoT platform.
+<p class="lead">Cumulocity offers a wide range of functionality for interfacing IoT devices and other IoT-related data sources with the Cumulocity IoT platform.</p>
 
 This Device SDK guide provides detailed information on device integration using [MQTT](/guides/device-sdk/mqtt), [REST](/guides/device-sdk/rest), [C++](/guides/device-sdk/cpp), [C#](/guides/device-sdk/hello-mqtt-cs-0) and [Java](/guides/device-sdk/java).
 

@@ -55,7 +55,11 @@
     left: 0;
     padding-top: 50px;
     padding-bottom: 0;
-    font-size: 1rem;
+    font-size: 14px;
+    .c8y-icon, .fa{
+      font-size: 1rem;
+      width: 1.3rem;
+    }
   }
 }
 

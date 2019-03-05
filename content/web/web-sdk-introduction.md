@@ -2,9 +2,10 @@
 weight: 10
 title: Overview
 layout: bundle
+slug: introduction
 ---
 
-This Web SDK guide provides information on the Web SDK which enables you to develop web applications on top of our platform, communicate through our API and apply UI components to your custom application.
+<p class="lead">This Web SDK guide provides information on the Web SDK which enables you to develop web applications on top of our platform, communicate through our API and apply UI components to your custom application.</p>
 
 The latest generation of our Web SDK - [Web SDK for Angular](/guides/web/angular) - has now been released. 
 

@@ -4,10 +4,11 @@ title: Overview
 layout: bundle
 ---
 
+<div class="lead">
 These release notes document all relevant changes that have been implemented in a Cumulocity release since the previous release.
 
 We distinguish between standard releases and maintenance releases.
-
+</div>
 #### Standard release
 
 A standard release provides new features and functionality as well as improvements and fixes to a previous release.

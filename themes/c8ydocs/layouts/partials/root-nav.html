@@ -1,6 +1,6 @@
 <nav class="main-nav navbar">
   <header class="nav-header">
-    <a href="/dev-center">
+    <a href="{{ .Site.Params.guidesRedirect}}">
       <img src="{{ with .Site.Params.logo }}{{ . | absURL }}{{ end }}"
         class="img-responsive no-zoom"
         alt="Cumulocity IoT">

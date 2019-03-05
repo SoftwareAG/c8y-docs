@@ -37,6 +37,8 @@ buildFuture = true
 
   logo = "images/cumulocity-iot.svg"
 
+  guidesRedirect = "https://www.softwareag.cloud/site/dev-center/cumulocity-iot.html"
+
   # Your favicon path, default is "/favicon.png"
   favicon = "/favicon.ico"
 

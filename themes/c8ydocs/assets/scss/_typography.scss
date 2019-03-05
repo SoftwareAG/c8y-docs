@@ -20,7 +20,7 @@ h1,
 h2,
 h3,
 h4 {
-  margin: 0 0 0.5em;
+  margin: 0 0 1em;
   font-weight: inherit;
   line-height: 1.2;
   font-family: $font-headings;
@@ -109,35 +109,17 @@ blockquote {
   }
 }
 
-// blockquote{
-//   padding: 0;
-//   margin: 0 0 $size-4;
-//   font-style: italic;
-//   position: relative;
-//   color: $gray-40;
+code{
+  padding: 2px 4px;
+  border-radius: 3px;
+  background-color: #d8edf1;
+  color: #017de9;
+  font-size: 90%;
+}
 
-//   p{
-//     margin: 0;
-//   }
-//   &:before{
-//     content: '“';
-//     font-size: 4em;
-//     position: absolute;
-//     left: -30px;
-//     top: -20px;
-//     color: $blue-20;
-//     opacity: .5;
-//   }
-//   small{
-//     color: $gray-50;
-//     display: block;
-//     margin-top: $size-1;
-//     font-style: normal;
-//     &::before{
-//       content: "\2014 \00A0";
-//     }
-//   }
-// }
+pre .hljs{
+  padding: 1.5rem;
+}
 
 .list-unstyled {
   padding: 0;

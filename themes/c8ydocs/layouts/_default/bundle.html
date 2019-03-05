@@ -4,13 +4,17 @@
 {{ $bundle := printf "/%s-%s" .File.BaseFileName "bundle"  }}
 {{ $headless := .Site.GetPage $bundle }}
 <div class="main-content">
-  <article>
+  <article class="page-section">
     <header class="section-header">
       <h1 class="text-light">{{.Title}}</h1>
     </header>
-   <div class="{{if $headless }} lead{{ end}}">
-     {{.Content}}
-   </div>
+    {{if $headless }}
+      <div class="lead">
+        {{.Content}}
+      </div>
+      {{else}}
+      {{.Content}}
+    {{ end}}
   </article>
 
   {{ if $headless }}

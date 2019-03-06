@@ -1,6 +1,6 @@
 ---
 order: 40
-title: Mqtt Client Prerequisites 
+title: MQTT Client - Prerequisites 
 layout: redirect
 ---
 

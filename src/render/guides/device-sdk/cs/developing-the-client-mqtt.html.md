@@ -1,6 +1,6 @@
 ---
 order: 50
-title: Developing the "Hello, MQTT world!" client
+title: MQTT client - "Hello world!" 
 layout: redirect
 ---
 

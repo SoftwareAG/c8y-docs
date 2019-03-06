@@ -1,6 +1,6 @@
 ---
 order: 60
-title: Static templates Mqtt Client
+title: MQTT Client - Static templates
 layout: redirect
 ---
 

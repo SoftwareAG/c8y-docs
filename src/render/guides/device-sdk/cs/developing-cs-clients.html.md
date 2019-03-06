@@ -1,6 +1,6 @@
 ---
 order: 30
-title: Rest Client Developing
+title: Rest Client - Developing
 layout: redirect
 ---
 
@@ -180,9 +180,9 @@ For example, assume that you would like to switch off a relay in a meter from an
     relay.SetRelayState(Relay.RelayState.OPEN);
     operation.Set(relay);
     control.Create(operation);
-
+```
 Now, if you would like to query the pending operations from an agent, the following code would need to be executed:
-
+```cmd
     OperationFilter operationFilter = new OperationFilter();
     operationFilter.ByAgent(mo.Id.Value);
     operationFilter.ByStatus(OperationStatus.PENDING);

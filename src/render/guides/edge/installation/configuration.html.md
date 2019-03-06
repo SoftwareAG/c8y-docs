@@ -56,10 +56,11 @@ You will be prompted to select one of the following options:
 2. Update license and SSL certificates
 3. Run post-upgrade
 4. Configure network
+5. Expand data disk size
 5. Exit
 
 >**Important**: Option 2 and 3 will only work after you have successfully completed the post-installation setup (Option 1). 
-Option 3 and Option 4 cannot be invoked from a remote connection like SSH. You will have to run these directly from the terminal within the VM.
+Option 3, 4 and 5 cannot be invoked from a remote connection like SSH. You will have to run these directly from the terminal within the VM.
 
 #### Option 1 - Run post-installation
 
@@ -247,4 +248,25 @@ Confirm to continue with the network configuration process.
 
 The network configuration process consists of multiple steps which are executed sequentially. After a step has been executed, its status will be shown on the console. In case of any failure in any of the steps, the network configuration process will halt and a failure message will be displayed on the console.
 
-	
+#### Option 5 - Expand data disk size
+
+>**Important**: This task needs to be invoked from within the VM and cannot be invoked via a remote connection.
+
+Expanding the data disk size consists of two steps:
+
+1. Increasing the physical HDD size from the hypervisor level
+2. From within the VM, add space to the disk by executing option 5 of the post-installation script
+
+So as a first step you need to carry out the following prior to selecting option 5.
+ 
+1. Shutdown the VM.
+
+2. Edit the VM and on the **Virtual Hardware** tab increase the disk space of **Hard disk 2** to your needs.<br><img src="/guides/images/edge/edge-configuration-edit.png" name="Edit VMware"/> 
+
+3. Start the VM and run the *post_installation.sh* script.
+
+4. From the option list, select option 5, and confirm to continue with expanding the data disk size.
+
+The disk size expanding process consists of multiple steps which are executed sequentially. After a step has been executed, its status will be shown on the console. In case of any failure in any of the steps, the network configuration process will halt and a failure message will be displayed on the console.
+
+<img src="/guides/images/edge/edge-configuration-disk-size.png" name="Expand disk size"/>

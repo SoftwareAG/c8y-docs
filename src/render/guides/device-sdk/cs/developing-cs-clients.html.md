@@ -16,41 +16,41 @@ Documentioon is available on the [resources site](http://resources.cumulocity.co
 ### Connecting to Cumulocity
 
 The root interface for connecting to Cumulocity from C# is called "Platform" (see "Root interface" in [REST implementation](/guides/reference/rest-implementation) in the Reference guide). It provides access to all other interfaces of the platform, such as the inventory. In its simplest form, it is instantiated as follows:
-
+```cmd
     Platform platform = new PlatformImpl("<<URL>>", new CumulocityCredentials("<<user>>", "<<password>>"));
-
+```
 As an example:
-
+```cmd
     Platform platform = new PlatformImpl("https://demos.cumulocity.com", new CumulocityCredentials("myuser", "mypassword"));
-
+```
 If you use the C# client for developing an application, you need to register an application key (through [Own applications](/guides/users-guide/administration#managing-applications) in the Cumulocity Administration application, or through the [Application API](/guides/reference/applications)).
-
+```cmd
 	new CumulocityCredentials("<<tenant>>", "<<user>>", "<<password>>", "<<application key>>")
-
+```
 For testing purposes, every tenant is subscribed to the demo application key "uL27no8nhvLlYmW1JIK1CA==". The constructor for PlatformImpl also allows you to specify the default number of objects returned from the server in one reply with the parameter "pageSize".
 
 
 ### Accessing the inventory
 
 The following code snippet shows how to obtain a handle to the inventory from C#:
-
+```cmd
             IInventoryApi inventory = platform.InventoryApi;
-
+```
 Using this handle, you can create, retrieve and update managed objects. For example, if you would like to retrieve all objects that have a geographical position, use
-
+```cmd
 			InventoryFilter inventoryFilter = new InventoryFilter();
 			inventoryFilter.ByFragmentType(typeof(Position));
 			var moc = inventory.GetManagedObjectsByFilter(inventoryFilter);
-
+```
 This returns a query to get the objects -- it does not actually get them. In practice, such a list of objects could be very large. Hence, it is returned in "pages" from the server. To get all pages and iterate over them, use:
-
+```cmd
 			foreach (ManagedObjectRepresentation mo in moc.GetFirstPage().AllPages())
 			{
 				Console.WriteLine(mo.Id);
 			}
-
+```
 To create a new managed object, simply construct a local representation of the object and send it to the platform. The following code snippet shows how to create a new electricity meter with a relay in it:
-
+```cmd
 			ManagedObjectRepresentation mo = new ManagedObjectRepresentation();
 			mo.Name = "MyMeter-1";
 			Relay relay = new Relay();
@@ -60,11 +60,11 @@ To create a new managed object, simply construct a local representation of the o
 			// Set additional properties, e.g., tariff tables, ...
 			mo = inventory.Create(mo);
 			Console.WriteLine(mo.Id);
-
+```
 The result of invoking "create" is a version of the new managed object with a populated unique identifier.
 
 Now assume that you would like to store additional, own properties along with the device. This can simply be done by creating a new "fragment" in the form of a C# class. For example, assume that you would like to store tariff information along with your meter. There is a day and a night time tariff, and we need to store the hours during which the night time tariff is active:
-
+```cmd
 	[PackageName("tariff")]
 	public class Tariff
 	{
@@ -95,12 +95,12 @@ Now assume that you would like to store additional, own properties along with th
 		private int nightTariffStart = 22;
 		private int nightTariffEnd = 6;
 	}
-
+```
 Now, you can simply add tariff information to your meter:
-
+```cmd
     Tariff tariff = new Tariff();
     mo.Set(tariff);
-
+```
 This will store the tariff information along with the meter. For converting C# objects from and towards JSON/REST, Cumulocity uses Json.NET. The [Json.NET](https://www.newtonsoft.com/json/help) provides more information on how to influence the JSON format that is produced respectively accepted.
 
 
@@ -109,7 +109,7 @@ This will store the tariff information along with the meter. For converting C# o
 A device typically has a technical identifier that an agent needs to know to be able to contact the device. Examples are meter numbers, IP addresses and REST URLs. To associate such identifiers with the unique identifier of Cumulocity, agents can use the identity service. Again, to create the association, create an object of type "ExternalIDRepresentation" and send it to the platform.
 
 The code snippet below shows how to register a REST URL for a device. It assumes that "mo" is the managed object from the above example and "deviceUrl" is a string with the REST URL of the device.
-
+```cmd
 	const string ASSET_TYPE = "com_cumulocity_idtype_AssetTag";
 	const string deviceUrl = "SAMPLE-A-239239232";
 
@@ -119,21 +119,21 @@ The code snippet below shows how to register a REST URL for a device. It assumes
     externalIDGid.ManagedObject = mo;
     IIdentityApi identityApi = platform.IdentityApi;
     identityApi.Create(externalIDGid);
-
+```
 Now, if you need the association back, you can just query the identity service as follows:
-
+```cmd
     ID id = new ID();
     id.Type = ASSET_TYPE;
     id.Value = deviceUrl;
     externalIDGid = identityApi.GetExternalId(id);
-
+```
 The returned object will contain the unique identifier and a link to the managed object.
 
 
 ### Accessing events and measurements
 
 Events and measurements can be accessed in a very similar manner as described above for the inventory. The following examples queries the signal strength of the mobile connection of devices in the past two weeks and prints the device ID, the time of the measurement, the received signal strength and the bit error rate.
-
+```cmd
     IMeasurementApi measurementApi = platform.MeasurementApi;
     MeasurementFilter measurementFilter = new MeasurementFilter();
 
@@ -150,7 +150,7 @@ Events and measurements can be accessed in a very similar manner as described ab
         SignalStrength signal = measurement.Get<SignalStrength>();
         Console.WriteLine(measurement.Source.Id + " " + measurement.DateTime + " " + signal.RssiValue + " " + signal.BerValue);
     }
-
+```
 ### Controlling devices
 
 Finally, the "DeviceControlResource" enables you to manipulate devices remotely. It has two sides: You can create operations in applications to be sent to devices, and you can query operations from agents.
@@ -158,7 +158,7 @@ Finally, the "DeviceControlResource" enables you to manipulate devices remotely.
 In order to control a device it must be in the "childDevices" hierarchy of an agent managed object. The agent managed object represents your agent in the inventory. It is identified by a fragment com\_cumulocity\_model\_Agent. This is how Cumulocity identifies where to send operations to control a particular device.
 
 This code demonstrates the setup:
-
+```cmd
     ManagedObjectRepresentation agent = new ManagedObjectRepresentation();
     agent.Set(new Agent()); // agents must include this fragment
     // ... create agent in inventory
@@ -168,10 +168,10 @@ This code demonstrates the setup:
     ManagedObjectReferenceRepresentation child2Ref = new ManagedObjectReferenceRepresentation();
     child2Ref.ManagedObject= device;
     inventory.GetManagedObject(agent.Id).AddChildDevice(child2Ref);
-
+```
 For example, assume that you would like to switch off a relay in a meter from an application. Similar to the previous examples, you create the operation to be executed locally, and then send it to the platform:
 
-
+```cmd
     IDeviceControlApi control = platform.DeviceControlApi;
     OperationRepresentation operation = new OperationRepresentation
     {
@@ -195,11 +195,12 @@ Again, the returned result may come in several pages due to its potential size.
 				Console.WriteLine(op.Status);
 			}
 
-
+```
 ### Realtime features
 
 The C# client libraries fully support the real-time APIs of Cumulocity. For example, to get immediately notified when someone sends an operation to your agent, use the following code:
 
+```cmd
 			subscriber = new OperationNotificationSubscriber(platform);
 			subscriber.Subscribe(agentId, new Handler(operationProcessor));
 
@@ -221,27 +222,25 @@ The C# client libraries fully support the real-time APIs of Cumulocity. For exam
                     operationProcessor.Process(notification);
                 }
             }
-
+```
 > **Info:** "agentId" is the ID of your agent in the inventory.
 
 To unsubscribe from a subscription, use the following code:
-
+```cmd
 	subscription.unsubscribe()
-
+```
 If you wish to disconnect, the following code must be used:
-
+```cmd
 	subscriber.disconnect()
-
-
+```
 ### Reliability features
 
 In particular on mobile devices, Internet connectivity might be unreliable. To support such environments, the C# client libraries support local buffering. This means that you can pass data to the client libraries regardless of an Internet connection being available or not. If a connection is available, the data will be send immediately. If not, the data will be buffered until the connection is back again. For this, "async" variants of the API calls are offered. For example, to send an alarm, use
-
+```cmd
     IAlarmApi alarmApi = platform.AlarmApi;
     Task<AlarmRepresentation> task = alarmApi.CreateAsync(anAlarm);
-
+```
 The "createAsync" method returns immediately. The "Task" object can be used to determine the result of the request whenever it was actually carried out.
-
 
 ### Logging Configuration
 
@@ -264,7 +263,7 @@ As soon as you add the configuration for your preferred provider and set up the 
 #### Simple Logging Configuration
 
 The following example shows how to enable debug-level logging for a single component, called "MyClass", whilst keeping error-level logging for all other components. The following code snippet shows how to create the logger, and to log a message:
-
+```cmd
 	public class MyClass
 	{
 		private static readonly ILog Logger = LogProvider.For<MyClass>();
@@ -274,9 +273,9 @@ The following example shows how to enable debug-level logging for a single compo
 			Logger.Debug("Method 'DoSomething' in progress");
 		}
 	}
-
+```
 That’s it, no the library is ready to automatically pick-up logger used by the consuming application. For example, if Serilog is the selected library, assigning Serilog’s Logger.Log will automatically connect all the moving parts together:
-
+```cmd
 			Log.Logger = new LoggerConfiguration()
                 .MinimumLevel.Verbose()
                 .WriteTo.LiterateConsole()
@@ -289,7 +288,7 @@ That’s it, no the library is ready to automatically pick-up logger used by the
 
             Log.Logger.Verbose("Finishing...");
             Console.ReadKey();
-
+```
 When the code is run, the console should contain a message similar to the following:
 
 The result is

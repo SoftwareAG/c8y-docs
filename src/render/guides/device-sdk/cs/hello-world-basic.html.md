@@ -9,7 +9,7 @@ This section gives a very basic example of using C# with Cumulocity through .NET
 ### Prerequisites
 
 Verify that you have .NET Core SDK installed:
-
+```cmd
 	$ dotnet --info
     .NET Core SDK (reflecting any global.json):
      Version:   2.2.100
@@ -25,7 +25,7 @@ Verify that you have .NET Core SDK installed:
     Host (useful for support):
       Version: 2.2.0
       Commit:  1249f08fed
-
+```
 .NET Core SDK can be downloaded from [https://dotnet.microsoft.com](https://dotnet.microsoft.com/download).
 
 
@@ -41,19 +41,19 @@ To develop a very simple "Hello, world!" agent for Cumulocity, you need to do th
 #### Creating a .NET Core project
 
 To create a plain C# project, run
-
+```cmd
 	$ dotnet new console -lang C# -o HelloAgent
-
+```
 This will create a folder "HelloAgent" in the current directory with a skeleton structure for your project.
 
 #### Adding the C# client library
 To add a dependency to the Cumulocity C# client library, run
-
+```cmd
 	dotnet add package Cumulocity.SDK.Client
-
+```
 After that HelloAgent.csproj will be presented in this way:
 
-~~~
+```cmd
 <Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
@@ -66,20 +66,20 @@ After that HelloAgent.csproj will be presented in this way:
   </ItemGroup>
 
 </Project>
-~~~
+```
 
 
 Add the `version` parameter to use the right version of the client library. The version can be determined by checking the ["Announcements" section](https://cumulocity.zendesk.com/hc/en-us/sections/200381323-Announcements) of the Cumulocity Help Center.
 
-~~~
+```cmd
 	dotnet add package Cumulocity.SDK.Client --version 1.0.0
-~~~
+```
 
 #### Creating a C# application
 
 Edit the "Program.cs" file with the following content:
 
-~~~
+```cmd
 using Cumulocity.SDK.Client;
 using Cumulocity.SDK.Client.HelperTest;
 using Cumulocity.SDK.Client.Rest;
@@ -112,7 +112,7 @@ namespace HelloAgent
 		}
 	}
 }
-~~~
+```
 
 
 Replace &lt;&lt;yourUrl&gt;&gt;, &lt;&lt;yourUser&gt;&gt; and &lt;&lt;yourPassword&gt;&gt; with your URL (e.g. "https://myurl.cumulocity.com"), username and password.
@@ -130,7 +130,7 @@ What does the code in "main" do?
 #### Building and running the agent
 
 To build and run your agent, process the following commands:
-
+```cmd
 	$ cd HelloAgent
 	$ dotnet build
     Microsoft (R) Build Engine version 15.9.20+g88f5fadfbe for .NET Core
@@ -141,7 +141,7 @@ To build and run your agent, process the following commands:
     $ dotnet run
     REST API client!
 	Url: http://demos.cumulocity.com/inventory/managedObjects/110160902
-
+```
 
 The last line shows that a new device has been successfully created with a particular URL. Open the Cumulocity application and go to the device list. You should see a new "Hello, world!" device.
 

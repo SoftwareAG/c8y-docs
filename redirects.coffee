@@ -46,17 +46,10 @@ redirects =
 	# '/guides/users-guide/IMPACT/': '/guides/users-guide/optional-services#nokia-impact'
 	# CHECK ANCHORS
 
-#  DEUTSCH
-	'/guides/benutzerhandbuch/administration-deutsch': '/guides/benutzerhandbuch/administration'
-	'/guides/benutzerhandbuch/cockpit-deutsch': '/guides/benutzerhandbuch/cockpit'
-	'/guides/benutzerhandbuch/device-management-deutsch': '/guides/benutzerhandbuch/device-management'
-	'/guides/benutzerhandbuch/uebersicht': '/guides/benutzerhandbuch/overview'
-
-	'/guides/benutzerhandbuch/cloud-fieldbus-deutsch': '/guides/users-guide/optional-services#cloud-fieldbus'
-	'/guides/benutzerhandbuch/jasper-deutsch': '/guides/users-guide/optional-services#jasper'
-	'/guides/benutzerhandbuch/saas-integration-deutsch': '/guides/users-guide/optional-services#saas-integration'
-	'/guides/benutzerhandbuch/android-cloud-remote-access-deutsch': '/guides/users-guide/optional-services#cloud-remote-access'
-
+	# '/guides/benutzerhandbuch/cloud-fieldbus-deutsch': '/guides/users-guide/optional-services#cloud-fieldbus'
+	# '/guides/benutzerhandbuch/jasper-deutsch': '/guides/users-guide/optional-services#jasper'
+	# '/guides/benutzerhandbuch/saas-integration-deutsch': '/guides/users-guide/optional-services#saas-integration'
+	# '/guides/benutzerhandbuch/android-cloud-remote-access-deutsch': '/guides/users-guide/optional-services#cloud-remote-access'
 
 # THIS ALSO NEEDS ANCHORS
 	# '/guides/edge/appendix': '/guides/edge/operation/administration-configuration'
@@ -75,9 +68,9 @@ redirects =
 	# '/guides/devices/RedLion-StratusConnect-MC-Gateway': '/guides/devices/RedLion-RAM-series'
 	
 	#  ??
-	'/guides/devices/hwg': '/guides/devices'
-	'/guides/users-guide/optional-services#saas-integration': '/guides/saas-integration'
-	'/guides/users-guide/optional-services#jasper': '/guides/users-guide/optional-services#connectivity'
+	# '/guides/devices/hwg': '/guides/devices'
+	# '/guides/users-guide/optional-services#saas-integration': '/guides/saas-integration'
+	# '/guides/users-guide/optional-services#jasper': '/guides/users-guide/optional-services#connectivity'
 	#  ??
 
 
@@ -99,10 +92,6 @@ redirects =
 	# '/guides/developers-guide/troubleshooting-the-sdk': '/guides/microservice-sdk/java#troubleshooting'
 	# '/guides/developers-guide/troubleshooting-the-sdk.html': '/guides/microservice-sdk/java#troubleshooting'
 
-	# MISSING DEVICE
-	'/guides/developers-guide/smart-agent-for-kontron-m2m': '/guides/devices/kontron'
-	'/guides/developers-guide/smart-agent-for-kontron-m2m.html': '/guides/devices/kontron'
-
 	# '/guides/developers-guide/developing-with-the-smart-agent-for-cinterion': '/guides/devices/cinterion'
 	# '/guides/developers-guide/developing-with-the-smart-agent-for-cinterion.html': '/guides/devices/cinterion'
 
@@ -122,9 +111,9 @@ redirects =
 
 
 	# missing reference
-	'/guides/reference-guide/client-libraries': '/guides/reference/java/javadoc'
-	'/guides/reference-guide/cumulocity-event-language.html': '/guides/reference/cumulocity-event-language'
-	'/guides/reference/cumulocity-event-language': '/guides/event-language/introduction'
+	# '/guides/reference-guide/client-libraries': '/guides/reference/java/javadoc'
+	# '/guides/reference-guide/cumulocity-event-language.html': '/guides/reference/cumulocity-event-language'
+	# '/guides/reference/cumulocity-event-language': '/guides/event-language/introduction'
 
 # ANCHORS
 	# '/guides/cs': '/guides/microservice-sdk/cs'

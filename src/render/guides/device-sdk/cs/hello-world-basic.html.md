@@ -1,7 +1,7 @@
 ---
 order: 20
 layout: redirect
-title: Hello, world!
+title: Rest Client Hello, world!
 ---
 
 This section gives a very basic example of using C# with Cumulocity through .NET Core Software Development Kit (SDK) which is a set of libraries and tools that allow developers to create .NET Core applications and libraries. It can also be run straight from Visual Studio, provided you have a Visual Studio and .NET Core SDK installed.

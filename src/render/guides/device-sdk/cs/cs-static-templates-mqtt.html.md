@@ -1,6 +1,6 @@
 ---
-order: 30
-title: Static templates
+order: 60
+title: Static templates Mqtt Client
 layout: redirect
 ---
 

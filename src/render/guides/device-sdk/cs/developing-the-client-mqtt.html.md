@@ -1,5 +1,5 @@
 ---
-order: 20
+order: 50
 title: Developing the "Hello, MQTT world!" client
 layout: redirect
 ---

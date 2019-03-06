@@ -1,6 +1,6 @@
 ---
-order: 40
-title: Developing C# clients
+order: 30
+title: Rest Client Developing
 layout: redirect
 ---
 
@@ -65,8 +65,10 @@ The result of invoking "create" is a version of the new managed object with a po
 
 Now assume that you would like to store additional, own properties along with the device. This can simply be done by creating a new "fragment" in the form of a C# class. For example, assume that you would like to store tariff information along with your meter. There is a day and a night time tariff, and we need to store the hours during which the night time tariff is active:
 
+	[PackageName("tariff")]
 	public class Tariff
 	{
+		[JsonProperty("nightTariffStart")]
 		public int NightTariffStart
 		{
 			get
@@ -78,6 +80,7 @@ Now assume that you would like to store additional, own properties along with th
 				this.nightTariffStart = value;
 			}
 		}
+		[JsonProperty("nightTariffEnd")]
 		public int NightTariffEnd
 		{
 			get

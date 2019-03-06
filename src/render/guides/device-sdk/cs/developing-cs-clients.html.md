@@ -227,11 +227,11 @@ The C# client libraries fully support the real-time APIs of Cumulocity. For exam
 
 To unsubscribe from a subscription, use the following code:
 ```cmd
-	subscription.unsubscribe()
+	subscription.Unsubscribe()
 ```
 If you wish to disconnect, the following code must be used:
 ```cmd
-	subscriber.disconnect()
+	subscriber.Disconnect()
 ```
 ### Reliability features
 

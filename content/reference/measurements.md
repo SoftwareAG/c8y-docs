@@ -2,5 +2,6 @@
 weight: 40
 title: Measurements
 layout: bundle
-collection: 'guides/reference/measurements'
+aliases:
+  - /reference-guide/measurements
 ---

@@ -3,6 +3,11 @@ weight: 10
 title: Overview
 layout: bundle
 slug: introduction
+aliases:
+  - /developers-guide/developing-web-clients
+  - /developers-guide/developing-web-clients.html
+  - /web/smart-toolkit
+  - /web/reference
 ---
 
 <p class="lead">This Web SDK guide provides information on the Web SDK which enables you to develop web applications on top of our platform, communicate through our API and apply UI components to your custom application.</p>

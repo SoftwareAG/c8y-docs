@@ -2,5 +2,6 @@
 weight: 70
 title: Identity
 layout: bundle
-collection: 'guides/reference/identity'
+aliases:
+  - /reference-guide/identity
 ---

@@ -2,7 +2,8 @@
 weight: 110
 title: Sensor library
 layout: bundle
-collection: 'guides/reference/sensor-library'
+aliases:
+  - /reference-guide/sensor-library
 ---
 The sensor library defines a canonical set of predefined sensor and control capabilities. A sensor capability describes that part of a device that can measure some quantity, and a control capability describes that part of a device that can be modified, changed or in some way remotely controlled.
 

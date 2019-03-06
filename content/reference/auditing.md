@@ -2,5 +2,6 @@
 weight: 90
 title: Auditing
 layout: bundle
-collection: 'guides/reference/auditing'
+aliases:
+  - /reference-guide/auditing
 ---

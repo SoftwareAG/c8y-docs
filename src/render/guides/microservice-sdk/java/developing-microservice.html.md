@@ -171,13 +171,13 @@ Properties used by a microservice are:
 
 The microservice settings module provides two features:
 
-* Configure microservice defining tenant options
+* Configure microservice by defining tenant options
 * Override existing properties -- tenant options can override default values from properties files
 
 Microservice loads tenant options for category specified by microservice context path. When context path is not provided in microservice manifest, application name is used.
-Options can be configured for application owner or subscriber, but only when option is defined as editable, so subscriber can override owner's option value.
+Options can be configured for application owner or subscriber. Subscriber can override owner's option value only when such option is defined as editable.
 Settings are lazy cached for 10 minutes, so when they were accessed previously, user must wait remaining time to see change is applied.
-When settings are access without tenant context specified, application owner will be used to fetch data.  
+When access attempt occurs to fetch settings without tenant context been specified, application owner is used to complete the request.  
 
 Tenant option settings can be accessed in two ways:  
 
@@ -199,8 +199,8 @@ Using Settings Service:
         return settingsService.get("access.timeout");
     }
     
-Settings can be encrypted using "*credentials.*" prefix for tenant option key. They will available already decrypted in microservice environment.
-Default properties defined in files can be overridden by defining tenant option for microservice with same key as property has. 
+Settings can be encrypted using "*credentials.*" prefix for tenant option key. Those will be decrypted and became available within microservice environment.
+Defining tenant options for microservice with same key as was defined in properties file will override the property. 
 > **Note:** you cannot override property injected by spring `@Value("${property.name}")`
 
 ### Logging

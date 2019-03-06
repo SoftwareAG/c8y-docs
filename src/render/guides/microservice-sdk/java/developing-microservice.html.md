@@ -167,7 +167,7 @@ Properties used by a microservice are:
     C8Y.microservice.isolation - Microservice isolation. Only PER_TENANT or MULTI_TENANT values are available. MULTI_TENANT by default
     
     
-### Settings
+### Microservice Settings
 
 The microservice settings module provides two features:
 
@@ -200,7 +200,7 @@ Using Settings Service:
     }
     
 Settings can be encrypted using "*credentials.*" prefix for tenant option key. Those will be decrypted and became available within microservice environment.
-Defining tenant options for microservice with same key as was defined in properties file will override the property. 
+Defining tenant options for microservice with same key as was defined in configuration files, such as *.properties or manifest file, will override the particular property. 
 > **Note:** you cannot override property injected by spring `@Value("${property.name}")`
 
 ### Logging

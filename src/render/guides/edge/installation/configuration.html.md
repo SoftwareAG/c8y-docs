@@ -86,7 +86,15 @@ You have the choice to enter the post-installation parameters manually via the c
 	* Enter tenant admin password:
 	```
 
-3. Provide a fully qualified domain name, e.g. "myown.iot.com". The domain name must match the domain name of the SSL certificate.
+	The password may contain letters, numbers or any of these symbols: `~!@#$%^&*()_|+-=?;:'",.<>{}[]\/
+
+3. Re-enter the previously provided password to confirm it. 
+
+	```shell
+	* Re-enter tenant admin password:
+	```
+
+4. Provide a fully qualified domain name, e.g. "myown.iot.com". The domain name must match the domain name of the SSL certificate.
 
 	```shell
 	* Enter tenant domain name:
@@ -94,24 +102,24 @@ You have the choice to enter the post-installation parameters manually via the c
 
 	>**Important**: The domain name cannot be changed once being configured. Make sure to use the name finally desired.
 
-4. Provide the absolute path of the SSL certificate file. The file extension should either be ".crt" or ".cert", e.g. */home/admin/myown-selfsigned.crt*.
+5. Provide the absolute path of the SSL certificate file. The file extension should either be ".crt" or ".cert", e.g. */home/admin/myown-selfsigned.crt*.
 
 	```shell
 	* Enter domain ({your-domain-name}) SSL certificate file path (*.crt|*.cert):
 	```
 
-5. Provide the absolute path of the SSL certificate key file. The file extension must be ".key.", e.g. */home/admin/myown-selfsigned.key*.
+6. Provide the absolute path of the SSL certificate key file. The file extension must be ".key.", e.g. */home/admin/myown-selfsigned.key*.
 	```shell
 	* Enter domain ({your-domain-name}) SSL certificate key file path (*.key):
 	```
 
-6. Provide the absolute path of the license file. The file extension must be ".licence", e.g. */home/admin/myown.iot.com.licence*.
+7. Provide the absolute path of the license file. The file extension must be ".licence", e.g. */home/admin/myown.iot.com.licence*.
 
 	```shell
 	* Enter domain ({your-domain-name}) Cumulocity licence file path (*.licence):
 	```
 	
-7. Provide the absolute path of the Software AG Apama license file. The file extension must be ".xml",  e.g. */home/admin/ApamaServerLicense101.xml*. <br> <br>This is an optional licence file, you can press [Enter] to continue without providing license.
+8. Provide the absolute path of the Software AG Apama license file. The file extension must be ".xml",  e.g. */home/admin/ApamaServerLicense101.xml*. <br> <br>This is an optional licence file, you can press [Enter] to continue without providing license.
 
 	```shell
 	* Enter Software AG Apama licence file path (optional):

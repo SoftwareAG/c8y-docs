@@ -29,7 +29,6 @@ To unlock the tenant admin user, perform the following steps:
 1. In the Administration application, navigate to the **Users** page and open the tenant admin user.
 1. Activate the user account by switching the toggle next to the username to **Enabled** and save your settings.
 
-
 ### Increasing the system performance
 
 If the system performance is slow, the memory should be increased. First, increase the memory of the VM. This is done by stopping the VM and increasing its memory.

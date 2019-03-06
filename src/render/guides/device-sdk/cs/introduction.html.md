@@ -29,7 +29,7 @@ Documentation for the <a href="http://resources.cumulocity.com/documentation/css
 
 To use the C# client libraries, you need to have the latest versions 2.2 of the [.NET Core](https://dotnet.microsoft.com/download/dotnet-core/2.2) for your operating system.
 To verify the version of your .NET Core Software Development Kit, type
-```cmd
+```bash
 	$ dotnet --version
 ```
 The output needs to show a version number later than "2.2.100" for the basic examples.

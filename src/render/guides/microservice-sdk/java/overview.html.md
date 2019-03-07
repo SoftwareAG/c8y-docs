@@ -11,14 +11,14 @@ This section describes how to develop and deploy microservices on top of Cumuloc
 
 These are some useful references to get started with the basic technologies underlying the SDK:
 
-- The client libraries use the Cumulocity REST interfaces as underlying communication protocol as described in the section  [REST](/guides/microservice-sdk/rest).
+- The client libraries use the Cumulocity REST interfaces as underlying communication protocol as described in the section [Using the REST interface](/guides/microservice-sdk/rest).
 - All examples and libraries are open source and can be reviewed at the [M2M Repositories](https://bitbucket.org/m2m).
 - The JavaDoc for the
 <a href="http://resources.cumulocity.com/documentation/microservicesdk/current/" target="_blank">Java Microservice SDK</a> can be found on our resources website.
 
 ### General prerequisites
 
-You need to have at least version 7 of the [Java Development Kit](http://www.oracle.com/technetwork/java/javase/downloads/index.html) installed in your development environment. At the moment Java 8 is not fully supported, hence some features may not work correctly with Java 8 or newest versions.
+You need to have at least version 7 of the [Java Development Kit](http://www.oracle.com/technetwork/java/javase/downloads/index.html) installed in your development environment. At the moment Java 8 is not fully supported, hence some features may not work properly with Java 8 or newest versions.
 
 Verify your JDK installation with the following command:
 
@@ -26,3 +26,5 @@ Verify your JDK installation with the following command:
 $ javac -version
 javac 1.7.0_80
 ```
+
+> **Info:** If you face any issue or need technical support, please use [Stack Overflow](http://stackoverflow.com/questions/tagged/cumulocity). You will find there many useful questions and answers.

@@ -123,13 +123,13 @@ public class App {
     }
 
     @RequestMapping("hello")
-    public String greeting (@RequestParam(value = "who", defaultValue = "World") String who) {
-        return "Hello " + who + "!";
+    public String greeting (@RequestParam(value = "name", defaultValue = "World") String you) {
+        return "Hello " + you + "!";
     }
 }
 ```
 
-The code uses fours annotations where three are part of the Spring Framework and one of the Cumulocity Microservice SDK. The `@RestController` annotation marks the class as a controller where every method returns a domain object instead of a view. The `@RequestMapping` annotation ensures that HTTP requests to <kbd>hello</kbd> are mapped to the greeting() method. `@RequestParam` binds the value of the query string parameter <kbd>who</kbd> into the `who` parameter of the greeting() method. Refer to the [Spring Guides](https://spring.io/guides) for more details about building RESTful Web Services using the Spring Framework.
+The code uses fours annotations where three are part of the Spring Framework and one of the Cumulocity Microservice SDK. The `@RestController` annotation marks the class as a controller where every method returns a domain object instead of a view. The `@RequestMapping` annotation ensures that HTTP requests to <kbd>hello</kbd> are mapped to the `greeting()` method. `@RequestParam` binds the value of the query string parameter <kbd>name</kbd> into the `you` parameter of the `greeting()` method. Refer to the [Spring Guides](https://spring.io/guides) for more details about building RESTful Web Services using the Spring Framework.
 
 Employing the `@MicroserviceApplication` annotation is a simple way to add required behavior for Cumulocity Microservice including:
 
@@ -137,6 +137,7 @@ Employing the `@MicroserviceApplication` annotation is a simple way to add requi
 * Subscription
 * Health indicator
 * Context
+* Settings
 * Internal platform API
 * Spring Boot application
 
@@ -271,7 +272,7 @@ The `curl` command can be used to create the application with a POST request:
 
 ```shell
 $ curl -X POST -s \
-  -d '{"name":"my-first-microservice","type":"MICROSERVICE","key":"my-hello-world-microservice-key"}' \
+  -d '{"name":"my-first-microservice","type":"MICROSERVICE","key":"my-hello-world-ms-key"}' \
   -H "Authorization: {AUTHORIZATION}" \
   -H "Content-Type: application/vnd.com.nsn.cumulocity.application+json" \
   -H "Accept: application/vnd.com.nsn.cumulocity.application+json" \
@@ -305,7 +306,7 @@ In case of errors, e.g. invalid names, you will get the details printed in the c
 }
 ```
 
-Load the Administration application on your tenant and navigate to **Applications** > **Own applications**. There you will see the new created microservice.
+Load the Administration application on your tenant and navigate to **Applications** > **Own applications**. There you will see the newly created microservice.
 
 ![Hello World of Microservices](/guides/images/microservices-sdk/hello-world.png)
 
@@ -322,17 +323,51 @@ HEADERS:
   "Content-Type": application/vnd.com.nsn.cumulocity.user+json
 ```
 
+> **Info**: You can also employ the `curl` command or a graphical interface such as Postman.
+
+
 #### Step 3 - Run the microservice locally
 
-The image is already added to the local Docker repository during the build. List all the Docker repository images available:
+The Docker image was built and added to the local Docker repository during the build by employing Maven. You can list all the Docker images available with the following command:
 
-    $ docker images
+```shell
+$ docker images
+```
 
-After you find the image in the list, run the Docker container for the microservice by providing the baseurl and the bootstrap user credentials:
+Get your image ID and tag from the list. While not strictly a means of identifying a container, you can specify a version of an image you would like to run the container with. Run the Docker container for the microservice also providing the URL of your tenant and the bootstrap user credentials. Do not forget to expose the port 80 to a port on your host system, e.g. 8082.
 
-    $ docker run -e C8Y_BASEURL={URL} -e C8Y_BOOTSTRAP_TENANT={BOOTSTRAP_TENANT} -e C8Y_BOOTSTRAP_USER={BOOTSTRAP_USERNAME} -e C8Y_BOOTSTRAP_PASSWORD={BOOTSTRAP_USER_PASSWORD} -e C8Y_MICROSERVICE_ISOLATION=MULTI_TENANT -i -t {DOCKER_REPOSITORY_IMAGE}:{TAG}
+```shell
+$ docker run -p 8082:80 -e C8Y_BOOTSTRAP_TENANT={BOOTSTRAP_TENANT} -e C8Y_BOOTSTRAP_USER={BOOTSTRAP_USERNAME} -e C8Y_BOOTSTRAP_PASSWORD={BOOTSTRAP_USER_PASSWORD} -e C8Y_MICROSERVICE_ISOLATION=MULTI_TENANT -i -t -e C8Y_BASEURL={URL}  {DOCKER_REPOSITORY_IMAGE}:{TAG}
+```
 
-**Step 4 - Subscribe to microservice**
+If your Docker image has run successfully, you shall see the output on the console similar to the one below.
+
+```plaintext
+  .   ____          _            __ _ _
+ /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+ \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+  '  |____| .__|_| |_|_| |_\__, | / / / /
+ =========|_|==============|___/=/_/_/_/
+ :: Spring Boot ::        (v1.5.7.RELEASE)
+
+2019-03-01 13:57:13.638  INFO 8 --- [main] c8y.example.App                          : Starting App on 855d1971889b with PID 8 (/data/my-first-microservice.jar started by root in /)
+
+...
+
+2019-03-01 13:57:24.728  INFO 8 --- [main] s.b.c.e.t.TomcatEmbeddedServletContainer : Tomcat started on port(s): 80 (http)
+2019-03-01 13:57:24.750  INFO 8 --- [main] c8y.example.App                          : Started App in 12.044 seconds (JVM running for 12.911)
+```
+
+open browser
+load http://localhost:8082/hello
+enter bootstrap user credentials  tenant/username
+you should see an error because not subscribed
+
+#### Step 4 - Subscribe to the microservice
+
+do it in the Administration application.
+
 
     POST {URL}/tenant/tenants/{TENANT_ID}/applications
 
@@ -351,8 +386,13 @@ After you find the image in the list, run the Docker container for the microserv
     -H "Content-type: application/json" \
      "{URL}/tenant/tenants/{TENANT_ID}/applications"
 
+#### Step 4 - Subscribe to the microservice
 
-#### Deployment
+load http://localhost:8082/hello
+load http://localhost:8082/hello?name=Neo
+
+
+### Deployment
 
 To deploy a microservice application on an environment you need the following:
 

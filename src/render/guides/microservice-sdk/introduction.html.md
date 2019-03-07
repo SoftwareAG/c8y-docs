@@ -1,12 +1,12 @@
 ---
 order: 10
-title: Microservices SDK
+title: Overview
 layout: standalone
 ---
 
-Microservices are server-side applications which may be used to extend the Cumulocity IoT platform with customer-specific functionality. 
+Microservices are server-side applications which may be used to extend the Cumulocity IoT platform with customer-specific functionality.
 
-This Microservice SDK guide provides detailed information on 
+This Microservice SDK guide provides detailed information on
 
 * [general concepts](/guides/microservice-sdk/concept) and functionality of using microservices on top of Cumulocity
 * how to develop and deploy microservices using [C#](/guides/microservice-sdk/cs) and [Java](/guides/microservice-sdk/java)
@@ -16,5 +16,5 @@ This Microservice SDK guide provides detailed information on
 Furthermore, detailed information on various topics related to microservices can be found in the [Reference guide](/guides/reference):
 
 * [Microservice manifest](/guides/reference/microservice-manifest) - provides information about the manifest used for microservice deployment.
-* [Microservice package](/guides/reference/microservice-package) - describes the utility tool for easy microservice packaging, deployment and subscription. 
-* [Microservice runtime](/guides/reference/microservice-runtime) - explains which environment variables are available for a microservice deployed on the platform. 
+* [Microservice package](/guides/reference/microservice-package) - describes the utility tool for easy microservice packaging, deployment and subscription.
+* [Microservice runtime](/guides/reference/microservice-runtime) - explains which environment variables are available for a microservice deployed on the platform.

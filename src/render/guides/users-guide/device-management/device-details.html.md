@@ -7,7 +7,7 @@ For each device, detailed information is available. The kind of information actu
 
 To view detailed information on the device, click a device in the device list. 
 
-<img src="/guides/images/users-guide/DeviceManagement/DevMgmt_DeviceDetails.png" alt="Device details" style="max-width: 100%">
+![Device info](/guides/images/users-guide/DeviceManagement/devmgmt-devices-info.png)
 
 The device details are divided into tabs. The number of tabs is dynamic and depends on the available information, i.e. tabs are only displayed if the kind of information is available for the particular device. 
 
@@ -41,7 +41,7 @@ Below the name, a list of breadcrumbs is displayed. If the device is part of an 
 
 Depending of the type and usage of a device, further actions are provided in a context menu when clicking **More...** at the right of the top menu bar. 
 
-<img src="/guides/images/users-guide/DeviceManagement/DevMgmt_DevicesMoreMenu.png" alt="More menu" style="max-width: 50%">
+![More menu](/guides/images/users-guide/DeviceManagement/devmgmt-devices-more.png)
 
 Details on these additional menu items are provided where required.
 
@@ -49,7 +49,7 @@ Details on these additional menu items are provided where required.
 
 The **Info** tab summarizes management-relevant device information in a dashboard.
 
-<img src="/guides/images/users-guide/DeviceManagement/DevMgmt_DeviceInfoDashboard.png" alt="Info dashboard" style="max-width: 100%">
+![Device Info](/guides/images/users-guide/DeviceManagement/devmgmt-devices-infotab.png)
 
 The information is provided on the following cards:
 
@@ -106,7 +106,7 @@ For details provided in the child device list, refer to [Viewing devices](#viewi
 
 The **Measurements** tab provides a default visualization of numeric data provided by the device in the form of charts. Charts are grouped into types of measurements, which can contain multiple graphs or "series". The screenshot below, for example, shows a chart for motion measurement including graphs for acceleration in the three dimensions, and a chart with modem statistics in the form of signal strength and bit error rate.
 
-![Measurements](/guides/images/users-guide/measurements.png)
+![Measurements](/guides/images/users-guide/DeviceManagement/devmgmt-devices-measurements.png)
 
 If a chart contains graphs with different units, one Y-axis is rendered per unit. In the example above, motion measurements consist of three parameters with unit "meter per square second", so only one axis is rendered. Modem statistics consist of signal strength in decibel milliwatts and bit error rate in percent, so one axis is rendered for each graph.
 
@@ -166,7 +166,7 @@ Alternatively, you can work with configuration snapshots. For details, refer to 
 
 The **Control** tab lists the operations being sent to a device. Refer to [Working with operations](#operation-monitoring) for further information on operations.
 
-![Operations](/guides/images/users-guide/operations.png)
+![Operations](/guides/images/users-guide/DeviceManagement/devmgmt-devices-control.png)
 
 ### <a name="network"></a>Network
 
@@ -183,7 +183,7 @@ To install a new firmware, click **Install firmware**, then select a firmware im
 
 Similarly, to install a software on the device, click **Install software**, select a software package from the [Software repository](#software-repo) and click **Install**. 
 
-<img src="/guides/images/users-guide/DeviceManagement/DevMgmt_software.png" alt="Software" style="max-width: 100%">
+![Device Software tab](/guides/images/users-guide/DeviceManagement/devmgmt-devices-software.png)
 
 Installing software and firmware usually includes a restart of the device. To monitor the progress of an installation, visit the **Control** tab.
 
@@ -215,7 +215,7 @@ In the upcoming window, specify the following settings for the log information:
 
 Click **Request log** to request the specified log information for the device.
 
-<img src="/guides/images/users-guide/DeviceManagement/DevMgmt_RequestLogs.png" alt="Request Logs" style="max-width: 100%">
+![Logs tab](/guides/images/users-guide/DeviceManagement/devmgmt-devices-logs.png)
 
 >Requesting a log from a device may take some time. 
 
@@ -237,7 +237,7 @@ The **Shell** tab presents a command prompt to enter commands.
 
 In the command prompt you can enter arbitrary command text. To send the command text to the device, click **Execute**. This button only is activated if the device is online.
 
-![Device shell](/guides/images/users-guide/shell.png)
+![Device shell](/guides/images/users-guide/DeviceManagement/devmgmt-devices-shell.png)
 
 >**Important**:When using Cumulocity IoT to remotely operate machinery, make sure that all remote operations follow the safety standards and do not cause any harm.
 
@@ -245,7 +245,7 @@ Click **View history** at the right of the top menu bar to switch to the **Contr
 
 For your convenience, Cumulocity provides several frequently used commands for some devices. Click **<_Get predefined commands** at the right of the top menu bar to open a window containing a list of available pre-defined commands. Select the command of your choice and click **Use**, to copy the command to the command prompt, or **Execute**, to execute the command straight away. You may also add new commands here for re-use.
 
-<img src="/guides/images/users-guide/DeviceManagement/DevMgmt_ShellPredefined.png" alt="Shell commands" style="max-width: 50%">
+![Device shell predefined](/guides/images/users-guide/DeviceManagement/devmgmt-devices-shell-precommands.png)
 
 
 ### <a name="tracking"></a>Tracking
@@ -256,7 +256,7 @@ Devices can record the history of their movements in Cumulocity. This movements 
 
 In the dropdown list at the top right you can select a time period (or specify one by selecting Custom from the list) and visualize the movements of the device during this period. Movements are shown as red lines in the map.
 
-![Tracking](/guides/images/users-guide/tracking.png)
+![Tracking tab](/guides/images/users-guide/DeviceManagement/devmgmt-devices-tracking.png)
 
 Next to the map, the individual recordings with their time are listed ("location update events"). When you click a recording, a "pin" on the map will show the location at the time of the recording.
 

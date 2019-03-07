@@ -50,11 +50,11 @@ In the **Branding** tab, you can configure various parameters like logos, colors
 
 The [parameters](#configuration-parameters) are configured on the left side of the tab while on the right you can immediately see your selections applied to a preview extract.
 
-<img src="/guides/images/users-guide/Administration/admin-branding.png" alt="Branding tab" style="max-width: 100%">
+<img src="/guides/images/users-guide/Administration/admin-branding.png" alt="Branding tab">
 
 For a more detailed preview of your settings, click **Open preview** in the top menu bar to check the look and feel of your branding settings in the overall platform. You may interact and even switch applications in the preview. Every change that you make in the **Branding** tab will immediately be applied to the **Preview** page.
 
-<img src="/guides/images/users-guide/Administration/admin-branding-preview.png" alt="Branding tab" style="max-width: 100%">
+<img src="/guides/images/users-guide/Administration/admin-branding-preview.png" alt="Branding tab">
 
 When you are done or want to store your settings, click **Save** at the bottom of the **Configuration** section to save your branding settings to your tenant.
 
@@ -70,7 +70,7 @@ In the Configuration section, the following branding parameters can be configure
 
 Under **General**, you can edit the title which will be used in the browser tab. 
 
-<img src="/guides/images/users-guide/Administration/admin-branding-general.png" alt="Branding general" style="max-width: 50%">
+<img src="/guides/images/users-guide/Administration/admin-branding-general.png" alt="Branding general">
 
 **Main logo**
 
@@ -84,14 +84,14 @@ Under **Main logo**, specify the following items:
 
 Under **Navigator logo** you can provide the navigator logo and set the navigator logo height located on top of the navigator panel.
 
-<img src="/guides/images/users-guide/Administration/admin-branding-general.png" alt="Branding general" style="max-width: 50%">
+<img src="/guides/images/users-guide/Administration/admin-branding-navigator-logo.png" alt="Branding general">
 
 
 **Type**
 
 In the **Type** section you specify the font settings for your branded version. 
 
-<img src="/guides/images/users-guide/Administration/admin-branding-type.png" alt="Branding type" style="max-width: 50%">
+<img src="/guides/images/users-guide/Administration/admin-branding-type.png" alt="Branding type">
 
 You can choose your base and headings font, and select an option for the navigator font (either same as base or same as headings font). You may also add a link to existing remote fonts to be used.
 
@@ -99,7 +99,7 @@ You can choose your base and headings font, and select an option for the navigat
 
 In the **Colors** section you specify the colors to be used in your branding version.
 
-<img src="/guides/images/users-guide/Administration/admin-branding-color.png" alt="Branding color" style="max-width: 50%">
+<img src="/guides/images/users-guide/Administration/admin-branding-color.png" alt="Branding color">
 
 The following parameters can be specified by providing a hex, rgb or rgba value:
 
@@ -115,7 +115,7 @@ The following parameters can be specified by providing a hex, rgb or rgba value:
 
 In the **Top bar** section you specify the parameters for the top bar.
 
-<img src="/guides/images/users-guide/Administration/admin-branding-topbar.png" alt="Branding topbar" style="max-width: 50%">
+<img src="/guides/images/users-guide/Administration/admin-branding-topbar.png" alt="Branding topbar">
 
 The following parameters can be specified by providing a hex, rgb or rgba value:
 
@@ -127,7 +127,7 @@ The following parameters can be specified by providing a hex, rgb or rgba value:
 
 In the **Navigator** section you specify the parameters for the navigator.
 
-<img src="/guides/images/users-guide/Administration/admin-branding-navigator.png" alt="Branding top bar" style="max-width: 50%">
+<img src="/guides/images/users-guide/Administration/admin-branding-navigator.png" alt="Branding navigator">
 
 The following parameters can be specified by providing a hex, rgb or rgba value:
 

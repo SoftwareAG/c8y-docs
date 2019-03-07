@@ -179,6 +179,8 @@ Options can be configured for application owner or subscriber. Subscriber can ov
 Settings are lazy cached for 10 minutes, so when they were accessed previously, user must wait remaining time to see change is applied.
 When access attempt occurs to fetch settings without tenant context been specified, application owner is used to complete the request.  
 
+> **Info:** For security reasons functionality is not available when running microservice in legacy mode, i.e. local development or RPM installation.
+
 Tenant option settings can be accessed in two ways:  
 
 Using Environment:
@@ -201,6 +203,30 @@ Using Settings Service:
     
 Settings can be encrypted using "*credentials.*" prefix for tenant option key. Those will be decrypted and became available within microservice environment.
 Defining tenant options for microservice with same key as was defined in configuration files, such as *.properties or manifest file, will override the particular property. 
+
+Example:
+There is a property defined in _application.properties_ file of microservice hello-world with context path _helloworld_:
+
+    access.timeout=25
+    
+Now microservice owner can override it by defining following setting in cumulocity.json manifest file.
+    
+      "settings":[
+        { "key": "access.timeout",
+          "defaultValue": "35",
+          "editable": true
+        }
+      ]
+
+Because _access.timeout_ setting is defined as editable, subscriber can override it by creating own tenant option via REST API:
+
+    POST {{url}}/tenant/options
+    {
+   	    "category": "helloworld",
+   	    "key": "access.timeout",
+   	    "value": "40"
+   	}
+   	
 > **Note:** you cannot override property injected by spring `@Value("${property.name}")`
 
 ### Logging

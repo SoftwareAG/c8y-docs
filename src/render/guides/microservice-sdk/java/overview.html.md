@@ -27,4 +27,4 @@ $ javac -version
 javac 1.7.0_80
 ```
 
-> **Info:** If you face any issue or need technical support, please use [Stack Overflow](http://stackoverflow.com/questions/tagged/cumulocity). You will find there many useful questions and answers.
+> **Info:** If you face any issue or need technical support, please use the [Cumulocity community at Stack Overflow](http://stackoverflow.com/questions/tagged/cumulocity). You will find there many useful questions and answers.

@@ -12,7 +12,7 @@ In case the quota is exceeded, an email is sent to all tenant administrators to 
 
 >**Info**: The storage quota feature needs to be defined on the tenant and cannot be enabled/disabled by configuration.
 
-####Example
+#### Example
 
 Let us assume that a tenant has a storage quota of 10 GB. Retention rules are 80 days for measurements, 90 days for all other data.
 

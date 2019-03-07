@@ -241,6 +241,10 @@ In particular on mobile devices, Internet connectivity might be unreliable. To s
     Task<AlarmRepresentation> task = alarmApi.CreateAsync(anAlarm);
 ```
 The "createAsync" method returns immediately. The "Task" object can be used to determine the result of the request whenever it was actually carried out.
+To ensure that messages are buffered in the event of a communication failure, set the a AsyncEnabled parameter to true in ClientConfiguration:
+```cs
+new ClientConfiguration(new MemoryBasedPersistentProvider(), true);
+```
 
 ### Logging Configuration
 

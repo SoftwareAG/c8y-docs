@@ -13,7 +13,7 @@ Klicken Sie **Karte** im Menü **Geräte** im Navigator, um eine Karte zu öffne
 
 Die Geräte sind als "Pins" dargestellt. Klicken Sie auf einen Pin, um den Namen des entsprechenden Geräts anzuzeigen. Klicken Sie auf den Gerätenamen, um zur Ansicht der Gerätedetails zu wechseln.  
 
-<img src="/guides/images/benutzerhandbuch/devmgmt-map.png" alt="Gerätekarte" style="max-width: 100%">
+![Device map](/guides/images/benutzerhandbuch/DeviceManagement/devmgmt-devices-mapde.png)
 
 ### <a name="connection-monitoring"></a>Verbindungsüberwachung
 
@@ -25,7 +25,7 @@ Um Verbindungen für mehrere Geräte zu überwachen, öffnen Sie eine beliebige 
 
 Der Verbindungsstatus wird durch Pfeile in der Spalte **Status** in der Geräteliste angezeigt. 
 
-<img src="/guides/images/benutzerhandbuch/devmgmt-connection-status.png" alt="Verbindungsstatus" style="max-width: 100%">
+![Connection status](/guides/images/benutzerhandbuch/DeviceManagement/devmgmt-devices-connectionstatusde.png)
 
 #### Sendeverbindungen
 
@@ -60,7 +60,7 @@ In der Karte **Verbindungsüberwachung** in der Registerkarte **Info** eines Ger
 
 Navigieren Sie zur Registerkarte **Info**, um die Verbindungen eines bestimmten Geräts zu überwachen. Unter **Gerätestatus** wird der Verbindungsstatus für das Gerät angezeigt. 
 
-<img src="/guides/images/benutzerhandbuch/devmgmt-connection-status-device.png" alt="Gerätestatus" style="max-width: 50%">
+<img src="/guides/images/benutzerhandbuch/DeviceManagement/devmgmt-devices-connectionstatusdevicede.png" alt="Gerätestatus">
 
 Unter dem Status für die Sende- und Push-Verbindungen wird der Zeitpunkt der letzten Kommunikation angezeigt. 
 
@@ -72,7 +72,7 @@ Wenn ein Intervall angegeben ist, befindet sich darunter der Schieberegler **War
 
 Mit dem Schieberegler **Wartung** können Sie den Wartungsmodus für das Gerät ein- oder ausschalten. Dies wird unmittelbar im Verbindungsstatus angezeigt.   
 
-<img src="/guides/images/benutzerhandbuch/devmgmt-maintenancemode.png" alt="Wartungsmodus" style="max-width: 50%">
+<img src="/guides/images/benutzerhandbuch/DeviceManagement/devmgmt-devices-devicemaintenancemodede.png" alt="Wartungsmodus">
 
 >**Info**: Die Verbindungsüberwachung findet nicht in Echtzeit statt. Dies führt dazu, dass der Verbindungsstatus sich nicht direkt ändert, sobald ein Gerät ausgeschaltet wird. Abhängig vom Netzwerk kann es bis zu 20 Minuten dauern, bis eine unterbrochene Verbindung erkannt wird, da das Netzwerk eine bestimmte Zeit lang versuchen wird, Daten zu senden.
 
@@ -96,7 +96,7 @@ Cumulocity zeigt die Serviceverfügbarkeit für einzelne Geräte sowie für alle
 * Um die Serviceüberwachung für ein bestimmtes Gerät anzuzeigen, wechseln Sie zur Registerkarte **Serviceüberwachung** in den Gerätedetails dieses Geräts.
 * Um den gesamten Service aller Geräte anzuzeigen, klicken Sie **Serviceüberwachung** im Navigator.
 
-<img src="/guides/images/benutzerhandbuch/devmgmt-service-monitoring.png" alt="Wartungsmodus" style="max-width: 75%">
+![Service Monitoring](/guides/images/benutzerhandbuch/DeviceManagement/devmgmt-devices-alarmsde.png)
 
 Die Seite **Serviceüberwachung** zeigt die prozentuale Verfügbarkeit aller Geräte währende des letzten Tags, der letzten Woche und des letzten Monats an. 
 

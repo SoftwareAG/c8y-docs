@@ -1,9 +1,8 @@
 ---
 order: 50
-title: MQTT client - "Hello world!" 
+title: MQTT client - Hello world! 
 layout: redirect
 ---
-
 
 To develop a very simple "Hello, world!" MQTT client for Cumulocity, you need to follow these steps:
 
@@ -90,7 +89,7 @@ What does the code in "main" do?
 * Configure the MQTT connection.
 * Connect with Cumulocity via a MQTT protocol.
 * Create a new device with a My MQTT device name and a c8y_MQTTDevice type.
-* Update the device hardware information by putting a S123456789 serial, a MQTT test model and a Rev0.1revision.
+* Update the device hardware information by putting a S123456789 serial, a MQTT test model and a Rev0.1 revision.
 * Subscribe to the static operation templates for the device, print all received operations to the console and in case of a c8y_Restart operation simulate device restart.
 
 ### Improving the agent

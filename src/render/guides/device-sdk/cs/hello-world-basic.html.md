@@ -1,7 +1,7 @@
 ---
 order: 20
 layout: redirect
-title: Rest Client - Hello, world!
+title: Rest client - Hello, world!
 ---
 
 This section gives a very basic example of using C# with Cumulocity through .NET Core Software Development Kit (SDK) which is a set of libraries and tools that allow developers to create .NET Core applications and libraries. It can also be run straight from Visual Studio, provided you have a Visual Studio and .NET Core SDK installed.
@@ -9,6 +9,7 @@ This section gives a very basic example of using C# with Cumulocity through .NET
 ### Prerequisites
 
 Verify that you have .NET Core SDK installed:
+
 ```shell
 	$ dotnet --info
     .NET Core SDK (reflecting any global.json):
@@ -26,6 +27,7 @@ Verify that you have .NET Core SDK installed:
       Version: 2.2.0
       Commit:  1249f08fed
 ```
+
 .NET Core SDK can be downloaded from [https://dotnet.microsoft.com](https://dotnet.microsoft.com/download).
 
 
@@ -41,17 +43,22 @@ To develop a very simple "Hello, world!" agent for Cumulocity, you need to do th
 #### Creating a .NET Core project
 
 To create a plain C# project, run
+
 ```shell
 	$ dotnet new console -lang C# -o HelloAgent
 ```
-This will create a folder "HelloAgent" in the current directory with a skeleton structure for your project.
+
+This will create a folder *HelloAgent* in the current directory with a skeleton structure for your project.
 
 #### Adding the C# client library
+
 To add a dependency to the Cumulocity C# client library, run
+
 ```shell
 	dotnet add package Cumulocity.SDK.Client
 ```
-After that HelloAgent.csproj will be presented in this way:
+
+Afterwards, the `HelloAgent.csproj` will be presented in this way:
 
 ```cs
 <Project Sdk="Microsoft.NET.Sdk">
@@ -68,8 +75,7 @@ After that HelloAgent.csproj will be presented in this way:
 </Project>
 ```
 
-
-Add the `version` parameter to use the right version of the client library. The version can be determined by checking the ["Announcements" section](https://cumulocity.zendesk.com/hc/en-us/sections/200381323-Announcements) of the Cumulocity Help Center.
+Add the `version` parameter to use the right version of the client library. The version can be determined by checking the [Announcements section](https://cumulocity.zendesk.com/hc/en-us/sections/200381323-Announcements) of the Cumulocity Help Center.
 
 ```bash
 	dotnet add package Cumulocity.SDK.Client --version 1.0.0
@@ -77,7 +83,7 @@ Add the `version` parameter to use the right version of the client library. The 
 
 #### Creating a C# application
 
-Edit the "Program.cs" file with the following content:
+Edit the `Program.cs` file with the following content:
 
 ```cs
 using Cumulocity.SDK.Client;
@@ -115,7 +121,7 @@ namespace HelloAgent
 ```
 
 
-Replace &lt;&lt;yourUrl&gt;&gt;, &lt;&lt;yourUser&gt;&gt; and &lt;&lt;yourPassword&gt;&gt; with your URL (e.g. "https://myurl.cumulocity.com"), username and password.
+Replace &lt;&lt;yourUrl&gt;&gt;, &lt;&lt;yourUser&gt;&gt; and &lt;&lt;yourPassword&gt;&gt; with your URL (e.g. *https://myurl.cumulocity.com*), username and password.
 
 What does the code in "main" do?
 
@@ -123,13 +129,14 @@ What does the code in "main" do?
 -   Line 2 retrieves a handle to the Cumulocity inventory.
 -   Line 3 creates a new managed object.
 -   Line 4 sets the display name of the new managed object.
--   Line 5 says that this managed object should be a device (should show up in device management).
--   Line 6 creates the managed object in the inventory. This will return the managed object back with a fresh, generated ID. (See "Object identity" section in ["Cumulocity's domain model"](/guides/concepts/domain-model)).
+-   Line 5 says that this managed object should be a device (should show up in Device Management).
+-   Line 6 creates the managed object in the inventory. This will return the managed object back with a fresh, generated ID. (See "Object identity" section in [Cumulocity's domain model](/guides/concepts/domain-model)).
 -   Line 7 prints the URL to the new managed object that has just been stored in the inventory.
 
 #### Building and running the agent
 
 To build and run your agent, process the following commands:
+
 ```shell
 	$ cd HelloAgent
 	$ dotnet build

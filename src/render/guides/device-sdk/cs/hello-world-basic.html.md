@@ -11,21 +11,21 @@ This section gives a very basic example of using C# with Cumulocity through .NET
 Verify that you have .NET Core SDK installed:
 
 ```shell
-	$ dotnet --info
-    .NET Core SDK (reflecting any global.json):
-     Version:   2.2.100
-     Commit:    b9f2fa0ca8
+$ dotnet --info
+.NET Core SDK (reflecting any global.json):
+  Version:   2.2.100
+  Commit:    b9f2fa0ca8
 
-    Runtime Environment:
-     OS Name:     Windows
-     OS Version:  10.0.17134
-     OS Platform: Windows
-     RID:         win10-x64
-     Base Path:   C:\Program Files\dotnet\sdk\2.2.100\
+Runtime Environment:
+  OS Name:     Windows
+  OS Version:  10.0.17134
+  OS Platform: Windows
+  RID:         win10-x64
+  Base Path:   C:\Program Files\dotnet\sdk\2.2.100\
 
-    Host (useful for support):
-      Version: 2.2.0
-      Commit:  1249f08fed
+Host (useful for support):
+  Version: 2.2.0
+  Commit:  1249f08fed
 ```
 
 .NET Core SDK can be downloaded from [https://dotnet.microsoft.com](https://dotnet.microsoft.com/download).
@@ -45,7 +45,7 @@ To develop a very simple "Hello, world!" agent for Cumulocity, you need to do th
 To create a plain C# project, run
 
 ```shell
-	$ dotnet new console -lang C# -o HelloAgent
+$ dotnet new console -lang C# -o HelloAgent
 ```
 
 This will create a folder *HelloAgent* in the current directory with a skeleton structure for your project.
@@ -55,7 +55,7 @@ This will create a folder *HelloAgent* in the current directory with a skeleton 
 To add a dependency to the Cumulocity C# client library, run
 
 ```shell
-	dotnet add package Cumulocity.SDK.Client
+dotnet add package Cumulocity.SDK.Client
 ```
 
 Afterwards, the `HelloAgent.csproj` will be presented in this way:
@@ -78,7 +78,7 @@ Afterwards, the `HelloAgent.csproj` will be presented in this way:
 Add the `version` parameter to use the right version of the client library. The version can be determined by checking the [Announcements section](https://cumulocity.zendesk.com/hc/en-us/sections/200381323-Announcements) of the Cumulocity Help Center.
 
 ```bash
-	dotnet add package Cumulocity.SDK.Client --version 1.0.0
+dotnet add package Cumulocity.SDK.Client --version 1.0.0
 ```
 
 #### Creating a C# application
@@ -138,16 +138,16 @@ What does the code in "main" do?
 To build and run your agent, process the following commands:
 
 ```shell
-	$ cd HelloAgent
-	$ dotnet build
-    Microsoft (R) Build Engine version 15.9.20+g88f5fadfbe for .NET Core
-	Copyright (C) Microsoft Corporation. All rights reserved.
-	Build succeeded.
-    0 Warning(s)
-    0 Error(s)
-    $ dotnet run
-    REST API client!
-	Url: http://demos.cumulocity.com/inventory/managedObjects/110160902
+$ cd HelloAgent
+$ dotnet build
+Microsoft (R) Build Engine version 15.9.20+g88f5fadfbe for .NET Core
+Copyright (C) Microsoft Corporation. All rights reserved.
+Build succeeded.
+0 Warning(s)
+0 Error(s)
+$ dotnet run
+REST API client!
+Url: http://demos.cumulocity.com/inventory/managedObjects/110160902
 ```
 
 The last line shows that a new device has been successfully created with a particular URL. Open the Cumulocity application and go to the device list. You should see a new "Hello, world!" device.

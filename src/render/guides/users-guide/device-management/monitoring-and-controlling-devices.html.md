@@ -151,7 +151,7 @@ Click the arrow on the right of a row to expand it and display further details o
 
 To change the status of an alarm, hover over it and click the button for the desired status or click the menu icon and from the context menu select the desired status.
 
-![Alarm change status](/guides/images/users-guide/DeviceManagement/devmgmt-alarm-change-status.png)
+![Alarm change status](/guides/images/users-guide/DeviceManagement/devmgmt-alarms-status.png)
 
 It is also possible to change the status of all alarms to "clear" at once. Click **Clear all** in the top menu bar, to clear all alarms of the selected severities.
 
@@ -168,7 +168,7 @@ You can view operations at the level of individual devices and across all device
 * Click **Device control** in the **Overview** menu in the navigator to see the operations for all devices. 
 * * Switch to the **Control** tab in the details of a particular device to see the operations of this specific device.
 
-![Device Control](/guides/images/users-guide/DeviceManagement/DevMgmt_DeviceControl.png)
+![Device Control](/guides/images/users-guide/DeviceManagement/devmgmt-devicecontrol.png)
 
 For each operation, the following information is provided:
 
@@ -183,7 +183,7 @@ Clicking a row expands it and displays further details on the operation.
 * **Details**: Providing information on the operation name and status. In case of status = FAILED the reason for the failure is provided. 
 * **History of Changes**: Providing information on the past changes of the operation.
 
-![Operation Details](/guides/images/users-guide/DeviceManagement/DevMgmt_OperationDetails.png)
+![Operation Details](/guides/images/users-guide/DeviceManagement/devmgmt-devicecontrol-history.png)
 
 Operations can be in any of four states, indicated by meaningful icons:
 
@@ -218,11 +218,11 @@ To execute bulk operations for a group, follow these steps:
 4. Click the menu icon.
 5. In the context menu click **Execute for whole group**.
 
-![Execute bulk operations](/guides/images/users-guide/executebulkoperations.png)
+![Execute bulk operations](/guides/images/users-guide/DeviceManagement/devmgmt-devicecontrol-bulk.png)
 
 In order to view the status and progress of your operations, simply select the desired group and click the **Bulk operations** tab.
 
-![Bulk operations tab](/guides/images/users-guide/DeviceManagement/DevMgmt_BulkOperations.png)
+![Bulk operations tab](/guides/images/users-guide/DeviceManagement/devmgmt-bulkoperations.png)
 
 To edit a bulk operation, follow these steps:
 
@@ -232,7 +232,7 @@ To edit a bulk operation, follow these steps:
 4. To change operation details, click **Show operation details**. 
 5. Click **Reschedule** to apply your changes. 
 
-![Edit bulk operations](/guides/images/users-guide/DeviceManagement/DevMgmt_BulkOperationsEdit.png)
+![Edit bulk operations](/guides/images/users-guide/DeviceManagement/devmgmt-bulkoperations-reschedule.png)
 
 To delete a bulk operation, hover over the bulk operation you want to delete and click the menu icon. In the context menu, click **Cancel operation**.
 
@@ -245,7 +245,7 @@ Cumulocity displays events at the level of individual devices and across all dev
 * To see the events of this specific device, click the **Events** tab.
 * To see the operations for all devices, click **Events** in the **Overview** menu in the navigator.
 *  
-![Events](/guides/images/users-guide/DeviceManagement/DevMgmt_Events.png)
+![Events](/guides/images/users-guide/DeviceManagement/devmgmt-events.png)
 
 Per default, events are shown as coming in from the devices in realtime. To disable realtime updates, click **Realtime** at the right of the top menu bar.
 

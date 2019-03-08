@@ -14,7 +14,7 @@ Open the **Firmware repository** from the **Management** menu in the navigator.
 
 The available firmware objects will be displayed, presented as cards in a grid.
 
-![Firmware List](/guides/images/users-guide/DeviceManagement/DevMgmt_FirmwareRepository.png)
+![Firmware List](/guides/images/users-guide/DeviceManagement/devmgmt-management-firmwarerepo.png)
 
 Click **Details** on a specific object to "turn around" its card and display details.
 

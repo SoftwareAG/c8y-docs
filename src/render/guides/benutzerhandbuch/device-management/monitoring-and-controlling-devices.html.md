@@ -96,7 +96,7 @@ Cumulocity zeigt die Serviceverfügbarkeit für einzelne Geräte sowie für alle
 * Um die Serviceüberwachung für ein bestimmtes Gerät anzuzeigen, wechseln Sie zur Registerkarte **Serviceüberwachung** in den Gerätedetails dieses Geräts.
 * Um den gesamten Service aller Geräte anzuzeigen, klicken Sie **Serviceüberwachung** im Navigator.
 
-![Service Monitoring](/guides/images/benutzerhandbuch/DeviceManagement/devmgmt-devices-alarmsde.png)
+![Service Monitoring](/guides/images/benutzerhandbuch/DeviceManagement/devmgmt-devices-servicemonitoringde.png)
 
 Die Seite **Serviceüberwachung** zeigt die prozentuale Verfügbarkeit aller Geräte währende des letzten Tags, der letzten Woche und des letzten Monats an. 
 
@@ -109,7 +109,7 @@ Cumulocity zeigt Alarme für einzelne Geräte sowie für alle Geräte an.
 * Um die Alarme für alle Geräte anzuzeigen, klicken Sie **Alarme** im Menü **Übersichten** im Navigator.  
 * Um die Alarme für ein bestimmtes Gerät anzuzeigen, wechseln Sie zur Registerkarte **Alarme** in den Gerätedetails dieses Geräts.
 
-<img src="/guides/images/benutzerhandbuch/devmgmt-alarms-device.png" alt="Gerätealarme" style="max-width: 100%">
+![Alarms page](/guides/images/benutzerhandbuch/DeviceManagement/devmgmt-devices-alarmsde.png)
 
 Standardmäßig
 * werden nur ungelöste Alarme gezeigt. Wenn Sie rechts in der oberen Menüleiste  **Aufgehobene Alarme anzeigen** aktivieren, sehen Sie die gesamte Alarmhistorie.
@@ -148,7 +148,7 @@ Klicken Sie auf den Pfeil rechts in einem Eintrag, um die Zeile auszuklappen und
 
 Um den Status eines Alarms zu ändern, bewegen Sie den Mauszeiger rechts über die Zeile und klicken Sie die entsprechende Schaltfläche oder öffnen Sie das Kontextmenü über das Menüsymbol und wählen Sie den gewünschten Status.  
 
-![Alarm dropdown](/guides/images/users-guide/DeviceManagement/DevMgmt_AlarmDropdown.png)
+![Alarm dropdown](/guides/images/benutzerhandbuch/DeviceManagement/devmgmt-alarms-statusde.png)
 
 Es besteht außerdem die Möglichkeit, den Status aller Alarme auf einmal auf "Aufgehoben" zu setzen. Klicken Sie **Alle aufheben** in der oberen Menüzeile, um alle Alarme des ausgewählten Schweregrads auf einmal aufzuheben. 
 
@@ -165,7 +165,7 @@ Cumulocity zeigt Kommandos für einzelne Geräte sowie für alle Geräte an:
 * Um die Kommandos für alle Geräte anzuzeigen, klicken Sie **Gerätesteuerung** im Menü **Übersichten** im Navigator.  
 * Um die Alarme für ein bestimmtes Gerät anzuzeigen, wechseln Sie zur Registerkarte **Steuerung** in den Gerätedetails dieses Geräts.
 
-![Device Control](/guides/images/benutzerhandbuch/devmgmt-operations.png)
+![Device Control](/guides/images/benutzerhandbuch/DeviceManagement/devicecontrolde.png)
 
 Kommandos können sich in einem der folgenden Zustände befinden, angezeigt durch entsprechende Symbole:
 
@@ -195,7 +195,7 @@ Durch Klicken einer Zeile wird diese aufgeklappt und weitere Details zum Kommand
 * **Details**: Nähere Beschreibung und Status des Kommandos. Lautet der Status = ABGEBROCHEN, wird die Ursache für das Fehlschlagen angegeben.  
 * **Änderungshistorie**: Informationen zu den letzten Änderungen des Kommandos.
 
-![Kommandodetails](/guides/images/benutzerhandbuch/devmgmt-Operation-details.png)
+![Kommandodetails](/guides/images/benutzerhandbuch/DeviceManagement/devmgmt-devicecontrol-historyde.png)
 
 <a name="bulk-operations"></a>**Stapelkommandos**
 
@@ -207,11 +207,11 @@ Um ein Stapelkommando für eine Gruppe auszuführen, führen Sie folgende Schrit
 3. Wählen Sie ein Kommando aus der Liste und klicken Sie das Menüsymbol rechts in der Zeile.
 5. Klicken Sie im Kontextmenü **Für gesamte Gruppe ausführen**.
 
-![Execute bulk operations](/guides/images/users-guide/executebulkoperations.png)
+![Execute bulk operations](/guides/images/benutzerhandbuch/DeviceManagement/devmgmt-devicecontrol-bulkde.png)
 
 Um den Status und Fortschritt der Kommandos zu verfolgen, wählen Sie die entsprechende Gruppe im Navigator und wechseln Sie zur Registerkarte **Stapelkommandos**.  
 
-![Registerkarte Stapelkommandos](/guides/images/benutzerhandbuch/devmgmt-group-bulk-operation.png)
+![Registerkarte Stapelkommandos](/guides/images/benutzerhandbuch/DeviceManagement/devmgmt-bulkoperationsde.png)
 
 Um ein Stapelkommando zu bearbeiten, führen Sie folgende Schritte aus:
 
@@ -221,7 +221,7 @@ Um ein Stapelkommando zu bearbeiten, führen Sie folgende Schritte aus:
 4. Um Kommandodetails zu ändern, klicken Sie **Anzeigen Kommandodetails**. 
 5. Klicken Sie **Neu planen**, um Ihre Einstellungen zu speichern. 
 
-![Stapelkommando bearbeiten](/guides/images/benutzerhandbuch/devmgmt-bulk-operation-edit.png)
+![Stapelkommando bearbeiten](/guides/images/benutzerhandbuch/DeviceManagement/devmgmt-bulkoperations-reschedulede.png)
 
 Um ein Stapelkommando abzubrechen, klicken Sie das Menüsymbol rechts in der entsprechenden Zeile und klicken Sie **Vorgang abbrechen**.
 
@@ -234,7 +234,7 @@ Cumulocity zeigt Ereignisse für einzelne Geräte sowie für alle Geräte an:
 * Um die Ereignisse für ein bestimmtes Gerät anzuzeigen, wechseln Sie zur Registerkarte **Ereignisse** in den Gerätedetails dieses Geräts.
 *  Um die Ereignisse für alle Geräte anzuzeigen, klicken Sie **Ereignisse** im Menü **Übersichten** im Navigator. 
 
-<img src="/guides/images/benutzerhandbuch/devmgmt-events.png" alt="Ereignisse" style="max-width: 100%">
+![Events](/guides/images/benutzerhandbuch/DeviceManagement/devmgmt-eventsde.png)
 
 Standardmäßig werden die Ereignisse in Echtzeit angezeigt, sobald sie vom Gerät empfangen werden. Um die Echtzeitaktualisierung zu deaktivieren, klicken Sie **Echtzeit** rechts in der oberen Menüleiste.
 

@@ -19,30 +19,30 @@ The application created in this way uses the ASP.NET Web API framework to create
 
 ### Building and deploying Hello World on Windows
 
-Building and deploying "Hello World" on Windows is similar to the way it is done for Linux. For Windows, powershell is installed by default and that's why we use it.
+Building and deploying "Hello World" on Windows is similar to the way it is done for Linux. For Windows, powershell is installed by default and that's why we use it. For Linux, the Powershell Core can be considered as an alternative.
 
-Download a script file to build a "Hello World" application. Manage the version of scripts and replace X.X.X to the right version number.
+Download a script file to build a "Hello World" application. Manage the version of scripts and replace latest to the right version number.
 
-	Invoke-WebRequest  http://resources.cumulocity.com/cssdk/releases/microservicesdk-win-dev-latest.zip -OutFile microservicesdk-win-dev-X.X.X.zip
+	Invoke-WebRequest  http://resources.cumulocity.com/cssdk/releases/microservicesdk-win-dev-latest.zip -OutFile microservicesdk-win-dev-latest.zip
 
 The latest can be replaced by the version number e.g. microservicesdk-lin-dev-{X.X.X}.zip.
 
 Once you have downloaded the source, unzip the file.
-
-	Expand-Archive c:\microservicesdk-win-dev-X.X.X.zip -DestinationPath c:\microservicesdk-win-dev-X.X.X
-
+```bash
+	Expand-Archive c:\microservicesdk-win-dev-latest.zip -DestinationPath c:\microservicesdk-win-dev-latest
+```
 Change the current folder and navigate to a microservicesdk folder.
-
-	cd microservicesdk-win-dev-X.X.X
-
+```bash
+	cd microservicesdk-win-dev-latest
+```
 Run the script "create.ps1" to create a sample project, provide the name of the project and the API application.
-
+```bash
 	./create.ps1
-
+```
 Execute the bootstrapper script to build the application and an image from a Docker file.
-
+```bash
 	./build.ps1
-
+```
 In order to deploy the application run the deploy script. You must provide the correct URL and credentials in this script.
 
 **How to call the script**
@@ -50,37 +50,37 @@ In order to deploy the application run the deploy script. You must provide the c
 *  Call "deploy.ps1"
 	* The script looks for a settings.ini in the same directory. If found, it uses the credentials and tenant URL from that file.
 	* If settings.ini is not found, an error is shown.
-	
-~~~
+
+```bash
 	./deploy.ps1
-~~~
+```
 * Call the script with the .ini name
 	* Loads the credentials and tenant URL from settings_alternativ.ini.
 	* If settings_alternative.ini is not found, an error is shown.
-	
-~~~
+
+```bash
 	./deploy.ps1 -f settings.ini
-~~~
+```
 
 * Merge the given arguments and ini configuration. Parameters from the file are overwritten by explicitly defined parameters.
 	* deploy.ps1  -an hello-world -f settings_alternative.ini
 
-~~~
+```bash
 	./deploy.sh -s {siteurl} -u {username} -p {password}  -an hello-world -f settings.ini
-~~~
+```
 
 The ini sample:
 
-~~~
+```
 [deploy]
 username=tenant/user
 password=pass
 url=someurl
 appname=sample_application
-~~~
+```
 
 The application starts executing from the entry point `public static void Main()` in Program class where the host for the application is created. The following shows an example of a program created by "create.sh".
-
+```cs
 	namespace api
 	{
 	using System.Net;
@@ -118,7 +118,7 @@ The application starts executing from the entry point `public static void Main()
 		}
 
 	}
-
+```
 Method BuildWebHost performs the following tasks:
 
 * Initializes a new instance of the WebHostBuilder class with pre-configured defaults
@@ -130,7 +130,7 @@ Method BuildWebHost performs the following tasks:
 * Specifies the Startup class with the UseStartup&#60;TStartup&#62; 
 
 An example application must include Startup class. As the name suggests, it is executed first when the application starts.
-
+```cs
     public class Startup
     {
         public IConfiguration Configuration { get; }
@@ -158,7 +158,7 @@ An example application must include Startup class. As the name suggests, it is e
         }
 
     }
-
+```
 Startup.cs responsibilities:
 
 * Setup configuration in the Startup constructor
@@ -187,21 +187,21 @@ Startup.cs responsibilities:
 ### Building and deploying Hello World on Linux
 
 Download a script file to build a "Hello World" app. Wget utility is the best option to download a file.
-
+```bash
 	sudo wget  http://resources.cumulocity.com/cssdk/releases/microservicesdk-lin-dev-latest.zip
-
+```
 The latest can be replaced by the version number e.g. microservicesdk-lin-dev-{X.X.X}.zip.
 
 Once you have downloaded the source, unzip the file.
-
+```bash
 	unzip microservicesdk-lin-dev-latest.zip -d  microservicesdk-latest
-
+```
 Change the current folder, to navigate to a microservicesdk folder.
-
+```bash
 	cd microservicesdk-latest
-
+```
 Run the script "create.sh" to create a sample project, provide the name of the project and the API application.
-
+```bash
 	./create.sh
 
 	Enter the solution name:
@@ -211,7 +211,7 @@ Run the script "create.sh" to create a sample project, provide the name of the p
 	Enter the name of a web API project:
 
 	<<api>>
-
+```
 For a working cake you need the "build.sh" or "build.ps1" file to bootstrap cake and the "build.cake" file. "build.sh" and "build.ps1" are bootstrapper scripts that ensure you have Cake and other required dependencies installed. The bootstrapper scripts are also responsible for invoking Cake. "Build.cake" is the actual build script.
 
 "build.cake" contains tasks representing a unit of work in Cake, and you may use them to perform specific work in a specific order:
@@ -225,17 +225,17 @@ For a working cake you need the "build.sh" or "build.ps1" file to bootstrap cake
 * SingleDockerImage
 
 Execute the bootstrapper script, to build the application and an image from a Docker file.
-
+```bash
 	./build.sh
-
+```
 Launch the Docker container with the command
-
+```bash
 	docker run -p 8999:4700 imagename:latest
-
+```
 Check the status of an application that is running inside the Docker container.
-
+```bash
 	curl http://localhost:8999/api/values
-
+```
 In order to deploy the application run the deploy script. You must provide the correct URL and credentials in this script.
 
 **How to call the script**
@@ -243,33 +243,33 @@ In order to deploy the application run the deploy script. You must provide the c
 *  Call "deploy.sh"
 	* The script looks for a settings.ini in the same directory. If found, uses the credentials and tenant URL from that file.
 	* If settings.ini is not found, an error is shown.
-	
-~~~
+
+```bash
 	./deploy.sh
-~~~
+```
 
 * Call the script with the .ini name
 	* Loads the credentials and tenant URL from settings_alternativ.ini.
 	* If settings_alternative.ini is not found, an error is shown.
-	
-~~~
+
+```bash
 	./deploy.sh -f settings.ini
-~~~
+```
 
 * Merge the given arguments and ini configuration. Parameters from the file are overwritten by explicitly defined parameters.
 	* deploy.sh  -an hello-world -f settings_alternative.ini
-	
-~~~
+
+```bash
 	./deploy.sh -s {siteurl} -u {username} -p {password}  -an hello-world -f settings.ini
-~~~
+```
 
 The ini sample:
 
-~~~
+```
 [deploy]
 username=tenant/user
 password=pass
 url=someurl
 appname=sample_application
-~~~
+```
 

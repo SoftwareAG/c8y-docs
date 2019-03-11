@@ -4,7 +4,6 @@ title: Managing device types
 layout: redirect
 ---
 
-
 To process data from various device types, Cumulocity uses device protocols.
 
 Click **Device protocols** in the **Device types** menu to access the **Device protocols** page.

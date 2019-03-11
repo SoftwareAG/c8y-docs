@@ -29,7 +29,7 @@ The connection status is represented by arrows in the **Status** column in the d
 
 **Send connections**
 
-The top arrow represents the Send connection (traffic from the device to Cumulocity). The status for the Send connections may be one of:
+The top arrow represents the send connection (traffic from the device to Cumulocity). The status for the send connections may be one of:
 
 * Online (data was sent within the required interval)- indicated by a green arrow
 * Offline (data was not sent within the required interval) - indicated by a red arrow
@@ -41,7 +41,7 @@ When a device is detected to be offline (stops sending data within required inte
 
 **Push connections**
 
-The bottom arrow represents the Push connection (from Cumulocity to the device). The status for the Push connections may be one of:
+The bottom arrow represents the push connection (from Cumulocity to the device). The status for the push connections may be one of:
 
 * Online (connection established)- indicated by a green arrow
 * Offline (connection not established) - indicated by a red arrow
@@ -122,10 +122,10 @@ Alarms are classified according to their severity. Cumulocity includes four diff
 
 |Severity|Description|
 |:---|:--|
-|Critical|The device is out of service and should be fixed immediately.
-|Major|The device has a problem that should be fixed.
-|Minor|The device has a problem that may be fixed.
-|Warning|There is a warning.
+|CRITICAL|The device is out of service and should be fixed immediately.
+|MAJOR|The device has a problem that should be fixed.
+|MINOR|The device has a problem that may be fixed.
+|WARNING|There is a warning.
 
 The **Alarm** tab is split into four sections corresponding to these alarm types.
 
@@ -137,7 +137,7 @@ In each row, the following information for an alarm is provided:
 
 |Info|Description|
 |:---|:---|
-|Severity|One of critical, major, minor, warning (see above).
+|Severity|One of CRITICAL, MAJOR, MINOR, WARNING (see above).
 |Count|The number of times this alarm was sent by the device. Only one alarm of a particular type can be active for a certain device. If another alarm of the same type is sent by the device, the number is increased by 1.
 |Description|An arbitrary text describing the alarm.
 |Status|The status of the alarm. An alarm can be: <br/> **Active**: When it was raised and nobody is so far working on the alarm. <br/>**Acknowledged**: When someone changed the status to "Acknowledged" to indicate that someone is working on the alarm.<br/>**Cleared**: When either someone manually set the status to "Clear" or when the device detected by itself that the problem has gone.
@@ -174,7 +174,7 @@ For each operation, the following information is provided:
 
 |Info|Description|
 |:---|:---|
-|Status|One of pending, executing, successful, failed (see below).
+|Status|One of PENDING, EXECUTING, SUCCESSFUL, FAILED (see below).
 |Name|Name of the operation.
 |Device|The name of the device. Clicking the name leads you to the detailed view of the device.
 
@@ -189,10 +189,10 @@ Operations can be in any of four states, indicated by meaningful icons:
 
 |State|Description|
 |:---|:--|
-|Pending|The operation has just been created and is waiting for the device to pick it up.
-|Executing|The operation has been picked up by the device and is being executed.
-|Successful|The operation has been successfully executed by the device.
-|Failed|The operation could not be executed by the device.
+|PENDING|The operation has just been created and is waiting for the device to pick it up.
+|EXECUTING|The operation has been picked up by the device and is being executed.
+|SUCCESSFUL|The operation has been successfully executed by the device.
+|FAILED|The operation could not be executed by the device.
 
 By clicking one of the state buttons at the top, the corresponding operations will be hidden. Click it again to show the operations again.
 

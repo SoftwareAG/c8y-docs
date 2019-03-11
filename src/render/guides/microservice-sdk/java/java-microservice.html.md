@@ -69,10 +69,11 @@ Inside the _hello-world-microservice_ folder you will find the _pom.xml_ file. S
     <maven.compiler.target>1.7</maven.compiler.target>
     <spring-boot-dependencies.version>1.5.7.RELEASE</spring-boot-dependencies.version>
     <c8y.version>9.16.2</c8y.version>
+    <microservice.name>my-first-microservice</microservice.name>
 </properties>
 ```
 
-Edit the `<c8y.version>` element to use the latest version of the client library. The version can be obtained by reviewing the [Announcements section](https://cumulocity.zendesk.com/hc/en-us/sections/200381323-Announcements) of the Cumulocity Help Center. This particular example was implemented using version 9.16.2.
+Edit the `<c8y.version>` element to use the latest version of the client library which can be obtained by reviewing the [Release notes](https://cumulocity.com/guides/release-notes/overview/). This particular example was implemented using version 9.16.2.
 
 Now add repository and plugin elements to point to the Cumulocity Maven repository which stores the client libraries.
 
@@ -129,7 +130,7 @@ public class App {
 }
 ```
 
-The code uses fours annotations where three are part of the Spring Framework and one of the Cumulocity Microservice SDK. The `@RestController` annotation marks the class as a controller where every method returns a domain object instead of a view. The `@RequestMapping` annotation ensures that HTTP requests to <kbd>hello</kbd> are mapped to the `greeting()` method. `@RequestParam` binds the value of the query string parameter <kbd>name</kbd> into the `you` parameter of the `greeting()` method. Refer to the [Spring Guides](https://spring.io/guides) for more details about building RESTful Web Services using the Spring Framework.
+The code uses four annotations; three are part of the Spring Framework and one of the Cumulocity Microservice SDK. The `@RestController` annotation marks the class as a controller where every method returns a domain object instead of a view. The `@RequestMapping` annotation ensures that HTTP requests to <kbd>hello</kbd> are mapped to the `greeting()` method. `@RequestParam` binds the value of the query string parameter <kbd>name</kbd> into the `you` parameter of the `greeting()` method. Refer to the [Spring Guides](https://spring.io/guides) for more details about building RESTful Web Services using the Spring Framework.
 
 Employing the `@MicroserviceApplication` annotation is a simple way to add required behavior for Cumulocity Microservice including:
 
@@ -146,7 +147,7 @@ Employing the `@MicroserviceApplication` annotation is a simple way to add requi
 Add an _application.properties_ file to the _src/main/resources_ directory with the following properties:
 
 ```properties
-application.name=hello-world-agent
+application.name=my-first-microservice
 server.port=80
 ```
 
@@ -213,9 +214,8 @@ To create a deployable ZIP file, you need to add the following code to your _pom
                         <goal>package</goal>
                     </goals>
                     <configuration>
-                        <!-- name for the Docker image -->
-                        <name>my-first-microservice</name>
-                        <image>my-first-microservice</image>
+                        <name>${microservice.name}</name>
+                        <image>${microservice.name}</image>
                         <encoding>UTF-8</encoding>
                     </configuration>
                 </execution>
@@ -242,29 +242,38 @@ The microservice must be deployed to verify the REST calls from Cumulocity to th
 To run a microservice which uses the Cumulocity API locally you need:
 
 * A valid tenant, a user and a password in order to access Cumulocity.
-* An authorization header as "Basic {Base64({username}:{password})}"
+* An authorization header as "Basic &lt;Base64(&lt;username>:&lt;password>)>".
+
+For instance, if the username and password are **testuser** and **test123** respectively, you can get the Base64 string with the following command:
+
+```shell
+$ echo testuser:test123 | base64
+dGVzdHVzZXI6dGVzdDEyMwo=
+```
+
+and your authorization header would like like `"Authorization": "Basic dGVzdHVzZXI6dGVzdDEyMwo="`.
 
 #### Step 1 - Create the application
 
 If the application does not exist, create a new application on the Cumulocity platform employing a POST request.
 
 ```avrasm
-POST {URL}/application/applications
+POST <URL>/application/applications
 
 HEADERS:
-  "Authorization": "{AUTHORIZATION}"
+  "Authorization": "<AUTHORIZATION>"
   "Content-Type": "application/vnd.com.nsn.cumulocity.application+json"
   "Accept: application/vnd.com.nsn.cumulocity.application+json"
 
 BODY:
 {
-  "name": "{APPLICATION_NAME}",
+  "name": "<APPLICATION_NAME>",
   "type": "MICROSERVICE",
-  "key": "{APPLICATION_NAME}-microservice-key"
+  "key": "<APPLICATION_NAME>-microservice-key"
 }
 ```
 
-You have to replace the values `{URL}` with the URL of your Cumulocity tenant, `{AUTHORIZATION}` with a Base64 encoded string and `{APPLICATION_NAME}` with the desired name for your microservice application and its `key` name.
+You have to replace the values `<URL>` with the URL of your Cumulocity tenant, `<AUTHORIZATION>` is Basic with a Base64 encoded string, and for `<APPLICATION_NAME>` use the desired name for your microservice application and its `key` name.
 
 > **Important**: When naming your microservice application use only lower-case letters, digits and dashes. The maximum length for the name is 23 characters.
 
@@ -273,28 +282,28 @@ The `curl` command can be used to create the application with a POST request:
 ```shell
 $ curl -X POST -s \
   -d '{"name":"my-first-microservice","type":"MICROSERVICE","key":"my-hello-world-ms-key"}' \
-  -H "Authorization: {AUTHORIZATION}" \
+  -H "Authorization: <AUTHORIZATION>" \
   -H "Content-Type: application/vnd.com.nsn.cumulocity.application+json" \
   -H "Accept: application/vnd.com.nsn.cumulocity.application+json" \
-  "{URL}/application/applications"
+  "<URL>/application/applications"
 ```
 
 In case of errors, e.g. invalid names, you will get the details printed in the console. When the application is created successfully, you will get a response in JSON format as the following example:
 
 ```json
 {
-  "id": "{APPLICATION_ID}",
-  "key": "my-hello-world-microservice-key",
+  "id": "<APPLICATION_ID>",
+  "key": "my-hello-world-ms-key",
   "name": "my-first-microservice",
   "type": "MICROSERVICE",
   "availability": "PRIVATE",
 
-  "self": "{URL}/application/applications/{APPLICATION_ID}",
+  "self": "<URL>/application/applications/<APPLICATION_ID>",
 
   "owner": {
-    "self": "{...}",
+    "self": "...",
     "tenant": {
-      "id": "{TENANT}"
+      "id": "<TENANT>"
     }
   },
   "requiredRoles": [],
@@ -308,7 +317,7 @@ In case of errors, e.g. invalid names, you will get the details printed in the c
 
 Load the Administration application on your tenant and navigate to **Applications** > **Own applications**. There you will see the newly created microservice.
 
-![Hello World of Microservices](/guides/images/microservices-sdk/hello-world.png)
+![Hello World of Microservices](/guides/images/microservices-sdk/admin-first-microservice.png)
 
 
 #### Step 2 - Acquire the microservice bootstrap user
@@ -316,19 +325,19 @@ Load the Administration application on your tenant and navigate to **Application
 You will need the bootstrap user credentials in order to run the microservice locally. Get the details of your bootstrap user with a GET request as follows:
 
 ```avrasm
-GET {URL}/application/applications/{APPLICATION_ID}/bootstrapUser
+GET <URL>/application/applications/<APPLICATION_ID>/bootstrapUser
 
 HEADERS:
-  "Authorization": {AUTHORIZATION}
+  "Authorization": <AUTHORIZATION>
   "Content-Type": application/vnd.com.nsn.cumulocity.user+json
 ```
 
-> **Info**: You can also employ the `curl` command or a graphical interface such as Postman.
+> **Info**: Besides the `curl` command, you can also employ a graphical interface such as Postman.
 
 
 #### Step 3 - Run the microservice locally
 
-The Docker image was built and added to the local Docker repository during the build by employing Maven. You can list all the Docker images available with the following command:
+The Docker image was built and added to the local Docker repository during the Maven build. You can list all the Docker images available with the following command:
 
 ```shell
 $ docker images
@@ -337,7 +346,7 @@ $ docker images
 Get your image ID and tag from the list. While not strictly a means of identifying a container, you can specify a version of an image you would like to run the container with. Run the Docker container for the microservice also providing the URL of your tenant and the bootstrap user credentials. Do not forget to expose the port 80 to a port on your host system, e.g. 8082.
 
 ```shell
-$ docker run -p 8082:80 -e C8Y_BOOTSTRAP_TENANT={BOOTSTRAP_TENANT} -e C8Y_BOOTSTRAP_USER={BOOTSTRAP_USERNAME} -e C8Y_BOOTSTRAP_PASSWORD={BOOTSTRAP_USER_PASSWORD} -e C8Y_MICROSERVICE_ISOLATION=MULTI_TENANT -i -t -e C8Y_BASEURL={URL}  {DOCKER_REPOSITORY_IMAGE}:{TAG}
+$ docker run -p 8082:80 -e C8Y_BOOTSTRAP_TENANT=<BOOTSTRAP_TENANT> -e C8Y_BOOTSTRAP_USER=<BOOTSTRAP_USERNAME> -e C8Y_BOOTSTRAP_PASSWORD=<BOOTSTRAP_USER_PASSWORD> -e C8Y_MICROSERVICE_ISOLATION=MULTI_TENANT -i -t -e C8Y_BASEURL=<URL> <DOCKER_REPOSITORY_IMAGE>:<TAG>
 ```
 
 If your Docker image has run successfully, you shall see the output on the console similar to the one below.
@@ -359,47 +368,41 @@ If your Docker image has run successfully, you shall see the output on the conso
 2019-03-01 13:57:24.750  INFO 8 --- [main] c8y.example.App                          : Started App in 12.044 seconds (JVM running for 12.911)
 ```
 
-open browser
-load http://localhost:8082/hello
-enter bootstrap user credentials  tenant/username
-you should see an error because not subscribed
+At this point, you may open your favorite browser and test your microservice at [http://localhost:8082/hello](http://localhost:8082/hello). Enter your bootstrap user credentials using &lt;tenant>/&lt;username> and your password. You shall see a response message in JSON format like "Microservice my-first-microservice is not subscribed by tenant".
+
 
 #### Step 4 - Subscribe to the microservice
 
-do it in the Administration application.
+Load the Administration application on your tenant and navigate to **Applications** > **Own applications**. Locate your microservice application and click on it to open its details. On the top right side click on the **Subscribe** button.
 
+![Subscribe to a microservice](/guides/images/microservices-sdk/admin-microservice-subscribe.png)
 
-    POST {URL}/tenant/tenants/{TENANT_ID}/applications
+Now you can test your microservice locally using the endpoint <kbd>/hello</kbd> and with a parameter, e.g. <kbd>/hello?name=Neo</kbd>.
 
-  HEADERS:
+It is also possible to subscribe to the microservice with a POST request:
 
-    "Authorization": "{AUTHORIZATION}"
+```avrasm
+POST <URL>/tenant/tenants/<TENANT_ID>/applications
 
-  BODY:
+HEADERS:
+  "Authorization": "<AUTHORIZATION>"
 
-    {"application":{"id": "{APPLICATION_ID}"}}
-
-  Example:
-
-    curl -X POST -d "{"application":{"id": "{APPLICATION_ID}"}}"  \
-    -H "Authorization: {AUTHORIZATION}" \
-    -H "Content-type: application/json" \
-     "{URL}/tenant/tenants/{TENANT_ID}/applications"
-
-#### Step 4 - Subscribe to the microservice
-
-load http://localhost:8082/hello
-load http://localhost:8082/hello?name=Neo
-
+BODY:
+  {
+    "application": {
+        "id": "<APPLICATION_ID>"
+    }
+  }
+```
 
 ### Deployment
 
-To deploy a microservice application on an environment you need the following:
+To deploy a microservice application on the Cumulocity platform you need the following:
 
-* URL address of the Cumulocity host of your tenant
-* Authorization header = "Basic {Base64({username}:{password})}"
-* Tenant - tenant ID
-* ZIP build from previous step for deployment
+* A valid tenant, a user and a password in order to access Cumulocity.
+* An authorization header as "Basic &lt;Base64(&lt;username>:&lt;password>)>".
+* The ZIP file built with Maven on the previous steps
+
 
 **Step 1 - Create application**
 

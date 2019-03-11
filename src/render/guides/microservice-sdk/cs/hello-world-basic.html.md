@@ -23,29 +23,223 @@ Building and deploying "Hello World" on Windows is similar to the way it is done
 
 Download a script file to build a "Hello World" application. Manage the version of scripts and replace latest to the right version number.
 
-	Invoke-WebRequest  http://resources.cumulocity.com/cssdk/releases/microservicesdk-win-dev-latest.zip -OutFile microservicesdk-win-dev-latest.zip
+```bash
+Invoke-WebRequest  http://resources.cumulocity.com/cssdk/releases/microservicesdk-win-dev-latest.zip -OutFile microservicesdk-win-dev-latest.zip
+```
 
 The latest can be replaced by the version number e.g. microservicesdk-lin-dev-{X.X.X}.zip.
 
 Once you have downloaded the source, unzip the file.
 ```bash
-	Expand-Archive c:\microservicesdk-win-dev-latest.zip -DestinationPath c:\microservicesdk-win-dev-latest
+Expand-Archive c:\microservicesdk-win-dev-latest.zip -DestinationPath c:\microservicesdk-win-dev-latest
 ```
 Change the current folder and navigate to a microservicesdk folder.
 ```bash
-	cd microservicesdk-win-dev-latest
+cd microservicesdk-win-dev-latest
+```
+Make a sure that’s uses correct a sdk version - 2.0.2 or define which .NET Core SDK version is used when you run .NET Core CLI commands
+```bash
+dotnet new globaljson --sdk-version 2.0.2
 ```
 Run the script "create.ps1" to create a sample project, provide the name of the project and the API application.
 ```bash
-	./create.ps1
+./create.ps1
 ```
 Execute the bootstrapper script to build the application and an image from a Docker file.
 ```bash
-	./build.ps1
+./build.ps1
 ```
-In order to deploy the application run the deploy script. You must provide the correct URL and credentials in this script.
+After a successful build you will be provided with a ZIP file in the target directory. The ZIP can be deployed to the platform as described in the Deployment section.
 
-**How to call the script**
+###  <a name="run-locally"></a> Running microservice locally
+In order to test the microservice for the calls from the microservice to Cumulocity, you can run the docker container locally.
+
+To verify calls from Cumulocity to the microservice, the microservice must be deployed.
+
+To run a microservice which uses Cumulocity API locally you need the following:
+
+* URL address of the Cumulocity host of your tenant
+* Authorization header = "Basic {Base64({username}:{password})}"
+* Tenant - tenant ID
+
+**Step 1 - Create application**
+
+If the application does not exist, create a new application on a platform:
+```
+    POST {URL}/application/applications
+```
+HEADERS:
+```
+    "Authorization": "{AUTHORIZATION}"
+    "Content-Type": "application/vnd.com.nsn.cumulocity.application+json"
+    "Accept: application/vnd.com.nsn.cumulocity.application+json"
+```
+BODY:
+```
+    {
+            "name": "{APPLICATION_NAME}",
+            "type": "MICROSERVICE",
+            "key": "{APPLICATION_NAME}-microservice-key"
+    }
+```
+Example:
+```bash
+    $curl -X POST -s \
+      -d "{"name":"hello-microservice-1","type":"MICROSERVICE","key":"hello-microservice-1-key"}" \
+      -H "Authorization: {AUTHORIZATION}" \
+      -H "Content-Type: application/vnd.com.nsn.cumulocity.application+json" \
+      -H "Accept: application/vnd.com.nsn.cumulocity.application+json" \
+      "{URL}/application/applications"
+```
+Example response:
+```
+    {
+        "availability": "PRIVATE",
+        "id": "{APPLICATION_ID}",
+        "key": "{APPLICATION_NAME}-microservice-key",
+        "manifest": {
+            "imports": [],
+            "noAppSwitcher": true
+        },
+        "name": "{APPLICATION_NAME}",
+        "owner": {
+            "self": "...",
+            "tenant": {
+                "id": "..."
+            }
+        },
+        "requiredRoles": [],
+        "roles": [],
+        "self": "..",
+        "type": "MICROSERVICE"
+    }
+```
+If the application has been created correctly, you can get the application ID from the response.
+
+**Step 2 - Acquire microservice bootstrap user**
+```
+    GET {URL}/application/applications/{APPLICATION_ID}/bootstrapUser
+```
+HEADERS:
+```
+    "Authorization": {AUTHORIZATION}
+    "Content-Type": application/vnd.com.nsn.cumulocity.user+json
+```
+Example response:
+```bash
+    HTTP/1.1 200 Ok
+    Content-Type: application/vnd.com.nsn.cumulocity.user+json
+    {
+      "tenant": "...",
+      "name": "...",
+      "password": "..."
+    }
+```
+**Step 3 - Run microservice locally**
+
+The image is already added to the local docker repository during the build. List all the docker repository images available:
+```bash
+$ docker images
+
+REPOSITORY          TAG                 IMAGE ID            CREATED             SIZE
+api                 latest              a8298ed10cd9        16 hours ago        258MB
+
+```
+After you find the image in the list, run the docker container for the microservice by providing the baseurl and the bootstrap user credentials:
+```bash
+$ docker run -e C8Y_BASEURL={URL} -e C8Y_BOOTSTRAP_TENANT={BOOTSTRAP_TENANT} -e C8Y_BOOTSTRAP_USER={BOOTSTRAP_USERNAME} -e C8Y_BOOTSTRAP_PASSWORD={BOOTSTRAP_USER_PASSWORD} -e C8Y_MICROSERVICE_ISOLATION=MULTI_TENANT -i -t {DOCKER_REPOSITORY_IMAGE}:{TAG}
+```
+**Step 4 - Subscribe to microservice**
+```
+    POST {URL}/tenant/tenants/{TENANT_ID}/applications
+```
+  HEADERS:
+```
+    "Authorization": "{AUTHORIZATION}"
+```
+  BODY:
+```
+    {"application":{"id": "{APPLICATION_ID}"}}
+```
+  Example:
+```bash
+    curl -X POST -d "{"application":{"id": "{APPLICATION_ID}"}}"  \
+    -H "Authorization: {AUTHORIZATION}" \
+    -H "Content-type: application/json" \
+     "{URL}/tenant/tenants/{TENANT_ID}/applications"
+```
+
+**Step 5 - Verify if microservice is running**
+
+Now you can verify if your application is running by executing
+
+```bash
+curl -H "Authorization: {AUTHORIZATION}" \
+  {URL}/service/hello/api/values
+```
+The expected result is:
+```xml
+["value1","value2"]
+```
+
+### Runnning application from inside the IDE
+It is possible to check whether the application communicates with the platform by defining relevant environmental variables in `launchSettings.json`. This file sets up the different launch environments that Visual Studio can launch automatically. Here's a snippet of the default `launchSettings.json`.
+```
+{
+  "iisSettings": {
+    "windowsAuthentication": false,
+    "anonymousAuthentication": true,
+    "iisExpress": {
+      "applicationUrl": "http://localhost:3288/",
+      "sslPort": 0
+    }
+  },
+  "profiles": {
+    "IIS Express": {
+      "commandName": "IISExpress",
+      "launchBrowser": true,
+      "environmentVariables": {
+        "ASPNETCORE_ENVIRONMENT": "Development"
+      }
+    },
+    "Api": {
+      "commandName": "Project",
+      "environmentVariables": {
+        "SERVER_PORT": "47000",
+        "C8Y_MICROSERIVCE_ISOLATION": "PER_TENANT",
+        "C8Y_BASEURL": "<<url>>",
+        "C8Y_BASEURL_MQTT": "",
+        "C8Y_TENANT": "",
+        "C8Y_PASSWORD": "",
+        "C8Y_USERNAME": "",
+        "C8Y_BOOTSTRAP_TENANT": "<<tenant>>",
+        "C8Y_BOOTSTRAP_USERNAME": "<<username>>",
+        "C8Y_BOOTSTRAP_PASSWORD": "<<password>>"
+      }
+    }
+  }
+}
+```
+
+###Deployment
+
+In order to deploy the application run the deploy script. You must provide the correct URL and credentials in the settings.ini file.
+To deploy a microservice application on an environment you need the following:
+
+* URL address of the Cumulocity host of your tenant
+* Username to log in with.
+* Application name created on the platform.
+* ZIP build from previous step for deployment
+
+The settings.ini:
+
+```
+[deploy]
+username=tenant/user
+password=pass
+url=someurl
+appname=sample_application
+```
 
 *  Call "deploy.ps1"
 	* The script looks for a settings.ini in the same directory. If found, it uses the credentials and tenant URL from that file.
@@ -69,16 +263,8 @@ In order to deploy the application run the deploy script. You must provide the c
 	./deploy.sh -s {siteurl} -u {username} -p {password}  -an hello-world -f settings.ini
 ```
 
-The ini sample:
 
-```
-[deploy]
-username=tenant/user
-password=pass
-url=someurl
-appname=sample_application
-```
-
+###Improving the microservice
 The application starts executing from the entry point `public static void Main()` in Program class where the host for the application is created. The following shows an example of a program created by "create.sh".
 ```cs
 	namespace api
@@ -183,6 +369,20 @@ Startup.cs responsibilities:
 
 * Specifies what executable to run when the container starts
 
+**Platform API**
+It is possible to use the C# REST SDK as an extension.  A developer can use it to perform basic operations against the platform. For hosted deployment, most of the properties are provided by the platform.
+
+The API provides the following services:
+
+* Alarm - AlarmApi
+* AuditRecord - AuditRecordApi
+* CepModule - CepApi
+* Operation - DeviceControlApi
+* Event - EventApi
+* ExternalID - IdentityApi
+* Binary - BinariesApi
+* ManagedObject - InventoryApi
+* Measurement - MeasurementApi
 
 ### Building and deploying Hello World on Linux
 

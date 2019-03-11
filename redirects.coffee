@@ -141,8 +141,10 @@ redirects =
 	'/guides/web/tab-plugin': '/guides/web/web-sdk-for-plugins/tab-plugin'
 	'/guides/web/widget-plugin': '/guides/web/web-sdk-for-plugins/widget-plugin'
 	'/guides/web/smart-toolkit': '/guides/web/overview'
-	'/guides/reference/binaries/application-plugin-binaries': '/guides/reference/binaries'	
-	'/guides/device-sdk/hello-mqtt-cs-0': '/guides/device-sdk/cs/#prerequisites-mqtt'
+	'/guides/reference/binaries/application-plugin-binaries': '/guides/reference/binaries'
+
+
+
 
 	# "index.html" redirects
 	'/guides/concepts': '/guides/concepts/introduction'

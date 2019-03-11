@@ -25,7 +25,7 @@ To monitor the connections for multiple devices, open any device list.
 
 The connection status is represented by arrows in the **Status** column in the device list.
 
-<img src="/guides/images/users-guide/DeviceManagement/devmgmt-devices-connectionstatus.png" alt="Connection Status" style="max-width: 100%">
+<img src="/guides/images/users-guide/DeviceManagement/devmgmt-devices-connectionstatus.png" alt="Connection Status">
 
 **Send connections**
 
@@ -56,7 +56,7 @@ Moreover, the device may be in "Maintenance" mode, indicated by the tool icon in
 You can turn maintenance mode on or off for a device through a slider in the **Connection monitoring** card in its **Info** tab. 
 
 
-**Connection monitoring in the "Info" tab**
+**Connection monitoring in the Info tab**
 
 To monitor the connections of a particular device, go to the **Info** tab of this device. Under **Device status**, the connection status for the device is displayed. 
 
@@ -264,11 +264,3 @@ Clicking a row expands it and displays further details on the event (as type and
 Since devices may send large amounts of event data, you can filter the data to be displayed by date. 
 
 Select a start date and an end date from the fields in the top menu bar and click the **Filter** button to apply the filter. Click the **Clear** button to clear the filter again.
-
-
-
-
-
-
-
-

@@ -61,7 +61,7 @@ To create a new group follow these steps:
 
 ![Create a group](/guides/images/users-guide/DeviceManagement/devmgmt-groups-create.png)
 
-An empty group can also be added by clicking on the **Add group**.
+From the **Groups** page, you can also create an empty group by clicking **Add group** in the top menu bar.
 
 ![Add empty group](/guides/images/users-guide/DeviceManagement/devmgmt-groups-add.png)
 

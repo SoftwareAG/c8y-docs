@@ -4,16 +4,26 @@ layout: redirect
 order: 30
 ---
 
-To connect the device to your Cumulocity account:
+To connect the device to your Cumulocity account perform the following steps.
 
-* Open Cumulocity in a web browser and navigate to the "Registration" page.
-* Locate the IMEI number on the device (below the barcode on the sticker).
-* Type the **last six digits** of the IMEI into the "Device ID" field and click "Register Device". The IMEI will be listed with status "Waiting for connection".
-* Switch the device on. After the device has dialled up to the network, an "Accept" button will be visible next to the IMEI.
-* Click the "Accept" button.
-* If this is the first tracking device you connect to your tenant you also need the register the tracker agent. Type tracker-agent-{tenant} (where {tenant} is your tenant name) into the "Device ID" field and click "Register Device". Click the "Accept" button once it shows up.
-* The device will now send location data according to the device configuration that you set.
+1. In the Cumulocity platform, switch to the **Device Management** application and open the **Registration** page from the **Devices** menu in the navigator.
 
-![Device registration](/guides/images/devices/telic/telicregistration.png)
+2. Click **Register device** and select **General device registration**.
 
-Note: Cumulocity currently assumes that the "extended IMEI reporting" option is switched off.
+2. In the **Device ID** field, enter the last six digits of the IMEI on the device (to be found below the barcode on the sticker) and click **Next** to register the device. <br><br>![Device registration](/guides/images/devices/telic/telic-register-device.png)
+
+3. The device will be listed with status "Waiting for connection".
+
+4. Switch on the device. After the device has dialled up to the network, click the **Accept** button which shows up next to the device.
+
+If this is the first tracking device you connect to your tenant you also need to register the tracker agent. 
+
+1. Again, click **Register device** and select **General device registration**.
+
+2. In the **Device ID** field, enter "tracker-agent-{tenant}" (where {tenant} is your tenant name) and click **Next**. 
+
+3. Click **Accept** once it shows up.
+
+According to the device configuration that you set the device will now send location data.
+
+>**Info**: Cumulocity currently assumes that the "extended IMEI reporting" option is switched off.

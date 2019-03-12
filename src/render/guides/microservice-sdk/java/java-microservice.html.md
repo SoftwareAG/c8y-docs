@@ -10,7 +10,7 @@ In this section you will learn how to create your first microservice that can be
 
 Create an account on the [Cumulocity Platform](https;//cumulocity.com), for example by using a free trial. At this step you will be provided with a dedicated URL address.
 
-Use the following command to verify that you have Maven 3 installed with Java 7. This Hello World example has been tested also with Java 8.
+Use the following command to verify that you have Maven 3 installed with Java 7.
 
 ```shell
 $ mvn -v
@@ -20,7 +20,7 @@ Java version: 1.7.0_45, vendor: Oracle Corporation
 Java home: /Library/Java/JavaVirtualMachines/jdk1.7.0_45.jdk/Contents/Home/jre
 ```
 
-Maven can be downloaded from the [Maven website](http://maven.apache.org). You will also need a Docker installation and it can be downloaded from the [Docker website](https://www.docker.com/get-started).
+Maven can be downloaded from the [Maven website](http://maven.apache.org). You will also need a Docker installation, and in case that you don't have it, go to the [Docker website](https://www.docker.com/get-started) to download and install it.
 
 Cumulocity hosts linux/amd64 Docker containers and not Windows containers. The Docker version must be 1.12.6 or above. Use the following command to verify your Docker installation:
 
@@ -397,32 +397,31 @@ BODY:
 
 ### Deployment
 
-To deploy a microservice application on the Cumulocity platform you need the following:
+Once you have tested your microservice locally, you can deploy it on the Cumulocity platform and you need:
 
 * A valid tenant, a user and a password in order to access Cumulocity.
 * An authorization header as "Basic &lt;Base64(&lt;username>:&lt;password>)>".
-* The ZIP file built with Maven on the previous steps
+* The application created on the previous steps.
+* The ZIP file built with Maven on the previous steps.
 
+Make a POST request to upload your ZIP file as follow:
 
-**Step 1 - Create application**
-
-If the application does not exist, create a new application on a platform.
-For details, refer to the "Create application" step in [Run microservice locally](#run-locally).
-
-**Step 2 - Upload ZIP file**
-
-	POST {URL}/application/applications/{APPLICATION_ID}/binaries
+```avrasm
+POST <URL>/application/applications/<APPLICATION_ID>/binaries
 
 HEADERS:
-
-    "Authorization": "{AUTHORIZATION}"
-    "Content-Type": "multipart/form-data"
+  "Authorization": "<AUTHORIZATION>"
+  "Content-Type": "multipart/form-data"
+```
 
 Example:
 
-	  curl -F "data=@{PATH_TO_ZIP}" \
-	  -H "Authorization: {AUTHORIZATION}" \
-	  "{URL}/application/applications/{APPLICATION_ID}/binaries"
+```shell
+$ curl -F "data=@<PATH_TO_YOUR_ZIP_FILE>" \
+	     -H "Authorization: <AUTHORIZATION>" \
+	     "<URL>/application/applications/<APPLICATION_ID>/binaries"
+```
+
 
 **Step 3 - Subscribe to microservice**
 

@@ -14,7 +14,7 @@ Die folgende Beschreibung bezieht sich exemplarisch auf Firmware, gilt aber anal
 
 Die verfügbaren Firmware-Objekte werden angezeigt, dargestellt als Karten in einem Raster.
 
-![Firmware repository](/guides/images/benutzerhandbuch/DeviceManagement/devmgmt-management-firmwarerepode.png)
+![Firmware repository](/guides/images/benutzerhandbuch/DeviceManagement/devmgmt-management-firmwarerepo.png)
 
 Klicken Sie **Details** auf einer Karte, um diese "umzudrehen" und Details zum Firmware-Objekt anzuzeigen.
 

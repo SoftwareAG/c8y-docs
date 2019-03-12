@@ -44,7 +44,7 @@ Ist das Gerät Teil einer Asset-Hierarchie (wie einer Gruppe), wird unter dem Ge
 
 Abhängig vom Gerätetypen und seiner Nutzung sind weitere Aktionen möglich, die in einem Kontextmenü angezeigt werden, wenn Sie **Mehr...** rechts in der oberen Menüleiste klicken. 
 
-![More menu](/guides/images/benutzerhandbuch/DeviceManagement/devmgmt-devices-morede.png)
+![More menu](/guides/images/benutzerhandbuch/DeviceManagement/devmgmt-devices-more.png)
 
 Details zu den einzelnen Menüpunkten sind dort beschrieben, wo diese relevant sind.
 
@@ -52,7 +52,7 @@ Details zu den einzelnen Menüpunkten sind dort beschrieben, wo diese relevant s
 
 Die Registerkarte **Info** fasst die Geräteinformationen in einem Dashboard zusammen, die aus Managementsicht relevant sind.
 
-![Device Info](/guides/images/benutzerhandbuch/DeviceManagement/devmgmt-devices-infotabde.png)
+![Device Info](/guides/images/benutzerhandbuch/DeviceManagement/devmgmt-devices-infotab.png)
 
 Die Information wird auf den folgenden Karten bereitgstellt:
 
@@ -133,7 +133,7 @@ Alternativ können Sie sogenannte Konfigurationssnapshots verwenden, siehe [Konf
 
 Die Registerkarte **Steuerung** enthält eine Liste der and das Gerät gesendeten Kommandos. Weitere Informationen zu Kommandos finden Sie unter [Verwenden von Kommandos](#operation-monitoring).
 
-![Device Control](/guides/images/benutzerhandbuch/DeviceManagement/devmgmt-devices-controlde.png)
+![Device Control](/guides/images/benutzerhandbuch/DeviceManagement/devmgmt-devices-control.png)
 
 ### <a name="network"></a>Netzwerk
 
@@ -150,7 +150,7 @@ Um eine neue Firmware zu installieren, klicken Sie **Firmware installieren**, w�
 
 Um eine Software auf einem Gerät zu installieren, klicken Sie entsprechend **Software installieren**, wählen Sie ein Software-Paket aus dem [Software-Repository](#software-repo) und klicken Sie **Installieren**. 
 
-![Device Software tab](/guides/images/benutzerhandbuch/DeviceManagement/devmgmt-devices-softwarede.png)
+![Device Software tab](/guides/images/benutzerhandbuch/DeviceManagement/devmgmt-devices-software.png)
 
 Das Installieren von Software oder Firmware beinhaltet normalerweise einen Geräteneustart. Um den Fortschritt einer Installation zu überwachen, wechseln Sie zur Registerkarte **Steuerung**.
 
@@ -181,7 +181,7 @@ Im folgenden Fenster können Sie die folgende Einstellungen für die Loginformat
 
 Klicken Sie **Logdatei anfordern**, um die spezifizierten Daten für das Gerät zu anzufordern.
 
-![Logs tab](/guides/images/benutzerhandbuch/DeviceManagement/devmgmt-devices-logsde.png)
+![Logs tab](/guides/images/benutzerhandbuch/DeviceManagement/devmgmt-devices-logs.png)
 
 Das Anfordern einer Logdatei kann je nach Datenvolumen einige Zeit dauern. 
 
@@ -247,7 +247,7 @@ Die Liste zeigt den Status, das Datum und den Text eines Kommandos an. Durch Kli
 
 Cumulocity stellt für manche Gerätetypen einige häufig verwendete Kommandos bereit. Klicken Sie **<_Beispielkommando auswählen** rechts in der oberen Menüleiste, um eine Liste der verfügbaren vordefinierten Kommandos anzuzeigen. Wählen Sie das gewünschte Kommando aus und klicken Sie **Verwenden**, um das ausgewählte Kommando in der Kommandozeile einzufügen oder klicken Sie **Ausführen**, um das Kommando unmittelbar auszuführen. Sie können auch selbst neue Kommandos zur Wiederverwendung hinzufügen. 
 
-![Shell Commands](/guides/images/benutzerhandbuch/DeviceManagement/devmgmt-devices-shell-precommandsde.png)
+![Shell Commands](/guides/images/benutzerhandbuch/DeviceManagement/devmgmt-devices-shell-precommands.png)
 
 ### <a name="tracking"></a>Tracking
 
@@ -257,7 +257,7 @@ In Cumulocity können Geräte die Historie ihrer Bewegungen festhalten. Diese Be
 
 In der Auswahlliste oben rechts können Sie ein Zeitintervall auswählen (oder eines eingeben, indem Sie "Benutzerdefiniert" auswählen). Die Bewegungen des Geräts während des ausgewählten Zeitintervalls werden als rote Linien in der Karte visualisiert. 
 
-![Tracking tab](/guides/images/benutzerhandbuch/DeviceManagement/devmgmt-devices-trackingde.png)
+![Tracking tab](/guides/images/benutzerhandbuch/DeviceManagement/devmgmt-devices-tracking.png)
 
 Neben der Karte werden die einzelnen Einträge mit Zeitangabe aufgelistet ("Standortaktualisierungsereignisse"). Wenn Sie auf einen Eintrag klicken, zeigt ein "Pin" auf der Karte den Standort zu diesem Zeitpunkt an. 
 

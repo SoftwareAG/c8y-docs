@@ -244,7 +244,7 @@ Cumulocity displays events at the level of individual devices and across all dev
 
 * To see the events of this specific device, click the **Events** tab.
 * To see the operations for all devices, click **Events** in the **Overview** menu in the navigator.
-*  
+ 
 ![Events](/guides/images/users-guide/DeviceManagement/devmgmt-events.png)
 
 Per default, events are shown as coming in from the devices in realtime. To disable realtime updates, click **Realtime** at the right of the top menu bar.

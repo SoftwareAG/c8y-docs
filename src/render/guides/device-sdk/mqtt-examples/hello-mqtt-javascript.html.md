@@ -1,10 +1,10 @@
 ---
 order: 50
-title: Hello MQTT Web-based
+title: Hello MQTT browser-based
 layout: redirect
 ---
 
-In this tutorial, you will learn how to use the Web-based MQTT client with Cumulocity using pre-defined messages (called "static templates").
+In this tutorial, you will learn how to use the browser-based MQTT client with Cumulocity using pre-defined messages (called "static templates").
 
 ### Prerequisites
 
@@ -156,4 +156,4 @@ Additionally, if there will be a new operation created for this device (e.g. c8y
 
 ### Improving the agent
 
-Now that you have done your first step, check out the section [Hello MQTT](/guides/device-sdk/mqtt#hello-mqtt) to learn more about Cumulocity MQTT and improve your application.
+Now that you have done your first step, check out the section [Hello MQTT](/guides/device-sdk/mqtt-examples#hello-mqtt) to learn more about Cumulocity MQTT and improve your application.

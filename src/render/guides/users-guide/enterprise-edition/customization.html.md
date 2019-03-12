@@ -149,7 +149,7 @@ In the **Domain name** tab you can activate your own custom domain name.
 
 >**Info**: To activate you domain, you need a valid license. Please contact our Sales team at sales@cumulocity.com to install a license for your domain.  
 
-<img src="/guides/images/users-guide/Administration/Admin_DomainName.png" alt="Domain name" style="max-width: 100%">
+<img src="/guides/images/users-guide/Administration/admin-domain-name.png" alt="Domain name">
 
 First you have to upload the appropriate certificate by clicking **Upload Certificate**. Make sure that
 
@@ -159,15 +159,16 @@ First you have to upload the appropriate certificate by clicking **Upload Certif
 
 **Info**: If your certificate is not in a valid PKCS#12 format but you have PEM files for certificate, private key and authorization chain then you can generate a valid PKCS#12 file using the following command:
 
-	openssl pkcs12 -export -out out_keystore.p12 -inkey privkey.pem -in cert.pem -certfile chain.pem
-
+```shell
+openssl pkcs12 -export -out out_keystore.p12 -inkey privkey.pem -in cert.pem -certfile chain.pe
+```
 
 Before activating the custom domain name, make sure that
 
 * you have uploaded a valid SSL certificate for your custom domain,
 * the common name (domain name) is not used by any other tenant,
 * the certificate is currently valid (validFrom in the past and validTo in the future),
-* you have added a wildcard CNAME record (starting with `"*."`) to your DNS server of the following format:<br>
+* you have added a wildcard CNAME record (starting with `*.`) to your DNS server of the following format:<br>
  Hostname = `*.<your domain name>`, e.g. `*.iot.mycompany.com` <br>
  Type = CNAME <br>
  Target = the target URL of the platform you want to point to, e.g. `manage.cumulocity.com`<br>
@@ -203,25 +204,33 @@ In case you cannot reach Cumulocity using your custom domain, we recommend to pe
 
 Execute the following command:
 
-	host management.<your domain name>
+```shell	
+host management.<your domain name>
+```
 	
 The following result should be returned:
 
-	management.<your domain name> is an alias for <instance domain name>
-	<instance domain name> has address <ip address>
+```shell
+management.<your domain name> is an alias for <instance domain name>
+<instance domain name> has address <ip address>
+```
 	
 
 **Check if the API is responding** 
 
 Execute the following command:
 
-	curl -v -u '<tenant ID>/<your user>:<your password>' --head http://management.<your domain name>/inventory/managedObjects
+```shell
+curl -v -u '<tenant ID>/<your user>:<your password>' --head http://management.<your domain name>/inventory/managedObjects
+```
 	
 The following result should be returned:
 
-	...
-	HTTP/1.1 200 OK
-	...	
+```shell
+...
+HTTP/1.1 200 OK
+...	
+```
 
 
 >**Info**: Take into consideration that after changing the DNS entry it might take up to 24 hours until the new entry has been propagated.

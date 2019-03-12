@@ -80,9 +80,9 @@ import '@c8y/ng1-modules/map/cumulocity.json';
 
 ## Running an existing app with @c8y/cli
 
-As you it becomes clear with [this diff](https://bitbucket.org/m2m/cumulocity-ui-plugin-examples/branches/compare/next%0Dc5431a1#diff) the changes need to include the new tooling to an existing project are quite concise.
+As you it becomes clear with [this diff](https://bitbucket.org/m2m/cumulocity-ui-plugin-examples/branches/compare/next%0Dc5431a1#diff) the changes to include the new tooling to an existing project are quite concise.
 
-So in the new [@c8y/cli](/guides/web/angular#cli) you would use the application cumulocity.json as the entry point.
+In the new [@c8y/cli](/guides/web/angular#cli) you would use the application cumulocity.json as the entry point.
 
 ```
 npx c8ycli serve ./cumulocity.json
@@ -98,6 +98,15 @@ npx c8ycli serve node_modules/@c8y/ng1-modules/apps/cockpit/cumulocity.json --en
 ```
 
 Although the modifications to the application is read from the target file, the definition of application to run or build must be passed as an argument to the cli.
+
+
+## Alternative  to target files
+
+As an alternative to target files developers should now use [applications options](/guides/web/angular#applications-options).
+
+There is no alternative to mutating the list of imported plugins. The recomended approach is to explicitely import the required modules.
+
+
 
 
 

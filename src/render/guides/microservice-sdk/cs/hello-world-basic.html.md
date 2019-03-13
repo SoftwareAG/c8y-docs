@@ -62,6 +62,15 @@ To run a microservice which uses Cumulocity API locally you need the following:
 * Authorization header = "Basic {Base64({username}:{password})}"
 * Tenant - tenant ID
 
+There are several ways to install cURL on Windows:
+* Install it using Chocolatey.
+* Install it with a one-click installer.
+* Using official cURL binaries.
+
+Assuming that  `Chocolatey` is installed:
+```bash
+choco install curl
+```
 **Step 1 - Create application**
 
 If the application does not exist, create a new application on a platform:
@@ -84,7 +93,7 @@ BODY:
 ```
 Example:
 ```bash
-    $curl -X POST -s \
+    $ curl -X POST -s \
       -d "{"name":"hello-microservice-1","type":"MICROSERVICE","key":"hello-microservice-1-key"}" \
       -H "Authorization: {AUTHORIZATION}" \
       -H "Content-Type: application/vnd.com.nsn.cumulocity.application+json" \
@@ -438,7 +447,24 @@ Check the status of an application that is running inside the Docker container.
 ```
 In order to deploy the application run the deploy script. You must provide the correct URL and credentials in this script.
 
-**How to call the script**
+**Deployment**
+In order to deploy the application run the deploy script. You must provide the correct URL and credentials in the settings.ini file.
+To deploy a microservice application on an environment you need the following:
+
+* URL address of the Cumulocity host of your tenant
+* Username to log in with.
+* Application name created on the platform.
+* ZIP build from previous step for deployment
+
+The settings.ini:
+
+```
+[deploy]
+username=tenant/user
+password=pass
+url=someurl
+appname=sample_application
+```
 
 *  Call "deploy.sh"
 	* The script looks for a settings.ini in the same directory. If found, uses the credentials and tenant URL from that file.
@@ -463,13 +489,4 @@ In order to deploy the application run the deploy script. You must provide the c
 	./deploy.sh -s {siteurl} -u {username} -p {password}  -an hello-world -f settings.ini
 ```
 
-The ini sample:
-
-```
-[deploy]
-username=tenant/user
-password=pass
-url=someurl
-appname=sample_application
-```
 

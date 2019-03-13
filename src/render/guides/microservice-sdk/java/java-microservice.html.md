@@ -422,25 +422,20 @@ $ curl -F "data=@<PATH_TO_YOUR_ZIP_FILE>" \
 	     "<URL>/application/applications/<APPLICATION_ID>/binaries"
 ```
 
-> **Important**: The **Microservice hosting** feature must be activated on your tenant, otherwise your request will return an error message like "security/Forbidden, access is denied". This feature is not assigned to tenants by default, so trial accounts won't have it. You shall write an email to [support@cumulocity.com](mailto:support@cumulocity.com) and request its activation.
+> **Important**: The **Microservice hosting** feature must be activated on your tenant, otherwise your request will return an error message like "security/Forbidden, access is denied". This feature is not assigned to tenants by default, so trial accounts won't have it. You shall write an email to [support@cumulocity.com](mailto:support@cumulocity.com) so they can assist you with the activation. Note that this is a paid feature.
 
 
-**Step 3 - Subscribe to microservice**
 
-For details, refer to the "Subscribe to microservice" step in [Run microservice locally](#run-locally).
 
-**Step 4 - Verify if microservice is running**
+#### Test the deployed microservice
 
-Now you can verify if your application is running by executing
+The `curl` command can be used to verify that the microservice is up and running using the <kdb>/health</kdb> endpoint:
 
-    curl -H "Authorization: {AUTHORIZATION}" \
-      {URL}/service/hello-world/hello?who=me
-
-The expected result is:
-
-    hello me!
-
+```shell
+$ curl -H "Authorization: <AUTHORIZATION>" \
+       <URL>/service/hello-world/health
+```
 
 ### Improving the microservice
 
-Now that you have done your first step, check out the section [Developing Java Microservice](/guides/microservice-sdk/java#developing-microservice).
+Now that you have done your first steps, check out the section [Developing microservice](/guides/microservice-sdk/java#developing-microservice) to find out what else is possible to be implemented.

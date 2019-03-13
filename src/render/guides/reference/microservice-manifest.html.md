@@ -4,7 +4,7 @@ title: Microservice manifest
 layout: standalone
 ---
 
-The manifest provides information about a microservice deployment. The definition is typically provided as cumulocity.json file in the binary uploaded to the Cumulocity platform. 
+The manifest provides information about a microservice deployment. The definition is typically provided as _cumulocity.json_ file in the binary uploaded to the Cumulocity platform.
 
 ### Manifest
 
@@ -113,6 +113,10 @@ The manifest provides information about a microservice deployment. The definitio
 </tr>
 </tbody>
 </table>
+
+> **Info**: The version has an impact on the microservice upload behaviour:
+> - If a new ZIP file for a microservice is uploaded but the version is the same as the previous, e.g. "1.1.0", then there is no guarantee that the Docker image for the microservice will be updated.
+> - If the version is a snapshot (e.g. "1.1.0-SNAPSHOT"), then Docker should update the image on each ZIP upload.
 
 
 #### Provider

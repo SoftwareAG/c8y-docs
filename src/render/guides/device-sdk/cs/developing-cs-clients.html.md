@@ -208,6 +208,7 @@ control.Create(operation);
 ```
 
 Now, if you would like to query the pending operations from an agent, the following code would need to be executed:
+
 ```cs
 OperationFilter operationFilter = new OperationFilter();
 operationFilter.ByAgent(mo.Id.Value);
@@ -262,6 +263,7 @@ subscription.Unsubscribe()
 ```
 
 If you wish to disconnect, the following code must be used:
+
 ```cs
 subscriber.Disconnect()
 ```
@@ -282,7 +284,7 @@ To ensure that messages are buffered in the event of a communication failure, se
 new ClientConfiguration(new MemoryBasedPersistentProvider(), true);
 ```
 
-### Logging Configuration
+### Logging configuration
 
 Logging in the C# client SDK is handled through [LibLog](https://github.com/damianh/LibLog/). For a detailed description on how to use and configure logging, see the [logback documentation](https://github.com/damianh/LibLog/wiki).
 
@@ -300,7 +302,7 @@ With liblog you actually embed a blob of code into the library. This code then p
 As soon as you add the configuration for your preferred provider and set up the necessary appender, logging should just work. If you wish to implement your custom provider, you just need to ensure that your provider implements the ILogProvider interface or inherits from the LogProviderBase.
 
 
-#### Simple Logging Configuration
+#### Simple logging configuration
 
 The following example shows how to enable debug-level logging for a single component, called "MyClass", whilst keeping error-level logging for all other components. The following code snippet shows how to create the logger, and to log a message:
 

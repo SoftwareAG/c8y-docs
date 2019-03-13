@@ -1,26 +1,26 @@
 ---
 order: 50
-title: MQTT client - Hello world! 
+title: MQTT client - Hello world!
 layout: redirect
 ---
 
 To develop a very simple "Hello, world!" MQTT client for Cumulocity, you need to follow these steps:
 
 * Create a console project:
-
+```cs
     	dotnet new console
-
+```
 * Add a new entry <PropertyGroup> to a csproj file:
-
+```xml
         <RestoreSources>$(RestoreSources);../nugets;https://api.nuget.org/v3/index.json</RestoreSources>
-        
+```
 * Add a package reference to a project file:
-
+```cs
 		dotnet add package Cumulocity.MQTT -s "../nugets"
-
+```
 
 **Example**
-
+```cs
         using Cumulocity.MQTT;
         using Cumulocity.MQTT.Model;
         using System;
@@ -30,8 +30,7 @@ To develop a very simple "Hello, world!" MQTT client for Cumulocity, you need to
         {
             internal class Program
             {
-                 static Client cl;
-                 
+                static Client cl;
                 private static void Main(string[] args)
                 {
                     Task.Run(() => RunClientAsync());
@@ -74,14 +73,14 @@ To develop a very simple "Hello, world!" MQTT client for Cumulocity, you need to
                 }
             }
         }
-
+```
 Replace &lt;&lt;clientId&gt;&gt;, &lt;&lt;serverUrl&gt;&gt;, &lt;&lt;tenant&gt;&gt;, &lt;&lt;username&gt;&gt;, and &lt;&lt;password&gt;&gt; with your data.
 
 * Build and run the application:
-
+```cs
         dotnet build
         dotnet run
-
+```
 Cumulocity MQTT protocol supports both unsecured TCP and also secured SSL connections (e.g. tcp://mqtt.cumulocity.com:1883 or ssl://mqtt.cumulocity.com:8883), so as the &lt;&lt;serverUrl&gt;&gt; select the one which fits for you.
 
 What does the code in "main" do?

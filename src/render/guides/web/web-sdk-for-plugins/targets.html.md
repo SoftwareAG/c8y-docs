@@ -15,7 +15,7 @@ Example:
     "globalTitle": "Acme IoT", // Browser title
     "hide_powered": true, // Toggle the 'Powered by' on the bottom of navigator
     "supportUrl": false, // Customize the support url. A falsy value will hide the link.
-    "rightDrawer": false, // Togggle the right drawer on the app
+    "rightDrawer": false, // Toggle the right drawer on the app
     "login_extra_link": { // Creates an extra link on login screen
       "url": "https://acme/eula",
       "label": "EULA"
@@ -30,7 +30,7 @@ Example:
   * This technique is very commonly used for branding
   */
   "replaceImports": {
-    "core/c8yBranding": "core/whitelabel-branding"
+    "core/c8yBranding": "core/acme-branding"
   },
 
   /**

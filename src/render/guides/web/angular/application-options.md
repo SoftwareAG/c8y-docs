@@ -63,7 +63,7 @@ export class ApplicationOptions {
   name: string; // To be saved to the the server
   contextPath: string; // To be saved to the the server
   key: string; // To be saved to the the server
-  upgrade?: boolean; // true if the application is hybrid using Angular and angularJS simulatneously
+  upgrade?: boolean; // true if the application is hybrid using Angular and angularJS simultaneously
   brandingEntry?: string; // the entry path to the branding
   tsConfigPath?: string; // path to tsCconfig if typescript is used, defaults to ./tsconfig.json
   entryModule?: string;

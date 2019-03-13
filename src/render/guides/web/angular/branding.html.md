@@ -51,7 +51,7 @@ Here is a list of the available variables.
 }
 ```
 
-Note that these can be customised at runtime using [application options](/guides/web/angular#application-options) using the property `brandingCssVars`.
+Note that these can be customized at runtime using [application options](/guides/web/angular#application-options) using the property `brandingCssVars`.
 The option is only available after version 9.22.0.
 
 ## Using LESS

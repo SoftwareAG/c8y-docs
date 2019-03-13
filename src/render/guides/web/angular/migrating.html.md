@@ -6,6 +6,7 @@ order: 50
 
 Since 9.16.0 we have introduced Angular support and the as such the build process had to change. There is a transition period where both tools are expected to work.
 
+<!-- https://codepen.io/confraria/pen/VRrpPV -->
 <table style="width:100%;font-family:sans-serif" class="support-versions">
   <style>
     .support-versions .green {
@@ -14,13 +15,18 @@ Since 9.16.0 we have introduced Angular support and the as such the build proces
     .support-versions .red {
        background-color: red;
     }
+    .support-versions .yellow {
+       background-color: gold;
+    }
+
     .support-versions tr > td:first-child {
       font-weight:bold;
       text-align:right;
     }
+
     .support-versions .sub {
       font-weight: normal !important;
-      opacity: 0.6;
+      color: gray;
     }
   </style>
   <tr style="text-align:center">
@@ -45,6 +51,11 @@ Since 9.16.0 we have introduced Angular support and the as such the build proces
     <td class="red"></td>
   </tr>
   <tr>
+    <td class="sub">Angular</td>
+    <td colspan="2" class="yellow"></td>
+    <td colspan="2" class="green"></td>
+  </tr>
+  <tr>
     <td class="sub">Hybrid (Angular & AngularJS)</td>
     <td colspan="2" class="red"></td>
     <td colspan="2" class="green"></td>
@@ -64,9 +75,10 @@ Since 9.16.0 we have introduced Angular support and the as such the build proces
     <td colspan="2" class="red"></td>
     <td colspan="2" class="green"></td>
   </tr>
+
 </table>
 
-The cumulocity.json manifest was in practice a module descriptor so with the new tools (which uses webpack as the module bundler) we can convert applications and plugin manifests into loadable webpack modules, by using a custom loader for 'cumulocity.json' files.
+The cumulocity.json manifest is in practice a module descriptor so with `@c8y/cli` (which uses webpack as a module bundler)  applications and plugin manifests are resolved and loaded into webpack as any other module, by using a custom loaders and resolvers.
 
 For example built-in AngularJS plugins are now included like this
 
@@ -78,14 +90,21 @@ import '@c8y/ng1-modules/measurements/cumulocity.json';
 import '@c8y/ng1-modules/map/cumulocity.json';
 ```
 
+And they can also be imported inside any js file:
+
+```javascript
+import './plugins/mywidget/cumulocity.json';
+```
+
 ## Running an existing app with @c8y/cli
 
-As you it becomes clear with [this diff](https://bitbucket.org/m2m/cumulocity-ui-plugin-examples/branches/compare/next%0Dc5431a1#diff) the changes to include the new tooling to an existing project are quite concise.
+As it can be observed in [this diff](https://bitbucket.org/m2m/cumulocity-ui-plugin-examples/branches/compare/next%0Dc5431a1#diff) the changes to include the new tooling to an existing project are quite concise.
 
-In the new [@c8y/cli](/guides/web/angular#cli) you would use the application cumulocity.json as the entry point.
+In [@c8y/cli](/guides/web/angular#cli) the entry point of an application can be a cumulocity.json application manifest or a plain javascript file.
 
-```
+```bash
 npx c8ycli serve ./cumulocity.json
+npx c8ycli serve ./src/main.js
 ```
 
 ## Using target files
@@ -100,11 +119,11 @@ npx c8ycli serve node_modules/@c8y/ng1-modules/apps/cockpit/cumulocity.json --en
 Although the modifications to the application is read from the target file, the definition of application to run or build must be passed as an argument to the cli.
 
 
-## Alternative  to target files
+## Alternative to target files
 
 As an alternative to target files developers should now use [applications options](/guides/web/angular#applications-options).
 
-There is no alternative to mutating the list of imported plugins. The recomended approach is to explicitely import the required modules.
+There is no alternative to mutating the list of imported plugins. The recommended approach is to explicitly import the required modules.
 
 
 

@@ -422,6 +422,8 @@ $ curl -F "data=@<PATH_TO_YOUR_ZIP_FILE>" \
 	     "<URL>/application/applications/<APPLICATION_ID>/binaries"
 ```
 
+> **Important**: The **Microservice hosting** feature must be activated on your tenant, otherwise your request will return an error message like "security/Forbidden, access is denied". This feature is not assigned to tenants by default, so trial accounts won't have it. You shall write an email to [support@cumulocity.com](mailto:support@cumulocity.com) and request its activation.
+
 
 **Step 3 - Subscribe to microservice**
 

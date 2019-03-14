@@ -10,11 +10,11 @@ Solche Konfigurationssnapshots sind beispielsweise nützlich, um die gleiche Kon
 
 Klicken Sie **Konfigurations-Repository** im Menü **Management** im Navigator, um alle verfügbaren Konfigurationen anzuzeigen. Jeder Eintrag enthält den Konfigurationsnamen, das Gerät, von welchem die Konfiguration stammt und den Zeitpunkt des Uploads.  
 
-![Konfigurations-Repository](/guides/images/benutzerhandbuch/devmgmt-configuration-repository.png)
+![Konfigurations-Repository](/guides/images/benutzerhandbuch/DeviceManagement/devmgmt-management-configrepo.png)
 
 Um einen Konfigurationssnapshot zu öffnen, klicken Sie auf den entsprechenden Eintrag. Sie können die Angaben hier bearbeiten. Klicken Sie **Speichern**,um Ihre Änderungen zu speichern. Nähere Informationen zu den einzelnen Feldern finden Sie im nächsten Abschnitt. 
 
-![Konfigurationssnapshot](/guides/images/benutzerhandbuch/devmgmt-configuration-details.png)
+![Konfigurationssnapshot](/guides/images/benutzerhandbuch/DeviceManagement/devmgmt-management-configrepoedit.png)
 
 ### Hinzufügen einer Snapshot-Konfiguration aus einer Datei 
 
@@ -28,7 +28,7 @@ Um eine neue Konfiguration aus einer Datei hinzuzufügen, führen Sie folgende S
 
 Der Snapshot wird dem Konfigurations-Repository hinzugefügt.
 
-![Konfigurationssnapshot hinzufügen](/guides/images/benutzerhandbuch/devmgmt-config-snapshot-new.png)
+![Konfigurationssnapshot hinzufügen](/guides/images/benutzerhandbuch/DeviceManagement/devmgmt-management-configrepo-addsnapshot.png)
 
 
 ### Laden eines Snapshots von einem Gerät
@@ -42,7 +42,7 @@ Um eine Konfiguration von einem Gerät zu laden, führen Sie folgende Schritte a
 
 Der geladene Snapshot wird zum Konfigurations-Repository hinzugefügt.
 
-<img src="/guides/images/benutzerhandbuch/devmgmt-snapshot-retrieve.png" alt="Konfigurationssnapshot laden" style="max-width: 75%"> 
+![Retrieve snapshot](/guides/images/benutzerhandbuch/DeviceManagement/devmgmt-devices-config-getnewsnapshot.png)
 
 ### Anwenden eines Konfigurationssnapshots auf ein Gerät
 
@@ -52,7 +52,7 @@ Um einen Konfigurationssnapshot auf ein Gerät anzuwenden, führen Sie folgende 
 2. Wählen Sie unter **Konfigurationssnapshot** eine Konfiguration aus der Auswahlliste.
 3. Klicken Sie **Snapshot an Gerät senden**, um den ausgewählten Snapshot an das Gerät zu senden. 
 
-![Senden eines Snapshots](/guides/images/users-guide/addsnap.png)
+![Senden eines Snapshots](/guides/images/benutzerhandbuch/DeviceManagement/devmgmt-devices-config-putsnapshot.png)
 
 ### Anwenden des Konfigurationssnapshots eines Geräts auf ein anderes Gerät
 

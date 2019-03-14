@@ -14,13 +14,13 @@ Open the **Firmware repository** from the **Management** menu in the navigator.
 
 The available firmware objects will be displayed, presented as cards in a grid.
 
-![Firmware List](/guides/images/users-guide/DeviceManagement/DevMgmt_FirmwareRepository.png)
+![Firmware List](/guides/images/users-guide/DeviceManagement/devmgmt-management-firmwarerepo.png)
 
 Click **Details** on a specific object to "turn around" its card and display details.
 
 In addition to the object name and version, you will here find the name of the file containing the firmware. 
 
-Moreover, several buttons allow you to update the information (see also "How to add a firmware object" below).
+Moreover, several buttons allow you to update the information (see the following section below).
 
 **How to add a firmware object**
 
@@ -52,7 +52,7 @@ Cumulocity offers the option to execute firmware or software updates for multipl
 2. Navigate to operation and select **Execute for the whole group**.
 3. Fill the form to schedule the bulk operation and click **Create**.
 
-The operation status can be viewed in the **Bulk Operation** tab of the selected group. For further information, refer to [Bulk Operations](#bulk-operations).
+The operation status can be viewed in the **Bulk operations** tab of the selected group. For further information, refer to [Bulk operations](#bulk-operations).
 
 ### <a name="credentials"></a>Managing device credentials
 
@@ -63,9 +63,7 @@ Click the arrow in the **Global roles** column of a device to open a list with a
 Click the menu icon at the right of a device to access the following functionalities:
 
 * **Edit** - To open the device credential details (see below).
-
 * **Disable** - To temporarily disconnect a device.
-
 * **Delete** - To delete the credentials of a device. This might be required if you have carried out a factory reset on a device. In this case, the device will often loose its assigned credentials. Delete it and continue with the normal [registration process](#device-registration) to re-register the device.
 
 In the details page of any particular device credentials you can

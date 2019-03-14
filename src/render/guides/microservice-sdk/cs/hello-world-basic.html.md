@@ -271,10 +271,43 @@ appname=sample_application
 ```bash
 	./deploy.sh -s {siteurl} -u {username} -p {password}  -an hello-world -f settings.ini
 ```
+**Microservice package and deploy**
+Cumulocity provides you with an utility tool for easy microservice packaging, deployment and subscription. The script requires running docker and can be found in a zip file `microservicesdk-win-dev-latest.zip`.
 
+```sh
+Invoke-WebRequest  http://resources.cumulocity.com/cssdk/releases/microservicesdk-win-dev-latest.zip -OutFile microservicesdk-win-dev-latest.zip
+```
+To show all possibilities, type
+```sh
+PS C:\microservicesdk-win-dev> .\microservice.ps1 --help
+```
+The response will be:
+```sh
+[INFO] Read input
+Following functions are available. You can run specify them in single execution:
+        pack - prepares deployable zip file. Requires following stucture:
+                /docker/Dockerfile
+                /docker/* - all files within the directory will be included in the docker build
+                /cumulocity.json
+        deploy - deploys applicaiton to specified address
+        subscribe - subscribes tenant to specified microservice application
+        help | --help - prints help
+Following options are available:
+        -dir | --directory              # Working directory. Default value'C:\microservicesdk-win-dev'
+        -n   | --name                   # Docker image name
+        -t   | --tag                    # Docker tag. Default value 'latest'
+        -d   | --deploy                 # Address of the platform the microservice will be uploaded to
+        -u   | --user                   # Username used for authentication to the platform
+        -p   | --password               # Password used for authentication to the platform
+        -te  | --tenant                 # Tenant used
+        -a   | --application    # Name upon which the application will be registered on the platform. Default value from --name parameter
+        -id  | --applicationId  # Applicaiton used for subscription purposes. Required only for solemn subscribe execution
+```
+For further information please visit our [website](https://cumulocity.com/guides/reference/microservice-package/)
 
 ###Improving the microservice
 The application starts executing from the entry point `public static void Main()` in Program class where the host for the application is created. The following shows an example of a program created by "create.sh".
+
 ```cs
 	namespace api
 	{
@@ -393,6 +426,12 @@ The API provides the following services:
 * ManagedObject - InventoryApi
 * Measurement - MeasurementApi
 
+For further information please visit our [website](https://cumulocity.com/guides/device-sdk/)
+
+**C# MQTT SDK**
+
+It is possible to use the C# MQTT SDK as a nuget-package.  A developer can use it to perform basic operations against the platform. For further information please visit our [website](https://cumulocity.com/guides/device-sdk/mqtt-examples)
+
 ### Building and deploying Hello World on Linux
 
 Download a script file to build a "Hello World" app. Wget utility is the best option to download a file.
@@ -425,7 +464,7 @@ For a working cake you need the "build.sh" or "build.ps1" file to bootstrap cake
 
 "build.cake" contains tasks representing a unit of work in Cake, and you may use them to perform specific work in a specific order:
 
-* Clean
+* Clean 
 
 * Build
 
@@ -489,4 +528,21 @@ appname=sample_application
 	./deploy.sh -s {siteurl} -u {username} -p {password}  -an hello-world -f settings.ini
 ```
 
+**Microservice package and deploy**
 
+Cumulocity provides you with an utility tool for easy microservice packaging, deployment and subscription. The script requires running docker and can be found here:
+
+```sh
+wget http://resources.cumulocity.com/examples/microservice
+```
+After that run
+
+```sh
+chmod +x microservice
+```
+
+To show all possibilities, type
+```sh
+/microservice help
+```
+For further information please visit our [website](https://cumulocity.com/guides/reference/microservice-package/)

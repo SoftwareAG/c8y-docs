@@ -4,16 +4,16 @@ layout: redirect
 order: 15
 ---
 
-Each UI application can be customised with a set a defined options.
+Each UI application can be customized with a set a defined options.
 The options objects are defined in json and read and merged at runtime with the following order:
 
 - Static options defined at build time
 - Dynamic fetched options on application boot
-- URL options that can be added by the user as url query params (mostly for debugging purposes)
+- URL options that can be added by the user as URL query params (mostly for debugging purposes)
 
 This process of collecting and merging the different options is executed by a thin bootstrap layer included in `@c8y/cli`.
 
-Although all of the options can be defined on any of the 3 levels some might not make sense runtime, as they just influence the build process, or require a complex object making it particularly tricky to  write as a url query param.
+Although all of the options can be defined on any of the 3 levels some might not make sense at runtime, as they just influence the build process, or require a complex object making it particularly tricky to  write as a URL query parameter.
 
 ### Static options
 
@@ -43,12 +43,12 @@ c8ycli build --app.contextPath=cockpit2 --app.dynamicOptionsUrl="/apps/public/pu
 
 ### Dynamic fetched options
 
-Using the static options `dynamicOptionsUrl` the app will try to load a json from the specified URL at boot time. In the platform's built-in applications this option is set to `/apps/public/public-options/options.json` as that mechanism to provide instance level and enterprise tenant customization customization.
-As this property is defined at the statically at build time, it is possible for application developer to decide if and where their apps should load the options json at runtime.
+Using the static options `dynamicOptionsUrl` the app will try to load a json from the specified URL at boot time. In the platform's built-in applications this option is set to `/apps/public/public-options/options.json` as that mechanism to provide instance level and enterprise tenant customization.
+As this property is defined statically at build time, it is possible for the application developer to decide if and where from their applications should load the dynamic fetched options at runtime.
 
 ### URL options
 
-These can just be appended to the url of the application as query parameters.
+These can just be appended to the URL of the application as query parameters.
 
 ```
 https://<instance domain>/apps/cockpit?dynamicOptionsUrl=/apps/my-options/options.json&rightDrawer:false
@@ -56,25 +56,25 @@ https://<instance domain>/apps/cockpit?dynamicOptionsUrl=/apps/my-options/option
 
 ### Options
 
-Here is a list of the built-in options. As in the end this is just a plain old javascript object this list can be easily extended  with any property a developer might want to include in his apps or extensions.
+Here is a list of the built-in options. As in the end this is just a plain old javascript object this list can be easily extended  with any property a developer might want to include in his applications or extensions.
 
 ```ts
 export class ApplicationOptions {
-  name: string; // To be saved to the the server
-  contextPath: string; // To be saved to the the server
-  key: string; // To be saved to the the server
+  name: string; // To be saved to the server
+  contextPath: string; // To be saved to the server
+  key: string; // To be saved to the server
   upgrade?: boolean; // true if the application is hybrid using Angular and angularJS simultaneously
   brandingEntry?: string; // the entry path to the branding
   tsConfigPath?: string; // path to tsCconfig if typescript is used, defaults to ./tsconfig.json
   entryModule?: string;
   indexTemplate?: string; // path to the index.html to be used, otherwise the default will be used
-  dynamicOptionsUrl?: string; // url to load the dynamic fetched options
+  dynamicOptionsUrl?: string; // URL to load the dynamic fetched options
   faviconUrl?: string; // URL for the favicon
-  brandingUrl?: string; // URL for a css that will replace the default branding
-  brandingCssVars?: { // Object with properties that will be converted to css custom properties
+  brandingUrl?: string; // URL for a CSS that will replace the default branding
+  brandingCssVars?: { // Object with properties that will be converted to CSS custom properties
     [key: string]: string
   };
-  languages?: { // Object with properties to add and change the languages available in the apps
+  languages?: { // Object with properties to add and change the languages available in the applications
     [langCode: string]: {
       name: string;
       nativeName: string;
@@ -97,8 +97,8 @@ export class ApplicationOptions {
   };
   storageLimitationFeatureEnabled?: boolean;
   companyName?: string; // Company name used to prompt the user about support staff
-  guideHrefTemplate?: string; // The full url for documentation , by default it's ${docsBaseUrl}${partialUrl}
-  docsBaseUrl?: string; // The base url for documentation
+  guideHrefTemplate?: string; // The full URL for documentation, by default it's ${docsBaseUrl}${partialUrl}
+  docsBaseUrl?: string; // The base URL for documentation
   contentSecurityPolicy?: string; // CSP string added to the index.html
   imports?: string[]; // legacy plugin imports
 }

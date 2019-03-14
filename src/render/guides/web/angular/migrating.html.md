@@ -4,7 +4,7 @@ layout: redirect
 order: 50
 ---
 
-Since 9.16.0 we have introduced Angular support and the as such the build process had to change. There is a transition period where both tools are expected to work.
+Since 9.16.0 we have introduced Angular support and as such the build process had to change. There is a transition period where both tools are expected to work.
 
 <!-- https://codepen.io/confraria/pen/VRrpPV -->
 <table style="width:100%;font-family:sans-serif" class="support-versions">
@@ -98,7 +98,7 @@ import './plugins/mywidget/cumulocity.json';
 
 ## Running an existing app with @c8y/cli
 
-As it can be observed in [this diff](https://bitbucket.org/m2m/cumulocity-ui-plugin-examples/branches/compare/next%0Dc5431a1#diff) the changes to include the new tooling to an existing project are quite concise.
+As observed in [this diff](https://bitbucket.org/m2m/cumulocity-ui-plugin-examples/branches/compare/next%0Dc5431a1#diff) the changes to include the new tooling to an existing project are quite concise.
 
 In [@c8y/cli](/guides/web/angular#cli) the entry point of an application can be a cumulocity.json application manifest or a plain javascript file.
 
@@ -109,10 +109,10 @@ npx c8ycli serve ./src/main.js
 
 ## Using target files
 
-Although target files are deprecated, it is still possible to use them to use them if the entry point of an application is a cumulocity.json manifest.
+Although target files are deprecated, it is still possible to use them if the entry point of an application is a cumulocity.json manifest.
 
 ```
-# To run cockpit with a specific target
+# To run the Cockpit application with a specific target
 npx c8ycli serve node_modules/@c8y/ng1-modules/apps/cockpit/cumulocity.json --env.target=mytarget.json
 ```
 

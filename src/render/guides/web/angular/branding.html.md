@@ -4,16 +4,16 @@ layout: redirect
 order: 30
 ---
 
-For styling the application global CSS created with [LESS](http://lesscss.org/) is used. These styles are based on boostrap 3, and the original less source is distributed via the npm package [@c8y/style](https://www.npmjs.com/package/@c8y/style).
+For styling the application global CSS created with [LESS](http://lesscss.org/) is used. These styles are based on Bootstrap 3, and the original LESS source is distributed via the npm package [@c8y/style](https://www.npmjs.com/package/@c8y/style).
 By extending these styles it is possible to change any detail of the app but the vast majority of developer want to change: colors, logos and fonts and these can be very easily achieved by replacing a few variables.
 
 To override the variables it is possible to use:
-- Less variables at build time
+- LESS variables at build time
 - Custom CSS properties (at build time or configurable at runtime)
 
 ## CSS custom properties
 
-Exposed via CSS custom properties there is only a subset of the less variables available.
+Exposed via CSS custom properties there is only a subset of the LESS variables available.
 Here is a list of the available variables.
 
 ```css
@@ -64,9 +64,9 @@ If you do not use the [@c8y/cli](/guides/web/angular#cli) make sure that you ins
 npm install @c8y/style
 ```
 
-1. Create a ```less-file``` called for instance ```branding.less```.
+1. Create a LESS file called for instance ```branding.less```.
 2. Save it inside a new folder, which can have any name you like.
-3. Inside this folder, create a subfolder for images.
+3. Inside this folder, create a sub folder for images.
 
 ```
 my-application
@@ -95,7 +95,7 @@ At this point we are able to change the desired variables according to our needs
 
 Let us change for example the most important color of your branding, the main color, called **brand-color**.
 
-This is done by setting the respective less variable to a new color.
+This is done by setting the respective LESS variable to a new color.
 
  ```less
  @brand-color: red;

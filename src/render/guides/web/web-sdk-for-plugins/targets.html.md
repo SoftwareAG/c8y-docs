@@ -4,7 +4,7 @@ title: Targets
 layout: redirect
 ------
 
-Target files are a json files that can be used to define a set of applications to build, configure options and or remove plugins for each application.
+Target files are JSON files that can be used to define a set of applications to build, configure options and or remove plugins for each application.
 
 Example:
 
@@ -14,7 +14,7 @@ Example:
   "options": { // runtime options to customize each option
     "globalTitle": "Acme IoT", // Browser title
     "hide_powered": true, // Toggle the 'Powered by' on the bottom of navigator
-    "supportUrl": false, // Customize the support url. A falsy value will hide the link.
+    "supportUrl": false, // Customize the support URL. A falsy value will hide the link.
     "rightDrawer": false, // Toggle the right drawer on the app
     "login_extra_link": { // Creates an extra link on login screen
       "url": "https://acme/eula",

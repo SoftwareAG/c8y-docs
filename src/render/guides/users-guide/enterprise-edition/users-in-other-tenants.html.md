@@ -57,7 +57,7 @@ Users can allow support, i.e. a management tenant user logging in as them. To do
 
 To log in as support user, use the following username:
 
-```plaintext
+```
 <support user>$<user>
 ```
 
@@ -65,7 +65,7 @@ To log in as support user, use the following username:
 
 Alternatively, use
 
-```plaintext
+```
 <support user>$
 ```
 
@@ -75,7 +75,7 @@ In this case, the support user will access the tenant with one of the administra
 
 Audit logs are created for each support user access and for the actions that support users perform. In the column "Who?" the author's name will be shown in form of:
 
-```plaintext
+```
 "support_user$user"
 ```
 	

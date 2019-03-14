@@ -141,7 +141,7 @@ In the details page of any particular device credentials you can
 * change the password for a device,
 * assign or remove permissions for an individual device by selecting/deselecting roles in the **Global roles** list. 
 
-![Device credentials details](/guides/images/users-guide/DeviceManagement/devmgmt-device-credential-details.png)
+![Device credentials details](/guides/images/users-guide/DeviceManagement/devmgmt-device-credentials-details.png)
 
 
 <!--

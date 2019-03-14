@@ -7,14 +7,15 @@ To clear the alarm, we just need to switch the condition at the bottom and addit
 
 	monitor.subscribe(FindAlarmResponse.CHANNEL);
 	...
-			if firstPos.distance > firstPos.maxDistance and secondPos.distance <= secondPos.maxDistance {
-				integer reqId:= integer.getUnique();
-				send FindAlarm(reqId, {"source":firstPos.source,
-				               "status":"ACTIVE","type":"c8y_GeofenceAlarm"}) to FindAlarm.CHANNEL;
-				on FindAlarmResponse(reqId = reqId) as alarmResponse
-				   and not FindAlarmResponseAck(reqId=reqId) {
-					send Alarm(alarmResponse.id, "c8y_GeofenceAlarm",
-					           firstPos.source, currentTime, "Device moved back into circular geofence",
-					           "CLEARED", "MAJOR", 1, new dictionary<string, any>) to Alarm.CHANNEL;
-				}
-			}
+	if firstPos.distance > firstPos.maxDistance and
+		secondPos.distance <= secondPos.maxDistance {
+		integer reqId:= integer.getUnique();
+		send FindAlarm(reqId, {"source": firstPos.source, 
+			"status": "ACTIVE", "type": "c8y_GeofenceAlarm"}) to FindAlarm.CHANNEL;
+		on FindAlarmResponse(reqId=reqId) as alarmResponse
+		   and not FindAlarmResponseAck(reqId=reqId) {
+			send Alarm(alarmResponse.id, "c8y_GeofenceAlarm",
+						firstPos.source, currentTime, "Device moved back into circular geofence",
+						"CLEARED", alarmResponse.alarm.severity, 1, new dictionary<string, any>) to Alarm.CHANNEL;
+		}
+	}

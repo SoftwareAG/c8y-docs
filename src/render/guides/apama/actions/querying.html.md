@@ -4,70 +4,14 @@ title: Querying Cumulocity data
 layout: redirect
 ---
 
-To interact with your historical data, you can use one of the following request-response event pairs to look up alarms.
+To interact with your historical data, you can use one of the following request-response event pairs to look up resources.
 
-<table class="confluenceTable"><colgroup><col style="width: 497.0px;"><col style="width: 146.0px;"><col style="width: 435.0px;"><col style="width: 29.0px;"><col style="width: 29.0px;"></colgroup>
+Example: To lookup for Alarms, you can send a FindAlarm request event with appropriate query parameters to FindAlarm.CHANNEL channel, in reponse you can expect 0 or more FindAlarmResponse events (depending on the number of resources that match the lookup request) and a FindAlarmResponseAck event on the FindAlarmResponse.CHANNEL channel. Similar functionality is also provided for lookup of ManagedObjects, Events, Measurements and Operations.
 
-<thead>
-
-<tr>
-
-<th style="text-align: left;" class="confluenceTh">To look up...</th>
-
-<th style="text-align: left;" class="confluenceTh">Send event of type</th>
-
-<th style="text-align: left;" class="confluenceTh">To channel</th>
-
-<th colspan="1" class="confluenceTh">With parameters</th>
-
-<th colspan="1" class="confluenceTh">Listen for events</th>
-
-</tr>
-
-</thead>
-
-<tbody>
-
-<tr>
-
-<td class="confluenceTd"><span class="inline-comment-marker" data-ref="ec78c032-c1b9-4fc5-b9bf-443fb0780597">Alarm</span></td>
-
-<td class="confluenceTd">FindAlarm</td>
-
-<td class="confluenceTd">FindAlarm.CHANNEL</td>
-
-<td colspan="1" class="confluenceTd">params dictionary can contain "source", "status" and "type" filters</td>
-
-<td colspan="1" class="confluenceTd"><span style="color: rgb(0,0,0);">FindAlarmResponse and then <span style="color: rgb(0,0,0);">FindAlarmResponseAck</span></span></td>
-
-</tr>
-
-<tr>
-
-<td class="confluenceTd">ManagedObject</td>
-
-<td class="confluenceTd">FindManagedObject</td>
-
-<td class="confluenceTd"><span>FindManagedObject.CHANNEL</span></td>
-
-<td colspan="1" class="confluenceTd">
-
-<span class="inline-comment-marker" data-ref="7aa4ba24-a2a4-4e8f-8c52-6ab6dae4c693">Either set the deviceId set to the identifier of the source, or the params dictionary can contain one or more of the following:</span>
-
-*   fragmentType
-*   type
-*   owner
-*   text
-*   childAssetId
-*   childDeviceId
-*   childAdditionId
-
-</td>
-
-<td colspan="1" class="confluenceTd">FindManagedObjectResponse and then FindManagedObjectResponseAck</td>
-
-</tr>
-
-</tbody>
-
-</table>
+|To look up|Request-Response Events|Example|
+|:---------|:-----------------|:---------|
+|ManagedObject|FindManagedObject <br/>FindManagedObjectResponse <br/>FindManagedObjectResponseAck|[Example](https://documentation.softwareag.com/onlinehelp/Rohan/Apama/v10-3/apama10-3/apama-webhelp/index.html#page/apama-webhelp%2Fco-ConApaAppToExtCom_cumulocity_querying_for_managed_objects.html%23)|
+|Alarm|FindAlarm <br/>FindAlarmResponse <br/>FindAlarmResponseAck|[Example](https://documentation.softwareag.com/onlinehelp/Rohan/Apama/v10-3/apama10-3/apama-webhelp/index.html#page/apama-webhelp%2Fco-ConApaAppToExtCom_cumulocity_querying_for_alarms.html%23)|
+|Event|FindEvent <br/>FindEventResponse <br/>FindEventResponseAck|[Example](https://documentation.softwareag.com/onlinehelp/Rohan/Apama/v10-3/apama10-3/apama-webhelp/index.html#page/apama-webhelp%2Fco-ConApaAppToExtCom_cumulocity_querying_for_events.html%23)|
+|Measurement|FindMeasurement <br/>FindMeasurementResponse <br/>FindMeasurementResponseAck|[Example](https://documentation.softwareag.com/onlinehelp/Rohan/Apama/v10-3/apama10-3/apama-webhelp/index.html#page/apama-webhelp%2Fco-ConApaAppToExtCom_cumulocity_querying_for_measurements.html%23)|
+|Operation|FindOperation <br/>FindOperationResponse <br/>FindOperationResponseAck|[Example](https://documentation.softwareag.com/onlinehelp/Rohan/Apama/v10-3/apama10-3/apama-webhelp/index.html#page/apama-webhelp%2Fco-ConApaAppToExtCom_cumulocity_querying_for_operations.html%23)|

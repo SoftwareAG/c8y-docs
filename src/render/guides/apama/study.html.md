@@ -6,6 +6,6 @@ layout: subsections
 collection: 'guides/apama/study'
 ---
 
-This section will give an in-depth example how you can create more complex rules. It will use multiple of the features explained before in the other sections of this guide. 
+This section will give an in-depth example how you can create more complex rules. It will use multiple of the features explained before in the other sections of this guide.
 
-If you are just starting with the Apama Event Processing Language please take a look at [<span class="inline-comment-marker" data-ref="039df6be-3966-4270-80ad-14af1e16088a">these examples</span>](http://cumulocity.com/guides/apama/examples)<span class="inline-comment-marker" data-ref="039df6be-3966-4270-80ad-14af1e16088a">.</span>
+If you are just starting with the Apama Event Processing Language please take a look at [these examples](/guides/apama/examples).

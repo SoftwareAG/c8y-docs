@@ -109,7 +109,9 @@ layout: redirect
 
 A managed object reference in the "child" and "parents" collections contains only "id", "name" and "self" properties.
 
-Not every GET response contains "parents" collections. It is required to pass "withParents=true" query param to have "parents" included.
+Not every GET response contains "parents" collections. It is required to pass "withParents=true" query param to have "parents" included. If you query the managed object "withParent=true" it will return a flat list of all parents and grandparents of the given object.
+
+> **Info:** If you query childDevices, only the children of the given device are returned without any grandchildren. 
 
 ### GET a representation of a managed object
 

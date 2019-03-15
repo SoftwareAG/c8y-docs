@@ -1,5 +1,5 @@
 ---
-title: Owa4
+title: Owa4x
 layout: redirect
 order: 10
 ---
@@ -48,6 +48,8 @@ Operation on Cars, Trucks, Bus+Train, Industrial Machinery etc. Digital Tachogra
  - Kline interface
  - Programmable 9-axis sensor (Accelerometer / Gyroscope & Magnetometer)
 
+![Owasys4x](/guides/images/devices/owasys4x_interface.png)
+
 ### PSU:
 
  - Robust for Automotive
@@ -58,3 +60,7 @@ The products of the owa4X family are predestined for all telematics applications
 [Interfaces and connectivity options](https://www.owasys.com/en/products/owa4x#interfaces) and well as [full technical specifications](https://www.owasys.com/en/products/owa4x#technical) can be found on the [owasys web page](http://www.owasys.com/).
 
 [Owa4x](http://www.owasys.com/en/products/owa4x)
+
+### Installation, configuration and integration to Cumulocity
+
+For more info, refer to [Owasys3x > Integration with Cumulocity](/guides/devices/owasys3x#cumulocity-integration)

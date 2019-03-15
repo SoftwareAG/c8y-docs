@@ -68,9 +68,9 @@ public class App {
     public static void main(String[] args) throws Exception {
 
         // client, user and device details
-        final String serverUrl   = "tcp://mqtt.cumulocity.com";
+        final String serverUrl   = "tcp://mqtt.cumulocity.com";     /* ssl://mqtt.cumulocity.com:8883 for a secure connection */
         final String clientId    = "my_mqtt_java_client";
-        final String device_name = "My new MQTT device";
+        final String device_name = "My Java MQTT device";
         final String tenant      = "<<tenant>>";
         final String username    = "<<username>>";
         final String password    = "<<password>>";
@@ -102,12 +102,24 @@ public class App {
 
                 System.out.println("Received operation " + payload);
                 if (payload.startsWith("510")) {
-                    System.out.println("Simulating device restart...");
-                    client.publish("s/us", "501,c8y_Restart".getBytes(), 2, false);
-                    System.out.println("...restarting...");
-                    Thread.sleep(TimeUnit.SECONDS.toMillis(1));
-                    client.publish("s/us", "503,c8y_Restart".getBytes(), 2, false);
-                    System.out.println("...done...");
+                    // execute the operation in another thread to allow the MQTT client to
+                    // finish processing this message and acknowledge receipt to the server
+                    Executors.newSingleThreadScheduledExecutor().execute(new Runnable() {
+                        public void run() {
+                            try {
+                                System.out.println("Simulating device restart...");
+                                client.publish("s/us", "501,c8y_Restart".getBytes(), 2, false);
+                                System.out.println("...restarting...");
+                                Thread.sleep(TimeUnit.SECONDS.toMillis(5));
+                                client.publish("s/us", "503,c8y_Restart".getBytes(), 2, false);
+                                System.out.println("...done...");
+                            } catch (MqttException e) {
+                                e.printStackTrace();
+                            } catch (InterruptedException e) {
+                                e.printStackTrace();
+                            }
+                        }
+                    });
                 }
             }
         });

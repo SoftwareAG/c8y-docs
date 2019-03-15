@@ -1,12 +1,12 @@
 ---
-title: Owa4
+title: Owa4x
 layout: redirect
-order: 30
+order: 10
 ---
 
 ### Open and powerful IoT gateway/ New Generation Linux Wireless Embedded Computer
 
-Powerful Linux IoT Gateway, to process data coming from wired and wireless sensors/devices/peripherals (4 CAN interfaces). The owa4X sits close to your assets, in order to monitor and control them, sending just the meaningful information to cloud services or custom control centre.
+Powerful Linux IoT Gateway, to process data coming from wired and wireless sensors/devices/peripherals (4 CAN interfaces). The owa4X sits close to your assets, in order to monitor and control them, sending just the meaningful information to cloud services or custom control center. Intelligent industrial-grade IoTGateway developed to withstand the processing and environmental demands in the real world. Additionally, the owa4x is available exclusively in a robust plastic housing which optionally meets the protection class standard IP67.
 
 ### Ideal for:
 
@@ -35,14 +35,20 @@ Operation on Cars, Trucks, Bus+Train, Industrial Machinery etc. Digital Tachogra
  - Wifi +BT4.2.
  - 10 configurable digital I/Os
  - 4 analog inputs.
- - Maxim 1wire
- - micrSD card holder
+ - Maxim 1wire	
+ - Selectable SIM card design - Micro SIM or eSIM.
  - USB Host2.0.
  - 3 external RS232Ports
  - One RS485 port.
  - Ethernet 10/100 BastT.
+ - 100Mbps Ethernet.
+ - Dead reckoning feature.
  - Vout 5V power output (500mA max.)
  - Fudio Codec
+ - Kline interface
+ - Programmable 9-axis sensor (Accelerometer / Gyroscope & Magnetometer)
+
+![Owasys4x](/guides/images/devices/owasys4x_interface.png)
 
 ### PSU:
 
@@ -54,3 +60,7 @@ The products of the owa4X family are predestined for all telematics applications
 [Interfaces and connectivity options](https://www.owasys.com/en/products/owa4x#interfaces) and well as [full technical specifications](https://www.owasys.com/en/products/owa4x#technical) can be found on the [owasys web page](http://www.owasys.com/).
 
 [Owa4x](http://www.owasys.com/en/products/owa4x)
+
+### Installation, configuration and integration to Cumulocity
+
+For more info, refer to [Owasys3x > Integration with Cumulocity](/guides/devices/owasys3x#cumulocity-integration)

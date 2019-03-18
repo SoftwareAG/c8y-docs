@@ -54,16 +54,19 @@ This will create a new console application _hello-mqtt-cs_ in the current direct
 #### Adding the MQTT C# client library
 
 Edit the _hello-mqtt-cs.csproj_ in the _hello-mqtt-cs_ folder. Add a dependency to the Cumulocity SDK MQTT.
+
 ```xml
   <ItemGroup>
     <PackageReference Include="Cumulocity.SDK.MQTT" Version="0.1.0" />
   </ItemGroup>
+```
 
+Alternative
+
+```shell
+dotnet add package Cumulocity.SDK.MQTT
 ```
-Alternantive
-```
-$ dotnet add package Cumulocity.SDK.MQTT
-```
+
 #### Creating a C# application
 
 Edit the _Programs.cs_ file in the folder _hello-mqtt-java_ with the following content:
@@ -88,13 +91,13 @@ namespace HelloJsonExample
 		}
 
 		private static async Task RunClientAsync()
-		{			
+		{
 			const string serverUrl = "mqtt.cumulocity.com";
 			const string clientId = "my_mqtt_cs_client";
 			const string device_name = "My new MQTT device";
 			const string user = "<<tenant>>/<<username>>";
 			const string password = "<<password>>";
-			
+
 			//connections details
 			var cDetails = new ConnectionDetailsBuilder()
 				.WithClientId(clientId)

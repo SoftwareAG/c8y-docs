@@ -251,7 +251,7 @@ $ echo testuser:test123 | base64
 dGVzdHVzZXI6dGVzdDEyMwo=
 ```
 
-and your authorization header would like like `"Authorization": "Basic dGVzdHVzZXI6dGVzdDEyMwo="`.
+and your authorization header would look like `"Authorization": "Basic dGVzdHVzZXI6dGVzdDEyMwo="`.
 
 #### Step 1 - Create the application
 
@@ -404,7 +404,7 @@ Once you have tested your microservice locally, you can deploy it on the Cumuloc
 * The application created on the previous steps.
 * The ZIP file built with Maven on the previous steps.
 
-Make a POST request to upload your ZIP file as follow:
+You need to upload the ZIP file to the Cumulocity platform and this might require some seconds, depending on your internet connection. Make a POST request to upload your ZIP file as follows:
 
 ```avrasm
 POST <URL>/application/applications/<APPLICATION_ID>/binaries
@@ -424,17 +424,26 @@ $ curl -F "data=@<PATH_TO_YOUR_ZIP_FILE>" \
 
 > **Important**: The **Microservice hosting** feature must be activated on your tenant, otherwise your request will return an error message like "security/Forbidden, access is denied". This feature is not assigned to tenants by default, so trial accounts won't have it. You shall write an email to [support@cumulocity.com](mailto:support@cumulocity.com) so they can assist you with the activation. Note that this is a paid feature.
 
+It is also possible to upload the ZIP file directly on your tenant. Load the Administration application and navigate to **Application** > **Own applications** and click on the **Add application** button. On the pop-up menu, click on **Upload microservice**.
 
+![Upload microservice](/guides/images/microservices-sdk/admin-microservice-upload.png)
 
+Locate the ZIP file of your microservice application and click on **Subscribe** to the microservice afterwards.
+
+![Subscribe microservice](/guides/images/microservices-sdk/admin-microservice-subscribe-up.png)
+
+Once the ZIP file has been uploaded successfully, you will see a new microservice application created.
 
 #### Test the deployed microservice
 
-The `curl` command can be used to verify that the microservice is up and running using the <kdb>/health</kdb> endpoint:
+The `curl` command can be used to verify that the microservice is up and running using the <kbd>/health</kbd> endpoint:
 
 ```shell
 $ curl -H "Authorization: <AUTHORIZATION>" \
-       <URL>/service/hello-world/health
+       <URL>/service/my-first-microservice/health
 ```
+
+You can also test your microservice with your favorite browser. Remember to enter your user credentials using &lt;tenant>/&lt;username> and your password.
 
 ### Improving the microservice
 

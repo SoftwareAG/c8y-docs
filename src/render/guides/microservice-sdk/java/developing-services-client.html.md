@@ -4,7 +4,7 @@ layout: redirect
 title: Developing Java clients for services
 ---
 
-This section describes the Cumulocity Email and SMS API and shows how to access them using the Cumulocity Java Client.
+This section describes the Cumulocity SMS API and shows how to access them using the Cumulocity Java Client.
 
 ### Using the services platform
 
@@ -25,18 +25,18 @@ The following code snippet shows how to obtain a handle to the SMS API from Java
 
     SmsMessagingApi smsMessagingApi = platform.getSmsMessagingApi();
 
-Using this handle, you can send and retrieve the SMS messages from Java by calling its functions. 
+Using this handle, you can send and retrieve the SMS messages from Java by calling its functions.
 
 #### Prerequisites
 
-##### Assigning required roles 
+##### Assigning required roles
 
 To use the SMS messaging API the user should have the required roles such as 'SMS_ADMIN' for sending and 'SMS_READ' for receiving messages.
 
 Refer to [Administration > Managing permissions](/guides/users-guide/administration#managing-permissions) in the User guide.
 
 ##### Choosing a SMS provider
-  
+
 **OpenIT**
 
 OpenIT credentials can be assigned using the Administration application. Click **OpenIT credentials** in the navigator and save these credentials for your tenant.
@@ -98,7 +98,7 @@ Sender address:
         "value": "<The phone number all SMS will be sent from (provided by Ericsson DCP)>"
       }
 
-Sender name: 
+Sender name:
 
       {
         "category": "messaging",
@@ -173,7 +173,7 @@ Provider:
         "key": "provider",
         "value": "tropo"
       }
- 
+
 Base URL:
 
       {
@@ -182,7 +182,7 @@ Base URL:
         "value": "<url>"
       }
 
-Credentials: 
+Credentials:
 
       {
         "category": "messaging",
@@ -198,7 +198,7 @@ Sender address:
         "value": "cumulocity"
       }
 
-Sender name: 
+Sender name:
 
       {
         "category": "messaging",
@@ -222,7 +222,7 @@ To send a SMS message using the API, prepare the message with the "send message 
 
 #### Receiving all messages
 
-Not every SMS provider supports receiving messages. 
+Not every SMS provider supports receiving messages.
 
 To receive all SMS messages you can use the API as follows:
 
@@ -230,7 +230,7 @@ To receive all SMS messages you can use the API as follows:
 
 #### Receiving a specific message
 
-Not every SMS provider supports receiving messages. 
+Not every SMS provider supports receiving messages.
 
 To receive a specific SMS message you can use the API as follows:
 
@@ -281,7 +281,7 @@ Receiving all messages:
             }
          ]
     }
-    
+
 Receiving a specific message:
 
     GET /service/messaging/smsmessaging/inbound/registrations/tel:<receiver phone number>/messages/<message id>

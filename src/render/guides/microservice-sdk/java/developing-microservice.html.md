@@ -171,63 +171,77 @@ Properties used by a microservice are:
 
 The microservice settings module provides two features:
 
-* Configure microservice by defining tenant options
+* Configure a microservice by defining tenant options
 * Override existing properties -- tenant options can override default values from properties files
 
-Microservice loads tenant options for category specified by microservice context path. When context path is not provided in microservice manifest, application name is used.
-Options can be configured for application owner or subscriber. Subscriber can override owner's option value only when such option is defined as editable.
-Settings are lazy cached for 10 minutes, so when they were accessed previously, user must wait remaining time to see change is applied.
-When access attempt occurs to fetch settings without tenant context been specified, application owner is used to complete the request.  
+The microservice loads the tenant options for the category specified by the microservice context path. When the context path is not provided in the microservice manifest, the application name is used.
 
-> **Info:** For security reasons functionality is not available when running microservice in legacy mode, i.e. local development or RPM installation.
+Options can be configured for the application owner or the subscriber. The subscriber can override the owner's option value only when such option is defined as editable.
+
+Settings are lazy cached for 10 minutes, so when they were accessed previously, the user must wait the remaining time to see the change being applied.
+When the access attempt occurs to fetch settings without the tenant context being specified, the application owner is used to complete the request.  
+
+> **Info:** For security reasons the functionality is not available when running the microservice in legacy mode, i.e. local development or RPM installation.
 
 Tenant option settings can be accessed in two ways:  
 
 Using Environment:
 
+```java
     @Autowired
     private Environment enviroment;  
      
     public int getAccessTimeout() {
         return environment.getProperty("access.timeout", Integer.class, 30);
     }
+```
 
 Using Settings Service:
 
+```java
     @Autowired
     private MicroserviceSettingsService settingsService;
     
     public String getAccessTimeout() {
         return settingsService.get("access.timeout");
     }
+```
     
-Settings can be encrypted using "*credentials.*" prefix for tenant option key. Those will be decrypted and became available within microservice environment.
-Defining tenant options for microservice with same key as was defined in configuration files, such as *.properties or manifest file, will override the particular property. 
+Settings can be encrypted by using the "*credentials.*" prefix for the tenant option key. They will be decrypted and become available within the microservice environment.
+
+Defining tenant options for a microservice with the same key as was defined in the configuration files, such as *.properties or manifest file, will override the particular property. 
 
 Example:
-There is a property defined in _application.properties_ file of microservice hello-world with context path _helloworld_:
 
+There is a property defined in the _application.properties_ file of the microservice hello-world with context path _helloworld_:
+
+```java
     access.timeout=25
+```
     
-Now microservice owner can override it by defining following setting in cumulocity.json manifest file.
+Now the microservice owner can override it by defining the following setting in the cumulocity.json manifest file.
     
-      "settings":[
+```json
+     "settings":[
         { "key": "access.timeout",
           "defaultValue": "35",
           "editable": true
         }
       ]
+```
 
-Because _access.timeout_ setting is defined as editable, subscriber can override it by creating own tenant option via REST API:
+Because the _access.timeout_ setting is defined as editable, the subscriber can override it by creating an own tenant option via REST API:
 
+```http
     POST {{url}}/tenant/options
     {
    	    "category": "helloworld",
    	    "key": "access.timeout",
    	    "value": "40"
    	}
+```
    	
-> **Note:** you cannot override property injected by spring `@Value("${property.name}")`
+> **Note:** you cannot override a property injected by spring `@Value("${property.name}")`.
 
 ### Logging
 

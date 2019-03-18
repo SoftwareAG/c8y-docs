@@ -23,26 +23,26 @@ Building and deploying "Hello World" on Windows is similar to the way it is done
 
 Download a script file to build a "Hello World" application. Manage the version of scripts and replace latest to the right version number.
 
-```bash
+```shell
 Invoke-WebRequest  http://resources.cumulocity.com/cssdk/releases/microservicesdk-win-dev-latest.zip -OutFile microservicesdk-win-dev-latest.zip
 ```
 
 The latest can be replaced by the version number e.g. microservicesdk-lin-dev-{X.X.X}.zip.
 
 Once you have downloaded the source, unzip the file.
-```bash
+```shell
 Expand-Archive c:\microservicesdk-win-dev-latest.zip -DestinationPath c:\microservicesdk-win-dev-latest
 ```
 Change the current folder and navigate to a microservicesdk folder.
-```bash
+```shell
 cd microservicesdk-win-dev-latest
 ```
 Make a sure that’s uses correct a sdk version - 2.0.2 or define which .NET Core SDK version is used when you run .NET Core CLI commands
-```bash
+```shell
 dotnet new globaljson --sdk-version 2.0.2
 ```
 Run the script "create.ps1" to create a sample project, provide the name of the project and the API application.
-```bash
+```shell
 ./create.ps1
 ```
 Execute the bootstrapper script to build the application and an image from a Docker file.
@@ -74,17 +74,17 @@ choco install curl
 **Step 1 - Create application**
 
 If the application does not exist, create a new application on a platform:
-```
+```http
     POST {URL}/application/applications
 ```
 HEADERS:
-```
+```http
     "Authorization": "{AUTHORIZATION}"
     "Content-Type": "application/vnd.com.nsn.cumulocity.application+json"
     "Accept: application/vnd.com.nsn.cumulocity.application+json"
 ```
 BODY:
-```
+```http
     {
             "name": "{APPLICATION_NAME}",
             "type": "MICROSERVICE",
@@ -92,8 +92,8 @@ BODY:
     }
 ```
 Example:
-```bash
-    $ curl -X POST -s \
+```shell
+      curl -X POST -s \
       -d "{"name":"hello-microservice-1","type":"MICROSERVICE","key":"hello-microservice-1-key"}" \
       -H "Authorization: {AUTHORIZATION}" \
       -H "Content-Type: application/vnd.com.nsn.cumulocity.application+json" \
@@ -101,7 +101,7 @@ Example:
       "{URL}/application/applications"
 ```
 Example response:
-```
+```json
     {
         "availability": "PRIVATE",
         "id": "{APPLICATION_ID}",
@@ -126,16 +126,16 @@ Example response:
 If the application has been created correctly, you can get the application ID from the response.
 
 **Step 2 - Acquire microservice bootstrap user**
-```
+```http
     GET {URL}/application/applications/{APPLICATION_ID}/bootstrapUser
 ```
 HEADERS:
-```
+```http
     "Authorization": {AUTHORIZATION}
     "Content-Type": application/vnd.com.nsn.cumulocity.user+json
 ```
 Example response:
-```bash
+```json
     HTTP/1.1 200 Ok
     Content-Type: application/vnd.com.nsn.cumulocity.user+json
     {
@@ -147,7 +147,7 @@ Example response:
 **Step 3 - Run microservice locally**
 
 The image is already added to the local docker repository during the build. List all the docker repository images available:
-```bash
+```shell
 $ docker images
 
 REPOSITORY          TAG                 IMAGE ID            CREATED             SIZE
@@ -159,19 +159,19 @@ After you find the image in the list, run the docker container for the microserv
 $ docker run -e C8Y_BASEURL={URL} -e C8Y_BOOTSTRAP_TENANT={BOOTSTRAP_TENANT} -e C8Y_BOOTSTRAP_USER={BOOTSTRAP_USERNAME} -e C8Y_BOOTSTRAP_PASSWORD={BOOTSTRAP_USER_PASSWORD} -e C8Y_MICROSERVICE_ISOLATION=MULTI_TENANT -i -t {DOCKER_REPOSITORY_IMAGE}:{TAG}
 ```
 **Step 4 - Subscribe to microservice**
-```
+```http
     POST {URL}/tenant/tenants/{TENANT_ID}/applications
 ```
   HEADERS:
-```
+```http
     "Authorization": "{AUTHORIZATION}"
 ```
   BODY:
-```
+```json
     {"application":{"id": "{APPLICATION_ID}"}}
 ```
   Example:
-```bash
+```shell
     curl -X POST -d "{"application":{"id": "{APPLICATION_ID}"}}"  \
     -H "Authorization: {AUTHORIZATION}" \
     -H "Content-type: application/json" \
@@ -182,18 +182,18 @@ $ docker run -e C8Y_BASEURL={URL} -e C8Y_BOOTSTRAP_TENANT={BOOTSTRAP_TENANT} -e 
 
 Now you can verify if your application is running by executing
 
-```bash
+```shell
 curl -H "Authorization: {AUTHORIZATION}" \
   {URL}/service/hello/api/values
 ```
 The expected result is:
-```xml
+```json
 ["value1","value2"]
 ```
 
 ### Runnning application from inside the IDE
 It is possible to check whether the application communicates with the platform by defining relevant environmental variables in `launchSettings.json`. This file sets up the different launch environments that Visual Studio can launch automatically. Here's a snippet of the default `launchSettings.json`.
-```
+```json
 {
   "iisSettings": {
     "windowsAuthentication": false,
@@ -254,35 +254,35 @@ appname=sample_application
 	* The script looks for a settings.ini in the same directory. If found, it uses the credentials and tenant URL from that file.
 	* If settings.ini is not found, an error is shown.
 
-```bash
+```shell
 	./deploy.ps1
 ```
 * Call the script with the .ini name
 	* Loads the credentials and tenant URL from settings_alternativ.ini.
 	* If settings_alternative.ini is not found, an error is shown.
 
-```bash
+```shell
 	./deploy.ps1 -f settings.ini
 ```
 
 * Merge the given arguments and ini configuration. Parameters from the file are overwritten by explicitly defined parameters.
 	* deploy.ps1  -an hello-world -f settings_alternative.ini
 
-```bash
+```shell
 	./deploy.sh -s {siteurl} -u {username} -p {password}  -an hello-world -f settings.ini
 ```
 **Microservice package and deploy**
 Cumulocity provides you with an utility tool for easy microservice packaging, deployment and subscription. The script requires running docker and can be found in a zip file `microservicesdk-win-dev-latest.zip`.
 
-```sh
+```shell
 Invoke-WebRequest  http://resources.cumulocity.com/cssdk/releases/microservicesdk-win-dev-latest.zip -OutFile microservicesdk-win-dev-latest.zip
 ```
 To show all possibilities, type
-```sh
+```shell
 PS C:\microservicesdk-win-dev> .\microservice.ps1 --help
 ```
 The response will be:
-```sh
+```shell
 [INFO] Read input
 Following functions are available. You can run specify them in single execution:
         pack - prepares deployable zip file. Requires following stucture:
@@ -355,7 +355,7 @@ Method BuildWebHost performs the following tasks:
 
 * Configures the LoggerFactory
 
-* Specifies the Startup class with the UseStartup&#60;TStartup&#62; 
+* Specifies the class with the UseStartup&#60;TStartup&#62; 
 
 An example application must include Startup class. As the name suggests, it is executed first when the application starts.
 ```cs
@@ -384,9 +384,9 @@ An example application must include Startup class. As the name suggests, it is e
             app.UseBasicAuthentication();
             app.UseMvcWithDefaultRoute();
         }
-
     }
 ```
+
 Startup.cs responsibilities:
 
 * Setup configuration in the Startup constructor
@@ -394,13 +394,13 @@ Startup.cs responsibilities:
 * Setup the middleware pipeline in Configure
 
 **Dockerfile** created by "create.ps1":
-
+```
 	FROM microsoft/dotnet:2.0-runtime
 	WORKDIR /app
 	COPY ./publish/Web ./
 	ENV SERVER_PORT 4700
 	ENTRYPOINT ["dotnet", "api.dll"]
-
+```
 **Dockerfile** defines what goes on in the environment inside a container:
 
 * Sets the working directory
@@ -435,36 +435,34 @@ It is possible to use the C# MQTT SDK as a nuget-package.  A developer can use i
 ### Building and deploying Hello World on Linux
 
 Download a script file to build a "Hello World" app. Wget utility is the best option to download a file.
-```bash
+```shell
 	sudo wget  http://resources.cumulocity.com/cssdk/releases/microservicesdk-lin-dev-latest.zip
 ```
 The latest can be replaced by the version number e.g. microservicesdk-lin-dev-{X.X.X}.zip.
 
 Once you have downloaded the source, unzip the file.
-```bash
+```shell
 	unzip microservicesdk-lin-dev-latest.zip -d  microservicesdk-latest
 ```
 Change the current folder, to navigate to a microservicesdk folder.
-```bash
+```shell
 	cd microservicesdk-latest
 ```
 Run the script "create.sh" to create a sample project, provide the name of the project and the API application.
-```bash
+```shell
 	./create.sh
 
 	Enter the solution name:
-
 	<<demo>>
 
 	Enter the name of a web API project:
-
 	<<api>>
 ```
 For a working cake you need the "build.sh" or "build.ps1" file to bootstrap cake and the "build.cake" file. "build.sh" and "build.ps1" are bootstrapper scripts that ensure you have Cake and other required dependencies installed. The bootstrapper scripts are also responsible for invoking Cake. "Build.cake" is the actual build script.
 
 "build.cake" contains tasks representing a unit of work in Cake, and you may use them to perform specific work in a specific order:
 
-* Clean 
+* Clean
 
 * Build
 
@@ -473,15 +471,15 @@ For a working cake you need the "build.sh" or "build.ps1" file to bootstrap cake
 * SingleDockerImage
 
 Execute the bootstrapper script, to build the application and an image from a Docker file.
-```bash
+```shell
 	./build.sh
 ```
 Launch the Docker container with the command
-```bash
+```shell
 	docker run -p 8999:4700 imagename:latest
 ```
 Check the status of an application that is running inside the Docker container.
-```bash
+```shell
 	curl http://localhost:8999/api/values
 ```
 In order to deploy the application run the deploy script. You must provide the correct URL and credentials in this script.
@@ -509,7 +507,7 @@ appname=sample_application
 	* The script looks for a settings.ini in the same directory. If found, uses the credentials and tenant URL from that file.
 	* If settings.ini is not found, an error is shown.
 
-```bash
+```shell
 	./deploy.sh
 ```
 
@@ -517,14 +515,14 @@ appname=sample_application
 	* Loads the credentials and tenant URL from settings_alternativ.ini.
 	* If settings_alternative.ini is not found, an error is shown.
 
-```bash
+```shell
 	./deploy.sh -f settings.ini
 ```
 
 * Merge the given arguments and ini configuration. Parameters from the file are overwritten by explicitly defined parameters.
 	* deploy.sh  -an hello-world -f settings_alternative.ini
 
-```bash
+```shell
 	./deploy.sh -s {siteurl} -u {username} -p {password}  -an hello-world -f settings.ini
 ```
 
@@ -532,17 +530,17 @@ appname=sample_application
 
 Cumulocity provides you with an utility tool for easy microservice packaging, deployment and subscription. The script requires running docker and can be found here:
 
-```sh
+```shell
 wget http://resources.cumulocity.com/examples/microservice
 ```
 After that run
 
-```sh
+```shell
 chmod +x microservice
 ```
 
 To show all possibilities, type
-```sh
+```shell
 /microservice help
 ```
 For further information please visit our [website](https://cumulocity.com/guides/reference/microservice-package/)

@@ -17,12 +17,12 @@ Will create a new device for the serial number in the inventory if not yet exist
 | `processingMode` | string | **Optional**. Processing mode|
 
 **Example**
-
+```cs
     await cl.StaticInventoryTemplates
     		.DeviceCreation("myDevice",
                             "myType",
                             (e) => { return Task.FromResult(false); });
-
+```
 ##### Child device creation (101)
 
 Will create a new child device for the current device. The newly created object will be added as child device. Additionally, an externalId for the child will be created with type "c8y_Serial" and the value a combination of the serial of the root device and the unique child ID.
@@ -37,10 +37,10 @@ Will create a new child device for the current device. The newly created object 
 | `processingMode` | string | **Optional**. Processing mode|
 
 **Example**
-
+```cs
     await cl.StaticInventoryTemplates
     		.ChildDeviceCreationAsync("D32Q", "Device Name", "c8y_MQTTDevice", (e) => { return Task.FromResult(false); });
-
+```
 ##### Get child devices (105)
 
 Will trigger the sending of child devices of the device.
@@ -51,7 +51,7 @@ Will trigger the sending of child devices of the device.
 | `processingMode` | string | **Optional**. Processing mode|
 
 **Example**
-
+```cs
     cl.ChildrenOfDeviceEvt += Cl_ChildrenOfDeviceEvt;
 
     await cl.StaticInventoryTemplates.GetChildDevices((e) => { return Task.FromResult(false); });
@@ -63,7 +63,7 @@ Will trigger the sending of child devices of the device.
                 Console.WriteLine(device);
             }
         }
-
+```
 ##### Configure hardware (110)
 
 Will update the hardware properties of the device.
@@ -79,13 +79,13 @@ Parameters:
 | `processingMode` | string | **Optional**. Processing mode|
 
 **Example**
-
+```cs
     await cl.StaticInventoryTemplates
     		.ConfigureHardware("S123456789",
                                 "model",
                                 "1.0",
                                 (e) => { return Task.FromResult(false); });
-
+```
 ##### Configure mobile (111)
 
 Will update the mobile properties of the device.
@@ -105,7 +105,7 @@ Parameters:
 | `processingMode` | string | **Optional**. Processing mode|
 
 **Example**
-
+```cs
     await cl.StaticInventoryTemplates
     		.ConfigureMobile(
                             "356938035643809",
@@ -116,7 +116,7 @@ Parameters:
                             "477",
                             "0001",
                             (e) => { return Task.FromResult(false); });
-
+```
 ##### Configure position (112)
 
 Will update the position properties of the device.
@@ -133,7 +133,7 @@ Parameters:
 | `processingMode` | string | **Optional**. Processing mode|
 
 **Example**
-
+```cs
     await cl.StaticInventoryTemplates
     		.ConfigurePosition(
                                 "52.409538",
@@ -141,7 +141,7 @@ Parameters:
                                 "76",
                                 "134",
                                 (e) => { return Task.FromResult(false); });
-
+```
 ##### Set configuration (113)
 
 Will set the configuration of the device.
@@ -156,12 +156,12 @@ Parameters:
 
 
 **Example**
-
+```cs
     await cl.StaticInventoryTemplates
     		.SetConfiguration(
                            "val1 = 1\nval2 = 2",
                            (e) => { return Task.FromResult(false); });
-
+```
 ##### Set supported operations (114)
 
 Will set the supported operations of the device.
@@ -175,7 +175,7 @@ Parameters:
 | `processingMode` | string | **Optional**. Processing mode|
 
 **Example**
-
+```cs
     IList<string> supportedOperations = new List<string>();
     supportedOperations.Add("c8y_Restart");
     supportedOperations.Add("c8y_Configuration");
@@ -185,7 +185,7 @@ Parameters:
             .SetSupportedOperations(
                                 	supportedOperations,
                                 	(e) => { return Task.FromResult(false); });
-
+```
 ##### Set firmware (115)
 
 Will set the firmware installed on the device.
@@ -201,13 +201,13 @@ Parameters:
 | `processingMode` | string | **Optional**. Processing mode|
 
 **Example**
-
+```cs
     await cl.StaticInventoryTemplates.SetFirmware(
                                 "Extreme",
                                 "Ultra 1.0",
                                 @"http://sth.url",
                                 (e) => { return Task.FromResult(false); });
-
+```
 ##### Set software list (116)
 
 Will set the list of software installed on the device.
@@ -229,14 +229,14 @@ Software members:
 | `Version` | string | **Required**. The version.|
 
 **Example**
-
+```cs
     List<Software> list = new List<Software>();
     list.Add(new Software() { Name = "Software01", Url = "url1", Version = "1.0" });
     list.Add(new Software() { Name = "Software02", Url = "url2", Version = "2.1" });
 
     await cl.StaticInventoryTemplates.SetSoftwareList(list,
                                          (e) => { return Task.FromResult(false); });
-
+```
 ##### Set required availability (117)
 
 Will set the required interval for availability monitoring. It will only set the value if it does not exist. Values entered e.g. through UI are not overwritten.
@@ -250,10 +250,10 @@ Parameters:
 | `processingMode` | string | **Optional**. Processing mode|
 
 **Example**
-
+```cs
     await cl.StaticInventoryTemplates.SetRequiredAvailability(60,
                                         (e) => { return Task.FromResult(false); });
-
+```
 #### Static measurement templates
 
 ##### Create custom measurement (200)
@@ -273,7 +273,7 @@ Parameters:
 | `processingMode` | string | **Optional**. Processing mode|
 
 **Example**
-
+```cs
     await cl.StaticMeasurementTemplates
     		.CreateCustomMeasurementAsync("c8y_Temperature",
             							  "T",
@@ -281,7 +281,7 @@ Parameters:
                                           string.Empty,
                                           string.Empty,
                                           (e) => { return Task.FromResult(false); });
-
+```
 ##### Create signal strength measurement (210)
 
 Will create a measurement of type c8y_SignalStrength.
@@ -297,13 +297,13 @@ Parameters:
 | `processingMode` | string | **Optional**. Processing mode|
 
 **Example**
-
+```cs
     await cl.StaticMeasurementTemplates
     		.CreateSignalStrengthMeasurementAsync("-90",
                                                   "23",
                                                   "2017-09-13T14:00:14.000+02:00",
                                                   (e) => { return Task.FromResult(false); });
-
+```
 ##### Create temperature measurement (211)
 
 Will create a measurement of type c8y_TemperatureMeasurement.
@@ -318,12 +318,12 @@ Parameters:
 | `processingMode` | string | **Optional**. Processing mode|
 
 **Example**
-
+```cs
     await cl.StaticMeasurementTemplates
     		.CreateTemperatureMeasurementAsync("25",
             								   "2018-02-15T05:01:14.000+02:00",
                                                (e) => { return Task.FromResult(false); });
-
+```
 ##### Create battery measurement (212)
 
 Will create a measurement of type c8y_Battery.
@@ -338,12 +338,12 @@ Parameters:
 | `processingMode` | string | **Optional**. Processing Mode|
 
 **Example**
-
+```cs
     await cl.StaticMeasurementTemplates
     		.CreateBatteryMeasurementAsync("95",
             							   "2017-09-13T15:01:14.000+02:00",
                                            (e) => { return Task.FromResult(false); });
-
+```
 #### Static alarm templates
 
 ##### Create CRITICAL alarm (301)
@@ -361,13 +361,13 @@ Parameters:
 | `processingMode` | string | **Optional**. Processing mode|
 
 **Example**
-
+```cs
     await cl.staticAlarmTemplates
             .CreateCriticalAlarmAsync("c8y_TemperatureAlarm",
                                       "Alarm of type c8y_TemperatureAlarm raised",
                                       string.Empty,
                                    	  (e) => { return Task.FromResult(false); });
-
+```
 ##### Create MAJOR alarm (302)
 
 Will create a MAJOR alarm.
@@ -383,14 +383,14 @@ Parameters:
 | `processingMode` | string | **Optional**. Processing mode|
 
 **Example**
-
+```
     await cl.StaticAlarmTemplates
     		.CreateMajorAlarmAsync("c8y_BatteryAlarm",
             					   "Major Alarm of type c8y_BatteryAlarm raised",
                                    string.Empty,
                                    (e) => { return Task.FromResult(false); });
 
-
+```
 ##### Create MINOR alarm (303)
 
 Will create a MINOR alarm.
@@ -406,12 +406,12 @@ Parameters:
 | `processingMode` | string | **Optional**. Processing mode|
 
 **Example**
-
+```cs
     await cl.StaticAlarmTemplates.CreateMinorAlarmAsync("c8y_WaterAlarm",
     														"Alarm of type c8y_WaterAlarm raised",
                                                             string.Empty,
                                                             (e) => { return Task.FromResult(false); });
-
+```
 ##### Create WARNING alarm (304)
 
 Will create a WARNING alarm.
@@ -427,12 +427,12 @@ Parameters:
 | `processingMode` | string | **Optional**. Processing mode|
 
 **Example**
-
+```cs
     await cl.StaticAlarmTemplates.CreateWarningAlarmAsync("c8y_AirPressureAlarm",
                                                               "Warning of type c8y_AirPressureAlarm raised",
                                                               string.Empty,
                                                               (e) => { return Task.FromResult(false); });
-
+```
 ##### Update severity of existing alarm (305)
 
 Will change the severity of an existing alarm.
@@ -447,11 +447,11 @@ Parameters:
 | `processingMode` | string | **Optional**. Processing mode|
 
 **Example**
-
+```cs
     await cl.StaticAlarmTemplates.UpdateSeverityOfExistingAlarmAsync("c8y_AirPressureAlarm",
                                                                          "CRITICAL",
                                                                          (e) => { return Task.FromResult(false); });
-
+```
 ##### Clear existing alarm (306)
 
 Will clear an existing alarm.
@@ -465,11 +465,11 @@ Parameters:
 | `processingMode` | string | **Optional**. Processing mode|
 
 **Example**
-
+```cs
     await cl.StaticAlarmTemplates
     		.ClearExistingAlarmAsync("c8y_TemperatureAlarm",
     		(e) => { return Task.FromResult(false); });
-
+```
 #### Static event templates
 
 ##### Create basic event (400)
@@ -487,13 +487,13 @@ Parameters:
 | `processingMode` | string | **Optional**. Processing mode|
 
 **Example**
-
+```cs
     await cl.StaticEventTemplates
             .CreateBasicEventAsync("c8y_MyEvent",
                                    "Something was triggered",
                                    string.Empty,
                                    (e) => { return Task.FromResult(false); })
-
+```
 ##### Create location update event (401)
 
 Will create a typical location update event containing c8y_Position.
@@ -511,7 +511,7 @@ Parameters:
 | `processingMode` | string | **Optional**. Processing mode|
 
 **Example**
-
+```cs
             await cl.StaticEventTemplates
                     .CreateLocationUpdateEventAsync(
                                                  "52.209538",
@@ -521,7 +521,7 @@ Parameters:
                                                  string.Empty,
                                                  (e) => { return Task.FromResult(false); });
 
-
+```
 ##### Create location update event with device update (402)
 
 Will create a typical location update event containing c8y_Position. Additionally the device will be updated with the same c8y_Position fragment.
@@ -539,7 +539,7 @@ Parameters:
 | `processingMode` | string | **Optional**. Processing mode|
 
 **Example**
-
+```cs
             await cl.StaticEventTemplates
                     .CreateLocationUpdateEventWithDeviceUpdateAsync(
                                                                  "52.209539",
@@ -549,7 +549,7 @@ Parameters:
                                                                  string.Empty,
                                                                  (e) => { return Task.FromResult(false); });
 
-
+```
 #### Static operation templates
 
 ##### Get PENDING operations (500)
@@ -564,10 +564,10 @@ Parameters:
 | `processingMode` | string | **Optional**. Processing mode|
 
 **Example**
-
+```cs
      await cl.StaticOperationTemplates
      		 .GetPendingOperationsAsync((e) => { return Task.FromResult(false); });
-
+```
 ##### Set operation to EXECUTING (501)
 
 Will set the oldest PENDING operation with given fragment to EXECUTING.
@@ -581,11 +581,11 @@ Parameters:
 | `processingMode` | string | **Optional**. Processing mode|
 
 **Example**
-
+```cs
     await  cl.StaticOperationTemplates
              .SetExecutingOperationsAsync("c8y_Restart",
                                           (e) => { return Task.FromResult(false); });
-
+```
 ##### Set operation to FAILED (502)
 
 Will set the oldest EXECUTING operation with given fragment to FAILED.
@@ -600,12 +600,12 @@ Parameters:
 | `processingMode` | string | **Optional**. Processing mode|
 
 **Example**
-
+```cs
     await cl.StaticOperationTemplates
             .SetOperationToFailedAsync("c8y_Restart",
                                        "Could not restart",
                                        (e) => { return Task.FromResult(false); });
-
+```
 ##### Set operation to SUCCESSFUL (503)
 
 Will set the oldest EXECUTING operation with given fragment to SUCCESSFUL. It enables the device to send additional parameters that trigger additional steps based on the type of operation send as fragment.
@@ -620,12 +620,12 @@ Parameters:
 | `processingMode` | string | **Optional**. Processing mode|
 
 **Example**
-
+```cs
     await  cl.StaticOperationTemplates
              .SetOperationToSuccessfulAsync("c8y_Restart",
                                             string.Empty,
                                             (e) => { return Task.FromResult(false); });
-
+```
 #### Inventory templates
 
 ##### Get children of device (106)
@@ -640,7 +640,7 @@ ChildrenOfDeviceEventArgs is the class containing event data
 
 **Example**
 
-
+```cs
     cl.ChildrenOfDeviceEvt += Cl_ChildrenOfDeviceEvt;
 
     await cl.StaticInventoryTemplates.GetChildDevices((e) => { return Task.FromResult(false); });
@@ -652,7 +652,7 @@ ChildrenOfDeviceEventArgs is the class containing event data
                 Console.WriteLine(device);
             }
         }
-
+```
 #### Operation templates
 
 All operation responses have the same base structure, leading with the message ID followed by the ID of either the root device or a child which should handle the operation.
@@ -662,11 +662,11 @@ All operation responses have the same base structure, leading with the message I
 Tells the device to restart.
 
 **Example**
-
+```cs
     cl.RestartEvt += (s, e) => {
                     Console.WriteLine(s);
                 };
-
+```
 ##### Command (511)
 
 Tells the device to run the command send in the operation.
@@ -679,11 +679,11 @@ CommandEventArgs is the class containing event data.
 | `CommandText` | string | The command name.|
 
 **Example**
-
+```cs
     cl.CommandEvt += (s, e) => {
         Console.WriteLine(s);
     };
-
+```
 ##### Configuration (513)
 
 Tells the device to set the configuration sent in the operation.
@@ -696,11 +696,11 @@ ConfigurationEventArgs is the class containing event data.
 
 
 **Example**
-
+```cs
     cl.ConfigurationEvt += (s, e) => {
         Console.WriteLine(e.Configuration);
     };
-
+```
 ##### Firmware (515)
 
 Tells the device to install the firmware from the url.
@@ -714,14 +714,14 @@ FirmwareEventArgs is the containing event data.
 | `Url` | string | The url.|
 
 **Example**
-
+```cs
     cl.FirmwareEvt += (s, e) => {
                        Console.WriteLine("DeviceSerial:"+s);
                        Console.WriteLine(e.FirmwareName);
                        Console.WriteLine(e.FirmwareVersion);
                        Console.WriteLine( e.Url);
     };
-
+```
 ##### Software list (516)
 
 Tells the device to install the software send in the operation.
@@ -733,7 +733,7 @@ SoftwareListEventArgs is the class containing event data.
 | `SoftwareList` | IList&lt;Software&gt; | The list of software to install.|
 
 **Example**
-
+```cs
     cl.SoftwareListEvt += (s, e) => {
         foreach (var soft in e.SoftwareList)
         {
@@ -742,7 +742,7 @@ SoftwareListEventArgs is the class containing event data.
             Console.WriteLine(soft.Url);
         }
     };
-
+```
 ##### Measurement request operation (517)
 
 Tells the device to send the measurements specified by the request name.
@@ -754,11 +754,11 @@ MeasurementRequestOperationEventArgs is the class containing event data.
 | `RequestName` | string | The measurement to send.|
 
 **Example**
-
+```cs
     cl.MeasurementRequestOperationEvt += (s, e) => {
         Console.WriteLine(e.RequestName);
     };
-
+```
 ##### Relay (518)
 
 Tells the device to either open or close the relay.
@@ -770,13 +770,13 @@ RelayEventArgs is the class containing event data.
 | `RelayState` | string | The relay state.|
 
 **Example**
-
+```cs
             cl.RelayEvt += (s, e) => {
 
                 Console.WriteLine(e.RelayState);
 
             };
-
+```
 ##### RelayArray (519)
 
 Tells the device to either open or close the relays in the array.
@@ -788,22 +788,22 @@ RelayArrayEventArgs is the class containing event data.
 | `RelayState` | IList&lt;string&gt; | The list of the relay state.|
 
 **Example**
-
+```cs
     cl.RelayArrayEvt += (s, e) => {
         foreach (var rs in e.RelayStates)
         {
             Console.WriteLine(rs);
         }
     };
-
+```
 ##### Upload configuration file (520)
 
 Tells the device to upload its current configuration.
 
 **Example**
-
+```cs
     cl.UploadConfigurationFileEvt += (s, e) => { };
-
+```
 ##### Download configuration file (521)
 
 Tells the device to download a configuration file from the url.
@@ -815,11 +815,11 @@ DownloadConfigurationFileEventArgs is the class containing event data.
 | `Url` | string | The url to download a configuration file. |
 
 **Example**
-
+```cs
     cl.DownloadConfigurationFileEvt += (s, e) => {
         Console.WriteLine(e.Url);
     };
-
+```
 ##### Logfile request (522)
 
 Tells the device to upload a log file for the given parameters.
@@ -835,7 +835,7 @@ LogfileRequestEventArgs is the class containing event data.
 | `MaximumLines` | string | The maximum lines.|
 
 **Example**
-
+```cs
     cl.LogfileRequestEvt += (s, e) => {
         Console.WriteLine(e.LogFileName);
         Console.WriteLine(e.SearchText);
@@ -843,7 +843,7 @@ LogfileRequestEventArgs is the class containing event data.
         Console.WriteLine(e.EndDate);
         Console.WriteLine(e.MaximumLines);
     };
-
+```
 ##### Communication mode (523)
 
 Tells the device to change the communication mode.
@@ -855,25 +855,25 @@ CommunicationModeEventArgs is the class containing event data.
 | `Mode` | string | The communication mode.|
 
 **Example**
-
+```
     cl.CommunicationModeEvt += (s, e) => {
         Console.WriteLine(e.Mode);
     };
-
+```
 
 ### SmartRest
 
 #### Check Template Collection Exists
 
 Will verify if a template collection exists.
-
+```cs
     cl.IsExistTemplateCollectionEvt += (s, e) =>
     {
         var item = e.IsExist;
     };
 
      await cl.CustomSmartRest.CheckTemplateCollectionExists("test", (e) => { return Task.FromResult(false); });
-
+```
 #### Create Template Data
 
 Will create the template data asynchronous.
@@ -988,7 +988,7 @@ You should make use of the condition field to control when response templates sh
 
 **Example**
 
-```
+```cs
      new Response("8889",
      String.Empty,
      "c8y_IsDevice",
@@ -1009,7 +1009,7 @@ With SmartREST 2.0 you have the option to either get an object from inventory by
 |externalIdType|String||NO|Sets a fixed externalIdType if the template calls by externalId|
 
 **Example**
-
+```cs
     await cl.CustomSmartRest.CreateTemplateDataAsync("GetTemplate",
                 new List<Request> {
                              new InventoryGetRequest("9999",null, String.Empty, true),
@@ -1028,7 +1028,7 @@ With SmartREST 2.0 you have the option to either get an object from inventory by
                                                          new List<string> { "type",
                                                                             "c8y_MQTTDevice", 																										"c8y_Mobile.cellId" })
                                                      });
-
+```
 #### POST templates
 
 The POST templates require a different set of mandatory values based on the API:
@@ -1043,7 +1043,7 @@ The POST templates require a different set of mandatory values based on the API:
 ##### Creating a measurement template
 
 Will create a template to create a measurement.
-
+```cs
             await cl.CustomSmartRest.CreateTemplateDataAsync("PostTemplateMeasurement",
                                     new List<Request> {
                                     new MeasurementRequest("7777",
@@ -1071,11 +1071,11 @@ Will create a template to create a measurement.
                                         				   "c8y_MQTTDevice",
                                                            "c8y_Mobile.cellId" })
                                     });
-
+```
 ##### Creating an alarm template
 
 Will create a template to create an alarm.
-
+```cs
             await cl.CustomSmartRest.CreateTemplateDataAsync("PostTemplateAlarm",
                                         new List<Request> {
                                         new AlarmRequest("6666",
@@ -1109,11 +1109,11 @@ Will create a template to create an alarm.
                                                 "c8y_MQTTDevice",
                                                 "c8y_Mobile.cellId" })
                                         });
-
+```
 ##### Creating an event template
 
 Will create a template to create an event.
-
+```cs
        await cl.CustomSmartRest.CreateTemplateDataAsync("PostTemplateEvent",
 
                             new List<Request> {
@@ -1140,11 +1140,11 @@ Will create a template to create an event.
                                                 "c8y_MQTTDevice",
                                                 "c8y_Mobile.cellId" })
                             });
-
+```
 ##### Creating an inventory template
 
 Will create a template to create an inventory.
-
+```cs
        await cl.CustomSmartRest.CreateTemplateDataAsync("PostTemplateInventory",
                                             new List<Request> {
                                             new InventoryRequest("4444",
@@ -1166,11 +1166,11 @@ Will create a template to create an inventory.
                                                                    "c8y_MQTTDevice",
                                                                    "c8y_Mobile.cellId" })
                                             });
-
+```
 ##### Update an inventory template
 
 Will update an inventory template.
-
+```cs
        await cl.CustomSmartRest.CreateTemplateDataAsync("UpdateTemplateInventory",
 
                                             new List<Request> {
@@ -1193,11 +1193,11 @@ Will update an inventory template.
                                                                    "c8y_Mobile.cellId"
                                                                   })
                                             });
-
+```
 ##### Update an alarm template
 
 Will update an alarm template.
-
+```cs
     await cl.CustomSmartRest.CreateTemplateDataAsync("UpdateTemplateAlarm",
                                             new List<Request> {
                                                 new AlarmUpdateRequest("2222",
@@ -1215,11 +1215,11 @@ Will update an alarm template.
                                                 				   "c8y_MQTTDevice",
                                                                    "c8y_Mobile.cellId" })
                                             });
-
+```
 ##### Update a clearing alarm template
 
 Will update a clearing alarm template.
-
+```cs
     	await cl.CustomSmartRest.CreateTemplateDataAsync("UpdateTemplateClearingAlarm",
                                             new List<Request> {
                                             new AlarmUpdateRequest("0000",
@@ -1242,11 +1242,11 @@ Will update a clearing alarm template.
                                                                    "c8y_MQTTDevice",
                                                                    "c8y_Mobile.cellId" })
                                             });
-
+```
 ##### Update an operation template
 
 Will update an operation template.
-
+```cs
        await cl.CustomSmartRest.CreateTemplateDataAsync("UpdateTemplateOperation",
                                             new List<Request> {
                                             new OperationRequest("1111",
@@ -1271,11 +1271,11 @@ Will update an operation template.
                                                                    "c8y_MQTTDevice",
                                                                    "c8y_Mobile.cellId" })
                                             });
-
+```
 ##### Alarm template
 
 Will create an alarm using the template.
-
+```cs
     await cl.CustomSmartRest
     		.SendRequestDataAsync("PostTemplateAlarm",
             					  "6666",
@@ -1283,23 +1283,23 @@ Will create an alarm using the template.
                                                      "100",
                                                      "ACTIVE",
                                                      "MAJOR" });
-
+```
 ##### Measurement template
 
  Will create a measurement using the template.
-
+```cs
     await cl.CustomSmartRest
             .SendRequestDataAsync("PostTemplateMeasurement",
                                   "7777",
                                   new List<string> { "",
                                                      "25" });
-
+```
 ##### Event template
 
 Will create an event using the template.
-
+```cs
     await cl.CustomSmartRest
     		.SendRequestDataAsync("PostTemplateEvent",
                                   "5555",
                                   new List<string> { "",
-                                                     "100" });
+```

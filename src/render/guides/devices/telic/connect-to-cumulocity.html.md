@@ -41,7 +41,7 @@ To disable "Acknowledge", follow these steps:
 
 4. Click **Save** to save your settings.
 
-![Telic Device Configuration](/guides/images/devices/telic/telicdevconf.png)
+![Telic Device Configuration](/guides/images/devices/telic/telic-device-configuration.png)
 
 GPS accuracy reporting is not available on all Telic devices. To enable accuracy reporting, follow these steps:
 

@@ -189,6 +189,8 @@ When your certificate expires, you must update your certificate with a new one w
 * the certificate has exactly the same common name (domain name) as the currently active certificate,
 * you have added a CNAME record to your DNS server. For details on the CNAME record see above.
 
+>**Info**: Keep in mind that after replacing the certificate it may take some minutes until the new certificate has been delivered to the users/browsers.
+
 
 #### Deactivating your certificate
 
@@ -233,4 +235,4 @@ HTTP/1.1 200 OK
 ```
 
 
->**Info**: Take into consideration that after changing the DNS entry it might take up to 24 hours until the new entry has been propagated.
+>**Info**: Keep in mind that after changing the DNS entry it might take up to 24 hours until the new entry has been propagated.

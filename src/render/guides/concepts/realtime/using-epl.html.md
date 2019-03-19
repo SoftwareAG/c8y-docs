@@ -7,7 +7,7 @@ layout: redirect
 <a name="using-epl"></a>
 ### Overview
 
-Apama Event Processing Language has a syntax similar to Java. In addition to simple flow control statements such as `if`, `while`, `for`, users can write listeners with the `on` keyword to react to events.
+The Apama Event Processing Language has a syntax similar to Java. In addition to simple flow control statements such as `if`, `while`, `for`, users can write listeners with the `on` keyword to react to events.
 
 Apama EPL is documented in the [Apama documentation](https://documentation.softwareag.com/onlinehelp/Rohan/Apama/v10-3/apama10-3/apama-webhelp/).
 
@@ -97,7 +97,7 @@ Remote control with EPL is done by sending an Operation event. Remote operations
 		
 * *m.source* is a placeholder for the ID of the heating that should be triggered.
 
-* The *params* field (the last field) defines the nested content of the operation. In this example we are createing a "c8y_Relay" operation and setting the relayState to "CLOSED"; note the top-level fields must be dictionary&lt;string, any&gt;, thus the use of the `<any>` cast operation.
+* The *params* field (the last field) defines the nested content of the operation. In this example we are creating a "c8y_Relay" operation and setting the relayState to "CLOSED"; note the top-level fields must be dictionary&lt;string, any&gt;, thus the use of the `<any>` cast operation.
 
 ### How can I query data from EPL?
 

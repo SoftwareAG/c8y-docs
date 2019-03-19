@@ -20,7 +20,7 @@ For further information refer to the [Analytics guide](/guides/apama) or see the
 
 ### Uploading a custom Apama CEP rule
 
-In Cumulocity, users can configure their own custom rules based on their business needs. These custom rule can be uploaded to the cumulocity which in turn are injected as an EPL application in Apama.
+In Cumulocity, users can build their own custom rules based on their business needs. These custom rules can be uploaded to Cumulocity and are then injected as an EPL application in Apama.
 
 The following example shows how to upload a custom monitor file (which has the extension .mon) to Cumulocity.
 

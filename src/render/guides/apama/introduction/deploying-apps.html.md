@@ -28,7 +28,7 @@ These kinds of applications should be deployed as microservices to Cumulocity.
 
 >**Info**: This only applies if you are using Apama 10.3 or later.
 
->**Info**: Applications deployed using this mechanism uses HTTP long polling to get realtime data  and this has the potential to lose incoming messages from Cumulocity when the system is heavily loaded.
+>**Info**: Applications deployed using this mechanism use HTTP long polling to get realtime data  and this has the potential to lose incoming messages from Cumulocity when the system is heavily loaded.
 
 Develop your Cumulocity application in Designer in the usual way (just as shown above).
 

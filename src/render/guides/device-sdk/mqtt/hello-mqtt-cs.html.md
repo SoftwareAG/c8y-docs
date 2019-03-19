@@ -94,7 +94,7 @@ namespace HelloJsonExample
 		{
 			const string serverUrl = "mqtt.cumulocity.com";
 			const string clientId = "my_mqtt_cs_client";
-			const string device_name = "My new MQTT device";
+            const string device_name = "My CS MQTT device";
 			const string user = "<<tenant>>/<<username>>";
 			const string password = "<<password>>";
 
@@ -125,7 +125,7 @@ namespace HelloJsonExample
 			var deviceMessage = new MqttMessageRequestBuilder()
 				.WithTopicName("s/us")
 				.WithQoS(QoS.EXACTLY_ONCE)
-				.WithMessageContent("110, SZZZZ89898, MQTT test model 2, Rev0.2")
+				.WithMessageContent("110, S123456789, MQTT test model, Rev0.1")
 				.Build();
 
 			await client.PublishAsync(deviceMessage);
@@ -150,7 +150,7 @@ namespace HelloJsonExample
 					.WithQoS(QoS.EXACTLY_ONCE)
 					.WithMessageContent("211," + temp)
 					.Build());
-				Thread.SpinWait(1000);
+				Thread.Sleep(1000);
 			}
 		}
 
@@ -186,7 +186,7 @@ What does the code in `main` do?
 -   Create a new device with a name (`device_name`) and a type (`c8y_MQTTDevice`).
 -   Update the device hardware information by putting a `"S123456789"` serial, a `"MQTT test model"` model and a `"Rev0.1"` revision.
 -   Subscribe to the static operation templates for the device and print all received operations to the console. In case of a c8y_Restart operation, simulate a device restart.
--   Create a new thread which sends temperature measurement every 7 seconds.
+-   Create a new thread which sends temperature measurement every 1 seconds.
 
 Note that the subscription is established after the device creation, otherwise if there is no device for a given ``clientId``, the server will not accept it.
 

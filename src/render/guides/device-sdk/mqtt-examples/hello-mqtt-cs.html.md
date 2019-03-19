@@ -69,7 +69,7 @@ $ dotnet add package Cumulocity.SDK.MQTT
 
 #### Creating a C# application
 
-Edit the _Programs.cs_ file in the folder _hello-mqtt-java_ with the following content:
+Edit the _Programs.cs_ file in the folder _hello-mqtt-cs_ with the following content:
 
 ```cs
 using System;
@@ -79,7 +79,7 @@ using Cumulocity.SDK.MQTT.Model;
 using Cumulocity.SDK.MQTT.Model.MqttMessage;
 using MqttClient = Cumulocity.SDK.MQTT.MqttClient;
 
-namespace HelloJsonExample
+namespace MQTT
 {
 	class Program
 	{

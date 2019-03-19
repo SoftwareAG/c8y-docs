@@ -31,7 +31,7 @@ Host (useful for support):
   Commit:  1249f08fed
 ```
 
-The .NET Core SDK can be downloaded from the [.NET Downloads](https://dotnet.microsoft.com/download) website.
+The .NET Core SDK can be downloaded from the [.NET Downloads](https://dotnet.microsoft.com/download) webpage.
 
 ### Developing the "Hello, MQTT world!" client
 
@@ -79,7 +79,7 @@ using Cumulocity.SDK.MQTT.Model;
 using Cumulocity.SDK.MQTT.Model.MqttMessage;
 using MqttClient = Cumulocity.SDK.MQTT.MqttClient;
 
-namespace MQTT
+namespace MQTTClientExample
 {
 	class Program
 	{
@@ -168,7 +168,7 @@ If you use the WS protocol, you must provide the appropriate settings:
 
 ```cs
         var cDetails = new ConnectionDetailsBuilder()
-            .WithClientId("my_mqtt_cs_client")
+            .WithClientId(clientId)
             .WithHost("cumulocity.com/mqtt")
             .WithCredentials("<<tenant>>/<<username>>", <<password>>)
             .WithCleanSession(true)
@@ -188,7 +188,7 @@ What does the code in `main` do?
 -   Create a new device with a name (`device_name`) and a type (`c8y_MQTTDevice`).
 -   Update the device hardware information by putting a `"S123456789"` serial, a `"MQTT test model"` model and a `"Rev0.1"` revision.
 -   Subscribe to the static operation templates for the device and print all received operations to the console. In case of a c8y_Restart operation, simulate a device restart.
--   Create a new thread which sends temperature measurement every 1 seconds.
+-   Create a new thread which sends temperature measurement every second.
 
 Note that the subscription is established after the device creation, otherwise if there is no device for a given ``clientId``, the server will not accept it.
 

@@ -10,7 +10,7 @@ Klicken Sie **Geräteprotokolle** im Menü **Gerätetypen** im Navigator.
 
 Die Seite G**eräteprotokolle** zeigt eine Liste aller in Ihrem Konto verfügbaren Geräteprotokolle an.
 
-<img src="/guides/images/benutzerhandbuch/devmgmt-device-protocols.png" alt="Geräteprotokolle" style="max-width: 100%">
+![Device Protocols](/guides/images/benutzerhandbuch/DeviceManagement/devmgmt-devicetypes-deviceprotocols.png)
 
 Die Geräteprotokoll-Liste zeigt die folgenden Information zu jedem Eintrag an:
 

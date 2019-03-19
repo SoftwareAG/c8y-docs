@@ -31,7 +31,7 @@ Host (useful for support):
   Commit:  1249f08fed
 ```
 
-.NET Core SDK from the [Microsoft website](https://dotnet.microsoft.com/download).
+The .NET Core SDK can be downloaded from the [.NET Downloads](https://dotnet.microsoft.com/download) website.
 
 ### Developing the "Hello, MQTT world!" client
 
@@ -53,18 +53,18 @@ This will create a new console application _hello-mqtt-cs_ in the current direct
 
 #### Adding the MQTT C# client library
 
-Edit the _hello-mqtt-cs.csproj_ in the _hello-mqtt-cs_ folder. Add a dependency to the Cumulocity SDK MQTT.
+Edit the _hello-mqtt-cs.csproj_ in the _hello-mqtt-cs_ folder. Add a dependency manually to the Cumulocity SDK MQTT.
 
 ```xml
-  <ItemGroup>
+<ItemGroup>
     <PackageReference Include="Cumulocity.SDK.MQTT" Version="0.1.0" />
-  </ItemGroup>
+</ItemGroup>
 ```
 
-Alternative
+Or use the `dotnet` command as follows:
 
 ```shell
-dotnet add package Cumulocity.SDK.MQTT
+$ dotnet add package Cumulocity.SDK.MQTT
 ```
 
 #### Creating a C# application
@@ -162,7 +162,9 @@ namespace HelloJsonExample
 	}
 }
 ```
+
 If you use the WS protocol, you must provide the appropriate settings:
+
 
 ```cs
         var cDetails = new ConnectionDetailsBuilder()
@@ -197,13 +199,12 @@ Use the following commands to build the application:
 ```shell
 $ cd hello-mqtt-cs
 $ dotnet build
-
 ```
 
 and this command to run it:
 
 ```shell
-dotnet run
+$ dotnet run
 ```
 
 After starting the application, you should see a new registered device in the Device Management application, listed in **All devices**. In the **Measurements** tab, you will see the temperature measurements being sent by your client.
@@ -212,4 +213,4 @@ Additionally, if there will be a new operation created for this device (e.g. c8y
 
 ### Improving the agent
 
-Now that you have done your first step, check out the section [Hello MQTT](/guides/device-sdk/mqtt#hello-mqtt) to learn more about Cumulocity MQTT and improve your application.
+Now that you have done your first step, check out the section [Hello MQTT](/guides/device-sdk/mqtt-examples#hello-mqtt) to learn more about Cumulocity MQTT and improve your application.

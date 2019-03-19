@@ -104,7 +104,7 @@ namespace HelloJsonExample
 				.WithHost(serverUrl)
 				.WithCredentials(user, password)
 				.WithCleanSession(true)
-				.WithTcp()
+				.WithProtocol(TransportType.Tcp)
 				.Build();
 
 			MqttClient client = new MqttClient(cDetails);

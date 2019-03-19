@@ -4,25 +4,25 @@ title: Developing applications
 layout: redirect
 ---
 
-You can use Software AG Designer to develop your applications. [Download](http://www.apamacommunity.com/downloads/) and Install Software AG Designer from Apama Community. Once installed, create an Apama project in Software AG Designer and enable it for Cumulocity connectivity.
+You can use Software AG Designer to develop your applications. [Download](http://www.apamacommunity.com/downloads/) and install Software AG Designer from the Apama Community. Once installed, create an Apama project in Software AG Designer and enable it for Cumulocity connectivity.
 
-  * For steps on how to create an Apama Project, refer to [Creating Apama Projects](https://documentation.softwareag.com/onlinehelp/Rohan/Apama/v10-3/apama10-3/apama-webhelp/index.html#page/apama-webhelp%2FWIZARD_NEW_APAMA_PROJECT.html).
-  * Add the following Apama bundles to the newly created Apama Project, For instructions on how to add bundles to project, see [Adding bundles to projects](https://documentation.softwareag.com/onlinehelp/Rohan/Apama/v10-3/apama10-3/apama-webhelp/index.html#page/apama-webhelp%2Fco-UsiApaStu_adding_bundles_to_projects.html).
+  * For steps on how to create an Apama project, refer to [Creating Apama Projects](https://documentation.softwareag.com/onlinehelp/Rohan/Apama/v10-3/apama10-3/apama-webhelp/index.html#page/apama-webhelp%2FWIZARD_NEW_APAMA_PROJECT.html).
+  * Add the following Apama bundles to the newly created Apama project. For instructions on how to add bundles to project, see [Adding bundles to projects](https://documentation.softwareag.com/onlinehelp/Rohan/Apama/v10-3/apama10-3/apama-webhelp/index.html#page/apama-webhelp%2Fco-UsiApaStu_adding_bundles_to_projects.html).
 
     * Cumulocity IoT > Event Definitions
-      * This provides Event API's required for sending and receiving data to/from Cumulocity IoT
+      * This provides event APIs required for sending and receiving data to/from Cumulocity IoT.
     * Cumulocity IoT > Utilities for Cumulocity
-      * This provides helper utility functions for working with data received from Cumulocity IoT
+      * This provides helper utility functions for working with data received from Cumulocity IoT.
     * Any Extractor
       * This provides support for extracting values from the `any` type.
     * Time Format
       * This is required to access all the methods of the Time Format plug-in. Useful for formatting and parsing Time.
     * HTTP Client Generic Events
-      * This exposes pre-defined generic events used by the HTTP client connectivity plug-in
+      * This exposes pre-defined generic events used by the HTTP client connectivity plug-in.
 
   * To create a new Apama EPL file, refer to [Creating new monitor files for EPL applications](https://documentation.softwareag.com/onlinehelp/Rohan/Apama/v10-3/apama10-3/apama-webhelp/index.html#page/apama-webhelp%2FWIZARD_NEW_MONITORSCRIPT.html).
   * Follow the steps as described in [Using EPL](/guides/concepts/realtime/#using-epl) to create a sample EPL application.
-  * Before you try to deploy this EPL application to Cumulocity, you might want to test if this application works as exptected. To do that you would need to add the following bundles to your Designer project.
+  * Before you try to deploy this EPL application to Cumulocity, you might want to test if this application works as expected. To do that you would need to add the following bundles to your Designer project.
     * Add Automatic onApplicationInitialized
       * This starts all connectivity plug-ins immediately on start up.
     * Add the HTTP Client > JSON with generic request/response event definitions connectivity transport.
@@ -39,7 +39,7 @@ You can use Software AG Designer to develop your applications. [Download](http:/
 
         >**Info:** You need to [create an application](/guides/users-guide/administration#managing-applications) in Cumulocity to get a value for CUMULOCITY_APPKEY.
 
-      * Please note that the above description assumes that you are connecting to a tenant hosted on cumulocity.com (Example: mytenant.cumulocity.com). But if you want to connect to a tenant hosted at a different location, you can append a custom url configuration to `CumulocityIoT.yaml`.
+      * Note that the above description assumes that you are connecting to a tenant hosted on cumulocity.com (Example: mytenant.cumulocity.com). But if you want to connect to a tenant hosted at a different location, you can append a custom url configuration to `CumulocityIoT.yaml`.
 
           ```
           url: ${CUMULOCITY_URL}

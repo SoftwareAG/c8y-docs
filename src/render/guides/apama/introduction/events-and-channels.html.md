@@ -14,7 +14,7 @@ Look at the [data model](https://documentation.softwareag.com/onlinehelp/Rohan/A
 
 ### Sending events to a channel
 
-Sending an event is done by constructing the event, either with `new <type>` followed by assignments to the fields, or with a constructor specifying all of the fields. The `send` statement is then used to send the event to Cumulocity. The `send` statement requires a channel - this is typically the `CHANNEL` constant (The exceptions being `CREATE_CHANNEL` for Measurement and `UPDATE_CHANNEL` for ManagedObject) on the event type.
+Sending an event is done by constructing the event, either with `new <type>` followed by assignments to the fields, or with a constructor specifying all of the fields. The `send` statement is then used to send the event to Cumulocity. The `send` statement requires a channel - this is typically the `CHANNEL` constant (the exceptions being `CREATE_CHANNEL` for Measurement and `UPDATE_CHANNEL` for ManagedObject) on the event type.
 
 ### Listening to events
 

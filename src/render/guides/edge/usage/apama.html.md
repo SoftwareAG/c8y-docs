@@ -6,7 +6,7 @@ layout: redirect
 
 ### Introduction
 
-You can add your own real-time analytics to Cumulocity IoT Edge using the Apama Event Processing Language.
+You can add your own real-time analytics to Cumulocity IoT Edge using the Apama Event Processing Language (EPL).
 
 Apama is a Streaming Analytics Platform. It contains a complex event processing engine and a comprehensive set of tools to develop, integrate, and deploy event-driven applications.
 
@@ -16,15 +16,15 @@ With Apama you can
 * detect and analyze events and event patterns of interest
 * respond to them in real time
 
-For further information refer to the [Apama guide](/guides/apama) or see the topic Developing Apama Applications in EPL in the [Apama documentation](https://documentation.softwareag.com/onlinehelp/Rohan/Apama/v10-3/apama10-3/apama-webhelp/) for full details.
+For further information refer to the [Analytics guide](/guides/apama) or see the topic Developing Apama Applications in EPL in the [Apama documentation](https://documentation.softwareag.com/onlinehelp/Rohan/Apama/v10-3/apama10-3/apama-webhelp/) for full details.
 
 ### Uploading a custom Apama CEP rule
 
-In Cumulocity, users can configure their own custom rules bases on their business needs. These custom rule files can be uploaded to the platform which in turn is injected as an EPL application in Apama.
+In Cumulocity, users can configure their own custom rules based on their business needs. These custom rule can be uploaded to the cumulocity which in turn are injected as an EPL application in Apama.
 
-The following example shows how to upload a custom mon file to Cumulocity.
+The following example shows how to upload a custom monitor file (which has the extension .mon) to Cumulocity.
 
-1. First create a custom mon file, as shown in our example for measurements. This sample custom rule creates an alarm for every measurement of type “c8y_SpeedMeasurement” where the “speed” value exceeds 600.
+1. First create a custom monitor file, as shown in our example for measurements. This sample custom rule creates an alarm for every measurement of type “c8y_SpeedMeasurement” where the “speed” value exceeds 600.
 
 		using com.apama.cumulocity.Measurement;
 		using com.apama.cumulocity.Alarm;
@@ -47,7 +47,7 @@ The following example shows how to upload a custom mon file to Cumulocity.
 			}
 		}
 
-2. In the Administration application, open the **Own Applications** page from the navigator. Click “**Add application** and in the upcoming window click **Upload custom Apama rule**. <br>
+2. In the Administration application, open the **Own Applications** page from the navigator. Click **Add application** and in the upcoming window click **Upload custom CEP rule**. <br>
 <img src="/guides/images/edge/edge-apama-upload-file.png" name="Upload file" style="width:50%;"/> 
 
 3. Upload the Apama monitor file (.mon) previously created. After successful upload your rule will be deployed as a custom Apama application.

@@ -22,9 +22,11 @@ The most simple starting point is the [C# Hello World example](/guides/microserv
 To use the C# client libraries for development, you need to install .NET Core SDK for the your development platform such as Windows, Linux or Mac (at least Version 2 of the [.NET Core SDK](https://www.microsoft.com/net/download/windows)). Note that .NET Core Runtime and .NET Core SDK are different things.
 
 To verify the version of your .NET Core SDK, type
+
 ```shell
 	$ dotnet --info
 ```
+
 The output must show a version number later than "2.0.0" to perform the basic examples.
 
 For Docker installation, review the information at [Docker for Windows: What to know before you install](https://docs.docker.com/docker-for-windows/install/#what-to-know-before-you-install) and install [Docker For Windows](https://docs.docker.com/docker-for-windows/install/).

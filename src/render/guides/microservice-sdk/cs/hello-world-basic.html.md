@@ -41,18 +41,20 @@ Change the current folder and navigate to a microservicesdk folder.
 cd microservicesdk-win-dev-latest
 ```
 
-Make sure to uses correct a sdk version - 2.0.2 or define which .NET Core SDK version is used when you run .NET Core CLI commands
+Make sure to use correct a sdk version - 2.0.2 or define which .NET Core SDK version is used when you run .NET Core CLI commands.
 
 ```shell
 dotnet new globaljson --sdk-version 2.0.2
 ```
 
-Run the script "create.ps1" to create a sample project, provide the name of the project and the API application.
+Run the script *create.ps1* to create a sample project, provide the name of the project and the API application.
 
 ```shell
 ./create.ps1
 ```
+
 Execute the bootstrapper script to build the application and an image from a Docker file.
+
 ```bash
 ./build.ps1
 ```
@@ -71,6 +73,7 @@ To run a microservice which uses Cumulocity API locally you need the following:
 * Tenant - tenant ID
 
 There are several ways to install cURL on Windows:
+
 * Install it using Chocolatey.
 * Install it with a one-click installer.
 * Using official cURL binaries.
@@ -231,7 +234,7 @@ The expected result is:
 ```
 
 ### Runnning application from inside the IDE
-It is possible to check whether the application communicates with the platform by defining relevant environmental variables in `launchSettings.json`. This file sets up the different launch environments that Visual Studio can launch automatically. Here's a snippet of the default `launchSettings.json`.
+It is possible to check whether the application communicates with the platform by defining relevant environmental variables in *launchSettings.json*. This file sets up the different launch environments that Visual Studio can launch automatically. Here's a snippet of the default *launchSettings.json*.
 
 ```json
 {
@@ -272,7 +275,7 @@ It is possible to check whether the application communicates with the platform b
 
 ###Microservice package and deploy###
 
-Cumulocity provides you with an utility tool for easy microservice packaging, deployment and subscription. The script requires running docker and can be found in a zip file `microservicesdk-win-dev-latest.zip`.
+Cumulocity provides you with an utility tool for easy microservice packaging, deployment and subscription. The script requires running docker and can be found in a zip file *microservicesdk-win-dev-latest.zip*.
 
 ```shell
 Invoke-WebRequest  http://resources.cumulocity.com/cssdk/releases/microservicesdk-win-dev-latest.zip -OutFile microservicesdk-win-dev-latest.zip
@@ -288,12 +291,12 @@ The response will be:
 
 ```shell
 [INFO] Read input
-Following functions are available. You can run specify them in single execution:
+Following functions are available. You can specify them in single execution:
         pack - prepares deployable zip file. Requires following stucture:
                 /docker/Dockerfile
                 /docker/* - all files within the directory will be included in the docker build
                 /cumulocity.json
-        deploy - deploys applicaiton to specified address
+        deploy - deploys application to specified address
         subscribe - subscribes tenant to specified microservice application
         help | --help - prints help
 Following options are available:
@@ -308,16 +311,16 @@ Following options are available:
         -id  | --applicationId  # Applicaiton used for subscription purposes. Required only for solemn subscribe execution
 ```
 
-For further information please visit our [website](https://cumulocity.com/guides/reference/microservice-package/)
+For further information refer to  [website](https://cumulocity.com/guides/reference/microservice-package/)
 
 **Deployment**
 
-In addition, there is a `deploy.ps1` script that uses credentials stored locally. In order to deploy the application run the deploy script. You must provide the correct URL and credentials in the settings.ini file.
+In addition, there is a *deploy.ps1* script that uses credentials stored locally. In order to deploy the application run the deploy script. You must provide the correct URL and credentials in the settings.ini file.
 To deploy a microservice application on an environment you need the following:
 
 * URL address of the Cumulocity host of your tenant
-* Username to log in with.
-* Application name created on the platform.
+* username to log in with
+* application name created on the platform
 * ZIP build from previous step for deployment
 
 The settings.ini:
@@ -331,12 +334,14 @@ appname=sample_application
 ```
 
 *  Call "deploy.ps1"
+*  
 	* The script looks for a settings.ini in the same directory. If found, it uses the credentials and tenant URL from that file.
 	* If settings.ini is not found, an error is shown.
 
 ```shell
 	./deploy.ps1
 ```
+
 * Call the script with the .ini name
 	* Loads the credentials and tenant URL from settings_alternativ.ini.
 	* If settings_alternative.ini is not found, an error is shown.
@@ -346,14 +351,14 @@ appname=sample_application
 ```
 
 * Merge the given arguments and ini configuration. Parameters from the file are overwritten by explicitly defined parameters.
-	* deploy.ps1  -an hello-world -f settings_alternative.ini
+* deploy.ps1  -an hello-world -f settings_alternative.ini
 
 ```shell
 	./deploy.sh -s {siteurl} -u {username} -p {password}  -an hello-world -f settings.ini
 ```
 
 ###Improving the microservice
-The application starts executing from the entry point `public static void Main()` in Program class where the host for the application is created. The following shows an example of a program created by "create.sh".
+The application starts executing from the entry point `public static void Main()` in Program class where the host for the application is created. The following shows an example of a program created by *create.sh*.
 
 ```cs
 	namespace api
@@ -477,7 +482,7 @@ The API provides the following services:
 * ManagedObject - InventoryApi
 * Measurement - MeasurementApi
 
-For further information please visit our [website](https://cumulocity.com/guides/device-sdk/)
+ For further information, refer to the [website](https://cumulocity.com/guides/device-sdk/)
 
 **C# MQTT SDK**
 
@@ -485,7 +490,7 @@ It is possible to use the C# MQTT SDK as a nuget-package.  A developer can use i
 
 ### Building and deploying Hello World on Linux
 
-Download a script file to build a "Hello World" app. Wget utility is the best option to download a file.
+Download a script file to build a "Hello World" application. Wget utility is the best option to download a file.
 
 ```shell
 	sudo wget  http://resources.cumulocity.com/cssdk/releases/microservicesdk-lin-dev-latest.zip
@@ -505,7 +510,7 @@ Change the current folder, to navigate to a microservicesdk folder.
 	cd microservicesdk-latest
 ```
 
-Run the script "create.sh" to create a sample project, provide the name of the project and the API application.
+Run the script *create.sh* to create a sample project, provide the name of the project and the API application.
 
 ```shell
 	./create.sh
@@ -569,16 +574,16 @@ To show all possibilities, type
 /microservice help
 ```
 
-For further information please visit our [website](https://cumulocity.com/guides/reference/microservice-package/)
+For further information, refer to [website](https://cumulocity.com/guides/reference/microservice-package/)
 
 **Deployment**
 
-In addition, there is a `deploy.ps1` script that uses credentials stored locally. In order to deploy the application run the deploy script. You must provide the correct URL and credentials in the settings.ini file.
+In addition, there is a *deploy.ps1* script that uses credentials stored locally. In order to deploy the application run the deploy script. You must provide the correct URL and credentials in the settings.ini file.
 To deploy a microservice application on an environment you need the following:
 
 * URL address of the Cumulocity host of your tenant
-* Username to log in with.
-* Application name created on the platform.
+* username to log in with
+* application name created on the platform
 * ZIP build from previous step for deployment
 
 The settings.ini:

@@ -165,16 +165,16 @@ Example Response:
 		"customProperties" : {"referenceId":"1234567890"}
 	}
 
-The following table lists the maximum lengths of the fields above, and if they are required for tenant creation.
+The following table lists the fields of a tenant creation requests, along with their length constraints. The fragments ```domain``` and  ```company``` always have to be provided.
 
 |Field|Description|Max. Length|Required|
 |:----|:---|:---|:---|
+|company|Company Name|256|Yes
+|domain|Domain name to be used for the tenant|256|Yes
 |id|The tenant id. Will be auto-generated if not present.|32|No
 |adminName|Username of the tenant administrator|50|No
 |adminPass|Password of the tenant administrator|32|No
 |adminEmail|Email address of the administrator|254|No
-|company_name|Company Name|256|Yes
-|domain|Domain name to be used for the tenant|256|Yes
 |contactName|A contact name, for example an administrator, of the tenant|No
 |contact_phone|20|An international contact phone number|No
 |customProperties||A set of custom properties of the agent|No

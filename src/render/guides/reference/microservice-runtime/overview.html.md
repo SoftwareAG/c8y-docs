@@ -4,6 +4,5 @@ title: Overview
 layout: redirect
 ---
 
-Microservices deployed on the platform have a specific runtime environment. The following document explains which environment variables are available for a microservice. 
-
-Moreover, the communication with the Cumulocity platform and other microservices is described. 
+Microservices deployed on the platform have a specific runtime environment. This section explains which environment variables are available for a microservice.
+It is also described the communication with the Cumulocity platform and other microservices. 

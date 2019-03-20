@@ -41,11 +41,11 @@ The read-only variable currentTime can be used to obtain the current server time
 
 Example:
 
-	send Event("", "c8y_HighTemperatureEvent", measurement.source, currentTime, "High Temperature started at "+TimeFormat.format(currentTime, "yyyy.MM.dd G 'at' HH:mm:ss"), new dictionary<string,any>) to Event.CHANNEL;
+	send Event("", "c8y_HighTemperatureEvent", measurement.source, currentTime, "High temperature started at "+TimeFormat.format(currentTime, "yyyy.MM.dd G 'at' HH:mm:ss"), new dictionary<string,any>) to Event.CHANNEL;
 
 ### inMaintenanceMode
 
-The Util.inMaintenaceMode() function is a fast way to check if the device is currently in maintenance mode. It takes a ManagedObject object as a parameter and returns a boolean which is true if the device is in a maintenance mode.
+The Util.inMaintenanceMode() function is a fast way to check if the device is currently in maintenance mode. It takes a ManagedObject as a parameter and returns a boolean which is true if the device is in maintenance mode.
 
 Example:
 

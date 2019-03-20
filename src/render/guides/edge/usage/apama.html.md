@@ -8,7 +8,7 @@ layout: redirect
 
 You can add your own real-time analytics to Cumulocity IoT Edge using the Apama Event Processing Language (EPL).
 
-Apama is a Streaming Analytics Platform. It contains a complex event processing engine and a comprehensive set of tools to develop, integrate, and deploy event-driven applications.
+Apama is a streaming analytics platform. It contains a complex event processing engine and a comprehensive set of tools to develop, integrate, and deploy event-driven applications.
 
 With Apama you can
 

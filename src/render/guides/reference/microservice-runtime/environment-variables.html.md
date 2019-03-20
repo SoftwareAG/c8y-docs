@@ -14,7 +14,7 @@ MICROSERVICE_SUBSCRIPTION_ENABLED  |  Default value: true
 C8Y_BASEURL  |  Platform address (contains port number)
 C8Y_BASEURL_MQTT  |  Platform address of the MQTT server (contains port number)
 C8Y_MICROSERVICE_ISOLATION  |  Isolation level (MULTI_TENANT or PER_TENANT)
-C8Y_BOOTSTRAP_REGISTER  |  Indicator whether the microservice should perform self registration or not – false by default
+C8Y_BOOTSTRAP_REGISTER  |  Indicator whether the microservice should perform self registration or not. Default value: false
 C8Y_BOOTSTRAP_TENANT  |  Bootstrap user tenant, for MULTI_TENANT - microservice owner
 C8Y_BOOTSTRAP_USER  |  Bootstrap user name
 C8Y_BOOTSTRAP_PASSWORD  |  Bootstrap user password

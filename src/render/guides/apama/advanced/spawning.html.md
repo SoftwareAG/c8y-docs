@@ -15,13 +15,14 @@ This pattern is often used with the unmatched keyword to identify events that ar
 			spawn factory to context("PerDeviceMeasurementTracker", true);
 		}
 		action factory() {
+			monitor.subscribe(Measurement.CHANNEL);
 			on all unmatched Measurement() as m {
 				spawn perDevice(m);
 			}
 		}
-	
+
 		dictionary<string, Measurement> latestMeasurementByType; // measurements for this device
-	
+
 		action perDevice(Measurement m) {
 			processMeasurement(m);
 			on all Measurement(source = m.source) as m {

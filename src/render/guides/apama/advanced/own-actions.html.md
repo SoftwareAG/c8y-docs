@@ -11,11 +11,11 @@ Examples:
 Increasing the given severity:
 
 	action upgradeSeverity(string old) returns string {
-			if old = "WARNING" { return "MINOR"; }
-			if old = "MINOR"   { return "MAJOR"; }
-			if old = "MAJOR"   { return "CRITICAL"; }
-			return old;
-		}
+		if old = "WARNING" { return "MINOR"; }
+		if old = "MINOR"   { return "MAJOR"; }
+		if old = "MAJOR"   { return "CRITICAL"; }
+		return old;
+	}
 
 Calculating the distance between two geo-coordinates:
 
@@ -30,5 +30,3 @@ Calculating the distance between two geo-coordinates:
 		float c := 2.0 * a.sqrt().atan2((1.0-a).sqrt());
 		return R * c;
 	}
-
-

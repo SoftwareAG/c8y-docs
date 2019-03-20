@@ -41,7 +41,7 @@ Change the current folder and navigate to a microservicesdk folder.
 cd microservicesdk-win-dev-latest
 ```
 
-Make sure to use correct a sdk version - 2.0.2 or define which .NET Core SDK version is used when you run .NET Core CLI commands.
+Make sure to use the correct SDK version - 2.0.2 or define which .NET Core SDK version is used when you run .NET Core CLI commands.
 
 ```shell
 dotnet new globaljson --sdk-version 2.0.2
@@ -61,7 +61,8 @@ Execute the bootstrapper script to build the application and an image from a Doc
 
 After a successful build you will be provided with a ZIP file in the target directory. The ZIP can be deployed to the platform as described in the Deployment section.
 
-###  <a name="run-locally"></a> Running microservice locally
+### <a name="run-locally"></a> Running microservice locally
+
 In order to test the microservice for the calls from the microservice to Cumulocity, you can run the docker container locally.
 
 To verify calls from Cumulocity to the microservice, the microservice must be deployed.
@@ -78,7 +79,7 @@ There are several ways to install cURL on Windows:
 * Install it with a one-click installer.
 * Using official cURL binaries.
 
-Assuming that  `Chocolatey` is installed:
+Assuming that  Chocolatey is installed:
 
 ```bash
 choco install curl
@@ -175,7 +176,7 @@ Example response:
 
 **Step 3 - Run microservice locally**
 
-The image is already added to the local docker repository during the build. List all the docker repository images available:
+The image is already added to the local Docker repository during the build. List all the Docker repository images available:
 
 ```shell
 $ docker images
@@ -185,7 +186,7 @@ api                 latest              a8298ed10cd9        16 hours ago        
 
 ```
 
-After you find the image in the list, run the docker container for the microservice by providing the baseurl and the bootstrap user credentials:
+After you find the image in the list, run the Ddocker container for the microservice by providing the baseurl and the bootstrap user credentials:
 
 ```bash
 $ docker run -e C8Y_BASEURL={URL} -e C8Y_BOOTSTRAP_TENANT={BOOTSTRAP_TENANT} -e C8Y_BOOTSTRAP_USER={BOOTSTRAP_USERNAME} -e C8Y_BOOTSTRAP_PASSWORD={BOOTSTRAP_USER_PASSWORD} -e C8Y_MICROSERVICE_ISOLATION=MULTI_TENANT -i -t {DOCKER_REPOSITORY_IMAGE}:{TAG}
@@ -234,6 +235,7 @@ The expected result is:
 ```
 
 ### Runnning application from inside the IDE
+
 It is possible to check whether the application communicates with the platform by defining relevant environmental variables in *launchSettings.json*. This file sets up the different launch environments that Visual Studio can launch automatically. Here's a snippet of the default *launchSettings.json*.
 
 ```json
@@ -273,9 +275,9 @@ It is possible to check whether the application communicates with the platform b
 }
 ```
 
-###Microservice package and deploy###
+### Microservice package and deploy
 
-Cumulocity provides you with an utility tool for easy microservice packaging, deployment and subscription. The script requires running docker and can be found in a zip file *microservicesdk-win-dev-latest.zip*.
+Cumulocity provides you with an utility tool for easy microservice packaging, deployment and subscription. The script requires running Docker and can be found in a ZIP file *microservicesdk-win-dev-latest.zip*.
 
 ```shell
 Invoke-WebRequest  http://resources.cumulocity.com/cssdk/releases/microservicesdk-win-dev-latest.zip -OutFile microservicesdk-win-dev-latest.zip
@@ -292,7 +294,7 @@ The response will be:
 ```shell
 [INFO] Read input
 Following functions are available. You can specify them in single execution:
-        pack - prepares deployable zip file. Requires following stucture:
+        pack - prepares deployable zip file. Requires following structure:
                 /docker/Dockerfile
                 /docker/* - all files within the directory will be included in the docker build
                 /cumulocity.json
@@ -308,14 +310,14 @@ Following options are available:
         -p   | --password               # Password used for authentication to the platform
         -te  | --tenant                 # Tenant used
         -a   | --application    # Name upon which the application will be registered on the platform. Default value from --name parameter
-        -id  | --applicationId  # Applicaiton used for subscription purposes. Required only for solemn subscribe execution
+        -id  | --applicationId  # Application used for subscription purposes. Required only for solemn subscribe execution
 ```
 
-For further information refer to  [website](https://cumulocity.com/guides/reference/microservice-package/)
+For further information refer to [Microservice package and deploy](https://cumulocity.com/guides/reference/microservice-package/) in the Reference guide.
 
 **Deployment**
 
-In addition, there is a *deploy.ps1* script that uses credentials stored locally. In order to deploy the application run the deploy script. You must provide the correct URL and credentials in the settings.ini file.
+In addition, there is a *deploy.ps1* script that uses credentials stored locally. In order to deploy the application run the deploy script. You must provide the correct URL and credentials in the *settings.ini* file.
 To deploy a microservice application on an environment you need the following:
 
 * URL address of the Cumulocity host of your tenant
@@ -333,18 +335,18 @@ url=someurl
 appname=sample_application
 ```
 
-*  Call "deploy.ps1"
+*  Call *deploy.ps1*
 *  
-	* The script looks for a settings.ini in the same directory. If found, it uses the credentials and tenant URL from that file.
-	* If settings.ini is not found, an error is shown.
+	* The script looks for a *settings.ini* in the same directory. If found, it uses the credentials and tenant URL from that file.
+	* If *settings.ini* is not found, an error is shown.
 
 ```shell
 	./deploy.ps1
 ```
 
 * Call the script with the .ini name
-	* Loads the credentials and tenant URL from settings_alternativ.ini.
-	* If settings_alternative.ini is not found, an error is shown.
+	* Loads the credentials and tenant URL from *settings_alternativ.ini*.
+	* If *settings_alternative.ini* is not found, an error is shown.
 
 ```shell
 	./deploy.ps1 -f settings.ini
@@ -357,7 +359,8 @@ appname=sample_application
 	./deploy.sh -s {siteurl} -u {username} -p {password}  -an hello-world -f settings.ini
 ```
 
-###Improving the microservice
+### Improving the microservice
+
 The application starts executing from the entry point `public static void Main()` in Program class where the host for the application is created. The following shows an example of a program created by *create.sh*.
 
 ```cs
@@ -402,13 +405,13 @@ The application starts executing from the entry point `public static void Main()
 
 Method BuildWebHost performs the following tasks:
 
-* Initializes a new instance of the WebHostBuilder class with pre-configured defaults
+* initializes a new instance of the WebHostBuilder class with pre-configured defaults
 
-* Specifies Kestrel as the server to be used by the web host
+* specifies Kestrel as the server to be used by the web host
 
-* Configures the LoggerFactory
+* configures the LoggerFactory
 
-* Specifies the class with the UseStartup&#60;TStartup&#62; 
+* specifies the class with the UseStartup&#60;TStartup&#62; 
 
 An example application must include Startup class. As the name suggests, it is executed first when the application starts.
 
@@ -447,7 +450,7 @@ Startup.cs responsibilities:
 * Setup dependency injection in ConfigureServices
 * Setup the middleware pipeline in Configure
 
-**Dockerfile** created by "create.ps1":
+**Dockerfile** created by *create.ps1*:
 
 ```
 	FROM microsoft/dotnet:2.0-runtime
@@ -468,6 +471,7 @@ Startup.cs responsibilities:
 * Specifies what executable to run when the container starts
 
 **Platform API**
+
 It is possible to use the C# REST SDK as an extension.  A developer can use it to perform basic operations against the platform. For hosted deployment, most of the properties are provided by the platform.
 
 The API provides the following services:
@@ -482,11 +486,11 @@ The API provides the following services:
 * ManagedObject - InventoryApi
 * Measurement - MeasurementApi
 
- For further information, refer to the [website](https://cumulocity.com/guides/device-sdk/)
+For further information, refer to the [Device SDK guide](https://cumulocity.com/guides/device-sdk/).
 
 **C# MQTT SDK**
 
-It is possible to use the C# MQTT SDK as a nuget-package.  A developer can use it to perform basic operations against the platform. For further information please visit our [website](https://cumulocity.com/guides/device-sdk/mqtt-examples)
+It is possible to use the C# MQTT SDK as a nuget-package.  A developer can use it to perform basic operations against the platform. For further information, refer to [MQTT examples](https://cumulocity.com/guides/device-sdk/mqtt-examples) in the Device SDK guide.
 
 ### Building and deploying Hello World on Linux
 
@@ -522,9 +526,9 @@ Run the script *create.sh* to create a sample project, provide the name of the p
 	<<api>>
 ```
 
-For a working cake you need the "build.sh" or "build.ps1" file to bootstrap cake and the "build.cake" file. "build.sh" and "build.ps1" are bootstrapper scripts that ensure you have Cake and other required dependencies installed. The bootstrapper scripts are also responsible for invoking Cake. "Build.cake" is the actual build script.
+For a working cake you need the *build.sh* or *build.ps1* file to bootstrap cake and the *build.cake* file. *build.sh* and *build.ps1* are bootstrapper scripts that ensure you have Cake and other required dependencies installed. The bootstrapper scripts are also responsible for invoking Cake. *build.cake* is the actual build script.
 
-"build.cake" contains tasks representing a unit of work in Cake, and you may use them to perform specific work in a specific order:
+*build.cake* contains tasks representing a unit of work in Cake, and you may use them to perform specific work in a specific order:
 
 * Clean
 
@@ -555,30 +559,32 @@ Check the status of an application that is running inside the Docker container.
 In order to deploy the application run the deploy script. You must provide the correct URL and credentials in this script.
 
 
-##Microservice package and deploy
+#### Microservice package and deploy
 
-Cumulocity provides you with an utility tool for easy microservice packaging, deployment and subscription. The script requires running docker and can be found here:
+Cumulocity provides you with an utility tool for easy microservice packaging, deployment and subscription. The script requires running Docker and can be found here:
 
 ```shell
 wget http://resources.cumulocity.com/examples/microservice
 ```
-After that run
+
+Next, run
 
 ```shell
 chmod +x microservice
 ```
 
-To show all possibilities, type
+To show all options, type
 
 ```shell
 /microservice help
 ```
 
-For further information, refer to [website](https://cumulocity.com/guides/reference/microservice-package/)
+For further information, refer to [Microservice package and deploy](https://cumulocity.com/guides/reference/microservice-package/)in the Reference guide.
 
 **Deployment**
 
-In addition, there is a *deploy.ps1* script that uses credentials stored locally. In order to deploy the application run the deploy script. You must provide the correct URL and credentials in the settings.ini file.
+In addition, there is a *deploy.ps1* script that uses credentials stored locally. In order to deploy the application run the deploy script. You must provide the correct URL and credentials in the *settings.ini* file.
+
 To deploy a microservice application on an environment you need the following:
 
 * URL address of the Cumulocity host of your tenant
@@ -596,17 +602,17 @@ url=someurl
 appname=sample_application
 ```
 
-*  Call "deploy.sh"
-	* The script looks for a settings.ini in the same directory. If found, uses the credentials and tenant URL from that file.
-	* If settings.ini is not found, an error is shown.
+*  Call *deploy.sh*
+	* The script looks for a *settings.ini* in the same directory. If found, uses the credentials and tenant URL from that file.
+	* If *settings.ini* is not found, an error is shown.
 
 ```shell
 	./deploy.sh
 ```
 
 * Call the script with the .ini name
-	* Loads the credentials and tenant URL from settings_alternativ.ini.
-	* If settings_alternative.ini is not found, an error is shown.
+	* Loads the credentials and tenant URL from *settings_alternativ.ini*.
+	* If *settings_alternative.ini* is not found, an error is shown.
 
 ```shell
 	./deploy.sh -f settings.ini

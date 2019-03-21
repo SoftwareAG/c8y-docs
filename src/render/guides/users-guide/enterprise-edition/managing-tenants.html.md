@@ -144,7 +144,7 @@ To finally delete a tenant and remove all the data of the tenant, click the menu
 
 ### <a name="subscribe"></a>Subscribing and monitoring applications
 
-In the **Applications** tab you can view all subscribed applications, subscribe tenants to applications or remove the applications from the tenant. By default, tenants will be subscribed to the standard Cumulocity applications. 
+In the **Applications** tab you can view all subscribed applications, subscribe tenants to applications or remove the applications from the tenant. By default, tenants will be subscribed to the standard Cumulocity applications.
 
 <img src="/guides/images/users-guide/Administration/admin-subtenant-applications.png" alt="Subscribe tenant" style="max-width: 100%">
 
@@ -160,11 +160,11 @@ For all applications hosted as microservices by Cumulocity the status of the mic
 
 The microservice may be in one of the following states:
 
-* <img src="/guides/icons/ok.png" alt="Up" style="max-width: 100%"> Microservice is up and running
-* <img src="/guides/icons/warning.png" alt="Up" style="max-width: 100%"> Microservice is unhealthy
-* <img src="/guides/icons/danger.png" alt="Up" style="max-width: 100%"> Microservice is down
+* <img src="/guides/icons/ok.png" alt="Up" style="max-width: 100%; display: inline-block;"> Microservice is up and running
+* <img src="/guides/icons/warning.png" alt="Unhealthy" style="max-width: 100%; display: inline-block;">&nbsp; Microservice is unhealthy
+* <img src="/guides/icons/danger.png" alt="Down" style="max-width: 100%; display: inline-block;"> Microservice is down
 
-You may view details on their status by expanding the respective entry. 
+You may view details on their status by expanding the respective entry.
 
 <img src="/guides/images/users-guide/Administration/admin-application-details.png" alt="Application details">
 
@@ -188,27 +188,27 @@ The microservice billing feature gathers information on microservice usage per s
 Cumulocity offers two billing modes:
 
 * **Subscription-based billing**: Charges a constant price when a tenant is subscribed to a microservice while resource usage is assigned to the owner
- 
+
 * **Resource-based billing**: Exposes the number of resources used by a microservice to calculate billing
 
 The billing modes are specified per microservice in the [microservice manifest](/guides/reference/microservice-manifest) and are set in the field "billingMode".
 
-RESOURCES: Sets the billing mode to resources-based. This is the default mode and will be applied to all microservices that are not explicitly switched to subscription-based billing mode. 
+RESOURCES: Sets the billing mode to resources-based. This is the default mode and will be applied to all microservices that are not explicitly switched to subscription-based billing mode.
 
-SUBSCRIPTION: Sets the billing mode to subscription-based. 
+SUBSCRIPTION: Sets the billing mode to subscription-based.
 
 #### Isolation level
 
 Two isolation levels are distinguished for microservices: per-tenant isolation and multi-tenant isolation.
 
-In case of subscription-based billing, the entire resources usage is always assigned to the microservice owner, independent of the isolation level,  while the subscribed tenant will be billed for the subscription. 
+In case of subscription-based billing, the entire resources usage is always assigned to the microservice owner, independent of the isolation level,  while the subscribed tenant will be billed for the subscription.
 
 In case of resources-based billing, charging depends on the isolation level:
 
 * Per-tenant - the subscriber tenant is charged for used resources
-* Multi-tenant - the owner of the microservice is charged for used resources 
+* Multi-tenant - the owner of the microservice is charged for used resources
 
-In case of multi-tenant isolation level, the parent tenant as the owner of a microservice (e.g. the management tenant of an enterprise tenant or service provider) is charged for both subscribed applications (subscription-based billing) and used resources (resource-based billing) of the subtenants. 
+In case of multi-tenant isolation level, the parent tenant as the owner of a microservice (e.g. the management tenant of an enterprise tenant or service provider) is charged for both subscribed applications (subscription-based billing) and used resources (resource-based billing) of the subtenants.
 
 #### Resources usage assignment for billing mode and isolation level
 
@@ -226,31 +226,50 @@ The following values are collected on a daily base for each tenant:
 * CPU usage, specified in CPU milliseconds (1000m = 1 CPU)
 * Memory usage, specified in MB
 
-Microservice resources are counted based at limits defined in the microservice manifest per day. At the end of each day, the information about resource usage is collected into the tenant statistics. It is also considered that a microservice might not be subscribed for a whole day. 
+Microservice resources are counted based at limits defined in the microservice manifest per day. At the end of each day, the information about resource usage is collected into the tenant statistics. It is also considered that a microservice might not be subscribed for a whole day.
 
 **Example**: If a tenant was subscribed to a microservice for 12h and the microservice has 2 CPU and 2 GB of memory it should be counted as 1000 CPU milliseconds and 1024 MB of memory.
 
 For billing purposes, in addition to CPU usage and memory usage the cause for the billing is collected (e.g. owner, subscription for tenant):
 
-		      {
-	        "name":"cep",
-	        "cpu":6000,
-	        "memory":"20000",
-	        "cause":"Owner"
-	      },
-	      {
-	        "name":"cep-small",
-	        "cpu":1000,
-	        "memory":"2000",
-	        "cause":"Subscription for tenant"
-	      }
-	 
+```json
+{
+  "name": "cep",
+	"cpu": 6000,
+	"memory": "20000",
+	"cause": "Owner"
+},
+{
+  "name": "cep-small",
+  "cpu": 1000,
+  "memory": "2000",
+  "cause": "Subscription for tenant"
+}
+```
+
 #### Usage statistics
 
-The information on the microservice usage is presented in the **Tenant Statistics** page in the Administration application.
+The information on the microservice usage is presented in the **Tenants** > **Usage Statistics** page in the Administration application.
 
 ![Tenant statistics](/guides/images/users-guide/Administration/admin-subtenants-usage-statistics-microservice.png)
-     
+
+For more details, you may refer to the [Tenant usage statistics](https://cumulocity.com/guides/reference/tenants/#tenant-usage-statistics) API in the **Reference guide** under the **Tenants** section. Note that details are available only for daily usage. For a summary query only the sum of all issued requests is returned.
+
+
+#### Scaling
+
+Auto scaling monitors your microservices and automatically adjusts capacity to maintain steady, predictable performance at the lowest possible cost. It is easy to configure the microservice scaling by setting the property `scale` in the [Microservice manifest](https://cumulocity.com/guides/reference/microservice-manifest/).
+
+For instance, when you have a microservice set with scale policy AUTO and the CPU usage points that it is needed to start a new microservice instance for three hours, the billing logs like (24/24 + 3/24) * consumed resources.
+
+24/24 - one instance active for the whole day<br>
+ 3/24 - second instance active only three hours
+
+Note that an audit record is created for every change of the number of instances.
+
+![Audit logs](/guides/images/users-guide/Administration/admin-audit-logs-microscaling.png)
+
+For more information, refer to the [Auditing](https://cumulocity.com/guides/reference/auditing) section in the **Reference guide**.
 
 ### <a name="tenants-custom-properties"></a>Editing custom properties
 

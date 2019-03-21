@@ -46,7 +46,7 @@ Enter the following information:
 Do not use the same ThingPark login (username and password) for other tenants. 
 The profile ID, username and password are used to retrieve an access token to send further requests to the ThingPark platform. It is possible to renew the access token by replacing the account credentials.
 
-![Setting provider credentials](/guides/images/users-guide/actility/credentials-new-2.png)
+![Setting provider credentials](/guides/images/users-guide/actility/admin-settings-connectivity-lora.png)
 
 Click **Save**. If everything is okay, there will be a message "Credentials successfully saved".
 
@@ -56,40 +56,40 @@ In order to replace your credentials, click **Replace credentials**.
 
 Enter your profile ID, username, password and application EUI (for details on profile ID and application EUI see [Creating new account credentials](#create-new-credentials).
 
-<img src="/guides/images/users-guide/actility/providerCredentials2.png" alt="Account credentials" style="max-width: 100%">
+![Replace credentials](/guides/images/users-guide/actility/admin-settings-connectivity-lorareplace.png)
 
 Click **Save**. Your old credentials will now be replaced with the new ones.
 
 ### <a name="create-device-types"></a>Creating device types
 
-To process data from LoRa devices, Cumulocity needs to understand the payload format of the devices. Mapping a payload data to Cumulocity data can be done by creating a LoRa device type.
+To process data from LoRa devices, Cumulocity needs to understand the payload format of the devices. Mapping a payload data to Cumulocity data can be done by creating a LoRa device protocol.
 
-During the [device registration](#register-device), you can associate this device type. The received uplink callbacks for this device with a hexadecimal payload will then be mapped to the ones you have configured in your device type.
-If a device type has been changed after being associated to a device, the reflection of the change can take up to 10 minutes because of the refresh mechanism of the Actility Server Side Agent.
+During the [device registration](#register-device), you can associate this device protocol. The received uplink callbacks for this device with a hexadecimal payload will then be mapped to the ones you have configured in your device protocol.
+If a device protocol has been changed after being associated to a device, the reflection of the change can take up to 10 minutes because of the refresh mechanism of the Actility Server Side Agent.
 
 > **Info**: Device protocol mapping only supports decoding for fixed byte positions based on the message type. 
 
-In order to create device types, navigate to the Device Management application and select **Device database** in the **Device types** menu in the navigator. You can either import an existing device type or create a new one. 
+In order to create a device protocol, navigate to the Device Management application and select **Device protocols** in the **Device types** menu in the navigator. You can either import an existing device protocol or create a new one. 
 
-#### <a name="import-device-type"></a>Importing a predefined device type
+#### <a name="import-device-type"></a>Importing a predefined device protocol
 
-In the **Device database** window, click **Import**. 
+In the **Device protocols** page, click **Import**. 
 
 Select the predefined device type, for example "LoRaWAN Demonstrator". Click **Import**.
 
-<img src="/guides/images/users-guide/actility/deviceDatabaseImport.png" alt="Import a predefined device type" style="max-width: 60%">
+![Import device protocol](/guides/images/users-guide/actility/devmgmt-devicetypes-protocols-import.png)
 
-Alternatively, you may also load the device type from a file and import it.
+Alternatively, you may also load the device protocol from a file and import it.
 
 #### <a name="create-new-device-type"></a>Creating a new device type
 
-In the **Device database** window, click the **New**. The following window will open:
+In the **Device protocols** page, click the **New device protocol** button. The following window will open:
 
-<img src="/guides/images/users-guide/actility/deviceDatabase-createNew.png" alt="Create new device type" style="max-width: 100%">
+![Create new LoRa protocol](/guides/images/users-guide/actility/devmgmt-devicetypes-protocols-loranew.png)
 
-Select "LoRa" as the device type and provide a name for it. 
-
-In the upcoming window, you determine the message type. LoRa devices can send messages of different types with different encodings per type.
+Select "LoRa" as the device type, provide a name for it and click **Create**.
+ 
+In the upcoming page, you determine the message type. LoRa devices can send messages of different types with different encodings per type.
 
 Select the way the message type is encoded in the **Source** dropdown box:  
 
@@ -102,15 +102,17 @@ In the following example payload structure, the first byte indicates the message
 
 In the user interface you can enter this type of message type source information as follows: In the **Start bit** field, indicate where the message type information starts in the payload and in the **Number of bits** field, indicate how long this information is, for example start bit = "0" and number of bits = "8".
 
-<img src="/guides/images/users-guide/actility/messagetype-payload.png" alt="Message type payload" style="max-width: 100%">
+![LoRa protocol payload](/guides/images/users-guide/actility/devmgmt-devicetypes-protocols-lorapayload.png)
 
-Click **Add** to create the value configuration. 
+Click **Add value** to create the value configuration. 
 
-<img src="/guides/images/users-guide/actility/deviceDatabase1a.png" alt="Device type: new" style="max-width: 100%">
+![LoRa protocol add value](/guides/images/users-guide/actility/devmgmt-devicetypes-protocols-addvalue.png)
 
 In the upcoming window, configure the relevant values as shown in this example. 
 
-<img src="/guides/images/users-guide/actility/deviceDatabase4.png" alt="Value configuration: new" style="max-width: 60%">
+![LoRa protocol add new value](/guides/images/users-guide/actility/devmgmt-devicetypes-protocols-loranewvalue.png)
+
+![LoRa protocol add new value](/guides/images/users-guide/actility/devmgmt-devicetypes-protocols-loranewvalue2.png)
 
 The value configuration maps the value in the payload of a message type to the Cumulocity data. 
 
@@ -120,7 +122,7 @@ In this example payload structure the message ID is "1".
 
 <img src="/guides/images/users-guide/actility/payload-example2.png" alt="Example payload: message type source" style="max-width: 100%">
 
-<img src="/guides/images/users-guide/actility/deviceDatabase4a.png" alt="Value configuration: message type" style="max-width: 60%">
+![LoRa bits](/guides/images/users-guide/actility/devmgmt-devicetypes-protocols-loraid.png)
 
 Fill in the general fields for your new value in order to categorize it in the **Values** list. The associated name for this value will be displayed under the **Display category** given.
 
@@ -130,7 +132,7 @@ In this example the "Channel 1 Type" information starts in byte 2 (i.e. start bi
 
 <img src="/guides/images/users-guide/actility/payload-example3.png" alt="Example payload: value selection" style="max-width: 100%">
 
-<img src="/guides/images/users-guide/actility/deviceDatabase4b.png" alt="Value selection" style="max-width: 60%">
+![LoRa bits](/guides/images/users-guide/actility/devmgmt-devicetypes-protocols-lorabits.png)
 
 The hexadecimal value is converted to a decimal number and afterwards a "value normalisation" is applied.
 
@@ -153,24 +155,25 @@ In the functionalities, define how this device type should behave:
 - **Send event**: Creates an event with the decoded value
 - **Update managed object**: Updates a fragment in a managed object with the decoded value
 
-You can also have a nested structure with several values within a measurement, event or managed object fragment. In case of a measurement all the properties of the same type will be merged to create a nested structure. In case of an event or a managed object all the properties with the same fragment are merged to create a nested structure. Also refer to the [example](#nested-structure-example) of a nested structure for a "Position" device type below.
+You can also have a nested structure with several values within a measurement, event or managed object fragment. In case of a measurement all the properties of the same type will be merged to create a nested structure. In case of an event or a managed object all the properties with the same fragment are merged to create a nested structure. Also refer to the [example](#nested-structure-example) of a nested structure for a "Position" device protocol below.
 
-Click **OK** to add the values to your device type. 
+Click **OK** to add the values to your device protocol. 
 
-![Value configurations of created device type](/guides/images/users-guide/actility/deviceDatabase1.png)
+![Value configurations of created device type](/guides/images/users-guide/actility/devmgmt-devicetypes-protocols-loraprotocol.png)
 
-After clicking **Save**, your device type is created with the values you defined.
+After clicking **Save**, your device protocol is created with the values you defined.
 
 **Example with single property**
 
 The following image shows an example for a message which sends a measurement when the battery level changes. 
 
-<img src="/guides/images/users-guide/actility/deviceDatabase2.png" alt="Value configuration in detail: measurement" style="max-width: 50%">
+![Battery level changes example](/guides/images/users-guide/actility/devmgmt-devicetypes-protocols-battery.png)
 
+![Battery level changes example](/guides/images/users-guide/actility/devmgmt-devicetypes-protocols-battery2.png)
 
 **<a name="nested-structure-example"></a>Example with nested structure**
 
-The following image shows an example of a nested structure for a device type reporting the current position of a GPS device. The device type is named "Position" and contains values for longitude and latitude. 
+The following image shows an example of a nested structure for a device protocol reporting the current position of a GPS device. The device type is named "Position" and contains values for longitude and latitude. 
 
 The message ID should be the same for all the values. Enter the rest of the parameters according to the instructions above. Enter "c8y_Position" in the **Managed object fragment** field and create a new value for each: longitude and latitude. 
 
@@ -180,7 +183,7 @@ The message ID should be the same for all the values. Enter the rest of the para
 
 This will be the result: 
 
-![Value configuration in detail: nested structure](/guides/images/users-guide/actility/deviceDatabase5.png)
+![Value configuration in detail: nested structure](/guides/images/users-guide/actility/devmgmt-devicetypes-protocols-gpsexample.png)
 
 ### <a name="register-device"></a>Registering LoRa devices
 
@@ -188,7 +191,7 @@ To register a LoRa device, navigate to the Device Management application and cli
 
 In the upcoming window, click **Custom device registration** and select **LoRa**:
 
-![Register devices](/guides/images/users-guide/actility/deviceRegistration1.png)
+![Register devices](/guides/images/users-guide/actility/devmgmt-devices-registration.png)
 
 Cumulocity fully supports the LoRa device provisioning with Over-the-Air Activation (OTAA) which is the preferred and most secure way to connect with the LoRa network.
 If Activation by Personalization (ABP) is required to be used, refer to the [LoRa device registration with ABP](#device-registration-with-abp-activation) section.
@@ -202,7 +205,7 @@ In the next window fill in the required information:
 JOIN communication. You can find this key on the device itself.
 - **Connectivity plan**: Select the appropriate connectivity plan from the dropdown list.
 
-![Register devices](/guides/images/users-guide/actility/deviceRegistration3.png)
+![Register devices](/guides/images/users-guide/actility/devmgmt-devices-registration3.png)
 
 Click **Next** to submit the device registration request and create the device.
 
@@ -210,7 +213,7 @@ You can verify that the device is really connected by checking that events are a
 
 The provision status is shown under **Device data** in the **Info** tab of the device.
 
-<img src="/guides/images/users-guide/actility/lora-device-data.png" alt="Device data" style="max-width: 100%">
+![Device data](/guides/images/users-guide/actility/devmgmt-devices-devicedata.png)
 
 For more information on viewing and managing your connected devices, also refer to [Device Management](/guides/users-guide/device-management).
 
@@ -242,7 +245,7 @@ You can deprovision a LoRa device in the ThingPark platform. This means that the
 
 To deprovision a device, navigate to the respective device in the Device Management application under **All devices**. Click **More** in the top right and select **Deprovision device**. 
 
-<img src="/guides/images/users-guide/actility/deprovisionDevice.png" alt="Device deprovisioning" style="max-width: 100%">
+![Deprovision device](/guides/images/users-guide/actility/devmgmt-devices-deprovisiondevice.png)
 
 After confirming the deprovisioning, the device will be deprovisioned in ThingPark.
 

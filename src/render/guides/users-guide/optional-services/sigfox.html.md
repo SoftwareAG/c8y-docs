@@ -50,8 +50,9 @@ First enter into your Sigfox Cloud account and create a new user. Add the user t
 After creating an “Associated User” with the proper group and profiles navigate to the “Groups” page. In the “API Access” tab create a new entry and add the following profiles:
 
 - Customer [R]
-- Device Manager [R]
 - Device Manager [W]
+
+> **Info:** Customer [R] is mandatory if sigfox agent version supports only v1 Sigfox API.
 
 ![API access page](/guides/images/users-guide/sigfox/api-access.png)
 
@@ -69,35 +70,35 @@ The following information has to be provided:
 
 ![API access page](/guides/images/users-guide/sigfox/parentgroupid.png)
 
-![API access page](/guides/images/users-guide/sigfox/connectivity.png)
+![API access page](/guides/images/users-guide/sigfox/sigfox-connectivity.png)
 
 Click **Save credentials** to save your settings. If everything is correct, a message "Credentials successfully saved" will be displayed.
 
 If you wish to overwrite your previous credentials, simply click **Replace credentials** and add your new credentials.
 
-### <a name="create-device-types-sigfox"></a>Creating device types
+### <a name="create-device-types-sigfox"></a>Creating device protocols
 
 To process data from Sigfox devices, Cumulocity needs to understand the payload format of the devices.
-Mapping payload data to Cumulocity data can be done by creating a Sigfox device type.
+Mapping payload data to Cumulocity data can be done by creating a Sigfox device protocol.
 
 During the [device registration](#register-device), you can associate this device type and afterwards the received uplink callbacks for this device with a hexadecimal payload will be mapped to the ones you have configured in your device type.
 If a device type has been changed after being associated to a device, the reflection of the change can take up to 10 minutes because of the refresh mechanism of the Sigfox microservice.
 
 **Info:** Device protocol mapping only supports decoding for fixed byte positions based on the message type. 
 
-In order to create device types, go to the Device Management application and select "Device database" in the "Device types" menu in the navigator. You can either import an existing device type or create a new one. 
+In order to create device protocols, go to the Device Management application and select "Device database" in the "Device types" menu in the navigator. You can either import an existing device type or create a new one. 
 
 #### <a name="import-device-type"></a>Importing a device type
 
-In the Device database window, click **Import**. 
+In the Device protocols page, click **Import**. 
 
-Upload the device type from a file and click **Import** again.
+Upload the device protocol from a file and click **Import** again.
 
 #### <a name="create-new-device-type"></a>Creating a new device type
 
-In the device database window, click **New**. The following window will open:
+In the device protocols page, click **New device protocol**. The following window will open:
 
-<img src="/guides/images/users-guide/sigfox/sigfox-new-type.png" alt="Create new device type" style="max-width: 100%">
+![New Sigfox protocol](/guides/images/users-guide/sigfox/sigfox-newprotocol.png)
 
 Select "Sigfox" as the device type and provide a name for your device type. 
 
@@ -113,15 +114,17 @@ In the following sample payload structure, the first byte indicates the message 
 
 In the user interface you can enter this type of message type source information as follows: In the "Start bit" field, indicate where the message type information starts in the payload and in the"Number of bits" field indicate how long this information is, for example start bit = "0" and number of bits = "8".
 
-<img src="/guides/images/users-guide/sigfox/payload.png" alt="Message type payload" style="max-width: 100%">
+![Sigfox protocol](/guides/images/users-guide/sigfox/sigfox-bits.png)
 
-Click **Add** to create the value configuration. 
+Click **Add value** to create the value configuration. 
 	
-<img src="/guides/images/users-guide/sigfox/add-button.png" alt="Device type: new" style="max-width: 100%">
+![Sigfox protocol add value](/guides/images/users-guide/sigfox/sigfox-addvalue.png)
 
 A window similar to the following one will open. Configure the relevant values as shown in this example. 
 
-<img src="/guides/images/users-guide/actility/deviceDatabase4.png" alt="Value configuration: new" style="max-width: 60%">
+![LoRa protocol add new value](/guides/images/users-guide/actility/devmgmt-devicetypes-protocols-loranewvalue.png)
+
+![LoRa protocol add new value](/guides/images/users-guide/actility/devmgmt-devicetypes-protocols-loranewvalue2.png)
 
 The value configuration maps the value in the payload of a message type to the Cumulocity data. 
 
@@ -131,7 +134,7 @@ In this sample payload structure the message ID is "1".
 
 <img src="/guides/images/users-guide/actility/payload-example2.png" alt="Example payload: message type source" style="max-width: 100%">
 
-<img src="/guides/images/users-guide/actility/deviceDatabase4a.png" alt="Value configuration: message type" style="max-width: 60%">
+![LoRa bits](/guides/images/users-guide/actility/devmgmt-devicetypes-protocols-loraid.png)
 
 Fill in the general fields for your new value in order to categorize it in the "Values" list. The associated "Name" for this value will be displayed under the "Display category" given.
 
@@ -141,7 +144,7 @@ In this example the "Channel 1 Type" information starts in byte 2 (i.e. start bi
 
 <img src="/guides/images/users-guide/actility/payload-example3.png" alt="Example payload: value selection" style="max-width: 100%">
 
-<img src="/guides/images/users-guide/actility/deviceDatabase4b.png" alt="Value selection" style="max-width: 60%">
+![LoRa bits](/guides/images/users-guide/actility/devmgmt-devicetypes-protocols-lorabits.png)
 
 The hexadecimal value is converted to a decimal number and afterwards a "value normalization" is applied.
 
@@ -166,7 +169,7 @@ You can also have a nested structure with several values within a measurement, e
 
 After clicking "OK", the values are added to your device type. 
 
-![Value configurations of created device type](/guides/images/users-guide/sigfox/measure-data.png)
+![Value configurations of created device type](/guides/images/users-guide/sigfox/sigfox-protocol.png)
 
 After clicking "Save", your device type is created with the values you defined.
 
@@ -174,7 +177,9 @@ After clicking "Save", your device type is created with the values you defined.
 
 The following image shows an example for a message which sends a measurement when this value (the battery level) changes. 
 
-<img src="/guides/images/users-guide/actility/deviceDatabase2.png" alt="Value configuration in detail: measurement" style="max-width: 50%">
+![Battery level changes example](/guides/images/users-guide/actility/devmgmt-devicetypes-protocols-battery.png)
+
+![Battery level changes example](/guides/images/users-guide/actility/devmgmt-devicetypes-protocols-battery2.png)
 
 
 **<a name="nested-structure-example"></a>Example with nested structure**
@@ -189,7 +194,7 @@ The "Message ID" should be the same for all the values. Enter the rest of the pa
 
 This will be the result: 
 
-![Value configuration in detail: nested structure](/guides/images/users-guide/sigfox/gpsdevice.png)
+![Value configuration in detail: nested structure](/guides/images/users-guide/actility/devmgmt-devicetypes-protocols-gpsexample.png)
 
 ### <a name="register-device-sigfox"></a>Registering Sigfox devices
 

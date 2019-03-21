@@ -169,9 +169,9 @@ The following table lists the fields of a tenant creation requests, along with t
 
 |Field|Description|Max. Length|Required|
 |:----|:---|:---|:---|
-|company|Company Name|256|Yes
+|company|Company name|256|Yes
 |domain|Domain name to be used for the tenant|256|Yes
-|id|The tenant id. Will be auto-generated if not present.|32|No
+|id|The tenant ID. Will be auto-generated if not present.|32|No
 |adminName|Username of the tenant administrator|50|No
 |adminPass|Password of the tenant administrator|32|No
 |adminEmail|Email address of the administrator|254|No
@@ -179,7 +179,8 @@ The following table lists the fields of a tenant creation requests, along with t
 |contact_phone|20|An international contact phone number|No
 |customProperties||A set of custom properties of the agent|No
 
-Naming convention for tenant id is:
+The naming convention for tenant ID is:
+
 - only lowercase letters, digits, hyphen and underscore is allowed
 - MUST start with a letter
 - hyphen and underscore are only allowed in the middle

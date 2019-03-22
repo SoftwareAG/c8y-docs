@@ -69,13 +69,13 @@ $ c8y deploy:app myapplication
 ? Tenant piedpiper
 ? User admin
 ? Password ***********
-? Base url https://piedpier.cumulocity.com
+? Base URL https://piedpier.cumulocity.com
 GET application/applicationsByOwner/piedpier?pageSize=10000 200
 POST application/applications/31337/binaries/ 201
 PUT /application/applications/31337 200
 ```
 
-You will be asked for the name and base url of your tenant, as well as your username and password. To prevent filling out these prompts over and over again, you can define the following environment variables on your computer: ```C8Y_TENANT```, ```C8Y_USER```, ```C8Y_PASS``` and ```C8Y_BASE_URL```.
+You will be asked for the name and base URL of your tenant, as well as your username and password. To prevent filling out these prompts over and over again, you can define the following environment variables on your computer: ```C8Y_TENANT```, ```C8Y_USER```, ```C8Y_PASS``` and ```C8Y_BASE_URL```.
 
 After deploying your application, it appears in the *"Own applications"* menu of the "Administration" application.
 
@@ -291,7 +291,7 @@ After we defined the variable "text", we can access it in our view template. To 
 
 ### Test your application
 
-To test your application, use the command ```c8y server``` with the complete url of your tenant as parameter.
+To test your application, use the command ```c8y server``` with the complete URL of your tenant as parameter.
 
 ### Build and deploy your application and plugins
 
@@ -328,7 +328,7 @@ The build process for plugins includes the following steps:
 3. Transform every html file to be included via *$templateCache*.
 4. Concatenate and minify all the defined js files in the manifest (using [UglifyJS 2](https://github.com/mishoo/UglifyJS2)).
 5. Compile all the less files.
-6. Concatenate and minify all the css and result of the less files.
+6. Concatenate and minify all the CSS and result of the less files.
 7. Copy all the files defined in 'copy' in the manifest.
 8. Copy all the localization files that may be available inside locales folder inside the plugin.
 9. Copy the plugin manifest.

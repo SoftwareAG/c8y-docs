@@ -14,7 +14,9 @@ You will also need a Cumulocity tenant and valid access credentials. Creation of
 
 With this first version of the pollux.cumulocity plugin you will need to register your devices manually using the Cumulocity Device Manager web interface:
 
-![Device Registration](/guides/images/devices/owa3x/screenshot1.png)
+![Device Registration](/guides/images/devices/owa3x/devices-owasys3x-register.png)
+
+The value entered in the marked field will be the device name. Using the owasys3x IMEI is a good idea, as it is a good global unique identifier.
 
 This will change in the next release of the plugin, which will support fully automatic registration of devices, so no human intervention will be needed on server side.
 
@@ -24,23 +26,25 @@ You can also check the thorough [cumulocity documentation](https://www.cumulocit
 
 The *pollux.cumulocity* plugin uses a single JSON configuration file */home/conf/cumulocity.json*. This a real life example:
 
-    {
-       "name": "cumulocity.pollux",
-       "file": "/tmp/cumulocity.db",
-       "backup": "./db/cumulocity.db",
-       "id":"4811",
-       "server": "owasys.cumulocity.com",
-       "port": 80,
-       "apikey": "HTTP-basic-authentication-base64-encoded",
-       "service":"measurement/measurements/",
-       "table":
-          [
-             ... measurement templates ...
-          ],
-       "devices":[
-          ... mapping of devices attached ...
-       ]
-    }
+```json
+{
+   "name": "cumulocity.pollux",
+   "file": "/tmp/cumulocity.db",
+   "backup": "./db/cumulocity.db",
+   "id":"4811",
+   "server": "owasys.cumulocity.com",
+   "port": 80,
+   "apikey": "HTTP-basic-authentication-base64-encoded",
+   "service":"measurement/measurements/",
+   "table":
+      [
+         ... measurement templates ...
+      ],
+   "devices":[
+      ... mapping of devices attached ...
+   ]
+}
+```
 
 In this file, first you need to modify the following properties according to your Cumulocity settings:
 - server is the subdomain assigned to your tenant
@@ -48,7 +52,9 @@ In this file, first you need to modify the following properties according to you
 - base64(username + ':' + password)
 - id is the Cumulocity ID assigned to this device during the registration process. Please see below.
 
-![Cumulocity Managed Object ID](/guides/images/devices/owa3x/screenshot2.png)
+![Cumulocity Managed Object ID](/guides/images/devices/owa3x/devices-owasys3x-deviceid.png)
+
+In this case the marked field is the device ID that Cumulocity assigns to each device after successful registration. Please note that, the device ID is different from the device name(IMEI).
 
 Apart from devices and table (which will be detailed in the Advanced Configuration section), the rest of the properties of the JSON file usually should not be modified.
 
@@ -69,34 +75,40 @@ In order to support this powerful feature and report as multiple Cumulocity devi
 
 For example, for data comming a ModBus device (registered in the Cumulocity platform with device ID 5395) and another monitoring application running in the owa3x (the owa3x itself is modeled in Cumulocity as device ID 4811) the devices array property would look like this:
 
-    "devices":[
-      { "id":"5395","preffix":"ModBus1"},
-      { "id":"4811","preffix":"app"}
-    ]
+```json
+"devices":[
+  { "id":"5395","preffix":"ModBus1"},
+  { "id":"4811","preffix":"app"}
+]
+```
 
 ModBus device uses "ModBus1" as source parameter when writing to the queue and will be shown as Device 5395 in the Cumulocity web interface.
 The independent monitoring application also running on the owa3x reports as Device ID 4811 by using "app" as source.
 
 Finally, the table array of the configuration file maps different <data_id> to Cumulocity measurement templates like this:
 
-    "table":
-    [
-      ["To","\"c8y_Temperature\":{\"temperature\":{\"value\":%f,\"unit\":\"C\"}}"],
-      ["Pl","\"c8y_Pressure\":{\"pressure\":{\"value\":%f,\"unit\":\"bar\"}}"],
-      ["RPM","\"c8y_Speed\":{\"speed\":{\"value\":%f,\"unit\":\"rpm\"}}"],
-      ["Vol","\"c8y_Flow\":{\"flow\":{\"value\":%f,\"unit\":\"m3/l/10\"}}"],
-      ["Running","\"c8y_Running_hours\":{\"running_hours\":{\"value\":%f,\"unit\":\"h\"}}"],
-      ["Loaded","\"c8y_Loaded_hours\":{\"loaded_hours\":{\"value\":%f,\"unit\":\"h\"}},
-      ["pow1","\"c8y_Battery\":{\"battery\":{\"value\":%f,\"unit\":\"V\"}}"],
-      ["temp0","\"c8y_Temperature\":{\"temperature\":{\"value\":%f,\"unit\":\"C\"}}"]
-    ],
+```json
+"table":
+[
+  ["To","\"c8y_Temperature\":{\"temperature\":{\"value\":%f,\"unit\":\"C\"}}"],
+  ["Pl","\"c8y_Pressure\":{\"pressure\":{\"value\":%f,\"unit\":\"bar\"}}"],
+  ["RPM","\"c8y_Speed\":{\"speed\":{\"value\":%f,\"unit\":\"rpm\"}}"],
+  ["Vol","\"c8y_Flow\":{\"flow\":{\"value\":%f,\"unit\":\"m3/l/10\"}}"],
+  ["Running","\"c8y_Running_hours\":{\"running_hours\":{\"value\":%f,\"unit\":\"h\"}}"],
+  ["Loaded","\"c8y_Loaded_hours\":{\"loaded_hours\":{\"value\":%f,\"unit\":\"h\"}},
+  ["pow1","\"c8y_Battery\":{\"battery\":{\"value\":%f,\"unit\":\"V\"}}"],
+  ["temp0","\"c8y_Temperature\":{\"temperature\":{\"value\":%f,\"unit\":\"C\"}}"]
+],
+```
 
 So, if we would like to report from the ModBus client temperature and pressure measurements, and battery and temperature readings from the monitoring application we would need to write to the file:
 
-    ModBus1.To=38.54
-    ModBus1.Pl=8910
-    app.pow1=4.12654
-    app.temp0=19.2
+```json
+ModBus1.To=38.54
+ModBus1.Pl=8910
+app.pow1=4.12654
+app.temp0=19.2
+```
 
 This will be sent as four properly formatted Cumulocity measurements each to the corresponding Device on the configured Cumulocity endpoint.
 

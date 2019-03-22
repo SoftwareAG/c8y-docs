@@ -17,12 +17,12 @@ layout: redirect
 ### GET a representation of a Tenant Collection.
 
 Response body: TenantCollection
-  
+
 Required role: ROLE\_TENANT\_MANAGEMENT\_READ
 
 Example Request: Get tenants as sample\_tenant.
 
-     
+
     GET /tenant/tenants
     Host: ...
     Authorization: Basic ...
@@ -113,7 +113,7 @@ Example Response :
             ...
         ]
     }
-    
+
 ### POST - Create a new Tenant
 
 Request body: Tenant
@@ -123,13 +123,13 @@ Response body: Tenant
 Required role: ROLE\_TENANT\_MANAGEMENT\_ADMIN or ROLE\_TENANT\_MANAGEMENT\_CREATE
 
 Example request:
-				
+
 	POST /tenant/tenants
 	Host: ...
 	Authorization: Basic ...
 	Content-Length: ...
 	Content-Type: application/vnd.com.nsn.cumulocity.tenant+json;ver...
-	
+
 	{
 		"id" : "sample_tenant",
 		"company" : "sample_company",
@@ -150,7 +150,7 @@ Example Response:
 	Content-Type: application/vnd.com.nsn.cumulocity.tenant+json;ver=...
 	Content-Length: ...
 	Location: <<URL of new tenant>>
-	
+
 	{
 		"id" : "sample_tenant",
 		"allowCreateTenants": false,
@@ -162,26 +162,26 @@ Example Response:
 		"status" : "ACTIVE",
 		"adminName" : "firstAdmin",
 		"parent": "parentTenant",
-		"adminEmail" : "john.doe@sample_domain.com",
 		"customProperties" : {"referenceId":"1234567890"}
 	}
 
-In the following table you can see the restrictions for each field:
+The following table lists the fields of a tenant creation requests, along with their length constraints. The fragments ```domain``` and  ```company``` always have to be provided.
 
-|Field|Type|
-|:----|:---|
-|id|VARCHAR(32)|
-|company_name|VARCHAR(256)|
-|domain_name|VARCHAR(256)|
-|contact_name|VARCHAR(30)|
-|contact_phone|VARCHAR(20)|
-|administrator|VARCHAR(50)|
+|Field|Description|Max. Length|Required|
+|:----|:---|:---|:---|
+|company|Company name|256|Yes
+|domain|Domain name to be used for the tenant|256|Yes
+|id|The tenant ID. Will be auto-generated if not present.|32|No
+|adminName|Username of the tenant administrator|50|No
+|adminPass|Password of the tenant administrator|32|No
+|adminEmail|Email address of the administrator|254|No
+|contactName|A contact name, for example an administrator, of the tenant|No
+|contact_phone|20|An international contact phone number|No
+|customProperties||A set of custom properties of the agent|No
 
-Naming convention for tenant id is:
+The naming convention for tenant ID is:
+
 - only lowercase letters, digits, hyphen and underscore is allowed
 - MUST start with a letter
 - hyphen and underscore are only allowed in the middle
 - MUST have a minimum length of two characters
-
-> Note: creating a tenant with adminName, adminPass and adminEmail, creates an admin user with these settings.
-For the tenant id SQL keywords (e.g., select, cross, where) are not allowed. 

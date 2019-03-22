@@ -5,7 +5,7 @@ order: 30
 ---
 
 For styling the application global CSS created with [LESS](http://lesscss.org/) is used. These styles are based on Bootstrap 3, and the original LESS source is distributed via the npm package [@c8y/style](https://www.npmjs.com/package/@c8y/style).
-By extending these styles it is possible to change any detail of the app but the vast majority of developer want to change: colors, logos and fonts and these can be very easily achieved by replacing a few variables.
+By extending these styles it is possible to change any detail of the application but the vast majority of developer want to change: colors, logos and fonts and these can be very easily achieved by replacing a few variables.
 
 To override the variables it is possible to use:
 - LESS variables at build time
@@ -32,8 +32,8 @@ Here is a list of the available variables.
 --navigator-platform-logo-height: 36px; /* height of the logo set to 0 to hide the element */
 
 --navigator-font-family: inherit;
---navigator-app-name-size: 16px; /* font size of the app name set to 0 to hide app's name */
---navigator-app-icon-size: 46px; /* size of the app icon. set to 0 to hide the app icon.*/
+--navigator-app-name-size: 16px; /* font size of the application name set to 0 to hide app's name */
+--navigator-app-icon-size: 46px; /* size of the application icon. set to 0 to hide the application icon.*/
 --navigator-bg-color: var(--brand-primary);
 --navigator-header-bg: var(--navigator-bg-color);
 --navigator-text-color: #ffffff;

@@ -4,7 +4,7 @@ layout: redirect
 order: 15
 ---
 
-Each UI application can be customized with a set a defined options.
+Each UI application can be customized with a set of defined options.
 The options objects are defined in json and read and merged at runtime with the following order:
 
 - Static options defined at build time
@@ -17,7 +17,7 @@ Although all of the options can be defined on any of the 3 levels some might not
 
 ### Static options
 
-Defined in the `package.json` of the app inside the fragment `c8y.application`:
+Defined in the `package.json` of the application inside the fragment `c8y.application`:
 
 ```json
 {
@@ -43,7 +43,7 @@ c8ycli build --app.contextPath=cockpit2 --app.dynamicOptionsUrl="/apps/public/pu
 
 ### Dynamic fetched options
 
-Using the static options `dynamicOptionsUrl` the app will try to load a json from the specified URL at boot time. In the platform's built-in applications this option is set to `/apps/public/public-options/options.json` as that mechanism to provide instance level and enterprise tenant customization.
+Using the static options `dynamicOptionsUrl` the application will try to load a json from the specified URL at boot time. In the platform's built-in applications this option is set to `/apps/public/public-options/options.json` as that mechanism to provide instance level and enterprise tenant customization.
 As this property is defined statically at build time, it is possible for the application developer to decide if and where from their applications should load the dynamic fetched options at runtime.
 
 ### URL options
@@ -83,7 +83,7 @@ export class ApplicationOptions {
   };
   localePath?: string; // The folder where the translations po files are loaded from
   extraCssUrls?: string[]; // URLs for extra CSS files to be loaded at runtime
-  noAppSwitcher?: boolean; // Hides the app from the app switched (saved to the server)
+  noAppSwitcher?: boolean; // Hides the application from the application switched (saved to the server)
   globalTitle?: string; // HTML page title
   hidePowered?: boolean; // Hide powered by at the bottom of the navigator
   supportUrl?: boolean | string; // URL for support link

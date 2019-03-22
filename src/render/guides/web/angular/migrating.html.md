@@ -78,7 +78,7 @@ Since 9.16.0 we have introduced Angular support and as such the build process ha
 
 </table>
 
-The cumulocity.json manifest is in practice a module descriptor so with `@c8y/cli` (which uses webpack as a module bundler)  applications and plugin manifests are resolved and loaded into webpack as any other module, by using a custom loaders and resolvers.
+The cumulocity.json manifest is in practice a module descriptor so with `@c8y/cli` (which uses webpack as a module bundler) applications and plugin manifests are resolved and loaded into webpack as any other module, by using a custom loaders and resolvers.
 
 For example built-in AngularJS plugins are now included like this
 

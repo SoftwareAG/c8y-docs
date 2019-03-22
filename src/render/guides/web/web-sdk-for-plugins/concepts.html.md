@@ -58,11 +58,11 @@ In case that you only want to create a plugin and [add it to an already existing
 
 The application manifest describes where your application is stored and how it is exposed to Cumulocity. The following properties are available:
 
-* **name**: A descriptive name for the application. It will appear in the app switcher menu.
+* **name**: A descriptive name for the application. It will appear in the application switcher menu.
 * **availability**: "PRIVATE", if the application is only available in your tenant, "MARKET", if it is a public application.
 * **contextPath**: The path to be used for hosted applications. The URL of the application will be "&lt;&lt;yourURL&gt;&gt;/apps/&lt;&lt;contextPath&gt;&gt;".
 * **key**: The application key that is used for associating requests of an application with the application and for subscribing to applications.
-* **resourcesUrl**: If the app is serving an upload zip file (which is the case for Smartapps) this value will be '/'. If it's a full URL all the request will proxied to that address.
+* **resourcesUrl**: If the application is serving an upload zip file (which is the case for Smartapps) this value will be '/'. If it's a full URL all the request will proxied to that address.
 * **type**: *HOSTED*, if the application is hosted through Cumulocity, *EXTERNAL*, if the application is hosted elsewhere.
 * **imports**: A list of plugins used by the application. List of *&lt;&lt;applicationName&gt;&gt;/&lt;&lt;pluginName&gt;&gt;*.
 * **noAppSwitcher**: [OPTIONAL] If set to true, the application will not appear in the App Switcher menu. A possible use case is, for example, if the application only exposes plugins.

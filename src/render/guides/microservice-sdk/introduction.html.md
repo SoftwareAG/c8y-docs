@@ -6,12 +6,12 @@ layout: standalone
 
 Microservices are server-side applications which may be used to extend the Cumulocity IoT platform with customer-specific functionality.
 
-This Microservice SDK guide provides detailed information on
+This Microservice SDK guide provides detailed information on:
 
 * [General concepts](/guides/microservice-sdk/concept) and functionality of using microservices on top of Cumulocity
 * How to develop and deploy microservices using the SDK for [C#](/guides/microservice-sdk/cs) and [Java](/guides/microservice-sdk/java)
-* How to develop microservices using [Python](/guides/microservice-sdk/http)
 * How to use the [Cumulocity's REST interfaces](/guides/microservice-sdk/rest) to develop microservices
+* Examples on developing microservices using [Python](/guides/microservice-sdk/http)
 
 Furthermore, detailed information on various topics related to microservices can be found in the [Reference guide](/guides/reference):
 

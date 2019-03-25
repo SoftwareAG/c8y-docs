@@ -4,21 +4,21 @@ layout: redirect
 title: Developing Microservices
 ---
 
-This document describes microservice SDK features, including annotations, services, configuration files, logging and maven build plugin. 
+This document describes microservice SDK features, including annotations, services, configuration files, logging and maven build plugin.
 
 ### Overview
 
 There are two possible deployment types on the platform:
 
-* Hosted deployment - the default for microservices. For typical use cases the hosted deployment is the suggested one. 
-* External/legacy deployment - requires custom installation of the platform and agent. 
+* Hosted deployment - the default for microservices. For typical use cases the hosted deployment is the suggested one.
+* External/legacy deployment - requires custom installation of the platform and agent.
 
 For development and testing purposes one can deploy a microservice on a local docker. <!--The process is described in this document. Info is missing!-->
 
 
 ### Annotations
 
-The simplest way to add required behavior to your application is to annotate a main class with @MicroserviceApplication. 
+The simplest way to add required behavior to your application is to annotate a main class with @MicroserviceApplication.
 
 This is a collective annotation consisting of:
 
@@ -77,7 +77,7 @@ The microservice subscription module is responsible for two main features:
 The default behavior for the package is self-registration, which means that after you run the application it will try to register and use generated credentials for the communication with the platform. The self-registration is required to correctly deploy the microservice on the platform.
 
 The other way to register an application to the platform is to do it manually by creating a new application on the platform with the same application name and providing the following properties into the microservice:
- 
+
     application.name={application_name}
     C8Y.bootstrap.register=false
     C8Y.bootstrap.tenant={tenant}
@@ -164,13 +164,13 @@ Properties used by a microservice are:
     C8Y.bootstrap.delay - Subscription refresh delay
     C8Y.bootstrap.initialDelay - Initial subscription delay
     C8Y.microservice.isolation - Microservice isolation. Only PER_TENANT or MULTI_TENANT values are available. MULTI_TENANT by default
-    
-    
+
+
 ### Logging
 
 For hosted deployment the standard output should be used.
 
-For external/legacy deployment logging into the application implies using spring logging described in [this article](https://docs.spring.io/spring-boot/docs/current/reference/html/howto-logging.html). 
+For external/legacy deployment logging into the application implies using spring logging described in [this article](https://docs.spring.io/spring-boot/docs/current/reference/html/howto-logging.html).
 
 The following locations are searched for log-back file:
 
@@ -185,84 +185,88 @@ The following locations are searched for log-back file:
 
 ### Maven plugin
 
-The package module provides a maven plugin to prepare a ZIP file required by the microservice deployment, with simple configuration. The build requires an executable jar. To create one, a developer can use spring-boot-maven-plugin. 
+The package module provides a maven plugin to prepare a ZIP file required by the microservice deployment, with simple configuration. The build requires an executable jar. To create one, a developer can use spring-boot-maven-plugin.
 
 An example with minimum configuration is presented below:
 
-    <plugin>
-        <groupId>org.springframework.boot</groupId>
-        <artifactId>spring-boot-maven-plugin</artifactId>
-        <executions>
-            <execution>
-                <goals>
-                    <goal>repackage</goal>
-                </goals>
-            </execution>
-        </executions>
-        <configuration>
-            <mainClass>${main.class}</mainClass>
-        </configuration>
-    </plugin>
-    <plugin>
-        <groupId>com.nsn.cumulocity.clients-java</groupId>
-        <artifactId>microservice-package-maven-plugin</artifactId>
-        <version>9.0.0</version>
-        <executions>
-            <execution>
-                <id>package</id>
-                <phase>package</phase>
-                <goals>
-                  <goal>package</goal>
-                </goals>
-                <configuration>
-                  <name>hello-world</name>
-                  <encoding>UTF-8</encoding>
-                  <rpmSkip>true</rpmSkip>
-                  <containerSkip>false</containerSkip>
-                </configuration>
-            </execution>
-            <execution>
-                <id>microservice-package</id>
-                <phase>package</phase>
-                <goals>
-                  <goal>microservice-package</goal>
-                </goals>
-                <configuration>
-                  <name>hello-world</name>
-                  <image>hello-world</image>
-                  <encoding>UTF-8</encoding>
-                  <skip>false</skip>
-                </configuration>
-            </execution>
-        </executions>
-    </plugin>
+```xml
+<plugin>
+    <groupId>org.springframework.boot</groupId>
+    <artifactId>spring-boot-maven-plugin</artifactId>
+    <executions>
+        <execution>
+            <goals>
+                <goal>repackage</goal>
+            </goals>
+        </execution>
+    </executions>
+    <configuration>
+        <mainClass>${main.class}</mainClass>
+    </configuration>
+</plugin>
+<plugin>
+    <groupId>com.nsn.cumulocity.clients-java</groupId>
+    <artifactId>microservice-package-maven-plugin</artifactId>
+    <version>9.0.0</version>
+    <executions>
+        <execution>
+            <id>package</id>
+            <phase>package</phase>
+            <goals>
+              <goal>package</goal>
+            </goals>
+            <configuration>
+              <name>hello-world</name>
+              <encoding>UTF-8</encoding>
+              <rpmSkip>true</rpmSkip>
+              <containerSkip>false</containerSkip>
+            </configuration>
+        </execution>
+        <execution>
+            <id>microservice-package</id>
+            <phase>package</phase>
+            <goals>
+              <goal>microservice-package</goal>
+            </goals>
+            <configuration>
+              <name>hello-world</name>
+              <image>hello-world</image>
+              <encoding>UTF-8</encoding>
+              <skip>false</skip>
+            </configuration>
+        </execution>
+    </executions>
+</plugin>
+```
 
 #### Package goal
 
-The package plugin is responsible for creation of a docker container, rpm file and for creating a ZIP file, that can be deployed on the platform. 
+The package plugin is responsible for creation of a docker container, rpm file and for creating a ZIP file that can be deployed on the platform.
 It can be configured with the following parameters:
 
 * name (alias package.name) - defaults to project.artifactId
-*  description (alias package.description) - defaults to project.description
-*  jvmArgs (alias agent-package.jvmArgs) - jvm-gc arguments. The default value is `-XX:+UseConcMarkSweepGC -XX:+CMSParallelRemarkEnabled -XX:+ScavengeBeforeFullGC -XX:+CMSScavengeBeforeRemark`". Will be overwritten if   other options are provided.
-*  arguments (alias agent-package.arguments) - arguments passed on Java application startup
-*  encoding (alias project.build.sourceEncoding)  - defaults to UTF-8
-*  heap (alias agent-package.heap) - defaults to min = 128MB max = 384MB
-*  perm (alias agent-package.perm) - defaults to min = 64MB max = 128MB
-*  skip (alias skip.agent.package) - to skip the whole packaging part
-*  rpmSkip (alias skip.agent.package.rpm) - to skip rpm file creation. False by default
-*  containerSkip (alias skip.agent.package.container) - to skip docker image creation. True by default
-* manifestFile - points to a manifest file location. Default value: ${basedir}/src/main/configuration/cumulocity.json
+* description (alias package.description) - defaults to project.description
+* jvmArgs (alias agent-package.jvmArgs) - jvm-gc arguments. The default value is `-XX:+UseConcMarkSweepGC -XX:+CMSParallelRemarkEnabled -XX:+ScavengeBeforeFullGC -XX:+CMSScavengeBeforeRemark`". Will be overwritten if   other options are provided.
+* arguments (alias agent-package.arguments) - arguments passed on Java application startup
+* encoding (alias project.build.sourceEncoding)  - defaults to UTF-8
+* heap (alias agent-package.heap) - defaults to min = 128MB max = 384MB
+* perm (alias agent-package.perm) - defaults to min = 64MB max = 128MB
+* skip (alias skip.agent.package) - to skip the whole packaging part
+* rpmSkip (alias skip.agent.package.rpm) - to skip rpm file creation. False by default
+* containerSkip (alias skip.agent.package.container) - to skip docker image creation. True by default
+* manifestFile - points to a manifest file location. Default value: $<basedir>/src/main/configuration/cumulocity.json
 
 Example configuration:
 
-    <configuration>
-      <name>hello-world</name>
-      <encoding>UTF-8</encoding>
-      <rpmSkip>true</rpmSkip>
-      <containerSkip>false</containerSkip>
-      <manifestFile>${basedir}/src/main/microservice/cumulocity.json</manifestFile>
-    </configuration>
+```xml
+<configuration>
+    <name>hello-world</name>
+    <encoding>UTF-8</encoding>
+    <rpmSkip>true</rpmSkip>
+    <containerSkip>false</containerSkip>
+    <manifestFile>${basedir}/src/main/microservice/cumulocity.json</manifestFile>
+</configuration>
+```
 
 #### Push goal
 
@@ -273,14 +277,16 @@ The push plugin is responsible for pushing the docker image to a registry. The r
 
 Example configuration:
 
-	    <configuration>
-	      <registry>http://{yourregistry.com}</registry>
-	      <containerSkip>false</containerSkip>
-	    </configuration>
+```xml
+<configuration>
+    <registry>http://{yourregistry.com}</registry>
+    <containerSkip>false</containerSkip>
+</configuration>
+```
 
 #### Upload goal
 
-Microservice upload goal is responsible for deploying the microservice to a server. 
+Microservice upload goal is responsible for deploying the microservice to a server.
 
 We have three options to configure server url and credentials:
 
@@ -288,8 +294,8 @@ We have three options to configure server url and credentials:
 * pom.xml - maven project configuration file
 * command line
 
-All three ways can be used together, i.e. goal partially can be configured in settings.xml and partially in pom.xml. 
-In case of conflicts the command line configuration has the highest priority and settings xml configuration the lowest.
+All three ways can be used together, i.e. goal partially can be configured in settings.xml and partially in pom.xml.
+In case of conflicts, the command line configuration has the highest priority and settings xml configuration the lowest.
 
 To upload a microservice to the server you need to configure the following properties:
 
@@ -302,48 +308,54 @@ To upload a microservice to the server you need to configure the following prope
 
 To configure the goal in the settings.xml file we need to add the server configuration as follows:
 
-    <server>
-        <id>microservice</id>
-        <username>demos/username</username>
-        <password>******</password>
-        <configuration>
-            <url>https://demos.cumulocity.com</url>
-        </configuration>
-    </server>
-    
+```xml
+<server>
+    <id>microservice</id>
+    <username>demos/username</username>
+    <password>******</password>
+    <configuration>
+        <url>https://demos.cumulocity.com</url>
+    </configuration>
+</server>
+```
+
 #### pom.xml
 
-To configure the plugin in the pom.xml file we need to add the server configuration as follows. 
+To configure the plugin in the pom.xml file we need to add the server configuration as follows.
 
-    <plugin>
-        <groupId>com.nsn.cumulocity.clients-java</groupId>
-        <artifactId>microservice-package-maven-plugin</artifactId>
-        <configuration>
-            <application>
-                <name>cep</name>
-            </application>
-            
-            <!-- please note that the credentials are optional if they are already configured in settings.xml -->
-            <credentials>
-                <url>https://demos.cumulocity.com</url>
-                <username>demos/username</username>
-                <password>******</password>
-            </credentials>
-        </configuration>
-    </plugin>
+```xml
+<plugin>
+    <groupId>com.nsn.cumulocity.clients-java</groupId>
+    <artifactId>microservice-package-maven-plugin</artifactId>
+    <configuration>
+        <application>
+            <name>cep</name>
+        </application>
+
+        <!-- please note that the credentials are optional if they are already configured in settings.xml -->
+        <credentials>
+            <url>https://demos.cumulocity.com</url>
+            <username>demos/username</username>
+            <password>******</password>
+        </credentials>
+    </configuration>
+</plugin>
+```
 
 ##### Command line
 
-To pass the configuration only to the particular build, run
+To pass the configuration only to the particular build, execute the following command:
 
-    mvn microservice:upload -Dupload.application.name=cep -Dupload.url=https://demos.cumulocity.com -Dupload.username=demos/username -Dupload.password=******
+```shell
+$ mvn microservice:upload -Dupload.application.name=cep -Dupload.url=https://demos.cumulocity.com -Dupload.username=demos/username -Dupload.password=******
+```
 
 
 ### Deployment
 
 #### Hosted deployment
 
-> 	**Info**: For your convenience we have prepared a utility deployment script available [here](/guides/reference/microservice-package).
+> **Info**: For your convenience we have prepared a utility deployment script available [here](/guides/reference/microservice-package).
 
 To deploy an application on an environment you need the following:
 
@@ -392,7 +404,7 @@ Example:
 
 
 **Step 2 - Upload zip file**
-       
+
     POST /application/applications/{APPLICATION_ID}/binaries
     Host: ...
     Authorization: Basic xxxxxxxxxxxxxxxxxxx
@@ -406,7 +418,7 @@ Example:
 
 
 **Step 3 - Subscribe to microservice**
-    
+
     POST /tenant/tenants/$TENANT/applications
     Host: ...
     Authorization: Basic xxxxxxxxxxxxxxxxxxx
@@ -425,13 +437,13 @@ Example:
 
 #### Local docker deployment
 
-To deploy the application on a local docker, one needs to inject the environment variables into a container. This is done via the docker run -e parameter. The full description of available parameters is available in [Microservice runtime > Environment variables](/guides/reference/microservice-runtime) in the Reference guide. 
+To deploy the application on a local docker, one needs to inject the environment variables into a container. This is done via the docker run -e parameter. The full description of available parameters is available in [Microservice runtime > Environment variables](/guides/reference/microservice-runtime) in the Reference guide.
 
-An example execution could be: 
-    
+An example execution could be:
+
     docker run -e "C8Y_BASEURL={C8Y_BASEURL}" -e "C8Y_BASEURL_MQTT={C8Y_BASEURL_MQTT}" {IMAGE_NAME}
-    
-    
+
+
 ### Monitoring
 
 To check if a hosted microservice is running successfully, the microservice's health endpoint can be checked.
@@ -441,7 +453,7 @@ This endpoint is enabled by default for all microservices that are developed usi
 
 Example response:
 
-    HTTP/1.1 200 
+    HTTP/1.1 200
     {
       "status":"UP"
     }
@@ -452,4 +464,3 @@ Example response:
     {
       "status":"DOWN"
     }
-

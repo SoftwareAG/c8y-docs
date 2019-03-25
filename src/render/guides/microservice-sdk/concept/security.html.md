@@ -50,7 +50,7 @@ An example of a typical user switching in multi-tenant isolation is presented be
 
 ![microservice_user_switch_example](/guides/images/concepts-guide/microserviceusersexample.png)
 
-The user wants to employ microservice capabilities to raise alarms to all subscribed tenants calls. 
+The user wants to employ microservice capabilities to raise alarms to all subscribed tenants calls.
 
 Steps:
 
@@ -69,3 +69,9 @@ Required roles are added to the service users.
 These roles can be assigned or revoked to the tenant platform users or groups using the Administration application.
 
 The roles are set in the [Microservice manifest](#manifest).
+
+### Encryption
+
+There is a mechanism to encrypt tenant options that afterwards are automatically decrypted when injecting them into microservices requests. It works via tenant options (Refer to [Option collection](https://cumulocity.com/guides/reference/tenants#option-collection) in the **Tenants** section of the **Reference** guide).
+
+If a tenant option is created at any category that starts with `credentials.`, it is automatically encrypted and can be only fetched as unencrypted by "System users". For instance, when you create a tenant option in "category" that matches to the application context path, the value is passed to the microservice by the microservice proxy on the platform as a header (Key => Value). All encrypted options are decrypted and passed. Moreover, the options can be fetched via REST using the options endpoint at microservice runtime.

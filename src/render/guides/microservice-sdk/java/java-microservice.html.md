@@ -447,4 +447,4 @@ You can also test your microservice with your favorite browser. Remember to ente
 
 ### Improving the microservice
 
-Now that you have done your first steps, check out the section [Developing microservice](/guides/microservice-sdk/java#developing-microservice) to find out what else is possible to be implemented.
+Now that you have done your first steps, check out the section [Developing microservices](/guides/microservice-sdk/java#developing-microservice) to find out what else is possible to be implemented.

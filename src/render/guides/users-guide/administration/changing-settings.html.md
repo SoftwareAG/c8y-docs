@@ -10,7 +10,8 @@ From the **Settings** menu, administrators can modify or manage various settings
 - changing the [application settings](#default-app),
 - changing the [password policy and TFA settings](#changing-password-settings),
 - managing the [properties library](#properties),
-- configure system-wide [configuration properties](#config-platform) in Cumulocity.
+- configure system-wide [configuration properties](#config-platform) in Cumulocity,
+- managing the [connectivity settings](#connectivity).
 
 ### <a name="single-sign-on"></a>Configuring single sign-on
 
@@ -287,3 +288,25 @@ At the top you can select if you want to send the email to the suspended tenant'
 Click **Save configuration** to save your settings.
 
 Additional features are available for management tenants. For details, refer to Enterprise Edition > [Customizing your platform](/guides/users-guide/enterprise-edition#customization).
+
+### <a name="connectivity"></a>Managing the Connectivity settings
+
+In the **Connectivity** page, you can manage credentials for different providers. In order to add or replace credentials **admin** permissions are required.
+
+The following provider settings are currently available:
+
+- Impact 
+- LoRa
+- Sigfox
+- SIM
+
+![Provider settings](/guides/images/users-guide/Administration/admin-settings-connectivity-sim.png)
+
+To add credentials:
+
+- Select your desired provider.
+- Enter URL of the provider.
+- Enter username and password.
+- When ready, click **Save**.
+
+> **Info:** In order to see the **Connectivity** tab in device details, the user needs to have 'Read' permission for **Connectivity**. To change SIM card status and send text messages, the user needs to have 'Admin' permission for **Connectivity**.

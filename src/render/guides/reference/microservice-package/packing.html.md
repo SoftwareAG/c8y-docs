@@ -4,16 +4,18 @@ title: Packing
 layout: redirect
 ---
 
-To pack the microservice, the following structure is required:
-    
-    /docker/Dockerfile
-    /docker/* - all files within the directory will be included in the docker build
-    /cumulocity.json 
+The following directory structure is required to pack a microservice:
 
-The script can be run in a parent folder holding such structure, or by passing the path to the directory via --dir parameter. 
+```bash
+/docker/Dockerfile      # Instructions to build the Docker image
+/docker/*               # All files within the directory will be included in the Docker build
+/cumulocity.json        # The application manifest
+```
 
-The sample execution
+The script can be run in a parent folder holding such structure, or by passing the path to the directory using the `-dir` option. For instance, to pack a Hello World microservice application, execute:
 
-    microservice pack -n hello-world
-    
-will create a zip file with the name "hello-world", and an intermediate image.tar - exported docker image. 
+```shell
+$ ./microservice pack --name hello-world
+```
+
+It will create a ZIP file with named _hello-world.zip_, and an intermediate _image.tar_ which is an exported Docker image.

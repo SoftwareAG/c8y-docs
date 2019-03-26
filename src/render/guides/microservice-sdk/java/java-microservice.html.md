@@ -4,11 +4,11 @@ layout: redirect
 title: Hello microservice!
 ---
 
-In this section you will learn how to create your first microservice that can be run on the [Cumulocity Platform](https;//cumulocity.com) using the Microservice SDK for Java.
+Here you will learn how to create your first microservice that can be run on the [Cumulocity Platform](https://cumulocity.com) using the Microservice SDK for Java.
 
 ### Prerequisites
 
-Create an account on the [Cumulocity Platform](https;//cumulocity.com), for example by using a free trial. At this step you will be provided with a dedicated URL address.
+Create an account on the [Cumulocity Platform](https://cumulocity.com), for example by using a free trial. At this step you will be provided with a dedicated URL address.
 
 Use the following command to verify that you have Maven 3 installed with Java 7.
 
@@ -22,7 +22,7 @@ Java home: /Library/Java/JavaVirtualMachines/jdk1.7.0_45.jdk/Contents/Home/jre
 
 Maven can be downloaded from the [Maven website](http://maven.apache.org). You will also need a Docker installation, and in case that you don't have it, go to the [Docker website](https://www.docker.com/get-started) to download and install it.
 
-Cumulocity hosts linux/amd64 Docker containers and not Windows containers. The Docker version must be 1.12.6 or above. Use the following command to verify your Docker installation:
+Cumulocity hosts inux/amd64 Docker containers and not Windows containers. The Docker version must be 1.12.6 or above. Use the following command to verify your Docker installation:
 
 ```shell
 $ docker version
@@ -38,12 +38,12 @@ Server: Docker Engine - Community
   OS/Arch:          linux/amd64
 ```
 
-### Developing the "Hello, world!" agent
+### Developing the "Hello, world!" microservice
 
-To develop a very simple "Hello, world!" agent for Cumulocity, you need to
+To develop a very simple "Hello, world!" microservice for Cumulocity, you need to
 
 * create a Maven project,
-* add a dependency to the Cumulocity Microservice SDK library to the _pom.xml_ file,
+* add a dependency to the Cumulocity Microservice SDK library in the _pom.xml_ file,
 * create a Java application,
 * configure the microservice,
 * configure the build,

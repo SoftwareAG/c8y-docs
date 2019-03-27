@@ -23,6 +23,7 @@ The following sections describe how to:
 - [Register devices](#register-device-sigfox) and visualize the Sigfox payload using Cumulocity.
 - [Update devices](#old-registration) registered with the general device registration.
 - [Send operations](#operations) to devices.
+- If there are any issues, check out the [Troubleshooting](#sigfox-troubleshooting) section for solutions.
 
 **Info:** To be able to use the Sigfox agent, your tenant needs to be subscribed to the following applications: sigfox-agent, feature-fieldbus4. In case of any issues, please contact support.
 
@@ -37,11 +38,13 @@ Before you create API access to Cumulocity, you need to have an “Associated us
 
 **Info:** Without the following profiles, the required Sigfox API access can not be set up.
 
-Step 1 is only relevant, if you do not have an associated user yet. If you do, skip to Step 2.
-
 #### Step 1
 
-First enter into your Sigfox Cloud account and create a new user. Add the user to the “Cumulocity” group and select the “Customer [R]” and “Device Manager [W]” profiles.
+If you already have an associated user make sure it has the profiles mentioned below and proceed to step 2.
+
+The group name is not constrained. "Cumulocity" is used as a sample group name throughout the remaining steps.
+
+First enter into your Sigfox Cloud account and create a new user. Add the user to the group and select the “Customer [R]” and “Device Manager [W]” profiles.
 
 ![New user](/guides/images/users-guide/sigfox/newuser.png)
 
@@ -51,8 +54,6 @@ After creating an “Associated User” with the proper group and profiles navig
 
 - Customer [R]
 - Device Manager [W]
-
-> **Info:** Customer [R] is mandatory if sigfox agent version supports only v1 Sigfox API.
 
 ![API access page](/guides/images/users-guide/sigfox/api-access.png)
 
@@ -186,11 +187,11 @@ The following image shows an example for a message which sends a measurement whe
 
 The following image shows an example of a nested structure for a device type, reporting the current position of a GPS device. The device type is named "Position" and contains values for longitude and latitude. 
 
-The "Message ID" should be the same for all the values. Enter the rest of the parameters according to the instructions above. Enter "c8y_Position" in the "Managed object fragment" field and create a new value for each: longitude and latitude. 
+The "Message ID" should be the same for all the values. Enter the rest of the parameters according to the instructions above. Enter "c8y_Position" in the "Managed object fragment" field and create a new value for each: longitude and latitude.
 
-<img src="/guides/images/users-guide/actility/deviceDatabase5-lon.png" alt="Value creation: Longitude-nested" style="max-width: 60%">
+![Value creation: Longitude-nested](/guides/images/users-guide/actility/lora-protocols-lng.png)
 
-<img src="/guides/images/users-guide/actility/deviceDatabase5-lat.png" alt="Value creation: Latitude-nested" style="max-width: 60%">
+![Value creation: Latitude-nested](/guides/images/users-guide/actility/lora-protocols-lat.png)
 
 This will be the result: 
 
@@ -198,9 +199,9 @@ This will be the result:
 
 ### <a name="register-device-sigfox"></a>Registering Sigfox devices
 
-In order to register a Sigfox device, go to the “Registration” page in the “Device Management” application and click “Register Devices”. 
+In order to register a Sigfox device, go to the “Registration” page in the “Device Management” application and click “Register Devices”. Afterwards, click on **Custom device registration**.
 
-![Register devices](/guides/images/users-guide/sigfox/device-registration.png)
+![Register devices](/guides/images/users-guide/sigfox/sigfox-registration.png)
 
 In the upcoming window, click **Sigfox**. 
 
@@ -208,15 +209,15 @@ In the upcoming window, click **Sigfox**.
 
 In the next window, fill in the required information:
 
-**ID:** Unique device ID. The value must be a hexadecimal number.
-**PAC:** Porting authorization code for your device. The value must be a hexadecimal number.
-**Contract:** Choose your desired contract.
-**Device Type:** Select your desired device type from the drop-down list.
-**Product Certificate Key:** This key can be located in “https://partners.sigfox.com/”. Navigate to your device and copy the certificate key.
+- **ID:** Unique device ID. The value must be a hexadecimal number.
+- **PAC:** Porting authorization code for your device. The value must be a hexadecimal number.
+- **Contract:** Choose your desired contract.
+- **Device Type:** Select your desired device type from the drop-down list.
+- **Product Certificate Key:** This key can be located in “https://partners.sigfox.com/”. Navigate to your device and copy the certificate key.
 
 **Info:** The term "Device type" is used both by Sigfox and Cumulocity, but with different meaning. In Sigfox, a device type specifies how to route data from devices. In Cumulocity, a device type describes the data that is sent by devices of a particular type.
 
-![Register devices1](/guides/images/users-guide/sigfox/device-registration1.png)
+![Register devices1](/guides/images/users-guide/sigfox/sigfox-registration1.png)
 
 After clicking **Next** the device registration request will be submitted and the device will be created.
 
@@ -241,3 +242,42 @@ If the device supports sending hexadecimal commands, you can send commands from 
 
 **Info:** Operations do not go to “Executing” state immediately. They go to “Executing” state when the device is expecting the downlink message. Afterwards, the pending operation which is created first goes to executing state.
 
+### <a name="sigfox-troubleshooting"></a> Troubleshooting
+
+##### No contracts available
+
+![No contracts available error](/guides/images/users-guide/sigfox/sigfox-troubleshooting-nocontracts.png)
+
+In order to resolve the following error, please contact support.sigfox.com to create a contract for your Sigfox account.
+
+##### Sigfox callbacks in backend.sigfox.com are not created correctly
+
+![Callback information](/guides/images/users-guide/sigfox/sigfox-troubleshooting-callbacks.png)
+
+The information for the callback setup is retrieved by a microservice.
+
+To verify whether your setup is correct, execute the following REST API request:
+
+	```http
+	GET {{url}}/tenant/currentTenant 
+	```
+
+**Info:** The request above is simply an example API request that could be used. For more info on REST API requests, please see the [Reference guide](https://www.cumulocity.com/guides/reference/tenants).ss
+
+##### Issues with alarm provisioning
+
+![!Failed operation](/guides/images/users-guide/sigfox/sigfox-troubleshooting-failedoperation.png)
+
+If the "transfer operation failed" alarm is triggered it means that the device is already provisioned in the Sigfox platform and it failed to change the device type in their platform. In order to fix this issue, you have to manually change the device type in the Sigfox platform to the intended one.
+
+##### Provisioned status is set to false
+
+![!False provision](/guides/images/users-guide/sigfox/sigfox-troubleshooting-falseprovision.png)
+
+In the case of this alarm, one can see that the **Provisioned** status is set to "false" which means that no data coming from the Sigfox platfom. In the alarm message there is more information regarding the error. In this case the PAC code given during registration was invalid. 
+
+> **Info: **If the provisioning step is finished, but it has failed, information is returned in the form of an alarm with the reason of the failure provided in this alarm.
+
+The **provisioned** status is set to true when the device provisioning job is finished and success information is received from the Sigfox platform. Additionally, it is set to true when uplink messages are retrieved from the device.
+
+> **Info: ** Note that the status is updated asynchronously which means that sometimes you might have to wait a bit until it is set to true.

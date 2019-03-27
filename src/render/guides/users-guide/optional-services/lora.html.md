@@ -177,9 +177,9 @@ The following image shows an example of a nested structure for a device protocol
 
 The message ID should be the same for all the values. Enter the rest of the parameters according to the instructions above. Enter "c8y_Position" in the **Managed object fragment** field and create a new value for each: longitude and latitude. 
 
-<img src="/guides/images/users-guide/actility/deviceDatabase5-lon.png" alt="Value creation: Longitude-nested" style="max-width: 60%">
+![Value creation: Longitude-nested](/guides/images/users-guide/actility/lora-protocols-lng.png)
 
-<img src="/guides/images/users-guide/actility/deviceDatabase5-lat.png" alt="Value creation: Latitude-nested" style="max-width: 60%">
+![Value creation: Latitude-nested](/guides/images/users-guide/actility/lora-protocols-lat.png)
 
 This will be the result: 
 
@@ -191,7 +191,7 @@ To register a LoRa device, navigate to the Device Management application and cli
 
 In the upcoming window, click **Custom device registration** and select **LoRa**:
 
-![Register devices](/guides/images/users-guide/actility/devmgmt-devices-registration.png)
+![Register devices](/guides/images/users-guide/sigfox/sigfox-registration.png)
 
 Cumulocity fully supports the LoRa device provisioning with Over-the-Air Activation (OTAA) which is the preferred and most secure way to connect with the LoRa network.
 If Activation by Personalization (ABP) is required to be used, refer to the [LoRa device registration with ABP](#device-registration-with-abp-activation) section.
@@ -205,7 +205,7 @@ In the next window fill in the required information:
 JOIN communication. You can find this key on the device itself.
 - **Connectivity plan**: Select the appropriate connectivity plan from the dropdown list.
 
-![Register devices](/guides/images/users-guide/actility/devmgmt-devices-registration3.png)
+![Register devices](/guides/images/users-guide/actility/lora-registration.png)
 
 Click **Next** to submit the device registration request and create the device.
 
@@ -245,7 +245,7 @@ You can deprovision a LoRa device in the ThingPark platform. This means that the
 
 To deprovision a device, navigate to the respective device in the Device Management application under **All devices**. Click **More** in the top right and select **Deprovision device**. 
 
-![Deprovision device](/guides/images/users-guide/actility/devmgmt-devices-deprovisiondevice.png)
+![Deprovision device](/guides/images/users-guide/actility/lora-devices-deprovision.png)
 
 After confirming the deprovisioning, the device will be deprovisioned in ThingPark.
 
@@ -258,13 +258,13 @@ In order to send an operation, navigate to the device you want to send an operat
 
 In the following screenshot you can find some examples of a device type's predefined commands and their format.
 
-<img src="/guides/images/users-guide/actility/predefinedcommands.png" alt="Predefined commands" style="max-width: 100%"> 
+![Predefined shell commands](/guides/images/users-guide/actility/lora-devices-predefinedshell.png)
 
 Enter the shell command or view/edit the predefined command in the **>_Command** field. 
 
 If you enter the command without defining a port, it will be sent to the default target port (i.e. 1) of the device. If you enter the command and define a port (format "command:port"), it will be sent to the specified target port instead of the default port. 
 
-<img src="/guides/images/users-guide/actility/portConfiguration.png" alt="Port configuration" style="max-width: 100%">
+![Port configuration](/guides/images/users-guide/actility/lora-devices-port.png)
 
 Click **Execute**. The operation will be sent to the device. The timing depends on Actility ThingPark.
 

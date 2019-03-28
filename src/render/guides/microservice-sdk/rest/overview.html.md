@@ -57,7 +57,7 @@ To format the output to a more readable way, pass it to the `python -mjson.tool`
 $ curl -u <username>:<password> https://<yourTenant>.cumulocity.com/platform | python -mjson.tool
 ```
 
-From this point, you can navigate further to the different returned objects. For instance, display the items in the inventory by following the <kbd>managedObjects</kbd> endpoint:
+From this point, you can navigate further to the different returned objects. For instance, retrieve the items in the inventory by following the <kbd>managedObjects</kbd> endpoint:
 
 ```shell
 $ curl -u <username>:<password> https://<yourTenant>.cumulocity.com/inventory/managedObjects

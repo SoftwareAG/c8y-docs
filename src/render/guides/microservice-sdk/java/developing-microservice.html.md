@@ -433,7 +433,7 @@ To configure the plugin in the _pom.xml_ file, add the server configuration as f
 </plugin>
 ```
 
-##### Command line
+#### Command line
 
 To pass the configuration only to the particular build, execute the following command:
 

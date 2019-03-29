@@ -372,7 +372,7 @@ To deploy an application on an environment you need the following:
 * ZIP build from previous steps
 
 
-##### Step 1 - Create the application
+##### Step 1 - Create the application
 
 If the application does not exist, create a new application on the platform:
 
@@ -487,7 +487,7 @@ HTTP/1.1 200
 }
 ```
 
-or in case is not working:
+or in case it is not working:
 
 ```json
 HTTP/1.1 503

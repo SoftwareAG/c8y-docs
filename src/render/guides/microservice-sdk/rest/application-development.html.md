@@ -13,7 +13,7 @@ Assets are the objects that your business and your application focusses on. For 
 
 Assets are stored in the inventory along with the devices, but they often have an own structure independent of devices. You create assets by POSTing them to the collection of managed objects in the inventory. For example, to create a new room in the inventory:
 
-```
+```http
 POST /inventory/managedObjects
 Content-Type: application/vnd.com.nsn.cumulocity.managedObject+json
 Accept: application/vnd.com.nsn.cumulocity.managedObject+json

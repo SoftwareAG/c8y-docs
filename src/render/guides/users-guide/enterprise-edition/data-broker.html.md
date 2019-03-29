@@ -53,7 +53,7 @@ Use the slider to enable and disable data forwarding to the destination tenant. 
 
 Click **Add data connector** in the top menu bar to create a new data connector.
 
-![Data broker edit connector](/guides/images/users-guide/data-broker-edit-connector.png)
+![Data broker edit connector](/guides/images/users-guide/data-broker-edit-connector.PNG)
 
 In the **Settings** tab, provide the following information to create a new data connector:
 

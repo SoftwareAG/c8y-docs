@@ -108,7 +108,7 @@ To create a new group, follow these steps:
 4. Checkmark the devices you want to add from the list.
 5. Click **Create group with X device(s)** to finally create your new group. 
 
-<img src="/guides/images/users-guide/cockpit/cockpit-create-group.png" name="Create group"/><br>
+<img src="/guides/images/users-guide/Cockpit/cockpit-create-group.png" name="Create group"/><br>
 
 >**Info:** A group can also be created with "0" devices in it.
 

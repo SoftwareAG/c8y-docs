@@ -22,7 +22,7 @@ In the **Global roles** tab you can find the roles which grant permissions on a 
 
 The roles "admins" and "devices" have a special status:
 
-|Role|Description|
+|Role&nbsp;&nbsp;&nbsp;|Description|
 |:---|:---|
 |admin|All permissions are enabled. The initial administrator, the first user created in a tenant, has this role.
 |devices|Typical permission setup for devices. After registration, a device automatically has this role. Edit this role if your devices require less or more permissions, or assign other roles to your devices.

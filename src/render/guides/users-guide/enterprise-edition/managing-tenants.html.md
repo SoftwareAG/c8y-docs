@@ -9,16 +9,16 @@ If you are a service provider or subscribed to the Enterprise Edition of Cumuloc
 
 The tenants functionality allows you to create subtenants, subscribe them to the applications that you have available and potentially deactivate tenants if they are not in use anymore.
 
-> **Important**: There is an major difference between providing several tenants and providing several users with different permissions within a single tenant. Tenants are physically separated data spaces with a separate URL, with own users, a separate application management and no sharing of data by default. Users in a single tenant by default share the same URL and the same data space. So if your users, for example, are separate customers of yours and you need to strictly separate them because they may be competitors, we strongly recommend you to do so by working with tenants.
+> **Important**: There is a major difference between providing several tenants and providing several users with different permissions within a single tenant. Tenants are physically separated data spaces with a separate URL, with own users, a separate application management and no sharing of data by default. Users in a single tenant by default share the same URL and the same data space. So if your users, for example, are separate customers of yours and you need to strictly separate them because they may be competitors, we strongly recommend you to do so by working with tenants.
 
 >**Info**: If you would like to use this feature, please contact sales@cumulocity.com.
 
 To be able to use the tenant functionality, your user needs to have the appropriate permissions. See [Creating and editing global roles](/guides/users-guide/administration#create-edit-roles) for information on editing permissions. Since editing tenants is a sensitive operation, permissions for editing tenants are more granular:
 
-- Read: Browse and view tenants.
-- Create: Create new tenants.
-- Update: Edit tenants (incl. subscriptions) and suspend or activate them.
-- Change: Create, edit and delete tenants.
+- READ: Browse and view tenants.
+- CREATE: Create new tenants.
+- UPDATE: Edit tenants (incl. subscriptions) and suspend or activate them.
+- CHANGE: Create, edit and delete tenants.
 
 ### Viewing subtenants
 
@@ -34,20 +34,57 @@ The **Tenants** page provides the following information on each subtenant:
 
 In the management tenant, you will see an additional column "Parent tenant". This column shows the tenant that created the listed tenant.
 
-### <a name="creating-tenants"></a>Creating sub-tenants
+### <a name="creating-tenants"></a>Creating subtenants
 
-To add a new tenant, click **Create tenant** at the right of the top menu bar. To create a tenant, provide the following properties:
+To add a new tenant, click **Create tenant** at the right of the top menu bar. 
 
-|Field|Description
-|:--------|:-----
-|Domain/ URL|Enter a unique ID as the first part of the URL. For example, if you enter "acme" as ID on cumulocity.com, the tenant's URL will be "acme.cumulocity.com". You can only use one subdomain level. For example, you can only use "acme.cumulocity.com" on cumulocity.com. You cannot use "mycustomer.acme.cumulocity.com". This is not permitted by the TLS standard. 
-|Name|The name of the tenant, e.g. the company's name.
-|Administrator's email|You must provide a valid email address to enable users to reset their password.
-|Administrator's username|Username for the administrator of this tenant.
-|Contact name|Optional name of the contact.
-|Contact phone|Optional phone number of the contact.
-|Send password reset link as email|Selected by default. If you deselect this option, you need to provide a password and confirm the password (see [Getting Started > Logging in](/guides/users-guide/overview#login) for more information on password strength).
-|Tenant policy|You may select a tenant policy to be applied to the tenant from the dropdown list.
+![Create subtenant](/guides/images/users-guide/Administration/admin-subtenant-create.png)
+
+The following properties may be provided:
+
+<table>
+<col width = 150>
+<thead>
+<tr>
+<th style="text-align:left">Field</th>
+<th style="text-align:left">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">Domain/ URL</td>
+<td style="text-align:left">Enter a unique ID as the first part of the URL. For example, if you enter "acme" as ID on cumulocity.com, the tenant's URL will be "acme.cumulocity.com". You can only use one subdomain level. For example, you can only use "acme.cumulocity.com" on cumulocity.com. You cannot use "mycustomer.acme.cumulocity.com". This is not permitted by the TLS standard. </td>
+</tr>
+<tr>
+<td style="text-align:left">Name</td>
+<td style="text-align:left">The name of the tenant, e.g. the company's name.</td>
+</tr>
+<tr>
+<td style="text-align:left">Administrator's email</td>
+<td style="text-align:left">You must provide a valid email address to enable users to reset their password.</td>
+</tr>
+<tr>
+<td style="text-align:left">Administrator's username</td>
+<td style="text-align:left">Username for the administrator of this tenant.</td>
+</tr>
+<tr>
+<td style="text-align:left">Contact name</td>
+<td style="text-align:left">Optional name of the contact.</td>
+</tr>
+<tr>
+<td style="text-align:left">Contact phone</td>
+<td style="text-align:left">Optional phone number of the contact.</td>
+</tr>
+<tr>
+<td style="text-align:left">Send password reset link as email</td>
+<td style="text-align:left">Selected by default. If you deselect this option, you need to provide a password and confirm the password (see <a href="/guides/users-guide/overview#login" class="no-ajaxy">Getting Started &gt; Accessing and logging into the Cumulocity platform</a> for more information on password strength).</td>
+</tr>
+<tr>
+<td style="text-align:left">Tenant policy</td>
+<td style="text-align:left">You may select a tenant policy to be applied to the tenant from the dropdown list.</td>
+</tr>
+</tbody>
+</table>
 
 Note, that fields with an asterisk * are mandatory.
 
@@ -55,9 +92,9 @@ Click **Save** to apply your settings.
 
 When the tenant is created, it is automatically provisioned with a first, administrative user ("Administrator's username"). This administrator can create other users and set their permissions. The first user cannot be deleted to prevent you from locking yourself out. 
 
-From the management tenant, you can enable other tenants to create subtenants. To do so, check **Allow creation of subtenants**.
+From the management tenant, you can enable other tenants to create subtenants. To do so, check **Allow creation of subtenants** in the tenant editor.
 
-![Tenant-creation](/guides/images/users-guide/createtenant.png)
+![Create subtenant](/guides/images/users-guide/Administration/admin-subtenant-allow.png)
 
 ### Viewing or editing subtenant properties
 
@@ -88,11 +125,13 @@ You can temporarily suspend tenants. Suspending tenants blocks any access to thi
 
 To suspend a tenant, click the menu icon and from the context menu select **Suspend**.
 
-In the upcoming dialog confirm the suspension by clicking **OK** and entering your password. The tenant will be shown with a red cross icon. As part of suspending the tenant, an email is sent to the tenant administrator if an email address is configured for that administrator.
+![Suspend tenant](/guides/images/users-guide/Administration/admin-subtenant-suspend.png)
+
+In the upcoming dialog confirm the suspension by clicking **OK** and entering your password. 
+
+As part of suspending the tenant, an email is sent to the tenant administrator if an email address is configured for that administrator.
 
 >**Info**: If you are a service provider, you can suppress this email.
-
-![Suspend tenant](/guides/images/users-guide/suspendtenant.png)
 
 If a tenant is suspended, the tenant's data remains in the database and can be made available any time later. To do so, click **Activate**.
 
@@ -117,7 +156,7 @@ To remove an application, hover over the applications under **Subscribed applica
 
 For all applications hosted as microservices by Cumulocity the status of the microservice is indicated next to its name by symbols:
 
-<img src="/guides/images/users-guide/Administration/admin-applications-status.png" alt="Application details" style="max-width: 75%">
+<img src="/guides/images/users-guide/Administration/admin-applications-status.png" alt="Application details">
 
 The microservice may be in one of the following states:
 
@@ -127,7 +166,7 @@ The microservice may be in one of the following states:
 
 You may view details on their status by expanding the respective entry. 
 
-<img src="/guides/images/users-guide/Administration/admin-application-details.png" alt="Application details" style="max-width: 75%">
+<img src="/guides/images/users-guide/Administration/admin-application-details.png" alt="Application details">
 
 The following information is provided:
 
@@ -176,7 +215,7 @@ In case of multi-tenant isolation level, the parent tenant as the owner of a mic
 |Billing mode|Microservice Isolation|Resources usage assigned to
 |:--------|:-----|:-----
 |Subscription-based|Per-tenant|Owner
-|Subsrciption-based|Multi-tenant|Owner
+|Subscription-based|Multi-tenant|Owner
 |Resources-based|Per-tenant|Subscriber
 |Resources-based|Multi-tenant|Owner
 
@@ -210,24 +249,38 @@ For billing purposes, in addition to CPU usage and memory usage the cause for th
 
 The information on the microservice usage is presented in the **Tenant Statistics** page in the Administration application.
 
-![Tenant statistics](/guides/images/users-guide/ee-tenants-usage-statistics.png)
+![Tenant statistics](/guides/images/users-guide/Administration/admin-subtenants-usage-statistics-microservice.png)
      
 
 ### <a name="tenants-custom-properties"></a>Editing custom properties
 
 The **Custom properties** tab allows you to view and modify values of custom properties, either predefined ones (like "External reference") or those defined in the [Properties library](/guides/users-guide/administration#properties). Such properties are also displayed as columns in the [usage statistics table](#usage-stats).
 
-![Custom Properties](/guides/images/users-guide/subtenant-custom-properties.PNG)
+![Custom Properties](/guides/images/users-guide/Administration/admin-subtenant-custom-properties.png)
 
 **Limiting subtenant device number**
 
 The platform administrator can limit the count of concurrently registered root devices or simply all devices (including children devices). The platform administrator can also see the peak number of concurrently registered devices, root devices and the peak value of used storage in the **Usage statistics** page.
 
+**Limiting subtenant request rate**
+
+Platform administrators can limit the request rate of each subtenant via the following custom properties:
+
+- Limit HTTP requests - Limit of HTTP requests for tenant per second
+- Limit HTTP queue - Limit of HTTP request queue for tenant
+- Limit stream requests - Limit of MQTT requests for tenant per second
+- Limit stream queue - Limit of MQTT request queue for tenant
+
+When there is no limit on tenant and system level, the limit feature is considered as disabled and the tenant gains unlimited access. To switch off request rate limiting after it was enabled, set the value to "-1".
+
+
 ### <a name="usage-stats"></a> Retrieving usage statistics
 
 The **Usage statistics** page provides statistical information on each subtenant. 
 
-The following information is provided for each tenant:
+![Subtenant statistics](/guides/images/users-guide/Administration/admin-subtenants-usage-statistics.png)
+
+The following information is provided for each subtenant:
 
 - ID: ID of the subtenant
 - API requests: Total number of API requests, including requests from  devices and applications
@@ -256,28 +309,26 @@ Moreover custom properties are displayed, if configured.
 
 Custom properties may be defined in the [Properties Library](/guides/users-guide/administration#properties) and then set their values in the [Custom properties](#tenants-custom-properties) tab of the tenant.
 
-![Usage statistics](/guides/images/users-guide/usage-statistics-list.PNG)
-
 You can filter the usage statistics list for a time period by adding the start and end date in the top menu bar and click **Filter**. You can also filter and sort the list on any column by clicking the filter icon next to the column name and providing the filtering criteria. For details on filtering, refer to [Getting Started > Features and Functionalities > Filtering](/guides/users-guide/overview#filtering). 
 
 Click Export CSV at the right of the top menu bar to export the current view of the statistics table to a CSV file. A dialog will come up in which you can customize the CSV output.
 
-<img src="/guides/images/users-guide/usage-statistics-export.PNG" style="width:400px;"></img>
+<img src="/guides/images/users-guide/Administration/admin-subtenant-statistics-export.png"></img>
 
 
 ### <a name="tenant-policies"></a> Tenant policies
 
 A tenant policy is a set of tenant options and retention rules. Tenant options and retention rules may be specified during tenant creation. 
 
-Creating a tenant policy with a specific set of options and rules saves time when creating multiple tenants with the same settings.
+<img src="/guides/images/users-guide/Administration/admin-tenant-policy-assign.png" alt="Assign tenant policy">
 
-![Tenant policy](/guides/images/users-guide/tenantpolicy.png)
+Creating a tenant policy with a specific set of options and rules saves time when creating multiple tenants with the same settings.
 
 >**Info**: The options and rules are copied into the tenant. Editing the policy has no effect on tenants that have already been created.
 
 Click **Tenant policies** in the **Tenants** menu to view all tenant policies available.
 
-<img src="/guides/images/users-guide/Administration/Admin_TenantPolicies.png" alt="Tenant policies" style="max-width: 100%">
+<img src="/guides/images/users-guide/Administration/admin-tenant-policies.png" alt="Tenant policies">
 
 For each tenant policy, the name, an optional description and the number of options and retention rules is provided, either in a list or a grid.
 
@@ -285,23 +336,24 @@ For each tenant policy, the name, an optional description and the number of opti
 
 Click **Add tenant policy** in the top menu bar to create a new tenant policy.
 
-![Add new policy](/guides/images/users-guide/addpolicy.png)
+![Add new policy](/guides/images/users-guide/Administration/admin-tenant-policy-add.png)
  
-2. Enter a name and an optional description. 
-3. Add at least one retention rule. For details on creating retention rules, refer to [Administration > Retention rules](/guides/users-guide/administration#retention-rules).
-4. Optionally, add a tenant option.
-5. Click **Save** to save your settings.
+1. Enter a name and an optional description. 
+
+2. Add at least one retention rule. For details on creating retention rules, refer to [Administration > Managing data retention > Retention rules](/guides/users-guide/administration#retention-rules).
+
+3. Optionally, add a tenant option
+
+4. Click **Save** to save your settings.
 
 #### Editing, duplicating and deleting policies
 
 To edit a policy, click on the desired policy or click **Edit** in the context menu, accessible through the menu icon. 
 
-To change the name of a policy, click the name in the top bar, modify it and click the green checkmark icon to save your changes.
+![Policy context menu](/guides/images/users-guide/Administration/admin-tenant-policy-contextmenu.png)
 
 To delete a retention rule or a tenant option from a policy, hover over it and click the delete icon.
 
 To duplicate a policy, click the menu icon and from the context menu select **Duplicate**.
 
 To delete a policy, click the menu icon and from the context menu select  **Delete**.
-
-![Edit policy menu](/guides/images/users-guide/editpolicy.png)

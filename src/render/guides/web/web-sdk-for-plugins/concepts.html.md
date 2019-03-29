@@ -58,11 +58,11 @@ In case that you only want to create a plugin and [add it to an already existing
 
 The application manifest describes where your application is stored and how it is exposed to Cumulocity. The following properties are available:
 
-* **name**: A descriptive name for the application. It will appear in the app switcher menu.
+* **name**: A descriptive name for the application. It will appear in the application switcher menu.
 * **availability**: "PRIVATE", if the application is only available in your tenant, "MARKET", if it is a public application.
 * **contextPath**: The path to be used for hosted applications. The URL of the application will be "&lt;&lt;yourURL&gt;&gt;/apps/&lt;&lt;contextPath&gt;&gt;".
 * **key**: The application key that is used for associating requests of an application with the application and for subscribing to applications.
-* **resourcesUrl**: If the app is serving an upload zip file (which is the case for Smartapps) this value will be '/'. If it's a full url all the request will proxied to that address.
+* **resourcesUrl**: If the application is serving an upload zip file (which is the case for Smartapps) this value will be '/'. If it's a full URL all the request will proxied to that address.
 * **type**: *HOSTED*, if the application is hosted through Cumulocity, *EXTERNAL*, if the application is hosted elsewhere.
 * **imports**: A list of plugins used by the application. List of *&lt;&lt;applicationName&gt;&gt;/&lt;&lt;pluginName&gt;&gt;*.
 * **noAppSwitcher**: [OPTIONAL] If set to true, the application will not appear in the App Switcher menu. A possible use case is, for example, if the application only exposes plugins.
@@ -81,7 +81,7 @@ The plugin manifest describes how your plugin is shown in the Cumulocity adminis
 * **category**: [OPTIONAL] A category for the plugin to be used in the filtering in user interface.
 * **ngModules**: A list of AngularJS modules that are provided by plugin, at least one is required.
 * **js**: [OPTIONAL] A list of JavaScript files to be loaded, such as "index.js", controllers, services, asf. The path is relative to the plugin's root folder.
-* **css**: [OPTIONAL] A list of CSS files to be loaded, paths relative to plugin’s root folder.
+* **CSS**: [OPTIONAL] A list of CSS files to be loaded, paths relative to plugin’s root folder.
 * **less**: [OPTIONAL] A list of LESS files to be loaded, paths relative to plugin’s root folder.
 * **copy**: [OPTIONAL] A list of files that should be copied into the built.
 

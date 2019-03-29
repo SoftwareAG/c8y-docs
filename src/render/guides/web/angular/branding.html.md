@@ -4,30 +4,74 @@ layout: redirect
 order: 30
 ---
 
-With the branding feature you can determine the look & feel of new applications or even change existing applications. This basically happens with the help of less variables which you can overwrite just as you like.
+For styling the application global CSS created with [LESS](http://lesscss.org/) is used. These styles are based on Bootstrap 3, and the original LESS source is distributed via the npm package [@c8y/style](https://www.npmjs.com/package/@c8y/style).
+By extending these styles it is possible to change any detail of the application but the vast majority of developer want to change: colors, logos and fonts and these can be very easily achieved by replacing a few variables.
 
-With the branding feature you can easily change 
+To override the variables it is possible to use:
+- LESS variables at build time
+- Custom CSS properties (at build time or configurable at runtime)
 
-* colors
-* logos
-* fonts
+## CSS custom properties
+
+Exposed via CSS custom properties there is only a subset of the LESS variables available.
+Here is a list of the available variables.
+
+```css
+:root {
+--brand-primary: gold ;
+--brand-complementary: darkgreen;
+--brand-dark:  red;
+--brand-light: purple;
+--gray-text: #333;
+--link-color: var(--brand-primary);
+--link-hover-color: var(--brand-complementary);
+--body-background-color:#f2f3f4;
+--brand-logo-img: url('/apps/ui-assets-management/logo-nav.svg');
+--brand-logo-img-height: 20%;
+--navigator-platform-logo: url('/apps/ui-assets-management/logo-nav.svg');
+--navigator-platform-logo-height: 36px; /* height of the logo set to 0 to hide the element */
+
+--navigator-font-family: inherit;
+--navigator-app-name-size: 16px; /* font size of the application name set to 0 to hide app's name */
+--navigator-app-icon-size: 46px; /* size of the application icon. set to 0 to hide the application icon.*/
+--navigator-bg-color: var(--brand-primary);
+--navigator-header-bg: var(--navigator-bg-color);
+--navigator-text-color: #ffffff;
+--navigator-separator-color: rgba(0,0,0,.05);
+--navigator-active-color: var(--navigator-text-color);
+--navigator-active-bg: var(--brand-complementary);
+
+--header-color: #ffffff;
+--header-text-color: var(--brand-dark);
+--header-hover-color:var(--brand-primary);
+--header-border-color: rgba(57,72,82,.05);
+
+--font-family-base: "Roboto", Helvetica, Arial, sans-serif;
+--headings-font-family: var(--font-family-base);
+}
+```
+
+Note that these can be customized at runtime using [application options](/guides/web/angular#application-options) using the property `brandingCssVars`.
+The option is only available after version 9.22.0.
+
+## Using LESS
 
 ### Prerequisites
 
-If you do not use the [@c8y/cli](/guides/web/angular#cli) make sure that you install the base styles from npm with: 
+If you do not use the [@c8y/cli](/guides/web/angular#cli) make sure that you install the base styles from npm with:
 
 ```
 npm install @c8y/style
 ```
 
-1. Create a ```less-file``` called for instance ```branding.less```.
-1. Save it inside a new folder, which can have any name you like. 
-2. Inside this folder, create a subfolder for images.
+1. Create a LESS file called for instance ```branding.less```.
+2. Save it inside a new folder, which can have any name you like.
+3. Inside this folder, create a sub folder for images.
 
 ```
 my-application
 │   app.modules.ts
-│   index.ts    
+│   index.ts
 │   packages.json
 |   ...
 └───branding
@@ -50,8 +94,8 @@ The first line of code within the ```branding.less``` has to be:
 At this point we are able to change the desired variables according to our needs.
 
 Let us change for example the most important color of your branding, the main color, called **brand-color**.
- 
-This is done by setting the respective less variable to a new color.
+
+This is done by setting the respective LESS variable to a new color.
 
  ```less
  @brand-color: red;
@@ -66,7 +110,7 @@ What about changing the main logo that is located at the top of the login dialog
  @brand-logo-height: 48%;
  ```
 
-You can check the branding changes with the help of the [@c8y/cli](/guides/web/angular#cli). 
+You can check the branding changes with the help of the [@c8y/cli](/guides/web/angular#cli).
 
  ```
  c8ycli server --app.brandingEntry="<path-to-your-branding.less>"
@@ -91,7 +135,7 @@ The colors that may be edited are separated in multiple categories, like:
 * gray shades
 * component colors
 
-##### Brand colors 
+##### Brand colors
 
 ```less
 @brand-color:                 #53cd61;
@@ -130,7 +174,7 @@ The colors that may be edited are separated in multiple categories, like:
 
 ##### Component colors
 
-Two components are always visible to the user, the header and the navigator. Therefore you should determine the look & feel of these components with care. 
+Two components are always visible to the user, the header and the navigator. Therefore you should determine the look & feel of these components with care.
 
 ```less
 /* HEADER */
@@ -162,10 +206,10 @@ You can change the logo at the top of the login dialog, the tenant brand logo an
 To change the favicon, enter:
 ```less
 // to be loaded by webpack
-.favicon-webpack-loader { background: url('./img/favicon.ico') } 
+.favicon-webpack-loader { background: url('./img/favicon.ico') }
 ```
 
-To change the main logo, enter: 
+To change the main logo, enter:
 ```less
 @{logo-login} { background-image: url('./img/main-logo.svg') }
 @brand-logo-height: 48%;
@@ -184,11 +228,11 @@ The look and feel of an application is also driven by its typography. Of course 
 ```less
 @font-family-sans-serif:      "Lato",Arial, Verdana, sans-serif;
 @font-family-base:            @font-family-sans-serif; @headings-font-family:        "Roboto",Arial, Verdana, sans-serif;
-``` 
+```
 
 ### Example Branding
 
-Above we described the possible options for creating your custom branding in detail. If you do not want to start from scratch in every application use the following example branding as snippet. It defines the most important variables. 
+Above we described the possible options for creating your custom branding in detail. If you do not want to start from scratch in every application use the following example branding as snippet. It defines the most important variables.
 
 ```less
 @import '~@c8y/style/extend.less';

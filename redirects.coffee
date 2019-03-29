@@ -147,6 +147,13 @@ redirects =
 	'/guides/web/reference': '/guides/web/introduction'
 	'/guides/reference/binaries/application-plugin-binaries': '/guides/reference/binaries'
 
+	# Legacy redirects device-sdk documentation
+	'/guides/device-sdk/mqtt#hello-mqtt': '/guides/device-sdk/mqtt-examples#hello-mqtt'
+	'/guides/device-sdk/mqtt#hello-mqtt-c': '/guides/device-sdk/mqtt-examples#hello-mqtt-c'
+	'/guides/device-sdk/mqtt#hello-mqtt-java': '/guides/device-sdk/mqtt-examples#hello-mqtt-java'
+	'/guides/device-sdk/mqtt#hello-mqtt-javascript': '/guides/device-sdk/mqtt-examples#hello-mqtt-javascript'
+	'/guides/device-sdk/mqtt#hello-mqtt-python': '/guides/device-sdk/mqtt-examples#hello-mqtt-python'
+	'/guides/device-sdk/mqtt#hello-mqtt-nodejs': '/guides/device-sdk/mqtt-examples#hello-mqtt-nodejs'
 
 
 	# "index.html" redirects

@@ -8,7 +8,19 @@ In an Enterprise Edition installation under the **Settings** menu you can specif
 
 ### <a name="configuration"></a>Configuration
 
-**Info**: For information on the general settings in the **Customization** tab refer to [Changing Settings > Configuration settings](/guides/users-guide/administration/#config-platform) in the Administration section. Here, only the features will be explained which are exclusively available for the management tenant.
+**Info**: For information on the general settings in the **Customization** tab refer to [Changing Settings > Configuration settings](/guides/users-guide/administration/#config-platform) in the Administration section. Here, only the features will be explained which are exclusively available for management tenants.
+
+#### Applications
+
+In the **Applications** section, you can specify the default applications for new tenants as a comma-separated list. 
+
+![Applications settings](/guides/images/users-guide/Administration/admin-settings-configuration-applications.png)
+
+#### Passwords
+
+In the **Passwords** section, you can specify password settings like default strength, length or validity for the users in your tenant.
+
+![Passwords settings](/guides/images/users-guide/Administration/admin-settings-configuration-passwords.png)
 
 #### Support user
 
@@ -16,7 +28,7 @@ In the **Support user** section, you configure the parameters for the support us
 
 With the support user feature, support users (i.e. users with specific permissions in the management tenant) can access subtenant users in case of any issues. Refer to [Supporting user access](/guides/users-guide/enterprise-edition#users-in-other-tenants) for further information.
 
-<img src="/guides/images/users-guide/Administration/admin-support-user-config.png" alt="Configuration" style="max-width: 100%">
+<img src="/guides/images/users-guide/Administration/admin-settings-configuration-support-user.png" alt="Support user configuration">
 
 In the field **Enable support user**, specify if support user access is enabled for subtenant users. Possible values you can enter here are:
 
@@ -38,11 +50,11 @@ In the **Branding** tab, you can configure various parameters like logos, colors
 
 The [parameters](#configuration-parameters) are configured on the left side of the tab while on the right you can immediately see your selections applied to a preview extract.
 
-<img src="/guides/images/users-guide/Administration/admin-branding.png" alt="Branding tab" style="max-width: 100%">
+<img src="/guides/images/users-guide/Administration/admin-branding.png" alt="Branding tab">
 
 For a more detailed preview of your settings, click **Open preview** in the top menu bar to check the look and feel of your branding settings in the overall platform. You may interact and even switch applications in the preview. Every change that you make in the **Branding** tab will immediately be applied to the **Preview** page.
 
-<img src="/guides/images/users-guide/Administration/admin-branding-preview.png" alt="Branding tab" style="max-width: 100%">
+<img src="/guides/images/users-guide/Administration/admin-branding-preview.png" alt="Branding tab">
 
 When you are done or want to store your settings, click **Save** at the bottom of the **Configuration** section to save your branding settings to your tenant.
 
@@ -58,7 +70,7 @@ In the Configuration section, the following branding parameters can be configure
 
 Under **General**, you can edit the title which will be used in the browser tab. 
 
-<img src="/guides/images/users-guide/Administration/admin-branding-general.png" alt="Branding general" style="max-width: 50%">
+<img src="/guides/images/users-guide/Administration/admin-branding-general.png" alt="Branding general">
 
 **Main logo**
 
@@ -72,14 +84,14 @@ Under **Main logo**, specify the following items:
 
 Under **Navigator logo** you can provide the navigator logo and set the navigator logo height located on top of the navigator panel.
 
-<img src="/guides/images/users-guide/Administration/admin-branding-general.png" alt="Branding general" style="max-width: 50%">
+<img src="/guides/images/users-guide/Administration/admin-branding-navigator-logo.png" alt="Branding general">
 
 
 **Type**
 
 In the **Type** section you specify the font settings for your branded version. 
 
-<img src="/guides/images/users-guide/Administration/admin-branding-type.png" alt="Branding type" style="max-width: 50%">
+<img src="/guides/images/users-guide/Administration/admin-branding-type.png" alt="Branding type">
 
 You can choose your base and headings font, and select an option for the navigator font (either same as base or same as headings font). You may also add a link to existing remote fonts to be used.
 
@@ -87,7 +99,7 @@ You can choose your base and headings font, and select an option for the navigat
 
 In the **Colors** section you specify the colors to be used in your branding version.
 
-<img src="/guides/images/users-guide/Administration/admin-branding-color.png" alt="Branding color" style="max-width: 50%">
+<img src="/guides/images/users-guide/Administration/admin-branding-color.png" alt="Branding color">
 
 The following parameters can be specified by providing a hex, rgb or rgba value:
 
@@ -103,7 +115,7 @@ The following parameters can be specified by providing a hex, rgb or rgba value:
 
 In the **Top bar** section you specify the parameters for the top bar.
 
-<img src="/guides/images/users-guide/Administration/admin-branding-topbar.png" alt="Branding topbar" style="max-width: 50%">
+<img src="/guides/images/users-guide/Administration/admin-branding-topbar.png" alt="Branding topbar">
 
 The following parameters can be specified by providing a hex, rgb or rgba value:
 
@@ -115,7 +127,7 @@ The following parameters can be specified by providing a hex, rgb or rgba value:
 
 In the **Navigator** section you specify the parameters for the navigator.
 
-<img src="/guides/images/users-guide/Administration/admin-branding-navigator.png" alt="Branding top bar" style="max-width: 50%">
+<img src="/guides/images/users-guide/Administration/admin-branding-navigator.png" alt="Branding navigator">
 
 The following parameters can be specified by providing a hex, rgb or rgba value:
 
@@ -137,7 +149,7 @@ In the **Domain name** tab you can activate your own custom domain name.
 
 >**Info**: To activate you domain, you need a valid license. Please contact our Sales team at sales@cumulocity.com to install a license for your domain.  
 
-<img src="/guides/images/users-guide/Administration/Admin_DomainName.png" alt="Domain name" style="max-width: 100%">
+<img src="/guides/images/users-guide/Administration/admin-domain-name.png" alt="Domain name">
 
 First you have to upload the appropriate certificate by clicking **Upload Certificate**. Make sure that
 
@@ -147,15 +159,16 @@ First you have to upload the appropriate certificate by clicking **Upload Certif
 
 **Info**: If your certificate is not in a valid PKCS#12 format but you have PEM files for certificate, private key and authorization chain then you can generate a valid PKCS#12 file using the following command:
 
-	openssl pkcs12 -export -out out_keystore.p12 -inkey privkey.pem -in cert.pem -certfile chain.pem
-
+```shell
+openssl pkcs12 -export -out out_keystore.p12 -inkey privkey.pem -in cert.pem -certfile chain.pe
+```
 
 Before activating the custom domain name, make sure that
 
 * you have uploaded a valid SSL certificate for your custom domain,
 * the common name (domain name) is not used by any other tenant,
 * the certificate is currently valid (validFrom in the past and validTo in the future),
-* you have added a wildcard CNAME record (starting with `"*."`) to your DNS server of the following format:<br>
+* you have added a wildcard CNAME record (starting with `*.`) to your DNS server of the following format:<br>
  Hostname = `*.<your domain name>`, e.g. `*.iot.mycompany.com` <br>
  Type = CNAME <br>
  Target = the target URL of the platform you want to point to, e.g. `manage.cumulocity.com`<br>
@@ -176,6 +189,8 @@ When your certificate expires, you must update your certificate with a new one w
 * the certificate has exactly the same common name (domain name) as the currently active certificate,
 * you have added a CNAME record to your DNS server. For details on the CNAME record see above.
 
+>**Info**: Keep in mind that after replacing the certificate it may take some minutes until the new certificate has been delivered to the users/browsers.
+
 
 #### Deactivating your certificate
 
@@ -191,25 +206,33 @@ In case you cannot reach Cumulocity using your custom domain, we recommend to pe
 
 Execute the following command:
 
-	host management.<your domain name>
+```shell	
+host management.<your domain name>
+```
 	
 The following result should be returned:
 
-	management.<your domain name> is an alias for <instance domain name>
-	<instance domain name> has address <ip address>
+```shell
+management.<your domain name> is an alias for <instance domain name>
+<instance domain name> has address <ip address>
+```
 	
 
 **Check if the API is responding** 
 
 Execute the following command:
 
-	curl -v -u '<tenant ID>/<your user>:<your password>' --head http://management.<your domain name>/inventory/managedObjects
+```shell
+curl -v -u '<tenant ID>/<your user>:<your password>' --head http://management.<your domain name>/inventory/managedObjects
+```
 	
 The following result should be returned:
 
-	...
-	HTTP/1.1 200 OK
-	...	
+```shell
+...
+HTTP/1.1 200 OK
+...	
+```
 
 
->**Info**: Take into consideration that after changing the DNS entry it might take up to 24 hours until the new entry has been propagated.
+>**Info**: Keep in mind that after changing the DNS entry it might take up to 24 hours until the new entry has been propagated.

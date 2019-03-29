@@ -4,7 +4,6 @@ title: Cumulocity applications
 layout: redirect
 ---
 
-
 Per default, Cumulocity comes with the following three standard applications:
 
 <table>

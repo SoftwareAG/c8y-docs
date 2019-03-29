@@ -372,7 +372,7 @@ To deploy an application on an environment you need the following:
 * ZIP build from previous steps
 
 
-#####Â Step 1 - Create the application
+##### Step 1 - Create the application
 
 If the application does not exist, create a new application on the platform:
 
@@ -478,7 +478,7 @@ This endpoint is enabled by default for all microservices that are developed usi
 GET <URL>/service/<APPLICATION_NAME>/health
 ```
 
-Example response:
+Example response when the microservice is functional:
 
 ```json
 HTTP/1.1 200
@@ -487,7 +487,7 @@ HTTP/1.1 200
 }
 ```
 
-  or
+or in case is not working:
 
 ```json
 HTTP/1.1 503

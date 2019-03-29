@@ -4,46 +4,46 @@ layout: redirect
 title: Hello microservice!
 ---
 
-This section shows you how to create a microservice that can be run on cumulocity.com, using Cumulocity Microservice SDK.
+Here you will learn how to create your first microservice that can be run on the [Cumulocity Platform](https://cumulocity.com) using the Microservice SDK for Java.
 
 ### Prerequisites
 
-Create an account on cumulocity.com, for example by using a free trial. At this step you will be provided with a dedicated URL address.
+Create an account on the [Cumulocity Platform](https://cumulocity.com), for example by using a free trial. At this step you will be provided with a dedicated URL address.
 
-Verify, that you have Maven 3 installed with Java (7+):
+Use the following command to verify that you have Maven 3 installed with Java 7.
 
-    $ mvn -v
-    Apache Maven 3.1.1 (0728685237757ffbf44136acec0402957f723d9a; 2013-09-17 17:22:22+0200)
-    Maven home: /usr/local/Cellar/maven/3.1.1/libexec
-    Java version: 1.7.0_45, vendor: Oracle Corporation
-    Java home: /Library/Java/JavaVirtualMachines/jdk1.7.0_45.jdk/Contents/Home/jre
-    Default locale: en_US, platform encoding: UTF-8
-    OS name: "mac os x", version: "10.9.4", arch: "x86_64", family: "mac"
+```shell
+$ mvn -v
+Apache Maven 3.1.1 (0728685237757ffbf44136acec0402957f723d9a; 2013-09-17 17:22:22+0200)
+Maven home: /usr/local/Cellar/maven/3.1.1/libexec
+Java version: 1.7.0_45, vendor: Oracle Corporation
+Java home: /Library/Java/JavaVirtualMachines/jdk1.7.0_45.jdk/Contents/Home/jre
+```
 
->**Info:** Maven can be downloaded from [http://maven.apache.org](http://maven.apache.org).
+Maven can be downloaded from the [Maven website](http://maven.apache.org). You will also need a Docker installation, and in case that you don't have it, go to the [Docker website](https://www.docker.com/get-started) to download and install it.
 
-Verify the docker installation:
+Cumulocity hosts inux/amd64 Docker containers and not Windows containers. The Docker version must be 1.12.6 or above. Use the following command to verify your Docker installation:
 
-Cumulocity hosts linux/amd64 docker containers and not Windows containers. The docker version must be >= 1.12.6
+```shell
+$ docker version
+Client: Docker Engine - Community
+ Version:           18.09.2
+ API version:       1.39
+ OS/Arch:           darwin/amd64
 
-    $ docker version
-    Client:
-     Version:         1.12.6
-     API version:     1.24
-     OS/Arch:         linux/amd64
+Server: Docker Engine - Community
+ Engine:
+  Version:          18.09.2
+  API version:      1.39 (minimum version 1.12)
+  OS/Arch:          linux/amd64
+```
 
-    Server:
-     Version:         1.12.6
-     API version:     1.24
-     OS/Arch:         linux/amd64
+### Developing the "Hello, world!" microservice
 
-
-### Developing the "Hello, world!" agent
-
-To develop a very simple "Hello, world!" agent for Cumulocity, you need to
+To develop a very simple "Hello, world!" microservice for Cumulocity, you need to
 
 * create a Maven project,
-* add a dependency to the Cumulocity Microservice SDK library to the Maven pom.xml,
+* add a dependency to the Cumulocity Microservice SDK library in the _pom.xml_ file,
 * create a Java application,
 * configure the microservice,
 * configure the build,
@@ -51,338 +51,400 @@ To develop a very simple "Hello, world!" agent for Cumulocity, you need to
 
 #### Creating a Maven project
 
-To create a plain Java project with Maven, run
+Execute the following Maven command to create a plain Java project:
 
-	$ mvn archetype:generate -DgroupId=c8y.example -DartifactId=hello-world-microservice -DarchetypeArtifactId=maven-archetype-quickstart -DinteractiveMode=false
+```shell
+$ mvn archetype:generate -DgroupId=c8y.example -DartifactId=hello-world-microservice -DarchetypeArtifactId=maven-archetype-quickstart -DinteractiveMode=false
+```
 
-This will create a folder "hello-world-microservice" in the current directory with a skeleton structure for your project.
+This will create a folder *hello-world-microservice* in the current directory with a skeleton structure for your project.
 
 #### Adding the Java Microservice library
 
-Edit the "pom.xml" in the "hello-world-microservice" folder. Add a `repositories` and a `pluginRepositories` element to point to the Cumulocity Maven repository, which stores the client libraries.
+Inside the _hello-world-microservice_ folder you will find the _pom.xml_ file. Start editing this file by adding a properties element as follows:
 
-    <repositories>
-        <repository>
-            <id>cumulocity</id>
-            <layout>default</layout>
-            <url>http://download.cumulocity.com/maven/repository</url>
-        </repository>
-    </repositories>
-    <pluginRepositories>
-        <pluginRepository>
-            <id>public</id>
-            <url>http://download.cumulocity.com/maven/repository</url>
-        </pluginRepository>
-    </pluginRepositories>
+```xml
+<properties>
+    <maven.compiler.source>1.7</maven.compiler.source>
+    <maven.compiler.target>1.7</maven.compiler.target>
+    <spring-boot-dependencies.version>1.5.7.RELEASE</spring-boot-dependencies.version>
+    <c8y.version>9.16.2</c8y.version>
+    <microservice.name>my-first-microservice</microservice.name>
+</properties>
+```
 
+Edit the `<c8y.version>` element to use the latest version of the client library which can be obtained by reviewing the [Release notes](https://cumulocity.com/guides/release-notes/overview/). This particular example was implemented using version 9.16.2.
 
-Add `dependency` elements for the Java Microservice SDK library (`microservice-autoconfigure`) to the `dependencies` section.
+Now add repository and plugin elements to point to the Cumulocity Maven repository which stores the client libraries.
 
-	<dependency>
-		<groupId>com.nsn.cumulocity.clients-java</groupId>
-		<artifactId>microservice-autoconfigure</artifactId>
-		<version>${c8y.version}</version>
-	</dependency>
+```xml
+<repositories>
+    <repository>
+        <id>cumulocity</id>
+        <layout>default</layout>
+        <url>http://download.cumulocity.com/maven/repository</url>
+    </repository>
+</repositories>
+<pluginRepositories>
+    <pluginRepository>
+        <id>public</id>
+        <url>http://download.cumulocity.com/maven/repository</url>
+    </pluginRepository>
+</pluginRepositories>
+```
 
-Edit the `version` elements to use the latest version of the client library. The version can be determined by checking the [Announcements section](https://cumulocity.zendesk.com/hc/en-us/sections/200381323-Announcements) of the Cumulocity Help Center. The full file after editing can be found [here](/guides/microservice-sdk/java#developing-microservice).
+Also add a dependency element for the Java Microservice SDK library inside the `<dependencies>` node.
+
+```xml
+<dependency>
+	<groupId>com.nsn.cumulocity.clients-java</groupId>
+	<artifactId>microservice-autoconfigure</artifactId>
+	<version>${c8y.version}</version>
+</dependency>
+```
 
 #### Creating a Java application
 
-Edit the "App.java" file in the folder "hello-world-microservice/src/main/java/c8y/example" with the following content:
+Edit the _App.java_ file located in the folder *hello-world-microservice/src/main/java/c8y/example* with the following content:
 
-    package c8y.example;
+```java
+package c8y.example;
 
-    import com.cumulocity.microservice.autoconfigure.MicroserviceApplication;
-    import org.springframework.boot.SpringApplication;
-    import org.springframework.web.bind.annotation.RequestMapping;
-    import org.springframework.web.bind.annotation.RequestParam;
-    import org.springframework.web.bind.annotation.RestController;
+import com.cumulocity.microservice.autoconfigure.MicroserviceApplication;
+import org.springframework.boot.SpringApplication;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.RestController;
 
-    @MicroserviceApplication
-    @RestController
-    public class App{
-      public static void main(String[] args) {
-          SpringApplication.run(App.class, args);
-      }
-
-      @RequestMapping("hello")
-      public String greeting(@RequestParam(value = "who", defaultValue = "world") String who) {
-          return "hello " + who + "!";
-      }
+@MicroserviceApplication
+@RestController
+public class App {
+    public static void main (String[] args) {
+        SpringApplication.run(App.class, args);
     }
 
+    @RequestMapping("hello")
+    public String greeting (@RequestParam(value = "name", defaultValue = "World") String you) {
+        return "Hello " + you + "!";
+    }
+}
+```
 
-@MicroserviceApplication - is a simple way to add required behavior for Cumulocity Microservice, including:
+The code uses four annotations; three are part of the Spring Framework and one of the Cumulocity Microservice SDK. The `@RestController` annotation marks the class as a controller where every method returns a domain object instead of a view. The `@RequestMapping` annotation ensures that HTTP requests to <kbd>hello</kbd> are mapped to the `greeting()` method. `@RequestParam` binds the value of the query string parameter <kbd>name</kbd> into the `you` parameter of the `greeting()` method. Refer to the [Spring Guides](https://spring.io/guides) for more details about building RESTful Web Services using the Spring Framework.
 
-  * security
-  * subscription
-  * health indicator
-  * context
-  * internal platform API
-  * spring boot application
+Employing the `@MicroserviceApplication` annotation is a simple way to add required behavior for Cumulocity Microservice including:
 
-@RequestMapping - opens an endpoint for greeting.
+* Security
+* Subscription
+* Health indicator
+* Context
+* Settings
+* Internal platform API
+* Spring Boot application
 
 #### Configuring the microservice
 
-Add an "application.properties" file to the "src/main/resources" directory with the following properties:
+Add an _application.properties_ file to the _src/main/resources_ directory with the following properties:
 
-    application.name=hello-world
-    server.port=80
+```properties
+application.name=my-first-microservice
+server.port=80
+```
 
-Add a "cumulocity.json" file to the "src/main/configuration" directory with the following content:
+Add a _cumulocity.json_ file to the _src/main/configuration_ directory with the following content:
 
-    {
-    "apiVersion":"1",
-    "version":"@project.version@",
-    "provider": {
-      "name":"Cumulocity GmbH"
-      },
-      "isolation":"MULTI_TENANT",
-      "requiredRoles": [
-      ],
-      "roles":[
-      ]
-    }
+```json
+{
+  "apiVersion": "1",
+  "version": "@project.version@",
+  "provider": {
+    "name": "Cumulocity GmbH"
+  },
+    "isolation": "MULTI_TENANT",
+    "requiredRoles": [
+    ],
+    "roles": [
+    ]
+}
+```
 
-This file is required to deploy the microservice in the Cumulocity infrastructure.
+This is the [Manifest](/guides/microservice-sdk/concept/#manifest) file and it is required to deploy the microservice in the Cumulocity platform.
 
 #### Configuring the build
 
-To create a deployable ZIP file, you need to add the following to your .pom file:
+To create a deployable ZIP file, you need to add the following code to your _pom.xml_ file:
 
-    <properties>
-        <maven.compiler.source>1.7</maven.compiler.source>
-        <maven.compiler.target>1.7</maven.compiler.target>
-        <spring-boot-dependencies.version>1.5.7.RELEASE</spring-boot-dependencies.version>
-        <c8y.version>9.8.0</c8y.version>
-    </properties>
-
+```xml
+<dependencyManagement>
     <dependencies>
+        <!-- microservice api -->
         <dependency>
             <groupId>com.nsn.cumulocity.clients-java</groupId>
-            <artifactId>microservice-autoconfigure</artifactId>
+            <artifactId>microservice-dependencies</artifactId>
+            <version>${c8y.version}</version>
+            <type>pom</type>
+            <scope>import</scope>
         </dependency>
     </dependencies>
+</dependencyManagement>
 
-    <dependencyManagement>
-        <dependencies>
-            <!-- microservice api -->
-            <dependency>
-                <groupId>com.nsn.cumulocity.clients-java</groupId>
-                <artifactId>microservice-dependencies</artifactId>
-                <version>${c8y.version}</version>
-                <type>pom</type>
-                <scope>import</scope>
-            </dependency>
-        </dependencies>
-    </dependencyManagement>
-
-    <build>
-        <plugins>
-            <plugin>
-                <groupId>org.springframework.boot</groupId>
-                <artifactId>spring-boot-maven-plugin</artifactId>
-                <version>${spring-boot-dependencies.version}</version>
-                <executions>
-                    <execution>
-                        <goals>
-                            <goal>repackage</goal>
-                        </goals>
-                    </execution>
-                </executions>
-            </plugin>
-            <plugin>
-                <groupId>com.nsn.cumulocity.clients-java</groupId>
-                <artifactId>microservice-package-maven-plugin</artifactId>
-                <version>${c8y.version}</version>
-                <executions>
-                    <execution>
-                        <id>package</id>
-                        <phase>package</phase>
-                        <goals>
-                            <goal>package</goal>
-                        </goals>
-                        <configuration>
-                            <name>hello-world</name>
-                            <image>hello-world</image>
-                            <encoding>UTF-8</encoding>
-                        </configuration>
-                    </execution>
-                </executions>
-            </plugin>
-        </plugins>
-    </build>    
+<build>
+    <plugins>
+        <plugin>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-maven-plugin</artifactId>
+            <version>${spring-boot-dependencies.version}</version>
+            <executions>
+                <execution>
+                    <goals>
+                        <goal>repackage</goal>
+                    </goals>
+                </execution>
+            </executions>
+        </plugin>
+        <plugin>
+            <groupId>com.nsn.cumulocity.clients-java</groupId>
+            <artifactId>microservice-package-maven-plugin</artifactId>
+            <version>${c8y.version}</version>
+            <executions>
+                <execution>
+                    <id>package</id>
+                    <phase>package</phase>
+                    <goals>
+                        <goal>package</goal>
+                    </goals>
+                    <configuration>
+                        <name>${microservice.name}</name>
+                        <image>${microservice.name}</image>
+                        <encoding>UTF-8</encoding>
+                    </configuration>
+                </execution>
+            </executions>
+        </plugin>
+    </plugins>
+</build>    
+```
 
 ### Building the microservice
 
-To build the ZIP file, use the following command:
+In a terminal, navigate to the folder where your _pom.xml_ is located and execute the following Maven command. Note that after a successful build you will find a ZIP file inside the _target_ directory.
 
-    $mvn clean install
+```shell
+$ mvn clean install
+```
 
-After a successful build you will be provided with a ZIP file in the target directory. The ZIP can be deployed to the platform as described in the Deployment section.
+### <a name="run-locally"></a> Running the microservice locally
 
-### <a name="run-locally"></a> Running microservice locally
+You can run the Docker container locally in order to test the REST calls from the microservice to Cumulocity.
 
-In order to test the microservice for the calls from the microservice to Cumulocity, you can run the docker container locally.
+The microservice must be deployed to verify the REST calls from Cumulocity to the microservice.
 
-To verify calls from Cumulocity to the microservice, the microservice must be deployed.
+To run a microservice which uses the Cumulocity API locally you need:
 
-To run a microservice which uses Cumulocity API locally you need the following:
+* A valid tenant, a user and a password in order to access Cumulocity.
+* An authorization header as "Basic &lt;Base64(&lt;username>:&lt;password>)>".
 
-* URL address of the Cumulocity host of your tenant
-* Authorization header = "Basic {Base64({username}:{password})}"
-* Tenant - tenant ID
+For instance, if the username and password are **testuser** and **test123** respectively, you can get the Base64 string with the following command:
 
-**Step 1 - Create application**
+```shell
+$ echo testuser:test123 | base64
+dGVzdHVzZXI6dGVzdDEyMwo=
+```
 
-If the application does not exist, create a new application on a platform:
+and your authorization header would look like `"Authorization": "Basic dGVzdHVzZXI6dGVzdDEyMwo="`.
 
-    POST {URL}/application/applications
+#### Step 1 - Create the application
+
+If the application does not exist, create a new application on the Cumulocity platform employing a POST request.
+
+```avrasm
+POST <URL>/application/applications
 
 HEADERS:
-
-    "Authorization": "{AUTHORIZATION}"
-    "Content-Type": "application/vnd.com.nsn.cumulocity.application+json"
-    "Accept: application/vnd.com.nsn.cumulocity.application+json"
+  "Authorization": "<AUTHORIZATION>"
+  "Content-Type": "application/vnd.com.nsn.cumulocity.application+json"
+  "Accept: application/vnd.com.nsn.cumulocity.application+json"
 
 BODY:
+{
+  "name": "<APPLICATION_NAME>",
+  "type": "MICROSERVICE",
+  "key": "<APPLICATION_NAME>-microservice-key"
+}
+```
 
-    {
-            "name": "{APPLICATION_NAME}",
-            "type": "MICROSERVICE",
-            "key": "{APPLICATION_NAME}-microservice-key"
+You have to replace the values `<URL>` with the URL of your Cumulocity tenant, `<AUTHORIZATION>` is Basic with a Base64 encoded string, and for `<APPLICATION_NAME>` use the desired name for your microservice application and its `key` name.
+
+> **Important**: When naming your microservice application use only lower-case letters, digits and dashes. The maximum length for the name is 23 characters.
+
+The `curl` command can be used to create the application with a POST request:
+
+```shell
+$ curl -X POST -s \
+  -d '{"name":"my-first-microservice","type":"MICROSERVICE","key":"my-hello-world-ms-key"}' \
+  -H "Authorization: <AUTHORIZATION>" \
+  -H "Content-Type: application/vnd.com.nsn.cumulocity.application+json" \
+  -H "Accept: application/vnd.com.nsn.cumulocity.application+json" \
+  "<URL>/application/applications"
+```
+
+In case of errors, e.g. invalid names, you will get the details printed in the console. When the application is created successfully, you will get a response in JSON format as the following example:
+
+```json
+{
+  "id": "<APPLICATION_ID>",
+  "key": "my-hello-world-ms-key",
+  "name": "my-first-microservice",
+  "type": "MICROSERVICE",
+  "availability": "PRIVATE",
+
+  "self": "<URL>/application/applications/<APPLICATION_ID>",
+
+  "owner": {
+    "self": "...",
+    "tenant": {
+      "id": "<TENANT>"
     }
+  },
+  "requiredRoles": [],
+  "manifest": {
+    "noAppSwitcher": true
+  },
+  "roles": [],
+  "contextPath": "my-first-microservice"
+}
+```
 
+Load the Administration application on your tenant and navigate to **Applications** > **Own applications**. There you will see the newly created microservice.
+
+![Hello World of Microservices](/guides/images/microservices-sdk/admin-first-microservice.png)
+
+
+#### Step 2 - Acquire the microservice bootstrap user
+
+You will need the bootstrap user credentials in order to run the microservice locally. Get the details of your bootstrap user with a GET request as follows:
+
+```avrasm
+GET <URL>/application/applications/<APPLICATION_ID>/bootstrapUser
+
+HEADERS:
+  "Authorization": <AUTHORIZATION>
+  "Content-Type": application/vnd.com.nsn.cumulocity.user+json
+```
+
+> **Info**: Besides the `curl` command, you can also employ a graphical interface such as Postman.
+
+
+#### Step 3 - Run the microservice locally
+
+The Docker image was built and added to the local Docker repository during the Maven build. You can list all the Docker images available with the following command:
+
+```shell
+$ docker images
+```
+
+Get your image ID and tag from the list. While not strictly a means of identifying a container, you can specify a version of an image you would like to run the container with. Run the Docker container for the microservice also providing the URL of your tenant and the bootstrap user credentials. Do not forget to expose the port 80 to a port on your host system, e.g. 8082.
+
+```shell
+$ docker run -p 8082:80 -e C8Y_BOOTSTRAP_TENANT=<BOOTSTRAP_TENANT> -e C8Y_BOOTSTRAP_USER=<BOOTSTRAP_USERNAME> -e C8Y_BOOTSTRAP_PASSWORD=<BOOTSTRAP_USER_PASSWORD> -e C8Y_MICROSERVICE_ISOLATION=MULTI_TENANT -i -t -e C8Y_BASEURL=<URL> <DOCKER_REPOSITORY_IMAGE>:<TAG>
+```
+
+If your Docker image has run successfully, you shall see the output on the console similar to the one below.
+
+```plaintext
+  .   ____          _            __ _ _
+ /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+ \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+  '  |____| .__|_| |_|_| |_\__, | / / / /
+ =========|_|==============|___/=/_/_/_/
+ :: Spring Boot ::        (v1.5.7.RELEASE)
+
+2019-03-01 13:57:13.638  INFO 8 --- [main] c8y.example.App                          : Starting App on 855d1971889b with PID 8 (/data/my-first-microservice.jar started by root in /)
+
+...
+
+2019-03-01 13:57:24.728  INFO 8 --- [main] s.b.c.e.t.TomcatEmbeddedServletContainer : Tomcat started on port(s): 80 (http)
+2019-03-01 13:57:24.750  INFO 8 --- [main] c8y.example.App                          : Started App in 12.044 seconds (JVM running for 12.911)
+```
+
+At this point, you may open your favorite browser and test your microservice at [http://localhost:8082/hello](http://localhost:8082/hello). Enter your bootstrap user credentials using &lt;tenant>/&lt;username> and your password. You shall see a response message in JSON format like "Microservice my-first-microservice is not subscribed by tenant".
+
+
+#### Step 4 - Subscribe to the microservice
+
+Load the Administration application on your tenant and navigate to **Applications** > **Own applications**. Locate your microservice application and click on it to open its details. On the top right side click on the **Subscribe** button.
+
+![Subscribe to a microservice](/guides/images/microservices-sdk/admin-microservice-subscribe.png)
+
+Now you can test your microservice locally using the endpoint <kbd>/hello</kbd> and with a parameter, e.g. <kbd>/hello?name=Neo</kbd>.
+
+It is also possible to subscribe to the microservice with a POST request:
+
+```avrasm
+POST <URL>/tenant/tenants/<TENANT_ID>/applications
+
+HEADERS:
+  "Authorization": "<AUTHORIZATION>"
+
+BODY:
+  {
+    "application": {
+        "id": "<APPLICATION_ID>"
+    }
+  }
+```
+
+### Deployment
+
+Once you have tested your microservice locally, you can deploy it on the Cumulocity platform and you need:
+
+* A valid tenant, a user and a password in order to access Cumulocity.
+* An authorization header as "Basic &lt;Base64(&lt;username>:&lt;password>)>".
+* The application created on the previous steps.
+* The ZIP file built with Maven on the previous steps.
+
+You need to upload the ZIP file to the Cumulocity platform and this might require some seconds, depending on your internet connection. Make a POST request to upload your ZIP file as follows:
+
+```avrasm
+POST <URL>/application/applications/<APPLICATION_ID>/binaries
+
+HEADERS:
+  "Authorization": "<AUTHORIZATION>"
+  "Content-Type": "multipart/form-data"
+```
 
 Example:
 
-    $curl -X POST -s \
-      -d "{"name":"hello-microservice-1","type":"MICROSERVICE","key":"hello-microservice-1-key"}" \
-      -H "Authorization: {AUTHORIZATION}" \
-      -H "Content-Type: application/vnd.com.nsn.cumulocity.application+json" \
-      -H "Accept: application/vnd.com.nsn.cumulocity.application+json" \
-      "{URL}/application/applications"
+```shell
+$ curl -F "data=@<PATH_TO_YOUR_ZIP_FILE>" \
+	     -H "Authorization: <AUTHORIZATION>" \
+	     "<URL>/application/applications/<APPLICATION_ID>/binaries"
+```
 
-Example response:
+> **Important**: The **Microservice hosting** feature must be activated on your tenant, otherwise your request will return an error message like "security/Forbidden, access is denied". This feature is not assigned to tenants by default, so trial accounts won't have it. You shall write an email to [support@cumulocity.com](mailto:support@cumulocity.com) so they can assist you with the activation. Note that this is a paid feature.
 
-    {
-        "availability": "PRIVATE",
-        "id": "{APPLICATION_ID}",
-        "key": "{APPLICATION_NAME}-microservice-key",
-        "manifest": {
-            "imports": [],
-            "noAppSwitcher": true
-        },
-        "name": "{APPLICATION_NAME}",
-        "owner": {
-            "self": "...",
-            "tenant": {
-                "id": "..."
-            }
-        },
-        "requiredRoles": [],
-        "roles": [],
-        "self": "..",
-        "type": "MICROSERVICE"
-    }      
+It is also possible to upload the ZIP file directly on your tenant. Load the Administration application and navigate to **Application** > **Own applications** and click on the **Add application** button. On the pop-up menu, click on **Upload microservice**.
 
-If the application has been created correctly, you can get the application ID from the response.
+![Upload microservice](/guides/images/microservices-sdk/admin-microservice-upload.png)
 
-**Step 2 - Acquire microservice bootstrap user**
+Locate the ZIP file of your microservice application and click on **Subscribe** to the microservice afterwards.
 
-    GET {URL}/application/applications/{APPLICATION_ID}/bootstrapUser
+![Subscribe microservice](/guides/images/microservices-sdk/admin-microservice-subscribe-up.png)
 
-HEADERS:
+Once the ZIP file has been uploaded successfully, you will see a new microservice application created.
 
-    "Authorization": {AUTHORIZATION}
-    "Content-Type": application/vnd.com.nsn.cumulocity.user+json
+#### Test the deployed microservice
 
-Example response:
+The `curl` command can be used to verify that the microservice is up and running using the <kbd>/health</kbd> endpoint:
 
-    HTTP/1.1 200 Ok
-    Content-Type: application/vnd.com.nsn.cumulocity.user+json
-    {
-      "tenant": "...",
-      "name": "...",
-      "password": "..."
-    }
+```shell
+$ curl -H "Authorization: <AUTHORIZATION>" \
+       <URL>/service/my-first-microservice/health
+```
 
-**Step 3 - Run microservice locally**
-
-The image is already added to the local docker repository during the build. List all the docker repository images available:
-
-    $ docker images
-
-After you find the image in the list, run the docker container for the microservice by providing the baseurl and the bootstrap user credentials:
-
-    $ docker run -e C8Y_BASEURL={URL} -e C8Y_BOOTSTRAP_TENANT={BOOTSTRAP_TENANT} -e C8Y_BOOTSTRAP_USER={BOOTSTRAP_USERNAME} -e C8Y_BOOTSTRAP_PASSWORD={BOOTSTRAP_USER_PASSWORD} -e C8Y_MICROSERVICE_ISOLATION=MULTI_TENANT -i -t {DOCKER_REPOSITORY_IMAGE}:{TAG}
-
-**Step 4 - Subscribe to microservice**
-
-    POST {URL}/tenant/tenants/{TENANT_ID}/applications
-
-  HEADERS:
-
-    "Authorization": "{AUTHORIZATION}"
-
-  BODY:
-
-    {"application":{"id": "{APPLICATION_ID}"}}
-
-  Example:
-
-    curl -X POST -d "{"application":{"id": "{APPLICATION_ID}"}}"  \
-    -H "Authorization: {AUTHORIZATION}" \
-    -H "Content-type: application/json" \
-     "{URL}/tenant/tenants/{TENANT_ID}/applications"
-
-
-#### Deployment
-
-To deploy a microservice application on an environment you need the following:
-
-* URL address of the Cumulocity host of your tenant
-* Authorization header = "Basic {Base64({username}:{password})}"
-* Tenant - tenant ID
-* ZIP build from previous step for deployment
-
-**Step 1 - Create application**
-
-If the application does not exist, create a new application on a platform.
-For details, refer to the "Create application" step in [Run microservice locally](#run-locally).
-
-**Step 2 - Upload ZIP file**
-
-	POST {URL}/application/applications/{APPLICATION_ID}/binaries
-
-HEADERS:
-
-    "Authorization": "{AUTHORIZATION}"
-    "Content-Type": "multipart/form-data"
-
-Example:
-
-	  curl -F "data=@{PATH_TO_ZIP}" \
-	  -H "Authorization: {AUTHORIZATION}" \
-	  "{URL}/application/applications/{APPLICATION_ID}/binaries"
-
-**Step 3 - Subscribe to microservice**
-
-For details, refer to the "Subscribe to microservice" step in [Run microservice locally](#run-locally).
-
-**Step 4 - Verify if microservice is running**
-
-Now you can verify if your application is running by executing
-
-    curl -H "Authorization: {AUTHORIZATION}" \
-      {URL}/service/hello-world/hello?who=me
-
-The expected result is:
-
-    hello me!
-
+You can also test your microservice with your favorite browser. Remember to enter your user credentials using &lt;tenant>/&lt;username> and your password.
 
 ### Improving the microservice
 
-Now that you have done your first step, check out the section [Developing Java Microservice](/guides/microservice-sdk/java#developing-microservice).
+Now that you have done your first steps, check out the section [Developing microservices](/guides/microservice-sdk/java#developing-microservice) to find out what else is possible to be implemented.

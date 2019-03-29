@@ -186,7 +186,7 @@ Response:
 Subscription in this scope means tenant subscription to a microservice application. The subscription is an important step after deployment.
 When a microservice application is deployed, it is subscribable to other tenants. Subscribing to a microservice is the same as subscribing to any other application and it can be done in the Administration application. A tenant can be subscribed employing a POST request:
 
-```htpp
+```http
 POST /tenant/tenants/<TENANT>/applications
 Host: ...
 Authorization: Basic ...

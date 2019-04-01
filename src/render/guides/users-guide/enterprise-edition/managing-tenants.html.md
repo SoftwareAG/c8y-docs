@@ -5,7 +5,7 @@ layout: redirect
 ---
 
 <a name="tenants"></a>
-If you are a service provider or subscribed to the Enterprise Edition of Cumulocity, you may want to manage your own subtenants. 
+If you are a service provider or subscribed to the Enterprise Edition of Cumulocity, you may want to manage your own subtenants.
 
 The tenants functionality allows you to create subtenants, subscribe them to the applications that you have available and potentially deactivate tenants if they are not in use anymore.
 
@@ -36,7 +36,7 @@ In the management tenant, you will see an additional column "Parent tenant". Thi
 
 ### <a name="creating-tenants"></a>Creating subtenants
 
-To add a new tenant, click **Create tenant** at the right of the top menu bar. 
+To add a new tenant, click **Create tenant** at the right of the top menu bar.
 
 ![Create subtenant](/guides/images/users-guide/Administration/admin-subtenant-create.png)
 
@@ -90,7 +90,7 @@ Note, that fields with an asterisk * are mandatory.
 
 Click **Save** to apply your settings.
 
-When the tenant is created, it is automatically provisioned with a first, administrative user ("Administrator's username"). This administrator can create other users and set their permissions. The first user cannot be deleted to prevent you from locking yourself out. 
+When the tenant is created, it is automatically provisioned with a first, administrative user ("Administrator's username"). This administrator can create other users and set their permissions. The first user cannot be deleted to prevent you from locking yourself out.
 
 From the management tenant, you can enable other tenants to create subtenants. To do so, check **Allow creation of subtenants** in the tenant editor.
 
@@ -121,13 +121,13 @@ The following information is displayed here:
 
 ### Suspending subtenants
 
-You can temporarily suspend tenants. Suspending tenants blocks any access to this tenant, regardless whether the access is from devices, users or other applications. 
+You can temporarily suspend tenants. Suspending tenants blocks any access to this tenant, regardless whether the access is from devices, users or other applications.
 
 To suspend a tenant, click the menu icon and from the context menu select **Suspend**.
 
 ![Suspend tenant](/guides/images/users-guide/Administration/admin-subtenant-suspend.png)
 
-In the upcoming dialog confirm the suspension by clicking **OK** and entering your password. 
+In the upcoming dialog confirm the suspension by clicking **OK** and entering your password.
 
 As part of suspending the tenant, an email is sent to the tenant administrator if an email address is configured for that administrator.
 
@@ -249,18 +249,18 @@ For billing purposes, in addition to CPU usage and memory usage the cause for th
 
 #### Usage statistics
 
-The information on the microservice usage is presented in the **Tenants** > **Usage Statistics** page in the Administration application.
+The information on the microservice usage is presented in the **Usage Statistics** in the **Tenants** menu of the Administration application.
 
 ![Tenant statistics](/guides/images/users-guide/Administration/admin-subtenants-usage-statistics-microservice.png)
 
-For more details, you may refer to the [Tenant usage statistics](https://cumulocity.com/guides/reference/tenants/#tenant-usage-statistics) API in the **Reference guide** under the **Tenants** section. Note that details are available only for daily usage. For a summary query only the sum of all issued requests is returned.
+For more details, you may refer to **Tenants** > [Tenant usage statistics](/guides/reference/tenants/#tenant-usage-statistics) in the **Reference guide** under the **Tenants** section. Note that details are available only for daily usage. For a summary query only the sum of all issued requests is returned.
 
 
 #### Scaling
 
-Auto scaling monitors your microservices and automatically adjusts capacity to maintain steady, predictable performance at the lowest possible cost. It is easy to configure the microservice scaling by setting the property `scale` in the [Microservice manifest](https://cumulocity.com/guides/reference/microservice-manifest/).
+Auto-scaling monitors your microservices and automatically adjusts capacity to maintain steady, predictable performance at the lowest possible cost. It is easy to configure the microservice scaling by setting the property `scale` in the [Microservice manifest](https://cumulocity.com/guides/reference/microservice-manifest/).
 
-For instance, when you have a microservice set with scale policy AUTO and the CPU usage points that it is needed to start a new microservice instance for three hours, the billing logs like (24/24 + 3/24) * consumed resources.
+For instance, when you have a microservice with scale policy set to AUTO and the CPU usage points that it is needed to start a new microservice instance for three hours, the billing logs like (24/24 + 3/24) * consumed resources.
 
 24/24 - one instance active for the whole day<br>
  3/24 - second instance active only three hours
@@ -269,7 +269,7 @@ Note that an audit record is created for every change of the number of instances
 
 ![Audit logs](/guides/images/users-guide/Administration/admin-audit-logs-microscaling.png)
 
-For more information, refer to the [Auditing](https://cumulocity.com/guides/reference/auditing) section in the **Reference guide**.
+For more information, refer to [Auditing](https://cumulocity.com/guides/reference/auditing) in the **Reference guide**.
 
 ### <a name="tenants-custom-properties"></a>Editing custom properties
 
@@ -283,7 +283,7 @@ The platform administrator can limit the count of concurrently registered root d
 
 ### <a name="usage-stats"></a> Retrieving usage statistics
 
-The **Usage statistics** page provides statistical information on each subtenant. 
+The **Usage statistics** page provides statistical information on each subtenant.
 
 ![Subtenant statistics](/guides/images/users-guide/Administration/admin-subtenants-usage-statistics.png)
 
@@ -312,11 +312,11 @@ The following information is provided for each subtenant:
 - Parent tenant: Name of the parent tenant (available only for management tenant)
 - External reference: This field is for individual usage, for example, you can add a link to the CRM system here or an internal customer number.
 
-Moreover custom properties are displayed, if configured. 
+Moreover custom properties are displayed, if configured.
 
 Custom properties may be defined in the [Properties Library](/guides/users-guide/administration#properties) and then set their values in the [Custom properties](#tenants-custom-properties) tab of the tenant.
 
-You can filter the usage statistics list for a time period by adding the start and end date in the top menu bar and click **Filter**. You can also filter and sort the list on any column by clicking the filter icon next to the column name and providing the filtering criteria. For details on filtering, refer to [Getting Started > Features and Functionalities > Filtering](/guides/users-guide/overview#filtering). 
+You can filter the usage statistics list for a time period by adding the start and end date in the top menu bar and click **Filter**. You can also filter and sort the list on any column by clicking the filter icon next to the column name and providing the filtering criteria. For details on filtering, refer to [Getting Started > Features and Functionalities > Filtering](/guides/users-guide/overview#filtering).
 
 Click Export CSV at the right of the top menu bar to export the current view of the statistics table to a CSV file. A dialog will come up in which you can customize the CSV output.
 
@@ -325,7 +325,7 @@ Click Export CSV at the right of the top menu bar to export the current view of 
 
 ### <a name="tenant-policies"></a> Tenant policies
 
-A tenant policy is a set of tenant options and retention rules. Tenant options and retention rules may be specified during tenant creation. 
+A tenant policy is a set of tenant options and retention rules. Tenant options and retention rules may be specified during tenant creation.
 
 <img src="/guides/images/users-guide/Administration/admin-tenant-policy-assign.png" alt="Assign tenant policy">
 
@@ -344,8 +344,8 @@ For each tenant policy, the name, an optional description and the number of opti
 Click **Add tenant policy** in the top menu bar to create a new tenant policy.
 
 ![Add new policy](/guides/images/users-guide/Administration/admin-tenant-policy-add.png)
- 
-1. Enter a name and an optional description. 
+
+1. Enter a name and an optional description.
 
 2. Add at least one retention rule. For details on creating retention rules, refer to [Administration > Managing data retention > Retention rules](/guides/users-guide/administration#retention-rules).
 
@@ -355,7 +355,7 @@ Click **Add tenant policy** in the top menu bar to create a new tenant policy.
 
 #### Editing, duplicating and deleting policies
 
-To edit a policy, click on the desired policy or click **Edit** in the context menu, accessible through the menu icon. 
+To edit a policy, click on the desired policy or click **Edit** in the context menu, accessible through the menu icon.
 
 ![Policy context menu](/guides/images/users-guide/Administration/admin-tenant-policy-contextmenu.png)
 

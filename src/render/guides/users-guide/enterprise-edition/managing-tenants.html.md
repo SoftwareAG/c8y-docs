@@ -260,7 +260,7 @@ For more details, you may refer to **Tenants** > [Tenant usage statistics](/guid
 
 Auto-scaling monitors your microservices and automatically adjusts capacity to maintain steady, predictable performance at the lowest possible cost. It is easy to configure the microservice scaling by setting the property `scale` in the [Microservice manifest](https://cumulocity.com/guides/reference/microservice-manifest/).
 
-For instance, when you have a microservice with scale policy set to AUTO and the CPU usage points that it is needed to start a new microservice instance for three hours, the billing logs like (24/24 + 3/24) * consumed resources.
+For instance, when you have a microservice with scale policy set to AUTO and the CPU usage points that it is needed to start a new microservice instance for three hours, the billing logs: (24/24 + 3/24) * consumed resources.
 
 24/24 - one instance active for the whole day<br>
  3/24 - second instance active only three hours

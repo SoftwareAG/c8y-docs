@@ -4,7 +4,7 @@ title: Deploying
 layout: redirect
 ---
 
-Deploying your microservice application is rather easy, just execute the following command
+Deploying your microservice application is rather easy, just execute the following command:
 
 ```shell
 $ ./microservice deploy -n hello-world -d <URL> -u <username> -p <password> -te <tenant>

@@ -14,12 +14,14 @@ Web SDK for Angular JS is deprecated. Therefore, its documentation is no longer 
 
 [Web SDK for plugins](/guides/web/web-sdk-for-plugins) is still based on Angular JS. We are currently working on an Angular-based solution which will replace the existing Web SDK for plugins in the future.
 
----
+When using [Web SDK for Angular](/guides/web/angular), you might face the following known limitations:
 
-There are the following known limitations that you might face with the new [Web SDK for Angular](/guides/web/angular):
  - Currently, it is not possible to extend existing applications with custom widgets.
- - The new Web SDK for Angular allows to add new tabs or navigator nodes but it is not possible to remove or update existing them.
+ - You may add new tabs or navigator nodes but it is not possible to remove or update existing ones.
 
-In both cases you either develop the items still with the [Web SDK for plugins](/guides/web/web-sdk-for-plugins) and import them to Angular as described [here](/guides/web/angular#extension-points) or you might want to downgrade an Angular service to angularjs as shown [here](https://angular.io/guide/upgrade#using-angular-components-from-angularjs-code).
+In both cases, you either 
+
+* develop the items with the [Web SDK for plugins](/guides/web/web-sdk-for-plugins) and import them to Angular as described in [ngx-components > Extension points](/guides/web/angular#extension-points), 
+* or you downgrade an Angular service to angularjs as shown in the [Angular documentation](https://angular.io/guide/upgrade#using-angular-components-from-angularjs-code).
 
 If you have previously been working with older versions you might be interested in some short [background information](/guides/web/background) on the evolution of the UI stack to better understand how and why it is now designed the way it is.

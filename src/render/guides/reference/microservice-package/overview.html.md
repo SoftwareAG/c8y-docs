@@ -31,7 +31,7 @@ Execute the following command to install the JSON processor on Linux systems:
 $ sudo yum install jq
 ```
 
-or the following for macOS:
+For macOS, use the following command:
 
 ```shell
 $ brew install jq
@@ -49,7 +49,7 @@ Execute the following command to download the script on Linux systems:
 $ wget http://resources.cumulocity.com/examples/microservice
 ```
 
-or the following for macOS:
+For macOS, use the following command:
 
 ```shell
 $ curl -O http://resources.cumulocity.com/examples/microservice

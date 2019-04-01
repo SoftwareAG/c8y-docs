@@ -37,7 +37,7 @@ For macOS, use the following command:
 $ brew install jq
 ```
 
-> **Note**: You don't need to run Homebrew using `sudo` as it is extremely dangerous and no longer supported. As Homebrew does not drop privileges on installation, you would be giving all
+> **Info**: You don't need to run Homebrew using `sudo` as it is extremely dangerous and no longer supported. As Homebrew does not drop privileges on installation, you would be giving all
 build scripts full access to your system.
 
 

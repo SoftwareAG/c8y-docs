@@ -18,4 +18,4 @@ The script can be run in a parent folder holding such structure, or by passing t
 $ ./microservice pack --name hello-world
 ```
 
-It will create a ZIP file with named _hello-world.zip_, and an intermediate _image.tar_ which is an exported Docker image.
+It will create a ZIP file named _hello-world.zip_, and an intermediate _image.tar_ which is an exported Docker image.

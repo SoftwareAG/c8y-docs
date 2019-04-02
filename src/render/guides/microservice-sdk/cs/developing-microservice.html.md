@@ -1,6 +1,6 @@
 ---
 order: 30
-title: Developing Microservices
+title: Developing microservices
 layout: redirect
 ---
 

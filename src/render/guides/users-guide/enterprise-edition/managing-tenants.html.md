@@ -249,11 +249,11 @@ For billing purposes, in addition to CPU usage and memory usage the cause for th
 
 #### Usage statistics
 
-The information on the microservice usage is presented in the **Usage Statistics** in the **Tenants** menu of the Administration application.
+The information on the microservice usage is presented in the **Usage Statistics** page in the **Tenants** menu of the Administration application.
 
 ![Tenant statistics](/guides/images/users-guide/Administration/admin-subtenants-usage-statistics-microservice.png)
 
-For more details, you may refer to **Tenants** > [Tenant usage statistics](/guides/reference/tenants/#tenant-usage-statistics) in the **Reference guide** under the **Tenants** section. Note that details are available only for daily usage. For a summary query only the sum of all issued requests is returned.
+For more details, refer to [Tenants > Tenant usage statistics](/guides/reference/tenants/#tenant-usage-statistics) in the Reference guide. Note that details are available only for daily usage. For a summary query only the sum of all issued requests is returned.
 
 
 #### Scaling

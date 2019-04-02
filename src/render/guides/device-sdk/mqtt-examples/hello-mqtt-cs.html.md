@@ -46,7 +46,7 @@ To develop a very simple "Hello, world!" MQTT client for Cumulocity, you need to
 To create a plain C# project with .NET Core SDK, execute the following command:
 
 ```shell
-$ dotnet new console -n hello-mqtt-cs
+$ dotnet new console -n hello_mqtt
 ```
 
 This will create a new console application _hello-mqtt-cs_ in the current directory with a skeleton structure for your project.
@@ -57,7 +57,7 @@ Edit the _hello-mqtt-cs.csproj_ in the _hello-mqtt-cs_ folder. Add a dependency 
 
 ```xml
 <ItemGroup>
-    <PackageReference Include="Cumulocity.SDK.MQTT" Version="0.1.0" />
+    <PackageReference Include="Cumulocity.SDK.MQTT" Version="0.1.1" />
 </ItemGroup>
 ```
 
@@ -76,10 +76,11 @@ using System;
 using System.Threading;
 using System.Threading.Tasks;
 using Cumulocity.SDK.MQTT.Model;
+using Cumulocity.SDK.MQTT.Model.ConnectionOptions;
 using Cumulocity.SDK.MQTT.Model.MqttMessage;
 using MqttClient = Cumulocity.SDK.MQTT.MqttClient;
 
-namespace MQTT
+namespace hello_mqtt
 {
 	class Program
 	{

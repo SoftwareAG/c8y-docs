@@ -63,7 +63,7 @@ After a successful build you will be provided with a ZIP file in the target dire
 
 ### <a name="run-locally"></a> Running the microservice locally
 
-In order to test the microservice calls to Cumulocity, you can run the docker container locally.
+In order to test the microservice calls to Cumulocity, you can run the Docker container locally.
 
 The microservice must be deployed  to verify calls from Cumulocity.
 
@@ -494,7 +494,7 @@ For a working cake you need the *build.sh* or *build.ps1* file to bootstrap cake
 * DotnetPublish
 * SingleDockerImage
 
-Execute the bootstrapper script, to build the application and an image from a Docker file.
+Execute the bootstrapper script, to build the application and an image from a Dockerfile.
 
 ```shell
 $ ./build.sh

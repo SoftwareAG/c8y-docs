@@ -148,6 +148,7 @@ id.Type = ASSET_TYPE;
 id.Value = deviceUrl;
 externalIDGid = identityApi.GetExternalId(id);
 ```
+
 The returned object will contain the unique identifier and a link to the managed object.
 
 

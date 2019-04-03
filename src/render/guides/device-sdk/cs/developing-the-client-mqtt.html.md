@@ -1,38 +1,37 @@
 ---
-order: 20
-title: Developing the "Hello, MQTT world!" client
+order: 50
+title: MQTT client - Hello world!
 layout: redirect
 ---
 
-
 To develop a very simple "Hello, world!" MQTT client for Cumulocity, you need to follow these steps:
 
-* Create a console project:
-
-    	dotnet new console
-
+* Create a console project:<br>
+```cs
+dotnet new console
+```
 * Add a new entry <PropertyGroup> to a csproj file:
-
-        <RestoreSources>$(RestoreSources);../nugets;https://api.nuget.org/v3/index.json</RestoreSources>
-        
+```xml
+<RestoreSources>$(RestoreSources);../nugets;https://api.nuget.org/v3/index.json</RestoreSources>
+```
 * Add a package reference to a project file:
-
-		dotnet add package Cumulocity.MQTT -s "../nugets"
-
+```cs
+dotnet add package Cumulocity.MQTT -s "../nugets"
+```
 
 **Example**
 
-        using Cumulocity.MQTT;
-        using Cumulocity.MQTT.Model;
-        using System;
-        using System.Threading.Tasks;
+```cs
+using Cumulocity.MQTT;
+using Cumulocity.MQTT.Model;
+using System;
+using System.Threading.Tasks;
 
-        namespace MqttDemo
+namespace MqttDemo
         {
             internal class Program
             {
-                 static Client cl;
-                 
+                static Client cl;
                 private static void Main(string[] args)
                 {
                     Task.Run(() => RunClientAsync());
@@ -75,13 +74,15 @@ To develop a very simple "Hello, world!" MQTT client for Cumulocity, you need to
                 }
             }
         }
-
+```
 Replace &lt;&lt;clientId&gt;&gt;, &lt;&lt;serverUrl&gt;&gt;, &lt;&lt;tenant&gt;&gt;, &lt;&lt;username&gt;&gt;, and &lt;&lt;password&gt;&gt; with your data.
 
-* Build and run the application:
-
-        dotnet build
-        dotnet run
+Build and run the application:
+ 
+```cs
+dotnet build
+dotnet run
+```
 
 Cumulocity MQTT protocol supports both unsecured TCP and also secured SSL connections (e.g. tcp://mqtt.cumulocity.com:1883 or ssl://mqtt.cumulocity.com:8883), so as the &lt;&lt;serverUrl&gt;&gt; select the one which fits for you.
 
@@ -90,7 +91,7 @@ What does the code in "main" do?
 * Configure the MQTT connection.
 * Connect with Cumulocity via a MQTT protocol.
 * Create a new device with a My MQTT device name and a c8y_MQTTDevice type.
-* Update the device hardware information by putting a S123456789 serial, a MQTT test model and a Rev0.1revision.
+* Update the device hardware information by putting a S123456789 serial, a MQTT test model and a Rev0.1 revision.
 * Subscribe to the static operation templates for the device, print all received operations to the console and in case of a c8y_Restart operation simulate device restart.
 
 ### Improving the agent

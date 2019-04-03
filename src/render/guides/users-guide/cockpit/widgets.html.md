@@ -49,7 +49,7 @@ For details on applications, refer to [Administration > Managing Applications](/
 
 The "Asset notes" widget displays messages provided by the administrative user to all owners of the current widget. 
 
-<img src="/guides/images/users-guide/Cockpit/Cockpit_AssetNotes.png" name="Asset notes widget" style="width:75%;"/>
+![Asset notes widget](/guides/users-guide/Cocpit/cockpit-widget-asset-notes.png)
 
 Only users with the permission to edit the home dashboard will be able to provide this message.
 
@@ -58,7 +58,7 @@ Only users with the permission to edit the home dashboard will be able to provid
 
 The "Asset properties" widget displays a user-defined list of attributes of the current object. The current object can be a device or a group.
 
-<img src="/guides/images/users-guide/Cockpit/cockpit-widget-asset-properties.png" name="Create Alarm list widget" style="width:100%;"/>
+![Asset properties widget](/guides/users-guide/Cocpit/cockpit-widget-asset-properties.png)
 
 
 **Parameters to configure**
@@ -87,10 +87,10 @@ The "Asset table" widget shows details of all child devices in a table. This is 
 
 In the following screenshot, five columns are configured. Three property columns "Meter", “Vendor”, and “Owner”, which refer to the properties “name”, type” and “owner” respectively. Additionally, there are two actions, one for toggling the maintenance mode, and one for rebooting the device.
 
-![image alt text](/guides/images/users-guide/image_17.png)
+![Asset table widget](/guides/images/users-guide/Cockpit/cockpit-widget-asset-table.png)
 
 The resulting table is visualized as follows:
-![image alt text](/guides/images/users-guide/image_18.png)
+![Asset table widget example](/guides/images/users-guide/Cockpit/cockpit-widget-asset-table-example.png)
 
 **Adding properties**
 
@@ -102,7 +102,7 @@ To add a property, click **+Add Properties** and select one or more properties t
 
 To add an action, click **+Add Action**. Select **Toggle maintenance mode** to add the predefined action to toggle the maintenance mode. Or select **Create operation** to create a button that will execute a shell command. In the following dialog you can then enter the label for the button and the shell command to be executed.
 
-![image alt text](/guides/images/users-guide/image_19.png)
+![Reboot device button configuration](/guides/images/users-guide/cockpit-widget-asset-table-buttonconfig.png)
 
 >**Info:** The dialog shows the predefined shell commands of the first device that supports shell commands. The list is empty if there is no such device. For more details, refer to [shell commands](/guides/users-guide/device-management/#shell).<br>
 You can also enter the JSON format for the operation that will be sent to the device. For details, contact the device vendor for supported operations.
@@ -114,10 +114,6 @@ To edit the header of a column, click on its value in the "Label" column and edi
 You can rearrange the columns by clicking the icon at the very left of a row and dragging and dropping the entry.
 
 To remove a property or an action, hover over the respective row and click **Delete** at the right.
-
-### Widget "Cockpit welcome"
-
-The "Cockpit welcome" widget lets you display a welcome message to the Welcome screen. There are no additional parameters to be configured.
 
 ### Widget "Data point graph"
 

@@ -119,7 +119,8 @@ This part explain, how application will be handle query in parameter 'query'.
 * or(Logical or): Price le 3.5 or Price gt 200
 
 ##### Supported query functions:
-* has: has(name) - match objects with property name
+* has: has(c8y_IsDevice) - match objects with custom property c8y_IsDevice. Supports only custom fragments. 
+  Standard properties are not supported, i.e. id, type, name, self, lastUpdated, owner, creationTime, supportedMeasurements, childAssets, childDevices, childAdditions, externalIds   
 * bygroupid(12) - match objects from group with id equals 12
 
 ##### Supported query values:
@@ -130,7 +131,7 @@ This part explain, how application will be handle query in parameter 'query'.
     * matching is sensitive in case
 * number
 * date
-    * examples: creationTime gt '2015-10-24T09:00:53.351+01:00'
+    * examples: creationTime.date gt '2015-10-24T09:00:53.351+01:00' (+ must be url encoded)
 
 ##### Supported query properties:
 * simple: name
@@ -192,7 +193,7 @@ and query will return:
     ...query=num gt 2 - {"_id": 3, ...}, {"_id": 4, ...}
     ...query=num le 2 - {"_id": 1, ...}, {"_id": 2, ...}
     ...query=num eq 1 or num eq 2 - {"_id": 1, ...}, {"_id": 2, ...}
-    ...query=has(name) - return all 4 rows
+    ...query=has(c8y_Availability) - return all 4 rows
 
 ### POST - Create a new ManagedObject
 

@@ -298,7 +298,7 @@ The following provider settings may currently be specified:
 - [Impact](/guides/users-guide/optional-services#nokia-impact) 
 - [LoRa](/guides/users-guide/optional-services#lora)
 - [Sigfox](/guides/users-guide/optional-services#sigfox)
-- SIM
+- [SIM](/guides/users-guide/optional-services#connectivity)
 
 ![Provider settings](/guides/images/users-guide/Administration/admin-settings-connectivity-sim.png)
 

@@ -48,7 +48,7 @@ The following example shows how to upload a custom monitor file (which has the e
 		}
 
 2. In the Administration application, open the **Own Applications** page from the navigator. Click **Add application** and in the upcoming window click **Upload custom Apama rule**. <br>
-<img src="/guides/images/edge/admin-application-apama.png" name="Upload file"/> 
+<img src="/guides/images/users-guide/Administration/admin-application-apama.png" name="Upload file"/> 
 
 3. Upload the Apama monitor file (.mon) previously created. After successful upload your rule will be deployed as a custom Apama application.
 

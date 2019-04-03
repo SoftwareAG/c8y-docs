@@ -19,7 +19,7 @@ The following illustration gives an overview of the Cumulocity LoRa Actility int
 The following sections describe how to:
 
 * [Configure your ThingPark account credentials](#configure-credentials) in Cumulocity
-* [Create device types](#create-device-types) with Cumulocity's device database
+* [Create device protocols](#create-device-protocols) with Cumulocity's device database
 * [Register devices](#register-device) and visualize Actility payload using Cumulocity
 * [Deprovision a device](#deprovision-device) in ThingPark
 * [Send operations](#configurable-port) to a device
@@ -60,7 +60,7 @@ Enter your profile ID, username, password and application EUI (for details on pr
 
 Click **Save**. Your old credentials will now be replaced with the new ones.
 
-### <a name="create-device-types"></a>Creating device types
+### <a name="create-device-protocols"></a>Creating device protocols
 
 To process data from LoRa devices, Cumulocity needs to understand the payload format of the devices. Mapping a payload data to Cumulocity data can be done by creating a LoRa device protocol.
 
@@ -75,19 +75,19 @@ In order to create a device protocol, navigate to the Device Management applicat
 
 In the **Device protocols** page, click **Import**. 
 
-Select the predefined device type, for example "LoRaWAN Demonstrator". Click **Import**.
+Select the predefined device type, for example "LoRaWAN Demonstrator" or upload from a file. Click **Import**.
 
 ![Import device protocol](/guides/images/users-guide/actility/devmgmt-devicetypes-protocols-import.png)
 
 Alternatively, you may also load the device protocol from a file and import it.
 
-#### <a name="create-new-device-type"></a>Creating a new device type
+#### <a name="create-new-device-type"></a>Creating a new device protocol
 
 In the **Device protocols** page, click the **New device protocol** button. The following window will open:
 
 ![Create new LoRa protocol](/guides/images/users-guide/actility/devmgmt-devicetypes-protocols-loranew.png)
 
-Select "LoRa" as the device type, provide a name for it and click **Create**.
+Select "LoRa" as the device protocol type, provide a name for it and click **Create**.
  
 In the upcoming page, you determine the message type. LoRa devices can send messages of different types with different encodings per type.
 
@@ -116,7 +116,7 @@ In the upcoming window, configure the relevant values as shown in this example.
 
 The value configuration maps the value in the payload of a message type to the Cumulocity data. 
 
-Configure the **Message ID** according to your device message specification and map it to the Cumulocity data. The message ID is the numeric value identifying the message type. It will be matched with the message ID found in the source specified on the device type main page (i.e. Payload or FPort). The message ID needs to be entered in decimal numbers (not hex).
+Configure the **Message ID** according to your device message specification and map it to the Cumulocity data. The message ID is the numeric value identifying the message type. It will be matched with the message ID found in the source specified on the device protocol main page (i.e. Payload or FPort). The message ID needs to be entered in decimal numbers (not hex).
 
 In this example payload structure the message ID is "1".
 
@@ -148,7 +148,7 @@ For detailed information on how to decode the payload, refer to the documentatio
 
 Select the options, if required: **Signed** if the value is a signed number, or **Packed decimal** if the value is BCD encoded.
 
-In the functionalities, define how this device type should behave:
+In the functionalities, define how this device protocol should behave:
 
 - **Send measurement**: Creates a measurement with the decoded value
 - **Raise alarm**: Creates an alarm if the value is not equal to zero
@@ -159,7 +159,7 @@ You can also have a nested structure with several values within a measurement, e
 
 Click **OK** to add the values to your device protocol. 
 
-![Value configurations of created device type](/guides/images/users-guide/actility/devmgmt-devicetypes-protocols-loraprotocol.png)
+![Value configurations of created device protocol](/guides/images/users-guide/actility/devmgmt-devicetypes-protocols-loraprotocol.png)
 
 After clicking **Save**, your device protocol is created with the values you defined.
 
@@ -173,7 +173,7 @@ The following image shows an example for a message which sends a measurement whe
 
 **<a name="nested-structure-example"></a>Example with nested structure**
 
-The following image shows an example of a nested structure for a device protocol reporting the current position of a GPS device. The device type is named "Position" and contains values for longitude and latitude. 
+The following image shows an example of a nested structure for a device protocol reporting the current position of a GPS device. The display category is named "Position" and contains values for longitude and latitude. 
 
 The message ID should be the same for all the values. Enter the rest of the parameters according to the instructions above. Enter "c8y_Position" in the **Managed object fragment** field and create a new value for each: longitude and latitude. 
 
@@ -199,7 +199,7 @@ If Activation by Personalization (ABP) is required to be used, refer to the [LoR
 In the next window fill in the required information: 
 
 - **Device profile**: Select the appropriate device profile from the dropdown list. 
-- **Device type**: Select the appropriate device type from the dropdown list. 
+- **Device protocol**: Select the appropriate device protocol from the dropdown list. 
 - **Device EUI**: This is the unique identifier for the device. It is a 16 character (8 byte) long hexadecimal number. You can find it on the device itself.
 - **Application key**: This is an AES-128 application key specific for the device that is assigned to the device by the application owner and is responsible to encrypt. The application key is a 32 character (16 byte) long hexadecimal number.
 JOIN communication. You can find this key on the device itself.
@@ -229,13 +229,13 @@ First it is checked, if the device already exists. If no device exists with the 
 
 Activating the device by personalization is not recommended and not fully supported in Cumulocity LoRa device registration.
 
-However, if you would like to create a device with this activation type in Cumulocity and use the LoRa features - such as sending operations to a device, deprovisioning a device and setting LoRa device type with custom device protocol configuration - you must first provision the device in the ThingPark platform. Moreover you have to create "AS Routing Profile" for Cumulocity using destination "http://actility-server.cumulocity.com" as a "Third Party AS (HTTP)" and assign it to your devices manually. Afterwards, you can register this device using LoRa device registration. In this case, the **Application key** field in the LoRa device registration is invalid.
+However, if you would like to create a device with this activation type in Cumulocity and use the LoRa features - such as sending operations to a device, deprovisioning a device and setting LoRa device protocol type with custom device protocol configuration - you must first provision the device in the ThingPark platform. Moreover you have to create "AS Routing Profile" for Cumulocity using destination "http://actility-server.cumulocity.com" as a "Third Party AS (HTTP)" and assign it to your devices manually. Afterwards, you can register this device using LoRa device registration. In this case, the **Application key** field in the LoRa device registration is invalid.
 
 #### <a name="legacy-LoRa-devices"></a>Limitations for LoRa devices created with general device registration
 
 The general device registration for LoRa devices is no longer supported.
 
-Existing LoRa devices that have been created in Cumulocity with the general device registration process have limitations. For those devices, it is not possible to send operations to the device, deprovision the device and set the LoRa device type with custom device protocol configuration.
+Existing LoRa devices that have been created in Cumulocity with the general device registration process have limitations. For those devices, it is not possible to send operations to the device, deprovision the device and set the LoRa device protocol type with custom device protocol configuration.
 
 It is recommended to delete and re-register these devices using LoRa device registration to fully use the LoRa feature.
 
@@ -256,7 +256,7 @@ To provision the device again, the device should be deleted and re-registered us
 If a LoRa device supports receiving hexadecimal commands, you can send them using shell operations. Notice that these commands are not serial monitor commands.
 In order to send an operation, navigate to the device you want to send an operation to in the Device Management application under **All devices**. Switch to the **Shell** tab.
 
-In the following screenshot you can find some examples of a device type's predefined commands and their format.
+In the following screenshot you can find some examples of a device protocol's predefined commands and their format.
 
 ![Predefined shell commands](/guides/images/users-guide/actility/lora-devices-predefinedshell.png)
 
@@ -315,13 +315,13 @@ Invalidation of the token might happen when the same ThingPark credentials are u
 
 This issue can be solved by reconfiguring the ThingPark credentials to renew the access token. Refer to [configure ThingPark credentials](#configure-credentials) for reconfiguration of the credentials.
  
-##### No device types configured
+##### No device protocols configured
 
-This warning message shows up when no LoRa device type exists to be used for device registration.
+This warning message shows up when no LoRa device protocol exists to be used for device registration.
 
-<img src="/guides/images/users-guide/actility/lora-device-registration-no-device-type.png" alt="No device type given for LoRa" style="max-width: 100%">
+<img src="/guides/images/users-guide/actility/lora-device-registration-no-device-type.png" alt="No device protocol given for LoRa" style="max-width: 100%">
 
-To resolve this, configure at least one device type using [Device database](#create-device-types).
+To resolve this, configure at least one device protocol using [Device database](#create-device-types).
 
 ##### No connectivity plans with free slots available
 

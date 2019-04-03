@@ -19,7 +19,7 @@ The following illustration grants you a quick overview of the Cumulocity Sigfox 
 The following sections describe how to:
 
 - [Manage the connectivity settings](#connectivity) in Cumulocity.
-- [Create device types](#create-device-types-sigfox) with Cumulocity's device database.
+- [Create device protocols](#create-device-protocols-sigfox) with Cumulocity's device database.
 - [Register devices](#register-device-sigfox) and visualize the Sigfox payload using Cumulocity.
 - [Update devices](#old-registration) registered with the general device registration.
 - [Send operations](#operations) to devices.
@@ -78,7 +78,7 @@ Click **Save credentials** to save your settings. If everything is correct, a me
 
 If you wish to overwrite your previous credentials, click **Replace credentials** and add your new credentials.
 
-### <a name="create-device-types-sigfox"></a>Creating device protocols
+### <a name="create-device-protocols-sigfox"></a>Creating device protocols
 
 To process data from Sigfox devices, Cumulocity needs to understand the payload format of the devices. Mapping payload data to Cumulocity data can be done by creating a Sigfox device protocol.
 
@@ -88,13 +88,13 @@ If a device protocol has been changed after being associated to a device, the re
 
 **Info:** Device protocol mapping only supports decoding for fixed byte positions based on the message type. 
 
-To create device protocols, select **Device protocols** in the **Device types** menu in the navigator of the Device Management application. You can either import an existing device type or create a new one. 
+To create device protocols, select **Device protocols** in the **Device types** menu in the navigator of the Device Management application. You can either import an existing device protocol or create a new one. 
 
 #### <a name="import-device-type"></a>Importing a device protocol
 
 In the **Device protocols** page, click **Import**. 
 
-Upload the device protocol from a file and click **Import** again.
+Select the desired predefined device type or upload it from a file. When ready, click **Import** again.
 
 #### <a name="create-new-device-type"></a>Creating a new device protocol
 
@@ -132,7 +132,7 @@ In the following window, configure the relevant values as shown in this example.
 
 The value configuration maps the value in the payload of a message type to the Cumulocity data. 
 
-Under **Message type**, configure the **Message ID** according to your device message specification. The message ID is the numeric value identifying the message type. It will be matched with the message ID found in the source specified on the device type main page (i.e. Payload or FPort). The message ID needs to be entered in decimal numbers (not hex).
+Under **Message type**, configure the **Message ID** according to your device message specification. The message ID is the numeric value identifying the message type. It will be matched with the message ID found in the source specified on the device protocol main page (i.e. Payload or FPort). The message ID needs to be entered in decimal numbers (not hex).
 
 In this sample payload structure the message ID is "1".
 
@@ -172,11 +172,11 @@ Under **Functionalities**, specify how this device protocol should behave:
 - **Send event**: creates an event with the decoded value
 - **Update managed object**: updates a fragment in a managed object with the decoded value
 
-You can also have a nested structure with several values within a measurement, event or managed object fragment. In case of a measurement, all the properties of the same type will be merged to create a nested structure. In case of an event or a managed object all the properties with the same fragment are merged to create a nested structure. (Also refer to the [example](#nested-structure-example) of a nested structure for a "Position" device type below.)
+You can also have a nested structure with several values within a measurement, event or managed object fragment. In case of a measurement, all the properties of the same type will be merged to create a nested structure. In case of an event or a managed object all the properties with the same fragment are merged to create a nested structure. (Also refer to the [example](#nested-structure-example) of a nested structure for a "Position" device protocol below.)
 
 Click **OK** to add the values to your device protocol. 
 
-![Value configurations of created device type](/guides/images/users-guide/sigfox/sigfox-protocol.png)
+![Value configurations of created device protocol](/guides/images/users-guide/sigfox/sigfox-protocol.png)
 
 Click **Save** to create the device protocol.
 
@@ -191,7 +191,7 @@ The following images show an example for a message which sends a measurement whe
 
 **<a name="nested-structure-example"></a>Example with nested structure**
 
-The following images show an example of a nested structure for a device type, reporting the current position of a GPS device. The device type is named "Position" and contains values for longitude and latitude. 
+The following images show an example of a nested structure for a device protocol, reporting the current position of a GPS device. The device protocol is named "Position" and contains values for longitude and latitude. 
 
 The message ID should be the same for all the values. Enter the rest of the parameters according to the instructions above. Enter "c8y_Position" in the **Managed object fragment** field and create a new value for each: longitude and latitude.
 
@@ -216,7 +216,7 @@ In the next window, fill in the required information:
 - **ID:** Unique device ID. The value must be a hexadecimal number.
 - **PAC:** Porting authorization code for your device. The value must be a hexadecimal number.
 - **Contract:** Choose your desired contract.
-- **Device type:** Select your desired device type from the drop-down list.
+- **Device protocol:** Select your desired device protocol from the drop-down list.
 - **Product certificate key:** This key can be located in *https://partners.sigfox.com/*. Navigate to your device and copy the certificate key.
 
 **Info:** The term "Device type" is used both by Sigfox and Cumulocity, but with different meaning. In Sigfox, a device type specifies how to route data from devices. In Cumulocity, a device type describes the data that is sent by devices of a particular type.

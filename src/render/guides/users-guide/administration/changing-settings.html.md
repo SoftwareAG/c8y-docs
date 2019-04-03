@@ -289,24 +289,27 @@ Click **Save configuration** to save your settings.
 
 Additional features are available for management tenants. For details, refer to Enterprise Edition > [Customizing your platform](/guides/users-guide/enterprise-edition#customization).
 
-### <a name="connectivity"></a>Managing the Connectivity settings
+### <a name="connectivity"></a>Managing the connectivity settings
 
-In the **Connectivity** page, you can manage credentials for different providers. In order to add or replace credentials **admin** permissions are required.
+In the **Connectivity** page, you can manage credentials for different providers. In order to add or replace credentials "admin" permissions are required.
 
-The following provider settings are currently available:
+The following provider settings may currently be specified:
 
-- Impact 
-- LoRa
-- Sigfox
+- [Impact](/guides/users-guide/optional-services#nokia-impact) 
+- [LoRa](/guides/users-guide/optional-services#lora)
+- [Sigfox](/guides/users-guide/optional-services#sigfox)
 - SIM
 
 ![Provider settings](/guides/images/users-guide/Administration/admin-settings-connectivity-sim.png)
 
-To add credentials:
+To provide or replace credentials, perform the following steps:
 
-- Select your desired provider.
-- Enter URL of the provider.
-- Enter username and password.
-- When ready, click **Save**.
+1. Switch to the tab of your desired provider.
 
-> **Info:** In order to see the **Connectivity** tab in device details, the user needs to have 'Read' permission for **Connectivity**. To change SIM card status and send text messages, the user needs to have 'Admin' permission for **Connectivity**.
+2. Enter URL of the provider.
+
+3. Enter credentials of your provider platform. Depending on the provider, these credentials may be the credentials of your account in the provider platform or the credentials with which you can register in the Cumulocity connectivity page may be displayed in your account in the provider platform.
+
+4. Finally, click **Save** to save your settings.
+
+Depending on the provider you have selected, there may be additional fields, which will be explained in the respective agent documentation, see [Optional services](/guides/users-guide/optional-services).

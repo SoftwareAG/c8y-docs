@@ -69,7 +69,7 @@ The following example shows how to upload a custom mon file to Cumulocity.
 3. Upload the Apama monitor file (.mon) previously created. After successful upload your rule will be deployed as a custom Apama application.
 
 4. In the **Own Applications** page, you can now open your custom Apama application with type “Apama CEP rule”. <br>
-<img src="/guides/images/edge/edge-apama-example.png" name="Apama application" /> 
+<img src="/guides/images/edge/edge-apama-example.png" name="Apama application"/> 
 
 ### Monitoring alarms and events
 

@@ -18,7 +18,7 @@ In the data explorer, you see a list of available data points on the right. The 
 
 On the left, in the main card, you see its visualization. 
 
-![data explorer](/guides/images/users-guide/cockpit-dataexplorer.PNG)
+![data explorer](/guides/images/users-guide/Cockpit/cockpit-dataexplorer.png)
 
 The visualization is generated based on data point properties.
 
@@ -97,17 +97,54 @@ You can customize the visualization of a particular data point to your preferenc
 
 The following fields my be modified:
 
-|Field|Description|
-|:---|:---|
-|Label|Name of the data point, displayed on the y-axis to identify the data point. Below the label, the target is displayed, showing the name of the asset and the internal name of the data point (measurement fragment and series). This information is not editable.
-|Unit|Unit used on the y-axis. 
-|Min/Max|Range shown on the y-axis. 
-|Target|The target value is currently not shown in the diagram. The value is used in the "Data Point List" widget.
-|Yellow range min/max|Defines the range when MINOR alarms should be raised by threshold rule.  
-|Red range min/max|Defines the range when CRITICAL alarms should be raised by threshold rule.
-|Display|Value displayed when data is aggregated. May be "Minimum", Maximum", Minimum and maximum".
-|Chart type|The type of chart used for the visualization. May be one of "Line", "Points", "Line and points", "Bars", "Step before" (alternating between vertical and horizontal segments, as in a step function) or "Step after" (alternating between horizontal and vertical segments). Default value is "line".
-|Y axis|Defines where the y-axis is shown. May be one of "Auto", "Left", "Right". Default value is "Auto". 
+<table>
+<col style="width:15%">
+<col style="width:85%">
+<thead>
+<tr>
+<th style="text-align:left">Field</th>
+<th style="text-align:left">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">Label</td>
+<td style="text-align:left">Name of the data point, displayed on the y-axis to identify the data point. Below the label, the target is displayed, showing the name of the asset and the internal name of the data point (measurement fragment and series). This information is not editable.</td>
+</tr>
+<tr>
+<td style="text-align:left">Unit</td>
+<td style="text-align:left">Unit used on the y-axis. </td>
+</tr>
+<tr>
+<td style="text-align:left">Min/Max</td>
+<td style="text-align:left">Range shown on the y-axis. </td>
+</tr>
+<tr>
+<td style="text-align:left">Target</td>
+<td style="text-align:left">The target value is currently not shown in the diagram. The value is used in the "Data Point List" widget.</td>
+</tr>
+<tr>
+<td style="text-align:left">Yellow range min/max</td>
+<td style="text-align:left">Defines the range when MINOR alarms should be raised by threshold rule.  </td>
+</tr>
+<tr>
+<td style="text-align:left">Red range min/max</td>
+<td style="text-align:left">Defines the range when CRITICAL alarms should be raised by threshold rule.</td>
+</tr>
+<tr>
+<td style="text-align:left">Display</td>
+<td style="text-align:left">Value displayed when data is aggregated. May be "Minimum", Maximum", Minimum and maximum".</td>
+</tr>
+<tr>
+<td style="text-align:left">Chart type</td>
+<td style="text-align:left">The type of chart used for the visualization. May be one of "Line", "Points", "Line and points", "Bars", "Step before" (alternating between vertical and horizontal segments, as in a step function) or "Step after" (alternating between horizontal and vertical segments). Default value is "line".</td>
+</tr>
+<tr>
+<td style="text-align:left">Y axis</td>
+<td style="text-align:left">Defines where the y-axis is shown. May be one of "Auto", "Left", "Right". Default value is "Auto". </td>
+</tr>
+</tbody>
+</table> 
 
 After customizing the properties of a data point, you can save the modified settings to the Data Point Library. Click the menu icon and from the context menu select **Update [NAME] to library**.
 

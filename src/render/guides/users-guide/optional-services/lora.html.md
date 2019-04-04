@@ -19,7 +19,7 @@ The following illustration gives an overview of the Cumulocity LoRa Actility int
 The following sections describe how to:
 
 * [Configure your ThingPark account credentials](#configure-credentials) in Cumulocity
-* [Create device protocols](#create-device-protocols) with Cumulocity's device database
+* [Create device protocols](#create-device-protocols) for all devices.
 * [Register devices](#register-device) and visualize Actility payload using Cumulocity
 * [Deprovision a device](#deprovision-device) in ThingPark
 * [Send operations](#configurable-port) to a device
@@ -83,13 +83,13 @@ Alternatively, you may also load the device protocol from a file and import it.
 
 #### <a name="create-new-device-type"></a>Creating a new device protocol
 
-In the **Device protocols** page, click the **New device protocol** button. The following window will open:
+In the **Device protocols** page, click **New device protocol** in the top menu bar. The following window will open:
 
 ![Create new LoRa protocol](/guides/images/users-guide/actility/devmgmt-devicetypes-protocols-loranew.png)
 
-Select "LoRa" as the device protocol type, provide a name for it and click **Create**.
+Select **LoRa** as the device protocol type, provide a name for it and click **Create**.
  
-In the upcoming page, you determine the message type. LoRa devices can send messages of different types with different encodings per type.
+Under **Message types**, specify the message types. LoRa devices can send messages of different types with different encodings per type.
 
 Select the way the message type is encoded in the **Source** dropdown box:  
 
@@ -116,7 +116,7 @@ In the upcoming window, configure the relevant values as shown in this example.
 
 The value configuration maps the value in the payload of a message type to the Cumulocity data. 
 
-Configure the **Message ID** according to your device message specification and map it to the Cumulocity data. The message ID is the numeric value identifying the message type. It will be matched with the message ID found in the source specified on the device protocol main page (i.e. Payload or FPort). The message ID needs to be entered in decimal numbers (not hex).
+Under **Message type**, configure the **Message ID** according to your device message specification and map it to the Cumulocity data. The message ID is the numeric value identifying the message type. It will be matched with the message ID found in the source specified on the device protocol main page (i.e. Payload or FPort). The message ID needs to be entered in decimal numbers (not hex).
 
 In this example payload structure the message ID is "1".
 
@@ -124,7 +124,7 @@ In this example payload structure the message ID is "1".
 
 ![LoRa bits](/guides/images/users-guide/actility/devmgmt-devicetypes-protocols-loraid.png)
 
-Fill in the general fields for your new value in order to categorize it in the **Values** list. The associated name for this value will be displayed under the **Display category** given.
+Under **General**, specify a name for the value and the category under which it will be displayed in the values list. The associated name for this value will be displayed under the **Display category** given.
 
 Under **Value selection**, define from where the value should be extracted. In order to do so, indicate where the value information starts in the **Start bit** field and how long this information is in the **Number of bits** field.
 
@@ -146,9 +146,12 @@ For detailed information on how to decode the payload, refer to the documentatio
 
 > **Info**: "Little endian" support to decode the payload has been added.
 
-Select the options, if required: **Signed** if the value is a signed number, or **Packed decimal** if the value is BCD encoded.
+Under Options, select on of the following options, if required: 
 
-In the functionalities, define how this device protocol should behave:
+* **Signed** - if the value is a signed number
+* **Packed decimal** - if the value is BCD encoded
+
+Under **Functionalities**, specify how this device protocol should behave:
 
 - **Send measurement**: Creates a measurement with the decoded value
 - **Raise alarm**: Creates an alarm if the value is not equal to zero

@@ -4,7 +4,7 @@ title: Microservice manifest
 layout: standalone
 ---
 
-The manifest provides information about a microservice deployment. The definition is typically provided as _cumulocity.json_ file in the binary uploaded to the Cumulocity platform.
+The application manifest provides information about a microservice deployment. The definition is typically provided as _cumulocity.json_ file in the binary uploaded to the Cumulocity platform.
 
 ### Manifest
 
@@ -114,6 +114,7 @@ The manifest provides information about a microservice deployment. The definitio
 </tbody>
 </table>
 
+
 > **Info**: The version has an impact on the microservice upload behaviour:
 > - If a new ZIP file for a microservice is uploaded but the version is the same as the previous, e.g. "1.1.0", then there is no guarantee that the Docker image for the microservice will be updated.
 > - If the version is a snapshot (e.g. "1.1.0-SNAPSHOT"), then Docker should update the image on each ZIP upload.
@@ -132,7 +133,7 @@ The manifest provides information about a microservice deployment. The definitio
 |Name|Type|Description|Required|
 |:---|:---|:----------|:----------|
 |cpu|String |Default: 0.5 <br/>Limit for number of cpus or cpu time|No
-|memory|String |Default: 512Mb <br/>Default limit for microservice memory usage|No
+|memory|String |Default: 512M <br/>Default limit for microservice memory usage<br/>Possible postfix values are: E, P, T, G, M, K, Ei, Pi, Ti, Gi, Mi, Ki |No
 
 #### Option
 
@@ -190,48 +191,52 @@ The manifest provides information about a microservice deployment. The definitio
 
 #### Example Manifest
 
-    {
-        "apiVersion": "v1",
-        "name": "first-microservice",
-        "version": "1.0.0",
-        "provider": {
-            "name": "New Company Ltd.",
-            "domain": "http://new-company.com",
-            "support": "support@new-company.com"
-        },
-        "isolation": "MULTI_TENANT",
-        "scale": "AUTO",
-        "resources": {
-            "cpu": "1",
-            "memory": "1G"
-        },
-        "livenessProbe":{
-          "httpGet":{
-            "path": "/health"
-          },
-          "initialDelaySeconds": 60,
-          "periodSeconds": 10
-        },
-        "readinessProbe":{
-          "httpGet":{
-            "path": "/health",
-            "port": 80
+```json
+{
+    "apiVersion": "v1",
+    "name": "first-microservice",
+    "version": "1.0.0",
+    "provider": {
+        "name": "New Company Ltd.",
+        "domain": "http://new-company.com",
+        "support": "support@new-company.com"
+    },
+    "isolation": "MULTI_TENANT",
+    "scale": "AUTO",
+    "resources": {
+        "cpu": "1",
+        "memory": "1G"
+    },
+    "livenessProbe":{
+      "httpGet":{
+        "path": "/health"
+      },
+      "initialDelaySeconds": 60,
+      "periodSeconds": 10
+    },
+    "readinessProbe":{
+      "httpGet":{
+        "path": "/health",
+        "port": 80
 
-          },
-          "initialDelaySeconds": 20,
-          "periodSeconds": 10
-        },
-        "extensions":[
-          {
-            "type":"prometheus.io"
-          }
-        ]
-    }
+      },
+      "initialDelaySeconds": 20,
+      "periodSeconds": 10
+    },
+    "extensions":[
+      {
+        "type":"prometheus.io"
+      }
+    ]
+}
+```
 
 ### Supported Extensions
+
 List of extensions supported by Cumulocity Microservice Manifest
 
 #### Prometheus Monitoring
+
 Enables support for gathering of metrics exposed via prometheus endpoint.
 Endpoint should not require authentication.
 
@@ -241,8 +246,11 @@ Endpoint should not require authentication.
 |port | String | HTTP port where prometheus endpoint is available. <br/> Default: 80 | No
 
 ##### Example Extension
-    {
-      "type": "prometheus.io",
-      "path": "/monitoring/prometheus"
-      "port": "4444"
-    }
+
+```json
+{
+    "type": "prometheus.io",
+    "path": "/monitoring/prometheus",
+    "port": "4444"
+}
+```

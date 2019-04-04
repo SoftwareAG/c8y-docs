@@ -19,7 +19,7 @@ In this tutorial, you will learn how to create and run a sample microservice wri
 
 Create an account on [cumulocity.com](https://cumulocity.com), for example by using a free trial. At this step you will be provided with a dedicated URL address.
 
-Cumulocity hosts linux/amd64 Docker containers and not Windows containers. The Docker version must be >= 1.12.6. Verify the your Docker installation with the following command:
+Cumulocity hosts linux/amd64 Docker containers and not Windows containers. The Docker version must be >= 1.12.6. Verify your Docker installation with the following command:
 
 ```shell
 $ docker version
@@ -95,7 +95,7 @@ ENTRYPOINT ["python"]
 CMD ["application.py"]
 ```
 
-This build uses Alpine linux with the Python SDK inside. It is a very thin distribution and the resulting Docker image is small (about 100 MB). The instruction `RUN pip install -r requirements` installs the required Python libraries using the `pip` installer. These required libraries shall be put into the _requirements_ file in the same directory. In our example, we use only Flask as non-standard library, so the _requirements_ file has only 1 line:
+This build uses Alpine Linux with the Python SDK inside. It is a very thin distribution and the resulting Docker image is small (about 100 MB). The instruction `RUN pip install -r requirements` installs the required Python libraries using the `pip` installer. These required libraries shall be put into the _requirements_ file in the same directory. In our example, we use only Flask as non-standard library, so the _requirements_ file has only 1 line:
 
 ```properties
 Flask==0.10.1
@@ -143,7 +143,7 @@ Uploading the _hello-microservice.zip_ into the platform can be done via the UI.
 
 ![Subscribe microservice](/guides/images/microservices-sdk/admin-microservice-subscribe-up.png)
 
-For more details about uploading a microservice ZIP file, refer to [Adding own applications](/guides/users-guide/administration#adding-applications) under the **Administration** > **Managing applications** section in the User guide.
+For more details about uploading a microservice ZIP file, refer to [Managing applications > Adding own applications](/guides/users-guide/administration#adding-applications) under the Administration section in the User guide.
 
 ### Using the microservice utility tool
 

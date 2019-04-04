@@ -158,9 +158,9 @@ Content-Type: application/vnd.com.nsn.cumulocity.managedObjectCollection+json; c
 
 Now you can, for example, place the object in a map. Standard fragments are defined in the [Device management library](/guides/reference/device-management) and in the [Sensor library](/guides/reference/sensor-library).
 
-Querying the <kbd>/platform</kbd> resource will show you further possibilities for querying your data (see also the REST section in the Device SDK guide).
+Querying the <kbd>/platform</kbd> resource will show you further possibilities for querying your data (see also [Device integration using REST](/guides/device-sdk/rest) in the Device SDK guide).
 
-Note, that queries do not necessarily return all query results at once, but only a "page" of the result. For more information on paging, see the section [Query result paging](/guides/reference/rest-implementation) in the Reference guide. The optional parameter `withTotalPages` will make the query contain full page statistics at the expense of slightly slower performance.
+Note that queries do not necessarily return all query results at once, but only a "page" of the result. For more information on paging, refer to [REST implementation > REST usage > Query result paging](/guides/reference/rest-implementation#rest-usage) in the Reference guide. The optional parameter `withTotalPages` will make the query contain full page statistics at the expense of slightly slower performance.
 
 
 ### Querying readings from sensors

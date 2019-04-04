@@ -4,7 +4,7 @@ layout: redirect
 title: Developing clients for services (SMS)
 ---
 
-This section describes the Cumulocity SMS API and shows how to access them using the Cumulocity Java Client.
+This section describes the Cumulocity SMS API and shows how to access it using the Cumulocity Java Client.
 
 ### Using the services platform
 
@@ -43,7 +43,7 @@ Refer to [Administration > Managing permissions](/guides/users-guide/administrat
 
 ##### OpenIT
 
-OpenIT credentials can be assigned using the Administration application. Click on **OpenIT credentials** in the navigator and save these credentials for your tenant.
+OpenIT credentials can be assigned using the Administration application. Click **OpenIT credentials** in the navigator and save these credentials for your tenant.
 
 ![OpenIT Credentials](/guides/images/java/java-client-services/openit_credentials.png)
 
@@ -52,7 +52,7 @@ Note that receiving messages and receiving specific messages are not supported f
 
 ##### Jasper Control Center
 
-Refer to [Jasper Control Center](/guides/users-guide/optional-services#jasper) for information about how to set the credentials.
+Refer to [Optional services > Connectivity](/guides/users-guide/optional-services#connectivity) in the User guide for information about how to set the credentials.
 
 ##### Ericsson
 

@@ -4,11 +4,11 @@ layout: redirect
 title: Hello microservice!
 ---
 
-Here you will learn how to create your first microservice that can be run on the [Cumulocity Platform](https://cumulocity.com) using the Microservice SDK for Java.
+Here you will learn how to create your first microservice that can be run on the [Cumulocity platform](https://cumulocity.com) using the Microservice SDK for Java.
 
 ### Prerequisites
 
-Create an account on the [Cumulocity Platform](https://cumulocity.com), for example by using a free trial. At this step you will be provided with a dedicated URL address.
+Create an account on the [Cumulocity platform](https://cumulocity.com), for example by using a free trial. At this step you will be provided with a dedicated URL address.
 
 Use the following command to verify that you have Maven 3 installed with Java 7.
 
@@ -22,7 +22,7 @@ Java home: /Library/Java/JavaVirtualMachines/jdk1.7.0_45.jdk/Contents/Home/jre
 
 Maven can be downloaded from the [Maven website](http://maven.apache.org). You will also need a Docker installation, and in case that you don't have it, go to the [Docker website](https://www.docker.com/get-started) to download and install it.
 
-Cumulocity hosts inux/amd64 Docker containers and not Windows containers. The Docker version must be 1.12.6 or above. Use the following command to verify your Docker installation:
+Cumulocity hosts linux/amd64 Docker containers and not Windows containers. The Docker version must be 1.12.6 or above. Use the following command to verify your Docker installation:
 
 ```shell
 $ docker version
@@ -73,7 +73,7 @@ Inside the _hello-world-microservice_ folder you will find the _pom.xml_ file. S
 </properties>
 ```
 
-Edit the `<c8y.version>` element to use the latest version of the client library which can be obtained by reviewing the [Release notes](https://cumulocity.com/guides/release-notes/overview/). This particular example was implemented using version 9.16.2.
+Edit the `<c8y.version>` element to use the latest version of the client library. It may be obtained by reviewing the [Release notes](https://cumulocity.com/guides/release-notes/overview/). This particular example was implemented using version 9.16.2.
 
 Now add repository and plugin elements to point to the Cumulocity Maven repository which stores the client libraries.
 
@@ -315,7 +315,7 @@ In case of errors, e.g. invalid names, you will get the details printed in the c
 }
 ```
 
-Load the Administration application on your tenant and navigate to **Applications** > **Own applications**. There you will see the newly created microservice.
+In the Administration application, navigate to **Applications** > **Own applications**. There you will see the newly created microservice.
 
 ![Hello World of Microservices](/guides/images/microservices-sdk/admin-first-microservice.png)
 
@@ -373,7 +373,7 @@ At this point, you may open your favorite browser and test your microservice at 
 
 #### Step 4 - Subscribe to the microservice
 
-Load the Administration application on your tenant and navigate to **Applications** > **Own applications**. Locate your microservice application and click on it to open its details. On the top right side click on the **Subscribe** button.
+In the Administration application, navigate to **Applications** > **Own applications**. Locate your microservice application and click it to open its details. On the top right side click **Subscribe**.
 
 ![Subscribe to a microservice](/guides/images/microservices-sdk/admin-microservice-subscribe.png)
 
@@ -424,11 +424,11 @@ $ curl -F "data=@<PATH_TO_YOUR_ZIP_FILE>" \
 
 > **Important**: The **Microservice hosting** feature must be activated on your tenant, otherwise your request will return an error message like "security/Forbidden, access is denied". This feature is not assigned to tenants by default, so trial accounts won't have it. You shall write an email to [support@cumulocity.com](mailto:support@cumulocity.com) so they can assist you with the activation. Note that this is a paid feature.
 
-It is also possible to upload the ZIP file directly on your tenant. Load the Administration application and navigate to **Application** > **Own applications** and click on the **Add application** button. On the pop-up menu, click on **Upload microservice**.
+It is also possible to upload the ZIP file directly on your tenant. In the Administration application, navigate to **Applications** > **Own applications**, click **Add application** and select **Upload microservice** from the options list.
 
 ![Upload microservice](/guides/images/microservices-sdk/admin-microservice-upload.png)
 
-Locate the ZIP file of your microservice application and click on **Subscribe** to the microservice afterwards.
+Locate the ZIP file of your microservice application and click **Subscribe** to subscribe the microservice afterwards.
 
 ![Subscribe microservice](/guides/images/microservices-sdk/admin-microservice-subscribe-up.png)
 
@@ -447,4 +447,4 @@ You can also test your microservice with your favorite browser. Remember to ente
 
 ### Improving the microservice
 
-Now that you have done your first steps, check out the section [Developing microservices](/guides/microservice-sdk/java#developing-microservice) to find out what else is possible to be implemented.
+Now that you have done your first steps, check out the section [Developing microservices](/guides/microservice-sdk/java#developing-microservice) to find out what else can be implemented.

@@ -139,7 +139,7 @@ Content-Type: application/vnd.com.nsn.cumulocity.user+json
 
 These credentials allow access to the following endpoints:
 
-```htpp
+```http
 GET /tenant/currentTenant
 GET /user/currentUser
 GET /application/currentApplication

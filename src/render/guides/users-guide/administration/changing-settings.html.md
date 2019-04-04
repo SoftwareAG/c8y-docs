@@ -306,9 +306,9 @@ To provide or replace credentials, perform the following steps:
 
 1. Switch to the tab of your desired provider.
 
-2. Enter URL of the provider.
+2. Enter the URL of the provider.
 
-3. Enter credentials of your provider platform. Depending on the provider, these credentials may be the credentials of your account in the provider platform or the credentials with which you can register in the Cumulocity connectivity page may be displayed in your account in the provider platform.
+3. Enter the credentials of your provider platform. Depending on the provider, these credentials will be either the credentials of your account in the provider platform or the credentials with which you can register in the Cumulocity connectivity page, will be displayed in your account in the provider platform.
 
 4. Finally, click **Save** to save your settings.
 

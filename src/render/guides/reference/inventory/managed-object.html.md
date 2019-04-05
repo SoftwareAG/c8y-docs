@@ -92,14 +92,14 @@ layout: redirect
 <td style="text-align:left">deviceParents</td>
 <td style="text-align:left">ManagedObject ReferenceCollection</td>
 <td style="text-align:left">0..1</td>
-<td style="text-align:left">Not implemented.</td>
+<td style="text-align:left">A collection of references to device parent objects. Note: GET to /inventory/managedObjects/{{deviceId}}/deviceParents is not implemented.</td>
 <td style="text-align:left">No</td>
 </tr>
 <tr>
 <td style="text-align:left">assetParents</td>
 <td style="text-align:left">ManagedObject ReferenceCollection</td>
 <td style="text-align:left">0..1</td>
-<td style="text-align:left">Not implemented.</td>
+<td style="text-align:left">A collection of references to asset parent objects. Note: GET to /inventory/managedObjects/{{deviceId}}/assetParents is not implemented.</td>
 <td style="text-align:left">No</td>
 </tr>
 </tbody>

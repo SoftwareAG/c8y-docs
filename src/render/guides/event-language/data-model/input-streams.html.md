@@ -56,8 +56,8 @@ class: com.cumulocity.model.ManagedObject
 |owner|String|The owner of the ManagedObject|
 |childAssets|Object[]|An array of the [IDs](/guides/event-language/data-model#id) of all child assets|
 |childDevices|Object[]|An array of the [IDs](/guides/event-language/data-model#id) of all child devices|
-|assetParents|Object[]|An array of the [IDs](/guides/event-language/data-model#id) of all parent assets|
-|deviceParents|Object[]|An array of the [IDs](/guides/event-language/data-model#id) of all child devices|
+|assetParents|Object[]|Not implemented|
+|deviceParents|Object[]|Not implemented|
 
 The Object[] for the references to the parents and children contains only [IDs](/guides/event-language/data-model#id). You can use the cast function e.g. `cast(event.managedObject.childAssets[0], com.cumulocity.model.ID)`.
 
@@ -70,9 +70,7 @@ Example:
       event.managedObject.lastUpdated,
       event.managedObject.owner,
       event.managedObject.childAssets,
-      event.managedObject.childDevices,
-      event.managedObject.assetParents,
-      event.managedObject.deviceParents
+      event.managedObject.childDevices
     from ManagedObjectCreated event;
 
 ### Event

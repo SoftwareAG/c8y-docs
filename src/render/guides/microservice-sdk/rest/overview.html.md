@@ -80,14 +80,14 @@ Now, click the **Collections** tab on the top left of Postman. You should see a 
 Note that the example contains placeholders, in this case a placeholder _{{url}}_ in <kbd>{{url}}/alarm/alarms</kbd>. You need to tell Postman how to fill these placeholders and by this, how to connect to your Cumulocity account. To do so, create an [environment](https://www.getpostman.com/docs/environments) and configure the placeholders.
 
 * Click on the cogwheel on the top right and choose **Manage Environments**, then click **Add**.
-* Enter a name for the environment (e.g., your tenant name), then add values for the placeholders.
+* Enter a name for the environment (e.g., your tenant ID), then add values for the placeholders.
 * Configure a key _url_ with a value of _https://&lt;yourTenant&gt;.cumulocity.com_. Click **Submit**.
 * Configure a key _auth_ with the value of the Authorization header for the REST requests.
 * Click **Add**, then close the dialog. Now select your newly created environment from the drop-down box on the top right, that initially reads "No environment".
 
 <img src="/guides/images/rest/postmanenvironment.png" alt="Postman environment setup" style="max-width: 50%">
 
-A simple way to determine the correct value for the "auth" key is to use a web tool. For example, assume that your tenant name is "tenant", your username is "me" and your password is "secret". Go to http://ostermiller.org/calc/encode.html, type `tenant/me:secret` into the text area, then click **Encode** in the row "Base 64". The resulting text is "dGVuYW50L21lOnNlY3JldA==". Use "Basic dGVuYW50L21lOnNlY3JldA==" as value for "auth".
+A simple way to determine the correct value for the "auth" key is to use a web tool. For example, assume that your tenant ID is "tenant", your username is "me" and your password is "secret". Go to http://ostermiller.org/calc/encode.html, type `tenant/me:secret` into the text area, then click **Encode** in the row "Base 64". The resulting text is "dGVuYW50L21lOnNlY3JldA==". Use "Basic dGVuYW50L21lOnNlY3JldA==" as value for "auth".
 
 You can achieve the same result also by using the Base64 command as follows:
 

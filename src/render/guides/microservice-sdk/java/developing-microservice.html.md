@@ -307,7 +307,7 @@ In case of conflicts, the command line configuration has the highest priority an
 To upload a microservice to the server you need to configure the following properties:
 
 * url - Mandatory URL that will be used for deployment. Empty by default.
-* username - Mandatory tenant name and user name used for authorization. Empty by default.
+* username - Mandatory tenant ID and user name used for authorization. Empty by default.
 * password - Mandatory password used for authorization. Empty by default.
 * name - Optional name of uploaded application. By default the same as "package.name" property or "artifactId" if "package.name" is not provided.
 

@@ -52,17 +52,70 @@ Usually the platform comes up within 2 minutes.
 
 You will be prompted to select one of the following options:
 
-1. Run post-installation
-2. Update license and SSL certificates
-3. Run post-upgrade
-4. Configure network
+1. Configure network
+2. Run post-installation
+3. Update license and SSL certificates
+4. Run post-upgrade
 5. Expand data disk size
-5. Exit
+6. Update tenant password
+7. Exit
 
->**Important**: Option 2 and 3 will only work after you have successfully completed the post-installation setup (Option 1). 
-Option 3, 4 and 5 cannot be invoked from a remote connection like SSH. You will have to run these directly from the terminal within the VM.
+>**Important**: Option 3, 4 and 6 will only work after you have successfully completed the post-installation setup (Option 2). 
+Option 1, 4 and 5 cannot be invoked from a remote connection like SSH. You will have to run these directly from the terminal within the VM.
 
-#### Option 1 - Run post-installation
+#### Option 1 - Configure network
+
+>**Important**: This task needs to be invoked from within the VM and cannot be invoked via a remote connection.
+
+First, select the type of input you want to use.
+
+```shell
+* Enter [F] to take input from file or [C] to take input from console:
+```
+
+You have the choice to  enter the network parameters manually via the console or via a file. 
+
+##### Console input
+
+1. Provide the new IP address for the ethernet interface, e.g. 192.168.56.120
+	
+	```shell
+	* Enter new IP address for ethernet interface:
+	```
+	
+2. Provide the netmask IP for your network, e.g. 255.255.255.0
+	
+	```shell
+	* Enter netmask:
+	```
+
+3. Provide the gateway IP for your network, e.g. 192.168.56.1
+	
+	```shell
+	* Enter gateway IP:
+	```
+
+4. Provide the DNS Server IP for your network, e.g. 192.168.56.1
+	
+	```shell
+	* Enter DNS Server IP:
+	```
+	
+	>**Info**: If the DNS Server IP is unknown, you can enter the previously entered 	gateway IP here.
+
+##### File input
+ 
+Provide the absolute path of the configuration file. The network parameters will be loaded from the file. In case of incorrect parameters, the utility will fall back to console mode and will prompt the user to enter the parameters as described above.
+
+```shell
+* Enter existing file path containing network parameters:
+```
+
+Confirm to continue with the network configuration process.
+
+The network configuration process consists of multiple steps which are executed sequentially. After a step has been executed, its status will be shown on the console. In case of any failure in any of the steps, the network configuration process will halt and a failure message will be displayed on the console.
+
+#### Option 2 - Run post-installation
 
 First, select the type of input you want to use.
 
@@ -142,7 +195,7 @@ Confirm to continue with the post-installation process.
 
 The post-installation process consists of multiple steps which are executed sequentially. After a step has been executed, its status will be shown on the console. In case of any failure in any of the steps, the network configuration process will halt and a failure message will be displayed on the console.
 
-#### Option 2 - Update license and SSL certificates
+#### Option 3 - Update license and SSL certificates
 
 First, select the type of input you want to use.
 
@@ -194,67 +247,17 @@ Confirm to continue with the update process.
 
 The update process consists of multiple steps which are executed sequentially. After a step has been executed, its status will be shown on the console. In case of any failure in any of the steps, the network configuration process will halt and a failure message will be displayed on the console.
 
-#### Option 3 - Run post-upgrade
+#### Option 4 - Run post-upgrade
 
 >**Important**: This task needs to be invoked from within the VM and cannot be invoked via a remote connection.
+
+>**Info**: During this process, the previously used password in the source will be validated as per Cumulocity's password policy. In case the password is not compliant with the policy, the user will get prompted to enter the tenant password without which the post-upgrade task cannot be completed.
 
 Confirm to continue with the post-upgrade process.
 
 The post-upgrade process consists of multiple steps which are executed sequentially. After a step has been executed, its status will be shown on the console. In case of any failure in any of the steps, the network configuration process will halt and a failure message will be displayed on the console.
 
 If users have configured the network in the ‘source’ version the new configuration will be implemented in the newer version when this task is executed.
-
-#### Option 4 - Configure network
-
->**Important**: This task needs to be invoked from within the VM and cannot be invoked via a remote connection.
-
-First, select the type of input you want to use.
-
-```shell
-* Enter [F] to take input from file or [C] to take input from console:
-```
-
-You have the choice to  enter the network parameters manually via the console or via a file. 
-
-##### Console input
-
-1. Provide the new IP address for the ethernet interface, e.g. 192.168.56.120
-	
-	```shell
-	* Enter new IP address for ethernet interface:
-	```
-	
-2. Provide the netmask IP for your network, e.g. 255.255.255.0
-	
-	```shell
-	* Enter netmask:
-	```
-
-3. Provide the gateway IP for your network, e.g. 192.168.56.1
-	
-	```shell
-	* Enter gateway IP:
-	```
-
-4. Provide the DNS Server IP for your network, e.g. 192.168.56.1
-	
-	```shell
-	* Enter DNS Server IP:
-	```
-	
-	>**Info**: If the DNS Server IP is unknown, you can enter the previously entered 	gateway IP here.
-
-##### File input
- 
-Provide the absolute path of the configuration file. The network parameters will be loaded from the file. In case of incorrect parameters, the utility will fall back to console mode and will prompt the user to enter the parameters as described above.
-
-```shell
-* Enter existing file path containing network parameters:
-```
-
-Confirm to continue with the network configuration process.
-
-The network configuration process consists of multiple steps which are executed sequentially. After a step has been executed, its status will be shown on the console. In case of any failure in any of the steps, the network configuration process will halt and a failure message will be displayed on the console.
 
 #### Option 5 - Expand data disk size
 
@@ -278,3 +281,25 @@ So as a first step you need to carry out the following prior to selecting option
 The disk size expanding process consists of multiple steps which are executed sequentially. After a step has been executed, its status will be shown on the console. In case of any failure in any of the steps, the network configuration process will halt and a failure message will be displayed on the console.
 
 <img src="/guides/images/edge/edge-configuration-disk-size.png" name="Expand disk size"/>
+
+#### Option 6 - Update tenant password
+
+Provide the new password for the edge tenant. This password is later used to login to the platform via the web browser as well as to login to the management tenant using the edgeadmin user.
+
+```shell 
+Enter new tenant admin password: 
+```
+
+The password may contain letters, numbers or any of these symbols: `~!@#$%^&*()_|+-=?;:'",.<>{}[]/
+
+Re-enter the previously provided password to confirm it.
+
+```shell 
+Re-enter tenant admin password:
+```
+
+Confirm to continue with updating the tenant password.
+
+The update tenant password process consists of multiple steps which are executed sequentially. After a step has been executed, its status will be shown on the console. In case of any failure in any of the steps, the update tenant password process will halt and a failure message will be displayed on the console.
+
+>**Info**: The Cumulocity platform does not allow to use any of the last 10 previously used passwords. 

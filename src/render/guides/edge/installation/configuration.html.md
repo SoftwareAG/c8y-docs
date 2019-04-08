@@ -61,7 +61,7 @@ You will be prompted to select one of the following options:
 7. Exit
 
 >**Important**: Option 3, 4 and 6 will only work after you have successfully completed the post-installation setup (Option 2). 
-Option 1, 4 and 5 cannot be invoked from a remote connection like SSH. You will have to run these directly from the terminal within the VM.
+Option 1 and 4 cannot be invoked from a remote connection like SSH. You will have to run these directly from the terminal within the VM.
 
 #### Option 1 - Configure network
 
@@ -260,8 +260,6 @@ The post-upgrade process consists of multiple steps which are executed sequentia
 If users have configured the network in the ‘source’ version the new configuration will be implemented in the newer version when this task is executed.
 
 #### Option 5 - Expand data disk size
-
->**Important**: This task needs to be invoked from within the VM and cannot be invoked via a remote connection.
 
 Expanding the data disk size consists of two steps:
 

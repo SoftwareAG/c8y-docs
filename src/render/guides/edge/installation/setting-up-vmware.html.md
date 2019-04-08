@@ -6,7 +6,7 @@ layout: redirect
 
 ### Setting up for VMware
 
-To set up a VM in VMware workstation, follow the steps below.
+To set up a VM in VMware Workstation Player, follow the steps below.
 
 **Info**: The following steps show a reference example. Refer to the VMware documentation for the exact setup. The final configuration also depends on the end user setup.
 
@@ -17,7 +17,7 @@ To set up a VM in VMware workstation, follow the steps below.
  <br>
 <img src="/guides/images/edge/edge-vmware-02.png" name="Setting up VMware"/>
 
-3.	Provide a name for the new VM and click **Import**. You can also change the VM storage path here.    <br>
+3.	Change the VM name if required and click **Import**. You can also change the VM storage path here.    <br>
 <img src="/guides/images/edge/edge-vmware-03.png" name="Setting up VMware"/>
 
 4.	Start the Edge VM by clicking **Play virtual machine**. <br>
@@ -26,11 +26,11 @@ To set up a VM in VMware workstation, follow the steps below.
 
 ### Configuring the VM network
 
-Once the VM has successfully been imported, the VM network has to be configured to access the Edge VM instance so that it is accessible from the host.
+Once the VM starts up successfully, it's network has to be configured, so that it can be accessed from outside the VM.
 
 To do so, the following information is required:
 
-* Edge VM IP - specifies which VM can be connected from outside
+* Edge VM IP - Will be used to access the VM from outside
 * Netmask
 * Gateway IP
 * DNS server IP (if unknown, you can use the gateway IP here as well)

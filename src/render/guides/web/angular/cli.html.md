@@ -13,7 +13,7 @@ c8ycli [options] [command]
 ### Options
 
 ```
-    -u, --url <url>                 The url of the remote instance
+    -u, --url <url>                 The URL of the remote instance
     --version                       Provides version number
     -h, --help                      Provides usage information
 ```
@@ -25,8 +25,8 @@ All the commands except of ```new``` take an array of [glob patterns](https://en
 ```
     new [name] [template]                   Creates a folder to start a new application or extend an existing one
     serve [options] [appPaths...]           Runs local development server
-    build [options] [appPaths...]           Builds the specified apps
-    deploy [options] [appPaths...]          Deploys apps from the specified paths
+    build [options] [appPaths...]           Builds the specified applications
+    deploy [options] [appPaths...]          Deploys applications from the specified paths
     locale-extract [options] [srcPaths...]  Extracts all strings for translation and outputs the .po files to defined folder
 ```
 

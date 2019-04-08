@@ -137,7 +137,6 @@ redirects =
 	'/guides/mqtt/smartrest-2': '/guides/device-sdk/mqtt#smartrest-2'
 	'/guides/mqtt/introduction': '/guides/device-sdk/mqtt#overview'
 	'/guides/http': '/guides/microservice-sdk/http'
-	'/guides/mqtt/hello-mqtt-cs-0': '/guides/device-sdk/hello-mqtt-cs-0'
 	'/guides/http/hello-microservice-python': '/guides/microservice-sdk/http#hello-microservice-python'
 	'/guides/web/jsdoc': '/guides/web/web-sdk-for-plugins/jsdoc'
 	'/guides/web/branding-plugin': '/guides/web/web-sdk-for-plugins/branding-plugin'
@@ -146,6 +145,11 @@ redirects =
 	'/guides/web/smart-toolkit': '/guides/web/introduction'
 	'/guides/web/reference': '/guides/web/introduction'
 	'/guides/reference/binaries/application-plugin-binaries': '/guides/reference/binaries'
+	'/guides/mqtt/hello-mqtt-cs-0': '/guides/device-sdk/hello-mqtt-cs-0'
+	'/guides/device-sdk/hello-mqtt-cs-0': '/guides/device-sdk/cs'
+	'/guides/device-sdk/hello-mqtt-cs-0/cs-static-templates': '/guides/device-sdk/cs/#cs-static-templates'
+	'/guides/device-sdk/hello-mqtt-cs-0/developing-the-client': '/guides/device-sdk/cs/#developing-the-client-mqtt'
+	'/guides/device-sdk/hello-mqtt-cs-0/prerequisites': '/guides/device-sdk/cs/#prerequisites-mqtt'
 
 	# Legacy redirects device-sdk documentation
 	'/guides/device-sdk/mqtt#hello-mqtt': '/guides/device-sdk/mqtt-examples#hello-mqtt'

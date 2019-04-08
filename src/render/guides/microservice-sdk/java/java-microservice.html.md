@@ -118,6 +118,7 @@ Edit the "App.java" file in the folder "hello-world-microservice/src/main/java/c
   * subscription
   * health indicator
   * context
+  * settings
   * internal platform API
   * spring boot application
 

@@ -10,7 +10,8 @@ From the **Settings** menu, administrators can modify or manage various settings
 - changing the [application settings](#default-app),
 - changing the [password policy and TFA settings](#changing-password-settings),
 - managing the [properties library](#properties),
-- configure system-wide [configuration properties](#config-platform) in Cumulocity.
+- configure system-wide [configuration properties](#config-platform) in Cumulocity,
+- managing the [connectivity settings](#connectivity).
 
 ### <a name="single-sign-on"></a>Configuring single sign-on
 
@@ -287,3 +288,28 @@ At the top you can select if you want to send the email to the suspended tenant'
 Click **Save configuration** to save your settings.
 
 Additional features are available for management tenants. For details, refer to Enterprise Edition > [Customizing your platform](/guides/users-guide/enterprise-edition#customization).
+
+### <a name="connectivity"></a>Managing the connectivity settings
+
+In the **Connectivity** page, you can manage credentials for different providers. In order to add or replace credentials "admin" permissions are required.
+
+The following provider settings may currently be specified:
+
+- [Impact](/guides/users-guide/optional-services#nokia-impact) 
+- [LoRa](/guides/users-guide/optional-services#lora)
+- [Sigfox](/guides/users-guide/optional-services#sigfox)
+- [SIM](/guides/users-guide/optional-services#connectivity)
+
+![Provider settings](/guides/images/users-guide/Administration/admin-settings-connectivity-sim.png)
+
+To provide or replace credentials, perform the following steps:
+
+1. Switch to the tab of your desired provider.
+
+2. Enter the URL of the provider.
+
+3. Enter the credentials of your provider platform. Depending on the provider, these credentials will be either the credentials of your account in the provider platform or the credentials with which you can register in the Cumulocity connectivity page, will be displayed in your account in the provider platform.
+
+4. Finally, click **Save** to save your settings.
+
+Depending on the provider you have selected, there may be additional fields, which will be explained in the respective agent documentation, see [Optional services](/guides/users-guide/optional-services).

@@ -21,7 +21,7 @@ You will need the following prerequisites for being able to develop plugins and 
 
 ### <a name="cli-tool"></a>Cumulocity CLI tool
 
-Once all prerequisites are fulfilled, you are almost ready to go to build your own application and plugin. For the process of developing a plugin (building, theming, translating and deploying your apps and plugins), you will need the npm package "cumulocity-tools" installed globally on your machine. To install the npm package, execute the following command on your terminal.
+Once all prerequisites are fulfilled, you are almost ready to go to build your own application and plugin. For the process of developing a plugin (building, theming, translating and deploying your applications and plugins), you will need the npm package "cumulocity-tools" installed globally on your machine. To install the npm package, execute the following command on your terminal.
 
 ```bash
 $ npm i cumulocity-tools -g

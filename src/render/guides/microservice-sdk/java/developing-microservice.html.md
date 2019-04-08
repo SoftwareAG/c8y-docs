@@ -28,6 +28,7 @@ This is a collective annotation consisting of:
 * @EnableMicroserviceSecurity - provides standard security mechanism, verifying user and roles against the platform
 * @EnableMicroserviceSubscription - is responsible for subscribing microservices to the platform, updating metadata and listen to tenant subscription change events
 * @EnableMicroservicePlatformInternalApi - injects the platform API services into spring context for a microservice to use
+* @EnableTenantOptionSettings - provides microservice configuration within tenant options and allows to override default properties from files
 
 ### Context support
 
@@ -37,34 +38,37 @@ The following section describes context support as utility tool for the user man
 
 Example of injecting a bean into the tenant scope is available in the platform API module as follows:
 
-    @TenantScope
-    public EventApi eventApi(Platform platform) throws SDKException {
-        return platform.getEventApi();
-    }  
+```java
+@TenantScope
+public EventApi eventApi(Platform platform) throws SDKException {
+    return platform.getEventApi();
+}  
+````
 
 And then sample utilization of the bean can be as follows:
 
-    @Autowired
-    private PlatformProperties platformProperties;
-    @Autowired
-    private ContextService<MicroserviceCredentials> contextService;
-    @Autowired
-    private EventApi eventApi;
+```java
+@Autowired
+private PlatformProperties platformProperties;
+@Autowired
+private ContextService<MicroserviceCredentials> contextService;
+@Autowired
+private EventApi eventApi;
 
-    public PagedEventCollectionRepresentation get10Events() {
-        return contextService.callWithinContext(
-                (MicroserviceCredentials) platformProperties.getMicroserviceBoostrapUser()
-                , new Callable<PagedEventCollectionRepresentation>(){
-            public PagedEventCollectionRepresentation call(){
-                return eventApi.getEvents().get(10);
-            }
-        });
-    }
-
+public PagedEventCollectionRepresentation get10Events() {
+    return contextService.callWithinContext(
+            (MicroserviceCredentials) platformProperties.getMicroserviceBoostrapUser(),
+            new Callable<PagedEventCollectionRepresentation>(){
+                public PagedEventCollectionRepresentation call(){
+                    return eventApi.getEvents().get(10);
+                }
+    });
+}
+```
 
 ### Microservice security
 
-The @EnableMicroserviceSecurity annotation sets up the standard security configuration for microservices, which requires basic authorization for all endpoints (except for health check endpoint configured using @EnableHealthIndicator). A developer can secure its endpoints using standard spring security annotations e.g. @PreAuthorize("hasRole('ROLE_A')") and user's permissions will be validated  against user's roles stored on the platform.
+The `@EnableMicroserviceSecurity` annotation sets up the standard security configuration for microservices, which requires basic authorization for all endpoints (except for health check endpoint configured using `@EnableHealthIndicator`). A developer can secure its endpoints using standard spring security annotations e.g. `@PreAuthorize("hasRole('ROLE_A')")` and user's permissions will be validated  against user's roles stored on the platform.
 
 
 ### Microservice subscription
@@ -77,12 +81,14 @@ The microservice subscription module is responsible for two main features:
 The default behavior for the package is self-registration, which means that after you run the application it will try to register and use generated credentials for the communication with the platform. The self-registration is required to correctly deploy the microservice on the platform.
 
 The other way to register an application to the platform is to do it manually by creating a new application on the platform with the same application name and providing the following properties into the microservice:
- 
-    application.name={application_name}
-    C8Y.bootstrap.register=false
-    C8Y.bootstrap.tenant={tenant}
-    C8Y.bootstrap.user={user}
-    C8Y.bootstrap.password={password}
+
+```properties
+application.name={application_name}
+C8Y.bootstrap.register=false
+C8Y.bootstrap.tenant={tenant}
+C8Y.bootstrap.user={user}
+C8Y.bootstrap.password={password}
+```
 
 To create an application and acquire credentials, refer to:
 
@@ -91,10 +97,12 @@ To create an application and acquire credentials, refer to:
 
 The subscription package provides means to monitor and act upon changes in tenant subscriptions to a microservice. To add a custom behavior a developer can add an event listener for MicroserviceSubscriptionAddedEvent and MicroserviceSubscriptionRemovedEvent like in the following example:
 
-    @EventListener
-    public void onAdded(MicroserviceSubscriptionAddedEvent event{
-        log.info("subscription added for tenant: " + event.getCredentials().getTenant());
-    }
+```java
+@EventListener
+public void onAdded(MicroserviceSubscriptionAddedEvent event{
+    log.info("subscription added for tenant: " + event.getCredentials().getTenant());
+}
+```
 
 On application startup the MicroserviceSubscriptionAddedEvent is triggered for all subscribed tenants.
 
@@ -117,6 +125,7 @@ The API provides the following services:
 
 The API provides basic CRUD methods, see alarm interface example below:
 
+```java
     AlarmRepresentation create(final AlarmRepresentation alarm)
     Future createAsync(final AlarmRepresentation alarm)
 
@@ -125,25 +134,28 @@ The API provides basic CRUD methods, see alarm interface example below:
     AlarmCollection getAlarmsByFilter(final AlarmFilter filter)
 
     AlarmRepresentation update(final AlarmRepresentation alarm)
+```
 
 Sample usage:
 
-    @Autowired
-    private AlarmApi alarms;
+```java
+@Autowired
+private AlarmApi alarms;
 
-    public AlarmRepresentation addHelloAlarm(){
-          AlarmRepresentation alarm = new AlarmRepresentation();
-          alarm.setSeverity("CRITICAL");
-          alarm.setStatus("Hello");
-          return alarms.create(alarm);
-    }
-
+public AlarmRepresentation addHelloAlarm(){
+    AlarmRepresentation alarm = new AlarmRepresentation();
+    alarm.setSeverity("CRITICAL");
+    alarm.setStatus("Hello");
+    return alarms.create(alarm);
+}
+```
 
 ### Configuration files
 
 The property file used by the hosted deployment must be located in src/main/resources/application.xml.
 
 For external/legacy deployment, the following paths will be searched in order to find a property file specific for the environment the application is run on:
+
 * {UPPERCASE(application_name)}_CONF_DIR/.{application_name}
 * {UPPERCASE(application_name)}_CONF_DIR/{application_name}
 * {user/home}/.{application_name}
@@ -154,18 +166,95 @@ For external/legacy deployment, the following paths will be searched in order to
 
 Properties used by a microservice are:
 
-    application.name - Application name
-    C8Y.bootstrap.register - Indicates whether microservice should follow self-registration process. True by default
-    C8Y.baseURL - Address of the platform. Provided by the deployment process
-    C8Y.baseURL.mqtt - Address of the MQTT service. Provided by the platform
-    C8Y.bootstrap.tenant - Microservice owner tenant
-    C8Y.bootstrap.user - User used by microservice, or by microservice registration process
-    C8Y.bootstrap.password - Password used by microservice, or by microservice registration process
-    C8Y.bootstrap.delay - Subscription refresh delay
-    C8Y.bootstrap.initialDelay - Initial subscription delay
-    C8Y.microservice.isolation - Microservice isolation. Only PER_TENANT or MULTI_TENANT values are available. MULTI_TENANT by default
+* application.name - Application name
+* C8Y.bootstrap.register - Indicates whether microservice should follow self-registration process. True by default
+* C8Y.baseURL - Address of the platform. Provided by the deployment process
+* C8Y.baseURL.mqtt - Address of the MQTT service. Provided by the platform
+* C8Y.bootstrap.tenant - Microservice owner tenant
+* C8Y.bootstrap.user - User used by microservice, or by microservice registration process
+* C8Y.bootstrap.password - Password used by microservice, or by microservice registration process
+* C8Y.bootstrap.delay - Subscription refresh delay
+* C8Y.bootstrap.initialDelay - Initial subscription delay
+* C8Y.microservice.isolation - Microservice isolation. Only PER_TENANT or MULTI_TENANT values are available. MULTI_TENANT by default
     
     
+### Microservice Settings
+
+The microservice settings module provides two features:
+
+* Configure a microservice by defining tenant options
+* Override existing properties -- tenant options can override default values from properties files
+
+The microservice loads the tenant options for the category specified by the microservice context path. When the context path is not provided in the microservice manifest, the application name is used.
+
+Options can be configured for the application owner or the subscriber. The subscriber can override the owner's option value only when such option is defined as editable.
+
+Settings are lazy cached for 10 minutes, so when they were accessed previously, the user must wait the remaining time to see the change being applied.
+When the access attempt occurs to fetch settings without the tenant context being specified, the application owner is used to complete the request.  
+
+> **Info:** For security reasons the functionality is not available when running the microservice in legacy mode, i.e. local development or RPM installation.
+
+Tenant option settings can be accessed in two ways:  
+
+Using Environment:
+
+```java
+@Autowired
+private Environment enviroment;  
+     
+public int getAccessTimeout() {
+    return environment.getProperty("access.timeout", Integer.class, 30);
+}
+```
+
+Using Settings Service:
+
+```java
+@Autowired
+private MicroserviceSettingsService settingsService;
+    
+public String getAccessTimeout() {
+    return settingsService.get("access.timeout");
+}
+```
+    
+Settings can be encrypted by using the "*credentials.*" prefix for the tenant option key. They will be decrypted and become available within the microservice environment.
+
+Defining tenant options for a microservice with the same key as was defined in the configuration files, such as *.properties or manifest file, will override the particular property. 
+
+Example:
+
+There is a property defined in the _application.properties_ file of the microservice hello-world with context path _helloworld_:
+
+```properties
+access.timeout=25
+```
+    
+Now the microservice owner can override it by defining the following setting in the cumulocity.json manifest file.
+    
+```json
+"settings": [{ 
+    "key": "access.timeout",
+    "defaultValue": "35",
+    "editable": true
+}]
+```
+
+Because the _access.timeout_ setting is defined as editable, the subscriber can override it by creating an own tenant option via REST API:
+
+```http
+POST {{url}}/tenant/options
+    
+BODY:
+{
+    "category": "helloworld",
+    "key": "access.timeout",
+    "value": "40"
+}
+```
+   	
+> **Note:** you cannot override a property injected by spring `@Value("${property.name}")`.
+
 ### Logging
 
 For hosted deployment the standard output should be used.
@@ -189,6 +278,7 @@ The package module provides a maven plugin to prepare a ZIP file required by the
 
 An example with minimum configuration is presented below:
 
+```xml
     <plugin>
         <groupId>org.springframework.boot</groupId>
         <artifactId>spring-boot-maven-plugin</artifactId>
@@ -236,6 +326,7 @@ An example with minimum configuration is presented below:
             </execution>
         </executions>
     </plugin>
+```
 
 #### Package goal
 
@@ -256,6 +347,7 @@ It can be configured with the following parameters:
 
 Example configuration:
 
+```xml
     <configuration>
       <name>hello-world</name>
       <encoding>UTF-8</encoding>
@@ -263,6 +355,7 @@ Example configuration:
       <containerSkip>false</containerSkip>
       <manifestFile>${basedir}/src/main/microservice/cumulocity.json</manifestFile>
     </configuration>
+```
 
 #### Push goal
 
@@ -273,10 +366,12 @@ The push plugin is responsible for pushing the docker image to a registry. The r
 
 Example configuration:
 
+```xml
 	    <configuration>
 	      <registry>http://{yourregistry.com}</registry>
 	      <containerSkip>false</containerSkip>
 	    </configuration>
+```
 
 #### Upload goal
 
@@ -302,6 +397,7 @@ To upload a microservice to the server you need to configure the following prope
 
 To configure the goal in the settings.xml file we need to add the server configuration as follows:
 
+```xml
     <server>
         <id>microservice</id>
         <username>demos/username</username>
@@ -310,11 +406,13 @@ To configure the goal in the settings.xml file we need to add the server configu
             <url>https://demos.cumulocity.com</url>
         </configuration>
     </server>
-    
+```
+
 #### pom.xml
 
 To configure the plugin in the pom.xml file we need to add the server configuration as follows. 
 
+```xml
     <plugin>
         <groupId>com.nsn.cumulocity.clients-java</groupId>
         <artifactId>microservice-package-maven-plugin</artifactId>
@@ -331,13 +429,15 @@ To configure the plugin in the pom.xml file we need to add the server configurat
             </credentials>
         </configuration>
     </plugin>
+```
 
 ##### Command line
 
 To pass the configuration only to the particular build, run
 
-    mvn microservice:upload -Dupload.application.name=cep -Dupload.url=https://demos.cumulocity.com -Dupload.username=demos/username -Dupload.password=******
-
+```shell
+$ mvn microservice:upload -Dupload.application.name=cep -Dupload.url=https://demos.cumulocity.com -Dupload.username=demos/username -Dupload.password=******
+```
 
 ### Deployment
 
@@ -357,56 +457,66 @@ To deploy an application on an environment you need the following:
 
 If the application does not exist, create a new application on the platform:
 
+```http
     POST /application/applications
     Host: ...
     Authorization: Basic xxxxxxxxxxxxxxxxxxx
     Content-Type: "application/json"
 
 BODY:
-
     {
 			"name": "{APPLICATION_NAME}",
 			"type": "MICROSERVICE",
 			"key": "{APPLICATION_NAME}-microservice-key"
     }
+```
 
 Example:
 
-    $curl -X POST -s \
-      -d "{"name":"hello-microservice-1","type":"MICROSERVICE","key":"hello-microservice-1-key"}" \
-      -H "Authorization: {AUTHORIZATION}" \
-      -H "Content-type: application/json" \
-      "{URL}/application/applications"
+```shell
+$ curl -X POST -s \
+       -d "{"name":"hello-microservice-1","type":"MICROSERVICE","key":"hello-microservice-1-key"}" \
+       -H "Authorization: {AUTHORIZATION}" \
+       -H "Content-type: application/json" \
+       "{URL}/application/applications"
+```
 
 If the application has been created correctly, you can get the application ID by invoking:
 
+```http
     GET /application/applicationsByName/{APPLICATION_NAME}
     Host: ...
     Authorization: Basic xxxxxxxxxxxxxxxxxxx
     Accept: "application/json"
+```
 
 Example:
 
-    curl -H "Authorization:{AUTHORIZATION}" \
+```shell
+$ curl -H "Authorization:{AUTHORIZATION}" \
      {URL}/application/applicationsByName/hello-world
-
+```
 
 **Step 2 - Upload zip file**
        
+```http
     POST /application/applications/{APPLICATION_ID}/binaries
     Host: ...
     Authorization: Basic xxxxxxxxxxxxxxxxxxx
     Content-Type: "multipart/form-data"
+```
 
 Example:
 
-	  curl -F "data=@{PATH_TO_ZIP}" \
-	  -H "Authorization: {AUTHORIZATION}" \
-	  "{URL}/application/applications/{APPLICATION_ID}/binaries"
-
+```shell
+$ curl -F "data=@{PATH_TO_ZIP}" \
+	   -H "Authorization: {AUTHORIZATION}" \
+	   "{URL}/application/applications/{APPLICATION_ID}/binaries"
+```
 
 **Step 3 - Subscribe to microservice**
-    
+
+```http
     POST /tenant/tenants/$TENANT/applications
     Host: ...
     Authorization: Basic xxxxxxxxxxxxxxxxxxx
@@ -415,13 +525,16 @@ Example:
   BODY:
 
     {"application":{"id": "{APPLICATION_ID}"}}
+```
 
-  Example:
+Example:
 
-    curl -X POST -d "{"application":{"id": "{APPLICATION_ID}"}}"  \
+```shell
+$ curl -X POST -d "{"application":{"id": "{APPLICATION_ID}"}}"  \
     -H "Authorization: {AUTHORIZATION}" \
     -H "Content-type: application/json" \
      "{URL}/tenant/tenants/{TENANT}/applications"
+```
 
 #### Local docker deployment
 
@@ -429,18 +542,22 @@ To deploy the application on a local docker, one needs to inject the environment
 
 An example execution could be: 
     
-    docker run -e "C8Y_BASEURL={C8Y_BASEURL}" -e "C8Y_BASEURL_MQTT={C8Y_BASEURL_MQTT}" {IMAGE_NAME}
-    
+```shell
+$ docker run -e "C8Y_BASEURL={C8Y_BASEURL}" -e "C8Y_BASEURL_MQTT={C8Y_BASEURL_MQTT}" {IMAGE_NAME}
+```
     
 ### Monitoring
 
 To check if a hosted microservice is running successfully, the microservice's health endpoint can be checked.
 This endpoint is enabled by default for all microservices that are developed using Java Microservice SDK.
 
+```http
     GET {URL}/service/{APPLICATION_NAME}/health
+```
 
 Example response:
 
+```http
     HTTP/1.1 200 
     {
       "status":"UP"
@@ -452,4 +569,4 @@ Example response:
     {
       "status":"DOWN"
     }
-
+```

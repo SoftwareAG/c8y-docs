@@ -34,6 +34,16 @@ To unlock the tenant admin user, perform the following steps:
 1. In the Administration application, navigate to the **Users** page and open the tenant admin user.
 1. Activate the user account by switching the toggle next to the username to **Enabled** and save your settings.
 
+### Configuring email server and password template settings
+
+To configure the "reset password" template and email server settings, perform the following steps:
+
+1. Log into the management tenant using *https://&#60;Edge&#95;VM&#95;IP&#95;Address>/apps/administration/index.html#/configuration*.
+	* User: management/edgeadmin 
+	* Password: Will be the same as the Edge tenant admin password provided in the post-installation execution
+<br>
+2. Update the email server details and templates following the instructions in [Administration > Changing settings> Configuration settings](/guides/users-guide/administration/#config-platform) in the User guide.
+
 
 ### Increasing the system performance
 
@@ -132,3 +142,11 @@ The components for which log rotation is configured are as follows:
 Configuration can be altered by using daily/weekly/monthly and specifying the corresponding rotate count.
 
 For microservices, there currently is no specific log rotation configured.
+
+### Time synchronization
+
+For many use cases, and especially when using APAMA, time synchronization must be available, i.e. the time inside the VM must be synchronized with the time of the host OS and with devices sending data.
+
+Out of the box, for VMWare-based installations, vmtools is responsible for time synchronization with the host OS. For VirtualBox-based installations, VirtualBox guest additions is responsible. 
+
+Additionally, chrony or ntp services can be configured by end users based on their time synchronization needs. Refer to the respective documentation for the configuration of these services. These services are by default stopped and disabled in Edge and can be enabled by standard commands.

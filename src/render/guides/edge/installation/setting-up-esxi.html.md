@@ -41,29 +41,6 @@ A VM with the provided name, e.g. "EDGE-server", should now show up in the **Vir
 
 Perform the following steps to configure the network once the image is imported into ESXi.
 
-1. Log in as root to the image via the ESXi console and check how the ethernet interface was named. <br>
+1. Run /opt/c8y/utilities/post_installation.sh -> Option 1 ->  “Configure network”.
 
-		[root@server ~]# ip link 1: lo: <LOOPBACK,UP,LOWER_UP> mtu 65536 qdisc noqueue state UNKNOWN mode DEFAULT group default qlen 1000 link/loopback 00:00:00:00:00:00 brd 00:00:00:00:00:00 2: ens160: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 1500 qdisc mq state UP mode DEFAULT group default qlen 1000 link/ether 00:0c:29:fd:35:9e brd ff:ff:ff:ff:ff:ff
-	
-2. Edit the content that the DEVICE directive matches your interface name and enter your desired network parameters.
-
-		[root@server ~]# vi /etc/sysconfig/network-scripts/ifcfg-ens160
-		DEVICE=ens160
-		BOOTPROTO=none
-		ONBOOT=yes
-		NETMASK=255.255.255.0
-		IPADDR=192.168.207.64
-		USERCTL=no
-		GATEWAY=192.168.207.1
-		DNS1=8.8.8.8
-
-3. Rename the network script /etc/sysconfig/network-scripts/ens160 to match the name of your interface.
-
-4. Edit /etc/hosts to match the IP and host name.
- 
-		192.168.207.64 management.cumulocity.com <domain name entered during post-installation>
- 
-5. Restart the network config. **service network restart** (which might fail but that is not an issue).
-
-6. Run `ifconfig`. The IP entered should be shown in the interface.
-
+2. Run /opt/c8y/utilities/post_installation.sh -> Option 2 -> “Run post-installation”.

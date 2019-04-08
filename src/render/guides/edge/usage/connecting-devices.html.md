@@ -13,8 +13,6 @@ Additionally, Cumulocity IoT Edge offers Cloud Fieldbus functionality to collect
 Modbus is a serial communications protocol originally published by Modicon and used to establish master-slave/client-server communication between devices.
 
 Before you can connect a Modbus device you first have to configure the Modbus agent. This only has to be done once as a preparation step and is not required for every Modbus device.
-
-#### Configuring the Modbus agent
    
 Check if the Modbus agent is running in Edge (running on port  6670):  
 
@@ -22,22 +20,12 @@ Check if the Modbus agent is running in Edge (running on port  6670):
 $ systemctl status cumulocity-agent
 ```
 
-Once the agent is started navigate to the log file or execute the following command to monitor the log:
-
-```shell
-$ tailf /var/log/cumulocity-agent.log
-```
-
-Copy the cumulocity-agent device ID which you can find in */var/log/cumulocity-agent.log*, e.g. "C0F64C7B90A14C4BB22AB526928F09A9”. This ID will be used for the registration process. 
-
-<img src="/guides/images/edge/edge-modbus-register-01.png" name="Log file" style="width:100%;"/>
-
 
 #### Registering the agent
 
-Next, register the agent in the Device management application using the device ID copied from the log file. 
+Next, register the agent in the Device management application using "linux-agent" as device ID. 
 
-<img src="/guides/images/users-guide/DeviceManagement/devmgmt-registration-general.png" name="Register device"/> 
+<img src="/guides/images/edge/register-modbus-agent.png" name="Register agent"/> 
 
 Follow the description in Device Management > [Connecting devices](/guides/users-guide/device-management#connecting-devices) in the User guide to register the agent.
 

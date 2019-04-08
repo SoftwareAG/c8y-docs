@@ -23,15 +23,12 @@ Follow the steps below to upgrade the system.
 
 6. Right-click on the second disk i.e. disk002.vmdk, and select **Remove attachment**. 
 <img src="/guides/images/edge/edge-update-storage.jpg" name="Storage" style="width:75%;"/> 
-<br>
 
 7. Right-click on the second controller i.e. SATA controller and select **Add Hard Disk**. In the upcoming window, select **Choose existing disk**. 
 <img src="/guides/images/edge/edge-update-harddisk.jpg" name="Add hard disk" style="width:75%;"/> 
-<br>
 
 8. In the explorer, navigate to the Edge VM folder. Select the secondary disk, i.e. disk002.vmdk, and click **OK**.<br>
 <img src="/guides/images/edge/edge-update-choose-disk.JPG" name="Choose disk" style="width:75%;"/> 
-<br>
 
 9. Power on the VM by clicking the **Start** button. 
 

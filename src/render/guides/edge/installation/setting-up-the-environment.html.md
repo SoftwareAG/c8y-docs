@@ -5,10 +5,13 @@ layout: redirect
 ---
 
 
-For your convenience, we provide two hypervisor examples for setting up Cumulocity IoT Edge:
+For your convenience, we provide three hypervisor examples for setting up Cumulocity IoT Edge:
 
-* [Example setup for VirtualBox](/guides/edge/installation#setting-up-virtual-box)
 * [Example setup for ESXi VMWare](/guides/edge/installation#setting-up-esxi)
+* [Example setup for VMWare Workstation Player](/guides/edge/installation#setting-up-vmware)
+* [Example setup for VirtualBox](/guides/edge/installation#setting-up-virtual-box)
+
+>**Info**: VirtualBox support is deprecated, so it is not recommended to use it in a production environment.
 
 
 ### VM login details

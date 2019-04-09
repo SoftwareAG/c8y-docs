@@ -170,10 +170,36 @@ The **Control** tab lists the operations being sent to a device. Refer to [Worki
 
 ### <a name="network"></a>Network
 
-In the **Network** tab network settings can be configured for the device.
+Essential mobile network ("WAN") and local area network ("LAN") parameters can be viewed and configured in the "Network" tab as shown in the screenshot below.
 
-<!-- Needs to be documented-->
+![Network tab](/guides/images-users-guide/DeviceManagement/devmgmt-devices-network.png)
 
+The WAN parameters in the user interface correspond to the first profile stored in the router. These parameter can be remotely configured or via SMS.
+
+> **Info:** For SMS configuring, the router needs to be configured to accept SMS commands.
+
+To save a WAN configuration:
+
+- Enter Access Point Name ("APN")
+- Enter **User** and **Password** of your account in the platform to which you wish to establish connection.
+- Select authentication type.
+- Click **Save changes**.
+
+LAN and DHCP parameters can be directly configured from Cumulocity as well. 
+
+To configure LAN parameters simply enter **IP address** and **Subnet mask**.
+
+> **Info:** **Name** and **Mac address** fields are not configurable.
+
+For the DHCP configuration, the following fields must be filled:
+
+- **Address Range**: This is the range in which the connection can be established.
+- **DNS**
+- **DNS 2**
+- **Domain Name**
+- When ready, click **Save changes**.
+
+> **Info:** If the LAN configuration is disabled, the DHCP configuration is automatically disabled.
 
 ### <a name="software"></a>Software
 

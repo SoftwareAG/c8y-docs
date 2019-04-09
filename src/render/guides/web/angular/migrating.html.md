@@ -10,20 +10,18 @@ Since 9.16.0 we have introduced Angular support and as such the build process ha
 <table style="width:100%;font-family:sans-serif" class="support-versions">
   <style>
     .support-versions .green {
-       background-color: green;
+       background-color: green !important;
     }
     .support-versions .red {
-       background-color: red;
+       background-color: red !important;
     }
     .support-versions .yellow {
-       background-color: gold;
+       background-color: gold !important;
     }
-
     .support-versions tr > td:first-child {
       font-weight:bold;
       text-align:right;
     }
-
     .support-versions .sub {
       font-weight: normal !important;
       color: gray;
@@ -75,7 +73,6 @@ Since 9.16.0 we have introduced Angular support and as such the build process ha
     <td colspan="2" class="red"></td>
     <td colspan="2" class="green"></td>
   </tr>
-
 </table>
 
 The cumulocity.json manifest is in practice a module descriptor so with `@c8y/cli` (which uses webpack as a module bundler) applications and plugin manifests are resolved and loaded into webpack as any other module, by using a custom loaders and resolvers.

@@ -49,24 +49,9 @@ To explicitly logout, click the **User** button at the right of the the top bar 
 
 <img src="/guides/images/users-guide/overview-logout.png" alt="Logout menu" style="max-width: 100%">
 
-### <a name="welcome"></a>Welcome screen
+When you log into Cumulocity for the first time, you will be taken to the default application (usually the [Cockpit](/guides/users-guide/cockpit) application if not configured differently).
 
-When you log into Cumulocity for the first time, you will be taken to the default application (usually the Cockpit application if not configured differently) where the **Welcome** screen initially opens up.
-
-<img src="/guides/images/users-guide/overview-welcome-screen.png" name="Welcome screen"/>
-
-The **Welcome** screen contains the following items:
-
-* Quick links to the most relevant functions
-* Links to the available applications
-* Links to relevant documentation areas and to the Support Forum
-* The latest news from the Cumulocity twitter channel. Note that this section is only available for tenants hosted by www.cumulocity.com
-
-**Hiding/restoring the Welcome screen**
-
-If you do not want the **Welcome** screen to be your start page, activate the slider **Don't use as start page** on the top right.
-
-To restore the **Welcome** screen as start page, select **Welcome** in the navigator on the top left and deactivate the slider **Don't use as start page** again.
+![image alt text](/guides/images/users-guide/Cockpit/cockpit-home-screen.png)
 
 ### <a name="reset-password"></a>Resetting your password
 

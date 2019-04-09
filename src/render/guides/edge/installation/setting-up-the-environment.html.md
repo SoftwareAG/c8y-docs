@@ -1,5 +1,5 @@
 ---
-order: 30
+order: 20
 title: Setting up the environment
 layout: redirect
 ---

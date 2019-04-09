@@ -1,6 +1,6 @@
 ---
 order: 50
-title: Example setup for ESXi VMWare
+title: Example setup for VMware ESXi 
 layout: redirect
 ---
 
@@ -37,7 +37,7 @@ A VM with the provided name, e.g. "EDGE-server", should now show up in the **Vir
 * Edit VM Settings -> VMware Tools: Check time synchronization
 * Edit VM Settings -> General Options: Set guest OS to CentOs 7 (64bit)
 
-### Network configuration
+### Edge configuration
 
 Perform the following steps to configure the network once the image is imported into ESXi.
 

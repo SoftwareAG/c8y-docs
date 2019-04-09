@@ -1,5 +1,5 @@
 ---
-order: 50
+order: 70
 title: Example setup for VirtualBox
 layout: redirect
 ---

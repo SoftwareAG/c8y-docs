@@ -1,5 +1,5 @@
 ---
-order: 50
+order: 40
 title: Accessing the Cumulocity platform
 layout: redirect
 ---

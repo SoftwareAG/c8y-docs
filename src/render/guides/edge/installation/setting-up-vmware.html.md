@@ -1,5 +1,5 @@
 ---
-order: 70
+order: 60
 title: Example setup for VMware Workstation Player
 layout: redirect
 ---
@@ -23,7 +23,7 @@ To set up a VM in VMware Workstation Player, follow the steps below.
 <img src="/guides/images/edge/edge-vmware-04.png" name="Setting up VMware"/>
 
 
-### Configuring the VM network
+### Configuring Edge
 
 Once the VM starts up successfully, it's network has to be configured, so that it can be accessed from outside the VM.
 
@@ -34,9 +34,13 @@ To do so, the following information is required:
 * Gateway IP
 * DNS server IP (if unknown, you can use the gateway IP here as well)
 
-If you are not aware of these details, you may use the vmnetcfg utility provided by VMware, see below.
+If this information is not available to you, contact your network administrator.  
+
+You may also use the vmnetcfg utility provided by VMware (see below) to obtain the netmask and gateway IP.
 
 Configure the network by completing the "Configure network" task using the post-installer utility, see [Configuration](/guides/edge/installation/configuration).
+
+Finish the Edge configuration by completing the "Run post-installation" task using the post-installer utility, see [Configuration](/guides/edge/installation/configuration).
 
 ### Setting up for vmnetcfg utility
 

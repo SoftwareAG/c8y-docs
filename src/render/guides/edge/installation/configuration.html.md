@@ -1,5 +1,5 @@
 ---
-order: 40
+order: 30
 title: Configuration
 layout: redirect
 ---

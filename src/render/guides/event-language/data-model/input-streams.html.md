@@ -70,9 +70,9 @@ Example:
       event.managedObject.lastUpdated,
       event.managedObject.owner,
       event.managedObject.childAssets,
-      event.managedObject.childDevices,
       event.managedObject.assetParents,
-      event.managedObject.deviceParents
+      event.managedObject.deviceParents,
+      event.managedObject.childDevices
     from ManagedObjectCreated event;
 
 ### Event

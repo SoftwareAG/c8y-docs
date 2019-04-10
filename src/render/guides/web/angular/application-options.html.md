@@ -7,9 +7,9 @@ order: 15
 Each UI application can be customized with a set of defined options.
 The options objects are defined in json and read and merged at runtime with the following order:
 
-- Static options defined at build time
-- Dynamic fetched options on application boot
-- URL options that can be added by the user as URL query params (mostly for debugging purposes)
+  - Static options defined at build time
+  - Dynamic fetched options on application boot
+  - URL options that can be added by the user as URL query params (mostly for debugging purposes)
 
 This process of collecting and merging the different options is executed by a thin bootstrap layer included in `@c8y/cli`.
 
@@ -37,7 +37,7 @@ Defined in the `package.json` of the application inside the fragment `c8y.applic
 
 Can also be passed to `c8ycli`:
 
-```
+```sh
 c8ycli build --app.contextPath=cockpit2 --app.dynamicOptionsUrl="/apps/public/public-options/options.json"
 ```
 
@@ -50,7 +50,7 @@ As this property is defined statically at build time, it is possible for the app
 
 These can just be appended to the URL of the application as query parameters.
 
-```
+```sh
 https://<instance domain>/apps/cockpit?dynamicOptionsUrl=/apps/my-options/options.json&rightDrawer:false
 ```
 
@@ -58,7 +58,7 @@ https://<instance domain>/apps/cockpit?dynamicOptionsUrl=/apps/my-options/option
 
 Here is a list of the built-in options. As in the end this is just a plain old javascript object this list can be easily extended  with any property a developer might want to include in his applications or extensions.
 
-```ts
+```typescript
 export class ApplicationOptions {
   name: string; // To be saved to the server
   contextPath: string; // To be saved to the server

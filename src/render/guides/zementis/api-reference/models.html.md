@@ -8,11 +8,12 @@ Operations on predictive analytics models.
 
 ### GET List Available Models
 
+Retrieves the model names of all available PMML models. Use these model names as identifiers for all operations requiring the model_name path variable.
+
 ```
 {{url}}/service/zementis/models
 ```
 
-This operation retrieves the model names of all available PMML models. Use these model names as identifiers for all operations requiring the model_name path variable.
 
 |HEADERS||
 |:---|:---|
@@ -59,11 +60,11 @@ curl --request GET "{{url}}/service/zementis/models"
 
 ### GET Get Model Information
 
+Get model name, description, and information about input, output, or derived fields.
+
 ```
 {{url}}/service/zementis/model/{{model_name}}
 ```
-
-Get model name, description, and information about input, output, or derived fields.
 
 |HEADERS||
 |:---|:---|
@@ -124,6 +125,8 @@ curl --request GET "{{url}}/service/zementis/model/dummy" --header "Authorizatio
 ```
 
 ### GET Get Model Source 
+
+Get annotated or original PMML file. Annotated source may contain warning or error messages embedded in XML comments that are useful for verifying that the PMML code is correct.
 
 ```
 {{url}}/service/zementis/model/{{model_name}}/source
@@ -192,11 +195,11 @@ curl --request PUT "{{url}}/service/zementis/model/dummy/source?" --header "Auth
 
 ### GET Get Model Serialized Source
 
+Get binary file containing serialized representation of the model.
+
 ```
 {{url}}/service/zementis/model/{{model_name}}/serialized
 ```
-
-Get binary file containing serialized representation of the model.
 
 |HEADERS||
 |:---|:---|
@@ -258,11 +261,11 @@ curl --request GET "{{url}}/service/zementis/model/dummy/serialized" --header "A
 
 ###GET Model Metrics Information
 
+Get the memory metrics and prediction metrics of an uploaded model.
+
 ```
 {{url}}/service/zementis/model/{{model_name}}/metrics
 ```
-
-Get the memory metrics and prediction metrics of an uploaded model.
 
 |HEADERS||
 |:---|:---|
@@ -335,13 +338,13 @@ curl --request GET "{{url}}/service/zementis/model/dummy/metrics" --header "Auth
 
 ###POST Upload New Model
 
+Upload new PMML model. If the PMML file is large, such as Random Forest model, we recommend compressing the file using ZIP/GZIP before uploading. This will reduce the upload time drastically. 
+
+Note that the size of the uploaded PMML file/zip must not exceed 500 MB.
+
 ```
 {{url}}/service/zementis/model
 ```
-
-Upload new PMML model. If the PMML file is large, such as Random Forest model, we recommend compressing the file using ZIP/GZIP before uploading. This will reduce the upload time drastically. 
-
-Note that the size of the uploaded PMML file/zip should not exceed 500 MB.
 
 |HEADERS||
 |:---|:---|
@@ -435,11 +438,12 @@ curl --request POST "{{url}}/service/zementis/model" --header "Authorization: {{
 
 ### PUT Activate an Existing Model
 
+Activates the model with name model_name if it was inactive. Activating an active model has no effect. After activation, the model is immediately available for handling data processing requests. Note that an active model consumes runtime resources, especially Heap.
+
 ```
 {{url}}/service/zementis/model/{{model_name}}/activate
 ```
 
-Activates the model with name model_name if it was inactive. Activating an active model has no effect. After activation, the model is immediately available for handling data processing requests. Note that an active model consumes runtime resources, especially Heap.
 
 |HEADERS||
 |:---|:---|
@@ -501,11 +505,11 @@ curl --request PUT "{{url}}/service/zementis/model/dummy/activate" --header "Aut
 
 ###PUT Deactivate an Existing Model
 
+Deactivates the model with name model_name by making it inactive. After deactivation, the model is still available, but it no longer consumes runtime resources, especially Heap. Deactivating an inactive model has no effect.
+
 ```
 {{url}}/service/zementis/model/{{model_name}}/deactivate
 ```
-
-Deactivates the model with name model_name by making it inactive. After deactivation, the model is still available, but it no longer consumes runtime resources, especially Heap. Deactivating an inactive model has no effect.
 
 |HEADERS||
 |:---|:---|
@@ -567,11 +571,11 @@ curl --request PUT "{{url}}/service/zementis/model/dummy/deactivate" --header "A
 
 ###DEL Remove Model
 
+Remove the specified model and list the remaining models.
+
 ```
 {{url}}/service/zementis/model/{{model_name}}
 ```
-
-Remove the specified model and list the remaining models.
 
 |HEADERS||
 |:---|:---|
@@ -639,11 +643,12 @@ curl --request DELETE "{{url}}/service/zementis/model/dummy" --header "Authoriza
 
 ###DEL Remove All Models
 
+Remove all available models and list the remaining models.
+
 ```
 {{url}}/service/zementis/models
 ```
 
-Remove all available models and list the remaining models.
 
 |HEADERS||
 |:---|:---|

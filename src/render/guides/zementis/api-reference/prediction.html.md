@@ -6,11 +6,11 @@ order: 20
 
 ### GET Apply Model to Single Record
 
+Apply a model to a single JSON input record.
+
 ```
 {{url}}/service/zementis/apply/{{model_name}}?record={{record}}
 ```
-
-Apply a model to a single JSON input record.
 
 |HEADERS||
 |:---|:---|
@@ -106,11 +106,11 @@ curl --request GET "{{url}}/service/zementis/apply/Iris_NN?record=%7B" --header 
 
 ###GET Apply Model to Single Record and Explain Result
 
+Apply a model to a single JSON input record and get the result with details of the performed computation in plain text.
+
 ```
 {{url}}/service/zementis/apply/{{model_name}}/explain?record={{record}}
 ```
-
-Apply a model to a single JSON input record and get the result with details of the performed computation in plain text.
 
 |HEADERS||
 |:---|:---|
@@ -197,13 +197,14 @@ curl --request GET "{{url}}/service/zementis/apply/Iris_NN/explain?record=%7B" -
 
 ###GET Apply Model to Multiple Records
 
+Apply a model to multiple records. This provides two kinds of operations. Generally, if a predictive model without binary type input is applied, this will be a batch 'apply' operation that streams multiple input records to Zementis microservice. Zementis microservice will automatically detect CSV (Comma Separated Value) or JSON records formatted input and stream results back in the same format unless otherwise specified in the Accept request header parameter with text/csv or application/json values. Compressing input data with zip or gzip will result in the same compression method for the returned output stream. Note that if the records are specified in a file then the size of the uploaded file should not exceed 500 MB.
+
+If a predictive model with a binary type input is applied, this will be a single 'apply' operation that processes a single binary source as input to Zementis Server.
+
 ```
 {{url}}/service/zementis/apply/{{model_name}}
 ```
 
-Apply a model to multiple records. This provides two kinds of operations. Generally, if a predictive model without binary type input is applied, this will be a batch 'apply' operation that streams multiple input records to Zementis microservice. Zementis microservice will automatically detect CSV (Comma Separated Value) or JSON records formatted input and stream results back in the same format unless otherwise specified in the Accept request header parameter with text/csv or application/json values. Compressing input data with zip or gzip will result in the same compression method for the returned output stream. Note that if the records are specified in a file then the size of the uploaded file should not exceed 500 MB.
-
-If a predictive model with a binary type input is applied, this will be a single 'apply' operation that processes a single binary source as input to Zementis Server.
 
 |HEADERS||
 |:---|:---|

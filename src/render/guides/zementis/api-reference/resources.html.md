@@ -9,11 +9,11 @@ Operation on resources.
 
 ### GET  List Available Resources
 
+This operation retrieves information on all available resource files. Use file names as identifiers for all operations requiring a file_name path variable.
+
 ```
 {{url}}/service/zementis/resources
 ```
-
-This operation retrieves information on all available resource files. Use file names as identifiers for all operations requiring a file_name path variable.
 
 |HEADERS||
 |:---|:---|
@@ -73,11 +73,11 @@ curl --request GET "{{url}}/service/zementis/resources"
 
 ###GET Get Resource Information
 
+Get information on the specified resource file.
+
 ```
 {{url}}/service/zementis/resource/{{file_name}}
 ```
-
-Get information on the specified resource file.
 
 |HEADERS||
 |:---|:---|
@@ -146,11 +146,11 @@ curl --request GET "{{url}}/service/zementis/resource/dummy" --header "Authoriza
 
 ###GET Get Resource File
 
+Download a resource file.
+
 ```
 {{url}}/service/zementis/resource/{{file_name}}/source
 ```
-
-Download a resource file.
 
 |HEADERS||
 |:---|:---|
@@ -213,11 +213,11 @@ curl --request GET "{{url}}/service/zementis/resource/dummy/source" --header "Au
 
 ###POST Upload New Resource File
 
+Upload a new resource file. The file name in 'file' body parameter will be used to identify this resource. Note that the size of the uploaded resource file must not exceed 500 MB.
+
 ```
 {{url}}/service/zementis/resource
 ```
-
-Upload a new resource file. The file name in 'file' body parameter will be used to identify this resource. Note that the size of the uploaded resource file must not exceed 500 MB.
 
 |HEADERS||
 |:---|:---|
@@ -306,11 +306,11 @@ curl --request POST "{{url}}/service/zementis/resource" --header "Authorization:
 
 ###DEL Remove Resource File 
  
+Remove the specified resource file and list all remaining resources.
+
 ```
 {{url}}/service/zementis/resource/{{file_name}}
 ```
-
-Remove the specified resource file and list all remaining resources.
 
 |HEADERS||
 |:---|:---|
@@ -384,11 +384,11 @@ curl --request DELETE "{{url}}/service/zementis/resource/dummy" --header "Author
 
 ###DEL Remove All Resource Files
 
+Remove all available resources and list the remaining resources.
+
 ```
 {{url}}/service/zementis/resources
 ```
-
-Remove all available resources and list the remaining resources.
 
 |HEADERS||
 |:---|:---|

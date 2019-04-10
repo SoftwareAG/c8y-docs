@@ -174,6 +174,7 @@ redirects =
 	'/guides/device-sdk': '/guides/device-sdk/introduction'
 	'/guides': '/dev-center'
 	'/guides/release-notes': '/guides/release-notes/overview'
+	'/guides/zementis': '/guides/zementis/introduction'
 
 # Test jenkins line
 

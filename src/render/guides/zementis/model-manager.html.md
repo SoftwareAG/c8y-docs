@@ -5,11 +5,19 @@ title: Predictive Analytics application
 layout: standalone
 ---
 
+### Overview
+
+With the Predictive Analytics application you can manage your predictive analytics and machine-learning models and custom resources, and use them for generating predictions on data gathered from your devices.
+
+The Predictive Analytics application enables you to manage your models by providing options for uploading, downloading, or activating/deactivating your models. Additionally, it also provides you with an insight into your models by capturing runtime performance and showcasing it via meaningful KPIs.
+
+Moreover, it enables you to manage custom resources which your models might need. These resources include custom functions and look-up tables.
+
 The following sections will walk you through all functionalities of the Predictive Analytics application in detail.
 
-In the Cumulocity application, you access the Predictive Analytics application through the app switcher. 
-
 ### Home screen
+
+In the Cumulocity application, you access the Predictive Analytics application through the app switcher. 
 
 Clicking **Predictive Analytics** in the app switcher will open the Predictive Analytics application showing the  **Home screen** of the application.
 

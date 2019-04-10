@@ -25,6 +25,7 @@ Annotation | Description
 @EnableMicroserviceSecurity | Provides a standard security mechanism, verifying user and roles against the platform
 @EnableMicroserviceSubscription | Responsible for subscribing microservices to the platform, updating metadata and listening to tenant subscription change events
 @EnableMicroservicePlatformInternalApi | Injects the platform API services into spring context for a microservice to use
+@EnableTenantOptionSettings | Provides microservice configuration within tenant options and allows overriding default properties from files
 
 ### Context support
 
@@ -173,6 +174,82 @@ C8Y.bootstrap.password | Password used by microservice or by microservice regist
 C8Y.bootstrap.delay | Subscription refresh delay
 C8Y.bootstrap.initialDelay | Initial subscription delay
 C8Y.microservice.isolation | Microservice isolation. Only PER_TENANT or MULTI_TENANT values are available. MULTI_TENANT by default
+
+
+### Microservice settings
+
+The microservice settings module provides two features:
+
+* Configure a microservice by defining tenant options
+* Override existing properties - Tenant options can override default values from properties files
+
+The microservice loads the tenant options for the category specified by the microservice context path. When the context path is not provided in the microservice manifest, the application name is used.
+
+Options can be configured for the application owner or the subscriber. The subscriber can override the owner's option value only when such option is defined as editable.
+
+Settings are lazy cached for 10 minutes, so when they were accessed previously, the user must wait the remaining time to see the change being applied.
+When the access attempt occurs to fetch settings without the tenant context being specified, the application owner is used to complete the request.
+
+> **Info**: For security reasons, the functionality is not available when running the microservice in legacy mode, i.e. local development or RPM installation.
+
+Tenant option settings can be accessed in two ways:  
+
+Using Environment:
+
+```java
+@Autowired
+private Environment environment;  
+
+public int getAccessTimeout() {
+    return environment.getProperty("access.timeout", Integer.class, 30);
+}
+```
+
+Using Settings service:
+
+```java
+@Autowired
+private MicroserviceSettingsService settingsService;
+
+public String getAccessTimeout() {
+    return settingsService.get("access.timeout");
+}
+```
+
+Settings can be encrypted by using the *credentials.* prefix for the tenant option key. They will be decrypted and become available within the microservice environment.
+
+Defining tenant options for a microservice with the same key as it was defined in the configuration files, such as *.properties* or the manifest file, will override the particular property.
+
+For instance, there is a property defined in the _application.properties_ file of the microservice hello-world with context path _helloworld_:
+
+```properties
+access.timeout=25
+```
+
+Now the microservice owner can override it by defining the following setting in the _cumulocity.json_ manifest file:
+
+```json
+"settings": [{
+    "key": "access.timeout",
+    "defaultValue": "35",
+    "editable": true
+}]
+```
+
+Because the `access.timeout` setting is defined as editable, the subscriber can override it by creating an own tenant option via REST API:
+
+```http
+POST <URL>/tenant/options
+
+BODY:
+  {
+    "category": "helloworld",
+    "key": "access.timeout",
+    "value": "40"
+  }
+```
+
+> **Note**: You cannot override a property injected by Spring `@Value("${property.name}")`.
 
 
 ### Logging

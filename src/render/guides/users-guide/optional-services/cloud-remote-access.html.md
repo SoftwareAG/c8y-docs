@@ -164,6 +164,12 @@ To edit or remove an endpoint, click the menu icon at the right of a row and sel
 
 ![Edit endpoints](/guides/images/users-guide/cra-endpoint-menu.png)
 
+#### Auto saving host key
+
+Host keys can be automatically saved after the first successful connection on the **Remote access** tab. In order to enable auto save host key, navigate to the **Remote access** page under the **Settings** menu in the **Administration** application. Click on the check box and then **Save**
+
+![Save host key](/guides/images/users-guide/administration-settings-cra)
+
 ### Connecting to endpoints
 
 To connect to configured endpoints, choose an endpoint in the **Remote access** tab and click **Connect**. 

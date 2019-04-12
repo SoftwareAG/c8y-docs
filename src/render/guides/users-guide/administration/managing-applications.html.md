@@ -340,6 +340,18 @@ Users can restore previous versions of an application from an archive:
 
 <img src="/guides/images/users-guide/Administration/admin-application-set-as-archive.png" alt="Application set as archive">
 
+### <a name="default-applications"></a>Default applications
+
+In order to define default applications for subtenants, tenant policy can be created and used when creating new tenants with following options:
+* category: configuration
+* key: default.tenant.applications
+* value: comma separated list of applications names, e.g. administration,devicemanagement,cockpit,feature-microservice-hosting,feature-cep-custom-rules
+
+To define default microservices for subtenants following tenant option can be defined for tenant policy:
+* category: configuration
+* key: default.tenant.microservices
+* value: comma separated list of microservices names, e.g. device-simulator,smartrule,cep
+
 
 
 

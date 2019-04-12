@@ -23,7 +23,7 @@ To set up a VM in VMware Workstation Player, follow the steps below.
 <img src="/guides/images/edge/edge-vmware-04.png" name="Setting up VMware"/>
 
 
-### Configuring Edge
+### Configuring Cumulocity IoT Edge
 
 Once the VM starts up successfully, it's network has to be configured, so that it can be accessed from outside the VM.
 
@@ -40,7 +40,7 @@ You may also use the vmnetcfg utility provided by VMware (see below) to obtain t
 
 Configure the network by completing the "Configure network" task using the post-installer utility, see [Configuration](/guides/edge/installation/configuration).
 
-Finish the Edge configuration by completing the "Run post-installation" task using the post-installer utility, see [Configuration](/guides/edge/installation/configuration).
+Finish the Cumulocity IoT Edge configuration by completing the "Run post-installation" task using the post-installer utility, see [Configuration](/guides/edge/installation/configuration).
 
 ### Setting up for vmnetcfg utility
 

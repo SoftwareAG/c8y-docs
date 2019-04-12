@@ -64,7 +64,7 @@ In case of the following error, proceed as described below.
 
 Click **Change network setting** and select the VirtualBox Host-Only Ethernet Adapter which has been configured in Step 8 above. 
 
-The VirtualBox metadata files for VM appliance keep the "VirtualBox Host-Only Ethernet Adapter" name based on the host OS. If this adapter name differs with what is bundled in Edge, it has to be manually selected.
+The VirtualBox metadata files for VM appliance keep the "VirtualBox Host-Only Ethernet Adapter" name based on the host OS. If this adapter name differs with what is bundled in Cumulocity IoT Edge, it has to be manually selected.
 
 
 ### <a name="port-forwarding"></a>Setting up port forwarding

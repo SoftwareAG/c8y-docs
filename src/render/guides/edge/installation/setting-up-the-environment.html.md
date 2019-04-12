@@ -16,7 +16,7 @@ For your convenience, we provide three hypervisor examples for setting up Cumulo
 
 ### VM login details
 
-SSH login into Edge is allowed through the “admin” user. All operational activities described in this guide need to be carried out through the admin user.
+SSH login into Cumulocity IoT Edge is allowed through the “admin” user. All operational activities described in this guide need to be carried out through the admin user.
 
 Use the following login credentials for SSH login into the Edge instance:
  

@@ -17,7 +17,7 @@ The files have the following extensions:
 * SSL Certificate: ".crt" or ".cert" 
 * Apama license file: “.xml”
 
->**Important**: Do not rename the license file received from Cumulocity support. Renaming the license file causes failure of post installation.
+>**Important**: Do not rename the license file received from Cumulocity support. Renaming the license file causes failure of the post-installation process.
 
 ### Configuring the Edge server
 

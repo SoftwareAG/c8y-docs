@@ -14,7 +14,7 @@ Modbus is a serial communications protocol originally published by Modicon and u
 
 Before you can connect a Modbus device you first have to configure the Modbus agent. This only has to be done once as a preparation step and is not required for every Modbus device.
    
-Check if the Modbus agent is running in Edge (running on port  6670):  
+Check if the Modbus agent is running in Cumulocity IoT Edge (running on port  6670):  
 
 ```shell
 $ systemctl status cumulocity-agent
@@ -41,7 +41,7 @@ To connect an OPC/UA device in Edge, follow the steps below.
 
 #### Preparation
    
-Check if the OPC/UA agent is running in Edge (running on port  6670):  
+Check if the OPC/UA agent is running in Cumulocity IoT Edge (running on port  6670):  
 
 ```shell
 $ sudo systemctl status opcua-agent-server

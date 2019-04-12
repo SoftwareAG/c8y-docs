@@ -14,8 +14,8 @@ To install Cumulocity IoT Edge, the following is required:
 |**Edge VM image**|To be downloaded from the [Software AG Empower portal](https://empower.softwareag.com), based on the target hypervisor, i.e. ova for VirtualBox / ovf for ESXi and Workstation Player|
 |**Cumulocity license file**|To request the license file for Cumulocity, please contact the logistics team for your region:<br> - North and South America: LogisSrvus@softwareagusa.com <br>- All Other Regions: LogisticsServiceCenterGER@softwareag.com <br>In the email, you must include <br> - your company name, under which the license has been bought <br> - the domain name (e.g. myEdge.domain.com), under which Cumulocity IoT Edge will be reachable|
 |**SSL key and SSL certificate**|Use your internal or an external CA (Certification Authority) to create these.|
-|**Apama license**|The Apama license key is provided as part of your purchase. To request the license keys for your Apama purchase, please contact the logistics team for your region:<br> - North and South America: LogisSrvus@softwareagusa.com <br> - All Other Regions: LogisticsServiceCenterGER@softwareag.com<br>**The Apama license is optional and NOT required for an Edge installation.**<br>|
-|**DNS entry**|The DNS (Domain Name System) is used to resolve human readable host names like www.cumulocity.com to machine readable IP addresses like 192.198.1.10. <br> If you want to connect to Edge VM within your LAN, the DNS entry has to be added for the domain name (URL under which Edge can be reached) with the IP address of the host.|
+|**Apama license**|The Apama license key is provided as part of your purchase. To request the license keys for your Apama purchase, please contact the logistics team for your region:<br> - North and South America: LogisSrvus@softwareagusa.com <br> - All Other Regions: LogisticsServiceCenterGER@softwareag.com<br>**The Apama license is optional and NOT required for an Cumulocity IoT Edge installation.**<br>|
+|**DNS entry**|The DNS (Domain Name System) is used to resolve human readable host names like www.cumulocity.com to machine readable IP addresses like 192.198.1.10. <br> If you want to connect to Edge VM within your LAN, the DNS entry has to be added for the domain name (URL under which Cumulocity IoT Edge can be reached) with the IP address of the host.|
 
 
 ### Network connectivity
@@ -26,7 +26,7 @@ The following network ports must be reachable from the local network:
 * MQTT over TLS
 * SSH, only for configuring the appliance
 
-If Edge should communicate with the cloud, the following ports of www.cumulocity.com (or another instance) need to be available:
+If Cumulocity IoT Edge should communicate with the cloud, the following ports of www.cumulocity.com (or another instance) need to be available:
 
 * HTTPS
 * MQTT over TLS

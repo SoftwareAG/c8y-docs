@@ -62,11 +62,8 @@ In the Login screen, log in with the following credentials:
 
 After successfully logging in, the Cumulocity platform will open:
 
-<img src="/guides/images/users-guide/overview-welcome-screen.png" name="Welcome screen"/>
+<img src="/guides/images/users-guide/Cockpit/cockpit-home-screen.png" name="Home screen"/>
 
-When you log into Cumulocity for the first time, you will be taken to the Cockpit application where the **Welcome** page initially opens up.
-
-For details on the Welcome page, refer to Getting Started > [Accessing and login into the Cumulocity platform](/guides/users-guide/overview#accessing-cumulocity-platform) in the User guide.
-
+When you log into Cumulocity for the first time, you will be taken to the [Cockpit](/guides/users-guide/cockpit#overview) application where the **Home screen** initially opens up.
 
 

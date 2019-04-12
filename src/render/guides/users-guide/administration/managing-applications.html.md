@@ -342,15 +342,17 @@ Users can restore previous versions of an application from an archive:
 
 ### <a name="default-applications"></a>Default applications
 
-In order to define default applications for subtenants, tenant policy can be created and used when creating new tenants with following options:
+To define default applications for subtenants, a tenant policy with the following options can be created and used when creating new tenants:
+
 * category: configuration
 * key: default.tenant.applications
-* value: comma separated list of applications names, e.g. administration,devicemanagement,cockpit,feature-microservice-hosting,feature-cep-custom-rules
+* value: comma-separated list of applications names, e.g. administration,devicemanagement,cockpit,feature-microservice-hosting,feature-cep-custom-rules
 
-To define default microservices for subtenants following tenant option can be defined for tenant policy:
+To define default microservices for subtenants, the following tenant option can be defined for the tenant policy:
+
 * category: configuration
 * key: default.tenant.microservices
-* value: comma separated list of microservices names, e.g. device-simulator,smartrule,cep
+* value: comma-separated list of microservices names, e.g. device-simulator,smartrule,cep
 
 
 

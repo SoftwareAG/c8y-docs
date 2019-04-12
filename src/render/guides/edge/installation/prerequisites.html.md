@@ -11,7 +11,7 @@ To install Cumulocity IoT Edge, the following is required:
 |Item|Details|
 |:---|:---|
 |**Hypervisor**|- VMWare ESXi 6.5+ <br> - VMware Workstation Player 14.1.3+ <br> - Virtualbox version 5.2.8, to be downloaded from [https://www.virtualbox.org](https://www.virtualbox.org/wiki/Download_Old_Builds_5_2)<br>Note that VirtualBox support is deprecated and it is not recommended to use it in a production environment.
-|**Edge VM image**|To be downloaded from the [SAG Empower portal](https://empower.softwareag.com), based on the target hypervisor, i.e. ova for VirtualBox / ovf for ESXi and Workstation Player|
+|**Edge VM image**|To be downloaded from the [Software AG Empower portal](https://empower.softwareag.com), based on the target hypervisor, i.e. ova for VirtualBox / ovf for ESXi and Workstation Player|
 |**Cumulocity license file**|To request the license file for Cumulocity, please contact the logistics team for your region:<br> - North and South America: LogisSrvus@softwareagusa.com <br>- All Other Regions: LogisticsServiceCenterGER@softwareag.com <br>In the email, you must include <br> - your company name, under which the license has been bought <br> - the domain name (e.g. myEdge.domain.com), under which Cumulocity IoT Edge will be reachable|
 |**SSL key and SSL certificate**|Use your internal or an external CA (Certification Authority) to create these.|
 |**Apama license**|The Apama license key is provided as part of your purchase. To request the license keys for your Apama purchase, please contact the logistics team for your region:<br> - North and South America: LogisSrvus@softwareagusa.com <br> - All Other Regions: LogisticsServiceCenterGER@softwareag.com<br>**The Apama license is optional and NOT required for an Edge installation.**<br>|

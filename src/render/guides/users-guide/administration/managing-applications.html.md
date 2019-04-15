@@ -102,7 +102,7 @@ The following information is provided on the **Status** tab:
 
 The status information is available for subscribed applications as well as for own applications. Information on subscribed subtenants is only visible for the application owner. 
 
-To view the status you need the following permissions: ROLE_APPLICATION_MANAGEMENT_READ & ROLE_INVENTORY_READ
+To view the status you need the following permissions: ROLE_APPLICATION_MANAGEMENT_READ and ROLE_INVENTORY_READ
 
 #### Log files
 
@@ -148,7 +148,7 @@ To display further information on the application, simply click its card. For de
 
 To directly open an application from here, click **Open** on the respective application card. 
 
-Click **Add application** in the **Own applications** page, to add an application to your account, see [Adding applications](#adding-applications).
+Click **Add application** in the **Own applications** page to add an application to your account, see [Adding applications](#adding-applications).
 
 Click the menu icon at the top right of an application to open a context menu from where you can [**Edit** or **Remove**](#editing-and-removing) an application. 
 
@@ -189,7 +189,7 @@ In order to upload a microservice, follow these steps:
 
 After successfully uploading the zip file to the platform the application is being created.
 
->**Info**: In case of microservices, the package must contain the manifest file and docker image of the microservice. Refer to [Microservice package reference](/guides/reference/microservice-package) in the Reference guide in order to prepare and deploy the microservice package.
+>**Info**: In case of microservices, the package must contain the manifest file and Docker image of the microservice. Refer to [Microservice package reference](/guides/reference/microservice-package) in the Reference guide in order to prepare and deploy the microservice package.
 
 
 ##### <a name="external-application"></a>Linking to external applications
@@ -339,6 +339,20 @@ Users can restore previous versions of an application from an archive:
 4. Click **Remove** to remove the version from the archive.
 
 <img src="/guides/images/users-guide/Administration/admin-application-set-as-archive.png" alt="Application set as archive">
+
+### <a name="default-applications"></a>Default applications
+
+To define default applications for subtenants, a tenant policy with the following options can be created and used when creating new tenants:
+
+* category: configuration
+* key: default.tenant.applications
+* value: comma-separated list of applications names, e.g. administration,devicemanagement,cockpit,feature-microservice-hosting,feature-cep-custom-rules
+
+To define default microservices for subtenants, the following tenant option can be defined for the tenant policy:
+
+* category: configuration
+* key: default.tenant.microservices
+* value: comma-separated list of microservices names, e.g. device-simulator,smartrule,cep
 
 
 

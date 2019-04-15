@@ -10,13 +10,13 @@ Download the VirtualBox package for your operating system from [https://www.virt
 
 >**Important**: VirtualBox support is deprecated, therefore we do not recommended to use it in a production environment.
 
->**Info**: Depending on the operating system and VirtualBox version you are using, the following steps and especially the screenshots might slightly differ.
+>**Info**: Depending on the operating system and VirtualBox version you are using, the following steps and especially the screenshots might slightly differ. The sample screenshot shared below were created using Virtual Box 6.0.
 
-1. In the VirtualBox, click **Global Tools** in the top right.<br>
-<img src="/guides/images/edge/edge-vb-01a.png" name="Configure network" style="width:75%;"/>
+1. In the VirtualBox, click **Tools** > **Network** in the top left.<br>
+<img src="/guides/images/edge/edge-vb-01.png" name="Configure network" style="width:75%;"/>
 
 2. Click **Create** to set a host-only network interface for VM.<br>
-<img src="/guides/images/edge/edge-vb-02a.png" name="Configure network" style="width:75%;"/>
+<img src="/guides/images/edge/edge-vb-02.png" name="Configure network" style="width:75%;"/>
 
 3. Navigate to **File** > **Preferences** > **Network** to check the network settings. <br>
 <img src="/guides/images/edge/edge-vb-03.png" name="Configure network" style="width:75%;"/>
@@ -24,19 +24,17 @@ Download the VirtualBox package for your operating system from [https://www.virt
 4. In the **NAT Networks** tab, click the plus icon to add a new network.
 
 5. Click the settings icon on the right and make sure that **Enable network** is activated, which is the default. This network interface is used for outbound Internet/Intranet access. <br>
-<img src="/guides/images/edge/edge-vb-04.png" name="NAT network details" style="width:75%;"/>
+<img src="/guides/images/edge/edge-vb-05.png" name="NAT network details" style="width:75%;"/>
 
-6. Click **OK** to save your settings.
+6. Click **Tools** > **Network** in the top left. Select VirtualBox Host-Only Ethernet Adapter.<br>
+<img src="/guides/images/edge/edge-vb-06.png" name="NAT network details" style="width:75%;"/>
 
-7. Click **Global Tools** in the top right. Select VirtualBox Host-Only Ethernet Adapter.<br>
-<img src="/guides/images/edge/edge-vb-07.png" name="NAT network details" style="width:75%;"/>
-
-8. Click the properties icon on the right and make sure that **IPv4 Address** and **IPv4 Mask** are set to the following values: IPv4 Adress = 192.168.56.1, IPv4 Mask = 255.255.255.0 <br>
-<img src="/guides/images/edge/edge-vb-08.png" name="NAT network details" style="width:75%;"/><br>
+7. Click the properties icon on the right and make sure that **IPv4 Address** and **IPv4 Mask** are set to the following values: IPv4 Adress = 192.168.56.1, IPv4 Mask = 255.255.255.0 <br>
+<img src="/guides/images/edge/edge-vb-07.png" name="NAT network details" style="width:75%;"/><br>
 If, in your VirtualBox, there already is a Host-Only Ethernet Adapter configured with the same IPv4 address, then update its properties as described in the next steps.
 
-9. Click the **DHCP Server** tab and make sure that the DHCP server is not enabled.<br>
-<img src="/guides/images/edge/edge-vb-09.png" name="NAT network details" style="width:75%;"/>
+8. Click the **DHCP Server** tab and make sure that the DHCP server is not enabled.<br>
+<img src="/guides/images/edge/edge-vb-08.png" name="NAT network details" style="width:75%;"/>
 
 The VirtualBox now is installed and the network is set.
 

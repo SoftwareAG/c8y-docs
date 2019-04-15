@@ -149,7 +149,7 @@ You have the choice to enter the post-installation parameters manually via the c
 	* Re-enter tenant admin password:
 	```
 
-4. Provide a fully qualified domain name, e.g. "myown.iot.com". The domain name must match the domain name of the SSL certificate.
+4. Provide a fully qualified domain name, e.g. "myown.iot.com". The domain name must match the domain name of the SSL certificate. <br>Moreover, the domain name must match the Cumulocity licence’s domain. The Cumulocity licence is tied up to the domain name being used in the instance and mismatch would result in a setup failure. 
 
 	```shell
 	* Enter tenant domain name:
@@ -280,7 +280,7 @@ So as a first step you need to carry out the following prior to selecting option
 
 The disk size expanding process consists of multiple steps which are executed sequentially. After a step has been executed, its status will be shown on the console. In case of any failure in any of the steps, the process will halt and a failure message will be displayed on the console.
 
-<img src="/guides/images/edge/edge-configuration-disk-size.png" name="Expand disk size"/>
+<img src="/guides/images/edge/edge-expand-disk-size.png" name="Expand disk size"/>
 
 #### Option 6 - Update tenant password
 

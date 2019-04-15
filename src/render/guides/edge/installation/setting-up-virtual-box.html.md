@@ -29,14 +29,14 @@ Download the VirtualBox package for your operating system from [https://www.virt
 6. Click **OK** to save your settings.
 
 7. Click **Global Tools** in the top right. Select VirtualBox Host-Only Ethernet Adapter.<br>
-<img src="/guides/images/edge/edge-vb-05.png" name="NAT network details" style="width:75%;"/>
+<img src="/guides/images/edge/edge-vb-07.png" name="NAT network details" style="width:75%;"/>
 
 8. Click the properties icon on the right and make sure that **IPv4 Address** and **IPv4 Mask** are set to the following values: IPv4 Adress = 192.168.56.1, IPv4 Mask = 255.255.255.0 <br>
-<img src="/guides/images/edge/edge-vb-06.png" name="NAT network details" style="width:75%;"/><br>
+<img src="/guides/images/edge/edge-vb-08.png" name="NAT network details" style="width:75%;"/><br>
 If, in your VirtualBox, there already is a Host-Only Ethernet Adapter configured with the same IPv4 address, then update its properties as described in the next steps.
 
 9. Click the **DHCP Server** tab and make sure that the DHCP server is not enabled.<br>
-<img src="/guides/images/edge/edge-vb-07.png" name="NAT network details" style="width:75%;"/>
+<img src="/guides/images/edge/edge-vb-09.png" name="NAT network details" style="width:75%;"/>
 
 The VirtualBox now is installed and the network is set.
 

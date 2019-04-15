@@ -80,3 +80,14 @@ In the Cockpit application, select the device sending measurements in the **Grou
 In the Device Management application, click **All devices** in the navigator. Select the device from the device list and switch to the **Events** tab, to see the events sent by Apama as per the custom CEP rule. 
 
 <img src="/guides/images/edge/edge-apama-events.png" name="Events" style="width:100%;"/> 
+
+### Apama Analytics Builder
+
+Cumulocity IoT Edge includes Apama Analytics Builder.
+Analytics Builder provides self-service analytics to the domain experts, allowing web-based drag & drop of streaming analytics applications. 
+
+You can access Apama Analytics Builder from the Cumulocity IoT app switcher:
+
+![App switcher](/guides/images/edge/app-switcher-analytics-builder.png)
+
+See [Apama Analytics Builder for Cumulocity IoT](https://documentation.softwareag.com/onlinehelp/Rohan/Apama/v10-3-1/pas10-3-1/apama-pas-webhelp/index.html) for the complete documentation.

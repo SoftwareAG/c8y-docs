@@ -43,7 +43,11 @@ Using &#60;domain_name>, Cumulocity IoT Edge can be connected from the host oper
 
 ### Entering Cumulocity
 
-Once the machine is in running state, open a web browser and enter the address:
+Once the machine is in running state, open a web browser.
+
+#### Entering Cumulocity via domain name
+
+Enter the following:
 
 ```http
 https://<domain_name>
@@ -58,6 +62,24 @@ In the Login screen, log in with the following credentials:
 * Username: &#60;tenant admin username> (as provided during post-installation)
 * Password: &#60;tenant admin password> (as provided during post-installation)
 
+#### Entering Cumulocity via IP
+
+Enter the following:
+
+```http
+https://<IP_Address_Of_Edge>;
+```
+
+The Cumulocity login screen opens up.
+
+<img src="/guides/images/edge/edge-login-with-tenantid.png" name="Login screen"/>
+
+In the Login screen, log in with the following credentials:
+
+* Username: edge/&#60;tenant admin username> (as provided during post-installation)
+* Password: &#60;tenant admin password> (as provided during post-installation)
+
+<br>
 >**Info**: Cumulocity IoT Edge needs several minutes to start. Then all services should be up and running and you can login to the application.
 
 After successfully logging in, the Cumulocity platform will open:

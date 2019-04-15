@@ -170,34 +170,34 @@ The **Control** tab lists the operations being sent to a device. Refer to [Worki
 
 ### <a name="network"></a>Network
 
-Essential mobile network ("WAN") and local area network ("LAN") parameters can be viewed and configured in the "Network" tab as shown in the screenshot below.
+In the **Network** tab, mobile network (WAN) and local area network (LAN) parameters can be viewed and configured.
 
 ![Network tab](/guides/images-users-guide/DeviceManagement/devmgmt-devices-network.png)
 
-The WAN parameters in the user interface correspond to the first profile stored in the router. These parameter can be remotely configured or via SMS.
+The WAN parameters in the user interface correspond to the first profile stored in the router. These parameter can be configured remotely or via SMS.
 
-> **Info:** For SMS configuring, the router needs to be configured to accept SMS commands.
+> **Info:** For SMS configuration, the router needs to be configured to accept SMS commands.
 
-To save a WAN configuration:
+To create a WAN configuration, perform the following steps:
 
-- Enter Access Point Name ("APN")
-- Enter **User** and **Password** of your account in the platform to which you wish to establish connection.
-- Select authentication type.
-- Click **Save changes**.
+1. Enter the Access Point Name (APN).
+2. Enter the username and the password of your account in the platform to which you wish to establish a connection.
+3. Select the authentication type.
+4. Click **Save changes** to save your settings.
 
-LAN and DHCP parameters can be directly configured from Cumulocity as well. 
+LAN and DHCP parameters can be directly configured from Cumulocity as well.
 
 To configure LAN parameters simply enter **IP address** and **Subnet mask**.
 
 > **Info:** **Name** and **Mac address** fields are not configurable.
 
-For the DHCP configuration, the following fields must be filled:
+To create a DHCP configuration, perform the following steps:
 
-- **Address Range**: This is the range in which the connection can be established.
-- **DNS**
-- **DNS 2**
-- **Domain Name**
-- When ready, click **Save changes**.
+1. Enter the **Address Range** in which the connection can be established.
+2. Enter the **DNS**.
+3. Enter the **DNS 2**.
+4. Enter the **Domain Name**.
+5. When ready, click **Save changes** to save your settings.
 
 > **Info:** If the LAN configuration is disabled, the DHCP configuration is automatically disabled.
 

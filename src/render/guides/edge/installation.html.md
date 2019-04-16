@@ -1,6 +1,6 @@
 
 ---
-order: 20
+order: 30
 title: Setting up Cumulocity IoT Edge
 layout: subsections
 collection: 'guides/edge/installation'

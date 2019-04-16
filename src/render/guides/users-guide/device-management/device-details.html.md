@@ -193,11 +193,11 @@ To configure LAN parameters simply enter **IP address** and **Subnet mask**.
 
 To create a DHCP configuration, perform the following steps:
 
-1. Enter the **Address Range** in which the connection can be established.
-2. Enter the **DNS**.
-3. Enter the **DNS 2**.
-4. Enter the **Domain Name**.
-5. When ready, click **Save changes** to save your settings.
+1. Enter the Address Range in which the connection can be established.
+2. Enter the DNS.
+3. Enter the DNS 2.
+4. Enter the Domain Name.
+5. Click **Save changes** to save your settings.
 
 > **Info:** If the LAN configuration is disabled, the DHCP configuration is automatically disabled.
 

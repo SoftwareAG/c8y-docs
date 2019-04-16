@@ -13,7 +13,7 @@ The following image shows the networking overlay of Edge server. Two network ada
 
 ### Component overlay
 
-The following image covers the components Edge is built with. 
+The following image covers the components Cumulocity IoT Edge is built with. 
 
 <img src="/guides/images/edge/edge-components.png" name="Components" style="width:75%;"/>
  

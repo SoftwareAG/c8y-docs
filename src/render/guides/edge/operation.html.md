@@ -1,6 +1,6 @@
 
 ---
-order: 40
+order: 50
 title: Operating Cumulocity IoT Edge
 layout: subsections
 collection: 'guides/edge/operation'

@@ -26,7 +26,11 @@ In the **Dashboard info** section of the dashboard editor, provide the following
 * The location of the dashboard in the navigator, with "10000" being ordered first and "-10000" last
 * An icon which is shown next to the dashboard name in the navigator
 
-In the **Dashboard layout** section you can select a theme for the dashboard (one of "Light", "Dark", "Transparent" or "Branded") and a default header style for the widgets (one of "Regular", "Border", "Overlay", or "Hidden"). Moreover, you can change the default widget margin (default value is 15 px). 
+In the **Dashboard layout** section you can select a theme for the dashboard (one of "Light", "Dark", "Transparent" or "Branded") and a default header style for the widgets (one of "Regular", "Border", "Overlay", or "Hidden"). Moreover, you can change the default widget margin (default value is 15 px).
+
+Additionally, you can enable the option "Translate widget titles if possible". If enabled, the widget title will be translated every time the language is changed.
+
+> **Info:** The widget titles will be translated only if a valid translation is available. 
 
 A preview of the selected layout settings is immediately displayed in the "Preview" section at the right to visualize your selections.
 

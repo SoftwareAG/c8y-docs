@@ -247,7 +247,7 @@ from EventCreated e
 where e.event.type = "c8y_LocationUpdate";
 ```
 
-If you have a device that sends location updates, you should see them immediately in the user interface. To receive them in your own REST client, you use the [Notification API](/guides/reference/real-time-notifications) to subscribe to them. The API is based on the Bayeux protocol. First, a handshake is required. The handshake tells Cumulocity what protocols the client supports for notifications and allocates a client ID to the client.
+If you have a device that sends location updates, you should see them immediately in the user interface. To receive them in your own REST client, you use the [Notification API](/guides/reference/real-time-notifications) to subscribe to them. The API is based on the Bayeux protocol using HTTPS long-polling and the restrictions as described in [Real-time notifications](/guides/reference/real-time-notifications) in the Reference guide apply. First, a handshake is required. The handshake tells Cumulocity what protocols the client supports for notifications and allocates a client ID to the client.
 
 ```http
 POST /cep/notifications

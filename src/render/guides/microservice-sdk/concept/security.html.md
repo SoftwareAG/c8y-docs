@@ -4,12 +4,12 @@ title: Security
 layout: redirect
 ---
 
-Microservices typically provide a REST API and Cumulocity provides a light API gateway (“Proxy”) for inbound REST requests. Inbound WebSocket requests are not supported. Between the client and the microservice container the API gateway is located and provides:
+Microservices typically provide a REST API and Cumulocity provides a light API gateway (“Proxy”) for inbound REST requests. Inbound WebSocket requests are supported. Between the client and the microservice container the API gateway is located and provides:
 
 * Authorization: All calls are authenticated using Cumulocity users basic or OAuth authorization.
 * TLS Termination: TLS inbound calls are terminated and only HTTP is used inside the cluster.
 * Metering: The API calls are metered in the “API calls” tenant statistics.
-* Routing: The API gateway routes requests for <kbd>/service/&lt;name&gt;</kbd> to the microservice _&lt;name&gt;_. The request routed to the microservice container and tenant options are added to the request headers.
+* Routing: The API gateway routes requests for <kbd>/service/&lt;name&gt;</kbd> to the microservice _&lt;name&gt;_. The request routed to the microservice container and tenant options are added to the request headers. If `contextPath` is defined in the application manifest, then API gateway routes requests for <kbd>/service/&lt;contextPath&gt;</kbd>.
 * Tenant platform user: This is the user that logs into the application. Normally created using the Cumulocity Administration application.
 * Microservice Bootstrap user: The user being created for microservice bootstrap operations and it is connected to the application itself. This user is authorized to get the microservice subscriptions and make requests for its applications. Refer to [Microservice development](/guides/microservice-sdk/rest#microservice-development) for more details.
 * Service user: Reflects tenant subscription to a microservice.

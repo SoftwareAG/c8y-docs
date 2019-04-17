@@ -1,9 +1,8 @@
 
 ---
-order: 30
-title: REST API reference
-layout: subsections
-collection: 'guides/zementis/api-reference'
+order: 5
+title: overview
+layout: redirect
 ---
 
 This API reference is meant to give you a complete idea of the APIs offered by the Zementis microservice in the Cumulocity platform.

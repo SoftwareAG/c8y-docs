@@ -4,16 +4,20 @@ title: Request routing
 layout: redirect
 ---
 
-The request is redirected to a microservice depending on isolation level (auto-scaling is ignored at this moment for clarity), subscription and authorization. A typical request to the platform looks like
+The request is redirected to a microservice depending on the isolation level (auto-scaling is ignored at this moment for clarity), subscription and authorization. A typical request to the platform looks like
 
-    {METHOD} /service/{MICROSERVICE}/{MICROSERVICE_ENDPOINT} 
-    Host: ...
-    Authorization: Basic ...
+```avrasm
+<METHOD> /service/<MICROSERVICE>/<MICROSERVICE_ENDPOINT>
+Host: ...
+Authorization: Basic ...
+```
 
-First, credentials are used to verify if a requesting user is authorized to access the microservice. Secondly, tenant subscription is verified. If both checks pass, the request is routed to a dedicated microservice deployment in case of PER_TENANT isolation, or to a shared deployment in case of MULTI_TENANT isolation. 
+Credentials are used to verify if a requesting user is authorized to access the microservice; tenant subscription is verified afterwards. If both checks pass, the request is routed to a dedicated microservice deployment in case that the isolation level is per tenant, or to a shared deployment in case of multi-tenant isolation.
 
-The routed request is stripped of /service/{MICROSERVICE} part, however the Authorization header is not modified, thus a request is still executed as a tenant platform user. 
+The routed request is stripped of <kbd>/service/&lt;MICROSERVICE&gt;</kbd> part. However, the Authorization header is not modified, thus a request is still executed as a tenant platform user.
 
-    {METHOD} /{MICROSERVICE_ENDPOINT} 
-    Host: ...
-    Authorization: Basic ...
+```avrasm
+<METHOD> /<MICROSERVICE_ENDPOINT>
+Host: ...
+Authorization: Basic ...
+```

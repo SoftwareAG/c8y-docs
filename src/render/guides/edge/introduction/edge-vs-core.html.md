@@ -24,4 +24,4 @@ The following differences apply:
 |Apama real-time analytics|Included|Optional
 |Data Broker|Included|Optional
 
->**Info**: In addition to Cumulocity IoT Edge, we provide a light-weight approach to implement Edge functionality: the Cumulocity Agent and Device SDK. These can be installed on less powerful devices like embedded devices. 
+>**Info**: In addition to Cumulocity IoT Edge, we provide a light-weight approach to implement Edge functionality: the Cumulocity agent and Device SDK. These can be installed on less powerful devices like embedded devices. 

@@ -374,7 +374,7 @@ Save the file. It is re-read by the application every few minutes so you do not 
 The diagnostic utility is auto-enabled and will be running periodically. However, this can also be triggered manually on demand. To execute it manually, follow the steps below. 
 
 	# cd opt/c8y/utilities/diagnostic-utility
-	# ./run_data_collector.py
+	# sudo ./run_data_collector.py
 
 The diagnostic utility provides the following information.
 

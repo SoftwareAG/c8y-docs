@@ -8,7 +8,7 @@ Lightweight M2M (LWM2M) is a traffic and resource-optimized protocol to remotely
 
 You can connect any device supporting LWM2M to Cumulocity without programming. Instead, you configure how LWM2M devices are mapped to Cumulocity using device protocols.
 
-![Device protocols](/guides/images/users-guide/LWM2M/deviceprotocols.png)
+![Device protocols](/guides/images/users-guide/LWM2M/devmgmt-lwm2m-deviceprotocol.png)
 
 
 ### <a name="register"></a>Registering LWM2M devices
@@ -19,45 +19,194 @@ To connect LWM2M devices, you need to upload a CSV file with registration data. 
 
 In the first CSV example you can see the following fields:
 
-|Field        |Description|
-|:----------------|:----
-|ID|Unique ID of the device. For example, the ID could be an IMEI, serial number, etc.|
-|IDTYPE|The type of the device.|
-|CREDENTIALS|The content of this field is not used by LWM2M.|
-|NAME|The name of the device. In this case the name of the device is the same as the device ID.|
-|TYPE|This field needs to have the value "c8y_lwm2m”.|
-|SHELL|To enable “Shell”, the value of this field must be “1”. If you want to disable “Shell” the value must be “0”. For more info about the shell commands, see [Shell commands](#shell_commands).|
-|com_cumulocity&#95;model&#95;Agent|This field needs to have the value "1".|
-|endpoint id|Indicates the LWM2M client’s “Endpoint ID” in order to allow the LwM2M bootstrap to provision the bootstrap information for the LWM2M client.|
-|lwm2m server url|The URL the server is using for bootstrap. The LWM2M bootstrap server is used to provision the LWM2M client with the information required to contact the LWM2M servers. If you are using the Cumulocity service the hostname of the LWM2M server is "lwm2m.cumulocity.com". The bootstrap server port is "5683" and the LWM2M port is "5783". Note, that these values can be different for other services.|
-|securityMode|In this example the value of the security mode is “NO&#95;SEC” which means that there is no security. It is highly recommended to always protect the LWM2M protocol. However, there are scenarios in which the LWM2M protocol is deployed in environments where the lower layer security mechanisms are provided. Currently Cumulocity supports only “NO_SEC” and “PSK”. With “PSK”, the client and server have a common secret symmetric cryptography. In the next example you will see how the CSV file should look when the security mode value is “PSK”.|
+<table>
+<col style="width:19%">
+<col style="width:81%">
+<thead>
+<tr>
+<th style="text-align:left">Field</th>
+<th style="text-align:left">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">ID</td>
+<td style="text-align:left">Unique ID of the device. For example, the ID could be an IMEI, serial number, etc.</td>
+</tr>
+<tr>
+<td style="text-align:left">IDTYPE</td>
+<td style="text-align:left">The type of the device.</td>
+</tr>
+<tr>
+<td style="text-align:left">CREDENTIALS</td>
+<td style="text-align:left">The content of this field is not used by LWM2M.</td>
+</tr>
+<tr>
+<td style="text-align:left">NAME</td>
+<td style="text-align:left">The name of the device. In this case the name of the device is the same as the device ID.</td>
+</tr>
+<tr>
+<td style="text-align:left">TYPE</td>
+<td style="text-align:left">This field needs to have the value "c8y_lwm2m”.</td>
+</tr>
+<tr>
+<td style="text-align:left">SHELL</td>
+<td style="text-align:left">To enable “Shell”, the value of this field must be “1”. If you want to disable “Shell” the value must be “0”. For more info about the shell commands, see <a href="#shell_commands" class="no-ajaxy">Shell commands</a>.</td>
+</tr>
+<tr>
+<td style="text-align:left">com_cumulocity_model_Agent</td>
+<td style="text-align:left">This field needs to have the value "1".</td>
+</tr>
+<tr>
+<td style="text-align:left">endpoint id</td>
+<td style="text-align:left">Indicates the LWM2M client’s “Endpoint ID” in order to allow the LwM2M bootstrap to provision the bootstrap information for the LWM2M client.</td>
+</tr>
+<tr>
+<td style="text-align:left">lwm2m server url</td>
+<td style="text-align:left">The URL the server is using for bootstrap. The LWM2M bootstrap server is used to provision the LWM2M client with the information required to contact the LWM2M servers. If you are using the Cumulocity service the hostname of the LWM2M server is "lwm2m.cumulocity.com". The bootstrap server port is "5683" and the LWM2M port is "5783". Note, that these values can be different for other services.</td>
+</tr>
+<tr>
+<td style="text-align:left">securityMode</td>
+<td style="text-align:left">In this example the value of the security mode is “NO_SEC” which means that there is no security. It is highly recommended to always protect the LWM2M protocol. However, there are scenarios in which the LWM2M protocol is deployed in environments where the lower layer security mechanisms are provided. Currently Cumulocity supports only “NO_SEC” and “PSK”. With “PSK”, the client and server have a common secret symmetric cryptography. In the next example you will see how the CSV file should look when the security mode value is “PSK”.</td>
+</tr>
+</tbody>
+</table>|
 
 ![CSV example 2.1](/guides/images/users-guide/LWM2M/example_2_1.png)
 ![CSV example 2.2](/guides/images/users-guide/LWM2M/example_2_2.png)
 
 In this CSV example, the security mode value is “PSK”, hence additional fields are required. The table below reflects the full set of possible fields.
 
-|Field|Type|Description|Mandatory|
-|:-------------|:---|:----------|:--------|
-|lwm2m psk_key|String|For security mode PSK: The key used by the device for LWM2M in PSK mode. Will be delivered to the device during bootstrap.|Mandatory for PSK. Should not be set for NO_SEC|
-|lwm2m psk_id|String|For security mode PSK: The ID used by the device for LWM2M in PSK mode. Will be delivered to the device during bootstrap. Mostly the same as the endpoint name.|Mandatory for PSK. Should not be set for NO_SEC|
-|endpoint id|String|The name of the LWM2M endpoint.|Yes|
-|bootstrap psk_id|String|For security mode PSK: The ID used by the device for bootstrapping in PSK mode.|Yes for PSK|
-|bootstrap psk_key|String|For security mode PSK: The key used by the device for bootstrapping in PSK mode.|Yes for PSK|
-|lwm2m server url|String|The URL of the LWM2M server to be sent to the devices during bootstrap. If you are using the Cumulocity service the hostname of the LWM2M server is "lwm2m.cumulocity.com". The bootstrap server port is "5683" and the LWM2M port is "5783". Note, that these values can be different for other services.|Yes, for LWM2M bootstrap|
-|securityMode|String, “NO_SEC” or “PSK|The LWM2M security mode to be used. Possible values are PSK and NO_SEC.|Yes|
-|serverPublicKey|String|The public key of the server.|Optional|
-|generateBootstrapServerConfig|Boolean|Toggles if Cumulocity generates a server config for the LWM2M bootstrap server and writes that back during bootstrap. Default is false.|Optional|
-|securityInstanceOffset|Integer|The first instance to be used during bootstrap to which entries are written. "0" is default. If set e.g. to "3", the first instance will be three.|Optional|
-|bootstrapShortServerId|Integer|The short server ID to be used for the bootstrap server. Default is "0".|Optional|
-|lwm2mShortServerId|Integer|The short server ID to be used for LWM2M server. Default is "1".|Optional|
-|registrationLifetime|Integer|The registration lifetime that is sent to the device during bootstrap. Overrides global agent configuration.|Optional|
-|defaultMinimumPeriod|Integer|The default minimum period to configure during bootstrap. See LWM2M Spec for explanation.|Optional|
-|defaultMaximumPeriod|Integer|The default max period  to configure during bootstrap. See LWM2M Spec for explanation.|Optional|
-|bindingMode|String|The LWM2M binding mode to be reported to the device. Supported are “UQ” (default, queuing) and “U” (unqueued). Note, that Cumulocity will always queue operations.|Optional|
-|notificationIfDisabled (true/false)|Boolean|See LWM2M spec. Default: Not configured.|Optional, defaults to Leshan default behavior|
-|disableTimeout (true/false)|Boolean|See LWM2M spec. Default: Not configured.|Optional, defaults to Leshan default behavior|
-|external-c8y_BootstrapPskId|String|The ID being used to find a device during bootstrap.|Optional|
+<table>
+<col style="width=15%">
+<col style="width=15%">
+<col style="width=55%">
+<col style="width=15%">
+<thead>
+<tr>
+<th style="text-align:left">Field</th>
+<th style="text-align:left">Type</th>
+<th style="text-align:left">Description</th>
+<th style="text-align:left">Mandatory</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">lwm2m psk_key</td>
+<td style="text-align:left">String</td>
+<td style="text-align:left">For security mode PSK: The key used by the device for LWM2M in PSK mode. Will be delivered to the device during bootstrap.</td>
+<td style="text-align:left">Mandatory for PSK. Should not be set for NO_SEC</td>
+</tr>
+<tr>
+<td style="text-align:left">lwm2m psk_id</td>
+<td style="text-align:left">String</td>
+<td style="text-align:left">For security mode PSK: The ID used by the device for LWM2M in PSK mode. Will be delivered to the device during bootstrap. Mostly the same as the endpoint name.</td>
+<td style="text-align:left">Mandatory for PSK. Should not be set for NO_SEC</td>
+</tr>
+<tr>
+<td style="text-align:left">endpoint id</td>
+<td style="text-align:left">String</td>
+<td style="text-align:left">The name of the LWM2M endpoint.</td>
+<td style="text-align:left">Yes</td>
+</tr>
+<tr>
+<td style="text-align:left">bootstrap psk_id</td>
+<td style="text-align:left">String</td>
+<td style="text-align:left">For security mode PSK: The ID used by the device for bootstrapping in PSK mode.</td>
+<td style="text-align:left">Yes for PSK</td>
+</tr>
+<tr>
+<td style="text-align:left">bootstrap psk_key</td>
+<td style="text-align:left">String</td>
+<td style="text-align:left">For security mode PSK: The key used by the device for bootstrapping in PSK mode.</td>
+<td style="text-align:left">Yes for PSK</td>
+</tr>
+<tr>
+<td style="text-align:left">lwm2m server url</td>
+<td style="text-align:left">String</td>
+<td style="text-align:left">The URL of the LWM2M server to be sent to the devices during bootstrap. If you are using the Cumulocity service the hostname of the LWM2M server is "lwm2m.cumulocity.com". The bootstrap server port is "5683" and the LWM2M port is "5783". Note, that these values can be different for other services.</td>
+<td style="text-align:left">Yes, for LWM2M bootstrap</td>
+</tr>
+<tr>
+<td style="text-align:left">securityMode</td>
+<td style="text-align:left">String, “NO_SEC” or “PSK</td>
+<td style="text-align:left">The LWM2M security mode to be used. Possible values are PSK and NO_SEC.</td>
+<td style="text-align:left">Yes</td>
+</tr>
+<tr>
+<td style="text-align:left">serverPublicKey</td>
+<td style="text-align:left">String</td>
+<td style="text-align:left">The public key of the server.</td>
+<td style="text-align:left">Optional</td>
+</tr>
+<tr>
+<td style="text-align:left">generateBootstrapServerConfig</td>
+<td style="text-align:left">Boolean</td>
+<td style="text-align:left">Toggles if Cumulocity generates a server config for the LWM2M bootstrap server and writes that back during bootstrap. Default is false.</td>
+<td style="text-align:left">Optional</td>
+</tr>
+<tr>
+<td style="text-align:left">securityInstanceOffset</td>
+<td style="text-align:left">Integer</td>
+<td style="text-align:left">The first instance to be used during bootstrap to which entries are written. "0" is default. If set e.g. to "3", the first instance will be three.</td>
+<td style="text-align:left">Optional</td>
+</tr>
+<tr>
+<td style="text-align:left">bootstrapShortServerId</td>
+<td style="text-align:left">Integer</td>
+<td style="text-align:left">The short server ID to be used for the bootstrap server. Default is "0".</td>
+<td style="text-align:left">Optional</td>
+</tr>
+<tr>
+<td style="text-align:left">lwm2mShortServerId</td>
+<td style="text-align:left">Integer</td>
+<td style="text-align:left">The short server ID to be used for LWM2M server. Default is "1".</td>
+<td style="text-align:left">Optional</td>
+</tr>
+<tr>
+<td style="text-align:left">registrationLifetime</td>
+<td style="text-align:left">Integer</td>
+<td style="text-align:left">The registration lifetime that is sent to the device during bootstrap. Overrides global agent configuration.</td>
+<td style="text-align:left">Optional</td>
+</tr>
+<tr>
+<td style="text-align:left">defaultMinimumPeriod</td>
+<td style="text-align:left">Integer</td>
+<td style="text-align:left">The default minimum period to configure during bootstrap. See LWM2M Spec for explanation.</td>
+<td style="text-align:left">Optional</td>
+</tr>
+<tr>
+<td style="text-align:left">defaultMaximumPeriod</td>
+<td style="text-align:left">Integer</td>
+<td style="text-align:left">The default max period  to configure during bootstrap. See LWM2M Spec for explanation.</td>
+<td style="text-align:left">Optional</td>
+</tr>
+<tr>
+<td style="text-align:left">bindingMode</td>
+<td style="text-align:left">String</td>
+<td style="text-align:left">The LWM2M binding mode to be reported to the device. Supported are “UQ” (default, queuing) and “U” (unqueued). Note, that Cumulocity will always queue operations.</td>
+<td style="text-align:left">Optional</td>
+</tr>
+<tr>
+<td style="text-align:left">notificationIfDisabled (true/false)</td>
+<td style="text-align:left">Boolean</td>
+<td style="text-align:left">See LWM2M spec. Default: Not configured.</td>
+<td style="text-align:left">Optional, defaults to Leshan default behavior</td>
+</tr>
+<tr>
+<td style="text-align:left">disableTimeout (true/false)</td>
+<td style="text-align:left">Boolean</td>
+<td style="text-align:left">See LWM2M spec. Default: Not configured.</td>
+<td style="text-align:left">Optional, defaults to Leshan default behavior</td>
+</tr>
+<tr>
+<td style="text-align:left">external-c8y_BootstrapPskId</td>
+<td style="text-align:left">String</td>
+<td style="text-align:left">The ID being used to find a device during bootstrap.</td>
+<td style="text-align:left">Optional</td>
+</tr>
+</tbody>
+</table>
 
 > **Info**: Firmware updates are also supported. For more information, see [Device Management > Managing device data](/guides/users-guide/device-management/#software-repo) in the User guide.
 
@@ -77,18 +226,21 @@ To add a new LWM2M device protocol follow these steps:
 1. In the Device Management application, move to the **Device protocol** page.
 2. Click **Add device protocol** in the top menu bar.
 3. In the upcoming dialog select **LWM2M** as device protocol type. <br><br>
-<img src="/guides/images/users-guide/LWM2M/protocol_type.png" alt="Protocol type" style="max-width: 50%">
+
+![Add new protocol](/guides/images/users-guide/LWM2M/devmgmt-lwm2m-newprotocol.png)
 
 4. Next, upload an appropriate DDF or XML file. DDF or XML files describe the data provided by your device. They are typically provided by the manufacturer or by standards bodies such as IPSO. There are also 3 "special" device protocols (DDF files) for standard OMA objects: 6 (location tracking), 5 (firmware update) and 3 (device information). If these files are not uploaded, then neither location tracking nor firmware updates will work. By default, the LWM2M agent adds mappings to these objects and knows how to "handle" their information without any additional configuration. The XML schema used by LWM2M can be found here. <br>
 If the DDF files for the default mappings are uploaded in the management tenant, all subscribed user tenants will inherit this behavior. <br><br>
-<img src="/guides/images/users-guide/LWM2M/uploadDDF.png" alt="Upload DDF" style="max-width: 75%">
+
+![Upload DDF file](/guides/images/users-guide/LWM2M/devmgmt-lwm2m-uploadDDF.png)
 
 5. In the next dialog, you can see the name and description of the protocol. Click **Continue** to create the new device protocol. <br><br>
-<img src="/guides/images/users-guide/LWM2M/name_descr_protocol.png" alt="Protocol name" style="max-width: 75%">
+
+![Upload DDF file](/guides/images/users-guide/LWM2M/devmgmt-lwm2m-uploadprotocol.png)
 
 The device protocol will open in a new page.
 
-![Example protocol](/guides/images/users-guide/LWM2M/example_protocol1.png)
+![Example protocol](/guides/images/users-guide/LWM2M/devmgmt-lwm2m-protocol-example.png)
 
 In the device protocol page, you will see the description at the top left and the ID, the creation date and date of the last update at the top right.
 
@@ -98,13 +250,13 @@ Below, a list of resources configured for the device will be listed (which is em
 
 Example: In the following screenshot you can see an example device protocol. This object should be used with a temperature sensor to report a temperature measurement. It also provides resources for minimum/maximum measured values and the minimum/maximum range that can be measured by the temperature sensor. An example measurement unit is “degrees Celsius”.
 
-![Example protocol2](/guides/images/users-guide/LWM2M/example_protocol2.png)
+![Example protocol2](/guides/images/users-guide/LWM2M/devmgmt-lwm2m-temperature-example.png)
 
 #### <a name="resources"></a>Adding additional functionalities to a resource
 
 The functionalities that you may enable are the following:
 
-![Resource functionalities](/guides/images/users-guide/LWM2M/functionalities.png)
+![Resource functionalities](/guides/images/users-guide/LWM2M/devmgmt-lwm2m-functionalities.png)
 
 **Send measurement**
 
@@ -134,7 +286,7 @@ Turn on **Send event** to send an event each time you receive a resource value. 
 
 Turn on **Custom Actions** to map LWM2M data into Cumulocity using custom data processing actions. For specialized integration use cases, it is required to perform customized data processing on LWM2M data. One example are LWM2M resources of the OPAQUE data type that contain proprietary, binary data, CBOR, XML or alike.
 
-![Custom actions](/guides/images/users-guide/LWM2M/customactions.png)
+![Custom actions](/guides/images/users-guide/LWM2M/devmgmt-lwm2m-customactions.png)
 
 Cumulocity LWM2M allows the set of custom actions to be extended using decoder microservices. A decoder microservice is an ordinary Cumulocity microservice that implements a simple decoder interface. The LWM2M agent calls this microservice for decoding data in a customer-specific way. We are providing an according example how to write such a decoder microservice in our public [Bitbucket repository](https://bitbucket.org/m2m/cumulocity-examples/src/develop/). 
 
@@ -144,7 +296,7 @@ If **Auto-Observe** is turned on for a resource, the LWM2M server observes a spe
 
 > **Info**: At least one functionality must be set to enable "Auto observe".
 
-![Resource](/guides/images/users-guide/LWM2M/resources.png)
+![Resource](/guides/images/users-guide/LWM2M/devmgmt-lwm2m-autoobserve.png)
 
 ### LWM2M device details
 
@@ -154,7 +306,7 @@ If **Auto-Observe** is turned on for a resource, the LWM2M server observes a spe
 
 In the **Objects** tab of a LWM2M device, you can view all objects, resources and instances of the device. Additionally, you can create new operations, see all currently pending operations and view the history of all previous operations.
 
-![Objects view](/guides/images/users-guide/DeviceManagement/DevMgmt_objects-view.png)
+![Objects view](/guides/images/users-guide/LWM2M/devmgmt-lwm2m-objects.png)
 
 **Info**: In order to see resources in the **Objects** tab, the resources first have to be added in the **Device Protocols** page.
 
@@ -162,33 +314,33 @@ The following operations may be available in each instance:
 
 - Read Object: Reads all instances for the selected object and lists all available resources for each instance.
 <br><br>
-![Read Objects](/guides/images/users-guide/DeviceManagement/DevMgmt_read-object.png)
+![Read Objects](/guides/images/users-guide/LWM2M/devmgmt-lwm2m-devices-readobject.png)
 <br><br>
 - Read Instance: Reads the current instance of the given object and lists all available resources.
 <br><br>
-![Read Instance](/guides/images/users-guide/DeviceManagement/DevMgmt_read-instance.png)
+![Read Instance](/guides/images/users-guide/LWM2M/devmgmt-lwm2m-devices-readinstance.png)
 <br><br>
 - Create Instance: Creates a new instance for the selected object.
 - Delete Instance: Deletes the selected instance.
 
 **Info:**  Some instances do not have all of the listed operations.
 
-Some object cards show additional operations which can be performed. These operations become available after reading the object/instance, for example, device **Reboot** or **Reset error code**. In order to perform these operations, click **Execute**.
+Some object cards show additional operations which can be performed. These operations become available after reading the object/instance, for example, device **Update**. In order to perform the operation, click **Execute**.
 
-![Execute operation](/guides/images/users-guide/DeviceManagement/DevMgmt_execute-operation.png)
+![Execute operation](/guides/images/users-guide/LWM2M/devmgmt-lwm2m-devices-execute.png)
 
 More information can be acquired for each resource by hovering over the tooltip icon.
 
-![Tooltip](/guides/images/users-guide/DeviceManagement/DevMgmt_tooltip-hover.png)
+![Tooltip](/guides/images/users-guide/LWM2M/devmgmt-lwm2m-devices-tooltip.png)
 
 Additional information on recent operations can be viewed by clicking the operations button located on the right side of an instance card. The button is only visible if any operation has been performed. The number of unread operations can be seen on the top right of the button. In the example below there is only one.
 
-![Recent operations](/guides/images/users-guide/DeviceManagement/DevMgmt_recent-operations.png)
-![Recent operations 2](/guides/images/users-guide/DeviceManagement/DevMgmt_recent-operations2.png)
+![Recent operations](/guides/images/users-guide/LWM2M/devmgmt-lwm2m-devices-operations.png)
+![Recent operations 2](/guides/images/users-guide/LWM2M/devmgmt-lwm2m-devices-operations2.png)
 
 To view the history of all operations, simply click **View history**. Note, that you will be redirected to the **Control** tab.
 
-![Control tab](/guides/images/users-guide/DeviceManagement/DevMgmt_operations.png)
+![View History control tab](/guides/images/users-guide/LWM2M/devmgmt-lwm2m-devices-control.png)
 
 **Audit Configuration**
 
@@ -196,19 +348,19 @@ In the **Audit configuration** page you can audit the current device by comparin
 
 Click **Audit configuration** in the right of the top menu bar to navigate to the **Audit configuration** page.
 
-![Audit configuration](/guides/images/users-guide/DeviceManagement/DevMgmt_audit_config.png)
+![Audit configuration](/guides/images/users-guide/LWM2M/devmgmt-lwm2m-devices-audit.png)
 
 To sync properties, select the desired reference device from the dropdown list. Check the properties that you wish to sync and click **Sync selected properties**.
 
 > **Info**: The numbers in the green circles represent the number of properties in the instance which have the same value in both devices. Respectively, the numbers in the red circles represent the number of properties which have different values compared to the values of the referenced device. If an instance is expanded, you can select only specific properties which can be synced.
 
-![Sync properties](/guides/images/users-guide/DeviceManagement/DevMgmt_sync_properties.png)
+![Sync properties](/guides/images/users-guide/LWM2M/devmgmt-lwm2m-devices-sync.png)
 
 #### <a name="lwm2m-bootstrap"></a> LWM2M bootstrap parameters
 
 In the **LWM2M bootstrap parameters** tab, bootstrap parameters of the current device can be viewed and changed. To modify a parameter, enter the desired value in a field of your choice and click **Save.**
 
-![Bootstrap customization](/guides/images/users-guide/DeviceManagement/DevMgmt_bootstrap_customization.png)
+![Bootstrap customization](/guides/images/users-guide/LWM2M/devmgmt-lwm2m-devices-bootstrap.png)
 
 > **Important:** Currently only the "NO_SEC" and "PSK" security modes are supported.
 
@@ -247,13 +399,13 @@ Validation rules are used to verify that the data a user enters in a resource me
 
 Validation rules can only be added to resources which have “write” permissions. Resources which can have validation rules are marked by the following icon:
 
-![Validation rule icon](/guides/images/users-guide/LWM2M/validation_rule_icon.png)
+![Validation rule icon](/guides/images/users-guide/LWM2M/devmgmt-lwm2m-protocols-rules.png)
 
 When hovering over the icon, you can see whether there are defined validation rules.
 
 Add a new validation rule by clicking on the desired resource and then click **Add validation rule**.
 
-![Add validation rule](/guides/images/users-guide/LWM2M/add_validation_rule.png)
+![Add validation rule](/guides/images/users-guide/LWM2M/devmgmt-lwm2m-protocols-addrule.png)
 
 Validation rules can have the following types:
 
@@ -276,7 +428,7 @@ After selecting a type, the following rules can be chosen:
 
 To delete a rule, simply click on the delete icon:
 
-![Remove lwm2m rule](/guides/images/users-guide/LWM2M/lwm2m-rule-remove.png)
+![Remove lwm2m rule](/guides/images/users-guide/LWM2M/devmgmt-lwm2m-protocols-removerule.png)
 
 Click **Save** to save your settings.
 

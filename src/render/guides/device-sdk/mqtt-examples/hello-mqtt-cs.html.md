@@ -193,6 +193,46 @@ What does the code in `main` do?
 
 Note that the subscription is established after the device creation, otherwise if there is no device for a given ``clientId``, the server will not accept it.
 
+####Create new event with Json via Mqtt
+The purpose of this example is to show the creation of an event. Before running the example, you must provide the credentials for the device. For more details follow the [link](https://www.cumulocity.com/guides/device-sdk/rest#step-0-request-device-credentials).
+Do not use new line characters  _\r\n_ and escaping characters spefic for Windows OS.
+
+```cs
+            const string serverUrl = "mqtt.cumulocity.com";
+            const string clientId = "my_mqtt_cs_client";
+            const string device_name = "My new MQTT device";
+            const string user = "<<tenant>>/<<device_username>>";
+            const string password = "<<password>>";
+
+            //TCP
+            var cDetails = new ConnectionDetailsBuilder()
+                .WithClientId(clientId)
+                .WithHost(serverUrl)
+                .WithCredentials(user, password)
+                .WithCleanSession(true)
+                .WithProtocol(TransportType.Tcp)
+                .Build();
+
+            string topicJson = "event/events/create";
+            string msgJson = "{  \"type\": \"TestEvent\", \"text\": \"sensor was triggered\", \"time\": \"2019-04-18T13:03:27.845Z\" }";
+
+            var messageJson = new MqttMessageRequestBuilder()
+                .WithTopicName(topicJson)
+                .WithQoS(QoS.EXACTLY_ONCE)
+                .WithMessageContent(msgJson)
+                .Build();
+
+            MqttClient client = new MqttClient(cDetails);
+            client.MessageReceived += Client_MessageReceived;
+            await client.EstablishConnectionAsync();
+            
+            await client.SubscribeAsync(new MqttMessageRequest() { TopicName = "error" });
+
+            await client.PublishAsync(messageJson);
+```
+
+For specific procedural details follow the [link](https://www.cumulocity.com/guides/device-sdk/mqtt/#json)
+
 #### Building and running the application
 
 Use the following commands to build the application:

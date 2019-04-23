@@ -8,7 +8,7 @@ layout: redirect
 
 Cumulocity includes preset global Smart Rule types. 
 
-<img src="/guides/images/users-guide/Cockpit/Cockpit_GlobalSmartRules.png" name="Global Smart Rules" style="width:75%;"/>
+![Global smart rules](/guides/images/users-guide/Cockpit/cockpit-globalsmartrules.png)
 
 Each global Smart Rule type provides different parameters to configure. 
 
@@ -26,7 +26,7 @@ When an alarm is created, a SMS is sent.
 
 The rule uses the following parameters:
 
-<img src="/guides/images/users-guide/Cockpit/Cockpit_SmartRuleSendSMS.png" name="Smart Rule send SMS" style="width:50%;"/>
+![On alarm send SMS](/guides/images/users-guide/Cockpit/cockpit-globalsmartrules-sendsms.png)
 
 |Step|Field|Description|
 |:---|:---|:---|
@@ -55,7 +55,7 @@ When an alarm is created, an email is sent.
 
 The rule uses the following parameters:
 
-<img src="/guides/images/users-guide/Cockpit/Cockpit_SmartRuleSendEmail.png" name="Smart Rule send email" style="width:50%;"/>
+![On alarm send email](/guides/images/users-guide/Cockpit/cockpit-globalsmartrules-sendemail.png)
 
 |Step|Field|Description|
 |:---|:---|:---|
@@ -84,7 +84,7 @@ When an alarm is created, sends e-mail or SMS.
 
 The rule uses the following parameters:
 
-<img src="/guides/images/users-guide/Cockpit/Cockpit_SmartRuleOnAlarmEscalate.png" name="Smart Rule on alarm escalate" style="width:50%;"/>
+![On alarm escalate](/guides/images/users-guide/Cockpit/cockpit-globalsmartrules-escalate.png)
 
 |Step|Field|Description|
 |:---|:---|:---|
@@ -113,7 +113,7 @@ If an alarm is active for a certain time, the severity is increased.
 
 The rule uses the following parameters:
 
-<img src="/guides/images/users-guide/Cockpit/Cockpit_SmartRuleIncreaseSeverity.png" name="Smart Rule increase severity" style="width:50%;"/>
+![On alarm increase severity](/guides/images/users-guide/Cockpit/cockpit-globalsmartrules-severity.png)
 
 |Step|Field|Description|
 |:---|:---|:---|
@@ -144,7 +144,7 @@ The rule can be configured for entering or leaving the geofence, or both. Existi
 
 The rule uses the following parameters:
 
-<img src="/guides/images/users-guide/Cockpit/Cockpit_SmartRuleAlarmOnGeofence.png" name="Smart Rule alarm on geofence" style="width:50%;"/>
+![On geofence create alarm](/guides/images/users-guide/Cockpit/cockpit-globalsmartrules-geofencealarm.png)
 
 |Step|Field|Description|
 |:---|:---|:---|
@@ -175,7 +175,7 @@ The rule can be configured for entering or leaving the geofence, or both.
 
 The rule uses the following parameters:
 
-<img src="/guides/images/users-guide/Cockpit/Cockpit_SmartRuleEmailOnGeofence.png" name="Smart Rule email on geofence" style="width:50%;"/>
+![On geofence send e-mail](/guides/images/users-guide/Cockpit/cockpit-globalsmartrules-geofenceemail.png)
 
 |Step|Field|Description|
 |:---|:---|:---|
@@ -203,7 +203,7 @@ Creates consumption data point based on data from an electric-, gas-, water- met
 
 The rule uses the following parameters:
 
-<img src="/guides/images/users-guide/Cockpit/Cockpit_SmartRuleCalculateEnergyConsumption.png" name="Smart Rule calculate energy consumption" style="width:50%;"/>
+![Calculate energy consumption](/guides/images/users-guide/Cockpit/cockpit-globalsmartrules-energy.png)
 
 |Step|Field|Description|
 |:---|:---|:---|
@@ -233,7 +233,7 @@ If no new measurement data has been received for a specified time, an alarm is c
 
 The rule uses the following parameters:
 
-<img src="/guides/images/users-guide/Cockpit/Cockpit_SmartRuleMissingMeasurements.png" name="Smart Rule alarm on missing measurements" style="width:50%;"/>
+![On missing measurements create alarm](/guides/images/users-guide/Cockpit/cockpit-globalsmartrules-missingmeasurement.png)
 
 |Step|Field|Description|
 |:---|:---|:---|
@@ -255,14 +255,42 @@ If a certain alarm occurs, the specified operation will be send to the device.
 
 The rule uses the following parameters:
 
-<img src="/guides/images/users-guide/Cockpit/Cockpit_SmartRuleExecuteOperation.png" name="Smart Rule execute operation" style="width:50%;"/>
+![On alarm execute operation](/guides/images/users-guide/Cockpit/cockpit-globalsmartrules-operation.png)
 
-|Step|Field|Description|
-|:---|:---|:---|
-|1|Rule name|Pre-filled with the name of the rule template. Can be modified according to your needs.
-|2|On alarm matching:|The types of alarms triggering the rule. For each newly created alarm with one of these types in the list the rule is triggered.
-|3|Execute operation:|The operation that will be sent. The operation is provided as JSON description. Some standard operations can be selected below the **Operation** field. To use a standard operation, select one, and press the arrow button on the right. This will insert the JSON of the selected operation.
-|4|Target asset or devices|Groups or devices the rule shall be applied to.
+<table>
+<col style="width:5%">
+<col style="width:10%">
+<col style="width:85%">
+<thead>
+<tr>
+<th style="text-align:left">Step</th>
+<th style="text-align:left">Field</th>
+<th style="text-align:left">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">1</td>
+<td style="text-align:left">Rule name</td>
+<td style="text-align:left">Pre-filled with the name of the rule template. Can be modified according to your needs.</td>
+</tr>
+<tr>
+<td style="text-align:left">2</td>
+<td style="text-align:left">On alarm matching:</td>
+<td style="text-align:left">The types of alarms triggering the rule. For each newly created alarm with one of these types in the list the rule is triggered.</td>
+</tr>
+<tr>
+<td style="text-align:left">3</td>
+<td style="text-align:left">Execute operation:</td>
+<td style="text-align:left">The operation that will be sent. The operation is provided as JSON description. Some standard operations can be selected below the <strong>Operation</strong> field. To use a standard operation, select one, and press the arrow button on the right. This will insert the JSON of the selected operation.</td>
+</tr>
+<tr>
+<td style="text-align:left">4</td>
+<td style="text-align:left">Target asset or devices</td>
+<td style="text-align:left">Groups or devices the rule shall be applied to.</td>
+</tr>
+</tbody>
+</table>
 
 ### On measurement threshold create alarm
 
@@ -292,7 +320,7 @@ Using this mechanism, you can configure global threshold ranges in the Data Poin
 
 The rule uses the following parameters:
 
-<img src="/guides/images/users-guide/Cockpit/Cockpit_SmartRuleExplicitThreshold.png" name="Smart Rule explicit threshold" style="width:50%;"/>
+![On measurement threshold create alarm](/guides/images/users-guide/Cockpit/cockpit-globalsmartrules-thresholdalarm.png)
 
 |Step|Field|Description|
 |:---|:---|:---|
@@ -355,7 +383,7 @@ The severity of alarm is determined as follows:
 
 The rule uses the following parameters:
 
-<img src="/guides/images/users-guide/Cockpit/Cockpit_SmartRuleExplicitThreshold.png" name="Smart Rule explicit threshold" style="width:50%;"/>
+![On measurement explicit threshold create alarm](/guides/images/users-guide/Cockpit/cockpit-globalsmartrules-measurementthreshold.png)
 
 |Step|Field|Description|
 |:---|:---|:---|

@@ -33,7 +33,7 @@ The **User** menu contains the following items:
 </tr>
 <tr>
 <td style="text-align:left">Enable (Disable) support</td>
-<td style="text-align:left">Allows support users to access your account. This option is only available if support user access is not set globally for subtenant users in the management tenant. For details, refer to <a href="/guides/users-guide/enterprise-edition#users-in-other-tenants" class="no-ajaxy">Supporting users in other tenants</a>. After the support user access has been activated, the menu item switches to <strong>Disable support</strong>. If your support request has been resolved but the duration for the support user access is not expired (24 hours per default) you can actively disable an active support user request here.</td>
+<td style="text-align:left">Allows support users to access your account. This option is only available if support user access is not set globally for subtenant users in the management tenant, see <a href="/guides/users-guide/enterprise-edition#users-in-other-tenants" class="no-ajaxy">Supporting users in other tenants</a> for details. After the support user access has been activated, the menu item switches to <strong>Disable support</strong>. If your support request has been resolved but the duration for the support user access is not expired (24 hours per default) you can actively disable an active support user request here.</td>
 </tr>
 <tr>
 <td style="text-align:left">Visit support page</td>
@@ -46,38 +46,31 @@ The **User** menu contains the following items:
 </tbody>
 </table>
 
-### <a name="user-settings"></a>User settings
+### <a name="user-settings"></a>How to change user settings
 
 Several account settings can be changed by the user. 
 
-Click the **User** button at the top right and from the menu, select **User Settings**. 
+1. Click the **User** button at the right of the top bar and then click **User Settings**.  
+2. In the **Edit user** dialog box, make the relevant changes. 
+3. To change the language, select a language from the dropdown list in the  **Language** field.
 
-<img src="/guides/images/users-guide/overview-user-menu.png" alt="User menu"  style="max-width: 100%">
-
-In addition to changing the email address, name and phone number stored for your account you can modify the language of the user interface from here. 
+ >**Info:** The user interface language will be selected along the following criteria, in the order listed below:
+ 
+	>	*  The language selected in the Cumulocity user settings.
+	>	*  The language selected in the browser preferences.
+	>	* 	The operating system language.
+ 
+	> The default language is English.
+ 
+4. Click **Change password** to change your current password, see below. 
+5. Click **Save** to apply your settings.
 
 <img src="/guides/images/users-guide/overview-user-settings.png" alt="User settings"  style="max-width: 100%">
 
-In the **Language** field, select a language from the dropdown list.
+### <a name="change-password"></a>How to change your password
 
->**Info:** The user interface language will be selected along the following criteria, in the order listed below:
-
->1. The language selected in the Cumulocity user settings.
-2. The language selected in the browser preferences.
-3. The operating system language.
-
->The default language is English.
-
-Click **Change password** to change your current password, see below.
-
-Click **Save** at the bottom of the window to apply your settings.
-
-### <a name="change-password"></a>Changing your password
-
-To change your password follow these steps:
-
-1. Click the **User** button at the right of the top bar and from the context menu select **User settings**. 
-2. In the **Edit user** window, click **Change Password**.
+1. Click the **User** button at the right of the top bar and then click **User settings**. 
+2. In the **Edit user** dialog box, click **Change Password**.
 3. Enter a password and confirm it.
 4. Click **Save** to apply your settings.
 

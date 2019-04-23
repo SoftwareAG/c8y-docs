@@ -14,8 +14,7 @@ The following section describes, in alphabetical order, each available widget ty
 
 The "Alarm list" widget shows a list of alarms, filtered by objects, alarm severity and alarm status. For details on the information provided for each alarm, refer to [Working with alarms](/guides/users-guide/device-management/#alarm-monitoring) in the Device Management section.
 
-<img src="/guides/images/users-guide/Cockpit/cockpit-widget-alarm-list.png" name="Create Alarm list widget" style="width:100%;"/>
-
+![Alarm list widget](/guides/images/users-guide/Cockpit/cockpit-widget-alarm-list.png)
 
 **Parameters to configure**
 
@@ -32,7 +31,7 @@ The "Alarm list" widget shows a list of alarms, filtered by objects, alarm sever
 
 The "All critical alarms" widget shows all objects with a critical alarm. Apart from the title, there are no additional parameters to be configured.
 
-<img src="/guides/images/users-guide/Cockpit/cockpit-widget-critical-alarms.png" name="Create Alarm list widget" style="width:100%;"/>
+![Critical alarms](/guides/images/users-guide/Cockpit/cockpit-widget-critical-alarms.png)
 
 For details on alarms, refer to [Device Management > Working with alarms](/guides/users-guide/device-management/#alarm-monitoring).
 
@@ -40,7 +39,7 @@ For details on alarms, refer to [Device Management > Working with alarms](/guide
 
 The "Applications" widget shows a list of links to all available applications. Apart from the title, there are no additional parameters to be configured.
 
-<img src="/guides/images/users-guide/Cockpit/cockpit-widget-applications.png" name="Create Alarm list widget" style="width:100%;"/>
+![Applications widget](/guides/images/users-guide/Cockpit/cockpit-widget-applications.png)
 
 For details on applications, refer to [Administration > Managing Applications](/guides/users-guide/administration#managing-applications).
 

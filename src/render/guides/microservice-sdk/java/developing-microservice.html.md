@@ -4,48 +4,45 @@ layout: redirect
 title: Developing Microservices
 ---
 
-This document describes microservice SDK features, including annotations, services, configuration files, logging and maven build plugin. 
-
-### Overview
+It is described below the different microservice SDK features, including annotations, services, configuration files, logging and the Maven build plugin.
 
 There are two possible deployment types on the platform:
 
-* Hosted deployment - the default for microservices. For typical use cases the hosted deployment is the suggested one. 
-* External/legacy deployment - requires custom installation of the platform and agent. 
+* Hosted deployment - The default for microservices. For typical use cases the hosted deployment is the suggested one.
+* External/legacy deployment - Requires custom installation of the platform and agent.
 
-For development and testing purposes one can deploy a microservice on a local docker. <!--The process is described in this document. Info is missing!-->
-
+For development and testing purposes, one can deploy a microservice on a local Docker container.
 
 ### Annotations
 
-The simplest way to add required behavior to your application is to annotate a main class with @MicroserviceApplication. 
+The simplest way to add required behavior to your application is to annotate a main class with `@MicroserviceApplication`. This is a collective annotation consisting of:
 
-This is a collective annotation consisting of:
-
-* @SpringBootApplication - comes from spring boot auto configure package
-* @EnableContextSupport - is required to use @UserScope, or @TenantScope scopes for method invocations
-* @EnableHealthIndicator - provides standard health endpoint used by the platform to monitor microservice availability  
-* @EnableMicroserviceSecurity - provides standard security mechanism, verifying user and roles against the platform
-* @EnableMicroserviceSubscription - is responsible for subscribing microservices to the platform, updating metadata and listen to tenant subscription change events
-* @EnableMicroservicePlatformInternalApi - injects the platform API services into spring context for a microservice to use
-* @EnableTenantOptionSettings - provides microservice configuration within tenant options and allows to override default properties from files
+Annotation | Description
+-----------|------------
+@SpringBootApplication | Comes from Spring Boot auto configure package
+@EnableContextSupport | Required to use `@UserScope` or `@TenantScope` scopes for method invocations
+@EnableHealthIndicator | Provides a standard health endpoint used by the platform to monitor the microservice availability
+@EnableMicroserviceSecurity | Provides a standard security mechanism, verifying user and roles against the platform
+@EnableMicroserviceSubscription | Responsible for subscribing microservices to the platform, updating metadata and listening to tenant subscription change events
+@EnableMicroservicePlatformInternalApi | Injects the platform API services into spring context for a microservice to use
+@EnableTenantOptionSettings | Provides microservice configuration within tenant options and allows overriding default properties from files
 
 ### Context support
 
-The following section describes context support as utility tool for the user management described in [General aspects of microservices in Cumulocity](/guides/microservice-sdk/concept).
+It is described below the context support as utility tool for the user management described in [General aspects](/guides/microservice-sdk/concept) of microservices in Cumulocity.
 
-@UserScope and @TenantScope at type level annotation indicate that a bean created from class will be created in the scope defined. The user scope implies using tenant platform user credentials for platform calls. The tenant scope implies using service user credentials.
+`@UserScope` and `@TenantScope` at type level annotation indicate that a bean created from class will be created in the scope defined. The user scope implies using tenant platform user credentials for platform calls. The tenant scope implies using service user credentials.
 
-Example of injecting a bean into the tenant scope is available in the platform API module as follows:
+An example of injecting a bean into the tenant scope is available in the platform API module as follows:
 
 ```java
 @TenantScope
-public EventApi eventApi(Platform platform) throws SDKException {
+public EventApi eventApi (Platform platform) throws SDKException {
     return platform.getEventApi();
 }  
-````
+```
 
-And then sample utilization of the bean can be as follows:
+A sample utilization of the bean can be as follows:
 
 ```java
 @Autowired
@@ -55,61 +52,58 @@ private ContextService<MicroserviceCredentials> contextService;
 @Autowired
 private EventApi eventApi;
 
-public PagedEventCollectionRepresentation get10Events() {
+public PagedEventCollectionRepresentation get10Events () {
     return contextService.callWithinContext(
             (MicroserviceCredentials) platformProperties.getMicroserviceBoostrapUser(),
-            new Callable<PagedEventCollectionRepresentation>(){
-                public PagedEventCollectionRepresentation call(){
-                    return eventApi.getEvents().get(10);
-                }
+             new Callable<PagedEventCollectionRepresentation>(){
+        public PagedEventCollectionRepresentation call(){
+            return eventApi.getEvents().get(10);
+        }
     });
 }
 ```
 
 ### Microservice security
 
-The `@EnableMicroserviceSecurity` annotation sets up the standard security configuration for microservices, which requires basic authorization for all endpoints (except for health check endpoint configured using `@EnableHealthIndicator`). A developer can secure its endpoints using standard spring security annotations e.g. `@PreAuthorize("hasRole('ROLE_A')")` and user's permissions will be validated  against user's roles stored on the platform.
+The `@EnableMicroserviceSecurity` annotation sets up the standard security configuration for microservices. It requires basic authorization for all endpoints (except for health check endpoint configured using `@EnableHealthIndicator`). A developer can secure its endpoints using standard Spring security annotations, e.g. `@PreAuthorize("hasRole('ROLE_A')")` and user's permissions will be validated against user's roles stored on the platform.
 
 
 ### Microservice subscription
 
 The microservice subscription module is responsible for two main features:
 
-* registration
-* tenant subscription event listening
+* Registration
+* Tenant subscription event listening
 
-The default behavior for the package is self-registration, which means that after you run the application it will try to register and use generated credentials for the communication with the platform. The self-registration is required to correctly deploy the microservice on the platform.
+The default behavior for the package is self-registration, which means that after you run the application it will try to register and use the generated credentials for the communication with the platform. The self-registration is required to correctly deploy the microservice on the platform.
 
-The other way to register an application to the platform is to do it manually by creating a new application on the platform with the same application name and providing the following properties into the microservice:
+The other way to register an application to the platform is to do it manually. This can be done by creating a new application on the platform with the same application name and providing the following properties into the microservice:
 
 ```properties
-application.name={application_name}
+application.name=<application_name>
 C8Y.bootstrap.register=false
-C8Y.bootstrap.tenant={tenant}
-C8Y.bootstrap.user={user}
-C8Y.bootstrap.password={password}
+C8Y.bootstrap.tenant=<tenant>
+C8Y.bootstrap.user=<username>
+C8Y.bootstrap.password=<password>
 ```
 
-To create an application and acquire credentials, refer to:
+To create an application and acquire credentials, refer to [Creating applications](/guides/microservice-sdk/rest#creating-application) and [Acquiring microservice credentials](/guides/microservice-sdk/rest#acquiring-microservice-credentials) in the **Using the REST interface** section.
 
-* [Create application](/guides/microservice-sdk/rest#creating-application)
-* [Acquire microservice credentials](/guides/microservice-sdk/rest#acquiring-microservice-credentials)
-
-The subscription package provides means to monitor and act upon changes in tenant subscriptions to a microservice. To add a custom behavior a developer can add an event listener for MicroserviceSubscriptionAddedEvent and MicroserviceSubscriptionRemovedEvent like in the following example:
+The subscription package provides means to monitor and it acts upon changes in tenant subscriptions to a microservice. To add a custom behavior, a developer can add an event listener for `MicroserviceSubscriptionAddedEvent` and `MicroserviceSubscriptionRemovedEvent` as the following example:
 
 ```java
 @EventListener
-public void onAdded(MicroserviceSubscriptionAddedEvent event{
+public void onAdded (MicroserviceSubscriptionAddedEvent event {
     log.info("subscription added for tenant: " + event.getCredentials().getTenant());
-}
+});
 ```
 
-On application startup the MicroserviceSubscriptionAddedEvent is triggered for all subscribed tenants.
+On application startup, the `MicroserviceSubscriptionAddedEvent` is triggered for all subscribed tenants.
 
 
 ### Platform API
 
-The package consists of a number of services that are build and injected into spring context. A developer can use them to perform basic operations against the platform. The beans are built based on properties read from a file. For hosted deployment, most of the properties are provided by the platform.
+The package consists of a number of services that are built and injected into Spring context. A developer can use them to perform basic operations against the platform. The beans are built based on properties read from a file. For hosted deployment, most of the properties are provided by the platform.
 
 The API provides the following services:
 
@@ -123,17 +117,18 @@ The API provides the following services:
 * ManagedObject - InventoryApi
 * Measurement - MeasurementApi
 
-The API provides basic CRUD methods, see alarm interface example below:
+The API provides basic CRUD methods. The following is an alarm interface example:
 
 ```java
-    AlarmRepresentation create(final AlarmRepresentation alarm)
-    Future createAsync(final AlarmRepresentation alarm)
+// Methods
+AlarmRepresentation create(final AlarmRepresentation alarm)
+Future createAsync(final AlarmRepresentation alarm)
 
-    AlarmRepresentation getAlarm(final GId gid)
-    AlarmCollection getAlarms()
-    AlarmCollection getAlarmsByFilter(final AlarmFilter filter)
+AlarmRepresentation getAlarm(final GId gid)
+AlarmCollection getAlarms()
+AlarmCollection getAlarmsByFilter(final AlarmFilter filter)
 
-    AlarmRepresentation update(final AlarmRepresentation alarm)
+AlarmRepresentation update(final AlarmRepresentation alarm)
 ```
 
 Sample usage:
@@ -142,19 +137,20 @@ Sample usage:
 @Autowired
 private AlarmApi alarms;
 
-public AlarmRepresentation addHelloAlarm(){
+public AlarmRepresentation addHelloAlarm (){
     AlarmRepresentation alarm = new AlarmRepresentation();
     alarm.setSeverity("CRITICAL");
     alarm.setStatus("Hello");
+
     return alarms.create(alarm);
 }
 ```
 
 ### Configuration files
 
-The property file used by the hosted deployment must be located in src/main/resources/application.xml.
+The properties file used by the hosted deployment must be located in src/main/resources/application.xml.
 
-For external/legacy deployment, the following paths will be searched in order to find a property file specific for the environment the application is run on:
+For external/legacy deployment, the following paths will be searched in order to find a properties file specific for the environment the application is run on:
 
 * {UPPERCASE(application_name)}_CONF_DIR/.{application_name}
 * {UPPERCASE(application_name)}_CONF_DIR/{application_name}
@@ -164,35 +160,37 @@ For external/legacy deployment, the following paths will be searched in order to
 * {CONF_DIR}/{application_name}
 * /etc/{application_name}
 
-Properties used by a microservice are:
+The properties used by a microservice are:
 
-* application.name - Application name
-* C8Y.bootstrap.register - Indicates whether microservice should follow self-registration process. True by default
-* C8Y.baseURL - Address of the platform. Provided by the deployment process
-* C8Y.baseURL.mqtt - Address of the MQTT service. Provided by the platform
-* C8Y.bootstrap.tenant - Microservice owner tenant
-* C8Y.bootstrap.user - User used by microservice, or by microservice registration process
-* C8Y.bootstrap.password - Password used by microservice, or by microservice registration process
-* C8Y.bootstrap.delay - Subscription refresh delay
-* C8Y.bootstrap.initialDelay - Initial subscription delay
-* C8Y.microservice.isolation - Microservice isolation. Only PER_TENANT or MULTI_TENANT values are available. MULTI_TENANT by default
-    
-    
-### Microservice Settings
+Property | Description
+---------|------------
+application.name | The name of the microservice application
+C8Y.bootstrap.register | Indicates if a microservice should follow self-registration process. True by default
+C8Y.baseURL | Address of the platform. Provided by the deployment process
+C8Y.baseURL.mqtt | Address of the MQTT service. Provided by the platform
+C8Y.bootstrap.tenant | Microservice owner tenant
+C8Y.bootstrap.user | User used by microservice or by microservice registration process
+C8Y.bootstrap.password | Password used by microservice or by microservice registration process
+C8Y.bootstrap.delay | Subscription refresh delay
+C8Y.bootstrap.initialDelay | Initial subscription delay
+C8Y.microservice.isolation | Microservice isolation. Only PER_TENANT or MULTI_TENANT values are available. MULTI_TENANT by default
+
+
+### Microservice settings
 
 The microservice settings module provides two features:
 
 * Configure a microservice by defining tenant options
-* Override existing properties -- tenant options can override default values from properties files
+* Override existing properties - Tenant options can override default values from properties files
 
 The microservice loads the tenant options for the category specified by the microservice context path. When the context path is not provided in the microservice manifest, the application name is used.
 
 Options can be configured for the application owner or the subscriber. The subscriber can override the owner's option value only when such option is defined as editable.
 
 Settings are lazy cached for 10 minutes, so when they were accessed previously, the user must wait the remaining time to see the change being applied.
-When the access attempt occurs to fetch settings without the tenant context being specified, the application owner is used to complete the request.  
+When the access attempt occurs to fetch settings without the tenant context being specified, the application owner is used to complete the request.
 
-> **Info:** For security reasons the functionality is not available when running the microservice in legacy mode, i.e. local development or RPM installation.
+> **Info**: For security reasons, the functionality is not available when running the microservice in legacy mode, i.e. local development or RPM installation.
 
 Tenant option settings can be accessed in two ways:  
 
@@ -200,66 +198,65 @@ Using Environment:
 
 ```java
 @Autowired
-private Environment enviroment;  
-     
+private Environment environment;  
+
 public int getAccessTimeout() {
     return environment.getProperty("access.timeout", Integer.class, 30);
 }
 ```
 
-Using Settings Service:
+Using Settings service:
 
 ```java
 @Autowired
 private MicroserviceSettingsService settingsService;
-    
+
 public String getAccessTimeout() {
     return settingsService.get("access.timeout");
 }
 ```
-    
-Settings can be encrypted by using the "*credentials.*" prefix for the tenant option key. They will be decrypted and become available within the microservice environment.
 
-Defining tenant options for a microservice with the same key as was defined in the configuration files, such as *.properties or manifest file, will override the particular property. 
+Settings can be encrypted by using the *credentials.* prefix for the tenant option key. They will be decrypted and become available within the microservice environment.
 
-Example:
+Defining tenant options for a microservice with the same key as it was defined in the configuration files, such as *.properties* or the manifest file, will override the particular property.
 
-There is a property defined in the _application.properties_ file of the microservice hello-world with context path _helloworld_:
+For instance, there is a property defined in the _application.properties_ file of the microservice hello-world with context path _helloworld_:
 
 ```properties
 access.timeout=25
 ```
-    
-Now the microservice owner can override it by defining the following setting in the cumulocity.json manifest file.
-    
+
+Now the microservice owner can override it by defining the following setting in the _cumulocity.json_ manifest file:
+
 ```json
-"settings": [{ 
+"settings": [{
     "key": "access.timeout",
     "defaultValue": "35",
     "editable": true
 }]
 ```
 
-Because the _access.timeout_ setting is defined as editable, the subscriber can override it by creating an own tenant option via REST API:
+Because the `access.timeout` setting is defined as editable, the subscriber can override it by creating an own tenant option via REST API:
 
 ```http
-POST {{url}}/tenant/options
-    
+POST <URL>/tenant/options
+
 BODY:
-{
+  {
     "category": "helloworld",
     "key": "access.timeout",
     "value": "40"
-}
+  }
 ```
-   	
-> **Note:** you cannot override a property injected by spring `@Value("${property.name}")`.
+
+> **Note**: You cannot override a property injected by Spring `@Value("${property.name}")`.
+
 
 ### Logging
 
-For hosted deployment the standard output should be used.
+The standard output should be used for hosted deployment.
 
-For external/legacy deployment logging into the application implies using spring logging described in [this article](https://docs.spring.io/spring-boot/docs/current/reference/html/howto-logging.html). 
+For external/legacy deployment, logging into the application implies using [Spring Logging](https://docs.spring.io/spring-boot/docs/current/reference/html/howto-logging.html).
 
 The following locations are searched for log-back file:
 
@@ -274,299 +271,304 @@ The following locations are searched for log-back file:
 
 ### Maven plugin
 
-The package module provides a maven plugin to prepare a ZIP file required by the microservice deployment, with simple configuration. The build requires an executable jar. To create one, a developer can use spring-boot-maven-plugin. 
-
-An example with minimum configuration is presented below:
+The package module provides a Maven plugin to prepare a ZIP file required by the microservice deployment, with simple configuration. The build requires an executable jar. To create one, a developer can use `spring-boot-maven-plugin`. An example with minimum configuration is presented below:
 
 ```xml
-    <plugin>
-        <groupId>org.springframework.boot</groupId>
-        <artifactId>spring-boot-maven-plugin</artifactId>
-        <executions>
-            <execution>
-                <goals>
-                    <goal>repackage</goal>
-                </goals>
-            </execution>
-        </executions>
-        <configuration>
-            <mainClass>${main.class}</mainClass>
-        </configuration>
-    </plugin>
-    <plugin>
-        <groupId>com.nsn.cumulocity.clients-java</groupId>
-        <artifactId>microservice-package-maven-plugin</artifactId>
-        <version>9.0.0</version>
-        <executions>
-            <execution>
-                <id>package</id>
-                <phase>package</phase>
-                <goals>
-                  <goal>package</goal>
-                </goals>
-                <configuration>
-                  <name>hello-world</name>
-                  <encoding>UTF-8</encoding>
-                  <rpmSkip>true</rpmSkip>
-                  <containerSkip>false</containerSkip>
-                </configuration>
-            </execution>
-            <execution>
-                <id>microservice-package</id>
-                <phase>package</phase>
-                <goals>
-                  <goal>microservice-package</goal>
-                </goals>
-                <configuration>
-                  <name>hello-world</name>
-                  <image>hello-world</image>
-                  <encoding>UTF-8</encoding>
-                  <skip>false</skip>
-                </configuration>
-            </execution>
-        </executions>
-    </plugin>
+<plugin>
+    <groupId>org.springframework.boot</groupId>
+    <artifactId>spring-boot-maven-plugin</artifactId>
+    <executions>
+        <execution>
+            <goals>
+                <goal>repackage</goal>
+            </goals>
+        </execution>
+    </executions>
+    <configuration>
+        <mainClass>${main.class}</mainClass>
+    </configuration>
+</plugin>
+<plugin>
+    <groupId>com.nsn.cumulocity.clients-java</groupId>
+    <artifactId>microservice-package-maven-plugin</artifactId>
+    <version>9.0.0</version>
+    <executions>
+        <execution>
+            <id>package</id>
+            <phase>package</phase>
+            <goals>
+              <goal>package</goal>
+            </goals>
+            <configuration>
+              <name>hello-world</name>
+              <encoding>UTF-8</encoding>
+              <rpmSkip>true</rpmSkip>
+              <containerSkip>false</containerSkip>
+            </configuration>
+        </execution>
+        <execution>
+            <id>microservice-package</id>
+            <phase>package</phase>
+            <goals>
+              <goal>microservice-package</goal>
+            </goals>
+            <configuration>
+              <name>hello-world</name>
+              <image>hello-world</image>
+              <encoding>UTF-8</encoding>
+              <skip>false</skip>
+            </configuration>
+        </execution>
+    </executions>
+</plugin>
 ```
 
 #### Package goal
 
-The package plugin is responsible for creation of a docker container, rpm file and for creating a ZIP file, that can be deployed on the platform. 
+The package plugin is responsible for the creation of a Docker container, rpm file and for creating a ZIP file that can be deployed on the platform.
 It can be configured with the following parameters:
 
 * name (alias package.name) - defaults to project.artifactId
-*  description (alias package.description) - defaults to project.description
-*  jvmArgs (alias agent-package.jvmArgs) - jvm-gc arguments. The default value is `-XX:+UseConcMarkSweepGC -XX:+CMSParallelRemarkEnabled -XX:+ScavengeBeforeFullGC -XX:+CMSScavengeBeforeRemark`". Will be overwritten if   other options are provided.
-*  arguments (alias agent-package.arguments) - arguments passed on Java application startup
-*  encoding (alias project.build.sourceEncoding)  - defaults to UTF-8
-*  heap (alias agent-package.heap) - defaults to min = 128MB max = 384MB
-*  perm (alias agent-package.perm) - defaults to min = 64MB max = 128MB
-*  skip (alias skip.agent.package) - to skip the whole packaging part
-*  rpmSkip (alias skip.agent.package.rpm) - to skip rpm file creation. False by default
-*  containerSkip (alias skip.agent.package.container) - to skip docker image creation. True by default
-* manifestFile - points to a manifest file location. Default value: ${basedir}/src/main/configuration/cumulocity.json
+* description (alias package.description) - defaults to project.description
+* jvmArgs (alias agent-package.jvmArgs) - jvm-gc arguments. The default value is `-XX:+UseConcMarkSweepGC -XX:+CMSParallelRemarkEnabled -XX:+ScavengeBeforeFullGC -XX:+CMSScavengeBeforeRemark`". Will be overwritten if other options are provided.
+* arguments (alias agent-package.arguments) - arguments passed on Java application startup
+* encoding (alias project.build.sourceEncoding) - defaults to UTF-8
+* heap (alias agent-package.heap) - defaults to min = 128MB max = 384MB
+* perm (alias agent-package.perm) - defaults to min = 64MB max = 128MB
+* skip (alias skip.agent.package) - to skip the whole packaging part
+* rpmSkip (alias skip.agent.package.rpm) - to skip rpm file creation. False by default
+* containerSkip (alias skip.agent.package.container) - to skip docker image creation. True by default
+* manifestFile - points to a manifest file location. Default value: $<basedir>/src/main/configuration/cumulocity.json
 
 Example configuration:
 
 ```xml
-    <configuration>
-      <name>hello-world</name>
-      <encoding>UTF-8</encoding>
-      <rpmSkip>true</rpmSkip>
-      <containerSkip>false</containerSkip>
-      <manifestFile>${basedir}/src/main/microservice/cumulocity.json</manifestFile>
-    </configuration>
+<configuration>
+    <name>hello-world</name>
+    <encoding>UTF-8</encoding>
+    <rpmSkip>true</rpmSkip>
+    <containerSkip>false</containerSkip>
+    <manifestFile>${basedir}/src/main/microservice/cumulocity.json</manifestFile>
+</configuration>
 ```
 
 #### Push goal
 
-The push plugin is responsible for pushing the docker image to a registry. The registry can be configured by:
+The push plugin is responsible for pushing the Docker image to a registry. The registry can be configured by:
 
-* containerSkip  (alias skip.agent.package.container) - prevents the push to execute.  True by default
-* registry (alias agent-package.container.registry) - docker registry address
+* containerSkip (alias skip.agent.package.container) - Prevents the push to execute.  True by default
+* registry (alias agent-package.container.registry) - Docker registry address
 
 Example configuration:
 
 ```xml
-	    <configuration>
-	      <registry>http://{yourregistry.com}</registry>
-	      <containerSkip>false</containerSkip>
-	    </configuration>
+<configuration>
+    <registry>http://{yourregistry.com}</registry>
+    <containerSkip>false</containerSkip>
+</configuration>
 ```
 
 #### Upload goal
 
-Microservice upload goal is responsible for deploying the microservice to a server. 
+Microservice upload goal is responsible for deploying the microservice to a server.
 
-We have three options to configure server url and credentials:
+There are three options to configure server url and credentials:
 
-* settings.xml - maven global configuration placed at ~/.m2/settings.xml
-* pom.xml - maven project configuration file
-* command line
+* _settings.xml_ - Maven global configuration placed at *~/.m2/settings.xml*
+* _pom.xml_ - Maven project configuration file
+* Command line
 
-All three ways can be used together, i.e. goal partially can be configured in settings.xml and partially in pom.xml. 
-In case of conflicts the command line configuration has the highest priority and settings xml configuration the lowest.
+All three ways can be used together, i.e. a goal partially can be configured in the _settings.xml_ and partially in the _pom.xml_.
+In case of conflicts, the command line configuration has the highest priority and _settings.xml_ configuration the lowest.
 
 To upload a microservice to the server you need to configure the following properties:
 
 * url - Mandatory URL that will be used for deployment. Empty by default.
-* username - Mandatory tenant name and user name used for authorization. Empty by default.
+* username - Mandatory tenant ID and user name used for authorization. Empty by default.
 * password - Mandatory password used for authorization. Empty by default.
 * name - Optional name of uploaded application. By default the same as "package.name" property or "artifactId" if "package.name" is not provided.
 
 #### settings.xml
 
-To configure the goal in the settings.xml file we need to add the server configuration as follows:
+To configure the goal in the _settings.xml_ file, add the server configuration as follows:
 
 ```xml
-    <server>
-        <id>microservice</id>
-        <username>demos/username</username>
-        <password>******</password>
-        <configuration>
-            <url>https://demos.cumulocity.com</url>
-        </configuration>
-    </server>
+<server>
+    <id>microservice</id>
+    <username>demos/username</username>
+    <password>******</password>
+    <configuration>
+        <url>https://demos.cumulocity.com</url>
+    </configuration>
+</server>
 ```
 
 #### pom.xml
 
-To configure the plugin in the pom.xml file we need to add the server configuration as follows. 
+To configure the plugin in the _pom.xml_ file, add the server configuration as follows:
 
 ```xml
-    <plugin>
-        <groupId>com.nsn.cumulocity.clients-java</groupId>
-        <artifactId>microservice-package-maven-plugin</artifactId>
-        <configuration>
-            <application>
-                <name>cep</name>
-            </application>
-            
-            <!-- please note that the credentials are optional if they are already configured in settings.xml -->
-            <credentials>
-                <url>https://demos.cumulocity.com</url>
-                <username>demos/username</username>
-                <password>******</password>
-            </credentials>
-        </configuration>
-    </plugin>
+<plugin>
+    <groupId>com.nsn.cumulocity.clients-java</groupId>
+    <artifactId>microservice-package-maven-plugin</artifactId>
+    <configuration>
+        <application>
+            <name>cep</name>
+        </application>
+
+        <!-- please note that the credentials are optional if they are already configured in settings.xml -->
+        <credentials>
+            <url>https://demos.cumulocity.com</url>
+            <username>demos/username</username>
+            <password>******</password>
+        </credentials>
+    </configuration>
+</plugin>
 ```
 
-##### Command line
+#### Command line
 
-To pass the configuration only to the particular build, run
+To pass the configuration only to the particular build, execute the following command:
 
 ```shell
 $ mvn microservice:upload -Dupload.application.name=cep -Dupload.url=https://demos.cumulocity.com -Dupload.username=demos/username -Dupload.password=******
 ```
 
+
 ### Deployment
 
 #### Hosted deployment
 
-> 	**Info**: For your convenience we have prepared a utility deployment script available [here](/guides/reference/microservice-package).
+> **Info**: For your convenience, Cumulocity provides a [Microservice utility tool](/guides/reference/microservice-package) for easy packaging, deployment and subscription.
 
 To deploy an application on an environment you need the following:
 
 * URL address of your tenant
-* Authorization header = "Basic {Base64({username}:{password})}"
+* Authorization header = "Basic <Base64(<username>:<password>)>"
 * Tenant - tenant ID
-* ZIP build from previous step
+* ZIP build from previous steps
 
 
-**Step 1 - Create application**
+##### Step 1 - Create the application
 
 If the application does not exist, create a new application on the platform:
 
 ```http
-    POST /application/applications
-    Host: ...
-    Authorization: Basic xxxxxxxxxxxxxxxxxxx
-    Content-Type: "application/json"
+POST /application/applications
+Host: ...
+Authorization: Basic xxxxxxxxxxxxxxxxxxx
+Content-Type: "application/json"
 
 BODY:
-    {
-			"name": "{APPLICATION_NAME}",
-			"type": "MICROSERVICE",
-			"key": "{APPLICATION_NAME}-microservice-key"
-    }
+  {
+		"name": "{APPLICATION_NAME}",
+		"type": "MICROSERVICE",
+		"key": "{APPLICATION_NAME}-microservice-key"
+  }
 ```
 
 Example:
 
 ```shell
 $ curl -X POST -s \
-       -d "{"name":"hello-microservice-1","type":"MICROSERVICE","key":"hello-microservice-1-key"}" \
-       -H "Authorization: {AUTHORIZATION}" \
-       -H "Content-type: application/json" \
-       "{URL}/application/applications"
+      -d '{"name":"hello-microservice-1","type":"MICROSERVICE","key":"hello-microservice-1-key"}' \
+      -H "Authorization: <AUTHORIZATION>" \
+      -H "Content-type: application/json" \
+      "<URL>/application/applications"
 ```
 
 If the application has been created correctly, you can get the application ID by invoking:
 
 ```http
-    GET /application/applicationsByName/{APPLICATION_NAME}
-    Host: ...
-    Authorization: Basic xxxxxxxxxxxxxxxxxxx
-    Accept: "application/json"
+GET /application/applicationsByName/<APPLICATION_NAME>
+Host: ...
+Authorization: Basic xxxxxxxxxxxxxxxxxxx
+Accept: "application/json"
 ```
 
 Example:
 
 ```shell
-$ curl -H "Authorization:{AUTHORIZATION}" \
-     {URL}/application/applicationsByName/hello-world
+$ curl -H "Authorization:<AUTHORIZATION>" \
+     <URL>/application/applicationsByName/hello-world
 ```
 
-**Step 2 - Upload zip file**
-       
-```http
-    POST /application/applications/{APPLICATION_ID}/binaries
-    Host: ...
-    Authorization: Basic xxxxxxxxxxxxxxxxxxx
-    Content-Type: "multipart/form-data"
-```
-
-Example:
-
-```shell
-$ curl -F "data=@{PATH_TO_ZIP}" \
-	   -H "Authorization: {AUTHORIZATION}" \
-	   "{URL}/application/applications/{APPLICATION_ID}/binaries"
-```
-
-**Step 3 - Subscribe to microservice**
+##### Step 2 - Upload the ZIP file
 
 ```http
-    POST /tenant/tenants/$TENANT/applications
-    Host: ...
-    Authorization: Basic xxxxxxxxxxxxxxxxxxx
-    Content-Type: "multipart/form-data"
-
-  BODY:
-
-    {"application":{"id": "{APPLICATION_ID}"}}
+POST /application/applications/<APPLICATION_ID>/binaries
+Host: ...
+Authorization: Basic xxxxxxxxxxxxxxxxxxx
+Content-Type: "multipart/form-data"
 ```
 
 Example:
 
 ```shell
-$ curl -X POST -d "{"application":{"id": "{APPLICATION_ID}"}}"  \
-    -H "Authorization: {AUTHORIZATION}" \
-    -H "Content-type: application/json" \
-     "{URL}/tenant/tenants/{TENANT}/applications"
+$ curl -F "data=@<PATH_TO_ZIP>" \
+	     -H "Authorization: <AUTHORIZATION>" \
+	     "<URL>/application/applications/<APPLICATION_ID>/binaries"
 ```
 
-#### Local docker deployment
+##### Step 3 - Subscribe to the microservice
 
-To deploy the application on a local docker, one needs to inject the environment variables into a container. This is done via the docker run -e parameter. The full description of available parameters is available in [Microservice runtime > Environment variables](/guides/reference/microservice-runtime) in the Reference guide. 
+```http
+POST /tenant/tenants/$TENANT/applications
+Host: ...
+Authorization: Basic xxxxxxxxxxxxxxxxxxx
+Content-Type: "multipart/form-data"
 
-An example execution could be: 
-    
+BODY:
+  {
+    "application": {
+        "id": "<APPLICATION_ID>"
+    }
+  }
+```
+
+Example:
+
 ```shell
-$ docker run -e "C8Y_BASEURL={C8Y_BASEURL}" -e "C8Y_BASEURL_MQTT={C8Y_BASEURL_MQTT}" {IMAGE_NAME}
+$ curl -X POST -d '{"application":{"id": "<APPLICATION_ID>"}}'  \
+       -H "Authorization: <AUTHORIZATION>" \
+       -H "Content-type: application/json" \
+       "<URL>/tenant/tenants/<TENANT>/applications"
 ```
-    
+
+#### Local Docker deployment
+
+To deploy the application on a local Docker container, one needs to inject the environment variables into a container. This is done via the Docker run -e parameter. The full description of available parameters is available in [Environment variables](/guides/reference/microservice-runtime) under the **Microservice runtime** section in the Reference guide.
+
+An example execution could be:
+
+```shell
+$ docker run -e "C8Y_BASEURL=<C8Y_BASEURL>" -e "C8Y_BASEURL_MQTT=<C8Y_BASEURL_MQTT>" <IMAGE_NAME>
+```
+
+
 ### Monitoring
 
-To check if a hosted microservice is running successfully, the microservice's health endpoint can be checked.
-This endpoint is enabled by default for all microservices that are developed using Java Microservice SDK.
+The microservice's health endpoint can be checked to verify if a hosted microservice is running successfully.
+This endpoint is enabled by default for all microservices that are developed using the Java Microservice SDK.
 
 ```http
-    GET {URL}/service/{APPLICATION_NAME}/health
+GET <URL>/service/<APPLICATION_NAME>/health
 ```
 
-Example response:
+Example response when the microservice is functional:
 
-```http
-    HTTP/1.1 200 
-    {
-      "status":"UP"
-    }
+```json
+HTTP/1.1 200
+{
+  "status": "UP"
+}
+```
 
-  or
+or in case it is not working:
 
-    HTTP/1.1 503
-    {
-      "status":"DOWN"
-    }
+```json
+HTTP/1.1 503
+{
+  "status": "DOWN"
+}
 ```

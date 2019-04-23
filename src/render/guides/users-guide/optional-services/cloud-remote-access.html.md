@@ -164,6 +164,16 @@ To edit or remove an endpoint, click the menu icon at the right of a row and sel
 
 ![Edit endpoints](/guides/images/users-guide/cra-endpoint-menu.png)
 
+#### Auto-saving host key
+
+A host key is a public key of the server which is generated when an SSH server is installed. It is used to verify the identity of the server.
+
+By enabling the auto-saving host key functionality you will no longer need to enter the host key after each connection. Instead, the host key can be automatically saved after the first successfully established connection to a remote access endpoint.
+
+In order to enable the auto-save host key functionality, navigate to the **Remote access** page under the **Settings** menu in the **Administration** application. Activate the checkbox and then click **Save**.
+
+![Save host key](/guides/images/users-guide/administration-settings-cra)
+
 ### Connecting to endpoints
 
 To connect to configured endpoints, choose an endpoint in the **Remote access** tab and click **Connect**. 

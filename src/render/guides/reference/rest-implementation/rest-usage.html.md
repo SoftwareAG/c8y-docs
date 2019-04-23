@@ -80,7 +80,7 @@ The above behavior results from the fact that the querying mechanism is iteratin
 
 ### <a name="dates"></a>Query result by time interval
 
-There are introduced parameters allowing to obtain data for specified time interval:
+Use following parameters to obtain data for specified time interval:
 
 - dateFrom - start date or date and time
 - dateTo - end date or date and time
@@ -90,5 +90,4 @@ Example formats:
     dateTo=2019-04-20
     dateTo=2019-04-20T08:30:00.000Z
 
-Parameters are optional. In every case inserted value is inclusive.
-
+Parameters are optional. Values provided with those parameters are inclusive.

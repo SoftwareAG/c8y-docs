@@ -160,9 +160,9 @@ For all applications hosted as microservices by Cumulocity the status of the mic
 
 The microservice may be in one of the following states:
 
-* <img src="/guides/icons/ok.png" alt="Up" style="max-width: 100%; display: inline-block;"> Microservice is up and running
-* <img src="/guides/icons/warning.png" alt="Unhealthy" style="max-width: 100%; display: inline-block;">&nbsp; Microservice is unhealthy
-* <img src="/guides/icons/danger.png" alt="Down" style="max-width: 100%; display: inline-block;"> Microservice is down
+* <img src="/guides/images/icons/ok.png" alt="Up" style="max-width: 100%; display: inline-block;"> Microservice is up and running
+* <img src="/guides/images/icons/warning.png" alt="Unhealthy" style="max-width: 100%; display: inline-block;">&nbsp; Microservice is unhealthy
+* <img src="/guides/images/icons/danger.png" alt="Down" style="max-width: 100%; display: inline-block;"> Microservice is down
 
 You may view details on their status by expanding the respective entry.
 

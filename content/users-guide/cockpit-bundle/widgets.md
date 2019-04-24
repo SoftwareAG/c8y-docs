@@ -14,7 +14,7 @@ The following section describes, in alphabetical order, each available widget ty
 
 The "Alarm list" widget shows a list of alarms, filtered by objects, alarm severity and alarm status. For details on the information provided for each alarm, refer to [Working with alarms](/guides/users-guide/device-management/#alarm-monitoring) in the Device Management section.
 
-![Alarm list widget](/guides/images/users-guide/Cockpit/cockpit-widget-alarm-list.png)
+![Alarm list widget](/guides/images/users-guide/cockpit/cockpit-widget-alarm-list.png)
 
 **Parameters to configure**
 
@@ -31,7 +31,7 @@ The "Alarm list" widget shows a list of alarms, filtered by objects, alarm sever
 
 The "All critical alarms" widget shows all objects with a critical alarm. Apart from the title, there are no additional parameters to be configured.
 
-![Critical alarms](/guides/images/users-guide/Cockpit/cockpit-widget-critical-alarms.png)
+![Critical alarms](/guides/images/users-guide/cockpit/cockpit-widget-critical-alarms.png)
 
 For details on alarms, refer to [Device Management > Working with alarms](/guides/users-guide/device-management/#alarm-monitoring).
 
@@ -39,7 +39,7 @@ For details on alarms, refer to [Device Management > Working with alarms](/guide
 
 The "Applications" widget shows a list of links to all available applications. Apart from the title, there are no additional parameters to be configured.
 
-![Applications widget](/guides/images/users-guide/Cockpit/cockpit-widget-applications.png)
+![Applications widget](/guides/images/users-guide/cockpit/cockpit-widget-applications.png)
 
 For details on applications, refer to [Administration > Managing Applications](/guides/users-guide/administration#managing-applications).
 
@@ -48,7 +48,7 @@ For details on applications, refer to [Administration > Managing Applications](/
 
 The "Asset notes" widget displays messages provided by the administrative user to all owners of the current widget. 
 
-![Asset notes widget](/guides/images/users-guide/Cockpit/cockpit-widget-asset-notes.png)
+![Asset notes widget](/guides/images/users-guide/cockpit/cockpit-widget-asset-notes.png)
 
 Only users with the permission to edit the home dashboard will be able to provide this message.
 
@@ -57,7 +57,7 @@ Only users with the permission to edit the home dashboard will be able to provid
 
 The "Asset properties" widget displays a user-defined list of attributes of the current object. The current object can be a device or a group.
 
-![Asset properties widget](/guides/images/users-guide/Cockpit/cockpit-widget-asset-properties.png)
+![Asset properties widget](/guides/images/users-guide/cockpit/cockpit-widget-asset-properties.png)
 
 
 **Parameters to configure**
@@ -86,10 +86,10 @@ The "Asset table" widget shows details of all child devices in a table. This is 
 
 In the following screenshot, five columns are configured. Three property columns "Meter", “Vendor”, and “Owner”, which refer to the properties “name”, type” and “owner” respectively. Additionally, there are two actions, one for toggling the maintenance mode, and one for rebooting the device.
 
-![Asset table widget](/guides/images/users-guide/Cockpit/cockpit-widget-asset-table.png)
+![Asset table widget](/guides/images/users-guide/cockpit/cockpit-widget-asset-table.png)
 
 The resulting table is visualized as follows:
-![Asset table widget example](/guides/images/users-guide/Cockpit/cockpit-widget-asset-table-example.png)
+![Asset table widget example](/guides/images/users-guide/cockpit/cockpit-widget-asset-table-example.png)
 
 **Adding properties**
 
@@ -101,7 +101,7 @@ To add a property, click **+Add Properties** and select one or more properties t
 
 To add an action, click **+Add Action**. Select **Toggle maintenance mode** to add the predefined action to toggle the maintenance mode. Or select **Create operation** to create a button that will execute a shell command. In the following dialog you can then enter the label for the button and the shell command to be executed.
 
-![Reboot device button configuration](/guides/images/users-guide/Cockpit/cockpit-widget-asset-table-buttonconfig.png)
+![Reboot device button configuration](/guides/images/users-guide/cockpit/cockpit-widget-asset-table-buttonconfig.png)
 
 >**Info:** The dialog shows the predefined shell commands of the first device that supports shell commands. The list is empty if there is no such device. For more details, refer to [shell commands](/guides/users-guide/device-management/#shell).<br>
 You can also enter the JSON format for the operation that will be sent to the device. For details, contact the device vendor for supported operations.
@@ -118,7 +118,7 @@ To remove a property or an action, hover over the respective row and click **Del
 
 The "Data point graph" widget shows a data point (measurement) in a graph. The visualization is the same as in the [data explorer](#visualize).
 
-<img src="/guides/images/users-guide/Cockpit/Cockpit_DataPointsGraphWidget.png" name="Data Point Graph widget" style="width:75%;"/>
+<img src="/guides/images/users-guide/cockpit/Cockpit_DataPointsGraphWidget.png" name="Data Point Graph widget" style="width:75%;"/>
 
 The easiest way to create a "Data point graph" widget is to navigate to the data explorer, click the **More...** button in the top menu bar and select **Send as widget to dashboard**.
 
@@ -150,7 +150,7 @@ Out of range values, based on configured yellow and red ranges, are highlighted 
 
 The "Event list" widget lets you monitor events for a selected device. 
 
-![Event list widget](/guides/images/users-guide/Cockpit/cockpit-widget-event-list.png)
+![Event list widget](/guides/images/users-guide/cockpit/cockpit-widget-event-list.png)
 
 Additionally, a specific date range can be set and the events can be monitored in realtime. 
 
@@ -164,7 +164,7 @@ For details on the "Fieldbus device" widget, refer to [Optional Services > Cloud
 
 The "Help and service" widget displays links to help and service resources. There are no additional parameters to be configured.
 
-![Help and service widget](/guides/images/users-guide/Cockpit/cockpit-widget-help-service.png)
+![Help and service widget](/guides/images/users-guide/cockpit/cockpit-widget-help-service.png)
 
 ### Widget "Image"
 
@@ -174,13 +174,13 @@ The "Image" widget lets you display a single image to be selected from your comp
 
 The "Info gauge" widget visualizes one data point in form of a radial gauge and multiple data points as labels. 
 
-![Info gauge widget](/guides/images/users-guide/Cockpit/cockpit-widget-info-gauge.png)
+![Info gauge widget](/guides/images/users-guide/cockpit/cockpit-widget-info-gauge.png)
 
 You can select one data point for the gauge, and multiple data points shown with labels on the left side.
 
-![Info gauge widget data point gauge](/guides/images/users-guide/Cockpit/cockpit-widget-data-gauge.png)
+![Info gauge widget data point gauge](/guides/images/users-guide/cockpit/cockpit-widget-data-gauge.png)
 
-![Info gauge widget data point label](/guides/images/users-guide/Cockpit/cockpit-widget-data-labels.png)
+![Info gauge widget data point label](/guides/images/users-guide/cockpit/cockpit-widget-data-labels.png)
 
 You must enable at least one data point in each section to create the "Info gauge" widget.
 
@@ -218,7 +218,7 @@ The following variables can be used inside the HTML content:
 
 The "Linear gauge" widget visualizes data points in form of a linear gauge. Min and max target values are shown on the gauge as well.
 
-![Info gauge widget](/guides/images/users-guide/Cockpit/cockpit-widget-linear-gauge.png)
+![Info gauge widget](/guides/images/users-guide/cockpit/cockpit-widget-linear-gauge.png)
 
 >**Info:** If a label is not properly readable, you can help yourself by increasing the min and max value of the data point to move the label into the readable range.
 
@@ -228,7 +228,7 @@ You must enable at least one data point to create the "Linear gauge" widget.
 
 The "Map" widget shows the location of a device or all devices of a group. 
 
-![Info gauge widget](/guides/images/users-guide/Cockpit/cockpit-widget-map.png)
+![Info gauge widget](/guides/images/users-guide/cockpit/cockpit-widget-map.png)
 
 You can drag the map and move its content, and you can zoom in and out by using the **Plus** and **Minus** buttons. 
 
@@ -273,13 +273,13 @@ The "Pie chart" widget displays data points (measurements) with current values i
 
 The "Quick links" widget displays several quick links to relevant operations. There are no additional parameters to be configured.
 
-![Quick links widget](/guides/images/users-guide/Cockpit/cockpit-widget-quick-links.png)
+![Quick links widget](/guides/images/users-guide/cockpit/cockpit-widget-quick-links.png)
 
 ### Widget "Radial Gauge"
 
 The "Radial gauge" widget visualizes data points in form of a radial gauge. 
 
-![Radial gauge widget](/guides/images/users-guide/Cockpit/cockpit-widget-radial-gauge.png)
+![Radial gauge widget](/guides/images/users-guide/cockpit/cockpit-widget-radial-gauge.png)
 
 You must enable at least one data point to create the "Radial gauge" widget.
 
@@ -288,7 +288,7 @@ You must enable at least one data point to create the "Radial gauge" widget.
 
 The "Recent alarms" widget shows all alarms of all severity sorted by time. There are no additional parameters to be configured.
 
-![Recent alarms widget](/guides/images/users-guide/Cockpit/cockpit-widget-recent-alarms.png)
+![Recent alarms widget](/guides/images/users-guide/cockpit/cockpit-widget-recent-alarms.png)
 
 For details on alarms, refer to [Device Management > Working with alarms](/guides/users-guide/device-management/#alarm-monitoring).
 
@@ -349,7 +349,7 @@ The "Traffic light" widget visualizes the states of a device as traffic light.
 
 The "Twitter news" widget displays tweets from Twitter's embedded timeline widget.
 
-<img src="/guides/images/users-guide/Cockpit/Cockpit_TwitterNewsWidget.png" name="Twitter news widget" style="width:50%;"/>
+<img src="/guides/images/users-guide/cockpit/Cockpit_TwitterNewsWidget.png" name="Twitter news widget" style="width:50%;"/>
 
 **Parameters to configure**
 

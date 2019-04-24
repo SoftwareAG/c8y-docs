@@ -10,11 +10,11 @@ Configuration snapshots help you, for example, to apply the same configuration t
 
 In the **Configuration repository** page which you open from the **Management** menu in the navigator, all available configurations are listed. Each entry shows the configuration name, the device from which it has been uploaded and the upload timestamp.
 
-![Configuration Repository](/guides/images/users-guide/DeviceManagement/DevMgmt_ConfigurationRepository.png)
+![Configuration Repository](/guides/images/users-guide/DeviceManagement/devmgmt-configuration-repository.png)
 
 Click a configuration in the list to open it. You may modify the settings here and apply them by clicking **Save**. Refer to the section below for details on the fields.
 
-![Configuration Repository](/guides/images/users-guide/DeviceManagement/DevMgmt_ConfigurationDetails.png)
+![Configuration Repository](/guides/images/users-guide/DeviceManagement/devmgmt-configuration-details.png)
 
 ### How to add a snapshot configuration from a file
 

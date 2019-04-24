@@ -172,7 +172,7 @@ The **Control** tab lists the operations being sent to a device. See [Working wi
 
 In the **Network** tab, mobile network (WAN) and local area network (LAN) parameters can be viewed and configured.
 
-![Network tab](/guides/images-users-guide/DeviceManagement/devmgmt-devices-network.png)
+![Network tab](/guides/images/users-guide/DeviceManagement/devmgmt-devices-network.png)
 
 The WAN parameters in the user interface correspond to the first profile stored in the router. These parameter can be configured remotely or via SMS.
 

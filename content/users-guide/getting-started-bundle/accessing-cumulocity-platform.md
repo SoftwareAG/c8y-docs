@@ -43,7 +43,7 @@ Select the **Remember me** checkbox if you want the browser to remember your cre
 
 When you log into Cumulocity for the first time, you will be taken to the default application (usually the [Cockpit](/guides/users-guide/cockpit) application if not configured differently).
 
-![image alt text](/guides/images/users-guide/Cockpit/cockpit-home-screen.png)
+![image alt text](/guides/images/users-guide/cockpit/cockpit-home-screen.png)
 
 To explicitly logout, click the **User** button at the right of the the top bar and from the context menu select **Logout**.
 

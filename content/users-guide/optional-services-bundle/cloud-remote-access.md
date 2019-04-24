@@ -172,7 +172,7 @@ By enabling the auto-saving host key functionality you will no longer need to en
 
 In order to enable the auto-save host key functionality, navigate to the **Remote access** page under the **Settings** menu in the **Administration** application. Activate the checkbox and then click **Save**.
 
-![Save host key](/guides/images/users-guide/administration-settings-cra)
+![Save host key](/guides/images/users-guide/administration-settings-cra.png)
 
 ### Connecting to endpoints
 

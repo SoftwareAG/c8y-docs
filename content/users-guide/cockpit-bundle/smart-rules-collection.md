@@ -8,7 +8,7 @@ layout: redirect
 
 Cumulocity includes preset global Smart Rule types. 
 
-![Global smart rules](/guides/images/users-guide/Cockpit/cockpit-globalsmartrules.png)
+![Global smart rules](/guides/images/users-guide/cockpit/cockpit-globalsmartrules.png)
 
 Each global Smart Rule type provides different parameters to configure. 
 
@@ -26,7 +26,7 @@ When an alarm is created, a SMS is sent.
 
 The rule uses the following parameters:
 
-![On alarm send SMS](/guides/images/users-guide/Cockpit/cockpit-globalsmartrules-sendsms.png)
+![On alarm send SMS](/guides/images/users-guide/cockpit/cockpit-globalsmartrules-sendsms.png)
 
 |Step|Field|Description|
 |:---|:---|:---|
@@ -55,7 +55,7 @@ When an alarm is created, an email is sent.
 
 The rule uses the following parameters:
 
-![On alarm send email](/guides/images/users-guide/Cockpit/cockpit-globalsmartrules-sendemail.png)
+![On alarm send email](/guides/images/users-guide/cockpit/cockpit-globalsmartrules-sendemail.png)
 
 |Step|Field|Description|
 |:---|:---|:---|
@@ -84,7 +84,7 @@ When an alarm is created, sends e-mail or SMS.
 
 The rule uses the following parameters:
 
-![On alarm escalate](/guides/images/users-guide/Cockpit/cockpit-globalsmartrules-escalate.png)
+![On alarm escalate](/guides/images/users-guide/cockpit/cockpit-globalsmartrules-escalate.png)
 
 |Step|Field|Description|
 |:---|:---|:---|
@@ -113,7 +113,7 @@ If an alarm is active for a certain time, the severity is increased.
 
 The rule uses the following parameters:
 
-![On alarm increase severity](/guides/images/users-guide/Cockpit/cockpit-globalsmartrules-severity.png)
+![On alarm increase severity](/guides/images/users-guide/cockpit/cockpit-globalsmartrules-severity.png)
 
 |Step|Field|Description|
 |:---|:---|:---|
@@ -144,7 +144,7 @@ The rule can be configured for entering or leaving the geofence, or both. Existi
 
 The rule uses the following parameters:
 
-![On geofence create alarm](/guides/images/users-guide/Cockpit/cockpit-globalsmartrules-geofencealarm.png)
+![On geofence create alarm](/guides/images/users-guide/cockpit/cockpit-globalsmartrules-geofencealarm.png)
 
 |Step|Field|Description|
 |:---|:---|:---|
@@ -175,7 +175,7 @@ The rule can be configured for entering or leaving the geofence, or both.
 
 The rule uses the following parameters:
 
-![On geofence send e-mail](/guides/images/users-guide/Cockpit/cockpit-globalsmartrules-geofenceemail.png)
+![On geofence send e-mail](/guides/images/users-guide/cockpit/cockpit-globalsmartrules-geofenceemail.png)
 
 |Step|Field|Description|
 |:---|:---|:---|
@@ -203,7 +203,7 @@ Creates consumption data point based on data from an electric-, gas-, water- met
 
 The rule uses the following parameters:
 
-![Calculate energy consumption](/guides/images/users-guide/Cockpit/cockpit-globalsmartrules-energy.png)
+![Calculate energy consumption](/guides/images/users-guide/cockpit/cockpit-globalsmartrules-energy.png)
 
 |Step|Field|Description|
 |:---|:---|:---|
@@ -233,7 +233,7 @@ If no new measurement data has been received for a specified time, an alarm is c
 
 The rule uses the following parameters:
 
-![On missing measurements create alarm](/guides/images/users-guide/Cockpit/cockpit-globalsmartrules-missingmeasurement.png)
+![On missing measurements create alarm](/guides/images/users-guide/cockpit/cockpit-globalsmartrules-missingmeasurement.png)
 
 |Step|Field|Description|
 |:---|:---|:---|
@@ -255,7 +255,7 @@ If a certain alarm occurs, the specified operation will be send to the device.
 
 The rule uses the following parameters:
 
-![On alarm execute operation](/guides/images/users-guide/Cockpit/cockpit-globalsmartrules-operation.png)
+![On alarm execute operation](/guides/images/users-guide/cockpit/cockpit-globalsmartrules-operation.png)
 
 <table>
 <col style="width:5%">
@@ -320,7 +320,7 @@ Using this mechanism, you can configure global threshold ranges in the Data Poin
 
 The rule uses the following parameters:
 
-![On measurement threshold create alarm](/guides/images/users-guide/Cockpit/cockpit-globalsmartrules-thresholdalarm.png)
+![On measurement threshold create alarm](/guides/images/users-guide/cockpit/cockpit-globalsmartrules-thresholdalarm.png)
 
 |Step|Field|Description|
 |:---|:---|:---|
@@ -383,7 +383,7 @@ The severity of alarm is determined as follows:
 
 The rule uses the following parameters:
 
-![On measurement explicit threshold create alarm](/guides/images/users-guide/Cockpit/cockpit-globalsmartrules-measurementthreshold.png)
+![On measurement explicit threshold create alarm](/guides/images/users-guide/cockpit/cockpit-globalsmartrules-measurementthreshold.png)
 
 |Step|Field|Description|
 |:---|:---|:---|

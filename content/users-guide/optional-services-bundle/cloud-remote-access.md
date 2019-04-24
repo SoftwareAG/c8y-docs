@@ -81,6 +81,7 @@ To use Cloud Remote Access, the following prerequisites have to be met:
 
 * a Cloud Remote Access compatible gateway connected to your Cumulocity account;
 * a remote device with a VNC, SSH or Telnet server that is connected to the gateway and reachable from the gateway;
+* "Remote access" permission granted to the tenant user;
 * Cloud Remote Access microservice included into your subscription plan. 
 
 Click **All devices** and select the desired gateway from the device list. 
@@ -162,6 +163,16 @@ The following algorithms are supported when adding new keys:
 To edit or remove an endpoint, click the menu icon at the right of a row and select **Edit** or **Remove** from the context menu.
 
 ![Edit endpoints](/guides/images/users-guide/cra-endpoint-menu.png)
+
+#### Auto-saving host key
+
+A host key is a public key of the server which is generated when an SSH server is installed. It is used to verify the identity of the server.
+
+By enabling the auto-saving host key functionality you will no longer need to enter the host key after each connection. Instead, the host key can be automatically saved after the first successfully established connection to a remote access endpoint.
+
+In order to enable the auto-save host key functionality, navigate to the **Remote access** page under the **Settings** menu in the **Administration** application. Activate the checkbox and then click **Save**.
+
+![Save host key](/guides/images/users-guide/administration-settings-cra)
 
 ### Connecting to endpoints
 

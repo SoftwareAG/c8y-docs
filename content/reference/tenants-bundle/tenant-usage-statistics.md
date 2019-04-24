@@ -24,16 +24,16 @@ layout: redirect
  * "storageSize" is affected by your retention rules. It is also affected by the regularly running database optimization functions running in Cumulocity. If the size decreases, it does not necessarily mean that data was deleted.
  * Days are counted according to server timezone.
 
-"deviceRequestCount" - device requests are recognized as requests that do not contain "X-Cumulocity-Application-Key" header. 
+"deviceRequestCount" - device requests are recognized as requests that do not contain "X-Cumulocity-Application-Key" header.
 In addition, requests to /user, /tenant and /application API's are never counted as "deviceRequestCount".
 
 Request counting in SmartREST and MQTT:
-- SmartREST: each row in SmartREST request is transformed into a separate HTTP request. For example, if one SmartREST request contains 10 rows, then 10 separate calls are executed, meaning that request count is increased by 10. 
+- SmartREST: each row in SmartREST request is transformed into a separate HTTP request. For example, if one SmartREST request contains 10 rows, then 10 separate calls are executed, meaning that request count is increased by 10.
 - MQTT: each row/line counts as a separate request. Creating custom template counts as a single request.
 
 ### Total inbound data transfer
 
-Inbound data transfer refers to the total number of inbound requests performed to transfer data into the Cumulocity IoT platform. This includes sensor readings, alarms, events, commands and alike that are transferred between devices and the Cumulocity IoT platform using the REST and/or MQTT interfaces. Such an inbound request could also originate from a custom microservice, website or any other client. 
+Inbound data transfer refers to the total number of inbound requests performed to transfer data into the Cumulocity IoT platform. This includes sensor readings, alarms, events, commands and alike that are transferred between devices and the Cumulocity IoT platform using the REST and/or MQTT interfaces. Such an inbound request could also originate from a custom microservice, website or any other client.
 
 The table below lists all counters that enhance the Cumulocity tenant statistics and measure the inbound data transfers:
 
@@ -49,42 +49,42 @@ The table below lists all counters that enhance the Cumulocity tenant statistics
 </thead>
 <tbody>
 <tr>
-<td style="text-align:left">measurementsCreated</td>
+<td style="text-align:left">measurementsCreatedCount</td>
 <td style="text-align:left">Number</td>
 <td style="text-align:left">The number of measurements created. Note: The bulk creation of measurements is handled in a way that each measurement is counted individually.</td>
 </tr>
 <tr>
-<td style="text-align:left">alarmsCreated</td>
+<td style="text-align:left">alarmsCreatedCount</td>
 <td style="text-align:left">Number</td>
 <td style="text-align:left">The number of alarms created.</td>
 </tr>
 <tr>
-<td style="text-align:left">alarmsUpdated</td>
+<td style="text-align:left">alarmsUpdatedCount</td>
 <td style="text-align:left">Number</td>
 <td style="text-align:left">The number of updates on alarms.</td>
 </tr>
 <tr>
-<td style="text-align:left">eventsCreated</td>
+<td style="text-align:left">eventsCreatedCount</td>
 <td style="text-align:left">Number</td>
 <td style="text-align:left">The number of events created.</td>
 </tr>
 <tr>
-<td style="text-align:left">eventUpdates</td>
+<td style="text-align:left">eventsUpdatedCount</td>
 <td style="text-align:left">Number</td>
 <td style="text-align:left">The number of updates on events.</td>
 </tr>
 <tr>
-<td style="text-align:left">managedObjectsCreated</td>
+<td style="text-align:left">inventoriesCreatedCount</td>
 <td style="text-align:left">Number</td>
 <td style="text-align:left">The number of managed objects created.</td>
 </tr>
 <tr>
-<td style="text-align:left">managedObjectUpdates</td>
+<td style="text-align:left">inventoriesUpdatedCount</td>
 <td style="text-align:left">Number</td>
 <td style="text-align:left">The number of updates to managed objects.</td>
 </tr>
 <tr>
-<td style="text-align:left">totalInboundTransfers</td>
+<td style="text-align:left">totalResourceCreateAndUpdateCount</td>
 <td style="text-align:left">Number</td>
 <td style="text-align:left">The sum of values above (all inbound transfers).</td>
 </tr>
@@ -128,7 +128,7 @@ See the table below for more information on how the counters above are increased
 | dateTill (inclusive)  | datetime |
 
 Response body: TenantUsageStatisticsCollection
-  
+
 Required role: ROLE\_TENANT\_STATISTICS\_READ
 
 Example Request: Get statistics of current tenant starting Aug 1st, 2014, until today.
@@ -187,7 +187,7 @@ Example Response :
 | dateTo      | datetime |
 
 Response body: application/json
-  
+
 Required role: ROLE\_TENANT\_MANAGEMENT\_READ
 
 Example Request: Get statistics of all tenants starting Aug 1st, 2014, until today.
@@ -229,7 +229,7 @@ Example Response :
         },
         ...
 	]
-    
+
 
 ### TenantUsageStatisticsSummary [application/vnd.com.nsn.cumulocity.tenantUsageStatisticsSummary+json]
 
@@ -242,7 +242,7 @@ Example Response :
 | dateTill    | datetime |
 
 Response body: TenantUsageStatisticsSummary
-  
+
 Required role: ROLE\_TENANT\_STATISTICS\_READ
 
 Example Request: Get summary of requests and database usage from the start of this month until now.
@@ -283,7 +283,7 @@ Example Response :
 
 ### GET current tenant
 
-Request for currently logged service user's tenant. 
+Request for currently logged service user's tenant.
 
 Required role: ROLE&#95;USER&#95;MANAGEMENT&#95;OWN&#95;READ, or ROLE&#95;SYSTEM
 

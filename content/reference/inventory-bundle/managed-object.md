@@ -92,14 +92,14 @@ layout: redirect
 <td style="text-align:left">deviceParents</td>
 <td style="text-align:left">ManagedObject ReferenceCollection</td>
 <td style="text-align:left">0..1</td>
-<td style="text-align:left">A collection of references to device parent objects.</td>
+<td style="text-align:left">A collection of references to device parent objects. Note: GET to /inventory/managedObjects/{{deviceId}}/deviceParents is not implemented.</td>
 <td style="text-align:left">No</td>
 </tr>
 <tr>
 <td style="text-align:left">assetParents</td>
 <td style="text-align:left">ManagedObject ReferenceCollection</td>
 <td style="text-align:left">0..1</td>
-<td style="text-align:left">A collection of references to asset parent objects.</td>
+<td style="text-align:left">A collection of references to asset parent objects. Note: GET to /inventory/managedObjects/{{deviceId}}/assetParents is not implemented.</td>
 <td style="text-align:left">No</td>
 </tr>
 </tbody>
@@ -109,7 +109,9 @@ layout: redirect
 
 A managed object reference in the "child" and "parents" collections contains only "id", "name" and "self" properties.
 
-Not every GET response contains "parents" collections. It is required to pass "withParents=true" query param to have "parents" included.
+Not every GET response contains "parents" collections. It is required to pass "withParents=true" query param to have "parents" included. If you query the managed object "withParent=true" it will return a flat list of all parents and grandparents of the given object.
+
+> **Info:** If you query childDevices, only the children of the given device are returned without any grandchildren. 
 
 ### GET a representation of a managed object
 

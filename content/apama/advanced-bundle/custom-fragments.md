@@ -4,13 +4,12 @@ title: Custom fragments
 layout: redirect
 ---
 
-Cumulocity APIs give you the possibility to structure your data freely. In the Apama Event Processing Language this is done by adding entries to params, which is of the type dictionary<string,any>. Events all have a params field, which is translated to fragments or optional fields. Thus, when receiving events, look up entries in the params field. When sending events, this can be done by definining event types, or you can use dictionary<string,any> type; when receiving events, the EPL type will be dictionary<any,any>. Note that EPL is strongly typed, so if you are creating an event with no fragments, a 'new dictionary<string,any>' expression is required. If you are providing entries inline with a dictionary literal, then EPL will determine the type based on the type of the first key and value pair - thus, for dictionary<string, any>, cast the first value to an 'any' type with <any> cast operator:
+Cumulocity APIs give you the possibility to structure your data freely. In the Apama Event Processing Language this is done by adding entries to params, which is of the type dictionary&lt;string, any&gt;. Events all have a params field, which is translated to fragments or optional fields. Thus, when receiving events, look up entries in the params field. When sending events, this can be done by definining event types, or you can use dictionary&lt;string, any&gt; type; when receiving events, the EPL type will be dictionary&lt;any, any&gt;. Note that EPL is strongly typed, so if you are creating an event with no fragments, a 'new dictionary&lt;string, any&gt;' expression is required. If you are providing entries inline with a dictionary literal, then EPL will determine the type based on the type of the first key and value pair - thus, for dictionary&lt;string, any&gt;, cast the first value to an 'any' type with `<any>` cast operator:
 
 	send Event(..., new dictionary<string,any>) to Event.CHANNEL;
-	
 	send Event(..., {"fragment":<any>"value"}) to Event.CHANNEL;
 
-The MeasurementValue type is provided for the measurements in the Measurement type. MeasurementValue has value and unit, fields, and extraParams for other fragments.
+The MeasurementValue type is provided for the measurements in the Measurement type. MeasurementValue has `value` and `unit` fields and `params` for other fragments.
 
 Example 1:
 
@@ -27,31 +26,31 @@ Example 1:
 This will result in the following JSON structure:
 
 	{
-	  "type": "c8y_TemperatureMeasurement",
-	  "time": "...",
-	  "source": {
-	    "id": "12345"
-	  },
-	  "c8y_TemperatureMeasurement": {
-	    "T1": {
-	      "value": 1,
-	      "unit": "C"
-	    },
-	    "T2": {
-	      "value": 1,
-	      "unit": "C"
-	    },
-	    "T3": {
-	      "value": 1,
-	      "unit": "C"
-	    },
-	    "T4": {
-	      "value": 1,
-	      "unit": "C"
-	    },
-	    "T5": {
-	      "value": 1,
-	      "unit": "C"
-	    },
-	  }
+		"type": "c8y_TemperatureMeasurement",
+		"time": "...",
+		"source": {
+			"id": "12345"
+		},
+		"c8y_TemperatureMeasurement": {
+			"T1": {
+				"value": 1,
+				"unit": "C"
+			},
+			"T2": {
+				"value": 1,
+				"unit": "C"
+			},
+			"T3": {
+				"value": 1,
+				"unit": "C"
+			},
+			"T4": {
+				"value": 1,
+				"unit": "C"
+			},
+			"T5": {
+				"value": 1,
+				"unit": "C"
+			},
+		}
 	}

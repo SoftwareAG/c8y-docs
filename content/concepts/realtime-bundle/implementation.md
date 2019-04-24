@@ -12,20 +12,26 @@ The "temporary" mode will only send the data to the real-time engine and immedia
 
 ![CEP architecture](/guides/images/concepts-guide/realtime.png)
 
-
 ### Examples
 
 Assume that location updates from cars should be monitored every second while the car is driving, but only be stored once in a minute into the database for reporting purposes. This is done using the following Apama statement:
 
+	using com.apama.cumulocity.Event;
+	using com.apama.cumulocity.Measurement;
+
 	monitor SendEveryMinute {
+
 		dictionary<string, Event> latestUpdates;
+
 		action onload() {
-		monitor.subscribe(Measurement.CHANNEL);
+
+			monitor.subscribe(Measurement.CHANNEL);
 			on all Event() as e {
 				if e.params.hasKey("c8y_LocationUpdate") {
 					latestUpdates[e.source] := e;
 				}
 			}
+
 			on all wait(60.0) {
 				Event e;
 				for e in latestUpdates.values() {
@@ -37,25 +43,29 @@ Assume that location updates from cars should be monitored every second while th
 	}
 
 Another option is to output only every 60th update.
-	
+
+	using com.apama.cumulocity.Event;
+	using com.apama.cumulocity.Measurement;
+
 	monitor SendEverySixtyEvents {
+
 		event UpdateAndCount {
 			Event latest;
 			integer count;
 		}
-		dictionary<string, UpdateAndCount > latestUpdates;
+
+		dictionary<string, UpdateAndCount> latestUpdates;
+
 		action onload() {
-		monitor.subscribe(Measurement.CHANNEL);
+			monitor.subscribe(Measurement.CHANNEL);
 			on all Event() as e {
 				if e.params.hasKey("c8y_LocationUpdate") {
 					UpdateAndCount updateCount := latestUpdates.getOrAddDefault(e.source);
 					updateCount.latest := e;
-					integer count := updateCount.count + 1;
-					if count = 60 {
+					updateCount.count := updateCount.count + 1;
+					if updateCount.count = 60 {
 						send e to Event.CHANNEL;
 						latestUpdates.remove(e.source);
-					} else {
-						updateCount.count := count;
 					}
 				}
 			}

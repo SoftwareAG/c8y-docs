@@ -1,6 +1,6 @@
 ---
 weight: 70
-title: Python example
+title: Examples
 layout: bundle
 aliases:
   - /http

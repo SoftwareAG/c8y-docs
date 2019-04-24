@@ -8,4 +8,3 @@ aliases:
   - /rest/application-development
 ---
 
-This section describes specific aspects of developing microservices using the REST interface.

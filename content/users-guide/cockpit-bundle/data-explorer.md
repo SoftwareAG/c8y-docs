@@ -18,7 +18,7 @@ In the data explorer, you see a list of available data points on the right. The 
 
 On the left, in the main card, you see its visualization. 
 
-![data explorer](/guides/images/users-guide/data-explorer-main-view.PNG)
+![data explorer](/guides/images/users-guide/Cockpit/cockpit-dataexplorer.png)
 
 The visualization is generated based on data point properties.
 
@@ -30,7 +30,7 @@ The data points properties are pre-filled as follows:
 
 There can be more than one matching data point entry in the Data Point Library. In this case, the first one is selected automatically by the system. You can overwrite this selection by clicking the menu icon of the respective data point and selecting **Load [NAME] from Library**. 
 
-![edit data points](/guides/images/users-guide/data-explorer-data-points-edit.PNG)
+![edit data points](/guides/images/users-guide/Cockpit/cockpit-dataexplorer-edit.png)
 
 For details on modifying the visualization in general, see [*Changing data point visualization*](#change-visualization). For details on customizing the properties of a particular data point, see [*Customizing data point properties*](#customize-data-points).
 
@@ -76,7 +76,7 @@ For each datapoint, its visibility can be switched on or off by using the slider
 
 To add a data point to the data explorer, click  **Add data point** at the bottom of the **Data points** card. 
 
-<img src="/guides/images/users-guide/cockpit/Cockpit_AddDatapoint.png" name="Add data points" style="width:50%;"/><br>
+![Add data point](/guides/images/users-guide/Cockpit/cockpit-dataexplorer-adddatapoint.png)
 
 In the top of the dialog, select a device from the asset hierarchy. Only the asset hierarchy below the objects selected in the navigator is visible. If **Data explorer** in the navigator was selected, the complete asset hierarchy is visible.
 
@@ -84,7 +84,7 @@ The bottom of the dialog shows all data points of the selected object. Select th
 
 To save the data point to the Data Point Library, click the menu icon of the data point and from the context menu select **Save to library**. 
 
-<img src="/guides/images/users-guide/cockpit/cockpit-datapoint-menu.png" name="data point context menu" style="width:75%;"/>
+![Save data point to library](/guides/images/users-guide/Cockpit/cockpit-dataexplorer-savedatapoint.png)
 
 For details on the Data Point Library refer to [Using the Datapoint Library](#data-point-library).
 
@@ -97,17 +97,54 @@ You can customize the visualization of a particular data point to your preferenc
 
 The following fields my be modified:
 
-|Field|Description|
-|:---|:---|
-|Label|Name of the data point, displayed on the y-axis to identify the data point. Below the label, the target is displayed, showing the name of the asset and the internal name of the data point (measurement fragment and series). This information is not editable.
-|Unit|Unit used on the y-axis. 
-|Min/Max|Range shown on the y-axis. 
-|Target|The target value is currently not shown in the diagram. The value is used in the "Data Point List" widget.
-|Yellow range min/max|Defines the range when MINOR alarms should be raised by threshold rule.  
-|Red range min/max|Defines the range when CRITICAL alarms should be raised by threshold rule.
-|Display|Value displayed when data is aggregated. May be "Minimum", Maximum", Minimum and maximum".
-|Chart type|The type of chart used for the visualization. May be one of "Line", "Points", "Line and points", "Bars", "Step before" (alternating between vertical and horizontal segments, as in a step function) or "Step after" (alternating between horizontal and vertical segments). Default value is "line".
-|Y axis|Defines where the y-axis is shown. May be one of "Auto", "Left", "Right". Default value is "Auto". 
+<table>
+<col style="width:15%">
+<col style="width:85%">
+<thead>
+<tr>
+<th style="text-align:left">Field</th>
+<th style="text-align:left">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">Label</td>
+<td style="text-align:left">Name of the data point, displayed on the y-axis to identify the data point. Below the label, the target is displayed, showing the name of the asset and the internal name of the data point (measurement fragment and series). This information is not editable.</td>
+</tr>
+<tr>
+<td style="text-align:left">Unit</td>
+<td style="text-align:left">Unit used on the y-axis. </td>
+</tr>
+<tr>
+<td style="text-align:left">Min/Max</td>
+<td style="text-align:left">Range shown on the y-axis. </td>
+</tr>
+<tr>
+<td style="text-align:left">Target</td>
+<td style="text-align:left">The target value is currently not shown in the diagram. The value is used in the "Data Point List" widget.</td>
+</tr>
+<tr>
+<td style="text-align:left">Yellow range min/max</td>
+<td style="text-align:left">Defines the range when MINOR alarms should be raised by threshold rule.  </td>
+</tr>
+<tr>
+<td style="text-align:left">Red range min/max</td>
+<td style="text-align:left">Defines the range when CRITICAL alarms should be raised by threshold rule.</td>
+</tr>
+<tr>
+<td style="text-align:left">Display</td>
+<td style="text-align:left">Value displayed when data is aggregated. May be "Minimum", Maximum", Minimum and maximum".</td>
+</tr>
+<tr>
+<td style="text-align:left">Chart type</td>
+<td style="text-align:left">The type of chart used for the visualization. May be one of "Line", "Points", "Line and points", "Bars", "Step before" (alternating between vertical and horizontal segments, as in a step function) or "Step after" (alternating between horizontal and vertical segments). Default value is "line".</td>
+</tr>
+<tr>
+<td style="text-align:left">Y axis</td>
+<td style="text-align:left">Defines where the y-axis is shown. May be one of "Auto", "Left", "Right". Default value is "Auto". </td>
+</tr>
+</tbody>
+</table> 
 
 After customizing the properties of a data point, you can save the modified settings to the Data Point Library. Click the menu icon and from the context menu select **Update [NAME] to library**.
 
@@ -127,11 +164,11 @@ In this case, both data points share the same y-axis. This y-axis only shows the
 
 In addition to data points you can also add alarms or events to the data explorer.
 
-<img src="/guides/images/users-guide/cockpit/Cockpit_DataExplorerAlarms.png" name="Alarms" style="width:75%;"/> 
+![Data explorer events](/guides/images/users-guide/Cockpit/cockpit-dataexplorer-events.png)
 
 In the **Alarms/ Events** card, click **Add alarm/ event** to add an alarm or event.
 
-<img src="/guides/images/users-guide/cockpit/Cockpit_DataExplorerAlarmAdd.png" name="Add widget" style="width:75%;"/> 
+![Data explorer add events](/guides/images/users-guide/Cockpit/cockpit-dataexplorer-eventsadd.png)
 
 In the upcoming dialog, you can select an alarm or event from the list of recent alarms and events. Click **Add**, to add your selection.
 
@@ -148,9 +185,9 @@ If you want to keep your current configuration in the data explorer for later us
 
 **Send as widget to dashboard**
 
-To create a widget from the data explorer of a particular asset, click **More...** in the top menu bar and select **Send as a widget to dashboard** from the context menu.
+To create a widget from the data explorer of a particular asset, click **More...** in the top menu bar and select **Send as widget to dashboard** from the context menu.
 
-<img src="/guides/images/users-guide/cockpit/Cockpit_SendWidgetToDashboard.png" name="Send as widget to dashboard" style="width:50%;"/> 
+[Data explorer add events](/guides/images/users-guide/Cockpit/cockpit-dataexplorer-sendwidget.png)
 
 In the upcoming dialog, select one of the dashboards available for the current object and click **Select** to add the data explorer as widget to the selected dashboard.
 
@@ -160,7 +197,7 @@ In the upcoming dialog, select one of the dashboards available for the current o
 
 To create a widget from the data explorer of in the navigator, click **More...** in the top menu bar and select **Send as a widget to report** from the context menu.
 
-<img src="/guides/images/users-guide/cockpit/Cockpit_SendWidgetToReport.png" name="Send as widget to report" style="width:50%;"/> 
+[Data explorer add events](/guides/images/users-guide/Cockpit/cockpit-dataexplorer-sendwidget.png) 
 
 In the upcoming dialog, select one of the reports available and click **Select** to add the data explorer as widget to the selected report.
 

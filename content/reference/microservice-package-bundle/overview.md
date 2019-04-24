@@ -4,56 +4,95 @@ title: Overview
 layout: redirect
 ---
 
-Cumulocity provides you with an utility tool for easy microservice packaging, deployment and subscription. The script requires running docker and can be found here:
 
-    wget http://resources.cumulocity.com/examples/microservice
-      
-After that run
+Cumulocity provides you with an utility tool for easy microservice packaging, deployment and subscription. The script requires a local installation of Docker and jq, which is a lightweight and flexible JSON processor.
 
-	chmod +x microservice
+### Prerequisites
 
-To show all possibilities, type 
+#### Docker
 
-    /microservice help
-    
-The response will be:
-    
-    Following functions are available. You can run specify them in single execution:
-    	pack - prepares deployable zip file. Requires following structure:
-    		/docker/Dockerfile
-    		/docker/* - all files within the directory will be included in the docker build
-    		/cumulocity.json 
-    	deploy - deploys application to specified address
-    	subscribe - subscribes tenant to specified microservice application
-    	help | --help - prints help
-    
-    Following options are available:
-    	-dir | --directory 		# Working directory. Default value'/home/ddud/work/cumulocity_repos/develop/java/cumulocity-examples/hello-world-microservice' 
-    	-n   | --name 	 		# Docker image name
-    	-t   | --tag			# Docker tag. Default value 'latest'
-    	-d   | --deploy			# Address of the platform the microservice will be uploaded to
-    	-u   | --user			# Username used for authentication to the platform
-    	-p   | --password 		# Password used for authentication to the platform
-    	-te  | --tenant			# Tenant used
-    	-a   | --application 	# Name upon which the application will be registered on the platform. Default value from --name parameter
-    	-id  | --applicationId	# Application used for subscription purposes. Required only for solemn subscribe execution
+Verify that you have a Docker installation. The Docker version must be >= 1.2.6
 
-In addition, it is required to have the "jq" package installed. To install, run:
+```shell
+$ docker version
+Client:
+ Version:         1.12.6
+ API version:     1.24
+ OS/Arch:         linux/amd64
 
-	sudo yum install jq
+Server:
+ Version:         1.12.6
+ API version:     1.24
+ OS/Arch:         linux/amd64
+```
 
-### Docker
+#### JSON processor
 
-Cumulocity hosts linux/amd64 docker containers and not Windows containers. The docker version must be >= 1.2.6
+Execute the following command to install the JSON processor on Linux systems:
 
-    $ docker version
-    Client:
-     Version:         1.12.6
-     API version:     1.24
-     OS/Arch:         linux/amd64
+```shell
+$ sudo yum install jq
+```
 
-    Server:
-     Version:         1.12.6
-     API version:     1.24
-     OS/Arch:         linux/amd64
+For macOS, use the following command:
 
+```shell
+$ brew install jq
+```
+
+> **Info**: You don't need to run Homebrew using `sudo` as it is extremely dangerous and no longer supported. As Homebrew does not drop privileges on installation, you would be giving all
+build scripts full access to your system.
+
+#### Bash
+
+The microservice utility tool (script) needs version 4+ to run. Verify your Bash version with the following command:
+
+```shell
+$ bash --version
+
+GNU bash, version 5.0.3(1)-release (x86_64-apple-darwin18.2.0)
+Copyright (C) 2019 Free Software Foundation, Inc.
+```
+
+macOS systems come with a preinstalled Bash version 3.x. Hence, you must update it in order to execute the microservice script. To do so, execute the following commands:
+
+```shell
+$ brew install bash
+$ chsh -s /usr/local/bin/bash
+```
+
+If your Bash version has not changed while executing `bash --version`, you may need to restart your system. Note that the updated interpreter gets installed at */usr/local/bin/bash* and you will have to modify the first line of the microservice script as follows:
+
+```bash
+#!/usr/local/bin/bash
+
+or
+
+#!
+```
+
+### Configure the microservice utility tool
+
+Execute the following command to download the script on Linux systems:
+
+```shell
+$ wget http://resources.cumulocity.com/examples/microservice
+```
+
+For macOS, use the following command:
+
+```shell
+$ curl -O http://resources.cumulocity.com/examples/microservice
+```
+
+Change the mode to allow the script to be executed:
+
+```shell
+$ chmod +x microservice
+```
+
+Use the help option to see all the available functions (goals) and options:
+
+```shell
+$ ./microservice help
+```

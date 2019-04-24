@@ -14,7 +14,7 @@ You can find this and all the other plugins described in the documentation insid
 
 ![Branding example](/guides/images/plugins/branding.png)
 
-Our main css is based on the popular css framework [Bootstrap 3](http://getbootstrap.com/). It is possible to build a branding plugin based on Cumulocity's own base branding simply by overriding less variables.
+Our main CSS is based on the popular CSS framework [Bootstrap 3](http://getbootstrap.com/). It is possible to build a branding plugin based on Cumulocity's own base branding simply by overriding less variables.
 
 As the myBranding example is much more extensive than the other plugins, copy over the myBranding folder into your plugins folder.
 Although there a few files there, the strategy is straight forward: defining less variables that are overriding the setting on the base theme c8yBranding.

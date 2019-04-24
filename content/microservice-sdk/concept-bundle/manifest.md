@@ -5,4 +5,5 @@ layout: redirect
 ---
 
 The microservice manifest provides the required settings to manage microservice instances and the Cumulocity application.
-Refer to the [Microservice manifest reference](/guides/reference/microservice-manifest) in the Reference guide to see the full list of options.
+
+Refer to [Microservice manifest](/guides/reference/microservice-manifest) in the Reference guide to see the full list of options.

@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Web SDK on Cumulocity IoT Guides</title>
+    <link>https://cumulocity.com/guides/web/</link>
+    <description>Recent content in Web SDK on Cumulocity IoT Guides</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    
+	<atom:link href="https://cumulocity.com/guides/web/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Overview</title>
+      <link>https://cumulocity.com/guides/web/introduction/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://cumulocity.com/guides/web/introduction/</guid>
+      <description>This Web SDK guide provides information on the Web SDK which enables you to develop web applications on top of our platform, communicate through our API and apply UI components to your custom application.</description>
+    </item>
+    
+    <item>
+      <title>Brief background</title>
+      <link>https://cumulocity.com/guides/web/background/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://cumulocity.com/guides/web/background/</guid>
+      <description>As the web ecosystem evolves, as a platform we evolve with it - while assuring to keep upgrade paths as smooth as possible and keep extensions working properly with very little changes.</description>
+    </item>
+    
+    <item>
+      <title>Web SDK for Angular</title>
+      <link>https://cumulocity.com/guides/web/angular/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://cumulocity.com/guides/web/angular/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Web SDK for plugins</title>
+      <link>https://cumulocity.com/guides/web/web-sdk-for-plugins/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://cumulocity.com/guides/web/web-sdk-for-plugins/</guid>
+      <description>Web SDK for plugins is still based on Angular JS. We are currently working on an Angular-based solution which will replace the existing Web SDK for plugins in the future.</description>
+    </item>
+    
+    <item>
+      <title>Troubleshooting</title>
+      <link>https://cumulocity.com/guides/web/troubleshooting/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://cumulocity.com/guides/web/troubleshooting/</guid>
+      <description>This section lists common isses and workarounds.</description>
+    </item>
+    
+  </channel>
+</rss>

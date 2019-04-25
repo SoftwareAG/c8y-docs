@@ -1,0 +1,2536 @@
+<!DOCTYPE html>
+<html>
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <base href="" />
+    <meta name="generator" content="Hugo 0.54.0 with theme C8yDocs">
+    <title>Device Management - Cumulocity IoT Guides</title>
+    <meta name="author" content="Carlos Ceia @ Cumulocity">
+    <meta name="keywords" content=", Software AG Cloud, Cumulocity IoT, Internet of things, analytics, devices, connect">
+
+
+    <link rel="icon" href="/favicon.ico">
+
+    
+
+    
+
+    
+    
+    
+    <link rel="stylesheet" href="https://cumulocity.com/guides/style.css">
+    
+
+      
+      <script> window.zEmbed||function(e,t){var n,o,d,i,s,a=[],r=document.createElement("iframe");window.zEmbed=function(){a.push(arguments)},window.zE=window.zE||window.zEmbed,r.src="javascript:false",r.title="",r.role="presentation",(r.frameElement||r).style.cssText="display: none",d=document.getElementsByTagName("script"),d=d[d.length-1],d.parentNode.insertBefore(r,d),i=r.contentWindow,s=i.document;try{o=s}catch(c){n=document.domain,r.src='javascript:var d=document.open();d.domain="'+n+'";void(0);',o=s}o.open()._l=function(){var o=this.createElement("script");n&&(this.domain=n),o.id="js-iframe-async",o.src=e,this.t=+new Date,this.zendeskHost=t,this.zEQueue=a,this.body.appendChild(o)},o.write('<body onload="document._l();">'),o.close()}("https://assets.zendesk.com/embeddable_framework/main.js","cumulocity.zendesk.com"); </script>
+        <script type="text/JavaScript">
+          window.zESettings = {
+            webWidget: {
+              color: {
+                theme: '#1776bf'    
+              },
+              position: {
+                horizontal: 'right',
+                vertical: 'top'     
+              }
+            }
+          };
+          </script>
+        
+        
+   
+  </head><body data-spy="scroll" data-target="#main-nav" ><button type="button" class="sidebar-toggle">
+  <span class="icon-bar"></span>
+  <span class="icon-bar"></span>
+  <span class="icon-bar"></span>
+  <span>MENU</span>
+</button>
+<nav class="main-top-bar" >
+  <div class="d-flex container">
+    <ul class="nav d-flex flex-start hidden-xs nav-left">
+      <li><a href="https://www.softwareag.cloud/site/product/cumulocity-iot.html">Cumulocity IoT</a></li>
+      <li><a href="http://resources.cumulocity.com/documentation/jssdk/latest/#/api">Cumulocity Angular API</a></li>
+    </ul>
+    <ul class="nav flex-end nav-right">
+      <li>   <script>
+              (function() {
+                var cx = '008969372384807682938:yeh7xt785g4';
+                var gcse = document.createElement('script');
+                gcse.type = 'text/javascript';
+                gcse.async = true;
+                gcse.src = 'https://cse.google.com/cse.js?cx=' + cx;
+                var s = document.getElementsByTagName('script')[0];
+                s.parentNode.insertBefore(gcse, s);
+              })();
+            </script>
+        <div id="___gcse_0" dir="ltr"><form class="gsc-search-box gsc-search-box-tools" accept-charset="utf-8"><div class="table-responsive"><table cellspacing="0" cellpadding="0" class="gsc-search-box"><tbody><tr><td class="gsc-input"><div class="gsc-input-box" id="gsc-iw-id1"><table cellspacing="0" cellpadding="0" id="gs_id50" class="gstl_50 gsc-input" style="width: 100%; padding: 0px;"><tbody><tr><td id="gs_tti50" class="gsib_a"><input autocomplete="off" type="text" size="10" class="gsc-input" name="search" title="search" id="gsc-i-id1" placeholder="Custom Search" dir="ltr" spellcheck="false" x-webkit-grammar="builtin:search" lang="en" style="width: 100%; padding: 0px; border: none; margin: -0.0625em 0px 0px; height: 1.25em; background: url(&quot;https://www.google.com/cse/static/images/1x/googlelogo_lightgrey_46x16dp.png&quot;) left center no-repeat rgb(255, 255, 255); text-indent: 48px; outline: none;"></td><td class="gsib_b"><div class="gsst_b" id="gs_st50" dir="ltr"><a class="gsst_a" href="javascript:void(0)" style="display: none;" title="Clear search box" role="button"><span class="gscb_a" id="gs_cb50" aria-hidden="true">×</span></a></div></td></tr></tbody></table></div></td><td class="gsc-search-button"><button class="gsc-search-button gsc-search-button-v2"><svg width="13" height="13" viewBox="0 0 13 13"><title>search</title><path d="m4.8495 7.8226c0.82666 0 1.5262-0.29146 2.0985-0.87438 0.57232-0.58292 0.86378-1.2877 0.87438-2.1144 0.010599-0.82666-0.28086-1.5262-0.87438-2.0985-0.59352-0.57232-1.293-0.86378-2.0985-0.87438-0.8055-0.010599-1.5103 0.28086-2.1144 0.87438-0.60414 0.59352-0.8956 1.293-0.87438 2.0985 0.021197 0.8055 0.31266 1.5103 0.87438 2.1144 0.56172 0.60414 1.2665 0.8956 2.1144 0.87438zm4.4695 0.2115 3.681 3.6819-1.259 1.284-3.6817-3.7 0.0019784-0.69479-0.090043-0.098846c-0.87973 0.76087-1.92 1.1413-3.1207 1.1413-1.3553 0-2.5025-0.46363-3.4417-1.3909s-1.4088-2.0686-1.4088-3.4239c0-1.3553 0.4696-2.4966 1.4088-3.4239 0.9392-0.92727 2.0864-1.3969 3.4417-1.4088 1.3553-0.011889 2.4906 0.45771 3.406 1.4088 0.9154 0.95107 1.379 2.0924 1.3909 3.4239 0 1.2126-0.38043 2.2588-1.1413 3.1385l0.098834 0.090049z"></path></svg></button></td><td class="gsc-clear-button"><div class="gsc-clear-button" title="clear results">&nbsp;</div></td></tr></tbody></table></div></form></div>
+      </li>
+    </ul>
+  </div>
+</nav><button type="button" class="to-the-top">
+  <span class="sr-only">Top</span>
+  <span class="fa fa-chevron-up"></span>
+</button><nav class="main-nav navbar">
+  <header class="nav-header">
+    <a href="https://www.softwareag.cloud/site/dev-center/cumulocity-iot.html">
+      <img src="https://cumulocity.com/guides/images/cumulocity-iot.svg"
+        class="img-responsive no-zoom"
+        alt="Cumulocity IoT">
+    </a>
+
+    <div class="dropdown">
+      <button class="dropdown-toggle"
+        type="button"
+        id="dropdownMenuButton"
+        data-toggle="dropdown"
+        aria-haspopup="true"
+        aria-expanded="false">
+        <span id="current-dropdown-toggle" class="text-truncate"></span> <span class="caret"></span>
+      </button>
+      <div class="dropdown-menu"
+        aria-labelledby="dropdownMenuButton">
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+
+        
+        
+        
+
+        <a class='dropdown-menu-item '
+          href='https://cumulocity.com/guides/release-notes/overview/'><i class="c8y-icon c8y-icon-notification"></i> Release notes</a>
+        
+        
+        
+        
+        
+        
+        
+        
+
+        
+        
+        
+
+        <a class='dropdown-menu-item '
+          href='https://cumulocity.com/guides/concepts/introduction/'><i class="c8y-icon c8y-icon-c8y-data"></i> Concepts guide</a>
+        
+        
+        
+        
+        
+        
+        
+        
+
+        
+        
+        
+        
+        <span class="current-app">User guide</span>
+        
+        
+
+        <a class='dropdown-menu-item active'
+          href='https://cumulocity.com/guides/users-guide/getting-started/'><i class="c8y-icon c8y-icon-user"></i> User guide</a>
+        
+        
+        
+        
+        
+        
+        
+        
+
+        
+        
+        
+
+        <a class='dropdown-menu-item '
+          href='https://cumulocity.com/guides/benutzerhandbuch/overview/'><i class="c8y-icon c8y-icon-user"></i> Handbuch</a>
+        
+        
+        
+        
+        
+        
+        
+        
+
+        
+        
+        
+
+        <a class='dropdown-menu-item '
+          href='https://cumulocity.com/guides/devices/overview/'><i class="c8y-icon c8y-icon-device-management"></i> Device guides</a>
+        
+        
+        
+        
+        
+        
+        
+        
+
+        
+        
+        
+
+        <a class='dropdown-menu-item '
+          href='https://cumulocity.com/guides/edge/overview/'><i class="fa fa-book"></i> Cumulocity IoT Edge</a>
+        
+        
+        
+        
+        
+        
+        
+        
+
+        
+        
+        
+
+        <a class='dropdown-menu-item '
+          href='https://cumulocity.com/guides/microservice-sdk/introduction/'><i class="c8y-icon c8y-icon-tools"></i> Microservice SDK guide</a>
+        
+        
+        
+        
+        
+        
+        
+        
+
+        
+        
+        
+
+        <a class='dropdown-menu-item '
+          href='https://cumulocity.com/guides/device-sdk/introduction/'><i class="c8y-icon c8y-icon-tools"></i> Device SDK guide</a>
+        
+        
+        
+        
+        
+        
+        
+        
+
+        
+        
+        
+
+        <a class='dropdown-menu-item '
+          href='https://cumulocity.com/guides/web/introduction/'><i class="c8y-icon c8y-icon-smart-rest"></i> Web SDK guide</a>
+        
+        
+        
+        
+        
+        
+        
+        
+
+        
+        
+        
+
+        <a class='dropdown-menu-item '
+          href='https://cumulocity.com/guides/apama/overview-analytics/'><i class="c8y-icon c8y-icon-data-explorer"></i> Analytics guide</a>
+        
+        
+        
+        
+        
+        
+        
+        
+
+        
+        
+        
+
+        <a class='dropdown-menu-item '
+          href='https://cumulocity.com/guides/reference/rest-implementation/'><i class="fa fa-book"></i> Reference guide</a>
+        
+      </div>
+    </div>
+  </header>
+
+  
+
+  <nav id="main-nav"
+    class="nav-sections">
+    
+    
+    <div class="">
+        
+        
+        
+        
+      <a href="javascript:void(0);"
+        data-toggle="collapse"
+        data-target="#page-nav0"
+        class="collapse-btn  collapsed ">
+        <i class="fa fa-chevron-right "></i>
+      </a>
+      
+      <a class=""
+        href="https://cumulocity.com/guides/users-guide/getting-started/">Getting Started</a>
+     
+      
+      
+      <div id="page-nav0"
+        class="collapse   ">
+        <nav class="list-group nav">
+          
+          
+            <a class="list-group-item"
+              href="https://cumulocity.com/guides/users-guide/getting-started/#accessing-cumulocity-platform">Accessing and logging into the Cumulocity platform</a>
+            
+            
+          
+            <a class="list-group-item"
+              href="https://cumulocity.com/guides/users-guide/getting-started/#cumulocity-applications">Cumulocity applications</a>
+            
+            
+          
+            <a class="list-group-item"
+              href="https://cumulocity.com/guides/users-guide/getting-started/#gui-features">GUI functionalities and features</a>
+            
+            
+          
+            <a class="list-group-item"
+              href="https://cumulocity.com/guides/users-guide/getting-started/#user-settings">User options and settings</a>
+            
+            
+        </nav>
+      </div>
+      
+    </div>
+    
+    
+    
+    <div class=" slot-active ">
+        
+        
+        
+        
+      <a href="javascript:void(0);"
+        data-toggle="collapse"
+        data-target="#page-nav1"
+        class="collapse-btn ">
+        <i class="fa fa-chevron-right "></i>
+      </a>
+      
+      <a class=" active "
+        href="https://cumulocity.com/guides/users-guide/device-management/">Device Management</a>
+     
+      
+      
+      <div id="page-nav1"
+        class="collapse   show  ">
+        <nav class="list-group nav">
+          
+          
+          <a class="list-group-item"
+            href="#overview">Overview</a>
+          
+            
+          
+          <a class="list-group-item"
+            href="#connecting-devices">Connecting Devices</a>
+          
+            
+          
+          <a class="list-group-item"
+            href="#viewing-devices">Viewing devices</a>
+          
+            
+          
+          <a class="list-group-item"
+            href="#grouping-devices">Grouping devices</a>
+          
+            
+          
+          <a class="list-group-item"
+            href="#device-details">Device details</a>
+          
+            
+          
+          <a class="list-group-item"
+            href="#monitoring-and-controlling-devices">Monitoring and controlling devices</a>
+          
+            
+          
+          <a class="list-group-item"
+            href="#managing-device-types">Managing device types</a>
+          
+            
+          
+          <a class="list-group-item"
+            href="#managing-device-data">Managing device data</a>
+          
+            
+          
+          <a class="list-group-item"
+            href="#configuration-repository">Configuration repository</a>
+          
+            
+          
+          <a class="list-group-item"
+            href="#smartrest-templates">SmartREST templates</a>
+          
+            
+          
+          <a class="list-group-item"
+            href="#simulator">Working with simulators</a>
+          
+            
+        </nav>
+      </div>
+      
+    </div>
+    
+    
+    
+    <div class="">
+        
+        
+        
+        
+      <a href="javascript:void(0);"
+        data-toggle="collapse"
+        data-target="#page-nav2"
+        class="collapse-btn  collapsed ">
+        <i class="fa fa-chevron-right "></i>
+      </a>
+      
+      <a class=""
+        href="https://cumulocity.com/guides/users-guide/cockpit/">Cockpit</a>
+     
+      
+      
+      <div id="page-nav2"
+        class="collapse   ">
+        <nav class="list-group nav">
+          
+          
+            <a class="list-group-item"
+              href="https://cumulocity.com/guides/users-guide/cockpit/#overview">Overview</a>
+            
+            
+          
+            <a class="list-group-item"
+              href="https://cumulocity.com/guides/users-guide/cockpit/#managing-assets">Managing assets</a>
+            
+            
+          
+            <a class="list-group-item"
+              href="https://cumulocity.com/guides/users-guide/cockpit/#data-explorer">Data explorer</a>
+            
+            
+          
+            <a class="list-group-item"
+              href="https://cumulocity.com/guides/users-guide/cockpit/#dashboards">Dashboards</a>
+            
+            
+          
+            <a class="list-group-item"
+              href="https://cumulocity.com/guides/users-guide/cockpit/#widgets">Widgets collection</a>
+            
+            
+          
+            <a class="list-group-item"
+              href="https://cumulocity.com/guides/users-guide/cockpit/#reports">Managing reports and exports</a>
+            
+            
+          
+            <a class="list-group-item"
+              href="https://cumulocity.com/guides/users-guide/cockpit/#data-point-library">Data Point Library</a>
+            
+            
+          
+            <a class="list-group-item"
+              href="https://cumulocity.com/guides/users-guide/cockpit/#smart-rules">Smart Rules</a>
+            
+            
+          
+            <a class="list-group-item"
+              href="https://cumulocity.com/guides/users-guide/cockpit/#smart-rules-collection">Smart rules collection</a>
+            
+            
+        </nav>
+      </div>
+      
+    </div>
+    
+    
+    
+    <div class="">
+        
+        
+        
+        
+      <a href="javascript:void(0);"
+        data-toggle="collapse"
+        data-target="#page-nav3"
+        class="collapse-btn  collapsed ">
+        <i class="fa fa-chevron-right "></i>
+      </a>
+      
+      <a class=""
+        href="https://cumulocity.com/guides/users-guide/administration/">Administration</a>
+     
+      
+      
+      <div id="page-nav3"
+        class="collapse   ">
+        <nav class="list-group nav">
+          
+          
+            <a class="list-group-item"
+              href="https://cumulocity.com/guides/users-guide/administration/#overview">Overview</a>
+            
+            
+          
+            <a class="list-group-item"
+              href="https://cumulocity.com/guides/users-guide/administration/#home-screen">Home screen</a>
+            
+            
+          
+            <a class="list-group-item"
+              href="https://cumulocity.com/guides/users-guide/administration/#managing-users">Managing users</a>
+            
+            
+          
+            <a class="list-group-item"
+              href="https://cumulocity.com/guides/users-guide/administration/#managing-permissions">Managing permissions</a>
+            
+            
+          
+            <a class="list-group-item"
+              href="https://cumulocity.com/guides/users-guide/administration/#audit-logs">Viewing audit logs</a>
+            
+            
+          
+            <a class="list-group-item"
+              href="https://cumulocity.com/guides/users-guide/administration/#managing-applications">Managing applications</a>
+            
+            
+          
+            <a class="list-group-item"
+              href="https://cumulocity.com/guides/users-guide/administration/#business-rules">Managing business rules</a>
+            
+            
+          
+            <a class="list-group-item"
+              href="https://cumulocity.com/guides/users-guide/administration/#data-retention">Managing data retention</a>
+            
+            
+          
+            <a class="list-group-item"
+              href="https://cumulocity.com/guides/users-guide/administration/#tfa">Using two-factor authentication</a>
+            
+            
+          
+            <a class="list-group-item"
+              href="https://cumulocity.com/guides/users-guide/administration/#changing-settings">Changing settings</a>
+            
+            
+        </nav>
+      </div>
+      
+    </div>
+    
+    
+    
+    <div class="">
+        
+        
+        
+        
+      <a href="javascript:void(0);"
+        data-toggle="collapse"
+        data-target="#page-nav4"
+        class="collapse-btn  collapsed ">
+        <i class="fa fa-chevron-right "></i>
+      </a>
+      
+      <a class=""
+        href="https://cumulocity.com/guides/users-guide/enterprise-edition/">Enterprise Edition</a>
+     
+      
+      
+      <div id="page-nav4"
+        class="collapse   ">
+        <nav class="list-group nav">
+          
+          
+            <a class="list-group-item"
+              href="https://cumulocity.com/guides/users-guide/enterprise-edition/#managing-tenants">Managing tenants</a>
+            
+            
+          
+            <a class="list-group-item"
+              href="https://cumulocity.com/guides/users-guide/enterprise-edition/#user-hierarchies">Managing user hierarchies</a>
+            
+            
+          
+            <a class="list-group-item"
+              href="https://cumulocity.com/guides/users-guide/enterprise-edition/#users-in-other-tenants">Support user access</a>
+            
+            
+          
+            <a class="list-group-item"
+              href="https://cumulocity.com/guides/users-guide/enterprise-edition/#using-sso">Using single sign-on (SSO)</a>
+            
+            
+          
+            <a class="list-group-item"
+              href="https://cumulocity.com/guides/users-guide/enterprise-edition/#data-broker">Using the data broker</a>
+            
+            
+          
+            <a class="list-group-item"
+              href="https://cumulocity.com/guides/users-guide/enterprise-edition/#customization">Customizing your platform</a>
+            
+            
+          
+            <a class="list-group-item"
+              href="https://cumulocity.com/guides/users-guide/enterprise-edition/#storage-quota">Storage quota</a>
+            
+            
+        </nav>
+      </div>
+      
+    </div>
+    
+    
+    
+    <div class="">
+        
+        
+        
+        
+      <a href="javascript:void(0);"
+        data-toggle="collapse"
+        data-target="#page-nav5"
+        class="collapse-btn  collapsed ">
+        <i class="fa fa-chevron-right "></i>
+      </a>
+      
+      <a class=""
+        href="https://cumulocity.com/guides/users-guide/optional-services/">Optional services</a>
+     
+      
+      
+      <div id="page-nav5"
+        class="collapse   ">
+        <nav class="list-group nav">
+          
+          
+            <a class="list-group-item"
+              href="https://cumulocity.com/guides/users-guide/optional-services/#cloud-fieldbus">Cloud Fieldbus</a>
+            
+            
+          
+            <a class="list-group-item"
+              href="https://cumulocity.com/guides/users-guide/optional-services/#cloud-remote-access">Cloud Remote Access</a>
+            
+            
+          
+            <a class="list-group-item"
+              href="https://cumulocity.com/guides/users-guide/optional-services/#android-cloud-sensor-app">Cloud Sensor App</a>
+            
+            
+          
+            <a class="list-group-item"
+              href="https://cumulocity.com/guides/users-guide/optional-services/#connectivity">Connectivity</a>
+            
+            
+          
+            <a class="list-group-item"
+              href="https://cumulocity.com/guides/users-guide/optional-services/#nokia-impact">IMPACT</a>
+            
+            
+          
+            <a class="list-group-item"
+              href="https://cumulocity.com/guides/users-guide/optional-services/#lora">LoRa Actility</a>
+            
+            
+          
+            <a class="list-group-item"
+              href="https://cumulocity.com/guides/users-guide/optional-services/#lwm2m">LightweightM2M</a>
+            
+            
+          
+            <a class="list-group-item"
+              href="https://cumulocity.com/guides/users-guide/optional-services/#sigfox">Sigfox</a>
+            
+            
+          
+            <a class="list-group-item"
+              href="https://cumulocity.com/guides/users-guide/optional-services/#tenant-sla-monitoring">Tenant SLA Monitoring</a>
+            
+            
+          
+            <a class="list-group-item"
+              href="https://cumulocity.com/guides/users-guide/optional-services/#webMethods">webMethods Integration Cloud</a>
+            
+            
+        </nav>
+      </div>
+      
+    </div>
+    
+    
+    
+    
+  </nav>
+</nav>
+<div class="cover"></div>
+
+<div class="main-content">
+  <article class="page-section">
+    <header class="section-header">
+      <h1 class="text-light">Device Management</h1>
+    </header>
+    
+      <div class="lead">
+        <p>The Device Management application provides functionalities for managing and monitoring devices and enables you to control and troubleshoot devices remotely.</p>
+
+      </div>
+      
+  </article>
+
+  
+  
+  
+  <article id="overview" class="page-section">
+    <h2>
+      <button class="btn-link bookmark" data-clipboard-text="#overview">
+        <span class="fa fa-link"></span>
+      </button>
+      Overview</h2>
+    <p>The following sections will walk you through all functionalities of the Device Management application in detail. For your convenience find an overview on the content of this document below.</p>
+
+<table>
+<thead>
+<tr>
+<th align="left">SECTION</th>
+<th align="left">CONTENT</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td align="left"><a href="#device-registration">Connecting devices</a></td>
+<td align="left">How to <a href="#device-registration-manually">register one or more devices manually</a> and how to <a href="#creds-upload">bulk-register devices</a> in order to connect devices to your account.</td>
+</tr>
+
+<tr>
+<td align="left"><a href="#viewing-devices">Viewing devices</a></td>
+<td align="left">What is displayed in the <a href="#device-list">device list</a> and how to sort devices by <a href="#searching-devices">searching for devices</a> and <a href="#filtering-devices">filtering devices</a>.</td>
+</tr>
+
+<tr>
+<td align="left"><a href="#grouping-devices">Grouping devices</a></td>
+<td align="left">Why and how to group devices into top-level groups, subgroups and <a href="#smart-groups">smart groups</a>.</td>
+</tr>
+
+<tr>
+<td align="left"><a href="#device-details">Device details</a></td>
+<td align="left">Detailed description of the various kind of  information available for various types of  devices.</td>
+</tr>
+
+<tr>
+<td align="left"><a href="#monitoring-and-controlling-devices">Monitoring and controlling devices</a></td>
+<td align="left">How to monitor the <a href="#connection-monitoring">connection quality</a> and <a href="#monitoring-services">service status</a> of devices, how to handle <a href="#alarm-monitoring">alarms</a> from devices, how to <a href="#operation-monitoring">remote control</a> and how to <a href="#events-all">troubleshoot</a> devices.</td>
+</tr>
+
+<tr>
+<td align="left"><a href="#managing-device-types">Managing device types</a></td>
+<td align="left">How to process data from various device types by using <a href="#managing-device-types">device protocols</a>.</td>
+</tr>
+
+<tr>
+<td align="left"><a href="#managing-device-data">Managing device data</a></td>
+<td align="left">How to retrieve and manage <a href="#software-repo">firmware and software</a> for devices and how to handle <a href="#configuration-repository">configuration snapshots</a>.</td>
+</tr>
+
+<tr>
+<td align="left"><a href="#simulator">Working with simulators</a></td>
+<td align="left">How to model devices with the <a href="#simulator">simulator</a> in order to have the same level of functionality as connected hardware devices.</td>
+</tr>
+
+<tr>
+<td align="left"><a href="#smartrest-templates">Using SmartREST templates</a></td>
+<td align="left">How to work with <a href="#Smartrest-templates">SmartREST  templates</a>, a collection of request and response templates used to convert CSV data and Cumulocity Rest API calls.</td>
+</tr>
+</tbody>
+</table>
+
+  </article>
+  
+  <article id="connecting-devices" class="page-section">
+    <h2>
+      <button class="btn-link bookmark" data-clipboard-text="#connecting-devices">
+        <span class="fa fa-link"></span>
+      </button>
+      Connecting Devices</h2>
+    
+
+<p><a name="device-registration"></a></p>
+
+<p>This section describes how to connect devices to your Cumulocity account either manually or by bulk-registration.</p>
+
+<p>To connect devices to your Cumulocity account follow these steps:</p>
+
+<p>Click <strong>Registration</strong> in the <strong>Devices</strong> menu of the navigator and click <strong>Register device</strong>.</p>
+
+<p><img src="/guides/images/users-guide/DeviceManagement/devmgmt-register-devices.png" alt="Register devices" style="max-width: 100%"></p>
+
+<p>In the <strong>Register devices</strong> dialog, you may choose one of the following options:</p>
+
+<ul>
+<li><strong><a href="#device-registration-manually">General device registration</a></strong> - to manually connect one or more devices</li>
+<li><strong><a href="#creds-upload">Bulk device registration</a></strong> - to register larger amounts of devices in one step.</li>
+</ul>
+
+<p>If you are subscribed to the required applications you will see a third option
+<strong>Custom device registration</strong> for registering devices of specific types, e.g. LoRa or Sigfox, see the documentation for these optional services for details.</p>
+
+<p><img src="/guides/images/users-guide/DeviceManagement/devmgmt-register-devices-custom.png" alt="Register devices" style="max-width: 100%"></p>
+
+<h3 id="a-name-device-registration-manually-a-connecting-devices-manually"><a name="device-registration-manually"></a>Connecting devices manually</h3>
+
+<p>The following process describes how to connect devices manually. Depending on the type of device you want to connect, not all steps of the process may be relevant.</p>
+
+<p>To connect devices manually to your Cumulocity account follow these steps:</p>
+
+<ol>
+<li><p>Click <strong>Registration</strong> in the <strong>Devices</strong> menu of the navigator and click <strong>Register device</strong>.</p></li>
+
+<li><p>In the <strong>Register device</strong> dialog, choose <strong>General device registration</strong>.</p>
+
+<p><img src="/guides/images/users-guide/DeviceManagement/devmgmt-registration-general.png" alt="General device registration" style="max-width: 100%"></p></li>
+
+<li><p>In the <strong>Device ID</strong> field, enter a unique ID for the device. To determine the ID, consult the device documentation. In case of mobile devices the ID usually is the IMEI (International Mobile Equipment Identity) often found on the back of the device.</p></li>
+
+<li><p>Optionally, select a group to assign your device to after registration. Find further information on groups assignment in <a href="#grouping-devices">Grouping devices</a>.</p></li>
+
+<li><p>Click <strong>Add another device</strong> to register one more devices. Again, enter the device ID and optionally select a group. This way, you can add multiple devices in one step.</p></li>
+
+<li><p>Click <strong>Next</strong> to register your device(s).</p></li>
+</ol>
+
+<p><strong>Info</strong>: In the Enterprise edition, the management tenant may also directly select a tenant to which the device will be added from here. Note that since the management tenant does not have access to the subtenant&rsquo;s inventory you can either register devices to a tenant OR to a group, not both.</p>
+
+<p><img src="/guides/images/users-guide/DeviceManagement/devmgmt-device-registration-tenant.png" alt="General device registration" style="max-width: 100%"></p>
+
+<p>After successful registration the device(s) will be listed in the <a href="#dev-registration"><strong>Device registration</strong> page</a> with the status <strong>Waiting for connection</strong>.</p>
+
+<p>Turn on the device(s) and wait for the connection to be established.
+Once a device is connected, its status will change to <strong>Pending acceptance</strong>.
+Click <strong>Accept</strong> to confirm the connection. The status of the device will change to <strong>Accepted</strong>.</p>
+
+<p><strong>Info</strong>: In case of any issues, consult the <a href="/guides/devices">Device guide</a> applicable for your device type, search for your device type in the <a href="http://cumulocity.com/dev-center/">Developer Center</a> on our  website for further information, or look up the manual of your device.</p>
+
+<h3 id="a-name-dev-registration-a-device-registration-page"><a name="dev-registration"></a> Device registration page</h3>
+
+<p>In the <strong>Device registration</strong> page all devices which currently are in the registration process are displayed either in a list or in a grid.</p>
+
+<p><img src="/guides/images/users-guide/DeviceManagement/devmgmt-device-registration.png" alt="Device registration page" style="max-width: 100%"></p>
+
+<p>The following information is shown for each device:</p>
+
+<ul>
+<li>Device name specified in the registration process</li>
+<li>Status of the device (see below)</li>
+<li>Creation date</li>
+<li>Tenant from which the device was registered</li>
+</ul>
+
+<p>The devices may have one of the following status:</p>
+
+<ul>
+<li><strong>Waiting for connection</strong> - The device has been registered but no device with the specified ID has tried to connect.</li>
+<li><strong>Pending acceptance</strong> - There is communication from a device with the specified ID, but the user doing the registration must still explicitly accept so that the credentials are sent to the device.</li>
+<li><strong>Accepted</strong> - The user has allowed the credentials to be send to the device.</li>
+</ul>
+
+<h3 id="a-name-creds-upload-a-bulk-registering-devices"><a name="creds-upload"></a>Bulk-registering devices</h3>
+
+<p>To connect larger amounts of devices, Cumulocity offers the option to bulk-register devices, i.e. to register larger amounts of devices by uploading a CSV file.</p>
+
+<ol>
+<li>Click <strong>Registration</strong> in the <strong>Devices</strong> menu of the navigator and click <strong>Register device</strong>.</li>
+
+<li><p>In the upcoming window choose <strong>Bulk device registration</strong>.</p>
+
+<p><img src="/guides/images/users-guide/DeviceManagement/devmgmt-bulk-registration.png" alt="Bulk registration" style="max-width: 100%"></p></li>
+
+<li><p>Click <strong>Select file to upload</strong> and select the CSV file you want to upload by browsing for it on your computer.</p></li>
+</ol>
+
+<p><br>
+Depending on the format of the uploaded CSV file, one of the following registration types will be processed.</p>
+
+<p><strong>Simple registration</strong></p>
+
+<p>The CSV file contains two columns: ID;PATH, where ID is the device identifier, e.g. serial number, and PATH is a slash-separated list of group names (path to the group where the device should be assigned to after registration).</p>
+
+<pre><code class="language-asciidoc">		ID;PATH
+		Device1;Group A
+		Device2;Group A/Group B			
+</code></pre>
+
+<p>After the file is uploaded, any required new groups will be created and new registrations will be created with status WAITING FOR CONNECTION and the normal registration process needs to be continued (see above).</p>
+
+<p><strong>Full registration</strong></p>
+
+<p>The CSV files must contain at least the IDs as device identifier and the credentials of the devices.</p>
+
+<pre><code class="language-asciidoc">		ID;Credentials;PATH;ICCID;NAME;TYPE
+		006064ce800a;LF2PWJoLG1Fz;Sample_Düsseldorf;+491555555;Sample_Device1;c8y_Device
+		006064ce8077;OowoGKAbiNJs;Sample_Düsseldorf;+491555555;Sample_Device2;c8y_Device		
+</code></pre>
+
+<p>Apart from that the file can also contain other columns like ICCID, NAME, TYPE as shown in the example above.</p>
+
+<p>To connect the devices, they are pre-registered with the relevant information. More specific, each device will be configured as follows:</p>
+
+<ul>
+<li>User name - the user name for accessing Cumulocity must have the format &lt;tenant&gt;/device_&lt;id&gt;, where &lt;tenant&gt; refers to the tenant from which the CSV file is imported and &lt;id&gt; refers to the respective value in the CSV file.</li>
+<li>Password - the password to access Cumulocity, equals the value &ldquo;Credentials&rdquo; in the CSV file.</li>
+<li>Device in managed object representation - fields TYPE, NAME, ICCID, IDTYPE, PATH, SHELL in the CSV file.</li>
+</ul>
+
+<p>After the data is imported, you will get feedback on the number of devices that were pre-registered as well as on any potential errors that may have occurred.</p>
+
+<p>For your convenience we provide CSV template files for both bulk registration types (simple/full) which you can download to view or copy the structure.</p>
+
+<p>To open CSV files in Microsoft Excel, you need to import the data. To do so, follow these steps:</p>
+
+<ol>
+<li>In Microsoft Excel, switch to the <strong>Data</strong> tab.</li>
+<li>In the <strong>Data</strong> tab, select <strong>From Text</strong> in the top menu bar.</li>
+<li>Select the CSV file you want to import by browsing for it (in this case the template file that you have downloaded from the Cumulocity platform).</li>
+<li>In Step 1 of the <strong>Text Import Wizard</strong>, leave the default settings and click <strong>Next</strong>.</li>
+<li>In Step 2 of the <strong>Text Import Wizard</strong>, select &ldquo;Semicolon&rdquo; as delimiter and click <strong>Finish</strong>.</li>
+</ol>
+
+<p>For further information on the file format and accepted CSV variants, also refer to
+<a href="/guides/reference/device-credentials/#creds-upload">Bulk device credentials</a>.</p>
+
+<blockquote>
+<p><strong>Info</strong>: If you work with a Cumulocity Enterprise Edition you may also register devices across multiple tenants by adding a &ldquo;tenant&rdquo; column to the spreadsheet and importing the CSV file from the &ldquo;management&rdquo; tenant.</p>
+</blockquote>
+
+  </article>
+  
+  <article id="viewing-devices" class="page-section">
+    <h2>
+      <button class="btn-link bookmark" data-clipboard-text="#viewing-devices">
+        <span class="fa fa-link"></span>
+      </button>
+      Viewing devices</h2>
+    
+
+<p>To view all devices connected to your account, click <strong>All devices</strong> in the <strong>Devices</strong> menu in the navigator.</p>
+
+<p>A detailed device list will be displayed.</p>
+
+<p><img src="/guides/images/users-guide/DeviceManagement/DevMgmt_DevicesList.png" alt="Device List" style="max-width: 100%"></p>
+
+<h3 id="a-name-device-list-a-device-list"><a name="device-list"></a>Device list</h3>
+
+<p>For each device, the device list shows the following information provided in columns:</p>
+
+<table>
+<thead>
+<tr>
+<th align="left">Column</th>
+<th align="left">Description</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td align="left">Status</td>
+<td align="left">An icon representing the connection status. For details, see <a href="#connection-monitoring">Connection monitoring</a>.</td>
+</tr>
+
+<tr>
+<td align="left">Name</td>
+<td align="left">Unique name of the device.</td>
+</tr>
+
+<tr>
+<td align="left">Model</td>
+<td align="left">Model type of the device. Not always displayed, depends on browser width.</td>
+</tr>
+
+<tr>
+<td align="left">Serial Number</td>
+<td align="left">Serial number of the device. Not always displayed, depends on browser width.</td>
+</tr>
+
+<tr>
+<td align="left">Group</td>
+<td align="left">Group the device is assigned to, if any.</td>
+</tr>
+
+<tr>
+<td align="left">Registration Date</td>
+<td align="left">Date when the device was registered to your account.</td>
+</tr>
+
+<tr>
+<td align="left">System ID</td>
+<td align="left">System ID of the device.</td>
+</tr>
+
+<tr>
+<td align="left">IMEI</td>
+<td align="left">IMEI of the device.</td>
+</tr>
+
+<tr>
+<td align="left">Alarms</td>
+<td align="left">The alarm status of the device, showing number and type of alarms currently unresolved for the device. See <a href="#alarm-monitoring">Working with alarms</a> for further information on working with alarms.</td>
+</tr>
+</tbody>
+</table>
+
+<p>The devices list displays up to 100 rows. If a list contains more than 100 devices, click <strong>Load more</strong> at the bottom of the list to display the next 100 entries.</p>
+
+<p>When hovering over a row in the list, a <strong>Delete</strong> button appears at the right. Click it to delete the device permanently.</p>
+
+<p><strong>Important:</strong> Deleting a device means to remove the device from Cumulocity database including all its generated data. Alternatively, you can arrange all retired devices in one group (see <a href="#grouping-devices">Grouping Devices</a>). This ensures that all reports remain correct. To prevent alarms from being raised for the retired devices, disable <a href="#connection-monitoring">connection monitoring</a>. Deleting a device does not delete the data of its child devices.</p>
+
+<h3 id="a-name-searching-devices-a-searching-for-devices"><a name="searching-devices"></a>Searching for devices</h3>
+
+<p>Cumulocity includes a full-text search for devices.</p>
+
+<p>Click the <strong>Search</strong> button at the top right and enter a search term into the textbox. Cumulocity returns all devices containing this term in any property (name, model, any fragment&hellip;)</p>
+
+<p>Our example shows a search for &ldquo;Ublox C027&rdquo;.</p>
+
+<p><strong>Info</strong>: Unlike filtering, the use of wildcards in a search is not supported.</p>
+
+<p>For details on the search functionality, refer to Getting Started &gt; <a href="/guides/users-guide/overview#gui-features">GUI functionalities and features</a>.</p>
+
+<p><img src="/guides/images/users-guide/DeviceManagement/DevMgmt_Search.png" alt="Device Management Search" style="max-width: 100%"></p>
+
+<h3 id="a-name-filtering-devices-a-filtering-devices"><a name="filtering-devices"></a>Filtering devices</h3>
+
+<p>The device list offers a filtering functionality to filter devices in the list for specific criteria.</p>
+
+<p>Filtering is available on every column. Just click the filter icon next to the name of the column you want to set a filter for.</p>
+
+<p><img src="/guides/images/users-guide/DeviceManagement/DevMgmt_Filtering.png" alt="Filtering" style="max-width: 100%"></p>
+
+<p>A window will come up in which you can specify your filter options.</p>
+
+<p><img src="/guides/images/users-guide/DeviceManagement/DevMgmt_FilteringOptions.png" alt="Filter Options" style="max-width: 50%"></p>
+
+<p>Most columns represent text fields. You can filter these columns by simply entering an arbitrary text into the textbox as in the search field. Click <strong>+ Or</strong> to add another textbox if you want to filter for more than one term.</p>
+
+<p>Apart from filtering for text there are several other options:
+* In case of date fields (e.g. <strong>Registration date</strong>), you specify a date range to filter for.
+* In the <strong>Status</strong> column you can filter for various criteria representing the send, push or maintenance status of the device.
+* In the <strong>Alarm</strong> column the filtering options you may select correspond to the alarm types (critical, major, minor, warning, no alarms).</p>
+
+<p>In the <strong>Filter options</strong> window, click <strong>Ascending</strong> or <strong>Descending</strong> if you want the devices to be sorted in a specific order. Finally, click <strong>Apply</strong> to carry out the filtering.</p>
+
+<p>The devices list will now only display devices matching the filtering options.</p>
+
+<p>Click <strong>Clear filters</strong> at the right of the top menu bar if you want to clear all filters and view all devices.</p>
+
+<blockquote>
+<p><strong>Info</strong>: If you select to sort a text field, e.g. device name, in ascending or descending order, keep in mind that the resulting alphabetical sorting is based on ASCII/UTF: A &lt; B &lt; &hellip; &lt; Z &lt; &hellip; &lt; a &lt; b &hellip; &lt; z. Names starting with lower case letters will be sorted below all names with uppercase letters or vice versa.</p>
+</blockquote>
+
+  </article>
+  
+  <article id="grouping-devices" class="page-section">
+    <h2>
+      <button class="btn-link bookmark" data-clipboard-text="#grouping-devices">
+        <span class="fa fa-link"></span>
+      </button>
+      Grouping devices</h2>
+    
+
+<p>Devices can be arbitrarily grouped according to a particular use case. A device can be located in multiple groups, and groups themselves can again be part of multiple groups.</p>
+
+<p>Cumulocity distinguishes between top-level groups and subgroups.</p>
+
+<p>Top-level groups are shown in the <strong>Group</strong> menu in the navigator at top-level. Subgroups are used to further subdivide top-level groups.</p>
+
+<h3 id="viewing-groups">Viewing groups</h3>
+
+<p>To display a list of all groups in the account, click <strong>Groups</strong> in the navigator.</p>
+
+<p><img src="/guides/images/users-guide/DeviceManagement/DevMgmt_GroupList.png" alt="Groups list" style="max-width: 100%"></p>
+
+<p>For each group, the name and the number of children is displayed.</p>
+
+<p>Click a group to view its details.</p>
+
+<p><img src="/guides/images/users-guide/DeviceManagement/DevMgmt_GroupDetails.png" alt="Group details" style="max-width: 100%"></p>
+
+<p><strong>Info Tab</strong></p>
+
+<p>In the <strong>Info</strong> tab, the following information is provided:</p>
+
+<table>
+<thead>
+<tr>
+<th align="left">Card</th>
+<th align="left">Description</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td align="left">Notes</td>
+<td align="left">Provides optional notes to inform about current activities. Notes usually may only be edited by an administrator. To add or edit a note, click <strong>Edit</strong>, enter your note or your modifications in the text box and save your edits by clicking the green checkmark at the right of the text box.</td>
+</tr>
+
+<tr>
+<td align="left">Group data</td>
+<td align="left">Displays editable information on the group (name, description).</td>
+</tr>
+
+<tr>
+<td align="left">Active, critical alarms</td>
+<td align="left">Shows the active critical alarms for the devices in the group.</td>
+</tr>
+</tbody>
+</table>
+
+<p><strong>Sub-assets</strong></p>
+
+<p>In the <strong>Sub-assets</strong> tab you see a list of all devices assigned to the group. For each device, the name and the number of children is displayed.</p>
+
+<p><img src="/guides/images/users-guide/DeviceManagement/DevMgmt_GroupSubAssets.png" alt="Sub-assets" style="max-width: 100%"></p>
+
+<p>To assign a device to a group, click <strong>Assign devices</strong> at the right of the top menu bar (see <a href="#assigning-devices">How to assign a device to an existing group</a>).</p>
+
+<p>To unassign a device, click the menu icon in a device entry and from the context menu select <strong>Unassign</strong>.</p>
+
+<p><strong>Bulk operations</strong></p>
+
+<p>In the <strong>Bulk operations</strong> tab, bulk operations created for the group can be managed. With bulk operations you can at once execute operations for each device within one group. For details, refer to <a href="#bulk-operations">Bulk operations</a>.</p>
+
+<h3 id="how-to-create-a-new-group">How to create a new group</h3>
+
+<p>To create a new group follow these steps:</p>
+
+<ol>
+<li>Click the <strong>Plus</strong> button at the right of the top bar, then select <strong>New group</strong> from the menu.</li>
+<li>In the window that comes up enter a unique group name to identify your group.</li>
+<li>In the <strong>Device search</strong> field, enter the search criteria for the devices you might want to add to your group (e.g. &ldquo;ublox&rdquo;). A list of devices that match your search criteria will be displayed.</li>
+<li>Checkmark the devices you want to add from the list.</li>
+<li>Click <strong>Create group with X device(s)</strong> to finally create your new group.</li>
+</ol>
+
+<blockquote>
+<p><strong>Info:</strong> A group can be created with &ldquo;0&rdquo; devices in it.</p>
+</blockquote>
+
+<p><img src="/guides/images/users-guide/addtopgroup.png" alt="Device Management" style="max-width: 100%"></p>
+
+<h3 id="a-name-assigning-devices-a-how-to-assign-a-device-to-an-existing-group"><a name="assigning-devices"></a>How to assign a device to an existing group</h3>
+
+<p>You can assign devices to an existing group in two ways.</p>
+
+<p>From the device perspective:</p>
+
+<ol>
+<li>Select a device from the device list and open it.</li>
+<li>In the <strong>Info</strong> tab, scroll down to the <strong>Groups assignment</strong> card. From the drop-down field, select the group you want to assign the device to. You can also directly enter a group name here or you can enter just parts of a name to filter the list for it and only show the matching group names.</li>
+<li>Click <strong>Assign</strong>.</li>
+</ol>
+
+<p><img src="/guides/images/users-guide/DeviceManagement/DevMgmt_GroupAssignment.png" alt="Add to group" style="max-width: 50%"></p>
+
+<p>If you search for a group by its name which does not exist yet, a <strong>New</strong> button will appear so that you can create a new group with this name from here and assign the device to that group.</p>
+
+<p>In order to create a new group, the user must have the following permissions:</p>
+
+<ul>
+<li>ROLE_INVENTORY_CREATE</li>
+<li>ROLE_INVENTORY_ADMIN</li>
+</ul>
+
+<p><img src="/guides/images/users-guide/DeviceManagement/devmgmt-group-assignment-new.png" alt="new group" style="max-width: 50%"></p>
+
+<p>From the group perspective:</p>
+
+<ol>
+<li>In the navigator, select a group from the <strong>Group</strong> menu and then open the <strong>Sub-assets</strong> tab. In the <strong>Sub-assets</strong> tab, all devices that are assigned to the respective group are displayed.</li>
+<li>Click <strong>Assign devices</strong> at the right of the top menu bar. In the upcoming window search for the devices you might want to add to your group (e.g. &ldquo;ublox&rdquo;). A list of devices that match your search criteria will be displayed.</li>
+<li>Checkmark the devices you want to add from the list.</li>
+<li>Click <strong>Assign X device(s)</strong> to assign the selected devices.</li>
+</ol>
+
+<p><img src="/guides/images/users-guide/DeviceManagement/DevMgmt_AssignDevices.png" alt="Assign devices to a group" style="max-width: 50%"></p>
+
+<h3 id="how-to-create-a-sub-group">How to create a sub-group</h3>
+
+<ol>
+<li>In the navigator, click a group to open it.</li>
+<li>Click <strong>Add Group</strong> at the right of the top menu bar.</li>
+<li>In the upcoming window, enter a name for the sub-group and click <strong>Add group</strong>.</li>
+</ol>
+
+<h3 id="how-to-edit-a-group">How to edit a group</h3>
+
+<ol>
+<li>In the navigator, click a group to open it.</li>
+<li>In the <strong>Info</strong> tab, click <strong>Edit</strong>. This allows you to edit the name of the group and to assign user permissions for the group.
+For further information on permissions, see the <a href="/guides/users-guide/administration#managing-permissions">Administration Guide</a>.</li>
+</ol>
+
+<h3 id="a-name-smart-groups-a-using-smart-groups"><a name="smart-groups"></a>Using smart groups</h3>
+
+<p>Smart groups are groups dynamically constructed based on filtering criteria. They have a temporary character because the group members can change constantly. Smart groups do not have fixed member listings.They have fixed criteria instead. This type of group can be used, for example, for bulk upgrades of devices of a certain type to a new software or firmware version.</p>
+
+<p><img src="/guides/images/users-guide/smartfilters.png" alt="Adding top-level groups" style="max-width: 100%"></p>
+
+<p>Smart groups can be created from the device list.</p>
+
+<ol>
+<li>To open the device list, click <strong>All devices</strong> in the navigator.</li>
+<li>Filter the devices in the list to select the desired devices. Refer to <a href="#filtering-devices">Filtering devices</a> for details on filtering.</li>
+<li>Click <strong>Create smart group</strong> at the right of the top menu bar.</li>
+<li>Enter a name for the group and click <strong>Create</strong>.</li>
+</ol>
+
+<p><img src="/guides/images/users-guide/smartgroup1.png" alt="Create a smart group" style="max-width: 100%"></p>
+
+<p>The new group will appear as a top-level group in the <strong>Groups</strong> menu of the navigator. Smart groups can be distinguished by a small cogwheel in the folder icon.</p>
+
+<p><img src="/guides/images/users-guide/DeviceManagement/DevMgmt_SmartgroupIcon.png" alt="Smart groups" style="max-width: 100%"></p>
+
+<p>In the <strong>Sub-asset</strong> tab you can adjust your selection and modify the filter settings.</p>
+
+<p>To delete a smart group, click the menu icon and from the context menu select <strong>Delete</strong>.</p>
+
+<p><img src="/guides/images/users-guide/smartgroupdelete1.png" alt="Adding top-level groups" style="max-width: 100%"></p>
+
+<p><strong>Important</strong>: Deleting a smart group is irreversible.</p>
+
+<blockquote>
+<p><strong>Info</strong>: Smart groups are not shown when using the Cockpit application.</p>
+</blockquote>
+
+  </article>
+  
+  <article id="device-details" class="page-section">
+    <h2>
+      <button class="btn-link bookmark" data-clipboard-text="#device-details">
+        <span class="fa fa-link"></span>
+      </button>
+      Device details</h2>
+    
+
+<p>For each device, detailed information is available. The kind of information actually provided for a device depends on the device type, device usage and the configuration of your user interface.</p>
+
+<p>To view detailed information on the device, click a device in the device list.</p>
+
+<p><img src="/guides/images/users-guide/DeviceManagement/DevMgmt_DeviceDetails.png" alt="Device details" style="max-width: 100%"></p>
+
+<p>The device details are divided into tabs. The number of tabs is dynamic and depends on the available information, i.e. tabs are only displayed if the kind of information is available for the particular device.</p>
+
+<p>Initially the <strong>Info</strong> tab is shown, which offers general information on a device and is available for each device.</p>
+
+<p>Each device at least shows the following tabs: Info, Alarms, Control, Events, Service monitoring, Identity (also see the tab list below).</p>
+
+<p>The following tabs are the most common ones, each described in detail in a separate section:</p>
+
+<table>
+<thead>
+<tr>
+<th align="left">Tab</th>
+<th align="left">Description</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td align="left"><a href="#info">Info</a></td>
+<td align="left">Provides general information on a device. Available for each device.</td>
+</tr>
+
+<tr>
+<td align="left"><a href="#child-devices">Child Devices</a></td>
+<td align="left">Lists devices being connected to the current device.</td>
+</tr>
+
+<tr>
+<td align="left"><a href="#measurements">Measurements</a></td>
+<td align="left">Provides a default visualization of numeric data provided by the device in the form of charts.</td>
+</tr>
+
+<tr>
+<td align="left"><a href="#alarms">Alarms</a></td>
+<td align="left">Provides information on the alarms for a device. See also <a href="#alarm-monitoring">Working with alarms</a>. Available for each device.</td>
+</tr>
+
+<tr>
+<td align="left"><a href="#config">Configuration</a></td>
+<td align="left">Allows manual configuration of device parameters and settings entered in a text format. See also <a href="#configuration-repository">Configuration Repository</a> for binary configuration.</td>
+</tr>
+
+<tr>
+<td align="left"><a href="#control">Control</a></td>
+<td align="left">Displays operations being sent to a device. Also refer to <a href="#operation-monitoring">Working with operations</a>. Available for each device.</td>
+</tr>
+
+<tr>
+<td align="left"><a href="#network">Network</a></td>
+<td align="left">Displays network information for a device.</td>
+</tr>
+
+<tr>
+<td align="left"><a href="#software">Software</a></td>
+<td align="left">Manages firmware of a device and software installed on a device.</td>
+</tr>
+
+<tr>
+<td align="left"><a href="#events">Events</a></td>
+<td align="left">Displays events related to a device, helpful for low-level troubleshooting. Also refer to <a href="#events-all">Troubleshooting devices</a>. Available for each device.</td>
+</tr>
+
+<tr>
+<td align="left"><a href="#location">Location</a></td>
+<td align="left">Shows the location of a device, if available.</td>
+</tr>
+
+<tr>
+<td align="left"><a href="#logs">Logs</a></td>
+<td align="left">Allows requesting log information for a device.</td>
+</tr>
+
+<tr>
+<td align="left"><a href="#service-monitoring">Service monitoring</a></td>
+<td align="left">Allows the service monitoring of machines. See also <a href="#monitoring-services">Monitoring services</a>. Available for each device.</td>
+</tr>
+
+<tr>
+<td align="left"><a href="#shell">Shell</a></td>
+<td align="left">Enables you to interact with remote devices via a command prompt.</td>
+</tr>
+
+<tr>
+<td align="left"><a href="#tracking">Tracking</a></td>
+<td align="left">Shows the movement of a device, if available.</td>
+</tr>
+
+<tr>
+<td align="left"><a href="#identity">Identity</a></td>
+<td align="left">Displays identities recorded for a particular device. Available for each device.</td>
+</tr>
+</tbody>
+</table>
+
+<blockquote>
+<p><strong>Info</strong>: Potential individual tabs, which you do not find listed here, may be described in a different context and therefore somewhere else in the Cumulocity documentation. Use the Search function to switch to the relevant sections. A detailed description on the <strong>Modbus</strong> tab, for example, can be found in the respective Device guide.</p>
+</blockquote>
+
+<p>Below the name, a list of breadcrumbs is displayed. If the device is part of an asset hierarchy (such as a group), you can use the breadcrumbs to easily navigate up that hierarchy. Since devices can be part of multiple hierarchies, several rows of breadcrumbs may be shown.</p>
+
+<p>Depending of the type and usage of a device, further actions are provided in a context menu when clicking <strong>More&hellip;</strong> at the right of the top menu bar.</p>
+
+<p><img src="/guides/images/users-guide/DeviceManagement/DevMgmt_DevicesMoreMenu.png" alt="More menu" style="max-width: 50%"></p>
+
+<p>Details on these additional menu items are provided where required.</p>
+
+<h3 id="a-name-info-a-info"><a name="info"></a>Info</h3>
+
+<p>The <strong>Info</strong> tab summarizes management-relevant device information in a dashboard.</p>
+
+<p><img src="/guides/images/users-guide/DeviceManagement/DevMgmt_DeviceInfoDashboard.png" alt="Info dashboard" style="max-width: 100%"></p>
+
+<p>The information is provided on the following cards:</p>
+
+<table>
+<col width = 150>
+<thead>
+<tr>
+<th style="text-align:left">Card</th>
+<th style="text-align:left">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">Notes</td>
+<td style="text-align:left">Provides optional notes to inform about current activities. Notes usually may only be edited by an administrator. To add or edit a note, click <strong>Edit</strong>, enter your note or your modifications in the text box and save your edits by clicking the green checkmark at the right of the text box. </td>
+</tr>
+<tr>
+<td style="text-align:left">Device status</td>
+<td style="text-align:left">Displays connection-relevant information, as described in detail in <a href="#connection-monitoring" class="no-ajaxy">Connection monitoring</a>. </td>
+</tr>
+<tr>
+<td style="text-align:left">Device and communication</td>
+<td style="text-align:left">Shows a data point graph displaying realtime data on particular measurements. For details on data point graphs, refer to <a href="/guides/users-guide/cockpit#data-explorer" class="no-ajaxy">Using the Data Explorer</a> in the Cockpit documentation. <br>The following measurements may be shown here: <br> 
+<strong>Data points</strong>: c8y_Battery.level, c8y_SignalStrength.rssi, c8y_MemoryMeasurement.Used, c8y_CPUMeasurement.Workload, c8y_NetworkStatistics.Upload, c8y_SignalStrength.RCSP, c8y_SignalStrength.ber, c8y_SignalStrength.ECN0, c8y_NetworkStatistics.Download, c8y_MemoryMeasurement.Total <br>
+<strong>Alarms</strong>: c8y_UnavailabilityAlarm<br>
+<strong>Events</strong>: c8y_LocationUpdate</td>
+</tr>
+<tr>
+<td style="text-align:left">Device data</td>
+<td style="text-align:left">Displays editable information on the device (name, type, ID, owner, last updated). The fields <strong>ID</strong> and <strong>Last updated</strong> cannot be edited. Moreover information on hardware (editable) and firmware (not editable) is displayed here if available.</td>
+</tr>
+<tr>
+<td style="text-align:left">Active, critical alarms</td>
+<td style="text-align:left">Shows the active critical alarms for the device.</td>
+</tr>
+<tr>
+<td style="text-align:left">Groups assignment</td>
+<td style="text-align:left">Displays the groups the device belongs to. Moreover you can add the device to groups here or unassign it from groups. For details on grouping devices see <a href="#grouping-devices" class="no-ajaxy">Grouping devices</a>.</td>
+</tr>
+<tr>
+<td style="text-align:left">Location</td>
+<td style="text-align:left">Shows the location of a device on a map as reported by the device or as manually set. For details, refer to <a href="#location" class="no-ajaxy">Location</a>.</td>
+</tr>
+</tbody>
+</table>
+
+<h3 id="a-name-child-devices-a-child-devices"><a name="child-devices"></a>Child devices</h3>
+
+<p>The <strong>Child devices</strong> tab shows a list of devices connected to the currently displayed device. For example, if you look at a gateway, the tab lists all machines connected to the gateway.</p>
+
+<p>For details provided in the child device list, refer to <a href="#viewing-devices">Viewing devices</a>.</p>
+
+<h3 id="a-name-measurements-a-measurements"><a name="measurements"></a>Measurements</h3>
+
+<p>The <strong>Measurements</strong> tab provides a default visualization of numeric data provided by the device in the form of charts. Charts are grouped into types of measurements, which can contain multiple graphs or &ldquo;series&rdquo;. The screenshot below, for example, shows a chart for motion measurement including graphs for acceleration in the three dimensions, and a chart with modem statistics in the form of signal strength and bit error rate.</p>
+
+<p><img src="/guides/images/users-guide/measurements.png" alt="Measurements" /></p>
+
+<p>If a chart contains graphs with different units, one Y-axis is rendered per unit. In the example above, motion measurements consist of three parameters with unit &ldquo;meter per square second&rdquo;, so only one axis is rendered. Modem statistics consist of signal strength in decibel milliwatts and bit error rate in percent, so one axis is rendered for each graph.</p>
+
+<p>To see detailed information about the measured values, hover over the chart. A tooltip will be displayed with detailed information on the measurement next to your cursor (the tooltip will &ldquo;snap&rdquo; to the closest measurement).</p>
+
+<p><strong>Time range and aggregation</strong></p>
+
+<p>By default, charts show the raw data of the last hour. To change the time range on the X-axis, open the &ldquo;Last hour&rdquo; dropdown menu at the top right and select a time range.</p>
+
+<p>If you increase the time range, the value in the <strong>Aggregation</strong> field will automatically switch to &ldquo;hourly&rdquo; or &ldquo;daily&rdquo;. The chart now shows ranges instead of individual raw data points. For &ldquo;hourly&rdquo;, the chart will show a range of the minimum and maximum value measured in one hour. For &ldquo;daily&rdquo;, the chart will show the minimum and maximum value measured over one day. Likewise, the tooltips will now show ranges of values instead of individual values.</p>
+
+<p>This enables you to get an efficient overview over larger time periods. A graph will only show 5.000 data points per graph maximum to avoid overloading your desktop browser. If you select a fine focus resulting in more than 5.000 data points, a warning message will be shown: &ldquo;Truncated data. Change aggregation or select shorter date range.&rdquo;</p>
+
+<p>Clicking <strong>Realtime</strong> will enable realtime user interface updates of the graphs as new data flows into the system from the connected devices.</p>
+
+<p>You can influence the graphical display and axes limits by setting up so-called &ldquo;KPIs&rdquo;, see the <a href="/guides/users-guide/administration">Administration Guide</a>.</p>
+
+<p><strong>Measurement format</strong></p>
+
+<p>In order to see measurement graphs, the device has to send measurements in a specified fragment format.</p>
+
+<p>&ldquo;fragment<span>&#95;</span>name&rdquo; : {
+    &ldquo;serie<span>&#95;</span>name&rdquo; : {
+        &ldquo;value&rdquo; : &hellip;
+        &ldquo;unit&rdquo; : &hellip;
+    }
+}</p>
+
+<p>Example:</p>
+
+<p>&ldquo;c8y_SpeedMeasurement&rdquo;: {
+      &ldquo;Speed&rdquo;: { &ldquo;value&rdquo;: 1234, &ldquo;unit&rdquo;: &ldquo;km/h&rdquo; }
+}</p>
+
+<p>Fragment<span>&#95;</span>name and serie<span>&#95;</span>name can be replaced by different valid json property names, but no whitespaces and special characters like [ ],* are allowed. The structure has to be exactly as above, two-level deep json object.</p>
+
+<h3 id="a-name-alarms-a-alarms"><a name="alarms"></a>Alarms</h3>
+
+<p>The <strong>Alarms</strong> tab provides information on the alarms of a device. Refer to  <a href="#alarm-monitoring">Working with alarms</a> for further information on alarms.</p>
+
+<h3 id="a-name-config-a-configuration"><a name="config"></a> Configuration</h3>
+
+<p>The text configuration, available in the <strong>Configuration</strong> tab of a device, allows you to configure the parameters and initial settings of your device in a text format.</p>
+
+<p>To manually add or edit a device configuration, follow these steps:</p>
+
+<ol>
+<li>Open the details for your desired device.</li>
+<li>Click the <strong>Configuration</strong> tab.</li>
+<li>In the text field you can add or edit the device configuration as desired.</li>
+<li>Click <strong>Save</strong> to save your edits.</li>
+</ol>
+
+<p><img src="/guides/images/users-guide/textconfig.png" alt="Device details" style="max-width: 100%"></p>
+
+<p>Alternatively, you can work with configuration snapshots. For details, refer to <a href="#configuration-repository">Configuration snapshots</a>.</p>
+
+<h3 id="a-name-control-a-control"><a name="control"></a>Control</h3>
+
+<p>The <strong>Control</strong> tab lists the operations being sent to a device. Refer to <a href="#operation-monitoring">Working with operations</a> for further information on operations.</p>
+
+<p><img src="/guides/images/users-guide/operations.png" alt="Operations" /></p>
+
+<h3 id="a-name-network-a-network"><a name="network"></a>Network</h3>
+
+<p>In the <strong>Network</strong> tab network settings can be configured for the device.</p>
+
+<!-- Needs to be documented-->
+
+<h3 id="a-name-software-a-software"><a name="software"></a>Software</h3>
+
+<p>The <strong>Software</strong> tab allows you to manage and update the firmware of a device and the software installed on a device.</p>
+
+<p>To install a new firmware, click <strong>Install firmware</strong>, then select a firmware image from the <a href="#software-repo">Firmware repository</a> and click <strong>Install</strong>.</p>
+
+<p>Similarly, to install a software on the device, click <strong>Install software</strong>, select a software package from the <a href="#software-repo">Software repository</a> and click <strong>Install</strong>.</p>
+
+<p><img src="/guides/images/users-guide/DeviceManagement/DevMgmt_software.png" alt="Software" style="max-width: 100%"></p>
+
+<p>Installing software and firmware usually includes a restart of the device. To monitor the progress of an installation, visit the <strong>Control</strong> tab.</p>
+
+<p>To remove a software from a device, hover over a particular software package and click the <strong>Delete</strong> button.</p>
+
+<h3 id="a-name-events-a-events"><a name="events"></a>Events</h3>
+
+<p>The <strong>Events</strong> tab displays events related to a device. This enables low-level troubleshooting of a device. Refer to <a href="#events-all">Troubleshooting devices</a> for further information.</p>
+
+<h3 id="a-name-location-a-location"><a name="location"></a>Location</h3>
+
+<p>The <strong>Location</strong> tab by default shows the location of a device on a map and as coordinates, as reported by the device. For devices that do not report a location you may manually set the location. Simply place the &ldquo;pin&rdquo; in the correct place of the displayed map.</p>
+
+<p>The <strong>Location</strong> tab also shows when a device contains c8y_Position property. When you send a new c8y-position event, you can set the same c8y-Position fragment on the device and it will automatically mark its position on the map.</p>
+
+<h3 id="a-name-logs-a-logs"><a name="logs"></a>Logs</h3>
+
+<p>In the <strong>Logs</strong> tab you can request log information from devices. Log information can be filtered according to date ranges, log type, keywords and the maximum number of lines to transfer.</p>
+
+<p>In the <strong>Logs</strong> tab, click <strong>Request log file</strong> at the right of the top menu bar.</p>
+
+<p>In the upcoming window, specify the following settings for the log information:</p>
+
+<ul>
+<li>A date and time range.</li>
+<li>The type of log. The supported logs listed are usually device-specific.</li>
+<li>An optional text to filter the log. For example, if you enter &ldquo;Users&rdquo;, only lines including the term &ldquo;Users&rdquo; will appear in the returned log information.</li>
+<li>The maximum number of lines to be returned (counted from the end). The default value is 1000.</li>
+</ul>
+
+<p>Click <strong>Request log</strong> to request the specified log information for the device.</p>
+
+<p><img src="/guides/images/users-guide/DeviceManagement/DevMgmt_RequestLogs.png" alt="Request Logs" style="max-width: 100%"></p>
+
+<blockquote>
+<p>Requesting a log from a device may take some time.</p>
+</blockquote>
+
+<p>After the log has been transferred from the device to Cumulocity, it will be listed on the screen. The entry in the list includes the requested log time range.</p>
+
+<p>Click on the entry in the list to show the log information in the screen.</p>
+
+<p>When hovering over an entry, the <strong>Download</strong> and <strong>Delete</strong> buttons appear. Click the <strong>Download</strong> button to download the log excerpt to your local PC. Click the <strong>Delete</strong> button to delete the log file.</p>
+
+<h3 id="a-name-service-monitoring-a-service-monitoring"><a name="service-monitoring"></a>Service monitoring</h3>
+
+<p>In addition to connection monitoring, Cumulocity offers a separate service monitoring for machines. See <a href="#monitoring-services">Service monitoring</a> for more information.</p>
+
+<h3 id="a-name-shell-a-shell"><a name="shell"></a>Shell</h3>
+
+<p>The device shell enables you to interactively work with remote devices. Many industrial devices support some form of command language, be it AT commands for modems, CSV-style commands for many tracking devices or elaborate scripting mechanisms such as Tixi TiXML. In the shell, you can send commands in the respective language of the device and interactively view the results of the commands.</p>
+
+<p>The <strong>Shell</strong> tab presents a command prompt to enter commands.</p>
+
+<p>In the command prompt you can enter arbitrary command text. To send the command text to the device, click <strong>Execute</strong>. This button only is activated if the device is online.</p>
+
+<p><img src="/guides/images/users-guide/shell.png" alt="Device shell" /></p>
+
+<blockquote>
+<p><strong>Important</strong>:When using Cumulocity IoT to remotely operate machinery, make sure that all remote operations follow the safety standards and do not cause any harm.</p>
+</blockquote>
+
+<p>Click <strong>View history</strong> at the right of the top menu bar to switch to the <strong>Control</strong> tab which displays a list of the previously executed commands. For details, refer to <a href="#operation-monitoring">Monitoring and controlling devices &gt; Working with operations</a>.</p>
+
+<p>For your convenience, Cumulocity provides several frequently used commands for some devices. Click <strong>&lt;_Get predefined commands</strong> at the right of the top menu bar to open a window containing a list of available pre-defined commands. Select the command of your choice and click <strong>Use</strong>, to copy the command to the command prompt, or <strong>Execute</strong>, to execute the command straight away. You may also add new commands here for re-use.</p>
+
+<p><img src="/guides/images/users-guide/DeviceManagement/DevMgmt_ShellPredefined.png" alt="Shell commands" style="max-width: 50%"></p>
+
+<h3 id="a-name-tracking-a-tracking"><a name="tracking"></a>Tracking</h3>
+
+<p>Devices can record the history of their movements in Cumulocity. This movements may be viewed in the <strong>Tracking</strong> tab.</p>
+
+<p><strong>Note</strong> that the <strong>Tracking</strong> tab only shows up when a device contains c8y_Position property.</p>
+
+<p>In the dropdown list at the top right you can select a time period (or specify one by selecting Custom from the list) and visualize the movements of the device during this period. Movements are shown as red lines in the map.</p>
+
+<p><img src="/guides/images/users-guide/tracking.png" alt="Tracking" /></p>
+
+<p>Next to the map, the individual recordings with their time are listed (&ldquo;location update events&rdquo;). When you click a recording, a &ldquo;pin&rdquo; on the map will show the location at the time of the recording.</p>
+
+<p>Depending on the type of device and the integration into Cumulocity, you can configure device-side geo-fencing and motion detection.</p>
+
+<blockquote>
+<p><strong>Info</strong>: When this feature is activated and the device is compatible, Cell ID information can be used to determine the position of the device. Currently, the services from <a href="https://combain.com/">Combain</a> and <a href="https://developers.google.com/maps/documentation/geolocation/intro">Google</a> are supported. The user can see the tracks based on both data, or filter out GPS based data or Cell ID based data.</p>
+</blockquote>
+
+<h3 id="a-name-identity-a-identity"><a name="identity"></a>Identity</h3>
+
+<p>Cumulocity can associate devices and assets with multiple external identities. For example, devices can often be identified by the IMEI of their modem, by a micro-controller serial number or by an asset tag. The <strong>Identity</strong> tab lists all the identities recorded for a particular device.</p>
+
+<p>This is useful, for example, when you have non-functional hardware and need to replace the hardware without losing the data that was recorded. Just connect the new hardware to your account and modify the identity entry of the old hardware, to contain the identity of the new hardware.</p>
+
+  </article>
+  
+  <article id="monitoring-and-controlling-devices" class="page-section">
+    <h2>
+      <button class="btn-link bookmark" data-clipboard-text="#monitoring-and-controlling-devices">
+        <span class="fa fa-link"></span>
+      </button>
+      Monitoring and controlling devices</h2>
+    
+
+<h3 id="a-name-map-a-locating-devices"><a name="map"></a>Locating devices</h3>
+
+<p>Cumulocity provides the option to view all devices in your account on a map.</p>
+
+<p>Click <strong>Map</strong> in the <strong>Devices</strong> menu in the navigator to display a map showing all devices in realtime.</p>
+
+<p>Devices are represented as &ldquo;pins&rdquo;. Click a pin to see the name of the respective device. Click the device name to switch to the device details.</p>
+
+<p><img src="/guides/images/users-guide/DeviceManagement/DevMgmt_Map.png" alt="Device Map" style="max-width: 100%"></p>
+
+<h3 id="a-name-connection-monitoring-a-connection-monitoring"><a name="connection-monitoring"></a>Connection monitoring</h3>
+
+<p>In the Device Management application you have the option to monitor the connections to your devices.</p>
+
+<p>This can be done at the level of individual devices (see below) or across multiple devices in a list.</p>
+
+<p>To monitor the connections for multiple devices, open any device list.</p>
+
+<p>The connection status is represented by arrows in the <strong>Status</strong> column in the device list.</p>
+
+<p><img src="/guides/images/users-guide/DeviceManagement/DevMgmt_ConnectionStatus.png" alt="Connection Status" style="max-width: 100%"></p>
+
+<p><strong>Send connections</strong></p>
+
+<p>The top arrow represents the Send connection (traffic from the device to Cumulocity). The status for the Send connections may be one of:</p>
+
+<ul>
+<li>Online (data was sent within the required interval)- indicated by a green arrow</li>
+<li>Offline (data was not sent within the required interval) - indicated by a red arrow</li>
+<li>Unknown or not monitored (no interval configured) - indicated by a grey arrow</li>
+</ul>
+
+<p>Hovering over the arrow displays the timestamp of the last request from the device to the server.</p>
+
+<p>When a device is detected to be offline (stops sending data within required interval and top arrow changes to red color), an unavailability alarm is created for the device reading &ldquo;No data received from device within required interval&rdquo;.</p>
+
+<p><strong>Push connections</strong></p>
+
+<p>The bottom arrow represents the Push connection (from Cumulocity to the device). The status for the Push connections may be one of:</p>
+
+<ul>
+<li>Online (connection established)- indicated by a green arrow</li>
+<li>Offline (connection not established) - indicated by a red arrow</li>
+<li>Not monitored - indicated by a grey arrow</li>
+</ul>
+
+<blockquote>
+<p><strong>Info</strong>: The Push connection means the connection from Cumulocity to /devicecontrol/notifications API, <strong>not</strong> to realtime API.</p>
+</blockquote>
+
+<p><strong>Maintenance mode</strong></p>
+
+<p>Moreover, the device may be in &ldquo;Maintenance&rdquo; mode, indicated by the tool icon in the <strong>Status</strong> column. This is a special connection status indicating that the device is currently being maintained and cannot be monitored. While a device is being maintained, no alarms for that device are raised.</p>
+
+<p>You can turn maintenance mode on or off for a device through a slider in the <strong>Connection monitoring</strong> card in its <strong>Info</strong> tab.</p>
+
+<p><strong>Connection monitoring in the &ldquo;Info&rdquo; tab</strong></p>
+
+<p>To monitor the connections of a particular device, go to the <strong>Info</strong> tab of this device. Under <strong>Device status</strong>, the connection status for the device is displayed.</p>
+
+<p><img src="/guides/images/users-guide/DeviceManagement/DevMgmt_DeviceInfoStatus.png" alt="Device Status" style="max-width: 50%"></p>
+
+<p>Below the send connection and push connection status, the time of the last communication is displayed.</p>
+
+<blockquote>
+<p><strong>Info</strong>: &ldquo;Last communication&rdquo; and &ldquo;Last updated&rdquo; are two entirely different time stamps. &ldquo;Last communication&rdquo; indicates when a device has last sent data. &ldquo;Last updated&rdquo; indicates when the inventory entry of the device was last updated. This update may have originated from the device, from the web user interface or from another application.</p>
+</blockquote>
+
+<p>In the  <strong>Required interval</strong> field you can specify an interval. This parameter defines how often you expect to hear from the device. If, for example, you set the required interval to 60, you expect the device at least to communicate once in an hour with Cumulocity. The interval is either set by the device itself, based on the device&rsquo;s knowledge how often it will try to send data, or it is set manually by you.</p>
+
+<p>If an interval is set, you will find the <strong>Maintenance</strong> slider below it.</p>
+
+<p>With the <strong>Maintenance</strong> slider you can turn the maintenance mode for the device on or off which is immediately reflected in the connection status.</p>
+
+<p><img src="/guides/images/users-guide/DeviceManagement/DevMgmt_DeviceInfoStatusMaintenance.png" alt="Device status maintenance" style="max-width: 50%"></p>
+
+<blockquote>
+<p><strong>Info</strong>: Connection monitoring is not realtime. This means that the connection status will not change immediately when you switch off a device. Depending on your network, it may take about 20 minutes until a broken connection is discovered, since the network will retry sending data for a significant amount of time.</p>
+</blockquote>
+
+<h3 id="a-name-monitoring-services-a-service-monitoring"><a name="monitoring-services"></a>Service monitoring</h3>
+
+<p>Cumulocity distinguishes between connection monitoring and service monitoring. Connection monitoring, as described in the previous section, only indicates if the device is communicating with Cumulocity, it does not automatically indicate if it is functional or not.</p>
+
+<p>Service monitoring indicates if a device is in service. For example, a vending machine is in service if it is ready to sell goods. A vending machine can sell goods using cash money without a connection to Cumulocity. From the perspective of a merchant, it is in service. Similar, if you switch off the power on a gateway, the devices behind the gateway can still continue to work.</p>
+
+<p>Cumulocity considers a device to be in service while there is no critical, unresolved alarm present for the machine. This is displayed as a share of time such an alarm was present. If a machine didn&rsquo;t have any critical alarms whatsoever during a time period, it was 100% in service. If half of the time there was some critical, unresolved alarm, the machine was 50% in service.</p>
+
+<p>While a machine is offline, Cumulocity assumes by default</p>
+
+<ul>
+<li>that the machine continues to stay in service during the connection outage, if this was the status before it lost connection.</li>
+<li>that the machine continues to stay out of service, if this was the status before it lost connection.</li>
+</ul>
+
+<p>There may be exceptions from this rule. If your vending machines rely exclusively on cashless payment, losing the connection to the network means that your machine is out of service and stops selling. In this case, unavailability alarms must be set in the <a href="/guides/users-guide/administration#reprio-alarms">Administration application</a> which have CRITICAL severity instead of MAJOR severity.</p>
+
+<p>Cumulocity displays service availability at the level of individual devices and across all devices.</p>
+
+<p>To check the service monitoring of this specific device, click the <strong>Service monitoring</strong> tab in the details of a particular device.</p>
+
+<p>To display the overall service across all devices, click <strong>Service monitoring</strong> in the navigator.</p>
+
+<p><img src="/guides/images/users-guide/servicemonitoring.png" alt="Service monitoring" /></p>
+
+<p>The <strong>Service monitoring</strong> page shows the availability percentage of devices for the last day, last week and last month.</p>
+
+<h3 id="a-name-alarm-monitoring-a-working-with-alarms"><a name="alarm-monitoring"></a>Working with alarms</h3>
+
+<p>Devices can raise alarms to indicate that there is a problem requiring an intervention.</p>
+
+<p>Cumulocity displays alarms at the level of individual devices and across all devices:</p>
+
+<ul>
+<li>Click <strong>Alarms</strong> in the <strong>Overview</strong> menu in the navigator, to check the alarms for all devices.</li>
+<li>Switch to the <strong>Alarm</strong> tab in the details of a particular device, to check the alarms of this specific device.</li>
+</ul>
+
+<p><img src="/guides/images/users-guide/DeviceManagement/devmgmt-alarm-device.png" alt="Alarms" style="max-width: 100%"></p>
+
+<p>By default,</p>
+
+<ul>
+<li>only unresolved alarms are shown. If you turn on <strong>Show cleared alarms</strong> at the right of the top menu bar, you will see the entire alarm history.</li>
+<li>alarms are shown as coming in from the devices in realtime. Click <strong>Realtime</strong> in the top menu bar to disable realtime updates.</li>
+</ul>
+
+<p>Alarms are classified according to their severity. Cumulocity includes four different alarm types:</p>
+
+<table>
+<thead>
+<tr>
+<th align="left">Severity</th>
+<th align="left">Description</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td align="left">Critical</td>
+<td align="left">The device is out of service and should be fixed immediately.</td>
+</tr>
+
+<tr>
+<td align="left">Major</td>
+<td align="left">The device has a problem that should be fixed.</td>
+</tr>
+
+<tr>
+<td align="left">Minor</td>
+<td align="left">The device has a problem that may be fixed.</td>
+</tr>
+
+<tr>
+<td align="left">Warning</td>
+<td align="left">There is a warning.</td>
+</tr>
+</tbody>
+</table>
+
+<p>The <strong>Alarm</strong> tab is split into four sections corresponding to these alarm types.</p>
+
+<p>By clicking one of the buttons at the top, the corresponding section will be hidden. Click it again to show the section again.</p>
+
+<p>Within each section, the alarms are sorted by their occurrence, displaying the most recent alarm first.</p>
+
+<p>In each row, the following information for an alarm is provided:</p>
+
+<table>
+<thead>
+<tr>
+<th align="left">Info</th>
+<th align="left">Description</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td align="left">Severity</td>
+<td align="left">One of critical, major, minor, warning (see above).</td>
+</tr>
+
+<tr>
+<td align="left">Count</td>
+<td align="left">The number of times this alarm was sent by the device. Only one alarm of a particular type can be active for a certain device. If another alarm of the same type is sent by the device, the number is increased by 1.</td>
+</tr>
+
+<tr>
+<td align="left">Description</td>
+<td align="left">An arbitrary text describing the alarm.</td>
+</tr>
+
+<tr>
+<td align="left">Status</td>
+<td align="left">The status of the alarm. An alarm can be: <br/> <strong>Active</strong>: When it was raised and nobody is so far working on the alarm. <br/><strong>Acknowledged</strong>: When someone changed the status to &ldquo;Acknowledged&rdquo; to indicate that someone is working on the alarm.<br/><strong>Cleared</strong>: When either someone manually set the status to &ldquo;Clear&rdquo; or when the device detected by itself that the problem has gone.</td>
+</tr>
+
+<tr>
+<td align="left">Last occurrence</td>
+<td align="left">Timestamp of the last occurrence of the alarm (device time).</td>
+</tr>
+
+<tr>
+<td align="left">Device</td>
+<td align="left">The name of the device. Clicking the name leads you to the detailed view of the device.</td>
+</tr>
+</tbody>
+</table>
+
+<p>Click the arrow on the right of a row to expand it and display further details on the alarm.</p>
+
+<ul>
+<li><strong>Status</strong>: Providing further information on the alarm status and showing the type of the alarm. The type info is used for duplicating alarms and for configuring the priority of alarms in the <a href="/guides/users-guide/administration#reprio-alarms">Administration application</a>.</li>
+<li><strong>Change Log</strong>: Providing the server time when the alarm was created, which may differ from the device time.</li>
+</ul>
+
+<p>To change the status of an alarm, hover over it and click the button for the desired status or click the menu icon and from the context menu select the desired status.</p>
+
+<p><img src="/guides/images/users-guide/DeviceManagement/devmgmt-alarm-change-status.png" alt="Alarm change status" /></p>
+
+<p>It is also possible to change the status of all alarms to &ldquo;clear&rdquo; at once. Click <strong>Clear all</strong> in the top menu bar, to clear all alarms of the selected severities.</p>
+
+<!-- Seems to be no longer relevant
+* **Additional information**: An alarm can contain arbitrary additional information provided by the device.
+* **Audit log**: Along with the alarm, a log of changes to the alarm is stored. This creates an alarm history with various data. -->
+
+<h3 id="a-name-operation-monitoring-a-working-with-operations"><a name="operation-monitoring"></a>Working with operations</h3>
+
+<p>Operations are used to remotely control devices.</p>
+
+<p>You can view operations at the level of individual devices and across all devices:</p>
+
+<ul>
+<li>Click <strong>Device control</strong> in the <strong>Overview</strong> menu in the navigator to see the operations for all devices.</li>
+<li>* Switch to the <strong>Control</strong> tab in the details of a particular device to see the operations of this specific device.</li>
+</ul>
+
+<p><img src="/guides/images/users-guide/DeviceManagement/DevMgmt_DeviceControl.png" alt="Device Control" /></p>
+
+<p>For each operation, the following information is provided:</p>
+
+<table>
+<thead>
+<tr>
+<th align="left">Info</th>
+<th align="left">Description</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td align="left">Status</td>
+<td align="left">One of pending, executing, successful, failed (see below).</td>
+</tr>
+
+<tr>
+<td align="left">Name</td>
+<td align="left">Name of the operation.</td>
+</tr>
+
+<tr>
+<td align="left">Device</td>
+<td align="left">The name of the device. Clicking the name leads you to the detailed view of the device.</td>
+</tr>
+</tbody>
+</table>
+
+<p>Clicking a row expands it and displays further details on the operation.</p>
+
+<ul>
+<li><strong>Details</strong>: Providing information on the operation name and status. In case of status = FAILED the reason for the failure is provided.</li>
+<li><strong>History of Changes</strong>: Providing information on the past changes of the operation.</li>
+</ul>
+
+<p><img src="/guides/images/users-guide/DeviceManagement/DevMgmt_OperationDetails.png" alt="Operation Details" /></p>
+
+<p>Operations can be in any of four states, indicated by meaningful icons:</p>
+
+<table>
+<thead>
+<tr>
+<th align="left">State</th>
+<th align="left">Description</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td align="left">Pending</td>
+<td align="left">The operation has just been created and is waiting for the device to pick it up.</td>
+</tr>
+
+<tr>
+<td align="left">Executing</td>
+<td align="left">The operation has been picked up by the device and is being executed.</td>
+</tr>
+
+<tr>
+<td align="left">Successful</td>
+<td align="left">The operation has been successfully executed by the device.</td>
+</tr>
+
+<tr>
+<td align="left">Failed</td>
+<td align="left">The operation could not be executed by the device.</td>
+</tr>
+</tbody>
+</table>
+
+<p>By clicking one of the state buttons at the top, the corresponding operations will be hidden. Click it again to show the operations again.</p>
+
+<p>Click <strong>Realtime</strong> at the right of the top menu bar to see operations coming in from the devices in realtime.</p>
+
+<blockquote>
+<p><strong>Info</strong>: Operations are listed in descending time order. Operations are executed strictly according to this order.</p>
+</blockquote>
+
+<h4 id="creating-and-executing-operations">Creating and executing operations</h4>
+
+<p>Operations for a specific device are created and executing in the <strong>Shell</strong> tab of the device, see <a href="/guides/users-guide/device-management#shell">Device details &gt; Shell</a>.</p>
+
+<blockquote>
+<p><strong>Important</strong>:When using Cumulocity IoT to remotely operate machinery, make sure that all remote operations follow the safety standards and do not cause any harm.</p>
+</blockquote>
+
+<h5 id="a-name-bulk-operations-a-bulk-operations"><a name="bulk-operations"></a>Bulk operations</h5>
+
+<p>For easier handling of devices, Cumulocity offers bulk operations. With bulk operations you can at once execute operations for each device within one group.</p>
+
+<p>To execute bulk operations for a group, follow these steps:</p>
+
+<ol>
+<li>Select a device and open the <strong>Control</strong> tab.</li>
+<li>Create an operation.</li>
+<li>Hover over the operation you want to execute.</li>
+<li>Click the menu icon.</li>
+<li>In the context menu click <strong>Execute for whole group</strong>.</li>
+</ol>
+
+<p><img src="/guides/images/users-guide/executebulkoperations.png" alt="Execute bulk operations" /></p>
+
+<p>In order to view the status and progress of your operations, simply select the desired group and click the <strong>Bulk operations</strong> tab.</p>
+
+<p><img src="/guides/images/users-guide/DeviceManagement/DevMgmt_BulkOperations.png" alt="Bulk operations tab" /></p>
+
+<p>To edit a bulk operation, follow these steps:</p>
+
+<ol>
+<li>Hover over the bulk operation you want to edit and click the menu icon.</li>
+<li>In the context menu click <strong>Edit operation schedule</strong>.</li>
+<li>In the upcoming window you may change the <strong>Start date</strong> and <strong>Delay</strong> values.</li>
+<li>To change operation details, click <strong>Show operation details</strong>.</li>
+<li>Click <strong>Reschedule</strong> to apply your changes.</li>
+</ol>
+
+<p><img src="/guides/images/users-guide/DeviceManagement/DevMgmt_BulkOperationsEdit.png" alt="Edit bulk operations" /></p>
+
+<p>To delete a bulk operation, hover over the bulk operation you want to delete and click the menu icon. In the context menu, click <strong>Cancel operation</strong>.</p>
+
+<h3 id="a-name-events-all-a-troubleshooting-devices"><a name="events-all"></a>Troubleshooting devices</h3>
+
+<p>Troubleshooting devices at a more detailed level can be done with the help of events. Events are low-level messages sent by devices that are usually used for application-specific processing. For example, a vending device sends its realtime sales in the form of events.</p>
+
+<p>Cumulocity displays events at the level of individual devices and across all devices:</p>
+
+<ul>
+<li>To see the events of this specific device, click the <strong>Events</strong> tab.</li>
+<li>To see the operations for all devices, click <strong>Events</strong> in the <strong>Overview</strong> menu in the navigator.</li>
+<li>
+<img src="/guides/images/users-guide/DeviceManagement/DevMgmt_Events.png" alt="Events" /></li>
+</ul>
+
+<p>Per default, events are shown as coming in from the devices in realtime. To disable realtime updates, click <strong>Realtime</strong> at the right of the top menu bar.</p>
+
+<p>For each event, the following information is provided:</p>
+
+<table>
+<thead>
+<tr>
+<th align="left">Info</th>
+<th align="left">Description</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td align="left">Timestamp</td>
+<td align="left">Timestamp when the event has been executed.</td>
+</tr>
+
+<tr>
+<td align="left">Name</td>
+<td align="left">Name of the event.</td>
+</tr>
+
+<tr>
+<td align="left">Device</td>
+<td align="left">The name of the device sending the event. Clicking the name leads you to the detailed view of the device.</td>
+</tr>
+</tbody>
+</table>
+
+<p>In the event list the latest entry is displayed on top.</p>
+
+<p>Clicking a row expands it and displays further details on the event (as type and position of the device).</p>
+
+<p>Since devices may send large amounts of event data, you can filter the data to be displayed by date.</p>
+
+<p>Select a start date and an end date from the fields in the top menu bar and click the <strong>Filter</strong> button to apply the filter. Click the <strong>Clear</strong> button to clear the filter again.</p>
+
+  </article>
+  
+  <article id="managing-device-types" class="page-section">
+    <h2>
+      <button class="btn-link bookmark" data-clipboard-text="#managing-device-types">
+        <span class="fa fa-link"></span>
+      </button>
+      Managing device types</h2>
+    <p>To process data from various device types, Cumulocity uses device protocols.</p>
+
+<p>Click <strong>Device protocols</strong> in the <strong>Device types</strong> menu to access the <strong>Device protocols</strong> page.</p>
+
+<p>In the <strong>Device protocols</strong> page you will find a list with all device protocols available in your account.</p>
+
+<p><img src="/guides/images/users-guide/DeviceManagement/DevMgmt_DeviceProtocols.png" alt="Device protocols" style="max-width: 100%"></p>
+
+<p>The device protocols list shows the following information on each device:</p>
+
+<ul>
+<li>the device protocol type (IMPACT, LWM2M)</li>
+<li>the device protocol name</li>
+<li>the number of resources for the device (at the right)</li>
+</ul>
+
+<p>To add a new device protocol, click <strong>Add device protocol</strong> at the top bar. For details on adding a device protocol, follow the documentation of the particular device type you want to add:</p>
+
+<ul>
+<li><a href="/guides/users-guide/optional-services#nokia-impact">IMPACT</a></li>
+<li><a href="/guides/users-guide/optional-services#lwm2m">LWM2M</a></li>
+</ul>
+
+<p>To edit a device protocol, either click on the protocol or click the menu icon at the right of the row and in the context menu click <strong>Edit</strong>.</p>
+
+<p>To remove a device protocol, click <strong>Remove</strong> in its context menu.</p>
+
+  </article>
+  
+  <article id="managing-device-data" class="page-section">
+    <h2>
+      <button class="btn-link bookmark" data-clipboard-text="#managing-device-data">
+        <span class="fa fa-link"></span>
+      </button>
+      Managing device data</h2>
+    
+
+<h3 id="a-name-software-repo-a-managing-device-firmware-and-software"><a name="software-repo"></a> Managing device firmware and software</h3>
+
+<p>In the Firmware and in the Software repository Cumulocity offers to collect reference firmware and software for devices respectively.</p>
+
+<p>The description below exemplarily refers to firmware but also applies to device software.</p>
+
+<p>Open the <strong>Firmware repository</strong> from the <strong>Management</strong> menu in the navigator.</p>
+
+<p>The available firmware objects will be displayed, presented as cards in a grid.</p>
+
+<p><img src="/guides/images/users-guide/DeviceManagement/DevMgmt_FirmwareRepository.png" alt="Firmware List" /></p>
+
+<p>Click <strong>Details</strong> on a specific object to &ldquo;turn around&rdquo; its card and display details.</p>
+
+<p>In addition to the object name and version, you will here find the name of the file containing the firmware.</p>
+
+<p>Moreover, several buttons allow you to update the information (see also &ldquo;How to add a firmware object&rdquo; below).</p>
+
+<p><strong>How to add a firmware object</strong></p>
+
+<p>To add a firmware object, follow these steps:</p>
+
+<ol>
+<li>Upload the firmware file in the <a href="/guides/users-guide/administration#files">Administration application</a>. This step is not necessarily required since some manufacturers offer the firmware online.</li>
+<li>In the <strong>Firmware repository</strong> page, click <strong>Add firmware</strong> at the right of the top bar menu.</li>
+<li>In the upcoming window, enter a name for the firmware and its version.</li>
+<li>Specify the file for the firmware by choosing or uploading it or enter the URL from which the device can download the firmware.</li>
+<li>Click <strong>Save</strong> to save your settings.</li>
+</ol>
+
+<p>Similarly, you can add a new software object to the Software repository.</p>
+
+<p><strong>How to install firmware on a device</strong></p>
+
+<p>Open the device list by clicking <strong>All devices</strong> in the navigator and select a device from the device list.</p>
+
+<p>Open the <strong>Software</strong> tab for the device and click <strong>Install firmware</strong>.</p>
+
+<p>For further information on these steps, refer to the description of the <a href="#software">Software</a> tab.</p>
+
+<blockquote>
+<p><strong>Info:</strong> To store other types of binaries in Cumulocity, switch to the <a href="/guides/users-guide/administration#files">Administration application</a>.</p>
+</blockquote>
+
+<p><strong>How to install firmware on multiple devices</strong></p>
+
+<p>Cumulocity offers the option to execute firmware or software updates for multiple devices at once. To do so, follow these steps:</p>
+
+<ol>
+<li>Execute the software update in a single device to test that the new version really works.</li>
+<li>Navigate to operation and select <strong>Execute for the whole group</strong>.</li>
+<li>Fill the form to schedule the bulk operation and click <strong>Create</strong>.</li>
+</ol>
+
+<p>The operation status can be viewed in the <strong>Bulk Operation</strong> tab of the selected group. For further information, refer to <a href="#bulk-operations">Bulk Operations</a>.</p>
+
+<h3 id="a-name-credentials-a-managing-device-credentials"><a name="credentials"></a>Managing device credentials</h3>
+
+<p>The <strong>Device credentials</strong> tab lists all credentials that have been generated for your connected devices. Each device that has been <a href="#device-registration">registered</a> shows up here with the naming convention &ldquo;device_&lt;id&gt;&rdquo;.</p>
+
+<p>Click the arrow in the <strong>Global roles</strong> column of a device to open a list with available global roles. Assign or remove permissions for an individual device by selecting/deselecting roles, and click <strong>Apply</strong> to save your settings.</p>
+
+<p>Click the menu icon at the right of a device to access the following functionalities:</p>
+
+<ul>
+<li><p><strong>Edit</strong> - To open the device credential details (see below).</p></li>
+
+<li><p><strong>Disable</strong> - To temporarily disconnect a device.</p></li>
+
+<li><p><strong>Delete</strong> - To delete the credentials of a device. This might be required if you have carried out a factory reset on a device. In this case, the device will often loose its assigned credentials. Delete it and continue with the normal <a href="#device-registration">registration process</a> to re-register the device.</p></li>
+</ul>
+
+<p>In the details page of any particular device credentials you can</p>
+
+<ul>
+<li>disable/enable a device with the <strong>Active</strong> slider,</li>
+<li>change the password for a device,</li>
+<li>assign or remove permissions for an individual device by selecting/deselecting roles in the <strong>Global roles</strong> list.</li>
+</ul>
+
+<!--
+![Bulk provisioning](/guides/images/users-guide/autoregister.png)
+
+Device credentials can also be provided from a CSV file. Files can be uploaded using the button pointed with an arrow. More details on the file structure can be found in under [Bulk-registering devices](#creds-upload) above.-->
+
+  </article>
+  
+  <article id="configuration-repository" class="page-section">
+    <h2>
+      <button class="btn-link bookmark" data-clipboard-text="#configuration-repository">
+        <span class="fa fa-link"></span>
+      </button>
+      Configuration repository</h2>
+    
+
+<p>Cumulocity allows to retrieve configuration data and store and manage it in a Configuration repository. The configuration data contains the parameters and the initial settings of your device.</p>
+
+<p>Configuration snapshots help you, for example, to apply the same configuration to multiple devices as described below.</p>
+
+<p>In the <strong>Configuration repository</strong> page which you open from the <strong>Management</strong> menu in the navigator, all available configurations are listed. Each entry shows the configuration name, the device from which it has been uploaded and the upload timestamp.</p>
+
+<p><img src="/guides/images/users-guide/DeviceManagement/DevMgmt_ConfigurationRepository.png" alt="Configuration Repository" /></p>
+
+<p>Click a configuration in the list to open it. You may modify the settings here and apply them by clicking <strong>Save</strong>. Refer to the section below for details on the fields.</p>
+
+<p><img src="/guides/images/users-guide/DeviceManagement/DevMgmt_ConfigurationDetails.png" alt="Configuration Repository" /></p>
+
+<h3 id="how-to-add-a-snapshot-configuration-from-a-file">How to add a snapshot configuration from a file</h3>
+
+<p>To add a new configuration from a file, follow these steps:</p>
+
+<ol>
+<li>Click <strong>Add configuration snapshot</strong> at the right of the top menu bar.</li>
+<li>In the upcoming window, enter a unique name and optional description for the configuration.</li>
+<li>In the <strong>Device type</strong> field, enter a device type. The device type can be found in the <strong>Info</strong> tab of the target device.</li>
+<li>Select the configuration snapshot file by uploading or choosing a file or providing an external URL.</li>
+<li>Click <strong>Add configuration snapshot</strong> to save your settings.</li>
+</ol>
+
+<p>The snapshot will be added to the Configuration repository.</p>
+
+<p><img src="/guides/images/users-guide/configsnaprepo.png" alt="Configuration Snapshot Repository" /></p>
+
+<h3 id="how-to-retrieve-a-current-snapshot-from-a-device">How to retrieve a current snapshot from a device</h3>
+
+<p>In addition to adding configurations from a file you can also add configurations by retrieving them from a device.</p>
+
+<p>In order to retrieve a current configuration snapshot from a device, follow these steps:</p>
+
+<ol>
+<li>Navigate to the desired device and open its <strong>Configuration</strong> tab.</li>
+<li>Under <strong>Configuration snapshot</strong>, click <strong>Get new snapshot from device</strong> at the top right.</li>
+</ol>
+
+<p>The retrieved snapshot can be found in the <strong>Configuration repository</strong>, accessed through the <strong>Management</strong> menu of the navigator.</p>
+
+<p><img src="/guides/images/users-guide/retrievesnap.png" alt="Retrieve Configuration Snapshot" /></p>
+
+<h3 id="how-to-apply-a-configuration-snapshot-to-a-device">How to apply a configuration snapshot to a device</h3>
+
+<p>In order to apply a configuration snapshot to a device, follow these steps:</p>
+
+<ol>
+<li>Navigate to the desired device and open its <strong>Configuration</strong> tab.</li>
+<li>Under <strong>Configuration snapshot</strong>, select a configuration from the dropdown field.</li>
+<li>Click <strong>Put new snapshot to device</strong> to apply the selected snapshot to the device.</li>
+</ol>
+
+<p><img src="/guides/images/users-guide/addsnap.png" alt="Apply new snapshot to a device" /></p>
+
+<h3 id="how-to-apply-a-snapshot-configuration-from-one-device-to-another">How to apply a snapshot configuration from one device to another</h3>
+
+<p>In order to apply a configuration snapshot from one device to another, follow these steps:</p>
+
+<ol>
+<li>Navigate to the device which has your desired configuration and open the <strong>Configuration</strong> tab.</li>
+<li>Under <strong>Configuration snapshot</strong>, click <strong>Get new snapshot from device</strong> at the top right.</li>
+<li>Navigate to the other device and open its <strong>Configuration</strong> tab.</li>
+<li>Under <strong>Configuration snapshot</strong>, select the new configuration from the dropdown field and click <strong>Put new snapshot to device</strong>.</li>
+</ol>
+
+<blockquote>
+<p><strong>Info</strong>: When you apply snapshot configuration from one device to another, the configuration may contain data which is device-specific.</p>
+</blockquote>
+
+  </article>
+  
+  <article id="smartrest-templates" class="page-section">
+    <h2>
+      <button class="btn-link bookmark" data-clipboard-text="#smartrest-templates">
+        <span class="fa fa-link"></span>
+      </button>
+      SmartREST templates</h2>
+    
+
+<h3 id="introduction">Introduction</h3>
+
+<p>SmartREST templates are a collection of request and response templates used to convert CSV data and Cumulocity Rest API calls. For example, you can use SmartREST templates to easily add devices to the platform instead of manually writing the requests each time.</p>
+
+<p>To ease the device integration, Cumulocity supports static templates that can be used without the need for creating your own templates. These templates focus only on the most commonly used messages for device management. For further information on static templates, refer to the <a href="/guides/device-sdk/mqtt#static-templates">Device SDK guide</a>.</p>
+
+<p>Open the SmartREST template list from the <strong>Device Types</strong> menu in the navigator.</p>
+
+<p><img src="/guides/images/users-guide/templateview.png" alt="template view" /></p>
+
+<p>For each template, the following information is provided:</p>
+
+<ul>
+<li>Template name, e.g. Camel</li>
+<li>Template ID, e.g. 99</li>
+<li>Number of send messages</li>
+<li>Number of responses</li>
+</ul>
+
+<p>There are two ways to add a SmartRest template:</p>
+
+<ul>
+<li>Import an already existing template.</li>
+<li>Create a new template.</li>
+</ul>
+
+<h3 id="how-to-import-an-existing-smartrest-template">How to import an existing SmartREST template</h3>
+
+<ol>
+<li>Click <strong>Import</strong> at the right of the top menu bar.</li>
+<li>In the upcoming window, choose a file to upload by browsing for it.</li>
+<li>Enter a template name and a unique template ID (both mandatory fields).</li>
+<li>Click <strong>Import</strong> to import the template.</li>
+</ol>
+
+<p><img src="/guides/images/users-guide/DeviceManagement/DevMgmt_TemplateImport.png" alt="Import template" style="max-width: 50%"></p>
+
+<h3 id="how-to-create-a-new-smartrest-template">How to create a new SmartREST template</h3>
+
+<ol>
+<li>Click <strong>New</strong> at the right of the top menu bar.</li>
+<li>In the upcoming window, enter a template name and a unique template ID (both mandatory fields).</li>
+<li>Click <strong>Continue</strong> to proceed adding messages or responses.</li>
+</ol>
+
+<p><img src="/guides/images/users-guide/DeviceManagement/DevMgmt_TemplateCreate.png" alt="Create template" style="max-width: 50%"></p>
+
+<h3 id="how-to-add-a-message">How to add a message</h3>
+
+<p>The message template contains all necessary information to convert the SmartRest request into a corresponding Rest API call which is then sent to the platform.</p>
+
+<p>To add a new message, navigate to the <strong>Messages</strong> tab in your desired SmartREST template and click <strong>Add message</strong>. Complete the following fields:</p>
+
+<table>
+<thead>
+<tr>
+<th align="left">Field</th>
+<th align="left">Description</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td align="left">Message ID</td>
+<td align="left">Unique integer that will be used as a message identifier. It must be unique among all message and response templates.</td>
+</tr>
+
+<tr>
+<td align="left">Name</td>
+<td align="left">Name for the message. Mandatory.</td>
+</tr>
+
+<tr>
+<td align="left">Target REST API</td>
+<td align="left">REST API for the target. Dropdown list. May be one of Measurement, Inventory, Alarm, Event, Operation.</td>
+</tr>
+
+<tr>
+<td align="left">Method</td>
+<td align="left">Request method. May be one of POST, PUT, GET, depending on the selected Target REST API.</td>
+</tr>
+
+<tr>
+<td align="left">Include Responses</td>
+<td align="left">Select this checkbox if you want to process the results of the request with response templates.</td>
+</tr>
+
+<tr>
+<td align="left">REST API built-in fields</td>
+<td align="left">These fields are optional and vary depending on the target REST API selected. In case no value is provided, a device will be able to set it when sending an actual message.</td>
+</tr>
+
+<tr>
+<td align="left">REST API custom fields</td>
+<td align="left">Additional fields can be added by clicking <strong>Add field</strong>. Enter the API key and select the desired data type.</td>
+</tr>
+</tbody>
+</table>
+
+<p><img src="/guides/images/users-guide/DeviceManagement/DevMgmt_TemplateMessage.png" alt="Message" style="max-width: 100%"></p>
+
+<p>In the Preview you can see the preview of your request message.</p>
+
+<p>Click <strong>Save</strong> to save your settings.</p>
+
+<p>To delete a message, open it and click <strong>Remove</strong> at the bottom.</p>
+
+<h3 id="how-to-add-a-response">How to add a response</h3>
+
+<p>A response template contains the necessary information to extract data values from a platform REST API call response, which is then sent back to the client in a CSV data format.</p>
+
+<p>To add a new response, navigate to the <strong>Response</strong> tab in your desired SmartREST template and click <strong>Add response</strong>. Complete the following fields:</p>
+
+<p><img src="/guides/images/users-guide/DeviceManagement/DevMgmt_TemplateResponse.png" alt="Response" style="max-width: 100%"></p>
+
+<table>
+<thead>
+<tr>
+<th align="left">Field</th>
+<th align="left">Description</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td align="left">Response ID</td>
+<td align="left">Unique integer that will be used as a response identifier.</td>
+</tr>
+
+<tr>
+<td align="left">Name</td>
+<td align="left">Name for the response. Mandatory.</td>
+</tr>
+
+<tr>
+<td align="left">Base Pattern</td>
+<td align="left">Base pattern for the response.</td>
+</tr>
+
+<tr>
+<td align="left">Condition</td>
+<td align="left">Condition value of the response.</td>
+</tr>
+
+<tr>
+<td align="left">Pattern</td>
+<td align="left">At least one pattern is required. Click <strong>Add pattern</strong> and enter a pattern value.</td>
+</tr>
+</tbody>
+</table>
+
+<p>Click <strong>Save</strong> to save your settings.</p>
+
+<p>To delete a response, open it and click <strong>Remove</strong> at the bottom.</p>
+
+<h3 id="how-to-edit-or-delete-a-smartrest-template">How to edit or delete a SmartREST template</h3>
+
+<p>To edit a SmartREST template, either click the desired template or click the menu icon and in the context menu click <strong>Edit</strong>.</p>
+
+<p>To delete a SmartREST template, click <strong>Remove</strong> in its context menu.</p>
+
+<h3 id="how-to-export-a-smartrest-template">How to export a SmartREST template</h3>
+
+<p>To export a SmartREST template, click the menu icon and in the menu click  <strong>Export</strong>. The template will automatically be downloaded.</p>
+
+<p>To export a SmartREST template as CSV file follow these steps:</p>
+
+<ol>
+<li>Open the template of your choice and select the <strong>CSV preview</strong> tab.</li>
+<li>In the <strong>CSV preview</strong> tab which provides additional information on messages and responses, click <strong>Export CSV</strong>.</li>
+<li>In the upcoming window, specify the preferred options for the field separator, decimal separator and character set.</li>
+<li>Click <strong>Download</strong> to download the template as CSV file.</li>
+</ol>
+
+<p><img src="/guides/images/users-guide/DeviceManagement/DevMgmt_TemplateExportCSV.png" alt="Export CSV" style="max-width: 50%"></p>
+
+  </article>
+  
+  <article id="simulator" class="page-section">
+    <h2>
+      <button class="btn-link bookmark" data-clipboard-text="#simulator">
+        <span class="fa fa-link"></span>
+      </button>
+      Working with simulators</h2>
+    
+
+<p>With the Cumulocity simulator all aspects of IoT devices can be simulated:</p>
+
+<ul>
+<li>Setting up a simulated device or a network of simulated devices</li>
+<li>Specify which operations the device can process</li>
+<li>Create work instructions based on predefined message templates or user defined templates and schedule work steps</li>
+<li>Create up to ten devices of a defined type</li>
+<li>Generate messages for measurements, alarms, events and inventory</li>
+<li>View simulation problems as alarms</li>
+</ul>
+
+<h3 id="what-is-a-simulator">What is a simulator?</h3>
+
+<p>With the simulator you can create artificial devices that have the same level of functionality as connected hardware devices.</p>
+
+<p>A simulator uses a playlist to simulate messages that the device sends to the Cumulocity platform. A playlist is a series of instructions that the simulator executes one after the other. When the last instruction is reached, the simulator starts again with the first one.</p>
+
+<p>An instruction can either send a message (measurements, alarms, events and inventory) or wait for a specified time (sleep).</p>
+
+<p>A message is defined by choosing a message template (like sending a temperature) and providing the values for this template (23.0 degrees). Many predefined message templates are provided, i.e. for creating a measurement, sending an event, creating and cancelling an alarm. These templates are based on MQTT static templates. Additionally, custom message templates can be defined using the <a href="#smartrest-templates">SmartREST template editor</a>.</p>
+
+<h3 id="the-simulator-tab">The Simulator tab</h3>
+
+<p>In the navigator, click <strong>Simulator</strong> in the <strong>Devices</strong> menu to open the <strong>Simulator</strong> page.</p>
+
+<p>All simulators which you can access will be listed here. Click the menu icon at the top right of a simulator card to open a context menu from where you can edit, clone or remove a simulator.</p>
+
+<p><img src="/guides/images/users-guide/DeviceManagement/DevMgmt_SimulatorCard.png" alt="Simulator card" style="max-width: 50%"></p>
+
+<h3 id="how-to-create-a-simulator">How to create a simulator</h3>
+
+<p>To set up a new simulator follow these steps:</p>
+
+<ol>
+<li>Click <strong>New Simulator</strong> at the right of the top menu bar.</li>
+<li>In the upcoming window select a simulator type from the dropdown list in the <strong>Presets</strong> field. Select &ldquo;Empty simulator&rdquo; to create a simulator from scratch or select one of the sample simulators.</li>
+<li>Enter a meaningful name for the simulator.</li>
+<li>Select the number of instances for this simulator (up to ten).</li>
+<li>Click <strong>Continue</strong> to proceed to the next dialog.</li>
+</ol>
+
+<p><img src="/guides/images/users-guide/addsim.png" alt="Add Simulator" style="max-width: 60%"></p>
+
+<h3 id="instructions">Instructions</h3>
+
+<p>After setting up a simulator you can add instructions which define what your simulator is supposed to do. Instructions are single tasks added to a playlist through which the simulator will work.</p>
+
+<p>Instructions can be viewed and edited on the &ldquo;Instructions&rdquo; tab of the simulator.</p>
+
+<p><img src="/guides/images/users-guide/addinstructions.png" alt="Add Instructions" /></p>
+
+<p><strong>Examples</strong></p>
+
+<p>Within the presets, samples instructions are already added. For example, the &ldquo;Temperature measurement&rdquo; preset already has instructions in it for the steps &ldquo;Create measurement&rdquo; and &ldquo;Sleep&rdquo;.</p>
+
+<p><img src="/guides/images/users-guide/addinstructions2.png" alt="Add Instructions Step 2" /></p>
+
+<p>The measurement instruction refers to a fragment. Fragments are used to identify capabilities of a managed object. Find more details about fragments here:
+<a href="/guides/reference/sensor-library/">Sensor Library </a></p>
+
+<p><img src="/guides/images/users-guide/addinstructions3.png" alt="Add Instructions Step 3" /></p>
+
+<p>The &ldquo;Sleep&rdquo; instruction requires one value for its duration in seconds.</p>
+
+<p>The panel on the right changes according to the type of instruction selected on the left.</p>
+
+<p><img src="/guides/images/users-guide/addinstructions4.png" alt="Add Instructions Step 4" /></p>
+
+<h3 id="supported-operations">Supported operations</h3>
+
+<p>In the <strong>Supported operations</strong> tab of a simulator you can turn on or off specific operations like configurations or software/firmware updates.</p>
+
+<p><img src="/guides/images/users-guide/supop1.png" alt="Operations Off" /></p>
+
+<p><img src="/guides/images/users-guide/supop2.png" alt="Operations On" /></p>
+
+<p>Click <strong>Add custom operation</strong> to specify a customized operation and add it to the list.</p>
+
+<h3 id="alarms-simulator">Alarms (simulator)</h3>
+
+<p>The <strong>Alarm</strong> tab of a simulator displays alarms related to the simulator itself (not to the simulated device), i.e. if the simulator itself does not work correctly, you will find alarms here. Refer to <a href="#alarms">Working with alarms</a> for information on alarms.</p>
+
+<p><img src="/guides/images/users-guide/simalarm.png" alt="Simulator Alarm" /></p>
+
+  </article>
+  
+  
+</div>
+<footer class="main-footer">
+  <div class="copyright">
+    <div class="container text-center">
+      <p class="small ">&copy; 2019 Cumulocity GmbH | All rights reserved.</p>
+    </div>
+  </div>  
+</footer>
+
+<!-- Essential Scripts -->
+
+<!-- jQuery -->
+<script src="https://cumulocity.com/guides/js/vendor/jquery.min.js"></script>
+<script src="https://cumulocity.com/guides/js/vendor/bootstrap.bundle.min.js"></script>
+<script src="https://cumulocity.com/guides/js/vendor/clipboard.js"></script>
+<script src="https://cumulocity.com/guides/js/vendor/zoom.js"></script>
+<script src="https://cumulocity.com/guides/js/vendor/highlight.min.js"></script>
+<script src="https://cumulocity.com/guides/js/main.js"></script>
+
+
+
+
+
+    
+   
+  </body>
+</html>

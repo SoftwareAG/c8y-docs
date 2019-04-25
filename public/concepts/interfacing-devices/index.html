@@ -1,0 +1,838 @@
+<!DOCTYPE html>
+<html>
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <base href="" />
+    <meta name="generator" content="Hugo 0.54.0 with theme C8yDocs">
+    <title>Interfacing devices - Cumulocity IoT Guides</title>
+    <meta name="author" content="Carlos Ceia @ Cumulocity">
+    <meta name="keywords" content=", Software AG Cloud, Cumulocity IoT, Internet of things, analytics, devices, connect">
+
+
+    <link rel="icon" href="/favicon.ico">
+
+    
+
+    
+
+    
+    
+    
+    <link rel="stylesheet" href="https://cumulocity.com/guides/style.css">
+    
+
+      
+      <script> window.zEmbed||function(e,t){var n,o,d,i,s,a=[],r=document.createElement("iframe");window.zEmbed=function(){a.push(arguments)},window.zE=window.zE||window.zEmbed,r.src="javascript:false",r.title="",r.role="presentation",(r.frameElement||r).style.cssText="display: none",d=document.getElementsByTagName("script"),d=d[d.length-1],d.parentNode.insertBefore(r,d),i=r.contentWindow,s=i.document;try{o=s}catch(c){n=document.domain,r.src='javascript:var d=document.open();d.domain="'+n+'";void(0);',o=s}o.open()._l=function(){var o=this.createElement("script");n&&(this.domain=n),o.id="js-iframe-async",o.src=e,this.t=+new Date,this.zendeskHost=t,this.zEQueue=a,this.body.appendChild(o)},o.write('<body onload="document._l();">'),o.close()}("https://assets.zendesk.com/embeddable_framework/main.js","cumulocity.zendesk.com"); </script>
+        <script type="text/JavaScript">
+          window.zESettings = {
+            webWidget: {
+              color: {
+                theme: '#1776bf'    
+              },
+              position: {
+                horizontal: 'right',
+                vertical: 'top'     
+              }
+            }
+          };
+          </script>
+        
+        
+   
+  </head><body data-spy="scroll" data-target="#main-nav" ><button type="button" class="sidebar-toggle">
+  <span class="icon-bar"></span>
+  <span class="icon-bar"></span>
+  <span class="icon-bar"></span>
+  <span>MENU</span>
+</button>
+<nav class="main-top-bar" >
+  <div class="d-flex container">
+    <ul class="nav d-flex flex-start hidden-xs nav-left">
+      <li><a href="https://www.softwareag.cloud/site/product/cumulocity-iot.html">Cumulocity IoT</a></li>
+      <li><a href="http://resources.cumulocity.com/documentation/jssdk/latest/#/api">Cumulocity Angular API</a></li>
+    </ul>
+    <ul class="nav flex-end nav-right">
+      <li>   <script>
+              (function() {
+                var cx = '008969372384807682938:yeh7xt785g4';
+                var gcse = document.createElement('script');
+                gcse.type = 'text/javascript';
+                gcse.async = true;
+                gcse.src = 'https://cse.google.com/cse.js?cx=' + cx;
+                var s = document.getElementsByTagName('script')[0];
+                s.parentNode.insertBefore(gcse, s);
+              })();
+            </script>
+        <div id="___gcse_0" dir="ltr"><form class="gsc-search-box gsc-search-box-tools" accept-charset="utf-8"><div class="table-responsive"><table cellspacing="0" cellpadding="0" class="gsc-search-box"><tbody><tr><td class="gsc-input"><div class="gsc-input-box" id="gsc-iw-id1"><table cellspacing="0" cellpadding="0" id="gs_id50" class="gstl_50 gsc-input" style="width: 100%; padding: 0px;"><tbody><tr><td id="gs_tti50" class="gsib_a"><input autocomplete="off" type="text" size="10" class="gsc-input" name="search" title="search" id="gsc-i-id1" placeholder="Custom Search" dir="ltr" spellcheck="false" x-webkit-grammar="builtin:search" lang="en" style="width: 100%; padding: 0px; border: none; margin: -0.0625em 0px 0px; height: 1.25em; background: url(&quot;https://www.google.com/cse/static/images/1x/googlelogo_lightgrey_46x16dp.png&quot;) left center no-repeat rgb(255, 255, 255); text-indent: 48px; outline: none;"></td><td class="gsib_b"><div class="gsst_b" id="gs_st50" dir="ltr"><a class="gsst_a" href="javascript:void(0)" style="display: none;" title="Clear search box" role="button"><span class="gscb_a" id="gs_cb50" aria-hidden="true">×</span></a></div></td></tr></tbody></table></div></td><td class="gsc-search-button"><button class="gsc-search-button gsc-search-button-v2"><svg width="13" height="13" viewBox="0 0 13 13"><title>search</title><path d="m4.8495 7.8226c0.82666 0 1.5262-0.29146 2.0985-0.87438 0.57232-0.58292 0.86378-1.2877 0.87438-2.1144 0.010599-0.82666-0.28086-1.5262-0.87438-2.0985-0.59352-0.57232-1.293-0.86378-2.0985-0.87438-0.8055-0.010599-1.5103 0.28086-2.1144 0.87438-0.60414 0.59352-0.8956 1.293-0.87438 2.0985 0.021197 0.8055 0.31266 1.5103 0.87438 2.1144 0.56172 0.60414 1.2665 0.8956 2.1144 0.87438zm4.4695 0.2115 3.681 3.6819-1.259 1.284-3.6817-3.7 0.0019784-0.69479-0.090043-0.098846c-0.87973 0.76087-1.92 1.1413-3.1207 1.1413-1.3553 0-2.5025-0.46363-3.4417-1.3909s-1.4088-2.0686-1.4088-3.4239c0-1.3553 0.4696-2.4966 1.4088-3.4239 0.9392-0.92727 2.0864-1.3969 3.4417-1.4088 1.3553-0.011889 2.4906 0.45771 3.406 1.4088 0.9154 0.95107 1.379 2.0924 1.3909 3.4239 0 1.2126-0.38043 2.2588-1.1413 3.1385l0.098834 0.090049z"></path></svg></button></td><td class="gsc-clear-button"><div class="gsc-clear-button" title="clear results">&nbsp;</div></td></tr></tbody></table></div></form></div>
+      </li>
+    </ul>
+  </div>
+</nav><button type="button" class="to-the-top">
+  <span class="sr-only">Top</span>
+  <span class="fa fa-chevron-up"></span>
+</button><nav class="main-nav navbar">
+  <header class="nav-header">
+    <a href="https://www.softwareag.cloud/site/dev-center/cumulocity-iot.html">
+      <img src="https://cumulocity.com/guides/images/cumulocity-iot.svg"
+        class="img-responsive no-zoom"
+        alt="Cumulocity IoT">
+    </a>
+
+    <div class="dropdown">
+      <button class="dropdown-toggle"
+        type="button"
+        id="dropdownMenuButton"
+        data-toggle="dropdown"
+        aria-haspopup="true"
+        aria-expanded="false">
+        <span id="current-dropdown-toggle" class="text-truncate"></span> <span class="caret"></span>
+      </button>
+      <div class="dropdown-menu"
+        aria-labelledby="dropdownMenuButton">
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+
+        
+        
+        
+
+        <a class='dropdown-menu-item '
+          href='https://cumulocity.com/guides/release-notes/overview/'><i class="c8y-icon c8y-icon-notification"></i> Release notes</a>
+        
+        
+        
+        
+        
+        
+        
+        
+
+        
+        
+        
+        
+        <span class="current-app">Concepts guide</span>
+        
+        
+
+        <a class='dropdown-menu-item active'
+          href='https://cumulocity.com/guides/concepts/introduction/'><i class="c8y-icon c8y-icon-c8y-data"></i> Concepts guide</a>
+        
+        
+        
+        
+        
+        
+        
+        
+
+        
+        
+        
+
+        <a class='dropdown-menu-item '
+          href='https://cumulocity.com/guides/users-guide/getting-started/'><i class="c8y-icon c8y-icon-user"></i> User guide</a>
+        
+        
+        
+        
+        
+        
+        
+        
+
+        
+        
+        
+
+        <a class='dropdown-menu-item '
+          href='https://cumulocity.com/guides/benutzerhandbuch/overview/'><i class="c8y-icon c8y-icon-user"></i> Handbuch</a>
+        
+        
+        
+        
+        
+        
+        
+        
+
+        
+        
+        
+
+        <a class='dropdown-menu-item '
+          href='https://cumulocity.com/guides/devices/overview/'><i class="c8y-icon c8y-icon-device-management"></i> Device guides</a>
+        
+        
+        
+        
+        
+        
+        
+        
+
+        
+        
+        
+
+        <a class='dropdown-menu-item '
+          href='https://cumulocity.com/guides/edge/overview/'><i class="fa fa-book"></i> Cumulocity IoT Edge</a>
+        
+        
+        
+        
+        
+        
+        
+        
+
+        
+        
+        
+
+        <a class='dropdown-menu-item '
+          href='https://cumulocity.com/guides/microservice-sdk/introduction/'><i class="c8y-icon c8y-icon-tools"></i> Microservice SDK guide</a>
+        
+        
+        
+        
+        
+        
+        
+        
+
+        
+        
+        
+
+        <a class='dropdown-menu-item '
+          href='https://cumulocity.com/guides/device-sdk/introduction/'><i class="c8y-icon c8y-icon-tools"></i> Device SDK guide</a>
+        
+        
+        
+        
+        
+        
+        
+        
+
+        
+        
+        
+
+        <a class='dropdown-menu-item '
+          href='https://cumulocity.com/guides/web/introduction/'><i class="c8y-icon c8y-icon-smart-rest"></i> Web SDK guide</a>
+        
+        
+        
+        
+        
+        
+        
+        
+
+        
+        
+        
+
+        <a class='dropdown-menu-item '
+          href='https://cumulocity.com/guides/apama/overview-analytics/'><i class="c8y-icon c8y-icon-data-explorer"></i> Analytics guide</a>
+        
+        
+        
+        
+        
+        
+        
+        
+
+        
+        
+        
+
+        <a class='dropdown-menu-item '
+          href='https://cumulocity.com/guides/reference/rest-implementation/'><i class="fa fa-book"></i> Reference guide</a>
+        
+      </div>
+    </div>
+  </header>
+
+  
+
+  <nav id="main-nav"
+    class="nav-sections">
+    
+    
+    <div class="">
+        
+        
+        
+        
+      <a href="javascript:void(0);"
+        data-toggle="collapse"
+        data-target="#page-nav0"
+        class="collapse-btn  collapsed ">
+        <i class="fa fa-chevron-right "></i>
+      </a>
+      
+      <a class=""
+        href="https://cumulocity.com/guides/concepts/introduction/">Introduction to Cumulocity</a>
+     
+      
+      
+      <div id="page-nav0"
+        class="collapse   ">
+        <nav class="list-group nav">
+          
+          
+            <a class="list-group-item"
+              href="https://cumulocity.com/guides/concepts/introduction/#overview">Overview</a>
+            
+            
+          
+            <a class="list-group-item"
+              href="https://cumulocity.com/guides/concepts/introduction/#hardware-kits-and-software-libraries">Hardware kits and software libraries</a>
+            
+            
+          
+            <a class="list-group-item"
+              href="https://cumulocity.com/guides/concepts/introduction/#mobile-networking-support">Mobile networking support</a>
+            
+            
+          
+            <a class="list-group-item"
+              href="https://cumulocity.com/guides/concepts/introduction/#device-management">Device management</a>
+            
+            
+          
+            <a class="list-group-item"
+              href="https://cumulocity.com/guides/concepts/introduction/#visualization-and-remote-control">Visualization and remote control</a>
+            
+            
+          
+            <a class="list-group-item"
+              href="https://cumulocity.com/guides/concepts/introduction/#customization">Customization</a>
+            
+            
+          
+            <a class="list-group-item"
+              href="https://cumulocity.com/guides/concepts/introduction/#api">APIs</a>
+            
+            
+          
+            <a class="list-group-item"
+              href="https://cumulocity.com/guides/concepts/introduction/#where-to-learn-more">Where to learn more</a>
+            
+            
+          
+            <a class="list-group-item"
+              href="https://cumulocity.com/guides/concepts/introduction/#summary">Summary</a>
+            
+            
+        </nav>
+      </div>
+      
+    </div>
+    
+    
+    
+    <div class="">
+        
+        
+        
+        
+      <a href="javascript:void(0);"
+        data-toggle="collapse"
+        data-target="#page-nav1"
+        class="collapse-btn  collapsed ">
+        <i class="fa fa-chevron-right "></i>
+      </a>
+      
+      <a class=""
+        href="https://cumulocity.com/guides/concepts/domain-model/">Cumulocity&#39;s domain model</a>
+     
+      
+      
+      <div id="page-nav1"
+        class="collapse   ">
+        <nav class="list-group nav">
+          
+          
+            <a class="list-group-item"
+              href="https://cumulocity.com/guides/concepts/domain-model/#overview">Overview</a>
+            
+            
+          
+            <a class="list-group-item"
+              href="https://cumulocity.com/guides/concepts/domain-model/#inventory">Inventory</a>
+            
+            
+          
+            <a class="list-group-item"
+              href="https://cumulocity.com/guides/concepts/domain-model/#events">Events</a>
+            
+            
+          
+            <a class="list-group-item"
+              href="https://cumulocity.com/guides/concepts/domain-model/#measurements">Measurements</a>
+            
+            
+          
+            <a class="list-group-item"
+              href="https://cumulocity.com/guides/concepts/domain-model/#operations">Remote control of devices</a>
+            
+            
+          
+            <a class="list-group-item"
+              href="https://cumulocity.com/guides/concepts/domain-model/#sensor-library">The sensor library</a>
+            
+            
+          
+            <a class="list-group-item"
+              href="https://cumulocity.com/guides/concepts/domain-model/#Summary">Summary</a>
+            
+            
+        </nav>
+      </div>
+      
+    </div>
+    
+    
+    
+    <div class=" slot-active ">
+        
+        
+        
+        
+      <a href="javascript:void(0);"
+        data-toggle="collapse"
+        data-target="#page-nav2"
+        class="collapse-btn ">
+        <i class="fa fa-chevron-right "></i>
+      </a>
+      
+      <a class=" active "
+        href="https://cumulocity.com/guides/concepts/interfacing-devices/">Interfacing devices</a>
+     
+      
+      
+      <div id="page-nav2"
+        class="collapse   show  ">
+        <nav class="list-group nav">
+          
+          
+          <a class="list-group-item"
+            href="#overview">Overview</a>
+          
+            
+          
+          <a class="list-group-item"
+            href="#agents">What is an agent?</a>
+          
+            
+          
+          <a class="list-group-item"
+            href="#agent-lifecycle">The agent life cycle</a>
+          
+            
+          
+          <a class="list-group-item"
+            href="#integration">Integrating of other data sources</a>
+          
+            
+          
+          <a class="list-group-item"
+            href="#developing-agents">How does Cumulocity support developing agents?</a>
+          
+            
+        </nav>
+      </div>
+      
+    </div>
+    
+    
+    
+    <div class="">
+        
+        
+        
+        
+      <a href="javascript:void(0);"
+        data-toggle="collapse"
+        data-target="#page-nav3"
+        class="collapse-btn  collapsed ">
+        <i class="fa fa-chevron-right "></i>
+      </a>
+      
+      <a class=""
+        href="https://cumulocity.com/guides/concepts/realtime/">Real-time processing</a>
+     
+      
+      
+      <div id="page-nav3"
+        class="collapse   ">
+        <nav class="list-group nav">
+          
+          
+            <a class="list-group-item"
+              href="https://cumulocity.com/guides/concepts/realtime/#realtime-processing-in-cumulocity">What is real-time processing in Cumulocity IoT?</a>
+            
+            
+          
+            <a class="list-group-item"
+              href="https://cumulocity.com/guides/concepts/realtime/#using-epl">Using Apama Event Processing Language (EPL)</a>
+            
+            
+          
+            <a class="list-group-item"
+              href="https://cumulocity.com/guides/concepts/realtime/#implementation">How is real-time processing implemented in Cumulocity?</a>
+            
+            
+        </nav>
+      </div>
+      
+    </div>
+    
+    
+    
+    <div class="">
+        
+        
+        
+        
+      <a href="javascript:void(0);"
+        data-toggle="collapse"
+        data-target="#page-nav4"
+        class="collapse-btn  collapsed ">
+        <i class="fa fa-chevron-right "></i>
+      </a>
+      
+      <a class=""
+        href="https://cumulocity.com/guides/concepts/applications/">Developing applications</a>
+     
+      
+      
+      <div id="page-nav4"
+        class="collapse   ">
+        <nav class="list-group nav">
+          
+          
+            <a class="list-group-item"
+              href="https://cumulocity.com/guides/concepts/applications/#overview">Overview</a>
+            
+            
+          
+            <a class="list-group-item"
+              href="https://cumulocity.com/guides/concepts/applications/#web-applications">Cumulocity web applications</a>
+            
+            
+          
+            <a class="list-group-item"
+              href="https://cumulocity.com/guides/concepts/applications/#microservices">Cumulocity microservices</a>
+            
+            
+          
+            <a class="list-group-item"
+              href="https://cumulocity.com/guides/concepts/applications/#subscription">Subscribing applications</a>
+            
+            
+        </nav>
+      </div>
+      
+    </div>
+    
+    
+    
+    <div class="">
+        
+        
+        
+        
+      <a href="javascript:void(0);"
+        data-toggle="collapse"
+        data-target="#page-nav5"
+        class="collapse-btn  collapsed ">
+        <i class="fa fa-chevron-right "></i>
+      </a>
+      
+      <a class=""
+        href="https://cumulocity.com/guides/concepts/security/">Security aspects</a>
+     
+      
+      
+      <div id="page-nav5"
+        class="collapse   ">
+        <nav class="list-group nav">
+          
+          
+            <a class="list-group-item"
+              href="https://cumulocity.com/guides/concepts/security/#overview">Overview</a>
+            
+            
+          
+            <a class="list-group-item"
+              href="https://cumulocity.com/guides/concepts/security/#physical-security">Physical security aspects</a>
+            
+            
+          
+            <a class="list-group-item"
+              href="https://cumulocity.com/guides/concepts/security/#network-security">Network security aspects</a>
+            
+            
+          
+            <a class="list-group-item"
+              href="https://cumulocity.com/guides/concepts/security/#application-security">Application security aspects</a>
+            
+            
+          
+            <a class="list-group-item"
+              href="https://cumulocity.com/guides/concepts/security/#access-control">Access control</a>
+            
+            
+          
+            <a class="list-group-item"
+              href="https://cumulocity.com/guides/concepts/security/#management">Security management aspects</a>
+            
+            
+          
+            <a class="list-group-item"
+              href="https://cumulocity.com/guides/concepts/security/#summary">Summary</a>
+            
+            
+        </nav>
+      </div>
+      
+    </div>
+    
+    
+    
+    
+  </nav>
+</nav>
+<div class="cover"></div>
+
+<div class="main-content">
+  <article class="page-section">
+    <header class="section-header">
+      <h1 class="text-light">Interfacing devices</h1>
+    </header>
+    
+      <div class="lead">
+        <p>To interface IoT data sources such as devices and external IT systems, Cumulocity provides agents. Agents are software components that enable a centralized perspective on all aspects and central operation of the IoT network.</p>
+
+      </div>
+      
+  </article>
+
+  
+  
+  
+  <article id="overview" class="page-section">
+    <h2>
+      <button class="btn-link bookmark" data-clipboard-text="#overview">
+        <span class="fa fa-link"></span>
+      </button>
+      Overview</h2>
+    <p>This section explains concepts relevant for interfacing IoT devices and other IoT-related data sources with Cumulocity.</p>
+
+<p>To interface these systems with Cumulocity, a driver software called <em>agent</em> is required. We first describe the main tasks of an agent and discuss the structural options for agents later. We will walk step by step through the tasks of an agent. Finally, we discuss the usage of agents for acquiring data from other data sources such as a tenant&rsquo;s IT systems.</p>
+
+<p>Related topics can be found in the following sections:</p>
+
+<ul>
+<li><a href="/guides/concepts/domain-model">Cumulocity´s domain model</a> in the Concepts guide, for understanding the data structures exchanged between agents and the Cumulocity core.</li>
+<li><a href="/guides/device-sdk">Device SDK guide</a> for understanding in detail how to develop agent software using the REST or MQTT protocols.</li>
+<li><a href="/guides/reference/rest-implementation">Rest implementation</a> in the Reference guide, for a detailed specification of the interfaces between agents and the Cumulocity core.</li>
+</ul>
+
+  </article>
+  
+  <article id="agents" class="page-section">
+    <h2>
+      <button class="btn-link bookmark" data-clipboard-text="#agents">
+        <span class="fa fa-link"></span>
+      </button>
+      What is an agent?</h2>
+    
+
+<p>Machine-to-machine (M2M) devices come with a wide variety of protocols, parameters and network connectivity options. Protocols of devices range from low-level serial links to full-blown IT protocols such as web services. Today&rsquo;s IoT standards rarely define exactly how to access particular readings of particular sensors or manipulate particular controls. Devices can be connected through mobile networks and gateways.</p>
+
+<p>To shield machine-to-machine applications from this numbers of access options, Cumulocity uses <em>agents</em>. An agent is a function that complies with three duties for a specific vendor and type of devices:</p>
+
+<ul>
+<li>It translates the device-specific interface protocol into a single reference protocol.</li>
+<li>It translates the specific domain model of the device into a reference domain model.</li>
+<li>It enables secure remote communication in various network architectures.</li>
+</ul>
+
+<p><img src="/guides/images/concepts-guide/agents.png" alt="Agent architecture" /></p>
+
+<p><strong>Protocol translation :</strong> The configuration of parameters, readings, events and other information are either send to an agent (&ldquo;push&rdquo;) or queried by an agent (&ldquo;pull&rdquo;) through a device-specific protocol on one side. The agent will convert these messages into the protocol that Cumulocity requires. It will also receive device control commands from Cumulocity (&ldquo;switch off that relay&rdquo;) and translate these into a kind of protocol the device requires.</p>
+
+<p>Cumulocity uses a simple and secure reference protocol based on REST (i.e., HTTPS) and JSON, which can be used for a wide variety of programming environments down to small embedded systems. To support real-time scenarios, the protocol is designed around a &ldquo;push&rdquo; model, i.e., data is sent as soon as it is available.</p>
+
+<p><strong>Model transformation</strong> The Configuration parameters, readings, events, they all have their device-specific name (and possibly units). An agent for a particular device will transform this device-specific model to the Cumulocity reference model. For example, an electricity meter provides the main reading as a parameter &ldquo;Received Wh&rdquo;, so the agent will transform this reading into a reference &ldquo;Total active energy&rdquo; in kWh.</p>
+
+<p><strong>Secure remote communication</strong> Devices can provide a protocol that is unsuitable for secure remote communication, in particular in public cloud environments. The protocol only supports local networking and does not pass through firewalls and proxies and it can contain sensitive data in clear text form. To avoid security issues like these, an agent can be co-located to the device and provide a secure, internet-enabled link to the remote device via Cumulocity.</p>
+
+<p>To summarize the benefits of the agent concept: Agents enable IoT applications to securely interface with any type of remote IoT device and without imposing any mandatory system requirement on the device itself. They drastically simplify developing IoT applications by shielding the applications from the variety of IoT devices and protocols.</p>
+
+<h3 id="what-agent-architecture-is-supported">What agent architecture is supported?</h3>
+
+<p>Agents can be deployed in various ways, as illustrated in the picture below. We distinguish two main variants: <em>Server-side agents</em> and <em>device-side agents</em>.</p>
+
+<p><img src="/guides/images/concepts-guide/agentarchitectures.png" alt="Agent architectures" /></p>
+
+<p><strong>Server-side agents</strong> are run in a cloud, hosted on Cumulocity as Microservices or managed by yourself in your own cloud. Devices connect to server-side agents using their device-specific protocol. This option is mainly chosen when one or more of the following complies:</p>
+
+<ul>
+<li>The device is &ldquo;closed&rdquo;, i.e. it is not programmable and supports only one particular, pre-defined protocol to communicate with the outside world.</li>
+<li>The protocol on the device is secure and internet-enabled, i.e. the device connects to the cloud and not vice-versa.</li>
+</ul>
+
+<p><strong>Device-side agents</strong> run on a device in the sensor network. These devices can be routers, mobile phones or modems. The agents perform in any kind of run-time environment the device supports, ranging from the very battery- and memory-consuming embedded microcontrollers to minicomputers running Embedded Linux. The agents will directly query connected sensors and manipulate connected controls. This usually results in a simpler architecture than server-side agents.</p>
+
+  </article>
+  
+  <article id="agent-lifecycle" class="page-section">
+    <h2>
+      <button class="btn-link bookmark" data-clipboard-text="#agent-lifecycle">
+        <span class="fa fa-link"></span>
+      </button>
+      The agent life cycle</h2>
+    
+
+<h3 id="starting-the-agent">Starting the agent</h3>
+
+<p>Server-side agents run continuously in the cloud, accepting connections from the device types that they support. Device-side agents run on the device and are started along with other device software when the device is powered on.</p>
+
+<p>Both types of agents are pre-configured with a fixed platform endpoint URL. Using this platform endpoint URL, credentials for each connected device are acquired. These credentials enable the device to connect to a tenant in Cumulocity and to send data to the tenant as well as to accept operations from the tenant.</p>
+
+<p>After starting, the agent will synchronize the inventory with the sensor sub-network that the agent is responsible for.</p>
+
+<h3 id="synchronizing-inventory-data">Synchronizing inventory data</h3>
+
+<p>To understand inventory synchronization, remember the communication hierarchy described in <a href="/guides/concepts/domain-model">Cumulocity&rsquo;s domain model</a>. In the inventory, agents are located at the roots of the communication hierarchy. Below each agent, the topology of the sub-network that the agent manages is reflected. This topology exists in the real network as well as in snapshot form in the inventory. It may change in the real network, and these changes need to be reflected in the inventory.</p>
+
+<p><img src="/guides/images/concepts-guide/commshierarchy.png" alt="Communication hierarchy" /></p>
+
+<p>Inventory synchronization is a two step procedure: The first step is to query the agent&rsquo;s entry from the inventory and to create it in the network. The second step is then to discover the sub-network and synchronize it with the inventory based on the queried agent&rsquo;s entry.</p>
+
+<p>The first step provides the option to pass configuration information to an agent as part of the agent entry into the network. This configuration information is determined by the type of agent and the connected devices. It contains, for example, polling intervals for measurements. It can also assign sub-network tasks to the agent in case the agent cannot automatically discover its associated network.</p>
+
+<p>For example, an agent installed on a mobile phone can discover a connected bluetooth heart monitor without further configuration. An agent installed on a local IP network can run a discovery procedure on a local network. Unlike a Multispeak agent requires the URL of a Multispeak server and credentials to be able to discover connected smart meters.</p>
+
+<p>To keep inventory information up-to-date and maintain a centralized view on devices, two mechanisms are used:</p>
+
+<ul>
+<li>A regular inventory upload, which runs first when the agent is started and will be repeated periodically.</li>
+<li>A propagation of individual changes occurring while the agent runs.</li>
+</ul>
+
+<p>The need for a regular inventory upload depends on the particular device protocol, which possibly supports change notifications. Assume, for example, that a device is operated locally through controls on the device or using a local device manager software. If the device protocol does not propagate these changes, they can only be discovered by a regular query. Another example would be the assumption that new devices can only be discovered by scanning a network address range in the sensor network regularly. This must be executed by an agent.</p>
+
+<p>It is important to know that the device agent is assuming data ownership of configuration properties or device topology data and therefore modifies or overwrites this data accordingly.</p>
+
+<h3 id="receiving-data-and-commands-from-applications">Receiving data and commands from applications</h3>
+
+<p>Now that the topology is established in the inventory, the devices are visible and operable from IoT applications. As described in the device control section of <a href="/guides/concepts/domain-model">Cumulocity&rsquo;s domain model</a>, IoT applications can send operations to devices, which are queued in the core. The agent has to query the core for operations intended for its devices.</p>
+
+<p>If an operation was sent to an agent&rsquo;s device, the agent will translate the operation into the device-specific representation. For example, a Multispeak agent would translate an operation to set the state of a switch to a SOAP &ldquo;initiateConnectDisconnect&rdquo; request for an electricity meter. The translated operation is then sent to the device.</p>
+
+<p>Finally, the agent acknowledges the execution of the operation and it would update the state of the switch in the inventory.</p>
+
+<h3 id="sending-sensor-readings-events-alarms-and-audit-logs">Sending sensor readings, events, alarms and audit logs</h3>
+
+<p>Besides remote control of devices, the other main task of agents is to transmit data from sensors. This data can vary as outlined in the domain model section:</p>
+
+<ul>
+<li>Measurements are produced by reading sensor values. In some cases, this data is read in static intervals and sent to the platform (e.g., temperature sensors or electrical meters). In some cases, the data is read on demand or at irregular intervals (e.g., health devices such as weight scales). Regardless what kind of protocol the device supports, the agent is responsible for converting it into a &ldquo;push&rdquo; protocol by uploading data to Cumulocity. The Java agent library simplifies regular polling of sensors through a scheduler (see the <a href="/guides/device-sdk/java#agents">Java agent</a>).</li>
+<li>Events that need to be processed in real-time by IoT applications, e.g., notifications from a motion detector or transactions from a vending machine.</li>
+<li>Alarms are events that require human intervention, e.g., tamper events sent by an electrical meter.</li>
+<li>Audit logs are events that are recorded for risk management purposes, e.g., login failures.</li>
+</ul>
+
+<h3 id="updating-agent-configuration">Updating agent configuration</h3>
+
+<p>Agent configuration may need to be changed during run-time. For example, a new gateway to a sensor network is installed and the address and credentials for accessing that gateway must be sent to the agent. This is performed by sending a device control request targeted to the agent itself. After processing the configuration, the agent will publish changes within the device network.</p>
+
+  </article>
+  
+  <article id="integration" class="page-section">
+    <h2>
+      <button class="btn-link bookmark" data-clipboard-text="#integration">
+        <span class="fa fa-link"></span>
+      </button>
+      Integrating of other data sources</h2>
+    
+
+<h3 id="system-integration">System integration</h3>
+
+<p>Enterprises offering IoT-enabled services typically run other IT systems that supply important information on IoT assets and devices. Examples of those systems are:</p>
+
+<ul>
+<li>Asset management systems that provide additional information about the available devices and their location.</li>
+<li>Customer relationship management systems can provide information about the customer as device owner.</li>
+<li>Workforce management systems can provide information on the maintenance status of devices.</li>
+</ul>
+
+<p>Technically, developing and running an agent for system integration is no different from an agent for device integration. However, the subset of data owned by the systems is different. Agents for device integration own the device hierarchy and device configuration information. Agents for system integration provide additional information for devices and own parts of the asset hierarchy. Together, they contribute to the device information stored in the inventory to provide a centralized view on everything related to the assets and devices that are relevant for the IoT service.</p>
+
+  </article>
+  
+  <article id="developing-agents" class="page-section">
+    <h2>
+      <button class="btn-link bookmark" data-clipboard-text="#developing-agents">
+        <span class="fa fa-link"></span>
+      </button>
+      How does Cumulocity support developing agents?</h2>
+    <p>Cumulocity supports agent development on three different levels:</p>
+
+<ul>
+<li>There are a number of full-featured open source agents and drivers in Cumulocity&rsquo;s <a href="https://bitbucket.org/m2m/cumulocity-examples">bitbucket.org</a> and <a href="http://mbed.org/users/vwochnik/code/">mbed.org</a> repositories. More information can be found in the &ldquo;Devices&rdquo; section of this documentation.</li>
+<li>Client libraries for major runtime environments such as C/C++, JavaME/SE and Lua, again as open source in <a href="https://bitbucket.org/m2m">bitbucket.org</a>.</li>
+<li>Technology-neutral <a href="/guides/device-sdk/rest#device-integration">REST APIs</a> for other runtime environments.</li>
+</ul>
+
+  </article>
+  
+  
+</div>
+<footer class="main-footer">
+  <div class="copyright">
+    <div class="container text-center">
+      <p class="small ">&copy; 2019 Cumulocity GmbH | All rights reserved.</p>
+    </div>
+  </div>  
+</footer>
+
+<!-- Essential Scripts -->
+
+<!-- jQuery -->
+<script src="https://cumulocity.com/guides/js/vendor/jquery.min.js"></script>
+<script src="https://cumulocity.com/guides/js/vendor/bootstrap.bundle.min.js"></script>
+<script src="https://cumulocity.com/guides/js/vendor/clipboard.js"></script>
+<script src="https://cumulocity.com/guides/js/vendor/zoom.js"></script>
+<script src="https://cumulocity.com/guides/js/vendor/highlight.min.js"></script>
+<script src="https://cumulocity.com/guides/js/main.js"></script>
+
+
+
+
+
+    
+   
+  </body>
+</html>

@@ -12,24 +12,23 @@ Click **Predictions** in the navigator, to open the **Predictions** page.
 
 ### Running the batch process
 
-Currently, the **Predictions** page allows you to process data records supplied to the model in a CSV or JSON file. The records are processed in batches.
+Currently, the **Predictions** page allows you to process data records supplied to the model in a CSV or JSON file. The records are processed in batches. It also allows you to pass on image data as a JPEG or PNG file for processing.
 
 The **Predictions** page is primarily targeted for testing the accuracy of your predictive models by applying it against your test data. Hence, it is expected that you know the predicted outputs beforehand.
 
 To run the batch process, perform the following steps:
 
-1. Click **Start** in the **Predictions** page to initiate the batch processing. <br>
+1. Click **Start** in the **Predictions** page to initiate the batch processing. 
+2. In the **Batch Processing** wizard, select a model from the dropdown list. The dropdown list shows all models which you have uploaded to the **Models** page. <br>
 ![Batch process 1](/guides/images/zementis/zementis-batch-process1.jpeg)
-
-2. In the **Batch Processing** wizard, select a model from the dropdown list. The dropdown list shows all models which you have uploaded to the **Models** page. Click **Next** to proceed. <br>
+<br>Click **Next** to proceed. 
+3. Upload the file containing the CSV/JSON records of your test data or choose the image file (JPEG/PNG) you want to process. Drag and drop a file or select it by browsing. <br>
 ![Batch process 2](/guides/images/zementis/zementis-batch-process2.jpeg)
+<br>On uploading a valid file, you will see an uploading message. 
+
+>**Info**: The size of the uploaded file must not exceed 500 MB.
  
-3. Upload the file containing the CSV/JSON records of your test data. Drag and drop a file or select it by browsing. On uploading a valid file, you will see an uploading message. <br>
-![Batch process 3](/guides/images/zementis/zementis-batch-process3.jpeg) <br>
- **Info**: The size of the uploaded file must not exceed 500 MB.
- 
-4. On completion of processing, you will see a corresponding notification.<br>
-![Batch process 4](/guides/images/zementis/zementis-batch-process4.jpeg)
+After the processing has been completed, you will see a corresponding notification.
 
 ### Viewing the results
 

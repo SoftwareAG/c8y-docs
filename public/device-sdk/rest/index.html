@@ -1,0 +1,1350 @@
+<!DOCTYPE html>
+<html>
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <base href="" />
+    <meta name="generator" content="Hugo 0.54.0 with theme C8yDocs">
+    <title>Device integration using REST - Cumulocity IoT Guides</title>
+    <meta name="author" content="Carlos Ceia @ Cumulocity">
+    <meta name="keywords" content=", Software AG Cloud, Cumulocity IoT, Internet of things, analytics, devices, connect">
+
+
+    <link rel="icon" href="/favicon.ico">
+
+    
+
+    
+
+    
+    
+    
+    <link rel="stylesheet" href="https://cumulocity.com/guides/style.css">
+    
+
+      
+      <script> window.zEmbed||function(e,t){var n,o,d,i,s,a=[],r=document.createElement("iframe");window.zEmbed=function(){a.push(arguments)},window.zE=window.zE||window.zEmbed,r.src="javascript:false",r.title="",r.role="presentation",(r.frameElement||r).style.cssText="display: none",d=document.getElementsByTagName("script"),d=d[d.length-1],d.parentNode.insertBefore(r,d),i=r.contentWindow,s=i.document;try{o=s}catch(c){n=document.domain,r.src='javascript:var d=document.open();d.domain="'+n+'";void(0);',o=s}o.open()._l=function(){var o=this.createElement("script");n&&(this.domain=n),o.id="js-iframe-async",o.src=e,this.t=+new Date,this.zendeskHost=t,this.zEQueue=a,this.body.appendChild(o)},o.write('<body onload="document._l();">'),o.close()}("https://assets.zendesk.com/embeddable_framework/main.js","cumulocity.zendesk.com"); </script>
+        <script type="text/JavaScript">
+          window.zESettings = {
+            webWidget: {
+              color: {
+                theme: '#1776bf'    
+              },
+              position: {
+                horizontal: 'right',
+                vertical: 'top'     
+              }
+            }
+          };
+          </script>
+        
+        
+   
+  </head><body data-spy="scroll" data-target="#main-nav" ><button type="button" class="sidebar-toggle">
+  <span class="icon-bar"></span>
+  <span class="icon-bar"></span>
+  <span class="icon-bar"></span>
+  <span>MENU</span>
+</button>
+<nav class="main-top-bar" >
+  <div class="d-flex container">
+    <ul class="nav d-flex flex-start hidden-xs nav-left">
+      <li><a href="https://www.softwareag.cloud/site/product/cumulocity-iot.html">Cumulocity IoT</a></li>
+      <li><a href="http://resources.cumulocity.com/documentation/jssdk/latest/#/api">Cumulocity Angular API</a></li>
+    </ul>
+    <ul class="nav flex-end nav-right">
+      <li>   <script>
+              (function() {
+                var cx = '008969372384807682938:yeh7xt785g4';
+                var gcse = document.createElement('script');
+                gcse.type = 'text/javascript';
+                gcse.async = true;
+                gcse.src = 'https://cse.google.com/cse.js?cx=' + cx;
+                var s = document.getElementsByTagName('script')[0];
+                s.parentNode.insertBefore(gcse, s);
+              })();
+            </script>
+        <div id="___gcse_0" dir="ltr"><form class="gsc-search-box gsc-search-box-tools" accept-charset="utf-8"><div class="table-responsive"><table cellspacing="0" cellpadding="0" class="gsc-search-box"><tbody><tr><td class="gsc-input"><div class="gsc-input-box" id="gsc-iw-id1"><table cellspacing="0" cellpadding="0" id="gs_id50" class="gstl_50 gsc-input" style="width: 100%; padding: 0px;"><tbody><tr><td id="gs_tti50" class="gsib_a"><input autocomplete="off" type="text" size="10" class="gsc-input" name="search" title="search" id="gsc-i-id1" placeholder="Custom Search" dir="ltr" spellcheck="false" x-webkit-grammar="builtin:search" lang="en" style="width: 100%; padding: 0px; border: none; margin: -0.0625em 0px 0px; height: 1.25em; background: url(&quot;https://www.google.com/cse/static/images/1x/googlelogo_lightgrey_46x16dp.png&quot;) left center no-repeat rgb(255, 255, 255); text-indent: 48px; outline: none;"></td><td class="gsib_b"><div class="gsst_b" id="gs_st50" dir="ltr"><a class="gsst_a" href="javascript:void(0)" style="display: none;" title="Clear search box" role="button"><span class="gscb_a" id="gs_cb50" aria-hidden="true">×</span></a></div></td></tr></tbody></table></div></td><td class="gsc-search-button"><button class="gsc-search-button gsc-search-button-v2"><svg width="13" height="13" viewBox="0 0 13 13"><title>search</title><path d="m4.8495 7.8226c0.82666 0 1.5262-0.29146 2.0985-0.87438 0.57232-0.58292 0.86378-1.2877 0.87438-2.1144 0.010599-0.82666-0.28086-1.5262-0.87438-2.0985-0.59352-0.57232-1.293-0.86378-2.0985-0.87438-0.8055-0.010599-1.5103 0.28086-2.1144 0.87438-0.60414 0.59352-0.8956 1.293-0.87438 2.0985 0.021197 0.8055 0.31266 1.5103 0.87438 2.1144 0.56172 0.60414 1.2665 0.8956 2.1144 0.87438zm4.4695 0.2115 3.681 3.6819-1.259 1.284-3.6817-3.7 0.0019784-0.69479-0.090043-0.098846c-0.87973 0.76087-1.92 1.1413-3.1207 1.1413-1.3553 0-2.5025-0.46363-3.4417-1.3909s-1.4088-2.0686-1.4088-3.4239c0-1.3553 0.4696-2.4966 1.4088-3.4239 0.9392-0.92727 2.0864-1.3969 3.4417-1.4088 1.3553-0.011889 2.4906 0.45771 3.406 1.4088 0.9154 0.95107 1.379 2.0924 1.3909 3.4239 0 1.2126-0.38043 2.2588-1.1413 3.1385l0.098834 0.090049z"></path></svg></button></td><td class="gsc-clear-button"><div class="gsc-clear-button" title="clear results">&nbsp;</div></td></tr></tbody></table></div></form></div>
+      </li>
+    </ul>
+  </div>
+</nav><button type="button" class="to-the-top">
+  <span class="sr-only">Top</span>
+  <span class="fa fa-chevron-up"></span>
+</button><nav class="main-nav navbar">
+  <header class="nav-header">
+    <a href="https://www.softwareag.cloud/site/dev-center/cumulocity-iot.html">
+      <img src="https://cumulocity.com/guides/images/cumulocity-iot.svg"
+        class="img-responsive no-zoom"
+        alt="Cumulocity IoT">
+    </a>
+
+    <div class="dropdown">
+      <button class="dropdown-toggle"
+        type="button"
+        id="dropdownMenuButton"
+        data-toggle="dropdown"
+        aria-haspopup="true"
+        aria-expanded="false">
+        <span id="current-dropdown-toggle" class="text-truncate"></span> <span class="caret"></span>
+      </button>
+      <div class="dropdown-menu"
+        aria-labelledby="dropdownMenuButton">
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+
+        
+        
+        
+
+        <a class='dropdown-menu-item '
+          href='https://cumulocity.com/guides/release-notes/overview/'><i class="c8y-icon c8y-icon-notification"></i> Release notes</a>
+        
+        
+        
+        
+        
+        
+        
+        
+
+        
+        
+        
+
+        <a class='dropdown-menu-item '
+          href='https://cumulocity.com/guides/concepts/introduction/'><i class="c8y-icon c8y-icon-c8y-data"></i> Concepts guide</a>
+        
+        
+        
+        
+        
+        
+        
+        
+
+        
+        
+        
+
+        <a class='dropdown-menu-item '
+          href='https://cumulocity.com/guides/users-guide/getting-started/'><i class="c8y-icon c8y-icon-user"></i> User guide</a>
+        
+        
+        
+        
+        
+        
+        
+        
+
+        
+        
+        
+
+        <a class='dropdown-menu-item '
+          href='https://cumulocity.com/guides/benutzerhandbuch/overview/'><i class="c8y-icon c8y-icon-user"></i> Handbuch</a>
+        
+        
+        
+        
+        
+        
+        
+        
+
+        
+        
+        
+
+        <a class='dropdown-menu-item '
+          href='https://cumulocity.com/guides/devices/overview/'><i class="c8y-icon c8y-icon-device-management"></i> Device guides</a>
+        
+        
+        
+        
+        
+        
+        
+        
+
+        
+        
+        
+
+        <a class='dropdown-menu-item '
+          href='https://cumulocity.com/guides/edge/overview/'><i class="fa fa-book"></i> Cumulocity IoT Edge</a>
+        
+        
+        
+        
+        
+        
+        
+        
+
+        
+        
+        
+
+        <a class='dropdown-menu-item '
+          href='https://cumulocity.com/guides/microservice-sdk/introduction/'><i class="c8y-icon c8y-icon-tools"></i> Microservice SDK guide</a>
+        
+        
+        
+        
+        
+        
+        
+        
+
+        
+        
+        
+        
+        <span class="current-app">Device SDK guide</span>
+        
+        
+
+        <a class='dropdown-menu-item active'
+          href='https://cumulocity.com/guides/device-sdk/introduction/'><i class="c8y-icon c8y-icon-tools"></i> Device SDK guide</a>
+        
+        
+        
+        
+        
+        
+        
+        
+
+        
+        
+        
+
+        <a class='dropdown-menu-item '
+          href='https://cumulocity.com/guides/web/introduction/'><i class="c8y-icon c8y-icon-smart-rest"></i> Web SDK guide</a>
+        
+        
+        
+        
+        
+        
+        
+        
+
+        
+        
+        
+
+        <a class='dropdown-menu-item '
+          href='https://cumulocity.com/guides/apama/overview-analytics/'><i class="c8y-icon c8y-icon-data-explorer"></i> Analytics guide</a>
+        
+        
+        
+        
+        
+        
+        
+        
+
+        
+        
+        
+
+        <a class='dropdown-menu-item '
+          href='https://cumulocity.com/guides/reference/rest-implementation/'><i class="fa fa-book"></i> Reference guide</a>
+        
+      </div>
+    </div>
+  </header>
+
+  
+
+  <nav id="main-nav"
+    class="nav-sections">
+    
+    
+    <div class="">
+        
+        
+        
+        
+      <a class=""
+        href="https://cumulocity.com/guides/device-sdk/introduction/">Overview</a>
+     
+      
+    </div>
+    
+    
+    
+    <div class="">
+        
+        
+        
+        
+      <a href="javascript:void(0);"
+        data-toggle="collapse"
+        data-target="#page-nav1"
+        class="collapse-btn  collapsed ">
+        <i class="fa fa-chevron-right "></i>
+      </a>
+      
+      <a class=""
+        href="https://cumulocity.com/guides/device-sdk/mqtt/">Device integration using MQTT</a>
+     
+      
+      
+      <div id="page-nav1"
+        class="collapse   ">
+        <nav class="list-group nav">
+          
+          
+            <a class="list-group-item"
+              href="https://cumulocity.com/guides/device-sdk/mqtt/#overview">Overview</a>
+            
+            
+          
+            <a class="list-group-item"
+              href="https://cumulocity.com/guides/device-sdk/mqtt/#hello-mqtt">Hello MQTT</a>
+            
+            
+          
+            <a class="list-group-item"
+              href="https://cumulocity.com/guides/device-sdk/mqtt/#hello-mqtt-c">Hello MQTT C</a>
+            
+            
+          
+            <a class="list-group-item"
+              href="https://cumulocity.com/guides/device-sdk/mqtt/#hello-mqtt-java">Hello MQTT Java</a>
+            
+            
+          
+            <a class="list-group-item"
+              href="https://cumulocity.com/guides/device-sdk/mqtt/#hello-mqtt-javascript">Hello MQTT Web-based</a>
+            
+            
+          
+            <a class="list-group-item"
+              href="https://cumulocity.com/guides/device-sdk/mqtt/#hello-mqtt-python">Hello MQTT Python</a>
+            
+            
+          
+            <a class="list-group-item"
+              href="https://cumulocity.com/guides/device-sdk/mqtt/#hello-mqtt-nodejs">Hello MQTT Node.js</a>
+            
+            
+          
+            <a class="list-group-item"
+              href="https://cumulocity.com/guides/device-sdk/mqtt/#implementation">MQTT implementation</a>
+            
+            
+          
+            <a class="list-group-item"
+              href="https://cumulocity.com/guides/device-sdk/mqtt/#device-integration">Device integration</a>
+            
+            
+          
+            <a class="list-group-item"
+              href="https://cumulocity.com/guides/device-sdk/mqtt/#smartrest-1">SmartREST 1.0</a>
+            
+            
+          
+            <a class="list-group-item"
+              href="https://cumulocity.com/guides/device-sdk/mqtt/#smartrest-2">SmartREST 2.0</a>
+            
+            
+          
+            <a class="list-group-item"
+              href="https://cumulocity.com/guides/device-sdk/mqtt/#mqtt-static-templates">MQTT Static templates</a>
+            
+            
+          
+            <a class="list-group-item"
+              href="https://cumulocity.com/guides/device-sdk/mqtt/#handling-ids">Handling IDs</a>
+            
+            
+          
+            <a class="list-group-item"
+              href="https://cumulocity.com/guides/device-sdk/mqtt/#json">JSON via MQTT</a>
+            
+            
+        </nav>
+      </div>
+      
+    </div>
+    
+    
+    
+    <div class=" slot-active ">
+        
+        
+        
+        
+      <a href="javascript:void(0);"
+        data-toggle="collapse"
+        data-target="#page-nav2"
+        class="collapse-btn ">
+        <i class="fa fa-chevron-right "></i>
+      </a>
+      
+      <a class=" active "
+        href="https://cumulocity.com/guides/device-sdk/rest/">Device integration using REST</a>
+     
+      
+      
+      <div id="page-nav2"
+        class="collapse   show  ">
+        <nav class="list-group nav">
+          
+          
+          <a class="list-group-item"
+            href="#overview">Overview</a>
+          
+            
+          
+          <a class="list-group-item"
+            href="#device-integration">Device integration</a>
+          
+            
+          
+          <a class="list-group-item"
+            href="#hello-rest">Hello REST!</a>
+          
+            
+        </nav>
+      </div>
+      
+    </div>
+    
+    
+    
+    <div class="">
+        
+        
+        
+        
+      <a href="javascript:void(0);"
+        data-toggle="collapse"
+        data-target="#page-nav3"
+        class="collapse-btn  collapsed ">
+        <i class="fa fa-chevron-right "></i>
+      </a>
+      
+      <a class=""
+        href="https://cumulocity.com/guides/device-sdk/cpp/">Device SDK for C&#43;&#43;</a>
+     
+      
+      
+      <div id="page-nav3"
+        class="collapse   ">
+        <nav class="list-group nav">
+          
+          
+            <a class="list-group-item"
+              href="https://cumulocity.com/guides/device-sdk/cpp/#introduction">Overview</a>
+            
+            
+          
+            <a class="list-group-item"
+              href="https://cumulocity.com/guides/device-sdk/cpp/#build">Building the C&#43;&#43; library</a>
+            
+            
+          
+            <a class="list-group-item"
+              href="https://cumulocity.com/guides/device-sdk/cpp/#use">C&#43;&#43; Device integration</a>
+            
+            
+          
+            <a class="list-group-item"
+              href="https://cumulocity.com/guides/device-sdk/cpp/#custom">Customizing the build</a>
+            
+            
+          
+            <a class="list-group-item"
+              href="https://cumulocity.com/guides/device-sdk/cpp/#reference">Agent software reference</a>
+            
+            
+        </nav>
+      </div>
+      
+    </div>
+    
+    
+    
+    <div class="">
+        
+        
+        
+        
+      <a href="javascript:void(0);"
+        data-toggle="collapse"
+        data-target="#page-nav4"
+        class="collapse-btn  collapsed ">
+        <i class="fa fa-chevron-right "></i>
+      </a>
+      
+      <a class=""
+        href="https://cumulocity.com/guides/device-sdk/hello-mqtt-cs-0/">Device SDK for C#</a>
+     
+      
+      
+      <div id="page-nav4"
+        class="collapse   ">
+        <nav class="list-group nav">
+          
+          
+            <a class="list-group-item"
+              href="https://cumulocity.com/guides/device-sdk/hello-mqtt-cs-0/#prerequisites">Prerequisites</a>
+            
+            
+          
+            <a class="list-group-item"
+              href="https://cumulocity.com/guides/device-sdk/hello-mqtt-cs-0/#developing-the-client">Developing the &#34;Hello, MQTT world!&#34; client</a>
+            
+            
+          
+            <a class="list-group-item"
+              href="https://cumulocity.com/guides/device-sdk/hello-mqtt-cs-0/#cs-static-templates">Static templates</a>
+            
+            
+        </nav>
+      </div>
+      
+    </div>
+    
+    
+    
+    <div class="">
+        
+        
+        
+        
+      <a href="javascript:void(0);"
+        data-toggle="collapse"
+        data-target="#page-nav5"
+        class="collapse-btn  collapsed ">
+        <i class="fa fa-chevron-right "></i>
+      </a>
+      
+      <a class=""
+        href="https://cumulocity.com/guides/device-sdk/java/">Device SDK for Java</a>
+     
+      
+      
+      <div id="page-nav5"
+        class="collapse   ">
+        <nav class="list-group nav">
+          
+          
+            <a class="list-group-item"
+              href="https://cumulocity.com/guides/device-sdk/java/#introduction">Overview</a>
+            
+            
+          
+            <a class="list-group-item"
+              href="https://cumulocity.com/guides/device-sdk/java/#hello-world-basic">Hello, world!</a>
+            
+            
+          
+            <a class="list-group-item"
+              href="https://cumulocity.com/guides/device-sdk/java/#hello-world-me">Hello, ME!</a>
+            
+            
+          
+            <a class="list-group-item"
+              href="https://cumulocity.com/guides/device-sdk/java/#agents">Java reference agent</a>
+            
+            
+          
+            <a class="list-group-item"
+              href="https://cumulocity.com/guides/device-sdk/java/#developing-java-clients">Developing Java clients</a>
+            
+            
+        </nav>
+      </div>
+      
+    </div>
+    
+    
+    
+    
+  </nav>
+</nav>
+<div class="cover"></div>
+
+<div class="main-content">
+  <article class="page-section">
+    <header class="section-header">
+      <h1 class="text-light">Device integration using REST</h1>
+    </header>
+    
+      <div class="lead">
+        
+      </div>
+      
+  </article>
+
+  
+  
+  
+  <article id="overview" class="page-section">
+    <h2>
+      <button class="btn-link bookmark" data-clipboard-text="#overview">
+        <span class="fa fa-link"></span>
+      </button>
+      Overview</h2>
+    <p>REST is a very simple and secure protocol based on HTTP(S) and TCP. It is today the de-facto Internet standard supported by all networked programming environments ranging from very simple devices up to large-scale IT. One of the many books introducing REST is <a href="http://oreilly.com/catalog/9780596529260">RESTful Web Services</a>.</p>
+
+<p>This section explains how to use Cumulocity&rsquo;s REST interfaces to interface devices with Cumulocity. For general information on using REST interfaces and for information on developing applications on top of Cumulocity using REST refer to the Microservice SDK guide.</p>
+
+<p>The description is closely linked to the reference guide, which describes each interface in detail. Relevant chapters in the reference guide are in particular</p>
+
+<ul>
+<li><a href="/guides/reference/rest-implementation">REST implementation</a> is the reference for all general concepts.</li>
+<li><a href="/guides/reference/device-management">Device management library</a> specifies the data model for device management.</li>
+<li><a href="/guides/reference/sensor-library">Sensor library</a> specifies the data model for sensors and controls.</li>
+</ul>
+
+<p>If you develop using Java ME/SE, JavaScript or C/C++, check the relevant chapters in this guide for even more convenient access to Cumulocity&rsquo;s functionality. Also, if you use any of the supported development boards, see the corresponding description in the Devices guide for more information.</p>
+
+  </article>
+  
+  <article id="device-integration" class="page-section">
+    <h2>
+      <button class="btn-link bookmark" data-clipboard-text="#device-integration">
+        <span class="fa fa-link"></span>
+      </button>
+      Device integration</h2>
+    
+
+<p>The basic life cycle for integrating devices into Cumulocity is discussed in <a href="/guides/concepts/interfacing-devices">Interfacing devices</a> in the Concepts guide. In this section, we will show how this life cycle is implemented on REST level. The life cycle consists of two phases, a startup phase and a cycle phase.</p>
+
+<p>The startup phase is responsible for connecting the device to Cumulocity and updating the device data in the inventory. It also performs cleanup tasks required for operations. It consists of the following steps:</p>
+
+<ul>
+<li><a href="#step-0-request-device-credentials">Step 0</a>: Request device credentials, if they have not been requested yet.</li>
+<li><a href="#step-1-check-if-the-device-is-already-registered">Step 1</a>: Check if the device is already registered.</li>
+<li><a href="#step-2-create-the-device-in-the-inventory">Step 2</a>: If not, create the device in the inventory and</li>
+<li><a href="#step-3-register-the-device">Step 3</a>: Register the device.</li>
+<li><a href="#step-4-update-the-device-in-the-inventory">Step 4</a>: If yes, update the device in the inventory.</li>
+<li><a href="#step-5-discover-child-devices-and-create-or-update-them-in-the-inventory">Step 5</a>: Discover child devices and create or update them in the inventory.</li>
+<li><a href="#step-6-finish-operations-and-subscribe">Step 6</a>: Finish operations that required a restart and subscribe to new operations.</li>
+</ul>
+
+<p><img src="/guides/images/rest/startupphase.png" alt="Startup phase" /></p>
+
+<p>The cycle phase follows. It continuously updates the inventory, writes measurements, alarms and events and executes operations when required. It can be considered to be the &ldquo;main loop&rdquo; of the device which is executed until the device shuts down. The loop consists of the following steps:</p>
+
+<ul>
+<li><a href="#step-7-execute-operations">Step 7</a>: Execute operations.</li>
+<li><a href="#step-8-update-inventory">Step 8</a>: Update inventory.</li>
+<li><a href="#step-9-send-measurements">Step 9</a>: Send measurements.</li>
+<li><a href="#step-10-send-events">Step 10</a>: Send events.</li>
+<li><a href="#step-11-send-alarms">Step 11</a>: Send alarms.</li>
+</ul>
+
+<p><img src="/guides/images/rest/cyclephase.png" alt="Cycle phase" /></p>
+
+<p>Reference models for the data can be found in the <a href="/guides/reference/device-management">Device management library</a> and in the <a href="/guides/reference/sensor-library">Sensor library</a> in the Reference guide.</p>
+
+<h3 id="startup-phase">Startup Phase</h3>
+
+<h4 id="step-0-request-device-credentials">Step 0: Request device credentials</h4>
+
+<p>Since every request to Cumulocity needs to be authenticated, also requests from devices need to be authenticated. If you want to assign individual credentials to devices, you can use the device credentials API to generate new credentials automatically. To do so, request device credentials at first startup through the API and store them locally on the device for further requests.</p>
+
+<p>The process works as follows:</p>
+
+<ul>
+<li>Cumulocity assumes each device to have some form of unique ID. A good device identifier may be the MAC address of the network adapter, the IMEI of a mobile device or a hardware serial number.</li>
+<li>When you take a new device into use, you enter this unique ID into &ldquo;Device registration&rdquo; in Cumulocity and start the device.</li>
+<li>The device will connect to Cumulocity and send its unique ID repeatedly. For this purpose, Cumulocity provides static credentials that can be enquired by contacting <a href="https://support.cumulocity.com">support</a>.</li>
+<li>You can accept the connection from the device in &ldquo;Device registration&rdquo;, in which case Cumulocity sends generated credentials to the device.</li>
+<li>The device will use these credentials for all further requests.</li>
+</ul>
+
+<p>From device perspective, this is a single REST request:</p>
+
+<pre><code>POST /devicecontrol/deviceCredentials
+Content-Type: application/vnd.com.nsn.cumulocity.deviceCredentials+json;ver=...
+Authorization: Basic ...
+{
+  &quot;id&quot; : &quot;0000000017b769d5&quot;
+}
+</code></pre>
+
+<p>The device issues this request repeatedly. While the user has not yet registered and accepted the device, the request returns &ldquo;404 Not Found.&rdquo; After the device is accepted, the following response is returned:</p>
+
+<pre><code>HTTP/1.1 200 OK
+Content-Type: application/vnd.com.nsn.cumulocity.deviceCredentials+json;ver=...
+Content-Length: ...
+{
+  &quot;id&quot; : &quot;0000000017b769d5&quot;,
+  &quot;self&quot; : &quot;&lt;&lt;URL of new request&gt;&gt;&quot;,
+  &quot;tenantId&quot; : &quot;test&quot;,
+  &quot;username&quot; : &quot;device_0000000017b769d5&quot;,
+  &quot;password&quot; : &quot;3rasfst4swfa&quot;
+}
+</code></pre>
+
+<p>The device can now connect to Cumulocity using the tenant ID, username and password.</p>
+
+<h4 id="step-1-check-if-the-device-is-already-registered">Step 1: Check if the device is already registered</h4>
+
+<p>The unique ID of the device is also used for registering the device in the inventory. The registration is carried out using the <a href="/guides/reference/identity">Identity API</a>. In the Identity API, each managed object can be associated with multiple identifiers distinguished by type. Types are, for example, &ldquo;c8y_Serial&rdquo; for a hardware serial, &ldquo;c8y_MAC&rdquo; for a MAC address and &ldquo;c8y_IMEI&rdquo; for an IMEI.</p>
+
+<p>To check if a device is already registered, use a GET request on the identity API using the device identifier and its type. The following example shows a check for a Raspberry Pi with hardware serial &ldquo;0000000017b769d5&rdquo;.</p>
+
+<pre><code>GET /identity/externalIds/c8y_Serial/raspi-0000000017b769d5 HTTP/1.1
+
+HTTP/1.1 200 OK
+Content-Type: application/vnd.com.nsn.cumulocity.externalId+json; charset=UTF-8; ver=0.9
+...
+{
+    &quot;externalId&quot;: &quot;raspi-0000000017b769d5&quot;,
+    &quot;managedObject&quot;: {
+        &quot;id&quot;: &quot;2480300&quot;,
+        &quot;self&quot;: &quot;https://.../managedObjects/2480300&quot;
+    },
+    &quot;self&quot;: &quot;https://.../identity/externalIds/c8y_Serial/raspi-0000000017b769d5&quot;,
+    &quot;type&quot;: &quot;c8y_Serial&quot;
+}
+</code></pre>
+
+<p>Note that while MAC addresses are guaranteed to be globally unique, serial numbers for hardware may overlap across different hardwares. Hence, in the above example, we prefixed the serial number with a &ldquo;raspi-&rdquo;.</p>
+
+<p>In this case, the device is already registered and a status code of 200 is returned. In the response, a URL to the device in the inventory is returned in &ldquo;managedObject.self&rdquo;. This URL can be used to work with the device later on.</p>
+
+<p>If a device is not yet registered, a 404 status code and an error message is returned:</p>
+
+<pre><code>GET /identity/externalIds/c8y_Serial/raspi-0000000017b769d6 HTTP/1.1
+
+HTTP/1.1 404 Not Found
+Content-Type: application/vnd.com.nsn.cumulocity.error+json;charset=UTF-8;ver=0.9
+...
+{
+    &quot;error&quot;: &quot;identity/Not Found&quot;,
+    &quot;info&quot;: &quot;https://www.cumulocity.com/guides/reference-guide/#error_reporting&quot;,
+    &quot;message&quot;: &quot;External id not found; external id = ID [type=c8y_Serial, value=raspi-0000000017b769d6]&quot;
+}
+</code></pre>
+
+<h4 id="step-2-create-the-device-in-the-inventory">Step 2: Create the device in the inventory</h4>
+
+<p>If Step 1 above indicated that no managed object representing the device exists, create the managed object in Cumulocity. The managed object describes the device, both its instance and metadata. Instance data includes hardware and software information, serial numbers, and device configuration data. Metadata describes the capabilities of the devices, including the supported operations.</p>
+
+<p>To create a managed object, issue a POST request on the managed objects collection in the Inventory API. The following example creates a Raspberry Pi using the Linux agent:</p>
+
+<pre><code>POST /inventory/managedObjects HTTP/1.1
+Content-Type: application/vnd.com.nsn.cumulocity.managedObject+json
+Accept: application/vnd.com.nsn.cumulocity.managedObject+json
+...
+{
+    &quot;name&quot;: &quot;RaspPi BCM2708 0000000017b769d5&quot;,
+    &quot;type&quot;: &quot;c8y_Linux&quot;,
+    &quot;c8y_IsDevice&quot;: {},
+    &quot;com_cumulocity_model_Agent&quot;: {},
+    &quot;c8y_SupportedOperations&quot;: [ &quot;c8y_Restart&quot;, &quot;c8y_Configuration&quot;, &quot;c8y_Software&quot;, &quot;c8y_Firmware&quot; ],
+    &quot;c8y_Hardware&quot;: {
+        &quot;revision&quot;: &quot;000e&quot;,
+        &quot;model&quot;: &quot;RaspPi BCM2708&quot;,
+        &quot;serialNumber&quot;: &quot;0000000017b769d5&quot;
+    },
+    &quot;c8y_Configuration&quot;: {
+        &quot;config&quot;: &quot;#Fri Aug 30 09:13:56 BST 2013\nc8y.log.eventLevel=INFO\n...&quot;
+    },
+    &quot;c8y_Mobile&quot;: {
+         &quot;imei&quot;: &quot;861145013087177&quot;,
+        &quot;cellId&quot;: &quot;4904-A496&quot;,
+        &quot;iccid&quot;: &quot;89490200000876620613&quot;
+    },
+    &quot;c8y_Firmware&quot;: {
+        &quot;name&quot;: &quot;raspberrypi-bootloader&quot;,
+        &quot;version&quot;: &quot;1.20130207-1&quot;
+    },
+    &quot;c8y_Software&quot;: {
+        &quot;pi-driver&quot;: &quot;pi-driver-3.4.5.jar&quot;,
+        &quot;pi4j-gpio-extension&quot;: &quot;pi4j-gpio-extension-0.0.5.jar&quot;,
+        ...
+    }
+}
+
+HTTP/1.1 201 Created
+Content-Type: application/vnd.com.nsn.cumulocity.managedObject+json;charset=UTF-8;ver=0.9
+...
+{
+    &quot;id&quot;: &quot;2480300&quot;,
+    &quot;lastUpdated&quot;: &quot;2013-08-30T10:12:24.378+02:00&quot;,
+    &quot;name&quot;: &quot;RaspPi BCM2708 0000000017b769d5&quot;,
+    &quot;owner&quot;: &quot;admin&quot;,
+    &quot;self&quot;: &quot;https://.../inventory/managedObjects/2480300&quot;,
+    &quot;type&quot;: &quot;c8y_Linux&quot;,
+    &quot;c8y_IsDevice&quot;: {},
+    ...
+    &quot;assetParents&quot;: {
+        &quot;references&quot;: [],
+        &quot;self&quot;: &quot;https://.../inventory/managedObjects/2480300/assetParents&quot;
+    },
+    &quot;childAssets&quot;: {
+        &quot;references&quot;: [],
+        &quot;self&quot;: &quot;https://.../inventory/managedObjects/2480300/childAssets&quot;
+    },
+    &quot;childDevices&quot;: {
+        &quot;references&quot;: [],
+        &quot;self&quot;: &quot;https://.../inventory/managedObjects/2480300/childDevices&quot;
+    },
+    &quot;deviceParents&quot;: {
+        &quot;references&quot;: [],
+        &quot;self&quot;: &quot;https://.../inventory/managedObjects/2480300/deviceParents&quot;
+    }
+}
+</code></pre>
+
+<p>The example above contains a number of metadata items for the device:</p>
+
+<ul>
+<li>&ldquo;c8y_IsDevice&rdquo; marks devices that can be managed using Cumulocity&rsquo;s Device Management.</li>
+<li>&ldquo;com_cumulocity_model_Agent&rdquo; marks devices running a Cumulocity agent. Such devices will receive all operations targeted to themselves and their children for routing.</li>
+<li>&ldquo;c8y_SupportedOperations&rdquo; states that this device can be restarted and configured. In addition, it can carry out software and firmware updates.</li>
+</ul>
+
+<p>For more information, refer to the <a href="/guides/reference/device-management">Device management library</a> in the Reference guide.</p>
+
+<p>If the device could be successfully created, a status code of 201 is returned. If the original request contains an &ldquo;Accept&rdquo; header as in the example, the complete created object is returned including the ID and URL to reference the object in future requests. The returned object also include references to collections of child devices and child assets that can be used to add children to the device (see below).</p>
+
+<h4 id="step-3-register-the-device">Step 3: Register the device</h4>
+
+<p>After the new device has been created, it can now be associated with its built-in identifier as described in Step 1. This ensures that the device can find itself in Cumulocity after the next power-up.</p>
+
+<p>Continuing the above example, we would associate the newly created device &ldquo;2480300&rdquo; with its hardware serial number:</p>
+
+<pre><code>POST /identity/globalIds/2480300/externalIds HTTP/1.1
+Content-Type: application/vnd.com.nsn.cumulocity.externalId+json
+Accept: application/vnd.com.nsn.cumulocity.externalId+json
+...
+{
+    &quot;type&quot; : &quot;c8y_Serial&quot;,
+    &quot;externalId&quot; : &quot;raspi-0000000017b769d5&quot;
+}
+
+HTTP/1.1 201 Created
+Content-Type: application/vnd.com.nsn.cumulocity.externalId+json;charset=UTF-8;ver=0.9
+...
+{
+    &quot;externalId&quot;: &quot;raspi-0000000017b769d5&quot;,
+    &quot;managedObject&quot;: {
+        &quot;id&quot;: &quot;2480300&quot;,
+        &quot;self&quot;: &quot;https://.../inventory/managedObjects/2480300&quot;
+    },
+    &quot;self&quot;: &quot;https://.../identity/externalIds/c8y_Serial/raspi-0000000017b769d5&quot;,
+    &quot;type&quot;: &quot;c8y_Serial&quot;
+}
+</code></pre>
+
+<h4 id="step-4-update-the-device-in-the-inventory">Step 4: Update the device in the inventory</h4>
+
+<p>If Step 1 above returned that the device was previously registered already, we need to make sure that the inventory representation of the device is up to date with respect to the current state of the actual device. For this purpose, a PUT request is sent to the URL of the device in the inventory. Note, that only fragments that can actually change need to be transmitted. (See <a href="/guides/concepts/domain-model">Cumulocity&rsquo;s domain model</a> in the Concepts guide for more information on fragments.)</p>
+
+<p>For example, the hardware information of a device will usually not change, but the software installation may change. So it may make sense to bring the software information in the inventory up to the latest state after a reboot of the device:</p>
+
+<pre><code>PUT /inventory/managedObjects/2480300 HTTP/1.1
+Content-Type: application/vnd.com.nsn.cumulocity.managedObject+json
+...
+{
+    &quot;c8y_Software&quot;: {
+        &quot;pi-driver&quot;: &quot;pi-driver-3.4.6.jar&quot;,
+        &quot;pi4j-gpio-extension&quot;: &quot;pi4j-gpio-extension-0.0.5.jar&quot;
+    }
+}   
+
+HTTP/1.1 200 OK
+</code></pre>
+
+<blockquote>
+<p>Do not update the name of a device from an agent! An agent creates a default name for a device so that it can be identified in the inventory, but users should be able to edit this name or update it with information from their asset management.</p>
+</blockquote>
+
+<h4 id="step-5-discover-child-devices-and-create-or-update-them-in-the-inventory">Step 5: Discover child devices and create or update them in the inventory</h4>
+
+<p>Depending on the complexity of the sensor network, devices may have child devices associated with them. A good example is home automation: You often have a home automation gateway that installs a multitude of different sensors and controls installed in various rooms of the household. The basic registration of child devices is similar to the registration of the main device up to the fact, that child devices usually do not run an agent instance (hence the &ldquo;com_cumulocity_model_Agent&rdquo; fragment is left out). To link a device with a child, send a POST request to the child devices URL that was returned when creating the object (see above).</p>
+
+<p>For example, assume a child device with the URL &ldquo;https://&hellip;/inventory/managedObjects/2543801&rdquo; has already been created. To link this device with its parent, issue:</p>
+
+<pre><code>POST /inventory/managedObjects/2480300/childDevices HTTP/1.1
+Content-Type: application/vnd.com.nsn.cumulocity.managedObjectReference+json
+{ &quot;managedObject&quot; : { &quot;self&quot; : &quot;https://.../inventory/managedObjects/2543801&quot; } } 
+
+HTTP/1.1 201 Created
+</code></pre>
+
+<p>Finally, devices and references can be deleted by issuing a DELETE request to their URLs. For example, the reference from the parent device to the child device that we just created can be removed by issuing:</p>
+
+<pre><code>DELETE /inventory/managedObjects/2480300/childDevices/2543801 HTTP/1.1
+
+HTTP/1.1 204 No Content
+</code></pre>
+
+<p>This does not delete the device itself in the inventory, only the reference. To delete the device, issue:</p>
+
+<pre><code>DELETE /inventory/managedObjects/2543801 HTTP/1.1
+
+HTTP/1.1 204 No Content
+</code></pre>
+
+<p>This request will also delete all data associated with the device including its registration information, measurements, alarms, events and operations. Usually, it is not recommended to delete devices automatically. For example, if a device has just temporarily lost its connection, you usually do not want to loose all historical information associated with the device.</p>
+
+<h4 id="working-with-operations">Working with operations</h4>
+
+<p>Each operation in Cumulocity is cycled through an execution flow. When an operation is created through a Cumulocity application, its state is PENDING, i.e. it has been queued for executing but it hasn&rsquo;t executed yet. When an agent picks up the operation and starts executing it, it marks the operations as EXECUTING in Cumulocity. The agent will then carry out the operation on the device or its children (for example, it will restart the device, or set a relay). Then it will possibly update the inventory reflecting the new state of the device or its children (e.g. it updates the current state of the relay in the inventory). Then the agent will mark the operation in Cumulocity as either SUCCESSFUL or FAILED, potentially indicating the error.</p>
+
+<p><img src="/guides/images/rest/operations.png" alt="Operation status diagram" /></p>
+
+<p>The benefit of this execution flow is that it support devices that are offline and temporarily out of coverage. It also allows devices to support operations that require a restart &ndash; such as a firmware upgrade. After the restart, the device needs to know what it previously did and hence needs to query all EXECUTING operations and see if they were successful. Also, it needs to listen what new operations may be queued for it.</p>
+
+<h4 id="step-6-finish-operations-and-subscribe">Step 6: Finish operations and subscribe</h4>
+
+<p>To clean up operations that are still in EXECUTING status, query operations by agent ID and status. In our example, the request would be:</p>
+
+<pre><code>GET /devicecontrol/operations?agentId=2480300&amp;status=EXECUTING HTTP/1.1
+
+HTTP/1.1 200 OK
+Content-Type: application/vnd.com.nsn.cumulocity.operationCollection+json;; charset=UTF-8; ver=0.9
+...
+{
+    &quot;next&quot;: &quot;https://.../devicecontrol/operations?agentId=2480300&amp;status=EXECUTING&quot;,
+    &quot;operations&quot;: [
+        {
+            &quot;creationTime&quot;: &quot;2013-08-29T19:49:15.239+02:00&quot;,
+            &quot;deviceId&quot;: &quot;2480300&quot;,
+            &quot;id&quot;: &quot;2593101&quot;,
+            &quot;self&quot;: &quot;https://.../devicecontrol/operations/2480300&quot;,
+            &quot;status&quot;: &quot;EXECUTING&quot;,
+            &quot;c8y_Restart&quot;: {
+            }
+        }
+    ],
+    &quot;statistics&quot;: {
+        &quot;currentPage&quot;: 1,
+        &quot;pageSize&quot;: 2000
+    },
+    &quot;self&quot;: &quot;https://.../devicecontrol/operations?agentId=2480300&amp;status=EXECUTING&quot;
+}
+</code></pre>
+
+<p>The restart seems to have executed well &ndash; we are back after all. So let&rsquo;s set the operation to SUCCESSFUL.</p>
+
+<pre><code>PUT /devicecontrol/operations/2480300 HTTP/1.1
+Content-Type: application/vnd.com.nsn.cumulocity.operation+json
+{
+    &quot;status&quot;: &quot;SUCCESSFUL&quot;
+}
+
+HTTP/1.1 200 OK
+</code></pre>
+
+<p>Then, listen to new operations created in Cumulocity. The mechanism for listening to real-time data in Cumulocity is described in <a href="/guides/reference/real-time-notifications">Real-time notifications</a> in the Reference guide and is based on the standard Bayeux protocol. First, a handshake is required. The handshake tells Cumulocity what protocols the agent supports for notifications and allocates a client ID to the agent.</p>
+
+<pre><code>POST /devicecontrol/notifications HTTP/1.1
+Content-Type: application/json
+...
+[ {
+    &quot;id&quot;: &quot;1&quot;,
+    &quot;supportedConnectionTypes&quot;: [&quot;long-polling&quot;],
+    &quot;channel&quot;: &quot;/meta/handshake&quot;,
+    &quot;version&quot;: &quot;1.0&quot;
+} ]
+
+HTTP/1.1 200 OK
+...
+[ {
+    &quot;id&quot;: &quot;1&quot;,
+    &quot;supportedConnectionTypes&quot;: [&quot;websocket&quot;,&quot;long-polling&quot;],
+    &quot;channel&quot;: &quot;/meta/handshake&quot;,
+    &quot;version&quot;: &quot;1.0&quot;,
+    &quot;clientId&quot;: &quot;139jhm07u1dlry92fdl63rmq2c&quot;,
+    &quot;minimumVersion&quot;: &quot;1.0&quot;,
+    &quot;successful&quot;: true
+}]
+</code></pre>
+
+<p>Afterwards, the device respectively the agent needs to subscribe to notifications for operations. This is done using a POST request with the ID of the device as subscription channel. In our example, the Raspberry Pi runs an agent and has ID 2480300:</p>
+
+<pre><code>POST /devicecontrol/notifications HTTP/1.1
+Content-Type: application/json
+...
+[ {
+    &quot;id&quot;: &quot;2&quot;,
+    &quot;channel&quot;: &quot;/meta/subscribe&quot;,
+    &quot;subscription&quot;: &quot;/2480300&quot;,
+    &quot;clientId&quot;:&quot;139jhm07u1dlry92fdl63rmq2c&quot;
+}]
+
+HTTP/1.1 200 OK
+...
+[ { 
+    &quot;id&quot;:&quot;2&quot;,
+    &quot;channel&quot;: &quot;/meta/subscribe&quot;,
+    &quot;subscription&quot;: &quot;/2480300&quot;,
+    &quot;successful&quot;: true,
+} ]
+</code></pre>
+
+<p>Finally, the device connects and waits for operations to be sent to it.</p>
+
+<pre><code>POST /devicecontrol/notifications HTTP/1.1
+Content-Type: application/json
+...
+[ {
+    &quot;id&quot;: &quot;3&quot;,
+    &quot;connectionType&quot;: &quot;long-polling&quot;,
+    &quot;channel&quot;: &quot;/meta/connect&quot;,
+    &quot;clientId&quot;: &quot;139jhm07u1dlry92fdl63rmq2c&quot;
+} ]
+</code></pre>
+
+<p>This request will hang until an operation is issued, i.e. the HTTP server will not answer immediately, but wait until an operation is available for the device (long polling).</p>
+
+<p>Note that there might have been operations that were pending before we subscribed to new incoming operations. We need to query these still. This is done after the subscription to not miss any operations between query and subscription. The technical handling is just like previously described for EXECUTING operations, but using PENDING instead:</p>
+
+<pre><code>GET /devicecontrol/operations?agentId=2480300&amp;status=PENDING HTTP/1.1
+</code></pre>
+
+<h3 id="cycle-phase">Cycle Phase</h3>
+
+<h4 id="step-7-execute-operations">Step 7: Execute operations</h4>
+
+<p>Assume now that an operation is queued for the agent. This will make the long polling request that we issued above return with the operation. Here is an example of a response with a single configuration operation:</p>
+
+<pre><code>HTTP/1.1 200 OK
+...
+[ 
+    {
+        &quot;id&quot;: &quot;139&quot;, 
+        &quot;data&quot;: {
+            &quot;creationTime&quot;:&quot;2013-09-04T10:53:35.128+02:00&quot;,
+            &quot;deviceId&quot;: &quot;2480300&quot;,
+            &quot;id&quot;: &quot;2546600&quot;,
+            &quot;self&quot;: &quot;https://.../devicecontrol/operations/2546600&quot;,
+            &quot;status&quot;: &quot;PENDING&quot;,
+            &quot;description&quot;: &quot;Configuration update&quot;,
+            &quot;c8y_Configuration&quot;: { &quot;config&quot;: &quot;#Wed Sep 04 10:54:06 CEST 2013\n...&quot; }
+        }, 
+        &quot;channel&quot;: &quot;/2480300&quot;
+    }, {
+        &quot;id&quot;: &quot;3&quot;,
+        &quot;successful&quot;: true,
+        &quot;channel&quot;: &quot;/meta/connect&quot;
+    }
+]
+</code></pre>
+
+<p>When the agent picks up the operation, it sets it to EXECUTING state in Cumulocity using a PUT request (see above example for FAILED). It carries out the operation on the device and runs possible updates of the Cumulocity inventory. Finally, it sets the operation to SUCCESSFUL or FAILED depending on the outcome. Then, it will reconnect again to &ldquo;/devicecontrol/notifications&rdquo; as described above and wait for the next operation.</p>
+
+<blockquote>
+<p>The device should reconnect within ten seconds to the server to not loose queued operations. This is the time that Cumulocity buffers real-time data. The interval can be specified upon handshake.</p>
+</blockquote>
+
+<h4 id="step-8-update-inventory">Step 8: Update inventory</h4>
+
+<p>The inventory entry of a device usually represents its current state, which may be subject of continuous change. As an example, consider a device with a GPS chip. That device will keep its current location up-to-date in the inventory. At the same time, it will report location updates as well as events to maintain a trace of its locations. Technically, such updates are reported with the same requests as shown in Step 4.</p>
+
+<h4 id="step-9-send-measurements">Step 9: Send measurements</h4>
+
+<p>To create new measurements in Cumulocity, issue a POST request with the measurement. The example below shows how to create a signal strength measurement.</p>
+
+<pre><code>POST /measurement/measurements HTTP/1.1
+Content-Type: application/vnd.com.nsn.cumulocity.measurement+json
+...
+{
+    &quot;source&quot;: { &quot;id&quot;: &quot;2480300&quot; },
+    &quot;time&quot;: &quot;2013-07-02T16:32:30.152+02:00&quot;,
+    &quot;type&quot;: &quot;huawei_E3131SignalStrength&quot;,
+    &quot;c8y_SignalStrength&quot;: {
+        &quot;rssi&quot;: { &quot;value&quot;: -53, &quot;unit&quot;: &quot;dBm&quot; },
+        &quot;ber&quot;: { &quot;value&quot;: 0.14, &quot;unit&quot;: &quot;%&quot; } 
+    }
+}
+
+HTTP/1.1 201 Created
+</code></pre>
+
+<h4 id="step-10-send-events">Step 10: Send events</h4>
+
+<p>Similar, use a POST request for events. The following example shows a location update from a GPS sensor.</p>
+
+<pre><code>POST /event/events HTTP/1.1
+Content-Type: application/vnd.com.nsn.cumulocity.event+json
+...
+{
+    &quot;source&quot;: { &quot;id&quot;: &quot;1197500&quot; },
+    &quot;text&quot;: &quot;Location updated&quot;,
+    &quot;time&quot;: &quot;2013-07-19T09:07:22.598+02:00&quot;,
+    &quot;type&quot;: &quot;queclink_GV200LocationUpdate&quot;,
+    &quot;c8y_Position&quot;: {
+        &quot;alt&quot;: 73.9,
+        &quot;lng&quot;: 6.151782,
+        &quot;lat&quot;: 51.211971
+    }
+}
+
+HTTP/1.1 201 Created
+</code></pre>
+
+<p>Note that all data types in Cumulocity can include arbitrary extensions in the form of additional fragments. In this case, the event includes a position, but also self-defined fragments can be added.</p>
+
+<h3 id="step-11-send-alarms">Step 11: Send alarms</h3>
+
+<p>Alarms represent events that most likely require human intervention to be solved. For example, if the battery in a device runs out of energy, someone has to visit the device to replace the battery. Creating an alarm is technically very similar to creating an event.</p>
+
+<pre><code>POST /alarm/alarms HTTP/1.1
+Content-Type: application/vnd.com.nsn.cumulocity.alarm+json
+Accept: application/vnd.com.nsn.cumulocity.alarm+json
+...
+{
+    &quot;source&quot;: { &quot;id&quot;: &quot;10400&quot; },
+    &quot;text&quot;: &quot;Tracker lost power&quot;,
+    &quot;time&quot;: &quot;2013-08-19T21:31:22.740+02:00&quot;,
+    &quot;type&quot;: &quot;c8y_PowerAlarm&quot;,
+    &quot;status&quot;: &quot;ACTIVE&quot;,
+    &quot;severity&quot;: &quot;MAJOR&quot;,
+}
+
+HTTP/1.1 201 Created
+Content-Type: application/vnd.com.nsn.cumulocity.alarm+json
+...
+{
+    &quot;id&quot;: &quot;214600&quot;,
+    &quot;self&quot;: &quot;https://.../alarm/alarms/214600&quot;,
+    ...
+}
+</code></pre>
+
+<p>However, you most likely should not create an alarm for a device, if there is a similar alarm already active in the system. Creating many alarms may flood the user interface and may require users to manually clear all the alarms. This is an example for finding the active alarms of our Raspberry Pi from above:</p>
+
+<pre><code>GET /alarm/alarms?source=2480300&amp;status=ACTIVE HTTP/1.1
+</code></pre>
+
+<p>In contrast to events, alarms can be updated. If an issue is resolved (e.g. the battery has been replaced, power has been restored), the corresponding alarm should be automatically cleared to save manual work. This can be done through a PUT request to the URL of the alarm. In the above example for creating an alarm, we used an &ldquo;Accept&rdquo; header to get the URL of the new alarm in the response. We can use this URL to clear the alarm:</p>
+
+<pre><code>PUT /alarm/alarms/214600 HTTP/1.1
+Content-Type: application/vnd.com.nsn.cumulocity.alarm+json
+...
+{
+    &quot;status&quot;: &quot;CLEARED&quot;
+}
+
+HTTP/1.1 200 OK
+</code></pre>
+
+<p>If you are uncertain on whether to send an event or raise an alarm, you can simply just raise an event and let the user decide with a <a href="/guides/concepts/realtime">CEP rule</a> if they want to convert the event into an alarm.</p>
+
+  </article>
+  
+  <article id="hello-rest" class="page-section">
+    <h2>
+      <button class="btn-link bookmark" data-clipboard-text="#hello-rest">
+        <span class="fa fa-link"></span>
+      </button>
+      Hello REST!</h2>
+    
+
+<h3 id="overview">Overview</h3>
+
+<p>This section gives a very basic example how to create a device representation in Cumulocity and subsequently how to send related measurement data.</p>
+
+<p>All steps are performed by calling REST interfaces. Those REST calls are demonstrated by CURL statements that can be executed on command line.</p>
+
+<p>Refer to the <a href="/guides/microservice-sdk/rest#overview">introduction</a> in the Microservice SDK guide for a short introduction to CURL.</p>
+
+<h3 id="prerequisites">Prerequisites</h3>
+
+<p>In order to follow this tutorial, check if the following prerequisites are met:</p>
+
+<ul>
+<li>You have a valid tenant, user and password in order to access Cumulocity.</li>
+<li>The command line tool CURL is installed on your system.</li>
+</ul>
+
+<h3 id="do-the-rest-calls">Do the REST calls</h3>
+
+<p>We will now perform a sequence of just two REST calls, which are described in detail next:</p>
+
+<ul>
+<li>Step 1: Create a new device in the inventory of Cumulocity</li>
+<li>Step 2: Transmit measurement data related to that device</li>
+</ul>
+
+<p>In real world those steps are performed by the &lsquo;device agent&rsquo;.</p>
+
+<p>Step one is performed just once, when the device is connected to Cumulocity for the first time.</p>
+
+<p>After that, actions related to that device can be performed by referencing the device by an internal ID which is returned when executing this step.</p>
+
+<h4 id="creating-a-new-device">Creating a new device</h4>
+
+<p>To create a new device in the inventory of Cumulocity the following REST request is needed:</p>
+
+<pre><code>POST /inventory/managedObjects HTTP/1.1
+Content-Type: application/vnd.com.nsn.cumulocity.managedObject+json; charset=UTF-8; ver=0.9
+Accept: application/vnd.com.nsn.cumulocity.managedObject+json; charset=UTF-8; ver=0.9
+Authorization: Basic &lt;&lt;Base64 encoded credentials &lt;tenant ID&gt;/&lt;username&gt;:&lt;password&gt; &gt;&gt;
+...
+{
+    &quot;c8y_IsDevice&quot; : {},
+    &quot;name&quot; : &quot;HelloWorldDevice&quot;
+}
+</code></pre>
+
+<p>This call can be done by executing the following curl statement:</p>
+
+<pre><code>curl -v -u &lt;username&gt;:&lt;password&gt; \
+   -H 'Accept: application/vnd.com.nsn.cumulocity.managedObject+json; charset=UTF-8; ver=0.9' \
+   -H 'Content-type: application/vnd.com.nsn.cumulocity.managedObject+json; charset=UTF-8; ver=0.9' \
+   -X POST \
+   -d '{&quot;c8y_IsDevice&quot;:{},&quot;name&quot;:&quot;HelloWorldDevice&quot;}' \
+   http://&lt;tenant-ID&gt;.cumulocity.com/inventory/managedObjects
+</code></pre>
+
+<blockquote>
+<p>Replace &lt;username&gt;, &lt;password&gt; and &lt;tenant-ID&gt; with the appropriate credentials given to you when registering with Cumulocity.
+The same credentials used to access the Cumulocity Web GUI can be used to execute the REST calls.</p>
+</blockquote>
+
+<p>You will receive a response like that:</p>
+
+<pre><code>HTTP/1.1 201 Created
+Content-Type: application/vnd.com.nsn.cumulocity.managedObject+json; charset=UTF-8; ver=0.9
+Authorization: Basic &lt;&lt;Base64 encoded credentials &lt;tenant ID&gt;/&lt;username&gt;:&lt;password&gt; &gt;&gt;
+...
+{
+    &quot;id&quot;: &quot;1231234&quot;
+    &quot;lastUpdated&quot;: &quot;2014-12-15T14:58:26.279+01:00&quot;,
+    &quot;name&quot;: &quot;HelloWorldDevice&quot;,
+    &quot;owner&quot;: &quot;&lt;username&gt;&quot;,
+    &quot;self&quot;: &quot;https://&lt;tenant-ID&gt;.cumulocity.com/inventory/managedObjects/1231234&quot;,
+    &quot;c8y_IsDevice&quot;: {},
+    ...
+}
+</code></pre>
+
+<p>When creating a device, Cumulocity generates an ID, which is needed in further calls in order to reference the device.
+We can find this ID as the &ldquo;id&rdquo; attribute-value pair in the response.</p>
+
+<h4 id="sending-measurement-data">Sending measurement data</h4>
+
+<p>After the device is created, we can send measurement data.</p>
+
+<p>In our case, we will send a temperature measurement in the unit of Celsius which was collected on a certain time:</p>
+
+<pre><code>POST /measurement/measurements
+Content-Type: application/vnd.com.nsn.cumulocity.measurement+json; charset=UTF-8; ver=0.9
+Accept: application/vnd.com.nsn.cumulocity.measurement+json; charset=UTF-8; ver=0.9
+...
+{
+    &quot;c8y_TemperatureMeasurement&quot;: {
+        &quot;T&quot;: {
+            &quot;value&quot;: 21.23,
+            &quot;unit&quot;:&quot;C&quot;
+        }
+    },
+    &quot;time&quot;: &quot;2014-12-15T13:00:00.123+02:00&quot;,
+    &quot;source&quot;: {
+        &quot;id&quot;: &quot;1231234&quot;
+    },
+    &quot;type&quot;:&quot;c8y_PTCMeasurement&quot;
+}
+</code></pre>
+
+<blockquote>
+<p>Replace the id value with the appropriate value you received in the fist step.</p>
+
+<p>Furthermore, you should update the time value to a recent timestamp in order to make it easy to find back the measurement on Cumulocity UI later.
+Note the data format for timestamp values which is explained in the <a href="http://www.cumulocity.com/guides/reference/rest-implementation/">Reference guide</a>.</p>
+</blockquote>
+
+<pre><code>curl -v -u &lt;username&gt;:&lt;password&gt; \
+   -H 'Accept: application/vnd.com.nsn.cumulocity.measurement+json; charset=UTF-8; ver=0.9' \
+   -H 'Content-type: application/vnd.com.nsn.cumulocity.measurement+json; charset=UTF-8; ver=0.9' \
+   -X POST \
+   -d '{&quot;c8y_TemperatureMeasurement&quot;:{&quot;T&quot;:{&quot;value&quot;:21.23,&quot;unit&quot;:&quot;C&quot;}},&quot;time&quot;:&quot;2014-12-15T13:00:00.123+02:00&quot;,&quot;source&quot;:{&quot;id&quot;:&quot;1231234&quot;},&quot;type&quot;:&quot;c8y_PTCMeasurement&quot;}' \
+   http://&lt;tenant-ID&gt;.cumulocity.com/measurement/measurements/
+</code></pre>
+
+<p>The response to that request will look like this:</p>
+
+<pre><code>HTTP/1.1 201 Created
+Content-Type: application/vnd.com.nsn.cumulocity.measurement+json; charset=UTF-8; ver=0.9
+...
+{
+    &quot;id&quot;: &quot;4711&quot;,
+    &quot;self&quot;: &quot;https://&lt;tenant-ID&gt;.cumulocity.com/measurement/measurements/4711&quot;,
+    &quot;source&quot;: {
+        &quot;id&quot;: &quot;1231234&quot;,
+        &quot;self&quot;: &quot;https://&lt;tenant-ID&gt;.cumulocity.com/inventory/managedObjects/1231234&quot;
+    },
+    &quot;time&quot;: &quot;2014-12-15T12:00:00.123+01:00&quot;,
+    &quot;type&quot;: &quot;c8y_PTCMeasurement&quot;,
+    &quot;c8y_TemperatureMeasurement&quot;: {
+        &quot;T&quot; : {
+            &quot;unit&quot; : &quot;C&quot;,
+            &quot;value&quot; : 21.23
+        }
+    }
+}
+</code></pre>
+
+<p>If you like to, you can repeat sending measurements. Before sending the request again, you should update the timestamp (value of attribute &lsquo;time&rsquo;) in order to create a time series.</p>
+
+<p>Now you are done. Enter the Device Management application in the Cumulocity UI, select your device on the &ldquo;All devices&rdquo; page and switch to the &ldquo;Measurements&rdquo; tab. Here you can see your measurement data.</p>
+
+<p>If you do not see data, you might need to change the filter setting to e.g. &ldquo;last week&rdquo; to include the timestamp you used in your submitted measurement.</p>
+
+<h4 id="go-further">Go further</h4>
+
+<p>The sequence of REST calls demonstrated here is just a shortened procedure of those described in <a href="/guides/device-sdk/rest#device-integration">Device integration</a>.
+The first step (creating a new device) is part of the &lsquo;startup phase&rsquo;, whereas step two (sending measurements) references to the &lsquo;cycle phase&rsquo;.</p>
+
+<p>Refer to the section on <a href="/guides/device-sdk/rest#device-integration">Device integration</a> to get the necessary information required for implementing
+real-world agents.</p>
+
+  </article>
+  
+  
+</div>
+<footer class="main-footer">
+  <div class="copyright">
+    <div class="container text-center">
+      <p class="small ">&copy; 2019 Cumulocity GmbH | All rights reserved.</p>
+    </div>
+  </div>  
+</footer>
+
+<!-- Essential Scripts -->
+
+<!-- jQuery -->
+<script src="https://cumulocity.com/guides/js/vendor/jquery.min.js"></script>
+<script src="https://cumulocity.com/guides/js/vendor/bootstrap.bundle.min.js"></script>
+<script src="https://cumulocity.com/guides/js/vendor/clipboard.js"></script>
+<script src="https://cumulocity.com/guides/js/vendor/zoom.js"></script>
+<script src="https://cumulocity.com/guides/js/vendor/highlight.min.js"></script>
+<script src="https://cumulocity.com/guides/js/main.js"></script>
+
+
+
+
+
+    
+   
+  </body>
+</html>

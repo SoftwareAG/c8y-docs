@@ -1,0 +1,844 @@
+<!DOCTYPE html>
+<html>
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <base href="" />
+    <meta name="generator" content="Hugo 0.54.0 with theme C8yDocs">
+    <title>Examples - Cumulocity IoT Guides</title>
+    <meta name="author" content="Carlos Ceia @ Cumulocity">
+    <meta name="keywords" content=", Software AG Cloud, Cumulocity IoT, Internet of things, analytics, devices, connect">
+
+
+    <link rel="icon" href="/favicon.ico">
+
+    
+
+    
+
+    
+    
+    
+    <link rel="stylesheet" href="https://cumulocity.com/guides/style.css">
+    
+
+      
+      <script> window.zEmbed||function(e,t){var n,o,d,i,s,a=[],r=document.createElement("iframe");window.zEmbed=function(){a.push(arguments)},window.zE=window.zE||window.zEmbed,r.src="javascript:false",r.title="",r.role="presentation",(r.frameElement||r).style.cssText="display: none",d=document.getElementsByTagName("script"),d=d[d.length-1],d.parentNode.insertBefore(r,d),i=r.contentWindow,s=i.document;try{o=s}catch(c){n=document.domain,r.src='javascript:var d=document.open();d.domain="'+n+'";void(0);',o=s}o.open()._l=function(){var o=this.createElement("script");n&&(this.domain=n),o.id="js-iframe-async",o.src=e,this.t=+new Date,this.zendeskHost=t,this.zEQueue=a,this.body.appendChild(o)},o.write('<body onload="document._l();">'),o.close()}("https://assets.zendesk.com/embeddable_framework/main.js","cumulocity.zendesk.com"); </script>
+        <script type="text/JavaScript">
+          window.zESettings = {
+            webWidget: {
+              color: {
+                theme: '#1776bf'    
+              },
+              position: {
+                horizontal: 'right',
+                vertical: 'top'     
+              }
+            }
+          };
+          </script>
+        
+        
+   
+  </head><body data-spy="scroll" data-target="#main-nav" ><button type="button" class="sidebar-toggle">
+  <span class="icon-bar"></span>
+  <span class="icon-bar"></span>
+  <span class="icon-bar"></span>
+  <span>MENU</span>
+</button>
+<nav class="main-top-bar" >
+  <div class="d-flex container">
+    <ul class="nav d-flex flex-start hidden-xs nav-left">
+      <li><a href="https://www.softwareag.cloud/site/product/cumulocity-iot.html">Cumulocity IoT</a></li>
+      <li><a href="http://resources.cumulocity.com/documentation/jssdk/latest/#/api">Cumulocity Angular API</a></li>
+    </ul>
+    <ul class="nav flex-end nav-right">
+      <li>   <script>
+              (function() {
+                var cx = '008969372384807682938:yeh7xt785g4';
+                var gcse = document.createElement('script');
+                gcse.type = 'text/javascript';
+                gcse.async = true;
+                gcse.src = 'https://cse.google.com/cse.js?cx=' + cx;
+                var s = document.getElementsByTagName('script')[0];
+                s.parentNode.insertBefore(gcse, s);
+              })();
+            </script>
+        <div id="___gcse_0" dir="ltr"><form class="gsc-search-box gsc-search-box-tools" accept-charset="utf-8"><div class="table-responsive"><table cellspacing="0" cellpadding="0" class="gsc-search-box"><tbody><tr><td class="gsc-input"><div class="gsc-input-box" id="gsc-iw-id1"><table cellspacing="0" cellpadding="0" id="gs_id50" class="gstl_50 gsc-input" style="width: 100%; padding: 0px;"><tbody><tr><td id="gs_tti50" class="gsib_a"><input autocomplete="off" type="text" size="10" class="gsc-input" name="search" title="search" id="gsc-i-id1" placeholder="Custom Search" dir="ltr" spellcheck="false" x-webkit-grammar="builtin:search" lang="en" style="width: 100%; padding: 0px; border: none; margin: -0.0625em 0px 0px; height: 1.25em; background: url(&quot;https://www.google.com/cse/static/images/1x/googlelogo_lightgrey_46x16dp.png&quot;) left center no-repeat rgb(255, 255, 255); text-indent: 48px; outline: none;"></td><td class="gsib_b"><div class="gsst_b" id="gs_st50" dir="ltr"><a class="gsst_a" href="javascript:void(0)" style="display: none;" title="Clear search box" role="button"><span class="gscb_a" id="gs_cb50" aria-hidden="true">×</span></a></div></td></tr></tbody></table></div></td><td class="gsc-search-button"><button class="gsc-search-button gsc-search-button-v2"><svg width="13" height="13" viewBox="0 0 13 13"><title>search</title><path d="m4.8495 7.8226c0.82666 0 1.5262-0.29146 2.0985-0.87438 0.57232-0.58292 0.86378-1.2877 0.87438-2.1144 0.010599-0.82666-0.28086-1.5262-0.87438-2.0985-0.59352-0.57232-1.293-0.86378-2.0985-0.87438-0.8055-0.010599-1.5103 0.28086-2.1144 0.87438-0.60414 0.59352-0.8956 1.293-0.87438 2.0985 0.021197 0.8055 0.31266 1.5103 0.87438 2.1144 0.56172 0.60414 1.2665 0.8956 2.1144 0.87438zm4.4695 0.2115 3.681 3.6819-1.259 1.284-3.6817-3.7 0.0019784-0.69479-0.090043-0.098846c-0.87973 0.76087-1.92 1.1413-3.1207 1.1413-1.3553 0-2.5025-0.46363-3.4417-1.3909s-1.4088-2.0686-1.4088-3.4239c0-1.3553 0.4696-2.4966 1.4088-3.4239 0.9392-0.92727 2.0864-1.3969 3.4417-1.4088 1.3553-0.011889 2.4906 0.45771 3.406 1.4088 0.9154 0.95107 1.379 2.0924 1.3909 3.4239 0 1.2126-0.38043 2.2588-1.1413 3.1385l0.098834 0.090049z"></path></svg></button></td><td class="gsc-clear-button"><div class="gsc-clear-button" title="clear results">&nbsp;</div></td></tr></tbody></table></div></form></div>
+      </li>
+    </ul>
+  </div>
+</nav><button type="button" class="to-the-top">
+  <span class="sr-only">Top</span>
+  <span class="fa fa-chevron-up"></span>
+</button><nav class="main-nav navbar">
+  <header class="nav-header">
+    <a href="https://www.softwareag.cloud/site/dev-center/cumulocity-iot.html">
+      <img src="https://cumulocity.com/guides/images/cumulocity-iot.svg"
+        class="img-responsive no-zoom"
+        alt="Cumulocity IoT">
+    </a>
+
+    <div class="dropdown">
+      <button class="dropdown-toggle"
+        type="button"
+        id="dropdownMenuButton"
+        data-toggle="dropdown"
+        aria-haspopup="true"
+        aria-expanded="false">
+        <span id="current-dropdown-toggle" class="text-truncate"></span> <span class="caret"></span>
+      </button>
+      <div class="dropdown-menu"
+        aria-labelledby="dropdownMenuButton">
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+
+        
+        
+        
+
+        <a class='dropdown-menu-item '
+          href='https://cumulocity.com/guides/release-notes/overview/'><i class="c8y-icon c8y-icon-notification"></i> Release notes</a>
+        
+        
+        
+        
+        
+        
+        
+        
+
+        
+        
+        
+
+        <a class='dropdown-menu-item '
+          href='https://cumulocity.com/guides/concepts/introduction/'><i class="c8y-icon c8y-icon-c8y-data"></i> Concepts guide</a>
+        
+        
+        
+        
+        
+        
+        
+        
+
+        
+        
+        
+
+        <a class='dropdown-menu-item '
+          href='https://cumulocity.com/guides/users-guide/getting-started/'><i class="c8y-icon c8y-icon-user"></i> User guide</a>
+        
+        
+        
+        
+        
+        
+        
+        
+
+        
+        
+        
+
+        <a class='dropdown-menu-item '
+          href='https://cumulocity.com/guides/benutzerhandbuch/overview/'><i class="c8y-icon c8y-icon-user"></i> Handbuch</a>
+        
+        
+        
+        
+        
+        
+        
+        
+
+        
+        
+        
+
+        <a class='dropdown-menu-item '
+          href='https://cumulocity.com/guides/devices/overview/'><i class="c8y-icon c8y-icon-device-management"></i> Device guides</a>
+        
+        
+        
+        
+        
+        
+        
+        
+
+        
+        
+        
+
+        <a class='dropdown-menu-item '
+          href='https://cumulocity.com/guides/edge/overview/'><i class="fa fa-book"></i> Cumulocity IoT Edge</a>
+        
+        
+        
+        
+        
+        
+        
+        
+
+        
+        
+        
+
+        <a class='dropdown-menu-item '
+          href='https://cumulocity.com/guides/microservice-sdk/introduction/'><i class="c8y-icon c8y-icon-tools"></i> Microservice SDK guide</a>
+        
+        
+        
+        
+        
+        
+        
+        
+
+        
+        
+        
+
+        <a class='dropdown-menu-item '
+          href='https://cumulocity.com/guides/device-sdk/introduction/'><i class="c8y-icon c8y-icon-tools"></i> Device SDK guide</a>
+        
+        
+        
+        
+        
+        
+        
+        
+
+        
+        
+        
+
+        <a class='dropdown-menu-item '
+          href='https://cumulocity.com/guides/web/introduction/'><i class="c8y-icon c8y-icon-smart-rest"></i> Web SDK guide</a>
+        
+        
+        
+        
+        
+        
+        
+        
+
+        
+        
+        
+        
+        <span class="current-app">Analytics guide</span>
+        
+        
+
+        <a class='dropdown-menu-item active'
+          href='https://cumulocity.com/guides/apama/overview-analytics/'><i class="c8y-icon c8y-icon-data-explorer"></i> Analytics guide</a>
+        
+        
+        
+        
+        
+        
+        
+        
+
+        
+        
+        
+
+        <a class='dropdown-menu-item '
+          href='https://cumulocity.com/guides/reference/rest-implementation/'><i class="fa fa-book"></i> Reference guide</a>
+        
+      </div>
+    </div>
+  </header>
+
+  
+
+  <nav id="main-nav"
+    class="nav-sections">
+    
+    
+    <div class="">
+        
+        
+        
+        
+      <a class=""
+        href="https://cumulocity.com/guides/apama/overview-analytics/">Overview</a>
+     
+      
+    </div>
+    
+    
+    
+    <div class="">
+        
+        
+        
+        
+      <a href="javascript:void(0);"
+        data-toggle="collapse"
+        data-target="#page-nav1"
+        class="collapse-btn  collapsed ">
+        <i class="fa fa-chevron-right "></i>
+      </a>
+      
+      <a class=""
+        href="https://cumulocity.com/guides/apama/analytics-introduction/">Basic functionality</a>
+     
+      
+      
+      <div id="page-nav1"
+        class="collapse   ">
+        <nav class="list-group nav">
+          
+          
+            <a class="list-group-item"
+              href="https://cumulocity.com/guides/apama/analytics-introduction/#developing-apps">Developing applications</a>
+            
+            
+          
+            <a class="list-group-item"
+              href="https://cumulocity.com/guides/apama/analytics-introduction/#deploying-apps">Deploying applications</a>
+            
+            
+          
+            <a class="list-group-item"
+              href="https://cumulocity.com/guides/apama/analytics-introduction/#events-and-channels">Events and channels</a>
+            
+            
+          
+            <a class="list-group-item"
+              href="https://cumulocity.com/guides/apama/analytics-introduction/#filters">Filters</a>
+            
+            
+          
+            <a class="list-group-item"
+              href="https://cumulocity.com/guides/apama/analytics-introduction/#example">Example</a>
+            
+            
+        </nav>
+      </div>
+      
+    </div>
+    
+    
+    
+    <div class="">
+        
+        
+        
+        
+      <a href="javascript:void(0);"
+        data-toggle="collapse"
+        data-target="#page-nav2"
+        class="collapse-btn  collapsed ">
+        <i class="fa fa-chevron-right "></i>
+      </a>
+      
+      <a class=""
+        href="https://cumulocity.com/guides/apama/actions/">Built-in actions</a>
+     
+      
+      
+      <div id="page-nav2"
+        class="collapse   ">
+        <nav class="list-group nav">
+          
+          
+            <a class="list-group-item"
+              href="https://cumulocity.com/guides/apama/actions/#overview">Overview</a>
+            
+            
+          
+            <a class="list-group-item"
+              href="https://cumulocity.com/guides/apama/actions/#querying">Querying Cumulocity data</a>
+            
+            
+          
+            <a class="list-group-item"
+              href="https://cumulocity.com/guides/apama/actions/#invoking-http">Invoking HTTP services</a>
+            
+            
+          
+            <a class="list-group-item"
+              href="https://cumulocity.com/guides/apama/actions/#utility-functions">Utility functions</a>
+            
+            
+        </nav>
+      </div>
+      
+    </div>
+    
+    
+    
+    <div class="">
+        
+        
+        
+        
+      <a href="javascript:void(0);"
+        data-toggle="collapse"
+        data-target="#page-nav3"
+        class="collapse-btn  collapsed ">
+        <i class="fa fa-chevron-right "></i>
+      </a>
+      
+      <a class=""
+        href="https://cumulocity.com/guides/apama/advanced/">Advanced features</a>
+     
+      
+      
+      <div id="page-nav3"
+        class="collapse   ">
+        <nav class="list-group nav">
+          
+          
+            <a class="list-group-item"
+              href="https://cumulocity.com/guides/apama/advanced/#custom-fragments">Custom fragments</a>
+            
+            
+          
+            <a class="list-group-item"
+              href="https://cumulocity.com/guides/apama/advanced/#Listeners">Listeners</a>
+            
+            
+          
+            <a class="list-group-item"
+              href="https://cumulocity.com/guides/apama/advanced/#own-event-types">Creating own event types</a>
+            
+            
+          
+            <a class="list-group-item"
+              href="https://cumulocity.com/guides/apama/advanced/#own-actions">Creating own actions</a>
+            
+            
+          
+            <a class="list-group-item"
+              href="https://cumulocity.com/guides/apama/advanced/#variables">Variables</a>
+            
+            
+          
+            <a class="list-group-item"
+              href="https://cumulocity.com/guides/apama/advanced/#spawning">Spawning monitor instances and contexts</a>
+            
+            
+        </nav>
+      </div>
+      
+    </div>
+    
+    
+    
+    <div class="">
+        
+        
+        
+        
+      <a href="javascript:void(0);"
+        data-toggle="collapse"
+        data-target="#page-nav4"
+        class="collapse-btn  collapsed ">
+        <i class="fa fa-chevron-right "></i>
+      </a>
+      
+      <a class=""
+        href="https://cumulocity.com/guides/apama/best-practices/">Best practices and guidelines</a>
+     
+      
+      
+      <div id="page-nav4"
+        class="collapse   ">
+        <nav class="list-group nav">
+          
+          
+            <a class="list-group-item"
+              href="https://cumulocity.com/guides/apama/best-practices/#epl-monitors">EPL monitors</a>
+            
+            
+          
+            <a class="list-group-item"
+              href="https://cumulocity.com/guides/apama/best-practices/#number-format">Number formats</a>
+            
+            
+          
+            <a class="list-group-item"
+              href="https://cumulocity.com/guides/apama/best-practices/#limitations">Apama limitations in Cumulocity IoT</a>
+            
+            
+        </nav>
+      </div>
+      
+    </div>
+    
+    
+    
+    <div class=" slot-active ">
+        
+        
+        
+        
+      <a href="javascript:void(0);"
+        data-toggle="collapse"
+        data-target="#page-nav5"
+        class="collapse-btn ">
+        <i class="fa fa-chevron-right "></i>
+      </a>
+      
+      <a class=" active "
+        href="https://cumulocity.com/guides/apama/examples/">Examples</a>
+     
+      
+      
+      <div id="page-nav5"
+        class="collapse   show  ">
+        <nav class="list-group nav">
+          
+          
+          <a class="list-group-item"
+            href="#hourly-mean">Calculating an hourly average of measurements</a>
+          
+            
+          
+          <a class="list-group-item"
+            href="#create-alarm-2">Creating alarms from bit measurements</a>
+          
+            
+        </nav>
+      </div>
+      
+    </div>
+    
+    
+    
+    <div class="">
+        
+        
+        
+        
+      <a href="javascript:void(0);"
+        data-toggle="collapse"
+        data-target="#page-nav6"
+        class="collapse-btn  collapsed ">
+        <i class="fa fa-chevron-right "></i>
+      </a>
+      
+      <a class=""
+        href="https://cumulocity.com/guides/apama/study/">Study: Circular geofence alarms</a>
+     
+      
+      
+      <div id="page-nav6"
+        class="collapse   ">
+        <nav class="list-group nav">
+          
+          
+            <a class="list-group-item"
+              href="https://cumulocity.com/guides/apama/study/#prerequisites">Prerequisites</a>
+            
+            
+          
+            <a class="list-group-item"
+              href="https://cumulocity.com/guides/apama/study/#step-1-html">Step 1: Filtering the input</a>
+            
+            
+          
+            <a class="list-group-item"
+              href="https://cumulocity.com/guides/apama/study/#step-2">Step 2: Collecting necessary data</a>
+            
+            
+          
+            <a class="list-group-item"
+              href="https://cumulocity.com/guides/apama/study/#step-3">Step 3: Checking if the device supports c8y_Geofence</a>
+            
+            
+          
+            <a class="list-group-item"
+              href="https://cumulocity.com/guides/apama/study/#step-4">Step 4: Creating the trigger</a>
+            
+            
+          
+            <a class="list-group-item"
+              href="https://cumulocity.com/guides/apama/study/#step-5">Step 5: Creating the alarm</a>
+            
+            
+          
+            <a class="list-group-item"
+              href="https://cumulocity.com/guides/apama/study/#step-6">Step 6: Clearing the alarm</a>
+            
+            
+          
+            <a class="list-group-item"
+              href="https://cumulocity.com/guides/apama/study/#putting-together">Putting everything together</a>
+            
+            
+        </nav>
+      </div>
+      
+    </div>
+    
+    
+    
+    
+  </nav>
+</nav>
+<div class="cover"></div>
+
+<div class="main-content">
+  <article class="page-section">
+    <header class="section-header">
+      <h1 class="text-light">Examples</h1>
+    </header>
+    
+      <div class="lead">
+        
+      </div>
+      
+  </article>
+
+  
+  
+  
+  <article id="hourly-mean" class="page-section">
+    <h2>
+      <button class="btn-link bookmark" data-clipboard-text="#hourly-mean">
+        <span class="fa fa-link"></span>
+      </button>
+      Calculating an hourly average of measurements</h2>
+    <p>We are assuming the input data looks like this:</p>
+
+<pre><code>{
+  &quot;c8y_TemperatureMeasurement&quot;: { &quot;T&quot;: { &quot;value&quot;: ..., &quot;unit&quot;: &quot;C&quot; } },
+  &quot;time&quot;:&quot;...&quot;,
+  &quot;source&quot;: { &quot;id&quot;:&quot;...&quot; },
+  &quot;type&quot;: &quot;c8y_TemperatureMeasurement&quot; 
+
+ }
+</code></pre>
+
+<p>To create the average (mean), we need the following parts in the module:</p>
+
+<ul>
+<li>A time window over one hour, grouped by device (source)</li>
+<li>A select that returns the average calculation every hour, the source and the unit (as we must use an aggregate over the window contents, we select the last unit - we assume all measurements are of the same unit). Note the AverageByDevice event definition to hold these.</li>
+
+<li><p>Everything created as a new measurement</p>
+
+<pre><code>using com.apama.aggregates.avg;
+using com.apama.aggregates.last;
+
+monitor HourlyAvgMeasurementDeviceContext {
+    event AverageByDevice {
+        string source;
+        float avgValue;
+        string unit;
+    }
+    action onload() {
+        from m in all Measurement(type=&quot;c8y_TemperatureMeasurement&quot;)
+             within (3600.0)  group by m.source
+             select AverageByDevice(m.source,
+                                 avg(m.measurements[&quot;c8y_TemperatureMeasurement&quot;][&quot;T&quot;].value),
+                                 last(m.measurements[&quot;c8y_TemperatureMeasurement&quot;][&quot;T&quot;].unit)) as avgdata {
+            send Measurement(&quot;&quot;, &quot;c8y_AverageTemperatureMeasurement&quot;, avgdata.source, currentTime,
+                             {&quot;c8y_AverageTemperatureMeasurement&quot;:
+                              {&quot;T&quot;:MeasurementValue(avgdata.avgValue, avgdata.unit, new dictionary&lt;string,any&gt;)}
+                             },
+                             new dictionary&lt;string,any&gt;) to Measurement.CREATE_CHANNEL;
+        }
+    }
+}
+</code></pre></li>
+</ul>
+
+  </article>
+  
+  <article id="create-alarm-2" class="page-section">
+    <h2>
+      <button class="btn-link bookmark" data-clipboard-text="#create-alarm-2">
+        <span class="fa fa-link"></span>
+      </button>
+      Creating alarms from bit measurements</h2>
+    
+
+<p>Devices often keep alarm statuses in registers and cannot interpret the meaning of alarms. In this example, we assume that a device just sends the entire register as a binary value in a measurement. A rule must identify the bits and create the respective alarm.</p>
+
+<p>We create three dictionaries to map alarm text, type, and severity for each of the bits, and an action to look up the value. We use -1 to indicate a default value, and replace <position> with the string form of the position.</p>
+
+<pre><code>monitor CreateAlarmFromBinary {
+    dictionary&lt;integer, string&gt; positionToAlarmType := {
+        0: &quot;c8y_HighTemperatureAlarm&quot;,
+        1: &quot;c8y_ProcessingAlarm&quot;,
+        2: &quot;c8y_DoorOpenAlarm&quot;,
+        3: &quot;c8y_SystemFailureAlarm&quot;,
+        -1:&quot;c8y_FaultRegister&lt;position&gt;Alaram&quot;
+    };
+
+    dictionary&lt;integer, string&gt; positionToAlarmSeverity := {
+        0: &quot;MAJOR&quot;,
+        1: &quot;WARNING&quot;,
+        2: &quot;MINOR&quot;,
+        3: &quot;CRITICAL&quot;,
+        -1:&quot;MAJOR&quot;
+    };
+    dictionary&lt;integer, string&gt; positionToAlarmText := {
+        0: &quot;The machine temperature reached a critical status&quot;,
+        1: &quot;There was an error trying to process data&quot;,
+        2: &quot;Door was opened&quot;,
+        3: &quot;There was a critical system failure&quot;,
+        -1:&quot;An undefined alarm was reported on position &lt;position&gt; in the binary fault register&quot;
+    };
+
+    action getText(integer bitPosition, dictionary&lt;integer, string&gt; lookup) returns string {
+        string template := lookup.getOr(bitPosition, lookup[-1]);
+        return template.replaceAll(&quot;&lt;position&gt;&quot;, bitPosition.toString());
+    }
+</code></pre>
+
+<p>To analyze the binary measurement value, we will interpret it as a string value and loop through each character. The getActiveBits() function will do that and return a list of the bit positions at where the measurement had a &ldquo;1&rdquo;. We can then use a <code>for</code> loop to iterate through that:</p>
+
+<pre><code>    action getBitPositions(string binaryAsText) returns sequence&lt;integer&gt; {
+            sequence&lt;integer&gt; bitsSet:=new sequence&lt;integer&gt;;
+            integer i:=0;
+            while(i &lt; binaryAsText.length()) {
+                string character := binaryAsText.substring(i, i+1);
+                if character = &quot;1&quot; {
+                    bitsSet.append(binaryAsText.length() - i - 1);
+                }
+                i:=i+1;
+            }
+            return bitsSet;
+        }
+
+    action onload() {
+        on all Measurement(type = &quot;c8y_BinaryFaultRegister&quot;) as m {
+            string faultRegister := m.measurements.getOrDefault(&quot;c8y_BinaryFaultRegister&quot;)
+                .getOrDefault(&quot;errors&quot;).value.toString();
+            integer bitPosition;
+            for bitPosition in getBitPositions(faultRegister) {
+                Alarm alarm := new Alarm;
+                alarm.type := getText(bitPosition, positionToAlarmType);
+                alarm.severity := getText(bitPosition, positionToAlarmSeverity);
+                alarm.status := &quot;ACTIVE&quot;;
+                alarm.source := m.source;
+                alarm.time := m.time;
+                alarm.text := getText(bitPosition, positionToAlarmText);
+                send alarm to Event.CHANNEL;
+            }
+        }
+    }
+}
+</code></pre>
+
+<p>Creating a measurement like this</p>
+
+<pre><code>{
+  &quot;c8y_BinaryFaultRegister&quot;: { &quot;errors&quot;: { &quot;value&quot;: 10110 } },
+  &quot;time&quot;:&quot;...&quot;,
+  &quot;source&quot;: { &quot;id&quot;:&quot;...&quot; },
+  &quot;type&quot;: &quot;c8y_BinaryFaultRegister&quot; 
+
+}
+</code></pre>
+
+<p>will trigger the last statement three times.</p>
+
+<ul>
+<li>measurement at bit position 1 - c8y_ProcessingAlarm, WARNING, &ldquo;There was an error trying to process data&rdquo;</li>
+<li>measurement and bit position 2 - c8y_DoorOpenAlarm, MINOR, &ldquo;Door was opened&rdquo;</li>
+<li>measurement and bit position 4 - c8y_FaultRegister4Alarm, MAJOR, &ldquo;An undefined alarm was reported on position 4 in the binary fault register&rdquo;</li>
+</ul>
+
+<p>and therefore create three alarms.</p>
+
+<h2 id="consumption-measurements">Consumption measurements</h2>
+
+<p>Assuming we have a sensor which measures the current fill level of something and sends the values on a regular basis to Cumulocity we can easily create additional consumption values. Calculating the absolute difference between two measurements can be useful but it will only give you a clear view if the measurements are sent always in the same interval. Therefore, we will put the absolute difference in relation to the time difference and calculate as a per hour consumption.</p>
+
+<p>We will compare the value and time difference of two adjacent measurements for a device, using a stream retaining 2 entries, and selecting the first and last timestamp and value.</p>
+
+<pre><code>using com.apama.aggregates.last;
+using com.apama.aggregates.first;
+using com.apama.aggregates.count;
+
+
+monitor FillLevelMeasurements {
+    event FillLevel {
+        float firstValue;
+        float firstTime;
+        float lastValue;
+        float lastTime;
+        string source;
+    }
+    action calculateConsumption(FillLevel l) returns float {
+        if(l.firstTime = l.lastTime) {
+            return 0.0;
+        } else {
+            return ((l.lastValue - l.firstValue) * 3600.0) / (l.lastTime - l.firstTime);
+        }
+    }
+    action onload() {
+        from m in all Measurement(type = &quot;c8y_WaterTankFillLevel&quot;) partition by m.source retain 2 group by m.source
+            having count() = 2
+            select FillLevel(first(m.measurements[&quot;c8y_WaterTankFillLevel&quot;][&quot;level&quot;].value), first(m.time),
+                             last(m.measurements[&quot;c8y_WaterTankFillLevel&quot;][&quot;level&quot;].value), last(m.time), m.source) as fill {
+                MeasurementValue mv := new MeasurementValue;
+                mv.value := calculateConsumption(fill);
+                mv.unit := &quot;l/h&quot;;
+                Measurement m := new Measurement;
+                m.type := &quot;c8y_HourlyWaterConsumption&quot;;
+                m.measurements[m.type] := {&quot;consumption&quot;:mv};
+                m.time := currentTime;
+                m.source := fill.source;
+                send m to Measurement.CREATE_CHANNEL;
+        }
+    }
+}
+</code></pre>
+
+  </article>
+  
+  
+</div>
+<footer class="main-footer">
+  <div class="copyright">
+    <div class="container text-center">
+      <p class="small ">&copy; 2019 Cumulocity GmbH | All rights reserved.</p>
+    </div>
+  </div>  
+</footer>
+
+<!-- Essential Scripts -->
+
+<!-- jQuery -->
+<script src="https://cumulocity.com/guides/js/vendor/jquery.min.js"></script>
+<script src="https://cumulocity.com/guides/js/vendor/bootstrap.bundle.min.js"></script>
+<script src="https://cumulocity.com/guides/js/vendor/clipboard.js"></script>
+<script src="https://cumulocity.com/guides/js/vendor/zoom.js"></script>
+<script src="https://cumulocity.com/guides/js/vendor/highlight.min.js"></script>
+<script src="https://cumulocity.com/guides/js/main.js"></script>
+
+
+
+
+
+    
+   
+  </body>
+</html>

@@ -1,0 +1,1464 @@
+<!DOCTYPE html>
+<html>
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <base href="" />
+    <meta name="generator" content="Hugo 0.54.0 with theme C8yDocs">
+    <title>Using the REST interface - Cumulocity IoT Guides</title>
+    <meta name="author" content="Carlos Ceia @ Cumulocity">
+    <meta name="keywords" content=", Software AG Cloud, Cumulocity IoT, Internet of things, analytics, devices, connect">
+
+
+    <link rel="icon" href="/favicon.ico">
+
+    
+
+    
+
+    
+    
+    
+    <link rel="stylesheet" href="https://cumulocity.com/guides/style.css">
+    
+
+      
+      <script> window.zEmbed||function(e,t){var n,o,d,i,s,a=[],r=document.createElement("iframe");window.zEmbed=function(){a.push(arguments)},window.zE=window.zE||window.zEmbed,r.src="javascript:false",r.title="",r.role="presentation",(r.frameElement||r).style.cssText="display: none",d=document.getElementsByTagName("script"),d=d[d.length-1],d.parentNode.insertBefore(r,d),i=r.contentWindow,s=i.document;try{o=s}catch(c){n=document.domain,r.src='javascript:var d=document.open();d.domain="'+n+'";void(0);',o=s}o.open()._l=function(){var o=this.createElement("script");n&&(this.domain=n),o.id="js-iframe-async",o.src=e,this.t=+new Date,this.zendeskHost=t,this.zEQueue=a,this.body.appendChild(o)},o.write('<body onload="document._l();">'),o.close()}("https://assets.zendesk.com/embeddable_framework/main.js","cumulocity.zendesk.com"); </script>
+        <script type="text/JavaScript">
+          window.zESettings = {
+            webWidget: {
+              color: {
+                theme: '#1776bf'    
+              },
+              position: {
+                horizontal: 'right',
+                vertical: 'top'     
+              }
+            }
+          };
+          </script>
+        
+        
+   
+  </head><body data-spy="scroll" data-target="#main-nav" ><button type="button" class="sidebar-toggle">
+  <span class="icon-bar"></span>
+  <span class="icon-bar"></span>
+  <span class="icon-bar"></span>
+  <span>MENU</span>
+</button>
+<nav class="main-top-bar" >
+  <div class="d-flex container">
+    <ul class="nav d-flex flex-start hidden-xs nav-left">
+      <li><a href="https://www.softwareag.cloud/site/product/cumulocity-iot.html">Cumulocity IoT</a></li>
+      <li><a href="http://resources.cumulocity.com/documentation/jssdk/latest/#/api">Cumulocity Angular API</a></li>
+    </ul>
+    <ul class="nav flex-end nav-right">
+      <li>   <script>
+              (function() {
+                var cx = '008969372384807682938:yeh7xt785g4';
+                var gcse = document.createElement('script');
+                gcse.type = 'text/javascript';
+                gcse.async = true;
+                gcse.src = 'https://cse.google.com/cse.js?cx=' + cx;
+                var s = document.getElementsByTagName('script')[0];
+                s.parentNode.insertBefore(gcse, s);
+              })();
+            </script>
+        <div id="___gcse_0" dir="ltr"><form class="gsc-search-box gsc-search-box-tools" accept-charset="utf-8"><div class="table-responsive"><table cellspacing="0" cellpadding="0" class="gsc-search-box"><tbody><tr><td class="gsc-input"><div class="gsc-input-box" id="gsc-iw-id1"><table cellspacing="0" cellpadding="0" id="gs_id50" class="gstl_50 gsc-input" style="width: 100%; padding: 0px;"><tbody><tr><td id="gs_tti50" class="gsib_a"><input autocomplete="off" type="text" size="10" class="gsc-input" name="search" title="search" id="gsc-i-id1" placeholder="Custom Search" dir="ltr" spellcheck="false" x-webkit-grammar="builtin:search" lang="en" style="width: 100%; padding: 0px; border: none; margin: -0.0625em 0px 0px; height: 1.25em; background: url(&quot;https://www.google.com/cse/static/images/1x/googlelogo_lightgrey_46x16dp.png&quot;) left center no-repeat rgb(255, 255, 255); text-indent: 48px; outline: none;"></td><td class="gsib_b"><div class="gsst_b" id="gs_st50" dir="ltr"><a class="gsst_a" href="javascript:void(0)" style="display: none;" title="Clear search box" role="button"><span class="gscb_a" id="gs_cb50" aria-hidden="true">×</span></a></div></td></tr></tbody></table></div></td><td class="gsc-search-button"><button class="gsc-search-button gsc-search-button-v2"><svg width="13" height="13" viewBox="0 0 13 13"><title>search</title><path d="m4.8495 7.8226c0.82666 0 1.5262-0.29146 2.0985-0.87438 0.57232-0.58292 0.86378-1.2877 0.87438-2.1144 0.010599-0.82666-0.28086-1.5262-0.87438-2.0985-0.59352-0.57232-1.293-0.86378-2.0985-0.87438-0.8055-0.010599-1.5103 0.28086-2.1144 0.87438-0.60414 0.59352-0.8956 1.293-0.87438 2.0985 0.021197 0.8055 0.31266 1.5103 0.87438 2.1144 0.56172 0.60414 1.2665 0.8956 2.1144 0.87438zm4.4695 0.2115 3.681 3.6819-1.259 1.284-3.6817-3.7 0.0019784-0.69479-0.090043-0.098846c-0.87973 0.76087-1.92 1.1413-3.1207 1.1413-1.3553 0-2.5025-0.46363-3.4417-1.3909s-1.4088-2.0686-1.4088-3.4239c0-1.3553 0.4696-2.4966 1.4088-3.4239 0.9392-0.92727 2.0864-1.3969 3.4417-1.4088 1.3553-0.011889 2.4906 0.45771 3.406 1.4088 0.9154 0.95107 1.379 2.0924 1.3909 3.4239 0 1.2126-0.38043 2.2588-1.1413 3.1385l0.098834 0.090049z"></path></svg></button></td><td class="gsc-clear-button"><div class="gsc-clear-button" title="clear results">&nbsp;</div></td></tr></tbody></table></div></form></div>
+      </li>
+    </ul>
+  </div>
+</nav><button type="button" class="to-the-top">
+  <span class="sr-only">Top</span>
+  <span class="fa fa-chevron-up"></span>
+</button><nav class="main-nav navbar">
+  <header class="nav-header">
+    <a href="https://www.softwareag.cloud/site/dev-center/cumulocity-iot.html">
+      <img src="https://cumulocity.com/guides/images/cumulocity-iot.svg"
+        class="img-responsive no-zoom"
+        alt="Cumulocity IoT">
+    </a>
+
+    <div class="dropdown">
+      <button class="dropdown-toggle"
+        type="button"
+        id="dropdownMenuButton"
+        data-toggle="dropdown"
+        aria-haspopup="true"
+        aria-expanded="false">
+        <span id="current-dropdown-toggle" class="text-truncate"></span> <span class="caret"></span>
+      </button>
+      <div class="dropdown-menu"
+        aria-labelledby="dropdownMenuButton">
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+
+        
+        
+        
+
+        <a class='dropdown-menu-item '
+          href='https://cumulocity.com/guides/release-notes/overview/'><i class="c8y-icon c8y-icon-notification"></i> Release notes</a>
+        
+        
+        
+        
+        
+        
+        
+        
+
+        
+        
+        
+
+        <a class='dropdown-menu-item '
+          href='https://cumulocity.com/guides/concepts/introduction/'><i class="c8y-icon c8y-icon-c8y-data"></i> Concepts guide</a>
+        
+        
+        
+        
+        
+        
+        
+        
+
+        
+        
+        
+
+        <a class='dropdown-menu-item '
+          href='https://cumulocity.com/guides/users-guide/getting-started/'><i class="c8y-icon c8y-icon-user"></i> User guide</a>
+        
+        
+        
+        
+        
+        
+        
+        
+
+        
+        
+        
+
+        <a class='dropdown-menu-item '
+          href='https://cumulocity.com/guides/benutzerhandbuch/overview/'><i class="c8y-icon c8y-icon-user"></i> Handbuch</a>
+        
+        
+        
+        
+        
+        
+        
+        
+
+        
+        
+        
+
+        <a class='dropdown-menu-item '
+          href='https://cumulocity.com/guides/devices/overview/'><i class="c8y-icon c8y-icon-device-management"></i> Device guides</a>
+        
+        
+        
+        
+        
+        
+        
+        
+
+        
+        
+        
+
+        <a class='dropdown-menu-item '
+          href='https://cumulocity.com/guides/edge/overview/'><i class="fa fa-book"></i> Cumulocity IoT Edge</a>
+        
+        
+        
+        
+        
+        
+        
+        
+
+        
+        
+        
+        
+        <span class="current-app">Microservice SDK guide</span>
+        
+        
+
+        <a class='dropdown-menu-item active'
+          href='https://cumulocity.com/guides/microservice-sdk/introduction/'><i class="c8y-icon c8y-icon-tools"></i> Microservice SDK guide</a>
+        
+        
+        
+        
+        
+        
+        
+        
+
+        
+        
+        
+
+        <a class='dropdown-menu-item '
+          href='https://cumulocity.com/guides/device-sdk/introduction/'><i class="c8y-icon c8y-icon-tools"></i> Device SDK guide</a>
+        
+        
+        
+        
+        
+        
+        
+        
+
+        
+        
+        
+
+        <a class='dropdown-menu-item '
+          href='https://cumulocity.com/guides/web/introduction/'><i class="c8y-icon c8y-icon-smart-rest"></i> Web SDK guide</a>
+        
+        
+        
+        
+        
+        
+        
+        
+
+        
+        
+        
+
+        <a class='dropdown-menu-item '
+          href='https://cumulocity.com/guides/apama/overview-analytics/'><i class="c8y-icon c8y-icon-data-explorer"></i> Analytics guide</a>
+        
+        
+        
+        
+        
+        
+        
+        
+
+        
+        
+        
+
+        <a class='dropdown-menu-item '
+          href='https://cumulocity.com/guides/reference/rest-implementation/'><i class="fa fa-book"></i> Reference guide</a>
+        
+      </div>
+    </div>
+  </header>
+
+  
+
+  <nav id="main-nav"
+    class="nav-sections">
+    
+    
+    <div class="">
+        
+        
+        
+        
+      <a class=""
+        href="https://cumulocity.com/guides/microservice-sdk/introduction/">Microservices SDK</a>
+     
+      
+    </div>
+    
+    
+    
+    <div class="">
+        
+        
+        
+        
+      <a href="javascript:void(0);"
+        data-toggle="collapse"
+        data-target="#page-nav1"
+        class="collapse-btn  collapsed ">
+        <i class="fa fa-chevron-right "></i>
+      </a>
+      
+      <a class=""
+        href="https://cumulocity.com/guides/microservice-sdk/concept/">General aspects</a>
+     
+      
+      
+      <div id="page-nav1"
+        class="collapse   ">
+        <nav class="list-group nav">
+          
+          
+            <a class="list-group-item"
+              href="https://cumulocity.com/guides/microservice-sdk/concept/#overview">Overview</a>
+            
+            
+          
+            <a class="list-group-item"
+              href="https://cumulocity.com/guides/microservice-sdk/concept/#docker">Docker image and container</a>
+            
+            
+          
+            <a class="list-group-item"
+              href="https://cumulocity.com/guides/microservice-sdk/concept/#manifest">Microservice manifest</a>
+            
+            
+          
+            <a class="list-group-item"
+              href="https://cumulocity.com/guides/microservice-sdk/concept/#isolation-levels">Microservice isolation levels</a>
+            
+            
+          
+            <a class="list-group-item"
+              href="https://cumulocity.com/guides/microservice-sdk/concept/#scaling">Scaling</a>
+            
+            
+          
+            <a class="list-group-item"
+              href="https://cumulocity.com/guides/microservice-sdk/concept/#security">Security</a>
+            
+            
+          
+            <a class="list-group-item"
+              href="https://cumulocity.com/guides/microservice-sdk/concept/#environment-variables">Environment variables</a>
+            
+            
+          
+            <a class="list-group-item"
+              href="https://cumulocity.com/guides/microservice-sdk/concept/#packaging">Packaging</a>
+            
+            
+          
+            <a class="list-group-item"
+              href="https://cumulocity.com/guides/microservice-sdk/concept/#request-routing">Request routing</a>
+            
+            
+          
+            <a class="list-group-item"
+              href="https://cumulocity.com/guides/microservice-sdk/concept/#requirements">Microservice requirements</a>
+            
+            
+          
+            <a class="list-group-item"
+              href="https://cumulocity.com/guides/microservice-sdk/concept/#operation">Operating microservices</a>
+            
+            
+          
+            <a class="list-group-item"
+              href="https://cumulocity.com/guides/microservice-sdk/concept/#deployment">Deploying microservices</a>
+            
+            
+        </nav>
+      </div>
+      
+    </div>
+    
+    
+    
+    <div class="">
+        
+        
+        
+        
+      <a href="javascript:void(0);"
+        data-toggle="collapse"
+        data-target="#page-nav2"
+        class="collapse-btn  collapsed ">
+        <i class="fa fa-chevron-right "></i>
+      </a>
+      
+      <a class=""
+        href="https://cumulocity.com/guides/microservice-sdk/java/">Microservice SDK for Java</a>
+     
+      
+      
+      <div id="page-nav2"
+        class="collapse   ">
+        <nav class="list-group nav">
+          
+          
+            <a class="list-group-item"
+              href="https://cumulocity.com/guides/microservice-sdk/java/#introduction">Overview</a>
+            
+            
+          
+            <a class="list-group-item"
+              href="https://cumulocity.com/guides/microservice-sdk/java/#java-microservice">Hello microservice!</a>
+            
+            
+          
+            <a class="list-group-item"
+              href="https://cumulocity.com/guides/microservice-sdk/java/#developing-microservice">Developing Microservices</a>
+            
+            
+          
+            <a class="list-group-item"
+              href="https://cumulocity.com/guides/microservice-sdk/java/#developing-services-client">Developing Java clients for services</a>
+            
+            
+          
+            <a class="list-group-item"
+              href="https://cumulocity.com/guides/microservice-sdk/java/#troubleshooting">Troubleshooting</a>
+            
+            
+        </nav>
+      </div>
+      
+    </div>
+    
+    
+    
+    <div class="">
+        
+        
+        
+        
+      <a href="javascript:void(0);"
+        data-toggle="collapse"
+        data-target="#page-nav3"
+        class="collapse-btn  collapsed ">
+        <i class="fa fa-chevron-right "></i>
+      </a>
+      
+      <a class=""
+        href="https://cumulocity.com/guides/microservice-sdk/cs/">Microservice SDK for C#</a>
+     
+      
+      
+      <div id="page-nav3"
+        class="collapse   ">
+        <nav class="list-group nav">
+          
+          
+            <a class="list-group-item"
+              href="https://cumulocity.com/guides/microservice-sdk/cs/#introduction">Overview</a>
+            
+            
+          
+            <a class="list-group-item"
+              href="https://cumulocity.com/guides/microservice-sdk/cs/#hello-world-basic">Hello, world!</a>
+            
+            
+          
+            <a class="list-group-item"
+              href="https://cumulocity.com/guides/microservice-sdk/cs/#developing-microservice">Developing Microservices</a>
+            
+            
+        </nav>
+      </div>
+      
+    </div>
+    
+    
+    
+    <div class=" slot-active ">
+        
+        
+        
+        
+      <a href="javascript:void(0);"
+        data-toggle="collapse"
+        data-target="#page-nav4"
+        class="collapse-btn ">
+        <i class="fa fa-chevron-right "></i>
+      </a>
+      
+      <a class=" active "
+        href="https://cumulocity.com/guides/microservice-sdk/rest/">Using the REST interface</a>
+     
+      
+      
+      <div id="page-nav4"
+        class="collapse   show  ">
+        <nav class="list-group nav">
+          
+          
+          <a class="list-group-item"
+            href="#overview">Overview</a>
+          
+            
+          
+          <a class="list-group-item"
+            href="#microservice-development">Microservice development</a>
+          
+            
+          
+          <a class="list-group-item"
+            href="#application-development">Application development</a>
+          
+            
+          
+          <a class="list-group-item"
+            href="#smartrest">Using SmartREST</a>
+          
+            
+        </nav>
+      </div>
+      
+    </div>
+    
+    
+    
+    <div class="">
+        
+        
+        
+        
+      <a href="javascript:void(0);"
+        data-toggle="collapse"
+        data-target="#page-nav5"
+        class="collapse-btn  collapsed ">
+        <i class="fa fa-chevron-right "></i>
+      </a>
+      
+      <a class=""
+        href="https://cumulocity.com/guides/microservice-sdk/http/">Python example</a>
+     
+      
+      
+      <div id="page-nav5"
+        class="collapse   ">
+        <nav class="list-group nav">
+          
+          
+            <a class="list-group-item"
+              href="https://cumulocity.com/guides/microservice-sdk/http/#hello-microservice-python">Hello Microservice Python</a>
+            
+            
+        </nav>
+      </div>
+      
+    </div>
+    
+    
+    
+    
+  </nav>
+</nav>
+<div class="cover"></div>
+
+<div class="main-content">
+  <article class="page-section">
+    <header class="section-header">
+      <h1 class="text-light">Using the REST interface</h1>
+    </header>
+    
+      <div class="lead">
+        <p>This section describes specific aspects of developing microservices using the REST interface.</p>
+
+      </div>
+      
+  </article>
+
+  
+  
+  
+  <article id="overview" class="page-section">
+    <h2>
+      <button class="btn-link bookmark" data-clipboard-text="#overview">
+        <span class="fa fa-link"></span>
+      </button>
+      Overview</h2>
+    
+
+<p>Cumulocity employs REST for all external communication. Regardless whether the communication originates from IoT devices, from web applications or from backoffice IT systems — the communication protocol is always REST.</p>
+
+<p>REST is a very simple and secure protocol based on HTTP(S) and TCP. It is today the de-facto Internet standard supported by all networked programming environments ranging from very simple devices up to large-scale IT. One of the many books introducing REST is <a href="http://oreilly.com/catalog/9780596529260">RESTful Web Services</a>.</p>
+
+<p>This section explains how to use Cumulocity&rsquo;s REST interfaces to</p>
+
+<ul>
+<li><strong>develop applications on top of Cumulocity</strong>.</li>
+</ul>
+
+<p>The description is closely linked to the Reference guide, which describes each interface in detail. Relevant chapters in the reference guide are in particular</p>
+
+<ul>
+<li><a href="/guides/reference/rest-implementation">REST implementation</a> is the reference for all general concepts.</li>
+<li><a href="/guides/reference/device-management">Device management library</a> specifies the data model for device management.</li>
+<li><a href="/guides/reference/sensor-library">Sensor library</a> specifies the data model for sensors and controls.</li>
+</ul>
+
+<p>For further information on REST interfaces in general and on integrating devices with REST, refer to the REST section in the Device SDK guide.</p>
+
+<p>If you develop applications using Java or C#, check the relevant sections for even more convenient access to Cumulocity&rsquo;s functionality.</p>
+
+<h3 id="using-the-rest-interfaces">Using the REST interfaces</h3>
+
+<p>Most programming environments today have particular support for REST-based communication. For experimentation and for understanding Cumulocity&rsquo;s REST interfaces, it is helpful to use one of the numerous available command line tools or browser extensions.</p>
+
+<p>For example, many operating systems come pre-installed with the &ldquo;curl&rdquo; command. If you want to start browsing the Cumulocity APIs, enter on a command line:</p>
+
+<pre><code>$ curl -u &lt;username&gt;:&lt;password&gt; https://&lt;yourURL&gt;.cumulocity.com/platform
+</code></pre>
+
+<p>Replace &ldquo;username&rdquo; and &ldquo;password&rdquo; with the username and password that you used to register to Cumulocity. Similarly, replace &ldquo;yourURL&rdquo; with the URL you used at registration time.</p>
+
+<p>The command will return links to all basic interfaces of Cumulocity:</p>
+
+<pre><code>...
+&quot;inventory&quot;: {
+    &quot;managedObjects&quot;: {
+        &quot;references&quot;: [], 
+        &quot;self&quot;: &quot;https://&lt;yourURL&gt;/inventory/managedObjects&quot;
+    }, 
+    &quot;managedObjectsForFragmentType&quot;: &quot;https://&lt;yourURL&gt;/inventory/managedObjects?fragmentType={fragmentType}&quot;, 
+    &quot;managedObjectsForListOfIds&quot;: &quot;https://&lt;yourURL&gt;/inventory/managedObjects?ids={ids}&quot;, 
+    &quot;managedObjectsForType&quot;: &quot;https://&lt;yourURL&gt;/inventory/managedObjects?type={type}&quot;, 
+    &quot;self&quot;: &quot;https://&lt;yourURL&gt;/inventory&quot;
+},
+...
+</code></pre>
+
+<p>To format the output more nicely on a Mac, try &ldquo;curl &hellip; | python -mjson.tool&rdquo;.</p>
+
+<p>From this point, you can navigate further. For example, display the items in the inventory by following the &ldquo;managedObjects&rdquo; link:</p>
+
+<pre><code>$ curl -u &lt;username&gt;:&lt;password&gt; https://&lt;yourURL&gt;.cumulocity.com/inventory/managedObjects
+</code></pre>
+
+<p>You will notice that just a subset of the items in the inventory is actually returned, a so-called &ldquo;page&rdquo;. More information on page handling can be found under <a href="/guides/reference/rest-implementation#paging">Query result paging</a>.</p>
+
+<h3 id="using-postman">Using Postman</h3>
+
+<p>A convenient way to explore REST interface and the Cumulocity database content are graphical REST clients such as <a href="https://www.getpostman.com/">Postman</a>.</p>
+
+<p><img src="/guides/images/rest/postman.png" alt="Example REST client" /></p>
+
+<p>Cumulocity provides numerous online API examples. If you want to make use of them, <a href="https://www.getpostman.com/">download and install Postman</a>. After starting Postman, you can choose to either create an account or click &ldquo;Take me straight to the app&rdquo;. Then click the button below and choose the variant of Postman that you have just installed. You may see a browser security prompt asking you whether you actually want to run Postman (on Windows &ldquo;Electron&rdquo;).</p>
+
+<p><a href="https://app.getpostman.com/run-collection/7c7d00719ab238097686"><img src="https://run.pstmn.io/button.svg" alt="Run in Postman" /></a></p>
+
+<p>Now, click the &ldquo;Collections&rdquo; tab on the top left of Postman. You should see a folder &ldquo;Cumulocity API&rdquo; with the examples. Open that folder and the sub-folder &ldquo;Alarms&rdquo;, then click on &ldquo;Get collection of alarms&rdquo;. This shows an example on how to get alarms from Cumulocity.</p>
+
+<p>Note that the example contains placeholders, in this case a placeholder &ldquo;url&rdquo; in &ldquo;{{url}}/alarm/alarms&rdquo;. You need to tell Postman how to fill these placeholders and by this, how to connect to your Cumulocity account. To do so, create an <a href="https://www.getpostman.com/docs/environments">&ldquo;environment&rdquo;</a> and configure the placeholders.</p>
+
+<ul>
+<li>Click on the cogwheel on the top right and choose &ldquo;Manage Environments&rdquo;, then click the &ldquo;Add&rdquo;.</li>
+<li>Enter a name for the environment (e.g., your tenant name), then add values for the placeholders.</li>
+<li>Configure a key &ldquo;url&rdquo; with a value of &ldquo;https://&lt;yourURL&gt;.cumulocity.com&rdquo;. Click &ldquo;Submit&rdquo;.</li>
+<li>Configure a key &ldquo;auth&rdquo; with the value of the &ldquo;Authorization&rdquo; header for the REST requests.</li>
+<li>Click &ldquo;Add&rdquo;, then close the dialog. Now select your newly created environment from the drop-down box on the top right, that initially reads &ldquo;No environment&rdquo;.</li>
+</ul>
+
+<p><img src="/guides/images/rest/postmanenvironment.png" alt="Postman environment setup" style="max-width: 50%"></p>
+
+<blockquote>
+<p>A simple way to determine the correct value for the &ldquo;auth&rdquo; key is to use a web tool. Example: Assume your tenant name is &ldquo;tenant&rdquo;, your username is &ldquo;me&rdquo; and your password is &ldquo;secret&rdquo;. Go to <a href="http://ostermiller.org/calc/encode.html">http://ostermiller.org/calc/encode.html</a>, type &ldquo;tenant/me:secret&rdquo; into the text area, then click the &ldquo;Encode&rdquo; button in the row &ldquo;Base 64&rdquo;. The resulting text is &ldquo;dGVuYW50L21lOnNlY3JldA==&rdquo;. Use &ldquo;Basic dGVuYW50L21lOnNlY3JldA==&rdquo; as value for &ldquo;auth&rdquo;.</p>
+</blockquote>
+
+<p>Now start exploring the API.</p>
+
+  </article>
+  
+  <article id="microservice-development" class="page-section">
+    <h2>
+      <button class="btn-link bookmark" data-clipboard-text="#microservice-development">
+        <span class="fa fa-link"></span>
+      </button>
+      Microservice development</h2>
+    
+
+<p>The following guide will introduce you to basic REST endpoints required for REST microservice development.</p>
+
+<h3 id="a-name-creating-application-a-creating-applications"><a name="creating-application"></a> Creating applications</h3>
+
+<p>In order to start working with microservices an instance of application must be created first. It can be done using the following endpoint:</p>
+
+<pre><code>POST /application/applications
+Host: ...
+Authorization: Basic ...
+Content-Length: ...
+Content-Type: application/vnd.com.nsn.cumulocity.application+json
+{
+  &quot;key&quot;: &quot;{APPLICATION_NAME}-key&quot;,
+  &quot;name&quot;: &quot;{APPLICATION_NAME}&quot;,
+  &quot;type&quot;: &quot;MICROSERVICE&quot;,
+  &quot;requiredRoles&quot;: [&quot;ROLE_INVENTORY_READ&quot;],
+  &quot;roles&quot;: [&quot;ROLE_CUSTOM_MICROSERVICE&quot;]
+}
+</code></pre>
+
+<p>Success response consists of 201 status and location header similar to</p>
+
+<pre><code>{HOST}/application/applications/{APPLICATION_ID}
+</code></pre>
+
+<p>In the request body there are two fields requiring description:</p>
+
+<ul>
+<li>requiredRoles - List of Cumulocity permissions, the microservice user needs in order to get data from Cumulocity, e.g. if the microservice creates a managed object, then one of the requiredRoles should be ROLE_INVENTORY_CREATE</li>
+<li>roles - List of microservice permissions. If the microservice exposes own REST API, it can be secured with an own set of permissions, e.g. SMS microservice would require SMS_ADMIN permission to send SMS. These permissions become available in the tenant after microservice subscription. Afterwards, user admin can grant such permission to a user that wants to send SMS via the Cumulocity platform.
+<br /></li>
+</ul>
+
+<p>The application ID for created applications can be found by executing</p>
+
+<pre><code>GET /application/applicationsByName/{APPLICATION_NAME}
+    Host: ...
+    Authorization: Basic ...
+    Accept: application/vnd.com.nsn.cumulocity.application+json
+</code></pre>
+
+<p>The success response will look similar to</p>
+
+<pre><code>{
+    &quot;applications&quot;: [
+        {
+            &quot;activeVersionId&quot;: &quot;329&quot;,
+            &quot;availability&quot;: &quot;MARKET&quot;,
+            &quot;id&quot;: &quot;174&quot;,
+            &quot;key&quot;: &quot;{APPLICATION_NAME}-microservice-key&quot;,
+            &quot;manifest&quot;: {
+                &quot;imports&quot;: [],
+                &quot;noAppSwitcher&quot;: true
+            },
+            &quot;name&quot;: &quot;{APPLICATION_NAME}&quot;,
+            &quot;owner&quot;: {
+                &quot;self&quot;: &quot;{HOST}/tenant/tenants/{TENANT}&quot;,
+                &quot;tenant&quot;: {
+                    &quot;id&quot;: &quot;{TENANT}&quot;
+                }
+            },
+            &quot;requiredRoles&quot;: [],
+            &quot;roles&quot;: [],
+            &quot;self&quot;: &quot;{HOST}/application/applications/174&quot;,
+            &quot;type&quot;: &quot;MICROSERVICE&quot;
+        }
+    ],
+    &quot;next&quot;: &quot;{HOST}/application/applications?pageSize=5&amp;currentPage=2&quot;,
+    &quot;statistics&quot;: {
+        &quot;currentPage&quot;: 1,
+        &quot;pageSize&quot;: 5
+    },
+    &quot;self&quot;: &quot;{HOST}/application/applications?pageSize=5&amp;currentPage=1&quot;
+}
+</code></pre>
+
+<p>The application can be updated later on using</p>
+
+<pre><code>PUT /application/applications/{APPLICATION_ID}
+    Host: ...
+    Authorization: Basic ...
+    Content-Length: ...
+    Content-Type: application/vnd.com.nsn.cumulocity.application+json
+{
+      &quot;key&quot;: &quot;{APPLICATION_NAME}-key&quot;,
+      &quot;name&quot;: &quot;{APPLICATION_NAME}&quot;,
+      &quot;type&quot;: &quot;MICROSERVICE&quot;,
+      &quot;requiredRoles&quot;: [&quot;ROLE_INVENTORY_READ&quot;],
+      &quot;roles&quot;: [&quot;ROLE_CUSTOM_MICSROSERVICE&quot;]
+    }
+</code></pre>
+
+<h3 id="deploying-applications">Deploying applications</h3>
+
+<p>A microservice application gets available for Cumulocity platform users by uploading a binary ZIP file.</p>
+
+<pre><code> POST /application/applications/{APPLICATION_ID}/binaries
+ Host: ...
+ Authorization: Basic …
+ Content-Type: multipart/form-data
+</code></pre>
+
+<p>The ZIP file must consist of:</p>
+
+<ul>
+<li>cumulocity.json - file describing the deployment</li>
+<li>image.tar - executable Docker image</li>
+</ul>
+
+<h3 id="a-name-acquiring-microservice-credentials-a-acquiring-microservice-credentials"><a name="acquiring-microservice-credentials"></a>Acquiring microservice credentials</h3>
+
+<p>The following section is a wrap up for user management as described under <a href="/guides/microservice-sdk/concept">General aspects of microservices in Cumulocity</a>.</p>
+
+<p>Microservice related endpoints require a microservice bootstrap user, which can be obtained by a service provider using</p>
+
+<pre><code>GET /application/applications/{APPLICATION_ID}/bootstrapUser
+Host: ...
+Authorization: Basic ...
+</code></pre>
+
+<p>Response:</p>
+
+<pre><code>HTTP/1.1 200 Ok
+Content-Type: application/vnd.com.nsn.cumulocity.user+json
+{
+  &quot;tenant&quot;: &quot;...&quot;,
+  &quot;name&quot;: &quot;...&quot;,
+  &quot;password&quot;: &quot;...&quot;
+}
+</code></pre>
+
+<p>The credentials allow access to the following endpoints:</p>
+
+<pre><code>GET /tenant/currentTenant
+GET /user/currentUser
+GET /application/currentApplication
+GET /application/currentApplication/subscription
+PUT /application/currentApplication
+</code></pre>
+
+<p>For example, get current application:</p>
+
+<pre><code>GET /application/currentApplication
+Authorization: Basic ...
+Content-Type: application/json
+</code></pre>
+
+<p>Response:</p>
+
+<pre><code>{
+    &quot;activeVersionId&quot;: &quot;329&quot;,
+    &quot;availability&quot;: &quot;MARKET&quot;,
+    &quot;id&quot;: &quot;...&quot;,
+    &quot;key&quot;: &quot;...&quot;,
+    &quot;manifest&quot;: {
+        &quot;imports&quot;: [],
+        &quot;noAppSwitcher&quot;: true
+    },
+    &quot;name&quot;: &quot;hello-world&quot;,
+    &quot;owner&quot;: {
+        &quot;self&quot;: &quot;...&quot;,
+        &quot;tenant&quot;: {
+            &quot;id&quot;: &quot;...&quot;
+        }
+    },
+    &quot;requiredRoles&quot;: [],
+    &quot;roles&quot;: [],
+    &quot;self&quot;: &quot;...&quot;,
+    &quot;type&quot;: &quot;MICROSERVICE&quot;
+}
+</code></pre>
+
+<h3 id="subscriptions">Subscriptions</h3>
+
+<p>Subscription in this scope means tenant subscription to a microservice application. The subscription is an important step after deployment.
+When a microservice application is deployed, it is subscribable to other tenants. Subscribing to a microservice is the same as subscribing to any other application and can be done in the Administration application. A tenant can be subscribed by executing the following:</p>
+
+<pre><code>POST /tenant/tenants/{TENANT}/applications
+Host: ...
+Authorization: Basic ...
+Content-Length: ...
+Content-Type: application/vnd.com.nsn.cumulocity.applicationReference+json
+Accept: application/vnd.com.nsn.cumulocity.tenant+json
+{
+  &quot;application&quot;:{
+    &quot;id&quot;:&quot;{APPLICATION_ID}&quot;
+  }
+}
+</code></pre>
+
+<p>A successful response will look similar to</p>
+
+<pre><code>HTTP/1.1 201 Created
+Content-Type: application/vnd.com.nsn.cumulocity.tenant+json
+Content-Length: ...
+{
+    &quot;application&quot;: {
+        &quot;id&quot;: &quot;{APPLICATION_ID}&quot;,
+        &quot;key&quot;: &quot;...&quot;,
+        &quot;name&quot;: &quot;...&quot;,
+        &quot;owner&quot;: {
+            &quot;self&quot;: &quot;.../tenant/tenants/{TENANT}&quot;,
+            &quot;tenant&quot;: {
+                &quot;id&quot;: &quot;{TENANT}&quot;
+            }
+        },
+        &quot;self&quot;: &quot;...&quot;,
+        &quot;type&quot;: &quot;MICROSERVICE&quot;
+    },
+    &quot;self&quot;: &quot;...&quot;
+}
+</code></pre>
+
+<p>The subscriptions are available to microservice user through authorized microservice bootstrap user.</p>
+
+<pre><code>GET /application/currentApplication/subscriptions
+Host: ...
+Authorization: Basic …
+</code></pre>
+
+<p>Response:</p>
+
+<pre><code>HTTP/1.1 200 OK
+Content-Type: application/vnd.com.nsn.cumulocity.applicationUserCollection+json
+{
+  &quot;users&quot;: [{
+    &quot;tenant&quot;: &quot;...&quot;,
+    &quot;name&quot;: &quot;...&quot;,
+    &quot;password&quot;: &quot;...&quot;
+  }]
+  &quot;self&quot;: &quot;.../applications/application/285/users&quot;
+}
+</code></pre>
+
+<p>The response consists of service user credentials dedicated for each tenant. A service user is a user account in the tenant that has the permissions (&ldquo;roles&rdquo;) that the microservice requested on <a href="#creating-application">registration</a> time.</p>
+
+  </article>
+  
+  <article id="application-development" class="page-section">
+    <h2>
+      <button class="btn-link bookmark" data-clipboard-text="#application-development">
+        <span class="fa fa-link"></span>
+      </button>
+      Application development</h2>
+    
+
+<p>In this section, we are touching some of the basic use cases in using the Cumulocity REST APIs for application development.</p>
+
+<h3 id="registering-assets">Registering assets</h3>
+
+<p>Assets are the objects that your business and your application focusses on. For example, assets might be buildings and rooms if your business centers around building management or home automation. Or they might be routes and machines, if your business is about servicing machines.</p>
+
+<p>Assets are stored in the inventory along with the devices, but they often have an own structure independent of devices. You create assets by POSTing them to the collection of managed objects in the inventory. For example, to create a new room in the inventory:</p>
+
+<pre><code>POST /inventory/managedObjects HTTP/1.1
+Content-Type: application/vnd.com.nsn.cumulocity.managedObject+json
+Accept: application/vnd.com.nsn.cumulocity.managedObject+json
+...
+{
+    &quot;name&quot;: &quot;Building 043&quot;,
+    &quot;type&quot;: &quot;c8y_Building&quot;
+}
+
+HTTP/1.1 201 Created
+Content-Type: application/vnd.com.nsn.cumulocity.managedObject+json;charset=UTF-8;ver=0.9
+...
+{
+    &quot;owner&quot;: &quot;admin&quot;,
+    &quot;id&quot;: &quot;2549800&quot;,
+    &quot;self&quot;: &quot;http://.../inventory/managedObjects/2549800&quot;,
+    &quot;type&quot;: &quot;c8y_Building&quot;,
+    &quot;lastUpdated&quot;: &quot;2013-09-05T16:38:31.250+02:00&quot;,
+    &quot;name&quot;: &quot;Building 043&quot;,
+    &quot;assetParents&quot;: {
+        &quot;references&quot;: [],
+        &quot;self&quot;: &quot;https://.../inventory/managedObjects/2549800/assetParents&quot;
+    },
+    &quot;childAssets&quot;: {
+        &quot;references&quot;: [],
+        &quot;self&quot;: &quot;https://.../inventory/managedObjects/2549800/childAssets&quot;
+    },
+    &quot;childDevices&quot;: {
+        &quot;references&quot;: [],
+        &quot;self&quot;: &quot;https://.../inventory/managedObjects/2549800/childDevices&quot;
+    },
+    &quot;deviceParents&quot;: {
+        &quot;references&quot;: [],
+        &quot;self&quot;: &quot;https://.../inventory/managedObjects/2549800/deviceParents&quot;
+    }
+}
+</code></pre>
+
+<p>If the device could be successfully created, a status code of 201 is returned. If the original request contains an &ldquo;Accept&rdquo; header just like in the example, the complete created object is returned including the ID and URL to reference the object in future requests. The returned object also includes references to collections of child devices and child assets that can be used to add children to the device.</p>
+
+<p>For example, assuming that we have also created a room, and that room&rsquo;s &ldquo;self&rdquo; property is &ldquo;https://&hellip;/inventory/managedObjects/2549700&rdquo;. To link the room to the building, POST to the child assets collection of the building (see the &ldquo;self&rdquo; property of &ldquo;childAssets&rdquo; above):</p>
+
+<pre><code>POST /inventory/managedObjects/2549800/childAssets HTTP/1.1
+Content-Type: application/vnd.com.nsn.cumulocity.managedObjectReference+json
+
+{ &quot;managedObject&quot; : { &quot;self&quot; : &quot;http://.../inventory/managedObjects/2549700&quot; } } 
+
+HTTP/1.1 201 Created
+</code></pre>
+
+<p>Now querying the building again shows that the room has been registered as child of the building:</p>
+
+<pre><code>GET /inventory/managedObjects/2549800 HTTP/1.1
+
+HTTP/1.1 200 OK
+Content-Type: application/vnd.com.nsn.cumulocity.managedObject+json; charset=UTF-8; ver=0.9
+...
+{
+    &quot;owner&quot;: &quot;admin&quot;,
+    &quot;id&quot;: &quot;2549800&quot;,
+    &quot;self&quot;: &quot;http://.../inventory/managedObjects/2549800&quot;,
+    ...
+    &quot;childAssets&quot;: {
+        &quot;references&quot;: [
+            {
+                &quot;managedObject&quot;: {
+                    &quot;id&quot;: &quot;2549700&quot;,
+                    &quot;name&quot;: &quot;Room 042&quot;,
+                    &quot;self&quot;: &quot;https://.../inventory/managedObjects/2549700&quot;
+                },
+                &quot;self&quot;: &quot;https://.../inventory/managedObjects/2549800/childAssets/2549700&quot;
+            }
+        ],
+        &quot;self&quot;: &quot;https://.../inventory/managedObjects/2549800/childAssets&quot;
+    }
+}
+</code></pre>
+
+<h3 id="linking-devices-to-assets">Linking devices to assets</h3>
+
+<p>Just like you link assets to other child assets, you can link assets also to devices that monitor and control the asset. For example, assume that you have a light sensor installed in the room, and that light sensor has the URL &ldquo;https://&hellip;/inventory/managedObjects/2480500&rdquo;. POST to the &ldquo;childDevices&rdquo; of the room as follows:</p>
+
+<pre><code>POST /inventory/managedObjects/2549700/childDevices HTTP/1.1
+Content-Type: application/vnd.com.nsn.cumulocity.managedObjectReference+json
+
+{ &quot;managedObject&quot; : { &quot;self&quot; : &quot;https://.../inventory/managedObjects/2480500&quot; } } 
+
+HTTP/1.1 201 Created
+</code></pre>
+
+<h3 id="synchronizing-assets-with-external-systems">Synchronizing assets with external systems</h3>
+
+<p>Often, Cumulocity will not be the only IT system dealing with a company&rsquo;s asset. The technical procedure for synchronizing assets stored in external IT systems is exactly the same as the <a href="/guides/device-sdk/rest#device-integration">procedure used for registering devices</a>:</p>
+
+<ul>
+<li>Use the Identity API to link the asset ID of the external IT system to the asset ID of Cumulocity.</li>
+<li>Use the Inventory API to create or update the assets in Cumulocity&rsquo;s inventory based on the external system&rsquo;s data.</li>
+</ul>
+
+<h3 id="querying-particular-capabilities">Querying particular capabilities</h3>
+
+<p>To decouple applications from the specifics of particular types and makes of devices, applications can use so-called fragments to query the inventory (see the Fragments section of <a href="/guides/concepts/domain-model">Cumulocity&rsquo;s domain model</a>). For example, to find all managed objects having a location, use</p>
+
+<pre><code>GET /inventory/managedObjects?fragmentType=c8y_Position&amp;withTotalPages=true HTTP/1.1
+
+HTTP/1.1 200 OK
+Content-Type: application/vnd.com.nsn.cumulocity.managedObjectCollection+json; charset=UTF-8; ver=0.9
+...
+{
+    &quot;managedObjects&quot;: [
+        {
+            &quot;id&quot;: &quot;2480700&quot;,
+            &quot;lastUpdated&quot;: &quot;2013-08-30T10:15:44.218+02:00&quot;,
+            &quot;name&quot;: &quot;RaspPi BCM2708 0000000017b769d5 Gps eM9&quot;,
+            &quot;owner&quot;: &quot;admin&quot;,
+            &quot;self&quot;: &quot;https://.../inventory/managedObjects/2480700&quot;,
+            &quot;type&quot;: &quot;c8y_TinkerForge_Gps&quot;,
+            &quot;c8y_Position&quot;: {
+                &quot;alt&quot;: 102.36,
+                &quot;lng&quot;: 6.769717,
+                &quot;lat&quot;: 51.267259
+            },
+            ...
+        },
+        ...
+    ]
+    &quot;next&quot;: &quot;https://.../inventory/managedObjects?withTotalPages=true&amp;fragmentType=c8y_Position&amp;pageSize=5&amp;currentPage=2&quot;,
+    &quot;statistics&quot;: {
+        &quot;currentPage&quot;: 1,
+        &quot;pageSize&quot;: 5,
+        &quot;totalPages&quot;: 4
+    },
+    &quot;self&quot;: &quot;https://.../inventory/managedObjects?withTotalPages=true&amp;fragmentType=c8y_Position&amp;pageSize=5&amp;currentPage=1&quot;
+}
+</code></pre>
+
+<p>Now you can, for example, place the object in a map. Standard fragments are defined in the <a href="/guides/reference/device-management">Device management library</a> and in the <a href="/guides/reference/sensor-library">Sensor library</a>.</p>
+
+<p>Querying the &ldquo;/platform&rdquo; resource will show you further possibilities for querying your data (see also the REST section in the Device SDK guide).</p>
+
+<p>Note, that queries do not necessarily return all query results at once, but only a &ldquo;page&rdquo; of the result. For more information on paging, see the section <a href="/guides/reference/rest-implementation">Query result paging</a> in the Reference guide. The optional parameter &ldquo;withTotalPages&rdquo; will make the query contain full page statistics at the expense of slightly slower performance.</p>
+
+<h3 id="querying-readings-from-sensors">Querying readings from sensors</h3>
+
+<p>Similar to the inventory, you can also query for particular sensor readings. For example, let&rsquo;s query the light measurements of the past month (from the time of writing this text):</p>
+
+<pre><code>GET /measurement/measurements?dateFrom=2013-08-05&amp;dateTo=2013-09-05&amp;fragmentType=c8y_LightMeasurement HTTP/1.1
+
+HTTP/1.1 200 OK
+Content-Type: application/vnd.com.nsn.cumulocity.measurementCollection+json; charset=UTF-8; ver=0.9
+... 
+{
+    &quot;measurements&quot;: [
+        {
+            &quot;id&quot;: &quot;2480900&quot;,
+            &quot;self&quot;: &quot;https://.../measurement/measurements/2480900&quot;,
+            &quot;source&quot;: {
+                &quot;id&quot;: &quot;2480500&quot;,
+                &quot;self&quot;: &quot;https://.../inventory/managedObjects/2480500&quot;
+            },
+            &quot;time&quot;: &quot;2013-08-29T21:19:52.321+02:00&quot;,
+            &quot;type&quot;: &quot;c8y_LightMeasurement&quot;,
+            &quot;c8y_LightMeasurement&quot;: {
+                &quot;e&quot;: { &quot;unit&quot;: &quot;lux&quot;, &quot;value&quot;: 169.2 }
+            }
+        },
+        ...
+    ]
+    ...
+}
+</code></pre>
+
+<h3 id="sending-operations-to-devices">Sending operations to devices</h3>
+
+<p>To trigger an operation on a device, POST the operation to the <a href="/guides/reference/device-control">Device Control API</a>. The following example restarts the device with the ID &ldquo;2480300&rdquo; (which is the Raspberry Pi that we <a href="/guides/device-sdk/rest#device-integration">previously integrated</a>):</p>
+
+<pre><code>POST /devicecontrol/operations HTTP/1.1
+Content-Type: application/vnd.com.nsn.cumulocity.operation+json;
+Accept: application/vnd.com.nsn.cumulocity.operation+json;
+...
+{
+    &quot;deviceId&quot;: &quot;2480300&quot;,
+    &quot;c8y_Restart&quot;:{}
+}
+
+HTTP/1.1 201 Created
+Content-Type: application/vnd.com.nsn.cumulocity.operation+json; charset=UTF-8; ver=0.9
+...
+{
+    &quot;creationTime&quot;: &quot;2013-09-05T19:18:16.117+02:00&quot;,
+    &quot;deviceId&quot;: &quot;2480300&quot;,
+    &quot;id&quot;:&quot;2550200&quot;, 
+    &quot;self&quot;: &quot;https://.../devicecontrol/operations/2550200&quot;,
+    &quot;status&quot;: &quot;PENDING&quot;,
+    &quot;c8y_Restart&quot;: {}
+}
+</code></pre>
+
+<p>The POST command returns immediately when the operation has been queued for the device. The actual operation executes asynchronously. Since we added the optional &ldquo;Accept&rdquo; header in the example request, we will get the full queued operation in the response including its URL in the &ldquo;self&rdquo; property. Using a GET on that URL, you can check the current state of execution of the operation:</p>
+
+<pre><code>GET /devicecontrol/operations/2550200 HTTP/1.1
+
+HTTP/1.1 200 OK
+Content-Type: application/vnd.com.nsn.cumulocity.operation+json; charset=UTF-8; ver=0.9
+...
+{
+    &quot;status&quot;: &quot;PENDING&quot;,
+    ...
+}
+</code></pre>
+
+<p>A state of PENDING means here that the device has not yet picked up the operation. EXECUTING means that the device is in the process of executing the operation. Finally, SUCCESSFUL or FAILED indicate that the operation is completed.</p>
+
+<h3 id="listening-for-events">Listening for events</h3>
+
+<p>Besides querying the Cumulocity data store, you can also process and receive events in real-time as described in <a href="/guides/concepts/realtime">Real-time processing in Cumulocity</a>. For example, assume that you would like to display real-time location updates in a map. Use the Administration application (or the <a href="/guides/reference/real-time-statements">REST API</a>) to create a new rule module &ldquo;myRule&rdquo;:</p>
+
+<pre><code>select * 
+from EventCreated e
+where e.event.type = &quot;c8y_LocationUpdate&quot;;
+</code></pre>
+
+<p>If you have a device that sends location updates, you should see them immediately in the user interface. To receive them in your own REST client, you use the <a href="/guides/reference/real-time-notifications">Notification API</a> to subscribe to them. The API is based on the Bayeux protocol. First, a handshake is required. The handshake tells Cumulocity what protocols the client supports for notifications and allocates a client ID to the client.</p>
+
+<pre><code>POST /cep/notifications HTTP/1.1
+Content-Type: application/json
+...
+[ {
+    &quot;id&quot;: &quot;1&quot;,
+    &quot;supportedConnectionTypes&quot;: [&quot;long-polling&quot;],
+    &quot;channel&quot;: &quot;/meta/handshake&quot;,
+    &quot;version&quot;: &quot;1.0&quot;
+} ]
+
+HTTP/1.1 200 OK
+...
+[ {
+    &quot;id&quot;: &quot;1&quot;,
+    &quot;supportedConnectionTypes&quot;: [&quot;websocket&quot;,&quot;long-polling&quot;],
+    &quot;channel&quot;: &quot;/meta/handshake&quot;,
+    &quot;version&quot;: &quot;1.0&quot;,
+    &quot;clientId&quot;: &quot;71fjkmy0495rxrkfcmp0mhcev1&quot;,
+    &quot;minimumVersion&quot;: &quot;1.0&quot;,
+    &quot;successful&quot;: true
+}]
+</code></pre>
+
+<p>After the handshake, the client needs to subscribe to the output of the above rule. This is done using a POST request with the module name and the statement name as subscription channel. In our example, we used the module name &ldquo;myRule&rdquo; and did not give a name to the &ldquo;select&rdquo; statement (&ldquo;@Name(&rdquo;)&ldquo;), so the subscription channel is &ldquo;/myRule/*&rdquo;.</p>
+
+<pre><code>POST /cep/notifications HTTP/1.1
+Content-Type: application/json
+...
+[ {
+    &quot;id&quot;: &quot;2&quot;,
+    &quot;channel&quot;: &quot;/meta/subscribe&quot;,
+    &quot;subscription&quot;: &quot;/myRule/*&quot;,
+    &quot;clientId&quot;:&quot;71fjkmy0495rxrkfcmp0mhcev1&quot;
+}]
+
+HTTP/1.1 200 OK
+...
+[ { 
+    &quot;id&quot;:&quot;2&quot;,
+    &quot;channel&quot;: &quot;/meta/subscribe&quot;,
+    &quot;subscription&quot;: &quot;/myRule/*&quot;,
+    &quot;successful&quot;: true,
+} ]
+</code></pre>
+
+<p>Finally, the client connects and waits for events to be sent to it.</p>
+
+<pre><code>POST /cep/notifications HTTP/1.1
+Content-Type: application/json
+...
+[ {
+    &quot;id&quot;: &quot;3&quot;,
+    &quot;connectionType&quot;: &quot;long-polling&quot;,
+    &quot;channel&quot;: &quot;/meta/connect&quot;,
+    &quot;clientId&quot;: &quot;71fjkmy0495rxrkfcmp0mhcev1&quot;
+} ]
+</code></pre>
+
+<p>This request will hang until an operation is issued. Here is an example of a response with a single location update:</p>
+
+<pre><code>HTTP/1.1 200 OK
+...
+[ 
+    {
+        &quot;id&quot;: &quot;139&quot;, 
+        &quot;data&quot;: {
+            &quot;creationTime&quot;: &quot;2013-08-30T09:38:45.551+02:00&quot;,
+            &quot;id&quot;: &quot;2481400&quot;,
+            &quot;self&quot;: &quot;https://.../event/events/2481400&quot;,
+            &quot;source&quot;: {
+                &quot;id&quot;: &quot;2480700&quot;,
+                &quot;name&quot;: &quot;RaspPi BCM2708 0000000017b769d5 Gps eM9&quot;,
+                &quot;self&quot;: &quot;https://.../inventory/managedObjects/2480700&quot;
+            },
+            &quot;text&quot;: &quot;Location updated&quot;,
+            &quot;time&quot;: &quot;2013-08-29T21:20:01.671+02:00&quot;,
+            &quot;type&quot;: &quot;c8y_LocationUpdate&quot;,
+            &quot;c8y_Position&quot;: {
+                &quot;alt&quot;: 58.34,
+                &quot;lng&quot;: 6.769717,
+                &quot;lat&quot;: 51.267259
+            },
+            &quot;channel&quot;: &quot;/myRule/*&quot;
+    }, {
+        &quot;id&quot;: &quot;3&quot;,
+        &quot;successful&quot;: true,
+        &quot;channel&quot;: &quot;/meta/connect&quot;
+    }
+]
+</code></pre>
+
+  </article>
+  
+  <article id="smartrest" class="page-section">
+    <h2>
+      <button class="btn-link bookmark" data-clipboard-text="#smartrest">
+        <span class="fa fa-link"></span>
+      </button>
+      Using SmartREST</h2>
+    
+
+<h3 id="overview">Overview</h3>
+
+<p>The Cumulocity REST APIs provide you with a generic IoT protocol that is simple to use from most environments. It can be ad-hoc adapted to any IoT use case and uses standard Internet communication and security mechanisms. While this is a great leap forward over tailored IoT protocols with proprietary technologies, it poses some challenges to very constrained environments such as low-end microcontrollers or low-bandwidth communication channels.</p>
+
+<p>For these enviroments, Cumulocity offers the so-called &ldquo;SmartREST&rdquo; protocol. SmartREST combines the benefits of standard technology and tailored protocols:</p>
+
+<ul>
+<li>It continues to work on any network by using standard HTTP technology.</li>
+<li>It supports HTTP authentication and encryption.</li>
+<li>It still gracefully handles protocol versioning.</li>
+<li>Its network traffic usage is close to custom-optimized protocols by transferring pure payload data during normal operation.</li>
+<li>It is based on CSV (comma separated values) and hence is easy to handle from C-based environments.</li>
+<li>It supports server-generated timestamps for devices without clocks.</li>
+</ul>
+
+<p>In the next section, we will discuss the concepts behind SmartREST and the basic protocol that is used. SmartREST is based on separating metadata from payload data by using so-called templates, which are then described. Finally, we show how to send and receive data using SmartREST. For a detailed description of the protocol, see the <a href="/guides/reference/smartrest">SmartREST reference</a>.</p>
+
+<h3 id="how-does-smartrest-work">How does SmartREST work?</h3>
+
+<p>The image below illustrates how SmartREST works. Devices and other clients connect to a dedicated SmartREST endpoint on Cumulocity and send their data in rows of comma-separated values. These rows are expanded by Cumulocity&rsquo;s SmartREST proxy into standard Cumulocity REST API requests. Similar, responses from Cumulocity are compressed by the proxy from their original JSON format into comma-separated values before sending them back to the device.</p>
+
+<p><img src="/guides/images/rest/smartrest.png" alt="SmartREST architecture" /></p>
+
+<p>How can Cumulocity interpret comma-separated values into meaningful REST requests? For that purpose, devices register templates with Cumulocity. The templates contain the expanded REST requests together with placeholders into which the Cumulocity SmartREST proxy consecutively inserts the comma-separate values. For responses, the templates describe which values to pick from the structured REST response to construct comma-separated values.</p>
+
+<p>Templates are associated with software or firmware versions of a device. Usually, a particular implementation of a device or application can only issue a particular set of well-defined types of requests. All devices with the same implementation share the same set of request types. Hence, the templates can be defined at implementation time. To make the templates available to Cumulocity, the first device with a particular implementation will send its templates and makes them available for usage by all similar devices.</p>
+
+<p>This process is illustrated below. Assume a device with an implementation version &ldquo;Device_1.0&rdquo; starts communicating through SmartREST. After retrieving its credentials, the device will ask the SmartREST proxy if its template is already known. If the template is not found on the server, the device will send its template in a single static text request to Cumulocity. Once this procedure has been carried out, all similar devices using that template can start communicating using SmartREST without re-sending the template to the server.</p>
+
+<p><img src="/guides/images/rest/templates.png" alt="SmartREST templates" /></p>
+
+<p>The example also roughly illustrates the translation process. In &ldquo;Template 1&rdquo;, &ldquo;%%&rdquo; is a placeholder to be filled by the SmartREST proxy. &ldquo;time&rdquo; is filled with a server-side timestamp (see below). The remaining placeholders are filled with request data. The line &ldquo;1,200,20.5&rdquo; in the example request is interpreted as follows:</p>
+
+<ul>
+<li>The first column references the template to be used, in this case Template 1.</li>
+<li>&ldquo;200&rdquo; refers to the first free placeholder in the template, in this case the ID in the &ldquo;source&rdquo; element. (The ID of the device that sends the measurement.)</li>
+<li>&ldquo;20.5&rdquo; refers to the second free placeholder in the template, here the value of the temperature measurement.</li>
+</ul>
+
+<h3 id="the-basic-smartrest-protocol">The basic SmartREST protocol</h3>
+
+<p>The basic structure of all SmartREST requests is as follows:</p>
+
+<ul>
+<li>All requests are POST requests to the endpoint &ldquo;/s&rdquo;, regardless of what the requests finally translate to.</li>
+<li>The standard HTTP &ldquo;Authorization&rdquo; header is used to authenticate the client.</li>
+<li>An additional &ldquo;X-Id:&rdquo; header is used to identify the implementation of the client, either as device type (such as &ldquo;Device_1.0&rdquo;) or as an identifier returned by the template registration process.</li>
+<li>A request body contains rows of text in comma-separated value format. Each row corresponds to one request to the standard Cumulocity REST API.</li>
+<li>The response is always &ldquo;200 OK&rdquo;.</li>
+<li>The response body again contains rows of comma-separated values. A row corresponds to a response from the Cumulocity REST API on a particular request.</li>
+</ul>
+
+<p>Using the above example, a SmartREST request would be as follows:</p>
+
+<pre><code>POST /s HTTP/1.1
+Authorization: Basic ...
+X-Id: Device_1.0
+
+1,200,20.5
+</code></pre>
+
+<p>And the corresponding response would be:</p>
+
+<pre><code>HTTP/1.1 200 OK
+Transfer-Encoding: chunked
+
+20,0
+</code></pre>
+
+<p>To match the requests and responses, a response line contains, next to the error code, the line of the request that the response answers. In this example, &ldquo;20&rdquo; indicates &ldquo;OK&rdquo; and &ldquo;0&rdquo; refers to the first line of the request.</p>
+
+<h3 id="how-are-templates-registered">How are templates registered?</h3>
+
+<p>As described above, a client using SmartREST will first ask if its SmartREST templates are already known to the server. This is done with an empty SmartREST request:</p>
+
+<pre><code>POST /s HTTP/1.1
+Authorization: Basic ...
+X-Id: Device_1.0
+</code></pre>
+
+<p>If the device implementation is known, the response will return an ID that can be used as &ldquo;shorthand&rdquo; in the &ldquo;X-Id&rdquo; header of later requests.</p>
+
+<pre><code>HTTP/1.1 200 OK
+
+20,&lt;id&gt;
+</code></pre>
+
+<p>If the device implementation is unknown, the response will be:</p>
+
+<pre><code>HTTP/1.1 200 OK
+
+40,&quot;No template for this X-ID&quot;
+</code></pre>
+
+<p>In this case, create all templates used in your device implementation.</p>
+
+<pre><code>POST /s HTTP/1.1
+Authorization: Basic ...
+X-Id: Device_1.0
+
+10,1,POST,/measurement/measurements,application/vnd.com.nsn.cumulocity.measurement+json,,%%,NOW UNSIGNED NUMBER,{ &quot;time&quot;: &quot;%%&quot;, &quot;type&quot;: ... }
+...
+</code></pre>
+
+<p>In this example, &ldquo;10&rdquo; refers to a request template (whereas &ldquo;11&rdquo; would refer to a response template). The template is number &ldquo;1&rdquo;, so SmartREST requests using this template have a &ldquo;1&rdquo; in their first column. The template refers to a &ldquo;POST&rdquo; request to the endpoint &ldquo;/measurement/measurements&rdquo; with a content type of &ldquo;application/vnd.com.nsn.cumulocity.measurement+json&rdquo;. The placeholder used in the template is &ldquo;%%&rdquo;. The placeholders are a time stamp (&ldquo;NOW&rdquo;), an unsigned number and a general number. Finally, the last column contains the body of the request to be filled in an sent.</p>
+
+<h3 id="how-are-responses-handled">How are responses handled?</h3>
+
+<p>The above example illustrated the handling of requests and request templates. For responses, <a href="http://goessner.net/articles/JsonPath/">JSONPath expressions</a> translate Cumulocity REST responses into CSV. Assume, for example, a device has a display and can show a message on the display. An operation to update the message would look like this:</p>
+
+<pre><code>{
+    &quot;c8y_Message&quot;: {
+         &quot;text&quot;: &quot;Hello, world!&quot;
+    },
+    &quot;creationTime&quot;: &quot;2014-02-25T08:32:45.435+01:00&quot;,
+    &quot;deviceId&quot;: &quot;8789602&quot;,
+    &quot;status&quot;: &quot;PENDING&quot;,
+    ...
+}
+</code></pre>
+
+<p>On the client side, the device mainly needs to know the text to be shown. In JSONPath, the &ldquo;text&rdquo; property is extracted using the following syntax:</p>
+
+<pre><code>$.c8y_Message.text 
+</code></pre>
+
+<p>In this syntax, &ldquo;$&rdquo; refers to the root of the data structure and &ldquo;.&rdquo; selects an element from a data structure. For more options, please consult the <a href="http://goessner.net/articles/JsonPath/">JSONPath reference</a>.</p>
+
+<p>A device usually queries for all operations that are associated with it and that are in pending state. The standard Cumulocity response to such a query is:</p>
+
+<pre><code>{
+    &quot;operations&quot;: [
+        {
+            &quot;c8y_Message&quot;: {
+                &quot;text&quot;: &quot;Hello, world!&quot;
+            },
+            &quot;creationTime&quot;: &quot;2014-02-25T08:32:45.435+01:00&quot;,
+            &quot;deviceId&quot;: &quot;8789602&quot;,
+            &quot;status&quot;: &quot;PENDING&quot;,
+            ...
+        }, {
+            &quot;c8y_Relay&quot;: {
+                ...
+        }
+        ...
+    ]
+]
+</code></pre>
+
+<p>That is, the response contains a list of operations, and these operations can have different types. To work with such a structure, use the following response template:</p>
+
+<pre><code>11,2,$.operations,$.c8y_Message,$.c8y_Message.text 
+</code></pre>
+
+<p>This means, value by value:</p>
+
+<ul>
+<li>11: This is a response template.</li>
+<li>2: It has number 2.</li>
+<li>$.operations: The response is a list and the list&rsquo;s property is &ldquo;operations&rdquo;.</li>
+<li>$.c8y_Message: This template applies to responses with the property &ldquo;c8y_Message&rdquo;.</li>
+<li>$.c8y_Message.text: The text will be extracted from the message and will be returned.</li>
+</ul>
+
+<p>The SmartREST client will thus get the following response:</p>
+
+<pre><code>HTTP/1.1 200 OK
+
+2,0,&quot;Hello, world!&quot;
+</code></pre>
+
+<p>That is, the response was created using template 2, the template to translate display message operations. The response refer to the first request sent. The actual message to set is &ldquo;Hello, world!&rdquo;.</p>
+
+  </article>
+  
+  
+</div>
+<footer class="main-footer">
+  <div class="copyright">
+    <div class="container text-center">
+      <p class="small ">&copy; 2019 Cumulocity GmbH | All rights reserved.</p>
+    </div>
+  </div>  
+</footer>
+
+<!-- Essential Scripts -->
+
+<!-- jQuery -->
+<script src="https://cumulocity.com/guides/js/vendor/jquery.min.js"></script>
+<script src="https://cumulocity.com/guides/js/vendor/bootstrap.bundle.min.js"></script>
+<script src="https://cumulocity.com/guides/js/vendor/clipboard.js"></script>
+<script src="https://cumulocity.com/guides/js/vendor/zoom.js"></script>
+<script src="https://cumulocity.com/guides/js/vendor/highlight.min.js"></script>
+<script src="https://cumulocity.com/guides/js/main.js"></script>
+
+
+
+
+
+    
+   
+  </body>
+</html>

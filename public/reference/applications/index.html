@@ -1,0 +1,2610 @@
+<!DOCTYPE html>
+<html>
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <base href="" />
+    <meta name="generator" content="Hugo 0.54.0 with theme C8yDocs">
+    <title>Applications - Cumulocity IoT Guides</title>
+    <meta name="author" content="Carlos Ceia @ Cumulocity">
+    <meta name="keywords" content=", Software AG Cloud, Cumulocity IoT, Internet of things, analytics, devices, connect">
+
+
+    <link rel="icon" href="/favicon.ico">
+
+    
+
+    
+
+    
+    
+    
+    <link rel="stylesheet" href="https://cumulocity.com/guides/style.css">
+    
+
+      
+      <script> window.zEmbed||function(e,t){var n,o,d,i,s,a=[],r=document.createElement("iframe");window.zEmbed=function(){a.push(arguments)},window.zE=window.zE||window.zEmbed,r.src="javascript:false",r.title="",r.role="presentation",(r.frameElement||r).style.cssText="display: none",d=document.getElementsByTagName("script"),d=d[d.length-1],d.parentNode.insertBefore(r,d),i=r.contentWindow,s=i.document;try{o=s}catch(c){n=document.domain,r.src='javascript:var d=document.open();d.domain="'+n+'";void(0);',o=s}o.open()._l=function(){var o=this.createElement("script");n&&(this.domain=n),o.id="js-iframe-async",o.src=e,this.t=+new Date,this.zendeskHost=t,this.zEQueue=a,this.body.appendChild(o)},o.write('<body onload="document._l();">'),o.close()}("https://assets.zendesk.com/embeddable_framework/main.js","cumulocity.zendesk.com"); </script>
+        <script type="text/JavaScript">
+          window.zESettings = {
+            webWidget: {
+              color: {
+                theme: '#1776bf'    
+              },
+              position: {
+                horizontal: 'right',
+                vertical: 'top'     
+              }
+            }
+          };
+          </script>
+        
+        
+   
+  </head><body data-spy="scroll" data-target="#main-nav" ><button type="button" class="sidebar-toggle">
+  <span class="icon-bar"></span>
+  <span class="icon-bar"></span>
+  <span class="icon-bar"></span>
+  <span>MENU</span>
+</button>
+<nav class="main-top-bar" >
+  <div class="d-flex container">
+    <ul class="nav d-flex flex-start hidden-xs nav-left">
+      <li><a href="https://www.softwareag.cloud/site/product/cumulocity-iot.html">Cumulocity IoT</a></li>
+      <li><a href="http://resources.cumulocity.com/documentation/jssdk/latest/#/api">Cumulocity Angular API</a></li>
+    </ul>
+    <ul class="nav flex-end nav-right">
+      <li>   <script>
+              (function() {
+                var cx = '008969372384807682938:yeh7xt785g4';
+                var gcse = document.createElement('script');
+                gcse.type = 'text/javascript';
+                gcse.async = true;
+                gcse.src = 'https://cse.google.com/cse.js?cx=' + cx;
+                var s = document.getElementsByTagName('script')[0];
+                s.parentNode.insertBefore(gcse, s);
+              })();
+            </script>
+        <div id="___gcse_0" dir="ltr"><form class="gsc-search-box gsc-search-box-tools" accept-charset="utf-8"><div class="table-responsive"><table cellspacing="0" cellpadding="0" class="gsc-search-box"><tbody><tr><td class="gsc-input"><div class="gsc-input-box" id="gsc-iw-id1"><table cellspacing="0" cellpadding="0" id="gs_id50" class="gstl_50 gsc-input" style="width: 100%; padding: 0px;"><tbody><tr><td id="gs_tti50" class="gsib_a"><input autocomplete="off" type="text" size="10" class="gsc-input" name="search" title="search" id="gsc-i-id1" placeholder="Custom Search" dir="ltr" spellcheck="false" x-webkit-grammar="builtin:search" lang="en" style="width: 100%; padding: 0px; border: none; margin: -0.0625em 0px 0px; height: 1.25em; background: url(&quot;https://www.google.com/cse/static/images/1x/googlelogo_lightgrey_46x16dp.png&quot;) left center no-repeat rgb(255, 255, 255); text-indent: 48px; outline: none;"></td><td class="gsib_b"><div class="gsst_b" id="gs_st50" dir="ltr"><a class="gsst_a" href="javascript:void(0)" style="display: none;" title="Clear search box" role="button"><span class="gscb_a" id="gs_cb50" aria-hidden="true">×</span></a></div></td></tr></tbody></table></div></td><td class="gsc-search-button"><button class="gsc-search-button gsc-search-button-v2"><svg width="13" height="13" viewBox="0 0 13 13"><title>search</title><path d="m4.8495 7.8226c0.82666 0 1.5262-0.29146 2.0985-0.87438 0.57232-0.58292 0.86378-1.2877 0.87438-2.1144 0.010599-0.82666-0.28086-1.5262-0.87438-2.0985-0.59352-0.57232-1.293-0.86378-2.0985-0.87438-0.8055-0.010599-1.5103 0.28086-2.1144 0.87438-0.60414 0.59352-0.8956 1.293-0.87438 2.0985 0.021197 0.8055 0.31266 1.5103 0.87438 2.1144 0.56172 0.60414 1.2665 0.8956 2.1144 0.87438zm4.4695 0.2115 3.681 3.6819-1.259 1.284-3.6817-3.7 0.0019784-0.69479-0.090043-0.098846c-0.87973 0.76087-1.92 1.1413-3.1207 1.1413-1.3553 0-2.5025-0.46363-3.4417-1.3909s-1.4088-2.0686-1.4088-3.4239c0-1.3553 0.4696-2.4966 1.4088-3.4239 0.9392-0.92727 2.0864-1.3969 3.4417-1.4088 1.3553-0.011889 2.4906 0.45771 3.406 1.4088 0.9154 0.95107 1.379 2.0924 1.3909 3.4239 0 1.2126-0.38043 2.2588-1.1413 3.1385l0.098834 0.090049z"></path></svg></button></td><td class="gsc-clear-button"><div class="gsc-clear-button" title="clear results">&nbsp;</div></td></tr></tbody></table></div></form></div>
+      </li>
+    </ul>
+  </div>
+</nav><button type="button" class="to-the-top">
+  <span class="sr-only">Top</span>
+  <span class="fa fa-chevron-up"></span>
+</button><nav class="main-nav navbar">
+  <header class="nav-header">
+    <a href="https://www.softwareag.cloud/site/dev-center/cumulocity-iot.html">
+      <img src="https://cumulocity.com/guides/images/cumulocity-iot.svg"
+        class="img-responsive no-zoom"
+        alt="Cumulocity IoT">
+    </a>
+
+    <div class="dropdown">
+      <button class="dropdown-toggle"
+        type="button"
+        id="dropdownMenuButton"
+        data-toggle="dropdown"
+        aria-haspopup="true"
+        aria-expanded="false">
+        <span id="current-dropdown-toggle" class="text-truncate"></span> <span class="caret"></span>
+      </button>
+      <div class="dropdown-menu"
+        aria-labelledby="dropdownMenuButton">
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+
+        
+        
+        
+
+        <a class='dropdown-menu-item '
+          href='https://cumulocity.com/guides/release-notes/overview/'><i class="c8y-icon c8y-icon-notification"></i> Release notes</a>
+        
+        
+        
+        
+        
+        
+        
+        
+
+        
+        
+        
+
+        <a class='dropdown-menu-item '
+          href='https://cumulocity.com/guides/concepts/introduction/'><i class="c8y-icon c8y-icon-c8y-data"></i> Concepts guide</a>
+        
+        
+        
+        
+        
+        
+        
+        
+
+        
+        
+        
+
+        <a class='dropdown-menu-item '
+          href='https://cumulocity.com/guides/users-guide/getting-started/'><i class="c8y-icon c8y-icon-user"></i> User guide</a>
+        
+        
+        
+        
+        
+        
+        
+        
+
+        
+        
+        
+
+        <a class='dropdown-menu-item '
+          href='https://cumulocity.com/guides/benutzerhandbuch/overview/'><i class="c8y-icon c8y-icon-user"></i> Handbuch</a>
+        
+        
+        
+        
+        
+        
+        
+        
+
+        
+        
+        
+
+        <a class='dropdown-menu-item '
+          href='https://cumulocity.com/guides/devices/overview/'><i class="c8y-icon c8y-icon-device-management"></i> Device guides</a>
+        
+        
+        
+        
+        
+        
+        
+        
+
+        
+        
+        
+
+        <a class='dropdown-menu-item '
+          href='https://cumulocity.com/guides/edge/overview/'><i class="fa fa-book"></i> Cumulocity IoT Edge</a>
+        
+        
+        
+        
+        
+        
+        
+        
+
+        
+        
+        
+
+        <a class='dropdown-menu-item '
+          href='https://cumulocity.com/guides/microservice-sdk/introduction/'><i class="c8y-icon c8y-icon-tools"></i> Microservice SDK guide</a>
+        
+        
+        
+        
+        
+        
+        
+        
+
+        
+        
+        
+
+        <a class='dropdown-menu-item '
+          href='https://cumulocity.com/guides/device-sdk/introduction/'><i class="c8y-icon c8y-icon-tools"></i> Device SDK guide</a>
+        
+        
+        
+        
+        
+        
+        
+        
+
+        
+        
+        
+
+        <a class='dropdown-menu-item '
+          href='https://cumulocity.com/guides/web/introduction/'><i class="c8y-icon c8y-icon-smart-rest"></i> Web SDK guide</a>
+        
+        
+        
+        
+        
+        
+        
+        
+
+        
+        
+        
+
+        <a class='dropdown-menu-item '
+          href='https://cumulocity.com/guides/apama/overview-analytics/'><i class="c8y-icon c8y-icon-data-explorer"></i> Analytics guide</a>
+        
+        
+        
+        
+        
+        
+        
+        
+
+        
+        
+        
+        
+        <span class="current-app">Reference guide</span>
+        
+        
+
+        <a class='dropdown-menu-item active'
+          href='https://cumulocity.com/guides/reference/rest-implementation/'><i class="fa fa-book"></i> Reference guide</a>
+        
+      </div>
+    </div>
+  </header>
+
+  
+
+  <nav id="main-nav"
+    class="nav-sections">
+    
+    
+    <div class="">
+        
+        
+        
+        
+      <a href="javascript:void(0);"
+        data-toggle="collapse"
+        data-target="#page-nav0"
+        class="collapse-btn  collapsed ">
+        <i class="fa fa-chevron-right "></i>
+      </a>
+      
+      <a class=""
+        href="https://cumulocity.com/guides/reference/rest-implementation/">REST implementation</a>
+     
+      
+      
+      <div id="page-nav0"
+        class="collapse   ">
+        <nav class="list-group nav">
+          
+          
+            <a class="list-group-item"
+              href="https://cumulocity.com/guides/reference/rest-implementation/#http-usage">HTTP usage</a>
+            
+            
+          
+            <a class="list-group-item"
+              href="https://cumulocity.com/guides/reference/rest-implementation/#rest-usage">REST usage</a>
+            
+            
+          
+            <a class="list-group-item"
+              href="https://cumulocity.com/guides/reference/rest-implementation/#root-interface">Root interface</a>
+            
+            
+          
+            <a class="list-group-item"
+              href="https://cumulocity.com/guides/reference/rest-implementation/#generic-media-types">Generic media types</a>
+            
+            
+        </nav>
+      </div>
+      
+    </div>
+    
+    
+    
+    <div class="">
+        
+        
+        
+        
+      <a href="javascript:void(0);"
+        data-toggle="collapse"
+        data-target="#page-nav1"
+        class="collapse-btn  collapsed ">
+        <i class="fa fa-chevron-right "></i>
+      </a>
+      
+      <a class=""
+        href="https://cumulocity.com/guides/reference/smartrest/">SmartREST</a>
+     
+      
+      
+      <div id="page-nav1"
+        class="collapse   ">
+        <nav class="list-group nav">
+          
+          
+            <a class="list-group-item"
+              href="https://cumulocity.com/guides/reference/smartrest/#overview">Overview</a>
+            
+            
+          
+            <a class="list-group-item"
+              href="https://cumulocity.com/guides/reference/smartrest/#the-protocol">The protocol</a>
+            
+            
+          
+            <a class="list-group-item"
+              href="https://cumulocity.com/guides/reference/smartrest/#templates">Templates</a>
+            
+            
+          
+            <a class="list-group-item"
+              href="https://cumulocity.com/guides/reference/smartrest/#registration-process">Registration process</a>
+            
+            
+          
+            <a class="list-group-item"
+              href="https://cumulocity.com/guides/reference/smartrest/#using-smartrest-with-multiple-x-ids">Using SmartREST with multiple X-Ids</a>
+            
+            
+          
+            <a class="list-group-item"
+              href="https://cumulocity.com/guides/reference/smartrest/#smartrest-real-time-notifications">SmartREST Real-time Notificationss</a>
+            
+            
+          
+            <a class="list-group-item"
+              href="https://cumulocity.com/guides/reference/smartrest/#built-in-messages">Built-in messages</a>
+            
+            
+        </nav>
+      </div>
+      
+    </div>
+    
+    
+    
+    <div class="">
+        
+        
+        
+        
+      <a href="javascript:void(0);"
+        data-toggle="collapse"
+        data-target="#page-nav2"
+        class="collapse-btn  collapsed ">
+        <i class="fa fa-chevron-right "></i>
+      </a>
+      
+      <a class=""
+        href="https://cumulocity.com/guides/reference/login/">Login with OAuth2</a>
+     
+      
+      
+      <div id="page-nav2"
+        class="collapse   ">
+        <nav class="list-group nav">
+          
+          
+            <a class="list-group-item"
+              href="https://cumulocity.com/guides/reference/login/#overview">Overview</a>
+            
+            
+          
+            <a class="list-group-item"
+              href="https://cumulocity.com/guides/reference/login/#login-options">Login options</a>
+            
+            
+          
+            <a class="list-group-item"
+              href="https://cumulocity.com/guides/reference/login/#login-flow">Login flow</a>
+            
+            
+        </nav>
+      </div>
+      
+    </div>
+    
+    
+    
+    <div class="">
+        
+        
+        
+        
+      <a href="javascript:void(0);"
+        data-toggle="collapse"
+        data-target="#page-nav3"
+        class="collapse-btn  collapsed ">
+        <i class="fa fa-chevron-right "></i>
+      </a>
+      
+      <a class=""
+        href="https://cumulocity.com/guides/reference/inventory/">Inventory</a>
+     
+      
+      
+      <div id="page-nav3"
+        class="collapse   ">
+        <nav class="list-group nav">
+          
+          
+            <a class="list-group-item"
+              href="https://cumulocity.com/guides/reference/inventory/#overview">Overview</a>
+            
+            
+          
+            <a class="list-group-item"
+              href="https://cumulocity.com/guides/reference/inventory/#inventory-api">Inventory API</a>
+            
+            
+          
+            <a class="list-group-item"
+              href="https://cumulocity.com/guides/reference/inventory/#managed-object-collection">Managed object collection</a>
+            
+            
+          
+            <a class="list-group-item"
+              href="https://cumulocity.com/guides/reference/inventory/#managed-object">Managed object</a>
+            
+            
+          
+            <a class="list-group-item"
+              href="https://cumulocity.com/guides/reference/inventory/#managed-object-reference-collection">Managed object reference collection</a>
+            
+            
+          
+            <a class="list-group-item"
+              href="https://cumulocity.com/guides/reference/inventory/#managed-object-reference">Managed object reference</a>
+            
+            
+          
+            <a class="list-group-item"
+              href="https://cumulocity.com/guides/reference/inventory/#notifications">Notifications</a>
+            
+            
+        </nav>
+      </div>
+      
+    </div>
+    
+    
+    
+    <div class="">
+        
+        
+        
+        
+      <a href="javascript:void(0);"
+        data-toggle="collapse"
+        data-target="#page-nav4"
+        class="collapse-btn  collapsed ">
+        <i class="fa fa-chevron-right "></i>
+      </a>
+      
+      <a class=""
+        href="https://cumulocity.com/guides/reference/events/">Events</a>
+     
+      
+      
+      <div id="page-nav4"
+        class="collapse   ">
+        <nav class="list-group nav">
+          
+          
+            <a class="list-group-item"
+              href="https://cumulocity.com/guides/reference/events/#overview">Overview</a>
+            
+            
+          
+            <a class="list-group-item"
+              href="https://cumulocity.com/guides/reference/events/#events-api">Events API</a>
+            
+            
+          
+            <a class="list-group-item"
+              href="https://cumulocity.com/guides/reference/events/#event-collection">Event collection</a>
+            
+            
+          
+            <a class="list-group-item"
+              href="https://cumulocity.com/guides/reference/events/#event">Event</a>
+            
+            
+          
+            <a class="list-group-item"
+              href="https://cumulocity.com/guides/reference/events/#notifications">Notifications</a>
+            
+            
+          
+            <a class="list-group-item"
+              href="https://cumulocity.com/guides/reference/events/#binaries">Binaries</a>
+            
+            
+        </nav>
+      </div>
+      
+    </div>
+    
+    
+    
+    <div class="">
+        
+        
+        
+        
+      <a href="javascript:void(0);"
+        data-toggle="collapse"
+        data-target="#page-nav5"
+        class="collapse-btn  collapsed ">
+        <i class="fa fa-chevron-right "></i>
+      </a>
+      
+      <a class=""
+        href="https://cumulocity.com/guides/reference/measurements/">Measurements</a>
+     
+      
+      
+      <div id="page-nav5"
+        class="collapse   ">
+        <nav class="list-group nav">
+          
+          
+            <a class="list-group-item"
+              href="https://cumulocity.com/guides/reference/measurements/#overview">Overview</a>
+            
+            
+          
+            <a class="list-group-item"
+              href="https://cumulocity.com/guides/reference/measurements/#system-of-units">System of units</a>
+            
+            
+          
+            <a class="list-group-item"
+              href="https://cumulocity.com/guides/reference/measurements/#measurement-api">Measurement API</a>
+            
+            
+          
+            <a class="list-group-item"
+              href="https://cumulocity.com/guides/reference/measurements/#measurement-collection">Measurement collection</a>
+            
+            
+          
+            <a class="list-group-item"
+              href="https://cumulocity.com/guides/reference/measurements/#measurement">Measurement</a>
+            
+            
+          
+            <a class="list-group-item"
+              href="https://cumulocity.com/guides/reference/measurements/#data-streaming">Data streaming</a>
+            
+            
+          
+            <a class="list-group-item"
+              href="https://cumulocity.com/guides/reference/measurements/#other-response-formats">Other response formats</a>
+            
+            
+          
+            <a class="list-group-item"
+              href="https://cumulocity.com/guides/reference/measurements/#notifications">Notifications</a>
+            
+            
+        </nav>
+      </div>
+      
+    </div>
+    
+    
+    
+    <div class="">
+        
+        
+        
+        
+      <a href="javascript:void(0);"
+        data-toggle="collapse"
+        data-target="#page-nav6"
+        class="collapse-btn  collapsed ">
+        <i class="fa fa-chevron-right "></i>
+      </a>
+      
+      <a class=""
+        href="https://cumulocity.com/guides/reference/device-control/">Device control</a>
+     
+      
+      
+      <div id="page-nav6"
+        class="collapse   ">
+        <nav class="list-group nav">
+          
+          
+            <a class="list-group-item"
+              href="https://cumulocity.com/guides/reference/device-control/#overview">Overview</a>
+            
+            
+          
+            <a class="list-group-item"
+              href="https://cumulocity.com/guides/reference/device-control/#device-control-api">Device control API</a>
+            
+            
+          
+            <a class="list-group-item"
+              href="https://cumulocity.com/guides/reference/device-control/#operation-collection">Operation collection</a>
+            
+            
+          
+            <a class="list-group-item"
+              href="https://cumulocity.com/guides/reference/device-control/#operation">Operation</a>
+            
+            
+          
+            <a class="list-group-item"
+              href="https://cumulocity.com/guides/reference/device-control/#device-control-via-sms">Device control via SMS</a>
+            
+            
+          
+            <a class="list-group-item"
+              href="https://cumulocity.com/guides/reference/device-control/#notifications">Notifications</a>
+            
+            
+          
+            <a class="list-group-item"
+              href="https://cumulocity.com/guides/reference/device-control/#bulk-operation-collection">Bulk operation collection</a>
+            
+            
+          
+            <a class="list-group-item"
+              href="https://cumulocity.com/guides/reference/device-control/#bulk-operation">Bulk operation</a>
+            
+            
+        </nav>
+      </div>
+      
+    </div>
+    
+    
+    
+    <div class="">
+        
+        
+        
+        
+      <a href="javascript:void(0);"
+        data-toggle="collapse"
+        data-target="#page-nav7"
+        class="collapse-btn  collapsed ">
+        <i class="fa fa-chevron-right "></i>
+      </a>
+      
+      <a class=""
+        href="https://cumulocity.com/guides/reference/alarms/">Alarms</a>
+     
+      
+      
+      <div id="page-nav7"
+        class="collapse   ">
+        <nav class="list-group nav">
+          
+          
+            <a class="list-group-item"
+              href="https://cumulocity.com/guides/reference/alarms/#overview">Overview</a>
+            
+            
+          
+            <a class="list-group-item"
+              href="https://cumulocity.com/guides/reference/alarms/#alarm-api">Alarm API</a>
+            
+            
+          
+            <a class="list-group-item"
+              href="https://cumulocity.com/guides/reference/alarms/#notifications">Notifications</a>
+            
+            
+          
+            <a class="list-group-item"
+              href="https://cumulocity.com/guides/reference/alarms/#alarm-collection">Alarm collection</a>
+            
+            
+          
+            <a class="list-group-item"
+              href="https://cumulocity.com/guides/reference/alarms/#alarm">Alarm</a>
+            
+            
+        </nav>
+      </div>
+      
+    </div>
+    
+    
+    
+    <div class="">
+        
+        
+        
+        
+      <a href="javascript:void(0);"
+        data-toggle="collapse"
+        data-target="#page-nav8"
+        class="collapse-btn  collapsed ">
+        <i class="fa fa-chevron-right "></i>
+      </a>
+      
+      <a class=""
+        href="https://cumulocity.com/guides/reference/device-credentials/">Device credentials</a>
+     
+      
+      
+      <div id="page-nav8"
+        class="collapse   ">
+        <nav class="list-group nav">
+          
+          
+            <a class="list-group-item"
+              href="https://cumulocity.com/guides/reference/device-credentials/#overview">Overview</a>
+            
+            
+          
+            <a class="list-group-item"
+              href="https://cumulocity.com/guides/reference/device-credentials/#new-device-request-collection">New device request collection</a>
+            
+            
+          
+            <a class="list-group-item"
+              href="https://cumulocity.com/guides/reference/device-credentials/#new-device-request">New device request</a>
+            
+            
+          
+            <a class="list-group-item"
+              href="https://cumulocity.com/guides/reference/device-credentials/#device-credentials">Device credentials</a>
+            
+            
+          
+            <a class="list-group-item"
+              href="https://cumulocity.com/guides/reference/device-credentials/#bulk-device-credentials">Bulk device credentials</a>
+            
+            
+        </nav>
+      </div>
+      
+    </div>
+    
+    
+    
+    <div class="">
+        
+        
+        
+        
+      <a href="javascript:void(0);"
+        data-toggle="collapse"
+        data-target="#page-nav9"
+        class="collapse-btn  collapsed ">
+        <i class="fa fa-chevron-right "></i>
+      </a>
+      
+      <a class=""
+        href="https://cumulocity.com/guides/reference/identity/">Identity</a>
+     
+      
+      
+      <div id="page-nav9"
+        class="collapse   ">
+        <nav class="list-group nav">
+          
+          
+            <a class="list-group-item"
+              href="https://cumulocity.com/guides/reference/identity/#overview">Overview</a>
+            
+            
+          
+            <a class="list-group-item"
+              href="https://cumulocity.com/guides/reference/identity/#identity-api">Identity API</a>
+            
+            
+          
+            <a class="list-group-item"
+              href="https://cumulocity.com/guides/reference/identity/#external-id-collection">External ID collection</a>
+            
+            
+          
+            <a class="list-group-item"
+              href="https://cumulocity.com/guides/reference/identity/#external-id">External ID</a>
+            
+            
+        </nav>
+      </div>
+      
+    </div>
+    
+    
+    
+    <div class="">
+        
+        
+        
+        
+      <a href="javascript:void(0);"
+        data-toggle="collapse"
+        data-target="#page-nav10"
+        class="collapse-btn  collapsed ">
+        <i class="fa fa-chevron-right "></i>
+      </a>
+      
+      <a class=""
+        href="https://cumulocity.com/guides/reference/users/">Users</a>
+     
+      
+      
+      <div id="page-nav10"
+        class="collapse   ">
+        <nav class="list-group nav">
+          
+          
+            <a class="list-group-item"
+              href="https://cumulocity.com/guides/reference/users/#overview">Overview</a>
+            
+            
+          
+            <a class="list-group-item"
+              href="https://cumulocity.com/guides/reference/users/#user-api">User API</a>
+            
+            
+          
+            <a class="list-group-item"
+              href="https://cumulocity.com/guides/reference/users/#user-collection">User collection</a>
+            
+            
+          
+            <a class="list-group-item"
+              href="https://cumulocity.com/guides/reference/users/#user">User</a>
+            
+            
+          
+            <a class="list-group-item"
+              href="https://cumulocity.com/guides/reference/users/#user-reference-collection">User reference collection</a>
+            
+            
+          
+            <a class="list-group-item"
+              href="https://cumulocity.com/guides/reference/users/#user-reference">User reference</a>
+            
+            
+          
+            <a class="list-group-item"
+              href="https://cumulocity.com/guides/reference/users/#group-collection">Group collection</a>
+            
+            
+          
+            <a class="list-group-item"
+              href="https://cumulocity.com/guides/reference/users/#group">Group</a>
+            
+            
+          
+            <a class="list-group-item"
+              href="https://cumulocity.com/guides/reference/users/#group-reference-collection">Group reference collection</a>
+            
+            
+          
+            <a class="list-group-item"
+              href="https://cumulocity.com/guides/reference/users/#group-reference">Group reference</a>
+            
+            
+          
+            <a class="list-group-item"
+              href="https://cumulocity.com/guides/reference/users/#role-collection">Role collection</a>
+            
+            
+          
+            <a class="list-group-item"
+              href="https://cumulocity.com/guides/reference/users/#role">Role</a>
+            
+            
+          
+            <a class="list-group-item"
+              href="https://cumulocity.com/guides/reference/users/#role-reference-collection">Role reference collection</a>
+            
+            
+          
+            <a class="list-group-item"
+              href="https://cumulocity.com/guides/reference/users/#role-reference">Role reference</a>
+            
+            
+        </nav>
+      </div>
+      
+    </div>
+    
+    
+    
+    <div class="">
+        
+        
+        
+        
+      <a href="javascript:void(0);"
+        data-toggle="collapse"
+        data-target="#page-nav11"
+        class="collapse-btn  collapsed ">
+        <i class="fa fa-chevron-right "></i>
+      </a>
+      
+      <a class=""
+        href="https://cumulocity.com/guides/reference/auditing/">Auditing</a>
+     
+      
+      
+      <div id="page-nav11"
+        class="collapse   ">
+        <nav class="list-group nav">
+          
+          
+            <a class="list-group-item"
+              href="https://cumulocity.com/guides/reference/auditing/#overview">Overview</a>
+            
+            
+          
+            <a class="list-group-item"
+              href="https://cumulocity.com/guides/reference/auditing/#audited-informations">Audited informations</a>
+            
+            
+          
+            <a class="list-group-item"
+              href="https://cumulocity.com/guides/reference/auditing/#audit-api">Audit API</a>
+            
+            
+          
+            <a class="list-group-item"
+              href="https://cumulocity.com/guides/reference/auditing/#audit-record-collection">Audit record collection</a>
+            
+            
+          
+            <a class="list-group-item"
+              href="https://cumulocity.com/guides/reference/auditing/#audit-record">Audit record</a>
+            
+            
+        </nav>
+      </div>
+      
+    </div>
+    
+    
+    
+    <div class="">
+        
+        
+        
+        
+      <a href="javascript:void(0);"
+        data-toggle="collapse"
+        data-target="#page-nav12"
+        class="collapse-btn  collapsed ">
+        <i class="fa fa-chevron-right "></i>
+      </a>
+      
+      <a class=""
+        href="https://cumulocity.com/guides/reference/device-management/">Device management library</a>
+     
+      
+      
+      <div id="page-nav12"
+        class="collapse   ">
+        <nav class="list-group nav">
+          
+          
+            <a class="list-group-item"
+              href="https://cumulocity.com/guides/reference/device-management/#overview">Overview</a>
+            
+            
+          
+            <a class="list-group-item"
+              href="https://cumulocity.com/guides/reference/device-management/#metadata">Metadata</a>
+            
+            
+          
+            <a class="list-group-item"
+              href="https://cumulocity.com/guides/reference/device-management/#device-information">Device information</a>
+            
+            
+          
+            <a class="list-group-item"
+              href="https://cumulocity.com/guides/reference/device-management/#configuration-management">Configuration management</a>
+            
+            
+          
+            <a class="list-group-item"
+              href="https://cumulocity.com/guides/reference/device-management/#device-reports">Device reports</a>
+            
+            
+          
+            <a class="list-group-item"
+              href="https://cumulocity.com/guides/reference/device-management/#device-availability">Device availability</a>
+            
+            
+          
+            <a class="list-group-item"
+              href="https://cumulocity.com/guides/reference/device-management/#miscellaneous">Miscellaneous</a>
+            
+            
+        </nav>
+      </div>
+      
+    </div>
+    
+    
+    
+    <div class="">
+        
+        
+        
+        
+      <a href="javascript:void(0);"
+        data-toggle="collapse"
+        data-target="#page-nav13"
+        class="collapse-btn  collapsed ">
+        <i class="fa fa-chevron-right "></i>
+      </a>
+      
+      <a class=""
+        href="https://cumulocity.com/guides/reference/sensor-library/">Sensor library</a>
+     
+      
+      
+      <div id="page-nav13"
+        class="collapse   ">
+        <nav class="list-group nav">
+          
+          
+            <a class="list-group-item"
+              href="https://cumulocity.com/guides/reference/sensor-library/#environmental-capabilities">Environmental Capabilities</a>
+            
+            
+          
+            <a class="list-group-item"
+              href="https://cumulocity.com/guides/reference/sensor-library/#energy">Energy</a>
+            
+            
+          
+            <a class="list-group-item"
+              href="https://cumulocity.com/guides/reference/sensor-library/#location-capabilities">Location Capabilities</a>
+            
+            
+          
+            <a class="list-group-item"
+              href="https://cumulocity.com/guides/reference/sensor-library/#common-capabilities">Common Capabilities</a>
+            
+            
+        </nav>
+      </div>
+      
+    </div>
+    
+    
+    
+    <div class="">
+        
+        
+        
+        
+      <a href="javascript:void(0);"
+        data-toggle="collapse"
+        data-target="#page-nav14"
+        class="collapse-btn  collapsed ">
+        <i class="fa fa-chevron-right "></i>
+      </a>
+      
+      <a class=""
+        href="https://cumulocity.com/guides/reference/real-time-statements/">Real-time statements</a>
+     
+      
+      
+      <div id="page-nav14"
+        class="collapse   ">
+        <nav class="list-group nav">
+          
+          
+            <a class="list-group-item"
+              href="https://cumulocity.com/guides/reference/real-time-statements/#overview">Overview</a>
+            
+            
+          
+            <a class="list-group-item"
+              href="https://cumulocity.com/guides/reference/real-time-statements/#module-api">Module API</a>
+            
+            
+          
+            <a class="list-group-item"
+              href="https://cumulocity.com/guides/reference/real-time-statements/#module-collection">Module collection</a>
+            
+            
+          
+            <a class="list-group-item"
+              href="https://cumulocity.com/guides/reference/real-time-statements/#module">Module</a>
+            
+            
+          
+            <a class="list-group-item"
+              href="https://cumulocity.com/guides/reference/real-time-statements/#notifications">Notifications</a>
+            
+            
+        </nav>
+      </div>
+      
+    </div>
+    
+    
+    
+    <div class="">
+        
+        
+        
+        
+      <a href="javascript:void(0);"
+        data-toggle="collapse"
+        data-target="#page-nav15"
+        class="collapse-btn  collapsed ">
+        <i class="fa fa-chevron-right "></i>
+      </a>
+      
+      <a class=""
+        href="https://cumulocity.com/guides/reference/real-time-notifications/">Real-time notifications</a>
+     
+      
+      
+      <div id="page-nav15"
+        class="collapse   ">
+        <nav class="list-group nav">
+          
+          
+            <a class="list-group-item"
+              href="https://cumulocity.com/guides/reference/real-time-notifications/#overview">Overview</a>
+            
+            
+          
+            <a class="list-group-item"
+              href="https://cumulocity.com/guides/reference/real-time-notifications/#handshake">Handshake</a>
+            
+            
+          
+            <a class="list-group-item"
+              href="https://cumulocity.com/guides/reference/real-time-notifications/#subscribe">Subscribe</a>
+            
+            
+          
+            <a class="list-group-item"
+              href="https://cumulocity.com/guides/reference/real-time-notifications/#unsubscribe">Unsubscribe</a>
+            
+            
+          
+            <a class="list-group-item"
+              href="https://cumulocity.com/guides/reference/real-time-notifications/#connect">Connect</a>
+            
+            
+          
+            <a class="list-group-item"
+              href="https://cumulocity.com/guides/reference/real-time-notifications/#disconnect">Disconnect</a>
+            
+            
+        </nav>
+      </div>
+      
+    </div>
+    
+    
+    
+    <div class="">
+        
+        
+        
+        
+      <a href="javascript:void(0);"
+        data-toggle="collapse"
+        data-target="#page-nav16"
+        class="collapse-btn  collapsed ">
+        <i class="fa fa-chevron-right "></i>
+      </a>
+      
+      <a class=""
+        href="https://cumulocity.com/guides/reference/tenants/">Tenants</a>
+     
+      
+      
+      <div id="page-nav16"
+        class="collapse   ">
+        <nav class="list-group nav">
+          
+          
+            <a class="list-group-item"
+              href="https://cumulocity.com/guides/reference/tenants/#tenants">Tenants</a>
+            
+            
+          
+            <a class="list-group-item"
+              href="https://cumulocity.com/guides/reference/tenants/#tenant-collection">Tenant collection</a>
+            
+            
+          
+            <a class="list-group-item"
+              href="https://cumulocity.com/guides/reference/tenants/#tenant">Tenant</a>
+            
+            
+          
+            <a class="list-group-item"
+              href="https://cumulocity.com/guides/reference/tenants/#application-reference-collection">Application reference collection</a>
+            
+            
+          
+            <a class="list-group-item"
+              href="https://cumulocity.com/guides/reference/tenants/#application-reference">Application reference</a>
+            
+            
+          
+            <a class="list-group-item"
+              href="https://cumulocity.com/guides/reference/tenants/#option-collection">Option collection</a>
+            
+            
+          
+            <a class="list-group-item"
+              href="https://cumulocity.com/guides/reference/tenants/#option">Option</a>
+            
+            
+          
+            <a class="list-group-item"
+              href="https://cumulocity.com/guides/reference/tenants/#system-options">System Options</a>
+            
+            
+          
+            <a class="list-group-item"
+              href="https://cumulocity.com/guides/reference/tenants/#tenant-usage-statistics">Tenant usage statistics</a>
+            
+            
+        </nav>
+      </div>
+      
+    </div>
+    
+    
+    
+    <div class=" slot-active ">
+        
+        
+        
+        
+      <a href="javascript:void(0);"
+        data-toggle="collapse"
+        data-target="#page-nav17"
+        class="collapse-btn ">
+        <i class="fa fa-chevron-right "></i>
+      </a>
+      
+      <a class=" active "
+        href="https://cumulocity.com/guides/reference/applications/">Applications</a>
+     
+      
+      
+      <div id="page-nav17"
+        class="collapse   show  ">
+        <nav class="list-group nav">
+          
+          
+          <a class="list-group-item"
+            href="#overview">Overview</a>
+          
+            
+          
+          <a class="list-group-item"
+            href="#application-names">Application names</a>
+          
+            
+          
+          <a class="list-group-item"
+            href="#application-api">Application API</a>
+          
+            
+          
+          <a class="list-group-item"
+            href="#application-collection">Application collection</a>
+          
+            
+          
+          <a class="list-group-item"
+            href="#application">Application</a>
+          
+            
+          
+          <a class="list-group-item"
+            href="#bootstrap-user">Bootstrap user</a>
+          
+            
+          
+          <a class="list-group-item"
+            href="#current-application">Current application</a>
+          
+            
+          
+          <a class="list-group-item"
+            href="#application-binaries">Application binaries</a>
+          
+            
+        </nav>
+      </div>
+      
+    </div>
+    
+    
+    
+    <div class="">
+        
+        
+        
+        
+      <a href="javascript:void(0);"
+        data-toggle="collapse"
+        data-target="#page-nav18"
+        class="collapse-btn  collapsed ">
+        <i class="fa fa-chevron-right "></i>
+      </a>
+      
+      <a class=""
+        href="https://cumulocity.com/guides/reference/binaries/">Binaries</a>
+     
+      
+      
+      <div id="page-nav18"
+        class="collapse   ">
+        <nav class="list-group nav">
+          
+          
+            <a class="list-group-item"
+              href="https://cumulocity.com/guides/reference/binaries/#overview">Overview</a>
+            
+            
+          
+            <a class="list-group-item"
+              href="https://cumulocity.com/guides/reference/binaries/#binaries-collection">Binaries collection</a>
+            
+            
+          
+            <a class="list-group-item"
+              href="https://cumulocity.com/guides/reference/binaries/#binaries">Binaries</a>
+            
+            
+        </nav>
+      </div>
+      
+    </div>
+    
+    
+    
+    <div class="">
+        
+        
+        
+        
+      <a href="javascript:void(0);"
+        data-toggle="collapse"
+        data-target="#page-nav19"
+        class="collapse-btn  collapsed ">
+        <i class="fa fa-chevron-right "></i>
+      </a>
+      
+      <a class=""
+        href="https://cumulocity.com/guides/reference/retention-rules/">Retention rules</a>
+     
+      
+      
+      <div id="page-nav19"
+        class="collapse   ">
+        <nav class="list-group nav">
+          
+          
+            <a class="list-group-item"
+              href="https://cumulocity.com/guides/reference/retention-rules/#retention-rules">Retention rules</a>
+            
+            
+          
+            <a class="list-group-item"
+              href="https://cumulocity.com/guides/reference/retention-rules/#retention-rule-collection">Retention rule collection</a>
+            
+            
+          
+            <a class="list-group-item"
+              href="https://cumulocity.com/guides/reference/retention-rules/#retentionrule">RetentionRule</a>
+            
+            
+        </nav>
+      </div>
+      
+    </div>
+    
+    
+    
+    <div class="">
+        
+        
+        
+        
+      <a class=""
+        href="https://cumulocity.com/guides/reference/microservice-manifest/">Microservice manifest</a>
+     
+      
+    </div>
+    
+    
+    
+    <div class="">
+        
+        
+        
+        
+      <a href="javascript:void(0);"
+        data-toggle="collapse"
+        data-target="#page-nav21"
+        class="collapse-btn  collapsed ">
+        <i class="fa fa-chevron-right "></i>
+      </a>
+      
+      <a class=""
+        href="https://cumulocity.com/guides/reference/microservice-package/">Microservice package and deploy</a>
+     
+      
+      
+      <div id="page-nav21"
+        class="collapse   ">
+        <nav class="list-group nav">
+          
+          
+            <a class="list-group-item"
+              href="https://cumulocity.com/guides/reference/microservice-package/#overview">Overview</a>
+            
+            
+          
+            <a class="list-group-item"
+              href="https://cumulocity.com/guides/reference/microservice-package/#packing">Packing</a>
+            
+            
+          
+            <a class="list-group-item"
+              href="https://cumulocity.com/guides/reference/microservice-package/#deploying">Deploying</a>
+            
+            
+          
+            <a class="list-group-item"
+              href="https://cumulocity.com/guides/reference/microservice-package/#multiple-goals">Multiple goals</a>
+            
+            
+          
+            <a class="list-group-item"
+              href="https://cumulocity.com/guides/reference/microservice-package/#subscribing">Subscribing</a>
+            
+            
+        </nav>
+      </div>
+      
+    </div>
+    
+    
+    
+    <div class="">
+        
+        
+        
+        
+      <a href="javascript:void(0);"
+        data-toggle="collapse"
+        data-target="#page-nav22"
+        class="collapse-btn  collapsed ">
+        <i class="fa fa-chevron-right "></i>
+      </a>
+      
+      <a class=""
+        href="https://cumulocity.com/guides/reference/microservice-runtime/">Microservice runtime</a>
+     
+      
+      
+      <div id="page-nav22"
+        class="collapse   ">
+        <nav class="list-group nav">
+          
+          
+            <a class="list-group-item"
+              href="https://cumulocity.com/guides/reference/microservice-runtime/#overview">Overview</a>
+            
+            
+          
+            <a class="list-group-item"
+              href="https://cumulocity.com/guides/reference/microservice-runtime/#environment-variables">Environment variables</a>
+            
+            
+          
+            <a class="list-group-item"
+              href="https://cumulocity.com/guides/reference/microservice-runtime/#Access-to-the-platform-and-other-microservices">Access to the platform and other microservices</a>
+            
+            
+        </nav>
+      </div>
+      
+    </div>
+    
+    
+    
+    
+  </nav>
+</nav>
+<div class="cover"></div>
+
+<div class="main-content">
+  <article class="page-section">
+    <header class="section-header">
+      <h1 class="text-light">Applications</h1>
+    </header>
+    
+      <div class="lead">
+        
+      </div>
+      
+  </article>
+
+  
+  
+  
+  <article id="overview" class="page-section">
+    <h2>
+      <button class="btn-link bookmark" data-clipboard-text="#overview">
+        <span class="fa fa-link"></span>
+      </button>
+      Overview</h2>
+    <p>The API below is not published in &ldquo;/platform&rdquo; but can be reached using &ldquo;/application&rdquo;.</p>
+
+<p>The application interface consists of the following parts:</p>
+
+<ul>
+<li>The *application API* resource returns URIs and URI templates to collections of applications, so that all applications with a particular name and all applications owned by particular tenant can be queried.</li>
+<li>The *application collection* resource retrieves sets of applications and enables creating new applications.</li>
+<li>The *application* resource represents applications that can be queried and deleted.</li>
+<li>The <em>application bootstrap user</em> resource retrieves bootstrap user credentials for microservice.</li>
+<li>The <em>current application</em> resource provides data of authenticated microservice user&rsquo;s application.</li>
+<li>The <em>application user collection</em> resource represents a collection of subscription entries.</li>
+<li>The <em>application user</em> resource represents a single subscription entry.</li>
+<li>The <em>current application subscription</em> provides an endpoint for accessing current application subscriptions.</li>
+<li>The <em>application binaries</em> provides an endpoint for uploading a deployable microservice, web application or custom Apama rule to the platform.</li>
+</ul>
+
+<blockquote>
+<p><strong>Info</strong>: For all PUT/POST requests an accept header should be provided, otherwise an empty response body will be returned.</p>
+</blockquote>
+
+  </article>
+  
+  <article id="application-names" class="page-section">
+    <h2>
+      <button class="btn-link bookmark" data-clipboard-text="#application-names">
+        <span class="fa fa-link"></span>
+      </button>
+      Application names</h2>
+    <p>For each tenant, Cumulocity manages the subscribed applications. Cumulocity provides a number of applications of various types.</p>
+
+<p>These are listed in the following table. The columns show the following information:</p>
+
+<ul>
+<li><strong>Application</strong>: Application name as visible in the Administration application.</li>
+<li><strong>Functionality</strong>: Brief description.</li>
+<li><strong>String</strong>: Identification of the application in the API. In case you want to subscribe a tenant to the application using an API (as described on this page), use this string in the argument (as name)</li>
+<li><strong>Application type</strong>: Technical type of the application. &ldquo;Feature&rdquo; refers to built-in applications subscriptions, i.e. these applications are not represented by an explicit artefact (microservice, web application or custom Apama rule).</li>
+<li><strong>Availablity</strong>: Only applications indicated as &ldquo;Standard Edition&rdquo; are available in all installations. Applications of type &ldquo;microservice&rdquo;, &ldquo;web application&rdquo; or &ldquo;custom Apama rule&rdquo; indicated as &ldquo;Optional service&rdquo; require that the related artefact is installed for the respective Cumulocity instance. The same applies to applications listed as &ldquo;Enterprise Edition&rdquo;.</li>
+</ul>
+
+<table>
+<col width="200">
+<col width="350">
+<col width="200">
+<thead>
+<tr>
+<th style="text-align:center">Application</th>
+<th style="text-align:left">Functionality</th>
+<th style="text-align:left">String</th>
+<th style="text-align:left">Application type</th>
+<th style="text-align:left">Availability</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center"><a href="/guides/users-guide/administration" class="no-ajaxy">Administration</a></td>
+<td style="text-align:left">Lets account administrators manage users, roles, tenants and applications.</td>
+<td style="text-align:left">administration</td>
+<td style="text-align:left">Web application</td>
+<td style="text-align:left">Standard Edition</td>
+</tr>
+<tr>
+<td style="text-align:center"><a href="/guides/apama" class="no-ajaxy">Apama</a></td>
+<td style="text-align:left">Define business operations for immediate processing of incoming data by using Apama's Event Processing Language (EPL). This is a per-tenant deployment.</td>
+<td style="text-align:left">apama-small=<br> 1 core; 4 GB RAM<br>apama-medium=<br> 2 cores; 8 GB RAM<br>apama-large=<br>4 cores; 16 GB RAM</td>
+<td style="text-align:left">Microservice</td>
+<td style="text-align:left">Optional service</td>
+</tr>
+<tr>
+<td style="text-align:center"><a href="/guides/users-guide/enterprise-edition/#branding" class="no-ajaxy">Branding</a></td>
+<td style="text-align:left">Customize the look of your tenants to your own preferences.</td>
+<td style="text-align:left">branding</td>
+<td style="text-align:left">Microservice</td>
+<td style="text-align:left">Enterprise Edition</td>
+</tr>
+<tr>
+<td style="text-align:center"><a href="/guides/event-language" class="no-ajaxy">Cep</a></td>
+<td style="text-align:left">Define business operations based on realtime data by using the Esper CEP engine. This CEP variant uses a shared instance for multiple tenants. See "Cep-small" for a per-tenant approach.</td>
+<td style="text-align:left">cep</td>
+<td style="text-align:left">Microservice</td>
+<td style="text-align:left">Standard Edition</td>
+</tr>
+<tr>
+<td style="text-align:center"><a href="/guides/event-language" class="no-ajaxy">CEP custom rules</a></td>
+<td style="text-align:left">Upload your own CEP rules created with Esper in a per-tenant deployment. You need to be subscribed to the application "Cep-small" to be able to use this feature.</td>
+<td style="text-align:left">feature-cep-custom-rules</td>
+<td style="text-align:left">Feature</td>
+<td style="text-align:left">Optional service</td>
+</tr>
+<tr>
+<td style="text-align:center"><a href="/guides/event-language" class="no-ajaxy">Cep-small</a></td>
+<td style="text-align:left">CEP variant. Lets you work with CEP rules based on Esper in a per-tenant deployment (as opposed to "Cep" which uses a shared instance). You need to be subscribed to "CEP custom rules" to upload your own Esper CEP rules.</td>
+<td style="text-align:left">cep-small</td>
+<td style="text-align:left">Microservice</td>
+<td style="text-align:left">Optional service</td>
+</tr>
+<tr>
+<td style="text-align:center"><a href="/guides/users-guide/cockpit" class="no-ajaxy">Cockpit</a></td>
+<td style="text-align:left">Manage and monitor IoT assets and data from a business perspective.</td>
+<td style="text-align:left">cockpit</td>
+<td style="text-align:left">Web application</td>
+<td style="text-align:left">Standard Edition</td>
+</tr>
+<tr>
+<td style="text-align:center"><a href="/guides/users-guide/optional-services/#cloud-fieldbus" class="no-ajaxy">Cloud Fieldbus</a></td>
+<td style="text-align:left">Collect data from fieldbus devices and remotely manage them in Cumulocity.</td>
+<td style="text-align:left">feature-fieldbus4</td>
+<td style="text-align:left">Feature</td>
+<td style="text-align:left">Optional service</td>
+</tr>
+<tr>
+<td style="text-align:center"><a href="/guides/users-guide/optional-services/#cloud-remote-access" class="no-ajaxy">Cloud Remote Access</a></td>
+<td style="text-align:left">Implements Virtual Network Computing (VNC) to remotely access operating panels and other devices via a web browser.</td>
+<td style="text-align:left">cloud-remote-access</td>
+<td style="text-align:left">Microservice</td>
+<td style="text-align:left">Optional service</td>
+</tr>
+<tr>
+<td style="text-align:center"><a href="/guides/users-guide/optional-services/#connectivity" class="no-ajaxy">Connectivity</a></td>
+<td style="text-align:left">Interface with mobile devices through various SIM providers like Jasper, Ericsson and Comarch.</td>
+<td style="text-align:left">connectivity-agent-server</td>
+<td style="text-align:left">Microservice</td>
+<td style="text-align:left">Optional service</td>
+</tr>
+<tr>
+<td style="text-align:center"><a href="/guides/users-guide/enterprise-edition/#data-broker" class="no-ajaxy">Data Broker</a></td>
+<td style="text-align:left">Lets you share data selectively with other tenants.</td>
+<td style="text-align:left">feature-broker</td>
+<td style="text-align:left">Feature</td>
+<td style="text-align:left">Enterprise Edition</td>
+</tr>
+<tr>
+<td style="text-align:center"><a href="/guides/users-guide/device-management" class="no-ajaxy">Device Management</a></td>
+<td style="text-align:left">Manage and monitor devices, and control and troubleshoot devices remotely.</td>
+<td style="text-align:left">devicemanagement</td>
+<td style="text-align:left">Web application</td>
+<td style="text-align:left">Standard Edition</td>
+</tr>
+<tr>
+<td style="text-align:center"><a href="/guides/users-guide/device-management#simulator" class="no-ajaxy">Device simulator</a></td>
+<td style="text-align:left">Simulate all aspects of IoT devices.</td>
+<td style="text-align:left">device-simulator</td>
+<td style="text-align:left">Microservice</td>
+<td style="text-align:left">Standard Edition</td>
+</tr>
+<tr>
+<td style="text-align:center"><a href="/guides/users-guide/optional-services#lora" class="no-ajaxy">LoRa Actility</a></td>
+<td style="text-align:left">Interface with LoRa devices through Actility's ThingPark Wireless.</td>
+<td style="text-align:left">actility-device-provider-agent</td>
+<td style="text-align:left">Microservice</td>
+<td style="text-align:left">Optional service</td>
+</tr>
+<tr>
+<td style="text-align:center"><a href="/guides/users-guide/optional-services#lwm2m" class="no-ajaxy">LWM2M agent</a></td>
+<td style="text-align:left">Interface with LWM2M devices.</td>
+<td style="text-align:left">lwm2m-agent</td>
+<td style="text-align:left">Microservice</td>
+<td style="text-align:left">Optional service</td>
+</tr>
+<tr>
+<td style="text-align:center">Microservice hosting</td>
+<td style="text-align:left">Host your own microservices on top of Cumulocity.</td>
+<td style="text-align:left">feature-microservice-hosting</td>
+<td style="text-align:left">Feature</td>
+<td style="text-align:left">Optional service</td>
+</tr>
+<tr>
+<td style="text-align:center"><a href="/guides/users-guide/optional-services#nokia-impact" class="no-ajaxy">Nokia IMPACT agent</a></td>
+<td style="text-align:left">Interface with heterogeneous devices through the Nokia IMPACT Data Collector.</td>
+<td style="text-align:left">impact</td>
+<td style="text-align:left">Microservice</td>
+<td style="text-align:left">Optional service</td>
+</tr>
+<tr>
+<td style="text-align:center"><a href="/guides/users-guide/optional-services#sigfox" class="no-ajaxy">Sigfox</a></td>
+<td style="text-align:left">Interface with Sigfox devices through the Sigfox cloud. Requires the following application: "feature-fieldbus4"</td>
+<td style="text-align:left">sigfox-agent</td>
+<td style="text-align:left">Microservice</td>
+<td style="text-align:left">Optional service</td>
+</tr>
+<tr>
+<td style="text-align:center">Smart Rules</td>
+<td style="text-align:left">Use the Smart Rule engine and create <a href="/guides/users-guide/cockpit#smart-rules" class="no-ajaxy">smart rules</a> to perform actions based on realtime data. Requires one of the following applications: "Cep", "Apama"</td>
+<td style="text-align:left">smartrule</td>
+<td style="text-align:left">Microservice</td>
+<td style="text-align:left">Standard Edition</td>
+</tr>
+<tr>
+<td style="text-align:center"><a href="/guides/users-guide/enterprise-edition#customization" class="no-ajaxy">SSL management</a></td>
+<td style="text-align:left">Activate your own custom domain name by using a SSL certificate.</td>
+<td style="text-align:left">sslmanagement</td>
+<td style="text-align:left">Microservice</td>
+<td style="text-align:left">Enterprise Edition</td>
+</tr>
+<tr>
+<td style="text-align:center"><a href="/guides/users-guide/optional-services/#tenant-sla-monitoring" class="no-ajaxy">Tenant SLA Monitoring</a></td>
+<td style="text-align:left">Lets service providers monitor the availability and response time of tenants and sub-tenants.</td>
+<td style="text-align:left">tenant-sla-monitoring</td>
+<td style="text-align:left">Microservice</td>
+<td style="text-align:left">Optional service</td>
+</tr>
+<tr>
+<td style="text-align:center"><a href="/guides/users-guide/enterprise-edition/#user-hierarchies" class="no-ajaxy">User hierarchies</a></td>
+<td style="text-align:left">Reflect independent organizational entities in Cumulocity that share the same database.</td>
+<td style="text-align:left">feature-user-hierarchy</td>
+<td style="text-align:left">Feature</td>
+<td style="text-align:left">Enterprise Edition</td>
+</tr>
+</tbody>
+</table>
+
+  </article>
+  
+  <article id="application-api" class="page-section">
+    <h2>
+      <button class="btn-link bookmark" data-clipboard-text="#application-api">
+        <span class="fa fa-link"></span>
+      </button>
+      Application API</h2>
+    
+
+<h3 id="applicationapi-application-vnd-com-nsn-cumulocity-applicationapi-json">ApplicationAPI [application/vnd.com.nsn.cumulocity.applicationApi+json]</h3>
+
+<table>
+<thead>
+<tr>
+<th align="left">Name</th>
+<th align="left">Type</th>
+<th align="left">Occurs</th>
+<th align="left">Description</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td align="left">self</td>
+<td align="left">URL</td>
+<td align="left">1</td>
+<td align="left">Link to this resource</td>
+</tr>
+
+<tr>
+<td align="left">applicationById</td>
+<td align="left">Application/URI-Template</td>
+<td align="left">1</td>
+<td align="left">A reference to a resource of type Application (placeholder {id})</td>
+</tr>
+
+<tr>
+<td align="left">applications</td>
+<td align="left">ApplicationCollection</td>
+<td align="left">1</td>
+<td align="left">Collection of all applications</td>
+</tr>
+
+<tr>
+<td align="left">applicationsByName</td>
+<td align="left">ApplicationCollection URI-Template</td>
+<td align="left">1</td>
+<td align="left">Read-only collection of all applications with a particular name (placeholder {name})</td>
+</tr>
+
+<tr>
+<td align="left">applicationsByTenant</td>
+<td align="left">ApplicationCollection URI-Template</td>
+<td align="left">1</td>
+<td align="left">Read-only collection of all applications subscribed by a particular tenant (placeholder {tenant})</td>
+</tr>
+
+<tr>
+<td align="left">applicationsByOwner</td>
+<td align="left">ApplicationCollection URI-Template</td>
+<td align="left">1</td>
+<td align="left">Read-only collection of all applications owned by a particular tenant (placeholder {tenant})</td>
+</tr>
+</tbody>
+</table>
+
+<h3 id="get-the-application-api-resource">GET the Application API resource</h3>
+
+<p>Response body: ApplicationApi</p>
+
+<p>Required role: ROLE_Application_READ</p>
+
+<p>Example request:</p>
+
+<pre><code>GET /application
+Host: ...
+Authorization: Basic ...
+</code></pre>
+
+<p>Example response:</p>
+
+<pre><code>HTTP/1.1 200 OK
+Content-Type: application/vnd.com.nsn.cumulocity.ApplicationApi+json;ver=...
+Content-Length: ...
+{
+    &quot;self&quot; : &quot;&lt;&lt;ApplicationAPI URL&gt;&gt;&quot;,
+    &quot;applicationsByID&quot; : &quot;&lt;&lt;ApplicationCollection URL&gt;&gt;/{id}&quot;,
+    &quot;applications&quot; : &quot;&lt;&lt;ApplicationCollection URL&gt;&gt;&quot;,
+    &quot;applicationsByName&quot; : &quot;&lt;&lt;ApplicationAPI URL&gt;&gt;/applicationByName/{name}&quot;,
+    &quot;applicationsByOwner&quot; : &quot;&lt;&lt;ApplicationAPI URL&gt;&gt;/applicationsByOwner/{tenantName}&quot;,
+    &quot;applicationsByTenant&quot; : &quot;&lt;&lt;ApplicationAPI URL&gt;&gt;/applicationsByTenant/{tenantName}&quot;
+}
+</code></pre>
+
+  </article>
+  
+  <article id="application-collection" class="page-section">
+    <h2>
+      <button class="btn-link bookmark" data-clipboard-text="#application-collection">
+        <span class="fa fa-link"></span>
+      </button>
+      Application collection</h2>
+    
+
+<h3 id="applicationcollection-application-vnd-com-nsn-cumulocity-applicationcollection-json">ApplicationCollection [application/vnd.com.nsn.cumulocity.applicationCollection+json]</h3>
+
+<table>
+<thead>
+<tr>
+<th align="left">Name</th>
+<th align="left">Type</th>
+<th align="left">Occurs</th>
+<th align="left">Description</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td align="left">self</td>
+<td align="left">URI</td>
+<td align="left">1</td>
+<td align="left">Link to this resource</td>
+</tr>
+
+<tr>
+<td align="left">applications</td>
+<td align="left">Application</td>
+<td align="left">0..n</td>
+<td align="left">List of applications, see below</td>
+</tr>
+
+<tr>
+<td align="left">statistics</td>
+<td align="left">PagingStatistics</td>
+<td align="left">1</td>
+<td align="left">Information about paging statistics</td>
+</tr>
+
+<tr>
+<td align="left">prev</td>
+<td align="left">URI</td>
+<td align="left">0..1</td>
+<td align="left">Link to a potential previous page of applications</td>
+</tr>
+
+<tr>
+<td align="left">next</td>
+<td align="left">URI</td>
+<td align="left">0..1</td>
+<td align="left">Link to a potential next page of applications</td>
+</tr>
+</tbody>
+</table>
+
+<h3 id="get-an-application-collection">GET an application collection</h3>
+
+<p>Response body: ApplicationCollection</p>
+
+<p>Required role: ROLE_APPLICATION_MANAGEMENT_READ</p>
+
+<p>Example request:</p>
+
+<pre><code>GET /application/applications
+Host: ...
+Authorization: Basic ...
+</code></pre>
+
+<p>Example response:</p>
+
+<pre><code>HTTP/1.1 200 OK
+Content-Type: application/vnd.com.nsn.cumulocity.applicationCollection+json;ver=...
+Content-Length: ...
+{
+    &quot;self&quot; : &quot;...&quot;,
+    &quot;next&quot; : &quot;...&quot;,
+    &quot;prev&quot; : &quot;...&quot;,
+    &quot;applications&quot;: [
+        {
+            &quot;availability&quot;: &quot;PRIVATE&quot;,
+            &quot;id&quot;: &quot;101&quot;,
+            &quot;key&quot;: &quot;...&quot;,
+            &quot;name&quot;: &quot;myOwnApplcation&quot;,
+            &quot;owner&quot;: {
+                &quot;self&quot;: &quot;...&quot;,
+                &quot;tenant&quot;: {
+                    &quot;id&quot;: &quot;test&quot;
+                }
+            },
+            &quot;self&quot;: &quot;...&quot;,
+            &quot;type&quot;: &quot;HOSTED&quot;,
+            &quot;contextPath&quot;: &quot;/my_own_application&quot;,
+            &quot;resourcesUrl&quot;:&quot;...&quot;,
+            &quot;resourcesUsername&quot;: &quot;...&quot;,
+            &quot;resourcesPassword&quot;: &quot;...&quot;
+        },
+        {
+            &quot;availability&quot;: &quot;MARKET&quot;,
+            &quot;id&quot;: &quot;3&quot;,
+            &quot;key&quot;: &quot;...&quot;,
+            &quot;name&quot;: &quot;energyapp&quot;,
+            &quot;owner&quot;: {
+                &quot;self&quot;: &quot;...&quot;,
+                &quot;tenant&quot;: {
+                    &quot;id&quot;: &quot;management&quot;
+                }
+            },
+            &quot;self&quot;: &quot;...&quot;,
+            &quot;type&quot;: &quot;EXTERNAL&quot;,
+            &quot;externalUrl&quot;: &quot;...&quot;
+
+        }
+    ],
+    &quot;statistics&quot;: {
+        &quot;currentPage&quot;: 1,
+        &quot;pageSize&quot;: 5,
+        &quot;totalPages&quot;: 1
+    }
+}
+</code></pre>
+
+<h3 id="post-create-a-new-application">POST - create a new application</h3>
+
+<p>Request body: Application</p>
+
+<p>Response body: Application </p>
+
+<p>Required role: ROLE_APPLICATION_MANAGEMENT_ADMIN.</p>
+
+<p>Example request:</p>
+
+<pre><code>POST /application/applications
+Host: ...
+Authorization: Basic ...
+Content-Length: ...
+Content-Type: application/vnd.com.nsn.cumulocity.application+json;ver=...
+
+{
+  &quot;key&quot;: &quot;vehicleControlApplicationSecretKey&quot;,
+  &quot;name&quot;: &quot;vehicleControlApplication&quot;,
+  &quot;type&quot;: &quot;HOSTED&quot;,
+  &quot;contextPath&quot;: &quot;/vehicleControlApplication&quot;,
+  &quot;resourcesUrl&quot;:&quot;http://external.host.com/basedir&quot;
+}
+</code></pre>
+
+<p>Example response:</p>
+
+<pre><code>HTTP/1.1 201 Created
+Content-Type: application/vnd.com.nsn.cumulocity.application+json;ver=...
+Content-Length: ...
+Location: &lt;&lt;URL of new application&gt;&gt;
+
+{
+  &quot;availability&quot;: &quot;PRIVATE&quot;,
+  &quot;id&quot;: &quot;105&quot;,
+  &quot;key&quot;: &quot;...&quot;,
+  &quot;name&quot;: &quot;vehicleControlApplication&quot;,
+  &quot;owner&quot;: {
+      &quot;self&quot;: &quot;...&quot;,
+      &quot;tenant&quot;: {
+          &quot;id&quot;: &quot;taxiCorp&quot;
+      }
+  },
+  &quot;self&quot;: &quot;...&quot;,
+  &quot;type&quot;: &quot;HOSTED&quot;,
+  &quot;contextPath&quot;: &quot;/vehicleControlApplication&quot;,
+  &quot;resourceUrl&quot;:&quot;http://external.host.com/basedir&quot;,
+  &quot;resourcesUsername&quot;: &quot;...&quot;
+}
+</code></pre>
+
+  </article>
+  
+  <article id="application" class="page-section">
+    <h2>
+      <button class="btn-link bookmark" data-clipboard-text="#application">
+        <span class="fa fa-link"></span>
+      </button>
+      Application</h2>
+    
+
+<h3 id="application-application-vnd-com-nsn-cumulocity-application-json-ver-0-9">Application [application/vnd.com.nsn.cumulocity.application+json;ver=0.9]</h3>
+
+<table>
+<thead>
+<tr>
+<th align="left">Field Name</th>
+<th align="left">Type</th>
+<th align="left">Occurs</th>
+<th align="left">Description</th>
+<th align="left">PUT/POST</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td align="left">self</td>
+<td align="left">URL</td>
+<td align="left">1</td>
+<td align="left">Link to this resource</td>
+<td align="left">No</td>
+</tr>
+
+<tr>
+<td align="left">id</td>
+<td align="left">String</td>
+<td align="left">1</td>
+<td align="left">Unique identifier for the application</td>
+<td align="left">No</td>
+</tr>
+
+<tr>
+<td align="left">name</td>
+<td align="left">String</td>
+<td align="left">1</td>
+<td align="left">Name of application</td>
+<td align="left">POST: Mandatory PUT: Optional</td>
+</tr>
+
+<tr>
+<td align="left">key</td>
+<td align="left">String</td>
+<td align="left">1</td>
+<td align="left">Shared secret of application</td>
+<td align="left">POST: Mandatory PUT: Optional</td>
+</tr>
+
+<tr>
+<td align="left">type</td>
+<td align="left">String</td>
+<td align="left">1</td>
+<td align="left">Type of application. Possible values are : EXTERNAL, HOSTED, MICROSERVICE, APAMA_CEP_RULE</td>
+<td align="left">POST: Mandatory PUT: No</td>
+</tr>
+
+<tr>
+<td align="left">availability</td>
+<td align="left">String</td>
+<td align="left">0..1</td>
+<td align="left">Access level for other tenants.  Possible values are : MARKET, PRIVATE (default)</td>
+<td align="left">Optional</td>
+</tr>
+
+<tr>
+<td align="left">owner</td>
+<td align="left">TenantReference</td>
+<td align="left"> 1</td>
+<td align="left">Reference to the tenant owning this application</td>
+<td align="left">No </td>
+</tr>
+
+<tr>
+<td align="left">contextPath</td>
+<td align="left">String</td>
+<td align="left">0..1</td>
+<td align="left">contextPath of the hosted application </td>
+<td align="left">POST: Mandatory (when application type is HOSTED) PUT: Optional</td>
+</tr>
+
+<tr>
+<td align="left">resourcesUrl</td>
+<td align="left">String</td>
+<td align="left">0..1</td>
+<td align="left">URL to application base directory hosted on an external server</td>
+<td align="left">POST: Mandatory (when application type is HOSTED) PUT: Optional</td>
+</tr>
+
+<tr>
+<td align="left">resourcesUsername</td>
+<td align="left">String</td>
+<td align="left">0..1</td>
+<td align="left">authorization username to access resourcesUrl </td>
+<td align="left">Optional</td>
+</tr>
+
+<tr>
+<td align="left">resourcesPassword</td>
+<td align="left">String</td>
+<td align="left">0..1</td>
+<td align="left">authorization password to access resourcesUrl </td>
+<td align="left">Optional</td>
+</tr>
+
+<tr>
+<td align="left">externalUrl</td>
+<td align="left">String</td>
+<td align="left">0..1</td>
+<td align="left">URL to the external application</td>
+<td align="left">POST: Mandatory (when application type is EXTERNAL) PUT: Optional</td>
+</tr>
+</tbody>
+</table>
+
+<h3 id="post-copy-an-application">POST - copy an application</h3>
+
+<p>A POST request to the &ldquo;clone&rdquo; resource creates a new application based on an already existing one.</p>
+
+<p>The properties are copied to the newly created application. For name, key and context path a &ldquo;clone&rdquo; prefix is added in order to be unique.</p>
+
+<p>If the target application is hosted and has an active version, the new application will have the active version with the same content.</p>
+
+<p>The response contains a representation of the newly created application.</p>
+
+<p>Required role: ROLE_APPLICATION_MANAGMENT_ADMIN</p>
+
+<p>Example request:</p>
+
+<pre><code>POST /application/applications/&lt;&lt;application_id&gt;&gt;/clone HTTP/1.1
+Authorization: Basic ...
+Accept: application/vnd.com.nsn.cumulocity.application+json
+</code></pre>
+
+<p>Example response:</p>
+
+<pre><code>HTTP/1.1 201 Created
+Location: .../application/applications/{{application_id}}
+Content-Type: application/vnd.com.nsn.cumulocity.application+json; charset=UTF-8; ver=0.9
+
+{
+    &quot;activeVersionId&quot;: &quot;10414&quot;,
+    &quot;availability&quot;: &quot;MARKET&quot;,
+    &quot;contextPath&quot;: &quot;clonetest&quot;,
+    &quot;id&quot;: &quot;1115&quot;,
+    &quot;key&quot;: &quot;clonesecretKeyForTheApplication&quot;,
+    &quot;manifest&quot;: {},
+    &quot;name&quot;: &quot;clonetestApplicationName&quot;,
+    &quot;owner&quot;: {
+        &quot;self&quot;: &quot;.../tenant/tenants/management&quot;,
+        &quot;tenant&quot;: {
+            &quot;id&quot;: &quot;management&quot;
+        }
+    },
+    &quot;resourcesUrl&quot;: &quot;/test&quot;,
+    &quot;self&quot;: &quot;.../application/applications/1115&quot;,
+    &quot;type&quot;: &quot;HOSTED&quot;
+}
+</code></pre>
+
+<h3 id="put-update-an-application">PUT - update an application</h3>
+
+<p>Request body: Application</p>
+
+<p>Response body: Application (if &ldquo;ACCEPT&rdquo; header is specified).</p>
+
+<p>Required role: ROLE_APPLICATION_MANAGMENT_ADMIN</p>
+
+<p>Example request:</p>
+
+<pre><code>PUT /application/applications/&lt;&lt;applicationId&gt;&gt;
+Host: ...
+Authorization: Basic ...
+Content-Length: ...
+Content-Type: application/vnd.com.nsn.cumulocity.application+json;ver=...
+{
+  &quot;availability&quot; : &quot;MARKET&quot;
+}
+</code></pre>
+
+<h3 id="get-an-application">GET an application</h3>
+
+<p>Response body: Application</p>
+
+<p>Required role: ROLE_APPLICATION_MANAGEMENT_READ</p>
+
+<p>Example response:</p>
+
+<pre><code>HTTP/1.1 200 OK
+Content-Type: application/vnd.com.nsn.cumulocity.application+json;ver=...
+Content-Length: ...
+{
+  &quot;availability&quot;: &quot;PRIVATE&quot;,
+  &quot;id&quot;: &quot;105&quot;,
+  &quot;key&quot;: &quot;...&quot;,
+  &quot;name&quot;: &quot;vehicleControlApplication&quot;,
+  &quot;owner&quot;: {
+      &quot;self&quot;: &quot;...&quot;,
+      &quot;tenant&quot;: {
+          &quot;id&quot;: &quot;taxiDrive&quot;
+      }
+  },
+  &quot;self&quot;: &quot;...&quot;,
+  &quot;type&quot;: &quot;EXTERNAL&quot;,
+  &quot;externalUrl&quot;:&quot;http://external.host.com/application&quot;
+}
+</code></pre>
+
+<h3 id="delete-an-application">DELETE an application</h3>
+
+<p>Request Body: n/a</p>
+
+<p>Response Body: n/a</p>
+
+<p>Required role: ROLE_APPLICATION_MANAGMENT_ADMIN and owner</p>
+
+<blockquote>
+<p>Info: The application can only be removed when its availability is PRIVATE or in other case when it has no subscriptions.</p>
+</blockquote>
+
+<p>Example Request: Delete an application</p>
+
+<pre><code>DELETE /application/applications/&lt;&lt;applicationId&gt;&gt;
+ Host: [hostname]
+ Authorization: Basic xxxxxxxxxxxxxxxxxxx
+</code></pre>
+
+<p>Example Response:</p>
+
+<pre><code>HTTP/1.1  204 NO CONTENT
+</code></pre>
+
+  </article>
+  
+  <article id="bootstrap-user" class="page-section">
+    <h2>
+      <button class="btn-link bookmark" data-clipboard-text="#bootstrap-user">
+        <span class="fa fa-link"></span>
+      </button>
+      Bootstrap user</h2>
+    
+
+<h3 id="get-bootstrap-user">GET bootstrap user</h3>
+
+<p>Response body: ApplicationUser</p>
+
+<p>Required role: ROLE_APPLICATION_MANAGEMENT_ADMIN</p>
+
+<p>Example request:</p>
+
+<pre><code>GET /application/applications/{microservice-applicationId}/bootstrapUser
+Host: ...
+Authorization: Basic ....
+Accept: application/vnd.com.nsn.cumulocity.user+json;ver=...
+</code></pre>
+
+<p>Example response:</p>
+
+<pre><code>HTTP/1.1 200 OK
+Content-Type: application/vnd.com.nsn.cumulocity.user+json;ver=...
+Content-Length: ...
+{
+    &quot;name&quot;: &quot;servicebootstrap_hello-world&quot;,
+    &quot;password&quot;: &quot;9HqBc0miL5&quot;,
+    &quot;tenant&quot;: &quot;dariusz&quot;
+}
+</code></pre>
+
+  </article>
+  
+  <article id="current-application" class="page-section">
+    <h2>
+      <button class="btn-link bookmark" data-clipboard-text="#current-application">
+        <span class="fa fa-link"></span>
+      </button>
+      Current application</h2>
+    
+
+<h3 id="get-current-application">GET current application</h3>
+
+<p>Response body: Application</p>
+
+<p>Required authentication with bootstrap user</p>
+
+<p>Example request:</p>
+
+<pre><code>GET /application/currentApplication
+Host: ...
+Authorization: Basic .....
+Accept: application/vnd.com.nsn.cumulocity.application+json;ver=...
+</code></pre>
+
+<p>Example response:</p>
+
+<pre><code>HTTP/1.1 200 OK
+Content-Type: application/vnd.com.nsn.cumulocity.application+json;ver=...
+Content-Length: ...
+{
+  &quot;availability&quot;: &quot;PRIVATE&quot;,
+  &quot;id&quot;: &quot;105&quot;,
+  &quot;key&quot;: &quot;...&quot;,
+  &quot;name&quot;: &quot;vehicleControlApplication&quot;,
+  &quot;owner&quot;: {
+      &quot;self&quot;: &quot;...&quot;,
+      &quot;tenant&quot;: {
+          &quot;id&quot;: &quot;taxiDrive&quot;
+      }
+  },
+  &quot;self&quot;: &quot;...&quot;,
+  &quot;type&quot;: &quot;MICROSERVICE&quot;,
+  &quot;externalUrl&quot;:&quot;http://external.host.com/application&quot;
+}
+</code></pre>
+
+<h3 id="put-update-current-application">PUT - update current application</h3>
+
+<p>Response body: Application</p>
+
+<p>Required authentication with bootstrap user</p>
+
+<p>Example request:</p>
+
+<pre><code>PUT /application/currentApplication
+Host: ...
+Authorization: Basic ...
+Accept: application/vnd.com.nsn.cumulocity.application+json;ver=...
+{
+      &quot;availability&quot;: &quot;PRIVATE&quot;,
+      &quot;id&quot;: &quot;105&quot;,
+      &quot;key&quot;: &quot;...&quot;,
+      &quot;name&quot;: &quot;vehicleControlApplication&quot;,
+      &quot;owner&quot;: {
+          &quot;self&quot;: &quot;...&quot;,
+          &quot;tenant&quot;: {
+              &quot;id&quot;: &quot;taxiDrive&quot;
+          }
+      },
+      &quot;self&quot;: &quot;...&quot;,
+      &quot;type&quot;: &quot;MICROSERVICE&quot;,
+      &quot;externalUrl&quot;:&quot;http://external.host.com/application&quot;
+    }
+</code></pre>
+
+<p>Example response:</p>
+
+<pre><code>HTTP/1.1 200 OK
+Content-Type: application/vnd.com.nsn.cumulocity.application+json;ver=...
+Content-Length: ...
+{
+  &quot;availability&quot;: &quot;PRIVATE&quot;,
+  &quot;id&quot;: &quot;105&quot;,
+  &quot;key&quot;: &quot;...&quot;,
+  &quot;name&quot;: &quot;...&quot;,
+  &quot;owner&quot;: {
+      &quot;self&quot;: &quot;...&quot;,
+      &quot;tenant&quot;: {
+          &quot;id&quot;: &quot;...&quot;
+      }
+  },
+  &quot;self&quot;: &quot;...&quot;,
+  &quot;type&quot;: &quot;MICROSERVICE&quot;
+}
+</code></pre>
+
+<h3 id="applicationsubscriptioncollection">ApplicationSubscriptionCollection</h3>
+
+<p>ApplicationSubscriptionCollection[application/vnd.com.nsn.cumulocity.applicationUserCollection+json]</p>
+
+<table>
+<thead>
+<tr>
+<th align="left">Name</th>
+<th align="left">Type</th>
+<th align="left">Occurs</th>
+<th align="left">Description</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td align="left">self</td>
+<td align="left">URI</td>
+<td align="left">1</td>
+<td align="left">Link to this resource</td>
+</tr>
+
+<tr>
+<td align="left">users</td>
+<td align="left">ApplicationUser</td>
+<td align="left">0..n</td>
+<td align="left">List of subscribed users, see below</td>
+</tr>
+
+<tr>
+<td align="left">statistics</td>
+<td align="left">PagingStatistics</td>
+<td align="left">1</td>
+<td align="left">Information about paging statistics</td>
+</tr>
+
+<tr>
+<td align="left">prev</td>
+<td align="left">URI</td>
+<td align="left">0..1</td>
+<td align="left">Link to a potential previous page of applications</td>
+</tr>
+
+<tr>
+<td align="left">next</td>
+<td align="left">URI</td>
+<td align="left">0..1</td>
+<td align="left">Link to a potential next page of applications</td>
+</tr>
+</tbody>
+</table>
+
+<h3 id="applicationuser">ApplicationUser</h3>
+
+<table>
+<thead>
+<tr>
+<th align="left">Field Name</th>
+<th align="left">Type</th>
+<th align="left">Occurs</th>
+<th align="left">Description</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td align="left">tenant</td>
+<td align="left">String</td>
+<td align="left">1</td>
+<td align="left">Subscription tenant</td>
+</tr>
+
+<tr>
+<td align="left">name</td>
+<td align="left">String</td>
+<td align="left">1</td>
+<td align="left">Username</td>
+</tr>
+
+<tr>
+<td align="left">password</td>
+<td align="left">String</td>
+<td align="left">1</td>
+<td align="left">Password</td>
+</tr>
+</tbody>
+</table>
+
+<h3 id="get-current-application-subscriptions">GET current application subscriptions</h3>
+
+<p>Response body: ApplicationSubscriptionCollection</p>
+
+<p>Required authentication with bootstrap user</p>
+
+<p>Example request:</p>
+
+<pre><code>GET /application/currentApplication/subscriptions
+Host: ...
+Authorization: Basic ....
+Accept: application/vnd.com.nsn.cumulocity.applicationUserCollection+json; ver=...
+</code></pre>
+
+<p>Example response:</p>
+
+<pre><code>HTTP/1.1 200 OK
+Content-Type: application/vnd.com.nsn.cumulocity.applicationUserCollection+json; ver=...
+Content-Length: ...
+{
+    &quot;users&quot;: [
+        {
+            &quot;name&quot;: &quot;service_hello-world&quot;,
+            &quot;password&quot;: &quot;...&quot;,
+            &quot;tenant&quot;: &quot;...&quot;
+        }
+    ]
+}
+</code></pre>
+
+  </article>
+  
+  <article id="application-binaries" class="page-section">
+    <h2>
+      <button class="btn-link bookmark" data-clipboard-text="#application-binaries">
+        <span class="fa fa-link"></span>
+      </button>
+      Application binaries</h2>
+    
+
+<h3 id="post-upload-application-binary">POST - upload application binary</h3>
+
+<p>For the applications of type &ldquo;microservice&rdquo;, &ldquo;web application&rdquo; and &ldquo;custom Apama rule&rdquo; to be available for Cumulocity platform users, a binary zip file must be uploaded.</p>
+
+<pre><code> POST /application/applications/{APPLICATION_ID}/binaries
+ Host: ...
+ Authorization: Basic …
+ Content-Type: multipart/form-data
+</code></pre>
+
+<p>For the microservice application, the zip file must consist of:</p>
+
+<ul>
+<li>cumulocity.json - file describing the deployment</li>
+<li>image.tar - executable docker image</li>
+</ul>
+
+<p>For the web application, the zip file must include index.html in the root directory.</p>
+
+<p>For the custom Apama rule application, the zip file must consist of a single .mon file.</p>
+
+  </article>
+  
+  
+</div>
+<footer class="main-footer">
+  <div class="copyright">
+    <div class="container text-center">
+      <p class="small ">&copy; 2019 Cumulocity GmbH | All rights reserved.</p>
+    </div>
+  </div>  
+</footer>
+
+<!-- Essential Scripts -->
+
+<!-- jQuery -->
+<script src="https://cumulocity.com/guides/js/vendor/jquery.min.js"></script>
+<script src="https://cumulocity.com/guides/js/vendor/bootstrap.bundle.min.js"></script>
+<script src="https://cumulocity.com/guides/js/vendor/clipboard.js"></script>
+<script src="https://cumulocity.com/guides/js/vendor/zoom.js"></script>
+<script src="https://cumulocity.com/guides/js/vendor/highlight.min.js"></script>
+<script src="https://cumulocity.com/guides/js/main.js"></script>
+
+
+
+
+
+    
+   
+  </body>
+</html>

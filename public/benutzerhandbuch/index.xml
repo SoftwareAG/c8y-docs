@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Handbuch on Cumulocity IoT Guides</title>
+    <link>https://cumulocity.com/guides/benutzerhandbuch/</link>
+    <description>Recent content in Handbuch on Cumulocity IoT Guides</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    
+	<atom:link href="https://cumulocity.com/guides/benutzerhandbuch/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Erste Schritte</title>
+      <link>https://cumulocity.com/guides/benutzerhandbuch/overview/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://cumulocity.com/guides/benutzerhandbuch/overview/</guid>
+      <description>Der Abschnitt Erste Schritte beschreibt, wie Sie die Cumulocity-Plattform aufrufen und sich anmelden, und führt durch die wesentlichen Funktionen, die in allen Anwendungen auf der Plattform identisch sind.</description>
+    </item>
+    
+    <item>
+      <title>Device Management</title>
+      <link>https://cumulocity.com/guides/benutzerhandbuch/device-management/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://cumulocity.com/guides/benutzerhandbuch/device-management/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Administration</title>
+      <link>https://cumulocity.com/guides/benutzerhandbuch/administration/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://cumulocity.com/guides/benutzerhandbuch/administration/</guid>
+      <description>Die &amp;ldquo;Administration&amp;rdquo;-Anwendung ermöglicht es Administratoren, ihre Benutzer, Rollen, Mandanten, Anwendungen und Regeln zu verwalten sowie eine Reihe von Einstellungen für ihr Konto zu konfigurieren.</description>
+    </item>
+    
+    <item>
+      <title>Cockpit</title>
+      <link>https://cumulocity.com/guides/benutzerhandbuch/cockpit/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://cumulocity.com/guides/benutzerhandbuch/cockpit/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Enterprise Edition</title>
+      <link>https://cumulocity.com/guides/benutzerhandbuch/enterprise-edition/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://cumulocity.com/guides/benutzerhandbuch/enterprise-edition/</guid>
+      <description>Die Enterprise Edition von Cumulocity bietet verschiedene Erweiterungen zu den Funktionalitäten der Standard Edition. Im Folgenden sind zusätzliche Funktionalitäten beschrieben, die nur in der Enterprise Edition verfügbar sind.</description>
+    </item>
+    
+    <item>
+      <title>Optionale Services</title>
+      <link>https://cumulocity.com/guides/benutzerhandbuch/optional-services/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://cumulocity.com/guides/benutzerhandbuch/optional-services/</guid>
+      <description>Zusätzlich zu den in Cumulocity verfügbaren integrierten Anwendungen für die Standard Edition und die Enterprise Edition gibt es zahlreiche optionale Services, die Sie abonnieren können, wie etwa Agenten für verschiedene Gerätetypen.</description>
+    </item>
+    
+  </channel>
+</rss>

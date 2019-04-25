@@ -7,13 +7,13 @@ order: 30
 
 Operation on resources.
 
-### GET  List Available Resources
-
-This operation retrieves information on all available resource files. Use file names as identifiers for all operations requiring a file_name path variable.
+### GET - List Available Resources
 
 ```
 {{url}}/service/zementis/resources
 ```
+
+This operation retrieves information on all available resource files. Use file names as identifiers for all operations requiring a file_name path variable.
 
 |HEADERS||
 |:---|:---|
@@ -24,6 +24,7 @@ This operation retrieves information on all available resource files. Use file n
 
 ```
 200 - OK
+
 curl --request GET "{{url}}/service/zementis/resources" --header "Authorization: {{auth}}"
 ```
 
@@ -31,6 +32,7 @@ curl --request GET "{{url}}/service/zementis/resources" --header "Authorization:
 
 ```
 200 - OK
+
 {
   "resources": [
     {
@@ -57,6 +59,7 @@ curl --request GET "{{url}}/service/zementis/resources" --header "Authorization:
 
 ```
 401 - Unauthorized
+
 curl --request GET "{{url}}/service/zementis/resources"
 ```
 
@@ -64,6 +67,7 @@ curl --request GET "{{url}}/service/zementis/resources"
 
 ```
 401 - Unauthorized
+
 {
     "error": "general/internalError",
     "message": "Not authorized!",
@@ -71,13 +75,13 @@ curl --request GET "{{url}}/service/zementis/resources"
 }
 ```
 
-###GET Get Resource Information
-
-Get information on the specified resource file.
+### GET - Get Resource Information
 
 ```
 {{url}}/service/zementis/resource/{{file_name}}
 ```
+
+Get information on the specified resource file.
 
 |HEADERS||
 |:---|:---|
@@ -85,12 +89,13 @@ Get information on the specified resource file.
 
 |PARAMS||
 |:---|:---|
-|model_name (string)|required path variable for an existing resource file name
+|file_name (string)|required path variable for an existing resource file name
 
 **Example Request**
 
 ```
 200 - OK
+
 curl --request GET "{{url}}/service/zementis/resource/customerAreaMappingTable.xls" --header "Authorization: {{auth}}"
 ```
 
@@ -98,6 +103,7 @@ curl --request GET "{{url}}/service/zementis/resource/customerAreaMappingTable.x
 
 ```
 200 - OK
+
 {
   "fileName": "customerAreaMappingTable.xls",
   "resourceType": "Lookup Tables",
@@ -112,6 +118,7 @@ curl --request GET "{{url}}/service/zementis/resource/customerAreaMappingTable.x
 
 ```
 401 - Unauthorized
+
 curl --request GET "{{url}}/service/zementis/resource/customerAreaMappingTable.xls"
 ```
 
@@ -119,6 +126,7 @@ curl --request GET "{{url}}/service/zementis/resource/customerAreaMappingTable.x
 
 ```
 401 - Unauthorized
+
 {
     "error": "general/internalError",
     "message": "Not authorized!",
@@ -130,6 +138,7 @@ curl --request GET "{{url}}/service/zementis/resource/customerAreaMappingTable.x
 
 ```
 404 - Not Found
+
 curl --request GET "{{url}}/service/zementis/resource/dummy" --header "Authorization: {{auth}}"
 ```
 
@@ -137,6 +146,7 @@ curl --request GET "{{url}}/service/zementis/resource/dummy" --header "Authoriza
 
 ```
 404 - Not Found
+
 {
   "errors": [
     "Resource file 'dummy' not found"
@@ -144,13 +154,13 @@ curl --request GET "{{url}}/service/zementis/resource/dummy" --header "Authoriza
 }
 ```
 
-###GET Get Resource File
-
-Download a resource file.
+### GET - Get Resource File
 
 ```
 {{url}}/service/zementis/resource/{{file_name}}/source
 ```
+
+Download a resource file.
 
 |HEADERS||
 |:---|:---|
@@ -158,13 +168,14 @@ Download a resource file.
 
 |PARAMS||
 |:---|:---|
-|model_name (string)|required path variable for an existing resource file name
+|file_name (string)|required path variable for an existing resource file name
 
 
 **Example Request**
 
 ```
 200 OK
+
 curl --request GET "{{url}}/service/zementis/resource/customerAreaMappingTable.xls/source" --header "Authorization: {{auth}}"
 ```
 
@@ -172,6 +183,7 @@ curl --request GET "{{url}}/service/zementis/resource/customerAreaMappingTable.x
 
 ```
 200 - OK
+
 Resource file
 ```
 
@@ -179,6 +191,7 @@ Resource file
 
 ```
 401 - Unauthorized
+
 curl --request GET "{{url}}/service/zementis/resource/customerAreaMappingTable.xls/source"
 ```
 
@@ -186,6 +199,7 @@ curl --request GET "{{url}}/service/zementis/resource/customerAreaMappingTable.x
 
 ```
 401 - Unauthorized
+
 {
     "error": "general/internalError",
     "message": "Not authorized!",
@@ -197,6 +211,7 @@ curl --request GET "{{url}}/service/zementis/resource/customerAreaMappingTable.x
 
 ```
 404 - Not Found
+
 curl --request GET "{{url}}/service/zementis/resource/dummy/source" --header "Authorization: {{auth}}"
 ```
 
@@ -204,6 +219,7 @@ curl --request GET "{{url}}/service/zementis/resource/dummy/source" --header "Au
 
 ```
 404 - Not Found
+
 {
   "errors": [
     "Resource file 'dummy' not found"
@@ -211,13 +227,13 @@ curl --request GET "{{url}}/service/zementis/resource/dummy/source" --header "Au
 }
 ```
 
-###POST Upload New Resource File
-
-Upload a new resource file. The file name in 'file' body parameter will be used to identify this resource. Note that the size of the uploaded resource file must not exceed 500 MB.
+### POST - Upload New Resource File
 
 ```
 {{url}}/service/zementis/resource
 ```
+
+Upload a new resource file. The file name in 'file' body parameter will be used to identify this resource. Note that the size of the uploaded resource file must not exceed 500 MB.
 
 |HEADERS||
 |:---|:---|
@@ -233,6 +249,7 @@ Upload a new resource file. The file name in 'file' body parameter will be used 
 
 ```
 201 - Created
+
 curl --request POST "{{url}}/service/zementis/resource" --header "Authorization: {{auth}}" --form "file=@customerAreaMappingTable.xls"
 ```
 
@@ -240,6 +257,7 @@ curl --request POST "{{url}}/service/zementis/resource" --header "Authorization:
 
 ```
 201 - Created
+
 {
   "fileName": "customerAreaMappingTable.xls",
   "resourceType": "Lookup Tables",
@@ -254,6 +272,7 @@ curl --request POST "{{url}}/service/zementis/resource" --header "Authorization:
 
 ```
 400 - Bad Request
+
 curl --request POST "{{url}}/service/zementis/resource" --header "Authorization: {{auth}}" --form "file=@Empty.jar"
 ```
 
@@ -261,6 +280,7 @@ curl --request POST "{{url}}/service/zementis/resource" --header "Authorization:
 
 ```
 400 - Bad Request
+
 {
   "errors": [
     "Empty input stream."
@@ -272,6 +292,7 @@ curl --request POST "{{url}}/service/zementis/resource" --header "Authorization:
 
 ```
 401 - Unauthorized
+
 curl --request POST "{{url}}/service/zementis/resource" --form "file=@custom-functions.jar"
 ```
 
@@ -279,6 +300,7 @@ curl --request POST "{{url}}/service/zementis/resource" --form "file=@custom-fun
 
 ```
 401 - Unauthorized
+
 {
     "error": "general/internalError",
     "message": "Not authorized!",
@@ -290,6 +312,7 @@ curl --request POST "{{url}}/service/zementis/resource" --form "file=@custom-fun
 
 ```
 409 - Conflict
+
 curl --request POST "{{url}}/service/zementis/resource" --header "Authorization: {{auth}}" --form "file=@customerAreaMappingTable.xls"
 ```
 
@@ -297,6 +320,7 @@ curl --request POST "{{url}}/service/zementis/resource" --header "Authorization:
 
 ```
 409 - Conflict
+
 {
   "errors": [
     "A resource file with the name 'customerAreaMappingTable.xls' already exists."
@@ -304,13 +328,13 @@ curl --request POST "{{url}}/service/zementis/resource" --header "Authorization:
 }
 ```
 
-###DEL Remove Resource File 
+### DEL - Remove Resource File 
  
-Remove the specified resource file and list all remaining resources.
-
 ```
 {{url}}/service/zementis/resource/{{file_name}}
 ```
+
+Remove the specified resource file and list all remaining resources.
 
 |HEADERS||
 |:---|:---|
@@ -318,13 +342,14 @@ Remove the specified resource file and list all remaining resources.
 
 |PARAMS||
 |:---|:---|
-|model_name (string)|required path variable for an existing resource file name
+|file_name (string)|required path variable for an existing resource file name
 
 
 **Example Request**
 
 ```
 200 - OK
+
 curl --request DELETE "{{url}}/service/zementis/resource/customerAreaMappingTable.xls" --header "Authorization: {{auth}}"
 ```
 
@@ -332,6 +357,7 @@ curl --request DELETE "{{url}}/service/zementis/resource/customerAreaMappingTabl
 
 ```
 200 - OK
+
 {
   "resources": [
     {
@@ -350,6 +376,7 @@ curl --request DELETE "{{url}}/service/zementis/resource/customerAreaMappingTabl
 
 ```
 401 - Unauthorized
+
 curl --request DELETE "{{url}}/service/zementis/resource/customerAreaMappingTable.xls"
 ```
 
@@ -357,6 +384,7 @@ curl --request DELETE "{{url}}/service/zementis/resource/customerAreaMappingTabl
 
 ```
 401 - Unauthorized
+
 {
     "error": "general/internalError",
     "message": "Not authorized!",
@@ -368,6 +396,7 @@ curl --request DELETE "{{url}}/service/zementis/resource/customerAreaMappingTabl
 
 ```
 404 - Not Found
+
 curl --request DELETE "{{url}}/service/zementis/resource/dummy" --header "Authorization: {{auth}}"
 ```
 
@@ -375,6 +404,7 @@ curl --request DELETE "{{url}}/service/zementis/resource/dummy" --header "Author
 
 ```
 404 - Not Found
+
 {
   "errors": [
     "Resource file 'dummy' not found"
@@ -382,13 +412,13 @@ curl --request DELETE "{{url}}/service/zementis/resource/dummy" --header "Author
 }
 ```
 
-###DEL Remove All Resource Files
-
-Remove all available resources and list the remaining resources.
+### DEL - Remove All Resource Files
 
 ```
 {{url}}/service/zementis/resources
 ```
+
+Remove all available resources and list the remaining resources.
 
 |HEADERS||
 |:---|:---|
@@ -399,6 +429,7 @@ Remove all available resources and list the remaining resources.
 
 ```
 200 - OK
+
 curl --request DELETE "{{url}}/service/zementis/resources" --header "Authorization: {{auth}}"
 ```
 
@@ -406,6 +437,7 @@ curl --request DELETE "{{url}}/service/zementis/resources" --header "Authorizati
 
 ```
 200 - OK
+
 {
   "resources": []
 }
@@ -415,6 +447,7 @@ curl --request DELETE "{{url}}/service/zementis/resources" --header "Authorizati
 
 ```
 401 - Unauthorized
+
 curl --request DELETE "{{url}}/service/zementis/resources"
 ```
 
@@ -422,6 +455,7 @@ curl --request DELETE "{{url}}/service/zementis/resources"
 
 ```
 401 - Unauthorized
+
 {
     "error": "general/internalError",
     "message": "Not authorized!",

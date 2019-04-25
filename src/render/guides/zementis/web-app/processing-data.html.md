@@ -38,18 +38,18 @@ Click **Show Results** to preview the scored or processed results.
 
 By design, the **Results** page will only preview maximum 500 records in a paginated manner, displaying 10 records per page. 
 
-Click the download icon in the top right of the **Results** page, to download the entire set of processed results.
+In the top right of the **Results** page you find several buttons to perform the following actions:
 
-You can also filter the results or search through it. Click the filter icon to enable or disable filters
+|Button|Action
+|:---|:---
+|![Download](/guides/images/zementis/zementis-download-icon.png)|Download the entire set of processed results.
+|![Filter](/guides/images/zementis/zementis-filter-icon.png)|Enable or disable filters.
+|![Configure](/guides/images/zementis/zementis-filter-icon.png)|Configure the columns to be shown in the results table.
 
-Click the cogwheel icon, to configure the columns to be shown in the results table.
+Ideally, for measuring the accuracy of the model against your data, you should specify the desired outputs as part of you data file. If specified, the processed results will include a separate column called **Match** which indicates if the computed and the expected outputs have matched.
 
-Ideally, for measuring the accuracy of the model against your data, you should specify the desired outputs as part of you data file.
+Click the cogwheel icon ![Configure](/guides/images/zementis/zementis-filter-icon.png) and select **Hide matching rows** to hide all rows where the **Match** column is true, i.e. to display only records where computed and expected outputs differ.
 
-If specified, the processed results will include a separate column called **Match** which indicates if the computed and the expected outputs have matched.
-
-Click the cogwheel icon and select **Hide matching rows** to hide all rows where the **Match** column is true, i.e. to display only records where computed and expected outputs differ.
-
-Click the file icon in front of a row to download a full execution trace showing what exactly happened when that record was applied against the model. In this way, you can investigate why the outputs did not match.
+Click the file icon ![File](/guides/images/zementis/zementis-file-icon.png) in front of a row to download a full execution trace showing what exactly happened when that record was applied against the model. In this way, you can investigate why the outputs did not match.
 
 

@@ -14,4 +14,4 @@ The **Home screen** provides
 
 * an introduction to the application,
 * quick links to important topics like machine learning and PMML
-* lists of your models and your resources
+* lists of your models and resources

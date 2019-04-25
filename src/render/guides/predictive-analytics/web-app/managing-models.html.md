@@ -4,13 +4,15 @@ layout: redirect
 order: 30
 ---
 
-In the **Models** page you actually do the model management. Model management functionality includes
+In the **Models** page you actually do the model management. 
 
-* uploading models
-* downloading models
-* activating or deactivating models
-* deleting models
-* viewing model properties and KPIs
+Model management functionality includes:
+
+* Uploading models
+* Downloading models
+* Activating or deactivating models
+* Deleting models
+* Viewing model properties and KPIs
 
 Click **Models** in the navigator, to open the **Models** page. 
 

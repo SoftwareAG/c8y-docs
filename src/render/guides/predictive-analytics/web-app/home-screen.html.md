@@ -10,8 +10,8 @@ Clicking **Predictive Analytics** in the app switcher will open the Predictive A
 
 ![Home screen](/guides/images/zementis/zementis-home-screen.png)
 
-The **Home screen** provides
+The **Home screen** provides:
 
-* an introduction to the application,
-* quick links to important topics like machine learning and PMML
-* lists of your models and resources
+* An introduction to the application
+* Quick links to important topics like machine learning and PMML
+* Lists of your models and resources

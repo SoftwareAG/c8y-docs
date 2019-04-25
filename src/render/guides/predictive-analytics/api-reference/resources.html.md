@@ -242,7 +242,7 @@ Upload a new resource file. The file name in 'file' body parameter will be used 
 
 |PARAMS||
 |:---|:---|
-|file|required query parameter for resource file name, if Content-Type is application/octet-stream, <br>or a body parameter for resource file, if Content-Type is multipart/form-data
+|file_name (string)|required query parameter for resource file name, if Content-Type is application/octet-stream, <br>or a body parameter for resource file, if Content-Type is multipart/form-data
 
 
 **Example Request**

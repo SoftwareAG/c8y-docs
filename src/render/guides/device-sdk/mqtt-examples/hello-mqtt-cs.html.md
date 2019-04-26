@@ -57,7 +57,7 @@ Edit the _hello-mqtt-cs.csproj_ in the _hello-mqtt-cs_ folder. Add a dependency 
 
 ```xml
 <ItemGroup>
-    <PackageReference Include="Cumulocity.SDK.MQTT" Version="0.1.1" />
+    <PackageReference Include="Cumulocity.SDK.MQTT" Version="0.1.3" />
 </ItemGroup>
 ```
 
@@ -86,12 +86,17 @@ namespace hello_mqtt
 	{
 		static void Main(string[] args)
 		{
-			Console.WriteLine("Hello World!");
-			Task.Run(RunClientAsync);
-			new System.Threading.AutoResetEvent(false).WaitOne();
+            Console.WriteLine("Application has started. Ctrl-C to end");
+
+            var cSource = new CancellationTokenSource();
+            var myTask = Task.Factory.StartNew(() => RunJsonViaMqttClientAsync(cSource.Token), cSource.Token);
+            Console.CancelKeyPress += (sender, eventArgs) => cSource.Cancel();
+            myTask.Wait(cSource.Token);
+
+            Console.WriteLine("Now shutting down");
 		}
 
-		private static async Task RunClientAsync()
+        private static async Task RunJsonViaMqttClientAsync(CancellationToken cToken)
 		{
 			const string serverUrl = "mqtt.cumulocity.com";
 			const string clientId = "my_mqtt_cs_client";
@@ -110,7 +115,9 @@ namespace hello_mqtt
 
 			MqttClient client = new MqttClient(cDetails);
 			client.MessageReceived += Client_MessageReceived;
-			await client.EstablishConnectionAsync();
+            client.Connected += Client_Connected;
+            client.ConnectionFailed += Client_ConnectionFailed;
+            await client.EstablishConnectionAsync();
 
 			string topic = "s/us";
 			string payload = $"100,{device_name}, c8y_MQTTDevice";
@@ -142,20 +149,30 @@ namespace hello_mqtt
 
 			// generate a random temperature (10º-20º) measurement and send it every 1 s
 			Random rnd = new Random();
-			for (int i = 0; i < 5; i++)
-			{
-				int temp = rnd.Next(10, 20);
+            while (!cToken.IsCancellationRequested)
+            {
+                int temp = rnd.Next(10, 20);
 				Console.WriteLine("Sending temperature measurement (" + temp + "º) ...");
 				await client.PublishAsync(new MqttMessageRequestBuilder()
 					.WithTopicName("s/us")
 					.WithQoS(QoS.EXACTLY_ONCE)
 					.WithMessageContent("211," + temp)
 					.Build());
-				Thread.Sleep(1000);
-			}
+                Thread.Sleep(1000);
+            }
 		}
 
-		private static void Client_MessageReceived(object sender, IMqttMessageResponse e)
+        private static void Client_ConnectionFailed(object sender, ProcessFailedEventArgs e)
+        {
+            Console.WriteLine("Connection failed");
+        }
+
+        private static void Client_Connected(object sender, ClientConnectedEventArgs e)
+        {
+            Console.WriteLine("Client connected.");
+        }
+
+        private static void Client_MessageReceived(object sender, IMqttMessageResponse e)
 		{
 			var content = e.MessageContent;
 		}

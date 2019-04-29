@@ -44,12 +44,11 @@ In the top right of the **Results** page you find several buttons to perform the
 |:---|:---
 |![Download](/guides/images/zementis/zementis-download-icon.png)|Download the entire set of processed results.
 |![Filter](/guides/images/zementis/zementis-filter-icon.png)|Enable or disable filters.
-|![Configure](/guides/images/zementis/zementis-filter-icon.png)|Configure the columns to be shown in the results table.
+|![Configure](/guides/images/zementis/zementis-cogwheel-icon.png)|Configure the columns to be shown in the results table.
 
 Ideally, for measuring the accuracy of the model against your data, you should specify the desired outputs as part of you data file. If specified, the processed results will include a separate column called **Match** which indicates if the computed and the expected outputs have matched.
 
-Click the cogwheel icon ![Configure](/guides/images/zementis/zementis-filter-icon.png) and select **Hide matching rows** to hide all rows where the **Match** column is true, i.e. to display only records where computed and expected outputs differ.
+Click the cogwheel icon <img src="/guides/images/zementis/zementis-cogwheel-icon.png" alt="File" style="display:inline-block; margin:0"> and select **Hide matching rows**, to hide all rows where the **Match** column is true, i.e. to display only records where computed and expected outputs differ. 
 
-Click the file icon ![File](/guides/images/zementis/zementis-file-icon.png) in front of a row to download a full execution trace showing what exactly happened when that record was applied against the model. In this way, you can investigate why the outputs did not match.
-
+Click the file icon <img src="/guides/images/zementis/zementis-file-icon.png" alt="File" style="display:inline-block; margin:0"> in front of a row, to download a full execution trace, showing what exactly happened when that record was applied against the model. In this way, you can investigate why the outputs did not match.
 

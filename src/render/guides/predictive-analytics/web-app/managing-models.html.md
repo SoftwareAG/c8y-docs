@@ -44,7 +44,9 @@ For each format a clickable icon is provided in the model cards.
 
 ### Activating or deactivating models
 
-A model, if not being used for a long time, can be deactivated so that it doesn't occupy space in the memory of the system. Click the **Active/Inactive** toggle button in a model´s card to deactivate/activate the model.
+A model, if not being used for a long time, can be deactivated so that it doesn't occupy space in the memory of the system. 
+
+Click the **Active/Inactive** toggle button in a model´s card to deactivate/activate the model.
 
 
 ### Deleting models
@@ -57,7 +59,7 @@ Once a model is deleted, it will be removed permanently from your list of models
 
 A model has many important properties such as model inputs and outputs as well as meaningful KPIs like memory snapshots which help you to get an insight into the run-time performance  of the model. 
 
-Click the details icon ![Details icon](/guides/images/zementis/zementis-details-icon.png) on the top right of a card, to view the properties and KPIs of a model.
+Click the details icon <img src="/guides/images/zementis/zementis-details-icon.png" alt="Details" style="display:inline-block; margin:0"> on the top right of a card, to view the properties and KPIs of a model.
 
 Besides the name, description and status of the model, the **Model Details** window shows the inputs and outputs of the model and some useful charts created using the KPIs. These charts currently include the Memory Metrics and the Prediction Metrics.
 
@@ -70,4 +72,4 @@ displays the Five Point Summary of predicted values i.e., Minimum, FirstQuartile
 
 Currently the Prediction Metrics feature is supported only for classification and regression models.
 
-**Info**: By default, the **Inputs** and **Outputs** panels are in collapsed state. Click the labels to expand them. 
+>**Info**: By default, the **Inputs** and **Outputs** panels are in collapsed state. Click the labels to expand them. 

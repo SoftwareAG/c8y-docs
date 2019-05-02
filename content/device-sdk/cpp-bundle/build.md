@@ -61,7 +61,7 @@ layout: redirect
 
 First, download a copy of the library from the git repository and change to the directory.
 
-    $ git clone git@bitbucket.org:m2m/cumulocity-sdk-c.git
+    $ git clone https://bitbucket.org/m2m/cumulocity-sdk-c
     $ cd cumulocity-sdk-c
 
 Second, initialize and update your submodule dependencies, since the library depends on the [paho.mqtt.embedded-c](https://github.com/eclipse/paho.mqtt.embedded-c) library for MQTT support.

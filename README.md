@@ -96,7 +96,7 @@ headless: true # states that all content inside this directory is just a resourc
 ```
 
 &nbsp;
-3. Add a mardown file for each block of content with the folloing front matter:
+3. Add a markdown file for each block of content with the following front matter:
 
 ```yaml
 ---

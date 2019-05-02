@@ -1,0 +1,2286 @@
+<!DOCTYPE html>
+<html>
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <base href="" />
+    <meta name="generator" content="Hugo 0.54.0 with theme C8yDocs">
+    <title>Device management library - Cumulocity IoT Guides</title>
+    <meta name="author" content="Carlos Ceia @ Cumulocity">
+    <meta name="keywords" content=", Software AG Cloud, Cumulocity IoT, Internet of things, analytics, devices, connect">
+
+
+    <link rel="icon" href="/favicon.ico">
+
+    
+
+    
+
+    
+    
+    
+    <link rel="stylesheet" href="https://cumulocity.com/guides/style.css">
+    
+
+      
+      <script> window.zEmbed||function(e,t){var n,o,d,i,s,a=[],r=document.createElement("iframe");window.zEmbed=function(){a.push(arguments)},window.zE=window.zE||window.zEmbed,r.src="javascript:false",r.title="",r.role="presentation",(r.frameElement||r).style.cssText="display: none",d=document.getElementsByTagName("script"),d=d[d.length-1],d.parentNode.insertBefore(r,d),i=r.contentWindow,s=i.document;try{o=s}catch(c){n=document.domain,r.src='javascript:var d=document.open();d.domain="'+n+'";void(0);',o=s}o.open()._l=function(){var o=this.createElement("script");n&&(this.domain=n),o.id="js-iframe-async",o.src=e,this.t=+new Date,this.zendeskHost=t,this.zEQueue=a,this.body.appendChild(o)},o.write('<body onload="document._l();">'),o.close()}("https://assets.zendesk.com/embeddable_framework/main.js","cumulocity.zendesk.com"); </script>
+        <script type="text/JavaScript">
+          window.zESettings = {
+            webWidget: {
+              color: {
+                theme: '#1776bf'    
+              },
+              position: {
+                horizontal: 'right',
+                vertical: 'top'     
+              }
+            }
+          };
+          </script>
+        
+        
+   
+  </head><body data-spy="scroll" data-target="#main-nav" ><button type="button" class="sidebar-toggle">
+  <span class="icon-bar"></span>
+  <span class="icon-bar"></span>
+  <span class="icon-bar"></span>
+  <span>MENU</span>
+</button>
+<nav class="main-top-bar" >
+  <div class="d-flex container">
+    <ul class="nav d-flex flex-start hidden-xs nav-left">
+      <li><a href="https://www.softwareag.cloud/site/product/cumulocity-iot.html">Cumulocity IoT</a></li>
+      <li><a href="http://resources.cumulocity.com/documentation/jssdk/latest/#/api">Cumulocity Angular API</a></li>
+    </ul>
+    <ul class="nav flex-end nav-right">
+      <li>   <script>
+              (function() {
+                var cx = '008969372384807682938:yeh7xt785g4';
+                var gcse = document.createElement('script');
+                gcse.type = 'text/javascript';
+                gcse.async = true;
+                gcse.src = 'https://cse.google.com/cse.js?cx=' + cx;
+                var s = document.getElementsByTagName('script')[0];
+                s.parentNode.insertBefore(gcse, s);
+              })();
+            </script>
+        <div id="___gcse_0" dir="ltr"><form class="gsc-search-box gsc-search-box-tools" accept-charset="utf-8"><div class="table-responsive"><table cellspacing="0" cellpadding="0" class="gsc-search-box"><tbody><tr><td class="gsc-input"><div class="gsc-input-box" id="gsc-iw-id1"><table cellspacing="0" cellpadding="0" id="gs_id50" class="gstl_50 gsc-input" style="width: 100%; padding: 0px;"><tbody><tr><td id="gs_tti50" class="gsib_a"><input autocomplete="off" type="text" size="10" class="gsc-input" name="search" title="search" id="gsc-i-id1" placeholder="Custom Search" dir="ltr" spellcheck="false" x-webkit-grammar="builtin:search" lang="en" style="width: 100%; padding: 0px; border: none; margin: -0.0625em 0px 0px; height: 1.25em; background: url(&quot;https://www.google.com/cse/static/images/1x/googlelogo_lightgrey_46x16dp.png&quot;) left center no-repeat rgb(255, 255, 255); text-indent: 48px; outline: none;"></td><td class="gsib_b"><div class="gsst_b" id="gs_st50" dir="ltr"><a class="gsst_a" href="javascript:void(0)" style="display: none;" title="Clear search box" role="button"><span class="gscb_a" id="gs_cb50" aria-hidden="true">×</span></a></div></td></tr></tbody></table></div></td><td class="gsc-search-button"><button class="gsc-search-button gsc-search-button-v2"><svg width="13" height="13" viewBox="0 0 13 13"><title>search</title><path d="m4.8495 7.8226c0.82666 0 1.5262-0.29146 2.0985-0.87438 0.57232-0.58292 0.86378-1.2877 0.87438-2.1144 0.010599-0.82666-0.28086-1.5262-0.87438-2.0985-0.59352-0.57232-1.293-0.86378-2.0985-0.87438-0.8055-0.010599-1.5103 0.28086-2.1144 0.87438-0.60414 0.59352-0.8956 1.293-0.87438 2.0985 0.021197 0.8055 0.31266 1.5103 0.87438 2.1144 0.56172 0.60414 1.2665 0.8956 2.1144 0.87438zm4.4695 0.2115 3.681 3.6819-1.259 1.284-3.6817-3.7 0.0019784-0.69479-0.090043-0.098846c-0.87973 0.76087-1.92 1.1413-3.1207 1.1413-1.3553 0-2.5025-0.46363-3.4417-1.3909s-1.4088-2.0686-1.4088-3.4239c0-1.3553 0.4696-2.4966 1.4088-3.4239 0.9392-0.92727 2.0864-1.3969 3.4417-1.4088 1.3553-0.011889 2.4906 0.45771 3.406 1.4088 0.9154 0.95107 1.379 2.0924 1.3909 3.4239 0 1.2126-0.38043 2.2588-1.1413 3.1385l0.098834 0.090049z"></path></svg></button></td><td class="gsc-clear-button"><div class="gsc-clear-button" title="clear results">&nbsp;</div></td></tr></tbody></table></div></form></div>
+      </li>
+    </ul>
+  </div>
+</nav><button type="button" class="to-the-top">
+  <span class="sr-only">Top</span>
+  <span class="fa fa-chevron-up"></span>
+</button><nav class="main-nav navbar">
+  <header class="nav-header">
+    <a href="https://www.softwareag.cloud/site/dev-center/cumulocity-iot.html">
+      <img src="https://cumulocity.com/guides/images/cumulocity-iot.svg"
+        class="img-responsive no-zoom"
+        alt="Cumulocity IoT">
+    </a>
+
+    <div class="dropdown">
+      <button class="dropdown-toggle"
+        type="button"
+        id="dropdownMenuButton"
+        data-toggle="dropdown"
+        aria-haspopup="true"
+        aria-expanded="false">
+        <span id="current-dropdown-toggle" class="text-truncate"></span> <span class="caret"></span>
+      </button>
+      <div class="dropdown-menu"
+        aria-labelledby="dropdownMenuButton">
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+
+        
+        
+        
+
+        <a class='dropdown-menu-item '
+          href='https://cumulocity.com/guides/release-notes/overview/'><i class="c8y-icon c8y-icon-notification"></i> Release notes</a>
+        
+        
+        
+        
+        
+        
+        
+        
+
+        
+        
+        
+
+        <a class='dropdown-menu-item '
+          href='https://cumulocity.com/guides/concepts/introduction/'><i class="c8y-icon c8y-icon-c8y-data"></i> Concepts guide</a>
+        
+        
+        
+        
+        
+        
+        
+        
+
+        
+        
+        
+
+        <a class='dropdown-menu-item '
+          href='https://cumulocity.com/guides/users-guide/getting-started/'><i class="c8y-icon c8y-icon-user"></i> User guide</a>
+        
+        
+        
+        
+        
+        
+        
+        
+
+        
+        
+        
+
+        <a class='dropdown-menu-item '
+          href='https://cumulocity.com/guides/benutzerhandbuch/overview/'><i class="c8y-icon c8y-icon-user"></i> Handbuch</a>
+        
+        
+        
+        
+        
+        
+        
+        
+
+        
+        
+        
+
+        <a class='dropdown-menu-item '
+          href='https://cumulocity.com/guides/devices/overview/'><i class="c8y-icon c8y-icon-device-management"></i> Device guides</a>
+        
+        
+        
+        
+        
+        
+        
+        
+
+        
+        
+        
+
+        <a class='dropdown-menu-item '
+          href='https://cumulocity.com/guides/edge/overview/'><i class="fa fa-book"></i> Cumulocity IoT Edge</a>
+        
+        
+        
+        
+        
+        
+        
+        
+
+        
+        
+        
+
+        <a class='dropdown-menu-item '
+          href='https://cumulocity.com/guides/microservice-sdk/introduction/'><i class="c8y-icon c8y-icon-tools"></i> Microservice SDK guide</a>
+        
+        
+        
+        
+        
+        
+        
+        
+
+        
+        
+        
+
+        <a class='dropdown-menu-item '
+          href='https://cumulocity.com/guides/device-sdk/introduction/'><i class="c8y-icon c8y-icon-tools"></i> Device SDK guide</a>
+        
+        
+        
+        
+        
+        
+        
+        
+
+        
+        
+        
+
+        <a class='dropdown-menu-item '
+          href='https://cumulocity.com/guides/web/introduction/'><i class="c8y-icon c8y-icon-smart-rest"></i> Web SDK guide</a>
+        
+        
+        
+        
+        
+        
+        
+        
+
+        
+        
+        
+
+        <a class='dropdown-menu-item '
+          href='https://cumulocity.com/guides/apama/overview-analytics/'><i class="c8y-icon c8y-icon-data-explorer"></i> Analytics guide</a>
+        
+        
+        
+        
+        
+        
+        
+        
+
+        
+        
+        
+        
+        <span class="current-app">Reference guide</span>
+        
+        
+
+        <a class='dropdown-menu-item active'
+          href='https://cumulocity.com/guides/reference/rest-implementation/'><i class="fa fa-book"></i> Reference guide</a>
+        
+      </div>
+    </div>
+  </header>
+
+  
+
+  <nav id="main-nav"
+    class="nav-sections">
+    
+    
+    <div class="">
+        
+        
+        
+        
+      <a href="javascript:void(0);"
+        data-toggle="collapse"
+        data-target="#page-nav0"
+        class="collapse-btn  collapsed ">
+        <i class="fa fa-chevron-right "></i>
+      </a>
+      
+      <a class=""
+        href="https://cumulocity.com/guides/reference/rest-implementation/">REST implementation</a>
+     
+      
+      
+      <div id="page-nav0"
+        class="collapse   ">
+        <nav class="list-group nav">
+          
+          
+            <a class="list-group-item"
+              href="https://cumulocity.com/guides/reference/rest-implementation/#http-usage">HTTP usage</a>
+            
+            
+          
+            <a class="list-group-item"
+              href="https://cumulocity.com/guides/reference/rest-implementation/#rest-usage">REST usage</a>
+            
+            
+          
+            <a class="list-group-item"
+              href="https://cumulocity.com/guides/reference/rest-implementation/#root-interface">Root interface</a>
+            
+            
+          
+            <a class="list-group-item"
+              href="https://cumulocity.com/guides/reference/rest-implementation/#generic-media-types">Generic media types</a>
+            
+            
+        </nav>
+      </div>
+      
+    </div>
+    
+    
+    
+    <div class="">
+        
+        
+        
+        
+      <a href="javascript:void(0);"
+        data-toggle="collapse"
+        data-target="#page-nav1"
+        class="collapse-btn  collapsed ">
+        <i class="fa fa-chevron-right "></i>
+      </a>
+      
+      <a class=""
+        href="https://cumulocity.com/guides/reference/smartrest/">SmartREST</a>
+     
+      
+      
+      <div id="page-nav1"
+        class="collapse   ">
+        <nav class="list-group nav">
+          
+          
+            <a class="list-group-item"
+              href="https://cumulocity.com/guides/reference/smartrest/#overview">Overview</a>
+            
+            
+          
+            <a class="list-group-item"
+              href="https://cumulocity.com/guides/reference/smartrest/#the-protocol">The protocol</a>
+            
+            
+          
+            <a class="list-group-item"
+              href="https://cumulocity.com/guides/reference/smartrest/#templates">Templates</a>
+            
+            
+          
+            <a class="list-group-item"
+              href="https://cumulocity.com/guides/reference/smartrest/#registration-process">Registration process</a>
+            
+            
+          
+            <a class="list-group-item"
+              href="https://cumulocity.com/guides/reference/smartrest/#using-smartrest-with-multiple-x-ids">Using SmartREST with multiple X-Ids</a>
+            
+            
+          
+            <a class="list-group-item"
+              href="https://cumulocity.com/guides/reference/smartrest/#smartrest-real-time-notifications">SmartREST Real-time Notificationss</a>
+            
+            
+          
+            <a class="list-group-item"
+              href="https://cumulocity.com/guides/reference/smartrest/#built-in-messages">Built-in messages</a>
+            
+            
+        </nav>
+      </div>
+      
+    </div>
+    
+    
+    
+    <div class="">
+        
+        
+        
+        
+      <a href="javascript:void(0);"
+        data-toggle="collapse"
+        data-target="#page-nav2"
+        class="collapse-btn  collapsed ">
+        <i class="fa fa-chevron-right "></i>
+      </a>
+      
+      <a class=""
+        href="https://cumulocity.com/guides/reference/login/">Login with OAuth2</a>
+     
+      
+      
+      <div id="page-nav2"
+        class="collapse   ">
+        <nav class="list-group nav">
+          
+          
+            <a class="list-group-item"
+              href="https://cumulocity.com/guides/reference/login/#overview">Overview</a>
+            
+            
+          
+            <a class="list-group-item"
+              href="https://cumulocity.com/guides/reference/login/#login-options">Login options</a>
+            
+            
+          
+            <a class="list-group-item"
+              href="https://cumulocity.com/guides/reference/login/#login-flow">Login flow</a>
+            
+            
+        </nav>
+      </div>
+      
+    </div>
+    
+    
+    
+    <div class="">
+        
+        
+        
+        
+      <a href="javascript:void(0);"
+        data-toggle="collapse"
+        data-target="#page-nav3"
+        class="collapse-btn  collapsed ">
+        <i class="fa fa-chevron-right "></i>
+      </a>
+      
+      <a class=""
+        href="https://cumulocity.com/guides/reference/inventory/">Inventory</a>
+     
+      
+      
+      <div id="page-nav3"
+        class="collapse   ">
+        <nav class="list-group nav">
+          
+          
+            <a class="list-group-item"
+              href="https://cumulocity.com/guides/reference/inventory/#overview">Overview</a>
+            
+            
+          
+            <a class="list-group-item"
+              href="https://cumulocity.com/guides/reference/inventory/#inventory-api">Inventory API</a>
+            
+            
+          
+            <a class="list-group-item"
+              href="https://cumulocity.com/guides/reference/inventory/#managed-object-collection">Managed object collection</a>
+            
+            
+          
+            <a class="list-group-item"
+              href="https://cumulocity.com/guides/reference/inventory/#managed-object">Managed object</a>
+            
+            
+          
+            <a class="list-group-item"
+              href="https://cumulocity.com/guides/reference/inventory/#managed-object-reference-collection">Managed object reference collection</a>
+            
+            
+          
+            <a class="list-group-item"
+              href="https://cumulocity.com/guides/reference/inventory/#managed-object-reference">Managed object reference</a>
+            
+            
+          
+            <a class="list-group-item"
+              href="https://cumulocity.com/guides/reference/inventory/#notifications">Notifications</a>
+            
+            
+        </nav>
+      </div>
+      
+    </div>
+    
+    
+    
+    <div class="">
+        
+        
+        
+        
+      <a href="javascript:void(0);"
+        data-toggle="collapse"
+        data-target="#page-nav4"
+        class="collapse-btn  collapsed ">
+        <i class="fa fa-chevron-right "></i>
+      </a>
+      
+      <a class=""
+        href="https://cumulocity.com/guides/reference/events/">Events</a>
+     
+      
+      
+      <div id="page-nav4"
+        class="collapse   ">
+        <nav class="list-group nav">
+          
+          
+            <a class="list-group-item"
+              href="https://cumulocity.com/guides/reference/events/#overview">Overview</a>
+            
+            
+          
+            <a class="list-group-item"
+              href="https://cumulocity.com/guides/reference/events/#events-api">Events API</a>
+            
+            
+          
+            <a class="list-group-item"
+              href="https://cumulocity.com/guides/reference/events/#event-collection">Event collection</a>
+            
+            
+          
+            <a class="list-group-item"
+              href="https://cumulocity.com/guides/reference/events/#event">Event</a>
+            
+            
+          
+            <a class="list-group-item"
+              href="https://cumulocity.com/guides/reference/events/#notifications">Notifications</a>
+            
+            
+          
+            <a class="list-group-item"
+              href="https://cumulocity.com/guides/reference/events/#binaries">Binaries</a>
+            
+            
+        </nav>
+      </div>
+      
+    </div>
+    
+    
+    
+    <div class="">
+        
+        
+        
+        
+      <a href="javascript:void(0);"
+        data-toggle="collapse"
+        data-target="#page-nav5"
+        class="collapse-btn  collapsed ">
+        <i class="fa fa-chevron-right "></i>
+      </a>
+      
+      <a class=""
+        href="https://cumulocity.com/guides/reference/measurements/">Measurements</a>
+     
+      
+      
+      <div id="page-nav5"
+        class="collapse   ">
+        <nav class="list-group nav">
+          
+          
+            <a class="list-group-item"
+              href="https://cumulocity.com/guides/reference/measurements/#overview">Overview</a>
+            
+            
+          
+            <a class="list-group-item"
+              href="https://cumulocity.com/guides/reference/measurements/#system-of-units">System of units</a>
+            
+            
+          
+            <a class="list-group-item"
+              href="https://cumulocity.com/guides/reference/measurements/#measurement-api">Measurement API</a>
+            
+            
+          
+            <a class="list-group-item"
+              href="https://cumulocity.com/guides/reference/measurements/#measurement-collection">Measurement collection</a>
+            
+            
+          
+            <a class="list-group-item"
+              href="https://cumulocity.com/guides/reference/measurements/#measurement">Measurement</a>
+            
+            
+          
+            <a class="list-group-item"
+              href="https://cumulocity.com/guides/reference/measurements/#data-streaming">Data streaming</a>
+            
+            
+          
+            <a class="list-group-item"
+              href="https://cumulocity.com/guides/reference/measurements/#other-response-formats">Other response formats</a>
+            
+            
+          
+            <a class="list-group-item"
+              href="https://cumulocity.com/guides/reference/measurements/#notifications">Notifications</a>
+            
+            
+        </nav>
+      </div>
+      
+    </div>
+    
+    
+    
+    <div class="">
+        
+        
+        
+        
+      <a href="javascript:void(0);"
+        data-toggle="collapse"
+        data-target="#page-nav6"
+        class="collapse-btn  collapsed ">
+        <i class="fa fa-chevron-right "></i>
+      </a>
+      
+      <a class=""
+        href="https://cumulocity.com/guides/reference/device-control/">Device control</a>
+     
+      
+      
+      <div id="page-nav6"
+        class="collapse   ">
+        <nav class="list-group nav">
+          
+          
+            <a class="list-group-item"
+              href="https://cumulocity.com/guides/reference/device-control/#overview">Overview</a>
+            
+            
+          
+            <a class="list-group-item"
+              href="https://cumulocity.com/guides/reference/device-control/#device-control-api">Device control API</a>
+            
+            
+          
+            <a class="list-group-item"
+              href="https://cumulocity.com/guides/reference/device-control/#operation-collection">Operation collection</a>
+            
+            
+          
+            <a class="list-group-item"
+              href="https://cumulocity.com/guides/reference/device-control/#operation">Operation</a>
+            
+            
+          
+            <a class="list-group-item"
+              href="https://cumulocity.com/guides/reference/device-control/#device-control-via-sms">Device control via SMS</a>
+            
+            
+          
+            <a class="list-group-item"
+              href="https://cumulocity.com/guides/reference/device-control/#notifications">Notifications</a>
+            
+            
+          
+            <a class="list-group-item"
+              href="https://cumulocity.com/guides/reference/device-control/#bulk-operation-collection">Bulk operation collection</a>
+            
+            
+          
+            <a class="list-group-item"
+              href="https://cumulocity.com/guides/reference/device-control/#bulk-operation">Bulk operation</a>
+            
+            
+        </nav>
+      </div>
+      
+    </div>
+    
+    
+    
+    <div class="">
+        
+        
+        
+        
+      <a href="javascript:void(0);"
+        data-toggle="collapse"
+        data-target="#page-nav7"
+        class="collapse-btn  collapsed ">
+        <i class="fa fa-chevron-right "></i>
+      </a>
+      
+      <a class=""
+        href="https://cumulocity.com/guides/reference/alarms/">Alarms</a>
+     
+      
+      
+      <div id="page-nav7"
+        class="collapse   ">
+        <nav class="list-group nav">
+          
+          
+            <a class="list-group-item"
+              href="https://cumulocity.com/guides/reference/alarms/#overview">Overview</a>
+            
+            
+          
+            <a class="list-group-item"
+              href="https://cumulocity.com/guides/reference/alarms/#alarm-api">Alarm API</a>
+            
+            
+          
+            <a class="list-group-item"
+              href="https://cumulocity.com/guides/reference/alarms/#notifications">Notifications</a>
+            
+            
+          
+            <a class="list-group-item"
+              href="https://cumulocity.com/guides/reference/alarms/#alarm-collection">Alarm collection</a>
+            
+            
+          
+            <a class="list-group-item"
+              href="https://cumulocity.com/guides/reference/alarms/#alarm">Alarm</a>
+            
+            
+        </nav>
+      </div>
+      
+    </div>
+    
+    
+    
+    <div class="">
+        
+        
+        
+        
+      <a href="javascript:void(0);"
+        data-toggle="collapse"
+        data-target="#page-nav8"
+        class="collapse-btn  collapsed ">
+        <i class="fa fa-chevron-right "></i>
+      </a>
+      
+      <a class=""
+        href="https://cumulocity.com/guides/reference/device-credentials/">Device credentials</a>
+     
+      
+      
+      <div id="page-nav8"
+        class="collapse   ">
+        <nav class="list-group nav">
+          
+          
+            <a class="list-group-item"
+              href="https://cumulocity.com/guides/reference/device-credentials/#overview">Overview</a>
+            
+            
+          
+            <a class="list-group-item"
+              href="https://cumulocity.com/guides/reference/device-credentials/#new-device-request-collection">New device request collection</a>
+            
+            
+          
+            <a class="list-group-item"
+              href="https://cumulocity.com/guides/reference/device-credentials/#new-device-request">New device request</a>
+            
+            
+          
+            <a class="list-group-item"
+              href="https://cumulocity.com/guides/reference/device-credentials/#device-credentials">Device credentials</a>
+            
+            
+          
+            <a class="list-group-item"
+              href="https://cumulocity.com/guides/reference/device-credentials/#bulk-device-credentials">Bulk device credentials</a>
+            
+            
+        </nav>
+      </div>
+      
+    </div>
+    
+    
+    
+    <div class="">
+        
+        
+        
+        
+      <a href="javascript:void(0);"
+        data-toggle="collapse"
+        data-target="#page-nav9"
+        class="collapse-btn  collapsed ">
+        <i class="fa fa-chevron-right "></i>
+      </a>
+      
+      <a class=""
+        href="https://cumulocity.com/guides/reference/identity/">Identity</a>
+     
+      
+      
+      <div id="page-nav9"
+        class="collapse   ">
+        <nav class="list-group nav">
+          
+          
+            <a class="list-group-item"
+              href="https://cumulocity.com/guides/reference/identity/#overview">Overview</a>
+            
+            
+          
+            <a class="list-group-item"
+              href="https://cumulocity.com/guides/reference/identity/#identity-api">Identity API</a>
+            
+            
+          
+            <a class="list-group-item"
+              href="https://cumulocity.com/guides/reference/identity/#external-id-collection">External ID collection</a>
+            
+            
+          
+            <a class="list-group-item"
+              href="https://cumulocity.com/guides/reference/identity/#external-id">External ID</a>
+            
+            
+        </nav>
+      </div>
+      
+    </div>
+    
+    
+    
+    <div class="">
+        
+        
+        
+        
+      <a href="javascript:void(0);"
+        data-toggle="collapse"
+        data-target="#page-nav10"
+        class="collapse-btn  collapsed ">
+        <i class="fa fa-chevron-right "></i>
+      </a>
+      
+      <a class=""
+        href="https://cumulocity.com/guides/reference/users/">Users</a>
+     
+      
+      
+      <div id="page-nav10"
+        class="collapse   ">
+        <nav class="list-group nav">
+          
+          
+            <a class="list-group-item"
+              href="https://cumulocity.com/guides/reference/users/#overview">Overview</a>
+            
+            
+          
+            <a class="list-group-item"
+              href="https://cumulocity.com/guides/reference/users/#user-api">User API</a>
+            
+            
+          
+            <a class="list-group-item"
+              href="https://cumulocity.com/guides/reference/users/#user-collection">User collection</a>
+            
+            
+          
+            <a class="list-group-item"
+              href="https://cumulocity.com/guides/reference/users/#user">User</a>
+            
+            
+          
+            <a class="list-group-item"
+              href="https://cumulocity.com/guides/reference/users/#user-reference-collection">User reference collection</a>
+            
+            
+          
+            <a class="list-group-item"
+              href="https://cumulocity.com/guides/reference/users/#user-reference">User reference</a>
+            
+            
+          
+            <a class="list-group-item"
+              href="https://cumulocity.com/guides/reference/users/#group-collection">Group collection</a>
+            
+            
+          
+            <a class="list-group-item"
+              href="https://cumulocity.com/guides/reference/users/#group">Group</a>
+            
+            
+          
+            <a class="list-group-item"
+              href="https://cumulocity.com/guides/reference/users/#group-reference-collection">Group reference collection</a>
+            
+            
+          
+            <a class="list-group-item"
+              href="https://cumulocity.com/guides/reference/users/#group-reference">Group reference</a>
+            
+            
+          
+            <a class="list-group-item"
+              href="https://cumulocity.com/guides/reference/users/#role-collection">Role collection</a>
+            
+            
+          
+            <a class="list-group-item"
+              href="https://cumulocity.com/guides/reference/users/#role">Role</a>
+            
+            
+          
+            <a class="list-group-item"
+              href="https://cumulocity.com/guides/reference/users/#role-reference-collection">Role reference collection</a>
+            
+            
+          
+            <a class="list-group-item"
+              href="https://cumulocity.com/guides/reference/users/#role-reference">Role reference</a>
+            
+            
+        </nav>
+      </div>
+      
+    </div>
+    
+    
+    
+    <div class="">
+        
+        
+        
+        
+      <a href="javascript:void(0);"
+        data-toggle="collapse"
+        data-target="#page-nav11"
+        class="collapse-btn  collapsed ">
+        <i class="fa fa-chevron-right "></i>
+      </a>
+      
+      <a class=""
+        href="https://cumulocity.com/guides/reference/auditing/">Auditing</a>
+     
+      
+      
+      <div id="page-nav11"
+        class="collapse   ">
+        <nav class="list-group nav">
+          
+          
+            <a class="list-group-item"
+              href="https://cumulocity.com/guides/reference/auditing/#overview">Overview</a>
+            
+            
+          
+            <a class="list-group-item"
+              href="https://cumulocity.com/guides/reference/auditing/#audited-informations">Audited informations</a>
+            
+            
+          
+            <a class="list-group-item"
+              href="https://cumulocity.com/guides/reference/auditing/#audit-api">Audit API</a>
+            
+            
+          
+            <a class="list-group-item"
+              href="https://cumulocity.com/guides/reference/auditing/#audit-record-collection">Audit record collection</a>
+            
+            
+          
+            <a class="list-group-item"
+              href="https://cumulocity.com/guides/reference/auditing/#audit-record">Audit record</a>
+            
+            
+        </nav>
+      </div>
+      
+    </div>
+    
+    
+    
+    <div class=" slot-active ">
+        
+        
+        
+        
+      <a href="javascript:void(0);"
+        data-toggle="collapse"
+        data-target="#page-nav12"
+        class="collapse-btn ">
+        <i class="fa fa-chevron-right "></i>
+      </a>
+      
+      <a class=" active "
+        href="https://cumulocity.com/guides/reference/device-management/">Device management library</a>
+     
+      
+      
+      <div id="page-nav12"
+        class="collapse   show  ">
+        <nav class="list-group nav">
+          
+          
+          <a class="list-group-item"
+            href="#overview">Overview</a>
+          
+            
+          
+          <a class="list-group-item"
+            href="#metadata">Metadata</a>
+          
+            
+          
+          <a class="list-group-item"
+            href="#device-information">Device information</a>
+          
+            
+          
+          <a class="list-group-item"
+            href="#configuration-management">Configuration management</a>
+          
+            
+          
+          <a class="list-group-item"
+            href="#device-reports">Device reports</a>
+          
+            
+          
+          <a class="list-group-item"
+            href="#device-availability">Device availability</a>
+          
+            
+          
+          <a class="list-group-item"
+            href="#miscellaneous">Miscellaneous</a>
+          
+            
+        </nav>
+      </div>
+      
+    </div>
+    
+    
+    
+    <div class="">
+        
+        
+        
+        
+      <a href="javascript:void(0);"
+        data-toggle="collapse"
+        data-target="#page-nav13"
+        class="collapse-btn  collapsed ">
+        <i class="fa fa-chevron-right "></i>
+      </a>
+      
+      <a class=""
+        href="https://cumulocity.com/guides/reference/sensor-library/">Sensor library</a>
+     
+      
+      
+      <div id="page-nav13"
+        class="collapse   ">
+        <nav class="list-group nav">
+          
+          
+            <a class="list-group-item"
+              href="https://cumulocity.com/guides/reference/sensor-library/#environmental-capabilities">Environmental Capabilities</a>
+            
+            
+          
+            <a class="list-group-item"
+              href="https://cumulocity.com/guides/reference/sensor-library/#energy">Energy</a>
+            
+            
+          
+            <a class="list-group-item"
+              href="https://cumulocity.com/guides/reference/sensor-library/#location-capabilities">Location Capabilities</a>
+            
+            
+          
+            <a class="list-group-item"
+              href="https://cumulocity.com/guides/reference/sensor-library/#common-capabilities">Common Capabilities</a>
+            
+            
+        </nav>
+      </div>
+      
+    </div>
+    
+    
+    
+    <div class="">
+        
+        
+        
+        
+      <a href="javascript:void(0);"
+        data-toggle="collapse"
+        data-target="#page-nav14"
+        class="collapse-btn  collapsed ">
+        <i class="fa fa-chevron-right "></i>
+      </a>
+      
+      <a class=""
+        href="https://cumulocity.com/guides/reference/real-time-statements/">Real-time statements</a>
+     
+      
+      
+      <div id="page-nav14"
+        class="collapse   ">
+        <nav class="list-group nav">
+          
+          
+            <a class="list-group-item"
+              href="https://cumulocity.com/guides/reference/real-time-statements/#overview">Overview</a>
+            
+            
+          
+            <a class="list-group-item"
+              href="https://cumulocity.com/guides/reference/real-time-statements/#module-api">Module API</a>
+            
+            
+          
+            <a class="list-group-item"
+              href="https://cumulocity.com/guides/reference/real-time-statements/#module-collection">Module collection</a>
+            
+            
+          
+            <a class="list-group-item"
+              href="https://cumulocity.com/guides/reference/real-time-statements/#module">Module</a>
+            
+            
+          
+            <a class="list-group-item"
+              href="https://cumulocity.com/guides/reference/real-time-statements/#notifications">Notifications</a>
+            
+            
+        </nav>
+      </div>
+      
+    </div>
+    
+    
+    
+    <div class="">
+        
+        
+        
+        
+      <a href="javascript:void(0);"
+        data-toggle="collapse"
+        data-target="#page-nav15"
+        class="collapse-btn  collapsed ">
+        <i class="fa fa-chevron-right "></i>
+      </a>
+      
+      <a class=""
+        href="https://cumulocity.com/guides/reference/real-time-notifications/">Real-time notifications</a>
+     
+      
+      
+      <div id="page-nav15"
+        class="collapse   ">
+        <nav class="list-group nav">
+          
+          
+            <a class="list-group-item"
+              href="https://cumulocity.com/guides/reference/real-time-notifications/#overview">Overview</a>
+            
+            
+          
+            <a class="list-group-item"
+              href="https://cumulocity.com/guides/reference/real-time-notifications/#handshake">Handshake</a>
+            
+            
+          
+            <a class="list-group-item"
+              href="https://cumulocity.com/guides/reference/real-time-notifications/#subscribe">Subscribe</a>
+            
+            
+          
+            <a class="list-group-item"
+              href="https://cumulocity.com/guides/reference/real-time-notifications/#unsubscribe">Unsubscribe</a>
+            
+            
+          
+            <a class="list-group-item"
+              href="https://cumulocity.com/guides/reference/real-time-notifications/#connect">Connect</a>
+            
+            
+          
+            <a class="list-group-item"
+              href="https://cumulocity.com/guides/reference/real-time-notifications/#disconnect">Disconnect</a>
+            
+            
+        </nav>
+      </div>
+      
+    </div>
+    
+    
+    
+    <div class="">
+        
+        
+        
+        
+      <a href="javascript:void(0);"
+        data-toggle="collapse"
+        data-target="#page-nav16"
+        class="collapse-btn  collapsed ">
+        <i class="fa fa-chevron-right "></i>
+      </a>
+      
+      <a class=""
+        href="https://cumulocity.com/guides/reference/tenants/">Tenants</a>
+     
+      
+      
+      <div id="page-nav16"
+        class="collapse   ">
+        <nav class="list-group nav">
+          
+          
+            <a class="list-group-item"
+              href="https://cumulocity.com/guides/reference/tenants/#tenants">Tenants</a>
+            
+            
+          
+            <a class="list-group-item"
+              href="https://cumulocity.com/guides/reference/tenants/#tenant-collection">Tenant collection</a>
+            
+            
+          
+            <a class="list-group-item"
+              href="https://cumulocity.com/guides/reference/tenants/#tenant">Tenant</a>
+            
+            
+          
+            <a class="list-group-item"
+              href="https://cumulocity.com/guides/reference/tenants/#application-reference-collection">Application reference collection</a>
+            
+            
+          
+            <a class="list-group-item"
+              href="https://cumulocity.com/guides/reference/tenants/#application-reference">Application reference</a>
+            
+            
+          
+            <a class="list-group-item"
+              href="https://cumulocity.com/guides/reference/tenants/#option-collection">Option collection</a>
+            
+            
+          
+            <a class="list-group-item"
+              href="https://cumulocity.com/guides/reference/tenants/#option">Option</a>
+            
+            
+          
+            <a class="list-group-item"
+              href="https://cumulocity.com/guides/reference/tenants/#system-options">System Options</a>
+            
+            
+          
+            <a class="list-group-item"
+              href="https://cumulocity.com/guides/reference/tenants/#tenant-usage-statistics">Tenant usage statistics</a>
+            
+            
+        </nav>
+      </div>
+      
+    </div>
+    
+    
+    
+    <div class="">
+        
+        
+        
+        
+      <a href="javascript:void(0);"
+        data-toggle="collapse"
+        data-target="#page-nav17"
+        class="collapse-btn  collapsed ">
+        <i class="fa fa-chevron-right "></i>
+      </a>
+      
+      <a class=""
+        href="https://cumulocity.com/guides/reference/applications/">Applications</a>
+     
+      
+      
+      <div id="page-nav17"
+        class="collapse   ">
+        <nav class="list-group nav">
+          
+          
+            <a class="list-group-item"
+              href="https://cumulocity.com/guides/reference/applications/#overview">Overview</a>
+            
+            
+          
+            <a class="list-group-item"
+              href="https://cumulocity.com/guides/reference/applications/#application-names">Application names</a>
+            
+            
+          
+            <a class="list-group-item"
+              href="https://cumulocity.com/guides/reference/applications/#application-api">Application API</a>
+            
+            
+          
+            <a class="list-group-item"
+              href="https://cumulocity.com/guides/reference/applications/#application-collection">Application collection</a>
+            
+            
+          
+            <a class="list-group-item"
+              href="https://cumulocity.com/guides/reference/applications/#application">Application</a>
+            
+            
+          
+            <a class="list-group-item"
+              href="https://cumulocity.com/guides/reference/applications/#bootstrap-user">Bootstrap user</a>
+            
+            
+          
+            <a class="list-group-item"
+              href="https://cumulocity.com/guides/reference/applications/#current-application">Current application</a>
+            
+            
+          
+            <a class="list-group-item"
+              href="https://cumulocity.com/guides/reference/applications/#application-binaries">Application binaries</a>
+            
+            
+        </nav>
+      </div>
+      
+    </div>
+    
+    
+    
+    <div class="">
+        
+        
+        
+        
+      <a href="javascript:void(0);"
+        data-toggle="collapse"
+        data-target="#page-nav18"
+        class="collapse-btn  collapsed ">
+        <i class="fa fa-chevron-right "></i>
+      </a>
+      
+      <a class=""
+        href="https://cumulocity.com/guides/reference/binaries/">Binaries</a>
+     
+      
+      
+      <div id="page-nav18"
+        class="collapse   ">
+        <nav class="list-group nav">
+          
+          
+            <a class="list-group-item"
+              href="https://cumulocity.com/guides/reference/binaries/#overview">Overview</a>
+            
+            
+          
+            <a class="list-group-item"
+              href="https://cumulocity.com/guides/reference/binaries/#binaries-collection">Binaries collection</a>
+            
+            
+          
+            <a class="list-group-item"
+              href="https://cumulocity.com/guides/reference/binaries/#binaries">Binaries</a>
+            
+            
+        </nav>
+      </div>
+      
+    </div>
+    
+    
+    
+    <div class="">
+        
+        
+        
+        
+      <a href="javascript:void(0);"
+        data-toggle="collapse"
+        data-target="#page-nav19"
+        class="collapse-btn  collapsed ">
+        <i class="fa fa-chevron-right "></i>
+      </a>
+      
+      <a class=""
+        href="https://cumulocity.com/guides/reference/retention-rules/">Retention rules</a>
+     
+      
+      
+      <div id="page-nav19"
+        class="collapse   ">
+        <nav class="list-group nav">
+          
+          
+            <a class="list-group-item"
+              href="https://cumulocity.com/guides/reference/retention-rules/#retention-rules">Retention rules</a>
+            
+            
+          
+            <a class="list-group-item"
+              href="https://cumulocity.com/guides/reference/retention-rules/#retention-rule-collection">Retention rule collection</a>
+            
+            
+          
+            <a class="list-group-item"
+              href="https://cumulocity.com/guides/reference/retention-rules/#retentionrule">RetentionRule</a>
+            
+            
+        </nav>
+      </div>
+      
+    </div>
+    
+    
+    
+    <div class="">
+        
+        
+        
+        
+      <a class=""
+        href="https://cumulocity.com/guides/reference/microservice-manifest/">Microservice manifest</a>
+     
+      
+    </div>
+    
+    
+    
+    <div class="">
+        
+        
+        
+        
+      <a href="javascript:void(0);"
+        data-toggle="collapse"
+        data-target="#page-nav21"
+        class="collapse-btn  collapsed ">
+        <i class="fa fa-chevron-right "></i>
+      </a>
+      
+      <a class=""
+        href="https://cumulocity.com/guides/reference/microservice-package/">Microservice package and deploy</a>
+     
+      
+      
+      <div id="page-nav21"
+        class="collapse   ">
+        <nav class="list-group nav">
+          
+          
+            <a class="list-group-item"
+              href="https://cumulocity.com/guides/reference/microservice-package/#overview">Overview</a>
+            
+            
+          
+            <a class="list-group-item"
+              href="https://cumulocity.com/guides/reference/microservice-package/#packing">Packing</a>
+            
+            
+          
+            <a class="list-group-item"
+              href="https://cumulocity.com/guides/reference/microservice-package/#deploying">Deploying</a>
+            
+            
+          
+            <a class="list-group-item"
+              href="https://cumulocity.com/guides/reference/microservice-package/#multiple-goals">Multiple goals</a>
+            
+            
+          
+            <a class="list-group-item"
+              href="https://cumulocity.com/guides/reference/microservice-package/#subscribing">Subscribing</a>
+            
+            
+        </nav>
+      </div>
+      
+    </div>
+    
+    
+    
+    <div class="">
+        
+        
+        
+        
+      <a href="javascript:void(0);"
+        data-toggle="collapse"
+        data-target="#page-nav22"
+        class="collapse-btn  collapsed ">
+        <i class="fa fa-chevron-right "></i>
+      </a>
+      
+      <a class=""
+        href="https://cumulocity.com/guides/reference/microservice-runtime/">Microservice runtime</a>
+     
+      
+      
+      <div id="page-nav22"
+        class="collapse   ">
+        <nav class="list-group nav">
+          
+          
+            <a class="list-group-item"
+              href="https://cumulocity.com/guides/reference/microservice-runtime/#overview">Overview</a>
+            
+            
+          
+            <a class="list-group-item"
+              href="https://cumulocity.com/guides/reference/microservice-runtime/#environment-variables">Environment variables</a>
+            
+            
+          
+            <a class="list-group-item"
+              href="https://cumulocity.com/guides/reference/microservice-runtime/#Access-to-the-platform-and-other-microservices">Access to the platform and other microservices</a>
+            
+            
+        </nav>
+      </div>
+      
+    </div>
+    
+    
+    
+    
+  </nav>
+</nav>
+<div class="cover"></div>
+
+<div class="main-content">
+  <article class="page-section">
+    <header class="section-header">
+      <h1 class="text-light">Device management library</h1>
+    </header>
+    
+      <div class="lead">
+        
+      </div>
+      
+  </article>
+
+  
+  
+  
+  <article id="overview" class="page-section">
+    <h2>
+      <button class="btn-link bookmark" data-clipboard-text="#overview">
+        <span class="fa fa-link"></span>
+      </button>
+      Overview</h2>
+    <p>The device management library defines the data structures that are used in Cumulocity for device management activities such as software management and configuration management.</p>
+
+<p>The data structures are expressed as fragments that can be used inside managed objects, operations and other resources. More information on the fragment concept can be found in the Section &ldquo;<a href="/guides/concepts/domain-model">Cumulocity&rsquo;s domain model</a>&rdquo;. The same section also contains information on the process of running operations on devices and updating the inventory according to the result of the operation. For the usage of fragments in client libraries, see the developer&rsquo;s guides for the respective client library.</p>
+
+  </article>
+  
+  <article id="metadata" class="page-section">
+    <h2>
+      <button class="btn-link bookmark" data-clipboard-text="#metadata">
+        <span class="fa fa-link"></span>
+      </button>
+      Metadata</h2>
+    
+
+<h4 id="c8y-isdevice">c8y_IsDevice</h4>
+
+<p>A device marked in the inventory with a <em>c8y_IsDevice</em> fragment supports device management. Only devices with this fragment appear in the device management user interface.</p>
+
+<pre><code>&quot;c8y_IsDevice&quot;: {}
+</code></pre>
+
+<p><img src="/guides/images/reference-guide/devicemanagement.png" alt="Device in Device Management" /></p>
+
+<h4 id="c8y-supportedoperations">c8y_SupportedOperations</h4>
+
+<p><em>c8y_SupportedOperations</em> lists the operations that are available for a particular device, so that applications can trigger the operations. For example, if the supported operations list contains &ldquo;c8y_Restart&rdquo; (see below), a restart button will be available under the cogwheel in the device management user interface.</p>
+
+<pre><code>&quot;c8y_SupportedOperations&quot;: [ &quot;c8y_Restart&quot; ]
+</code></pre>
+
+<p><img src="/guides/images/reference-guide/restartsupported.png" alt="Device supports restart" /></p>
+
+  </article>
+  
+  <article id="device-information" class="page-section">
+    <h2>
+      <button class="btn-link bookmark" data-clipboard-text="#device-information">
+        <span class="fa fa-link"></span>
+      </button>
+      Device information</h2>
+    
+
+<h4 id="c8y-hardware">c8y_Hardware</h4>
+
+<p><em>c8y_Hardware</em> contains basic hardware information for a device, such as make and serial number. Often, the hardware serial number is printed on the board of the device or on an asset tag on the device to uniquely identify the device within all devices of the same make.</p>
+
+<table>
+<thead>
+<tr>
+<th align="left">Name</th>
+<th align="left">Type</th>
+<th align="left">Description</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td align="left">model</td>
+<td align="left">String</td>
+<td align="left">A text identifier of the device&rsquo;s hardware model.</td>
+</tr>
+
+<tr>
+<td align="left">revision</td>
+<td align="left">String</td>
+<td align="left">A text identifier of the hardware revision.</td>
+</tr>
+
+<tr>
+<td align="left">serialNumber</td>
+<td align="left">String</td>
+<td align="left">The hardware serial number of the device.</td>
+</tr>
+</tbody>
+</table>
+
+<pre><code>&quot;c8y_Hardware&quot;: {
+  &quot;model&quot;: &quot;BCM2708&quot;,
+  &quot;revision&quot;: &quot;000e&quot;,
+  &quot;serialNumber&quot;: &quot;00000000e2f5ad4d&quot;
+}
+</code></pre>
+
+<p><img src="/guides/images/reference-guide/hardware.png" alt="Hardware information" /></p>
+
+<h4 id="c8y-firmware">c8y_Firmware</h4>
+
+<p><em>c8y_Firmware</em> contains information on a device&rsquo;s firmware. In the inventory, &ldquo;c8y_Firmware&rdquo; represents the currently installed firmware on the device. As part of an operation, &ldquo;c8y_Firmware&rdquo; requests the device to install the indicated firmware. To enable firmware installation through the user interface, add &ldquo;c8y_Firmware&rdquo; to the list of supported operations as described above.</p>
+
+<table>
+<thead>
+<tr>
+<th align="left">Name</th>
+<th align="left">Type</th>
+<th align="left">Description</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td align="left">name</td>
+<td align="left">String</td>
+<td align="left">Name of the firmware.</td>
+</tr>
+
+<tr>
+<td align="left">version</td>
+<td align="left">String</td>
+<td align="left">A version identifier of the hardware.</td>
+</tr>
+
+<tr>
+<td align="left">url</td>
+<td align="left">URI</td>
+<td align="left">A location to download the firmware from.</td>
+</tr>
+</tbody>
+</table>
+
+<pre><code>&quot;c8y_Firmware&quot;: {
+  &quot;name&quot;: &quot;raspberrypi-bootloader&quot;,
+  &quot;version&quot;: &quot;1.20140107-1&quot;,
+  &quot;url&quot;: &quot;31aab9856861b1a587e2094690c2f6e272712cb1&quot;
+}
+</code></pre>
+
+<p><img src="/guides/images/reference-guide/firmware.png" alt="Firmware information" /></p>
+
+<p>In the example above, the device is requested to install firmware version &ldquo;1.20140107-1&rdquo;. The device has a pre-configured software repository location, hence it only needs the relative URL &ldquo;31aab9856861b1a587e2094690c2f6e272712cb1&rdquo; to download the requested firmware image.</p>
+
+<h4 id="c8y-softwarelist">c8y_SoftwareList</h4>
+
+<p><em>c8y_SoftwareList</em> is a List of software entries that define the name, version and url for the software.</p>
+
+<table>
+<thead>
+<tr>
+<th align="left">Name</th>
+<th align="left">Type</th>
+<th align="left">Description</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td align="left">name</td>
+<td align="left">String</td>
+<td align="left">Name of the software.</td>
+</tr>
+
+<tr>
+<td align="left">version</td>
+<td align="left">String</td>
+<td align="left">A version identifier of the software.</td>
+</tr>
+
+<tr>
+<td align="left">url</td>
+<td align="left">URI</td>
+<td align="left">A location to download the software from.</td>
+</tr>
+</tbody>
+</table>
+
+<p>In the inventory, &ldquo;c8y_SoftwareList&rdquo; represents the currently installed software components on the device.</p>
+
+<p>As part of an operation, &ldquo;c8y_SoftwareList&rdquo; requests the device to ensure that the indicated software components and versions are installed. This means that software not contained in &ldquo;c8y_SoftwareList&rdquo; should be removed, software not installed on the device should be installed and software installed in a different version on the device should be upgraded respectively downgraded.</p>
+
+<p>To enable software installation through the user interface, add &ldquo;c8y_SoftwareList&rdquo; to the list of supported operations as described above.</p>
+
+<pre><code>&quot;c8y_SoftwareList&quot;: [
+  {
+    &quot;name&quot;: &quot;Software A&quot;,
+    &quot;version&quot;: &quot;1.0.1&quot;,
+    &quot;url&quot;: &quot;www.some-external-url.com&quot;
+  },
+  {
+    &quot;name&quot;: &quot;Software B&quot;,
+    &quot;version&quot;: &quot;2.1.0&quot;,
+    &quot;url&quot;: &quot;mytenant.cumulocity.com/inventory/binaries/12345&quot;
+  }
+]
+</code></pre>
+
+<p><img src="/guides/images/reference-guide/software.png" alt="Software information" /></p>
+
+<h4 id="c8y-mobile">c8y_Mobile</h4>
+
+<p><em>c8y_Mobile</em> holds basic connectivity-related information, such as the equipment identifier of the modem (IMEI) in the device. This identifier is globally unique and often used to identify a mobile device.</p>
+
+<table>
+<thead>
+<tr>
+<th align="left">Name</th>
+<th align="left">Type</th>
+<th align="left">Description</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td align="left">imei</td>
+<td align="left">String</td>
+<td align="left">The equipment identifier (IMEI) of the modem in the device.</td>
+</tr>
+
+<tr>
+<td align="left">cellId</td>
+<td align="left">String</td>
+<td align="left">The identifier of the cell in the mobile network that the device is currently connected with.</td>
+</tr>
+
+<tr>
+<td align="left">iccid</td>
+<td align="left">String</td>
+<td align="left">The identifier of the SIM card that is currently in the device (often printed on the card).</td>
+</tr>
+</tbody>
+</table>
+
+<pre><code>&quot;c8y_Mobile&quot;: {
+  &quot;imei&quot;: &quot;358901048995390&quot;,
+  &quot;cellId&quot;: &quot;15DFAC&quot;,
+  &quot;iccid&quot;: &quot;89430301901300001342&quot;
+}
+</code></pre>
+
+<p>Other possible values are:
+c8y_Mobile.imsi
+c8y_Mobile.currentOperator
+c8y_Mobile.currentBand
+c8y_Mobile.connType
+c8y_Mobile.rssi
+c8y_Mobile.ecn0
+c8y_Mobile.rcsp
+c8y_Mobile.mnc
+c8y_Mobile.lac
+c8y_Mobile.msisdn</p>
+
+<p><img src="/guides/images/reference-guide/mobile.png" alt="Modem information" /></p>
+
+<h4 id="c8y-cellinfo">c8y_CellInfo</h4>
+
+<p><em>c8y_CellInfo</em> provides detailed information about the closest mobile cell towers. When the functionality is activated, the location of the device is determined based on this fragment, in order to track the device whereabouts when GPS tracking is not available.</p>
+
+<table>
+<thead>
+<tr>
+<th align="left">Name</th>
+<th align="left">Type</th>
+<th align="left">Description</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td align="left">radioType</td>
+<td align="left">String</td>
+<td align="left">The radio type of this cell tower. (Optional)</td>
+</tr>
+
+<tr>
+<td align="left">cellTowers</td>
+<td align="left">Array</td>
+<td align="left">Detailed information about the neighbouring cell towers.</td>
+</tr>
+
+<tr>
+<td align="left">cellTowers.radioType</td>
+<td align="left">String</td>
+<td align="left">The radio type of this cell tower. Can also be put directly in root JSON element if all cellTowers have same radioType. (Optional)</td>
+</tr>
+
+<tr>
+<td align="left">cellTowers.mobileCountryCode</td>
+<td align="left">Number</td>
+<td align="left">The Mobile Country Code (MCC).</td>
+</tr>
+
+<tr>
+<td align="left">cellTowers.mobileNetworkCode</td>
+<td align="left">Number</td>
+<td align="left">The Mobile Noetwork Code (MNC) for GSM, WCDMA and LTE. The SystemID (sid) for CDMA.</td>
+</tr>
+
+<tr>
+<td align="left">cellTowers.locationAreaCode</td>
+<td align="left">Number</td>
+<td align="left">The Location Area Code (LAC) for GSM, WCDMA and LTE. The Network ID for CDMA.</td>
+</tr>
+
+<tr>
+<td align="left">cellTowers.cellId</td>
+<td align="left">Number</td>
+<td align="left">The Cell ID (CID) for GSM, WCDMA and LTE. The Basestation ID for CDMA.</td>
+</tr>
+
+<tr>
+<td align="left">cellTowers.timingAdvance</td>
+<td align="left">Number</td>
+<td align="left">The timing advance value for this cell tower when available. (Optional)</td>
+</tr>
+
+<tr>
+<td align="left">cellTowers.signalStrength</td>
+<td align="left">Number</td>
+<td align="left">The signal strength for this cell tower in dBm. (Optional)</td>
+</tr>
+
+<tr>
+<td align="left">cellTowers.primaryScramblingCode</td>
+<td align="left">Number</td>
+<td align="left">The primary scrambling code for WCDMA and physical CellId for LTE. (Optional)</td>
+</tr>
+
+<tr>
+<td align="left">cellTowers.serving</td>
+<td align="left">Number</td>
+<td align="left">Specify with 0/1 if the cell is serving or not. If not specified, the first cell is assumed to be serving. (Optional)</td>
+</tr>
+</tbody>
+</table>
+
+<pre><code>&quot;c8y_CellInfo&quot;: {
+  &quot;radioType&quot;: &quot;gsm&quot;,
+  &quot;cellTowers&quot;: [{
+    &quot;mobileCountryCode&quot;: 240,
+    &quot;mobileNetworkCode&quot;: 1,
+    &quot;locationAreaCode&quot;: 3012,
+    &quot;cellId&quot;: 11950
+  }]
+}
+</code></pre>
+
+  </article>
+  
+  <article id="configuration-management" class="page-section">
+    <h2>
+      <button class="btn-link bookmark" data-clipboard-text="#configuration-management">
+        <span class="fa fa-link"></span>
+      </button>
+      Configuration management</h2>
+    
+
+<p>In this section, fragments related to configuration management are listed.</p>
+
+<p>The following fragments can be observed:</p>
+
+<ul>
+<li>c8y_Configuration: Text configuration fragment that allows you to configure parameters and initial settings of your device. For further information, see <a href="/guides/users-guide/device-management#configuration">Configuration</a> in Device Management &gt; Device details in the User guide.</li>
+<li>c8y_ConfigurationDump: Potentially large size configuration archive. For further information, see <a href="/guides/users-guide/device-management#configuration-snapshots">Configuration snapshot</a> in n Device Management &gt; Managing device data in the User guide.</li>
+<li>c8y_UploadConfigFile: Upload potentially large size configuration files. For further information, see “How to apply a configuration snapshot to a device” in Device Management &gt; Managing device data &gt; <a href="/guides/users-guide/device-management#configuration-snapshots">Configuration snapshot</a> in the User guide.</li>
+<li>c8y_DownloadConfigFile:  Download potentially large size configuration files. For further information, see “How to retrieve a configuration snapshot from a device” in Device Management &gt; Managing device data &gt; <a href="/guides/users-guide/device-management#configuration-snapshots">Configuration snapshot</a> in the User guide.</li>
+</ul>
+
+<h4 id="c8y-configuration">c8y_Configuration</h4>
+
+<p><em>c8y_Configuration</em> permits a text-based configuration of the device. Most devices support a text-based system configuration file that can be presented and edited using this procedure. In the inventory, &ldquo;c8y_Configuration&rdquo; represents the currently active configuration on the device. As part of an operation, &ldquo;c8y_Configuration&rdquo; requests the device to switch the transmitted configuration to the currently active one. To enable configuration through the user interface, add &ldquo;c8y_Configuration&rdquo; to the list of supported operations as described above.</p>
+
+<table>
+<thead>
+<tr>
+<th align="left">Name</th>
+<th align="left">Type</th>
+<th align="left">Description</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td align="left">config</td>
+<td align="left">String</td>
+<td align="left">A text in a device-specific format, representing the configuration of the device.</td>
+</tr>
+</tbody>
+</table>
+
+<pre><code>&quot;c8y_Configuration&quot;: {
+  &quot;config&quot;: &quot;#Tue Jul 02 16:10:36 UTC 2013\nc8y.log.alarmLevel=ERROR\nc8y.modem.signalPolling=10000\nc8y.log.eventLevel=INFO&quot;
+}
+</code></pre>
+
+<p><img src="/guides/images/reference-guide/configuration.png" alt="Device configuration" /></p>
+
+<h4 id="c8y-configurationdump">c8y_ConfigurationDump</h4>
+
+<p><em>c8y_ConfigurationDump</em> is an operation that permits to  manage binary configuration files of the device. The configuration dump, or configuration snapshot, is a managed object that has the type &ldquo;c8y_ConfigurationDump&rdquo;.</p>
+
+<p>Here is an example of a managed object representing a configuration snapshot:</p>
+
+<pre><code>&quot;id&quot; : &quot;650041722&quot;,
+&quot;name&quot; : &quot;Device Name&quot;,
+&quot;type&quot; : &quot;c8y_ConfigurationDump&quot;,
+&quot;description&quot; : &quot;Upload by 165711155000082 at 05/04/16 08:14:07&quot;,
+&quot;url&quot; : &quot;https://yourtenant.cumulocity.com/inventory/binaries/binaryId&quot;
+</code></pre>
+
+<p>An operation example of applying a configuration from a snapshot:</p>
+
+<pre><code>&quot;deviceId&quot;:&quot;678101855&quot;,
+&quot;id&quot;:&quot;680189603&quot;,
+&quot;c8y_DownloadConfigFile&quot;:{
+  &quot;c8y_ConfigurationDump&quot;:{
+    &quot;id&quot;:&quot;651201036&quot; 
+  },
+  &quot;url&quot;:&quot;https://yourtenant.cumulocity.com/inventory/binaries/651201031&quot;
+},
+&quot;description&quot;:&quot;Apply configuration snapshot&quot;
+</code></pre>
+
+<h4 id="c8y-uploadconfigfile">c8y_UploadConfigFile</h4>
+
+<p><em>c8y_UploadConfigFile</em> is an operation that permits to upload configuration files as binaries. It is used when the device is uploading a configuration file. Binary API is used in order to attach the managed object to the binary file.</p>
+
+<pre><code>  &quot;c8y_UploadConfigFile&quot;:{}
+</code></pre>
+
+<h4 id="c8y-downloadconfigfile">c8y_DownloadConfigFile</h4>
+
+<p><em>c8y_DownloadConfigFile</em> is an operation that permits to download configuration files as binaries. The binary file is attached to the managed object using binary API.</p>
+
+<p>An operation example of downloading a configuration file:</p>
+
+<pre><code>  &quot;c8y_DownloadConfigFile&quot;:{
+    &quot;url&quot;:&quot;&lt;download url&gt;&quot;
+}
+</code></pre>
+
+<blockquote>
+<p><strong>Info:</strong> The &ldquo;c8y_DownloadConfigFile&rdquo; operation delivers a &ldquo;c8y_ConfigurationDump&rdquo; object. This object must be configured on the Cumulocity device in order to make the UI display the snapshot information.</p>
+</blockquote>
+
+<h4 id="c8y-sendconfiguration">c8y_SendConfiguration</h4>
+
+<p>To enable reloading configuration through the user interface, add &ldquo;c8y_SendConfiguration&rdquo; to the list of supported operations as described above.</p>
+
+  </article>
+  
+  <article id="device-reports" class="page-section">
+    <h2>
+      <button class="btn-link bookmark" data-clipboard-text="#device-reports">
+        <span class="fa fa-link"></span>
+      </button>
+      Device reports</h2>
+    
+
+<h4 id="c8y-battery">c8y_Battery</h4>
+
+<p><em>c8y_Battery</em> shows the current battery fill level. It is used as part of a measurement.</p>
+
+<pre><code>&quot;c8y_Battery&quot;: {
+  &quot;level&quot;: { &quot;value&quot;: 23, &quot;unit&quot;: &quot;%&quot; }
+}
+</code></pre>
+
+<h4 id="c8y-signalstrength">c8y_SignalStrength</h4>
+
+<p><em>c8y_SignalStrength</em> provides information on the GSM reception of the modem. It is used as part of a measurement and contains two readings: <em>rssi</em> and <em>ber</em>. &ldquo;rssi&rdquo; is the received signal strength in dBm, ranging from -113 dBm (worst) to -51 dBm (best). &ldquo;ber&rdquo; is the bit error rate in %.</p>
+
+<pre><code>&quot;c8y_SignalStrength&quot;: {
+  &quot;rssi&quot;: { &quot;value&quot;: -53, &quot;unit&quot;: &quot;dBm&quot; },
+  &quot;ber&quot;: { &quot;value&quot;: 0.14, &quot;unit&quot;: &quot;%&quot; }
+}
+</code></pre>
+
+<p><img src="/guides/images/reference-guide/signalstrength.png" alt="Signal strength report" /></p>
+
+  </article>
+  
+  <article id="device-availability" class="page-section">
+    <h2>
+      <button class="btn-link bookmark" data-clipboard-text="#device-availability">
+        <span class="fa fa-link"></span>
+      </button>
+      Device availability</h2>
+    
+
+<h4 id="c8y-requiredavailability">c8y_RequiredAvailability</h4>
+
+<p>Devices can be monitored for availability by adding a &ldquo;c8y_RequiredAvailability&rdquo; fragment to the device:</p>
+
+<pre><code>&quot;c8y_RequiredAvailability&quot;: { &quot;responseInterval&quot;: &lt;&lt;time in minutes&gt;&gt; }
+</code></pre>
+
+<p>Devices that have not sent any message in the response interval are considered unavailable. Response interval can have value between -32768 and 32767 and any values out of range will be shrink to range borders. Such devices are marked as unavailable (see below) and an unavailability alarm is raised. Devices with a response interval of zero minutes are considered to be under maintenance. No alarm is raised while a device is under maintenance. Devices that do not contain &ldquo;c8y_RequiredAvailability&rdquo; are not monitored.</p>
+
+<h4 id="c8y-availability">c8y_Availability</h4>
+
+<p>The availability information computed by Cumulocity is stored in fragments: &ldquo;c8y_Availability&rdquo; and &ldquo;c8y_Connection&rdquo; of the device.</p>
+
+<pre><code>&quot;c8y_Availability&quot;: { &quot;lastMessage&quot;: &quot;2013-05-21...&quot;, &quot;status&quot;: &quot;AVAILABLE&quot; },
+&quot;c8y_Connection&quot;: {&quot;status&quot;:&quot;CONNECTED&quot;}
+</code></pre>
+
+<table>
+<thead>
+<tr>
+<th align="left">Name</th>
+<th align="left">Type</th>
+<th align="left">Description</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td align="left">lastMessage</td>
+<td align="left">Date</td>
+<td align="left">The time when the device sent the last message to Cumulocity.</td>
+</tr>
+
+<tr>
+<td align="left">status</td>
+<td align="left">String</td>
+<td align="left">The current status, one of AVAILABLE, MAINTENANCE, UNAVAILABLE.</td>
+</tr>
+</tbody>
+</table>
+
+<p>The following messages update the last message timestamp of a device:</p>
+
+<ul>
+<li>Create an event, measurement or alarm (for given device as source)</li>
+<li>Update the device itself (with given id) sending empty PUT request or request with id only, ie. {} or {&ldquo;id&rdquo;:&hellip;}</li>
+</ul>
+
+<p>A monitored device has one of following statuses:</p>
+
+<table>
+<thead>
+<tr>
+<th align="left">Name</th>
+<th align="left">Description</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td align="left">CONNECTED</td>
+<td align="left">A device push connection is established.</td>
+</tr>
+
+<tr>
+<td align="left">AVAILABLE</td>
+<td align="left">The device is not connected through device push, but a message was sent within the required response interval.</td>
+</tr>
+
+<tr>
+<td align="left">MAINTENANCE</td>
+<td align="left">&ldquo;responseInterval&rdquo; is set to 0; the device is under maintenance.</td>
+</tr>
+
+<tr>
+<td align="left">UNAVAILABLE</td>
+<td align="left">&ldquo;responseInterval&rdquo; is larger than 0 and the device is neither AVAILABLE nor CONNECTED.</td>
+</tr>
+</tbody>
+</table>
+
+<h4 id="c8y-unavailabilityalarm">c8y_UnavailabilityAlarm</h4>
+
+<p>The alarm sent when a device becomes unavailable is of type &ldquo;c8y_UnavailabilityAlarm&rdquo;:</p>
+
+<pre><code>{
+    ...
+    &quot;type&quot; : &quot;c8y_UnavailabilityAlarm&quot;,
+    &quot;text&quot; : &quot;No communication with device since &lt;&lt;last activity time&gt;&gt;&quot;,
+    &quot;status&quot; : &quot;active&quot;,
+    &quot;severity&quot; : &quot;major&quot;,
+    &quot;source&quot; : &lt;&lt;device id&gt;&gt;
+    ...
+}
+</code></pre>
+
+<p>Updates to the availability status may occur with a delay.</p>
+
+<p><img src="/guides/images/reference-guide/availability.png" alt="Availability" /></p>
+
+<p>To flag a device as available without updating any data, a &ldquo;ping&rdquo; can be sent. The &ldquo;ping&rdquo; can be carried out by simply sending an empty update message to the device (i.e., a PUT request to the managed object with empty content).</p>
+
+<h4 id="c8y-activealarmsstatus">c8y_ActiveAlarmsStatus</h4>
+
+<p>The number of currently active and acknowledged alarms is stored in a fragment &ldquo;c8y_ActiveAlarmsStatus&rdquo;.</p>
+
+<pre><code>&quot;c8y_ActiveAlarmsStatus&quot;: {
+    &quot;minor&quot;: 1,
+    &quot;major&quot;: 3
+}
+</code></pre>
+
+<p><img src="/guides/images/reference-guide/alarmstatus.png" alt="Alarm status" /></p>
+
+  </article>
+  
+  <article id="miscellaneous" class="page-section">
+    <h2>
+      <button class="btn-link bookmark" data-clipboard-text="#miscellaneous">
+        <span class="fa fa-link"></span>
+      </button>
+      Miscellaneous</h2>
+    
+
+<h4 id="c8y-restart">c8y_Restart</h4>
+
+<p>To restart a device, an operation with a &ldquo;c8y_Restart&rdquo; fragment is sent. To enable a &ldquo;restart&rdquo; button in the user interface, add &ldquo;c8y_Restart&rdquo; to the list of supported operations as described above.</p>
+
+<pre><code>&quot;c8y_Restart&quot;: {}
+</code></pre>
+
+<p><img src="/guides/images/reference-guide/restartsupported.png" alt="Restart button" /></p>
+
+<h4 id="a-name-communication-mode-a-c8y-communicationmode"><a name="communication_mode"></a>c8y_CommunicationMode</h4>
+
+<p>In order to send commands as text messages to devices, the devices must be put into SMS mode. To indicate that it supports SMS mode, a device needs to add the fragment &ldquo;c8y_CommunicationMode&rdquo; with a mode property of &ldquo;SMS&rdquo;.</p>
+
+<pre><code>&quot;c8y_CommunicationMode&quot;: {
+    &quot;mode&quot;: &quot;SMS&quot;
+}
+</code></pre>
+
+<p>For more information, please refer to <a href="/guides/reference/device-control#control_via_sms">Device control via SMS</a>.</p>
+
+<h4 id="c8y-command">c8y_Command</h4>
+
+<p>To carry out interactive sessions with a device, use the &ldquo;c8y_Command&rdquo; fragment. If this fragment is in the list of supported operations for a device, a tab &ldquo;Shell&rdquo; will be shown. Using the &ldquo;Shell&rdquo; tab, the user can send commands in an arbitrary, device-specific syntax to the device. The command is sent to the device in a property &ldquo;text&rdquo;:</p>
+
+<pre><code>&quot;c8y_Command&quot;: {
+    &quot;text&quot;: &quot;get uboot.sn&quot;
+}
+</code></pre>
+
+<p>To communicate the results of a particular command, the device adds a property &ldquo;result&rdquo;:</p>
+
+<pre><code>&quot;c8y_Command&quot;: {
+    &quot;text&quot;: &quot;get uboot.sn&quot;,
+    &quot;result&quot;: &quot;165711141901401&quot;
+}
+</code></pre>
+
+<p>Please contact <a href="https://support.cumulocity.com">support</a> if you would like to publish sample commands for your device type.</p>
+
+<h4 id="c8y-logfilerequest">c8y_LogfileRequest</h4>
+
+<p>You can request a device to send a log file and view the log file in Cumulocity&rsquo;s log viewer. If a device supports log viewing, it needs to add &ldquo;c8y_LogfileRequest&rdquo; to its supported operations. In addition, it needs to specify which logs are available on the device:</p>
+
+<pre><code>c8y_SupportedLogs: [&quot;syslog&quot;, &quot;dmesg&quot;]
+</code></pre>
+
+<p>A log file request has the following structure:</p>
+
+<pre><code>&quot;c8y_LogfileRequest&quot;: {
+    &quot;logFile&quot;: &quot;syslog&quot;,
+    &quot;dateFrom&quot;: &quot;2016-01-27T13:45:24+0100&quot;,
+    &quot;dateTo&quot;: &quot;2016-01-28T13:45:24+0100&quot;,
+    &quot;searchText&quot;: &quot;sms&quot;,
+    &quot;maximumLines&quot;: 1000
+}
+</code></pre>
+
+<p>The parameters in the request define filtering criteria to be applied to the log before sending it:</p>
+
+<ul>
+<li>&ldquo;logFile&rdquo; indicates the log file to select.</li>
+<li>&ldquo;dateFrom&rdquo; and &ldquo;dateTo&rdquo; specify the time range of log entries in the log file to be sent.</li>
+<li>&ldquo;searchText&rdquo; provides a text that needs to be present in the log entry.</li>
+<li>&ldquo;maximumLines&rdquo; gives an upper limit of the number of lines that should be sent to Cumulocity after filtering.</li>
+</ul>
+
+<p>When the device receives such a request, it filters the log file according to the criteria and sends the result as a file to the <a href="/guides/reference/binaries">Binary API</a>. It then puts a link to this file into the log file request:</p>
+
+<pre><code>&quot;c8y_LogfileRequest&quot;: {
+    &quot;logFile&quot;: &quot;syslog&quot;,
+    &quot;dateFrom&quot;: &quot;2016-01-27T13:45:24+0100&quot;,
+    &quot;dateTo&quot;: &quot;2016-01-28T13:45:24+0100&quot;,
+    &quot;searchText&quot;: &quot;sms&quot;,
+    &quot;maximumLines&quot;: 1000,
+    &quot;file&quot;: &quot;http://...cumulocity.com/inventory/binaries/30761423&quot;
+}
+</code></pre>
+
+  </article>
+  
+  
+</div>
+<footer class="main-footer">
+  <div class="copyright">
+    <div class="container text-center">
+      <p class="small ">&copy; 2019 Cumulocity GmbH | All rights reserved.</p>
+    </div>
+  </div>  
+</footer>
+
+<!-- Essential Scripts -->
+
+<!-- jQuery -->
+<script src="https://cumulocity.com/guides/js/vendor/jquery.min.js"></script>
+<script src="https://cumulocity.com/guides/js/vendor/bootstrap.bundle.min.js"></script>
+<script src="https://cumulocity.com/guides/js/vendor/clipboard.js"></script>
+<script src="https://cumulocity.com/guides/js/vendor/zoom.js"></script>
+<script src="https://cumulocity.com/guides/js/vendor/highlight.min.js"></script>
+<script src="https://cumulocity.com/guides/js/main.js"></script>
+
+
+
+
+
+    
+   
+  </body>
+</html>

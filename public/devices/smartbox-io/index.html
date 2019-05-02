@@ -1,0 +1,2073 @@
+<!DOCTYPE html>
+<html>
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <base href="" />
+    <meta name="generator" content="Hugo 0.54.0 with theme C8yDocs">
+    <title>SMARTBox IO - Cumulocity IoT Guides</title>
+    <meta name="author" content="Carlos Ceia @ Cumulocity">
+    <meta name="keywords" content=", Software AG Cloud, Cumulocity IoT, Internet of things, analytics, devices, connect">
+
+
+    <link rel="icon" href="/favicon.ico">
+
+    
+
+    
+
+    
+    
+    
+    <link rel="stylesheet" href="https://cumulocity.com/guides/style.css">
+    
+
+      
+      <script> window.zEmbed||function(e,t){var n,o,d,i,s,a=[],r=document.createElement("iframe");window.zEmbed=function(){a.push(arguments)},window.zE=window.zE||window.zEmbed,r.src="javascript:false",r.title="",r.role="presentation",(r.frameElement||r).style.cssText="display: none",d=document.getElementsByTagName("script"),d=d[d.length-1],d.parentNode.insertBefore(r,d),i=r.contentWindow,s=i.document;try{o=s}catch(c){n=document.domain,r.src='javascript:var d=document.open();d.domain="'+n+'";void(0);',o=s}o.open()._l=function(){var o=this.createElement("script");n&&(this.domain=n),o.id="js-iframe-async",o.src=e,this.t=+new Date,this.zendeskHost=t,this.zEQueue=a,this.body.appendChild(o)},o.write('<body onload="document._l();">'),o.close()}("https://assets.zendesk.com/embeddable_framework/main.js","cumulocity.zendesk.com"); </script>
+        <script type="text/JavaScript">
+          window.zESettings = {
+            webWidget: {
+              color: {
+                theme: '#1776bf'    
+              },
+              position: {
+                horizontal: 'right',
+                vertical: 'top'     
+              }
+            }
+          };
+          </script>
+        
+        
+   
+  </head><body data-spy="scroll" data-target="#main-nav" ><button type="button" class="sidebar-toggle">
+  <span class="icon-bar"></span>
+  <span class="icon-bar"></span>
+  <span class="icon-bar"></span>
+  <span>MENU</span>
+</button>
+<nav class="main-top-bar" >
+  <div class="d-flex container">
+    <ul class="nav d-flex flex-start hidden-xs nav-left">
+      <li><a href="https://www.softwareag.cloud/site/product/cumulocity-iot.html">Cumulocity IoT</a></li>
+      <li><a href="http://resources.cumulocity.com/documentation/jssdk/latest/#/api">Cumulocity Angular API</a></li>
+    </ul>
+    <ul class="nav flex-end nav-right">
+      <li>   <script>
+              (function() {
+                var cx = '008969372384807682938:yeh7xt785g4';
+                var gcse = document.createElement('script');
+                gcse.type = 'text/javascript';
+                gcse.async = true;
+                gcse.src = 'https://cse.google.com/cse.js?cx=' + cx;
+                var s = document.getElementsByTagName('script')[0];
+                s.parentNode.insertBefore(gcse, s);
+              })();
+            </script>
+        <div id="___gcse_0" dir="ltr"><form class="gsc-search-box gsc-search-box-tools" accept-charset="utf-8"><div class="table-responsive"><table cellspacing="0" cellpadding="0" class="gsc-search-box"><tbody><tr><td class="gsc-input"><div class="gsc-input-box" id="gsc-iw-id1"><table cellspacing="0" cellpadding="0" id="gs_id50" class="gstl_50 gsc-input" style="width: 100%; padding: 0px;"><tbody><tr><td id="gs_tti50" class="gsib_a"><input autocomplete="off" type="text" size="10" class="gsc-input" name="search" title="search" id="gsc-i-id1" placeholder="Custom Search" dir="ltr" spellcheck="false" x-webkit-grammar="builtin:search" lang="en" style="width: 100%; padding: 0px; border: none; margin: -0.0625em 0px 0px; height: 1.25em; background: url(&quot;https://www.google.com/cse/static/images/1x/googlelogo_lightgrey_46x16dp.png&quot;) left center no-repeat rgb(255, 255, 255); text-indent: 48px; outline: none;"></td><td class="gsib_b"><div class="gsst_b" id="gs_st50" dir="ltr"><a class="gsst_a" href="javascript:void(0)" style="display: none;" title="Clear search box" role="button"><span class="gscb_a" id="gs_cb50" aria-hidden="true">×</span></a></div></td></tr></tbody></table></div></td><td class="gsc-search-button"><button class="gsc-search-button gsc-search-button-v2"><svg width="13" height="13" viewBox="0 0 13 13"><title>search</title><path d="m4.8495 7.8226c0.82666 0 1.5262-0.29146 2.0985-0.87438 0.57232-0.58292 0.86378-1.2877 0.87438-2.1144 0.010599-0.82666-0.28086-1.5262-0.87438-2.0985-0.59352-0.57232-1.293-0.86378-2.0985-0.87438-0.8055-0.010599-1.5103 0.28086-2.1144 0.87438-0.60414 0.59352-0.8956 1.293-0.87438 2.0985 0.021197 0.8055 0.31266 1.5103 0.87438 2.1144 0.56172 0.60414 1.2665 0.8956 2.1144 0.87438zm4.4695 0.2115 3.681 3.6819-1.259 1.284-3.6817-3.7 0.0019784-0.69479-0.090043-0.098846c-0.87973 0.76087-1.92 1.1413-3.1207 1.1413-1.3553 0-2.5025-0.46363-3.4417-1.3909s-1.4088-2.0686-1.4088-3.4239c0-1.3553 0.4696-2.4966 1.4088-3.4239 0.9392-0.92727 2.0864-1.3969 3.4417-1.4088 1.3553-0.011889 2.4906 0.45771 3.406 1.4088 0.9154 0.95107 1.379 2.0924 1.3909 3.4239 0 1.2126-0.38043 2.2588-1.1413 3.1385l0.098834 0.090049z"></path></svg></button></td><td class="gsc-clear-button"><div class="gsc-clear-button" title="clear results">&nbsp;</div></td></tr></tbody></table></div></form></div>
+      </li>
+    </ul>
+  </div>
+</nav><button type="button" class="to-the-top">
+  <span class="sr-only">Top</span>
+  <span class="fa fa-chevron-up"></span>
+</button><nav class="main-nav navbar">
+  <header class="nav-header">
+    <a href="https://www.softwareag.cloud/site/dev-center/cumulocity-iot.html">
+      <img src="https://cumulocity.com/guides/images/cumulocity-iot.svg"
+        class="img-responsive no-zoom"
+        alt="Cumulocity IoT">
+    </a>
+
+    <div class="dropdown">
+      <button class="dropdown-toggle"
+        type="button"
+        id="dropdownMenuButton"
+        data-toggle="dropdown"
+        aria-haspopup="true"
+        aria-expanded="false">
+        <span id="current-dropdown-toggle" class="text-truncate"></span> <span class="caret"></span>
+      </button>
+      <div class="dropdown-menu"
+        aria-labelledby="dropdownMenuButton">
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+
+        
+        
+        
+
+        <a class='dropdown-menu-item '
+          href='https://cumulocity.com/guides/release-notes/overview/'><i class="c8y-icon c8y-icon-notification"></i> Release notes</a>
+        
+        
+        
+        
+        
+        
+        
+        
+
+        
+        
+        
+
+        <a class='dropdown-menu-item '
+          href='https://cumulocity.com/guides/concepts/introduction/'><i class="c8y-icon c8y-icon-c8y-data"></i> Concepts guide</a>
+        
+        
+        
+        
+        
+        
+        
+        
+
+        
+        
+        
+
+        <a class='dropdown-menu-item '
+          href='https://cumulocity.com/guides/users-guide/getting-started/'><i class="c8y-icon c8y-icon-user"></i> User guide</a>
+        
+        
+        
+        
+        
+        
+        
+        
+
+        
+        
+        
+
+        <a class='dropdown-menu-item '
+          href='https://cumulocity.com/guides/benutzerhandbuch/overview/'><i class="c8y-icon c8y-icon-user"></i> Handbuch</a>
+        
+        
+        
+        
+        
+        
+        
+        
+
+        
+        
+        
+        
+        <span class="current-app">Device guides</span>
+        
+        
+
+        <a class='dropdown-menu-item active'
+          href='https://cumulocity.com/guides/devices/overview/'><i class="c8y-icon c8y-icon-device-management"></i> Device guides</a>
+        
+        
+        
+        
+        
+        
+        
+        
+
+        
+        
+        
+
+        <a class='dropdown-menu-item '
+          href='https://cumulocity.com/guides/edge/overview/'><i class="fa fa-book"></i> Cumulocity IoT Edge</a>
+        
+        
+        
+        
+        
+        
+        
+        
+
+        
+        
+        
+
+        <a class='dropdown-menu-item '
+          href='https://cumulocity.com/guides/microservice-sdk/introduction/'><i class="c8y-icon c8y-icon-tools"></i> Microservice SDK guide</a>
+        
+        
+        
+        
+        
+        
+        
+        
+
+        
+        
+        
+
+        <a class='dropdown-menu-item '
+          href='https://cumulocity.com/guides/device-sdk/introduction/'><i class="c8y-icon c8y-icon-tools"></i> Device SDK guide</a>
+        
+        
+        
+        
+        
+        
+        
+        
+
+        
+        
+        
+
+        <a class='dropdown-menu-item '
+          href='https://cumulocity.com/guides/web/introduction/'><i class="c8y-icon c8y-icon-smart-rest"></i> Web SDK guide</a>
+        
+        
+        
+        
+        
+        
+        
+        
+
+        
+        
+        
+
+        <a class='dropdown-menu-item '
+          href='https://cumulocity.com/guides/apama/overview-analytics/'><i class="c8y-icon c8y-icon-data-explorer"></i> Analytics guide</a>
+        
+        
+        
+        
+        
+        
+        
+        
+
+        
+        
+        
+
+        <a class='dropdown-menu-item '
+          href='https://cumulocity.com/guides/reference/rest-implementation/'><i class="fa fa-book"></i> Reference guide</a>
+        
+      </div>
+    </div>
+  </header>
+
+  
+
+  <nav id="main-nav"
+    class="nav-sections">
+    
+    
+    <div class="">
+        
+        
+        
+        
+      <a class=""
+        href="https://cumulocity.com/guides/devices/overview/">All devices</a>
+     
+      
+    </div>
+    
+    
+    
+    <div class="">
+        
+        
+        
+        
+      <a href="javascript:void(0);"
+        data-toggle="collapse"
+        data-target="#page-nav1"
+        class="collapse-btn  collapsed ">
+        <i class="fa fa-chevron-right "></i>
+      </a>
+      
+      <a class=""
+        href="https://cumulocity.com/guides/devices/adeunis/">Adeunis LoRaWAN Demonstrator</a>
+     
+      
+      
+      <div id="page-nav1"
+        class="collapse   ">
+        <nav class="list-group nav">
+          
+          
+            <a class="list-group-item"
+              href="https://cumulocity.com/guides/devices/adeunis/#overview">Overview</a>
+            
+            
+          
+            <a class="list-group-item"
+              href="https://cumulocity.com/guides/devices/adeunis/#configuring">Configuring for Cumulocity</a>
+            
+            
+          
+            <a class="list-group-item"
+              href="https://cumulocity.com/guides/devices/adeunis/#data-created">Data created</a>
+            
+            
+        </nav>
+      </div>
+      
+    </div>
+    
+    
+    
+    <div class="">
+        
+        
+        
+        
+      <a href="javascript:void(0);"
+        data-toggle="collapse"
+        data-target="#page-nav2"
+        class="collapse-btn  collapsed ">
+        <i class="fa fa-chevron-right "></i>
+      </a>
+      
+      <a class=""
+        href="https://cumulocity.com/guides/devices/beaglebone-black/">BeagleBone Black</a>
+     
+      
+      
+      <div id="page-nav2"
+        class="collapse   ">
+        <nav class="list-group nav">
+          
+          
+            <a class="list-group-item"
+              href="https://cumulocity.com/guides/devices/beaglebone-black/#overview">Overview</a>
+            
+            
+          
+            <a class="list-group-item"
+              href="https://cumulocity.com/guides/devices/beaglebone-black/#install-the-agent">Install the Agent</a>
+            
+            
+          
+            <a class="list-group-item"
+              href="https://cumulocity.com/guides/devices/beaglebone-black/#register-to-cumulocity">Register to Cumulocity</a>
+            
+            
+        </nav>
+      </div>
+      
+    </div>
+    
+    
+    
+    <div class="">
+        
+        
+        
+        
+      <a href="javascript:void(0);"
+        data-toggle="collapse"
+        data-target="#page-nav3"
+        class="collapse-btn  collapsed ">
+        <i class="fa fa-chevron-right "></i>
+      </a>
+      
+      <a class=""
+        href="https://cumulocity.com/guides/devices/cinterion/">Cinterion Java modules</a>
+     
+      
+      
+      <div id="page-nav3"
+        class="collapse   ">
+        <nav class="list-group nav">
+          
+          
+            <a class="list-group-item"
+              href="https://cumulocity.com/guides/devices/cinterion/#overview">Overview</a>
+            
+            
+          
+            <a class="list-group-item"
+              href="https://cumulocity.com/guides/devices/cinterion/#developing-an-agent">Developing an agent</a>
+            
+            
+        </nav>
+      </div>
+      
+    </div>
+    
+    
+    
+    <div class="">
+        
+        
+        
+        
+      <a href="javascript:void(0);"
+        data-toggle="collapse"
+        data-target="#page-nav4"
+        class="collapse-btn  collapsed ">
+        <i class="fa fa-chevron-right "></i>
+      </a>
+      
+      <a class=""
+        href="https://cumulocity.com/guides/devices/cloudgate/">CloudGate</a>
+     
+      
+      
+      <div id="page-nav4"
+        class="collapse   ">
+        <nav class="list-group nav">
+          
+          
+            <a class="list-group-item"
+              href="https://cumulocity.com/guides/devices/cloudgate/#overview">Overview</a>
+            
+            
+          
+            <a class="list-group-item"
+              href="https://cumulocity.com/guides/devices/cloudgate/#installation">Installation</a>
+            
+            
+          
+            <a class="list-group-item"
+              href="https://cumulocity.com/guides/devices/cloudgate/#luvitred">LuvitRED</a>
+            
+            
+          
+            <a class="list-group-item"
+              href="https://cumulocity.com/guides/devices/cloudgate/#luvitred-cumulocity-nodes">LuvitRED Cumulocity Nodes</a>
+            
+            
+          
+            <a class="list-group-item"
+              href="https://cumulocity.com/guides/devices/cloudgate/#luvitred-example">LuvitRED example</a>
+            
+            
+        </nav>
+      </div>
+      
+    </div>
+    
+    
+    
+    <div class="">
+        
+        
+        
+        
+      <a href="javascript:void(0);"
+        data-toggle="collapse"
+        data-target="#page-nav5"
+        class="collapse-btn  collapsed ">
+        <i class="fa fa-chevron-right "></i>
+      </a>
+      
+      <a class=""
+        href="https://cumulocity.com/guides/devices/dell-edge-gateway/">Dell Edge Gateway</a>
+     
+      
+      
+      <div id="page-nav5"
+        class="collapse   ">
+        <nav class="list-group nav">
+          
+          
+            <a class="list-group-item"
+              href="https://cumulocity.com/guides/devices/dell-edge-gateway/#overview">Overview</a>
+            
+            
+          
+            <a class="list-group-item"
+              href="https://cumulocity.com/guides/devices/dell-edge-gateway/#configuration">Configuration</a>
+            
+            
+          
+            <a class="list-group-item"
+              href="https://cumulocity.com/guides/devices/dell-edge-gateway/#connect">Connecting</a>
+            
+            
+        </nav>
+      </div>
+      
+    </div>
+    
+    
+    
+    
+    
+    <div class="">
+        
+        
+        
+        
+      <a href="javascript:void(0);"
+        data-toggle="collapse"
+        data-target="#page-nav7"
+        class="collapse-btn  collapsed ">
+        <i class="fa fa-chevron-right "></i>
+      </a>
+      
+      <a class=""
+        href="https://cumulocity.com/guides/devices/insys-insys-os/">INSYS Smart Devices – INSYS OS</a>
+     
+      
+      
+      <div id="page-nav7"
+        class="collapse   ">
+        <nav class="list-group nav">
+          
+          
+            <a class="list-group-item"
+              href="https://cumulocity.com/guides/devices/insys-insys-os/#overview">Overview</a>
+            
+            
+          
+            <a class="list-group-item"
+              href="https://cumulocity.com/guides/devices/insys-insys-os/#setup-cumulocity-cloud">Setup Cumulocity Cloud</a>
+            
+            
+        </nav>
+      </div>
+      
+    </div>
+    
+    
+    
+    <div class="">
+        
+        
+        
+        
+      <a href="javascript:void(0);"
+        data-toggle="collapse"
+        data-target="#page-nav8"
+        class="collapse-btn  collapsed ">
+        <i class="fa fa-chevron-right "></i>
+      </a>
+      
+      <a class=""
+        href="https://cumulocity.com/guides/devices/insys-icom-os/">INSYS Smart Devices – icom OS</a>
+     
+      
+      
+      <div id="page-nav8"
+        class="collapse   ">
+        <nav class="list-group nav">
+          
+          
+            <a class="list-group-item"
+              href="https://cumulocity.com/guides/devices/insys-icom-os/#overview">Overview</a>
+            
+            
+          
+            <a class="list-group-item"
+              href="https://cumulocity.com/guides/devices/insys-icom-os/#device-registration">Device Registration</a>
+            
+            
+          
+            <a class="list-group-item"
+              href="https://cumulocity.com/guides/devices/insys-icom-os/#application-configuration">Application Configuration</a>
+            
+            
+        </nav>
+      </div>
+      
+    </div>
+    
+    
+    
+    <div class="">
+        
+        
+        
+        
+      <a href="javascript:void(0);"
+        data-toggle="collapse"
+        data-target="#page-nav9"
+        class="collapse-btn  collapsed ">
+        <i class="fa fa-chevron-right "></i>
+      </a>
+      
+      <a class=""
+        href="https://cumulocity.com/guides/devices/janztec/">Janz Tec emPC-A/RPI</a>
+     
+      
+      
+      <div id="page-nav9"
+        class="collapse   ">
+        <nav class="list-group nav">
+          
+          
+            <a class="list-group-item"
+              href="https://cumulocity.com/guides/devices/janztec/#overview">Overview</a>
+            
+            
+          
+            <a class="list-group-item"
+              href="https://cumulocity.com/guides/devices/janztec/#install-the-agent">Install the Agent</a>
+            
+            
+          
+            <a class="list-group-item"
+              href="https://cumulocity.com/guides/devices/janztec/#register-to-cumulocity">Register to Cumulocity</a>
+            
+            
+        </nav>
+      </div>
+      
+    </div>
+    
+    
+    
+    <div class="">
+        
+        
+        
+        
+      <a href="javascript:void(0);"
+        data-toggle="collapse"
+        data-target="#page-nav10"
+        class="collapse-btn  collapsed ">
+        <i class="fa fa-chevron-right "></i>
+      </a>
+      
+      <a class=""
+        href="https://cumulocity.com/guides/devices/libelium-meshlium/">Libelium-Meshlium</a>
+     
+      
+      
+      <div id="page-nav10"
+        class="collapse   ">
+        <nav class="list-group nav">
+          
+          
+            <a class="list-group-item"
+              href="https://cumulocity.com/guides/devices/libelium-meshlium/#overview">Overview</a>
+            
+            
+          
+            <a class="list-group-item"
+              href="https://cumulocity.com/guides/devices/libelium-meshlium/#configure-connect">Configure and connect</a>
+            
+            
+          
+            <a class="list-group-item"
+              href="https://cumulocity.com/guides/devices/libelium-meshlium/#data-visualization">Data Visualization and Table Configuration at Cumulocity</a>
+            
+            
+        </nav>
+      </div>
+      
+    </div>
+    
+    
+    
+    <div class="">
+        
+        
+        
+        
+      <a href="javascript:void(0);"
+        data-toggle="collapse"
+        data-target="#page-nav11"
+        class="collapse-btn  collapsed ">
+        <i class="fa fa-chevron-right "></i>
+      </a>
+      
+      <a class=""
+        href="https://cumulocity.com/guides/devices/mbed-u-blox/">Mbed u-blox C027</a>
+     
+      
+      
+      <div id="page-nav11"
+        class="collapse   ">
+        <nav class="list-group nav">
+          
+          
+            <a class="list-group-item"
+              href="https://cumulocity.com/guides/devices/mbed-u-blox/#overview">Overview</a>
+            
+            
+          
+            <a class="list-group-item"
+              href="https://cumulocity.com/guides/devices/mbed-u-blox/#setup">Setup</a>
+            
+            
+          
+            <a class="list-group-item"
+              href="https://cumulocity.com/guides/devices/mbed-u-blox/#interact-with-cumulocity">Interacting with the Cumulocity Platform</a>
+            
+            
+          
+            <a class="list-group-item"
+              href="https://cumulocity.com/guides/devices/mbed-u-blox/#troubleshooting">Troubleshooting</a>
+            
+            
+          
+            <a class="list-group-item"
+              href="https://cumulocity.com/guides/devices/mbed-u-blox/#tips-and-tricks">Tips and Tricks</a>
+            
+            
+        </nav>
+      </div>
+      
+    </div>
+    
+    
+    
+    <div class="">
+        
+        
+        
+        
+      <a href="javascript:void(0);"
+        data-toggle="collapse"
+        data-target="#page-nav12"
+        class="collapse-btn  collapsed ">
+        <i class="fa fa-chevron-right "></i>
+      </a>
+      
+      <a class=""
+        href="https://cumulocity.com/guides/devices/meitrack/">Meitrack</a>
+     
+      
+      
+      <div id="page-nav12"
+        class="collapse   ">
+        <nav class="list-group nav">
+          
+          
+            <a class="list-group-item"
+              href="https://cumulocity.com/guides/devices/meitrack/#overview">Overview</a>
+            
+            
+          
+            <a class="list-group-item"
+              href="https://cumulocity.com/guides/devices/meitrack/#connect-to-cumulocity">Connecting to Cumulocity</a>
+            
+            
+          
+            <a class="list-group-item"
+              href="https://cumulocity.com/guides/devices/meitrack/#troubleshooting">Troubleshooting</a>
+            
+            
+        </nav>
+      </div>
+      
+    </div>
+    
+    
+    
+    <div class="">
+        
+        
+        
+        
+      <a href="javascript:void(0);"
+        data-toggle="collapse"
+        data-target="#page-nav13"
+        class="collapse-btn  collapsed ">
+        <i class="fa fa-chevron-right "></i>
+      </a>
+      
+      <a class=""
+        href="https://cumulocity.com/guides/devices/netcommwireless/">Netcomm</a>
+     
+      
+      
+      <div id="page-nav13"
+        class="collapse   ">
+        <nav class="list-group nav">
+          
+          
+            <a class="list-group-item"
+              href="https://cumulocity.com/guides/devices/netcommwireless/#overview">Overview</a>
+            
+            
+          
+            <a class="list-group-item"
+              href="https://cumulocity.com/guides/devices/netcommwireless/#configure">Configuring the router</a>
+            
+            
+          
+            <a class="list-group-item"
+              href="https://cumulocity.com/guides/devices/netcommwireless/#network">Configuring network parameters</a>
+            
+            
+          
+            <a class="list-group-item"
+              href="https://cumulocity.com/guides/devices/netcommwireless/#system">Monitoring system resources</a>
+            
+            
+          
+            <a class="list-group-item"
+              href="https://cumulocity.com/guides/devices/netcommwireless/#gps">Using GPS</a>
+            
+            
+          
+            <a class="list-group-item"
+              href="https://cumulocity.com/guides/devices/netcommwireless/#gpio">Using GPIO</a>
+            
+            
+          
+            <a class="list-group-item"
+              href="https://cumulocity.com/guides/devices/netcommwireless/#rdb">Configuration Management</a>
+            
+            
+          
+            <a class="list-group-item"
+              href="https://cumulocity.com/guides/devices/netcommwireless/#shell">Device Shell</a>
+            
+            
+          
+            <a class="list-group-item"
+              href="https://cumulocity.com/guides/devices/netcommwireless/#notifications">Event notifications</a>
+            
+            
+          
+            <a class="list-group-item"
+              href="https://cumulocity.com/guides/devices/netcommwireless/#modbus">Cloud Fieldbus</a>
+            
+            
+          
+            <a class="list-group-item"
+              href="https://cumulocity.com/guides/devices/netcommwireless/#vnc">VNC remote access</a>
+            
+            
+          
+            <a class="list-group-item"
+              href="https://cumulocity.com/guides/devices/netcommwireless/#mqtt">MQTT</a>
+            
+            
+          
+            <a class="list-group-item"
+              href="https://cumulocity.com/guides/devices/netcommwireless/#netcomm-developer">Netcomm Agent Developer&#39;s Guide</a>
+            
+            
+          
+            <a class="list-group-item"
+              href="https://cumulocity.com/guides/devices/netcommwireless/#netcomm-release">Netcomm Release Notes</a>
+            
+            
+        </nav>
+      </div>
+      
+    </div>
+    
+    
+    
+    <div class="">
+        
+        
+        
+        
+      <a href="javascript:void(0);"
+        data-toggle="collapse"
+        data-target="#page-nav14"
+        class="collapse-btn  collapsed ">
+        <i class="fa fa-chevron-right "></i>
+      </a>
+      
+      <a class=""
+        href="https://cumulocity.com/guides/devices/nethix-we500/">Nethix - WE500</a>
+     
+      
+      
+      <div id="page-nav14"
+        class="collapse   ">
+        <nav class="list-group nav">
+          
+          
+            <a class="list-group-item"
+              href="https://cumulocity.com/guides/devices/nethix-we500/#overview">Overview</a>
+            
+            
+          
+            <a class="list-group-item"
+              href="https://cumulocity.com/guides/devices/nethix-we500/#login">Login to the device web interface</a>
+            
+            
+          
+            <a class="list-group-item"
+              href="https://cumulocity.com/guides/devices/nethix-we500/#configure">Configuring the device</a>
+            
+            
+          
+            <a class="list-group-item"
+              href="https://cumulocity.com/guides/devices/nethix-we500/#variables">Creating variables</a>
+            
+            
+          
+            <a class="list-group-item"
+              href="https://cumulocity.com/guides/devices/nethix-we500/#connect">Interacting with Cumulocity</a>
+            
+            
+        </nav>
+      </div>
+      
+    </div>
+    
+    
+    
+    <div class="">
+        
+        
+        
+        
+      <a href="javascript:void(0);"
+        data-toggle="collapse"
+        data-target="#page-nav15"
+        class="collapse-btn  collapsed ">
+        <i class="fa fa-chevron-right "></i>
+      </a>
+      
+      <a class=""
+        href="https://cumulocity.com/guides/devices/opcua/">OPCUA Java gateway</a>
+     
+      
+      
+      <div id="page-nav15"
+        class="collapse   ">
+        <nav class="list-group nav">
+          
+          
+            <a class="list-group-item"
+              href="https://cumulocity.com/guides/devices/opcua/#overview">Overview</a>
+            
+            
+          
+            <a class="list-group-item"
+              href="https://cumulocity.com/guides/devices/opcua/#configuration">Configuration</a>
+            
+            
+        </nav>
+      </div>
+      
+    </div>
+    
+    
+    
+    <div class="">
+        
+        
+        
+        
+      <a href="javascript:void(0);"
+        data-toggle="collapse"
+        data-target="#page-nav16"
+        class="collapse-btn  collapsed ">
+        <i class="fa fa-chevron-right "></i>
+      </a>
+      
+      <a class=""
+        href="https://cumulocity.com/guides/devices/owasys/">Owasys</a>
+     
+      
+      
+      <div id="page-nav16"
+        class="collapse   ">
+        <nav class="list-group nav">
+          
+          
+            <a class="list-group-item"
+              href="https://cumulocity.com/guides/devices/owasys/#owa3x">Owa3x</a>
+            
+            
+          
+            <a class="list-group-item"
+              href="https://cumulocity.com/guides/devices/owasys/#owa3x-rugged">Owa3x/Rugged</a>
+            
+            
+          
+            <a class="list-group-item"
+              href="https://cumulocity.com/guides/devices/owasys/#owa4x">Owa4</a>
+            
+            
+          
+            <a class="list-group-item"
+              href="https://cumulocity.com/guides/devices/owasys/#cumulocity-integration">Integration with Cumulocity</a>
+            
+            
+          
+            <a class="list-group-item"
+              href="https://cumulocity.com/guides/devices/owasys/#installation-and-configuration">Installation and configuration</a>
+            
+            
+        </nav>
+      </div>
+      
+    </div>
+    
+    
+    
+    <div class="">
+        
+        
+        
+        
+      <a href="javascript:void(0);"
+        data-toggle="collapse"
+        data-target="#page-nav17"
+        class="collapse-btn  collapsed ">
+        <i class="fa fa-chevron-right "></i>
+      </a>
+      
+      <a class=""
+        href="https://cumulocity.com/guides/devices/queclink/">Queclink</a>
+     
+      
+      
+      <div id="page-nav17"
+        class="collapse   ">
+        <nav class="list-group nav">
+          
+          
+            <a class="list-group-item"
+              href="https://cumulocity.com/guides/devices/queclink/#overview">Overview</a>
+            
+            
+          
+            <a class="list-group-item"
+              href="https://cumulocity.com/guides/devices/queclink/#configure">Configuring Queclink devices for Cumulocity</a>
+            
+            
+          
+            <a class="list-group-item"
+              href="https://cumulocity.com/guides/devices/queclink/#register">Registering Queclink devices with Cumulocity</a>
+            
+            
+          
+            <a class="list-group-item"
+              href="https://cumulocity.com/guides/devices/queclink/#troubleshooting">Troubleshooting tracking devices</a>
+            
+            
+          
+            <a class="list-group-item"
+              href="https://cumulocity.com/guides/devices/queclink/#sms-mode">Enable sms mode</a>
+            
+            
+          
+            <a class="list-group-item"
+              href="https://cumulocity.com/guides/devices/queclink/#features">Supported features</a>
+            
+            
+        </nav>
+      </div>
+      
+    </div>
+    
+    
+    
+    <div class="">
+        
+        
+        
+        
+      <a href="javascript:void(0);"
+        data-toggle="collapse"
+        data-target="#page-nav18"
+        class="collapse-btn  collapsed ">
+        <i class="fa fa-chevron-right "></i>
+      </a>
+      
+      <a class=""
+        href="https://cumulocity.com/guides/devices/raspberry-pi/">Raspberry Pi</a>
+     
+      
+      
+      <div id="page-nav18"
+        class="collapse   ">
+        <nav class="list-group nav">
+          
+          
+            <a class="list-group-item"
+              href="https://cumulocity.com/guides/devices/raspberry-pi/#overview">Overview</a>
+            
+            
+          
+            <a class="list-group-item"
+              href="https://cumulocity.com/guides/devices/raspberry-pi/#installation-and-registration">Installation and registration</a>
+            
+            
+          
+            <a class="list-group-item"
+              href="https://cumulocity.com/guides/devices/raspberry-pi/#tinkerforge">Tinkerforge bricks and bricklets</a>
+            
+            
+          
+            <a class="list-group-item"
+              href="https://cumulocity.com/guides/devices/raspberry-pi/#pi-face-digital">PiFace Digital</a>
+            
+            
+          
+            <a class="list-group-item"
+              href="https://cumulocity.com/guides/devices/raspberry-pi/#3g-modem">Installing a 3G modem</a>
+            
+            
+          
+            <a class="list-group-item"
+              href="https://cumulocity.com/guides/devices/raspberry-pi/#firmware">Remote firmware upgrade</a>
+            
+            
+          
+            <a class="list-group-item"
+              href="https://cumulocity.com/guides/devices/raspberry-pi/#troubleshooting">Troubleshooting</a>
+            
+            
+        </nav>
+      </div>
+      
+    </div>
+    
+    
+    
+    <div class="">
+        
+        
+        
+        
+      <a href="javascript:void(0);"
+        data-toggle="collapse"
+        data-target="#page-nav19"
+        class="collapse-btn  collapsed ">
+        <i class="fa fa-chevron-right "></i>
+      </a>
+      
+      <a class=""
+        href="https://cumulocity.com/guides/devices/red-lion-ram/">Red Lion RAM series</a>
+     
+      
+      
+      <div id="page-nav19"
+        class="collapse   ">
+        <nav class="list-group nav">
+          
+          
+            <a class="list-group-item"
+              href="https://cumulocity.com/guides/devices/red-lion-ram/#overview">Overview</a>
+            
+            
+          
+            <a class="list-group-item"
+              href="https://cumulocity.com/guides/devices/red-lion-ram/#configure-and-connect">Configuration and Connecting to Cumulocity</a>
+            
+            
+        </nav>
+      </div>
+      
+    </div>
+    
+    
+    
+    <div class="">
+        
+        
+        
+        
+      <a href="javascript:void(0);"
+        data-toggle="collapse"
+        data-target="#page-nav20"
+        class="collapse-btn  collapsed ">
+        <i class="fa fa-chevron-right "></i>
+      </a>
+      
+      <a class=""
+        href="https://cumulocity.com/guides/devices/robustel-r3000/">Robustel</a>
+     
+      
+      
+      <div id="page-nav20"
+        class="collapse   ">
+        <nav class="list-group nav">
+          
+          
+            <a class="list-group-item"
+              href="https://cumulocity.com/guides/devices/robustel-r3000/#overview">Overview</a>
+            
+            
+          
+            <a class="list-group-item"
+              href="https://cumulocity.com/guides/devices/robustel-r3000/#setup">Setup</a>
+            
+            
+          
+            <a class="list-group-item"
+              href="https://cumulocity.com/guides/devices/robustel-r3000/#next">What next?</a>
+            
+            
+          
+            <a class="list-group-item"
+              href="https://cumulocity.com/guides/devices/robustel-r3000/#troubleshooting">Troubleshooting</a>
+            
+            
+        </nav>
+      </div>
+      
+    </div>
+    
+    
+    
+    <div class="">
+        
+        
+        
+        
+      <a href="javascript:void(0);"
+        data-toggle="collapse"
+        data-target="#page-nav21"
+        class="collapse-btn  collapsed ">
+        <i class="fa fa-chevron-right "></i>
+      </a>
+      
+      <a class=""
+        href="https://cumulocity.com/guides/devices/smartbox-ble/">SMARTBox BLE</a>
+     
+      
+      
+      <div id="page-nav21"
+        class="collapse   ">
+        <nav class="list-group nav">
+          
+          
+            <a class="list-group-item"
+              href="https://cumulocity.com/guides/devices/smartbox-ble/#overview">Overview</a>
+            
+            
+          
+            <a class="list-group-item"
+              href="https://cumulocity.com/guides/devices/smartbox-ble/#datasheet">Datasheet</a>
+            
+            
+        </nav>
+      </div>
+      
+    </div>
+    
+    
+    
+    <div class="">
+        
+        
+        
+        
+      <a href="javascript:void(0);"
+        data-toggle="collapse"
+        data-target="#page-nav22"
+        class="collapse-btn  collapsed ">
+        <i class="fa fa-chevron-right "></i>
+      </a>
+      
+      <a class=""
+        href="https://cumulocity.com/guides/devices/smartbox-can/">SMARTBox CAN</a>
+     
+      
+      
+      <div id="page-nav22"
+        class="collapse   ">
+        <nav class="list-group nav">
+          
+          
+            <a class="list-group-item"
+              href="https://cumulocity.com/guides/devices/smartbox-can/#overview">Overview</a>
+            
+            
+          
+            <a class="list-group-item"
+              href="https://cumulocity.com/guides/devices/smartbox-can/#datasheet">Datasheet</a>
+            
+            
+        </nav>
+      </div>
+      
+    </div>
+    
+    
+    
+    <div class="">
+        
+        
+        
+        
+      <a href="javascript:void(0);"
+        data-toggle="collapse"
+        data-target="#page-nav23"
+        class="collapse-btn  collapsed ">
+        <i class="fa fa-chevron-right "></i>
+      </a>
+      
+      <a class=""
+        href="https://cumulocity.com/guides/devices/smartbox-cube-io/">SMARTBox CubeIO</a>
+     
+      
+      
+      <div id="page-nav23"
+        class="collapse   ">
+        <nav class="list-group nav">
+          
+          
+            <a class="list-group-item"
+              href="https://cumulocity.com/guides/devices/smartbox-cube-io/#overview">Overview</a>
+            
+            
+          
+            <a class="list-group-item"
+              href="https://cumulocity.com/guides/devices/smartbox-cube-io/#datasheet">Datasheet</a>
+            
+            
+        </nav>
+      </div>
+      
+    </div>
+    
+    
+    
+    <div class="">
+        
+        
+        
+        
+      <a href="javascript:void(0);"
+        data-toggle="collapse"
+        data-target="#page-nav24"
+        class="collapse-btn  collapsed ">
+        <i class="fa fa-chevron-right "></i>
+      </a>
+      
+      <a class=""
+        href="https://cumulocity.com/guides/devices/smartbox-dp/">SMARTBox DP</a>
+     
+      
+      
+      <div id="page-nav24"
+        class="collapse   ">
+        <nav class="list-group nav">
+          
+          
+            <a class="list-group-item"
+              href="https://cumulocity.com/guides/devices/smartbox-dp/#overview">Overview</a>
+            
+            
+          
+            <a class="list-group-item"
+              href="https://cumulocity.com/guides/devices/smartbox-dp/#datasheet">Datasheet</a>
+            
+            
+        </nav>
+      </div>
+      
+    </div>
+    
+    
+    
+    <div class=" slot-active ">
+        
+        
+        
+        
+      <a href="javascript:void(0);"
+        data-toggle="collapse"
+        data-target="#page-nav25"
+        class="collapse-btn ">
+        <i class="fa fa-chevron-right "></i>
+      </a>
+      
+      <a class=" active "
+        href="https://cumulocity.com/guides/devices/smartbox-io/">SMARTBox IO</a>
+     
+      
+      
+      <div id="page-nav25"
+        class="collapse   show  ">
+        <nav class="list-group nav">
+          
+          
+          <a class="list-group-item"
+            href="#overview">Overview</a>
+          
+            
+          
+          <a class="list-group-item"
+            href="#wire">Wire your Smartbox</a>
+          
+            
+          
+          <a class="list-group-item"
+            href="#connect-the-smartbox">Connect the Smartbox to your Cumulocity Account</a>
+          
+            
+          
+          <a class="list-group-item"
+            href="#ios">Use the built-in IOs</a>
+          
+            
+          
+          <a class="list-group-item"
+            href="#connect-a-modbus-device">Connect a Modbus Device to the SMARTbox</a>
+          
+            
+          
+          <a class="list-group-item"
+            href="#location">Use the built-in location functionality</a>
+          
+            
+          
+          <a class="list-group-item"
+            href="#tracking">Use the built-in tracking functionality</a>
+          
+            
+          
+          <a class="list-group-item"
+            href="#manage-agent">Manage the Agent</a>
+          
+            
+          
+          <a class="list-group-item"
+            href="#sms">Operate the Device by SMS</a>
+          
+            
+          
+          <a class="list-group-item"
+            href="#debug">Local Debug and operate the device</a>
+          
+            
+          
+          <a class="list-group-item"
+            href="#device-database">Help for setting up the items in device database</a>
+          
+            
+        </nav>
+      </div>
+      
+    </div>
+    
+    
+    
+    <div class="">
+        
+        
+        
+        
+      <a href="javascript:void(0);"
+        data-toggle="collapse"
+        data-target="#page-nav26"
+        class="collapse-btn  collapsed ">
+        <i class="fa fa-chevron-right "></i>
+      </a>
+      
+      <a class=""
+        href="https://cumulocity.com/guides/devices/smartbox-mini/">SMARTBox Mini</a>
+     
+      
+      
+      <div id="page-nav26"
+        class="collapse   ">
+        <nav class="list-group nav">
+          
+          
+            <a class="list-group-item"
+              href="https://cumulocity.com/guides/devices/smartbox-mini/#overview">Overview</a>
+            
+            
+          
+            <a class="list-group-item"
+              href="https://cumulocity.com/guides/devices/smartbox-mini/#wire">Wire your Smartbox</a>
+            
+            
+          
+            <a class="list-group-item"
+              href="https://cumulocity.com/guides/devices/smartbox-mini/#connect-the-smartbox">Connect the Smartbox to your Cumulocity Account</a>
+            
+            
+          
+            <a class="list-group-item"
+              href="https://cumulocity.com/guides/devices/smartbox-mini/#ios">Use the built-in IOs</a>
+            
+            
+          
+            <a class="list-group-item"
+              href="https://cumulocity.com/guides/devices/smartbox-mini/#connect-a-modubus-device">Connect a Modbus Device to the SMARTbox</a>
+            
+            
+          
+            <a class="list-group-item"
+              href="https://cumulocity.com/guides/devices/smartbox-mini/#location">Use the built-in location functionality</a>
+            
+            
+          
+            <a class="list-group-item"
+              href="https://cumulocity.com/guides/devices/smartbox-mini/#tracking">Use the built-in tracking functionality</a>
+            
+            
+          
+            <a class="list-group-item"
+              href="https://cumulocity.com/guides/devices/smartbox-mini/#sms">Operate by SMS</a>
+            
+            
+          
+            <a class="list-group-item"
+              href="https://cumulocity.com/guides/devices/smartbox-mini/#debug-and-operate">Local Debug and operate the device</a>
+            
+            
+        </nav>
+      </div>
+      
+    </div>
+    
+    
+    
+    <div class="">
+        
+        
+        
+        
+      <a class=""
+        href="https://cumulocity.com/guides/devices/stw/">TC3G</a>
+     
+      
+    </div>
+    
+    
+    
+    <div class="">
+        
+        
+        
+        
+      <a href="javascript:void(0);"
+        data-toggle="collapse"
+        data-target="#page-nav28"
+        class="collapse-btn  collapsed ">
+        <i class="fa fa-chevron-right "></i>
+      </a>
+      
+      <a class=""
+        href="https://cumulocity.com/guides/devices/telic/">Telic</a>
+     
+      
+      
+      <div id="page-nav28"
+        class="collapse   ">
+        <nav class="list-group nav">
+          
+          
+            <a class="list-group-item"
+              href="https://cumulocity.com/guides/devices/telic/#overview">Overview</a>
+            
+            
+          
+            <a class="list-group-item"
+              href="https://cumulocity.com/guides/devices/telic/#connect-to-cumulocity">Configuring Telic devices for Cumulocity</a>
+            
+            
+          
+            <a class="list-group-item"
+              href="https://cumulocity.com/guides/devices/telic/#register">Registering Telic devices with Cumulocity</a>
+            
+            
+          
+            <a class="list-group-item"
+              href="https://cumulocity.com/guides/devices/telic/#troubleshooting">Troubleshooting tracking devices</a>
+            
+            
+          
+            <a class="list-group-item"
+              href="https://cumulocity.com/guides/devices/telic/#data">Data created by Telic device</a>
+            
+            
+        </nav>
+      </div>
+      
+    </div>
+    
+    
+    
+    <div class="">
+        
+        
+        
+        
+      <a href="javascript:void(0);"
+        data-toggle="collapse"
+        data-target="#page-nav29"
+        class="collapse-btn  collapsed ">
+        <i class="fa fa-chevron-right "></i>
+      </a>
+      
+      <a class=""
+        href="https://cumulocity.com/guides/devices/tinkerforge/">TinkerForge</a>
+     
+      
+      
+      <div id="page-nav29"
+        class="collapse   ">
+        <nav class="list-group nav">
+          
+          
+            <a class="list-group-item"
+              href="https://cumulocity.com/guides/devices/tinkerforge/#overview">Overview</a>
+            
+            
+          
+            <a class="list-group-item"
+              href="https://cumulocity.com/guides/devices/tinkerforge/#installation">Installation</a>
+            
+            
+          
+            <a class="list-group-item"
+              href="https://cumulocity.com/guides/devices/tinkerforge/#using-with-cumulocity">Using TinkerForge components with Cumulocity</a>
+            
+            
+          
+            <a class="list-group-item"
+              href="https://cumulocity.com/guides/devices/tinkerforge/#extending">Extending the TinkerForge driver</a>
+            
+            
+        </nav>
+      </div>
+      
+    </div>
+    
+    
+    
+    <div class="">
+        
+        
+        
+        
+      <a class=""
+        href="https://cumulocity.com/guides/devices/tixi/">Tixi</a>
+     
+      
+    </div>
+    
+    
+  </nav>
+</nav>
+<div class="cover"></div>
+
+<div class="main-content">
+  <article class="page-section">
+    <header class="section-header">
+      <h1 class="text-light">SMARTBox IO</h1>
+    </header>
+    
+      <div class="lead">
+        
+      </div>
+      
+  </article>
+
+  
+  
+  
+  <article id="overview" class="page-section">
+    <h2>
+      <button class="btn-link bookmark" data-clipboard-text="#overview">
+        <span class="fa fa-link"></span>
+      </button>
+      Overview</h2>
+    
+
+<p><a href="mailto:kontakt@pssystec-gmbh.de">&gt;&gt; get the Agent</a></br>
+<a href="https://www.pssystec.de/downloads/">&gt;&gt; PSsystec Downloads</a></p>
+
+<p>Smartbox, based on the Telit Chipset HE910 is a ready to use solution for connecting Modbus devices to the Cumulocity Fieldbus Cloud. It provides a Master Slave Communication on RS485 for connecting up to 10 devices as well as 10 Sensors (Current ,Temperature, Pressure). Easy configure the SetUp of building automation fielddevices like pumps, e-meters, Airhandling units in the Cumulocity Fieldbus cloud or connect different sensortypes to the box. Using the MQTT protocol the terminal comes up with a low traffic solution for decentralized applications.</p>
+
+<p><img src="/guides/images/devices/smartbox-io/overview.png" alt="Overview" /></p>
+
+<p>| Smartbox IO Overview <td colspan=2>
+| &mdash; | &mdash; | &mdash; |
+| <img src="/guides/images/devices/smartbox-io/radio.png" alt="Radio" /> <td colspan=2>  <ul><li>2G  - global</li><li>3G  - EMEA, APAC, NA, Global</li><li>LTE - EMEA, APAC, Americas</li><li>GNSS</li><li>Default: 3G EMEA / APAC</li></ul>
+| <img src="/guides/images/devices/smartbox-io/connectivity.png" alt="Connectivity" /> | Fieldbus |<ul><li>Modbus RTU (RS232/RS485) <img src="/guides/images/devices/smartbox-io/modbus.png" alt=" " />  |
+| | Sensors | <ul><li>Digital Input (DIN)</li><li>AIN (NTC,0..20mA)</li><li>10 x Universal inputs (NTC, PT100, PT1000, 0..10V, DIN)</li><li>1 x RelayOutput</li></ul> |
+| <img src="/guides/images/devices/smartbox-io/cloudagent.png" alt="Cloudagent" /> <td colspan=2>  MQTT Agent for Cumulocity IoT, T-Systems- Cloud der Dinge</p>
+
+<h3 id="for-further-information">For further information:</h3>
+
+<ul>
+<li>please refer to the datasheet <a href="https://www.pssystec.de/downloads/">provided by PSsystec</a> or download <a href="/guides/images/devices/smartbox-io/Datasheet-SMARTbox-IO.pdf">here</a></li>
+<li>For installing the agent and SW releases, pls refer to Release notes folder of Device guide in Cumulocity or go to: <a href="http://cumulocity.com/guides/images/devices/smartbox-release-notes/">http://cumulocity.com/guides/images/devices/smartbox-release-notes/</a></li>
+<li>For getting the device pls contact Cumulocity Hardware support or Pssystec (kontakt@pssystec-gmbh.de)</li>
+<li>The full product overview pls download it <a href="https://www.pssystec.de/downloads/">https://www.pssystec.de/downloads/</a></li>
+</ul>
+
+<h3 id="contents">Contents</h3>
+
+<ul>
+<li><a href="#wire">Wire</a>  your Smartbox</li>
+<li><a href="#connect-the-smartbox">Connect the Smartbox</a> to your Cumulocity Account</li>
+<li>Use the <a href="#ios">built-in IOs</a></li>
+<li><a href="#connect-a-modbus-device">Connect a Modbus Device</a> to the SMARTbox</li>
+<li>Use the built-in <a href="#location">location functionality</a></li>
+<li>Use the built-in <a href="#tracking">tracking functionality</a></li>
+<li><a href="#manage-agent">Manage the Agent</a></li>
+<li>Remotely Manage <a href="#apn-tenant-reboot">APN, Tenant, Reboot</a></li>
+<li>Operate the Device by <a href="#sms">SMS</a></li>
+<li>Operate AT commands via <a href="#device-shell">device shell</a></li>
+<li>Local <a href="#debug">Debug</a> the device<br /></li>
+<li>Help for setting up the items in <a href="#device-database">device database</a></li>
+</ul>
+
+  </article>
+  
+  <article id="wire" class="page-section">
+    <h2>
+      <button class="btn-link bookmark" data-clipboard-text="#wire">
+        <span class="fa fa-link"></span>
+      </button>
+      Wire your Smartbox</h2>
+    <ul>
+<li>The RelayOutput features an potential free output with 230V max. 2A
+
+<ul>
+<li>U1  - Common</li>
+<li>U2  - NC</li>
+<li>U3  - NO</li>
+</ul></li>
+<li>Connect your sensors, DIN, Analogue Input between Ux and G</li>
+<li>You can use external 24VDC (200mA) or the with the delivered PowerSupply</li>
+</ul>
+
+<p><img src="/guides/images/devices/smartbox-io/io-interface.png" alt="Interface" /></p>
+
+<p>Note that the SMARTbox IO supports:</p>
+
+<p>| PIN SMARTbox <td colspan=7> settable Configuration in Cloud (see device Model)
+| &mdash; | &mdash; | &mdash; | &mdash; | &mdash; | &mdash; | &mdash; | &mdash; |
+| G-U1 | 0: inaktiv | 1: PT100 | 2: PT1000 | 3: NTC10K | 4: 0-10V | 5: DI NO | 6: DI NC |
+| G-U2 | 0: inaktiv | 1: PT100 | 2: PT1000 | 3: NTC10K | 4: 0-10V | 5: DI NO | 6: DI NC |
+| G-U3 | 0: inaktiv | 1: PT100 | 2: PT1000 | 3: NTC10K | 4: 0-10V | 5: DI NO | 6: DI NC |
+| G-U4 | 0: inaktiv | 1: PT100 | 2: PT1000 | 3: NTC10K | 4: 0-10V | 5: DI NO | 6: DI NC |
+| G-U5 | 0: inaktiv | 1: PT100 | 2: PT1000 | 3: NTC10K | 4: 0-10V | 5: DI NO | 6: DI NC |
+| G-U6 | 0: inaktiv | 1: PT100 | 2: PT1000 | 3: NTC10K | 4: 0-10V | 5: DI NO | 6: DI NC |
+| G-U7 | 0: inaktiv | 1: PT100 | 2: PT1000 | 3: NTC10K | 5: DI NO | | 6: DI NC |
+| G-U8 | 0: inaktiv | 1: PT100 | 2: PT1000 | 3: NTC10K | 5: DI NO | | 6: DI NC |
+| G-U9 | 0: inaktiv | 1: PT100 | 2: PT1000 | 3: NTC10K | 5: DI NO | | 6: DI NC |
+| G-U10 | 0: inaktiv | 1: PT100 | 2: PT1000 | 3: NTC10K | 5: DI NO | | 6: DI NC |
+| Relay <td colspan=2> <ul><li>U1 - Common</li><li>U2 - NC</li><li>U3 - NO</li></ul> | Note: These Pins are on the backside | | | | | |</p>
+
+<p>The connection diagram of the sensors is as follows:</p>
+
+<p><img src="/guides/images/devices/smartbox-io/interface-sensors.png" alt="Interface Sensors" /></p>
+
+  </article>
+  
+  <article id="connect-the-smartbox" class="page-section">
+    <h2>
+      <button class="btn-link bookmark" data-clipboard-text="#connect-the-smartbox">
+        <span class="fa fa-link"></span>
+      </button>
+      Connect the Smartbox to your Cumulocity Account</h2>
+    
+
+<h3 id="prepare-the-cloud-and-apn">Prepare the Cloud and APN</h3>
+
+<p>By default the terminal supports cloud fieldbus from Cumulocity. To use it you should:
+1.  Subscribe your account to the Cloud Fieldbus app by contacting Cumulocity support.After this the device Database will be visible in the root folder of Device management. Refer also here: <a href="http://cumulocity.com/guides/users-guide/cloud-fieldbus/">http://cumulocity.com/guides/users-guide/cloud-fieldbus/</a>
+2.  Power on the Terminal and wait until the RUN LED is flashing 2xflash-pause-2xflash-&hellip;
+3.  Configure the Terminal&rsquo;s APN by sending an SMS to Terminal&rsquo;s SIM card with the following syntax: GPRS=APN,username,password
+</br>For example, if you have no User and Password then you have to type in your SMS  GPRS=&#60;APN&#62;,,</p>
+
+<h3 id="register-the-device">Register the device</h3>
+
+<p>In the cumulocity Devicemanagement go to the menu in Device Registration. Enter the Terminal&rsquo;s IMEI as an ID. The IMEI is printed on the devices itself:</p>
+
+<p><img src="/guides/images/devices/smartbox-io/imei.png" alt="IMEI" /></p>
+
+<p>After accepting the device (this process may tale 30 seconds) you should be able to see it in the All Devices list after a short delay.</p>
+
+<p><img src="/guides/images/devices/smartbox-io/terminal-in-all-devices.png" alt="Terminal in all devcies" /></p>
+
+  </article>
+  
+  <article id="ios" class="page-section">
+    <h2>
+      <button class="btn-link bookmark" data-clipboard-text="#ios">
+        <span class="fa fa-link"></span>
+      </button>
+      Use the built-in IOs</h2>
+    <p>To activate all sensors and Configurable Options proceed as follows:
+1.  Upload the sensor-model in device database. Download the sensorboard model Type <a href="https://www.pssystec.de/downloads/">https://www.pssystec.de/downloads/</a> - CloudModels
+2.  Edit the Sensor model if you need it (refer to Configuring Fieldbus device types) but keep the addresses. You will be able to configure for each Input how it should be displayed - You can define each Input as a Measurement or Alarm or event or just a display value. Note that Sensortype is not defined here, but as you will see the parameter which is responsible for the sensortype selection is part of the device model.
+3.  &ldquo;Add&rdquo; the sensor Model in Modbus tab on address 1 with Baudrate 19200/8/N/1
+4.  Include the fieldbus widget in the cockpit related to the device and display all items. You can now see all items of the Sensormodel and you can configure the inputs as Temperature sensor or Digitalinputs.</p>
+
+  </article>
+  
+  <article id="connect-a-modbus-device" class="page-section">
+    <h2>
+      <button class="btn-link bookmark" data-clipboard-text="#connect-a-modbus-device">
+        <span class="fa fa-link"></span>
+      </button>
+      Connect a Modbus Device to the SMARTbox</h2>
+    <p>The Smartbox supports Modbus RTU - all Connections parameters are configurable in the Cloud.</p>
+
+<table>
+<thead>
+<tr>
+<th>Connections parameters</th>
+<th></th>
+<th></th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td>Type</td>
+<td>Modbus RTU (Master)</td>
+<td>Cloud</td>
+</tr>
+
+<tr>
+<td>Baudrate</td>
+<td>4800, 9600, 19200, 38400, 115200 (Change during Runtime possible)</td>
+<td>Modbus Tab</td>
+</tr>
+
+<tr>
+<td>Parity</td>
+<td>Even, ODD, NONE  (Change during Runtime possible)</td>
+<td>Modbus Tab</td>
+</tr>
+
+<tr>
+<td>Stopbits</td>
+<td>2,1 (Change during Runtime possible)</td>
+<td>Modbus Tab</td>
+</tr>
+
+<tr>
+<td>Functioncodes</td>
+<td><ul><li>Funct.1 (Read Single Coils)</li><li> Funct.2 (Read Input Status)</li><li> Funct.3 (Read Holding Registers)</li><li> Funct.4 (Read Input Registers)</li><li> Funct.5 (Write Coil)</li><li> Funct.6 (Write Holding Register)</li></ul></td>
+<td>Device database (model)</td>
+</tr>
+
+<tr>
+<td>Datapoints</td>
+<td>1.. 10 Slaves with each 100 datapoints</td>
+<td>fix</td>
+</tr>
+
+<tr>
+<td>Polling Rate on Bus</td>
+<td>500ms</td>
+<td>fix</td>
+</tr>
+</tbody>
+</table>
+
+<p>We assume that you already defined your Modbus device(s) which you want to connect in the device database. In this exemplary SetUp you need 4 Models in the device database, which can and should be defined offline in the Cloud (see also chapter Help Device database)</br>
+   Device1:  Chiller on Address1</br>
+   Device2: Energy Meter on Address2</br>
+   Device3: Frontcooler for Serverline1 on Address5</br>
+   Device4: Frontcooler for Serverline2 on Address6</p>
+
+<p><img src="/guides/images/devices/smartbox-io/modbus-setup.png" alt=" " /></p>
+
+<p>To connect 1 Modbus Device to the RTU network:</p>
+
+<ol>
+<li>Physically wire the Modbus/RTU device through RS485 to the terminal.</li>
+<li>Give the device a unique Modbus address according to the instructions provided with the Modbus device (e.g. by setting a jumper on the device).</li>
+<li>Check the serial communication settings of the device according to the instructions provided with the device (i.e. baud rates and communication protocol). These have to match with all devices on the bus.</li>
+<li>Navigate to the terminal in Cumulocity and click on the &ldquo;Modbus&rdquo; tab.</li>
+<li>Change the communication settings shown in the section &ldquo;Serial Communication&rdquo; to match the settings on the bus, if needed.</li>
+<li>Change the transmit rate and the polling rate according to your requirements. The polling rate is the frequency at which the Modbus devices are polled for changes. The transmit rate is the frequency where measurements are sent to Cumulocity.</li>
+<li>Click &ldquo;Save changes&rdquo; if you made changes.</li>
+<li>To start communication between the terminal and the Modbus device, click &ldquo;Add new device&rdquo;.</li>
+<li>Enter a name for the device and select the type of the device from the drop-down box. To add new device types, see &ldquo;Configuring Fieldbus device types&rdquo; below. Set the Modbus address of the connected device.</li>
+<li>Click &ldquo;Add&rdquo;. Cumulocity will now send a notification to the Modbus terminal that a new device is ready to be managed. This may take a few seconds.</li>
+</ol>
+
+<p><img src="/guides/images/devices/smartbox-io/rtu-network.png" alt=" " /></p>
+
+  </article>
+  
+  <article id="location" class="page-section">
+    <h2>
+      <button class="btn-link bookmark" data-clipboard-text="#location">
+        <span class="fa fa-link"></span>
+      </button>
+      Use the built-in location functionality</h2>
+    <p>The terminal features cell location and is available in Location tab on terminal level. Devices are shown as &ldquo;pins&rdquo; that you can click to see the name of the device. Clicking the name of the device takes you to the detailed view of the device. In Smartbox Mini you have 3 Options:
+1.  Using the built in Cell Location. The terminal identifies  3 cells in the near environment and derives the location (default)
+2.  Using the hardware  Option with a built in- GPS (this is an extra option). Set c8y.GPS=1 then GPS is enabled. Setting c8y.GPS=0 Cell location is enabled (default)
+3.  Activate a regular identification of the location. In Configuration tab you can set:
+</br> c8y.LocationCycle=60; define in min, how often the location should be checked. 0 means the cycled checking is disabled. If a value &gt;0 ist set, also the tracking is enabled</p>
+
+<p><img src="/guides/images/devices/smartbox-mini/location.png" alt="Location" /></p>
+
+  </article>
+  
+  <article id="tracking" class="page-section">
+    <h2>
+      <button class="btn-link bookmark" data-clipboard-text="#tracking">
+        <span class="fa fa-link"></span>
+      </button>
+      Use the built-in tracking functionality</h2>
+    <p>Devices can record the history of their movements in Cumulocity. Using the tracking tab, you can select a time period and visualize the movements of the device during this time period. Movements are shown as red lines on the map.</p>
+
+<p>Next to the map, the individual recordings with their time are listed (&ldquo;location update events&rdquo;). When you click a recording, a &ldquo;pin&rdquo; on the map will show the location at the time of the recording.</p>
+
+<p>Activate a regular identification of the location. In Configuration tab you can set. If the value of c8y.LocationCycle is greater 0 then tracking is enabled.</p>
+
+<p><img src="/guides/images/devices/smartbox-io/tracking.png" alt="Tracking" /></p>
+
+<p>Depending on the type of device and the integration into Cumulocity, you can also configure device-side geo-fencing and motion detection.</p>
+
+<p>Additionally, when the feature is activated, Cell ID information can be used to determine the position of the device. Currently, the services from Combain and Google are supported. The user can see the tracks based on both data, or filter out GPS based data or Cell ID based data.</p>
+
+  </article>
+  
+  <article id="manage-agent" class="page-section">
+    <h2>
+      <button class="btn-link bookmark" data-clipboard-text="#manage-agent">
+        <span class="fa fa-link"></span>
+      </button>
+      Manage the Agent</h2>
+    
+
+<p>The installed software on the SMARTbox can be remotely managed using the standard software and management feature from Cumulocity, as described in the Device management user&rsquo;s guide. You can also install the agent manually, follow the instructions here: <a href="http://cumulocity.com/guides/images/devices/smartbox-release-notes/">http://cumulocity.com/guides/images/devices/smartbox-release-notes/</a></p>
+
+<p>You can get the latest Software version in the Release notes folder of Device guide in Cumulocity or go to: <a href="https://www.pssystec.de/downloads/">https://www.pssystec.de/downloads/</a></p>
+
+<h2 id="a-name-apn-tenant-reboot-a-remotely-manage-apn-tenant-reboot"><a name="apn-tenant-reboot"></a> Remotely Manage APN, Tenant, Reboot</h2>
+
+<table>
+<thead>
+<tr>
+<th>Remotely Manage APN, Tenant, Reboot</th>
+<th></th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td>DELETE</td>
+<td>deletes the registration in CC and you can register on a new tenant</td>
+</tr>
+
+<tr>
+<td>RESET</td>
+<td>Restarts the device</td>
+</tr>
+
+<tr>
+<td>GPRS=&#60;APN&#62;,&#60;User&#62;,&#60;Password&#62;</td>
+<td>Change APN, if no User or Password is required, the fields free</td>
+</tr>
+</tbody>
+</table>
+
+  </article>
+  
+  <article id="sms" class="page-section">
+    <h2>
+      <button class="btn-link bookmark" data-clipboard-text="#sms">
+        <span class="fa fa-link"></span>
+      </button>
+      Operate the Device by SMS</h2>
+    
+
+<p>Since Agent Version 2.3.x. This service allowing the user to run on the module itself AT Commands sent from a mobile via SMS messages. You will get the answer from the SMARTbox directly on your mobile phone. This allows you, to make troubleshooting in any case of error.</p>
+
+<p>Example:</br>
+Type AT+COPS?</br>
+Result on your mobile Phone:</p>
+
+<p>+COPS: 0,0,&ldquo;Vodafone.de&rdquo;,2</p>
+
+<p>OK</p>
+
+<p>All AT command supported are listed here: <a href="http://www.pssystec.de/downloads/">http://www.pssystec.de/downloads/</a> </br>
+&#10140; supported AT commands and includes a huge amount of different AT commands.</p>
+
+<h2 id="a-name-device-shell-a-operate-at-commands-via-device-shell"><a name="device-shell"></a>Operate AT commands via device shell</h2>
+
+<p>The device shell enables you to read and write configuration parameters to interactively work with remote devices. You can send AT commands in the respective language of the device and view the results of the commands. You can sent any At Command. Check here in Chapter &ldquo;supported AT commands&rdquo;: <a href="https://www.pssystec.de/downloads/">https://www.pssystec.de/downloads/</a>. Frequently used commands are available by clicking the &ldquo;Get predefined&rdquo; button.</p>
+
+<p><img src="/guides/images/devices/smartbox-io/device-shell.png" alt="Device Shell" /></p>
+
+  </article>
+  
+  <article id="debug" class="page-section">
+    <h2>
+      <button class="btn-link bookmark" data-clipboard-text="#debug">
+        <span class="fa fa-link"></span>
+      </button>
+      Local Debug and operate the device</h2>
+    <ol>
+<li>Install the Telit USB driver on your PC: <a href="https://www.pssystec.de/downloads/">https://www.pssystec.de/downloads/</a>. The PC will recognize 6 new USB Ports</li>
+</ol>
+
+<p>For debug service:
+1.  Open an Terminal program
+2.  Connect your PC on Telit High Speed Modem USB Port with USB port on the Smartbox
+3.  you will get details of the running machine.</p>
+
+<p>For setting generic AT commands:
+1.  Open an Terminal program
+2.  Connect your PC on USB4 Port with USB port on the Smartbox
+3.  you can set now at commands</p>
+
+<p>Note: Using Agent Versions &lt;2.3.x you have to connect to USB3</p>
+
+  </article>
+  
+  <article id="device-database" class="page-section">
+    <h2>
+      <button class="btn-link bookmark" data-clipboard-text="#device-database">
+        <span class="fa fa-link"></span>
+      </button>
+      Help for setting up the items in device database</h2>
+    <p>All devices which are connected to the SMARTbox are needed to define in Device Database. The definition includes all supported datapoints of this connected device. Even more, you can not only define the &ldquo;physical datapoint&rdquo; like register address, you can also define if this datapoint comes in the cloud as a measurement, event, alarm or write value. In addition some control field per datapoint are available which includes metadata like the Unit or Display Category.</p>
+
+<p><img src="/guides/images/devices/smartbox-io/device-database1.png" alt="Device Database" /></p>
+
+<p><img src="/guides/images/devices/smartbox-io/device-database2.png" alt="Device Database" /></p>
+
+  </article>
+  
+  
+</div>
+<footer class="main-footer">
+  <div class="copyright">
+    <div class="container text-center">
+      <p class="small ">&copy; 2019 Cumulocity GmbH | All rights reserved.</p>
+    </div>
+  </div>  
+</footer>
+
+<!-- Essential Scripts -->
+
+<!-- jQuery -->
+<script src="https://cumulocity.com/guides/js/vendor/jquery.min.js"></script>
+<script src="https://cumulocity.com/guides/js/vendor/bootstrap.bundle.min.js"></script>
+<script src="https://cumulocity.com/guides/js/vendor/clipboard.js"></script>
+<script src="https://cumulocity.com/guides/js/vendor/zoom.js"></script>
+<script src="https://cumulocity.com/guides/js/vendor/highlight.min.js"></script>
+<script src="https://cumulocity.com/guides/js/main.js"></script>
+
+
+
+
+
+    
+   
+  </body>
+</html>

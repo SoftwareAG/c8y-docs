@@ -1,0 +1,836 @@
+<!DOCTYPE html>
+<html>
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <base href="" />
+    <meta name="generator" content="Hugo 0.54.0 with theme C8yDocs">
+    <title>Introduction to Cumulocity - Cumulocity IoT Guides</title>
+    <meta name="author" content="Carlos Ceia @ Cumulocity">
+    <meta name="keywords" content=", Software AG Cloud, Cumulocity IoT, Internet of things, analytics, devices, connect">
+
+
+    <link rel="icon" href="/favicon.ico">
+
+    
+
+    
+
+    
+    
+    
+    <link rel="stylesheet" href="https://cumulocity.com/guides/style.css">
+    
+
+      
+      <script> window.zEmbed||function(e,t){var n,o,d,i,s,a=[],r=document.createElement("iframe");window.zEmbed=function(){a.push(arguments)},window.zE=window.zE||window.zEmbed,r.src="javascript:false",r.title="",r.role="presentation",(r.frameElement||r).style.cssText="display: none",d=document.getElementsByTagName("script"),d=d[d.length-1],d.parentNode.insertBefore(r,d),i=r.contentWindow,s=i.document;try{o=s}catch(c){n=document.domain,r.src='javascript:var d=document.open();d.domain="'+n+'";void(0);',o=s}o.open()._l=function(){var o=this.createElement("script");n&&(this.domain=n),o.id="js-iframe-async",o.src=e,this.t=+new Date,this.zendeskHost=t,this.zEQueue=a,this.body.appendChild(o)},o.write('<body onload="document._l();">'),o.close()}("https://assets.zendesk.com/embeddable_framework/main.js","cumulocity.zendesk.com"); </script>
+        <script type="text/JavaScript">
+          window.zESettings = {
+            webWidget: {
+              color: {
+                theme: '#1776bf'    
+              },
+              position: {
+                horizontal: 'right',
+                vertical: 'top'     
+              }
+            }
+          };
+          </script>
+        
+        
+   
+  </head><body data-spy="scroll" data-target="#main-nav" ><button type="button" class="sidebar-toggle">
+  <span class="icon-bar"></span>
+  <span class="icon-bar"></span>
+  <span class="icon-bar"></span>
+  <span>MENU</span>
+</button>
+<nav class="main-top-bar" >
+  <div class="d-flex container">
+    <ul class="nav d-flex flex-start hidden-xs nav-left">
+      <li><a href="https://www.softwareag.cloud/site/product/cumulocity-iot.html">Cumulocity IoT</a></li>
+      <li><a href="http://resources.cumulocity.com/documentation/jssdk/latest/#/api">Cumulocity Angular API</a></li>
+    </ul>
+    <ul class="nav flex-end nav-right">
+      <li>   <script>
+              (function() {
+                var cx = '008969372384807682938:yeh7xt785g4';
+                var gcse = document.createElement('script');
+                gcse.type = 'text/javascript';
+                gcse.async = true;
+                gcse.src = 'https://cse.google.com/cse.js?cx=' + cx;
+                var s = document.getElementsByTagName('script')[0];
+                s.parentNode.insertBefore(gcse, s);
+              })();
+            </script>
+        <div id="___gcse_0" dir="ltr"><form class="gsc-search-box gsc-search-box-tools" accept-charset="utf-8"><div class="table-responsive"><table cellspacing="0" cellpadding="0" class="gsc-search-box"><tbody><tr><td class="gsc-input"><div class="gsc-input-box" id="gsc-iw-id1"><table cellspacing="0" cellpadding="0" id="gs_id50" class="gstl_50 gsc-input" style="width: 100%; padding: 0px;"><tbody><tr><td id="gs_tti50" class="gsib_a"><input autocomplete="off" type="text" size="10" class="gsc-input" name="search" title="search" id="gsc-i-id1" placeholder="Custom Search" dir="ltr" spellcheck="false" x-webkit-grammar="builtin:search" lang="en" style="width: 100%; padding: 0px; border: none; margin: -0.0625em 0px 0px; height: 1.25em; background: url(&quot;https://www.google.com/cse/static/images/1x/googlelogo_lightgrey_46x16dp.png&quot;) left center no-repeat rgb(255, 255, 255); text-indent: 48px; outline: none;"></td><td class="gsib_b"><div class="gsst_b" id="gs_st50" dir="ltr"><a class="gsst_a" href="javascript:void(0)" style="display: none;" title="Clear search box" role="button"><span class="gscb_a" id="gs_cb50" aria-hidden="true">×</span></a></div></td></tr></tbody></table></div></td><td class="gsc-search-button"><button class="gsc-search-button gsc-search-button-v2"><svg width="13" height="13" viewBox="0 0 13 13"><title>search</title><path d="m4.8495 7.8226c0.82666 0 1.5262-0.29146 2.0985-0.87438 0.57232-0.58292 0.86378-1.2877 0.87438-2.1144 0.010599-0.82666-0.28086-1.5262-0.87438-2.0985-0.59352-0.57232-1.293-0.86378-2.0985-0.87438-0.8055-0.010599-1.5103 0.28086-2.1144 0.87438-0.60414 0.59352-0.8956 1.293-0.87438 2.0985 0.021197 0.8055 0.31266 1.5103 0.87438 2.1144 0.56172 0.60414 1.2665 0.8956 2.1144 0.87438zm4.4695 0.2115 3.681 3.6819-1.259 1.284-3.6817-3.7 0.0019784-0.69479-0.090043-0.098846c-0.87973 0.76087-1.92 1.1413-3.1207 1.1413-1.3553 0-2.5025-0.46363-3.4417-1.3909s-1.4088-2.0686-1.4088-3.4239c0-1.3553 0.4696-2.4966 1.4088-3.4239 0.9392-0.92727 2.0864-1.3969 3.4417-1.4088 1.3553-0.011889 2.4906 0.45771 3.406 1.4088 0.9154 0.95107 1.379 2.0924 1.3909 3.4239 0 1.2126-0.38043 2.2588-1.1413 3.1385l0.098834 0.090049z"></path></svg></button></td><td class="gsc-clear-button"><div class="gsc-clear-button" title="clear results">&nbsp;</div></td></tr></tbody></table></div></form></div>
+      </li>
+    </ul>
+  </div>
+</nav><button type="button" class="to-the-top">
+  <span class="sr-only">Top</span>
+  <span class="fa fa-chevron-up"></span>
+</button><nav class="main-nav navbar">
+  <header class="nav-header">
+    <a href="https://www.softwareag.cloud/site/dev-center/cumulocity-iot.html">
+      <img src="https://cumulocity.com/guides/images/cumulocity-iot.svg"
+        class="img-responsive no-zoom"
+        alt="Cumulocity IoT">
+    </a>
+
+    <div class="dropdown">
+      <button class="dropdown-toggle"
+        type="button"
+        id="dropdownMenuButton"
+        data-toggle="dropdown"
+        aria-haspopup="true"
+        aria-expanded="false">
+        <span id="current-dropdown-toggle" class="text-truncate"></span> <span class="caret"></span>
+      </button>
+      <div class="dropdown-menu"
+        aria-labelledby="dropdownMenuButton">
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+
+        
+        
+        
+
+        <a class='dropdown-menu-item '
+          href='https://cumulocity.com/guides/release-notes/overview/'><i class="c8y-icon c8y-icon-notification"></i> Release notes</a>
+        
+        
+        
+        
+        
+        
+        
+        
+
+        
+        
+        
+        
+        <span class="current-app">Concepts guide</span>
+        
+        
+
+        <a class='dropdown-menu-item active'
+          href='https://cumulocity.com/guides/concepts/introduction/'><i class="c8y-icon c8y-icon-c8y-data"></i> Concepts guide</a>
+        
+        
+        
+        
+        
+        
+        
+        
+
+        
+        
+        
+
+        <a class='dropdown-menu-item '
+          href='https://cumulocity.com/guides/users-guide/getting-started/'><i class="c8y-icon c8y-icon-user"></i> User guide</a>
+        
+        
+        
+        
+        
+        
+        
+        
+
+        
+        
+        
+
+        <a class='dropdown-menu-item '
+          href='https://cumulocity.com/guides/benutzerhandbuch/overview/'><i class="c8y-icon c8y-icon-user"></i> Handbuch</a>
+        
+        
+        
+        
+        
+        
+        
+        
+
+        
+        
+        
+
+        <a class='dropdown-menu-item '
+          href='https://cumulocity.com/guides/devices/overview/'><i class="c8y-icon c8y-icon-device-management"></i> Device guides</a>
+        
+        
+        
+        
+        
+        
+        
+        
+
+        
+        
+        
+
+        <a class='dropdown-menu-item '
+          href='https://cumulocity.com/guides/edge/overview/'><i class="fa fa-book"></i> Cumulocity IoT Edge</a>
+        
+        
+        
+        
+        
+        
+        
+        
+
+        
+        
+        
+
+        <a class='dropdown-menu-item '
+          href='https://cumulocity.com/guides/microservice-sdk/introduction/'><i class="c8y-icon c8y-icon-tools"></i> Microservice SDK guide</a>
+        
+        
+        
+        
+        
+        
+        
+        
+
+        
+        
+        
+
+        <a class='dropdown-menu-item '
+          href='https://cumulocity.com/guides/device-sdk/introduction/'><i class="c8y-icon c8y-icon-tools"></i> Device SDK guide</a>
+        
+        
+        
+        
+        
+        
+        
+        
+
+        
+        
+        
+
+        <a class='dropdown-menu-item '
+          href='https://cumulocity.com/guides/web/introduction/'><i class="c8y-icon c8y-icon-smart-rest"></i> Web SDK guide</a>
+        
+        
+        
+        
+        
+        
+        
+        
+
+        
+        
+        
+
+        <a class='dropdown-menu-item '
+          href='https://cumulocity.com/guides/apama/overview-analytics/'><i class="c8y-icon c8y-icon-data-explorer"></i> Analytics guide</a>
+        
+        
+        
+        
+        
+        
+        
+        
+
+        
+        
+        
+
+        <a class='dropdown-menu-item '
+          href='https://cumulocity.com/guides/reference/rest-implementation/'><i class="fa fa-book"></i> Reference guide</a>
+        
+      </div>
+    </div>
+  </header>
+
+  
+
+  <nav id="main-nav"
+    class="nav-sections">
+    
+    
+    <div class=" slot-active ">
+        
+        
+        
+        
+      <a href="javascript:void(0);"
+        data-toggle="collapse"
+        data-target="#page-nav0"
+        class="collapse-btn ">
+        <i class="fa fa-chevron-right "></i>
+      </a>
+      
+      <a class=" active "
+        href="https://cumulocity.com/guides/concepts/introduction/">Introduction to Cumulocity</a>
+     
+      
+      
+      <div id="page-nav0"
+        class="collapse   show  ">
+        <nav class="list-group nav">
+          
+          
+          <a class="list-group-item"
+            href="#overview">Overview</a>
+          
+            
+          
+          <a class="list-group-item"
+            href="#hardware-kits-and-software-libraries">Hardware kits and software libraries</a>
+          
+            
+          
+          <a class="list-group-item"
+            href="#mobile-networking-support">Mobile networking support</a>
+          
+            
+          
+          <a class="list-group-item"
+            href="#device-management">Device management</a>
+          
+            
+          
+          <a class="list-group-item"
+            href="#visualization-and-remote-control">Visualization and remote control</a>
+          
+            
+          
+          <a class="list-group-item"
+            href="#customization">Customization</a>
+          
+            
+          
+          <a class="list-group-item"
+            href="#api">APIs</a>
+          
+            
+          
+          <a class="list-group-item"
+            href="#where-to-learn-more">Where to learn more</a>
+          
+            
+          
+          <a class="list-group-item"
+            href="#summary">Summary</a>
+          
+            
+        </nav>
+      </div>
+      
+    </div>
+    
+    
+    
+    <div class="">
+        
+        
+        
+        
+      <a href="javascript:void(0);"
+        data-toggle="collapse"
+        data-target="#page-nav1"
+        class="collapse-btn  collapsed ">
+        <i class="fa fa-chevron-right "></i>
+      </a>
+      
+      <a class=""
+        href="https://cumulocity.com/guides/concepts/domain-model/">Cumulocity&#39;s domain model</a>
+     
+      
+      
+      <div id="page-nav1"
+        class="collapse   ">
+        <nav class="list-group nav">
+          
+          
+            <a class="list-group-item"
+              href="https://cumulocity.com/guides/concepts/domain-model/#overview">Overview</a>
+            
+            
+          
+            <a class="list-group-item"
+              href="https://cumulocity.com/guides/concepts/domain-model/#inventory">Inventory</a>
+            
+            
+          
+            <a class="list-group-item"
+              href="https://cumulocity.com/guides/concepts/domain-model/#events">Events</a>
+            
+            
+          
+            <a class="list-group-item"
+              href="https://cumulocity.com/guides/concepts/domain-model/#measurements">Measurements</a>
+            
+            
+          
+            <a class="list-group-item"
+              href="https://cumulocity.com/guides/concepts/domain-model/#operations">Remote control of devices</a>
+            
+            
+          
+            <a class="list-group-item"
+              href="https://cumulocity.com/guides/concepts/domain-model/#sensor-library">The sensor library</a>
+            
+            
+          
+            <a class="list-group-item"
+              href="https://cumulocity.com/guides/concepts/domain-model/#Summary">Summary</a>
+            
+            
+        </nav>
+      </div>
+      
+    </div>
+    
+    
+    
+    <div class="">
+        
+        
+        
+        
+      <a href="javascript:void(0);"
+        data-toggle="collapse"
+        data-target="#page-nav2"
+        class="collapse-btn  collapsed ">
+        <i class="fa fa-chevron-right "></i>
+      </a>
+      
+      <a class=""
+        href="https://cumulocity.com/guides/concepts/interfacing-devices/">Interfacing devices</a>
+     
+      
+      
+      <div id="page-nav2"
+        class="collapse   ">
+        <nav class="list-group nav">
+          
+          
+            <a class="list-group-item"
+              href="https://cumulocity.com/guides/concepts/interfacing-devices/#overview">Overview</a>
+            
+            
+          
+            <a class="list-group-item"
+              href="https://cumulocity.com/guides/concepts/interfacing-devices/#agents">What is an agent?</a>
+            
+            
+          
+            <a class="list-group-item"
+              href="https://cumulocity.com/guides/concepts/interfacing-devices/#agent-lifecycle">The agent life cycle</a>
+            
+            
+          
+            <a class="list-group-item"
+              href="https://cumulocity.com/guides/concepts/interfacing-devices/#integration">Integrating of other data sources</a>
+            
+            
+          
+            <a class="list-group-item"
+              href="https://cumulocity.com/guides/concepts/interfacing-devices/#developing-agents">How does Cumulocity support developing agents?</a>
+            
+            
+        </nav>
+      </div>
+      
+    </div>
+    
+    
+    
+    <div class="">
+        
+        
+        
+        
+      <a href="javascript:void(0);"
+        data-toggle="collapse"
+        data-target="#page-nav3"
+        class="collapse-btn  collapsed ">
+        <i class="fa fa-chevron-right "></i>
+      </a>
+      
+      <a class=""
+        href="https://cumulocity.com/guides/concepts/realtime/">Real-time processing</a>
+     
+      
+      
+      <div id="page-nav3"
+        class="collapse   ">
+        <nav class="list-group nav">
+          
+          
+            <a class="list-group-item"
+              href="https://cumulocity.com/guides/concepts/realtime/#realtime-processing-in-cumulocity">What is real-time processing in Cumulocity IoT?</a>
+            
+            
+          
+            <a class="list-group-item"
+              href="https://cumulocity.com/guides/concepts/realtime/#using-epl">Using Apama Event Processing Language (EPL)</a>
+            
+            
+          
+            <a class="list-group-item"
+              href="https://cumulocity.com/guides/concepts/realtime/#implementation">How is real-time processing implemented in Cumulocity?</a>
+            
+            
+        </nav>
+      </div>
+      
+    </div>
+    
+    
+    
+    <div class="">
+        
+        
+        
+        
+      <a href="javascript:void(0);"
+        data-toggle="collapse"
+        data-target="#page-nav4"
+        class="collapse-btn  collapsed ">
+        <i class="fa fa-chevron-right "></i>
+      </a>
+      
+      <a class=""
+        href="https://cumulocity.com/guides/concepts/applications/">Developing applications</a>
+     
+      
+      
+      <div id="page-nav4"
+        class="collapse   ">
+        <nav class="list-group nav">
+          
+          
+            <a class="list-group-item"
+              href="https://cumulocity.com/guides/concepts/applications/#overview">Overview</a>
+            
+            
+          
+            <a class="list-group-item"
+              href="https://cumulocity.com/guides/concepts/applications/#web-applications">Cumulocity web applications</a>
+            
+            
+          
+            <a class="list-group-item"
+              href="https://cumulocity.com/guides/concepts/applications/#microservices">Cumulocity microservices</a>
+            
+            
+          
+            <a class="list-group-item"
+              href="https://cumulocity.com/guides/concepts/applications/#subscription">Subscribing applications</a>
+            
+            
+        </nav>
+      </div>
+      
+    </div>
+    
+    
+    
+    <div class="">
+        
+        
+        
+        
+      <a href="javascript:void(0);"
+        data-toggle="collapse"
+        data-target="#page-nav5"
+        class="collapse-btn  collapsed ">
+        <i class="fa fa-chevron-right "></i>
+      </a>
+      
+      <a class=""
+        href="https://cumulocity.com/guides/concepts/security/">Security aspects</a>
+     
+      
+      
+      <div id="page-nav5"
+        class="collapse   ">
+        <nav class="list-group nav">
+          
+          
+            <a class="list-group-item"
+              href="https://cumulocity.com/guides/concepts/security/#overview">Overview</a>
+            
+            
+          
+            <a class="list-group-item"
+              href="https://cumulocity.com/guides/concepts/security/#physical-security">Physical security aspects</a>
+            
+            
+          
+            <a class="list-group-item"
+              href="https://cumulocity.com/guides/concepts/security/#network-security">Network security aspects</a>
+            
+            
+          
+            <a class="list-group-item"
+              href="https://cumulocity.com/guides/concepts/security/#application-security">Application security aspects</a>
+            
+            
+          
+            <a class="list-group-item"
+              href="https://cumulocity.com/guides/concepts/security/#access-control">Access control</a>
+            
+            
+          
+            <a class="list-group-item"
+              href="https://cumulocity.com/guides/concepts/security/#management">Security management aspects</a>
+            
+            
+          
+            <a class="list-group-item"
+              href="https://cumulocity.com/guides/concepts/security/#summary">Summary</a>
+            
+            
+        </nav>
+      </div>
+      
+    </div>
+    
+    
+    
+    
+  </nav>
+</nav>
+<div class="cover"></div>
+
+<div class="main-content">
+  <article class="page-section">
+    <header class="section-header">
+      <h1 class="text-light">Introduction to Cumulocity</h1>
+    </header>
+    
+      <div class="lead">
+        <p>Cumulocity gives you very fast visibility and control over your remote assets, be these houses, cars, machines or any other assets that you need to manage.</p>
+
+      </div>
+      
+  </article>
+
+  
+  
+  
+  <article id="overview" class="page-section">
+    <h2>
+      <button class="btn-link bookmark" data-clipboard-text="#overview">
+        <span class="fa fa-link"></span>
+      </button>
+      Overview</h2>
+    <p>Cumulocity provides</p>
+
+<ul>
+<li>Certified hardware kits and software libraries you can use to bring your remote assets into the cloud.</li>
+<li>Device management, data visualization and remote control functionality through the web.</li>
+<li>Rapid customization of the above through <a href="/guides/concepts/realtime">real-time processing</a> and <a href="/guides/concepts/applications">Cumulocity applications</a>.</li>
+<li>APIs for extending the existing functionality or interfacing Cumulocity with your other IT services such as ERP or CRM systems. Cumulocity can also host your HTML5 applications.</li>
+</ul>
+
+<p>All this is provided through a cloud-based subscription service making the creation of Internet of Things (IoT) solutions with Cumulocity fundamentally different from bespoke development and RAD (rapid application development). You can start immediately with a large amount of existing functionality, and you can start for free. You do not need to worry about IT infrastructure (hosting, networking, security, storage and backup) and IT management (all software is available to your users).</p>
+
+<p>Cumulocity works with any network architecture, but is specifically designed to work out of the box with mobile networks. In the following sections, we will give a short overview of the different functional areas with references to more detailed descriptions.</p>
+
+<p><img src="/guides/images/concepts-guide/solution.gif" alt="Solution building" /></p>
+
+<p>Terms and Conditions to use Cumulocity:
+<a href="http://cumulocity.com/terms-and-conditions/">Terms and Conditions</a></p>
+
+  </article>
+  
+  <article id="hardware-kits-and-software-libraries" class="page-section">
+    <h2>
+      <button class="btn-link bookmark" data-clipboard-text="#hardware-kits-and-software-libraries">
+        <span class="fa fa-link"></span>
+      </button>
+      Hardware kits and software libraries</h2>
+    
+
+<h3 id="functionality-within-cumulocity">Functionality within Cumulocity</h3>
+
+<p>Cumulocity directly supports various devices with ready-made software libraries and examples. These can be specialized devices for a particular use case, as locations trackers, OBUs and vending telemetry devices. They can also be developer kits for building generic devices, such as <a href="/guides/devices/raspberry-pi">Raspberry Pi</a>, <a href="/guides/devices/cinterion">Cinterion boards</a>, <a href="/guides/devices/tinkerforge">Tinkerforge sensors</a> and more. These developer kits are described in more detail in the corresponding chapters of the &ldquo;Devices&rdquo; section in this documentation.</p>
+
+<p>Outside of the specific kits, many other devices can run the software with no or little modification. That is why the software is provided in source code form for you to extend it to any other device that you may have. There are also generic client libraries for Java, JavaME, C/C++ and Lua for your own implementation. If your device uses a completely proprietary runtime environment, you can always use Cumulocity&rsquo;s REST resp. HTTP interfaces. These will work on practically any Internet-connected device today, down to the smallest systems.</p>
+
+<p><img src="/guides/images/concepts-guide/devices.png" alt="Supported devices" /></p>
+
+  </article>
+  
+  <article id="mobile-networking-support" class="page-section">
+    <h2>
+      <button class="btn-link bookmark" data-clipboard-text="#mobile-networking-support">
+        <span class="fa fa-link"></span>
+      </button>
+      Mobile networking support</h2>
+    <p>Cumulocity supports any type of Internet connectivity in a secure manner. It gracefully deals with intermittent, bandwidth-restricted and uni-directional connections (such as communication through NAT). Where desired, Cumulocity can control remote devices in a real-time manner.</p>
+
+<p>Mobile Internet connectivity is an ideal choice for many machine-to-machine applications, since it works well nearly everywhere without requiring any integration with a company&rsquo;s network infrastructure. This is especially true if your M2M SIM card allows for free roaming between mobile networks. The large bandwidths requirements of consumer applications are often not required. With Cumulocity, you can benefit from mobile connectivity without requiring additional network provider services such as VPNs and public or even static IP addressing.</p>
+
+  </article>
+  
+  <article id="device-management" class="page-section">
+    <h2>
+      <button class="btn-link bookmark" data-clipboard-text="#device-management">
+        <span class="fa fa-link"></span>
+      </button>
+      Device management</h2>
+    <p>Cumulocity provides extensive device management for fully certified devices. This includes</p>
+
+<ul>
+<li>Hardware and modem information.</li>
+<li>Connection monitoring.</li>
+<li>Centralized fault management and service level monitoring.</li>
+<li>Configuration management.</li>
+<li>Software and firmware management.</li>
+<li>Graphs of device statistics.</li>
+<li>Frequently used remote controls (e.g., restart button, switches).</li>
+<li>Troubleshooting features such as event list and operations queue.</li>
+</ul>
+
+<p>The level of depth in device management may depend on device features. (E.g., if a device does not support remote firmware upgrade, it will also not be available through Cumulocity.) For interfacing devices not yet certified with Cumulocity, the <a href="/guides/reference/device-management">Device management library</a> and the <a href="/guides/device-sdk/rest#device-integration">Device SDK guide</a> is publicly available.</p>
+
+<p><img src="/guides/images/concepts-guide/devicemanagement.png" alt="Device Management" /></p>
+
+  </article>
+  
+  <article id="visualization-and-remote-control" class="page-section">
+    <h2>
+      <button class="btn-link bookmark" data-clipboard-text="#visualization-and-remote-control">
+        <span class="fa fa-link"></span>
+      </button>
+      Visualization and remote control</h2>
+    <p>Cumulocity visualizes your sensor data centrally and graphically through its modern web user interface. It also exposes common remote controls to users with the relevant permissions.</p>
+
+<p>The user interface automatically adapts itself to the devices you connect &ndash; no configuration required. For example, if you connect a device that supports being restarted from remote, you will see a &ldquo;Restart&rdquo; button. If the device sends light sensor data, you will see a graph with the readings from the sensor.</p>
+
+<p>It also adapts itself to the web browser that you use. For example, if you use a mobile phone or tablet with limited screen size, it will change user interface controls to use less screen estate.</p>
+
+<p>Through the <a href="/guides/reference/sensor-library">Sensor library</a>, common sensor and control types are rendered  correctly regardless of the device that produces the sensor data.</p>
+
+<p><img src="/guides/images/concepts-guide/dashboard.png" alt="Dashboard" /></p>
+
+  </article>
+  
+  <article id="customization" class="page-section">
+    <h2>
+      <button class="btn-link bookmark" data-clipboard-text="#customization">
+        <span class="fa fa-link"></span>
+      </button>
+      Customization</h2>
+    <p>The functionality described above already provides a wide range of device management, visualization and control options. Furthermore it produces custom visualization, new control widgets and custom business logic. Cumulocity has extensive customization options, for example:</p>
+
+<ul>
+<li>Write alarm rules to reprioritize or suppress alarms and to define your SLA parameters.</li>
+<li>Use <a href="/guides/concepts/realtime">real-time</a> to implement real-time business rules. For example, get an email when critical events happen, or trigger automated actions on devices in that case.</li>
+<li>Set up a graphical dashboard with your most important KPIs.</li>
+<li>Subscribe to plugins that contribute new functionality to the Cumulocity application.</li>
+</ul>
+
+<p><img src="/guides/images/concepts-guide/rules.png" alt="Rules" /></p>
+
+  </article>
+  
+  <article id="api" class="page-section">
+    <h2>
+      <button class="btn-link bookmark" data-clipboard-text="#api">
+        <span class="fa fa-link"></span>
+      </button>
+      APIs</h2>
+    <p>Cumulocity exposes its complete functionality through programming interfaces (APIs). This means that all of Cumulocity&rsquo;s functionality is available for you to use in different contexts outside of what Cumulocity directly provides &ndash; in your own applications, in your own devices.</p>
+
+<p>In contrast to many other M2M and IoT platforms, Cumulocity uses the same APIs and the same interface technology for all use cases. As a consequence, you have a wider range of choices in putting intelligence into your IoT devices, depending on how powerful they are. You also have to use only one set of APIs and one technology to build a complete solution from device to application on your own.</p>
+
+<p>Cumulocity uses HTTP and REST, which is today the most widely used interfacing technology and which works on any Internet-connected device ranging from small embedded microcontrollers up to desktop PCs. The secure variant, HTTPS, is used for the most security critical applications and will give you the best possible security.</p>
+
+<p>The plugin concept of Cumulocity enables you to write new user interface functionality that will seamlessly extend the existing Cumulocity application.</p>
+
+  </article>
+  
+  <article id="where-to-learn-more" class="page-section">
+    <h2>
+      <button class="btn-link bookmark" data-clipboard-text="#where-to-learn-more">
+        <span class="fa fa-link"></span>
+      </button>
+      Where to learn more</h2>
+    <p>More conceptual information can be found in the following sections of the concept&rsquo;s guide:</p>
+
+<ul>
+<li>The general technical concepts behind Cumulocity are described in <a href="/guides/concepts/domain-model">Cumulocity&rsquo;s domain model</a>.</li>
+<li>Concepts related to interfacing devices and other IT systems with Cumulocity are described in <a href="/guides/concepts/interfacing-devices">Interfacing devices</a>.</li>
+<li>Customization concepts of Cumulocity are described in <a href="/guides/concepts/realtime">Real-time processing in</a> and <a href="/guides/concepts/applications">Developing  applications</a>.</li>
+<li>Security concepts are described in <a href="/guides/concepts/security">Security aspects</a>.</li>
+</ul>
+
+  </article>
+  
+  <article id="summary" class="page-section">
+    <h2>
+      <button class="btn-link bookmark" data-clipboard-text="#summary">
+        <span class="fa fa-link"></span>
+      </button>
+      Summary</h2>
+    <p>Cumulocity is an independent Device and Application Management Internet of Things (Io T) platform. It connects and manages your devices and assets efficiently and can control them remotely.</p>
+
+<ul>
+<li>Connect your devices and assets over any network</li>
+<li>Monitor conditions and generate real-time analytics</li>
+<li>React immediately to conditions or situations</li>
+</ul>
+
+  </article>
+  
+  
+</div>
+<footer class="main-footer">
+  <div class="copyright">
+    <div class="container text-center">
+      <p class="small ">&copy; 2019 Cumulocity GmbH | All rights reserved.</p>
+    </div>
+  </div>  
+</footer>
+
+<!-- Essential Scripts -->
+
+<!-- jQuery -->
+<script src="https://cumulocity.com/guides/js/vendor/jquery.min.js"></script>
+<script src="https://cumulocity.com/guides/js/vendor/bootstrap.bundle.min.js"></script>
+<script src="https://cumulocity.com/guides/js/vendor/clipboard.js"></script>
+<script src="https://cumulocity.com/guides/js/vendor/zoom.js"></script>
+<script src="https://cumulocity.com/guides/js/vendor/highlight.min.js"></script>
+<script src="https://cumulocity.com/guides/js/main.js"></script>
+
+
+
+
+
+    
+   
+  </body>
+</html>

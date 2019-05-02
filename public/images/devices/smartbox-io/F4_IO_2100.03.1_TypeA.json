@@ -1,0 +1,370 @@
+{
+  "c8y_ModbusDeviceTypeInfo": {
+    "name": "F4_IO_2100.03.1",
+    "minFieldbusUI": 4,
+    "fieldbusType": "modbus"
+  },
+  "c8y_Coils": [],
+  "c8y_Registers": [
+    {
+      "measurementMapping": {
+        "series": "U1",
+        "type": "U1"
+      },
+      "multiplier": 1,
+      "fieldbusType": null,
+      "signed": true,
+      "number": 1,
+      "input": false,
+      "divisor": 1,
+      "unit": "°C",
+      "decimalPlaces": 2,
+      "startBit": 0,
+      "noBits": 16,
+      "name": "U1",
+      "category": "Temperaturen"
+    },
+    {
+      "measurementMapping": {
+        "series": "U2",
+        "type": "U2"
+      },
+      "multiplier": 1,
+      "fieldbusType": null,
+      "signed": true,
+      "number": 2,
+      "input": false,
+      "divisor": 1,
+      "unit": "°C",
+      "decimalPlaces": 2,
+      "startBit": 0,
+      "noBits": 16,
+      "name": "U2",
+      "category": "Temperaturen"
+    },
+    {
+      "measurementMapping": {
+        "series": "U3",
+        "type": "U3"
+      },
+      "multiplier": 1,
+      "fieldbusType": null,
+      "signed": true,
+      "number": 3,
+      "input": false,
+      "divisor": 1,
+      "unit": "°C",
+      "decimalPlaces": 2,
+      "startBit": 0,
+      "noBits": 16,
+      "name": "U3",
+      "category": "Temperaturen"
+    },
+    {
+      "measurementMapping": {
+        "series": "U4",
+        "type": "U4"
+      },
+      "multiplier": 1,
+      "fieldbusType": null,
+      "signed": true,
+      "number": 4,
+      "input": false,
+      "divisor": 1,
+      "unit": "°C",
+      "decimalPlaces": 2,
+      "startBit": 0,
+      "noBits": 16,
+      "name": "U4",
+      "category": "Temperaturen"
+    },
+    {
+      "measurementMapping": {
+        "series": "U5",
+        "type": "U5"
+      },
+      "multiplier": 1,
+      "fieldbusType": null,
+      "signed": true,
+      "number": 5,
+      "input": false,
+      "divisor": 1,
+      "unit": "°C",
+      "decimalPlaces": 2,
+      "startBit": 0,
+      "noBits": 16,
+      "name": "U5",
+      "category": "Temperaturen"
+    },
+    {
+      "measurementMapping": {
+        "series": "U6",
+        "type": "U6"
+      },
+      "multiplier": 1,
+      "fieldbusType": null,
+      "signed": false,
+      "number": 6,
+      "input": false,
+      "divisor": 1,
+      "unit": "°C",
+      "decimalPlaces": 2,
+      "startBit": 0,
+      "noBits": 16,
+      "name": "U6",
+      "category": "Temperaturen"
+    },
+    {
+      "measurementMapping": {
+        "series": "U7",
+        "type": "U7"
+      },
+      "multiplier": 1,
+      "fieldbusType": null,
+      "signed": true,
+      "number": 7,
+      "input": false,
+      "divisor": 1,
+      "unit": "°C",
+      "decimalPlaces": 2,
+      "startBit": 0,
+      "noBits": 16,
+      "name": "U7",
+      "category": "Temperaturen"
+    },
+    {
+      "measurementMapping": {
+        "series": "U8",
+        "type": "U8"
+      },
+      "multiplier": 1,
+      "fieldbusType": null,
+      "signed": true,
+      "number": 8,
+      "input": false,
+      "divisor": 1,
+      "unit": "°C",
+      "decimalPlaces": 2,
+      "startBit": 0,
+      "noBits": 16,
+      "name": "U8",
+      "category": "Temperaturen"
+    },
+    {
+      "measurementMapping": {
+        "series": "U9",
+        "type": "U9"
+      },
+      "multiplier": 1,
+      "fieldbusType": null,
+      "signed": true,
+      "number": 9,
+      "input": false,
+      "divisor": 1,
+      "unit": "°C",
+      "decimalPlaces": 2,
+      "startBit": 0,
+      "noBits": 16,
+      "name": "U9",
+      "category": "Temperaturen"
+    },
+    {
+      "measurementMapping": {
+        "series": "U10",
+        "type": "U10"
+      },
+      "multiplier": 1,
+      "fieldbusType": null,
+      "signed": true,
+      "number": 10,
+      "input": false,
+      "divisor": 1,
+      "unit": "",
+      "decimalPlaces": 0,
+      "startBit": 0,
+      "noBits": 16,
+      "name": "U10",
+      "category": "Temperaturen"
+    },
+    {
+      "statusMapping": {
+        "status": "write"
+      },
+      "max": 10,
+      "multiplier": 1,
+      "fieldbusType": null,
+      "signed": false,
+      "number": 101,
+      "input": false,
+      "divisor": 1,
+      "unit": "",
+      "decimalPlaces": 0,
+      "min": 0,
+      "startBit": 0,
+      "noBits": 16,
+      "name": "Config_U1"
+    },
+    {
+      "statusMapping": {
+        "status": "write"
+      },
+      "max": 10,
+      "multiplier": 1,
+      "fieldbusType": null,
+      "signed": false,
+      "number": 102,
+      "input": false,
+      "divisor": 1,
+      "unit": "",
+      "decimalPlaces": 0,
+      "min": 0,
+      "startBit": 0,
+      "noBits": 16,
+      "name": "Config_U2"
+    },
+    {
+      "statusMapping": {
+        "status": "write"
+      },
+      "max": 10,
+      "multiplier": 1,
+      "fieldbusType": null,
+      "signed": false,
+      "number": 103,
+      "input": false,
+      "divisor": 1,
+      "unit": "",
+      "decimalPlaces": 0,
+      "min": 0,
+      "startBit": 0,
+      "noBits": 16,
+      "name": "Config_U3"
+    },
+    {
+      "statusMapping": {
+        "status": "write"
+      },
+      "max": 10,
+      "multiplier": 1,
+      "fieldbusType": null,
+      "signed": false,
+      "number": 104,
+      "input": false,
+      "divisor": 1,
+      "unit": "",
+      "decimalPlaces": 0,
+      "min": 0,
+      "startBit": 0,
+      "noBits": 16,
+      "name": "Config_U4"
+    },
+    {
+      "statusMapping": {
+        "status": "write"
+      },
+      "max": 10,
+      "multiplier": 1,
+      "fieldbusType": null,
+      "signed": false,
+      "number": 105,
+      "input": false,
+      "divisor": 1,
+      "unit": "",
+      "decimalPlaces": 0,
+      "min": 0,
+      "startBit": 0,
+      "noBits": 16,
+      "name": "Config_U5"
+    },
+    {
+      "statusMapping": {
+        "status": "write"
+      },
+      "max": 10,
+      "multiplier": 1,
+      "fieldbusType": null,
+      "signed": false,
+      "number": 106,
+      "input": false,
+      "divisor": 1,
+      "unit": "",
+      "decimalPlaces": 0,
+      "min": 0,
+      "startBit": 0,
+      "noBits": 16,
+      "name": "Config_U6"
+    },
+    {
+      "statusMapping": {
+        "status": "write"
+      },
+      "max": 10,
+      "multiplier": 1,
+      "fieldbusType": null,
+      "signed": false,
+      "number": 107,
+      "input": false,
+      "divisor": 1,
+      "unit": "",
+      "decimalPlaces": 0,
+      "min": 0,
+      "startBit": 0,
+      "noBits": 16,
+      "name": "Config_U7"
+    },
+    {
+      "statusMapping": {
+        "status": "write"
+      },
+      "max": 10,
+      "multiplier": 1,
+      "fieldbusType": null,
+      "signed": false,
+      "number": 108,
+      "input": false,
+      "divisor": 1,
+      "unit": "",
+      "decimalPlaces": 0,
+      "min": 0,
+      "startBit": 0,
+      "noBits": 16,
+      "name": "Config_U8"
+    },
+    {
+      "statusMapping": {
+        "status": "write"
+      },
+      "max": 10,
+      "multiplier": 1,
+      "fieldbusType": null,
+      "signed": false,
+      "number": 109,
+      "input": false,
+      "divisor": 1,
+      "unit": "",
+      "decimalPlaces": 0,
+      "min": 0,
+      "startBit": 0,
+      "noBits": 16,
+      "name": "Config_U9"
+    },
+    {
+      "statusMapping": {
+        "status": "write"
+      },
+      "max": 10,
+      "multiplier": 1,
+      "fieldbusType": null,
+      "signed": false,
+      "number": 110,
+      "input": false,
+      "divisor": 1,
+      "unit": "",
+      "decimalPlaces": 0,
+      "min": 0,
+      "startBit": 0,
+      "noBits": 16,
+      "name": "Config_U10"
+    }
+  ]
+}

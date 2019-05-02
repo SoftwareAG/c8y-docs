@@ -1,0 +1,1755 @@
+<!DOCTYPE html>
+<html>
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <base href="" />
+    <meta name="generator" content="Hugo 0.54.0 with theme C8yDocs">
+    <title>Operating Cumulocity IoT Edge - Cumulocity IoT Guides</title>
+    <meta name="author" content="Carlos Ceia @ Cumulocity">
+    <meta name="keywords" content=", Software AG Cloud, Cumulocity IoT, Internet of things, analytics, devices, connect">
+
+
+    <link rel="icon" href="/favicon.ico">
+
+    
+
+    
+
+    
+    
+    
+    <link rel="stylesheet" href="https://cumulocity.com/guides/style.css">
+    
+
+      
+      <script> window.zEmbed||function(e,t){var n,o,d,i,s,a=[],r=document.createElement("iframe");window.zEmbed=function(){a.push(arguments)},window.zE=window.zE||window.zEmbed,r.src="javascript:false",r.title="",r.role="presentation",(r.frameElement||r).style.cssText="display: none",d=document.getElementsByTagName("script"),d=d[d.length-1],d.parentNode.insertBefore(r,d),i=r.contentWindow,s=i.document;try{o=s}catch(c){n=document.domain,r.src='javascript:var d=document.open();d.domain="'+n+'";void(0);',o=s}o.open()._l=function(){var o=this.createElement("script");n&&(this.domain=n),o.id="js-iframe-async",o.src=e,this.t=+new Date,this.zendeskHost=t,this.zEQueue=a,this.body.appendChild(o)},o.write('<body onload="document._l();">'),o.close()}("https://assets.zendesk.com/embeddable_framework/main.js","cumulocity.zendesk.com"); </script>
+        <script type="text/JavaScript">
+          window.zESettings = {
+            webWidget: {
+              color: {
+                theme: '#1776bf'    
+              },
+              position: {
+                horizontal: 'right',
+                vertical: 'top'     
+              }
+            }
+          };
+          </script>
+        
+        
+   
+  </head><body data-spy="scroll" data-target="#main-nav" ><button type="button" class="sidebar-toggle">
+  <span class="icon-bar"></span>
+  <span class="icon-bar"></span>
+  <span class="icon-bar"></span>
+  <span>MENU</span>
+</button>
+<nav class="main-top-bar" >
+  <div class="d-flex container">
+    <ul class="nav d-flex flex-start hidden-xs nav-left">
+      <li><a href="https://www.softwareag.cloud/site/product/cumulocity-iot.html">Cumulocity IoT</a></li>
+      <li><a href="http://resources.cumulocity.com/documentation/jssdk/latest/#/api">Cumulocity Angular API</a></li>
+    </ul>
+    <ul class="nav flex-end nav-right">
+      <li>   <script>
+              (function() {
+                var cx = '008969372384807682938:yeh7xt785g4';
+                var gcse = document.createElement('script');
+                gcse.type = 'text/javascript';
+                gcse.async = true;
+                gcse.src = 'https://cse.google.com/cse.js?cx=' + cx;
+                var s = document.getElementsByTagName('script')[0];
+                s.parentNode.insertBefore(gcse, s);
+              })();
+            </script>
+        <div id="___gcse_0" dir="ltr"><form class="gsc-search-box gsc-search-box-tools" accept-charset="utf-8"><div class="table-responsive"><table cellspacing="0" cellpadding="0" class="gsc-search-box"><tbody><tr><td class="gsc-input"><div class="gsc-input-box" id="gsc-iw-id1"><table cellspacing="0" cellpadding="0" id="gs_id50" class="gstl_50 gsc-input" style="width: 100%; padding: 0px;"><tbody><tr><td id="gs_tti50" class="gsib_a"><input autocomplete="off" type="text" size="10" class="gsc-input" name="search" title="search" id="gsc-i-id1" placeholder="Custom Search" dir="ltr" spellcheck="false" x-webkit-grammar="builtin:search" lang="en" style="width: 100%; padding: 0px; border: none; margin: -0.0625em 0px 0px; height: 1.25em; background: url(&quot;https://www.google.com/cse/static/images/1x/googlelogo_lightgrey_46x16dp.png&quot;) left center no-repeat rgb(255, 255, 255); text-indent: 48px; outline: none;"></td><td class="gsib_b"><div class="gsst_b" id="gs_st50" dir="ltr"><a class="gsst_a" href="javascript:void(0)" style="display: none;" title="Clear search box" role="button"><span class="gscb_a" id="gs_cb50" aria-hidden="true">×</span></a></div></td></tr></tbody></table></div></td><td class="gsc-search-button"><button class="gsc-search-button gsc-search-button-v2"><svg width="13" height="13" viewBox="0 0 13 13"><title>search</title><path d="m4.8495 7.8226c0.82666 0 1.5262-0.29146 2.0985-0.87438 0.57232-0.58292 0.86378-1.2877 0.87438-2.1144 0.010599-0.82666-0.28086-1.5262-0.87438-2.0985-0.59352-0.57232-1.293-0.86378-2.0985-0.87438-0.8055-0.010599-1.5103 0.28086-2.1144 0.87438-0.60414 0.59352-0.8956 1.293-0.87438 2.0985 0.021197 0.8055 0.31266 1.5103 0.87438 2.1144 0.56172 0.60414 1.2665 0.8956 2.1144 0.87438zm4.4695 0.2115 3.681 3.6819-1.259 1.284-3.6817-3.7 0.0019784-0.69479-0.090043-0.098846c-0.87973 0.76087-1.92 1.1413-3.1207 1.1413-1.3553 0-2.5025-0.46363-3.4417-1.3909s-1.4088-2.0686-1.4088-3.4239c0-1.3553 0.4696-2.4966 1.4088-3.4239 0.9392-0.92727 2.0864-1.3969 3.4417-1.4088 1.3553-0.011889 2.4906 0.45771 3.406 1.4088 0.9154 0.95107 1.379 2.0924 1.3909 3.4239 0 1.2126-0.38043 2.2588-1.1413 3.1385l0.098834 0.090049z"></path></svg></button></td><td class="gsc-clear-button"><div class="gsc-clear-button" title="clear results">&nbsp;</div></td></tr></tbody></table></div></form></div>
+      </li>
+    </ul>
+  </div>
+</nav><button type="button" class="to-the-top">
+  <span class="sr-only">Top</span>
+  <span class="fa fa-chevron-up"></span>
+</button><nav class="main-nav navbar">
+  <header class="nav-header">
+    <a href="https://www.softwareag.cloud/site/dev-center/cumulocity-iot.html">
+      <img src="https://cumulocity.com/guides/images/cumulocity-iot.svg"
+        class="img-responsive no-zoom"
+        alt="Cumulocity IoT">
+    </a>
+
+    <div class="dropdown">
+      <button class="dropdown-toggle"
+        type="button"
+        id="dropdownMenuButton"
+        data-toggle="dropdown"
+        aria-haspopup="true"
+        aria-expanded="false">
+        <span id="current-dropdown-toggle" class="text-truncate"></span> <span class="caret"></span>
+      </button>
+      <div class="dropdown-menu"
+        aria-labelledby="dropdownMenuButton">
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+
+        
+        
+        
+
+        <a class='dropdown-menu-item '
+          href='https://cumulocity.com/guides/release-notes/overview/'><i class="c8y-icon c8y-icon-notification"></i> Release notes</a>
+        
+        
+        
+        
+        
+        
+        
+        
+
+        
+        
+        
+
+        <a class='dropdown-menu-item '
+          href='https://cumulocity.com/guides/concepts/introduction/'><i class="c8y-icon c8y-icon-c8y-data"></i> Concepts guide</a>
+        
+        
+        
+        
+        
+        
+        
+        
+
+        
+        
+        
+
+        <a class='dropdown-menu-item '
+          href='https://cumulocity.com/guides/users-guide/getting-started/'><i class="c8y-icon c8y-icon-user"></i> User guide</a>
+        
+        
+        
+        
+        
+        
+        
+        
+
+        
+        
+        
+
+        <a class='dropdown-menu-item '
+          href='https://cumulocity.com/guides/benutzerhandbuch/overview/'><i class="c8y-icon c8y-icon-user"></i> Handbuch</a>
+        
+        
+        
+        
+        
+        
+        
+        
+
+        
+        
+        
+
+        <a class='dropdown-menu-item '
+          href='https://cumulocity.com/guides/devices/overview/'><i class="c8y-icon c8y-icon-device-management"></i> Device guides</a>
+        
+        
+        
+        
+        
+        
+        
+        
+
+        
+        
+        
+        
+        <span class="current-app">Cumulocity IoT Edge</span>
+        
+        
+
+        <a class='dropdown-menu-item active'
+          href='https://cumulocity.com/guides/edge/overview/'><i class="fa fa-book"></i> Cumulocity IoT Edge</a>
+        
+        
+        
+        
+        
+        
+        
+        
+
+        
+        
+        
+
+        <a class='dropdown-menu-item '
+          href='https://cumulocity.com/guides/microservice-sdk/introduction/'><i class="c8y-icon c8y-icon-tools"></i> Microservice SDK guide</a>
+        
+        
+        
+        
+        
+        
+        
+        
+
+        
+        
+        
+
+        <a class='dropdown-menu-item '
+          href='https://cumulocity.com/guides/device-sdk/introduction/'><i class="c8y-icon c8y-icon-tools"></i> Device SDK guide</a>
+        
+        
+        
+        
+        
+        
+        
+        
+
+        
+        
+        
+
+        <a class='dropdown-menu-item '
+          href='https://cumulocity.com/guides/web/introduction/'><i class="c8y-icon c8y-icon-smart-rest"></i> Web SDK guide</a>
+        
+        
+        
+        
+        
+        
+        
+        
+
+        
+        
+        
+
+        <a class='dropdown-menu-item '
+          href='https://cumulocity.com/guides/apama/overview-analytics/'><i class="c8y-icon c8y-icon-data-explorer"></i> Analytics guide</a>
+        
+        
+        
+        
+        
+        
+        
+        
+
+        
+        
+        
+
+        <a class='dropdown-menu-item '
+          href='https://cumulocity.com/guides/reference/rest-implementation/'><i class="fa fa-book"></i> Reference guide</a>
+        
+      </div>
+    </div>
+  </header>
+
+  
+
+  <nav id="main-nav"
+    class="nav-sections">
+    
+    
+    <div class="">
+        
+        
+        
+        
+      <a class=""
+        href="https://cumulocity.com/guides/edge/overview/">About this guide</a>
+     
+      
+    </div>
+    
+    
+    
+    <div class="">
+        
+        
+        
+        
+      <a href="javascript:void(0);"
+        data-toggle="collapse"
+        data-target="#page-nav1"
+        class="collapse-btn  collapsed ">
+        <i class="fa fa-chevron-right "></i>
+      </a>
+      
+      <a class=""
+        href="https://cumulocity.com/guides/edge/introduction/">Introduction</a>
+     
+      
+      
+      <div id="page-nav1"
+        class="collapse   ">
+        <nav class="list-group nav">
+          
+          
+            <a class="list-group-item"
+              href="https://cumulocity.com/guides/edge/introduction/#versions">Versions</a>
+            
+            
+          
+            <a class="list-group-item"
+              href="https://cumulocity.com/guides/edge/introduction/#overview">Overview</a>
+            
+            
+          
+            <a class="list-group-item"
+              href="https://cumulocity.com/guides/edge/introduction/#edge-vs-core">Cumulocity IoT Edge versus other Cumulocity deployments</a>
+            
+            
+        </nav>
+      </div>
+      
+    </div>
+    
+    
+    
+    <div class="">
+        
+        
+        
+        
+      <a href="javascript:void(0);"
+        data-toggle="collapse"
+        data-target="#page-nav2"
+        class="collapse-btn  collapsed ">
+        <i class="fa fa-chevron-right "></i>
+      </a>
+      
+      <a class=""
+        href="https://cumulocity.com/guides/edge/installation/">Setting up Cumulocity IoT Edge</a>
+     
+      
+      
+      <div id="page-nav2"
+        class="collapse   ">
+        <nav class="list-group nav">
+          
+          
+            <a class="list-group-item"
+              href="https://cumulocity.com/guides/edge/installation/#prerequisites">Requirements</a>
+            
+            
+          
+            <a class="list-group-item"
+              href="https://cumulocity.com/guides/edge/installation/#setting-up-the-environment">Setting up the environment</a>
+            
+            
+          
+            <a class="list-group-item"
+              href="https://cumulocity.com/guides/edge/installation/#configuration">Configuration</a>
+            
+            
+          
+            <a class="list-group-item"
+              href="https://cumulocity.com/guides/edge/installation/#accessing-cumulocity">Accessing the Cumulocity platform</a>
+            
+            
+          
+            <a class="list-group-item"
+              href="https://cumulocity.com/guides/edge/installation/#setting-up-esxi">Example setup for ESXi VMWare</a>
+            
+            
+          
+            <a class="list-group-item"
+              href="https://cumulocity.com/guides/edge/installation/#setting-up-virtual-box">Example setup for VirtualBox</a>
+            
+            
+        </nav>
+      </div>
+      
+    </div>
+    
+    
+    
+    <div class="">
+        
+        
+        
+        
+      <a href="javascript:void(0);"
+        data-toggle="collapse"
+        data-target="#page-nav3"
+        class="collapse-btn  collapsed ">
+        <i class="fa fa-chevron-right "></i>
+      </a>
+      
+      <a class=""
+        href="https://cumulocity.com/guides/edge/usage/">Working with Cumulocity IoT Edge</a>
+     
+      
+      
+      <div id="page-nav3"
+        class="collapse   ">
+        <nav class="list-group nav">
+          
+          
+            <a class="list-group-item"
+              href="https://cumulocity.com/guides/edge/usage/#iot-platform">IoT platform</a>
+            
+            
+          
+            <a class="list-group-item"
+              href="https://cumulocity.com/guides/edge/usage/#connecting-devices">Connecting devices</a>
+            
+            
+          
+            <a class="list-group-item"
+              href="https://cumulocity.com/guides/edge/usage/#connecting-cloud">Connecting to the Cloud</a>
+            
+            
+          
+            <a class="list-group-item"
+              href="https://cumulocity.com/guides/edge/usage/#apama">Realtime analytics using Apama</a>
+            
+            
+        </nav>
+      </div>
+      
+    </div>
+    
+    
+    
+    <div class=" slot-active ">
+        
+        
+        
+        
+      <a href="javascript:void(0);"
+        data-toggle="collapse"
+        data-target="#page-nav4"
+        class="collapse-btn ">
+        <i class="fa fa-chevron-right "></i>
+      </a>
+      
+      <a class=" active "
+        href="https://cumulocity.com/guides/edge/operation/">Operating Cumulocity IoT Edge</a>
+     
+      
+      
+      <div id="page-nav4"
+        class="collapse   show  ">
+        <nav class="list-group nav">
+          
+          
+          <a class="list-group-item"
+            href="#overall-concepts">Architecture</a>
+          
+            
+          
+          <a class="list-group-item"
+            href="#troubleshooting">Troubleshooting the system</a>
+          
+            
+          
+          <a class="list-group-item"
+            href="#update">Upgrading the system</a>
+          
+            
+          
+          <a class="list-group-item"
+            href="#backup-restore">Backup and restore</a>
+          
+            
+          
+          <a class="list-group-item"
+            href="#administration-configuration">Administration and configuration</a>
+          
+            
+          
+          <a class="list-group-item"
+            href="#operational-procedures">Restarting services</a>
+          
+            
+        </nav>
+      </div>
+      
+    </div>
+    
+    
+    
+    
+  </nav>
+</nav>
+<div class="cover"></div>
+
+<div class="main-content">
+  <article class="page-section">
+    <header class="section-header">
+      <h1 class="text-light">Operating Cumulocity IoT Edge</h1>
+    </header>
+    
+      <div class="lead">
+        <p>This section describes the main operating procedures for standard tasks that have to be carried out when managing Cumulocity IoT Edge.</p>
+
+      </div>
+      
+  </article>
+
+  
+  
+  
+  <article id="overall-concepts" class="page-section">
+    <h2>
+      <button class="btn-link bookmark" data-clipboard-text="#overall-concepts">
+        <span class="fa fa-link"></span>
+      </button>
+      Architecture</h2>
+    
+
+<h3 id="networking-overlay">Networking overlay</h3>
+
+<p>The following image shows the networking overlay of Edge server. Two network adapters are attached to the VM with different functionality, as described in the image.</p>
+
+<p><img src="/guides/images/edge/edge-networking.png" name="Networking" style="width:75%;"/></p>
+
+<h3 id="component-overlay">Component overlay</h3>
+
+<p>The following image covers the components Edge is built with.</p>
+
+<p><img src="/guides/images/edge/edge-components.png" name="Components" style="width:75%;"/></p>
+
+  </article>
+  
+  <article id="troubleshooting" class="page-section">
+    <h2>
+      <button class="btn-link bookmark" data-clipboard-text="#troubleshooting">
+        <span class="fa fa-link"></span>
+      </button>
+      Troubleshooting the system</h2>
+    
+
+<p>In case of any issues we provide a number of options which help you find out what might be the cause and give advice how to fix it.</p>
+
+<p>We recommend to follow these steps:</p>
+
+<ul>
+<li>Perform a health check, see the <a href="#health-check">Health check</a> section.</li>
+<li>Monitor the system processes, see the <a href="#monitoring">Monitoring</a> section.</li>
+<li>Check the log files, see the <a href="#log-files">Log files</a> section.</li>
+</ul>
+
+<p>If you still need to contact SAG support, include the output of the diagnostics script. See the <a href="#diagnostics">Diagostics</a> section on details how to run it.</p>
+
+<h3 id="a-name-health-check-a-health-check"><a name="health-check"></a>Health check</h3>
+
+<h4 id="network">Network</h4>
+
+<p>Without working network connection the system is not able to work. The following instructions show how to check the network connectivity of the platform.</p>
+
+<h5 id="check-network-interface-of-the-node">Check network interface of the node</h5>
+
+<p>The following commands will show the interface and network settings of the machine:</p>
+
+<pre><code># ip a
+</code></pre>
+
+<p>This will list all interfaces and their current configuration.</p>
+
+<p>Example:</p>
+
+<pre><code>$ ip a
+
+1: lo: &lt;LOOPBACK,UP,LOWER_UP&gt; mtu 65536 qdisc noqueue state UNKNOWN group default qlen 1000
+link/loopback 00:00:00:00:00:00 brd 00:00:00:00:00:00
+inet 127.0.0.1/8 scope host lo
+   valid_lft forever preferred_lft forever
+inet6 ::1/128 scope host 
+   valid_lft forever preferred_lft forever
+
+2: enp0s3: &lt;BROADCAST,MULTICAST,UP,LOWER_UP&gt; mtu 1500 qdisc pfifo_fast state UP group default qlen 1000
+link/ether 08:00:27:88:e7:de brd ff:ff:ff:ff:ff:ff
+inet 10.0.2.15/24 brd 10.0.2.255 scope global noprefixroute dynamic enp0s3
+   valid_lft 85338sec preferred_lft 85338sec
+inet6 fe80::a00:27ff:fe88:e7de/64 scope link noprefixroute 
+   valid_lft forever preferred_lft forever
+
+3: enp0s8: &lt;BROADCAST,MULTICAST,UP,LOWER_UP&gt; mtu 1500 qdisc pfifo_fast state UP group default qlen 1000
+link/ether 08:00:27:81:fe:9d brd ff:ff:ff:ff:ff:ff
+inet 192.168.56.120/24 brd 192.168.56.255 scope global noprefixroute enp0s8
+   valid_lft forever preferred_lft forever
+inet6 fe80::5b3a:bc65:40b5:f9ea/64 scope link noprefixroute 
+   valid_lft forever preferred_lft forever
+</code></pre>
+
+<p>You need to make sure that the node has an external interface (ethX) and the loopback interface configured (lo). The loopback interface needs to have the fixed IP 127.0.0.1 with subnet mask 255.0.0.0 and the IP address of the external interface must reside in the correct subnet with the correct subnet mask (in this examples 255.255.252.0).</p>
+
+<p>The following command lists the local routing information.</p>
+
+<pre><code># netstat -rn
+</code></pre>
+
+<p>Example:</p>
+
+<pre><code>$ netstat -rn
+Kernel IP routing table
+Destination     Gateway         Genmask         Flags   MSS Window  irtt Iface
+0.0.0.0         10.0.2.2        0.0.0.0         UG        0 0          0 enp0s3
+10.0.2.0        0.0.0.0         255.255.255.0   U         0 0          0 enp0s3
+192.168.56.0    0.0.0.0         255.255.255.0   U         0 0          0 enp0s8
+</code></pre>
+
+<p>Make sure you have the destination 0.0.0.0 in the list which then also has the gateway flag (G) set.</p>
+
+<h5 id="check-access-to-the-internet">Check access to the internet</h5>
+
+<p>Try to reach a well-known address in the internet with the following command:</p>
+
+<pre><code>$ ping -s 1500 8.8.8.8
+PING 8.8.8.8 (8.8.8.8) 1500(1528) bytes of data.
+64 bytes from 8.8.8.8: icmp_seq=1 ttl=56 time=2.61 ms
+64 bytes from 8.8.8.8: icmp_seq=2 ttl=56 time=2.80 ms
+64 bytes from 8.8.8.8: icmp_seq=3 ttl=56 time=2.82 ms
+64 bytes from 8.8.8.8: icmp_seq=4 ttl=56 time=2.75 ms
+64 bytes from 8.8.8.8: icmp_seq=5 ttl=56 time=2.79 ms
+</code></pre>
+
+<p>As when checking the internal reachability you need to make sure that you can see replies from the address you tried to reach. Use Ctrl-C to end the ping command.</p>
+
+<h4 id="processing">Processing</h4>
+
+<p>This section lists the required services and processes on the Edge server.</p>
+
+<h5 id="check-platform-status">Check platform status</h5>
+
+<p>You can check the status of the platform by running the following command:</p>
+
+<pre><code>curl -v http://localhost:8181/tenant/health
+
+* About to connect() to localhost port 8181 (#0)
+*   Trying ::1...
+* Connected to localhost (::1) port 8181 (#0)
+&gt; GET /tenant/health HTTP/1.1
+&gt; User-Agent: curl/7.29.0
+&gt; Host: localhost:8181
+&gt; Accept: */*
+&gt;
+&lt; HTTP/1.1 200 OK
+&lt; Content-Type: application/json
+&lt; Date: Sat, 05 May 2018 18:13:28 GMT
+&lt; Transfer-Encoding: chunked
+&lt; Server: Jetty(8.1.19.v20160209)
+&lt;
+* Connection #0 to host localhost left intact 
+{
+    &quot;status&quot;: &quot;UP&quot;,
+    &quot;services&quot;: {
+        &quot;details&quot;: {},
+        &quot;status&quot;: &quot;UP&quot;
+    },
+    &quot;mongodb&quot;: {
+        &quot;details&quot;: {},
+        &quot;status&quot;: &quot;UP&quot;
+    },
+    &quot;tenant&quot;: {
+        &quot;details&quot;: {},
+        &quot;status&quot;: &quot;UP&quot;
+    }
+}
+</code></pre>
+
+<p>The ‘status:”UP”’ shows that all services are running.</p>
+
+<p>If something went wrong, the endpoint should respond a different error code then 200 OK. The response should contain something like:</p>
+
+<pre><code>{
+   &quot;status&quot;:&quot;DOWN&quot;,
+   &quot;services&quot;:{
+      &quot;details&quot;:{
+
+      },
+      &quot;status&quot;:&quot;UP&quot;
+   },
+   &quot;mongodb&quot;:{
+      &quot;details&quot;:{
+
+      },
+      &quot;status&quot;:&quot;UP&quot;
+   },
+   &quot;tenant&quot;:{
+      &quot;details&quot;:{
+         &quot;notFullyInitializedTenants&quot;:{
+            &quot;savenindia&quot;:&quot;PAYPAL_REFUND&quot;,
+            &quot;nowa&quot;:&quot;PAYPAL_REFUND&quot;,
+            &quot;ttc&quot;:&quot;PAYPAL_REFUND&quot;,
+            &quot;controllogichh&quot;:&quot;PAYPAL_REFUND&quot;,
+            &quot;jonathan&quot;:&quot;PAYPAL_REFUND&quot;,
+            &quot;barcotrail&quot;:&quot;PAYPAL_REFUND&quot;,
+            &quot;ngservices&quot;:&quot;PAYPAL_REFUND&quot;,
+            &quot;sixsenses&quot;:&quot;PAYPAL_REFUND&quot;,
+            &quot;trav2&quot;:&quot;PAYPAL_REFUND&quot;,
+            &quot;lucaslocatrix&quot;:&quot;PAYPAL_REFUND&quot;
+         }
+      },
+      &quot;status&quot;:&quot;DOWN&quot;
+   }
+}
+</code></pre>
+
+<p>The response contains checks for the most important components:</p>
+
+<ul>
+<li>services - status of OSGI services running within karaf container</li>
+<li>mongo - status of connection to mongo database</li>
+<li>tenant - tenant initialization status</li>
+</ul>
+
+<p>The list describes the tenants which on the core node have not been fully initialized and the initialization status they are in.</p>
+
+<table>
+<thead>
+<tr>
+<th align="left">Status</th>
+<th align="left">Description</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td align="left">UNINITIALIZED</td>
+<td align="left">Tenant has not been initialized</td>
+</tr>
+
+<tr>
+<td align="left">DB_INITIALIZED</td>
+<td align="left">Database initialisation is performed</td>
+</tr>
+
+<tr>
+<td align="left">LOCAL&#95;APPLICATION_INITIALIZED</td>
+<td align="left">Local applications are deployed</td>
+</tr>
+
+<tr>
+<td align="left">CEP_INITIALIZED</td>
+<td align="left">CEP rules are been deployed</td>
+</tr>
+
+<tr>
+<td align="left">HEART&#95;BEAT&#95;MONITORING_INITIALIZED</td>
+<td align="left">Heartbeat monitoring for devices is been started</td>
+</tr>
+
+<tr>
+<td align="left">PAYPAL_REFUND</td>
+<td align="left">Failed PayPal operations are refunded (when tenant is using PayPal)</td>
+</tr>
+
+<tr>
+<td align="left">BULK&#95;OPERATION_INITIALIZED</td>
+<td align="left">Support for bulk operations is initialized</td>
+</tr>
+
+<tr>
+<td align="left">FULLY_INITIALIZED</td>
+<td align="left">Tenant is in working state (should not be displayed)</td>
+</tr>
+</tbody>
+</table>
+
+<h4 id="checking-the-system-services">Checking the system services</h4>
+
+<h5 id="checking-rest-api-availability">Checking REST API availability</h5>
+
+<p>Run the following command to check the REST API availability:</p>
+
+<pre><code>$ curl -u 'edge/&lt;username&gt;:&lt;password&gt;' -v -X GET http://&lt;base_url&gt;/platform
+
+* About to connect() to &lt;base_url&gt; port 80 (#0)
+*   Trying 52.29.189.245... connected
+* Connected to &lt;base_url&gt; (52.29.189.245) port 80 (#0)
+* Server auth using Basic with user 'management/&lt;username&gt;'
+&gt; GET /platform HTTP/1.1
+&gt; Authorization: Basic bWFuYWdlbWVudC90c3NjaHVlbDohITQ3TmV1bjI3MQ==
+&gt; User-Agent: curl/7.19.7 (x86_64-redhat-linux-gnu) libcurl/7.19.7 NSS/3.21 Basic ECC zlib/1.2.3 libidn/1.18 libssh2/1.4.2
+&gt; Host: &lt;base_url&gt;
+&gt; Accept: */*
+&gt; 
+&lt; HTTP/1.1 200 OK
+&lt; Server: nginx
+&lt; Date: Tue, 23 Aug 2016 15:39:29 GMT
+&lt; Content-Type: application/vnd.com.nsn.cumulocity.platformApi+json; charset=UTF-8; ver=0.9
+&lt; Transfer-Encoding: chunked
+&lt; Connection: keep-alive
+&lt; 
+{&quot;alarm&quot;:{&quot;alarms&quot;:{&quot;alarms&quot;:null,&quot;self&quot;:&quot;http://management.&lt;base_url&gt;/alarm/alarms&quot;},&quot;alarmsForSource&quot;:&quot;http://management.&lt;base_url&gt;/alarm/alarms?source={source}&quot;,&quot;alarmsForSourceAndStatus&quot;:&quot;http://management.&lt;base_url&gt;/alarm/alarms?source={source}&amp;status={status}&quot;,&quot;alarmsForSourceAndStatusAndTime&quot;:&quot;http://management.&lt;base_url&gt;/alarm/alarms?source={source}&amp;status={status}&amp;dateFrom={dateFrom}&amp;dateTo={dateTo}&quot;,&quot;alarmsForSourceAndTime&quot;:&quot;http://management.&lt;base_url&gt;/alarm/alarms?source={source}&amp;dateFrom={dateFrom}&amp;dateTo={dateTo}&quot;,&quot;alarmsForStatus&quot;:&quot;http://management.&lt;base_url&gt;/alarm/alarms?status={status}&quot;,&quot;alarmsForStatusAndTime&quot;:&quot;http://management.&lt;base_url&gt;/alarm/alarms?status={status}&amp;dateFrom={dateFrom}&amp;dateTo={dateTo}&quot;,&quot;alarmsForTime&quot;:&quot;http://management.&lt;base_url&gt;/alarm/alarms?dateFrom={dateFrom}&amp;dateTo={dateTo}&quot;,&quot;self&quot;:&quot;http://management.&lt;base_url&gt;/alarm&quot;},…}
+</code></pre>
+
+<p>This example shows the correct response of the platform. The username and password need to have full read access to the management tenant. The &#60;base_url&gt; needs to be given to connect to the correct platform and the management tenant must not be blocked from outside.</p>
+
+<h3 id="a-name-monitoring-a-monitoring"><a name="monitoring"></a>Monitoring</h3>
+
+<p>Monit is a small open-source utility for managing and monitoring Unix systems. It conducts automatic maintenance and repair and can execute meaningful causal actions in error situations.</p>
+
+<p>In Edge, Monit is used to monitor processes and take a restart action if any of them is down/inactive. The usual Monit interval (cycle) is 30 seconds.</p>
+
+<h4 id="using-monit">Using Monit</h4>
+
+<p>Monit can provide a quick status report of all configured services and processes by running the following command as admin user:</p>
+
+<pre><code>$ sudo monit summary
+</code></pre>
+
+<p>The command will provide an output similar to this:</p>
+
+<p><img src="/guides/images/edge/edge-monitoring-01.png" name="Status report" style="width:75%;"/></p>
+
+<p>There might be cases where Monit has stopped monitoring some resources because of timeout on constant failures or dependency issues.</p>
+
+<p><img src="/guides/images/edge/edge-monitoring-02.png" name="Status report" style="width:75%;"/></p>
+
+<p>A specific component, e.g. apama-correlator_proc, can be restarted using the following command:</p>
+
+<pre><code>$ sudo monit restart apama-correlator_proc
+</code></pre>
+
+<p>The Monit status can be checked by running:</p>
+
+<pre><code>$ sudo systemctl status monit
+</code></pre>
+
+<p>Monit can be restarted by running:</p>
+
+<pre><code>$ sudo systemctl restart monit
+</code></pre>
+
+<p>The log file for monit is located in /var/log/monit.log.</p>
+
+<h3 id="a-name-log-files-a-log-files"><a name="log-files"></a>Log files</h3>
+
+<h4 id="log-level-locations">Log level locations</h4>
+
+<p>The solution stores log files at the following locations for the different nodes.</p>
+
+<h5 id="core-node-log-file-locations">Core node log file locations</h5>
+
+<table>
+<thead>
+<tr>
+<th align="left">Directory</th>
+<th align="left">Files</th>
+<th align="left">Usage</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td align="left">/var/log/cumulocity</td>
+<td align="left">access.log<br> error.log <br>karaf.log<br> mqtt.log</td>
+<td align="left">logfile for client access<br> logfile for errors and general informations<br> logfile for the Karaf Container<br> logfile for mqtt protocol communication</td>
+</tr>
+
+<tr>
+<td align="left">/var/log/nginx</td>
+<td align="left">access.log<br> error.log</td>
+<td align="left">logfile for client access<br> logfile for nginx errors</td>
+</tr>
+
+<tr>
+<td align="left">/var/log</td>
+<td align="left">messages</td>
+<td align="left">general log file, contains also the messages from HAProxy</td>
+</tr>
+</tbody>
+</table>
+
+<h5 id="apama-log-file-locations">Apama log file locations</h5>
+
+<table>
+<thead>
+<tr>
+<th align="left">Directory</th>
+<th align="left">Files</th>
+<th align="left">Usage</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td align="left">/opt/softwareag/cumulocity-apama-rules/deploy/logs/</td>
+<td align="left">correlator.log</td>
+<td align="left">Apama log file</td>
+</tr>
+</tbody>
+</table>
+
+<h5 id="mongodb-log-file-locations">MongoDB log file locations</h5>
+
+<table>
+<thead>
+<tr>
+<th align="left">Directory</th>
+<th align="left">Files</th>
+<th align="left">Usage</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td align="left">/var/log/mongodb</td>
+<td align="left">mongodb_config.log<br>mongors01.log<br> mongors02.log<br> mongors03.log<br> mongomongod7.log</td>
+<td align="left">Config server logfile<br> Replication set 1 logfile<br> Replication set 2 logfile<br> Replication set 3 logfile<br> Standalone mongodb logfile</td>
+</tr>
+
+<tr>
+<td align="left">/var/log</td>
+<td align="left">messages</td>
+<td align="left">general log file</td>
+</tr>
+</tbody>
+</table>
+
+<h5 id="agent-log-file-locations">Agent log file locations</h5>
+
+<table>
+<thead>
+<tr>
+<th align="left">Component</th>
+<th align="left">Files</th>
+<th align="left">Location</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td align="left">opcua-agent-server</td>
+<td align="left">opcua-agent-server-gc.log<br>opcua-agent-server.log<br> opcua-agent-server-2018-04-30.0.log</td>
+<td align="left">/var/log/opcua/</td>
+</tr>
+
+<tr>
+<td align="left">Smartrule-agent-server-apama</td>
+<td align="left">smartrule-agent-server-apama-gc.log<br> smartrule-agent-server-apama.log</td>
+<td align="left">/var/log/smartrule-apama/</td>
+</tr>
+
+<tr>
+<td align="left">cumulocity-agent</td>
+<td align="left">cumulocity-agent.log</td>
+<td align="left">/var/log/</td>
+</tr>
+</tbody>
+</table>
+
+<h4 id="adjust-log-level">Adjust log level</h4>
+
+<p>This section describes how to change the log level for Cumulocity-specific applications on the backend side. It does not explain how to change log settings for standard components like databases or other operating system related services.</p>
+
+<h5 id="changing-log-level-for-karaf">Changing log level for Karaf</h5>
+
+<p>The log level for Karaf is defined in the following file.</p>
+
+<pre><code>/usr/share/cumulocity-core-karaf/etc/org.ops4j.pax.logging.cfg
+</code></pre>
+
+<p>The file has the following structure:</p>
+
+<pre><code># Root logger
+log4j.rootLogger=INFO,out,osgi:*
+log4j.throwableRenderer=org.apache.log4j.OsgiThrowableRenderer
+
+# Error appender
+log4j.appender.out=org.apache.log4j.rolling.RollingFileAppender
+log4j.appender.out.rollingPolicy=org.apache.log4j.rolling.FixedWindowRollingPolicy
+log4j.appender.out.rollingPolicy.maxIndex=10
+log4j.appender.out.triggeringPolicy=org.apache.log4j.rolling.SizeBasedTriggeringPolicy
+log4j.appender.out.triggeringPolicy.MaxFileSize=104857600
+log4j.appender.out.rollingPolicy.FileNamePattern=${karaf.data}/log/error-%i.log.gz
+log4j.appender.out.rollingPolicy.ActiveFileName=${karaf.data}/log/error.log
+log4j.appender.out.layout=org.apache.log4j.PatternLayout
+log4j.appender.out.layout.ConversionPattern=%d{yyyy-MM-dd} %d{HH:mm:ss}  | %-5.5p | %-16.16t | %-32.32c{1} | %X{bundle.id} - %X{bundle.name} - %X{bundle.version} | %m%n
+log4j.appender.out.append=true
+
+# CXF request and response info:
+# * ERROR - none
+# * INFO - just headers (default)
+# * DEBUG - whole, with payloads
+log4j.additivity.com.cumulocity.rest.interceptors=false
+log4j.logger.com.cumulocity.rest.interceptors=INFO,access
+
+# Access appender
+log4j.appender.access=org.apache.log4j.rolling.RollingFileAppender
+log4j.appender.access.rollingPolicy=org.apache.log4j.rolling.FixedWindowRollingPolicy
+log4j.appender.access.rollingPolicy.maxIndex=10
+log4j.appender.access.triggeringPolicy=org.apache.log4j.rolling.SizeBasedTriggeringPolicy
+log4j.appender.access.triggeringPolicy.MaxFileSize=262144000
+log4j.appender.access.rollingPolicy.FileNamePattern=${karaf.data}/log/access-%i.log.gz
+log4j.appender.access.rollingPolicy.ActiveFileName=${karaf.data}/log/access.log
+log4j.appender.access.layout=org.apache.log4j.PatternLayout
+log4j.appender.access.layout.ConversionPattern=%d{yyyy-MM-dd} %d{HH:mm:ss}  | %-5.5p | %-16.16t | %-32.32c{1} | %X{bundle.id} - %X{bundle.name} - %X{bundle.version} | %m%n
+log4j.appender.access.append=true
+
+# Error response info:
+# * INFO - just error message (default)
+# * DEGUB - full stack trace
+log4j.logger.com.cumulocity.rest.mediatypes=INFO
+</code></pre>
+
+<p>Change the following entries to adjust the log levels:</p>
+
+<pre><code>log4j.rootLogger=INFO,out,osgi:*
+
+log4j.logger.com.cumulocity.rest.interceptors=INFO,access
+
+og4j.logger.com.cumulocity.rest.mediatypes=INFO
+</code></pre>
+
+<p>Adjust the log levels by changing the level attribute according to the following values. The levels are inclusive - meaning a given level will also include all “lower” log levels, e.g. when you set the level to WARN you will also get ERROR events.</p>
+
+<p>|Level|Description|
+|:&mdash;|:&mdash;|:&mdash;
+|ERROR|Log errors only
+|WARN|Give information up to warnings
+|INFO|Give information about normal operations
+|DEBUG|Log all internal debug information</p>
+
+<p>Save the file. It is re-read by the application every few minutes so you do not have to restart the Java process.</p>
+
+<h5 id="changing-log-level-for-apama">Changing log level for Apama</h5>
+
+<p>The log level for Apama is defined by the property  “correlator.logLevel” in the file <code>/opt/softwareag/cumulocity-apama-rules/deploy/correlator.properties</code>,  e.g. correlator.logLevel=INFO.</p>
+
+<p>Possible values for the Apama log level are:</p>
+
+<p>|Level|Description|
+|:&mdash;|:&mdash;|:&mdash;
+|ERROR|Log errors only
+|WARN|Give information up to warnings
+|INFO|Give information about normal operations
+|DEBUG|Log all internal debug information</p>
+
+<p>Save the file. It is re-read by the application every few minutes so you do not have to restart the Java process.</p>
+
+<h3 id="a-name-diagnostics-a-diagnostics"><a name="diagnostics"></a>Diagnostics</h3>
+
+<p>The diagnostic utility is auto-enabled and will be running periodically. However, this can also be triggered manually on demand. To execute it manually, follow the steps below.</p>
+
+<pre><code># cd opt/c8y/utilities/diagnostic-utility
+# ./run_data_collector.py
+</code></pre>
+
+<p>The diagnostic utility provides the following information.</p>
+
+<h4 id="hardware-information">Hardware information</h4>
+
+<p>The basic hardware information of the target system is captured.  These reports are placed under the &lsquo;hardware&rsquo; directory.</p>
+
+<p>The following hardware information is available:</p>
+
+<table>
+<thead>
+<tr>
+<th align="left">Information</th>
+<th align="left">Description</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td align="left">CPU</td>
+<td align="left">Reads and gathers CPU information from &ldquo;/proc/cpuinfo&rdquo;</td>
+</tr>
+
+<tr>
+<td align="left">Memory</td>
+<td align="left">Reads and gathers memory information from &ldquo;/proc/meminfo&rdquo;</td>
+</tr>
+
+<tr>
+<td align="left">Detailed system summary</td>
+<td align="left">Data is captured using the &lsquo;lswh&rsquo; command. Data includes multiple components like network, display adapter, bridge, IDE etc. This command is executed as sudo to capture all available details.</td>
+</tr>
+
+<tr>
+<td align="left">Short system summary</td>
+<td align="left">Data is captured using the &lsquo;lswh&rsquo; command, here the data is in precise format. This command is executed as sudo to capture all available details.</td>
+</tr>
+
+<tr>
+<td align="left">PCI</td>
+<td align="left">Data related to installed PCI devices is captured using the &lsquo;lspci&rsquo; command</td>
+</tr>
+
+<tr>
+<td align="left">Storage</td>
+<td align="left">Data is an aggregation of the output of the commands &lsquo;df&rsquo; and &lsquo;lsblk&rsquo;</td>
+</tr>
+</tbody>
+</table>
+
+<h4 id="software-information">Software information</h4>
+
+<p>The basic software information of the target system is captured. These reports are placed under the &lsquo;software&rsquo; directory.</p>
+
+<p>The following software information is available:</p>
+
+<table>
+<thead>
+<tr>
+<th align="left">Information</th>
+<th align="left">Description</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td align="left">IP</td>
+<td align="left">Reads basic IP information from the target system using the &lsquo;ip&rsquo; command</td>
+</tr>
+
+<tr>
+<td align="left">OS</td>
+<td align="left">Collects various OS information like name, version, release etc. using the commands &lsquo;lsb_release&rsquo; and &lsquo;uname&rsquo;</td>
+</tr>
+
+<tr>
+<td align="left">Installed package</td>
+<td align="left">A list of installed packages is prepared using the &lsquo;rpm&rsquo; command</td>
+</tr>
+
+<tr>
+<td align="left">Running processes</td>
+<td align="left">A list of running processes is prepared using the &lsquo;ps&rsquo; command</td>
+</tr>
+
+<tr>
+<td align="left">Top result</td>
+<td align="left">Captures the output of top command. This report is very informative as it holds information of running processes at argument level and their respective resource consumption.</td>
+</tr>
+</tbody>
+</table>
+
+<h4 id="cumulocity-information">Cumulocity information</h4>
+
+<p>This section contains information on the running Cumulocity processes, health endpoint check result, Cumulocity logs etc.</p>
+
+<p>The following Cumulocity information is collected:</p>
+
+<table>
+<thead>
+<tr>
+<th align="left">Information</th>
+<th align="left">Description</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td align="left">Health endpoint result</td>
+<td align="left">Cumulocity and its microservices provide health endpoints, from which the user can get the system status.</td>
+</tr>
+
+<tr>
+<td align="left">Mongo command execution result</td>
+<td align="left">MongoDB supports commands execution, which can give the status of the MongoDB server. Currently &lsquo;ping&rsquo;, &lsquo;dbstats&rsquo; and &lsquo;serverStatus&rsquo; commands are executed on each of the MongoDB nodes (currently it is management and edge). The MongoDB commands give vital information about the MongoDB server like the db version, process-id, uptime information etc.</td>
+</tr>
+
+<tr>
+<td align="left">Mongo top output</td>
+<td align="left">The output of mongo top command is captured here</td>
+</tr>
+
+<tr>
+<td align="left">Thread dumps</td>
+<td align="left">Thread dumps of all the running java processes and mongo processes are captured. For java processes the &lsquo;jstack&rsquo; command is executed to get the thread dumps. For non-java processes like MongoDB, the &lsquo;pstack&rsquo; command is used. Furthermore the &lsquo;pstack&rsquo; command is applied on java processes as well.</td>
+</tr>
+
+<tr>
+<td align="left">Log files</td>
+<td align="left">Archive of log files from Cumulocity, its microservices and Apama is created. In case of Cumulocity, only the &lsquo;live&rsquo; logs are considered and roll-over log files are discarded.</td>
+</tr>
+
+<tr>
+<td align="left">Configuration files</td>
+<td align="left">Archive of Cumulocity configuration files from Cumulocity and its microservices is created.</td>
+</tr>
+
+<tr>
+<td align="left">Jstat dumps</td>
+<td align="left">Jstat command provides performance statistics for a given JVM.</td>
+</tr>
+</tbody>
+</table>
+
+<p>Jstat dumps can provide information on the following options:</p>
+
+<ul>
+<li>class - Statistics on the behavior of the class loader</li>
+<li>compiler - Statistics of the behavior of the HotSpot Just-in-Time compiler</li>
+<li>gc -  Statistics of the behavior of the garbage collected heap</li>
+<li>gccapacity -  Statistics of the capacities of the generations and their corresponding spaces</li>
+<li>gccause - Summary of garbage collection statistics (same as -gcutil), with the cause of the last and current (if applicable) garbage collection events</li>
+<li>gcnew – statistics of the behavior of the new generations</li>
+<li>gcnewcapacity  - Statistics of the sizes of the new generations and its corresponding spaces</li>
+<li>gcold - Statistics of the behavior of the old and permanent generations</li>
+<li>gcoldcapacity - Statistics of the sizes of the old generations</li>
+<li>gcpermcapacity - Statistics of the sizes of the permanent generations</li>
+<li>gcutil – Summary of garbage collection statistics</li>
+<li>printcompilations –  HotSpot compilation method statistics
+<br /></li>
+</ul>
+
+<p>As per the current implementation, the 5 statistics counts are collected at an interval of 50ms. To improve performance, this task is executed via threads.</p>
+
+<h4 id="optional-startup-parameters">Optional startup parameters</h4>
+
+<p>Following are the supported startup parameters for the monitor and the data collector.</p>
+
+<h5 id="data-collector">Data collector</h5>
+
+<p>The data collector can be started by running the &ldquo;run_data_collector.py&rdquo; script located under &ldquo;/opt/c8y/utilities/diagnostic-utility/src/&rdquo;.</p>
+
+<p>Following are the supported command line arguments which can be used while invoking the script. More than one of the supported arguments can be used simultaneously.</p>
+
+<ul>
+<li>-h or &ndash;hardware: Allows the script to collect only the hardware information</li>
+<li>-s or &ndash;software: Allows the script to collect only the software information</li>
+<li>-c or &ndash;cumulocity: Allows the script to collect only the cumulocity information</li>
+</ul>
+
+<h5 id="monitor">Monitor</h5>
+
+<p>The monitor can be started by running the &ldquo;run_monitor.py&rdquo; script located under &ldquo;/opt/c8y/utilities/diagnostic-utility/src/&rdquo;.</p>
+
+<p>The monitor script supports only one optional startup parameter:</p>
+
+<ul>
+<li>-s or &ndash;skipDataCollector: Allows the user to skip the data collection even if one or more monitored components is not working.</li>
+</ul>
+
+<h4 id="utility-configuration-file">Utility configuration file</h4>
+
+<p>The diagnostic utility can be customized using a properties file located under &ldquo;/etc/diagnostic-utility/diagnostic_utility.properties&rdquo;.</p>
+
+<p>Following are the available keys used in the configuration file:</p>
+
+<table>
+<thead>
+<tr>
+<th align="left">Information</th>
+<th align="left">Description</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td align="left">notify.support.by.email</td>
+<td align="left">Allows users to select whether they want to receive the diagnostic report via email</td>
+</tr>
+
+<tr>
+<td align="left">support.email</td>
+<td align="left">Email ID to be used by the utility while sending support email</td>
+</tr>
+
+<tr>
+<td align="left">smtp.server.host</td>
+<td align="left">SMTP host for sending support email</td>
+</tr>
+
+<tr>
+<td align="left">smtp.server.port</td>
+<td align="left">SMTP port to be used by the utility while sending support email</td>
+</tr>
+
+<tr>
+<td align="left">smtp.username</td>
+<td align="left">SMTP username to be used by the utility while sending support email</td>
+</tr>
+
+<tr>
+<td align="left">smtp.password</td>
+<td align="left">SMTP password to be used by the utility while sending support email</td>
+</tr>
+
+<tr>
+<td align="left">log.backup</td>
+<td align="left">Components for which log backup has to be done</td>
+</tr>
+
+<tr>
+<td align="left">configuration.backup</td>
+<td align="left">Components for which configuration backup has to be done</td>
+</tr>
+
+<tr>
+<td align="left">report.directory</td>
+<td align="left">Report directory where the diagnostic reports have to be placed</td>
+</tr>
+
+<tr>
+<td align="left">{component-name}.log.path</td>
+<td align="left">Absolute log path of components who do not use /var/log as their logging directory</td>
+</tr>
+</tbody>
+</table>
+
+  </article>
+  
+  <article id="update" class="page-section">
+    <h2>
+      <button class="btn-link bookmark" data-clipboard-text="#update">
+        <span class="fa fa-link"></span>
+      </button>
+      Upgrading the system</h2>
+    <p>Follow the steps below to upgrade the system.</p>
+
+<ol>
+<li><p>To power off the VM, right-click on the respective VM (e.g. EDGE-server) in the VirtualBox Manager click <strong>Close</strong> and then <strong>Power off</strong>.
+<img src="/guides/images/edge/edge-poweroff.jpg" name="Poweroff Edge" style="width:75%;"/></p></li>
+
+<li><p>Navigate to the VirtualBox VMs folder (e.g. C:\Users\edge\VirtualBox VMs) and move the entire VM folder (e.g. EDGE-server) to a safe location.
+<img src="/guides/images/edge/edge-update-move.jpg" name="Move folder" style="width:75%;"/></p></li>
+
+<li><p>In the VirtualBox Manager, right-click on the VM and then click <strong>Remove</strong>. In the upcoming window, select <strong>Remove Only</strong> so that the VM will not be deleted.
+<img src="/guides/images/edge/edge-update-remove.jpg" name="Remove VM" style="width:75%;"/></p></li>
+
+<li><p>In the VirtualBox Manager, click <strong>File</strong> and then <strong>Import Appliance</strong>. Select the new OVA file (upgraded one supplied by Cumulocity) and click <strong>Open</strong> to import it.
+<img src="/guides/images/edge/edge-update-import.jpg" name="Import VM" style="width:75%;"/>
+<br><br>The new Edge version should now be visible in the VirtualBox Manager in powered-off state.</p></li>
+
+<li><p>Right-click on the VM and select <strong>Settings</strong>. In the upcoming window, select <strong>Storage</strong>. Two disks should be visible called &ldquo;disk001.vmdk&rdquo; and &ldquo;disk002.vmdk&rdquo;.</p></li>
+
+<li><p>Right-click on the second disk i.e. disk002.vmdk, and select <strong>Remove attachment</strong>.
+<img src="/guides/images/edge/edge-update-storage.jpg" name="Storage" style="width:75%;"/>
+<br></p></li>
+
+<li><p>Right-click on the second controller i.e. SATA controller and select <strong>Add Hard Disk</strong>. In the upcoming window, select <strong>Choose existing disk</strong>.
+<img src="/guides/images/edge/edge-update-harddisk.jpg" name="Add hard disk" style="width:75%;"/>
+<br></p></li>
+
+<li><p>In the explorer, navigate to the Edge VM folder. Select the secondary disk, i.e. disk002.vmdk, and click <strong>OK</strong>.<br>
+<img src="/guides/images/edge/edge-update-choose-disk.JPG" name="Choose disk" style="width:75%;"/>
+<br></p></li>
+
+<li><p>Power on the VM by clicking the <strong>Start</strong> button.</p></li>
+
+<li><p>Verify, whether DB and property files are intact and unchanged.</p></li>
+</ol>
+
+  </article>
+  
+  <article id="backup-restore" class="page-section">
+    <h2>
+      <button class="btn-link bookmark" data-clipboard-text="#backup-restore">
+        <span class="fa fa-link"></span>
+      </button>
+      Backup and restore</h2>
+    
+
+<h3 id="backup">Backup</h3>
+
+<p>To create a backup, follow the steps below.</p>
+
+<ol>
+<li>To power off the VM, right-click on the respective VM (e.g. EDGE-server) in the VirtualBox Manager click <strong>Close</strong> and then <strong>Power off</strong>.<br><br>
+<img src="/guides/images/edge/edge-poweroff.jpg" name="Poweroff Edge" style="width:75%;"/>
+<br></li>
+<li>Click <strong>File</strong> at the top right and then <strong>Export Appliance</strong>.<br><br>
+<img src="/guides/images/edge/edge-backup2.jpg" name="Backup Edge" style="width:75%;"/><br />
+<br></li>
+<li>In the upcoming window, enter the location and name as desired and click <strong>Export</strong>.<br><br>
+<img src="/guides/images/edge/edge-backup1.jpg" name="Backup Edge" style="width:75%;"/></li>
+</ol>
+
+<blockquote>
+<p><strong>Info</strong>: You may append the current date to the image name (e.g. EDGE-server-12-06-2018.ova) so as to have a track of the backups.</p>
+</blockquote>
+
+<h3 id="restore">Restore</h3>
+
+<p>To create a restore, follow the steps below.</p>
+
+<ol>
+<li>In the VirtualBox Manager click <strong>File</strong> at the top right and then <strong>Import Appliance</strong>.<br><br>
+<img src="/guides/images/edge/edge-restore1.jpg" name="Restore Edge" style="width:75%;"/>
+<br></li>
+<li>In the upcoming window, browse for the OVA image and select it. <br><br>
+<img src="/guides/images/edge/edge-restore2.jpg" name="Restore Edge" style="width:75%;"/>
+<br></li>
+<li>Power on the VM by clicking on the <strong>Start</strong> button.</li>
+</ol>
+
+  </article>
+  
+  <article id="administration-configuration" class="page-section">
+    <h2>
+      <button class="btn-link bookmark" data-clipboard-text="#administration-configuration">
+        <span class="fa fa-link"></span>
+      </button>
+      Administration and configuration</h2>
+    
+
+<h3 id="resetting-the-tenant-password">Resetting the tenant password</h3>
+
+<p>The tenant admin password can be reset using the following command, executed as “admin”:</p>
+
+<pre><code># cd /opt/c8y/utilities
+# sudo ./reset_tenant_password.sh 
+</code></pre>
+
+<p>This will prompt for a new password. Enter a new tenant admin password:</p>
+
+<pre><code>&lt;enter new password&gt;
+</code></pre>
+
+<p>Once the password is reset successfully, the new password must be used for the tenant admin user.</p>
+
+<h3 id="unlocking-the-tenant-admin-user">Unlocking the tenant admin user</h3>
+
+<p>The tenant admin user could be locked if incorrect credentials are passed during login into UI, REST API or MQTT.</p>
+
+<p><img src="/guides/images/edge/edge-tenant-lock.png" name="Locked user" style="width:50%;"/></p>
+
+<p>To unlock the tenant admin user, perform the following steps:</p>
+
+<ol>
+<li>Login as sysadmin user (password= sysadmin-pass).</li>
+<li>In the Administration application, navigate to the <strong>Users</strong> page and open the tenant admin user.</li>
+<li>Activate the user account by switching the toggle next to the username to <strong>Enabled</strong> and save your settings.</li>
+</ol>
+
+<h3 id="increasing-the-system-performance">Increasing the system performance</h3>
+
+<p>If the system performance is slow, the memory should be increased. First, increase the memory of the VM. This is done by stopping the VM and increasing its memory.</p>
+
+<p><img src="/guides/images/edge/edge-vm-increasing-memory.png" name="Increasing memory" style="width:75%;"/></p>
+
+<p>Increasing the VM memory should be followed by a JVM memory increase.</p>
+
+<p>This is done by starting the VM (follow the steps described in the installation section). Log into VM, open the file <code>/usr/share/cumulocity-core-karaf/bin/setenv</code> file and edit it as described below. The parameter is the following, default size is 1024.</p>
+
+<pre><code>export JAVA_MAX_MEM=1024M # Maximum memory for the JVM
+</code></pre>
+
+<p>After increasing the size, restart Karaf by executing:</p>
+
+<pre><code># service cumulocity-core-karaf stop
+</code></pre>
+
+<p>and</p>
+
+<pre><code># service cumulocity-core-karaf start
+</code></pre>
+
+<p>Use the following command to check the JVM process of Karaf:</p>
+
+<pre><code># ps aux | grep karaf
+</code></pre>
+
+<p>Sample output:</p>
+
+<pre><code>[root@server ~]# ps aux | grep karaf
+karaf     1525 44.1 15.2 3890280 618920 ?      Sl   09:56   2:21 /usr/java/default/bin/java -XX:+UseConcMarkSweepGC -Djava.rmi.server.hostname=127.0.0.1 -Djava.rmi.server.useLocalHostname=true -Dcom.sun.management.jmxremote -Dcom.sun.management.jmxremote.port=8199 -Dcom.sun.management.jmxremote.authenticate=false -Dcom.sun.management.jmxremote.ssl=false -server -Xms235M -Xmx1024M -XX:PermSize=16M -XX:MaxPermSize=512M -Dcom.sun.management.jmxremote -XX:+UseCompressedOops -XX:+UseParNewGC -XX:+UseConcMarkSweepGC 
+(rest of output trimmed)
+</code></pre>
+
+<p>If Karaf is not stopped by executing <code>service cumulocity-core-karaf stop</code> you can search for the PID (process ID) with <code>command ps aux | grep karaf</code> and stop it by executing:</p>
+
+<pre><code># kill -9 &lt;PID&gt;
+</code></pre>
+
+<p>In the example above, the PID is 1525.</p>
+
+<h3 id="increasing-the-mqtt-message-size">Increasing the MQTT message size</h3>
+
+<p>By default, the max size for one MQTT message is 8192 bytes(8KB).</p>
+
+<p>To increase the MQTT message size, add the property “mqtt.max.message.size”
+in <code>/etc/cumulocity/cumulocity-core.properties</code>.</p>
+
+<p>Example:</p>
+
+<p>To set the message size to 16KB, set “mqtt.max.message.size=16384”.</p>
+
+<p>After increasing the size, restart Karaf by executing:</p>
+
+<pre><code># service cumulocity-core-karaf restart
+</code></pre>
+
+<h3 id="log-rotation">Log rotation</h3>
+
+<p>Currently, there are two ways of configuring the log rotation for components.
+<br></p>
+
+<p><strong>Under /usr/share/cumulocity-core-karaf/etc/ in org.ops4j.pax.logging.cfg file</strong></p>
+
+<p>This configuration is done via configuring the RollingFileAppender provided by Log4J.</p>
+
+<p>The components for which log rotation is configured are as follows:</p>
+
+<table>
+<thead>
+<tr>
+<th align="left">Component</th>
+<th align="left">Log file location</th>
+<th align="left">Log file rotation</th>
+<th align="left">Max file size</th>
+<th align="left">Max backup index</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td align="left">Karaf</td>
+<td align="left">${karaf.data}/log/error.log</td>
+<td align="left">Daily</td>
+<td align="left">50 MB</td>
+<td align="left">14</td>
+</tr>
+
+<tr>
+<td align="left">MQTT</td>
+<td align="left">${karaf.data}/log/mqtt.log</td>
+<td align="left">Daily</td>
+<td align="left">50 MB</td>
+<td align="left">14</td>
+</tr>
+
+<tr>
+<td align="left">Access</td>
+<td align="left">${karaf.data}/log/access.log</td>
+<td align="left">Daily</td>
+<td align="left">50 MB</td>
+<td align="left">14</td>
+</tr>
+
+<tr>
+<td align="left">DataBroker</td>
+<td align="left">${karaf.data}/log/databroker.log</td>
+<td align="left">Daily</td>
+<td align="left">50 MB</td>
+<td align="left">14</td>
+</tr>
+</tbody>
+</table>
+
+<p><br>
+<strong>Under /etc/ configured via logrotate.conf and config files under /etc/logrotate.d</strong></p>
+
+<p>The components for which log rotation is configured are as follows:</p>
+
+<table>
+<thead>
+<tr>
+<th align="left">Component</th>
+<th align="left">Log file location</th>
+<th align="left">Log file rotation</th>
+<th align="left">Max file size</th>
+<th align="left">Max backup index</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td align="left">MongoDB</td>
+<td align="left">/var/log/mongodb/*.log</td>
+<td align="left">Daily</td>
+<td align="left">50 MB</td>
+<td align="left">14</td>
+</tr>
+
+<tr>
+<td align="left">NginX</td>
+<td align="left">/var/log/nginx/*.log</td>
+<td align="left">Daily</td>
+<td align="left">50 MB</td>
+<td align="left">14</td>
+</tr>
+
+<tr>
+<td align="left">Apama</td>
+<td align="left">/opt/softwareag/cumulocity-apama-rules/deploy/logs/*.log</td>
+<td align="left">Daily</td>
+<td align="left">50 MB</td>
+<td align="left">14</td>
+</tr>
+</tbody>
+</table>
+
+<p>Configuration can be altered by using daily/weekly/monthly and specifying the corresponding rotate count.</p>
+
+<p>For microservices, there currently is no specific log rotation configured.</p>
+
+  </article>
+  
+  <article id="operational-procedures" class="page-section">
+    <h2>
+      <button class="btn-link bookmark" data-clipboard-text="#operational-procedures">
+        <span class="fa fa-link"></span>
+      </button>
+      Restarting services</h2>
+    
+
+<h3 id="karaf-processes">Karaf processes</h3>
+
+<p>On the Edge server, execute the following commands as admin user.</p>
+
+<h4 id="start-karaf-processes">Start Karaf processes</h4>
+
+<p>Execute the following command:</p>
+
+<pre><code># sudo service cumulocity-core-karaf start
+</code></pre>
+
+<p>This will start the Karaf OSGi container if required.</p>
+
+<h4 id="stop-karaf-processes">Stop Karaf processes</h4>
+
+<p>Execute the following command:</p>
+
+<pre><code># sudo service cumulocity-core-karaf stop
+</code></pre>
+
+<p>This will stop the Karaf OSGi container if required.</p>
+
+<h3 id="opcua-agent-server">opcua-agent-server</h3>
+
+<p>On the Edge server, execute the following commands as admin user.</p>
+
+<h4 id="start-opcua-agent-server">Start opcua-agent-server</h4>
+
+<p>Execute the following command:</p>
+
+<pre><code># sudo systemctl start opcua-agent-server
+</code></pre>
+
+<p>This will start the opcua-agent-server if required.</p>
+
+<h4 id="stop-opcua-agent-server">Stop opcua-agent-server</h4>
+
+<p>Execute the following command:</p>
+
+<pre><code># sudo systemctl stop opcua-agent-server
+</code></pre>
+
+<p>This will stop the opcua-agent-server if required.</p>
+
+<h4 id="restart-opcua-agent-server">Restart opcua-agent-server</h4>
+
+<p>Execute the following command:</p>
+
+<pre><code># sudo systemctl restart opcua-agent-server
+</code></pre>
+
+<p>This will restart the opcua-agent-server if required.</p>
+
+<h3 id="smartrule-agent-server-apama">smartrule-agent-server-apama</h3>
+
+<p>On the Edge server, execute the following commands as admin user.</p>
+
+<h4 id="start-smartrule-agent-server-apama">Start smartrule-agent-server-apama</h4>
+
+<p>Execute the following command:</p>
+
+<pre><code># sudo systemctl start smartrule-agent-server-apama
+</code></pre>
+
+<p>This will start the smartrule-agent-server-apama if required.</p>
+
+<h4 id="stop-smartrule-agent-server-apama">Stop smartrule-agent-server-apama</h4>
+
+<p>Execute the following command:</p>
+
+<pre><code># sudo systemctl stop smartrule-agent-server-apama
+</code></pre>
+
+<p>This will stop the smartrule-agent-server-apama if required.</p>
+
+<h4 id="restart-smartrule-agent-server-apama">Restart smartrule-agent-server-apama</h4>
+
+<p>Execute the following command:</p>
+
+<pre><code># sudo systemctl restart smartrule-agent-server-apama
+</code></pre>
+
+<p>This will restart the smartrule-agent-server-apama if required.</p>
+
+<h3 id="apama">Apama</h3>
+
+<p>On the Edge server, execute the following commands as admin user.</p>
+
+<h4 id="start-apama">Start apama</h4>
+
+<p>Execute the following command:</p>
+
+<pre><code># sudo service apama start
+</code></pre>
+
+<p>This will start the apama service if required.</p>
+
+<h4 id="stop-apama">Stop apama</h4>
+
+<p>Execute the following command:</p>
+
+<pre><code># sudo service apama stop
+</code></pre>
+
+<p>This will stop the apama service if required.</p>
+
+<h4 id="restart-smartrule-agent-server-apama-1">Restart smartrule-agent-server-apama</h4>
+
+<p>Execute the following command:</p>
+
+<pre><code># sudo service apama restart
+</code></pre>
+
+<p>This will restart the apama service if required.</p>
+
+  </article>
+  
+  
+</div>
+<footer class="main-footer">
+  <div class="copyright">
+    <div class="container text-center">
+      <p class="small ">&copy; 2019 Cumulocity GmbH | All rights reserved.</p>
+    </div>
+  </div>  
+</footer>
+
+<!-- Essential Scripts -->
+
+<!-- jQuery -->
+<script src="https://cumulocity.com/guides/js/vendor/jquery.min.js"></script>
+<script src="https://cumulocity.com/guides/js/vendor/bootstrap.bundle.min.js"></script>
+<script src="https://cumulocity.com/guides/js/vendor/clipboard.js"></script>
+<script src="https://cumulocity.com/guides/js/vendor/zoom.js"></script>
+<script src="https://cumulocity.com/guides/js/vendor/highlight.min.js"></script>
+<script src="https://cumulocity.com/guides/js/main.js"></script>
+
+
+
+
+
+    
+   
+  </body>
+</html>
